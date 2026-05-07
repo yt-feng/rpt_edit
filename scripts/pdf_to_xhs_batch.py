@@ -145,20 +145,15 @@ def safe_open_image(path: Path) -> Image.Image | None:
         return None
 
 
-def pad_image_for_xhs(source_path: Path, target_path: Path, title: str = "研报图表") -> bool:
-    """Put an extracted MinerU image on a deep-blue 1080x1440 Xiaohongshu canvas."""
-    image = safe_open_image(source_path)
-    if image is None:
-        return False
-
+def draw_xhs_card(image: Image.Image, target_path: Path, title: str = "研报图表", subtitle: str = "PDF extracted chart · source retained") -> None:
     canvas = Image.new("RGB", XHS_CANVAS_SIZE, XHS_BG_COLOR)
     draw = ImageDraw.Draw(canvas)
     title_font = load_font(44, bold=True)
     small_font = load_font(24, bold=False)
     draw.text((72, 60), title[:18], font=title_font, fill=(255, 255, 255))
-    draw.text((72, 118), "PDF extracted chart · source retained", font=small_font, fill=(190, 206, 226))
+    draw.text((72, 118), subtitle[:54], font=small_font, fill=(190, 206, 226))
 
-    image = ImageOps.contain(image, (936, 1080), method=Image.Resampling.LANCZOS)
+    image = ImageOps.contain(image.convert("RGB"), (936, 1080), method=Image.Resampling.LANCZOS)
     margin = 34
     card_w = image.width + margin * 2
     card_h = image.height + margin * 2
@@ -169,34 +164,71 @@ def pad_image_for_xhs(source_path: Path, target_path: Path, title: str = "研报
     shadow_draw = ImageDraw.Draw(shadow)
     shadow_draw.rounded_rectangle((card_x + 10, card_y + 14, card_x + card_w + 10, card_y + card_h + 14), radius=36, fill=(0, 0, 0, 95))
     shadow = shadow.filter(ImageFilter.GaussianBlur(18))
-    canvas = Image.alpha_composite(canvas.convert("RGBA"), shadow)
-    draw = ImageDraw.Draw(canvas)
+    canvas_rgba = Image.alpha_composite(canvas.convert("RGBA"), shadow)
+    draw = ImageDraw.Draw(canvas_rgba)
     draw.rounded_rectangle((card_x, card_y, card_x + card_w, card_y + card_h), radius=34, fill=XHS_CARD_COLOR)
-    canvas.paste(image.convert("RGBA"), (card_x + margin, card_y + margin))
+    canvas_rgba.paste(image.convert("RGBA"), (card_x + margin, card_y + margin))
 
     footer = "完整研报解读见正文"
     bbox = draw.textbbox((0, 0), footer, font=small_font)
     draw.text(((XHS_CANVAS_SIZE[0] - (bbox[2] - bbox[0])) // 2, 1372), footer, font=small_font, fill=(210, 222, 238))
 
     target_path.parent.mkdir(parents=True, exist_ok=True)
-    canvas.convert("RGB").save(target_path, quality=94)
+    canvas_rgba.convert("RGB").save(target_path, quality=94)
+
+
+def pad_image_for_xhs(source_path: Path, target_path: Path, title: str = "研报图表") -> bool:
+    image = safe_open_image(source_path)
+    if image is None:
+        return False
+    draw_xhs_card(image, target_path, title=title)
     return True
 
 
-def copy_extracted_images(result_dir: Path, assets_dir: Path, max_images: int, title: str) -> list[str]:
+def render_pdf_page_cards(pdf_path: Path, assets_dir: Path, max_pages: int, title: str) -> list[str]:
+    cards: list[str] = []
+    try:
+        doc = fitz.open(pdf_path)
+    except Exception as exc:
+        log(f"Cannot open PDF for fallback image cards: {pdf_path}: {exc}")
+        return cards
+
+    try:
+        for index in range(min(max_pages, len(doc))):
+            pix = doc[index].get_pixmap(matrix=fitz.Matrix(1.8, 1.8), alpha=False)
+            image = Image.open(BytesIO(pix.tobytes("png"))).convert("RGB")
+            target = assets_dir / f"pdf_page_card_{index + 1:02d}.png"
+            draw_xhs_card(image, target, title=title, subtitle="PDF page fallback · source retained")
+            cards.append(str(target.relative_to(assets_dir.parent)))
+    finally:
+        doc.close()
+    return cards
+
+
+def create_visual_assets(result_dir: Path, pdf_path: Path, assets_dir: Path, max_images: int, title: str) -> list[str]:
+    """Always create visible Xiaohongshu-style image cards as soon as MinerU parsing succeeds.
+
+    MinerU sometimes extracts standalone chart images, but some PDFs only produce page/layout files.
+    If no extracted image is found, render the first PDF pages into the same deep-blue 1080x1440 style.
+    """
     assets_dir.mkdir(parents=True, exist_ok=True)
     images = [p for p in result_dir.rglob("*") if p.is_file() and p.suffix.lower() in IMAGE_SUFFIXES]
     images.sort(key=lambda path: path.stat().st_size, reverse=True)
-    copied = []
+    cards: list[str] = []
+
     for index, image in enumerate(images[:max_images], 1):
         original_target = assets_dir / f"mineru_original_{index:02d}{image.suffix.lower()}"
         shutil.copy2(image, original_target)
         card_target = assets_dir / f"mineru_image_{index:02d}.png"
         if pad_image_for_xhs(image, card_target, title=title):
-            copied.append(str(card_target.relative_to(assets_dir.parent)))
+            cards.append(str(card_target.relative_to(assets_dir.parent)))
         else:
-            copied.append(str(original_target.relative_to(assets_dir.parent)))
-    return copied
+            cards.append(str(original_target.relative_to(assets_dir.parent)))
+
+    if not cards:
+        log("MinerU result contained no standalone images; rendering PDF page fallback cards.")
+        cards = render_pdf_page_cards(pdf_path, assets_dir, max_pages=min(max_images, 4), title=title)
+    return cards
 
 
 def trim_source_text(source_text: str, prompt_chars: int) -> str:
@@ -251,6 +283,15 @@ def call_deepseek(prompt: str, args: argparse.Namespace, label: str) -> str:
         return data["choices"][0]["message"]["content"].strip() + "\n"
     except Exception as exc:
         raise RuntimeError(f"Unexpected DeepSeek response: {json.dumps(data, ensure_ascii=False)[:1000]}") from exc
+
+
+def safe_generate_text(prompt: str, args: argparse.Namespace, label: str) -> str:
+    """Do not let text-generation failures prevent image assets from being committed."""
+    try:
+        return call_deepseek(prompt, args, label)
+    except Exception as exc:
+        log(f"DeepSeek generation failed for {label}: {exc}")
+        return f"DeepSeek 生成 {label} 失败：{exc}\n\n请复制对应 prompt 文件手动生成。\n"
 
 
 def extract_cover_titles(note: str, fallback: str) -> tuple[str, str]:
@@ -315,6 +356,7 @@ def process_pdf(pdf_path: Path, result_row: dict[str, Any], output_root: Path, a
     item_dir.mkdir(parents=True, exist_ok=True)
 
     state = str(result_row.get("state", "")).lower()
+    fallback_title = slug(pdf_path.name)[:18]
     status: dict[str, Any] = {
         "source_pdf": str(pdf_path),
         "mineru_state": result_row.get("state"),
@@ -326,9 +368,14 @@ def process_pdf(pdf_path: Path, result_row: dict[str, Any], output_root: Path, a
         return status
 
     download_and_unzip(result_row["full_zip_url"], raw_dir)
+
+    # Visual assets are generated immediately after MinerU output is available.
+    # This guarantees assets/ exists even when DeepSeek text generation fails later.
+    status["images"] = create_visual_assets(raw_dir, pdf_path, assets_dir, args.max_images, title=fallback_title)
+
     markdown_path = find_markdown(raw_dir)
     if not markdown_path:
-        status["error"] = "MinerU result zip did not contain markdown."
+        status["error"] = "MinerU result zip did not contain markdown. Visual cards may still have been generated."
         (item_dir / "status.json").write_text(json.dumps(status, ensure_ascii=False, indent=2), encoding="utf-8")
         return status
 
@@ -337,19 +384,17 @@ def process_pdf(pdf_path: Path, result_row: dict[str, Any], output_root: Path, a
 
     xhs_prompt = build_xhs_prompt(Path(args.prompt_template), source_text, args)
     (item_dir / "prompt_for_xhs.md").write_text(xhs_prompt, encoding="utf-8")
-    note = call_deepseek(xhs_prompt, args, "Xiaohongshu note")
+    note = safe_generate_text(xhs_prompt, args, "Xiaohongshu note")
     (item_dir / "note.md").write_text(note, encoding="utf-8")
 
     wechat_prompt = build_wechat_prompt(Path(args.wechat_prompt_template), source_text, args)
     (item_dir / "prompt_for_wechat.md").write_text(wechat_prompt, encoding="utf-8")
-    wechat_article = call_deepseek(wechat_prompt, args, "WeChat article")
+    wechat_article = safe_generate_text(wechat_prompt, args, "WeChat article")
     (item_dir / "wechat_article.md").write_text(wechat_article, encoding="utf-8")
 
-    title, subtitle = extract_cover_titles(note, slug(pdf_path.name))
+    title, subtitle = extract_cover_titles(note, fallback_title)
     status["cover_short_title"] = title
     status["cover_subtitle"] = subtitle
-    status["images"] = copy_extracted_images(raw_dir, assets_dir, args.max_images, title=title)
-
     try:
         make_cover(pdf_path, assets_dir / "cover.png", title, subtitle, args.watermark)
         status["cover"] = "assets/cover.png"
