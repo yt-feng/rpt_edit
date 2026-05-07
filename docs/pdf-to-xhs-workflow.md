@@ -1,4 +1,4 @@
-# PDF 批量生成小红书笔记工作流
+# PDF 批量生成小红书笔记与微信公众号文章工作流
 
 这个 repo 已经添加了一个可以在 GitHub Actions 里直接运行的工作流：`PDF to Xiaohongshu notes`。
 
@@ -15,7 +15,7 @@
 
 ### 2. PDF 文件夹
 
-在 repo 里新建一个文件夹，比如：
+在 repo 里的 `pdfs/` 文件夹上传 PDF：
 
 ```text
 pdfs/
@@ -42,6 +42,8 @@ pdfs/
 | `mineru_model` | `vlm` | MinerU 模型版本 |
 | `language` | `en` | PDF 语言。英文研报用 `en`，中文用 `ch` |
 | `ocr` | `true` | 扫描件/图片 PDF 建议开启 |
+| `wechat_length` | `1200` | 微信公众号文章目标字数 |
+| `community_cta` | `加入社群，领取完整研报解读与原始图表。` | 微信文末社群引导语 |
 | `commit_results` | `true` | 是否把生成结果自动提交回 repo |
 
 ## 生成结果在哪里
@@ -52,7 +54,9 @@ pdfs/
 xhs_notes/
   report-a/
     note.md
+    wechat_article.md
     prompt_for_xhs.md
+    prompt_for_wechat.md
     source_mineru.md
     status.json
     mineru_result.zip
@@ -61,27 +65,37 @@ xhs_notes/
       cover.png
       mineru_image_01.png
       mineru_image_02.png
+      mineru_original_01.png
   summary.json
 ```
 
 含义：
 
 - `note.md`：可直接复制/微调的小红书笔记。
-- `prompt_for_xhs.md`：真正发送给 DeepSeek 的 prompt。
+- `wechat_article.md`：微信公众号文章 Markdown，风格更严肃克制，无 emoji，并保留社群阅读钩子。
+- `prompt_for_xhs.md`：真正发送给 DeepSeek 的小红书 prompt。
+- `prompt_for_wechat.md`：真正发送给 DeepSeek 的微信公众号 prompt。
 - `source_mineru.md`：MinerU 从 PDF 里解析出来的 Markdown。
 - `assets/cover.png`：自动生成的小红书封面。
-- `assets/mineru_image_*.png`：MinerU 从 PDF 中抽取出来的图片/图表。
+- `assets/mineru_image_*.png`：MinerU 从 PDF 中抽取出来的图片/图表，会统一垫到深蓝色 1080×1440 小红书卡片画布上。
+- `assets/mineru_original_*`：原始抽取图片备份。
 - `summary.json`：本次批处理汇总。
 
 ## 文案结构在哪里改
 
-Prompt 文件在：
+小红书 Prompt 文件在：
 
 ```text
 prompts/xhs_report_note_prompt.md
 ```
 
-里面已经按“分段结构”做了：
+微信公众号 Prompt 文件在：
+
+```text
+prompts/wechat_report_article_prompt.md
+```
+
+小红书 prompt 已经按“分段结构”做了：
 
 - 爆款标题
 - 封面短标题
@@ -92,7 +106,12 @@ prompts/xhs_report_note_prompt.md
 - 评论区提问
 - 配图建议
 
-以后想改小红书风格、字数、emoji、免责声明、话题标签，优先改这个文件。
+微信公众号 prompt 是更严肃的公众号文章风格：
+
+- 无 emoji
+- 不讲完整报告所有细节
+- 埋下关键伏笔和后续阅读钩子
+- 自然引导读者加入社群获取完整报告
 
 ## 本地运行
 
@@ -109,5 +128,7 @@ python scripts/pdf_to_xhs_batch.py \
   --output-dir xhs_notes \
   --model deepseek-chat \
   --language en \
-  --ocr true
+  --ocr true \
+  --wechat-length 1200 \
+  --community-cta "加入社群，领取完整研报解读与原始图表。"
 ```
