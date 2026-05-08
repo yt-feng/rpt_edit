@@ -12,7 +12,7 @@ on:
         required: true
         default: "xhs_notes"
       model:
-        description: "DeepSeek model for note generation"
+        description: "DeepSeek model for note/article/podcast generation"
         required: true
         default: "deepseek-chat"
       deepseek_base_url:
@@ -34,11 +34,20 @@ on:
       wechat_length:
         description: "Target Chinese character count for WeChat article"
         required: true
-        default: "1200"
+        default: "3000"
       community_cta:
         description: "CTA sentence for the WeChat article"
         required: true
         default: "加入社群，领取完整研报解读与原始图表。"
+      podcast_minutes:
+        description: "Target length for Chinese+English AI podcast"
+        required: true
+        default: "5"
+      generate_audio:
+        description: "Generate bilingual podcast WAV audio with local open-source Piper TTS"
+        required: true
+        type: boolean
+        default: true
       commit_results:
         description: "Commit generated notes back to this branch"
         required: true
@@ -54,7 +63,7 @@ env:
 jobs:
   pdf-to-xhs:
     runs-on: ubuntu-latest
-    timeout-minutes: 60
+    timeout-minutes: 75
 
     steps:
       - name: Checkout repository
@@ -71,10 +80,24 @@ jobs:
         continue-on-error: true
         run: |
           sudo apt-get update
-          sudo apt-get install -y fonts-noto-cjk
+          sudo apt-get install -y fonts-noto-cjk fonts-arphic-ukai
 
       - name: Install Python dependencies
         run: pip install -r requirements.txt
+
+      - name: Install Piper TTS for podcast audio
+        if: ${{ inputs.generate_audio }}
+        timeout-minutes: 10
+        continue-on-error: true
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y espeak-ng
+          pip install piper-tts==1.2.0
+          mkdir -p .piper-voices
+          curl -L --retry 3 -o .piper-voices/zh_CN-huayan-medium.onnx https://huggingface.co/rhasspy/piper-voices/resolve/main/zh/zh_CN/huayan/medium/zh_CN-huayan-medium.onnx
+          curl -L --retry 3 -o .piper-voices/zh_CN-huayan-medium.onnx.json https://huggingface.co/rhasspy/piper-voices/resolve/main/zh/zh_CN/huayan/medium/zh_CN-huayan-medium.onnx.json
+          curl -L --retry 3 -o .piper-voices/en_US-lessac-medium.onnx https://huggingface.co/rhasspy/piper-voices/resolve/main/en/en_US/lessac/medium/en_US-lessac-medium.onnx
+          curl -L --retry 3 -o .piper-voices/en_US-lessac-medium.onnx.json https://huggingface.co/rhasspy/piper-voices/resolve/main/en/en_US/lessac/medium/en_US-lessac-medium.onnx.json
 
       - name: Generate Xiaohongshu notes and WeChat articles from PDFs
         env:
@@ -93,6 +116,18 @@ jobs:
             --wechat-length "${{ inputs.wechat_length }}" \
             --community-cta "${{ inputs.community_cta }}"
 
+      - name: Post-process WeChat images and generate AI podcast
+        env:
+          DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
+          DEEPSEEK_BASE_URL: ${{ inputs.deepseek_base_url }}
+        run: |
+          python scripts/postprocess_podcast.py \
+            --output-dir "${{ inputs.output_dir }}" \
+            --model "${{ inputs.model }}" \
+            --deepseek-base-url "${{ inputs.deepseek_base_url }}" \
+            --podcast-minutes "${{ inputs.podcast_minutes }}" \
+            --generate-audio "${{ inputs.generate_audio }}"
+
       - name: Upload generated notes as artifact
         uses: actions/upload-artifact@v4
         with:
@@ -109,6 +144,6 @@ jobs:
           if git diff --cached --quiet; then
             echo "No generated changes to commit."
           else
-            git commit -m "Generate Xiaohongshu and WeChat notes from PDFs"
+            git commit -m "Generate Xiaohongshu WeChat and podcast outputs from PDFs"
             git push
           fi
