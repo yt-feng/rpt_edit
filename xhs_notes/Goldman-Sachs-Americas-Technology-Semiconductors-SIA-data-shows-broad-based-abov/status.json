@@ -12,8 +12,15 @@
     "assets/xhs_card_07.png",
     "assets/xhs_card_08.png"
   ],
-  "cover_short_title": "芯片复苏信号已出现？",
+  "cover_short_title": "DeepSeek 生",
   "cover_subtitle": "研报重点一图看懂",
   "cover": "assets/cover.png",
-  "wechat_article": "wechat_article.md"
+  "wechat_article": "wechat_article.md",
+  "wechat_images": [
+    "assets/source_image_01.jpg",
+    "assets/source_image_02.jpg",
+    "assets/source_image_03.jpg"
+  ],
+  "podcast_script": "podcast_zh_en_script.txt",
+  "podcast_audio": "podcast_zh_en.wav"
 }

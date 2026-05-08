@@ -1,26 +1,10 @@
-芯片复苏信号已出现？3月数据全解析
+DeepSeek 生成 Xiaohongshu note 失败：DeepSeek generate Xiaohongshu note: HTTP 504, non-json response: <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<HTML><HEAD><META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
+<TITLE>ERROR: The request could not be satisfied</TITLE>
+</HEAD><BODY>
+<H1>504 Gateway Timeout ERROR</H1>
+<H2>The request could not be satisfied.</H2>
+<HR noshade size="1px">
+We can't connect to the server for this app or website at this time. There might be too much traffic or a configuration error. Try again later
 
-复苏信号来了
-
-3月半导体数据超季节性增长
-
-一句话结论：3月半导体出货量全面超季节性，芯片复苏趋势确认，但DRAM开始降温，板块分化加剧。
-
-1/ 整体芯片（不含存储）3月出货量环比暴增29%，远超历史同期的20%均值。目前出货量只比长期需求趋势低4%（2月还是低8%），改善速度肉眼可见。这意味着芯片库存去化接近尾声，终端需求正在回归。
-
-2/ 模拟芯片是最大亮点！出货量环比飙升32%，高于历史26%的均值，距离长期趋势仅差2%（1月还差6.5%）。某外资投行明确看好模拟板块，点名Microchip、NXP和ADI这三家，因为它们出货量离趋势线最远、库存管理最牛。
-
-3/ DRAM开始掉队了。3月出货量环比仅增5%，低于历史9%的均值，是少数几个低于季节性的细分领域。NAND倒是不错，环比增15%超季节性。存储内部也在分化。
-
-⚠️ 我最想提醒的一点：别光看整体数据好看就冲进去。MCU（微控制器）依然比趋势低26%，虽然环比改善但绝对水平还是很差。买芯片股要看具体赛道，模拟>存储>逻辑，MCU还得再等等。
-
-评论区提问：你觉得这轮芯片复苏是V型反转还是L型磨底？模拟芯片还能涨多少？留言聊聊👇
-
-非投资建议，仅作学习交流。
-
-#研报解读 #投资学习 #财经 #小红书笔记 #半导体 #芯片 #模拟芯片 #DRAM #库存周期
-
-配图建议：
-第2张图：用Exhibit 3（IC units ex. memory环比变化图），配文“3月IC出货量环比+29%，远超季节性”
-第3张图：用Exhibit 5（Analog units环比变化图），配文“模拟芯片环比+32%，复苏领头羊”
-第4张图：用Exhibit 8（DRAM units环比变化图），配文“DRAM环比仅+5%，低于季节性，需警惕”
+请复制对应 prompt 文件手动生成。
