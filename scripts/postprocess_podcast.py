@@ -3,8 +3,9 @@
 
 Adds:
 1. WeChat markdown image refs using original MinerU/source images.
-2. Bilingual Chinese+English podcast script.
-3. Optional local open-source Piper TTS audio.
+2. Conversational Chinese and English podcast scripts.
+3. Separate Chinese/English WAV files.
+4. Separate Chinese/English MP4 videos with original MinerU charts and bottom subtitles.
 """
 from __future__ import annotations
 
@@ -14,14 +15,18 @@ import os
 import re
 import shutil
 import subprocess
-import sys
 import tempfile
-import time
+import textwrap
 import wave
 from pathlib import Path
 from typing import Any
 
 import requests
+from PIL import Image, ImageDraw, ImageFont, ImageOps
+
+VIDEO_SIZE = (1280, 720)
+VIDEO_BG = (9, 31, 64)
+VIDEO_FPS = 24
 
 
 def log(message: str) -> None:
@@ -54,7 +59,7 @@ def call_deepseek(prompt: str, args: argparse.Namespace, label: str) -> str:
         "model": args.model,
         "temperature": 0.72,
         "messages": [
-            {"role": "system", "content": "你是专业财经内容制作人，输出必须可直接发布或朗读。"},
+            {"role": "system", "content": "你是专业财经播客制作人，输出必须可直接朗读和制作视频。"},
             {"role": "user", "content": prompt},
         ],
     }
@@ -95,14 +100,14 @@ def find_original_images(item_dir: Path) -> list[str]:
     fallback = sorted(p for p in assets_dir.glob("mineru_original_*") if p.suffix.lower() in image_suffixes)
     if fallback:
         return [p.relative_to(item_dir).as_posix() for p in fallback]
-    return []
+    xhs_fallback = sorted(p for p in assets_dir.glob("xhs_card_*.png"))
+    return [p.relative_to(item_dir).as_posix() for p in xhs_fallback]
 
 
 def embed_original_images(article: str, image_paths: list[str], max_images: int = 3) -> str:
     clean = [p for p in image_paths if p.lower().endswith((".png", ".jpg", ".jpeg", ".webp"))]
     if not clean:
         return article
-    # Remove previously inserted generated-card refs, if any.
     article = re.sub(r"\n?!\[研报图表 \d+\]\(assets/xhs_card_\d+\.png\)\n?", "\n", article)
     article = re.sub(r"\n?!\[研报原图 \d+\]\(assets/[^\)]+\)\n?", "\n", article)
     images = [f"\n![研报原图 {i}]({path})\n" for i, path in enumerate(clean[:max_images], 1)]
@@ -120,17 +125,24 @@ def embed_original_images(article: str, image_paths: list[str], max_images: int 
     return "\n".join(lines).strip() + "\n"
 
 
-def parse_podcast_lines(script: str) -> list[tuple[str, str]]:
-    lines: list[tuple[str, str]] = []
+def parse_script(script: str, prefixes: tuple[str, ...]) -> list[tuple[str, str]]:
+    rows: list[tuple[str, str]] = []
+    prefix_pattern = "|".join(re.escape(p) for p in prefixes)
+    pattern = re.compile(rf"^({prefix_pattern})\s*[:：]\s*(.+)$", flags=re.IGNORECASE)
     for raw in script.splitlines():
         line = raw.strip().lstrip("-• ").strip()
-        match = re.match(r"^(ZH|EN)\s*[:：]\s*(.+)$", line, flags=re.IGNORECASE)
+        match = pattern.match(line)
         if match:
-            lang = match.group(1).upper()
+            speaker = match.group(1).upper()
             text = match.group(2).strip()
             if text:
-                lines.append((lang, text))
-    return lines
+                rows.append((speaker, text))
+    return rows
+
+
+def wav_duration(path: Path) -> float:
+    with wave.open(str(path), "rb") as src:
+        return src.getnframes() / float(src.getframerate())
 
 
 def combine_wavs(segment_paths: list[Path], output_path: Path, silence_ms: int = 280) -> None:
@@ -144,33 +156,25 @@ def combine_wavs(segment_paths: list[Path], output_path: Path, silence_ms: int =
         out.setparams(params)
         for path in segment_paths:
             with wave.open(str(path), "rb") as src:
-                if src.getparams()[:3] != params[:3]:
-                    raise RuntimeError(f"Segment wav parameters differ: {path}")
                 out.writeframes(src.readframes(src.getnframes()))
                 out.writeframes(silence)
 
 
-def render_podcast_audio(script: str, output_path: Path, args: argparse.Namespace) -> None:
+def render_language_audio(rows: list[tuple[str, str]], output_path: Path, model_path: Path, args: argparse.Namespace) -> list[dict[str, Any]]:
     piper_bin = shutil.which(args.piper_binary)
     if not piper_bin:
         raise RuntimeError("piper CLI not found. Make sure workflow installed piper-tts.")
-    zh_model = Path(args.piper_zh_model)
-    en_model = Path(args.piper_en_model)
-    if not zh_model.exists():
-        raise RuntimeError(f"Chinese Piper model not found: {zh_model}")
-    if not en_model.exists():
-        raise RuntimeError(f"English Piper model not found: {en_model}")
-    lines = parse_podcast_lines(script)
-    if not lines:
-        raise RuntimeError("Podcast script has no ZH:/EN: lines, cannot synthesize audio.")
+    if not model_path.exists():
+        raise RuntimeError(f"Piper model not found: {model_path}")
+    timeline: list[dict[str, Any]] = []
     with tempfile.TemporaryDirectory(prefix="podcast_segments_") as tmp:
         tmp_dir = Path(tmp)
         segment_paths: list[Path] = []
-        for idx, (lang, text) in enumerate(lines[:120], 1):
-            model = zh_model if lang == "ZH" else en_model
+        cursor = 0.0
+        for idx, (speaker, text) in enumerate(rows[:160], 1):
             segment = tmp_dir / f"segment_{idx:03d}.wav"
             result = subprocess.run(
-                [piper_bin, "--model", str(model), "--output_file", str(segment)],
+                [piper_bin, "--model", str(model_path), "--output_file", str(segment)],
                 input=text.encode("utf-8"),
                 stdout=subprocess.PIPE,
                 stderr=subprocess.PIPE,
@@ -178,8 +182,79 @@ def render_podcast_audio(script: str, output_path: Path, args: argparse.Namespac
             )
             if result.returncode != 0:
                 raise RuntimeError(f"Piper failed on segment {idx}: {result.stderr.decode('utf-8', errors='ignore')[:500]}")
+            dur = wav_duration(segment)
+            timeline.append({"speaker": speaker, "text": text, "start": round(cursor, 3), "end": round(cursor + dur, 3)})
+            cursor += dur + 0.28
             segment_paths.append(segment)
         combine_wavs(segment_paths, output_path)
+    return timeline
+
+
+def load_font(size: int):
+    candidates = [
+        "/usr/share/fonts/opentype/noto/NotoSansCJK-Regular.ttc",
+        "/usr/share/fonts/truetype/noto/NotoSansCJK-Regular.ttc",
+        "/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf",
+    ]
+    for candidate in candidates:
+        if Path(candidate).exists():
+            return ImageFont.truetype(candidate, size)
+    return ImageFont.load_default()
+
+
+def make_video_frame(image_path: Path | None, subtitle: str, out_path: Path) -> None:
+    canvas = Image.new("RGB", VIDEO_SIZE, VIDEO_BG)
+    draw = ImageDraw.Draw(canvas)
+    if image_path and image_path.exists():
+        try:
+            img = Image.open(image_path).convert("RGB")
+            img = ImageOps.contain(img, (1120, 455))
+            canvas.paste(img, ((VIDEO_SIZE[0] - img.width) // 2, 42))
+        except Exception as exc:
+            log(f"Cannot draw video image {image_path}: {exc}")
+    subtitle_font = load_font(34)
+    speaker_font = load_font(26)
+    wrapped = textwrap.wrap(subtitle, width=34 if re.search(r"[\u4e00-\u9fff]", subtitle) else 58)
+    wrapped = wrapped[:3]
+    box_y = 520
+    draw.rounded_rectangle((70, box_y, 1210, 690), radius=24, fill=(0, 0, 0))
+    y = box_y + 22
+    for line in wrapped:
+        bbox = draw.textbbox((0, 0), line, font=subtitle_font)
+        draw.text(((VIDEO_SIZE[0] - (bbox[2] - bbox[0])) // 2, y), line, fill=(255, 255, 255), font=subtitle_font)
+        y += 42
+    draw.text((92, 660), "Kris笔记 Podcast", fill=(190, 206, 226), font=speaker_font)
+    out_path.parent.mkdir(parents=True, exist_ok=True)
+    canvas.save(out_path, quality=92)
+
+
+def run_ffmpeg(cmd: list[str]) -> None:
+    result = subprocess.run(cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE, timeout=600)
+    if result.returncode != 0:
+        raise RuntimeError(result.stderr.decode("utf-8", errors="ignore")[-1000:])
+
+
+def render_video(audio_path: Path, timeline: list[dict[str, Any]], image_paths: list[Path], output_path: Path) -> None:
+    if not shutil.which("ffmpeg"):
+        raise RuntimeError("ffmpeg not found. Make sure workflow installed ffmpeg.")
+    if not timeline:
+        raise RuntimeError("No timeline for video rendering.")
+    with tempfile.TemporaryDirectory(prefix="podcast_video_") as tmp:
+        tmp_dir = Path(tmp)
+        concat_file = tmp_dir / "concat.txt"
+        lines: list[str] = []
+        for idx, seg in enumerate(timeline):
+            img = image_paths[idx % len(image_paths)] if image_paths else None
+            frame = tmp_dir / f"frame_{idx:04d}.png"
+            make_video_frame(img, seg["text"], frame)
+            duration = max(0.8, float(seg["end"]) - float(seg["start"]) + 0.28)
+            lines.append(f"file '{frame.as_posix()}'\n")
+            lines.append(f"duration {duration:.3f}\n")
+        lines.append(lines[-2])
+        concat_file.write_text("".join(lines), encoding="utf-8")
+        silent_video = tmp_dir / "silent.mp4"
+        run_ffmpeg(["ffmpeg", "-y", "-f", "concat", "-safe", "0", "-i", str(concat_file), "-vsync", "vfr", "-pix_fmt", "yuv420p", str(silent_video)])
+        run_ffmpeg(["ffmpeg", "-y", "-i", str(silent_video), "-i", str(audio_path), "-c:v", "libx264", "-c:a", "aac", "-shortest", str(output_path)])
 
 
 def process_item(item_dir: Path, args: argparse.Namespace) -> dict[str, Any]:
@@ -208,20 +283,38 @@ def process_item(item_dir: Path, args: argparse.Namespace) -> dict[str, Any]:
     prompt = build_podcast_prompt(Path(args.podcast_prompt_template), source_text, args)
     (item_dir / "prompt_for_podcast.md").write_text(prompt, encoding="utf-8")
     try:
-        script = call_deepseek(prompt, args, "bilingual podcast script")
+        script = call_deepseek(prompt, args, "conversational Chinese and English podcast scripts")
     except Exception as exc:
         script = f"DeepSeek 生成 podcast 脚本失败：{exc}\n"
         status["podcast_error"] = str(exc)
-    (item_dir / "podcast_zh_en_script.txt").write_text(script, encoding="utf-8")
-    status["podcast_script"] = "podcast_zh_en_script.txt"
+    (item_dir / "podcast_script.txt").write_text(script, encoding="utf-8")
+    status["podcast_script"] = "podcast_script.txt"
+
+    zh_rows = parse_script(script, ("ZH_A", "ZH_B"))
+    en_rows = parse_script(script, ("EN_A", "EN_B"))
+    (item_dir / "podcast_zh_script.txt").write_text("\n".join(f"{s}: {t}" for s, t in zh_rows) + "\n", encoding="utf-8")
+    (item_dir / "podcast_en_script.txt").write_text("\n".join(f"{s}: {t}" for s, t in en_rows) + "\n", encoding="utf-8")
 
     if as_bool(args.generate_audio):
+        image_abs = [item_dir / p for p in image_paths]
         try:
-            render_podcast_audio(script, item_dir / "podcast_zh_en.wav", args)
-            status["podcast_audio"] = "podcast_zh_en.wav"
+            zh_timeline = render_language_audio(zh_rows, item_dir / "podcast_zh.wav", Path(args.piper_zh_model), args)
+            (item_dir / "podcast_zh_timeline.json").write_text(json.dumps(zh_timeline, ensure_ascii=False, indent=2), encoding="utf-8")
+            status["podcast_zh_audio"] = "podcast_zh.wav"
+            render_video(item_dir / "podcast_zh.wav", zh_timeline, image_abs, item_dir / "podcast_zh.mp4")
+            status["podcast_zh_video"] = "podcast_zh.mp4"
         except Exception as exc:
-            log(f"Audio generation failed for {item_dir.name}: {exc}")
-            status["podcast_audio_error"] = str(exc)
+            log(f"Chinese audio/video generation failed for {item_dir.name}: {exc}")
+            status["podcast_zh_error"] = str(exc)
+        try:
+            en_timeline = render_language_audio(en_rows, item_dir / "podcast_en.wav", Path(args.piper_en_model), args)
+            (item_dir / "podcast_en_timeline.json").write_text(json.dumps(en_timeline, ensure_ascii=False, indent=2), encoding="utf-8")
+            status["podcast_en_audio"] = "podcast_en.wav"
+            render_video(item_dir / "podcast_en.wav", en_timeline, image_abs, item_dir / "podcast_en.mp4")
+            status["podcast_en_video"] = "podcast_en.mp4"
+        except Exception as exc:
+            log(f"English audio/video generation failed for {item_dir.name}: {exc}")
+            status["podcast_en_error"] = str(exc)
 
     status_path.write_text(json.dumps(status, ensure_ascii=False, indent=2), encoding="utf-8")
     return status
