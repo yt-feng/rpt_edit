@@ -40,11 +40,11 @@ on:
         required: true
         default: "加入社群，领取完整研报解读与原始图表。"
       podcast_minutes:
-        description: "Target length for Chinese+English AI podcast"
+        description: "Target length for Chinese and English AI podcast"
         required: true
         default: "5"
       generate_audio:
-        description: "Generate bilingual podcast WAV audio with local open-source Piper TTS"
+        description: "Generate separate Chinese/English WAV and MP4 videos with local open-source Piper TTS"
         required: true
         type: boolean
         default: true
@@ -63,7 +63,7 @@ env:
 jobs:
   pdf-to-xhs:
     runs-on: ubuntu-latest
-    timeout-minutes: 75
+    timeout-minutes: 90
 
     steps:
       - name: Checkout repository
@@ -85,13 +85,13 @@ jobs:
       - name: Install Python dependencies
         run: pip install -r requirements.txt
 
-      - name: Install Piper TTS for podcast audio
+      - name: Install Piper TTS and video tools
         if: ${{ inputs.generate_audio }}
-        timeout-minutes: 10
+        timeout-minutes: 12
         continue-on-error: true
         run: |
           sudo apt-get update
-          sudo apt-get install -y espeak-ng
+          sudo apt-get install -y espeak-ng ffmpeg
           pip install piper-tts==1.2.0
           mkdir -p .piper-voices
           curl -L --retry 3 -o .piper-voices/zh_CN-huayan-medium.onnx https://huggingface.co/rhasspy/piper-voices/resolve/main/zh/zh_CN/huayan/medium/zh_CN-huayan-medium.onnx
