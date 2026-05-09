@@ -1,0 +1,1481 @@
+[
+    {
+        "type": "text",
+        "text": "Americas Technology: Semiconductors: SIA data shows broad-based above-seasonal trends in March, with DRAM moderating ",
+        "text_level": 1,
+        "bbox": [
+            78,
+            74,
+            800,
+            128
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Above-seasonal total unit trends in March were relatively broad based, with DRAM moderating ",
+        "text_level": 1,
+        "bbox": [
+            78,
+            172,
+            665,
+            207
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Shipments of integrated circuits (ex. memory) increased 29% month over month in March, well above typical seasonality, according to data from Semiconductor Industry Association (SIA). Most segments shipped at above-seasonal levels for the month except for discretes, DRAM, MPU, and DSP. Shipments are now tracking 4% below long-term demand on a three-month moving average basis (vs. 8% below trend in February). Improving trends over the past few months are consistent with companies' commentary on shipping closer to end demand on average, but still at a measured rate of improvement. Performance by sub-segment was as follows. ",
+        "bbox": [
+            78,
+            219,
+            687,
+            363
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "list",
+        "sub_type": "text",
+        "list_items": [
+            "IC ex. Memory: Units were $3.9\\%$ below trend vs. below $7.8\\%$ in February. ",
+            "■ Analog: Units were 2.0% below trend, better than 6.5% below trend in January. ",
+            "■ MCU: Units were 26.0% below trend, better than 27.5% in January. "
+        ],
+        "bbox": [
+            80,
+            377,
+            686,
+            442
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "James Schneider, Ph.D. ",
+        "bbox": [
+            720,
+            173,
+            877,
+            186
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "+1(212)357-2929 ",
+        "bbox": [
+            720,
+            186,
+            812,
+            195
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "jim.schneider@gs.com ",
+        "bbox": [
+            720,
+            195,
+            828,
+            204
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Goldman Sachs & Co. LLC ",
+        "bbox": [
+            720,
+            204,
+            841,
+            213
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Khalil Fenina ",
+        "bbox": [
+            720,
+            221,
+            808,
+            233
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "+1(212)357-6392 ",
+        "bbox": [
+            720,
+            233,
+            813,
+            242
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "khalil.fenina@gs.com ",
+        "bbox": [
+            720,
+            242,
+            821,
+            251
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Goldman Sachs & Co. LLC ",
+        "bbox": [
+            720,
+            251,
+            841,
+            260
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Lal Kablan ",
+        "bbox": [
+            720,
+            268,
+            792,
+            280
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "+1(212)357-8793 | lal.kablan@gs.com ",
+        "bbox": [
+            720,
+            280,
+            903,
+            289
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Goldman Sachs & Co. LLC ",
+        "bbox": [
+            720,
+            289,
+            841,
+            298
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Anmol Makkar ",
+        "bbox": [
+            720,
+            307,
+            821,
+            318
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "+1(212)357-1366 ",
+        "bbox": [
+            720,
+            318,
+            812,
+            328
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "anmol.makkar@gs.com ",
+        "bbox": [
+            720,
+            328,
+            833,
+            337
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Goldman Sachs & Co. LLC ",
+        "bbox": [
+            720,
+            337,
+            841,
+            346
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Luya You ",
+        "bbox": [
+            720,
+            355,
+            782,
+            365
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "+1(212)902-5297 | luya.you@gs.com ",
+        "bbox": [
+            720,
+            365,
+            898,
+            376
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Goldman Sachs & Co. LLC ",
+        "bbox": [
+            720,
+            376,
+            841,
+            384
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "table",
+        "img_path": "images/52e66052441c886967fe00f8fc64cba9034dbb386620ab1db8ad86b529dbb483.jpg",
+        "table_caption": [
+            "Exhibit 1: M/M % change in revenue, units and ASPs vs. historical levels "
+        ],
+        "table_footnote": [
+            "Source: SIA, Goldman Sachs Global Investment Research "
+        ],
+        "table_body": "<table><tr><td></td><td colspan=\"3\">Revenue</td><td colspan=\"3\">Units</td><td colspan=\"3\">ASPs</td></tr><tr><td>March 2026</td><td>M/M Rev % Chg</td><td>Hist. M/M % Chg</td><td>Y/Y % Chg</td><td>M/M Unit % Chg</td><td>Hist. M/M Unit % Chg</td><td>Y/Y Unit % Chg</td><td>M/M ASP % Chg</td><td>Hist. M/M ASP %</td><td>Y/Y ASP % Chg</td></tr><tr><td>Total Semiconductors</td><td>14%</td><td>14%</td><td>115%</td><td>20%</td><td>19%</td><td>34%</td><td>-4%</td><td>-5%</td><td>60%</td></tr><tr><td>Discretes</td><td>26%</td><td>23%</td><td>36%</td><td>21%</td><td>25%</td><td>28%</td><td>4%</td><td>-1%</td><td>6%</td></tr><tr><td>Integrated Circuits</td><td>14%</td><td>12%</td><td>127%</td><td>27%</td><td>20%</td><td>40%</td><td>-10%</td><td>-7%</td><td>62%</td></tr><tr><td>DRAM</td><td>10%</td><td>9%</td><td>330%</td><td>5%</td><td>9%</td><td>21%</td><td>5%</td><td>2%</td><td>256%</td></tr><tr><td>NAND</td><td>34%</td><td>13%</td><td>324%</td><td>15%</td><td>10%</td><td>25%</td><td>16%</td><td>4%</td><td>241%</td></tr><tr><td>ICs ex. Memory</td><td>11%</td><td>12%</td><td>45%</td><td>29%</td><td>22%</td><td>39%</td><td>-14%</td><td>-8%</td><td>5%</td></tr><tr><td>MPU</td><td>9%</td><td>7%</td><td>36%</td><td>0%</td><td>8%</td><td>21%</td><td>9%</td><td>-2%</td><td>13%</td></tr><tr><td>MCU</td><td>25%</td><td>25%</td><td>40%</td><td>22%</td><td>19%</td><td>26%</td><td>3%</td><td>-1%</td><td>11%</td></tr><tr><td>DSP</td><td>27%</td><td>25%</td><td>-5%</td><td>17%</td><td>18%</td><td>-8%</td><td>9%</td><td>-1%</td><td>3%</td></tr><tr><td>Analog</td><td>17%</td><td>19%</td><td>32%</td><td>32%</td><td>26%</td><td>44%</td><td>-11%</td><td>-7%</td><td>-9%</td></tr><tr><td>Logic</td><td>10%</td><td>10%</td><td>35%</td><td>21%</td><td>14%</td><td>21%</td><td>-9%</td><td>-4%</td><td>11%</td></tr></table>",
+        "bbox": [
+            89,
+            489,
+            671,
+            695
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Stock implications: We expect shipments to further approach trend in the near term, which is consistent with more constructive company commentary on the normalization of demand and customer inventory levels, which we view as positive for analog overall. We continue to prefer Microchip, NXP, and Analog Devices as we focus on shipping furthest below trend and differentiated supply chain management. ",
+        "bbox": [
+            78,
+            744,
+            697,
+            833
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Goldman Sachs does and seeks to do business with companies covered in its research reports. As a result, investors should be aware that the firm may have a conflict of interest that could affect the objectivity of this report. Investors should consider this report as only a single factor in making their investment decision. For Reg AC certification and other important disclosures, see the Disclosure Appendix, or go to www.gs.com/research/hedge.html. Analysts employed by non-US affiliates are not registered/qualified as research analysts with FINRA in the U.S. ",
+        "bbox": [
+            78,
+            876,
+            916,
+            969
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "header",
+        "text": "Goldman Research Sachs ",
+        "bbox": [
+            78,
+            3,
+            297,
+            41
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "header",
+        "text": "Equity Research ",
+        "bbox": [
+            795,
+            7,
+            916,
+            21
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "header",
+        "text": "4 May 2026 | 1:03AM EDT ",
+        "bbox": [
+            725,
+            28,
+            916,
+            43
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "IC Units ex. Memory ",
+        "text_level": 1,
+        "bbox": [
+            269,
+            39,
+            424,
+            57
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "IC units ex. Memory relative to trend are shown below (see Exhibit 2). ",
+        "bbox": [
+            269,
+            57,
+            774,
+            74
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "chart",
+        "img_path": "images/5793f8fffc55cf202c210b70dc3226cca3bb0ba3ad2c1da5633f193fec489a08.jpg",
+        "content": "| Date     | IC units ex Memory 3m avg (units in mn) |\n|----------|------------------------------------------|\n| Jan-93   | ~2,000                                   |\n| Feb-94   | ~2,500                                   |\n| Mar-95   | ~3,000                                   |\n| Apr-96   | ~3,500                                   |\n| May-97   | ~4,000                                   |\n| Jun-98   | ~4,500                                   |\n| Jul-99   | ~5,000                                   |\n| Aug-00   | ~5,500                                   |\n| Sep-01   | ~6,000                                   |\n| Oct-02   | ~6,500                                   |\n| Nov-03   | ~7,000                                   |\n| Dec-04   | ~7,500                                   |\n| Jan-06   | ~8,000                                   |\n| Feb-07   | ~8,500                                   |\n| Mar-08   | ~9,000                                   |\n| Apr-09   | ~10,000                                  |\n| May-10   | ~11,000                                  |\n| Jun-11   | ~12,000                                  |\n| Jul-12   | ~13,000                                  |\n| Aug-13   | ~14,000                                  |\n| Sep-14   | ~15,000                                  |\n| Oct-15   | ~16,000                                  |\n| Nov-16   | ~17,000                                  |\n| Dec-17   | ~18,000                                  |\n| Jan-19   | ~19,000                                  |\n| Feb-20   | ~20,000                                  |\n| Mar-21   | ~22,000                                  |\n| Apr-22   | ~25,000                                  |\n| May-23   | ~28,000                                  |\n| Jun-24   | ~29,000                                  |\n| Jul-25   | ~30,000                                  |",
+        "chart_caption": [
+            "Exhibit 2: IC units ex. Memory are \\~4% below trend as of March ",
+            "IC units ex. Memory 3 months average (units in millions) "
+        ],
+        "chart_footnote": [
+            "Source: SIA, Goldman Sachs Global Investment Research "
+        ],
+        "sub_type": "line",
+        "bbox": [
+            91,
+            150,
+            465,
+            315
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "chart",
+        "img_path": "images/3ec9b426f7fbcb1db57dbaeb3b43751684da9e082d00eb241f7d5593da025932.jpg",
+        "content": "| Year | IC Units ex Memory (%) |\n|---|---|\n| 2015 | 32.2 |\n| 2016 | 22.0 |\n| 2017 | 24.1 |\n| 2018 | 27.3 |\n| 2019 | 19.0 |\n| 2020 | 18.9 |\n| 2021 | 14.4 |\n| 2022 | 12.2 |\n| 2023 | 44.2 |\n| 2024 | 15.3 |\n| 2025 | 29.0 |\nMedian (dashed line) at ~22.0%",
+        "chart_caption": [
+            "Exhibit 3: IC units ex. memory were up $29\\%$ M/M, above typical history ",
+            "M/M % change in units "
+        ],
+        "chart_footnote": [
+            "Source: SIA, Goldman Sachs Global Investment Research "
+        ],
+        "sub_type": "bar",
+        "bbox": [
+            524,
+            146,
+            887,
+            313
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "Analog ",
+        "text_level": 1,
+        "bbox": [
+            271,
+            363,
+            330,
+            378
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "Analog units relative to trend are shown below (see Exhibit 4). ",
+        "bbox": [
+            271,
+            380,
+            720,
+            396
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "chart",
+        "img_path": "images/b65c9ed33e2ea9e49849becaa19f4fb5baaba4fc49551d3d23e7c6e4b7db466e.jpg",
+        "content": "| Date    | Analog units 3m avg (units in mn) |\n|---------|------------------------------------|\n| Jan-93  | ~1,000                             |\n| Apr-94  | ~1,500                             |\n| Jul-95  | ~2,000                             |\n| Oct-96  | ~2,500                             |\n| Jan-98  | ~3,000                             |\n| Apr-99  | ~3,500                             |\n| Jul-00  | ~4,000                             |\n| Oct-01  | ~4,500                             |\n| Jan-03  | ~5,000                             |\n| Apr-04  | ~5,500                             |\n| Jul-05  | ~6,000                             |\n| Oct-06  | ~6,500                             |\n| Jan-08  | ~7,000                             |\n| Apr-09  | ~7,500                             |\n| Jul-10  | ~8,000                             |\n| Oct-11  | ~8,500                             |\n| Jan-13  | ~9,000                             |\n| Apr-14  | ~9,500                             |\n| Jul-15  | ~10,000                            |\n| Oct-16  | ~11,000                            |\n| Jan-18  | ~12,000                            |\n| Apr-19  | ~13,000                            |\n| Jul-20  | ~14,000                            |\n| Oct-21  | ~15,000                            |\n| Jan-23  | ~16,000                            |\n| Apr-24  | ~17,000                            |\n| Jul-25  | ~18,000                            |",
+        "chart_caption": [
+            "Exhibit 4: Analog units are $\\sim 2\\%$ below trend as of March Analog units 3 months average (units in millions) "
+        ],
+        "chart_footnote": [
+            "Source: SIA, Goldman Sachs Global Investment Research "
+        ],
+        "sub_type": "line",
+        "bbox": [
+            93,
+            466,
+            478,
+            639
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "chart",
+        "img_path": "images/6aff4adf872690ddf9c0f27ea5b39170af8fa58d8733e073d223437c6d44bbb4.jpg",
+        "content": "| Year | Analog (%) | Median (%) |\n|---|---|---|\n| 2015 | 40.0 | 26.8 |\n| 2016 | 27.1 | 26.8 |\n| 2017 | 27.6 | 26.8 |\n| 2018 | 28.8 | 26.8 |\n| 2019 | 22.2 | 26.8 |\n| 2020 | 22.6 | 26.8 |\n| 2021 | 17.9 | 26.8 |\n| 2022 | 13.1 | 26.8 |\n| 2023 | 51.8 | 26.8 |\n| 2024 | 16.2 | 26.8 |\n| 2025 | 31.9 | 26.8 |",
+        "chart_caption": [
+            "Exhibit 5: Analog units were up $32\\%$ M/M, well above typical history ",
+            "M/M % change in units "
+        ],
+        "chart_footnote": [
+            "Source: SIA, Goldman Sachs Global Investment Research "
+        ],
+        "sub_type": "bar",
+        "bbox": [
+            524,
+            469,
+            887,
+            634
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "header",
+        "text": "Goldman Sachs ",
+        "bbox": [
+            81,
+            6,
+            184,
+            18
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "header",
+        "text": "Americas Technology: Semiconductors ",
+        "bbox": [
+            661,
+            7,
+            916,
+            21
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "footer",
+        "text": "4 May 2026 ",
+        "bbox": [
+            81,
+            954,
+            151,
+            966
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "page_number",
+        "text": "2 ",
+        "bbox": [
+            906,
+            954,
+            916,
+            965
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "Microcontrollers (MCU) ",
+        "text_level": 1,
+        "bbox": [
+            271,
+            39,
+            450,
+            56
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "MCU units relative to trend are shown below (see Exhibit 6). ",
+        "bbox": [
+            272,
+            57,
+            705,
+            74
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "chart",
+        "img_path": "images/135a4803b55617a170a2087b6d5e77abd8df1671ae3edbcfe7dec3dc7cd15306.jpg",
+        "content": "| Date    | MCU units 3m avg (units in mn) |\n|---------|-------------------------------|\n| Jan-93  | 0                             |\n| Apr-94  | 100                           |\n| Jul-95  | 200                           |\n| Oct-96  | 300                           |\n| Jan-98  | 400                           |\n| Apr-99  | 500                           |\n| Jul-00  | 600                           |\n| Oct-01  | 700                           |\n| Jan-03  | 800                           |\n| Apr-04  | 900                           |\n| Jul-05  | 1000                          |\n| Oct-06  | 1100                          |\n| Jan-08  | 1200                          |\n| Apr-09  | 1300                          |\n| Jul-10  | 1400                          |\n| Oct-11  | 1500                          |\n| Jan-13  | 1600                          |\n| Apr-14  | 1700                          |\n| Jul-15  | 1800                          |\n| Oct-16  | 1900                          |\n| Jan-18  | 2000                          |\n| Apr-19  | 2100                          |\n| Jul-20  | 2200                          |\n| Oct-21  | 2300                          |\n| Jan-23  | 2400                          |\n| Apr-24  | 2500                          |\n| Jul-25  | 2600                          |",
+        "chart_caption": [
+            "Exhibit 6: MCU units are \\~26% below trend as of March MCU units 3 months average (units in millions) "
+        ],
+        "chart_footnote": [
+            "Source: SIA, Goldman Sachs Global Investment Research "
+        ],
+        "sub_type": "line",
+        "bbox": [
+            91,
+            146,
+            478,
+            320
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "chart",
+        "img_path": "images/ced104ef490913ee993f81c7b5bbb068d05bf308299624b031a67b203ad49af1.jpg",
+        "content": "| Year | Microcontrollers (%) | Median (%) |\n|---|---|---|\n| 2015 | 28.4 | 19.6 |\n| 2016 | 15.5 | 19.6 |\n| 2017 | 29.8 | 19.6 |\n| 2018 | 32.0 | 19.6 |\n| 2019 | 13.3 | 19.6 |\n| 2020 | 14.3 | 19.6 |\n| 2021 | 15.3 | 19.6 |\n| 2022 | 18.7 | 19.6 |\n| 2023 | 48.8 | 19.6 |\n| 2024 | 17.8 | 19.6 |\n| 2025 | 22.2 | 19.6 |",
+        "chart_caption": [
+            "Exhibit 7: MCU units were up $22\\%$ M/M, above typical history ",
+            "M/M % change in units "
+        ],
+        "chart_footnote": [
+            "Source: SIA, Goldman Sachs Global Investment Research "
+        ],
+        "sub_type": "bar",
+        "bbox": [
+            524,
+            146,
+            887,
+            313
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "Memory ",
+        "text_level": 1,
+        "bbox": [
+            272,
+            368,
+            339,
+            384
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "DRAM revenues were up 10% M/M, roughly in-line with typical M/M seasonality. NAND revenues were up 34% M/M, above typical M/M seasonality. ",
+        "bbox": [
+            269,
+            385,
+            906,
+            420
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "chart",
+        "img_path": "images/3bb2e7604b6d594e1b34eaa83dd0a57bcde23d24bd64535297d7fb8ebc5ad2e1.jpg",
+        "content": "| Date    | Units DRAM | ASP ($) |\n|---------|------------|---------|\n| Feb-04  | 500        | 5       |\n| Dec-04  | 600        | 6       |\n| Oct-05  | 700        | 7       |\n| Aug-06  | 800        | 8       |\n| Jun-07  | 900        | 9       |\n| Apr-08  | 1000       | 10      |\n| Feb-09  | 1100       | 11      |\n| Oct-09  | 1200       | 12      |\n| Aug-10  | 1300       | 13      |\n| Jun-11  | 1400       | 14      |\n| Apr-12  | 1500       | 15      |\n| Feb-13  | 1600       | 16      |\n| Oct-13  | 1700       | 17      |\n| Aug-14  | 1800       | 18      |\n| Jun-15  | 1900       | 19      |\n| Apr-16  | 2000       | 20      |\n| Feb-17  | 2100       | 21      |\n| Oct-17  | 2200       | 22      |\n| Aug-18  | 2300       | 23      |\n| Jun-19  | 2400       | 24      |\n| Apr-20  | 2500       | 25      |\n| Feb-21  | 2600       | 26      |\n| Oct-21  | 2700       | 27      |\n| Aug-22  | 2800       | 28      |\n| Jun-23  | 2900       | 29      |\n| Apr-24  | 3000       | 30      |\n| Feb-25  | 3100       | 31      |\n| Oct-25  | 3200       | 32      |",
+        "chart_caption": [
+            "Exhibit 8: DRAM units were up $5\\%$ M/M, below typical seasonality "
+        ],
+        "chart_footnote": [
+            "Source: SIA, Goldman Sachs Global Investment Research "
+        ],
+        "sub_type": "line",
+        "bbox": [
+            80,
+            467,
+            483,
+            659
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "chart",
+        "img_path": "images/822c8715e1aa5ce61810aac591b094fc8626b7b24590d8f0068263ac9ec0e29b.jpg",
+        "content": "| Date   | Units NAND | ASP |\n|--------|------------|-----|\n| Feb-04 | ~50        | ~10 |\n| Feb-05 | ~100       | ~8  |\n| Feb-06 | ~150       | ~7  |\n| Feb-07 | ~200       | ~6  |\n| Feb-08 | ~250       | ~5  |\n| Feb-09 | ~300       | ~4  |\n| Feb-10 | ~400       | ~3  |\n| Feb-11 | ~500       | ~3  |\n| Feb-12 | ~600       | ~3  |\n| Feb-13 | ~700       | ~3  |\n| Feb-14 | ~800       | ~3  |\n| Feb-15 | ~900       | ~3  |\n| Feb-16 | ~1,000     | ~3  |\n| Feb-17 | ~1,100     | ~4  |\n| Feb-18 | ~1,200     | ~4  |\n| Feb-19 | ~1,300     | ~4  |\n| Feb-20 | ~1,400     | ~4  |\n| Feb-21 | ~1,500     | ~4  |\n| Feb-22 | ~1,600     | ~4  |\n| Feb-23 | ~1,700     | ~5  |\n| Feb-24 | ~1,800     | ~6  |\n| Feb-25 | ~1,900     | ~7  |\n| Feb-26 | ~2,000     | ~18 |",
+        "chart_caption": [
+            "Exhibit 9: NAND units were up $15\\%$ M/M, above typical seasonality "
+        ],
+        "chart_footnote": [
+            "Source: SIA, Goldman Sachs Global Investment Research "
+        ],
+        "sub_type": "line",
+        "bbox": [
+            509,
+            467,
+            906,
+            659
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "header",
+        "text": "Goldman Sachs ",
+        "bbox": [
+            81,
+            6,
+            184,
+            18
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "header",
+        "text": "Americas Technology: Semiconductors ",
+        "bbox": [
+            661,
+            7,
+            916,
+            21
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "footer",
+        "text": "4 May 2026 ",
+        "bbox": [
+            81,
+            953,
+            153,
+            966
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "page_number",
+        "text": "3 ",
+        "bbox": [
+            906,
+            954,
+            916,
+            963
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "Disclosure Appendix ",
+        "text_level": 1,
+        "bbox": [
+            80,
+            39,
+            251,
+            61
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "Reg AC ",
+        "text_level": 1,
+        "bbox": [
+            80,
+            82,
+            135,
+            97
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "We, James Schneider, Ph.D., Khalil Fenina, Lal Kablan, Anmol Makkar and Luya You, hereby certify that all of the views expressed in this report accurately reflect our personal views about the subject company or companies and its or their securities. We also certify that no part of our compensation was, is or will be, directly or indirectly, related to the specific recommendations or views expressed in this report. ",
+        "bbox": [
+            81,
+            104,
+            861,
+            139
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "Unless otherwise stated, the individuals listed on the cover page of this report are analysts in Goldman Sachs' Global Investment Research division. ",
+        "bbox": [
+            81,
+            145,
+            885,
+            157
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "Contributing Authors: James Schneider, Ph.D. Goldman Sachs & Co. LLC, Khalil Fenina Goldman Sachs & Co. LLC, Lal Kablan Goldman Sachs & Co. LLC, Anmol Makkar Goldman Sachs & Co. LLC, Luya You Goldman Sachs & Co. LLC. ",
+        "bbox": [
+            81,
+            163,
+            910,
+            186
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "Unless otherwise stated, the individuals listed in the Contributing Authors disclosure of this report are analysts in Goldman Sachs' Global Investment Research division. ",
+        "bbox": [
+            81,
+            193,
+            893,
+            216
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "GS Factor Profile ",
+        "text_level": 1,
+        "bbox": [
+            81,
+            229,
+            207,
+            240
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "The Goldman Sachs Factor Profile provides investment context for a stock by comparing key attributes to the market (i.e. our universe of rated stocks) and its sector peers. The four key attributes depicted are: Growth, Financial Returns, Multiple (e.g. valuation) and Integrated (a composite of Growth, Financial Returns and Multiple). Growth, Financial Returns and Multiple are calculated by using normalized ranks for specific metrics for each stock. The normalized ranks for the metrics are then averaged and converted into percentiles for the relevant attribute. The precise calculation of each metric may vary depending on the fiscal year, industry and region, but the standard approach is as follows: ",
+        "bbox": [
+            81,
+            242,
+            915,
+            298
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "Growth is based on a stock's forward-looking sales growth, EBITDA growth and EPS growth (for financial stocks, only EPS and sales growth), with a higher percentile indicating a higher growth company. Financial Returns is based on a stock's forward-looking ROE, ROCE and CROCI (for financial stocks, only ROE), with a higher percentile indicating a company with higher financial returns. Multiple is based on a stock's forward-looking P/E, P/B, price/dividend (P/D), EV/EBITDA, EV/FCF and EV/Debt Adjusted Cash Flow (DACF) (for financial stocks, only P/E, P/B and P/D), with a higher percentile indicating a stock trading at a higher multiple. The Integrated percentile is calculated as the average of the Growth percentile, Financial Returns percentile and (100% - Multiple percentile). ",
+        "bbox": [
+            81,
+            304,
+            906,
+            372
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "Financial Returns and Multiple use the Goldman Sachs analyst forecasts at the fiscal year-end at least three quarters in the future. Growth uses inputs for the fiscal year at least seven quarters in the future compared with the year at least three quarters in the future (on a per-share basis for all metrics). ",
+        "bbox": [
+            81,
+            378,
+            910,
+            402
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "For a more detailed description of how we calculate the GS Factor Profile, please contact your GS representative. ",
+        "bbox": [
+            81,
+            407,
+            702,
+            420
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "M&A Rank ",
+        "text_level": 1,
+        "bbox": [
+            81,
+            432,
+            161,
+            445
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "Across our global coverage, we examine stocks using an M&A framework, considering both qualitative factors and quantitative factors (which may vary across sectors and regions) to incorporate the potential that certain companies could be acquired. We then assign a M&A rank as a means of scoring companies under our rated coverage from 1 to 3, with 1 representing high (30%-50%) probability of the company becoming an acquisition target, 2 representing medium (15%-30%) probability and 3 representing low (0%-15%) probability. For companies ranked 1 or 2, in line with our standard departmental guidelines we incorporate an M&A component into our target price. M&A rank of 3 is considered immaterial and therefore does not factor into our price target, and may or may not be discussed in research. ",
+        "bbox": [
+            81,
+            445,
+            910,
+            512
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "Quantum ",
+        "text_level": 1,
+        "bbox": [
+            81,
+            527,
+            153,
+            538
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "Quantum is Goldman Sachs' proprietary database providing access to detailed financial statement histories, forecasts and ratios. It can be used for in-depth analysis of a single company, or to make comparisons between companies in different sectors and markets. ",
+        "bbox": [
+            81,
+            539,
+            887,
+            561
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "Disclosures ",
+        "text_level": 1,
+        "bbox": [
+            81,
+            574,
+            166,
+            588
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "Rating and pricing information ",
+        "text_level": 1,
+        "bbox": [
+            81,
+            594,
+            308,
+            606
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "Analog Devices Inc. (Buy, \\$318.34), Microchip Technology Inc. (Buy, \\$65.60) and NXP Semiconductors NV (Buy, \\$194.55) ",
+        "bbox": [
+            81,
+            606,
+            741,
+            619
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "Distribution of ratings/investment banking relationships ",
+        "text_level": 1,
+        "bbox": [
+            81,
+            631,
+            501,
+            645
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "Goldman Sachs Investment Research global Equity coverage universe ",
+        "bbox": [
+            81,
+            645,
+            462,
+            657
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "table",
+        "img_path": "images/ba7dbdaab572b6e6ad4e6c1677bbd6749a69c61aab4d5ab742fcfc41dd114d41.jpg",
+        "table_caption": [],
+        "table_footnote": [],
+        "table_body": "<table><tr><td rowspan=\"2\"></td><td colspan=\"3\">Rating Distribution</td><td colspan=\"3\">Investment Banking Relationships</td></tr><tr><td>Buy</td><td>Hold</td><td>Sell</td><td>Buy</td><td>Hold</td><td>Sell</td></tr><tr><td>Global</td><td>50%</td><td>34%</td><td>16%</td><td>65%</td><td>60%</td><td>45%</td></tr></table>",
+        "bbox": [
+            78,
+            664,
+            761,
+            715
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "As of April 1, 2026, Goldman Sachs Global Investment Research had investment ratings on 3,074 equity securities. Goldman Sachs assigns stocks as Buys and Sells on various regional Investment Lists; stocks not so assigned are deemed Neutral. Such assignments equate to Buy, Hold and Sell for the purposes of the above disclosure required by the FINRA Rules. See ‘Ratings, Coverage universe and related definitions’ below. The Investment Banking Relationships chart reflects the percentage of subject companies within each rating category for whom Goldman Sachs has provided investment banking services within the previous twelve months. ",
+        "bbox": [
+            81,
+            726,
+            903,
+            783
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "Regulatory disclosures ",
+        "text_level": 1,
+        "bbox": [
+            81,
+            796,
+            250,
+            811
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "Disclosures required by United States laws and regulations ",
+        "text_level": 1,
+        "bbox": [
+            81,
+            815,
+            514,
+            829
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "See company-specific regulatory disclosures above for any of the following disclosures required as to companies referred to in this report: manager or co-manager in a pending transaction; $1\\%$ or other ownership; compensation for certain services; types of client relationships; managed/co-managed public offerings in prior periods; directorships; for equity securities, market making and/or specialist role. Goldman Sachs trades or may trade as a principal in debt securities (or in related derivatives) of issuers discussed in this report. ",
+        "bbox": [
+            81,
+            829,
+            906,
+            875
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "The following are additional required disclosures: Ownership and material conflicts of interest: Goldman Sachs policy prohibits its analysts, professionals reporting to analysts and members of their households from owning securities of any company in the analyst's area of coverage. Analyst compensation: Analysts are paid in part based on the profitability of Goldman Sachs, which includes investment banking revenues. Analyst as officer or director: Goldman Sachs policy generally prohibits its analysts, persons reporting to analysts or members of their households from serving as an ",
+        "bbox": [
+            81,
+            880,
+            911,
+            926
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "header",
+        "text": "Goldman Sachs ",
+        "bbox": [
+            81,
+            6,
+            184,
+            18
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "header",
+        "text": "Americas Technology: Semiconductors ",
+        "bbox": [
+            661,
+            9,
+            916,
+            21
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "footer",
+        "text": "4 May 2026 ",
+        "bbox": [
+            81,
+            954,
+            151,
+            966
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "page_number",
+        "text": "4 ",
+        "bbox": [
+            906,
+            954,
+            916,
+            963
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "officer, director or advisor of any company in the analyst's area of coverage. Non-U.S. Analysts: Non-U.S. analysts may not be associated persons of Goldman Sachs & Co. LLC and therefore may not be subject to FINRA Rule 2241 or FINRA Rule 2242 restrictions on communications with a subject company, public appearances and trading in securities covered by the analysts. ",
+        "bbox": [
+            78,
+            41,
+            903,
+            76
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "Distribution of ratings: See the distribution of ratings disclosure above. Price chart: See the price chart, with changes of ratings and price targets in prior periods, above, or, if electronic format or if with respect to multiple companies which are the subject of this report, on the Goldman Sachs website at https://www.gs.com/research/hedge.html. ",
+        "bbox": [
+            78,
+            81,
+            916,
+            115
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "Additional disclosures required under the laws and regulations of jurisdictions other than the United States ",
+        "text_level": 1,
+        "bbox": [
+            81,
+            128,
+            872,
+            141
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "The following disclosures are those required by the jurisdiction indicated, except to the extent already made above pursuant to United States laws and regulations. Australia: Goldman Sachs Australia Pty Ltd and its affiliates are not authorised deposit-taking institutions (as that term is defined in the Banking Act 1959 (Cth)) in Australia and do not provide banking services, nor carry on a banking business, in Australia. This research, and any access to it, is intended only for “wholesale clients” within the meaning of the Australian Corporations Act, unless otherwise agreed by Goldman Sachs. In producing research reports, members of Global Investment Research of Goldman Sachs Australia may attend site visits and other meetings hosted by the companies and other entities which are the subject of its research reports. In some instances the costs of such site visits or meetings may be met in part or in whole by the issuers concerned if Goldman Sachs Australia considers it is appropriate and reasonable in the specific circumstances relating to the site visit or meeting. To the extent that the contents of this document contains any financial product advice, it is general advice only and has been prepared by Goldman Sachs without taking into account a client’s objectives, financial situation or needs. A client should, before acting on any such advice, consider the appropriateness of the advice having regard to the client’s own objectives, financial situation and needs. A copy of certain Goldman Sachs Australia and New Zealand disclosure of interests and a copy of Goldman Sachs’ Australian Sell-Side Research Independence Policy Statement are available at: https://www.goldmansachs.com/disclosures/australia-new-zealand/index.html. Brazil: Disclosure information in relation to CVM Resolution n. 20 is available at https://www.gs.com/worldwide/brazil/area/gir/index.html. Where applicable, the Brazil-registered analyst primarily responsible for the content of this research report, as defined in Article 20 of CVM Resolution n. 20, is the first author named at the beginning of this report, unless indicated otherwise at the end of the text. Canada: This information is being provided to you for information purposes only and is not, and under no circumstances should be construed as, an advertisement, offering or solicitation by Goldman Sachs & Co. LLC for purchasers of securities in Canada to trade in any Canadian security. Goldman Sachs & Co. LLC is not registered as a dealer in any jurisdiction in Canada under applicable Canadian securities laws and generally is not permitted to trade in Canadian securities and may be prohibited from selling certain securities and products in certain jurisdictions in Canada. If you wish to trade in any Canadian securities or other products in Canada please contact Goldman Sachs Canada Inc., an affiliate of The Goldman Sachs Group Inc., or another registered Canadian dealer. Hong Kong: Further information on the securities of covered companies referred to in this research may be obtained on request from Goldman Sachs (Asia) L.L.C. India: Further information on the subject company or companies referred to in this research may be obtained from Goldman Sachs (India) Securities Private Limited, Research Analyst - SEBI Registration Number INH000001493, 10th Floor, Ascent-Worli, Sudam Kalu Ahire Marg, Worli, Mumbai-400 025, India, Corporate Identity Number U74140MH2006FTC160634, Phone +91 22 6616 9000, Fax +91 22 6616 9001. Goldman Sachs may beneficially own 1% or more of the securities (as such term is defined in clause 2 (h) the Indian Securities Contracts (Regulation) Act, 1956) of the subject company or companies referred to in this research report. Investment in securities market are subject to market risks. Read all the related documents carefully before investing. Registration granted by SEBI and certification from NISM in no way guarantee performance of the intermediary or provide any assurance of returns to investors. Goldman Sachs (India) Securities Private Limited compliance officer and investor grievance contact details can be found at: https://www.goldmansachs.com/worldwide/india/documents/Grievance-Redressal-and-Escalation-Matrix.pdf, and a copy of the annual audit compliance report can be found at this link: https://publishing.gs.com/content/site/india-annual-compliance-report.html. Japan: See below. Korea: This research, and any access to it, is intended only for “professional investors” within the meaning of the Financial Services and Capital Markets Act, unless otherwise agreed by Goldman Sachs. Further information on the subject company or companies referred to in this research may be obtained from Goldman Sachs (Asia) L.L.C., Seoul Branch. New Zealand: Goldman Sachs New Zealand Limited and its affiliates are neither “registered banks” nor “deposit takers” (as defined in the Reserve Bank of New Zealand Act 1989) in New Zealand. This research, and any access to it, is intended for “wholesale clients” (as defined in the Financial Advisers Act 2008) unless otherwise agreed by Goldman Sachs. A copy of certain Goldman Sachs Australia and New Zealand disclosure of interests is available at: https://www.goldmansachs.com/disclosures/australia-new-zealand/index.html. Russia: Research reports distributed in the Russian Federation are not advertising as defined in the Russian legislation, but are information and analysis not having product promotion as their main purpose and do not provide appraisal within the meaning of the Russian legislation on appraisal activity. Research reports do not constitute a personalized investment recommendation as defined in Russian laws and regulations, are not addressed to a specific client, and are prepared without analyzing the financial circumstances, investment profiles or risk profiles of clients. Goldman Sachs assumes no responsibility for any investment decisions that may be taken by a client or any other person based on this research report. Singapore: Goldman Sachs (Singapore) Pte. (Company Number: 198602165W), which is regulated by the Monetary Authority of Singapore, accepts legal responsibility for this research, and should be contacted with respect to any matters arising from, or in connection with, this research. Taiwan: This material is for reference only and must not be reprinted without permission. Investors should carefully consider their own investment risk. Investment results are the responsibility of the individual investor. United Kingdom: Persons who would be categorized as retail clients in the United Kingdom, as such term is defined in the rules of the Financial Conduct Authority, should read this research in conjunction with prior Goldman Sachs research on the covered companies referred to herein and should refer to the risk warnings that have been sent to them by Goldman Sachs International. A copy of these risks warnings, and a glossary of certain financial terms used in this report, are available from Goldman Sachs International on request. ",
+        "bbox": [
+            81,
+            143,
+            916,
+            677
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "European Union and United Kingdom: Disclosure information in relation to Article 6 (2) of the European Commission Delegated Regulation (EU) (2016/958) supplementing Regulation (EU) No 596/2014 of the European Parliament and of the Council (including as that Delegated Regulation is implemented into United Kingdom domestic law and regulation following the United Kingdom's departure from the European Union and the European Economic Area) with regard to regulatory technical standards for the technical arrangements for objective presentation of investment recommendations or other information recommending or suggesting an investment strategy and for disclosure of particular interests or indications of conflicts of interest is available at https://www.gs.com/disclosures/europeanpolicy.html which states the European Policy for Managing Conflicts of Interest in Connection with Investment Research. ",
+        "bbox": [
+            81,
+            681,
+            908,
+            759
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "Japan: Goldman Sachs Japan Co., Ltd. is a Financial Instrument Dealer registered with the Kanto Financial Bureau under registration number Kinsho 69, and a member of Japan Securities Dealers Association, Financial Futures Association of Japan Type II Financial Instruments Firms Association, and Investment Management Association of Japan. Sales and purchase of equities are subject to commission pre-determined with clients plus consumption tax. See company-specific disclosures as to any applicable disclosures required by Japanese stock exchanges, the Japanese Securities Dealers Association or the Japanese Securities Finance Company. ",
+        "bbox": [
+            81,
+            766,
+            913,
+            823
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "Ratings, coverage universe and related definitions ",
+        "text_level": 1,
+        "bbox": [
+            81,
+            835,
+            450,
+            847
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "Buy (B), Neutral (N), Sell (S) Analysts recommend stocks as Buys or Sells for inclusion on various regional Investment Lists. Being assigned a Buy or Sell on an Investment List is determined by a stock's total return potential relative to its coverage universe. Any stock not assigned as a Buy or a Sell on an Investment List with an active rating (i.e., a stock that is not Rating Suspended, Not Rated, Early-Stage Biotech, Coverage Suspended or Not Covered), is deemed Neutral. Each region manages Regional Conviction Lists, which are selected from Buy rated stocks on the respective region's Investment Lists and represent investment recommendations focused on the size of the total return potential and/or the likelihood of the realization of the return across their respective areas of coverage. The addition or removal of stocks from such Conviction Lists are managed by the Investment Review Committee or other designated committee in each respective region and do not represent a change in the analysts' investment rating for such stocks. ",
+        "bbox": [
+            81,
+            849,
+            916,
+            927
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "header",
+        "text": "Goldman Sachs ",
+        "bbox": [
+            81,
+            6,
+            184,
+            18
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "header",
+        "text": "Americas Technology: Semiconductors ",
+        "bbox": [
+            661,
+            9,
+            916,
+            21
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "footer",
+        "text": "4 May 2026 ",
+        "bbox": [
+            81,
+            954,
+            151,
+            966
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "page_number",
+        "text": "5 ",
+        "bbox": [
+            906,
+            954,
+            915,
+            963
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "Total return potential represents the upside or downside differential between the current share price and the price target, including all paid or anticipated dividends, expected during the time horizon associated with the price target. Price targets are required for all covered stocks. The total return potential, price target and associated time horizon are stated in each report adding or reiterating an Investment List membership. ",
+        "bbox": [
+            81,
+            41,
+            890,
+            76
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "Coverage Universe: A list of all stocks in each coverage universe is available by primary analyst, stock and coverage universe at https://www.gs.com/research/hedge.html. ",
+        "bbox": [
+            81,
+            82,
+            779,
+            105
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "Not Rated (NR). The investment rating, target price and earnings estimates (where relevant) are removed pursuant to Goldman Sachs policy when Goldman Sachs is acting in an advisory capacity in a merger or in a strategic transaction involving this company, when there are legal, regulatory or policy constraints due to Goldman Sachs' involvement in a transaction, and in certain other circumstances. Early-Stage Biotech (ES). An investment rating and a target price are not assigned pursuant to Goldman Sachs policy when this company has neither a drug, treatment or medical device that has passed a Phase II clinical trial nor a license to distribute a post-Phase II drug, treatment or medical device. Rating Suspended (RS). Goldman Sachs Research has suspended the investment rating and price target for this stock, because there is not a sufficient fundamental basis for determining an investment rating or target price. The previous investment rating and target price, if any, are no longer in effect for this stock and should not be relied upon. Coverage Suspended (CS). Goldman Sachs has suspended coverage of this company. Not Covered (NC). Goldman Sachs does not cover this company. ",
+        "bbox": [
+            81,
+            110,
+            911,
+            212
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "Global product; distributing entities ",
+        "text_level": 1,
+        "bbox": [
+            81,
+            225,
+            349,
+            239
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "Goldman Sachs Global Investment Research produces and distributes research products for clients of Goldman Sachs on a global basis. Analysts based in Goldman Sachs offices around the world produce research on industries and companies, and research on macroeconomics, currencies, commodities and portfolio strategy. This research is disseminated in Australia by Goldman Sachs Australia Pty Ltd (ABN 21 006 797 897); in Brazil by Goldman Sachs do Brasil Corretora de Títulos e Valores Mobiliários S.A.; Public Communication Channel Goldman Sachs Brazil: 0800 727 5764 and / or contatogoldmanbrasil@gs.com. Available Weekdays (except holidays), from 9am to 6pm. Canal de Comunicação com o Público Goldman Sachs Brasil: 0800 727 5764 e/ou contatogoldmanbrasil@gs.com. Horário de funcionamento: segunda-feira à sexta-feira (exceto feriados), das 9h às 18h; in Canada by Goldman Sachs & Co. LLC; in Hong Kong by Goldman Sachs (Asia) L.L.C.; in India by Goldman Sachs (India) Securities Private Ltd.; in Japan by Goldman Sachs Japan Co., Ltd.; in the Republic of Korea by Goldman Sachs (Asia) L.L.C., Seoul Branch; in New Zealand by Goldman Sachs New Zealand Limited; in Russia by OOO Goldman Sachs; in Singapore by Goldman Sachs (Singapore) Pte. (Company Number: 198602165W); and in the United States of America by Goldman Sachs & Co. LLC. Goldman Sachs International has approved this research in connection with its distribution in the United Kingdom. ",
+        "bbox": [
+            81,
+            238,
+            916,
+            360
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "Goldman Sachs International (“GSI”), authorised by the Prudential Regulation Authority (“PRA”) and regulated by the Financial Conduct Authority (“FCA”) and the PRA, has approved this research in connection with its distribution in the United Kingdom. ",
+        "bbox": [
+            81,
+            367,
+            879,
+            390
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "European Economic Area: Goldman Sachs Bank Europe SE (“GSBE”) is a credit institution incorporated in Germany and, within the Single Supervisory Mechanism, subject to direct prudential supervision by the European Central Bank and in other respects supervised by German Federal Financial Supervisory Authority (Bundesanstalt für Finanzdienstleistungsaufsicht, BaFin) and Deutsche Bundesbank and disseminates research within the European Economic Area. ",
+        "bbox": [
+            81,
+            396,
+            903,
+            442
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "General disclosures ",
+        "text_level": 1,
+        "bbox": [
+            81,
+            454,
+            228,
+            467
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "This research is for our clients only. Other than disclosures relating to Goldman Sachs, this research is based on current public information that we consider reliable, but we do not represent it is accurate or complete, and it should not be relied on as such. The information, opinions, estimates and forecasts contained herein are as of the date hereof and are subject to change without prior notification. We seek to update our research as appropriate, but various regulations may prevent us from doing so. Other than certain industry reports published on a periodic basis, the large majority of reports are published at irregular intervals as appropriate in the analyst's judgment. ",
+        "bbox": [
+            81,
+            467,
+            911,
+            524
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "Goldman Sachs conducts a global full-service, integrated investment banking, investment management, and brokerage business. We have investment banking and other business relationships with a substantial percentage of the companies covered by Global Investment Research. Goldman Sachs & Co. LLC, the United States broker dealer, is a member of SIPC (https://www.sipc.org). ",
+        "bbox": [
+            81,
+            530,
+            913,
+            565
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "Our salespeople, traders, and other professionals may provide oral or written market commentary or trading strategies to our clients and principal trading desks that reflect opinions that are contrary to the opinions expressed in this research. Our asset management area, principal trading desks and investing businesses may make investment decisions that are inconsistent with the recommendations or views expressed in this research. ",
+        "bbox": [
+            81,
+            570,
+            915,
+            605
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "The analysts named in this report may have from time to time discussed with our clients, including Goldman Sachs salespersons and traders, or may discuss in this report, trading strategies that reference catalysts or events that may have a near-term impact on the market price of the equity securities discussed in this report, which impact may be directionally counter to the analyst's published price target expectations for such stocks. Any such trading strategies are distinct from and do not affect the analyst's fundamental equity rating for such stocks, which rating reflects a stock's return potential relative to its coverage universe as described herein. ",
+        "bbox": [
+            81,
+            610,
+            915,
+            667
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "We and our affiliates, officers, directors, and employees will from time to time have long or short positions in, act as principal in, and buy or sell, the securities or derivatives, if any, referred to in this research, unless otherwise prohibited by regulation or Goldman Sachs policy. ",
+        "bbox": [
+            81,
+            673,
+            888,
+            697
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "The views attributed to third party presenters at Goldman Sachs arranged conferences, including individuals from other parts of Goldman Sachs, do not necessarily reflect those of Global Investment Research and are not an official view of Goldman Sachs. ",
+        "bbox": [
+            81,
+            703,
+            915,
+            726
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "Any third party referenced herein, including any salespeople, traders and other professionals or members of their household, may have positions in the products mentioned that are inconsistent with the views expressed by analysts named in this report. ",
+        "bbox": [
+            81,
+            733,
+            911,
+            757
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "This research is not an offer to sell or the solicitation of an offer to buy any security in any jurisdiction where such an offer or solicitation would be illegal. It does not constitute a personal recommendation or take into account the particular investment objectives, financial situations, or needs of individual clients. Clients should consider whether any advice or recommendation in this research is suitable for their particular circumstances and, if appropriate, seek professional advice, including tax advice. The price and value of investments referred to in this research and the income from them may fluctuate. Past performance is not a guide to future performance, future returns are not guaranteed, and a loss of original capital may occur. Fluctuations in exchange rates could have adverse effects on the value or price of, or income derived from, certain investments. ",
+        "bbox": [
+            81,
+            762,
+            915,
+            829
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "Certain transactions, including those involving futures, options, and other derivatives, give rise to substantial risk and are not suitable for all investors. Investors should review current options and futures disclosure documents which are available from Goldman Sachs sales representatives or at https://www.theocc.com/about/publications/character-risks.jsp and https://www.goldmansachs.com/disclosures/cftc\\_fcm\\_disclosures. Transaction costs may be significant in option strategies calling for multiple purchase and sales of options such as spreads. Supporting documentation will be supplied upon request. ",
+        "bbox": [
+            81,
+            836,
+            903,
+            893
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "Differing Levels of Service provided by Global Investment Research: The level and types of services provided to you by Goldman Sachs Global Investment Research may vary as compared to that provided to internal and other external clients of GS, depending on various factors including your individual preferences as to the frequency and manner of receiving communication, your risk profile and investment focus and perspective (e.g., marketwide, sector specific, long term, short term), the size and scope of your overall client relationship with GS, and legal and regulatory constraints. As an example, certain clients may request to receive notifications when research on specific securities is published, and certain clients may request that specific data underlying analysts' fundamental analysis available on our internal client websites be delivered to them electronically through data feeds or otherwise. No change to an analyst's fundamental research views (e.g., ratings, price targets, or material changes to earnings estimates for equity securities), will be communicated to any client prior to inclusion of such information in a research report broadly disseminated through electronic publication to our internal client websites or through other means, as necessary, to all clients who are entitled to receive such reports. ",
+        "bbox": [
+            81,
+            899,
+            898,
+            923
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "header",
+        "text": "Goldman Sachs ",
+        "bbox": [
+            81,
+            7,
+            184,
+            18
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "header",
+        "text": "Americas Technology: Semiconductors ",
+        "bbox": [
+            661,
+            9,
+            916,
+            21
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "footer",
+        "text": "4 May 2026 ",
+        "bbox": [
+            81,
+            954,
+            151,
+            966
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "page_number",
+        "text": "6 ",
+        "bbox": [
+            906,
+            954,
+            916,
+            963
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            78,
+            41,
+            903,
+            119
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "All research reports are disseminated and available to all clients simultaneously through electronic publication to our internal client websites. Not all research content is redistributed to our clients or available to third-party aggregators, nor is Goldman Sachs responsible for the redistribution of our research by third party aggregators. For research, models or other data related to one or more securities, markets or asset classes (including related services) that may be available to you, please contact your GS representative or go to https://research.gs.com. ",
+        "bbox": [
+            78,
+            126,
+            897,
+            172
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "Disclosure information is also available at https://www.gs.com/research/hedge.html or from Research Compliance, 200 West Street, New York, NY 10282. ",
+        "bbox": [
+            78,
+            177,
+            888,
+            201
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "© 2026 Goldman Sachs. ",
+        "text_level": 1,
+        "bbox": [
+            80,
+            207,
+            220,
+            219
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "You are permitted to store, display, analyze, modify, reformat, and print the information made available to you via this service only for your own use. You may not resell or reverse engineer this information to calculate or develop any index for disclosure and/or marketing or create any other derivative works or commercial product(s), data or offering(s) without the express written consent of Goldman Sachs. You are not permitted to publish, transmit, or otherwise reproduce this information, in whole or in part, in any format to any third party without the express written consent of Goldman Sachs. This foregoing restriction includes, without limitation, using, extracting, downloading or retrieving this information, in whole or in part, to train or finetune a machine learning or artificial intelligence system, or to provide or reproduce this information, in whole or in part, as a prompt or input to any such system. ",
+        "bbox": [
+            78,
+            225,
+            911,
+            305
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "header",
+        "text": "Goldman Sachs ",
+        "bbox": [
+            81,
+            6,
+            184,
+            18
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "header",
+        "text": "Americas Technology: Semiconductors ",
+        "bbox": [
+            661,
+            9,
+            916,
+            21
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "footer",
+        "text": "4 May 2026 ",
+        "bbox": [
+            81,
+            954,
+            151,
+            966
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "page_number",
+        "text": "7 ",
+        "bbox": [
+            906,
+            954,
+            916,
+            963
+        ],
+        "page_idx": 6
+    }
+]

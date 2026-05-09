@@ -14,7 +14,7 @@
       "assets/xhs_card_07.png",
       "assets/xhs_card_08.png"
     ],
-    "cover_short_title": "DeepSeek 生",
+    "cover_short_title": "芯片出货量超季节反弹",
     "cover_subtitle": "研报重点一图看懂",
     "cover": "assets/cover.png",
     "wechat_article": "wechat_article.md",
@@ -23,7 +23,10 @@
       "assets/source_image_02.jpg",
       "assets/source_image_03.jpg"
     ],
-    "podcast_script": "podcast_zh_en_script.txt",
-    "podcast_audio": "podcast_zh_en.wav"
+    "podcast_script": "podcast_script.txt",
+    "podcast_zh_audio": "podcast_zh.wav",
+    "podcast_zh_video": "podcast_zh.mp4",
+    "podcast_en_audio": "podcast_en.wav",
+    "podcast_en_video": "podcast_en.mp4"
   }
 ]
