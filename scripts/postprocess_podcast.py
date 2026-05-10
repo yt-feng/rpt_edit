@@ -3,9 +3,10 @@
 
 Adds:
 1. WeChat markdown image refs using original MinerU/source images.
-2. Conversational Chinese and English podcast scripts.
-3. Separate Chinese/English WAV files.
-4. Separate Chinese/English MP4 videos with original MinerU charts and bottom subtitles.
+2. English long-form article.
+3. Conversational Chinese and English podcast scripts.
+4. Separate Chinese/English WAV files with light A/B voice variation.
+5. Separate vertical Chinese/English MP4 videos with original MinerU charts and highlighted bottom subtitles.
 """
 from __future__ import annotations
 
@@ -24,9 +25,13 @@ from typing import Any
 import requests
 from PIL import Image, ImageDraw, ImageFont, ImageOps
 
-VIDEO_SIZE = (1280, 720)
+VIDEO_SIZE = (1080, 1440)
 VIDEO_BG = (9, 31, 64)
 VIDEO_FPS = 24
+HIGHLIGHT_TERMS = [
+    "AI", "人工智能", "GPU", "数据", "需求", "供给", "利润", "现金流", "估值", "拐点", "竞争", "壁垒", "渠道", "成本", "规模",
+    "margin", "growth", "demand", "supply", "pricing", "competition", "cash flow", "valuation", "inflection", "moat", "risk",
+]
 
 
 def log(message: str) -> None:
@@ -59,16 +64,11 @@ def call_deepseek(prompt: str, args: argparse.Namespace, label: str) -> str:
         "model": args.model,
         "temperature": 0.72,
         "messages": [
-            {"role": "system", "content": "你是专业财经播客制作人，输出必须可直接朗读和制作视频。"},
+            {"role": "system", "content": "你是专业财经内容制作人，输出必须可直接发布、朗读和制作视频。"},
             {"role": "user", "content": prompt},
         ],
     }
-    response = requests.post(
-        url,
-        headers={"Content-Type": "application/json", "Authorization": f"Bearer {api_key}"},
-        json=payload,
-        timeout=180,
-    )
+    response = requests.post(url, headers={"Content-Type": "application/json", "Authorization": f"Bearer {api_key}"}, json=payload, timeout=180)
     data = parse_json_response(response, f"DeepSeek generate {label}")
     return data["choices"][0]["message"]["content"].strip() + "\n"
 
@@ -89,6 +89,14 @@ def build_podcast_prompt(template_path: Path, source_text: str, args: argparse.N
     )
 
 
+def build_english_article_prompt(template_path: Path, source_text: str, args: argparse.Namespace) -> str:
+    return template_path.read_text(encoding="utf-8").format(
+        target_length=args.english_article_length,
+        community_cta=args.english_community_cta,
+        source_text=trim_source_text(source_text, args.english_article_prompt_chars),
+    )
+
+
 def find_original_images(item_dir: Path) -> list[str]:
     assets_dir = item_dir / "assets"
     if not assets_dir.exists():
@@ -104,13 +112,13 @@ def find_original_images(item_dir: Path) -> list[str]:
     return [p.relative_to(item_dir).as_posix() for p in xhs_fallback]
 
 
-def embed_original_images(article: str, image_paths: list[str], max_images: int = 3) -> str:
+def embed_original_images(article: str, image_paths: list[str], max_images: int = 3, alt: str = "研报原图") -> str:
     clean = [p for p in image_paths if p.lower().endswith((".png", ".jpg", ".jpeg", ".webp"))]
     if not clean:
         return article
     article = re.sub(r"\n?!\[研报图表 \d+\]\(assets/xhs_card_\d+\.png\)\n?", "\n", article)
-    article = re.sub(r"\n?!\[研报原图 \d+\]\(assets/[^\)]+\)\n?", "\n", article)
-    images = [f"\n![研报原图 {i}]({path})\n" for i, path in enumerate(clean[:max_images], 1)]
+    article = re.sub(r"\n?!\[(?:研报原图|Report chart) \d+\]\(assets/[^\)]+\)\n?", "\n", article)
+    images = [f"\n![{alt} {i}]({path})\n" for i, path in enumerate(clean[:max_images], 1)]
     lines = article.strip().splitlines()
     h2_indices = [idx for idx, line in enumerate(lines) if line.startswith("## ")]
     if h2_indices:
@@ -145,6 +153,32 @@ def wav_duration(path: Path) -> float:
         return src.getnframes() / float(src.getframerate())
 
 
+def wav_rate(path: Path) -> int:
+    with wave.open(str(path), "rb") as src:
+        return int(src.getframerate())
+
+
+def run_ffmpeg(cmd: list[str], timeout: int = 600) -> None:
+    result = subprocess.run(cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE, timeout=timeout)
+    if result.returncode != 0:
+        raise RuntimeError(result.stderr.decode("utf-8", errors="ignore")[-1000:])
+
+
+def apply_voice_variation(segment: Path, speaker: str) -> Path:
+    """Create a light A/B voice difference without downloading extra voice models."""
+    if not speaker.endswith("_B") or not shutil.which("ffmpeg"):
+        return segment
+    rate = wav_rate(segment)
+    shifted = segment.with_name(segment.stem + "_voice_b.wav")
+    # Slightly lower/deeper B voice, then restore nominal sample rate. This is subtle but avoids same-voice monotony.
+    run_ffmpeg([
+        "ffmpeg", "-y", "-i", str(segment),
+        "-af", f"asetrate={int(rate * 0.94)},aresample={rate},atempo=1.06,volume=0.96",
+        str(shifted),
+    ], timeout=120)
+    return shifted
+
+
 def combine_wavs(segment_paths: list[Path], output_path: Path, silence_ms: int = 280) -> None:
     if not segment_paths:
         raise RuntimeError("No podcast audio segments were generated.")
@@ -173,19 +207,14 @@ def render_language_audio(rows: list[tuple[str, str]], output_path: Path, model_
         cursor = 0.0
         for idx, (speaker, text) in enumerate(rows[:160], 1):
             segment = tmp_dir / f"segment_{idx:03d}.wav"
-            result = subprocess.run(
-                [piper_bin, "--model", str(model_path), "--output_file", str(segment)],
-                input=text.encode("utf-8"),
-                stdout=subprocess.PIPE,
-                stderr=subprocess.PIPE,
-                timeout=120,
-            )
+            result = subprocess.run([piper_bin, "--model", str(model_path), "--output_file", str(segment)], input=text.encode("utf-8"), stdout=subprocess.PIPE, stderr=subprocess.PIPE, timeout=120)
             if result.returncode != 0:
                 raise RuntimeError(f"Piper failed on segment {idx}: {result.stderr.decode('utf-8', errors='ignore')[:500]}")
-            dur = wav_duration(segment)
+            final_segment = apply_voice_variation(segment, speaker)
+            dur = wav_duration(final_segment)
             timeline.append({"speaker": speaker, "text": text, "start": round(cursor, 3), "end": round(cursor + dur, 3)})
             cursor += dur + 0.28
-            segment_paths.append(segment)
+            segment_paths.append(final_segment)
         combine_wavs(segment_paths, output_path)
     return timeline
 
@@ -202,36 +231,64 @@ def load_font(size: int):
     return ImageFont.load_default()
 
 
+def wrap_subtitle(text: str) -> list[str]:
+    if re.search(r"[\u4e00-\u9fff]", text):
+        # CJK wrapping by visual length, keeping it short for vertical video.
+        return [text[i : i + 18] for i in range(0, len(text), 18)][:4]
+    return textwrap.wrap(text, width=36)[:4]
+
+
+def split_highlight_chunks(line: str) -> list[tuple[str, bool]]:
+    pattern = "|".join(re.escape(t) for t in sorted(HIGHLIGHT_TERMS, key=len, reverse=True))
+    if not pattern:
+        return [(line, False)]
+    chunks: list[tuple[str, bool]] = []
+    pos = 0
+    for match in re.finditer(pattern, line, flags=re.IGNORECASE):
+        if match.start() > pos:
+            chunks.append((line[pos : match.start()], False))
+        chunks.append((match.group(0), True))
+        pos = match.end()
+    if pos < len(line):
+        chunks.append((line[pos:], False))
+    return chunks or [(line, False)]
+
+
+def draw_highlighted_center(draw: ImageDraw.ImageDraw, line: str, y: int, font: ImageFont.ImageFont) -> None:
+    chunks = split_highlight_chunks(line)
+    widths = [draw.textbbox((0, 0), chunk, font=font)[2] for chunk, _ in chunks]
+    x = (VIDEO_SIZE[0] - sum(widths)) // 2
+    for (chunk, highlight), width in zip(chunks, widths):
+        fill = (255, 214, 102) if highlight else (255, 255, 255)
+        draw.text((x, y), chunk, font=font, fill=fill)
+        x += width
+
+
 def make_video_frame(image_path: Path | None, subtitle: str, out_path: Path) -> None:
     canvas = Image.new("RGB", VIDEO_SIZE, VIDEO_BG)
     draw = ImageDraw.Draw(canvas)
     if image_path and image_path.exists():
         try:
             img = Image.open(image_path).convert("RGB")
-            img = ImageOps.contain(img, (1120, 455))
-            canvas.paste(img, ((VIDEO_SIZE[0] - img.width) // 2, 42))
+            img = ImageOps.contain(img, (960, 780))
+            card_x = (VIDEO_SIZE[0] - img.width) // 2
+            card_y = 90
+            draw.rounded_rectangle((card_x - 22, card_y - 22, card_x + img.width + 22, card_y + img.height + 22), radius=28, fill=(255, 255, 255))
+            canvas.paste(img, (card_x, card_y))
         except Exception as exc:
             log(f"Cannot draw video image {image_path}: {exc}")
-    subtitle_font = load_font(34)
-    speaker_font = load_font(26)
-    wrapped = textwrap.wrap(subtitle, width=34 if re.search(r"[\u4e00-\u9fff]", subtitle) else 58)
-    wrapped = wrapped[:3]
-    box_y = 520
-    draw.rounded_rectangle((70, box_y, 1210, 690), radius=24, fill=(0, 0, 0))
-    y = box_y + 22
+    subtitle_font = load_font(44)
+    speaker_font = load_font(30)
+    wrapped = wrap_subtitle(subtitle)
+    box_y = 1010
+    draw.rounded_rectangle((54, box_y, 1026, 1320), radius=30, fill=(0, 0, 0))
+    y = box_y + 38
     for line in wrapped:
-        bbox = draw.textbbox((0, 0), line, font=subtitle_font)
-        draw.text(((VIDEO_SIZE[0] - (bbox[2] - bbox[0])) // 2, y), line, fill=(255, 255, 255), font=subtitle_font)
-        y += 42
-    draw.text((92, 660), "Kris笔记 Podcast", fill=(190, 206, 226), font=speaker_font)
+        draw_highlighted_center(draw, line, y, subtitle_font)
+        y += 60
+    draw.text((76, 1358), "Kris笔记 Podcast", fill=(190, 206, 226), font=speaker_font)
     out_path.parent.mkdir(parents=True, exist_ok=True)
     canvas.save(out_path, quality=92)
-
-
-def run_ffmpeg(cmd: list[str]) -> None:
-    result = subprocess.run(cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE, timeout=600)
-    if result.returncode != 0:
-        raise RuntimeError(result.stderr.decode("utf-8", errors="ignore")[-1000:])
 
 
 def render_video(audio_path: Path, timeline: list[dict[str, Any]], image_paths: list[Path], output_path: Path) -> None:
@@ -270,7 +327,7 @@ def process_item(item_dir: Path, args: argparse.Namespace) -> dict[str, Any]:
     article_path = item_dir / "wechat_article.md"
     if article_path.exists() and image_paths:
         article = article_path.read_text(encoding="utf-8", errors="ignore")
-        article_path.write_text(embed_original_images(article, image_paths, max_images=args.max_wechat_images), encoding="utf-8")
+        article_path.write_text(embed_original_images(article, image_paths, max_images=args.max_wechat_images, alt="研报原图"), encoding="utf-8")
         status["wechat_images"] = image_paths[: args.max_wechat_images]
 
     source_path = item_dir / "source_mineru.md"
@@ -280,6 +337,19 @@ def process_item(item_dir: Path, args: argparse.Namespace) -> dict[str, Any]:
         return status
 
     source_text = source_path.read_text(encoding="utf-8", errors="ignore")
+
+    en_article_prompt = build_english_article_prompt(Path(args.english_article_prompt_template), source_text, args)
+    (item_dir / "prompt_for_wechat_en.md").write_text(en_article_prompt, encoding="utf-8")
+    try:
+        en_article = call_deepseek(en_article_prompt, args, "English WeChat-style article")
+    except Exception as exc:
+        en_article = f"DeepSeek generated English article failed: {exc}\n"
+        status["wechat_en_error"] = str(exc)
+    if image_paths:
+        en_article = embed_original_images(en_article, image_paths, max_images=args.max_wechat_images, alt="Report chart")
+    (item_dir / "wechat_article_en.md").write_text(en_article, encoding="utf-8")
+    status["wechat_article_en"] = "wechat_article_en.md"
+
     prompt = build_podcast_prompt(Path(args.podcast_prompt_template), source_text, args)
     (item_dir / "prompt_for_podcast.md").write_text(prompt, encoding="utf-8")
     try:
@@ -330,6 +400,10 @@ def main() -> int:
     parser.add_argument("--podcast-prompt-chars", type=int, default=26000)
     parser.add_argument("--generate-audio", default="true")
     parser.add_argument("--max-wechat-images", type=int, default=3)
+    parser.add_argument("--english-article-prompt-template", default="prompts/wechat_report_article_en_prompt.md")
+    parser.add_argument("--english-article-length", type=int, default=2200)
+    parser.add_argument("--english-article-prompt-chars", type=int, default=26000)
+    parser.add_argument("--english-community-cta", default="Join the community to read the full report and review the original charts.")
     parser.add_argument("--piper-binary", default="piper")
     parser.add_argument("--piper-zh-model", default=".piper-voices/zh_CN-huayan-medium.onnx")
     parser.add_argument("--piper-en-model", default=".piper-voices/en_US-lessac-medium.onnx")
