@@ -5,8 +5,8 @@ Adds:
 1. WeChat markdown image refs using original MinerU/source images.
 2. English long-form article.
 3. Conversational Chinese and English podcast scripts.
-4. Separate Chinese/English WAV files with light A/B voice variation.
-5. Separate vertical Chinese/English MP4 videos with original MinerU charts and highlighted bottom subtitles.
+4. Separate Chinese/English WAV files.
+5. Separate vertical Chinese/English MP4 videos with original MinerU charts, video title, and DeepSeek-selected subtitle highlights.
 """
 from __future__ import annotations
 
@@ -16,6 +16,7 @@ import os
 import re
 import shutil
 import subprocess
+import sys
 import tempfile
 import textwrap
 import wave
@@ -28,10 +29,6 @@ from PIL import Image, ImageDraw, ImageFont, ImageOps
 VIDEO_SIZE = (1080, 1440)
 VIDEO_BG = (9, 31, 64)
 VIDEO_FPS = 24
-HIGHLIGHT_TERMS = [
-    "AI", "人工智能", "GPU", "数据", "需求", "供给", "利润", "现金流", "估值", "拐点", "竞争", "壁垒", "渠道", "成本", "规模",
-    "margin", "growth", "demand", "supply", "pricing", "competition", "cash flow", "valuation", "inflection", "moat", "risk",
-]
 
 
 def log(message: str) -> None:
@@ -133,6 +130,16 @@ def embed_original_images(article: str, image_paths: list[str], max_images: int 
     return "\n".join(lines).strip() + "\n"
 
 
+def extract_markdown_title(path: Path, fallback: str) -> str:
+    if not path.exists():
+        return fallback
+    for raw in path.read_text(encoding="utf-8", errors="ignore").splitlines():
+        line = raw.strip()
+        if line.startswith("# "):
+            return re.sub(r"^#+\s*", "", line).strip()[:42] or fallback
+    return fallback
+
+
 def parse_script(script: str, prefixes: tuple[str, ...]) -> list[tuple[str, str]]:
     rows: list[tuple[str, str]] = []
     prefix_pattern = "|".join(re.escape(p) for p in prefixes)
@@ -161,16 +168,15 @@ def wav_rate(path: Path) -> int:
 def run_ffmpeg(cmd: list[str], timeout: int = 600) -> None:
     result = subprocess.run(cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE, timeout=timeout)
     if result.returncode != 0:
-        raise RuntimeError(result.stderr.decode("utf-8", errors="ignore")[-1000:])
+        raise RuntimeError(result.stderr.decode("utf-8", errors="ignore")[-1200:])
 
 
 def apply_voice_variation(segment: Path, speaker: str) -> Path:
-    """Create a light A/B voice difference without downloading extra voice models."""
+    """Create a light A/B voice difference for Piper without downloading extra voice models."""
     if not speaker.endswith("_B") or not shutil.which("ffmpeg"):
         return segment
     rate = wav_rate(segment)
     shifted = segment.with_name(segment.stem + "_voice_b.wav")
-    # Slightly lower/deeper B voice, then restore nominal sample rate. This is subtle but avoids same-voice monotony.
     run_ffmpeg([
         "ffmpeg", "-y", "-i", str(segment),
         "-af", f"asetrate={int(rate * 0.94)},aresample={rate},atempo=1.06,volume=0.96",
@@ -194,7 +200,7 @@ def combine_wavs(segment_paths: list[Path], output_path: Path, silence_ms: int =
                 out.writeframes(silence)
 
 
-def render_language_audio(rows: list[tuple[str, str]], output_path: Path, model_path: Path, args: argparse.Namespace) -> list[dict[str, Any]]:
+def render_language_audio_piper(rows: list[tuple[str, str]], output_path: Path, model_path: Path, args: argparse.Namespace) -> list[dict[str, Any]]:
     piper_bin = shutil.which(args.piper_binary)
     if not piper_bin:
         raise RuntimeError("piper CLI not found. Make sure workflow installed piper-tts.")
@@ -219,6 +225,59 @@ def render_language_audio(rows: list[tuple[str, str]], output_path: Path, model_
     return timeline
 
 
+def edge_voice_for_speaker(speaker: str, args: argparse.Namespace) -> str:
+    if speaker == "ZH_A":
+        return args.edge_zh_a_voice
+    if speaker == "ZH_B":
+        return args.edge_zh_b_voice
+    if speaker == "EN_A":
+        return args.edge_en_a_voice
+    if speaker == "EN_B":
+        return args.edge_en_b_voice
+    return args.edge_zh_a_voice if speaker.startswith("ZH") else args.edge_en_a_voice
+
+
+def run_edge_tts(text: str, voice: str, out_mp3: Path) -> None:
+    edge_bin = shutil.which("edge-tts")
+    if edge_bin:
+        cmd = [edge_bin, "--voice", voice, "--text", text, "--write-media", str(out_mp3)]
+    else:
+        cmd = [sys.executable, "-m", "edge_tts", "--voice", voice, "--text", text, "--write-media", str(out_mp3)]
+    result = subprocess.run(cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE, timeout=180)
+    if result.returncode != 0:
+        raise RuntimeError(f"edge-tts failed: {result.stderr.decode('utf-8', errors='ignore')[:700]}")
+
+
+def render_language_audio_edge(rows: list[tuple[str, str]], output_path: Path, args: argparse.Namespace) -> list[dict[str, Any]]:
+    if not shutil.which("ffmpeg"):
+        raise RuntimeError("ffmpeg is required to convert edge-tts mp3 output to wav.")
+    timeline: list[dict[str, Any]] = []
+    with tempfile.TemporaryDirectory(prefix="edge_segments_") as tmp:
+        tmp_dir = Path(tmp)
+        segment_paths: list[Path] = []
+        cursor = 0.0
+        for idx, (speaker, text) in enumerate(rows[:160], 1):
+            mp3 = tmp_dir / f"segment_{idx:03d}.mp3"
+            wav = tmp_dir / f"segment_{idx:03d}.wav"
+            run_edge_tts(text, edge_voice_for_speaker(speaker, args), mp3)
+            run_ffmpeg(["ffmpeg", "-y", "-i", str(mp3), "-ar", "24000", "-ac", "1", str(wav)], timeout=120)
+            dur = wav_duration(wav)
+            timeline.append({"speaker": speaker, "text": text, "start": round(cursor, 3), "end": round(cursor + dur, 3)})
+            cursor += dur + 0.28
+            segment_paths.append(wav)
+        combine_wavs(segment_paths, output_path)
+    return timeline
+
+
+def render_language_audio(rows: list[tuple[str, str]], output_path: Path, model_path: Path, args: argparse.Namespace) -> list[dict[str, Any]]:
+    engine = args.tts_engine.lower().strip()
+    if engine == "edge":
+        return render_language_audio_edge(rows, output_path, args)
+    if engine == "piper":
+        return render_language_audio_piper(rows, output_path, model_path, args)
+    raise RuntimeError(f"Unknown tts engine: {args.tts_engine}")
+
+
 def load_font(size: int):
     candidates = [
         "/usr/share/fonts/opentype/noto/NotoSansCJK-Regular.ttc",
@@ -233,15 +292,69 @@ def load_font(size: int):
 
 def wrap_subtitle(text: str) -> list[str]:
     if re.search(r"[\u4e00-\u9fff]", text):
-        # CJK wrapping by visual length, keeping it short for vertical video.
         return [text[i : i + 18] for i in range(0, len(text), 18)][:4]
     return textwrap.wrap(text, width=36)[:4]
 
 
-def split_highlight_chunks(line: str) -> list[tuple[str, bool]]:
-    pattern = "|".join(re.escape(t) for t in sorted(HIGHLIGHT_TERMS, key=len, reverse=True))
-    if not pattern:
+def wrap_title(text: str) -> list[str]:
+    if re.search(r"[\u4e00-\u9fff]", text):
+        return [text[i : i + 15] for i in range(0, len(text), 15)][:2]
+    return textwrap.wrap(text, width=31)[:2]
+
+
+def parse_json_array(text: str) -> Any:
+    text = text.strip()
+    try:
+        return json.loads(text)
+    except Exception:
+        pass
+    match = re.search(r"(\[.*\]|\{.*\})", text, flags=re.S)
+    if not match:
+        raise ValueError("No JSON object or array found")
+    return json.loads(match.group(1))
+
+
+def generate_highlights(rows: list[tuple[str, str]], args: argparse.Namespace, lang: str) -> dict[int, list[str]]:
+    if not rows:
+        return {}
+    payload = [{"i": i, "text": text} for i, (_speaker, text) in enumerate(rows)]
+    prompt = f"""
+你是短视频财经字幕编辑。请为每一句字幕挑选 0-2 个最值得高亮的短语。
+要求：
+- 只返回 JSON 数组，不要解释。
+- 每项格式：{{"i": 0, "phrases": ["短语1", "短语2"]}}
+- phrases 必须是原句中连续出现的原文短语，不能改写。
+- 不要高亮泛词；优先选择核心资产、行业变量、关键判断、风险变量、拐点、估值/利润/现金流等。
+- 每个短语尽量 2-8 个中文字符或 1-4 个英文单词。
+- 如果一句没有值得高亮的内容，phrases 为空数组。
+语言：{lang}
+字幕数据：
+{json.dumps(payload[:120], ensure_ascii=False)}
+""".strip()
+    try:
+        raw = call_deepseek(prompt, args, f"{lang} subtitle highlights")
+        data = parse_json_array(raw)
+        result: dict[int, list[str]] = {}
+        if isinstance(data, dict):
+            data = data.get("items", [])
+        for item in data:
+            if not isinstance(item, dict):
+                continue
+            idx = int(item.get("i", -1))
+            phrases = [str(p).strip() for p in item.get("phrases", []) if str(p).strip()]
+            if idx >= 0:
+                result[idx] = phrases[:2]
+        return result
+    except Exception as exc:
+        log(f"DeepSeek highlight generation failed for {lang}: {exc}")
+        return {}
+
+
+def split_highlight_chunks(line: str, phrases: list[str]) -> list[tuple[str, bool]]:
+    phrases = [p for p in phrases if p and p in line]
+    if not phrases:
         return [(line, False)]
+    pattern = "|".join(re.escape(t) for t in sorted(phrases, key=len, reverse=True))
     chunks: list[tuple[str, bool]] = []
     pos = 0
     for match in re.finditer(pattern, line, flags=re.IGNORECASE):
@@ -254,8 +367,8 @@ def split_highlight_chunks(line: str) -> list[tuple[str, bool]]:
     return chunks or [(line, False)]
 
 
-def draw_highlighted_center(draw: ImageDraw.ImageDraw, line: str, y: int, font: ImageFont.ImageFont) -> None:
-    chunks = split_highlight_chunks(line)
+def draw_highlighted_center(draw: ImageDraw.ImageDraw, line: str, y: int, font: ImageFont.ImageFont, phrases: list[str]) -> None:
+    chunks = split_highlight_chunks(line, phrases)
     widths = [draw.textbbox((0, 0), chunk, font=font)[2] for chunk, _ in chunks]
     x = (VIDEO_SIZE[0] - sum(widths)) // 2
     for (chunk, highlight), width in zip(chunks, widths):
@@ -264,34 +377,43 @@ def draw_highlighted_center(draw: ImageDraw.ImageDraw, line: str, y: int, font: 
         x += width
 
 
-def make_video_frame(image_path: Path | None, subtitle: str, out_path: Path) -> None:
+def make_video_frame(image_path: Path | None, subtitle: str, title: str, out_path: Path, highlight_phrases: list[str]) -> None:
     canvas = Image.new("RGB", VIDEO_SIZE, VIDEO_BG)
     draw = ImageDraw.Draw(canvas)
+    title_font = load_font(44)
+    subtitle_font = load_font(44)
+    speaker_font = load_font(30)
+
+    y_title = 54
+    for line in wrap_title(title):
+        bbox = draw.textbbox((0, 0), line, font=title_font)
+        draw.text(((VIDEO_SIZE[0] - (bbox[2] - bbox[0])) // 2, y_title), line, fill=(255, 255, 255), font=title_font)
+        y_title += 56
+
     if image_path and image_path.exists():
         try:
             img = Image.open(image_path).convert("RGB")
-            img = ImageOps.contain(img, (960, 780))
+            img = ImageOps.contain(img, (960, 700))
             card_x = (VIDEO_SIZE[0] - img.width) // 2
-            card_y = 90
+            card_y = 195
             draw.rounded_rectangle((card_x - 22, card_y - 22, card_x + img.width + 22, card_y + img.height + 22), radius=28, fill=(255, 255, 255))
             canvas.paste(img, (card_x, card_y))
         except Exception as exc:
             log(f"Cannot draw video image {image_path}: {exc}")
-    subtitle_font = load_font(44)
-    speaker_font = load_font(30)
+
     wrapped = wrap_subtitle(subtitle)
     box_y = 1010
     draw.rounded_rectangle((54, box_y, 1026, 1320), radius=30, fill=(0, 0, 0))
     y = box_y + 38
     for line in wrapped:
-        draw_highlighted_center(draw, line, y, subtitle_font)
+        draw_highlighted_center(draw, line, y, subtitle_font, highlight_phrases)
         y += 60
     draw.text((76, 1358), "Kris笔记 Podcast", fill=(190, 206, 226), font=speaker_font)
     out_path.parent.mkdir(parents=True, exist_ok=True)
     canvas.save(out_path, quality=92)
 
 
-def render_video(audio_path: Path, timeline: list[dict[str, Any]], image_paths: list[Path], output_path: Path) -> None:
+def render_video(audio_path: Path, timeline: list[dict[str, Any]], image_paths: list[Path], output_path: Path, title: str, highlights: dict[int, list[str]]) -> None:
     if not shutil.which("ffmpeg"):
         raise RuntimeError("ffmpeg not found. Make sure workflow installed ffmpeg.")
     if not timeline:
@@ -303,7 +425,7 @@ def render_video(audio_path: Path, timeline: list[dict[str, Any]], image_paths: 
         for idx, seg in enumerate(timeline):
             img = image_paths[idx % len(image_paths)] if image_paths else None
             frame = tmp_dir / f"frame_{idx:04d}.png"
-            make_video_frame(img, seg["text"], frame)
+            make_video_frame(img, seg["text"], title, frame, highlights.get(idx, []))
             duration = max(0.8, float(seg["end"]) - float(seg["start"]) + 0.28)
             lines.append(f"file '{frame.as_posix()}'\n")
             lines.append(f"duration {duration:.3f}\n")
@@ -347,7 +469,8 @@ def process_item(item_dir: Path, args: argparse.Namespace) -> dict[str, Any]:
         status["wechat_en_error"] = str(exc)
     if image_paths:
         en_article = embed_original_images(en_article, image_paths, max_images=args.max_wechat_images, alt="Report chart")
-    (item_dir / "wechat_article_en.md").write_text(en_article, encoding="utf-8")
+    en_article_path = item_dir / "wechat_article_en.md"
+    en_article_path.write_text(en_article, encoding="utf-8")
     status["wechat_article_en"] = "wechat_article_en.md"
 
     prompt = build_podcast_prompt(Path(args.podcast_prompt_template), source_text, args)
@@ -365,22 +488,29 @@ def process_item(item_dir: Path, args: argparse.Namespace) -> dict[str, Any]:
     (item_dir / "podcast_zh_script.txt").write_text("\n".join(f"{s}: {t}" for s, t in zh_rows) + "\n", encoding="utf-8")
     (item_dir / "podcast_en_script.txt").write_text("\n".join(f"{s}: {t}" for s, t in en_rows) + "\n", encoding="utf-8")
 
+    zh_title = extract_markdown_title(article_path, "Kris笔记：研报播客")
+    en_title = extract_markdown_title(en_article_path, "Kris Notes: Research Podcast")
+
     if as_bool(args.generate_audio):
         image_abs = [item_dir / p for p in image_paths]
         try:
+            zh_highlights = generate_highlights(zh_rows, args, "Chinese")
+            (item_dir / "podcast_zh_highlights.json").write_text(json.dumps(zh_highlights, ensure_ascii=False, indent=2), encoding="utf-8")
             zh_timeline = render_language_audio(zh_rows, item_dir / "podcast_zh.wav", Path(args.piper_zh_model), args)
             (item_dir / "podcast_zh_timeline.json").write_text(json.dumps(zh_timeline, ensure_ascii=False, indent=2), encoding="utf-8")
             status["podcast_zh_audio"] = "podcast_zh.wav"
-            render_video(item_dir / "podcast_zh.wav", zh_timeline, image_abs, item_dir / "podcast_zh.mp4")
+            render_video(item_dir / "podcast_zh.wav", zh_timeline, image_abs, item_dir / "podcast_zh.mp4", zh_title, zh_highlights)
             status["podcast_zh_video"] = "podcast_zh.mp4"
         except Exception as exc:
             log(f"Chinese audio/video generation failed for {item_dir.name}: {exc}")
             status["podcast_zh_error"] = str(exc)
         try:
+            en_highlights = generate_highlights(en_rows, args, "English")
+            (item_dir / "podcast_en_highlights.json").write_text(json.dumps(en_highlights, ensure_ascii=False, indent=2), encoding="utf-8")
             en_timeline = render_language_audio(en_rows, item_dir / "podcast_en.wav", Path(args.piper_en_model), args)
             (item_dir / "podcast_en_timeline.json").write_text(json.dumps(en_timeline, ensure_ascii=False, indent=2), encoding="utf-8")
             status["podcast_en_audio"] = "podcast_en.wav"
-            render_video(item_dir / "podcast_en.wav", en_timeline, image_abs, item_dir / "podcast_en.mp4")
+            render_video(item_dir / "podcast_en.wav", en_timeline, image_abs, item_dir / "podcast_en.mp4", en_title, en_highlights)
             status["podcast_en_video"] = "podcast_en.mp4"
         except Exception as exc:
             log(f"English audio/video generation failed for {item_dir.name}: {exc}")
@@ -399,6 +529,7 @@ def main() -> int:
     parser.add_argument("--podcast-minutes", type=int, default=5)
     parser.add_argument("--podcast-prompt-chars", type=int, default=26000)
     parser.add_argument("--generate-audio", default="true")
+    parser.add_argument("--tts-engine", default="edge", choices=["edge", "piper"])
     parser.add_argument("--max-wechat-images", type=int, default=3)
     parser.add_argument("--english-article-prompt-template", default="prompts/wechat_report_article_en_prompt.md")
     parser.add_argument("--english-article-length", type=int, default=2200)
@@ -407,6 +538,10 @@ def main() -> int:
     parser.add_argument("--piper-binary", default="piper")
     parser.add_argument("--piper-zh-model", default=".piper-voices/zh_CN-huayan-medium.onnx")
     parser.add_argument("--piper-en-model", default=".piper-voices/en_US-lessac-medium.onnx")
+    parser.add_argument("--edge-zh-a-voice", default="zh-CN-XiaoxiaoNeural")
+    parser.add_argument("--edge-zh-b-voice", default="zh-CN-YunxiNeural")
+    parser.add_argument("--edge-en-a-voice", default="en-US-JennyNeural")
+    parser.add_argument("--edge-en-b-voice", default="en-US-GuyNeural")
     args = parser.parse_args()
 
     output_dir = Path(args.output_dir)
