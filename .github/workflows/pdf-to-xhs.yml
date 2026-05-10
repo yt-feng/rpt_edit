@@ -44,10 +44,14 @@ on:
         required: true
         default: "5"
       generate_audio:
-        description: "Generate separate Chinese/English WAV and MP4 videos with local open-source Piper TTS"
+        description: "Generate separate Chinese/English WAV and MP4 videos"
         required: true
         type: boolean
         default: true
+      tts_engine:
+        description: "TTS engine: edge gives better natural voices; piper is fully local/open-source fallback"
+        required: true
+        default: "edge"
       commit_results:
         description: "Commit generated notes back to this branch"
         required: true
@@ -85,19 +89,23 @@ jobs:
       - name: Install Python dependencies
         run: pip install -r requirements.txt
 
-      - name: Install Piper TTS and video tools
+      - name: Install TTS and video tools
         if: ${{ inputs.generate_audio }}
-        timeout-minutes: 12
+        timeout-minutes: 18
         continue-on-error: true
         run: |
           sudo apt-get update
-          sudo apt-get install -y espeak-ng ffmpeg
-          pip install piper-tts==1.2.0
-          mkdir -p .piper-voices
-          curl -L --retry 3 -o .piper-voices/zh_CN-huayan-medium.onnx https://huggingface.co/rhasspy/piper-voices/resolve/main/zh/zh_CN/huayan/medium/zh_CN-huayan-medium.onnx
-          curl -L --retry 3 -o .piper-voices/zh_CN-huayan-medium.onnx.json https://huggingface.co/rhasspy/piper-voices/resolve/main/zh/zh_CN/huayan/medium/zh_CN-huayan-medium.onnx.json
-          curl -L --retry 3 -o .piper-voices/en_US-lessac-medium.onnx https://huggingface.co/rhasspy/piper-voices/resolve/main/en/en_US/lessac/medium/en_US-lessac-medium.onnx
-          curl -L --retry 3 -o .piper-voices/en_US-lessac-medium.onnx.json https://huggingface.co/rhasspy/piper-voices/resolve/main/en/en_US/lessac/medium/en_US-lessac-medium.onnx.json
+          sudo apt-get install -y ffmpeg
+          pip install edge-tts==6.1.12
+          if [ "${{ inputs.tts_engine }}" = "piper" ]; then
+            sudo apt-get install -y espeak-ng
+            pip install piper-tts==1.2.0
+            mkdir -p .piper-voices
+            curl -L --retry 3 -o .piper-voices/zh_CN-huayan-medium.onnx https://huggingface.co/rhasspy/piper-voices/resolve/main/zh/zh_CN/huayan/medium/zh_CN-huayan-medium.onnx
+            curl -L --retry 3 -o .piper-voices/zh_CN-huayan-medium.onnx.json https://huggingface.co/rhasspy/piper-voices/resolve/main/zh/zh_CN/huayan/medium/zh_CN-huayan-medium.onnx.json
+            curl -L --retry 3 -o .piper-voices/en_US-lessac-medium.onnx https://huggingface.co/rhasspy/piper-voices/resolve/main/en/en_US/lessac/medium/en_US-lessac-medium.onnx
+            curl -L --retry 3 -o .piper-voices/en_US-lessac-medium.onnx.json https://huggingface.co/rhasspy/piper-voices/resolve/main/en/en_US/lessac/medium/en_US-lessac-medium.onnx.json
+          fi
 
       - name: Generate Xiaohongshu notes and WeChat articles from PDFs
         env:
@@ -126,7 +134,8 @@ jobs:
             --model "${{ inputs.model }}" \
             --deepseek-base-url "${{ inputs.deepseek_base_url }}" \
             --podcast-minutes "${{ inputs.podcast_minutes }}" \
-            --generate-audio "${{ inputs.generate_audio }}"
+            --generate-audio "${{ inputs.generate_audio }}" \
+            --tts-engine "${{ inputs.tts_engine }}"
 
       - name: Upload generated notes as artifact
         uses: actions/upload-artifact@v4
