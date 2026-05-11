@@ -14,7 +14,7 @@
       "assets/xhs_card_07.png",
       "assets/xhs_card_08.png"
     ],
-    "cover_short_title": "芯片出货量超季节反弹",
+    "cover_short_title": "🔥 3月芯片数据爆了",
     "cover_subtitle": "研报重点一图看懂",
     "cover": "assets/cover.png",
     "wechat_article": "wechat_article.md",
@@ -23,10 +23,9 @@
       "assets/source_image_02.jpg",
       "assets/source_image_03.jpg"
     ],
+    "wechat_article_en": "wechat_article_en.md",
     "podcast_script": "podcast_script.txt",
-    "podcast_zh_audio": "podcast_zh.wav",
-    "podcast_zh_video": "podcast_zh.mp4",
-    "podcast_en_audio": "podcast_en.wav",
-    "podcast_en_video": "podcast_en.mp4"
+    "podcast_zh_error": "edge-tts failed: Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.11.15/x64/bin/edge-tts\", line 6, in <module>\n    sys.exit(main())\n             ^^^^^^\n  File \"/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/edge_tts/util.py\", line 136, in main\n    asyncio.run(amain())\n  File \"/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/asyncio/runners.py\", line 190, in run\n    return runner.run(main)\n           ^^^^^^^^^^^^^^^^\n  File \"/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/asyncio/runners.py\", line 118, in run\n    return self._loop.run_until_complete(task)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/opt/hostedtoolcache/Python/3.11.15/x64/li",
+    "podcast_en_error": "edge-tts failed: Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.11.15/x64/bin/edge-tts\", line 6, in <module>\n    sys.exit(main())\n             ^^^^^^\n  File \"/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/edge_tts/util.py\", line 136, in main\n    asyncio.run(amain())\n  File \"/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/asyncio/runners.py\", line 190, in run\n    return runner.run(main)\n           ^^^^^^^^^^^^^^^^\n  File \"/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/asyncio/runners.py\", line 118, in run\n    return self._loop.run_until_complete(task)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/opt/hostedtoolcache/Python/3.11.15/x64/li"
   }
 ]
