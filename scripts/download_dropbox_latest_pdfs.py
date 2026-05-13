@@ -100,13 +100,28 @@ def latest_date_folder(entries: list[dict[str, Any]]) -> dict[str, Any]:
     return max(folders, key=lambda e: int(e["name"]))
 
 
+def safe_local_relpath(dropbox_path: str, latest_path: str, fallback_name: str) -> str:
+    """Create a safe local relative path while preserving readable filenames when possible."""
+    rel = str(dropbox_path).replace(str(latest_path).rstrip("/") + "/", "", 1).lstrip("/")
+    if not rel or rel == dropbox_path.lstrip("/"):
+        rel = fallback_name
+    parts = []
+    for part in Path(rel).parts:
+        cleaned = part.replace("/", "_").replace("\\", "_").strip()
+        parts.append(cleaned or "file")
+    return str(Path(*parts)) if parts else fallback_name
+
+
 def download_file(token: str, dropbox_path: str, local_path: Path) -> None:
     local_path.parent.mkdir(parents=True, exist_ok=True)
+    # HTTP headers must be latin-1 encodable. json.dumps default ensure_ascii=True
+    # escapes non-ASCII characters such as Chinese punctuation in Dropbox paths.
+    dropbox_api_arg = json.dumps({"path": dropbox_path})
     response = requests.post(
         f"{DROPBOX_CONTENT}/files/download",
         headers={
             "Authorization": f"Bearer {token}",
-            "Dropbox-API-Arg": json.dumps({"path": dropbox_path}, ensure_ascii=False),
+            "Dropbox-API-Arg": dropbox_api_arg,
         },
         timeout=300,
     )
@@ -142,20 +157,26 @@ def main() -> int:
         manifest: list[dict[str, str]] = []
         for entry in pdfs:
             dropbox_path = entry.get("path_lower") or entry.get("path_display")
-            rel = str(dropbox_path).replace(str(latest_path).rstrip("/") + "/", "", 1).lstrip("/")
+            if not dropbox_path:
+                log(f"Skipping entry without path: {entry}")
+                continue
+            rel = safe_local_relpath(str(dropbox_path), str(latest_path), str(entry.get("name", "report.pdf")))
             local_path = output_dir / rel
             log(f"Downloading PDF: {dropbox_path} -> {local_path}")
-            download_file(token, dropbox_path, local_path)
-            manifest.append({"dropbox_path": str(dropbox_path), "local_path": str(local_path), "name": entry.get("name", "")})
+            download_file(token, str(dropbox_path), local_path)
+            manifest.append({"dropbox_path": str(dropbox_path), "local_path": str(local_path), "name": str(entry.get("name", ""))})
+
+        if not manifest:
+            raise RuntimeError(f"No PDFs were downloaded from latest Dropbox folder: {latest_path}")
 
         manifest_path = output_dir / "dropbox_manifest.json"
-        manifest_path.write_text(json.dumps({"latest_folder": latest_name, "latest_path": latest_path, "pdf_count": len(pdfs), "files": manifest}, ensure_ascii=False, indent=2), encoding="utf-8")
+        manifest_path.write_text(json.dumps({"latest_folder": latest_name, "latest_path": latest_path, "pdf_count": len(manifest), "files": manifest}, ensure_ascii=False, indent=2), encoding="utf-8")
 
         write_github_output("latest_folder", latest_name)
         write_github_output("latest_path", str(latest_path))
-        write_github_output("pdf_count", str(len(pdfs)))
+        write_github_output("pdf_count", str(len(manifest)))
         write_github_output("input_dir", str(output_dir))
-        log(f"Downloaded {len(pdfs)} PDFs from {latest_name} to {output_dir}")
+        log(f"Downloaded {len(manifest)} PDFs from {latest_name} to {output_dir}")
         return 0
     except Exception as exc:
         print(f"ERROR: {exc}", file=sys.stderr)
