@@ -25,6 +25,7 @@ FAILED_STATES = {"failed", "fail", "error"}
 XHS_CANVAS_SIZE = (1080, 1440)
 XHS_BG_COLOR = (9, 31, 64)
 XHS_CARD_COLOR = (255, 255, 255)
+XHS_WATERMARK = "KC桌面"
 
 
 def log(message: str) -> None:
@@ -160,18 +161,92 @@ def safe_open_image(path: Path) -> Image.Image | None:
         return None
 
 
-def draw_xhs_card(image: Image.Image, target_path: Path) -> None:
-    """Pad source image on a clean deep-blue 1080x1440 canvas."""
+def draw_centered_text(draw: ImageDraw.ImageDraw, text: str, y: int, font: ImageFont.ImageFont, fill: tuple[int, int, int, int] | tuple[int, int, int], max_chars: int = 12, line_gap: int = 18) -> int:
+    text = re.sub(r"\s+", " ", text).strip()
+    if not text:
+        return y
+    lines = [text[i : i + max_chars] for i in range(0, len(text), max_chars)]
+    for line in lines[:4]:
+        bbox = draw.textbbox((0, 0), line, font=font)
+        x = (XHS_CANVAS_SIZE[0] - (bbox[2] - bbox[0])) // 2
+        draw.text((x, y), line, font=font, fill=fill)
+        y += bbox[3] - bbox[1] + line_gap
+    return y
+
+
+def draw_kc_watermark(draw: ImageDraw.ImageDraw) -> None:
+    watermark_font = load_kai_font(38)
+    bbox = draw.textbbox((0, 0), XHS_WATERMARK, font=watermark_font)
+    text_w = bbox[2] - bbox[0]
+    text_h = bbox[3] - bbox[1]
+    draw.text(((XHS_CANVAS_SIZE[0] - text_w) // 2, XHS_CANVAS_SIZE[1] - text_h - 46), XHS_WATERMARK, font=watermark_font, fill=(226, 234, 246, 150))
+
+
+def draw_title_card(title: str, target_path: Path) -> None:
+    """Create the first Xiaohongshu card with the report title."""
+    canvas = Image.new("RGB", XHS_CANVAS_SIZE, XHS_BG_COLOR).convert("RGBA")
+    draw = ImageDraw.Draw(canvas)
+
+    title = re.sub(r"[《》#>*\-]+", "", title).strip() or "研报速览"
+    title_font = load_font(78, bold=True)
+    subtitle_font = load_font(34, bold=False)
+    small_font = load_kai_font(32)
+
+    # Soft title card block.
+    block = (92, 430, 988, 860)
+    shadow = Image.new("RGBA", XHS_CANVAS_SIZE, (0, 0, 0, 0))
+    shadow_draw = ImageDraw.Draw(shadow)
+    shadow_draw.rounded_rectangle((block[0] + 12, block[1] + 18, block[2] + 12, block[3] + 18), radius=44, fill=(0, 0, 0, 90))
+    shadow = shadow.filter(ImageFilter.GaussianBlur(18))
+    canvas = Image.alpha_composite(canvas, shadow)
+    draw = ImageDraw.Draw(canvas)
+    draw.rounded_rectangle(block, radius=44, fill=(255, 255, 255, 232))
+
+    draw_centered_text(draw, title, 545, title_font, fill=(15, 29, 48, 255), max_chars=9, line_gap=20)
+    subtitle = "研报图表速览"
+    bbox = draw.textbbox((0, 0), subtitle, font=subtitle_font)
+    draw.text(((XHS_CANVAS_SIZE[0] - (bbox[2] - bbox[0])) // 2, 770), subtitle, font=subtitle_font, fill=(78, 93, 112, 255))
+
+    hint = "向右滑动查看图表 →"
+    bbox = draw.textbbox((0, 0), hint, font=small_font)
+    draw.text(((XHS_CANVAS_SIZE[0] - (bbox[2] - bbox[0])) // 2, 1068), hint, font=small_font, fill=(218, 230, 246, 190))
+    draw_kc_watermark(draw)
+
+    target_path.parent.mkdir(parents=True, exist_ok=True)
+    canvas.convert("RGB").save(target_path, quality=94)
+
+
+def draw_chart_badge(draw: ImageDraw.ImageDraw, number: int) -> None:
+    badge_font = load_font(40, bold=True)
+    cx, cy, r = 102, 100, 44
+    draw.ellipse((cx - r, cy - r, cx + r, cy + r), fill=(255, 255, 255, 230))
+    text = str(number)
+    bbox = draw.textbbox((0, 0), text, font=badge_font)
+    draw.text((cx - (bbox[2] - bbox[0]) / 2, cy - (bbox[3] - bbox[1]) / 2 - 4), text, font=badge_font, fill=(9, 31, 64, 255))
+
+
+def draw_next_arrow(draw: ImageDraw.ImageDraw) -> None:
+    arrow_font = load_font(70, bold=True)
+    arrow = "→"
+    bbox = draw.textbbox((0, 0), arrow, font=arrow_font)
+    x = XHS_CANVAS_SIZE[0] - 112
+    y = XHS_CANVAS_SIZE[1] // 2 - (bbox[3] - bbox[1]) // 2
+    draw.rounded_rectangle((x - 18, y - 12, x + 74, y + 82), radius=32, fill=(255, 255, 255, 42))
+    draw.text((x, y), arrow, font=arrow_font, fill=(226, 234, 246, 210))
+
+
+def draw_xhs_chart_card(image: Image.Image, target_path: Path, chart_number: int, show_next_arrow: bool) -> None:
+    """Pad source chart on a clean deep-blue 1080x1440 canvas with chart number and optional right arrow."""
     canvas = Image.new("RGB", XHS_CANVAS_SIZE, XHS_BG_COLOR)
-    image = ImageOps.contain(image.convert("RGB"), (960, 1120), method=Image.Resampling.LANCZOS)
+    image = ImageOps.contain(image.convert("RGB"), (930, 1120), method=Image.Resampling.LANCZOS)
     image_x = (XHS_CANVAS_SIZE[0] - image.width) // 2
     image_y = (XHS_CANVAS_SIZE[1] - image.height) // 2 - 28
-    image_y = max(64, image_y)
+    image_y = max(118, image_y)
 
     margin = 28
     card_box = (
         max(36, image_x - margin),
-        max(50, image_y - margin),
+        max(110, image_y - margin),
         min(XHS_CANVAS_SIZE[0] - 36, image_x + image.width + margin),
         min(XHS_CANVAS_SIZE[1] - 150, image_y + image.height + margin),
     )
@@ -186,62 +261,72 @@ def draw_xhs_card(image: Image.Image, target_path: Path) -> None:
     draw = ImageDraw.Draw(canvas_rgba)
     draw.rounded_rectangle(card_box, radius=32, fill=XHS_CARD_COLOR)
     canvas_rgba.paste(image.convert("RGBA"), (image_x, image_y))
-
-    watermark = "Kris笔记"
-    watermark_font = load_kai_font(38)
-    bbox = draw.textbbox((0, 0), watermark, font=watermark_font)
-    text_w = bbox[2] - bbox[0]
-    text_h = bbox[3] - bbox[1]
-    draw.text(((XHS_CANVAS_SIZE[0] - text_w) // 2, XHS_CANVAS_SIZE[1] - text_h - 46), watermark, font=watermark_font, fill=(226, 234, 246, 150))
+    draw_chart_badge(draw, chart_number)
+    if show_next_arrow:
+        draw_next_arrow(draw)
+    draw_kc_watermark(draw)
 
     target_path.parent.mkdir(parents=True, exist_ok=True)
     canvas_rgba.convert("RGB").save(target_path, quality=94)
 
 
-def pad_image_for_xhs(source_path: Path, target_path: Path) -> bool:
+def pad_image_for_xhs(source_path: Path, target_path: Path, chart_number: int, show_next_arrow: bool) -> bool:
     image = safe_open_image(source_path)
     if image is None:
         return False
-    draw_xhs_card(image, target_path)
+    draw_xhs_chart_card(image, target_path, chart_number=chart_number, show_next_arrow=show_next_arrow)
     return True
 
 
-def render_pdf_page_cards(pdf_path: Path, assets_dir: Path, max_pages: int) -> list[str]:
+def render_pdf_page_cards(pdf_path: Path, assets_dir: Path, max_pages: int, title: str) -> list[str]:
     cards: list[str] = []
+    draw_title_card(title, assets_dir / "xhs_card_01.png")
+    cards.append("assets/xhs_card_01.png")
     try:
         doc = fitz.open(pdf_path)
     except Exception as exc:
         log(f"Cannot open PDF for fallback image cards: {pdf_path}: {exc}")
         return cards
     try:
-        for index in range(min(max_pages, len(doc))):
+        page_count = min(max_pages, len(doc))
+        for index in range(page_count):
             pix = doc[index].get_pixmap(matrix=fitz.Matrix(1.8, 1.8), alpha=False)
             image = Image.open(BytesIO(pix.tobytes("png"))).convert("RGB")
-            target = assets_dir / f"xhs_card_{index + 1:02d}.png"
-            draw_xhs_card(image, target)
+            target = assets_dir / f"xhs_card_{index + 2:02d}.png"
+            draw_xhs_chart_card(image, target, chart_number=index + 1, show_next_arrow=index < page_count - 1)
             cards.append(str(target.relative_to(assets_dir.parent)))
     finally:
         doc.close()
     return cards
 
 
-def create_visual_assets(result_dir: Path, pdf_path: Path, assets_dir: Path, max_images: int) -> list[str]:
-    """Create stable Xiaohongshu image cards: assets/xhs_card_01.png, assets/xhs_card_02.png, etc."""
+def create_visual_assets(result_dir: Path, pdf_path: Path, assets_dir: Path, max_images: int, title: str) -> list[str]:
+    """Create stable Xiaohongshu image cards.
+
+    xhs_card_01.png is always a title card.
+    xhs_card_02.png and later are chart cards with 1/2/3... badges and right arrows until the last chart.
+    """
     assets_dir.mkdir(parents=True, exist_ok=True)
     images = [p for p in result_dir.rglob("*") if p.is_file() and p.suffix.lower() in IMAGE_SUFFIXES]
     images.sort(key=lambda path: path.stat().st_size, reverse=True)
     cards: list[str] = []
-    for index, image in enumerate(images[:max_images], 1):
-        original_target = assets_dir / f"source_image_{index:02d}{image.suffix.lower()}"
-        shutil.copy2(image, original_target)
-        card_target = assets_dir / f"xhs_card_{index:02d}.png"
-        if pad_image_for_xhs(image, card_target):
-            cards.append(str(card_target.relative_to(assets_dir.parent)))
-        else:
-            cards.append(str(original_target.relative_to(assets_dir.parent)))
-    if not cards:
+
+    if images:
+        draw_title_card(title, assets_dir / "xhs_card_01.png")
+        cards.append("assets/xhs_card_01.png")
+        chart_images = images[:max_images]
+        total = len(chart_images)
+        for index, image in enumerate(chart_images, 1):
+            original_target = assets_dir / f"source_image_{index:02d}{image.suffix.lower()}"
+            shutil.copy2(image, original_target)
+            card_target = assets_dir / f"xhs_card_{index + 1:02d}.png"
+            if pad_image_for_xhs(image, card_target, chart_number=index, show_next_arrow=index < total):
+                cards.append(str(card_target.relative_to(assets_dir.parent)))
+            else:
+                cards.append(str(original_target.relative_to(assets_dir.parent)))
+    else:
         log("MinerU result contained no standalone images; rendering PDF page fallback cards.")
-        cards = render_pdf_page_cards(pdf_path, assets_dir, max_pages=min(max_images, 4))
+        cards = render_pdf_page_cards(pdf_path, assets_dir, max_pages=min(max_images, 4), title=title)
     return cards
 
 
@@ -401,9 +486,9 @@ def process_pdf(pdf_path: Path, result_row: dict[str, Any], output_root: Path, a
         (item_dir / "status.json").write_text(json.dumps(status, ensure_ascii=False, indent=2), encoding="utf-8")
         return status
     download_and_unzip(result_row["full_zip_url"], raw_dir)
-    status["images"] = create_visual_assets(raw_dir, pdf_path, assets_dir, args.max_images)
     markdown_path = find_markdown(raw_dir)
     if not markdown_path:
+        status["images"] = create_visual_assets(raw_dir, pdf_path, assets_dir, args.max_images, title=fallback_title)
         status["error"] = "MinerU result zip did not contain markdown. Visual cards may still have been generated."
         (item_dir / "status.json").write_text(json.dumps(status, ensure_ascii=False, indent=2), encoding="utf-8")
         return status
@@ -413,14 +498,15 @@ def process_pdf(pdf_path: Path, result_row: dict[str, Any], output_root: Path, a
     (item_dir / "prompt_for_xhs.md").write_text(xhs_prompt, encoding="utf-8")
     note = safe_generate_text(xhs_prompt, args, "Xiaohongshu note")
     (item_dir / "note.md").write_text(note, encoding="utf-8")
+    title, subtitle = extract_cover_titles(note, fallback_title)
+    status["cover_short_title"] = title
+    status["cover_subtitle"] = subtitle
+    status["images"] = create_visual_assets(raw_dir, pdf_path, assets_dir, args.max_images, title=title)
     wechat_prompt = build_wechat_prompt(Path(args.wechat_prompt_template), source_text, args)
     (item_dir / "prompt_for_wechat.md").write_text(wechat_prompt, encoding="utf-8")
     wechat_article = safe_generate_text(wechat_prompt, args, "WeChat article")
     wechat_article = embed_images_in_wechat_article(wechat_article, status.get("images", []), max_images=3)
     (item_dir / "wechat_article.md").write_text(wechat_article, encoding="utf-8")
-    title, subtitle = extract_cover_titles(note, fallback_title)
-    status["cover_short_title"] = title
-    status["cover_subtitle"] = subtitle
     try:
         make_cover(pdf_path, assets_dir / "cover.png", title, subtitle, args.watermark)
         status["cover"] = "assets/cover.png"
@@ -454,7 +540,7 @@ def build_arg_parser() -> argparse.ArgumentParser:
     parser.add_argument("--wechat-prompt-chars", type=int, default=26000)
     parser.add_argument("--poll-timeout", type=int, default=1800)
     parser.add_argument("--poll-interval", type=int, default=15)
-    parser.add_argument("--watermark", default="Kris笔记")
+    parser.add_argument("--watermark", default=XHS_WATERMARK)
     return parser
 
 
