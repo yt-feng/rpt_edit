@@ -27,6 +27,10 @@ on:
         description: "Enable OCR for scanned/image PDFs"
         required: true
         default: "true"
+      batch_size:
+        description: "How many PDFs to send to MinerU per batch"
+        required: true
+        default: "5"
       wechat_length:
         description: "Target Chinese character count for WeChat article"
         required: true
@@ -62,6 +66,7 @@ on:
     paths:
       - ".github/workflows/dropbox-latest-pdf-to-xhs.yml"
       - "scripts/download_dropbox_latest_pdfs.py"
+      - "scripts/run_pdf_to_xhs_in_batches.py"
       - "scripts/pdf_to_xhs_batch.py"
       - "scripts/postprocess_podcast.py"
       - "scripts/finalize_outputs.py"
@@ -91,6 +96,7 @@ jobs:
           echo "mineru_model=${{ github.event.inputs.mineru_model || 'vlm' }}" >> "$GITHUB_OUTPUT"
           echo "language=${{ github.event.inputs.language || 'en' }}" >> "$GITHUB_OUTPUT"
           echo "ocr=${{ github.event.inputs.ocr || 'true' }}" >> "$GITHUB_OUTPUT"
+          echo "batch_size=${{ github.event.inputs.batch_size || '5' }}" >> "$GITHUB_OUTPUT"
           echo "wechat_length=${{ github.event.inputs.wechat_length || '3000' }}" >> "$GITHUB_OUTPUT"
           echo "community_cta=${{ github.event.inputs.community_cta || '加入社群，领取完整研报解读与原始图表。' }}" >> "$GITHUB_OUTPUT"
           echo "podcast_minutes=${{ github.event.inputs.podcast_minutes || '5' }}" >> "$GITHUB_OUTPUT"
@@ -152,9 +158,11 @@ jobs:
           OUTPUT_DIR="xhs_notes/dropbox/${{ steps.dropbox.outputs.latest_folder }}"
           mkdir -p "$OUTPUT_DIR"
           cp "_dropbox_latest_pdfs/dropbox_manifest.json" "$OUTPUT_DIR/dropbox_manifest.json"
-          python scripts/pdf_to_xhs_batch.py \
+          python scripts/run_pdf_to_xhs_in_batches.py \
             --input-dir "_dropbox_latest_pdfs" \
             --output-dir "$OUTPUT_DIR" \
+            --batch-size "${{ steps.vars.outputs.batch_size }}" \
+            --continue-on-batch-error true \
             --model "${{ steps.vars.outputs.model }}" \
             --deepseek-base-url "${{ steps.vars.outputs.deepseek_base_url }}" \
             --mineru-model "${{ steps.vars.outputs.mineru_model }}" \
