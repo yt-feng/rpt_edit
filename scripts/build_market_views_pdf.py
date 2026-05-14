@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Build a LaTeX/PDF market-view roundup from generated daily report outputs.
+"""Build a market-view roundup PDF from generated daily report outputs.
 
 Input is usually xhs_notes/dropbox/<latest_date>/shard_*/<report>/.
 The script:
@@ -19,7 +19,6 @@ import os
 import re
 import shutil
 import subprocess
-import sys
 from pathlib import Path
 from typing import Any
 
@@ -43,16 +42,8 @@ def log(message: str) -> None:
 def latex_escape(text: str) -> str:
     text = sanitize_text(str(text or ""))
     replacements = {
-        "\\": r"\textbackslash{}",
-        "&": r"\&",
-        "%": r"\%",
-        "$": r"\$",
-        "#": r"\#",
-        "_": r"\_",
-        "{": r"\{",
-        "}": r"\}",
-        "~": r"\textasciitilde{}",
-        "^": r"\textasciicircum{}",
+        "\\": r"\textbackslash{}", "&": r"\&", "%": r"\%", "$": r"\$", "#": r"\#",
+        "_": r"\_", "{": r"\{", "}": r"\}", "~": r"\textasciitilde{}", "^": r"\textasciicircum{}",
     }
     return "".join(replacements.get(ch, ch) for ch in text)
 
@@ -87,11 +78,9 @@ def find_report_dirs(date_dir: Path) -> list[Path]:
         for item in sorted(shard.iterdir()):
             if item.is_dir() and (item / "source_mineru.md").exists():
                 report_dirs.append(item)
-    # Also support non-sharded folders.
     for item in sorted(date_dir.iterdir()):
         if item.is_dir() and (item / "source_mineru.md").exists():
             report_dirs.append(item)
-    # de-dup by resolved path
     seen = set()
     unique = []
     for p in report_dirs:
@@ -127,17 +116,14 @@ def report_title(report_dir: Path) -> str:
 
 def report_digest(report_dir: Path, max_chars: int) -> dict[str, Any]:
     title = report_title(report_dir)
-    source_text = ""
     pieces = []
     for filename in ["wechat_article.md", "note.md", "source_mineru.md"]:
         path = report_dir / filename
         if path.exists():
             text = path.read_text(encoding="utf-8", errors="ignore")
             pieces.append(f"[{filename}]\n{trim_text(text, max_chars // 2)}")
-            if filename == "source_mineru.md":
-                source_text = text
     digest = trim_text("\n\n".join(pieces), max_chars)
-    return {"title": title, "digest": sanitize_text(digest), "source_text": source_text}
+    return {"title": title, "digest": sanitize_text(digest)}
 
 
 def resolve_image_path(markdown_path: Path, image_ref: str) -> Path | None:
@@ -145,11 +131,9 @@ def resolve_image_path(markdown_path: Path, image_ref: str) -> Path | None:
     if ref.startswith("http://") or ref.startswith("https://"):
         return None
     ref = ref.split("#", 1)[0].split("?", 1)[0]
-    candidates = [markdown_path.parent / ref, markdown_path.parent.parent / ref]
-    for candidate in candidates:
+    for candidate in [markdown_path.parent / ref, markdown_path.parent.parent / ref]:
         if candidate.exists() and candidate.is_file():
             return candidate
-    # Sometimes MinerU markdown paths are just basenames; search nearby.
     basename = Path(ref).name
     for candidate in markdown_path.parent.rglob(basename):
         if candidate.is_file():
@@ -167,9 +151,7 @@ def extract_exhibit_figures(report_dir: Path, report_id: str, title: str, max_pe
         match = IMAGE_RE.search(line)
         if not match:
             continue
-        start = max(0, i - 8)
-        end = min(len(lines), i + 9)
-        context = "\n".join(lines[start:end])
+        context = "\n".join(lines[max(0, i - 8): min(len(lines), i + 9)])
         if not EXHIBIT_RE.search(context):
             continue
         image_path = resolve_image_path(md_path, match.group(1))
@@ -178,16 +160,24 @@ def extract_exhibit_figures(report_dir: Path, report_id: str, title: str, max_pe
         label_match = EXHIBIT_RE.search(context)
         label = label_match.group(0) if label_match else "Exhibit"
         context_clean = normalize_space(re.sub(IMAGE_RE, "", context))[:520]
-        figures.append({
-            "report_id": report_id,
-            "report_title": title,
-            "source_path": str(image_path),
-            "label": sanitize_text(label),
-            "context": sanitize_text(context_clean),
-        })
+        figures.append({"report_id": report_id, "report_title": title, "source_path": str(image_path), "label": sanitize_text(label), "context": sanitize_text(context_clean)})
         if len(figures) >= max_per_report:
             break
     return figures
+
+
+def convert_webp_if_needed(src: Path, target: Path) -> Path:
+    if src.suffix.lower() != ".webp":
+        shutil.copy2(src, target)
+        return target
+    try:
+        from PIL import Image
+        target_png = target.with_suffix(".png")
+        Image.open(src).convert("RGB").save(target_png)
+        return target_png
+    except Exception:
+        shutil.copy2(src, target)
+        return target
 
 
 def copy_figures(figures: list[dict[str, Any]], figures_dir: Path, max_figures: int) -> list[dict[str, Any]]:
@@ -200,11 +190,11 @@ def copy_figures(figures: list[dict[str, Any]], figures_dir: Path, max_figures: 
             continue
         target = figures_dir / f"fig_{idx:03d}{suffix}"
         try:
-            shutil.copy2(src, target)
+            actual = convert_webp_if_needed(src, target)
         except Exception as exc:
             log(f"Skip figure copy failed {src}: {exc}")
             continue
-        copied.append({**fig, "figure_id": f"F{idx:03d}", "latex_path": f"figures/{target.name}"})
+        copied.append({**fig, "figure_id": f"F{idx:03d}", "latex_path": f"figures/{actual.name}"})
     return copied
 
 
@@ -225,14 +215,7 @@ def call_deepseek(prompt: str, args: argparse.Namespace, label: str) -> str:
     response = requests.post(
         args.deepseek_base_url.rstrip("/") + "/chat/completions",
         headers={"Content-Type": "application/json", "Authorization": f"Bearer {api_key}"},
-        json={
-            "model": args.model,
-            "temperature": 0.35,
-            "messages": [
-                {"role": "system", "content": "你是专业宏观策略研究编辑。只输出合法 JSON，不要输出 Markdown 代码块。"},
-                {"role": "user", "content": prompt},
-            ],
-        },
+        json={"model": args.model, "temperature": 0.35, "messages": [{"role": "system", "content": "你是专业宏观策略研究编辑。只输出合法 JSON，不要输出 Markdown 代码块。"}, {"role": "user", "content": prompt}]},
         timeout=240,
     )
     data = parse_json_response(response, label)
@@ -240,28 +223,21 @@ def call_deepseek(prompt: str, args: argparse.Namespace, label: str) -> str:
 
 
 def extract_json(text: str) -> Any:
-    text = text.strip()
     try:
-        return json.loads(text)
+        return json.loads(text.strip())
     except Exception:
         pass
-    match = re.search(r"(\{.*\}|\[.*\])", text, flags=re.S)
+    match = re.search(r"(\{.*\}|\[.*\])", text.strip(), flags=re.S)
     if not match:
         raise ValueError("No JSON object found")
     return json.loads(match.group(1))
 
 
 def build_prompt(reports: list[dict[str, Any]], figures: list[dict[str, Any]], args: argparse.Namespace) -> str:
-    report_payload = [
-        {"id": r["id"], "title": r["title"], "digest": trim_text(r["digest"], args.per_report_prompt_chars)}
-        for r in reports
-    ]
-    figure_payload = [
-        {"figure_id": f["figure_id"], "report_id": f["report_id"], "label": f["label"], "context": f["context"]}
-        for f in figures
-    ]
+    report_payload = [{"id": r["id"], "title": r["title"], "digest": trim_text(r["digest"], args.per_report_prompt_chars)} for r in reports]
+    figure_payload = [{"figure_id": f["figure_id"], "report_id": f["report_id"], "label": f["label"], "context": f["context"]} for f in figures]
     return f"""
-请基于下面每天新报告的摘要，写一份“市场最新观点汇总”的结构化 JSON，用于生成 LaTeX PDF。
+请基于下面每天新报告的摘要，写一份“市场最新观点汇总”的结构化 JSON，用于生成 PDF。
 
 要求：
 1. 观点要分门别类，例如：宏观与利率、AI/算力、能源与大宗、地产与消费、区域市场、风险偏好等。类别由内容决定，不要机械套模板。
@@ -274,106 +250,44 @@ def build_prompt(reports: list[dict[str, Any]], figures: list[dict[str, Any]], a
 8. 输出必须是 JSON 对象，不要 Markdown 代码块。
 
 JSON 格式：
-{{
-  "title": "市场最新观点汇总",
-  "subtitle": "一句话说明今天的市场主线",
-  "executive_summary": ["要点1", "要点2", "要点3"],
-  "sections": [
-    {{
-      "heading": "板块标题",
-      "thesis": "这个板块的核心判断",
-      "bullets": ["要点1", "要点2"],
-      "figure_ids": ["F001"],
-      "references": ["R001", "R003"]
-    }}
-  ],
-  "closing": "简短收束"
-}}
+{{"title":"市场最新观点汇总","subtitle":"一句话说明今天的市场主线","executive_summary":["要点1"],"sections":[{{"heading":"板块标题","thesis":"核心判断","bullets":["要点1"],"figure_ids":["F001"],"references":["R001"]}}],"closing":"简短收束"}}
 
 报告摘要：
 {json.dumps(report_payload, ensure_ascii=False, indent=2)}
 
-可选图表候选（只有 Exhibit/Figure 编号附近的图才在这里）：
+可选图表候选：
 {json.dumps(figure_payload, ensure_ascii=False, indent=2)}
 """.strip()
 
 
 def fallback_summary(reports: list[dict[str, Any]], figures: list[dict[str, Any]]) -> dict[str, Any]:
     refs = [r["id"] for r in reports[:8]]
-    return {
-        "title": "市场最新观点汇总",
-        "subtitle": "以下汇总基于今日新增报告的自动整理。",
-        "executive_summary": [
-            "今日报告主要围绕宏观、行业供需、估值重定价和风险偏好展开。",
-            "不同报告之间的共同线索，是市场正在重新评估增长确定性、资金成本和产业链议价能力。",
-            "部分结论仍需要结合后续数据验证，尤其是需求恢复的持续性和盈利弹性。",
-        ],
-        "sections": [
-            {
-                "heading": "跨资产主线仍围绕增长、利率和盈利再定价展开",
-                "thesis": "报告共同指向一个问题：市场不是只在交易单点事件，而是在重新评估未来几个季度的增长质量。",
-                "bullets": [
-                    "多篇报告都把需求弹性、供给约束和资金成本作为判断资产价格的核心变量。",
-                    "行业内部的分化仍然显著，能够把规模或资源优势转化为现金流的主体更容易获得估值支撑。",
-                    "当前观点并非单边乐观，报告普遍保留了对政策、价格和盈利兑现节奏的验证要求。",
-                ],
-                "figure_ids": [f["figure_id"] for f in figures[:1]],
-                "references": refs,
-            }
-        ],
-        "closing": "后续更重要的是跟踪哪些假设被数据确认，哪些只停留在叙事层面。",
-    }
+    return {"title": "市场最新观点汇总", "subtitle": "以下汇总基于今日新增报告的自动整理。", "executive_summary": ["今日报告主要围绕宏观、行业供需、估值重定价和风险偏好展开。", "不同报告之间的共同线索，是市场正在重新评估增长确定性、资金成本和产业链议价能力。", "部分结论仍需要结合后续数据验证，尤其是需求恢复的持续性和盈利弹性。"], "sections": [{"heading": "跨资产主线仍围绕增长、利率和盈利再定价展开", "thesis": "报告共同指向一个问题：市场不是只在交易单点事件，而是在重新评估未来几个季度的增长质量。", "bullets": ["多篇报告都把需求弹性、供给约束和资金成本作为判断资产价格的核心变量。", "行业内部的分化仍然显著，能够把规模或资源优势转化为现金流的主体更容易获得估值支撑。", "当前观点并非单边乐观，报告普遍保留了对政策、价格和盈利兑现节奏的验证要求。"], "figure_ids": [f["figure_id"] for f in figures[:1]], "references": refs}], "closing": "后续更重要的是跟踪哪些假设被数据确认，哪些只停留在叙事层面。"}
 
 
 def render_latex(summary: dict[str, Any], reports_by_id: dict[str, dict[str, Any]], figures_by_id: dict[str, dict[str, Any]], report_date: str) -> str:
     title = summary.get("title") or "市场最新观点汇总"
     subtitle = summary.get("subtitle") or "Daily market views roundup"
     lines: list[str] = []
-    lines.append(r"\documentclass[11pt]{ctexart}")
-    lines.append(r"\usepackage[a4paper,margin=1in]{geometry}")
-    lines.append(r"\usepackage{graphicx}")
-    lines.append(r"\usepackage{xcolor}")
-    lines.append(r"\usepackage{booktabs}")
-    lines.append(r"\usepackage{enumitem}")
-    lines.append(r"\usepackage{hyperref}")
-    lines.append(r"\hypersetup{colorlinks=true,linkcolor=black,urlcolor=blue}")
-    lines.append(r"\setlist[itemize]{leftmargin=1.4em,itemsep=0.35em,topsep=0.4em}")
-    lines.append(r"\definecolor{refgray}{gray}{0.45}")
-    lines.append(r"\definecolor{softgray}{gray}{0.25}")
-    lines.append(r"\title{\textbf{" + latex_escape(title) + r"}\\[0.4em]{\large " + latex_escape(subtitle) + r"}}");
-    lines.append(r"\author{KC桌面 自动生成}")
-    lines.append(r"\date{" + latex_escape(report_date) + r"}")
-    lines.append(r"\begin{document}")
-    lines.append(r"\maketitle")
-    lines.append(r"\section*{一页摘要}")
-    lines.append(r"\begin{itemize}")
+    lines += [r"\documentclass[11pt]{ctexart}", r"\usepackage[a4paper,margin=1in]{geometry}", r"\usepackage{graphicx}", r"\usepackage{xcolor}", r"\usepackage{hyperref}", r"\definecolor{refgray}{gray}{0.45}", r"\title{\textbf{" + latex_escape(title) + r"}\\[0.4em]{\large " + latex_escape(subtitle) + r"}}", r"\author{KC桌面 自动生成}", r"\date{" + latex_escape(report_date) + r"}", r"\begin{document}", r"\maketitle", r"\section*{一页摘要}", r"\begin{itemize}"]
     for item in summary.get("executive_summary", [])[:6]:
         lines.append(r"  \item " + latex_escape(item))
     lines.append(r"\end{itemize}")
-
     for section in summary.get("sections", [])[:10]:
-        heading = section.get("heading") or "未命名板块"
-        lines.append(r"\section{" + latex_escape(heading) + r"}")
-        thesis = section.get("thesis") or ""
-        if thesis:
-            lines.append(r"\textbf{" + latex_escape(thesis) + r"}")
+        lines.append(r"\section{" + latex_escape(section.get("heading") or "未命名板块") + r"}")
+        if section.get("thesis"):
+            lines.append(r"\textbf{" + latex_escape(section.get("thesis")) + r"}")
             lines.append("")
-        bullets = section.get("bullets") or []
-        if bullets:
+        if section.get("bullets"):
             lines.append(r"\begin{itemize}")
-            for bullet in bullets[:8]:
+            for bullet in section.get("bullets", [])[:8]:
                 lines.append(r"  \item " + latex_escape(bullet))
             lines.append(r"\end{itemize}")
         for fig_id in (section.get("figure_ids") or [])[:2]:
             fig = figures_by_id.get(fig_id)
             if not fig:
                 continue
-            lines.append(r"\begin{figure}[htbp]")
-            lines.append(r"\centering")
-            lines.append(r"\includegraphics[width=0.88\linewidth]{" + fig["latex_path"] + r"}")
-            caption = f"{fig.get('label', 'Exhibit')} - {fig.get('context', '')[:180]}"
-            lines.append(r"\caption{" + latex_escape(caption) + r"}")
-            lines.append(r"\end{figure}")
+            lines += [r"\begin{figure}[htbp]", r"\centering", r"\includegraphics[width=0.88\linewidth]{" + fig["latex_path"] + r"}", r"\caption{" + latex_escape(f"{fig.get('label', 'Exhibit')} - {fig.get('context', '')[:180]}") + r"}", r"\end{figure}"]
         refs = []
         for ref_id in section.get("references", [])[:12]:
             report = reports_by_id.get(ref_id)
@@ -382,14 +296,9 @@ def render_latex(summary: dict[str, Any], reports_by_id: dict[str, dict[str, Any
         if refs:
             lines.append(r"{\small\color{refgray}\textbf{References:} " + latex_escape("; ".join(refs)) + r"}")
         lines.append("")
-
-    closing = summary.get("closing") or ""
-    if closing:
-        lines.append(r"\section*{结语}")
-        lines.append(latex_escape(closing))
-    lines.append(r"\vfill")
-    lines.append(r"{\small\color{refgray}Personal reading notes and learning share only. Not investment advice.}")
-    lines.append(r"\end{document}")
+    if summary.get("closing"):
+        lines += [r"\section*{结语}", latex_escape(summary.get("closing"))]
+    lines += [r"\vfill", r"{\small\color{refgray}Personal reading notes and learning share only. Not investment advice.}", r"\end{document}"]
     return "\n".join(lines) + "\n"
 
 
@@ -398,19 +307,11 @@ def compile_pdf(tex_path: Path) -> bool:
         log("xelatex not found; skipping PDF compilation.")
         return False
     cwd = tex_path.parent
-    for i in range(2):
-        result = subprocess.run(
-            ["xelatex", "-interaction=nonstopmode", "-halt-on-error", tex_path.name],
-            cwd=str(cwd),
-            stdout=subprocess.PIPE,
-            stderr=subprocess.STDOUT,
-            text=True,
-            timeout=600,
-        )
-        (cwd / f"xelatex_pass_{i+1}.log").write_text(result.stdout, encoding="utf-8")
-        if result.returncode != 0:
-            log(f"xelatex failed on pass {i+1}. See {cwd / f'xelatex_pass_{i+1}.log'}")
-            return False
+    result = subprocess.run(["xelatex", "-interaction=nonstopmode", "-halt-on-error", tex_path.name], cwd=str(cwd), stdout=subprocess.PIPE, stderr=subprocess.STDOUT, text=True, timeout=600)
+    (cwd / "xelatex.log").write_text(result.stdout, encoding="utf-8")
+    if result.returncode != 0:
+        log(f"xelatex failed. See {cwd / 'xelatex.log'}")
+        return False
     return tex_path.with_suffix(".pdf").exists()
 
 
@@ -448,8 +349,7 @@ def main() -> int:
     for idx, report_dir in enumerate(report_dirs, 1):
         rid = f"R{idx:03d}"
         digest = report_digest(report_dir, args.per_report_prompt_chars)
-        report = {"id": rid, "title": digest["title"], "path": str(report_dir), "digest": digest["digest"]}
-        reports.append(report)
+        reports.append({"id": rid, "title": digest["title"], "path": str(report_dir), "digest": digest["digest"]})
         figs = extract_exhibit_figures(report_dir, rid, digest["title"], args.max_figures_per_report)
         raw_figures.extend(figs)
         log(f"Collected {rid}: {digest['title']} | exhibit_figures={len(figs)}")
@@ -469,19 +369,13 @@ def main() -> int:
         log(f"DeepSeek market summary failed; using fallback: {exc}")
         summary = fallback_summary(reports, figures)
         (out_dir / "deepseek_market_views_error.txt").write_text(str(exc), encoding="utf-8")
-
     summary = json.loads(sanitize_text(json.dumps(summary, ensure_ascii=False)))
     (out_dir / "market_views_structured.json").write_text(json.dumps(summary, ensure_ascii=False, indent=2), encoding="utf-8")
-    reports_by_id = {r["id"]: r for r in reports}
-    figures_by_id = {f["figure_id"]: f for f in figures}
-    tex = render_latex(summary, reports_by_id, figures_by_id, report_date)
     tex_path = out_dir / f"market_views_{report_date}.tex"
-    tex_path.write_text(tex, encoding="utf-8")
+    tex_path.write_text(render_latex(summary, {r["id"]: r for r in reports}, {f["figure_id"]: f for f in figures}, report_date), encoding="utf-8")
     log(f"Wrote LaTeX: {tex_path}")
-
     if str(args.compile).lower() in {"1", "true", "yes", "y", "on"}:
-        ok = compile_pdf(tex_path)
-        if ok:
+        if compile_pdf(tex_path):
             log(f"PDF generated: {tex_path.with_suffix('.pdf')}")
         else:
             log("PDF compilation did not complete successfully. LaTeX source is still available.")
