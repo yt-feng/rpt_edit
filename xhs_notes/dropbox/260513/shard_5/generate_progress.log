@@ -1,0 +1,13 @@
+Found 37 total PDFs; shard 5/20 will process 5 PDFs with batch_size=5.
+Running batch 1: 5 PDFs
+Found 5 PDFs.
+Uploading PDF to MinerU: /tmp/pdf_batch_001_cdcccpwq/pdfs/0001-26-Barclays-China-Exports powered by AI and green tech-260511.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_cdcccpwq/pdfs/0002-27-BofA Securities-China Semiconductors -H A--FY25 - 1Q26 results wrap- AI-driven demand remains strong-260511.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_cdcccpwq/pdfs/0003-28-Deutsche Bank-China Hotels-Entering the New Upcycle Phase-260511.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_cdcccpwq/pdfs/0004-29-Goldman Sachs-China Staples- Pet Food Monthly-Apr 2026- April accelerated vs Q1- China Pet Foods led- Gambol back for growth-260512.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_cdcccpwq/pdfs/0005-30-Goldman Sachs-China Restaurants- Monthly Tracker- Apr update- sequentially better performance supported by spring break- yet decelerated into Labor Day-260511.pdf
+MinerU batch_id=e2ac23ca-1c43-4676-aaba-8208f70c91e6
+MinerU states: done, done, done, done, waiting-file
+MinerU states: done, done, done, done, done
+Done. Results written to /home/runner/work/rpt_edit/rpt_edit/xhs_notes/dropbox/260513/shard_5
+All batches completed successfully.
