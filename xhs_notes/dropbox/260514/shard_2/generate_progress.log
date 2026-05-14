@@ -1,0 +1,14 @@
+Found 22 total PDFs; shard 2/20 has 5 PDFs, skips 0 already converted, will process 5 PDFs with batch_size=5.
+Running batch 1: 5 PDFs
+Found 5 PDFs.
+Uploading PDF to MinerU: /tmp/pdf_batch_001_2bsj2045/pdfs/0001-11-Morgan Stanley-US Equity Strategy-US Equities Mid-Year Outlook- Déjà Vu All Over Again...with Some Twists-260513.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_2bsj2045/pdfs/0002-12-Morgan Stanley-US Economics Mid-Year Outlook-Capex Over Consumption-260512.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_2bsj2045/pdfs/0003-13-Nomura-USD CNY fix model-Projection- 6.7902-260514.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_2bsj2045/pdfs/0004-14-UBS-Chinese Internet Data Centre Sector Ulanqab IDC monthly tracker-Apr 2026- recordhigh customer move-ins-260513.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_2bsj2045/pdfs/0005-15-UBS-China Pet Food Sector April 2026- GMV growth softened- CPF continued outperforming-260513.pdf
+MinerU batch_id=262080a6-ffe8-45db-b5ac-55d48402b5b8
+MinerU states: running, running, pending, pending, waiting-file
+MinerU states: running, running, done, running, running
+MinerU states: done, done, done, done, done
+Done. Results written to /home/runner/work/rpt_edit/rpt_edit/xhs_notes/dropbox/260514/shard_2
+All batches completed successfully.

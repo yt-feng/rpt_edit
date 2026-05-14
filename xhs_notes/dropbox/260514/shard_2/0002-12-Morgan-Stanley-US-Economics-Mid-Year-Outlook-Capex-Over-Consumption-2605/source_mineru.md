@@ -1,0 +1,1720 @@
+# US Economics Mid-Year Outlook
+
+# Capex Over Consumption
+
+Gradual Middle East de-escalation yields trend-like growth. Any consumer drag is modest and offset by strong AI-led capex. Inflation stays firm near term as oil replaces tariffs. The Fed holds through 2026, easing modestly in 2027.
+
+# Key takeaways:
+
+The base case: Gradual de-escalation, a short-lived burst in headline inflation, and a patient Fed. We expect trend-like growth in US real GDP, assuming a gradual de-escalation of the Middle East conflict: 2.3% in 2026 and 2.6% in 2027. A minor drag on consumer spending is offset by AI capex.
+
+Consumer spending: Energy headwinds neutralize fiscal stimulus. Higher gas prices cause growth in real consumption to decelerate to 1.8% in 2026. When the oil shock fades, consumption rebounds in 2027. We are cautious on our outlook for spending by low- and middle-income cohorts, who spend more on energy. Upper-income consumers benefit from high levels of wealth.
+
+Business spending: Full steam ahead. AI-related spending is more structural than cyclical and provides resiliency amid geopolitical uncertainty. We expect nonresidential business fixed investment to grow by 7% in 2026 and accelerate to 8% in 2027. Hyperscaler spending exceeds \$1tr in 2027.
+
+Fiscal policy: Wide deficits. No fiscal stimulus before the midterm elections and divided government afterwards points to budget gridlock. Fiscal deficits remain around 6% of GDP. Deficit risks come from IEEPA tariff refunds and a large reconciliation bill ahead of the midterms that boosts defense spending, includes infrastructure investment, and adds affordability measures.
+
+Trade: A more durable tariff regime. We expect Section 301 and 232 reviews to be completed in the coming weeks. The USMCA review is approaching, but negotiations appear to be progressing slowly, making it increasingly difficult to add new sUBStantive chapters before the July deadline.
+
+Labor market: The "curious balance" persists. We look for modestly stronger employment growth in 2026 and 2027 – about 50-60k per month on average – pushing the unemployment rate to fall to 4.1% in 2027. AI adoption puts some minimal upward pressure on the unemployment rate.
+
+Inflation: A near-term peak, then gradual descent. Core PCE inflation decelerates in 2H 2026, and the 12-month rate of inflation slows in 2027. We see core PCE at 2.8% 4Q/4Q in 2026, and 2.3% in 2027. Risks are in the direction of inflation persistence.
+
+Monetary policy: The bar for rate cuts has risen. Another supply shock keeps the Fed on hold in 2026. Slowing inflation in 2027 leads the Fed to cut
+
+MS & CO. LLC
+
+# Michael T Gapen
+
+Chief US Economist
+
+Michael.Gapen@morganstanley.com +1 212 761-0571
+
+# Sam D Coffin
+
+Economist
+
+Sam.Coffin@morganstanley.com +1 212 761-4630
+
+# Diego Anzoategui
+
+Economist
+
+Diego.Anzoategui@morganstanley.com +1 212 761-8573
+
+# Arunima Sinha
+
+Global Economist
+
+Arunima.Sinha@morganstanley.com +1 212 761-4125
+
+# Heather Berger
+
+Economist
+
+Heather.Berger@morganstanley.com +1 212 761-2296
+
+# Lingdi Xu
+
+Economist
+
+Lingdi.Xu@morganstanley.com +1 212 761-2957
+
+25bp in March and June to a terminal target range of 3.0-3.25%. If inflation is persistent, or r\* is moving higher, then the normalization cycle is likely over.
+
+Monetary policy, part 2: A regime shift at the Fed? Incoming Chair Kevin Warsh pushes for changes. Interest rates will be driven by the data, but balance sheet policies come up for debate. That said, they require consensus, regulatory reform, and time. On communication policy, a Warsh-led Fed may talk less, creating more short-term policy uncertainty.
+
+# Alternate scenarios: We consider four alternatives to our baseline
+
+Scenario 1: Aggregate demand upside. The oil shock fades, while stronger confidence and wealth support consumption and business investment. Inflation firms and the Fed hikes 100bp in 2027.
+
+Scenario 2: AI productivity boost with labor displacement. Broader AI adoption boosts productivity, but pushes unemployment to 4.5% in 2026 and 4.8% in 2027. The Fed begins cutting rates in early 2027.
+
+Scenario 3: Permanent oil premium. Persistent energy costs keep inflation elevated, with core PCE at 3.1% in 2026 and 2.8% in 2027. The Fed remains cautious and keeps rates unchanged at 3.50-3.75% through the end of 2027.
+
+Scenario 4: A global recession. Oil prices surge to \$140-160/bbl through 3Q26, causing supply shortages and demand destruction that push the economy into recession.
+
+# Special topics:
+
+# Special Topic: AI and labor markets: Not yet a macro labor story, but no longer invisible
+
+Labor market data point to early, narrow AI displacement while aggregate disruption remains small. There are signs of overall task reshuffling.
+
+# Special Topic: AI is boosting output rather than cutting jobs
+
+Productivity is rising faster in industries MS identifies as high-AI exposure than in median- or low-AI industries. The productivity pickup reflects faster output growth and capital deepening rather than labor displacement.
+
+# Executive Summary
+
+# A Multipolar World Brings More Geopolitical Competition
+
+Just as it appeared that "animal spirits" were ready for liftoff in early 2026, the US economy was hit with an oil price shock following the initiation of hostilities in the Middle East. Brent futures, which had been hovering around \$70/bbl in early February, have ranged between \$90-120/bbl since. This represents the fourth supply shock to hit the economy in recent years, with the first three being the COVID pandemic, the Russia-Ukraine conflict, and the tariff shock of 2025.
+
+We continue to emphasize that uncertainty is elevated, particularly given the tenuous ceasefire in place between the US and Iran. Multiple paths for the US economy remain viable and baseline forecasts are less relevant than normal. We remain prepared to revise early and often, as the facts and developments dictate.
+
+As we look back over recent years and cast our gaze forward, four key themes for 2026 from MS are: (1) rewiring commerce for a Multipolar World, (2) AI Tech Diffusion, (3) the Future of Energy, and (4) Societal Shifts.
+
+As it relates to the macroeconomic performance of the US economy, these key themes mean we continue to see a shift away from an era of benign globalization toward one defined by rising economic nationalism in key sectors, intensifying geopolitical competition, and the growing risk that strategic resources are used as policy tools. For example, the conflict in the Middle East is likely to intensify competition for energy sources and delivery channels in the same way trade and pandemic shocks reshaped the landscape in prior years. Just how much remains to be seen, but the direction of travel seems clear. This transition is increasing uncertainty and prompting us to rethink monetary policy settings, inflation trends, and the underlying drivers of GDP growth.
+
+Our 2026 US Economics Mid-Year Outlook is anchored around the following themes:
+
+\- A Multipolar World means rewiring of supply chains: Our outlook for the US and global economy includes a modestly higher oil risk premium with Brent at \$80-90/bbl for the rest of this year and \$80/bbl next. This reflects two assumptions: 1) a generally benign de-escalation of the conflict and 2) strategic stockpiling behavior, a shift toward more secure energy supply chains, and a repricing of geopolitical risk in oil logistics. The oil shock and conflict that started it complement trends in recent years where more countries, including the US, desire domestic inventories of key imports, encourage resource hoarding, reconfigure supply chains, and reduce reliance on foreign supplies.
+
+\- Capex over consumption: Higher gasoline prices are likely to neutralize the effects of the OBBBA on households, suppressing spending on goods in the process. In the other direction is nonresidential business investment, where AI-related spending continues apace and interest in building out domestic resilience and self-sufficiency remains high. Evidence of reshoring remains thin, but the US continues to favor policies that pull capital back home. If we exclude imports, business spending and private consumption contribute similar amounts to GDP growth across the forecast horizon.
+
+\- Above-target inflation: Just as tariff effects were expected to wane, energy prices have taken over and should keep headline inflation firm into year end. We view spending in the AI build-out phase as keeping demand for power, infrastructure, and commodities firm. We believe AI will ultimately boost productivity and has the potential to be disinflationary, but we cannot rule out near-term demand effects on inflation. This tension matters for the Fed, as indicated by their change in tone in April. Patience is the order of the day and the bar for easing appears higher. We remain optimistic on inflation and see it moderating in 2027.
+
+\- Regime shift: If our outlook proves accurate, this would be another data point that suggests the US economy has exited the low inflation, low interest rate, loose monetary policy, and tight fiscal backdrop that characterized the post-GFC economy. The regime shift is from a world optimized for efficiency to one optimized for resilience.
+
+# The Baseline: Benign de-escalation, capex over consumption
+
+Taking a view on the US economy requires assumptions about the outcome of the conflict in the Middle East, however uncertain that process may be. While downside risks to global growth remain elevated on account of high energy prices, the US enjoys greater insulation (though not isolation) from the effects of higher energy prices. With about 85% of the oil exiting the Strait of Hormuz bound for Asia and much of Europe's natural gas supply coming from the region, we expect the more acute effects of the energy crisis felt in other economic zones.
+
+Oil price shocks generally have three transmission mechanisms into the US economy: 1) higher gasoline prices weigh on real purchasing power, 2) falling equity markets can generate negative wealth effects, and 3) prolonged uncertainty can weigh on business spending and hiring. To date, with emphasis on "to date", the US economy is receiving the first of these effects, but not the latter. This is the case when oil rises high enough to boost inflation, but not so high as to turn the narrative to a growth story.
+
+Our baseline assumption is that we see gradual de-escalation of the conflict, leaving oil as a modest drag on real spending that does not metastasize further. If so, then the US economy should see trend-like growth in real GDP, stability in labor markets, and a boost to headline inflation that fades out of year-on-year rates of inflation in 2027. This outlook is less optimistic than we had pencilled in earlier this year, but it would be a favorable outcome, all else equal.
+
+Severe demand destruction remains possible and our downside scenario is oil that moves to \$140/bbl over the remainder of the year. It is also possible that we see a permanently higher oil risk premium than we are thinking, which we include in an alternative scenario where oil averages \$120/bbl this year and \$90-100/bbl next year. This could mean energy prices have more pronounced second round effects on inflation than we assume. We include two other alternative scenarios: one where the conflict de-escalates rapidly and animal spirits take over, and another where AI adoption boosts productivity, but displaces some labor.
+
+Exhibit 1: US Economics Year-Ahead Outlook: Forecast Summary 
+
+<table><tr><td colspan="5">4Q/4Q % change, except where noted</td></tr><tr><td></td><td>2024A</td><td>2025A</td><td>2026E</td><td>2027E</td></tr><tr><td>Real GDP</td><td>2.4</td><td>2.0</td><td>2.3</td><td>2.6</td></tr><tr><td>Final Sales1</td><td>2.6</td><td>2.2</td><td>2.1</td><td>2.3</td></tr><tr><td>Final Domestic Demand2</td><td>3.0</td><td>1.8</td><td>2.4</td><td>2.8</td></tr><tr><td>Final Private Domestic Demand3</td><td>2.9</td><td>2.4</td><td>2.5</td><td>3.1</td></tr><tr><td>Personal Consumption Expenditures</td><td>3.4</td><td>2.1</td><td>1.8</td><td>2.1</td></tr><tr><td>Nonresidential Fixed Investment</td><td>0.9</td><td>5.6</td><td>7.0</td><td>8.0</td></tr><tr><td>- Structures</td><td>-4.8</td><td>-5.5</td><td>-3.9</td><td>2.0</td></tr><tr><td>- Equipment</td><td>3.2</td><td>9.6</td><td>10.2</td><td>10.5</td></tr><tr><td>- IPP</td><td>2.3</td><td>8.0</td><td>9.2</td><td>8.0</td></tr><tr><td>Residential Investment</td><td>1.3</td><td>-3.8</td><td>-1.3</td><td>1.5</td></tr><tr><td>Exports</td><td>3.3</td><td>1.1</td><td>4.0</td><td>1.8</td></tr><tr><td>Imports</td><td>6.2</td><td>-1.9</td><td>6.0</td><td>5.0</td></tr><tr><td>Government</td><td>3.6</td><td>-1.2</td><td>2.1</td><td>1.3</td></tr><tr><td>Inventory contribution (pct pts, a.r.)</td><td>-0.2</td><td>-0.2</td><td>0.1</td><td>0.2</td></tr><tr><td>Trade contribution (pct pts, a.r.)</td><td>-0.5</td><td>0.4</td><td>-0.4</td><td>-0.4</td></tr><tr><td colspan="5">Labor market</td></tr><tr><td>Civilian Unemployment Rate (%, eop)</td><td>4.1</td><td>4.5</td><td>4.3</td><td>4.1</td></tr><tr><td colspan="5">Inflation</td></tr><tr><td>Consumer Price Index</td><td>2.7</td><td>2.7</td><td>3.4</td><td>2.0</td></tr><tr><td>CPI ex Food &amp; Energy</td><td>3.3</td><td>2.7</td><td>2.7</td><td>2.5</td></tr><tr><td>PCE Price Index</td><td>2.6</td><td>2.8</td><td>3.2</td><td>2.0</td></tr><tr><td>PCE ex Food &amp; Energy</td><td>3.0</td><td>2.9</td><td>2.8</td><td>2.3</td></tr><tr><td colspan="5">Monetary Policy</td></tr><tr><td>Fed Funds Target (%, midpoint of target range, eop)</td><td>4.375</td><td>3.625</td><td>3.625</td><td>3.125</td></tr></table>
+
+Note: 1. GDP less inventories. 2. GDP less inventories and trade. 3. Consumption plus fixed investment. Source: Bureau of Economic Analysis, Bureau of Labor Statistics, Federal Reserve Board, MS forecasts
+
+Exhibit 2: US Economics Year-Ahead Outlook:   
+![](images/1046bbdaa2850e345623a5076f8e40279e01646d33de7fb0023880f6c565eeb3.jpg)
+
+<details>
+<summary>bar_line</summary>
+
+Contributions to Real GDP (pp, annual rate)
+| Quarter | Business fixed investment (pp) | Residential investment (pp) | Trade (pp) | Inventories (pp) | Government (pp) | Consumption (pp) | Real GDP (pp) |
+|---|---|---|---|---|---|---|---|
+| 1Q25 | 1.0 | -0.5 | -3.0 | 2.0 | -0.5 | 1.0 | -0.5 |
+| 2Q | 0.8 | 0.0 | 5.0 | -3.0 | -0.5 | 1.0 | 3.8 |
+| 3Q | 0.0 | 0.0 | 2.0 | -0.5 | -1.0 | 4.5 | 4.3 |
+| 4Q | 0.5 | 0.0 | 0.5 | -1.0 | -1.5 | 1.0 | 0.5 |
+| 1Q26 | 1.0 | -0.5 | -2.0 | 0.5 | -1.0 | 3.5 | 2.0 |
+| 2QE | 0.8 | -0.5 | -1.5 | 0.5 | -1.0 | 1.5 | 2.3 |
+| 3QE | 0.8 | -0.5 | -1.5 | 0.5 | -1.0 | 1.5 | 2.2 |
+| 4QE | 0.8 | -0.5 | -1.5 | 0.5 | -1.0 | 1.5 | 2.3 |
+| 1Q27E | 1.0 | -0.5 | -1.5 | 0.5 | -1.0 | 1.5 | 2.3 |
+| 2QE | 1.0 | -0.5 | -1.5 | 0.5 | -1.0 | 1.5 | 2.4 |
+| 3QE | 1.0 | -0.5 | -1.5 | 0.5 | -1.0 | 1.5 | 2.4 |
+| 4QE | 1.0 | -0.5 | -1.5 | 0.5 | -1.0 | 1.5 | 2.4 |
+| 2025E | 1.0 | -0.5 | -1.5 | 0.5 | -1.0 | 1.5 | 2.2 |
+| 2026E | 1.0 | -0.5 | -1.5 | 0.5 | -1.0 | 1.5 | 2.3 |
+| 2027E | 1.0 | -0.5 | -1.5 | 0.5 | -1.0 | 1.5 | 2.4 |
+The chart displays the contribution of each sector to the real GDP over time, with a separate line graph overlaying the bars for the 'Real GDP' series against the x-axis labeled with quarters from Q1 to Q4 and years from 2025E to 2027E.
+</details>
+
+Note: The annual measures are a 4Q to 4Q % change or contribution. Sources: Bureau of Economic Analysis, MS forecasts
+
+# Key inputs from our Public Policy team for 2026-27
+
+Ariana Salvatore, first published in Mapping the Midterms: A First Look
+
+# 1) Divided government is likely, but don't extrapolate the implications too far
+
+While historical precedent is strong – and polling and economic indicators point to waning support for Republican governance – prediction markets are likely underestimating the challenge that Democrats will have taking the Senate. If the election were held today, polls indicate it is very likely that control of the House of Representatives would shift to Democratic hands.
+
+While a divided government would likely inject gridlock into budget negotiations, we are not convinced overall policy uncertainty would wane. A divided government outcome would not derail the policy variables that have introduced elevated uncertainty over the past (tariffs, immigration, and foreign policy), that remain largely under the control of the Executive Branch.
+
+# 2) Fiscal stimulus ahead of the midterms remains unlikely
+
+Congress put priority on funding for the Department of Homeland Security and chose not to add other fiscal spending to the bill. Although it remains feasible for Republicans to pass two budget reconciliation bills ahead of the midterms – one before the fiscal year-end in September and a second after October 1 in the new fiscal year – we think time is limited, as is the appetite for larger deficits.
+
+Under a potential divided government in 2027, the scope for new tax cuts would be limited. The main fiscal variables under consideration will be changes to SNAP/Medicaid cuts in the OBBBA and the potential for government shutdowns. We expect potential differences in other policy areas (deregulation, AI, housing) would have limited macro effects through our forecast horizon. In a unified Republican Congress, we expect SNAP and Medicaid cuts would ensue as written in the bill. In a scenario of a Democratic sweep of the House and Senate, we would see upside risk to our growth forecasts if cuts to transfer payments were rolled back, while prolonged shutdowns under a more narrow Democratic House win could weigh on growth.
+
+# 3) Don't look now, but tariffs are coming back
+
+The Trump administration began trade reviews under Sections 232 and 301 following the Supreme Court ruling that the IEEPA tariffs were improper. These reviews should be completed in May and June ahead of the July 24 deadline when the 10% across-the-board tariffs under Section 122 expire. We do not expect a forceful push on tariffs ahead of the midterms, particularly given recent moves in gasoline prices, but tariff authority under Sections 232 and 301 is strong and tariff policy uncertainty may re-assert itself.
+
+# 4) The July USMCA review deadline in pending. We do not expect big changes
+
+The closer we get to the mid-2026 deadline for the USMCA review, the more challenging we expect it will be to add new sUBStantial chapters to the existing agreement. We are constructive overall in the longer term on trade alignment between the US, Mexico, and Canada, but see limited progress in sUBStantially expanding the agreement ahead of the July deadline. While it's possible existing issues are addressed within the existing framework, we think additions are more likely to be made through non-enforceable side agreements, and overall risk of escalation into the July deadline is high. However, given that our bear case largely reflects the status quo – rather than a withdrawal from the agreement – we think downside is still limited.
+
+# A neutralized fiscal impulse
+
+The details of the OBBBA promised higher tax refunds for US households. In the event, tax refunds are up about 17% y/y as of the most recent data, or about \$47bn year-on-year (additional saving accrues to households who owe less, but do not receive a refund). The average refund is up about \$320. According to our calculations, if retail gas prices in the US average \$3.60/gallon, then higher energy prices will neutralize the effects of higher tax refunds on spending. We expect growth in personal consumption to slow to 1.8% 4Q/4Q this year from 2.1% in 2025. Most of the weakness should be concentrated in goods spending from low- and middle-income households who spend relatively more of their income on gas. We expect household spending to firm back to 2.1% in 2027 as the energy shock dissipates.
+
+# AI-related capex shrugs off heightened geopolitical risk
+
+Our benign de-escalation baseline assumes US economic resilience comes from AI-related spending that is moving on its own path, largely independent of the energy price shock. Our equity analysts have recently revised higher their estimates for hyperscaler capex and our outlook for growth in nonresidential fixed investment is 7.0% 4Q/4Q this year and 8.0% next; imports will offset much of this when it comes to real GDP growth, but that's just GDP accounting. We think this spending will show up and support economic activity.
+
+We take up two special topics in our outlook with respect to AI, employment, and productivity:
+
+- Early evidence suggests minimal labor displacement from AI spending.   
+Following our discussion of labor markets below, we flag the results of our early research into AI and employment, where we find limited evidence that occupations with high AI exposure are seeing excess unemployment. We find that AI-related labor displacement has, at most, pushed the unemployment rate 0.1pp higher. We also find some evidence in favor of task shifting. It is still early days in the AI revolution, but so far the evidence is favorable when it comes to labor displacement risks.   
+- High-AI exposed industries drove most of the productivity gain in 2025 on faster output growth. We also highlight our findings on the drivers of recent productivity gains. When we group industries by AI-exposure, we find that industries with high AI exposure accounted for 1.7pp of the 2.4% increase in nonfarm business productivity in 2025. This was mainly driven by faster output rather than reduced employment. We assume this story continues over the forecast horizon given our view that AI remains in the build-out phase. That said, productivity in 2026 is temporarily dampened by our assumed energy price path.
+
+# Projections of the main macroeconomic variables
+
+We provide the summary forecast here and the extended details of the forecast in the following sections. Based on our policy assumptions, our updated outlook for the US economy includes:
+
+\- Growth: Real US GDP growth of 2.3% in 2026 and 2.6% in 2027 (each 4Q/4Q). The primary headwind to growth in 2026 is higher energy prices, which act like a tax on consumption and offset our estimated effect of fiscal stimulus on household spending. We forecast personal consumption expenditures to slow to 1.8% in 2026, down 0.3pp from last year, before accelerating back to 2.1% in 2027. We forecast growth in nonresidential fixed investment to remain robust at 7.0% this year and 8.0% next. Cyclically suppressed business investment categories recover somewhat in 2027. Growth rates of AI-related spending should moderate as spending levels rise.
+
+\- Inflation: Oil-induced increases in energy prices cause headline PCE to rise to 3.9% in May 2026, before decelerating thereafter. After finishing the year at 3.2%, headline inflation should decelerate rapidly as the level effects of higher oil prices pass. We assume limited second round effects on core inflation, and we forecast core PCE inflation to slow to 2.3% 4Q/4Q in 2027. On net, we expect the effects of tariffs and oil on inflation will prove transitory, with the risk that past several years of above-target inflation could make inflation expectations more upwardly malleable than we expect.
+
+\- Labor markets: Immigration policies have clearly slowed labor supply. Along with less labor demand, the labor market is in balance as historically low rates of net job creation. We see little reason for this to change. We forecast employment growth to average 43k per month in 2026 and 60k in 2027. With a much lower breakeven rate, the unemployment rate holds steady at 4.3% in 2026 and nudges lower to 4.1% in 2027. Our concern is that it would take only a modest drop-off in labor demand to lead to declines in monthly payrolls.
+
+\- Monetary policy: We see the Fed on hold at a target rate of 3.50-3.75% through the end of 2026, followed by 50bp of policy rate easing in 2027 once it becomes clear that y/y rates of headline inflation are moving lower. We still believe the bar for hikes is high, but the bar for cuts has also risen. With policy close to neutral and activity showing signs of resilience, the Fed can afford to be patient and lean against second round effects on core inflation from higher energy prices. The risk to our view is that normalization has been completed, with persistence in inflation or a rising r\* on the heels of AI spending keep the Fed on the sidelines through 2027.
+
+# Consumption: Energy headwind neutralizes fiscal stimulus
+
+Key takeaway 1: Our view on the consumer in 2026 has turned more neutral. With the drag from higher oil prices, we expect that real consumption growth in 2026 will temporarily decelerate (1.8% 4Q/4Q), below the average pace recorded over the 2012–19 period (2.4%). Previously, we penciled in a fiscal-induced bump to spending in 2026, but that assumption no longer seems plausible.
+
+Key takeaway 2: As we move into 2027, we expect a re-acceleration in real consumption growth as the pass-through effects of tariffs and energy prices fade. We see household spending re-accelerating on improving economic fundamentals, including larger productivity gains, a more stable labor market, and a deceleration in inflation. We also expect a less restrictive stance from the Fed.
+
+Key takeaway 3: We are more cautious on our outlook for spending by low- and middle-income cohorts, where higher energy prices will reduce real purchasing power. The focus is back on the upper-income consumer, where we assume higher levels of wealth allow for resilient spending.
+
+# Real income growth remains soft near-term...
+
+Real consumption growth moderated in 2025. The combination of softer labor demand, still-elevated inflation relative to target, and policy-related headwinds weighed on momentum through the year, even as the underlying resilience of household s helped avoid a sharper slowdown. Coming into 2026, we expected slower consumption growth at the start of the year followed by sequential improvement as real income growth recovered. The first part of our expectation – that consumption growth would slow in 1Q on the back of higher inflation – played out. However, recent events and data have now led us to lower our near-term income forecasts, delaying the recovery.
+
+We expect higher inflation and somewhat softer employment growth from the oil shock to keep real labor income subdued this year, rising just 0.8% 4Q/4Q. Meanwhile, tax changes from the One Big Beautiful Bill Act boosted disposable income in January, but not as much as we had factored in. As a result, real disposable personal income growth remains soft in 2026 at 1.2% (4Q/4Q), relatively unchanged from last year. We expect 2Q to be the weakest, negative on a q/q basis as inflation remains high.
+
+In 2027, we expect real income growth to start to accelerate again. Inflation decelerates back towards target and employment growth stabilizes, even if still limited. We also expect that higher productivity will boost wage growth and asset income. Transfer payments offset these gains partly as cuts to Medicaid and SNAP benefits ramp up further. In our forecasts, real disposable income grows 1.7% in 2027, with real labor income up 1.9%.
+
+# ...leading to slower consumption growth this year
+
+We expect that weak real income growth will slow consumption growth this year. As income growth begins to accelerate next year, consumption growth picks up again. Real consumption grows 1.8% (4Q/4Q) in 2026 and 2.1% in 2027.
+
+Real goods spending was weak in 4Q and 1Q as higher prices from tariffs weighed on spending. While we think the tariff-driven price shock is largely behind us, our models suggest oil supply shocks also weigh primarily on goods spending. Rate cuts are also no longer a tailwind this year. We now expect goods spending to begin to recover only in the back half of this year. Services spending growth has slowed modestly but remains resilient, which we expect to continue. Overall, real goods spending rises 0.6% (4Q/4Q) in 2026 and 1.6% in 2027 while services spending grows 2.3% in both 2026 and 2027.
+
+Exhibit 3: Quarterly forecasts for real consumption and income growth   
+![](images/2a72aac83b14fa42ce724de598c1a8d321b6a2b4d6559c29861a7922503e8447.jpg)
+
+<details>
+<summary>bar</summary>
+
+Personal consumption and income (% q/q saar)
+| Year | Quarter | Real consumption (%) | Real disposable personal income (%) |
+| :--- | :--- | :--- | :--- |
+| 2025 | Q1 | 0.6 | 2.2 |
+| 2025 | Q2 | 2.5 | 1.8 |
+| 2025 | Q3 | 3.5 | 1.0 |
+| 2025 | Q4 | 1.9 | 0.0 |
+| 2026e | Q1 | 1.6 | 1.5 |
+| 2026e | Q2 | 1.7 | -0.8 |
+| 2026e | Q3 | 1.9 | 1.9 |
+| 2026e | Q4 | 1.9 | 2.4 |
+| 2027e | Q1 | 1.8 | 1.3 |
+| 2027e | Q2 | 2.2 | 1.4 |
+| 2027e | Q3 | 2.2 | 2.1 |
+| 2027e | Q4 | 2.2 | 2.0 |
+</details>
+
+Note: e = MS estimate. Source: BEA, Haver Analytics, MS forecasts
+
+Exhibit 4: Quarterly forecasts for real goods and services spending   
+![](images/23310c04ea18b7b4abb04cb88e713e24eef4e922aca29035ef2d45adbc0cfcee.jpg)
+
+<details>
+<summary>bar</summary>
+
+Goods v services spending (% q/q saar)
+| Period | Goods (%) | Services (%) |
+| :--- | :--- | :--- |
+| Q1 2025 | 0.2 | 0.8 |
+| Q2 2025 | 2.2 | 2.6 |
+| Q3 2025 | 3.0 | 3.6 |
+| Q4 2025 | 0.3 | 2.7 |
+| Q1 2026e | -0.1 | 2.4 |
+| Q2 2026e | 0.5 | 2.3 |
+| Q3 2026e | 1.0 | 2.3 |
+| Q4 2026e | 1.0 | 2.3 |
+| Q1 2027e | 1.2 | 2.1 |
+| Q2 2027e | 1.7 | 2.4 |
+| Q3 2027e | 1.7 | 2.4 |
+| Q4 2027e | 1.7 | 2.4 |
+</details>
+
+Note: e = MS estimate. Source: BEA, Haver Analytics, MS forecasts
+
+# Higher gas prices offset the fiscal boost
+
+One source of optimism for the consumer this year was the fiscal stimulus from the One Big Beautiful Bill Act. Our forecasts included a meaningful (15-25%) rise in tax refunds and significant boost to 1Q income. We expected a smaller and more gradual effect on spending, with the bill on net adding 20bps to real consumption this year. So far these expectations have largely played out, with potentially slight downside risk, but we now expect higher gas prices to more than offset this boost.
+
+Tax refunds are up 17% as of the most recent data, with the average refund up \$323 (for those who received a refund). For the average household, we estimate that a 15% increase in gas prices this year would lead to a \$375 increase in gas spending, more than offsetting the higher refund. This 15% increase implies gas prices at \$3.60 for the year as a whole, and gas prices are currently much higher, around \$4.50. Higher tax refunds may help consumers offset higher costs near-term, but if gas prices remain at these levels, the YoY increase in the average household's refund would be fully offset by the YoY increase in their gas spending by mid-July.
+
+Exhibit 5: Tax refunds are up 17% y/y so far   
+![](images/4265755de951152f35501c2f2f715de9d22f7ce66ce44e166159e58d6f1d7df2.jpg)
+
+<details>
+<summary>line</summary>
+
+| Month | 2023 | 2024 | 2025 | 2026 |
+|-------|------|------|------|------|
+| Feb   | 0    | 0    | 0    | 0    |
+| Mar   | ~100 | ~90  | ~100 | ~110 |
+| Apr   | ~180 | ~170 | ~180 | ~200 |
+| May   | ~250 | ~240 | ~260 | ~300 |
+| Jun   | ~290 | ~280 | ~290 | ~310 |
+</details>
+
+Source: US Treasury, Haver Analytics, MS
+
+Exhibit 6: We estimate an increase of 15% in gas prices this year would more than offset the average tax refund increase   
+![](images/7555f8423ab9db49abded037ff417447328701f7e986876d241ba8485ffb3101.jpg)
+
+<details>
+<summary>bar</summary>
+
+| YoY % Change in Avg Retail Gas Price | Estimated average household increase in gas spending (annual, $) |
+| ------------------------------------- | ------------------------------------------------------------------ |
+| 10%                                   | 250                                                                |
+| 15%                                   | 375                                                                |
+| 20%                                   | 500                                                                |
+| 25%                                   | 625                                                                |
+| 30%                                   | 750                                                                |
+| 35%                                   | 875                                                                |
+</details>
+
+Source: BLS, IRS, Haver Analytics, MS
+
+# Consumption dynamics of income cohorts
+
+Before the oil shock, we were constructive on spending growth for the lower- and middle-income cohorts, but we are much more cautious now. We expect that the slowdown in real spending growth will be more consequential for low- and middle-income consumers, while high-income consumers remain supported by wealth, allowing them to smooth through the shock and limit further downside.
+
+Low- and middle-income consumers, who are reliant on income growth for spending, will continue to face pressures this year as affordability worsens near-term. Tariff-related inflation pressures are essentially being replaced by higher energy costs, which will disproportionately affect these cohorts. Meanwhile, wage growth for the lowest-income group was weak last year, only more recently showing some pickup towards the aggregate. Given our labor market expectations, we do not expect low-income consumers to have outsized wage gains this year.
+
+The key question is what could trigger a significant step-change for these consumers that more materially affects aggregate consumption. We believe this would be most likely to stem from a significant labor market downturn or change in access to credit, neither of which is our base case. The unemployment rate remains low in our forecasts, ending 2026 at 4.3% and 2027 at 4.1%. While delinquency rates on consumer loans have risen, debt service ratios are not showing signs of stress and the pace of tightening in lending standards has slowed; all of this suggests no material deterioration in credit access.
+
+Overall, we expect the pressures on these lower cohorts to continue this year, limiting their discretionary spend, but without a spillover into a larger downturn.
+
+For high-income consumers, near-term uncertainty and elevated inflation could weigh on spending growth modestly. However, elevated wealth and further wealth gains should be supportive across our forecast horizon - as they were in 2025. Household net worth was up \$14tn in 2025 and \$53tn over the prior five years. The top 20% income cohort holds over 70% of total net worth and almost 90% of corporate equities. A benign de-escalation scenario should keep financial wealth gains intact. Home price growth likely will not accelerate much, but prices are still up significantly over the past five years. Housing wealth should thus continue to support the balance sheets of homeowners and can serve as a potential liquidity source if needed. Given that we have already seen overall consumption levels return to wealth-implied target levels, the risks of a sudden, sharp slowdown in spending growth are lower barring a significant worsening in cyclical conditions.
+
+As we progress throughout 2027, we could start to see improvement for the middle-income cohort and some of the low-income cohort. Pickups in wage growth and decelerating inflation should support some broadening out of consumption. However, those affected by the cuts to SNAP and Medicaid (likely the bottom 10-20%) will face new headwinds.
+
+Exhibit 7: Wealth effects for upper income households: The top income cohort holds more than 70% of all net worth   
+![](images/0c9192781ececd1dfd52e1ef6bf1600cd31d761b9392024ed11cd7b143e6fe5f.jpg)
+
+<details>
+<summary>bar</summary>
+
+Share of total net worth by income cohorts (Q42025, %)
+| Income Cohort | Share of total net worth (%) |
+| :--- | :--- |
+| 0-20 Pctl | 2.9 |
+| 20-40 Pctl | 4.1 |
+| 40-60 Pctl | 7.8 |
+| 60-80 Pctl | 13.3 |
+| 80-99 Pctl | 47.3 |
+| Top 1 Pctl | 24.7 |
+</details>
+
+Note: Financial wealth plus real estate wealth, less all household liabilities, by income percentiles. Source: Federal Reserve Board, Haver Analytics, MS
+
+Exhibit 8: Consumption is no longer overshooting; we think the risk of a sharp deceleration is more limited   
+![](images/9935e61e87fc22554f3e0d305b89c76a55d8f22139c252932a9ac9c8922ec7a9.jpg)
+
+<details>
+<summary>bar</summary>
+
+| Year | Quarter | Nominal consumption (Bil $) |
+|------|---------|-----------------------------|
+| 2024 | Q1      | -180                        |
+| 2024 | Q2      | -180                        |
+| 2024 | Q3      | -70                         |
+| 2024 | Q4      | -50                         |
+| 2025 | Q1      | -90                         |
+| 2025 | Q2      | 40                          |
+| 2025 | Q3      | 30                          |
+| 2025 | Q4      | -10                         |
+</details>
+
+Note: Gap between actual nominal consumption and its wealth-implied target. Negative values indicate consumption is undershooting the target, while positive values point to spending overshoots. Source: Federal Reserve Board, BEA, Haver Analytics, MS
+
+# Risks to our Baseline View on Consumption Growth
+
+# Upside risks:
+
+- In our aggregate demand upside scenario, better than expected equity market returns lead to stronger consumption from upper-income households. If hiring rebounds more than expected, strength could be more widespread across cohorts.   
+- Given the focus on affordability, policymakers could attempt to pass consumer stimulus ahead of midterms. That said, we think the probability is low given many policies would need to go through Congress. Absent a sharper deterioration in consumer spending, our policy colleagues believe passage is unlikely given slim Republican margins, limited time in the legislative calendar, and fiscal concerns from some members (see here).   
+- Cuts to SNAP and Medicaid could be delayed or softened, depending on the outcomes of the midterm elections. This could boost our 2027 income and consumption forecasts by up to a couple tenths.
+
+# Downside risks:
+
+- If oil prices are significantly higher than we expect, or remain higher for longer, the effects on consumption could become nonlinear. Higher prices could lead to more passthrough to core inflation, larger effects on business confidence and hiring, or declines in asset markets. A large and sustained decline in asset markets could lead to negative consumption growth.   
+- In our baseline we expect that the larger gains from productivity are labor-augmenting. However, there could be a downside risk to consumption if there is greater labor displacement and the unemployment rate ticks upward. In this case, higher unemployment would result in weaker growth in labor income, slowing consumption relative to the baseline.
+
+# Business spending: Full steam ahead
+
+Key takeaways: Business spending should maintain its two-speed story over the forecast horizon. We expect nonresidential business fixed investment to grow by 7% in 2026 and accelerate to 8% in 2027. AI-related capex should continue to drive overall growth, supported by sustained hyperscaler spending – which should exceed \$1tn in 2027 – and the ongoing buildout of compute and power capacity. In contrast, non-AI investment has been weaker but is beginning to show early signs of stabilization. As cyclical conditions improve in 2027, we expect a gradual broadening of the investment cycle, though AI-related spending will remain the dominant driver.
+
+# AI spending to remain robust despite the energy price shock
+
+We expect business spending, measured by nonresidential fixed investment, to grow by 7.0% in 2026 and 8.0% in 2027, driven primarily by continued strength in AI-related investment.
+
+Nonresidential fixed investment (NFI) comprises three broad categories in the national accounts – structures, equipment, and intellectual property products (IPP) – and represents business spending on long-lived assets. In our view, the NFI outlook for 2026–27 will be defined by a growing divergence within these components. Historically, these components have moved largely in line with the broader business cycle and have been an important driver of GDP fluctuations. However, this relationship has weakened more recently. AI-related investment is emerging as the primary source of strength, while traditional capex remains more subdued. Because AI spending cuts across structures, equipment, and IPP, organizing the outlook along this dimension better captures the forces shaping the investment cycle.
+
+Within GDP, we define AI-related investment as data centers (structures), power infrastructure (structures), information processing equipment, and software (IPP). Here, “data centers” refer only to the physical structures, with associated equipment and systems recorded separately elsewhere in NFI. We refer to this grouping as “AI-related” given its role in enabling AI deployment, although the national accounts do not distinguish between AI and non-AI uses within these categories. Because AI spending spans structures, equipment, and IPP, it is best viewed as a cross-category driver of NFI rather than a component within any single bucket. As shown in Exhibit 9 and Exhibit 10, AI-related expenditures display little cyclical volatility and have provided the bulk of the contribution to growth from business spending.
+
+Exhibit 9: AI-related spending appears more structural than cyclical...   
+![](images/9de8237b470e307708dc266f7f801b29aedb464d9336f0857ea582dc31964e6e.jpg)
+
+<details>
+<summary>line</summary>
+
+| Year | AI-related (left) | Non-AI-related (right) |
+|------|---------------------|--------------------------|
+| 12   | ~550                | ~600                     |
+| 14   | ~650                | ~800                     |
+| 16   | ~750                | ~900                     |
+| 18   | ~850                | ~1000                    |
+| 20   | ~1000               | ~1200                    |
+| 22   | ~1200               | ~1300                    |
+| 24   | ~1400               | ~1400                    |
+| 26   | ~1800               | ~1300                    |
+</details>
+
+Source: BEA, MS
+
+Exhibit 10: ...which has led to consistent contributions to GDP growth   
+![](images/0a4b1859724edf9ebc631f99da0f604a1fede4bbd291de7cdbd1e37a1d24f8c7.jpg)
+
+<details>
+<summary>bar_line</summary>
+
+Contribution to Real GDP Growth, pp
+| Year | AI-related (pp) | Non-AI-related (pp) | NFI (pp) |
+| :--- | :--- | :--- | :--- |
+| 21 | 0.75 | 0.45 | 1.2 |
+| 22 | 0.65 | -0.35 | -0.25 |
+| 23 | 0.15 | 0.85 | 1.3 |
+| 24 | 0.25 | -0.05 | 0.2 |
+| 25 | 0.1 | -0.6 | -0.6 |
+| 26 | 0.85 | -0.65 | 1.25 |
+</details>
+
+Source: BEA. MS
+
+# Hyperscaler capex estimates keep moving higher...
+
+The speed and strength of AI capex have repeatedly surprised to the upside. Our equity analysts have again revised up their estimates of hyperscaler capex and have pushed the expected deceleration further into 2027, reinforcing the view that the investment cycle remains in an expansion phase rather than approaching a peak. Exhibit 11 shows that we now expect \$805bn and \$1,116bn of hyperscaler capex in 2026 and 2027, respectively, with most of the spending associated with new buildouts. This implies annual growth of 79% and 39% in 2026 and 2027, compared with 72% and 94% in 2025 and 2024. Hence, even though the level of spending is rising, its growth rate is slowing. We would not be surprised if 2026 and 2027 growth were revised higher as we move into 2H26. In our view, the persistence of upward revisions suggests the AI investment cycle remains in an early phase, with any overinvestment risks likely a medium-term consideration rather than a near-term concern.
+
+Exhibit 11: Our equity analysts have recently revised higher their estimates for hyperscaler capex spending   
+![](images/4eed6974c9b72c439b017f5af30d2154bc7e10301a4e4060616f1a2fe5cc0fb6.jpg)
+
+<details>
+<summary>bar_stacked</summary>
+
+Hyperscaler Capex Estimates, Nominal
+| Year | Prior estimates ($ bn) | Current Estimates ($ bn) |
+| :--- | :--- | :--- |
+| 2022 | 131 | 0 |
+| 2023 | 135 | 0 |
+| 2024 | 261 | 0 |
+| 2025 | 449 | 0 |
+| 2026 | 805 | 55 |
+| 2027 | 1116 | 176 |
+</details>
+
+Note: See GOOGL, AMZN, and META Surprises and Learnings. Source: MS
+
+Exhibit 12: Level versus growth rate: The growth rate of hyperscaler capex is expected to slow in 2027   
+![](images/6ab8016bc7e14f34885ec92451c415f4e0382298607458cb6b88cca261406558.jpg)
+
+<details>
+<summary>bar</summary>
+
+| Year | Prior estimates | Current Estimates |
+| ---- | --------------- | ----------------- |
+| 2023 | 3               | -                 |
+| 2024 | 94              | -                 |
+| 2025 | 72              | -                 |
+| 2026 | 79              | -                 |
+| 2027 | 39              | -                 |
+</details>
+
+Note: See GOOGL, AMZN, and META Surprises and Learnings. Source: MS
+
+# ...keeping AI's contribution to growth elevated
+
+We expect AI capex to be the dominant driver of growth in NFI in 2026 and 2027. It has become a structurally driven macro force that is less sensitive to geopolitical uncertainty and traditional business cycle dynamics, supported by the buildout of foundational capacity rather than near-term demand conditions. Even after adjusting for imports, we estimate that AI-related investment and its associated productivity improvements will contribute 0.4-0.5pp to growth in 2026 and 2027 (see our 2026 Year Ahead Outlook for further discussion).
+
+Exhibit 13: AI and non-AI business investment contributions to GDP growth 
+
+<table><tr><td></td><td colspan="5">Contribution to Real GDP Growth, pp</td></tr><tr><td></td><td>2023</td><td>2024</td><td>2025</td><td>2026</td><td>2027</td></tr><tr><td>Nonresidential fixed investment</td><td>0.90</td><td>0.14</td><td>0.75</td><td>0.99</td><td>1.18</td></tr><tr><td>AI-related</td><td>0.31</td><td>0.26</td><td>0.83</td><td>1.03</td><td>0.86</td></tr><tr><td>Non-AI-related</td><td>0.59</td><td>-0.12</td><td>-0.08</td><td>-0.04</td><td>0.31</td></tr><tr><td>Imports, computers &amp; peripherals</td><td>-0.03</td><td>-0.20</td><td>-0.68</td><td>-0.88</td><td>-0.69</td></tr><tr><td>Domestic AI-related investment</td><td>0.28</td><td>0.05</td><td>0.15</td><td>0.15</td><td>0.18</td></tr><tr><td>Productivity</td><td>0.00</td><td>0.00</td><td>0.10</td><td>0.20</td><td>0.25</td></tr><tr><td>AI total</td><td>0.28</td><td>0.05</td><td>0.25</td><td>0.35</td><td>0.43</td></tr></table>
+
+Note: AI-related investment includes spending on information processing equipment, software, data centers, and power centers. Remaining categories are defined as non-AI-related spending. AI-related imports are computers and peripherals. 2026 and 2027 numbers are MS estimates. Source: BEA, Haver Analytics, MS
+
+At first glance, AI-related investment's contribution to GDP growth appears small relative to the billions of dollars in spending plans announced by technology firms. As discussed previously, this reflects differences between GDP accounting and corporate spending plans. A large share of data center buildouts is imported (such as computers and chips). In addition, corporate spending plans include intermediate inputs and labor costs, neither of which maps one-for-one into measured investment in the national accounts. GDP captures only final uses of domestically produced output; imports are therefore excluded, intermediate inputs are not reflected, while labor costs may instead be recorded as value added in related service sectors.
+
+Exhibit 13 illustrates these differences in accounting treatment. Using hyperscaler capex estimates, we estimate that gross AI-related investment would contribute 1.0 and 1.2 percentage points to GDP growth in 2026 and 2027, respectively. After adjusting for the imported content of that investment, domestic value added from AI-related investment would contribute 0.2 and 0.2 percentage points to real GDP growth in 2026 and 2027.
+
+Exhibit 14: Effects of AI-related investment on real GDP growth seem sUBStantial...   
+![](images/39bb2b08c662849009e2d2f67013d36ab1a5e5cf7ea82f7db2df609f691abf50.jpg)
+
+<details>
+<summary>bar</summary>
+
+| Year | AI-related | Nonresidential fixed investment |
+| ---- | ---------- | ------------------------------- |
+| 2023 | 0.3        | 0.9                             |
+| 2024 | 0.25       | 0.15                            |
+| 2025 | 0.83       | 0.75                            |
+| 2026 | 1.02       | 1.0                             |
+| 2027 | 0.85       | 1.18                            |
+</details>
+
+Source: BEA, Haver Analytics, MS
+
+Exhibit 15: ...but looks more subdued after accounting for imports   
+![](images/75156d87341207fae0bb077fd053ceffae17477dd3b0b4eb30d1b6eb7698136f.jpg)
+
+<details>
+<summary>bar</summary>
+
+| Year | AI-related | AI-related ex-imports of computers & peripherals |
+| ---- | ---------- | ----------------------------------------------- |
+| 2023 | 0.3        | 0.28                                            |
+| 2024 | 0.25       | 0.05                                            |
+| 2025 | 0.83       | 0.15                                            |
+| 2026 | 1.02       | 0.15                                            |
+| 2027 | 0.87       | 0.18                                            |
+</details>
+
+Source: BEA, Haver Analytics, MS
+
+# A look at the components
+
+# Structures: Strength Concentrated in AI
+
+Structures investment is expected to fall by 3.9% in 2026, despite continued strength in AI-related data centers (Exhibit 16) and power facilities. It is then projected to recover, rising by 2.0% in 2027, as growth broadens across the economy and geopolitical risks fade. Most other major structure components have been flat or contracting over the past two years. The shares of data centers and power facilities (5% and 16% in 1Q26, respectively) remain too small to offset the broader weakness in structures.
+
+# Equipment: Early Signs of Broadening
+
+Equipment investment is expected to grow at 10.2% and 10.5% in 2026 and 2027, led by continued strength in AI-related equipment. We estimate that at least half of hyperscaler capex is allocated to chips and related computing hardware. Non-AI equipment categories are typically more cyclical and tend to be more volatile than headline GDP. That said, recent data point to early signs of improvement, though higher energy prices and geopolitical uncertainty pose downside risks. We expect these categories to remain resilient in 2026 and gain further momentum into 2027, consistent with a gradual broadening of the capex cycle beyond AI-related investment.
+
+Exhibit 16: Strength continued in AI-related data centers   
+![](images/bdeceaa951b34f70f05dc33639c44cb73bcb7f2273b59ba5264912d4d027ce21.jpg)
+
+<details>
+<summary>line</summary>
+
+| Year | Value ($ billions) |
+| ---- | ------------------ |
+| 16   | ~3                 |
+| 18   | ~7                 |
+| 20   | ~9                 |
+| 22   | ~12                |
+| 24   | ~25                |
+| 26   | ~48                |
+</details>
+
+Source: U.S. Census Bureau, Haver Analytics, MS
+
+Exhibit 17: The share of software in IPP has accelerated more recently   
+![](images/4a4ba4616c4877cff2d41c914869c652d62270571ff7950e0f89d4cb8043a5fa.jpg)
+
+<details>
+<summary>line</summary>
+
+| Year | Software |
+| ---- | -------- |
+| 02   | 0.37     |
+| 04   | 0.36     |
+| 06   | 0.37     |
+| 08   | 0.38     |
+| 10   | 0.39     |
+| 12   | 0.41     |
+| 14   | 0.42     |
+| 16   | 0.41     |
+| 18   | 0.43     |
+| 20   | 0.42     |
+| 22   | 0.43     |
+| 24   | 0.44     |
+| 26   | 0.45     |
+</details>
+
+Source: BEA, Haver Analytics, MS
+
+# Intellectual Property Products: Steady Expansion
+
+Investment in intellectual property products (IPP) should continue to expand steadily, at 9.2% in 2026 and 8.0% in 2027. Recent volatility in real software growth – weakening in 2H25, and rebounding in 1Q26 – appears largely artificial, driven by swings in the software deflator. Nominal spending on software has continued to grow at a steady pace, suggesting that, absent these price effects, real growth would have been more consistent since 2024. The share of software investment in IPP has been rising gradually over the past two decades and has accelerated more recently alongside the surge in AI-related capex. Within non-AI components, research and development has also expanded steadily, with its share of IPP remaining around 50%. In contrast, investment in entertainment, literary, and artistic originals has been on a declining trend.
+
+# Risks to our outlook for business spending
+
+Risks to our outlook are two-sided. On the upside, a faster-than-expected easing in financial conditions or stronger demand could accelerate the recovery in non-AI investment and lead to a broader-based capex cycle. This is captured in our "animal spirits" demand shock scenario. On the downside, persistent geopolitical uncertainty, higher energy costs, or tighter financing conditions could weigh on cyclical investment, delaying the expected broadening. We capture these dynamics in our global oil recession scenario.
+
+For AI-related investment, risks are also more medium-term in nature. While the cycle appears to remain in an expansion phase, constraints around power availability, supply chains, or policy could affect the pace of buildout. Execution risk is higher given growing concern among households that data centers boost utility costs for homeowners and political pushback in some areas over data center locations. In addition, while we view overinvestment risks as limited in the near term, they could emerge later in the cycle if capacity expansion ultimately outpaces demand.
+
+# Residential investment: House arrest
+
+Key takeaway: Challenged affordability and the locked-in state of the housing market continue to weigh on housing activity. A less supportive rates backdrop than we previously expected prolongs the weakness. Real residential investment declines 1.3% (4Q/4Q) in 2026 before rising 1.5% in 2027.
+
+# Elevated mortgage rates keep sales slow...
+
+Housing supply and demand both remain challenged, but demand has been the larger constraint on home sales recently. Inventories of existing homes are still low at an absolute level, well below those of 2019, but they are up 35% from the historic lows in 2023 lows and 10% from a year ago. Meanwhile, affordability has improved from the troughs of 2023 but has yet to spark demand, leading to soft home sales and continued deceleration in home prices.
+
+Given our expectation for a prolonged hold from the Fed and two 25bp cuts in 1H27, our rates strategists expect a modest drift lower in the 10y Treasury yield, ending 2026 at 4.25% and 2027 at 4.15%. Technical factors are supportive for the mortgage basis, but mortgage rates will still remain close to or above 6% through 2027.
+
+As a result, we expect limited improvement in supply and demand throughout our forecast horizon. About 75% of currently outstanding mortgages have rates below 6.0%, and 66% have rates below 5.5%. Mortgage rates remaining above 6% likely puts a cap on how much inventories can increase. On the demand side, while lower rates should help affordability improve on the margins, affordability will still remain challenged historically.
+
+We assume these dynamics will keep sales growth limited and result in very range-bound home prices. We expect both existing and new home sales to be flat to slightly negative this year, with only slight acceleration in 2027. Lock-in effects will limit forced selling, creating a floor for home prices in the absence of demand. In the base case, home prices reaccelerate modestly as demand starts to return, +2% this year and next.
+
+# ...which limits growth in housing starts as well
+
+Housing starts were up slightly in the first quarter versus last year's average, but we think the spike in March was weather-related. Other data continue to signal weakness. Homebuilder confidence has been bouncing around the low levels of the past few years. New home inventories are still elevated, relatively flat over the past couple quarters after only a slight decline in mid-2025.
+
+Any moves lower in mortgage rates should help homebuilder confidence, but we think some of the new home supply needs to be worked through before building accelerates. In other words, we first need to see a pickup in new home sales before seeing a pickup in starts. Our housing strategists thus expect relatively flat single-family starts in 2026 followed by a slight pickup in 2027. Multifamily starts have been drifting up for the past two years. The growth in multifamily starts has moderated recently, which we expect to continue.
+
+Altogether, residential investment drags on growth again this year, -1.3% (4Q/4Q) compared to -3.8% in 2025. Growth turns positive but remains slow in 2027, +1.5%.
+
+Exhibit 18: Our US housing strategists' 2026-2027 forecasts 
+
+<table><tr><td rowspan="2"></td><td colspan="4">Percent Change</td><td colspan="4">Actual Values</td></tr><tr><td>2024a</td><td>2025a</td><td>2026e</td><td>2027e</td><td>2024a</td><td>2025a</td><td>2026e</td><td>2027e</td></tr><tr><td>HPA</td><td>4%</td><td>1%</td><td>2%</td><td>2%</td><td></td><td></td><td></td><td></td></tr><tr><td>Existing Home Sales</td><td>-1%</td><td>1%</td><td>0%</td><td>3%</td><td>4.06mm</td><td>4.08mm</td><td>4.10mm</td><td>4.25mm</td></tr><tr><td>New Home Sales</td><td>3%</td><td>-1%</td><td>-1%</td><td>6%</td><td>685k</td><td>679k</td><td>675k</td><td>715k</td></tr><tr><td>1-Unit Housing Starts</td><td>7%</td><td>-7%</td><td>1%</td><td>3%</td><td>1016k</td><td>942k</td><td>950k</td><td>980k</td></tr></table>
+
+e: Census Bureau, NAR, MS forecasts
+
+Exhibit 19: Inventories of new homes remain high, but inventories of existing homes are still low historically   
+![](images/b3d032b13631017982dc50ccff759251dff3dd5e5e4be53802958b5032bc0926.jpg)
+
+<details>
+<summary>line</summary>
+
+| Date   | Total | Existing | New  |
+|--------|-------|----------|------|
+| Mar-83 | 2700  | 2400     | 1600 |
+| Mar-91 | 2900  | 2600     | 2200 |
+| Mar-99 | 2500  | 2100     | 1800 |
+| Mar-07 | 3800  | 3500     | 5500 |
+| Mar-15 | 2000  | 1800     | 1500 |
+| Mar-23 | 1800  | 1200     | 5000 |
+</details>
+
+Source: NAR, Freddie Mac, MS
+
+Exhibit 20: Housing affordability will improve slightly as mortgage rates fall but still remain challenged   
+![](images/0d0d7323b8543ce0a27ef403a25930624a3968a64fbaf94e3dd256e8efe37b02.jpg)
+
+<details>
+<summary>line</summary>
+
+| Year | Affordability | Most Recent (Mar '26) | at 5% |
+|------|---------------|------------------------|-------|
+| 2026 | ~21%          | ~21%                   | ~19%  |
+</details>
+
+Note: "Affordability" is measured as average monthly mortgage payment as a percent of average monthly income using current mortgage rates. The dashed lines indicate the payment as a percent of income at the indicated mortgage rate. Source: eMBS, Freddie Mac, US Census Bureau, BLS, MS
+
+# Fiscal policy: OBBBA, tariff refunds, and more defense spending
+
+Key takeaways: We continue to expect fiscal deficits to remain around 6% of GDP over our forecast horizon. IEEPA tariff refunds and additional defense spending will add to deficits. An upside risk for FY27 is a large reconciliation bill passed ahead of the midterms that boosts defense spending more than we assume and could also include infrastructure investment and affordability measures.
+
+# Elevated fiscal deficits continue
+
+Lower-than-expected retroactive corporate tax refunds in 4Q25 reduced the 2025 fiscal deficit relative to our expectations, to 5.4% of GDP (\$1.67tn) versus 5.8% previously expected. However, the headline 2025 deficit was artificially lowered by student loan accounting. Specifically, OBBBA savings from the existing student loan portfolio were fully recorded as negative spending by the Department of Education (approximately – \$130bn). Absent this accounting distortion, the 2025 fiscal deficit would have been 5.8% of GDP.
+
+We project a wider fiscal deficit in 2026, reaching \$2.05tn (6.3\% of GDP). The increase is driven by several factors (see Exhibit 21):
+
+1. The one-off student loan savings will not recur in 2026, mechanically widening the deficit.   
+2. OBBBA provisions – including individual and corporate tax deductions and higher defense outlays – are likely to add approximately \$166bn, based on CBO's scoring.   
+3. IEEPA tariff refunds remain uncertain, but recent developments point toward an outcome between our baseline and our "fast & high refunds" scenario. We currently assume \$80bn in IEEPA refunds in calendar year 2026.   
+4. Additional defense funding is likely, potentially via budget reconciliation. Press reports suggest the Pentagon is seeking an increase of roughly \$200bn for FY2027. Given narrow congressional margins and the need for some Democratic support on appropriations, we see a challenging path to passage at that level. We assume \$100bn is ultimately enacted, implying \$26bn in 4Q26 spending and \$74bn in calendar-year 2027 spending.   
+5. Macro factors, notably a higher debt stock and still-elevated interest rates, account for most of the residual increase in deficits, despite a broadly supportive economic growth outlook.
+
+These pressures are partially offset by higher tariff revenues and lower federal payroll spending. We assume the effective tariff rate remains around 11%-13%. The improvement relative to 2025 reflects timing: higher tariff collections and lower federal payrolls will be in place for the entire year in 2026, whereas they were only partially operative in 2025.
+
+We expect a similar fiscal deficit in 2027, at \$2.09tn (6.1\% of GDP). OBBBA-related SNAP and Medicaid cuts begin to take effect in 2027, but these savings are partially offset by higher interest costs and additional defense spending.
+
+Exhibit 21: Deficit expansion in 2026...   
+![](images/d3f0f1ae3f252ac397bd853768ba7852e81978c9c66e34329c8f4706c9af03ae.jpg)
+
+<details>
+<summary>bar</summary>
+
+Deficit in 2025 vs 2026 (CY, $bn): Components explaining the change
+| Component | Deficit (CY, $bn) |
+| :--- | :--- |
+| 2025 deficit | 1,667 |
+| Student loan one-off | +130 |
+| OBBBA provisions (ex student loans one-off) | +166 |
+| Tariffs | -102 |
+| IEEPA refunds | +80 |
+| DOGE (layoffs) | -13 |
+| Additional defense | +26 |
+| Macro variables | +94 |
+| 2026 deficit | 2,049 |
+</details>
+
+Source: US Treasury, MS. "Macro Variables" includes the net effect of changes in GDP growth, inflation, employment, interest rates on deficit forecasts.
+
+Exhibit 22: ... and overall elevated deficits in our forecast horizon   
+![](images/335abc41110d0d6b91cc503a38228ff1f72c02eef7494b0cd3b0281e35bbc9f7.jpg)
+
+<details>
+<summary>bar</summary>
+
+Federal fiscal balance (%GDP)
+| Year | Federal fiscal balance (%GDP) |
+| :--- | :--- |
+| 2012 | -6.5 |
+| 2013 | -3.3 |
+| 2014 | -2.8 |
+| 2015 | -2.6 |
+| 2016 | -3.1 |
+| 2017 | -3.5 |
+| 2018 | -4.2 |
+| 2019 | -4.7 |
+| 2020 | -15.7 |
+| 2021 | -10.9 |
+| 2022 | -5.4 |
+| 2023 | -6.4 |
+| 2024 | -6.9 |
+| 2025 | -5.4 |
+| 2026 | -6.3 |
+| 2027 | -6.1 |
+</details>
+
+Source: US Treasury, MS.
+
+# OBBBA and defense spending add stimulus...
+
+We estimate that the One Big Beautiful Bill Act (OBBBA) will boost GDP by approximately 0.4 percentage points in 2026 and 0.14 percentage points in 2027. The primary drivers of this impulse include new consumer tax cuts (e.g., on overtime pay and tips), the increase in the SALT deduction cap, expanded corporate tax deductions, and higher spending on defense and border security. Additional defense spending after the US/Iran conflict might add 0.1 percentage points to 2027 GDP, but we don't expect a meaningful push coming from IEEPA refunds.
+
+That said, the net effect of the OBBBA on GDP turns negative in the medium term, as the impact of spending cuts embedded in the legislation becomes more significant over time (see Exhibit 23). As noted above, we also expect higher gasoline prices to neutralize the effect of higher tax refunds on household spending.
+
+# ... and explain a higher contribution to GDP growth from government spending
+
+Elevated federal fiscal deficits underpin our forecast of a higher contribution to GDP growth from government consumption and investment. However, the relationship between the federal deficit and government spending as measured in the NIPA accounts is not direct. Setting aside accounting issues, there are two main reasons for this disconnect. First, the NIPA accounts cover spending by federal as well as state and local governments, whereas the fiscal deficit from the US Treasury is at the federal level only. Second—and more importantly—a one-dollar increase in the federal deficit does not necessarily translate into a one-dollar increase in government spending in the GDP accounts. Government consumption and investment in GDP includes only (i) wages paid, (ii) purchases of goods and services, and (iii) capital goods purchases (investment). As a result, deficit changes driven by tax cuts or transfer increases may affect private consumption but do not mechanically boost government spending in GDP.
+
+We project real government consumption and investment to grow by 2.2% (4Q/4Q) in 2026 and 1.3% in 2027, following a contraction of -1.2% in 2025. This implies a contribution to GDP growth of approximately 0.4pp in 2026 and 0.2pp in 2027. The acceleration is primarily driven by federal spending, particularly increased defense outlays under OBBBA and a slowdown in federal layoffs, which had been a drag in 2025.
+
+At the same time, we expect state and local government spending to decelerate, following strong gains in 2023 and 2024. The main driver of this slowdown is a normalization in public sector hiring.
+
+Exhibit 23: The OBBBA pushes GDP, but only in the short run   
+OBBBA Fiscal Effects on GDP   
+![](images/f7ecc180527c4c95d9fbf36e7f14d645d9e8f8604998b072a345e056f5e8cdcd.jpg)
+
+<details>
+<summary>bar_stacked</summary>
+
+| Year | Corporate tax deductions (%) | New consumer tax cuts (overtime, tips, etc) (%) | Defense and border spending (%) | Increase in SALT cap (%) | Other new spending (%) | Spending cuts (Medicaid, student loans) (%) | Repeal of clean energy provisions (%) | Other new savings (including SNAP) (%) | Net effect (%) |
+|---|---|---|---|---|---|---|---|---|---|
+| 2026 | 0.08 | 0.15 | 0.12 | 0.05 | 0.03 | -0.15 | -0.18 | -0.12 | 0.40 |
+| 2027 | 0.06 | 0.18 | 0.13 | 0.04 | 0.02 | -0.18 | -0.19 | -0.13 | 0.15 |
+| 2028 | 0.04 | 0.16 | 0.14 | 0.04 | 0.02 | -0.22 | -0.21 | -0.14 | 0.05 |
+| 2029 | 0.03 | 0.14 | 0.15 | 0.05 | 0.02 | -0.25 | -0.23 | -0.15 | -0.18 |
+| 2030 | 0.02 | 0.12 | 0.13 | 0.04 | 0.01 | -0.28 | -0.25 | -0.16 | -0.35 |
+| 2031 | 0.01 | 0.11 | 0.12 | 0.03 | 0.01 | -0.31 | -0.26 | -0.17 | -0.55 |
+| 2032 | 0.01 | 0.11 | 0.11 | 0.03 | 0.01 | -0.33 | -0.27 | -0.18 | -0.65 |
+| 2033 | 0.01 | 0.11 | 0.11 | 0.03 | 0.01 | -0.34 | -0.28 | -0.19 | -0.75 |
+| 2034 | 0.01 | 0.11 | 0.11 | 0.03 | 0.01 | -0.35 | -0.29 | -0.20 | -0.85 |
+</details>
+
+Exhibit 24: Government spending boost large relative to 2025, but modest relative to recent history   
+![](images/7bcc2e464c0e02a7de1832a15e34dd4e08a15716d9566df9dc46587a554a01b8.jpg)
+
+<details>
+<summary>bar</summary>
+
+Real government consumption expenditures & gross investment (q4/q4, %)
+| Year | Real government consumption expenditures (%) |
+| :--- | :--- |
+| 2012 | -2.0 |
+| 2013 | -2.5 |
+| 2014 | 0.3 |
+| 2015 | 2.6 |
+| 2016 | 1.5 |
+| 2017 | 1.0 |
+| 2018 | 1.9 |
+| 2019 | 4.8 |
+| 2020 | 1.6 |
+| 2021 | -0.6 |
+| 2022 | 0.3 |
+| 2023 | 4.3 |
+| 2024 | 3.6 |
+| 2025 | -1.2 |
+| 2026 | 2.1 |
+| 2027 | 1.3 |
+</details>
+
+Source: BEA, MS   
+Source: CBO, MS
+
+# Midterms: Limited macro impact, modest fiscal risks
+
+We view the midterm elections as unlikely to alter the macro outlook. While shifts in Congressional control can shape the policy environment, the core vectors driving markets – tariffs, geopolitics, and deregulation – are likely to persist across outcomes. Elections may shift the micro outlook at the margin, but we see limited implications for the overall macro trajectory.
+
+Should the government be divided in 2027, the scope for new fiscal measures is likely to be constrained. The key fiscal variables are changes to SNAP/Medicaid cuts in the OBBBA and the potential for government shutdowns. A Democratic sweep could create upside risk to our growth forecasts if transfer cuts are rolled back, while repeated or prolonged shutdowns under a narrow Democratic House majority could weigh on growth.
+
+Exhibit 25: President's budget vs MS forecast 
+
+<table><tr><td></td><td>FY27</td></tr><tr><td colspan="2">Defense</td></tr><tr><td>Outlays (President&#x27;s budget)</td><td>1,205</td></tr><tr><td>MS forecasts</td><td>1,090</td></tr><tr><td colspan="2">Veteran Affairs</td></tr><tr><td>Outlays (President&#x27;s budget)</td><td>475</td></tr><tr><td>MS forecasts</td><td>383</td></tr><tr><td>Difference budget outlays vs MS forecasts</td><td>207.5</td></tr></table>
+
+Source: OMB, MS.
+
+We also see limited time for new fiscal legislation ahead of the midterms, though a pre-election reconciliation bill remains a risk scenario. To gauge the potential scale, we use the President's budget as a benchmark. The topline proposal highlights two measures with meaningful implications for deficits in FY27: a sharp increase in defense spending and additional funding for Veterans Affairs.
+
+Based on the budget's projected outlays, FY27 spending on Defense and Veterans Affairs appears roughly \$200bn higher than our baseline, implying upside risks of around \$50bn to CY26 and \$150bn to CY27. If enacted, these measures would lift our fiscal deficit forecasts to 6.4% of GDP in CY26 and 6.6% in CY27.
+
+# Trade and inventories: A more durable tariff regime
+
+Key takeaways: The shift of tariff authority from IEEPA to Sections 301 and 232 authority should put the tariff regime on more solid legal footing, leading to a durable interventionist tariff regime. We expect Section 301 and 232 reviews to be completed in the coming weeks. The USMCA review is approaching, but negotiations appear to be progressing slowly, making it increasingly difficult to add new sUBStantive chapters (e.g., AI, critical minerals, China-related provisions) before the July deadline.
+
+# An AI and policy driven trade cycle
+
+With the tariff impetus of 2025, US trade saw a reconfiguration in composition and drivers, rather than a contraction in trade flows. Early in the year, import strength was boosted by front-loading ahead of tariff changes, but this proved narrow and concentrated in a handful of categories: AI-related hardware, pharmaceuticals, and gold. Broader goods demand remained weak. As the year progressed and the effects of front-loading faded, this divergence became more evident: import growth outside these categories has softened materially, with non-AI goods imports running below prior-year levels in recent months.
+
+Despite the escalation in tariff levels in the immediate aftermath of Liberation Day, the US–China trade relationship has reoriented. Trade flows were rerouted across third countries, particularly in Asia, with economies such as Vietnam, Mexico, and India gaining incremental share of US imports. This adjustment has occurred more through supply-chain rerouting and transshipment than through wholesale relocation of productive capacity, suggesting that underlying production structures have remained more persistent than bilateral trade flows imply.
+
+Against this backdrop, the policy framework governing trade is now undergoing a more durable shift. Headline tariffs peaked in late 2025 and have since moved lower, but the composition of tariffs is changing as the regime transitions away from Section 122 measures toward Sections 301 and 232. In contrast to the earlier framework, the emerging system is more differentiated: Section 301 tariffs are likely to function as country-level, broad-based measures focused on non-durable, trade-intensive goods, while Section 232 tariffs are increasingly targeted at durable, capital-intensive sectors, consistent with industrial policy and re-shoring objectives.
+
+Looking ahead, we expect that this transition will leave overall tariff levels broadly stable, remaining near current levels initially, before drifting somewhat higher as Section 301 measures are implemented. We do expect this to be a more structured and persistent restrictive trade policy regime. The shift toward legally durable authorities does reduce trade uncertainty over the medium term, even as near-term volatility may persist through implementation timelines. As we have previously noted, the sectoral differentiation embedded in this new framework is likely to shape both trade flows and inventory
+
+behavior: non-durable goods trade may remain more sensitive to country-level tariffs and rerouting dynamics, while durable goods and capital-intensive sectors increasingly reflect domestic investment incentives. Together, this points to a trade cycle that remains tied to a more interventionist tariff regime. US trade policy remains an important driver of our theme of a multipolar world.
+
+# USMCA review: Status quo
+
+The mid-2026 USMCA review is approaching, but negotiations appear to be progressing slowly, making it increasingly difficult to add new sUBStantive chapters (e.g., AI, critical minerals, China-related provisions) before the July deadline. While our base case remains that the agreement stays in place with limited updates, recent developments suggest the “status quo” bear case (little change to the current framework) is becoming more likely than a more ambitious expansion of the deal for the next 6-12 months.
+
+We lean in the direction of the three parties moving to annual reviews (meaning the negotiations are delayed while the deal remains intact), with Sec 232 tariffs on particular sectors & broad USMCA-related exceptions for country-level (Sec 301) tariffs. Consequences are transmitted through: 1) a lack of clarity on this issue persisting for another \~6 months or more; 2) that uncertainty weighing on FDI, in particular in Mexico; and 3) a slowing – not reversal – of the nearshoring trend. Importantly, status quo is not a worst-case scenario: even in a bear case where negotiations stall, the agreement would remain in force and the downside risk to markets appears limited.
+
+# Inventory surprises give way to some new inventory investment
+
+As demand accelerates and broadens in 2027, we expect a pickup in inventory investment. Inventory building is typically pro-cyclical. Ideally, firms hold larger stocks to meet faster demand or hold lower stocks to meet lower demand. The large swings in inventories tend to come with surprises in activity – like the large swings in imports around tariffs and AI investment in 2025-26.
+
+Exhibit 26: Frontloading reversed, and then AI-related investment spurred another surge in imports   
+![](images/0b08f62e096b1a3a00997c8d391f0450f2a4480bf16a1c864de00b2e1da51abc.jpg)
+
+<details>
+<summary>bar</summary>
+
+Exports and imports (% q/q saar)
+| Quarter | Exports (%) | Imports (%) |
+| :--- | :--- | :--- |
+| 1Q 2025 | -1 | 38 |
+| 2Q 2025 | -2 | -28 |
+| 3Q 2025 | 9.5 | -4 |
+| 4Q 2025 | -3 | -1 |
+| 1Q 2026 | 13 | 21 |
+| 2Qe 2026 | 0 | 0 |
+| 3Qe 2026 | 1 | 1.5 |
+| 4Qe 2026 | 2 | 1.5 |
+| 1Qe 2027 | 1.5 | 4.5 |
+| 2Qe 2027 | 1.5 | 4.5 |
+| 3Qe 2027 | 1.5 | 4.5 |
+| 4Qe 2027 | 1.5 | 4.5 |
+Forecast
+</details>
+
+Note: e = MS estimates. Source: BEA, Haver Analytics, MS forecasts
+
+Exhibit 27: Tariffs and AI investment drove large swings in imports and inventories   
+![](images/8de42811416feab6bc9ddf181648df65fc389d4d03bfb9101259b1f3660214a4.jpg)
+
+<details>
+<summary>bar</summary>
+
+| Quarter | Imports | Inventories |
+| ------- | ------- | ----------- |
+| 1Q 2025 | -4.0    | 2.5         |
+| 2Q 2025 | 5.0     | -3.5        |
+| 3Q 2025 | 0.5     | -0.5        |
+| 4Q 2025 | 0.1     | 0.1         |
+| 1Q 2026 | -3.0    | 0.3         |
+| 2Qe 2026 | -0.5    | -0.5        |
+| 3Qe 2026 | -0.5    | -0.5        |
+| 4Qe 2026 | -0.5    | -0.5        |
+| 1Qe 2027 | -1.0    | 0.1         |
+| 2Qe 2027 | -1.0    | 0.1         |
+| 3Qe 2027 | -1.0    | 0.1         |
+| 4Qe 2027 | -1.0    | 0.1         |
+</details>
+
+Note: e = MS estimates. Source: BEA, Haver Analytics, MS forecasts
+
+# Inflation: A gradual descent
+
+Key takeaways: We believe the recent firming in sequential core PCE inflation in 1Q is temporary and should begin to decelerate from 2Q onward. However, the 12-month rate of inflation will remain elevated until year end on prior tariff pass through and higher energy prices. We see core PCE at 2.8% 4Q/4Q in 2026, and 2.3% in 2027. Risks are in the direction of inflation persistence.
+
+After the tariff shock in 2025, inflation is facing another supply shock in the form of higher oil prices. This is the fourth adverse supply shock for the economy (COVID, tariffs, Russia-Ukraine conflict, Middle East conflict) Core PCE inflation remains elevated at 3.2% y/y, but even with the added impulse from the US–Iran conflict, we expect a gradual decline in core inflation this year and next. This outlook helps explain why the bar for Fed hikes remains high – it would be difficult to justify tightening policy as inflation is on a declining path – and why we see the outlook in 2027 as favoring further normalization of the federal funds rate.
+
+In our view, three factors should drive y/y inflation gradually lower: fading tariff pass-through, residual seasonality unwinding, and continued cooling in shelter inflation. Another factor is our assumption that energy prices temporarily boost headline inflation, but have limited second round effects on core. A lot has to go right on inflation for our forecast to be realized, but we think it will.
+
+# Tariff pass-through is largely behind us
+
+A meaningful portion of the recent acceleration reflects tariff-related price increases. Pass-through has been uneven across categories, but evidence suggests that firms used the typical annual price reset at the start of the year to incorporate higher input costs stemming from trade policy. Goods categories with higher tariff exposure continued to see firm price increases early in the year, while some of the strength in less-exposed categories appears to reflect idiosyncratic factors rather than a broad-based trend.
+
+Following the latest data, we estimate that tariffs have contributed roughly 60bp to core prices so far this year. Our models suggest that, at current tariff levels, the total pass-through is likely to be around 70bp. This implies that only a small portion—around 10bp—remains to be realized over the rest of the year. While there is considerable uncertainty around these estimates, the key takeaway is that the bulk of the tariff impulse is already in the data. As a result, tariff-driven upward pressure on core goods inflation should fade, allowing for normalization in this segment.
+
+As noted in the section on trade above, we do not assume the conclusion of Sections 301 and 232 reviews leads to meaningfully higher tariffs. Instead, we think they leave the tariff regime on more durable legal footing.
+
+# Residual seasonality will reverse
+
+Residual seasonality continues to distort early-year inflation readings. While core PCE is seasonally adjusted, the adjustment process does not fully remove recurring seasonal patterns, leaving a residual upward bias in 1Q. By construction, this implies a corresponding downward bias over the remainder of the year.
+
+The post-pandemic pattern in sequential core PCE inflation is consistent with this dynamic: first-quarter readings have systematically been the strongest of the year. We see little reason to expect a different pattern in 2026. As these seasonal distortions unwind, they should mechanically contribute to softer inflation prints in the coming quarters, reinforcing the case for deceleration.
+
+Exhibit 28: Acceleration in 1Q confirmed, deceleration is coming...   
+![](images/e472fc35ad7713cb12467f9192eb61d41cd6169f4dcdbbc3cfdb894daaa18e4b.jpg)
+
+<details>
+<summary>line</summary>
+
+| Date    | y/y (%) | 3-month saar (%) |
+|---------|---------|------------------|
+| Jan-24  | 3.1     | 3.3              |
+| Mar-24  | 3.0     | 4.8              |
+| May-24  | 2.8     | 2.0              |
+| Jul-24  | 2.9     | 2.5              |
+| Sep-24  | 3.0     | 3.0              |
+| Nov-24  | 3.0     | 2.4              |
+| Jan-25  | 2.8     | 3.9              |
+| Mar-25  | 2.6     | 3.0              |
+| May-25  | 2.7     | 2.1              |
+| Jul-25  | 2.8     | 3.0              |
+| Sep-25  | 2.9     | 2.7              |
+| Nov-25  | 3.0     | 2.4              |
+| Jan-26  | 3.1     | 4.6              |
+| Mar-26  | 3.2     | 4.5              |
+| May-26  | 3.1     | 3.0              |
+| Jul-26  | 3.0     | 2.5              |
+| Sep-26  | 2.9     | 2.0              |
+| Nov-26  | 2.8     | 1.9              |
+| Jan-27  | 2.7     | 3.0              |
+| Mar-27  | 2.5     | 1.8              |
+| May-27  | 2.3     | 1.9              |
+| Jul-27  | 2.2     | 2.0              |
+| Sep-27  | 2.3     | 2.3              |
+| Nov-27  | 2.4     | 2.4              |
+</details>
+
+Exhibit 29: ...as tariff passthrough gets closer to the finish line.   
+![](images/0695e4873b778f660a07dce4ff7245998c8251be24580a22b16b2f547d5bc106.jpg)
+
+<details>
+<summary>line</summary>
+
+| Month    | Effect of tariffs on headline PCE |
+| -------- | --------------------------------- |
+| Apr-25   | 0.04                              |
+| May-25   | 0.12                              |
+| Jun-25   | 0.22                              |
+| Jul-25   | 0.25                              |
+| Aug-25   | 0.29                              |
+| Sep-25   | 0.36                              |
+| Oct-25   | 0.36                              |
+| Nov-25   | 0.35                              |
+| Dec-25   | 0.39                              |
+| Jan-26   | 0.47                              |
+| Feb-26   | 0.60                              |
+| Mar-26   | 0.61                              |
+</details>
+
+Source: MS. BEA   
+Source: BEA, MS forecasts.
+
+# Shelter disinflation remains intact
+
+Third, and most importantly, underlying shelter inflation continues to slow. Recent data confirm a gradual but persistent deceleration in rent measures, and we expect this trend to continue through 2026. The key question is not whether shelter inflation will decline further, but how quickly it converges toward—or potentially below—its pre-pandemic trend.
+
+Given the large weight of shelter in core PCE, even modest monthly deceleration can have a meaningful impact on overall inflation. As labor market conditions soften and new lease indicators continue to point to easing rent growth, shelter should remain a key anchor pulling core inflation lower over the medium term.
+
+# Limited spillovers from higher oil prices
+
+A natural question is whether the recent increase in oil prices could derail this disinflationary path. We view the risks as limited. While higher oil prices are likely to push up headline inflation in the near term—primarily through gasoline and other energy components—the pass-through to core inflation has historically been modest.
+
+Our estimates suggest that a typical supply-driven oil price shock has only a small effect on core inflation, with the bulk of the impact concentrated in non-core categories. Some core components—such as airfares or certain goods categories—may see temporary upward pressure due to higher fuel, transportation, or input costs. However, these effects tend to be limited in magnitude and often offset by broader macroeconomic dynamics.
+
+In particular, supply-driven oil shocks tend to weigh on economic activity, acting as a tax on consumers and tightening financial conditions. This, in turn, dampens demand and contributes to softer inflation in more cyclical components—most notably shelter. As a result, the net effect on core inflation is typically small.
+
+An oil shock accompanied by a de-anchoring of inflation expectations, would present a more meaningful upside risk. However, that is not our base case. Inflation expectations remain well anchored, and the underlying drivers of core inflation—particularly shelter—continue to move in a disinflationary direction.
+
+Exhibit 30: Shelter has decelerated and will likely continue with low m/m readings   
+![](images/40eaa425a485f5ed1d8e59593e9b8c77f85d15a23ee29b1ca47de71ffd727a37.jpg)
+
+<details>
+<summary>line</summary>
+
+| Date    | Rents PCE (m/m, %) |
+|---------|---------------------|
+| Jan-24  | 0.48                |
+| Mar-24  | 0.45                |
+| May-24  | 0.41                |
+| Jul-24  | 0.30                |
+| Sep-24  | 0.44                |
+| Nov-24  | 0.33                |
+| Jan-25  | 0.25                |
+| Mar-25  | 0.32                |
+| May-25  | 0.39                |
+| Jul-25  | 0.27                |
+| Sep-25  | 0.36                |
+| Nov-25  | 0.15                |
+| Jan-26  | 0.30                |
+| Mar-26  | 0.20                |
+| May-26  | 0.49                |
+| Jul-26  | 0.24                |
+| Sep-26  | 0.24                |
+| Nov-26  | 0.28                |
+</details>
+
+Source: BLS, BEA, MS forecasts.
+
+Exhibit 31: We expect only a small effect on core inflation from the oil shock   
+![](images/2b45cb4d34bc29ed7d9293b67ed613785bc524fa0fb8752b7cd70fdba3535973.jpg)
+
+<details>
+<summary>bar</summary>
+
+Cumulative CPI impact of a 10% oil supply shock (bp)
+| Months after the shock | Headline CPI (bp) | Core (bp) |
+| :--- | :--- | :--- |
+| 0 | 9 | 2 |
+| 1 | 25 | 2 |
+| 2 | 33 | 5 |
+| 3 | 35 | 3 |
+</details>
+
+Source: MS, BLS, Bloomberg.
+
+# Labor market: The 'curious balance' persists
+
+Key takeaways: We expect a steady labor market: slow payroll growth, low turnover, little change in the unemployment rate, and wages continuing to rise at about their recent pace. Immigration restriction and domestic demographics continue to limit labor supply. Businesses remain cautious about hiring or firing. AI investment and adoption put some minimal upward pressure on the unemployment rate but do not meaningfully disrupt employment. A benign de-escalation should leave these forces in place.
+
+The labor market has maintained a "curious type of balance" over the past two and a half years. Payroll growth has slowed sharply, from 210k per month on average in 2023 to 122k in 2024, 10k in 2025 (including the federal government payroll cuts), and 68k so far in 2026. Yet real wages have swung from falling to rising; at least until the recent energy price rise. And there has been little additional slack, as the unemployment rate has barely risen.
+
+At the same time, labor market turnover has been exceptionally slow. The low and fairly stable unemployment rate reflects low layoffs but also falling job openings and an unusually low hiring rate. Despite a relatively tight labor market and rising real wages, it has also been a curiously uncomfortable labor market for job seekers.
+
+Business caution and government cutbacks have limited labor demand. Businesses have been reluctant to hire or fire in the wake of the pandemic. Businesses stopped both the pandemic-era layoffs and the post-pandemic "catch-up" hiring. Labor costs have also been an important source of cost efficiencies following the supply chain interruptions of the pandemic and the tariff- and energy-price shocks since then. The result has been the low-hire, low-fire labor market across most industries as firms eked out increasing labor productivity and lower unit labor cost in recent years. In the public sector, federal government employment has continued to decline this year, and we do not see any immediate reason for stabilization,
+
+Immigration and slow domestic population growth continue to limit labor supply. The domestic population is aging, and their aging is putting 0.1-0.2pp of downward pressure on labor force participation each year. And net immigration likely remains slow (500k per year in 2026-27). Border crossings have mostly stopped, grants of asylum are very restricted, deportations are about where we expected in the Year Ahead Outlook, but green card issuance has slowed somewhat. In short, there are only very small native and foreign inflows to the labor force.
+
+We estimate the breakeven pace of payrolls—the pace that holds the unemployment rate unchanged—at 50k per month in 2026 and 40k in 2027. The slowdown in labor force growth has had a large effect: in 2023, breakeven was at 240k, in 2024 at 170k, and in 2025 at 70k.
+
+A return to that faster labor supply or job growth is extremely unlikely: Immigration policy could change somewhat—more green cards or fewer deportations. However, the major change in immigration flows was the closing of the border. Even under a different
+
+administration, border flows probably do not return to anywhere near their 2023-24 highs. Following a June 2024 Executive Order by President Biden, the border was tightening sharply near the end of his term despite his general support for immigration.
+
+AI is beginning to show macro effects on employment and output but no large-scale labor replacement. AI, like prior general purpose technologies, can be expected to increase productivity and to create temporary labor displacement but not permanent employment losses. In current data, we find some AI-related displacement among younger workers that is adding about 0.1pp to the unemployment rate. Perhaps limiting the rise, employees' tasks are changing more quickly than usual. We also found that productivity has risen in industries with higher AI exposure: Output per employee has accelerated because of faster output growth rather than because of labor replacement. These patterns may change with broader or faster adoption. However, in the remainder of 2026 and in 2027, we expect continued positive effects on output rather than negative effects on employment.
+
+Exhibit 32: We expect payrolls accelerate slightly from the 2025 pace as federal employment becomes less of a drag   
+![](images/72a26d6b622684d0f20f4eda018adc1da71204c00523fb02fc57c4d0a14b9605.jpg)
+
+<details>
+<summary>line</summary>
+
+| Year | Payrolls, m/m chg, 000s | 6-m average |
+|------|--------------------------|-------------|
+| 23   | 450                      | 280         |
+| 24   | 200                      | 180         |
+| 25   | 250                      | 100         |
+| 26   | -150                     | 0           |
+| 27   | 50                       | 50          |
+</details>
+
+Source: BLS, MS
+
+Exhibit 33: The unemployment rate inches down. The decline in labor force participation reflects an aging population.   
+![](images/2ef338de71ab0ee4b6088738d046c1118074b10cc6faf7d2008235845374b283.jpg)
+
+<details>
+<summary>line</summary>
+
+| Year | Labor force participation rate (left) | Unemployment rate (right) |
+|------|----------------------------------------|--------------------------|
+| 23   | 62.5                                   | 3.5                      |
+| 24   | 62.8                                   | 3.8                      |
+| 25   | 62.6                                   | 4.0                      |
+| 26   | 61.9                                   | 4.5                      |
+| 27   | 61.7                                   | 4.3                      |
+</details>
+
+Source: BLS, MS
+
+Exhibit 34: The breakeven pace for payrolls has fallen   
+Payroll breakeven pace   
+![](images/f6fd6e73f6a7c0f582ac0455ea2a831fab553fad2f8ce392664978a44a1c872b.jpg)
+
+<details>
+<summary>line</summary>
+
+| Year | 12-month average | Projected | Annual |
+|------|------------------|-----------|--------|
+| 23   | 330              | -         | 240    |
+| 24   | 240              | -         | 160    |
+| 25   | 180              | -         | 70     |
+| 26   | 30               | 50        | 70     |
+</details>
+
+Source: BLS, MS
+
+Exhibit 35: Increases in firms' nonlabor costs have squeezed profits and encouraged caution in hiring   
+![](images/9db94fab444f02e446f14ea2cf20c1917eae9b2272064c27fcaeb33f114e351b.jpg)
+
+<details>
+<summary>bar</summary>
+
+4Q change, US cents
+| Category | Value (US cents) |
+|---|---|
+| Unit nonlabor cost | 1.90 |
+| Unit labor cost | 1.00 |
+| Unit profit | 0.20 |
+| Unit price | 3.10 |
+</details>
+
+Note: This table reflects the four quarter change in price-, cost-, and profit-per unit of real gross value added by the nonfinancial corporate business sector (sa, US\$), for the four quarters ending in 4Q 2025 Source: BEA, MS
+
+# Special Topic: AI and labor markets: Not yet a macro labor story, but no longer invisible
+
+We track a range of labor market indicators in real time, allowing us to assess how AI-related dynamics are beginning to show up beneath the surface of the labor market (see Exhibit 36).
+
+Our analysis suggests that, so far, the impact of AI on the labor market is better described as narrow, early-stage, and largely visible in micro data rather than in aggregate outcomes. We find that the macro signal remains faint: unemployment trends across occupations with different levels of AI exposure look broadly similar, and even after adjusting for cyclical factors, the implied drag from AI is small — on the order of at most \~10 basis points on the overall unemployment rate. This muted aggregate picture should not be surprising given that AI adoption is still in its early phases.
+
+Where the signal does begin to emerge is in the micro data, particularly among younger workers. Early-career employees—who tend to be more concentrated in routine, automatable tasks — appear to be the leading edge of adjustment. For this group, unemployment has risen more sharply in highly AI-exposed occupations since 2023, alongside a modest increase in layoff flows and a noticeable rise in unemployment persistence. In other words, not only are more young workers in exposed roles losing jobs, but they are also taking longer to find new ones. Importantly, this pattern is not being offset by exits from the labor force for retraining, suggesting that the adjustment is happening within the labor market rather than outside of it.
+
+# At the same time, the broader labor market remains far from a displacement story. Industry-level data show no evidence that more AI-exposed sectors are shedding jobs.
+
+Even after adjusting for long-term trends and cyclical dynamics, the macro data fail to reveal a clear disruption signal. This divergence between micro hints and macro stability reinforces the idea that AI's impact is still nascent and unevenly distributed.
+
+What is becoming clearer, however, is that AI is already reshaping the nature of work. Measures of task change show that even as labor market churn slowed in 2025, workers — especially in medium- and high-exposure occupations — continued to report shifts in their job activities. This pattern is consistent with early evidence of task reconfiguration within roles, suggesting that AI is beginning to alter how work is done before materially changing how many workers are employed.
+
+Finally, “soft” indicators reinforce this transition narrative. Company earnings calls increasingly reference AI in the context of labor, with mentions of displacement rising faster than those of job creation. While this likely reflects both genuine adoption and incentives to emphasize efficiency gains, it points to a growing corporate focus on using AI to streamline operations.
+
+Taken together, the message is straightforward: AI is not yet a macro labor story, but it is no longer invisible. The effects are emerging at the margin—among younger workers and within specific tasks—while aggregate employment remains largely intact. The key question is not whether disruption is happening, but if these micro signals will scale into broader labor market outcomes as adoption deepens.
+
+Exhibit 36: Our AI disruption tracker is a panel of key labor-market indicators designed to infer the effects of AI.   
+![](images/f09623d08573d57cc5802339e1d18773f75362a915ed1fde711a375fd5825417.jpg)
+
+<details>
+<summary>line</summary>
+
+| Year | low exposure | medium | high |
+| ---- | ------------ | ------ | ---- |
+| 2023 | 5.4          | 3.2    | 1.9  |
+| 2024 | 5.4          | 3.2    | 2.0  |
+| 2025 | 5.8          | 3.6    | 2.6  |
+| 2026 | 6.0          | 3.6    | 2.6  |
+</details>
+
+Young workers show a sharper UR rise for highly exposed occupations.
+
+![](images/305b585d4d13d3a14be8bb9b7868dcfed38dfbeaf7c185d3f4ea5e19e7ee0025.jpg)
+
+<details>
+<summary>line</summary>
+
+| Year | low exposure | medium | high |
+|------|--------------|--------|------|
+| 2023 | 0.0          | 0.2    | -0.1 |
+| 2024 | -0.1         | 0.1    | 0.1  |
+| 2025 | -0.4         | 0.1    | 0.3  |
+| 2026 | -0.3         | 0.0    | 0.3  |
+</details>
+
+Al may already be affecting job tasks: workers in more exposed occupations are changing tasks faster.
+
+![](images/7d295290c5730a69df301e587daeadfc609ab3f61b932f913589e4e122f4e697.jpg)
+
+<details>
+<summary>line</summary>
+
+| Year | low exposure | medium | high |
+|------|--------------|--------|------|
+| 2023 | 7.5          | 5.2    | 2.6  |
+| 2024 | 6.8          | 4.5    | 3.0  |
+| 2025 | 7.5          | 5.5    | 3.6  |
+| 2026 | 7.7          | 5.6    | 3.6  |
+</details>
+
+![](images/48ee456fe90e32f6f82eb688df6d5a9aa6971571d84cba88fe2422241ba07a8a.jpg)
+
+<details>
+<summary>line</summary>
+
+| Year | low exposure | medium | high |
+|------|--------------|--------|------|
+| 2023 | 0.65%        | 0.70%  | 0.75% |
+| 2024 | 0.75%        | 0.72%  | 0.80% |
+| 2025 | 0.70%        | 0.75%  | 0.78% |
+| 2026 | 0.72%        | 0.80%  | 0.85% |
+</details>
+
+Source: MS, IPUMS.
+
+# Special Topic: AI is boosting output rather than cutting jobs
+
+Since the start of 2025, industries with greater AI exposure have been leading faster productivity growth (Exhibit 37).
+
+To estimate labor productivity, we constructed industry-level measures of output per employee using the BEA's industry output data and BLS payrolls. We assigned each industry a measure of AI exposure using the criterion in Felten et. al. (2021). From there, we grouped various industries into three categories: top-25% AI exposure, middle-50% AI exposure, and lowest-25% AI exposure.
+
+We find positive correlation between industry-level AI exposure and growth in output per employee. We estimate that industries with high AI exposure contributed 1.7pp of the 2.4pp growth in productivity in the four quarters through 4Q 2025. Furthermore, the contribution was accelerating: it had contributed 0.7pp in 2024.
+
+Exhibit 37: In industries with high AI exposure, output per employee rose faster in 2025, and accelerated more, than in other industries   
+![](images/cd133912427237083ca1a5f5dbd11cf090d237521a9ca30181ab81d33ba26d59.jpg)
+
+<details>
+<summary>line</summary>
+
+| Year | High-AI industries | Mid-AI industries | Low-AI industries |
+|------|---------------------|-------------------|-------------------|
+| 2025 | 4Q                  |                   |                   |
+</details>
+
+Source: BEA, BLS, MS
+
+# Among high-AI industries, faster output without labor replacement
+
+Faster productivity growth has been driven by faster output growth, as opposed to labor replacement. Trends in employment growth have been similar across industries with different AI exposure. However, output growth accelerated more rapidly in industries that MS has identified as higher AI exposure. The combination of minimal labor market impact and faster output growth suggests faster income growth — greater support for either labor or business income.
+
+Exhibit 38: Overall industry output per employment accelerated in 2025 because of faster output growth   
+![](images/9b152cde6cc9b38257e8fb411294acf5d63f8237969789ff02cb39503d7cd5cb.jpg)
+
+<details>
+<summary>line</summary>
+
+| Quarter | Output | Employment | Output/employment |
+| ------- | ------ | ---------- | ----------------- |
+| 23      | 2.0    | 4.2        | -2.0              |
+| 24      | 3.6    | 1.8        | 1.9               |
+| 25      | 2.4    | 0.7        | 1.6               |
+| 26      | 3.0    | 0.6        | 2.4               |
+</details>
+
+Source: BEA, BLS, MS
+
+Exhibit 40: Mid-AI output and employment growth slowed slightly, with productivity growth little changed   
+![](images/6f4063c4ad5339f4574919f05d3611485bc0c09c44b55d3e47077b9fce519931.jpg)
+
+<details>
+<summary>line</summary>
+
+| Quarter | Output | Employment | Output/employment |
+| ------- | ------ | ---------- | ----------------- |
+| 23      | 2.5    | 3.3        | -0.8              |
+| 24      | 4.0    | 2.2        | 1.7               |
+| 25      | 3.2    | 1.3        | 1.0               |
+</details>
+
+Source: BEA, BLS, MS
+
+Exhibit 39: High-AI industry output and productivity surged, while employment growth stagnated   
+![](images/90755e8e80692fee50e13a180cdbfb8ac66a1a2975cb10bd4c873a5e4e460c51.jpg)
+
+<details>
+<summary>line</summary>
+
+| Year | Output | Employment | Output/employment |
+|------|--------|------------|-------------------|
+| 23   | 3.5    | 4.2        | -0.5              |
+| 24   | 3.8    | 1.2        | 2.6               |
+| 25   | 2.7    | 0.5        | 2.1               |
+| 26   | 3.5    | 0.4        | 2.8               |
+| 27   | 5.5    | 0.3        | 5.0               |
+</details>
+
+Source: BEA, BLS, MS
+
+Exhibit 41: Output and productivity growth slowed in low-AI industries   
+![](images/a36947305fd1ff084d52e7cd3d3f9baa60fb47a45d08624e1aead29e20c1e6c6.jpg)
+
+<details>
+<summary>line</summary>
+
+| Quarter | Output | Employment | Output/employment |
+| ------- | ------ | ---------- | ----------------- |
+| 23      | -2.0   | 6.0        | -                 |
+| 24      | 2.0    | 1.5        | 0.9               |
+| 25      | 1.0    | 0.5        | 1.5               |
+| 26      | 0.8    | 0.3        | 0.7               |
+| 27      | 0.5    | 0.1        | 0.5               |
+| 28      | 0.3    | 0.0        | 0.3               |
+| 29      | 0.1    | -          | 0.1               |
+</details>
+
+Source: BEA, BLS, MS
+
+# Capital deepening among many of the high-AI industries
+
+Within the high-AI category, tech industries – data processing, computer system design and services, computer manufacturing, and the publishing category that includes software – have led the acceleration in output and labor productivity. The build-out phase of AI — capital deepening — probably supported faster output growth in these industries. One example is in computer manufacturing. Capital deepening has allowed much faster output growth with no significant rise in capacity utilization (Exhibit 42).
+
+Exhibit 42: Modest increase in computer manufacturing capacity utilization in 2025, amid rapid growth in capacity   
+![](images/08f2cb858f241fcce12428cd2460d06b5a7c83f4daf277eb06a1afc5a683ad2a.jpg)
+
+<details>
+<summary>line</summary>
+
+| Year | Capacity, 4-quarter % ch (left) | Capacity utilization, % (right) |
+|------|----------------------------------|---------------------------------|
+| 15   | 2.5                              | 72                              |
+| 16   | 6.3                              | 69                              |
+| 17   | 5.0                              | 71                              |
+| 18   | 0.5                              | 74                              |
+| 19   | 4.5                              | 73                              |
+| 20   | 1.0                              | 70                              |
+| 21   | 0.2                              | 72                              |
+| 22   | 1.0                              | 76                              |
+| 23   | 1.5                              | 74                              |
+| 24   | 4.5                              | 73                              |
+| 25   | 3.5                              | 75                              |
+| 26   | 6.8                              | 74                              |
+</details>
+
+Source: Federal Reserve Board, MS
+
+# Productivity acceleration extends beyond the tech industries
+
+Our data also suggest that support for productivity growth goes beyond just the tech, AI-producing industries. The scatter plots below show that an industry's higher AI adoption is associated with both faster productivity growth and more acceleration in productivity growth in 2025. Those relationships hold up even if the high-AI category is excluded.
+
+The strength in AI-related investment of the past several years has clearly supported productivity in AI-related industries, but AI adoption appears to be helping other industries' productivity growth too. So far, the labor market disruptions have been small as the faster productivity has been achieved through faster output growth. That pattern may change as AI adoption picks up, and we now have a method of monitoring industryby-industry the patterns in output and employment growth and AI exposure.
+
+For details on how we calculated industry output per employee, and how our measures compare to the official nonfarm business productivity statistic, please see here in our full report: Industries with high AI exposure are seeing labor productivity from faster output growth not labor replacement.
+
+Exhibit 43: AI exposure was positively associated with productivity growth in 2025   
+![](images/75be5b57659f12c8c6a57bd37daa4caec7ce56fc9a9b45efbc785a2fd36c8a92.jpg)
+
+<details>
+<summary>scatter</summary>
+
+| Industry AI exposure | Industry output/employment, 40% ch, 4Q 2025 |
+| --------------------- | --------------------------------------------- |
+| -1.5                  | 0                                             |
+| -1.0                  | 0                                             |
+| -0.5                  | 0                                             |
+| 0.0                   | 0                                             |
+| 0.5                   | 0                                             |
+| 1.0                   | 0                                             |
+| 1.5                   | 0                                             |
+| 2.0                   | 0                                             |
+| 2.5                   | 0                                             |
+</details>
+
+Source: BEA, BLS, MS
+
+Exhibit 44: AI exposure was positively associated with acceleration in productivity growth in 2025   
+![](images/83d4119c6eb8de79fab9bfc07e6f2d3cf256d716ba07fe3bf9b9e483e3bce27b.jpg)
+
+<details>
+<summary>scatter</summary>
+
+| Industry AI exposure | Industry output/employment Acceleration in 40% ch |
+| --------------------- | -------------------------------------------------- |
+| -1.5                  | -20                                                |
+| -1.0                  | 10                                                 |
+| -0.5                  | -30                                                |
+| 0.0                   | 0                                                  |
+| 0.5                   | 15                                                 |
+| 1.0                   | 5                                                  |
+| 1.5                   | 0                                                  |
+| 2.0                   | 10                                                 |
+| 2.5                   | 15                                                 |
+</details>
+
+Source: BEA, BLS, MS
+
+Exhibit 45:   
+AI exposure and productivity growth, by industry 
+
+<table><tr><td rowspan="2"></td><td rowspan="2">AI-exposure AIIE score</td><td colspan="2">Productivity, 4Q/4Q % ch.</td><td rowspan="2">Acceleration/Deceleration</td></tr><tr><td>2024</td><td>2025</td></tr><tr><td>Nonfarm business productivity</td><td></td><td>2.3</td><td>2.5</td><td>0.3</td></tr><tr><td>Employment/output productivity proxy</td><td></td><td>1.6</td><td>2.4</td><td>0.8</td></tr><tr><td>High AI exposure industries (top 25% AIIE)</td><td>&gt;1.25</td><td>2.1</td><td>5.7</td><td>3.6</td></tr><tr><td>Medium AI exposure industries (middle 50% AIIE)</td><td>-0.30 to 1.25</td><td>1.3</td><td>1.5</td><td>0.2</td></tr><tr><td>Low AI exposure industries (bottom 25% AIIE)</td><td>&lt;-0.30</td><td>1.5</td><td>-1.1</td><td>-2.6</td></tr><tr><td>Securities, commodity contracts, and investments</td><td>2.2</td><td>-6.3</td><td>6.8</td><td>13.1</td></tr><tr><td>Legal services</td><td>2.2</td><td>-1.5</td><td>-0.1</td><td>1.4</td></tr><tr><td>Credit intermediation, Federal Reserve banks, and related activities</td><td>2.1</td><td>2.8</td><td>5.6</td><td>2.8</td></tr><tr><td>Insurance carriers and related activities</td><td>2.1</td><td>0.6</td><td>0.8</td><td>0.2</td></tr><tr><td>Funds, trusts, and other financial vehicles</td><td>2.1</td><td>35.1</td><td>33.2</td><td>-1.9</td></tr><tr><td>Computer systems design and related services</td><td>1.9</td><td>7.2</td><td>13.2</td><td>6.0</td></tr><tr><td>Publishing industries, except internet (includes software)</td><td>1.8</td><td>4.7</td><td>11.4</td><td>6.7</td></tr><tr><td>Data processing, internet publishing, and other information services</td><td>1.7</td><td>11.4</td><td>19.1</td><td>7.7</td></tr><tr><td>Management of companies and enterprises</td><td>1.7</td><td>2.8</td><td>-0.4</td><td>-3.2</td></tr><tr><td>Mfg: Computer and electronic products</td><td>1.6</td><td>6.2</td><td>11.1</td><td>4.9</td></tr><tr><td>Miscellaneous professional, scientific, and technical services</td><td>1.6</td><td>2.8</td><td>2.5</td><td>-0.4</td></tr><tr><td>Educational services</td><td>1.3</td><td>0.0</td><td>-1.0</td><td>-1.0</td></tr><tr><td>Broadcasting and telecommunications</td><td>1.2</td><td>1.6</td><td>4.0</td><td>2.4</td></tr><tr><td>Social assistance</td><td>0.8</td><td>3.5</td><td>-1.6</td><td>-5.1</td></tr><tr><td>Ambulatory health care services</td><td>0.8</td><td>-0.1</td><td>3.1</td><td>3.2</td></tr><tr><td>Oil and gas extraction</td><td>0.7</td><td>-4.6</td><td>13.3</td><td>17.9</td></tr><tr><td>Hospitals</td><td>0.5</td><td>0.9</td><td>2.0</td><td>1.1</td></tr><tr><td>Real estate</td><td>0.5</td><td>2.2</td><td>2.4</td><td>0.2</td></tr><tr><td>Transit and ground passenger transportation</td><td>0.4</td><td>7.5</td><td>11.9</td><td>4.5</td></tr><tr><td>Motion picture and sound recording industries</td><td>0.4</td><td>8.6</td><td>5.2</td><td>-3.4</td></tr><tr><td>Performing arts, spectator sports, museums, and related activities</td><td>0.3</td><td>5.3</td><td>3.8</td><td>-1.5</td></tr><tr><td>Miscellaneous manufacturing</td><td>0.2</td><td>1.2</td><td>1.0</td><td>-0.2</td></tr><tr><td>Utilities</td><td>0.2</td><td>1.0</td><td>-4.0</td><td>-5.0</td></tr><tr><td>Wholesale trade</td><td>0.2</td><td>0.1</td><td>4.9</td><td>4.8</td></tr><tr><td>Mfg: Electrical equipment, appliances, and components</td><td>0.2</td><td>4.0</td><td>3.4</td><td>-0.6</td></tr><tr><td>Other retail</td><td>0.0</td><td>7.0</td><td>4.0</td><td>-3.0</td></tr><tr><td>General merchandise stores</td><td>0.0</td><td>1.6</td><td>-2.3</td><td>-3.9</td></tr><tr><td>Other transportation and support activities</td><td>0.0</td><td>-6.8</td><td>-13.8</td><td>-7.0</td></tr><tr><td>Mfg: Chemical products</td><td>0.0</td><td>7.8</td><td>2.1</td><td>-5.7</td></tr><tr><td>Nursing and residential care facilities</td><td>0.0</td><td>0.9</td><td>0.3</td><td>-0.6</td></tr><tr><td>Machinery</td><td>-0.1</td><td>-4.1</td><td>3.9</td><td>8.0</td></tr><tr><td>Pipeline transportation</td><td>-0.1</td><td>3.1</td><td>-0.4</td><td>-3.5</td></tr><tr><td>Rental and leasing services and lessors of intangible assets</td><td>-0.1</td><td>4.6</td><td>3.8</td><td>-0.8</td></tr><tr><td>Mfg: Other transportation equipment</td><td>-0.2</td><td>-4.1</td><td>11.0</td><td>15.1</td></tr><tr><td>Mfg: Petroleum and coal products</td><td>-0.2</td><td>-4.0</td><td>-12.7</td><td>-8.6</td></tr><tr><td>Mfg: Printing and related support activities</td><td>-0.2</td><td>2.9</td><td>-1.0</td><td>-3.9</td></tr><tr><td>Mfg: Motor vehicles, bodies and trailers, and parts</td><td>-0.2</td><td>5.7</td><td>12.6</td><td>6.9</td></tr><tr><td>Other services, except government</td><td>-0.3</td><td>-0.3</td><td>-2.8</td><td>-2.5</td></tr><tr><td>Motor vehicle and parts dealers</td><td>-0.3</td><td>29.9</td><td>-2.8</td><td>-32.7</td></tr><tr><td>Air transportation</td><td>-0.4</td><td>1.2</td><td>4.3</td><td>3.2</td></tr><tr><td>Food and beverage stores</td><td>-0.4</td><td>-0.9</td><td>-2.0</td><td>-1.0</td></tr><tr><td>Administrative and support services</td><td>-0.6</td><td>2.4</td><td>3.0</td><td>0.7</td></tr><tr><td>Rail transportation</td><td>-0.6</td><td>-3.0</td><td>-9.0</td><td>-6.0</td></tr><tr><td>Water transportation</td><td>-0.6</td><td>3.4</td><td>8.1</td><td>4.7</td></tr><tr><td>Construction</td><td>-0.7</td><td>1.3</td><td>1.0</td><td>-0.3</td></tr><tr><td>Fabricated metal products</td><td>-0.7</td><td>-3.5</td><td>3.3</td><td>6.9</td></tr><tr><td>Mfg: Apparel and leather and allied products</td><td>-0.8</td><td>12.6</td><td>4.4</td><td>-8.2</td></tr><tr><td>Mfg: Paper products</td><td>-0.9</td><td>-0.8</td><td>-2.9</td><td>-2.1</td></tr><tr><td>Accommodation</td><td>-0.9</td><td>-1.4</td><td>3.7</td><td>5.1</td></tr><tr><td>Textile mills and textile product mills</td><td>-0.9</td><td>5.0</td><td>3.0</td><td>-2.0</td></tr><tr><td>Mfg: Plastics and rubber products</td><td>-0.9</td><td>-2.8</td><td>9.9</td><td>12.7</td></tr><tr><td>Primary metals</td><td>-0.9</td><td>13.5</td><td>-2.5</td><td>-15.9</td></tr><tr><td>Amusements, gambling, and recreation industries</td><td>-1.0</td><td>-2.1</td><td>0.4</td><td>2.5</td></tr><tr><td>Nonmetallic mineral products</td><td>-1.0</td><td>-1.4</td><td>-2.6</td><td>-1.3</td></tr><tr><td>Support activities for mining</td><td>-1.0</td><td>9.5</td><td>-2.2</td><td>-11.7</td></tr><tr><td>Mfg: Furniture and related products</td><td>-1.0</td><td>2.2</td><td>-0.4</td><td>-2.6</td></tr><tr><td>Waste management and remediation services</td><td>-1.0</td><td>-1.2</td><td>-4.3</td><td>-3.1</td></tr><tr><td>Mining, except oil and gas</td><td>-1.0</td><td>-4.1</td><td>-0.5</td><td>3.6</td></tr><tr><td>Mfg: Food and beverage and tobacco products</td><td>-1.0</td><td>2.4</td><td>-6.8</td><td>-9.2</td></tr><tr><td>Wood products</td><td>-1.1</td><td>-1.5</td><td>0.5</td><td>1.9</td></tr><tr><td>Food services and drinking places</td><td>-1.2</td><td>-1.5</td><td>-2.2</td><td>-0.8</td></tr><tr><td>Truck transportation</td><td>-1.3</td><td>14.6</td><td>-3.3</td><td>-18.0</td></tr><tr><td>Forestry, fishing, and related activities</td><td>-1.4</td><td>7.2</td><td>-2.1</td><td>-9.3</td></tr><tr><td>Warehousing and storage</td><td>-1.6</td><td>-0.5</td><td>1.7</td><td>2.2</td></tr></table>
+
+Source: MS. AI-exposure scores are derived from Felten et. al. (2021), https://sms.onlinelibrary.wiley.com/doi/full/10.1002/smj.3286.
+
+# Monetary policy: A more neutral place
+
+Key takeaway 1: The bar for rate cuts has risen. With activity resilient to energy price headlines, we see the Fed on hold through 2026, guarding against successive supply shocks leading to inflation persistence. The easing bias in the FOMC statement is likely to be removed in June. If inflation follows our forecast, then the Fed can ease further in 2027 – we have 25bp cuts in March and June. If inflation is persistent, or r\* is moving higher, then the normalization cycle is likely over.
+
+Key takeaway 2: Talk less, say more? Incoming chair Kevin Warsh is likely to push for changes. We think data will ultimately drive any decision on interest rates. Adjustments to balance sheet policies require consensus and changes to regulations, both of which take time. However, the Chair can exert influence on communication policy: A Warsh-led Fed may talk less, creating more short-term policy uncertainty.
+
+# The Fed shifts toward a neutral stance
+
+In light of the evolving balance of risks, the Fed's communication has changed. The April FOMC meeting marked an important shift in the Fed's policy stance toward a longer hold. Taken together, the decision, statement, and press conference suggest the Committee is moving away from an easing bias and toward a more neutral posture. The central message is that policy is now close enough to neutral that the urgency to ease has diminished, allowing the Fed to wait for clearer evidence on inflation before acting. The easing bias in the FOMC statement is likely to be removed in June.
+
+Powell explicitly stated that “the number of people on the Committee who either could support that language change [a removal of the easing bias] … has increased over the intermeeting period.” He characterized the three dissents in the April statement as simultaneously opposed to maintaining an easing bias while agreeing with the rate decision at the meeting. In our view, this characterization signals a desire to move toward symmetric forward guidance, with Powell saying the debate has become “a much closer thing” than in March, and that this shift “makes all the sense in the world” given inflation moving sideways-to-higher and energy risks.
+
+The Fed emphasized that disinflation must be demonstrated, not assumed, and that the economy is strong enough to tolerate patience. Importantly, the Fed's data-dependent framework implies that guidance will lag clear signals from the data rather than lead them, reinforcing a cautious and reactive approach rather than one that validates market expectations.
+
+# Inflation has to behave for the Fed to cut: We believe it will
+
+We believe the Fed can normalize its policy rate further on account of an end to tariff pass-through, limited second round effects from oil, diminishing shelter inflation, and stable inflation expectations. We admit the Fed's confidence in disinflation has been shaken somewhat after the beginning of the US-Iran conflict and the higher energy prices it generated. After more than two months, oil prices remain elevated and our forecast calls for some oil risk premium across the forecast horizon.
+
+With activity holding up, the two Fed cuts we have in our baseline outlook are almost solely dependent on inflation decelerating. We see the year-on-year rate of headline PCE inflation peaking above 4.0% in the coming months, then decelerating. If our assumptions about inflation are correct, then the year-on-year rate of headline PCE inflation will fall rapidly beginning in 2027. Our forecast has the year-on-year rate of headline inflation running at 2.0% for the last three quarters of 2027. Hence, we place our two rate cuts in March and June for a terminal target range of 3.0-3.25%.
+
+Previously, we looked for two rate cuts in January and March of 2027, but modest adjustments in our commodity team's outlook for oil and implications for our inflation forecast mean we pushed further easing back a few months.
+
+That said, it's not a stretch to think the Fed has finished its normalization process and will be on hold throughout the forecast horizon. A prolonged oil risk premium could generate more second round effects than anticipated and inflation expectations may be more malleable after years of above-target outcomes. In addition, with our expectations for AI-related spending from hyperscalers reaching \$1.1tn in 2027 and growth in real GDP firming to 2.6% in 2027, FOMC participants could revise higher their estimates for the neutral rate of interest. Both factors – persistent inflation and higher neutral rates – could leave the Fed on hold.
+
+Exhibit 46: The end of normalization: We expect resilient activity plus above-target inflation to keep the Fed on hold this year before 50bp of cuts in 1H27   
+![](images/ed8d6aca99d753e1c35288d2b8f6da0638b62c42985f557889787a898de7fd1e.jpg)
+
+<details>
+<summary>line</summary>
+
+| Year | Target | Baseline forecast |
+|------|--------|-------------------|
+| 22   | 0.00   | -                 |
+| 23   | 4.50   | -                 |
+| 24   | 5.50   | -                 |
+| 25   | 4.50   | -                 |
+| 26   | 3.50   | -                 |
+| 27   | 3.10   | 3.10              |
+</details>
+
+Source: Federal Reserve, Haver Analytics, MS
+
+Exhibit 47: Our expectations for monetary policy under a global oil recession, demand shock, and supply shock with labor displacement   
+![](images/f380bd0b3e7f3578993aff1519fd7a681f07fc4c9fc920aeefb56320fadab35e.jpg)
+
+<details>
+<summary>line</summary>
+
+| Year | Target | Baseline | Global Oil Recession | Demand shock | AI Productivity & Labor Displacement | Oil Risk Premium |
+|------|--------|----------|----------------------|--------------|-------------------------------------|------------------|
+| 22   | 0.00   | 0.00     | 0.00                 | 0.00         | 0.00                                | 0.00             |
+| 23   | 4.50   | 4.50     | 4.50                 | 4.50         | 4.50                                | 4.50             |
+| 24   | 5.50   | 5.50     | 5.50                 | 5.50         | 5.50                                | 5.50             |
+| 25   | 4.50   | 4.50     | 4.50                 | 4.50         | 4.50                                | 4.50             |
+| 26   | 3.50   | 3.50     | 3.50                 | 3.50         | 3.50                                | 3.50             |
+| 27   | 3.50   | 3.50     | 1.50                 | 4.50         | 3.00                                | 3.50             |
+| 28   | 3.50   | 3.50     | 1.50                 | 4.50         | 3.00                                | 3.50             |
+| 29   | 3.50   | 3.50     | 1.50                 | 4.50         | 3.00                                | 3.50             |
+| 30   | 3.50   | 3.50     | 1.50                 | 4.50         | 3.00                                | 3.50             |
+</details>
+
+Source: Federal Reserve, Haver Analytics, MS
+
+# Alternative scenarios, alternative paths
+
+Not surprisingly, our alternative scenarios come with alternative paths for Federal Reserve policy. In our permanent oil premium scenario, a more prolonged oil shock means more passthrough to core inflation. Persistent inflation keeps the Fed cautious, and they remain on hold throughout the forecast horizon. In our "animal spirits" demand shock scenario, where core inflation firms leading the Fed to hike rates, we see the Fed raising its target range for the federal funds rate by 100bp beginning in 4Q 2026. In our AI productivity upside scenario with labor market displacement, a softening labor market contributes to stronger disinflationary pressures. With the unemployment rate drifting higher to 4.8% by the end of 2027, the Fed cuts its policy rate by 75bp in 2027 to 2.75-3.0%. Finally, in our Global oil-led recession scenario, we forecast the Fed to cut rates by 200bp by year-end 2026 to 1.50-1.75%. Following recovery in 2027, the Fed raises rates by 100bp, leaving the target rage at 2.50-2.75% at the end of 2027.
+
+# A new Fed chair brings new priorities
+
+With the pending arrival of Kevin Warsh as the next chair of the Federal Reserve Board of Governors, we provide some views about the course of interest rate policy, balance sheet policy, and communication strategy. The incoming chair has made it clear for years that he sees the Fed as having an outsized footprint in financial markets, directing his criticism as what he sees as excessive communication and a balance sheet that is too large and holds too many longer-dated securities.
+
+# Interest rate policy: The consensus desires patience, not cuts
+
+Our view for some time has been that the near-term path for interest rate policy is likely to remain unchanged in the transition from Chair Powell to Chair Warsh. Interest rate policy is a FOMC decision and any chair must form consensus to drive policy choices. Given the incoming data that points to economic resilience amid rising inflation – and what is likely to be a shift to a more symmetric reaction function in June – the hurdle to shift the committee's thinking (in the direction of rate cuts) is high. The chair is only one of 12 voters and one of 19 on the committee (assuming no vacancies). In the end, we think the data will drive decisions on interest rate policy given the current make up of the committee. This could change if there is additional turnover on the board, but for now the strong consensus is leaning toward patience.
+
+# Balance sheet: Getting consensus to change the composition of holdings may be easier...
+
+Like interest rate policy, any change to the Fed's balance sheet policies requires garnering consensus. We think this may be easier to achieve when it comes to the composition of Fed securities holdings in the SOMA portfolio, rather than when it comes to reducing the size of the Fed's balance sheet. While we think swaps between the Fed and Treasury of 1) Treasuries, for Treasuries of different maturities or 2) Treasuries, for agency mortgage-backed securities, are of low probability, we see a change in the Fed's reinvestment policy as more likely.
+
+At present, the Fed's balance sheet is \$6.8tn, with \$6.4tn in securities held outright. Of this total, \$4.4tn is in Treasury securities and the remaining \$2.0tn is held in agency mortgage-backed securities. The weighted average maturity (WAM) of the Fed's holdings of Treasuries is 8.6 years against 5.9 years for all US Treasuries (Exhibit 48). The WAM of Fed Treasury holdings has exceeded all US Treasuries since 2008, a function of the Fed's purchases of longer-dated instruments to ease financial conditions during the unconventional response to the 2008-09 financial crisis and 2019 COVID pandemic.
+
+Exhibit 48: At 8-9 years, the WAM of the Fed's holdings of US Treasuries is well above the market outstanding WAM of about 6 years   
+![](images/5d5ded4d4a85c4e790fb3ba299e1cf3fbc0455cb41136f5620034dd4ee214e5f.jpg)
+
+<details>
+<summary>line</summary>
+
+| Year | WAM - All UST | WAM - SOMA (UST) |
+|------|---------------|------------------|
+| 04   | 4.8           | 3.5              |
+| 07   | 4.6           | 3.6              |
+| 10   | 4.8           | 6.8              |
+| 13   | 5.2           | 10.5             |
+| 16   | 5.8           | 8.5              |
+| 19   | 5.9           | 8.7              |
+| 22   | 6.2           | 7.5              |
+| 25   | 6.0           | 9.0              |
+</details>
+
+Source: Federal Reserve, US Treasury, Bloomberg, MS
+
+Exhibit 49: The average coupon of Fed Treasury holdings is running below market outstanding due to COVID-era purchases   
+![](images/2a8498c4fb539db5b3f112ed619e9c61cf9c341569a3255d14953c1d916d9e08.jpg)
+
+<details>
+<summary>line</summary>
+
+| Year | WAC - SOMA (UST) | WAC - All UST |
+|------|------------------|---------------|
+| 04   | 4.8              | 4.7           |
+| 07   | 5.0              | 4.7           |
+| 10   | 3.8              | 3.5           |
+| 13   | 3.6              | 2.5           |
+| 16   | 3.2              | 2.2           |
+| 19   | 3.1              | 2.3           |
+| 22   | 1.9              | 1.6           |
+| 25   | 2.7              | 3.0           |
+</details>
+
+Source: Federal Reserve, US Treasury, Bloomberg, MS
+
+The Fed's communication related to policy normalization says, "in the longer run, the Committee intends to hold primarily Treasury securities in the SOMA, thereby minimizing the effect of Federal Reserve holdings on the allocation of credit across sectors of the economy." Various participants, over time, have also suggested the Fed's holdings of Treasury securities skew toward holdings of shorter-dated securities, while others would prefer Fed holdings to broadly match the characteristics of Treasuries outstanding. These steps would mean the Fed's Treasury holdings are neutral with respect to duration.
+
+Given these preferences, it may be easier for Chair Warsh to garner consensus around the idea of altering the reinvestment policy for Treasuries in favor of rolling over some maturing principal from coupon instruments into bills. Presently the Fed rolls maturing T-bills into T-bills and maturing coupons into coupons, with coupon maturities reinvested in line with the Treasury auctions in the week they mature. This makes for a slow reduction in the WAM of the SOMA portfolio.
+
+Whether this mattered for Treasury yields would depend on how the Treasury reacted to this change in the Fed's reinvestment policy. If an aggressive Fed rollover plan into T-bills pushed up the ratio of marketable T-bills in outstanding marketable debt to levels the Treasury does not desire, then it would be forced to increase coupon auction sizes which could put undesired upward pressure on the long-end of the yield curve. There is some room for the T-bill share of outstanding marketable debt to rise; it is above the post-GFC average, but remains below the pre-GFC average (Exhibit 50 and Exhibit 51).
+
+It goes without saying that any change in the Fed's reinvestment policy would need to be undertaken in consultation with the US Treasury. Still, we think getting consensus on a modest change in the Fed's reinvestment policy that brings the WAM more in line with outstanding Treasuries is achievable. A modest increase in the T-bill share could bring the WAM of the SOMA's Treasury holdings more in line with all US Treasuries.
+
+Exhibit 50: The T-bill share tends to rise during recessions due to automatic fiscal policy stabilizers   
+![](images/04b61e29e51a53d5e9b68b55c8b633d0f4675eb60b4d35a967178614384010d4.jpg)
+
+<details>
+<summary>line</summary>
+
+| Year | T-bills | Notes | Bonds | TIPS | FRNs |
+|------|---------|-------|-------|------|------|
+| 98   | 20      | 60    | 18    | 1    | 0    |
+| 00   | 22      | 58    | 20    | 2    | 0    |
+| 02   | 25      | 55    | 18    | 3    | 0    |
+| 04   | 28      | 53    | 15    | 4    | 0    |
+| 06   | 26      | 55    | 12    | 6    | 0    |
+| 08   | 24      | 57    | 10    | 8    | 0    |
+| 10   | 35      | 65    | 10    | 10   | 0    |
+| 12   | 15      | 67    | 10    | 8    | 0    |
+| 14   | 12      | 66    | 10    | 8    | 0    |
+| 16   | 10      | 65    | 10    | 8    | 0    |
+| 18   | 12      | 63    | 10    | 8    | 0    |
+| 20   | 25      | 55    | 12    | 8    | 0    |
+| 22   | 15      | 58    | 15    | 7    | 0    |
+| 24   | 20      | 55    | 16    | 7    | 0    |
+| 26   | 22      | 53    | 17    | 6    | 0    |
+</details>
+
+Source: US Treasury, Bloomberg, MS
+
+Exhibit 51: Although the T-bill share has risen above the post-GFC average, it remains below the long-run average   
+![](images/e9d45fb822e91e82c60ca82235b4bbf2a692dc9c22e5783fea5d3fb8ff926966.jpg)
+
+<details>
+<summary>line</summary>
+
+| Year | T-bills | Pre-GFC avg | Post-GFC avg |
+|------|---------|-------------|--------------|
+| 98   | ~20     | ~24         | ~17          |
+| 00   | ~22     | ~24         | ~17          |
+| 02   | ~28     | ~24         | ~17          |
+| 04   | ~26     | ~24         | ~17          |
+| 06   | ~24     | ~24         | ~17          |
+| 08   | ~22     | ~24         | ~17          |
+| 10   | ~35     | ~24         | ~17          |
+| 12   | ~15     | ~24         | ~17          |
+| 14   | ~12     | ~24         | ~17          |
+| 16   | ~10     | ~24         | ~17          |
+| 18   | ~13     | ~24         | ~17          |
+| 20   | ~25     | ~24         | ~17          |
+| 22   | ~15     | ~24         | ~17          |
+| 24   | ~20     | ~24         | ~17          |
+| 26   | ~22     | ~24         | ~17          |
+</details>
+
+Source: US Treasury, Bloomberg, MS
+
+# ...than getting consensus to shrink the balance sheet
+
+As we noted in FAQs on a Smaller Fed Footprint, there are only two tools to reduce the size of the balance sheet: passive vs. active QT. Passive QT relies on securities maturing within caps set by the Fed to enable smooth, predictable balance-sheet runoff, while active QT allows the Fed to sell chosen securities directly but risks greater volatility and higher realized losses. We continue to believe the risk of active selling of securities from the Fed's balance sheet is very low. Passive runoff would be the most likely route.
+
+Agency mortgage-backed securities runoff is slow without rate declines. Elevated mortgage rates have sharply limited prepayment speeds, meaning the Fed's holdings would take years to run off naturally; faster reduction would require much lower mortgage rates or disruptive active sales.
+
+That said, any reduction in the asset side of the Fed's balance sheet starts first with the liability side. After all, balance-sheet reduction drains liquidity and ultimately runs up against bank demand for reserves in an ample reserves regime. Shrinking assets lowers Fed liabilities – mainly ON RRP and reserve balances – tightening financial conditions and increasing volatility once reserves move from "abundant" to "ample" to "scarce."
+
+Any real reduction in the Fed's securities holdings requires reducing bank demand for reserves. This could happen in one of two ways. One possible way to reduce demand for reserves is to have other liquid assets qualify as Level 1 HQLA. For example, could regulations be changed so that pre-pledged collateral at the discount window counts as Level 1 HQLA? If so, perhaps it could sUBStitute for some reserve demand.
+
+A second path to lower reserve demand is reform of the Liquidity Coverage Ratio (LCR) and Individual Liquidity Stress Test (ILST). Lower liquidity buffers could reduce system demand for reserves, but they could also increase financial stability risks.
+
+Finally, Treasury coordination matters. Adjustments to TGA targets or issuance mix (especially bill issuance) affect how balance-sheet reduction flows through the system and influence the maturity structure of the Fed's SOMA portfolio. Presently, the Treasury prefers the TGA at close to \$1tn. A change in the Fed's reinvestment policy in favor of more bill issuance may lead to an even larger TGA. That said, perhaps the Treasury could alter its formula for TGA balances, leading to a smaller TGA and smaller Fed balance sheet.
+
+The Fed did rescind its public FAQs on the LCR rule, so something may be afoot. A Notice of Proposed Rulemaking (NPRM) is likely forthcoming, which could lead to changes in liquidity stress tests. Nevertheless, our point remains: shrinking the balance sheet is possible, but it will only occur slowly and requires a change in regulation. Any changes are only likely in 2027 or beyond.
+
+In sum, broader balance-sheet reduction is likely to require regulatory adjustments that lower banks' structural demand for reserves, along with coordination with Treasury to manage TGA balances and issuance strategy. Altogether, reducing the Fed's footprint is possible but slow, operationally complex, and carries trade-offs between liquidity, market functioning, and financial stability.
+
+Exhibit 52: Broader balance-sheet reduction is likely to require regulatory adjustments...   
+![](images/6af46f4dde98156a796a2fbf3f2c5132738fe1e201f9d2a44a59bc33c950eff8.jpg)
+
+<details>
+<summary>line</summary>
+
+| Year | Total Assets (US$, tn) |
+| ---- | ------------------------ |
+| 15   | 4.5                      |
+| 16   | 4.5                      |
+| 17   | 4.5                      |
+| 18   | 4.3                      |
+| 19   | 3.8                      |
+| 20   | 7.0                      |
+| 21   | 8.0                      |
+| 22   | 9.0                      |
+| 23   | 8.5                      |
+| 24   | 7.5                      |
+| 25   | 6.8                      |
+</details>
+
+Source: Federal Reserve, Haver Analytics, MS
+
+Exhibit 53: ...that lower banks' structural demand for reserves, along with coordination with Treasury on TGA balances   
+![](images/3f9d501f2e8c193ae911919ed877f6e1cf599f8606485681cd95beb1ad332305.jpg)
+
+<details>
+<summary>line</summary>
+
+| Year | RRP (US$ tn) | Reserve Balances (US$ tn) |
+|------|--------------|---------------------------|
+| 15   | ~0.3         | ~2.5                      |
+| 16   | ~0.4         | ~2.3                      |
+| 17   | ~0.3         | ~2.1                      |
+| 18   | ~0.3         | ~1.9                      |
+| 19   | ~0.3         | ~1.5                      |
+| 20   | ~0.3         | ~3.3                      |
+| 21   | ~1.2         | ~4.2                      |
+| 22   | ~2.6         | ~3.5                      |
+| 23   | ~2.6         | ~3.0                      |
+| 24   | ~0.8         | ~3.5                      |
+| 25   | ~0.3         | ~3.0                      |
+</details>
+
+Source: Federal Reserve, Haver Analytics, MS
+
+# What doesn't require consensus? Changing communication policy
+
+In contrast to official policy decisions on interest rates and the balance sheet, the Fed's communication strategy does not require a committee vote. Historically, the chair has taken the lead in developing the institution's communication strategy, much of which grew out of the 2008-09 financial crisis when the policy rate was stuck at the effective lower bound and the Fed used forward guidance and unconventional balance sheet policies to help support the recovery.
+
+Warsh has argued that the Fed has become too talkative, too reactive, and too entangled with markets. Rightly or wrongly, Warsh believes the Fed has turned communication from a tool into a constraint. In his view, a "hyper-communicative" Fed weakens its own credibility by negotiating policy in public rather than exercising judgment. He has repeatedly called for a Fed that will "talk less and say more."
+
+Changes to the Fed's communication policy may not come right away, but we think they are coming. A Warsh Fed could communicate less frequently or less fully release information. He may avoid fine-tuning expectations on a meeting-by-meeting basis while letting the Fed's actions speak louder than narratives or forecasts. He appears prepared to surprise the market more than his predecessors. He sees this as a feature, not a bug. If so, we would counsel investors to expect more policy uncertainty in the short run. Warsh believes this will bring greater institutional credibility, but only time will tell.
+
+# Alternate scenarios
+
+The geopolitical and economic uncertainties of the moment open the possibility for different trajectories for the economy. We sketch out what we think are plausible alternative scenarios and attach subjective probabilities to each. One upside scenario is an "animal spirits" scenario based on a demand-side boost from wealth effects, fiscal stimulus, AI investment spending, and a recovery in labor demand. A second, less positive scenario includes more labor replacement amid faster AI-driven productivity. The remaining two scenarios depend on oil markets. In one, a sharp rise in oil prices triggers supply shortages and demand destruction, leading to recession. Or, in the fourth scenario, oil prices just linger at higher levels for longer, weighing on consumption, pushing up inflation, and freezing out Fed cuts.
+
+# Scenario 1: Aggregate demand upside (15%)
+
+The oil shock abates, and elevated wealth and improving confidence support consumption and keep business spending elevated. “Animal spirits” drive stronger demand across the economy, pushing GDP growth to 2.9% in 2026 and 3.1% in 2027, around 0.5-1.0pp faster than the baseline. Stronger demand also results in tighter labor markets, with the unemployment rate falling to 3.9% in 2026 and 3.5% in 2027.
+
+Even with the oil shock dissipating, inflation pressures step up as stronger demand keeps price pressures elevated. Headline inflation rises to 3.7% in 2026 before easing to 2.7% in 2027. Core PCE inflation firms through early 2027 as consumption remains strong and labor markets tighten.
+
+The Fed eventually raises rates, but only once it is clear that the stronger growth is coming from demand rather than productivity. They begin hiking in 4Q26, delivering 100bp of hikes to bring the policy rate to 4.50-4.75%.
+
+# Scenario 2: AI productivity boost with labor displacement (10%)
+
+So far, AI has advanced without significant effect on payroll growth or the unemployment rate. Productivity has accelerated, reflecting industries with high exposure to AI, but the pickup has been faster output growth rather than slower employment. Similarly, we have found that unemployment in AI-sensitive occupations has boosted the overall unemployment rate by less than 0.1pp.
+
+But as AI is adopted more broadly and as its capabilities rise, labor displacement could be greater. In this scenario, cautious businesses continue to expand output at about the same pace in 2027 as in 2026, but higher productivity allows layoffs. The unemployment rate rises to 4.5% by the end of 2026 and 4.8% by the end of 2027. Weaker employment spills into softer consumer spending, in turn discouraging business investment and hiring. With more labor market slack, core inflation is slowing decisively in late 2026; core PCE inflation slows from 2.6% in 2026 to 2.0% in 2027. The Fed begins lowering rates at the start of 2027; three cuts take the funds rate to 2.875%.
+
+# Scenario 3: Permanent oil premium (20%)
+
+Oil prices remain above \$100 through 2027. Prices weigh on consumption for longer but AI capex remains robust; real GDP rises 2.0% in 2026 and 2.4% in 2027, slightly below the base case. Labor demand is slightly softer as well, though the unemployment rate remains low at 4.2-4.3% across the forecast horizon.
+
+A more prolonged oil shock means more supply chain pressures and further passthrough to core inflation. Core PCE ends 2026 at 3.1% and 2027 at 2.8%.
+
+Persistent inflation keeps the Fed cautious. Policymakers maintain a high bar for rate cuts, waiting for clearer evidence that tariff and energy-driven inflation pressures are reversing. As a result, the Fed keeps the target range unchanged at 3.50-3.75% through the end of 2027.
+
+# Scenario 4: A global recession (15%)
+
+A sharp rise in oil prices to \$140-160/bbl through 3Q 2026 triggers supply shortages and demand destruction, pushing the economy into a mild recession. Oil ends the year at \$100/bbl. Inflation surges in the near-term as elevated oil prices push headline inflation to 5.1% y/y in 3Q 2026 and 4.5% by year-end. Real consumer spending falls, and businesses pull back on investment and hiring. GDP declines in 3Q and 4Q 2026, putting full-year 2026 growth at 0.1%. Payrolls decline throughout 2026, and the unemployment rate rises to a peak of 5.5% this year. The Fed delivers 200bps of cuts in 2026, lowering rates 1.50-1.75%, although there is no quantitative easing.
+
+Recovery in 2026 reflects rebound in rate-sensitive sectors. Real consumption is also helped by slow headline inflation (and core PCE inflation moderate at 2.0%). As growth recovers in 2027 and inflation stabilizes, the Fed hikes by 100bp to a target range of 2.50-2.75%.
+
+Exhibit 54: MS US Economics baseline and alternative outlooks for the US Economy: 2026 and 2027 
+
+<table><tr><td></td><td>Aggregate Demand Shock: Animal Spirits (15%)</td><td>AI Productivity Boost with Labor Displacement (10%)</td><td>De-escalation: Mild Energy Headwind (40%)</td><td>Permanent Oil Premium Regime (20%)</td><td>Global Oil-Led Recession (15%)</td></tr><tr><td colspan="6">Key Forecasts</td></tr><tr><td>GDP growth</td><td>The oil shock abates. Elevated wealth supports consumption and &quot;animal spirits&quot; keep business spending elevated. GDP grows 2.9% in 2026 and 3.1% in 2027, 0.5-1.0pp faster than the baseline.</td><td>GDP growth is steady, rising 2.2% 4Q/4Q in 2026 and 2.1% in 2027. Strong business spending is offset somewhat by weaker labor markets and low consumer confidence. Despite softer inflation in 2027, consumer spending stays sluggish as labor displacement mounts.</td><td>High oil prices act as a tax on consumption, neutralizing stimulus from higher tax refunds in the OBBBA. AI capex spending remains robust. Real growth held back to 2.3% (4Q/4Q) in 2026 before rebounding to 2.6% in 2027.</td><td>Oil prices average $120/bbl in 2026 and $100/bbl in 2027. Strategic stockpiling occurs amid a repricing of geopolitical risk in oil logistics. Mild demand destruction occurs. Real GDP grows in 3Q and 4Q 2026. Real GDP rises 2.0% in 2026 (4Q/4Q) before a 2.4% rebound in 2027.</td><td>Oil prices average $140-160/bbl through 3Q and end the year at $100/bbl. Supply shortages ensue, and demand destruction occurs. The result: mild recession with two quarters of negative GDP growth in in 3Q and 4Q 2026. Real GDP rises only 0.1% in 2026 (4Q/4Q) before a 2.5% rebound in 2027.</td></tr><tr><td>Labor markets</td><td>Stronger demand results in tighter labor markets. The unemployment rate falls to 3.9% in 2026 and 3.5% in 2027.</td><td>The economy experiences a prolonged period of net zero job creation. The separation rate edges higher, but widespread layoffs are avoided. The unemployment rate creeps higher, rising to 4.8% in 2027, 0.8pp above our baseline outlook.</td><td>The &quot;curious balance&quot; continues. Average monthly payroll gains slow to 43k this year and firm modestly to 60k next year. Labor demand remains soft on geopolitical uncertainty. Less immigration means a lower breakeven rate of hiring. The unemployment rate finishes 2026 at 4.3% and 2027 at 4.1%.</td><td>The &quot;curious balance&quot; continues. Average monthly payroll gains slow to 30k this year and firm modestly to 50k next year. Labor demand remains soft on geopolitical uncertainty. Less immigration means a lower breakeven rate of hiring. The unemployment rate finishes 2026 at 4.3% and 2027 at 4.2%.</td><td>Payrolls fall an average of 30k per month in 2026 with declines near 200k in Q4. In 2027, payrolls rebound, but bring the unemployment rate down slowly. The unemployment rate rises to 5.5% this year and 5.3% next year.</td></tr><tr><td>Inflation</td><td>Even with the oil shock dissipating, inflation pressures step-up. Headline inflation is 3.7% in 2026 and 2.7% in 2027. Core PCE inflation firms through Q1 27, prompting Fed hikes, which sUBSequently slow inflation.</td><td>Inflation rises on account of higher energy prices, but weak labor markets and slow wage growth provide offset. Headline inflation peaks at 3.8% y/y in 2Q 2026 - similar to the baseline - and finishes the year at 3.3%. Inflation falls back to the 2.0% target in 2027.</td><td>High inflation in 2026 dissipates in 2027. Energy prices push headline PCE inflation to 3.2% 4Q/4Q in 2026. Headline and core PCE decelerate to 2.0% and 2.3% 4Q/4Q in 2027 as the oil shock fades. Energy is a headline story with no second-round effects on core.</td><td>Two more years of above-target inflation. Energy prices push headline PCE inflation to 3.8% 4Q/4Q in 2026, while core moves sideways at 3.1% on tariff push and second round effects from the oil shock. Headline and core PCE decelerate to 2.2% and 2.8% 4Q/4Q in 2027 as the oil shock fades.</td><td>Headline inflation surges to 5.1% y/y in 3Q 2026 and 4.5% at year-end on elevated oil prices. On weaker demand, inflation decelerates to 1.1% in 2027.</td></tr><tr><td>Federal reserve policy</td><td>Hikes to counter inflation. The Fed raises rates by 100bp beginning in 4Q 2026 to 4.50-4.75%, more than reversing the 75bp in preemptive cuts to support the labor market in 2025.</td><td>Labor displacement leads to cuts. Above-target inflation keeps the Fed on the sidelines in 2026, but a rising unemployment rate leads the Fed to cut by 75bp in 2027 to a target range of 2.75-3.0%.</td><td>Normalization continues in 2027. Above-target inflation keeps the Fed on the sidelines in 2026, but falling y/y rates of inflation toward 2.0% leads the Fed to cut by 50bp in 2027 to a target range of 3.0-3.25%.</td><td>A prolonged pause. Inflation persistence means a high bar for cuts. Tariff effects must prove transitory, and energy-driven inflation must show a clear reversal before cuts are considered. The Fed maintains the target range of 3.50-3.75% through the end of 2027.</td><td>The Fed shifts to cuts as downside risks to growth mount. 200bp in 2026 and a terminal of 1.50-1.75%. 100bp of hikes in 2027 for a target range of 2.50-2.75% in 4Q 2027. No QE.</td></tr><tr><td colspan="6">Key Forecasts</td></tr><tr><td>Consumer spending</td><td>Better than expected equity market returns and a rebound in labor markets boost consumption to around 3.0% in 2026 and back to near 2.0% in 2027. Upper-income consumers drive much of the spending, but nominal wage growth supports low- and middle-income spending.</td><td>Consumption rises 1.6% in 2026 and 1.5% in 2026. High gas prices weaken goods consumption in 2026. Soft labor market conditions and fears of AI displacement make consumers turn cautious in 2027 despite improving real spending power from decelerating inflation.</td><td>Consumption slows to 1.8% in 2026 as high gasoline prices weigh on goods spending. A resilient economy supports wealth effects from upper income consumers. In 2027, consumption rebounds to 2.1% 4Q/4Q as inflation decelerates.</td><td>Consumption slows to 1.4% in 2026 as high gasoline prices weigh on goods spending. In 2027, consumption rebounds to 2.2% 4Q/4Q as inflation decelerates and a recession is avoided.</td><td>Consumption falls from 3Q 2026 to 4Q 2026 before a gradual reacceleration. Households cut back on durable goods spending. Negative wealth effects lead upper-income consumers to pull back, with spillover into broader spending.</td></tr><tr><td>Nonresidential fixed investment</td><td>Business spending broadens out beyond AI, due to animal spirits and fiscal support.</td><td>Similar to the baseline. AI-related spending remains robust, leading nonresidential fixed investment to rise 7.0% in 2026 and 8.0% in 2027. AI adoption rates rise and firms realize productivity gains</td><td>AI-related spending remains robust, leading nonresidential fixed investment to rise 7.0% in 2026 and 8.0% in 2027. Sentiment around AI capex is not dented by geopolitical concerns.</td><td>AI-related spending remains strong, leading nonresidential fixed investment to rise 6.0% in 2026 and 7.0% in 2027. Sentiment is somewhat dented by geopolitical concerns and elevated energy costs.</td><td>A retrenching business sector cuts employment and capex. Investment declines throughout 2H and into Q1 2027, followed by recovery.</td></tr><tr><td>Residential investment</td><td>Stronger growth is balanced by higher rates in 2026, resulting in still limited housing activity over the forecast horizon.</td><td>Housing activity remains sluggish in both 2026 and 2027, despite lower interest rates. Improved affordability is offset by softening labor market conditions.</td><td>Housing remains &quot;stuck&quot; due to low affordability and limited inventory. Residential investment falls 1.3% in 2026 and rises 1.5% in 2027.</td><td>Housing remains &quot;stuck&quot; due to low affordability and limited inventory. High inflation and no Fed cuts mean higher mortgage rates. Residential investment falls 1.8% in 2026 and is flat in 2027.</td><td>Housing activity is weak in 2026 on the back of slower growth and weak labor markets. Activity picks up in 2027 as growth recovers and low rates spur demand.</td></tr><tr><td>Net trade</td><td>Imports are strong with strong demand, resulting in a larger drag on GDP and a wider trade deficit.</td><td>Relative to the baseline, imports are softer. AI-related imports are robust, but imports of consumer goods are more muted on the back of softer household spending. Net trade subtracts 0.2pp from growth in 2026 and 2027.</td><td>Imports are strong with strong demand, thus a larger drag on GDP. Imports rise 6.3% in 2026 and 5.0% in 2027. Exports rise 4.1% and 1.8%. After adding 0.4pp to growth in 2025, net trade subtracts 0.4pp from growth in 2026 and 2027.</td><td>Imports rise 5.3% in 2026 and 4.0% in 2027. Exports rise 3.0% and 1.0%. Net trade subtracts 0.4pp from growth in 2026 and 2027.</td><td>Imports and exports both fall over the next few quarters as demand falls and slow global growth limits export demand. Net trade contributes positively to growth in 2026.</td></tr><tr><td>Fiscal policy</td><td>Fiscal multipliers are higher than in the baseline, resulting in higher contribution to growth. With stronger growth, fiscal deficits decline. The deficit as a percent of GDP is 5.7% in 2026 and 5.6% in 2027.</td><td>Similar to the baseline. A softer labor market means slightly less revenue growth and more automatic stabilizers. The deficit is 6.3% of GDP in 2026 and 2027.</td><td>The fiscal impulse in the OBBBA is neutralized by higher gasoline prices. The midterm elections bring divided government, leading to budget gridlock and large deficits at about 6.0% of GDP</td><td>Higher gas prices more than offset the growth effects of the OBBBA. The midterm elections bring divided government, leading to budget gridlock and large deficits at about 6.3% of GDP</td><td>Deficits rise further as tax receipts decelerate and automatic stabilizers boost transfer payments. Defense spending picks up. The deficit as a percent of GDP is 6.9% in 2026 and 6.7% in 2027</td></tr><tr><td>Credit conditions</td><td>Credit conditions loosen somewhat on the heels of stronger growth and animal spirits. Bank lending accelerates.</td><td>Credit conditions bifurcate, with willingness to lend to consumers worsening amid solid growth in C&amp;I lending.</td><td>The pace of tightening in lending standards has slowed. Geopolitical uncertainty keeps conditions tighter over the course of the year, though we see modest easing over the forecast horizon.</td><td>Geopolitical uncertainty keeps conditions modestly tighter over the forecast horizon.</td><td>Credit conditions tighten further as the economy contracts. By late this year, the Fed has eased policy enough to encourage some new credit supply but demand remains weak.</td></tr><tr><td>Productivity growth</td><td>Similar productivity growth as the baseline, even with stronger employment growth.</td><td>Similar productivity growth as the baseline, only with greater labor displacement.</td><td>Productivity rises 2.1% in 2027. AI capex keeps output per hour elevated in high-tech industries. Productivity gains are from higher output, not less employment.</td><td>Productivity rises 1.7% in 2027. Less robust AI-related spending limits productivity growth in the short-run.</td><td>With rapid declines in output, productivity falls over the next few quarters. Productivity then begins to recover in 2027.</td></tr><tr><td>Consumer and business confidence</td><td>Confidence rebounds across the course of the year, and further in 2027.</td><td>Labor displacement pushes consumer confidence down further, testing new lows. Business optimism remains elevated.</td><td>Confidence of households and business remains near 2022-2023 lows on account of low labor demand, high inflation, and elevated uncertainty.</td><td>Confidence of households and business remains near 2022-2023 lows on account of low labor demand, high inflation, and elevated uncertainty.</td><td>Recession pushes confidence down further, testing new lows.</td></tr></table>
+
+Source: MS forecasts
+
+# US baseline forecast table
+
+For our full forecast table in Q/Q, Y/Y, and levels format in excel, see here.
+
+Exhibit 55: Summary Table: Outlook for US real GDP growth and other major indicators 
+
+<table><tr><td rowspan="2"></td><td colspan="3">4Q/4Q % change</td><td colspan="10">Quarterly % change, annual rate (unless otherwise noted)</td></tr><tr><td>2025A</td><td>2026E</td><td>2027E</td><td>3Q25A</td><td>4Q25A</td><td>1Q26A</td><td>2Q26E</td><td>3Q26E</td><td>4Q26E</td><td>1Q27E</td><td>2Q27E</td><td>3Q27E</td><td>4Q27E</td></tr><tr><td>Real GDP</td><td>2.0</td><td>2.3</td><td>2.6</td><td>4.4</td><td>0.5</td><td>2.0</td><td>2.3</td><td>2.3</td><td>2.5</td><td>2.4</td><td>2.6</td><td>2.6</td><td>2.6</td></tr><tr><td>Final Sales1</td><td>2.2</td><td>2.1</td><td>2.3</td><td>4.5</td><td>0.3</td><td>1.6</td><td>2.3</td><td>2.2</td><td>2.4</td><td>2.1</td><td>2.4</td><td>2.4</td><td>2.4</td></tr><tr><td>Final Domestic Demand2</td><td>1.8</td><td>2.4</td><td>2.8</td><td>2.8</td><td>0.6</td><td>2.8</td><td>2.2</td><td>2.3</td><td>2.3</td><td>2.6</td><td>2.8</td><td>2.8</td><td>2.9</td></tr><tr><td>Final Private Domestic Demand3</td><td>2.4</td><td>2.5</td><td>3.1</td><td>2.9</td><td>1.8</td><td>2.5</td><td>2.4</td><td>2.5</td><td>2.5</td><td>2.8</td><td>3.1</td><td>3.2</td><td>3.2</td></tr><tr><td>Personal Consumption Expenditures</td><td>2.1</td><td>1.8</td><td>2.1</td><td>3.5</td><td>1.9</td><td>1.6</td><td>1.7</td><td>1.9</td><td>1.9</td><td>1.8</td><td>2.2</td><td>2.2</td><td>2.2</td></tr><tr><td>- Goods</td><td>1.4</td><td>0.6</td><td>1.6</td><td>3.0</td><td>0.3</td><td>-0.1</td><td>0.5</td><td>1.0</td><td>1.0</td><td>1.2</td><td>1.7</td><td>1.7</td><td>1.7</td></tr><tr><td>- Services</td><td>2.4</td><td>2.3</td><td>2.3</td><td>3.6</td><td>2.7</td><td>2.4</td><td>2.3</td><td>2.3</td><td>2.3</td><td>2.1</td><td>2.4</td><td>2.4</td><td>2.4</td></tr><tr><td>Nonresidential Fixed Investment</td><td>5.6</td><td>7.0</td><td>8.0</td><td>3.2</td><td>2.4</td><td>10.4</td><td>5.9</td><td>5.9</td><td>5.9</td><td>7.9</td><td>8.0</td><td>8.0</td><td>8.0</td></tr><tr><td>- Structures</td><td>-5.5</td><td>-3.9</td><td>2.0</td><td>-5.0</td><td>-6.5</td><td>-6.7</td><td>-3.0</td><td>-3.0</td><td>-3.0</td><td>2.0</td><td>2.0</td><td>2.0</td><td>2.0</td></tr><tr><td>- Equipment</td><td>9.6</td><td>10.2</td><td>10.5</td><td>5.2</td><td>4.3</td><td>17.2</td><td>8.0</td><td>8.0</td><td>8.0</td><td>10.5</td><td>10.5</td><td>10.5</td><td>10.5</td></tr><tr><td>- IPP</td><td>8.0</td><td>9.2</td><td>8.0</td><td>5.6</td><td>5.4</td><td>13.0</td><td>8.0</td><td>8.0</td><td>8.0</td><td>8.0</td><td>8.0</td><td>8.0</td><td>8.0</td></tr><tr><td>Residential Investment</td><td>-3.8</td><td>-1.3</td><td>1.5</td><td>-7.1</td><td>-1.7</td><td>-8.0</td><td>1.0</td><td>1.0</td><td>1.0</td><td>1.5</td><td>1.5</td><td>1.5</td><td>1.5</td></tr><tr><td>Exports</td><td>1.1</td><td>4.0</td><td>1.8</td><td>9.6</td><td>-3.2</td><td>12.9</td><td>0.0</td><td>1.0</td><td>2.5</td><td>1.8</td><td>1.8</td><td>1.8</td><td>1.8</td></tr><tr><td>Imports</td><td>-1.9</td><td>6.0</td><td>5.0</td><td>-4.4</td><td>-1.0</td><td>21.4</td><td>-0.1</td><td>2.0</td><td>2.0</td><td>5.0</td><td>5.0</td><td>5.0</td><td>5.0</td></tr><tr><td>Government</td><td>-1.2</td><td>2.1</td><td>1.3</td><td>2.2</td><td>-5.6</td><td>4.4</td><td>1.4</td><td>1.4</td><td>1.4</td><td>1.3</td><td>1.3</td><td>1.3</td><td>1.3</td></tr><tr><td>Inventory contribution (pct pts, a.r.)</td><td>-0.2</td><td>0.1</td><td>0.2</td><td>-0.1</td><td>0.1</td><td>0.4</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.2</td><td>0.2</td><td>0.2</td><td>0.2</td></tr><tr><td>Trade contribution (pct pts, a.r.)</td><td>0.4</td><td>-0.4</td><td>-0.4</td><td>1.6</td><td>-0.2</td><td>-1.3</td><td>0.0</td><td>-0.2</td><td>0.0</td><td>-0.5</td><td>-0.5</td><td>-0.5</td><td>0.0</td></tr><tr><td>Nominal GDP (Current $)</td><td>5.4</td><td>5.4</td><td>4.7</td><td>8.3</td><td>4.2</td><td>5.6</td><td>7.5</td><td>4.3</td><td>4.1</td><td>4.7</td><td>4.5</td><td>4.6</td><td>4.9</td></tr><tr><td>Nominal Consumption</td><td>5.0</td><td>5.0</td><td>4.1</td><td>6.3</td><td>4.9</td><td>6.1</td><td>7.0</td><td>3.8</td><td>3.3</td><td>4.1</td><td>3.9</td><td>4.0</td><td>4.5</td></tr><tr><td colspan="14">Employment &amp; Personal Income</td></tr><tr><td>Civilian Unemployment Rate (%)</td><td>4.5</td><td>4.3</td><td>4.1</td><td>4.3</td><td>4.5</td><td>4.3</td><td>4.3</td><td>4.3</td><td>4.3</td><td>4.2</td><td>4.2</td><td>4.1</td><td>4.1</td></tr><tr><td>Civilian Labor Force Participation Rate (%)</td><td>62.5</td><td>61.8</td><td>61.7</td><td>62.3</td><td>62.5</td><td>62.0</td><td>61.9</td><td>61.8</td><td>61.8</td><td>61.8</td><td>61.7</td><td>61.7</td><td>61.7</td></tr><tr><td>Employment to Population Ratio (%)</td><td>59.7</td><td>59.2</td><td>59.1</td><td>59.6</td><td>59.7</td><td>59.3</td><td>59.2</td><td>59.2</td><td>59.2</td><td>59.1</td><td>59.1</td><td>59.1</td><td>59.1</td></tr><tr><td>Average Monthly Change in Nonfarm Payrolls (Thous.)</td><td>10</td><td>43</td><td>60</td><td>23</td><td>-39</td><td>68</td><td>43</td><td>30</td><td>30</td><td>60</td><td>60</td><td>60</td><td>60</td></tr><tr><td>Real DPI</td><td>1.3</td><td>1.2</td><td>1.7</td><td>1.0</td><td>0.0</td><td>1.5</td><td>-0.8</td><td>1.9</td><td>2.4</td><td>1.3</td><td>1.4</td><td>2.2</td><td>2.0</td></tr><tr><td>Saving rate (%)</td><td>4.0</td><td>3.5</td><td>3.2</td><td>4.4</td><td>4.0</td><td>4.0</td><td>3.4</td><td>3.4</td><td>3.5</td><td>3.4</td><td>3.2</td><td>3.2</td><td>3.2</td></tr><tr><td colspan="14">Business Indicators</td></tr><tr><td>Industrial Production</td><td>1.6</td><td>2.4</td><td>2.5</td><td>2.1</td><td>-1.7</td><td>7.4</td><td>0.3</td><td>0.9</td><td>1.1</td><td>2.4</td><td>2.5</td><td>2.5</td><td>2.5</td></tr><tr><td>Productivity</td><td>2.6</td><td>1.8</td><td>2.1</td><td>5.2</td><td>1.8</td><td>1.6</td><td>1.9</td><td>1.7</td><td>1.9</td><td>1.9</td><td>2.2</td><td>2.2</td><td>2.2</td></tr><tr><td colspan="14">Inflation (quarterly % change, a.r.)</td></tr><tr><td>Consumer Price Index</td><td></td><td></td><td></td><td>3.1</td><td>2.5</td><td>3.6</td><td>6.9</td><td>2.0</td><td>1.3</td><td>2.1</td><td>1.5</td><td>1.8</td><td>2.6</td></tr><tr><td>CPI ex Food &amp; Energy</td><td></td><td></td><td></td><td>3.2</td><td>2.0</td><td>2.8</td><td>3.2</td><td>2.5</td><td>2.3</td><td>3.0</td><td>1.9</td><td>2.3</td><td>2.8</td></tr><tr><td>PCE Price Index</td><td></td><td></td><td></td><td>2.8</td><td>2.9</td><td>4.5</td><td>5.1</td><td>1.8</td><td>1.4</td><td>2.3</td><td>1.7</td><td>1.8</td><td>2.2</td></tr><tr><td>PCE ex Food &amp; Energy</td><td></td><td></td><td></td><td>2.9</td><td>2.7</td><td>4.3</td><td>3.0</td><td>2.1</td><td>1.9</td><td>2.9</td><td>1.9</td><td>2.1</td><td>2.4</td></tr><tr><td colspan="14">Inflation (4-quarter % change)</td></tr><tr><td>Consumer Price Index</td><td>2.7</td><td>3.4</td><td>2.0</td><td>2.9</td><td>2.7</td><td>2.7</td><td>4.0</td><td>3.7</td><td>3.4</td><td>3.0</td><td>1.7</td><td>1.7</td><td>2.0</td></tr><tr><td>CPI ex Food &amp; Energy</td><td>2.7</td><td>2.7</td><td>2.5</td><td>3.1</td><td>2.7</td><td>2.5</td><td>2.8</td><td>2.6</td><td>2.7</td><td>2.7</td><td>2.4</td><td>2.4</td><td>2.5</td></tr><tr><td>PCE Price Index</td><td>2.8</td><td>3.2</td><td>2.0</td><td>2.7</td><td>2.8</td><td>3.1</td><td>3.8</td><td>3.6</td><td>3.2</td><td>2.6</td><td>1.8</td><td>1.8</td><td>2.0</td></tr><tr><td>PCE ex Food &amp; Energy</td><td>2.9</td><td>2.8</td><td>2.3</td><td>2.9</td><td>2.9</td><td>3.1</td><td>3.2</td><td>3.0</td><td>2.8</td><td>2.5</td><td>2.2</td><td>2.2</td><td>2.3</td></tr><tr><td colspan="14">Monetary Policy</td></tr><tr><td>Fed Funds Target (%, midpoint of target range)</td><td>3.625</td><td>3.625</td><td>3.125</td><td>4.125</td><td>3.625</td><td>3.625</td><td>3.625</td><td>3.625</td><td>3.625</td><td>3.375</td><td>3.125</td><td>3.125</td><td>3.125</td></tr><tr><td colspan="14">Fiscal Policy</td></tr><tr><td>Federal Budget balance (% of GDP)</td><td>-5.4</td><td>-6.3</td><td>-6.1</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr></table>
+
+1) GDP less contribution from inventory investment
+
+2) GDP less contributions from inventory investment and trade
+
+3) GDP less contributions from inventory investment, trade, and the government sector. (Private final consumption plus investment.)
+
+Source: Bureau of Economic Analysis, Bureau of Labor Statistics, Federal Reserve, Census Bureau, Treasury Dep't, MS forecasts
+
+Exhibit 56: Inflation forecast table 
+
+<table><tr><td rowspan="2"></td><td colspan="4">% Change - Year-over-Year</td><td colspan="5">% Change - Month-over-Month</td><td>Headline CPI</td></tr><tr><td>Headline PCE</td><td>Core PCE</td><td>Headline CPI</td><td>Core CPI</td><td></td><td>Headline PCE</td><td>Core PCE</td><td>Headline CPI</td><td>Core CPI</td><td>NSA Index</td></tr><tr><td>Jan-25</td><td>2.6</td><td>2.8</td><td>3.0</td><td>3.3</td><td>Jan-25</td><td>0.37</td><td>0.31</td><td>0.43</td><td>0.43</td><td>317.671</td></tr><tr><td>Feb-25</td><td>2.7</td><td>3.0</td><td>2.8</td><td>3.1</td><td>Feb-25</td><td>0.40</td><td>0.45</td><td>0.23</td><td>0.25</td><td>319.082</td></tr><tr><td>Mar-25</td><td>2.4</td><td>2.7</td><td>2.4</td><td>2.8</td><td>Mar-25</td><td>0.02</td><td>0.10</td><td>0.03</td><td>0.07</td><td>319.799</td></tr><tr><td>Apr-25</td><td>2.3</td><td>2.6</td><td>2.3</td><td>2.8</td><td>Apr-25</td><td>0.17</td><td>0.19</td><td>0.16</td><td>0.24</td><td>320.795</td></tr><tr><td>May-25</td><td>2.5</td><td>2.8</td><td>2.4</td><td>2.8</td><td>May-25</td><td>0.18</td><td>0.23</td><td>0.10</td><td>0.13</td><td>321.465</td></tr><tr><td>Jun-25</td><td>2.6</td><td>2.8</td><td>2.7</td><td>2.9</td><td>Jun-25</td><td>0.29</td><td>0.26</td><td>0.25</td><td>0.23</td><td>322.561</td></tr><tr><td>Jul-25</td><td>2.6</td><td>2.9</td><td>2.7</td><td>3.1</td><td>Jul-25</td><td>0.17</td><td>0.25</td><td>0.23</td><td>0.31</td><td>323.048</td></tr><tr><td>Aug-25</td><td>2.7</td><td>2.9</td><td>2.9</td><td>3.1</td><td>Aug-25</td><td>0.26</td><td>0.22</td><td>0.35</td><td>0.31</td><td>323.976</td></tr><tr><td>Sep-25</td><td>2.8</td><td>2.8</td><td>3.0</td><td>3.0</td><td>Sep-25</td><td>0.26</td><td>0.19</td><td>0.30</td><td>0.22</td><td>324.800</td></tr><tr><td>Oct-25</td><td>2.7</td><td>2.8</td><td>2.9</td><td>2.8</td><td>Oct-25</td><td>0.19</td><td>0.23</td><td>0.13</td><td>0.09</td><td>#N/A</td></tr><tr><td>Nov-25</td><td>2.8</td><td>2.8</td><td>2.7</td><td>2.6</td><td>Nov-25</td><td>0.22</td><td>0.18</td><td>0.13</td><td>0.09</td><td>324.122</td></tr><tr><td>Dec-25</td><td>2.9</td><td>3.0</td><td>2.7</td><td>2.6</td><td>Dec-25</td><td>0.33</td><td>0.33</td><td>0.30</td><td>0.23</td><td>324.054</td></tr><tr><td>Jan-26</td><td>2.9</td><td>3.1</td><td>2.4</td><td>2.5</td><td>Jan-26</td><td>0.33</td><td>0.42</td><td>0.17</td><td>0.30</td><td>325.252</td></tr><tr><td>Feb-26</td><td>2.8</td><td>3.0</td><td>2.4</td><td>2.5</td><td>Feb-26</td><td>0.38</td><td>0.37</td><td>0.27</td><td>0.22</td><td>326.785</td></tr><tr><td>Mar-26</td><td>3.5</td><td>3.2</td><td>3.3</td><td>2.6</td><td>Mar-26</td><td>0.66</td><td>0.29</td><td>0.87</td><td>0.20</td><td>330.213</td></tr><tr><td>Apr-26</td><td>3.7</td><td>3.2</td><td>3.8</td><td>2.7</td><td>Apr-26</td><td>0.39</td><td>0.22</td><td>0.62</td><td>0.36</td><td>332.760</td></tr><tr><td>May-26</td><td>3.9</td><td>3.2</td><td>4.1</td><td>2.8</td><td>May-26</td><td>0.35</td><td>0.23</td><td>0.46</td><td>0.24</td><td>334.645</td></tr><tr><td>Jun-26</td><td>3.8</td><td>3.1</td><td>4.1</td><td>2.8</td><td>Jun-26</td><td>0.18</td><td>0.17</td><td>0.22</td><td>0.19</td><td>335.659</td></tr><tr><td>Jul-26</td><td>3.7</td><td>3.1</td><td>3.9</td><td>2.7</td><td>Jul-26</td><td>0.07</td><td>0.17</td><td>0.03</td><td>0.19</td><td>335.492</td></tr><tr><td>Aug-26</td><td>3.6</td><td>3.0</td><td>3.7</td><td>2.6</td><td>Aug-26</td><td>0.14</td><td>0.17</td><td>0.15</td><td>0.20</td><td>335.803</td></tr><tr><td>Sep-26</td><td>3.5</td><td>3.0</td><td>3.6</td><td>2.6</td><td>Sep-26</td><td>0.17</td><td>0.18</td><td>0.20</td><td>0.21</td><td>336.349</td></tr><tr><td>Oct-26</td><td>3.3</td><td>2.9</td><td>3.5</td><td>2.6</td><td>Oct-26</td><td>0.04</td><td>0.15</td><td>0.00</td><td>0.18</td><td>335.813</td></tr><tr><td>Nov-26</td><td>3.2</td><td>2.9</td><td>3.4</td><td>2.7</td><td>Nov-26</td><td>0.11</td><td>0.16</td><td>0.10</td><td>0.19</td><td>335.140</td></tr><tr><td>Dec-26</td><td>3.1</td><td>2.7</td><td>3.4</td><td>2.7</td><td>Dec-26</td><td>0.18</td><td>0.16</td><td>0.24</td><td>0.19</td><td>334.860</td></tr><tr><td>Jan-27</td><td>3.0</td><td>2.6</td><td>3.4</td><td>2.7</td><td>Jan-27</td><td>0.26</td><td>0.36</td><td>0.18</td><td>0.35</td><td>336.136</td></tr><tr><td>Feb-27</td><td>2.7</td><td>2.5</td><td>3.2</td><td>2.8</td><td>Feb-27</td><td>0.13</td><td>0.21</td><td>0.10</td><td>0.23</td><td>337.143</td></tr><tr><td>Mar-27</td><td>2.2</td><td>2.3</td><td>2.5</td><td>2.7</td><td>Mar-27</td><td>0.20</td><td>0.16</td><td>0.23</td><td>0.15</td><td>338.525</td></tr><tr><td>Apr-27</td><td>2.0</td><td>2.3</td><td>2.0</td><td>2.5</td><td>Apr-27</td><td>0.12</td><td>0.16</td><td>0.09</td><td>0.15</td><td>339.353</td></tr><tr><td>May-27</td><td>1.7</td><td>2.2</td><td>1.6</td><td>2.4</td><td>May-27</td><td>0.12</td><td>0.15</td><td>0.09</td><td>0.14</td><td>340.035</td></tr><tr><td>Jun-27</td><td>1.7</td><td>2.2</td><td>1.5</td><td>2.3</td><td>Jun-27</td><td>0.13</td><td>0.15</td><td>0.11</td><td>0.13</td><td>340.699</td></tr><tr><td>Jul-27</td><td>1.7</td><td>2.2</td><td>1.6</td><td>2.4</td><td>Jul-27</td><td>0.11</td><td>0.18</td><td>0.09</td><td>0.20</td><td>340.742</td></tr><tr><td>Aug-27</td><td>1.8</td><td>2.2</td><td>1.7</td><td>2.4</td><td>Aug-27</td><td>0.20</td><td>0.19</td><td>0.23</td><td>0.23</td><td>341.318</td></tr><tr><td>Sep-27</td><td>1.8</td><td>2.2</td><td>1.7</td><td>2.4</td><td>Sep-27</td><td>0.22</td><td>0.19</td><td>0.26</td><td>0.23</td><td>342.082</td></tr><tr><td>Oct-27</td><td>1.9</td><td>2.3</td><td>1.9</td><td>2.4</td><td>Oct-27</td><td>0.13</td><td>0.20</td><td>0.12</td><td>0.23</td><td>341.939</td></tr><tr><td>Nov-27</td><td>2.0</td><td>2.3</td><td>2.0</td><td>2.5</td><td>Nov-27</td><td>0.20</td><td>0.19</td><td>0.23</td><td>0.23</td><td>341.704</td></tr><tr><td>Dec-27</td><td>2.1</td><td>2.4</td><td>2.1</td><td>2.5</td><td>Dec-27</td><td>0.25</td><td>0.19</td><td>0.33</td><td>0.23</td><td>341.737</td></tr></table>
+
+Source: BEA, BLS, MS forecasts.
+
+This report references jurisdiction(s) or person(s) which may be the subject of economic sanctions. Readers are solely responsible for ensuring that their investment activities are carried out in compliance with applicable laws.
+
+# Disclosure Section
+
+The information and opinions in MS were prepared by MS & Co. LLC, and/or MS C.T.V.M. S.A., and/or MS Mexico, Casa de Bolsa, S.A. de C.V., and/or MS Canada Limited. As used in this disclosure section, "MS" includes MS & Co. LLC, MS C.T.V.M. S.A., MS Mexico, Casa de Bolsa, S.A. de C.V., MS Canada Limited and their affiliates as necessary.
+
+For important disclosures, stock price charts and equity rating histories regarding companies that are the subject of this report, please see the MS Disclosure Website at www.morganstanley.com/eqr/disclosures/webapp/generalresearch, or contact your investment representative or MS at 1585 Broadway, (Attention: Research Management), New York, NY, 10036 USA.
+
+For valuation methodology and risks associated with any recommendation, rating or price target referenced in this research report, please contact the Client Support Team as follows: US/Canada +1 800 303-2495; Hong Kong +852 2848-5999; Latin America +1 718 754-5444 (U.S.); London +44 (0)20-7425-8169; Singapore +65 6834-6860; Sydney +61 (0)2-9770-1505; Tokyo +81 (0)3-6836-9000. Alternatively you may contact your investment representative or MS at 1585 Broadway, (Attention: Research Management), New York, NY 10036 USA.
+
+# Global Research Conflict Management Policy
+
+MS has been published in accordance with our conflict management policy, which is available at www.morganstanley.com/institutional/research/conflictpolicies. A Portuguese version of the policy can be found at www.morganstanley.com.br
+
+# Important Disclosures
+
+MS is not acting as a municipal advisor and the opinions or views contained herein are not intended to be, and do not constitute, advice within the meaning of Section 975 of the Dodd-Frank Wall Street Reform and Consumer Protection Act.
+
+MS does not provide individually tailored investment advice. MS has been prepared without regard to the circumstances and objectives of those who receive it. MS recommends that investors independently evaluate particular investments and strategies, and encourages investors to seek the advice of a financial adviser. The appropriateness of an investment or strategy will depend on an investor's circumstances and objectives. The securities, instruments, or strategies discussed in MS may not be suitable for all investors, and certain investors may not be eligible to purchase or participate in some or all of them. MS is not an offer to buy or sell or the solicitation of an offer to buy or sell any security/instrument or to participate in any particular trading strategy. The value of and income from your investments may vary because of changes in interest rates, foreign exchange rates, default rates, prepayment rates, securities/instruments prices, market indexes, operational or financial conditions of companies or other factors. There may be time limitations on the exercise of options or other rights in securities/instruments transactions. Past performance is not necessarily a guide to future performance. Estimates of future performance are based on assumptions that may not be realized. If provided, and unless otherwise stated, the closing price on the cover page is that of the primary exchange for the subject company's securities/instruments.
+
+The fixed income research analysts, strategists or economists principally responsible for the preparation of MS have received compensation based upon various factors, including quality, accuracy and value of research, firm profitability or revenues (which include fixed income trading and capital markets profitability or revenues), client feedback and competitive factors. Fixed Income Research analysts', strategists' or economists' compensation is not linked to investment banking or capital markets transactions performed by MS or the profitability or revenues of particular trading desks.
+
+With the exception of information regarding MS, MS is based on public information. MS makes every effort to use reliable, comprehensive information, but we make no representation that it is accurate or complete. We have no obligation to tell you when opinions or information in MS change apart from when we intend to discontinue equity research coverage of a subject company. Facts and views presented in MS have not been reviewed by, and may not reflect information known to, professionals in other MS business areas, including investment banking personnel.
+
+MS may make investment decisions that are inconsistent with the recommendations or views in this report.
+
+To our readers based in Taiwan or trading in Taiwan securities/instruments: Information on securities/instruments that trade in Taiwan is distributed by MS Taiwan Limited ("MSTL"). Such information is for your reference only. The reader should independently evaluate the investment risks and is solely responsible for their investment decisions. MS may not be distributed to the public media or quoted or used by the public media without the express written consent of MS. Any non-customer reader within the scope of Article 7-1 of the Taiwan Stock Exchange Recommendation Regulations accessing and/or receiving MS is not permitted to provide MS to any third party (including but not limited to related parties, affiliated companies and any other third parties) or engage in any activities regarding MS which may create or give the appearance of creating a conflict of interest. Information on securities/instruments that do not trade in Taiwan is for informational purposes only and is not to be construed as a recommendation or a solicitation to trade in such securities/instruments. MSTL may not execute transactions for clients in these securities/instruments.
+
+MS is not incorporated under PRC law and the research in relation to this report is conducted outside the PRC. MS does not constitute an offer to sell or the solicitation of an offer to buy any securities in the PRC. PRC investors shall have the relevant qualifications to invest in such securities and shall be responsible for obtaining all relevant approvals, licenses, verifications and/or registrations from the relevant governmental authorities themselves. Neither this report nor any part of it is intended as, or shall constitute, provision of any consultancy or advisory service of securities investment as defined under PRC law. Such information is provided for your reference only.
+
+MS is disseminated in Brazil by MS C.T.V.M. S.A. located at Av. Brigadeiro Faria Lima, 3600, 6th floor, São Paulo - SP, Brazil; and is regulated by the Comissão de Valores Mobiliários; in Mexico by MS México, Casa de Bolsa, S.A. de C.V which is regulated by Comision Nacional Bancaria y de Valores. Paseo de los Tamarindos 90, Torre 1, Col. Bosques de las Lomas Floor 29, 05120 Mexico City; in Japan by MS MUFG Securities Co., Ltd. and, for Commodities related research reports only, MS Capital Group Japan Co., Ltd; in Hong Kong by MS Asia Limited (which accepts responsibility for its contents) and by MS Bank Asia Limited; in Singapore by MS Asia (Singapore) Pte. (Registration number 199206298Z) and/or MS Asia (Singapore) Securities Pte Ltd (Registration number 200008434H), regulated by the Monetary Authority of Singapore (which accepts legal responsibility for its contents and should be contacted with respect to any matters arising from, or in connection with, MS) and by MS Bank Asia Limited, Singapore Branch (Registration number T14FC0118); in Australia to "wholesale clients" within the meaning of the Australian Corporations Act by MS Australia Limited A.B.N. 67 003 734 576, holder of Australian financial services license No. 233742, which accepts responsibility for its contents; in Australia to "wholesale clients" and "retail clients" within the meaning of the Australian Corporations Act by MS Wealth Management Australia Pty Ltd (A.B.N. 19 009 14-5 555, holder of Australian financial services license No. 240813, which accepts responsibility for its contents; in Korea by MS & Co International plc, Seoul Branch; in India by MS India Company Private Limited having Corporate Identification No (CIN) U22990MH1998PTC115305, regulated by the Securities and Exchange Board of India ("SEBI") and holder of licenses as a Research Analyst (SEBI Registration No. INH000001105); Stock Broker (SEBI Stock Broker Registration No. INZ000244438), Merchant Banker (SEBI Registration No. INM000011203), and depository participant with National Securities Depository Limited (SEBI Registration No. IN-DP-NSDL-567-2021) having registered office at Altimus, Level 39 & 40, Pandurang Budhkar Marg, Worli, Mumbai 400018, India; Telephone no. +91-22-61181000; Compliance Officer Details: Mr. Tejarshi Hardas, Tel. No.: +91-22-61181000 or Email: tejarshi.hardas@morganstanley.com; Grievance officer details: Mr. Tejarshi
+
+Hardas, Tel. No.: +91-22-61181000 or Email: msic-compliance@morganstanley.com. MS India Company Private Limited (MSICPL) may use AI tools in providing research services. All recommendations contained herein are made by the duly qualified research analysts; in Canada by MS Canada Limited; in Germany and the European Economic Area where required by MS Europe S.E., regulated by Bundesanstalt fuer Finanzdienstleistungsaufsicht (BaFin) under the reference number 149169; in the United States by MS & Co. LLC, which accepts responsibility for its contents. MS & Co. International plc, authorized by the Prudential Regulation Authority and regulated by the Financial Conduct Authority and the Prudential Regulation Authority, disseminates in the UK research that it has prepared, and research which has been prepared by any of its affiliates, only to persons who (i) are investment professionals falling within Article 19(5) of the Financial Services and Markets Act 2000 (Financial Promotion) Order 2005 (as amended, the "Order"); (ii) are persons who are high net worth entities falling within Article 49(2)(a) to (d) of the Order; or (iii) are persons to whom an invitation or inducement to engage in investment activity (within the meaning of section 21 of the Financial Services and Markets Act 2000, as amended) may otherwise lawfully be communicated or caused to be communicated. RMB MS Proprietary Limited is a member of the JSE Limited and A2X (Pty) Ltd. RMB MS Proprietary Limited is a joint venture owned equally by MS International Holdings Inc. and RMB Investment Advisory (Proprietary) Limited, which is wholly owned by FirstRand Limited. The information in MS is being disseminated by MS Saudi Arabia, regulated by the Capital Market Authority in the Kingdom of Saudi Arabia, and is directed at Sophisticated investors only.
+
+The trademarks and service marks contained in MS are the property of their respective owners. Third-party data providers make no warranties or representations relating to the accuracy, completeness, or timeliness of the data they provide and shall not have liability for any damages relating to such data. The Global Industry Classification Standard (GICS) was developed by and is the exclusive property of MSCI and S&P.
+
+MS, or any portion thereof may not be reprinted, sold or redistributed without the written consent of MS.
+
+Indicators and trackers referenced in MS may not be used as, or treated as, a benchmark under Regulation EU 2016/1011, or any other similar framework.
+
+The information in MS is being communicated by MS & Co. International plc (DIFC Branch), regulated by the Dubai Financial Services Authority (the DFSA) or by MS & Co. International plc (ADGM Branch), regulated by the Financial Services Regulatory Authority Abu Dhabi (the FSRA), and is directed at Professional Clients only, as defined by the DFSA or the FSRA, respectively. The financial products or financial services to which this research relates will only be made available to a customer who we are satisfied meets the regulatory criteria of a Professional Client. A distribution of the different MS Research ratings or recommendations, in percentage terms for Investments in each sector covered, is available upon request from your sales representative.
+
+The information in MS is being communicated by MS & Co. International plc (QFC Branch), regulated by the Qatar Financial Centre Regulatory Authority (the QFCRA), and is directed at business customers and market counterparties only and is not intended for Retail Customers as defined by the QFCRA.
+
+As required by the Capital Markets Board of Turkey, investment information, comments and recommendations stated here, are not within the scope of investment advisory activity. Investment advisory service is provided exclusively to persons based on their risk and income preferences by the authorized firms. Comments and recommendations stated here are general in nature. These opinions may not fit to your financial status, risk and return preferences. For this reason, to make an investment decision by relying solely to this information stated here may not bring about outcomes that fit your expectations.
+
+Registration granted by SEBI and certification from the National Institute of Securities Markets (NISM) in no way guarantee performance of the intermediary or provide any assurance of returns to investors. Investment in securities market are subject to market risks. Read all the related documents carefully before investing.
+
+© 2026 MS
