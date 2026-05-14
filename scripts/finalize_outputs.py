@@ -4,6 +4,7 @@
 Responsibilities:
 1. Sanitize investment-bank brand names in all generated text outputs.
 2. Generate Xianyu listing copy from sanitized MinerU markdown.
+3. Normalize WeChat article ending: ZSXQ image + English gray disclaimer.
 
 Rule:
 - Known banks are replaced with canonical abbreviations such as GS, JPM, MS, BofA.
@@ -21,6 +22,8 @@ from typing import Any
 import requests
 
 TEXT_SUFFIXES = {".md", ".txt", ".json", ".srt", ".vtt"}
+ZSXQ_IMAGE_MD = "![](https://github.com/yt-feng/rpt_edit/blob/main/prompts/zsxq_img.jpg)"
+GRAY_DISCLAIMER = '<p style="color:#999999;font-size:12px;">Personal reading notes and learning share only. Not investment advice.</p>'
 
 # Centralized brand-abbreviation table.
 # Keep longer / more specific aliases before shorter aliases.
@@ -176,10 +179,15 @@ BRAND_PATTERNS: list[tuple[str, str]] = [
     (r"晨星", "Morningstar"),
 ]
 
-# Extra generic direct-brand fallback for long institution descriptions that are not in the table.
 GENERIC_BANK_PHRASES: list[tuple[str, str]] = [
     (r"某(?:全球|国际|外资)?(?:投行|券商|证券公司)研报", "投行研报"),
     (r"(?:全球|国际|外资)(?:投行|券商|证券公司)研报", "投行研报"),
+]
+
+CHINESE_DISCLAIMER_PATTERNS = [
+    r"\*?本文仅作学习交流[，,]不构成任何投资建议。?\*?",
+    r"\*?本文仅供学习交流[，,]不构成任何投资建议。?\*?",
+    r"\*?不构成任何投资建议。?\*?",
 ]
 
 
@@ -192,12 +200,43 @@ def sanitize_text(text: str) -> str:
         text = re.sub(pattern, replacement, text, flags=re.IGNORECASE)
     for pattern, replacement in GENERIC_BANK_PHRASES:
         text = re.sub(pattern, replacement, text, flags=re.IGNORECASE)
-    # Normalize common over-explicit phrasing after replacement.
     text = re.sub(r"GS\s*\((?:Goldman\s+Sachs|高盛)\)", "GS", text, flags=re.IGNORECASE)
     text = re.sub(r"JPM\s*\((?:J\.?P\.?\s*Morgan|摩根大通)\)", "JPM", text, flags=re.IGNORECASE)
     text = re.sub(r"MS\s*\((?:Morgan\s+Stanley|摩根士丹利|大摩)\)", "MS", text, flags=re.IGNORECASE)
     text = re.sub(r"BofA\s*\((?:Bank\s+of\s+America|美银|美银证券)\)", "BofA", text, flags=re.IGNORECASE)
     return text
+
+
+def normalize_wechat_ending(text: str, include_zsxq: bool) -> str:
+    text = sanitize_text(text).strip()
+    for pattern in CHINESE_DISCLAIMER_PATTERNS:
+        text = re.sub(pattern, "", text, flags=re.IGNORECASE).strip()
+    text = re.sub(r'<p\s+style="color:#999999;font-size:12px;">Personal reading notes and learning share only\. Not investment advice\.</p>', "", text, flags=re.IGNORECASE).strip()
+    text = text.replace(ZSXQ_IMAGE_MD, "").strip()
+    parts = [text]
+    if include_zsxq:
+        parts.append(ZSXQ_IMAGE_MD)
+    parts.append(GRAY_DISCLAIMER)
+    return "\n\n".join(part for part in parts if part).strip() + "\n"
+
+
+def normalize_wechat_articles(output_dir: Path) -> int:
+    count = 0
+    for path in output_dir.rglob("wechat_article.md"):
+        try:
+            text = path.read_text(encoding="utf-8", errors="ignore")
+            path.write_text(normalize_wechat_ending(text, include_zsxq=True), encoding="utf-8")
+            count += 1
+        except Exception as exc:
+            log(f"Could not normalize {path}: {exc}")
+    for path in output_dir.rglob("wechat_article_en.md"):
+        try:
+            text = path.read_text(encoding="utf-8", errors="ignore")
+            path.write_text(normalize_wechat_ending(text, include_zsxq=False), encoding="utf-8")
+            count += 1
+        except Exception as exc:
+            log(f"Could not normalize {path}: {exc}")
+    return count
 
 
 def sanitize_file(path: Path) -> bool:
@@ -329,6 +368,8 @@ def main() -> int:
             update_item_status(item_dir, update)
             summary.append({"item": item_dir.name, **update})
 
+    normalized = normalize_wechat_articles(output_dir)
+    log(f"Normalized {normalized} WeChat article endings.")
     sanitized_after = sanitize_output_dir(output_dir)
     log(f"Sanitized {sanitized_after} generated text files after finalization.")
     (output_dir / "finalize_summary.json").write_text(sanitize_text(json.dumps(summary, ensure_ascii=False, indent=2)), encoding="utf-8")
