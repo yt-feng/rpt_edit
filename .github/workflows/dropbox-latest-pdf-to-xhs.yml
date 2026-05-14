@@ -40,14 +40,14 @@ on:
         required: true
         default: "加入社群，领取完整研报解读与原始图表。"
       podcast_minutes:
-        description: "Target length for Chinese and English AI podcast"
+        description: "Target length for Chinese and English AI podcast script"
         required: true
         default: "5"
       generate_audio:
-        description: "Generate separate Chinese/English WAV and MP4 videos"
+        description: "Generate separate Chinese/English WAV and MP4 videos. Keep false for large Dropbox batches."
         required: true
         type: boolean
-        default: true
+        default: false
       tts_engine:
         description: "TTS engine: edge gives better natural voices; piper is fully local/open-source fallback"
         required: true
@@ -100,7 +100,7 @@ jobs:
           echo "wechat_length=${{ github.event.inputs.wechat_length || '3000' }}" >> "$GITHUB_OUTPUT"
           echo "community_cta=${{ github.event.inputs.community_cta || '加入社群，领取完整研报解读与原始图表。' }}" >> "$GITHUB_OUTPUT"
           echo "podcast_minutes=${{ github.event.inputs.podcast_minutes || '5' }}" >> "$GITHUB_OUTPUT"
-          echo "generate_audio=${{ github.event.inputs.generate_audio || 'true' }}" >> "$GITHUB_OUTPUT"
+          echo "generate_audio=${{ github.event.inputs.generate_audio || 'false' }}" >> "$GITHUB_OUTPUT"
           echo "tts_engine=${{ github.event.inputs.tts_engine || 'edge' }}" >> "$GITHUB_OUTPUT"
           echo "commit_results=${{ github.event.inputs.commit_results || 'true' }}" >> "$GITHUB_OUTPUT"
 
@@ -171,7 +171,7 @@ jobs:
             --wechat-length "${{ steps.vars.outputs.wechat_length }}" \
             --community-cta "${{ steps.vars.outputs.community_cta }}"
 
-      - name: Post-process WeChat images and generate AI podcast
+      - name: Post-process WeChat images and generate AI podcast scripts
         env:
           DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
           DEEPSEEK_BASE_URL: ${{ steps.vars.outputs.deepseek_base_url }}
