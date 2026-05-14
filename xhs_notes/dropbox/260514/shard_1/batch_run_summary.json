@@ -1,0 +1,50 @@
+{
+  "input_dir": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs",
+  "total_pdf_count_before_shard": 22,
+  "pdf_count_before_skip": 5,
+  "pdf_count": 5,
+  "batch_size": 5,
+  "shard_index": 1,
+  "shard_count": 20,
+  "max_reports_per_shard": 5,
+  "max_total_reports": 100,
+  "skip_existing": true,
+  "skipped_existing_count": 0,
+  "skipped_existing": [],
+  "failures": 0,
+  "batches": [
+    {
+      "batch_index": 1,
+      "pdf_count": 5,
+      "files": [
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/06-MS-China EV Weekly Orders – Postholiday sales plunge mirrors last year； model cycles carve out sharp divergence-260512.pdf",
+          "batch_file": "/tmp/pdf_batch_001_21r_why0/pdfs/0001-06-MS-China EV Weekly Orders - Postholiday sales plunge mirrors last year- model cycles carve out sharp divergence-260512.pdf",
+          "stable_index": "1"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/07-MS-Energy Majors 1Q26 Wrap： Volatile Near Term； Compelling Medium Term-260512.pdf",
+          "batch_file": "/tmp/pdf_batch_001_21r_why0/pdfs/0002-07-MS-Energy Majors 1Q26 Wrap- Volatile Near Term- Compelling Medium Term-260512.pdf",
+          "stable_index": "2"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/08-MS-European Autos： Key themes， views and ideas-260512.pdf",
+          "batch_file": "/tmp/pdf_batch_001_21r_why0/pdfs/0003-08-MS-European Autos- Key themes- views and ideas-260512.pdf",
+          "stable_index": "3"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/09-MS-Greater China Technology Semiconductors：May MCU Spot Prices： STM's 32~Bit down 7% MoM， while GD's 32~Bit down 11% MoM-260512.pdf",
+          "batch_file": "/tmp/pdf_batch_001_21r_why0/pdfs/0004-09-MS-Greater China Technology Semiconductors-May MCU Spot Prices- STM-s 32-Bit down 7- MoM- while GD-s 32-Bit down 11- MoM-260512.pdf",
+          "stable_index": "4"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/10-MS-Korea Economics Mid~Year Outlook：Narrowing the K~shaped Recovery Gap-260512.pdf",
+          "batch_file": "/tmp/pdf_batch_001_21r_why0/pdfs/0005-10-MS-Korea Economics Mid-Year Outlook-Narrowing the K-shaped Recovery Gap-260512.pdf",
+          "stable_index": "5"
+        }
+      ],
+      "returncode": 0,
+      "status": "ok"
+    }
+  ]
+}
