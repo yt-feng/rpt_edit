@@ -1,0 +1,524 @@
+# US ECONOMICS ANALYST
+
+# The Economic Risks from Cyberattacks
+
+The rapidly progressing ability of AI models to identify and exploit vulnerabilities in the digital infrastructure that underpins the economy raises new concerns about the future of cyber risk. We provide an overview of cyberattacks and cybersecurity measures, outline how new AI models lower the barriers to successful cyberattacks but also improve cyber security capabilities, and assess the potential macroeconomic costs of AI-facilitated cyberattacks.
+
+\- Cyberattacks and their economic costs have increased sUBStantially in recent years. Many of the most notable attacks on US companies involved data theft or deletion, unauthorized access of documents or machines, and ransomware, and the most extreme have imposed costs on targeted companies of up to \$1bn. Some of the reported increase in attacks reflects better cyber threat detection as companies have adopted stronger cybersecurity measures that alert them to a larger share of cyberattacks and help to address vulnerabilities before they can be exploited.
+
+■ Cybercriminals have already begun using AI for cyberattacks. In many cases, this involved criminals using AI models to access sensitive information, assist with espionage, or produce and distribute malware. But the latest models significantly raise the bar in terms of model intelligence and reasoning, software engineering capabilities, and vulnerability detection and exploitation capabilities, enabling them to execute much more complex and difficult to defend cyberattacks than prior models even without oversight from experienced human hackers.
+
+AI models can also improve cybersecurity in two ways. First, AI agents can help detect and respond to cyber threats faster, reducing the risk that malicious activities go unnoticed and progress into full-scale cyberattacks. Second, AI models can simulate cyberattacks by searching for and attempting to exploit vulnerabilities in existing infrastructure, allowing companies to address these vulnerabilities before they are exploited by cybercriminals. Early studies of the impact of AI on net cyber risk suggest that new AI models will likely benefit attackers more than defenders in the near term, which will likely result in faster, larger scale, and more sophisticated cyberattacks as new models are released to the public, but that the balance could favor defenders in the long term.
+
+How do cyberattacks affect the economy? Many cyberattacks result in modest direct financial loss—monetary losses from cyberattacks reported to the FBI averaged \$20k per attack in 2025, or \$40k for AI-related attacks, though some
+
+# Jessica Rindels
+
++1(972)368-1516
+
+jessica.rindels@gs.com
+
+GS & Co. LLC
+
+attacks on critical infrastructure have imposed costs of over \$1bn. But direct monetary losses are only a small part of the total cost of cyberattacks, which includes lost productivity, downstream effects on other businesses, regulatory fines, and cybersecurity spending. Accounting for these indirect costs, we estimate that the total cost of cyberattacks in the US was roughly \$300bn in 2025, or roughly 1% of GDP. It is too early to confidently estimate exactly how much AI-facilitated cyberattacks will boost these costs going forward, but more frequent cyberattacks, greater spending on AI-related cybersecurity, and increased regulatory costs will likely boost costs significantly in the coming years.
+
+# The Economic Risks from Cyberattacks
+
+The rapidly progressing ability of AI models to identify and exploit vulnerabilities in the digital infrastructure that underpins the economy raises new concerns about the future of cyber risk. In this Analyst, we provide an overview of cyberattacks and cybersecurity measures, outline how new AI models lower the barriers to successful cyberattacks but also improve cyber security capabilities, and assess the potential macroeconomic costs of AI-facilitated cyberattacks.
+
+# Understanding Cyber Risk Q: What are cyberattacks?
+
+# A: Cyberattacks are malicious attempts to harm an entity via its information and communications technologies.
+
+Data from Google's Threat Intelligence Group suggests that attacks against zero-day vulnerabilities—those that were previously unknown to developers, meaning developers have had zero days to address the vulnerability—have become significantly more common over the past 5 years and have increasingly targeted technologies such as cloud services or other software systems used by large companies to run operations. $^{1}$
+
+Exhibit 1: A Taxonomy of Common Cyberattacks 
+
+<table><tr><td colspan="2">Taxonomy of Common Cyberattacks</td></tr><tr><td>Type</td><td>Description</td></tr><tr><td>Denial-of-Service (DoS)</td><td>Flood servers with traffic to exhaust bandwidth or consume finite resources.</td></tr><tr><td>Malware</td><td>Software designed to cause damage to IT devices or steal data. Ransomware-a type of malware-denies users access to data or systems, after which the actor demands the payment of a ransom in exchange for the user regaining access.</td></tr><tr><td>Injection</td><td>An attack where a vulnerability in an application allows attackers to inject code into a program or query in order to execute remote commands.</td></tr><tr><td>Phishing</td><td>The practice of stealing sensitive data by sending fraudulent emails, texts, or audio that appear to be from a trustworthy source.</td></tr><tr><td>Brute Force</td><td>Trial and error method of guessing credentials to gain access to systems or data.</td></tr><tr><td>Zero-Day Attacks</td><td>An attack against a software or hardware vulnerability that has not been previously discovered.</td></tr><tr><td>N-Day Attacks</td><td>An attack against a software or hardware vulnerability that has been discovered and addressed by some but not all relevant parties.</td></tr></table>
+
+Source: GS Global Investment Research
+
+# Q: What are some examples of recent cyberattacks?
+
+# A: Many of the most notable cyberattacks in recent years involved data theft or deletion, unauthorized access of documents or machines, or ransomware.
+
+Even attacks with explicit financial motives, such as ransomware attacks, often also involve data theft. While it is often difficult to attribute cyberattacks to specific groups, postmortem analysis suggests that large attacks are often carried out by state actors working alongside criminal organizations.
+
+Exhibit 2: Many of the Most Notable Cyberattacks in Recent Years Involved Data Theft or Deletion, Unauthorized Access of Documents or Machines, and Ransomware 
+
+<table><tr><td colspan="4">Recent High-Profile Cyber Attacks</td></tr><tr><td>Date</td><td>Attacker</td><td>Victim</td><td>Description</td></tr><tr><td>Dec. 2020</td><td>Russia&#x27;s Foreign Intelligence Service and a Russian hacker group</td><td>SolarWinds</td><td>Hackers hid malicious code in a file that was included with software updates, giving the hackers remote access to infected computers.</td></tr><tr><td>Mar. 2021</td><td>Chinese cyber espionage group, Hafnium</td><td>Microsoft Exchange Server</td><td>Hackers used several zero-day flaws to gain full access to emails and passwords, administrator privileges, and connected devices.</td></tr><tr><td>May 2021</td><td>Russian hacker group, DarkSide</td><td>Colonial Pipeline</td><td>Hackers used ransomware to access and lock computerized equipment managing the pipeline.</td></tr><tr><td>Sep. 2023</td><td>Hacker group, Scattered Spider</td><td>Caesars Entertainment and MGM Resorts</td><td>Hackers used a vishing campaign against an MGM employee and infiltrated a compromised IT support vendor at Caesars and spread ransomware across both companies&#x27; networks.</td></tr><tr><td>Feb. 2024</td><td>Russian cybercrime group, BlackCat</td><td>Change Healthcare</td><td>Hackers used ransomware to block doctors from getting paid and patients from getting prescriptions.</td></tr><tr><td>Jul. 2025</td><td>Suspected to be a US- or UK-based hacker group</td><td>Allianz Life Insurance</td><td>Hackers accessed a third-party cloud system to acquire insurance customers&#x27; data.</td></tr><tr><td>Mar 2026</td><td>Iran-linked hacker group</td><td>Stryker</td><td>Hackers compromised an administrative account and remotely wiped a large number of devices.</td></tr></table>
+
+Source: GS Global Investment Research, Department of Homeland Security, Government Accountability Office, NPR
+
+# Q: How frequent are cyberattacks?
+
+A: Over one million cyber incidents were reported to the FBI's Internet Crime Complaint Center (IC3) in 2025. However, this probably understates the prevalence because cyberattacks frequently go unnoticed and because there is little incentive for firms to report attacks.
+
+Some of the reported increase in attacks reflects better cyber threat detection as companies have adopted stronger cybersecurity measures that allow them to address vulnerabilities before they can be exploited.
+
+The sharp increase in reports in 2020 reflected the sudden increased dependence on technology during the pandemic lockdowns. $^{2}$ 40% of the increase in reports in 2020 reflected a more than doubling of reported phishing scams—one of the main types of attacks that targets end-users.
+
+Exhibit 3: Cyber Crimes Reported to the FBI Have Tripled Since the 2010s, with Phishing Attacks Growing Particularly Sharply   
+![](images/4b186fc7ce6f80d4e6d7d1b1f3b83949675b9536bbc6d5710e28db07ddc3421a.jpg)
+
+<details>
+<summary>bar_line</summary>
+
+Cyber Crimes Reported to the FBI's Internet Crime Complaint Center
+| Year | Other Reports (Thousands) | Reports Mentioning Cryptocurrency (Thousands) | Total Reports (Thousands) |
+|---|---|---|---|
+| 2000 | 10 | 0 | 10 |
+| 2001 | 30 | 0 | 30 |
+| 2002 | 60 | 0 | 60 |
+| 2003 | 100 | 0 | 100 |
+| 2004 | 150 | 0 | 150 |
+| 2005 | 200 | 0 | 200 |
+| 2006 | 220 | 0 | 220 |
+| 2007 | 210 | 0 | 210 |
+| 2008 | 250 | 0 | 250 |
+| 2009 | 330 | 0 | 330 |
+| 2010 | 310 | 0 | 310 |
+| 2011 | 315 | 0 | 315 |
+| 2012 | 285 | 0 | 285 |
+| 2013 | 275 | 0 | 275 |
+| 2014 | 285 | 0 | 285 |
+| 2015 | 305 | 0 | 305 |
+| 2016 | 315 | 0 | 315 |
+| 2017 | 335 | 0 | 335 |
+| 2018 | 475 | 35 | 475 |
+| 2019 | 815 | 35 | 815 |
+| 2020 | 865 | 35 | 865 |
+| 2021 | 845 | 45 | 845 |
+| 2022 | 815 | 45 | 815 |
+| 2023 | 895 | 65 | 895 |
+| 2024 | 875 | 145 | 875 |
+| 2025 | 1015 | 185 | 1015 |
+Cyber Crimes Reported to the FBI's Internet Crime Complaint Center
+Total Reports
+Cyber Crimes Reported to the FBI's Internet Crime Complaint Center
+Reports Mentioning Cryptocurrency
+Total Reports
+Cyber Crimes Reported to the FBI's Internet Crime Complaint Center
+</details>
+
+![](images/cf2b950808fa2290c62d02c15be41850d918d6f651c76c914f3a644da045923f.jpg)  
+\*Inducing investors to make purchases based on false information.   
+Source: GS Global Investment Research, Department of Justice
+
+# Q: What cybersecurity measures exist and how are they being used to prevent cyberattacks?
+
+# A: Cybersecurity measures ranging from simple use of strong passwords to AI-driven security automation lower the cost, duration, and frequency of cyberattacks.
+
+Annual cybersecurity disclosures now required by the SEC provide some insight into cybersecurity adoption among private-sector companies. Analysis of these disclosures published by Harvard indicates that companies most commonly implement access management, vulnerability scanning, threat intelligence, employee training, and security monitoring. $^{3}$
+
+Industry reports suggest that adoption of cybersecurity tools and spending on cybersecurity has surged in recent years. That said, a study by the World Economic Forum showed that $35\%$ of small firms felt they had insufficient cybersecurity (vs. $5\%$ in 2022) compared to just $7\%$ of large firms, and Verizon's 2025 Data Breach Investigation report showed that small businesses had more data breaches and were exposed to malware more often than large firms.
+
+Exhibit 4: Cybersecurity Measures Range from Simple Use of Strong Passwords to Protect Accounts to AI-Driven Security Automation; Adoption of Cybersecurity Measures Reduces the Costs of Cyberattacks 
+
+<table><tr><td colspan="3">Common Cybersecurity Measures</td></tr><tr><td>Measure</td><td>Explanation</td><td>Efficacy</td></tr><tr><td>Password Protection</td><td>Using strong passwords to protect users&#x27; accounts and devices.</td><td>Focus on stronger passwords reduced the frequency of data breaches due to stolen credentials from 63% in 2016 to 22% in 2025.</td></tr><tr><td>Employee Training</td><td>Teaches employees how to detect phishing scams, create strong passwords, and handle data securely.</td><td>Reduced cost of data breach by $190k on average.</td></tr><tr><td>Multi-Factor Authentication</td><td>Requires users to provide two or more verification factors to gain access to accounts.</td><td>Blocks 99% of bulk identity-based attacks.</td></tr><tr><td>Software Updates and Patching</td><td>Allows software developers to address known security vulnerabilities before they are exploited.</td><td>Government agencies that patched severe vulnerabilities saved an average of $4.5mn in remediation costs.</td></tr><tr><td>Firewalls</td><td>A system that monitors traffic on a network to prevent unauthorized access.</td><td>Reduced cost of data breach by $160k on average.</td></tr><tr><td>Antivirus and Antimalware Software</td><td>Software that continuously scans devices to detect and block viruses and malware.</td><td>Reduced cost of data breach by $160k on average.</td></tr><tr><td>Zero Trust Architecture</td><td>Requires all systems to be be continuously authenticated and authorized for every access request.</td><td>Reduced cost of data breach by roughly $1mn relative to organizations that did not use zero trust.</td></tr><tr><td>Identity and Access Management</td><td>Restricting access to data or systems to only authorized users.</td><td>Reduced cost of data breach by $190k on average.</td></tr><tr><td>Endpoint Detection</td><td>Continuously monitors end-users&#x27; devices to detect and address cyber threats.</td><td>Reduced cost of data breach by $170k on average.</td></tr><tr><td>Data Encryption</td><td>Converts data into an unreadable format such that only authorized users can access it.</td><td>Reduced cost of data breach by $210k on average.</td></tr><tr><td>Incident Response Planning</td><td>Developing a plan to detect and address cyber threats when they arise.</td><td>Reduced cost of data breach by $200k on average.</td></tr><tr><td>AI-Driven Security Automation</td><td>Machine learning algorithms automatically detect and respond to threats without human intervention.</td><td>Reduced cost of data breach by $160k - $225k on average. Reduced length of breach by 45-80 days.</td></tr><tr><td>Bug Bounty Programs</td><td>Companies pay ethical hackers to find vulnerabilities in their code or other infrastructure.</td><td>Thousands of companies have discovered previously unknown vulnerabilities via bug bounty programs.</td></tr><tr><td>Offensive Security Testing or AI-Simulated Attacks</td><td>A software developer or an AI model in a training environment is told to find vulnerabilities in code/infrastructure and attempt to exploit them to launch a full-scale cyber attack.</td><td>Reduced cost of data breach by $180 - $225k on average.</td></tr></table>
+
+Source: GS Global Investment Research, IBM, Microsoft, Department of Homeland Security
+
+# Understanding AI-Related Cyber Risk Q: How are AI-facilitated cyberattacks different from human-led cyberattacks?
+
+A: AI models enable attackers to work significantly faster and at a lower cost, evade threat detection measures, and find and exploit software vulnerabilities that prior testing and human attackers had not previously discovered.
+
+While human-led cyberattacks often take days to months to execute, industry analysis suggests that AI-facilitated attacks can be completed within minutes and have become significantly faster over the past 5 years. $^{4}$
+
+AI models can also reduce the cost of an attack. As our technology equity analysts recently showed, AI models can complete coding tasks at a significantly lower cost than software engineers.
+
+AI models can be used to execute attacks with advanced evasion capabilities that make them difficult for threat detection measures to identify. For example, cybercriminals have used AI to develop malware that can rewrite its own code to avoid detection. AI can also correct some of the tell-tale signs of phishing attacks like spelling and grammatical mistakes. Microsoft reported that AI-generated phishing emails are four times more effective than standard attempts. Relatedly, AI has enabled attackers to develop realistic vishing campaigns (fraudulent phone calls that sound like a trusted contact) and deepfake videos, two capabilities that were essentially impossible prior to the advent of AI.
+
+As we will discuss in more detail below, AI models have demonstrated the ability to find and exploit zero-day vulnerabilities that had survived thousands or millions of rounds of vulnerability testing and had not been discovered by human attackers. This enables inexperienced attackers to use AI to locate vulnerabilities.
+
+# Q: How are cybercriminals using AI in their attacks?
+
+# A: Cybercriminals have already begun using AI models to access sensitive information, assist with espionage, and produce and distribute malware.
+
+In their 2026 Global Threat Report, CrowdStrike reported that AI-enabled cybercriminals increased attacks by $89\%$ year-over-year in 2025. Google, OpenAI, and Anthropic provide reports on attempted malicious uses of their AI models that they detected and prevented. As Exhibit 5 shows, recent attempted attacks were carried out disproportionately by state actors attempting to gather information on US entities.
+
+Exhibit 5: Cybercriminals Have Begun Using AI Models to Facilitate Data Theft, Espionage, and Malware Creation and Distribution, Though Companies Have Been Able to Monitor and Block Many Attempts 
+
+<table><tr><td>State Actors&#x27; Attempted Misuse of AI Models</td></tr><tr><td>Gemini Usage - Reported and Stopped by Google</td></tr><tr><td>Conducting reconnaissance on US defense experts and organizations.</td></tr><tr><td>Researching US military and intelligence personnel and US military operations.</td></tr><tr><td>Researching US IT service providers.</td></tr><tr><td>Researching malware development and evasion techniques.</td></tr><tr><td>Crafting phishing campaigns.</td></tr><tr><td>Automating the process of accessing and stealing data from compromised Gmail accounts.</td></tr><tr><td>Attempting to learn about Gemini&#x27;s underlying infrastructure and systems.</td></tr><tr><td>Adding encryption functions to existing code.</td></tr><tr><td>ChatGPT Usage - Reported and Stopped by OpenAI</td></tr><tr><td>Forging documents impersonating US officials to intimidate critics.</td></tr><tr><td>Claude Usage - Reported and Stopped by Anthropic</td></tr><tr><td>Apply, interview, and get hired for remote IT roles at US companies.</td></tr><tr><td>Private Actors&#x27; Attempted Misuse of AI Models</td></tr><tr><td>Gemini Usage - Reported and Stopped by Google</td></tr><tr><td>Creating an executable code file for a denial-of-service tool.</td></tr><tr><td>Producing malware.</td></tr><tr><td>Coding a Chrome infostealer.</td></tr><tr><td>Claude Usage - Reported and Stopped by Anthropic</td></tr><tr><td>Developing, marketing, and distributing ransomware with advanced evasion capabilities.</td></tr><tr><td>Running a web service that resells stolen credit cards.</td></tr></table>
+
+Source: GS Global Investment Research, Company data
+
+# Q: What can new AI models do that previous models could not do or could not do well?
+
+A: The latest models significantly raise the bar in terms of model intelligence and reasoning, software engineering capabilities, and vulnerability detection and exploitation capabilities, enabling them to execute much more complex and difficult-to-defend cyberattacks than prior models even without oversight from experienced human hackers.
+
+AI models have become increasingly capable of completing software engineering tasks over time (Exhibit 6, left). Recently released models also score higher on tests of general model intelligence and reasoning and computer/hardware use. $^{6}$
+
+As an example, Anthropic's new Mythos model is notably better at finding and exploiting vulnerabilities in existing software than the company's prior models. In tests run by the UK government's AI Security Institute shown in the right panel of Exhibit 6, the Mythos model successfully executed a simulated cyberattack in over $70\%$ of trials, a 5pp improvement over the model with the next highest success rate, OpenAI's GPT Codex 5.3. Of note, no model had successfully completed that specific test prior to April 2025.
+
+As models' software engineering capabilities increase, so does their ability to assist cybercriminals with attacks or fully execute an attack with minimal human intervention. Anthropic noted that developers with no formal security training asked the Mythos model to find vulnerabilities and the model produced a complete, working exploit within hours, and that researchers have developed tools which allow the model to exploit vulnerabilities without any human intervention.
+
+Exhibit 6: New AI Models Are Significantly Better at Software Engineering Tasks and Finding Vulnerabilities and Exploiting Them Than Prior Models   
+![](images/5b402b3c02647cd00c907d8801e2a49a0c334859e8ff2850ec21efb5bd05fd0f.jpg)
+
+<details>
+<summary>scatter</summary>
+
+| Model Release Date | OpenAI | Anthropic | Google | Meta AI |
+| ------------------ | ------ | --------- | ------ | ------- |
+| Jan-24             |        | 133       |        |         |
+| Jul-24             | 120    | 138       |        | 131     |
+| Feb-25             | 138    | 140       | 139    | 130     |
+| Aug-25             | 148    | 145       | 145    |         |
+| Mar-26             | 158    | 157       | 156    |         |
+| Oct-26             |        |           |        |         |
+</details>
+
+![](images/547f5fdf499dbe87822916618875dc10cee1fd0d4d85da1d0a9e5fabf57048a3.jpg)
+
+<details>
+<summary>scatter</summary>
+
+Model Success Rate for Completing Expert-Level Capture the Flag Challenge Simulating Corporate Network Cyberattacks
+| Model Release Date | Success Rate, Percent of Trials | Legend |
+| :--- | :--- | :--- |
+| Jun-25 | 37 | GPT-5 |
+| Aug-25 | 28 | Claude Sonnet 4.5 |
+| Oct-25 | 37 | GPT-5 |
+| Dec-25 | 46 | GPT Codex 5.2 |
+| Feb-26 | 60 | GPT-5.4 |
+| Feb-26 | 64 | Claude Opus 4.6 |
+| Feb-26 | 66 | GPT Codex 5.3 |
+| Apr-26 | 72 | Claude Mythos Preview |
+</details>
+
+Source: GS Global Investment Research, Epoch AI, AI Security Institute
+
+Understanding AI-Related Cyber Security Q: How can AI models be used constructively to help companies improve their infrastructure and protect against future cyberattacks?
+
+A: AI models can improve cybersecurity in two main ways: automatic threat detection and simulated cyberattacks.
+
+First, AI models can help detect cyber threats and help developers respond faster, reducing the risk that malicious activities go unnoticed and progress into full-scale cyberattacks. Data from IBM suggests that AI-automated cybersecurity measures reduced the cost of data breaches by \$1.9mn and that use of AI in cybersecurity significantly reduced the time it took organizations to identify and contain data breaches.
+
+Second, AI models can simulate cyberattacks by searching for and attempting to exploit vulnerabilities in existing infrastructure, allowing companies to find and address these vulnerabilities before they are exploited by cybercriminals.
+
+A study by researchers at Berkeley and UC Santa Barbara on the impact of AI on net cyber risk suggests that new AI models will likely benefit attackers more than defenders in the near term because many AI capabilities designed for cybersecurity can be repurposed for use by attackers, AI lowers the barriers for attackers, and AI lowers costs for attackers more than for defenders. $^{7}$ While this will likely result in faster, larger scale, and more sophisticated cyberattacks in the near term, they argue that the balance could favor defenders in the long term as AI security measures reduce the number of exploitable flaws and raise the cost and difficulty for attackers to discover new vulnerabilities.
+
+# Understanding the Macroeconomic Impacts of Cyberattacks Q: How much do organizations spend on cybersecurity?
+
+A: Medium and large private sector companies reported nearly \$25mn in cybersecurity spending on average in 2025, and Congress and the Office of Management and Budget proposed roughly \$20bn in cybersecurity spending across agencies for 2026.
+
+Exhibit 7: Medium- and Large-Sized Private Sector Companies Reported Roughly \$25mn in Cybersecurity Spending on Average in 2025; Congress and the Office of Management and Budget Proposed Roughly \$20bn in Cybersecurity Spending Across Federal Agencies for Fiscal Year 2026   
+![](images/635dea65492c4263a5b21e72ea212335b9b01a7fa207ad2ec875f2cdb4955a42.jpg)
+
+<details>
+<summary>bar</summary>
+
+Optiv: Share of Medium- and Large-Sized Firms Reporting 2025 Cybersecurity Budgets of [...] Million Dollars
+| Funding Range (Millions of dollars) | Percent (%) |
+| :--- | :--- |
+| < 1 | 9 |
+| 1 - 5 | 10 |
+| 6 - 10 | 14 |
+| 11 - 15 | 12 |
+| 16 - 20 | 13 |
+| 21 - 25 | 18 |
+| 26 - 50 | 12 |
+| 51 - 100 | 7 |
+| > 100 | 4 |
+Implied Average Cybersecurity Budget: $24.2mn
+</details>
+
+Note: Survey of 17,000 US businesses across all sectors. 62% of respondent firms employ over 5,000 people, 15% employ 1,001-5,000 people, 13% employ 500-1,000 people, and 10% employ fewer than 500 people.
+
+![](images/e42376f4811b67dac378af3666b6e9ae2c4b32d6e218deb442403c526084975c.jpg)
+
+<details>
+<summary>bar</summary>
+
+Congress/OMB Proposed 2026 Federal Spending on Cybersecurity, by Agency
+| Agency | Spending (Billions of dollars) |
+|---|---|
+| Defense | 9.1 |
+| Homeland Security | 12.1 |
+| Energy | 13.0 |
+| Justice | 14.2 |
+| Veterans Affairs | 15.1 |
+| Health & Human Services | 16.0 |
+| State | 16.7 |
+| Treasury | 17.2 |
+| Transportation | 17.8 |
+| Other | 20.7 |
+| Total | 20.9 |
+</details>
+
+Source: GS Global Investment Research, Optiv, Office of Management and Budget, Congressional Research Service
+
+Private sector businesses have also started hosting bug bounty campaigns where they pay ethical hackers to find vulnerabilities in their infrastructure. Over the past decade, companies have significantly increased incentives paid through these programs.
+
+Exhibit 8: Companies Have Increased Incentives for Ethical Hackers to Find Bugs in Existing Infrastructure   
+![](images/dbd697d3d55a961cf853d4aa479ff3df1b450c443b78ea9b19aefd0e82031b90.jpg)
+
+<details>
+<summary>line</summary>
+
+| Year | HackerOne - Total, All Companies (left) | Large Tech Companies*, Average (right) |
+|------|------------------------------------------|----------------------------------------|
+| 2015 | 0                                        | 1                                      |
+| 2016 | 5                                        | 2                                      |
+| 2017 | 10                                       | 1                                      |
+| 2018 | 25                                       | 2                                      |
+| 2019 | 40                                       | 3                                      |
+| 2020 | 45                                       | 4                                      |
+| 2021 | 45                                       | 5                                      |
+| 2022 | 55                                       | 6                                      |
+| 2023 | 65                                       | 5                                      |
+| 2024 | 75                                       | 7                                      |
+| 2025 | 80                                       | 9                                      |
+</details>
+
+Source: GS Global Investment Research, HackerOne, Company data
+
+# Q: How costly are cyberattacks?
+
+A: Many cyberattacks result in modest direct financial loss. But the direct monetary losses are only a small part of the total cost of cyberattacks, which includes lost productivity, downstream effects on other businesses, regulatory fines, cybersecurity spending, and intellectual property theft. Accounting for these indirect costs, we estimate that the total cost of cyberattacks in the US was roughly \$300bn in 2025.
+
+Monetary losses from cybercrimes reported to the FBI have increased sUBStantially over the past decade, averaging $20k per attack in 2025, or$ 40k for AI-related attacks. Investment fraud, in which an investor is induced to make purchases based on false information, accounted for 41% of total victim losses and 70% of losses from AI-related attacks in 2025. We view these reported losses as a floor for the costs of cyberattacks because many attacks are not reported at all and because many entities do not report any losses from ransomware attacks, creating an artificially low ransomware loss rate.
+
+Exhibit 9: Direct Monetary Losses from Cyberattacks Have Increased Significantly Over the Past Decade, and Nearly a Billion in Losses from AI-Related Cyberattacks Were Already Reported to the FBI in 2025   
+![](images/837ba80e9f8c4e16008785d033bfd495bd4bd220526373c46d13520cee39f375.jpg)
+
+<details>
+<summary>bar_stacked</summary>
+
+Monetary Loss by Type of Cyberattack Reported to the FBI's Internet Crime Compaint Center
+| Year | Phishing (Billions of dollars) | Romance Scam (Billions of dollars) | Data Breach (Billions of dollars) | Tech or Customer Support (Billions of dollars) | Business Email Compromise (Billions of dollars) | Investment Fraud (Billions of dollars) | Other Attacks (Billions of dollars) | Total (Billions of dollars) |
+|---|---|---|---|---|---|---|---|---|
+| 2017 | 0.5 | 0.3 | 0.2 | 0.4 | 0.1 | 0.1 | 0.3 | 1.0 |
+| 2018 | 0.6 | 0.4 | 0.3 | 0.5 | 0.2 | 0.2 | 0.4 | 1.8 |
+| 2019 | 0.7 | 0.5 | 0.4 | 0.6 | 0.3 | 0.3 | 0.5 | 2.5 |
+| 2020 | 0.8 | 0.6 | 0.5 | 0.7 | 0.4 | 0.4 | 0.6 | 3.5 |
+| 2021 | 1.0 | 0.8 | 0.6 | 1.0 | 0.6 | 0.6 | 1.0 | 6.0 |
+| 2022 | 1.2 | 1.0 | 0.8 | 1.3 | 0.8 | 1.1 | 1.4 | 9.5 |
+| 2023 | 1.5 | 1.2 | 1.0 | 1.6 | 1.0 | 1.4 | 1.8 | 12.5 |
+| 2024 | 2.0 | 1.5 | 1.3 | 2.1 | 1.3 | 2.3 | 2.8 | 16.5 |
+| 2025 | 2.5 | 1.8 | 1.6 | 2.6 | 1.6 | 3.3 | 3.8 | 21.5 |
+The chart displays a stacked bar chart with a red line representing 'Total' and a separate line for 'Other Attacks'. The data is already in English.
+</details>
+
+![](images/0395be43417b6b5f187d93b063a162c42c0fb2456f52f2b19fc67a19c006cc7f.jpg)
+
+<details>
+<summary>bar</summary>
+
+Monetary Losses from AI-Related Cyberattacks Reported to the FBI's Internet Crime Complaint Center, 2025
+| Category | Value (Billions of dollars) |
+|---|---|
+| Investment | 0.63 |
+| Business Email Compromise | 0.65 |
+| Tech Support | 0.67 |
+| Romancs | 0.69 |
+| Data Breach | 0.71 |
+| Employment | 0.72 |
+| Phishing | 0.74 |
+| Intellectual Property Theft | 0.75 |
+| Other | 0.76 |
+| Total | 0.90 |
+</details>
+
+Source: GS Global Investment Research, Department of Justice
+
+The FBI tracks ransomware attacks and data breaches against organizations designated as critical infrastructure whose assets, systems, and networks are considered so vital to the US that their incapacitation would have debilitating effects on national or economic security or public health and safety. Reported attacks against these sectors have become much more prevalent over the past 5 years (Exhibit 10, left).
+
+While not caused by cyberattacks, recent large-scale technology outages give a sense of the potential financial impact of a cyberattack on a widely-used technology platform. Estimates suggest that total losses from each of these outages likely exceeded \$1bn. Costs from cyberattacks on these platforms would likely be sUBStantially higher because recovery from an outage returns the platform to a known functional state, while a cyberattack requires extensive testing to determine functionality, loss of assets, data destruction, and prolonged trust-recovery costs.
+
+Exhibit 10: Cyberattacks That Cause Outages in Sectors That Are Critical for US National or Economic Security Would Be Most Costly; While Not Caused by Cyberattacks, Recent Large-Scale Technology Outages Indicate the Potential Financial Impact of a Cyberattack on a Widely Used Technology Platform   
+![](images/e21ee2860191f294f7bdd8ec61d12877be09f14924e347c4342d334c92677e0c.jpg)  
+\*According to the FBI, these are "sectors whose assets, systems, and networks, whether physical or virtual, are considered so vital to the US, their incapacitation or destruction would have a debilitating effect on national security, economic security, or public health and safety."   
+Source: GS Global Investment Research, Department of Justice
+
+To estimate the total costs of cyberattacks in 2025, we first adjust the direct monetary losses reported to the FBI to account for underreporting. We then estimate various indirect costs including response and recovery, productivity loss, and cybersecurity spending as outlined in the Box below. Taken together, we estimate that the total cost of cyberattacks in the US was roughly \$300bn in 2025, significantly higher than the CEA's estimate of \$57-109bn in 2016. Cyberattacks also result in loss of intellectual property, the costs of which could be quite large but are difficult to estimate.
+
+It is too early to confidently estimate exactly how much AI-facilitated cyberattacks will boost these costs going forward, but more frequent cyberattacks, greater spending on AI-related cybersecurity, and increased regulatory costs will boost costs significantly in the coming years.
+
+Exhibit 11: Accounting for Underreporting of Attacks and Other Related Costs, We Estimate That the Annual Total Cost of Cyberattacks in the US Was Roughly \$300bn in 2025   
+![](images/9772fa13edbc36a6259506e5ce72b36c63e03be98d9b34b8e3038cd0eb08a369.jpg)
+
+<details>
+<summary>bar</summary>
+
+| Category | Value (Billions of dollars) |
+|---|---|
+| Reported Direct Monetary Losses | 20 |
+| Direct Monetary Losses, Adjusted for Underreporting | 55 |
+| Response, Recovery, and Operational Disruption Costs | 215 |
+| Cybersecurity Spending | 305 |
+| Total | 308 |
+| Total Cost in 2016, CEA Estimate | 80 |
+</details>
+
+Note: Excludes potential damage from theft of intellectual property.   
+Source: GS Global Investment Research
+
+# Jessica Rindels
+
+# Box: Calculations Used to Estimate Total Cost of Cyberattacks in the US in 2025 \$53bn in direct monetary losses adjusted for underreporting:
+
+We adjust direct monetary losses reported to the FBI's Internet Crime Complaint Center in 2025 (\$20.9bn) for underreporting based on CEA analysis on the share of cyberattacks that go unreported or unnoticed. We add \$1.2bn to account for ransomware costs that are underreported in the FBI statistics.
+
+# \$163bn in response, recovery, and operational disruption costs:
+
+We multiply IBM's 2025 average cost of a US data breach (\$10.2mn) by the sum of the number of data breaches in 2025 reported by the Identity Theft Center which measure data breaches involving individuals' personal data and one third of the 2025 data breaches in North America reported in Verizon's 2025 Data Breach Investigation report to capture breaches of company data in the US, both of which we adjust for unreported and unnoticed attacks. This totals \$109bn. We add \$44bn for downstream impacts on other businesses based on CEA and CSIS analysis on spillover effects of cyberattacks on other businesses and add \$10bn for lost productivity, based on our estimate that 5,000 employees across attacked and other impacted organizations experience diminished productivity for 4 hours per attack on average.
+
+# \$91bn in cybersecurity spending:
+
+We take the sum of the \$20.8bn in federal spending on cybersecurity proposed by Congress and the Office of Management and Budget and \$70bn in private sector cybersecurity spending based on estimated global cybersecurity spending reported by Forrester Research.
+
+# The US Economic and Financial Outlook
+
+THE US ECONOMIC AND FINANCIAL OUTLOOK   
+(% change on previous period, annualized, except where noted) 
+
+<table><tr><td rowspan="2"></td><td rowspan="2">2023</td><td rowspan="2">2024</td><td rowspan="2">2025</td><td rowspan="2">2026</td><td rowspan="2">2027</td><td rowspan="2">2025 Q4</td><td colspan="4">2026</td><td colspan="3">2027</td></tr><tr><td>Q1</td><td>Q2</td><td>Q3</td><td>Q4</td><td>Q1</td><td>Q2</td><td>Q3</td></tr><tr><td colspan="14">OUTPUT AND SPENDING</td></tr><tr><td>Real GDP</td><td>2.9</td><td>2.8</td><td>2.1</td><td>2.0</td><td>2.0</td><td>0.5</td><td>2.0</td><td>1.6</td><td>1.9</td><td>1.9</td><td>2.0</td><td>2.1</td><td>2.2</td></tr><tr><td>Real GDP (annual=Q4/Q4, quarterly=yoy)</td><td>3.4</td><td>2.4</td><td>2.0</td><td>1.9</td><td>2.2</td><td>2.0</td><td>2.7</td><td>2.1</td><td>1.5</td><td>1.9</td><td>1.9</td><td>2.0</td><td>2.1</td></tr><tr><td>Consumer Expenditures</td><td>2.6</td><td>2.9</td><td>2.6</td><td>1.8</td><td>1.8</td><td>1.9</td><td>1.6</td><td>0.9</td><td>1.4</td><td>1.5</td><td>1.9</td><td>2.0</td><td>2.1</td></tr><tr><td>Residential Fixed Investment</td><td>-7.8</td><td>3.2</td><td>-2.2</td><td>-3.1</td><td>1.9</td><td>-1.7</td><td>-8.0</td><td>1.0</td><td>1.5</td><td>1.5</td><td>2.2</td><td>2.2</td><td>2.2</td></tr><tr><td>Business Fixed Investment</td><td>7.3</td><td>2.9</td><td>4.1</td><td>5.9</td><td>4.9</td><td>2.4</td><td>10.4</td><td>6.0</td><td>5.2</td><td>4.6</td><td>4.8</td><td>4.7</td><td>4.7</td></tr><tr><td>Structures</td><td>16.7</td><td>1.1</td><td>-5.3</td><td>-2.9</td><td>3.7</td><td>-6.6</td><td>-6.7</td><td>2.2</td><td>4.0</td><td>4.0</td><td>4.0</td><td>3.5</td><td>3.5</td></tr><tr><td>Equipment</td><td>2.9</td><td>3.5</td><td>8.3</td><td>8.9</td><td>5.4</td><td>4.3</td><td>17.2</td><td>9.0</td><td>6.0</td><td>5.0</td><td>5.0</td><td>5.0</td><td>5.0</td></tr><tr><td>Intellectual Property Products</td><td>6.2</td><td>3.5</td><td>5.6</td><td>7.7</td><td>4.9</td><td>5.4</td><td>13.0</td><td>5.0</td><td>5.0</td><td>4.5</td><td>5.0</td><td>5.0</td><td>5.0</td></tr><tr><td>Federal Government</td><td>3.3</td><td>3.8</td><td>-1.2</td><td>-1.0</td><td>0.9</td><td>-16.7</td><td>9.4</td><td>0.0</td><td>1.0</td><td>1.0</td><td>1.0</td><td>1.0</td><td>1.0</td></tr><tr><td>State &amp; Local Government</td><td>3.6</td><td>3.8</td><td>2.5</td><td>1.3</td><td>0.9</td><td>1.5</td><td>1.6</td><td>0.5</td><td>0.5</td><td>1.0</td><td>1.0</td><td>1.0</td><td>1.0</td></tr><tr><td>Net Exports ($bn, &#x27;17)</td><td>-925</td><td>-1,033</td><td>-1,091</td><td>-1,096</td><td>-1,154</td><td>-969</td><td>-1,068</td><td>-1,096</td><td>-1,104</td><td>-1,116</td><td>-1,131</td><td>-1,146</td><td>-1,162</td></tr><tr><td>Inventory Investment ($bn, &#x27;17)</td><td>47</td><td>44</td><td>29</td><td>25</td><td>49</td><td>-16</td><td>-8</td><td>28</td><td>35</td><td>45</td><td>45</td><td>48</td><td>50</td></tr><tr><td>Nominal GDP</td><td>6.7</td><td>5.3</td><td>5.0</td><td>5.9</td><td>4.6</td><td>4.2</td><td>5.6</td><td>7.6</td><td>4.8</td><td>4.4</td><td>4.4</td><td>4.3</td><td>4.3</td></tr><tr><td>Industrial Production, Mfg.</td><td>-1.0</td><td>-1.0</td><td>0.9</td><td>2.7</td><td>3.3</td><td>-3.1</td><td>5.7</td><td>4.4</td><td>3.5</td><td>3.2</td><td>3.1</td><td>3.2</td><td>3.3</td></tr><tr><td colspan="14">HOUSING MARKET</td></tr><tr><td>Housing Starts (units, thous)</td><td>1,421</td><td>1,371</td><td>1,356</td><td>1,286</td><td>1,322</td><td>1,323</td><td>1,280</td><td>1,290</td><td>1,280</td><td>1,292</td><td>1,304</td><td>1,316</td><td>1,328</td></tr><tr><td>New Home Sales (units, thous)</td><td>665</td><td>685</td><td>672</td><td>670</td><td>644</td><td>680</td><td>690</td><td>690</td><td>662</td><td>638</td><td>626</td><td>632</td><td>649</td></tr><tr><td>Existing Home Sales (units, thous)</td><td>4,103</td><td>4,067</td><td>4,076</td><td>4,212</td><td>4,375</td><td>4,157</td><td>4,169</td><td>4,189</td><td>4,223</td><td>4,267</td><td>4,310</td><td>4,353</td><td>4,396</td></tr><tr><td>Case-Shiller Home Prices (%yoy)*</td><td>5.3</td><td>3.8</td><td>0.6</td><td>0.8</td><td>2.2</td><td>0.6</td><td>0.3</td><td>0.8</td><td>0.7</td><td>0.8</td><td>1.1</td><td>1.4</td><td>1.8</td></tr><tr><td colspan="14">INFLATION (% ch, yr/yr)</td></tr><tr><td>Consumer Price Index (CPI)**</td><td>3.3</td><td>2.9</td><td>2.7</td><td>3.6</td><td>2.0</td><td>2.7</td><td>2.7</td><td>3.8</td><td>3.6</td><td>3.6</td><td>3.2</td><td>2.3</td><td>2.2</td></tr><tr><td>Core CPI **</td><td>3.9</td><td>3.2</td><td>2.6</td><td>2.1</td><td>2.0</td><td>2.7</td><td>2.5</td><td>2.7</td><td>2.3</td><td>2.2</td><td>2.0</td><td>1.8</td><td>1.8</td></tr><tr><td>Core PCE** †</td><td>3.1</td><td>3.0</td><td>3.0</td><td>2.7</td><td>2.0</td><td>2.9</td><td>3.1</td><td>3.2</td><td>3.1</td><td>2.9</td><td>2.3</td><td>2.0</td><td>1.9</td></tr><tr><td colspan="14">LABOR MARKET</td></tr><tr><td>Unemployment Rate (%)^</td><td>3.8</td><td>4.1</td><td>4.4</td><td>4.6</td><td>4.4</td><td>4.4</td><td>3.5</td><td>3.6</td><td>3.7</td><td>3.8</td><td>4.6</td><td>4.5</td><td>4.5</td></tr><tr><td>U6 Underemployment Rate (%)^</td><td>7.2</td><td>7.6</td><td>8.4</td><td>8.7</td><td>8.3</td><td>8.4</td><td>6.7</td><td>6.9</td><td>7.0</td><td>7.2</td><td>8.7</td><td>8.6</td><td>8.4</td></tr><tr><td>Payrolls (thous, monthly rate)</td><td>210</td><td>122</td><td>10</td><td>51</td><td>92</td><td>-39</td><td>500</td><td>348</td><td>408</td><td>253</td><td>70</td><td>97</td><td>100</td></tr><tr><td>Employment-Population Ratio (%)^</td><td>60.1</td><td>59.9</td><td>59.7</td><td>58.9</td><td>58.8</td><td>59.7</td><td>61.5</td><td>61.5</td><td>61.6</td><td>61.1</td><td>58.9</td><td>58.8</td><td>58.8</td></tr><tr><td>Labor Force Participation Rate (%)^</td><td>62.5</td><td>62.5</td><td>62.4</td><td>61.8</td><td>61.5</td><td>62.4</td><td>62.6</td><td>62.6</td><td>62.7</td><td>62.5</td><td>61.7</td><td>61.6</td><td>61.6</td></tr><tr><td>Average Hourly Earnings (%yoy)</td><td>4.2</td><td>5.4</td><td>4.6</td><td>4.0</td><td>3.9</td><td>4.4</td><td>4.2</td><td>4.1</td><td>3.9</td><td>3.8</td><td>3.9</td><td>4.0</td><td>4.0</td></tr><tr><td colspan="14">GOVERNMENT FINANCE</td></tr><tr><td>Federal Budget (FY, $bn)</td><td>-1,694</td><td>-1,833</td><td>-1,775</td><td>-1,950</td><td>-2,050</td><td>--</td><td>--</td><td>--</td><td>--</td><td>--</td><td>--</td><td>--</td><td>--</td></tr><tr><td colspan="14">FINANCIAL INDICATORS</td></tr><tr><td>FF Target Range (Bottom-Top, %)^</td><td>5.25-5.5</td><td>4.25-4.5</td><td>3.5-3.75</td><td>3.25-3.5</td><td>3-3.25</td><td>3.5-3.75</td><td>3.5-3.75</td><td>3.5-3.75</td><td>3.5-3.75</td><td>3.25-3.5</td><td>3-3.25</td><td>3-3.25</td><td>3-3.25</td></tr><tr><td>10-Year Treasury Note^</td><td>3.88</td><td>4.58</td><td>4.18</td><td>4.10</td><td>4.15</td><td>4.18</td><td>4.30</td><td>4.30</td><td>4.20</td><td>4.10</td><td>4.10</td><td>4.10</td><td>4.15</td></tr><tr><td>Euro (€/$)^</td><td>1.11</td><td>1.04</td><td>1.17</td><td>1.18</td><td>1.20</td><td>1.17</td><td>1.15</td><td>1.16</td><td>1.19</td><td>1.18</td><td>1.19</td><td>1.20</td><td>1.20</td></tr><tr><td>Yen ($/¥)^</td><td>141</td><td>157</td><td>157</td><td>158</td><td>141</td><td>157</td><td>159</td><td>158</td><td>158</td><td>158</td><td>156</td><td>141</td><td>101</td></tr></table>
+
+\* Weighted average of metro-level HPIs for 381 metro Cities where the weights are dollar values of housing stock reported in the American Community Survey. Annual numbers are Q4/Q4.   
+\*\* Annual inflation numbers are December year-on-year values. Quarterly values are Q4/Q4.   
+† PCE = Personal consumption expenditures. ^ Denotes end of period.   
+Note: Published figures in bold.
+
+Source: GS Global Investment Research
+
+# The US Economics Team
+
+# Jan Hatzius
+
++1(212)902-0394
+
+jan.hatzius@gs.com
+
+GS & Co. LLC
+
+# Alec Phillips
+
++1(202)637-3746
+
+alec.phillips@gs.com
+
+GS & Co. LLC
+
+# David Mericle
+
++1(212)357-2619
+
+david.mericle@gs.com
+
+GS & Co. LLC
+
+# Ronnie Walker
+
++1(917)343-4543
+
+ronnie.walker@gs.com
+
+GS & Co. LLC
+
+# Manuel Abecasis
+
++1(212)902-8357
+
+manuel.abecasis@gs.com
+
+GS & Co. LLC
+
+# Elsie Peng
+
++1(212)357-3137
+
+elsie.peng@gs.com
+
+GS & Co. LLC
+
+# Pierfrancesco Mei
+
++1(212)902-8809
+
+pierfrancesco.mei@gs.com
+
+GS & Co. LLC
+
+# Jessica Rindels
+
++1(972)368-1516
+
+jessica.rindels@gs.com
+
+GS & Co. LLC
+
+# Disclosure Appendix
+
+# Reg AC
+
+I, Jessica Rindels, hereby certify that all of the views expressed in this report accurately reflect my personal views, which have not been influenced by considerations of the firm's business or client relationships.
+
+Unless otherwise stated, the individuals listed on the cover page of this report are analysts in GS' Global Investment Research division.
+
+Contributing Authors: Jessica Rindels GS & Co. LLC.
+
+Unless otherwise stated, the individuals listed in the Contributing Authors disclosure of this report are analysts in GS' Global Investment Research division.
+
+# Disclosures
+
+# Regulatory disclosures
+
+# Disclosures required by United States laws and regulations
+
+See company-specific regulatory disclosures above for any of the following disclosures required as to companies referred to in this report: manager or co-manager in a pending transaction; $1\%$ or other ownership; compensation for certain services; types of client relationships; managed/co-managed public offerings in prior periods; directorships; for equity securities, market making and/or specialist role. GS trades or may trade as a principal in debt securities (or in related derivatives) of issuers discussed in this report.
+
+The following are additional required disclosures: Ownership and material conflicts of interest: GS policy prohibits its analysts, professionals reporting to analysts and members of their households from owning securities of any company in the analyst's area of coverage. Analyst compensation: Analysts are paid in part based on the profitability of GS, which includes investment banking revenues. Analyst as officer or director: GS policy generally prohibits its analysts, persons reporting to analysts or members of their households from serving as an officer, director or advisor of any company in the analyst's area of coverage. Non-U.S. Analysts: Non-U.S. analysts may not be associated persons of GS & Co. LLC and therefore may not be subject to FINRA Rule 2241 or FINRA Rule 2242 restrictions on communications with a subject company, public appearances and trading in securities covered by the analysts.
+
+# Additional disclosures required under the laws and regulations of jurisdictions other than the United States
+
+The following disclosures are those required by the jurisdiction indicated, except to the extent already made above pursuant to United States laws and regulations. Australia: GS Australia Pty Ltd and its affiliates are not authorised deposit-taking institutions (as that term is defined in the Banking Act 1959 (Cth)) in Australia and do not provide banking services, nor carry on a banking business, in Australia. This research, and any access to it, is intended only for “wholesale clients” within the meaning of the Australian Corporations Act, unless otherwise agreed by GS. In producing research reports, members of Global Investment Research of GS Australia may attend site visits and other meetings hosted by the companies and other entities which are the subject of its research reports. In some instances the costs of such site visits or meetings may be met in part or in whole by the issuers concerned if GS Australia considers it is appropriate and reasonable in the specific circumstances relating to the site visit or meeting. To the extent that the contents of this document contains any financial product advice, it is general advice only and has been prepared by GS without taking into account a client’s objectives, financial situation or needs. A client should, before acting on any such advice, consider the appropriateness of the advice having regard to the client’s own objectives, financial situation and needs. A copy of certain GS Australia and New Zealand disclosure of interests and a copy of GS’ Australian Sell-Side Research Independence Policy Statement are available at: https://www.goldmansachs.com/disclosures/australia-new-zealand/index.html. Brazil: Disclosure information in relation to CVM Resolution n. 20 is available at https://www.gs.com/worldwide/brazil/area/gir/index.html. Where applicable, the Brazil-registered analyst primarily responsible for the content of this research report, as defined in Article 20 of CVM Resolution n. 20, is the first author named at the beginning of this report, unless indicated otherwise at the end of the text. Canada: This information is being provided to you for information purposes only and is not, and under no circumstances should be construed as, an advertisement, offering or solicitation by GS & Co. LLC for purchasers of securities in Canada to trade in any Canadian security. GS & Co. LLC is not registered as a dealer in any jurisdiction in Canada under applicable Canadian securities laws and generally is not permitted to trade in Canadian securities and may be prohibited from selling certain securities and products in certain jurisdictions in Canada. If you wish to trade in any Canadian securities or other products in Canada please contact GS Canada Inc., an affiliate of The GS Group Inc., or another registered Canadian dealer. Hong Kong: Further information on the securities of covered companies referred to in this research may be obtained on request from GS (Asia) L.L.C. India: Further information on the subject company or companies referred to in this research may be obtained from GS (India) Securities Private Limited, Research Analyst - SEBI Registration Number INH000001493, 10th Floor, Ascent-Worli, Sudam Kalu Ahire Marg, Worli, Mumbai-400 025, India, Corporate Identity Number U74140MH2006FTC160634, Phone +91 22 6616 9000, Fax +91 22 6616 9001. GS may beneficially own 1% or more of the securities (as such term is defined in clause 2 (h) the Indian Securities Contracts (Regulation) Act, 1956) of the subject company or companies referred to in this research report. Investment in securities market are subject to market risks. Read all the related documents carefully before investing. Registration granted by SEBI and certification from NISM in no way guarantee performance of the intermediary or provide any assurance of returns to investors. GS (India) Securities Private Limited compliance officer and investor grievance contact details can be found at: https://www.goldmansachs.com/worldwide/india/documents/Grievance-Redressal-and-Escalation-Matrix.pdf, and a copy of the annual audit compliance report can be found at this link: https://publishing.gs.com/content/site/india-annual-compliance-report.html. Japan: See below. Korea: This research, and any access to it, is intended only for “professional investors” within the meaning of the Financial Services and Capital Markets Act, unless otherwise agreed by GS. Further information on the subject company or companies referred to in this research may be obtained from GS (Asia) L.L.C., Seoul Branch. New Zealand: GS New Zealand Limited and its affiliates are neither “registered banks” nor “deposit takers” (as defined in the Reserve Bank of New Zealand Act 1989) in New Zealand. This research, and any access to it, is intended for “wholesale clients” (as defined in the Financial Advisers Act 2008) unless otherwise agreed by GS. A copy of certain GS Australia and New Zealand disclosure of interests is available at: https://www.goldmansachs.com/disclosures/australia-new-zealand/index.html. Russia: Research reports distributed in the Russian Federation are not advertising as defined in the Russian legislation, but are information and analysis not having product promotion as their main purpose and do not provide appraisal within the meaning of the Russian legislation on appraisal activity. Research reports do not constitute a personalized investment recommendation as defined in Russian laws and regulations, are not addressed to a specific client, and are prepared without analyzing the financial circumstances, investment profiles or risk profiles of clients. GS assumes no responsibility for any investment decisions that may be taken by a client or any other person based on this research report. Singapore: GS (Singapore) Pte. (Company Number: 198602165W), which is regulated by the Monetary Authority of Singapore, accepts legal responsibility for this research, and should be contacted with respect to any matters arising from, or in connection with, this research. Taiwan: This material is for reference only and must not be reprinted without permission. Investors should carefully consider their own investment risk. Investment results are the responsibility of the individual investor. United Kingdom: Persons who would be categorized as retail clients in the United Kingdom, as such term is defined in the rules of the Financial Conduct Authority, should read this research in conjunction with prior GS on the covered
+
+companies referred to herein and should refer to the risk warnings that have been sent to them by GS International. A copy of these risks warnings, and a glossary of certain financial terms used in this report, are available from GS International on request.
+
+European Union and United Kingdom: Disclosure information in relation to Article 6 (2) of the European Commission Delegated Regulation (EU) (2016/958) supplementing Regulation (EU) No 596/2014 of the European Parliament and of the Council (including as that Delegated Regulation is implemented into United Kingdom domestic law and regulation following the United Kingdom's departure from the European Union and the European Economic Area) with regard to regulatory technical standards for the technical arrangements for objective presentation of investment recommendations or other information recommending or suggesting an investment strategy and for disclosure of particular interests or indications of conflicts of interest is available at https://www.gs.com/disclosures/europeanpolicy.html which states the European Policy for Managing Conflicts of Interest in Connection with Investment Research.
+
+Japan: GS Japan Co., Ltd. is a Financial Instrument Dealer registered with the Kanto Financial Bureau under registration number Kinsho 69, and a member of Japan Securities Dealers Association, Financial Futures Association of Japan Type II Financial Instruments Firms Association, and Investment Management Association of Japan. Sales and purchase of equities are subject to commission pre-determined with clients plus consumption tax. See company-specific disclosures as to any applicable disclosures required by Japanese stock exchanges, the Japanese Securities Dealers Association or the Japanese Securities Finance Company.
+
+# Global product; distributing entities
+
+GS Global Investment Research produces and distributes research products for clients of GS on a global basis. Analysts based in GS offices around the world produce research on industries and companies, and research on macroeconomics, currencies, commodities and portfolio strategy. This research is disseminated in Australia by GS Australia Pty Ltd (ABN 21 006 797 897); in Brazil by GS do Brasil Corretora de Títulos e Valores Mobiliários S.A.; Public Communication Channel GS Brazil: 0800 727 5764 and / or contatogoldmanbrasil@gs.com. Available Weekdays (except holidays), from 9am to 6pm. Canal de Comunicação com o Público GS Brasil: 0800 727 5764 e/ou contatogoldmanbrasil@gs.com. Horário de funcionamento: segunda-feira à sexta-feira (exceto feriados), das 9h às 18h; in Canada by GS & Co. LLC; in Hong Kong by GS (Asia) L.L.C.; in India by GS (India) Securities Private Ltd.; in Japan by GS Japan Co., Ltd.; in the Republic of Korea by GS (Asia) L.L.C., Seoul Branch; in New Zealand by GS New Zealand Limited; in Russia by OOO GS; in Singapore by GS (Singapore) Pte. (Company Number: 198602165W); and in the United States of America by GS & Co. LLC. GS International has approved this research in connection with its distribution in the United Kingdom.
+
+GS International (“GSI”), authorised by the Prudential Regulation Authority (“PRA”) and regulated by the Financial Conduct Authority (“FCA”) and the PRA, has approved this research in connection with its distribution in the United Kingdom.
+
+European Economic Area: GS Bank Europe SE (“GSBE”) is a credit institution incorporated in Germany and, within the Single Supervisory Mechanism, subject to direct prudential supervision by the European Central Bank and in other respects supervised by German Federal Financial Supervisory Authority (Bundesanstalt für Finanzdienstleistungsaufsicht, BaFin) and Deutsche Bundesbank and disseminates research within the European Economic Area.
+
+# General disclosures
+
+This research is for our clients only. Other than disclosures relating to GS, this research is based on current public information that we consider reliable, but we do not represent it is accurate or complete, and it should not be relied on as such. The information, opinions, estimates and forecasts contained herein are as of the date hereof and are subject to change without prior notification. We seek to update our research as appropriate, but various regulations may prevent us from doing so. Other than certain industry reports published on a periodic basis, the large majority of reports are published at irregular intervals as appropriate in the analyst's judgment.
+
+GS conducts a global full-service, integrated investment banking, investment management, and brokerage business. We have investment banking and other business relationships with a sUBStantial percentage of the companies covered by Global Investment Research. GS & Co. LLC, the United States broker dealer, is a member of SIPC (https://www.sipc.org).
+
+Our salespeople, traders, and other professionals may provide oral or written market commentary or trading strategies to our clients and principal trading desks that reflect opinions that are contrary to the opinions expressed in this research. Our asset management area, principal trading desks and investing businesses may make investment decisions that are inconsistent with the recommendations or views expressed in this research.
+
+We and our affiliates, officers, directors, and employees will from time to time have long or short positions in, act as principal in, and buy or sell, the securities or derivatives, if any, referred to in this research, unless otherwise prohibited by regulation or GS policy.
+
+The views attributed to third party presenters at GS arranged conferences, including individuals from other parts of GS, do not necessarily reflect those of Global Investment Research and are not an official view of GS.
+
+Any third party referenced herein, including any salespeople, traders and other professionals or members of their household, may have positions in the products mentioned that are inconsistent with the views expressed by analysts named in this report.
+
+This research is focused on investment themes across markets, industries and sectors. It does not attempt to distinguish between the prospects or performance of, or provide analysis of, individual companies within any industry or sector we describe.
+
+Any trading recommendation in this research relating to an equity or credit security or securities within an industry or sector is reflective of the investment theme being discussed and is not a recommendation of any such security in isolation.
+
+This research is not an offer to sell or the solicitation of an offer to buy any security in any jurisdiction where such an offer or solicitation would be illegal. It does not constitute a personal recommendation or take into account the particular investment objectives, financial situations, or needs of individual clients. Clients should consider whether any advice or recommendation in this research is suitable for their particular circumstances and, if appropriate, seek professional advice, including tax advice. The price and value of investments referred to in this research and the income from them may fluctuate. Past performance is not a guide to future performance, future returns are not guaranteed, and a loss of original capital may occur. Fluctuations in exchange rates could have adverse effects on the value or price of, or income derived from, certain investments.
+
+Certain transactions, including those involving futures, options, and other derivatives, give rise to sUBStantial risk and are not suitable for all investors. Investors should review current options and futures disclosure documents which are available from GS sales representatives or at https://www.theocc.com/about/publications/character-risks.jsp and https://www.goldmansachs.com/disclosures/cftc\_fcm\_disclosures. Transaction costs may be significant in option strategies calling for multiple purchase and sales of options such as spreads. Supporting documentation will be supplied upon request.
+
+Differing Levels of Service provided by Global Investment Research: The level and types of services provided to you by GS Global Investment Research may vary as compared to that provided to internal and other external clients of GS, depending on various factors including your individual preferences as to the frequency and manner of receiving communication, your risk profile and investment focus and perspective (e.g.,
+
+marketwide, sector specific, long term, short term), the size and scope of your overall client relationship with GS, and legal and regulatory constraints. As an example, certain clients may request to receive notifications when research on specific securities is published, and certain clients may request that specific data underlying analysts' fundamental analysis available on our internal client websites be delivered to them electronically through data feeds or otherwise. No change to an analyst's fundamental research views (e.g., ratings, price targets, or material changes to earnings estimates for equity securities), will be communicated to any client prior to inclusion of such information in a research report broadly disseminated through electronic publication to our internal client websites or through other means, as necessary, to all clients who are entitled to receive such reports.
+
+All research reports are disseminated and available to all clients simultaneously through electronic publication to our internal client websites. Not all research content is redistributed to our clients or available to third-party aggregators, nor is GS responsible for the redistribution of our research by third party aggregators. For research, models or other data related to one or more securities, markets or asset classes (including related services) that may be available to you, please contact your GS representative or go to https://research.gs.com.
+
+Disclosure information is also available at https://www.gs.com/research/hedge.html or from Research Compliance, 200 West Street, New York, NY 10282.
+
+# © 2026 GS.
+
+You are permitted to store, display, analyze, modify, reformat, and print the information made available to you via this service only for your own use. You may not resell or reverse engineer this information to calculate or develop any index for disclosure and/or marketing or create any other derivative works or commercial product(s), data or offering(s) without the express written consent of GS. You are not permitted to publish, transmit, or otherwise reproduce this information, in whole or in part, in any format to any third party without the express written consent of GS. This foregoing restriction includes, without limitation, using, extracting, downloading or retrieving this information, in whole or in part, to train or finetune a machine learning or artificial intelligence system, or to provide or reproduce this information, in whole or in part, as a prompt or input to any such system.

@@ -1,0 +1,2412 @@
+[
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.046,
+                0.015,
+                0.123,
+                0.045
+            ],
+            "angle": 0,
+            "content": "[Non-Text]"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.127,
+                0.022,
+                0.45,
+                0.039
+            ],
+            "angle": 0,
+            "content": "HSBC Global Investment Research"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.868,
+                0.02,
+                0.959,
+                0.034
+            ],
+            "angle": 0,
+            "content": "11 May 2026"
+        },
+        {
+            "type": "title",
+            "bbox": [
+                0.062,
+                0.096,
+                0.621,
+                0.133
+            ],
+            "angle": 0,
+            "content": "US Equity Strategy Watch"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.062,
+                0.164,
+                0.601,
+                0.183
+            ],
+            "angle": 0,
+            "content": "S&P 500 above 8,000? It's possible: we outline how",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.657,
+                0.097,
+                0.821,
+                0.131
+            ],
+            "angle": 0,
+            "content": "Equity Strategy\nNorth America",
+            "merge_prev": false
+        },
+        {
+            "type": "list",
+            "bbox": [
+                0.044,
+                0.218,
+                0.616,
+                0.347
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.044,
+                0.218,
+                0.616,
+                0.255
+            ],
+            "angle": 0,
+            "content": "- We revise higher our year-end 2026 S&P 500 target to 7,650 on earnings strength...",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.045,
+                0.264,
+                0.547,
+                0.301
+            ],
+            "angle": 0,
+            "content": "- ... but could see the S&P 500 breaching 8,000 on a sentiment rebound in tech, AI, geopolitics, macro, etc",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.045,
+                0.31,
+                0.562,
+                0.347
+            ],
+            "angle": 0,
+            "content": "- Downside risks include tech earnings slowdown, energy supply shocks, a Fed pivot to hikes",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.365,
+                0.603,
+                0.459
+            ],
+            "angle": 0,
+            "content": "The S&P 500 is back at record highs as tech stages a comeback, US Equity Wrap, 4 May. A solid Q1 earnings season is also providing support. We're taking the opportunity to revise our 2026 index EPS estimates up by \\(8\\%\\), incorporating the latest quarterly results. We now expect 2026 EPS growth of \\(20\\%\\) or USD325, with tech/Mag7 still the main drivers. With higher earnings expectations, we revise our year-end S&P 500 target to 7,650 from 7,500 previously.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.043,
+                0.467,
+                0.618,
+                0.545
+            ],
+            "angle": 0,
+            "content": "While earnings remain supportive, sentiment is on shakier ground. The recent rally has been relatively narrow in breadth. Most stocks are still trading below their 52-week highs, suggesting scope for further upside if participation broadens. For that to happen, we'd look for a rebound in sentiment across tech, continued AI adoption, and an easing of concerns around geopolitics, trade, and rates.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.043,
+                0.553,
+                0.606,
+                0.584
+            ],
+            "angle": 0,
+            "content": "A sentiment rebound could drive the S&P 500 past the 8,000 mark, in our view. We outline several potential paths for the index to notch another leg higher, including:",
+            "merge_prev": false
+        },
+        {
+            "type": "list",
+            "bbox": [
+                0.044,
+                0.591,
+                0.506,
+                0.674
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.044,
+                0.591,
+                0.435,
+                0.606
+            ],
+            "angle": 0,
+            "content": "◆ Tech re-rates as IPOs set a higher bar for valuations",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.045,
+                0.614,
+                0.505,
+                0.629
+            ],
+            "angle": 0,
+            "content": "Laggards catch-up as geopolitical and trade uncertainties fade",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.045,
+                0.637,
+                0.408,
+                0.652
+            ],
+            "angle": 0,
+            "content": "- AI efficiency gains broaden as margins expand",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.045,
+                0.659,
+                0.469,
+                0.674
+            ],
+            "angle": 0,
+            "content": "A “Goldilocks” backdrop returns as long-term rates fall",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.682,
+                0.621,
+                0.791
+            ],
+            "angle": 0,
+            "content": "We see each of these potential paths adding between 100–700 pts to the S&P 500. The clearest route to an additional leg up rests with tech: the sector (including hyperscalers) now represents over half of the S&P 500's market cap and more than 40% of index earnings. As a result, sentiment around tech is one of the biggest swing factors. We also see long-term rates as key. While the market has partially decoupled from long-term rate moves, the rate environment may become increasingly important as tech companies look to finance capex.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.043,
+                0.8,
+                0.603,
+                0.861
+            ],
+            "angle": 0,
+            "content": "Downside risks: What could reverse the rally? Key concerns include sustained elevated oil prices feeding through to slower economic growth; a slowdown in tech earnings coinciding with elevated capex needs; and a hawkish Fed pivot if inflation re-accelerates.",
+            "merge_prev": false
+        },
+        {
+            "type": "title",
+            "bbox": [
+                0.643,
+                0.227,
+                0.743,
+                0.238
+            ],
+            "angle": 0,
+            "content": "Nicole Inui*, CFA"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.643,
+                0.238,
+                0.84,
+                0.248
+            ],
+            "angle": 0,
+            "content": "Head of Equity Strategy, Americas",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.644,
+                0.248,
+                0.741,
+                0.258
+            ],
+            "angle": 0,
+            "content": "Banco HSBC S.A.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.644,
+                0.258,
+                0.762,
+                0.269
+            ],
+            "angle": 0,
+            "content": "nicole.inui@HSBC.com",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.644,
+                0.269,
+                0.743,
+                0.278
+            ],
+            "angle": 0,
+            "content": "+55 11 2802 3475",
+            "merge_prev": false
+        },
+        {
+            "type": "title",
+            "bbox": [
+                0.644,
+                0.285,
+                0.762,
+                0.295
+            ],
+            "angle": 0,
+            "content": "Alastair Pinder, CFA"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.643,
+                0.295,
+                0.859,
+                0.306
+            ],
+            "angle": 0,
+            "content": "Head EM and Global Equity Strategist",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.644,
+                0.306,
+                0.791,
+                0.315
+            ],
+            "angle": 0,
+            "content": "HSBC Securities (USA) Inc.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.644,
+                0.316,
+                0.799,
+                0.326
+            ],
+            "angle": 0,
+            "content": "alastair.pinder@us.HSBC.com",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.644,
+                0.326,
+                0.737,
+                0.335
+            ],
+            "angle": 0,
+            "content": "+1 212 525 5972",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.642,
+                0.354,
+                0.948,
+                0.377
+            ],
+            "angle": 0,
+            "content": "* Employed by a non-US affiliate of HSBC Securities (USA) Inc, and is not registered/ qualified pursuant to FINRA regulations",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.651,
+                0.825,
+                0.948,
+                0.843
+            ],
+            "angle": 0,
+            "content": "HSBC Funding the Future Survey",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.653,
+                0.848,
+                0.948,
+                0.865
+            ],
+            "angle": 0,
+            "content": "Sentiment, AI and Private Credit",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.755,
+                0.871,
+                0.847,
+                0.885
+            ],
+            "angle": 0,
+            "content": "Click to view",
+            "merge_prev": false
+        },
+        {
+            "type": "title",
+            "bbox": [
+                0.044,
+                0.917,
+                0.251,
+                0.93
+            ],
+            "angle": 0,
+            "content": "Disclosures & Disclaimer"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.043,
+                0.931,
+                0.618,
+                0.961
+            ],
+            "angle": 0,
+            "content": "This report must be read with the disclosures and the analyst certifications in the Disclosure appendix, and with the Disclaimer, which forms part of it.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.64,
+                0.915,
+                0.86,
+                0.928
+            ],
+            "angle": 0,
+            "content": "Issuer of report: Banco HSBC S.A.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.64,
+                0.939,
+                0.923,
+                0.951
+            ],
+            "angle": 0,
+            "content": "View HSBC Global Investment Research at:",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.641,
+                0.954,
+                0.848,
+                0.966
+            ],
+            "angle": 0,
+            "content": "https://www.research.HSBC.com",
+            "merge_prev": false
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.073,
+                0.01,
+                0.19,
+                0.036
+            ],
+            "angle": 0,
+            "content": "HSBC"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.702,
+                0.009,
+                0.932,
+                0.036
+            ],
+            "angle": 0,
+            "content": "Equity Strategy • North America 11 May 2026"
+        },
+        {
+            "type": "title",
+            "bbox": [
+                0.285,
+                0.115,
+                0.667,
+                0.133
+            ],
+            "angle": 0,
+            "content": "Path to breaching 8,000 on the S&P 500"
+        },
+        {
+            "type": "title",
+            "bbox": [
+                0.286,
+                0.158,
+                0.757,
+                0.177
+            ],
+            "angle": 0,
+            "content": "Tech re-rates: potentially adding 300-700+ points"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.284,
+                0.191,
+                0.931,
+                0.348
+            ],
+            "angle": 0,
+            "content": "Tech companies (including hyperscalers) now represent over half of the S&P 500's market cap and more than \\(40\\%\\) of index earnings. As a result, sentiment around tech is one of the biggest swing factors for the S&P 500 performance. Valuations look reasonable, with the sector (IT and Mag 7) trading on a forward P/E of 25.8x and forward 12-month consensus earnings estimated to grow c31%. That said, valuations remain below prior highs: a return to those levels would add c360 points to the S&P 500. We could also see the sector trading at a premium to prior highs if IPOs of AI/tech stocks set a higher bar for valuations, potentially adding 700 points or more to the index. During the late-1990s internet boom, tech stocks traded at an average \\(50\\%\\) -plus premium to the overall market; today, that premium is \\(12\\%\\) (and below the average since the release of ChatGPT).",
+            "merge_prev": false
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.283,
+                0.375,
+                0.84,
+                0.389
+            ],
+            "angle": 0,
+            "content": "Tech premium off recent peak levels and well below dot com boom extremes"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.295,
+                0.397,
+                0.917,
+                0.573
+            ],
+            "angle": 0,
+            "content": "| Year | Average premium % |\n|------|-------------------|\n| 1998 | 1998 - 2000       |\n| 2024 | Average premium % since release of ChatGPT |",
+            "sub_type": "line"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.283,
+                0.583,
+                0.437,
+                0.593
+            ],
+            "angle": 0,
+            "content": "Source: IBES, LSEG Datastream, HSBC"
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.283,
+                0.629,
+                0.556,
+                0.656
+            ],
+            "angle": 0,
+            "content": "IPOs are picking up at the start of the year..."
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.29,
+                0.664,
+                0.591,
+                0.844
+            ],
+            "angle": 0,
+            "content": "| Month | 2023 | 2024 | 2025 | 2026 |\n|-------|------|------|------|------|\n| Jan   | 15   | 10   | 20   | 30   |\n| Mar   | 40   | 30   | 50   | 80   |\n| May   | 60   | 50   | 100  | 110  |\n| Jul   | 90   | 80   | 140  | -    |\n| Sep   | 110  | 130  | 180  | -    |\n| Nov   | 140  | 170  | 270  | -    |",
+            "sub_type": "line"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.283,
+                0.85,
+                0.5,
+                0.861
+            ],
+            "angle": 0,
+            "content": "Source: Bloomberg, HSBC Includes only priced IPOs"
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.617,
+                0.629,
+                0.896,
+                0.656
+            ],
+            "angle": 0,
+            "content": "... but still lagging behind the IPO tech spree in the late 1990s"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.617,
+                0.664,
+                0.925,
+                0.844
+            ],
+            "angle": 0,
+            "content": "| Month | 1998 | 1999 | 2000 | 2026 |\n|---|---|---|---|---|\n| Jan | 30 | 35 | 35 | 35 |\n| Mar | 100 | 120 | 140 | 100 |\n| May | 200 | 180 | 220 | 120 |\n| Jul | 320 | 340 | 360 | - |\n| Sep | 350 | 420 | 440 | - |\n| Nov | 380 | 580 | 620 | - |\n| End | 430 | 620 | 630 | - |",
+            "sub_type": "line"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.617,
+                0.85,
+                0.835,
+                0.861
+            ],
+            "angle": 0,
+            "content": "Source: Bloomberg, HSBC Includes only priced IPOs"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.07,
+                0.965,
+                0.081,
+                0.974
+            ],
+            "angle": 0,
+            "content": "2"
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.073,
+                0.01,
+                0.19,
+                0.036
+            ],
+            "angle": 0,
+            "content": "HSBC"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.703,
+                0.009,
+                0.932,
+                0.036
+            ],
+            "angle": 0,
+            "content": "Equity Strategy • North America 11 May 2026"
+        },
+        {
+            "type": "title",
+            "bbox": [
+                0.285,
+                0.115,
+                0.769,
+                0.134
+            ],
+            "angle": 0,
+            "content": "Laggards catch up: potentially adding 100+ points"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.284,
+                0.148,
+                0.919,
+                0.258
+            ],
+            "angle": 0,
+            "content": "Geopolitical and trade policy uncertainty, while easing, remains elevated. Some sectors exposed to trade and geopolitical risks have underperformed. The consumer staples sector, for example, is feeling the hit to consumption from higher oil prices, alongside cost pressures linked to trade policy. Industrials is another area of vulnerability to trade, given the sector's reliance on imported inputs and exposure to supply-chain disruption, but overall, the sector is roughly flat since the Middle East conflict began as AI beneficiaries outperform. If uncertainty retreats to prior levels, these laggards (highlighted in chart below) could catch up, adding c130 points to the S&P 500.",
+            "merge_prev": false
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.283,
+                0.274,
+                0.567,
+                0.301
+            ],
+            "angle": 0,
+            "content": "US Geopolitical uncertainty remains at elevated levels..."
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.284,
+                0.309,
+                0.599,
+                0.488
+            ],
+            "angle": 0,
+            "content": "| Date   | US Geopolitical risk uncertainty |\n|--------|----------------------------------|\n| Apr-16 | ~100                             |\n| Apr-18 | ~120                             |\n| Apr-20 | ~80                              |\n| Apr-22 | ~320                             |\n| Apr-24 | ~180                             |\n| Apr-26 | ~330                             |",
+            "sub_type": "line"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.284,
+                0.495,
+                0.414,
+                0.505
+            ],
+            "angle": 0,
+            "content": "Source: LSEG Datastream, HSBC"
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.617,
+                0.274,
+                0.915,
+                0.301
+            ],
+            "angle": 0,
+            "content": "...while trade policy uncertainty is falling but still at higher than historical levels"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.616,
+                0.309,
+                0.932,
+                0.488
+            ],
+            "angle": 0,
+            "content": "| Date    | US trade policy uncertainty |\n|---------|-----------------------------|\n| Apr-16  | ~0                          |\n| Apr-18  | ~500                        |\n| Apr-20  | ~2000                       |\n| Apr-22  | ~0                          |\n| Apr-24  | ~0                          |\n| Apr-26  | ~8000                       |",
+            "sub_type": "line"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.617,
+                0.495,
+                0.747,
+                0.505
+            ],
+            "angle": 0,
+            "content": "Source: LSEG Datastream, HSBC"
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.283,
+                0.524,
+                0.768,
+                0.539
+            ],
+            "angle": 0,
+            "content": "US industry groups performance since the start of the Iran conflict"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.288,
+                0.547,
+                0.901,
+                0.731
+            ],
+            "angle": 0,
+            "content": "| Sector | US Industry groups absolute performance since Iran war (%) |\n|---|---|\n| S&P 500 | 7 |\n| Semis | 31 |\n| Cons Disc Dist.&Ret. | 17 |\n| Tech Hi/wEq | 14 |\n| Media | 14 |\n| Banks | 5 |\n| Software | 4 |\n| Equity REITs | 2 |\n| Energy | 1 |\n| Cap Goods | 1 |\n| Financial Svs | -1 |\n| Transportation | -1 |\n| Cons Stap Dist.&Ret. | -1 |\nAutos | -1 |\n| Materials | -2 |\n| Utilities | -3 |\n| Consumer Svs. | -4 |\n| Insurance | -5 |\n| Food Bev&Tob. | -6 |\n| RealEstate Mgmt&Dev. | -8 |\n| Pharma | -9 |\n| Telecom | -10 |\n| Health Care Eq&Svs. | -11 |\n| Comm&Prof Svs | -12 |\n| House.&Pers Prod. | -13 |\n| Cons Dur&App. | -15 |",
+            "sub_type": "bar"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.284,
+                0.733,
+                0.375,
+                0.743
+            ],
+            "angle": 0,
+            "content": "Source: FactSet, HSBC"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.922,
+                0.965,
+                0.931,
+                0.974
+            ],
+            "angle": 0,
+            "content": "3"
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.073,
+                0.01,
+                0.19,
+                0.036
+            ],
+            "angle": 0,
+            "content": "HSBC"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.703,
+                0.009,
+                0.932,
+                0.036
+            ],
+            "angle": 0,
+            "content": "Equity Strategy • North America 11 May 2026"
+        },
+        {
+            "type": "title",
+            "bbox": [
+                0.285,
+                0.115,
+                0.84,
+                0.133
+            ],
+            "angle": 0,
+            "content": "AI efficiency gains broaden: potentially adding 200 points"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.284,
+                0.148,
+                0.929,
+                0.241
+            ],
+            "angle": 0,
+            "content": "Better sentiment around AI adoption and efficiency-driven margin improvement has been centered on tech so far, but as adoption widens, the market could start pricing in higher margins across other sectors—particularly those that are more labor-intensive. A rebound in sentiment around AI adoption and disruption would likely hinge on a re-rating, supported by clearer evidence of margin and profitability benefits. A major sentiment shift leading to a re-rating for AI adopters could add c200 points to the S&P 500 (assuming both software and financials re-rate).",
+            "merge_prev": false
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.283,
+                0.258,
+                0.567,
+                0.284
+            ],
+            "angle": 0,
+            "content": "AI adoption by US businesses is rising overall..."
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.285,
+                0.292,
+                0.593,
+                0.472
+            ],
+            "angle": 0,
+            "content": "| Date   | RampAI Adoption |\n| ------ | --------------- |\n| Mar-23 | 8               |\n| Mar-24 | 16              |\n| Mar-25 | 40              |\n| Mar-26 | 50              |",
+            "sub_type": "line"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.283,
+                0.479,
+                0.379,
+                0.488
+            ],
+            "angle": 0,
+            "content": "Source: Ramp AI, HSBC"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.284,
+                0.489,
+                0.492,
+                0.499
+            ],
+            "angle": 0,
+            "content": "Note: Percentage of US businesses adopting AI"
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.617,
+                0.259,
+                0.876,
+                0.285
+            ],
+            "angle": 0,
+            "content": "... with certain sectors increasingly reporting the use of AI"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.617,
+                0.29,
+                0.922,
+                0.473
+            ],
+            "angle": 0,
+            "content": "| Sector | Proportion of businesses reporting use of AI (%) |\n| :--- | :--- |\n| IT | 38 |\n| Prof Services | 34 |\n| Education | 30 |\n| Finance | 30 |\n| Real Estate | 23 |\n| Management | 21 |\n| Health Care | 20 |\n| Entertainment | 17 |\n| Admin | 16 |\n| Utilities | 13 |\n| Wholesale Trade | 13 |\n| Retail Trade | 12 |\n| Manufacturing | 12 |\n| Other Services | 10 |\n| Construction | 9 |\n| Food Service | 8 |",
+            "sub_type": "bar"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.617,
+                0.479,
+                0.764,
+                0.489
+            ],
+            "angle": 0,
+            "content": "Source: US Consensus Bureau, HSBC"
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.283,
+                0.538,
+                0.593,
+                0.565
+            ],
+            "angle": 0,
+            "content": "Net profit margins for the tech sector have risen exponentially..."
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.285,
+                0.573,
+                0.593,
+                0.75
+            ],
+            "angle": 0,
+            "content": "| Date   | N12M net profit margins (%) |\n|--------|-----------------------------|\n| May-16 | 17%                         |\n| May-18 | 21%                         |\n| May-20 | 20%                         |\n| May-22 | 24%                         |\n| May-24 | 28%                         |\n| May-26 | 33%                         |",
+            "sub_type": "line"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.283,
+                0.759,
+                0.375,
+                0.769
+            ],
+            "angle": 0,
+            "content": "Source: FactSet, HSBC"
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.617,
+                0.538,
+                0.926,
+                0.565
+            ],
+            "angle": 0,
+            "content": "...while the rest of the index is also seeing margin gains but at a slower pace"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.617,
+                0.573,
+                0.931,
+                0.75
+            ],
+            "angle": 0,
+            "content": "| Date   | N12M net profit margins (%) |\n|--------|-----------------------------|\n| May-16 | 9.5%                        |\n| May-18 | 11.0%                       |\n| May-20 | 8.5%                        |\n| May-22 | 11.5%                       |\n| May-24 | 11.0%                       |\n| May-26 | 12.0%                       |",
+            "sub_type": "line"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.617,
+                0.759,
+                0.708,
+                0.769
+            ],
+            "angle": 0,
+            "content": "Source: FactSet, HSBC"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.07,
+                0.965,
+                0.08,
+                0.974
+            ],
+            "angle": 0,
+            "content": "4"
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.073,
+                0.01,
+                0.19,
+                0.036
+            ],
+            "angle": 0,
+            "content": "HSBC"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.702,
+                0.009,
+                0.932,
+                0.036
+            ],
+            "angle": 0,
+            "content": "Equity Strategy • North America 11 May 2026"
+        },
+        {
+            "type": "title",
+            "bbox": [
+                0.285,
+                0.115,
+                0.853,
+                0.133
+            ],
+            "angle": 0,
+            "content": "Goldilocks backdrop returns: potentially adding 300 points"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.284,
+                0.148,
+                0.931,
+                0.257
+            ],
+            "angle": 0,
+            "content": "Macro sentiment improves – US 10-year Treasury yields are once again rising, getting close to the “danger zone” cited by our multi-asset team as the level at which risk assets tend to falter. Hawkish messaging from certain Fed members, alongside solid jobs growth and higher headline inflation pushed yields higher, though they’ve since eased somewhat. US mortgage rates also remain stubbornly above 6%. If yields move lower in a Goldilocks scenario – disinflation continuing towards 2% alongside resilient growth – equity valuations and earnings would likely lift, potentially adding c300 points to the S&P 500.",
+            "merge_prev": false
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.283,
+                0.29,
+                0.578,
+                0.317
+            ],
+            "angle": 0,
+            "content": "Tech has outperformed in spite of rising treasury yields..."
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.284,
+                0.325,
+                0.596,
+                0.507
+            ],
+            "angle": 0,
+            "content": "| Date   | US 10Y Bond Yield (%, Inverted) | SPX IT relative to SPX (RHS) |\n|--------|----------------------------------|------------------------------|\n| May-25 | 4.3                              | 0.70                         |\n| Aug-25 | 4.2                              | 0.75                         |\n| Nov-25 | 4.1                              | 0.80                         |\n| Feb-26 | 4.0                              | 0.85                         |\n| May-26 | 3.9                              | 0.90                         |",
+            "sub_type": "line"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.283,
+                0.511,
+                0.414,
+                0.521
+            ],
+            "angle": 0,
+            "content": "Source: LSEG Datastream, HSBC"
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.617,
+                0.29,
+                0.911,
+                0.317
+            ],
+            "angle": 0,
+            "content": "...but rates could become more relevant for sector performance as capex rises"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.617,
+                0.325,
+                0.927,
+                0.504
+            ],
+            "angle": 0,
+            "content": "| Year | US hyperscalers capex (USDbn) |\n|---|---|\n| 2020 | 95 |\n| 2021 | 125 |\n| 2022 | 155 |\n| 2023 | 160 |\n| 2024 | 240 |\n| 2025 | 420 |\n| 2026e | 720 |\n| 2027e | 860 |",
+            "sub_type": "bar"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.616,
+                0.511,
+                0.922,
+                0.547
+            ],
+            "angle": 0,
+            "content": "Source: FactSet, HSBC Hyperscalers include Amazon (AMZN US, Buy, CMP USD271.17); Alphabet (GOOGL US, Buy, CMP USD397.99), Meta Platforms (META US, Buy, CMP USD616.81); Microsoft (MSFT US, Buy, CMP USD420.77); and Oracle (ORCL US, Buy, CMP USD194.59). Prices as of close on 7 May 2026"
+        },
+        {
+            "type": "table_caption",
+            "bbox": [
+                0.283,
+                0.571,
+                0.726,
+                0.586
+            ],
+            "angle": 0,
+            "content": "S&P 500 sensitivity table to bond yields and earnings growth"
+        },
+        {
+            "type": "table",
+            "bbox": [
+                0.285,
+                0.587,
+                0.84,
+                0.731
+            ],
+            "angle": 0,
+            "content": "<table><tr><td rowspan=\"2\" colspan=\"2\"></td><td colspan=\"6\">US 10Y bond yield (%)</td></tr><tr><td>3.0</td><td>3.5</td><td>4.0</td><td>4.3</td><td>4.5</td><td>5.0</td></tr><tr><td rowspan=\"6\">2026 EPS</td><td>11%</td><td>7220</td><td>7150</td><td>7090</td><td>7050</td><td>7030</td><td>6970</td></tr><tr><td>15%</td><td>7460</td><td>7400</td><td>7330</td><td>7290</td><td>7260</td><td>7200</td></tr><tr><td>17%</td><td>7580</td><td>7510</td><td>7446</td><td>7410</td><td>7380</td><td>7310</td></tr><tr><td>20%</td><td>7820</td><td>7760</td><td>7690</td><td>7650</td><td>7620</td><td>7550</td></tr><tr><td>24%</td><td>8060</td><td>7990</td><td>7900</td><td>7880</td><td>7850</td><td>7780</td></tr><tr><td>26%</td><td>8180</td><td>8110</td><td>8040</td><td>7990</td><td>7970</td><td>7900</td></tr></table>"
+        },
+        {
+            "type": "table_footnote",
+            "bbox": [
+                0.283,
+                0.733,
+                0.861,
+                0.744
+            ],
+            "angle": 0,
+            "content": "Source: LSEG Datastream, FactSet, HSBC Shaded cells represent S&P index target at 4% 10Y bond yields, Dark shaded cell represents current S&P target"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.922,
+                0.965,
+                0.931,
+                0.974
+            ],
+            "angle": 0,
+            "content": "5"
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.073,
+                0.01,
+                0.19,
+                0.036
+            ],
+            "angle": 0,
+            "content": "HSBC"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.702,
+                0.009,
+                0.932,
+                0.036
+            ],
+            "angle": 0,
+            "content": "Equity Strategy • North America 11 May 2026"
+        },
+        {
+            "type": "title",
+            "bbox": [
+                0.284,
+                0.115,
+                0.623,
+                0.132
+            ],
+            "angle": 0,
+            "content": "Tech and its relevance in the index"
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.283,
+                0.149,
+                0.581,
+                0.176
+            ],
+            "angle": 0,
+            "content": "Mag 7 + IT market weight within S&P 500 close to all time high ..."
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.284,
+                0.184,
+                0.599,
+                0.363
+            ],
+            "angle": 0,
+            "content": "| Date   | Mag & + IT marketcap as % of SPX |\n|--------|-----------------------------------|\n| Jan-20 | 34                                |\n| Jan-21 | 42                                |\n| Jan-22 | 43                                |\n| Jan-23 | 34                                |\n| Jan-24 | 45                                |\n| Jan-25 | 47                                |\n| Jan-26 | 51                                |",
+            "sub_type": "line"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.284,
+                0.37,
+                0.375,
+                0.38
+            ],
+            "angle": 0,
+            "content": "Source: FactSet, HSBC"
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.617,
+                0.149,
+                0.885,
+                0.176
+            ],
+            "angle": 0,
+            "content": "...and its forward 12-month earnings weight steadily moves higher"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.617,
+                0.184,
+                0.931,
+                0.367
+            ],
+            "angle": 0,
+            "content": "| Date   | Mag 7 + IT companies earnings weight in S&P 500 (%) |\n|--------|--------------------------------------------------|\n| Jan-20 | 24.0                                             |\n| Jan-21 | 28.5                                             |\n| Jan-22 | 29.0                                             |\n| Jan-23 | 26.0                                             |\n| Jan-24 | 31.0                                             |\n| Jan-25 | 35.0                                             |\n| Jan-26 | 43.0                                             |",
+            "sub_type": "line"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.618,
+                0.37,
+                0.708,
+                0.38
+            ],
+            "angle": 0,
+            "content": "Source: FactSet, HSBC"
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.283,
+                0.41,
+                0.591,
+                0.437
+            ],
+            "angle": 0,
+            "content": "Earnings growth expectations for the S&P excluding tech in the low double digits"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.288,
+                0.445,
+                0.593,
+                0.632
+            ],
+            "angle": 0,
+            "content": "| Year | S&P 500 | S&P ex Mag 7 | S&P 500 ex IT & Mag 7 |\n|---|---|---|---|\n| 2026e | 21.8 | 18.4 | 11.7 |\n| 2027e | 13.3 | 12.3 | 8.7 |",
+            "sub_type": "bar"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.284,
+                0.638,
+                0.375,
+                0.648
+            ],
+            "angle": 0,
+            "content": "Source: FactSet, HSBC"
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.617,
+                0.41,
+                0.924,
+                0.436
+            ],
+            "angle": 0,
+            "content": "Capex growth still driven by the Mag7 and tech cohort"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.625,
+                0.445,
+                0.931,
+                0.623
+            ],
+            "angle": 0,
+            "content": "YTD Change in 2026 Capex revisions (%)\n| Sector | YTD Change (%) |\n| :--- | :--- |\n| S&P 500 | 14 |\n| Mag 7 | 39 |\n| Cons Disc | 28 |\n| Comm Serv | 24 |\n| IT | 12 |\n| Utilities | 10 |\n| Financials | 10 |\n| Industrials | 7 |\n| Energy | 4 |\n| Real Estate | 4 |\n| Health Care | 4 |\n| Cons Stap | 3 |\n| Materials | 1 |",
+            "sub_type": "bar"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.618,
+                0.638,
+                0.747,
+                0.648
+            ],
+            "angle": 0,
+            "content": "Source: LSEG Datastream, HSBC"
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.283,
+                0.678,
+                0.571,
+                0.705
+            ],
+            "angle": 0,
+            "content": "Semis and Tech hardware & equipment seeing strong earnings revisions..."
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.288,
+                0.713,
+                0.596,
+                0.896
+            ],
+            "angle": 0,
+            "content": "| Date   | Semis | Tech H/w & Eq. | Software | S&P ex IT |\n|--------|-------|----------------|----------|-----------|\n| Apr-21 | 7.0   | 7.0            | 5.0      | 5.0       |\n| Apr-22 | 4.0   | 3.0            | 2.0      | 1.0       |\n| Apr-23 | -6.0  | -3.0           | -2.0     | -1.0      |\n| Apr-24 | 1.0   | 2.0            | 3.0      | 1.0       |\n| Apr-25 | 4.0   | 6.0            | 5.0      | 2.0       |\n| Apr-26 | 5.0   | 7.0            | 6.0      | 3.0       |",
+            "sub_type": "line"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.284,
+                0.899,
+                0.436,
+                0.908
+            ],
+            "angle": 0,
+            "content": "Source: IBES, LSEG Datastream, HSBC"
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.617,
+                0.678,
+                0.929,
+                0.705
+            ],
+            "angle": 0,
+            "content": "...as IT and Mag 7 see one of the strongest earnings growth potential in 2026e"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.619,
+                0.708,
+                0.922,
+                0.892
+            ],
+            "angle": 0,
+            "content": "| Sector | Latest (%) | Jan-26 (%) |\n| :--- | :--- | :--- |\n| S&P 500 | 22 | 15 |\n| Energy | 49 | 5 |\n| IT | 43 | 28 |\n| Materials | 36 | 20 |\n| Mag 7 | 30 | 20 |\n| Comm Serv. | 27 | 15 |\n| Cons Disc | 13 | 11 |\n| Utilities | 11 | 9 |\n| Industrials | 10 | 15 |\n| Financials | 9 | 10 |\n| Health Care | 8 | 8 |\n| Real Estate | 6 | 6 |\n| Cons Stap | 5 | 7 |",
+            "sub_type": "bar"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.618,
+                0.899,
+                0.706,
+                0.908
+            ],
+            "angle": 0,
+            "content": "Source FactSet, HSBC"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.07,
+                0.965,
+                0.08,
+                0.974
+            ],
+            "angle": 0,
+            "content": "6"
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.073,
+                0.01,
+                0.19,
+                0.036
+            ],
+            "angle": 0,
+            "content": "HSBC"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.702,
+                0.009,
+                0.931,
+                0.035
+            ],
+            "angle": 0,
+            "content": "Equity Strategy • North America 11 May 2026"
+        },
+        {
+            "type": "title",
+            "bbox": [
+                0.283,
+                0.115,
+                0.39,
+                0.131
+            ],
+            "angle": 0,
+            "content": "Valuations"
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.283,
+                0.149,
+                0.588,
+                0.176
+            ],
+            "angle": 0,
+            "content": "S&P 500 trades at \\(5\\%\\) premium to its five-year average"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.288,
+                0.185,
+                0.596,
+                0.363
+            ],
+            "angle": 0,
+            "content": "| Date   | S&P 500 | Average | +/- 1Stdev |\n|--------|---------|---------|------------|\n| May-21 | 22      | 20      | 18         |\n| May-22 | 16      | 20      | 18         |\n| May-23 | 18      | 20      | 18         |\n| May-24 | 20      | 20      | 18         |\n| May-25 | 23      | 20      | 18         |\n| May-26 | 21      | 20      | 18         |",
+            "sub_type": "line"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.284,
+                0.37,
+                0.375,
+                0.38
+            ],
+            "angle": 0,
+            "content": "Source: FactSet, HSBC"
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.616,
+                0.149,
+                0.928,
+                0.176
+            ],
+            "angle": 0,
+            "content": "Even when excluding tech, S&P 500 trades at a 5% premium to historical average"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.62,
+                0.185,
+                0.931,
+                0.363
+            ],
+            "angle": 0,
+            "content": "| Date   | SPX ex IT | Average | +/- 1Stdev |\n|--------|-----------|---------|------------|\n| May-21 | 21.0      | 18.5    | 20.0       |\n| May-22 | 15.0      | 18.5    | 20.0       |\n| May-23 | 17.0      | 18.5    | 20.0       |\n| May-24 | 19.0      | 18.5    | 20.0       |\n| May-25 | 20.0      | 18.5    | 20.0       |\n| May-26 | 21.0      | 18.5    | 20.0       |",
+            "sub_type": "line"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.618,
+                0.37,
+                0.708,
+                0.38
+            ],
+            "angle": 0,
+            "content": "Source: FactSet, HSBC"
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.283,
+                0.418,
+                0.569,
+                0.445
+            ],
+            "angle": 0,
+            "content": "Tech has de-rated, now trading at a 4% discount to historical average..."
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.288,
+                0.454,
+                0.597,
+                0.631
+            ],
+            "angle": 0,
+            "content": "| Date   | S&P 500 IT | Average | +/- 1Stdev |\n|--------|------------|---------|------------|\n| May-21 | 26         | 26      | 28         |\n| May-22 | 18         | 26      | 28         |\n| May-23 | 24         | 26      | 28         |\n| May-24 | 30         | 26      | 28         |\n| May-25 | 22         | 26      | 28         |\n| May-26 | 20         | 26      | 28         |",
+            "sub_type": "line"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.284,
+                0.639,
+                0.373,
+                0.649
+            ],
+            "angle": 0,
+            "content": "Source FactSet, HSBC"
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.617,
+                0.418,
+                0.911,
+                0.445
+            ],
+            "angle": 0,
+            "content": "...and the Mag 6 cohort as well trades at an \\(8 \\%\\)discount to 5- year average"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.622,
+                0.454,
+                0.931,
+                0.631
+            ],
+            "angle": 0,
+            "content": "| Date   | Consensus N12M price to earnings ratio |\n|--------|----------------------------------------|\n| May-21 | 30                                     |\n| May-22 | 28                                     |\n| May-23 | 30                                     |\n| May-24 | 30                                     |\n| May-25 | 28                                     |\n| May-26 | 26                                     |",
+            "sub_type": "line"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.617,
+                0.639,
+                0.926,
+                0.69
+            ],
+            "angle": 0,
+            "content": "Source: FactSet, HSBC  \nMag 6 denotes Microsoft (MSFT US, Buy, CMP USD420.77); NVIDIA (NVDA US, Buy, CMP USD211.50); Amazon (AMZN US, Buy, CMP USD271.17); Alphabet (GOOGL US, Buy, CMP USD397.99), Meta Platforms (META US, Buy, CMP USD616.81); and Apple (AAPL US, Buy, CMP USD287.44). Prices as of close on 7 May 2026"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.922,
+                0.965,
+                0.931,
+                0.974
+            ],
+            "angle": 0,
+            "content": "7"
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.073,
+                0.01,
+                0.194,
+                0.037
+            ],
+            "angle": 0,
+            "content": "HSBC"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.702,
+                0.01,
+                0.932,
+                0.036
+            ],
+            "angle": 0,
+            "content": "Equity Strategy • North America 11 May 2026"
+        },
+        {
+            "type": "title",
+            "bbox": [
+                0.073,
+                0.12,
+                0.517,
+                0.157
+            ],
+            "angle": 0,
+            "content": "Disclosure appendix"
+        },
+        {
+            "type": "title",
+            "bbox": [
+                0.07,
+                0.192,
+                0.221,
+                0.206
+            ],
+            "angle": 0,
+            "content": "Analyst Certification"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.07,
+                0.208,
+                0.934,
+                0.317
+            ],
+            "angle": 0,
+            "content": "The following analyst(s), economist(s), or strategist(s) who is(are) primarily responsible for this report, including any analyst(s) whose name(s) appear(s) as author of an individual section or sections of the report and any analyst(s) named as the covering analyst(s) of a sUBSidiary company in a sum-of-the-parts valuation certifies(y) that the opinion(s) on the subject security(ies) or issuer(s), any views or forecasts expressed in the section(s) of which such individual(s) is(are) named as author(s), and any other views or forecasts expressed herein, including any views expressed on the back page of the research report, accurately reflect their personal view(s) and that no part of their compensation was, is or will be directly or indirectly related to the specific recommendation(s) or views contained in this research report: Nicole Inui, CFA and Alastair Pinder, CFA",
+            "merge_prev": false
+        },
+        {
+            "type": "title",
+            "bbox": [
+                0.07,
+                0.326,
+                0.231,
+                0.339
+            ],
+            "angle": 0,
+            "content": "Important disclosures"
+        },
+        {
+            "type": "title",
+            "bbox": [
+                0.07,
+                0.345,
+                0.465,
+                0.358
+            ],
+            "angle": 0,
+            "content": "Equities: Stock ratings and basis for financial analysis"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.07,
+                0.36,
+                0.934,
+                0.47
+            ],
+            "angle": 0,
+            "content": "HSBC and its affiliates, including the issuer of this report (\"HSBC\") believes an investor's decision to buy or sell a stock should depend on individual circumstances such as the investor's existing holdings, risk tolerance and other considerations and that investors utilise various disciplines and investment horizons when making investment decisions. Ratings should not be used or relied on in isolation as investment advice. Different securities firms use a variety of ratings terms as well as different rating systems to describe their recommendations and therefore investors should carefully read the definitions of the ratings used in each research report. Further, investors should carefully read the entire research report and not infer its contents from the rating because research reports contain more complete information concerning the analysts' views and the basis for the rating.",
+            "merge_prev": false
+        },
+        {
+            "type": "title",
+            "bbox": [
+                0.07,
+                0.478,
+                0.603,
+                0.492
+            ],
+            "angle": 0,
+            "content": "From 23rd March 2015 HSBC has assigned ratings on the following basis:"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.07,
+                0.494,
+                0.934,
+                0.587
+            ],
+            "angle": 0,
+            "content": "The target price is based on the analyst's assessment of the stock's actual current value, although we expect it to take six to 12 months for the market price to reflect this. When the target price is more than \\(20\\%\\) above the current share price, the stock will be classified as a Buy; when it is between \\(5\\%\\) and \\(20\\%\\) above the current share price, the stock may be classified as a Buy or a Hold; when it is between \\(5\\%\\) below and \\(5\\%\\) above the current share price, the stock will be classified as a Hold; when it is between \\(5\\%\\) and \\(20\\%\\) below the current share price, the stock may be classified as a Hold or a Reduce; and when it is more than \\(20\\%\\) below the current share price, the stock will be classified as a Reduce.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.07,
+                0.595,
+                0.931,
+                0.626
+            ],
+            "angle": 0,
+            "content": "Our ratings are re-calibrated against these bands at the time of any 'material change' (initiation or resumption of coverage, change in target price or estimates).",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.07,
+                0.634,
+                0.685,
+                0.649
+            ],
+            "angle": 0,
+            "content": "Upside/Downside is the percentage difference between the target price and the share price.",
+            "merge_prev": false
+        },
+        {
+            "type": "title",
+            "bbox": [
+                0.07,
+                0.658,
+                0.631,
+                0.672
+            ],
+            "angle": 0,
+            "content": "Prior to this date, HSBC's rating structure was applied on the following basis:"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.07,
+                0.673,
+                0.934,
+                0.798
+            ],
+            "angle": 0,
+            "content": "For each stock we set a required rate of return calculated from the cost of equity for that stock's domestic or, as appropriate, regional market established by our strategy team. The target price for a stock represented the value the analyst expected the stock to reach over our performance horizon. The performance horizon was 12 months. For a stock to be classified as Overweight, the potential return, which equals the percentage difference between the current share price and the target price, including the forecast dividend yield when indicated, had to exceed the required return by at least 5 percentage points over the succeeding 12 months (or 10 percentage points for a stock classified as Volatile*). For a stock to be classified as Underweight, the stock was expected to underperform its required return by at least 5 percentage points over the succeeding 12 months (or 10 percentage points for a stock classified as Volatile*). Stocks between these bands were classified as Neutral.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.07,
+                0.806,
+                0.934,
+                0.884
+            ],
+            "angle": 0,
+            "content": "*A stock was classified as volatile if its historical volatility had exceeded \\(40\\%\\), if the stock had been listed for less than 12 months (unless it was in an industry or sector where volatility is low) or if the analyst expected significant volatility. However, stocks which we did not consider volatile may in fact also have behaved in such a way. Historical volatility was defined as the past month's average of the daily 365-day moving average volatilities. In order to avoid misleadingly frequent changes in rating, however, volatility had to move 2.5 percentage points past the \\(40\\%\\) benchmark in either direction for a stock's status to change.",
+            "merge_prev": false
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.07,
+                0.966,
+                0.079,
+                0.974
+            ],
+            "angle": 0,
+            "content": "8"
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.073,
+                0.01,
+                0.194,
+                0.037
+            ],
+            "angle": 0,
+            "content": "HSBC"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.702,
+                0.01,
+                0.932,
+                0.036
+            ],
+            "angle": 0,
+            "content": "Equity Strategy • North America 11 May 2026"
+        },
+        {
+            "type": "title",
+            "bbox": [
+                0.068,
+                0.119,
+                0.492,
+                0.134
+            ],
+            "angle": 0,
+            "content": "Rating distribution for long-term investment opportunities"
+        },
+        {
+            "type": "table_caption",
+            "bbox": [
+                0.068,
+                0.138,
+                0.768,
+                0.152
+            ],
+            "angle": 0,
+            "content": "As of 31 March 2026, the distribution of all independent ratings published by HSBC is as follows:"
+        },
+        {
+            "type": "table",
+            "bbox": [
+                0.069,
+                0.153,
+                0.905,
+                0.207
+            ],
+            "angle": 0,
+            "content": "<table><tr><td>Buy</td><td>59%</td><td>(12% of these provided with Investment Banking Services in the past 12 months)</td></tr><tr><td>Hold</td><td>36%</td><td>(12% of these provided with Investment Banking Services in the past 12 months)</td></tr><tr><td>Sell</td><td>6%</td><td>(6% of these provided with Investment Banking Services in the past 12 months)</td></tr></table>"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.067,
+                0.213,
+                0.932,
+                0.275
+            ],
+            "angle": 0,
+            "content": "For the purposes of the distribution above the following mapping structure is used during the transition from the previous to current rating models: under our previous model, Overweight = Buy, Neutral = Hold and Underweight = Sell; under our current model Buy = Buy, Hold = Hold and Reduce = Sell. For rating definitions under both models, please see “Stock ratings and basis for financial analysis” above.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.067,
+                0.283,
+                0.931,
+                0.313
+            ],
+            "angle": 0,
+            "content": "For the distribution of non-independent ratings published by HSBC, please see the disclosure page available at http://www.HSBCnet.com/gbm/financial-regulation/investment-recommendations-disclosures.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.067,
+                0.321,
+                0.932,
+                0.368
+            ],
+            "angle": 0,
+            "content": "To view a list of all the independent fundamental ratings/recommendations disseminated by HSBC during the preceding 12-month period, and the location where we publish our quarterly distribution of non-fundamental recommendations (applicable to Fixed Income and Currencies research only), please use the following links to access the disclosure page:",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.068,
+                0.375,
+                0.611,
+                0.389
+            ],
+            "angle": 0,
+            "content": "Clients of HSBC Private Bank: www.research.privatebank.HSBC.com/Disclosures",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.068,
+                0.398,
+                0.447,
+                0.412
+            ],
+            "angle": 0,
+            "content": "All other clients: www.research.HSBC.com/A/Disclosures",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.067,
+                0.42,
+                0.932,
+                0.466
+            ],
+            "angle": 0,
+            "content": "HSBC and its affiliates will from time to time sell to and buy from customers the securities/instruments, both equity and debt (including derivatives) of companies covered in HSBC on a principal or agency basis or act as a market maker or liquidity provider in the securities/instruments mentioned in this report.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.067,
+                0.474,
+                0.931,
+                0.505
+            ],
+            "angle": 0,
+            "content": "Analysts, economists, and strategists are paid in part by reference to the profitability of HSBC which includes investment banking, sales & trading, and principal trading revenues.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.067,
+                0.513,
+                0.774,
+                0.527
+            ],
+            "angle": 0,
+            "content": "Whether, or in what time frame, an update of this analysis will be published is not determined in advance.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.067,
+                0.535,
+                0.931,
+                0.581
+            ],
+            "angle": 0,
+            "content": "Non-U.S. analysts may not be associated persons of HSBC Securities (USA) Inc, and therefore may not be subject to FINRA Rule 2241 or FINRA Rule 2242 restrictions on communications with the subject company, public appearances and trading securities held by the analysts.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.067,
+                0.589,
+                0.931,
+                0.65
+            ],
+            "angle": 0,
+            "content": "Economic sanctions laws imposed by certain jurisdictions such as the US, the EU, the UK, and others, may prohibit persons subject to those laws from making certain types of investments, including by transacting or dealing in securities of particular issuers, sectors, or regions. This report does not constitute advice in relation to any such laws and should not be construed as an inducement to transact in securities in breach of such laws.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.067,
+                0.659,
+                0.932,
+                0.72
+            ],
+            "angle": 0,
+            "content": "For disclosures in respect of any company mentioned in this report, please see the most recently published report on that company available at www.HSBCnet.com/research. HSBC Private Bank clients should contact their Relationship Manager for queries regarding other research reports. In order to find out more about the proprietary models used to produce this report, please contact the authoring analyst.",
+            "merge_prev": false
+        },
+        {
+            "type": "title",
+            "bbox": [
+                0.068,
+                0.728,
+                0.235,
+                0.741
+            ],
+            "angle": 0,
+            "content": "Additional disclosures"
+        },
+        {
+            "type": "list",
+            "bbox": [
+                0.068,
+                0.745,
+                0.925,
+                0.929
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.07,
+                0.745,
+                0.371,
+                0.758
+            ],
+            "angle": 0,
+            "content": "1 This report is dated as at 11 May 2026.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.069,
+                0.762,
+                0.917,
+                0.791
+            ],
+            "angle": 0,
+            "content": "2 All market data included in this report are dated as at close 07 May 2026, unless a different date and/or a specific time of day is indicated in the report.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.069,
+                0.795,
+                0.924,
+                0.867
+            ],
+            "angle": 0,
+            "content": "3 HSBC has procedures in place to identify and manage any potential conflicts of interest that arise in connection with its Research business. HSBC's analysts and its other staff who are involved in the preparation and dissemination of Research operate and have a management reporting line independent of HSBC's Investment Banking business. Information Barrier procedures are in place between the Investment Banking, Principal Trading, and Research businesses to ensure that any confidential and/or price sensitive information is handled in an appropriate manner.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.069,
+                0.871,
+                0.915,
+                0.929
+            ],
+            "angle": 0,
+            "content": "4 You are not permitted to use, for reference, any data in this document for the purpose of (i) determining the interest payable, or other sums due, under loan agreements or under other financial contracts or instruments, (ii) determining the price at which a financial instrument may be bought or sold or traded or redeemed, or the value of a financial instrument, and/or (iii) measuring the performance of a financial instrument or of an investment fund.",
+            "merge_prev": false
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.922,
+                0.965,
+                0.931,
+                0.974
+            ],
+            "angle": 0,
+            "content": "9"
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.073,
+                0.01,
+                0.194,
+                0.037
+            ],
+            "angle": 0,
+            "content": "HSBC"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.702,
+                0.01,
+                0.932,
+                0.035
+            ],
+            "angle": 0,
+            "content": "Equity Strategy • North America 11 May 2026"
+        },
+        {
+            "type": "title",
+            "bbox": [
+                0.068,
+                0.119,
+                0.344,
+                0.132
+            ],
+            "angle": 0,
+            "content": "Production & distribution disclosures"
+        },
+        {
+            "type": "list",
+            "bbox": [
+                0.068,
+                0.135,
+                0.761,
+                0.188
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.068,
+                0.135,
+                0.663,
+                0.149
+            ],
+            "angle": 0,
+            "content": "1. This report was produced and signed off by the author on 11 May 2026 00:24 GMT.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.068,
+                0.158,
+                0.761,
+                0.187
+            ],
+            "angle": 0,
+            "content": "2. In order to see when this report was first disseminated please see the disclosure page available at https://www.research.HSBC.com/R/34/DnwCGVK",
+            "merge_prev": false
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.071,
+                0.965,
+                0.086,
+                0.975
+            ],
+            "angle": 0,
+            "content": "10"
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.073,
+                0.01,
+                0.193,
+                0.036
+            ],
+            "angle": 0,
+            "content": "HSBC"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.702,
+                0.01,
+                0.932,
+                0.036
+            ],
+            "angle": 0,
+            "content": "Equity Strategy • North America 11 May 2026"
+        },
+        {
+            "type": "title",
+            "bbox": [
+                0.071,
+                0.121,
+                0.305,
+                0.151
+            ],
+            "angle": 0,
+            "content": "Disclaimer"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.07,
+                0.191,
+                0.254,
+                0.201
+            ],
+            "angle": 0,
+            "content": "Legal entities as at 7 December 2024:",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.07,
+                0.202,
+                0.666,
+                0.278
+            ],
+            "angle": 0,
+            "content": "HSBC Bank plc; HSBC Continental Europe; HSBC Continental Europe SA, Germany; HSBC Bank Middle East Limited, DIFC; HSBC Bank Middle East Limited, UAE branch; HSBC Yatirim Menkul Degerler AS, Istanbul; The Hongkong and Shanghai Banking Corporation Limited, Hong Kong; The Hongkong and Shanghai Banking Corporation Limited, Singapore Branch; The Hongkong and Shanghai Banking Corporation Limited, Seoul Securities Branch; The Hongkong and Shanghai Banking Corporation Limited, Seoul Branch; HSBC Qianhai Securities Limited; HSBC Securities (Taiwan) Corporation Limited; HSBC Securities and Capital Markets (India) Private Limited, Mumbai; HSBC Bank Australia Limited; HSBC Securities (USA) Inc., New York; HSBC México, SA, Institución de Banca Múltiple, Grupo Financiero HSBC; Banco HSBC SA",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.674,
+                0.191,
+                0.753,
+                0.201
+            ],
+            "angle": 0,
+            "content": "Issuer of report",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.675,
+                0.203,
+                0.763,
+                0.212
+            ],
+            "angle": 0,
+            "content": "Banco HSBC S.A.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.675,
+                0.213,
+                0.89,
+                0.223
+            ],
+            "angle": 0,
+            "content": "Juscelino Kubitschek Avenue, n°1909, 19° floor",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.675,
+                0.224,
+                0.852,
+                0.233
+            ],
+            "angle": 0,
+            "content": "Vila Olímpia – São Paulo – SP – Brazil",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.675,
+                0.235,
+                0.751,
+                0.244
+            ],
+            "angle": 0,
+            "content": "CEP 04543-907",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.675,
+                0.246,
+                0.808,
+                0.256
+            ],
+            "angle": 0,
+            "content": "Telephone: 55 11 2802 3252",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.675,
+                0.257,
+                0.8,
+                0.266
+            ],
+            "angle": 0,
+            "content": "Website: www.HSBC.com.br",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.07,
+                0.281,
+                0.94,
+                0.422
+            ],
+            "angle": 0,
+            "content": "This document has been elaborated, produced and approved by Banco HSBC S.A. for the general information of its \"wholesale\" customers. If this research is received by a customer of a HSBC Group member or affiliate, its provision to the recipient is subject to the terms of business in place between the recipient and such affiliate. As required by Resolution No. 20/2021 of the Securities and Exchange Commission of Brazil (Comissão de Valores Mobiliários), potential conflicts of interest concerning (i) HSBC Brazil and/or its affiliates; and (ii) the analyst(s) responsible for authoring this report are stated on the chart above labelled \"HSBC & Analyst Disclosures\". If it is received by a customer of an affiliate of HSBC, its provision to the recipient is subject to the terms of business in place between the recipient and such affiliate. This document is not and should not be construed as an offer to sell or the solicitation of an offer to purchase or sUBScribe for any investment. HSBC has based this document on information obtained from sources it believes to be reliable but which it has not independently verified; HSBC makes no guarantee, representation or warranty and accepts no responsibility or liability as to its accuracy or completeness. Expressions of opinion are those of the Research Division of HSBC only and are subject to change without notice. From time to time research analysts conduct site visits of covered issuers. HSBC policies prohibit research analysts from accepting payment or reimbursement for travel expenses from the issuer for such visits. HSBC and its affiliates and/or their officers, directors and employees may have positions in any securities mentioned in this document (or in any related investment) and may from time to time add to or dispose of any such securities (or investment). HSBC and its affiliates may act as market maker or have assumed an underwriting commitment in the securities of companies discussed in this document (or in related investments), may sell them to or buy them from customers on a principal basis and may also perform or seek to perform investment banking or underwriting services for or relating to those companies. The document is intended to be distributed in its entirety. Unless governing law permits otherwise, you must contact a HSBC Group member in your home jurisdiction if you wish to use HSBC Group services in effecting a transaction in any investment mentioned in this document.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.07,
+                0.423,
+                0.94,
+                0.477
+            ],
+            "angle": 0,
+            "content": "In the UK, this publication is distributed by HSBC Bank plc for the information of its Clients (as defined in the Rules of FCA) and those of its affiliates only. Nothing herein excludes or restricts any duty or liability to a customer which HSBC Bank plc has under the Financial Services and Markets Act 2000 or under the Rules of FCA and PRA. A recipient who chooses to deal with any person who is not a representative of HSBC Bank plc in the UK will not enjoy the protections afforded by the UK regulatory regime. HSBC Bank plc is regulated by the Financial Conduct Authority and the Prudential Regulation Authority. In the European Economic Area, this publication has been distributed by HSBC Continental Europe or by such other HSBC affiliate from which the recipient receives relevant services.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.07,
+                0.478,
+                0.939,
+                0.509
+            ],
+            "angle": 0,
+            "content": "HSBC Securities (USA) Inc. accepts responsibility for the content of this research report prepared by its non-US foreign affiliate. The information contained herein is under no circumstances to be construed as investment advice and is not tailored to the needs of the recipient. All U.S. persons receiving and/or accessing this report and wishing to effect transactions in any security discussed herein should do so with HSBC Securities (USA) Inc. in the United States and not with its non-US foreign affiliate, the issuer of this report.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.07,
+                0.51,
+                0.94,
+                0.586
+            ],
+            "angle": 0,
+            "content": "In Japan, this publication has been distributed by HSBC Securities (Japan) Co., Ltd.. It may not be further distributed in whole or in part for any purpose. In Hong Kong, this document has been distributed by The Hongkong and Shanghai Banking Corporation Limited in the conduct of its Hong Kong regulated business for the information of its institutional and professional investor (as defined by the Securities and Future Ordinance (Chapter 5710) customers only; it is not intended for and should not be distributed to retail customers in Hong Kong, unless permitted otherwise. The Hongkong and Shanghai Banking Corporation Limited is regulated by the Hong Kong Monetary Authority. All enquires by recipients in Hong Kong must be directed to your HSBC contact in Hong Kong. If it is received by a customer of an affiliate of HSBC, its provision to the recipient is subject to the terms of business in place between the recipient and such affiliate. The Hongkong and Shanghai Banking Corporation Limited makes no representations that the products or services mentioned in this document are available to persons in Hong Kong or are necessarily suitable for any particular person or appropriate in accordance with local law. It may not be further distributed in whole or in part for any purpose.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.07,
+                0.587,
+                0.94,
+                0.662
+            ],
+            "angle": 0,
+            "content": "In Singapore, this publication is distributed by The Hongkong and Shanghai Banking Corporation Limited, Singapore Branch for the general information of institutional investors or other persons specified in Sections 274 and 304 of the Securities and Futures Act 2001 of Singapore (\"SFA\") and accredited investors and other persons in accordance with the conditions specified in Sections 275 and 305 of the SFA. Only Economics or Currencies reports are intended for distribution to a person who is not an Accredited Investor, Expert Investor or Institutional Investor as defined in SFA. The Hongkong and Shanghai Banking Corporation Limited, Singapore Branch accepts legal responsibility for the contents of reports. This publication is not a prospectus as defined in the SFA. It may not be further distributed in whole or in part for any purpose. The Hongkong and Shanghai Banking Corporation Limited Singapore Branch is regulated by the Monetary Authority of Singapore. Recipients in Singapore should contact a \"Hongkong and Shanghai Banking Corporation Limited, Singapore Branch\" representative in respect of any matters arising from, or in connection with this report. Please refer to The Hongkong and Shanghai Banking Corporation Limited Singapore Branch's website at www.business.HSBC.com.sg for contact details.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.07,
+                0.663,
+                0.939,
+                0.706
+            ],
+            "angle": 0,
+            "content": "In Korea, this publication is distributed by either The Hongkong and Shanghai Banking Corporation Limited, Seoul Securities Branch (\"HBAP SLS\") or The Hongkong and Shanghai Banking Corporation Limited, Seoul Branch (\"HBAP SEL\") for the general information of professional investors specified in Article 9 of the Financial Investment Services and Capital Markets Act (\"FSCMA\"). This publication is not a prospectus as defined in the FSCMA. It may not be further distributed in whole or in part for any purpose. Both HBAP SLS and HBAP SEL are regulated by the Financial Services Commission and the Financial Supervisory Service of Korea.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.07,
+                0.707,
+                0.939,
+                0.75
+            ],
+            "angle": 0,
+            "content": "In Australia, this publication has been distributed by The Hongkong and Shanghai Banking Corporation Limited (ABN 65 117 925 970, AFSL 301737) for the general information of its \"wholesale\" customers (as defined in the Corporations Act 2001). Where distributed to retail customers, this research is distributed by HSBC Bank Australia Limited (ABN 48 006 434 162, AFSL No. 232595). These respective entities make no representations that the products or services mentioned in this document are available to persons in Australia or are necessarily suitable for any particular person or appropriate in accordance with local law. No consideration has been given to the particular investment objectives, financial situation or particular needs of any recipient.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.07,
+                0.751,
+                0.939,
+                0.772
+            ],
+            "angle": 0,
+            "content": "HSBC México, S.A., Institución de Banca Múltiple, Grupo Financiero HSBC is authorized and regulated by Secretaría de Hacienda y Crédito Público and Comisión Nacional Bancaria y de Valores (CNBV).",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.07,
+                0.772,
+                0.94,
+                0.837
+            ],
+            "angle": 0,
+            "content": "If you are a customer of HSBC International Wealth & Premier Banking (\"IWPB\"), including HSBC Private Bank, you are eligible to receive this publication only if: (i) you have been approved to receive relevant research publications by an applicable HSBC legal entity; (ii) you have agreed to the applicable HSBC entity's terms and conditions and/or customer declaration for accessing research; and (iii) you have agreed to the terms and conditions of any other internet banking, online banking, mobile banking and/or investment services offered by that HSBC entity, through which you will access research publications (collectively with (ii), the \"Terms\"). If you do not meet the above eligibility requirements, please disregard this publication and, if you are a IWPB customer, please notify your Relationship Manager or call the relevant customer hotline. Distribution of this publication is the sole responsibility of the HSBC entity with whom you have agreed the Terms. Receipt of research publications is strictly subject to the Terms and any other conditions or disclaimers applicable to the provision of the publications that may be advised by IWPB.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.07,
+                0.838,
+                0.938,
+                0.859
+            ],
+            "angle": 0,
+            "content": "© Copyright 2026, Banco HSBC S.A., ALL RIGHTS RESERVED. No part of this publication may be reproduced, stored in a retrieval system, or transmitted, on any form or by any means, electronic, mechanical, photocopying, recording, or otherwise, without the prior written permission of Banco HSBC S.A.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.86,
+                0.875,
+                0.932,
+                0.889
+            ],
+            "angle": 0,
+            "content": "[1279064]",
+            "merge_prev": false
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.916,
+                0.965,
+                0.93,
+                0.974
+            ],
+            "angle": 0,
+            "content": "11"
+        }
+    ]
+]

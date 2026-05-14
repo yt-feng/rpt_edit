@@ -1,0 +1,41 @@
+{
+  "input_dir": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs",
+  "total_pdf_count_before_shard": 37,
+  "pdf_count": 5,
+  "batch_size": 5,
+  "shard_index": 1,
+  "shard_count": 20,
+  "max_reports_per_shard": 5,
+  "max_total_reports": 100,
+  "failures": 0,
+  "batches": [
+    {
+      "batch_index": 1,
+      "pdf_count": 5,
+      "files": [
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/06-GS-China： April activity data preview： Expecting slightly faster industrial production and retail sales growth， but weaker investment-260512.pdf",
+          "batch_file": "/tmp/pdf_batch_001_09dhtymk/pdfs/0001-06-GS-China- April activity data preview- Expecting slightly faster industrial production and retail sales growth- but weaker investment-260512.pdf"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/07-GS-China： PBOC Q1 monetary policy report： more constructive on growth and inflation， and more focused on risk management-260512.pdf",
+          "batch_file": "/tmp/pdf_batch_001_09dhtymk/pdfs/0002-07-GS-China- PBOC Q1 monetary policy report- more constructive on growth and inflation- and more focused on risk management-260512.pdf"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/08-GS-US Economics Analyst：The Economic Risks from Cyberattacks-260512.pdf",
+          "batch_file": "/tmp/pdf_batch_001_09dhtymk/pdfs/0003-08-GS-US Economics Analyst-The Economic Risks from Cyberattacks-260512.pdf"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/09-HSBC-US Equity Strategy Watch：S&P 500 above 8，000？ ’s p ss b ： we outline how-260511.pdf",
+          "batch_file": "/tmp/pdf_batch_001_09dhtymk/pdfs/0004-09-HSBC-US Equity Strategy Watch-S-P 500 above 8-000- -s p ss b - we outline how-260511.pdf"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/10-HSBC-China inflation：PPI up， CPI steady-260511.pdf",
+          "batch_file": "/tmp/pdf_batch_001_09dhtymk/pdfs/0005-10-HSBC-China inflation-PPI up- CPI steady-260511.pdf"
+        }
+      ],
+      "returncode": 0,
+      "status": "ok"
+    }
+  ]
+}
