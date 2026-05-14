@@ -1,0 +1,291 @@
+name: Dropbox latest PDFs to Xiaohongshu notes sharded
+
+on:
+  workflow_dispatch:
+    inputs:
+      dropbox_root:
+        description: "Dropbox root folder containing date-named backup folders"
+        required: true
+        default: "/zip_backup"
+      model:
+        description: "DeepSeek model for note/article/podcast generation"
+        required: true
+        default: "deepseek-chat"
+      deepseek_base_url:
+        description: "DeepSeek API base URL"
+        required: true
+        default: "https://api.deepseek.com"
+      mineru_model:
+        description: "MinerU model_version, usually vlm or pipeline"
+        required: true
+        default: "vlm"
+      language:
+        description: "MinerU OCR language code, e.g. en, ch, ch_server"
+        required: true
+        default: "en"
+      ocr:
+        description: "Enable OCR for scanned/image PDFs"
+        required: true
+        default: "true"
+      shard_count:
+        description: "Parallel shard count. 20 shards x 5 reports covers 100 reports."
+        required: true
+        default: "20"
+      reports_per_shard:
+        description: "Max reports each shard processes"
+        required: true
+        default: "5"
+      batch_size:
+        description: "How many PDFs to send to MinerU per batch inside each shard"
+        required: true
+        default: "5"
+      max_total_reports:
+        description: "Max reports from the latest folder to process; 0 means all"
+        required: true
+        default: "100"
+      wechat_length:
+        description: "Target Chinese character count for WeChat article"
+        required: true
+        default: "3000"
+      community_cta:
+        description: "CTA sentence for the WeChat article"
+        required: true
+        default: "加入社群，领取完整研报解读与原始图表。"
+      podcast_minutes:
+        description: "Target length for Chinese and English AI podcast script"
+        required: true
+        default: "5"
+      commit_results:
+        description: "Commit merged generated outputs back to this branch"
+        required: true
+        type: boolean
+        default: true
+  schedule:
+    # GitHub cron is UTC. 21:00 UTC = 05:00 Asia/Shanghai next day.
+    - cron: "0 21 * * *"
+  push:
+    branches:
+      - main
+    paths:
+      - ".github/workflows/dropbox-latest-pdf-to-xhs-sharded.yml"
+      - "scripts/download_dropbox_latest_pdfs.py"
+      - "scripts/run_pdf_to_xhs_in_batches.py"
+      - "scripts/pdf_to_xhs_batch.py"
+      - "scripts/postprocess_podcast.py"
+      - "scripts/finalize_outputs.py"
+      - "prompts/**"
+
+permissions:
+  contents: write
+
+env:
+  PYTHONUNBUFFERED: "1"
+  GENERATED_AUDIO: "false"
+
+jobs:
+  resolve-inputs:
+    runs-on: ubuntu-latest
+    outputs:
+      dropbox_root: ${{ steps.vars.outputs.dropbox_root }}
+      model: ${{ steps.vars.outputs.model }}
+      deepseek_base_url: ${{ steps.vars.outputs.deepseek_base_url }}
+      mineru_model: ${{ steps.vars.outputs.mineru_model }}
+      language: ${{ steps.vars.outputs.language }}
+      ocr: ${{ steps.vars.outputs.ocr }}
+      shard_count: ${{ steps.vars.outputs.shard_count }}
+      reports_per_shard: ${{ steps.vars.outputs.reports_per_shard }}
+      batch_size: ${{ steps.vars.outputs.batch_size }}
+      max_total_reports: ${{ steps.vars.outputs.max_total_reports }}
+      wechat_length: ${{ steps.vars.outputs.wechat_length }}
+      community_cta: ${{ steps.vars.outputs.community_cta }}
+      podcast_minutes: ${{ steps.vars.outputs.podcast_minutes }}
+      commit_results: ${{ steps.vars.outputs.commit_results }}
+    steps:
+      - name: Resolve workflow inputs
+        id: vars
+        run: |
+          echo "dropbox_root=${{ github.event.inputs.dropbox_root || '/zip_backup' }}" >> "$GITHUB_OUTPUT"
+          echo "model=${{ github.event.inputs.model || 'deepseek-chat' }}" >> "$GITHUB_OUTPUT"
+          echo "deepseek_base_url=${{ github.event.inputs.deepseek_base_url || 'https://api.deepseek.com' }}" >> "$GITHUB_OUTPUT"
+          echo "mineru_model=${{ github.event.inputs.mineru_model || 'vlm' }}" >> "$GITHUB_OUTPUT"
+          echo "language=${{ github.event.inputs.language || 'en' }}" >> "$GITHUB_OUTPUT"
+          echo "ocr=${{ github.event.inputs.ocr || 'true' }}" >> "$GITHUB_OUTPUT"
+          echo "shard_count=${{ github.event.inputs.shard_count || '20' }}" >> "$GITHUB_OUTPUT"
+          echo "reports_per_shard=${{ github.event.inputs.reports_per_shard || '5' }}" >> "$GITHUB_OUTPUT"
+          echo "batch_size=${{ github.event.inputs.batch_size || '5' }}" >> "$GITHUB_OUTPUT"
+          echo "max_total_reports=${{ github.event.inputs.max_total_reports || '100' }}" >> "$GITHUB_OUTPUT"
+          echo "wechat_length=${{ github.event.inputs.wechat_length || '3000' }}" >> "$GITHUB_OUTPUT"
+          echo "community_cta=${{ github.event.inputs.community_cta || '加入社群，领取完整研报解读与原始图表。' }}" >> "$GITHUB_OUTPUT"
+          echo "podcast_minutes=${{ github.event.inputs.podcast_minutes || '5' }}" >> "$GITHUB_OUTPUT"
+          echo "commit_results=${{ github.event.inputs.commit_results || 'true' }}" >> "$GITHUB_OUTPUT"
+
+  process-shard:
+    needs: resolve-inputs
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    strategy:
+      fail-fast: false
+      max-parallel: 10
+      matrix:
+        shard_index: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19]
+
+    steps:
+      - name: Skip shards beyond configured shard_count
+        id: gate
+        run: |
+          if [ "${{ matrix.shard_index }}" -ge "${{ needs.resolve-inputs.outputs.shard_count }}" ]; then
+            echo "run=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "run=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Checkout repository
+        if: ${{ steps.gate.outputs.run == 'true' }}
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        if: ${{ steps.gate.outputs.run == 'true' }}
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: "pip"
+
+      - name: Install Chinese fonts for cover images
+        if: ${{ steps.gate.outputs.run == 'true' }}
+        timeout-minutes: 5
+        continue-on-error: true
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y fonts-noto-cjk fonts-arphic-ukai
+
+      - name: Install Python dependencies
+        if: ${{ steps.gate.outputs.run == 'true' }}
+        run: pip install -r requirements.txt
+
+      - name: Download PDFs from latest Dropbox date folder
+        if: ${{ steps.gate.outputs.run == 'true' }}
+        id: dropbox
+        env:
+          DROPBOX_APP_KEY: ${{ secrets.DROPBOX_APP_KEY }}
+          DROPBOX_APP_SECRET: ${{ secrets.DROPBOX_APP_SECRET }}
+          DROPBOX_REFRESH_TOKEN: ${{ secrets.DROPBOX_REFRESH_TOKEN }}
+        run: |
+          python scripts/download_dropbox_latest_pdfs.py \
+            --dropbox-root "${{ needs.resolve-inputs.outputs.dropbox_root }}" \
+            --output-dir "_dropbox_latest_pdfs"
+
+      - name: Generate shard outputs
+        if: ${{ steps.gate.outputs.run == 'true' }}
+        env:
+          MINER_U: ${{ secrets.MINER_U }}
+          DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
+          DEEPSEEK_BASE_URL: ${{ needs.resolve-inputs.outputs.deepseek_base_url }}
+        run: |
+          OUTPUT_DIR="xhs_notes/dropbox/${{ steps.dropbox.outputs.latest_folder }}/shard_${{ matrix.shard_index }}"
+          echo "OUTPUT_DIR=$OUTPUT_DIR" >> "$GITHUB_ENV"
+          mkdir -p "$OUTPUT_DIR"
+          cp "_dropbox_latest_pdfs/dropbox_manifest.json" "$OUTPUT_DIR/dropbox_manifest.json"
+          python scripts/run_pdf_to_xhs_in_batches.py \
+            --input-dir "_dropbox_latest_pdfs" \
+            --output-dir "$OUTPUT_DIR" \
+            --batch-size "${{ needs.resolve-inputs.outputs.batch_size }}" \
+            --continue-on-batch-error true \
+            --shard-index "${{ matrix.shard_index }}" \
+            --shard-count "${{ needs.resolve-inputs.outputs.shard_count }}" \
+            --max-reports-per-shard "${{ needs.resolve-inputs.outputs.reports_per_shard }}" \
+            --max-total-reports "${{ needs.resolve-inputs.outputs.max_total_reports }}" \
+            --model "${{ needs.resolve-inputs.outputs.model }}" \
+            --deepseek-base-url "${{ needs.resolve-inputs.outputs.deepseek_base_url }}" \
+            --mineru-model "${{ needs.resolve-inputs.outputs.mineru_model }}" \
+            --language "${{ needs.resolve-inputs.outputs.language }}" \
+            --ocr "${{ needs.resolve-inputs.outputs.ocr }}" \
+            --wechat-length "${{ needs.resolve-inputs.outputs.wechat_length }}" \
+            --community-cta "${{ needs.resolve-inputs.outputs.community_cta }}"
+
+      - name: Post-process shard articles and podcast scripts
+        if: ${{ steps.gate.outputs.run == 'true' }}
+        env:
+          DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
+          DEEPSEEK_BASE_URL: ${{ needs.resolve-inputs.outputs.deepseek_base_url }}
+        run: |
+          python scripts/postprocess_podcast.py \
+            --output-dir "$OUTPUT_DIR" \
+            --model "${{ needs.resolve-inputs.outputs.model }}" \
+            --deepseek-base-url "${{ needs.resolve-inputs.outputs.deepseek_base_url }}" \
+            --podcast-minutes "${{ needs.resolve-inputs.outputs.podcast_minutes }}" \
+            --generate-audio false \
+            --tts-engine edge
+
+      - name: Finalize shard outputs
+        if: ${{ steps.gate.outputs.run == 'true' }}
+        env:
+          DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
+          DEEPSEEK_BASE_URL: ${{ needs.resolve-inputs.outputs.deepseek_base_url }}
+        run: |
+          python scripts/finalize_outputs.py \
+            --output-dir "$OUTPUT_DIR" \
+            --model "${{ needs.resolve-inputs.outputs.model }}" \
+            --deepseek-base-url "${{ needs.resolve-inputs.outputs.deepseek_base_url }}" \
+            --generate-xianyu true
+
+      - name: Upload shard artifact
+        if: ${{ steps.gate.outputs.run == 'true' }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: dropbox-shard-${{ steps.dropbox.outputs.latest_folder }}-${{ matrix.shard_index }}
+          path: ${{ env.OUTPUT_DIR }}
+          if-no-files-found: warn
+
+  merge-and-commit:
+    needs: [resolve-inputs, process-shard]
+    runs-on: ubuntu-latest
+    if: always()
+    timeout-minutes: 30
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Download all shard artifacts
+        uses: actions/download-artifact@v4
+        with:
+          path: _downloaded_shards
+          pattern: dropbox-shard-*
+          merge-multiple: true
+
+      - name: Prepare merged summary
+        run: |
+          mkdir -p xhs_notes/dropbox/_merged_${{ github.run_id }}
+          if [ -d _downloaded_shards ]; then
+            cp -R _downloaded_shards/. xhs_notes/dropbox/_merged_${{ github.run_id }}/
+          fi
+          find xhs_notes/dropbox/_merged_${{ github.run_id }} -name batch_run_summary.json -print > xhs_notes/dropbox/_merged_${{ github.run_id }}/batch_summary_files.txt || true
+          cat > xhs_notes/dropbox/_merged_${{ github.run_id }}/run_summary.md <<EOF
+          # Dropbox sharded daily run
+
+          - Run id: ${{ github.run_id }}
+          - Schedule: 05:00 Asia/Shanghai
+          - Shard count configured: ${{ needs.resolve-inputs.outputs.shard_count }}
+          - Reports per shard: ${{ needs.resolve-inputs.outputs.reports_per_shard }}
+          - Max total reports: ${{ needs.resolve-inputs.outputs.max_total_reports }}
+          - Audio/video generation: disabled
+          EOF
+
+      - name: Upload merged artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: dropbox-merged-sharded-${{ github.run_id }}
+          path: xhs_notes/dropbox/_merged_${{ github.run_id }}
+          if-no-files-found: warn
+
+      - name: Commit merged outputs
+        if: ${{ needs.resolve-inputs.outputs.commit_results == 'true' }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add xhs_notes/dropbox/_merged_${{ github.run_id }}
+          if git diff --cached --quiet; then
+            echo "No generated changes to commit."
+          else
+            git commit -m "Generate sharded Dropbox outputs ${{ github.run_id }}"
+            git push
+          fi
