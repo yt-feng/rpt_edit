@@ -1,4 +1,4 @@
-name: Dropbox latest PDFs to Xiaohongshu notes sharded
+name: Final PDF to XHS notes
 
 on:
   workflow_dispatch:
@@ -8,7 +8,7 @@ on:
         required: true
         default: "/zip_backup"
       model:
-        description: "DeepSeek model for note/article/podcast generation"
+        description: "DeepSeek model for note/article/podcast-script generation"
         required: true
         default: "deepseek-chat"
       deepseek_base_url:
@@ -40,7 +40,7 @@ on:
         required: true
         default: "5"
       max_total_reports:
-        description: "Max reports from the latest folder to process; 0 means all"
+        description: "Max reports from the latest Dropbox folder to process; 0 means all"
         required: true
         default: "100"
       wechat_length:
@@ -52,35 +52,27 @@ on:
         required: true
         default: "加入社群，领取完整研报解读与原始图表。"
       podcast_minutes:
-        description: "Target length for Chinese and English AI podcast script"
+        description: "Target length for Chinese and English podcast scripts. Audio/video are disabled here."
         required: true
         default: "5"
       commit_results:
-        description: "Commit merged generated outputs back to this branch"
+        description: "Commit each completed shard to the repo immediately"
         required: true
         type: boolean
         default: true
   schedule:
     # GitHub cron is UTC. 21:00 UTC = 05:00 Asia/Shanghai next day.
     - cron: "0 21 * * *"
-  push:
-    branches:
-      - main
-    paths:
-      - ".github/workflows/dropbox-latest-pdf-to-xhs-sharded.yml"
-      - "scripts/download_dropbox_latest_pdfs.py"
-      - "scripts/run_pdf_to_xhs_in_batches.py"
-      - "scripts/pdf_to_xhs_batch.py"
-      - "scripts/postprocess_podcast.py"
-      - "scripts/finalize_outputs.py"
-      - "prompts/**"
 
 permissions:
   contents: write
 
 env:
   PYTHONUNBUFFERED: "1"
-  GENERATED_AUDIO: "false"
+
+concurrency:
+  group: final-pdf-to-xhs-notes
+  cancel-in-progress: false
 
 jobs:
   resolve-inputs:
@@ -119,29 +111,39 @@ jobs:
           echo "podcast_minutes=${{ github.event.inputs.podcast_minutes || '5' }}" >> "$GITHUB_OUTPUT"
           echo "commit_results=${{ github.event.inputs.commit_results || 'true' }}" >> "$GITHUB_OUTPUT"
 
+      - name: Print resolved plan
+        run: |
+          echo "::notice::Daily schedule is 05:00 Asia/Shanghai. Audio/video are disabled."
+          echo "::notice::Plan: ${{ steps.vars.outputs.shard_count }} shards x ${{ steps.vars.outputs.reports_per_shard }} reports, max_total_reports=${{ steps.vars.outputs.max_total_reports }}."
+
   process-shard:
     needs: resolve-inputs
     runs-on: ubuntu-latest
     timeout-minutes: 90
     strategy:
       fail-fast: false
-      max-parallel: 10
+      max-parallel: 6
       matrix:
         shard_index: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19]
 
     steps:
-      - name: Skip shards beyond configured shard_count
+      - name: Gate shard
         id: gate
         run: |
           if [ "${{ matrix.shard_index }}" -ge "${{ needs.resolve-inputs.outputs.shard_count }}" ]; then
             echo "run=false" >> "$GITHUB_OUTPUT"
+            echo "::notice::Shard ${{ matrix.shard_index }} skipped because shard_count=${{ needs.resolve-inputs.outputs.shard_count }}."
           else
             echo "run=true" >> "$GITHUB_OUTPUT"
+            echo "SHARD_STARTED_AT=$(date +%s)" >> "$GITHUB_ENV"
+            echo "::notice::Shard ${{ matrix.shard_index }} started."
           fi
 
       - name: Checkout repository
         if: ${{ steps.gate.outputs.run == 'true' }}
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - name: Set up Python
         if: ${{ steps.gate.outputs.run == 'true' }}
@@ -155,12 +157,15 @@ jobs:
         timeout-minutes: 5
         continue-on-error: true
         run: |
+          echo "::notice::Shard ${{ matrix.shard_index }} installing fonts."
           sudo apt-get update
           sudo apt-get install -y fonts-noto-cjk fonts-arphic-ukai
 
       - name: Install Python dependencies
         if: ${{ steps.gate.outputs.run == 'true' }}
-        run: pip install -r requirements.txt
+        run: |
+          echo "::notice::Shard ${{ matrix.shard_index }} installing Python dependencies."
+          pip install -r requirements.txt
 
       - name: Download PDFs from latest Dropbox date folder
         if: ${{ steps.gate.outputs.run == 'true' }}
@@ -170,9 +175,11 @@ jobs:
           DROPBOX_APP_SECRET: ${{ secrets.DROPBOX_APP_SECRET }}
           DROPBOX_REFRESH_TOKEN: ${{ secrets.DROPBOX_REFRESH_TOKEN }}
         run: |
+          echo "::notice::Shard ${{ matrix.shard_index }} downloading latest Dropbox PDFs."
           python scripts/download_dropbox_latest_pdfs.py \
             --dropbox-root "${{ needs.resolve-inputs.outputs.dropbox_root }}" \
             --output-dir "_dropbox_latest_pdfs"
+          echo "::notice::Shard ${{ matrix.shard_index }} Dropbox latest folder=${{ steps.dropbox.outputs.latest_folder }}, pdf_count=${{ steps.dropbox.outputs.pdf_count }}."
 
       - name: Generate shard outputs
         if: ${{ steps.gate.outputs.run == 'true' }}
@@ -181,10 +188,12 @@ jobs:
           DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
           DEEPSEEK_BASE_URL: ${{ needs.resolve-inputs.outputs.deepseek_base_url }}
         run: |
+          set -o pipefail
           OUTPUT_DIR="xhs_notes/dropbox/${{ steps.dropbox.outputs.latest_folder }}/shard_${{ matrix.shard_index }}"
           echo "OUTPUT_DIR=$OUTPUT_DIR" >> "$GITHUB_ENV"
           mkdir -p "$OUTPUT_DIR"
           cp "_dropbox_latest_pdfs/dropbox_manifest.json" "$OUTPUT_DIR/dropbox_manifest.json"
+          echo "::notice::Shard ${{ matrix.shard_index }} generating text/images into $OUTPUT_DIR."
           python scripts/run_pdf_to_xhs_in_batches.py \
             --input-dir "_dropbox_latest_pdfs" \
             --output-dir "$OUTPUT_DIR" \
@@ -200,7 +209,7 @@ jobs:
             --language "${{ needs.resolve-inputs.outputs.language }}" \
             --ocr "${{ needs.resolve-inputs.outputs.ocr }}" \
             --wechat-length "${{ needs.resolve-inputs.outputs.wechat_length }}" \
-            --community-cta "${{ needs.resolve-inputs.outputs.community_cta }}"
+            --community-cta "${{ needs.resolve-inputs.outputs.community_cta }}" 2>&1 | tee "$OUTPUT_DIR/generate_progress.log"
 
       - name: Post-process shard articles and podcast scripts
         if: ${{ steps.gate.outputs.run == 'true' }}
@@ -208,13 +217,15 @@ jobs:
           DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
           DEEPSEEK_BASE_URL: ${{ needs.resolve-inputs.outputs.deepseek_base_url }}
         run: |
+          set -o pipefail
+          echo "::notice::Shard ${{ matrix.shard_index }} post-processing WeChat images, English article, and podcast scripts. Audio/video disabled."
           python scripts/postprocess_podcast.py \
             --output-dir "$OUTPUT_DIR" \
             --model "${{ needs.resolve-inputs.outputs.model }}" \
             --deepseek-base-url "${{ needs.resolve-inputs.outputs.deepseek_base_url }}" \
             --podcast-minutes "${{ needs.resolve-inputs.outputs.podcast_minutes }}" \
             --generate-audio false \
-            --tts-engine edge
+            --tts-engine edge 2>&1 | tee "$OUTPUT_DIR/postprocess_progress.log"
 
       - name: Finalize shard outputs
         if: ${{ steps.gate.outputs.run == 'true' }}
@@ -222,70 +233,67 @@ jobs:
           DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
           DEEPSEEK_BASE_URL: ${{ needs.resolve-inputs.outputs.deepseek_base_url }}
         run: |
+          set -o pipefail
+          echo "::notice::Shard ${{ matrix.shard_index }} finalizing outputs: brand sanitization, Xianyu notes, WeChat ending."
           python scripts/finalize_outputs.py \
             --output-dir "$OUTPUT_DIR" \
             --model "${{ needs.resolve-inputs.outputs.model }}" \
             --deepseek-base-url "${{ needs.resolve-inputs.outputs.deepseek_base_url }}" \
-            --generate-xianyu true
+            --generate-xianyu true 2>&1 | tee "$OUTPUT_DIR/finalize_progress.log"
 
-      - name: Upload shard artifact
+      - name: Write shard summary
         if: ${{ steps.gate.outputs.run == 'true' }}
-        uses: actions/upload-artifact@v4
-        with:
-          name: dropbox-shard-${{ steps.dropbox.outputs.latest_folder }}-${{ matrix.shard_index }}
-          path: ${{ env.OUTPUT_DIR }}
-          if-no-files-found: warn
-
-  merge-and-commit:
-    needs: [resolve-inputs, process-shard]
-    runs-on: ubuntu-latest
-    if: always()
-    timeout-minutes: 30
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-
-      - name: Download all shard artifacts
-        uses: actions/download-artifact@v4
-        with:
-          path: _downloaded_shards
-          pattern: dropbox-shard-*
-          merge-multiple: true
-
-      - name: Prepare merged summary
         run: |
-          mkdir -p xhs_notes/dropbox/_merged_${{ github.run_id }}
-          if [ -d _downloaded_shards ]; then
-            cp -R _downloaded_shards/. xhs_notes/dropbox/_merged_${{ github.run_id }}/
-          fi
-          find xhs_notes/dropbox/_merged_${{ github.run_id }} -name batch_run_summary.json -print > xhs_notes/dropbox/_merged_${{ github.run_id }}/batch_summary_files.txt || true
-          cat > xhs_notes/dropbox/_merged_${{ github.run_id }}/run_summary.md <<EOF
-          # Dropbox sharded daily run
+          ENDED_AT=$(date +%s)
+          DURATION=$((ENDED_AT - SHARD_STARTED_AT))
+          REPORT_DIRS=$(find "$OUTPUT_DIR" -mindepth 1 -maxdepth 1 -type d | wc -l | tr -d ' ')
+          cat > "$OUTPUT_DIR/shard_run_summary.md" <<EOF
+          # Shard ${{ matrix.shard_index }} summary
 
-          - Run id: ${{ github.run_id }}
-          - Schedule: 05:00 Asia/Shanghai
-          - Shard count configured: ${{ needs.resolve-inputs.outputs.shard_count }}
+          - Latest Dropbox folder: ${{ steps.dropbox.outputs.latest_folder }}
+          - Dropbox PDF count: ${{ steps.dropbox.outputs.pdf_count }}
+          - Shard index: ${{ matrix.shard_index }}
+          - Shard count: ${{ needs.resolve-inputs.outputs.shard_count }}
           - Reports per shard: ${{ needs.resolve-inputs.outputs.reports_per_shard }}
-          - Max total reports: ${{ needs.resolve-inputs.outputs.max_total_reports }}
+          - Batch size: ${{ needs.resolve-inputs.outputs.batch_size }}
+          - Report directories generated: $REPORT_DIRS
           - Audio/video generation: disabled
+          - Duration seconds: $DURATION
+          - Output directory: $OUTPUT_DIR
           EOF
+          cat "$OUTPUT_DIR/shard_run_summary.md"
+          echo "::notice::Shard ${{ matrix.shard_index }} finished in $((DURATION / 60)) minutes with $REPORT_DIRS output directories."
 
-      - name: Upload merged artifact
-        uses: actions/upload-artifact@v4
-        with:
-          name: dropbox-merged-sharded-${{ github.run_id }}
-          path: xhs_notes/dropbox/_merged_${{ github.run_id }}
-          if-no-files-found: warn
-
-      - name: Commit merged outputs
-        if: ${{ needs.resolve-inputs.outputs.commit_results == 'true' }}
+      - name: Commit this shard to repo immediately
+        if: ${{ steps.gate.outputs.run == 'true' && needs.resolve-inputs.outputs.commit_results == 'true' }}
         run: |
+          echo "::notice::Shard ${{ matrix.shard_index }} committing results to repo."
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add xhs_notes/dropbox/_merged_${{ github.run_id }}
-          if git diff --cached --quiet; then
-            echo "No generated changes to commit."
-          else
-            git commit -m "Generate sharded Dropbox outputs ${{ github.run_id }}"
-            git push
-          fi
+          for attempt in 1 2 3 4 5; do
+            echo "Commit attempt $attempt for shard ${{ matrix.shard_index }}"
+            git pull --rebase origin main || true
+            git add "$OUTPUT_DIR"
+            if git diff --cached --quiet; then
+              echo "No generated changes to commit for shard ${{ matrix.shard_index }}."
+              exit 0
+            fi
+            git commit -m "Generate Dropbox shard ${{ matrix.shard_index }} outputs ${{ steps.dropbox.outputs.latest_folder }}" || true
+            if git push origin HEAD:main; then
+              echo "::notice::Shard ${{ matrix.shard_index }} committed to repo."
+              exit 0
+            fi
+            git rebase --abort || true
+            git reset --soft HEAD~1 || true
+            sleep $((attempt * 10))
+          done
+          echo "Failed to push shard ${{ matrix.shard_index }} after retries. Artifact upload still contains outputs."
+          exit 1
+
+      - name: Upload shard artifact
+        if: ${{ steps.gate.outputs.run == 'true' && always() }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: final-dropbox-shard-${{ steps.dropbox.outputs.latest_folder }}-${{ matrix.shard_index }}
+          path: ${{ env.OUTPUT_DIR }}
+          if-no-files-found: warn
