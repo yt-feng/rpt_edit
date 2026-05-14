@@ -1,0 +1,36 @@
+{
+  "input_dir": "/home/runner/work/rpt_edit/rpt_edit/_macro_test_pdfs",
+  "pdf_count": 5,
+  "batch_size": 5,
+  "failures": 0,
+  "batches": [
+    {
+      "batch_index": 1,
+      "pdf_count": 5,
+      "files": [
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_macro_test_pdfs/01-BARC-Global Equity Strategy：BARC Equity Factor Insights： May 2026-260512.pdf",
+          "batch_file": "/tmp/pdf_batch_001__nls_qmi/pdfs/0001-01-BARC-Global Equity Strategy-BARC Equity Factor Insights- May 2026-260512.pdf"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_macro_test_pdfs/02-BARC-U.S. Equity Factor Insights~May 2026：Hit Refresh as Risk~on Returns-260512.pdf",
+          "batch_file": "/tmp/pdf_batch_001__nls_qmi/pdfs/0002-02-BARC-U.S. Equity Factor Insights-May 2026-Hit Refresh as Risk-on Returns-260512.pdf"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_macro_test_pdfs/03-Citi-China Economics：Near~term Focus on Policy Transmission – Takeaways from MPR 1Q26-260511.pdf",
+          "batch_file": "/tmp/pdf_batch_001__nls_qmi/pdfs/0003-03-Citi-China Economics-Near-term Focus on Policy Transmission - Takeaways from MPR 1Q26-260511.pdf"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_macro_test_pdfs/04-DB-China Macro：Inflation monitor： PPI overshoots as history repeats itself-260511.pdf",
+          "batch_file": "/tmp/pdf_batch_001__nls_qmi/pdfs/0004-04-DB-China Macro-Inflation monitor- PPI overshoots as history repeats itself-260511.pdf"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_macro_test_pdfs/05-DB-China Macro：Trade Momentum Continues in April-260511.pdf",
+          "batch_file": "/tmp/pdf_batch_001__nls_qmi/pdfs/0005-05-DB-China Macro-Trade Momentum Continues in April-260511.pdf"
+        }
+      ],
+      "returncode": 0,
+      "status": "ok"
+    }
+  ]
+}
