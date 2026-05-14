@@ -1,0 +1,13 @@
+Found 37 total PDFs; shard 0/20 will process 5 PDFs with batch_size=5.
+Running batch 1: 5 PDFs
+Found 5 PDFs.
+Uploading PDF to MinerU: /tmp/pdf_batch_001_hopn978u/pdfs/0001-01-Barclays-Global Equity Strategy-Barclays Equity Factor Insights- May 2026-260512.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_hopn978u/pdfs/0002-02-Barclays-U.S. Equity Factor Insights-May 2026-Hit Refresh as Risk-on Returns-260512.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_hopn978u/pdfs/0003-03-CITI-China Economics-Near-term Focus on Policy Transmission - Takeaways from MPR 1Q26-260511.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_hopn978u/pdfs/0004-04-Deutsche Bank-China Macro-Inflation monitor- PPI overshoots as history repeats itself-260511.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_hopn978u/pdfs/0005-05-Deutsche Bank-China Macro-Trade Momentum Continues in April-260511.pdf
+MinerU batch_id=2604b8ce-8895-40c1-9cf1-c66b33035503
+MinerU states: done, done, done, done, waiting-file
+MinerU states: done, done, done, done, done
+Done. Results written to /home/runner/work/rpt_edit/rpt_edit/xhs_notes/dropbox/260513/shard_0
+All batches completed successfully.
