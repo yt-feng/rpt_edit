@@ -1,0 +1,13 @@
+Found 37 total PDFs; shard 2/20 will process 5 PDFs with batch_size=5.
+Running batch 1: 5 PDFs
+Found 5 PDFs.
+Uploading PDF to MinerU: /tmp/pdf_batch_001_yzhykrbu/pdfs/0001-11-J.P. Morgan-China- CPI and PPI surprises may indicate further reflation-260511.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_yzhykrbu/pdfs/0002-12-MS-China Economics Mid-Year Outlook_ Upgrading Growth to Reflect AI and Energy Capex-260512.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_yzhykrbu/pdfs/0003-13-MS-China Equity Strategy Mid-year Outlook_ Forging New Horizons-260513.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_yzhykrbu/pdfs/0004-14-Morgan Stanley-China Economics-Cost Push Intensified in April-260511.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_yzhykrbu/pdfs/0005-15-Nomura-USD CNY fix model-Projection- 6.7950-260513.pdf
+MinerU batch_id=5a7c13b0-b688-4d95-be57-30802b2c4bf4
+MinerU states: done, done, done, done, waiting-file
+MinerU states: done, done, done, done, done
+Done. Results written to /home/runner/work/rpt_edit/rpt_edit/xhs_notes/dropbox/260513/shard_2
+All batches completed successfully.
