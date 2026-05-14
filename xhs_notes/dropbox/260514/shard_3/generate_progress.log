@@ -1,0 +1,14 @@
+Found 22 total PDFs; shard 3/20 has 5 PDFs, skips 0 already converted, will process 5 PDFs with batch_size=5.
+Running batch 1: 5 PDFs
+Found 5 PDFs.
+Uploading PDF to MinerU: /tmp/pdf_batch_001_3emh3cb9/pdfs/0001-16-BofA Securities-Internet e-Commerce-Travel Survey- Summer Travel intentions stronger y y despite ME conflict headlines-260512.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_3emh3cb9/pdfs/0002-17-BofA Securities-Semiconductors-Asia-Pacific-PC fabless - stay cautious on margin profiles following 1Q26 earnings calls-260512.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_3emh3cb9/pdfs/0003-18-CITI-China Industrial Equipment What-s New from Citi-s 2026 China Elite Corporate Day - Implication of Price Inflation on Excavator-260512.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_3emh3cb9/pdfs/0004-19-J.P. Morgan-Semiconductors SPE-Ulvac-s results and implications for domestic semiconductor sector-260513.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_3emh3cb9/pdfs/0005-20-J.P. Morgan-The Great Broadband Bake Off-U.S. Cable - Telecom Results - Reflections-260512.pdf
+MinerU batch_id=9912ce2a-4d92-432b-80da-38e576aae000
+MinerU states: running, pending, running, pending, waiting-file
+MinerU states: done, running, done, done, running
+MinerU states: done, done, done, done, done
+Done. Results written to /home/runner/work/rpt_edit/rpt_edit/xhs_notes/dropbox/260514/shard_3
+All batches completed successfully.
