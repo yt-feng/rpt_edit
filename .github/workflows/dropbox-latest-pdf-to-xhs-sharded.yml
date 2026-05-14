@@ -61,7 +61,6 @@ on:
         type: boolean
         default: true
   schedule:
-    # GitHub cron is UTC. 21:00 UTC = 05:00 Asia/Shanghai next day.
     - cron: "0 21 * * *"
 
 permissions:
@@ -110,12 +109,11 @@ jobs:
           echo "community_cta=${{ github.event.inputs.community_cta || '欢迎来星球微信群里继续讨论' }}" >> "$GITHUB_OUTPUT"
           echo "podcast_minutes=${{ github.event.inputs.podcast_minutes || '5' }}" >> "$GITHUB_OUTPUT"
           echo "commit_results=${{ github.event.inputs.commit_results || 'true' }}" >> "$GITHUB_OUTPUT"
-
       - name: Print resolved plan
         run: |
           echo "::notice::Daily schedule is 05:00 Asia/Shanghai. Audio/video are disabled."
-          echo "::notice::Step 1 downloads latest Dropbox PDFs once; Step 2 DeepSeek filters macro/trend reports; Step 3 shards only selected macro reports."
-          echo "::notice::Plan: ${{ steps.vars.outputs.shard_count }} shards x ${{ steps.vars.outputs.reports_per_shard }} macro reports, max_total_reports=${{ steps.vars.outputs.max_total_reports }}."
+          echo "::notice::DeepSeek filters macro/trend reports first; stock/company reports are skipped."
+          echo "::notice::Plan: ${{ steps.vars.outputs.shard_count }} shards x ${{ steps.vars.outputs.reports_per_shard }} macro reports."
 
   select-macro-reports:
     needs: resolve-inputs
@@ -127,18 +125,13 @@ jobs:
       macro_candidate_count: ${{ steps.select_macro.outputs.candidate_count }}
       selected_count: ${{ steps.select_macro.outputs.process_count }}
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-
-      - name: Set up Python
-        uses: actions/setup-python@v5
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
         with:
           python-version: "3.11"
           cache: "pip"
-
       - name: Install Python dependencies
         run: pip install -r requirements.txt
-
       - name: Download PDFs from latest Dropbox date folder
         id: dropbox
         env:
@@ -147,11 +140,8 @@ jobs:
           DROPBOX_REFRESH_TOKEN: ${{ secrets.DROPBOX_REFRESH_TOKEN }}
         run: |
           echo "::notice::Downloading latest Dropbox PDFs once for macro selection."
-          python scripts/download_dropbox_latest_pdfs.py \
-            --dropbox-root "${{ needs.resolve-inputs.outputs.dropbox_root }}" \
-            --output-dir "_dropbox_latest_pdfs"
+          python scripts/download_dropbox_latest_pdfs.py --dropbox-root "${{ needs.resolve-inputs.outputs.dropbox_root }}" --output-dir "_dropbox_latest_pdfs"
           echo "::notice::Latest Dropbox folder=${{ steps.dropbox.outputs.latest_folder }}, pdf_count=${{ steps.dropbox.outputs.pdf_count }}."
-
       - name: Select macro/trend reports with DeepSeek
         id: select_macro
         env:
@@ -171,7 +161,6 @@ jobs:
             --deepseek-base-url "${{ needs.resolve-inputs.outputs.deepseek_base_url }}" 2>&1 | tee "macro_selection_progress.log"
           cp "macro_selection_progress.log" "_selected_macro_pdfs/macro_selection_progress.log"
           echo "::notice::Macro candidates=${{ steps.select_macro.outputs.candidate_count }}, selected=${{ steps.select_macro.outputs.process_count }}. Company/stock reports are skipped."
-
       - name: Upload selected macro PDFs artifact
         uses: actions/upload-artifact@v4
         with:
@@ -185,10 +174,9 @@ jobs:
     timeout-minutes: 90
     strategy:
       fail-fast: false
-      max-parallel: 6
+      max-parallel: 4
       matrix:
         shard_index: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19]
-
     steps:
       - name: Gate shard
         id: gate
@@ -199,44 +187,35 @@ jobs:
           else
             echo "run=true" >> "$GITHUB_OUTPUT"
             echo "SHARD_STARTED_AT=$(date +%s)" >> "$GITHUB_ENV"
-            echo "::notice::Shard ${{ matrix.shard_index }} started. It will only see DeepSeek-selected macro/trend reports."
+            echo "::notice::Shard ${{ matrix.shard_index }} started."
           fi
-
       - name: Checkout repository
         if: ${{ steps.gate.outputs.run == 'true' }}
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
-
       - name: Set up Python
         if: ${{ steps.gate.outputs.run == 'true' }}
         uses: actions/setup-python@v5
         with:
           python-version: "3.11"
           cache: "pip"
-
       - name: Install Chinese fonts for cover images
         if: ${{ steps.gate.outputs.run == 'true' }}
         timeout-minutes: 5
         continue-on-error: true
         run: |
-          echo "::notice::Shard ${{ matrix.shard_index }} installing fonts."
           sudo apt-get update
           sudo apt-get install -y fonts-noto-cjk fonts-arphic-ukai
-
       - name: Install Python dependencies
         if: ${{ steps.gate.outputs.run == 'true' }}
-        run: |
-          echo "::notice::Shard ${{ matrix.shard_index }} installing Python dependencies."
-          pip install -r requirements.txt
-
+        run: pip install -r requirements.txt
       - name: Download selected macro PDFs artifact
         if: ${{ steps.gate.outputs.run == 'true' }}
         uses: actions/download-artifact@v4
         with:
           name: selected-macro-pdfs-${{ github.run_id }}
           path: _selected_macro_pdfs
-
       - name: Generate shard outputs
         if: ${{ steps.gate.outputs.run == 'true' }}
         env:
@@ -269,7 +248,6 @@ jobs:
             --ocr "${{ needs.resolve-inputs.outputs.ocr }}" \
             --wechat-length "${{ needs.resolve-inputs.outputs.wechat_length }}" \
             --community-cta "${{ needs.resolve-inputs.outputs.community_cta }}" 2>&1 | tee "$OUTPUT_DIR/generate_progress.log"
-
       - name: Post-process shard articles and podcast scripts
         if: ${{ steps.gate.outputs.run == 'true' }}
         env:
@@ -277,7 +255,6 @@ jobs:
           DEEPSEEK_BASE_URL: ${{ needs.resolve-inputs.outputs.deepseek_base_url }}
         run: |
           set -o pipefail
-          echo "::notice::Shard ${{ matrix.shard_index }} post-processing WeChat images, English article, and podcast scripts. Audio/video disabled."
           python scripts/postprocess_podcast.py \
             --output-dir "$OUTPUT_DIR" \
             --model "${{ needs.resolve-inputs.outputs.model }}" \
@@ -285,7 +262,6 @@ jobs:
             --podcast-minutes "${{ needs.resolve-inputs.outputs.podcast_minutes }}" \
             --generate-audio false \
             --tts-engine edge 2>&1 | tee "$OUTPUT_DIR/postprocess_progress.log"
-
       - name: Finalize shard outputs
         if: ${{ steps.gate.outputs.run == 'true' }}
         env:
@@ -293,13 +269,11 @@ jobs:
           DEEPSEEK_BASE_URL: ${{ needs.resolve-inputs.outputs.deepseek_base_url }}
         run: |
           set -o pipefail
-          echo "::notice::Shard ${{ matrix.shard_index }} finalizing outputs: brand sanitization, Xianyu notes, WeChat ending."
           python scripts/finalize_outputs.py \
             --output-dir "$OUTPUT_DIR" \
             --model "${{ needs.resolve-inputs.outputs.model }}" \
             --deepseek-base-url "${{ needs.resolve-inputs.outputs.deepseek_base_url }}" \
             --generate-xianyu true 2>&1 | tee "$OUTPUT_DIR/finalize_progress.log"
-
       - name: Write shard summary
         if: ${{ steps.gate.outputs.run == 'true' }}
         run: |
@@ -324,33 +298,10 @@ jobs:
           EOF
           cat "$OUTPUT_DIR/shard_run_summary.md"
           echo "::notice::Shard ${{ matrix.shard_index }} finished in $((DURATION / 60)) minutes with $REPORT_DIRS output directories."
-
       - name: Commit this shard to repo immediately
         if: ${{ steps.gate.outputs.run == 'true' && needs.resolve-inputs.outputs.commit_results == 'true' }}
         run: |
-          echo "::notice::Shard ${{ matrix.shard_index }} committing results to repo."
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          for attempt in 1 2 3 4 5; do
-            echo "Commit attempt $attempt for shard ${{ matrix.shard_index }}"
-            git pull --rebase origin main || true
-            git add "$OUTPUT_DIR"
-            if git diff --cached --quiet; then
-              echo "No generated changes to commit for shard ${{ matrix.shard_index }}."
-              exit 0
-            fi
-            git commit -m "Generate macro Dropbox shard ${{ matrix.shard_index }} outputs ${{ needs.select-macro-reports.outputs.latest_folder }}" || true
-            if git push origin HEAD:main; then
-              echo "::notice::Shard ${{ matrix.shard_index }} committed to repo."
-              exit 0
-            fi
-            git rebase --abort || true
-            git reset --soft HEAD~1 || true
-            sleep $((attempt * 10))
-          done
-          echo "Failed to push shard ${{ matrix.shard_index }} after retries. Artifact upload still contains outputs."
-          exit 1
-
+          bash scripts/commit_output_dir.sh "$OUTPUT_DIR" "Generate macro Dropbox shard ${{ matrix.shard_index }} outputs ${{ needs.select-macro-reports.outputs.latest_folder }}" 8
       - name: Upload shard artifact
         if: ${{ steps.gate.outputs.run == 'true' && always() }}
         uses: actions/upload-artifact@v4
