@@ -5,12 +5,17 @@ This wrapper is useful when an input folder contains many PDFs. MinerU batch upl
 can return non-standard responses or hit service limits when too many files are
 submitted at once. The wrapper can also process a deterministic shard so GitHub
 Actions can run many shards in parallel.
+
+It also skips already-converted PDFs by default. If an expected output folder
+already has source_mineru.md, note.md, and wechat_article.md, the PDF is not sent
+to MinerU again.
 """
 from __future__ import annotations
 
 import argparse
 import json
 import os
+import re
 import shutil
 import subprocess
 import sys
@@ -18,9 +23,24 @@ import tempfile
 from pathlib import Path
 from typing import Any
 
+PDFRecord = tuple[int, Path]
+
 
 def log(message: str) -> None:
     print(message, flush=True)
+
+
+def as_bool(value: str | bool) -> bool:
+    if isinstance(value, bool):
+        return value
+    return str(value).strip().lower() in {"1", "true", "yes", "y", "on"}
+
+
+def slug(value: str) -> str:
+    value = Path(value).name
+    value = re.sub(r"\.pdf$", "", value, flags=re.IGNORECASE)
+    value = re.sub(r"[^A-Za-z0-9._-]+", "-", value).strip("-._")
+    return value[:80] or "report"
 
 
 def find_pdfs(input_dir: Path, output_dir: Path) -> list[Path]:
@@ -57,13 +77,37 @@ def unique_batch_name(pdf: Path, index: int) -> str:
     return f"{index:04d}-{safe or 'report.pdf'}"
 
 
-def copy_batch_to_temp(batch: list[Path], tmp_input: Path, offset: int) -> list[dict[str, str]]:
+def expected_item_dir(output_dir: Path, pdf: Path, index: int) -> Path:
+    return output_dir / slug(unique_batch_name(pdf, index))
+
+
+def is_already_converted(item_dir: Path) -> bool:
+    required = ["source_mineru.md", "note.md", "wechat_article.md"]
+    return item_dir.is_dir() and all((item_dir / name).exists() for name in required)
+
+
+def split_existing(records: list[PDFRecord], output_dir: Path, skip_existing: bool) -> tuple[list[PDFRecord], list[dict[str, str]]]:
+    if not skip_existing:
+        return records, []
+    todo: list[PDFRecord] = []
+    skipped: list[dict[str, str]] = []
+    for index, pdf in records:
+        item_dir = expected_item_dir(output_dir, pdf, index)
+        if is_already_converted(item_dir):
+            log(f"Skipping already converted PDF: {pdf.name} -> {item_dir}")
+            skipped.append({"source": str(pdf), "expected_item_dir": str(item_dir), "reason": "already_converted"})
+        else:
+            todo.append((index, pdf))
+    return todo, skipped
+
+
+def copy_batch_to_temp(batch: list[PDFRecord], tmp_input: Path) -> list[dict[str, str]]:
     copied = []
     tmp_input.mkdir(parents=True, exist_ok=True)
-    for i, pdf in enumerate(batch, offset + 1):
-        target = tmp_input / unique_batch_name(pdf, i)
+    for stable_index, pdf in batch:
+        target = tmp_input / unique_batch_name(pdf, stable_index)
         shutil.copy2(pdf, target)
-        copied.append({"source": str(pdf), "batch_file": str(target)})
+        copied.append({"source": str(pdf), "batch_file": str(target), "stable_index": str(stable_index)})
     return copied
 
 
@@ -90,10 +134,10 @@ def build_child_command(args: argparse.Namespace, tmp_input: Path) -> list[str]:
     return cmd
 
 
-def run_batch(batch_index: int, batch: list[Path], args: argparse.Namespace, offset: int) -> dict[str, Any]:
+def run_batch(batch_index: int, batch: list[PDFRecord], args: argparse.Namespace) -> dict[str, Any]:
     with tempfile.TemporaryDirectory(prefix=f"pdf_batch_{batch_index:03d}_") as tmp:
         tmp_input = Path(tmp) / "pdfs"
-        copied = copy_batch_to_temp(batch, tmp_input, offset)
+        copied = copy_batch_to_temp(batch, tmp_input)
         log(f"Running batch {batch_index}: {len(batch)} PDFs")
         cmd = build_child_command(args, tmp_input)
         result = subprocess.run(cmd, text=True)
@@ -106,9 +150,13 @@ def run_batch(batch_index: int, batch: list[Path], args: argparse.Namespace, off
         }
 
 
-def write_empty_summary(output_dir: Path, input_dir: Path, args: argparse.Namespace, total_pdf_count: int) -> None:
+def write_summary(output_dir: Path, payload: dict[str, Any]) -> None:
     summary_path = output_dir / "batch_run_summary.json"
-    summary_path.write_text(json.dumps({
+    summary_path.write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8")
+
+
+def write_empty_summary(output_dir: Path, input_dir: Path, args: argparse.Namespace, total_pdf_count: int, skipped: list[dict[str, str]] | None = None) -> None:
+    write_summary(output_dir, {
         "input_dir": str(input_dir),
         "total_pdf_count_before_shard": total_pdf_count,
         "pdf_count": 0,
@@ -117,10 +165,13 @@ def write_empty_summary(output_dir: Path, input_dir: Path, args: argparse.Namesp
         "shard_count": int(args.shard_count),
         "max_reports_per_shard": int(args.max_reports_per_shard),
         "max_total_reports": int(args.max_total_reports),
+        "skip_existing": as_bool(args.skip_existing),
+        "skipped_existing_count": len(skipped or []),
+        "skipped_existing": skipped or [],
         "failures": 0,
         "batches": [],
-        "status": "empty_shard",
-    }, ensure_ascii=False, indent=2), encoding="utf-8")
+        "status": "empty_or_all_skipped",
+    })
 
 
 def main() -> int:
@@ -133,6 +184,7 @@ def main() -> int:
     parser.add_argument("--shard-count", type=int, default=1)
     parser.add_argument("--max-reports-per-shard", type=int, default=0)
     parser.add_argument("--max-total-reports", type=int, default=0)
+    parser.add_argument("--skip-existing", default="true")
 
     parser.add_argument("--prompt-template", default="prompts/xhs_report_note_prompt.md")
     parser.add_argument("--wechat-prompt-template", default="prompts/wechat_report_article_prompt.md")
@@ -157,31 +209,39 @@ def main() -> int:
         print(f"ERROR: No PDFs found under {input_dir}", file=sys.stderr)
         return 2
 
-    pdfs = apply_shard_filter(all_pdfs, args)
-    if not pdfs:
+    sharded_pdfs = apply_shard_filter(all_pdfs, args)
+    if not sharded_pdfs:
         log(f"Shard {args.shard_index}/{args.shard_count} has no PDFs. Nothing to do.")
         write_empty_summary(output_dir, input_dir, args, total_pdf_count=len(all_pdfs))
+        return 0
+
+    records: list[PDFRecord] = [(idx + 1, pdf) for idx, pdf in enumerate(sharded_pdfs)]
+    records, skipped_existing = split_existing(records, output_dir, skip_existing=as_bool(args.skip_existing))
+    if not records:
+        log(f"Shard {args.shard_index}/{args.shard_count}: all {len(sharded_pdfs)} PDFs are already converted. Skipping MinerU.")
+        write_empty_summary(output_dir, input_dir, args, total_pdf_count=len(all_pdfs), skipped=skipped_existing)
         return 0
 
     batch_size = max(1, int(args.batch_size))
     continue_on_error = str(args.continue_on_batch_error).lower() in {"1", "true", "yes", "y", "on"}
     log(
         f"Found {len(all_pdfs)} total PDFs; shard {args.shard_index}/{args.shard_count} "
-        f"will process {len(pdfs)} PDFs with batch_size={batch_size}."
+        f"has {len(sharded_pdfs)} PDFs, skips {len(skipped_existing)} already converted, "
+        f"will process {len(records)} PDFs with batch_size={batch_size}."
     )
 
     summary: list[dict[str, Any]] = []
     failures = 0
-    for start in range(0, len(pdfs), batch_size):
-        batch = pdfs[start : start + batch_size]
+    for start in range(0, len(records), batch_size):
+        batch = records[start : start + batch_size]
         batch_index = start // batch_size + 1
         try:
-            result = run_batch(batch_index, batch, args, offset=start)
+            result = run_batch(batch_index, batch, args)
         except Exception as exc:
             result = {
                 "batch_index": batch_index,
                 "pdf_count": len(batch),
-                "files": [str(p) for p in batch],
+                "files": [str(p) for _idx, p in batch],
                 "returncode": 99,
                 "status": "failed",
                 "error": str(exc),
@@ -193,21 +253,24 @@ def main() -> int:
             if not continue_on_error:
                 break
 
-    summary_path = output_dir / "batch_run_summary.json"
-    summary_path.write_text(json.dumps({
+    write_summary(output_dir, {
         "input_dir": str(input_dir),
         "total_pdf_count_before_shard": len(all_pdfs),
-        "pdf_count": len(pdfs),
+        "pdf_count_before_skip": len(sharded_pdfs),
+        "pdf_count": len(records),
         "batch_size": batch_size,
         "shard_index": int(args.shard_index),
         "shard_count": int(args.shard_count),
         "max_reports_per_shard": int(args.max_reports_per_shard),
         "max_total_reports": int(args.max_total_reports),
+        "skip_existing": as_bool(args.skip_existing),
+        "skipped_existing_count": len(skipped_existing),
+        "skipped_existing": skipped_existing,
         "failures": failures,
         "batches": summary,
-    }, ensure_ascii=False, indent=2), encoding="utf-8")
+    })
     if failures:
-        log(f"Completed with {failures} failed batch(es). See {summary_path}")
+        log(f"Completed with {failures} failed batch(es). See {output_dir / 'batch_run_summary.json'}")
         return 0 if continue_on_error else 2
     log("All batches completed successfully.")
     return 0
