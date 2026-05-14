@@ -37,7 +37,8 @@
 4. 至少一个小节讨论“报告尚未完全回答的关键问题”，但标题也要是洞察句。
 5. 至少一个小节给出读者的观察框架，但不要命名为“对读者的启发”。
 6. 文末自然承接未解问题，引导读者加入社群/阅读完整报告，使用这句 CTA：{community_cta}
-7. 结尾加一行：`*本文仅作学习交流，不构成任何投资建议。*`
+7. 在免责声明前，单独插入这张图片链接：`![](https://github.com/yt-feng/rpt_edit/blob/main/prompts/zsxq_img.jpg)`
+8. 结尾只输出英文灰色免责声明：`<p style="color:#999999;font-size:12px;">Personal reading notes and learning share only. Not investment advice.</p>`
 
 【hook 要求】
 - 不要硬插“加入社群”。
@@ -45,7 +46,8 @@
 - 文末 CTA 要像“顺着这些未解问题继续读完整报告”，不是广告口吻。
 
 【图片要求】
-- 不要主动生成图片 markdown；系统会在文章生成后自动插入 MinerU 原始图片。
+- 不要主动生成 MinerU 图片 markdown；系统会在文章生成后自动插入 MinerU 原始图片。
+- 但文末免责声明前必须保留知识星球图片：`![](https://github.com/yt-feng/rpt_edit/blob/main/prompts/zsxq_img.jpg)`。
 
 【内容边界】
 - 只能基于研报原文和解析结果推导，不要编造数据、公司动作、引用。
