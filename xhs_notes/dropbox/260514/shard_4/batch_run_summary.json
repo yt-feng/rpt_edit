@@ -1,0 +1,35 @@
+{
+  "input_dir": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs",
+  "total_pdf_count_before_shard": 22,
+  "pdf_count_before_skip": 2,
+  "pdf_count": 2,
+  "batch_size": 5,
+  "shard_index": 4,
+  "shard_count": 20,
+  "max_reports_per_shard": 5,
+  "max_total_reports": 100,
+  "skip_existing": true,
+  "skipped_existing_count": 0,
+  "skipped_existing": [],
+  "failures": 0,
+  "batches": [
+    {
+      "batch_index": 1,
+      "pdf_count": 2,
+      "files": [
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/21-MS-Greater China Semiconductors：Raising RF semi PTs on new business， share gains-260512.pdf",
+          "batch_file": "/tmp/pdf_batch_001_kbkuiv37/pdfs/0001-21-MS-Greater China Semiconductors-Raising RF semi PTs on new business- share gains-260512.pdf",
+          "stable_index": "1"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/22-BofA-Semiconductors ~Asia~Pacific：Semiconductor IP & distributor： raise PO and reiterate Buy on eMemory & WT Micro-260512.pdf",
+          "batch_file": "/tmp/pdf_batch_001_kbkuiv37/pdfs/0002-22-BofA-Semiconductors -Asia-Pacific-Semiconductor IP - distributor- raise PO and reiterate Buy on eMemory - WT Micro-260512.pdf",
+          "stable_index": "2"
+        }
+      ],
+      "returncode": 0,
+      "status": "ok"
+    }
+  ]
+}
