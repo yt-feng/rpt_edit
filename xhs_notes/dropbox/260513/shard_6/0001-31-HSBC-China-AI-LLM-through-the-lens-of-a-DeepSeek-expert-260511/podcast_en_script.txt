@@ -1,0 +1,28 @@
+EN_A: So we just sat down with a product manager from DeepSeek. What was the biggest takeaway?
+EN_B: The most striking finding is that China is basically on par with the US in video generation, but lags by 8 to 12 months in agentic AI capabilities.
+EN_A: That is a significant gap. What was the core question this report was trying to answer?
+EN_B: Three things. First, who among the domestic model companies is actually good at what. Second, where exactly China falls behind the US and whether it can catch up. Third, how big a bottleneck the chip shortage really is.
+EN_A: Let us start with the domestic landscape. Who leads in coding?
+EN_B: The expert names Zhipu, Kimi, and DeepSeek as the top players. But the key insight is that coding performance is driven by four factors: post-training strategy, data quality, talent that understands both LLMs and programming, and chip resources.
+EN_A: So it is not just about compute power. It is a systems engineering problem.
+EN_B: Exactly. And when it comes to agentic ability, Alibaba's Qwen, Kimi, and DeepSeek are again at the top. But here is the twist: platform companies like Tencent and Alibaba have a big advantage because of their ecosystems, user base, proprietary data, and ready-made tools.
+EN_A: What about the independent labs?
+EN_B: They differentiate through base-model iteration and architecture. For example, Minimax and Zhipu are strong in multimodal comprehension, while Kuaishou and Minimax lead in video generation.
+EN_A: Now the US-China comparison. Video generation is already on par?
+EN_B: Yes, the expert says they are broadly equal. But the US leads by 1 to 3 months in text and reasoning, 6 months in multimodal, and the biggest gap is in agentic capability, 8 to 12 months.
+EN_A: Why is the agent gap so large?
+EN_B: Surprisingly, it is not mainly about chips. It is about data quality and talent. The US has mature tool suites and deployable agent products within their ecosystems. China has budget-friendly agent-ready models but lacks the productized layer.
+EN_A: So chips are not the decisive factor?
+EN_B: In the short term, chip shortages can cap training efficiency and model iteration speed. But the expert estimates that by end of 2026, domestic chips can cover 40 to 45 percent of inference demand, and up to 50 percent if there is a breakthrough in 7-nanometer class production.
+EN_A: What about training? Can domestic chips be used for that?
+EN_B: Only in very small experimental settings right now. The big bottlenecks are manufacturing capacity and dependence on the CUDA software ecosystem. The report does not fully answer how that will evolve.
+EN_A: Let us talk about monetization. How are these companies making money?
+EN_B: Overseas players rely on high-priced sUBScriptions within closed ecosystems, especially SaaS for businesses. Chinese internet platforms monetize indirectly through cloud, e-commerce, and super-app entry points.
+EN_A: And DeepSeek's price cuts?
+EN_B: The expert sees that as a tactical move to gain market share. In the long run, token prices will trend lower, so monetization will shift toward service-led use cases and tailored workflow solutions priced on value delivered, not raw token consumption.
+EN_A: So the future is not about selling tokens, but selling value.
+EN_B: Exactly. But how that shift actually plays out is one of the big questions the full report explores.
+EN_A: What other questions are left open?
+EN_B: For example, can domestic chips truly replace in training? And what is the single most important breakthrough needed for China to close the agent gap? The full report goes much deeper on these.
+EN_A: Sounds like we have only scratched the surface. If listeners want the full picture, they should check out the complete report.
+EN_B: It also includes specific company ratings and valuations, so it is definitely worth a read.
