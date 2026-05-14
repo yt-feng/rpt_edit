@@ -27,6 +27,11 @@ on:
         description: "Max figures DeepSeek may select for the final PDF"
         required: true
         default: "12"
+      compile_pdf:
+        description: "Compile LaTeX into PDF. False writes .tex quickly without installing LaTeX."
+        required: true
+        type: boolean
+        default: true
       commit_results:
         description: "Commit generated LaTeX/PDF back to repo"
         required: true
@@ -69,11 +74,13 @@ jobs:
       - name: Install Python dependencies
         run: pip install -r requirements.txt
 
-      - name: Install LaTeX and Chinese fonts
-        timeout-minutes: 20
+      - name: Install minimal LaTeX and Chinese fonts
+        if: ${{ github.event.inputs.compile_pdf != 'false' }}
+        timeout-minutes: 12
         run: |
+          echo "::notice::Installing minimal XeLaTeX packages. Set compile_pdf=false to skip this step and only write .tex."
           sudo apt-get update
-          sudo apt-get install -y texlive-xetex texlive-latex-recommended texlive-latex-extra texlive-lang-chinese fonts-noto-cjk
+          sudo apt-get install -y --no-install-recommends texlive-xetex texlive-latex-recommended texlive-lang-chinese fonts-noto-cjk
 
       - name: Build market views LaTeX/PDF
         env:
@@ -86,7 +93,8 @@ jobs:
           MAX_REPORTS="${{ github.event.inputs.max_reports || '80' }}"
           MAX_FIGURES="${{ github.event.inputs.max_figures || '40' }}"
           MAX_SELECTED_FIGURES="${{ github.event.inputs.max_selected_figures || '12' }}"
-          echo "::notice::Building market views PDF from xhs_notes/dropbox/$DATE_FOLDER"
+          COMPILE="${{ github.event.inputs.compile_pdf || 'true' }}"
+          echo "::notice::Building market views PDF from xhs_notes/dropbox/$DATE_FOLDER. compile_pdf=$COMPILE"
           python scripts/build_market_views_pdf.py \
             --dropbox-output-root "xhs_notes/dropbox" \
             --date-folder "$DATE_FOLDER" \
@@ -96,7 +104,7 @@ jobs:
             --max-reports "$MAX_REPORTS" \
             --max-figures "$MAX_FIGURES" \
             --max-selected-figures "$MAX_SELECTED_FIGURES" \
-            --compile true 2>&1 | tee market_views_build_progress.log
+            --compile "$COMPILE" 2>&1 | tee market_views_build_progress.log
 
       - name: Upload market views PDF artifact
         uses: actions/upload-artifact@v4
