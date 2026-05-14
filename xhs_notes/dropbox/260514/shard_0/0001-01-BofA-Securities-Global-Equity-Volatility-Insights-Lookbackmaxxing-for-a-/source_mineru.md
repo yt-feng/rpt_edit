@@ -1,0 +1,1507 @@
+# Global Equity Volatility Insights
+
+# Lookbackmaxxing for a smarter AI hedge
+
+# Lookback puts look like ideal hedge for rising bubble risks
+
+Historic upside momentum in US tech stocks has powered the Nasdaq to 12 fresh all-time highs over the past month, generated near record up vs down realized vol, and pushed our Bubble Risk Indicator on US tech closer to the 0.8 threshold – further evidence we are living in “The Bubble Era”. In a runaway market exposed to persistent threats, protecting downside with fixed-strike hedges can be difficult given strike & timing risk. Vol-based hedges are compelling in this environment, as long equity + long vol have worked well recently, and 15x payout VIX call spreads offer limited risk, long vol exposure. Alternatively, structures like QQQ expanding put spreads automatically re-strike protection higher as markets rally (at prior max) just like a lookback put and are better-suited for high-trend markets (like today or the ‘90s dotcom bubble). They are better than vanilla hedges for mitigating strike & timing risk (requires only \~8% QQQ draw-up by Dec to beat vanilla puts, which is in bottom decile of draw-ups since 2023).
+
+# Onward to resolution? EU upside & VSTOXX downside
+
+Financial markets continue to look through episodic setbacks in US-Iran negotiations, with muted Brent (vs crisis highs), resilient European equities and a normalized VIX all pointing to a fading of geopolitical risk. We highlight opportunities for a further reduction of EU risk premium via SX7E/FTSEMIB and V2X. (i) Eurozone banks remain a high-beta beneficiary of improving sentiment, with SX7E “grinding lower, spiking higher” and FTSEMIB offering cyclicality at low vol levels; funding FTSEMIB calls with short SX7E puts allows us to efficiently position for 'war resolution' upside that benefits from cross-index vol dislocations. (ii) The V2X curve continues to embed war risk, reflecting Europe’s greater conflict sensitivity. As confidence in a durable ceasefire builds, V2X has scope to 'catch down' to pre-war levels with a typical upward-sloping curve, making Jun-26 put ratios (4x max payout ratio) attractive to position for limited vol normalization.
+
+# Asia & Korean AI: Up to 13.5x payouts via worst of calls
+
+Asian AI stocks keep climbing, with SK Hynix and Samsung Electronics up 193% and 137%. YTD, respectively. We still favour upside trades but with many of these stocks scoring very high on our BofA Bubble Risk Indicator, we note the benefits of options exposure vs holding cash equities outright. Worst-of call options (WoC) offer investors potential upside but with limited loss. At 59% and 66% discounts to the cheapest vanilla call option, respectively, we like 3-month worst of calls on 1) top AI stocks in Korea, Taiwan and Japan and 2) the top 3 IT stocks in Korea. At current cost, these could have paid out 8.0x and 13.5x the cost in the recent past.
+
+# Also in the GEVI
+
+Global x-asset stress falls as all asset classes except for commodities see stress decline
+
+Trading ideas and investment strategies discussed herein may give rise to significant risk and are not suitable for all investors. Investors should have experience in relevant markets and the financial resources to absorb any losses arising from applying these ideas or strategies.
+
+>> Employed by a non-US affiliate of BofAS and is not registered/qualified as a research analyst under the FINRA rules.
+
+Refer to "Other Important Disclosures" for information on certain BofA entities that take responsibility for the information herein in particular jurisdictions.
+
+BofA does and seeks to do business with issuers covered in its research reports. As a result, investors should be aware that the firm may have a conflict of interest that could affect the objectivity of this report. Investors should consider this report as only a single factor in making their investment decision.
+
+Refer to important disclosures on page 26 to 29. Analyst Certification on page 26. 12972283
+
+# 12 May 2026
+
+Equity Derivatives
+Global
+
+BofA
+
+# Data Analytics
+
+![](images/f42af9d6209375b09415a4e4e0b57ca365fb6863ee05da3dda11bcd36af22911.jpg)
+
+Global Equity Derivatives Rsch
+BofAS
+
+Arjun Goyal
+
+Equity-Linked Analyst
+BofAS
+
+Lars Naeckter >>
+
+Equity-Linked Analyst
+BofA (DIFC)
+
+Riddhi Prasad >>
+
+Equity-Linked Analyst
+MLI (UK)
+
+Nitin Saksena
+
+Equity-Linked Analyst
+BofAS
+
+Vittoria Volta >>
+
+Equity-Linked Analyst
+BofASE (France)
+
+Benjamin Bowler
+
+Equity-Linked Analyst
+BofAS
+
+benjamin.bowler@bofa.com
+
+Abhinandan Deb >>
+
+Equity-Linked Analyst
+MLI (UK)
+
+Meriem Hafid >>
+
+Research Analyst
+BofASE (France)
+
+Nicholas Dunne
+
+Equity-Linked Analyst
+BofAS
+
+See Team Page for List of Analysts
+
+Exhibit 1: 3M volatility (weekly chg)
+
+Level & changes (in parentheses) in vol pts
+
+<table><tr><td></td><td>Implied</td><td>Realized</td></tr><tr><td>S&amp;P500</td><td>15.9 (0.0)</td><td>14.7 (-0.4)</td></tr><tr><td>ESTX50</td><td>18.2 (0.2)</td><td>21.9 (1.2)</td></tr><tr><td>FTSE</td><td>14.3 (-0.4)</td><td>16.5 (0.8)</td></tr><tr><td>DAX</td><td>18.6 (-0.1)</td><td>22.1 (0.8)</td></tr><tr><td>NKY</td><td>27.4 (0.8)</td><td>33.9 (1.8)</td></tr><tr><td>HSCEI</td><td>21.0 (0.3)</td><td>20.8 (-1.1)</td></tr><tr><td>KOSPI</td><td>50.5 (2.0)</td><td>63.4 (1.6)</td></tr><tr><td>EEM US</td><td>24.9 (0.2)</td><td>28.9 (0.7)</td></tr><tr><td>XIN9I</td><td>19.1 (1.5)</td><td>13.4 (-0.2)</td></tr></table>
+
+Source: BofA Global Research
+
+BofA GLOBAL RESEARCH
+
+See list of acronyms at the end of the report
+
+# BofA GFSI™ X-Asset Risk Landscape
+
+# GFSI continues to ease as equity stress declines
+
+Global stress declined for the fifth time in the last six weeks as the GFSI fell from -0.01 on 1-May-26 to -0.13 on 8-May-26. The index is now in its 31 $^{st}$ percentile since 2000 and at its lowest level since 10-Feb.
+
+Equities led stress lower as they posted the largest absolute change in stress for the fourth straight week (Exhibit 4). This came as the S&P 500 recorded its sixth consecutive week of gains and notched another all-time high. Like the prior week, volume flow, the subcomponent that measures bullish and bearish US stock volume, and S&P 500 skew recorded the top two declines in stress. This contributed to making the US the top regional stress-decliner (Exhibit 5). Nikkei and ESTX50 skews were also among the top eight stress-decliners of the week (Exhibit 3). Notably, equity vol stress slightly increased with Nikkei implied vol recording the second largest stress increase (Exhibit 3 & Exhibit 7).
+
+Rates, FX, and credit stress also declined while commodity stress increased (Exhibit 4). Interest rate implied vol EUR posted a $95^{\text{th}}$ percentile decline in stress as it led rates stress lower (Exhibit 3 & Exhibit 6). In fact, it helped rates vol record the largest decline in stress versus all cross-asset vols and spreads (Exhibit 7). AUDJPY skew was the only subcomponent outside of equities or rates among the top ten stress-decliners (Exhibit 3). Commodities remain the GFSI's most stressed asset class while FX is the least stressed (Exhibit 4).
+
+\- Crude implied vol is now the GFSI's most stressed subcomponent (Exhibit 2). Stress increased for the third consecutive week, though, unlike the prior two weeks, the rise in stress occurred alongside declining crude futures prices (Exhibit 3).
+
+Exhibit 2: Latest\* stress across GFSI sub-components   
+Crude implied vol is the most stressed while sub-IG foreign sovereign bond spreads are the least stressed   
+![](images/1f6a243055ca6dc8fc2c57cd99255a2d6f4378227904defff54e8213102514d1.jpg)
+
+<details>
+<summary>bar</summary>
+
+| Category | GFSI Stress |
+| --- | --- |
+| Comdty Imp Vol Crude | 2.36 |
+| Tibor-OIS | 2.26 |
+| Nikkei Imp Vol | 1.12 |
+| Comdty Imp Vol Gold | 1.05 |
+| Equity Fund Flow EM | 0.30 |
+| SP500 Skew | |
+| Int Rate Imp Vol EUR | |
+| HSI Imp Vol | |
+| ESTX50 Skew | |
+| ESTX50 Imp Vol | |
+| CDS Index Skew USD | |
+| Comdty Imp Vol Copper | |
+| HY Bond Flow | |
+| FTSE Imp Vol | |
+| Euribor-OIS | |
+| Bond Basis EUR | |
+| Nikkei Skew | |
+| SP500 Imp Vol | |
+| Bond Basis USD | |
+| USDJPY Skew | |
+| HY Corp CDS EUR | |
+| HY Corp CDS USD | |
+| Money Mkt Flow | |
+| EURJPY Skew | |
+| CDS Index Skew EUR | |
+| AUDJPY Skew | |
+| IG Corp CDS EUR | |
+| Euro member Bond Spread | |
+| 3Y/5Y Credit Curve EUR | |
+| Int Rate Imp Vol USD | |
+| Volume Flow | |
+| IG Corp CDS USD | |
+| Govt-OIS USD | |
+| GBPUSD Imp Vol | |
+| IG Foreign Sovrn Bond Spread | |
+| USDJPY Imp Vol | |
+| Basis Swap EURUSD | -0.78 |
+| Basis Swap USDJPY | -1.02 |
+| EURUSD Imp Vol | -1.07 |
+| Govt-OIS EUR | -1.14 |
+| Sub IG Foreign Sovrn Bond Spread | -1.18 |
+</details>
+
+Source: BofA Global Research. \*Latest as of 8-May-26. Disclaimer: The indicator identified above as BofA GFSI is intended to be an indicative metric only and may not be used for reference purposes or as a measure of performance for any financial instrument or contract, or otherwise relied upon by third parties for any other purpose, without the prior written consent of BofA Global Research. This indicator was not created to act as a benchmark.
+
+BofA GLOBAL RESEARCH
+
+Exhibit 3: Change\*\* in stress across GFSI sub-components   
+Copper implied vol was the largest stress riser over the last week while volume flow stress fell the most   
+![](images/9ba1c9a5379e56db5f597b2d06d7ebca96d11e753a7adddc143d5108fe8b00b7.jpg)
+
+<details>
+<summary>bar</summary>
+
+| Entity | Change in GFSI Stress |
+| :--- | :--- |
+| Comdty Imp Vol Copper | 0.13 |
+| Nikkei Imp Vol | 0.12 |
+| Bond Basis EUR | 0.11 |
+| Euribor-OIS | 0.10 |
+| Comdty Imp Vol Crude | 0.10 |
+| CDS Index Skew EUR | 0.01 |
+| ESTX50 Imp Vol | 0.01 |
+| Equity Fund Flow EM | 0.00 |
+| CDS Index Skew USD | 0.00 |
+| SP500 Imp Vol | 0.00 |
+| HSI Imp Vol | 0.00 |
+| Money Mkt Flow | 0.00 |
+| HY Corp CDS USD | 0.00 |
+| 3Y/5Y Credit Curve EUR | 0.00 |
+| IG Corp CDS USD | 0.00 |
+| EURJPY Skew | -0.01 |
+| HY Bond Flow | 0.00 |
+| HY Corp CDS EUR | 0.00 |
+| IG Corp CDS EUR | 0.00 |
+| Sub IG Foreign Sovm Bond Spread | 0.00 |
+| Basis Swap USDJPY | 0.00 |
+| IG Foreign Sovrn Bond Spread | 0.00 |
+| FTSE Imp Vol | 0.00 |
+| Comdty Imp Vol Gold | 0.00 |
+| Bond Basis USD | 0.00 |
+| Basis Swap EURUSD | 0.00 |
+| Euro member Bond Spread | 0.00 |
+| GBPUSD Imp Vol | -0.01 |
+| EURUSD Imp Vol | -0.01 |
+| USDJPY Skew | -0.14 |
+| USDJPY Imp Vol | -0.14 |
+| Govt-OIS USD | -0.28 |
+| Int Rate Imp Vol USD | -0.32 |
+| ESTX50 Skew | -0.32 |
+| AUDJPY Skew | -0.32 |
+| Nikkei Skew | -0.32 |
+| Tibor-OIS | -0.21 |
+| Govt-OIS EUR | -0.25 |
+| Int Rate Imp Vol EUR | -0.44 |
+| SP500 Skew | -0.54 |
+| Volume Flow | -0.79 |
+</details>
+
+Source: BofA Global Research. \*\*Latest as of 1-May-26. Change from 1-May-26 to 8-May-26.
+
+BofA GLOBAL RESEARCH
+
+The GFSI Risk Allocator (using Bull, Bear & Neutral weights of 2, 0, 1) suggested a 14.6% overweight position as of 8-May-26 (vs a 4.9% overweight position as of 1-May-26). The percentages of Bullish, Bearish, and Neutral GFSI components (as used in the Risk Allocator) as of 8-May-26 were 24.4%, 9.8%, and 65.9%, respectively.
+
+Exhibit 4: Equity stress decreased the most last week   
+On the other hand, commodity stress increased   
+![](images/82a4eae5ffbee1d1f5b1a6030bf1dbd7853565675944534c7dc0ff4b346809ef.jpg)
+
+<details>
+<summary>bar</summary>
+
+| Category | Latest stress (08-May-26) | Change in stress |
+| :--- | :--- | :--- |
+| Commodities | 1.18 | 0.06 |
+| Credit | -0.35 | -0.02 |
+| FX | -0.55 | -0.12 |
+| Rates | -0.25 | -0.14 |
+| Equities | 0.10 | -0.16 |
+</details>
+
+Source: BofA Global Research. Change from 1-May-26 to 8-May-26.
+
+BofA GLOBAL RESEARCH
+
+Exhibit 6: Top 10 biggest stress movers (vs history)   
+Tibor-OIS saw a historically large stress decrease   
+![](images/9a0a7c902f2a0351467d3bb6d1fb8338199fff73ef6cfcc6695632216c3c71c1.jpg)
+
+<details>
+<summary>bar</summary>
+
+%-ile of abschg in stress vs history*
+| Category | Stress fall (%) | Stress rise (%) |
+| :--- | :--- | :--- |
+| Tibor-OIS | 96 | |
+| Int Rate Imp Vol EUR | 95 | |
+| Volume Flow | 93 | |
+| AUDJPY Skew | 81 | |
+| SP500 Skew | 81 | |
+| Euribor-OIS | 81 | |
+| Govt-OIS USD | 78 | |
+| Euro member Bond Spread | 78 | |
+| Int Rate Imp Vol USD | 77 | |
+| Comdty Imp Vol Copper | 77 | |
+</details>
+
+Source: BofA Global Research. \* %-ile of 5-day moves in stress vs all historical 5-day moves (earliest 3-Jan-00). Bar colors represent rise (red) or fall (green) in stress. 5-day change (1-May-26 to 8-May-26).
+
+BofA GLOBAL RESEARCH
+
+Exhibit 5: The US led regional stress lower last week   
+Meanwhile, EM stress declined the least   
+![](images/f96eb2146cab73772d273b041f7599f46837e3cbc07dc56cdc2add1a3a968836.jpg)
+
+<details>
+<summary>bar</summary>
+
+| Region | Latest stress (08-May-26) | Change in stress |
+| :--- | :--- | :--- |
+| EM | -0.01 | |
+| Japan | 1.15 | -0.10 |
+| Europe | -0.18 | -0.10 |
+| US | -0.23 | -0.15 |
+</details>
+
+Source: BofA Global Research. Change from 1-May-26 to 8-May-26.
+
+BofA GLOBAL RESEARCH
+
+Exhibit 7: Biggest stress movers in cross-asset vols and spreads   
+Rates vol experienced the largest decrease in stress last week   
+![](images/5e3a77416c92b8b25f711bfd997c5c6a57bd672a1dd049e4fa76641f4b611b9b.jpg)
+
+<details>
+<summary>bar</summary>
+
+| Category | Latest stress (08-May-26) | Change in stress |
+| :--- | :--- | :--- |
+| Commodity Vol | 1.2 | 0.06 |
+| Equity Vol | 0.3 | 0.02 |
+| HY CDS | -0.3 | -0.03 |
+| IG CDS | -0.4 | -0.04 |
+| Sovrn risk | -0.7 | -0.06 |
+| FX Vol | -0.8 | -0.12 |
+| Rates Vol | -0.1 | -0.31 |
+</details>
+
+Source: BofA Global Research. Change from 1-May-26 to 8-May-26.
+
+BofA GLOBAL RESEARCH
+
+# BofA Bubble Risk Indicator Landscape
+
+# Price action in US tech stocks appears increasingly frothy
+
+The BofA Bubble Risk Indicator (BRI) is a price-based measure designed to detect bubble-like asset dynamics. Inspired by the way the first four moments describe a statistical distribution, the BRI distils an asset's returns, volatility, momentum, and fragility into a single bubble-risk reading on a 0 to 1 scale; 1 represents extreme bubble-like price action while 0 represents none. Historic asset bubbles have exhibited high BRI levels as they formed and peaked (see our 2026 Year Ahead for more details).
+
+Exhibit 8: The Kospi, Nikkei and US tech continue to exhibit bubble-like instability, with Nasdaq's BRI also moving higher (though still not at extremes); persistent geopolitical stress understandably keeps the energy-complex's BRIs high   
+BofA Bubble Risk indicator (as of 8-May-26) across global equity indices, US equity sectors, commodities and crypto (bars: range of short- to long-term sub-indicators)   
+![](images/73d8befd6e5a4bc36e022d1afa2dc7674a7752416e58705d4daa1e2533e0c807.jpg)
+
+<details>
+<summary>bar</summary>
+
+| Index     | Eq. index | US sector eq. | Commodity | Crypto |
+|-----------|-----------|---------------|-----------|--------|
+| Kospi     | 1.0       | -             | -         | -      |
+| Brent     | -         | -             | 0.9       | -      |
+| BCOM      | -         | -             | 0.9       | -      |
+| Nikkei    | 0.85      | -             | -         | -      |
+| Tech      | -         | 0.7           | -         | -      |
+| MSCI World| 0.7       | -             | -         | -      |
+| Silver    | -         | -             | 0.65      | -      |
+| Nasdaq    | 0.65      | -             | -         | -      |
+| Copper    | -         | -             | 0.65      | -      |
+| S&P       | 0.6       | -             | -         | -      |
+| Russell   | 0.55      | -             | -         | -      |
+| Mtrls     | -         | 0.85          | -         | -      |
+| Energy    | -         | 0.75          | -         | -      |
+| Indus     | -         | 0.7           | -         | -      |
+| Gold      | -         | 0.9           | 0.5       | -      |
+| R'estate  | -         | 0.7           | -         | -      |
+| Staples   | -         | 0.8           | -         | -      |
+| FTSE      | 0.4       | -             | -         | -      |
+| Mag7      | -         | 0.6           | -         | -      |
+| Disc      | -         | 0.4           | -         | -      |
+| SX7E      | 0.35      | -             | -         | -      |
+| SX5E      | 0.35      | -             | -         | -      |
+| Utils     | 0.35      | 0.3           | -         | -      |
+| Bitcoin   | -         | 0.3           | -         | 0.25   |
+| CAC       | 0.25      | -             | -         | -      |
+| DAX       | 0.25      | -             | -         | -      |
+| Comms     | 0.3       | 0.2           | -         | -      |
+| H'care    | 0.4       | 0.2           | -         | -      |
+| Ethereum  | 0.3       | 0.2           | -         | 0.15   |
+| HSCEI     | 0.2       | 0.15          | -         | -      |
+| Nifty     | 0.15      | 0.1           | -         | -      |
+| Fins      | 0.1       | 0.1           | -         | -      |
+</details>
+
+Source: BofA Global Research. Data as of 8-May-26. Underlying tickers: SPX, NDX, RTY, SX5E, SX7E, CAC, DAX, UKX, NKY, HSCEI, KOSPI2, NIFTY, MXWD, IXB, IXCPR, IXE, IXM, IXI, IXT, IXR, IXRE, IXU, IXV, IXY, BM7P, BCOM, CO1, XAU, XAG, HG1, XBTUSD, XETUSD. Disclaimer: The indicator identified as the BofA Bubble Risk Indicator is intended to be an indicative metric only and may not be used for reference purposes or as a measure of performance for any financial instrument or contract, or otherwise relied upon by third parties for any other purpose, without the prior written consent of BofA Global Research. This indicator was not created to act as a benchmark.
+
+BofA GLOBAL RESEARCH
+
+Exhibit 9: Semiconductor stocks still show relatively high bubble-like dynamics among popular equity themes   
+Highest BRI readings across popular equity themes (as of 8-May-26)   
+![](images/dcd91f2121a244d8ca0e007032e6868867ecc5cf347ca526a18217fe90a5166a.jpg)
+
+<details>
+<summary>bar</summary>
+
+| Category       | Value |
+| -------------- | ----- |
+| Semis          | 0.85  |
+| Momentum       | 0.78  |
+| Clean Ener     | 0.68  |
+| EM             | 0.67  |
+| Oil Explor     | 0.63  |
+| Infra          | 0.58  |
+| Transport      | 0.55  |
+| Biotech        | 0.54  |
+| Growth         | 0.52  |
+| Metals Mining  | 0.25  |
+</details>
+
+Source: BofA Global Research. Data as of 8-May-26. Underlying tickers: DZETR, GU731834, SPGTCLNT, FQEACR, SPSIOPTR, IPAVE, SPTSCUT, SPSIBITR, CRSPLCGT, SPSIMMTR. See Disclaimer in Exhibit 8.
+
+Exhibit 10: Cybersecurity stocks have seen the biggest jump in their Bubble Risk Indicator over the past week among popular equity themes   
+Largest 1w changes in BRI across popular equity themes (as of 8-May-26)   
+![](images/654eed030f6162ed0d70a953a553ba123de16e9017b14f7046ee518d9ea09d5e.jpg)
+
+<details>
+<summary>bar</summary>
+
+| Category   | 1w chg in BRI | Latest BRI |
+| ---------- | ------------- | ---------- |
+| Cybersec   | 0.26          | 0.4        |
+| Software   | 0.21          | 0.3        |
+| Growth     | 0.16          | 0.5        |
+| EM         | 0.15          | 0.7        |
+| Momentum   | 0.06          | 0.8        |
+</details>
+
+Source: BofA Global Research. Data as of 8-May-26. Underlying tickers: IBUGT, SPNASEUT, CRSPLCGT, FQEACR, GU731834. See Disclaimer in Exhibit 8.
+
+BofA GLOBAL RESEARCH
+
+BofA GLOBAL RESEARCH
+
+Exhibit 11: While the number of stocks exhibiting frothy price action has risen meaningfully, it remains localized vs Dotcom bubble peaks # of SPX stocks with BRIs above 0.8   
+![](images/25bd26922d2b47e22bb0515e9638737cf71e088a6958c7b34d59fd9064fe90ef.jpg)
+
+<details>
+<summary>line</summary>
+
+| Date       | # of Stock BRIs |
+| ---------- | --------------- |
+| 08-May-26  | 27              |
+</details>
+
+Source: BofA Global Research. Data from 1-Jan-95 to 8-May-26. Stocks' BRI computed using data since SPX inclusion. See Disclaimer in Exhibit 8.   
+BofA GLOBAL RESEARCH
+
+Exhibit 12: The total index weight of SPX stocks exhibiting frothy behaviour has also risen but remains below Dotcom bubble peaks
+Total weight of SPX stocks with BRIs above 0.8   
+![](images/e2274f05ed8c37797e3c3a7b8acd88c6eed90bcc95011e8abd10875386f16f7e.jpg)
+
+<details>
+<summary>line</summary>
+
+| Date       | Total weight of Stock BRIs |
+| ---------- | --------------------------- |
+| 08-May-26  | 11.2%                       |
+</details>
+
+Source: BofA Global Research. Data from 1-Jan-95 to 8-May-26. Stocks' BRI computed using data since SPX inclusion. See Disclaimer in Exhibit 8.   
+BofA GLOBAL RESEARCH
+
+Exhibit 13: Tech hardware stocks like INTC, DELL, KEYS, NXPI rank amongst the highest in terms of their Bubble Risk Indicators for S&P 500 members S&P 500 member stocks with highest BRI reading (as of 8-May-26)   
+![](images/dc55c412209dd9ce710fcc9cc9f1e93c2306a433b1ffe56ca2c2c7b166fd7f6d.jpg)
+
+<details>
+<summary>bar</summary>
+
+| Company | Value |
+| :--- | :--- |
+| INTC | 1.00 |
+| DOC | 0.98 |
+| DELL | 0.97 |
+| CBOE | 0.95 |
+| KEYS | 0.94 |
+| NXPI | 0.94 |
+| AKAM | 0.94 |
+| GLW | 0.93 |
+| MU | 0.92 |
+| AMD | 0.92 |
+| TXN | 0.91 |
+| DVA | 0.91 |
+| PANW | 0.90 |
+| PWR | 0.89 |
+| GNRC | 0.89 |
+| LYB | 0.86 |
+| CAT | 0.86 |
+| STX | 0.84 |
+| CSCO | 0.84 |
+| VTRS | 0.83 |
+| CMI | 0.81 |
+| IRM | 0.81 |
+| WDC | 0.81 |
+| JBL | 0.80 |
+| ADI | 0.80 |
+</details>
+
+Source: BofA Global Research. Data as of 8-May-26. Note: Stocks' BRI computed using data since S&P 500 inclusion. See Disclaimer in Exhibit 8. Note that the BRI is a purely price-based metric intended to quantify the degree of bubble-like price action. It is not a fundamental view on the stock and should be used only as a complement to fundamental and positioning-based metrics.   
+BofA GLOBAL RESEARCH
+
+Exhibit 14: US momentum & TMT, EU semis & power grids and APAC AI beneficiaries are amongst the global themes showing bubble-like price action as per their high BRIs
+
+Bubble Risk Indicator on selected BofA Custom Baskets\* (as of 8-May-26)
+
+<table><tr><td>Basket</td><td>Ticker</td><td>BRI</td><td>Basket</td><td>Ticker</td><td>BRI</td><td>Basket</td><td>Ticker</td><td>BRI</td><td>Basket</td><td>Ticker</td><td>BRI</td></tr><tr><td>AMRS</td><td></td><td></td><td>US TMT Profitable Growth</td><td>MLUTMTPG</td><td>0.44</td><td>EU Security DEIS</td><td>MLEUDEIS</td><td>0.69</td><td>China Technology Localization</td><td>MLHKCTLC</td><td>0.71</td></tr><tr><td>US TMT Momentum Factor</td><td>MLUPTMMO</td><td>1.00</td><td>US Defense Technology</td><td>MLUDEFTC</td><td>0.43</td><td>European Reflation</td><td>MLD1REFL</td><td>0.68</td><td>APAC Smart Glasses</td><td>MLAPSMGL</td><td>0.70</td></tr><tr><td>US Industrials Momentum Factor</td><td>MLUPINMO</td><td>0.95</td><td>US Nuclear Energy Exposed</td><td>MLUSNUCL</td><td>0.42</td><td>EU Steel</td><td>MLESTEEL</td><td>0.63</td><td>PY Winners Depreciation</td><td>MLHKJPFX</td><td>0.69</td></tr><tr><td>US TMT Memory Basket</td><td>MLUMEMOR</td><td>0.90</td><td>US Consensus Value Shorts</td><td>MLDIMSVL</td><td>0.42</td><td>EU Cyclicals</td><td>MLEUCYCL</td><td>0.60</td><td>Japan Fiscal Impact</td><td>MLAPGEJP</td><td>0.67</td></tr><tr><td>US Momentum Factor</td><td>MLUPMOMO</td><td>0.88</td><td>US Golden Dome Basket</td><td>MLUGDOME</td><td>0.40</td><td>EU Renewable Utilities</td><td>MLEURNEW</td><td>0.59</td><td>Japan Industrials</td><td>MLAPJPIN</td><td>0.66</td></tr><tr><td>US Exporters</td><td>MLUXPORT</td><td>0.87</td><td>US Soft Landing</td><td>MLSLAND</td><td>0.40</td><td>EU Ukraine Recovery</td><td>MLERBUKR</td><td>0.58</td><td>Korea Tourism</td><td>MLHKKRTM</td><td>0.65</td></tr><tr><td>US Electric Grid Enablers</td><td>MLUGRID</td><td>0.86</td><td>US Utility Growth Basket</td><td>MLUSGUTE</td><td>0.39</td><td>EU stocks China expo</td><td>MLD1CHEX</td><td>0.56</td><td>China Robotics &amp; AI</td><td>MLAPCHAI</td><td>0.62</td></tr><tr><td>US TMT Supply Shortage</td><td>MLUTMTSP</td><td>0.86</td><td>US EU Exposed</td><td>MLUSEURO</td><td>0.39</td><td>EU Max Momo Top</td><td>MLEMOMOL</td><td>0.55</td><td>Japan High EM Exposure</td><td>MLHKHICH</td><td>0.59</td></tr><tr><td>US Materials Momentum Factor</td><td>MLUPMAMO</td><td>0.83</td><td>US Cyber Security Basket</td><td>MLCYBRS</td><td>0.37</td><td>German Infrastructure</td><td>MLEGEINF</td><td>0.54</td><td>China Property</td><td>MLCNPROP</td><td>0.58</td></tr><tr><td>US Space Race</td><td>MLUSPACE</td><td>0.83</td><td>US Boomers Spend</td><td>MLUBOOM</td><td>0.36</td><td>EU High USD Exposure</td><td>MLEUAMER</td><td>0.54</td><td>Japan Exporter to the US</td><td>MLAPJPEP</td><td>0.58</td></tr><tr><td>US Staples Momentum Factor</td><td>MLUPSTMO</td><td>0.82</td><td>US Medicaid</td><td>MLELECHC</td><td>0.36</td><td>EU Cyclical Chems</td><td>MLECCHEM</td><td>0.53</td><td>Japan Mgmt Transformation</td><td>MLAPJACA</td><td>0.56</td></tr><tr><td>US SMID Cap Semis</td><td>MLSEMISM</td><td>0.82</td><td>US Old Economy</td><td>MLOLDEC</td><td>0.35</td><td>EU Stagflation</td><td>MLEUSTAG</td><td>0.52</td><td>Korea Export ex Auto/Tech</td><td>MLKRREXP</td><td>0.54</td></tr><tr><td>US Data Center Builders</td><td>MLDATACB</td><td>0.81</td><td>US High Quality Yield</td><td>MLHQYLQ</td><td>0.35</td><td>EU HY Debt</td><td>MLEUDEBT</td><td>0.51</td><td>China Little Giants</td><td>MLHKCHLG</td><td>0.53</td></tr><tr><td>US Cyclicals Ex Commods</td><td>MLCYCLX</td><td>0.80</td><td>US Defense Electronics</td><td>MLUDELEC</td><td>0.33</td><td>Industrial Manufacturing</td><td>MLEINMAN</td><td>0.51</td><td>Japan Tariff Exposed</td><td>MLAPJPTR</td><td>0.53</td></tr><tr><td>US AI Beneficiaries</td><td>MLUSAI</td><td>0.78</td><td>US SMID Cap Utilities</td><td>MLUSUTES</td><td>0.32</td><td>EU Consensus Longs</td><td>MLD1LSEU</td><td>0.51</td><td>Australian Mining</td><td>MLHKAUMN</td><td>0.52</td></tr><tr><td>US Hardware</td><td>MLUSHRDW</td><td>0.77</td><td>US Leisure Travel</td><td>MLDILEIS</td><td>0.32</td><td>EU Most Gas Exp</td><td>MLD1GASX</td><td>0.50</td><td>Japan Inflation</td><td>MLHKJPF</td><td>0.52</td></tr><tr><td>US AI Infrastructure</td><td>MLAIINFR</td><td>0.75</td><td>US Stagflation</td><td>MLSTGFL8</td><td>0.30</td><td>Gold Miners</td><td>MLD1GLDM</td><td>0.49</td><td>APAC Oil exposed</td><td>MLAPOIL</td><td>0.51</td></tr><tr><td>US Renewables</td><td>MLUSRNEW</td><td>0.74</td><td>US Domestic Revenue</td><td>MLDOMSTC</td><td>0.27</td><td>EU Short Cycle Industrial</td><td>MLEINSCY</td><td>0.45</td><td>China AI Supply Chain</td><td>MLAPAISC</td><td>0.51</td></tr><tr><td>US National Champions</td><td>MLUCHAMP</td><td>0.73</td><td>US Software</td><td>MLUSSOFT</td><td>0.26</td><td>French Domestics</td><td>MLD1FRAN</td><td>0.44</td><td>APAC AI Infrastructure</td><td>MLAPAIF</td><td>0.51</td></tr><tr><td>US Transports</td><td>MLUTRANS</td><td>0.73</td><td>US Regulated Utilities</td><td>MLUREGU</td><td>0.26</td><td>EU M&amp;A</td><td>MLEUMNAC</td><td>0.42</td><td>Japan Sanaenomics</td><td>MLAPJPSA</td><td>0.50</td></tr><tr><td>US Beta Factor</td><td>MLUPBETA</td><td>0.72</td><td>US Quality Factor</td><td>MLUPQUAL</td><td>0.25</td><td>EU Russia Exposed</td><td>MLEURUSS</td><td>0.41</td><td>Japan Cyclicals</td><td>MLHKJPY</td><td>0.44</td></tr><tr><td>US Financials Momentum Factor</td><td>MLUPFINM</td><td>0.72</td><td>US Defense Contractors</td><td>MLDEFCON</td><td>0.25</td><td>EU Capital Goods</td><td>MLD1CAPG</td><td>0.40</td><td>APAC Coal</td><td>MLAPCOAL</td><td>0.40</td></tr><tr><td>US Value Factor</td><td>MLUPVALU</td><td>0.70</td><td>US Consumer Goods</td><td>MLGOODS</td><td>0.24</td><td>UK Banks</td><td>MLD1UKBK</td><td>0.37</td><td>APAC Shipping</td><td>MLAPSHIP</td><td>0.40</td></tr><tr><td>US PMI Sensitive Industrials</td><td>MLUINDUS</td><td>0.70</td><td>US Discretionary Momentum Factor</td><td>MLUPCDMO</td><td>0.23</td><td>EU AI Adopters</td><td>MLEADOPT</td><td>0.31</td><td>Japan GPIF</td><td>MLHKGPfP</td><td>0.40</td></tr><tr><td>US Managed Care</td><td>MLDIMNGC</td><td>0.68</td><td>US Bond Proxy</td><td>MLEBOND</td><td>0.23</td><td>EU Consensus Shorts</td><td>MLD1MSEU</td><td>0.30</td><td>APAC EV</td><td>MLHKAPRN</td><td>0.35</td></tr><tr><td>US Low Int Coverage</td><td>MLINTC</td><td>0.67</td><td>US Middle Income Spend</td><td>MLUMIDCG</td><td>0.22</td><td>EU Sovereign Priority</td><td>MLEUSOVR</td><td>0.30</td><td>China High Dividend Yield</td><td>MLAPCHDV</td><td>0.33</td></tr><tr><td>US Power Supercycle</td><td>MLUSPOWR</td><td>0.67</td><td>US Consumer China Tariff Exposed</td><td>MLCTARIF</td><td>0.20</td><td>EU Exposed to US Consumer</td><td>MLEUSCON</td><td>0.30</td><td>China SOEs</td><td>MLHKZSOE</td><td>0.32</td></tr><tr><td>Canada Infrastructure &amp; Defense</td><td>MLCAINFR</td><td>0.66</td><td>US Consumer Services</td><td>MLSERVE</td><td>0.20</td><td>Italian Banks</td><td>MLEUITBK</td><td>0.27</td><td>Japan NISA</td><td>MLHKNISA</td><td>0.32</td></tr><tr><td>US Hard Assets, Low Obsolesce (HALO)</td><td>MLUHALO</td><td>0.64</td><td>US Utility Defensive Yield</td><td>MLUSRUTE</td><td>0.20</td><td>EU Defense Electronics</td><td>MLEDEFEI</td><td>0.27</td><td>APAC Petrochem</td><td>MLAPCHEM</td><td>0.31</td></tr><tr><td>US Battery Ecosystem</td><td>MLUSBATT</td><td>0.63</td><td>US Strong Balance Sheets</td><td>MLSTRNG</td><td>0.18</td><td>EU Tariff Exposed</td><td>MLETARIF</td><td>0.26</td><td>APAC Airline</td><td>MLHKFLYA</td><td>0.30</td></tr><tr><td>US Reshoring Basket</td><td>MLRSHORE</td><td>0.62</td><td>US Higher Oil Price &#x27;At-Risk&#x27;</td><td>MLOILRSK</td><td>0.17</td><td>EU European Domestics</td><td>MLEUDOMS</td><td>0.23</td><td>China Tariff</td><td>MLHKRPW2</td><td>0.27</td></tr><tr><td>US LNG</td><td>MLUELNG</td><td>0.61</td><td>US New Construction</td><td>MLNCONST</td><td>0.17</td><td>EU Defensives</td><td>MLEUDFS</td><td>0.23</td><td>APAC World Cup</td><td>MLAPWCUP</td><td>0.25</td></tr><tr><td>US Copper Exposed Basket</td><td>MLUSCOPP</td><td>0.60</td><td>US Building Products</td><td>MLUBUILD</td><td>0.17</td><td>UK M&amp;A Candidates</td><td>MLUKMNAC</td><td>0.21</td><td>HK Dual listed H-shares</td><td>MLHKPREM</td><td>0.25</td></tr><tr><td>US Consensus High Beta Shorts</td><td>MLDIHBHS</td><td>0.60</td><td>US Independent Power Producers (IPPs)</td><td>MLUIPPS</td><td>0.16</td><td>EU Cyclical Exp to US</td><td>MLECYCUS</td><td>0.18</td><td>Japan Defensives</td><td>MLHKJPDF</td><td>0.21</td></tr><tr><td>US Defense, Energy, Infra &amp; Security</td><td>MLUDEIS</td><td>0.59</td><td>US Consensus Large Cap Shorts</td><td>MLDISSRT</td><td>0.16</td><td>Germany Domestic</td><td>MLEGEDOM</td><td>0.17</td><td>China Consumption Stimulus</td><td>MLAPCHST</td><td>0.20</td></tr><tr><td>US Consensus Small Cap Shorts</td><td>MLDIRSRT</td><td>0.59</td><td>US Health Care Momentum Factor</td><td>MLUPHCMO</td><td>0.15</td><td>EU Max Momo Bottom</td><td>MLEMOMOS</td><td>0.17</td><td>Japan Domestic Upcycle</td><td>MLAPJDUB</td><td>0.18</td></tr><tr><td>US Residual Volatility Factor</td><td>MLUPVOLA</td><td>0.59</td><td>US Defensive Industrials</td><td>MLUDINDU</td><td>0.15</td><td>EU Travel Basket</td><td>MLD1TRAV</td><td>0.16</td><td>Greater China Robotic</td><td>MLAPHUMA</td><td>0.17</td></tr><tr><td>US Consensus Growth Shorts</td><td>MLDIMSGR</td><td>0.58</td><td>US Low Income Spend</td><td>MLSPREE</td><td>0.14</td><td>EU Software</td><td>MLESOFTW</td><td>0.14</td><td>Japan Electric Power</td><td>MLJPTEL</td><td>0.16</td></tr><tr><td>US Foreign Revenue</td><td>MLFORER</td><td>0.57</td><td>US Generation Z Basket</td><td>MLUGENZ</td><td>0.13</td><td>UK Doms ex-Homebuilders</td><td>MLUKDOMX</td><td>0.13</td><td>China Anti Involution Basket</td><td>MLAPANTI</td><td>0.10</td></tr><tr><td>US Retail Signal</td><td>MLRETAIL</td><td>0.56</td><td>US True Defensives</td><td>MLTRUDEF</td><td>0.12</td><td>EU Defense</td><td>MLD1DEFE</td><td>0.13</td><td>China Internet</td><td>MLHKCHIH</td><td>0.08</td></tr><tr><td>Domestic Tax Policy</td><td>MLUTAXD</td><td>0.56</td><td>US Wellness Basket</td><td>MLUWELL</td><td>0.11</td><td>EU Autos</td><td>MLEUAUTO</td><td>0.11</td><td>China Consumer Old</td><td>MLHKCHCO</td><td>0.07</td></tr><tr><td>US NeoCloud Basket</td><td>MLUNEOCL</td><td>0.55</td><td>US Energy Momentum Factor</td><td>MLUPENMO</td><td>0.11</td><td>EU Consumer Discretionary</td><td>MLEUCONS</td><td>0.11</td><td>Macau Gaming</td><td>MLHKCMGM</td><td>0.06</td></tr><tr><td>US China Importers</td><td>MLCHIMPT</td><td>0.54</td><td>US Growth Factor</td><td>MLUPGROW</td><td>0.11</td><td>EU Luxury</td><td>MLEULUXG</td><td>0.10</td><td>China National Brand</td><td>MLHKCBVM</td><td>0.06</td></tr><tr><td>US Refinance Risk</td><td>MLREFIN</td><td>0.53</td><td>US Private Equity Funds</td><td>MLDIPTPE</td><td>0.09</td><td>UK Domestic Names</td><td>MLUKDOMS</td><td>0.09</td><td>Japan Retail</td><td>MLAPJRE</td><td>0.04</td></tr><tr><td>US Quantum Computing</td><td>MLUQUANT</td><td>0.51</td><td>US High End Consumer</td><td>MLDIEC</td><td>0.09</td><td>EU Defence Exposed</td><td>MLEINDEF</td><td>0.06</td><td>China Consumer New</td><td>MLAPHKCN</td><td>0.03</td></tr><tr><td>US High Default Risk</td><td>MLUHDFLX</td><td>0.51</td><td>US Private Credit Proxy</td><td>MLPRCRED</td><td>0.06</td><td>UK Consumer</td><td>MLD1UKCS</td><td>0.04</td><td>APAC Gold</td><td>MLAPGOLD</td><td>0.03</td></tr><tr><td>US Hard Landing</td><td>MLHLAND</td><td>0.50</td><td>US Alternative Managers</td><td>MLUALTS</td><td>0.05</td><td>UK Housebuilders</td><td>MLUKHOME</td><td>0.04</td><td>Japan Wage Growth</td><td>MLHKJPWG</td><td>0.03</td></tr><tr><td>US Crypto Exposed</td><td>MLDICRYP</td><td>0.49</td><td>US Water Ecosystem</td><td>MLUH2O</td><td>0.05</td><td>APAC</td><td></td><td></td><td>Japan Defense</td><td>MLAPJDEF</td><td>0.02</td></tr><tr><td>US Boosters (Cyclicals)</td><td>MLBOOSTR</td><td>0.49</td><td>US TMT Defensives</td><td>MLUTMTDF</td><td>0.02</td><td>Korea Holdco</td><td>MLAPKRHO</td><td>0.98</td><td></td><td></td><td></td></tr><tr><td>US TMT Durable Compounders</td><td>MLUTMTDC</td><td>0.48</td><td>US Pharma Hyperscalers Basket</td><td>MLURXHYP</td><td>0.02</td><td>AXJ Inflation</td><td>MLHKAXIF</td><td>0.97</td><td></td><td></td><td></td></tr><tr><td>US Efficient Growth</td><td>MLUEGROW</td><td>0.48</td><td>US GLP-1 Disruption Risk</td><td>MLXGLP1</td><td>0.00</td><td>Korea Corporate Reform</td><td>MLHKKRPB</td><td>0.97</td><td></td><td></td><td></td></tr><tr><td>US No Landing</td><td>MLNLAND</td><td>0.47</td><td>EMEA</td><td></td><td></td><td>Korea Battery</td><td>MLKRBATT</td><td>0.96</td><td></td><td></td><td></td></tr><tr><td>US Long Term Debt Maturities</td><td>MLLTMATS</td><td>0.47</td><td>EU Semis &amp; Semicaps</td><td>MLD1EUSM</td><td>0.91</td><td>APAC AI Beneficiaries</td><td>MLHKAPAI</td><td>0.93</td><td></td><td></td><td></td></tr><tr><td>US Weak Balance Sheets</td><td>MLWEAK</td><td>0.47</td><td>EU Power Grids</td><td>MLEUGRID</td><td>0.89</td><td>APAC SG</td><td>MLHKAPSG</td><td>0.90</td><td></td><td></td><td></td></tr><tr><td>US Commodities Complex</td><td>MLCOMMOD</td><td>0.46</td><td>EU AI Power Surge</td><td>MLESURGE</td><td>0.87</td><td>Taiwan Al basket</td><td>MLHKTWAI</td><td>0.89</td><td></td><td></td><td></td></tr><tr><td>Brazil Election Basket</td><td>MLBZELEC</td><td>0.46</td><td>EU Memory</td><td>MLEUBYTE</td><td>0.84</td><td>IPY Winners Appreciation</td><td>MLHKJPYA</td><td>0.88</td><td></td><td></td><td></td></tr><tr><td>US Commercial Biotech</td><td>MLUSCBIO</td><td>0.46</td><td>Oil &amp; Gas ex-Renewables</td><td>MLD1OILX</td><td>0.84</td><td>China OpenClaw</td><td>MLAPCLAW</td><td>0.87</td><td></td><td></td><td></td></tr><tr><td>US Small Cap Earners</td><td>MLSMEARN</td><td>0.46</td><td>EU HALO Basket</td><td>MLEUHALO</td><td>0.77</td><td>APAC Nuclear</td><td>MLHKNUCL</td><td>0.82</td><td></td><td></td><td></td></tr><tr><td>US AI Adopters</td><td>MLUADOPT</td><td>0.44</td><td>EU New Energy Order</td><td>MLEUNEOE</td><td>0.72</td><td>Japan Corp Reform</td><td>MLHKJPRE</td><td>0.80</td><td></td><td></td><td></td></tr></table>
+
+Source: BofA Global Research. Data as of 8-May-26. \*Disclaimer: These BofA baskets are proprietary baskets structured and maintained by the BofA trading desk. For more details on these baskets, please contact the team. See BRI disclaimer in Exhibit 8.
+
+BofA GLOBAL RESEARCH
+
+# Lookback puts look like ideal hedge for rising bubble risks
+
+The historic rally in US tech stocks, especially tech hardware, has now powered the Nasdaq to 12 fresh all-time highs in the past month. Momentum in the Nasdaq remains high, with current spot sitting at historically stretched levels vs the 3m moving average (Exhibit 15). Fear of the upside is dominating, as evidenced by the NDX upside-to-downside realized vol ratio now sitting in its $99^{\text{th}}$ %ile since 1985 (Exhibit 16), with dips continuing to be bought rapidly.
+
+In such an advancing market still facing persistent geopolitical & macro uncertainty, it has been challenging to carry longer-dated fixed strike hedges (like SPX puts) for protection given the elevated strike & timing risk.
+
+How can one combat these challenges?
+
+Exhibit 15: Strength in US tech stocks has powered historic momentum in the Nasdaq, rivalling periods like the Dotcom bubble and the post-Covid melt up   
+NDX 3m momentum (% distance of current price from 3m moving average)   
+![](images/b03e257246b267a96bc1d074d3a1761972d6ec4240b121a004331bac4800970a.jpg)
+
+<details>
+<summary>line</summary>
+
+| Year | 3m NDX momentum |
+| ---- | --------------- |
+| '85  | ~0%             |
+| '90  | ~-30%           |
+| '95  | ~10%            |
+| '00  | ~30%            |
+| '05  | ~10%            |
+| '10  | ~-30%           |
+| '15  | ~10%            |
+| '20  | ~-20%           |
+| '25  | ~10%            |
+</details>
+
+Source: BofA Global Research. Data from Feb-1985 to 8-May-26.   
+BofA GLOBAL RESEARCH
+
+Exhibit 16: Fear of the upside remains dominant as Nasdaq upside realized vol remains historically stretched vs downside vol (ratio sits in the $99^{\text{th}}$ \%ile since 1985)   
+NDX 1m upside / downside realized vol ratio   
+![](images/7f1115d2b789d94ed4a0a7c2b47fff7fc2e707a34335651a36e124ac668071b4.jpg)
+
+<details>
+<summary>bar_line</summary>
+
+| Year | NDX 1m up vol / down vol | 8-May-26 |
+|------|---------------------------|----------|
+| '25  | ~3.0                      | 2.7      |
+</details>
+
+Source: BofA Global Research. Data from Feb-1985 to 8-May-26.   
+BofA GLOBAL RESEARCH
+
+One way we like to address strike & timing risk in today's equity market is through long-vol hedges. Over the past month's melt-up, hedging long equity positions with long VIX futures would have performed well (Exhibit 17), in-line with strong performance over the past 2 years. More broadly, implied volatility continues to find support despite the optimism in equity markets, as seen from relatively high VIX spot levels despite US equities at all-time highs (Exhibit 18).
+
+In this context, we like hedging with VIX call spreads to add long vol exposure in a defined-risk structure, with up to 15x payout ratios.
+
+Trade (VIX call spread): Buy VIX Jun 25-40 call spread for \$1 indic (15x max payout; UXM6 ref. 20.95). Risk involves upfront premium paid.
+
+Exhibit 17: Hedging long equities with long VIX futures would have continued to perform well during the past month's melt-up, showing the value of long vol hedges in mitigating strike risk   
+Hypothetical performance of long ES1, long UX1 with beta-neutral sizing   
+![](images/7ca12e00f2a8d9576f2a0aac568e494d9719527817e936bc8983fc47b98c986d.jpg)
+
+<details>
+<summary>line</summary>
+
+| Date   | Long ES1, long UX1 (beta-neutral) |
+|--------|-----------------------------------|
+| Jan-26 | 100                               |
+| Feb-26 | ~103                              |
+| Mar-26 | ~108                              |
+| Apr-26 | ~102                              |
+| May-26 | ~105                              |
+</details>
+
+Source: BofA Global Research. Data from 1-Jan-26 to 8-May-26. Futures are rolled 1 business day before their respective expiries. Beta neutral sizing uses trailing 1y realized beta. This performance is backtested and does not represent the actual performance of any account or fund. Backtested performance depicts the theoretical (not actual) performance of a particular strategy over the time period indicated. No representation is being made that any actual portfolio is likely to have achieved returns similar to those shown herein.   
+BofA GLOBAL RESEARCH
+
+Exhibit 18: The VIX remains high compared to prior periods when the S&P was at all-time highs (only surpassed by the Dotcom bubble & Covid melt-up), an indication of vol support in today's bull run   
+VIX levels when SPX at all-time highs   
+![](images/1f30c2d0b5d4ed19db29541097f817475e85ac337763f20e0b25c463b67aa0f3.jpg)
+
+<details>
+<summary>scatter</summary>
+
+| Year | VIX when SPX at ATH |
+| ---- | ------------------- |
+| '90  | ~18                 |
+| '95  | ~10                 |
+| '00  | ~25                 |
+| '05  | ~15                 |
+| '10  | ~12                 |
+| '15  | ~14                 |
+| '20  | ~16                 |
+| '25  | ~18                 |
+</details>
+
+Source: BofA Global Research, Bloomberg. Data from 1-Jan-90 to 8-May-26.
+
+Another way that we like to mitigate strike risk when hedging is through resettable strike structures such as max lookback puts & expanding put spreads.
+
+The max lookback feature re-strikes a put option using the reference of the highest spot price observed over the life of the option (Exhibit 19). In markets with strong upside momentum (like US equities today), the additional optionality to re-strike protection higher with the market's move up can be especially valuable.
+
+However, with the additional cost of the max lookback feature being largely driven by the level of implied vol, and QQQ implied vol relatively elevated today, we like cheapening the max lookback put by selling a further OTM vanilla put. This creates an expanding put spread while taking advantage of still-elevated QQQ put skew.
+
+Trade (QQQ expanding put spread): Buy QQQ Dec26 90% max lookback put (daily obs.), sell QQQ Dec26 80% vanilla put, for 3.57% indic. (+1x, -1x)
+
+Risk involves upfront premium paid.
+
+While the expanding put spread can appear materially more expensive than a vanilla put and cause some sticker shock (2% more than vanilla put spread), its ability to capture the path of the market (rather than just spot at expiry) greatly increases its reliability and prospective payout potential, especially in strong up-trending markets.
+
+Looking at hypothetical historical performance using current option prices, the expanding put spread would have produced materially superior expiry payout ratios during both the build-up and unwind of the Dotcom bubble in the late '90s, while also achieving a higher in-the-money frequency (Exhibit 20).
+
+BofA GLOBAL RESEARCH
+
+Exhibit 19: A max lookback feature re-strikes the put option higher based on the max stock price observed, helping mitigate timing & strike risk in markets with strong upside momentum   
+Hypothetical strikes of QQQ 90% vanilla & max lookback puts since Jan26   
+![](images/47962e9b2c1c83002d1d38e38f5163d5b07f223e73fc92640ac2414dea48c07f.jpg)
+
+<details>
+<summary>line</summary>
+
+| Date   | QQQ  | Vanilla 90% put strike | Max lookback 90% put strike |
+|--------|------|------------------------|------------------------------|
+| May-26 | 710  | 550                    | 640                          |
+</details>
+
+Source: BofA Global Research, Bloomberg. Data from 1-Jan-26 to 8-May-26. Max lookback strike = 90% \* maximum observed spot over life of the option. Vanilla strike = 90% \* initial spot. This performance is backtested and does not represent the actual performance of any account or fund. Backtested performance depicts the theoretical (not actual) performance of a particular strategy over the time period indicated. No representation is being made that any actual portfolio is likely to have achieved returns similar to those shown herein.   
+BofA GLOBAL RESEARCH
+
+Exhibit 20: At current costs, expanding put spreads would have delivered superior payout ratios and greater reliability than vanilla put spreads during the momentum-driven Dotcom bubble of the late 90s. Hypothetical back-cast of NDX 7m vanilla & expanding put spreads since '85   
+![](images/b6c5cfdecfe42b2c978caf58939e8cdd9d7107bcc7023659c206668ad15ce2ed.jpg)
+
+<details>
+<summary>bar</summary>
+
+| Year | Expanding put spread | Vanilla put spread |
+| ---- | --------------------- | ------------------ |
+| '85  | 1.5x                  | 1.8x               |
+| '86  | 2.5x                  | 3.0x               |
+| '87  | 7.5x                  | 6.5x               |
+| '88  | 1.0x                  | 1.5x               |
+| '89  | 1.5x                  | 2.0x               |
+| '90  | 7.0x                  | 6.0x               |
+| '91  | 1.0x                  | 1.5x               |
+| '92  | 2.5x                  | 3.5x               |
+| '93  | 1.5x                  | 2.0x               |
+| '94  | 1.0x                  | 1.5x               |
+| '95  | 1.5x                  | 2.0x               |
+| '96  | 2.0x                  | 2.5x               |
+| '97  | 2.5x                  | 3.0x               |
+| '98  | 3.0x                  | 3.5x               |
+| '99  | 4.5x                  | 4.0x               |
+| '00  | 13.5x                 | 6.5x               |
+| '01  | 12.0x                 | 6.0x               |
+| '02  | 9.0x                  | 5.5x               |
+| '03  | 8.0x                  | 5.0x               |
+| '04  | 6.0x                  | 4.5x               |
+| '05  | 3.0x                  | 3.5x               |
+| '06  | 1.0x                  | 1.5x               |
+| '07  | 1.5x                  | 2.0x               |
+| '08  | 2.0x                  | 2.5x               |
+| '09  | 3.0x                  | 3.5x               |
+| '10  | 8.5x                  | 6.5x               |
+| '11  | 1.0x                  | 1.5x               |
+| '12  | 1.5x                  | 2.0x               |
+| '13  | 2.0x                  | 2.5x               |
+| '14  | 1.0x                  | 1.5x               |
+| '15  | 1.5x                  | 2.0x               |
+| '16  | 2.0x                  | 2.5x               |
+| '17  | 1.0x                  | 1.5x               |
+| '18  | 1.5x                  | 2.0x               |
+| '19  | 2.0x                  | 2.5x               |
+| '20  | 6.5x                  | 6.0x               |
+| '21  | 3.0x                  | 3.5x               |
+| '22  | 4.0x                  | 4.5x               |
+| '23  | 4.5x                  | 5.0x               |
+| '24* | -                     | -                  |
+| '25* | -                     | -                  |
+</details>
+
+Source: BofA Global Research. Data from Feb-1985 to 8-May-26. Historical NDX returns vs current indicative option prices. This performance is backtested and does not represent the actual performance of any account or fund. Backtested performance depicts the theoretical (not actual) performance of a particular strategy over the time period indicated. No representation is being made that any actual portfolio is likely to have achieved returns similar to those shown herein.   
+BofA GLOBAL RESEARCH
+
+To contextualize the max lookback cost another way, the premium associated with the 90% max lookback put is roughly equivalent to that of a 97% vanilla put. This implies that the max lookback feature would ‘breakeven’ so long as QQQ’s max draw-up through year-end exceeds roughly 8% from here $^{1}$ (a threshold that sits in the bottom decile of 7m max draw-ups since 2023).
+
+For those seeking further cheapening within the max lookback put format, there are several levers: tightening the width of the expanding put spread, reducing the observation frequency (for example, from daily to weekly), and/or applying a shorter window to the lookback feature (for example, referencing max spot only through Sep-26). Each can help lower the outright premium of the structure.
+
+# Fade VSTOXX's ‘war risk premium’ with long put ratios
+
+What: Buy Jun26 1x2 +19-17 V2X put ratios for 0.475 (fut ref: 21.95)
+
+Why: With US-Iran negotiations seeing intermittent setbacks but no sign of re-escalation thus far, markets appear keen to look through the conflict toward an eventual resolution. Even Brent crude, an indicator of war-related sentiment, remains below levels from a week ago, while EU equities are higher in the same period. This gradual fading of geopolitical tail risk as the war negotiations extend can be seen clearly in the VIX, which has fully normalized to pre-war averages (along with a steep curve), highlighting a potential path for the V2X to follow (V2X's term structure is flatter as it has a greater 'war premium', Exhibit 29). Indeed, the V2X is likely reflecting Europe's sensitivity to the conflict due to its energy dependence and geographical proximity, in addition to still-long V2X futures' positioning (Exhibit 28). If confidence in a durable ceasefire builds, the V2X may have room to 'catch down' and for its curve to revert towards being upward-sloping. In this context, a Jun26 V2X 19–17 1x2 put ratio is attractive, offering a max payout ratio of \~4x premium if the V2X settles around pre-war averages (high-teens), an efficient way to position for vol normalization. The structure breaks even at \~15 vol, within 1 volatility point of the index's 1-year low reached during the Dec25 holiday period (Exhibit 31).
+
+Risks: Premium would be lost if the V2X fut. stays above the long put strike (less premium paid) or it declines below the downside breakeven.
+
+Exhibit 21: Eurex ‘Agent’ and ‘Prop’ positions suggest V2X futures positioning remains long, though less extreme than wartime peaks   
+Net V2X futures open interest per contract for EUREX Agent & Proprietary (Prop) accounts.   
+![](images/9823d9afdc431b83df61f85a74fd380c44a00d1e73509ccdc76c4543c73795b3.jpg)
+
+<details>
+<summary>line</summary>
+
+| Date    | Expiry date | May-26 | Jun-26 | Jul-26 | Expired contracts (2025–2026) |
+|---------|-------------|--------|--------|--------|-------------------------------|
+| Feb-25  |             |        |        |        |                               |
+| May-25  |             |        |        |        |                               |
+| Aug-25  |             |        |        |        |                               |
+| Nov-25  |             |        |        |        |                               |
+| Feb-26  |             |        |        |        |                               |
+| May-26  |             |        |        |        |                               |
+</details>
+
+Source: BofA Global Research, Bloomberg, Deutsche Börse. Data: 01-Feb-25 to 06-May-26. EUREX defines participant types as: Agent (trading on behalf of customers), MM (providing liquidity), Prop (trading for own account).
+
+Exhibit 22: V2X retains the ‘war risk premium’ with its flat term structure vs pre-war averages, while the VIX curve has re-steepened   
+Latest V2X and VIX term structures, and the pre-(Iran) war average levels (of constant tenor contract equivalents) in the last year   
+![](images/5a0952e6bf1dc23dae71c4a5629fdc279c670ec4085e038adbd471209ce124ba.jpg)
+
+<details>
+<summary>line</summary>
+
+| Month   | V2X  | VIX  | V2X (prewar average) | VIX (prewar average) |
+|---------|------|------|----------------------|----------------------|
+| Spot    | 22.5 | 18.2 | 17.9                 | 17.3                 |
+| May-26  | 21.8 | 19.2 | 17.9                 | 17.5                 |
+| Jun-26  | 22.0 | 20.8 | 18.5                 | 18.0                 |
+| Jul-26  | 22.2 | 21.7 | 19.0                 | 19.5                 |
+| Aug-26  | 22.0 | 22.0 | 19.5                 | 20.0                 |
+| Sep-26  | 21.9 | 22.3 | 19.8                 | 20.5                 |
+| Oct-26  | 22.0 | 22.8 | 20.0                 | 20.8                 |
+| Nov-26  | 21.9 | 22.8 | 20.1                 | 21.0                 |
+| Dec-26  | 21.7 | 22.6 | 20.0                 | 21.3                 |
+</details>
+
+Source: BofA Global Research, Bloomberg. Data from 8-May-25 till 11-May-26   
+BofA GLOBAL RESEARCH
+
+BofA GLOBAL RESEARCH
+
+Exhibit 23: V2X Jun26 +19-17 1x2 put ratios balance attractive maximum payout ratios with a low (\~15v) breakeven level...   
+VSTOXX Jun26 1x2 Put ratio structures: Lower Breakeven level vs Maximum Payout Ratio (Structure strikes shown in the labels)   
+![](images/df4e59d488265e95b62fd7ab0b93a8aefa48aee41c0d4875841d725cb66b8fc1.jpg)
+
+<details>
+<summary>scatter</summary>
+
+| Year Range | Lower Breakeven Level | Max Payout Ratio |
+| ---------- | --------------------- | ---------------- |
+| 19-16      | 13.0                  | 4.8              |
+| 20-16      | 12.0                  | 3.6              |
+| 21-17      | 13.0                  | 2.8              |
+| 22-18      | 14.0                  | 2.4              |
+| 20-17      | 14.0                  | 3.5              |
+| 21-18      | 15.0                  | 3.0              |
+| 20-18      | 16.0                  | 5.0              |
+</details>
+
+Source: BofA Global Research, Bloomberg. Data as of 11 May 26, using last prices. We show trade structures with long strike at 19 or higher, min strike difference of \~2v and a downside breakeven of 12 or higher   
+BofA GLOBAL RESEARCH
+
+Exhibit 24: ...and would stand to gain up to 4x premium if the V2X were to revert to (near) pre-war average levels   
+V2X spot and (Jun26 equiv. constant tenor) futures, and key levels: Prewar V2X average spot, 1x2 Put Ratio strikes and structure downside breakeven   
+![](images/4cefe3ac810ca4bdb37115fd91eba2aa43d60cb126e839f32025cd5100b942f6.jpg)
+
+<details>
+<summary>line</summary>
+
+| Date   | V2X Index | V2X Future (constant tenor, Jun26 equiv.) | Long Put Strike | Max Payout Level | Downside Breakeven | Pre-War Average V2X Spot |
+|--------|-----------|------------------------------------------|-----------------|-----------------|--------------------|--------------------------|
+| May-25 | ~17       | ~17                                      | ~17             | ~17             | ~17                | ~17                      |
+| Aug-25 | ~17       | ~17                                      | ~17             | ~17             | ~17                | ~17                      |
+| Nov-25 | ~17       | ~17                                      | ~17             | ~17             | ~17                | ~17                      |
+| Feb-26 | ~17       | ~17                                      | ~17             | ~17             | ~17                | ~17                      |
+| May-26 | ~34       | ~32                                      | ~32             | ~32             | ~32                | ~32                      |
+</details>
+
+Source: BofA Global Research, Bloomberg. Data from 8-May-25 till 11-May-26. We show pre-(Iran) war average levels (of constant tenor contract equivalents) in the last year.   
+BofA GLOBAL RESEARCH
+
+# Onwards and upwards? FTSEMIB/SX7E x-index risks for war-resolution upside
+
+What: Gain European banks upside exposure via Italian banks by selling an SX7E 2m 25d (\~93%) put to fund 2x FTSEMIB 2m 25d (\~105%) calls.
+
+Why: Given their strongly cyclical characteristics and gearing to European growth, Eurozone banks are well placed to benefit from a ‘war resolution’ scenario and any ensuing market rally, in our view. Importantly, futures positioning in EZ banks does not appear stretched relative to history, reducing risk of a crowding-driven downside shock in case of disappointment (Exhibit 32). Volatility dynamics further reinforce this asymmetry: SX7E has the highest volatility on upside moves relative to downside in Europe (Exhibit 33), consistent with the broader “grind lower, spike higher” pattern in prices observed across many risk assets (see GEVI 6-May, GEVI 14-Apr).
+
+The Italian FTSEMIB provides an attractive complement to SX7E exposure given its increasing concentration in banks. The strong outperformance of UCG and ISP over the past three years (more than tripling and doubling respectively, during a period when the FTSEMIB gained 83%) has likely driven a meaningful rise in their market share and weights, reinforcing FTSEMIB's cyclical profile. The index has exhibited a beta of 1.1 to SXXP YTD, along with strong correlation (>90%) to SX7E and a similar positive sensitivity to rates (Exhibits 35, Exhibit 36). Despite this, the FTSEMIB/SX7E 3m ATMF volatility ratio screens low versus history (Exhibit 34), suggesting relative value in owning FTSEMIB options.
+
+We favour expressing ‘war resolution upside’ via long FTSEMIB calls funded through short SX7E puts. We prefer this cross-index structure to standalone SX7E risk reversals, where the elevated upside vol profile makes calls expensive to own (1x
+
+SX7E 2m 25d put only funds \~1 SX7E 2m 25d call and the funding ratio is not particularly high versus history - 58 $^{th}$ 3y percentile). However, a low FTSEMIB/SX7E vol ratio aids cross-index risk-reversal pricing (Exhibit 37). Indeed, selling 1x SX7E 2m 25d put can fully fund 2x FTSEMIB calls of the same tenor and strike, with the ratio in its \~90th 3y percentile.
+
+Risks: The short put leg would incur losses if SX7E were to fall. Losses on the long call leg would involve the premium paid.
+
+Exhibit 25: Agent futures positioning suggests net longs in European banks are low vs history
+
+Eurex A-accounts notional open interest as % of total open interest and its 1y percentile.
+
+![](images/296ccfc5e1b9f2eb494a2cf6749d93c2f4dc8de5750178e1508875cb06d9d10f.jpg)
+
+<details>
+<summary>bar</summary>
+
+| Category | 1y %-ile | Agent Ratio* (rhs) |
+| -------- | --------- | ------------------ |
+| DAX      | ~5%       | ~-20%              |
+| SX7E     | ~7%       | ~40%               |
+| SX5E     | ~8%       | ~40%               |
+| SXIP     | ~20%      | ~30%               |
+| SXAP     | ~42%      | ~-10%              |
+| SX6P     | ~66%      | ~90%               |
+| SXXP     | ~70%      | ~30%               |
+| SXDP     | ~82%      | ~60%               |
+| SXEP     | ~90%      | ~70%               |
+| SXPP     | ~96%      | ~50%               |
+</details>
+
+Source: Bloomberg, Deutsche Boerse. Data from 07-May-25 to 07-May-26. EUREX defines participant types as: Agent – trading on behalf of customers, Market Maker providing liquidity, and Proprietary – trading for own account. \*Eurex A-accounts net open interest as % of total open interest.   
+BofA GLOBAL RESEARCH
+
+Exhibit 27: The FTSEMIB/SX7E vol ratio is low vs history (10 $^{th}$ 5y %-ile)...
+
+3m ATM implied vol for both FTSEMIB and SX7E with its ratio.
+
+![](images/4fc67bdea59cf01ee56b676d469356810f8e8d5ed1a921c013e795f026a5a8f8.jpg)
+
+<details>
+<summary>line</summary>
+
+| Year | Ratio (rhs) | FTSEMIB Index | SX7E Index |
+|------|-------------|---------------|----------|
+| 21'  | ~15%        | ~15%          | ~15%     |
+| 22'  | ~45%        | ~35%          | ~45%     |
+| 23'  | ~25%        | ~25%          | ~35%     |
+| 24'  | ~15%        | ~15%          | ~25%     |
+| 25'  | ~35%        | ~35%          | ~35%     |
+| 26'  | ~25%        | ~25%          | ~35%     |
+</details>
+
+Source: BofA Global Research. Data from 08-May-2021 to 08-May-2026.   
+BofA GLOBAL RESEARCH
+
+Exhibit 26: SX7E is among the indices with the highest volatility on upside vs downside moves or “grind lower, spike higher” behaviour YTD Realised vol on up days, down days and their difference.   
+![](images/71bbdf5826f26bfca381fdaf66c616479972dc9701b3ec6a48b05dd7a150b189.jpg)
+
+<details>
+<summary>bar</summary>
+
+| Category | Upvol (%) | Downvol (%) | Up vol - Down vol (%) |
+| :--- | :--- | :--- | :--- |
+| SX7E | 23.5 | 16.5 | 7.0 |
+| SX5E | 21.8 | 18.0 | 4.0 |
+| DAX | 31.8 | 28.0 | 4.0 |
+| SXAP | 33.5 | 30.0 | 3.5 |
+| SXPP | 17.2 | 16.8 | 0.5 |
+| SX6P | 18.0 | 19.8 | -1.5 |
+| SXDP | 27.2 | 24.2 | 2.5 |
+| SXEP | 20.5 | 25.0 | -3.0 |
+</details>
+
+Source: BofA Global Research. Bloomberg Data from 01-Jan-2026 to 08-May-2026.   
+BofA GLOBAL RESEARCH
+
+Exhibit 28: ...and the two indices are highly correlated too (>90%) 3m rolling correlation between SX7E and FTSEMIB   
+![](images/9e742cbfce8641e418325c3fb191a438777746bf94ba98eeedff3daf6b95cd40.jpg)
+
+<details>
+<summary>line</summary>
+
+| Year | 3m rolling correlation |
+| ---- | ---------------------- |
+| 21'  | ~0.85                  |
+| 22'  | ~0.80                  |
+| 23'  | ~0.90                  |
+| 24'  | ~0.60                  |
+| 25'  | ~0.90                  |
+</details>
+
+Source: BofA Global Research. Data from 08-May-2021 to 08-May-2026.   
+BofA GLOBAL RESEARCH
+
+Exhibit 29: SX7E & FTSEMIB have both shown positive sensitivity to rising rates, in contrast to other broad European benchmarks   
+3m GDBR10 beta\* across indices.   
+![](images/64bca9e31a772431bb56dbe9455cc63c1596bb1bf972ad56285cdf55630bc000.jpg)
+
+<details>
+<summary>bar</summary>
+
+| Category | 3m GDBR10 beta |
+| :--- | :--- |
+| SX7E | 0.065 |
+| FTSEMIB | 0.038 |
+| SX5E | -0.012 |
+| CAC | -0.014 |
+| UKX | -0.015 |
+</details>
+
+Source: BofA Global Research. Data from 08-Feb-2026 08-May-2026. \*GDBR10 Beta obtained from a 2-factor ( $^{1st}$ factor: SXXP returns, $^{2nd}$ factor: GDBR10 index changes) 3m rolling regression of daily returns of each SXXP stock, vs daily changes of GDBR10.   
+BofA GLOBAL RESEARCH
+
+# Exhibit 30: The sale of a SX7E 2m (Jul-26) 25d put fully funds 2x FTSEMIB calls at the same (delta) strike and maturity, with the ratio screening attractively high versus history.
+
+Premium ratio\* (3y %-iles annotated in parenthesis) for short 1x SX7E put vs long FTSEMIB calls with combinations of delta strikes.
+
+Delta for short SX7E put and long FTSEMIB call 
+
+<table><tr><td colspan="2"></td><td>50D</td><td>45D</td><td>40D</td><td>35D</td><td>30D</td><td>25D</td><td>20D</td><td>15D</td><td>10D</td><td>5D</td></tr><tr><td rowspan="3">Expiry</td><td>1m</td><td>1.6(86.6%)</td><td>1.7(84.6%)</td><td>1.7(84.0%)</td><td>1.8(82.8%)</td><td>1.9(82.5%)</td><td>2.0(81.6%)</td><td>2.1(81.0%)</td><td>2.2(80.3%)</td><td>2.4(77.1%)</td><td>2.6(67.2%)</td></tr><tr><td>2m</td><td>1.7(96.5%)</td><td>1.7(94.6%)</td><td>1.8(94.1%)</td><td>1.9(92.6%)</td><td>2.0(90.8%)</td><td>2.1(89.1%)</td><td>2.2(86.4%)</td><td>2.3(84.0%)</td><td>2.5(79.0%)</td><td>2.8(71.4%)</td></tr><tr><td>3m</td><td>1.7(97.7%)</td><td>1.8(96.7%)</td><td>1.9(95.0%)</td><td>1.9(94.0%)</td><td>2.0(92.8%)</td><td>2.1(91.3%)</td><td>2.2(90.3%)</td><td>2.4(89.2%)</td><td>2.6(87.1%)</td><td>3.0(82.5%)</td></tr></table>
+
+Source: BofA Global Research. Data from 08-May-2023 to 08-May-2026. \*The premium ratio shows the number of FTSEMIB calls that can be fully funded by the sale of an SX7E put.   
+BofA GLOBAL RESEARCH
+
+# Asia & Korean AI: Up to 13.5x payouts via limited loss worst of calls
+
+Trade 1: Buy a 3-month 110% WoW on Asia AI for 2.22% (59% discount to cheapest vanilla call): Samsung (005930 KS), SK Hynix (000660 KS), TSMC (2330 TT) and Advantest (6857 JT) [90th %-ile historical payout at 8.0x cost]
+
+Trade 2: Buy a 3-month 120% WoW on Korean IT names for 2.71% (66% discount to cheapest vanilla call): Samsung (005930 KS), SK Hynix (000660 KS) and Samsung Electro-Mechanics (009150 KS)) [90 $^{th}$ %-ile historical payout at 13.5x cost]
+
+Pricing is indicative and in quanto USD
+
+Risks: Limited to premium paid.
+
+# Worst of call trades on stocks that get lifted by a common AI theme
+
+The easy trade in Asia AI stocks has been to buy and hold (Exhibit 39). And while we still favour upside trades, the narrative doesn't have to change much to trigger quite significant corrections. Indeed, the largest AI stocks in Korea, Taiwan and Japan are all at or near bubble risk territory on our BofA Bubble Risk Indicator (Exhibit 38). While we are not expecting an imminent pullback, we believe it warrants increased caution and favours optionality over delta-1 exposure. But options remain expensive.
+
+Worst-of call options (WoC) offer investors a limited loss structure that can give upside exposure. These trades pay out based on the worst performing stock in a particular basket. We like exposure to broad Asia AI (trade 1: top stocks in the Kospi, the TWSE and the Nikkei) and to outperforming Korean Tech stocks (trade 2: The top 3 IT stocks in the Korean Kospi). If put on at current cost during the Asia AI rally (since Jan 2025), the WoC trades would have had positive P&L 74% and 68% of the time, for trade 1 and 2, respectively (Exhibit 40-42).
+
+Exhibit 31: The top 3 Korean Tech stocks have readings at 0.98, 0.99 and 0.98, respectively on our BofA Bubble-Risk Indicator, while both TSMC in Taiwan and Advantest in Japan are quite near the 0.80 bubble risk threshold   
+Bubble-like price action across Asia AI stocks   
+![](images/d8d4960cd58494f873c015e7cef1f28386ce84d6890c7b3eae2ee08f02f1ad30.jpg)
+
+<details>
+<summary>line</summary>
+
+| Date   | Samsung Electronics | SK Hynix | Samsung Electro-Mechanics | TSMC  | Advantest |
+|--------|---------------------|----------|---------------------------|-------|-----------|
+| Jan 25 | ~0.1                | ~0.2     | ~0.1                      | ~0.6  | ~0.7      |
+| May 25 | ~0.3                | ~0.4     | ~0.3                      | ~0.2  | ~0.2      |
+| Sep 25 | ~0.6                | ~0.8     | ~0.7                      | ~0.5  | ~0.7      |
+| Jan 26 | ~0.9                | ~0.9     | ~0.9                      | ~0.6  | ~0.8      |
+| May 26 | ~0.9                | ~0.9     | ~0.9                      | ~0.7  | ~0.7      |
+</details>
+
+Source: BofA Global Research. Data as of 11-May-26. Underlying tickers: 005960KS, 000660 KS, 009150 KS, 2330 TT and 6857 JP. See Disclaimer in Exhibit 8.
+
+BofA GLOBAL RESEARCH
+
+Exhibit 32: Just 4 months into 2026 and Asian AI names are outperforming, driven primarily by memory chip stocks in Korea   
+Year-to-date returns for the 3 largest IT stocks in Korea plus the largest stock in the Nikkei (Advantest) and in the TWSE (TSMC)   
+![](images/11f1186bceba16b9d9d81772d463f3cabc5bc3b12d9bb90692c8596f6675e804.jpg)
+
+<details>
+<summary>line</summary>
+
+| Company                  | Year-to-date return |
+| ------------------------ | ------------------- |
+| Samsung Electronics      | 137%                |
+| SK Hynix                 | 193%                |
+| TSMC                     | 44%                 |
+| Advantest                | 47%                 |
+| Samsung Electro-Mechanics | 251%                |
+</details>
+
+Source: BofA Global Research and Bloomberg. Data from 30-Dec-2024 through 11-May-2026.   
+BofA GLOBAL RESEARCH
+
+Exhibit 34: A 3-month 120% WoW on outperforming Korean IT stocks, at current pricing, would have had positive P&L 68% of the time (since the Deepseek news, see Exhibit 42)   
+WoC on Samsung Elec (005930 KS), SK Hynix (000660 KS) and Samsung Electro-Mechanics (009150 KS)   
+![](images/bc0419b0906a7f3c3d207d91c400b57aecb0d12f86af8ae3d5e76eabbeb9ce02.jpg)
+
+<details>
+<summary>line</summary>
+
+| Date   | Korean IT rockets 3-month 120% WoW | 90th %-ile of positive P&L | Median positive P&L |
+|--------|-------------------------------------|-----------------------------|---------------------|
+| Apr 25 | ~0%                                 | 36.7%                       | 17.4%               |
+| Aug 25 | ~0%                                 | 36.7%                       | 17.4%               |
+| Dec 25 | ~20%                                | 36.7%                       | 17.4%               |
+| Apr 26 | ~50%                                | 36.7%                       | 17.4%               |
+</details>
+
+Source: BofA Global Research and Bloomberg. Data from 24-Jan-2025 through 11-May-2026. This performance is backtested and does not represent the actual performance of any account or fund. Backtested performance depicts the theoretical (not actual) performance of a particular strategy over the time period indicated. No representation is being made that any actual portfolio is likely to have achieved returns similar to those shown herein.   
+BofA GLOBAL RESEARCH
+
+Exhibit 33: A 3-month 110% WoW on Asia AI stocks, at current pricing, would have had positive P&L 74% of the time since the Asia AI rally kicked off in earnest (since the Deepseek news, see Exhibit 42)   
+WoC on Samsung Elec (005930 KS), SK Hynix (000660 KS), TSMC (2330 TT) and Advantest (6857 JP)   
+![](images/0bde1858bcefb4e43ec9659913e6a588aa8c0f7e01cca12ddbfbd36c64303c25.jpg)
+
+<details>
+<summary>line</summary>
+
+| Date   | Asia AI 3-month 110% WoW | 90th %-ile of positive P&L | Median positive P&L |
+|--------|--------------------------|----------------------------|---------------------|
+| Apr 25 | ~0%                      | 17.7%                      | 9.1%                |
+</details>
+
+Source: BofA Global Research and Bloomberg. Data from 24-Jan-2025 through 11-May-2026. This performance is backtested and does not represent the actual performance of any account or fund. Backtested performance depicts the theoretical (not actual) performance of a particular strategy over the time period indicated. No representation is being made that any actual portfolio is likely to have achieved returns similar to those shown herein.   
+BofA GLOBAL RESEARCH
+
+Exhibit 35: The 90 $^{th}$ %-ile of positive P&L instances would have been 8.0x and 13.5x the cost for the “Asia AI” and the “Korean IT names” baskets, respectively (see Exhibits 40 & 41 for components)   
+Current pricing and P&L statistics of hypothetical trades entered at current price (since the Asia AI rally started\*). Pricing is indicative only 
+
+<table><tr><td></td><td>Asia AI</td><td>Korean IT names</td></tr><tr><td>WoC strike</td><td>110%</td><td>120%</td></tr><tr><td>WoC cost [b]</td><td>2.22%</td><td>2.71%</td></tr><tr><td>Discount to average vanilla</td><td>-78%</td><td>-69%</td></tr><tr><td>Discount to cheapest vanilla</td><td>-59%</td><td>-66%</td></tr><tr><td>Freq. positive P&amp;L</td><td>74%</td><td>68%</td></tr><tr><td>Freq. negative P&amp;L</td><td>26%</td><td>32%</td></tr><tr><td>Median positive P&amp;L</td><td>9.1%</td><td>17.4%</td></tr><tr><td>90th %-ile of positive P&amp;L [a]</td><td>17.7%</td><td>36.7%</td></tr><tr><td>90th %-ile P&amp;L ratio [a/b]</td><td>8.0</td><td>13.5</td></tr></table>
+
+Source: BofA Global Research. Data from 24-Jan-2025 through 11-May-2026. \* We use the close of Friday 24-Jan 2025 as the start of the AI rally in Asia due to the Deepseek news that led to a large selloff among US AI stocks on the following Monday (27 Jan 2025). All pricing is in quanto USD, including vanilla references. This performance is backtested and does not represent the actual performance of any account or fund. Backtested performance depicts the theoretical (not actual) performance of a particular strategy over the time period indicated. No representation is being made that any actual portfolio is likely to have achieved returns similar to those shown herein.   
+BofA GLOBAL RESEARCH
+
+# Frequently asked questions about the BofA Bubble Risk Indicator (BRI)
+
+In our 2026 Year Ahead report, we introduced the BofA Bubble Risk Indicator (BRI), a price-based measure designed to detect bubble-like instability across financial assets. Given strong client interest, we are now adding a weekly one-page BRI update to the GEVI (see earlier pages). This update will track BRI levels across major markets and asset classes, highlight pockets of equities exhibiting the most froth, and call out recent increases in bubble-like price action. Below, we address some of the most frequently asked questions about the BRI.
+
+The BofA Bubble Risk Indicator is intended to be an indicative metric only and may not be used for reference purposes or as a measure of performance for any financial instrument or contract, or otherwise relied upon by third parties for any other purpose, without the prior written consent of BofA Global Research. The BRI was not created to act as a benchmark.
+
+# 1. How does the BRI quantify 'bubble risk'?
+
+A defining feature of historical asset bubbles is that volatility tends to rise alongside prices. Building on this observation and drawing inspiration from how the four statistical moments characterize a distribution, the BRI quantifies bubble risk using the first four moments of an asset's price action: (i) returns, (ii) realized volatility, (iii) price momentum $^{2}$ , and (iv) fragility/convexity. $^{3}$
+
+These four moments typically become elevated during the frothiest phases of asset bubbles, reflecting the influence of exuberant sentiment, one-sided positioning and imbalanced supply-demand dynamics on price action. The late 90s dotcom bubble in the Nasdaq provides a clear and pertinent illustration of these dynamics (Exhibit 36 & Exhibit 37).
+
+Exhibit 36: Both price returns and price momentum of the Nasdaq rose as the dotcom bubble inflated   
+NDX 6m price returns and 6m price momentum   
+![](images/01cc5bd034f054eb3316ae61d6bfab5c570f3377ec3ee276cf3ea1aff812d69d.jpg)
+
+<details>
+<summary>line</summary>
+
+| Year | 6m returns | 6m momentum (rhs) |
+|------|------------|-------------------|
+| '90  | ~0%        | ~0%               |
+| '95  | ~-40%      | ~-20%             |
+| '00  | ~100%      | ~40%              |
+| '05  | ~-20%      | ~-10%             |
+| '10  | ~60%       | ~20%              |
+| '15  | ~-20%      | ~-10%             |
+| '20  | ~70%       | ~30%              |
+| '25  | ~50%       | ~20%              |
+</details>
+
+Source: BofA Global Research. Data from 1-Jan-90 to 16-Jan-26.   
+BofA GLOBAL RESEARCH
+
+Exhibit 37: Nasdaq's vol and fragility also rose into the peak of the dotcom bubble as tech stock price rose   
+NDX 6m realized vol and 6m realized convexity   
+![](images/3620deac90159e3f7c483e6d17085b24b360578690bc8fb5d8f57371034e7ead.jpg)
+
+<details>
+<summary>line</summary>
+
+| Year | 6m vol | 6m convexity (rhs) |
+|------|--------|---------------------|
+| '90  | ~15%   | ~5%                 |
+| '95  | ~20%   | ~10%                |
+| '00  | ~70%   | ~25%                |
+| '05  | ~30%   | ~10%                |
+| '10  | ~70%   | ~25%                |
+| '15  | ~25%   | ~10%                |
+| '20  | ~60%   | ~25%                |
+| '25  | ~40%   | ~15%                |
+</details>
+
+Source: BofA Global Research. Data from 1-Jan-90 to 16-Jan-26.   
+BofA GLOBAL RESEARCH
+
+# 2. How is the BRI constructed?
+
+The BRI is constructed as an average of three sub-indicators: a short-term, medium-term, and long-term measure. Each sub-indicator ranges from 0 to 1. Using multiple time horizons allows the indicator to capture bubble-risk dynamics that can develop at different speeds.
+
+Each sub-indicator aims to capture how stretched an asset's four moments (returns, vol, momentum, and fragility) are relative to the asset's own history, and is computed as the average of each of these four moments' percentile ranks vs history. $^{4}$ However, given detection of bubble-like behaviour is the primary aim of the indicator, we condition this average percentile rank on periods when the asset is rallying by scaling it up or down depending on how positive or negative returns are. $^{5}$
+
+Exhibit 38 summarizes the construction of the aggregate indicator and its microstructure.
+
+Exhibit 38: The aggregate indicator is an average of 3 sub-indicators that capture short-, medium- and long-term price dynamics. Each sub-indicator is computed as a scaled average percentile rank of the four metrics (returns, vol, momentum & fragility)   
+Construction summary of BofA Bubble Risk Indicator   
+![](images/65e68c16eb1874ae490c4231b6125346346e3f62e608e607ffb69a033e16c226.jpg)
+
+<details>
+<summary>flowchart</summary>
+
+```mermaid
+graph TD
+    A["Aggregate indicator"] --> B["ST sub-indicator"]
+    A --> C["MT sub-indicator"]
+    A --> D["LT sub-indicator"]
+    B --> E["ST avg %ile rank"]
+    C --> F["MT avg %ile rank"]
+    D --> G["LT avg %ile rank"]
+    E --> H["ST returns %ile rank"]
+    E --> I["ST vol %ile rank"]
+    E --> J["ST mtm %ile rank"]
+    E --> K["ST fragility %ile rank"]
+    F --> L["MT returns %ile rank"]
+    F --> M["MT vol %ile rank"]
+    F --> N["MT mtm %ile rank"]
+    F --> O["MT fragility %ile rank"]
+    G --> P["LT returns %ile rank"]
+    G --> Q["LT vol %ile rank"]
+    G --> R["LT mtm %ile rank"]
+    G --> S["LT fragility %ile rank"]
+    H --> T["ST returns"]
+    I --> U["ST vol"]
+    J --> V["ST mtm"]
+    K --> W["ST fragility"]
+    L --> X["MT returns"]
+    M --> Y["MT vol"]
+    N --> Z["MT mtm"]
+    O --> AA["MT fragility"]
+    P --> AB["LT returns"]
+    Q --> AC["LT vol"]
+    R --> AD["LT mtm"]
+    S --> AE["LT fragility"]
+```
+</details>
+
+Source: BofA Global Research. ST, MT & LT refer to short-, medium- & long-term; 'mtm' refers to momentum component; %-ile rank' refers to percentile rank.
+
+BofA GLOBAL RESEARCH
+
+# 3. What is a ‘high’ BRI reading and what are its implications?
+
+Since the BRI is defined on a 0 to 1 scale, assets with readings approaching 1 are exhibiting increasingly bubble-like price action. How close to 1? While it is difficult to specify a universal threshold given the plethora of asset-specific dynamics that can present in markets, we find that BRI levels above 0.8 (i.e., top quintile) provide a useful rule of thumb beyond which bubble risks are likely elevated.
+
+Tactically, high BRI readings tend to signal asymmetric downside risk in the near-term (higher risk of the bubble ‘popping’), which we demonstrate empirically later in this section. However, rather than treating the BRI as an explicit sell signal (“get out”), which can risk major underperformance in a bubble, we find the BRI best positioned as a cautionary tool to add asymmetric protection/equity replacement (“watch out”).
+
+# 4. What assets can the BRI be computed on?
+
+Given the BRI relies only on price-based inputs, it can be computed on any asset with a sufficient history of daily price data. Indeed, by inferring sentiment and positioning from price action, the BRI can be applied to assets without explicit fundamental valuation methodologies (e.g., commodities) or those with opaque positioning visibility.
+
+# 5. What has the BRI looked like in past asset bubbles?
+
+Exhibit 39 demonstrates what the BRI framework would have looked like when applied to eight historically well-recognized asset bubbles. As these bubbles formed, increasingly stretched returns, vol, momentum, and fragility pushed BRI readings towards 1. Indeed, seven of the eight bubbles saw their peaks concurrent to a BRI reading above 0.8.
+
+The forward distribution of returns during these bubbles conditional on the BRI would have shown higher near-term downside risk after the BRI breached 0.8 (Exhibit 40), with broadly similar upside potential (Exhibit 41).
+
+Exhibit 39: Looking at eight historical asset bubbles from a distributional lens using the BRI methodology reveals increasingly elevated returns, vol, momentum and fragility in the asset bubble formation process, as seen by rising levels of the indicator towards 1   
+BofA Bubble Risk Indicator during historical asset bubbles   
+![](images/7877a42a477a7e9951d4591706d2fcf4d4c4a0faf7509d69eb0dc631e61f957e.jpg)
+
+<details>
+<summary>line</summary>
+
+| Year | Index | Value |
+|------|-------|-------|
+| 1926 | Dow (1926-29) | - |
+| 1979 | Gold (1979-80) | - |
+| 1986 | Nikkei (1986-87) | - |
+| 1995 | Nasdaq (1995-00) | - |
+| 2006 | HSCEI (2006-07) | - |
+| 2007 | Oil (2007-08) | - |
+| 2007 | Bitcoin (2017) | - |
+| 2020 | Biotech (2020-21) | - |
+</details>
+
+Source: BofA Global Research. Data from Jan-1926 to Feb-2021. Underlying Bloomberg tickers: INDU for Dow (Oct-1926 to Sep-1929), XAU for Gold (Jul-1979 to Jan-1980), NKY for Nikkei (Jan-1986 to Oct-1987), NDX for Nasdaq (Jan-1995 to Mar-2000), HSCEI for HSCEI (Jun-2006 to Oct-2007), CO1 for Oil (Jan-2007 to Jul-2008), XBTUSD for Bitcoin (Jul-2017 to Dec-2017), SPSIBI for Biotech (May-2020 to Feb-2021).   
+BofA GLOBAL RESEARCH
+
+Exhibit 40: The median 3m max draw-down following indicator readings above 0.8 would have been more adverse than when below 0.8 during historical asset bubbles   
+Median 3m max draw-down during historical asset bubbles (i) after indicator <0.8, (ii) after indicator >= 0.8   
+![](images/8d41ead9b911b131ad734da2f4e653f603d79a59a6b4f382150c4316cb848c8c.jpg)
+
+<details>
+<summary>bar</summary>
+
+| Company (Year) | Median 3m MDD after indic < 0.8 (%) | Median 3m MDD after indic > 0.8 (%) |
+|---|---|---|
+| Dow (1929) | -5 | -8 |
+| Gold (1980) | -12 | -28 |
+| Nikkei (1987) | -4 | -6 |
+| Nasdaq (2000) | -8 | -10 |
+| HSCEI (2007) | -9 | -24 |
+| Oil (2008) | -7 | -22 |
+| Bitcoin (2017) | -30 | -62 |
+| Biotech (2021) | -6 | -13 |
+</details>
+
+Source: BofA Global Research. Underlying tickers / date ranges: INDU for Dow (Oct-1926 to Sep-1929), XAU for Gold (Jul-1979 to Jan-1980), NKY for Nikkei (Jan-1986 to Oct-1987), NDX for Nasdaq (Jan-1995 to Mar-2000), HSCEI for HSCEI (Jun-2006 to Oct-2007), CO1 for Oil (Jan-2007 to Jul-2008), XBTUSD for Bitcoin (Jul-2017 to Dec-2017), SPSIBI for Biotech (May-2020 to Feb-2021).   
+BofA GLOBAL RESEARCH
+
+Exhibit 41: The median 3m max draw-up would have been similar at both high and low indicator readings, suggesting that de-risking completely following high indicator levels can risk underperformance   
+Median 3m max draw-up during historical asset bubbles (i) after indicator < 0.8, (ii) after indicator >= 0.8   
+![](images/add867a35b4f4685dc0f0f8de617c1754a32df6df444607c45f53f705567822c.jpg)
+
+<details>
+<summary>bar</summary>
+
+| Company | Median 3m MDU after indic < 0.8 (%) | Median 3m MDU after indic > 0.8 (%) |
+| :--- | :--- | :--- |
+| Dow (1929) | 12 | 13 |
+| Gold (1980) | 45 | 90 |
+| Nikkei (1987) | 17 | 14 |
+| Nasdaq (2000) | 20 | 19 |
+| HSCEI (2007) | 29 | 21 |
+| Oil (2008) | 21 | 19 |
+| Bitcoin (2017) | 136 | 64 |
+| Biotech (2021) | 27 | 17 |
+</details>
+
+Source: BofA Global Research. Underlying tickers / date ranges: INDU for Dow (Oct-1926 to Sep-1929), XAU for Gold (Jul-1979 to Jan-1980), NKY for Nikkei (Jan-1986 to Oct-1987), NDX for Nasdaq (Jan-1995 to Mar-2000), HSCEI for HSCEI (Jun-2006 to Oct-2007), CO1 for Oil (Jan-2007 to Jul-2008), XBTUSD for Bitcoin (Jul-2017 to Dec-2017), SPSIBI for Biotech (May-2020 to Feb-2021).   
+BofA GLOBAL RESEARCH
+
+# 6. Can an asset with a high BRI reading not be in a bubble?
+
+Yes. One of the risks stemming from the BRI's exclusive use of price data is instances of 'false positives' when the indicator appears stressed, but the asset doesn't appear to be in a bubble based on other metrics. For example, semiconductor stocks exhibited frothy behaviour in the immediate aftermath of ChatGPT's release in Nov-22 but also saw a fundamental shift and expansion of their business model in the AI era.
+
+Another scenario of a high BRI level that may not point to a bubble is in the immediate aftermath of an exogenous shock (e.g., COVID), where vol/fragility remain high and prices are retracing their drawdown. In such cases, the interpretation of a high BRI level requires additional context.
+
+# 7. Can an asset in a bubble have a low BRI reading?
+
+Yes. A related limitation of the BRI's reliance on price data is the implicit assumption that the asset bubble in question would result in historically elevated instability. While the typical evolution of a bubble sees this happen as stretched positioning and exuberance translate into volatile & fragile rallies with high momentum into the peak, outlier cases where the bubble peak sees the bull run end in a whimper can occur and are a challenge for the BRI (e.g., the Nikkei bubble in the 1980s, which saw its most unstable rally earlier rather than later).
+
+# 8. How can one use the short-term to long-term sub-indicators of the BRI?
+
+As discussed above, the BRI aggregates short-term, medium-term, and long-term sub-indicators to capture asset price dynamics across multiple horizons. In addition to examining the sub-indicators to understand shorter vs longer-term trends, we also find the range across sub-indicators provides a confidence level on the BRI reading, with tighter ranges providing higher confidence. For example, a 0.7 BRI reading is likely more informative when the sub-indicators span 0.6 to 0.8 than when they range from 0.4 to 1.0, where disagreement across horizons suggests greater uncertainty.
+
+# 9. What other indicators can help confirm elevated bubble risk?
+
+At its core, the BRI is simply a parsimonious transformation of prices, avoiding a “kitchen-sink” approach that incorporates explicit positioning, leverage, or PB data. This keeps the framework robust to overfitting and makes it applicable across assets, regions, and historical periods where such data are often unavailable or unreliable.
+
+Despite the appeal of such an approach, we find the BRI most effective when used in conjunction with complementary tools that can help assess whether frothy price action is supported by fundamentals – for example, more traditional valuation (e.g., PV of cash flows, valuation multiples, etc.) and/or positioning metrics (e.g., leverage, inflows, retail trading volumes etc.) where available.
+
+# 10. What universe of assets will be covered in the BofA BRI Landscape?
+
+We plan to include BRI levels on a broad set of assets covering global equity indices, large cap US equity sector indices (including the “Magnificent 7”), major commodities (including the BCOM Index), and major cryptocurrencies (Bitcoin and Ethereum). In addition to this core cross-asset universe, we plan to apply the BRI framework to popular equity themes that have experienced significant inflows over the prior week. This thematic lens is designed to spot emerging pockets of froth that may not yet be visible at the broader index or sector level.
+
+# Summary of Open Trades (11-May-26)
+
+Price data for open level reflects the price on open date and does not necessarily reflect the price at which the trade could be executed at the date of this report. Our trades are structured to be executed on the open date and are not necessarily appropriate to execute as formulated beyond that date.
+
+Table 1: Summary of open trades as of 11-May-26
+
+Summary of open trades as of 11-May-26
+
+<table><tr><td>Trade Description</td><td>Open Date</td><td>Open Level</td><td>Expected Trade Term</td><td>Rationale</td></tr><tr><td>Buy an SX5E Dec26 5000 call (for 9% indic., spot ref 4895, 45delta, 62bps vega), initially delta-hedged</td><td>5-Mar-24</td><td>9%</td><td>Dec-26</td><td>Don&#x27;t miss a generational opportunity to lock in record low long-dated EU vol</td></tr><tr><td>Buy an SX5E Dec26 5000 call (for 9% indic., spot ref 4895, 45delta, 62bps vega), initially delta-hedged</td><td>05-Mar-24</td><td>9%</td><td>Dec-26</td><td>Attractive opportunity to lock in record low long-dated EU vol</td></tr><tr><td>Replicate a NKY Dec25-Dec26 36.5K FVA straddle with a static strip of options at an implied FVA level of 18.6. To trade US$100k vega</td><td>9-Sep-24</td><td>18.6v</td><td>Dec26</td><td>Long discounted Nikkei vol: Fixed strike Dec-25/Dec-26 FVA straddles at 18.6%</td></tr><tr><td>Consider financing the call ratio (&quot;Trade 1&quot;) by selling a NKY 1-month 80% put for 0.99%</td><td>7-Apr-25</td><td>0.99%</td><td>Jun25</td><td>Catching a falling knife at lower risk: NKY 2m call ratios funded by 1m 80% put</td></tr><tr><td>Buy NKY Dec25/Dec26 31,000 straddle FVAs for 21.27% (indic. Q=2.5%, R=0.5%)</td><td>7-Apr-25</td><td>21.27%</td><td>Dec25</td><td>Buy Nikkei Dec25/Dec26 straddle FVAs at 21% - 4% below current 12m ATM vol</td></tr><tr><td>Trade (SPX upvar): Buy SPX Dec26 80% upvar for 18.45v indicatively (t &amp; t-1 convention; var ref. 24.55v; fwd ref. 5551).</td><td>28-Apr-25</td><td>18.45v</td><td>Dec26</td><td>Position for spot up, vol up which leverage elevated tail skew and inverted term structure</td></tr><tr><td>Trade (SPX fwd upvar): Buy SPX Dec25/Dec26 80% fwd upvar for 17v indicatively (t &amp; t-1 convention; fwd var ref. 23.6v; fwd ref. 5551).</td><td>28-Apr-25</td><td>17v</td><td>Dec26</td><td>Position for spot up, vol up which leverage elevated tail skew and inverted term structure</td></tr><tr><td>Long SPX 2028 annual dividend futures/short SPX 2026 annual dividend futures for $1.15 net indicatively</td><td>6-May-25</td><td>$1.15</td><td>Dec26</td><td>Position for the normalization of the dividend futures curve as time moves towards maturity and dividend growth is priced back in</td></tr><tr><td>Long SX5E Dec26 dividends, vs short SPX Dec26 dividends.</td><td>6-May-25</td><td>$0.00</td><td>Dec26</td><td>Dec26 dividends are more heavily discounted for SX5E than for SPX, despite what we view as higher earnings risk in SPX companies, relative to SX5E</td></tr><tr><td>Buy SPX Dec26 110% upvar for 11.25v indic. (t &amp; t-1 convention; var ref. 23v; fwd ref. 5915)</td><td>2-Jun-25</td><td>11.25v</td><td>Dec26</td><td>Hedge upside pain with long delta, long vol positions that leverage elevated long-dated tail skew</td></tr><tr><td>Buy SPX Dec25Dec26 110% fwd upvar for 11.36v indic. (t &amp; t-1 convention; fwd var ref. 23.3v; fwd ref. 5915).</td><td>2-Jun-25</td><td>11.36v</td><td>Dec26</td><td>Hedge upside pain with long delta, long vol positions that leverage elevated long-dated tail skew</td></tr><tr><td>NIFTYM 31-Jul-25 24,400 23,500 1x3 put ratios for USD 36 (-0.14% of spot, indic. spot ref: 24,946, -8.8d, vols: 14.58%/16.23%) -1x 24,400 put (-29d) &amp; +3x 23,500 puts (-12d)</td><td>16-Jun-25</td><td>0.75%</td><td>Sep25</td><td>Election and geopolitics: Replace longs by Nikkei calls contingent on weaker yen</td></tr><tr><td>Buy SPX Dec26 ATM upvar for 12.2v indicatively (t &amp; t-1 convention; var ref. 22.5v)</td><td>11-Aug-25</td><td>12.2v</td><td>Dec26</td><td>Leverage record steep tail skew to enter into long vol positions via upvar</td></tr><tr><td>Sell SPX Dec26 var, buy SPX Dec26 60% upvar, to collect 3.5v indicatively (t &amp; t-1 convention; var ref. 22.5v)</td><td>11-Aug-25</td><td>3.5v</td><td>Dec26</td><td>Leverage record steep tail to enter into carry trade via upvar vs var</td></tr><tr><td>Sell SX5E Dec26 var, buy SX5E Dec26 60% upvar, to collect 3.1v indicatively (t &amp; t-1 convention; var ref. 21v).</td><td>18-Aug-25</td><td>3.1v</td><td>Dec 26</td><td>Vol-focused? Collect &gt;3v on SX5E Upvar vs Var</td></tr><tr><td>Buy 1-year 105% 130% call spreads on a CSI 1000 tracking basket* for 3.52% (18d, 29v both legs). Consider fully financing the trade by selling 1-year 73.5% puts (37d, 29v calls vs 29.5v put)</td><td>13-Sep-25</td><td>3.52%</td><td>Oct-26</td><td>The low-cost/low risk way to buy China – deeply discounted call spreads</td></tr><tr><td>Sell initially delta-hedged KOSPI2 30-Dec-25 110% calls and collect 1.12% (indic. spot ref 535.28, 23.7% vol, 20d). Consider hedging the risk of a global tech rally into year-end by buying QQQ 31-Dec-25 110% calls against the KOSPI2 calls for 0.56% (17.8% vols, 14d)</td><td>20-Oct-25</td><td>1.12/0.56%</td><td>30-Dec-25</td><td>Kospi call vols near Liberation Day spike – Finally time to sell vol &amp; hedge delta?</td></tr><tr><td>Buy SPX Dec26 ATM upvar for 13.95v indicatively (10v disc to vanilla; t &amp; t-1 convention; Dec26 var ref. 24v).</td><td>3-Nov-25</td><td>13.95v</td><td>Dec26</td><td>Own spot-up, vol-up exposure as AI bubble continues to inflate.</td></tr><tr><td>Buy 1x 20-Mar-2026 106% call on a CSI 1000 tracking basket* for 2.92% (+29d, 27.4v). Sell 1x ASHR US 20-Mar-2026 35 call for $0.71 (-2.15% of spot; the 35.00 strike is 106% of spot, ref 33.00) (= several banks offer CSI tracking baskets; indic. in quanto USD)</td><td>3-Nov-25</td><td>2.92/2.15%</td><td>20-Mar-26</td><td>CSI 1000 v ASHR calls: Benefit from repo with less China directional risk</td></tr><tr><td>Sell NKY 9-Jan-26 55,000 calls for a JPY589 credit (-1.12% of spot, or 6.7% annualised, 23d 23.1 vol)</td><td>10-Nov-25</td><td>JPY589</td><td>9-Jan-26</td><td>Sell 99th percentile Nikkei calls as the Japan catch-up rally may take a breather</td></tr><tr><td>Buy Dec26 80% put on basket of HYG (38%), SPX (29%), XLF (29%) &amp; EEM (4%) for 1.46% (27% cheaper vs avg of individual legs)</td><td>26-Nov-25</td><td>1.46%</td><td>18-Dec-26</td><td>The convergence of private and public market risk creates opportunities for hedging private risk with liquid, public market hedges. Crucially, stress in public assets closely linked to private markets may ultimately impact private valuations, while potential hedge gains will give investors the flexibility to add risk at better terms.</td></tr><tr><td>Buy a basket of Dec26 90-70 put spreads on individual underlyings: SPX (53%), XLF (32%), TLT (9%) &amp; EEM (6%) for 2.66% (weighted max payout ratio of put spreads is 7.7x)</td><td>26-Nov-25</td><td>2.66%</td><td>18-Dec-26</td><td>Given the higher volatility of the PE hedge constituents and significant decorrelation potential, we prefer buying put spreads on individual constituents rather than on the basket</td></tr><tr><td>Buy NDX Dec26 ATM upvar, currently 19.1v but target an entry level closer to 17v (t &amp; t-1 convention, var ref. 29.9v)</td><td>26-Nov-25</td><td>19.1v / target 17v</td><td>18-Dec-26</td><td>Trade long-delta, long vol via upvar to capture the spot-up, vol-up typically seen in asset bubbles, with a deep discount to vanilla var</td></tr><tr><td>Buy QQQ Jun26 660-750 call spread for $18 (-35D/10D strikes, 5x max payout ratio, ref. 605.16)</td><td>26-Nov-25</td><td>$18</td><td>18-Jun-26</td><td>Asymmetrically capture equity upside while hedging a grind higher, which upvar can be vulnerable to</td></tr><tr><td>Buy 6-month 105% 125% call spreads on a CSI 1000 tracking basket for 2.53% (indic. 20d, 27.1v/28.7v, quanto USD)</td><td>26-Nov-25</td><td>2.53%</td><td>15-May-26</td><td>The &quot;artificially&quot; cheap CSI 1000 forward corresponds to an 8 vol discount. Investors can buy the most exCiting part of the Chinese stock market, including AI innovation, at unusually low &amp; limited risk</td></tr><tr><td>Buy long-dated OTM puts on NVDA, delta-hedged (e.g., NVDA 2y 10-delta puts)</td><td>26-Nov-25</td><td>$8.30 / 49v</td><td>21-Jan-28</td><td>Tail hedge the AI trade with long-dated NVDA vol, which historically would have shown &gt;35x payout vs carry cost.</td></tr><tr><td>Sell SX5E Jun26 var (22.8v) &amp; buy 1.7x Jun27 var (23.7v)</td><td>26-Nov-25</td><td>22.8v/23.7v</td><td>19-Jun-26</td><td>Long fwd var is most attractive for SX5E vs global peers. Resize legs to cut carry cost by 4v (45% better vs regular sizing) while preserving risk/reward</td></tr></table>
+
+Table 1: Summary of open trades as of 11-May-26
+
+Summary of open trades as of 11-May-26
+
+<table><tr><td>Trade Description</td><td>Open Date</td><td>Open Level</td><td>Expected Trade Term</td><td>Rationale</td></tr><tr><td>Buy 110% Dec26 SPX calls qEUR for 4.33% (17 bps over vanilla)</td><td>26-Nov-25</td><td>4.33%</td><td>18-Dec-26</td><td>Foreign investors with unhedged FX risk in their equity investments can be subject to large swings on USD volatility, which quanto options can protect against.</td></tr><tr><td>Buy 90% Dec26 SPX puts qAUD for 3.66% (16bps less than vanilla)</td><td>26-Nov-25</td><td>3.66%</td><td>18-Dec-26</td><td>Foreign investors with unhedged FX risk in their equity investments can be subject to large swings on USD volatility, which quanto options can protect against.</td></tr><tr><td>Buy Dec26 ATMf call on return dispersion on bank names for 3.50% and strike of 17.28% (SX7E spot ref: 234.93).</td><td>26-Nov-25</td><td>3.50%</td><td>18-Dec-26</td><td>EU banks&#x27; broad thematic tilt supports ongoing return dispersion. Trade gains 50% of time (including recently) and offers a 2.3x reward/risk.</td></tr><tr><td>Buy Jun26 NKY &gt; 104% &amp; USDJPY &lt; 96% dual digital for 9.7% (+48 correl offer, 10.3x max payout, ref. 48626, 157).</td><td>26-Nov-25</td><td>9.7%</td><td>12-Jun-26</td><td>Moderate Nikkei upside trades can be cheapened by 80% if willing to lean optimistic on the yen. Narrowing US-JP rate differentials could weigh on USD/JPY in &#x27;26 but doesn&#x27;t have to be Nikkei negative.</td></tr><tr><td>Buy 1x 20-Mar-2026 106% call on a CSI 1000 tracking basket* for 2.32% (+27d, 26v). Sell 1.05x ASHR US 20-Mar-2026 34 calls for $0.55 (-1.73% of spot; the 34.00 strike is ~107% of spot, ref 31.76)</td><td>26-Nov-25</td><td>2.32%/-1.73%</td><td>20-Mar-26</td><td>The long/short trade extracts value from the rich repo for Chinese small caps while limiting directional risk. Trading calls vs calls manages the risk of small caps underperforming. Beta-neutral sizing yielded 8% p.a. on gross notional at 8% vol</td></tr><tr><td>Buy Jun26 105% DAX call contingent on CAC &lt; 105% at expiry</td><td>26-Nov-25</td><td>1.24%</td><td>19-Jun-26</td><td>We like risk-limited trades that fade recent strength in CAC given the French fiscal overhang to fund German equity upside in case optimism returns for German growth.</td></tr><tr><td>Buy KOSPI2 3-month put vs. short call spread for a 0.39% of spot, +1x 88% put / -1x 110% call / +1x 120% call</td><td>12-Jan-26</td><td>0.39%</td><td>Apr26</td><td>Lock in Kospi&#x27;s memory-fuelled rally by leveraging cheapest skew</td></tr><tr><td>Long CAC Mar26-Jun26 zero-cost put calendars, e.g. a Jun26 30D put fully funds ~1.6x Mar26 30D puts (spot ref: 8336.72)</td><td>12-Jan-26</td><td>0</td><td>Jun26</td><td>French political/fiscal drama is back, but is CAC vol still on holiday?</td></tr><tr><td>Long Jun26 105% DAX call, contingent on CAC &lt; 105% at expiry for 1.12% (&gt;50% discount vs vanilla calls)</td><td>12-Jan-26</td><td>1.12%</td><td>Jun26</td><td>French political/fiscal drama is back, but is CAC vol still on holiday?</td></tr><tr><td>Buy NKY 6-month 95% put with vol knock out at 28% for 1.59% (indic., spot ref: 52,991, -11d, 69% discount to vanilla)</td><td>20-Jan-26</td><td>1.59%</td><td>Jul26</td><td>JGB selloff and election risk – Use VKOs to cheapen Nikkei puts by 69%</td></tr><tr><td>Buy Jun26 110% Worst-of Call on SXPP, SXEP, SX7E for 76bps offer (~50% discount vs the cheapest vanilla, spot refs: SXPP 737.05, SXEP 435.90, SX7E 275.44).</td><td>2-Feb-26</td><td>76bps</td><td>Jun26</td><td>Don&#x27;t get caught short Europe pt.2: Cheapen upside with record-low correlations</td></tr><tr><td>Buy HSCEI 17-Apr-26 9,500 10,500 call spreads financed by selling 8,500 puts for $73 (indic. OOF, Apr fut ref 9,222, 47d)</td><td>9-Feb-26</td><td>$73</td><td>Apr26</td><td>Stronger CNY boosting Hong Kong: HSCEI call spread collars for 14x max payout</td></tr><tr><td>Long SX5E Apr26 6175 (~30d) call (1.2%, ref 5992.4), short V2X Apr26 18 put (ref 206) in a -1.8 contract ratio for almost 0 cost (10bps credit of eq. notional)</td><td>17-Feb-26</td><td>10bps</td><td>Apr-26</td><td>Sell floor in vol to fund equity upside</td></tr><tr><td>Buy an 18-Sep-26 105% worst-of call on KOSPI2 / TSM US / GLD US for 3.28% (indic. qUSD, 50% disc to cheapest call, on GLD)</td><td>17-Feb-26</td><td>3.28%</td><td>18-Sep-26</td><td>Gain cheap exposure to upside in KOSPI, TSM, GLD if bubble like price action continues</td></tr><tr><td>Buy 1.00x 18-Jun-2026 106% call on a CSI 1000 tracking basket* for 3.58% (+31d, 29v). Sell 1.05x ASHR US 18-Jun-2026 36 calls for $0.74 (~2.20% of spot; the 36.00 strike is ~106% of spot, ref 33.82)</td><td>17-Feb-26</td><td>1.38%</td><td>18-Jun-26</td><td>The long/short trade extracts value from the rich repo for Chinese small caps while limiting directional risk</td></tr><tr><td>Buy Sep26 NKY&gt;104% &amp; USDJPY&lt;98% dual digital for 16% (+32 correl offer, ref: 56,942, 153.6) 6.25x max payout</td><td>17-Feb-26</td><td>16%</td><td>Sep26</td><td>Nikkei upside trades can be cheapened if willing to lean optimistic on the yen. Indeed, the yen rallied 3.0% in the week after the 8-Feb lower house election and the Nikkei was up 5.0%</td></tr><tr><td>Buy USO May26 80/70/60 put fly (+1x/-2x/1x) for $1.9 mid indicatively (5.2x max payout ratio; ~30d/15d/5d strikes; ref. 87.19).</td><td>2-Mar-26</td><td>$1.9 mid</td><td>May26</td><td>Play for geopolitical normalization and fade oil spike with limited risk and less premium</td></tr><tr><td>Long SPX 2028 annual dividend futures outright for $80.80 indicatively.</td><td>2-Mar-26</td><td>$80.80</td><td>Dec28</td><td>Flat SPX div term structure cheapens long dated futures that could converge to bottom up div estimates as uncertainty risks decay</td></tr><tr><td>Buy SPX Jun26 95% put contingent on Brent &gt; 130 for 84bps indicatively (68% discount to vanilla; ref. 6643.11, 101.84)</td><td>16-Mar-26</td><td>84bps</td><td>Jun26</td><td>Target the geopolitical pain trade via equity-oil hybrids</td></tr><tr><td>Buy SXEP&lt;95%, USO US &gt; 110% May26 dual digital for qUSD 8.9% indicatively (11.2x max payout; ref. 517.66, 117.06)</td><td>16-Mar-26</td><td>8.9%</td><td>May26</td><td>Target the geopolitical pain trade via equity-oil hybrids</td></tr><tr><td>Buy VIX May26 18/25/40 call spread collar for $1.03 indicatively on mids + bid-offer TBD at time of trade (14.5x max payout ratio; UXK6 ref. 22.95)</td><td>16-Mar-26</td><td>$1.03 mid</td><td>May26</td><td>Own equity vol cheaply with VIX call spread collars</td></tr><tr><td>Buy US 6m5y receivers ATM-25bps contingent on SPX &lt; 100% for 34c indicatively (ref. 3.63%, 6650)</td><td>2-Apr-26</td><td>34c</td><td>2-Oct-26</td><td>Hedge slowdown expectations cheaply using equity-rates correlation at historic entry point</td></tr><tr><td>Buy 5y SOFR &lt; ATM-25bp &amp; SPX &lt; 92.5% 6m dual digitals for 10% indicatively (ref. 3.63%, 6650)</td><td>2-Apr-26</td><td>10%</td><td>2-Oct-26</td><td>Hedge slowdown expectations cheaply using equity-rates correlation at historic entry point</td></tr><tr><td>Buy VIX May 25-35 call spread for $0.82 indicatively (12.2x max payout; UXK6 ref. 21.05).</td><td>13-Apr-26</td><td>$0.82</td><td>May26</td><td>Hedge geopolitical re-escalation with long vol VIX call spreads</td></tr><tr><td>Buy QQQ 29-May-26 635 call for $9 indicatively (1.46% of spot; ~103% / 35d strike; 16.8v; ref. 617.507).</td><td>13-Apr-26</td><td>$9</td><td>May26</td><td>Position for continued tech momentum while remaining limited risk with QQQ calls</td></tr><tr><td>SXEP Jun26 500 (~30D) puts initially delta-hedged</td><td>20-Apr-26</td><td>2.3% (put)</td><td>Jun26</td><td>Ceasefire or Crossfire? Own SXEP initially delta-hedged puts as vol is cheap</td></tr><tr><td>Buy QQQ 29-May-26 665-700 call spread for $7.5 indicatively (~35d/10d strikes, 4.7x payout, ref. 646.85)</td><td>20-Apr-26</td><td>$7.5</td><td>May26</td><td>Keep up safely with US equity rally while taking advantage of attractive call skew</td></tr><tr><td>Buy VIX May 24-40 call spread for $0.93 indicatively (~35d/10d strikes, 17.2x max payout, UXK6 ref. 20.81)</td><td>20-Apr-26</td><td>$0.93</td><td>May26</td><td>Hedge geopolitical re-escalation with long vol VIX call spreads</td></tr><tr><td>Long Dec27 NDX vs SPX variance swap switch for 5.25v indicatively</td><td>20-Apr-26</td><td>5.25v</td><td>Dec27</td><td>Position for asymmetric AI &amp; tech IPO exposure as potential AI bubble inflates</td></tr><tr><td>Sell SOXX Jun26 485-540 1x2 call ratios (-1x / +2x), delta-hedged (~40d/20d strikes; ~41v/43v; ref. 455.410)</td><td>27-Apr-26</td><td>41v/43v</td><td>Jun26</td><td>Own upside convexity and gamma in semis, which are showing bubble-like instability</td></tr><tr><td>Buy SPX Jun 6900 / 7600 risk reversal (-1x / +1x), delta-hedged (~95% / 105% strikes; 19.15v/11.96v; spot ref. 7268.50).</td><td>5-May-26</td><td>~19.2v/12v</td><td>Jun26</td><td>Given relative pricing of call &amp; put vols, and the propensity for momentum to persist in today&#x27;s reflexive markets, own upside gamma while monetizing downside skew.</td></tr><tr><td>Buy Jun26 1x2 +19-17 V2X put ratios for 0.475 (fut ref: 21.95)</td><td>11-May-26</td><td>0.475</td><td>Jun26</td><td>Fade VSTOXX&#x27;s &#x27;war risk premium&#x27; with long put ratios</td></tr><tr><td>Buy VIX Jun 25-40 call spread for $1 indic (15x max payout; UXM6 ref. 20.95)</td><td>11-May-26</td><td>$1</td><td>Jun26</td><td>Hedge equity downside with long vol to mitigate strike risk while leveraging vol support in bull run</td></tr><tr><td>Buy QQQ Dec26 90% max lookback put (daily obs.), sell QQQ Dec26 80% vanilla put, for 3.57% indic. (+1x, -1x, ref. 713.29)</td><td>11-May-26</td><td>3.57%</td><td>Dec26</td><td>Mitigate strike &amp; timing risk in strong momentum environment with expanding put spreads</td></tr></table>
+
+# Summary of Closed Trades (11-May-26)
+
+Table 2: Summary of closed trades as of 11-May-26
+
+Summary of closed trades as of 11-May-26
+
+<table><tr><td>Trade Description</td><td>Open Date</td><td>Open Level</td><td>Close Level</td><td>Close Date</td><td>Rationale</td></tr><tr><td>Buy HYG May 79-77 put spread for $0.36 (5.5x max payout, ref. 79.585).</td><td>3-Mar-25</td><td>$0.36</td><td>0</td><td>16-May-25</td><td>Trade expired</td></tr><tr><td>Buy XLI May 125 puts for $1.53 or 1.15% (ref. 132.72)</td><td>17-Mar-25</td><td>$1.53</td><td>0</td><td>16-May-25</td><td>Trade expired</td></tr><tr><td>Buy HYG May 78-76 put spreads for $0.39 (5x max payout, ref. 79.00)</td><td>17-Mar-25</td><td>$0.39</td><td>0</td><td>16-May-25</td><td>Trade expired</td></tr><tr><td>Sell 1x VIX Jun fut, buy 2.5x VIX Sep fut; hold for at most one month (UXM5 ref. 25.0608, UXU5 ref. 23.4036)</td><td>14-Apr-25</td><td>$0.00</td><td>-$0.1141</td><td>21-May-25</td><td>Trade exited early</td></tr><tr><td>Buy SPX 23-May-25 5900 / 6050 1x2 call ratio (buy 1x / sell 2x) for $29.4 indicatively (spot ref. $844.19)</td><td>12-May-25</td><td>$29.40</td><td>0</td><td>23-May-25</td><td>Trade expired</td></tr><tr><td>Buy QQQ 30-May-25 490/515 1x2 call ratio (buy 1x, sell 2x) for $4.27 indicatively (5.9x max payout ratio; 30D/9D strikes)</td><td>28-Apr-25</td><td>$4.27</td><td>$20.89</td><td>30-May-25</td><td>Trade expired ITM</td></tr><tr><td>Buy SPX over RTY 103% Jun25 outperf. call cont. on RTY up</td><td>26-Nov-24</td><td>0.59%</td><td>0</td><td>20-Jun-25</td><td>Trade expired</td></tr><tr><td>Buy SPX Jun 5400/5000/4600 put fly (+1x/-2x/+1x) for $39.2 (10x max payout ratio; net delta = -8; ref. 5614.56)</td><td>10-Mar-25</td><td>$39.20</td><td>0</td><td>20-Jun-25</td><td>Trade expired</td></tr><tr><td>Buy SPX &lt; 95% &amp; 10y SOFR &lt; ATMf-30bps Jun25 dual digital for 9.25% indicatively (10.8x max payout ratio; ref. 5650, 3.78%)</td><td>10-Mar-25</td><td>9.25%</td><td>0</td><td>20-Jun-25</td><td>Trade expired</td></tr><tr><td>Buy VIX Jun 25/35 call spread for 89c indicatively (11.2x max payout ratio; UXM5 ref. 20.01)</td><td>17-Mar-25</td><td>$0.89</td><td>0</td><td>18-Jun-25</td><td>Trade expired</td></tr><tr><td>Buy Jun triple digital SPX &lt; 95%, 10Y SOFR &gt;ATMf+10bps, EURUSD &gt;102% for 8% offer (12x max payout, ref. 5460, 3.84%, 1.134)</td><td>14-Apr-25</td><td>8%</td><td>0</td><td>20-Jun-25</td><td>Trade expired</td></tr><tr><td>Sell VIX Jun 17 puts (UXM5 ref. 19.5) to buy SPX Jun 5950/6150 call spreads (spot ref. 5844.19).</td><td>12-May-25</td><td>$0</td><td>$17.84</td><td>20-Jun-25</td><td>Trade expired ITM</td></tr><tr><td>Buy SPX &gt;102%, USO &lt; 95% Jun dual digital for 14% indicatively (spot ref. 5850, 68.1)</td><td>12-May-25</td><td>14%</td><td>0</td><td>20-Jun-25</td><td>Trade expired</td></tr><tr><td>Buy SPX &gt;RTY Jul25 ATM outperf call for 2.86% indicatively (+85 correl bid; ref. 5747, 2095)</td><td>24-Mar-25</td><td>2.86%</td><td>2.65%</td><td>18-Jul-25</td><td>Trade expired ITM</td></tr><tr><td>Buy SPX &gt;RTY Jul25 ATM outperf call conditional on SPX &lt; 100% for 1.42% indicatively (50% discount to unconditional; +85 correl bid; ref. 5747, 2095)</td><td>24-Mar-25</td><td>1.42%</td><td>0</td><td>18-Jul-25</td><td>Trade expired</td></tr><tr><td>Buy SPX Jul 95% put contingent on 30y SOFR &gt;ATMf + 25bps at expiry for 0.36% indicatively (67% discount to vanilla put; +9 correl bid; ref. 5980, 4.06%)</td><td>19-May-25</td><td>0.36%</td><td>0</td><td>18-Jul-25</td><td>Trade expired</td></tr><tr><td>Sell VIX Jul 17 puts (UXN5 ref. 20.62) to buy SPX Jul 6050/6200 call spreads (spot ref. 5913.44). Sizing for zero cost ~1 SPX call spread for every 100 VIX puts sold</td><td>27-May-25</td><td>$0</td><td>$124</td><td>18-Jul-25</td><td>Trade expired ITM</td></tr><tr><td>Buy SPX Jul 5850/5250 put spread for $39.4 (15.2x max payout ratio; ~25D/5D strikes; ref. 6036.78)</td><td>16-Jun-25</td><td>$39</td><td>0</td><td>18-Jul-25</td><td>Trade expired</td></tr><tr><td>Buy USO Jul 82 / 92 call spread for $1.63 indicatively (6.1x max payout, ~35D/15D strikes, ref. 77.39).</td><td>23-Jun-25</td><td>$1.36</td><td>0</td><td>18-Jul-25</td><td>Trade expired</td></tr><tr><td>Buy KRE Jul 61/66 call spread for $0.74 indicatively (6.8x max payout ratio; ~40D/6D strikes; ref. 59.54).</td><td>30-Jun-25</td><td>$0.74</td><td>$2.27</td><td>18-Jul-25</td><td>Trade expired ITM</td></tr><tr><td>Sell VIX Aug 16.5 puts (UXQ5 ref. 20.1) to buy SPX Aug 6300/6500 call spreads (spot ref. 6188.83). Sizing for zero cost is ~0.65 SPX call spreads for every 100 VIX puts sold.</td><td>30-Jun-25</td><td>$0</td><td>$11.9715</td><td>20-Aug-25</td><td>Trade expired ITM</td></tr><tr><td>XUA Jun25 110% 130% call spreads for 2.94% (indic. 22% delta) Partially funded by selling a NKY Jun25 110% call conditional on US 2yr rates lower, for 1.02%</td><td>26-Nov-24</td><td>2.94%/1.02%</td><td>0</td><td>13-Jun-25</td><td>Trade expired</td></tr><tr><td>Buy XIN9I 27-Jun 2025 105% 115% call spread for 2.20% (indic. Spot ref: 13,450, 19% delta, vols: 24.0/25.3, 4.5x max payout).</td><td>18-Feb-25</td><td>2.2%</td><td>0</td><td>27-Jun-25</td><td>Trade expired</td></tr><tr><td>Buy KOSPI2 3-month 90% 105% 112% call spread collar for 0.39% (indic. spot ref: 353.24, 35d, vols: 21.1%/17.5%/16.9%)</td><td>24-mar-25</td><td>0.39%</td><td>7%</td><td>Jun 25</td><td>Trade expired ITM</td></tr><tr><td>Buy an HSCEI 16-May-25 9,100 9,700 10,300 call fly for HK$77.5</td><td>10-Mar-25</td><td>0.9%</td><td>0</td><td>16-May-25</td><td>Trade expired</td></tr><tr><td>Buy NKY 2-month 107% 114% 1x1.5 call ratio for 1.29% +1x 107% call / -1.5x 114% call (5.4x may payout ratio)</td><td>7-Apr-25</td><td>1.29%</td><td>2%</td><td>Jun 25</td><td>Trade expired ITM</td></tr><tr><td>Buy SPX 8-Aug 6400 straddles delta-hedged at 10.7% implied vol (spot ref. 6379) paired with long VIX Aug 16.5/15 put spreads for 60c</td><td>29-Jul-25</td><td>10.7v (1.7%) / 60c</td><td>14v / $1.09</td><td>20-Aug-25</td><td>Trade expired ITM</td></tr><tr><td>Long HSCEI 15-Aug-25 9,100 9,800 call spreads for HKD 89</td><td>30-Jun-25</td><td>HKD89</td><td>0</td><td>15-Aug-25</td><td>Trade expired</td></tr><tr><td>Buy NIFTYM 28-Aug-25 25,500 calls for $239 (indic. ~0.95 %, ref. 25,091, +38% delta, 10.9% vol)</td><td>22-Jul-25</td><td>0.95%</td><td>0</td><td>Aug-25</td><td>Trade expired</td></tr><tr><td>Buy SPX Sep 6000 calls cont. on EURUSD &lt; 100% at expiry for 1.17% (60% disc. to vanilla calls; +17 correl bid, ref. 5810f, 1.08 spot)</td><td>24-Mar-25</td><td>1%</td><td>0</td><td>19-Sep-25</td><td>Trade expired</td></tr><tr><td>Buy VIX Sep 30/45 call spread for $1.50 indic mid levels(10x max payout ratio; UXU5 23.75)</td><td>4-Apr-25</td><td>$1.50</td><td>0</td><td>17-Sep-25</td><td>Trade expired</td></tr><tr><td>Buy VIX Sep 30/50 call spread for $2 indicatively (10x max payout ratio; UXU5 ref 23.50)</td><td>7-Apr-25</td><td>$2.00</td><td>0</td><td>17-Sep-25</td><td>Trade expired</td></tr><tr><td>Buy SPX Sep 95%/75% put down &amp; out for 1.03% indicatively (continuous obs.; 58% discount to put spread; ref. 5534.08)</td><td>28-Apr-25</td><td>1.03%</td><td>0</td><td>19-Sep-25</td><td>Trade expired</td></tr><tr><td>Buy SPX Sep 95%/85% put down &amp; out for 26bps indicatively (continuous obs.; 79% discount to put spread; ref. 5912.12)</td><td>27-May-25</td><td>0.26%</td><td>0</td><td>19-Sep-25</td><td>Trade expired</td></tr><tr><td>Buy SPX &lt; 95% / USO &gt;107% Sep25 dual digital for 8% indicatively (12.5x max payout ratio, correl bid +0, ref. 6073, 80.22)</td><td>16-Jun-25</td><td>8%</td><td>0</td><td>19-Sep-25</td><td>Trade expired</td></tr><tr><td>Buy VIX Sep 18/17/16 put ladder (+1x / -1x/ -1x) for 12c indicatively (8.3x max payout; UXU5 ref. 21.86).</td><td>23-Jun-25</td><td>12c</td><td>86c</td><td>17-Sep-25</td><td>Trade expired ITM</td></tr><tr><td>Buy EEM Sep25 51/55 call spreads for 47c (~35d/5d strikes; ref. 49.1350).</td><td>29-Jul-25</td><td>47c</td><td>$2.01</td><td>19-Sep-25</td><td>Trade expired ITM</td></tr><tr><td>Sell VIX Sep 16.5 puts (UXU5 ref. 20.05) to buy SPX Sep 6250/5900 put spreads (spot ref. 6318.62). Sizing for zero cost is ~0.75 SPX put spreads for every 100 VIX puts sold.</td><td>4-Aug-25</td><td>$0.00</td><td>-$0.64</td><td>19-Sep-25</td><td>Trade expired</td></tr><tr><td>Buy SPX 30-Sep 6350-6100 put spread for $37.2 indicatively (6.7x max payout ratio; -35d/15d strikes; ref. 6415.54).</td><td>2-Sep-25</td><td>$37.20</td><td>0</td><td>30-Sep-25</td><td>Trade expired</td></tr><tr><td>Buy SX5E Jun25/Dec25 floating (110% of spot) FVA call for 1.1% (14v)</td><td>19-Aug-24</td><td>1.1%</td><td>-0.8v</td><td>Jun25</td><td>Trade expired</td></tr><tr><td>Buy a Jun25 ATMF (115% strike) call on return dispersion on a basket of low (vs history) vol stocks that are most positively &amp; negatively geared to USD</td><td>26-Nov-24</td><td>2%</td><td>0%</td><td>20-Jun-25</td><td>Trade expired</td></tr><tr><td>Buy SXAP Jun25 105%-115%-125% appearing call spread (daily obs.) for 1.96% indicatively (10.2x max payout ratio, 32bps/19% premium to vanilla 105%-115% call spread, ref. 567.64)</td><td>10-Feb-25</td><td>1.96%</td><td>0</td><td>Jun25</td><td>Trade expired</td></tr><tr><td>Buy 1.3x SX7E Jun25 30d puts, fully funded by 1x KRE Jun25 30d put (spot refs: 177.78 and 61.71, respectively). Alternatively, consider SX7E Jun25 put spreads.</td><td>24-Feb-25</td><td>0%</td><td>-0.6%</td><td>Jun25</td><td>Trade expired</td></tr><tr><td>Buy SXXP Jun25 103.5% (23-delta) calls for 82bps (ref 550.6) for continued European upside exposure at low cost</td><td>18-Mar-25</td><td>82bps</td><td>0</td><td>Jun25</td><td>Trade expired</td></tr><tr><td>Buy Jun25 105%-115% MDAX call spreads for 2.8% indicatively</td><td>11-Mar-25</td><td>2.8%</td><td>0</td><td>Jun25</td><td>Trade expired</td></tr></table>
+
+Table 2: Summary of closed trades as of 11-May-26
+
+Summary of closed trades as of 11-May-26
+
+<table><tr><td>Trade Description</td><td>Open Date</td><td>Open Level</td><td>Close Level</td><td>Close Date</td><td>Rationale</td></tr><tr><td>Long 1.2x SXXP, Short 1x SX6P 35D Jun25 put switches for zero premium (refs 564, 395 respectively)</td><td>4-Mar-25</td><td>0%</td><td>2.1%</td><td>Jun25</td><td>Trade expired ITM</td></tr><tr><td>Buy initially delta-hedged SX5E Jul&#x27;25 40-delta calls (implied vol: 15.5v)</td><td>12-May-25</td><td>15.5v</td><td>2.94%</td><td>Jun25</td><td>Trade expired</td></tr><tr><td>As a zero premium call switch alternative, fund SX5E 40-delta calls with SX6P (EU-Utilities) 40-delta calls (refs: 5392.36 and 425.09 respectively)</td><td>12-May-25</td><td>0</td><td>-2.3%</td><td>Jun25</td><td>Trade expired</td></tr><tr><td>Buy SX5E 15-Aug-25 40d/25d (98.5%f/94.2%f) put spread for 1% indicatively (60% discount vs naked 40d put, 4x max payout ratio; spot ref. 5326).</td><td>27-May-25</td><td>1%</td><td>0</td><td>15-Aug-25</td><td>Trade expired</td></tr><tr><td>Buy an Aug-25 SX5E up, EURUSD up dual digital qEUR (30-delta strikes on both assets are 5550 and 1.17 respectively) for 12.5% indicatively (refs: 5345 &amp; 1.14)</td><td>2-Jun-25</td><td>12.5%</td><td>0</td><td>Aug-25</td><td>Trade expired</td></tr><tr><td>Long Aug-25 SX7E&lt;95%, Brent futures (COV5) &gt; 85 dual digital for 8.65% indicatives (Correlation bid -18%, refs: SX7E 196.85 and COV5 74.4)</td><td>23-Jun-25</td><td>8.65%</td><td>0</td><td>Aug25</td><td>Trade expired</td></tr><tr><td>Long FTSE Aug25 97.6% (30-delta) puts for 1.06% (ref: 8758.04)</td><td>23-Jun-25</td><td>1.06%</td><td>0</td><td>Aug25</td><td>Trade expired</td></tr><tr><td>Aug25 20D (+1.4x 103%, -1x 96%) zero premium risk reversals on SX5E (ref: 5371)</td><td>15-Jul-25</td><td>0%</td><td>0</td><td>Aug-25</td><td>Trade expired</td></tr><tr><td>Buy +1x QQQ Oct 605-625 call spread (~30D/10D strikes), sell -1x QQQ Oct 545 put (~10D strike) for $1.87 indicatively (ref: 590.97)</td><td>15-Sep-25</td><td>$1.87</td><td>0</td><td>17-Oct-25</td><td>Trade expired</td></tr><tr><td>Long SX5E 12-Sep ATM straddle for 2.4% indic. (Ref: 5291) and look to enter long V2X Oct, short Nov futures at -0.6v or better.</td><td>2-Sep-25</td><td>2.5%/-0.6v</td><td>0/-2.05v</td><td>Nov-25</td><td>Trade expired</td></tr><tr><td>Trade 1 (protection): Zero cost XIN9I 3-month 96% 90% 1x3 put ratios for 0.05% credit, rolled 1-2 months into the trade (indic. spot ref 14,962, delta -6.1%, vols: 18.5/17.4)); +3x 90% puts -1x 96% put</td><td>26-Aug-25</td><td>0%</td><td>0</td><td>Nov 25</td><td>Trade expired</td></tr><tr><td>Trade 2 (participation): XIN9I call spreads for investors wanting to add upside. Buy XIN9I 3m 105% 115% call spread for 1.38% (indic. spot ref: 14,962, 20% delta, vols: 20.1/23.0, 7.2x max payout)</td><td>26-Aug-25</td><td>1.38%</td><td>0</td><td>Nov 25</td><td>Trade expired</td></tr><tr><td>XIN9I 3-month 95% 85% put spreads for 1.7% (indic. spot ref 14,825, delta -22%, vols: 20/21v, 5.9x max payout)</td><td>9-Sep-25</td><td>1.7%</td><td>0</td><td>Nov 25</td><td>Trade expired</td></tr><tr><td>Buy long VIX Nov 18 puts vs short VIX Apr 18 puts for $0.10 indicatively</td><td>22-Sep-25</td><td>$0.10</td><td>$23.9</td><td>Nov-25</td><td>Trade expired</td></tr><tr><td>Buy NDX Dec25 ATM upvar for 17v indicatively (t &amp; t-1 convention, Dec25 var ref. 25.1v)</td><td>26-Nov-24</td><td>17v</td><td>15.77v</td><td>19-Dec-25</td><td>Trade expired</td></tr><tr><td>Buy NDX Dec25 80% upvar for 20.15v indicatively (t &amp; t-1 convention, Dec25 var ref. 25.1v)</td><td>26-Nov-24</td><td>20.15v</td><td>23.36v</td><td>19-Dec-25</td><td>Trade expired ITM</td></tr><tr><td>Buy NDX Dec25 ATM upvar for 16.8v indicatively (t &amp; t-1 convention)</td><td>27-Jan-25</td><td>16.8v</td><td>15.12v</td><td>19-Dec-25</td><td>Trade expired</td></tr><tr><td>Buy NDX Dec25 ATM upvar for 18.15v indicatively (t &amp; t-1 convention)</td><td>24-Mar-25</td><td>18.15v</td><td>14.98v</td><td>19-Dec-25</td><td>Trade expired</td></tr><tr><td>Buy 31-Dec-25 SPX 6250/5750/5250 put ladder (+1x / -1x / -1x) for $40.1 indicatively (12.4x max payout ratio; spot ref. 6373.45)</td><td>11-Aug-25</td><td>$40.10</td><td>0</td><td>31-Dec-25</td><td>Trade expired</td></tr><tr><td>Long SPX Dec 6300/5800 put spreads for ~$75 indicatively or 1.16% of spot (6.6x max payout ratio; ref. 6449.23), outright or paired with long VIX Nov 18/15 put spreads for $1.13 indicatively (2.6x max payout ratio, UXX5 ref. 20.70)</td><td>18-Aug-25</td><td>$75 / $1.13</td><td>0 / 1.99</td><td>19-Dec-25</td><td>Trade expired</td></tr><tr><td>Buy SPX 31-Dec-25 95% / 85% down-and-out put for 0.31% indic (cont. obs., 32x max payout ratio, 68% discount to vanilla put spread; ref. 6654).</td><td>13-Sep-25</td><td>31bps</td><td>0</td><td>31-Dec-25</td><td>Trade expired</td></tr><tr><td>Buy SPX 31-Dec-25 95% / 85% down-and-out put for 0.28% indic (cont. obs., 35x max payout ratio, 65% discount to vanilla put spread; ref. 6735.13).</td><td>20-Oct-25</td><td>28bps</td><td>0</td><td>31-Dec-25</td><td>Trade expired</td></tr><tr><td>Sell VIX Dec 16.5 puts (UXZ5 ref. 19.93) to buy SPX Dec 7000/7250 call spreads (spot ref. 6852.43). Sizing for zero cost is ~0.7 SPX call spreads per ~100 VIX puts sold.</td><td>3-Nov-25</td><td>$0.00</td><td>-$0.49</td><td>19-Dec-25</td><td>Trade expired</td></tr><tr><td>Buy 12-Jun-25 85%/65% Best of Put spreads on NKY/KOSPI2/ SX5E/SPX for 0.50% (indic. quanto USD, 64% discount to avg vanilla, 40x may payout ratio</td><td>16-Jul-24</td><td>0.50%</td><td>0</td><td>Jun-25</td><td>Trade expired</td></tr><tr><td>Buy 19-Dec-25 85%/65% Best of Put spreads on NKY/KOSPI2/ SPX for 0.90% (indic. quanto USD, 56% discount to avg vanilla)</td><td>26-Nov-24</td><td>0.90%</td><td>0</td><td>19-Dec-25</td><td>Trade expired</td></tr><tr><td>Buy Sep25 NKY &gt; 104% / USDJPY &gt; 104% dual digital at maturity for 15.8% (+37 correl offer, ref. 37,760, 150.0) 6.3x max payout</td><td>3-Mar-25</td><td>15.8%</td><td>0</td><td>Sep-25</td><td>Trade expired</td></tr><tr><td>Buy VIX Feb26 15.5/20/25 call spread collar for $0.11 indicatively (UXG6 ref. 17.92)</td><td>12-Jan-26</td><td>$0.11</td><td>0</td><td>18-Feb-26</td><td>Trade expired</td></tr><tr><td>Dec25 +DAX vs -SXDP zero-premium call switch (20-delta strikes, refs: 24160 and 1036 respectively)</td><td>15-Jul-25</td><td>0%</td><td>-2%</td><td>Dec-25</td><td>Trade expired</td></tr><tr><td>Long SX7E Dec25 Appearing Put Spread (€205-€185-€160) for 2.65% (ref: 216.89)</td><td>4-Aug-25</td><td>2.65%</td><td>0</td><td>Dec25</td><td>Trade expired</td></tr><tr><td>Long Dec25 DAX vs SX5E 102.5% outperformance, conditioned on EURUSD &gt; 1.2 at expiry for 0.84%</td><td>11-Aug-25</td><td>0.84%</td><td>0</td><td>Dec25</td><td>Trade expired</td></tr><tr><td>Buy DAX Dec25 call spread collar (+24800 call-25500 call-22400 put) for 0 cost</td><td>18-Aug-25</td><td>0</td><td>0</td><td>Dec 25</td><td>Trade expired</td></tr><tr><td>Buy DAX Dec25 105% call contingent on EURUSD &gt; 1.20 for 0.77%</td><td>18-Aug-25</td><td>0.77%</td><td>0</td><td>Dec 25</td><td>Trade expired</td></tr><tr><td>Buy SX5E Dec25 put ladder +5350/-5125/-4875 for 10bps premium indicatively</td><td>18-Aug-25</td><td>10bps</td><td>0</td><td>Dec 25</td><td>Trade expired</td></tr><tr><td>Replace FTSE longs with Dec25 103% (-28D) calls for 80bps (ref: 9299.84)</td><td>29-Sep-25</td><td>80bps</td><td>3.21%</td><td>Dec-25</td><td>Trade expired</td></tr><tr><td>Long Dec25 35d-15d (97.2%-92.3%) CAC put spreads for 0.98% indic (max payout ratio of 5.7x)</td><td>27-Oct-25</td><td>0.98%</td><td>0</td><td>Dec 25</td><td>Trade expired</td></tr><tr><td>DAX Dec25 102.5% calls, contingent on the CAC &lt;102.5% at expiry for 39bps (-69% discount vs vanilla calls)</td><td>27-Oct-25</td><td>39bps</td><td>0</td><td>Dec 25</td><td>Trade expired</td></tr><tr><td>Long Dec25 VolSwap dispersion on custom names vs the ESTX50</td><td>26-Nov-24</td><td>9.5v</td><td>12.0v</td><td>19-Dec-25</td><td>Trade expired +2.5%</td></tr><tr><td>Buy DAX Dec-25 85% upvar for 18.3v (fair variance ref of 23.3v)</td><td>11-Mar-25</td><td>18.3v</td><td>17v</td><td>19-Dec-25</td><td>Trade expired</td></tr><tr><td>Long SX5E Dec25 Volswap, short SX5E Dec25 Varswap for a credit of 2.9v indicatively (var ref: 23.75). For a more defensive alternative, short 0.95x Varswap vs the Volswap for 1.7v, indicatively.</td><td>6-May-25</td><td>2.9 credit</td><td>-4.3v</td><td>19-Dec-25</td><td>Trade expired</td></tr><tr><td>Long SX7E-SX5E Mar26 60-110% Corridor Var Spread for 7.7v (vanilla var refs. 9.9v, 31.5v &amp; 21.6 respectively, T&amp;T-1 convention)</td><td>4-Aug-25</td><td>7.7v</td><td>10.2v</td><td>20-Mar-26</td><td>Trade expired ITM</td></tr><tr><td>S&amp;P calls quantoed into EUR (for only 3 bps more than vanilla Dec25 102.5% calls that cost 1.86%).</td><td>22-Sep-25</td><td>1.89%</td><td>0%</td><td>19-Dec-25</td><td>Trade expired</td></tr><tr><td>Cheapening S&amp;P calls by conditioning on EUR higher, also quantoed into EUR for 1.23%, a 35% cheapening vs Dec25 SPX 102.5% calls qEUR).</td><td>22-Sep-25</td><td>1.23%</td><td>0%</td><td>19-Dec-25</td><td>Trade expired</td></tr><tr><td>Sell SX5E Dec25 ATM Downvar vs buy Var to collect 4.7v (T-convention, var ref: 19v)</td><td>29-Sep-25</td><td>4.7v</td><td>4.7v collected</td><td>19-Dec-25</td><td>Trade expired ITM</td></tr><tr><td>Buy Dec25 FTSE div futures as a Dollar (vs Sterling) strength beneficiary</td><td>26-Nov-24</td><td>299.5</td><td>3.9 GBP</td><td>19-Dec-25</td><td>Trade expired</td></tr><tr><td>Buy TWSE &gt; KOSPI2 103% 11-Sep-25 outperformance call contingent on KOSPI2 up for 1.52%</td><td>3-Feb-25</td><td>1.52%</td><td>0</td><td>11-Sep-25</td><td>Trade expired</td></tr><tr><td>Buy a 27-Jun-25 110% Worst of Call on 700 HK / 9988 HK / 1211 HK for 2.5% (63% discount to average vanilla call cost)</td><td>18-Feb-25</td><td>2.5%</td><td>0</td><td>27-Jun-25</td><td>Trade expired</td></tr><tr><td>Buy 12 Sep 25 NKY+SPX 3% outperformance call contingent on USDJPY &gt; 3%, 2.8% offer (indic. contingency gives 38% discount)</td><td>14-Apr-25</td><td>2.8%</td><td>0</td><td>Sep-25</td><td>Trade expired</td></tr><tr><td>Buy NIFTYM 29-May-25 23,200 25,200 bullish risk reversal for INR 24 (~0.10% of spot, indic. spot ref: 24,329, 37d, vols: 17.2%/12.8%)</td><td>28-Apr-25</td><td>INR 24</td><td>0</td><td>29-May-25</td><td>Trade expired</td></tr></table>
+
+Table 2: Summary of closed trades as of 11-May-26
+
+Summary of closed trades as of 11-May-26
+
+<table><tr><td rowspan="3">Trade Description(Aappearing call spread): Buy XIN9I Sep25 105%-115%-125% appearing call spread (continuous obs.) for 1.82%(10.9x max payout ratio, vs 1.75% vanilla 105%-115% call spread, ref. 13,200)(Up &amp; out call): Buy XIN9I 29-Sep-25 105% calls with 27-Jun-25 window knock out at 115% for 1.83% (indic. 26% discount to vanilla call, ref. 13,200)</td><td>Open Date</td><td>Open Level</td><td>Close Level</td><td>Close Date</td><td>Rationale</td></tr><tr><td>28-Apr-25</td><td>1.82%</td><td>0</td><td>Sep-25</td><td>Trade expired</td></tr><tr><td>28-Apr-25</td><td>1.83%</td><td>8.13%</td><td>Sep-25</td><td>Trade expired ITM</td></tr><tr><td>Sell TWSE 18.5k/19.5k/21.5k Put Spread Collars (PSC) and collect TWD 34 (~0.17% of spot, indic. spot ref: 20,500, 37d, vols: 28.6%/25.8%/21.4%)</td><td>6-May-25</td><td>TWD 34</td><td>-2800.48 TWD</td><td>Aug-25</td><td>Trade expired</td></tr><tr><td>Buy a TWSE 1m/3m 22k call calendar for TWD 132 (0.64% of spot, indic. spot ref: 20,522, 7d, +15.1 vega, vols: 20.9%/20.8%)</td><td>6-May-25</td><td>TWD 132</td><td>2156.74 (8.8%)</td><td>Aug-25</td><td>Trade expired ITM</td></tr><tr><td>Buy HSCEI delta 1 overlayed by a near zero-cost 15-Aug-25 7,700 9,400 risk reversal for HKD 11 credit (indic. 0.13% of spot)</td><td>12-May-25</td><td>HKD 11</td><td>468.86 HKD</td><td>15-Aug-25</td><td>Trade expired ITM</td></tr><tr><td>Buy HSCEI 20-Jun-25 1x1.5 8,800 9,200 call ratio for HKD 49 (indic. 0.58% of spot) (Options on futures, Jun fut ref 8,500, +5 delta, Vols: 27.3% / 28.0%)</td><td>12-May-25</td><td>HKD 49</td><td>0</td><td>Jun25</td><td>Trade expired</td></tr><tr><td>Sell NKY 2m +1x/-1x/-1x/+1x 32,500 35,000 40,000 42,500 &quot;iron condor&quot; for JPY 515 (-1.4%, equivalent to 8.2% yield per annum)</td><td>19-May-25</td><td>JPY515</td><td>JPY 515</td><td>Jul25</td><td>Trade expired</td></tr><tr><td>Buy NKY 8-Aug 2025 double-no-touch on 36,000 and 40,000 for 11%, spot ref:37,499 (indic. 9x max payout, continuous observation)</td><td>19-May-25</td><td>11%</td><td>0</td><td>8-Aug 25</td><td>Trade expired</td></tr><tr><td>Buy KOSPI2 2m 105% calls (0.98%) financed by selling KOSPI2 1m 95% put (0.57%) for 0.41% of spot</td><td>27-May-25</td><td>0.41%</td><td>17.31%</td><td>Jul-25</td><td>Trade expired ITM</td></tr><tr><td>Trade NIFTYM 26-Jun-25 24,200 23,500 1x3 put ratios for INR 12 (-0.05% of spot, indic. spot ref: 24,717, -6,5d, vols: 16.84%/15.35%)</td><td>2-Jun-25</td><td>INR 12</td><td>0</td><td>26-Jun-25</td><td>Trade expired</td></tr><tr><td>NIFTYM 31-Jul-25 24,400 23,500 1x3 put ratios for USD 36(-0.14% of spot, indic. spot ref: 24,946, -8.8d, vols: 14.58%/16.23%)-1x 24,400 put (-29d) &amp; +3x 23,500 puts (-12d)</td><td>16-Jun-25</td><td>0.14%</td><td>0</td><td>31-Jul 25</td><td>Trade expired</td></tr><tr><td>Buy KOSPI2 3-month 360 440 risk reversals for a KRW 0.7 credit (indic. 0.17% of spot) instead of taking profits on longs in Korea</td><td>23-Jun-25</td><td>KRW 0.7</td><td>32.74 KRW</td><td>Sep25</td><td>Trade expired ITM</td></tr><tr><td>Buy TWSE 3m 110% calls &amp; sell KOSPI2 3m 110% calls and collect 0.33% (spot ref 22,615 &amp; 430.78, for TWSE and KOSPI2, respectively; 17.7/19.1% vols, 12.5/17.6 deltas)</td><td>15-Jul-25</td><td>0.33%</td><td>9.68%</td><td>Oct-25</td><td>Trade expired ITM</td></tr><tr><td>Sell NKY 1m 105% calls and buy 3m 105% calls for 0.98% (indic. Spot ref: 39,460, vols: 17.2/17.7)</td><td>15-Jul-25</td><td>0.98%</td><td>9.61%</td><td>Oct-25</td><td>Trade expired ITM</td></tr><tr><td>Buy Nikkei 10-Oct 2025 105%-115% call spread for 1.01% (indic. Spot ref: 40,998, 21% delta, vols: 17.3/18.1, 9.9x max payout).</td><td>29-Jul-25</td><td>1.01%</td><td>8.99%</td><td>10-Oct 25</td><td>Trade expired ITM</td></tr><tr><td>Long HSCEI 21-Nov-25 1x1.5 105% 110% call ratios for 0.39% (indic., options on futs, spot ref: 8,893,12.8x may payout)</td><td>4-Aug-25</td><td>0.39%</td><td>0</td><td>21-Nov 25</td><td>Trade expired</td></tr><tr><td>Buy 12-Dec 25 NKY&gt;SPX 103% outperf calls for 2.60% (indic.)</td><td>18-Aug-25</td><td>2.60%</td><td>1.27%</td><td>Dec 25</td><td>Trade expired ITM</td></tr><tr><td>Buy KOSPI2 3-month 105-115% call spreads for 1.62% (indic. spot ref: 478, 24d, vols: 19.2%/19.4%)</td><td>22-Sep-25</td><td>1.62%</td><td>8.38%</td><td>Dec-25</td><td>Trade expired ITM</td></tr><tr><td>Buy NKY 3-month 105% 115% call spreads for 1.62% (indic. Spot ref: 45,043, 24.6 delta, vols: 19.2/18.8, 6.2x max payout)</td><td>29-Sep-25</td><td>1.62%</td><td>3.29%</td><td>Dec-25</td><td>Trade expired ITM</td></tr><tr><td>Buy a TWSE 1m/2m 30k call calendar for TWD 183 (0.65% of spot, indic. spot ref: 27,994, 9d, +17.3 vega, vols: 18.3%/18.2%)</td><td>27-Oct-25</td><td>TWD 183</td><td>0</td><td>Dec-25</td><td>Trade expired</td></tr><tr><td>Buy NIFTYM 24-Feb-26 25.5k/26.5k call spread for USD 189 (indic. 0.75% of spot, spot ref: 25,048, vols: 11.9%/11.4%, delta 29.3%).</td><td>26-Jan-26</td><td>$189</td><td>0</td><td>24-Feb-26</td><td>Trade expired</td></tr><tr><td>Buy TWSE 18-Mar 34.5k calls funded by selling 23-Feb 30.5k 28.9k put spreads for TW$65 (spot ref: 32,065)</td><td>26-Jan-26</td><td>TW$65</td><td>0</td><td>18-Mar-26</td><td>Trade expired</td></tr><tr><td>Sell NKY 13-Feb 57k calls to fund 13-Mar 57k/60k call spreads for JPY 277: 10.8x max payout (indic. 0.52% of spot, ref: 53,806, 31.9v 28.6v 28.3v, delta -2%)</td><td>2-Feb-26</td><td>JPY 277</td><td>0</td><td>13-Mar-26</td><td>Trade expired</td></tr><tr><td>Buy QQQ Mar26 660-720 call spread for $8.92 indicatively (6.7x max payout ratio; ~27d/7d strikes; ref. 599.44).</td><td>29-Sep-25</td><td>$8.92</td><td>0</td><td>Mar26</td><td>Trade expired</td></tr><tr><td>Buy SPX Mar26 105% call contingent on XAU &gt; 102% at expiry for 1.31% indicatively</td><td>29-Sep-25</td><td>1.31%</td><td>0</td><td>Mar26</td><td>Trade expired</td></tr><tr><td>Buy QQQ Mar26 675-735 call spread for $8.25 (7.3x max payout ratio; ~25d/7d strikes; ref. 611.56).</td><td>20-Oct-25</td><td>$8.25</td><td>0</td><td>Mar26</td><td>Trade expired</td></tr><tr><td>Buy TLT Mar26 88 puts for $1.31 (~30D strike, 4.1% OTM, ref. 91.78)</td><td>27-Oct-25</td><td>$1.31</td><td>$2.17</td><td>Mar26</td><td>Trade expired ITM</td></tr><tr><td>Buy TLT (20+Yr Treasury Bond ETF) Mar26 86 puts for $1.03 (~25D strike, ref. 90.01)</td><td>26-Nov-25</td><td>$1.03</td><td>$0.17</td><td>Mar26</td><td>Trade expired ITM</td></tr><tr><td>Buy 30y SOFR &gt;ATMF + 20bps / XAU &gt; 106% Mar26 dual digitals for 7.95% (12.5x max payout ratio, -18 correl offer, ref. 3.955%, 4078.70)</td><td>26-Nov-25</td><td>7.95%</td><td>0</td><td>Mar26</td><td>Trade expired</td></tr><tr><td>Buy GLD Mar26 490-550 call spread for $9.9 indicatively (6x max payout; ~36d (5% OTM) / 11d (18% OTM) strikes; ref. 464.7)</td><td>26-Jan-26</td><td>$9.9</td><td>0</td><td>Mar26</td><td>Trade expired</td></tr><tr><td>Buy 1x EWZ Mar26 40 call, sell 1x Jul26 48 call for 14c indicatively (28d/14d strikes, ref. 37.585)</td><td>17-Feb-26</td><td>$0.14</td><td>-0.18</td><td>Mar26</td><td>Trade expired</td></tr><tr><td>Buy Mar26 straddle on liquid EZ banks vs short SX7E straddle for 2.36%</td><td>26-Nov-25</td><td>2.36%</td><td>1.2%</td><td>20-Mar-26</td><td>Trade expired ITM</td></tr><tr><td>Buy SPX MarQ 6525-5925 put spread for $50 indicatively, ref 6795.99.</td><td>9-Mar-26</td><td>$50.00</td><td>$0</td><td>31-Mar-26</td><td>Trade expired</td></tr><tr><td>Buy IWM MarQ 240-215 put spread for $2.60 indicatively, ref 253.62.</td><td>9-Mar-26</td><td>$2.60</td><td>$0</td><td>31-Mar-26</td><td>Trade expired</td></tr><tr><td>Buy GLD Apr26 450 calls (~106% / 35d strike), sell SLV Apr26 120 calls (~155% / 17d strike) notional-matched for zero cost indicatively (ref. 423.26, 77.34).</td><td>12-Jan-26</td><td>$0</td><td>$0</td><td>17-Apr-26</td><td>Trade expired</td></tr><tr><td>Buy SPX Apr26 6800/6300/5800 put ladder (+1x/-1x/-1x) for $63.8 indicatively (7.8x max payout; ~40d/15d/5d strikes; ref. 6881.62).</td><td>2-Mar-26</td><td>$63.8</td><td>$0</td><td>17-Apr-26</td><td>Trade expired</td></tr><tr><td>Buy SPX Apr26 97%/85% PDO for 57bps indicatively (50% discount to vanilla put spread; ref. 6881.62).</td><td>2-Mar-26</td><td>57bps</td><td>0%</td><td>17-Apr-26</td><td>Trade expired</td></tr><tr><td>Buy VIX Apr 20-18 put spread for $0.50 mid indicatively (4x max payout ratio; UXJ6 ref. 24.30)</td><td>23-Mar-26</td><td>$0.5 mid</td><td>$2</td><td>15-Apr-26</td><td>Trade expired ITM</td></tr></table>
+
+Source: BofA Global Research. Prices reflective of most recently available data which may be delayed in some cases. "Trade Value" represents current valuation of trades initiated on the "Open Date"
+
+BofA GLOBAL RESEARCH
+
+# Acronyms
+
+BTD: Buy-the-dip
+
+FOMC = Federal Open Market Committee
+
+NFP = Non-Farm Payrolls
+
+SPY = SPDR S&P 500 ETF Trust (ETF)
+
+QQQ = Invesco QQQ Trust (ETF)
+
+CPI = Consumer Price Index
+
+XLF = Financial Select Sector SPDR Fund (ETF)
+
+ATM = At-The-Money
+
+# Options Risk Statement
+
+# Potential Risk at Expiry & Options Limited Duration Risk
+
+Unlike owning or shorting a stock, employing any listed options strategy is by definition governed by a finite duration. The most severe risks associated with general options trading are total loss of capital invested and delivery/assignment risk, all of which can occur in a short period.
+
+# Investor suitability
+
+The use of standardized options and other related derivatives instruments are considered unsuitable for many investors. Investors considering such strategies are encouraged to become familiar with the "Characteristics and Risks of Standardized Options" (an OCC authored white paper on options risks). U.S. investors should consult with a FINRA Registered Options Principal. For detailed information regarding the risks involved with investing in listed options, see the Options Clearing Corporation's Characteristics and Risks of Standardized Options website.
+
+# Analyst Certification
+
+I, Benjamin Bowler, hereby certify that the views expressed in this research report accurately reflect my personal views about the subject securities and issuers. I also certify that no part of my compensation was, is, or will be, directly or indirectly, related to the specific recommendations or view expressed in this research report.
+
+# Disclosures
+
+# Important Disclosures
+
+One or more analysts contributing to this report owns stock of the covered issuer: Leonardo, Meta Platforms, Microsoft Corp, NVIDIA, Siemens Energy AG, Taiwan Semi Mfg Co
+BofAS or one of its affiliates acts as a market maker for the equity securities recommended in the report: Invesco QQQ ETF, Invesco S&P EW ETF, iShare Silver, iShares CH LrgCp ETF, iShares iBoxx \$ HYC, iShares Long UST, iShares MSCI EM ETF, iShares Russell ETF, iShares Semicond ETF, Meta Platforms, Microsoft, NVIDIA, Oil&Gas Exp ETF, Sanofi, SPDR Energy ETF, SPDR Financ ETF, SPDR Gold Shares, SPDR Material ETF, SPDR S&P 500 ETF, SPDR S&P Homebuilder, SPDR S&P Met&Min, Taiwan Semi Mfg Co, United States Oil.
+BofAS or an affiliate was a manager of a public offering of securities of this issuer within the last 12 months: Axa, Credit Agricole, DHL Group, Intesa, Samsung Electronics, Sanofi.
+The issuer is or was, within the last 12 months, an investment banking client of BofAS and/or one or more of its affiliates: Adyen, Air Liquide, Airbus Group, Axa, BARC, BlackRock, Credit Agricole, DHL Group, E.ON, Enel SpA, Hermes, Intesa, Invesco, Julius Baer, KPN, Leonardo, LVMH, Meta Platforms, Microsoft Corp, Partners Group, Samsung Electronics, Sandvik, Sanofi, SAP SE, Siemens Energy AG, SK Hynix, State Street, Taiwan Semi Mfg Co, UniCredit.
+BofAS or an affiliate has received compensation from the issuer for non-investment banking services or products within the past 12 months: Adyen, Air Liquide, Airbus Group, Axa, BARC, BlackRock, Capgemini, Credit Agricole, DHL Group, E.ON, Enel SpA, Hermes, Intesa, Invesco, Julius Baer, Leonardo, LVMH, Meta Platforms, Microsoft Corp, NVIDIA, Partners Group, Samsung Electronics, Sandvik, Sanofi, SAP SE, Siemens Energy AG, SK Hynix, State Street, Swiss Life, Taiwan Semi Mfg Co, UniCredit.
+The issuer is or was, within the last 12 months, a non-securities business client of BofAS and/or one or more of its affiliates: Adyen, Air Liquide, Airbus Group, Atlas Copco, Axa, BARC, BlackRock, Capgemini, Credit Agricole, DHL Group, E.ON, Enel SpA, Hermes, Intesa, Invesco, Julius Baer, KION Group AG, KPN, Leonardo, LVMH, Meta Platforms, Microsoft Corp, NVIDIA, Partners Group, Samsung Electronics, Sandvik, Sanofi, SAP SE, Siemens Energy AG, SK Hynix, State Street, Swiss Life, Taiwan Semi Mfg Co, UniCredit.
+In the US, retail sales and/or distribution of this report may be made only in states where these securities are exempt from registration or have been qualified for sale: Advantest, Adyen, Air Liquide, Airbus Group, Atlas Copco, Axa, Capgemini, Credit Agricole, DHL Group, E.ON, Enel SpA, Geberit, Hermes, Intesa, Julius Baer, KION Group AG, KPN, Leonardo, LVMH, Partners Group, Samsung Electronics, Sandvik, Siemens Energy AG, SK Hynix, Swiss Life, Tokyo Electron. UniCredit.
+BofAS or an affiliate has received compensation for investment banking services from this issuer within the past 12 months: Air Liquide, Airbus Group, Axa, BARC, BlackRock. Credit Agricole. DHL Group (E.ON), Enel SpA (Intesa), Invesco (LVMH), Meta Platforms (Partners Group), Samsung Electronics (Sanofi), Siemens Energy AG (SK Hynix), State Street (UniCredit).
+BofAS or an affiliate expects to receive or intends to seek compensation for investment banking services from this issuer or an affiliate of the issuer within the next three months: Adyen (Air Liquide), Airbus Group (Axa), BARC (BlackRock), Credit Agricole (DHL Group), E.ON (Enel SpA), Hermes (Intesa), Invesco (LVMH), Meta Platforms (Microsoft Corp., Partners Group), Samsung Electronics (Sandvik), Sanofi (SAP SE), Siemens Energy AG (SK Hynix), State Street (Taiwan Semi Mfg Co., UniCredit).
+BofAS together with its affiliates beneficially owns one percent or more of the common stock of this issuer. If this report was issued on or after the 9th day of the month it reflects the ownership position on the last day of the previous month. Reports issued before the 9th day of a month reflect the ownership position at the end of the second month preceding the date of the report: Axa (BARC), Credit Agricole (KION Group AG), KPN (Meta Platforms), Microsoft Corp. (SEMCO), Siemens Energy AG.
+BofAS together with its affiliates beneficially owns one percent or more of the shares of this fund. If this report was issued on or after the 9th day of the month it reflects the ownership position on the last day of the previous month. Reports issued before the 9th day of the month reflect the ownership position at the end of the second month preceding the date of the report: Invesco QQQ ETF (Invesco S&P EW ETF) (iShare Silver) (iShares CH LrgCp ETF) (iShares Long UST) (iShares MSCI EM ETF) (iShares Russell ETF) (iShares Semicond ETF) (Oil&Gas Exp ETF) (SPDR Energy ETF) (SPDR Financ ETF) (SPDR Gold Shares) (SPDR S&P 500 ETF) (SPDR S&P Homebuilder) (SPDR S&P Met&Min) (United States Oil.
+The country in which this issuer is organized has certain laws or regulations that limit or restrict ownership of the issuer's shares by nationals of other countries: Taiwan Semi Mfg Co.
+BofAS or one of its affiliates is willing to sell to or buy from clients the common equity of the issuer on a principal basis: Adyen (Airbus), Atlas Copco (DHL Group), Hermès (Intesa Sanpaolo), Invesco QQQ ETF (Invesco S&P EW ETF) (iShare Silver) (iShares CH LrgCp ETF) (iShares Long UST) (iShares MSCI EM ETF) (iShares Russell ETF) (iShares Semicond ETF) (Julius Baer) (LVMH), Meta Platforms (Microsoft), NVIDIA Oil&Gas Exp ETF (Sandvik Sanofi Siemens Energy AG SPDR Energy ETF SPDR Financ ETF SPDR Gold Shares SPDR S&P 500 ETF SPDR S&P Homebuilder SPDR S&P Met&Min Taiwan Semi Mfg Co Unicredit United States Oil.
+The issuer is or was within the last 12 months a securities business client (non-investment banking) of BofAS and/or one or more of its affiliates: Adyen (Air Liquide), Airbus Group (Axa BARC
+
+BlackRock, Capgemini, Credit Agricole, DHL Group, E.ON, Enel SpA, Hermes, Intesa, Invesco, Julius Baer, Leonardo, LVMH, Meta Platforms, Microsoft Corp, NVIDIA, Partners Group, Samsung Electronics, Sanofi, SAP SE, SEMCO, Siemens Energy AG, SK Hynix, State Street, Swiss Life, Taiwan Semi Mfg Co, UniCredit.
+
+Due to the nature of the market for derivative securities, the issuers or securities recommended or discussed in this report are not continuously followed. Accordingly, investors must regard this report as providing stand-alone analysis and should not expect continuing analysis or additional reports relating to such issuers and/or securities.
+
+Due to the nature of strategic analysis, the issuers or securities recommended or discussed in this report are not continuously followed. Accordingly, investors must regard this report as providing stand-alone analysis and should not expect continuing analysis or additional reports relating to such issuers and/or securities.
+
+BofA Global Research personnel (including the analyst(s) responsible for this report) receive compensation based upon, among other factors, the overall profitability of BofA Corporation, including profits derived from investment banking. The analyst(s) responsible for this report may also receive compensation based upon, among other factors, the overall profitability of the Bank's sales and trading businesses relating to the class of securities or financial instruments for which such analyst is responsible.
+
+BofAS and/or its affiliates participate in the creation and redemption of these ETFs and are an authorized participant for such ETFs: Invesco QQQ ETF, Invesco S&P EW ETF, iShare Silver, iShares CH LrgCp ETF, iShares iBoxx \$ HYC, iShares Long UST, iShares MSCI EM ETF, iShares Russell ETF, iShares Semicond ETF, Oil&Gas Exp ETF, SPDR Energy ETF, SPDR Financ ETF, SPDR Gold Shares, SPDR Material ETF, SPDR S&P 500 ETF, SPDR S&P Homebuilder, SPDR S&P Met&Min, United States Oil
+
+One of the analysts contributing to this report is a former employee of the manager of the issuer and, in that capacity, received compensation from the manager of the issuer within the past 12 months: Blackrock.
+
+One or more analysts responsible for covering the funds in this report own(s) a position in a company that constitutes a significant portion of the assets of the subject funds: SPDR Financ ETF.
+
+# Other Important Disclosures
+
+The covered issuer and/or one or more of its affiliates holds 5% or more of the total issued share capital of BofA Corporation: BlackRock.
+
+The issuer is a corporate broking client of BofA International in the United Kingdom: Airbus Group.
+
+Prices are indicative and for information purposes only. Except as otherwise stated in the report, for any recommendation in relation to an equity security, the price referenced is the publicly traded price of the security as of close of business on the day prior to the date of the report or, if the report is published during intraday trading, the price referenced is indicative of the traded price as of the date and time of the report and in relation to a debt security (including equity preferred and CDS), prices are indicative as of the date and time of the report and are from various sources including BofA trading desks.
+
+The date and time of completion of the production of any recommendation in this report shall be the date and time of dissemination of this report as recorded in the report timestamp.
+
+Recipients who are not institutional investors or market professionals should seek the advice of their independent financial advisor before considering information in this report in connection with any investment decision, or for a necessary explanation of its contents.
+
+Officers of BofAS or one or more of its affiliates (other than research analysts) may have a financial interest in securities of the issuer(s) or in related investments.
+
+Refer to BofA Global Research policies relating to conflicts of interest.
+
+"BofA" includes BofA, Inc. ("BofAS") and its affiliates. Investors should contact their BofA representative or Merrill Global Wealth Management financial advisor if they have questions concerning this report or concerning the appropriateness of any investment idea described herein for such investor. "BofA" is a global brand for BofA Global Research.
+
+Information relating to Non-US affiliates of BofA and Distribution of Affiliate Research Reports:
+
+BofAS and/or BofA, Pierce, Fenner & Smith Incorporated ("MLPF&S") may in the future distribute, information of the following non-US affiliates in the US (short name: legal name, regulator): BofA (South Africa): BofA South Africa (Pty) Ltd., regulated by the Financial Sector Conduct Authority; MLI (UK): BofA International, regulated by the Financial Conduct Authority (FCA) and the Prudential Regulation Authority (PRA); BofASE (France): BofA Europe SA is authorized by the Autorité de Contrôle Prudentiel et de Résolution (ACPR) and regulated by the ACPR and the Autorité des Marchés Financiers (AMF). BofA Europe SA ("BofASE") with registered address at 51, rue La Boétie, 75008 Paris is registered under no 842 602 690 RCS Paris. In accordance with the provisions of French Code Monétaire et Financier (Monetary and Financial Code), BofASE is an établissement de crédit et d'investissement (credit and investment institution) that is authorised and supervised by the European Central Bank and the Autorité de Contrôle Prudentiel et de Résolution (ACPR) and regulated by the ACPR and the Autorité des Marchés Financiers. BofASE's share capital can be found at www.bofaml.com/BofASDisclaimer; BofA Europe (Milan): BofA Europe Designated Activity Company, Milan Branch, regulated by the Bank of Italy, the European Central Bank (ECB) and the Central Bank of Ireland (CBI); BofA Europe (Frankfurt): BofA Europe Designated Activity Company, Frankfurt Branch regulated by BaFin, the ECB and the CBI; BofA Europe (Zurich): BofA Europe Designated Activity Company, Zurich Branch, regulated by the Swiss Financial Market Supervisory Authority FINMA, the ECB and CBI; BofA Europe (Madrid): BofA Europe Designated Activity Company, Sucursal en España, regulated by the Bank of Spain, the ECB and the CBI; BofA (Australia): BofA Equities (Australia) Limited, regulated by the Australian Securities and Investments Commission; BofA (Hong Kong): BofA (Asia Pacific) Limited, regulated by the Hong Kong Securities and Futures Commission (HKSFC); BofA (Singapore): BofA (Singapore) Pte Ltd, regulated by the Monetary Authority of Singapore (MAS); BofA (Canada): BofA Canada Inc, regulated by the Canadian Investment Regulatory Organization; BofA (Mexico): BofA Mexico, SA de CV, Casa de Bolsa, regulated by the Comisión Nacional Bancaria y de Valores; BofAS Japan: BofA Japan Co., Ltd., regulated by the Financial Services Agency; BofA (Seoul): BofA International, LLC Seoul Branch, regulated by the Financial Supervisory Service; BofA (Taiwan): BofA (Taiwan) Ltd., regulated by the Securities and Futures Bureau; BofAS India: BofA India Limited, regulated by the Securities and Exchange Board of India (SEBI); BofA (Israel): BofA Israel Limited, regulated by Israel Securities Authority; BofA (DIFC): BofA International (DIFC Branch), regulated by the Dubai Financial Services Authority (DFSA); BofA (Brazil): BofA S.A. Corretora de Títulos e Valores Mobiliários, regulated by Comissão de Valores Mobiliários; BofA KSA Company: BofA Kingdom of Saudi Arabia Company, regulated by the Capital Market Authority. This information: has been approved for publication and is distributed in the United Kingdom (UK) to professional clients and eligible counterparties (as each is defined in the rules of the FCA and the PRA) by MLI (UK), which is authorized by the PRA and regulated by the FCA and the PRA - details about the extent of our regulation by the FCA and PRA are available from us on request; has been approved for publication and is distributed in the European Economic Area (EEA) by BofASE (France), which is authorized by the ACPR and regulated by the ACPR and the AMF; has been considered and distributed in Japan by BofAS Japan, a registered securities dealer under the Financial Instruments and Exchange Act in Japan, or its permitted affiliates; is issued and distributed in Hong Kong by BofA (Hong Kong) which is regulated by HKSFC; is issued and distributed in Taiwan by BofA (Taiwan); is issued and distributed in India by BofAS India; and is issued and distributed in Singapore to institutional investors and/or accredited investors (each as defined under the Financial Advisers Regulations) by BofA (Singapore) (Company Registration No 198602883D). BofA (Singapore) is regulated by MAS. BofA Equities (Australia) Limited (ABN 65 006 276 795), AFS License 235132 (MLEA) distributes this information in Australia only to 'Wholesale' clients as defined by s.761G of the Corporations Act 2001. With the exception of BofA N.A., Australia Branch, neither MLEA nor any of its affiliates involved in preparing this information is an Authorised Deposit-Taking Institution under the Banking Act 1959 nor regulated by the Australian Prudential Regulation Authority. No approval is required for publication or distribution of this information in Brazil and its local distribution is by BofA (Brazil) in accordance with applicable regulations. BofA (DIFC) is authorized and regulated by the DFSA. Information prepared and issued by BofA (DIFC) is done so in accordance with the requirements of the DFSA conduct of business rules. BofA Europe (Frankfurt) distributes this information in Germany and is regulated by BaFin, the ECB and the CBI. BofA entities, including BofA Europe and BofASE (France), may outsource/delegate the marketing and/or provision of certain research services or aspects of research services to other branches or members of the BofA group. You may be contacted by a different BofA entity acting for and on behalf of your service provider where permitted by applicable law. This does not change your service provider. Please refer to the Electronic Communications Disclaimers for further information.
+
+This information has been prepared and issued by BofAS and/or one or more of its non-US affiliates. The author(s) of this information may not be licensed to carry on regulated activities in your jurisdiction and, if not licensed, do not hold themselves out as being able to do so. BofAS and/or MLPF&S is the distributor of this information in the US and accepts full responsibility for information distributed to BofAS and/or MLPF&S clients in the US by its non-US affiliates. Any US person receiving this information and wishing to effect any transaction in any security discussed herein should do so through BofAS and/or MLPF&S and not such foreign affiliates. Hong Kong recipients of this information should contact BofA (Asia Pacific) Limited in respect of any matters relating to dealing in securities or provision of specific advice on securities or any other matters arising from, or in connection with, this information. Singapore recipients of this information should contact BofA (Singapore) Pte Ltd in respect of any matters arising from, or in connection with, this information. For clients that are not accredited investors, expert investors or institutional investors BofA (Singapore) Pte Ltd accepts full responsibility for the contents of this information distributed to such clients in Singapore.
+
+# General Investment Related Disclosures:
+
+Taiwan Readers: Neither the information nor any opinion expressed herein constitutes an offer or a solicitation of an offer to transact in any securities or other financial instrument. No part of this report may be used or reproduced or quoted in any manner whatsoever in Taiwan by the press or any other person without the express written consent of BofA.
+
+This document provides general information only, and has been prepared for, and is intended for general distribution to, BofA clients. Neither the information nor any opinion expressed constitutes an offer or an invitation to make an offer, to buy or sell any securities or other financial instrument or any derivative related to such securities or instruments (e.g., options, futures, warrants, and contracts for differences). This document is not intended to provide personal investment advice and it does not take into account the specific investment objectives, financial situation and the particular needs of, and is not directed to, any specific person(s). This document and its content do not constitute, and should not be considered to constitute, investment advice for purposes of ERISA, the US tax code, the Investment Advisers Act or otherwise. Investors should seek financial advice regarding the appropriateness of investing in financial instruments and implementing investment strategies discussed or recommended in this document and should understand that statements regarding future prospects may not be realized. Any decision to purchase or sUBScribe for securities in any offering must be based solely on existing public information on such security or the information in the prospectus or other offering document issued in connection with such offering, and not on this document.
+
+Securities and other financial instruments referred to herein, or recommended, offered or sold by BofA, are not insured by the Federal Deposit Insurance Corporation and are not deposits or other obligations of any insured depository institution (including, BofA, N.A.). Investments in general and, derivatives, in particular, involve numerous risks, including, among others, market risk, counterparty default risk and liquidity risk. No security, financial instrument or derivative is suitable for all investors. Digital assets are extremely speculative, volatile and are largely unregulated. In some cases, securities and other financial instruments may be difficult to value or sell and reliable information about the value or risks related to the security or financial instrument may be difficult to obtain. Investors should note that income from such securities and other financial instruments, if any, may fluctuate and that price or value of such securities and instruments may rise or fall and, in some cases, investors may lose their entire principal investment. Past performance is not necessarily a guide to future performance. Levels and basis for taxation may change.
+
+This report may contain a short-term trading idea or recommendation, which highlights a specific near-term catalyst or event impacting the issuer or the market that is anticipated to have a short-term price impact on the equity securities of the issuer. Short-term trading ideas and recommendations are different from and do not affect a stock's fundamental equity rating, which reflects both a longer term total return expectation and attractiveness for investment relative to other stocks within its Coverage Cluster. Short-term trading ideas and recommendations may be more or less positive than a stock's fundamental equity rating.
+
+Futures and options are not appropriate for all investors. Such financial instruments may expire worthless. Before investing in futures or options, clients must receive the appropriate risk disclosure documents. Investment strategies explained in this report may not be appropriate at all times. Costs of such strategies do not include commission or margin expenses.
+
+BofA is aware that the implementation of the ideas expressed in this report may depend upon an investor's ability to "short" securities or other financial instruments and that such action may be limited by regulations prohibiting or restricting "shortselling" in many jurisdictions. Investors are urged to seek advice regarding the applicability of such regulations prior to executing any short idea contained in this report.
+
+Foreign currency rates of exchange may adversely affect the value, price or income of any security or financial instrument mentioned herein. Investors in such securities and instruments, including ADRs, effectively assume currency risk.
+
+BofAS or one of its affiliates is a regular issuer of traded financial instruments linked to securities that may have been recommended in this report. BofAS or one of its affiliates may, at any time, hold a trading position (long or short) in the securities and financial instruments discussed in this report.
+
+BofA, through business units other than BofA Global Research, may have issued and may in the future issue trading ideas or recommendations that are inconsistent with, and reach different conclusions from, the information presented herein. Such ideas or recommendations may reflect different time frames, assumptions, views and analytical methods of the persons who prepared them, and BofA is under no obligation to ensure that such other trading ideas or recommendations are brought to the attention of any recipient of this information. In the event that the recipient received this information pursuant to a contract between the recipient and BofAS for the provision of research services for a separate fee, and in connection therewith BofAS may be deemed to be acting as an investment adviser, such status relates, if at all, solely to the person with whom BofAS has contracted directly and does not extend beyond the delivery of this report (unless otherwise agreed specifically in writing by BofAS). If such recipient uses the services of BofAS in connection with the sale or purchase of a security referred to herein, BofAS may act as principal for its own account or as agent for another person. BofAS is and continues to act solely as a broker-dealer in connection with the execution of any transactions, including transactions in any securities referred to herein.
+
+ETFs are redeemable only in Creation Unit size through an Authorized Participant and may not be individually redeemed. ETFs also are redeemable on an “in-kind” basis. The mechanism for creation and redemption of ETFs may be disrupted due to market conditions or otherwise.
+
+The public trading price of an ETF may be different from its net asset value, and an ETF could trade at a premium or discount to its net asset value.
+
+Investors in ETFs with international securities assume currency risk.
+
+U.S. exchange-listed, open-end ETFs must be offered under and sold only pursuant to a prospectus. U.S. exchange-listed ETFs may not be marketed or sold in a number of non-U.S. jurisdictions and may not be suitable for all investors. Investors should consider the investment objectives, risks, charges and expenses of the ETF carefully before investing. The prospectus for the ETF contains this and other information about the ETF. Clients may obtain prospectuses for the ETFs mentioned in this report from the ETF distributor or their Merrill Global Wealth Management financial advisor. The prospectuses contain more complete and important information about the ETFs mentioned in this report and should be read carefully before investing.
+
+"Standard & Poor's®", "S&P®, "S&P 500®", "Standard & Poor's 500", "500", "Standard & Poor's Depositary Receipts®", "SPDRs®", "Select Sector SPDR" and "Select Sector Standard & Poor's Depositary Receipts" are trademarks of The McGraw-Hill Companies, Inc. and have been licensed for use in connection with the listing and trading of Select Sector SPDRs on the AMEX. The stocks included in each Select Sector Index (upon which the Select Sector SPDRs are based) were selected by the index compilation agent in consultation with S&P from the universe of companies represented by the S&P 500 Index. The composition and weightings of the stocks included in each Select Sector Index can be expected to differ from the composition and weighting of stock included in any similar S&P 500 sector index that is published and disseminated by S&P.
+
+For clients in Wealth Management, to the extent that the securities referenced in this report are ETFs or CEFs, investors should note that (1) the views and ratings presented by BofA Global Research personnel may vary from those of other business units of BofA. including the Due Diligence group within the Chief Investment Office of MLPF&S (“CIO Due Diligence”); and (2) the CIO Due Diligence review process is used to determine the availability of an ETF or CEF for purchase through the Wealth Management division of MLPF&S and its affiliates.
+
+# Copyright and General Information:
+
+Copyright 2026 BofA Corporation. All rights reserved. iQdatabase® is a registered service mark of BofA Corporation. This information is prepared for the use of BofA clients and may not be redistributed, retransmitted or disclosed, in whole or in part, or in any form or manner, without the express written consent of BofA. This document and its content is provided solely for informational purposes and cannot be used for training or developing artificial intelligence (AI) models or as an input in any AI application (collectively, an AI tool). Any attempt to utilize this document or any of its content in connection with an AI tool without explicit written permission from BofA Global Research is strictly prohibited. BofA Global Research utilizes AI, including machine learning and other technologies, to enhance the services we provide to our clients. These technologies assist our analysts in various aspects of their work, including but not limited to data analysis, content extraction, content creation, data aggregation and summarization and identifying relevant information from diverse sources. All AI-driven processes are subject to review by BofA Global Research employees. BofA Global Research information is distributed simultaneously to internal and client websites and other portals by BofA and is not publicly-available material. Any unauthorized use or disclosure is prohibited. Receipt and review of this information constitutes your agreement not to redistribute, retransmit, or disclose to others the contents, opinions, conclusion, or information contained herein (including any investment recommendations, estimates or price targets) without first obtaining express permission from an authorized officer of BofA.
+
+Materials prepared by BofA Global Research personnel are based on public information. Facts and views presented in this material have not been reviewed by, and may not reflect information known to, professionals in other business areas of BofA, including investment banking personnel. BofA has established information barriers between BofA Global Research and certain business groups. As a result, BofA does not disclose certain client relationships with, or compensation received from, such issuers. To the extent this material discusses any legal proceeding or issues, it has not been prepared as nor is it intended to express any legal conclusion, opinion or advice. Investors should consult their own legal advisers as to issues of law relating to the subject matter of this material. BofA Global Research personnel's knowledge of legal proceedings in which any BofA entity and/or its directors, officers and employees may be plaintiffs, defendants, co-defendants or co-plaintiffs with or involving issuers mentioned in this material is based on public information. Facts and views presented in this material that relate to any such proceedings have not been reviewed by, discussed with, and may not reflect information known to, professionals in other business areas of BofA in connection with the legal proceedings or matters relevant to such proceedings.
+
+This information has been prepared independently of any issuer of securities mentioned herein and not in connection with any proposed offering of securities or as agent of any issuer of any securities. None of BofAS any of its affiliates or their research analysts has any authority whatsoever to make any representation or warranty on behalf of the issuer(s). BofA Global Research policy prohibits research personnel from disclosing a recommendation, investment rating, or investment thesis for review by an issuer prior to the publication of a research report containing such rating, recommendation or investment thesis.
+
+Any information relating to sustainability in this material is limited as discussed herein and is not intended to provide a comprehensive view on any sustainability claim with respect to any issuer or security.
+
+Any information relating to the tax status of financial instruments discussed herein is not intended to provide tax advice or to be used by anyone to provide tax advice. Investors are urged to seek tax advice based on their particular circumstances from an independent tax professional.
+
+The information herein (other than disclosure information relating to BofA and its affiliates) was obtained from various sources and we do not guarantee its accuracy. This information may contain links to third-party websites. BofA is not responsible for the content of any third-party website or any linked content contained in a third-party website. Content contained on such third-party websites is not part of this information and is not incorporated by reference. The inclusion of a link does not imply any endorsement by or any affiliation with BofA. Access to any third-party website is at your own risk, and you should always review the terms and privacy policies at third-party websites before submitting any personal information to them. BofA is not responsible for such terms and privacy policies and expressly disclaims any liability for them.
+
+All opinions, projections and estimates constitute the judgment of the author as of the date of publication and are subject to change without notice. Prices also are subject to change without notice. BofA is under no obligation to update this information and BofA ability to publish information on the subject issuer(s) in the future is subject to applicable quiet periods. You should therefore assume that BofA will not update any fact, circumstance or opinion contained herein.
+
+Certain outstanding reports or investment opinions relating to securities, financial instruments and/or issuers may no longer be current. Always refer to the most recent research report relating to an issuer prior to making an investment decision.
+
+In some cases, an issuer may be classified as Restricted or may be Under Review or Extended Review. In each case, investors should consider any investment opinion relating to such issuer (or its security and/or financial instruments) to be suspended or withdrawn and should not rely on the analyses and investment opinion(s) pertaining to such issuer (or its securities and/or financial instruments) nor should the analyses or opinion(s) be considered a solicitation of any kind. Sales persons and financial advisors affiliated with BofAS or any of its affiliates may not solicit purchases of securities or financial instruments that are Restricted or Under Review and may only solicit securities under Extended Review in accordance with firm policies.
+
+Neither BofA nor any officer or employee of BofA accepts any liability whatsoever for any direct, indirect or consequential damages or losses arising from any use of this information.
+
+# Research Analysts
+
+# Benjamin Bowler
+
+Equity-Linked Analyst
+
+BofAS
+
++1 415 676 3595
+
+benjamin.bowler@bofa.com
+
+# Abhinandan Deb >>
+
+Equity-Linked Analyst
+
+MLI (UK)
+
++44 20 7995 7148
+
+abhinandan.deb@bofa.com
+
+# Nitin Saksena
+
+Equity-Linked Analyst
+
+BofAS
+
++1 646 855 5480
+
+nitin.saksena@bofa.com
+
+# Lars Naeckter >>
+
+Equity-Linked Analyst
+
+BofA (DIFC)
+
++971 4425
+
+lars.naeckter@bofa.com
+
+# Chintan Kotecha
+
+Equity-Linked Analyst
+
+BofAS
+
++1 646 855 5478
+
+chintan.kotecha@bofa.com
+
+# Riddhi Prasad >>
+
+Equity-Linked Analyst
+
+MLI (UK)
+
++44 20 7995-7852
+
+riddhi.prasad@bofa.com
+
+# Michael Youngworth, CFA
+
+CBs, Pfds & Derivs Strategist
+
+BofAS
+
++1 646 855 6493
+
+michael.youngworth@bofa.com
+
+# Vittoria Volta >>
+
+Equity-Linked Analyst
+
+BofASE (France)
+
++33 1 8770 0703
+
+vittoria.volta@bofa.com
+
+# Nicholas Dunne
+
+Equity-Linked Analyst
+
+BofAS
+
++1 646 855 2631
+
+nicholas.dunne@bofa.com
+
+# Arjun Goyal
+
+Equity-Linked Analyst
+
+BofAS
+
++1 646 743 4273
+
+arjun.goyal@bofa.com
+
+# Meriem Hafid >>
+
+Research Analyst
+
+BofASE (France)
+
++33 1 5365 5664
+
+meriem.hafid@bofa.com
+
+Trading ideas and investment strategies discussed herein may give rise to significant risk and are not suitable for all investors. Investors should have experience in relevant markets and the financial resources to absorb any losses arising from applying these ideas or strategies.
+
+>> Employed by a non-US affiliate of BofAS and is not registered/qualified as a research analyst under the FINRA rules. Refer to "Other Important Disclosures" for information on certain BofA entities that take responsibility for the information herein in particular jurisdictions.

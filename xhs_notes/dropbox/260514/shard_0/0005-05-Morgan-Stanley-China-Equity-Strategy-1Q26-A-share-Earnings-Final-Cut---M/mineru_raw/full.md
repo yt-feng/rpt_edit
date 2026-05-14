@@ -1,0 +1,860 @@
+# China Equity Strategy | Asia Pacific
+
+# 1Q26 A-share Earnings Final Cut – Misses Narrowing, Early Sings of Improvements
+
+MSCI China-A 1Q26 earnings show early signs of improvement – net misses narrowed significantly by company count, with weighted surprise broadly in line. Industrials and Financials led; downstream Consumption still lags. Earnings set-up should turn more favourable after summer.
+
+The A-share final cut earnings review is based on 69% of MSCI China A Onshore index market cap (what we consider as quality data with consensus estimates available), with the following takeaways.
+
+MSCI China A-shares 1Q26 still recorded a net miss, but the magnitude improved significantly from 4Q25: Earnings missed consensus by number of companies (-12.5%), while weighted surprise came in broadly in line (+0.3%), a marked improvement from 4Q25 (-23.2% and -3.4%, respectively) (Exhibit 1, Exhibit 2).
+
+Revenue also posted a net miss by company count (-17.5%), although weighted surprise was in line (+0.8%), largely tracking the 4Q25 pattern of -14.9% and -2.4%, respectively (Exhibit 7).
+
+Bright spots in Financials and Industrials, while downstream Consumption still lags: Industrials reported broadly in-line 1Q26 results, improving from a net miss by number of companies in 4Q25. A supportive capex cycle is driving solid demand across capital goods sub-sectors – AIDC equipment, battery equipment and automation/robotics – while CM/HDT demand is also gaining traction, reinforcing our expectation of China's growing export market share. Our industrial team expects this growth momentum to carry into 2Q26, underpinned by healthy order intake and ongoing capacity expansion. Leading players demonstrated sufficient pricing power to push through price hikes, partially offsetting higher input costs (including raw materials and memory), though FX headwinds are likely to linger into 2Q26, albeit at a reduced magnitude. China banks reported a strong rebound in revenue growth, supported by NIM recovery and healthy fee income growth. In contrast, downstream consumption still lags, weighed down by weak domestic demand and limited pricing power to pass through costs – both Consumer Discretionary and Consumer Staples reported a double miss by number of companies and weighted surprise. The earnings set-up may look more favorable when 2Q results come out starting July, as several tailwinds converge: 1) strong export growth and early reflation signs boosting the top line; 2) e-commerce regulatory tightening announced in April fostering a more rational competitive landscape.
+
+MS ASIA LIMITED+
+
+# Chloe Liu
+
+Equity Strategist
+
+Chloe.Liu1@morganstanley.com +852 2848-5497
+
+# Laura Wang
+
+Equity Strategist
+
+Laura.Wang@morganstanley.com +852 2848-6853
+
+# Vicky Wu
+
+Equity Strategist
+
+Vicky.Wu@morganstanley.com +852 3963-3928
+
+Exhibit 1: History of Chinese equity market quarterly earnings surprises by number of companies (MSCI China and A-shares) – MSCI China A-shares recorded a 13% net miss in 1Q26, significantly improved vs. 4Q25
+
+![](images/183d411c2875dd305e7cf1836956b4d173b91a69a4407f35ca86286ead390918.jpg)  
+Source: MSCI, Bloomberg, RIMES, Factset, MS. Data as of May 7, 2026.
+
+Exhibit 2: History of Chinese equity market quarterly earnings surprises by weighted surprise (MSCI China and A-shares) – MSCI China A-shares reported in-line results at +0.3% in 1Q26, slightly improved vs. 4Q25
+
+![](images/c8061249d9e31562908f1d5876b93c08dd292e3d12acfdab842bd96964572713.jpg)
+
+<details>
+<summary>bar</summary>
+
+| Period | MSCI China (%) | MSCI China A Onshore (%) |
+|---|---|---|
+| 2Q 2018 | -1 | -5 |
+| 3Q 2018 | 3 | -7 |
+| 4Q 2018 | 1 | -17 |
+| 1Q 2019 | 8 | 9 |
+| 2Q 2019 | 4 | 2 |
+| 3Q 2019 | 0 | -8 |
+| 4Q 2019 | -7 | -9 |
+| 1Q 2020 | -3 | -8 |
+| 2Q 2020 | 9 | 10 |
+| 3Q 2020 | -1 | -5 |
+| 4Q 2020 | 5 | 4 |
+| 1Q 2021 | 1 | -2 |
+| 2Q 2021 | 1 | -7 |
+| 3Q 2021 | -2 | -3 |
+| 4Q 2021 | -6 | -6 |
+| 1Q 2022 | 0 | -19 |
+| 2Q 2022 | -6 | -16 |
+| 3Q 2022 | -16 | -5 |
+| 4Q 2022 | -11 | -8 |
+| 1Q 2023 | -8 | -9 |
+| 2Q 2023 | -6 | -4 |
+| 3Q 2023 | -7 | -10 |
+| 4Q 2023 | 8 | -7 |
+| 1Q 2024 | 6 | -3 |
+| 2Q 2024 | 3 | -3 |
+| 3Q 2024 | 3 | -3 |
+| 4Q 2024 | -3 | -7 |
+| 1Q 2025 | -3 | -7 |
+| 2Q 2025 | -3 | -3 |
+| 3Q 2025 | -3 | -3 |
+| 4Q 2025 | -3 | -3 |
+| 1Q 2026 | -3 | -3 |
+The chart displays two data series: 'MSCI China' and 'MSCI China A Onshore', both measured as percentages. The bars for each series are labeled with exact percentages. The chart is divided into two sections: 'Before Discount' (left) and 'After Discount' (right). The values for the first series are in red, and the values for the second series are in blue. The chart is saved as a PNG file named 'MSCI China'.
+</details>
+
+Source: MSCI, Bloomberg, RIMES, Factset, MS. Data as of May 7, 2026.
+
+MS does and seeks to do business with companies covered in MS. As a result, investors should be aware that the firm may have a conflict of interest that could affect the objectivity of MS. Investors should consider MS as only a single factor in making their investment decision.
+
+# For analyst certification and other important disclosures, refer to the Disclosure Section, located at the end of this report.
+
++= Analysts employed by non-U.S. affiliates are not registered with FINRA, may not be associated persons of the member and may not be subject to FINRA restrictions on communications with a subject company, public appearances and trading securities held by a research analyst account.
+
+# A-share Earnings Surprises 1Q26 Final Cut: Misses Narrowing, Weighted Surprise in Line
+
+Note: We use constituents of MSCI China A Onshore Index as a proxy for the A-share stock universe. As of May 7, 2026, 471 companies in MSCI China A Onshore had reported 1Q26 results. Our analysis of A-share earnings surprises is based on constituent companies that have reasonable quality data for consensus estimates, comprising 287 companies in MSCI China A Onshore, representing 51% of the index by number of companies and 69% by index weight.
+
+# Key observations
+
+1) At the aggregate index level, reported earnings missed consensus by number of companies (-12.5%) but were broadly in line on a weighted basis (+0.3%) (Exhibit 4) improving from 4Q25 (-23% by number of companies and -3% by weighted surprise).
+
+2) Sectors with earnings beats:
+
+- Energy, Financials, Materials and Utilities reported a net beat by either weighted surprise or number of companies.   
+• Key contributors are Ping An Insurance, Bank of China, Anhui Conch Cement, Beijing Oriental Yuhong, China Yangtze Power.
+
+3) Sectors with earnings misses:
+
+- Consumer Discretionary, Consumer Staples and Real Estate showed a net miss by both number of companies and weighted surprise. Key companies include BYD, Muyuan Foodstuff, China Merchants Shekou.   
+- Communication Services, Healthcare, IT showed a net miss by number of companies, while in-line results by weighted surprise. Key companies are Pharmaron, OmniVision.
+
+Exhibit 3: MSCI China A Onshore sector-level earnings surprises for 1Q26 by number of companies – 13% net miss at the aggregate level; seven out of 11 sectors posted a net miss   
+![](images/9b7ccb1c7d1366670cf884bea9e6dbdb2d74e70e98454e28644745ff68bb9653.jpg)
+
+<details>
+<summary>bar_line</summary>
+
+| Category | Above (%) | Below (%) | Net Above % (By Co. #s) (%) |
+| :--- | :--- | :--- | :--- |
+| MSCI China Onshore | 28.0 | -15.0 | -12.5 |
+| China A Onshore ex-Financials | 29.0 | -16.0 | -15.6 |
+| Real Estate | 30.0 | -20.0 | -33.3 |
+| Information Technology | 31.0 | -18.0 | -30.5 |
+| Communication Services | 18.0 | -45.0 | -27.3 |
+| Health Care | 16.0 | -35.0 | -22.6 |
+| Consumer Staples | 22.0 | -25.0 | -11.1 |
+| Consumer Discretionary | 29.0 | -28.0 | -8.7 |
+| Materials | 38.0 | -10.0 | -6.9 |
+| Industrials | 36.0 | -35.0 | 0.0 |
+| Industrials | 36.0 | -38.0 | 0.0 |
+| Financials | 24.0 | -12.0 | 12.9 |
+| Energy | 29.0 | -15.0 | 20.0 |
+</details>
+
+Source: MSCI, Bloomberg, RIMES, Factset, MS. Data as of May 7, 2026.
+
+Exhibit 4: MSCI China A Onshore detailed sector- and industry-level 1Q26 earnings – net miss by number of companies and in-line results by weighted surprise 
+
+<table><tr><td colspan="4">Earnings</td><td colspan="5">Surprise Ratios</td></tr><tr><td>Sector/ Industry Group</td><td># of Cos. Reported</td><td>% of Cos. Reported</td><td>% Mkt Cap reported</td><td>Above</td><td>In-Line</td><td>Below</td><td>Net +ve</td><td>Market Cap Wtd Surprise (%)</td></tr><tr><td>China</td><td>287</td><td>51%</td><td>69%</td><td>29%</td><td>30%</td><td>41%</td><td>(12.5%)</td><td>0.3%</td></tr><tr><td>China ex-Financials</td><td>256</td><td>52%</td><td>68%</td><td>29%</td><td>26%</td><td>45%</td><td>(15.6%)</td><td>0.0%</td></tr><tr><td>Communication Services</td><td>11</td><td>65%</td><td>75%</td><td>18%</td><td>36%</td><td>45%</td><td>(27.3%)</td><td>(4.4%)</td></tr><tr><td>Media &amp; Entertainment</td><td>8</td><td>57%</td><td>63%</td><td>13%</td><td>38%</td><td>50%</td><td>(37.5%)</td><td>(5.1%)</td></tr><tr><td>Telecommunication Services</td><td>3</td><td>100%</td><td>100%</td><td>33%</td><td>33%</td><td>33%</td><td>0.0%</td><td>(3.4%)</td></tr><tr><td>Consumer Discretionary</td><td>23</td><td>58%</td><td>72%</td><td>30%</td><td>30%</td><td>39%</td><td>(8.7%)</td><td>(13.3%)</td></tr><tr><td>Automobiles &amp; Components</td><td>13</td><td>57%</td><td>70%</td><td>23%</td><td>31%</td><td>46%</td><td>(23.1%)</td><td>(22.1%)</td></tr><tr><td>Consumer Durables &amp; Apparel</td><td>7</td><td>70%</td><td>85%</td><td>43%</td><td>29%</td><td>29%</td><td>14.3%</td><td>0.7%</td></tr><tr><td>Consumer Services</td><td>1</td><td>50%</td><td>55%</td><td>100%</td><td>0%</td><td>0%</td><td>100.0%</td><td>18.2%</td></tr><tr><td>Consumer Discretionary Distribution &amp; Retail</td><td>2</td><td>40%</td><td>56%</td><td>0%</td><td>50%</td><td>50%</td><td>(50.0%)</td><td>(1.0%)</td></tr><tr><td>Consumer Staples</td><td>18</td><td>72%</td><td>91%</td><td>22%</td><td>44%</td><td>33%</td><td>(11.1%)</td><td>(8.3%)</td></tr><tr><td>Consumer Staples Distribution &amp; Retail</td><td>1</td><td>50%</td><td>30%</td><td>0%</td><td>100%</td><td>0%</td><td>0.0%</td><td>(0.0%)</td></tr><tr><td>Food Beverage &amp; Tobacco</td><td>16</td><td>73%</td><td>92%</td><td>25%</td><td>38%</td><td>38%</td><td>(12.5%)</td><td>(8.4%)</td></tr><tr><td>Household &amp; Personal Products</td><td>1</td><td>100%</td><td>100%</td><td>0%</td><td>100%</td><td>0%</td><td>0.0%</td><td>(1.6%)</td></tr><tr><td>Energy</td><td>10</td><td>67%</td><td>85%</td><td>30%</td><td>60%</td><td>10%</td><td>20.0%</td><td>(0.1%)</td></tr><tr><td>Coal &amp; Consumable Fuels</td><td>5</td><td>71%</td><td>88%</td><td>60%</td><td>40%</td><td>0%</td><td>60.0%</td><td>4.8%</td></tr><tr><td>Integrated Oil &amp; Gas</td><td>2</td><td>67%</td><td>91%</td><td>0%</td><td>100%</td><td>0%</td><td>0.0%</td><td>(1.3%)</td></tr><tr><td>Oil &amp; Gas Exploration &amp; Production</td><td>3</td><td>100%</td><td>100%</td><td>0%</td><td>67%</td><td>33%</td><td>(33.3%)</td><td>(9.4%)</td></tr><tr><td>Oil &amp; Gas Refining &amp; Marketing</td><td>0</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr><tr><td>Others</td><td>0</td><td>0%</td><td>0%</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr><tr><td>Financials</td><td>31</td><td>42%</td><td>73%</td><td>23%</td><td>68%</td><td>10%</td><td>12.9%</td><td>1.3%</td></tr><tr><td>Banks</td><td>17</td><td>59%</td><td>81%</td><td>0%</td><td>100%</td><td>0%</td><td>0.0%</td><td>0.7%</td></tr><tr><td>Financial Services</td><td>10</td><td>25%</td><td>48%</td><td>60%</td><td>10%</td><td>30%</td><td>30.0%</td><td>2.9%</td></tr><tr><td>Insurance</td><td>4</td><td>80%</td><td>94%</td><td>25%</td><td>75%</td><td>0%</td><td>25.0%</td><td>2.0%</td></tr><tr><td>Health Care</td><td>31</td><td>66%</td><td>78%</td><td>16%</td><td>45%</td><td>39%</td><td>(22.6%)</td><td>1.6%</td></tr><tr><td>Pharmaceuticals Biotechnology &amp; Life Science</td><td>21</td><td>58%</td><td>71%</td><td>19%</td><td>43%</td><td>38%</td><td>(19.0%)</td><td>2.4%</td></tr><tr><td>Health Care Equipment &amp; Services</td><td>10</td><td>91%</td><td>95%</td><td>10%</td><td>50%</td><td>40%</td><td>(30.0%)</td><td>(0.2%)</td></tr><tr><td>Industrials</td><td>47</td><td>47%</td><td>66%</td><td>36%</td><td>28%</td><td>36%</td><td>0.0%</td><td>1.7%</td></tr><tr><td>Capital Goods</td><td>39</td><td>47%</td><td>65%</td><td>33%</td><td>31%</td><td>36%</td><td>(2.6%)</td><td>0.4%</td></tr><tr><td>Commercial &amp; Professional Services</td><td>1</td><td>33%</td><td>16%</td><td>100%</td><td>0%</td><td>0%</td><td>100.0%</td><td>21.1%</td></tr><tr><td>Transportation</td><td>7</td><td>54%</td><td>74%</td><td>43%</td><td>14%</td><td>43%</td><td>0.0%</td><td>9.0%</td></tr><tr><td>Information Technology</td><td>82</td><td>57%</td><td>70%</td><td>30%</td><td>9%</td><td>61%</td><td>(30.5%)</td><td>2.9%</td></tr><tr><td>Semiconductors &amp; Semiconductor Equipment</td><td>38</td><td>63%</td><td>66%</td><td>37%</td><td>0%</td><td>63%</td><td>(26.3%)</td><td>24.1%</td></tr><tr><td>Software &amp; Services</td><td>7</td><td>41%</td><td>46%</td><td>29%</td><td>0%</td><td>71%</td><td>(42.9%)</td><td>(18.6%)</td></tr><tr><td>Technology Hardware &amp; Equipment</td><td>37</td><td>54%</td><td>77%</td><td>24%</td><td>19%</td><td>57%</td><td>(32.4%)</td><td>(7.9%)</td></tr><tr><td>Materials</td><td>29</td><td>35%</td><td>49%</td><td>38%</td><td>17%</td><td>45%</td><td>(6.9%)</td><td>5.2%</td></tr><tr><td>Chemicals</td><td>16</td><td>41%</td><td>56%</td><td>44%</td><td>6%</td><td>50%</td><td>(6.3%)</td><td>11.0%</td></tr><tr><td>Construction Materials</td><td>3</td><td>100%</td><td>100%</td><td>100%</td><td>0%</td><td>0%</td><td>100.0%</td><td>30.3%</td></tr><tr><td>Metals &amp; Mining</td><td>10</td><td>26%</td><td>40%</td><td>10%</td><td>40%</td><td>50%</td><td>(40.0%)</td><td>(4.4%)</td></tr><tr><td>Others</td><td>0</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr><tr><td>Paper &amp; Forest Products</td><td>0</td><td>0%</td><td>0%</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr><tr><td>Real Estate</td><td>3</td><td>38%</td><td>49%</td><td>0%</td><td>67%</td><td>33%</td><td>(33.3%)</td><td>(35.8%)</td></tr><tr><td>Utilities</td><td>2</td><td>13%</td><td>49%</td><td>50%</td><td>0%</td><td>50%</td><td>0.0%</td><td>16.2%</td></tr></table>
+
+Source: MSCI, Bloomberg, RIMES, Factset, MS. Data as of May 7, 2026. For a given sector/industry group, "Market Cap Wtd Surprise (%)" is calculated as sum of products of stock level earnings beat / miss % and index weight of the stock in MSCI China divided by % of market cap reported within the given sector/industry group.
+
+Exhibit 5: MSCI China A Onshore 1Q26 earnings surprises by sector, measured by number of companies   
+![](images/127b95f6ba35c7aa525640b016de12774e114c458f4aa133dfa36267f57f98ad.jpg)
+
+<details>
+<summary>bar_stacked</summary>
+
+| Category | Above (%) | In-Line (%) | Below (%) |
+| :--- | :--- | :--- | :--- |
+| Real Estate | 0 | 67 | 34 |
+| Health Care | 18 | 52 | 42 |
+| Communication Services | 19 | 41 | 41 |
+| Consumer Staples | 21 | 53 | 39 |
+| Financials | 24 | 70 | 13 |
+| Energy | 31 | 73 | 12 |
+| Consumer Discretionary | 32 | 43 | 43 |
+| Information Technology | 30 | 10 | 60 |
+| Industrials | 36 | 42 | 34 |
+| Materials | 38 | 22 | 42 |
+| Utilities | 49 | 0 | 50 |
+| China A Onshore ex-Financials | 29 | 27 | 41 |
+| MSCI China A Onshore | 28 | 40 | 51 |
+</details>
+
+Source: MSCI, Bloomberg, RIMES, Factset, MS. Data as of May 7, 2026.
+
+# A-share Revenue Surprises 1Q26 Final Cut: Net Misses by Company Count, Mostly in Line with 4Q25
+
+Note: We use constituents of MSCI China A Onshore Index as a proxy for the A-share stock universe. As of May 7, 2026, 471 companies in MSCI China A Onshore had reported 4Q25 results. Our analysis of A-share revenue surprises is based on non-financial constituent companies that have reasonable quality data for consensus estimates, comprising 189 companies in MSCI China A Onshore, representing 38% of the index by number of companies and 46% by index weight.
+
+# Key observations
+
+1) At the aggregate index level, reported revenue missed consensus by number of companies (-17.5%) and was in line by weighted surprise (+0.8%), largely in line with 4Q25 trend (-14.9% by number of companies and -2.4% by weighted surprise).
+
+2) Sector-level beats:
+
+\- Communication Services and Real Estate recorded net beats.
+
+3) Sector-level misses:
+
+\- Consumer Staples, Energy, Healthcare, Industrials, IT and Materials recorded net misses.
+
+Exhibit 6: MSCI China A Onshore sector-level (ex-financials) revenue surprises for 1Q26 by number of companies – 18% net miss at the aggregate level; six out of 10 sectors posted a net miss   
+![](images/380e4205e9aed84f4e9bd73bac122dba125f6ca89117d43141f37acc4024b52b.jpg)
+
+<details>
+<summary>bar_line</summary>
+
+| Category | Above (%) | Below (%) | Net Above % (By Co. #s) (%) |
+| :--- | :--- | :--- | :--- |
+| China A ex.Financials | 20 | -15 | -17.5 |
+| Health Care | 15 | -15 | -30.8 |
+| Information Technology | 20 | -20 | -29.0 |
+| Materials | 25 | -25 | -28.6 |
+| Energy | 15 | -15 | -20.0 |
+| Consumer Staples | 10 | -15 | -12.5 |
+| Industrials | 20 | -20 | -7.9 |
+| Consumer Discretionary | 25 | -20 | 0.0 |
+| Utilities | 45 | -55 | 0.0 |
+| Communication Services | 10 | -15 | 12.5 |
+| Real Estate | 100 | 0 | 100.0 |
+</details>
+
+Source: MSCI, Bloomberg, RIMES, Factset, MS. Data as of May 7, 2026.
+
+Exhibit 7: MSCI China A Onshore detailed sector- and industry-level (ex-financials) 1Q26 revenue – Net misses by number of companies and in line by weighted surprise, similar trend vs. 3Q25 
+
+<table><tr><td colspan="4">Revenue</td><td colspan="5">Surprise Ratios</td></tr><tr><td>Sector/ Industry Group</td><td># of Cos. Reported</td><td>% of Cos. Reported</td><td>% Mkt Cap reported</td><td>Above</td><td>In-Line</td><td>Below</td><td>Net +ve</td><td>Market Cap Wtd Surprise (%)</td></tr><tr><td>China A ex-Financials</td><td>189</td><td>38%</td><td>46%</td><td>24%</td><td>35%</td><td>41%</td><td>(17.5%)</td><td>0.8%</td></tr><tr><td>Communication Services</td><td>8</td><td>47%</td><td>64%</td><td>25%</td><td>63%</td><td>13%</td><td>12.5%</td><td>0.5%</td></tr><tr><td>Media &amp; Entertainment</td><td>5</td><td>36%</td><td>46%</td><td>40%</td><td>40%</td><td>20%</td><td>20.0%</td><td>1.1%</td></tr><tr><td>Telecommunication Services</td><td>3</td><td>100%</td><td>100%</td><td>0%</td><td>100%</td><td>0%</td><td>0.0%</td><td>(0.1%)</td></tr><tr><td>Consumer Discretionary</td><td>16</td><td>40%</td><td>63%</td><td>31%</td><td>38%</td><td>31%</td><td>0.0%</td><td>2.4%</td></tr><tr><td>Automobiles &amp; Components</td><td>9</td><td>39%</td><td>60%</td><td>22%</td><td>33%</td><td>44%</td><td>(22.2%)</td><td>1.0%</td></tr><tr><td>Consumer Durables &amp; Apparel</td><td>5</td><td>50%</td><td>77%</td><td>40%</td><td>40%</td><td>20%</td><td>20.0%</td><td>2.8%</td></tr><tr><td>Consumer Services</td><td>1</td><td>50%</td><td>55%</td><td>0%</td><td>100%</td><td>0%</td><td>0.0%</td><td>3.1%</td></tr><tr><td>Consumer Discretionary Distribution &amp; Retail</td><td>1</td><td>20%</td><td>46%</td><td>100%</td><td>0%</td><td>0%</td><td>100.0%</td><td>12.0%</td></tr><tr><td>Consumer Staples</td><td>16</td><td>64%</td><td>85%</td><td>13%</td><td>63%</td><td>25%</td><td>(12.5%)</td><td>(1.4%)</td></tr><tr><td>Consumer Staples Distribution &amp; Retail</td><td>1</td><td>50%</td><td>30%</td><td>0%</td><td>100%</td><td>0%</td><td>0.0%</td><td>(5.0%)</td></tr><tr><td>Food Beverage &amp; Tobacco</td><td>14</td><td>64%</td><td>85%</td><td>14%</td><td>64%</td><td>21%</td><td>(7.1%)</td><td>(1.4%)</td></tr><tr><td>Household &amp; Personal Products</td><td>1</td><td>100%</td><td>100%</td><td>0%</td><td>0%</td><td>100%</td><td>(100.0%)</td><td>(7.3%)</td></tr><tr><td>Energy</td><td>5</td><td>33%</td><td>46%</td><td>20%</td><td>40%</td><td>40%</td><td>(20.0%)</td><td>(0.3%)</td></tr><tr><td>Coal &amp; Consumable Fuels</td><td>1</td><td>14%</td><td>36%</td><td>0%</td><td>0%</td><td>100%</td><td>(100.0%)</td><td>(6.0%)</td></tr><tr><td>Integrated Oil &amp; Gas</td><td>1</td><td>33%</td><td>38%</td><td>0%</td><td>100%</td><td>0%</td><td>0.0%</td><td>1.2%</td></tr><tr><td>Oil &amp; Gas Exploration &amp; Production</td><td>3</td><td>100%</td><td>100%</td><td>33%</td><td>33%</td><td>33%</td><td>0.0%</td><td>3.9%</td></tr><tr><td>Oil &amp; Gas Refining &amp; Marketing</td><td>0</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr><tr><td>Others</td><td>0</td><td>0%</td><td>0%</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr><tr><td>Health Care</td><td>26</td><td>55%</td><td>72%</td><td>19%</td><td>31%</td><td>50%</td><td>(30.8%)</td><td>(0.3%)</td></tr><tr><td>Pharmaceuticals Biotechnology &amp; Life Sciences</td><td>17</td><td>47%</td><td>65%</td><td>24%</td><td>24%</td><td>53%</td><td>(29.4%)</td><td>0.8%</td></tr><tr><td>Health Care Equipment &amp; Services</td><td>9</td><td>82%</td><td>90%</td><td>11%</td><td>44%</td><td>44%</td><td>(33.3%)</td><td>(2.3%)</td></tr><tr><td>Industrials</td><td>38</td><td>38%</td><td>59%</td><td>24%</td><td>45%</td><td>32%</td><td>(7.9%)</td><td>2.4%</td></tr><tr><td>Capital Goods</td><td>30</td><td>36%</td><td>58%</td><td>27%</td><td>37%</td><td>37%</td><td>(10.0%)</td><td>2.1%</td></tr><tr><td>Commercial &amp; Professional Services</td><td>1</td><td>33%</td><td>16%</td><td>0%</td><td>100%</td><td>0%</td><td>0.0%</td><td>4.2%</td></tr><tr><td>Transportation</td><td>7</td><td>54%</td><td>71%</td><td>14%</td><td>71%</td><td>14%</td><td>0.0%</td><td>3.5%</td></tr><tr><td>Information Technology</td><td>69</td><td>48%</td><td>65%</td><td>23%</td><td>25%</td><td>52%</td><td>(29.0%)</td><td>1.8%</td></tr><tr><td>Semiconductors &amp; Semiconductor Equipment</td><td>30</td><td>50%</td><td>57%</td><td>30%</td><td>17%</td><td>53%</td><td>(23.3%)</td><td>8.0%</td></tr><tr><td>Software &amp; Services</td><td>7</td><td>41%</td><td>46%</td><td>14%</td><td>29%</td><td>57%</td><td>(42.9%)</td><td>(5.5%)</td></tr><tr><td>Technology Hardware &amp; Equipment</td><td>32</td><td>47%</td><td>73%</td><td>19%</td><td>31%</td><td>50%</td><td>(31.3%)</td><td>(0.9%)</td></tr><tr><td>Materials</td><td>7</td><td>9%</td><td>20%</td><td>29%</td><td>14%</td><td>57%</td><td>(28.6%)</td><td>(9.3%)</td></tr><tr><td>Chemicals</td><td>6</td><td>15%</td><td>24%</td><td>33%</td><td>17%</td><td>50%</td><td>(16.7%)</td><td>(6.6%)</td></tr><tr><td>Construction Materials</td><td>0</td><td>0%</td><td>0%</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr><tr><td>Metals &amp; Mining</td><td>1</td><td>3%</td><td>18%</td><td>0%</td><td>0%</td><td>100%</td><td>(100.0%)</td><td>(12.1%)</td></tr><tr><td>Others</td><td>0</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr><tr><td>Paper &amp; Forest Products</td><td>0</td><td>0%</td><td>0%</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr><tr><td>Real Estate</td><td>2</td><td>25%</td><td>39%</td><td>100%</td><td>0%</td><td>0%</td><td>100.0%</td><td>38.5%</td></tr><tr><td>Utilities</td><td>2</td><td>13%</td><td>15%</td><td>50%</td><td>0%</td><td>50%</td><td>0.0%</td><td>(4.3%)</td></tr></table>
+
+Source: MSCI, Bloomberg, RIMES, Factset, MS. Data as of May 7, 2026. For a given sector/industry group, "Market Cap Wtd Surprise (%)" is calculated as sum of products of stock level revenue beat / miss % and index weight of the stock in MSCI China A Onshore divided by % of market cap reported within the given sector/industry group.
+
+Exhibit 8: MSCI China A Onshore 1Q26 revenue surprise by sector, measured by number of companies   
+![](images/86a8614750748413c772830818789b900f86494cce228ff2b17200d7ed55b19f.jpg)
+
+<details>
+<summary>bar_stacked</summary>
+
+| Category | Above (%) | In-Line (%) | Below (%) |
+| :--- | :--- | :--- | :--- |
+| Consumer Staples | 14 | 75 | 29 |
+| Health Care | 19 | 30 | 41 |
+| Energy | 18 | 46 | 44 |
+| Information Technology | 22 | 27 | 53 |
+| Industrials | 23 | 50 | 46 |
+| Communication Services | 25 | 68 | 16 |
+| Materials | 28 | 16 | 52 |
+| Consumer Discretionary | 31 | 47 | 39 |
+| Utilities | 50 | 0 | 50 |
+| Real Estate | 100 | 0 | 0 |
+| China A ex-Financials | 22 | 47 | 51 |
+</details>
+
+Source: MSCI, Bloomberg, RIMES, Factset, MS. Data as of May 7, 2026.
+
+# Earnings Estimate Revisions – Long-term Trends
+
+Exhibit 9: MSCI China earnings estimate revision breadth (ERB) vs. 12-month P/E trend – acceleration of downward momentum has resumed since mid-March   
+![](images/fc0c8d92a6fa741df3425a5850946f7452823ee9164814f056f254efe867726e.jpg)
+
+<details>
+<summary>line</summary>
+
+| Date    | ERB (3mma) | 12-mth Fwd PE (RHS) |
+|---------|------------|---------------------|
+| Dec-15  | -4%        | -8%                 |
+| Jul-16  | -2%        | -6%                 |
+| Feb-17  | 4%         | -4%                 |
+| Sep-17  | 5%         | -2%                 |
+| Apr-18  | 2%         | -4%                 |
+| Nov-18  | -2%        | -6%                 |
+| Jun-19  | -4%        | -8%                 |
+| Jan-20  | 0%         | -6%                 |
+| Aug-20  | -10%       | -4%                 |
+| Mar-21  | 0%         | 4%                  |
+| Oct-21  | -2%        | -6%                 |
+| May-22  | -8%        | -8%                 |
+| Dec-22  | -4%        | -6%                 |
+| Jul-23  | -2%        | -8%                 |
+| Feb-24  | -4%        | -6%                 |
+| Sep-24  | -2%        | -8%                 |
+| Apr-25  | 0%         | -6%                 |
+| Nov-25  | 2%         | -4%                 |
+</details>
+
+Source: IBES, Rimes, MSCI, MS. Weekly data as of May 7, 2026. Earnings Estimate Revision Breadth (ERB) = (number of upward revisions - number of downward revisions) / total number of estimates.
+
+Exhibit 10: Energy – Earnings estimate revision breadth (ERB) vs. 12-month P/E trend   
+![](images/f9b73bac9842907c602fbeae79d21248cea762ec0deadbf199af854c2684d594.jpg)
+
+<details>
+<summary>line</summary>
+
+| Date    | ERB (3mma) | 12-mth Fwd PE (RHS) |
+|---------|------------|---------------------|
+| Dec-15  | -15%       | -5%                 |
+| Jul-16  | 10%        | 15%                 |
+| Feb-17  | 5%         | 0%                  |
+| Sep-17  | 10%        | -5%                 |
+| Apr-18  | 15%        | -10%                |
+| Nov-18  | 0%         | -15%                |
+| Jun-19  | -5%        | -10%                |
+| Jan-20  | -15%       | -5%                 |
+| Aug-20  | 0%         | 0%                  |
+| Mar-21  | 15%        | 5%                  |
+| Oct-21  | 10%        | 0%                  |
+| May-22  | 5%         | -5%                 |
+| Dec-22  | 0%         | -10%                |
+| Jul-23  | -5%        | -15%                |
+| Feb-24  | -10%       | -10%                |
+| Sep-24  | -5%        | -5%                 |
+| Apr-25  | -15%       | 0%                  |
+| Nov-25  | 10%        | 5%                  |
+</details>
+
+Source: IBES, Rimes, MSCI, MS. Weekly data as of May 7, 2026. Earnings Estimate Revision Breadth (ERB) = (number of upward revisions - number of downward revisions) / total number of estimates.
+
+Exhibit 11: Materials – Earnings estimate revision breadth (ERB) vs. 12-month P/E trend   
+![](images/4d0e83e05ba6c5f97d04591a675c93b01816defed26b4beed3de85ca251fd5ea.jpg)
+
+<details>
+<summary>line</summary>
+
+| Date    | ERB (3mma) | 12-mth Fwd PE (RHS) |
+|---------|------------|---------------------|
+| Dec-15  | -12%       | 16%                 |
+| Jul-16  | -5%        | 10%                 |
+| Feb-17  | 15%        | 14%                 |
+| Sep-17  | 10%        | 8%                  |
+| Apr-18  | 5%         | 6%                  |
+| Nov-18  | -5%        | 4%                  |
+| Jun-19  | -10%       | 2%                  |
+| Jan-20  | -5%        | 0%                  |
+| Aug-20  | 0%         | 2%                  |
+| Mar-21  | 5%         | 4%                  |
+| Oct-21  | 0%         | 2%                  |
+| May-22  | -5%        | 0%                  |
+| Dec-22  | -10%       | -2%                 |
+| Jul-23  | -15%       | -4%                 |
+| Feb-24  | -5%        | -2%                 |
+| Sep-24  | 0%         | 0%                  |
+| Apr-25  | 5%         | 4%                  |
+| Nov-25  | 10%        | 8%                  |
+</details>
+
+Source: IBES, Rimes, MSCI, MS. Weekly data as of May 7, 2026. Earnings Estimate Revision Breadth (ERB) = (number of upward revisions - number of downward revisions) / total number of estimates.
+
+Exhibit 12: Capital Goods – Earnings estimate revision breadth (ERB) vs. 12-month P/E trend   
+![](images/a7a1e317d8e98cb6b7a57596e433bcb367cd289b8cf4cab6f5d20c96bec46808.jpg)
+
+<details>
+<summary>line</summary>
+
+| Date    | ERB (3mma) | 12-mth Fwd PE (RHS) |
+|---------|------------|---------------------|
+| Dec-15  | 0%         | -8%                 |
+| Jul-16  | 0%         | -6%                 |
+| Feb-17  | 0%         | -4%                 |
+| Sep-17  | 0%         | -6%                 |
+| Apr-18  | 0%         | -8%                 |
+| Nov-18  | 0%         | -10%                |
+| Jun-19  | 0%         | -8%                 |
+| Jan-20  | 0%         | -6%                 |
+| Aug-20  | 0%         | -4%                 |
+| Mar-21  | 0%         | -2%                 |
+| Oct-21  | 0%         | 0%                  |
+| May-22  | 0%         | 2%                  |
+| Dec-22  | 0%         | 4%                  |
+| Jul-23  | 0%         | 6%                  |
+| Feb-24  | 0%         | 8%                  |
+| Sep-24  | 0%         | 10%                 |
+| Apr-25  | 0%         | 12%                 |
+| Nov-25  | 0%         | 14%                 |
+</details>
+
+Source: IBES, Rimes, MSCI, MS. Weekly data as of May 7, 2026. Earnings Estimate Revision Breadth (ERB) = (number of upward revisions - number of downward revisions) / total number of estimates.
+
+Exhibit 14: Tech Hardware – Earnings estimate revision breadth (ERB) vs. 12-month P/E trend   
+![](images/2bff2ce98093a8f259080d7e041000d8056869f1974b0baf2cb491e9767c8f9d.jpg)
+
+<details>
+<summary>line</summary>
+
+| Month    | ERB (3mma) | 12-mth Fwd PE (RHS) |
+|----------|------------|---------------------|
+| Dec-15   | ~8%        | ~-5%                |
+| Jul-16   | ~4%        | ~-8%                |
+| Feb-17   | ~13%       | ~-5%                |
+| Sep-17   | ~10%       | ~-2%                |
+| Apr-18   | ~-5%       | ~-10%               |
+| Nov-18   | ~-15%      | ~-15%               |
+| Jun-19   | ~-10%      | ~-10%               |
+| Jan-20   | ~0%        | ~0%                 |
+| Aug-20   | ~5%        | ~5%                 |
+| Mar-21   | ~10%       | ~10%                |
+| Oct-21   | ~-5%       | ~-5%                |
+| May-22   | ~-15%      | ~-15%               |
+| Dec-22   | ~-5%       | ~-5%                |
+| Jul-23   | ~0%        | ~0%                 |
+| Feb-24   | ~5%        | ~5%                 |
+| Sep-24   | ~10%       | ~10%                |
+| Apr-25   | ~15%       | ~15%                |
+| Nov-25   | ~0%        | ~0%                 |
+</details>
+
+Source: IBES, Rimes, MSCI, MS. Weekly data as of May 7, 2026. Earnings Estimate Revision Breadth (ERB) = (number of upward revisions - number of downward revisions) / total number of estimates.
+
+Exhibit 16: Healthcare – Earnings estimate revision breadth (ERB) vs. 12-month P/E trend   
+![](images/bb53de4ac52e0f19ee5872521e13c1ffc8b50f8079712dcf33efb5bc53bdc9bd.jpg)
+
+<details>
+<summary>line</summary>
+
+| Date    | ERB (3mma) | 12-mth Fwd PE (RHS) |
+|---------|------------|---------------------|
+| Dec-15  | 0%         | -15%                |
+| Jul-16  | 5%         | -10%                |
+| Feb-17  | 0%         | -15%                |
+| Sep-17  | 5%         | -10%                |
+| Apr-18  | 0%         | -15%                |
+| Nov-18  | 0%         | -10%                |
+| Jun-19  | 0%         | -5%                 |
+| Jan-20  | 0%         | 0%                  |
+| Aug-20  | 0%         | 5%                  |
+| Mar-21  | 0%         | 0%                  |
+| Oct-21  | 0%         | -15%                |
+| May-22  | 0%         | -20%                |
+| Dec-22  | 0%         | -15%                |
+| Jul-23  | 0%         | -10%                |
+| Feb-24  | 0%         | -15%                |
+| Sep-24  | 0%         | -20%                |
+| Apr-25  | 0%         | -15%                |
+| Nov-25  | 0%         | -15%                |
+</details>
+
+Source: IBES, Rimes, MSCI, MS. Weekly data as of May 7, 2026. Earnings Estimate Revision Breadth (ERB) = (number of upward revisions - number of downward revisions) / total number of estimates.
+
+Exhibit 13: Media & Entertainment – Earnings estimate revision breadth (ERB) vs. 12-month P/E trend   
+![](images/ded5b3819fdd39879fb1de3391b34c1c934c8a8ea81437bf81eb27066d1d5824.jpg)
+
+<details>
+<summary>line</summary>
+
+| Date    | ERB (3mma) | 12-mth Fwd PE (RHS) |
+|---------|------------|---------------------|
+| Dec-15  | -5%        | 5%                  |
+| Jul-16  | -5%        | 5%                  |
+| Feb-17  | -5%        | 5%                  |
+| Sep-17  | 10%        | 10%                 |
+| Apr-18  | 0%         | 0%                  |
+| Nov-18  | -10%       | -5%                 |
+| Jun-19  | -5%        | 0%                  |
+| Jan-20  | 0%         | 0%                  |
+| Aug-20  | 0%         | 0%                  |
+| Mar-21  | 0%         | 35%                 |
+| Oct-21  | -5%        | -5%                 |
+| May-22  | -10%       | -5%                 |
+| Dec-22  | -5%        | -5%                 |
+| Jul-23  | 0%         | 0%                  |
+| Feb-24  | 0%         | 0%                  |
+| Sep-24  | 0%         | 0%                  |
+| Apr-25  | 0%         | 0%                  |
+| Nov-25  | -10%       | -10%                |
+</details>
+
+Source: IBES, Rimes, MSCI, MS. Weekly data as of May 7, 2026. Earnings Estimate Revision Breadth (ERB) = (number of upward revisions - number of downward revisions) / total number of estimates.
+
+Exhibit 15: Auto – Earnings estimate revision breadth (ERB) vs. 12-month P/E trend   
+![](images/3fd095fbbcd8d933500a03c55c093ccdefb2139201d882189de6e27cb9b457ed.jpg)
+
+<details>
+<summary>line</summary>
+
+| Date    | ERB (3mma) | 12-mth Fwd/PE (RHS) |
+|---------|------------|---------------------|
+| Dec-15  | ~0%        | ~10                 |
+| Jul-16  | ~15%       | ~15                 |
+| Feb-17  | ~10%       | ~10                 |
+| Sep-17  | ~5%        | ~15                 |
+| Apr-18  | ~-5%       | ~10                 |
+| Nov-18  | ~-10%      | ~10                 |
+| Jun-19  | ~-15%      | ~15                 |
+| Jan-20  | ~-5%       | ~10                 |
+| Aug-20  | ~10%       | ~30                 |
+| Mar-21  | ~15%       | ~40                 |
+| Oct-21  | ~5%        | ~60                 |
+| May-22  | ~-15%      | ~30                 |
+| Dec-22  | ~0%        | ~20                 |
+| Jul-23  | ~5%        | ~40                 |
+| Feb-24  | ~0%        | ~20                 |
+| Sep-24  | ~5%        | ~15                 |
+| Apr-25  | ~0%        | ~10                 |
+| Nov-25  | ~-5%       | ~5                  |
+</details>
+
+Source: IBES, Rimes, MSCI, MS. Weekly data as of May 7, 2026. Earnings Estimate Revision Breadth (ERB) = (number of upward revisions - number of downward revisions) / total number of estimates.
+
+Exhibit 17: Pharma – Earnings estimate revision breadth (ERB) vs. 12-month P/E trend   
+![](images/3cbf15da23f3221d31f151506b2a797440495a265175f027476be46df1ee9b3d.jpg)
+
+<details>
+<summary>line</summary>
+
+| Date    | ERB (3mma) | 12-mth Fwd PE (RHS) |
+|---------|------------|---------------------|
+| Dec-15  | -          | -                   |
+| Jul-16  | -          | -                   |
+| Feb-17  | -          | -                   |
+| Sep-17  | -          | -                   |
+| Apr-18  | -          | -                   |
+| Nov-18  | -          | -                   |
+| Jun-19  | -          | -                   |
+| Jan-20  | -          | -                   |
+| Aug-20  | -          | -                   |
+| Mar-21  | -          | -                   |
+| Oct-21  | -          | -                   |
+| May-22  | -          | -                   |
+| Dec-22  | -          | -                   |
+| Jul-23  | -          | -                   |
+| Feb-24  | -          | -                   |
+| Sep-24  | -          | -                   |
+| Apr-25  | -          | -                   |
+| Nov-25  | -          | -                   |
+</details>
+
+Source: IBES, Rimes, MSCI, MS. Weekly data as of May 7, 2026. Earnings Estimate Revision Breadth (ERB) = (number of upward revisions - number of downward revisions) / total number of estimates.
+
+Exhibit 18: Banks – Earnings estimate revision breadth (ERB) vs. 12-month P/E trend   
+![](images/7d20439c4c1c6826b48cbce5551c56a4745bf5da480cad1a022e1ebe105dc4a2.jpg)
+
+<details>
+<summary>line</summary>
+
+| Date    | ERB (3mma) | 12-mth Fwd PE (RHS) |
+|---------|------------|---------------------|
+| Dec-15  | 0%         | 4.0                 |
+| Jul-16  | 0%         | 5.0                 |
+| Feb-17  | 0%         | 6.0                 |
+| Sep-17  | 0%         | 7.0                 |
+| Apr-18  | 0%         | 6.5                 |
+| Nov-18  | 0%         | 5.5                 |
+| Jun-19  | 0%         | 5.0                 |
+| Jan-20  | 0%         | 4.5                 |
+| Aug-20  | 0%         | 4.0                 |
+| Mar-21  | 0%         | 3.5                 |
+| Oct-21  | 0%         | 3.0                 |
+| May-22  | 0%         | 3.5                 |
+| Dec-22  | 0%         | 4.0                 |
+| Jul-23  | 0%         | 4.5                 |
+| Feb-24  | 0%         | 5.0                 |
+| Sep-24  | 0%         | 5.5                 |
+| Apr-25  | 0%         | 6.0                 |
+| Nov-25  | 0%         | 6.5                 |
+</details>
+
+Source: IBES, Rimes, MSCI, MS. Weekly data as of May 7, 2026. Earnings Estimate Revision Breadth (ERB) = (number of upward revisions - number of downward revisions) / total number of estimates.
+
+Exhibit 19: Transportation – Earnings estimate revision breadth (ERB) vs. 12-month P/E trend   
+![](images/ddd820aecfac887d2f5567cb26e3a72c6f64168ce71bc7892b76f40ba70d1755.jpg)
+
+<details>
+<summary>line</summary>
+
+| Date    | ERB (3mma) | 12-mth Fwd PE (RHS) |
+|---------|------------|---------------------|
+| Dec-15  | 0%         | 10%                 |
+| Jul-16  | 0%         | 10%                 |
+| Feb-17  | 0%         | 10%                 |
+| Sep-17  | 0%         | 10%                 |
+| Apr-18  | 0%         | 10%                 |
+| Nov-18  | 0%         | 10%                 |
+| Jun-19  | 0%         | 10%                 |
+| Jan-20  | 0%         | 18%                 |
+| Aug-20  | 0%         | 16%                 |
+| Mar-21  | 0%         | 14%                 |
+| Oct-21  | 0%         | 10%                 |
+| May-22  | 0%         | 8%                  |
+| Dec-22  | 0%         | 6%                  |
+| Jul-23  | 0%         | 10%                 |
+| Feb-24  | 0%         | 10%                 |
+| Sep-24  | 0%         | 10%                 |
+| Apr-25  | 0%         | 10%                 |
+| Nov-25  | 0%         | 10%                 |
+</details>
+
+Source: IBES, Rimes, MSCI, MS. Weekly data as of May 7, 2026. Earnings Estimate Revision Breadth (ERB) = (number of upward revisions - number of downward revisions) / total number of estimates.
+
+Exhibit 19 Insurance – Earnings estimate revision breadth (ERB) vs. 12-month P/E trend   
+![](images/8df73ec082ce714a811dff1c7b5b055f401b70a3ccfac7a431850276d42f55dc.jpg)
+
+<details>
+<summary>line</summary>
+
+| Date    | ERB (3mma) | 12-mth Fwd PE (RHS) |
+|---------|------------|---------------------|
+| Dec-15  | -          | 8                   |
+| Jul-16  | -          | 10                  |
+| Feb-17  | -          | 12                  |
+| Sep-17  | -          | 14                  |
+| Apr-18  | -          | 10                  |
+| Nov-18  | -          | 8                   |
+| Jun-19  | -          | 6                   |
+| Jan-20  | -          | 4                   |
+| Aug-20  | -          | 2                   |
+| Mar-21  | -          | 0                   |
+| Oct-21  | -          | -2                  |
+| May-22  | -          | -4                  |
+| Dec-22  | -          | -6                  |
+| Jul-23  | -          | -8                  |
+| Feb-24  | -          | -10                 |
+| Sep-24  | -          | -12                 |
+| Apr-25  | -          | -14                 |
+| Nov-25  | -          | -16                 |
+</details>
+
+Source: IBES, Rimes, MSCI, MS. Weekly data as of May 7, 2026. Earnings Estimate Revision Breadth (ERB) = (number of upward revisions - number of downward revisions) / total number of estimates.
+
+Exhibit 20: Consumer Durables – Earnings estimate revision breadth (ERB) vs. 12-month P/E trend   
+![](images/6b98ccef0ef6066cf2fb6174177c9a605498c6607cc70adfa95cfbbe5cf73ef2.jpg)
+
+<details>
+<summary>line</summary>
+
+| Date    | ERB (3mma) | 12-mth Fwd PE (RHS) |
+|---------|------------|---------------------|
+| Dec-15  | -          | -                   |
+| Jul-16  | -          | -                   |
+| Feb-17  | -          | -                   |
+| Sep-17  | -          | -                   |
+| Apr-18  | -          | -                   |
+| Nov-18  | -          | -                   |
+| Jun-19  | -          | -                   |
+| Jan-20  | -          | -                   |
+| Aug-20  | -          | -                   |
+| Mar-21  | -          | -                   |
+| Oct-21  | -          | -                   |
+| May-22  | -          | -                   |
+| Dec-22  | -          | -                   |
+| Jul-23  | -          | -                   |
+| Feb-24  | -          | -                   |
+| Sep-24  | -          | -                   |
+| Apr-25  | -          | -                   |
+| Nov-25  | -          | -                   |
+</details>
+
+Source: IBES, Rimes, MSCI, MS. Weekly data as of May 7, 2026. Earnings Estimate Revision Breadth (ERB) = (number of upward revisions - number of downward revisions) / total number of estimates.
+
+Exhibit 21: Telecom – Earnings estimate revision breadth (ERB) vs. 12-month P/E trend   
+![](images/d294c56f3f89ec313f286338d264463a11f704fc48111325e96430adf36ec201.jpg)
+
+<details>
+<summary>line</summary>
+
+| Date    | ERB (3mma) | 12-mth Fwd PE (RHS) |
+|---------|------------|---------------------|
+| Dec-15  | 0%         | -5%                 |
+| Jul-16  | -15%       | -5%                 |
+| Feb-17  | 0%         | -5%                 |
+| Sep-17  | -5%        | -5%                 |
+| Apr-18  | 0%         | -5%                 |
+| Nov-18  | 0%         | -5%                 |
+| Jun-19  | 0%         | -5%                 |
+| Jan-20  | -15%       | -5%                 |
+| Aug-20  | 0%         | -5%                 |
+| Mar-21  | 0%         | 5%                  |
+| Oct-21  | 0%         | 0%                  |
+| May-22  | 0%         | 0%                  |
+| Dec-22  | 0%         | 0%                  |
+| Jul-23  | 0%         | 0%                  |
+| Feb-24  | 0%         | 0%                  |
+| Sep-24  | 0%         | 0%                  |
+| Apr-25  | 0%         | 0%                  |
+| Nov-25  | -15%       | -5%                 |
+</details>
+
+Source: IBES, Rimes, MSCI, MS. Weekly data as of May 7, 2026. Earnings Estimate Revision Breadth (ERB) = (number of upward revisions - number of downward revisions) / total number of estimates.
+
+Exhibit 23: Retailing – Earnings estimate revision breadth (ERB) vs. 12-month P/E trend   
+![](images/59f08e5796fb275729c09cf54add928d34db37a03670426e61dcf9b62d17e458.jpg)
+
+<details>
+<summary>line</summary>
+
+| Date    | ERB (3mma) | 12-mth Fwd PE (RHS) |
+|---------|------------|---------------------|
+| Dec-15  | 0%         | 0%                  |
+| Jul-16  | -15%       | 5%                  |
+| Feb-17  | 10%        | 10%                 |
+| Sep-17  | 5%         | 5%                  |
+| Apr-18  | -10%       | -5%                 |
+| Nov-18  | -25%       | -5%                 |
+| Jun-19  | 10%        | 0%                  |
+| Jan-20  | 5%         | 5%                  |
+| Aug-20  | 0%         | 10%                 |
+| Mar-21  | -5%        | -5%                 |
+| Oct-21  | -10%       | -10%                |
+| May-22  | -15%       | -15%                |
+| Dec-22  | -10%       | -20%                |
+| Jul-23  | -5%        | -25%                |
+| Feb-24  | 0%         | -20%                |
+| Sep-24  | 5%         | -15%                |
+| Apr-25  | 10%        | -10%                |
+| Nov-25  | -15%       | -15%                |
+</details>
+
+Source: IBES, Rimes, MSCI, MS. Weekly data as of May 7, 2026. Earnings Estimate Revision Breadth (ERB) = (number of upward revisions - number of downward revisions) / total number of estimates.
+
+Exhibit 22: Utilities – Earnings estimate revision breadth (ERB) vs. 12-month P/E trend   
+![](images/fe97e5e4637bf7a3766ddad658b53eb99ecc10f79334ba9234cc63d619bf7545.jpg)
+
+<details>
+<summary>line</summary>
+
+| Date    | 12-mth Fwd PE (RHS) | ERB (3mma) |
+|---------|---------------------|------------|
+| Dec-15  | ~-10%               | ~0%        |
+| Jul-16  | ~-5%                | ~0%        |
+| Feb-17  | ~7%                 | ~0%        |
+| Sep-17  | ~5%                 | ~0%        |
+| Apr-18  | ~8%                 | ~0%        |
+| Nov-18  | ~3%                 | ~0%        |
+| Jun-19  | ~0%                 | ~0%        |
+| Jan-20  | ~-10%               | ~0%        |
+| Aug-20  | ~4%                 | ~0%        |
+| Mar-21  | ~6%                 | ~0%        |
+| Oct-21  | ~7%                 | ~0%        |
+| May-22  | ~-5%                | ~0%        |
+| Dec-22  | ~-10%               | ~0%        |
+| Jul-23  | ~-12%               | ~0%        |
+| Feb-24  | ~-8%                | ~0%        |
+| Sep-24  | ~-5%                | ~0%        |
+| Apr-25  | ~-15%               | ~0%        |
+| Nov-25  | ~0%                 | ~0%        |
+</details>
+
+Source: IBES, Rimes, MSCI, MS. Weekly data as of May 7, 2026. Earnings Estimate Revision Breadth (ERB) = (number of upward revisions - number of downward revisions) / total number of estimates.
+
+Exhibit 24: Real Estate – Earnings estimate revision breadth (ERB) vs. 12-month P/E trend   
+![](images/16b501002eebee2095a9a2f44ccdde7d2787f15f92e6396c3ce51f429afc5405.jpg)
+
+<details>
+<summary>line</summary>
+
+| Date    | ERB (3mma) | 12-mth Fwd PE (RHS) |
+|---------|------------|---------------------|
+| Dec-15  | -          | 6                   |
+| Jul-16  | -          | 7                   |
+| Feb-17  | -          | 8                   |
+| Sep-17  | -          | 9                   |
+| Apr-18  | -          | 10                  |
+| Nov-18  | -          | 6                   |
+| Jun-19  | -          | 5                   |
+| Jan-20  | -          | 4                   |
+| Aug-20  | -          | 5                   |
+| Mar-21  | -          | 6                   |
+| Oct-21  | -          | 7                   |
+| May-22  | -          | 8                   |
+| Dec-22  | -          | 9                   |
+| Jul-23  | -          | 10                  |
+| Feb-24  | -          | 7                   |
+| Sep-24  | -          | 6                   |
+| Apr-25  | -          | 5                   |
+| Nov-25  | -          | 4                   |
+</details>
+
+Source: IBES, Rimes, MSCI, MS. Weekly data as of May 7, 2026. Earnings Estimate Revision Breadth (ERB) = (number of upward revisions - number of downward revisions) / total number of estimates.
+
+# Disclosure Section
+
+The information and opinions in MS were prepared or are disseminated by MS Asia Limited (which accepts the responsibility for its contents) and/or MS Asia (Singapore) Pte. (Registration number 199206298Z) and/or MS Asia (Singapore) Securities Pte Ltd (Registration number 200008434H), regulated by the Monetary Authority of Singapore (which accepts legal responsibility for its contents and should be contacted with respect to any matters arising from, or in connection with, MS), and/or MS Taiwan Limited and/or MS & Co International plc, Seoul Branch, and/or MS Australia Limited (A.B.N. 67 003 734 576, holder of Australian financial services license No. 233742, which accepts responsibility for its contents), and/or MS Wealth Management Australia Pty Ltd (A.B.N. 19 009 145 555, holder of Australian financial services license No. 240813, which accepts responsibility for its contents), and/or MS India Company Private Limited having Corporate Identification No (CIN) U22990MH1998PTC115305, regulated by the Securities and Exchange Board of India ("SEBI") and holder of licenses as a Research Analyst (SEBI Registration No. INH000001105); Stock Broker (SEBI Stock Broker Registration No. INZ000244438), Merchant Banker (SEBI Registration No. INM000011203), and depository participant with National Securities Depository Limited (SEBI Registration No. IN-DP-NSDL-567-2021) having registered office at Altimus, Level 39 & 40, Pandurang Budhkar Marg, Worli, Mumbai 400018, India; Telephone no. +91-22-61181000; Compliance Officer Details: Mr. Tejarshi Hardas, Tel. No.: +91-22-61181000 or Email: tejarshi.hardas@morganstanley.com; Grievance officer details: Mr. Tejarshi Hardas, Tel. No.: +91-22-61181000 or Email: msic-compliance@morganstanley.com which accepts the responsibility for its contents and should be contacted with respect to any matters arising from, or in connection with, MS, and their affiliates (collectively, "MS"). MS India Company Private Limited (MSICPL) may use AI tools in providing research services. All recommendations contained herein are made by the duly qualified research analysts.
+
+For important disclosures, stock price charts and equity rating histories regarding companies that are the subject of this report, please see the MS Disclosure Website at www.morganstanley.com/eqr/disclosures/webapp/generalresearch, or contact your investment representative or MS at 1585 Broadway, (Attention: Research Management), New York, NY, 10036 USA.
+
+For valuation methodology and risks associated with any recommendation, rating or price target referenced in this research report, please contact the Client Support Team as follows: US/Canada +1 800 303-2495; Hong Kong +852 2848-5999; Latin America +1 718 754-5444 (U.S.); London +44 (0)20-7425-8169; Singapore +65 6834-6860; Sydney +61 (0)2-9770-1505; Tokyo +81 (0)3-6836-9000. Alternatively you may contact your investment representative or MS at 1585 Broadway, (Attention: Research Management), New York, NY 10036 USA.
+
+# Analyst Certification
+
+The following analysts hereby certify that their views about the companies and their securities discussed in this report are accurately expressed and that they have not received and will not receive direct or indirect compensation in exchange for expressing specific recommendations or views in this report: Chloe Liu; Laura Wang; Vicky Wu.
+
+# Global Research Conflict Management Policy
+
+MS has been published in accordance with our conflict management policy, which is available at www.morganstanley.com/institutional/research/conflictpolicies. A Portuguese version of the policy can be found at www.morganstanley.com.br
+
+# Important Regulatory Disclosures on Subject Companies
+
+The equity research analysts or strategists principally responsible for the preparation of MS have received compensation based upon various factors, including quality of research, investor client feedback, stock picking, competitive factors, firm revenues and overall investment banking revenues. Equity Research analysts' or strategists' compensation is not linked to investment banking or capital markets transactions performed by MS or the profitability or revenues of particular trading desks.
+
+MS and its affiliates do business that relates to companies/instruments covered in MS, including market making, providing liquidity, fund management, commercial banking, extension of credit, investment services and investment banking. MS sells to and buys from customers the securities/instruments of companies covered in MS on a principal basis. MS may have a position in the debt of the Company or instruments discussed in this report. MS trades or may trade as principal in the debt securities (or in related derivatives) that are the subject of the debt research report.
+
+Certain disclosures listed above are also for compliance with applicable regulations in non-US jurisdictions.
+
+# STOCK RATINGS
+
+MS uses a relative rating system using terms such as Overweight, Equal-weight, Not-Rated or Underweight (see definitions below). MS does not assign ratings of Buy, Hold or Sell to the stocks we cover. Overweight, Equal-weight, Not-Rated and Underweight are not the equivalent of buy, hold and sell. Investors should carefully read the definitions of all ratings used in MS. In addition, since MS contains more complete information concerning the analyst's views, investors should carefully read MS, in its entirety, and not infer the contents from the rating alone. In any case, ratings (or research) should not be used or relied upon as investment advice. An investor's decision to buy or sell a stock should depend on individual circumstances (such as the investor's existing holdings) and other considerations.
+
+# Global Stock Ratings Distribution
+
+(as of April 30, 2026)
+
+The Stock Ratings described below apply to MS's Fundamental Equity Research and do not apply to Debt Research produced by the Firm.
+
+For disclosure purposes only (in accordance with FINRA requirements), we include the category headings of Buy, Hold, and Sell alongside our ratings of Overweight, Equal-weight, Not-Rated and Underweight. MS does not assign ratings of Buy, Hold or Sell to the stocks we cover. Overweight, Equal-weight, Not-Rated and Underweight are not the equivalent of buy, hold, and sell but represent recommended relative weightings (see definitions below). To satisfy regulatory requirements, we correspond Overweight, our most positive stock rating, with a buy recommendation; we correspond Equal-weight and Not-Rated to hold and Underweight to sell recommendations, respectively.
+
+<table><tr><td></td><td colspan="2">Coverage Universe</td><td colspan="3">Investment Banking Clients (IBC)</td><td colspan="2">Other Material Investment ServicesClients (MISC)</td></tr><tr><td>Stock RatingCategory</td><td>Count</td><td>% of Total</td><td>Count</td><td>% of Total IBC</td><td>% of RatingCategory</td><td>Count</td><td>% of Total OtherMISC</td></tr><tr><td>Overweight/Buy</td><td>1546</td><td>42%</td><td>467</td><td>51%</td><td>30%</td><td>709</td><td>44%</td></tr><tr><td>Equal-weight/Hold</td><td>1568</td><td>43%</td><td>358</td><td>39%</td><td>23%</td><td>715</td><td>44%</td></tr><tr><td>Not-Rated/Hold</td><td>4</td><td>0%</td><td>0</td><td>0%</td><td>0%</td><td>1</td><td>0%</td></tr><tr><td>Underweight/Sell</td><td>555</td><td>15%</td><td>84</td><td>9%</td><td>15%</td><td>202</td><td>12%</td></tr><tr><td>Total</td><td>3,673</td><td></td><td>909</td><td></td><td></td><td>1627</td><td></td></tr></table>
+
+Data include common stock and ADRs currently assigned ratings. Investment Banking Clients are companies from whom MS received investment banking compensation in the last 12 months. Due to rounding off of decimals, the percentages provided in the "% of total" column may not add up to exactly 100 percent.
+
+# Analyst Stock Ratings
+
+Overweight (O). The stock's total return is expected to exceed the average total return of the analyst's industry (or industry team's) coverage universe, on a risk-adjusted basis, over the next 12-18 months.
+
+Equal-weight (E). The stock's total return is expected to be in line with the average total return of the analyst's industry (or industry team's) coverage universe, on a risk-adjusted basis, over the next 12-18 months.
+
+Not-Rated (NR). Currently the analyst does not have adequate conviction about the stock's total return relative to the average total return of the analyst's industry (or industry team's) coverage universe, on a risk-adjusted basis, over the next 12-18 months.
+
+Underweight (U). The stock's total return is expected to be below the average total return of the analyst's industry (or industry team's) coverage universe, on a risk-adjusted basis, over the next 12-18 months.
+
+Unless otherwise specified, the time frame for price targets included in MS is 12 to 18 months.
+
+# Analyst Industry Views
+
+Attractive (A): The analyst expects the performance of his or her industry coverage universe over the next 12-18 months to be attractive vs. the relevant broad market benchmark, as indicated below.
+
+In-Line (I): The analyst expects the performance of his or her industry coverage universe over the next 12-18 months to be in line with the relevant broad market benchmark, as indicated below. Cautious (C): The analyst views the performance of his or her industry coverage universe over the next 12-18 months with caution vs. the relevant broad market benchmark, as indicated below. Benchmarks for each region are as follows: North America - S&P 500; Latin America - relevant MSCI country index or MSCI Latin America Index; Europe - MSCI Europe; Japan - TOPIX; Asia - relevant MSCI country index or MSCI sub-regional index or MSCI AC Asia Pacific ex Japan Index.
+
+# Important Disclosures for MS Smith Barney LLC Customers
+
+Important disclosures regarding any material conflict of interest that can reasonably be expected to have influenced MS Smith Barney LLC's choice of a third-party research provider or the subject company of a third-party research report, are available on the MS Wealth Management disclosure website at www.morganstanley.com/online/researchdisclosures. For MS specific disclosures, you may refer to https://www.morganstanley.com/eqr/disclosures/webapp/generalresearch.
+
+Each MS report is reviewed and approved on behalf of MS Smith Barney LLC. This review and approval is conducted by the same person who reviews the research report on behalf of MS. This could create a conflict of interest.
+
+# Other Important Disclosures
+
+MS policy is to update research reports as and when the Research Analyst and Research Management deem appropriate, based on developments with the issuer, the sector, or the market that may have a material impact on the research views or opinions stated therein. In addition, certain Research publications are intended to be updated on a regular periodic basis (weekly/monthly/quarterly/annual) and will ordinarily be updated with that frequency, unless the Research Analyst and Research Management determine that a different publication schedule is appropriate based on current conditions.
+
+MS is not acting as a municipal advisor and the opinions or views contained herein are not intended to be, and do not constitute, advice within the meaning of Section 975 of the Dodd-Frank Wall Street Reform and Consumer Protection Act.
+
+MS produces an equity research product called a "Tactical Idea." Views contained in a "Tactical Idea" on a particular stock may be contrary to the recommendations or views expressed in research on the same stock. This may be the result of differing time horizons, methodologies, market events, or other factors. For all research available on a particular stock, please contact your sales representative or go to Matrix at http://www.morganstanley.com/matrix.
+
+MS is provided to our clients through our proprietary research portal on Matrix and also distributed electronically by MS to clients. Certain, but not all, MS products are also made available to clients through third-party vendors or redistributed to clients through alternate electronic means as a convenience. For access to all available MS, please contact your sales representative or go to Matrix at http://www.morganstanley.com/matrix.
+
+Any access and/or use of MS is subject to MS's Terms of Use (http://www.morganstanley.com/terms.html). By accessing and/or using MS, you are indicating that you have read and agree to be bound by our Terms of Use (http://www.morganstanley.com/terms.html). In addition you consent to MS processing your personal data and using cookies in accordance with our Privacy Policy and our Global Cookies Policy (http://www.morganstanley.com/privacy\_pledge.html), including for the purposes of setting your preferences and to collect readership data so that we can deliver better and more personalized service and products to you. To find out more information about how MS processes personal data, how we use cookies and how to reject cookies see our Privacy Policy and our Global Cookies Policy (http://www.morganstanley.com/privacy\_pledge.html). Please use the provided link to review the Terms and Conditions and Most Important Terms and Conditions for MS India Company Private Limited (https://www.morganstanley.com/assets/pdfs/about-us-global-offices/india/Terms\_and\_conditions.pdf) and the following link to review the audit report (https://ny.matrix.ms.com/eqr/research/webapp/researchdocs/MSICPL\_Morgan\_Stanley\_Research\_Audit\_Report.pdf).
+
+If you do not agree to our Terms of Use and/or if you do not wish to provide your consent to MS processing your personal data or using cookies please do not access our research.
+
+MS does not provide individually tailored investment advice. MS has been prepared without regard to the circumstances and objectives of those who receive it. MS recommends that investors independently evaluate particular investments and strategies, and encourages investors to seek the advice of a financial adviser. The appropriateness of an investment or strategy will depend on an investor's circumstances and objectives. The securities, instruments, or strategies discussed in MS may not be suitable for all investors, and certain investors may not be eligible to purchase or participate in some or all of them. MS is not an offer to buy or sell or the solicitation of an offer to buy or sell any security/instrument or to participate in any particular trading strategy. The value of and income from your investments may vary because of changes in interest rates, foreign exchange rates, default rates, prepayment rates, securities/instruments prices, market indexes, operational or financial conditions of companies or other factors. There may be time limitations on the exercise of options or other rights in securities/instruments transactions. Past performance is not necessarily a guide to future performance. Estimates of future performance are based on assumptions that may not be realized. If provided, and unless otherwise stated, the closing price on the cover page is that of the primary exchange for the subject company's securities/instruments.
+
+The fixed income research analysts, strategists or economists principally responsible for the preparation of MS have received compensation based upon various factors, including quality, accuracy and value of research, firm profitability or revenues (which include fixed income trading and capital markets profitability or revenues), client feedback and competitive factors. Fixed Income Research analysts', strategists' or economists' compensation is not linked to investment banking or capital markets transactions performed by MS or the profitability or revenues of particular trading desks.
+
+The "Important Regulatory Disclosures on Subject Companies" section in MS lists all companies mentioned where MS owns 1% or more of a class of common equity securities of the companies. For all other companies mentioned in MS, MS may have an investment of less than 1% in securities/instruments or derivatives of securities/instruments of companies and may trade them in ways different from those discussed in MS. Employees of MS not involved in the preparation of MS may have investments in securities/instruments or derivatives of securities/instruments of companies mentioned and may trade them in ways different from those discussed in MS. Derivatives may be issued by MS or associated persons.
+
+With the exception of information regarding MS, MS is based on public information. MS makes every effort to use reliable, comprehensive information, but we make no representation that it is accurate or complete. We have no obligation to tell you when opinions or information in MS change apart from when we intend to discontinue equity research coverage of a subject company. Facts and views presented in MS have not been reviewed by, and may not reflect information known to, professionals in other MS business areas, including investment banking personnel.
+
+MS personnel may participate in company events such as site visits and are generally prohibited from accepting payment by the company of associated expenses unless pre-approved by authorized members of Research management.
+
+MS may make investment decisions that are inconsistent with the recommendations or views in this report.
+
+To our readers based in Taiwan or trading in Taiwan securities/instruments: Information on securities/instruments that trade in Taiwan is distributed by MS Taiwan Limited ("MSTL"). Such information is for your reference only. The reader should independently evaluate the investment risks and is solely responsible for their investment decisions. MS may not be distributed to the public media or quoted or used by the public media without the express written consent of MS. Any non-customer reader within the scope of Article 7-1 of the Taiwan Stock Exchange Recommendation Regulations accessing and/or receiving MS is not permitted to provide MS to any third party (including but not limited to related parties, affiliated companies and any other third parties) or engage in any activities regarding MS which may create or give the appearance of creating a conflict of interest. Information on securities/instruments that do not trade in Taiwan is for informational purposes only and is not to be construed as a recommendation or a solicitation to trade in such securities/instruments. MSTL may not execute transactions for clients in these securities/instruments.
+
+Certain information in MS was sourced by employees of the Shanghai Representative Office of MS Asia Limited for the use of MS Asia Limited. MS is not incorporated under PRC law and the research in relation to this report is conducted outside the PRC. MS does not constitute an offer to sell or the solicitation of an offer to buy any securities in the PRC. PRC investors shall have the relevant qualifications to invest in such securities and shall be responsible for obtaining all relevant approvals, licenses, verifications and/or registrations from the relevant governmental authorities themselves. Neither this report nor any part of it is intended as, or shall constitute, provision of any consultancy or advisory service of securities investment as defined under PRC law. Such information is provided for your reference only.
+
+MS is disseminated in Brazil by MS C.T.V.M. S.A. located at Av. Brigadeiro Faria Lima, 3600, 6th floor, São Paulo - SP, Brazil; and is regulated by the Comissão de Valores Mobiliários; in Mexico by MS México, Casa de Bolsa, S.A. de C.V which is regulated by Comision Nacional Bancaria y de Valores. Paseo de los Tamarindos 90, Torre 1, Col. Bosques de las Lomas Floor 29, 05120 Mexico City; in Japan by MS MUFG Securities Co., Ltd. and, for Commodities related research reports only, MS Capital Group Japan Co., Ltd; in Hong Kong by MS Asia Limited (which accepts responsibility for its contents) and by MS Bank Asia Limited; in Singapore by MS Asia (Singapore) Pte. (Registration number 199206298Z) and/or MS Asia (Singapore) Securities Pte Ltd (Registration number 200008434H), regulated by the Monetary Authority of Singapore (which accepts legal responsibility for its contents and should be contacted with respect to any matters arising from, or in connection with, MS) and by MS Bank Asia Limited, Singapore Branch (Registration number T14FC0118J); in Australia to "wholesale clients" within the meaning of the Australian Corporations Act by MS Australia Limited A.B.N. 67 003 734 576, holder of Australian financial services license No. 233742, which accepts responsibility for its contents; in Australia to "wholesale clients" and "retail clients" within the meaning of the Australian Corporations Act by MS Wealth Management Australia Pty Ltd (A.B.N. 19 009 145 555, holder of Australian financial services license No. 240813, which accepts responsibility for its contents; in Korea by MS & Co International plc, Seoul Branch; in India by MS India Company Private Limited having Corporate Identification No (CIN) U22990MH1998PTC115305, regulated by the Securities and Exchange Board of India ("SEBI") and holder of licenses as a Research Analyst (SEBI Registration No. INH000001105); Stock Broker (SEBI Stock Broker Registration No. INZ000244438), Merchant Banker (SEBI Registration No. INM000011203), and depository participant with National Securities Depository Limited (SEBI Registration No. IN-DP-NSDL-567-2021) having registered office at Altimus, Level 39 & 40, Pandurang Budhkar Marg, Worli, Mumbai 400018, India; Telephone no. +91-22-61181000; Compliance Officer Details: Mr. Tejarshi Hardas, Tel. No.: +91-22-61181000 or Email: tejarshi.hardas@morganstanley.com; Grievance officer details: Mr. Tejarshi Hardas, Tel. No.: +91-22-61181000 or Email: msic-compliance@morganstanley.com. MS India Company Private Limited (MSICPL) may use AI tools in providing research services. All recommendations contained herein are made by the duly qualified research analysts; in Canada by MS Canada Limited; in Germany and the European Economic Area where required by MS Europe S.E., authorised and regulated by Bundesanstalt fuer Finanzdienstleistungsaufsicht (BaFin) under the reference number 149169; in the US by MS & Co. LLC, which accepts responsibility for its contents. MS & Co. International plc, authorized by the Prudential Regulation Authority and regulated by the Financial Conduct Authority and the Prudential Regulation Authority, disseminates in the UK research that it has prepared, and research which has been prepared by any of its affiliates, only to persons who (i) are investment professionals falling within Article 19(5) of the Financial Services and Markets Act 2000 (Financial Promotion) Order 2005 (as amended, the "Order"); (ii) are persons who are high net worth entities falling within Article 49(2)(a) to (d) of the Order; or (iii) are persons to whom an invitation or inducement to engage in investment activity (within the meaning of section 21 of the Financial Services and Markets Act 2000, as amended) may otherwise lawfully be communicated or caused to be communicated. RMB MS Proprietary Limited is a member of the JSE Limited and A2X (Pty) Ltd. RMB MS Proprietary Limited is a joint venture owned equally by MS International Holdings Inc. and RMB Investment Advisory (Proprietary) Limited, which is wholly owned by FirstRand Limited. The information in MS is being disseminated by MS Saudi Arabia, regulated by the Capital
+
+Market Authority in the Kingdom of Saudi Arabia, and is directed at Sophisticated investors only.
+
+The information in MS is being communicated by MS & Co. International plc (DIFC Branch), regulated by the Dubai Financial Services Authority (the DFSA) or by MS & Co. International plc (ADGM Branch), regulated by the Financial Services Regulatory Authority Abu Dhabi (the FSRA), and is directed at Professional Clients only, as defined by the DFSA or the FSRA, respectively. The financial products or financial services to which this research relates will only be made available to a customer who we are satisfied meets the regulatory criteria of a Professional Client. A distribution of the different MS Research ratings or recommendations, in percentage terms for Investments in each sector covered, is available upon request from your sales representative.
+
+The information in MS is being communicated by MS & Co. International plc (QFC Branch), regulated by the Qatar Financial Centre Regulatory Authority (the QFCRA), and is directed at business customers and market counterparties only and is not intended for Retail Customers as defined by the QFCRA.
+
+As required by the Capital Markets Board of Turkey, investment information, comments and recommendations stated here, are not within the scope of investment advisory activity. Investment advisory service is provided exclusively to persons based on their risk and income preferences by the authorized firms. Comments and recommendations stated here are general in nature. These opinions may not fit to your financial status, risk and return preferences. For this reason, to make an investment decision by relying solely to this information stated here may not bring about outcomes that fit your expectations.
+
+The trademarks and service marks contained in MS are the property of their respective owners. Third-party data providers make no warranties or representations relating to the accuracy, completeness, or timeliness of the data they provide and shall not have liability for any damages relating to such data. The Global Industry Classification Standard (GICS) was developed by and is the exclusive property of MSCI and S&P.
+
+MS, or any portion thereof may not be reprinted, sold or redistributed without the written consent of MS.
+
+Indicators and trackers referenced in MS may not be used as, or treated as, a benchmark under Regulation EU 2016/1011, or any other similar framework.
+
+The issuers and/or fixed income products recommended or discussed in certain fixed income research reports may not be continuously followed. Accordingly, investors should regard those fixed income research reports as providing stand-alone analysis and should not expect continuing analysis or additional reports relating to such issuers and/or individual fixed income products. MS may hold, from time to time, material financial and commercial interests regarding the company subject to the Research report.
+
+Registration granted by SEBI and certification from the National Institute of Securities Markets (NISM) in no way guarantee performance of the intermediary or provide any assurance of returns to investors. Investment in securities market are subject to market risks. Read all the related documents carefully before investing.
+
+© 2026 MS
