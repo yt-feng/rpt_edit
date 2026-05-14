@@ -8,7 +8,7 @@ on:
         required: true
         default: "/zip_backup"
       model:
-        description: "DeepSeek model for note/article/podcast-script generation"
+        description: "DeepSeek model for macro selection and content generation"
         required: true
         default: "deepseek-chat"
       deepseek_base_url:
@@ -28,11 +28,11 @@ on:
         required: true
         default: "true"
       shard_count:
-        description: "Parallel shard count. 20 shards x 5 reports covers 100 reports."
+        description: "Parallel shard count. 20 shards x 5 macro reports covers 100 reports."
         required: true
         default: "20"
       reports_per_shard:
-        description: "Max reports each shard processes"
+        description: "Max macro reports each shard processes"
         required: true
         default: "5"
       batch_size:
@@ -40,7 +40,7 @@ on:
         required: true
         default: "5"
       max_total_reports:
-        description: "Max reports from the latest Dropbox folder to process; 0 means all"
+        description: "Max macro/trend reports to process after DeepSeek selection; 0 means all macro candidates"
         required: true
         default: "100"
       wechat_length:
@@ -48,9 +48,9 @@ on:
         required: true
         default: "3000"
       community_cta:
-        description: "CTA sentence for the WeChat article"
+        description: "CTA style hint; DeepSeek rewrites it naturally for each article"
         required: true
-        default: "加入社群，领取完整研报解读与原始图表。"
+        default: "欢迎来星球微信群里继续讨论"
       podcast_minutes:
         description: "Target length for Chinese and English podcast scripts. Audio/video are disabled here."
         required: true
@@ -107,17 +107,80 @@ jobs:
           echo "batch_size=${{ github.event.inputs.batch_size || '5' }}" >> "$GITHUB_OUTPUT"
           echo "max_total_reports=${{ github.event.inputs.max_total_reports || '100' }}" >> "$GITHUB_OUTPUT"
           echo "wechat_length=${{ github.event.inputs.wechat_length || '3000' }}" >> "$GITHUB_OUTPUT"
-          echo "community_cta=${{ github.event.inputs.community_cta || '加入社群，领取完整研报解读与原始图表。' }}" >> "$GITHUB_OUTPUT"
+          echo "community_cta=${{ github.event.inputs.community_cta || '欢迎来星球微信群里继续讨论' }}" >> "$GITHUB_OUTPUT"
           echo "podcast_minutes=${{ github.event.inputs.podcast_minutes || '5' }}" >> "$GITHUB_OUTPUT"
           echo "commit_results=${{ github.event.inputs.commit_results || 'true' }}" >> "$GITHUB_OUTPUT"
 
       - name: Print resolved plan
         run: |
           echo "::notice::Daily schedule is 05:00 Asia/Shanghai. Audio/video are disabled."
-          echo "::notice::Plan: ${{ steps.vars.outputs.shard_count }} shards x ${{ steps.vars.outputs.reports_per_shard }} reports, max_total_reports=${{ steps.vars.outputs.max_total_reports }}."
+          echo "::notice::Step 1 downloads latest Dropbox PDFs once; Step 2 DeepSeek filters macro/trend reports; Step 3 shards only selected macro reports."
+          echo "::notice::Plan: ${{ steps.vars.outputs.shard_count }} shards x ${{ steps.vars.outputs.reports_per_shard }} macro reports, max_total_reports=${{ steps.vars.outputs.max_total_reports }}."
+
+  select-macro-reports:
+    needs: resolve-inputs
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    outputs:
+      latest_folder: ${{ steps.dropbox.outputs.latest_folder }}
+      pdf_count: ${{ steps.dropbox.outputs.pdf_count }}
+      macro_candidate_count: ${{ steps.select_macro.outputs.candidate_count }}
+      selected_count: ${{ steps.select_macro.outputs.process_count }}
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: "pip"
+
+      - name: Install Python dependencies
+        run: pip install -r requirements.txt
+
+      - name: Download PDFs from latest Dropbox date folder
+        id: dropbox
+        env:
+          DROPBOX_APP_KEY: ${{ secrets.DROPBOX_APP_KEY }}
+          DROPBOX_APP_SECRET: ${{ secrets.DROPBOX_APP_SECRET }}
+          DROPBOX_REFRESH_TOKEN: ${{ secrets.DROPBOX_REFRESH_TOKEN }}
+        run: |
+          echo "::notice::Downloading latest Dropbox PDFs once for macro selection."
+          python scripts/download_dropbox_latest_pdfs.py \
+            --dropbox-root "${{ needs.resolve-inputs.outputs.dropbox_root }}" \
+            --output-dir "_dropbox_latest_pdfs"
+          echo "::notice::Latest Dropbox folder=${{ steps.dropbox.outputs.latest_folder }}, pdf_count=${{ steps.dropbox.outputs.pdf_count }}."
+
+      - name: Select macro/trend reports with DeepSeek
+        id: select_macro
+        env:
+          DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
+          DEEPSEEK_BASE_URL: ${{ needs.resolve-inputs.outputs.deepseek_base_url }}
+        run: |
+          set -o pipefail
+          CANDIDATE_COUNT="${{ needs.resolve-inputs.outputs.max_total_reports }}"
+          if [ "$CANDIDATE_COUNT" = "0" ]; then CANDIDATE_COUNT="9999"; fi
+          echo "::notice::Classifying PDFs with DeepSeek and selecting macro/trend reports only."
+          python scripts/select_macro_trend_pdfs.py \
+            --input-dir "_dropbox_latest_pdfs" \
+            --output-dir "_selected_macro_pdfs" \
+            --candidate-count "$CANDIDATE_COUNT" \
+            --process-count "$CANDIDATE_COUNT" \
+            --model "${{ needs.resolve-inputs.outputs.model }}" \
+            --deepseek-base-url "${{ needs.resolve-inputs.outputs.deepseek_base_url }}" 2>&1 | tee "macro_selection_progress.log"
+          cp "macro_selection_progress.log" "_selected_macro_pdfs/macro_selection_progress.log"
+          echo "::notice::Macro candidates=${{ steps.select_macro.outputs.candidate_count }}, selected=${{ steps.select_macro.outputs.process_count }}. Company/stock reports are skipped."
+
+      - name: Upload selected macro PDFs artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: selected-macro-pdfs-${{ github.run_id }}
+          path: _selected_macro_pdfs
+          if-no-files-found: error
 
   process-shard:
-    needs: resolve-inputs
+    needs: [resolve-inputs, select-macro-reports]
     runs-on: ubuntu-latest
     timeout-minutes: 90
     strategy:
@@ -136,7 +199,7 @@ jobs:
           else
             echo "run=true" >> "$GITHUB_OUTPUT"
             echo "SHARD_STARTED_AT=$(date +%s)" >> "$GITHUB_ENV"
-            echo "::notice::Shard ${{ matrix.shard_index }} started."
+            echo "::notice::Shard ${{ matrix.shard_index }} started. It will only see DeepSeek-selected macro/trend reports."
           fi
 
       - name: Checkout repository
@@ -167,19 +230,12 @@ jobs:
           echo "::notice::Shard ${{ matrix.shard_index }} installing Python dependencies."
           pip install -r requirements.txt
 
-      - name: Download PDFs from latest Dropbox date folder
+      - name: Download selected macro PDFs artifact
         if: ${{ steps.gate.outputs.run == 'true' }}
-        id: dropbox
-        env:
-          DROPBOX_APP_KEY: ${{ secrets.DROPBOX_APP_KEY }}
-          DROPBOX_APP_SECRET: ${{ secrets.DROPBOX_APP_SECRET }}
-          DROPBOX_REFRESH_TOKEN: ${{ secrets.DROPBOX_REFRESH_TOKEN }}
-        run: |
-          echo "::notice::Shard ${{ matrix.shard_index }} downloading latest Dropbox PDFs."
-          python scripts/download_dropbox_latest_pdfs.py \
-            --dropbox-root "${{ needs.resolve-inputs.outputs.dropbox_root }}" \
-            --output-dir "_dropbox_latest_pdfs"
-          echo "::notice::Shard ${{ matrix.shard_index }} Dropbox latest folder=${{ steps.dropbox.outputs.latest_folder }}, pdf_count=${{ steps.dropbox.outputs.pdf_count }}."
+        uses: actions/download-artifact@v4
+        with:
+          name: selected-macro-pdfs-${{ github.run_id }}
+          path: _selected_macro_pdfs
 
       - name: Generate shard outputs
         if: ${{ steps.gate.outputs.run == 'true' }}
@@ -189,13 +245,16 @@ jobs:
           DEEPSEEK_BASE_URL: ${{ needs.resolve-inputs.outputs.deepseek_base_url }}
         run: |
           set -o pipefail
-          OUTPUT_DIR="xhs_notes/dropbox/${{ steps.dropbox.outputs.latest_folder }}/shard_${{ matrix.shard_index }}"
+          OUTPUT_DIR="xhs_notes/dropbox/${{ needs.select-macro-reports.outputs.latest_folder }}/shard_${{ matrix.shard_index }}"
           echo "OUTPUT_DIR=$OUTPUT_DIR" >> "$GITHUB_ENV"
           mkdir -p "$OUTPUT_DIR"
-          cp "_dropbox_latest_pdfs/dropbox_manifest.json" "$OUTPUT_DIR/dropbox_manifest.json"
-          echo "::notice::Shard ${{ matrix.shard_index }} generating text/images into $OUTPUT_DIR."
+          cp "_selected_macro_pdfs/macro_classification_all.json" "$OUTPUT_DIR/macro_classification_all.json" || true
+          cp "_selected_macro_pdfs/selected_macro_candidates.json" "$OUTPUT_DIR/selected_macro_candidates.json" || true
+          cp "_selected_macro_pdfs/selected_to_process_manifest.json" "$OUTPUT_DIR/selected_to_process_manifest.json" || true
+          cp "_selected_macro_pdfs/macro_selection_progress.log" "$OUTPUT_DIR/macro_selection_progress.log" || true
+          echo "::notice::Shard ${{ matrix.shard_index }} generating text/images from selected macro reports into $OUTPUT_DIR."
           python scripts/run_pdf_to_xhs_in_batches.py \
-            --input-dir "_dropbox_latest_pdfs" \
+            --input-dir "_selected_macro_pdfs" \
             --output-dir "$OUTPUT_DIR" \
             --batch-size "${{ needs.resolve-inputs.outputs.batch_size }}" \
             --continue-on-batch-error true \
@@ -250,8 +309,10 @@ jobs:
           cat > "$OUTPUT_DIR/shard_run_summary.md" <<EOF
           # Shard ${{ matrix.shard_index }} summary
 
-          - Latest Dropbox folder: ${{ steps.dropbox.outputs.latest_folder }}
-          - Dropbox PDF count: ${{ steps.dropbox.outputs.pdf_count }}
+          - Latest Dropbox folder: ${{ needs.select-macro-reports.outputs.latest_folder }}
+          - Dropbox PDF count before filtering: ${{ needs.select-macro-reports.outputs.pdf_count }}
+          - Macro candidates selected: ${{ needs.select-macro-reports.outputs.macro_candidate_count }}
+          - Macro PDFs available to shards: ${{ needs.select-macro-reports.outputs.selected_count }}
           - Shard index: ${{ matrix.shard_index }}
           - Shard count: ${{ needs.resolve-inputs.outputs.shard_count }}
           - Reports per shard: ${{ needs.resolve-inputs.outputs.reports_per_shard }}
@@ -278,7 +339,7 @@ jobs:
               echo "No generated changes to commit for shard ${{ matrix.shard_index }}."
               exit 0
             fi
-            git commit -m "Generate Dropbox shard ${{ matrix.shard_index }} outputs ${{ steps.dropbox.outputs.latest_folder }}" || true
+            git commit -m "Generate macro Dropbox shard ${{ matrix.shard_index }} outputs ${{ needs.select-macro-reports.outputs.latest_folder }}" || true
             if git push origin HEAD:main; then
               echo "::notice::Shard ${{ matrix.shard_index }} committed to repo."
               exit 0
@@ -294,6 +355,6 @@ jobs:
         if: ${{ steps.gate.outputs.run == 'true' && always() }}
         uses: actions/upload-artifact@v4
         with:
-          name: final-dropbox-shard-${{ steps.dropbox.outputs.latest_folder }}-${{ matrix.shard_index }}
+          name: final-dropbox-macro-shard-${{ needs.select-macro-reports.outputs.latest_folder }}-${{ matrix.shard_index }}
           path: ${{ env.OUTPUT_DIR }}
           if-no-files-found: warn
