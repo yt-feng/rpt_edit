@@ -28,6 +28,12 @@ for attempt in $(seq 1 "$MAX_ATTEMPTS"); do
   git reset --mixed origin/main
 
   git add "$OUTPUT_DIR"
+  # Force-add binary PDFs in case repo/global ignore rules skip them.
+  find "$OUTPUT_DIR" -type f -name "*.pdf" -print0 | xargs -0 -r git add -f
+
+  echo "Files staged for commit:"
+  git diff --cached --name-status || true
+
   if git diff --cached --quiet; then
     echo "No generated changes to commit for $OUTPUT_DIR."
     exit 0
