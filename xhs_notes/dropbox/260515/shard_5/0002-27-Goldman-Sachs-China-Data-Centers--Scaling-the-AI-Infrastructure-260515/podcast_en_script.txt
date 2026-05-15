@@ -1,0 +1,21 @@
+EN_A: So I just read this fascinating report on China's data center industry, and it seems like the whole business model is shifting from renting out server racks to renting out computing power. Is that really happening?
+EN_B: Absolutely, and the report argues this is one of the biggest structural changes in the next few years. They call it GPU-as-a-Service, or GPUaaS. Instead of just collecting rent, operators now buy GPUs themselves and sell computing time by the hour.
+EN_A: So what does that mean for the operators? Their profit model completely changes?
+EN_B: Exactly. The report does a simple math exercise: for every 100 yuan of GPUaaS revenue, after power, labor, and colocation costs, EBITDA can reach 80 yuan. Depreciation is high, about 72 yuan, but the overall margin is much bigger than traditional colocation.
+EN_A: But can this model really work in China, given the chip supply constraints?
+EN_B: That is the core question the report tries to answer. It notes that while Chinese operators face restrictions on high-end GPUs, rental prices for H100 and H200 chips actually started rebounding in early 2026, up more than 20% between February and April. That signals demand is coming back.
+EN_A: So demand is driving the price up. But how big is the demand gap in China?
+EN_B: The report forecasts China's data center demand will grow at a 20% CAGR from 2025 to 2028, reaching 27 gigawatts by 2028, up from 13 gigawatts today. But supply is expanding fast too, so utilization rates may not improve dramatically.
+EN_A: So which companies are best positioned? I noticed the report is very bullish on one called Range Intelligent.
+EN_B: Right, Range Intelligent is one of the buy-rated stocks. It currently has 750 megawatts of live capacity, but a huge 6 gigawatts of reserved capacity, most of which already has power quota approvals. The report expects its revenue and EBITDA to grow at 40% and 47% CAGR from 2025 to 2028, the fastest among all covered companies.
+EN_A: But its valuation seems high. I saw a 33x forward EV/EBITDA multiple.
+EN_B: It is expensive, but the report argues high growth can justify that. They use a discounted cash flow model based on 2030 earnings and see 15% upside to the 12-month target price.
+EN_A: What about other names like GDS or VNET?
+EN_B: GDS is the traditional leader, but its monthly service revenue is expected to decline because new contracts have lower prices. VNET is transforming from retail to wholesale, which is accelerating its growth. But the report flags that VNET's largest shareholder selling down and potential financing needs are near-term risks.
+EN_A: I also found the section on western China data center hUBS really interesting. Is that related to the east-data-west-computing policy?
+EN_B: Exactly. The report highlights hUBS like Inner Mongolia, Gansu, and Guizhou, which have cheap electricity and cool temperatures, ideal for AI training. But the latency is high, so they are not suitable for real-time inference tasks.
+EN_A: So maybe we will see a geographic split: training in the west, inference in the east?
+EN_B: That is exactly the thesis. The report believes western clusters will absorb more AI training demand over the next three years, while eastern hUBS focus on low-latency inference. It is a clear division of labor.
+EN_A: So the big question: is now a good time to invest in Chinese data centers?
+EN_B: The report says the structural opportunity is real, but you need to be selective. It favors companies with strong capacity reserves, GPUaaS capabilities, and overseas expansion plans. But it also leaves one big question open: chip supply uncertainty and execution risk in overseas markets are not fully priced in yet. If you want to know which companies benefit most from western hUBS, or the detailed GPUaaS economics, you should read the full report.
+EN_A: Great. And if you want the full report, join our community where we share deep research and investment ideas regularly. Thanks for the insights.
