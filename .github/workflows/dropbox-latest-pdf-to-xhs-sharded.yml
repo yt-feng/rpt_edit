@@ -28,9 +28,9 @@ on:
         required: true
         default: "true"
       shard_count:
-        description: "Parallel shard count. 20 shards x 5 macro reports covers 100 reports."
+        description: "Parallel shard count. 40 shards x 5 macro reports covers 200 reports."
         required: true
-        default: "20"
+        default: "40"
       reports_per_shard:
         description: "Max macro reports each shard processes"
         required: true
@@ -40,9 +40,9 @@ on:
         required: true
         default: "5"
       max_total_reports:
-        description: "Max macro/trend reports to process after DeepSeek selection; 0 means all macro candidates"
+        description: "Max macro/trend reports after DeepSeek selection. 0 means all macro candidates."
         required: true
-        default: "100"
+        default: "0"
       wechat_length:
         description: "Target Chinese character count for WeChat article"
         required: true
@@ -61,6 +61,7 @@ on:
         type: boolean
         default: true
   schedule:
+    # 21:00 UTC = 05:00 Asia/Shanghai.
     - cron: "0 21 * * *"
 
 permissions:
@@ -101,10 +102,10 @@ jobs:
           echo "mineru_model=${{ github.event.inputs.mineru_model || 'vlm' }}" >> "$GITHUB_OUTPUT"
           echo "language=${{ github.event.inputs.language || 'en' }}" >> "$GITHUB_OUTPUT"
           echo "ocr=${{ github.event.inputs.ocr || 'true' }}" >> "$GITHUB_OUTPUT"
-          echo "shard_count=${{ github.event.inputs.shard_count || '20' }}" >> "$GITHUB_OUTPUT"
+          echo "shard_count=${{ github.event.inputs.shard_count || '40' }}" >> "$GITHUB_OUTPUT"
           echo "reports_per_shard=${{ github.event.inputs.reports_per_shard || '5' }}" >> "$GITHUB_OUTPUT"
           echo "batch_size=${{ github.event.inputs.batch_size || '5' }}" >> "$GITHUB_OUTPUT"
-          echo "max_total_reports=${{ github.event.inputs.max_total_reports || '100' }}" >> "$GITHUB_OUTPUT"
+          echo "max_total_reports=${{ github.event.inputs.max_total_reports || '0' }}" >> "$GITHUB_OUTPUT"
           echo "wechat_length=${{ github.event.inputs.wechat_length || '3000' }}" >> "$GITHUB_OUTPUT"
           echo "community_cta=${{ github.event.inputs.community_cta || '欢迎来星球微信群里继续讨论' }}" >> "$GITHUB_OUTPUT"
           echo "podcast_minutes=${{ github.event.inputs.podcast_minutes || '5' }}" >> "$GITHUB_OUTPUT"
@@ -113,7 +114,8 @@ jobs:
         run: |
           echo "::notice::Daily schedule is 05:00 Asia/Shanghai. Audio/video are disabled."
           echo "::notice::DeepSeek filters macro/trend reports first; stock/company reports are skipped."
-          echo "::notice::Plan: ${{ steps.vars.outputs.shard_count }} shards x ${{ steps.vars.outputs.reports_per_shard }} macro reports."
+          echo "::notice::Default plan processes ALL macro candidates, sharded as 40 x 5 = up to 200 macro reports."
+          echo "::notice::If a PDF already has source_mineru.md + note.md + wechat_article.md in its shard output, MinerU is skipped on rerun."
 
   select-macro-reports:
     needs: resolve-inputs
@@ -151,7 +153,7 @@ jobs:
           set -o pipefail
           CANDIDATE_COUNT="${{ needs.resolve-inputs.outputs.max_total_reports }}"
           if [ "$CANDIDATE_COUNT" = "0" ]; then CANDIDATE_COUNT="9999"; fi
-          echo "::notice::Classifying PDFs with DeepSeek and selecting macro/trend reports only."
+          echo "::notice::Classifying PDFs with DeepSeek and selecting macro/trend reports only. Candidate cap=$CANDIDATE_COUNT."
           python scripts/select_macro_trend_pdfs.py \
             --input-dir "_dropbox_latest_pdfs" \
             --output-dir "_selected_macro_pdfs" \
@@ -174,9 +176,9 @@ jobs:
     timeout-minutes: 90
     strategy:
       fail-fast: false
-      max-parallel: 4
+      max-parallel: 6
       matrix:
-        shard_index: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19]
+        shard_index: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39]
     steps:
       - name: Gate shard
         id: gate
@@ -241,6 +243,7 @@ jobs:
             --shard-count "${{ needs.resolve-inputs.outputs.shard_count }}" \
             --max-reports-per-shard "${{ needs.resolve-inputs.outputs.reports_per_shard }}" \
             --max-total-reports "${{ needs.resolve-inputs.outputs.max_total_reports }}" \
+            --skip-existing true \
             --model "${{ needs.resolve-inputs.outputs.model }}" \
             --deepseek-base-url "${{ needs.resolve-inputs.outputs.deepseek_base_url }}" \
             --mineru-model "${{ needs.resolve-inputs.outputs.mineru_model }}" \
