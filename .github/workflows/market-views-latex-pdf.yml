@@ -1,4 +1,4 @@
-name: Market views LaTeX PDF
+name: Market views daily PDF
 
 on:
   workflow_dispatch:
@@ -18,7 +18,7 @@ on:
       max_reports:
         description: "Max report folders to include"
         required: true
-        default: "80"
+        default: "120"
       max_figures:
         description: "Max exhibit-style figures to copy as candidates"
         required: true
@@ -27,13 +27,13 @@ on:
         description: "Max figures DeepSeek may select for the final PDF"
         required: true
         default: "12"
-      compile_pdf:
-        description: "Compile LaTeX into PDF. False writes .tex quickly without installing LaTeX."
+      compile_latex:
+        description: "Also compile the LaTeX .tex with XeLaTeX. Default false because ReportLab already creates the PDF much faster."
         required: true
         type: boolean
-        default: true
+        default: false
       commit_results:
-        description: "Commit generated LaTeX/PDF back to repo"
+        description: "Commit generated PDF back to repo"
         required: true
         type: boolean
         default: true
@@ -48,7 +48,7 @@ env:
   PYTHONUNBUFFERED: "1"
 
 concurrency:
-  group: market-views-latex-pdf
+  group: market-views-daily-pdf
   cancel-in-progress: false
 
 jobs:
@@ -72,17 +72,26 @@ jobs:
           cache: "pip"
 
       - name: Install Python dependencies
-        run: pip install -r requirements.txt
+        run: |
+          pip install -r requirements.txt
+          pip install reportlab pillow
 
-      - name: Install minimal LaTeX and Chinese fonts
-        if: ${{ github.event.inputs.compile_pdf != 'false' }}
+      - name: Install Chinese font for fast PDF renderer
+        timeout-minutes: 5
+        continue-on-error: true
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends fonts-noto-cjk
+
+      - name: Optionally install minimal LaTeX
+        if: ${{ github.event.inputs.compile_latex == 'true' }}
         timeout-minutes: 12
         run: |
-          echo "::notice::Installing minimal XeLaTeX packages. Set compile_pdf=false to skip this step and only write .tex."
+          echo "::notice::Installing XeLaTeX only because compile_latex=true. Fast ReportLab PDF is always generated even if this is skipped."
           sudo apt-get update
           sudo apt-get install -y --no-install-recommends texlive-xetex texlive-latex-recommended texlive-lang-chinese fonts-noto-cjk
 
-      - name: Build market views LaTeX/PDF
+      - name: Build market views data and LaTeX source
         env:
           DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
           DEEPSEEK_BASE_URL: ${{ inputs.deepseek_base_url || 'https://api.deepseek.com' }}
@@ -90,11 +99,11 @@ jobs:
           DATE_FOLDER="${{ github.event.inputs.date_folder || 'latest' }}"
           MODEL="${{ github.event.inputs.model || 'deepseek-chat' }}"
           BASE_URL="${{ github.event.inputs.deepseek_base_url || 'https://api.deepseek.com' }}"
-          MAX_REPORTS="${{ github.event.inputs.max_reports || '80' }}"
+          MAX_REPORTS="${{ github.event.inputs.max_reports || '120' }}"
           MAX_FIGURES="${{ github.event.inputs.max_figures || '40' }}"
           MAX_SELECTED_FIGURES="${{ github.event.inputs.max_selected_figures || '12' }}"
-          COMPILE="${{ github.event.inputs.compile_pdf || 'true' }}"
-          echo "::notice::Building market views PDF from xhs_notes/dropbox/$DATE_FOLDER. compile_pdf=$COMPILE"
+          COMPILE_LATEX="${{ github.event.inputs.compile_latex || 'false' }}"
+          echo "::notice::Building market views from xhs_notes/dropbox/$DATE_FOLDER. Fast PDF renderer will run after this step."
           python scripts/build_market_views_pdf.py \
             --dropbox-output-root "xhs_notes/dropbox" \
             --date-folder "$DATE_FOLDER" \
@@ -104,18 +113,28 @@ jobs:
             --max-reports "$MAX_REPORTS" \
             --max-figures "$MAX_FIGURES" \
             --max-selected-figures "$MAX_SELECTED_FIGURES" \
-            --compile "$COMPILE" 2>&1 | tee market_views_build_progress.log
+            --compile "$COMPILE_LATEX" 2>&1 | tee market_views_build_progress.log
+          echo "DATE_FOLDER=$DATE_FOLDER" >> "$GITHUB_ENV"
+
+      - name: Render fast PDF without LaTeX install
+        run: |
+          echo "::notice::Rendering market_views_<date>.pdf with ReportLab."
+          python scripts/render_market_views_reportlab_pdf.py \
+            --summary-root "market_view_summaries" \
+            --date-folder "$DATE_FOLDER" 2>&1 | tee market_views_pdf_render_progress.log
+          find market_view_summaries -name "*.pdf" -print
 
       - name: Upload market views PDF artifact
         uses: actions/upload-artifact@v4
         with:
-          name: market-views-latex-pdf-${{ github.run_id }}
+          name: market-views-pdf-${{ github.run_id }}
           path: |
             market_view_summaries
             market_views_build_progress.log
-          if-no-files-found: warn
+            market_views_pdf_render_progress.log
+          if-no-files-found: error
 
       - name: Commit generated market views PDF
         if: ${{ github.event.inputs.commit_results == 'true' || github.event_name == 'schedule' }}
         run: |
-          bash scripts/commit_output_dir.sh "market_view_summaries" "Generate market views LaTeX PDF" 8
+          bash scripts/commit_output_dir.sh "market_view_summaries" "Generate market views daily PDF" 8
