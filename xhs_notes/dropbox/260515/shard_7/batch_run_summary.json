@@ -1,0 +1,45 @@
+{
+  "input_dir": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs",
+  "total_pdf_count_before_shard": 39,
+  "pdf_count_before_skip": 4,
+  "pdf_count": 4,
+  "batch_size": 5,
+  "shard_index": 7,
+  "shard_count": 40,
+  "max_reports_per_shard": 5,
+  "max_total_reports": 0,
+  "skip_existing": true,
+  "skipped_existing_count": 0,
+  "skipped_existing": [],
+  "failures": 0,
+  "batches": [
+    {
+      "batch_index": 1,
+      "pdf_count": 4,
+      "files": [
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/36-UBS-European Luxury：Expert Call Feedback： From Hype to Heritage-260514.pdf",
+          "batch_file": "/tmp/pdf_batch_001_rg97z0hy/pdfs/0001-36-UBS-European Luxury-Expert Call Feedback- From Hype to Heritage-260514.pdf",
+          "stable_index": "1"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/37-UBS-Japan Tech Conglomerates：Hardware above software still-260514.pdf",
+          "batch_file": "/tmp/pdf_batch_001_rg97z0hy/pdfs/0002-37-UBS-Japan Tech Conglomerates-Hardware above software still-260514.pdf",
+          "stable_index": "2"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/38-UBS-N.A. Chems & Pkg：Fun with Fertilizers； Where to From Here？-260514.pdf",
+          "batch_file": "/tmp/pdf_batch_001_rg97z0hy/pdfs/0003-38-UBS-N.A. Chems - Pkg-Fun with Fertilizers- Where to From Here--260514.pdf",
+          "stable_index": "3"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/39-UBS-US Equity Strategy：1Q26 Earnings Brief： May 14-260514.pdf",
+          "batch_file": "/tmp/pdf_batch_001_rg97z0hy/pdfs/0004-39-UBS-US Equity Strategy-1Q26 Earnings Brief- May 14-260514.pdf",
+          "stable_index": "4"
+        }
+      ],
+      "returncode": 0,
+      "status": "ok"
+    }
+  ]
+}
