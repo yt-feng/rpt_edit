@@ -1,0 +1,4745 @@
+[
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.067,
+                0.035,
+                0.295,
+                0.064
+            ],
+            "angle": 0,
+            "content": "Bernstein"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.067,
+                0.068,
+                0.294,
+                0.08
+            ],
+            "angle": 0,
+            "content": "SG GROUP"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.725,
+                0.055,
+                0.828,
+                0.072
+            ],
+            "angle": 0,
+            "content": "15 May 2026"
+        },
+        {
+            "type": "title",
+            "bbox": [
+                0.068,
+                0.131,
+                0.456,
+                0.151
+            ],
+            "angle": 0,
+            "content": "US Communications Infrastructure"
+        },
+        {
+            "type": "title",
+            "bbox": [
+                0.068,
+                0.162,
+                0.862,
+                0.218
+            ],
+            "angle": 0,
+            "content": "Data Centers: What a top-tier data center market looks like—including the DLR and EQIX footprints"
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.068,
+                0.271,
+                0.124,
+                0.315
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.14,
+                0.277,
+                0.245,
+                0.289
+            ],
+            "angle": 0,
+            "content": "Madison Rezaei",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.141,
+                0.29,
+                0.233,
+                0.301
+            ],
+            "angle": 0,
+            "content": "+1 917 344 8622",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.141,
+                0.302,
+                0.306,
+                0.313
+            ],
+            "angle": 0,
+            "content": "madison.rezaei@Bernsteinsg.com",
+            "merge_prev": false
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.068,
+                0.323,
+                0.124,
+                0.365
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.14,
+                0.328,
+                0.2,
+                0.34
+            ],
+            "angle": 0,
+            "content": "Nancy Wu",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.141,
+                0.34,
+                0.233,
+                0.35
+            ],
+            "angle": 0,
+            "content": "+1 917 344 8545",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.141,
+                0.351,
+                0.278,
+                0.362
+            ],
+            "angle": 0,
+            "content": "nancy.wu@Bernsteinsg.com",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.357,
+                0.27,
+                0.925,
+                0.345
+            ],
+            "angle": 0,
+            "content": "We're fielding a lot of questions on data center buildouts, at least in part driven by the daily headlines on power delays, NIMBYism, and supply chain constraints. Most of our answers boil down to \"it depends on what market(s) you're looking at - we feel pretty good about Major Metros and the players building / buying there\". In this note, we do a comparison of market types and a deep dive into three of the top U.S. markets.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.357,
+                0.358,
+                0.922,
+                0.447
+            ],
+            "angle": 0,
+            "content": "We think of three data center market archetypes: Major Metro markets (typically considered the top 8-10 in North America), Minor Metro markets (sometimes thought of as Tiers 2-4, smaller Cities or the extreme outskirts of Major Metros), and Rural markets. The two public data center company footprints, DLR (OP, $232) and EQIX (OP, $1,222) are overwhelmingly concentrated in Major and Minor Metros; they are among the most insulated from market noise.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.357,
+                0.46,
+                0.91,
+                0.565
+            ],
+            "angle": 0,
+            "content": "Major Metros are and will continue to be the most important markets for latency-sensitive use cases (including inferencing), as well as enterprise colocation. These markets are well established and hard to build in. Power queues are long, build costs are high, and supply chains are tight. Existing capacity and in-progress, permitted builds are valuable. We are seeing an increase in NIMBYism in these markets, particularly NoVa and Phoenix, in part driven by rising power costs. We believe the established builders will manage this appropriately, but it is an emerging risk.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.357,
+                0.578,
+                0.912,
+                0.623
+            ],
+            "angle": 0,
+            "content": "After Major Metros, overflow goes into Minor Metros. This works where there is marginally less latency sensitivity and/or marginally more price sensitivity. There has been significant growth in these markets over the last ~5 years, which we anticipate continuing.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.357,
+                0.635,
+                0.914,
+                0.709
+            ],
+            "angle": 0,
+            "content": "Finally, training, latency-insensitive, and/or very price sensitive workloads take place in Rural markets. These markets tend to have larger facilities, more speculative builds, and less experienced developers than Major Metros. On the positive side, there is faster power availability and lower cost to build. On the negative side, there is not as clear visibility to sustained demand.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.357,
+                0.723,
+                0.922,
+                0.799
+            ],
+            "angle": 0,
+            "content": "In the U.S., the biggest data center market is Northern Virginia (NoVa), which has ~8GW of supply today, ~5GW under construction, and power queues reportedly in the seven-year range. Pricing in NoVa has only gone up over the last several years, currently around $217/KW/mo, with vacancy stable below 1%. While there has been some recent news around the Digital Gateway Project (QTS and Compass), this market is typically a well-oiled machine.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.357,
+                0.811,
+                0.907,
+                0.915
+            ],
+            "angle": 0,
+            "content": "This quarter, both DLR and EQIX spoke about large hyperscale-focused builds outside of Atlanta, another top U.S. data center market growing quickly (~2GW today, ~3GW under construction). Atlanta pricing is $175/KW/mo today, with vacancy around 2%. We like this strategy - market dynamics are favorable, both DLR and EQIX are savvy builders with strong, experienced teams in the Major Metros, and relatively limited execution risk. We remain positive on both DLR and EQIX, believing both companies will deliver on their build projections given their Major Metro market exposure.",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.066,
+                0.936,
+                0.7,
+                0.964
+            ],
+            "angle": 0,
+            "content": "See the Disclosure Appendix of this report for required disclosures, analyst certifications and other important information. Alternatively, visit our Global Research Disclosure Website."
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.067,
+                0.964,
+                0.595,
+                0.978
+            ],
+            "angle": 0,
+            "content": "First Published: 15 May 2026 04:01 UTC Completion Date: 15 May 2026 00:21 UTC"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.778,
+                0.936,
+                0.919,
+                0.947
+            ],
+            "angle": 0,
+            "content": "www.Bernsteinresearch.com"
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.106,
+                0.04,
+                0.454,
+                0.052
+            ],
+            "angle": 0,
+            "content": "Madison Rezaei +1 917 344 8622 madison.rezaei@Bernsteinsg.com"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.825,
+                0.04,
+                0.893,
+                0.052
+            ],
+            "angle": 0,
+            "content": "15 May 2026"
+        },
+        {
+            "type": "table_caption",
+            "bbox": [
+                0.106,
+                0.071,
+                0.315,
+                0.085
+            ],
+            "angle": 0,
+            "content": "Bernstein TICKER TABLE"
+        },
+        {
+            "type": "table",
+            "bbox": [
+                0.108,
+                0.098,
+                0.892,
+                0.208
+            ],
+            "angle": 0,
+            "content": "<table><tr><td rowspan=\"2\"></td><td rowspan=\"2\"></td><td rowspan=\"2\"></td><td colspan=\"2\">14 May2026</td><td colspan=\"2\">TTMRel.</td><td colspan=\"4\">Adjusted EPS</td><td colspan=\"3\">Adjusted P/E (x)</td></tr><tr><td rowspan=\"2\">ClosingPrice</td><td rowspan=\"2\">PriceTarget</td><td rowspan=\"2\">Perf.</td><td rowspan=\"2\">Cur</td><td rowspan=\"2\">2025A</td><td rowspan=\"2\">2026E</td><td rowspan=\"2\">2027E</td><td rowspan=\"2\">2025A</td><td rowspan=\"2\">2026E</td><td rowspan=\"2\">2027E</td><td></td></tr><tr><td>Ticker</td><td>Rating</td><td>Cur</td><td></td></tr><tr><td>DLR (Digital Realty)</td><td>O</td><td>USD</td><td>192.84</td><td>232.00</td><td>(10.9)%</td><td>USD</td><td>3.87</td><td>2.74</td><td>2.37</td><td>49.8</td><td>70.5</td><td>81.2</td><td></td></tr><tr><td>EQIX (Equinix)</td><td>O</td><td>USD</td><td>1,079.68</td><td>1,222.00</td><td>(1.6)%</td><td>USD</td><td>14.96</td><td>17.88</td><td>21.36</td><td>72.2</td><td>60.4</td><td>50.5</td><td></td></tr><tr><td>SPX</td><td></td><td></td><td>7,501.24</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr></table>"
+        },
+        {
+            "type": "table_footnote",
+            "bbox": [
+                0.105,
+                0.209,
+                0.617,
+                0.222
+            ],
+            "angle": 0,
+            "content": "O - Outperform, M - Market-Perform, U - Underperform, NR - Not Rated, CS - Coverage Suspended"
+        },
+        {
+            "type": "table_footnote",
+            "bbox": [
+                0.107,
+                0.224,
+                0.386,
+                0.237
+            ],
+            "angle": 0,
+            "content": "Source: Bloomberg, Bernstein estimates and analysis."
+        },
+        {
+            "type": "list",
+            "bbox": [
+                0.105,
+                0.209,
+                0.617,
+                0.237
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "title",
+            "bbox": [
+                0.106,
+                0.25,
+                0.33,
+                0.266
+            ],
+            "angle": 0,
+            "content": "INVESTMENT IMPLICATIONS"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.104,
+                0.28,
+                0.879,
+                0.31
+            ],
+            "angle": 0,
+            "content": "We value DLR on a Price to Adjusted Funds from Operations (AFFO) per share multiple. Our $232 price target is based on 27x our 2027E AFFO per share of $8.60.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.104,
+                0.322,
+                0.871,
+                0.352
+            ],
+            "angle": 0,
+            "content": "We value EQIX on a Price to Adjusted Funds From Operations (AFFO) per share multiple. Our $1,222 price target is based on 25x our 2027E AFFO per share of $48.63",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.106,
+                0.941,
+                0.269,
+                0.95
+            ],
+            "angle": 0,
+            "content": "US COMMUNICATIONS INFRASTRUCTURE"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.681,
+                0.941,
+                0.862,
+                0.951
+            ],
+            "angle": 0,
+            "content": "Bernstein | SG GROUP"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.883,
+                0.942,
+                0.893,
+                0.952
+            ],
+            "angle": 0,
+            "content": "2"
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.106,
+                0.04,
+                0.454,
+                0.052
+            ],
+            "angle": 0,
+            "content": "Madison Rezaei +1 917 344 8622 madison.rezaei@Bernsteinsg.com"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.825,
+                0.04,
+                0.892,
+                0.051
+            ],
+            "angle": 0,
+            "content": "15 May 2026"
+        },
+        {
+            "type": "title",
+            "bbox": [
+                0.105,
+                0.071,
+                0.175,
+                0.085
+            ],
+            "angle": 0,
+            "content": "DETAILS"
+        },
+        {
+            "type": "title",
+            "bbox": [
+                0.104,
+                0.116,
+                0.432,
+                0.131
+            ],
+            "angle": 0,
+            "content": "A DEEP DIVE INTO THE TOP U.S. MARKETS"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.103,
+                0.137,
+                0.892,
+                0.287
+            ],
+            "angle": 0,
+            "content": "The three market archetypes are essentially based on how developers and customers trade off latency vs. power availability vs. cost—with urban markets optimizing for proximity, rural markets optimizing for scale and power, and secondary markets sitting in between as an equilibrium zone. We see a clear gradient across data center market tiers: Major Metros are optimized for latency-sensitive inference and enterprise colocation, with the highest pricing (\\$120–150/kW hyperscale, \\$160–230 colo), highest build costs (\\$12–15B per GW), tightest cap rates (\\(\\approx\\)4.5–6.5%), and the longest power delays (4–7 years), while Minor Metros sit in the middle with slightly lower pricing, costs, and delays but higher yields; in contrast, Rural markets are primarily focused on large-scale AI training, offering the lowest costs (\\$7–9B per GW), fastest power availability (1–3 years), and cheapest hyperscale pricing (\\$70–120/kW), but also the highest cap rates (\\(\\approx\\)6.5–9%+) and minimal colocation presence—leading to a broader industry shift where growth and new capacity increasingly migrate from constrained urban hUBS to lower-cost, power-rich rural regions.",
+            "merge_prev": false
+        },
+        {
+            "type": "table_caption",
+            "bbox": [
+                0.105,
+                0.299,
+                0.447,
+                0.314
+            ],
+            "angle": 0,
+            "content": "EXHIBIT 1: Comparing Tiers of Data Center Markets"
+        },
+        {
+            "type": "table",
+            "bbox": [
+                0.108,
+                0.318,
+                0.891,
+                0.778
+            ],
+            "angle": 0,
+            "content": "<table><tr><td></td><td>Major Metro</td><td>Minor Metro</td><td>Rural</td></tr><tr><td>Use Cases</td><td>Inference, Enterprise Colo</td><td>Inference, Enterprise Colo</td><td>Training</td></tr><tr><td>Hyperscale Pricing</td><td>$120-150</td><td>$90-130</td><td>$70-120</td></tr><tr><td>Colo Pricing</td><td>$160-230</td><td>$150-190</td><td>-</td></tr><tr><td>Estimated Size Today (U.S. GW)</td><td>21.5</td><td>23.6</td><td>23.6</td></tr><tr><td>Estimated Planned (U.S. GW)</td><td>25.7</td><td>26.1</td><td>37.0</td></tr><tr><td>Build Costs per GW</td><td>$12-15B</td><td>$9-12B</td><td>$7-9B</td></tr><tr><td>Hyperscale Cap Rates</td><td>4.5-6.0%</td><td>5.5-6.75%</td><td>6.5-8.0%</td></tr><tr><td>Colo Cap Rates</td><td>5.5-6.5%</td><td>6.0-7.25%</td><td>7.0-9.0%</td></tr><tr><td>Power Queues</td><td>4-7 years</td><td>3-5 years</td><td>1-3 years</td></tr><tr><td>Development Risk</td><td>Med (zoning, local pushback)</td><td>Med (zoning, local pushback)</td><td>Low</td></tr></table>"
+        },
+        {
+            "type": "table_footnote",
+            "bbox": [
+                0.105,
+                0.792,
+                0.327,
+                0.804
+            ],
+            "angle": 0,
+            "content": "Source: Omdia, CBRE, JLL, Bernstein analysis"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.106,
+                0.941,
+                0.269,
+                0.95
+            ],
+            "angle": 0,
+            "content": "US COMMUNICATIONS INFRASTRUCTURE"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.681,
+                0.941,
+                0.862,
+                0.951
+            ],
+            "angle": 0,
+            "content": "Bernstein | SG GROUP"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.883,
+                0.942,
+                0.892,
+                0.952
+            ],
+            "angle": 0,
+            "content": "3"
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.106,
+                0.04,
+                0.454,
+                0.052
+            ],
+            "angle": 0,
+            "content": "Madison Rezaei +1 917 344 8622 madison.rezaei@Bernsteinsg.com"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.825,
+                0.04,
+                0.892,
+                0.051
+            ],
+            "angle": 0,
+            "content": "15 May 2026"
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.105,
+                0.07,
+                0.731,
+                0.087
+            ],
+            "angle": 0,
+            "content": "EXHIBIT 2: NoVA, the Bay Area, and Dallas/Ft. Worth have the most existing facilities today"
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.305,
+                0.1,
+                0.694,
+                0.116
+            ],
+            "angle": 0,
+            "content": "Top U.S. Data Center Markets - # of Existing Facilities"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.113,
+                0.123,
+                0.879,
+                0.373
+            ],
+            "angle": 0,
+            "content": "| Location | Value |\n| :--- | :--- |\n| Northern Virginia | 278 |\n| Silicon Valley | 123 |\n| Dallas/Ft. Worth | 109 |\n| Chicago | 92 |\n| New York Tri-State | 79 |\n| Phoenix | 58 |\n| Atlanta | 55 |\n| Hillsboro | 33 |",
+            "sub_type": "bar"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.105,
+                0.394,
+                0.275,
+                0.406
+            ],
+            "angle": 0,
+            "content": "Source: Omdia, Bernstein analysis"
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.105,
+                0.418,
+                0.799,
+                0.435
+            ],
+            "angle": 0,
+            "content": "EXHIBIT 3: ... while NoVA, Dallas/Ft. Worth, and the Chicago metro area have the most capacity today"
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.302,
+                0.447,
+                0.698,
+                0.464
+            ],
+            "angle": 0,
+            "content": "Top U.S. Data Center Markets - Existing Capacity (MW)"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.113,
+                0.469,
+                0.879,
+                0.72
+            ],
+            "angle": 0,
+            "content": "| Location | Value |\n| :--- | :--- |\n| Northern Virginia | 7,988 |\n| Dallas/Ft. Worth | 3,078 |\n| Chicago | 2,689 |\n| Phoenix | 2,117 |\n| Atlanta | 1,990 |\n| Silicon Valley | 1,672 |\n| Hillsboro | 1,096 |\n| New York Tri-State | 688 |",
+            "sub_type": "bar"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.105,
+                0.739,
+                0.274,
+                0.752
+            ],
+            "angle": 0,
+            "content": "Source: Omdia, Bernstein analysis"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.106,
+                0.941,
+                0.269,
+                0.951
+            ],
+            "angle": 0,
+            "content": "US COMMUNICATIONS INFRASTRUCTURE"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.681,
+                0.941,
+                0.862,
+                0.951
+            ],
+            "angle": 0,
+            "content": "Bernstein | SG GROUP"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.882,
+                0.942,
+                0.892,
+                0.951
+            ],
+            "angle": 0,
+            "content": "4"
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.106,
+                0.04,
+                0.454,
+                0.052
+            ],
+            "angle": 0,
+            "content": "Madison Rezaei +1 917 344 8622 madison.rezaei@Bernsteinsg.com"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.825,
+                0.04,
+                0.892,
+                0.051
+            ],
+            "angle": 0,
+            "content": "15 May 2026"
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.105,
+                0.07,
+                0.761,
+                0.086
+            ],
+            "angle": 0,
+            "content": "EXHIBIT 4: Chicago, Atlanta, and Phoenix are expected to gain the most capacity over 2026-2030"
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.219,
+                0.1,
+                0.779,
+                0.116
+            ],
+            "angle": 0,
+            "content": "Top U.S. Data Center Markets - Planned Capacity w/ Known Open Dates (MW)"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.117,
+                0.123,
+                0.877,
+                0.374
+            ],
+            "angle": 0,
+            "content": "| Year | Northern Virginia | Dallas/Ft. Worth | Chicago | Phoenix | Silicon Valley | Hillsboro | Atlanta | New York Tri-State |\n|------|-------------------|------------------|---------|---------|----------------|-----------|---------|--------------------|\n| 2026 | ~250              | ~400             | ~1000   | ~300    | ~50            | ~50       | ~50     | ~50                |\n| 2027 | ~200              | ~350             | ~800    | ~250    | ~50            | ~50       | ~50     | ~50                |\n| 2028 | ~100              | ~150             | ~400    | ~150    | ~50            | ~50       | ~50     | ~50                |\n| 2029 | ~50               | ~100             | ~100    | ~50     | ~50            | ~50       | ~50     | ~50                |\n| 2030 | ~10               | ~10              | ~10     | ~10     | ~10            | ~10       | ~10     | ~10                |",
+            "sub_type": "bar_stacked"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.105,
+                0.394,
+                0.275,
+                0.406
+            ],
+            "angle": 0,
+            "content": "Source: Omdia, Bernstein analysis"
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.105,
+                0.418,
+                0.562,
+                0.433
+            ],
+            "angle": 0,
+            "content": "EXHIBIT 5: ... as well as the greatest increase in number of facilities"
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.232,
+                0.448,
+                0.766,
+                0.464
+            ],
+            "angle": 0,
+            "content": "Top U.S. Data Center Markets - # of Planned Builds w/ Known Open Dates"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.117,
+                0.47,
+                0.877,
+                0.721
+            ],
+            "angle": 0,
+            "content": "| Year | Northern Virginia | Dallas/Ft. Worth | Chicago | Phoenix | Silicon Valley | Hillsboro | Atlanta | New York Tri-State |\n|------|-------------------|------------------|---------|---------|----------------|-----------|---------|--------------------|\n| 2026 | 3                 | 5                | 14      | 3       | 0              | 1         | 0       | 7                  |\n| 2027 | 1                 | 3                | 8       | 2       | 1              | 0         | 0       | 4                  |\n| 2028 | 0                 | 0                | 7       | 1       | 0              | 1         | 1       | 2                  |\n| 2029 | 0                 | 0                | 2       | 0       | 1              | 0         | 1       | 0                  |\n| 2030 | 0                 | 0                | 0       | 0       | 1              | 0         | 0       | 0                  |",
+            "sub_type": "bar_stacked"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.105,
+                0.741,
+                0.274,
+                0.753
+            ],
+            "angle": 0,
+            "content": "Source: Omdia, Bernstein analysis"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.106,
+                0.941,
+                0.269,
+                0.95
+            ],
+            "angle": 0,
+            "content": "US COMMUNICATIONS INFRASTRUCTURE"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.681,
+                0.941,
+                0.862,
+                0.951
+            ],
+            "angle": 0,
+            "content": "Bernstein | SG GROUP"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.883,
+                0.942,
+                0.892,
+                0.952
+            ],
+            "angle": 0,
+            "content": "5"
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.106,
+                0.04,
+                0.454,
+                0.052
+            ],
+            "angle": 0,
+            "content": "Madison Rezaei +1 917 344 8622 madison.rezaei@Bernsteinsg.com"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.825,
+                0.04,
+                0.892,
+                0.051
+            ],
+            "angle": 0,
+            "content": "15 May 2026"
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.104,
+                0.07,
+                0.863,
+                0.101
+            ],
+            "angle": 0,
+            "content": "EXHIBIT 6: Chicago, NoVA, and Atlanta have the most number of planned builds, including planned builds with unknown open dates"
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.297,
+                0.115,
+                0.7,
+                0.13
+            ],
+            "angle": 0,
+            "content": "Top U.S. Data Center Markets - Total # of Planned Builds"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.113,
+                0.137,
+                0.879,
+                0.382
+            ],
+            "angle": 0,
+            "content": "| City | Value |\n| :--- | :--- |\n| Chicago | 56 |\n| Northern Virginia | 45 |\n| Atlanta | 30 |\n| Phoenix | 20 |\n| Dallas/Ft. Worth | 15 |\n| Silicon Valley | 9 |\n| Hillsboro | 6 |\n| New York Tri-State | 4 |",
+            "sub_type": "bar"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.105,
+                0.403,
+                0.275,
+                0.415
+            ],
+            "angle": 0,
+            "content": "Source: Omdia, Bernstein analysis"
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.105,
+                0.426,
+                0.859,
+                0.442
+            ],
+            "angle": 0,
+            "content": "EXHIBIT 7: ... as well as the most planned capacity, with ~5GW in both NoVA and Chicago, and >3GW in Atlanta"
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.281,
+                0.457,
+                0.715,
+                0.473
+            ],
+            "angle": 0,
+            "content": "Top U.S. Data Center Markets - Total Planned Capacity (MW)"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.113,
+                0.478,
+                0.879,
+                0.729
+            ],
+            "angle": 0,
+            "content": "| Location | Value |\n| :--- | :--- |\n| Northern Virginia | 5,108 |\n| Chicago | 5,089 |\n| Atlanta | 3,222 |\n| Phoenix | 2,212 |\n| Silicon Valley | 1,677 |\n| Dallas/Ft. Worth | 1,493 |\n| Hillsboro | 445 |\n| New York Tri-State | 444 |",
+            "sub_type": "bar"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.105,
+                0.747,
+                0.274,
+                0.759
+            ],
+            "angle": 0,
+            "content": "Source: Omdia, Bernstein analysis"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.106,
+                0.941,
+                0.269,
+                0.95
+            ],
+            "angle": 0,
+            "content": "US COMMUNICATIONS INFRASTRUCTURE"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.681,
+                0.941,
+                0.862,
+                0.951
+            ],
+            "angle": 0,
+            "content": "Bernstein | SG GROUP"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.883,
+                0.942,
+                0.892,
+                0.951
+            ],
+            "angle": 0,
+            "content": "6"
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.106,
+                0.04,
+                0.454,
+                0.052
+            ],
+            "angle": 0,
+            "content": "Madison Rezaei +1 917 344 8622 madison.rezaei@Bernsteinsg.com"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.825,
+                0.04,
+                0.892,
+                0.051
+            ],
+            "angle": 0,
+            "content": "15 May 2026"
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.104,
+                0.07,
+                0.877,
+                0.101
+            ],
+            "angle": 0,
+            "content": "EXHIBIT 8: Across the top 8 markets we have identified, the average existing facility is 27 MW versus 112 MW for planned builds, or >4x more capacity"
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.273,
+                0.115,
+                0.726,
+                0.132
+            ],
+            "angle": 0,
+            "content": "Avg Facility Size by Market - Operational & Future Builds (MW)"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.117,
+                0.137,
+                0.881,
+                0.384
+            ],
+            "angle": 0,
+            "content": "| City | Operational | Future |\n| :--- | :--- | :--- |\n| Phoenix | 37 | 111 |\n| Atlanta | 36 | 107 |\n| Hillsboro | 33 | 74 |\n| Chicago | 29 | 91 |\n| Northern Virginia | 29 | 114 |\n| Dallas/Ft. Worth | 28 | 100 |\n| Silicon Valley | 14 | 186 |\n| New York Tri-State | 9 | 111 |",
+            "sub_type": "bar"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.105,
+                0.401,
+                0.275,
+                0.414
+            ],
+            "angle": 0,
+            "content": "Source: Omdia, Bernstein analysis"
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.104,
+                0.425,
+                0.828,
+                0.457
+            ],
+            "angle": 0,
+            "content": "EXHIBIT 9: While the largest current providers are Amazon, Meta, Google, and Digital Realty, Amazon and Microsoft have the most ambitious capacity expansion plans, each with 5-6 GW slotted"
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.231,
+                0.47,
+                0.767,
+                0.487
+            ],
+            "angle": 0,
+            "content": "10 Largest Providers in Top Markets - Operational & Future Capacity (MW)"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.113,
+                0.492,
+                0.879,
+                0.744
+            ],
+            "angle": 0,
+            "content": "| Company | Operational | Future |\n| :--- | :--- | :--- |\n| Amazon | 2792 | 5047 |\n| Microsoft | 1498 | 6088 |\n| Google | 2087 | 1812 |\n| Meta | 2491 | 180 |\n| Digital Realty | 1940 | 317 |\n| Vantage | 745 | 1296 |\n| CyrusOne | 944 | 1083 |\n| QTS | 1564 | 222 |\n| Aligned | 1083 | 654 |\n| DataBank | 361 | 911 |",
+            "sub_type": "bar_stacked"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.105,
+                0.765,
+                0.275,
+                0.777
+            ],
+            "angle": 0,
+            "content": "Source: Omdia, Bernstein analysis"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.106,
+                0.941,
+                0.269,
+                0.951
+            ],
+            "angle": 0,
+            "content": "US COMMUNICATIONS INFRASTRUCTURE"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.681,
+                0.941,
+                0.862,
+                0.951
+            ],
+            "angle": 0,
+            "content": "Bernstein | SG GROUP"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.883,
+                0.942,
+                0.892,
+                0.951
+            ],
+            "angle": 0,
+            "content": "7"
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.106,
+                0.04,
+                0.454,
+                0.052
+            ],
+            "angle": 0,
+            "content": "Madison Rezaei +1 917 344 8622 madison.rezaei@Bernsteinsg.com"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.825,
+                0.04,
+                0.892,
+                0.051
+            ],
+            "angle": 0,
+            "content": "15 May 2026"
+        },
+        {
+            "type": "title",
+            "bbox": [
+                0.105,
+                0.087,
+                0.723,
+                0.102
+            ],
+            "angle": 0,
+            "content": "INDIVIDUAL MARKET SNAPSHOTS: COMPARING NOVA, PHOENIX, AND ATLANTA"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.104,
+                0.108,
+                0.887,
+                0.242
+            ],
+            "angle": 0,
+            "content": "Northern Virginia (NoVA), Phoenix, and Atlanta illustrate three distinct archetypes within the U.S. data center landscape, each shaped by a different balance of power availability, cost, and ecosystem maturity. NoVA remains the dominant global hub, characterized by unmatched scale, dense interconnection, and hyperscale concentration—supporting premium pricing, the lowest cap rates, and the tightest supply conditions, but also facing the longest power timelines and highest barriers to entry. Phoenix represents a power-advantaged growth market, attracting large hyperscale deployments due to relatively lower costs and more available land, with rising importance as an alternative to constrained Tier 1 hUBS, though with less network density and ecosystem depth than NoVA. Atlanta, meanwhile, sits in between as a rapidly scaling secondary hub that combines proximity to enterprise demand with improving power access and economics, increasingly capturing spillover from primary markets while maintaining a more balanced profile across pricing, growth, and development risk.",
+            "merge_prev": false
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.104,
+                0.254,
+                0.889,
+                0.285
+            ],
+            "angle": 0,
+            "content": "EXHIBIT 10: NoVA is the largest and most developed market by far, with a much earlier ramp starting in 2000-2009, though Phoenix and Atlanta are currently the fastest-growing"
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.33,
+                0.3,
+                0.669,
+                0.314
+            ],
+            "angle": 0,
+            "content": "Top Markets Total Capacity Growth, 1990-2025"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.113,
+                0.321,
+                0.879,
+                0.576
+            ],
+            "angle": 0,
+            "content": "| Year | Northern Virginia | Phoenix | Atlanta |\n|---|---|---|---|\n| 1990-1999 | 357 | 113 | 113 |\n| 2000-2009 | 624 | 381 | 381 |\n| 2010-2019 | 3,572 | 585 | 585 |\n| 2020 | 4,603 | 636 | 636 |\n| 2021 | 5,491 | 673 | 868 |\n| 2022 | 6,233 | 1,064 | 1,099 |\n| 2023 | 6,967 | 1,064 | 1,443 |\n| 2024 | 7,368 | 1,676 | 1,873 |\n| 2025 | 7,988 | 2,117 | 1,990 |",
+            "sub_type": "line"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.105,
+                0.594,
+                0.273,
+                0.606
+            ],
+            "angle": 0,
+            "content": "Source: Omdia, Bernstein analysis"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.106,
+                0.941,
+                0.268,
+                0.95
+            ],
+            "angle": 0,
+            "content": "US COMMUNICATIONS INFRASTRUCTURE"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.681,
+                0.941,
+                0.862,
+                0.951
+            ],
+            "angle": 0,
+            "content": "Bernstein | SG GROUP"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.883,
+                0.942,
+                0.892,
+                0.951
+            ],
+            "angle": 0,
+            "content": "8"
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.106,
+                0.04,
+                0.454,
+                0.052
+            ],
+            "angle": 0,
+            "content": "Madison Rezaei +1 917 344 8622 madison.rezaei@Bernsteinsg.com"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.825,
+                0.04,
+                0.892,
+                0.051
+            ],
+            "angle": 0,
+            "content": "15 May 2026"
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.104,
+                0.07,
+                0.885,
+                0.101
+            ],
+            "angle": 0,
+            "content": "EXHIBIT 11: The top three markets have seen a consistent decline in available capacity, as rising demand continues to absorb and secure newly delivered supply"
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.394,
+                0.119,
+                0.596,
+                0.133
+            ],
+            "angle": 0,
+            "content": "Top Markets Available MW"
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.43,
+                0.134,
+                0.56,
+                0.148
+            ],
+            "angle": 0,
+            "content": "(Units, 2021-2025)"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.123,
+                0.162,
+                0.877,
+                0.397
+            ],
+            "angle": 0,
+            "content": "| Date | Northern Virginia | Phoenix | Atlanta |\n| :--- | :--- | :--- | :--- |\n| 2H 2021 | 86.1 | 48.1 | 19.0 |\n| 1H 2022 | 35.6 | 25.5 | 9.1 |\n| 2H 2022 | 27.5 | 28.1 | 9.1 |\n| 1H 2023 | 21.3 | 19.2 | 21.3 |\n| 2H 2023 | 34.7 | 14.2 | 41.1 |\n| 1H 2024 | 38.6 | 16.9 | 27.3 |\n| 2H 2024 | 14.0 | 11.5 | 25.7 |\n| 1H 2025 | 25.4 | 10.5 | 24.2 |\n| 2H 2025 | 21.5 | 10.5 | 28.5 |",
+            "sub_type": "line"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.105,
+                0.416,
+                0.438,
+                0.428
+            ],
+            "angle": 0,
+            "content": "Source: CBRE North America Data Center Trends, Bernstein Analysis"
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.104,
+                0.44,
+                0.89,
+                0.486
+            ],
+            "angle": 0,
+            "content": "EXHIBIT 12: NoVA stands out as the most prominent market in terms of net absorption, reflecting strong demand for the segment. Similarly, Atlanta has been gaining momentum since 2024, while Phoenix continues to grow at a steady pace"
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.394,
+                0.504,
+                0.596,
+                0.519
+            ],
+            "angle": 0,
+            "content": "Top Markets Net Absorption"
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.434,
+                0.519,
+                0.556,
+                0.534
+            ],
+            "angle": 0,
+            "content": "(MW, 2021-2025)"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.123,
+                0.54,
+                0.877,
+                0.782
+            ],
+            "angle": 0,
+            "content": "| Period | Northern Virginia | Phoenix | Atlanta |\n| :--- | :--- | :--- | :--- |\n| 2H 2021 | 303 | 30 | 70 |\n| 1H 2022 | 269 | 46 | 30 |\n| 2H 2022 | 437 | 44 | 33 |\n| 1H 2023 | 193 | 44 | 8 |\n| 2H 2023 | 424 | 49 | 18 |\n| 1H 2024 | 108 | 148 | 14 |\n| 2H 2024 | 452 | 246 | 706 |\n| 1H 2025 | 539 | 83 | 281 |\n| 2H 2025 | 1,102 | 206 | 456 |",
+            "sub_type": "bar"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.105,
+                0.802,
+                0.438,
+                0.814
+            ],
+            "angle": 0,
+            "content": "Source: CBRE North America Data Center Trends, Bernstein Analysis"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.106,
+                0.941,
+                0.269,
+                0.95
+            ],
+            "angle": 0,
+            "content": "US COMMUNICATIONS INFRASTRUCTURE"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.681,
+                0.941,
+                0.862,
+                0.951
+            ],
+            "angle": 0,
+            "content": "Bernstein | SG GROUP"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.883,
+                0.942,
+                0.892,
+                0.951
+            ],
+            "angle": 0,
+            "content": "9"
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.106,
+                0.04,
+                0.454,
+                0.052
+            ],
+            "angle": 0,
+            "content": "Madison Rezaei +1 917 344 8622 madison.rezaei@Bernsteinsg.com"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.825,
+                0.04,
+                0.892,
+                0.051
+            ],
+            "angle": 0,
+            "content": "15 May 2026"
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.105,
+                0.07,
+                0.843,
+                0.101
+            ],
+            "angle": 0,
+            "content": "EXHIBIT 13: Vacancy rates in top markets have significantly declined due to strong demand growth, reaching notably low levels of approximately 1%–2%"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.123,
+                0.12,
+                0.877,
+                0.397
+            ],
+            "angle": 0,
+            "content": "| Period   | Northern Virginia | Phoenix | Atlanta |\n| -------- | ----------------- | ------- | ------- |\n| 2H 2021  | 5.1%              | 11.9%   | 8.3%    |\n| 1H 2022  | 1.9%              | 7.8%    | 3.6%    |\n| 2H 2022  | 1.0%              | 8.5%    | 3.6%    |\n| 1H 2023  | 0.9%              | 5.3%    | 7.4%    |\n| 2H 2023  | 1.4%              | 3.9%    | 13.3%   |\n| 1H 2024  | 1.5%              | 3.3%    | 8.8%    |\n| 2H 2024  | 0.5%              | 1.9%    | 2.6%    |\n| 1H 2025  | 0.7%              | 1.5%    | 1.9%    |\n| 2H 2025  | 0.5%              | 1.3%    | 2.0%    |",
+            "sub_type": "line"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.105,
+                0.416,
+                0.438,
+                0.428
+            ],
+            "angle": 0,
+            "content": "Source: CBRE North America Data Center Trends, Bernstein Analysis"
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.104,
+                0.44,
+                0.88,
+                0.47
+            ],
+            "angle": 0,
+            "content": "EXHIBIT 14: Across the three markets, the average four-year CAGR is 13%, reflecting strong demand, with Phoenix the most stable since 2023."
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.123,
+                0.492,
+                0.877,
+                0.771
+            ],
+            "angle": 0,
+            "content": "| Period    | Northern Virginia | Phoenix | Atlanta |\n| --------- | ----------------- | ------- | ------- |\n| 2H 2021   | $103              |         | $123    |\n| 1H 2022   | $118              | $123    | $113    |\n| 2H 2022   | $120              | $130    |         |\n| 1H 2023   | $130              | $185    | $118    |\n| 2H 2023   | $170              | $185    | $125    |\n| 1H 2024   | $185              | $190    | $158    |\n| 2H 2024   | $200              | $193    | $170    |\n| 1H 2025   | $213              | $190    | $170    |\n| 2H 2025   | $213              | $190    | $175    |",
+            "sub_type": "line"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.105,
+                0.791,
+                0.438,
+                0.803
+            ],
+            "angle": 0,
+            "content": "Source: CBRE North America Data Center Trends, Bernstein Analysis"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.106,
+                0.941,
+                0.269,
+                0.95
+            ],
+            "angle": 0,
+            "content": "US COMMUNICATIONS INFRASTRUCTURE"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.681,
+                0.941,
+                0.862,
+                0.951
+            ],
+            "angle": 0,
+            "content": "Bernstein | SG GROUP"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.878,
+                0.942,
+                0.892,
+                0.951
+            ],
+            "angle": 0,
+            "content": "10"
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.106,
+                0.04,
+                0.454,
+                0.052
+            ],
+            "angle": 0,
+            "content": "Madison Rezaei +1 917 344 8622 madison.rezaei@Bernsteinsg.com"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.825,
+                0.04,
+                0.892,
+                0.051
+            ],
+            "angle": 0,
+            "content": "15 May 2026"
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.104,
+                0.07,
+                0.888,
+                0.101
+            ],
+            "angle": 0,
+            "content": "EXHIBIT 15: Phoenix and Atlanta stand out as the most cost-efficient data center markets, while NoVA remains the most expensive, reflecting its stronger demand and leading market position."
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.328,
+                0.116,
+                0.672,
+                0.133
+            ],
+            "angle": 0,
+            "content": "Average Cost to Build Expected for 2026 ($M)"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.121,
+                0.141,
+                0.881,
+                0.397
+            ],
+            "angle": 0,
+            "content": "| City    | Value  |\n| ------- | ------ |\n| NoVa    | $13.0  |\n| Phoenix | $10.5  |\n| Atlanta | $10.5  |",
+            "sub_type": "bar"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.105,
+                0.416,
+                0.351,
+                0.428
+            ],
+            "angle": 0,
+            "content": "Source: JLL Global DC Outlook, Bernstein Analysis"
+        },
+        {
+            "type": "title",
+            "bbox": [
+                0.104,
+                0.456,
+                0.642,
+                0.472
+            ],
+            "angle": 0,
+            "content": "DLR AND EQIX - HOW DO THEIR RESPECTIVE FOOTPRINTS STACK UP?"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.103,
+                0.477,
+                0.884,
+                0.626
+            ],
+            "angle": 0,
+            "content": "Digital Realty (DLR) and Equinix (EQIX) illustrate two distinct approaches to global data center deployment that map closely to the tiering framework: DLR has built a broader footprint across both primary and emerging markets, with a strong emphasis on hyperscale and hybrid offerings that extend into secondary and power-rich regions, while EQIX remains more tightly concentrated in Tier 1, highly interconnected urban hUBS where enterprise colocation, network density, and proximity to end users drive pricing power. DLR typically operates larger campuses and buildings often ranging from ~20 MW to 100+ MW per facility (and even larger at the campus level), geared toward hyperscale and wholesale deployments, whereas EQIX facilities are generally smaller, denser, and more modular, often averaging ~5 MW to 25 MW per site, optimized for multi-tenant colo and interconnection density. As a result, DLR tends to capture growth in large-scale, cost-optimized deployments alongside hyperscalers, whereas EQIX maintains a premium position in core metros, leveraging its dense interconnection ecosystem and enterprise customer base.",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.107,
+                0.941,
+                0.269,
+                0.95
+            ],
+            "angle": 0,
+            "content": "US COMMUNICATIONS INFRASTRUCTURE"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.681,
+                0.941,
+                0.862,
+                0.951
+            ],
+            "angle": 0,
+            "content": "Bernstein | SG GROUP"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.88,
+                0.943,
+                0.892,
+                0.952
+            ],
+            "angle": 0,
+            "content": "11"
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.106,
+                0.04,
+                0.454,
+                0.052
+            ],
+            "angle": 0,
+            "content": "Madison Rezaei +1 917 344 8622 madison.rezaei@Bernsteinsg.com"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.825,
+                0.04,
+                0.892,
+                0.051
+            ],
+            "angle": 0,
+            "content": "15 May 2026"
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.105,
+                0.07,
+                0.479,
+                0.101
+            ],
+            "angle": 0,
+            "content": "EXHIBIT 16: DLR's presence leans more heavily towards major metro areas, especially in North America"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.114,
+                0.115,
+                0.482,
+                0.393
+            ],
+            "angle": 0,
+            "content": "| Region/Tier     | North America | International |\n| --------------- | ------------- | ------------- |\n| Major Metro     | 145           | 100           |\n| Minor Metro     | 14            | 45            |\n| Rural           | 1             | 11            |",
+            "sub_type": "bar"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.106,
+                0.413,
+                0.275,
+                0.425
+            ],
+            "angle": 0,
+            "content": "Source: Omdia, Bernstein analysis"
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.5,
+                0.07,
+                0.864,
+                0.116
+            ],
+            "angle": 0,
+            "content": "EXHIBIT 17: EQIX has greater exposure to minor metro and rural markets than DLR, but major metros still represent the largest share"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.51,
+                0.13,
+                0.878,
+                0.407
+            ],
+            "angle": 0,
+            "content": "| Region/Tier     | North America | International |\n| --------------- | ------------- | ------------- |\n| Major Metro     | 84            | 124           |\n| Minor Metro     | 24            | 67            |\n| Rural           | 6             | 19            |",
+            "sub_type": "bar"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.501,
+                0.428,
+                0.669,
+                0.44
+            ],
+            "angle": 0,
+            "content": "Source: Omdia, Bernstein analysis"
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.105,
+                0.451,
+                0.482,
+                0.496
+            ],
+            "angle": 0,
+            "content": "EXHIBIT 18: The same goes for on a capacity basis, as DLR's North America footprint is ~95% in major metro areas"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.114,
+                0.511,
+                0.482,
+                0.788
+            ],
+            "angle": 0,
+            "content": "DLR Current Capacity by Region/Tier (MW)\n| Region/Tier | North America (MW) | International (MW) |\n| :--- | :--- | :--- |\n| Major Metro | 2677 | 757 |\n| Minor Metro | 136 | 453 |\n| Rural | 0.4 | 52 |",
+            "sub_type": "bar"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.106,
+                0.808,
+                0.273,
+                0.821
+            ],
+            "angle": 0,
+            "content": "Source: Omdia, Bernstein analysis"
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.501,
+                0.451,
+                0.848,
+                0.483
+            ],
+            "angle": 0,
+            "content": "EXHIBIT 19: Unlike DLR, EQIX's capacity leans more heavily towards international, especially EMEA"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.509,
+                0.496,
+                0.878,
+                0.773
+            ],
+            "angle": 0,
+            "content": "EQIX Current Capacity by Region/Tier (MW)\n| Region/Tier | North America (MW) | International (MW) |\n| :--- | :--- | :--- |\n| Major Metro | 603 | 852 |\n| Minor Metro | 134 | 468 |\n| Rural | 20 | 56 |",
+            "sub_type": "bar"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.501,
+                0.793,
+                0.669,
+                0.806
+            ],
+            "angle": 0,
+            "content": "Source: Omdia, Bernstein analysis"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.106,
+                0.941,
+                0.269,
+                0.95
+            ],
+            "angle": 0,
+            "content": "US COMMUNICATIONS INFRASTRUCTURE"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.681,
+                0.941,
+                0.862,
+                0.951
+            ],
+            "angle": 0,
+            "content": "Bernstein | SG GROUP"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.879,
+                0.942,
+                0.892,
+                0.951
+            ],
+            "angle": 0,
+            "content": "12"
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.106,
+                0.04,
+                0.454,
+                0.052
+            ],
+            "angle": 0,
+            "content": "Madison Rezaei +1 917 344 8622 madison.rezaei@Bernsteinsg.com"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.825,
+                0.04,
+                0.893,
+                0.052
+            ],
+            "angle": 0,
+            "content": "15 May 2026"
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.106,
+                0.07,
+                0.433,
+                0.086
+            ],
+            "angle": 0,
+            "content": "EXHIBIT 20: DLR MW Under Development (1Q26)"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.119,
+                0.109,
+                0.877,
+                0.421
+            ],
+            "angle": 0,
+            "content": "DLR MW Under Development (Units, 1Q26)\n| Region | Value |\n| :--- | :--- |\n| Northern Virginia | 318 |\n| AMERICAS | 922 |\n| Charlotte | 100 |\n| Atlanta | 192 |\n| Other Americas | 212 |\n| Frankfurt | 31 |\n| Amsterdam | 26 |\n| Paris | 22 |\n| Other EMEA | 96 |\n| Tokyo | 34 |\n| Seoul | 10 |\n| Sydney | 7 |\n| Other APAC | 22 |\nEMEA: EMEA; APAC: APAC",
+            "sub_type": "bar"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.106,
+                0.441,
+                0.281,
+                0.453
+            ],
+            "angle": 0,
+            "content": "Company filings, Bernstein Analysis"
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.106,
+                0.465,
+                0.411,
+                0.48
+            ],
+            "angle": 0,
+            "content": "EXHIBIT 21: EQIX Incremental Cabinets (1Q26)"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.119,
+                0.495,
+                0.877,
+                0.782
+            ],
+            "angle": 0,
+            "content": "EQIX Incremental Cabinets (Units, 1Q26)\n| Region | Value |\n| :--- | :--- |\n| Chicago | 8.0 |\n| Dallas | 19.0 |\n| Miami | 1.5 |\n| New York | 11.0 |\n| São Paulo | 4.0 |\n| Silicon Valley | 13.0 |\n| Washington DC | 20.0 |\n| Other Americas Metros | 7.0 |\n| Frankfurt | 14.0 |\n| Istanbul | 4.0 |\n| London | 8.0 |\n| Paris | 4.0 |\n| Other EMEA Metros | 16.0 |\n| Hong Kong | 2.0 |\n| Johor | 7.0 |\n| Osaka | 7.0 |\n| Singapore | 5.0 |\n| Sydney | 5.0 |\n| Tokyo | 3.0 |\n| Other Asia-Pacific Metros | 21.0 |",
+            "sub_type": "bar"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.106,
+                0.802,
+                0.224,
+                0.812
+            ],
+            "angle": 0,
+            "content": "Does not include xScale"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.107,
+                0.814,
+                0.319,
+                0.825
+            ],
+            "angle": 0,
+            "content": "Source: Company filings, Bernstein Analysis"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.106,
+                0.941,
+                0.268,
+                0.95
+            ],
+            "angle": 0,
+            "content": "US COMMUNICATIONS INFRASTRUCTURE"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.681,
+                0.941,
+                0.862,
+                0.951
+            ],
+            "angle": 0,
+            "content": "Bernstein | SG GROUP"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.879,
+                0.942,
+                0.892,
+                0.952
+            ],
+            "angle": 0,
+            "content": "13"
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.106,
+                0.04,
+                0.454,
+                0.052
+            ],
+            "angle": 0,
+            "content": "Madison Rezaei +1 917 344 8622 madison.rezaei@Bernsteinsg.com"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.825,
+                0.04,
+                0.892,
+                0.051
+            ],
+            "angle": 0,
+            "content": "15 May 2026"
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.105,
+                0.07,
+                0.893,
+                0.101
+            ],
+            "angle": 0,
+            "content": "EXHIBIT 22: Both DLR and EQIX tend to have facilities with larger capaCities in major metro regions vs rural, and the effect is more pronounced for North America than for International"
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.321,
+                0.116,
+                0.677,
+                0.132
+            ],
+            "angle": 0,
+            "content": "DLR & EQIX Avg Facility Capacity by Region/Tier"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.117,
+                0.137,
+                0.881,
+                0.386
+            ],
+            "angle": 0,
+            "content": "| Region | Category | Value |\n| :--- | :--- | :--- |\n| North America Digital Realty | Major Metro | 18.5 |\n| North America Digital Realty | Minor Metro | 9.7 |\n| North America Digital Realty | Rural | 0.4 |\n| International Digital Realty | Major Metro | 7.6 |\n| International Digital Realty | Minor Metro | 10.1 |\n| International Digital Realty | Rural | 4.7 |\n| North America Equinix | Major Metro | 7.2 |\n| North America Equinix | Minor Metro | 5.6 |\n| North America Equinix | Rural | 3.4 |\n| International Equinix | Major Metro | 6.9 |\n| International Equinix | Minor Metro | 7.0 |\n| International Equinix | Rural | 2.9 |",
+            "sub_type": "bar"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.106,
+                0.409,
+                0.275,
+                0.421
+            ],
+            "angle": 0,
+            "content": "Source: Omdia, Bernstein analysis"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.107,
+                0.941,
+                0.269,
+                0.95
+            ],
+            "angle": 0,
+            "content": "US COMMUNICATIONS INFRASTRUCTURE"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.681,
+                0.941,
+                0.862,
+                0.951
+            ],
+            "angle": 0,
+            "content": "Bernstein | SG GROUP"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.878,
+                0.942,
+                0.892,
+                0.951
+            ],
+            "angle": 0,
+            "content": "14"
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.106,
+                0.04,
+                0.452,
+                0.052
+            ],
+            "angle": 0,
+            "content": "Madison Rezaei +1 917 344 8622 madison.rezaei@Bernsteinsg.com"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.826,
+                0.04,
+                0.892,
+                0.051
+            ],
+            "angle": 0,
+            "content": "15 May 2026"
+        },
+        {
+            "type": "title",
+            "bbox": [
+                0.106,
+                0.071,
+                0.385,
+                0.085
+            ],
+            "angle": 0,
+            "content": "APPENDIX - FINANCIAL FORECASTS"
+        },
+        {
+            "type": "table_caption",
+            "bbox": [
+                0.106,
+                0.101,
+                0.411,
+                0.114
+            ],
+            "angle": 0,
+            "content": "EXHIBIT 23: DLR Income Statement Overview"
+        },
+        {
+            "type": "table_caption",
+            "bbox": [
+                0.107,
+                0.122,
+                0.253,
+                0.129
+            ],
+            "angle": 0,
+            "content": "All values in millions, except per share data"
+        },
+        {
+            "type": "table",
+            "bbox": [
+                0.106,
+                0.129,
+                0.663,
+                0.406
+            ],
+            "angle": 0,
+            "content": "<table><tr><td></td><td>2Q25</td><td>3Q25</td><td>4Q25</td><td>1Q26</td><td>2Q26E</td><td>3Q26E</td><td>4Q26E</td><td>1Q27E</td></tr><tr><td>Rental revenues</td><td>1,004</td><td>1,046</td><td>1,075</td><td>1,104</td><td>1,124</td><td>1,162</td><td>1,201</td><td>1,233</td></tr><tr><td>Tenant reimbursement - utilities</td><td>295</td><td>333</td><td>356</td><td>334</td><td>342</td><td>376</td><td>401</td><td>374</td></tr><tr><td>Tenant reimbursement - other</td><td>37</td><td>37</td><td>34</td><td>38</td><td>37</td><td>35</td><td>34</td><td>33</td></tr><tr><td>Interconnection &amp; Others</td><td>122</td><td>120</td><td>123</td><td>124</td><td>133</td><td>137</td><td>142</td><td>146</td></tr><tr><td>Rental and other services revenue</td><td>1,457</td><td>1,536</td><td>1,589</td><td>1,600</td><td>1,635</td><td>1,710</td><td>1,778</td><td>1,785</td></tr><tr><td>Fee income</td><td>34</td><td>36</td><td>46</td><td>35</td><td>35</td><td>35</td><td>35</td><td>35</td></tr><tr><td>Other</td><td>1</td><td>5</td><td>0</td><td>0</td><td>2</td><td>2</td><td>2</td><td>2</td></tr><tr><td>Fee income and other</td><td>36</td><td>41</td><td>46</td><td>35</td><td>37</td><td>37</td><td>37</td><td>37</td></tr><tr><td>Total operating revenues</td><td>1,493</td><td>1,577</td><td>1,635</td><td>1,635</td><td>1,672</td><td>1,747</td><td>1,815</td><td>1,822</td></tr><tr><td>Total operating expenses</td><td>1,281</td><td>1,439</td><td>1,522</td><td>1,368</td><td>1,423</td><td>1,485</td><td>1,557</td><td>1,512</td></tr><tr><td>Operating income</td><td>212</td><td>138</td><td>113</td><td>267</td><td>249</td><td>262</td><td>258</td><td>310</td></tr><tr><td>Income before taxes</td><td>1,060</td><td>75</td><td>86</td><td>191</td><td>281</td><td>294</td><td>288</td><td>221</td></tr><tr><td>Income tax expense</td><td>(13)</td><td>(12)</td><td>10</td><td>(16)</td><td>(24)</td><td>(25)</td><td>(24)</td><td>(25)</td></tr><tr><td>Net income (loss)</td><td>1,047</td><td>64</td><td>96</td><td>175</td><td>258</td><td>269</td><td>264</td><td>197</td></tr><tr><td>Net loss (income) attributable to noncontrolling interests</td><td>(15)</td><td>4</td><td>3</td><td>4</td><td>-</td><td>-</td><td>-</td><td>-</td></tr><tr><td>Net income attributable to Digital Realty Trust Inc.</td><td>1,032</td><td>68</td><td>99</td><td>179</td><td>258</td><td>269</td><td>264</td><td>197</td></tr><tr><td>Preferred stock dividends</td><td>(10)</td><td>(10)</td><td>(10)</td><td>(10)</td><td>(10)</td><td>(10)</td><td>(10)</td><td>(10)</td></tr><tr><td>Gain (loss) on redemption of preferred stock</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr><tr><td>Net income available to common stockholders</td><td>1,022</td><td>58</td><td>88</td><td>169</td><td>248</td><td>259</td><td>254</td><td>187</td></tr><tr><td>(+) Adjustments</td><td>-</td><td>-</td><td>79</td><td>-</td><td>12</td><td>12</td><td>12</td><td>13</td></tr><tr><td>Adjusted Net Income</td><td>1,022</td><td>58</td><td>167</td><td>169</td><td>260</td><td>271</td><td>266</td><td>199</td></tr><tr><td colspan=\"9\">Earnings per share (EPS)</td></tr><tr><td>EPS (basic)</td><td>3.03</td><td>0.17</td><td>0.26</td><td>0.49</td><td>0.72</td><td>0.75</td><td>0.73</td><td>0.54</td></tr><tr><td>EPS (diluted)</td><td>2.96</td><td>0.17</td><td>0.25</td><td>0.48</td><td>0.70</td><td>0.73</td><td>0.72</td><td>0.52</td></tr><tr><td>Adjusted EPS (diluted)</td><td>2.96</td><td>0.17</td><td>0.48</td><td>0.48</td><td>0.73</td><td>0.77</td><td>0.75</td><td>0.56</td></tr><tr><td>Adjusted FFO (AFFO) per share (basic)</td><td>1.71</td><td>1.79</td><td>1.37</td><td>1.95</td><td>1.87</td><td>1.86</td><td>1.83</td><td>2.12</td></tr></table>"
+        },
+        {
+            "type": "table",
+            "bbox": [
+                0.678,
+                0.129,
+                0.892,
+                0.405
+            ],
+            "angle": 0,
+            "content": "<table><tr><td>FY 2025</td><td>FY 2026</td><td>FY 2027</td><td>FY 2028</td><td>FY 2029</td></tr><tr><td>4,084</td><td>4,591</td><td>5,158</td><td>5,759</td><td>6,428</td></tr><tr><td>1,254</td><td>1,452</td><td>1,633</td><td>1,823</td><td>2,035</td></tr><tr><td>151</td><td>144</td><td>124</td><td>130</td><td>145</td></tr><tr><td>479</td><td>536</td><td>609</td><td>687</td><td>773</td></tr><tr><td>5,969</td><td>6,723</td><td>7,524</td><td>8,399</td><td>9,380</td></tr><tr><td>137</td><td>140</td><td>140</td><td>140</td><td>140</td></tr><tr><td>7</td><td>6</td><td>8</td><td>8</td><td>8</td></tr><tr><td>144</td><td>146</td><td>148</td><td>148</td><td>148</td></tr><tr><td>6,113</td><td>6,869</td><td>7,672</td><td>8,547</td><td>9,528</td></tr><tr><td>5,454</td><td>5,833</td><td>6,411</td><td>6,983</td><td>7,572</td></tr><tr><td>658</td><td>1,035</td><td>1,261</td><td>1,563</td><td>1,956</td></tr><tr><td>1,345</td><td>1,054</td><td>901</td><td>1,178</td><td>1,552</td></tr><tr><td>(32)</td><td>(88)</td><td>(63)</td><td>(88)</td><td>(109)</td></tr><tr><td>1,313</td><td>966</td><td>838</td><td>1,090</td><td>1,443</td></tr><tr><td>(5)</td><td>4</td><td>-</td><td>-</td><td>-</td></tr><tr><td>1,309</td><td>970</td><td>838</td><td>1,090</td><td>1,443</td></tr><tr><td>(41)</td><td>(41)</td><td>(41)</td><td>(41)</td><td>(41)</td></tr><tr><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr><tr><td>1,268</td><td>929</td><td>798</td><td>1,049</td><td>1,402</td></tr><tr><td>79</td><td>37</td><td>53</td><td>53</td><td>37</td></tr><tr><td>1,346</td><td>966</td><td>850</td><td>1,102</td><td>1,439</td></tr><tr><td>3.73</td><td>2.69</td><td>2.28</td><td>2.95</td><td>3.88</td></tr><tr><td>3.65</td><td>2.63</td><td>2.23</td><td>2.88</td><td>3.79</td></tr><tr><td>3.87</td><td>2.74</td><td>2.37</td><td>3.02</td><td>3.89</td></tr><tr><td>6.67</td><td>7.53</td><td>8.52</td><td>9.07</td><td>10.33</td></tr></table>"
+        },
+        {
+            "type": "table_footnote",
+            "bbox": [
+                0.106,
+                0.422,
+                0.39,
+                0.434
+            ],
+            "angle": 0,
+            "content": "Source: Company filings, Bernstein Analysis and Estimates"
+        },
+        {
+            "type": "table_caption",
+            "bbox": [
+                0.106,
+                0.447,
+                0.415,
+                0.46
+            ],
+            "angle": 0,
+            "content": "EXHIBIT 24: EQIX Income Statement Overview"
+        },
+        {
+            "type": "table_caption",
+            "bbox": [
+                0.107,
+                0.469,
+                0.257,
+                0.476
+            ],
+            "angle": 0,
+            "content": "All values in millions, except per share data"
+        },
+        {
+            "type": "table",
+            "bbox": [
+                0.106,
+                0.475,
+                0.663,
+                0.695
+            ],
+            "angle": 0,
+            "content": "<table><tr><td></td><td>2Q25</td><td>3Q25</td><td>4Q25</td><td>1Q26</td><td>2Q26E</td><td>3Q26E</td><td>4Q26E</td><td>1Q27E</td></tr><tr><td>Recurring Revenues</td><td>2,143</td><td>2,215</td><td>2,294</td><td>2,331</td><td>2,444</td><td>2,473</td><td>2,501</td><td>2,596</td></tr><tr><td>Non-Recurring Revenues</td><td>113</td><td>101</td><td>126</td><td>113</td><td>128</td><td>130</td><td>132</td><td>137</td></tr><tr><td>Total Revenues</td><td>2,256</td><td>2,316</td><td>2,420</td><td>2,444</td><td>2,573</td><td>2,603</td><td>2,633</td><td>2,732</td></tr><tr><td>Cost of revenues</td><td>1,084</td><td>1,142</td><td>1,198</td><td>1,186</td><td>1,256</td><td>1,266</td><td>1,274</td><td>1,312</td></tr><tr><td>Gross profit</td><td>1,172</td><td>1,174</td><td>1,222</td><td>1,258</td><td>1,316</td><td>1,337</td><td>1,358</td><td>1,421</td></tr><tr><td>Total operating expenses</td><td>678</td><td>700</td><td>800</td><td>681</td><td>748</td><td>752</td><td>757</td><td>779</td></tr><tr><td>Income from operations</td><td>494</td><td>474</td><td>422</td><td>577</td><td>568</td><td>586</td><td>601</td><td>642</td></tr><tr><td>Income before income taxes</td><td>405</td><td>399</td><td>312</td><td>471</td><td>454</td><td>470</td><td>486</td><td>521</td></tr><tr><td>Income tax expense</td><td>(38)</td><td>(25)</td><td>(48)</td><td>(56)</td><td>(57)</td><td>(59)</td><td>(61)</td><td>(65)</td></tr><tr><td>xScale contribution to Net income</td><td>-</td><td>-</td><td>-</td><td>-</td><td>42</td><td>42</td><td>42</td><td>66</td></tr><tr><td>Net income</td><td>367</td><td>374</td><td>264</td><td>415</td><td>439</td><td>453</td><td>467</td><td>521</td></tr><tr><td>Net (income) / loss attributable to non-controlling interests</td><td>1</td><td>-</td><td>1</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr><tr><td>Net income attributable to common stockholders</td><td>368</td><td>374</td><td>265</td><td>415</td><td>439</td><td>453</td><td>467</td><td>521</td></tr><tr><td>(+) Adjustments</td><td>6</td><td>11</td><td>85</td><td>(4)</td><td>-</td><td>-</td><td>-</td><td>-</td></tr><tr><td>Adjusted Net Income</td><td>374</td><td>385</td><td>350</td><td>411</td><td>439</td><td>453</td><td>467</td><td>521</td></tr><tr><td colspan=\"9\">Earnings per share (EPS)</td></tr><tr><td>EPS (basic)</td><td>3.76</td><td>3.82</td><td>2.70</td><td>4.22</td><td>4.45</td><td>4.58</td><td>4.71</td><td>5.25</td></tr><tr><td>EPS (diluted)</td><td>3.75</td><td>3.81</td><td>2.69</td><td>4.20</td><td>4.43</td><td>4.56</td><td>4.69</td><td>5.23</td></tr><tr><td>Adjusted EPS (diluted)</td><td>3.81</td><td>3.92</td><td>3.56</td><td>4.16</td><td>4.43</td><td>4.56</td><td>4.69</td><td>5.23</td></tr><tr><td>Adjusted FFO (AFFO) per share (basic)</td><td>9.94</td><td>9.85</td><td>8.93</td><td>10.82</td><td>11.23</td><td>11.21</td><td>10.78</td><td>12.40</td></tr></table>"
+        },
+        {
+            "type": "table",
+            "bbox": [
+                0.678,
+                0.475,
+                0.892,
+                0.695
+            ],
+            "angle": 0,
+            "content": "<table><tr><td>FY 2025</td><td>FY 2026</td><td>FY 2027</td><td>FY 2028</td><td>FY 2029</td></tr><tr><td>8,739</td><td>9,749</td><td>10,727</td><td>12,017</td><td>13,800</td></tr><tr><td>478</td><td>503</td><td>565</td><td>634</td><td>728</td></tr><tr><td>9,217</td><td>10,252</td><td>11,293</td><td>12,650</td><td>14,528</td></tr><tr><td>4,508</td><td>4,983</td><td>5,370</td><td>5,877</td><td>6,479</td></tr><tr><td>4,709</td><td>5,270</td><td>5,923</td><td>6,774</td><td>8,049</td></tr><tr><td>2,861</td><td>2,937</td><td>3,279</td><td>3,673</td><td>4,218</td></tr><tr><td>1,848</td><td>2,333</td><td>2,644</td><td>3,101</td><td>3,831</td></tr><tr><td>1,508</td><td>1,880</td><td>2,140</td><td>2,512</td><td>3,237</td></tr><tr><td>(160)</td><td>(232)</td><td>(267)</td><td>(314)</td><td>(405)</td></tr><tr><td>-</td><td>125</td><td>263</td><td>345</td><td>452</td></tr><tr><td>1,348</td><td>1,773</td><td>2,135</td><td>2,543</td><td>3,285</td></tr><tr><td>2</td><td>-</td><td>-</td><td>-</td><td>-</td></tr><tr><td>1,350</td><td>1,773</td><td>2,135</td><td>2,543</td><td>3,285</td></tr><tr><td>118</td><td>(4)</td><td>-</td><td>-</td><td>-</td></tr><tr><td>1,468</td><td>1,769</td><td>2,135</td><td>2,543</td><td>3,285</td></tr><tr><td>13.79</td><td>17.97</td><td>21.44</td><td>25.30</td><td>32.39</td></tr><tr><td>13.76</td><td>17.92</td><td>21.36</td><td>25.21</td><td>32.28</td></tr><tr><td>14.96</td><td>17.88</td><td>21.36</td><td>25.21</td><td>32.28</td></tr><tr><td>38.42</td><td>44.09</td><td>48.63</td><td>54.09</td><td>62.97</td></tr></table>"
+        },
+        {
+            "type": "table_footnote",
+            "bbox": [
+                0.106,
+                0.711,
+                0.39,
+                0.723
+            ],
+            "angle": 0,
+            "content": "Source: Company filings, Bernstein Analysis and Estimates"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.107,
+                0.941,
+                0.269,
+                0.95
+            ],
+            "angle": 0,
+            "content": "US COMMUNICATIONS INFRASTRUCTURE"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.681,
+                0.941,
+                0.862,
+                0.951
+            ],
+            "angle": 0,
+            "content": "Bernstein | SG GROUP"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.879,
+                0.942,
+                0.892,
+                0.952
+            ],
+            "angle": 0,
+            "content": "15"
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.106,
+                0.04,
+                0.454,
+                0.052
+            ],
+            "angle": 0,
+            "content": "Madison Rezaei +1 917 344 8622 madison.rezaei@Bernsteinsg.com"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.825,
+                0.04,
+                0.892,
+                0.051
+            ],
+            "angle": 0,
+            "content": "15 May 2026"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.728,
+                0.07,
+                0.893,
+                0.084
+            ],
+            "angle": 0,
+            "content": "DISCLOSURE APPENDIX"
+        },
+        {
+            "type": "title",
+            "bbox": [
+                0.105,
+                0.099,
+                0.299,
+                0.112
+            ],
+            "angle": 0,
+            "content": "I. REQUIRED DISCLOSURES"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.104,
+                0.125,
+                0.894,
+                0.22
+            ],
+            "angle": 0,
+            "content": "References to \"Bernstein\" or the \"Firm\" in these disclosures relate to the following entities: Bernstein Institutional Services LLC (April 1, 2024 onwards), Bernstein & Co., LLC (pre April 1, 2024), Bernstein Autonomous LLP, BSG France S.A. (April 1, 2024 onwards), Bernstein (Hong Kong) Limited 盛博香港有限公司, Bernstein (Canada) Limited, Bernstein (India) Private Limited (SEBI registration no. INH000006378), Bernstein (Singapore) Private Limited, Bernstein Japan KK (サンフォード・C・バーンスタイン株式会社) and analysts employed by SG Africa Technologies & Services to produce Bernstein under a Global Services Agreement in place between Bernstein and SG.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.104,
+                0.233,
+                0.893,
+                0.274
+            ],
+            "angle": 0,
+            "content": "Bernstein is part of a joint venture between SG (SG) and AllianceBernstein, L.P. (AB). Unless specifically noted otherwise, for purposes of these disclosures, references to Bernstein's “affiliates” relate to both SG and AB and their respective affiliates.",
+            "merge_prev": false
+        },
+        {
+            "type": "title",
+            "bbox": [
+                0.105,
+                0.287,
+                0.303,
+                0.3
+            ],
+            "angle": 0,
+            "content": "VALUATION METHODOLOGY"
+        },
+        {
+            "type": "title",
+            "bbox": [
+                0.105,
+                0.315,
+                0.27,
+                0.329
+            ],
+            "angle": 0,
+            "content": "Digital Realty Trust, Inc."
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.104,
+                0.343,
+                0.893,
+                0.372
+            ],
+            "angle": 0,
+            "content": "We value DLR on a Price to Adjusted Funds From Operations (AFFO) per share multiple. Our $232 price target is based on 27x our 2027E AFFO per share of $8.52.",
+            "merge_prev": false
+        },
+        {
+            "type": "title",
+            "bbox": [
+                0.105,
+                0.386,
+                0.192,
+                0.399
+            ],
+            "angle": 0,
+            "content": "Equinix, Inc."
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.104,
+                0.413,
+                0.893,
+                0.441
+            ],
+            "angle": 0,
+            "content": "We value EQIX on a Price to Adjusted Funds From Operations (AFFO) per share multiple. Our $1,222 price target is based on 25x our 2027E AFFO per share of $48.63.",
+            "merge_prev": false
+        },
+        {
+            "type": "title",
+            "bbox": [
+                0.105,
+                0.456,
+                0.155,
+                0.468
+            ],
+            "angle": 0,
+            "content": "RISKS"
+        },
+        {
+            "type": "title",
+            "bbox": [
+                0.105,
+                0.483,
+                0.269,
+                0.497
+            ],
+            "angle": 0,
+            "content": "Digital Realty Trust, Inc."
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.104,
+                0.511,
+                0.893,
+                0.555
+            ],
+            "angle": 0,
+            "content": "The main downside risks to our price target/Outperform rating on DLR are 1) Lower than expected growth in the <1MW segment, 2) Slowdown in enterprise demand for data center capacity, and 3) Continuing decline in market share of data center supply may elevate pricing pressures",
+            "merge_prev": false
+        },
+        {
+            "type": "title",
+            "bbox": [
+                0.105,
+                0.569,
+                0.192,
+                0.582
+            ],
+            "angle": 0,
+            "content": "Equinix, Inc."
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.104,
+                0.596,
+                0.893,
+                0.64
+            ],
+            "angle": 0,
+            "content": "The main downside risks to our price target/Outperform rating on EQIX are 1) Slowdown in enterprise demand for data center capacity, 2) Increased competition in the interconnection space, and 3) Continuing decline in market share of data center supply may elevate pricing pressures",
+            "merge_prev": false
+        },
+        {
+            "type": "title",
+            "bbox": [
+                0.105,
+                0.653,
+                0.508,
+                0.666
+            ],
+            "angle": 0,
+            "content": "RATINGS DEFINITIONS, BENCHMARKS AND DISTRIBUTION"
+        },
+        {
+            "type": "title",
+            "bbox": [
+                0.105,
+                0.679,
+                0.32,
+                0.692
+            ],
+            "angle": 0,
+            "content": "EQUITY RATINGS DEFINITIONS"
+        },
+        {
+            "type": "title",
+            "bbox": [
+                0.105,
+                0.706,
+                0.218,
+                0.719
+            ],
+            "angle": 0,
+            "content": "Bernstein brand"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.104,
+                0.732,
+                0.894,
+                0.814
+            ],
+            "angle": 0,
+            "content": "The Bernstein brand rates stocks based on forecasts of relative performance for the next 12 months versus the S&P 500 for stocks listed on the U.S. and Canadian exchanges, versus the Bloomberg Europe Developed Markets Large and Mid Cap Price Return Index EUR (EDME) for stocks listed on the European exchanges and emerging markets exchanges outside of the Asia Pacific region, versus the Bloomberg Japan Large and Mid Cap Price Return Index USD (JPL) for stocks listed on the Japanese exchanges, and versus the Bloomberg Asia ex-Japan Large and Mid Cap Price Return Index (ASIAX) for stocks listed on the Asian (ex-Japan) exchanges -unless otherwise specified.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.105,
+                0.826,
+                0.429,
+                0.84
+            ],
+            "angle": 0,
+            "content": "The Bernstein brand has three categories of ratings:",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.105,
+                0.854,
+                0.548,
+                0.868
+            ],
+            "angle": 0,
+            "content": "- Outperform: Stock will outpace the market index by more than 15 pp",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.105,
+                0.881,
+                0.637,
+                0.895
+            ],
+            "angle": 0,
+            "content": "• Market-Perform: Stock will perform in line with the market index to within +/-15 pp",
+            "merge_prev": false
+        },
+        {
+            "type": "list",
+            "bbox": [
+                0.105,
+                0.854,
+                0.637,
+                0.895
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.106,
+                0.941,
+                0.269,
+                0.95
+            ],
+            "angle": 0,
+            "content": "US COMMUNICATIONS INFRASTRUCTURE"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.681,
+                0.941,
+                0.862,
+                0.951
+            ],
+            "angle": 0,
+            "content": "Bernstein | SG GROUP"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.878,
+                0.942,
+                0.892,
+                0.952
+            ],
+            "angle": 0,
+            "content": "16"
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.106,
+                0.04,
+                0.454,
+                0.052
+            ],
+            "angle": 0,
+            "content": "Madison Rezaei +1 917 344 8622 madison.rezaei@Bernsteinsg.com"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.825,
+                0.04,
+                0.892,
+                0.051
+            ],
+            "angle": 0,
+            "content": "15 May 2026"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.105,
+                0.072,
+                0.658,
+                0.086
+            ],
+            "angle": 0,
+            "content": "• Underperform: Stock will trail the performance of the market index by more than 15 pp",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.104,
+                0.099,
+                0.893,
+                0.126
+            ],
+            "angle": 0,
+            "content": "Coverage Suspended: Coverage of a company under the Bernstein brand has been suspended. Ratings and price targets are suspended temporarily, are no longer current, and should therefore not be relied upon.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.104,
+                0.139,
+                0.893,
+                0.18
+            ],
+            "angle": 0,
+            "content": "Not Rated: A rating assigned when the stock cannot be accurately valued, or the performance of the company accurately predicted, at the present time. The covering analyst may continue to publish research reports on the company to update investors on events and developments.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.105,
+                0.192,
+                0.518,
+                0.206
+            ],
+            "angle": 0,
+            "content": "Not Covered (NC) denotes companies that are not under coverage.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.105,
+                0.219,
+                0.532,
+                0.232
+            ],
+            "angle": 0,
+            "content": "Bernstein brand stock ratings are based on a 12-month time horizon.",
+            "merge_prev": false
+        },
+        {
+            "type": "title",
+            "bbox": [
+                0.105,
+                0.245,
+                0.36,
+                0.258
+            ],
+            "angle": 0,
+            "content": "Autonomous brand – common stocks"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.104,
+                0.271,
+                0.894,
+                0.367
+            ],
+            "angle": 0,
+            "content": "The Autonomous brand rates common stocks as indicated below. As our benchmarks we use the Bloomberg Europe 500 Banks And Financial Services Index (BEBANKS) and Bloomberg Europe Dev Mkt Financials Large and Mid Cap Price Ret Index EUR (EDMFI) index for developed European banks and Payments, the Bloomberg Europe 500 Insurance Index (BEINSUR) for European insurers, the S&P 500 and S&P Financials for US banks and Payments coverage, S5LIFE for US Insurance, the S&P Insurance Select Industry (SPSIINS) for US Non-Life Insurers coverage, and the Bloomberg Emerging Markets Financials Large, Mid and Small Cap Price Return Index (EMLSF) for emerging market banks and insurers and Payments. Ratings are stated relative to the sector (not the market).",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.105,
+                0.379,
+                0.543,
+                0.392
+            ],
+            "angle": 0,
+            "content": "The Autonomous brand has three categories of common stock ratings:",
+            "merge_prev": false
+        },
+        {
+            "type": "list",
+            "bbox": [
+                0.105,
+                0.406,
+                0.694,
+                0.475
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.105,
+                0.406,
+                0.585,
+                0.42
+            ],
+            "angle": 0,
+            "content": "- Outperform (OP): Stock will outpace the relevant index by more than 10 pp",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.105,
+                0.434,
+                0.604,
+                0.448
+            ],
+            "angle": 0,
+            "content": "- Neutral (N): Stock will perform in line with the market index to within +/-10 pp",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.105,
+                0.461,
+                0.694,
+                0.475
+            ],
+            "angle": 0,
+            "content": "• Underperform (UP): Stock will trail the performance of the relevant index by more than 10 pp",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.104,
+                0.489,
+                0.893,
+                0.516
+            ],
+            "angle": 0,
+            "content": "Coverage Suspended: Coverage of a company under the Autonomous research brand has been suspended. Ratings and price targets are suspended temporarily, are no longer current, and should therefore not be relied upon.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.104,
+                0.528,
+                0.893,
+                0.569
+            ],
+            "angle": 0,
+            "content": "Not Rated: A rating assigned when the stock cannot be accurately valued, or the performance of the company accurately predicted, at the present time. The covering analyst may continue to publish research reports on the company to update investors on events and developments.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.105,
+                0.581,
+                0.783,
+                0.595
+            ],
+            "angle": 0,
+            "content": "Those denoted as ‘Feature’ (e.g., Feature Outperform FOP, Feature Under Outperform FUP) are our core ideas.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.105,
+                0.608,
+                0.518,
+                0.622
+            ],
+            "angle": 0,
+            "content": "Not Covered (NC) denotes companies that are not under coverage.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.105,
+                0.635,
+                0.607,
+                0.648
+            ],
+            "angle": 0,
+            "content": "Autonomous brand common stock ratings are based on a 12-month time horizon.",
+            "merge_prev": false
+        },
+        {
+            "type": "title",
+            "bbox": [
+                0.105,
+                0.661,
+                0.365,
+                0.673
+            ],
+            "angle": 0,
+            "content": "Autonomous brand – preferred stocks"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.105,
+                0.687,
+                0.547,
+                0.7
+            ],
+            "angle": 0,
+            "content": "The Autonomous brand has three categories of preferred stock ratings:",
+            "merge_prev": false
+        },
+        {
+            "type": "list",
+            "bbox": [
+                0.105,
+                0.714,
+                0.893,
+                0.828
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.105,
+                0.714,
+                0.891,
+                0.742
+            ],
+            "angle": 0,
+            "content": "- Outperform (OP): The total return of the preferred instrument is expected to outperform preferred securities of other issuers operating in similar sectors or rating categories over the next six months.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.105,
+                0.756,
+                0.891,
+                0.784
+            ],
+            "angle": 0,
+            "content": "- Neutral (N): The total return of the preferred instrument is expected to perform in line with preferred securities of other issuers operating in similar sectors or rating categories over the next six months.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.105,
+                0.799,
+                0.891,
+                0.827
+            ],
+            "angle": 0,
+            "content": "- Underperform (UP): The total return of the preferred instrument is expected to underperform preferred securities of other issuers operating in similar sectors or rating categories over the next six months.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.105,
+                0.841,
+                0.564,
+                0.854
+            ],
+            "angle": 0,
+            "content": "Autonomous preferred stock ratings are based on a 6-month time horizon.",
+            "merge_prev": false
+        },
+        {
+            "type": "title",
+            "bbox": [
+                0.105,
+                0.867,
+                0.347,
+                0.88
+            ],
+            "angle": 0,
+            "content": "AUTONOMOUS CREDIT RESEARCH"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.106,
+                0.941,
+                0.269,
+                0.95
+            ],
+            "angle": 0,
+            "content": "US COMMUNICATIONS INFRASTRUCTURE"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.681,
+                0.941,
+                0.862,
+                0.951
+            ],
+            "angle": 0,
+            "content": "Bernstein | SG GROUP"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.879,
+                0.942,
+                0.892,
+                0.951
+            ],
+            "angle": 0,
+            "content": "17"
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.106,
+                0.04,
+                0.454,
+                0.052
+            ],
+            "angle": 0,
+            "content": "Madison Rezaei +1 917 344 8622 madison.rezaei@Bernsteinsg.com"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.825,
+                0.04,
+                0.892,
+                0.051
+            ],
+            "angle": 0,
+            "content": "15 May 2026"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.104,
+                0.071,
+                0.893,
+                0.099
+            ],
+            "angle": 0,
+            "content": "Where this report contains investment recommendations for credit instruments, as defined in article 3(1)(35) of the Market Abuse Regulation, the information below is presented to comply with its disclosure requirements.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.104,
+                0.111,
+                0.894,
+                0.166
+            ],
+            "angle": 0,
+            "content": "The report may also include reference(s) to published opinions by other Autonomous or Bernstein analysts covering the equity securities of the issuer(s) referenced herein. Please note an investment recommendation for credit instruments published by the author(s) of this report may differ from the published view of the analyst covering equity securities for the issuer(s) contained in this report and vice versa.",
+            "merge_prev": false
+        },
+        {
+            "type": "title",
+            "bbox": [
+                0.105,
+                0.178,
+                0.32,
+                0.192
+            ],
+            "angle": 0,
+            "content": "CREDIT RATINGS DEFINITIONS"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.105,
+                0.204,
+                0.486,
+                0.219
+            ],
+            "angle": 0,
+            "content": "The Autonomous brand has three categories of credit ratings:",
+            "merge_prev": false
+        },
+        {
+            "type": "list",
+            "bbox": [
+                0.105,
+                0.231,
+                0.894,
+                0.346
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.105,
+                0.231,
+                0.894,
+                0.261
+            ],
+            "angle": 0,
+            "content": "- Credit Outperform (C-OP): The total return of the Reference Credit Instrument is expected to outperform the credit spread of bonds of other issuers operating in similar sectors or rating categories over the next six months.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.105,
+                0.274,
+                0.894,
+                0.303
+            ],
+            "angle": 0,
+            "content": "- Credit Neutral (C-N): The total return of the Reference Credit Instrument is expected to perform in line with the credit spread of bonds of other issuers operating in similar sectors or rating categories over the next six months.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.105,
+                0.316,
+                0.893,
+                0.346
+            ],
+            "angle": 0,
+            "content": "- Credit Underperform (C-UP): The total return of the Reference Credit Instrument is expected to underperform the credit spread of bonds of other issuers operating in similar sectors or rating categories over the next six months.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.105,
+                0.359,
+                0.506,
+                0.372
+            ],
+            "angle": 0,
+            "content": "Autonomous credit ratings are based on a 6-month time horizon.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.104,
+                0.385,
+                0.893,
+                0.413
+            ],
+            "angle": 0,
+            "content": "A list of all investment recommendations produced by the author(s) of this report alongside credit ratings history are available upon request.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.104,
+                0.425,
+                0.894,
+                0.467
+            ],
+            "angle": 0,
+            "content": "It is at the sole discretion of the Firm as to when to initiate, update and cease research coverage. The Firm has established, maintains and relies on information barriers to control the flow of information contained in one or more areas (i.e. the private side) within the Firm, and into other areas, units, groups or affiliates (i.e. public side) of the Firm",
+            "merge_prev": false
+        },
+        {
+            "type": "table_caption",
+            "bbox": [
+                0.105,
+                0.503,
+                0.592,
+                0.516
+            ],
+            "angle": 0,
+            "content": "DISTRIBUTION OF EQUITY RATINGS/INVESTMENT BANKING SERVICES"
+        },
+        {
+            "type": "table",
+            "bbox": [
+                0.107,
+                0.528,
+                0.894,
+                0.653
+            ],
+            "angle": 0,
+            "content": "<table><tr><td>Equity Rating</td><td>Market Abuse Regulation (MAR) and FINRA Rating Category</td><td>Global Rating Distribution</td><td>Investment Banking Relationships*</td></tr><tr><td>Outperform</td><td>BUY</td><td>51.1%</td><td>16.5%</td></tr><tr><td>Market-Perform (Bernstein Brand) Neutral (Autonomous Brand)</td><td>HOLD</td><td>36.3%</td><td>17.8%</td></tr><tr><td>Underperform</td><td>SELL</td><td>12.6%</td><td>14.9%</td></tr></table>"
+        },
+        {
+            "type": "list",
+            "bbox": [
+                0.104,
+                0.663,
+                0.893,
+                0.705
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "table_footnote",
+            "bbox": [
+                0.104,
+                0.663,
+                0.893,
+                0.69
+            ],
+            "angle": 0,
+            "content": "* These figures represent the percentage of companies within each equity rating category for which affiliates of Bernstein have provided investment banking services within the previous 12 months."
+        },
+        {
+            "type": "table_footnote",
+            "bbox": [
+                0.105,
+                0.69,
+                0.45,
+                0.705
+            ],
+            "angle": 0,
+            "content": "As of March 31, 2026. All figures are updated quarterly."
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.106,
+                0.941,
+                0.269,
+                0.951
+            ],
+            "angle": 0,
+            "content": "US COMMUNICATIONS INFRASTRUCTURE"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.681,
+                0.941,
+                0.862,
+                0.951
+            ],
+            "angle": 0,
+            "content": "Bernstein | SG GROUP"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.878,
+                0.942,
+                0.892,
+                0.952
+            ],
+            "angle": 0,
+            "content": "18"
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.106,
+                0.04,
+                0.454,
+                0.052
+            ],
+            "angle": 0,
+            "content": "Madison Rezaei +1 917 344 8622 madison.rezaei@Bernsteinsg.com"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.825,
+                0.04,
+                0.892,
+                0.051
+            ],
+            "angle": 0,
+            "content": "15 May 2026"
+        },
+        {
+            "type": "title",
+            "bbox": [
+                0.106,
+                0.071,
+                0.49,
+                0.084
+            ],
+            "angle": 0,
+            "content": "PRICE CHARTS / RATINGS AND PRICE TARGET HISTORY"
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.255,
+                0.103,
+                0.782,
+                0.117
+            ],
+            "angle": 0,
+            "content": "Digital Realty Trust, Inc. (DLR) Rating History for Bernstein as of 05/14/2026"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.121,
+                0.117,
+                0.871,
+                0.306
+            ],
+            "angle": 0,
+            "content": "| Date       | Closing Price | Price Target |\n| ---------- | ------------- | ------------ |\n| 03/04/2026 | $218.00       | $232.00      |\n| 04/23/2026 | $232.00       | $232.00      |",
+            "sub_type": "line"
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.289,
+                0.328,
+                0.743,
+                0.342
+            ],
+            "angle": 0,
+            "content": "Equinix, Inc. (EQIX) Rating History for Bernstein as of 05/14/2026"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.122,
+                0.342,
+                0.871,
+                0.53
+            ],
+            "angle": 0,
+            "content": "| Date       | Closing Price | Price Target |\n| ---------- | ------------- | ------------ |\n| 03/04/2026 | $1,128.00     | -            |\n| 04/29/2026 | -             | $1,222.00    |",
+            "sub_type": "line"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.104,
+                0.547,
+                0.892,
+                0.561
+            ],
+            "angle": 0,
+            "content": "All price target and closing price data in the chart(s) above are denominated in the currency noted in the Ticker Table of this report.",
+            "merge_prev": false
+        },
+        {
+            "type": "title",
+            "bbox": [
+                0.105,
+                0.586,
+                0.283,
+                0.599
+            ],
+            "angle": 0,
+            "content": "CONFLICTS OF INTEREST"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.104,
+                0.613,
+                0.893,
+                0.64
+            ],
+            "angle": 0,
+            "content": "Bernstein and/or affiliates have received compensation for investment banking services in the past twelve months from Digital Realty Trust, Inc..",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.104,
+                0.652,
+                0.892,
+                0.68
+            ],
+            "angle": 0,
+            "content": "An affiliate of Bernstein has received compensation for non-investment banking securities-related products or services in the previous twelve months from the following clients: Equinix, Inc..",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.104,
+                0.692,
+                0.892,
+                0.72
+            ],
+            "angle": 0,
+            "content": "Bernstein and/or affiliates have received compensation for non-investment banking securities-related products or services in the previous twelve months from the following clients: Equinix, Inc..",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.104,
+                0.732,
+                0.892,
+                0.759
+            ],
+            "angle": 0,
+            "content": "Bernstein and/or affiliates had an investment banking client relationship during the past twelve months with Digital Realty Trust, Inc..",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.104,
+                0.772,
+                0.766,
+                0.786
+            ],
+            "angle": 0,
+            "content": "Certain affiliates of Bernstein act as market maker or liquidity provider in the debt securities of: Equinix, Inc..",
+            "merge_prev": false
+        },
+        {
+            "type": "title",
+            "bbox": [
+                0.105,
+                0.811,
+                0.227,
+                0.823
+            ],
+            "angle": 0,
+            "content": "OTHER MATTERS"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.104,
+                0.837,
+                0.893,
+                0.865
+            ],
+            "angle": 0,
+            "content": "The legal entity(ies) employing the analyst(s) listed in this report, and their location, can be determined by the country code of their phone number, as follows:",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.105,
+                0.877,
+                0.515,
+                0.89
+            ],
+            "angle": 0,
+            "content": "+1 Bernstein Institutional Services LLC; New York, New York, USA",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.106,
+                0.941,
+                0.269,
+                0.95
+            ],
+            "angle": 0,
+            "content": "US COMMUNICATIONS INFRASTRUCTURE"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.681,
+                0.942,
+                0.862,
+                0.951
+            ],
+            "angle": 0,
+            "content": "Bernstein | SG GROUP"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.879,
+                0.943,
+                0.892,
+                0.952
+            ],
+            "angle": 0,
+            "content": "19"
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.106,
+                0.04,
+                0.454,
+                0.052
+            ],
+            "angle": 0,
+            "content": "Madison Rezaei +1 917 344 8622 madison.rezaei@Bernsteinsg.com"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.825,
+                0.04,
+                0.892,
+                0.051
+            ],
+            "angle": 0,
+            "content": "15 May 2026"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.106,
+                0.071,
+                0.385,
+                0.084
+            ],
+            "angle": 0,
+            "content": "+44 Bernstein Autonomous LLP; London UK",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.106,
+                0.098,
+                0.585,
+                0.111
+            ],
+            "angle": 0,
+            "content": "+212 SG Africa Technologies & Services; Casablanca, Morocco",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.106,
+                0.124,
+                0.327,
+                0.137
+            ],
+            "angle": 0,
+            "content": "+33 BSG France S.A.; Paris, France",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.106,
+                0.15,
+                0.331,
+                0.163
+            ],
+            "angle": 0,
+            "content": "+34 BSG France S.A.; Madrid, Spain",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.106,
+                0.176,
+                0.44,
+                0.189
+            ],
+            "angle": 0,
+            "content": "+41 Bernstein Autonomous LLP; Geneva, Switzerland",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.106,
+                0.202,
+                0.367,
+                0.216
+            ],
+            "angle": 0,
+            "content": "+49 BSG France S.A.; Frankfurt, Germany",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.106,
+                0.229,
+                0.495,
+                0.242
+            ],
+            "angle": 0,
+            "content": "+91 Bernstein (India) Private Limited; Mumbai, India",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.106,
+                0.254,
+                0.643,
+                0.268
+            ],
+            "angle": 0,
+            "content": "+852 Bernstein (Hong Kong) Limited 盛博香港有限公司; Hong Kong, China",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.106,
+                0.281,
+                0.506,
+                0.295
+            ],
+            "angle": 0,
+            "content": "+65 Bernstein (Singapore) Private Limited; Singapore",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.106,
+                0.307,
+                0.412,
+                0.321
+            ],
+            "angle": 0,
+            "content": "+81 Bernstein Japan KK; Tokyo, Japan",
+            "merge_prev": false
+        },
+        {
+            "type": "list",
+            "bbox": [
+                0.106,
+                0.071,
+                0.643,
+                0.321
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.104,
+                0.334,
+                0.894,
+                0.43
+            ],
+            "angle": 0,
+            "content": "Where this report has been prepared by research analyst(s) employed by a non-US affiliate, such analyst(s), is/are (unless otherwise expressly noted below) not registered as associated persons of Bernstein Institutional Services LLC or any other SEC-registered broker-dealer and are not licensed or qualified as research analysts with FINRA. Accordingly, such analyst(s) may not be subject to FINRA's restrictions regarding (among other things) communications by research analysts with a subject company, interactions between research analysts and investment banking personnel, participation by research analysts in solicitation and marketing activities relating to investment banking transactions, public appearances by research analysts, and trading securities held by a research analyst account.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.104,
+                0.442,
+                0.894,
+                0.483
+            ],
+            "angle": 0,
+            "content": "Where this report has been prepared by research analyst(s) employed by SG Africa Technologies & Services (part of the SG group of companies), it has been prepared on behalf of a Bernstein company under a Global Services Agreement in place between Bernstein and SG.",
+            "merge_prev": false
+        },
+        {
+            "type": "title",
+            "bbox": [
+                0.106,
+                0.495,
+                0.216,
+                0.508
+            ],
+            "angle": 0,
+            "content": "CERTIFICATION"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.104,
+                0.522,
+                0.894,
+                0.577
+            ],
+            "angle": 0,
+            "content": "Each research analyst listed in this report, who is primarily responsible for the preparation of the content of this report, certifies that all of the views expressed in this publication accurately reflect that analyst's personal views about any and all of the subject securities or issuers and that no part of that analyst's compensation was, is, or will be, directly or indirectly, related to the specific recommendations or views in this publication.",
+            "merge_prev": false
+        },
+        {
+            "type": "title",
+            "bbox": [
+                0.105,
+                0.589,
+                0.445,
+                0.602
+            ],
+            "angle": 0,
+            "content": "II. ADDITIONAL GLOBAL CONFLICT DISCLOSURES"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.104,
+                0.615,
+                0.893,
+                0.657
+            ],
+            "angle": 0,
+            "content": "It is at the sole discretion of the Firm as to when to initiate, update and cease research coverage. The Firm has established, maintains and relies on information barriers to control the flow of information contained in one or more areas (i.e., the private side) within the Firm, and into other areas, units, groups or affiliates (i.e., public side) of the Firm.",
+            "merge_prev": false
+        },
+        {
+            "type": "title",
+            "bbox": [
+                0.105,
+                0.668,
+                0.502,
+                0.682
+            ],
+            "angle": 0,
+            "content": "III. OTHER IMPORTANT INFORMATION AND DISCLOSURES"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.105,
+                0.695,
+                0.638,
+                0.709
+            ],
+            "angle": 0,
+            "content": "Separate branding is maintained for “Bernstein” and “Autonomous” research products.",
+            "merge_prev": false
+        },
+        {
+            "type": "list",
+            "bbox": [
+                0.106,
+                0.722,
+                0.894,
+                0.899
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.106,
+                0.722,
+                0.894,
+                0.826
+            ],
+            "angle": 0,
+            "content": "- Bernstein produces a number of different types of research products including, among others, fundamental analysis and quantitative analysis under both the “Autonomous” and “Bernstein” brands. Recommendations contained within one type of research product may differ from recommendations contained within other types of research products, whether as a result of differing time horizons, methodologies or otherwise. Furthermore, views or recommendations within a research product issued under one brand may differ from views or recommendations under the same type of research product issued under the other brand. The Research Ratings System for the two brands and other information related to those Rating Systems are included in the previous section.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.106,
+                0.839,
+                0.894,
+                0.898
+            ],
+            "angle": 0,
+            "content": "- Autonomous operates as a separate business unit within the following entities: Bernstein Institutional Services LLC, Bernstein Autonomous LLP, Bernstein (Hong Kong) Limited 盛博香港有限公司 and Bernstein (India) Private Limited. For information relating to “Autonomous” branded products (including certain Sales materials) please visit: www.autonomous.com. For information relating to Bernstein branded products please visit: www.Bernsteinresearch.com.",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.106,
+                0.941,
+                0.268,
+                0.95
+            ],
+            "angle": 0,
+            "content": "US COMMUNICATIONS INFRASTRUCTURE"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.681,
+                0.941,
+                0.862,
+                0.951
+            ],
+            "angle": 0,
+            "content": "Bernstein | SG GROUP"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.877,
+                0.942,
+                0.892,
+                0.951
+            ],
+            "angle": 0,
+            "content": "20"
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.106,
+                0.04,
+                0.454,
+                0.052
+            ],
+            "angle": 0,
+            "content": "Madison Rezaei +1 917 344 8622 madison.rezaei@Bernsteinsg.com"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.825,
+                0.04,
+                0.892,
+                0.051
+            ],
+            "angle": 0,
+            "content": "15 May 2026"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.104,
+                0.071,
+                0.893,
+                0.113
+            ],
+            "angle": 0,
+            "content": "Analysts are compensated based on aggregate contributions to the research franchise as measured by account penetration, productivity and proactivity of investment ideas. No analysts are compensated based on performance in, or contributions to, generating investment banking revenues.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.104,
+                0.125,
+                0.893,
+                0.166
+            ],
+            "angle": 0,
+            "content": "This report has been produced by an independent analyst as defined in Article 3 (1)(34)(i) of EU 596/2014 Market Abuse Regulation (“MAR”) and the same article of MAR as it forms part of United Kingdom domestic law by virtue of the European Union (Withdrawal) Act 2018.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.104,
+                0.178,
+                0.894,
+                0.248
+            ],
+            "angle": 0,
+            "content": "To our readers in the United States: Bernstein Institutional Services LLC, a broker-dealer registered with the U.S. Securities and Exchange Commission (“SEC”) and a member of the U.S. Financial Industry Regulatory Authority, Inc. (“FINRA”) is distributing this publication in the United States and accepts responsibility for its contents. Where this material contains an analysis of debt product(s), such material is intended only for institutional investors and is not subject to the US independence and disclosure standards applicable to debt research prepared for retail investors.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.104,
+                0.259,
+                0.893,
+                0.3
+            ],
+            "angle": 0,
+            "content": "Bernstein Institutional Services LLC may act as principal for its own account or as agent for another person (including an affiliate) in sales or purchases of any security which is a subject of this report. This report does not purport to meet the objectives or needs of any specific individuals, entities or accounts.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.104,
+                0.313,
+                0.893,
+                0.368
+            ],
+            "angle": 0,
+            "content": "To our readers in Canada: If this publication pertains to a Canadian domiciled company, it is being distributed in Canada by Bernstein (Canada) Limited, which is licensed and regulated by the Canadian Investment Regulatory Organization. If the publication pertains to a non-Canadian domiciled company, it is being distributed by Bernstein Institutional Services LLC, which is licensed and regulated by both the SEC and FINRA, into Canada under the International Dealers Exemption.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.104,
+                0.38,
+                0.893,
+                0.407
+            ],
+            "angle": 0,
+            "content": "This document may not be passed onto any person in Canada unless that person qualifies as \"permitted client\" as defined in Section 1.1 of NI 31-103.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.104,
+                0.42,
+                0.893,
+                0.448
+            ],
+            "angle": 0,
+            "content": "To our readers in Brazil: This report has been prepared by Bernstein Institutional Services LLC, and Banco BTG Pactual S.A. (\"BTG\") is responsible for the distribution of this report in Brazil.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.104,
+                0.459,
+                0.893,
+                0.501
+            ],
+            "angle": 0,
+            "content": "To readers in the United Kingdom: This publication has been issued or approved for issue in the United Kingdom by Bernstein Autonomous LLP, authorised and regulated by the Financial Conduct Authority and located at 60 London Wall, London EC2M 5SH, +44 (0)20-7170-5000. Registered in England & Wales No OC343985.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.104,
+                0.513,
+                0.894,
+                0.636
+            ],
+            "angle": 0,
+            "content": "This document is for distribution only to persons who (i) have professional experience in matters relating to investments falling within Article 19(5) of the Financial Services and Markets Act 2000 (Financial Promotion) Order 2005 (as amended, the “Financial Promotion Order”), (ii) are persons falling within Article 49(2)(a) to (d) (“high net worth companies, unincorporated associations, etc.”) of the Financial Promotion Order, (iii) are outside the United Kingdom, or (iv) are persons to whom an invitation or inducement to engage in investment activity (within the meaning of section 21 of the FSMA) in connection with the issue or sale of any securities may otherwise lawfully be communicated or caused to be communicated (all such persons together being referred to as “relevant persons”). This document is directed only at relevant persons and must not be acted on or relied on by persons who are not relevant persons. Any investment or investment activity to which this document relates is available only to relevant persons and will be engaged in only with relevant persons.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.104,
+                0.649,
+                0.893,
+                0.676
+            ],
+            "angle": 0,
+            "content": "To our readers in the member states of the EEA: This publication is being distributed by BSG France SA, which is authorised and regulated by the Autorité de Contrôle Prudentiel et de Résolution (ACPR) and Autorité des Marchés Financiers (AMF).",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.104,
+                0.688,
+                0.894,
+                0.772
+            ],
+            "angle": 0,
+            "content": "To our readers in Hong Kong: This publication is being distributed in Hong Kong by Bernstein (Hong Kong) Limited 盛博香港有限公司, which is licensed and regulated by the Hong Kong Securities and Futures Commission (Central Entity No. AXC846) to carry out Type 4 (Advising on Securities) regulated activities and subject to the licensing conditions mentioned in the SFC Public Register (https://www.sfc.hk/publicregWeb/corp/AXC846/details)). This publication is solely for professional investors, as defined in the Securities and Futures Ordinance (Cap. 571). The purpose of this report is solely to provide an analysis of the issuers referred to in this report and is not intended for any purpose contrary to the laws of Hong Kong.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.104,
+                0.783,
+                0.894,
+                0.893
+            ],
+            "angle": 0,
+            "content": "To our readers in Singapore: This publication is being distributed in Singapore by Bernstein (Singapore) Private Limited, only to accredited investors or institutional investors, as defined in the Securities and Futures Act 2001 of Singapore (\"SFA\"). Recipients in Singapore should contact Bernstein (Singapore) Private Limited in respect of matters arising from, or in connection with, this publication. Bernstein (Singapore) Private Limited is regulated by the Monetary Authority of Singapore and licensed under the SFA as a capital markets services licence holder for dealing in capital markets products that are securities and collective investment schemes and an exempt financial adviser for advising on, issuing and promulgating analyses and reports on securities. Bernstein (Singapore) Private Limited is registered in Singapore with Company Registration No. 20213710W and located at One Raffles Quay, #27-11 South Tower, Singapore 048583, +65-6230-4612.",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.106,
+                0.941,
+                0.269,
+                0.95
+            ],
+            "angle": 0,
+            "content": "US COMMUNICATIONS INFRASTRUCTURE"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.681,
+                0.941,
+                0.862,
+                0.951
+            ],
+            "angle": 0,
+            "content": "Bernstein | SG GROUP"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.878,
+                0.942,
+                0.892,
+                0.952
+            ],
+            "angle": 0,
+            "content": "21"
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.106,
+                0.04,
+                0.454,
+                0.052
+            ],
+            "angle": 0,
+            "content": "Madison Rezaei +1 917 344 8622 madison.rezaei@Bernsteinsg.com"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.825,
+                0.04,
+                0.892,
+                0.051
+            ],
+            "angle": 0,
+            "content": "15 May 2026"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.104,
+                0.071,
+                0.893,
+                0.113
+            ],
+            "angle": 0,
+            "content": "To our readers in the People's Republic of China: The securities referred to in this document are not being offered or sold and may not be offered or sold, directly or indirectly, in the People's Republic of China (for such purposes, not including the Hong Kong and Macau Special Administrative Regions or Taiwan, the \"PRC\") in contravention of any applicable laws of the PRC.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.104,
+                0.125,
+                0.893,
+                0.152
+            ],
+            "angle": 0,
+            "content": "This document does not constitute an offer to sell or the solicitation of an offer to buy any securities in the PRC to any person to whom it is unlawful to make the offer or solicitation in the PRC.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.104,
+                0.165,
+                0.894,
+                0.26
+            ],
+            "angle": 0,
+            "content": "We do not represent that this document may be lawfully distributed, or that any securities may be lawfully offered, in compliance with any applicable registration or other requirements in the PRC, or pursuant to an exemption available thereunder, or assume any responsibility for facilitating any such distribution or offering. In particular, no action has been taken by us which would permit a public offering of any securities or distribution of this document in the PRC. Accordingly, the securities are not being offered or sold within the PRC by means of this document or any other document. Neither this document nor any advertisement or other offering material may be distributed or published in the PRC, except under circumstances that will result in compliance with any applicable laws and regulations.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.104,
+                0.272,
+                0.894,
+                0.342
+            ],
+            "angle": 0,
+            "content": "To our readers in Japan: This publication is being distributed in Japan by Bernstein Japan KK (サンフォード・C・バーンスタイン株式会社), which is registered in Japan as a Financial Instruments Business Operator with the Kanto Local Finance Bureau (registration number: The Director-General of Kanto Local Finance Bureau (FIBO) No.3387) and regulated by the Financial Services Agency. It is also a member of Japan Investment Advisers Association. This publication is solely for qualified institutional investors in Japan only, as defined in Article 2, paragraph (3), items (i) of the Financial Instruments and Exchange Act.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.104,
+                0.353,
+                0.893,
+                0.409
+            ],
+            "angle": 0,
+            "content": "For the institutional client readers in Japan who have been granted access to the Bernstein website by Daiwa Group Inc. (\"Daiwa\"), your access to this document should not be construed as meaning that Bernstein is providing you with investment advice for any purposes. Whilst Bernstein has prepared this document, your relationship is, and will remain with, Daiwa, and Bernstein has neither any contractual relationship with you nor any obligations towards you.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.104,
+                0.42,
+                0.894,
+                0.489
+            ],
+            "angle": 0,
+            "content": "To our readers in Australia: Bernstein (Hong Kong) Limited 盛博香港有限公司 is responsible for distributing research in Australia. It is regulated by the Securities and Exchange Commission under U.S. laws, by the Financial Conduct Authority under U.K. laws, which differs from Australian laws. Bernstein (Hong Kong) Limited 盛博香港有限公司 is exempt from the requirement to hold an Australian financial services license under the Corporations Act 2001 in respect of the provision of the following financial services to wholesale clients:",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.106,
+                0.502,
+                0.341,
+                0.516
+            ],
+            "angle": 0,
+            "content": "• providing financial product advice;",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.106,
+                0.53,
+                0.308,
+                0.543
+            ],
+            "angle": 0,
+            "content": "• dealing in a financial product;",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.106,
+                0.558,
+                0.397,
+                0.571
+            ],
+            "angle": 0,
+            "content": "- making a market for a financial product; and",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.106,
+                0.586,
+                0.39,
+                0.599
+            ],
+            "angle": 0,
+            "content": "• providing a custodial or depository service.",
+            "merge_prev": false
+        },
+        {
+            "type": "list",
+            "bbox": [
+                0.106,
+                0.502,
+                0.397,
+                0.599
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.104,
+                0.612,
+                0.894,
+                0.68
+            ],
+            "angle": 0,
+            "content": "To our readers in India: This publication is being distributed in India by Bernstein (India) Private Limited (SCB India) which is licensed and regulated by Securities and Exchange Board of India (\"SEBI\") as a research analyst entity under the SEBI (Research Analyst) Regulations, 2014, having registration no. INH000006378 and as a stock broker having registration no. INZ000213537. SCB India is currently engaged in the business of providing research and stock broking services. Please refer to www.Bernsteinresearch.in for more information.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.106,
+                0.693,
+                0.894,
+                0.752
+            ],
+            "angle": 0,
+            "content": "- SCB India is a Private limited company incorporated under the Companies Act, 2013, on April 12, 2017 bearing corporate identification number U65999MH2017FTC293762, and registered office at Level 3A, 4th Floor, First International Financial Centre, Plot Nos C-54 and C-55, G Block, Near CBI Office, Bandra Kurla Complex, Bandra (East), Mumbai 400098, Maharashtra, India (Phone No: +91-22-68421401).",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.105,
+                0.766,
+                0.893,
+                0.796
+            ],
+            "angle": 0,
+            "content": "- For details of Associates (i.e., affiliates/group companies) of SCB India, kindly email MUM-Bernstein-InCompliance@Bernsteinsg.com.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.106,
+                0.809,
+                0.595,
+                0.823
+            ],
+            "angle": 0,
+            "content": "• SCB India does not have any disciplinary history as on the date of this report.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.105,
+                0.836,
+                0.893,
+                0.865
+            ],
+            "angle": 0,
+            "content": "- Except as noted above, SCB India and/or its Associates (i.e., affiliates/group companies), the Research Analysts authoring this report, and their relatives",
+            "merge_prev": false
+        },
+        {
+            "type": "list",
+            "bbox": [
+                0.105,
+                0.693,
+                0.894,
+                0.865
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.124,
+                0.879,
+                0.493,
+                0.892
+            ],
+            "angle": 0,
+            "content": "• do not have any financial interest in the subject company",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.124,
+                0.907,
+                0.763,
+                0.921
+            ],
+            "angle": 0,
+            "content": "• do not have actual/beneficial ownership of one percent or more in securities of the subject company;",
+            "merge_prev": false
+        },
+        {
+            "type": "list",
+            "bbox": [
+                0.124,
+                0.879,
+                0.763,
+                0.921
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.106,
+                0.941,
+                0.268,
+                0.95
+            ],
+            "angle": 0,
+            "content": "US COMMUNICATIONS INFRASTRUCTURE"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.681,
+                0.941,
+                0.862,
+                0.951
+            ],
+            "angle": 0,
+            "content": "Bernstein | SG GROUP"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.878,
+                0.942,
+                0.892,
+                0.951
+            ],
+            "angle": 0,
+            "content": "22"
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.106,
+                0.04,
+                0.454,
+                0.052
+            ],
+            "angle": 0,
+            "content": "Madison Rezaei +1 917 344 8622 madison.rezaei@Bernsteinsg.com"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.825,
+                0.04,
+                0.892,
+                0.051
+            ],
+            "angle": 0,
+            "content": "15 May 2026"
+        },
+        {
+            "type": "list",
+            "bbox": [
+                0.123,
+                0.085,
+                0.892,
+                0.309
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.123,
+                0.085,
+                0.646,
+                0.098
+            ],
+            "angle": 0,
+            "content": "• is not engaged in any investment banking activities for Indian companies, as such;",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.123,
+                0.112,
+                0.78,
+                0.126
+            ],
+            "angle": 0,
+            "content": "• have not managed or co-managed a public offering in the past twelve months for any Indian companies;",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.123,
+                0.14,
+                0.894,
+                0.169
+            ],
+            "angle": 0,
+            "content": "- have not received any compensation for investment banking services or merchant banking services from the subject company in the past 12 months;",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.123,
+                0.183,
+                0.813,
+                0.197
+            ],
+            "angle": 0,
+            "content": "• have not received compensation for brokerage services from the subject company in the past twelve months;",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.123,
+                0.21,
+                0.892,
+                0.239
+            ],
+            "angle": 0,
+            "content": "- have not received any compensation or other benefits from the subject company or third party related to the specific recommendations or views in this report; and",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.123,
+                0.253,
+                0.892,
+                0.281
+            ],
+            "angle": 0,
+            "content": "- do not currently, but may in the future, act as a market maker in the financial instruments of the companies covered in the report.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.124,
+                0.295,
+                0.673,
+                0.309
+            ],
+            "angle": 0,
+            "content": "- do not have any conflict of interest in the subject company as of the date of this report.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.105,
+                0.323,
+                0.892,
+                0.381
+            ],
+            "angle": 0,
+            "content": "- Except as noted above, the subject company has not been a client of SCB India during twelve months preceding the date of distribution of this research report. Neither SCB India nor its Associates (i.e., affiliates/group companies) have received compensation for products or services other than investment banking, merchant banking or brokerage services from the subject company in the past twelve months.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.105,
+                0.396,
+                0.892,
+                0.425
+            ],
+            "angle": 0,
+            "content": "- The principal research analyst(s) who prepared this report, members of the analysts' team, and members of their households are not an officer, director, employee or advisory board member of the companies covered in the report.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.105,
+                0.438,
+                0.892,
+                0.467
+            ],
+            "angle": 0,
+            "content": "- Our Compliance officer / Grievance officer is Ms. Rupal Talati, who can be reached at +91-22-68421451, or MUM-Bernstein-InCompliance@Bernsteinsg.com / Scbin-investorgrievance@Bernsteinsg.com",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.105,
+                0.481,
+                0.892,
+                0.51
+            ],
+            "angle": 0,
+            "content": "- The Research investor charter and Terms & Conditions of SCB India are available on its website and may be accessed at Bernstein (India) Private Limited (https://Bernsteinresearch.in/) for your reference.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.105,
+                0.523,
+                0.892,
+                0.567
+            ],
+            "angle": 0,
+            "content": "- Disclaimer: Registration granted by SEBI, and certification from NISM, is in no way a guarantee of performance of the intermediary or provide any assurance of returns to investors. Investments in securities market are subject to market risks. Read all the related documents carefully before investing.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.104,
+                0.58,
+                0.892,
+                0.649
+            ],
+            "angle": 0,
+            "content": "To our readers in Switzerland: This document is provided in Switzerland by or through Bernstein Autonomous LLP, and is provided only to qualified investors as defined in article 10 of the Swiss Collective Investment Scheme Act (“CISA”) and related provisions of the Collective Investment Scheme Ordinance and in strict compliance with applicable Swiss law and regulations. The products mentioned in this document may not be suitable for all types of investors. This document is based on the Directives on the Independence of Financial Research issued by the Swiss Bankers Association (SBA) in January 2008.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.104,
+                0.661,
+                0.892,
+                0.743
+            ],
+            "angle": 0,
+            "content": "To our readers in the Middle East: Bernstein Autonomous LLP, DIFC branch has its principal office at Gate Village 06, DIFC, Dubai, UAE. Bernstein Autonomous LLP, DIFC branch is regulated by the Dubai Financial Services Authority (DFSA) with the registration number CL10040 and is provisioned for Arranging Deals in Investments and Advising on Financial Products. All communications and services are directed at Professional Clients and Market Counterparties only (as defined in the DFSA rulebook). Persons other than Professional Clients and Market Counterparties, such as Retail Clients, are not the intended recipients of our communications or services.",
+            "merge_prev": false
+        },
+        {
+            "type": "title",
+            "bbox": [
+                0.105,
+                0.756,
+                0.155,
+                0.768
+            ],
+            "angle": 0,
+            "content": "LEGAL"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.104,
+                0.782,
+                0.892,
+                0.823
+            ],
+            "angle": 0,
+            "content": "All research publications are disseminated to our clients through posting on the firm's password protected websites, Bernsteinresearch.com and autonomous.com. Certain, but not all, research publications are also made available to clients through third-party vendors or redistributed to clients through alternate electronic means as a convenience.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.104,
+                0.835,
+                0.892,
+                0.889
+            ],
+            "angle": 0,
+            "content": "This publication has been published and distributed in accordance with the Firm's policy for management of conflicts of interest in investment research, a copy of which is available from Bernstein Institutional Services LLC, Director of Compliance, 245 Park Avenue, New York, NY 10167. Additional disclosures and information regarding Bernstein's business are available on our website www.Bernsteinresearch.com.",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.106,
+                0.941,
+                0.268,
+                0.95
+            ],
+            "angle": 0,
+            "content": "US COMMUNICATIONS INFRASTRUCTURE"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.681,
+                0.941,
+                0.862,
+                0.951
+            ],
+            "angle": 0,
+            "content": "Bernstein | SG GROUP"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.878,
+                0.942,
+                0.892,
+                0.952
+            ],
+            "angle": 0,
+            "content": "23"
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.106,
+                0.04,
+                0.454,
+                0.051
+            ],
+            "angle": 0,
+            "content": "Madison Rezaei +1 917 344 8622 madison.rezaei@Bernsteinsg.com"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.825,
+                0.04,
+                0.892,
+                0.051
+            ],
+            "angle": 0,
+            "content": "15 May 2026"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.104,
+                0.071,
+                0.893,
+                0.262
+            ],
+            "angle": 0,
+            "content": "The securities described herein may not be eligible for sale in all jurisdictions or to certain categories of investors where that permission profile is not consistent with the licenses held by the entities noted herein. This document is for distribution only as may be permitted by law. This publication is not directed to, or intended for distribution to or use by, any person or entity who is a Citizen or resident of, or located in any locality, state, country or other jurisdiction where such distribution, publication, availability or use would be contrary to law or regulation or which would subject any of the entities referenced herein or any of their sUBSidiaries or affiliates to any registration or licensing requirement within such jurisdiction. This publication is based upon public sources we believe to be reliable, but no representation is made by us that the publication is accurate or complete. We do not undertake to advise you of any change in the reported information or in the opinions herein. This publication was prepared and issued by entity referred to herein for distribution to eligible counterparties or professional clients. This publication is not an offer to buy or sell any security, and it does not constitute investment, legal or tax advice. The investments referred to herein may not be suitable for you. Investors must make their own investment decisions in consultation with their professional advisors in light of their specific circumstances. The value of investments may fluctuate, and investments that are denominated in foreign currencies may fluctuate in value as a result of exposure to exchange rate movements. Information about past performance of an investment is not necessarily a guide to, indicator of, or assurance of, future performance.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.104,
+                0.274,
+                0.893,
+                0.398
+            ],
+            "angle": 0,
+            "content": "This report is directed to and intended only for our clients who are “eligible counterparties”, “professional clients”, “institutional investors” and/or “professional investors” as defined by the aforementioned regulators, and must not be redistributed to retail clients as defined by the aforementioned regulators. Retail clients who receive this report should note that the services of the entities noted herein are not available to them and should not rely on the material herein to make an investment decision. The result of such act will not hold the entities noted herein liable for any loss thus incurred as the entities noted herein are not registered/authorised/licensed to deal with retail clients and will not enter into any contractual agreement/arrangement with retail clients. This report is provided subject to the terms and conditions of any agreement that the clients may have entered into with the entities noted herein. All research reports are disseminated on a simultaneous basis to eligible clients through electronic publication to our client portal.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.104,
+                0.41,
+                0.892,
+                0.52
+            ],
+            "angle": 0,
+            "content": "The information in this report was prepared by Bernstein solely for the internal business use of our clients. Clients may store, display, analyze, reformat and print the information in this report for this limited use only. Clients may not copy, alter, create derivative works, resell, reverse engineer, commercially exploit, share or distribute any part of the information contained herein for any purpose without Bernstein's express written consent. These restrictions include extracting data or using the content to develop indices or other products. Further, you may not use this report, or any portion of this report, to train or finetune any third-party machine learning or artificial intelligence system, or as a prompt or input into any such system. You also may not, without Bernstein's express written consent, do any of the foregoing in connection with your own internal machine learning or artificial intelligence system.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.104,
+                0.531,
+                0.892,
+                0.56
+            ],
+            "angle": 0,
+            "content": "Bernstein may use artificial intelligence tools in the preparation of its materials. Any such materials are reviewed by Bernstein's research analysts prior to publication.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.104,
+                0.571,
+                0.892,
+                0.653
+            ],
+            "angle": 0,
+            "content": "This report has been prepared for information purposes only and is based on current public information that we consider reliable, but the entities noted herein do not warrant or represent (express or implied) as to the sources of information or data contained herein are accurate, complete, not misleading or as to its fitness for the purpose intended even though the entities noted herein rely on reputable or trustworthy data providers, it should not be relied upon as such. Opinions expressed are the author(s)' current opinions as of the date appearing on the material only and we do not undertake to advise you of any change in the reported information or in the opinions herein.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.104,
+                0.666,
+                0.892,
+                0.789
+            ],
+            "angle": 0,
+            "content": "This publication was prepared and issued by the entity referred to herein for distribution to eligible counterparties or professional clients. The information in this report is intended for general circulation and does not constitute an offer to buy or sell any security, investment, legal or tax advice nor a personal recommendation, as defined by any of the aforementioned regulators. It does not take into account the particular investment objectives, financial situations, or needs of individual investors. The report has not been reviewed by any of the aforementioned regulators and does not represent any official recommendation from the aforementioned regulators. The investments referred to herein may not be suitable for you. Investors must make their own investment decisions in consultation with advice sought from a financial adviser regarding the suitability of the investment product, taking into account the specific investment objectives, financial situation or particular needs of any recipient of the recommendation, before the recipient makes a commitment to purchase the investment product.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.104,
+                0.801,
+                0.893,
+                0.925
+            ],
+            "angle": 0,
+            "content": "The analysis contained herein is based on numerous assumptions. Different assumptions could result in materially different results. The information in this report does not constitute, or form part of, any offer to sell or issue, or any offer to purchase or sUBScribe for shares, or to induce engage in any other investment activity. The value of any securities or financial instruments mentioned in this report may fluctuate subject to market conditions. Information about past performance of an investment is not necessarily a guide to, indicative of, or assurance of future performance. Estimates of future performance mentioned by the research analyst in this report are based on assumptions that may not be realized due to unforeseen factors like market volatility/fluctuation. In relation to securities or financial instruments denominated in a foreign currency other than the clients' home currency, movements in exchange rates will have an effect on the value, either favorable or unfavorable. Before acting on any recommendations in this report, recipients should consider the appropriateness of investing in the subject securities or financial",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.106,
+                0.941,
+                0.268,
+                0.95
+            ],
+            "angle": 0,
+            "content": "US COMMUNICATIONS INFRASTRUCTURE"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.681,
+                0.941,
+                0.862,
+                0.951
+            ],
+            "angle": 0,
+            "content": "Bernstein | SG GROUP"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.877,
+                0.943,
+                0.892,
+                0.952
+            ],
+            "angle": 0,
+            "content": "24"
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.106,
+                0.04,
+                0.454,
+                0.052
+            ],
+            "angle": 0,
+            "content": "Madison Rezaei +1 917 344 8622 madison.rezaei@Bernsteinsg.com"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.825,
+                0.04,
+                0.892,
+                0.051
+            ],
+            "angle": 0,
+            "content": "15 May 2026"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.105,
+                0.071,
+                0.7,
+                0.085
+            ],
+            "angle": 0,
+            "content": "instruments mentioned in this report and, if necessary, seek for independent professional advice.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.104,
+                0.098,
+                0.893,
+                0.166
+            ],
+            "angle": 0,
+            "content": "The securities described herein may not be eligible for sale in all jurisdictions or to certain categories of investors where that permission profile is not consistent with the licenses held by the entities noted herein. This document is for distribution only as may be permitted by law. It is not directed to, or intended for distribution to or use by, any person or entity who is a Citizen or resident of or located in any locality, state, country or other jurisdiction where such distribution, publication, availability or use would be contrary to law or regulation or would subject the entities noted herein to any regulation or licensing requirement within such jurisdiction.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.104,
+                0.178,
+                0.894,
+                0.248
+            ],
+            "angle": 0,
+            "content": "Source: Bloomberg Index Services Limited. BLOOMBERG® is a trademark and service mark of Bloomberg Finance L.P. and its affiliates (collectively “Bloomberg”). Bloomberg or Bloomberg’s licensors own all proprietary rights in the Bloomberg Indices. Neither Bloomberg nor Bloomberg’s licensors approves or endorses this material, or guarantees the accuracy or completeness of any information herein, or makes any warranty, express or implied, as to the results to be obtained therefrom and, to the maximum extent allowed by law, neither shall have any liability or responsibility for injury or damages arising in connection therewith.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.104,
+                0.259,
+                0.895,
+                0.368
+            ],
+            "angle": 0,
+            "content": "No part of this material may be reproduced, distributed or transmitted or otherwise made available without prior consent of the entities noted herein. Copyright Bernstein Institutional Services LLC Bernstein Autonomous LLP, BSG France S.A., Bernstein (Hong Kong) Limited 盛博香港有限公司, Bernstein (Canada) Limited, Bernstein (India) Private Limited (SEBI registration no. INH000006378), Bernstein (Singapore) Private Limited and Bernstein Japan KK (サンフォード・C・バーンスタイン株式会社). All rights reserved. The trademarks and service marks contained herein are the property of their respective owners. Any unauthorized use or disclosure is strictly prohibited. The entities noted herein may pursue legal action if the unauthorized use results in any defamation and/or reputational risk to the entities noted herein and research published under the Bernstein and Autonomous brands.",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.107,
+                0.941,
+                0.269,
+                0.95
+            ],
+            "angle": 0,
+            "content": "US COMMUNICATIONS INFRASTRUCTURE"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.681,
+                0.941,
+                0.862,
+                0.951
+            ],
+            "angle": 0,
+            "content": "Bernstein | SG GROUP"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.878,
+                0.942,
+                0.892,
+                0.952
+            ],
+            "angle": 0,
+            "content": "25"
+        }
+    ]
+]
