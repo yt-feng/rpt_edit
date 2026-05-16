@@ -332,11 +332,12 @@ Fig. 8: Relative performance vs bank sector (regional banks)
 | 25/9   | ~20%       | ~25%        |
 | 25/11  | ~30%       | ~35%        |
 | 26/1   | ~50%       | ~60%        |
-| 26/3   | ~80%       | ~75%
+| 26/3   | ~80%       | ~75%        |
+| 26/5   | ~65%  
 
 [中间内容因长度限制已省略]
 
- index. The notional principal of inflation-indexed JGBs changes in line with the rate of change in nationwide CPI inflation from the time of its issuance. The amount of the coupon payment is calculated by multiplying the coupon rate by the notional principal at the time of payment. The maturity value is the amount of the notional principal when the issue becomes due. For JI17 and sUBSequent issues, the maturity value shall not undercut the face amount. Purchases of investment trusts (and sales of some investment trusts) are subject to a purchase or sales fee of up to 5.5% (tax included) of the transaction amount. Also, a direct cost that may be incurred when selling investment trusts is a fee of up to 2.0% of the unit price at the time of redemption. Indirect costs that may be incurred during the course of holding investment trusts include, for domestic investment trusts, an asset management fee (trust fee) of up to 5.5% (tax included/annualized basis) of the net assets in trust, as well as fees based on investment
+ide consumer price index. The notional principal of inflation-indexed JGBs changes in line with the rate of change in nationwide CPI inflation from the time of its issuance. The amount of the coupon payment is calculated by multiplying the coupon rate by the notional principal at the time of payment. The maturity value is the amount of the notional principal when the issue becomes due. For JI17 and sUBSequent issues, the maturity value shall not undercut the face amount. Purchases of investment trusts (and sales of some investment trusts) are subject to a purchase or sales fee of up to 5.5% (tax included) of the transaction amount. Also, a direct cost that may be incurred when selling investment trusts is a fee of up to 2.0% of the unit price at the time of redemption. Indirect costs that may be incurred during the course of holding investment trusts include, for domestic investment trusts, an asset management fee (trust fee) of up to 5.5% (tax included/annualized basis) of the net assets in trust, as well as fees based on investment
 
 performance. Other indirect costs may also be incurred. For foreign investment trusts, indirect fees may be incurred during the course of holding such as investment company compensation.
 

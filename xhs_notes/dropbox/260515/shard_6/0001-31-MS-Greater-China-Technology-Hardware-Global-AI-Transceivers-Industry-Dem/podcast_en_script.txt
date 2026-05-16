@@ -1,18 +1,25 @@
-EN_A: So we have a new report on AI transceivers that says demand might be even stronger than expected. What happened?
-EN_B: The key signal came from Lumentum, the industry leader. Their CEO said in April that demand from hyperscalers is growing so fast they could be sold out through 2028 within two quarters.
-EN_A: Sold out through 2028? That sounds extreme. What does that actually mean?
-EN_B: It means supply is far behind demand. Lumentum expects about 85% CAGR in optical lane demand through 2030.
-EN_A: So the report has specific numbers to back this up?
-EN_B: Yes. They significantly raised their shipment forecasts for 2026 to 2028. For 2026, from 53 million units to 73 million. For 2027, they doubled it from 71 million to 141 million.
-EN_A: Doubled? That is a huge jump. What is driving this?
-EN_B: Mostly the 1.6T transceivers. The forecast for 2027 went from 24 million to 79 million units, an increase of 233 percent.
-EN_A: Why is 1.6T growing so fast?
-EN_B: Because AI data center buildouts are accelerating. The top 11 cloud players are expected to spend about 735 to 795 billion dollars on capex in 2026, up about 60 percent year over year.
-EN_A: So this benefits the whole supply chain?
-EN_B: Yes, but there is a key risk: component shortages, especially EML lasers. Supply is very tight.
-EN_A: Are there any alternatives?
-EN_B: Silicon photonics is gaining ground fast. Its market share went from 10 percent in 2018 to 33 percent in 2024, and it is expected to become the dominant technology in 2026.
-EN_A: What questions does the report leave open?
-EN_B: Two big ones. First, how fast will CPO technology really scale? The big impact might not come until after 2028. Second, when will the component shortage actually ease?
-EN_A: So for the full picture, we need to read the whole report?
-EN_B: Exactly. The full report has much more detailed data, company analysis, and risk factors. If you want to dig deeper, you can join our community to get access.
+EN_A: So there is this new report from a global investment bank that significantly raised its AI transceiver shipment forecasts. Does that mean the entire industry narrative has changed?
+EN_B: Exactly. The core message is that demand for AI transceivers could be even stronger than people think. And it is not just a headline. They actually revised up shipment numbers for 2026, 2027, and 2028 by a lot.
+EN_A: How big were those revisions?
+EN_B: Really big. For 2026, they went from 53 million units to 73 million. For 2027, from 71 million to 141 million. And for 2028, from 80 million to 150 million. The 2027 revision is almost a double.
+EN_A: Double? What is driving that?
+EN_B: The main trigger was a comment from Lumentum's CEO in April. He said demand from US hyperscalers is accelerating so fast that the company could be sold out through 2028 within just two quarters.
+EN_A: Sold out through 2028. That is a strong statement. So what does that mean?
+EN_B: It means the supply chain is much tighter than the market expected. The report also mentions that Lumentum expects around 85 percent CAGR in its laser demand for optical lanes through 2030.
+EN_A: What about other companies? Are they seeing the same thing?
+EN_B: Yes, the whole industry is hot. Coherent showed a roadmap with 800G ramping, 1.6T accelerating, and 3.2T in development. AOI got a 200 million dollar order for 1.6T transceivers. Fabrinet even said that without component shortages, their datacom revenue would have been a new record.
+EN_A: So the bottleneck is supply, not demand?
+EN_B: Exactly. Component shortages are the biggest risk right now, especially lasers and memory chips. And that leads to another important trend.
+EN_A: Which one?
+EN_B: Silicon photonics. Its share of the optical transceiver market went from 10 percent in 2018 to 33 percent in 2024. The report expects it to become the dominant technology by 2026.
+EN_A: So what does that mean for the industry?
+EN_B: It means two things. First, silicon photonics performance is improving. Second, and more importantly, the shortage of traditional EML lasers is pushing customers to adopt alternative solutions. So this is not just a technology choice. It is being forced by supply chain constraints.
+EN_A: The report also mentions co-packaged optics, or CPO. What is the latest on that?
+EN_B: CPO development is accelerating, but the report says it is less surprising now. They kept their estimates unchanged. CPO switch volumes could range from 50,000 to 250,000 units by 2028. And while Corning got a big investment from Nvidia, the major impact starts after 2028.
+EN_A: So for the next few years, the growth is still coming from pluggable transceivers?
+EN_B: Yes, especially 1.6T. The report raised its 1.6T shipment forecast for 2027 and 2028 by over 200 percent. That is the core driver of the whole revision. But there is one question the report does not fully answer.
+EN_A: What is that?
+EN_B: Whether silicon photonics and CPO will compete or complement each other. And whether pluggable transceivers will be replaced once CPO really takes off. The report mentions different views but does not give a clear conclusion. You would need to read the full report for that deeper analysis.
+EN_A: One last question. What is the key takeaway for investors?
+EN_B: Simply put, the AI transceiver cycle is stronger and more durable than the market expects. But the risk is real. Can component supply scale up fast enough? If you want specific stock picks and valuation details, I suggest reading the full report.
+EN_A: Great. That is all for today. If you want the full report, join our community to get access.
