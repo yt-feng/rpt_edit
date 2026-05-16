@@ -405,11 +405,14 @@ Global Visible Total Oil Inventories, Change Since Feb 27
 <summary>line</summary>
 
 | Date       | Floating Storage from Persian Gulf (mb) | Floating Storage from Rest of World (mb) | Oil in Transit from Iran and Russia (mb) | Oil in Transit from Rest of World (mb) |
-| ---------- | ---------------------------------------- | ----------------------------------------- | --------------------------------------- | -------------------------------
+| ---------- | ---------------------------------------- | ----------------------------------------- | --------------------------------------- | -------------------------------------- |
+| Feb 15     | ~0                                       | ~0                                        | ~0                  
 
 [中间内容因长度限制已省略]
 
-e have long or short positions in, act as principal in, and buy or sell, the securities or derivatives, if any, referred to in this research, unless otherwise prohibited by regulation or GS policy.
+s expressed in this research.
+
+We and our affiliates, officers, directors, and employees will from time to time have long or short positions in, act as principal in, and buy or sell, the securities or derivatives, if any, referred to in this research, unless otherwise prohibited by regulation or GS policy.
 
 The views attributed to third party presenters at GS arranged conferences, including individuals from other parts of GS, do not necessarily reflect those of Global Investment Research and are not an official view of GS.
 
