@@ -56,7 +56,7 @@ on:
         required: true
         default: "5"
       commit_results:
-        description: "Commit each completed shard and final ZIP to the repo"
+        description: "Commit each completed shard and final split ZIPs to the repo"
         required: true
         type: boolean
         default: true
@@ -115,7 +115,7 @@ jobs:
           echo "::notice::Daily schedule is 05:00 Asia/Shanghai. Audio/video are disabled."
           echo "::notice::DeepSeek filters macro/trend reports first; stock/company reports are skipped."
           echo "::notice::Default plan processes ALL macro candidates, sharded as 40 x 5 = up to 200 macro reports."
-          echo "::notice::At the end, a publish-ready ZIP will be created from generated report folders, excluding MinerU raw files."
+          echo "::notice::At the end, publish-ready split ZIPs will be created from generated report folders, excluding MinerU raw files."
 
   select-macro-reports:
     needs: resolve-inputs
@@ -326,17 +326,27 @@ jobs:
       - name: Pull latest shard commits
         run: |
           git pull --rebase origin main || git pull origin main
-      - name: Build publish-ready ZIP
+      - name: Build split publish-ready ZIPs
         id: package
         run: |
           DATE_DIR="xhs_notes/dropbox/${{ needs.select-macro-reports.outputs.latest_folder }}"
           echo "::notice::Packaging publish-ready outputs from $DATE_DIR, excluding MinerU raw/source files."
+          echo "::notice::Using split ZIPs with --max-zip-mb 90 so every committed ZIP stays below GitHub's 100 MB file limit."
           python scripts/package_publish_ready_outputs.py \
             --date-dir "$DATE_DIR" \
-            --output-root "publish_ready_zips" 2>&1 | tee "publish_ready_package_progress.log"
+            --output-root "publish_ready_zips" \
+            --max-zip-mb 90 2>&1 | tee "publish_ready_package_progress.log"
           echo "PACKAGE_DIR=publish_ready_zips/${{ needs.select-macro-reports.outputs.latest_folder }}" >> "$GITHUB_ENV"
-          find "publish_ready_zips/${{ needs.select-macro-reports.outputs.latest_folder }}" -maxdepth 1 -type f -print
-      - name: Upload publish-ready ZIP artifact
+          find "publish_ready_zips/${{ needs.select-macro-reports.outputs.latest_folder }}" -maxdepth 1 -type f -printf '%s bytes %p\n' | sort -n
+      - name: Verify ZIP parts are GitHub-safe
+        run: |
+          TOO_BIG=$(find "$PACKAGE_DIR" -name '*.zip' -type f -size +99M -print || true)
+          if [ -n "$TOO_BIG" ]; then
+            echo "Some ZIP parts still exceed GitHub's 100 MB file limit:"
+            echo "$TOO_BIG"
+            exit 1
+          fi
+      - name: Upload split publish-ready ZIP artifact
         uses: actions/upload-artifact@v4
         with:
           name: publish-ready-${{ needs.select-macro-reports.outputs.latest_folder }}-${{ github.run_id }}
@@ -344,7 +354,7 @@ jobs:
             ${{ env.PACKAGE_DIR }}
             publish_ready_package_progress.log
           if-no-files-found: error
-      - name: Commit publish-ready ZIP
+      - name: Commit split publish-ready ZIPs
         if: ${{ needs.resolve-inputs.outputs.commit_results == 'true' }}
         run: |
-          bash scripts/commit_output_dir.sh "$PACKAGE_DIR" "Package publish-ready outputs ${{ needs.select-macro-reports.outputs.latest_folder }}" 8
+          bash scripts/commit_output_dir.sh "$PACKAGE_DIR" "Package split publish-ready outputs ${{ needs.select-macro-reports.outputs.latest_folder }}" 8
