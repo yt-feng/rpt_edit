@@ -341,8 +341,8 @@ def trim_source_text(source_text: str, prompt_chars: int) -> str:
 
 def build_xhs_prompt(template_path: Path, source_text: str, args: argparse.Namespace) -> str:
     source_text = trim_source_text(source_text, args.prompt_chars)
-    disclaimer = "在最后加一行轻量免责声明：非投资建议，仅作学习交流。" if args.disclaimer else "不要写免责声明。"
-    tags = f"末尾追加 3-8 个话题标签，优先包含：{args.hashtags}" if args.hashtags else "末尾追加 3-8 个合适的话题标签。"
+    disclaimer = "不要写免责声明，不要出现‘投资’或‘非投资建议’。"
+    tags = "末尾只允许保留一个话题标签：#学习笔记。不要输出任何其他标签。"
     return template_path.read_text(encoding="utf-8").format(
         style_preset=args.style,
         target_length=args.length,
@@ -371,7 +371,7 @@ def call_deepseek(prompt: str, args: argparse.Namespace, label: str) -> str:
         "model": args.model,
         "temperature": 0.7,
         "messages": [
-            {"role": "system", "content": "你是严谨但有传播力的中文财经内容编辑，输出必须可直接发布。"},
+            {"role": "system", "content": "你是严谨但有传播力的中文内容编辑，输出必须可直接发布。"},
             {"role": "user", "content": prompt},
         ],
     }
@@ -389,6 +389,52 @@ def safe_generate_text(prompt: str, args: argparse.Namespace, label: str) -> str
     except Exception as exc:
         log(f"DeepSeek generation failed for {label}: {exc}")
         return f"DeepSeek 生成 {label} 失败：{exc}\n\n请复制对应 prompt 文件手动生成。\n"
+
+
+def clean_xhs_note(note: str) -> str:
+    """Post-process note.md so it is directly publishable on XHS."""
+    text = note.strip()
+    # Remove explicit framework labels / thinking-process headings.
+    banned_heading_patterns = [
+        r"^\s*#+\s*(一句话结论|我最想提醒的一点|配图建议|免责声明)\s*[:：]?.*$",
+        r"^\s*(一句话结论|我最想提醒的一点|配图建议|免责声明)\s*[:：].*$",
+    ]
+    lines = []
+    skip_after_image_suggestion = False
+    for raw in text.splitlines():
+        line = raw.rstrip()
+        stripped = line.strip()
+        if not stripped:
+            if not skip_after_image_suggestion:
+                lines.append(line)
+            continue
+        if re.match(r"^#+\s*配图建议\s*[:：]?$", stripped) or re.match(r"^配图建议\s*[:：]", stripped):
+            skip_after_image_suggestion = True
+            continue
+        if skip_after_image_suggestion:
+            # Once 配图建议 starts, drop everything after it. We will append #学习笔记 later.
+            continue
+        if any(re.match(pattern, stripped, flags=re.IGNORECASE) for pattern in banned_heading_patterns):
+            # Preserve the content after colon when a line is like “一句话结论：xxx”.
+            if "：" in stripped or ":" in stripped:
+                content = re.split(r"[:：]", stripped, 1)[-1].strip()
+                if content and content not in {"一句话结论", "我最想提醒的一点", "配图建议", "免责声明"}:
+                    lines.append(content)
+            continue
+        if re.search(r"非\s*投资\s*建议|仅\s*(?:做|作|供)?\s*学习交流|不构成.*投资", stripped):
+            continue
+        lines.append(line)
+    text = "\n".join(lines).strip()
+
+    # Remove hashtags line(s), then append only #学习笔记.
+    text = re.sub(r"(?:^|\n)\s*(?:#[^\n#\s]+\s*)+\s*$", "", text, flags=re.MULTILINE).strip()
+    text = re.sub(r"#(?:投资学习|财经|金融|股票|基金|理财|研报解读|小红书笔记|笔记分享|干货分享)\b", "", text)
+    # Remove remaining disallowed disclaimer phrases wherever they appear.
+    text = re.sub(r"非\s*投资\s*建议[，,。；;\s]*", "", text)
+    text = re.sub(r"仅\s*(?:做|作|供)?\s*学习交流[，,。；;\s]*", "", text)
+    text = re.sub(r"不构成[^\n。；;]*投资[^\n。；;]*[。；;]?", "", text)
+    text = re.sub(r"\n{3,}", "\n\n", text).strip()
+    return text + "\n\n#学习笔记\n"
 
 
 def embed_images_in_wechat_article(article: str, image_paths: list[str], max_images: int = 3) -> str:
@@ -497,6 +543,7 @@ def process_pdf(pdf_path: Path, result_row: dict[str, Any], output_root: Path, a
     xhs_prompt = build_xhs_prompt(Path(args.prompt_template), source_text, args)
     (item_dir / "prompt_for_xhs.md").write_text(xhs_prompt, encoding="utf-8")
     note = safe_generate_text(xhs_prompt, args, "Xiaohongshu note")
+    note = clean_xhs_note(note)
     (item_dir / "note.md").write_text(note, encoding="utf-8")
     title, subtitle = extract_cover_titles(note, fallback_title)
     status["cover_short_title"] = title
@@ -533,8 +580,8 @@ def build_arg_parser() -> argparse.ArgumentParser:
     parser.add_argument("--wechat-length", type=int, default=1200)
     parser.add_argument("--community-cta", default="加入社群，领取完整研报解读与原始图表。")
     parser.add_argument("--emoji", default="中")
-    parser.add_argument("--hashtags", default="#研报解读 #投资学习 #财经 #小红书笔记")
-    parser.add_argument("--disclaimer", action="store_true", default=True)
+    parser.add_argument("--hashtags", default="#学习笔记")
+    parser.add_argument("--disclaimer", action="store_true", default=False)
     parser.add_argument("--max-images", type=int, default=8)
     parser.add_argument("--prompt-chars", type=int, default=24000)
     parser.add_argument("--wechat-prompt-chars", type=int, default=26000)
