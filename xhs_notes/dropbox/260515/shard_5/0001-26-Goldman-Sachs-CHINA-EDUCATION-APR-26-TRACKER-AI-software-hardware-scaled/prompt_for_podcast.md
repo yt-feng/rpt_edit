@@ -382,11 +382,13 @@ TAL's monthly online GMV on major eCommerce platforms
 | 2023-08  |            |                  |        |
 | 2023-09  |            |                  |        |
 | 2023-10  |            |                  |        |
-| 202
+| 2023-11  |            |                  |        |
+| 2023-12  |            |                  |        |
+| 2024-01  |            |               
 
 [中间内容因长度限制已省略]
 
-rm impact on the market price of the equity securities discussed in this report, which impact may be directionally counter to the analyst's published price target expectations for such stocks. Any such trading strategies are distinct from and do not affect the analyst's fundamental equity rating for such stocks, which rating reflects a stock's return potential relative to its coverage universe as described herein.
+, or may discuss in this report, trading strategies that reference catalysts or events that may have a near-term impact on the market price of the equity securities discussed in this report, which impact may be directionally counter to the analyst's published price target expectations for such stocks. Any such trading strategies are distinct from and do not affect the analyst's fundamental equity rating for such stocks, which rating reflects a stock's return potential relative to its coverage universe as described herein.
 
 We and our affiliates, officers, directors, and employees will from time to time have long or short positions in, act as principal in, and buy or sell, the securities or derivatives, if any, referred to in this research, unless otherwise prohibited by regulation or GS policy.
 

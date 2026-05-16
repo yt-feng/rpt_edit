@@ -320,11 +320,11 @@ GDS Holdings: Our 12m target prices of US\$55/HK\$54 for GDS/9698.HK are based o
 
 VNET Group: Our 12m target price of US\$15.5 is based on a target 12m-fwd EV/EBITDA multiple of 12x applied to 2027E adj. EBITDA. Key risks: 1) inability to finance the growth objectives; 2) softer-than-expected execution on order wins; 3) geopolitical risks regarding AI; 4) further downturn of traditional businesses; 5) faster than or unexpected change in AI model training demand brought by latest development in technology.
 
-Kingsoft Cloud: Our 12m target price of US\$19.4 is based on a DCF (WACC 10.3%, TGR 3%). Key risks: 1) Supply chain disruptions and inability to secure high-end chips; 2) Heightened competitive pressure from
+Kingsoft Cloud: Our 12m target price of US\$19.4 is based on a DCF (WACC 10.3%, TGR 3%). Key risks: 1) Supply chain disruptions and inability to secure high-end chips; 2) Heightened competitive pressure from peers; 3) 
 
 [中间内容因长度限制已省略]
 
-ionally counter to the analyst's published price target expectations for such stocks. Any such trading strategies are distinct from and do not affect the analyst's fundamental equity rating for such stocks, which rating reflects a stock's return potential relative to its coverage universe as described herein.
+-term impact on the market price of the equity securities discussed in this report, which impact may be directionally counter to the analyst's published price target expectations for such stocks. Any such trading strategies are distinct from and do not affect the analyst's fundamental equity rating for such stocks, which rating reflects a stock's return potential relative to its coverage universe as described herein.
 
 We and our affiliates, officers, directors, and employees will from time to time have long or short positions in, act as principal in, and buy or sell, the securities or derivatives, if any, referred to in this research, unless otherwise prohibited by regulation or GS policy.
 

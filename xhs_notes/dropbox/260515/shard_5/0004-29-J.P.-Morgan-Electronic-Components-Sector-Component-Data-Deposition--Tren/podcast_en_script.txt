@@ -1,33 +1,28 @@
-EN_A: So there is this research report on electronic components and hard drives that everyone is talking about. Have you seen it?
-EN_B: I have. It is from a global investment bank, and it is based on hard drive shipment data for the first quarter of 2026. The report makes some really interesting calls.
-EN_A: What is the big question this report is trying to answer? Is the hard drive industry finally recovering?
-EN_B: More precisely, it is trying to answer how strong the structural growth really is, driven by AI and cloud computing, and which component suppliers will benefit the most.
-EN_A: Let us start with the headline numbers. How did hard drive shipments look in Q1?
-EN_B: Total shipments were 33 million units, up 15 percent year over year and flat quarter over quarter. But the real story is not the volume, it is the mix.
-EN_A: The mix? What do you mean?
-EN_B: Nearline hard drives, the ones used in data centers, grew 28 percent year over year. That is the real engine of growth.
-EN_A: Twenty-eight percent growth is very strong. What does that tell us?
-EN_B: It tells us that demand from cloud companies and data centers is still very healthy. Also, total shipped capacity grew 38 percent year over year, and the average drive capacity is now 14.5 terabytes.
-EN_A: So capacity is growing faster than units. That means the value per drive is going up.
-EN_B: Exactly. That is why total shipment value jumped 48 percent, and the average selling price rose 29 percent. This expands the profit pool across the supply chain.
-EN_A: For investors, which part of the chain looks most interesting?
-EN_B: The report points directly to hard drive heads, the read-write components. Shipments of heads grew 22 percent year over year. And the number of heads per drive is also increasing, from 11.5 last year to 12.2 now.
-EN_A: More heads per drive, that is because higher capacity drives need more heads to read and write data?
-EN_B: Correct. Especially for nearline drives, they use an average of 19.4 heads per unit. This trend is very positive for head suppliers.
-EN_A: The report mentions a company called TDK as a top pick. Why?
-EN_B: Because TDK is an independent head supplier. The report argues that captive manufacturers, those who make their own heads, are being cautious about expanding capacity and are shifting existing lines to next-generation HAMR technology. That creates an opening for TDK to gain market share.
-EN_A: So the captives are pulling back, and that gives room for an external supplier.
-EN_B: Right. And the report notes that TDK has already started shipping to two captive manufacturers in Q1. The volume is still small, but it is a significant signal.
-EN_A: What about other components, like spindle motors? Any interesting takeaways?
-EN_B: The spindle motor market is basically a duopoly. Nidec has 60 percent, and MinebeaMitsumi has 40 percent. Shipments grew 11 percent year over year but dipped slightly quarter over quarter.
-EN_A: So growth is there, but not as dramatic as for heads.
-EN_B: Correct. The report also includes a valuation table for the whole sector. TDK is trading at around 28 times forward earnings, which is in a reasonable range.
-EN_A: But does the report leave any questions unanswered?
-EN_B: One big one: The report highlights that the cost per gigabyte gap between nearline hard drives and NAND flash has widened to 12.7 times, the highest since 2020.
-EN_A: A wider cost gap, is that good or bad for hard drives?
-EN_B: In the short term, it is good because hard drives look more cost-competitive. But the question is, how long will this gap last? Will flash prices drop quickly? The report does not give a clear forecast on that.
-EN_A: That is definitely something to watch.
-EN_B: Another悬念: How much incremental volume will TDK actually get from those captive customers? Right now it is tiny, but if it scales up, it could change the competitive landscape completely.
-EN_A: So to get the full picture, you really need to read the complete report.
-EN_B: Absolutely. The report has much more detail on company valuations, earnings estimates, and risk factors. Our discussion today is just scratching the surface.
-EN_A: If our listeners want to dive deeper, they can join our community to access the full report. Thanks for the insights, and we will catch you next time.
+EN_A: So we just got our hands on a fresh research report about the electronic components sector, specifically hard disk drives. It covers the first quarter of 2026. Let's break it down.
+EN_B: Yeah, the report's main takeaway is that the HDD industry is going through a structural shift in value, not just a typical cyclical upturn.
+EN_A: That sounds important. So what's the big question this report is trying to answer?
+EN_B: It's trying to answer one core question: how sustainable is the demand for HDDs, especially those big nearline drives for data centers, and which parts of the supply chain are really going to benefit from this.
+EN_A: Let's start with the numbers. HDD shipments grew 15% year-over-year in Q1. Is that considered fast?
+EN_B: 15% is solid for volume. But the really interesting number is the shipment value, which jumped 48% year-over-year. That tells you the average selling price is going up fast.
+EN_A: Right, the report says the average price was 211.5 dollars, up 29% year-over-year. So it's both higher volume and higher prices.
+EN_B: Exactly. The main driver is nearline drives, the ones used in data centers. Their shipments grew 28% year-over-year, and the average capacity per drive is also increasing. Total shipped capacity grew 38%.
+EN_A: 38% capacity growth is huge. Does that change the cost picture for storage?
+EN_B: That's a key insight from the report. It looked at the cost per gigabyte difference between NAND flash and nearline HDDs. That gap widened to 12.7 times in Q1 2026, compared to just 5.2 times a year ago.
+EN_A: 12.7 times? So what does that mean in practice?
+EN_B: It means HDDs have a massive cost advantage for large-scale cold data storage. This explains why cloud providers are still buying tons of high-capacity HDDs instead of switching completely to SSDs.
+EN_A: So the demand story for HDDs is still very solid. Which part of the supply chain does the report like the most?
+EN_B: The report picks TDK as its top pick among HDD-related stocks in the electronic components sector. The logic is interesting.
+EN_A: Why TDK? They make HDD heads, right?
+EN_B: Yes, TDK is a major independent supplier of HDD heads. The report argues that captive manufacturers, the ones making their own heads, are being cautious about expanding production capacity. They're also shifting existing capacity to the new HAMR technology.
+EN_A: So TDK benefits from that?
+EN_B: You could say that. Because the captive makers have limited capacity, they need to buy more heads from outside suppliers. TDK is well positioned to gain market share. The data shows TDK's head shipments grew 10% year-over-year in Q1 2026.
+EN_A: What about TDK's competitors? Like the motor makers?
+EN_B: The motor market is pretty stable. The report shows Nidec has 60% share, and MinebeaMitsumi has 40%. But the head segment is where the competitive dynamics are more interesting.
+EN_A: Does the report mention any risks? Like, could the market suddenly turn?
+EN_B: Yes. It notes that while the cost gap is widening, there are still uncertainties around technology. For example, how fast HAMR technology ramps up, and how quickly SSD costs could come down. Those could change the game.
+EN_A: So the report doesn't have all the answers?
+EN_B: Not all of them. It leaves a couple of open questions. How fast will captive makers shift their capacity? How much incremental business will TDK get from new customers? These need to be watched.
+EN_A: Sounds like there's more in the full report. If we want to dive deeper, where can we find it?
+EN_B: You can follow our community and newsletter. We share full breakdowns of these research reports regularly. Join us to get the latest insights.
+EN_A: Great. Thanks for the insights. See you next time.
+EN_B: See you.

@@ -1,42 +1,12 @@
 Found 39 total PDFs; shard 5/40 has 5 PDFs, skips 0 already converted, will process 5 PDFs with batch_size=5.
 Running batch 1: 5 PDFs
 Found 5 PDFs.
-Uploading PDF to MinerU: /tmp/pdf_batch_001_zjos0jst/pdfs/0001-26-Goldman Sachs-CHINA EDUCATION APR-26 TRACKER-AI software hardware scaled up led by ByteDance TAL- TAM headwinds of offline tutoring and overseas study sustained-260514.pdf
-Uploading PDF to MinerU: /tmp/pdf_batch_001_zjos0jst/pdfs/0002-27-Goldman Sachs-China Data Centers- Scaling the AI Infrastructure-260515.pdf
-Uploading PDF to MinerU: /tmp/pdf_batch_001_zjos0jst/pdfs/0003-28-Goldman Sachs-US EQUITY VIEWS-The rise and reach of retail trading in US equities-260513.pdf
-Uploading PDF to MinerU: /tmp/pdf_batch_001_zjos0jst/pdfs/0004-29-J.P. Morgan-Electronic Components Sector-Component Data Deposition- Trends in HDD shipments and major HDD components in Jan-Mar 2026-260514.pdf
-Uploading PDF to MinerU: /tmp/pdf_batch_001_zjos0jst/pdfs/0005-30-J.P. Morgan-Global Power Equipment Turbine Trends Tracker- Highest 1Q Orders on Record- US Market Continues to Dominate-260514.pdf
-MinerU batch_id=85100ece-e6a0-47bc-adf3-bda9708f2c2b
-MinerU states: running, pending, pending, pending, pending
-MinerU states: running, running, running, running, running
-MinerU states: running, running, running, running, running
-MinerU states: running, done, running, running, running
-MinerU states: running, done, running, running, running
-MinerU states: running, done, running, done, running
-MinerU states: running, done, running, done, running
-MinerU states: running, done, done, done, running
-MinerU states: running, done, done, done, running
-MinerU states: done, done, done, done, running
-MinerU states: done, done, done, done, running
-MinerU states: done, done, done, done, running
-MinerU states: done, done, done, done, running
-MinerU states: done, done, done, done, running
-MinerU states: done, done, done, done, running
-MinerU states: done, done, done, done, running
-MinerU states: done, done, done, done, running
-MinerU states: done, done, done, done, running
-MinerU states: done, done, done, done, running
-MinerU states: done, done, done, done, running
-MinerU states: done, done, done, done, running
-MinerU states: done, done, done, done, running
-MinerU states: done, done, done, done, running
-MinerU states: done, done, done, done, running
-MinerU states: done, done, done, done, running
-MinerU states: done, done, done, done, running
-MinerU states: done, done, done, done, running
-MinerU states: done, done, done, done, running
-MinerU states: done, done, done, done, running
-MinerU states: done, done, done, done, running
+Uploading PDF to MinerU: /tmp/pdf_batch_001_u0aicf89/pdfs/0001-26-Nomura-Hong Kong rates- Maintain pay 10y position-260514.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_u0aicf89/pdfs/0002-27-Nomura-Japan banking sector monthly- May 2026-260514.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_u0aicf89/pdfs/0003-28-Nomura-USD CNY fix model-Projection- 6.7979-260515.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_u0aicf89/pdfs/0004-29-UBS-China Two-Wheeler Sector-Signs of recovery - time to revisit--260514.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_u0aicf89/pdfs/0005-30-UBS-European Luxury-Expert Call Feedback- From Hype to Heritage-260514.pdf
+MinerU batch_id=ccf5b9f9-be6e-4f9f-849a-50c0e524828e
 MinerU states: done, done, done, done, done
 Done. Results written to /home/runner/work/rpt_edit/rpt_edit/xhs_notes/dropbox/260515/shard_5
 All batches completed successfully.
