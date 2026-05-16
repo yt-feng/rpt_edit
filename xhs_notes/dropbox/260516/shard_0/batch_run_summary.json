@@ -1,0 +1,50 @@
+{
+  "input_dir": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs",
+  "total_pdf_count_before_shard": 11,
+  "pdf_count_before_skip": 5,
+  "pdf_count": 5,
+  "batch_size": 5,
+  "shard_index": 0,
+  "shard_count": 40,
+  "max_reports_per_shard": 5,
+  "max_total_reports": 0,
+  "skip_existing": true,
+  "skipped_existing_count": 0,
+  "skipped_existing": [],
+  "failures": 0,
+  "batches": [
+    {
+      "batch_index": 1,
+      "pdf_count": 5,
+      "files": [
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/01-Bernstein-Bernstein Energy & Power： The Nuclear Consensus...-260515.pdf",
+          "batch_file": "/tmp/pdf_batch_001_ek1ukzix/pdfs/0001-01-Bernstein-Bernstein Energy - Power- The Nuclear Consensus...-260515.pdf",
+          "stable_index": "1"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/02-DB-China Macro：Surge in imports should lead to further RMB strength-260514.pdf",
+          "batch_file": "/tmp/pdf_batch_001_ek1ukzix/pdfs/0002-02-DB-China Macro-Surge in imports should lead to further RMB strength-260514.pdf",
+          "stable_index": "2"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/04-MS-China Industrials - Asia Pacific：The Humanoid Signal ~ Going Global， Capturing Early Ground-260514.pdf",
+          "batch_file": "/tmp/pdf_batch_001_ek1ukzix/pdfs/0003-04-MS-China Industrials - Asia Pacific-The Humanoid Signal - Going Global- Capturing Early Ground-260514.pdf",
+          "stable_index": "3"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/05-MS-US Equity Strategy-260514.pdf",
+          "batch_file": "/tmp/pdf_batch_001_ek1ukzix/pdfs/0004-05-MS-US Equity Strategy-260514.pdf",
+          "stable_index": "4"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/06-NOM-Asia Chart Alert：China： Current account surplus increased slightly in Q1-260515.pdf",
+          "batch_file": "/tmp/pdf_batch_001_ek1ukzix/pdfs/0005-06-NOM-Asia Chart Alert-China- Current account surplus increased slightly in Q1-260515.pdf",
+          "stable_index": "5"
+        }
+      ],
+      "returncode": 0,
+      "status": "ok"
+    }
+  ]
+}

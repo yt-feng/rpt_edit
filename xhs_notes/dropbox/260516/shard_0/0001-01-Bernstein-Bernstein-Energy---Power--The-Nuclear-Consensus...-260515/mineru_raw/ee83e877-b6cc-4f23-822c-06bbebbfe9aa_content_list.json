@@ -1,0 +1,3238 @@
+[
+    {
+        "type": "text",
+        "text": "Bernstein Energy & Power: The Nuclear Consensus... ",
+        "text_level": 1,
+        "bbox": [
+            70,
+            100,
+            750,
+            126
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Nikhil Nigeria +91 226 842 1414 nikhil.nigania@Bernsteinsg.com ",
+        "bbox": [
+            66,
+            150,
+            429,
+            164
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Guillaume Delaby +33 1 42 13 62 29 guillaume.delaby@Bernsteinsg.com ",
+        "bbox": [
+            66,
+            168,
+            468,
+            181
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Deepa Venkateswaran, ACA +44 20 7676 6990 deepa.venkateswaran@Bernsteinsg.com ",
+        "bbox": [
+            66,
+            186,
+            560,
+            200
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Bob Brackett, Ph.D. +1 917 344 8422 bob.brackett@Bernsteinsg.com ",
+        "bbox": [
+            66,
+            205,
+            459,
+            218
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Neil Beveridge, Ph.D. +852 2123 2648 neil.beveridge@Bernsteinsg.com ",
+        "bbox": [
+            66,
+            223,
+            470,
+            237
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "By Nikhil Nigania and Uma Menon ",
+        "bbox": [
+            66,
+            277,
+            274,
+            292
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "THE LAST ENERGY CRISIS OF 1973 LED TO... ",
+        "text_level": 1,
+        "bbox": [
+            66,
+            321,
+            372,
+            335
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "In 1973 in France, Oil fired power plants accounted for 43% of EDF's (private) total power output, and hydro accounted for 32%. In response to the 1973 Oil crisis, The French prime minister, Pierre Messmer went all out on Nuclear. He stated in a speech in March, 1974: 'There is almost no petrol on our territory, we have less coal than England and Germany and much less gas than Holland ... our great chance is electrical energy of nuclear origin because we have had good experience with it since the end of World War II..' The country made a massive shift towards nuclear. EDF ordered 16 new PWRs in 1974 alone, doubling its reactor order book, and France went on to build roughly 56–58 reactors between the mid-1970s and late 1980s, as is visible in the chart below. ",
+        "bbox": [
+            65,
+            341,
+            483,
+            526
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Japan was also heavily dependent on Oil prior to the 1973 oil shock, with oil fired power plants accounting for $66\\%$ of electricity generation in 1974. While Japan's first commercial nuclear plant started in 1966, post the oil crisis it became a national strategic priority for the country - visible in the chart below. While Fukushima dealt a blow to nuclear in Japan, the plants are being revived again. ",
+        "bbox": [
+            65,
+            541,
+            480,
+            633
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "chart",
+        "img_path": "images/de4986d85487a9396c59fa991827398c45c774084d2af5deb7d66eec6ab6dcbd.jpg",
+        "content": "France: Historical electricity generation (TWh)\n| Year | Hydroelectricity (TWh) | Fossil fuels (TWh) | Nuclear (TWh) | Renewables (TWh) |\n|---|---|---|---|---|\n| 1980 | 60 | 150 | 100 | 0 |\n| 1982 | 55 | 130 | 110 | 0 |\n| 1984 | 50 | 120 | 120 | 0 |\n| 1986 | 45 | 110 | 130 | 0 |\n| 1988 | 40 | 100 | 140 | 0 |\n| 1990 | 35 | 90 | 150 | 0 |\n| 1992 | 30 | 80 | 160 | 0 |\n| 1994 | 25 | 70 | 170 | 0 |\n| 1996 | 20 | 60 | 180 | 0 |\n| 1998 | 15 | 50 | 190 | 0 |\n| 2000 | 10 | 40 | 200 | 0 |\n| 2002 | 5 | 30 | 210 | 0 |\n| 2004 | 0 | 20 | 220 | 0 |\n| 2006 | 5 | 15 | 230 | 5 |\n| 2008 | 10 | 10 | 240 | 10 |\n| 2010 | 15 | 5 | 250 | 15 |\n| 2012 | 20 | 5 | 260 | 20 |\n| 2014 | 25 | 5 | 270 | 25 |\n| 2016 | 30 | 5 | 280 | 30 |\n| 2018 | 35 | 5 | 290 | 35 |\n| 2020 | 40 | 5 | 300 | 40 |\n| 2022 | 45 | 5 | 310 | 45 |\n| 2024 | 50 | 5 | 320 | 50 |\nThe chart displays the total electricity generation in TWh for France over time, with each year's data broken down by source: hydroelectricity, fossil fuels, nuclear, and renewables. The values are labeled on the graph as 'TWh'. The legend is embedded in the chart but not explicitly labeled.",
+        "chart_caption": [
+            "EXHIBIT 1: France and Japan's pivot to nuclear power post 1973 energy crisis "
+        ],
+        "chart_footnote": [],
+        "sub_type": "area",
+        "bbox": [
+            68,
+            684,
+            267,
+            833
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "chart",
+        "img_path": "images/06fa7c6335478379679e683e3d12c2f4ca1ea95888b3facfe0cb549274acbb63.jpg",
+        "content": "Japan: Historical electricity generation (TWh)\n| Year | Hydroelectricity (TWh) | Fossil fuels (TWh) | Nuclear (TWh) | Renewables (TWh) |\n|---|---|---|---|---|\n| 1980 | 50 | 300 | 100 | 0 |\n| 1984 | 60 | 350 | 120 | 0 |\n| 1986 | 70 | 400 | 140 | 0 |\n| 1988 | 80 | 450 | 160 | 0 |\n| 1990 | 90 | 500 | 180 | 0 |\n| 1992 | 100 | 550 | 200 | 0 |\n| 1996 | 120 | 600 | 220 | 0 |\n| 2000 | 140 | 650 | 240 | 0 |\n| 2004 | 160 | 700 | 260 | 0 |\n| 2006 | 180 | 750 | 280 | 0 |\n| 2010 | 200 | 800 | 300 | 0 |\n| 2012 | 220 | 850 | 320 | 0 |\n| 2014 | 240 | 900 | 340 | 0 |\n| 2016 | 260 | 950 | 360 | 0 |\n| 2018 | 280 | 1000 | 380 | 0 |\n| 2022 | 300 | 1100 | 400 | 50 |\nNuclear power revival\nFukushima\nNuclear\nRenewables",
+        "chart_caption": [],
+        "chart_footnote": [
+            "Source: EIA, Bernstein analysis "
+        ],
+        "sub_type": "area",
+        "bbox": [
+            271,
+            686,
+            473,
+            833
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "THE NEW WAVE - 35 NEW COUNTRIES HAVE PLANS FOR NUCLEAR..NOW ACCELERATED BY THE WAR ",
+        "text_level": 1,
+        "bbox": [
+            509,
+            292,
+            910,
+            325
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "At present while the US accounts for the largest installed base for nuclear generation capacity, China has the largest under-construction base followed by India. Incrementally though we are seeing many new countries accelerate plans for a nuclear power plant. ",
+        "bbox": [
+            509,
+            330,
+            911,
+            406
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "chart",
+        "img_path": "images/70e6ef4722bb0663e0cd706f97c12f7cb9dd6d51c552e8ac9b69cacbd275e431.jpg",
+        "content": "World Nuclear Capacity (GW)\n| Country | Operating Capacity (GW) | Under Const. (GW) | Planned (GW) |\n| :--- | :--- | :--- | :--- |\n| China | 55 | 30 | 42 |\n| USA | 97 | 0 | 0 |\n| France | 62 | 1 | 0 |\n| Russia | 25 | 8 | 6 |\n| Japan | 31 | 4 | 0 |\n| S.Korea | 27 | 4 | 3 |\n| India | 8 | 10 | 6 |\n| Ukraine | 14 | 4 | 3 |\n| Canada | 13 | 0 | 0 |\n| Ukraine | 7 | 4 | 3 |\n| Sweden | 8 | 0 | 0 |\n| Spain | 7 | 0 | 0 |\n| UAE | 6 | 0 | 0 |\n| Rest of the world | 38 | 18 | 22 |",
+        "chart_caption": [
+            "EXHIBIT 2: China accounts for \\~50% of total under construction and planned nuclear plants "
+        ],
+        "chart_footnote": [],
+        "sub_type": "bar_stacked",
+        "bbox": [
+            521,
+            466,
+            913,
+            750
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Planned: Approvals, funding/commitment in place, expected to be in operation within the next 15 years ",
+        "bbox": [
+            509,
+            769,
+            919,
+            794
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Source: World Nuclear Association, Bernstein analysis ",
+        "bbox": [
+            509,
+            794,
+            772,
+            807
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "35 new countries are in the works or are planning to add nuclear power generation capacity. A key challenge for smaller countries in adding a nuclear plant is the size of a typical nuclear plant - as one single plant should not become a big part of the grid (can lead to grid failure in case of outage). The other is nuclear technology - where Russia has taken the lead and has some form an agreement/ understanding with 29 countries already. ",
+        "bbox": [
+            509,
+            820,
+            926,
+            913
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "header",
+        "text": "Bernstein\nSG GROUP ",
+        "bbox": [
+            66,
+            0,
+            292,
+            48
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "footer",
+        "text": "See the Disclosure Appendix of this report for required disclosures, analyst certifications and other important information. Alternatively, visit our Global Research Disclosure Website. ",
+        "bbox": [
+            66,
+            934,
+            699,
+            963
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "footer",
+        "text": "First Published: 15 May 2026 12:21 UTC Completion Date: 15 May 2026 12:21 UTC ",
+        "bbox": [
+            66,
+            964,
+            594,
+            979
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "footer",
+        "text": "www.Bernsteinresearch.com ",
+        "bbox": [
+            777,
+            934,
+            918,
+            945
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            66,
+            51,
+            321,
+            65
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "EXHIBIT 3: Most countries in the emerging markets are planning to add nuclear capacity ",
+        "text_level": 1,
+        "bbox": [
+            66,
+            80,
+            436,
+            110
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "list",
+        "sub_type": "text",
+        "list_items": [
+            "Power reactors under construction $^{1}$ : Bangladesh, Egypt, Turkey. ",
+            "Power reactors planned $^{2}$ : Kazakhstan, Poland, Uzbekistan, Vietnam. ",
+            "> Power reactors proposed $^{3}$ : Estonia, Indonesia, Saudi Arabia. ",
+            "> Provisional plans, commitment pending or deferred: Algeria, Azerbaijan, Croatia, El Salvador, Ethiopia, Ghana, Jordan, Kenya, Laos, Lithuania, Malaysia, Morocco, Myanmar, Nigeria, Norway, Philippines, Rwanda, Sri Lanka, Serbia, Singapore, Sudan, Thailand. "
+        ],
+        "bbox": [
+            78,
+            114,
+            485,
+            181
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "Source: World Nuclear Association, Bernstein analysis ",
+        "bbox": [
+            66,
+            203,
+            328,
+            215
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "EXHIBIT 4: Russia takes the lead on partnership for new nuclear capacity addition in 29 countries ",
+        "text_level": 1,
+        "bbox": [
+            66,
+            228,
+            446,
+            259
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "chart",
+        "img_path": "images/b6f5022f58029376caa2523cba931dabeb598514577af7940737d35aff156037.jpg",
+        "content": "| Country | Value |\n| :--- | :--- |\n| Russia | 29 |\n| China | 4 |\n| Others | 6 |",
+        "chart_caption": [
+            "# of new countries being supported by existing nuclear majors "
+        ],
+        "chart_footnote": [
+            "Source: World Nuclear Association, Bernstein analysis "
+        ],
+        "sub_type": "bar",
+        "bbox": [
+            76,
+            313,
+            470,
+            461
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "EXHIBIT 5: May'26: Indonesia and Russia announced partnership on developing nuclear power ",
+        "text_level": 1,
+        "bbox": [
+            66,
+            509,
+            423,
+            541
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "Indonesia and Russia Advance Nuclear Energy Partnership Talks with Localization Focus ",
+        "text_level": 1,
+        "bbox": [
+            86,
+            550,
+            472,
+            612
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "image",
+        "img_path": "images/d86002dc3127a293fbf061ee55172cac3bb404d75de3aa5ff2ffecd16d3b066b.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            91,
+            627,
+            303,
+            642
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "image",
+        "img_path": "images/3dedc93486f981dc8868054c6204d6a5199832fe7fb735141ae09f1c4e243f3f.jpg",
+        "image_caption": [],
+        "image_footnote": [
+            "Rosatom's head met President Prabowo Subianto to discuss a comprehensive nuclear partnership, including technology transfer, workforce training, and grid integration for the archipelago. ",
+            "May 14, 2026 — ENERGYNEWS "
+        ],
+        "content": "Formal handshake between two world leaders in a ceremonial setting with national flags in the background (no visible text or symbols)",
+        "sub_type": "natural_image",
+        "bbox": [
+            88,
+            650,
+            475,
+            796
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "Source: EnergyNews, Bernstein analysis ",
+        "bbox": [
+            66,
+            865,
+            264,
+            878
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "EXHIBIT 6: Mar'26: Vietnam and Russia announced partnership on construction of 2 Russian VVER-1200 reactors in Vietnam ",
+        "text_level": 1,
+        "bbox": [
+            509,
+            50,
+            875,
+            95
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "Vietnam, Russia sign agreement on new nuclear plant ",
+        "text_level": 1,
+        "bbox": [
+            516,
+            109,
+            913,
+            154
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "Monday, 23 March 2026 ",
+        "bbox": [
+            517,
+            156,
+            609,
+            167
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "An intergovernmental agreement has been signed on cooperation in the construction of the Ninh Thuan 1 Nuclear Power Plant in Vietnam, to feature two VVER-1200 reactors, with the new Leningrad units as the reference project. ",
+        "bbox": [
+            514,
+            202,
+            915,
+            256
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "image",
+        "img_path": "images/bdfeb7674225ce0b57d1458eafbe82cf6c15b88191495bb0da4ab770efd55a6d.jpg",
+        "image_caption": [],
+        "image_footnote": [
+            "Source: World Nuclear News, Bernstein analysis "
+        ],
+        "content": "Group of four men in formal attire standing at a table with national flags in the background (no visible text or symbols)",
+        "sub_type": "natural_image",
+        "bbox": [
+            519,
+            269,
+            926,
+            452
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "In March'26, South Korea, a major LNG importer, announced plans to speed up the maintenance of some nuclear reactors that were shut due to some safety concerns in order to ensure energy security. ",
+        "bbox": [
+            508,
+            494,
+            913,
+            554
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "EXHIBIT 7: Mar'26: South Korea announced plans to speed up the restart of nuclear reactors ",
+        "text_level": 1,
+        "bbox": [
+            509,
+            567,
+            924,
+            597
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "South Korea to Speed Up Nuclear Restart Amid Middle East Crisis ",
+        "text_level": 1,
+        "bbox": [
+            521,
+            606,
+            921,
+            647
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "By Shoko Oda and Seyoon Kim ",
+        "bbox": [
+            521,
+            664,
+            676,
+            676
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "March 11, 2026 at 11:39 AM GMT+5:30 ",
+        "bbox": [
+            522,
+            677,
+            710,
+            687
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "Save 文A Translate",
+        "bbox": [
+            532,
+            700,
+            637,
+            710
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "Takeaways by Bloomberg AI ",
+        "bbox": [
+            531,
+            727,
+            661,
+            739
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "South Korea will speed up the restart of nuclear reactors undergoing maintenance to secure energy amid the ongoing war in the Middle East. ",
+        "bbox": [
+            521,
+            754,
+            875,
+            793
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "Source: Bloomberg, Bernstein analysis ",
+        "bbox": [
+            509,
+            810,
+            700,
+            823
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "header",
+        "text": "Nikhil Nigeria +91 226 842 1414 nikhil.nigania@Bernsteinsg.com ",
+        "bbox": [
+            66,
+            19,
+            401,
+            32
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "header",
+        "text": "15 May 2026 ",
+        "bbox": [
+            862,
+            19,
+            929,
+            30
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "footer",
+        "text": "INDIA INDUSTRIALS AND INFRASTRUCTURE ",
+        "bbox": [
+            68,
+            939,
+            241,
+            949
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "footer",
+        "text": "Bernstein | SG GROUP ",
+        "bbox": [
+            715,
+            938,
+            895,
+            948
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "page_number",
+        "text": "2 ",
+        "bbox": [
+            921,
+            940,
+            929,
+            950
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "CHINA IS A BLUE-PRINT FOR OTHER COUNTRIES ON NUCLEAR EXPANSION... ",
+        "text_level": 1,
+        "bbox": [
+            66,
+            65,
+            434,
+            98
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "In the early 1990s, China imported nuclear reactors from France, Canada and Russia along with agreements for technology transfer. Based on the PWR reactor designs it imported and deployed, China turned to make its own indigenous reactors - eg. CPR-1000 and ACPR-1000 indigenous reactors were designed using M310 reactor imported from France. The country has \\~60GW of nuclear capacity with a target to reach 110GW by 2030 as per the latest $15^{\\text{th}}$ Five-Year Plan. Indigenous reactors have accounted for majority of their additions post 2010, refer image below. ",
+        "bbox": [
+            66,
+            103,
+            478,
+            243
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "chart",
+        "img_path": "images/4531fee5b15fe52afb70a56f8550d66e7fb529940bc555da60ff0bed099ab787.jpg",
+        "content": "| Year | France | Russia | USA | Canada | Indigenous |\n|------|--------|--------|-----|--------|------------|\n| 1991 | 0      | 0      | 0   | 0      | 0          |\n| 1993 | 0      | 0      | 0   | 0      | 0          |\n| 1995 | 0      | 0      | 0   | 0      | 0          |\n| 1997 | 0      | 0      | 0   | 0      | 0          |\n| 1999 | 0      | 0      | 0   | 0      | 0          |\n| 2001 | 0      | 0      | 0   | 0      | 0          |\n| 2003 | 0      | 0      | 0   | 0      | 0          |\n| 2005 | 0      | 0      | 0   | 0      | 0          |\n| 2007 | 0      | 0      | 0   | 0      | 0          |\n| 2009 | 0      | 0      | 0   | 0      | 0          |\n| 2011 | 0      | 0      | 0   | 0      | 0          |\n| 2013 | 0      | 0      | 0   | 0      | 0          |\n| 2015 | 0      | 0      | 0   | 0      | 0          |\n| 2017 | 0      | 0      | 0   | 0      | 0          |\n| 2019 | 0      | 0      | 0   | 0      | 0          |\n| 2021 | 0      | 0      | 0   | 0      | 0          |\n| 2023 | 0      | 0      | 0   | 0      | 0          |\n| 2025 | 0      | 0      | 0   | 0      | 65,000     |",
+        "chart_caption": [
+            "EXHIBIT 8: China nuclear capacity by reactor origin ",
+            "China nuclear installed capacity by reactor origin (MW) "
+        ],
+        "chart_footnote": [
+            "Source: IAEA, Bernstein analysis "
+        ],
+        "sub_type": "area",
+        "bbox": [
+            75,
+            320,
+            470,
+            549
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "China has one of the lowest nuclear plant construction timeline (5 years vs. global avg of 10 years) and costs. With support from local and provincial governments to the public sector - i) capital raising for projects are relatively easy and at a low cost, ii) the projects are mostly located next to each other in order to benefit from construction economies of scale iii) The projects are also located in coastal areas close to demand centers and also utilize sea-water as coolants instead of large cooling towers, while avoiding earthquake and flood risks associated with in land projects, iv) Indigenization , v) Permitting and land acquisition is critical for this business - China's government structure makes it much easier to do. ",
+        "bbox": [
+            65,
+            600,
+            485,
+            767
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "We have covered China's success in more detail in the following note - Bernstein Energy & Power: Nuclear- The Chinese ",
+        "bbox": [
+            66,
+            781,
+            460,
+            812
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "phenomenon ",
+        "text_level": 1,
+        "bbox": [
+            509,
+            52,
+            596,
+            65
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "chart",
+        "img_path": "images/87b75c13d2b6136a8d09ebf2585b5446a5bbc465b36568374907da80ac7a7072.jpg",
+        "content": "| Country | Average (Years) | Maximum (Years) | Minimum (Years) |\n| :--- | :--- | :--- | :--- |\n| Iran | 17 | 18 | 18 |\n| Mexico | 15 | 16 | 15 |\n| Romania | 14 | 13 | 12 |\n| Brazil | 13 | 12 | 10 |\n| Argentina | 12 | 22 | 8 |\n| United Kingdom | 10 | 15 | 6 |\n| Slovakia | 9 | 15 | 6 |\n| Czech Rep. | 9 | 15 | 6 |\n| Spain | 9 | 15 | 6 |\n| India | 9 | 15 | 6 |\n| South Africa | 8 | 9 | 5 |\n| United States | 8 | 21 | 5 |\n| Hungary | 8 | 10 | 5 |\n| Bulgaria | 8 | 9 | 5 |\n| United Arab Emirates | 8 | 9 | 5 |\n| Belarus | 7 | 19 | 6 |\n| Russia | 7 | 9 | 5 |\n| Sweden | 7 | 10 | 5 |\n| Ukraine | 7 | 16 | 5 |\n| Canada | 7 | 8 | 5 |\n| Germany | 7 | 8 | 5 |\n| France | 6 | 13 | 5 |\n| Chinese Taipei | 6 | 7 | 5 |\n| Pakistan | 6 | 7 | 5 |\n| Slovenia | 6 | 12 | 5 |\n| China | 6 | 12 | 5 |\n| Belgium | 6 | 8 | 5 |\n| Finland | 6 | 10 | 5 |\n| Switzerland | 6 | 10 | 5 |\n| Korea Rep. | 6 | 10 | 5 |\n| Armenia | 6 | 8 | 5 |\n| Netherlands | 5 | 7 | 5 |\n| Japan | 5 | 6 | 5 |",
+        "chart_caption": [
+            "EXHIBIT 9: Execution time: Most countries globally take 10 years, China does it in 5 years "
+        ],
+        "chart_footnote": [
+            "Source: IEA, Bernstein analysis "
+        ],
+        "sub_type": "bar",
+        "bbox": [
+            514,
+            120,
+            926,
+            243
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "chart",
+        "img_path": "images/93a4f2e881e6aa210bbeae838904f8e4fb0909415ff1e0ed9dda9992e16c0b0f.jpg",
+        "content": "| Region | 2024 | 2050F |\n|---|---|---|\n| EU | 165 | 120 |\n| USA | 110 | 105 |\n| India | 75 | 70 |\n| China | 70 | 70 |",
+        "chart_caption": [
+            "EXHIBIT 10: China has one of the lowest LCOEs for nuclear power - given low capex and construction time ",
+            "Nuclear power LCOE (\\$/MWh) "
+        ],
+        "chart_footnote": [
+            "Source: IEA, Bernstein analysis "
+        ],
+        "sub_type": "bar",
+        "bbox": [
+            521,
+            356,
+            913,
+            628
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "Links to our previous reports on nuclear power: ",
+        "bbox": [
+            509,
+            674,
+            803,
+            687
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "Feb 2026 - Bernstein Energy & Power: Nuclear - The push is real... as the world bends over backwards for nuclear... ",
+        "bbox": [
+            508,
+            701,
+            921,
+            732
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "Oct 2025 - Bernstein Energy & Power: Nuclear - Game changing SMR tech or hype? ",
+        "bbox": [
+            508,
+            745,
+            911,
+            776
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "Jul 2024 - Bernstein Energy & Power: Nuclear - the phoenix? ",
+        "bbox": [
+            509,
+            789,
+            888,
+            803
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "header",
+        "text": "Nikhil Nigeria +91 226 842 1414 nikhil.nigania@Bernsteinsg.com ",
+        "bbox": [
+            66,
+            19,
+            401,
+            32
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "header",
+        "text": "15 May 2026 ",
+        "bbox": [
+            862,
+            19,
+            929,
+            30
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "footer",
+        "text": "INDIA INDUSTRIALS AND INFRASTRUCTURE ",
+        "bbox": [
+            68,
+            939,
+            241,
+            949
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "footer",
+        "text": "Bernstein | SG GROUP ",
+        "bbox": [
+            715,
+            938,
+            895,
+            948
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "page_number",
+        "text": "3 ",
+        "bbox": [
+            921,
+            940,
+            929,
+            950
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "table",
+        "img_path": "images/c48eaba84ec8f2659d972caa9a3545cfacd07891b13c1bbb5d75041547bbe32b.jpg",
+        "table_caption": [
+            "Bernstein TICKER TABLE "
+        ],
+        "table_footnote": [
+            "O - Outperform, M - Market-Perform, U - Underperform, NR - Not Rated, CS - Coverage Suspended ",
+            "Source: Bloomberg, Bernstein estimates and analysis. "
+        ],
+        "table_body": "<table><tr><td colspan=\"3\"></td><td colspan=\"2\">14 May 2026</td><td colspan=\"2\">TTM</td><td colspan=\"4\">Reported EPS</td><td colspan=\"3\">Reported P/E (x)</td></tr><tr><td>Ticker</td><td>Rating</td><td>Cur</td><td>Closing Price</td><td>Price Target</td><td>Rel. Perf.</td><td>Cur</td><td>2025A</td><td>2026E</td><td>2027E</td><td>2025A</td><td>2026E</td><td>2027E</td><td></td></tr><tr><td>NTPC.IN (NTPC Ltd)</td><td>O</td><td>INR</td><td>396.30</td><td>430.00</td><td>(27.2)%</td><td>INR</td><td>24.70</td><td>25.64</td><td>27.02</td><td>16.0</td><td>15.5</td><td>14.7</td><td></td></tr><tr><td>ADANI.IN (Adani Power)</td><td>O</td><td>INR</td><td>224.49</td><td>177.00</td><td>61.1%</td><td>INR</td><td>6.71</td><td>6.11</td><td>6.90</td><td>33.5</td><td>36.7</td><td>32.5</td><td></td></tr><tr><td>TPWR.IN (Tata Power)</td><td>O</td><td>INR</td><td>407.85</td><td>443.00</td><td>(40.3)%</td><td>INR</td><td>12.43</td><td>12.78</td><td>17.08</td><td>32.8</td><td>31.9</td><td>23.9</td><td></td></tr><tr><td>JSW.IN (JSW Energy)</td><td>O</td><td>INR</td><td>512.80</td><td>575.00</td><td>(36.8)%</td><td>INR</td><td>11.10</td><td>12.60</td><td>15.81</td><td>46.2</td><td>40.7</td><td>32.4</td><td></td></tr><tr><td>ASIAX</td><td></td><td></td><td>1,974.96</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr></table>",
+        "bbox": [
+            66,
+            80,
+            929,
+            207
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "header",
+        "text": "Nikhil Nigeria +91 226 842 1414 nikhil.nigania@Bernsteinsg.com ",
+        "bbox": [
+            66,
+            19,
+            401,
+            32
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "header",
+        "text": "15 May 2026 ",
+        "bbox": [
+            862,
+            19,
+            929,
+            30
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "footer",
+        "text": "INDIA INDUSTRIALS AND INFRASTRUCTURE ",
+        "bbox": [
+            66,
+            940,
+            241,
+            949
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "footer",
+        "text": "Bernstein | SG GROUP ",
+        "bbox": [
+            715,
+            938,
+            895,
+            947
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "page_number",
+        "text": "4 ",
+        "bbox": [
+            921,
+            941,
+            929,
+            950
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "I. REQUIRED DISCLOSURES ",
+        "text_level": 1,
+        "bbox": [
+            104,
+            81,
+            297,
+            94
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "References to \"Bernstein\" or the \"Firm\" in these disclosures relate to the following entities: Bernstein Institutional Services LLC (April 1, 2024 onwards), Bernstein & Co., LLC (pre April 1, 2024), Bernstein Autonomous LLP, BSG France S.A. (April 1, 2024 onwards), Bernstein (Hong Kong) Limited 盛博香港有限公司, Bernstein (Canada) Limited, Bernstein (India) Private Limited (SEBI registration no. INH000006378), Bernstein (Singapore) Private Limited, Bernstein Japan KK (サンフォード・C・バーンスタイン株式会社) and analysts employed by SG Africa Technologies & Services to produce Bernstein under a Global Services Agreement in place between Bernstein and SG. ",
+        "bbox": [
+            102,
+            109,
+            893,
+            214
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "Bernstein is part of a joint venture between SG (SG) and AllianceBernstein, L.P. (AB). Unless specifically noted otherwise, for purposes of these disclosures, references to Bernstein's “affiliates” relate to both SG and AB and their respective affiliates. ",
+        "bbox": [
+            102,
+            229,
+            892,
+            274
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "VALUATION METHODOLOGY ",
+        "text_level": 1,
+        "bbox": [
+            104,
+            287,
+            302,
+            301
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "NTPC Ltd ",
+        "text_level": 1,
+        "bbox": [
+            104,
+            316,
+            173,
+            329
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "We value NTPC using DCF method to arrive at our INR430 price target. We forecast the financials till 2070 asset wise - assuming no further thermal/nuclear capacity addition. For renewables, we account for capacity addition till FY40, post which we separately value the renewable business assuming a $12\\%$ market share for capacity additions till FY60. We have used a weighted average cost of capital (WACC) of $8.0\\%$ . We also allocate a $30\\%$ holdco discount to NTPC Green's valuation. ",
+        "bbox": [
+            102,
+            344,
+            893,
+            405
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "Adani Power ",
+        "text_level": 1,
+        "bbox": [
+            104,
+            419,
+            194,
+            432
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "We value Adani Power using DCF method to arrive at our INR177 price target. We assume 24GW pipeline to get added by FY33 and forecast the financials asset wise till assumed 40 year life. Post FY33, we have assumed 1GW/yr addition till FY40. We have used a weighted average cost of capital (WACC) of 10%. ",
+        "bbox": [
+            102,
+            447,
+            892,
+            492
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "Tata Power ",
+        "text_level": 1,
+        "bbox": [
+            104,
+            505,
+            184,
+            520
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "We value Tata Power through SOTP to arrive at our INR 443 price target. We value the i) regulated business (Cost+ generation, transmission and distribution business) at 3x FY27 book value, Mundra cluster (includes Trust Energy Resources and Mundra related coal mines) at 0.5x FY27 book value; ii) Solar PV manufacturing and EPC business at 11x FY27 EBITDA, Haldia plant at 10x FY27 EBITDA; iii) Renewable portfolio (adding \\~6GW pipeline till FY28), under-construction transmission projects and Pumped Storage projects (2.8GW addition by FY32) through DCF and other joint ventures at 20x FY27 earnings. For renewables, we account for capacity addition till FY28, post which we separately value the renewable business assuming a \\~5% market share for capacity additions till FY60. We have used a weighted average cost of capital (WACC) of 9%. ",
+        "bbox": [
+            102,
+            534,
+            893,
+            641
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "JSW Energy ",
+        "text_level": 1,
+        "bbox": [
+            104,
+            654,
+            191,
+            669
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "We value JSW Energy using DCF method to arrive at our INR 575 price target. We add 3.2GW of coal capacity by FY32, \\~3GW/yr renewable till FY30 and \\~38GWh of storage (pumped storage + battery storage) by FY36 and forecast the financials asset wise. For renewables, post FY30 we separately value the renewable business assuming a \\~5% market share for capacity additions till FY60. We have used a weighted average cost of capital (WACC) of 9%. ",
+        "bbox": [
+            102,
+            682,
+            893,
+            743
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "RISKS ",
+        "text_level": 1,
+        "bbox": [
+            104,
+            757,
+            153,
+            769
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "NTPC Ltd ",
+        "text_level": 1,
+        "bbox": [
+            104,
+            785,
+            173,
+            798
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "Downside: ",
+        "text_level": 1,
+        "bbox": [
+            104,
+            812,
+            174,
+            825
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "list",
+        "sub_type": "text",
+        "list_items": [
+            "1. Power demand in India growing slower than our anticipation of $5 - 6\\%$ CAGR ",
+            "2. Rapid reduction in battery prices reducing the relevance of adding a lot thermal capacity "
+        ],
+        "bbox": [
+            107,
+            841,
+            671,
+            883
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "header",
+        "text": "Nikhil Nigania +91 226 842 1414 nikhil.nigania@Bernsteinsg.com ",
+        "bbox": [
+            104,
+            19,
+            439,
+            30
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "header",
+        "text": "15 May 2026 ",
+        "bbox": [
+            825,
+            19,
+            890,
+            30
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "header",
+        "text": "DISCLOSURE APPENDIX ",
+        "bbox": [
+            727,
+            51,
+            890,
+            65
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "footer",
+        "text": "INDIA INDUSTRIALS AND INFRASTRUCTURE ",
+        "bbox": [
+            104,
+            939,
+            279,
+            949
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "footer",
+        "text": "Bernstein | SG GROUP ",
+        "bbox": [
+            681,
+            936,
+            859,
+            947
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "page_number",
+        "text": "5 ",
+        "bbox": [
+            882,
+            941,
+            890,
+            950
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "list",
+        "sub_type": "text",
+        "list_items": [
+            "3. Further disappointment in renewable capacity addition by its sUBSidiary ",
+            "4. Nuclear - No traction in nuclear project award "
+        ],
+        "bbox": [
+            107,
+            51,
+            568,
+            92
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "Adani Power ",
+        "text_level": 1,
+        "bbox": [
+            104,
+            108,
+            194,
+            120
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "Downside: ",
+        "text_level": 1,
+        "bbox": [
+            104,
+            136,
+            174,
+            149
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "list",
+        "sub_type": "text",
+        "list_items": [
+            "1. Rapid reduction in battery prices reducing the relevance of adding a lot thermal capacity ",
+            "2. Negotiation with Bangladesh government on Godda plant tariff not going in the favor of Adani Power ",
+            "3. Possible fallout from ongoing legal cases on key individuals of the group in US by Department of Justice and SEC ",
+            "4. Power demand in India growing slower than our anticipation of $5 - 6\\%$ CAGR ",
+            "5. Risk of re-negotiation of long term contracts being signed for thermal power plants "
+        ],
+        "bbox": [
+            107,
+            163,
+            818,
+            291
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "Tata Power ",
+        "text_level": 1,
+        "bbox": [
+            104,
+            305,
+            184,
+            318
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "Downside: ",
+        "text_level": 1,
+        "bbox": [
+            104,
+            334,
+            174,
+            345
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "list",
+        "sub_type": "text",
+        "list_items": [
+            "1. Mundra PPA with states not getting signed, or even if it does get signed the profits from coal mines getting adjusted to tariff ",
+            "2. Rooftop solar additions in the country slowing down, and/or govt. sUBSidy being reduced for rooftop scheme. Faster than anticipated decline in solar PV margins for Tata Power in light of anticipated supply glut and soft demand ",
+            "3. Challenges in renewables and pumped storage addition due to land and transmission challenges ",
+            "4. Signing of PPAs for pumped storage projects being a challenge in light of low battery prices "
+        ],
+        "bbox": [
+            107,
+            361,
+            890,
+            476
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "JSW Energy ",
+        "text_level": 1,
+        "bbox": [
+            104,
+            490,
+            189,
+            504
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "Downside: ",
+        "text_level": 1,
+        "bbox": [
+            104,
+            518,
+            174,
+            531
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "list",
+        "sub_type": "text",
+        "list_items": [
+            "1. Power demand in India growing slower than our anticipation of 5-6% CAGR ",
+            "2. Risk of re-negotiation of long term contracts being signed for thermal power plants and possibility of delays in thermal projects ",
+            "3. Renewable and storage addition being slower than anticipated due to land and transmission challenges ",
+            "4. High leverage and a tough equity market making it challenging for the company to raise additional financing "
+        ],
+        "bbox": [
+            107,
+            545,
+            890,
+            645
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "RATINGS DEFINITIONS, BENCHMARKS AND DISTRIBUTION ",
+        "text_level": 1,
+        "bbox": [
+            104,
+            659,
+            506,
+            672
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "EQUITY RATINGS DEFINITIONS ",
+        "text_level": 1,
+        "bbox": [
+            104,
+            687,
+            318,
+            700
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "Bernstein brand ",
+        "text_level": 1,
+        "bbox": [
+            104,
+            716,
+            217,
+            729
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "The Bernstein brand rates stocks based on forecasts of relative performance for the next 12 months versus the S&P 500 for stocks listed on the U.S. and Canadian exchanges, versus the Bloomberg Europe Developed Markets Large and Mid Cap Price Return Index EUR (EDME) for stocks listed on the European exchanges and emerging markets exchanges outside of the Asia Pacific region, versus the Bloomberg Japan Large and Mid Cap Price Return Index USD (JPL) for stocks listed on the Japanese exchanges, and versus the Bloomberg Asia ex-Japan Large and Mid Cap Price Return Index (ASIAX) for stocks listed on the Asian (ex-Japan) exchanges -unless otherwise specified. ",
+        "bbox": [
+            102,
+            744,
+            893,
+            834
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "The Bernstein brand has three categories of ratings: ",
+        "bbox": [
+            104,
+            849,
+            428,
+            863
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "\\- Outperform: Stock will outpace the market index by more than 15 pp ",
+        "bbox": [
+            104,
+            877,
+            547,
+            891
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "header",
+        "text": "Nikhil Nigania +91 226 842 1414 nikhil.nigania@Bernsteinsg.com ",
+        "bbox": [
+            104,
+            19,
+            439,
+            30
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "header",
+        "text": "15 May 2026 ",
+        "bbox": [
+            825,
+            19,
+            890,
+            30
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "footer",
+        "text": "INDIA INDUSTRIALS AND INFRASTRUCTURE ",
+        "bbox": [
+            104,
+            939,
+            279,
+            949
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "footer",
+        "text": "Bernstein | SG GROUP ",
+        "bbox": [
+            681,
+            938,
+            859,
+            947
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "page_number",
+        "text": "6 ",
+        "bbox": [
+            882,
+            941,
+            890,
+            950
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "list",
+        "sub_type": "text",
+        "list_items": [
+            "• Market-Perform: Stock will perform in line with the market index to within +/-15 pp ",
+            "• Underperform: Stock will trail the performance of the market index by more than 15 pp "
+        ],
+        "bbox": [
+            104,
+            52,
+            656,
+            92
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "Coverage Suspended: Coverage of a company under the Bernstein brand has been suspended. Ratings and price targets are suspended temporarily, are no longer current, and should therefore not be relied upon. ",
+        "bbox": [
+            102,
+            108,
+            892,
+            136
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "Not Rated: A rating assigned when the stock cannot be accurately valued, or the performance of the company accurately predicted, at the present time. The covering analyst may continue to publish research reports on the company to update investors on events and developments. ",
+        "bbox": [
+            102,
+            150,
+            893,
+            196
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "Not Covered (NC) denotes companies that are not under coverage. ",
+        "bbox": [
+            104,
+            210,
+            517,
+            224
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "Bernstein brand stock ratings are based on a 12-month time horizon. ",
+        "bbox": [
+            104,
+            238,
+            531,
+            252
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "Autonomous brand – common stocks ",
+        "text_level": 1,
+        "bbox": [
+            104,
+            267,
+            359,
+            280
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "The Autonomous brand rates common stocks as indicated below. As our benchmarks we use the Bloomberg Europe 500 Banks And Financial Services Index (BEBANKS) and Bloomberg Europe Dev Mkt Financials Large and Mid Cap Price Ret Index EUR (EDMFI) index for developed European banks and Payments, the Bloomberg Europe 500 Insurance Index (BEINSUR) for European insurers, the S&P 500 and S&P Financials for US banks and Payments coverage, S5LIFE for US Insurance, the S&P Insurance Select Industry (SPSIINS) for US Non-Life Insurers coverage, and the Bloomberg Emerging Markets Financials Large, Mid and Small Cap Price Return Index (EMLSF) for emerging market banks and insurers and Payments. Ratings are stated relative to the sector (not the market). ",
+        "bbox": [
+            102,
+            295,
+            893,
+            401
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "The Autonomous brand has three categories of common stock ratings: ",
+        "bbox": [
+            104,
+            415,
+            540,
+            429
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "list",
+        "sub_type": "text",
+        "list_items": [
+            "- Outperform (OP): Stock will outpace the relevant index by more than 10 pp ",
+            "- Neutral (N): Stock will perform in line with the market index to within +/-10 pp ",
+            "- Underperform (UP): Stock will trail the performance of the relevant index by more than 10 pp "
+        ],
+        "bbox": [
+            104,
+            443,
+            692,
+            514
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "Coverage Suspended: Coverage of a company under the Autonomous research brand has been suspended. Ratings and price targets are suspended temporarily, are no longer current, and should therefore not be relied upon. ",
+        "bbox": [
+            102,
+            527,
+            892,
+            557
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "Not Rated: A rating assigned when the stock cannot be accurately valued, or the performance of the company accurately predicted, at the present time. The covering analyst may continue to publish research reports on the company to update investors on events and developments. ",
+        "bbox": [
+            102,
+            571,
+            893,
+            616
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "Those denoted as 'Feature' (e.g., Feature Outperform FOP, Feature Under Outperform FUP) are our core ideas. ",
+        "bbox": [
+            104,
+            630,
+            782,
+            643
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "Not Covered (NC) denotes companies that are not under coverage. ",
+        "bbox": [
+            104,
+            658,
+            517,
+            672
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "Autonomous brand common stock ratings are based on a 12-month time horizon. ",
+        "bbox": [
+            104,
+            687,
+            606,
+            700
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "Autonomous brand – preferred stocks ",
+        "text_level": 1,
+        "bbox": [
+            104,
+            714,
+            366,
+            729
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "The Autonomous brand has three categories of preferred stock ratings: ",
+        "bbox": [
+            104,
+            743,
+            545,
+            757
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "list",
+        "sub_type": "text",
+        "list_items": [
+            "- Outperform (OP): The total return of the preferred instrument is expected to outperform preferred securities of other issuers operating in similar sectors or rating categories over the next six months. ",
+            "- Neutral (N): The total return of the preferred instrument is expected to perform in line with preferred securities of other issuers operating in similar sectors or rating categories over the next six months. ",
+            "- Underperform (UP): The total return of the preferred instrument is expected to underperform preferred securities of other issuers operating in similar sectors or rating categories over the next six months. "
+        ],
+        "bbox": [
+            104,
+            771,
+            890,
+            887
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "header",
+        "text": "Nikhil Nigania +91 226 842 1414 nikhil.nigania@Bernsteinsg.com ",
+        "bbox": [
+            104,
+            19,
+            439,
+            30
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "header",
+        "text": "15 May 2026 ",
+        "bbox": [
+            825,
+            19,
+            890,
+            30
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "footer",
+        "text": "INDIA INDUSTRIALS AND INFRASTRUCTURE ",
+        "bbox": [
+            104,
+            939,
+            279,
+            949
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "footer",
+        "text": "Bernstein | SG GROUP ",
+        "bbox": [
+            681,
+            936,
+            859,
+            947
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "page_number",
+        "text": "7 ",
+        "bbox": [
+            882,
+            940,
+            890,
+            950
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "Autonomous preferred stock ratings are based on a 6-month time horizon. ",
+        "bbox": [
+            104,
+            52,
+            563,
+            65
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "AUTONOMOUS CREDIT RESEARCH ",
+        "text_level": 1,
+        "bbox": [
+            104,
+            80,
+            346,
+            92
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "Where this report contains investment recommendations for credit instruments, as defined in article 3(1)(35) of the Market Abuse Regulation, the information below is presented to comply with its disclosure requirements. ",
+        "bbox": [
+            102,
+            108,
+            892,
+            136
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "The report may also include reference(s) to published opinions by other Autonomous or Bernstein analysts covering the equity securities of the issuer(s) referenced herein. Please note an investment recommendation for credit instruments published by the author(s) of this report may differ from the published view of the analyst covering equity securities for the issuer(s) contained in this report and vice versa. ",
+        "bbox": [
+            102,
+            150,
+            893,
+            211
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "CREDIT RATINGS DEFINITIONS ",
+        "text_level": 1,
+        "bbox": [
+            104,
+            225,
+            318,
+            240
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "The Autonomous brand has three categories of credit ratings: ",
+        "bbox": [
+            104,
+            254,
+            485,
+            268
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "\\- Credit Outperform (C-OP): The total return of the Reference Credit Instrument is expected to outperform the credit spread of bonds of other issuers operating in similar sectors or rating categories over the next six months. ",
+        "bbox": [
+            104,
+            282,
+            893,
+            312
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "\\- Credit Neutral (C-N): The total return of the Reference Credit Instrument is expected to perform in line with the credit spread of bonds of other issuers operating in similar sectors or rating categories over the next six months. ",
+        "bbox": [
+            104,
+            325,
+            892,
+            356
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "\\- Credit Underperform (C-UP): The total return of the Reference Credit Instrument is expected to underperform the credit spread of bonds of other issuers operating in similar sectors or rating categories over the next six months. ",
+        "bbox": [
+            104,
+            369,
+            892,
+            400
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "Autonomous credit ratings are based on a 6-month time horizon. ",
+        "bbox": [
+            104,
+            412,
+            503,
+            425
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "A list of all investment recommendations produced by the author(s) of this report alongside credit ratings history are available upon request. ",
+        "bbox": [
+            102,
+            441,
+            892,
+            470
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "It is at the sole discretion of the Firm as to when to initiate, update and cease research coverage. The Firm has established, maintains and relies on information barriers to control the flow of information contained in one or more areas (i.e. the private side) within the Firm, and into other areas, units, groups or affiliates (i.e. public side) of the Firm ",
+        "bbox": [
+            102,
+            483,
+            893,
+            529
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "table",
+        "img_path": "images/46091bb01b48ec62a830f44e1cdfe49fc1a9109bd4106330380987cfebe4692a.jpg",
+        "table_caption": [
+            "DISTRIBUTION OF EQUITY RATINGS/INVESTMENT BANKING SERVICES "
+        ],
+        "table_footnote": [
+            "\\* These figures represent the percentage of companies within each equity rating category for which affiliates of Bernstein have provided investment banking services within the previous 12 months. ",
+            "As of March 31, 2026. All figures are updated quarterly. "
+        ],
+        "table_body": "<table><tr><td>Equity Rating</td><td>Market Abuse Regulation (MAR) and FINRA Rating Category</td><td>Global Rating Distribution</td><td>Investment Banking Relationships*</td></tr><tr><td>Outperform</td><td>BUY</td><td>51.1%</td><td>16.5%</td></tr><tr><td>Market-Perform (Bernstein Brand) Neutral (Autonomous Brand)</td><td>HOLD</td><td>36.3%</td><td>17.8%</td></tr><tr><td>Underperform</td><td>SELL</td><td>12.6%</td><td>14.9%</td></tr></table>",
+        "bbox": [
+            107,
+            594,
+            893,
+            732
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "header",
+        "text": "Nikhil Nigania +91 226 842 1414 nikhil.nigania@Bernsteinsg.com ",
+        "bbox": [
+            104,
+            19,
+            439,
+            32
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "header",
+        "text": "15 May 2026 ",
+        "bbox": [
+            825,
+            19,
+            890,
+            30
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "footer",
+        "text": "INDIA INDUSTRIALS AND INFRASTRUCTURE ",
+        "bbox": [
+            106,
+            939,
+            279,
+            949
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "footer",
+        "text": "Bernstein | SG GROUP ",
+        "bbox": [
+            681,
+            938,
+            859,
+            947
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "page_number",
+        "text": "8 ",
+        "bbox": [
+            882,
+            941,
+            890,
+            950
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "PRICE CHARTS / RATINGS AND PRICE TARGET HISTORY ",
+        "text_level": 1,
+        "bbox": [
+            104,
+            51,
+            488,
+            65
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "chart",
+        "img_path": "images/24df3eb5271c87ae498a9df77664b193e41a883f41cc40152e2782018f8e7edc.jpg",
+        "content": "| Date       | Closing Price | Price Target |\n| ---------- | ------------- | ------------ |\n| 08/16/2023 | INR274.00     | INR274.00    |\n| 01/03/2024 | INR340.00     | INR340.00    |\n| 04/16/2024 | INR380.00     | INR380.00    |\n| 08/21/2024 | INR440.00     | INR440.00    |\n| 07/03/2025 | INR433.00     | INR433.00    |\n| 01/05/2026 | INR430.00     | INR430.00    |",
+        "chart_caption": [
+            "NTPC Ltd (NTPC.IN) Rating History for Bernstein as of 05/14/2026 "
+        ],
+        "chart_footnote": [],
+        "sub_type": "line",
+        "bbox": [
+            127,
+            99,
+            870,
+            292
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "chart",
+        "img_path": "images/cd433e4d0acf2c653f39b45a2ae494e89ad36d80169f2988f0f6143b4e8e0ef7.jpg",
+        "content": "| Date       | Closing Price | Price Target |\n| ---------- | ------------- | ------------ |\n| 03/24/2026 | INR177.00     | INR177.00    |",
+        "chart_caption": [
+            "Adani Power (ADANI.IN) Rating History for Bernstein as of 05/14/2026 "
+        ],
+        "chart_footnote": [],
+        "sub_type": "line",
+        "bbox": [
+            127,
+            329,
+            870,
+            521
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "chart",
+        "img_path": "images/8fcca84142089d65d452aab59b57a32433608499718b20f39dca7fd071c8f857.jpg",
+        "content": "| Date       | Closing Price | Price Target |\n| ---------- | ------------- | ------------ |\n| 03/24/2026 | INR443.00     | INR443.00    |",
+        "chart_caption": [
+            "Tata Power (TPWR.IN) Rating History for Bernstein as of 05/14/2026 "
+        ],
+        "chart_footnote": [],
+        "sub_type": "line",
+        "bbox": [
+            127,
+            560,
+            870,
+            750
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "header",
+        "text": "Nikhil Nigania +91 226 842 1414 nikhil.nigania@Bernsteinsg.com ",
+        "bbox": [
+            104,
+            19,
+            439,
+            32
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "header",
+        "text": "15 May 2026 ",
+        "bbox": [
+            825,
+            19,
+            890,
+            30
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "footer",
+        "text": "INDIA INDUSTRIALS AND INFRASTRUCTURE ",
+        "bbox": [
+            106,
+            939,
+            279,
+            949
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "footer",
+        "text": "Bernstein | SG GROUP ",
+        "bbox": [
+            681,
+            938,
+            859,
+            947
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "page_number",
+        "text": "9 ",
+        "bbox": [
+            882,
+            941,
+            890,
+            950
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "chart",
+        "img_path": "images/c356f1698955ac473436e8980108bb43e6e64743be6c7d3ec743c17a803c031c.jpg",
+        "content": "| Date       | Closing Price | Price Target |\n| ---------- | ------------- | ------------ |\n| 03/24/2026 | INR575.00     | INR575.00    |",
+        "chart_caption": [
+            "JSW Energy (JSW.IN) Rating History for Bernstein as of 05/14/2026 "
+        ],
+        "chart_footnote": [],
+        "sub_type": "line",
+        "bbox": [
+            127,
+            72,
+            870,
+            261
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "All price target and closing price data in the chart(s) above are denominated in the currency noted in the Ticker Table of this report. ",
+        "bbox": [
+            102,
+            281,
+            892,
+            295
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "CONFLICTS OF INTEREST ",
+        "text_level": 1,
+        "bbox": [
+            104,
+            322,
+            282,
+            335
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "Bernstein and/or affiliates have received compensation for non-investment banking securities-related products or services in the previous twelve months from the following clients: Adani Power, Tata Power and JSW Energy. ",
+        "bbox": [
+            102,
+            350,
+            892,
+            380
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "Bernstein has received compensation for non-investment banking securities-related products or services in the previous twelve months from the following clients: Tata Power. ",
+        "bbox": [
+            102,
+            394,
+            890,
+            423
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "OTHER MATTERS ",
+        "text_level": 1,
+        "bbox": [
+            104,
+            450,
+            227,
+            463
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "The legal entity(ies) employing the analyst(s) listed in this report, and their location, can be determined by the country code of their phone number, as follows: ",
+        "bbox": [
+            102,
+            478,
+            892,
+            508
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "+1 Bernstein Institutional Services LLC; New York, New York, USA ",
+        "bbox": [
+            104,
+            522,
+            513,
+            536
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "+44 Bernstein Autonomous LLP; London UK ",
+        "bbox": [
+            104,
+            550,
+            383,
+            563
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "+212 SG Africa Technologies & Services; Casablanca, Morocco ",
+        "bbox": [
+            104,
+            578,
+            584,
+            592
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "+33 BSG France S.A.; Paris, France ",
+        "bbox": [
+            104,
+            607,
+            326,
+            620
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "+34 BSG France S.A.; Madrid, Spain ",
+        "bbox": [
+            104,
+            634,
+            330,
+            647
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "+41 Bernstein Autonomous LLP; Geneva, Switzerland ",
+        "bbox": [
+            104,
+            663,
+            439,
+            676
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "+49 BSG France S.A.; Frankfurt, Germany ",
+        "bbox": [
+            104,
+            691,
+            366,
+            705
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "+91 Bernstein (India) Private Limited; Mumbai, India ",
+        "bbox": [
+            104,
+            720,
+            493,
+            732
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "+852 Bernstein (Hong Kong) Limited 盛博香港有限公司; Hong Kong, China ",
+        "bbox": [
+            104,
+            747,
+            643,
+            762
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "+65 Bernstein (Singapore) Private Limited; Singapore ",
+        "bbox": [
+            104,
+            776,
+            504,
+            790
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "+81 Bernstein Japan KK; Tokyo, Japan ",
+        "bbox": [
+            104,
+            803,
+            411,
+            818
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "Where this report has been prepared by research analyst(s) employed by a non-US affiliate, such analyst(s), is/are (unless otherwise expressly noted below) not registered as associated persons of Bernstein Institutional Services LLC or any other SEC-registered broker-dealer and are not licensed or qualified as research analysts with FINRA. Accordingly, such analyst(s) may not be subject to FINRA's restrictions regarding (among other things) communications by research analysts with a subject company, interactions between research analysts and investment banking personnel, participation by research analysts in solicitation and marketing activities relating to investment banking transactions, public appearances by research analysts, and trading securities held by a research analyst account. ",
+        "bbox": [
+            104,
+            832,
+            893,
+            908
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "header",
+        "text": "Nikhil Nigania +91 226 842 1414 nikhil.nigania@Bernsteinsg.com ",
+        "bbox": [
+            104,
+            19,
+            439,
+            32
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "header",
+        "text": "15 May 2026 ",
+        "bbox": [
+            825,
+            19,
+            890,
+            30
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "footer",
+        "text": "INDIA INDUSTRIALS AND INFRASTRUCTURE ",
+        "bbox": [
+            104,
+            939,
+            279,
+            949
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "footer",
+        "text": "Bernstein | SG GROUP ",
+        "bbox": [
+            681,
+            938,
+            859,
+            947
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "page_number",
+        "text": "10 ",
+        "bbox": [
+            877,
+            941,
+            890,
+            950
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            102,
+            51,
+            892,
+            80
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "Where this report has been prepared by research analyst(s) employed by SG Africa Technologies & Services (part of the SG group of companies), it has been prepared on behalf of a Bernstein company under a Global Services Agreement in place between Bernstein and SG. ",
+        "bbox": [
+            102,
+            95,
+            893,
+            139
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "CERTIFICATION ",
+        "text_level": 1,
+        "bbox": [
+            104,
+            153,
+            217,
+            166
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "Each research analyst listed in this report, who is primarily responsible for the preparation of the content of this report, certifies that all of the views expressed in this publication accurately reflect that analyst's personal views about any and all of the subject securities or issuers and that no part of that analyst's compensation was, is, or will be, directly or indirectly, related to the specific recommendations or views in this publication. ",
+        "bbox": [
+            102,
+            181,
+            893,
+            242
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "II. ADDITIONAL GLOBAL CONFLICT DISCLOSURES ",
+        "text_level": 1,
+        "bbox": [
+            104,
+            256,
+            444,
+            269
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "It is at the sole discretion of the Firm as to when to initiate, update and cease research coverage. The Firm has established, maintains and relies on information barriers to control the flow of information contained in one or more areas (i.e., the private side) within the Firm, and into other areas, units, groups or affiliates (i.e., public side) of the Firm. ",
+        "bbox": [
+            102,
+            283,
+            893,
+            329
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "III. OTHER IMPORTANT INFORMATION AND DISCLOSURES",
+        "text_level": 1,
+        "bbox": [
+            104,
+            343,
+            501,
+            357
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "Separate branding is maintained for \"Bernstein\" and \"Autonomous\" research products. ",
+        "bbox": [
+            104,
+            371,
+            637,
+            385
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "list",
+        "sub_type": "text",
+        "list_items": [
+            "- Bernstein produces a number of different types of research products including, among others, fundamental analysis and quantitative analysis under both the “Autonomous” and “Bernstein” brands. Recommendations contained within one type of research product may differ from recommendations contained within other types of research products, whether as a result of differing time horizons, methodologies or otherwise. Furthermore, views or recommendations within a research product issued under one brand may differ from views or recommendations under the same type of research product issued under the other brand. The Research Ratings System for the two brands and other information related to those Rating Systems are included in the previous section. ",
+            "- Autonomous operates as a separate business unit within the following entities: Bernstein Institutional Services LLC, Bernstein Autonomous LLP, Bernstein (Hong Kong) Limited 盛博香港有限公司 and Bernstein (India) Private Limited. For information relating to “Autonomous” branded products (including certain Sales materials) please visit: www.autonomous.com. For information relating to Bernstein branded products please visit: www.Bernsteinresearch.com. "
+        ],
+        "bbox": [
+            104,
+            400,
+            893,
+            580
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "Analysts are compensated based on aggregate contributions to the research franchise as measured by account penetration, productivity and proactivity of investment ideas. No analysts are compensated based on performance in, or contributions to, generating investment banking revenues. ",
+        "bbox": [
+            102,
+            594,
+            892,
+            640
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "This report has been produced by an independent analyst as defined in Article 3 (1)(34)(i) of EU 596/2014 Market Abuse Regulation (“MAR”) and the same article of MAR as it forms part of United Kingdom domestic law by virtue of the European Union (Withdrawal) Act 2018. ",
+        "bbox": [
+            102,
+            652,
+            893,
+            696
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "To our readers in the United States: Bernstein Institutional Services LLC, a broker-dealer registered with the U.S. Securities and Exchange Commission (“SEC”) and a member of the U.S. Financial Industry Regulatory Authority, Inc. (“FINRA”) is distributing this publication in the United States and accepts responsibility for its contents. Where this material contains an analysis of debt product(s), such material is intended only for institutional investors and is not subject to the US independence and disclosure standards applicable to debt research prepared for retail investors. ",
+        "bbox": [
+            102,
+            710,
+            893,
+            787
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "Bernstein Institutional Services LLC may act as principal for its own account or as agent for another person (including an affiliate) in sales or purchases of any security which is a subject of this report. This report does not purport to meet the objectives or needs of any specific individuals, entities or accounts. ",
+        "bbox": [
+            102,
+            801,
+            893,
+            846
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "To our readers in Canada: If this publication pertains to a Canadian domiciled company, it is being distributed in Canada by Bernstein (Canada) Limited, which is licensed and regulated by the Canadian Investment Regulatory Organization. If the publication pertains to a non-Canadian domiciled company, it is being distributed by Bernstein Institutional Services LLC, which is licensed and regulated by both the SEC and FINRA, into Canada under the International Dealers Exemption. ",
+        "bbox": [
+            102,
+            860,
+            893,
+            905
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "header",
+        "text": "Nikhil Nigania +91 226 842 1414 nikhil.nigania@Bernsteinsg.com ",
+        "bbox": [
+            104,
+            19,
+            439,
+            30
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "header",
+        "text": "15 May 2026 ",
+        "bbox": [
+            825,
+            19,
+            890,
+            30
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "footer",
+        "text": "INDIA INDUSTRIALS AND INFRASTRUCTURE ",
+        "bbox": [
+            104,
+            939,
+            279,
+            949
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "footer",
+        "text": "Bernstein | SG GROUP ",
+        "bbox": [
+            681,
+            936,
+            859,
+            947
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "page_number",
+        "text": "11 ",
+        "bbox": [
+            879,
+            941,
+            892,
+            950
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            102,
+            51,
+            777,
+            65
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "This document may not be passed onto any person in Canada unless that person qualifies as \"permitted client\" as defined in Section 1.1 of NI 31-103. ",
+        "bbox": [
+            102,
+            80,
+            892,
+            108
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "To our readers in Brazil: This report has been prepared by Bernstein Institutional Services LLC, and Banco BTG Pactual S.A. (\"BTG\") is responsible for the distribution of this report in Brazil. ",
+        "bbox": [
+            102,
+            123,
+            892,
+            153
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "To readers in the United Kingdom: This publication has been issued or approved for issue in the United Kingdom by Bernstein Autonomous LLP, authorised and regulated by the Financial Conduct Authority and located at 60 London Wall, London EC2M 5SH, +44 (0)20-7170-5000. Registered in England & Wales No OC343985. ",
+        "bbox": [
+            102,
+            166,
+            893,
+            211
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "This document is for distribution only to persons who (i) have professional experience in matters relating to investments falling within Article 19(5) of the Financial Services and Markets Act 2000 (Financial Promotion) Order 2005 (as amended, the “Financial Promotion Order”), (ii) are persons falling within Article 49(2)(a) to (d) (“high net worth companies, unincorporated associations, etc.”) of the Financial Promotion Order, (iii) are outside the United Kingdom, or (iv) are persons to whom an invitation or inducement to engage in investment activity (within the meaning of section 21 of the FSMA) in connection with the issue or sale of any securities may otherwise lawfully be communicated or caused to be communicated (all such persons together being referred to as “relevant persons”). This document is directed only at relevant persons and must not be acted on or relied on by persons who are not relevant persons. Any investment or investment activity to which this document relates is available only to relevant persons and will be engaged in only with relevant persons. ",
+        "bbox": [
+            102,
+            225,
+            893,
+            362
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "To our readers in the member states of the EEA: This publication is being distributed by BSG France SA, which is authorised and regulated by the Autorité de Contrôle Prudentiel et de Résolution (ACPR) and Autorité des Marchés Financiers (AMF). ",
+        "bbox": [
+            102,
+            376,
+            892,
+            406
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "To our readers in Hong Kong: This publication is being distributed in Hong Kong by Bernstein (Hong Kong) Limited 盛博香港有限公司, which is licensed and regulated by the Hong Kong Securities and Futures Commission (Central Entity No. AXC846) to carry out Type 4 (Advising on Securities) regulated activities and subject to the licensing conditions mentioned in the SFC Public Register (https://www.sfc.hk/publicregWeb/corp/AXC846/details)). This publication is solely for professional investors, as defined in the Securities and Futures Ordinance (Cap. 571). The purpose of this report is solely to provide an analysis of the issuers referred to in this report and is not intended for any purpose contrary to the laws of Hong Kong. ",
+        "bbox": [
+            102,
+            419,
+            893,
+            510
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "To our readers in Singapore: This publication is being distributed in Singapore by Bernstein (Singapore) Private Limited, only to accredited investors or institutional investors, as defined in the Securities and Futures Act 2001 of Singapore (\"SFA\"). Recipients in Singapore should contact Bernstein (Singapore) Private Limited in respect of matters arising from, or in connection with, this publication. Bernstein (Singapore) Private Limited is regulated by the Monetary Authority of Singapore and licensed under the SFA as a capital markets services licence holder for dealing in capital markets products that are securities and collective investment schemes and an exempt financial adviser for advising on, issuing and promulgating analyses and reports on securities. Bernstein (Singapore) Private Limited is registered in Singapore with Company Registration No. 20213710W and located at One Raffles Quay, #27-11 South Tower, Singapore 048583, +65-6230-4612. ",
+        "bbox": [
+            102,
+            523,
+            893,
+            647
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "To our readers in the People's Republic of China: The securities referred to in this document are not being offered or sold and may not be offered or sold, directly or indirectly, in the People's Republic of China (for such purposes, not including the Hong Kong and Macau Special Administrative Regions or Taiwan, the \"PRC\") in contravention of any applicable laws of the PRC. ",
+        "bbox": [
+            102,
+            660,
+            892,
+            705
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "This document does not constitute an offer to sell or the solicitation of an offer to buy any securities in the PRC to any person to whom it is unlawful to make the offer or solicitation in the PRC. ",
+        "bbox": [
+            102,
+            720,
+            892,
+            748
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "We do not represent that this document may be lawfully distributed, or that any securities may be lawfully offered, in compliance with any applicable registration or other requirements in the PRC, or pursuant to an exemption available thereunder, or assume any responsibility for facilitating any such distribution or offering. In particular, no action has been taken by us which would permit a public offering of any securities or distribution of this document in the PRC. Accordingly, the securities are not being offered or sold within the PRC by means of this document or any other document. Neither this document nor any advertisement or other offering material may be distributed or published in the PRC, except under circumstances that will result in compliance with any applicable laws and regulations. ",
+        "bbox": [
+            102,
+            762,
+            893,
+            869
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "To our readers in Japan: This publication is being distributed in Japan by Bernstein Japan KK (サンフォード・C・バーンスタイン株式会社), which is registered in Japan as a Financial Instruments Business Operator with the Kanto Local ",
+        "bbox": [
+            102,
+            882,
+            892,
+            912
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "header",
+        "text": "Nikhil Nigania +91 226 842 1414 nikhil.nigania@Bernsteinsg.com ",
+        "bbox": [
+            104,
+            19,
+            439,
+            30
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "header",
+        "text": "15 May 2026 ",
+        "bbox": [
+            825,
+            19,
+            890,
+            30
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "footer",
+        "text": "INDIA INDUSTRIALS AND INFRASTRUCTURE ",
+        "bbox": [
+            104,
+            939,
+            279,
+            949
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "footer",
+        "text": "Bernstein | SG GROUP ",
+        "bbox": [
+            679,
+            936,
+            859,
+            947
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "page_number",
+        "text": "12 ",
+        "bbox": [
+            877,
+            941,
+            890,
+            950
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "Finance Bureau (registration number: The Director-General of Kanto Local Finance Bureau (FIBO) No.3387) and regulated by the Financial Services Agency. It is also a member of Japan Investment Advisers Association. This publication is solely for qualified institutional investors in Japan only, as defined in Article 2, paragraph (3), items (i) of the Financial Instruments and Exchange Act. ",
+        "bbox": [
+            102,
+            51,
+            892,
+            96
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "For the institutional client readers in Japan who have been granted access to the Bernstein website by Daiwa Group Inc. (\"Daiwa\"), your access to this document should not be construed as meaning that Bernstein is providing you with investment advice for any purposes. Whilst Bernstein has prepared this document, your relationship is, and will remain with, Daiwa, and Bernstein has neither any contractual relationship with you nor any obligations towards you. ",
+        "bbox": [
+            102,
+            110,
+            893,
+            172
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "To our readers in Australia: Bernstein (Hong Kong) Limited 盛博香港有限公司 is responsible for distributing research in Australia. It is regulated by the Securities and Exchange Commission under U.S. laws, by the Financial Conduct Authority under U.K. laws, which differs from Australian laws. Bernstein (Hong Kong) Limited 盛博香港有限公司 is exempt from the requirement to hold an Australian financial services license under the Corporations Act 2001 in respect of the provision of the following financial services to wholesale clients: ",
+        "bbox": [
+            102,
+            184,
+            893,
+            260
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "list",
+        "sub_type": "text",
+        "list_items": [
+            "• providing financial product advice; ",
+            "• dealing in a financial product; ",
+            "• making a market for a financial product; and ",
+            "• providing a custodial or depository service. "
+        ],
+        "bbox": [
+            104,
+            274,
+            395,
+            372
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "To our readers in India: This publication is being distributed in India by Bernstein (India) Private Limited (SCB India) which is licensed and regulated by Securities and Exchange Board of India (\"SEBI\") as a research analyst entity under the SEBI (Research Analyst) Regulations, 2014, having registration no. INH000006378 and as a stock broker having registration no. INZ000213537. SCB India is currently engaged in the business of providing research and stock broking services. Please refer to www.Bernsteinresearch.in for more information. ",
+        "bbox": [
+            102,
+            385,
+            893,
+            461
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "list",
+        "sub_type": "text",
+        "list_items": [
+            "- SCB India is a Private limited company incorporated under the Companies Act, 2013, on April 12, 2017 bearing corporate identification number U65999MH2017FTC293762, and registered office at Level 3A, 4th Floor, First International Financial Centre, Plot Nos C-54 and C-55, G Block, Near CBI Office, Bandra Kurla Complex, Bandra (East), Mumbai 400098, Maharashtra, India (Phone No: +91-22-68421401). ",
+            "- For details of Associates (i.e., affiliates/group companies) of SCB India, kindly email MUM-Bernstein-InCompliance@Bernsteinsg.com. ",
+            "- SCB India does not have any disciplinary history as on the date of this report. ",
+            "- Except as noted above, SCB India and/or its Associates (i.e., affiliates/group companies), the Research Analysts authoring this report, and their relatives "
+        ],
+        "bbox": [
+            104,
+            476,
+            893,
+            651
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "list",
+        "sub_type": "text",
+        "list_items": [
+            "• do not have any financial interest in the subject company ",
+            "- do not have actual/beneficial ownership of one percent or more in securities of the subject company; ",
+            "- is not engaged in any investment banking activities for Indian companies, as such; ",
+            "• have not managed or co-managed a public offering in the past twelve months for any Indian companies; ",
+            "- have not received any compensation for investment banking services or merchant banking services from the subject company in the past 12 months; ",
+            "• have not received compensation for brokerage services from the subject company in the past twelve months; ",
+            "- have not received any compensation or other benefits from the subject company or third party related to the specific recommendations or views in this report; and "
+        ],
+        "bbox": [
+            122,
+            665,
+            892,
+            880
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "header",
+        "text": "Nikhil Nigania +91 226 842 1414 nikhil.nigania@Bernsteinsg.com ",
+        "bbox": [
+            104,
+            19,
+            439,
+            30
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "header",
+        "text": "15 May 2026 ",
+        "bbox": [
+            825,
+            19,
+            890,
+            30
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "footer",
+        "text": "INDIA INDUSTRIALS AND INFRASTRUCTURE ",
+        "bbox": [
+            104,
+            939,
+            279,
+            949
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "footer",
+        "text": "Bernstein | SG GROUP ",
+        "bbox": [
+            681,
+            936,
+            859,
+            947
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "page_number",
+        "text": "13 ",
+        "bbox": [
+            877,
+            941,
+            890,
+            950
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "list",
+        "sub_type": "text",
+        "list_items": [
+            "- do not currently, but may in the future, act as a market maker in the financial instruments of the companies covered in the report. ",
+            "- do not have any conflict of interest in the subject company as of the date of this report. "
+        ],
+        "bbox": [
+            122,
+            64,
+            890,
+            121
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "list",
+        "sub_type": "text",
+        "list_items": [
+            "- Except as noted above, the subject company has not been a client of SCB India during twelve months preceding the date of distribution of this research report. Neither SCB India nor its Associates (i.e., affiliates/group companies) have received compensation for products or services other than investment banking, merchant banking or brokerage services from the subject company in the past twelve months. ",
+            "- The principal research analyst(s) who prepared this report, members of the analysts' team, and members of their households are not an officer, director, employee or advisory board member of the companies covered in the report. ",
+            "- Our Compliance officer / Grievance officer is Ms. Rupal Talati, who can be reached at +91-22-68421451, or MUM-Bernstein-InCompliance@Bernsteinsg.com / Scbin-investorgrievance@Bernsteinsg.com ",
+            "- The Research investor charter and Terms & Conditions of SCB India are available on its website and may be accessed at Bernstein (India) Private Limited (https://Bernsteinresearch.in/) for your reference. ",
+            "- Disclaimer: Registration granted by SEBI, and certification from NISM, is in no way a guarantee of performance of the intermediary or provide any assurance of returns to investors. Investments in securities market are subject to market risks. Read all the related documents carefully before investing. "
+        ],
+        "bbox": [
+            104,
+            136,
+            890,
+            385
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "To our readers in Switzerland: This document is provided in Switzerland by or through Bernstein Autonomous LLP, and is provided only to qualified investors as defined in article 10 of the Swiss Collective Investment Scheme Act (\"CISA\") and related provisions of the Collective Investment Scheme Ordinance and in strict compliance with applicable Swiss law and regulations. The products mentioned in this document may not be suitable for all types of investors. This document is based on the Directives on the Independence of Financial Research issued by the Swiss Bankers Association (SBA) in January 2008. ",
+        "bbox": [
+            102,
+            400,
+            890,
+            474
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "To our readers in the Middle East: Bernstein Autonomous LLP, DIFC branch has its principal office at Gate Village 06, DIFC, Dubai, UAE. Bernstein Autonomous LLP, DIFC branch is regulated by the Dubai Financial Services Authority (DFSA) with the registration number CL10040 and is provisioned for Arranging Deals in Investments and Advising on Financial Products. All communications and services are directed at Professional Clients and Market Counterparties only (as defined in the DFSA rulebook). Persons other than Professional Clients and Market Counterparties, such as Retail Clients, are not the intended recipients of our communications or services. ",
+        "bbox": [
+            102,
+            489,
+            890,
+            579
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "LEGAL ",
+        "text_level": 1,
+        "bbox": [
+            104,
+            594,
+            153,
+            607
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "All research publications are disseminated to our clients through posting on the firm's password protected websites, Bernsteinresearch.com and autonomous.com. Certain, but not all, research publications are also made available to clients through third-party vendors or redistributed to clients through alternate electronic means as a convenience. ",
+        "bbox": [
+            102,
+            621,
+            890,
+            668
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "This publication has been published and distributed in accordance with the Firm's policy for management of conflicts of interest in investment research, a copy of which is available from Bernstein Institutional Services LLC, Director of Compliance, 245 Park Avenue, New York, NY 10167. Additional disclosures and information regarding Bernstein's business are available on our website www.Bernsteinresearch.com. ",
+        "bbox": [
+            102,
+            681,
+            890,
+            741
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "The securities described herein may not be eligible for sale in all jurisdictions or to certain categories of investors where that permission profile is not consistent with the licenses held by the entities noted herein. This document is for distribution only as may be permitted by law. This publication is not directed to, or intended for distribution to or use by, any person or entity who is a Citizen or resident of, or located in any locality, state, country or other jurisdiction where such distribution, publication, availability or use would be contrary to law or regulation or which would subject any of the entities referenced herein or any of their sUBSidiaries or affiliates to any registration or licensing requirement within such jurisdiction. This publication is based upon public sources we believe to be reliable, but no representation is made by us that the publication is accurate or complete. We do not undertake to advise you of any change in the reported information or in the opinions herein. This publication was prepared and issued by entity referred to herein for distribution to eligible counterparties or professional clients. This publication is not an offer to buy or sell any security, and it does not constitute investment, legal or tax advice. The investments referred to herein may not be suitable for you. Investors must make their own investment decisions in consultation with their professional advisors in light of their specific circumstances. The value of investments may fluctuate, and investments that are denominated in foreign currencies may fluctuate in value as a result of exposure to exchange rate movements. Information about past performance of an investment is not necessarily a guide to, indicator of, or assurance of, future performance. ",
+        "bbox": [
+            102,
+            754,
+            890,
+            907
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "header",
+        "text": "Nikhil Nigania +91 226 842 1414 nikhil.nigania@Bernsteinsg.com ",
+        "bbox": [
+            104,
+            19,
+            439,
+            30
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "header",
+        "text": "15 May 2026 ",
+        "bbox": [
+            825,
+            19,
+            890,
+            30
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "footer",
+        "text": "INDIA INDUSTRIALS AND INFRASTRUCTURE ",
+        "bbox": [
+            104,
+            939,
+            279,
+            949
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "footer",
+        "text": "Bernstein | SG GROUP ",
+        "bbox": [
+            681,
+            938,
+            859,
+            947
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "page_number",
+        "text": "14 ",
+        "bbox": [
+            877,
+            941,
+            890,
+            950
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            102,
+            51,
+            892,
+            110
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "This report is directed to and intended only for our clients who are “eligible counterparties”, “professional clients”, “institutional investors” and/or “professional investors” as defined by the aforementioned regulators, and must not be redistributed to retail clients as defined by the aforementioned regulators. Retail clients who receive this report should note that the services of the entities noted herein are not available to them and should not rely on the material herein to make an investment decision. The result of such act will not hold the entities noted herein liable for any loss thus incurred as the entities noted herein are not registered/ authorised/ licensed to deal with retail clients and will not enter into any contractual agreement/arrangement with retail clients. This report is provided subject to the terms and conditions of any agreement that the clients may have entered into with the entities noted herein. All research reports are disseminated on a simultaneous basis to eligible clients through electronic publication to our client portal. ",
+        "bbox": [
+            102,
+            125,
+            893,
+            261
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "The information in this report was prepared by Bernstein solely for the internal business use of our clients. Clients may store, display, analyze, reformat and print the information in this report for this limited use only. Clients may not copy, alter, create derivative works, resell, reverse engineer, commercially exploit, share or distribute any part of the information contained herein for any purpose without Bernstein's express written consent. These restrictions include extracting data or using the content to develop indices or other products. Further, you may not use this report, or any portion of this report, to train or finetune any third-party machine learning or artificial intelligence system, or as a prompt or input into any such system. You also may not, without Bernstein's express written consent, do any of the foregoing in connection with your own internal machine learning or artificial intelligence system. ",
+        "bbox": [
+            102,
+            276,
+            893,
+            398
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "Bernstein may use artificial intelligence tools in the preparation of its materials. Any such materials are reviewed by Bernstein's research analysts prior to publication. ",
+        "bbox": [
+            102,
+            412,
+            892,
+            442
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "This report has been prepared for information purposes only and is based on current public information that we consider reliable, but the entities noted herein do not warrant or represent (express or implied) as to the sources of information or data contained herein are accurate, complete, not misleading or as to its fitness for the purpose intended even though the entities noted herein rely on reputable or trustworthy data providers, it should not be relied upon as such. Opinions expressed are the author(s)' current opinions as of the date appearing on the material only and we do not undertake to advise you of any change in the reported information or in the opinions herein. ",
+        "bbox": [
+            102,
+            455,
+            893,
+            545
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "This publication was prepared and issued by the entity referred to herein for distribution to eligible counterparties or professional clients. The information in this report is intended for general circulation and does not constitute an offer to buy or sell any security, investment, legal or tax advice nor a personal recommendation, as defined by any of the aforementioned regulators. It does not take into account the particular investment objectives, financial situations, or needs of individual investors. The report has not been reviewed by any of the aforementioned regulators and does not represent any official recommendation from the aforementioned regulators. The investments referred to herein may not be suitable for you. Investors must make their own investment decisions in consultation with advice sought from a financial adviser regarding the suitability of the investment product, taking into account the specific investment objectives, financial situation or particular needs of any recipient of the recommendation, before the recipient makes a commitment to purchase the investment product. ",
+        "bbox": [
+            102,
+            560,
+            893,
+            696
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "The analysis contained herein is based on numerous assumptions. Different assumptions could result in materially different results. The information in this report does not constitute, or form part of, any offer to sell or issue, or any offer to purchase or sUBScribe for shares, or to induce engage in any other investment activity. The value of any securities or financial instruments mentioned in this report may fluctuate subject to market conditions. Information about past performance of an investment is not necessarily a guide to, indicative of, or assurance of future performance. Estimates of future performance mentioned by the research analyst in this report are based on assumptions that may not be realized due to unforeseen factors like market volatility/fluctuation. In relation to securities or financial instruments denominated in a foreign currency other than the clients' home currency, movements in exchange rates will have an effect on the value, either favorable or unfavorable. Before acting on any recommendations in this report, recipients should consider the appropriateness of investing in the subject securities or financial instruments mentioned in this report and, if necessary, seek for independent professional advice. ",
+        "bbox": [
+            102,
+            710,
+            893,
+            863
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "The securities described herein may not be eligible for sale in all jurisdictions or to certain categories of investors where that permission profile is not consistent with the licenses held by the entities noted herein. This document is for distribution only as may be permitted by law. It is not directed to, or intended for distribution to or use by, any person or entity who is a Citizen or resident of or located in any locality, state, country or other jurisdiction where such distribution, publication, availability or use would be contrary to law or regulation or would subject the entities noted herein to any regulation or licensing requirement within such jurisdiction. ",
+        "bbox": [
+            102,
+            877,
+            892,
+            907
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "header",
+        "text": "Nikhil Nigania +91 226 842 1414 nikhil.nigania@Bernsteinsg.com ",
+        "bbox": [
+            104,
+            19,
+            439,
+            30
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "header",
+        "text": "15 May 2026 ",
+        "bbox": [
+            825,
+            19,
+            890,
+            30
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "footer",
+        "text": "INDIA INDUSTRIALS AND INFRASTRUCTURE ",
+        "bbox": [
+            104,
+            939,
+            279,
+            949
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "footer",
+        "text": "Bernstein | SG GROUP ",
+        "bbox": [
+            681,
+            938,
+            859,
+            947
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "page_number",
+        "text": "15 ",
+        "bbox": [
+            877,
+            941,
+            890,
+            950
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            102,
+            51,
+            892,
+            96
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "Source: Bloomberg Index Services Limited. BLOOMBERG® is a trademark and service mark of Bloomberg Finance L.P. and its affiliates (collectively “Bloomberg”). Bloomberg or Bloomberg’s licensors own all proprietary rights in the Bloomberg Indices. Neither Bloomberg nor Bloomberg’s licensors approves or endorses this material, or guarantees the accuracy or completeness of any information herein, or makes any warranty, express or implied, as to the results to be obtained therefrom and, to the maximum extent allowed by law, neither shall have any liability or responsibility for injury or damages arising in connection therewith. ",
+        "bbox": [
+            102,
+            110,
+            893,
+            185
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "No part of this material may be reproduced, distributed or transmitted or otherwise made available without prior consent of the entities noted herein. Copyright Bernstein Institutional Services LLC Bernstein Autonomous LLP, BSG France S.A., Bernstein (Hong Kong) Limited 盛博香港有限公司, Bernstein (Canada) Limited, Bernstein (India) Private Limited (SEBI registration no. INH000006378), Bernstein (Singapore) Private Limited and Bernstein Japan KK (サンフォード・C・バーンスタイン株式会社). All rights reserved. The trademarks and service marks contained herein are the property of their respective owners. Any unauthorized use or disclosure is strictly prohibited. The entities noted herein may pursue legal action if the unauthorized use results in any defamation and/or reputational risk to the entities noted herein and research published under the Bernstein and Autonomous brands. ",
+        "bbox": [
+            102,
+            200,
+            893,
+            321
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "header",
+        "text": "Nikhil Nigania +91 226 842 1414 nikhil.nigania@Bernsteinsg.com ",
+        "bbox": [
+            104,
+            19,
+            439,
+            30
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "header",
+        "text": "15 May 2026 ",
+        "bbox": [
+            825,
+            19,
+            890,
+            30
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "footer",
+        "text": "INDIA INDUSTRIALS AND INFRASTRUCTURE ",
+        "bbox": [
+            106,
+            939,
+            279,
+            949
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "footer",
+        "text": "Bernstein | SG GROUP ",
+        "bbox": [
+            681,
+            938,
+            859,
+            947
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "page_number",
+        "text": "16 ",
+        "bbox": [
+            877,
+            941,
+            890,
+            950
+        ],
+        "page_idx": 15
+    }
+]

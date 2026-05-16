@@ -1,0 +1,20 @@
+{
+  "source_pdf": "/tmp/pdf_batch_001_ek1ukzix/pdfs/0005-06-NOM-Asia Chart Alert-China- Current account surplus increased slightly in Q1-260515.pdf",
+  "mineru_state": "done",
+  "mineru_error": "",
+  "cover_short_title": "一季度中国经常账户：",
+  "cover_subtitle": "研报重点一图看懂",
+  "images": [
+    "assets/xhs_card_01.png",
+    "assets/xhs_card_02.png"
+  ],
+  "cover": "assets/cover.png",
+  "wechat_article": "wechat_article.md",
+  "wechat_images": [
+    "assets/source_image_01.jpg"
+  ],
+  "wechat_article_en": "wechat_article_en.md",
+  "podcast_script": "podcast_script.txt",
+  "xianyu_note": "xianyu_note.md",
+  "prompt_for_xianyu": "prompt_for_xianyu.md"
+}
