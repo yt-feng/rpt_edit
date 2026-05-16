@@ -4,6 +4,10 @@
 The input is usually xhs_notes/dropbox/<date>/shard_*/. A shard is included only
 when it contains at least one generated report folder. MinerU raw folders are
 excluded from the ZIP.
+
+GitHub blocks single files over 100 MB, so this script creates multiple ZIP
+parts by default, each targeting less than --max-zip-mb. The workflow can then
+commit the parts safely while the full folder is also uploaded as an artifact.
 """
 from __future__ import annotations
 
@@ -11,6 +15,7 @@ import argparse
 import json
 import re
 import zipfile
+from dataclasses import dataclass
 from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
@@ -31,6 +36,15 @@ RAW_DIR_PATTERNS = [
 RAW_FILE_PATTERNS = [
     re.compile(r"mineru.*raw|raw.*mineru", re.I),
 ]
+
+
+@dataclass
+class PackageFile:
+    source: Path
+    arcname: str
+    shard: str
+    report: str | None
+    size: int
 
 
 def log(message: str) -> None:
@@ -55,7 +69,6 @@ def is_report_dir(path: Path) -> bool:
     for marker in REPORT_MARKERS:
         if (path / marker).exists():
             return True
-    # Some partially generated folders may only have final status and images.
     if (path / "status.json").exists() and any(p.suffix.lower() in {".png", ".jpg", ".jpeg"} for p in path.rglob("*")):
         return True
     return False
@@ -66,8 +79,6 @@ def shard_report_dirs(shard_dir: Path) -> list[Path]:
 
 
 def should_include_top_level_file(path: Path) -> bool:
-    # Keep progress and manifest files so the ZIP is auditable, but do not let
-    # an empty shard with only logs count as publish-ready.
     allowed = {
         "shard_run_summary.md",
         "finalize_summary.json",
@@ -86,11 +97,12 @@ def iter_files_for_shard(shard_dir: Path, report_dirs: list[Path], exclude_sourc
     for path in sorted(shard_dir.iterdir()):
         if path.is_file() and should_include_top_level_file(path) and not is_raw_file(path, exclude_source_mineru):
             files.append(path)
+    report_set = {p.resolve() for p in report_dirs}
     for report_dir in report_dirs:
         for path in sorted(report_dir.rglob("*")):
             if path.is_dir():
                 continue
-            if any(is_raw_dir(parent) for parent in path.parents if parent != shard_dir.parent):
+            if any(is_raw_dir(parent) for parent in path.parents if parent.resolve() not in report_set and parent != shard_dir):
                 continue
             if is_raw_file(path, exclude_source_mineru):
                 continue
@@ -98,64 +110,135 @@ def iter_files_for_shard(shard_dir: Path, report_dirs: list[Path], exclude_sourc
     return files
 
 
-def build_package(date_dir: Path, output_root: Path, exclude_source_mineru: bool) -> dict[str, Any]:
+def collect_package_files(date_dir: Path, exclude_source_mineru: bool) -> tuple[list[PackageFile], list[dict[str, Any]], list[str]]:
+    date_name = date_dir.name
+    package_files: list[PackageFile] = []
+    included_shards: list[dict[str, Any]] = []
+    skipped_shards: list[str] = []
+
+    for shard_dir in sorted(date_dir.glob("shard_*")):
+        if not shard_dir.is_dir():
+            continue
+        report_dirs = shard_report_dirs(shard_dir)
+        if not report_dirs:
+            skipped_shards.append(shard_dir.name)
+            log(f"Skip {shard_dir.name}: no generated report folder.")
+            continue
+        files = iter_files_for_shard(shard_dir, report_dirs, exclude_source_mineru)
+        if not files:
+            skipped_shards.append(shard_dir.name)
+            log(f"Skip {shard_dir.name}: no publish-ready files after filtering.")
+            continue
+        report_names = {p.name for p in report_dirs}
+        for file_path in files:
+            rel = file_path.relative_to(date_dir)
+            report_name = None
+            parts = rel.parts
+            if len(parts) >= 2 and parts[1] in report_names:
+                report_name = parts[1]
+            package_files.append(PackageFile(
+                source=file_path,
+                arcname=(Path(date_name) / rel).as_posix(),
+                shard=shard_dir.name,
+                report=report_name,
+                size=file_path.stat().st_size,
+            ))
+        included_shards.append({
+            "shard": shard_dir.name,
+            "report_count": len(report_dirs),
+            "file_count": len(files),
+            "raw_file_bytes": sum(p.stat().st_size for p in files),
+            "reports": [p.name for p in report_dirs],
+        })
+        log(f"Collected {shard_dir.name}: reports={len(report_dirs)}, files={len(files)}")
+    return package_files, included_shards, skipped_shards
+
+
+def write_zip(zip_path: Path, files: list[PackageFile]) -> dict[str, Any]:
+    with zipfile.ZipFile(zip_path, "w", compression=zipfile.ZIP_DEFLATED, compresslevel=6, allowZip64=True) as zf:
+        for item in files:
+            zf.write(item.source, item.arcname)
+    return {
+        "path": str(zip_path),
+        "size_bytes": zip_path.stat().st_size,
+        "file_count": len(files),
+        "raw_file_bytes": sum(item.size for item in files),
+        "shards": sorted({item.shard for item in files}),
+    }
+
+
+def split_into_parts(files: list[PackageFile], max_zip_bytes: int) -> list[list[PackageFile]]:
+    parts: list[list[PackageFile]] = []
+    current: list[PackageFile] = []
+    current_bytes = 0
+    for item in files:
+        # Approximate by source size because PNG/JPEG files rarely compress much.
+        if current and current_bytes + item.size > max_zip_bytes:
+            parts.append(current)
+            current = []
+            current_bytes = 0
+        current.append(item)
+        current_bytes += item.size
+    if current:
+        parts.append(current)
+    return parts
+
+
+def build_package(date_dir: Path, output_root: Path, exclude_source_mineru: bool, max_zip_mb: int, single_zip: bool) -> dict[str, Any]:
     if not date_dir.exists():
         raise RuntimeError(f"Date output folder not found: {date_dir}")
     date_name = date_dir.name
     output_dir = output_root / date_name
     output_dir.mkdir(parents=True, exist_ok=True)
-    zip_path = output_dir / f"publish_ready_{date_name}.zip"
 
-    included_shards: list[dict[str, Any]] = []
-    skipped_shards: list[str] = []
-    total_files = 0
+    # Clear stale ZIPs from previous attempts so a failed >100 MB zip does not get committed later.
+    for stale in output_dir.glob(f"publish_ready_{date_name}*.zip"):
+        stale.unlink()
 
-    with zipfile.ZipFile(zip_path, "w", compression=zipfile.ZIP_DEFLATED, compresslevel=6) as zf:
-        for shard_dir in sorted(date_dir.glob("shard_*")):
-            if not shard_dir.is_dir():
-                continue
-            report_dirs = shard_report_dirs(shard_dir)
-            if not report_dirs:
-                skipped_shards.append(shard_dir.name)
-                log(f"Skip {shard_dir.name}: no generated report folder.")
-                continue
-            files = iter_files_for_shard(shard_dir, report_dirs, exclude_source_mineru)
-            if not files:
-                skipped_shards.append(shard_dir.name)
-                log(f"Skip {shard_dir.name}: no publish-ready files after filtering.")
-                continue
-            for file_path in files:
-                arcname = Path(date_name) / file_path.relative_to(date_dir)
-                zf.write(file_path, arcname.as_posix())
-            included_shards.append({
-                "shard": shard_dir.name,
-                "report_count": len(report_dirs),
-                "file_count": len(files),
-                "reports": [p.name for p in report_dirs],
-            })
-            total_files += len(files)
-            log(f"Included {shard_dir.name}: reports={len(report_dirs)}, files={len(files)}")
-
-    if not included_shards:
-        # Remove empty package to avoid publishing a misleading ZIP.
-        if zip_path.exists():
-            zip_path.unlink()
+    package_files, included_shards, skipped_shards = collect_package_files(date_dir, exclude_source_mineru)
+    if not included_shards or not package_files:
         raise RuntimeError(f"No publish-ready shard outputs found under {date_dir}")
+
+    max_zip_bytes = max_zip_mb * 1024 * 1024
+    if single_zip:
+        parts = [package_files]
+    else:
+        parts = split_into_parts(package_files, max_zip_bytes)
+
+    zip_entries: list[dict[str, Any]] = []
+    if len(parts) == 1:
+        zip_path = output_dir / f"publish_ready_{date_name}.zip"
+        zip_entries.append(write_zip(zip_path, parts[0]))
+    else:
+        for idx, part_files in enumerate(parts, 1):
+            zip_path = output_dir / f"publish_ready_{date_name}_part{idx:03d}.zip"
+            zip_entries.append(write_zip(zip_path, part_files))
+
+    oversized = [entry for entry in zip_entries if entry["size_bytes"] > 100 * 1024 * 1024]
+    if oversized:
+        log("WARNING: Some ZIP parts still exceed GitHub's 100 MB per-file limit:")
+        for entry in oversized:
+            log(f"  {entry['path']} = {entry['size_bytes']} bytes")
 
     summary = {
         "created_at_utc": datetime.now(timezone.utc).isoformat(),
         "source_date_dir": str(date_dir),
-        "zip_path": str(zip_path),
-        "zip_size_bytes": zip_path.stat().st_size,
+        "output_dir": str(output_dir),
+        "max_zip_mb": max_zip_mb,
+        "single_zip": single_zip,
         "exclude_source_mineru": exclude_source_mineru,
         "included_shard_count": len(included_shards),
         "skipped_shards": skipped_shards,
-        "total_files": total_files,
+        "total_files": len(package_files),
+        "total_raw_file_bytes": sum(item.size for item in package_files),
+        "zip_count": len(zip_entries),
+        "zips": zip_entries,
         "included_shards": included_shards,
     }
     summary_path = output_dir / f"publish_ready_{date_name}_summary.json"
     summary_path.write_text(json.dumps(summary, ensure_ascii=False, indent=2), encoding="utf-8")
-    log(f"Wrote package: {zip_path} ({zip_path.stat().st_size} bytes)")
+    for entry in zip_entries:
+        log(f"Wrote package: {entry['path']} ({entry['size_bytes']} bytes, {entry['file_count']} files)")
     log(f"Wrote summary: {summary_path}")
     return summary
 
@@ -165,8 +248,16 @@ def main() -> int:
     parser.add_argument("--date-dir", required=True, help="e.g. xhs_notes/dropbox/260514")
     parser.add_argument("--output-root", default="publish_ready_zips")
     parser.add_argument("--include-source-mineru", action="store_true", help="include source_mineru.md in the ZIP")
+    parser.add_argument("--max-zip-mb", type=int, default=90, help="target max size per zip part for GitHub commit safety")
+    parser.add_argument("--single-zip", action="store_true", help="write one ZIP even if it exceeds GitHub's 100 MB file limit")
     args = parser.parse_args()
-    build_package(Path(args.date_dir), Path(args.output_root), exclude_source_mineru=not args.include_source_mineru)
+    build_package(
+        Path(args.date_dir),
+        Path(args.output_root),
+        exclude_source_mineru=not args.include_source_mineru,
+        max_zip_mb=args.max_zip_mb,
+        single_zip=args.single_zip,
+    )
     return 0
 
 
