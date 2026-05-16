@@ -8,6 +8,9 @@ excluded from the ZIP.
 GitHub blocks single files over 100 MB, so this script creates multiple ZIP
 parts by default, each targeting less than --max-zip-mb. The workflow can then
 commit the parts safely while the full folder is also uploaded as an artifact.
+
+For mobile publishing convenience, Markdown files are stored inside the ZIP with
+.txt suffixes, without changing the original repository files.
 """
 from __future__ import annotations
 
@@ -45,6 +48,7 @@ class PackageFile:
     shard: str
     report: str | None
     size: int
+    renamed_markdown: bool = False
 
 
 def log(message: str) -> None:
@@ -92,6 +96,14 @@ def should_include_top_level_file(path: Path) -> bool:
     return path.name in allowed or path.name.endswith("_progress.log")
 
 
+def package_arcname(date_name: str, rel: Path) -> tuple[str, bool]:
+    """Return ZIP path. Rename .md files to .txt for mobile compatibility."""
+    renamed = rel.suffix.lower() == ".md"
+    if renamed:
+        rel = rel.with_suffix(".txt")
+    return (Path(date_name) / rel).as_posix(), renamed
+
+
 def iter_files_for_shard(shard_dir: Path, report_dirs: list[Path], exclude_source_mineru: bool) -> list[Path]:
     files: list[Path] = []
     for path in sorted(shard_dir.iterdir()):
@@ -130,38 +142,51 @@ def collect_package_files(date_dir: Path, exclude_source_mineru: bool) -> tuple[
             log(f"Skip {shard_dir.name}: no publish-ready files after filtering.")
             continue
         report_names = {p.name for p in report_dirs}
+        renamed_markdown_count = 0
         for file_path in files:
             rel = file_path.relative_to(date_dir)
             report_name = None
             parts = rel.parts
             if len(parts) >= 2 and parts[1] in report_names:
                 report_name = parts[1]
+            arcname, renamed_markdown = package_arcname(date_name, rel)
+            if renamed_markdown:
+                renamed_markdown_count += 1
             package_files.append(PackageFile(
                 source=file_path,
-                arcname=(Path(date_name) / rel).as_posix(),
+                arcname=arcname,
                 shard=shard_dir.name,
                 report=report_name,
                 size=file_path.stat().st_size,
+                renamed_markdown=renamed_markdown,
             ))
         included_shards.append({
             "shard": shard_dir.name,
             "report_count": len(report_dirs),
             "file_count": len(files),
+            "renamed_markdown_count": renamed_markdown_count,
             "raw_file_bytes": sum(p.stat().st_size for p in files),
             "reports": [p.name for p in report_dirs],
         })
-        log(f"Collected {shard_dir.name}: reports={len(report_dirs)}, files={len(files)}")
+        log(f"Collected {shard_dir.name}: reports={len(report_dirs)}, files={len(files)}, md_to_txt={renamed_markdown_count}")
     return package_files, included_shards, skipped_shards
 
 
 def write_zip(zip_path: Path, files: list[PackageFile]) -> dict[str, Any]:
+    seen_arcnames: set[str] = set()
     with zipfile.ZipFile(zip_path, "w", compression=zipfile.ZIP_DEFLATED, compresslevel=6, allowZip64=True) as zf:
         for item in files:
-            zf.write(item.source, item.arcname)
+            arcname = item.arcname
+            if arcname in seen_arcnames:
+                base = Path(arcname)
+                arcname = (base.parent / f"{base.stem}_{len(seen_arcnames):04d}{base.suffix}").as_posix()
+            seen_arcnames.add(arcname)
+            zf.write(item.source, arcname)
     return {
         "path": str(zip_path),
         "size_bytes": zip_path.stat().st_size,
         "file_count": len(files),
+        "renamed_markdown_count": sum(1 for item in files if item.renamed_markdown),
         "raw_file_bytes": sum(item.size for item in files),
         "shards": sorted({item.shard for item in files}),
     }
@@ -227,9 +252,11 @@ def build_package(date_dir: Path, output_root: Path, exclude_source_mineru: bool
         "max_zip_mb": max_zip_mb,
         "single_zip": single_zip,
         "exclude_source_mineru": exclude_source_mineru,
+        "markdown_files_renamed_to_txt": True,
         "included_shard_count": len(included_shards),
         "skipped_shards": skipped_shards,
         "total_files": len(package_files),
+        "total_renamed_markdown_count": sum(1 for item in package_files if item.renamed_markdown),
         "total_raw_file_bytes": sum(item.size for item in package_files),
         "zip_count": len(zip_entries),
         "zips": zip_entries,
@@ -238,7 +265,7 @@ def build_package(date_dir: Path, output_root: Path, exclude_source_mineru: bool
     summary_path = output_dir / f"publish_ready_{date_name}_summary.json"
     summary_path.write_text(json.dumps(summary, ensure_ascii=False, indent=2), encoding="utf-8")
     for entry in zip_entries:
-        log(f"Wrote package: {entry['path']} ({entry['size_bytes']} bytes, {entry['file_count']} files)")
+        log(f"Wrote package: {entry['path']} ({entry['size_bytes']} bytes, {entry['file_count']} files, md_to_txt={entry['renamed_markdown_count']})")
     log(f"Wrote summary: {summary_path}")
     return summary
 
