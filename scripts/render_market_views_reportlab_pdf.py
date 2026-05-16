@@ -39,15 +39,11 @@ def latest_date_dir(root: Path) -> Path:
 
 
 def register_cjk_font() -> str:
-    # ReportLab ships CID font support. This is much more reliable than trying
-    # to register Linux .ttc collections via TTFont.
     try:
         pdfmetrics.registerFont(UnicodeCIDFont("STSong-Light"))
         return "STSong-Light"
     except Exception as exc:
         log(f"Could not register STSong-Light CID font: {exc}")
-
-    # Last-resort TrueType fallback. Skip any font file ReportLab cannot parse.
     candidates = [
         "/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf",
         "/usr/share/fonts/truetype/liberation2/LiberationSans-Regular.ttf",
@@ -64,7 +60,6 @@ def register_cjk_font() -> str:
 
 def clean_text(value: Any) -> str:
     text = re.sub(r"\s+", " ", str(value or "")).strip()
-    # Escape a few XML-sensitive chars for ReportLab Paragraph.
     return text.replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;")
 
 
@@ -84,6 +79,13 @@ def image_flowable(path: Path, max_width: float, max_height: float) -> Image | N
     except Exception as exc:
         log(f"Skip image {path}: {exc}")
         return None
+
+
+def iter_figure_ids(section: dict[str, Any]) -> list[str]:
+    ids = section.get("figure_ids") or []
+    if not isinstance(ids, list):
+        return []
+    return [str(x) for x in ids if x]
 
 
 def build_pdf(summary_dir: Path, output_pdf: Path) -> None:
@@ -114,22 +116,23 @@ def build_pdf(summary_dir: Path, output_pdf: Path) -> None:
     story.append(Paragraph(clean_text(summary.get("subtitle") or "Daily market views roundup"), styles["KCSubtitle"]))
 
     story.append(Paragraph("一页摘要", styles["KCH1"]))
-    for item in summary.get("executive_summary", [])[:6]:
-        story.append(Paragraph("• " + clean_text(item), styles["KCBody"]))
+    for item in summary.get("executive_summary", []):
+        # Avoid the unicode bullet glyph; it rendered as a CJK character in some CID fonts.
+        story.append(Paragraph("- " + clean_text(item), styles["KCBody"]))
 
-    for section in summary.get("sections", [])[:10]:
+    for section in summary.get("sections", []):
         block: list[Any] = []
         block.append(Paragraph(clean_text(section.get("heading") or "未命名板块"), styles["KCH1"]))
         if section.get("thesis"):
             block.append(Paragraph("<b>" + clean_text(section.get("thesis")) + "</b>", styles["KCBody"]))
-        for bullet in (section.get("bullets") or [])[:8]:
-            block.append(Paragraph("• " + clean_text(bullet), styles["KCBody"]))
+        for bullet in (section.get("bullets") or []):
+            block.append(Paragraph("- " + clean_text(bullet), styles["KCBody"]))
         if block:
             story.append(KeepTogether(block[:2]))
             for item in block[2:]:
                 story.append(item)
 
-        for fig_id in (section.get("figure_ids") or [])[:2]:
+        for fig_id in iter_figure_ids(section):
             fig = figures.get(fig_id)
             if not fig:
                 continue
@@ -138,11 +141,11 @@ def build_pdf(summary_dir: Path, output_pdf: Path) -> None:
             if img:
                 story.append(Spacer(1, 0.15 * cm))
                 story.append(img)
-                caption = f"{fig.get('label', 'Exhibit')} - {str(fig.get('context', ''))[:220]}"
+                caption = f"{fig.get('label', 'Exhibit')} - {str(fig.get('context', ''))}"
                 story.append(Paragraph(clean_text(caption), styles["KCCaption"]))
 
         refs = []
-        for ref_id in (section.get("references") or [])[:12]:
+        for ref_id in (section.get("references") or []):
             report = reports.get(ref_id)
             if report:
                 refs.append(f"[{ref_id}] {report.get('title', '')}")
