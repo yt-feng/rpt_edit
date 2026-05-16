@@ -38,6 +38,9 @@ SKIP_NAMES = {
     "prompt_for_market_views.md",
 }
 
+SAFE_XHS_TAGS = ["#学习笔记", "#研究笔记", "#学习研究", "#研报解读"]
+DISALLOWED_XHS_TAGS_RE = re.compile(r"#(?:投资学习|财经|金融|股票|基金|理财|小红书笔记|笔记分享|干货分享)\b")
+
 LOCAL_REPLACEMENTS: list[tuple[str, str]] = [
     # Financial-advice / trading intent
     (r"不构成任何投资建议", "仅为个人阅读分享"),
@@ -125,6 +128,20 @@ def apply_local_guard(text: str) -> tuple[str, list[str]]:
     return protected, changes
 
 
+def normalize_xhs_note_tags(text: str) -> tuple[str, list[str]]:
+    """Keep only approved XHS hashtags and append a stable safe tag set."""
+    changes: list[str] = []
+    original = text
+    text = DISALLOWED_XHS_TAGS_RE.sub("", text)
+    # Drop any trailing hashtag-only block. Then append our allowed set.
+    text = re.sub(r"(?:^|\n)\s*(?:#[^\n#\s]+\s*)+\s*$", "", text, flags=re.MULTILINE).strip()
+    text = text + "\n\n" + " ".join(SAFE_XHS_TAGS) + "\n"
+    text = re.sub(r"\n{3,}", "\n\n", text)
+    if text != original:
+        changes.append("normalize_xhs_note_tags")
+    return text, changes
+
+
 def chunks(text: str, max_chars: int = 650) -> list[str]:
     paras = re.split(r"(\n\n+)", text)
     out: list[str] = []
@@ -177,7 +194,8 @@ def deepseek_rewrite(text: str, detected_hits: list[dict[str, Any]], model: str,
 3. 不要用谐音、拆字、错别字或黑话绕过平台规则；要改成自然、合规、克制的表达。
 4. “投资”相关词尽量改成“研究”“投研”“观察”“学习参考”等，视上下文自然处理。
 5. 不要新增事实、页数、价格、承诺、联系方式。
-6. 只输出改写后的正文，不要解释。
+6. 小红书 note.md 的标签只能使用 #学习笔记 #研究笔记 #学习研究 #研报解读。
+7. 只输出改写后的正文，不要解释。
 
 检测命中：
 {json.dumps(detected_hits, ensure_ascii=False)}
@@ -233,6 +251,9 @@ def guard_file(path: Path, args: argparse.Namespace) -> dict[str, Any]:
         except Exception as exc:
             rewrite_error = str(exc)
             log(f"DeepSeek sensitive rewrite failed for {path}: {exc}")
+    if path.name == "note.md":
+        final_text, tag_changes = normalize_xhs_note_tags(final_text)
+        local_changes.extend(tag_changes)
     changed = final_text != original
     if changed:
         path.write_text(final_text, encoding="utf-8")
