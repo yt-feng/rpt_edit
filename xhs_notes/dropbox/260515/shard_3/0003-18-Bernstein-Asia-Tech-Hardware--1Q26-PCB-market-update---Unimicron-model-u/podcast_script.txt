@@ -1,71 +1,93 @@
-ZH_A: 最近AI服务器相关的PCB和ABF基板股票涨得很猛，这份报告说今年一季度延续了强势，你觉得这波行情还能持续吗？
+ZH_A: 今天我们要聊一份挺有意思的研报，是关于亚洲科技硬件领域里的PCB和ABF基板市场。B，为什么这份报告现在值得关注？
 
-ZH_B: 确实，一季度我们跟踪的AI PCB公司收入同比增长了38%，环比也增长了8%。像欣兴电子、揖斐电这些核心玩家，收入扩张非常明显。但关键不是看过去的数据，而是看未来驱动力的可持续性。
+ZH_B: 因为整个板块今年涨得很猛。报告的核心判断是，AI服务器带来的需求正在推动这个行业进入一个全新的增长周期。1Q26的数据显示，样本AI PCB公司的营收同比增长了38%，环比也涨了8%。
 
-ZH_A: 那这份报告真正要回答的核心问题是什么？
+ZH_A: 38%的同比增长，这个数字很亮眼。那这份报告真正想回答的问题是什么？
 
-ZH_B: 它要回答的是：在AI服务器出货加速的背景下，PCB产业链的涨价逻辑和产能扩张到底能支撑多长时间的盈利增长。报告特别关注了原材料紧张、ABF基板价格走势，以及像欣兴电子这样的公司，盈利拐点什么时候真正到来。
+ZH_B: 它想回答的是，AI驱动的需求到底能持续多久，以及哪些公司能真正受益。报告重点分析了像欣兴电子这样的龙头企业，认为它们的ABF基板业务正在加速增长，甚至可能超过2022年四季度的历史高点。
 
-ZH_A: 原材料紧张这个点很有意思。具体是什么在紧张？
+ZH_A: 超过历史高点？那意味着什么？
 
-ZH_B: 主要是T-glass、高端CCL和铜箔。报告判断，这些原材料的供应紧张会贯穿2026年全年。而且，上游的CCL从2025年开始已经多次涨价，ABF薄膜也传出下半年要涨价的消息。这意味着整个PCB市场会维持一个非常有利的定价环境。
+ZH_B: 这意味着整个供应链都在被重塑。AI服务器的出货量在加速，像数据中心和网络设备的需求，正在抵消汽车和工业领域的疲软。所以，那些早早布局AI的公司，比如欣兴电子和揖斐电，营收和利润率都在快速改善。
 
-ZH_A: 所以这意味着下游的PCB厂商有很强的议价能力？
+ZH_A: 那报告里提到的关键洞察有哪些？
 
-ZH_B: 对，但也要分层次看。比如ABF基板，一季度ASP已经环比涨了5%，报告预期全年会加速到每季涨7%到10%。原因很直接：原材料成本从二季度开始涨了大概30%，加上高端ABF的出货占比在提高。
+ZH_B: 第一个是原材料供应紧张。T玻璃、CCL和铜箔这些上游材料，预计到年底都会保持紧俏，这支撑了整个PCB市场的定价环境。报告甚至提到，ABF薄膜的成本可能在2026年下半年涨价。
 
-ZH_A: 那欣兴电子作为报告重点分析的公司，它的盈利前景怎么样？
+ZH_A: 原材料涨价，那对下游厂商意味着什么？
 
-ZH_B: 报告做了非常详细的模型更新。它预计欣兴电子的AI相关收入，包括ABF和HDI，未来会占到公司收入的一半。2025到2028年，收入年复合增长率能达到30%。EPS方面，报告预测2026年会翻三倍以上，2027年再增长80%，2028年再增长45%，达到36.6元新台币。
+ZH_B: 意味着成本压力会传导，但同时也给了龙头公司提价的空间。报告估计，欣兴电子的ABF基板平均售价在1Q26已经环比上涨了5%，到2026年可能会加速到每季度7%到10%。
 
-ZH_A: 听起来很乐观，但报告有没有提到什么风险或者不确定性？
+ZH_A: 7%到10%的季度涨幅，这很可观。第二个洞察是什么？
 
-ZH_B: 有，而且很重要。报告特别强调，它假设的毛利率恢复路径比市场共识要更渐进。它没有把“短缺驱动的毛利率飙升”算进明年的预测里。换句话说，如果市场预期过于激进，实际盈利可能低于预期。另外，报告还留下了一个悬念。
+ZH_B: 是产能扩张的节奏。整个行业正在进入一个激进的资本支出周期。比如欣兴电子2026年的资本支出指引是340亿新台币，同比增长33%。中国的PCB公司也在东南亚加速建厂，以分散地缘政治风险。
 
-ZH_A: 什么悬念？
+ZH_A: 那这对投资者意味着什么？
 
-ZH_B: 报告提到，一些CPU已经开始采用T-glass的第二供应商，但GPU和ASIC的采用情况，报告判断到2026年底仍然有限。这意味着，如果高端芯片开始大规模切换供应商，整个供应链的定价格局可能会发生重大变化。这一点，在完整报告里有更深入的讨论。
+ZH_A: 意味着未来的竞争格局会发生变化。那些能快速扩张产能、同时拿到高端订单的公司，可能会占据优势。但报告也提醒，不是所有公司都能跟上这个节奏。
 
-ZH_A: 所以我们今天只聊了冰山一角。如果想了解这个第二供应商切换的风险，以及更多关于AI数据中心连接性的完整分析，应该去哪里看？
+ZH_B: 对，比如报告里提到，有些CPU厂商已经开始从第二供应商采购T玻璃，但GPU和ASIC领域，到2026年底可能都不会大规模采用二级供应商。这个细节很关键。
 
-ZH_B: 对，完整报告里还有关于揖斐电和味之素的详细更新，以及更全面的PCB市场展望。建议听众加入我们的社群，或者直接阅读我们的完整研报，那里会有更完整的逻辑和数据支撑。
+ZH_A: 这确实是一个悬念。那报告里还有哪些问题没有完全展开？
 
-ZH_A: 好，感谢你的分享，我们今天就到这里。
+ZH_B: 有两点。第一，报告对欣兴电子的利润率预测比市场共识更保守。它假设毛利率到2028年底才达到35%左右，并没有把“短缺驱动”的利润率飙升算进去。这意味着，如果需求超预期，实际利润可能更高，但也可能低于预期。
 
-ZH_B: 谢谢，下次再聊。
+ZH_A: 所以，市场可能太乐观了？
 
-EN_A: AI server stocks in the PCB and ABF sUBStrate space have been on a tear. This report says the momentum continued in the first quarter. Do you think it can last?
+ZH_B: 不一定，但需要更多数据来验证。第二，报告提到了像日本味之素这样的公司，虽然营收增长很快，但运营杠杆仍然偏低。报告预期它会回升，但具体什么时候能实现，还没有明确答案。
 
-EN_B: Absolutely. The sampled AI PCB companies posted 38% year-on-year revenue growth in Q1, with 8% sequential growth. Key players like Unimicron and Ibiden saw solid expansion. But the real question isn't about the past numbers. It's about how sustainable the drivers are going forward.
+ZH_A: 这听起来像是完整报告里会继续展开的部分。如果我们想了解更多，应该怎么做？
 
-EN_A: So what is the core question this report is really trying to answer?
+ZH_B: 建议去读完整版报告，特别是关于欣兴电子和揖斐电的模型更新部分。报告里有很多详细的财务预测和行业对比，能帮你更全面地理解这个周期。
 
-EN_B: It's trying to figure out how long the pricing power and capacity expansion story in the PCB supply chain can support earnings growth, given the acceleration in AI server shipments. The report focuses on raw material tightness, ABF sUBStrate pricing trends, and when the profit inflection point really arrives for companies like Unimicron.
+ZH_A: 好的，今天的讨论就到这里。感谢B的分享，我们下期再见。
 
-EN_A: You mentioned raw material tightness. What exactly is tight?
+ZH_B: 谢谢，再见。
 
-EN_B: It's mainly T-glass, high-end CCL, and copper foil. The report expects this tightness to persist through the whole of 2026. And here's the kicker: upstream CCL has already seen multiple price hikes since last year, and ABF film is reportedly set to increase in the second half of this year. That means the overall PCB market will enjoy a very favorable pricing environment.
+EN_A: So we are looking at a research report on Asia Tech Hardware, specifically the PCB and ABF sUBStrate market. B, why should our listeners care about this now?
 
-EN_A: So that gives downstream PCB makers strong pricing power?
+EN_B: Because the sector has rallied sharply this year. The report says that in the first quarter of 2026, sampled AI PCB companies grew revenue by 38 percent year over year and 8 percent quarter over quarter. That is a strong signal.
 
-EN_B: Yes, but you have to look at it layer by layer. For ABF sUBStrates, for example, ASP already rose 5% quarter-on-quarter in Q1. The report expects that to accelerate to 7% to 10% per quarter through the rest of the year. The reason is straightforward: raw material costs are up about 30% from Q2, and the mix of high-end ABF is getting richer.
+EN_A: 38 percent year over year. That is impressive. So what is the big question this report is trying to answer?
 
-EN_A: What about Unimicron, the company the report focuses on most? What does the earnings outlook look like?
+EN_B: It is trying to figure out how sustainable this AI-driven demand is and which companies are really benefiting. The report focuses on key players like Unimicron, and it argues that their ABF sUBStrate business is accelerating and might even surpass the previous peak seen in the fourth quarter of 2022.
 
-EN_B: The report does a very detailed model update. It estimates that Unimicron's AI-related revenue, including ABF and HDI, will reach half of total company revenue going forward. From 2025 to 2028, they model a 30% revenue CAGR. For EPS, they see it more than tripling in 2026, then growing about 80% in 2027, and another 45% in 2028, reaching 36.6 New Taiwan Dollars.
+EN_A: Surpassing a previous peak. What does that mean in practical terms?
 
-EN_A: That sounds very bullish. But does the report mention any risks or uncertainties?
+EN_B: It means the whole supply chain is being reshaped. AI server shipments are ramping up fast, and demand from data centers and networking is offsetting weakness in legacy markets like automotive and industrial. So companies with high AI exposure, like Unimicron and Ibiden, are seeing rapid revenue and margin improvements.
 
-EN_B: Yes, and it's important. The report explicitly says it assumes a more gradual margin recovery than the consensus. It does not factor in a "shortage-driven" margin spike next year. In other words, if the market is too optimistic, actual earnings could disappoint. And there's another big question the report leaves hanging.
+EN_A: What are some of the key insights the report offers?
 
-EN_A: What's that?
+EN_B: First, raw material tightness. Things like T-glass, CCL, and copper foil are expected to stay in short supply through the end of this year. That supports a strong pricing environment. The report even mentions that ABF film costs might rise in the second half of 2026.
 
-EN_B: The report notes that some CPUs are starting to adopt T-glass from second-source suppliers. But for GPUs and ASICs, it assumes limited adoption by the end of 2026. If high-end chips start switching suppliers at scale, the entire pricing dynamic of the supply chain could shift. That's a topic the full report explores in much more depth.
+EN_A: Raw material price hikes. So what does that mean for downstream companies?
 
-EN_A: So we've only scratched the surface today. Where can listeners go if they want to understand that second-source risk, or get the full picture on AI data center connectivity?
+EN_B: It means cost pressure will pass through, but it also gives leading companies room to raise prices. The report estimates that Unimicron’s ABF sUBStrate average selling price increased 5 percent quarter over quarter in Q1 2026, and that could accelerate to 7 to 10 percent per quarter through 2026.
 
-EN_B: Exactly. The full report also includes detailed updates on Ibiden and Ajinomoto, and a broader PCB market outlook. I'd encourage listeners to join our community or read the full research report for the complete logic and data.
+EN_A: Seven to ten percent per quarter. That is significant. What is the second insight?
 
-EN_A: Thanks for the insights. That's all for today.
+EN_B: The pace of capacity expansion. The industry is entering an aggressive capex cycle. Unimicron, for example, guided for 34 billion New Taiwan dollars in capex for 2026, up 33 percent year over year. Chinese PCB companies are also accelerating overseas capacity in Southeast Asia to mitigate geopolitical risks.
 
-EN_B: Thank you. Talk to you next time.
+EN_A: So what does that mean for investors?
+
+EN_B: It means the competitive landscape is shifting. Companies that can scale capacity quickly and secure high-end orders will likely win. But the report also cautions that not everyone can keep up.
+
+EN_A: Can you give an example?
+
+EN_B: Sure. The report notes that some CPU makers are starting to adopt T-glass from second-source suppliers. But for GPU and ASIC applications, it assumes limited adoption of tier-2 suppliers by the end of 2026. That is a key detail.
+
+EN_A: That sounds like a point that needs more exploration. Are there any questions the report leaves open?
+
+EN_B: Two things. First, the report is more conservative than consensus on Unimicron’s margin recovery. It assumes gross margin reaches only about 35 percent by the end of 2028, and it does not factor in a shortage-driven margin spike. So if demand surprises to the upside, actual profits could be higher, but they could also disappoint.
+
+EN_A: So the market might be too optimistic?
+
+EN_B: Not necessarily, but it needs more data to confirm. Second, the report mentions Ajinomoto, which has strong revenue growth but low operating leverage. It expects that to improve, but it does not give a clear timeline for when that will happen.
+
+EN_A: That sounds like something the full report would dive into. If we want to learn more, what should we do?
+
+EN_B: I would recommend reading the full report, especially the sections on Unimicron and Ibiden model updates. It has detailed financial forecasts and industry comparisons that can help you understand this cycle better.
+
+EN_A: Great. Thanks for the insights, B. That is all for today.
+
+EN_B: Thanks for having me. See you next time.

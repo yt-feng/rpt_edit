@@ -1,5 +1,33 @@
 [
   {
+    "item": "0001-16-Goldman-Sachs-China-Data-Centers--Scaling-the-AI-Infrastructure-260515",
+    "source_pdf": "/tmp/pdf_batch_001_i8m6o5us/pdfs/0001-16-GS-China Data Centers- Scaling the AI Infrastructure-260515.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "cover_short_title": "中国AI数据中心：正",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png",
+      "assets/xhs_card_09.png"
+    ],
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md",
+    "wechat_images": [
+      "assets/source_image_01.jpg",
+      "assets/source_image_02.jpg",
+      "assets/source_image_03.jpg"
+    ],
+    "wechat_article_en": "wechat_article_en.md",
+    "podcast_script": "podcast_script.txt"
+  },
+  {
     "item": "0001-16-UBS-Global-Strategy-Client-views-Oil-vs-Fed-vs-ECB-vs-Carry-vs-Political",
     "source_pdf": "/tmp/pdf_batch_001_e013qaz7/pdfs/0001-16-UBS-Global Strategy-Client views-Oil vs Fed vs ECB vs Carry vs Political risk-260514.pdf",
     "mineru_state": "done",
@@ -16,6 +44,36 @@
     "wechat_images": [
       "assets/source_image_01.jpg",
       "assets/source_image_02.jpg"
+    ],
+    "wechat_article_en": "wechat_article_en.md",
+    "podcast_script": "podcast_script.txt",
+    "xianyu_note": "xianyu_note.md",
+    "prompt_for_xianyu": "prompt_for_xianyu.md"
+  },
+  {
+    "item": "0002-17-Goldman-Sachs-Global-Markets-Daily--Why-Always-Gilts--260514",
+    "source_pdf": "/tmp/pdf_batch_001_i8m6o5us/pdfs/0002-17-GS-Global Markets Daily- Why Always Gilts--260514.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "cover_short_title": "英国国债为什么跌得最",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png",
+      "assets/xhs_card_09.png"
+    ],
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md",
+    "wechat_images": [
+      "assets/source_image_01.jpg",
+      "assets/source_image_02.jpg",
+      "assets/source_image_03.jpg"
     ],
     "wechat_article_en": "wechat_article_en.md",
     "podcast_script": "podcast_script.txt"
@@ -46,7 +104,9 @@
       "assets/source_image_03.jpg"
     ],
     "wechat_article_en": "wechat_article_en.md",
-    "podcast_script": "podcast_script.txt"
+    "podcast_script": "podcast_script.txt",
+    "xianyu_note": "xianyu_note.md",
+    "prompt_for_xianyu": "prompt_for_xianyu.md"
   },
   {
     "item": "0003-18-Bernstein-Asia-Tech-Hardware--1Q26-PCB-market-update---Unimicron-model-u",
@@ -65,6 +125,33 @@
       "assets/xhs_card_07.png",
       "assets/xhs_card_08.png",
       "assets/xhs_card_09.png"
+    ],
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md",
+    "wechat_images": [
+      "assets/source_image_01.jpg",
+      "assets/source_image_02.jpg",
+      "assets/source_image_03.jpg"
+    ],
+    "wechat_article_en": "wechat_article_en.md",
+    "podcast_script": "podcast_script.txt",
+    "xianyu_note": "xianyu_note.md",
+    "prompt_for_xianyu": "prompt_for_xianyu.md"
+  },
+  {
+    "item": "0003-18-Goldman-Sachs-Natural-Gas-Comment--Preliminary-Signs-of-Asia-LNG-Demand-",
+    "source_pdf": "/tmp/pdf_batch_001_i8m6o5us/pdfs/0003-18-GS-Natural Gas Comment- Preliminary Signs of Asia LNG Demand Recovery Keep Risks to 2H26 TTF Skewed to the Upside-260514.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "cover_short_title": "亚洲LNG需求回暖，",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png"
     ],
     "cover": "assets/cover.png",
     "wechat_article": "wechat_article.md",
@@ -102,6 +189,36 @@
       "assets/source_image_03.jpg"
     ],
     "wechat_article_en": "wechat_article_en.md",
+    "podcast_script": "podcast_script.txt",
+    "xianyu_note": "xianyu_note.md",
+    "prompt_for_xianyu": "prompt_for_xianyu.md"
+  },
+  {
+    "item": "0004-19-Goldman-Sachs-Oil-Tracker-US-Gasoline-Market-Tightening--Global-April-De",
+    "source_pdf": "/tmp/pdf_batch_001_i8m6o5us/pdfs/0004-19-GS-Oil Tracker-US Gasoline Market Tightening- Global April Deficit May Be Less Large Than Expected-260514.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "cover_short_title": "美国汽油市场正快速收",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png",
+      "assets/xhs_card_09.png"
+    ],
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md",
+    "wechat_images": [
+      "assets/source_image_01.jpg",
+      "assets/source_image_02.jpg",
+      "assets/source_image_03.jpg"
+    ],
+    "wechat_article_en": "wechat_article_en.md",
     "podcast_script": "podcast_script.txt"
   },
   {
@@ -110,6 +227,36 @@
     "mineru_state": "done",
     "mineru_error": "",
     "cover_short_title": "航空股要变天？别只看",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png",
+      "assets/xhs_card_09.png"
+    ],
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md",
+    "wechat_images": [
+      "assets/source_image_01.jpg",
+      "assets/source_image_02.jpg",
+      "assets/source_image_03.jpg"
+    ],
+    "wechat_article_en": "wechat_article_en.md",
+    "podcast_script": "podcast_script.txt",
+    "xianyu_note": "xianyu_note.md",
+    "prompt_for_xianyu": "prompt_for_xianyu.md"
+  },
+  {
+    "item": "0005-20-Goldman-Sachs-US-EQUITY-VIEWS-The-rise-and-reach-of-retail-trading-in-US",
+    "source_pdf": "/tmp/pdf_batch_001_i8m6o5us/pdfs/0005-20-GS-US EQUITY VIEWS-The rise and reach of retail trading in US equities-260513.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "cover_short_title": "散户交易正在改变美股",
     "cover_subtitle": "研报重点一图看懂",
     "images": [
       "assets/xhs_card_01.png",

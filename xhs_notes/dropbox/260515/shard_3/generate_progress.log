@@ -1,21 +1,13 @@
 Found 39 total PDFs; shard 3/40 has 5 PDFs, skips 0 already converted, will process 5 PDFs with batch_size=5.
 Running batch 1: 5 PDFs
 Found 5 PDFs.
-Uploading PDF to MinerU: /tmp/pdf_batch_001_e013qaz7/pdfs/0001-16-UBS-Global Strategy-Client views-Oil vs Fed vs ECB vs Carry vs Political risk-260514.pdf
-Uploading PDF to MinerU: /tmp/pdf_batch_001_e013qaz7/pdfs/0002-17-UBS-Global Gas-Storage rebuilds uneven-260514.pdf
-Uploading PDF to MinerU: /tmp/pdf_batch_001_e013qaz7/pdfs/0003-18-Bernstein-Asia Tech Hardware- 1Q26 PCB market update - Unimicron model update-260514.pdf
-Uploading PDF to MinerU: /tmp/pdf_batch_001_e013qaz7/pdfs/0004-19-Bernstein-European Business Services-AI for Business Services- From job fears to productivity on a plate-260515.pdf
-Uploading PDF to MinerU: /tmp/pdf_batch_001_e013qaz7/pdfs/0005-20-Bernstein-Global Air Tech- Airline supply under the microscope. Maintain Outperform on Amadeus and Market-Perform on Sabre-260514.pdf
-MinerU batch_id=5459fca1-a87b-4ec0-9991-e9583c7d2254
-MinerU states: running, pending, pending, pending, waiting-file
-MinerU states: done, running, running, running, pending
-MinerU states: done, running, running, running, running
-MinerU states: done, running, running, running, running
-MinerU states: done, running, running, running, running
-MinerU states: done, running, running, running, running
-MinerU states: done, running, running, running, running
-MinerU states: done, running, done, running, done
-MinerU states: done, done, done, running, done
+Uploading PDF to MinerU: /tmp/pdf_batch_001_i8m6o5us/pdfs/0001-16-Goldman Sachs-China Data Centers- Scaling the AI Infrastructure-260515.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_i8m6o5us/pdfs/0002-17-Goldman Sachs-Global Markets Daily- Why Always Gilts--260514.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_i8m6o5us/pdfs/0003-18-Goldman Sachs-Natural Gas Comment- Preliminary Signs of Asia LNG Demand Recovery Keep Risks to 2H26 TTF Skewed to the Upside-260514.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_i8m6o5us/pdfs/0004-19-Goldman Sachs-Oil Tracker-US Gasoline Market Tightening- Global April Deficit May Be Less Large Than Expected-260514.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_i8m6o5us/pdfs/0005-20-Goldman Sachs-US EQUITY VIEWS-The rise and reach of retail trading in US equities-260513.pdf
+MinerU batch_id=e11e2795-5760-4044-9b39-4c014ee635f6
+MinerU states: done, done, done, done, waiting-file
 MinerU states: done, done, done, done, done
 Done. Results written to /home/runner/work/rpt_edit/rpt_edit/xhs_notes/dropbox/260515/shard_3
 All batches completed successfully.
