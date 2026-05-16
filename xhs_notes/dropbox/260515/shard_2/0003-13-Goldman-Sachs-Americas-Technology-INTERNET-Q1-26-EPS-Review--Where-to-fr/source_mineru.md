@@ -1,0 +1,3654 @@
+AMERICAS TECHNOLOGY: INTERNET
+
+# Q1'26 EPS Review: Where to from Here? Recapping Takeaways & Debates; Focus Stocks Going Forward
+
+During this past earnings season, our coverage universe has produced heightened volatility and (mostly) negative stock performance YTD as a few themes continue to dominate investor debates and company commentary:
+
+The AI theme shifts from the capex debate to questions about hyperscaler backlog, rate of change for revenue growth and the rising disconnect between free cash flow and GAAP operating income margins – These themes (across the earnings reports of GOOGL, AMZN and META) can be summarized as: a) the rate of capex spend continues to surprise more to the upside than the downside with slight upward adjustments in company commentary for 2026 but early qualitative/directional commentary about 2027 that has caused another round of collective raises from us (our 2027 capex estimates across the three names rose from \~\$586bn pre-Q1 earnings to \~\$700bn currently); b) the revenue backlog of Google Cloud and Amazon’s AWS now stands at a combined \~\$832bn (up from \~\$358bn just six months ago after Q3 2025 earnings season) as a demonstration that the imbalance between the AI demand curve and the availability of compute continues to widen and is unlikely (based on our industry work) to reach any sort of balance until well into 2H 2027 at the earliest; 3) companies that were able to discuss revenue backlog, relative protection of non-AI inputs on operating margins and rising higher margin shifts on the AI theme (Google Cloud and AWS custom silicon efforts, rising platform services for enterprise adoption of AI & META’s core ads platform) were better received and those companies being more open ended in terms of a visible pathway to return profile on elements of AI spend have relatively underperformed.
+
+The state of the digital consumer – The reporting season generally presented as positive for digital consumer trends across commerce, online travel, mobility and delivery. That said, on the back of more mixed economic data and commentary from companies away from our coverage on consumer discretionary behavior, a rising debate over the last 1-2 weeks has been how the forward commentary of companies might eventually prove disappointing if consumer wallet input costs remain elevated and the bifurcated consumer landscape (with the digital economy as a disproportionate beneficiary) might not sustain as we get deeper into 2026. Based on our industry work quarter-to-date (albeit limited as we just
+
+# Eric Sheridan
+
++1(917)343-8683
+
+eric.sheridan@gs.com
+
+GS & Co. LLC
+
+# Alex Vegliante, CFA
+
++1(212)934-1878
+
+alex.vegliante@gs.com
+
+GS & Co. LLC
+
+# Julia Fein-Ashley
+
++1(212)902-5070 | julia.fein-
+
+ashley@gs.com
+
+GS & Co. LLC
+
+# Aarshiya Sachdeva
+
++1(212)855-6184
+
+aarshiya.sachdeva@gs.com
+
+GS & Co. LLC
+
+# Achal Gupta
+
++1(332)245-7973 | achal.gupta@gs.com
+
+GS India SPL
+
+# Emma Huang
+
++1(212)902-7229
+
+emma.huang@gs.com
+
+GS & Co. LLC
+
+exited a focus on earnings season), we don't yet have a reason to change our current forecasts but this remains a likely area of focus for our work (and investor questions) as our Q2 2026 industry channel checks build over the next 4-6 weeks.
+
+The concern around incremental investments and company initiatives when there is low visibility into the return profile and/or platform disruption (users/growth) which might impact short-term financial trajectory – This was a recurring theme across a number of companies that had either: a) already flagged 2026 as a year of emphasizing growth investments over margin optimization; b) cited a changed forward trajectory for compute costs (the rise of the token economy and compute in a shift toward AI internal workflows); and/or c) outlined external/internal platform changes (including a recent theme of user behavior tied to age verification and age gating initiatives). This theme became a focal point for investors during the Q3 2025 earnings season and has only built in momentum in the past 6-8 months. With the majority of our coverage universe having de-rated YTD, we believe some of this dynamic has been reflected in stocks and, in the past, we have found that any eventual positive estimate revisions in forward operating income (whether by offsetting costs through efficiencies and/or moderating investments) is typically a signal that can produce increased investor confidence (translating into both estimate revisions and a higher valuation multiple construct).
+
+On the back of earnings season, we continue to highlight that our 10 Themes work (link) around Cloud Computing, AI as a force in Digital Advertising and the rising secular growth tailwind around Local Commerce (broadly defined across eCommerce and Delivery players) remain areas where we think investors can gain exposure to outsized compounded growth in the sector relative to historical trends. In addition, we recently co-authored (as a broader TMT team) a deep dive on the potential scope for growth in the Agentic Economy in the next 4-5 years (link) – laying out a case for how AI driven use cases (both individual compute and agentic) could make the landscape of consumer compute use cases more diffuse, more token dependent and more compute intensive. Lastly, we refreshed our work around the AVs landscape (co-authoring work with our Global Autos team - link) where we continue to see a rising secular growth theme in the Mobility Networks around the introduction of AVs supply and think that such supply growth will be a stimulant of rider growth, rider frequency and remain confident in the long-term ability for existing mobility networks to earn positive compounded returns alongside the rise in that supply (a view and theme that remains very heavily debated and controversial among global investors).
+
+In terms of our largest cap names under coverage, we would highlight a few key themes/debates among our Buy rated stocks:
+
+1. DASH – On the back of topline trends and broader mgmt commentary, we see DoorDash as squarely and positively executing against its broader local commerce strategy with management highlighting growing user engagement, strengthening platform economics, and evolving consumer behavior leading to continued outperformance from a topline perspective. In the coming quarters, we expect investor focus to remain on end demand trends (along with the health of the consumer more broadly) and competitive intensity dynamics within the core food delivery and grocery & retail landscape. In addition, while the Q2 Adj EBITDA
+
+commentary was better than feared (based on our pre-earnings investor conversations), we expect that investors will remain focused on the quarterly cadence of the current investment cycle when measured against the medium/long term incremental margin progression for the platform.
+
+2. META – In recent investor conversations (post earnings), Meta has clearly become the most debated and subject to wall of worry stock in our coverage universe (when measured against the other large mega cap names). That primary debate remains most focused on the scaling of capital needs against AI ambitions and strategic positioning alongside the rising questions about how Meta's platform and product set might evolve and iterate alongside rising AI compute use cases (especially the consumer compute competitive landscape). Leaving aside the duration and visibility on non-core AI and Reality Labs investments, we see Meta's core business (Family of Apps anchored around social connectivity, media engagement, advertising and communications) as sustaining strong forward growth and increasingly mispriced by the market (similar to the periods of underperformance that its comps in our coverage universe underwent in the last 12-24 months at specific times).
+
+3. UBER – The company produced a strong quarter across both its Mobility and Delivery segments as evidence continues to mount (in our view) that the company’s multi product approach (anchored around Uber One) situates the company positively in large GDP concentrated geographies where rising utility can be driven across the platform. Over the coming quarters, we expect that investor narratives will remain anchored around the macro activity levels across consumer and enterprise usage, the competitive dynamics across all operating segments and how mgmt framing might evolve with respect to the balance between returns, investments, and outside capital allocation. On the point of AV supply (partnerships & growth), we continue to see UBER’s strategy of aligning their platform’s go to market position and capital allocation possibilities to widen out its own exposure to that theme remains underappreciated by investors.
+
+4. AMZN – The company has rallied since late March on the back of CEO Andy Jassy's positive and constructive annual letter to shareholders followed by key affirmative datapoints across the company's AWS, Consumer and Advertising segments in its earnings report. Looking beyond the earnings report, we expect investors will remain focused on the health of the global consumer landscape, the ability for AMZN to sustain Ad Services growth & the overall AI landscape and its potential for growth and competitive market share. On the last point, further evidence of the balancing act between capital needs (and its impact on short duration free cash flow), the conversion of backlog into revenue growth (as compute gets brought to market) and any further evidence in terms of margin trajectory for the AWS segment (offsets to the upward trajectory from depreciation) is likely to remain the driver of the shares.
+
+5. SPOT – Coming out of its earnings report, we see Spotify as a stock anchored around two investor debates: a) operating expense investments in the name of forward platform innovation and new product initiatives (& questions about when platform/product initiatives might produce yield from those investments); & b) how Spotify’s strategic position in the audio/media landscape might evolve in an AI centric world across content creation and distribution. We look toward Spotify’s
+
+upcoming Investor Day (May 21st) for any signal as a means of addressing those debates. In our view, the platform remains positioned as a net beneficiary of AI-generated content when measured against its content distribution scale – a view that runs counter to most investor fears/debates.
+
+6. NFLX – We see Netflix’s recent earnings report as supportive of the long-term thesis – compounded revenue growth, rising margins (while investing in content and platform initiatives) & the scope to return capital in an outsized way (relative to annualized free cash flow). On this last point, we took it as a positive post the earnings report when Netflix announced a \$25bn stock repurchase authorization. Against these long theses, the short-term debate is likely going to stay anchored on themes around engagement trends and the building blocks (user growth, pricing etc.) that underpin the company’s Q2 revenue commentary.
+
+7. GOOGL – Alphabet has fully transformed in terms of operating results and investment sentiment from an equity story perceived negatively through the AI prism in mid-2025 to one in which investors almost universally are positive about the company’s forward positioning across key AI themes (consumer/enterprise use cases, scaling technical infrastructure, scaling customer silicon solutions & the application of rising amounts of compute to the transformation of its core application led businesses). While there will likely remain questions about some aspects of the long-tailed nature of legacy search advertising in an increasingly agentic driven consumer compute landscape, we think Alphabet has positioned itself to sustain successful operating momentum across a host of use cases. We continue to expect Alphabet can successfully navigate the current multi-year evolution of its core Search product by leveraging its current strengths (existing user base; leading product innovation, which is accelerating in pace; technical infrastructure footprint and cost leverage vs. competitors; etc.).
+
+In addition to the Buy-rated names above, we would point to an outsized positive skew among the following stocks: Instacart (CART) and Roblox (RBLX), based on their favorable risk-reward relative to the rest of our coverage.
+
+# Digital Advertising
+
+Exhibit 1: Q1'26 Internet Services & Digital Advertising Performance
+
+%
+
+<table><tr><td colspan="2"></td><td colspan="3">Quarter Performance: vs. Guidance</td><td colspan="3">Quarter Performance: vs. Consensus</td><td colspan="3">1 Qtr Forward Guidance vs. Consensus</td><td colspan="2">Stock Performance</td></tr><tr><td>Company &amp; Sector</td><td>Ticker</td><td>Revenues</td><td>Other Topline</td><td>Profit</td><td>Revenues</td><td>Other Topline</td><td>Profit</td><td>Revenues</td><td>Other Topline</td><td>Profit</td><td>Post-Report (T-1 - T+1)</td><td>YTD Performance</td></tr><tr><td colspan="13">Internet Services &amp; Digital Advertising</td></tr><tr><td>Alphabet</td><td>GOOGL</td><td>n/a</td><td>n/a</td><td>n/a</td><td>3%</td><td>n/a</td><td>10%</td><td>n/a</td><td>n/a</td><td>n/a</td><td>10%</td><td>29%</td></tr><tr><td>Meta Platforms</td><td>META</td><td>2%</td><td>n/a</td><td>n/a</td><td>1%</td><td>n/a</td><td>12%</td><td>0%</td><td>n/a</td><td>n/a</td><td>-9%</td><td>-7%</td></tr><tr><td>AppLovin</td><td>APP</td><td>5%</td><td>n/a</td><td>5%</td><td>4%</td><td>n/a</td><td>5%</td><td>2%</td><td>n/a</td><td>3%</td><td>4%</td><td>-33%</td></tr><tr><td>Unity</td><td>U</td><td>0%</td><td>n/a</td><td>4%</td><td>1%</td><td>n/a</td><td>10%</td><td>0%</td><td>n/a</td><td>2%</td><td>3%</td><td>-39%</td></tr><tr><td>Snap</td><td>SNAP</td><td>1%</td><td>n/a</td><td>30%</td><td>0%</td><td>n/a</td><td>10%</td><td>n/a</td><td>n/a</td><td>n/a</td><td>-2%</td><td>-30%</td></tr><tr><td>Pinterest</td><td>PINS</td><td>5%</td><td>n/a</td><td>17%</td><td>4%</td><td>n/a</td><td>17%</td><td>2%</td><td>n/a</td><td>2%</td><td>10%</td><td>-25%</td></tr><tr><td>DoubleVerify</td><td>DV</td><td>0%</td><td>n/a</td><td>10%</td><td>0%</td><td>n/a</td><td>11%</td><td>0%</td><td>n/a</td><td>1%</td><td>-5%</td><td>-22%</td></tr><tr><td>IAC</td><td>IAC</td><td>n/a</td><td>n/a</td><td>n/a</td><td>-19%</td><td>n/a</td><td>-91%</td><td>n/a</td><td>n/a</td><td>n/a</td><td>-8%</td><td>4%</td></tr><tr><td>Reddit</td><td>RDDT</td><td>11%</td><td>n/a</td><td>24%</td><td>9%</td><td>n/a</td><td>21%</td><td>1%</td><td>n/a</td><td>5%</td><td>13%</td><td>-33%</td></tr><tr><td>Ethos Technologies</td><td>LIFE</td><td>n/a</td><td>n/a</td><td>n/a</td><td>33%</td><td>n/a</td><td>-7%</td><td>2%</td><td>n/a</td><td>5%</td><td>45%</td><td>n/a</td></tr><tr><td>Ibotta</td><td>IBTA</td><td>3%</td><td>n/a</td><td>25%</td><td>2%</td><td>n/a</td><td>22%</td><td>1%</td><td>n/a</td><td>6%</td><td>0%</td><td>42%</td></tr><tr><td>Nextdoor</td><td>NXDR</td><td>n/a</td><td>n/a</td><td>n/a</td><td>6%</td><td>n/a</td><td>96%</td><td>n/a</td><td>n/a</td><td>n/a</td><td>16%</td><td>0%</td></tr><tr><td>Yelp</td><td>YELP</td><td>3%</td><td>n/a</td><td>31%</td><td>2%</td><td>n/a</td><td>28%</td><td>n/a</td><td>n/a</td><td>n/a</td><td>-4%</td><td>-25%</td></tr><tr><td>Opera</td><td>OPRA</td><td>3%</td><td>n/a</td><td>8%</td><td>3%</td><td>n/a</td><td>7%</td><td>3%</td><td>n/a</td><td>8%</td><td>3%</td><td>28%</td></tr><tr><td>MediaAlpha</td><td>MAX</td><td>5%</td><td>n/a</td><td>3%</td><td>4%</td><td>n/a</td><td>3%</td><td>2%</td><td>n/a</td><td>-3%</td><td>-15%</td><td>-35%</td></tr><tr><td colspan="2">Average</td><td>3%</td><td>na</td><td>16%</td><td>4%</td><td>na</td><td>10%</td><td>1%</td><td>na</td><td>3%</td><td>4%</td><td>-10%</td></tr><tr><td colspan="2">Median</td><td>3%</td><td>n/a</td><td>14%</td><td>3%</td><td>n/a</td><td>10%</td><td>1%</td><td>n/a</td><td>3%</td><td>3%</td><td>-24%</td></tr></table>
+
+\*Google Profit = EBIT. All other companies = Adj. EBITDA
+
+As of 5/13/2026
+
+Source: FactSet, Data compiled by GS Global Investment Research
+
+In digital advertising, results once again demonstrated mixed trends in Q1, with overall ad spend/demand trends showing stabilization and end markets being inline or better than our forecasts with significant advancements in AI-powered solutions. This theme continued to accelerate with this earnings season, with the platforms with scaled AI offerings (GOOGL, META, etc.) demonstrating accelerating ad revenue growth and capturing incremental market share within their categories (despite already having majority share). Overall user growth/engagement trends remain healthy, bolstered by short-form/digital video, CTV/OTT video, commerce and AI-based usage (e.g. chatbots, assistants and AI search). Despite a generally healthy ad spend environment, the bifurcation of the market has intensified – direct-response/lower-funnel ad spend (especially when powered by programmatic and AI driven systems) continues to take priority over brand advertising, which saw a notable uptick in uncertainty in late Q1/into Q2 amidst a volatile geopolitical landscape (offsetting optimism around a positive events backdrop in 2026). While large platforms reported broad-based strength across most verticals (notably retail and financial services), smaller or sub-scaled platforms continue to face headwinds, particularly those exposed to more muted sectors like CPG amidst an increasingly uncertain macro/consumer spending environment. Against this backdrop, most companies reported Q1 ad revenue outperformance and provided Q2/FY2026 outlooks that were \~in line with or exceeded prior expectations, with notable revenue outperformance from GOOGL (Search), META, APP, RDDT & PINS. Platforms are increasingly adopting AI (GOOGL [Performance Max]; META
+
+[Advantage+]; PINS [Performance+]; APP [Axon 2.0]; U [Vector]); and non-advertising revenue streams (GOOGL [YouTube sUBScriptions]; SNAP [Snapchat+ and new chatbot integration] & RDDT [data licensing]) to help offset any exposure to underperforming pockets of ad spend.
+
+Capital intensity and investment levels toward longer-term AI opportunities remain a key theme across the space, specifically for GOOGL and META. Both companies slightly raised the high end of their capex guidance range for FY26, Citing rising input costs (with GOOGL guiding to \$180-190bn, from \$175-185bn prior; META \$125-145bn, from \$115-135bn prior) – in addition, both companies signaled that FY27 capex will be up sizably (with GOOGL capex likely increasing significantly, although mgmt did not provide an absolute guide). Given this incremental disclosure, we came away from Q1 earnings with the view that capital intensity will likely remain elevated in the coming years, and we expect investors to continue to remain focused on increased levels of visibility into rates of investment, capital intensity, rates of return and resulting free cash flow/earnings generation.
+
+While both META (Meta AI / business and creator AI Agents; Muse Spark model launch; Advantage+) and GOOGL (AI Mode & AI Overviews; deeper integration of Gemini across platforms) gave some incremental color around their long-term vision for AI monetization and product development, the return on this compounded spend and how the flow-through of depreciation might impact GAAP earnings over the next 2-3 years remains an outstanding debate for investors. Going forward, we expect investors to remain focused on: a) the overall advertising/macro environment in 2026; b) AI-related capital intensity and return on spend; c) user traffic (both paid & organic) from Google Search and the potential impact from Google's changes to Search (further implementation of AI Overviews & AI Mode, changes to ranking algos, etc.) to various platform's user growth; & d) the competitive environment for ad dollars, informed short-term by increasing competition within the streaming video/OTT space and, longer-term, by AI disrupting both the user-facing and advertiser-facing landscape.
+
+Exhibit 2: 2026 Revenue Revisions   
+% change relative to April 1 & 12m prior   
+![](images/6f24b2bb51e6932a4f2f29ce745db1a3f87a8ade6a55b1fa58539afbf9f9a8cf.jpg)
+
+<details>
+<summary>bar</summary>
+
+| Category | GOOGL (%) | META (%) | SNAP (%) | PINS (%) | DV (%) | IAC (%) | RDDT (%) | IBTA (%) | NXDR (%) | YELP (%) | OPRA (%) | MAX (%) | APP (%) | U (%) |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| vs. April 1 Estimates | 3 | 1 | 0 | 3 | 0 | -19 | 2 | 1 | 3 | 0 | 1 | 2 | 2 | 1 |
+| vs. Prior Yr Estimates | 13 | 19 | 3 | 3 | 1 | -21 | 42 | -1 | -5 | 8 | 10 | 7 | 20 | 10 |
+</details>
+
+Source: FactSet, Data compiled by GS Global Investment Research
+
+Exhibit 3: 2026 Adj. EBITDA Revisions   
+% change relative to April 1 & 12m prior   
+![](images/892884bda04f5dfd46922e2e439941485ba24dcacf0b2bc0e22ae1b15468f8a1.jpg)
+
+<details>
+<summary>bar</summary>
+
+| Category | vs. April 1 Estimates (%) | vs. Prior Yr Estimates (%) |
+| :--- | :---: | :---: |
+| GOOGL | 4 | 17 |
+| META | 1 | 11 |
+| SNAP | 19 | 60 |
+| PINS | 2 | -5 |
+| DV | 1 | 6 |
+| IAC | -22 | -51 |
+| RDDT | 5 | 69 |
+| IBTA | 4 | -65 |
+| YELP | 4 | -14 |
+| OPRA | 1 | -14 |
+| MAX | 2 | 2 |
+| APP | 2 | 3 |
+| U | 5 | 27 |
+</details>
+
+Source: FactSet, Data compiled by GS Global Investment Research
+
+Exhibit 4: Internet Services & Digital Advertising RSI   
+31 day average   
+![](images/da3e40f4c4dd7af413f58f0dcf7cb48624d40164ab80c8486358d268d065fef2.jpg)
+
+<details>
+<summary>bar</summary>
+
+| Entity | Value |
+| :--- | :--- |
+| GOOGL | 71.0 |
+| IBTA | 70.0 |
+| U | 69.0 |
+| IAC | 68.0 |
+| NXDR | 66.0 |
+| OPRA | 66.0 |
+| YELP | 62.0 |
+| SNAP | 61.0 |
+| PINS | 57.0 |
+| RDDT | 56.0 |
+Average: 65.0
+</details>
+
+As of 5/13/2026   
+Source: Factset, Data compiled by GS Global Investment Research
+
+# eCommerce
+
+Exhibit 5: Q1'26 eCommerce Performance   
+% 
+
+<table><tr><td></td><td colspan="4">Quarter Performance: vs. Guidance</td><td colspan="3">Quarter Performance: vs. Consensus</td><td colspan="3">1 Qtr Forward Guidance vs. Consensus</td><td colspan="2">Stock Performance</td></tr><tr><td>Company &amp; Sector</td><td>Ticker</td><td>Revenues</td><td>Other Topline</td><td>Profit</td><td>Revenues</td><td>Other Topline</td><td>Profit</td><td>Revenues</td><td>Other Topline</td><td>Profit</td><td>Post-Report (T-1 - T+1)</td><td>YTD Performance</td></tr><tr><td colspan="13">eCommerce</td></tr><tr><td>Amazon</td><td>AMZN</td><td>3%</td><td>n/a</td><td>26%</td><td>2%</td><td>n/a</td><td>15%</td><td>4%</td><td>n/a</td><td>-3%</td><td>2%</td><td>17%</td></tr><tr><td>Groupon</td><td>GRPN</td><td>n/a</td><td>n/a</td><td>n/a</td><td>0%</td><td>n/a</td><td>-11%</td><td>-2%</td><td>n/a</td><td>-20%</td><td>12%</td><td>4%</td></tr><tr><td>Wayfair</td><td>W</td><td>n/a</td><td>n/a</td><td>n/a</td><td>1%</td><td>n/a</td><td>4%</td><td>n/a</td><td>n/a</td><td>n/a</td><td>-11%</td><td>-40%</td></tr><tr><td>Cricut</td><td>CRCT</td><td>n/a</td><td>n/a</td><td>n/a</td><td>-3%</td><td>n/a</td><td>119%</td><td>n/a</td><td>n/a</td><td>n/a</td><td>7%</td><td>-20%</td></tr><tr><td>Average</td><td></td><td>3%</td><td>7%</td><td>15%</td><td>1%</td><td>2%</td><td>29%</td><td>3%</td><td>3%</td><td>-3%</td><td>1%</td><td>-2%</td></tr><tr><td>Median</td><td></td><td>3%</td><td>7%</td><td>15%</td><td>2%</td><td>2%</td><td>5%</td><td>3%</td><td>3%</td><td>-3%</td><td>2%</td><td>4%</td></tr></table>
+
+\*Amazon Profit = GAAP EBIT. Cricut profit = GAAP EBIT. All other companies = Adj. EBITDA.
+
+As of 5/13/2026. Excludes CHWY
+
+Source: FactSet, Data compiled by GS Global Investment Research
+
+In eCommerce (AMZN, W, GRPN, CRCT), Q1'26 results were mixed, though companies broadly pointed to a stable/resilient consumer and better than feared spending behavior against a volatile macro backdrop. Across the group, management teams emphasized ongoing investments in AI-enabled tools as companies continue to focus on leveraging AI to enhance customer experiences and drive operational efficiencies - with AMZN, W, GRPN, and CRCT all highlighting early traction from initiatives (both internally and externally). At the same time, we expect investor debates to remain centered on the level and efficacy of marketing spend, the ability to drive more direct traffic & engagement (particularly through mobile app as those efforts scale), and how the evolving agentic landscape may reshape discovery and conversion economics – each of which is likely to be a key variable in operating performance and investor confidence going forward.
+
+AMZN delivered a strong quarter and saw unit growth reach its highest level post-COVID, supported by Everyday Essentials growing meaningfully faster than the broader category, along with continued progress in faster delivery and quick commerce initiatives. Management highlighted increasing traction from AI across discovery, logistics, and advertising, while reiterating plans for an elevated reinvestment cycle (across fulfillment and international eCommerce). W reported solid operating results and continued share gains in a still-pressured category driven by a compounding impact from investments in merchandising, loyalty, and logistics. The company also saw a return to active customer growth, and framed elevated investment over the coming quarters as management seeks to scale the Wayfair Rewards program. GRPN results were softer than expected, and mgmt framed the quarter as transitional amid a broader AI-driven rebrand/rebuild of the business - despite expectations for headwinds to persist near-term, the company pointed to early improving trends in April, supporting cautious optimism into 2H26 with confidence to reiterate their FY26 guide. CRCT reported mixed topline trends, though sUBScription and platform metrics remained a bright spot as the company advanced its nascent bundle-first strategy and mgmt noted plans to accelerate product innovation and marketing investment through 2026 to support re-engagement and international growth.
+
+Exhibit 6: 2026 Revenue Revisions   
+% change relative to April 1 & 12m prior   
+![](images/98b53b134ab7e2b5c30d6b73ab3778895e24872b9f299009ac11b938343c456d.jpg)
+
+<details>
+<summary>bar</summary>
+
+| Category | AMZN (%) | W (%) | CRCT (%) | GRPN (%) |
+| :--- | :--- | :--- | :--- | :--- |
+| vs. April 1 Estimates | 2 | 0 | -1 | 1 |
+| vs. Prior Yr Estimates | 8 | 7 | -1 | -2 |
+</details>
+
+Source: FactSet, Data compiled by GS Global Investment Research
+
+Exhibit 7: 2026 Adj. EBITDA Revisions   
+% change relative to April 1 & 12m prior   
+![](images/e06205ff79ac3a2535468031cdd508f0fe503044283f4c2c26d81c5ad0c555dc.jpg)
+
+<details>
+<summary>bar</summary>
+
+| Category | AMZN (GAAP EBIT) (%) | W (%) | CRCT (%) | GRPN (%) |
+| :--- | :--- | :--- | :--- | :--- |
+| vs. April 1 Estimates | 5 | -2 | 14 | -8 |
+| vs. Prior Yr Estimates | 8 | 40 | -21 | -16 |
+</details>
+
+Source: FactSet, Data compiled by GS Global Investment Research
+
+Exhibit 8: eCommerce RSI   
+31 day average   
+![](images/dbdc0f6c80c8a7967a9b8c39e522f74952b481b50e6e6b5e2f37a4d3f524d57a.jpg)
+
+<details>
+<summary>bar</summary>
+
+| Category | Value |
+| -------- | ----- |
+| AMZN     | 76.0  |
+| GRPN     | 61.0  |
+| CRCT     | 54.0  |
+| W        | 43.0  |
+</details>
+
+As of 5/13/2026   
+Source: FactSet, Data compiled by GS Global Investment Research
+
+# Cloud Computing
+
+In cloud computing, results significantly exceeded expectations in Q1, with Google Cloud revenue growth of +63% YoY, revenue backlog nearly doubling QoQ to \~\$460bn and with \~57% incremental segment margins, in addition to AWS revenue growth accelerating to +28% YoY (& backlog growth of +93% YoY). In total, both hyperscalers reported a combined revenue backlog of almost \~\$900bn and provided further validation in forward margin frameworks (partially driven by accelerating custom silicon efforts) – with AWS reporting record operating margins (\~13%) despite increased capex-related depreciation headwinds. We’d also note that despite both hyperscalers expecting to deploy significant capex spend in 2026, both AWS (AMZN) & Google Cloud (GOOGL) continue to cite capacity constraints (specifically relating to power and data center availability), limiting the ability to serve strong AI-related demand as they continue to sign on large partnerships.
+
+AMZN remained confident in the rising tailwinds from both AI and non-AI workloads and in the broader core Cloud workload migration opportunity (and the rise of increased AI customer choices). With respect to their custom silicon efforts, mgmt disclosed that the business has now surpassed a \~\$20bn ARR (and would exceed \~\$50bn if it were a standalone entity selling to third parties), reporting over \$225bn in multi-year revenue commitments for Trainium. We continue to remain confident in the long-tailed structural growth opportunity for AWS, with this report's evidence on display in terms of scale of revenue backlog and the scope for its conversion into revenue as compute/capacity is built out. For GOOGL, mgmt. continued to strike a positive tone around a framework for Cloud to continue to benefit over the medium-to-long term from a rising generative AI theme and the broader enterprise computing landscape (with a host of positive commentary with respect to competitive positioning and AI driven components to workloads). In addition, mgmt qualitatively framed the expected contribution from external TPU hardware sales (beginning later in the year & expected to contribute more meaningfully in 2027), following the recent announcement of their 8th generation TPUs at Cloud Next (link).
+
+Going forward, we see debates centering around ability to sustain accelerating revenue & backlog growth (as capacity constraints ease), how much of that growth is driven by core workloads within the mix vs. AI services contribution (incl. the level of incrementality of that revenue), relative market share (of both incremental revenue & GPU deliveries), custom silicon efforts (as a potential avenue for hyperscalers to ease capacity constraints away from GPU availability) & continued upward bias to capital investments related to cloud infrastructure to support execution against the AI opportunity with an increasing focus on ROIC among investors (and resulting impact of D&A on margins in 2026 & beyond).
+
+Exhibit 9: 2026 Revenue Revisions   
+% change relative to April 1 & 12m prior   
+![](images/8cccc5a01728d5adf70d19c0f2f80ea615af0cd2b17149f5048371952f540c02.jpg)
+
+<details>
+<summary>bar</summary>
+
+| Category | Google Cloud (%) | AWS (%) |
+| :--- | :--- | :--- |
+| vs. April 1 Estimates | 12 | 3 |
+| vs. Prior Yr Estimates | 36 | 12 |
+</details>
+
+Source: FactSet, Data compiled by GS Global Investment Research
+
+Exhibit 10: 2026 EBIT Revisions   
+% change relative to April 1 & 12m prior   
+![](images/b93be2390212ae66ce8d3bba2a2e842c410e5d3bc2e39dd35fd1131dc9fd3fd5.jpg)
+
+<details>
+<summary>bar</summary>
+
+| Category | Google Cloud (%) | AWS (%) |
+| :--- | :--- | :--- |
+| vs. April 1 Estimates | 21 | 7 |
+| vs. Prior Yr Estimates | 114 | 12 |
+</details>
+
+Source: FactSet, Data compiled by GS Global Investment Research
+
+# Online Travel
+
+Exhibit 11: Q1'26 Online Travel Performance   
+% 
+
+<table><tr><td colspan="2"></td><td colspan="3">Quarter Performance: vs. Guidance</td><td colspan="3">Quarter Performance: vs. Consensus</td><td colspan="3">1 Qtr Forward Guidance vs. Consensus</td><td colspan="2">Stock Performance</td></tr><tr><td>Company &amp; Sector</td><td>Ticker</td><td>Revenues</td><td>Other Topline</td><td>Profit</td><td>Revenues</td><td>Other Topline</td><td>Profit</td><td>Revenues</td><td>Other Topline</td><td>Profit</td><td>Post-Report (T-1 - T+1)</td><td>YTD Performance</td></tr><tr><td colspan="13">Online Travel</td></tr><tr><td>Booking Holdings</td><td>BKNG</td><td>1%</td><td>0%</td><td>6%</td><td>0%</td><td>0%</td><td>3%</td><td>-5%</td><td>-5%</td><td>-8%</td><td>-2%</td><td>-28%</td></tr><tr><td>Airbnb</td><td>ABNB</td><td>3%</td><td>n/a</td><td>n/a</td><td>2%</td><td>5%</td><td>7%</td><td>3%</td><td>n/a</td><td>n/a</td><td>1%</td><td>-2%</td></tr><tr><td>Expedia</td><td>EXPE</td><td>2%</td><td>n/a</td><td>n/a</td><td>2%</td><td>1%</td><td>20%</td><td>1%</td><td>0%</td><td>n/a</td><td>-7%</td><td>-23%</td></tr><tr><td>Clear Secure</td><td>YOU</td><td>4%</td><td>16%</td><td>n/a</td><td>4%</td><td>16%</td><td>9%</td><td>5%</td><td>6%</td><td>n/a</td><td>-1%</td><td>58%</td></tr><tr><td>Tripadvisor</td><td>TRIP</td><td>n/a</td><td>n/a</td><td>n/a</td><td>-1%</td><td>n/a</td><td>34%</td><td>n/a</td><td>n/a</td><td>n/a</td><td>-7%</td><td>-34%</td></tr><tr><td>Average</td><td></td><td>2%</td><td>8%</td><td>6%</td><td>2%</td><td>6%</td><td>15%</td><td>1%</td><td>0%</td><td>-8%</td><td>-3%</td><td>-6%</td></tr><tr><td>Median</td><td></td><td>3%</td><td>8%</td><td>6%</td><td>2%</td><td>3%</td><td>9%</td><td>2%</td><td>0%</td><td>-8%</td><td>-2%</td><td>-23%</td></tr></table>
+
+\*Booking Holdings, Airbnb, Expedia, & Clear Secure other topline = Bookings. All companies = Adj. EBITDA
+
+As of 5/13/2026
+
+Source: FactSet, Data compiled by GS Global Investment Research
+
+The Online Travel sector (BKNG, ABNB, EXPE, TRIP, YOU) continued to demonstrate a trajectory of settling into a more normalized growth algorithm, however with more mixed demand trends in Q1. Key themes during earnings included: a volatile macroeconomic/geopolitical backdrop (particularly in Europe, where elevated cancellations resulting from the Middle East conflict were estimated to have driven a \~100-200bps headwind to room nights growth in the quarter); on the other hand, a US travel environment that continues to improve (albeit with some continued bifurcation in terms of cross-border travel and different booking habits by budget); constructive commentary around forward growth in terms of ability to scale marketing dollars and positive booking trends observed QTD (with April seeing a recovery from macro-related headwinds in Q1); companies continuing to lean into scaling their Experiences efforts as a means of providing an incremental stream of revenue & expanding their addressable market opportunity set; positive commentary around AI adoption to enhance the traveler journey (and drive internal operating efficiencies) as well as striking platform partnerships/integrations to test new incremental sources of traffic; & companies continuing to reiterate commitments to returning capital to shareholders given strong FCF performance.
+
+We expect short-term investor debates to remain centered around the broader macroeconomic picture (including a reversal of trends in the Middle East and level of sustained trends globally in terms of consumer demand). We’d also note that the impact that AI could have on the long-term steady state and terminal value for OTAs remains a concern for investors – on this point, we continue to believe a mixture of execution on their internal AI initiatives, external partnerships and sustained levels of mgmt execution (which BKNG/EXPE have consistently produced in past periods) are the manner in which the wall of worry around such debates can be climbed. Beyond these key debates, investors remain focused on a few themes: 1) normalized growth algorithm for online travel (with most investors landing somewhere between \~MSD-HSD% YoY) and how any macro volatility may translate into changed operating trends; 2) market share dynamics across geographies & segments (hotel vs. alternative accommodation, etc.); 3) in a decelerating growth environment, what level of marketing intensity is required (vs. various initiatives to drive more direct traffic/demand); 4) levels of non-marketing investments that will drive leverage/deleverage as companies lap/lean into longer dated return investments (incl. geo & product expansion to extend platform utility); & 5) how a continued commitment to shareholder returns could potentially result in GAAP EPS estimate revisions.
+
+Exhibit 12: 2026 Bookings Revisions   
+% change relative to April 1 & 12m prior   
+![](images/4daf28840d604826fff6f81374a92581753b67d64263e461c31e3af408ce1a35.jpg)
+
+<details>
+<summary>bar</summary>
+
+| Category | BKNG (%) | EXPE (%) | ABNB (%) | YOU (%) |
+| :--- | :--- | :--- | :--- | :--- |
+| vs. April 1 Estimates | -1 | 0 | 2 | 3 |
+| vs. Prior Yr Estimates | 6 | 5 | 6 | 16 |
+</details>
+
+Source: FactSet, Data compiled by GS Global Investment Research
+
+Exhibit 13: 2026 Revenue Revisions   
+% change relative to April 1 & 12m prior   
+![](images/625bd401e358734ad18e117f61a80cad9e4c13fb51e287563a41592bd2cf78cf.jpg)
+
+<details>
+<summary>bar</summary>
+
+| Category | BKNG (%) | EXPE (%) | ABNB (%) | YOU (%) | TRIP (%) |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| vs. April 1 Estimates | -2 | 0 | 2 | 4 | -2 |
+| vs. Prior Yr Estimates | 5 | 5 | 5 | 5 | -8 |
+</details>
+
+Source: FactSet, Data compiled by GS Global Investment Research
+
+Exhibit 14: 2026 Adj. EBITDA Revisions   
+% change relative to April 1 & 12m prior   
+![](images/fa5ade8bb907351e254c08c57bf2fa730d8037b942eae49aa23e0fca83326993.jpg)
+
+<details>
+<summary>bar</summary>
+
+| Category | BKNG (%) | EXPE (%) | ABNB (%) | YOU (%) | TRIP (%) |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| vs. April 1 Estimates | -3 | 1 | 3 | 8 | -4 |
+| vs. Prior Yr Estimates | 6 | 17 | 4 | 40 | -13 |
+</details>
+
+Source: FactSet, Data compiled by GS Global Investment Research
+
+Exhibit 15: Online Travel RSI   
+31 day average   
+![](images/39374b6a051007b300f786c9d780fa0a795d5104eb3a6a39ad5bad46b84efd81.jpg)
+
+<details>
+<summary>bar</summary>
+
+| Entity | Value |
+| :--- | :--- |
+| TRIP | 56.0 |
+| ABNB | 55.0 |
+| YOU | 52.5 |
+| EXPE | 52.3 |
+| BKNG | 47.0 |
+Average: 52.7
+</details>
+
+As of 5/13/2026   
+Source: FactSet, Data compiled by GS Global Investment Research
+
+# Mobility, Local Commerce & Delivery
+
+Exhibit 16: Q1'26 Mobility, Local Commerce & Delivery Performance   
+% 
+
+<table><tr><td colspan="2"></td><td colspan="3">Quarter Performance: vs. Guidance</td><td colspan="3">Quarter Performance: vs. Consensus</td><td colspan="3">1 Qtr Forward Guidance vs. Consensus</td><td colspan="2">Stock Performance</td></tr><tr><td>Company &amp; Sector</td><td>Ticker</td><td>Revenues</td><td>Other Topline</td><td>Profit</td><td>Revenues</td><td>Other Topline</td><td>Profit</td><td>Revenues</td><td>Other Topline</td><td>Profit</td><td>Post-Report (T-1 - T+1)</td><td>YTD Performance</td></tr><tr><td colspan="13">Mobility, Local Commerce &amp; Delivery</td></tr><tr><td>Uber</td><td>UBER</td><td>n/a</td><td>2%</td><td>3%</td><td>-1%</td><td>2%</td><td>2%</td><td>n/a</td><td>1%</td><td>4%</td><td>5%</td><td>-9%</td></tr><tr><td>Lyft</td><td>LYFT</td><td>n/a</td><td>0%</td><td>2%</td><td>1%</td><td>1%</td><td>2%</td><td>n/a</td><td>1%</td><td>1%</td><td>1%</td><td>-29%</td></tr><tr><td>DoorDash</td><td>DASH</td><td>n/a</td><td>1%</td><td>4%</td><td>-3%</td><td>0%</td><td>2%</td><td>n/a</td><td>1%</td><td>-1%</td><td>3%</td><td>-34%</td></tr><tr><td>Instacart</td><td>CART</td><td>n/a</td><td>1%</td><td>5%</td><td>1%</td><td>1%</td><td>4%</td><td>n/a</td><td>1%</td><td>-1%</td><td>-13%</td><td>-11%</td></tr><tr><td colspan="2">Average</td><td>n/a</td><td>1%</td><td>3%</td><td>0%</td><td>1%</td><td>3%</td><td>n/a</td><td>1%</td><td>1%</td><td>-1%</td><td>-21%</td></tr><tr><td colspan="2">Median</td><td>n/a</td><td>1%</td><td>3%</td><td>0%</td><td>1%</td><td>2%</td><td>n/a</td><td>1%</td><td>0%</td><td>2%</td><td>-20%</td></tr></table>
+
+\*Uber, Lyft, DoorDash, & Instacart other topline = Bookings. All companies = Adj. EBITDA.
+
+As of 5/13/2026
+
+Source: FactSet, Data compiled by GS Global Investment Research
+
+In the Mobility, Local Commerce & Delivery sUBSector, Q1'26 results were broadly constructive, characterized by solid bookings & GTV trends and continued execution against longer-term strategic initiatives. Topline momentum was supported by stable consumer demand, improving engagement metrics, and expanding platform capabilities & offerings as operators balanced reinvestment with incremental margin progress. Near term, operators continue to prioritize growth initiatives (mobility - autonomous vehicles; delivery - new verticals & international) while navigating margin expansion as they invest in the medium-to-long term. We expect investor focus to remain around the health of the consumer against a challenging macro backdrop, competitive dynamics across operating segments, the impact of AVs, and the cadence & pacing of incremental margin progression given investments in strategic priorities.
+
+Mobility platforms (UBER, LYFT) delivered solid performance and emphasized stable demand trends, with ongoing progress across engagement and marketplace balance. UBER highlighted continued momentum in Mobility as the company saw acceleration in Gross Bookings despite headwinds from geopolitical conflict and severe weather in the US, and continues to execute on its barbell strategy to drive engagement and margin expansion. LYFT also reported solid demand on the back of continued execution across product offerings, geographic expansion, and traction from strategic partnerships (with \~27% of rides in North America now linked to a partnership). A central theme across both companies also continues to be execution against their hybrid model strategy within the evolving AV landscape – with UBER focused on demand aggregation and partnerships to scale deployment, and LYFT building the foundation for operations across Cities (especially in international markets, seeing benefit from its FREENOW acquisition).
+
+Delivery platforms (DASH, CART) continue to demonstrate the compounding opportunity of expanding into local commerce and saw increasing user engagement and strengthening platform economics. DASH reported strong underlying demand trends across both restaurant and grocery & retail categories and provided better than feared Q2 Adj. EBITDA commentary, reiterating prior framing surrounding 2026 growth and noted impact from implementation of a gas rewards program. CART reported continued outperformance in GTV and momentum in its Enterprise business, along with record advertising growth driven by healthy supply and broad-based demand. The company remains focused on reinvesting in growth opportunities in 2026 albeit reiterating expectations for Adj. EBITDA to growth faster than GTV in the year.
+
+Exhibit 17: 2026 Gross Bookings Revisions   
+% change relative to April 1 & 12m prior   
+![](images/ceef7f97a3f615d877a8cba892c31bfbb2427f3d456f22daab7736f68f620891.jpg)
+
+<details>
+<summary>bar</summary>
+
+| Category | UBER (%) | LYFT (%) | CART (%) | DASH (%) |
+| :--- | :--- | :--- | :--- | :--- |
+| vs. April 1 Estimates | 1 | 1 | 1 | 1 |
+| vs. Prior Yr Estimates | 9 | 7 | 6 | 22 |
+</details>
+
+Source: FactSet, Data compiled by GS Global Investment Research
+
+Exhibit 18: 2026 Revenue Revisions   
+% change relative to April 1 & 12m prior   
+![](images/aee1e5f59094baa60103c01a756446a7710b216d25c015ad2884ceb6c0815350.jpg)
+
+<details>
+<summary>bar</summary>
+
+| Comparison | UBER (%) | LYFT (%) | CART (%) | DASH (%) |
+| :--- | :--- | :--- | :--- | :--- |
+| vs. April 1 Estimates | 0 | 0 | 1 | -1 |
+| vs. Prior Yr Estimates | 1 | 1 | 4 | 16 |
+</details>
+
+Source: FactSet, Data compiled by GS Global Investment Research
+
+Exhibit 19: 2026 Adj. EBITDA Revisions   
+% change relative to April 1 & 12m prior   
+![](images/464c8925487c4d312f3832aa6564d6116e62c170f6e288bcceaebf550f8d3d02.jpg)
+
+<details>
+<summary>bar</summary>
+
+| Category | UBER (%) | LYFT (%) | CART (%) | DASH (%) |
+| :--- | :--- | :--- | :--- | :--- |
+| vs. April 1 Estimates | 4 | 1 | 1 | -1 |
+| vs. Prior Yr Estimates | 6 | 9 | 10 | 0 |
+</details>
+
+Source: FactSet, Data compiled by GS Global Investment Research
+
+Exhibit 20: Mobility, Local Commerce & Delivery RSI   
+31 day average   
+![](images/75e72b4e0f8ac41e4d5810f424be2a130e791e57e5e9ceb9e8da174c6f05c5fa.jpg)
+
+<details>
+<summary>bar</summary>
+
+| Category | Value |
+| :--- | :--- |
+| CART | 56.7 |
+| LYFT | 55.7 |
+| DASH | 53.5 |
+| UBER | 50.3 |
+Average: 54.0
+</details>
+
+As of 5/13/2026   
+Source: FactSet, Data compiled by GS Global Investment Research
+
+# Streaming Media
+
+Exhibit 21: Q1'26 Streaming Media Performance
+
+%
+
+<table><tr><td colspan="2"></td><td colspan="3">Quarter Performance: vs. Guidance</td><td colspan="3">Quarter Performance: vs. Consensus</td><td colspan="3">1 Qtr Forward Guidance vs. Consensus</td><td colspan="2">Stock Performance</td></tr><tr><td>Company &amp; Sector</td><td>Ticker</td><td>Revenues</td><td>Other Topline</td><td>Profit</td><td>Revenues</td><td>Other Topline</td><td>Profit</td><td>Revenues</td><td>Other Topline</td><td>Profit</td><td>Post-Report (T-1 - T+1)</td><td>YTD Performance</td></tr><tr><td colspan="13">Streaming Media &amp; SUBScription Services</td></tr><tr><td>Netflix</td><td>NFLX</td><td>1%</td><td>n/a</td><td>1%</td><td>1%</td><td>n/a</td><td>0%</td><td>n/a</td><td>n/a</td><td>n/a</td><td>-10%</td><td>-7%</td></tr><tr><td>Spotify</td><td>SPOT</td><td>1%</td><td>0%</td><td>8%</td><td>0%</td><td>0%</td><td>5%</td><td>1%</td><td>n/a</td><td>-7%</td><td>-11%</td><td>-26%</td></tr><tr><td>Peloton</td><td>PTON</td><td>3%</td><td>0%</td><td>-1%</td><td>2%</td><td>0%</td><td>-2%</td><td>n/a</td><td>n/a</td><td>n/a</td><td>9%</td><td>-15%</td></tr><tr><td>Webtoon</td><td>WBTN</td><td>0%</td><td>n/a</td><td>279%</td><td>0%</td><td>n/a</td><td>288%</td><td>-3%</td><td>n/a</td><td>-79%</td><td>-8%</td><td>6%</td></tr><tr><td colspan="2">Average</td><td>1%</td><td>0%</td><td>72%</td><td>1%</td><td>0%</td><td>73%</td><td>-1%</td><td>n/a</td><td>-43%</td><td>-5%</td><td>-10%</td></tr><tr><td colspan="2">Median</td><td>1%</td><td>0%</td><td>5%</td><td>0%</td><td>0%</td><td>3%</td><td>-1%</td><td>n/a</td><td>-43%</td><td>-9%</td><td>-11%</td></tr></table>
+
+\*Netflix other topline = Net Adds. Spotify other topline = Premium Sub Adds. \*Peloton other topline = Connected Fitness SUBS. All companies = Adj. EBITDA.
+
+As of 5/13/2026
+
+Source: FactSet, Data compiled by GS Global Investment Research
+
+In streaming media, NFLX and SPOT both delivered solid Q1'26 user and revenue growth, driven by healthy engagement and continued platform innovation, albeit with both companies guiding Q2 operating income below expectations as mgmt. teams emphasized near-term investments in strategic initiatives to drive long-term monetization.
+
+NFLX reported a modest Q1 revenue beat driven by membership growth, pricing & ad revenue, alongside record engagement metrics. NFLX highlighted progress in new content formats, including live events (World Baseball Classic driving record engagement in Japan), podcasts, and gaming, alongside continued pricing discipline and early signals from recent US price changes tracking in line with expectations. Advertising remains on track to double YoY in 2026 to \~\$3.0bn. Despite the Q1 beat, NFLX reiterated its FY26 margin outlook and guided Q2 operating income below estimates, Citing 1H26-weighted content amortization and M&A-related expenses (InterPositive). Going forward, we expect investor debates to center on: 1) the cadence of revenue growth through 2026; 2) the sustainability of operating margin expansion amid continued investments in advertising tech, content, and product initiatives; & 3) the long term monetization of newer formats.
+
+SPOT exceeded Q1 MAU guidance and achieved robust gross margins, supported by mobile free-tier enhancements and steady Premium sUBScriber growth. Mgmt. highlighted accelerating AI integration. Ad-supported revenue continued to decline YoY as Spotify continues to transition from direct sales toward programmatic channels (now representing 30% of ad revenue). Q2 operating income guidance came in below estimates reflecting elevated marketing and AI-related R&D spend. Looking ahead, we expect investors to remain focused on: 1) the near-term rate of change on operating investments; 2) the timeline for ad-supported monetization inflection (expected in 2H 2026); 3) the broader impact of AI on the audio landscape.
+
+Exhibit 22: 2026 SUBScriber Revisions   
+% change relative to April 1 & 12m prior   
+![](images/d46858f6cd3131e99642f032c1a61bed8f690de4ead0b81da01ed27da1cc4e84.jpg)
+
+<details>
+<summary>bar</summary>
+
+| Category | NFLX (%) | SPOT (%) | PTON (%) |
+| :--- | :--- | :--- | :--- |
+| vs. April 1 Estimates | -2 | -0.3 | 1.8 |
+| vs. Prior Yr Estimates | 0 | 1 | 0 |
+</details>
+
+Source: FactSet, Data compiled by GS Global Investment Research
+
+Exhibit 23: 2026 Revenue Revisions   
+% change relative to April 1 & 12m prior   
+![](images/8ccaafb0c2255ad8c6d87f05cf35d6eca1530c4c99b527700c5def8a4303131b.jpg)
+
+<details>
+<summary>bar</summary>
+
+| Category | NFLX (%) | SPOT (%) | WBTN (%) | PTON (%) |
+| :--- | :--- | :--- | :--- | :--- |
+| vs. April 1 Estimates | 0 | 1 | -3 | 0 |
+| vs. Prior Yr Estimates | 3 | -2 | -15 | 0 |
+</details>
+
+Source: FactSet, Data compiled by GS Global Investment Research
+
+Exhibit 24: 2026 Adj. EBITDA Revisions   
+% change relative to April 1 & 12m prior   
+![](images/7670b54ecdc6a5e539fee7ff7d740cff70d7f84b6e0042daa7769df01f5a4ca7.jpg)
+
+<details>
+<summary>bar</summary>
+
+| Category | NFLX (%) | SPOT (%) | WBTN (%) | PTON (%) |
+| :--- | :--- | :--- | :--- | :--- |
+| vs. April 1 Estimates | 0 | -3 | -24 | -1 |
+| vs. Prior Yr Estimates | 4 | -5 | -73 | 40 |
+</details>
+
+Source: FactSet, Data compiled by GS Global Investment Research
+
+Exhibit 25: Streaming Media RSI   
+31 day average   
+![](images/aca0df78ef18b02b088d9e90a9e4ff87fcd3465cc89e8252c494e6a599997590.jpg)
+
+<details>
+<summary>bar</summary>
+
+| Category | Value |
+|---|---|
+| WBTN | 76.0 |
+| PTON | 67.0 |
+| NFLX | 48.0 |
+| SPOT | 45.0 |
+Average: 58.7
+</details>
+
+As of 5/13/2026   
+Source: Factset, Data compiled by GS Global Investment Research
+
+# Gaming - PC, Console, Mobile
+
+Exhibit 26: Q1'26 Gaming - PC, Console, Mobile Performance   
+% 
+
+<table><tr><td></td><td colspan="4">Quarter Performance: vs. Guidance</td><td colspan="3">Quarter Performance: vs. Consensus</td><td colspan="3">1 Qtr Forward Guidance vs. Consensus</td><td colspan="2">Stock Performance</td></tr><tr><td>Company &amp; Sector</td><td>Ticker</td><td>Revenues</td><td>Other Topline</td><td>Profit</td><td>Revenues</td><td>Other Topline</td><td>Profit</td><td>Revenues</td><td>Other Topline</td><td>Profit</td><td>Post-Report (T-1 - T+1)</td><td>YTD Performance</td></tr><tr><td colspan="13">Gaming - PC, Console, Mobile</td></tr><tr><td>Roblox</td><td>RBLX</td><td>3%</td><td>1%</td><td>18%</td><td>-1%</td><td>-1%</td><td>13%</td><td>-4%</td><td>-16%</td><td>-42%</td><td>-20%</td><td>-48%</td></tr><tr><td>Playtika</td><td>PLTK</td><td>n/a</td><td>n/a</td><td>n/a</td><td>7%</td><td>n/a</td><td>-20%</td><td>n/a</td><td>n/a</td><td>n/a</td><td>2%</td><td>-9%</td></tr><tr><td>Corsair</td><td>CRSR</td><td>1%</td><td>n/a</td><td>30%</td><td>1%</td><td>n/a</td><td>23%</td><td>3%</td><td>n/a</td><td>1%</td><td>9%</td><td>25%</td></tr><tr><td>Average</td><td></td><td>4%</td><td>6%</td><td>18%</td><td>4%</td><td>2%</td><td>10%</td><td>1%</td><td>-8%</td><td>-13%</td><td>-3%</td><td>-13%</td></tr><tr><td>Median</td><td></td><td>4%</td><td>6%</td><td>18%</td><td>5%</td><td>-1%</td><td>13%</td><td>2%</td><td>-8%</td><td>1%</td><td>1%</td><td>-10%</td></tr></table>
+
+\*Roblox other topline = Bookings. EA profit = non-GAAP EBIT. All other companies = Adj. EBITDA.
+
+As of 5/13/2026. Excludes TTWO
+
+Source: FactSet, Data compiled by GS Global Investment Research
+
+In the Gaming (PC/Console/Mobile) industry, the key themes on display in Q1'26 included: 1) Near term engagement and acquisition pressure tied to platform level safety changes, with RBLX seeing DAU and organic user acquisition headwinds following the rollout of mandatory age verification checks, partially offset by continued growth & monetization of older user cohorts; 2) Increasing penetration of Direct-to-Consumer (DTC) channels supporting margin outcomes, with PLTK continuing to increase DTC penetration (reaching \~39% of revenue); 3) Ongoing execution within mobile gaming [PLTK] although debate remains around the pace of topline growth and new title contribution; & 4) Reinvestment to support longer term growth vectors, including RBLX increasing targeted DevEx rates and expanding creator programs to encourage development of new experiences, and PLTK increasing performance marketing investment tied to momentum within the SuperPlay portfolio.
+
+Going forward, we expect investor debates to center on: 1) pace of visibility surrounding user growth & engagement trends; 2) level of investment surrounding growth initiatives; 3) the impact that AI will have on the creation of gaming content; & 4) the evolution of the broader competitive landscape. We would also note that TTWO has not reported FQ4'26 results as of this EPS review, and the potential impact of the launch of GTA VI on industry growth in 2H'26+, incl. implications for consumer engagement/monetization and broader competitive dynamics remains a key debate.
+
+Exhibit 27: 2026 Revenue Revisions   
+% change relative to April 1 & 12m prior   
+![](images/32d0bf4117f35cdaf470edfef9c080ee3843f0e90f94c0817fcc808c4c1940f2.jpg)
+
+<details>
+<summary>bar</summary>
+
+| Category | RBLX (%) | PLTK (%) | CRSR (%) |
+| :--- | :--- | :--- | :--- |
+| vs. April 1 Estimates | -5 | 1 | 0 |
+| vs. Prior Yr Estimates | 13 | -4 | -14 |
+</details>
+
+Source: FactSet, Data compiled by GS Global Investment Research
+
+Exhibit 28: 2026 Bookings Revisions   
+% change relative to April 1 & 12m prior   
+![](images/ec0eb000f4707a2675bd0895564b582ae687ce104bb4b2fe512d67012893e979.jpg)
+
+<details>
+<summary>bar</summary>
+
+| Category | RBLX (%) |
+| :--- | :--- |
+| vs. April 1 Estimates | -11 |
+| vs. Prior Yr Estimates | 18 |
+</details>
+
+Source: FactSet, Data compiled by GS Global Investment Research
+
+Exhibit 29: 2026 Adj. EBITDA Revisions   
+% change relative to April 1 & 12m prior   
+![](images/36f1b0b0a069ae30260786c96e6878937d69a176e6fa9bbcd2e2a1b0a831dbf7.jpg)
+
+<details>
+<summary>bar</summary>
+
+| Category | RBLX (%) | PLTK (%) | CRSR (%) |
+| :--- | :--- | :--- | :--- |
+| vs. April 1 Estimates | -25 | 0 | 1 |
+| vs. Prior Yr Estimates | 6 | -4 | -14 |
+</details>
+
+Source: FactSet, Data compiled by GS Global Investment Research
+
+Exhibit 30: Gaming - PC, Console, Mobile RSI   
+31 day average   
+![](images/2b224413001bc355e7c032b50102eac5ef1a56c893371064892b2330e8ab2ce9.jpg)
+
+<details>
+<summary>bar</summary>
+
+| Category | Value |
+| -------- | ----- |
+| CRSR     | 72.0  |
+| PLTK     | 63.0  |
+| APP      | 51.0  |
+| RBLX     | 43.0  |
+</details>
+
+As of 5/13/2026   
+Source: FactSet, Data compiled by GS Global Investment Research
+
+# Online Dating
+
+Exhibit 31: Q1'26 Online Dating Performance
+
+%
+
+<table><tr><td></td><td colspan="4">Quarter Performance: vs. Guidance</td><td colspan="3">Quarter Performance: vs. Consensus</td><td colspan="3">1 Qtr Forward Guidance vs. Consensus</td><td colspan="2">Stock Performance</td></tr><tr><td>Company &amp; Sector</td><td>Ticker</td><td>Revenues</td><td>Other Topline</td><td>Profit</td><td>Revenues</td><td>Other Topline</td><td>Profit</td><td>Revenues</td><td>Other Topline</td><td>Profit</td><td>Post-Report (T-1 - T+1)</td><td>YTD Performance</td></tr><tr><td colspan="13">Online Dating</td></tr><tr><td>Match Group</td><td>MTCH</td><td>1%</td><td>n/a</td><td>8%</td><td>1%</td><td>-1%</td><td>8%</td><td>0%</td><td>n/a</td><td>4%</td><td>0%</td><td>12%</td></tr><tr><td>Bumble</td><td>BMBL</td><td>0%</td><td>n/a</td><td>6%</td><td>0%</td><td>0%</td><td>7%</td><td>-3%</td><td>n/a</td><td>-2%</td><td>-20%</td><td>-5%</td></tr><tr><td>Grindr</td><td>GRND</td><td>n/a</td><td>n/a</td><td>n/a</td><td>9%</td><td>n/a</td><td>17%</td><td>n/a</td><td>n/a</td><td>n/a</td><td>12%</td><td>8%</td></tr><tr><td>Average</td><td></td><td>1%</td><td>n/a</td><td>7%</td><td>3%</td><td>-1%</td><td>11%</td><td>-1%</td><td>n/a</td><td>1%</td><td>-3%</td><td>5%</td></tr><tr><td>Median</td><td></td><td>1%</td><td>n/a</td><td>7%</td><td>1%</td><td>-1%</td><td>8%</td><td>-1%</td><td>n/a</td><td>1%</td><td>0%</td><td>8%</td></tr></table>
+
+\*Match Group & Bumble other topline = Payers. All companies = Adj. EBITDA
+
+As of 5/13/2026
+
+Source: FactSet, Data compiled by GS Global Investment Research
+
+In Q1'26, online dating results were broadly in line-to-ahead of expectations, with a continued focus on product led recovery paths and monetization evolution across the group. MTCH delivered a solid quarter, supported by improving Tinder user trends and continued strength at Hinge. Mgmt. noted that Tinder MAU declines moderated exiting Q1, registrations returned to growth for the first time since June 2024, & improving user retention, while Hinge posted strong direct revenue growth alongside healthy adoption of new features such as Date Ideas. BMBL results reflected stabilization following its quality reset, with mgmt. emphasizing improved member quality and engagement, though revenue headwinds persist as the platform transition and broader product rebuild continue. GRND delivered strong results driven by pricing actions, and advertising momentum.
+
+Across the group, product led efforts to improve user quality/engagement/retention are increasingly visible in operating trends, albeit at different stages of execution: 1) MTCH mgmt. pointed to improving leading indicators at Tinder, supported by recommendation upgrades and new interaction formats including Double Date, Music Mode, and Astrology Mode; 2) BMBL framed Q1 as the start of an activation phase, with stabilization in registrations and active users, improving retention trends, and early positive results from Bee in onboarding ahead of a broader rollout of the new platform planned for Q4; & 3) At GRND, mgmt. highlighted continued strength in activations, engagement, retention, and conversion, reinforcing confidence in its broader product roadmap. Going forward, we expect the investor debates to remain centered around: 1) translation of product progress into sustained payer and revenue growth in the medium term; 2) the scale and timings of monetization upside around the next-generation initiatives; & 3) durability of margins as companies continue to balance product and marketing investments against broader financial targets.
+
+Exhibit 32: 2026 Payer Revisions   
+% change relative to April 1 & 12m prior   
+![](images/9f7279b35929a4dbf3a18e8195651c3ccfe2deb159977947e99b4546e78ffa43.jpg)
+
+<details>
+<summary>bar</summary>
+
+| Category | MTCH (%) | BMBL (%) |
+| :--- | :--- | :--- |
+| vs. April 1 Estimates | -1 | -1 |
+| vs. Prior Yr Estimates | -7 | -33 |
+</details>
+
+Source: FactSet, Data compiled by GS Global Investment Research
+
+Exhibit 33: 2026 Revenue Revisions   
+% change relative to April 1 & 12m prior   
+![](images/c920f728f1dbaae025af14f3f1382e3711aaab559a595bd5014fa0afc779cdd9.jpg)
+
+<details>
+<summary>bar</summary>
+
+| Category | MTCH (%) | BMBL (%) | GRND (%) |
+| :--- | :--- | :--- | :--- |
+| vs. April 1 Estimates | 0 | -1 | 1 |
+| vs. Prior Yr Estimates | -3 | -13 | 2 |
+</details>
+
+Source: FactSet, Data compiled by GS Global Investment Research
+
+Exhibit 34: 2026 Adj. EBITDA Revisions   
+% change relative to April 1 & 12m prior   
+![](images/59b679e948f9f49b833bfcb12678a773f5ad89e2d69be5ffcc92778f36c27ad8.jpg)
+
+<details>
+<summary>bar</summary>
+
+| Category | MTCH (%) | BMBL (%) | GRND (%) |
+| :--- | :--- | :--- | :--- |
+| vs. April 1 Estimates | 1 | 1 | 4 |
+| vs. Prior Yr Estimates | -1 | 12 | 4 |
+</details>
+
+Source: FactSet, Data compiled by GS Global Investment Research
+
+Exhibit 35: Online Dating RSI   
+31 day average   
+![](images/16de2ac0e901142034d14788cddefb71720e42fde8126c66dc56e5a84dffa395.jpg)
+
+<details>
+<summary>bar</summary>
+
+| Category | Value |
+| :--- | :--- |
+| MTCH | 66.5 |
+| GRND | 58.7 |
+| BMBL | 56.9 |
+Average: 60.6
+</details>
+
+As of 5/13/2026   
+Source: FactSet, Data compiled by GS Global Investment Research
+
+# Online Gambling
+
+Exhibit 36: Q1'26 Online Gambling Performance   
+% 
+
+<table><tr><td colspan="2"></td><td colspan="3">Quarter Performance: vs. Guidance</td><td colspan="3">Quarter Performance: vs. Consensus</td><td colspan="3">1 Qtr Forward Guidance vs. Consensus</td><td colspan="2">Stock Performance</td></tr><tr><td>Company &amp; Sector</td><td>Ticker</td><td>Revenues</td><td>Other Topline</td><td>Profit</td><td>Revenues</td><td>Other Topline</td><td>Profit</td><td>Revenues</td><td>Other Topline</td><td>Profit</td><td>Post-Report (T-1 - T+1)</td><td>YTD Performance</td></tr><tr><td colspan="13">Online Gambling</td></tr><tr><td>DraftKings</td><td>DKNG</td><td>n/a</td><td>n/a</td><td>n/a</td><td>1%</td><td>n/a</td><td>10%</td><td>n/a</td><td>n/a</td><td>n/a</td><td>7%</td><td>-27%</td></tr><tr><td>SportRadar</td><td>SRAD</td><td>n/a</td><td>n/a</td><td>n/a</td><td>-4%</td><td>n/a</td><td>-7%</td><td>n/a</td><td>n/a</td><td>n/a</td><td>-9%</td><td>-48%</td></tr><tr><td colspan="2">Average</td><td>n/a</td><td>n/a</td><td>n/a</td><td>2%</td><td>n/a</td><td>7%</td><td>n/a</td><td>n/a</td><td>n/a</td><td>-1%</td><td>-46%</td></tr><tr><td colspan="2">Median</td><td>n/a</td><td>n/a</td><td>n/a</td><td>1%</td><td>n/a</td><td>10%</td><td>n/a</td><td>n/a</td><td>n/a</td><td>0%</td><td>-48%</td></tr></table>
+
+\*All companies = Adj. EBITDA
+
+As of 5/13/2026
+
+Source: FactSet, Data Compiled by GS Global Investment Research
+
+In Online Gambling, Q1'26 operating results across DKNG and SRAD highlighted a mix of solid core execution and near-term headwinds, while reinforcing several key themes: 1) core betting and gaming trends remained healthy at DKNG driven by continued margin expansion and scaling profitability in core OSB – to which mgmt noted the ability to elevate intensity in growth investments (i.e. predictions) while demonstrating strong unit economics; 2) prediction markets emerged as a central strategic focus across both operators, where mgmt teams cited active industry conversations, early positive traction from initiatives, and framed prediction markets as a meaningful revenue opportunity; 3) platform expansion and product integration remain key priorities for driving customer acquisition and engagement (with SRAD highlighting progress integrating IMG and DKNG emphasizing benefits of its super app strategy); & 4) improved visibility into cost structures and capital allocation frameworks, with SRAD benefiting from renewed multi-year agreements with large league/federation partners.
+
+Near-term, we expect investor focus to remain around how the scaling of prediction markets impacts the sports gambling landscape (along with pace and profitability of the overall opportunity), the path for incremental margins in 2026 and durability of revenue growth, and mitigating volatility from sports outcome trends, while monitoring FX headwinds and their impact on international operations. Longer term, industry debates continue to revolve around competitive intensity and market structure as prediction markets scale, the regulatory landscape, driving improving unit economics of state cohorts as they scale and cross-sell opportunities materialize, and capital allocation strategies as operators generate increasing free cash flow.
+
+Exhibit 37: 2026 Revenue Revisions   
+% change relative to April 1 & 12m prior   
+![](images/c92aa13e27ab5670b99f8e195f8fc7027b509e9636625efaa2135dce620d2b4d.jpg)
+
+<details>
+<summary>bar</summary>
+
+| Category | DKNG (%) | SRAD (%) |
+| :--- | :--- | :--- |
+| vs. April 1 Estimates | -1 | 0 |
+| vs. Prior Yr Estimates | -10 | 10 |
+</details>
+
+Source: FactSet, Data compiled by GS Global Investment Research
+
+Exhibit 38: 2026 Adj. EBITDA Revisions   
+% change relative to April 1 & 12m prior   
+![](images/17aee4b33015b821b673f73e83703910a233e00504d4d4b075351ca932a68a52.jpg)
+
+<details>
+<summary>bar</summary>
+
+| Category | DKNG (%) | SRAD (%) |
+| :--- | :--- | :--- |
+| vs. April 1 Estimates | -4 | 0 |
+| vs. Prior Yr Estimates | -48 | 15 |
+</details>
+
+Source: FactSet, Data compiled by GS Global Investment Research
+
+Exhibit 39: Online Gambling RSI   
+31 day average   
+![](images/b46b914d9afb1047a07309aebfe3c816e1943d4fe491d2010fabdaea8e9c66ab.jpg)
+
+<details>
+<summary>bar</summary>
+
+| Category | Value |
+| -------- | ----- |
+| DKNG     | 50.0  |
+| SRAD     | 32.0  |
+</details>
+
+As of 5/13/2026   
+Source: FactSet, Data compiled by GS Global Investment Research
+
+# Online Marketplaces
+
+Exhibit 40: Q1'26 Online Marketplaces Performance   
+% 
+
+<table><tr><td colspan="2"></td><td colspan="3">Quarter Performance: vs. Guidance</td><td colspan="3">Quarter Performance: vs. Consensus</td><td colspan="3">1 Qtr Forward Guidance vs. Consensus</td><td colspan="2">Stock Performance</td></tr><tr><td>Company &amp; Sector</td><td>Ticker</td><td>Revenues</td><td>Other Topline</td><td>Profit</td><td>Revenues</td><td>Other Topline</td><td>Profit</td><td>Revenues</td><td>Other Topline</td><td>Profit</td><td>Post-Report (T-1 - T+1)</td><td>YTD Performance</td></tr><tr><td colspan="13">Online Marketplaces &amp; Local Services</td></tr><tr><td>ACV Auctions</td><td>ACVA</td><td>1%</td><td>n/a</td><td>14%</td><td>1%</td><td>n/a</td><td>17%</td><td>0%</td><td>n/a</td><td>-10%</td><td>20%</td><td>-30%</td></tr><tr><td>Fiverr</td><td>FVRR</td><td>1%</td><td>n/a</td><td>8%</td><td>1%</td><td>1%</td><td>8%</td><td>-2%</td><td>n/a</td><td>2%</td><td>12%</td><td>-46%</td></tr><tr><td>Upwork</td><td>UPWK</td><td>1%</td><td>n/a</td><td>25%</td><td>0%</td><td>n/a</td><td>24%</td><td>-7%</td><td>n/a</td><td>1%</td><td>-13%</td><td>-58%</td></tr><tr><td>Xometry</td><td>XMTR</td><td>9%</td><td>n/a</td><td>50%</td><td>9%</td><td>n/a</td><td>49%</td><td>9%</td><td>n/a</td><td>24%</td><td>42%</td><td>45%</td></tr><tr><td>GoodRx</td><td>GDRX</td><td>n/a</td><td>n/a</td><td>n/a</td><td>5%</td><td>n/a</td><td>3%</td><td>n/a</td><td>n/a</td><td>n/a</td><td>11%</td><td>-4%</td></tr><tr><td>Angi</td><td>ANGI</td><td>n/a</td><td>n/a</td><td>n/a</td><td>-1%</td><td>n/a</td><td>43%</td><td>n/a</td><td>n/a</td><td>n/a</td><td>-34%</td><td>-62%</td></tr><tr><td>Frontdoor</td><td>FTDR</td><td>2%</td><td>n/a</td><td>4%</td><td>2%</td><td>n/a</td><td>4%</td><td>0%</td><td>n/a</td><td>-1%</td><td>14%</td><td>9%</td></tr><tr><td>Zip Recruiter</td><td>ZIP</td><td>1%</td><td>n/a</td><td>94%</td><td>1%</td><td>n/a</td><td>78%</td><td>n/a</td><td>n/a</td><td>n/a</td><td>16%</td><td>1%</td></tr><tr><td colspan="2">Average</td><td>3%</td><td>n/a</td><td>32%</td><td>1%</td><td>1%</td><td>25%</td><td>0%</td><td>n/a</td><td>3%</td><td>6%</td><td>-21%</td></tr><tr><td colspan="2">Median</td><td>1%</td><td>n/a</td><td>19%</td><td>1%</td><td>1%</td><td>17%</td><td>0%</td><td>n/a</td><td>1%</td><td>12%</td><td>-30%</td></tr></table>
+
+\*All companies = Adj. EBITDA   
+As of 5/13/2026. Excludes STUB   
+Source: FactSet, Data Compiled by GS Global Investment Research
+
+In the Online Marketplaces sector, investor reactions were mixed, with markets more constructive on outsized evidence of AI investments translating into visible growth/margin outcomes [XMTR], while platforms emphasizing AI re-investments [ANGI] and near-term topline volatility [UPWK/FVRR] produced more negative reactions. Key themes underscored in the Q1'26 results included: 1) the ongoing integration of AI into core platform infrastructure and product innovation to drive matching efficiency and user engagement; 2) a strategic emphasis on higher-value, complex, and enterprise projects/customers amid a bifurcation within the freelance economy — where lower-end, more transactional work is being disrupted more rapidly by AI — as companies navigate a still-muted macro environment for discretionary spend; 3) a focus on operational discipline and cost actions, supporting margin durability and capital allocation strategies (incl. selective share repurchases); & 4) the scaling of value-added services to deepen ecosystem integration and expand share of wallet.
+
+Going forward, we expect investor debates to center on: 1) the durability and scalability of AI driven growth initiatives relative to near term macro and demand volatility; 2) the pace at which higher value segments and new monetization layers can offset pressure in legacy or lower value cohorts; & 3) the sustainability of margin expansion and free cash flow generation as companies balance incremental investment with profitability objectives.
+
+Exhibit 41: 2026 Revenue Revisions   
+% change relative to April 1 & 12m prior   
+![](images/29dd20e81c6de0b6fbeaecd2bf83d5cd6d6cd8df186203169e7a2a89a2409fb1.jpg)
+
+<details>
+<summary>bar</summary>
+
+| Category | vs. April 1 Estimates (%) | vs. Prior Yr Estimates (%) |
+| :--- | :---: | :---: |
+| ACVA | 0 | -11 |
+| FVRR | 0 | -14 |
+| UPWK | -7 | -3 |
+| XMTR | 5 | 16 |
+| ZIP | 0 | -11 |
+| ANGI | -5 | -8 |
+| FTDR | 0 | 0 |
+| GDRX | 1 | -12 |
+</details>
+
+Source: FactSet, Data compiled by GS Global Investment Research
+
+Exhibit 42: 2026 Adj. EBITDA Revisions   
+% change relative to April 1 & 12m prior   
+![](images/586506856fec5221a0f278fc8f88fa80f2d1d36bd67684a233bc56d1f17c5ef6.jpg)
+
+<details>
+<summary>bar</summary>
+
+| Category | vs. April 1 Estimates (%) | vs. Prior Yr Estimates (%) |
+| :--- | :---: | :---: |
+| ACVA | 0 | -47 |
+| FVRR | 3 | -29 |
+| UPWK | 5 | 17 |
+| XMTR | 18 | 86 |
+| ZIP | 1 | -2 |
+| ANGI | -22 | -28 |
+| FTDR | 0 | 10 |
+| GDRX | 1 | -22 |
+</details>
+
+Source: FactSet, Data compiled by GS Global Investment Research
+
+Exhibit 43: Online Marketplaces RSI   
+31 day average   
+![](images/8cb2d9da244ff280cb4880910a47c76bb69d2808d3db5cebe5af405115c44e24.jpg)
+
+<details>
+<summary>bar</summary>
+
+| Category | Value |
+| -------- | ----- |
+| XMTR     | 67.0  |
+| ZIP      | 66.0  |
+| GDRX     | 64.0  |
+| FVRR     | 58.0  |
+| ACVA     | 57.0  |
+| FTDR     | 56.0  |
+| ANGI     | 45.0  |
+| UPWK     | 41.0  |
+</details>
+
+As of 5/13/2026   
+Source: FactSet, Data compiled by GS Global Investment Research
+
+# Industry Overview - Third Party Data
+
+To provide a recent health check on app user growth and engagement trends within each sUBSector, we leverage Sensor Tower data showing weekly average users, total time spent and number of app sessions across both iOS and Android. We believe that these data points are useful for flagging inflection points and mainly draw directional conclusions based on the rate of change in the data (with less focus on absolute growth rates). The data presented below is derived from third-party sources and might differ from official company-reported figures.
+
+Additionally, we supplement our industry work with data from HundredX, a mission-based data and insights company that takes an innovative approach to monitoring consumer perceptions and gathering consumer feedback to understand trends across 80+ industries and 3,000+ brands. HundredX analyzes collective opinions of everyday customers and evaluates how their priorities influence purchasing decisions and attitudes toward businesses and brands.
+
+All data outlined below is through April 2026 and is available on request. For HundredX methodology, please see (link) where we outline key definitions on data provided.
+
+Exhibit 44: US Internet Performance Dashboard: US
+
+%
+
+<table><tr><td>Monthly App Tracker: US</td><td colspan="3">WAU</td><td colspan="3">MAU</td><td colspan="3">App Downloads</td><td colspan="3">Time Spent</td><td colspan="3">Sessions</td></tr><tr><td>App</td><td>MoM %</td><td>3M %</td><td>YoY %</td><td>MoM %</td><td>T3M %</td><td>YoY %</td><td>MoM %</td><td>T3M %</td><td>YoY %</td><td>MoM %</td><td>T3M %</td><td>YoY %</td><td>MoM %</td><td>T3M %</td><td>YoY %</td></tr><tr><td>Digital Advertising</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>Facebook</td><td>-2%</td><td>-3%</td><td>-1%</td><td>-1%</td><td>-1%</td><td>1%</td><td>-2%</td><td>6%</td><td>-2%</td><td>-6%</td><td>-7%</td><td>-2%</td><td>-4%</td><td>-4%</td><td>3%</td></tr><tr><td>Instagram</td><td>0%</td><td>-3%</td><td>-2%</td><td>0%</td><td>-3%</td><td>0%</td><td>-11%</td><td>-1%</td><td>-7%</td><td>-1%</td><td>-3%</td><td>14%</td><td>-1%</td><td>-3%</td><td>7%</td></tr><tr><td>Youtube</td><td>0%</td><td>-1%</td><td>-1%</td><td>0%</td><td>-1%</td><td>-1%</td><td>-16%</td><td>-6%</td><td>0%</td><td>-4%</td><td>-1%</td><td>9%</td><td>1%</td><td>-2%</td><td>12%</td></tr><tr><td>Pinterest</td><td>-3%</td><td>-3%</td><td>2%</td><td>-6%</td><td>0%</td><td>0%</td><td>-12%</td><td>-3%</td><td>-2%</td><td>-5%</td><td>2%</td><td>29%</td><td>-9%</td><td>6%</td><td>19%</td></tr><tr><td>Snapchat</td><td>0%</td><td>-4%</td><td>-7%</td><td>-3%</td><td>-2%</td><td>-18%</td><td>-14%</td><td>-4%</td><td>-20%</td><td>-6%</td><td>-6%</td><td>-21%</td><td>-3%</td><td>-4%</td><td>-15%</td></tr><tr><td>Reddit</td><td>2%</td><td>-4%</td><td>-10%</td><td>-1%</td><td>-5%</td><td>-11%</td><td>-4%</td><td>-10%</td><td>-32%</td><td>-5%</td><td>-10%</td><td>-16%</td><td>-6%</td><td>-9%</td><td>-12%</td></tr><tr><td>Threads</td><td>-4%</td><td>-9%</td><td>14%</td><td>-2%</td><td>-1%</td><td>18%</td><td>-10%</td><td>-22%</td><td>-48%</td><td>-5%</td><td>-1%</td><td>56%</td><td>-6%</td><td>-2%</td><td>38%</td></tr><tr><td>TikTok</td><td>0%</td><td>0%</td><td>5%</td><td>2%</td><td>-2%</td><td>11%</td><td>-5%</td><td>3%</td><td>10%</td><td>-1%</td><td>-8%</td><td>9%</td><td>-1%</td><td>-7%</td><td>11%</td></tr><tr><td>X</td><td>-1%</td><td>-7%</td><td>-13%</td><td>-4%</td><td>-5%</td><td>-12%</td><td>-7%</td><td>0%</td><td>54%</td><td>-8%</td><td>-3%</td><td>-4%</td><td>-6%</td><td>-6%</td><td>-12%</td></tr><tr><td>Nextdoor</td><td>2%</td><td>3%</td><td>-19%</td><td>0%</td><td>-2%</td><td>-24%</td><td>-6%</td><td>0%</td><td>-25%</td><td>-3%</td><td>-1%</td><td>-20%</td><td>-5%</td><td>-4%</td><td>-22%</td></tr><tr><td>Yelp</td><td>-7%</td><td>1%</td><td>-9%</td><td>-2%</td><td>-2%</td><td>-14%</td><td>-10%</td><td>9%</td><td>11%</td><td>-7%</td><td>-2%</td><td>-17%</td><td>-7%</td><td>-3%</td><td>-12%</td></tr><tr><td>Ibotta</td><td>-2%</td><td>14%</td><td>-11%</td><td>1%</td><td>1%</td><td>-12%</td><td>-4%</td><td>-37%</td><td>-35%</td><td>-10%</td><td>-1%</td><td>-6%</td><td>-10%</td><td>0%</td><td>-9%</td></tr><tr><td>eCommerce</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>Amazon</td><td>0%</td><td>3%</td><td>-9%</td><td>-1%</td><td>-1%</td><td>-8%</td><td>-12%</td><td>-22%</td><td>-4%</td><td>-7%</td><td>-21%</td><td>1%</td><td>-5%</td><td>-19%</td><td>4%</td></tr><tr><td>eBay</td><td>-2%</td><td>0%</td><td>7%</td><td>-2%</td><td>-2%</td><td>8%</td><td>-7%</td><td>8%</td><td>13%</td><td>-12%</td><td>-5%</td><td>5%</td><td>-10%</td><td>-3%</td><td>2%</td></tr><tr><td>Etsy</td><td>-1%</td><td>-4%</td><td>9%</td><td>-1%</td><td>-12%</td><td>11%</td><td>-8%</td><td>-29%</td><td>-6%</td><td>3%</td><td>-22%</td><td>16%</td><td>1%</td><td>-24%</td><td>19%</td></tr><tr><td>Temu</td><td>-2%</td><td>4%</td><td>82%</td><td>4%</td><td>-2%</td><td>38%</td><td>5%</td><td>0%</td><td>80%</td><td>-5%</td><td>-9%</td><td>1%</td><td>-4%</td><td>-7%</td><td>17%</td></tr><tr><td>Wayfair</td><td>12%</td><td>105%</td><td>66%</td><td>-6%</td><td>-16%</td><td>-4%</td><td>6%</td><td>-8%</td><td>-21%</td><td>-17%</td><td>61%</td><td>60%</td><td>-23%</td><td>52%</td><td>72%</td></tr><tr><td>Streaming Media</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>Netflix</td><td>-7%</td><td>-8%</td><td>-8%</td><td>-4%</td><td>-10%</td><td>-2%</td><td>-18%</td><td>-16%</td><td>-3%</td><td>-8%</td><td>-17%</td><td>-13%</td><td>-7%</td><td>-15%</td><td>-10%</td></tr><tr><td>Spotify</td><td>2%</td><td>0%</td><td>5%</td><td>-1%</td><td>-2%</td><td>4%</td><td>-13%</td><td>-5%</td><td>2%</td><td>-3%</td><td>-1%</td><td>1%</td><td>-2%</td><td>0%</td><td>3%</td></tr><tr><td>Webtoon</td><td>0%</td><td>9%</td><td>-12%</td><td>1%</td><td>-3%</td><td>-4%</td><td>8%</td><td>-27%</td><td>-16%</td><td>-12%</td><td>-7%</td><td>-27%</td><td>-9%</td><td>0%</td><td>-23%</td></tr><tr><td>Online Dating</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>Tinder</td><td>2%</td><td>13%</td><td>-1%</td><td>1%</td><td>-1%</td><td>-2%</td><td>-5%</td><td>-6%</td><td>-11%</td><td>2%</td><td>-9%</td><td>-4%</td><td>1%</td><td>-6%</td><td>2%</td></tr><tr><td>Hinge</td><td>-1%</td><td>-4%</td><td>-1%</td><td>-3%</td><td>-1%</td><td>-1%</td><td>-8%</td><td>-10%</td><td>-13%</td><td>-7%</td><td>-5%</td><td>7%</td><td>-6%</td><td>-8%</td><td>9%</td></tr><tr><td>Bumble</td><td>-2%</td><td>9%</td><td>-14%</td><td>2%</td><td>-1%</td><td>-5%</td><td>-10%</td><td>-12%</td><td>-31%</td><td>-13%</td><td>-6%</td><td>-24%</td><td>-13%</td><td>-5%</td><td>-15%</td></tr><tr><td>Badoo</td><td>-12%</td><td>-17%</td><td>-1%</td><td>-8%</td><td>-17%</td><td>-16%</td><td>0%</td><td>-17%</td><td>-35%</td><td>-20%</td><td>-3%</td><td>-16%</td><td>-26%</td><td>-15%</td><td>-15%</td></tr><tr><td>Grindr</td><td>0%</td><td>-1%</td><td>-12%</td><td>-4%</td><td>-5%</td><td>-15%</td><td>-13%</td><td>5%</td><td>1%</td><td>-2%</td><td>-1%</td><td>-16%</td><td>-7%</td><td>-5%</td><td>-14%</td></tr><tr><td>EdTech</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>Duolingo</td><td>-2%</td><td>-2%</td><td>-3%</td><td>-2%</td><td>-2%</td><td>-1%</td><td>-19%</td><td>7%</td><td>-22%</td><td>-7%</td><td>-5%</td><td>14%</td><td>-6%</td><td>-3%</td><td>1%</td></tr><tr><td>Coursera</td><td>9%</td><td>-14%</td><td>-35%</td><td>-11%</td><td>-20%</td><td>-42%</td><td>7%</td><td>1%</td><td>-5%</td><td>0%</td><td>-18%</td><td>-65%</td><td>-7%</td><td>-12%</td><td>-50%</td></tr><tr><td>Rideshare</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>Uber</td><td>9%</td><td>3%</td><td>-8%</td><td>-4%</td><td>-7%</td><td>-9%</td><td>-7%</td><td>3%</td><td>-2%</td><td>-10%</td><td>-4%</td><td>-3%</td><td>-10%</td><td>-5%</td><td>-1%</td></tr><tr><td>Lyft</td><td>5%</td><td>8%</td><td>-8%</td><td>-5%</td><td>-4%</td><td>-7%</td><td>-9%</td><td>1%</td><td>-3%</td><td>-14%</td><td>0%</td><td>-12%</td><td>-13%</td><td>1%</td><td>-6%</td></tr><tr><td>Food Delivery</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>DoorDash</td><td>2%</td><td>17%</td><td>20%</td><td>-1%</td><td>1%</td><td>9%</td><td>-9%</td><td>-3%</td><td>-5%</td><td>-5%</td><td>4%</td><td>13%</td><td>-6%</td><td>13%</td><td>31%</td></tr><tr><td>Uber Eats</td><td>2%</td><td>-3%</td><td>-14%</td><td>-3%</td><td>-5%</td><td>-16%</td><td>-15%</td><td>-8%</td><td>-14%</td><td>-6%</td><td>-5%</td><td>-8%</td><td>-6%</td><td>-6%</td><td>-7%</td></tr><tr><td>Instacart</td><td>-5%</td><td>-9%</td><td>-5%</td><td>-9%</td><td>-4%</td><td>-4%</td><td>-5%</td><td>-14%</td><td>-12%</td><td>-11%</td><td>-8%</td><td>6%</td><td>-10%</td><td>-7%</td><td>12%</td></tr><tr><td>Online Travel</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>Booking.com</td><td>22%</td><td>16%</td><td>6%</td><td>-3%</td><td>7%</td><td>19%</td><td>-9%</td><td>16%</td><td>-2%</td><td>-2%</td><td>4%</td><td>-3%</td><td>-4%</td><td>2%</td><td>6%</td></tr><tr><td>Expedia</td><td>-8%</td><td>3%</td><td>6%</td><td>-10%</td><td>12%</td><td>11%</td><td>-12%</td><td>2%</td><td>-33%</td><td>-15%</td><td>9%</td><td>3%</td><td>-14%</td><td>9%</td><td>9%</td></tr><tr><td>Airbnb</td><td>1%</td><td>9%</td><td>2%</td><td>0%</td><td>4%</td><td>9%</td><td>-9%</td><td>14%</td><td>2%</td><td>-9%</td><td>5%</td><td>1%</td><td>-8%</td><td>6%</td><td>3%</td></tr><tr><td>KAYAK</td><td>11%</td><td>-15%</td><td>26%</td><td>-13%</td><td>-10%</td><td>-7%</td><td>-11%</td><td>12%</td><td>0%</td><td>-3%</td><td>-1%</td><td>47%</td><td>-10%</td><td>-1%</td><td>26%</td></tr><tr><td>Tripadvisor</td><td>27%</td><td>8%</td><td>-37%</td><td>12%</td><td>-15%</td><td>-38%</td><td>-2%</td><td>-18%</td><td>-40%</td><td>18%</td><td>-6%</td><td>-32%</td><td>16%</td><td>-3%</td><td>-33%</td></tr><tr><td>Hopper</td><td>-7%</td><td>-16%</td><td>-38%</td><td>-8%</td><td>-3%</td><td>-31%</td><td>12%</td><td>-2%</td><td>-15%</td><td>-6%</td><td>9%</td><td>-3%</td><td>4%</td><td>9%</td><td>6%</td></tr><tr><td>Priceline</td><td>12%</td><td>39%</td><td>30%</td><td>0%</td><td>18%</td><td>25%</td><td>-8%</td><td>15%</td><td>1%</td><td>-33%</td><td>-5%</td><td>-8%</td><td>-27%</td><td>-5%</td><td>-4%</td></tr><tr><td>Vacasa</td><td>-5%</td><td>-12%</td><td>-37%</td><td>-6%</td><td>-7%</td><td>-33%</td><td>-22%</td><td>13%</td><td>-60%</td><td>0%</td><td>0%</td><td>0%</td><td>-6%</td><td>-10%</td><td>-19%</td></tr><tr><td>Viator</td><td>32%</td><td>5%</td><td>92%</td><td>7%</td><td>1%</td><td>28%</td><td>-11%</td><td>18%</td><td>25%</td><td>6%</td><td>15%</td><td>143%</td><td>12%</td><td>0%</td><td>79%</td></tr><tr><td>trivago</td><td>-19%</td><td>-12%</td><td>-10%</td><td>-3%</td><td>28%</td><td>-4%</td><td>-1%</td><td>31%</td><td>-3%</td><td>0%</td><td>40%</td><td>67%</td><td>-6%</td><td>42%</td><td>39%</td></tr><tr><td>Online Gambling</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>DraftKings</td><td>3%</td><td>-45%</td><td>-17%</td><td>1%</td><td>-28%</td><td>-3%</td><td>-5%</td><td>-35%</td><td>5%</td><td>-33%</td><td>-46%</td><td>6%</td><td>-20%</td><td>-45%</td><td>22%</td></tr><tr><td>Fanatics</td><td>2%</td><td>-32%</td><td>33%</td><td>-1%</td><td>-19%</td><td>14%</td><td>-4%</td><td>-9%</td><td>26%</td><td>34%</td><td>66%</td><td>338%</td><td>17%</td><td>14%</td><td>199%</td></tr><tr><td>BetMGM</td><td>-15%</td><td>-46%</td><td>-23%</td><td>-21%</td><td>-23%</td><td>-22%</td><td>-19%</td><td>-38%</td><td>-23%</td><td>-38%</td><td>-27%</td><td>-12%</td><td>-30%</td><td>-35%</td><td>-35%</td></tr><tr><td>FanDuel</td><td>7%</td><td>-38%</td><td>-26%</td><td>-7%</td><td>-31%</td><td>-15%</td><td>5%</td><td>-45%</td><td>-7%</td><td>9%</td><td>-50%</td><td>-43%</td><td>12%</td><td>-47%</td><td>-22%</td></tr><tr><td>Underdog</td><td>-19%</td><td>-52%</td><td>0%</td><td>-26%</td><td>-24%</td><td>19%</td><td>-33%</td><td>-61%</td><td>-55%</td><td>-41%</td><td>-62%</td><td>11%</td><td>-26%</td><td>-57%</td><td>26%</td></tr><tr><td>bet365</td><td>24%</td><td>-33%</td><td>-19%</td><td>-19%</td><td>-22%</td><td>-20%</td><td>27%</td><td>-10%</td><td>83%</td><td>5%</td><td>-42%</td><td>-61%</td><td>1%</td><td>-37%</td><td>-66%</td></tr><tr><td>BetRivers</td><td>13%</td><td>-16%</td><td>-61%</td><td>-1%</td><td>-4%</td><td>-62%</td><td>4%</td><td>-27%</td><td>-3%</td><td>0%</td><td>-14%</td><td>-16%</td><td>-2%</td><td>-10%</td><td>-26%</td></tr><tr><td>Caesars Sportsbook</td><td>3%</td><td>-43%</td><td>-40%</td><td>-13%</td><td>-28%</td><td>-45%</td><td>-26%</td><td>-40%</td><td>-54%</td><td>0%</td><td>-56%</td><td>-3%</td><td>-5%</td><td>-51%</td><td>-25%</td></tr><tr><td>Kalshi</td><td>3%</td><td>-37%</td><td>685%</td><td>-6%</td><td>36%</td><td>705%</td><td>-18%</td><td>-27%</td><td>860%</td><td>-31%</td><td>60%</td><td>1829%</td><td>-24%</td><td>81%</td><td>2494%</td></tr><tr><td>Other</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>Roblox</td><td>-10%</td><td>6%</td><td>4%</td><td>-2%</td><td>0%</td><td>2%</td><td>-11%</td><td>-13%</td><td>-18%</td><td>-18%</td><td>2%</td><td>31%</td><td>-10%</td><td>-4%</td><td>39%</td></tr><tr><td>StubHub</td><td>-11%</td><td>-6%</td><td>-7%</td><td>-8%</td><td>-1%</td><td>-2%</td><td>7%</td><td>8%</td><td>7%</td><td>-9%</td><td>18%</td><td>0%</td><td>-3%</td><td>12%</td><td>3%</td></tr><tr><td>GoodRx</td><td>5%</td><td>-18%</td><td>-34%</td><td>-12%</td><td>1%</td><td>-32%</td><td>-4%</td><td>15%</td><td>0%</td><td>-33%</td><td>9%</td><td>-33%</td><td>-30%</td><td>2%</td><td>-36%</td></tr><tr><td>Peloton</td><td>10%</td><td>-7%</td><td>-7%</td><td>3%</td><td>0%</td><td>-12%</td><td>-15%</td><td>-28%</td><td>-21%</td><td>-8%</td><td>-14%</td><td>-36%</td><td>-1%</td><td>-7%</td><td>-17%</td></tr></table>
+
+\*MoM % change based on most recent week / four weeks prior.   
+\*\*T3M for monthly columns based on most recent three months over prior months 4-6.
+
+Monthly data pulled through April 2026. Weekly data pulled through week of 4/27/2026
+
+Source: SensorTower, Data compiled by GS Global Investment Research
+
+Exhibit 45: US Internet Performance Dashboard: WW
+
+%
+
+<table><tr><td>Monthly App Tracker: WW</td><td colspan="3">WAU</td><td colspan="3">MAU</td><td colspan="3">App Downloads</td><td colspan="3">Time Spent</td><td colspan="3">Sessions</td></tr><tr><td></td><td>MoM %</td><td>3M %</td><td>YoY %</td><td>MoM %</td><td>T3M %</td><td>YoY %</td><td>MoM %</td><td>T3M %</td><td>YoY %</td><td>MoM %</td><td>T3M %</td><td>YoY %</td><td>MoM %</td><td>T3M %</td><td>YoY %</td></tr><tr><td>Digital Advertising</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>Facebook</td><td>-1%</td><td>-1%</td><td>-2%</td><td>-1%</td><td>-1%</td><td>0%</td><td>-5%</td><td>-4%</td><td>-1%</td><td>-7%</td><td>-3%</td><td>-3%</td><td>-5%</td><td>-3%</td><td>-5%</td></tr><tr><td>Instagram</td><td>0%</td><td>1%</td><td>3%</td><td>0%</td><td>0%</td><td>3%</td><td>-2%</td><td>-3%</td><td>2%</td><td>-4%</td><td>1%</td><td>15%</td><td>-3%</td><td>0%</td><td>9%</td></tr><tr><td>Youtube</td><td>0%</td><td>1%</td><td>2%</td><td>0%</td><td>0%</td><td>0%</td><td>-8%</td><td>-2%</td><td>9%</td><td>-5%</td><td>-2%</td><td>-2%</td><td>-4%</td><td>-1%</td><td>0%</td></tr><tr><td>Pinterest</td><td>1%</td><td>3%</td><td>10%</td><td>-2%</td><td>2%</td><td>8%</td><td>-8%</td><td>-3%</td><td>7%</td><td>-4%</td><td>0%</td><td>16%</td><td>-5%</td><td>0%</td><td>15%</td></tr><tr><td>Snapchat</td><td>-2%</td><td>-2%</td><td>0%</td><td>-2%</td><td>0%</td><td>-9%</td><td>-13%</td><td>-2%</td><td>-2%</td><td>-6%</td><td>-2%</td><td>-12%</td><td>-5%</td><td>-1%</td><td>-9%</td></tr><tr><td>Reddit</td><td>2%</td><td>0%</td><td>-2%</td><td>0%</td><td>-2%</td><td>-4%</td><td>-6%</td><td>-16%</td><td>-60%</td><td>-4%</td><td>-8%</td><td>-9%</td><td>-4%</td><td>-5%</td><td>-4%</td></tr><tr><td>Threads</td><td>-3%</td><td>-2%</td><td>28%</td><td>-1%</td><td>1%</td><td>33%</td><td>6%</td><td>-18%</td><td>-33%</td><td>-3%</td><td>6%</td><td>86%</td><td>-2%</td><td>2%</td><td>65%</td></tr><tr><td>TikTok</td><td>2%</td><td>2%</td><td>5%</td><td>1%</td><td>0%</td><td>5%</td><td>0%</td><td>4%</td><td>12%</td><td>-3%</td><td>-2%</td><td>9%</td><td>-3%</td><td>-2%</td><td>11%</td></tr><tr><td>X</td><td>-2%</td><td>-3%</td><td>-6%</td><td>-2%</td><td>-1%</td><td>-5%</td><td>-8%</td><td>1%</td><td>23%</td><td>-10%</td><td>3%</td><td>1%</td><td>-8%</td><td>-1%</td><td>-4%</td></tr><tr><td>Nextdoor</td><td>2%</td><td>5%</td><td>-14%</td><td>0%</td><td>-1%</td><td>-19%</td><td>-5%</td><td>0%</td><td>-19%</td><td>-1%</td><td>1%</td><td>-14%</td><td>-3%</td><td>-3%</td><td>-15%</td></tr><tr><td>Yelp</td><td>-7%</td><td>1%</td><td>-8%</td><td>-2%</td><td>-2%</td><td>-11%</td><td>-9%</td><td>4%</td><td>7%</td><td>-6%</td><td>-2%</td><td>-16%</td><td>-7%</td><td>-3%</td><td>-11%</td></tr><tr><td>Ibotta</td><td>-2%</td><td>14%</td><td>-11%</td><td>1%</td><td>1%</td><td>-12%</td><td>-4%</td><td>-37%</td><td>-35%</td><td>-10%</td><td>-1%</td><td>-6%</td><td>-10%</td><td>0%</td><td>-9%</td></tr><tr><td>eCommerce</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>Amazon</td><td>-1%</td><td>-3%</td><td>-2%</td><td>-1%</td><td>-4%</td><td>1%</td><td>-4%</td><td>-12%</td><td>5%</td><td>-7%</td><td>-19%</td><td>2%</td><td>-6%</td><td>-16%</td><td>9%</td></tr><tr><td>eBay</td><td>-3%</td><td>-1%</td><td>3%</td><td>-2%</td><td>-1%</td><td>5%</td><td>-9%</td><td>1%</td><td>26%</td><td>-10%</td><td>-2%</td><td>2%</td><td>-9%</td><td>-1%</td><td>4%</td></tr><tr><td>Etsy</td><td>-2%</td><td>-6%</td><td>6%</td><td>-1%</td><td>-11%</td><td>10%</td><td>-8%</td><td>-29%</td><td>-10%</td><td>1%</td><td>-23%</td><td>14%</td><td>-1%</td><td>-24%</td><td>17%</td></tr><tr><td>Temu</td><td>-10%</td><td>-11%</td><td>12%</td><td>-2%</td><td>-5%</td><td>22%</td><td>-11%</td><td>-18%</td><td>-36%</td><td>-6%</td><td>-13%</td><td>7%</td><td>-5%</td><td>-10%</td><td>19%</td></tr><tr><td>Wayfair</td><td>10%</td><td>85%</td><td>67%</td><td>-5%</td><td>-15%</td><td>-5%</td><td>10%</td><td>-4%</td><td>-14%</td><td>-16%</td><td>44%</td><td>50%</td><td>-21%</td><td>37%</td><td>59%</td></tr><tr><td>Streaming Media</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>Netflix</td><td>-5%</td><td>-3%</td><td>-4%</td><td>-3%</td><td>-5%</td><td>-2%</td><td>-17%</td><td>-7%</td><td>4%</td><td>-7%</td><td>-9%</td><td>-10%</td><td>-7%</td><td>-9%</td><td>-8%</td></tr><tr><td>Spotify</td><td>1%</td><td>0%</td><td>8%</td><td>0%</td><td>-1%</td><td>9%</td><td>-3%</td><td>-9%</td><td>0%</td><td>-2%</td><td>-4%</td><td>2%</td><td>-2%</td><td>-3%</td><td>3%</td></tr><tr><td>Webtoon</td><td>2%</td><td>2%</td><td>-7%</td><td>0%</td><td>-2%</td><td>-4%</td><td>-22%</td><td>-5%</td><td>-27%</td><td>-5%</td><td>-6%</td><td>-11%</td><td>-4%</td><td>-4%</td><td>-6%</td></tr><tr><td>Online Dating</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>Tinder</td><td>0%</td><td>2%</td><td>-4%</td><td>0%</td><td>-2%</td><td>-3%</td><td>-2%</td><td>-3%</td><td>11%</td><td>-4%</td><td>-8%</td><td>-8%</td><td>-3%</td><td>-7%</td><td>-3%</td></tr><tr><td>Hinge</td><td>2%</td><td>12%</td><td>31%</td><td>0%</td><td>11%</td><td>32%</td><td>-7%</td><td>-3%</td><td>26%</td><td>-2%</td><td>6%</td><td>34%</td><td>-1%</td><td>7%</td><td>44%</td></tr><tr><td>Bumble</td><td>-3%</td><td>3%</td><td>-6%</td><td>-2%</td><td>1%</td><td>-3%</td><td>-14%</td><td>-2%</td><td>-11%</td><td>-8%</td><td>-1%</td><td>-9%</td><td>-7%</td><td>1%</td><td>-2%</td></tr><tr><td>Badoo</td><td>1%</td><td>1%</td><td>-20%</td><td>1%</td><td>-2%</td><td>-22%</td><td>-5%</td><td>-3%</td><td>-37%</td><td>0%</td><td>-12%</td><td>-25%</td><td>-1%</td><td>-8%</td><td>-19%</td></tr><tr><td>Grindr</td><td>3%</td><td>3%</td><td>4%</td><td>-1%</td><td>-1%</td><td>1%</td><td>-8%</td><td>1%</td><td>0%</td><td>0%</td><td>-3%</td><td>3%</td><td>-2%</td><td>-3%</td><td>8%</td></tr><tr><td>EdTech</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>Duolingo</td><td>1%</td><td>0%</td><td>8%</td><td>-2%</td><td>0%</td><td>13%</td><td>-12%</td><td>-1%</td><td>13%</td><td>-6%</td><td>-3%</td><td>12%</td><td>-5%</td><td>-1%</td><td>9%</td></tr><tr><td>Coursera</td><td>4%</td><td>2%</td><td>-8%</td><td>-5%</td><td>-7%</td><td>-8%</td><td>11%</td><td>-11%</td><td>4%</td><td>2%</td><td>-20%</td><td>-45%</td><td>-2%</td><td>-15%</td><td>-24%</td></tr><tr><td>Rideshare</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>Uber</td><td>5%</td><td>0%</td><td>5%</td><td>-1%</td><td>-7%</td><td>4%</td><td>4%</td><td>-5%</td><td>11%</td><td>-3%</td><td>-6%</td><td>6%</td><td>-3%</td><td>-7%</td><td>10%</td></tr><tr><td>Lyft</td><td>5%</td><td>8%</td><td>-4%</td><td>-4%</td><td>-3%</td><td>-3%</td><td>-7%</td><td>-2%</td><td>-1%</td><td>-13%</td><td>0%</td><td>-8%</td><td>-12%</td><td>2%</td><td>-2%</td></tr><tr><td>Food Delivery</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>DoorDash</td><td>2%</td><td>16%</td><td>20%</td><td>-1%</td><td>1%</td><td>10%</td><td>-8%</td><td>-3%</td><td>-5%</td><td>-5%</td><td>3%</td><td>14%</td><td>-6%</td><td>11%</td><td>30%</td></tr><tr><td>Uber Eats</td><td>2%</td><td>2%</td><td>-2%</td><td>-1%</td><td>-2%</td><td>-3%</td><td>-4%</td><td>-9%</td><td>-1%</td><td>-5%</td><td>-4%</td><td>-1%</td><td>-5%</td><td>-3%</td><td>3%</td></tr><tr><td>Instacart</td><td>-6%</td><td>-9%</td><td>-3%</td><td>-8%</td><td>-4%</td><td>-2%</td><td>-5%</td><td>-14%</td><td>-10%</td><td>-11%</td><td>-8%</td><td>7%</td><td>-9%</td><td>-7%</td><td>13%</td></tr><tr><td>Online Travel</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>Booking.com</td><td>2%</td><td>4%</td><td>3%</td><td>-1%</td><td>1%</td><td>6%</td><td>-4%</td><td>0%</td><td>3%</td><td>-5%</td><td>1%</td><td>0%</td><td>-4%</td><td>1%</td><td>5%</td></tr><tr><td>Expedia</td><td>-7%</td><td>1%</td><td>7%</td><td>-9%</td><td>11%</td><td>10%</td><td>-12%</td><td>-1%</td><td>-33%</td><td>-15%</td><td>9%</td><td>4%</td><td>-15%</td><td>9%</td><td>8%</td></tr><tr><td>Airbnb</td><td>0%</td><td>8%</td><td>20%</td><td>1%</td><td>3%</td><td>19%</td><td>6%</td><td>-1%</td><td>24%</td><td>1%</td><td>1%</td><td>12%</td><td>2%</td><td>4%</td><td>19%</td></tr><tr><td>KAYAK</td><td>4%</td><td>-14%</td><td>12%</td><td>-8%</td><td>-5%</td><td>-2%</td><td>-9%</td><td>-6%</td><td>0%</td><td>-8%</td><td>-3%</td><td>12%</td><td>-10%</td><td>-3%</td><td>7%</td></tr><tr><td>Tripadvisor</td><td>0%</td><td>6%</td><td>-35%</td><td>6%</td><td>-1%</td><td>-30%</td><td>6%</td><td>-13%</td><td>-38%</td><td>12%</td><td>2%</td><td>-38%</td><td>8%</td><td>4%</td><td>-35%</td></tr><tr><td>Hopper</td><td>-4%</td><td>-13%</td><td>-33%</td><td>-7%</td><td>-3%</td><td>-27%</td><td>6%</td><td>-1%</td><td>-19%</td><td>-3%</td><td>5%</td><td>0%</td><td>6%</td><td>6%</td><td>6%</td></tr><tr><td>Priceline</td><td>12%</td><td>38%</td><td>29%</td><td>0%</td><td>18%</td><td>24%</td><td>-8%</td><td>14%</td><td>-1%</td><td>-34%</td><td>-6%</td><td>-8%</td><td>-27%</td><td>-5%</td><td>-4%</td></tr><tr><td>Vacasa</td><td>-5%</td><td>-12%</td><td>-37%</td><td>-6%</td><td>-7%</td><td>-33%</td><td>-22%</td><td>10%</td><td>-60%</td><td>0%</td><td>0%</td><td>0%</td><td>-6%</td><td>-10%</td><td>-20%</td></tr><tr><td>Viator</td><td>22%</td><td>2%</td><td>57%</td><td>5%</td><td>3%</td><td>24%</td><td>-6%</td><td>12%</td><td>13%</td><td>5%</td><td>12%</td><td>100%</td><td>5%</td><td>-2%</td><td>45%</td></tr><tr><td>trivago</td><td>-9%</td><td>-1%</td><td>8%</td><td>-5%</td><td>5%</td><td>10%</td><td>-17%</td><td>1%</td><td>-13%</td><td>-4%</td><td>15%</td><td>61%</td><td>-6%</td><td>12%</td><td>35%</td></tr><tr><td>Online Gambling</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>DraftKings</td><td>3%</td><td>-44%</td><td>-16%</td><td>1%</td><td>-28%</td><td>-3%</td><td>-5%</td><td>-35%</td><td>3%</td><td>-33%</td><td>-46%</td><td>6%</td><td>-20%</td><td>-45%</td><td>22%</td></tr><tr><td>Fanatics</td><td>2%</td><td>-32%</td><td>33%</td><td>-1%</td><td>-19%</td><td>14%</td><td>-4%</td><td>-9%</td><td>26%</td><td>34%</td><td>66%</td><td>338%</td><td>17%</td><td>14%</td><td>199%</td></tr><tr><td>BetMGM</td><td>-14%</td><td>-43%</td><td>-17%</td><td>-20%</td><td>-21%</td><td>-15%</td><td>-18%</td><td>-38%</td><td>-24%</td><td>-36%</td><td>-27%</td><td>-6%</td><td>-28%</td><td>-34%</td><td>-30%</td></tr><tr><td>FanDuel</td><td>7%</td><td>-37%</td><td>-25%</td><td>-8%</td><td>-30%</td><td>-15%</td><td>6%</td><td>-44%</td><td>-8%</td><td>9%</td><td>-49%</td><td>-43%</td><td>12%</td><td>-46%</td><td>-22%</td></tr><tr><td>Underdog</td><td>-18%</td><td>-52%</td><td>1%</td><td>-26%</td><td>-23%</td><td>19%</td><td>-38%</td><td>-59%</td><td>-55%</td><td>-41%</td><td>-61%</td><td>11%</td><td>-26%</td><td>-57%</td><td>26%</td></tr><tr><td>bet365</td><td>9%</td><td>-6%</td><td>8%</td><td>2%</td><td>4%</td><td>13%</td><td>1%</td><td>1%</td><td>66%</td><td>-3%</td><td>-14%</td><td>-8%</td><td>-4%</td><td>-11%</td><td>-4%</td></tr><tr><td>BetRivers</td><td>7%</td><td>-15%</td><td>-50%</td><td>-3%</td><td>0%</td><td>-48%</td><td>0%</td><td>-26%</td><td>-1%</td><td>0%</td><td>-12%</td><td>-3%</td><td>-4%</td><td>-8%</td><td>-13%</td></tr><tr><td>Caesars Sportsbook</td><td>3%</td><td>-42%</td><td>-38%</td><td>-13%</td><td>-27%</td><td>-43%</td><td>-27%</td><td>-39%</td><td>-52%</td><td>0%</td><td>-55%</td><td>-3%</td><td>-5%</td><td>-50%</td><td>-23%</td></tr><tr><td>Kalshi</td><td>3%</td><td>-37%</td><td>685%</td><td>-6%</td><td>36%</td><td>705%</td><td>-18%</td><td>-27%</td><td>861%</td><td>-31%</td><td>60%</td><td>1829%</td><td>-24%</td><td>81%</td><td>2494%</td></tr><tr><td>Other</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>Roblox</td><td>-3%</td><td>0%</td><td>11%</td><td>-1%</td><td>-6%</td><td>13%</td><td>-2%</td><td>-19%</td><td>-6%</td><td>-3%</td><td>-16%</td><td>12%</td><td>-5%</td><td>-17%</td><td>16%</td></tr><tr><td>StubHub</td><td>-7%</td><td>-2%</td><td>-1%</td><td>-5%</td><td>0%</td><td>4%</td><td>6%</td><td>9%</td><td>13%</td><td>-6%</td><td>18%</td><td>3%</td><td>0%</td><td>12%</td><td>7%</td></tr><tr><td>GoodRx</td><td>5%</td><td>-18%</td><td>-34%</td><td>-12%</td><td>1%</td><td>-32%</td><td>-4%</td><td>15%</td><td>0%</td><td>-33%</td><td>9%</td><td>-33%</td><td>-30%</td><td>2%</td><td>-36%</td></tr><tr><td>Peloton</td><td>10%</td><td>-8%</td><td>-8%</td><td>2%</td><td>0%</td><td>-13%</td><td>-14%</td><td>-29%</td><td>-24%</td><td>-8%</td><td>-14%</td><td>-36%</td><td>-1%</td><td>-8%</td><td>-17%</td></tr></table>
+
+\*MoM % change based on most recent week / four weeks prior.   
+\*\*T3M for monthly columns based on most recent three months over prior months 4-6.
+
+Monthly data pulled through April 2026. Weekly data pulled through week of 4/27/2026
+
+Source: SensorTower, Data compiled by GS Global Investment Research
+
+# AI Assistants / Chatbots
+
+NPS - On a T3M basis, both ChatGPT and Google Gemini's NPS scores declined in April 2026, albeit staying above the comp set.   
+NPI - Paired with NPS, both Google and ChatGPT's NPI scores declined in April 2026 (on a T3M basis).
+
+Exhibit 46: Net Promoter Score
+T3M   
+![](images/c7655921ef7c3c7466c8ff17e4cb93d79b73121e66e3ec05f433a1a75c44d603.jpg)
+
+<details>
+<summary>line</summary>
+
+| Month    | Google Gemini | Perplexity AI | ChatGPT |
+|----------|---------------|---------------|---------|
+| Jul-23   | 2             | -25           | 20      |
+| Aug-23   | 5             | -10           | 20      |
+| Sep-23   | 8             | -15           | 25      |
+| Oct-23   | 10            | -10           | 25      |
+| Nov-23   | 10            | -5            | 25      |
+| Dec-23   | 10            | -10           | 20      |
+| Jan-24   | 10            | -15           | 20      |
+| Feb-24   | 10            | -10           | 20      |
+| Mar-24   | 10            | -5            | 25      |
+| Apr-24   | 15            | 0             | 30      |
+| May-24   | 10            | 5             | 30      |
+| Jun-24   | 10            | 0             | 30      |
+| Jul-24   | 10            | -5            | 30      |
+| Aug-24   | 10            | 0             | 30      |
+| Sep-24   | 10            | 5             | 35      |
+| Oct-24   | 10            | 15            | 40      |
+| Nov-24   | 10            | 35            | 40      |
+| Dec-24   | 10            | 35            | 40      |
+| Jan-25   | 10            | 30            | 40      |
+| Feb-25   | 10            | 25            | 40      |
+| Mar-25   | 10            | 30            | 45      |
+| Apr-25   | 10            | 35            | 50      |
+| May-25   | 10            | 50            | 50      |
+| Jun-25   | 10            | 30            | 45      |
+| Jul-25   | 10            | 25            | 45      |
+| Aug-25   | 10            | 10            | 45      |
+| Sep-25   | 10            | 20            | 45      |
+| Oct-25   | 10            | 50            | 45      |
+| Nov-25   | 10            | 45            | 40      |
+| Dec-25   | 10            | 45            | 35      |
+| Jan-26   | 10            | 45            | 30      |
+| Feb-26   | 10            | 30            | 30      |
+| Mar-26   | 10            | 35            | 30      |
+| Apr-26   | 10            | 30            | 30      |
+</details>
+
+Source: HundredX, Data compiled by GS Global Investment Research
+
+Exhibit 47: Net Purchase Intent
+T3M   
+![](images/9a33e23cfd1a82f62128e1755ff11487ee32a2079aed538710a92c6c87cd106b.jpg)
+
+<details>
+<summary>line</summary>
+
+| Month    | Google Gemini | Perplexity AI | ChatGPT |
+|----------|---------------|---------------|---------|
+| Jul-23   | -10%          | 10%           | 12%     |
+| Aug-23   | -5%           | 8%            | 15%     |
+| Sep-23   | 0%            | 5%            | 18%     |
+| Oct-23   | 2%            | 3%            | 20%     |
+| Nov-23   | 3%            | -5%           | 20%     |
+| Dec-23   | 4%            | -7%           | 19%     |
+| Jan-24   | 5%            | -5%           | 18%     |
+| Feb-24   | 6%            | -3%           | 19%     |
+| Mar-24   | 7%            | 5%            | 19%     |
+| Apr-24   | 8%            | 15%           | 19%     |
+| May-24   | 9%            | 10%           | 20%     |
+| Jun-24   | 10%           | 15%           | 20%     |
+| Jul-24   | 11%           | 10%           | 20%     |
+| Aug-24   | 12%           | 15%           | 20%     |
+| Sep-24   | 13%           | 20%           | 20%     |
+| Oct-24   | 14%           | 25%           | 20%     |
+| Nov-24   | 15%           | 20%           | 20%     |
+| Dec-24   | 16%           | 15%           | 20%     |
+| Jan-25   | 17%           | 10%           | 20%     |
+| Feb-25   | 18%           | 5%            | 20%     |
+| Mar-25   | 19%           | 10%           | 20%     |
+| Apr-25   | 20%           | 15%           | 20%     |
+| May-25   | 21%           | 20%           | 20%     |
+| Jun-25   | 22%           | 25%           | 20%     |
+| Jul-25   | 23%           | 30%           | 20%     |
+| Aug-25   | 24%           | -5%           | 20%     |
+| Sep-25   | 25%           | -10%          | 20%     |
+| Oct-25   | 26%           | -5%           | 20%     |
+| Nov-25   | 27%           | 10%           | 20%     |
+| Dec-25   | 28%           | 15%           | 20%     |
+| Jan-26   | 29%           | 10%           | 20%     |
+| Feb-26   | 30%           | 5%            | 20%     |
+| Mar-26   | 31%           | 0%            | 20%     |
+| Apr-26   | 32%           | -5%           | 20%     |
+</details>
+
+Source: HundredX, Data compiled by GS Global Investment Research
+
+# Digital Advertising
+
+# SensorTower
+
+By Weekly Active Users - The apps that have seen the highest YoY growth in the number of weekly active users globally were Threads (+28%) and Pinterest (+10%). In the US, Threads grew +14% YoY and TikTok grew +5% YoY.   
+By Time Spent - On a YoY basis, Threads and Pinterest time spent globally increased YoY (+86%/+16%). In the US, similar growth for the two apps occurred during April (+56%/+29%).
+
+# HundredX
+
+NPS - NPS scores for the broader comp set declined in April 2026 (on a T3M basis), with Yelp's score declining from 20pts in February 2026 to 15pts in April 2026.   
+NPI - On a T3M basis, the comp set's NPI score remained at $-5\%$ in April 2026 (on a T3M basis). Both Instagram and YouTube's scores declined from February 2026, albeit staying above the comp set.   
+NPP Driver (Messaging) - The comp group's messaging score remained relatively stable between February 2026 to April 2026 with the scores for YouTube, Reddit, Yelp and Nextdoor staying below the broader comp set.   
+NPP Driver (Entertaining) - The NPP driver “Entertaining” remained stable for YouTube during April 2026 at 83% (on a T3M basis) staying above the broader comp set.
+
+Exhibit 48: Indexed Weekly Active Users - Global Indexed to week of 12/26/2022 = 100   
+![](images/da96190becaff8afba4e7ec6793f3481ae808b74cb9d915581f820f91072a24d.jpg)
+
+<details>
+<summary>line</summary>
+
+| Date    | Facebook | Instagram | Nextdoor | Pinterest | Reddit | Snapchat | TikTok | X (Twitter) | YouTube |
+|---------|----------|-----------|----------|-----------|--------|----------|--------|------------|---------|
+| Dec-22  | 100      | 100       | 110      | 100       | 100    | 100      | 100    | 100        | 100     |
+| Jan-23  | 100      | 100       | 100      | 100       | 100    | 100      | 100    | 100        | 100     |
+| Feb-23  | 100      | 100       | 100      | 100       | 100    | 100      | 100    | 100        | 100     |
+| Mar-23  | 100      | 100       | 100      | 100       | 100    | 100      | 100    | 100        | 100     |
+| Apr-23  | 100      | 100       | 100      | 100       | 100    | 100      | 100    | 100        | 100     |
+| May-23  | 100      | 100       | 100      | 100       | 100    | 100      | 100    | 100        | 100     |
+| Jun-23  | 100      | 100       | 100      | 100       | 100    | 100      | 100    | 100        | 100     |
+| Jul-23  | 100      | 100       | 100      | 100       | 100    | 100      | 100    | 100        | 100     |
+| Aug-23  | 100      | 100       | 100      | 100       | 100    | 100      | 100    | 100        | 100     |
+| Sep-23  | 100      | 100       | 100      | 100       | 100    | 100      | 100    | 100        | 100     |
+| Oct-23  | 100      | 100       | 100      | 100       | 100    | 100      | 100    | 100        | 100     |
+| Nov-23  | 100      | 100       | 100      | 100       | 125    | 115      | 125    | 95         | 95      |
+| Dec-23  | 100      | 100       | 95       | 125       | 135    | 125      | 135    | 95         | 95      |
+| Jan-24  | 105      | 115       | 95       | 135       | 145    | 135      | 145    | 95         | 95      |
+| Feb-24  | 115      | 125       | 95       | 145       | 155    | 145      | 155    | 95         | 95      |
+| Mar-24  | 125      | 135       | 95       | 155       | 165    | 155      | 165    | 95         | 95      |
+| Apr-24  | 135      | 145       | 95       | 165       | 175    | 165      | 175    | 95         | 95      |
+| May-24  | 145      | 155       | 95       | 175       | 185    | 175      | 185    | 95         | 95      |
+| Jun-24  | 155      | 165       | 95       | 185       | 195    | 185      | 195    | 95         | 95      |
+| Jul-24  | 165      | 175       | 95       | 195       | 205    | 195      | 205    | 95         | 95      |
+| Aug-24  | 175      | 185       | 95       | 205       | 215    | 205      | 215    | 95         | 95      |
+| Sep-24  | 185      | 195       | 95       | 215       | 225    | 215      | 225    | 95         | 95      |
+| Oct-24  | 195      | 205       | 95       | 225       | 235    | 225      | 235    | 95         | 95      |
+| Nov-24<fcel>$ \dagger $   $ \ddagger $<fcel>$ \dagger $     $ \ddagger $<fcel>$ \dagger $     $ \ddagger $<fcel>$ \dagger $     $ \ddagger $<fcel>$ \dagger $     $ \ddagger $<fcel>$ \dagger $    $ \ddagger $<fcel>$ \dagger $     $ \ddagger $<fcel>$ \dagger $     $ \ddagger $<fcel>$ \dagger $     $ \ddagger $<fcel>$ \dagger $     $ \ddagger $<fcel>$ \dagger $     $ \ddagger $<nl>
+<fcel>Dec-24<fcel>$ \dagger $     $ \ddagger $<fcel>$ \dagger $     $ \ddagger $<fcel>$ \dagger $     $ \ddagger $<fcel>$ \dagger $     $ \ddagger $<fcel>$ \dagger $     $ \ddagger $<fcel>$ \dagger $    $ \ddagger $<fcel>$ \dagger $     $ \ddagger $<fcel>$ \dagger $     $ \ddagger $<fcel>$ \dagger $     $ \dd\dagger $<fcel>$ \dagger $     $ \dd\dagger $<fcel>$ \dagger $     $ \dd\dagger $<nl>
+<fcel>Jan-25<fcel>$ \dagger $     $ \ddagger $<fcel>$ \dagger $     $ \ddagger $<fcel>$ \dagger $     $ \ddagger $<fcel>$ \dagger $     $ \ddagger $<fcel>$ \dagger $     $ \ddagger $<fcel>$ \dagger $    $ \ddagger $<fcel>$ \dagger $     $ \ddagger $<fcel>$ \dagger $     $ \dd\dagger $<fcel>$ \dagger $     $ \dd\dagger $<fcel>$ \dagger $     $ \dd\dagger $<fcel>$ \dagger $     $ \dd\dagger $<nl>
+<fcel>Feb-25<fcel>$ \dagger $     $ \ddagger $<fcel>$ \dagger $     $ \ddagger $<fcel>$ \dagger $     $ \ddagger $<fcel>$ \dagger $     $ \ddagger $<fcel>$ \dagger $     $ \ddagger $<fcel>$ \dagger $    $ \dd\dagger $<fcel>$ \dagger $     $ \dd\dagger $<fcel>$ \dagger $     $ \dd\dagger $<fcel>$ \dagger $     $ \dd\dagger $<fcel>$ \dagger $     $ \dd\dagger $<fcel>$ \dagger $     $ \dd\dagger $<nl>
+<fcel>Mar-25<fcel>$ \dagger $     $ \ddagger $<fcel>$ \dagger $     $ \ddagger $<fcel>$ \dagger $     $ \dd\ddot{u} $<fcel>$ \dagger $     $ \dd\ddot{u} $<fcel>$ \dagger $     \( \dd\ddot{u} }^{*}^{*}^{*}^{*}^{*}^{*}^{*}^{*}^{*}^{*}^{*}^{*}^{*}^{*}^{*}^{*}^{*}^{*}^{*}^{*}^{*}^{*}^{*}^{*}^{*}^{*}^{*}^{*}^{*}^{*}^{*}^{*}^{*}^{*} ^{*}^{*}^{*}^{*}^{*}^{*}^{*}^{*}^{*}^{*}^{*}^{*}^{*}^{*}^{*}^{*}^{*}^{*}^{*}^{*}^{*}^{*}^{*}^{*}^{*}^{*}^{*}^{*}^{*}^{*}^{*}^{*}^{*}^{*}\end{array}
+</details>
+
+Source: SensorTower, Data compiled by GS Global Investment Research
+
+Exhibit 49: Indexed Weekly Active Users - US
+Indexed to week of 12/26/2022 = 100   
+![](images/1f8cd85e9e9c5d859ebcd4d5278f778d856f251d7f4d50dce4e2efe0fd802a73.jpg)  
+Source: SensorTower, Data compiled by GS Global Investment Research
+
+Exhibit 50: Indexed Time Spent - Global   
+Indexed to Jan 2023 = 100   
+![](images/313bfea8b5c039a0181a7719bfef456e76e301b4b703f8526b6731aa50354737.jpg)  
+Source: SensorTower, Data compiled by GS Global Investment Research
+
+Exhibit 51: Indexed Time Spent - US   
+Indexed to Jan 2023 = 100   
+![](images/4cf2553f8902170ba7d50ea8065612e6c45517f318a20fe5a671a22c321c141a.jpg)  
+Source: SensorTower, Data compiled by GS Global Investment Research
+
+Exhibit 52: Net Promoter Score   
+T3M   
+![](images/89aab9557fd51a6767f285c03c309ef581340866a27aea0140d26e955b06d700.jpg)
+
+<details>
+<summary>line</summary>
+
+| Month    | Facebook | Instagram | Snapchat | Reddit | Nextdoor | Yelp |
+|----------|----------|-----------|----------|--------|----------|------|
+| Jan-23   | 5        | 25        | 15       | 10     | -25      | 10   |
+| Feb-23   | 5        | 28        | 18       | 12     | -28      | 12   |
+| Mar-23   | 5        | 30        | 15       | 10     | -25      | 10   |
+| Apr-23   | 5        | 32        | 18       | 12     | -28      | 12   |
+| May-23   | 5        | 30        | 15       | 10     | -25      | 10   |
+| Jun-23   | 5        | 28        | 18       | 12     | -28      | 12   |
+| Jul-23   | 5        | 30        | 15       | 10     | -25      | 10   |
+| Aug-23   | 5        | 32        | 18       | 12     | -28      | 12   |
+| Sep-23   | 5        | 30        | 15       | 10     | -25      | 10   |
+| Oct-23   | 5        | 28        | 18       | 12     | -28      | 12   |
+| Nov-23   | 5        | 25        | 15       | 10     | -25      | 10   |
+| Dec-23   | 5        | 28        | 18       | 12     | -28      | 12   |
+| Jan-24   | 5        | 30        | 15       | 10     | -25      | 10   |
+| Feb-24   | 5        | 28        | 18       | 12     | -28      | 12   |
+| Mar-24   | 5        | 30        | 15       | 10     | -25      | 10   |
+| Apr-24   | 5        | 32        | 18       | 12     | -28      | 12   |
+| May-24   | 5        | 30        | 15       | 10     | -25      | 10   |
+| Jun-24   | 5        | 28        | 18       | 12     | -28      | 12   |
+| Jul-24   | 5        | 30        | 15       | 10     | -25      | 10   |
+| Aug-24   | 5        | 32        | 18       | 12     | -28      | 12   |
+| Sep-24   | 5        | 30        | 15       | 10     | -25      | 10   |
+| Oct-24   | 5        | 28        | 18       | 12     | -28      | 12   |
+| Nov-24   | 5        | 30        | 15       | 10     | -25      | 10   |
+| Dec-24   | 5        | 32        | 18       | 12     | -28      | 12   |
+| Jan-25   | 5        | 30        | 15       | 10     | -25      | 10   |
+| Feb-25   | 5        | 28        | 18       | 12     | -28      | 12   |
+| Mar-25   | 5        | 30        | 15       | 10     | -25      | 10   |
+| Apr-25   | 5        | 32        | 18       | 12     | -28      | 12   |
+| May-25   | 5        | 30        | 15       | 10     | -25      | 10   |
+| Jun-25   | 5        | 28        | 18       | 12     | -28      | 12   |
+| Jul-25   | 5        | 30        | 15       | 10     | -25      | 10   |
+| Aug-25   | 5        | 32        | 18       | 12     | -28      | 12   |
+| Sep-25   | 5        | 30        | 15       | 10     | -25      | 10   |
+| Oct-25   | 5        | 28        | 18       | 12     | -28      | 12   |
+| Nov-25   | 5        | 30        | 15       | 10     | -25      | 10   |
+| Dec-25   | 5        | 32        | 18       | 12     | -28      | 12   |
+| Jan-26   | 5        | 30        | 15       | 10     | -25      | 10   |
+| Feb-26   | 5        | 28        | 18       | 12     | -28      | 12   |
+| Mar-26   | 5        | 30        | 15       | 10     | -25      | 10   |
+| Apr-26   | 5        | 32        | 18       | 12     | -28      | 12   |
+| May-26   | 5        | 30        | 15       | 10     | -25      | 10   |
+| Jun-26   | 5        | 28        | 18       | 12     | -28      | 12   |
+| Jul-26   | 5        | 30        | 15       | 10     | -25      | 10   |
+| Aug-26   | 5        | 32        | 18       | 12     | -28      | 12   |
+| Sep-26   | 5        | 30        | 15       | 10     | -25      | 10   |
+| Oct-26   | 5        | 28        | 18       | 12     | -28      | 12   |
+| Nov-26   | 5        | 30        | 15       | 10     | -25      | 10   |
+| Dec-26   | 5        | 32        | 18       | 12     | -28      | 12   |
+| Jan-27   | 5        | 30        | 15       | 10     | -25      |<fcel>
+</details>
+
+Source: HundredX, Data compiled by GS Global Investment Research
+
+Exhibit 53: Net Purchase Intent   
+T3M   
+![](images/93436fea8c1c3017f009550d96a997cf64f54654ffbdae717ce0570186a2e704.jpg)  
+Source: HundredX, Data compiled by GS Global Investment Research
+
+Exhibit 54: NPP Driver: Messaging   
+T3M   
+![](images/23efd4d558e07af9d3b32fda23fc09956be9302b0424972017d28d99a80ecdb0.jpg)
+
+<details>
+<summary>line</summary>
+
+| Month   | Facebook | Instagram | Snapchat | Reddit | Nextdoor | Yelp |
+|---------|----------|-----------|----------|--------|----------|------|
+| Jan-23  | 45%      | 45%       | 45%      | 5%     | 25%      | 5%   |
+| Mar-23  | 45%      | 45%       | 45%      | 5%     | 25%      | 5%   |
+| May-23  | 45%      | 45%       | 45%      | 5%     | 25%      | 5%   |
+| Jul-23  | 45%      | 45%       | 45%      | 15%    | 30%      | 5%   |
+| Sep-23  | 45%      | 45%       | 45%      | 15%    | 25%      | 5%   |
+| Nov-23  | 45%      | 45%       | 45%      | 5%     | 15%      | 5%   |
+| Jan-24  | 45%      | 45%       | 45%      | 5%     | 20%      | 5%   |
+| Mar-24  | 45%      | 45%       | 45%      | 5%     | 20%      | 5%   |
+| May-24  | 45%      | 45%       | 45%      | 5%     | 15%      | 5%   |
+| Jul-24  | 45%      | 45%       | 45%      | 5%     | 20%      | 5%   |
+| Sep-24  | 45%      | 45%       | 45%      | 5%     | 20%      | 5%   |
+| Nov-24  | 45%      | 45%       | 45%      | 5%     | 15%      | 5%   |
+| Jan-25  | 45%      | 45%       | 45%      | 5%     | 15%      | 5%   |
+| Mar-25  | 45%      | 45%       | 45%      | 10%    | 15%      | 5%   |
+| May-25  | 45%      | 45%       | 45%      | 10%    | 15%      | 5%   |
+| Jul-25  | 45%      | 45%       | 45%      | 10%    | 10%      | 5%   |
+| Sep-25  | 45%      | 45%       | 45%      | 10%    | 10%      | 0%   |
+| Nov-25  | 45%      | 45%       | 45%      | 10%    | 10%      | -5%  |
+| Jan-26  | 45%      | 45%       | 45%      | 10%    | 10%      | -10% |
+| Mar-26  | 45%      | 45%       | 45%      | 10%    | -10%     | -10% |
+</details>
+
+Source: HundredX, Data compiled by GS Global Investment Research
+
+Exhibit 55: NPP Driver: Entertaining   
+T3M   
+![](images/abd9b01ff3ed5e0af82b404589580f2defb9ef4bfe0c2d0d3052bc879c9ccab0.jpg)
+
+<details>
+<summary>line</summary>
+
+| Month   | Facebook | Instagram | Snapchat | Reddit | Nextdoor | Yelp  |
+|---------|----------|-----------|----------|--------|----------|-------|
+| Jan-23  | 50%      | 75%       | 55%      | 60%    | 15%      | 5%    |
+| Mar-23  | 50%      | 75%       | 55%      | 60%    | 15%      | 5%    |
+| May-23  | 50%      | 75%       | 55%      | 60%    | 15%      | 5%    |
+| Jul-23  | 50%      | 75%       | 55%      | 60%    | 15%      | 5%    |
+| Sep-23  | 50%      | 75%       | 55%      | 60%    | 15%      | 5%    |
+| Nov-23  | 50%      | 75%       | 55%      | 60%    | 15%      | 5%    |
+| Jan-24  | 50%      | 75%       | 55%      | 60%    | 15%      | 5%    |
+| Mar-24  | 50%      | 75%       | 55%      | 60%    | 15%      | 5%    |
+| May-24  | 50%      | 75%       | 55%      | 60%    | 15%      | 5%    |
+| Jul-24  | 50%      | 75%       | 55%      | 60%    | 15%      | 5%    |
+| Sep-24  | 50%      | 75%       | 55%      | 60%    | 15%      | 5%    |
+| Nov-24  | 50%      | 75%       | 55%      | 60%    | 15%      | 5%    |
+| Jan-25  | 50%      | 75%       | 55%      | 60%    | 15%      | 5%    |
+| Mar-25  | 50%      | 75%       | 55%      | 60%    | 15%      | 5%    |
+| May-25  | 50%      | 75%       | 55%      | 60%    | 15%      | 5%    |
+| Jul-25  | 50%      | 75%       | 55%      | 60%    | 15%      | 5%    |
+| Sep-25  | 50%      | 75%       | 55%      | 60%    | 15%      | 5%    |
+| Nov-25  | 50%      | 75%       | 55%      | 60%    | 15%      | 5%    |
+| Jan-26  | 50%      | 75%       | 50%      | 60%    | 10%      | 10%   |
+| Mar-26  | 50%      | 75%       | 40%      | 60%    | 10%      | 10%   |
+</details>
+
+Source: HundredX, Data compiled by GS Global Investment Research
+
+# eCommerce
+
+# SensorTower
+
+By Weekly Active Users - Wayfair (+67%/+82%), Etsy (+6%/+9%), and eBay (+3%/+7%) WAUs grew both globally and in the US on a YoY basis.   
+By Monthly Sessions – The number of sessions both globally and in the US for Wayfair (+59%/+72%), Etsy (+17%/+19%), and eBay (+4%/+2%) grew YoY during April.
+
+# HundredX
+
+NPS - During April 2026 (on a T3M basis), Etsy's NPS score was at 36pts (vs. 41pts in February 2026) and eBay's NPS score improved to 35pts.   
+NPI - While the NPI scores were relatively stable for the comp set, NPI scores for eBay improved during April 2026 (on a T3M basis).   
+NPP Driver (Selection) - The “Selection” NPP driver improved for Etsy to 85% on a T3M basis (staying above the comp set) during April 2026.   
+NPP Driver (Price) - “Price” NPP driver increased sequentially during the month for eBay while staying relatively stable for Amazon.
+
+Exhibit 56: Indexed Weekly Active Users - Global Indexed to week of 12/26/2022 = 100   
+![](images/c54758880472f4d85a480753d664f1e4c7fca2441c3581b6019712370ec41604.jpg)
+
+<details>
+<summary>line</summary>
+
+| Month    | Amazon | eBay | Wayfair | Etsy |
+|----------|--------|------|---------|------|
+| Dec-22   | 100    | 100  | 100     | 100  |
+| Jan-23   | 100    | 100  | 90      | 100  |
+| Feb-23   | 100    | 100  | 80      | 100  |
+| Mar-23   | 100    | 100  | 70      | 100  |
+| Apr-23   | 100    | 100  | 60      | 100  |
+| May-23   | 100    | 100  | 50      | 100  |
+| Jun-23   | 100    | 100  | 40      | 100  |
+| Jul-23   | 100    | 100  | 30      | 100  |
+| Aug-23   | 100    | 100  | 20      | 100  |
+| Sep-23   | 100    | 100  | 10      | 100  |
+| Oct-23   | 100    | 100  | 5       | 100  |
+| Nov-23   | 100    | 100  | 2       | 140  |
+| Dec-23   | 100    | 100  | 1       | 120  |
+| Jan-24   | 100    | 100  | 5       | 110  |
+| Feb-24   | 100    | 100  | 2       | 110  |
+| Mar-24   | 100    | 100  | 1       | 110  |
+| Apr-24   | 100    | 100  | 5       | 110  |
+| May-24   | 100    | 100  | 2       | 110  |
+| Jun-24   | 100    | 100  | 1       | 110  |
+| Jul-24   | 100    | 100  | 5       | 110  |
+| Aug-24   | 100    | 100  | 2       | 110  |
+| Sep-24   | 100    | 100  | 1       | 155  |
+| Oct-24   | 100    | 100  | 5       | 145  |
+| Nov-24   | 100    | 100  | 2       | 135  |
+| Dec-24   | 100    | 100  | 1       | 125  |
+| Jan-25   | 100    | 100  | 5       | 125  |
+| Feb-25   | 100    | 100  | 2       | 125  |
+| Mar-25   | 100    | 100  | 1       | 125  |
+| Apr-25   | 100    | 100  | 5       | 125  |
+| May-25   | 100    | 100  | 2       | 125  |
+| Jun-25   | 100    | 100  | 1       | 125  |
+| Jul-25   | 100    | 100  | 5       | 125  |
+| Aug-25   | 100    | 100  | 2       | 135  |
+| Sep-25   | 100    | 100  | 1       | 175  |
+| Oct-25   | 100    | 100  | 5       | -    |
+| Nov-25   | -      | -    | -       | -    |
+| Dec-25   | -      | -    | -       | -    |
+| Jan-26   | -      | -    | -       | -    |
+| Feb-26   | -      | -    | -       | -    |
+| Mar-26   | -      | -    | -       | -    |
+| Apr-26   | -      | -    | -       | -    |
+</details>
+
+Source: SensorTower, Data compiled by GS Global Investment Research
+
+Exhibit 57: Indexed Weekly Active Users - US
+Indexed to Week of 12/26/2022 = 100   
+![](images/f5828db6971d338b603f232b196568a668d2cef56e371555406e69a02a623c2b.jpg)  
+Source: SensorTower, Data compiled by GS Global Investment Research
+
+Exhibit 58: Indexed Sessions - Global   
+Indexed to Jan 2023 = 100   
+![](images/99e2407cbaf69263cc1c6d0c4f5937bd64dae72c9b8009339adcd4b793926195.jpg)
+
+<details>
+<summary>line</summary>
+
+| Month    | Amazon | eBay  | Wayfair | Etsy  |
+|----------|--------|-------|---------|-------|
+| Jan-23   | 90     | 100   | 70      | 100   |
+| Feb-23   | 85     | 105   | 65      | 95    |
+| Mar-23   | 95     | 100   | 70      | 100   |
+| Apr-23   | 90     | 105   | 65      | 95    |
+| May-23   | 100    | 100   | 70      | 100   |
+| Jun-23   | 105    | 105   | 75      | 105   |
+| Jul-23   | 110    | 105   | 80      | 110   |
+| Aug-23   | 115    | 105   | 85      | 115   |
+| Sep-23   | 120    | 105   | 90      | 120   |
+| Oct-23   | 125    | 105   | 95      | 125   |
+| Nov-23   | 130    | 105   | 100     | 130   |
+| Dec-23   | 140    | 105   | 105     | 140   |
+| Jan-24   | 130    | 105   | 95      | 130   |
+| Feb-24   | 120    | 105   | 90      | 120   |
+| Mar-24   | 115    | 105   | 85      | 115   |
+| Apr-24   | 110    | 105   | 80      | 110   |
+| May-24   | 105    | 105   | 75      | 105   |
+| Jun-24   | 100    | 105   | 70      | 100   |
+| Jul-24   | 95     | 105   | 65      | 95    |
+| Aug-24   | 90     | 105   | 60      | 90    |
+| Sep-24   | 85     | 105   | 55      | 85    |
+| Oct-24   | 80     | 105   | 50      | 80    |
+| Nov-24   | 75     | 105   | 45      | 75    |
+| Dec-24   | 70     | 105   | 40      | 70    |
+| Jan-25   | 65     | 105   | 35      | 65    |
+| Feb-25   | 60     | 105   | 30      | 60    |
+| Mar-25   | 55     | 105   | 25      | 55    |
+| Apr-25   | 50     | 105   | 20      | 50    |
+| May-25   | 45     | 105   | 15      | 45    |
+| Jun-25   | 40     | 105   | 10      | 40    |
+| Jul-25   | 35     | 105   | 5       | 35    |
+| Aug-25   | 30     | 105   | 0       | 30    |
+| Sep-25   | 25     | 105   | -5      | 25    |
+| Oct-25   | 20     | 105   | -10     | 20    |
+| Nov-25   | 15     | 105   | -15     | -5    |
+| Dec-25   | -5     | -10   | -20     | -15   |
+| Jan-26   | -10    | -15   | -25     | -20   |
+| Feb-26   | -15    | -20   | -30     | -25   |
+| Mar-26   | -20    | -25   | -35     | -30   |
+| Apr-26   | -25    | -30   | -40     | -35   |
+</details>
+
+Source: SensorTower, Data compiled by GS Global Investment Research
+
+Exhibit 59: Indexed Sessions - US   
+Indexed to Jan 2023 = 100   
+![](images/24961ddc382025b80a987509e0a1927e079bedd01fc316e0e590885a19890797.jpg)
+
+<details>
+<summary>line</summary>
+
+| Month   | Amazon | eBay  | Wayfair | Etsy  |
+|---------|--------|-------|---------|-------|
+| Jan-23  | 90     | 100   | 80      | 100   |
+| Feb-23  | 85     | 105   | 75      | 95    |
+| Mar-23  | 90     | 110   | 80      | 100   |
+| Apr-23  | 95     | 115   | 85      | 105   |
+| May-23  | 100    | 120   | 90      | 110   |
+| Jun-23  | 105    | 125   | 95      | 115   |
+| Jul-23  | 110    | 130   | 100     | 120   |
+| Aug-23  | 115    | 135   | 105     | 125   |
+| Sep-23  | 120    | 140   | 110     | 130   |
+| Oct-23  | 125    | 145   | 115     | 135   |
+| Nov-23  | 130    | 150   | 120     | 140   |
+| Dec-23  | 135    | 155   | 125     | 145   |
+| Jan-24  | 140    | 160   | 130     | 150   |
+| Feb-24  | 135    | 155   | 125     | 145   |
+| Mar-24  | 130    | 150   | 120     | 140   |
+| Apr-24  | 125    | 145   | 115     | 135   |
+| May-24  | 120    | 140   | 110     | 130   |
+| Jun-24  | 115    | 135   | 105     | 125   |
+| Jul-24  | 110    | 130   | 100     | 120   |
+| Aug-24  | 105    | 125   | 95      | 115   |
+| Sep-24  | 100    | 120   | 90      | 110   |
+| Oct-24  | 95     | 115   | 85      | 105   |
+| Nov-24  | 90     | 110   | 80      | 100   |
+| Dec-24  | 85     | 105   | 75      | 95    |
+| Jan-25  | 80     | 100   | 70      | 90    |
+| Feb-25  | 85     | 105   | 75      | 95    |
+| Mar-25  | 90     | 110   | 80      | 100   |
+| Apr-25  | 95     | 115   | 85      | 105   |
+| May-25  | 100    | 120   | 90      | 110   |
+| Jun-25  | 105    | 125   | 95      | 115   |
+| Jul-25  | 110    | 130   | 100     | 120   |
+| Aug-25  | 115    | 135   | 105     | 125   |
+| Sep-25  | 120    | 140   | 110     | 130   |
+| Oct-25  | 125    | 145   | 115     | 135   |
+| Nov-25  | 130    | 150   | 120     | 140   |
+| Dec-25  | 135    | 155   | 125     | 145   |
+| Jan-26* | 140    | 160   | 130     | 150   |
+| Feb-26* | 135    | 155   | 125     | 145   |
+| Mar-26* | 130    | 150   | 120     | 140   |
+| Apr-26* | 125    | 145   | 115     | 135   |
+</details>
+
+Source: SensorTower, Data compiled by GS Global Investment Research
+
+Exhibit 60: Net Promoter Score   
+T3M   
+![](images/c8f13320c96a55545c1ccb1fa511f6faa307432a106adbcb3e6535a488902cd8.jpg)
+
+<details>
+<summary>line</summary>
+
+| Month   | Amazon | Etsy | eBay | Chewy |
+|---------|--------|------|------|-------|
+| Jan-23  | 65     | 53   | 20   | 65    |
+| Feb-23  | 64     | 52   | 20   | 64    |
+| Mar-23  | 63     | 51   | 20   | 63    |
+| Apr-23  | 62     | 50   | 20   | 62    |
+| May-23  | 61     | 49   | 20   | 61    |
+| Jun-23  | 60     | 48   | 20   | 60    |
+| Jul-23  | 59     | 47   | 20   | 59    |
+| Aug-23  | 58     | 46   | 20   | 58    |
+| Sep-23  | 57     | 45   | 20   | 57    |
+| Oct-23  | 56     | 44   | 20   | 56    |
+| Nov-23  | 55     | 43   | 20   | 55    |
+| Dec-23  | 54     | 42   | 20   | 54    |
+| Jan-24  | 53     | 41   | 20   | 53    |
+| Feb-24  | 52     | 40   | 20   | 52    |
+| Mar-24  | 51     | 39   | 20   | 51    |
+| Apr-24  | 50     | 38   | 20   | 50    |
+| May-24  | 49     | 37   | 20   | 49    |
+| Jun-24  | 48     | 36   | 20   | 48    |
+| Jul-24  | 47     | 35   | 20   | 47    |
+| Aug-24  | 46     | 34   | 20   | 46    |
+| Sep-24  | 45     | 33   | 20   | 45    |
+| Oct-24  | 44     | 32   | 20   | 44    |
+| Nov-24  | 43     | 31   | 20   | 43    |
+| Dec-24  | 42     | 30   | 20   | 42    |
+| Jan-25  | 41     | 29   | 20   | 41    |
+| Feb-25  | 40     | 28   | 20   | 40    |
+| Mar-25  | 39     | 27   | 20   | 39    |
+| Apr-25  | 38     | 26   | 20   | 38    |
+| May-25  | 37     | 25   | 20   | 37    |
+| Jun-25  | 36     | 24   | 20   | 36    |
+| Jul-25  | 35     | 23   | 20   | 35    |
+| Aug-25  | 34     | 22   | 20   | 34    |
+| Sep-25  | 33     | 21   | 20   | 33    |
+| Oct-25  | 32     | 20   | 20   | 32    |
+| Nov-25  | 31     | 19   | 20   | 31    |
+| Dec-25  | 30     | 18   | 20   | 30    |
+| Jan-26  | 29     | 17   | 20   | 29    |
+| Feb-26  | 28     | 16   | 20   | 28    |
+| Mar-26  | 27     | 15   | 20   | 27    |
+| Apr-26  | 26     | 14   | 20   | 26    |
+</details>
+
+Source: HundredX, Data compiled by GS Global Investment Research
+
+Exhibit 61: Net Purchase Intent   
+T3M   
+![](images/de623f51e10c3d4e98f74cc0b0f3a329592fab85bf576d3b363d8200b9b3cf69.jpg)
+
+<details>
+<summary>line</summary>
+
+| Month    | Amazon | Etsy  | eBay  | Chewy |
+|----------|--------|-------|-------|-------|
+| Jan-23   | 9.5%   | 2.5%  | -6.0% | 3.5%  |
+| Feb-23   | 9.0%   | -1.0% | -6.5% | 4.0%  |
+| Mar-23   | 8.5%   | -1.5% | -6.0% | 3.0%  |
+| Apr-23   | 9.0%   | -1.0% | -6.5% | 3.5%  |
+| May-23   | 8.5%   | -0.5% | -6.0% | 3.0%  |
+| Jun-23   | 8.0%   | -1.0% | -6.5% | 3.5%  |
+| Jul-23   | 8.5%   | -1.5% | -6.0% | 3.0%  |
+| Aug-23   | 9.0%   | -1.0% | -5.5% | 3.5%  |
+| Sep-23   | 9.5%   | -0.5% | -5.0% | 4.0%  |
+| Oct-23   | 9.0%   | 0.0%  | -4.5% | 3.5%  |
+| Nov-23   | 8.5%   | 0.5%  | -4.0% | 3.0%  |
+| Dec-23   | 8.0%   | 1.0%  | -3.5% | 2.5%  |
+| Jan-24   | 7.5%   | 1.5%  | -3.0% | 2.0%  |
+| Feb-24   | 7.0%   | 2.0%  | -2.5% | 1.5%  |
+| Mar-24   | 6.5%   | 2.5%  | -2.0% | 1.0%  |
+| Apr-24   | 6.0%   | 3.0%  | -1.5% | 0.5%  |
+| May-24   | 5.5%   | 3.5%  | -1.0% | 0.0%  |
+| Jun-24   | 5.0%   | 4.0%  | -0.5% | -0.5% |
+| Jul-24   | 4.5%   | 4.5%  | 0.0%  | -1.0% |
+| Aug-24   | 4.0%   | 5.0%  | 0.5%  | -1.5% |
+| Sep-24   | 3.5%   | 5.5%  | 1.0%  | -2.0% |
+| Oct-24   | 3.0%   | 6.0%  | 1.5%  | -2.5% |
+| Nov-24   | 2.5%   | 6.5%  | 2.0%  | -3.0% |
+| Dec-24   | 2.0%   | 7.0%  | 2.5%  | -3.5% |
+| Jan-25   | 1.5%   | 7.5%  | 3.0%  | -4.0% |
+| Feb-25   | 1.0%   | 8.0%  | 3.5%  | -4.5% |
+| Mar-25   | 0.5%   | 8.5%  | 4.0%  | -5.0% |
+| Apr-25   | -0.5%  | 9.0%  | 4.5%  | -5.5% |
+| May-25   | -1.0%  | 9.5%  | 5.0%  | -6.0% |
+| Jun-25   | -1.5%  | 10.0% | 5.5%  | -6.5% |
+| Jul-25   | -2.0%  | 10.5% | 6.0%  | -7.0% |
+| Aug-25   | -2.5%  | 11.0% | 6.5%  | -7.5% |
+| Sep-25   | -3.0%  | 11.5% | 7.0%  | -8.0% |
+| Oct-25   | -3.5%  | 12.0% | 7.5%  | -8.5% |
+| Nov-25   | -4.0%  | 12.5% | 8.0%  | -9.0% |
+| Dec-25   | -4.5%  | 13.0% | 8.5%  | -9.5% |
+| Jan-26   | -5.0%  | 13.5% | 9.0%  | -10.0%|
+| Feb-26   | -5.5%  | 14.0% | 9.5%  | -10.5%|
+| Mar-26   | -6.0%  | 14.5% | 10.0% | -11.0%|
+| Apr-26   | -6.5%  | 15.0% | 10.5% | -11.5%|
+</details>
+
+Source: HundredX, Data compiled by GS Global Investment Research
+
+Exhibit 62: NPP Driver: Selection   
+T3M   
+![](images/510ad2cf58b2d0e38a1e1e6cdb4c987ce09f4aee072effdc4ed5f8d98ac18d53.jpg)
+
+<details>
+<summary>line</summary>
+
+| Month   | Amazon | Etsy  | eBay  | Chewy |
+|---------|--------|-------|-------|-------|
+| Jan-23  | 78%    | 83%   | 64%   | 68%   |
+| Mar-23  | 79%    | 82%   | 62%   | 70%   |
+| May-23  | 78%    | 81%   | 60%   | 71%   |
+| Jul-23  | 79%    | 82%   | 65%   | 73%   |
+| Sep-23  | 78%    | 81%   | 66%   | 74%   |
+| Nov-23  | 77%    | 80%   | 67%   | 72%   |
+| Jan-24  | 78%    | 81%   | 69%   | 74%   |
+| Mar-24  | 79%    | 82%   | 70%   | 75%   |
+| May-24  | 80%    | 83%   | 69%   | 73%   |
+| Jul-24  | 81%    | 82%   | 68%   | 74%   |
+| Sep-24  | 80%    | 81%   | 67%   | 75%   |
+| Nov-24  | 81%    | 82%   | 69%   | 74%   |
+| Jan-25  | 80%    | 81%   | 68%   | 73%   |
+| Mar-25  | 79%    | 80%   | 65%   | 72%   |
+| May-25  | 75%    | 84%   | 64%   | 70%   |
+| Jul-25  | 78%    | 81%   | 69%   | 68%   |
+| Sep-25  | 79%    | 82%   | 68%   | 70%   |
+| Nov-25  | 78%    | 81%   | 69%   | 72%   |
+| Jan-26  | 79%    | 80%   | 68%   | 74%   |
+| Mar-26  | 80%    | 85%   | 71%   | 81%   |
+</details>
+
+Source: HundredX, Data compiled by GS Global Investment Research
+
+Exhibit 63: NPP Driver: Price   
+T3M   
+![](images/361316f53f4df7ff0c1a5eafa15029d89a322d4fef21c97415b6cb27ea864735.jpg)
+
+<details>
+<summary>line</summary>
+
+| Month   | Amazon | Etsy  | eBay  | Chewy |
+|---------|--------|-------|-------|-------|
+| Jan-23  | 58%    | 25%   | 45%   | 38%   |
+| Mar-23  | 59%    | 24%   | 44%   | 40%   |
+| May-23  | 58%    | 23%   | 43%   | 41%   |
+| Jul-23  | 59%    | 22%   | 51%   | 42%   |
+| Sep-23  | 58%    | 23%   | 48%   | 39%   |
+| Nov-23  | 57%    | 24%   | 45%   | 36%   |
+| Jan-24  | 56%    | 25%   | 40%   | 34%   |
+| Mar-24  | 58%    | 26%   | 42%   | 38%   |
+| May-24  | 59%    | 27%   | 45%   | 40%   |
+| Jul-24  | 59%    | 28%   | 46%   | 41%   |
+| Sep-24  | 59%    | 29%   | 47%   | 42%   |
+| Nov-24  | 58%    | 30%   | 48%   | 39%   |
+| Jan-25  | 57%    | 31%   | 49%   | 40%   |
+| Mar-25  | 56%    | 32%   | 48%   | 41%   |
+| May-25  | 55%    | 33%   | 50%   | 42%   |
+| Jul-25  | 54%    | 34%   | 48%   | 41%   |
+| Sep-25  | 53%    | 35%   | 46%   | 40%   |
+| Nov-25  | 52%    | 36%   | 44%   | 39%   |
+| Jan-26  | 51%    | 37%   | 42%   | 38%   |
+| Mar-26  | 50%    | 38%   | 50%   | 41%   |
+</details>
+
+Source: HundredX, Data compiled by GS Global Investment Research
+
+# Streaming Media
+
+# SensorTower
+
+By Weekly Active Users - Both globally and in the US, Spotify (-7%/-12%) and Netflix (-4%/-8%) WAUs declined YoY the US during the period.   
+By Time Spent - Time spent for Netflix improved slightly (+1% YoY) in the US though declined -10% YoY globally, while Spotify time spent increased both globally and in the US (+2%/+1% YoY).
+
+# HundredX
+
+Video Streaming NPS - During April 2026, Netflix NPS decreased to 26 from 31 in March 2026 (on a T3M basis), while the rest of the comp set saw stable to improving trends during the period.   
+- Audio Streaming NPS - Spotify's NPS score during April was relatively stable sequentially (40 on a T3M basis) continuing to outperform the broader comp set.   
+Video Streaming NPI - Paired with NPS scores, Netflix NPI score also declined during April 2026, while the rest of the comp set saw stable to improving trends during the period.   
+- Audio Streaming NPI - Similar to NPS scores, Spotify's NPI score was stable during April and continued to outperform the broader comp set (on a T3M basis).   
+Video Streaming NPP Driver (Price) - NPP Driver "Price" decreased sequentially for Netflix along with the broader comp set during April 2026.   
+Video Streaming NPP Driver (New Releases) - “New Releases” at Netflix was relatively stable sequentially on a T3M basis during April 2026, and declined for Max and Youtube TV.   
+■ Audio Streaming NPP Driver (Music Selection) - Music Selection at Spotify (as an NPP driver) was stable during April 2026 while it was stable to declining for the broader comp set including Apple Music, YouTube Music and Amazon Music.   
+■ Audio Streaming NPP Driver (Price) - Price as an NPP driver for Spotify declined sequentially to -8% during April 2026.
+
+Exhibit 64: Indexed Weekly Active Users - Global   
+Indexed to week of 12/26/2022 = 100   
+![](images/bff8e32fac6d4ad57d966acee79a067a68fd233d12259e37b02508db8a303237.jpg)
+
+<details>
+<summary>line</summary>
+
+| Month    | Netflix | Spotify | Webtoon |
+|----------|---------|---------|---------|
+| Dec-22   | 100     | 100     | 100     |
+| Jan-23   | 95      | 105     | 98      |
+| Feb-23   | 92      | 110     | 95      |
+| Mar-23   | 90      | 115     | 93      |
+| Apr-23   | 88      | 120     | 90      |
+| May-23   | 86      | 125     | 88      |
+| Jun-23   | 85      | 128     | 86      |
+| Jul-23   | 84      | 130     | 85      |
+| Aug-23   | 83      | 132     | 84      |
+| Sep-23   | 82      | 135     | 83      |
+| Oct-23   | 81      | 138     | 82      |
+| Nov-23   | 80      | 140     | 81      |
+| Dec-23   | 79      | 142     | 80      |
+| Jan-24   | 78      | 145     | 79      |
+| Feb-24   | 77      | 148     | 78      |
+| Mar-24   | 76      | 150     | 77      |
+| Apr-24   | 75      | 152     | 76      |
+| May-24   | 74      | 155     | 75      |
+| Jun-24   | 73      | 158     | 74      |
+| Jul-24   | 72      | 160     | 73      |
+| Aug-24   | 71      | 162     | 72      |
+| Sep-24   | 70      | 165     | 71      |
+| Oct-24   | 69      | 168     | 70      |
+| Nov-24   | 68      | 170     | 69      |
+| Dec-24   | 67      | 172     | 68      |
+| Jan-25   | 66      | 175     | 67      |
+| Feb-25   | 65      | 178     | 66      |
+| Mar-25   | 64      | 180     | 65      |
+| Apr-25   | 63      | 182     | 64      |
+| May-25   | 62      | 185     | 63      |
+| Jun-25   | 61      | 188     | 62      |
+| Jul-25   | 60      | 190     | 61      |
+| Aug-25   | 59      | 192     | 60      |
+| Sep-25   | 58      | 195     | 59      |
+| Oct-25   | 57      | 198     | 58      |
+| Nov-25   | 56      | 200     | 57      |
+| Dec-25   | 55      | 202     | 56      |
+| Jan-26   | 54      | 205     | 55      |
+| Feb-26   | 53      | 208     | 54      |
+| Mar-26   | 52      | 210     | 53      |
+| Apr-26   | 51      | 212     | 52      |
+</details>
+
+Source: SensorTower, Data compiled by GS Global Investment Research
+
+Exhibit 66: Indexed Time Spent - Global   
+Indexed to Jan 2023 = 100   
+![](images/55cbcb9408dcc7f1f05b862f9a44948f719dfc98ad32751f994685e9fb9209d4.jpg)
+
+<details>
+<summary>line</summary>
+
+| Month    | Netflix | Spotify | Webtoon |
+|----------|---------|---------|---------|
+| Jan-23   | 100     | 100     | 100     |
+| Feb-23   | 80      | 95      | 90      |
+| Mar-23   | 85      | 105     | 85      |
+| Apr-23   | 88      | 110     | 88      |
+| May-23   | 90      | 115     | 90      |
+| Jun-23   | 95      | 118     | 95      |
+| Jul-23   | 98      | 120     | 98      |
+| Aug-23   | 95      | 122     | 95      |
+| Sep-23   | 90      | 120     | 90      |
+| Oct-23   | 85      | 118     | 85      |
+| Nov-23   | 88      | 120     | 88      |
+| Dec-23   | 90      | 122     | 90      |
+| Jan-24   | 85      | 120     | 85      |
+| Feb-24   | 88      | 122     | 88      |
+| Mar-24   | 90      | 125     | 90      |
+| Apr-24   | 92      | 123     | 92      |
+| May-24   | 90      | 125     | 90      |
+| Jun-24   | 88      | 123     | 88      |
+| Jul-24   | 85      | 125     | 85      |
+| Aug-24   | 88      | 123     | 88      |
+| Sep-24   | 90      | 125     | 90      |
+| Oct-24   | 92      | 123     | 92      |
+| Nov-24   | 95      | 125     | 95      |
+| Dec-24   | 98      | 123     | 98      |
+| Jan-25   | 95      | 125     | 95      |
+| Feb-25   | 90      | 120     | 90      |
+| Mar-25   | 85      | 118     | 85      |
+| Apr-25   | 88      | 115     | 88      |
+| May-25   | 90      | 118     | 90      |
+| Jun-25   | 92      | 120     | 92      |
+| Jul-25   | 95      | 122     | 95      |
+| Aug-25   | 98      | 120     | 98      |
+| Sep-25   | 100     | 118     | 100     |
+| Oct-25   | 95      | 115     | 95      |
+| Nov-25   | 90      | 118     | 90      |
+| Dec-25   | 85      | 120     | 85      |
+| Jan-26   | 80      | 115     | 80      |
+| Feb-26   | 75      | 110     | 75      |
+| Mar-26   | 70      | 105     | 70      |
+| Apr-26   | 65      | 100     | 65      |
+</details>
+
+Source: SensorTower, Data compiled by GS Global Investment Research
+
+Exhibit 68: Video Streaming - Net Promoter Score T3M   
+![](images/19a1e27b0d784b6e2f8e6b1767c6cdabd2926038e63f066b16c2be4d94709794.jpg)  
+Source: HundredX, Data compiled by GS Global Investment Research
+
+Exhibit 65: Indexed Weekly Active Users - US   
+Indexed to week of 12/26/2022 = 100   
+![](images/587dd4f1a8d95f7f01925225831e326ba06c622456346db25cce5eb41601a236.jpg)
+
+<details>
+<summary>line</summary>
+
+| Month    | Netflix | Spotify | Webtoon |
+|----------|---------|---------|---------|
+| Dec-22   | 95      | 105     | 100     |
+| Jan-23   | 93      | 106     | 98      |
+| Feb-23   | 94      | 107     | 97      |
+| Mar-23   | 95      | 108     | 96      |
+| Apr-23   | 96      | 109     | 95      |
+| May-23   | 97      | 110     | 94      |
+| Jun-23   | 98      | 111     | 93      |
+| Jul-23   | 99      | 112     | 92      |
+| Aug-23   | 100     | 113     | 91      |
+| Sep-23   | 101     | 114     | 90      |
+| Oct-23   | 102     | 115     | 89      |
+| Nov-23   | 103     | 116     | 88      |
+| Dec-23   | 104     | 117     | 87      |
+| Jan-24   | 105     | 118     | 86      |
+| Feb-24   | 106     | 119     | 85      |
+| Mar-24   | 107     | 120     | 84      |
+| Apr-24   | 108     | 121     | 83      |
+| May-24   | 109     | 122     | 82      |
+| Jun-24   | 110     | 123     | 81      |
+| Jul-24   | 111     | 124     | 80      |
+| Aug-24   | 112     | 125     | 79      |
+| Sep-24   | 113     | 126     | 78      |
+| Oct-24   | 114     | 127     | 77      |
+| Nov-24   | 115     | 128     | 76      |
+| Dec-24   | 116     | 129     | 75      |
+| Jan-25   | 117     | 130     | 74      |
+| Feb-25   | 118     | 131     | 73      |
+| Mar-25   | 119     | 132     | 72      |
+| Apr-25   | 120     | 133     | 71      |
+| May-25   | 121     | 134     | 70      |
+| Jun-25   | 122     | 135     | 69      |
+| Jul-25   | 123     | 136     | 68      |
+| Aug-25   | 124     | 137     | 67      |
+| Sep-25   | 125     | 138     | 66      |
+| Oct-25   | 126     | 139     | 65      |
+| Nov-25   | 127     | 140     | 64      |
+| Dec-25   | 128     | 141     | 63      |
+| Jan-26   | 129     | 142     | 62      |
+| Feb-26   | 130     | 143     | 61      |
+| Mar-26   | 131     | 144     | 60      |
+| Apr-26   | 132     | 145     | 59      |
+</details>
+
+Source: SensorTower, Data compiled by GS Global Investment Research
+
+Exhibit 67: Indexed Time Spent - US   
+Indexed to Jan 2023 = 100   
+![](images/2093bd9999b0ca6c0c91347bd24b6ce5210261645818dee3a2c518d72434f0a1.jpg)
+
+<details>
+<summary>line</summary>
+
+| Month    | Netflix | Spotify | Webtoon |
+|----------|---------|---------|---------|
+| Jan-23   | 98      | 100     | 100     |
+| Feb-23   | 90      | 110     | 95      |
+| Mar-23   | 85      | 115     | 90      |
+| Apr-23   | 88      | 118     | 92      |
+| May-23   | 90      | 120     | 95      |
+| Jun-23   | 92      | 122     | 100     |
+| Jul-23   | 95      | 125     | 105     |
+| Aug-23   | 98      | 128     | 108     |
+| Sep-23   | 96      | 126     | 105     |
+| Oct-23   | 94      | 124     | 102     |
+| Nov-23   | 92      | 122     | 100     |
+| Dec-23   | 90      | 120     | 98      |
+| Jan-24   | 85      | 118     | 95      |
+| Feb-24   | 88      | 115     | 90      |
+| Mar-24   | 90      | 118     | 92      |
+| Apr-24   | 92      | 120     | 95      |
+| May-24   | 95      | 125     | 98      |
+| Jun-24   | 98      | 128     | 100     |
+| Jul-24   | 96      | 126     | 98      |
+| Aug-24   | 94      | 124     | 95      |
+| Sep-24   | 92      | 122     | 92      |
+| Oct-24   | 90      | 120     | 90      |
+| Nov-24   | 88      | 118     | 88      |
+| Dec-24   | 86      | 115     | 85      |
+| Jan-25   | 84      | 110     | 80      |
+| Feb-25   | 82      | 105     | 75      |
+| Mar-25   | 80      | 100     | 70      |
+| Apr-25   | 78      | 95      | 65      |
+| May-25   | 76      | 90      | 60      |
+| Jun-25   | 74      | 85      | 55      |
+| Jul-25   | 72      | 80      | 50      |
+| Aug-25   | 70      | 75      | 45      |
+| Sep-25   | 68      | 70      | 40      |
+| Oct-25   | 66      | 65      | 35      |
+| Nov-25   | 64      | 60      | 30      |
+| Dec-25   | 62      | 55      | 25      |
+| Jan-26   | 60      | 50      | 20      |
+| Feb-26   | 58      | 45      | 15      |
+| Mar-26   | 56      | 40      | 10      |
+| Apr-26   | 54      | 35      | 5       |
+</details>
+
+Source: SensorTower, Data compiled by GS Global Investment Research
+
+Exhibit 69: Video Streaming - Net Purchase Intent T3M   
+![](images/39afe1c69d5f1c0f2d8779dbaca0e640bd86ad1fb3222f62a6ca119b92cbb9b5.jpg)  
+Source: HundredX, Data compiled by GS Global Investment Research
+
+Exhibit 70: Video Streaming NPP Driver: Price T3M   
+![](images/8786cde96f0d37470e92ecbf016defb92ecf9933eb0b0f5790ab118edafe2231.jpg)
+
+<details>
+<summary>line</summary>
+
+| Month   | Netflix | Amazon Prime Video | Disney+ | Hulu | Max  | Peacock | YouTube TV | Paramount+ |
+|---------|---------|--------------------|---------|------|------|---------|------------|------------|
+| Jan-23  | 10%     | 20%                | 10%     | 15%  | -5%  | 35%     | 10%        | 15%        |
+| Mar-23  | 10%     | 20%                | 10%     | 15%  | -5%  | 35%     | 10%        | 15%        |
+| May-23  | 10%     | 20%                | 10%     | 15%  | -5%  | 35%     | 10%        | 15%        |
+| Jul-23  | 10%     | 20%                | 10%     | 15%  | -5%  | 35%     | 10%        | 15%        |
+| Sep-23  | 10%     | 20%                | 10%     | 15%  | -5%  | 35%     | 10%        | 15%        |
+| Nov-23  | 10%     | 20%                | 10%     | 15%  | -5%  | 35%     | 10%        | 15%        |
+| Jan-24  | 10%     | 20%                | 10%     | 15%  | -5%  | 35%     | 10%        | 15%        |
+| Mar-24  | 10%     | 20%                | 10%     | 15%  | -5%  | 35%     | 10%        | 15%        |
+| May-24  | 10%     | 20%                | 10%     | 15%  | -5%  | 35%     | 10%        | 15%        |
+| Jul-24  | 10%     | 20%                | 10%     | 15%  | -5%  | 35%     | 10%        | 15%        |
+| Sep-24  | 10%     | 20%                | 10%     | 15%  | -5%  | 35%     | 10%        | 15%        |
+| Nov-24  | 10%     | 20%                | 10%     | 15%  | -5%  | 35%     | 10%        | 15%        |
+| Jan-25  | 10%     | 20%                | 10%     | 15%  | -5%  | 35%     | 10%        | 15%        |
+| Mar-25  | 10%     | 20%                | 10%     | 15%  | -5%  | 35%     | 10%        | 15%        |
+| May-25  | 10%     | 20%                | 10%     | 15%  | -5%  | 35%     | 10%        | 15%        |
+| Jul-25  | 10%     | 20%                | 10%     | 15%  | -5%  | 35%     | 10%        | 15%        |
+| Sep-25  | 10%     | 20%                | 10%     | 15%  | -5%  | 35%     | 10%        | 15%        |
+| Nov-25  | 10%     | 20%                | 10%     | 15%  | -5%  | 35%     | 10%        | 15%        |
+| Jan-26  | 10%     | 20%                | 10%     | 15%  | -5%  | 35%     | 10%        | 15%        |
+| Mar-26  | -30%    | -30%               | -30%    | -30% | -30% | -30%    | -30%       | -30%       |
+The chart includes a legend for each platform. The x-axis represents time (Jan-23 to Mar-26), and the y-axis represents percentage change. Legend is not explicitly labeled but corresponds to the color coding of the lines.
+</details>
+
+Source: HundredX, Data compiled by GS Global Investment Research
+
+Exhibit 71: Video Streaming NPP Driver: New Releases T3M   
+![](images/d9060d8ef24f81a64a2c43b2480b006c50af828313fc1e2f7709228c17bf5f5a.jpg)
+
+<details>
+<summary>line</summary>
+
+| Month   | Netflix | Amazon Prime Video | Disney+ | Hulu | Max  | Peacock | YouTube TV | Paramount+ |
+|---------|---------|--------------------|---------|------|------|---------|------------|------------|
+| Jan-23  | 42%     | 28%                | 52%     | 27%  | 42%  | 22%     | 16%        | 31%        |
+| Mar-23  | 43%     | 29%                | 50%     | 28%  | 43%  | 23%     | 17%        | 33%        |
+| May-23  | 44%     | 30%                | 48%     | 29%  | 44%  | 24%     | 18%        | 35%        |
+| Jul-23  | 45%     | 31%                | 46%     | 30%  | 45%  | 25%     | 19%        | 36%        |
+| Sep-23  | 46%     | 32%                | 44%     | 31%  | 46%  | 26%     | 20%        | 37%        |
+| Nov-23  | 47%     | 33%                | 42%     | 32%  | 47%  | 27%     | 21%        | 38%        |
+| Jan-24  | 48%     | 34%                | 40%     | 33%  | 48%  | 28%     | 22%        | 39%        |
+| Mar-24  | 49%     | 35%                | 38%     | 34%  | 49%  | 29%     | 23%        | 40%        |
+| May-24  | 50%     | 36%                | 36%     | 35%  | 50%  | 30%     | 24%        | 41%        |
+| Jul-24  | 51%     | 37%                | 34%     | 36%  | 51%  | 31%     | 25%        | 42%        |
+| Sep-24  | 52%     | 38%                | 32%     | 37%  | 52%  | 32%     | 26%        | 43%        |
+| Nov-24  | 53%     | 39%                | 30%     | 38%  | 53%  | 33%     | 27%        | 44%        |
+| Jan-25  | 54%     | 40%                | 28%     | 39%  | 54%  | 34%     | 28%        | 45%        |
+| Mar-25  | 55%     | 41%                | 26%     | 40%  | 55%  | 35%     | 29%        | 46%        |
+| May-25  | 56%     | 42%                | 24%     | 41%  | 56%  | 36%     | 30%        | 47%        |
+| Jul-25  | 57%     | 43%                | 22%     | 42%  | 57%  | 37%     | 31%        | 48%        |
+| Sep-25  | 58%     | 44%                | 20%     | 43%  | 58%  | 38%     | 32%        | 49%        |
+| Nov-25  | 59%     | 45%                | -       | -    | -    | -       | -          | -          |
+| Jan-26  | -       | -                  | -       | -    | -    | -       | -          | -          |
+| Mar-26  | -       | -                  | -       | -    | -    | -       | -          | -          |
+</details>
+
+Source: HundredX, Data compiled by GS Global Investment Research
+
+Exhibit 72: Audio Streaming - Net Promoter Score T3M   
+![](images/c2adaf5756c232540ca22c4f786acc1438f7c0c257b95fddbf2d6ec4ce498641.jpg)  
+Source: HundredX, Data compiled by GS Global Investment Research
+
+Exhibit 73: Audio Streaming - Net Purchase Intent T3M   
+![](images/26b990139977cc1825818ed754903a72edaec79620dd712f5a83d97f53e44c71.jpg)  
+Source: HundredX, Data compiled by GS Global Investment Research
+
+Exhibit 74: Audio Streaming NPP Driver: Music Selection T3M   
+![](images/d3154b267980cc7c4250d67589d9c0daad094f2ddbd4673e687ff10a5d477076.jpg)
+
+<details>
+<summary>line</summary>
+
+| Month   | Spotify | Apple Music | Pandora Internet Radio | SiriusXM | SoundCloud | Amazon Music |
+|---------|---------|-------------|------------------------|----------|------------|--------------|
+| Jan-23  | 80%     | 75%         | 70%                    | 70%      | 50%        | 60%          |
+| Mar-23  | 80%     | 75%         | 70%                    | 70%      | 50%        | 60%          |
+| May-23  | 80%     | 75%         | 70%                    | 70%      | 50%        | 60%          |
+| Jul-23  | 80%     | 75%         | 70%                    | 70%      | 50%        | 60%          |
+| Sep-23  | 80%     | 75%         | 70%                    | 70%      | 50%        | 60%          |
+| Nov-23  | 80%     | 75%         | 70%                    | 70%      | 50%        | 60%          |
+| Jan-24  | 80%     | 75%         | 70%                    | 70%      | 50%        | 60%          |
+| Mar-24  | 80%     | 75%         | 70%                    | 70%      | 50%        | 60%          |
+| May-24  | 80%     | 75%         | 70%                    | 70%      | 50%        | 60%          |
+| Jul-24  | 80%     | 75%         | 70%                    | 70%      | 50%        | 60%          |
+| Sep-24  | 80%     | 75%         | 70%                    | 70%      | 50%        | 60%          |
+| Nov-24  | 80%     | 75%         | 70%                    | 70%      | 50%        | 60%          |
+| Jan-25  | 80%     | 75%         | 70%                    | 70%      | 50%        | 60%          |
+| Mar-25  | 80%     | 75%         | 70%                    | 70%      | 50%        | 60%          |
+| May-25  | 80%     | 75%         | 70%                    | 70%      | 50%        | 60%          |
+| Jul-25  | 80%     | 75%         | 70%                    | 70%      | 50%        | 60%          |
+| Sep-25  | 80%     | 75%         | 70%                    | 70%      | 50%        | 60%          |
+| Nov-25  | 80%     | 75%         | 70%                    | 70%      | 50%        | 60%          |
+| Jan-26  | 80%     | 75%         | 70%                    | 70%      | 50%        | 60%          |
+| Mar-26  | 80%     | 75%         | 70%                    | 70%      | 50%        | 60%          |
+</details>
+
+Source: HundredX, Data compiled by GS Global Investment Research
+
+Exhibit 75: Audio Streaming NPP Driver: Price T3M   
+![](images/06bbede4449bc8c4b801d2c4a1426a4a27465ae7d4932227c1feb70a724156c6.jpg)
+
+<details>
+<summary>line</summary>
+
+| Month   | Spotify | Apple Music | Deezer | Pandora Internet Radio | SiriusXM | SoundCloud | Amazon Music |
+|---------|---------|-------------|--------|------------------------|----------|------------|--------------|
+| Jan-23  | 15%     | 5%          | 0%     | 20%                    | -20%     | 10%        | 15%          |
+| Mar-23  | 18%     | 8%          | 5%     | 22%                    | -22%     | 12%        | 18%          |
+| May-23  | 20%     | 10%         | 10%    | 25%                    | -25%     | 15%        | 20%          |
+| Jul-23  | 22%     | 12%         | 15%    | 28%                    | -28%     | 18%        | 22%          |
+| Sep-23  | 20%     | 10%         | 10%    | 25%                    | -25%     | 15%        | 20%          |
+| Nov-23  | 18%     | 8%          | 5%     | 22%                    | -22%     | 12%        | 18%          |
+| Jan-24  | 15%     | 5%          | 0%     | 20%                    | -20%     | 10%        | 15%          |
+| Mar-24  | 18%     | 8%          | 5%     | 25%                    | -15%     | 15%        | 18%          |
+| May-24  | 20%     | 10%         | 10%    | 28%                    | -10%     | 18%        | 20%          |
+| Jul-24  | 18%     | 8%          | 5%     | 25%                    | -15%     | 15%        | 18%          |
+| Sep-24  | 15%     | 5%          | 0%     | 22%                    | -20%     | 12%        | 15%          |
+| Nov-24  | 18%     | 8%          | 5%     | 20%                    | -25%     | 10%        | 18%          |
+| Jan-25  | 20%     | 10%         | 10%    | 25%                    | -20%     | 15%        | 20%          |
+| Mar-25  | 22%     | 12%         | 15%    | 28%                    | -15%     | 18%        | 22%          |
+| May-25  | 20%     | 10%         | 10%    | 25%                    | -10%     | 15%        | 20%          |
+| Jul-25  | 18%     | 8%          | 5%     | 22%                    | -5%      | 12%        | 18%          |
+| Sep-25  | 15%     | 5%          | 0%     | 20%                    | -5%      | 10%        | 15%          |
+| Nov-25  | 18%     | 8%          | 5%     | 25%                    | -5%      | 15%        | 18%          |
+| Jan-26  | 20%     | 10%         | 10%    | 28%                    | -5%      | 18%        | 20%          |
+| Mar-26  | 22%     | 12%         | 15%    | 30%                    | -5%      | 20%        | 22%          |
+</details>
+
+Source: HundredX, Data compiled by GS Global Investment Research
+
+# Online Dating
+
+# SensorTower
+
+- By Weekly Active Users - Dating app WAUs at Tinder and Bumble remained pressured during the period $-1\% / -14\%$ YoY in the US and $-4\% / -6\%$ globally YoY. Hinge saw some pressure in the US $(-1\%$ YoY) but saw strong growth globally $(+31\%$ YoY).   
+By Monthly Sessions - User engagement remained solid at Hinge globally and in the US (sessions +44%/+9% YoY). At Bumble, the number of monthly sessions declined both globally and in the US (-2%/-15%).
+
+# HundredX
+
+NPS - The NPS score were stable for the broader comp group during April 2026 on a T3M basis, albeit declining at Hinge.   
+NPI - The NPI scores across the comp set improved sequentially during April 2026 (on a T3M basis).   
+NPP Driver (Relevant Matches) - During February, the “Relevant Matches” NPP driver improved sequentially at Tinder, Hinge and Bumble app while it was declining for Badoo.   
+NPP Driver (Price) - On a T3M basis, "Price" as an NPP Driver at Badoo declined during April 2026, while it was stable to improving for rest of the comp set.
+
+Exhibit 76: Indexed Weekly Active Users - Global Indexed to week of 12/26/2022 = 100   
+![](images/37452260e6cbf4f74ba85fbb1ee9e3195dfe83a88d9aa33db3632045a57dcab8.jpg)
+
+<details>
+<summary>line</summary>
+
+| Month    | Hinge | Tinder | Badoo | Bumble |
+|----------|-------|--------|-------|--------|
+| Dec-22   | 100   | 100    | 100   | 100    |
+| Jan-23   | 105   | 98     | 98    | 102    |
+| Feb-23   | 110   | 96     | 96    | 104    |
+| Mar-23   | 115   | 94     | 94    | 106    |
+| Apr-23   | 120   | 92     | 92    | 108    |
+| May-23   | 125   | 90     | 90    | 110    |
+| Jun-23   | 130   | 88     | 88    | 112    |
+| Jul-23   | 135   | 86     | 86    | 114    |
+| Aug-23   | 140   | 84     | 84    | 116    |
+| Sep-23   | 145   | 82     | 82    | 118    |
+| Oct-23   | 150   | 80     | 80    | 120    |
+| Nov-23   | 155   | 78     | 78    | 122    |
+| Dec-23   | 160   | 76     | 76    | 124    |
+| Jan-24   | 165   | 74     | 74    | 126    |
+| Feb-24   | 170   | 72     | 72    | 128    |
+| Mar-24   | 175   | 70     | 70    | 130    |
+| Apr-24   | 180   | 68     | 68    | 132    |
+| May-24   | 185   | 66     | 66    | 134    |
+| Jun-24   | 190   | 64     | 64    | 136    |
+| Jul-24   | 195   | 62     | 62    | 138    |
+| Aug-24   | 200   | 60     | 60    | 140    |
+| Sep-24   | 205   | 58     | 58    | 142    |
+| Oct-24   | 210   | 56     | 56    | 144    |
+| Nov-24   | 215   | 54     | 54    | 146    |
+| Dec-24   | 220   | 52     | 52    | 148    |
+| Jan-25   | 225   | 50     | 50    | 150    |
+| Feb-25   | 230   | 48     | 48    | 152    |
+| Mar-25   | 235   | 46     | 46    | 154    |
+| Apr-25   | 240   | 44     | 44    | 156    |
+| May-25   | 245   | 42     | 42    | 158    |
+| Jun-25   | 250   | 40     | 40    | 160    |
+| Jul-25   | 255   | 38     | 38    | 162    |
+| Aug-25   | 260   | 36     | 36    | 164    |
+| Sep-25   | 265   | 34     | 34    | 166    |
+| Oct-25   | 270   | 32     | 32    | 168    |
+| Nov-25   | 275   | 30     | 30    | 170    |
+| Dec-25   | 280   | 28     | 28    | 172    |
+| Jan-26   | 285   | 26     | 26    | 174    |
+| Feb-26   | 290   | 24     | 24    | 176    |
+| Mar-26   | 295   | 22     | 22    | 178    |
+| Apr-26   | 300   | 20     | 20    | 180    |
+</details>
+
+Source: SensorTower, Data compiled by GS Global Investment Research
+
+Exhibit 77: Indexed Weekly Active Users - US
+Indexed to week of 12/26/2022 = 100   
+![](images/15c7949ed931e0fd7f36d3afac7d21a9d5d27086e5fa4bb66f1c5590def5c574.jpg)
+
+<details>
+<summary>line</summary>
+
+| Month    | Hinge | Tinder | Badoo | Bumble |
+|----------|-------|--------|-------|--------|
+| Dec-22   | 100   | 95     | 100   | 100    |
+| Jan-23   | 105   | 98     | 105   | 98     |
+| Feb-23   | 110   | 100    | 110   | 95     |
+| Mar-23   | 115   | 105    | 115   | 90     |
+| Apr-23   | 120   | 110    | 120   | 85     |
+| May-23   | 125   | 115    | 125   | 80     |
+| Jun-23   | 130   | 120    | 130   | 75     |
+| Jul-23   | 135   | 125    | 135   | 70     |
+| Aug-23   | 140   | 130    | 140   | 65     |
+| Sep-23   | 145   | 135    | 145   | 60     |
+| Oct-23   | 150   | 140    | 150   | 55     |
+| Nov-23   | 145   | 135    | 145   | 50     |
+| Dec-23   | 140   | 130    | 140   | 45     |
+| Jan-24   | 135   | 125    | 135   | 40     |
+| Feb-24   | 130   | 120    | 130   | 35     |
+| Mar-24   | 125   | 115    | 125   | 30     |
+| Apr-24   | 120   | 110    | 120   | 25     |
+| May-24   | 115   | 105    | 115   | 20     |
+| Jun-24   | 110   | 100    | 110   | 15     |
+| Jul-24   | 105   | 95     | 105   | 10     |
+| Aug-24   | 100   | 90     | 100   | 5      |
+| Sep-24   | 95    | 85     | 95    | 0      |
+| Oct-24   | 90    | 80     | 90    | -5     |
+| Nov-24   | 85    | 75     | 85    | -10    |
+| Dec-24   | 80    | 70     | 80    | -15    |
+| Jan-25   | 75    | 65     | 75    | -20    |
+| Feb-25   | 70    | 60     | 70    | -25    |
+| Mar-25   | 65    | 55     | 65    | -30    |
+| Apr-25   | 60    | 50     | 60    | -35    |
+| May-25   | 55    | 45     | 55    | -40    |
+| Jun-25   | 50    | 40     | 50    | -45    |
+| Jul-25   | 45    | 35     | 45    | -50    |
+| Aug-25   | 40    | 30     | 40    | -55    |
+| Sep-25   | 35    | 25     | 35    | -60    |
+| Oct-25   | 30    | 20     | 30    | -65    |
+| Nov-25   | 25    | 15     | 25    | -70    |
+| Dec-25   | 20    | 10     | 20    | -75    |
+| Jan-26   | 15    | 5      | 15    | -80    |
+| Feb-26   | 10    | 0      | 10    | -85    |
+| Mar-26   | 5     | -5     | -5    | -90    |
+| Apr-26   | -0.5%  | -10%   | -10%   | -95%   |
+</details>
+
+Source: SensorTower, Data compiled by GS Global Investment Research
+
+Exhibit 78: Indexed Sessions - Global   
+Indexed to Jan 2023 = 100   
+![](images/fe0f0d7c20f8613fb3d9c6cd8ee3a7990428c284a35746d81f5c493e15279601.jpg)
+
+<details>
+<summary>line</summary>
+
+| Month    | Hinge | Tinder | Badoo | Bumble |
+|----------|-------|--------|-------|--------|
+| Jan-23   | 100   | 100    | 100   | 100    |
+| Feb-23   | 105   | 95     | 95    | 105    |
+| Mar-23   | 108   | 98     | 98    | 108    |
+| Apr-23   | 110   | 100    | 100   | 110    |
+| May-23   | 112   | 102    | 102   | 112    |
+| Jun-23   | 115   | 105    | 105   | 115    |
+| Jul-23   | 118   | 108    | 108   | 118    |
+| Aug-23   | 120   | 110    | 110   | 120    |
+| Sep-23   | 122   | 112    | 112   | 122    |
+| Oct-23   | 125   | 115    | 115   | 125    |
+| Nov-23   | 128   | 118    | 118   | 128    |
+| Dec-23   | 130   | 120    | 120   | 130    |
+| Jan-24   | 132   | 122    | 122   | 132    |
+| Feb-24   | 135   | 125    | 125   | 135    |
+| Mar-24   | 138   | 128    | 128   | 138    |
+| Apr-24   | 140   | 130    | 130   | 140    |
+| May-24   | 142   | 132    | 132   | 142    |
+| Jun-24   | 145   | 135    | 135   | 145    |
+| Jul-24   | 148   | 138    | 138   | 148    |
+| Aug-24   | 150   | 140    | 140   | 150    |
+| Sep-24   | 152   | 142    | 142   | 152    |
+| Oct-24   | 155   | 145    | 145   | 155    |
+| Nov-24   | 158   | 148    | 148   | 158    |
+| Dec-24   | 160   | 150    | 150   | 160    |
+| Jan-25   | 162   | 152    | 152   | 162    |
+| Feb-25   | 165   | 155    | 155   | 165    |
+| Mar-25   | 168   | 158    | 158   | 168    |
+| Apr-25   | 170   | 160    | 160   | 170    |
+| May-25   | 172   | 162    | 162   | 172    |
+| Jun-25   | 175   | 165    | 165   | 175    |
+| Jul-25   | 178   | 168    | 168   | 178    |
+| Aug-25   | 180   | 170    | 170   | 180    |
+| Sep-25   | 182   | 172    | 172   | 182    |
+| Oct-25   | 185   | 175    | 175   | 185    |
+| Nov-25   | 188   | 178    | 178   | 188    |
+| Dec-25   | 190   | 180    | 180   | 190    |
+| Jan-26   | 192   | 182    | 182   | 192    |
+| Feb-26   | 195   | 185    | 185   | 195    |
+| Mar-26   | 198   | 188    | 188   | 198    |
+| Apr-26   | 200   | 190    | 190   | 200    |
+</details>
+
+Source: SensorTower, Data compiled by GS Global Investment Research
+
+Exhibit 79: Indexed Number of Sessions - US   
+Indexed to Jan 2023 = 100   
+![](images/1f74fe28fe54da634f18eb660ae9a04f2f37b52b987d2a220aed0690856424dc.jpg)
+
+<details>
+<summary>line</summary>
+
+| Month    | Hinge | Tinder | Badoo | Bumble |
+|----------|-------|--------|-------|--------|
+| Jan-23   | 95    | 95     | 80    | 95     |
+| Feb-23   | 95    | 95     | 150   | 95     |
+| Mar-23   | 95    | 95     | 140   | 95     |
+| Apr-23   | 95    | 95     | 160   | 95     |
+| May-23   | 95    | 95     | 70    | 95     |
+| Jun-23   | 95    | 95     | 160   | 95     |
+| Jul-23   | 95    | 95     | 140   | 95     |
+| Aug-23   | 95    | 95     | 140   | 95     |
+| Sep-23   | 95    | 95     | 140   | 95     |
+| Oct-23   | 95    | 95     | 140   | 95     |
+| Nov-23   | 95    | 95     | 140   | 95     |
+| Dec-23   | 95    | 95     | 140   | 95     |
+| Jan-24   | 95    | 95     | 140   | 95     |
+| Feb-24   | 95    | 95     | 140   | 95     |
+| Mar-24   | 95    | 95     | 140   | 95     |
+| Apr-24   | 95    | 95     | 140   | 95     |
+| May-24   | 95    | 95     | 140   | 95     |
+| Jun-24   | 95    | 95     | 140   | 95     |
+| Jul-24   | 95    | 95     | 140   | 95     |
+| Aug-24   | 95    | 95     | 140   | 95     |
+| Sep-24   | 95    | 95     | 140   | 95     |
+| Oct-24   | 95    | 95     | 140   | 95     |
+| Nov-24   | 95    | 95     | 140   | 95     |
+| Dec-24   | 95    | 95     | 140   | 95     |
+| Jan-25   | 95    | 95     | 140   | 95     |
+| Feb-25   | 95    | 95     | 140   | 95     |
+| Mar-25   | 95    | 95     | 140   | 95     |
+| Apr-25   | 95    | 95     | 140   | 95     |
+| May-25   | 95    | 95     | 140   | 95     |
+| Jun-25   | 95    | 95     | 140   | 95     |
+| Jul-25   | 95    | 95     | 140   | 95     |
+| Aug-25   | 95    | 95     | 140   | 95     |
+| Sep-25   | 95    | 95     | 140   | 95     |
+| Oct-25   | 95    | 95     | 140   | 95     |
+| Nov-25   | 95    | 95     | 140   | 95     |
+| Dec-25   | 95    | 95     | 140   | 95     |
+| Jan-26   | 100   | 60     | 60    | 60     |
+| Feb-26   | 100   | 60     | 60    | 60     |
+| Mar-26   | 100   | 60     | 60    | 60     |
+| Apr-26   | 100   | 60     | 60    | 60     |
+</details>
+
+Source: SensorTower, Data compiled by GS Global Investment Research
+
+Exhibit 80: Net Promoter Score   
+T3M   
+![](images/17b2f17dae24079a285692b0ef931c9d72005bab7824a5b0042e41e5e73c6aa1.jpg)
+
+<details>
+<summary>line</summary>
+
+| Month   | Tinder | Hinge | Bumble | Badoo |
+|---------|--------|-------|--------|-------|
+| Jul-23  | -30    | -10   | -20    | -20   |
+| Aug-23  | -30    | -10   | -20    | -20   |
+| Sep-23  | -30    | -10   | -20    | -20   |
+| Oct-23  | -30    | -10   | -20    | -20   |
+| Nov-23  | -30    | -10   | -40    | -20   |
+| Dec-23  | -40    | -10   | -40    | -20   |
+| Jan-24  | -40    | -10   | -20    | -20   |
+| Feb-24  | -40    | -10   | -20    | -20   |
+| Mar-24  | -40    | -10   | -20    | -20   |
+| Apr-24  | -40    | -10   | -20    | -20   |
+| May-24  | -40    | -10   | -20    | -20   |
+| Jun-24  | -40    | -10   | -20    | -20   |
+| Jul-24  | -40    | -10   | -20    | -20   |
+| Aug-24  | -40    | -10   | -20    | -20   |
+| Sep-24  | -40    | -10   | -20    | -20   |
+| Oct-24  | -40    | -10   | -20    | -20   |
+| Nov-24  | -40    | -10   | -20    | -20   |
+| Dec-24  | -40    | -10   | -20    | -20   |
+| Jan-25  | -40    | -10   | -20    | -20   |
+| Feb-25  | -40    | -10   | -20    | -20   |
+| Mar-25  | -40    | -10   | -20    | -20   |
+| Apr-25  | -40    | -10   | -20    | -20   |
+| May-25  | -40    | -10   | -20    | -20   |
+| Jun-25  | -40    | -10   | -20    | -20   |
+| Jul-25  | -40    | -10   | -20    | -20   |
+| Aug-25  | -40    | -10   | -20    | -20   |
+| Sep-25  | -40    | -10   | -20    | -20   |
+| Oct-25  | -40    | -10   | -20    | -20   |
+| Nov-25  | -40    | -10   | -20    | -20   |
+| Dec-25  | -40    | -10   | -20    | -20   |
+| Jan-26  | -40    | -10   | -20    | -20   |
+| Feb-26  | -40    | -10   | -20    | -20   |
+| Mar-26  | -40    | -10   | -20    | -20   |
+| Apr-26  | -40    | -10   | -20    | -20   |
+</details>
+
+Source: HundredX, Data compiled by GS Global Investment Research
+
+Exhibit 81: Net Purchase Intent   
+T3M   
+![](images/969d6ef5fa869e2e427429dae6be8187c581b4f5c330a2c08bfd33b5119378a8.jpg)
+
+<details>
+<summary>line</summary>
+
+| Month   | Tinder | Hinge | Bumble | Badoo |
+|---------|--------|-------|--------|-------|
+| Jul-23  | -48%   | -42%  | -48%   | -36%  |
+| Aug-23  | -48%   | -42%  | -48%   | -36%  |
+| Sep-23  | -48%   | -42%  | -48%   | -36%  |
+| Oct-23  | -48%   | -42%  | -48%   | -36%  |
+| Nov-23  | -48%   | -42%  | -48%   | -36%  |
+| Dec-23  | -48%   | -42%  | -48%   | -36%  |
+| Jan-24  | -48%   | -42%  | -48%   | -36%  |
+| Feb-24  | -48%   | -42%  | -48%   | -36%  |
+| Mar-24  | -48%   | -42%  | -48%   | -36%  |
+| Apr-24  | -48%   | -42%  | -48%   | -36%  |
+| May-24  | -48%   | -42%  | -48%   | -36%  |
+| Jun-24  | -48%   | -42%  | -48%   | -36%  |
+| Jul-24  | -48%   | -42%  | -48%   | -36%  |
+| Aug-24  | -48%   | -42%  | -48%   | -36%  |
+| Sep-24  | -48%   | -42%  | -48%   | -36%  |
+| Oct-24  | -48%   | -42%  | -48%   | -36%  |
+| Nov-24  | -48%   | -42%  | -48%   | -36%  |
+| Dec-24  | -48%   | -42%  | -48%   | -36%  |
+| Jan-25  | -48%   | -42%  | -48%   | -36%  |
+| Feb-25  | -48%   | -42%  | -48%   | -36%  |
+| Mar-25  | -48%   | -42%  | -48%   | -36%  |
+| Apr-25  | -48%   | -42%  | -48%   | -36%  |
+| May-25  | -48%   | -42%  | -48%   | -36%  |
+| Jun-25  | -48%   | -42%  | -48%   | -36%  |
+| Jul-25  | -48%   | -42%  | -48%   | -36%  |
+| Aug-25  | -48%   | -42%  | -48%   | -36%  |
+| Sep-25  | -48%   | -42%  | -48%   | -36%  |
+| Oct-25  | -48%   | -42%  | -48%   | -36%  |
+| Nov-25  | -48%   | -42%  | -48%   | -36%  |
+| Dec-25  | -48%   | -42%  | -48%   | -36%  |
+| Jan-26  | -48%   | -42%  | -48%   | -36%  |
+| Feb-26  | -48%   | -42%  | -48%   | -36%  |
+| Mar-26  | -48%   | -42%  | -48%   | -36%  |
+| Apr-26  | -48%   | -42%  | -48%   | -36%  |
+</details>
+
+Source: HundredX, Data compiled by GS Global Investment Research
+
+Exhibit 82: NPP Driver: Relevant Matches   
+T3M   
+![](images/706efd69ce206ca755b2c8147c4d7a84a7cc614803624e44d7e3a3f533007ca1.jpg)
+
+<details>
+<summary>line</summary>
+
+| Month   | Tinder | Hinge | Bumble |
+|---------|--------|-------|--------|
+| Jan-23  | -5%    | -5%   | 0%     |
+| Mar-23  | -15%   | -5%   | 5%     |
+| May-23  | -18%   | 5%    | -15%   |
+| Jul-23  | -10%   | 0%    | -5%    |
+| Sep-23  | -5%    | 5%    | 0%     |
+| Nov-23  | -10%   | -5%   | -10%   |
+| Jan-24  | -20%   | 5%    | -15%   |
+| Mar-24  | -15%   | -5%   | -10%   |
+| May-24  | -10%   | -10%  | -15%   |
+| Jul-24  | -15%   | -15%  | -10%   |
+| Sep-24  | -18%   | -10%  | -15%   |
+| Nov-24  | -10%   | -5%   | -10%   |
+| Jan-25  | -5%    | 0%    | -5%    |
+| Mar-25  | -10%   | -5%   | -10%   |
+| May-25  | -20%   | -10%  | -5%    |
+| Jul-25  | -10%   | 0%    | -10%   |
+| Sep-25  | -5%    | 5%    | -5%    |
+| Nov-25  | -10%   | 0%    | -10%   |
+| Jan-26  | -15%   | -5%   | -10%   |
+| Mar-26  | -20%   | -10%  | -5%    |
+</details>
+
+Source: HundredX, Data compiled by GS Global Investment Research
+
+Exhibit 83: NPP Driver: Price   
+T3M   
+![](images/50e79e0a67f0ffde535bc1d57f57f216430c6f31dfcd793b80c7795fd92ab563.jpg)
+
+<details>
+<summary>line</summary>
+
+| Month   | Tinder | Hinge | Bumble |
+|---------|--------|-------|--------|
+| Jan-23  | 0%     | 0%    | 0%     |
+| Mar-23  | -5%    | 5%    | -5%    |
+| May-23  | 0%     | 7%    | -5%    |
+| Jul-23  | 5%     | 8%    | -10%   |
+| Sep-23  | -5%    | -5%   | -10%   |
+| Nov-23  | -15%   | -10%  | -15%   |
+| Jan-24  | -18%   | -15%  | -18%   |
+| Mar-24  | -15%   | -10%  | -15%   |
+| May-24  | -5%    | -5%   | -10%   |
+| Jul-24  | -5%    | -15%  | -10%   |
+| Sep-24  | 0%     | -5%   | -5%    |
+| Nov-24  | -5%    | -5%   | -15%   |
+| Jan-25  | -5%    | -5%   | -15%   |
+| Mar-25  | -5%    | -10%  | -15%   |
+| May-25  | 0%     | -10%  | -10%   |
+| Jul-25  | -5%    | -10%  | -5%    |
+| Sep-25  | -5%    | -10%  | -5%    |
+| Nov-25  | -5%    | -10%  | -5%    |
+| Jan-26  | -10%   | -15%  | -10%   |
+| Mar-26  | -10%   | -15%  | -10%   |
+</details>
+
+Source: HundredX, Data compiled by GS Global Investment Research
+
+# EdTech
+
+# SensorTower
+
+By Weekly Active Users - Duolingo saw WAUs improve globally (+8% YoY) but decline in the US (-3% YoY) during the period.   
+By Monthly Sessions - Sessions at Duolingo both globally and in the US grew in April (+9%/+1% YoY).
+
+Exhibit 84: Indexed Weekly Active Users - Global   
+Indexed to week of 12/26/2022 = 100   
+![](images/699179b5d5656e8743fa3a4aad926303bc5f58e3695b82e7cb10f303248fccf4.jpg)
+
+<details>
+<summary>line</summary>
+
+| Date    | Duolingo | Coursera |
+|---------|----------|----------|
+| Dec-22  | 100      | 90       |
+| Jan-23  | 105      | 95       |
+| Feb-23  | 110      | 100      |
+| Mar-23  | 115      | 105      |
+| Apr-23  | 120      | 110      |
+| May-23  | 125      | 115      |
+| Jun-23  | 130      | 120      |
+| Jul-23  | 135      | 125      |
+| Aug-23  | 140      | 130      |
+| Sep-23  | 145      | 135      |
+| Oct-23  | 150      | 140      |
+| Nov-23  | 155      | 145      |
+| Dec-23  | 160      | 150      |
+| Jan-24  | 165      | 155      |
+| Feb-24  | 170      | 160      |
+| Mar-24  | 175      | 165      |
+| Apr-24  | 180      | 170      |
+| May-24  | 185      | 175      |
+| Jun-24  | 190      | 180      |
+| Jul-24  | 195      | 185      |
+| Aug-24  | 200      | 190      |
+| Sep-24  | 205      | 195      |
+| Oct-24  | 210      | 200      |
+| Nov-24  | 215      | 205      |
+| Dec-24  | 220      | 210      |
+| Jan-25  | 225      | 215      |
+| Feb-25  | 230      | 220      |
+| Mar-25  | 235      | 225      |
+| Apr-25  | 240      | 230      |
+| May-25  | 245      | 235      |
+| Jun-25  | 250      | 240      |
+| Jul-25  | 255      | 245      |
+| Aug-25  | 260      | 250      |
+| Sep-25  | 265      | 255      |
+| Oct-25  | 270      | 260      |
+| Nov-25  | 275      | 265      |
+| Dec-25  | 280      | 270      |
+| Jan-26  | 285      | 275      |
+| Feb-26  | 290      | 280      |
+| Mar-26  | 295      | 285      |
+| Apr-26  | 300      | 290      |
+</details>
+
+Source: SensorTower, Data compiled by GS Global Investment Research
+
+Exhibit 85: Indexed Weekly Active Users - US   
+Indexed to week of 12/26/2022 = 100   
+![](images/a12e2b0e901baf456622302b27fc2f037cdf415e53a3afabbbe1c5e9f8f20d86.jpg)
+
+<details>
+<summary>line</summary>
+
+| Date    | Duolingo | Coursera |
+|---------|----------|----------|
+| Dec-22  | 100      | 100      |
+| Jan-23  | 110      | 90       |
+| Feb-23  | 120      | 80       |
+| Mar-23  | 130      | 95       |
+| Apr-23  | 140      | 100      |
+| May-23  | 150      | 110      |
+| Jun-23  | 160      | 120      |
+| Jul-23  | 170      | 130      |
+| Aug-23  | 180      | 140      |
+| Sep-23  | 190      | 150      |
+| Oct-23  | 200      | 160      |
+| Nov-23  | 210      | 170      |
+| Dec-23  | 220      | 180      |
+| Jan-24  | 230      | 190      |
+| Feb-24  | 240      | 200      |
+| Mar-24  | 250      | 210      |
+| Apr-24  | 260      | 220      |
+| May-24  | 270      | 230      |
+| Jun-24  | 280      | 240      |
+| Jul-24  | 290      | 250      |
+| Aug-24  | 300      | 260      |
+| Sep-24  | 310      | 270      |
+| Oct-24  | 320      | 280      |
+| Nov-24  | 330      | 290      |
+| Dec-24  | 340      | 300      |
+| Jan-25  | 350      | 310      |
+| Feb-25  | 360      | 320      |
+| Mar-25  | 370      | 330      |
+| Apr-25  | 380      | 340      |
+| May-25  | 390      | 350      |
+| Jun-25  | 400      | 360      |
+| Jul-25  | 410      | 370      |
+| Aug-25  | 420      | 380      |
+| Sep-25  | 430      | 390      |
+| Oct-25  | 440      | 400      |
+| Nov-25  | 450      | 410      |
+| Dec-25  | 460      | 420      |
+| Jan-26  | 470      | 430      |
+| Feb-26  | 480      | 440      |
+| Mar-26  | 490      | 450      |
+| Apr-26  | 500      | 460      |
+</details>
+
+Source: SensorTower, Data compiled by GS Global Investment Research
+
+Exhibit 86: Indexed Sessions - Global   
+Indexed to Jan 2023 = 100   
+![](images/d40dcf291b895b6360aaa9918af7f2a9beeb543f67be2bd19153ea4a9dbd0f2d.jpg)
+
+<details>
+<summary>line</summary>
+
+| Month    | Duolingo | Coursera |
+| -------- | -------- | -------- |
+| Jan-23   | 90       | 90       |
+| Feb-23   | 95       | 85       |
+| Mar-23   | 100      | 90       |
+| Apr-23   | 105      | 95       |
+| May-23   | 110      | 100      |
+| Jun-23   | 115      | 105      |
+| Jul-23   | 120      | 110      |
+| Aug-23   | 125      | 115      |
+| Sep-23   | 130      | 120      |
+| Oct-23   | 135      | 125      |
+| Nov-23   | 140      | 130      |
+| Dec-23   | 145      | 135      |
+| Jan-24   | 150      | 140      |
+| Feb-24   | 155      | 145      |
+| Mar-24   | 160      | 150      |
+| Apr-24   | 165      | 155      |
+| May-24   | 170      | 160      |
+| Jun-24   | 175      | 165      |
+| Jul-24   | 180      | 170      |
+| Aug-24   | 185      | 175      |
+| Sep-24   | 190      | 180      |
+| Oct-24   | 195      | 185      |
+| Nov-24   | 200      | 190      |
+| Dec-24   | 205      | 195      |
+| Jan-25   | 210      | 200      |
+| Feb-25   | 215      | 205      |
+| Mar-25   | 220      | 210      |
+| Apr-25   | 225      | 215      |
+| May-25   | 230      | 220      |
+| Jun-25   | 235      | 225      |
+| Jul-25   | 240      | 230      |
+| Aug-25   | 245      | 235      |
+| Sep-25   | 250      | 240      |
+| Oct-25   | 255      | 245      |
+| Nov-25   | 260      | 250      |
+| Dec-25   | 265      | 255      |
+| Jan-26   | 270      | 260      |
+| Feb-26   | 275      | 265      |
+| Mar-26   | 280      | 270      |
+| Apr-26   | 285      | 275      |
+</details>
+
+Source: SensorTower, Data compiled by GS Global Investment Research
+
+Exhibit 87: Indexed Sessions - US   
+Indexed to Jan 2023 = 100   
+![](images/ad7f7e0ddfd73cc0e97d3558c09505b1f73b001c32d426666e56105490fd242f.jpg)
+
+<details>
+<summary>line</summary>
+
+| Month    | Duolingo | Coursera |
+| -------- | -------- | -------- |
+| Jan-23   | 100      | 100      |
+| Feb-23   | 90       | 70       |
+| Mar-23   | 100      | 80       |
+| Apr-23   | 110      | 85       |
+| May-23   | 120      | 90       |
+| Jun-23   | 130      | 95       |
+| Jul-23   | 140      | 100      |
+| Aug-23   | 150      | 105      |
+| Sep-23   | 160      | 110      |
+| Oct-23   | 170      | 115      |
+| Nov-23   | 180      | 120      |
+| Dec-23   | 190      | 180      |
+| Jan-24   | 140      | 120      |
+| Feb-24   | 130      | 100      |
+| Mar-24   | 140      | 90       |
+| Apr-24   | 150      | 85       |
+| May-24   | 160      | 90       |
+| Jun-24   | 170      | 100      |
+| Jul-24   | 180      | 110      |
+| Aug-24   | 190      | 120      |
+| Sep-24   | 200      | 130      |
+| Oct-24   | 210      | 140      |
+| Nov-24   | 220      | 150      |
+| Dec-24   | 230      | 160      |
+| Jan-25   | 240      | 170      |
+| Feb-25   | 250      | 180      |
+| Mar-25   | 260      | 190      |
+| Apr-25   | 270      | 200      |
+| May-25   | 280      | 210      |
+| Jun-25   | 290      | 220      |
+| Jul-25   | 300      | 230      |
+| Aug-25   | 310      | 240      |
+| Sep-25   | 320      | 250      |
+| Oct-25   | 330      | 260      |
+| Nov-25   | 340      | 270      |
+| Dec-25   | 350      | 280      |
+| Jan-26   | 360      | 290      |
+| Feb-26   | 370      | 300      |
+| Mar-26   | 380      | 310      |
+| Apr-26   | 390      | 320      |
+</details>
+
+Source: SensorTower, Data compiled by GS Global Investment Research
+
+# Ridesharing
+
+# SensorTower
+
+By Weekly Active Users - Uber WAUs grew globally (+5% YoY) but declined in the US (-8% YoY) while Lyft WAUs declined both globally and in the US (-4%/-8% YoY).   
+By Monthly Sessions - During April, sessions for Uber grew globally (+10% YoY) but declined in the US (-1% YoY) and Lyft sessions declined both globally and in the US (-2%/-6% YoY).
+
+# HundredX
+
+NPS - NPS scores were stable to improving for the broader comp set during April 2026, albeit with Waymo's NPS score declining sequentially to 22 in April 2026 (from 24 in March 2026).   
+NPI - NPI scores for Waymo, Lyft and Uber were stable sequentially on a T3M basis during April 2026.   
+NPP Driver (Price) - Price as an NPP Driver declined sequentially across the comp set during April 2026 (on a T3M basis).   
+NPP Driver (Wait Time) - The NPP Driver “Wait Time” declined sequentially (on a T3M basis) at Uber and Lyft during the period, while improving for Waymo.
+
+Exhibit 88: Indexed Weekly Active Users - Global   
+Indexed to week of 12/26/2022 = 100   
+![](images/9681acf95df5ab672a57045ffb0f366a478ec7d6417b012bde02eb91f2870db0.jpg)
+
+<details>
+<summary>line</summary>
+
+| Date    | Uber | Lyft |
+|---------|------|------|
+| Dec-22  | 90   | 85   |
+| Jan-23  | 100  | 95   |
+| Feb-23  | 105  | 100  |
+| Mar-23  | 108  | 105  |
+| Apr-23  | 107  | 108  |
+| May-23  | 106  | 107  |
+| Jun-23  | 105  | 106  |
+| Jul-23  | 104  | 105  |
+| Aug-23  | 103  | 104  |
+| Sep-23  | 102  | 103  |
+| Oct-23  | 101  | 102  |
+| Nov-23  | 100  | 101  |
+| Dec-23  | 99   | 100  |
+| Jan-24  | 100  | 99   |
+| Feb-24  | 102  | 101  |
+| Mar-24  | 105  | 104  |
+| Apr-24  | 108  | 107  |
+| May-24  | 110  | 109  |
+| Jun-24  | 112  | 111  |
+| Jul-24  | 113  | 112  |
+| Aug-24  | 114  | 113  |
+| Sep-24  | 115  | 114  |
+| Oct-24  | 116  | 115  |
+| Nov-24  | 117  | 116  |
+| Dec-24  | 105  | 95   |
+| Jan-25  | 108  | 98   |
+| Feb-25  | 110  | 100  |
+| Mar-25  | 112  | 102  |
+| Apr-25  | 115  | 105  |
+| May-25  | 118  | 108  |
+| Jun-25  | 120  | 110  |
+| Jul-25  | 122  | 112  |
+| Aug-25  | 125  | 115  |
+| Sep-25  | 128  | 118  |
+| Oct-25  | 130  | 120  |
+| Nov-25  | 135  | 125  |
+| Dec-25  | 140   | 95   |
+| Jan-26  | 135   | 98   |
+| Feb-26  | 130   | 100  |
+| Mar-26  | 135   | 102  |
+| Apr-26  | 138   | 105  |
+</details>
+
+Source: SensorTower, Data compiled by GS Global Investment Research
+
+Exhibit 89: Indexed Weekly Active Users - US   
+Indexed to week of 12/26/2022 = 100   
+![](images/5e77c5299a54b6d90437f5537114eac9cb8e4f914f972e16a582d54904a7a6d5.jpg)
+
+<details>
+<summary>line</summary>
+
+| Month    | Uber | Lyft |
+|----------|------|------|
+| Dec-22   | 95   | 90   |
+| Jan-23   | 100  | 95   |
+| Feb-23   | 105  | 100  |
+| Mar-23   | 110  | 105  |
+| Apr-23   | 115  | 110  |
+| May-23   | 118  | 112  |
+| Jun-23   | 120  | 115  |
+| Jul-23   | 122  | 118  |
+| Aug-23   | 125  | 120  |
+| Sep-23   | 130  | 125  |
+| Oct-23   | 128  | 122  |
+| Nov-23   | 125  | 120  |
+| Dec-23   | 120  | 115  |
+| Jan-24   | 115  | 110  |
+| Feb-24   | 118  | 112  |
+| Mar-24   | 120  | 115  |
+| Apr-24   | 122  | 118  |
+| May-24   | 125  | 120  |
+| Jun-24   | 128  | 122  |
+| Jul-24   | 130  | 125  |
+| Aug-24   | 132  | 128  |
+| Sep-24   | 135  | 130  |
+| Oct-24   | 138  | 132  |
+| Nov-24   | 140  | 135  |
+| Dec-24   | 138  | 132  |
+| Jan-25   | 135  | 130  |
+| Feb-25   | 138  | 132  |
+| Mar-25   | 140  | 135  |
+| Apr-25   | 142  | 138  |
+| May-25   | 145  | 140  |
+| Jun-25   | 148  | 142  |
+| Jul-25   | 150  | 145  |
+| Aug-25   | 152  | 148  |
+| Sep-25   | 155  | 150  |
+| Oct-25   | 158  | 152  |
+| Nov-25   | 160  | 155  |
+| Dec-25   | 162  | 158  |
+| Jan-26   | 165  | 160  |
+| Feb-26   | 168  | 162  |
+| Mar-26   | 170  | 165  |
+| Apr-26   | 172  | 168  |
+</details>
+
+Source: SensorTower, Data compiled by GS Global Investment Research
+
+Exhibit 90: Indexed Sessions - Global   
+Indexed to Jan 2023 = 100   
+![](images/f5c518222507059f633062d3f39954448c31807bb70c2788ee28970f43ded78a.jpg)
+
+<details>
+<summary>line</summary>
+
+| Month   | Uber | Lyft |
+|---------|------|------|
+| Jan-23  | 100  | 100  |
+| Feb-23  | 110  | 115  |
+| Mar-23  | 115  | 120  |
+| Apr-23  | 118  | 122  |
+| May-23  | 117  | 120  |
+| Jun-23  | 116  | 118  |
+| Jul-23  | 115  | 117  |
+| Aug-23  | 116  | 118  |
+| Sep-23  | 118  | 120  |
+| Oct-23  | 120  | 125  |
+| Nov-23  | 125  | 128  |
+| Dec-23  | 130  | 130  |
+| Jan-24  | 110  | 105  |
+| Feb-24  | 105  | 108  |
+| Mar-24  | 110  | 110  |
+| Apr-24  | 115  | 115  |
+| May-24  | 120  | 118  |
+| Jun-24  | 122  | 115  |
+| Jul-24  | 120  | 110  |
+| Aug-24  | 122  | 108  |
+| Sep-24  | 125  | 110  |
+| Oct-24  | 128  | 115  |
+| Nov-24  | 135  | 105  |
+| Dec-24  | 138  | 95   |
+| Jan-25  | 130  | 98   |
+| Feb-25  | 125  | 105  |
+| Mar-25  | 130  | 110  |
+| Apr-25  | 135  | 115  |
+| May-25  | 138  | 118  |
+| Jun-25  | 135  | 115  |
+| Jul-25  | 138  | 110  |
+| Aug-25  | 140  | 108  |
+| Sep-25  | 142  | 105  |
+| Oct-25  | 145  | 108  |
+| Nov-25  | 150  | 105  |
+| Dec-25  | 158  | 98   |
+| Jan-26  | 140  | 95   |
+| Feb-26  | 135  | 98   |
+| Mar-26  | 140  | 105  |
+| Apr-26  | 138  | 100  |
+</details>
+
+Source: SensorTower, Data compiled by GS Global Investment Research
+
+Exhibit 91: Indexed Sessions - US   
+Indexed to Jan 2023 = 100   
+![](images/8189061809604777991d8cc0f166d8e0d02ebe1656f1611da0583bd31054950c.jpg)
+
+<details>
+<summary>line</summary>
+
+| Month    | Uber  | Lyft  |
+| -------- | ----- | ----- |
+| Jan-23   | 100   | 100   |
+| Feb-23   | 115   | 120   |
+| Mar-23   | 120   | 125   |
+| Apr-23   | 125   | 120   |
+| May-23   | 120   | 115   |
+| Jun-23   | 115   | 110   |
+| Jul-23   | 110   | 105   |
+| Aug-23   | 115   | 110   |
+| Sep-23   | 120   | 115   |
+| Oct-23   | 145   | 130   |
+| Nov-23   | 125   | 120   |
+| Dec-23   | 120   | 115   |
+| Jan-24   | 115   | 110   |
+| Feb-24   | 110   | 105   |
+| Mar-24   | 115   | 110   |
+| Apr-24   | 120   | 115   |
+| May-24   | 125   | 120   |
+| Jun-24   | 130   | 125   |
+| Jul-24   | 125   | 120   |
+| Aug-24   | 120   | 115   |
+| Sep-24   | 115   | 110   |
+| Oct-24   | 110   | 105   |
+| Nov-24   | 105   | 100   |
+| Dec-24   | 100   | 95    |
+| Jan-25   | 95    | 90    |
+| Feb-25   | 90    | 85    |
+| Mar-25   | 95    | 90    |
+| Apr-25   | 100   | 95    |
+| May-25   | 105   | 100   |
+| Jun-25   | 110   | 105   |
+| Jul-25   | 115   | 110   |
+| Aug-25   | 120   | 115   |
+| Sep-25   | 125   | 120   |
+| Oct-25   | 130   | 125   |
+| Nov-25   | 135   | 130   |
+| Dec-25   | 130   | 125   |
+| Jan-26   | 125   | 120   |
+| Feb-26   | 120   | 115   |
+| Mar-26   | 115   | 110   |
+| Apr-26   | 110   | 105   |
+</details>
+
+Source: SensorTower, Data compiled by GS Global Investment Research
+
+Exhibit 92: Net Promoter Score   
+T3M   
+![](images/28e49c51110aba7b91ce744c27406069ba442d81aeddcaba5eb932aecab1949d.jpg)
+
+<details>
+<summary>line</summary>
+
+| Month   | Uber | Lyft |
+|---------|------|------|
+| Jan-23  | 20   | 21   |
+| Feb-23  | 20   | 22   |
+| Mar-23  | 21   | 22   |
+| Apr-23  | 20   | 21   |
+| May-23  | 19   | 18   |
+| Jun-23  | 18   | 20   |
+| Jul-23  | 18   | 16   |
+| Aug-23  | 22   | 19   |
+| Sep-23  | 21   | 18   |
+| Oct-23  | 20   | 21   |
+| Nov-23  | 17   | 15   |
+| Dec-23  | 16   | 12   |
+| Jan-24  | 17   | 12   |
+| Feb-24  | 19   | 17   |
+| Mar-24  | 19   | 21   |
+| Apr-24  | 20   | 22   |
+| May-24  | 20   | 22   |
+| Jun-24  | 19   | 19   |
+| Jul-24  | 19   | 18   |
+| Aug-24  | 19   | 18   |
+| Sep-24  | 21   | 19   |
+| Oct-24  | 20   | 19   |
+| Nov-24  | 19   | 16   |
+| Dec-24  | 18   | 15   |
+| Jan-25  | 19   | 15   |
+| Feb-25  | 20   | 16   |
+| Mar-25  | 23   | 17   |
+| Apr-25  | 25   | 19   |
+| May-25  | 24   | 20   |
+| Jun-25  | 23   | 20   |
+| Jul-25  | 20   | 21   |
+| Aug-25  | 21   | 23   |
+| Sep-25  | 20   | 20   |
+| Oct-25  | 18   | 19   |
+| Nov-25  | 18   | 19   |
+| Dec-25  | 18   | 19   |
+| Jan-26  | 18   | 20   |
+| Feb-26  | 19   | 20   |
+| Mar-26  | 20   | 19   |
+| Apr-26  | 21   | 19   |
+</details>
+
+Source: HundredX, Data compiled by GS Global Investment Research
+
+Exhibit 93: Net Purchase Intent   
+T3M   
+![](images/3133992b772b4984b243b0f3ac67556b845a2929906dfe02a81d874819744416.jpg)
+
+<details>
+<summary>line</summary>
+
+| Month    | Uber  | Lyft  |
+| -------- | ----- | ----- |
+| Jan-23   | -7.0  | -11.0 |
+| Feb-23   | -7.0  | -8.0  |
+| Mar-23   | -7.0  | -8.0  |
+| Apr-23   | -6.0  | -8.0  |
+| May-23   | -6.0  | -9.0  |
+| Jun-23   | -7.0  | -9.0  |
+| Jul-23   | -8.0  | -10.0 |
+| Aug-23   | -7.0  | -9.0  |
+| Sep-23   | -7.0  | -8.0  |
+| Oct-23   | -7.0  | -7.0  |
+| Nov-23   | -7.0  | -8.0  |
+| Dec-23   | -7.0  | -9.0  |
+| Jan-24   | -7.0  | -9.0  |
+| Feb-24   | -7.0  | -8.0  |
+| Mar-24   | -7.0  | -8.0  |
+| Apr-24   | -7.0  | -8.0  |
+| May-24   | -7.0  | -8.0  |
+| Jun-24   | -7.0  | -7.0  |
+| Jul-24   | -7.0  | -7.0  |
+| Aug-24   | -7.0  | -7.0  |
+| Sep-24   | -7.0  | -7.0  |
+| Oct-24   | -7.0  | -7.0  |
+| Nov-24   | -7.0  | -7.0  |
+| Dec-24   | -7.0  | -7.0  |
+| Jan-25   | -7.0  | -8.0  |
+| Feb-25   | -7.0  | -8.0  |
+| Mar-25   | -7.0  | -8.0  |
+| Apr-25   | -6.0  | -6.0  |
+| May-25   | -6.0  | -8.0  |
+| Jun-25   | -6.0  | -8.0  |
+| Jul-25   | -7.0  | -8.0  |
+| Aug-25   | -7.0  | -7.0  |
+| Sep-25   | -7.0  | -6.0  |
+| Oct-25   | -7.0  | -6.0  |
+| Nov-25   | -7.0  | -6.0  |
+| Dec-25   | -7.0  | -6.0  |
+| Jan-26   | -7.0  | -6.0  |
+| Feb-26   | -7.0  | -6.0  |
+| Mar-26   | -7.0  | -6.0  |
+| Apr-26   | -7.0  | -6.0  |
+</details>
+
+Source: HundredX, Data compiled by GS Global Investment Research
+
+Exhibit 94: NPP Driver: Price   
+T3M   
+![](images/de181e74b5dbc286950ea81616983a9aae915abae138715372d9713d5725a3eb.jpg)
+
+<details>
+<summary>line</summary>
+
+| Month    | Uber  | Lyft  |
+| -------- | ----- | ----- |
+| Jan-23   | 0.5%  | 21.0% |
+| Feb-23   | 4.0%  | 24.0% |
+| Mar-23   | 4.5%  | 24.5% |
+| Apr-23   | 4.0%  | 24.0% |
+| May-23   | 3.5%  | 24.5% |
+| Jun-23   | 3.0%  | 25.0% |
+| Jul-23   | 4.5%  | 26.0% |
+| Aug-23   | 4.0%  | 24.5% |
+| Sep-23   | 3.5%  | 26.0% |
+| Oct-23   | 3.0%  | 27.0% |
+| Nov-23   | 2.5%  | 26.0% |
+| Dec-23   | -1.0% | 24.0% |
+| Jan-24   | -3.0% | 21.0% |
+| Feb-24   | -1.0% | 25.0% |
+| Mar-24   | 1.0%  | 26.0% |
+| Apr-24   | 2.0%  | 25.0% |
+| May-24   | 1.5%  | 21.0% |
+| Jun-24   | -1.0% | 20.0% |
+| Jul-24   | -1.5% | 21.0% |
+| Aug-24   | -1.0% | 19.0% |
+| Sep-24   | -1.5% | 18.0% |
+| Oct-24   | -3.0% | 17.0% |
+| Nov-24   | -4.0% | 17.5% |
+| Dec-24   | -5.0% | 16.5% |
+| Jan-25   | -4.5% | 17.0% |
+| Feb-25   | -3.5% | 18.5% |
+| Mar-25   | -3.0% | 21.0% |
+| Apr-25   | -3.5% | 20.5% |
+| May-25   | -4.0% | 19.5% |
+| Jun-25   | -3.5% | 16.5% |
+| Jul-25   | -1.0% | 23.0% |
+| Aug-25   | 4.5%  | 26.0% |
+| Sep-25   | 1.5%  | 24.0% |
+| Oct-25   | -1.0% | 23.0% |
+| Nov-25   | -3.0% | 26.0% |
+| Dec-25   | -6.0% | 27.0% |
+| Jan-26   | -4.0% | 26.0% |
+| Feb-26   | -3.0% | 25.0% |
+| Mar-26   | -3.5% | 24.5% |
+| Apr-26   | -3.0% | 24.0% |
+</details>
+
+Source: HundredX, Data compiled by GS Global Investment Research
+
+Exhibit 95: NPP Driver: Wait Time   
+T3M   
+![](images/ba99d161f2a74d180efb0a18443fdc329e67667ce97f38d94e9de7545695378f.jpg)
+
+<details>
+<summary>line</summary>
+
+| Month    | Uber  | Lyft  |
+| -------- | ----- | ----- |
+| Jan-23   | 30%   | 25%   |
+| Feb-23   | 31%   | 24%   |
+| Mar-23   | 32%   | 23%   |
+| Apr-23   | 33%   | 24%   |
+| May-23   | 34%   | 25%   |
+| Jun-23   | 33%   | 26%   |
+| Jul-23   | 32%   | 27%   |
+| Aug-23   | 31%   | 28%   |
+| Sep-23   | 32%   | 29%   |
+| Oct-23   | 33%   | 28%   |
+| Nov-23   | 34%   | 27%   |
+| Dec-23   | 33%   | 26%   |
+| Jan-24   | 32%   | 25%   |
+| Feb-24   | 31%   | 24%   |
+| Mar-24   | 32%   | 25%   |
+| Apr-24   | 33%   | 26%   |
+| May-24   | 34%   | 27%   |
+| Jun-24   | 35%   | 28%   |
+| Jul-24   | 36%   | 29%   |
+| Aug-24   | 35%   | 30%   |
+| Sep-24   | 34%   | 29%   |
+| Oct-24   | 33%   | 28%   |
+| Nov-24   | 32%   | 27%   |
+| Dec-24   | 31%   | 26%   |
+| Jan-25   | 30%   | 25%   |
+| Feb-25   | 31%   | 26%   |
+| Mar-25   | 32%   | 27%   |
+| Apr-25   | 33%   | 28%   |
+| May-25   | 34%   | 29%   |
+| Jun-25   | 35%   | 30%   |
+| Jul-25   | 36%   | 31%   |
+| Aug-25   | 37%   | 30%   |
+| Sep-25   | 36%   | 29%   |
+| Oct-25   | 35%   | 28%   |
+| Nov-25   | 34%   | 27%   |
+| Dec-25   | 33%   | 26%   |
+| Jan-26   | 34%   | 27%   |
+| Feb-26   | 35%   | 28%   |
+| Mar-26   | 36%   | 29%   |
+| Apr-26   | 37%   | 30%   |
+</details>
+
+Source: HundredX, Data compiled by GS Global Investment Research
+
+# Food Delivery
+
+# SensorTower
+
+By Weekly Active Users - Both globally and in the US, DoorDash WAUs grew during the period (+20%/+20% YoY). Instacart on the other hand saw WAUs decline both globally and in the US (-3%/-5% YoY).   
+By Monthly Sessions - Monthly sessions globally and in the US remained solid and grew at both DoorDash (+30%/+31% YoY) and Instacart (+13%/+12% YoY) in April.
+
+Exhibit 96: Indexed Weekly Active Users - US   
+Indexed to week of 12/26/2022 = 100   
+![](images/0c93143985db85a431683761fa093159178c0a2ad3f7f6aacb1909440084d450.jpg)
+
+<details>
+<summary>line</summary>
+
+| Month    | DoorDash | Uber Eats | Instacart |
+|----------|----------|-----------|-----------|
+| Dec-22   | 100      | 95        | 100       |
+| Jan-23   | 105      | 98        | 102       |
+| Feb-23   | 108      | 100       | 105       |
+| Mar-23   | 110      | 102       | 108       |
+| Apr-23   | 112      | 105       | 110       |
+| May-23   | 115      | 108       | 112       |
+| Jun-23   | 118      | 110       | 115       |
+| Jul-23   | 120      | 112       | 118       |
+| Aug-23   | 122      | 115       | 120       |
+| Sep-23   | 125      | 118       | 122       |
+| Oct-23   | 128      | 120       | 125       |
+| Nov-23   | 130      | 122       | 128       |
+| Dec-23   | 132      | 125       | 130       |
+| Jan-24   | 135      | 128       | 132       |
+| Feb-24   | 138      | 130       | 135       |
+| Mar-24   | 140      | 132       | 138       |
+| Apr-24   | 142      | 135       | 140       |
+| May-24   | 145      | 138       | 142       |
+| Jun-24   | 148      | 140       | 145       |
+| Jul-24   | 150      | 142       | 148       |
+| Aug-24   | 152      | 145       | 150       |
+| Sep-24   | 155      | 148       | 152       |
+| Oct-24   | 158      | 150       | 155       |
+| Nov-24   | 160      | 152       | 158       |
+| Dec-24   | 162      | 155       | 160       |
+| Jan-25   | 165      | 158       | 162       |
+| Feb-25   | 168      | 160       | 165       |
+| Mar-25   | 170      | 162       | 168       |
+| Apr-25   | 172      | 165       | 170       |
+| May-25   | 175      | 168       | 172       |
+| Jun-25   | 178      | 170       | 175       |
+| Jul-25   | 180      | 172       | 178       |
+| Aug-25   | 182      | 175       | 180       |
+| Sep-25   | 185      | 178       | 182       |
+| Oct-25   | 188      | 180       | 185       |
+| Nov-25   | 190      | 182       | 188       |
+| Dec-25   | 192      | 185       | 190       |
+| Jan-26   | 195      | 188       | 192       |
+| Feb-26   | 198      | 190       | 195       |
+| Mar-26   | 200      | 192       | 198       |
+| Apr-26   | 202      | 195       | 200       |
+</details>
+
+Source: SensorTower, Data compiled by GS Global Investment Research
+
+Exhibit 97: Indexed Sessions - Global   
+Indexed to Jan 2023 = 100   
+![](images/a62c59cc619ff666a7800a871d3d0ab1178b35dfc6fd062ed147ca8f38de6092.jpg)
+
+<details>
+<summary>line</summary>
+
+| Month    | DoorDash | Uber Eats | Instacart |
+|----------|----------|-----------|-----------|
+| Jan-23   | 100      | 100       | 100       |
+| Feb-23   | 105      | 95        | 95        |
+| Mar-23   | 110      | 98        | 98        |
+| Apr-23   | 108      | 97        | 97        |
+| May-23   | 112      | 99        | 99        |
+| Jun-23   | 115      | 100       | 100       |
+| Jul-23   | 110      | 98        | 98        |
+| Aug-23   | 108      | 97        | 97        |
+| Sep-23   | 112      | 99        | 99        |
+| Oct-23   | 115      | 100       | 100       |
+| Nov-23   | 118      | 102       | 102       |
+| Dec-23   | 120      | 105       | 105       |
+| Jan-24   | 122      | 108       | 108       |
+| Feb-24   | 125      | 110       | 110       |
+| Mar-24   | 128      | 112       | 112       |
+| Apr-24   | 130      | 115       | 115       |
+| May-24   | 132      | 118       | 118       |
+| Jun-24   | 135      | 120       | 120       |
+| Jul-24   | 138      | 122       | 122       |
+| Aug-24   | 140      | 125       | 125       |
+| Sep-24   | 142      | 128       | 128       |
+| Oct-24   | 145      | 130       | 130       |
+| Nov-24   | 148      | 132       | 132       |
+| Dec-24   | 150      | 135       | 135       |
+| Jan-25   | 152      | 138       | 138       |
+| Feb-25   | 155      | 140       | 140       |
+| Mar-25   | 158      | 142       | 142       |
+| Apr-25   | 160      | 145       | 145       |
+| May-25   | 162      | 148       | 148       |
+| Jun-25   | 165      | 150       | 150       |
+| Jul-25   | 168      | 152       | 152       |
+| Aug-25   | 170      | 155       | 155       |
+| Sep-25   | 172      | 158       | 158       |
+| Oct-25   | 175      | 160       | 160       |
+| Nov-25   | 178      | 162       | 162       |
+| Dec-25   | 180      | 165       | 165       |
+| Jan-26   | 182      | 168       | 168       |
+| Feb-26   | 185      | 170       | 170       |
+| Mar-26   | 190      | 175       | 175       |
+| Apr-26   | 195      | 180       | 180       |
+</details>
+
+Source: SensorTower, Data compiled by GS Global Investment Research
+
+Exhibit 98: Indexed Sessions - US   
+Indexed to Jan 2023 = 100   
+![](images/789101390f9277572ed2ee888c0602ed867934a2e03e99bdbde3e39b97069a64.jpg)
+
+<details>
+<summary>line</summary>
+
+| Month    | DoorDash | Uber Eats | Instacart |
+|----------|----------|-----------|-----------|
+| Jan-23   | 100      | 100       | 100       |
+| Feb-23   | 105      | 98        | 97        |
+| Mar-23   | 110      | 99        | 95        |
+| Apr-23   | 115      | 97        | 93        |
+| May-23   | 112      | 98        | 92        |
+| Jun-23   | 110      | 99        | 94        |
+| Jul-23   | 108      | 97        | 96        |
+| Aug-23   | 110      | 98        | 98        |
+| Sep-23   | 115      | 99        | 100       |
+| Oct-23   | 120      | 100       | 105       |
+| Nov-23   | 125      | 102       | 110       |
+| Dec-23   | 130      | 105       | 115       |
+| Jan-24   | 135      | 108       | 120       |
+| Feb-24   | 140      | 110       | 125       |
+| Mar-24   | 145      | 112       | 130       |
+| Apr-24   | 150      | 115       | 135       |
+| May-24   | 155      | 118       | 140       |
+| Jun-24   | 160      | 120       | 145       |
+| Jul-24   | 165      | 122       | 150       |
+| Aug-24   | 170      | 125       | 155       |
+| Sep-24   | 175      | 128       | 160       |
+| Oct-24   | 180      | 130       | 165       |
+| Nov-24   | 185      | 132       | 170       |
+| Dec-24   | 190      | 135       | 175       |
+| Jan-25   | 195      | 138       | 180       |
+| Feb-25   | 200      | 140       | 185       |
+| Mar-25   | 205      | 142       | 190       |
+| Apr-25   | 210      | 145       | 195       |
+| May-25   | 205      | 148       | 200       |
+| Jun-25   | 200      | 150       | 205       |
+| Jul-25   | 195      | 152       | 210       |
+| Aug-25   | 190      | 155       | 215       |
+| Sep-25   | 185      | 158       | 220       |
+| Oct-25   | 180      | 160       | 225       |
+| Nov-25   | 175      | 162       | 230       |
+| Dec-25   | 170      | 165       | 235       |
+| Jan-26   | 165      | 168       | 240       |
+| Feb-26   | 160      | 170       | 245       |
+| Mar-26   | 155      | 172       | 250       |
+| Apr-26   | 150      | 175       | 255       |
+</details>
+
+Source: SensorTower, Data compiled by GS Global Investment Research
+
+# Online Travel
+
+# SensorTower
+
+By Weekly Active Users - Growth both in the US and globally was positive across Airbnb (+6%/+20% YoY), Expedia (+2%/+7% YoY), and Booking.com (+2%/+3% YoY) during the period, while less scaled apps continued to experience WAU declines.   
+By Monthly Sessions - Monthly sessions improved both in the US and globally during April at Booking.com (+6%/+5% YoY), Expedia (+9%/+8% YoY), and Airbnb (+3%/+19% YoY).
+
+# HundredX
+
+NPS - The NPS score for the comp set remained steady sequentially while improving VRBO on a T3M basis during April 2026.   
+NPI - NPI scores improved to $-1\%$ for Tripadvisor, staying ahead of the peer group along with Airbnb, during the period.   
+NPP Driver (Prices) - For Expedia, “Prices” as an NPP driver continued to outperform the broader comp group, improving sequentially on a T3M basis in April 2026.   
+NPP Driver (Booking Option Variety) - “Booking Option Variety” as an NPP driver declined sequentially at Airbnb, Trivago and Priceline.com.
+
+Exhibit 99: Indexed Weekly Active Users - Global Indexed to week of 12/26/2022 = 100   
+![](images/49ca46df33763655ab8672e36d155c9b667729d1fbc8f48c567989c1ef598475.jpg)
+
+<details>
+<summary>line</summary>
+
+| Date    | Booking.com | Expedia | Airbnb | Priceline | Tripadvisor |
+|---------|-------------|---------|--------|-----------|-------------|
+| Dec-22  | 100         | 100     | 100    | 100       | 100         |
+| Jan-23  | 105         | 102     | 103    | 104       | 101         |
+| Feb-23  | 110         | 105     | 106    | 107       | 103         |
+| Mar-23  | 115         | 108     | 109    | 109       | 105         |
+| Apr-23  | 120         | 110     | 112    | 111       | 107         |
+| May-23  | 125         | 112     | 114    | 113       | 109         |
+| Jun-23  | 130         | 115     | 116    | 115       | 111         |
+| Jul-23  | 128         | 113     | 114    | 112       | 109         |
+| Aug-23  | 125         | 110     | 112    | 110       | 107         |
+| Sep-23  | 120         | 108     | 110    | 108       | 105         |
+| Oct-23  | 115         | 105     | 108    | 105       | 103         |
+| Nov-23  | 110         | 102     | 105    | 102       | 99          |
+| Dec-23  | 105         | 99      | 102    | 99        | 95          |
+| Jan-24  | 100         | 96      | 99     | 96        | 92          |
+| Feb-24  | 95          | 93      | 96     | 93        | 89          |
+| Mar-24  | 90          | 90      | 93     | 90        | 86          |
+| Apr-24  | 85          | 87      | 90     | 87        | 83          |
+| May-24  | 80          | 83      | 87     | 83        | 80          |
+| Jun-24  | 75          | 78      | 84     | 78        | 75          |
+| Jul-24  | 70          | 73      | 81     | 73        | 72          |
+| Aug-24  | 65          | 68      | 78     | 68        | 69          |
+| Sep-24  | 60          | 63      | 75     | 63        | 65          |
+| Oct-24  | 55          | 58      | 72     | 58        | 62          |
+| Nov-24  | 50          | 53      | 69     | 53        | 59          |
+| Dec-24  | 45          | 48      | 66     | 48        | 56          |
+| Jan-25  | 40          | 43      | 63     | 43        | 53          |
+| Feb-25  | 35          | 38      | 60     | 38        | 50          |
+| Mar-25  | 30          | 33      | 57     | 33        | 47          |
+| Apr-25  | 25          | 28      | 54     | 28        | 44          |
+| May-25  | 20          | 23      | 51     | 23        | 41          |
+| Jun-25  | 15          | 18      | 48     | 18        | 38          |
+| Jul-25  | 10          | 13      | 45     | 13        | 35          |
+| Aug-25  | -           | -       | -      | -         | -           |
+| Sep-25  | -           | -       | -      | -         | -           |
+| Oct-25  | -           | -       | -      | -         | -           |
+| Nov-25  | -           | -       | -      | -         | -           |
+| Dec-25  | -           | -       | -      | -         | -           |
+| Jan-26* | -           | -       | -      | -         | -           |
+| Feb-26* | -           | -       | -      | -         | -           |
+| Mar-26* | -           | -       | -      | -         | -           |
+| Apr-26* | -           | -       | -      | -         | -           |
+| May-26* | -           | -       | -      | -         | -           |
+| Jun-26* | -           | -       | -      | -         | -           |
+| Jul-26* | -           | -       | -      | -         | -           |
+| Aug-26* | -           | -       | -      | -         | -           |
+| Sep-26* | -           | -       | -      | -         | -           |
+| Oct-26* | -           | -       | -      | -         | -           |
+| Nov-26* | -           | -       | -      | -         | -           |
+| Dec-26* | -           | -       | -      | -         | -           |
+| Jan-27*+<fcel>-           (repeated)   +            (repeated)   +            +            +            +            +            +            +            +            +            +            +            +            +            +            +            +            +            +            +            +            +            +            +            +            +            +            +            +            +            +            +            +            +            +            +            +            +            +            +            +            +            +            +            +            +            +            +            +            +            +            +             )        |
+| Feb-27*+<fcel>-           (repeated)   +              (repeated)   +              (repeated)   +              (repeated)   +              (repeated)   +              (repeated)   +              (repeated)   +              (repeated)   +              (repeated)   +              (repeated)   +              (repeated)   +              (repeated)   +              (repeated)   +              (repeated)   +              (repeated)   +              (ranging from ~40 to ~80)   +              (ranging from ~40 to ~80)   +              (ranging from ~40 to ~80)   +              (ranging from ~40 to ~80)   +              (ranging from ~40 to ~80)   +              (ranging from ~40 to ~80)   +              (ranging from ~40 to ~80)   +              (ranging from ~80 to ~80)   +              (ranging from ~80 to ~80)   +              (ranging from ~80 to ~80)   +              (ranging from ~80 to ~80)   +              (ranging from ~80 to ~80)   +              (ranging from ~80 to ~80)   +              (ranging from ~80 to ~80)   +              (-)               .             .             .             .             .             .             .             .             .             .             .             .             .             .             .             .             .             .             .             .             .             .             .             .             .             .             .             .             .             .             .             .             .             .             .             .             .             .             .             .             .             .             .             .             .             .             .             .             .             .             .                     |
+</details>
+
+Source: SensorTower, Data compiled by GS Global Investment Research
+
+Exhibit 100: Indexed Weekly Active Users - US
+Indexed to week of 12/26/2022 = 100   
+![](images/e2647cbfc3ee69d1da1e7268947794819ba34eb2a6706116d0ece920248b0b60.jpg)  
+Source: SensorTower, Data compiled by GS Global Investment Research
+
+Exhibit 101: Indexed Sessions - Global   
+Indexed to Jan 2023 = 100   
+![](images/939690ad273b004143e5f1e0793314343f3e1f851a138f27e4f33af1e9973e75.jpg)  
+Source: SensorTower, Data compiled by GS Global Investment Research
+
+Exhibit 103: Net Promoter Score   
+T3M   
+![](images/5d11766cbd1a08024fc934ddff9226ff0970e8b747f02bd46345115fe589cbbf.jpg)
+
+<details>
+<summary>line</summary>
+
+| Month    | Expedia.com | Booking.com | Tripadvisor | Trivago | Priceline.com | VRBO | Airbnb |
+|----------|-------------|-------------|-------------|---------|---------------|------|-------|
+| Jan-23   | 25          | 28          | 27          | 23      | 16            | 29   | 24    |
+| Feb-23   | 26          | 29          | 28          | 24      | 15            | 30   | 25    |
+| Mar-23   | 27          | 30          | 29          | 25      | 14            | 31   | 26    |
+| Apr-23   | 28          | 31          | 30          | 26      | 13            | 32   | 27    |
+| May-23   | 29          | 32          | 31          | 27      | 12            | 33   | 28    |
+| Jun-23   | 30          | 33          | 32          | 28      | 11            | 34   | 29    |
+| Jul-23   | 31          | 34          | 33          | 29      | 10            | 35   | 30    |
+| Aug-23   | 32          | 35          | 34          | 30      | 9             | 36   | 31    |
+| Sep-23   | 33          | 36          | 35          | 31      | 8             | 37   | 32    |
+| Oct-23   | 34          | 37          | 36          | 32      | 7             | 38   | 33    |
+| Nov-23   | 35          | 38          | 37          | 33      | 6             | 39   | 34    |
+| Dec-23   | 36          | 39          | 38          | 34      | 5             | 40   | 35    |
+| Jan-24   | 37          | 40          | 39          | 35      | 4             | 41   | 36    |
+| Feb-24   | 38          | 41          | 40          | 36      | 3             | 42   | 37    |
+| Mar-24   | 39          | 42          | 41          | 37      | 2             | 43   | 38    |
+| Apr-24   | 40          | 43          | 42          | 38      | 1             | 44   | 39    |
+| May-24   | 41          | 44          | 43          | 39      | 0             | 45   | 40    |
+| Jun-24   | 42          | 45          | 44          | 40      | -1            | 46   | 41    |
+| Jul-24   | 43          | 46          | 45          | 41      | -2            | 47   | 42    |
+| Aug-24   | 44          | 47          | 46          | 42      | -3            | 48   | 43    |
+| Sep-24   | 45          | 48          | 47          | 43      | -4            | 49   | 44    |
+| Oct-24   | 46          | 49          | 48          | 44      | -5            | 50   | 45    |
+| Nov-24   | 47          | 50          | 49          | 45      | -6            | 51   | 46    |
+| Dec-24   | 48          | 51          | 50          | 46      | -7            | 52   | 47    |
+| Jan-25   | 49          | 52          | 51          | 47      | -8            | 53   | 48    |
+| Feb-25   | 50          | 53          | 52          | 48      | -9            | 54   | 49    |
+| Mar-25   | 51          | 54          | 53          | 49      | -10           | 55   | 50    |
+| Apr-25   | 52          | 55          | 54          | 50      | -11           | 56   | 51    |
+| May-25   | 53          | 56          | 55          | 51      | -12           | 57   | 52    |
+| Jun-25   | 54          | 57          | 56          | 52      | -13           | 58   | 53    |
+| Jul-25   | 55          | 58          | 57          | 53      | -14           | 59   | 54    |
+| Aug-25   | 56          | 59          | 58          | 54      | -15           | 60   | 55    |
+| Sep-25   | 57          | 60          | 59          | 55      | -16           | 61   | 56    |
+| Oct-25   | 58          | 61          | 60          | 56      | -17           | 62   | 57    |
+| Nov-25   | 59          | 62          | 61          | 57      | -18           | 63   | 58    |
+| Dec-25   | 60          | 63          | 62          | 58      | -19           | 64   | 59    |
+| Jan-26   | 61          | 64          | 63          | 59      | -20           | 65   | 60    |
+| Feb-26   | 62          | 65          | 64          | 60      | -21           | 66   | 61    |
+| Mar-26   | 63          | 66          | 65          | 61      | -22           | 67   | 62    |
+| Apr-26   |
+</details>
+
+Source: HundredX, Data compiled by GS Global Investment Research
+
+Exhibit 105: NPP Driver: Price   
+T3M   
+![](images/12896f7452d959882d40ec4191151dd32e597f8580fab8ae611fda0a80bfc13e.jpg)  
+Source: HundredX, Data compiled by GS Global Investment Research
+
+Exhibit 102: Indexed Sessions - US   
+Indexed to Jan 2023 = 100   
+![](images/9f25fb0bb563b0d1cb2998c30c0d67dc6d6395be473e0f2329f0cfed6ce7e831.jpg)  
+Source: SensorTower, Data compiled by GS Global Investment Research
+
+Exhibit 104: Net Purchase Intent   
+T3M   
+![](images/8e6aef666f08bcda9f98a64f74760eb9a65636895ea36676d3c81b3922ef2755.jpg)  
+Source: HundredX, Data compiled by GS Global Investment Research
+
+Exhibit 106: NPP Driver: Booking Option Variety   
+T3M   
+![](images/19b1c0eef6cec962918ba3088ee7a58355d1da4d984ef6d0f4f496803be8dd93.jpg)  
+Source: HundredX, Data compiled by GS Global Investment Research
+
+# Online Gambling
+
+# SensorTower
+
+By Monthly Active Users - Online Gambling MAUs in the US declined YoY at DraftKings (-3%), FanDuel (-15%), and BetMGM (-22%) during April.   
+By Number of Monthly App Sessions - User sessions at DraftKings grew +22% YoY in the US during April, while BetMGM & FanDuel app sessions declined at -35%/-22% YoY.
+
+# HundredX
+
+NPS - NPS scores remained stable across the broader comp group during April 2026 (on a T3M basis).   
+NPI - Paired with the NPS scores, NPI scores were also stable sequentially for the comp set during April 2026 on a T3M basis.   
+NPP Driver (Lines / Odds) - “Lines/Odds” as an NPP driver overall declined across the comp set from February 2026 to April 2026.   
+NPP Driver (Entertaining) - “Entertaining” trends improved sequentially at BetMGM, Betrivers and Fanatics during April 2026.
+
+Exhibit 107: Indexed Monthly Active Users - US
+Indexed to Jan 2023 = 100   
+![](images/985bebbfb2a549d2bd8dfec3e9e32b4bb899c47e423b4d972fcc9a2b3c3786c0.jpg)
+
+<details>
+<summary>line</summary>
+
+| Month   | DraftKings | BetMGM | FanDuel |
+|---------|------------|--------|---------|
+| Jan-23  | 90         | 90     | 90      |
+| Feb-23  | 70         | 70     | 70      |
+| Mar-23  | 70         | 70     | 70      |
+| Apr-23  | 70         | 70     | 70      |
+| May-23  | 70         | 70     | 70      |
+| Jun-23  | 70         | 70     | 70      |
+| Jul-23  | 60         | 60     | 60      |
+| Aug-23  | 110        | 110    | 110     |
+| Sep-23  | 110        | 110    | 110     |
+| Oct-23  | 110        | 110    | 110     |
+| Nov-23  | 110        | 110    | 110     |
+| Dec-23  | 110        | 110    | 110     |
+| Jan-24  | 130        | 130    | 130     |
+| Feb-24  | 130        | 130    | 130     |
+| Mar-24  | 130        | 130    | 130     |
+| Apr-24  | 130        | 130    | 130     |
+| May-24  | 130        | 130    | 130     |
+| Jun-24  | 130        | 130    | 130     |
+| Jul-24  | 90         | 90     | 90      |
+| Aug-24  | 150        | 150    | 150     |
+| Sep-24  | 150        | 150    | 150     |
+| Oct-24  | 150        | 150    | 150     |
+| Nov-24  | 150        | 150    | 150     |
+| Dec-24  | 150        | 150    | 150     |
+| Jan-25  | 150        | 150    | 150     |
+| Feb-25  | 150        | 150    | 150     |
+| Mar-25  | 150        | 150    | 150     |
+| Apr-25  | 150        | 150    | 150     |
+| May-25  | 150        | 150    | 150     |
+| Jun-25  | 90         | 90     | 90      |
+| Jul-25  | 90         | 90     | 90      |
+| Aug-25  | 90         | 90     | 90      |
+| Sep-25  | 90         | 90     | 90      |
+| Oct-25  | 90         | 90     | 90      |
+| Nov-25  | 90         | 90     | 90      |
+| Dec-25  | 90         | 90     | 90      |
+| Jan-26  | 90         | 90     | 90      |
+| Feb-26  | 90         | 90     | 90      |
+| Mar-26  | 90         | 90     | 90      |
+| Apr-26  | 90         | 90     | 90      |
+</details>
+
+Source: SensorTower, Data compiled by GS Global Investment Research
+
+Exhibit 108: Indexed App Sessions - US
+Indexed to Jan 2023 = 100   
+![](images/ef59dba01014905107e34057bac0ad64217c464d7229bd3e489684f599b7d03b.jpg)
+
+<details>
+<summary>line</summary>
+
+| Month   | DraftKings | BetMGM | FanDuel |
+|---------|------------|--------|---------|
+| Jan-23  | 100        | 100    | 100     |
+| Feb-23  | 80         | 70     | 70      |
+| Mar-23  | 90         | 60     | 60      |
+| Apr-23  | 80         | 50     | 50      |
+| May-23  | 70         | 40     | 40      |
+| Jun-23  | 60         | 30     | 30      |
+| Jul-23  | 50         | 20     | 20      |
+| Aug-23  | 130        | 190    | 110     |
+| Sep-23  | 120        | 170    | 100     |
+| Oct-23  | 110        | 150    | 90      |
+| Nov-23  | 100        | 130    | 80      |
+| Dec-23  | 90         | 110    | 70      |
+| Jan-24  | 80         | 90     | 60      |
+| Feb-24  | 70         | 80     | 50      |
+| Mar-24  | 60         | 70     | 40      |
+| Apr-24  | 50         | 60     | 30      |
+| May-24  | 40         | 50     | 20      |
+| Jun-24  | 30         | 40     | 10      |
+| Jul-24  | 20         | 30     | 5       |
+| Aug-24  | 10         | 20     | 10      |
+| Sep-24  | 5          | 10     | 5       |
+| Oct-24  | 15         | 13     | 12      |
+| Nov-24  | 20         | 17     | 15      |
+| Dec-24  | 18         | 15     | 13      |
+| Jan-25  | 16         | 13     | 11      |
+| Feb-25  | 14         | 11     | 9       |
+| Mar-25  | 12         | 9      | 7       |
+| Apr-25  | 10         | 7      | 5       |
+| May-25  | 8          | 5      | 3       |
+| Jun-25  | 6          | 3      | 1       |
+| Jul-25  | 4          | 1      | -1      |
+| Aug-25  | 2          | -1     | -5      |
+| Sep-25  | -1         | -5     | -10     |
+| Oct-25  | -3         | -10    | -15     |
+| Nov-25  | -5         | -15    | -20     |
+| Dec-25  | -7         | -20    | -25     |
+| Jan-26  | -9         | -25    | -30     |
+| Feb-26  | -11        | -30    | -35     |
+| Mar-26  | -13        | -35    | -40     |
+| Apr-26  | -15        | -40    | -45     |
+</details>
+
+Source: SensorTower, Data compiled by GS Global Investment Research
+
+Exhibit 109: Net Promoter Score T3M   
+![](images/dcc443851d577836a52e03ca8eda6c3a2b30582018ff7f775611a33b4377401f.jpg)  
+Source: HundredX, Data compiled by GS Global Investment Research
+
+Exhibit 110: Net Purchase Intent
+T3M   
+![](images/92bdef6762c2d8db8aa2bcbdd2af3610af392e1dd78759796f8e5af77da10fbc.jpg)  
+Source: HundredX, Data compiled by GS Global Investment Research
+
+Exhibit 111: NPP Driver: Lines / Odds
+T3M   
+![](images/0eb37e691a6ee2ac1c893a452ff67f98bee6ec668e143332cb2647905518b37e.jpg)
+
+<details>
+<summary>line</summary>
+
+| Month   | DraftKings | BetMGM | FanDuel |
+|---------|------------|--------|---------|
+| Jan-23  | 37%        | 16%    | 32%     |
+| Feb-23  | 34%        | 26%    | 37%     |
+| Mar-23  | 24%        | 34%    | 39%     |
+| Apr-23  | 28%        | 32%    | 40%     |
+| May-23  | 30%        | 26%    | 38%     |
+| Jun-23  | 35%        | 22%    | 36%     |
+| Jul-23  | 36%        | 18%    | 34%     |
+| Aug-23  | 30%        | 16%    | 30%     |
+| Sep-23  | 32%        | 16%    | 34%     |
+| Oct-23  | 34%        | 18%    | 36%     |
+| Nov-23  | 35%        | 28%    | 37%     |
+| Dec-23  | 35%        | 35%    | 36%     |
+| Jan-24  | 34%        | 35%    | 36%     |
+| Feb-24  | 32%        | 30%    | 35%     |
+| Mar-24  | 34%        | 18%    | 37%     |
+| Apr-24  | 35%        | 18%    | 38%     |
+| May-24  | 34%        | 22%    | 37%     |
+| Jun-24  | 34%        | 22%    | 36%     |
+| Jul-24  | 34%        | 28%    | 35%     |
+| Aug-24  | 34%        | 22%    | 34%     |
+| Sep-24  | 34%        | 22%    | 34%     |
+| Oct-24  | 34%        | 16%    | 34%     |
+| Nov-24  | 34%        | 16%    | 34%     |
+| Dec-24  | 34%        | 24%    | 34%     |
+| Jan-25  | 34%        | 28%    | 34%     |
+| Feb-25  | 34%        | 18%    | 34%     |
+| Mar-25  | 34%        | 18%    | 34%     |
+| Apr-25  | 38%        | 12%    | 34%     |
+| May-25  | 30%        | 16%    | 34%     |
+| Jun-25  | 30%        | 16%    | 34%     |
+| Jul-25  | 28%        | 16%    | 34%     |
+| Aug-25  | 28%        | 16%    | 34%     |
+| Sep-25  | 28%        | 16%    | 34%     |
+| Oct-25  | 28%        | 16%    | 34%     |
+| Nov-25  | 28%        | 16%    | 34%     |
+| Dec-25  | 28%        | 16%    | 34%     |
+| Jan-26  | 28%        | 16%    | 34%     |
+| Feb-26  | 28%        | 16%    | 34%     |
+| Mar-26  | 28%        | 16%    | 34%     |
+| Apr-26  | 20%        | 16%    | 18%     |
+</details>
+
+Source: HundredX, Data compiled by GS Global Investment Research
+
+Exhibit 112: NPP Driver: Entertaining T3M   
+![](images/38810577984ba8c1f3d389cf8ac3529006aa593210d40ac0f415674a35a88851.jpg)  
+Source: HundredX, Data compiled by GS Global Investment Research
+
+# Valuation
+
+# Alphabet Inc. (GOOGL)
+
+Our \$450, 12-month price target (unchanged) is based on an equal blend of (1) EV/GAAP EBIT applied to our NTM + 1 year estimates and (2) a modified DCF using EV/FCF-SBC multiple applied to our NTM + 4 years estimates discounted back 3 years.
+
+Risks to our Buy rating include: a) competition of product utility levels and advertising dollars; b) headwinds to monetizable (product) search from industry disruption; c) shifting media consumption habits; d) heavy investments depress operating margins for longer than our forecasts; e) no/low levels of incremental shareholder returns going forward; & f) regulatory scrutiny and industry practices altering the business model's prospects. In addition, Alphabet is exposed to the volatility caused by the global macroeconomic environment and investor risk appetite for growth stocks.
+
+# Amazon.com Inc. (AMZN)
+
+Our 12m PT of \$325 (unchanged) is based on: (1) An equal blend of EV/GAAP EBITDA applied to our NTM+1 estimates and a modified DCF using an EV/(FCF-SBC) multiple applied to our NTM+4 estimates discounted back 3 years; (2) SOTP of EV/EBIT applied to North America and AWS segments, and EV/Sales applied to the International segment, all based on NTM+1 estimates.
+
+Risks to our Buy rating include: a) Any impact to eCommerce or Cloud growth from competition; b) lack of success in scaling high margin businesses including Advertising, Cloud, third-party selling and the sUBScription business; investments across any array of initiatives creating a headwind to gross or operating margin; c) any product or platform changes necessary to comply with changes to the global regulatory environment; & d) exposure to the volatility caused by the global macroeconomic environment and investor risk appetite for growth stocks.
+
+# DoorDash Inc. (DASH)
+
+Our \$280, 12-month price target (unchanged) is based on an equal blend of (1) EV/GAAP EBITDA applied to our NTM + 1 year estimates and (2) a modified DCF using an EV/FCF-SBC multiple applied to our NTM + 4 years estimates discounted back 3 years.
+
+Risks to our Buy rating include: Uncertainty around the health of the consumer and potential for slower growth for food delivery; Higher levels of marketing spend required to drive both demand and supply growth in its marketplace; Potential changes in regulation of restaurant commissions and worker classification laws; Competitive intensity increasing for local commerce (food delivery & commerce); Expansion into international markets (contribution to growth vs. costs/investments needed to launch such markets organically or inorganically); Medium-term profitability vs. Street estimates; Volatility caused by the global macroeconomic environment & investor risk appetite for growth stocks.
+
+# Meta Platforms Inc. (META):
+
+Our \$830, 12-month price target (unchanged) is based on an equal blend of (1)
+
+EV/GAAP EBIT applied to our NTM + 1 year estimates and (2) a modified DCF using EV/FCF-SBC multiple applied to our NTM + 4 years estimates.
+
+Risks to our Buy rating include: a) competition for user growth, user engagement & advertising dollars across an array of incumbent and emerging Internet, media and commerce companies; b) large investments in long-tailed initiatives depress operating margins for longer than our forecasts; c) no/low levels of incremental shareholder returns going forward; d) regulatory scrutiny and industry practices altering the business model's prospects; e) potential antitrust scrutiny could prove to be a headwind to M&A aspiration (to add talent and product innovation inorganically) and/or result in a break-up or dis-synergies of prior period M&A activity; & f) inability to monetize upside optionality opportunities (messaging layer, social commerce/shopping, Oculus/Metaverse). In addition, Meta is exposed to the volatility caused by the global macroeconomic environment and investor risk appetite for growth stocks.
+
+# Netflix Inc. (NFLX)
+
+Our \$120 (unchanged), 12-month price target is based on an equal blend of: (1) EV/GAAP EBITDA applied to our NTM + 1 year estimates and; (2) a modified DCF using EV/FCF-SBC multiple applied to our NTM + 4 years estimates discounted back 3 years.
+
+Risks to our Buy rating include: sUBScriber growth (disappointing to the downside vs. our estimates); timing and magnitude of price increases and resulting impact on churn levels could result in lower operating estimates; slower than expected execution on ad-supported tier initiative; M&A and related risks (integration, execution, regulatory, etc.); and levels of industry competition & impact on sUBScriber growth, original content and consumer attention.
+
+# Spotify Technology S.A. (SPOT)
+
+Our \$600, 12-month price target (unchanged) is based on an equal blend of: (1) EV/GAAP EBITDA applied to our NTM + 1 year estimates and; (2) a modified DCF using EV/FCF-SBC multiple applied to our NTM + 4 years estimates discounted back 3 years.
+
+Risks to our Buy rating include: a) a heightened competitive environment that would negatively impact our premium sUBScriber and MAUs estimates as well as potential headwinds to engagement and retention; b) recent and upcoming price increases driving higher-than-expected churn; c) inability to execute on the advertising opportunity (especially around opening up the long-tail of advertising through self-serve products and direct response advertising), resulting in slower growth rates than currently modeled; d) a reversal in gross margin momentum on the back of slower marketplace growth than expected, less favorable music content costs, incremental levels of investments for audiobooks and podcasts, and overall revenue mix skewing to lower margin segments; & e) increased investments into the platform (overall user experience, advertising, audiobooks) as well as higher levels of sales & marketing investments (on the back of a potentially heightened competitive environment) could weigh on operating margins.
+
+# Uber Technologies Inc. (UBER)
+
+Our \$115, 12-month price target (unchanged) is based on an equal blend of (1) EV/GAAP EBITDA applied to our NTM + 1 year estimates and (2) a modified DCF using an
+
+EV/FCF-SBC multiple applied to our NTM + 4 years estimates discounted back 3 years.
+
+Risks to our Buy rating include: a) Slower growth in Mobility due to demand elasticity, maturation, competition from Autonomous Vehicles, etc.; b) Regulatory environment around driver classification (incl. compensation, benefits, etc.), merchant commission caps, ESG, etc.; c) Competitive forces in both Mobility and Delivery (incl. local commerce/logistics); d) Normalization of consumer discretionary spend habits within Delivery; and e) volatility caused by the global macroeconomic environment and investor risk appetite for growth stocks.
+
+# Disclosure Appendix
+
+# Reg AC
+
+We, Eric Sheridan, Alex Vegliante, CFA, Julia Fein-Ashley, Aarshiya Sachdeva, Achal Gupta and Emma Huang, hereby certify that all of the views expressed in this report accurately reflect our personal views about the subject company or companies and its or their securities. We also certify that no part of our compensation was, is or will be, directly or indirectly, related to the specific recommendations or views expressed in this report.
+
+Unless otherwise stated, the individuals listed on the cover page of this report are analysts in GS' Global Investment Research division.
+
+Contributing Authors: Eric Sheridan GS & Co. LLC, Alex Vegliante, CFA GS & Co. LLC, Julia Fein-Ashley GS & Co. LLC, Aarshiya Sachdeva GS & Co. LLC, Achal Gupta GS India SPL, Emma Huang GS & Co. LLC.
+
+Unless otherwise stated, the individuals listed in the Contributing Authors disclosure of this report are analysts in GS' Global Investment Research division.
+
+# GS Factor Profile
+
+The GS Factor Profile provides investment context for a stock by comparing key attributes to the market (i.e. our universe of rated stocks) and its sector peers. The four key attributes depicted are: Growth, Financial Returns, Multiple (e.g. valuation) and Integrated (a composite of Growth, Financial Returns and Multiple). Growth, Financial Returns and Multiple are calculated by using normalized ranks for specific metrics for each stock. The normalized ranks for the metrics are then averaged and converted into percentiles for the relevant attribute. The precise calculation of each metric may vary depending on the fiscal year, industry and region, but the standard approach is as follows:
+
+Growth is based on a stock's forward-looking sales growth, EBITDA growth and EPS growth (for financial stocks, only EPS and sales growth), with a higher percentile indicating a higher growth company. Financial Returns is based on a stock's forward-looking ROE, ROCE and CROCI (for financial stocks, only ROE), with a higher percentile indicating a company with higher financial returns. Multiple is based on a stock's forward-looking P/E, P/B, price/dividend (P/D), EV/EBITDA, EV/FCF and EV/Debt Adjusted Cash Flow (DACF) (for financial stocks, only P/E, P/B and P/D), with a higher percentile indicating a stock trading at a higher multiple. The Integrated percentile is calculated as the average of the Growth percentile, Financial Returns percentile and (100% - Multiple percentile).
+
+Financial Returns and Multiple use the GS analyst forecasts at the fiscal year-end at least three quarters in the future. Growth uses inputs for the fiscal year at least seven quarters in the future compared with the year at least three quarters in the future (on a per-share basis for all metrics).
+
+For a more detailed description of how we calculate the GS Factor Profile, please contact your GS representative.
+
+# M&A Rank
+
+Across our global coverage, we examine stocks using an M&A framework, considering both qualitative factors and quantitative factors (which may vary across sectors and regions) to incorporate the potential that certain companies could be acquired. We then assign a M&A rank as a means of scoring companies under our rated coverage from 1 to 3, with 1 representing high (30%-50%) probability of the company becoming an acquisition target, 2 representing medium (15%-30%) probability and 3 representing low (0%-15%) probability. For companies ranked 1 or 2, in line with our standard departmental guidelines we incorporate an M&A component into our target price. M&A rank of 3 is considered immaterial and therefore does not factor into our price target, and may or may not be discussed in research.
+
+# Quantum
+
+Quantum is GS' proprietary database providing access to detailed financial statement histories, forecasts and ratios. It can be used for in-depth analysis of a single company, or to make comparisons between companies in different sectors and markets.
+
+# Disclosures
+
+# Rating and pricing information
+
+Alphabet Inc. (Buy, \$402.62), Amazon.com Inc. (Buy, \$270.13), DoorDash Inc. (Buy, \$149.07), Instacart (Buy, \$39.95), Meta Platforms Inc. (Buy, \$616.63), Netflix Inc. (Buy, \$87.56), Roblox (Buy, \$41.96), Spotify Technology S.A. (Buy, \$430.90) and Uber Technologies Inc. (Buy, \$74.70).
+
+# Financial Advisory Disclosures
+
+GS and/or one of its affiliates is acting as a financial advisor in connection with an announced strategic matter involving the following company or one of its affiliates: Pinterest, Inc., Etsy, Inc., Electronic Arts Inc., Ebay Inc., Genius Sports Limited, and Upwork, Inc.
+
+The rating(s) for Alphabet Inc., Amazon.com Inc., DoorDash Inc., Meta Platforms Inc., Netflix Inc., Spotify Technology S.A. and Uber Technologies Inc. is/are relative to the other companies in its/their coverage universe: ACV Auctions Inc., Airbnb Inc., Alphabet Inc., Amazon.com Inc., Angi Inc., AppLovin Corp., Booking Holdings Inc., Bumble Inc., Chewy Inc., Clear Secure Inc., Corsair Gaming Inc., Coursera Inc., Cricut Inc., DoorDash Inc., DoubleVerify Inc., DraftKings Inc., Duolingo Inc., Ethos Technologies Inc., Expedia Group, Fiverr International Ltd., Frontdoor Inc., GoodRx Holdings Inc., Grindr Inc., Groupon Inc., IAC Inc., Ibotta Inc., Instacart, Lyft Inc., Match Group, MediaAlpha Inc., Meta Platforms Inc., Netflix Inc., Nextdoor Holdings, Opera Ltd., Pattern Group Inc., Peloton Interactive Inc., Pinterest Inc., Playtika, Reddit Inc., Roblox, Snap Inc., Sportradar Group, Spotify Technology S.A., StubHub Holdings, Take-Two Interactive Software Inc., Tripadvisor Inc., Uber Technologies Inc., Unity Software Inc., Upwork Inc., Wayfair Inc., Webtoon Entertainment Inc., Xometry Inc., Yelp Inc., ZipRecruiter Inc.
+
+# Company-specific regulatory disclosures
+
+Compendium report: please see disclosures at https://www.gs.com/research/hedge.html. Disclosures applicable to the companies included in this compendium can be found in the latest relevant published research
+
+# Distribution of ratings/investment banking relationships
+
+GS Investment Research global Equity coverage universe
+
+<table><tr><td rowspan="2"></td><td colspan="3">Rating Distribution</td></tr><tr><td>Buy</td><td>Hold</td><td>Sell</td></tr><tr><td>Global</td><td>50%</td><td>34%</td><td>16%</td></tr></table>
+
+<table><tr><td colspan="3">Investment Banking Relationships</td></tr><tr><td>Buy</td><td>Hold</td><td>Sell</td></tr><tr><td>65%</td><td>60%</td><td>45%</td></tr></table>
+
+As of April 1, 2026, GS Global Investment Research had investment ratings on 3,074 equity securities. GS assigns stocks as Buys and Sells on various regional Investment Lists; stocks not so assigned are deemed Neutral. Such assignments equate to Buy, Hold and Sell for the purposes of the above disclosure required by the FINRA Rules. See ‘Ratings, Coverage universe and related definitions’ below. The Investment Banking Relationships chart reflects the percentage of subject companies within each rating category for whom GS has provided investment banking services within the previous twelve months.
+
+# Price target and rating history chart(s)
+
+Compendium report: please see disclosures at https://www.gs.com/research/hedge.html. Disclosures applicable to the companies included in this compendium can be found in the latest relevant published research
+
+Target price history table(s)   
+Amazon.com Inc. (AMZN) 
+
+<table><tr><td>Date of report</td><td>Target price ($)</td><td>Closing price ($)</td></tr><tr><td>30-Apr-26</td><td>325.00</td><td>265.06</td></tr><tr><td>13-Apr-26</td><td>275.00</td><td>239.89</td></tr><tr><td>06-Feb-26</td><td>280.00</td><td>210.32</td></tr><tr><td>13-Jan-26</td><td>300.00</td><td>242.60</td></tr><tr><td>31-Oct-25</td><td>290.00</td><td>244.22</td></tr><tr><td>03-Oct-25</td><td>275.00</td><td>219.51</td></tr><tr><td>01-Aug-25</td><td>240.00</td><td>214.75</td></tr><tr><td>21-Apr-25</td><td>220.00</td><td>167.32</td></tr><tr><td>07-Feb-25</td><td>255.00</td><td>229.15</td></tr><tr><td>01-Nov-24</td><td>240.00</td><td>197.93</td></tr><tr><td>02-Aug-24</td><td>230.00</td><td>167.90</td></tr><tr><td>15-Jul-24</td><td>250.00</td><td>192.72</td></tr><tr><td>01-May-24</td><td>225.00</td><td>179.00</td></tr><tr><td>02-Feb-24</td><td>220.00</td><td>171.81</td></tr><tr><td>10-Jan-24</td><td>200.00</td><td>153.73</td></tr><tr><td>27-Oct-23</td><td>190.00</td><td>127.74</td></tr><tr><td>12-Oct-23</td><td>175.00</td><td>132.33</td></tr><tr><td>04-Aug-23</td><td>180.00</td><td>139.57</td></tr></table>
+
+Alphabet Inc. (GOOGL) 
+
+<table><tr><td>Date of report</td><td>Target price ($)</td><td>Closing price ($)</td></tr><tr><td>30-Apr-26</td><td>450.00</td><td>384.80</td></tr><tr><td>05-Feb-26</td><td>400.00</td><td>331.25</td></tr><tr><td>12-Jan-26</td><td>375.00</td><td>331.86</td></tr><tr><td>30-Oct-25</td><td>330.00</td><td>281.48</td></tr><tr><td>14-Oct-25</td><td>288.00</td><td>245.45</td></tr><tr><td>24-Jul-25</td><td>234.00</td><td>192.17</td></tr><tr><td>10-Jul-25</td><td>225.00</td><td>177.62</td></tr><tr><td>25-Apr-25</td><td>220.00</td><td>161.96</td></tr><tr><td>11-Apr-25</td><td>205.00</td><td>157.14</td></tr><tr><td>05-Feb-25</td><td>220.00</td><td>191.33</td></tr><tr><td>13-Jan-25</td><td>215.00</td><td>191.01</td></tr><tr><td>30-Oct-24</td><td>210.00</td><td>174.46</td></tr><tr><td>14-Oct-24</td><td>208.00</td><td>164.96</td></tr><tr><td>24-Jul-24</td><td>217.00</td><td>172.63</td></tr><tr><td>08-Jul-24</td><td>211.00</td><td>189.03</td></tr><tr><td>26-Apr-24</td><td>195.00</td><td>171.95</td></tr><tr><td>15-Apr-24</td><td>185.00</td><td>154.86</td></tr><tr><td>31-Jan-24</td><td>171.00</td><td>140.10</td></tr><tr><td>10-Jan-24</td><td>164.00</td><td>142.28</td></tr><tr><td>04-Oct-23</td><td>154.00</td><td>135.24</td></tr><tr><td>26-Jul-23</td><td>152.00</td><td>129.27</td></tr><tr><td>17-Jul-23</td><td>140.00</td><td>124.65</td></tr></table>
+
+Netflix Inc. (NFLX) 
+
+<table><tr><td>Date of report</td><td>Target price ($)</td><td>Closing price ($)</td></tr><tr><td>06-Apr-26</td><td>120.00</td><td>98.93</td></tr><tr><td>21-Jan-26</td><td>100.00</td><td>85.36</td></tr><tr><td>09-Jan-26</td><td>112.00</td><td>89.46</td></tr><tr><td>29-Sep-25</td><td>1,300.00</td><td>120.64</td></tr><tr><td>18-Jul-25</td><td>1,310.00</td><td>120.92</td></tr><tr><td>02-Jul-25</td><td>1,140.00</td><td>128.49</td></tr><tr><td>21-Apr-25</td><td>1,000.00</td><td>98.79</td></tr><tr><td>11-Apr-25</td><td>955.00</td><td>91.83</td></tr><tr><td>22-Jan-25</td><td>960.00</td><td>95.40</td></tr><tr><td>08-Jan-25</td><td>850.00</td><td>87.50</td></tr><tr><td>18-Oct-24</td><td>750.00</td><td>76.39</td></tr><tr><td>04-Oct-24</td><td>705.00</td><td>71.97</td></tr><tr><td>19-Jul-24</td><td>659.00</td><td>63.33</td></tr><tr><td>08-Jul-24</td><td>650.00</td><td>68.57</td></tr><tr><td>09-Apr-24</td><td>600.00</td><td>61.82</td></tr><tr><td>24-Jan-24</td><td>565.00</td><td>54.49</td></tr><tr><td>09-Jan-24</td><td>500.00</td><td>48.21</td></tr><tr><td>19-Oct-23</td><td>400.00</td><td>40.18</td></tr><tr><td>09-Oct-23</td><td>390.00</td><td>38.60</td></tr><tr><td>05-Jul-23</td><td>400.00</td><td>44.59</td></tr></table>
+
+Spotify Technology S.A. (SPOT) 
+
+<table><tr><td>Date of report</td><td>Target price ($)</td><td>Closing price ($)</td></tr><tr><td>28-Apr-26</td><td>600.00</td><td>434.20</td></tr><tr><td>10-Feb-26</td><td>670.00</td><td>476.02</td></tr><tr><td>22-Jan-26</td><td>700.00</td><td>498.64</td></tr><tr><td>04-Nov-25</td><td>735.00</td><td>629.60</td></tr><tr><td>30-Sep-25</td><td>770.00</td><td>698.00</td></tr><tr><td>29-Jul-25</td><td>765.00</td><td>620.01</td></tr><tr><td>02-Jul-25</td><td>775.00</td><td>709.50</td></tr><tr><td>11-Apr-25</td><td>680.00</td><td>543.66</td></tr><tr><td>05-Feb-25</td><td>695.00</td><td>626.00</td></tr><tr><td>08-Jan-25</td><td>550.00</td><td>479.73</td></tr><tr><td>13-Nov-24</td><td>490.00</td><td>467.37</td></tr><tr><td>04-Oct-24</td><td>430.00</td><td>371.45</td></tr><tr><td>23-Jul-24</td><td>425.00</td><td>330.79</td></tr><tr><td>15-Jul-24</td><td>320.00</td><td>302.15</td></tr><tr><td>23-Apr-24</td><td>317.00</td><td>303.31</td></tr><tr><td>17-Apr-24</td><td>277.00</td><td>293.58</td></tr><tr><td>07-Feb-24</td><td>235.00</td><td>240.83</td></tr><tr><td>09-Jan-24</td><td>195.00</td><td>193.02</td></tr><tr><td>24-Oct-23</td><td>171.00</td><td>170.63</td></tr><tr><td>11-Oct-23</td><td>162.00</td><td>156.57</td></tr><tr><td>25-Jul-23</td><td>163.00</td><td>140.38</td></tr><tr><td>27-Jun-23</td><td>156.00</td><td>158.62</td></tr></table>
+
+Meta Platforms Inc. (META) 
+
+<table><tr><td>Date of report</td><td>Target price ($)</td><td>Closing price ($)</td></tr><tr><td>30-Apr-26</td><td>830.00</td><td>611.91</td></tr><tr><td>13-Apr-26</td><td>840.00</td><td>634.53</td></tr><tr><td>29-Jan-26</td><td>835.00</td><td>738.31</td></tr><tr><td>30-Oct-25</td><td>815.00</td><td>666.47</td></tr><tr><td>14-Oct-25</td><td>870.00</td><td>708.65</td></tr><tr><td>31-Jul-25</td><td>830.00</td><td>773.44</td></tr><tr><td>10-Jul-25</td><td>775.00</td><td>727.24</td></tr><tr><td>01-May-25</td><td>690.00</td><td>572.21</td></tr><tr><td>11-Apr-25</td><td>685.00</td><td>543.57</td></tr><tr><td>30-Jan-25</td><td>765.00</td><td>687.00</td></tr><tr><td>13-Jan-25</td><td>688.00</td><td>608.33</td></tr><tr><td>31-Oct-24</td><td>630.00</td><td>567.58</td></tr><tr><td>14-Oct-24</td><td>636.00</td><td>590.42</td></tr><tr><td>01-Aug-24</td><td>555.00</td><td>497.74</td></tr><tr><td>08-Jul-24</td><td>522.00</td><td>529.32</td></tr><tr><td>25-Apr-24</td><td>500.00</td><td>441.38</td></tr><tr><td>15-Apr-24</td><td>555.00</td><td>500.23</td></tr><tr><td>02-Feb-24</td><td>500.00</td><td>474.99</td></tr><tr><td>10-Jan-24</td><td>414.00</td><td>370.47</td></tr><tr><td>27-Jul-23</td><td>384.00</td><td>311.71</td></tr><tr><td>17-Jul-23</td><td>335.00</td><td>310.62</td></tr></table>
+
+DoorDash Inc. (DASH) 
+
+<table><tr><td>Date of report</td><td>Target price ($)</td><td>Closing price ($)</td></tr><tr><td>07-May-26</td><td>280.00</td><td>171.35</td></tr><tr><td>19-Feb-26</td><td>286.00</td><td>176.19</td></tr><tr><td>22-Jan-26</td><td>267.00</td><td>207.65</td></tr><tr><td>06-Nov-25</td><td>279.00</td><td>196.46</td></tr><tr><td>27-Oct-25</td><td>315.00</td><td>263.35</td></tr><tr><td>21-Apr-25</td><td>207.00</td><td>171.82</td></tr><tr><td>12-Feb-25</td><td>212.00</td><td>200.89</td></tr><tr><td>15-Jan-25</td><td>192.00</td><td>171.19</td></tr><tr><td>31-Oct-24</td><td>161.00</td><td>156.70</td></tr><tr><td>02-Aug-24</td><td>142.00</td><td>117.23</td></tr><tr><td>02-May-24</td><td>131.00</td><td>114.31</td></tr><tr><td>16-Feb-24</td><td>122.00</td><td>116.01</td></tr><tr><td>11-Jan-24</td><td>109.00</td><td>103.98</td></tr><tr><td>02-Nov-23</td><td>103.00</td><td>87.79</td></tr><tr><td>03-Aug-23</td><td>98.00</td><td>85.46</td></tr></table>
+
+Uber Technologies Inc. (UBER) 
+
+<table><tr><td>Date of report</td><td>Target price ($)</td><td>Closing price ($)</td></tr><tr><td>07-May-26</td><td>115.00</td><td>76.73</td></tr><tr><td>04-Feb-26</td><td>125.00</td><td>73.92</td></tr><tr><td>05-Nov-25</td><td>126.00</td><td>92.75</td></tr><tr><td>07-Aug-25</td><td>120.00</td><td>92.67</td></tr><tr><td>07-May-25</td><td>110.00</td><td>83.65</td></tr><tr><td>21-Apr-25</td><td>96.00</td><td>72.92</td></tr><tr><td>05-Feb-25</td><td>97.00</td><td>64.48</td></tr><tr><td>18-Oct-24</td><td>96.00</td><td>79.16</td></tr><tr><td>06-Aug-24</td><td>90.00</td><td>64.87</td></tr><tr><td>10-Jul-24</td><td>85.00</td><td>69.27</td></tr><tr><td>15-Feb-24</td><td>87.00</td><td>81.39</td></tr><tr><td>08-Feb-24</td><td>81.00</td><td>71.61</td></tr><tr><td>11-Jan-24</td><td>78.00</td><td>63.47</td></tr><tr><td>19-Oct-23</td><td>59.00</td><td>42.72</td></tr><tr><td>01-Aug-23</td><td>57.00</td><td>46.65</td></tr></table>
+
+Price targets shown in table(s) are unadjusted for corporate actions.
+
+# Regulatory disclosures
+
+# Disclosures required by United States laws and regulations
+
+See company-specific regulatory disclosures above for any of the following disclosures required as to companies referred to in this report: manager or co-manager in a pending transaction; 1% or other ownership; compensation for certain services; types of client relationships; managed/co-managed public offerings in prior periods; directorships; for equity securities, market making and/or specialist role. GS trades or may trade as a principal in debt securities (or in related derivatives) of issuers discussed in this report.
+
+The following are additional required disclosures: Ownership and material conflicts of interest: GS policy prohibits its analysts, professionals reporting to analysts and members of their households from owning securities of any company in the analyst's area of coverage. Analyst compensation: Analysts are paid in part based on the profitability of GS, which includes investment banking revenues. Analyst as officer or director: GS policy generally prohibits its analysts, persons reporting to analysts or members of their households from serving as an officer, director or advisor of any company in the analyst's area of coverage. Non-U.S. Analysts: Non-U.S. analysts may not be associated persons of GS & Co. LLC and therefore may not be subject to FINRA Rule 2241 or FINRA Rule 2242 restrictions on communications with a subject company, public appearances and trading in securities covered by the analysts.
+
+Distribution of ratings: See the distribution of ratings disclosure above. Price chart: See the price chart, with changes of ratings and price targets in prior periods, above, or, if electronic format or if with respect to multiple companies which are the subject of this report, on the GS website at https://www.gs.com/research/hedge.html.
+
+# Additional disclosures required under the laws and regulations of jurisdictions other than the United States
+
+The following disclosures are those required by the jurisdiction indicated, except to the extent already made above pursuant to United States laws and regulations. Australia: GS Australia Pty Ltd and its affiliates are not authorised deposit-taking institutions (as that term is defined in the Banking Act 1959 (Cth)) in Australia and do not provide banking services, nor carry on a banking business, in Australia. This research, and any access to it, is intended only for “wholesale clients” within the meaning of the Australian Corporations Act, unless otherwise agreed by GS. In producing research reports, members of Global Investment Research of GS Australia may attend site visits and other meetings hosted by the companies and other entities which are the subject of its research reports. In some instances the costs of such site visits or meetings may be met in part or in whole by the issuers concerned if GS Australia considers it is appropriate and reasonable in the specific circumstances relating to the site visit or meeting. To the extent that the contents of this document contains any financial product advice, it is general advice only and has been prepared by GS without taking into account a client’s objectives, financial situation or needs. A client should, before acting on any such advice, consider the appropriateness of the advice having regard to the client’s own objectives, financial situation and needs. A copy of certain GS Australia and New Zealand disclosure of interests and a copy of GS’ Australian Sell-Side Research Independence Policy Statement are available at: https://www.goldmansachs.com/disclosures/australia-new-zealand/index.html. Brazil: Disclosure information in relation to CVM Resolution n. 20 is available at https://www.gs.com/worldwide/brazil/area/gir/index.html. Where applicable, the Brazil-registered analyst primarily responsible for the content of this research report, as defined in Article 20 of CVM Resolution n. 20, is the first author named at the beginning of this report, unless indicated otherwise at the end of the text. Canada: This information is being provided to you for information purposes only and is not, and under no circumstances should be construed as, an advertisement, offering or solicitation by GS & Co. LLC for purchasers of securities in Canada to trade in any Canadian security. GS & Co. LLC is not registered as a dealer in any jurisdiction in Canada under applicable Canadian securities laws and generally is not permitted to trade in Canadian securities and may be prohibited from selling certain securities and products in certain jurisdictions in Canada. If you wish to trade in any Canadian securities or other products in Canada please contact GS Canada Inc., an affiliate of The GS Group Inc., or another registered Canadian dealer. Hong Kong: Further information on the securities of covered companies referred to in this research may be obtained on request from GS (Asia) L.L.C. India: Further information on the subject company or companies referred to in this research may be obtained from GS (India) Securities Private Limited, Research Analyst – SEBI Registration Number INH000001493, 10th Floor, Ascent-Worli, Sudam Kalu Ahire Marg, Worli, Mumbai-400 025, India, Corporate Identity Number U74140MH2006FTC160634, Phone +91 22 6616 9000, Fax +91 22 6616 9001. GS may beneficially own 1% or more of the securities (as such term is defined in clause 2 (h) the Indian Securities Contracts (Regulation) Act, 1956) of the subject company or companies referred to in this research report. Investment in securities market are subject to market risks. Read all the related documents carefully before investing. Registration granted by SEBI and certification from NISM in no way guarantee performance of the intermediary or provide any assurance of returns to investors. GS (India) Securities Private Limited compliance officer and investor grievance contact details can be found at: https://www.goldmansachs.com/worldwide/india/documents/Grievance-Redressal-and-Escalation-Matrix.pdf, and a copy of the annual audit compliance report can be found at this link: https://publishing.gs.com/content/site/india-annual-compliance-report.html. Japan: See below. Korea: This research, and any access to it, is intended only for “professional investors” within the meaning of the Financial Services and Capital Markets Act, unless otherwise agreed by GS. Further information on the subject company or companies referred to in this research may be obtained from GS (Asia) L.L.C., Seoul Branch. New Zealand: GS New Zealand Limited and its affiliates are neither “registered banks” nor “deposit takers” (as defined in the Reserve Bank of New Zealand Act 1989) in New Zealand. This research, and any access to it, is intended for “wholesale clients” (as defined in the Financial Advisers Act 2008) unless otherwise agreed by GS. A copy of certain GS Australia and New Zealand disclosure of interests is available at: https://www.goldmansachs.com/disclosures/australia-new-zealand/index.html. Russia: Research reports distributed in the Russian Federation are not advertising as defined in the Russian legislation, but are information and analysis not having product promotion as their main purpose and do not provide appraisal within the meaning of the Russian legislation on appraisal activity. Research reports do not constitute a personalized investment recommendation as defined in Russian laws and regulations, are not addressed to a specific client, and are prepared without analyzing the financial circumstances, investment profiles or risk profiles of clients. GS assumes no responsibility for any investment decisions that may be taken by a client or any other person based on this research report. Singapore: GS (Singapore) Pte. (Company Number: 198602165W), which is regulated by the Monetary Authority of Singapore, accepts legal responsibility for this research, and should be contacted with respect to any matters arising from, or in connection with, this research. Taiwan: This material is for reference only and must not be reprinted without permission. Investors should carefully consider their own investment risk. Investment results are the responsibility of the individual investor. United Kingdom: Persons who would be categorized as retail clients in the United Kingdom, as such term is defined in the rules of the Financial Conduct Authority, should read this research in conjunction with prior GS on the covered companies referred to herein and should refer to the risk warnings that have been sent to them by GS International. A copy of these risks warnings, and a glossary of certain financial terms used in this report, are available from GS International on request.
+
+European Union and United Kingdom: Disclosure information in relation to Article 6 (2) of the European Commission Delegated Regulation (EU) (2016/958) supplementing Regulation (EU) No 596/2014 of the European Parliament and of the Council (including as that Delegated Regulation is implemented into United Kingdom domestic law and regulation following the United Kingdom's departure from the European Union and the European Economic Area) with regard to regulatory technical standards for the technical arrangements for objective presentation of investment recommendations or other information recommending or suggesting an investment strategy and for disclosure of particular interests or indications of conflicts of interest is available at https://www.gs.com/disclosures/europeanpolicy.html which states the European Policy for Managing Conflicts of Interest in Connection with Investment Research.
+
+Japan: GS Japan Co., Ltd. is a Financial Instrument Dealer registered with the Kanto Financial Bureau under registration number Kinsho 69, and a member of Japan Securities Dealers Association, Financial Futures Association of Japan Type II Financial Instruments Firms Association, and Investment Management Association of Japan. Sales and purchase of equities are subject to commission pre-determined with clients plus consumption tax. See company-specific disclosures as to any applicable disclosures required by Japanese stock exchanges, the Japanese Securities Dealers Association or the Japanese Securities Finance Company.
+
+# Ratings, coverage universe and related definitions
+
+Buy (B), Neutral (N), Sell (S) Analysts recommend stocks as Buys or Sells for inclusion on various regional Investment Lists. Being assigned a Buy or Sell on an Investment List is determined by a stock's total return potential relative to its coverage universe. Any stock not assigned as a Buy or a Sell on an Investment List with an active rating (i.e., a stock that is not Rating Suspended, Not Rated, Early-Stage Biotech, Coverage Suspended or Not Covered), is deemed Neutral. Each region manages Regional Conviction Lists, which are selected from Buy rated stocks on the respective region's Investment Lists and represent investment recommendations focused on the size of the total return potential and/or the likelihood of the realization of the return across their respective areas of coverage. The addition or removal of stocks from such Conviction Lists are managed by the Investment Review Committee or other designated committee in each respective region and do not represent a change in the analysts' investment rating for such stocks.
+
+Total return potential represents the upside or downside differential between the current share price and the price target, including all paid or anticipated dividends, expected during the time horizon associated with the price target. Price targets are required for all covered stocks. The total return potential, price target and associated time horizon are stated in each report adding or reiterating an Investment List membership.
+
+Coverage Universe: A list of all stocks in each coverage universe is available by primary analyst, stock and coverage universe at https://www.gs.com/research/hedge.html.
+
+Not Rated (NR). The investment rating, target price and earnings estimates (where relevant) are removed pursuant to GS policy when GS is acting in an advisory capacity in a merger or in a strategic transaction involving this company, when there are legal, regulatory or policy constraints due to GS' involvement in a transaction, and in certain other circumstances. Early-Stage Biotech (ES). An investment rating and a target price are not assigned pursuant to GS policy when this company has neither a drug, treatment or medical device that has passed a Phase II clinical trial nor a license to distribute a post-Phase II drug, treatment or medical device. Rating Suspended (RS). GS has suspended the investment rating and price target for this stock, because there is not a sufficient fundamental basis for determining an investment rating or target price. The previous investment rating and target price, if any, are no longer in effect for this stock and should not be relied upon. Coverage Suspended (CS). GS has suspended coverage of this company. Not Covered (NC). GS does not cover this company.
+
+# Global product; distributing entities
+
+GS Global Investment Research produces and distributes research products for clients of GS on a global basis. Analysts based in GS offices around the world produce research on industries and companies, and research on macroeconomics, currencies, commodities and portfolio strategy. This research is disseminated in Australia by GS Australia Pty Ltd (ABN 21 006 797 897); in Brazil by GS do Brasil Corretora de Títulos e Valores Mobiliários S.A.; Public Communication Channel GS Brazil: 0800 727 5764 and / or contatogoldmanbrasil@gs.com. Available Weekdays (except holidays), from 9am to 6pm. Canal de Comunicação com o Público GS Brasil: 0800 727 5764 e/ou contatogoldmanbrasil@gs.com. Horário de funcionamento: segunda-feira à sexta-feira (exceto feriados), das 9h às 18h; in Canada by GS & Co. LLC; in Hong Kong by GS (Asia) L.L.C.; in India by GS (India) Securities Private Ltd.; in Japan by GS Japan Co., Ltd.; in the Republic of Korea by GS (Asia) L.L.C., Seoul Branch; in New Zealand by GS New Zealand Limited; in Russia by OOO GS; in Singapore by GS (Singapore) Pte. (Company Number: 198602165W); and in the United States of America by GS & Co. LLC. GS International has approved this research in connection with its distribution in the United Kingdom.
+
+GS International (“GSI”), authorised by the Prudential Regulation Authority (“PRA”) and regulated by the Financial Conduct Authority (“FCA”) and the PRA, has approved this research in connection with its distribution in the United Kingdom.
+
+European Economic Area: GS Bank Europe SE (“GSBE”) is a credit institution incorporated in Germany and, within the Single Supervisory Mechanism, subject to direct prudential supervision by the European Central Bank and in other respects supervised by German Federal Financial Supervisory Authority (Bundesanstalt für Finanzdienstleistungsaufsicht, BaFin) and Deutsche Bundesbank and disseminates research within the European Economic Area.
+
+# General disclosures
+
+This research is for our clients only. Other than disclosures relating to GS, this research is based on current public information that we consider reliable, but we do not represent it is accurate or complete, and it should not be relied on as such. The information, opinions, estimates and forecasts contained herein are as of the date hereof and are subject to change without prior notification. We seek to update our research as appropriate, but various regulations may prevent us from doing so. Other than certain industry reports published on a periodic basis, the large majority of reports are published at irregular intervals as appropriate in the analyst's judgment.
+
+GS conducts a global full-service, integrated investment banking, investment management, and brokerage business. We have investment banking and other business relationships with a sUBStantial percentage of the companies covered by Global Investment Research. GS & Co. LLC, the United States broker dealer, is a member of SIPC (https://www.sipc.org).
+
+Our salespeople, traders, and other professionals may provide oral or written market commentary or trading strategies to our clients and principal trading desks that reflect opinions that are contrary to the opinions expressed in this research. Our asset management area, principal trading desks and investing businesses may make investment decisions that are inconsistent with the recommendations or views expressed in this research.
+
+The analysts named in this report may have from time to time discussed with our clients, including GS salespersons and traders, or may discuss in this report, trading strategies that reference catalysts or events that may have a near-term impact on the market price of the equity securities discussed in this report, which impact may be directionally counter to the analyst's published price target expectations for such stocks. Any such trading strategies are distinct from and do not affect the analyst's fundamental equity rating for such stocks, which rating reflects a stock's return potential relative to its coverage universe as described herein.
+
+We and our affiliates, officers, directors, and employees will from time to time have long or short positions in, act as principal in, and buy or sell, the securities or derivatives, if any, referred to in this research, unless otherwise prohibited by regulation or GS policy.
+
+The views attributed to third party presenters at GS arranged conferences, including individuals from other parts of GS, do not necessarily reflect those of Global Investment Research and are not an official view of GS.
+
+Any third party referenced herein, including any salespeople, traders and other professionals or members of their household, may have positions in the products mentioned that are inconsistent with the views expressed by analysts named in this report.
+
+This research is not an offer to sell or the solicitation of an offer to buy any security in any jurisdiction where such an offer or solicitation would be illegal. It does not constitute a personal recommendation or take into account the particular investment objectives, financial situations, or needs of individual clients. Clients should consider whether any advice or recommendation in this research is suitable for their particular circumstances and, if appropriate, seek professional advice, including tax advice. The price and value of investments referred to in this research and the income from them may fluctuate. Past performance is not a guide to future performance, future returns are not guaranteed, and a loss of original capital may occur. Fluctuations in exchange rates could have adverse effects on the value or price of, or income derived from, certain investments.
+
+Certain transactions, including those involving futures, options, and other derivatives, give rise to sUBStantial risk and are not suitable for all investors. Investors should review current options and futures disclosure documents which are available from GS sales representatives or at https://www.theocc.com/about/publications/character-risks.jsp and https://www.goldmansachs.com/disclosures/cftc\_fcm\_disclosures. Transaction costs may be significant in option strategies calling for multiple purchase and sales of options such as spreads. Supporting documentation will be supplied upon request.
+
+Differing Levels of Service provided by Global Investment Research: The level and types of services provided to you by GS Global Investment Research may vary as compared to that provided to internal and other external clients of GS, depending on various factors including your individual preferences as to the frequency and manner of receiving communication, your risk profile and investment focus and perspective (e.g., marketwide, sector specific, long term, short term), the size and scope of your overall client relationship with GS, and legal and regulatory constraints. As an example, certain clients may request to receive notifications when research on specific securities is published, and certain clients may request that specific data underlying analysts' fundamental analysis available on our internal client websites be delivered to them electronically through data feeds or otherwise. No change to an analyst's fundamental research views (e.g., ratings, price targets, or material changes to earnings estimates for equity securities), will be communicated to any client prior to inclusion of such information in a research report broadly disseminated through electronic publication to our internal client websites or through other means, as necessary, to all clients who are entitled to receive such reports.
+
+All research reports are disseminated and available to all clients simultaneously through electronic publication to our internal client websites. Not all research content is redistributed to our clients or available to third-party aggregators, nor is GS responsible for the redistribution of our research by third party aggregators. For research, models or other data related to one or more securities, markets or asset classes (including related services) that may be available to you, please contact your GS representative or go to https://research.gs.com.
+
+Disclosure information is also available at https://www.gs.com/research/hedge.html or from Research Compliance, 200 West Street, New York, NY 10282.
+
+# © 2026 GS.
+
+You are permitted to store, display, analyze, modify, reformat, and print the information made available to you via this service only for your own use. You may not resell or reverse engineer this information to calculate or develop any index for disclosure and/or marketing or create any other derivative works or commercial product(s), data or offering(s) without the express written consent of GS. You are not permitted to publish, transmit, or otherwise reproduce this information, in whole or in part, in any format to any third party without the express written consent of GS. This foregoing restriction includes, without limitation, using, extracting, downloading or retrieving this information, in whole or in part, to train or finetune a machine learning or artificial intelligence system, or to provide or reproduce this information, in whole or in part, as a prompt or input to any such system.

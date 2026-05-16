@@ -1,52 +1,12 @@
 [
   {
-    "id": 2,
-    "name": "BARC-Energy Perspectives：The Power of the Pump： Politics， Inflation and Muni Credit-260514.pdf",
-    "dropbox_path": "/zip_backup/260515/BARC-energy perspectives：the power of the pump： politics， inflation and muni credit-260514.pdf",
-    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/BARC-energy perspectives：the power of the pump： politics， inflation and muni credit-260514.pdf",
-    "category": "macro_trend",
-    "score": 0.9,
-    "reason": "标题涉及能源视角、政治、通胀和市政信用，属于宏观主题",
-    "classifier": "deepseek"
-  },
-  {
-    "id": 19,
-    "name": "Bofa-The Flow Show The Bidterms-260514.pdf",
-    "dropbox_path": "/zip_backup/260515/bofa-the flow show the bidterms-260514.pdf",
-    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/bofa-the flow show the bidterms-260514.pdf",
-    "category": "macro_trend",
-    "score": 0.9,
-    "reason": "标题为市场流动性和主题策略，属于宏观趋势",
-    "classifier": "deepseek"
-  },
-  {
-    "id": 27,
-    "name": "GS-Global Credit Trader：State of Play for Leveraged Finance Defaults-260514.pdf",
-    "dropbox_path": "/zip_backup/260515/GS-global credit trader：state of play for leveraged finance defaults-260514.pdf",
-    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/GS-global credit trader：state of play for leveraged finance defaults-260514.pdf",
-    "category": "macro_trend",
-    "score": 0.9,
-    "reason": "标题为全球信用交易员关于杠杆融资违约状态，属于宏观主题",
-    "classifier": "deepseek"
-  },
-  {
     "id": 28,
     "name": "GS-China：RMB loan stock declined from March to April-260514.pdf",
     "dropbox_path": "/zip_backup/260515/GS-china：rmb loan stock declined from march to april-260514.pdf",
     "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/GS-china：rmb loan stock declined from march to april-260514.pdf",
     "category": "macro_trend",
     "score": 0.9,
-    "reason": "标题为中国人民币贷款数据，属于宏观政策/经济趋势",
-    "classifier": "deepseek"
-  },
-  {
-    "id": 31,
-    "name": "GS-Global Markets Daily： Why Always Gilts？-260514.pdf",
-    "dropbox_path": "/zip_backup/260515/GS-global markets daily： why always gilts？-260514.pdf",
-    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/GS-global markets daily： why always gilts？-260514.pdf",
-    "category": "macro_trend",
-    "score": 0.9,
-    "reason": "标题为全球市场日报，涉及英国国债，属于宏观趋势",
+    "reason": "中国人民币贷款数据，属于宏观政策",
     "classifier": "deepseek"
   },
   {
@@ -56,37 +16,7 @@
     "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/GS-japan economic flash： march data roundup： raising our final 2026q1 real gdp tracking estimate to +1.3% qoq annualized-260514.pdf",
     "category": "macro_trend",
     "score": 0.9,
-    "reason": "标题为日本经济数据追踪和GDP预测，属于宏观趋势",
-    "classifier": "deepseek"
-  },
-  {
-    "id": 37,
-    "name": "GS-Natural Gas Comment： Preliminary Signs of Asia LNG Demand Recovery Keep Risks to 2H26 TTF Skewed to the Upside-260514.pdf",
-    "dropbox_path": "/zip_backup/260515/GS-natural gas comment： preliminary signs of asia lng demand recovery keep risks to 2h26 ttf skewed to the upside-260514.pdf",
-    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/GS-natural gas comment： preliminary signs of asia lng demand recovery keep risks to 2h26 ttf skewed to the upside-260514.pdf",
-    "category": "macro_trend",
-    "score": 0.9,
-    "reason": "标题为天然气市场评论，涉及亚洲LNG需求和TTF风险，属于商品/宏观趋势",
-    "classifier": "deepseek"
-  },
-  {
-    "id": 38,
-    "name": "GS-Oil Tracker：US Gasoline Market Tightening； Global April Deficit May Be Less Large Than Expected-260514.pdf",
-    "dropbox_path": "/zip_backup/260515/GS-oil tracker：us gasoline market tightening； global april deficit may be less large than expected-260514.pdf",
-    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/GS-oil tracker：us gasoline market tightening； global april deficit may be less large than expected-260514.pdf",
-    "category": "macro_trend",
-    "score": 0.9,
-    "reason": "标题为石油追踪，涉及美国汽油市场和全球供需，属于商品/宏观趋势",
-    "classifier": "deepseek"
-  },
-  {
-    "id": 52,
-    "name": "JPM-Flows & Liquidity Revisiting equity supply and demand from the coming IPOs-260513.pdf",
-    "dropbox_path": "/zip_backup/260515/jpm-flows & liquidity revisiting equity supply and demand from the coming ipos-260513.pdf",
-    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/jpm-flows & liquidity revisiting equity supply and demand from the coming ipos-260513.pdf",
-    "category": "macro_trend",
-    "score": 0.9,
-    "reason": "标题为市场流动性和IPO供需分析，属于宏观主题",
+    "reason": "日本经济数据追踪和GDP预测，属于宏观主题",
     "classifier": "deepseek"
   },
   {
@@ -96,27 +26,7 @@
     "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/NOM-asia insights：china： credit growth slowed again in april-260514.pdf",
     "category": "macro_trend",
     "score": 0.9,
-    "reason": "标题为亚洲洞察中国信贷增长，属于宏观政策/经济趋势",
-    "classifier": "deepseek"
-  },
-  {
-    "id": 57,
-    "name": "NOM-Hong Kong rates： Maintain pay 10y position-260514.pdf",
-    "dropbox_path": "/zip_backup/260515/NOM-hong kong rates： maintain pay 10y position-260514.pdf",
-    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/NOM-hong kong rates： maintain pay 10y position-260514.pdf",
-    "category": "macro_trend",
-    "score": 0.9,
-    "reason": "标题为香港利率策略，属于宏观/利率趋势",
-    "classifier": "deepseek"
-  },
-  {
-    "id": 61,
-    "name": "NOM-USD CNY fix model：Projection： 6.7979-260515.pdf",
-    "dropbox_path": "/zip_backup/260515/NOM-usd cny fix model：projection： 6.7979-260515.pdf",
-    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/NOM-usd cny fix model：projection： 6.7979-260515.pdf",
-    "category": "macro_trend",
-    "score": 0.9,
-    "reason": "标题为美元人民币汇率模型预测，属于宏观/汇率趋势",
+    "reason": "亚洲洞察中国信贷增长，属于宏观主题",
     "classifier": "deepseek"
   },
   {
@@ -126,7 +36,7 @@
     "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/UBS-china economic comment：continuation of strategic stability-260514.pdf",
     "category": "macro_trend",
     "score": 0.9,
-    "reason": "标题为中国经济评论，涉及战略稳定，属于宏观趋势",
+    "reason": "中国经济评论，属于宏观主题",
     "classifier": "deepseek"
   },
   {
@@ -136,37 +46,17 @@
     "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/UBS-china economic comment：april new credit missed again-260514.pdf",
     "category": "macro_trend",
     "score": 0.9,
-    "reason": "标题为中国经济评论，涉及信贷数据，属于宏观趋势",
+    "reason": "中国经济评论信贷数据，属于宏观主题",
     "classifier": "deepseek"
   },
   {
-    "id": 71,
-    "name": "UBS-China Oil Product Monthly China's crude oil imports fell sharply in April；  focus on refined oil export policies-260514.pdf",
-    "dropbox_path": "/zip_backup/260515/UBS-china oil product monthly china's crude oil imports fell sharply in april；  focus on refined oil export policies-260514.pdf",
-    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/UBS-china oil product monthly china's crude oil imports fell sharply in april；  focus on refined oil export policies-260514.pdf",
+    "id": 2,
+    "name": "BARC-Energy Perspectives：The Power of the Pump： Politics， Inflation and Muni Credit-260514.pdf",
+    "dropbox_path": "/zip_backup/260515/BARC-energy perspectives：the power of the pump： politics， inflation and muni credit-260514.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/BARC-energy perspectives：the power of the pump： politics， inflation and muni credit-260514.pdf",
     "category": "macro_trend",
-    "score": 0.9,
-    "reason": "标题为中国石油产品月度报告，涉及原油进口和出口政策，属于商品/宏观趋势",
-    "classifier": "deepseek"
-  },
-  {
-    "id": 72,
-    "name": "UBS-Global Strategy：Client views~Oil vs Fed vs ECB vs Carry vs Political risk-260514.pdf",
-    "dropbox_path": "/zip_backup/260515/UBS-global strategy：client views~oil vs fed vs ecb vs carry vs political risk-260514.pdf",
-    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/UBS-global strategy：client views~oil vs fed vs ecb vs carry vs political risk-260514.pdf",
-    "category": "macro_trend",
-    "score": 0.9,
-    "reason": "标题为全球策略客户观点，涉及石油、央行、政治风险，属于宏观主题",
-    "classifier": "deepseek"
-  },
-  {
-    "id": 73,
-    "name": "UBS-Global Gas：Storage rebuilds uneven-260514.pdf",
-    "dropbox_path": "/zip_backup/260515/UBS-global gas：storage rebuilds uneven-260514.pdf",
-    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/UBS-global gas：storage rebuilds uneven-260514.pdf",
-    "category": "macro_trend",
-    "score": 0.9,
-    "reason": "标题为全球天然气库存重建，属于商品/宏观趋势",
+    "score": 0.85,
+    "reason": "讨论能源视角下的政治、通胀和市政信用，属于宏观主题",
     "classifier": "deepseek"
   },
   {
@@ -176,7 +66,7 @@
     "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/Bernstein-asia tech hardware： 1q26 pcb market update & unimicron model update-260514.pdf",
     "category": "macro_trend",
     "score": 0.85,
-    "reason": "标题为亚洲科技硬件行业PCB市场更新，不针对单一公司",
+    "reason": "亚洲科技硬件行业PCB市场更新，属于行业趋势",
     "classifier": "deepseek"
   },
   {
@@ -186,7 +76,7 @@
     "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/Bernstein-european business services：ai for business services： from job fears to productivity on a plate-260515.pdf",
     "category": "macro_trend",
     "score": 0.85,
-    "reason": "标题为欧洲商业服务行业AI影响分析，属于行业趋势",
+    "reason": "欧洲商业服务行业AI影响，属于行业趋势",
     "classifier": "deepseek"
   },
   {
@@ -196,7 +86,7 @@
     "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/Bernstein-global air tech： airline supply under the microscope. maintain outperform on amadeus and market~perform on sabre-260514.pdf",
     "category": "macro_trend",
     "score": 0.85,
-    "reason": "标题为全球航空技术行业分析，涉及行业供需，不针对单一公司",
+    "reason": "全球航空技术行业分析，涉及行业供需",
     "classifier": "deepseek"
   },
   {
@@ -206,17 +96,7 @@
     "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/Bernstein-india industrials and infrastructure： india energy security~#1coal gasification： the color of energy doesn't matter anymore...-260514.pdf",
     "category": "macro_trend",
     "score": 0.85,
-    "reason": "标题为印度工业与基础设施行业能源安全主题，属于宏观趋势",
-    "classifier": "deepseek"
-  },
-  {
-    "id": 15,
-    "name": "Bernstein-Weekend Healthcare Pulse： Prescription for AI， Google Health takes the lead-260515.pdf",
-    "dropbox_path": "/zip_backup/260515/Bernstein-weekend healthcare pulse： prescription for ai， google health takes the lead-260515.pdf",
-    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/Bernstein-weekend healthcare pulse： prescription for ai， google health takes the lead-260515.pdf",
-    "category": "macro_trend",
-    "score": 0.85,
-    "reason": "标题为医疗保健行业周报，涉及AI和Google Health，属于行业趋势",
+    "reason": "印度工业与基础设施行业能源安全主题",
     "classifier": "deepseek"
   },
   {
@@ -226,7 +106,7 @@
     "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/Bernstein-u.s. smid~cap software cybersecurity： is ftnt upside surprise a signal for other vendors？-260514.pdf",
     "category": "macro_trend",
     "score": 0.85,
-    "reason": "标题为美国中小盘软件网络安全行业分析，不针对单一公司",
+    "reason": "美国中小盘软件网络安全行业分析",
     "classifier": "deepseek"
   },
   {
@@ -236,7 +116,7 @@
     "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/Bernstein-us communications infrastructure data centers： what a top~tier data center market looks like— including the dlr and eqix footprints-260515.pdf",
     "category": "macro_trend",
     "score": 0.85,
-    "reason": "标题为美国通信基础设施数据中心行业分析，属于行业趋势",
+    "reason": "美国通信基础设施数据中心行业分析",
     "classifier": "deepseek"
   },
   {
@@ -246,7 +126,7 @@
     "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/GS-americas technology internet q1’26 eps review： where to from here？ recapping takeaways & debates； focus stocks going forward-260514.pdf",
     "category": "macro_trend",
     "score": 0.85,
-    "reason": "标题为美国科技互联网行业Q1财报回顾，属于行业趋势",
+    "reason": "美国科技互联网行业Q1财报回顾，属于行业趋势",
     "classifier": "deepseek"
   },
   {
@@ -256,7 +136,17 @@
     "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/GS-china education apr~26 tracker：ai software hardware scaled up led by bytedance tal； tam headwinds of offline tutoring and overseas study sustained-260514.pdf",
     "category": "macro_trend",
     "score": 0.85,
-    "reason": "标题为中国教育行业追踪，涉及AI软件硬件，属于行业趋势",
+    "reason": "中国教育行业追踪，属于行业趋势",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 27,
+    "name": "GS-Global Credit Trader：State of Play for Leveraged Finance Defaults-260514.pdf",
+    "dropbox_path": "/zip_backup/260515/GS-global credit trader：state of play for leveraged finance defaults-260514.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/GS-global credit trader：state of play for leveraged finance defaults-260514.pdf",
+    "category": "macro_trend",
+    "score": 0.85,
+    "reason": "全球信用市场杠杆融资违约状态，属于宏观主题",
     "classifier": "deepseek"
   },
   {
@@ -266,7 +156,37 @@
     "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/GS-china data centers： scaling the ai infrastructure-260515.pdf",
     "category": "macro_trend",
     "score": 0.85,
-    "reason": "标题为中国数据中心行业AI基础设施，属于行业趋势",
+    "reason": "中国数据中心行业AI基础设施，属于行业趋势",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 31,
+    "name": "GS-Global Markets Daily： Why Always Gilts？-260514.pdf",
+    "dropbox_path": "/zip_backup/260515/GS-global markets daily： why always gilts？-260514.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/GS-global markets daily： why always gilts？-260514.pdf",
+    "category": "macro_trend",
+    "score": 0.85,
+    "reason": "全球市场日报，讨论英国国债，属于宏观主题",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 37,
+    "name": "GS-Natural Gas Comment： Preliminary Signs of Asia LNG Demand Recovery Keep Risks to 2H26 TTF Skewed to the Upside-260514.pdf",
+    "dropbox_path": "/zip_backup/260515/GS-natural gas comment： preliminary signs of asia lng demand recovery keep risks to 2h26 ttf skewed to the upside-260514.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/GS-natural gas comment： preliminary signs of asia lng demand recovery keep risks to 2h26 ttf skewed to the upside-260514.pdf",
+    "category": "macro_trend",
+    "score": 0.85,
+    "reason": "天然气市场评论，属于商品/宏观主题",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 38,
+    "name": "GS-Oil Tracker：US Gasoline Market Tightening； Global April Deficit May Be Less Large Than Expected-260514.pdf",
+    "dropbox_path": "/zip_backup/260515/GS-oil tracker：us gasoline market tightening； global april deficit may be less large than expected-260514.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/GS-oil tracker：us gasoline market tightening； global april deficit may be less large than expected-260514.pdf",
+    "category": "macro_trend",
+    "score": 0.85,
+    "reason": "石油市场追踪，属于商品/宏观主题",
     "classifier": "deepseek"
   },
   {
@@ -276,7 +196,7 @@
     "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/GS-us equity views：the rise and reach of retail trading in us equities-260513.pdf",
     "category": "macro_trend",
     "score": 0.85,
-    "reason": "标题为美国股票市场散户交易趋势，属于宏观主题策略",
+    "reason": "美国股票市场散户交易趋势，属于市场主题",
     "classifier": "deepseek"
   },
   {
@@ -286,7 +206,7 @@
     "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/JPM-electronic components sector：component data deposition： trends in hdd shipments and major hdd components in jan~mar 2026-260514.pdf",
     "category": "macro_trend",
     "score": 0.85,
-    "reason": "标题为电子元件行业数据追踪，涉及HDD出货趋势，属于行业趋势",
+    "reason": "电子元件行业数据追踪，属于行业趋势",
     "classifier": "deepseek"
   },
   {
@@ -296,7 +216,7 @@
     "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/JPM-global power equipment turbine trends tracker： highest 1q orders on record； us market continues to dominate-260514.pdf",
     "category": "macro_trend",
     "score": 0.85,
-    "reason": "标题为全球电力设备涡轮机趋势追踪，属于行业趋势",
+    "reason": "全球电力设备涡轮机趋势追踪，属于行业趋势",
     "classifier": "deepseek"
   },
   {
@@ -306,17 +226,17 @@
     "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/ms-greater china technology hardware-global ai transceivers-industry demand likely to be even stronger-260514.pdf",
     "category": "macro_trend",
     "score": 0.85,
-    "reason": "标题为大中华科技硬件行业全球AI收发器需求，属于行业趋势",
+    "reason": "大中华科技硬件行业全球AI收发器需求，属于行业趋势",
     "classifier": "deepseek"
   },
   {
-    "id": 53,
-    "name": "JPM-Retail Radar May 13 - Software vs Semis Positioning-260514.pdf",
-    "dropbox_path": "/zip_backup/260515/jpm-retail radar may 13 - software vs semis positioning-260514.pdf",
-    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/jpm-retail radar may 13 - software vs semis positioning-260514.pdf",
+    "id": 52,
+    "name": "JPM-Flows & Liquidity Revisiting equity supply and demand from the coming IPOs-260513.pdf",
+    "dropbox_path": "/zip_backup/260515/jpm-flows & liquidity revisiting equity supply and demand from the coming ipos-260513.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/jpm-flows & liquidity revisiting equity supply and demand from the coming ipos-260513.pdf",
     "category": "macro_trend",
     "score": 0.85,
-    "reason": "标题为零售雷达，涉及软件与半导体持仓，属于行业/主题策略",
+    "reason": "市场流动性和IPO供需，属于宏观主题",
     "classifier": "deepseek"
   },
   {
@@ -326,7 +246,17 @@
     "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/MS-implications for auto parts industry from j~oem's china new vehicle sales （apr 2026）-260514.pdf",
     "category": "macro_trend",
     "score": 0.85,
-    "reason": "标题为汽车零部件行业影响分析，基于日系OEM中国销售数据，属于行业趋势",
+    "reason": "汽车零部件行业影响分析，属于行业趋势",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 57,
+    "name": "NOM-Hong Kong rates： Maintain pay 10y position-260514.pdf",
+    "dropbox_path": "/zip_backup/260515/NOM-hong kong rates： maintain pay 10y position-260514.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/NOM-hong kong rates： maintain pay 10y position-260514.pdf",
+    "category": "macro_trend",
+    "score": 0.85,
+    "reason": "香港利率策略，属于宏观主题",
     "classifier": "deepseek"
   },
   {
@@ -336,7 +266,17 @@
     "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/NOM-japan banking sector monthly： may 2026-260514.pdf",
     "category": "macro_trend",
     "score": 0.85,
-    "reason": "标题为日本银行业月度行业报告，属于行业趋势",
+    "reason": "日本银行业月度行业报告",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 61,
+    "name": "NOM-USD CNY fix model：Projection： 6.7979-260515.pdf",
+    "dropbox_path": "/zip_backup/260515/NOM-usd cny fix model：projection： 6.7979-260515.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/NOM-usd cny fix model：projection： 6.7979-260515.pdf",
+    "category": "macro_trend",
+    "score": 0.85,
+    "reason": "美元人民币汇率模型预测，属于宏观主题",
     "classifier": "deepseek"
   },
   {
@@ -346,7 +286,7 @@
     "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/UBS-china two~wheeler sector：signs of recovery – time to revisit？-260514.pdf",
     "category": "macro_trend",
     "score": 0.85,
-    "reason": "标题为中国两轮车行业复苏分析，属于行业趋势",
+    "reason": "中国两轮车行业复苏，属于行业趋势",
     "classifier": "deepseek"
   },
   {
@@ -356,7 +296,37 @@
     "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/UBS-european luxury：expert call feedback： from hype to heritage-260514.pdf",
     "category": "macro_trend",
     "score": 0.85,
-    "reason": "标题为欧洲奢侈品行业专家反馈，属于行业趋势",
+    "reason": "欧洲奢侈品行业专家反馈，属于行业趋势",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 71,
+    "name": "UBS-China Oil Product Monthly China's crude oil imports fell sharply in April；  focus on refined oil export policies-260514.pdf",
+    "dropbox_path": "/zip_backup/260515/UBS-china oil product monthly china's crude oil imports fell sharply in april；  focus on refined oil export policies-260514.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/UBS-china oil product monthly china's crude oil imports fell sharply in april；  focus on refined oil export policies-260514.pdf",
+    "category": "macro_trend",
+    "score": 0.85,
+    "reason": "中国石油产品月度报告，属于商品/宏观主题",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 72,
+    "name": "UBS-Global Strategy：Client views~Oil vs Fed vs ECB vs Carry vs Political risk-260514.pdf",
+    "dropbox_path": "/zip_backup/260515/UBS-global strategy：client views~oil vs fed vs ecb vs carry vs political risk-260514.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/UBS-global strategy：client views~oil vs fed vs ecb vs carry vs political risk-260514.pdf",
+    "category": "macro_trend",
+    "score": 0.85,
+    "reason": "全球策略客户观点，涉及多类宏观因素",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 73,
+    "name": "UBS-Global Gas：Storage rebuilds uneven-260514.pdf",
+    "dropbox_path": "/zip_backup/260515/UBS-global gas：storage rebuilds uneven-260514.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/UBS-global gas：storage rebuilds uneven-260514.pdf",
+    "category": "macro_trend",
+    "score": 0.85,
+    "reason": "全球天然气存储，属于商品/宏观主题",
     "classifier": "deepseek"
   },
   {
@@ -366,7 +336,7 @@
     "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/UBS-japan tech conglomerates：hardware above software still-260514.pdf",
     "category": "macro_trend",
     "score": 0.85,
-    "reason": "标题为日本科技综合企业行业分析，属于行业趋势",
+    "reason": "日本科技综合企业行业分析",
     "classifier": "deepseek"
   },
   {
@@ -376,7 +346,7 @@
     "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/UBS-n.a. chems & pkg：fun with fertilizers； where to from here？-260514.pdf",
     "category": "macro_trend",
     "score": 0.85,
-    "reason": "标题为北美化工与包装行业肥料分析，属于行业趋势",
+    "reason": "北美化工与包装行业化肥分析，属于行业趋势",
     "classifier": "deepseek"
   },
   {
@@ -386,7 +356,37 @@
     "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/UBS-us equity strategy：1q26 earnings brief： may 14-260514.pdf",
     "category": "macro_trend",
     "score": 0.85,
-    "reason": "标题为美国股票策略财报简报，属于宏观/主题策略",
+    "reason": "美国股票策略财报简报，属于市场主题",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 15,
+    "name": "Bernstein-Weekend Healthcare Pulse： Prescription for AI， Google Health takes the lead-260515.pdf",
+    "dropbox_path": "/zip_backup/260515/Bernstein-weekend healthcare pulse： prescription for ai， google health takes the lead-260515.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/Bernstein-weekend healthcare pulse： prescription for ai， google health takes the lead-260515.pdf",
+    "category": "macro_trend",
+    "score": 0.8,
+    "reason": "医疗保健行业周报，涉及AI应用趋势",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 19,
+    "name": "Bofa-The Flow Show The Bidterms-260514.pdf",
+    "dropbox_path": "/zip_backup/260515/bofa-the flow show the bidterms-260514.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/bofa-the flow show the bidterms-260514.pdf",
+    "category": "macro_trend",
+    "score": 0.8,
+    "reason": "市场流动性主题报告",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 53,
+    "name": "JPM-Retail Radar May 13 - Software vs Semis Positioning-260514.pdf",
+    "dropbox_path": "/zip_backup/260515/jpm-retail radar may 13 - software vs semis positioning-260514.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/jpm-retail radar may 13 - software vs semis positioning-260514.pdf",
+    "category": "macro_trend",
+    "score": 0.8,
+    "reason": "零售雷达，软件与半导体持仓对比，属于市场主题",
     "classifier": "deepseek"
   }
 ]
