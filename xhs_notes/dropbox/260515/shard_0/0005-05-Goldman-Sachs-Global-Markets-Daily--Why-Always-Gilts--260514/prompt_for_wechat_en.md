@@ -418,11 +418,13 @@ In the near term political and fiscal risks may re-emerge, and the analysis abov
 
 incorporating this into existing fiscal rules could be a source of this risk. We estimate that a 1pp increase in the medium-term deficit is worth around 30-40bp higher Gilt yields. The pressure on fiscal policy via high interest rates and ongoing policy uncertainty make it difficult for Gilt risk premium to compress.
 
-However, some of the factors that have driven higher yields over recent years should ultimately fade. Quantitative tightening will eventually slow as the BoE's balance sheet shrinks, and fiscal deficits under current policy settings are due to narrow gradually. As discussed above, relative measures of Gilt performance, such as swap spreads and long-end curve shape, indicate these factors are already improving. And 
+However, some of the factors that have driven higher yields over recent years should ultimately fade. Quantitative tightening will eventually slow as the BoE's balance sheet shrinks, and fiscal deficits under current policy settings are due to narrow gradually. As discussed above, relative measures of Gilt performance, such as swap spreads and long-end curve shape, indicate these factors are already improving. And while global dynamics are contributing to higher Gilt yields, we expect to see lower yields in most major markets over time. As our European economists have argued, Gilt yields are high relative to 
 
 [中间内容因长度限制已省略]
 
-e have long or short positions in, act as principal in, and buy or sell, the securities or derivatives, if any, referred to in this research, unless otherwise prohibited by regulation or GS policy.
+s expressed in this research.
+
+We and our affiliates, officers, directors, and employees will from time to time have long or short positions in, act as principal in, and buy or sell, the securities or derivatives, if any, referred to in this research, unless otherwise prohibited by regulation or GS policy.
 
 The views attributed to third party presenters at GS arranged conferences, including individuals from other parts of GS, do not necessarily reflect those of Global Investment Research and are not an official view of GS.
 

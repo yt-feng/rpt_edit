@@ -1,28 +1,13 @@
 Found 39 total PDFs; shard 0/40 has 5 PDFs, skips 0 already converted, will process 5 PDFs with batch_size=5.
 Running batch 1: 5 PDFs
 Found 5 PDFs.
-Uploading PDF to MinerU: /tmp/pdf_batch_001_ixzvsz20/pdfs/0001-01-Barclays-Energy Perspectives-The Power of the Pump- Politics- Inflation and Muni Credit-260514.pdf
-Uploading PDF to MinerU: /tmp/pdf_batch_001_ixzvsz20/pdfs/0002-02-Bofa-The Flow Show The Bidterms-260514.pdf
-Uploading PDF to MinerU: /tmp/pdf_batch_001_ixzvsz20/pdfs/0003-03-Goldman Sachs-Global Credit Trader-State of Play for Leveraged Finance Defaults-260514.pdf
-Uploading PDF to MinerU: /tmp/pdf_batch_001_ixzvsz20/pdfs/0004-04-Goldman Sachs-China-RMB loan stock declined from March to April-260514.pdf
-Uploading PDF to MinerU: /tmp/pdf_batch_001_ixzvsz20/pdfs/0005-05-Goldman Sachs-Global Markets Daily- Why Always Gilts--260514.pdf
-MinerU batch_id=50e6dba8-1ceb-45dc-a19a-fb218ea1c7c8
-MinerU states: pending, pending, pending, pending, waiting-file
-MinerU states: running, running, running, done, running
-MinerU states: running, running, running, done, done
-MinerU states: running, running, running, done, done
-MinerU states: running, done, running, done, done
-MinerU states: running, done, running, done, done
-MinerU states: done, done, running, done, done
-MinerU states: done, done, running, done, done
-MinerU states: done, done, running, done, done
-MinerU states: done, done, running, done, done
-MinerU states: done, done, running, done, done
-MinerU states: done, done, running, done, done
-MinerU states: done, done, running, done, done
-MinerU states: done, done, running, done, done
-MinerU states: done, done, running, done, done
-MinerU states: done, done, running, done, done
+Uploading PDF to MinerU: /tmp/pdf_batch_001_nve2a7p2/pdfs/0001-01-Goldman Sachs-China-RMB loan stock declined from March to April-260514.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_nve2a7p2/pdfs/0002-02-Goldman Sachs-Japan Economic Flash- March Data Roundup- Raising Our Final 2026Q1 Real GDP Tracking Estimate to -1.3- QoQ Annualized-260514.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_nve2a7p2/pdfs/0003-03-Nomura-Asia Insights-China- Credit growth slowed again in April-260514.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_nve2a7p2/pdfs/0004-04-UBS-China Economic Comment-Continuation of strategic stability-260514.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_nve2a7p2/pdfs/0005-05-UBS-China Economic Comment-April new credit missed again-260514.pdf
+MinerU batch_id=1d2431e5-2d74-4299-9c48-803fe397fdeb
+MinerU states: done, done, done, done, waiting-file
 MinerU states: done, done, done, done, done
 Done. Results written to /home/runner/work/rpt_edit/rpt_edit/xhs_notes/dropbox/260515/shard_0
 All batches completed successfully.

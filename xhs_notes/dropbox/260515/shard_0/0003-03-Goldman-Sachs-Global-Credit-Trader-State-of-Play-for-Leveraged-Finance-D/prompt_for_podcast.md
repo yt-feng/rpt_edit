@@ -390,11 +390,13 @@ Source: Moody's, GS Global Investment Research
 
 The rise of repeat default activity has coincided somewhat with a broader aggregate decline in recovery values in the USD market (in Europe, where the data is more sparse, we have not observed a similar trend). Exhibit 9 tracks the 12-month trailing recovery rate for US senior unsecured bonds vs. $1^{\text{st}}$ lien loans over the past 20 years. While the acceleration in repeat defaults is likely one contributing factor to this erosion in average recovery values, we would also point to two other drivers.
 
-First, the proliferation of ‘loan-only’ capital structures has reduced the subordination cushion that HY bonds used to provide in ‘mixed’ capital structures that had both loans and bonds outstanding. We estimate that over 70% of loans are now issued by loan-only capital structures, up from just 45% in 
+First, the proliferation of ‘loan-only’ capital structures has reduced the subordination cushion that HY bonds used to provide in ‘mixed’ capital structures that had both loans and bonds outstanding. We estimate that over 70% of loans are now issued by loan-only capital structures, up from just 45% in 2010. Second, as shown in Exhibit 10, the US economy has structurally transitioned from asset-heavy industries (e.g., manufacturing)
 
 [中间内容因长度限制已省略]
 
-me have long or short positions in, act as principal in, and buy or sell, the securities or derivatives, if any, referred to in this research, unless otherwise prohibited by regulation or GS policy.
+ws expressed in this research.
+
+We and our affiliates, officers, directors, and employees will from time to time have long or short positions in, act as principal in, and buy or sell, the securities or derivatives, if any, referred to in this research, unless otherwise prohibited by regulation or GS policy.
 
 The views attributed to third party presenters at GS arranged conferences, including individuals from other parts of GS, do not necessarily reflect those of Global Investment Research and are not an official view of GS.
 
