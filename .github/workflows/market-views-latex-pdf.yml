@@ -15,18 +15,6 @@ on:
         description: "DeepSeek API base URL"
         required: true
         default: "https://api.deepseek.com"
-      max_reports:
-        description: "Max report folders to include"
-        required: true
-        default: "120"
-      max_figures:
-        description: "Max exhibit-style figures to copy as candidates"
-        required: true
-        default: "40"
-      max_selected_figures:
-        description: "Max figures DeepSeek may select for the final PDF"
-        required: true
-        default: "12"
       compile_latex:
         description: "Also compile the LaTeX .tex with XeLaTeX. Default false because ReportLab already creates the PDF much faster."
         required: true
@@ -38,8 +26,8 @@ on:
         type: boolean
         default: true
   schedule:
-    # UTC 00:30 = Asia/Shanghai 08:30, after the 05:00 daily report pipeline has time to finish and commit shards.
-    - cron: "30 0 * * *"
+    # UTC 00:00 = Asia/Shanghai 08:00.
+    - cron: "0 0 * * *"
 
 permissions:
   contents: write
@@ -99,20 +87,18 @@ jobs:
           DATE_FOLDER="${{ github.event.inputs.date_folder || 'latest' }}"
           MODEL="${{ github.event.inputs.model || 'deepseek-chat' }}"
           BASE_URL="${{ github.event.inputs.deepseek_base_url || 'https://api.deepseek.com' }}"
-          MAX_REPORTS="${{ github.event.inputs.max_reports || '120' }}"
-          MAX_FIGURES="${{ github.event.inputs.max_figures || '40' }}"
-          MAX_SELECTED_FIGURES="${{ github.event.inputs.max_selected_figures || '12' }}"
           COMPILE_LATEX="${{ github.event.inputs.compile_latex || 'false' }}"
-          echo "::notice::Building market views from xhs_notes/dropbox/$DATE_FOLDER. Fast PDF renderer will run after this step."
+          echo "::notice::Building market views from xhs_notes/dropbox/$DATE_FOLDER. No report or figure limits are applied. Fast PDF renderer will run after this step."
           python scripts/build_market_views_pdf.py \
             --dropbox-output-root "xhs_notes/dropbox" \
             --date-folder "$DATE_FOLDER" \
             --output-root "market_view_summaries" \
             --model "$MODEL" \
             --deepseek-base-url "$BASE_URL" \
-            --max-reports "$MAX_REPORTS" \
-            --max-figures "$MAX_FIGURES" \
-            --max-selected-figures "$MAX_SELECTED_FIGURES" \
+            --max-reports 0 \
+            --max-figures 0 \
+            --max-selected-figures 0 \
+            --max-figures-per-report 0 \
             --compile "$COMPILE_LATEX" 2>&1 | tee market_views_build_progress.log
           echo "DATE_FOLDER=$DATE_FOLDER" >> "$GITHUB_ENV"
 
@@ -123,6 +109,14 @@ jobs:
             --summary-root "market_view_summaries" \
             --date-folder "$DATE_FOLDER" 2>&1 | tee market_views_pdf_render_progress.log
           find market_view_summaries -name "*.pdf" -print
+
+      - name: Verify PDF exists before upload and commit
+        run: |
+          if ! find market_view_summaries -name "market_views_*.pdf" -type f -size +1k | grep -q .; then
+            echo "No rendered market_views_*.pdf found. Failing the workflow so this is visible."
+            find market_view_summaries -maxdepth 3 -type f -print || true
+            exit 1
+          fi
 
       - name: Upload market views PDF artifact
         uses: actions/upload-artifact@v4
