@@ -56,7 +56,7 @@ on:
         required: true
         default: "5"
       commit_results:
-        description: "Commit each completed shard to the repo immediately"
+        description: "Commit each completed shard and final ZIP to the repo"
         required: true
         type: boolean
         default: true
@@ -115,7 +115,7 @@ jobs:
           echo "::notice::Daily schedule is 05:00 Asia/Shanghai. Audio/video are disabled."
           echo "::notice::DeepSeek filters macro/trend reports first; stock/company reports are skipped."
           echo "::notice::Default plan processes ALL macro candidates, sharded as 40 x 5 = up to 200 macro reports."
-          echo "::notice::If a PDF already has source_mineru.md + note.md + wechat_article.md in its shard output, MinerU is skipped on rerun."
+          echo "::notice::At the end, a publish-ready ZIP will be created from generated report folders, excluding MinerU raw files."
 
   select-macro-reports:
     needs: resolve-inputs
@@ -312,3 +312,39 @@ jobs:
           name: final-dropbox-macro-shard-${{ needs.select-macro-reports.outputs.latest_folder }}-${{ matrix.shard_index }}
           path: ${{ env.OUTPUT_DIR }}
           if-no-files-found: warn
+
+  package-publish-ready:
+    needs: [resolve-inputs, select-macro-reports, process-shard]
+    if: always()
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Pull latest shard commits
+        run: |
+          git pull --rebase origin main || git pull origin main
+      - name: Build publish-ready ZIP
+        id: package
+        run: |
+          DATE_DIR="xhs_notes/dropbox/${{ needs.select-macro-reports.outputs.latest_folder }}"
+          echo "::notice::Packaging publish-ready outputs from $DATE_DIR, excluding MinerU raw/source files."
+          python scripts/package_publish_ready_outputs.py \
+            --date-dir "$DATE_DIR" \
+            --output-root "publish_ready_zips" 2>&1 | tee "publish_ready_package_progress.log"
+          echo "PACKAGE_DIR=publish_ready_zips/${{ needs.select-macro-reports.outputs.latest_folder }}" >> "$GITHUB_ENV"
+          find "publish_ready_zips/${{ needs.select-macro-reports.outputs.latest_folder }}" -maxdepth 1 -type f -print
+      - name: Upload publish-ready ZIP artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: publish-ready-${{ needs.select-macro-reports.outputs.latest_folder }}-${{ github.run_id }}
+          path: |
+            ${{ env.PACKAGE_DIR }}
+            publish_ready_package_progress.log
+          if-no-files-found: error
+      - name: Commit publish-ready ZIP
+        if: ${{ needs.resolve-inputs.outputs.commit_results == 'true' }}
+        run: |
+          bash scripts/commit_output_dir.sh "$PACKAGE_DIR" "Package publish-ready outputs ${{ needs.select-macro-reports.outputs.latest_folder }}" 8
