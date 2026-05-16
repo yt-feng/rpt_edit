@@ -1,0 +1,79 @@
+ZH_A: 今天我们要聊的这份研报，来自某外资投行，主题是AI医疗，而且一上来就给了个非常惊人的数字。
+
+ZH_B: 没错。报告里提到，谷歌每天要处理超过10亿个健康相关的问题，而微软每天也有5000万个。
+
+ZH_A: 10亿个健康问题？这比我想象的多太多了。所以这份报告想回答的核心问题是什么？
+
+ZH_B: 报告的核心是，面对如此海量的健康查询，谷歌和微软这两家科技巨头，到底是怎么用AI来应对的？它们的策略有什么不同？
+
+ZH_A: 那它们各自的打法是什么呢？
+
+ZH_B: 简单来说，微软的Copilot Health更像一个“个人健康保险箱”。它把你从50多个可穿戴设备、5万家美国医院和实验室测试中产生的所有数据，都整合到一个安全的空间里，目的是帮你“搞明白自己到底怎么了”。
+
+ZH_A: 所以它更像一个个人数据管理工具。那谷歌呢？
+
+ZH_B: 谷歌Health是一个更庞大的平台集合。它通过云服务，把搜索、YouTube、可穿戴设备Fitbit、甚至医学影像和基因测序都连接起来。谷歌的目标是打造一个“多通道”的医疗生态系统。
+
+ZH_A: 多通道？这意味着什么？
+
+ZH_B: 这意味着谷歌不仅在服务消费者，还在服务B端客户，比如医院和研究机构。它利用Gemini模型，能够处理来自传感器、文本和图像的各种数据，实现从诊断到药物研发的全链条覆盖。
+
+ZH_A: 听起来谷歌的布局更宏大。那目前用户用这些AI工具，主要是在查什么？是看病还是查资料？
+
+ZH_B: 这很有意思。报告里有一张图显示，在微软的Copilot上，超过40%的请求是“健康信息与教育”，只有不到11%是直接的“症状问题”。这说明大多数人还在用AI当“超级搜索引擎”，而不是真正的“医生”。
+
+ZH_A: 也就是说，人们还在获取信息的阶段，而不是寻求治疗方案的阶段。那问题来了，AI到底能不能直接用于临床诊断？
+
+ZH_B: 这正是报告里一个非常关键的悬念。报告讨论了“鉴别诊断”这个概念，也就是医生通过排除法来找出病因。AI可以处理病史、整理文献、甚至建立概率模型。
+
+ZH_A: 但AI能下诊断吗？
+
+ZH_B: 报告明确说，目前不能。AI无法评估临床风险中的细微差别和情境判断，也永远无法承担医疗责任。斯坦福大学最新的研究也表明，虽然有些AI模型在安全性和完整性上已经超过了普通医生，但在精准度上，医生依然是最好的。
+
+ZH_A: 所以AI是医生的助手，而不是替代者。那这份报告里还有哪些问题是它没有完全展开，但非常值得我们继续深挖的？
+
+ZH_B: 有两个。第一，谷歌和微软怎么赚钱？报告提到谷歌目前不在AI健康回复里放广告，但未来可能会根据回复的“复杂程度”来收费。第二，AI在诊断中的“有害错误”到底有多少？报告里有一张表格，列出了不同模型犯的错误数量，但并没有完全解释这些错误的后果和如何避免。
+
+ZH_A: 听你这么一说，这份报告的信息量确实很大。如果听众朋友想了解更多关于AI医疗的商业模式和诊断风险的细节，去哪里看完整版？
+
+ZH_B: 欢迎加入我们的社群，或者直接搜索这份研报的标题，完整的分析都在里面。我们下次再聊。
+
+EN_A: So we are diving into a new report from a global investment bank today, and it starts with a staggering number.
+
+EN_B: It does. The report says Google handles over a billion health-related questions every single day. And Microsoft gets about 50 million.
+
+EN_A: A billion health questions a day? That is way more than I expected. So what is the core question this report is trying to answer?
+
+EN_B: The big question is: how are Google and Microsoft using AI to deal with this massive flood of health queries? And more importantly, what are the different strategies they are taking?
+
+EN_A: So what is each company doing?
+
+EN_B: Microsoft’s Copilot Health is like a personal health vault. It pulls all your data from over 50 wearables, 50,000 hospitals in the US, and lab tests into one secure space. The goal is to help you make sense of what you have.
+
+EN_A: So it is more of a personal data manager. What about Google?
+
+EN_B: Google Health is a much bigger platform. It connects search, YouTube, wearables like Fitbit, medical imaging, and even genomic sequencing through the cloud. Google is building what the report calls a multi-channel healthcare ecosystem.
+
+EN_A: Multi-channel? What does that mean in plain English?
+
+EN_B: It means Google is serving not just consumers, but also hospitals and research labs. They use the Gemini model to process data from sensors, text, and images. This allows them to cover everything from diagnosis to drug discovery.
+
+EN_A: So Google’s approach sounds more ambitious. But what are people actually using these AI tools for? Are they trying to get diagnosed, or just looking for information?
+
+EN_B: That is the interesting part. The report shows that on Microsoft’s Copilot, over 40 percent of requests are for health information and education. Only about 11 percent are direct symptom questions. So most people are still using AI as a super search engine, not as a doctor.
+
+EN_A: So it is still about gathering information, not getting a treatment plan. That leads to the big question: can AI actually be used for clinical diagnosis?
+
+EN_B: This is where the report gets really interesting. It talks about differential diagnosis, which is the process doctors use to rule out possibilities. AI can handle medical history, summarize literature, and even build a probability map.
+
+EN_A: But can it make the final call?
+
+EN_B: The report says no, not yet. AI cannot assess the nuances or the clinical risks of a medical decision. And it will never be able to take medical responsibility. A recent Stanford study found that while some AI models are better than the average doctor in safety and completeness, doctors are still the best when it comes to precision.
+
+EN_A: So AI is a helper, not a replacement. What are some questions the report does not fully answer, that we should keep an eye on?
+
+EN_B: Two things. First, how will Google and Microsoft make money from this? The report says Google does not put ads in AI health responses yet, but it might charge based on the complexity of the answer. Second, how do we deal with harmful errors from these models? The report has a table showing error rates, but it does not fully explain how to prevent them.
+
+EN_A: That sounds like a lot to unpack. If our listeners want to learn more about the business model and the risks of AI in diagnosis, where can they find the full report?
+
+EN_B: Join our community or search for the title of this research report. The full analysis is in there. Let’s catch up next time.

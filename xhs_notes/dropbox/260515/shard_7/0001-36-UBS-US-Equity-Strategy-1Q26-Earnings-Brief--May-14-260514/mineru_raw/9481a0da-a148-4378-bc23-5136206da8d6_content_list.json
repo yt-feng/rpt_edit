@@ -1,0 +1,2572 @@
+[
+    {
+        "type": "text",
+        "text": "US Equity Strategy ",
+        "text_level": 1,
+        "bbox": [
+            70,
+            134,
+            312,
+            160
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "1Q26 Earnings Brief: May 14 ",
+        "text_level": 1,
+        "bbox": [
+            73,
+            163,
+            405,
+            186
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "84.0% of the S&P 500's market cap has reported. 1Q expectations are for revenues to grow 11.2% and EPS 28.4%. Projected EPS growth among groups varies significantly, as shown below (a blend of consensus estimates and reported results where available): ",
+        "bbox": [
+            68,
+            214,
+            633,
+            256
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Expected EPS Growth YoY ",
+        "text_level": 1,
+        "bbox": [
+            70,
+            271,
+            260,
+            285
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "list",
+        "sub_type": "text",
+        "list_items": [
+            "- TECH+: 59.6% ",
+            "• Financials: 24.7% ",
+            "• Non-Cyclicals: 1.7% ",
+            "• Cyclicals ex-Energy: 15.7% ",
+            "- Energy: $0.0\\%$ "
+        ],
+        "bbox": [
+            85,
+            290,
+            285,
+            384
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "The 6 largest TECH+ companies are expected to outgrow the rest of the market as a group (EPS growth 61.2% vs. 17.9%), though forecasts vary for each company: ",
+        "bbox": [
+            68,
+            391,
+            633,
+            421
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Big 6 TECH+ Earnings Growth (Expected vs. Actual, YoY) ",
+        "text_level": 1,
+        "bbox": [
+            70,
+            434,
+            472,
+            448
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "list",
+        "sub_type": "text",
+        "list_items": [
+            "• AMZN – 1Q26E: 6.6%; 1Q26A: 81.1% ",
+            "• META – 1Q26E: 5.5%; 1Q26A: 62.2% ",
+            "• MSFT – 1Q26E: 17.3%; 1Q26A: 23.3% ",
+            "• GOOGL – 1Q26E: -7.2%; 1Q26A: 80.8% ",
+            "- AAPL – 1Q26E: 15.5%; 1Q26A: 19.1% ",
+            "• NVDA – 1Q26E: 115.1%; 1Q26A: Wednesday 20/05 "
+        ],
+        "bbox": [
+            85,
+            454,
+            453,
+            568
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Current consensus estimates suggest only TECH+ and Materials are expected to outpace the S&P 500, while Energy is expected to be a drag on 1Q earnings. ",
+        "bbox": [
+            68,
+            576,
+            633,
+            604
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Earnings are beating estimates by 17.3% on aggregate so far, with 78% of companies topping projections to date. EPS is on pace for 28.6%, assuming the historical trend of estimate revisions through the end of reporting season. ",
+        "bbox": [
+            68,
+            618,
+            633,
+            657
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Over the next 5 trading days, 12 companies representing 9.9% of the S&P 500's market cap will report results, including Applied Materials, Home Depot, Keysight Tech and NVIDIA. ",
+        "bbox": [
+            68,
+            672,
+            633,
+            712
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Equity Strategy ",
+        "text_level": 1,
+        "bbox": [
+            660,
+            138,
+            801,
+            157
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Americas ",
+        "bbox": [
+            660,
+            167,
+            721,
+            179
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Sean Simonds ",
+        "bbox": [
+            826,
+            190,
+            924,
+            201
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Strategist ",
+        "bbox": [
+            867,
+            203,
+            924,
+            214
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "sean.simonds@UBS.com ",
+        "bbox": [
+            784,
+            214,
+            924,
+            225
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "+1-212-713 2851 ",
+        "bbox": [
+            818,
+            225,
+            924,
+            235
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Maxwell Grinacoff, CFA ",
+        "bbox": [
+            764,
+            241,
+            924,
+            252
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Strategist ",
+        "bbox": [
+            867,
+            254,
+            924,
+            264
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "maxwell.grinacoff@UBS.com ",
+        "bbox": [
+            759,
+            264,
+            924,
+            276
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "+1-212-713 3892 ",
+        "bbox": [
+            818,
+            276,
+            924,
+            287
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Andrew Garthwaite ",
+        "bbox": [
+            786,
+            292,
+            924,
+            304
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Strategist ",
+        "bbox": [
+            867,
+            305,
+            924,
+            315
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "andrew.garthwaite@UBS.com ",
+        "bbox": [
+            754,
+            315,
+            924,
+            327
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "+44-20-7567 4343 ",
+        "bbox": [
+            811,
+            327,
+            924,
+            338
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Gerry Fowler ",
+        "bbox": [
+            833,
+            344,
+            924,
+            356
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Strategist ",
+        "bbox": [
+            867,
+            356,
+            924,
+            366
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "gerry.fowler@UBS.com ",
+        "bbox": [
+            794,
+            366,
+            924,
+            378
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "+44-20-7567 5490 ",
+        "bbox": [
+            811,
+            378,
+            924,
+            389
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "header",
+        "text": "[NO TEXT] ",
+        "bbox": [
+            72,
+            24,
+            119,
+            60
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "header",
+        "text": "UBS ",
+        "bbox": [
+            122,
+            28,
+            206,
+            55
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "header",
+        "text": "Global Research ",
+        "bbox": [
+            813,
+            30,
+            924,
+            43
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "header",
+        "text": "14 May 2026 ",
+        "bbox": [
+            838,
+            43,
+            924,
+            57
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "footer",
+        "text": "This report has been prepared by UBS LLC. ANALYST CERTIFICATION AND REQUIRED DISCLOSURES, INCLUDING INFORMATION ON THE QUANTITATIVE RESEARCH REVIEW PUBLISHED BY UBS, BEGIN ON PAGE 19. ",
+        "bbox": [
+            68,
+            947,
+            924,
+            973
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "S&P 500 ",
+        "text_level": 1,
+        "bbox": [
+            72,
+            67,
+            166,
+            85
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "chart",
+        "img_path": "images/a5cd1b9610fb1efc2dc79c0e92012f472282826ac91b4f36bc7547b3d4ef251c.jpg",
+        "content": "| Period | Value (%) |\n| :--- | :--- |\n| 1Q25 | 10.6 |\n| 2Q25 | 11.5 |\n| 3Q25 | 16.1 |\n| 4Q25E | 12.5 |\n| 1Q26E | 28.6 |\n| Current Consensus Forecast | 28.4 |\nExpected Final Reported Growth",
+        "chart_caption": [
+            "Figure 1: S&P 500 EPS Growth "
+        ],
+        "chart_footnote": [
+            "Source: Standard & Poor's, Refinitiv, FactSet, UBS "
+        ],
+        "sub_type": "bar",
+        "bbox": [
+            73,
+            138,
+            631,
+            403
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "Expected 1Q EPS Growth is now 28.6% YoY ",
+        "bbox": [
+            653,
+            96,
+            885,
+            121
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "chart",
+        "img_path": "images/72d92f6b5f214c753b6b77887daab9b7c551f48f73ad16662c4c0ed75a90c218.jpg",
+        "content": "| Quarter | Value (%) |\n| :--- | :--- |\n| 1Q25 | 8.1 |\n| 2Q25 | 6.9 |\n| 3Q25 | 6.5 |\n| 4Q25 | 9.3 |\n| 1Q26E | 17.3 |",
+        "chart_caption": [
+            "Figure 2: S&P 500 EPS Growth - Impact from TECH+ "
+        ],
+        "chart_footnote": [
+            "Source: Standard & Poor's, Refinitiv, FactSet, UBS ",
+            "Note: Impact calculated as difference in EPS growth between S&P 500 and S&P 500 ex-TECH+ "
+        ],
+        "sub_type": "bar",
+        "bbox": [
+            82,
+            482,
+            623,
+            802
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "TECH+ has had an outsized impact on S&P 500 EPS growth over the past year ",
+        "bbox": [
+            653,
+            457,
+            924,
+            497
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "header",
+        "text": "US Equity Strategy ",
+        "bbox": [
+            72,
+            36,
+            181,
+            49
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "header",
+        "text": "UBS ",
+        "bbox": [
+            843,
+            36,
+            924,
+            49
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "footer",
+        "text": "US Equity Strategy 14 May 2026 ",
+        "bbox": [
+            72,
+            957,
+            292,
+            971
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "footer",
+        "text": "UBS 2 ",
+        "bbox": [
+            862,
+            957,
+            924,
+            969
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "table",
+        "img_path": "images/8f9e2947d15c3435cba0cc5bee416a5b0710141815355ae58461a303dfc175cd.jpg",
+        "table_caption": [
+            "Figure 3: 1Q26 Earnings Dashboard – S&P 500 "
+        ],
+        "table_footnote": [
+            "Source: Standard & Poor's, Refinitiv, FactSet, UBS\nNote: Blend of actuals where available and estimates "
+        ],
+        "table_body": "<table><tr><td rowspan=\"2\"></td><td colspan=\"5\">Weighted Growth YoY (%)</td></tr><tr><td>Revenue</td><td>Margins</td><td>Earnings</td><td>Buybacks</td><td>EPS</td></tr><tr><td>S&amp;P 500</td><td>11.2</td><td>16.4</td><td>27.6</td><td>0.8</td><td>28.4</td></tr><tr><td>TECH+</td><td>25.1</td><td>34.1</td><td>59.1</td><td>0.5</td><td>59.6</td></tr><tr><td>Big 6 TECH+</td><td>24.9</td><td>35.9</td><td>60.7</td><td>0.5</td><td>61.2</td></tr><tr><td>Rest of TECH+</td><td>25.3</td><td>30.3</td><td>55.7</td><td>0.4</td><td>56.1</td></tr><tr><td>Cyclicals</td><td>7.1</td><td>3.5</td><td>10.5</td><td>1.3</td><td>11.8</td></tr><tr><td>Cyclicals ex-Energy</td><td>8.0</td><td>5.7</td><td>13.8</td><td>2.0</td><td>15.7</td></tr><tr><td>Energy</td><td>4.4</td><td>-3.8</td><td>0.6</td><td>-0.7</td><td>0.0</td></tr><tr><td>Materials</td><td>10.0</td><td>31.4</td><td>41.4</td><td>0.8</td><td>42.2</td></tr><tr><td>Industrials</td><td>8.2</td><td>-0.8</td><td>7.4</td><td>1.6</td><td>9.0</td></tr><tr><td>Discretionary ex-AMZN</td><td>7.3</td><td>6.2</td><td>13.5</td><td>2.9</td><td>16.4</td></tr><tr><td>Non-Cyclicals</td><td>7.4</td><td>-6.2</td><td>1.2</td><td>0.5</td><td>1.7</td></tr><tr><td>Staples</td><td>6.7</td><td>-0.5</td><td>6.2</td><td>0.8</td><td>7.0</td></tr><tr><td>Health Care</td><td>7.0</td><td>-11.7</td><td>-4.7</td><td>0.9</td><td>-3.8</td></tr><tr><td>Health Care ex-MRK</td><td>7.0</td><td>1.0</td><td>8.0</td><td>1.0</td><td>8.9</td></tr><tr><td>Utilities</td><td>13.7</td><td>3.9</td><td>17.6</td><td>-1.9</td><td>15.7</td></tr><tr><td>REITs</td><td>11.8</td><td>-6.0</td><td>5.8</td><td>-1.7</td><td>4.1</td></tr><tr><td>Telcos</td><td>4.2</td><td>-9.4</td><td>-5.1</td><td>2.0</td><td>-3.1</td></tr><tr><td>Financials</td><td>9.7</td><td>13.7</td><td>23.4</td><td>1.3</td><td>24.7</td></tr><tr><td>S&amp;P 500 ex-TECH+</td><td>7.6</td><td>2.6</td><td>10.2</td><td>0.9</td><td>11.1</td></tr><tr><td>S&amp;P 500 ex-Energy</td><td>11.8</td><td>17.1</td><td>28.8</td><td>0.9</td><td>29.7</td></tr><tr><td>S&amp;P 500 ex-Financials</td><td>11.4</td><td>17.1</td><td>28.5</td><td>0.7</td><td>29.2</td></tr></table>",
+        "bbox": [
+            70,
+            125,
+            633,
+            475
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "table",
+        "img_path": "images/419106acad714d47fc808d8f07875fcb15b26daeef5df47138ee5a5858a626a3.jpg",
+        "table_caption": [
+            "Figure 4: 1Q26 Surprise Dashboard – S&P 500 "
+        ],
+        "table_footnote": [
+            "Source: Standard & Poor's, Refinitiv, FactSet, UBS\nNote: Surprise calculated based on revenue beat/miss by +/- 0.25%, earnings beat/miss by +/- 1% "
+        ],
+        "table_body": "<table><tr><td rowspan=\"2\"></td><td rowspan=\"2\">Rptd</td><td rowspan=\"2\">Total</td><td colspan=\"3\">Surprise (%)</td><td colspan=\"3\">Surprise (%) - Median</td></tr><tr><td>Revenue</td><td>Margins</td><td>Earnings</td><td>Revenue</td><td>Margins</td><td>Earnings</td></tr><tr><td>S&amp;P 500</td><td>456</td><td>500</td><td>2.2</td><td>15.1</td><td>17.3</td><td>1.7</td><td>4.0</td><td>5.7</td></tr><tr><td>TECH+</td><td>65</td><td>83</td><td>2.6</td><td>31.0</td><td>33.5</td><td>1.8</td><td>4.0</td><td>5.9</td></tr><tr><td>Cyclicals</td><td>161</td><td>174</td><td>2.3</td><td>11.6</td><td>13.8</td><td>1.8</td><td>4.8</td><td>6.6</td></tr><tr><td>Energy</td><td>22</td><td>22</td><td>1.6</td><td>17.3</td><td>18.9</td><td>4.0</td><td>10.5</td><td>14.5</td></tr><tr><td>Materials</td><td>26</td><td>26</td><td>3.6</td><td>13.7</td><td>17.3</td><td>3.6</td><td>7.4</td><td>11.1</td></tr><tr><td>Industrials</td><td>76</td><td>79</td><td>2.6</td><td>3.4</td><td>6.0</td><td>1.7</td><td>4.3</td><td>6.0</td></tr><tr><td>Discretionary ex-AMZN</td><td>37</td><td>47</td><td>2.1</td><td>20.9</td><td>22.9</td><td>2.1</td><td>20.9</td><td>22.9</td></tr><tr><td>Non-Cyclicals</td><td>154</td><td>167</td><td>1.7</td><td>6.0</td><td>7.8</td><td>1.8</td><td>2.3</td><td>4.2</td></tr><tr><td>Staples</td><td>26</td><td>35</td><td>1.1</td><td>5.0</td><td>6.1</td><td>1.7</td><td>5.0</td><td>6.7</td></tr><tr><td>Health Care</td><td>55</td><td>59</td><td>1.2</td><td>9.4</td><td>10.6</td><td>1.8</td><td>4.3</td><td>6.1</td></tr><tr><td>Utilities</td><td>31</td><td>31</td><td>6.8</td><td>1.4</td><td>8.3</td><td>4.9</td><td>-1.7</td><td>3.2</td></tr><tr><td>REITs</td><td>31</td><td>31</td><td>2.4</td><td>-3.5</td><td>-1.1</td><td>1.0</td><td>0.2</td><td>1.3</td></tr><tr><td>Telcos</td><td>4</td><td>4</td><td>0.9</td><td>6.0</td><td>6.9</td><td>0.7</td><td>6.9</td><td>7.6</td></tr><tr><td>Financials</td><td>76</td><td>76</td><td>2.7</td><td>3.8</td><td>6.4</td><td>0.6</td><td>3.4</td><td>4.0</td></tr></table>",
+        "bbox": [
+            70,
+            541,
+            924,
+            825
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "header",
+        "text": "S&P 500 ",
+        "bbox": [
+            72,
+            59,
+            166,
+            76
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "footer",
+        "text": "US Equity Strategy 14 May 2026 ",
+        "bbox": [
+            72,
+            957,
+            290,
+            970
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "footer",
+        "text": "UBS 3 ",
+        "bbox": [
+            862,
+            956,
+            924,
+            969
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "Price Action ",
+        "text_level": 1,
+        "bbox": [
+            72,
+            59,
+            206,
+            76
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "chart",
+        "img_path": "images/bea184a6a07786530d4adcdebe6af08ecff09d58b1171f46d771b3a4f10f0420.jpg",
+        "content": "Current\n| | Revenue Surprises | Beats | Hits/Misses |\n|---|---|---|---|\n| EPS Surprises | 1.2 | -0.5 | 0.8 |\n| Hits/Misses | -1.7 | -2.8 | -2.2 |\n| | 0.7 | | |\nThe chart displays a correlation matrix between the two variables, where higher values (e.g., 0.8) indicate stronger positive correlation with EPS surprises and negative values (e.g., -2.2) indicate weaker negative correlation with EPS surprises and negative correlation with hits/misses. The color scale on the right maps the values to the cells.",
+        "chart_caption": [
+            "Figure 5: S&P 500 Price Action "
+        ],
+        "chart_footnote": [],
+        "sub_type": "heatmap",
+        "bbox": [
+            73,
+            106,
+            344,
+            258
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "chart",
+        "img_path": "images/7461e0c83b5e0d78d27682c446ea7d5a7f87f390f6c78130cdf666ebed45b3e3.jpg",
+        "content": "Historical Average\n| | Revenue Surprises Beats | Revenue Surprises Hits/Misses | EPS Surprises |\n| :--- | :--- | :--- | :--- |\n| Beats | 1.7 | -0.4 | 0.9 |\n| Hits/Misses | -1.4 | -3.1 | -2.4 |\n| | 1.1 | -1.5 | |",
+        "chart_caption": [],
+        "chart_footnote": [
+            "Source: Standard & Poor's, Refinitiv, FactSet, UBS ",
+            "Note: Surprises calculated based on revenue beat/miss by +/- 0.25%, earnings beat/miss by +/- 1%. Price performance -1 to +1 days "
+        ],
+        "sub_type": "heatmap",
+        "bbox": [
+            361,
+            110,
+            633,
+            257
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "table",
+        "img_path": "images/ab98f7e8bc9ba48ff3080d9409673601e6a980a03db2ef1466ef698afa373fed.jpg",
+        "table_caption": [
+            "Figure 6: S&P 500 Price Action Table "
+        ],
+        "table_footnote": [
+            "Source: Standard & Poor's, Refinitiv, FactSet, UBS ",
+            "Note: Surprises calculated based on revenue beat/miss by +/- 0.25%, earnings beat/miss by +/- 1%. Price performance -1 to +1 days "
+        ],
+        "table_body": "<table><tr><td rowspan=\"3\"></td><td colspan=\"5\">Price Action (%)</td></tr><tr><td rowspan=\"2\">Overall</td><td colspan=\"2\">EPS Beat with</td><td colspan=\"2\">EPS Miss with</td></tr><tr><td>Rev Beat</td><td>Rev Miss</td><td>Rev Beat</td><td>Rev Miss</td></tr><tr><td>S&amp;P 500</td><td>0.2</td><td>1.2</td><td>-0.5</td><td>-1.7</td><td>-2.8</td></tr><tr><td>TECH+</td><td>1.5</td><td>1.7</td><td>4.5</td><td>-8.4</td><td>11.9</td></tr><tr><td>Cyclicals</td><td>0.1</td><td>0.5</td><td>-0.4</td><td>0.3</td><td>-2.9</td></tr><tr><td>Energy</td><td>-0.6</td><td>0.0</td><td>-1.7</td><td>0.6</td><td>-2.8</td></tr><tr><td>Materials</td><td>0.8</td><td>0.9</td><td>-1.7</td><td>1.9</td><td>NA</td></tr><tr><td>Industrials</td><td>1.0</td><td>1.6</td><td>0.7</td><td>-1.9</td><td>-1.2</td></tr><tr><td>Discretionary ex-AMZN</td><td>-1.9</td><td>-2.9</td><td>-0.6</td><td>1.3</td><td>-5.6</td></tr><tr><td>Non-Cyclicals</td><td>0.1</td><td>1.8</td><td>-1.4</td><td>-2.2</td><td>-4.7</td></tr><tr><td>Staples</td><td>1.7</td><td>2.8</td><td>-5.0</td><td>-0.2</td><td>-2.2</td></tr><tr><td>Health Care</td><td>-0.3</td><td>2.0</td><td>-2.8</td><td>-9.7</td><td>-11.6</td></tr><tr><td>Utilities</td><td>-0.6</td><td>-0.7</td><td>0.1</td><td>-1.1</td><td>0.5</td></tr><tr><td>REITs</td><td>0.4</td><td>2.1</td><td>-1.4</td><td>0.8</td><td>-1.4</td></tr><tr><td>Telcos</td><td>3.8</td><td>4.6</td><td>1.4</td><td>NA</td><td>NA</td></tr><tr><td>Financials</td><td>-0.4</td><td>0.6</td><td>-1.3</td><td>0.1</td><td>-2.4</td></tr></table>",
+        "bbox": [
+            72,
+            321,
+            633,
+            612
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "chart",
+        "img_path": "images/ee13722a6f74ccb25848e75ee3f666429583b800dc607e1510f23dea13bb742d.jpg",
+        "content": "| Quarter | Perf on earnings beat | Perf on revenue beat | Perf on earnings miss | Perf on revenue miss |\n|---------|------------------------|----------------------|------------------------|----------------------|\n| Q3 2006 | 0.5                    | 0.5                  | -1.5                   | -1.0                 |\n| Q1 2007 | 0.8                    | 0.7                  | -1.8                   | -1.2                 |\n| Q3 2007 | 1.0                    | 0.9                  | -2.0                   | -1.4                 |\n| Q1 2008 | 1.2                    | 1.1                  | -2.2                   | -1.6                 |\n| Q3 2008 | 1.5                    | 1.4                  | -2.5                   | -1.8                 |\n| Q1 2009 | 2.8                    | 2.7                  | -2.8                   | -2.0                 |\n| Q3 2009 | 0.0                    | 0.0                  | -3.0                   | -2.2                 |\n| Q1 2010 | 0.3                    | 0.4                  | -2.5                   | -1.8                 |\n| Q3 2010 | 0.5                    | 0.6                  | -2.0                   | -1.5                 |\n| Q1 2011 | 0.7                    | 0.8                  | -1.5                   | -1.2                 |\n| Q3 2011 | 1.0                    | 1.1                  | -1.0                   | -0.8                 |\n| Q1 2012 | 0.5                    | 0.6                  | -0.5                   | -0.3                 |\n| Q3 2012 | 0.8                    | 0.9                  | 0.0                    | 0.1                  |\n| Q1 2013 | 1.2                    | 1.3                  | 0.3                    | 0.4                  |\n| Q3 2013 | 0.8                    | 0.9                  | -0.5                   | -0.2                 |\n| Q1 2014 | 0.5                    | 0.6                  | -1.0                   | -0.6                 |\n| Q3 2014 | 0.7                    | 0.8                  | -1.3                   | -0.9                 |\n| Q1 2015 | 1.0                    | 1.1                  | -1.5                   | -1.1                 |\n| Q3 2015 | 1.2                    | 1.3                  | -1.8                   | -1.3                 |\n| Q1 2016 | 1.5                    | 1.4                  | -2.0                   | -1.5                 |\n| Q3 2016 | 1.3                    | 1.5                  | -2.2                   | -1.7                 |\n| Q1 2017 | 1.0                    | 1.1                  | -2.5                   | -2.0                 |\n| Q3 2017 | 0.8                    | 0.9                  | -2.8                   | -2.2                 |\n| Q1 2018 | 0.5                    | 0.6                  | -3.0                   | -2.4                 |\n| Q3 2018 | 0.7                    | 0.8                  | -3.2                   | -2.6                 |\n| Q1 2019 | 1.2                    | 1.3                  | -3.5                   | -3.0                 |\n| Q3 2019 | 1.4                    | 1.5                  | -3.8                   | -3.2                 |\n| Q1 2020 | 1.6                    | 1.7                  | -4.0                   | -3.4                 |\n| Q3 2020 | 1.3                    | 1.5                  | -4.2                   | -3.6                 |\n| Q1 2021 | 1.5                    | 1.7                  | -4.4                   | -3.8                 |\n| Q3 2021 | 1.7                    | 1.9                  | -4.6                   | -4.0                 |\n| Q1 2022 | 1.5                    | 1.6                  | -4.8                   | -4.2                 |\n| Q3 2022 | 1.8                    | 1.8                  | -5.0                   | -4.4                 |\n| Q1 2023 | 1.6                    | 1.5                  | -5.2                   | -4.6                 |\n| Q3 2023 | 1.4                    | 1.3                  | -5.4                   | -4.8                 |\n| Q1 2024 | 2.2                    | 2.3                  | -5.6                   | -5.0                 |\n| Q3 2024 | 1.8                    | 1.9                  | -5.8                   | -5.2                 |\n| Q1 2025 | 1.5                    | 1.6                  | -6.0                   | -5.4                 |\n| Q3 2025 | 1.7                    | 1.8                  | -6.2                   | -5.6                 |\n| Q1 2026 | 2.0                    | 2.1                  | -6.4                   | -5.8                 |",
+        "chart_caption": [
+            "Figure 7: Relative 1d price performance (median %, current reported) "
+        ],
+        "chart_footnote": [
+            "Source: Standard & Poor's, Refinitiv, FactSet, UBS "
+        ],
+        "sub_type": "line",
+        "bbox": [
+            84,
+            682,
+            742,
+            887
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "footer",
+        "text": "US Equity Strategy 14 May 2026 ",
+        "bbox": [
+            72,
+            957,
+            290,
+            971
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "footer",
+        "text": "UBS 4 ",
+        "bbox": [
+            862,
+            956,
+            924,
+            969
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "table",
+        "img_path": "images/cb0e5a3e11f6e63fc27419c87e0cfa0398ba6ea88ad15a5e6d56df66fbd66765.jpg",
+        "table_caption": [
+            "Figure 8: 1Q26 EPS Growth YoY "
+        ],
+        "table_footnote": [
+            "Source: Standard & Poor's, Refinitiv, FactSet, UBS ",
+            "Note: AMZN is included in TECH+, not Cyclicals / Discretionary "
+        ],
+        "table_body": "<table><tr><td rowspan=\"2\"></td><td colspan=\"2\">EPS</td></tr><tr><td>Weighted</td><td>Median</td></tr><tr><td>S&amp;P 500</td><td>28.4</td><td>12.9</td></tr><tr><td>TECH+</td><td>59.6</td><td>26.2</td></tr><tr><td>Cyclicals</td><td>11.8</td><td>11.4</td></tr><tr><td>Energy</td><td>0.0</td><td>16.0</td></tr><tr><td>Materials</td><td>42.2</td><td>8.5</td></tr><tr><td>Industrials</td><td>9.0</td><td>12.0</td></tr><tr><td>Discretionary ex-AMZN</td><td>16.4</td><td>8.3</td></tr><tr><td>Non-Cyclicals</td><td>1.7</td><td>7.3</td></tr><tr><td>Staples</td><td>7.0</td><td>6.6</td></tr><tr><td>Health Care</td><td>-3.8</td><td>9.6</td></tr><tr><td>Utilities</td><td>15.7</td><td>7.5</td></tr><tr><td>REITs</td><td>4.1</td><td>2.4</td></tr><tr><td>Telcos</td><td>-3.1</td><td>-2.2</td></tr><tr><td>Financials</td><td>24.7</td><td>20.0</td></tr></table>",
+        "bbox": [
+            73,
+            130,
+            522,
+            404
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "The median company is expected to outgrow the cap-weighted index in 4 out of 11 groups ",
+        "bbox": [
+            653,
+            110,
+            922,
+            149
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "On a median basis, Tech+ and Financials are expected to see the strongest growth ",
+        "bbox": [
+            653,
+            161,
+            895,
+            200
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "header",
+        "text": "EPS Growth ",
+        "bbox": [
+            72,
+            59,
+            206,
+            76
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "footer",
+        "text": "US Equity Strategy 14 May 2026 ",
+        "bbox": [
+            72,
+            957,
+            292,
+            970
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "footer",
+        "text": "UBS 5 ",
+        "bbox": [
+            862,
+            957,
+            924,
+            969
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "chart",
+        "img_path": "images/4fdc492f23a89ab4519b71217f38f663a91f6949a4a94725a9543d117645ddd7.jpg",
+        "content": "| Category | Value (%) |\n|---|---|\n| Big 6 TECH+ | 61.2 |\n| Rest of TECH+ | 56.1 |\n| Mats | 42.2 |\n| S&P 500 | 28.4 |\n| Fins | 24.7 |\n| S&P 500 ex-Big 6 | 17.9 |\n| Disc ex-AMZN | 16.4 |\n| Utils | 15.7 |\n| Ind | 9.0 |\n| Stap | 7.0 |\n| REITs | 4.1 |\n| Ene | 0.0 |\n| Telcos | -3.1 |\n| H.C. | -3.8 |",
+        "chart_caption": [
+            "Figure 9: 1Q26 S&P 500 EPS Growth YoY "
+        ],
+        "chart_footnote": [],
+        "sub_type": "bar",
+        "bbox": [
+            82,
+            124,
+            631,
+            399
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "TECH+ and Materials are expected to outpace the rest of the market ",
+        "bbox": [
+            653,
+            83,
+            919,
+            109
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "Energy is expected to be a drag ",
+        "bbox": [
+            653,
+            121,
+            880,
+            135
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "Source: Standard & Poor's, Refinitiv, FactSet, UBS ",
+        "bbox": [
+            70,
+            421,
+            319,
+            432
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "Note: AMZN included in TECH+, not Discretionary; blend of actuals where available and estimates ",
+        "bbox": [
+            72,
+            432,
+            561,
+            442
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "chart",
+        "img_path": "images/b7375569be9bf775e1f9c9cbabb878c899de97a8c1bbaa30a12a89258621a829.jpg",
+        "content": "| Category | Value (%) |\n|---|---|\n| Ene | 55.0 |\n| Rest of TECH+ | 46.4 |\n| Mats | 38.4 |\n| Big 6 TECH+ | 33.5 |\n| S&P 500 | 22.2 |\n| S&P 500 ex-Big 6 | 18.6 |\n| Fins | 11.9 |\n| Utils | 10.6 |\n| Ind | 10.2 |\n| Disc ex-AMZN | 8.3 |\n| Stap | 6.7 |\n| REITs | 5.1 |\n| H.C. | 3.8 |\n| Telcos | 0.1 |",
+        "chart_caption": [
+            "Figure 10: 2026E S&P 500 EPS Growth YoY "
+        ],
+        "chart_footnote": [],
+        "sub_type": "bar",
+        "bbox": [
+            72,
+            503,
+            608,
+            773
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "S&P 500 is expected to grow at ",
+        "bbox": [
+            653,
+            480,
+            877,
+            492
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "22.2% based on consensus estimates ",
+        "bbox": [
+            653,
+            494,
+            919,
+            505
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "Source: Standard & Poor's, Refinitiv, FactSet, UBS ",
+        "bbox": [
+            70,
+            785,
+            319,
+            796
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "Note: AMZN included in TECH+, not Discretionary ",
+        "bbox": [
+            72,
+            796,
+            324,
+            807
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "header",
+        "text": "Earnings – Growth ",
+        "bbox": [
+            72,
+            55,
+            278,
+            74
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "footer",
+        "text": "US Equity Strategy 14 May 2026 ",
+        "bbox": [
+            72,
+            958,
+            290,
+            970
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "footer",
+        "text": "UBS 6 ",
+        "bbox": [
+            863,
+            957,
+            924,
+            969
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "chart",
+        "img_path": "images/bbb33be1503ed9b1fa86c56416a53b66a9b7a1f65d94143542c91fc04f947ee1.jpg",
+        "content": "| Sector | Value (%) |\n| :--- | :--- |\n| Semis & Equip | 101.3 |\n| Autos & Comp | 78.2 |\n| Media & Entertain | 70.6 |\n| Insurance | 47.8 |\n| Retailing | 47.1 |\n| Materials | 42.2 |\n| Tech Hdw & Equip | 36.0 |\n| S&P 500 | 28.4 |\n| Banks | 21.8 |\n| Software & Svcs | 21.5 |\n| Div Financials | 19.2 |\n| Consumer Svcs | 16.4 |\n| Utilities | 15.7 |\n| Capital Goods | 14.5 |\n| Comm & Prof Svcs | 9.7 |\n| Food & Stap Retail | 9.0 |\n| HH & Personal Prod | 7.2 |\n| HC Equip & Svcs | 6.5 |\n| Food Bev & Tob | 5.9 |\n| Real Estate | 4.1 |\n| Energy | 0.0 |\n| Telecom | -3.1 |\n| Transportation | -9.4 |\n| Pharma Biotech & LS | -11.8 |\n| Cons Dur & App | -18.2 |",
+        "chart_caption": [
+            "Figure 11: 1Q26E S&P 500 Industry Group EPS Growth YoY "
+        ],
+        "chart_footnote": [
+            "Source: Standard & Poor's, Refinitiv, FactSet, UBS "
+        ],
+        "sub_type": "bar",
+        "bbox": [
+            90,
+            130,
+            776,
+            432
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "chart",
+        "img_path": "images/a150835b2e67d610c4c634a042b4c3f1da21e4e35cbaf94967aa8abff32e334a.jpg",
+        "content": "| Sector | Value (%) |\n| :--- | :--- |\n| Semis & Equip | 75.7 |\n| Energy | 55.0 |\n| Materials | 38.4 |\n| Media & Entertain | 35.8 |\n| Tech Hdwr & Equip | 25.0 |\n| Autos & Comp | 24.5 |\n| S&P 500 | 22.2 |\n| Software & Svcs | 16.8 |\n| Retailing | 16.2 |\n| Banks | 16.0 |\n| Capital Goods | 15.2 |\n| Div Financials | 13.1 |\n| Utilities | 10.6 |\n| Food & Stap Retail | 9.4 |\n| Consumer Svcs | 8.6 |\n| Comm & Prof Svcs | 8.5 |\n| HC Equip & Svcs | 7.0 |\n| Food Bev & Tob | 6.8 |\n| Real Estate | 5.1 |\n| HH & Personal Prod | 3.0 |\n| Pharma Biotech & LS | 2.0 |\n| Insurance | 1.6 |\n| Telecom | 0.1 |\n| Cons Dur & App | -2.2 |\n| Transportation | -3.0 |",
+        "chart_caption": [
+            "Figure 12: 2026E S&P 500 Industry Group EPS Growth YoY "
+        ],
+        "chart_footnote": [
+            "Source: Standard & Poor's, Refinitiv, FactSet, UBS "
+        ],
+        "sub_type": "bar",
+        "bbox": [
+            100,
+            511,
+            783,
+            802
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "header",
+        "text": "EPS Growth - Industry Group ",
+        "bbox": [
+            72,
+            59,
+            391,
+            80
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "footer",
+        "text": "US Equity Strategy 14 May 2026 ",
+        "bbox": [
+            72,
+            958,
+            292,
+            971
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "footer",
+        "text": "UBS 7 ",
+        "bbox": [
+            863,
+            957,
+            924,
+            969
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "chart",
+        "img_path": "images/70e1c0714c35d1ac3e0bcf1fbbf75bec1b8778f796113afc712202b72a66966a.jpg",
+        "content": "| Date  | GOOGL,AMZN, META, AAPL, MSFT beat estimates | Historical Trend |\n|-------|---------------------------------------------|------------------|\n| Apr   | 12.2                                        | -0.4             |\n| Jun   | -0.2                                        | -0.2             |",
+        "chart_caption": [
+            "Figure 13: Consensus S&P 500 1Q26 EPS Revisions "
+        ],
+        "chart_footnote": [
+            "Source: Standard & Poor's, Refinitiv, FactSet, UBS "
+        ],
+        "sub_type": "line",
+        "bbox": [
+            73,
+            130,
+            631,
+            452
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "Earnings estimates typically decline going into reporting season, and improve as results come in ",
+        "bbox": [
+            653,
+            109,
+            910,
+            149
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "chart",
+        "img_path": "images/7ac8c8bf29d73225b6c8b8ef5fa2ff72c4714056308d65c4d45f3dd96613f156.jpg",
+        "content": "| Date  | Tech incl. Mag 7 | S&P 500 ex-Tech & Mag 7 | GOOGL,AMZN, META, AAPL, MSFT beat estimates | Historical Trend |\n|-------|------------------|--------------------------|---------------------------------------------|-------------------|\n| Apr   | 32.7             | 1.0                      | -0.4                                        | -0.2              |",
+        "chart_caption": [
+            "Figure 14: Consensus S&P 500 1Q26 EPS Revisions "
+        ],
+        "chart_footnote": [
+            "Source: Standard & Poor's, Refinitiv, FactSet, UBS "
+        ],
+        "sub_type": "line",
+        "bbox": [
+            73,
+            515,
+            631,
+            840
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "Tech+ is still a positive for S&P 500 earnings, but the overhang from ex-Tech may be sUBSiding ",
+        "bbox": [
+            653,
+            497,
+            917,
+            536
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "header",
+        "text": "EPS Revisions ",
+        "bbox": [
+            72,
+            59,
+            225,
+            76
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "footer",
+        "text": "US Equity Strategy 14 May 2026 ",
+        "bbox": [
+            72,
+            957,
+            292,
+            971
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "footer",
+        "text": "UBS 8 ",
+        "bbox": [
+            862,
+            957,
+            924,
+            969
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "chart",
+        "img_path": "images/2b07970ee7d7bd90446aa809bc53aae67bb22f9a4be98dc53ef425feca426a1d.jpg",
+        "content": "| Date    | Value |\n|---------|-------|\n| Jun-25  | 0.0   |\n| Dec-25  | 3.8   |\n| Mar-26  | 6.5   |\n| Jun-26  | 11.0  |\n| Dec-26  | -3.6  |\n| Mar-27  | -4.5  |",
+        "chart_caption": [
+            "Figure 15: Consensus S&P 500 2026 EPS Revisions "
+        ],
+        "chart_footnote": [
+            "Source: Standard & Poor's, Refinitiv, FactSet, UBS "
+        ],
+        "sub_type": "line",
+        "bbox": [
+            73,
+            135,
+            631,
+            456
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "2026 revisions have started out very strong once again ",
+        "bbox": [
+            653,
+            110,
+            915,
+            137
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "chart",
+        "img_path": "images/b6af21c88707f34979b312b371c87005e1a4aec1ee8d5e27d754203e2a910072.jpg",
+        "content": "| Date    | Tech incl. Mag 7 | S&P 500 ex-Tech & Mag 7 | Historical Trend |\n|---------|------------------|--------------------------|------------------|\n| Jun-25  | 0.0              | 0.0                      | 0.0              |\n| Sep-25  | ~8.0             | ~1.0                     | ~-1.0            |\n| Dec-25  | ~14.0            | ~0.5                     | ~-2.0            |\n| Mar-26  | ~24.0            | ~3.0                     | ~-3.6            |\n| Jun-26  | 32.9             | —                        | —                |\n| Sep-26  | —                | —                        | —                |\n| Dec-26  | —                | —                        | —                |\n| Mar-27  | —                | —                        | -4.5             |",
+        "chart_caption": [
+            "Figure 16: Consensus S&P 500 2026 EPS Revisions "
+        ],
+        "chart_footnote": [
+            "Source: Standard & Poor's, Refinitiv, FactSet, UBS "
+        ],
+        "sub_type": "line",
+        "bbox": [
+            73,
+            529,
+            631,
+            850
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "Even for ex-Tech which had been revised down -4% historically ",
+        "bbox": [
+            653,
+            508,
+            890,
+            536
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "header",
+        "text": "EPS Revisions ",
+        "bbox": [
+            72,
+            59,
+            225,
+            76
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "footer",
+        "text": "US Equity Strategy 14 May 2026 ",
+        "bbox": [
+            72,
+            957,
+            292,
+            971
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "footer",
+        "text": "UBS 9 ",
+        "bbox": [
+            862,
+            956,
+            924,
+            969
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "chart",
+        "img_path": "images/9af545dc7e08d7ce6636579566a06fb05913e7598691c70ef67b40e0a9c04ec5.jpg",
+        "content": "| Date   | 2026 | LT_avg | Median |\n|--------|------|--------|--------|\n| Jun-25 | 0    | 0      | 0      |\n| Aug-25 | 5    | 0      | 0      |\n| Oct-25 | 10   | 0      | 0      |\n| Dec-25 | 15   | 0      | 0      |\n| Mar-26 | 25   | 0      | -5     |\n| May-26 | 30   | 0      | -10    |\n| Jul-26 | 30   | 0      | -10    |\n| Sep-26 | 30   | 0      | -10    |\n| Nov-26 | 30   | 0      | -10    |",
+        "chart_caption": [
+            "Figure 17: S&P 500 Sector 2026 EPS Revision Path vs History "
+        ],
+        "chart_footnote": [],
+        "sub_type": "line",
+        "bbox": [
+            73,
+            130,
+            344,
+            290
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "chart",
+        "img_path": "images/050df7f6f158596a6c207ab533b92babc4c13afdcf7f539d9ac0c3a8c0a29f01.jpg",
+        "content": "| Date   | 2026  | LT_avg | Median |\n|--------|-------|--------|--------|\n| Jun-25 | 0.0   | 0.0    | 0.0    |\n| Aug-25 | 1.5   | -0.5   | -0.2   |\n| Oct-25 | 2.0   | -1.0   | -0.5   |\n| Dec-25 | 2.5   | -1.5   | -0.8   |\n| Mar-26 | 3.0   | -2.0   | -1.0   |\n| May-26 | 3.5   | -2.5   | -1.5   |\n| Jul-26 | 3.0   | -3.0   | -2.0   |\n| Sep-26 | 2.5   | -4.0   | -3.0   |\n| Nov-26 | 2.0   | -5.0   | -4.0   |",
+        "chart_caption": [],
+        "chart_footnote": [],
+        "sub_type": "line",
+        "bbox": [
+            357,
+            131,
+            625,
+            290
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "chart",
+        "img_path": "images/30bc8e3e4a066b5f1723693e0282b553e2066a19a0a656771c7786c7cf059ff7.jpg",
+        "content": "| Date   | 2026  | LT_avg | Median |\n|--------|-------|--------|--------|\n| Jun-25 | 0.0   | 0.0    | 0.0    |\n| Aug-25 | 1.0   | -1.0   | -1.0   |\n| Oct-25 | 1.5   | -2.0   | -2.0   |\n| Dec-25 | 1.0   | -3.0   | -3.0   |\n| Mar-26 | -1.0  | -4.0   | -4.0   |\n| May-26 | 3.5   | -5.0   | -5.0   |\n| Jul-26 | -7.0  | -7.0   | -7.0   |\n| Sep-26 | -8.0  | -8.0   | -8.0   |\n| Nov-26 | -9.0  | -9.0   | -9.0   |",
+        "chart_caption": [],
+        "chart_footnote": [],
+        "sub_type": "line",
+        "bbox": [
+            648,
+            131,
+            919,
+            292
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "chart",
+        "img_path": "images/faac63d29f10611144e8af225ebf1f681eda5dc67e69201bbe1230ec1519e99d.jpg",
+        "content": "| Date   | 2026 | LT_avg | Median |\n|--------|------|--------|--------|\n| Jun-25 | 0    | 0      | 0      |\n| Aug-25 | 3    | -1     | 0      |\n| Oct-25 | 4    | -2     | 0      |\n| Dec-25 | 4    | -3     | 0      |\n| Mar-26 | 4    | -4     | -1     |\n| May-26 | 17   | -7     | -12    |\n| Jul-26 | 4    | -5     | -13    |\n| Sep-26 | 4    | -4     | -13    |\n| Nov-26 | 4    | -3     | -13    |",
+        "chart_caption": [],
+        "chart_footnote": [],
+        "sub_type": "line",
+        "bbox": [
+            73,
+            301,
+            344,
+            460
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "chart",
+        "img_path": "images/15dc4b29260f7d2b5d46fe1730bcc8655ff57bf0c881572f33ce5d102d22bc27.jpg",
+        "content": "| Date   | 2026  | LT_avg | Median |\n|--------|-------|--------|--------|\n| Jun-25 | 0.0   | 0.0    | 0.0    |\n| Aug-25 | -3.0  | -0.5   | -0.3   |\n| Oct-25 | -3.2  | -0.8   | -0.6   |\n| Dec-25 | -3.5  | -1.0   | -0.9   |\n| Mar-26 | -6.0  | -1.5   | -1.2   |\n| May-26 | -9.0  | -1.8   | -1.5   |\n| Jul-26 | -6.5  | -1.2   | -1.0   |\n| Sep-26 | -5.5  | -1.0   | -0.8   |\n| Nov-26 | -4.5  | -1.2   | -0.6   |",
+        "chart_caption": [],
+        "chart_footnote": [],
+        "sub_type": "line",
+        "bbox": [
+            357,
+            301,
+            625,
+            460
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "chart",
+        "img_path": "images/c3518653e8131ffd0f16b44601566d87bb1ce5f69874cecebe23d61f6cea6a2f.jpg",
+        "content": "| Date   | 2026  | LT_avg | Median |\n|--------|-------|--------|--------|\n| Jun-25 | 0.0   | 0.0    | 0.0    |\n| Aug-25 | -0.5  | -0.3   | -0.2   |\n| Oct-25 | -1.0  | -1.5   | -1.2   |\n| Dec-25 | -1.5  | -2.0   | -1.8   |\n| Mar-26 | -2.0  | -2.5   | -2.2   |\n| May-26 | -4.0  | -1.8   | -1.5   |\n| Jul-26 | -1.5  | -2.0   | -1.8   |\n| Sep-26 | -2.5  | -2.8   | -2.5   |\n| Nov-26 | -3.0  | -3.0   | -3.0   |",
+        "chart_caption": [],
+        "chart_footnote": [],
+        "sub_type": "line",
+        "bbox": [
+            650,
+            301,
+            915,
+            460
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "chart",
+        "img_path": "images/eed21a79a731d20c765dc39bae81709b45abc5ca5840f515185fdecf7e3d572c.jpg",
+        "content": "| Date   | 2026  | LT_avg | Median |\n|--------|-------|--------|--------|\n| Jun-25 | 0.0   | 0.0    | 0.0    |\n| Aug-25 | -1.0  | -1.5   | -1.8   |\n| Oct-25 | -1.5  | -2.0   | -2.3   |\n| Dec-25 | -2.0  | -2.5   | -2.8   |\n| Mar-26 | -2.5  | -3.0   | -3.3   |\n| May-26 | -3.0  | -3.5   | -3.8   |\n| Jul-26 | -3.5  | -4.0   | -4.3   |\n| Sep-26 | -4.0  | -4.5   | -4.8   |\n| Nov-26 | -4.5  | -5.0   | -5.3   |",
+        "chart_caption": [],
+        "chart_footnote": [],
+        "sub_type": "line",
+        "bbox": [
+            73,
+            471,
+            339,
+            628
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "chart",
+        "img_path": "images/040545ea4c584d8dc78f465e7f8772fd2840832c32033a110da35cc9110bf682.jpg",
+        "content": "| Date   | 2026  | LT_avg | Median |\n|--------|-------|--------|--------|\n| Jun-25 | 0     | 0      | 0      |\n| Aug-25 | -5    | 5      | 2      |\n| Oct-25 | -10   | 7      | 1      |\n| Dec-25 | -15   | 8      | 0      |\n| Mar-26 | -18   | 10     | 2      |\n| May-26 | 35    | 15     | 3      |\n| Jul-26 | 30    | 20     | 2      |\n| Sep-26 | 30    | 25     | 3      |\n| Nov-26 | 30    | 25     | 3      |",
+        "chart_caption": [],
+        "chart_footnote": [],
+        "sub_type": "line",
+        "bbox": [
+            357,
+            471,
+            625,
+            628
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "chart",
+        "img_path": "images/71e7e0bef998faf4c368a4b776720faebac91d41b1fa18c9092e8fcc03274b49.jpg",
+        "content": "| Date   | 2026  | LT_avg | Median |\n|--------|-------|--------|--------|\n| Jun-25 | 0.0   | 0.0    | 0.0    |\n| Aug-25 | 0.5   | -0.5   | -0.5   |\n| Oct-25 | 0.8   | -0.8   | -0.8   |\n| Dec-25 | 1.0   | -1.0   | -1.0   |\n| Mar-26 | 1.2   | -1.2   | -1.2   |\n| May-26 | 1.4   | -1.4   | -1.4   |\n| Jul-26 | 1.6   | -1.6   | -1.6   |\n| Sep-26 | 1.8   | -1.8   | -1.8   |\n| Nov-26 | 2.0   | -2.0   | -2.0   |",
+        "chart_caption": [],
+        "chart_footnote": [],
+        "sub_type": "line",
+        "bbox": [
+            650,
+            471,
+            917,
+            627
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "chart",
+        "img_path": "images/ce368bd9aa9e348ca172629959f8eaa238ff65f120ee9df4d1a92ab0bc528cf8.jpg",
+        "content": "| Date   | 2026  | LT_avg | Median |\n|--------|-------|--------|--------|\n| Jun-25 | 0.0   | 0.0    | 0.0    |\n| Aug-25 | -1.0  | 0.5    | 0.0    |\n| Oct-25 | -1.5  | 0.8    | -0.5   |\n| Dec-25 | -2.0  | 1.0    | -1.0   |\n| Mar-26 | -3.0  | -0.5   | -3.0   |\n| May-26 | -1.0  | -1.0   | -1.5   |\n| Jul-26 | 0.0   | 0.5    | 1.0    |\n| Sep-26 | 1.0   | 1.0    | 1.5    |\n| Nov-26 | 2.0   | 1.5    | 2.5    |",
+        "chart_caption": [],
+        "chart_footnote": [],
+        "sub_type": "line",
+        "bbox": [
+            73,
+            640,
+            339,
+            796
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "chart",
+        "img_path": "images/59eaf9ce20ed1c2b32d6fc4e268b747b13dafa23762ee73c21f5da9f30899966.jpg",
+        "content": "| Date   | 2026 | LT_avg | Median |\n|--------|------|--------|--------|\n| Jun-25 | 0    | 0      | 0      |\n| Aug-25 | 3    | -1     | -1     |\n| Oct-25 | 4    | -3     | -3     |\n| Dec-25 | 5    | -4     | -4     |\n| Mar-26 | 8    | -3     | -3     |\n| May-26 | 18   | -2     | -2     |\n| Jul-26 | 18   | -3     | -3     |\n| Sep-26 | 18   | -4     | -4     |\n| Nov-26 | 18   | -5     | -5     |",
+        "chart_caption": [],
+        "chart_footnote": [
+            "Source: Standard & Poor's, Refinitiv, FactSet, UBS "
+        ],
+        "sub_type": "line",
+        "bbox": [
+            357,
+            640,
+            628,
+            796
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "header",
+        "text": "EPS Revisions ",
+        "bbox": [
+            72,
+            59,
+            225,
+            76
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "footer",
+        "text": "US Equity Strategy 14 May 2026 ",
+        "bbox": [
+            72,
+            957,
+            292,
+            970
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "footer",
+        "text": "UBS 10 ",
+        "bbox": [
+            853,
+            957,
+            924,
+            969
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "chart",
+        "img_path": "images/75020e4d101ef38780f57ef70214b3c962160f0dd95021bb43302c1d6b87ef9e.jpg",
+        "content": "| Week of: | Value |\n|---|---|\n| Apr 13 | 28 |\n| Apr 20 | 91 |\n| Apr 27 | 180 |\n| May 4 | 128 |\n| May 11 | 11 |\n| May 18 | 18 |\n| May 25 | 11 |\n| Jun 1 | 10 |\n| Jun 8 | 3 |\n| Jun 15 | 0 |",
+        "chart_caption": [
+            "Figure 18: Number of Companies Reporting by Week "
+        ],
+        "chart_footnote": [
+            "Source: Standard & Poor's, Bloomberg, FactSet, UBS "
+        ],
+        "sub_type": "bar",
+        "bbox": [
+            82,
+            137,
+            623,
+            461
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "chart",
+        "img_path": "images/bca49856cbb552fe6b585be8ab54209642c580b4bbfdcc965077868d0046f77b.jpg",
+        "content": "| Date | Value |\n| :--- | :--- |\n| May 14 AMAT | 1 |\n| May 15 | 0 |\n| May 18 | 0 |\n| May 19 HD KEYS | 2 |\n| May 20 NVDA TJX ADI LOW INTU SNPS TGT CPRT NDSN | 9 |\n| May 21 WMT DE ROST TTWO WDAY DECK RL | 7 |\n| May 22 | 0 |\n| May 25 | 0 |\n| May 26 | 0 |\n| May 27 CRM A WSM HPQ BBY | 5 |",
+        "chart_caption": [
+            "Figure 19: Key Companies Reporting Over the Next 2 Weeks "
+        ],
+        "chart_footnote": [
+            "Source: Standard & Poor's, Bloomberg, FactSet, UBS ",
+            "Note: Max of 10 companies per day listed "
+        ],
+        "sub_type": "bar",
+        "bbox": [
+            77,
+            547,
+            581,
+            814
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "header",
+        "text": "1Q26 Calendar ",
+        "bbox": [
+            73,
+            59,
+            238,
+            78
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "footer",
+        "text": "US Equity Strategy 14 May 2026 ",
+        "bbox": [
+            72,
+            957,
+            290,
+            970
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "footer",
+        "text": "UBS 11 ",
+        "bbox": [
+            853,
+            957,
+            922,
+            969
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "chart",
+        "img_path": "images/cce02940e97cb8397c73be49577b80fc1071461a309fa67c6901089391199a14.jpg",
+        "content": "| Quarter | Blended | Median |\n| ------- | ------- | ------ |\n| 3Q21    | 17.2    | 12.5   |\n| 4Q21    | 16.5    | 11.9   |\n| 1Q22    | 13.3    | 10.8   |\n| 2Q22    | 12.7    | 9.1    |\n| 3Q22    | 11.5    | 8.9    |\n| 4Q22    | 5.9     | 6.0    |\n| 1Q23    | 3.3     | 5.8    |\n| 2Q23    | 0.8     | 4.5    |\n| 3Q23    | 2.0     | 3.8    |\n| 4Q23    | 3.2     | 3.2    |\n| 1Q24    | 3.3     | 3.0    |\n| 2Q24    | 5.6     | 5.3    |\n| 3Q24    | 5.7     | 5.0    |\n| 4Q24    | 5.6     | 5.1    |\n| 1Q25    | 5.2     | 4.9    |\n| 2Q25    | 6.0     | 5.9    |\n| 3Q25    | 8.0     | 6.6    |\n| 4Q25    | 9.0     | 6.7    |\n| 1Q26E   | 8.8     | 11.5   |",
+        "chart_caption": [
+            "Figure 20: S&P 500 Revenue Growth "
+        ],
+        "chart_footnote": [
+            "Source: Standard & Poor's, Refinitiv, FactSet, UBS ",
+            "Note: YoY growth of current constituents; blend of unreported and reported numbers where available "
+        ],
+        "sub_type": "bar_line",
+        "bbox": [
+            73,
+            130,
+            907,
+            461
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "chart",
+        "img_path": "images/dba7bb159d1267f8cff5c34334e1a5e7be3a2867040c4fc8352dd13d94297529.jpg",
+        "content": "| Quarter | Blended | Median |\n| ------- | ------- | ------ |\n| 3Q21    | 37      | 20     |\n| 1Q22    | 31      | 15     |\n| 3Q22    | 10      | 11     |\n| 1Q23    | -5      | 4      |\n| 3Q23    | -2      | 5      |\n| 1Q24    | 6       | 7      |\n| 3Q24    | 9       | 6      |\n| 1Q25    | 14      | 9      |\n| 3Q25    | 11      | 7      |\n| 1Q26E   | 16      | 9      |\n| 1Q26E   | 13      | 13     |",
+        "chart_caption": [
+            "Figure 21: S&P 500 EPS Growth "
+        ],
+        "chart_footnote": [
+            "Source: Standard & Poor's, Refinitiv, FactSet, UBS ",
+            "Note: YoY growth of current constituents; blend of unreported and reported numbers where available "
+        ],
+        "sub_type": "bar_line",
+        "bbox": [
+            73,
+            546,
+            907,
+            878
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "header",
+        "text": "Historical Growth Trends ",
+        "bbox": [
+            72,
+            59,
+            347,
+            77
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "footer",
+        "text": "US Equity Strategy 14 May 2026 ",
+        "bbox": [
+            72,
+            957,
+            290,
+            971
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "footer",
+        "text": "UBS 12 ",
+        "bbox": [
+            853,
+            957,
+            924,
+            969
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "chart",
+        "img_path": "images/98d2f326ab1bb3c6dea7a5b3de8cc5bf9a2a50b5db4a57af27b61120088885da.jpg",
+        "content": "| Quarter | Value (%) |\n| :--- | :--- |\n| 3Q21 | 21.6 |\n| 4Q21 | 17.2 |\n| 1Q22 | 12.0 |\n| 2Q22 | 7.3 |\n| 3Q22 | 6.9 |\n| 4Q22 | 0.6 |\n| 1Q23 | -1.5 |\n| 2Q23 | 3.8 |\n| 3Q23 | 7.0 |\n| 4Q23 | 10.4 |\n| 1Q24 | 10.9 |\n| 2Q24 | 11.2 |\n| 3Q24 | 12.6 |\n| 4Q24 | 11.6 |\n| 1Q25 | 11.5 |\n| 2Q25 | 14.9 |\n| 3Q25 | 15.4 |\n| 4Q25 | 18.8 |\n| 1Q26E | 25.1 |",
+        "chart_caption": [
+            "Figure 22: Tech+ Revenue Growth "
+        ],
+        "chart_footnote": [
+            "Source: Standard & Poor's, Refinitiv, FactSet, UBS ",
+            "Note: YoY growth of current constituents; blend of unreported and reported numbers where available "
+        ],
+        "sub_type": "bar",
+        "bbox": [
+            82,
+            130,
+            904,
+            461
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "chart",
+        "img_path": "images/a784b06791c1659741205ab3e93bc8cad8768bf144dc11a2eca4a9571964f26d.jpg",
+        "content": "| Quarter | Value  |\n| ------- | ------ |\n| 3Q21    | 35.8   |\n| 1Q22    | 24.2   |\n| 3Q22    | -6.6   |\n| 1Q23    | -8.5   |\n| 3Q23    | 16.4   |\n| 1Q24    | 32.3   |\n| 3Q24    | 42.5   |\n| 1Q25    | 40.4   |\n| 3Q25    | 30.2   |\n| 1Q26E   | 25.5   |\n| 3Q26E   | 28.0   |\n| 1Q27E   | 29.1   |\n| 3Q27E   | 27.4   |\n| 1Q28E   | 29.6   |\n| 3Q28E   | 28.4   |\n| 1Q29E   | 59.6   |",
+        "chart_caption": [
+            "Figure 23: Tech+ EPS Growth "
+        ],
+        "chart_footnote": [
+            "Source: Standard & Poor's, Refinitiv, FactSet, UBS ",
+            "Note: YoY growth of current constituents; blend of unreported and reported numbers where available "
+        ],
+        "sub_type": "bar",
+        "bbox": [
+            80,
+            543,
+            905,
+            871
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "header",
+        "text": "Historical Growth Trends ",
+        "bbox": [
+            72,
+            59,
+            347,
+            77
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "footer",
+        "text": "US Equity Strategy 14 May 2026 ",
+        "bbox": [
+            72,
+            957,
+            290,
+            971
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "footer",
+        "text": "UBS 13 ",
+        "bbox": [
+            853,
+            957,
+            924,
+            970
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "chart",
+        "img_path": "images/26ca2b3d0c933fa9554ea81b45bd4c62468f3dd4c064f857ac29b32106872226.jpg",
+        "content": "| Quarter | Blended | Median |\n| ------- | ------- | ------ |\n| 3Q21    | 2.85    | 1.85   |\n| 4Q21    | 2.60    | 1.75   |\n| 1Q22    | 2.60    | 1.75   |\n| 2Q22    | 2.55    | 1.45   |\n| 3Q22    | 1.90    | 1.10   |\n| 4Q22    | 1.65    | 0.85   |\n| 1Q23    | 2.25    | 1.50   |\n| 2Q23    | 1.70    | 0.80   |\n| 3Q23    | 0.95    | 0.45   |\n| 4Q23    | 1.20    | 0.65   |\n| 1Q24    | 0.75    | 0.65   |\n| 2Q24    | 1.10    | 0.40   |\n| 3Q24    | 1.45    | 0.65   |\n| 4Q24    | 1.15    | 0.55   |\n| 1Q25    | 0.95    | 0.50   |\n| 2Q25    | 2.65    | 1.40   |\n| 3Q25    | 2.30    | 1.20   |\n| 4Q25    | 2.00    | 1.15   |\n| 1Q26E   | 1.70    | 1.70   |",
+        "chart_caption": [
+            "Figure 24: S&P 500 Revenue Surprise "
+        ],
+        "chart_footnote": [
+            "Source: Standard & Poor's, Refinitiv, FactSet, UBS ",
+            "Note: Beat/Miss +/- 0.25% "
+        ],
+        "sub_type": "bar_line",
+        "bbox": [
+            73,
+            141,
+            907,
+            471
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "chart",
+        "img_path": "images/2cce1e8be4aa121aca66abeb8483aa0963c76e4de7b568acc36633d6e0779fc0.jpg",
+        "content": "| Quarter | Blended | Median |\n| ------- | ------- | ------ |\n| 3Q21    | 9.8%    | 6.5%   |\n| 4Q21    | 5.5%    | 4.8%   |\n| 1Q22    | 6.7%    | 6.8%   |\n| 2Q22    | 4.5%    | 4.3%   |\n| 3Q22    | 2.8%    | 3.5%   |\n| 4Q22    | 1.3%    | 3.4%   |\n| 1Q23    | 6.5%    | 5.3%   |\n| 2Q23    | 7.5%    | 5.0%   |\n| 3Q23    | 7.3%    | 5.4%   |\n| 4Q23    | 6.8%    | 3.8%   |\n| 1Q24    | 7.1%    | 5.5%   |\n| 2Q24    | 5.4%    | 4.3%   |\n| 3Q24    | 6.2%    | 4.0%   |\n| 4Q24    | 6.5%    | 4.1%   |\n| 1Q25    | 7.6%    | 4.3%   |\n| 2Q25    | 7.7%    | 4.6%   |\n| 3Q25    | 8.7%    | 4.9%   |\n| 4Q25    | 4.3%    | 3.3%   |\n| 1Q26E   | -       | 17.5%  |",
+        "chart_caption": [
+            "Figure 25: S&P 500 Earnings Surprise "
+        ],
+        "chart_footnote": [
+            "Source: Standard & Poor's, Refinitiv, FactSet, UBS ",
+            "Note: Beat/Miss +/- 1% "
+        ],
+        "sub_type": "bar_line",
+        "bbox": [
+            72,
+            543,
+            917,
+            845
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "header",
+        "text": "Historical Surprise Trends ",
+        "bbox": [
+            72,
+            59,
+            354,
+            79
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "footer",
+        "text": "US Equity Strategy 14 May 2026 ",
+        "bbox": [
+            72,
+            957,
+            290,
+            971
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "footer",
+        "text": "UBS 14 ",
+        "bbox": [
+            853,
+            957,
+            924,
+            969
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "Historical Growth Trends ",
+        "text_level": 1,
+        "bbox": [
+            72,
+            59,
+            347,
+            76
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "table",
+        "img_path": "images/cf3116a05e1dc102335c63463004f0f7fb2b084d4eb6e182ac4c19cbebad2fb6.jpg",
+        "table_caption": [
+            "Figure 26: S&P 500 Revenue Dashboard "
+        ],
+        "table_footnote": [
+            "Source: Standard & Poor's, Refinitiv, FactSet, UBS ",
+            "Note: YoY growth of current constituents; blend of unreported and reported numbers where available; Beat/Miss +/- 0.25%. "
+        ],
+        "table_body": "<table><tr><td rowspan=\"2\"></td><td rowspan=\"2\">Rptd</td><td rowspan=\"2\">Total</td><td colspan=\"3\">Revenue Growth (%)</td><td colspan=\"3\">Revenue Surprise</td></tr><tr><td>Reptd</td><td>Unreptd</td><td>Blended</td><td>Pct (%)</td><td>% Beat</td><td>% Miss</td></tr><tr><td>S&amp;P 500</td><td>456</td><td>500</td><td>10.5</td><td>17.2</td><td>11.2</td><td>2.2</td><td>74</td><td>18</td></tr><tr><td>TECH+</td><td>65</td><td>83</td><td>21.2</td><td>43.5</td><td>25.1</td><td>2.6</td><td>86</td><td>5</td></tr><tr><td>Cyclicals</td><td>161</td><td>174</td><td>7.2</td><td>5.7</td><td>7.1</td><td>2.3</td><td>75</td><td>17</td></tr><tr><td>Energy</td><td>22</td><td>22</td><td>4.4</td><td>NA</td><td>4.4</td><td>1.6</td><td>68</td><td>27</td></tr><tr><td>Materials</td><td>26</td><td>26</td><td>10.0</td><td>NA</td><td>10.0</td><td>3.6</td><td>85</td><td>12</td></tr><tr><td>Industrials</td><td>76</td><td>79</td><td>8.3</td><td>3.0</td><td>8.2</td><td>2.6</td><td>79</td><td>11</td></tr><tr><td>Discretionary ex-AMZN</td><td>37</td><td>47</td><td>7.8</td><td>6.1</td><td>7.3</td><td>2.1</td><td>65</td><td>27</td></tr><tr><td>Non-Cyclicals</td><td>154</td><td>167</td><td>7.9</td><td>4.0</td><td>7.4</td><td>1.7</td><td>77</td><td>16</td></tr><tr><td>Staples</td><td>26</td><td>35</td><td>8.9</td><td>3.7</td><td>6.7</td><td>1.1</td><td>88</td><td>4</td></tr><tr><td>Health Care</td><td>55</td><td>59</td><td>6.9</td><td>7.8</td><td>7.0</td><td>1.2</td><td>80</td><td>16</td></tr><tr><td>Utilities</td><td>31</td><td>31</td><td>13.7</td><td>NA</td><td>13.7</td><td>6.8</td><td>74</td><td>23</td></tr><tr><td>REITs</td><td>31</td><td>31</td><td>11.8</td><td>NA</td><td>11.8</td><td>2.4</td><td>61</td><td>23</td></tr><tr><td>Telcos</td><td>4</td><td>4</td><td>4.2</td><td>NA</td><td>4.2</td><td>0.9</td><td>75</td><td>25</td></tr><tr><td>Financials</td><td>76</td><td>76</td><td>9.7</td><td>NA</td><td>9.7</td><td>2.7</td><td>55</td><td>33</td></tr></table>",
+        "bbox": [
+            70,
+            105,
+            924,
+            415
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "table",
+        "img_path": "images/dc6e1c5ff7b00efffeea2fb967719eadaedb230c585db76b0135ac3400b2c9bd.jpg",
+        "table_caption": [
+            "Figure 27: S&P 500 Earnings Dashboard "
+        ],
+        "table_footnote": [
+            "Source: Standard & Poor's, Refinitiv, FactSet, UBS ",
+            "Note: YoY growth of current constituents; blend of unreported and reported numbers where available; Beat/Miss +/- 1.0% "
+        ],
+        "table_body": "<table><tr><td rowspan=\"2\"></td><td rowspan=\"2\">Rptd</td><td rowspan=\"2\">Total</td><td colspan=\"3\">Earnings Growth (%)</td><td colspan=\"3\">Earnings Surprise</td></tr><tr><td>Reptd</td><td>Unreptd</td><td>Blended</td><td>Pct (%)</td><td>% Beat</td><td>% Miss</td></tr><tr><td>S&amp;P 500</td><td>456</td><td>500</td><td>24.8</td><td>49.6</td><td>27.6</td><td>17.3</td><td>78</td><td>11</td></tr><tr><td>TECH+</td><td>65</td><td>83</td><td>55.5</td><td>72.4</td><td>59.1</td><td>33.5</td><td>88</td><td>5</td></tr><tr><td>Cyclicals</td><td>161</td><td>174</td><td>12.2</td><td>-3.2</td><td>10.5</td><td>13.8</td><td>77</td><td>12</td></tr><tr><td>Energy</td><td>22</td><td>22</td><td>0.6</td><td>NA</td><td>0.6</td><td>18.9</td><td>73</td><td>18</td></tr><tr><td>Materials</td><td>26</td><td>26</td><td>41.4</td><td>NA</td><td>41.4</td><td>17.3</td><td>77</td><td>4</td></tr><tr><td>Industrials</td><td>76</td><td>79</td><td>8.5</td><td>-10.5</td><td>7.4</td><td>6.0</td><td>82</td><td>9</td></tr><tr><td>Discretionary ex-AMZN</td><td>37</td><td>47</td><td>20.6</td><td>-1.3</td><td>13.5</td><td>22.9</td><td>70</td><td>19</td></tr><tr><td>Non-Cyclicals</td><td>154</td><td>167</td><td>1.1</td><td>2.5</td><td>1.2</td><td>7.8</td><td>73</td><td>13</td></tr><tr><td>Staples</td><td>26</td><td>35</td><td>6.5</td><td>4.7</td><td>6.2</td><td>6.1</td><td>85</td><td>8</td></tr><tr><td>Health Care</td><td>55</td><td>59</td><td>-4.8</td><td>-2.1</td><td>-4.7</td><td>10.6</td><td>84</td><td>9</td></tr><tr><td>Utilities</td><td>31</td><td>31</td><td>17.6</td><td>NA</td><td>17.6</td><td>8.3</td><td>65</td><td>13</td></tr><tr><td>REITs</td><td>31</td><td>31</td><td>5.8</td><td>NA</td><td>5.8</td><td>-1.1</td><td>52</td><td>23</td></tr><tr><td>Telcos</td><td>4</td><td>4</td><td>-5.1</td><td>NA</td><td>-5.1</td><td>6.9</td><td>100</td><td>NA</td></tr><tr><td>Financials</td><td>76</td><td>76</td><td>23.4</td><td>NA</td><td>23.4</td><td>6.4</td><td>79</td><td>12</td></tr></table>",
+        "bbox": [
+            70,
+            467,
+            924,
+            777
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "footer",
+        "text": "US Equity Strategy 14 May 2026 ",
+        "bbox": [
+            72,
+            957,
+            290,
+            970
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "footer",
+        "text": "UBS 15 ",
+        "bbox": [
+            853,
+            957,
+            924,
+            969
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "Full Year Revisions ",
+        "text_level": 1,
+        "bbox": [
+            72,
+            59,
+            278,
+            76
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "table",
+        "img_path": "images/7fa1a919247c37985a922cbab2f3c2bf38248278b00339263105d1d0170ed4bd.jpg",
+        "table_caption": [
+            "Figure 28: Sales "
+        ],
+        "table_footnote": [
+            "Source: Standard & Poor's, Refinitiv, FactSet, UBS "
+        ],
+        "table_body": "<table><tr><td rowspan=\"2\"></td><td colspan=\"3\">NTM</td><td colspan=\"3\">2026</td><td colspan=\"3\">2027</td></tr><tr><td>Current</td><td>3m ago</td><td>Change (%)</td><td>Current</td><td>3m ago</td><td>Change (%)</td><td>Current</td><td>3m ago</td><td>Change (%)</td></tr><tr><td>S&amp;P 500</td><td>2239.0</td><td>2154.1</td><td>3.9</td><td>2184.1</td><td>2135.6</td><td>2.3</td><td>2336.0</td><td>2289.1</td><td>2.1</td></tr><tr><td>Health Care</td><td>1236.7</td><td>1235.5</td><td>0.1</td><td>1214.3</td><td>1227.3</td><td>-1.1</td><td>1276.2</td><td>1295.4</td><td>-1.5</td></tr><tr><td>Cons Staples</td><td>594.9</td><td>586.5</td><td>1.4</td><td>586.1</td><td>583.7</td><td>0.4</td><td>610.5</td><td>607.0</td><td>0.6</td></tr><tr><td>Financials</td><td>273.9</td><td>268.4</td><td>2.0</td><td>268.6</td><td>266.6</td><td>0.8</td><td>283.1</td><td>281.3</td><td>0.6</td></tr><tr><td>Industrials</td><td>509.0</td><td>496.9</td><td>2.4</td><td>495.7</td><td>492.6</td><td>0.6</td><td>532.5</td><td>528.2</td><td>0.8</td></tr><tr><td>Cons Disc</td><td>718.9</td><td>700.9</td><td>2.6</td><td>699.9</td><td>694.9</td><td>0.7</td><td>752.4</td><td>744.4</td><td>1.1</td></tr><tr><td>Real Estate</td><td>45.0</td><td>43.8</td><td>2.8</td><td>43.9</td><td>43.4</td><td>1.1</td><td>46.9</td><td>46.4</td><td>1.0</td></tr><tr><td>Utilities</td><td>166.6</td><td>160.7</td><td>3.7</td><td>163.5</td><td>159.5</td><td>2.5</td><td>172.0</td><td>168.7</td><td>1.9</td></tr><tr><td>Comm Svs</td><td>106.4</td><td>102.6</td><td>3.7</td><td>102.8</td><td>101.5</td><td>1.3</td><td>112.7</td><td>110.6</td><td>2.0</td></tr><tr><td>Materials</td><td>286.0</td><td>272.6</td><td>4.9</td><td>282.7</td><td>271.1</td><td>4.3</td><td>291.9</td><td>283.2</td><td>3.1</td></tr><tr><td>Tech</td><td>813.7</td><td>731.9</td><td>11.2</td><td>764.5</td><td>719.4</td><td>6.3</td><td>900.6</td><td>823.0</td><td>9.4</td></tr><tr><td>Energy</td><td>576.1</td><td>503.9</td><td>14.3</td><td>586.8</td><td>500.8</td><td>17.2</td><td>557.3</td><td>526.1</td><td>5.9</td></tr></table>",
+        "bbox": [
+            73,
+            106,
+            924,
+            311
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "table",
+        "img_path": "images/1d376c5e5ea5268b90737e75b4499f352b4941c5427435d0f02355738cb983df.jpg",
+        "table_caption": [
+            "Figure 29: Margins "
+        ],
+        "table_footnote": [
+            "Source: Standard & Poor's, Refinitiv, FactSet, UBS "
+        ],
+        "table_body": "<table><tr><td rowspan=\"2\"></td><td colspan=\"3\">NTM</td><td colspan=\"3\">2026</td><td colspan=\"3\">2027</td></tr><tr><td>Current</td><td>3m ago</td><td>Change (pp)</td><td>Current</td><td>3m ago</td><td>Change (pp)</td><td>Current</td><td>3m ago</td><td>Change (pp)</td></tr><tr><td>S&amp;P 500</td><td>15.7</td><td>14.8</td><td>0.9</td><td>15.3</td><td>14.6</td><td>0.6</td><td>16.4</td><td>15.8</td><td>0.6</td></tr><tr><td>Real Estate</td><td>33.7</td><td>34.0</td><td>-0.3</td><td>33.9</td><td>34.1</td><td>-0.2</td><td>33.5</td><td>33.8</td><td>-0.3</td></tr><tr><td>Utilities</td><td>15.1</td><td>15.3</td><td>-0.1</td><td>14.9</td><td>15.2</td><td>-0.3</td><td>15.5</td><td>15.7</td><td>-0.2</td></tr><tr><td>Cons Staples</td><td>7.1</td><td>7.1</td><td>0.0</td><td>7.0</td><td>7.1</td><td>-0.1</td><td>7.3</td><td>7.4</td><td>-0.1</td></tr><tr><td>Health Care</td><td>8.1</td><td>7.9</td><td>0.1</td><td>7.7</td><td>7.9</td><td>-0.2</td><td>8.7</td><td>8.5</td><td>0.2</td></tr><tr><td>Industrials</td><td>11.5</td><td>11.3</td><td>0.3</td><td>11.2</td><td>11.2</td><td>0.0</td><td>12.1</td><td>12.0</td><td>0.0</td></tr><tr><td>Financials</td><td>21.4</td><td>21.1</td><td>0.3</td><td>21.0</td><td>21.0</td><td>0.0</td><td>22.1</td><td>22.2</td><td>-0.1</td></tr><tr><td>Cons Disc</td><td>10.1</td><td>9.6</td><td>0.5</td><td>9.9</td><td>9.5</td><td>0.4</td><td>10.4</td><td>10.4</td><td>0.0</td></tr><tr><td>Materials</td><td>12.6</td><td>11.7</td><td>0.9</td><td>12.3</td><td>11.6</td><td>0.7</td><td>13.0</td><td>12.6</td><td>0.4</td></tr><tr><td>Comm Svs</td><td>22.0</td><td>20.3</td><td>1.7</td><td>22.3</td><td>20.1</td><td>2.1</td><td>21.6</td><td>21.3</td><td>0.4</td></tr><tr><td>Tech</td><td>32.5</td><td>30.7</td><td>1.8</td><td>31.7</td><td>30.5</td><td>1.2</td><td>33.7</td><td>32.3</td><td>1.4</td></tr><tr><td>Energy</td><td>10.8</td><td>8.2</td><td>2.6</td><td>10.8</td><td>8.1</td><td>2.7</td><td>10.9</td><td>9.2</td><td>1.6</td></tr></table>",
+        "bbox": [
+            72,
+            369,
+            924,
+            572
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "table",
+        "img_path": "images/cd0b7087ead8006ed993424ed16a4021862386ebafc6a05d58347ff8745e4791.jpg",
+        "table_caption": [
+            "Figure 30: EPS "
+        ],
+        "table_footnote": [
+            "Source: Standard & Poor's, Refinitiv, FactSet, UBS "
+        ],
+        "table_body": "<table><tr><td rowspan=\"3\">S&amp;P 500</td><td colspan=\"3\">NTM</td><td colspan=\"3\">2026</td><td colspan=\"3\">2027</td></tr><tr><td>Current</td><td>3m ago</td><td>Change (%)</td><td>Current</td><td>3m ago</td><td>Change (%)</td><td>Current</td><td>3m ago</td><td>Change (%)</td></tr><tr><td>351.4</td><td>318.3</td><td>10.4</td><td>333.5</td><td>312.4</td><td>6.7</td><td>383.2</td><td>361.3</td><td>6.1</td></tr><tr><td>Cons Staples</td><td>42.4</td><td>41.9</td><td>1.2</td><td>41.3</td><td>41.5</td><td>-0.5</td><td>44.5</td><td>44.8</td><td>-0.8</td></tr><tr><td>Health Care</td><td>99.6</td><td>98.0</td><td>1.7</td><td>93.1</td><td>96.4</td><td>-3.3</td><td>111.0</td><td>109.9</td><td>1.0</td></tr><tr><td>Real Estate</td><td>15.2</td><td>14.9</td><td>1.9</td><td>14.9</td><td>14.8</td><td>0.6</td><td>15.7</td><td>15.7</td><td>0.2</td></tr><tr><td>Utilities</td><td>25.2</td><td>24.6</td><td>2.7</td><td>24.4</td><td>24.3</td><td>0.4</td><td>26.7</td><td>26.6</td><td>0.5</td></tr><tr><td>Financials</td><td>58.7</td><td>56.7</td><td>3.5</td><td>56.5</td><td>55.9</td><td>0.9</td><td>62.7</td><td>62.5</td><td>0.3</td></tr><tr><td>Industrials</td><td>58.6</td><td>56.0</td><td>4.7</td><td>55.5</td><td>54.9</td><td>1.0</td><td>64.2</td><td>63.6</td><td>1.0</td></tr><tr><td>Cons Disc</td><td>72.5</td><td>67.5</td><td>7.4</td><td>69.3</td><td>66.1</td><td>4.8</td><td>78.1</td><td>77.1</td><td>1.3</td></tr><tr><td>Comm Svs</td><td>23.4</td><td>20.8</td><td>12.5</td><td>22.9</td><td>20.5</td><td>11.9</td><td>24.4</td><td>23.5</td><td>3.7</td></tr><tr><td>Materials</td><td>35.9</td><td>31.8</td><td>12.8</td><td>34.7</td><td>31.3</td><td>10.9</td><td>38.0</td><td>35.7</td><td>6.5</td></tr><tr><td>Tech</td><td>264.5</td><td>225.0</td><td>17.5</td><td>242.5</td><td>219.5</td><td>10.5</td><td>303.3</td><td>265.6</td><td>14.2</td></tr><tr><td>Energy</td><td>62.3</td><td>41.4</td><td>50.3</td><td>63.2</td><td>40.4</td><td>56.3</td><td>60.5</td><td>48.5</td><td>24.8</td></tr></table>",
+        "bbox": [
+            72,
+            629,
+            924,
+            832
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "footer",
+        "text": "US Equity Strategy 14 May 2026 ",
+        "bbox": [
+            72,
+            958,
+            290,
+            971
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "footer",
+        "text": "UBS 16 ",
+        "bbox": [
+            853,
+            957,
+            924,
+            969
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "Please contact us to be added to our daily distribution list. ",
+        "bbox": [
+            70,
+            55,
+            443,
+            70
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "The authors would like to thank Bharat Jain for assisting in the preparation of this research report. ",
+        "bbox": [
+            70,
+            85,
+            633,
+            112
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "footer",
+        "text": "US Equity Strategy 14 May 2026 ",
+        "bbox": [
+            72,
+            957,
+            292,
+            970
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "footer",
+        "text": "UBS 17 ",
+        "bbox": [
+            853,
+            957,
+            924,
+            969
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "Valuation Method and Risk Statement ",
+        "text_level": 1,
+        "bbox": [
+            70,
+            93,
+            346,
+            106
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "Equity market returns are influenced by corporate earnings, interest rates, risk premia, as well as other variables influenced by the business cycle. The outlook for any and all of these variables is subject to change. ",
+        "bbox": [
+            70,
+            112,
+            633,
+            150
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "footer",
+        "text": "US Equity Strategy 14 May 2026 ",
+        "bbox": [
+            72,
+            957,
+            292,
+            970
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "footer",
+        "text": "UBS 18 ",
+        "bbox": [
+            853,
+            957,
+            924,
+            969
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "Required Disclosures ",
+        "text_level": 1,
+        "bbox": [
+            70,
+            55,
+            272,
+            72
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "This document has been prepared by UBS LLC, an affiliate of UBS AG. UBS AG, its sUBSidiaries, branches and affiliates, including former CS AG and its sUBSidiaries, branches and affiliates are referred to herein as \"UBS\". ",
+        "bbox": [
+            68,
+            79,
+            924,
+            106
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "For information on the ways in which UBS manages conflicts and maintains independence of its UBS Global Research product; historical performance information; certain additional disclosures concerning UBS Global Research recommendations; and terms and conditions for certain third party data used in research report, please visit https://www.UBS.com/disclosures. Unless otherwise indicated, information and data in this report are based on company disclosures including but not limited to annual, interim, quarterly reports and other company announcements. The figures contained in performance charts refer to the past; past performance is not a reliable indicator of future results. Additional information will be made available upon request. UBS Co. Limited is licensed to conduct securities investment consultancy businesses by the China Securities Regulatory Commission. UBS acts or may act as principal in the debt securities (or in related derivatives) that may be the subject of this report. This recommendation was finalized on: 14 May 2026 09:17 AM GMT. UBS has designated certain UBS Global Research department members as Derivatives Research Analysts where those department members publish research principally on the analysis of the price or market for a derivative, and provide information reasonably sufficient upon which to base a decision to enter into a derivatives transaction. Where Derivatives Research Analysts co-author research reports with Equity Research Analysts or Economists, the Derivatives Research Analyst is responsible for the derivatives investment views, forecasts, and/or recommendations. Quantitative Research Review: UBS Global Research publishes a quantitative assessment of its analysts' responses to certain questions about the likelihood of an occurrence of a number of short term factors in a product known as the 'Quantitative Research Review'. Views contained in this assessment on a particular stock reflect only the views on those short term factors which are a different timeframe to the 12-month timeframe reflected in any equity rating set out in this note. For the latest responses, please see the Quantitative Research Review Addendum at the back of this report, where applicable. For previous responses please make reference to (i) previous UBS Global Research reports; and (ii) where no applicable research report was published that month, the Quantitative Research Review which can be found at https://neo.UBS.com/quantitative, or contact your UBS sales representative for access to the report or the Quantitative Research Team on UBS-quant-answers@UBS.com. A consolidated report which contains all responses is also available and again you should contact your UBS sales representative for details and pricing or the Quantitative Research team on the email above. ",
+        "bbox": [
+            68,
+            110,
+            926,
+            425
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "Analyst Certification: ",
+        "text_level": 1,
+        "bbox": [
+            70,
+            428,
+            225,
+            441
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "Each research analyst primarily responsible for the content of this research report, in whole or in part, certifies that with respect to each security or issuer that the analyst covered in this report: (1) all of the views expressed accurately reflect his or her personal views about those securities or issuers and were prepared in an independent manner, including with respect to UBS, and (2) no part of his or her compensation was, is, or will be, directly or indirectly, related to the specific recommendations or views expressed by that research analyst in the research report. ",
+        "bbox": [
+            68,
+            442,
+            924,
+            514
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "table",
+        "img_path": "images/b8b54fdbe408e510e4faaa503dd509a568cfee412c36c1ce8f3e9df5391ba554.jpg",
+        "table_caption": [
+            "UBS Global Research: Global Equity Rating Definitions "
+        ],
+        "table_footnote": [
+            "Source: UBS. Rating allocations are as of 31 March 2026. ",
+            "1: Percentage of companies under coverage globally within the 12-month rating category. ",
+            "2: Percentage of companies within the 12-month rating category for which investment banking (IB) services were provided within the past 12 months. "
+        ],
+        "table_body": "<table><tr><td>12-Month Rating</td><td>Definition</td><td>Coverage $^{1}$ </td><td>IB Services $^{2}$ </td></tr><tr><td>Buy</td><td>FSR is &gt; 6% above the MRA.</td><td>54%</td><td>24%</td></tr><tr><td>Neutral</td><td>FSR is between -6% and 6% of the MRA.</td><td>40%</td><td>21%</td></tr><tr><td>Sell</td><td>FSR is &gt; 6% below the MRA.</td><td>6%</td><td>21%</td></tr></table>",
+        "bbox": [
+            70,
+            540,
+            924,
+            619
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "KEY DEFINITIONS: Forecast Stock Return (FSR) is defined as expected percentage price appreciation plus gross dividend yield over the next 12 months. In some cases, this yield may be based on accrued dividends. Market Return Assumption (MRA) is defined as the one-year local market interest rate plus 5% (a proxy for, and not a forecast of, the equity risk premium). Under Review (UR) Stocks may be flagged as UR by the analyst, indicating that the stock's price target and/or rating are subject to possible change in the near term, usually in response to an event that may affect the investment case or valuation. Equity Price Targets have an investment horizon of 12 months. ",
+        "bbox": [
+            68,
+            682,
+            926,
+            767
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "EXCEPTIONS AND SPECIAL CASES:UK and European Investment Fund ratings and definitions are: Buy: Positive on factors such as structure, management, performance record, discount; Neutral: Neutral on factors such as structure, management, performance record, discount; Sell: Negative on factors such as structure, management, performance record, discount. Core Banding Exceptions (CBE): Exceptions to the standard +/-6% bands may be granted by the Investment Review Consultation (IRC). Factors considered by the IRC include the stock's volatility and the credit spread of the respective company's debt. As a result, stocks deemed to be very high or low risk may be subject to higher or lower bands as they relate to the rating. When such exceptions apply, they will be identified in the Company Disclosures table in the relevant research piece. ",
+        "bbox": [
+            68,
+            771,
+            926,
+            872
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "footer",
+        "text": "US Equity Strategy 14 May 2026 ",
+        "bbox": [
+            70,
+            957,
+            292,
+            971
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "footer",
+        "text": "UBS 19 ",
+        "bbox": [
+            853,
+            957,
+            924,
+            969
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "Research analysts contributing to this report who are employed by any non-US affiliate of UBS LLC are not registered/qualified as research analysts with FINRA. Such analysts may not be associated persons of UBS LLC and therefore are not subject to the FINRA restrictions on communications with a subject company, public appearances, and trading securities held by a research analyst account. The name of each affiliate and analyst employed by that affiliate contributing to this report, if any, follows. ",
+        "bbox": [
+            70,
+            57,
+            926,
+            115
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "UBS AG London Branch: Andrew Garthwaite, Gerry Fowler. UBS LLC: Maxwell Grinacoff, CFA, Sean Simonds. ",
+        "bbox": [
+            70,
+            118,
+            858,
+            131
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "Unless otherwise indicated, please refer to the Valuation and Risk sections within the body of this report. For a complete set of disclosure statements associated with the companies discussed in this report, including information on valuation and risk, please contact UBS LLC, 11 Madison Avenue, New York, NY 10010, USA, Attention: Investment Research. ",
+        "bbox": [
+            70,
+            168,
+            926,
+            211
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "footer",
+        "text": "US Equity Strategy 14 May 2026 ",
+        "bbox": [
+            72,
+            958,
+            292,
+            969
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "footer",
+        "text": "UBS 20 ",
+        "bbox": [
+            853,
+            957,
+            924,
+            969
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "UBS Global Research Disclaimer ",
+        "text_level": 1,
+        "bbox": [
+            70,
+            55,
+            371,
+            71
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "This document has been prepared by UBS LLC, an affiliate of UBS AG. UBS AG, its sUBSidiaries, branches and affiliates, including former CS AG and its sUBSidiaries, branches and affiliates are referred to herein as \"UBS\". ",
+        "bbox": [
+            70,
+            74,
+            924,
+            95
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "Any opinions expressed in this document may change without notice and are only current as of the date of publication. Different areas, groups, and personnel within UBS may produce and distribute separate research products independently of each other. For example, research publications from UBS CIO are produced by UBS Global Wealth Management. UBS Global Research is produced by UBS Investment Bank. Research methodologies and rating systems of each separate research organization may differ, for example, in terms of investment recommendations, investment horizon, model assumptions, and valuation methods. As a consequence, except for certain economic forecasts (for which UBS CIO and UBS Global Research may collaborate), investment recommendations, ratings, price targets, and valuations provided by each of the separate research organizations may be different, or inconsistent. You should refer to each relevant research product for the details as to their methodologies and rating system. Not all clients may have access to all products from every organization. Each research product is subject to the policies and procedures of the organization that produces it. ",
+        "bbox": [
+            68,
+            97,
+            926,
+            169
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "This document is provided solely to recipients who are expressly authorized by UBS to receive it. If you are not so authorized you must immediately destroy the document. ",
+        "text_level": 1,
+        "bbox": [
+            70,
+            172,
+            924,
+            192
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "UBS Global Research is provided to our clients through UBS Neo, and in certain instances, UBS.com and any other system or distribution method specifically identified in one or more communications distributed through UBS Neo or UBS.com (each a system) as an approved means for distributing UBS Global Research. It may also be made available through third party vendors and distributed by UBS and/or third parties via e-mail or alternative electronic means. ",
+        "bbox": [
+            70,
+            193,
+            924,
+            222
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "All UBS Global Research is available on UBS Neo. Please contact your UBS sales representative if you wish to discuss your access to UBS Neo. Where UBS Global Research refers to \"UBS Evidence Lab Inside\" or has made use of data provided by UBS Evidence Lab and you would like to access that data please contact your UBS sales representative. UBS Evidence Lab data is available on UBS Neo. The level and types of services provided by UBS Global Research and UBS Evidence Lab to a client may vary depending upon various factors such as a client's individual preferences as to the frequency and manner of receiving communications, a client's risk profile and investment focus and perspective (e.g., market wide, sector specific, long-term, short-term, etc.), the size and scope of the overall client relationship with UBS Global Research and UBS Evidence Lab and legal and regulatory constraints. UBS HOLT and UBS Pharma Values are offerings of UBS Global Research. HOLT Lens is a corporate performance platform offering that provides an objective accounting-led framework for comparing and valuing companies and is available to clients of UBS Global Research; for further details and pricing please contact your UBS Sales representative. In particular, HOLT has a variety of warranted prices based on the scenario chosen; please mail UBS LLC, 11 Madison Avenue, New York, NY 10010, USA, Attention: Investment Research, if you are interested in the warranted price on a particular company, again subject to commercial considerations. UBS Pharma Values is an analytical tool that involves the creation of a number of individual product net present value calculations, based on published forecasts of sales for pharmaceuticals, and is available to clients of UBS Global Research; for further details and pricing please contact your UBS Sales representative. For all other specific disclaimers, please see https://www.UBS.com/disclosures. ",
+        "bbox": [
+            68,
+            223,
+            926,
+            342
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "When you receive UBS Global Research through a system, your access and/or use of such UBS Global Research is subject to this UBS Global Research Disclaimer and to the UBS Neo Platform Use Agreement (the \"Neo Terms\") together with any other relevant terms of use governing the applicable System. ",
+        "bbox": [
+            70,
+            342,
+            924,
+            363
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "When you receive UBS Global Research via a third party vendor, e-mail or other electronic means, you agree that use shall be subject to this UBS Global Research Disclaimer, the Neo Terms and where applicable the UBS Investment Bank terms of business (https://www.UBS.com/global/en/investment-bank/regulatory.html) and to UBS's Terms of Use/Disclaimer (https://www.UBS.com/global/en/legalinfo2/disclaimer.html). In addition, you consent to UBS processing your personal data and using cookies in accordance with our Privacy Statement (https://www.UBS.com/global/en/legalinfo2/privacy.html) and cookie notice (https://www.UBS.com/global/en/legal/privacy/users.html). ",
+        "bbox": [
+            70,
+            364,
+            924,
+            410
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "If you receive UBS Global Research, whether through a System or by any other means, you agree that you shall not copy, revise, amend, create a derivative work, provide to any third party, or in any way commercially exploit any UBS provided via UBS Global Research or otherwise, and that you shall not extract data from any research or estimates provided to you via UBS Global Research or otherwise, without the prior written consent of UBS. You agree not to use UBS Global Research in any artificial intelligence system, without the prior written consent of UBS. ",
+        "bbox": [
+            70,
+            412,
+            924,
+            450
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "In certain circumstances you may receive UBS Global Research otherwise than in the capacity of a client of UBS and you understand and agree that under these circumstances (i) the UBS Global Research is provided to you for information purposes only; (ii) for the purposes of receiving it you are not intended to be and will not be treated as a “client” of UBS for any legal or regulatory purpose; (iii) the UBS Global Research must not be relied on or acted upon for any purpose; and (iv) such content is subject to the relevant disclaimers that follow. ",
+        "bbox": [
+            70,
+            451,
+            924,
+            489
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "This document is for distribution only as may be permitted by law. It is not directed to, or intended for distribution to or use by, any person or entity who is a Citizen or resident of or located in any locality, state, country or other jurisdiction where such distribution, publication, availability or use would be contrary to law or regulation or would subject UBS to any registration or licensing requirement within such jurisdiction. ",
+        "bbox": [
+            70,
+            490,
+            924,
+            520
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "This document is a general communication and is educational in nature; it is not an advertisement nor is it a solicitation or an offer to buy or sell any financial instruments or to participate in any particular trading strategy. Nothing in this document constitutes a representation that any investment strategy or recommendation is suitable or appropriate to an investor's individual circumstances or otherwise constitutes a personal recommendation. By providing this document, none of UBS or its representatives has any responsibility or authority to provide or have provided investment advice in a fiduciary capacity or otherwise. Investments involve risks, and investors should exercise prudence and their own judgment in making their investment decisions. None of UBS or its representatives is suggesting that the recipient or any other person take a specific course of action or any action at all. The recipient should carefully read this document in its entirety and not draw inferences or conclusions from the rating alone. By receiving this document, the recipient acknowledges and agrees with the intended purpose described above and further disclaims any expectation or belief that the information constitutes investment advice to the recipient or otherwise purports to meet the investment objectives of the recipient. The financial instruments described in the document may not be eligible for sale in all jurisdictions or to certain categories of investors. ",
+        "bbox": [
+            68,
+            521,
+            926,
+            612
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "Options, structured derivative products and futures (including OTC derivatives) are not suitable for all investors. Trading in these instruments is considered risky and may be appropriate only for sophisticated investors. Prior to buying or selling an option, and for the complete risks relating to options, you must receive a copy of \"The Characteristics and Risks of Standardized Options.\" You may read the document at https://www.theocc.com/publications/risks/riskchap1.jsp or ask your salesperson for a copy. Various theoretical explanations of the risks associated with these instruments have been published. Supporting documentation for any claims, comparisons, recommendations, statistics or other technical data will be supplied upon request. Past performance is not necessarily indicative of future results. Transaction costs may be significant in option strategies calling for multiple purchases and sales of options, such as spreads and straddles. Because of the importance of tax considerations to many options transactions, the investor considering options should consult with his/her tax advisor as to how taxes affect the outcome of contemplated options transactions. ",
+        "bbox": [
+            68,
+            612,
+            926,
+            687
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "Mortgage and asset-backed securities may involve a high degree of risk and may be highly volatile in response to fluctuations in interest rates or other market conditions. Foreign currency rates of exchange may adversely affect the value, price or income of any security or related instrument referred to in the document. For investment advice, trade execution or other enquiries, clients should contact their local sales representative. ",
+        "bbox": [
+            70,
+            688,
+            924,
+            717
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "UBS notes that no globally accepted framework or definition (legal, regulatory or otherwise) currently exists, nor is there a market consensus as to what constitutes an “ESG” (Environmental, Social or Governance) or an equivalent-label, or as to what precise attributes are required for the Information (as defined below) to be defined as ESG or equivalently-labelled. Any information, data or other content including from a third party source contained, referred to herein or used for whatsoever purpose by UBS or a third party (“Information”), in relation to any actual or potential ESG objective, issue or consideration is not intended to be relied upon for ESG classification, regulatory regime or industry initiative purposes (“ESG Regimes”). Nothing in these materials is intended to convey, suggest or indicate that UBS considers or represents any product, service, person or body mentioned in these materials as meeting or qualifying for any ESG classification, labelling or similar standards that may exist under the ESG Regimes. UBS has not conducted any assessment of compliance with ESG Regimes. Parties are reminded to make their own assessments for these purposes. ",
+        "bbox": [
+            68,
+            719,
+            926,
+            792
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "The value of any investment or income may go down as well as up, and investors may not get back the full (or any) amount invested. Past performance is not necessarily a guide to future performance. Neither UBS nor any of its directors, employees or agents accepts any liability for any loss (including investment loss) or damage arising out of the use of all or any of the Information. ",
+        "bbox": [
+            70,
+            793,
+            924,
+            823
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "Prior to making any investment or financial decisions, any recipient of this document or the information should take steps to understand the risk and return of the investment and seek individualized advice from his or her personal financial, legal, tax and other professional advisors that takes into account all the particular facts and circumstances of his or her investment objectives. ",
+        "bbox": [
+            70,
+            824,
+            924,
+            853
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "Any prices stated in this document are for information purposes only and do not represent valuations for individual securities or other financial instruments. There is no representation that any transaction can or could have been effected at those prices, and any prices do not necessarily reflect UBS's internal books and records or theoretical model-based valuations and may be based on certain assumptions. Different assumptions by UBS or any other source may yield sUBStantially different results. ",
+        "bbox": [
+            70,
+            853,
+            924,
+            891
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "No representation or warranty, either expressed or implied, is provided in relation to the accuracy, completeness or reliability of the information contained in any materials to which this document relates (the \"Information\"), except with respect to Information concerning UBS. The Information is not intended to be a complete statement or summary of the securities, markets or developments referred to in the document. UBS does not undertake to update or keep current the ",
+        "bbox": [
+            70,
+            893,
+            924,
+            923
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "footer",
+        "text": "US Equity Strategy 14 May 2026 ",
+        "bbox": [
+            72,
+            957,
+            290,
+            970
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "footer",
+        "text": "UBS 21 ",
+        "bbox": [
+            853,
+            957,
+            922,
+            969
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "Information. Any statements contained in this report attributed to a third party represent UBS's interpretation of the data, information and/or opinions provided by that third party either publicly or through a sUBScription service, and such use and interpretation have not been reviewed by the third party. In no circumstances may this document or any of the Information (including any forecast, value, index or other calculated amount (\"Values\")) be used for any of the following purposes: ",
+        "bbox": [
+            70,
+            54,
+            926,
+            92
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "text",
+        "text": "(i) valuation or accounting purposes; ",
+        "bbox": [
+            70,
+            93,
+            270,
+            104
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "text",
+        "text": "(ii) to determine the amounts due or payable, the price or the value of any financial instrument or financial contract; or ",
+        "bbox": [
+            70,
+            106,
+            705,
+            116
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "text",
+        "text": "(iii) to measure the performance of any financial instrument including, without limitation, for the purpose of tracking the return or performance of any Value or of defining the asset allocation of portfolio or of computing performance fees. ",
+        "bbox": [
+            70,
+            118,
+            924,
+            138
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "text",
+        "text": "By receiving this document and the Information you will be deemed to represent and warrant to UBS that you will not use this document or any of the Information for any of the above purposes or otherwise rely upon this document or any of the Information. ",
+        "bbox": [
+            70,
+            140,
+            924,
+            159
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "text",
+        "text": "UBS has policies and procedures, which include, without limitation, independence policies and permanent information barriers, that are intended, and upon which UBS relies, to manage potential conflicts of interest and control the flow of information within divisions of UBS and among its sUBSidiaries, branches and affiliates. UBS does and seeks to do business with companies covered in its research reports. As a result, investors should be aware that the firm may have a conflict of interest that could affect the objectivity of this report. Investors should consider this report as only a single factor in making their investment decision. For further information on the ways in which UBS Global Research manages conflicts and maintains independence of its research products, historical performance information and certain additional disclosures concerning UBS Global Research recommendations, please visit https://www.UBS.com/disclosures. ",
+        "bbox": [
+            70,
+            161,
+            926,
+            217
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "text",
+        "text": "UBS Global Research will initiate, update and cease coverage solely at the discretion of UBS Global Research Management, which will also have sole discretion on the timing and frequency of any published research product. The analysis contained in this document is based on numerous assumptions. All material information in relation to published research reports, such as valuation methodology, risk statements, underlying assumptions (including sensitivity analysis of those assumptions), ratings history etc. as required by the Market Abuse Regulation, can be found on UBS Neo. Different assumptions could result in materially different results. ",
+        "bbox": [
+            70,
+            218,
+            924,
+            264
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "text",
+        "text": "UBS Global Research may utilise artificial intelligence tools (\"AI Tools\") in the preparation of this document. Notwithstanding any such use of AI Tools, this document has undergone human review. ",
+        "bbox": [
+            70,
+            266,
+            924,
+            286
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "text",
+        "text": "The analyst(s) responsible for the preparation of this document may interact with trading desk personnel, sales personnel and other parties for the purpose of gathering, applying and interpreting market information. UBS relies on information barriers to control the flow of information contained in one or more areas within UBS into other areas, units, groups or affiliates of UBS. The compensation of the analyst who prepared this document is determined exclusively by UBS Global Research management and senior management (not including investment banking). Analyst compensation is not based on investment banking revenues; however, compensation may relate to the revenues of UBS and/or its divisions as a whole, of which investment banking, sales and trading are a part, and UBS as a whole. ",
+        "bbox": [
+            70,
+            288,
+            926,
+            342
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "text",
+        "text": "For financial instruments admitted to trading on an EU regulated market: UBS (excluding UBS LLC) acts as a market maker or liquidity provider (in accordance with the interpretation of these terms under English law or, if not carried out by UBS in the UK the law of the relevant jurisdiction in which UBS determines it carries out the activity) in the financial instruments of the issuer save that where the activity of liquidity provider is carried out in accordance with the definition given to it by the laws and regulations of any other EU jurisdictions, such information is separately disclosed in this document. For financial instruments admitted to trading on a non-EU regulated market: UBS may act as a market maker save that where this activity is carried out in the US in accordance with the definition given to it by the relevant laws and regulations, such activity will be specifically disclosed in this document. UBS may have issued a warrant the value of which is based on one or more of the financial instruments referred to in the document. UBS and its affiliates and employees may have long or short positions, trade as principal and buy and sell in instruments or derivatives identified herein; such transactions or positions may be inconsistent with the opinions expressed in this document. ",
+        "bbox": [
+            70,
+            344,
+            926,
+            426
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "text",
+        "text": "Within the past 12 months UBS may have received or provided investment services and activities or ancillary services as per MiFID II which may have given rise to a payment or promise of a payment in relation to these services from or to this company. ",
+        "bbox": [
+            70,
+            428,
+            924,
+            448
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "text",
+        "text": "Please note that all transactions conducted by UBS are consistent with sanctions regulations imposed by Switzerland, the European Union, the United Nations, the United Kingdom and the United States, per UBS' global sanctions policy. UBS opinion as to future investment worthiness assumes no new sanctions are imposed. US persons are prohibited from purchasing or selling securities of certain companies designated as being associated with the Chinese Military in accordance with the amended US Presidential Executive Order 13959. ",
+        "bbox": [
+            70,
+            450,
+            924,
+            490
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "text",
+        "text": "United Kingdom: This material is distributed by UBS AG, London Branch to persons who are eligible counterparties or professional clients. UBS AG, London Branch is authorised by the Prudential Regulation Authority and subject to regulation by the Financial Conduct Authority and limited regulation by the Prudential Regulation Authority. Europe: Except as otherwise specified herein, these materials are distributed by UBS Europe SE, a sUBSidiary of UBS AG, to persons who are eligible counterparties or professional clients (as detailed in the Bundesanstalt für Finanzdienstleistungsaufsicht (BaFin) Rules and according to MIFID) and are only available to such persons. The information does not apply to, and should not be relied upon by, retail clients. UBS Europe SE is authorised by the European Central Bank (ECB) and regulated by the BaFin and the ECB. Germany, Luxembourg, the Netherlands, Belgium and Ireland: Where an analyst of UBS Europe SE has contributed to this document, the document is also deemed to have been prepared by UBS Europe SE. In all cases it is distributed by UBS Europe SE and UBS AG, London Branch. Turkey: Distributed by UBS AG, London Branch. No information in this document is provided for the purpose of offering, marketing and sale by any means of any capital market instruments and services in the Republic of Turkey. Therefore, this document may not be considered as an offer made or to be made to residents of the Republic of Turkey. UBS AG, London Branch is not licensed by the Turkish Capital Market Board under the provisions of the Capital Market Law (Law No. 6362). Accordingly, neither this document nor any other offering material related to the instruments/services may be utilized in connection with providing any capital market services to persons within the Republic of Turkey without the prior approval of the Capital Market Board. However, according to article 15 (d) (ii) of the Decree No. 32, there is no restriction on the purchase or sale of the securities abroad by residents of the Republic of Turkey. Poland: Distributed by UBS Europe SE (spolka z ograniczona odpowiedzialnoscia) Oddzial w Polsce. Where an analyst of UBS Europe SE (spolka z ograniczona odpowiedzialnoscia) Oddzial w Polsce has contributed to this document, the document is also deemed to have been prepared by UBS Europe SE (spolka z ograniczona odpowiedzialnoscia) Oddzial w Polsce. Russia: Prepared and distributed by UBS Bank (OOO). Should not be construed as an individual Investment Recommendation for the purpose of the Russian Law - Federal Law #39-FZ ON THE SECURITIES MARKET Articles 6.1-6.2. Switzerland: Distributed by UBS AG to persons who are institutional investors only. UBS AG is regulated by the Swiss Financial Market Supervisory Authority (FINMA). Italy: Prepared by UBS Europe SE and distributed by UBS Europe SE and UBS Europe SE, Italy Branch. Where an analyst of UBS Europe SE, Italy Branch has contributed to this document, the document is also deemed to have been prepared by UBS Europe SE, Italy Branch. France: Prepared by UBS Europe SE and distributed by UBS Europe SE and UBS Europe SE, France Branch. Where an analyst of UBS Europe SE, France Branch has contributed to this document, the document is also deemed to have been prepared by UBS Europe SE, France Branch. Spain: Prepared by UBS Europe SE and distributed by UBS Europe SE and UBS Europe SE, Spain Branch. Where an analyst of UBS Europe SE, Spain Branch has contributed to this document, the document is also deemed to have been prepared by UBS Europe SE, Spain Branch. Sweden: Prepared by UBS Europe SE and distributed by UBS Europe SE and UBS Europe SE, Sweden Branch. Where an analyst of UBS Europe SE, Sweden Branch has contributed to this document, the document is also deemed to have been prepared by UBS Europe SE, Sweden Branch. South Africa: Distributed by UBS South Africa (Pty) Limited (Registration No. 1995/011140/07), an authorised user of the JSE and an authorised Financial Services Provider (FSP 7328). Saudi Arabia: This document has been issued by UBS AG (and/or any of its sUBSidiaries, branches or affiliates), a public company limited by shares, incorporated in Switzerland with its registered offices at Aeschenvorstadt 1, CH-4051 Basel and Bahnhofstrasse 45, CH-8001 Zurich. This publication has been approved by UBS Saudi Arabia (a sUBSidiary of UBS AG), a Saudi closed joint stock company incorporated in the Kingdom of Saudi Arabia under commercial register number 1010257812 having its registered office at Tatweer Towers, P.O. Box 75724, Riyadh 11588, Kingdom of Saudi Arabia. UBS Saudi Arabia is authorized and regulated by the Capital Market Authority to conduct securities business under license number 08113-37. UAE / Dubai: The information distributed by UBS AG Dubai Branch is only intended for Professional Clients and/or Market Counterparties, as classified under the DFSA rulebook. No other person should act upon this material/communication. The information is not for further distribution within the United Arab Emirates. UBS AG Dubai Branch is regulated by the DFSA in the DIFC. UBS is not licensed to provide banking services in the UAE by the Central Bank of the UAE, nor is it licensed by the UAE Securities and Commodities Authority. Israel: This Material is distributed by UBS AG, London Branch. UBS Israel Ltd is a licensed Investment Marketer that is supervised by the Israel Securities Authority (ISA). UBS AG, London Branch and its affiliates incorporated outside Israel are not licensed under the Israeli Advisory Law. UBS may engage among others in issuance of Financial Assets or in distribution of Financial Assets of other issuers for fees or other benefits. UBS AG, London Branch and its affiliates may prefer various Financial Assets to which they have or may have an Affiliation (as such term is defined under the Israeli Advisory Law). Nothing in this Material should be considered as investment advice under the Israeli Advisory Law. This Material is being issued only to and/or is directed only at persons who are Eligible Clients within the meaning of the Israeli Advisory Law, and this Material must not be furnished to, relied on or acted upon by any other persons. United States: Distributed to US persons by either UBS LLC or by UBS Financial Services Inc., sUBSidiaries of UBS AG; or by a group, sUBSidiary or affiliate of UBS AG that is not registered as a US broker-dealer (a 'non-US affiliate') to major US institutional investors only. UBS LLC or UBS Financial Services Inc. accepts responsibility for the content of a report prepared by another non-US affiliate when distributed to US persons by UBS LLC or UBS Financial Services Inc. All transactions by a US person in the securities mentioned in this report must be effected through UBS LLC or UBS Financial Services Inc., and not through a non-US affiliate. UBS LLC is not acting as a municipal advisor to any municipal entity or obligated person within the meaning of Section 15B of the Securities Exchange Act (the \"Municipal Advisor Rule\"), and the opinions or views contained herein are not intended to be, and do not constitute, advice within the meaning of the Municipal Advisor Rule. Canada: Distributed by UBS Canada Inc., a registered investment dealer in Canada and a Member-Canadian Investor Protection Fund, or by another affiliate of UBS AG that is registered to conduct business in Canada or is otherwise exempt from registration. Brazil: Except as otherwise specified herein, this Material is prepared by UBS BB Corretora de Câmbio, Títulos e Valores Mobiliários S.A. (UBS BB CCTVVM) to persons who are eligible investors residing in Brazil, which are considered to be Professional Investors (Investidores Profissionais), as designated by the applicable regulation, mainly the CVM Resolution No. 30 from the 11th of May 2021 (determines the duty to verify the suitability of products, services and transactions with regards to the client's profile). UBS BB CCTVVM is a sUBSidiary of UBS BB Servicos de Assessoria Financeira e Participacoes S.A. (\"UBS BB\"). UBS BB is an association between UBS AG and Banco do Brasil (through its sUBSidiary BB – Banco de Investimentos S.A.), of which UBS AG is the majority owner and which provides investment banking services and coverage in Brazil, Argentina, Chile, Paraguay, Peru and Uruguay. UBS BB CCTVVM is regulated by the Comissao de Valores Mobiliarios (CVM) and by the Central Bank of Brazil. Ombudsman: 0800-940-0266/ https://www.UBS.com/br/pt/UBSbb-investment-bank/ombudsman.html. UBS may hold relevant financial and commercial interest in relation to the company subject to this Research report. Hong Kong: Distributed by UBS Asia Limited. Please contact local licensed persons of UBS Asia Limited in respect of any matters arising from, or in connection with, the analysis or document Singapore: Distributed by UBS Pte. Ltd. [Co. Reg. No.: 198500648C] or UBS AG, Singapore Branch. Please contact UBS Pte. Ltd., an exempt financial adviser under the Singapore Financial Advisers Act (Cap. 110); or UBS AG, Singapore Branch, an exempt financial adviser under the Singapore Financial Advisers Act (Cap. 110) and a wholesale bank licensed under the Singapore Banking Act (Cap. 19) regulated by the Monetary Authority of Singapore, in respect of any matters arising from, or in connection with, the analysis or document. The recipients of this document represent and warrant that they are accredited and institutional investors as defined in the Securities and Futures Act (Cap. 289). Japan: Distributed by UBS Japan Co., Ltd. to professional investors (except as otherwise permitted). Where this report has been prepared by UBS Japan Co., Ltd., UBS Japan Co., Ltd. is the author, publisher and distributor of the report. Distributed by UBS AG, Tokyo Branch to Professional Investors (except as otherwise permitted) in relation to foreign exchange and other banking businesses when relevant. Australia: Clients of UBS AG: Distributed by UBS AG (ABN 47 088 129 613 and holder of Australian Financial Services License No. 231087). For all other recipients: Distributed by UBS Australia Ltd (ABN 62 008 586 481 and holder of Australian Financial Services License No. 231098). This document contains general information and/or general advice only and does not constitute personal financial product advice. As such, the Information in this document has been prepared without taking into account any investor's objectives, financial situation or needs, and investors should, before acting on the Information, consider the appropriateness of the Information, having regard to their objectives, financial situation and needs. If the Information contained in this document relates to the acquisition, or potential acquisition of a particular financial product by a 'Retail' client as defined by section 761G of the Corporations Act 2001 where a Product Disclosure Statement would be required, the retail client should obtain and consider the Product Disclosure Statement relating to the product before making any decision about whether to acquire the product. New Zealand: Distributed by UBS New Zealand Ltd. UBS New Zealand Ltd is not a registered bank in New Zealand. You are being provided with this publication or material because you have indicated to UBS that you are a \"wholesale client\" within the meaning of clause 4 of schedule 5 of the Financial Markets Conduct Act 2013 of New Zealand (Permitted Client). This publication or material is not intended for clients who are not Permitted Clients (non-permitted Clients). If you are a non-permitted Client you must not rely on this publication or material. If despite this warning you nevertheless rely on this publication or material, you hereby (i) acknowledge that you may not rely on the content of this publication or material and that any recommendations or opinions in such this publication or material are not made or provided to you, and (ii) to the maximum extent permitted by law (a) indemnify UBS and its associates or related entities (and their respective Directors, officers, agents and Advisors) (each a 'Relevant Person') for any loss, damage, liability or claim any of them may incur or suffer as a result of, or in connection with, your unauthorised reliance on this publication or material and (b) waive any rights or remedies you may have against any Relevant Person for (or in respect of) any loss, damage, liability or claim you may incur or suffer as a result of, or in connection with, your unauthorised reliance on this publication or material. Korea: Distributed in Korea by UBS Pte. Ltd., Seoul Branch. This report may have been edited or contributed to from time to time by affiliates of UBS Pte. Ltd., Seoul Branch. This material is intended for professional/institutional clients only and not for distribution to any retail clients. Malaysia: This material is authorized to be distributed in Malaysia by UBS Malaysia Sdn. Bhd (Capital Markets Services License No.: CMSL/A0063/2007). This material is intended for professional/institutional clients only and not for distribution to any retail clients. India: Distributed by UBS India Private Ltd. (Corporate Identity Number U67120MH1996PTC097299) 2/F, 3 North Avenue, Maker Maxity, Bandra Kurla Complex, Bandra (East), Mumbai (India) 400051. Phone: +912261556000. It provides brokerage services bearing SEBI Registration Number: INZ000259830; Merchant Banking services bearing SEBI Registration Number: INM000013101; and Research Analyst services bearing SEBI Registration Number: INH000001204. Name of Compliance Officer Mr Parameshwaran Shivaramakrishnan, Phone: +912261556151, Email: ol-UBS-sec-compliance@UBS.com Registration granted by SEBI, and certification from NISM in no way guarantee performance of the intermediary or provide any assurance of returns to investors. UBS may have debt holdings or positions in the subject Indian company/companies. UBS may have financial interests (e.g. loan/derivative products, rights to or interests in investments, etc.) in the subject Indian company/companies from time to time. Within the past 12 months, UBS may have received compensation for non-investment banking securities-related services and/or non-securities services from the subject Indian company/companies. The subject company/companies may have been a client/clients of UBS during the 12 months preceding the date of distribution of the research report with respect to investment banking and/or non-investment banking securities-related services and/or non-securities services. With regard to information on associates, please refer to the Annual Report at: https://www.UBS.com/global/en/about\\_UBS/investor\\_relations/annualreporting.html The Research Annual Compliance Report for UBS India Private Limited is available on www.UBS.com/UBSsi under Research tab. Taiwan: Except as otherwise specified herein, this material may not be distributed in Taiwan. Information and material on securities/instruments that are traded in a Taiwan organized exchange is deemed to be issued and distributed by UBS Pte. LTD., Taipei Branch, which is licensed and regulated by Taiwan Financial Supervisory Commission. Save for securities/instruments that are traded in a Taiwan organized exchange, this material should not constitute \"recommendation\" to clients or recipients in Taiwan for the covered companies or any companies mentioned in this document. No portion of the document may be reproduced or quoted by the press or any other person without authorisation from UBS. Indonesia: This report is being distributed by PT UBS Sekuritas Indonesia and is delivered by its licensed employee(s), including marketing/sales person, to its client. PT UBS Sekuritas Indonesia, having its registered office at Sequis Tower Level 22 unit 22-1,Jl.Jend. Sudirman, kav.71, SCBD lot 11B, Jakarta 12190. Indonesia, is a sUBSidiary company of UBS AG and licensed under Capital Market Law no. 8 year 1995, a holder of broker-dealer and underwriter licenses issued by the Capital Market and Financial Institution Supervisory Agency (now Otoritas Jasa Keuangan/OJK). PT UBS Sekuritas Indonesia is also a member of Indonesia Stock Exchange and supervised by Otoritas Jasa Keuangan (OJK). Neither this report nor any copy hereof may be distributed in Indonesia or to any Indonesian Citizens except in compliance with applicable Indonesian capital market laws and regulations. This report is not an offer of securities in Indonesia and may not be distributed within the territory of the Republic of Indonesia or to Indonesian Citizens in circumstance which constitutes an offering within the meaning of Indonesian capital market laws and regulations. ",
+        "bbox": [
+            70,
+            492,
+            926,
+            922
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "footer",
+        "text": "US Equity Strategy 14 May 2026 ",
+        "bbox": [
+            72,
+            957,
+            290,
+            970
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "footer",
+        "text": "UBS 22 ",
+        "bbox": [
+            853,
+            957,
+            924,
+            969
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            70,
+            53,
+            926,
+            600
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "text",
+        "text": "The disclosures contained in research documents produced by UBS AG, London Branch or UBS Europe SE shall be governed by and construed in accordance with English law. ",
+        "bbox": [
+            70,
+            600,
+            926,
+            621
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "text",
+        "text": "UBS specifically prohibits the redistribution of this document in whole or in part without the written permission of UBS and in any event UBS accepts no liability whatsoever for any redistribution of this document or its contents or the actions of third parties in this respect. Images may depict objects or elements that are protected by third party copyright, trademarks and other intellectual property rights. © UBS 2026. The key symbol and UBS are among the registered and unregistered trademarks of UBS. All rights reserved. ",
+        "bbox": [
+            70,
+            622,
+            927,
+            661
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "image",
+        "img_path": "images/10a9466d3aacd698c81d5a75f099f4d5511c95d66540891783d8202af0b22e5f.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            72,
+            684,
+            119,
+            720
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "text",
+        "text": "UBS ",
+        "text_level": 1,
+        "bbox": [
+            122,
+            688,
+            205,
+            714
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "footer",
+        "text": "US Equity Strategy 14 May 2026 ",
+        "bbox": [
+            72,
+            957,
+            292,
+            970
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "footer",
+        "text": "UBS 23 ",
+        "bbox": [
+            853,
+            957,
+            924,
+            969
+        ],
+        "page_idx": 22
+    }
+]
