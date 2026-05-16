@@ -1,0 +1,30 @@
+{
+  "input_dir": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs",
+  "total_pdf_count_before_shard": 11,
+  "pdf_count_before_skip": 1,
+  "pdf_count": 1,
+  "batch_size": 5,
+  "shard_index": 2,
+  "shard_count": 40,
+  "max_reports_per_shard": 5,
+  "max_total_reports": 0,
+  "skip_existing": true,
+  "skipped_existing_count": 0,
+  "skipped_existing": [],
+  "failures": 0,
+  "batches": [
+    {
+      "batch_index": 1,
+      "pdf_count": 1,
+      "files": [
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/12-NOM-the summit supports CNH outperformance-260515.pdf",
+          "batch_file": "/tmp/pdf_batch_001_x5cdax0d/pdfs/0001-12-NOM-the summit supports CNH outperformance-260515.pdf",
+          "stable_index": "1"
+        }
+      ],
+      "returncode": 0,
+      "status": "ok"
+    }
+  ]
+}
