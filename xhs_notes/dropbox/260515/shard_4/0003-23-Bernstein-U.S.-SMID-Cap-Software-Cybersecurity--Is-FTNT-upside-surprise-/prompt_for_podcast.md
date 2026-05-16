@@ -228,11 +228,15 @@ Prior to April 1, 2024, Bernstein & Co., LLC. issued the ratings and price targe
 <summary>line</summary>
 
 | Date       | Rating | Price   |
-| ------
+| ---------- | ------ | ------- |
+| 01/17/2024 | I      | $65.00  |
+| 02/07/2024 | M      | $76.00  |
+| 03/28/2024 | D      | $76.00  |
+| 04/01/2
 
 [中间内容因长度限制已省略]
 
- learning or artificial intelligence system, or as a prompt or input into any such system. You also may not, without Bernstein's express written consent, do any of the foregoing in connection with your own internal machine learning or artificial intelligence system.
+is report, to train or finetune any third-party machine learning or artificial intelligence system, or as a prompt or input into any such system. You also may not, without Bernstein's express written consent, do any of the foregoing in connection with your own internal machine learning or artificial intelligence system.
 
 Bernstein may use artificial intelligence tools in the preparation of its materials. Any such materials are reviewed by Bernstein's research analysts prior to publication.
 
