@@ -1,0 +1,50 @@
+{
+  "input_dir": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs",
+  "total_pdf_count_before_shard": 20,
+  "pdf_count_before_skip": 5,
+  "pdf_count": 5,
+  "batch_size": 5,
+  "shard_index": 0,
+  "shard_count": 40,
+  "max_reports_per_shard": 5,
+  "max_total_reports": 0,
+  "skip_existing": true,
+  "skipped_existing_count": 0,
+  "skipped_existing": [],
+  "failures": 0,
+  "batches": [
+    {
+      "batch_index": 1,
+      "pdf_count": 5,
+      "files": [
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/01-Bofa-Global Memory Tech Theme of the week-NAND surprise, Samsung labor strike, TCB sales miss-260516.pdf",
+          "batch_file": "/tmp/pdf_batch_001_dfgu8m8v/pdfs/0001-01-Bofa-Global Memory Tech Theme of the week-NAND surprise- Samsung labor strike- TCB sales miss-260516.pdf",
+          "stable_index": "1"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/02-GS-ASIA IN FOCUS：Philippines trip notes ~ Policymakers and markets navigate a stagflationary energy supply shock-260515.pdf",
+          "batch_file": "/tmp/pdf_batch_001_dfgu8m8v/pdfs/0002-02-GS-ASIA IN FOCUS-Philippines trip notes - Policymakers and markets navigate a stagflationary energy supply shock-260515.pdf",
+          "stable_index": "2"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/03-GS-China： Q1 2026 BOP data show lower current account surplus-260515.pdf",
+          "batch_file": "/tmp/pdf_batch_001_dfgu8m8v/pdfs/0003-03-GS-China- Q1 2026 BOP data show lower current account surplus-260515.pdf",
+          "stable_index": "3"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/04-GS-China Economic Activity and Policy Tracker： May 15-260515.pdf",
+          "batch_file": "/tmp/pdf_batch_001_dfgu8m8v/pdfs/0004-04-GS-China Economic Activity and Policy Tracker- May 15-260515.pdf",
+          "stable_index": "4"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/07-GS-Europe： Tracking the European Economic Implications of the Middle East Conflict （15 05）-260515.pdf",
+          "batch_file": "/tmp/pdf_batch_001_dfgu8m8v/pdfs/0005-07-GS-Europe- Tracking the European Economic Implications of the Middle East Conflict -15 05--260515.pdf",
+          "stable_index": "5"
+        }
+      ],
+      "returncode": 0,
+      "status": "ok"
+    }
+  ]
+}

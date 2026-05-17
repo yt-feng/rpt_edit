@@ -1,0 +1,1278 @@
+# Global Memory Tech
+
+# Theme of the week: NAND surprise, Samsung labor strike, TCB sales miss
+
+Industry Overview
+
+# Kioxia's guidance signals significantly strong NAND ASPs
+
+We were surprised by Kioxia's more-than-doubled 1Q CY26 ASP QoQ, which was 20ppt higher than Korean chipmakers' results (80%+/-). We believe Kioxia's SSD sales increase (including enterprise solutions) vs 4Q CY25 was one of the key contributors. Its 2Q CY26 sales guidance (+74.5% QoQ) also implies upbeat NAND ASP (\~70% QoQ increase vs consensus / our estimate: sub-50%). Taiwan-based NAND module maker, Phison Electronics (8299 TT), also reported super-cycle-level April results (sales +237% YoY; pre-tax profit margin 45%; net profit margin 38%). Overall, we acknowledge high upside risk to our global NAND ASP forecasts (+34%/+9%/+3% QoQ in 2Q/3Q/4Q26) or even bullish camp's view (e.g., TrendForce expects only 8-13% increase after 70-75% in 2Q).
+
+# Samsung labor strike may lead to stronger contract pricing
+
+Samsung Electronics is the No. 1 supplier of DRAM and NAND. Thus, its potential labor strike should affect global memory chip supply. Since the labor union is targeting only an 18-day strike (21 May - 7 June) if special bonus payments (15% of OP) are not settled, the actual impact may theoretically be not significant. However, it usually takes at least a few months to normalize fab operations after a full suspension. Of course, Samsung's memory fab operations are mostly based on factory automation (not many people inside clean rooms), so we don't expect a complete shutdown. That said, labor-intensive backend packaging areas can be hit. Some OEMs and Big Tech companies may rush to secure more Samsung memory chips ahead of Sept/Oct peak season. This can also lead to higher spot market prices. Interestingly, both DRAM/NAND spot prices slightly rebounded this week vs softening in April and early May. 3Q contract price, which is usually negotiated in June, can also be affected positively (for memory chipmakers).
+
+# Hanmi Semi's 1Q TCB sales miss a manageable risk
+
+Hanmi Semiconductor (042700 KS) posted much weaker-than-expected 1Q results (sales only W51bn; -65% YoY; OPM also low at 17% vs the normal 40-50% range). We believe weaker TCB orders from SK Hynix were the key contributor. However, 2Q/2H recovery is well expected on a more diversified TCB (for not only HBM, but also 2.5D logic and even HBF) and customers (not well disclosed, but we assume Hynix, Micron, ASE, TSMC, etc.). In fact, 1Q NP (W19bn vs W8bn OP) was upbeat due to FX gains. As such, our EPS estimates are mostly unchanged. Another Korean semis supply company, Soulbrain (357780 KS; HF etching materials for Samsung's/Hynix's chips), reported in-line 1Q results, although growth and margins remained below trend (OPM only 17% vs normal 20%+). This is consistent with the current memory cycle (weak bit growth or low production volume vs super-strong chip pricing). SK Square (SK Hynix's holdco) also disclosed in-line 1Q earnings, but OP/NP reached record highs as it recognizes 20% of Hynix's profits as a holdco. Since we have already reflected Hynix's strong 2026E earnings into our SK Square's forecasts, our EPS revisions (SK Square) are almost nil this time.
+
+# 16 May 2026
+
+Equity
+
+Global
+
+Technology
+
+Simon Woo, CFA >>
+
+Research Analyst
+
+BofA (Seoul)
+
++82 2 3707 0554
+
+simon.woo@bofa.com
+
+Dai Shen >>
+
+Research Analyst
+
+BofA (Hong Kong)
+
+dai.shen@bofa.com
+
+Vivek Arya
+
+Research Analyst
+
+BofAS
+
+vivek.arya@bofa.com
+
+Mikio Hirakawa >>
+
+Research Analyst
+
+BofAS Japan
+
+mikio.hirakawa@bofa.com
+
+Matt Shin >>
+
+Research Analyst
+
+BofA (Seoul)
+
+matt.shin2@bofa.com
+
+# Exhibit 1: DDR5 rose further this week, while DDR4 and NAND prices stabilized following several weeks of decline
+
+Spot prices – DRAM and NAND
+
+<table><tr><td>US$</td><td>Current</td><td>WoW</td><td>QoQ</td><td>YoY</td></tr><tr><td colspan="5">DRAM spot</td></tr><tr><td>16Gb DDR5</td><td>40.7</td><td>2%</td><td>7%</td><td>639%</td></tr><tr><td>16Gb DDR4</td><td>58.2</td><td>0%</td><td>-26%</td><td>1281%</td></tr><tr><td>8Gb DDR4</td><td>32.0</td><td>0%</td><td>2%</td><td>1403%</td></tr><tr><td>4Gb DDR4</td><td>7.8</td><td>5%</td><td>24%</td><td>431%</td></tr></table>
+
+<table><tr><td colspan="5">NAND spot</td></tr><tr><td>1Tb wafer</td><td>25.0</td><td>1%</td><td>16%</td><td>386%</td></tr><tr><td>512Gb wafer</td><td>20.5</td><td>0%</td><td>14%</td><td>651%</td></tr><tr><td>256Gb wafer</td><td>10.5</td><td>0%</td><td>20%</td><td>601%</td></tr></table>
+
+Source: DRAMeXchange
+
+BofA GLOBAL RESEARCH
+
+ASP: Average selling price
+
+DDR4/5: $4^{th}/5^{th}$ gen double-data rate DRAM
+
+DRAM: Dynamic random-access memory
+
+HBF: High bandwidth flash
+
+HBM: High bandwidth memory
+
+HF: Hydrogen fluoride
+
+NAND: Not-AND memory
+
+OEM: Original equipment manufacturer
+
+OPM: Operating profit margin
+
+SSD: Solid-state drive
+
+TCB: Thermal compression bonding
+
+# Korea exports and Taiwan monthly sales trend
+
+Exhibit 2: Remained flat MoM but still at record-high level in May (US\$8.5bn)   
+Korea semis exports – First 10 days of month US\$bn   
+![](images/3eded605340310236079ccc8168c7f12e42e3241ff183ab87f14c16fe68a8877.jpg)
+
+<details>
+<summary>line</summary>
+
+| Date    | Value (US$bn) |
+|---------|---------------|
+| Nov-22  | 2.5           |
+| Feb-23  | 2.0           |
+| May-23  | 1.8           |
+| Aug-23  | 2.2           |
+| Nov-23  | 2.5           |
+| Feb-24  | 2.7           |
+| May-24  | 3.0           |
+| Aug-24  | 3.3           |
+| Nov-24  | 3.5           |
+| Feb-25  | 3.0           |
+| May-25  | 3.5           |
+| Aug-25  | 4.0           |
+| Nov-25  | 4.5           |
+| Feb-26  | 5.0           |
+| May-26  | 8.5           |
+</details>
+
+Source: MoTIR   
+BofA GLOBAL RESEARCH
+
+Exhibit 4: Robust MoM growth mostly led by memory names, such as Nanya Tech (+40%), Transcend (+31%), Macronix/Winbond (+34%/33%)   
+Taiwan tech companies' monthly sales – Apr 2026   
+![](images/edbc0e328b70c0865bfea80cd7e3e623dc9aadfe4aa6ad8ef7a429b8339b48de.jpg)
+
+<details>
+<summary>bar</summary>
+
+| Company      | MoM % |
+| ------------ | ----- |
+| Nanya Tech   | 40%   |
+| Gigabyte     | 35%   |
+| Macronix     | 35%   |
+| Winbond     | 35%   |
+| Transcend    | 30%   |
+| Holystone    | 10%   |
+| Prison       | 10%   |
+| Novatek      | 10%   |
+| Wasin        | 10%   |
+| UMC          | 10%   |
+| PSMC         | 10%   |
+| Unimicron    | 10%   |
+| Win Semi     | 10%   |
+| Acer         | 10%   |
+| Pegatron     | 10%   |
+| Nanya PCB    | 10%   |
+| Aspeed       | 10%   |
+| Hon Hai      | 10%   |
+| Kinsus       | 10%   |
+| Yageo        | 10%   |
+| Powertech    | 10%   |
+| ASE          | 10%   |
+| ADATA        | 10%   |
+| TSMC         | 10%   |
+| Inventec     | 10%   |
+| Lotes        | 10%   |
+| Mitzac       | 10%   |
+| Assistec     | 10%   |
+| Quanta       | 10%   |
+| Wistron      | 10%   |
+| Innolux      | 10%   |
+| AUO          | 10%   |
+| Wiwynn       | 10%   |
+| Vanguard     | 10%   |
+| Compal       | 10%   |
+| MediaTek     | -25%  |
+</details>
+
+Source: Companies   
+BofA GLOBAL RESEARCH
+
+Exhibit 3: YoY rebound still high at 150% in May; already four consecutive months of triple-digit growth   
+Korea semis exports – YoY change in first 10 days of month   
+![](images/008baa24a22b63ccc05927fc62a1a0079fede7fdc75d1d662fbdf5d2d69b80cd.jpg)
+
+<details>
+<summary>line</summary>
+
+| Month    | YoY   |
+| -------- | ----- |
+| May-21   | 40%   |
+| Aug-21   | 0%    |
+| Nov-21   | 40%   |
+| Feb-22   | 0%    |
+| May-22   | 0%    |
+| Aug-22   | 0%    |
+| Nov-22   | -40%  |
+| Feb-23   | -40%  |
+| May-23   | -40%  |
+| Aug-23   | 0%    |
+| Nov-23   | 0%    |
+| Feb-24   | 40%   |
+| May-24   | 80%   |
+| Aug-24   | 40%   |
+| Nov-24   | 0%    |
+| Feb-25   | 0%    |
+| May-25   | 0%    |
+| Aug-25   | 40%   |
+| Nov-25   | 0%    |
+| Feb-26   | 160%  |
+| May-26   | 140%  |
+</details>
+
+Source: MoTIR   
+BofA GLOBAL RESEARCH
+
+Exhibit 5: Also notably strong rebound seen from memory names and resilient growth across most companies including TSMC (+18%), Quanta (+121%), Yageo (+22%)   
+Taiwan tech companies' monthly sales YoY – Apr 2026   
+![](images/3e295065fa92654f8b24e30e2a8f908908cfe15c8d0bf83f70766d172d3854cf.jpg)
+
+<details>
+<summary>bar</summary>
+
+| Company      | YoY   |
+| ------------ | ----- |
+| Nanya Tech   | 200%  |
+| Transcend    | 200%  |
+| Phison       | 180%  |
+| Winbond      | 160%  |
+| ADATA        | 140%  |
+| Macronix     | 120%  |
+| Quanta       | 100%  |
+| Wistron      | 80%   |
+| Aspeed       | 60%   |
+| Gigabyte     | 40%   |
+| Acer         | 20%   |
+| Win Semi     | 0%    |
+| Asustek      | -20%  |
+| Nanya PCB    | -40%  |
+| Inventec     | -60%  |
+| Powertech    | -80%  |
+| PSMC         | -100% |
+| Mitac        | -120% |
+| Hon Hai      | -140% |
+| Wiwynn       | -160% |
+| Unimicron    | -180% |
+| Kinsus       | -200% |
+| Yageo        | -220% |
+| Holystone    | -240% |
+| ASE          | -260% |
+| TSMC         | -280% |
+| Walsin       | -300% |
+| Compal       | -320% |
+| Lotes        | -340% |
+| Innolux      | -360% |
+| UMC          | -380% |
+| Vanguard     | -400% |
+| Novatek      | -420% |
+| MediaTek     | -440% |
+| AUO          | -460% |
+| Pegatron     | -480% |
+</details>
+
+\*Nanya +717%, Transcend +594%, Phison +237%   
+Source: Companies   
+BofA GLOBAL RESEARCH
+
+Hanmi Semi (042700 KS; C-1-7; PO W500,000)
+
+Exhibit 6: Weaker-than-expected 1Q results (sales only W51bn; -65% YoY, OPM also low at 17% vs normal 40-50% range); we believe weaker TCB orders from Hynix was the key contributor. However, 2Q/2H recovery is well-expected on more diversified TCB (for not only HBM, but also 2.5D logic and even HBF) and customers (not well disclosed, but we assume Hynix, Micron, ASE, TSMC, etc.)
+
+Hanmi Semi – Earnings revisions (2026-28E)
+
+<table><tr><td>(Wbn, Won)</td><td>1Q26</td><td>2Q26E</td><td>3Q26E</td><td>4Q26E</td><td>1Q27E</td><td>2Q27E</td><td>3Q27E</td><td>4Q27E</td><td>2021</td><td>2022</td><td>2023</td><td>2024</td><td>2025</td><td>2026E</td><td>2027E</td><td>2028E</td></tr><tr><td colspan="17">EPS</td></tr><tr><td>New</td><td>201</td><td>791</td><td>1,053</td><td>1,110</td><td>1,173</td><td>1,428</td><td>1,665</td><td>1,770</td><td>2,112</td><td>948</td><td>2,759</td><td>1,608</td><td>2,256</td><td>3,154</td><td>6,036</td><td>10,656</td></tr><tr><td>Old</td><td>145</td><td>815</td><td>1,074</td><td>1,110</td><td>1,173</td><td>1,428</td><td>1,665</td><td>1,770</td><td>2,112</td><td>948</td><td>2,759</td><td>1,608</td><td>2,256</td><td>3,144</td><td>6,036</td><td>10,656</td></tr><tr><td>Difference</td><td>39%</td><td>-3%</td><td>-2%</td><td>0%</td><td>0%</td><td>0%</td><td>0%</td><td>0%</td><td>n/a</td><td>n/a</td><td>n/a</td><td>n/a</td><td>n/a</td><td>0%</td><td>0%</td><td>0%</td></tr><tr><td colspan="17">Dividend/share</td></tr><tr><td>New</td><td>0</td><td>0</td><td>0</td><td>1,100</td><td>0</td><td>0</td><td>0</td><td>2,050</td><td>600</td><td>200</td><td>420</td><td>720</td><td>800</td><td>1,100</td><td>2,050</td><td>3,100</td></tr><tr><td>Old</td><td>0</td><td>0</td><td>0</td><td>1,100</td><td>0</td><td>0</td><td>0</td><td>2,050</td><td>600</td><td>200</td><td>420</td><td>720</td><td>800</td><td>1,100</td><td>2,050</td><td>3,100</td></tr><tr><td>Difference</td><td>n/a</td><td>n/a</td><td>n/a</td><td>0%</td><td>n/a</td><td>n/a</td><td>n/a</td><td>0%</td><td>n/a</td><td>n/a</td><td>n/a</td><td>n/a</td><td>n/a</td><td>0%</td><td>0%</td><td>0%</td></tr><tr><td colspan="17">Sales</td></tr><tr><td>New</td><td>51</td><td>204</td><td>252</td><td>272</td><td>281</td><td>331</td><td>382</td><td>403</td><td>373</td><td>328</td><td>159</td><td>559</td><td>577</td><td>779</td><td>1,397</td><td>2,324</td></tr><tr><td>Old</td><td>85</td><td>204</td><td>252</td><td>272</td><td>281</td><td>331</td><td>382</td><td>403</td><td>373</td><td>328</td><td>159</td><td>559</td><td>577</td><td>813</td><td>1,397</td><td>2,324</td></tr><tr><td>Difference</td><td>-40%</td><td>0%</td><td>0%</td><td>0%</td><td>0%</td><td>0%</td><td>0%</td><td>0%</td><td>n/a</td><td>n/a</td><td>n/a</td><td>n/a</td><td>n/a</td><td>-4%</td><td>0%</td><td>0%</td></tr><tr><td colspan="17">Gross margin</td></tr><tr><td>New</td><td>54.1%</td><td>59.5%</td><td>61.0%</td><td>60.2%</td><td>61.0%</td><td>62.0%</td><td>62.0%</td><td>63.0%</td><td>48.3%</td><td>56.5%</td><td>49.9%</td><td>56.3%</td><td>57.6%</td><td>59.9%</td><td>62.1%</td><td>63.6%</td></tr><tr><td>Old</td><td>47.0%</td><td>61.0%</td><td>62.0%</td><td>60.2%</td><td>61.0%</td><td>62.0%</td><td>62.0%</td><td>63.0%</td><td>48.3%</td><td>56.5%</td><td>49.9%</td><td>56.3%</td><td>57.6%</td><td>59.6%</td><td>62.1%</td><td>63.6%</td></tr><tr><td>Difference</td><td>15.2%</td><td>-2.5%</td><td>-1.6%</td><td>0.0%</td><td>0.0%</td><td>0.0%</td><td>0.0%</td><td>0.0%</td><td>n/a</td><td>n/a</td><td>n/a</td><td>n/a</td><td>n/a</td><td>0.5%</td><td>0.0%</td><td>0.0%</td></tr><tr><td colspan="17">OP</td></tr><tr><td>New</td><td>8</td><td>96</td><td>129</td><td>136</td><td>145</td><td>177</td><td>207</td><td>220</td><td>122</td><td>112</td><td>35</td><td>255</td><td>251</td><td>369</td><td>749</td><td>1,344</td></tr><tr><td>Old</td><td>17</td><td>99</td><td>131</td><td>136</td><td>145</td><td>177</td><td>207</td><td>220</td><td>122</td><td>112</td><td>35</td><td>255</td><td>251</td><td>383</td><td>749</td><td>1,344</td></tr><tr><td>Difference</td><td>-50%</td><td>-3%</td><td>-2%</td><td>0%</td><td>0%</td><td>0%</td><td>0%</td><td>0%</td><td>n/a</td><td>n/a</td><td>n/a</td><td>n/a</td><td>n/a</td><td>-4%</td><td>0%</td><td>0%</td></tr><tr><td colspan="17">OP margin</td></tr><tr><td>New</td><td>16.6%</td><td>47.2%</td><td>51.1%</td><td>49.9%</td><td>51.7%</td><td>53.5%</td><td>54.1%</td><td>54.6%</td><td>32.8%</td><td>34.1%</td><td>21.7%</td><td>45.7%</td><td>43.6%</td><td>47.4%</td><td>53.6%</td><td>57.8%</td></tr><tr><td>Old</td><td>19.9%</td><td>48.7%</td><td>52.1%</td><td>49.9%</td><td>51.7%</td><td>53.5%</td><td>54.1%</td><td>54.6%</td><td>32.8%</td><td>34.1%</td><td>21.7%</td><td>45.7%</td><td>43.6%</td><td>47.2%</td><td>53.6%</td><td>57.8%</td></tr><tr><td>Difference</td><td>-16.4%</td><td>-3.1%</td><td>-1.9%</td><td>0.0%</td><td>0.0%</td><td>0.0%</td><td>0.0%</td><td>0.0%</td><td>n/a</td><td>n/a</td><td>n/a</td><td>n/a</td><td>n/a</td><td>0.5%</td><td>0.0%</td><td>0.0%</td></tr><tr><td colspan="17">Pre-tax income</td></tr><tr><td>New</td><td>25</td><td>97</td><td>130</td><td>137</td><td>146</td><td>178</td><td>208</td><td>221</td><td>136</td><td>128</td><td>345</td><td>198</td><td>278</td><td>389</td><td>753</td><td>1,348</td></tr><tr><td>Old</td><td>18</td><td>100</td><td>132</td><td>137</td><td>146</td><td>178</td><td>208</td><td>221</td><td>136</td><td>128</td><td>345</td><td>198</td><td>278</td><td>387</td><td>753</td><td>1,348</td></tr><tr><td>Difference</td><td>41%</td><td>-3%</td><td>-2%</td><td>0%</td><td>0%</td><td>0%</td><td>0%</td><td>0%</td><td>n/a</td><td>n/a</td><td>n/a</td><td>n/a</td><td>n/a</td><td>0%</td><td>0%</td><td>0%</td></tr><tr><td colspan="17">Effective tax rate</td></tr><tr><td>New</td><td>24.1%</td><td>23.0%</td><td>23.0%</td><td>23.0%</td><td>24.0%</td><td>24.0%</td><td>24.0%</td><td>24.0%</td><td>23.3%</td><td>27.8%</td><td>22.6%</td><td>23.1%</td><td>23.1%</td><td>23.1%</td><td>24.0%</td><td>25.0%</td></tr><tr><td>Old</td><td>23.0%</td><td>23.0%</td><td>23.0%</td><td>23.0%</td><td>24.0%</td><td>24.0%</td><td>24.0%</td><td>24.0%</td><td>23.3%</td><td>27.8%</td><td>22.6%</td><td>23.1%</td><td>23.1%</td><td>23.0%</td><td>24.0%</td><td>25.0%</td></tr><tr><td>Difference</td><td>4.9%</td><td>0.0%</td><td>0.0%</td><td>0.0%</td><td>0.0%</td><td>0.0%</td><td>0.0%</td><td>0.0%</td><td>n/a</td><td>n/a</td><td>n/a</td><td>n/a</td><td>n/a</td><td>0.3%</td><td>0.0%</td><td>0.0%</td></tr><tr><td colspan="17">Net profit</td></tr><tr><td>New</td><td>19</td><td>75</td><td>100</td><td>105</td><td>111</td><td>135</td><td>158</td><td>168</td><td>104</td><td>92</td><td>267</td><td>153</td><td>214</td><td>299</td><td>573</td><td>1,011</td></tr><tr><td>Old</td><td>14</td><td>77</td><td>102</td><td>105</td><td>111</td><td>135</td><td>158</td><td>168</td><td>104</td><td>92</td><td>267</td><td>153</td><td>214</td><td>298</td><td>573</td><td>1,011</td></tr><tr><td>Difference</td><td>39%</td><td>-3%</td><td>-2%</td><td>0%</td><td>0%</td><td>0%</td><td>0%</td><td>0%</td><td>n/a</td><td>n/a</td><td>n/a</td><td>n/a</td><td>n/a</td><td>0%</td><td>0%</td><td>0%</td></tr><tr><td colspan="17">ROE - annualized</td></tr><tr><td>New</td><td>11.5%</td><td>44.5%</td><td>52.5%</td><td>48.8%</td><td>48.4%</td><td>54.7%</td><td>55.6%</td><td>51.6%</td><td>34.6%</td><td>25.0%</td><td>55.5%</td><td>27.4%</td><td>34.8%</td><td>37.3%</td><td>49.8%</td><td>56.4%</td></tr><tr><td>Old</td><td>8.3%</td><td>46.4%</td><td>53.8%</td><td>49.0%</td><td>48.6%</td><td>54.9%</td><td>55.7%</td><td>51.8%</td><td>34.6%</td><td>25.0%</td><td>55.5%</td><td>27.4%</td><td>34.8%</td><td>37.2%</td><td>49.9%</td><td>56.5%</td></tr><tr><td>Difference</td><td>37.8%</td><td>-4.0%</td><td>-2.5%</td><td>-0.4%</td><td>-0.4%</td><td>-0.3%</td><td>-0.3%</td><td>-0.3%</td><td>n/a</td><td>n/a</td><td>n/a</td><td>n/a</td><td>n/a</td><td>0.1%</td><td>-0.3%</td><td>-0.2%</td></tr><tr><td colspan="17">EBITDA</td></tr><tr><td>New</td><td>11</td><td>99</td><td>132</td><td>139</td><td>149</td><td>181</td><td>211</td><td>224</td><td>129</td><td>121</td><td>43</td><td>265</td><td>263</td><td>382</td><td>765</td><td>1,362</td></tr><tr><td>Old</td><td>20</td><td>103</td><td>135</td><td>140</td><td>149</td><td>181</td><td>211</td><td>224</td><td>129</td><td>121</td><td>43</td><td>265</td><td>263</td><td>397</td><td>766</td><td>1,364</td></tr><tr><td>Difference</td><td>-43%</td><td>-3%</td><td>-2%</td><td>0%</td><td>0%</td><td>0%</td><td>0%</td><td>0%</td><td>n/a</td><td>n/a</td><td>n/a</td><td>n/a</td><td>n/a</td><td>-4%</td><td>0%</td><td>0%</td></tr><tr><td colspan="17">Capex</td></tr><tr><td>New</td><td>5</td><td>15</td><td>15</td><td>15</td><td>20</td><td>20</td><td>20</td><td>20</td><td>25</td><td>9</td><td>28</td><td>54</td><td>75</td><td>50</td><td>80</td><td>80</td></tr><tr><td>Old</td><td>15</td><td>15</td><td>15</td><td>15</td><td>20</td><td>20</td><td>20</td><td>20</td><td>25</td><td>9</td><td>28</td><td>54</td><td>75</td><td>60</td><td>80</td><td>80</td></tr><tr><td>Difference</td><td>-64%</td><td>0%</td><td>0%</td><td>0%</td><td>0%</td><td>0%</td><td>0%</td><td>0%</td><td>n/a</td><td>n/a</td><td>n/a</td><td>n/a</td><td>n/a</td><td>-16%</td><td>0%</td><td>0%</td></tr><tr><td colspan="17">Net cash</td></tr><tr><td>New</td><td>175</td><td>212</td><td>283</td><td>367</td><td>369</td><td>482</td><td>617</td><td>773</td><td>50</td><td>91</td><td>180</td><td>104</td><td>276</td><td>367</td><td>773</td><td>1,512</td></tr><tr><td>Old</td><td>178</td><td>227</td><td>301</td><td>386</td><td>388</td><td>502</td><td>639</td><td>796</td><td>50</td><td>91</td><td>180</td><td>104</td><td>276</td><td>386</td><td>796</td><td>1,538</td></tr><tr><td>Difference</td><td>-2%</td><td>-6%</td><td>-6%</td><td>-5%</td><td>-5%</td><td>-4%</td><td>-3%</td><td>-3%</td><td>n/a</td><td>n/a</td><td>n/a</td><td>n/a</td><td>n/a</td><td>-5%</td><td>-3%</td><td>-2%</td></tr><tr><td colspan="17">BVPS</td></tr><tr><td>New</td><td>6,704</td><td>7,494</td><td>8,547</td><td>9,657</td><td>9,730</td><td>11,158</td><td>12,824</td><td>14,594</td><td>7,012</td><td>4,008</td><td>5,907</td><td>5,698</td><td>7,278</td><td>9,657</td><td>14,594</td><td>23,199</td></tr><tr><td>Old</td><td>6,623</td><td>7,438</td><td>8,511</td><td>9,622</td><td>9,695</td><td>11,123</td><td>12,788</td><td>14,558</td><td>7,012</td><td>4,008</td><td>5,907</td><td>5,698</td><td>7,278</td><td>9,622</td><td>14,558</td><td>23,164</td></tr><tr><td>Difference</td><td>1%</td><td>1%</td><td>0%</td><td>0%</td><td>0%</td><td>0%</td><td>0%</td><td>0%</td><td>n/a</td><td>n/a</td><td>n/a</td><td>n/a</td><td>n/a</td><td>0%</td><td>0%</td><td>0%</td></tr></table>
+
+Source: Company, BofA Global Research estimates
+
+BofA GLOBAL RESEARCH
+
+Soulbrain (357780 KS; B-3-7; PO W370,000)
+
+Exhibit 7: 1Q results (sales W264bn, +26% YoY; GM 27%, OPM 17%) were broadly in-line with consensus/our estimate; accordingly, our 2026-27E EPS revisions are minimal
+
+Soulbrain – Earnings revisions (2026-28E)
+
+<table><tr><td>(Wbn, Won)</td><td>1Q26</td><td>2Q26E</td><td>3Q26E</td><td>4Q26E</td><td>1Q27E</td><td>2Q27E</td><td>3Q27E</td><td>4Q27E</td><td>2021</td><td>2022</td><td>2023</td><td>2024</td><td>2025</td><td>2026E</td><td>2027E</td><td>2028E</td></tr><tr><td colspan="17">EPS</td></tr><tr><td>New</td><td>4,643</td><td>5,673</td><td>6,197</td><td>6,222</td><td>5,811</td><td>6,170</td><td>6,933</td><td>6,886</td><td>19,093</td><td>20,928</td><td>16,759</td><td>15,226</td><td>10,164</td><td>22,735</td><td>25,800</td><td>27,289</td></tr><tr><td>Old</td><td>4,908</td><td>5,532</td><td>6,156</td><td>6,159</td><td>5,630</td><td>6,184</td><td>6,940</td><td>7,034</td><td>19,093</td><td>20,928</td><td>16,759</td><td>15,226</td><td>9,953</td><td>22,754</td><td>25,788</td><td>27,286</td></tr><tr><td>Difference</td><td>-5%</td><td>3%</td><td>1%</td><td>1%</td><td>3%</td><td>0%</td><td>0%</td><td>-2%</td><td>n/a</td><td>n/a</td><td>n/a</td><td>n/a</td><td>n/a</td><td>0%</td><td>0%</td><td>0%</td></tr><tr><td colspan="17">Dividend/share</td></tr><tr><td>New</td><td>0</td><td>0</td><td>0</td><td>4,100</td><td>0</td><td>0</td><td>0</td><td>4,500</td><td>1,950</td><td>2,000</td><td>2,000</td><td>2,300</td><td>2,350</td><td>4,100</td><td>4,500</td><td>5,000</td></tr><tr><td>Old</td><td>0</td><td>0</td><td>0</td><td>4,100</td><td>0</td><td>0</td><td>0</td><td>4,500</td><td>1,950</td><td>2,000</td><td>2,000</td><td>2,300</td><td>2,350</td><td>4,100</td><td>4,500</td><td>5,000</td></tr><tr><td>Difference</td><td>n/a</td><td>n/a</td><td>n/a</td><td>0%</td><td>n/a</td><td>n/a</td><td>n/a</td><td>0%</td><td>n/a</td><td>n/a</td><td>n/a</td><td>n/a</td><td>n/a</td><td>0%</td><td>0%</td><td>0%</td></tr><tr><td colspan="17">Sales</td></tr><tr><td>New</td><td>264</td><td>266</td><td>278</td><td>279</td><td>277</td><td>283</td><td>300</td><td>301</td><td>1,024</td><td>1,091</td><td>844</td><td>863</td><td>923</td><td>1,087</td><td>1,160</td><td>1,251</td></tr><tr><td>Old</td><td>258</td><td>267</td><td>281</td><td>280</td><td>274</td><td>281</td><td>299</td><td>305</td><td>1,024</td><td>1,091</td><td>844</td><td>863</td><td>923</td><td>1,086</td><td>1,159</td><td>1,250</td></tr><tr><td>Difference</td><td>2%</td><td>0%</td><td>-1%</td><td>0%</td><td>1%</td><td>1%</td><td>0%</td><td>-1%</td><td>n/a</td><td>n/a</td><td>n/a</td><td>n/a</td><td>n/a</td><td>0%</td><td>0%</td><td>0%</td></tr><tr><td colspan="17">Gross margin</td></tr><tr><td>New</td><td>27.4%</td><td>29.6%</td><td>30.1%</td><td>30.8%</td><td>30.0%</td><td>30.1%</td><td>31.2%</td><td>31.5%</td><td>24.9%</td><td>27.3%</td><td>22.9%</td><td>28.5%</td><td>25.2%</td><td>29.5%</td><td>30.7%</td><td>30.4%</td></tr><tr><td>Old</td><td>27.1%</td><td>28.8%</td><td>29.7%</td><td>30.3%</td><td>28.7%</td><td>30.2%</td><td>31.3%</td><td>31.5%</td><td>24.9%</td><td>27.3%</td><td>22.9%</td><td>28.5%</td><td>25.2%</td><td>29.0%</td><td>30.5%</td><td>30.2%</td></tr><tr><td>Difference</td><td>0.4%</td><td>0.8%</td><td>0.4%</td><td>0.4%</td><td>1.3%</td><td>-0.1%</td><td>-0.1%</td><td>0.0%</td><td>n/a</td><td>n/a</td><td>n/a</td><td>n/a</td><td>n/a</td><td>0.5%</td><td>0.3%</td><td>0.2%</td></tr><tr><td colspan="17">OP</td></tr><tr><td>New</td><td>45</td><td>52</td><td>57</td><td>56</td><td>53</td><td>56</td><td>64</td><td>63</td><td>189</td><td>207</td><td>133</td><td>168</td><td>134</td><td>209</td><td>237</td><td>253</td></tr><tr><td>Old</td><td>45</td><td>50</td><td>56</td><td>55</td><td>52</td><td>56</td><td>65</td><td>64</td><td>189</td><td>207</td><td>133</td><td>168</td><td>134</td><td>206</td><td>237</td><td>252</td></tr><tr><td>Difference</td><td>-1%</td><td>3%</td><td>1%</td><td>2%</td><td>3%</td><td>0%</td><td>0%</td><td>-2%</td><td>n/a</td><td>n/a</td><td>n/a</td><td>n/a</td><td>n/a</td><td>1%</td><td>0%</td><td>0%</td></tr><tr><td colspan="17">OP margin</td></tr><tr><td>New</td><td>16.9%</td><td>19.4%</td><td>20.4%</td><td>20.0%</td><td>19.3%</td><td>19.9%</td><td>21.5%</td><td>20.9%</td><td>18.4%</td><td>19.0%</td><td>15.8%</td><td>19.5%</td><td>14.5%</td><td>19.2%</td><td>20.4%</td><td>20.2%</td></tr><tr><td>Old</td><td>17.4%</td><td>18.7%</td><td>20.1%</td><td>19.6%</td><td>18.9%</td><td>20.0%</td><td>21.6%</td><td>21.0%</td><td>18.4%</td><td>19.0%</td><td>15.8%</td><td>19.5%</td><td>14.5%</td><td>19.0%</td><td>20.4%</td><td>20.2%</td></tr><tr><td>Difference</td><td>-0.5%</td><td>0.7%</td><td>0.3%</td><td>0.4%</td><td>0.4%</td><td>-0.1%</td><td>-0.1%</td><td>-0.1%</td><td>n/a</td><td>n/a</td><td>n/a</td><td>n/a</td><td>n/a</td><td>0.2%</td><td>0.0%</td><td>0.0%</td></tr><tr><td colspan="17">Pre-tax income</td></tr><tr><td>New</td><td>51</td><td>60</td><td>66</td><td>65</td><td>62</td><td>65</td><td>73</td><td>72</td><td>203</td><td>215</td><td>161</td><td>167</td><td>113</td><td>242</td><td>273</td><td>288</td></tr><tr><td>Old</td><td>53</td><td>58</td><td>65</td><td>64</td><td>61</td><td>65</td><td>74</td><td>73</td><td>203</td><td>215</td><td>161</td><td>167</td><td>113</td><td>241</td><td>272</td><td>288</td></tr><tr><td>Difference</td><td>-4%</td><td>3%</td><td>1%</td><td>2%</td><td>2%</td><td>0%</td><td>0%</td><td>-1%</td><td>n/a</td><td>n/a</td><td>n/a</td><td>n/a</td><td>n/a</td><td>1%</td><td>0%</td><td>0%</td></tr><tr><td colspan="17">Effective tax rate</td></tr><tr><td>New</td><td>25.8%</td><td>24.0%</td><td>24.0%</td><td>24.0%</td><td>24.0%</td><td>24.0%</td><td>24.0%</td><td>24.0%</td><td>25.1%</td><td>22.2%</td><td>18.8%</td><td>28.4%</td><td>26.0%</td><td>24.4%</td><td>24.0%</td><td>24.0%</td></tr><tr><td>Old</td><td>24.0%</td><td>24.0%</td><td>24.0%</td><td>24.0%</td><td>24.0%</td><td>24.0%</td><td>24.0%</td><td>24.0%</td><td>25.1%</td><td>22.2%</td><td>18.8%</td><td>28.4%</td><td>22.6%</td><td>24.0%</td><td>24.0%</td><td>24.0%</td></tr><tr><td>Difference</td><td>1.8%</td><td>0.0%</td><td>0.0%</td><td>0.0%</td><td>0.0%</td><td>0.0%</td><td>0.0%</td><td>0.0%</td><td>n/a</td><td>n/a</td><td>n/a</td><td>n/a</td><td>n/a</td><td>0.4%</td><td>0.0%</td><td>0.0%</td></tr><tr><td colspan="17">Net profit</td></tr><tr><td>New</td><td>36</td><td>44</td><td>48</td><td>48</td><td>45</td><td>48</td><td>54</td><td>54</td><td>149</td><td>163</td><td>130</td><td>118</td><td>79</td><td>177</td><td>201</td><td>212</td></tr><tr><td>Old</td><td>38</td><td>43</td><td>48</td><td>48</td><td>44</td><td>48</td><td>54</td><td>55</td><td>149</td><td>163</td><td>130</td><td>118</td><td>77</td><td>177</td><td>201</td><td>212</td></tr><tr><td>Difference</td><td>-5%</td><td>3%</td><td>1%</td><td>1%</td><td>3%</td><td>0%</td><td>0%</td><td>-2%</td><td>n/a</td><td>n/a</td><td>n/a</td><td>n/a</td><td>n/a</td><td>0%</td><td>0%</td><td>0%</td></tr><tr><td colspan="17">ROE - annualized</td></tr><tr><td>New</td><td>12.8%</td><td>15.1%</td><td>15.9%</td><td>15.5%</td><td>14.1%</td><td>14.5%</td><td>15.7%</td><td>15.1%</td><td>26.3%</td><td>23.0%</td><td>15.6%</td><td>12.5%</td><td>7.7%</td><td>15.7%</td><td>15.7%</td><td>14.7%</td></tr><tr><td>Old</td><td>13.6%</td><td>14.8%</td><td>15.9%</td><td>15.5%</td><td>13.8%</td><td>14.6%</td><td>15.8%</td><td>15.6%</td><td>26.3%</td><td>23.0%</td><td>15.6%</td><td>12.5%</td><td>7.5%</td><td>15.8%</td><td>15.8%</td><td>14.7%</td></tr><tr><td>Difference</td><td>-0.8%</td><td>0.2%</td><td>0.0%</td><td>0.1%</td><td>0.3%</td><td>-0.1%</td><td>-0.1%</td><td>-0.4%</td><td>n/a</td><td>n/a</td><td>n/a</td><td>n/a</td><td>n/a</td><td>0.0%</td><td>0.0%</td><td>0.0%</td></tr><tr><td colspan="17">EBITDA</td></tr><tr><td>New</td><td>61</td><td>68</td><td>73</td><td>72</td><td>70</td><td>73</td><td>81</td><td>80</td><td>237</td><td>260</td><td>194</td><td>227</td><td>199</td><td>274</td><td>304</td><td>321</td></tr><tr><td>Old</td><td>62</td><td>67</td><td>74</td><td>72</td><td>69</td><td>74</td><td>82</td><td>82</td><td>237</td><td>260</td><td>194</td><td>227</td><td>197</td><td>274</td><td>306</td><td>324</td></tr><tr><td>Difference</td><td>-2%</td><td>1%</td><td>-1%</td><td>0%</td><td>1%</td><td>-1%</td><td>-1%</td><td>-2%</td><td>n/a</td><td>n/a</td><td>n/a</td><td>n/a</td><td>n/a</td><td>0%</td><td>-1%</td><td>-1%</td></tr><tr><td colspan="17">Capex</td></tr><tr><td>New</td><td>16</td><td>33</td><td>35</td><td>56</td><td>40</td><td>40</td><td>35</td><td>35</td><td>62</td><td>94</td><td>129</td><td>96</td><td>120</td><td>140</td><td>150</td><td>160</td></tr><tr><td>Old</td><td>30</td><td>33</td><td>35</td><td>42</td><td>40</td><td>40</td><td>35</td><td>35</td><td>62</td><td>94</td><td>129</td><td>96</td><td>130</td><td>140</td><td>150</td><td>160</td></tr><tr><td>Difference</td><td>-46%</td><td>0%</td><td>0%</td><td>33%</td><td>0%</td><td>0%</td><td>0%</td><td>0%</td><td>n/a</td><td>n/a</td><td>n/a</td><td>n/a</td><td>n/a</td><td>0%</td><td>0%</td><td>0%</td></tr><tr><td colspan="17">Net debt</td></tr><tr><td>New</td><td>-237</td><td>-154</td><td>-179</td><td>-150</td><td>-215</td><td>-186</td><td>-218</td><td>-214</td><td>-146</td><td>-168</td><td>-161</td><td>-242</td><td>-146</td><td>-150</td><td>-214</td><td>-276</td></tr><tr><td>Old</td><td>-136</td><td>-151</td><td>-176</td><td>-161</td><td>-182</td><td>-197</td><td>-230</td><td>-228</td><td>-146</td><td>-168</td><td>-161</td><td>-242</td><td>-129</td><td>-161</td><td>-228</td><td>-293</td></tr><tr><td>Difference</td><td>75%</td><td>2%</td><td>2%</td><td>-7%</td><td>18%</td><td>-6%</td><td>-5%</td><td>-6%</td><td>n/a</td><td>n/a</td><td>n/a</td><td>n/a</td><td>n/a</td><td>-7%</td><td>-6%</td><td>-6%</td></tr><tr><td colspan="17">BVPS</td></tr><tr><td>New</td><td>139,886</td><td>144,846</td><td>151,043</td><td>153,228</td><td>159,039</td><td>165,209</td><td>172,142</td><td>174,597</td><td>81,666</td><td>100,114</td><td>114,593</td><td>129,633</td><td>135,728</td><td>153,228</td><td>174,597</td><td>196,964</td></tr><tr><td>Old</td><td>139,227</td><td>144,759</td><td>150,915</td><td>153,037</td><td>158,667</td><td>164,851</td><td>171,790</td><td>174,394</td><td>81,666</td><td>100,114</td><td>114,593</td><td>129,633</td><td>135,454</td><td>153,037</td><td>174,394</td><td>196,757</td></tr><tr><td>Difference</td><td>0%</td><td>0%</td><td>0%</td><td>0%</td><td>0%</td><td>0%</td><td>0%</td><td>0%</td><td>n/a</td><td>n/a</td><td>n/a</td><td>n/a</td><td>n/a</td><td>0%</td><td>0%</td><td>0%</td></tr></table>
+
+Source: Company, BofA Global Research estimates
+
+BofA GLOBAL RESEARCH
+
+SK Square (402340 KS; C-1-7; PO W1,600,000)   
+Exhibit 8: Minimal 2026-27E EPS revisions as the majority of Square's OP is dependent on Hynix's NP due to its $20\%$ stake SK Square – Earnings revisions (2026-28E) 
+
+<table><tr><td>Wbn, Won</td><td>1Q26</td><td>2Q26E</td><td>3Q26E</td><td>4Q26E</td><td>1Q27E</td><td>2Q27E</td><td>3Q27E</td><td>4Q27E</td><td>2023</td><td>2024</td><td>2025</td><td>2026E</td><td>2027E</td><td>2028E</td></tr><tr><td colspan="15">EPS - fully diluted</td></tr><tr><td>New</td><td>63,552</td><td>64,514</td><td>76,232</td><td>73,730</td><td>73,736</td><td>68,664</td><td>77,687</td><td>78,753</td><td>-9,501</td><td>27,886</td><td>66,912</td><td>278,028</td><td>298,840</td><td>308,071</td></tr><tr><td>Old</td><td>58,766</td><td>65,513</td><td>77,916</td><td>75,447</td><td>70,284</td><td>69,895</td><td>79,140</td><td>80,258</td><td>-9,501</td><td>27,886</td><td>66,912</td><td>277,641</td><td>299,577</td><td>309,114</td></tr><tr><td>Difference</td><td>8%</td><td>-2%</td><td>-2%</td><td>-2%</td><td>5%</td><td>-2%</td><td>-2%</td><td>-2%</td><td>n/a</td><td>n/a</td><td>n/a</td><td>0%</td><td>0%</td><td>0%</td></tr><tr><td colspan="15">Dividend/share</td></tr><tr><td>New</td><td>0</td><td>1,550</td><td>0</td><td>1,550</td><td>0</td><td>2,000</td><td>0</td><td>3,000</td><td>0</td><td>0</td><td>0</td><td>3,100</td><td>5,000</td><td>6,000</td></tr><tr><td>Old</td><td>0</td><td>1,550</td><td>0</td><td>1,550</td><td>0</td><td>2,000</td><td>0</td><td>3,000</td><td>0</td><td>0</td><td>0</td><td>3,100</td><td>5,000</td><td>6,000</td></tr><tr><td>Difference</td><td>n/a</td><td>n/a</td><td>n/a</td><td>0%</td><td>n/a</td><td>n/a</td><td>n/a</td><td>0%</td><td>n/a</td><td>n/a</td><td>n/a</td><td>0%</td><td>0%</td><td>0%</td></tr><tr><td colspan="15">Shares for FD EPS - mn</td></tr><tr><td>New</td><td>132</td><td>132</td><td>132</td><td>132</td><td>132</td><td>132</td><td>132</td><td>132</td><td>135</td><td>133</td><td>132</td><td>132</td><td>132</td><td>132</td></tr><tr><td>Old</td><td>132</td><td>132</td><td>132</td><td>132</td><td>132</td><td>132</td><td>132</td><td>132</td><td>135</td><td>133</td><td>132</td><td>132</td><td>132</td><td>132</td></tr><tr><td>Difference</td><td>0%</td><td>0%</td><td>0%</td><td>0%</td><td>0%</td><td>0%</td><td>0%</td><td>0%</td><td>n/a</td><td>n/a</td><td>n/a</td><td>0%</td><td>0%</td><td>0%</td></tr><tr><td colspan="15">Sales</td></tr><tr><td>New</td><td>300</td><td>298</td><td>295</td><td>290</td><td>287</td><td>284</td><td>281</td><td>279</td><td>2,277</td><td>1,907</td><td>1,412</td><td>1,183</td><td>1,131</td><td>1,087</td></tr><tr><td>Old</td><td>180</td><td>170</td><td>165</td><td>168</td><td>166</td><td>165</td><td>163</td><td>161</td><td>2,277</td><td>1,907</td><td>1,412</td><td>683</td><td>655</td><td>630</td></tr><tr><td>Difference</td><td>67%</td><td>75%</td><td>79%</td><td>73%</td><td>73%</td><td>73%</td><td>73%</td><td>73%</td><td>n/a</td><td>n/a</td><td>n/a</td><td>73%</td><td>73%</td><td>73%</td></tr><tr><td colspan="15">OP</td></tr><tr><td>New</td><td>8,278</td><td>9,062</td><td>10,779</td><td>10,420</td><td>9,703</td><td>9,650</td><td>10,934</td><td>11,085</td><td>-2,340</td><td>3,913</td><td>8,797</td><td>38,540</td><td>41,372</td><td>42,664</td></tr><tr><td>Old</td><td>8,141</td><td>9,072</td><td>10,786</td><td>10,439</td><td>9,722</td><td>9,668</td><td>10,951</td><td>11,106</td><td>-2,340</td><td>3,913</td><td>8,797</td><td>38,438</td><td>41,448</td><td>42,753</td></tr><tr><td>Difference</td><td>2%</td><td>0%</td><td>0%</td><td>0%</td><td>0%</td><td>0%</td><td>0%</td><td>0%</td><td>n/a</td><td>n/a</td><td>n/a</td><td>0%</td><td>0%</td><td>0%</td></tr><tr><td colspan="15">Equity method gains</td></tr><tr><td>New</td><td>8,313</td><td>9,094</td><td>10,809</td><td>10,463</td><td>9,747</td><td>9,692</td><td>10,974</td><td>11,135</td><td>-2,053</td><td>4,107</td><td>8,930</td><td>38,679</td><td>41,549</td><td>42,873</td></tr><tr><td>Old</td><td>8,154</td><td>9,092</td><td>10,808</td><td>10,463</td><td>9,747</td><td>9,691</td><td>10,974</td><td>11,135</td><td>-2,053</td><td>4,107</td><td>8,930</td><td>38,517</td><td>41,547</td><td>42,871</td></tr><tr><td>Difference</td><td>2%</td><td>0%</td><td>0%</td><td>0%</td><td>0%</td><td>0%</td><td>0%</td><td>0%</td><td>n/a</td><td>n/a</td><td>n/a</td><td>0%</td><td>0%</td><td>0%</td></tr><tr><td colspan="15">Pre-tax income</td></tr><tr><td>New</td><td>8,930</td><td>9,082</td><td>10,801</td><td>10,445</td><td>10,368</td><td>9,675</td><td>10,959</td><td>11,110</td><td>-2,598</td><td>3,836</td><td>9,507</td><td>39,259</td><td>42,112</td><td>43,459</td></tr><tr><td>Old</td><td>8,151</td><td>9,087</td><td>10,808</td><td>10,464</td><td>9,747</td><td>9,693</td><td>10,976</td><td>11,131</td><td>-2,598</td><td>3,836</td><td>9,507</td><td>38,510</td><td>41,548</td><td>42,870</td></tr><tr><td>Difference</td><td>10%</td><td>0%</td><td>0%</td><td>0%</td><td>6%</td><td>0%</td><td>0%</td><td>0%</td><td>n/a</td><td>n/a</td><td>n/a</td><td>2%</td><td>1%</td><td>1%</td></tr><tr><td colspan="15">Tax rate - effective</td></tr><tr><td>New</td><td>6.2%</td><td>6.4%</td><td>7.0%</td><td>7.0%</td><td>6.3%</td><td>6.5%</td><td>6.6%</td><td>6.6%</td><td>49.4%</td><td>4.8%</td><td>7.2%</td><td>6.7%</td><td>6.5%</td><td>6.6%</td></tr><tr><td>Old</td><td>5.0%</td><td>5.0%</td><td>5.0%</td><td>5.0%</td><td>5.0%</td><td>5.0%</td><td>5.0%</td><td>5.0%</td><td>49.4%</td><td>4.8%</td><td>7.2%</td><td>5.0%</td><td>5.0%</td><td>5.0%</td></tr><tr><td>Difference</td><td>1%</td><td>1%</td><td>2%</td><td>2%</td><td>1%</td><td>2%</td><td>2%</td><td>2%</td><td>n/a</td><td>n/a</td><td>n/a</td><td>2%</td><td>2%</td><td>2%</td></tr><tr><td colspan="15">NP ex minority int</td></tr><tr><td>New</td><td>8,381</td><td>8,508</td><td>10,053</td><td>9,723</td><td>9,724</td><td>9,055</td><td>10,245</td><td>10,386</td><td>-1,287</td><td>3,714</td><td>8,824</td><td>36,665</td><td>39,410</td><td>40,627</td></tr><tr><td>Old</td><td>7,750</td><td>8,640</td><td>10,275</td><td>9,950</td><td>9,269</td><td>9,217</td><td>10,437</td><td>10,584</td><td>-1,287</td><td>3,714</td><td>8,824</td><td>36,614</td><td>39,507</td><td>40,765</td></tr><tr><td>Difference</td><td>8%</td><td>-2%</td><td>-2%</td><td>-2%</td><td>5%</td><td>-2%</td><td>-2%</td><td>-2%</td><td>n/a</td><td>n/a</td><td>n/a</td><td>0%</td><td>0%</td><td>0%</td></tr><tr><td colspan="15">ROE - annualized</td></tr><tr><td>New</td><td>104%</td><td>84%</td><td>81%</td><td>65%</td><td>56%</td><td>46%</td><td>47%</td><td>42%</td><td>-33%</td><td>84%</td><td>148%</td><td>318%</td><td>188%</td><td>132%</td></tr><tr><td>Old</td><td>97%</td><td>86%</td><td>83%</td><td>67%</td><td>54%</td><td>47%</td><td>48%</td><td>43%</td><td>-33%</td><td>84%</td><td>148%</td><td>318%</td><td>189%</td><td>133%</td></tr><tr><td>Difference</td><td>7%</td><td>-2%</td><td>-2%</td><td>-2%</td><td>2%</td><td>-1%</td><td>-1%</td><td>-1%</td><td>n/a</td><td>n/a</td><td>n/a</td><td>0%</td><td>-1%</td><td>0%</td></tr><tr><td colspan="15">EBITDA</td></tr><tr><td>New</td><td>8,296</td><td>9,082</td><td>10,800</td><td>10,442</td><td>9,726</td><td>9,674</td><td>10,959</td><td>11,111</td><td>-2,196</td><td>4,016</td><td>8,880</td><td>38,621</td><td>41,470</td><td>42,778</td></tr><tr><td>Old</td><td>8,161</td><td>9,092</td><td>10,807</td><td>10,461</td><td>9,745</td><td>9,692</td><td>10,976</td><td>11,132</td><td>-2,196</td><td>4,016</td><td>8,880</td><td>38,521</td><td>41,546</td><td>42,867</td></tr><tr><td>Difference</td><td>2%</td><td>0%</td><td>0%</td><td>0%</td><td>0%</td><td>0%</td><td>0%</td><td>0%</td><td>n/a</td><td>n/a</td><td>n/a</td><td>0%</td><td>0%</td><td>0%</td></tr><tr><td colspan="15">Capex spend</td></tr><tr><td>New</td><td>12</td><td>15</td><td>15</td><td>15</td><td>15</td><td>15</td><td>15</td><td>15</td><td>259</td><td>61</td><td>39</td><td>57</td><td>60</td><td>60</td></tr><tr><td>Old</td><td>15</td><td>15</td><td>15</td><td>15</td><td>15</td><td>15</td><td>15</td><td>15</td><td>259</td><td>61</td><td>39</td><td>60</td><td>60</td><td>60</td></tr><tr><td>Difference</td><td>-18%</td><td>0%</td><td>0%</td><td>0%</td><td>0%</td><td>0%</td><td>0%</td><td>0%</td><td>n/a</td><td>n/a</td><td>n/a</td><td>-5%</td><td>0%</td><td>0%</td></tr><tr><td colspan="15">Net debt</td></tr><tr><td>New</td><td>-1,419</td><td>-1,663</td><td>-1,733</td><td>-1,947</td><td>-2,095</td><td>-2,538</td><td>-2,498</td><td>-2,609</td><td>-1,484</td><td>-1,555</td><td>-1,628</td><td>-1,947</td><td>-2,609</td><td>-3,215</td></tr><tr><td>Old</td><td>-1,780</td><td>-2,005</td><td>-1,925</td><td>-2,008</td><td>-2,162</td><td>-2,620</td><td>-2,578</td><td>-2,693</td><td>-1,484</td><td>-1,555</td><td>-1,628</td><td>-2,008</td><td>-2,693</td><td>-3,320</td></tr><tr><td>Difference</td><td>-20%</td><td>-17%</td><td>-10%</td><td>-3%</td><td>-3%</td><td>-3%</td><td>-3%</td><td>-3%</td><td>n/a</td><td>n/a</td><td>n/a</td><td>-3%</td><td>-3%</td><td>-3%</td></tr><tr><td colspan="15">Adj BVPS ex treasury</td></tr><tr><td>New</td><td>274,977</td><td>338,888</td><td>415,158</td><td>487,422</td><td>560,123</td><td>627,754</td><td>705,480</td><td>781,318</td><td>116,752</td><td>147,055</td><td>212,192</td><td>487,422</td><td>781,318</td><td>1,083,446</td></tr><tr><td>Old</td><td>270,984</td><td>334,985</td><td>412,939</td><td>486,919</td><td>557,097</td><td>625,030</td><td>704,209</td><td>781,552</td><td>116,752</td><td>147,055</td><td>212,192</td><td>486,919</td><td>781,552</td><td>1,084,724</td></tr><tr><td>Difference</td><td>1%</td><td>1%</td><td>1%</td><td>0%</td><td>1%</td><td>0%</td><td>0%</td><td>0%</td><td>n/a</td><td>n/a</td><td>n/a</td><td>0%</td><td>0%</td><td>0%</td></tr></table>
+
+Source: Company, BofA Global Research estimates
+
+BofA GLOBAL RESEARCH
+
+# Memory spot/contract price trend
+
+Exhibit 9: DRAM spot price softened in Apr/1H-May (mostly led by DDR4, while DDR5 relatively remained stable) after an exceptionally strong rally from Sept-25 to Jan-2026. DRAM price hit the highest level in the past 25 years as the current mainstream DRAM 16Gb DDR5 stood at US\$4 and 16Gb DDR4 at \$60 as chipmakers reallocated production to HBM and server-grade DRAM. Previous high level was in Oct-17, but it was only \$10 range.
+
+DRAM spot price – long-term trend (2000-2025)
+
+![](images/a7b193f9eb713e7c5adff459e1b17d887a901e0b0e670cb28d77666179e69e77.jpg)
+
+<details>
+<summary>line</summary>
+
+| Year | Value     |
+|------|-----------|
+| 2000 | 0.064Gb   |
+| 2001 | 0.128Gb   |
+| 2002 | 0.25Gb    |
+| 2003 | 0.5Gb     |
+| 2004 | 1Gb       |
+| 2005 | 2Gb       |
+| 2006 | 4Gb D3    |
+| 2007 | 8Gb D4    |
+| 2008 | 16Gb D5   |
+| 2009 | 16Gb D4   |
+| 2010 | 16Gb D4   |
+| 2011 | 16Gb D4   |
+| 2012 | 16Gb D4   |
+| 2013 | 16Gb D4   |
+| 2014 | 16Gb D4   |
+| 2015 | 16Gb D4   |
+| 2016 | 16Gb D4   |
+| 2017 | 16Gb D4   |
+| 2018 | 16Gb D4   |
+| 2019 | 16Gb D4   |
+| 2020 | 16Gb D4   |
+| 2021 | 16Gb D4   |
+| 2022 | 16Gb D4   |
+| 2023 | 16Gb D4   |
+| 2024 | 16Gb D4   |
+| 2025 | 16Gb D4   |
+| 2026 | 16Gb D4   |
+</details>
+
+Source: DRAMeXchange   
+BofA GLOBAL RESEARCH
+
+Exhibit 10: DRAM spot and contract prices reached record highs (\~\$35), then leveled off during April–May following a strong rally in 4Q25 and 1Q26.   
+DRAM spot and contract price - quarterly average trend   
+![](images/3413f0d2020139fbf6b0ee66937c70918a8fdff19cff62ca46cd46c91f38f5c6.jpg)
+
+<details>
+<summary>line</summary>
+
+| Quarter | 16Gb DDR5 spot | 16Gb DDR5 contract |
+| ------- | -------------- | ------------------ |
+| 1Q23    | ~4.5           | ~4.0               |
+| 2Q23    | ~4.0           | ~3.5               |
+| 3Q23    | ~4.0           | ~3.5               |
+| 4Q23    | ~4.0           | ~3.5               |
+| 1Q24    | ~4.5           | ~4.0               |
+| 2Q24    | ~4.5           | ~4.0               |
+| 3Q24    | ~4.5           | ~4.0               |
+| 4Q24    | ~4.5           | ~4.0               |
+| 1Q25    | ~4.5           | ~4.0               |
+| 2Q25    | ~5.0           | ~4.5               |
+| 3Q25    | ~5.5           | ~5.0               |
+| 4Q25    | ~15.0          | ~12.0              |
+| 1Q26    | ~37.0          | ~30.0              |
+| 2Q26E   | ~38.0          | ~35.0              |
+</details>
+
+2Q26 average is based on April and up until 1H-May   
+Source: DRAMeXchange, TrendForce   
+BofA GLOBAL RESEARCH
+
+Exhibit 11: NAND wafer contract price rally significantly higher vs spot NAND wafer spot and contract price - quarterly average trend   
+![](images/58fa2c3dd768b7bec8c5cd905fd387a38919999f6a7432283db1f21974be9a0a.jpg)
+
+<details>
+<summary>line</summary>
+
+| Quarter | 512Gb wafer spot | 512Gb wafer contract |
+| ------- | ---------------- | -------------------- |
+| 1Q23    | ~2.0             | ~2.0                 |
+| 2Q23    | ~2.0             | ~2.0                 |
+| 3Q23    | ~2.0             | ~2.0                 |
+| 4Q23    | ~3.0             | ~3.0                 |
+| 1Q24    | ~4.0             | ~4.0                 |
+| 2Q24    | ~4.0             | ~4.0                 |
+| 3Q24    | ~3.0             | ~4.0                 |
+| 4Q24    | ~3.0             | ~3.0                 |
+| 1Q25    | ~3.0             | ~3.0                 |
+| 2Q25    | ~3.0             | ~3.0                 |
+| 3Q25    | ~3.0             | ~3.0                 |
+| 4Q25    | ~8.0             | ~9.0                 |
+| 1Q26    | ~18.0            | ~20.0                |
+| 2Q26E   | ~21.0            | ~30.0                |
+</details>
+
+2Q26 average is based on April and up until 1H-May   
+Source: DRAMeXchange, TrendForce   
+BofA GLOBAL RESEARCH
+
+Exhibit 12: Prices further up this week and hit an all-time high level, following a volatile April (2H gains offsetting 1H correction). Strong rallies in Oct (+70%), Nov (+60%), and Jan (+25%) were followed by muted trends in Feb–Mar.   
+16Gb DDR5 spot price – daily, Sep '23 - May '26   
+![](images/d0f3cf215eecb7236ac94c791a05143dd456ce733caaf0cfb7ae92e33a9d90d9.jpg)
+
+<details>
+<summary>line</summary>
+
+| Date    | Value |
+|---------|-------|
+| Nov-23  | -27%  |
+| Jan-24  | +33%  |
+| Mar-24  | 5.2   |
+| May-24  | -10%  |
+| Jul-24  | 4     |
+| Sep-25  | +750% |
+| Jan-26  | 40    |
+| Mar-26  | 40    |
+| May-26  | 40    |
+</details>
+
+Source: DRAMeXchange   
+BofA GLOBAL RESEARCH
+
+Exhibit 14: 8Gb DDR4 prices largely stabilized through April/1H-May, but remain significantly higher YoY due to production cuts by the leading memory suppliers. Prices have risen to around \$30, well above the previous peak of roughly \$10 seen in October 2017   
+8Gb DDR4 spot price trend, Sep '23 - May '26   
+![](images/93b92a23b6b17691f592089a9c1da13f0518b57c9ad0e7adf7ef45edc7429208.jpg)
+
+<details>
+<summary>line</summary>
+
+| Date    | Value (US$) |
+|---------|-------------|
+| May-25  | 1           |
+| Jul-25  | 5           |
+| Sep-25  | 10          |
+| Jan-26  | 30          |
+| Mar-26  | 34          |
+</details>
+
+Source: DRAMeXchange   
+BofA GLOBAL RESEARCH
+
+Exhibit 16: DDR4 and DDR5 contract prices are similar at US\$35 (16Gb) – DDR5 price premium no longer exists due to DDR4 shortage   
+16Gb DDR5 vs 16Gb DDR4 contract price trend, Dec '22-Apr '26   
+![](images/3693c53e7c0986d206be5d0e93dc56667f436b511e7bcdb08b5224759976ca97.jpg)
+
+<details>
+<summary>line</summary>
+
+| Date    | 16Gb DDR5 (contract) | 16Gb DDR4 (contract) |
+|---------|----------------------|----------------------|
+| Dec-22  | ~4                   | ~4                   |
+| Feb-23  | ~4                   | ~4                   |
+| Apr-23  | ~4                   | ~4                   |
+| Jun-23  | ~4                   | ~4                   |
+| Aug-23  | ~4                   | ~4                   |
+| Oct-23  | ~4                   | ~4                   |
+| Dec-23  | ~4                   | ~4                   |
+| Feb-24  | ~4                   | ~4                   |
+| Apr-24  | ~4                   | ~4                   |
+| Jun-24  | ~4                   | ~4                   |
+| Aug-24  | ~4                   | ~4                   |
+| Oct-24  | ~4                   | ~4                   |
+| Dec-24  | ~4                   | ~4                   |
+| Feb-25  | ~4                   | ~4                   |
+| Apr-25  | ~4                   | ~4                   |
+| Jun-25  | ~5                   | ~5                   |
+| Aug-25  | ~8                   | ~10                  |
+| Oct-25  | ~15                  | ~18                  |
+| Dec-25  | ~20                  | ~22                  |
+| Feb-26  | ~30                  | ~32                  |
+| Apr-26  | ~35                  | ~36                  |
+</details>
+
+Source: TrendForce   
+BofA GLOBAL RESEARCH
+
+Exhibit 13: slight uptick was seen in early May, following a sequential slowdown from February (+10%) to flat momentum in March and a minor decline in April, after the strong January (+25%) surge and the sharp October–November rally (+60–120%)   
+16Gb DDR5 spot month-average price – MoM change, Sep '23 - May '26   
+![](images/60ee96b7a9f4eedf5c710b5e8811b334a79058bbc5b9f5143e43714b64301251.jpg)
+
+<details>
+<summary>line</summary>
+
+| Month    | MoM     |
+| -------- | ------- |
+| Sep-23   | ~0%     |
+| Nov-23   | ~0%     |
+| Jan-24   | ~5%     |
+| Mar-24   | ~0%     |
+| May-24   | ~0%     |
+| Jul-24   | ~0%     |
+| Sep-24   | ~0%     |
+| Nov-24   | ~0%     |
+| Jan-25   | ~0%     |
+| Mar-25   | ~5%     |
+| May-25   | ~0%     |
+| Jul-25   | ~0%     |
+| Sep-25   | ~10%    |
+| Nov-25   | ~110%   |
+| Jan-26   | ~30%    |
+| Mar-26   | ~0%     |
+| May-26   | ~0%     |
+</details>
+
+Source: DRAMeXchange   
+BofA GLOBAL RESEARCH
+
+Exhibit 15: Prices declined sharply in Apr–1H-May (\~25%) after peaking at \~\$80 in early Mar, following strong Sep–Dec gains (+30–70%) and Jan (+20%); still up 2000%+ YoY vs \~\$3 in Oct-25.   
+16Gb DDR4 spot price trend, May '23 - May '26   
+![](images/fc3ee4088df27289dde403d0498934412f28f356b84255ae097f713486c21b7b.jpg)
+
+<details>
+<summary>line</summary>
+
+| Date    | Price (US$) |
+|---------|-------------|
+| May-23  | ~0.0        |
+| Jul-23  | ~0.0        |
+| Sep-23  | ~0.0        |
+| Nov-23  | ~0.0        |
+| Jan-24  | ~0.0        |
+| Mar-24  | ~0.0        |
+| May-24  | ~0.0        |
+| Jul-24  | ~0.0        |
+| Sep-24  | ~0.0        |
+| Nov-24  | ~0.0        |
+| Jan-25  | ~0.0        |
+| Mar-25  | ~0.0        |
+| May-25  | ~5.0        |
+| Jul-25  | ~10.0       |
+| Sep-25  | ~30.0       |
+| Nov-25  | ~60.0       |
+| Jan-26  | ~80.0       |
+| Mar-26  | ~75.0       |
+| May-26  | ~60.0       |
+</details>
+
+Source: DRAMeXchange   
+BofA GLOBAL RESEARCH
+
+Exhibit 17: DDR5 and DDR4 contract prices up 10-15% MoM in Apr-26 vs broadly stable in Mar; price strong through 2H25 and early 2026   
+16Gb DDR5 vs 16Gb DDR4 contract price change - MoM, Dec '22-Apr '26   
+![](images/5219425717b0a10838ef07d3abbe1bdc00eb463bdc13cce97d44a7980374d48e.jpg)
+
+<details>
+<summary>line</summary>
+
+| Month    | 16Gb DDR5 (contract) | 16Gb DDR4 (contract) |
+|----------|----------------------|----------------------|
+| Dec-22   | -                    | -                    |
+| Feb-23   | -                    | -                    |
+| Apr-23   | -                    | -                    |
+| Jun-23   | -                    | -                    |
+| Aug-23   | -                    | -                    |
+| Oct-23   | -                    | -                    |
+| Dec-23   | -                    | -                    |
+| Feb-24   | -                    | -                    |
+| Apr-24   | -                    | -                    |
+| Jun-24   | -                    | -                    |
+| Aug-24   | -                    | -                    |
+| Oct-24   | -                    | -                    |
+| Dec-24   | -                    | -                    |
+| Feb-25   | -                    | -                    |
+| Apr-25   | -                    | -                    |
+| Jun-25   | -                    | -                    |
+| Aug-25   | -                    | -                    |
+| Oct-25   | -                    | -                    |
+| Dec-25   | 150%                 | 0%                   |
+| Feb-26   | 0%                   | 0%                   |
+| Apr-26   | 0%                   | 0%                   |
+</details>
+
+Source: TrendForce   
+BofA GLOBAL RESEARCH
+
+Exhibit 18: NAND spot prices remained stable this week, after trending down gradually through late March, April, and early May, but still up 50%+ YTD and 8x vs Feb-25 low (\$2.4)   
+512Gb NAND wafer spot price – weekly, Feb '21 - May '26   
+![](images/3e6f1a3941f6c4add42c6493ed834d06bace8bc40ab1d07407a9e37bb45b9bbc.jpg)
+
+<details>
+<summary>line</summary>
+
+| Date    | Value (US$) |
+|---------|-------------|
+| Feb-21  | ~4.5        |
+| May-21  | ~4.8        |
+| Aug-21  | ~4.7        |
+| Nov-21  | ~4.5        |
+| Feb-22  | ~4.3        |
+| May-22  | ~3.8        |
+| Aug-22  | ~3.0        |
+| Nov-22  | ~2.5        |
+| Feb-23  | ~2.0        |
+| May-23  | ~1.8        |
+| Aug-23  | ~1.9        |
+| Nov-23  | ~2.5        |
+| Feb-24  | ~3.5        |
+| May-24  | ~3.8        |
+| Aug-24  | ~3.5        |
+| Nov-24  | ~3.0        |
+| Feb-25  | ~3.0        |
+| May-25  | ~3.0        |
+| Aug-25  | ~3.0        |
+| Nov-25  | ~3.0        |
+| Feb-26  | ~10.0       |
+| May-26  | ~23.0       |
+</details>
+
+Source: DRAMeXchange   
+BofA GLOBAL RESEARCH
+
+Exhibit 20: Current contract price at \~\$25, around 10x vs Feb-25 bottom of \$2.5; prices significantly up in 4Q25 and through 1Q26   
+NAND wafer contract price trend, Jun '23-Apr '26   
+![](images/6b293433e9cd0756696187497357182aa68bbcd9569ea3714c4a0034a5ffeae6.jpg)
+
+<details>
+<summary>line</summary>
+
+| Date    | 512Gb wafer contract (US$) |
+|---------|-----------------------------|
+| Jun-23  | 1                           |
+| Aug-23  | 1                           |
+| Oct-23  | 1                           |
+| Dec-23  | 1                           |
+| Feb-24  | 1                           |
+| Apr-24  | 1                           |
+| Jun-24  | 1                           |
+| Aug-24  | 1                           |
+| Oct-24  | 1                           |
+| Dec-24  | 1                           |
+| Feb-25  | 1                           |
+| Apr-25  | 1                           |
+| Jun-25  | 1                           |
+| Aug-25  | 1                           |
+| Oct-25  | 1                           |
+| Dec-25  | 1                           |
+| Feb-26  | 1                           |
+| Apr-26  | 1                           |
+</details>
+
+Source: TrendForce, DRAMeXchange, BofA Global Research   
+BofA GLOBAL RESEARCH
+
+Exhibit 22: 16Gb DDR5 spot and contract prices are in the range of US\$30-40 vs historical range of US\$3-5   
+16Gb DDR5 spot vs contract price trend (US\$), Jun '23-Apr '26   
+![](images/21f5497941cff476c7783fbdea91b9c3078d3cf58ad8fcc813b98481822d6f72.jpg)
+
+<details>
+<summary>line</summary>
+
+| Date    | 16Gb DDR5 spot | 16Gb DDR5 contract |
+|---------|----------------|--------------------|
+| Jun-23  | ~3.0           | ~3.0               |
+| Aug-23  | ~3.0           | ~3.0               |
+| Oct-23  | ~3.0           | ~3.0               |
+| Dec-23  | ~3.0           | ~3.0               |
+| Feb-24  | ~3.0           | ~3.0               |
+| Apr-24  | ~3.0           | ~3.0               |
+| Jun-24  | ~3.0           | ~3.0               |
+| Aug-24  | ~3.0           | ~3.0               |
+| Oct-24  | ~3.0           | ~3.0               |
+| Dec-24  | ~3.0           | ~3.0               |
+| Feb-25  | ~3.0           | ~3.0               |
+| Apr-25  | ~3.0           | ~3.0               |
+| Jun-25  | ~3.0           | ~3.0               |
+| Aug-25  | ~3.0           | ~3.0               |
+| Oct-25  | ~8.0           | ~8.0               |
+| Dec-25  | ~23.0          | ~21.0              |
+| Feb-26  | ~38.0          | ~34.0              |
+| Apr-26  | ~38.0          | ~36.0              |
+</details>
+
+Source: DRAMeXchange, TrendForce   
+BofA GLOBAL RESEARCH
+
+Exhibit 19: Slightly corrected in Apr/1H-May vs up +15-20% in Feb/Mar-26 and up +40-70% MoM in Oct/Nov/Dec/Jan   
+512Gb NAND wafer spot month-average – MoM change, May'21 - May'26   
+![](images/ed30e833fda27deb5567cbae2d448f81540f4365d476790bc8418198c189b790.jpg)
+
+<details>
+<summary>line</summary>
+
+| Date    | 512 Gb wafer spot NAND |
+|---------|------------------------|
+| May-21  | ~0%                    |
+| Aug-21  | ~0%                    |
+| Nov-21  | ~0%                    |
+| Feb-22  | ~0%                    |
+| May-22  | ~0%                    |
+| Aug-22  | ~-20%                  |
+| Nov-22  | ~-10%                  |
+| Feb-23  | ~0%                    |
+| May-23  | ~0%                    |
+| Aug-23  | ~30%                   |
+| Nov-23  | ~10%                   |
+| Feb-24  | ~0%                    |
+| May-24  | ~-10%                  |
+| Aug-24  | ~-15%                  |
+| Nov-24  | ~0%                    |
+| Feb-25  | ~0%                    |
+| May-25  | ~0%                    |
+| Aug-25  | ~0%                    |
+| Nov-25  | ~70%                   |
+| Feb-26  | ~20%                   |
+| May-26  | ~-10%                  |
+</details>
+
+Source: DRAMeXchange   
+BofA GLOBAL RESEARCH
+
+Exhibit 21: Apr price only up +5% MoM following Jan/Feb/Mar-26 rally (up 20-30% MoM) and Oct/Nov/Dec upturn (up 40-60% MoM)   
+MoM change of NAND contract price (512Gb wafer), Jun '23-Apr '26   
+![](images/1d0db052b7c7b09ece73ea34d0049ca815f35cc429378651f25644e3173d5bbd.jpg)
+
+<details>
+<summary>line</summary>
+
+| Month    | MoM change |
+| -------- | ---------- |
+| Jun-23   | 0%         |
+| Aug-23   | 0%         |
+| Oct-23   | 30%        |
+| Dec-23   | 10%        |
+| Feb-24   | 15%        |
+| Apr-24   | 0%         |
+| Jun-24   | 0%         |
+| Aug-24   | -10%       |
+| Oct-24   | -20%       |
+| Dec-24   | -15%       |
+| Feb-25   | 10%        |
+| Apr-25   | 0%         |
+| Jun-25   | 0%         |
+| Aug-25   | 0%         |
+| Oct-25   | 65%        |
+| Dec-25   | 40%        |
+| Feb-26   | 20%        |
+| Apr-26   | 0%         |
+</details>
+
+Source: DRAMeXchange, TrendForce, BofA Global Research   
+BofA GLOBAL RESEARCH
+
+Exhibit 23: Feb/Mar/Apr price rally muted vs Nov/Dec/Jan upturn   
+16Gb DDR5 spot vs contract price trend – MoM change, Jun '23-Apr '26   
+![](images/93cbc7686d21bf3342ffd466c28371fccfd664c6f6c5ed93e6cdd9c29b71e582.jpg)
+
+<details>
+<summary>line</summary>
+
+| Month    | 16Gb DDR5 spot | 16Gb DDR5 contract |
+| -------- | -------------- | ------------------ |
+| Jun-23   | ~0%            | ~0%                |
+| Aug-23   | ~0%            | ~10%               |
+| Oct-23   | ~0%            | ~10%               |
+| Dec-23   | ~0%            | ~0%                |
+| Feb-24   | ~0%            | ~10%               |
+| Apr-24   | ~0%            | ~10%               |
+| Jun-24   | ~0%            | ~0%                |
+| Aug-24   | ~0%            | ~-10%              |
+| Oct-24   | ~0%            | ~0%                |
+| Dec-24   | ~0%            | ~0%                |
+| Feb-25   | ~0%            | ~10%               |
+| Apr-25   | ~0%            | ~10%               |
+| Jun-25   | ~0%            | ~0%                |
+| Aug-25   | ~0%            | ~10%               |
+| Oct-25   | ~120%          | ~120%              |
+| Dec-25   | ~30%           | ~30%               |
+| Feb-26   | ~10%           | ~10%               |
+| Apr-26   | ~0%            | ~10%               |
+</details>
+
+Source: DRAMeXchange, TrendForce   
+BofA GLOBAL RESEARCH
+
+Exhibit 24: Current NAND spot and contract prices are a few times higher than 2025 summer level   
+512Gb NAND wafer spot vs contract price trend (US\$), Apr '19 - Apr '26   
+![](images/fc572ef48a4b6da73c5563e0583536f823321511a67896005a59b293abbfda34.jpg)
+
+<details>
+<summary>line</summary>
+
+| Date   | 512Gb spot | 512Gb contract |
+|--------|------------|----------------|
+| Apr-19 | ~4         | ~4             |
+| Oct-19 | ~5         | ~5             |
+| Apr-20 | ~5         | ~5             |
+| Oct-20 | ~4         | ~4             |
+| Apr-21 | ~4         | ~4             |
+| Oct-21 | ~4         | ~4             |
+| Apr-22 | ~3         | ~3             |
+| Oct-22 | ~2         | ~2             |
+| Apr-23 | ~1         | ~1             |
+| Oct-23 | ~2         | ~2             |
+| Apr-24 | ~3         | ~3             |
+| Oct-24 | ~2         | ~2             |
+| Apr-25 | ~3         | ~3             |
+| Oct-25 | ~4         | ~4             |
+| Apr-26 | ~25        | ~25            |
+</details>
+
+Source: DRAMeXchange, TrendForce   
+BofA GLOBAL RESEARCH
+
+Exhibit 26: Current price of 64GB DDR4/DDR5 modules hit all-time high of more than \$1,000 level (DDR5: US\$1,200, DDR4: US\$1,100)   
+Server DRAM contract price trend – DDR5 vs DDR4 modules, Dec '23-Apr '26   
+![](images/fe92bbf1cf52dfe879e80e4dcab0dd7f7fc1256fbe2ff9e49bffcd68b36fd922.jpg)
+
+<details>
+<summary>line</summary>
+
+| Month    | DDR5 64GB module | DDR4 64GB module |
+| -------- | ---------------- | ---------------- |
+| Dec-23   | ~150             | ~100             |
+| Feb-24   | ~200             | ~120             |
+| Apr-24   | ~250             | ~150             |
+| Jun-24   | ~275             | ~175             |
+| Aug-24   | ~300             | ~180             |
+| Oct-24   | ~300             | ~175             |
+| Dec-24   | ~275             | ~170             |
+| Feb-25   | ~250             | ~160             |
+| Apr-25   | ~250             | ~160             |
+| Jun-25   | ~250             | ~180             |
+| Aug-25   | ~250             | ~200             |
+| Oct-25   | ~300             | ~250             |
+| Dec-25   | ~500             | ~450             |
+| Feb-26   | ~800             | ~700             |
+| Apr-26   | ~1250            | ~1100            |
+</details>
+
+Source: TrendForce   
+BofA GLOBAL RESEARCH
+
+Exhibit 28: SSD pricing surged sharply in 1Q26 and April (per DRAMeXchange), following a more gradual upward trend throughout 2025   
+Client SSD price trend – mostly for PC (not server), Jan '24 - Apr '26   
+![](images/256a65c42f58d3050c7cc34d75616cdda611e3971fb88336530ca3535b9d5f5b.jpg)
+
+<details>
+<summary>line</summary>
+
+| Date       | 256GB | 512GB | 1TB  |
+|------------|-------|-------|------|
+| 2H-Feb-24  | ~20   | ~40   | ~70  |
+| 2H-Mar-24  | ~20   | ~40   | ~70  |
+| 2H-Apr-24  | ~20   | ~40   | ~70  |
+| 2H-May-24  | ~20   | ~40   | ~70  |
+| 2H-Jun-24  | ~20   | ~40   | ~70  |
+| 2H-Jul-24  | ~20   | ~40   | ~70  |
+| 2H-Aug-24  | ~20   | ~40   | ~70  |
+| 2H-Sep-24  | ~20   | ~40   | ~70  |
+| 2H-Oct-24  | ~20   | ~40   | ~70  |
+| 2H-Nov-24  | ~20   | ~40   | ~70  |
+| 2H-Dec-24  | ~20   | ~40   | ~70  |
+| 2H-Jan-25  | ~20   | ~40   | ~70  |
+| 2H-Feb-25  | ~20   | ~40   | ~70  |
+| 2H-Mar-25  | ~20   | ~40   | ~70  |
+| 2H-Apr-25  | ~20   | ~40   | ~70  |
+| 2H-May-25  | ~20   | ~40   | ~70  |
+| 2H-Jun-25  | ~20   | ~40   | ~70  |
+| 2H-Jul-25  | ~20   | ~40   | ~70  |
+| 2H-Aug-25  | ~20   | ~40   | ~70  |
+| 2H-Sep-25  | ~20   | ~40   | ~70  |
+| 2H-Oct-25  | ~20   | ~40   | ~70  |
+| 2H-Nov-25  | ~20   | ~40   | ~70  |
+| 2H-Dec-25  | ~20   | ~40   | ~70  |
+| 2H-Jan-26  | ~30   | ~60   | ~90  |
+| 2H-Feb-26  | ~50   | ~80   | ~180 |
+| 2H-Mar-26  | ~60   | ~100  | ~190 |
+| 2H-Apr-26  | ~65   | ~115  | ~205 |
+</details>
+
+Note: SSD prices are as of 30 Apr 2026, reported by DRAMeXchange. TB = terabyte.   
+Source: DRAMeXchange   
+BofA GLOBAL RESEARCH
+
+Exhibit 25: NAND spot and contract prices normalized in Apr after strong rally during Oct-25 – Dec-25 (up 40-50% per month) and Jan-Mar-26 (20-30% per month)   
+512Gb NAND spot vs contract price trend – MoM change, Apr '19 - Apr '26   
+![](images/3429f46bc60684b9b57723815561fd7ad3bb2a39617be6f9c47a180a57175cd8.jpg)
+
+<details>
+<summary>line</summary>
+
+| Month   | 512Gb spot | 512Gb contract |
+|---------|------------|----------------|
+| Apr-19  | -10%       | -5%            |
+| Oct-19  | 20%        | 15%            |
+| Apr-20  | 10%        | 5%             |
+| Oct-20  | -5%        | -2%            |
+| Apr-21  | 0%         | 2%             |
+| Oct-21  | 5%         | 3%             |
+| Apr-22  | -10%       | -8%            |
+| Oct-22  | -5%        | -3%            |
+| Apr-23  | 0%         | 2%             |
+| Oct-23  | 30%        | 25%            |
+| Apr-24  | -5%        | -3%            |
+| Oct-24  | -10%       | -8%            |
+| Apr-25  | 0%         | 5%             |
+| Oct-25  | 70%        | 60%            |
+| Apr-26  | -5%        | -3%            |
+</details>
+
+Source: DRAMeXchange, TrendForce   
+BofA GLOBAL RESEARCH
+
+Exhibit 27: DDR4/DDR5 server contract prices surged 40–50% MoM in April 2026, similar to the 50–60% spike seen in January, after remaining largely flat during February–March   
+MoM change of server DRAM contract prices, Dec '23-Apr '26   
+![](images/9fa8027a8b9b7ad6b72ba508a484e7fabdc21850d6e1c692b8e2325dfca2b076.jpg)
+
+<details>
+<summary>line</summary>
+
+| Month    | DDR5 64GB module | DDR4 64GB module |
+| -------- | ---------------- | ---------------- |
+| Dec-23   | ~5%              | ~10%             |
+| Feb-24   | ~10%             | ~5%              |
+| Apr-24   | ~5%              | ~10%             |
+| Jun-24   | ~0%              | ~5%              |
+| Aug-24   | ~5%              | ~10%             |
+| Oct-24   | ~0%              | ~-10%            |
+| Dec-24   | ~0%              | ~-5%             |
+| Feb-25   | ~0%              | ~0%              |
+| Apr-25   | ~0%              | ~15%             |
+| Jun-25   | ~0%              | ~10%             |
+| Aug-25   | ~0%              | ~5%              |
+| Oct-25   | ~25%             | ~25%             |
+| Dec-25   | ~20%             | ~65%             |
+| Feb-26   | ~0%              | ~0%              |
+| Apr-26   | ~40%             | ~50%             |
+</details>
+
+Source: TrendForce   
+BofA GLOBAL RESEARCH
+
+Exhibit 29: April prices have doubled compared to end-2025 levels, while the 2025 increase was more modest at around 35–40%   
+Client SSD (for PC) price comparison – current vs. end-2025   
+![](images/6fbfa2f70e318a6cd934e63829301e6a7572130ff7c62fc22679735657a9e607.jpg)
+
+<details>
+<summary>bar</summary>
+
+| Capacity | end-2025 (US$) | Apr-26 (US$) |
+| :--- | :--- | :--- |
+| 256GB | 40.0 | 69.6 |
+| 512GB | 73.1 | 126.1 |
+| 1TB | 128.9 | 203.5 |
+</details>
+
+Note: SSD prices are as of 30 Apr 2026, reported by DRAMeXchange   
+Source: DRAMeXchange   
+BofA GLOBAL RESEARCH
+
+# Valuation and stock performance
+
+# Exhibit 30: Memory companies still show very low P/E multiples despite robust stock price rally this week vs very strong earnings momentum (exceptionally strong DRAM and NAND ASP in 1Q/2Q26)
+
+Valuation comparison among memory and semiconductor supply chain stocks
+
+<table><tr><td rowspan="2"></td><td rowspan="2">Ticker</td><td rowspan="2">Rating</td><td rowspan="2">Price(Local)</td><td rowspan="2">Mcap($bn)</td><td colspan="3">P/E</td><td colspan="3">P/Book</td><td colspan="2">EV/EBITDA</td><td colspan="2">EV/Sales</td><td colspan="3">ROE</td><td colspan="2">Div. yield</td></tr><tr><td>FY25</td><td>FY26E</td><td>FY27E</td><td>FY25</td><td>FY26E</td><td>FY27E</td><td>FY26E</td><td>FY27E</td><td>FY26E</td><td>FY27E</td><td>FY25</td><td>FY26E</td><td>FY27E</td><td>FY26E</td><td>FY27E</td></tr><tr><td colspan="20">Memory/DRAM</td></tr><tr><td>SK Hynix</td><td>HXSCF</td><td>C-1-7</td><td>1,964,000</td><td>869.5</td><td>32.5</td><td>6.8</td><td>5.6</td><td>11.6</td><td>4.3</td><td>2.5</td><td>4.5</td><td>3.6</td><td>3.5</td><td>2.6</td><td>44.2%</td><td>91.8%</td><td>55.7%</td><td>0.2%</td><td>0.6%</td></tr><tr><td>Samsung</td><td>SSNLF</td><td>B-1-7</td><td>293,000</td><td>1,060.7</td><td>44.6</td><td>8.0</td><td>6.4</td><td>4.7</td><td>3.1</td><td>2.2</td><td>4.8</td><td>3.9</td><td>2.5</td><td>2.0</td><td>10.8%</td><td>45.7%</td><td>39.2%</td><td>1.5%</td><td>2.1%</td></tr><tr><td>Micron</td><td>MU</td><td>C-1-7</td><td>776.01</td><td>875.1</td><td>93.6</td><td>12.7</td><td>7.6</td><td>16.2</td><td>7.1</td><td>3.6</td><td>10.2</td><td>6.1</td><td>7.5</td><td>4.9</td><td>18.8%</td><td>78.5%</td><td>63.7%</td><td>0.1%</td><td>0.1%</td></tr><tr><td>Nanya</td><td>NNYAF</td><td>B-1-7</td><td>311.50</td><td>34.1</td><td>160.9</td><td>6.1</td><td>4.7</td><td>6.9</td><td>3.4</td><td>2.2</td><td>4.3</td><td>3.2</td><td>3.2</td><td>2.3</td><td>3.9%</td><td>67.8%</td><td>52.1%</td><td>3.5%</td><td>4.4%</td></tr><tr><td colspan="20">Memory/NAND</td></tr><tr><td>Kioxia</td><td>XIYUF</td><td>C-1-9</td><td>44,450.00</td><td>153.5</td><td>45.8</td><td>8.9</td><td>7.4</td><td>19.1</td><td>6.1</td><td>3.3</td><td>5.9</td><td>5.0</td><td>4.5</td><td>3.7</td><td>52.8%</td><td>103.5%</td><td>57.9%</td><td>0.0%</td><td>0.0%</td></tr><tr><td>Sandisk</td><td>SNDK</td><td>C-1-9</td><td>1,382.72</td><td>204.8</td><td>n/a</td><td>21.2</td><td>9.0</td><td>22.1</td><td>11.2</td><td>4.7</td><td>16.1</td><td>6.6</td><td>10.1</td><td>5.3</td><td>4.3%</td><td>73.4%</td><td>78.5%</td><td>0.0%</td><td>0.0%</td></tr><tr><td>Western Digital</td><td>WDC</td><td>C-1-7</td><td>489.15</td><td>168.6</td><td>n/a</td><td>49.5</td><td>29.6</td><td>31.2</td><td>13.4</td><td>9.4</td><td>30.9</td><td>18.7</td><td>12.9</td><td>9.6</td><td>22.5%</td><td>42.7%</td><td>42.2%</td><td>0.1%</td><td>0.1%</td></tr><tr><td>SIMO</td><td>SIMO</td><td>C-1-7</td><td>263.85</td><td>8.9</td><td>72.5</td><td>31.5</td><td>31.0</td><td>10.5</td><td>8.2</td><td>6.9</td><td>23.5</td><td>21.2</td><td>5.3</td><td>4.8</td><td>15.3%</td><td>30.0%</td><td>24.9%</td><td>0.9%</td><td>1.1%</td></tr><tr><td>Phison</td><td>PISNF</td><td>C-1-8</td><td>2,880.00</td><td>18.3</td><td>72.6</td><td>8.4</td><td>18.8</td><td>10.4</td><td>5.5</td><td>4.8</td><td>6.3</td><td>13.2</td><td>2.6</td><td>2.7</td><td>16.0%</td><td>86.3%</td><td>27.6%</td><td>6.5%</td><td>2.9%</td></tr><tr><td colspan="20">US/Taiwan semis</td></tr><tr><td>NVIDIA</td><td>NVDA</td><td>C-1-7</td><td>235.74</td><td>5,709.7</td><td>51.8</td><td>28.3</td><td>20.5</td><td>37.3</td><td>19.0</td><td>11.6</td><td>23.1</td><td>17.0</td><td>15.6</td><td>11.6</td><td>94.3%</td><td>86.9%</td><td>67.4%</td><td>0.0%</td><td>0.0%</td></tr><tr><td>AMD</td><td>AMD</td><td>C-1-9</td><td>449.70</td><td>733.3</td><td>107.8</td><td>61.8</td><td>38.1</td><td>11.6</td><td>9.9</td><td>7.8</td><td>44.3</td><td>29.0</td><td>14.9</td><td>10.2</td><td>11.3%</td><td>17.6%</td><td>23.8%</td><td>0.0%</td><td>0.0%</td></tr><tr><td>Broadcom</td><td>AVGO</td><td>C-1-7</td><td>439.79</td><td>2,082.3</td><td>64.5</td><td>40.2</td><td>25.8</td><td>25.9</td><td>21.2</td><td>13.6</td><td>30.7</td><td>20.2</td><td>21.1</td><td>13.9</td><td>45.3%</td><td>59.9%</td><td>66.2%</td><td>0.6%</td><td>0.6%</td></tr><tr><td>Intel</td><td>INTC</td><td>C-3-9</td><td>115.93</td><td>582.7</td><td>269.6</td><td>111.5</td><td>73.4</td><td>4.6</td><td>4.2</td><td>3.9</td><td>28.9</td><td>22.7</td><td>9.6</td><td>8.4</td><td>1.7%</td><td>4.0%</td><td>5.7%</td><td>0.0%</td><td>0.0%</td></tr><tr><td>Arm</td><td>ARM</td><td>C-2-9</td><td>228.50</td><td>242.7</td><td>129.1</td><td>110.4</td><td>80.5</td><td>29.3</td><td>23.2</td><td>17.9</td><td>86.5</td><td>62.3</td><td>40.8</td><td>30.5</td><td>25.0%</td><td>23.6%</td><td>25.5%</td><td>0.0%</td><td>0.0%</td></tr><tr><td>Qualcomm</td><td>QCOM</td><td>B-3-7</td><td>200.08</td><td>210.9</td><td>16.6</td><td>18.9</td><td>18.7</td><td>10.1</td><td>8.1</td><td>7.8</td><td>15.7</td><td>16.3</td><td>5.4</td><td>5.4</td><td>56.0%</td><td>47.4%</td><td>40.6%</td><td>1.8%</td><td>1.8%</td></tr><tr><td>TSMC</td><td>TSMWF</td><td>B-1-7</td><td>2,265</td><td>1,863.8</td><td>34.2</td><td>22.9</td><td>17.7</td><td>10.8</td><td>7.8</td><td>5.8</td><td>14.6</td><td>11.5</td><td>10.6</td><td>8.3</td><td>35.4%</td><td>39.8%</td><td>37.6%</td><td>1.1%</td><td>1.1%</td></tr><tr><td>MediaTek</td><td>MDTKF</td><td>B-1-7</td><td>3,260</td><td>165.9</td><td>49.3</td><td>50.6</td><td>25.3</td><td>13.1</td><td>13.9</td><td>9.7</td><td>39.2</td><td>20.2</td><td>7.8</td><td>4.9</td><td>26.4%</td><td>26.3%</td><td>44.9%</td><td>1.6%</td><td>3.2%</td></tr><tr><td colspan="20">Equipment</td></tr><tr><td>ASML</td><td>ASMLF</td><td>B-1-7</td><td>1,367.00</td><td>619.7</td><td>55.2</td><td>41.2</td><td>29.4</td><td>27.1</td><td>22.0</td><td>18.1</td><td>32.6</td><td>23.9</td><td>13.1</td><td>10.5</td><td>50.6%</td><td>58.7%</td><td>67.0%</td><td>0.6%</td><td>0.8%</td></tr><tr><td>AMAT</td><td>AMAT</td><td>B-1-7</td><td>440.56</td><td>349.6</td><td>46.8</td><td>36.3</td><td>27.2</td><td>17.1</td><td>11.9</td><td>8.4</td><td>31.0</td><td>23.2</td><td>10.6</td><td>8.5</td><td>38.6%</td><td>39.0%</td><td>36.0%</td><td>0.5%</td><td>0.6%</td></tr><tr><td>Lam</td><td>LRCX</td><td>C-1-7</td><td>299.15</td><td>374.1</td><td>72.4</td><td>52.9</td><td>39.6</td><td>37.9</td><td>32.7</td><td>23.5</td><td>43.4</td><td>32.5</td><td>16.2</td><td>12.7</td><td>57.9%</td><td>66.9%</td><td>68.9%</td><td>0.4%</td><td>0.4%</td></tr><tr><td>TEL</td><td>TOELF</td><td>C-1-7</td><td>50,290</td><td>148.8</td><td>40.2</td><td>33.7</td><td>27.4</td><td>11.2</td><td>9.5</td><td>7.9</td><td>22.8</td><td>18.7</td><td>7.3</td><td>6.2</td><td>29.3%</td><td>30.3%</td><td>31.4%</td><td>1.5%</td><td>1.8%</td></tr><tr><td>Hanmi Semi</td><td>HNSIF</td><td>C-1-7</td><td>404,500</td><td>23.6</td><td>172.0</td><td>123.4</td><td>64.3</td><td>53.6</td><td>40.5</td><td>26.8</td><td>92.1</td><td>47.7</td><td>45.0</td><td>26.2</td><td>34.8%</td><td>37.2%</td><td>49.9%</td><td>0.3%</td><td>0.5%</td></tr><tr><td>BESI</td><td>BESVF</td><td>B-1-7</td><td>266.70</td><td>25.3</td><td>158.2</td><td>62.3</td><td>37.6</td><td>50.6</td><td>37.2</td><td>27.4</td><td>47.4</td><td>29.9</td><td>21.3</td><td>15.1</td><td>29.2%</td><td>69.0%</td><td>84.3%</td><td>1.5%</td><td>2.6%</td></tr><tr><td>ASMPT</td><td>ASMVF</td><td>C-1-7</td><td>172.30</td><td>8.9</td><td>68.0</td><td>43.5</td><td>31.3</td><td>4.2</td><td>4.0</td><td>3.7</td><td>24.7</td><td>18.6</td><td>3.7</td><td>3.0</td><td>6.5%</td><td>9.4%</td><td>12.3%</td><td>1.2%</td><td>1.6%</td></tr></table>
+
+Source: Company reports, BofA Global Research estimates; Mcap = market capitalization, ROE = return on equity, Div = dividend.   
+BofA GLOBAL RESEARCH
+
+Exhibit 31: Robust rally continues led by NAND/HDD companies, followed by DRAM names, memory companies share price significantly up this week driven by AI-led demand   
+Memory companies – 2026 YTD stock performance comparison   
+![](images/9b77c52a8dcea4674c5106908a110732c898f8080df4765d1ecb4b9f0892944f.jpg)
+
+<details>
+<summary>bar</summary>
+
+| Company | Value (%) |
+| :--- | :--- |
+| 8Gb DDR4 | 30 |
+| 16Gb DDR5 | 40 |
+| 512Gb NAND | 55 |
+| Sandisk | 300 |
+| Kioxia | 300 |
+| Macronix | 300 |
+| Hanmi Semi | 190 |
+| SIMO | 185 |
+| WDC | 185 |
+| Hynix | 180 |
+| Micron | 175 |
+| Samsung Elect | 125 |
+| Phison | 80 |
+| Nanya | 60 |
+| Winbond | 55 |
+| Powertech | 45 |
+</details>
+
+SanDisk/Kioxia/Macronix shows above 300% YTD return   
+Source: Bloomberg, DRAMeXchange
+
+Exhibit 32: CPU names such as Intel and AMD clearly outperforming other US big tech names such as NVIDIA/Apple/QCOM   
+Global major tech companies – 2026 YTD stock performance comparison   
+![](images/0487b4d12a9be9d2179504b8766eac1ed983aa8253662c644a12644c5385bc31.jpg)
+
+<details>
+<summary>bar</summary>
+
+| Company | Value (%) |
+| :--- | :--- |
+| Intel | 150 |
+| AMD | 110 |
+| Lam Research | 72 |
+| AMAT | 70 |
+| ASML | 48 |
+| TEL | 47 |
+| TSMC | 46 |
+| Broadcom | 28 |
+| NVIDIA | 27 |
+| Qcom | 13 |
+| Apple | 9 |
+</details>
+
+Source: Bloomberg   
+BofA GLOBAL RESEARCH
+
+BofA GLOBAL RESEARCH
+
+Exhibit 33: Stocks mentioned
+
+Prices and ratings for stocks mentioned in this report
+
+<table><tr><td>BofA Ticker</td><td>Bloomberg ticker</td><td>Company name</td><td>Price</td><td>Rating</td></tr><tr><td>HNSIF</td><td>042700 KS</td><td>Hanmi Semi</td><td>W 341000</td><td>C-1-7</td></tr><tr><td>HXSCF</td><td>000660 KS</td><td>SK Hynix</td><td>W 1848000</td><td>C-1-7</td></tr><tr><td>SKSQF</td><td>402340 KS</td><td>SK Square</td><td>W 1096000</td><td>C-1-7</td></tr><tr><td>XSBOF</td><td>357780 KS</td><td>Soulbrain</td><td>W 417000</td><td>C-3-7</td></tr></table>
+
+Source: BofA Global Research   
+BofA GLOBAL RESEARCH
+
+# Price objective basis & risk
+
+# Hanmi Semiconductor (HNSIF)
+
+Our PO of W500,000 is derived from 47x 2028E P/E. This is near-30% lower than 2024-25 average (30-120x range or mean of 60x) to be conservative. The reason we use 2028E EPS is because of the significant impact of newly constructed fabs in Korea with meaningful ramp-up in 2028E (Hynix's Yongin fabs, Samsung's P5). We believe strong earnings growth with high margins through 2H26 and 2027-28 will warrant for high P/E multiples that were proved over the past two years.
+
+Upside risk should be stronger TCB orders from Hynix, Micron and even Samsung Electronics.
+
+Downside risk is mostly related to market share loss to competitors (ASMPT, Hanwha Semitech).
+
+# SK Hynix (HXSCF)
+
+Our PO of W2,100,000 is derived from 8x 2026-27E EPS. Our fair P/E multiple of 8x is in fact lower than the 2016-25 average (12x). We believe the company's already proven strong 2025 results and new record-high 2026-27E earnings with HBM leadership and high margin profile will lead to a re-rating to >8x fair P/E. Upside risk is stronger HBM demand from US Big Tech, further price hike of commodity DRAM, and unexpected supply disruption from its memory peers. Downside risk is competitors' more aggressive capex increase.
+
+# SK Square (SKSQF)
+
+Our valuation methodology behind our PO of W1,600,000 starts with a fair market cap of Hynix (W1,493tn = W2.1mn PO x 713mn shares) x 20% stake (W307tn) x 31% discount = W211tn. If we divide W211tn (fair value of Square's firm value) by Square's outstanding shares (132mn), we get W1.6mn fair-value. Our 31% discount ratio assumption is lower than historical average (50% range in 2021-25) but close to recently established re-rated ratio (low-40%).
+
+Upside risk is Hynix's upbeat earnings momentum on the back of stronger HBM demand from US Big Tech, further price hike of commodity memory chips, and more active shareholder return activities (share buybacks, special dividend).
+
+Downside risk is memory cycle hard-landing exacerbated by slowdown in US Big Tech's AI-related capex spend, more aggressive capacity expansion by competitors, and Hynix's HBM market share loss.
+
+# Soulbrain (XSBOF)
+
+Our PO of W370,000 is based on 15x 2026-27E P/E, which is similar to its long-term historical average. Soulbrain's topline growth should be likely limited given 2026-27 memory upturn is mostly price-driven instead of volume increase. Moreover, the
+
+company's etchant materials are mostly used for commodity memory (low impact of HBM or AI). Upside risks are stronger material orders from key customers and more effective cost cutting.
+
+# Analyst Certification
+
+We, Simon Woo, CFA and Matt Shin, hereby certify that the views each of us has expressed in this research report accurately reflect each of our respective personal views about the subject securities and issuers. We also certify that no part of our respective compensation was, is, or will be, directly or indirectly, related to the specific recommendations or view expressed in this research report.
+
+APR - Semiconductor Coverage Cluster 
+
+<table><tr><td>Investment rating</td><td>Company</td><td>BofA Ticker</td><td>Bloomberg symbol</td><td>Analyst</td></tr><tr><td colspan="5">BUY</td></tr><tr><td></td><td>Alchip</td><td>ALCPF</td><td>3661 TT</td><td>Haas Liu</td></tr><tr><td></td><td>AMEC</td><td>XRTOF</td><td>688012 CH</td><td>Dai Shen</td></tr><tr><td></td><td>ASE Technology Holding</td><td>XSRIF</td><td>3711 TT</td><td>Haas Liu</td></tr><tr><td></td><td>ASE Technology Holding -ADR</td><td>ASX</td><td>ASX US</td><td>Haas Liu</td></tr><tr><td></td><td>ASMPT</td><td>ASMVF</td><td>522 HK</td><td>Simon Woo, CFA</td></tr><tr><td></td><td>Aspeed</td><td>XLKMF</td><td>5274 TT</td><td>Mike Yang</td></tr><tr><td></td><td>Chroma ATE</td><td>CRMJF</td><td>2360 TT</td><td>Haas Liu</td></tr><tr><td></td><td>eMemory</td><td>XYLWF</td><td>3529 TT</td><td>Mike Yang</td></tr><tr><td></td><td>GigaDevice</td><td>XGXIF</td><td>603986 CH</td><td>Daley Li, CFA</td></tr><tr><td></td><td>Global Unichip Corp.</td><td>GBUHF</td><td>3443 TT</td><td>Haas Liu</td></tr><tr><td></td><td>Grand Process Technology Corp</td><td>XZOWF</td><td>3131 TT</td><td>Mike Yang</td></tr><tr><td></td><td>Hanmi Semiconductor</td><td>HNSIF</td><td>042700 KS</td><td>Simon Woo, CFA</td></tr><tr><td></td><td>Hon Precision</td><td>XXPIF</td><td>7769 TT</td><td>Haas Liu</td></tr><tr><td></td><td>Horizon Robotics</td><td>HRZRF</td><td>9660 HK</td><td>Daley Li, CFA</td></tr><tr><td></td><td>Ingenic</td><td>XISCF</td><td>300223 CH</td><td>Dai Shen</td></tr><tr><td></td><td>InnoScience Technology</td><td>XSCHF</td><td>2577 HK</td><td>Daley Li, CFA</td></tr><tr><td></td><td>JCET Group Co Ltd</td><td>XJIEF</td><td>600584 CH</td><td>Dai Shen</td></tr><tr><td></td><td>King Yuan Electronics Corp.</td><td>KYUFF</td><td>2449 TT</td><td>Haas Liu</td></tr><tr><td></td><td>MediaTek</td><td>MDTKF</td><td>2454 TT</td><td>Haas Liu</td></tr><tr><td></td><td>Montage Technology</td><td>XRDFF</td><td>688008 CH</td><td>Daley Li, CFA</td></tr><tr><td></td><td>MPI Corporation</td><td>XMJCF</td><td>6223 TT</td><td>Mike Yang</td></tr><tr><td></td><td>Nanya Technology</td><td>NNYAF</td><td>2408 TT</td><td>Simon Woo, CFA</td></tr><tr><td></td><td>NCE Power</td><td>XVFFF</td><td>605111 CH</td><td>Daley Li, CFA</td></tr><tr><td></td><td>OmniVision</td><td>XXHQF</td><td>603501 CH</td><td>Dai Shen</td></tr><tr><td></td><td>Phison Electronics</td><td>PISNF</td><td>8299 TT</td><td>Simon Woo, CFA</td></tr><tr><td></td><td>Powerchip Semiconductor Manufacturing Co</td><td>XCHPF</td><td>6770 TT</td><td>Haas Liu</td></tr><tr><td></td><td>Powertech Technology</td><td>XPPZF</td><td>6239 TT</td><td>Simon Woo, CFA</td></tr><tr><td></td><td>Rockchip</td><td>XRPXF</td><td>603893 CH</td><td>Daley Li, CFA</td></tr><tr><td></td><td>Samsung Elec -G</td><td>SSNHZ</td><td>SMSN LI</td><td>Simon Woo, CFA</td></tr><tr><td></td><td>Samsung Electronics</td><td>SSNLF</td><td>005930 KS</td><td>Simon Woo, CFA</td></tr><tr><td></td><td>Samsung Electronics Preferred</td><td>SSNNF</td><td>005935 KS</td><td>Simon Woo, CFA</td></tr><tr><td></td><td>Silergy Corp.</td><td>SLEGF</td><td>6415 TT</td><td>Mike Yang</td></tr><tr><td></td><td>Silicon Motion</td><td>SIMO</td><td>SIMO US</td><td>Simon Woo, CFA</td></tr><tr><td></td><td>SK Hynix</td><td>HXSCF</td><td>000660 KS</td><td>Simon Woo, CFA</td></tr><tr><td></td><td>SK Square</td><td>SKSQF</td><td>402340 KS</td><td>Simon Woo, CFA</td></tr><tr><td></td><td>Taiwan Semiconductor Manufacturing Co.</td><td>TSM</td><td>TSM US</td><td>Haas Liu</td></tr><tr><td></td><td>Taiwan Semiconductor Manufacturing Co.</td><td>TSMWF</td><td>2330 TT</td><td>Haas Liu</td></tr><tr><td></td><td>Vanguard International Semiconductor Co</td><td>VGILF</td><td>5347 TT</td><td>Haas Liu</td></tr><tr><td></td><td>Winbond Electronics</td><td>WBEKF</td><td>2344 TT</td><td>Dai Shen</td></tr><tr><td></td><td>WinWay Technology</td><td>XWCLF</td><td>6515 TT</td><td>Mike Yang</td></tr><tr><td></td><td>WT Microelectronics</td><td>XZOPF</td><td>3036 TT</td><td>Mike Yang</td></tr><tr><td colspan="5">NEUTRAL</td></tr><tr><td></td><td>ASMedia Technology Inc.</td><td>XZSFF</td><td>5269 TT</td><td>Mike Yang</td></tr><tr><td></td><td>Black Sesame Intl Holding</td><td>BSIHF</td><td>2533 HK</td><td>Daley Li, CFA</td></tr><tr><td></td><td>Crystal Clear</td><td>XPPTF</td><td>300655 CH</td><td>Dai Shen</td></tr><tr><td></td><td>Kink</td><td>KIKCF</td><td>1560 TT</td><td>Haas Liu</td></tr><tr><td></td><td>LX Semicon</td><td>XLXSF</td><td>108320 KS</td><td>Simon Woo, CFA</td></tr><tr><td></td><td>Novatek</td><td>NVKMF</td><td>3034 TT</td><td>Haas Liu</td></tr><tr><td></td><td>Realtek</td><td>RLTKF</td><td>2379 TT</td><td>Mike Yang</td></tr><tr><td></td><td>Shenzhen Goodix</td><td>XQPLF</td><td>603160 CH</td><td>Daley Li, CFA</td></tr><tr><td colspan="5">UNDERPERFORM</td></tr><tr><td></td><td>Faraday</td><td>FDYTF</td><td>3035 TT</td><td>Haas Liu</td></tr><tr><td></td><td>GlobalWafers</td><td>XWLFF</td><td>6488 TT</td><td>Mike Yang</td></tr><tr><td></td><td>Hangzhou Silan Microelectronics</td><td>XDFRF</td><td>600460 CH</td><td>Daley Li, CFA</td></tr><tr><td></td><td>Hua Hong Semi</td><td>HHUSF</td><td>1347 HK</td><td>Dai Shen</td></tr><tr><td></td><td>Lion Electronics</td><td>XDHFF</td><td>605358 CH</td><td>Dai Shen</td></tr><tr><td></td><td>M31 Technology</td><td>XMTZF</td><td>6643 TT</td><td>Mike Yang</td></tr><tr><td></td><td>Macronix International</td><td>MXICF</td><td>2337 TT</td><td>Dai Shen</td></tr><tr><td></td><td>Maxscend</td><td>XMXSF</td><td>300782 CH</td><td>Daley Li, CFA</td></tr><tr><td></td><td>Parade</td><td>PRDWF</td><td>4966 TT</td><td>Mike Yang</td></tr><tr><td></td><td>Soulbrain</td><td>XSBOF</td><td>357780 KS</td><td>Simon Woo, CFA</td></tr><tr><td></td><td>United Microelectronics Corp.</td><td>XUMIF</td><td>2303 TT</td><td>Haas Liu</td></tr><tr><td></td><td>United Microelectronics Corp.</td><td>UMC</td><td>UMC US</td><td>Haas Liu</td></tr></table>
+
+APR - Semiconductor Coverage Cluster 
+
+<table><tr><td>Investment rating</td><td>Company</td><td>BofA Ticker</td><td>Bloomberg symbol</td><td>Analyst</td></tr><tr><td></td><td>VeriSilicon</td><td>XMLZF</td><td>688521 CH</td><td>Daley Li, CFA</td></tr><tr><td></td><td>Win Semiconductors</td><td>WSMIF</td><td>3105 TT</td><td>Haas Liu</td></tr><tr><td></td><td>Wonik IPS</td><td>XRHQF</td><td>240810 KS</td><td>Simon Woo, CFA</td></tr></table>
+
+# Disclosures
+
+# Important Disclosures
+
+Hanmi Semi (HNSIF) Price Chart   
+![](images/a8920b5aa15651a156c54123761ec3cf08236d668e3f611378de26a8bd7d2ac9.jpg)
+
+<details>
+<summary>line</summary>
+
+| Date       | Price     |
+| ---------- | --------- |
+| 17-Apr B   | W90000    |
+| 24-Apr     | W110000   |
+| 19-Jun     | W130000   |
+| 24-Oct N   | W150000   |
+| 15-Nov     | W140000   |
+| 23-Feb B   | W300000   |
+| 23-Apr     | W420000   |
+| 9-May      | W500000   |
+</details>
+
+B: Buy, N: Neutral, U: Underperform, PO: Price Objective, NA: No longer valid, NR: No Rating
+
+The Investment Opinion System is contained at the end of the report under the heading "Fundamental Equity Opinion Key". Dark grey shading indicates the security is restricted with the opinion suspended. Medium grey shading indicates the security is under review with the opinion withdrawn. Light grey shading indicates the security is not covered. Chart is current as of a date no more than one trading day prior to the date of the report.
+
+SK Hynix (HXSCF) Price Chart   
+![](images/377a0607da39483556d42eae234f13bce53be79edc3349b737a4980ed2a25ef5.jpg)
+
+<details>
+<summary>line</summary>
+
+| Date       | Price     |
+| ---------- | --------- |
+| 1-Jun      | W160000   |
+| 21-Oct     | W180000   |
+| 26-Jan     | W200000   |
+| 18-Apr     | W250000   |
+| 19-Jul     | W300000   |
+| 11-Oct     | W280000   |
+| 16-Aug     | W270000   |
+| 11-Sep     | W240000   |
+| 24-Oct     | W300000   |
+| 22-Apr     | W250000   |
+| 17-Jul     | W400000   |
+| 27-Sep     | W470000   |
+| 12-Dec     | W900000   |
+| 24-Jan     | W1300000  |
+| 12-Feb     | W1400000  |
+| 15-May     | W1650000  |
+| 9-May      | W2100000  |
+</details>
+
+B: Buy, N: Neutral, U: Underperform, PO: Price Objective, NA: No longer valid, NR: No Rating
+
+The Investment Opinion System is contained at the end of the report under the heading "Fundamental Equity Opinion Key". Dark grey shading indicates the security is restricted with the opinion suspended. Medium grey shading indicates the security is under review with the opinion withdrawn. Light grey shading indicates the security is not covered. Chart is current as of a date no more than one trading day prior to the date of the report.
+
+SK Square (SKSQF) Price Chart   
+![](images/eac62c669d84c283d55354ed8eafde240a857efc3b11b1ffde8cc542c732e00e.jpg)
+
+<details>
+<summary>line</summary>
+
+| Date       | Value     |
+| ---------- | --------- |
+| 12-Feb B   | W800000   |
+| 23-Feb     | W850000   |
+| 13-May     | W1600000  |
+</details>
+
+B: Buy, N: Neutral, U: Underperform, PO: Price Objective, NA: No longer valid, NR: No Rating
+
+The Investment Opinion System is contained at the end of the report under the heading "Fundamental Equity Opinion Key". Dark grey shading indicates the security is restricted with the opinion suspended. Medium grey shading indicates the security is under review with the opinion withdrawn. Light grey shading indicates the security is not covered. Chart is current as of a date no more than one trading day prior to the date of the report.
+
+Soulbrain (XSBOF) Price Chart   
+![](images/af890e63dcc59bdebfa9f0d8c52cccd1fc7ae592fdfe969b9052c248a0659c8b.jpg)
+
+<details>
+<summary>line</summary>
+
+| Date       | Value     |
+| ---------- | --------- |
+| 15-May N   | W240000   |
+| 15-Aug     | W280000   |
+| 15-Nov     | W300000   |
+| 14-Feb     | W320000   |
+| 17-May     | W340000   |
+| 16-Aug B   | W360000   |
+| 14-Nov     | W300000   |
+| 24-Apr     | W250000   |
+| 16-May     | W230000   |
+| 15-Aug     | W274000   |
+| 15-Nov     | W240000   |
+| 24-Oct U   | W270000   |
+| 23-Feb     | W370000   |
+</details>
+
+B: Buy, N: Neutral, U: Underperform, PO: Price Objective, NA: No longer valid, NR: No Rating
+
+The Investment Opinion System is contained at the end of the report under the heading "Fundamental Equity Opinion Key". Dark grey shading indicates the security is restricted with the opinion suspended. Medium grey shading indicates the security is under review with the opinion withdrawn. Light grey shading indicates the security is not covered. Chart is current as of a date no more than one trading day prior to the date of the report.
+
+Equity Investment Rating Distribution: Chemicals Group (as of 31 Mar 2026) 
+
+<table><tr><td>Coverage Universe</td><td>Count</td><td>Percent</td><td>Inv. Banking Relationships R1</td><td>Count</td><td>Percent</td></tr><tr><td>Buy</td><td>69</td><td>49.29%</td><td>Buy</td><td>31</td><td>44.93%</td></tr><tr><td>Hold</td><td>28</td><td>20.00%</td><td>Hold</td><td>17</td><td>60.71%</td></tr><tr><td>Sell</td><td>43</td><td>30.71%</td><td>Sell</td><td>23</td><td>53.49%</td></tr></table>
+
+Equity Investment Rating Distribution: Technology Group (as of 31 Mar 2026) 
+
+<table><tr><td>Coverage Universe</td><td>Count</td><td>Percent</td><td>Inv. Banking Relationships  $^{R1}$ </td><td>Count</td><td>Percent</td></tr><tr><td>Buy</td><td>234</td><td>58.50%</td><td>Buy</td><td>123</td><td>52.56%</td></tr><tr><td>Hold</td><td>90</td><td>22.50%</td><td>Hold</td><td>43</td><td>47.78%</td></tr><tr><td>Sell</td><td>76</td><td>19.00%</td><td>Sell</td><td>23</td><td>30.26%</td></tr></table>
+
+Equity Investment Rating Distribution: Global Group (as of 31 Mar 2026) 
+
+<table><tr><td>Coverage Universe</td><td>Count</td><td>Percent</td><td>Inv. Banking RelationshipsR1</td><td>Count</td><td>Percent</td></tr><tr><td>Buy</td><td>1993</td><td>55.76%</td><td>Buy</td><td>1186</td><td>59.51%</td></tr><tr><td>Hold</td><td>821</td><td>22.97%</td><td>Hold</td><td>509</td><td>62.00%</td></tr><tr><td>Sell</td><td>760</td><td>21.26%</td><td>Sell</td><td>400</td><td>52.63%</td></tr></table>
+
+$^{R1}$ Issuers that were investment banking clients of BofA or one of its affiliates within the past 12 months. For purposes of this Investment Rating Distribution, the coverage universe includes only stocks. A stock rated Neutral is included as a Hold, and a stock rated Underperform is included as a Sell.
+
+FUNDAMENTAL EQUITY OPINION KEY: Opinions include a Volatility Risk Rating, an Investment Rating and an Income Rating. VOLATILITY RISK RATINGS, indicators of potential price fluctuation, are: A - Low, B - Medium and C - High. INVESTMENT RATINGS reflect the analyst's assessment of both a stock's absolute total return potential as well as its attractiveness for investment relative to other stocks within its Coverage Cluster (defined below). Our investment ratings are: 1 - Buy stocks are expected to have a total return of at least 10% and are the most attractive stocks in the coverage cluster; 2 - Neutral stocks are expected to remain flat or increase in value and are less attractive than Buy rated stocks and 3 - Underperform stocks are the least attractive stocks in a coverage cluster. An investment rating of 6 (No Rating) indicates that a stock is no longer trading on the basis of fundamentals. Analysts assign investment ratings considering, among other things, the 0-12 month total return expectation for a stock and the firm's guidelines for ratings dispersions (shown in the table below). The current price objective for a stock should be referenced to better understand the total return expectation at any given time. The price objective reflects the analyst's view of the potential price appreciation (depreciation).
+
+<table><tr><td>Investment rating</td><td>Total return expectation (within 12-month period of date of initial rating)</td><td>Ratings dispersion guidelines for coverage cluster $^{R2}$ </td></tr><tr><td>Buy</td><td>≥ 10%</td><td>≤ 70%</td></tr><tr><td>Neutral</td><td>≥ 0%</td><td>≤ 30%</td></tr><tr><td>Underperform</td><td>N/A</td><td>≥ 20%</td></tr></table>
+
+$^{R2}$ Ratings dispersions may vary from time to time where BofA Global Research believes it better reflects the investment prospects of stocks in a Coverage Cluster.
+
+INCOME RATINGS, indicators of potential cash dividends, are: 7 - same/higher (dividend considered to be secure), 8 - same/lower (dividend not considered to be secure) and 9 - pays no cash dividend. Coverage Cluster is comprised of stocks covered by a single analyst or two or more analysts sharing a common industry, sector, region or other classification(s). A stock's coverage cluster is included in the most recent BofA Global Research report referencing the stock.
+
+Price Charts for the securities referenced in this research report are available on the Price Charts website, or call 1-800-MERRILL to have them mailed.
+
+The issuer is or was, within the last 12 months, an investment banking client of BofAS and/or one or more of its affiliates: SK Hynix, SK Square.
+
+BofAS or an affiliate has received compensation from the issuer for non-investment banking services or products within the past 12 months: SK Hynix, SK Square.
+
+The issuer is or was, within the last 12 months, a non-securities business client of BofAS and/or one or more of its affiliates: SK Hynix, SK Square.
+
+In the US, retail sales and/or distribution of this report may be made only in states where these securities are exempt from registration or have been qualified for sale: Hanmi Semiconductor, SK Hynix, SK Square, Soulbrain.
+
+BofAS or an affiliate has received compensation for investment banking services from this issuer within the past 12 months: SK Hynix, SK Square.
+
+BofAS or an affiliate expects to receive or intends to seek compensation for investment banking services from this issuer or an affiliate of the issuer within the next three months: SK Hynix, SK Square.
+
+BofAS together with its affiliates beneficially owns one percent or more of the common stock of this issuer. If this report was issued on or after the 9th day of the month, it reflects the ownership position on the last day of the previous month. Reports issued before the 9th day of a month reflect the ownership position at the end of the second month preceding the date of the report: SK Square.
+
+The issuer is or was, within the last 12 months, a securities business client (non-investment banking) of BofAS and/or one or more of its affiliates: SK Hynix, SK Square.
+
+BofA Global Research personnel (including the analyst(s) responsible for this report) receive compensation based upon, among other factors, the overall profitability of BofA Corporation, including profits derived from investment banking. The analyst(s) responsible for this report may also receive compensation based upon, among other factors, the overall profitability of the Bank's sales and trading businesses relating to the class of securities or financial instruments for which such analyst is responsible.
+
+# Other Important Disclosures
+
+From time to time research analysts conduct site visits of covered issuers. BofA Global Research policies prohibit research analysts from accepting payment or reimbursement for travel expenses from the issuer for such visits.
+
+Prices are indicative and for information purposes only. Except as otherwise stated in the report, for any recommendation in relation to an equity security, the price referenced is the publicly traded price of the security as of close of business on the day prior to the date of the report or, if the report is published during intraday trading, the price referenced is indicative of the traded price as of the date and time of the report and in relation to a debt security (including equity preferred and CDS), prices are indicative as of the date and time of the report and are from various sources including BofA trading desks.
+
+The date and time of completion of the production of any recommendation in this report shall be the date and time of dissemination of this report as recorded in the report timestamp.
+
+Recipients who are not institutional investors or market professionals should seek the advice of their independent financial advisor before considering information in this report in connection with any investment decision, or for a necessary explanation of its contents.
+
+Officers of BofAS or one or more of its affiliates (other than research analysts) may have a financial interest in securities of the issuer(s) or in related investments.
+
+Refer to BofA Global Research policies relating to conflicts of interest.
+
+"BofA" includes BofA, Inc. ("BofAS") and its affiliates. Investors should contact their BofA representative or Merrill Global Wealth Management financial advisor if they have questions concerning this report or concerning the appropriateness of any investment idea described herein for such investor. "BofA" is a global brand for BofA Global Research.
+
+Information relating to Non-US affiliates of BofA and Distribution of Affiliate Research Reports:
+
+BofAS and/or BofA, Pierce, Fenner & Smith Incorporated ("MLPF&S") may in the future distribute, information of the following non-US affiliates in the US (short name: legal name, regulator): BofA (South Africa): BofA South Africa (Pty) Ltd., regulated by the Financial Sector Conduct Authority; MLI (UK): BofA International, regulated by the Financial Conduct Authority (FCA) and the Prudential Regulation Authority (PRA); BofASE (France): BofA Europe SA is authorized by the Autorité de Contrôle Prudentiel et de Résolution (ACPR) and regulated by the ACPR and the Autorité des Marchés Financiers (AMF). BofA Europe SA ("BofASE") with registered address at 51, rue La Boétie, 75008 Paris is registered under no 842 602 690 RCS Paris. In accordance with the provisions of French Code Monétaire et Financier (Monetary and Financial Code), BofASE is an établissement de crédit et d'investissement (credit and investment institution) that is authorised and supervised by the European Central Bank and the Autorité de Contrôle Prudentiel et de Résolution (ACPR) and regulated by the ACPR and the Autorité des Marchés Financiers. BofASE's share capital can be found at www.bofaml.com/BofASEdisclaimer; BofA Europe (Milan): BofA Europe Designated Activity Company, Milan Branch, regulated by the Bank of Italy, the European Central Bank (ECB) and the Central Bank of Ireland (CBI); BofA Europe (Frankfurt): BofA Europe Designated Activity Company, Frankfurt Branch regulated by BaFin, the ECB and the CBI; BofA Europe (Zurich): BofA Europe Designated Activity Company, Zurich Branch, regulated by the Swiss Financial Market Supervisory Authority FINMA, the ECB and CBI; BofA Europe (Madrid): BofA Europe Designated Activity Company, Sucursal en España, regulated by the Bank of Spain, the ECB and the CBI; BofA (Australia): BofA Equities (Australia) Limited, regulated by the Australian Securities and Investments Commission; BofA (Hong Kong): BofA (Asia Pacific) Limited, regulated by the Hong Kong Securities and Futures Commission (HKSFC); BofA (Singapore): BofA (Singapore) Pte Ltd, regulated by the Monetary Authority of Singapore (MAS); BofA (Canada): BofA Canada Inc, regulated by the Canadian Investment Regulatory Organization; BofA (Mexico): BofA Mexico, SA de CV, Casa de Bolsa, regulated by the Comisión Nacional Bancaria y de Valores; BofAS Japan: BofA Japan Co., Ltd., regulated by the Financial Services Agency; BofA (Seoul): BofA International, LLC Seoul Branch, regulated by the Financial Supervisory Service; BofA (Taiwan): BofA (Taiwan) Ltd., regulated by the Securities and Futures Bureau; BofAS India: BofA India Limited, regulated by the Securities and Exchange Board of India (SEBI); BofA (Israel): BofA Israel Limited, regulated by Israel Securities Authority; BofA (DIFC): BofA International (DIFC Branch), regulated by the Dubai Financial Services Authority (DFSA); BofA (Brazil): BofA S.A. Corretora de Títulos e Valores Mobiliários, regulated by Comissão de Valores Mobiliários; BofA KSA Company: BofA Kingdom of Saudi Arabia Company, regulated by the Capital Market Authority. This information: has been approved for publication and is distributed in the United Kingdom (UK) to professional clients and eligible counterparties (as each is defined in the rules of the FCA and the PRA) by MLI (UK), which is authorized by the PRA and regulated by the FCA and the PRA - details about the extent of our regulation by the FCA and PRA are available from us on request; has been approved for publication and is distributed in the European Economic Area (EEA) by BofASE (France), which is authorized by the ACPR and regulated by the ACPR and the AMF; has been considered and distributed in Japan by BofAS Japan, a registered securities dealer under the Financial Instruments and Exchange Act in Japan, or its permitted affiliates; is issued and distributed in Hong Kong by BofA (Hong Kong) which is regulated by HKSFC; is issued and distributed in Taiwan by BofA (Taiwan); is issued and distributed in India by BofAS India; and is issued and distributed in Singapore to institutional investors and/or accredited investors (each as defined under the Financial Advisers Regulations) by BofA (Singapore) (Company Registration No 198602883D). BofA (Singapore) is regulated by MAS. BofA Equities (Australia) Limited (ABN 65 006 276 795), AFS License 235132 (MLEA) distributes this information in Australia only to 'Wholesale' clients as defined by s.761G of the Corporations Act 2001. With the exception of BofA N.A., Australia Branch, neither MLEA nor any of its affiliates involved in preparing this information is an Authorised Deposit-Taking Institution under the Banking Act 1959 nor regulated by the Australian Prudential Regulation Authority. No approval is required for publication or distribution of this information in Brazil and its local distribution is by BofA (Brazil) in accordance with applicable regulations. BofA (DIFC) is authorized and regulated by the DFSA. Information prepared and issued by BofA (DIFC) is done so in accordance with the requirements of the DFSA conduct of business rules. BofA Europe (Frankfurt) distributes this information in Germany and is regulated by BaFin, the ECB and the CBI. BofA entities, including BofA Europe and BofASE (France), may outsource/delegate the marketing and/or provision of certain research services or aspects of research services to other branches or members of the BofA group. You may be contacted by a different BofA entity acting for and on behalf of your service provider where permitted by applicable law. This does not change your service provider. Please refer to the Electronic Communications Disclaimers for further information.
+
+This information has been prepared and issued by BofAS and/or one or more of its non-US affiliates. The author(s) of this information may not be licensed to carry on regulated activities in your jurisdiction and, if not licensed, do not hold themselves out as being able to do so. BofAS and/or MLPF&S is the distributor of this information in the US and accepts full responsibility for information distributed to BofAS and/or MLPF&S clients in the US by its non-US affiliates. Any US person receiving this information and wishing to effect any transaction in any security discussed herein should do so through BofAS and/or MLPF&S and not such foreign affiliates. Hong Kong recipients of this information should contact BofA (Asia Pacific) Limited in respect of any matters relating to dealing in securities or provision of specific advice on securities or any other matters arising from, or in connection with, this information. Singapore recipients of this information should contact BofA (Singapore) Pte Ltd in respect of any matters arising from, or in connection with, this information. For clients that are not accredited investors, expert investors or institutional investors BofA (Singapore) Pte Ltd accepts full responsibility for the contents of this information distributed to such clients in Singapore.
+
+# General Investment Related Disclosures:
+
+Taiwan Readers: Neither the information nor any opinion expressed herein constitutes an offer or a solicitation of an offer to transact in any securities or other financial instrument. No part of this report may be used or reproduced or quoted in any manner whatsoever in Taiwan by the press or any other person without the express written consent of BofA. This document provides general information only, and has been prepared for, and is intended for general distribution to, BofA clients. Neither the information nor any opinion expressed constitutes an offer or an invitation to make an offer, to buy or sell any securities or other financial instrument or any derivative related to such securities or instruments (e.g., options, futures, warrants, and contracts for differences). This document is not intended to provide personal investment advice and it does not take into account the specific investment objectives, financial situation and the particular needs of, and is not directed to, any specific person(s). This document and its content do not constitute, and should not be considered to constitute, investment advice for purposes of ERISA, the US tax code, the Investment Advisers Act or otherwise. Investors should seek financial advice regarding the appropriateness of investing in financial instruments and implementing investment strategies discussed or recommended in this document and should understand that statements regarding future prospects may not be realized. Any decision to purchase or sUBScribe for securities in any offering must be based solely on existing public information on such security or the information in the prospectus or other offering document issued in connection with such offering, and not on this document.
+
+Securities and other financial instruments referred to herein, or recommended, offered or sold by BofA, are not insured by the Federal Deposit Insurance Corporation and are not deposits or other obligations of any insured depository institution (including, BofA, N.A.). Investments in general and, derivatives, in particular, involve numerous risks, including, among others, market risk, counterparty default risk and liquidity risk. No security, financial instrument or derivative is suitable for all investors. Digital assets are extremely speculative, volatile and are largely unregulated. In some cases, securities and other financial instruments may be difficult to value or sell and reliable information about the value or risks related to the security or financial instrument may be difficult to obtain. Investors should note that income from such securities and other financial instruments, if any, may fluctuate and that price or value of such securities and instruments may rise or fall and, in some cases, investors may lose their entire principal investment. Past performance is not necessarily a guide to future performance. Levels and basis for taxation may change.
+
+This report may contain a short-term trading idea or recommendation, which highlights a specific near-term catalyst or event impacting the issuer or the market that is anticipated to have a short-term price impact on the equity securities of the issuer. Short-term trading ideas and recommendations are different from and do not affect a stock's fundamental equity rating, which reflects both a longer term total return expectation and attractiveness for investment relative to other stocks within its Coverage Cluster. Short-term trading ideas and recommendations may be more or less positive than a stock's fundamental equity rating.
+
+BofA is aware that the implementation of the ideas expressed in this report may depend upon an investor's ability to "short" securities or other financial instruments and that such action may be limited by regulations prohibiting or restricting "shortselling" in many jurisdictions. Investors are urged to seek advice regarding the applicability of such regulations prior to executing any short idea contained in this report.
+
+Foreign currency rates of exchange may adversely affect the value, price or income of any security or financial instrument mentioned herein. Investors in such securities and instruments, including ADRs, effectively assume currency risk.
+
+BofAS or one of its affiliates is a regular issuer of traded financial instruments linked to securities that may have been recommended in this report. BofAS or one of its affiliates may, at any time, hold a trading position (long or short) in the securities and financial instruments discussed in this report.
+
+BofA, through business units other than BofA Global Research, may have issued and may in the future issue trading ideas or recommendations that are inconsistent with, and reach different conclusions from, the information presented herein. Such ideas or recommendations may reflect different time frames, assumptions, views and analytical methods of the persons who prepared them, and BofA is under no obligation to ensure that such other trading ideas or recommendations are brought to the attention of any recipient of this information. In the event that the recipient received this information pursuant to a contract between the recipient and BofAS for the provision of research services for a separate fee, and in connection therewith BofAS may be deemed to be acting as an investment adviser, such status relates, if at all, solely to the person with whom BofAS has contracted directly and does not extend beyond the delivery of this report (unless otherwise agreed specifically in writing by BofAS). If such recipient uses the services of BofAS in connection with the sale or purchase of a security referred to herein, BofAS may act as principal for its own account or as agent for another person. BofAS is and continues to act solely as a broker-dealer in connection with the execution of any transactions, including transactions in any securities referred to herein.
+
+# Copyright and General Information:
+
+Copyright 2026 BofA Corporation. All rights reserved. iQdatabase® is a registered service mark of BofA Corporation. This information is prepared for the use of BofA clients and may not be redistributed, retransmitted or disclosed, in whole or in part, or in any form or manner, without the express written consent of BofA. This document and its content is provided solely for informational purposes and cannot be used for training or developing artificial intelligence (AI) models or as an input in any AI application (collectively, an AI tool). Any attempt to utilize this document or any of its content in connection with an AI tool without explicit written permission from BofA Global Research is strictly prohibited. BofA Global Research utilizes AI, including machine learning and other technologies, to enhance the services we provide to our clients. These technologies assist our analysts in various aspects of their work, including but not limited to data analysis, content extraction, content creation, data aggregation and summarization and identifying relevant information from diverse sources. All AI-driven processes are subject to review by BofA Global Research employees. BofA Global Research information is distributed simultaneously to internal and client websites and other portals by BofA and is not publicly-available material. Any unauthorized use or disclosure is prohibited. Receipt and review of this information constitutes your agreement not to redistribute, retransmit, or disclose to others the contents, opinions, conclusion, or information contained herein (including any investment recommendations, estimates or price targets) without first obtaining express permission from an authorized officer of BofA.
+
+Materials prepared by BofA Global Research personnel are based on public information. Facts and views presented in this material have not been reviewed by, and may not reflect information known to, professionals in other business areas of BofA, including investment banking personnel. BofA has established information barriers between BofA Global Research and certain business groups. As a result, BofA does not disclose certain client relationships with, or compensation received from, such issuers. To the extent this material discusses any legal proceeding or issues, it has not been prepared as nor is it intended to express any legal conclusion, opinion or advice. Investors should consult their own legal advisers as to issues of law relating to the subject matter of this material. BofA Global Research personnel's knowledge of legal proceedings in which any BofA entity and/or its directors, officers and employees may be plaintiffs, defendants, co-defendants or co-plaintiffs with or involving issuers mentioned in this material is based on public information. Facts and views presented in this material that relate to any such proceedings have not been reviewed by, discussed with, and may not reflect information known to, professionals in other business areas of BofA in
+
+connection with the legal proceedings or matters relevant to such proceedings.
+
+This information has been prepared independently of any issuer of securities mentioned herein and not in connection with any proposed offering of securities or as agent of any issuer of any securities. None of BofAS any of its affiliates or their research analysts has any authority whatsoever to make any representation or warranty on behalf of the issuer(s). BofA Global Research policy prohibits research personnel from disclosing a recommendation, investment rating, or investment thesis for review by an issuer prior to the publication of a research report containing such rating, recommendation or investment thesis.
+
+Any information relating to sustainability in this material is limited as discussed herein and is not intended to provide a comprehensive view on any sustainability claim with respect to any issuer or security.
+
+Any information relating to the tax status of financial instruments discussed herein is not intended to provide tax advice or to be used by anyone to provide tax advice. Investors are urged to seek tax advice based on their particular circumstances from an independent tax professional.
+
+The information herein (other than disclosure information relating to BofA and its affiliates) was obtained from various sources and we do not guarantee its accuracy. This information may contain links to third-party websites. BofA is not responsible for the content of any third-party website or any linked content contained in a third-party website. Content contained on such third-party websites is not part of this information and is not incorporated by reference. The inclusion of a link does not imply any endorsement by or any affiliation with BofA. Access to any third-party website is at your own risk, and you should always review the terms and privacy policies at third-party websites before submitting any personal information to them. BofA is not responsible for such terms and privacy policies and expressly disclaims any liability for them.
+
+All opinions, projections and estimates constitute the judgment of the author as of the date of publication and are subject to change without notice. Prices also are subject to change without notice. BofA is under no obligation to update this information and BofA ability to publish information on the subject issuer(s) in the future is subject to applicable quiet periods. You should therefore assume that BofA will not update any fact, circumstance or opinion contained herein.
+
+Subject to the quiet period applicable under laws of the various jurisdictions in which we distribute research reports and other legal and BofA policy-related restrictions on the publication of research reports, fundamental equity reports are produced on a regular basis as necessary to keep the investment recommendation current.
+
+Certain outstanding reports or investment opinions relating to securities, financial instruments and/or issuers may no longer be current. Always refer to the most recent research report relating to an issuer prior to making an investment decision.
+
+In some cases, an issuer may be classified as Restricted or may be Under Review or Extended Review. In each case, investors should consider any investment opinion relating to such issuer (or its security and/or financial instruments) to be suspended or withdrawn and should not rely on the analyses and investment opinion(s) pertaining to such issuer (or its securities and/or financial instruments) nor should the analyses or opinion(s) be considered a solicitation of any kind. Sales persons and financial advisors affiliated with BofAS or any of its affiliates may not solicit purchases of securities or financial instruments that are Restricted or Under Review and may only solicit securities under Extended Review in accordance with firm policies.
+
+Neither BofA nor any officer or employee of BofA accepts any liability whatsoever for any direct, indirect or consequential damages or losses arising from any use of this information.
