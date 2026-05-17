@@ -1,0 +1,50 @@
+{
+  "input_dir": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs",
+  "total_pdf_count_before_shard": 20,
+  "pdf_count_before_skip": 5,
+  "pdf_count": 5,
+  "batch_size": 5,
+  "shard_index": 1,
+  "shard_count": 40,
+  "max_reports_per_shard": 5,
+  "max_total_reports": 0,
+  "skip_existing": true,
+  "skipped_existing_count": 0,
+  "skipped_existing": [],
+  "failures": 0,
+  "batches": [
+    {
+      "batch_index": 1,
+      "pdf_count": 5,
+      "files": [
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/08-GS-EUROPEAN ECONOMICS ANALYST：Rockets and Feathers： Asymmetric Passthrough from Energy Shocks-260515.pdf",
+          "batch_file": "/tmp/pdf_batch_001_91_8naqv/pdfs/0001-08-GS-EUROPEAN ECONOMICS ANALYST-Rockets and Feathers- Asymmetric Passthrough from Energy Shocks-260515.pdf",
+          "stable_index": "1"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/09-GS-GLOBAL RATES TRADER：Rates Running Out of Patience-260515.pdf",
+          "batch_file": "/tmp/pdf_batch_001_91_8naqv/pdfs/0002-09-GS-GLOBAL RATES TRADER-Rates Running Out of Patience-260515.pdf",
+          "stable_index": "2"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/10-GS-GLOBAL FX TRADER：Underneath It All-260515.pdf",
+          "batch_file": "/tmp/pdf_batch_001_91_8naqv/pdfs/0003-10-GS-GLOBAL FX TRADER-Underneath It All-260515.pdf",
+          "stable_index": "3"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/11-GS-Global Market Views： Shortages-260515.pdf",
+          "batch_file": "/tmp/pdf_batch_001_91_8naqv/pdfs/0004-11-GS-Global Market Views- Shortages-260515.pdf",
+          "stable_index": "4"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/12-GS-GLOBAL STEEL：The steel market barometer： May Update-260515.pdf",
+          "batch_file": "/tmp/pdf_batch_001_91_8naqv/pdfs/0005-12-GS-GLOBAL STEEL-The steel market barometer- May Update-260515.pdf",
+          "stable_index": "5"
+        }
+      ],
+      "returncode": 0,
+      "status": "ok"
+    }
+  ]
+}
