@@ -26,6 +26,7 @@ TARGET_FILENAMES = {
     "note.md",
     "wechat_article.md",
     "wechat_article_en.md",
+    "zhihu_article.md",
     "xianyu_note.md",
     "podcast_script_zh.md",
     "podcast_script_en.md",
@@ -35,6 +36,7 @@ TARGET_FILENAMES = {
 SKIP_NAMES = {
     "source_mineru.md",
     "prompt_for_xianyu.md",
+    "prompt_for_zhihu.md",
     "prompt_for_market_views.md",
 }
 
@@ -44,7 +46,6 @@ SAFE_XIANYU_TAGS = ["#学习资料", "#研究笔记", "#学习笔记", "#行业�
 DISALLOWED_XIANYU_TAGS_RE = re.compile(r"#(?:财经|投资|股票|基金|理财|暴富|内幕|买入|卖出|稳赚|保本)\b")
 
 LOCAL_REPLACEMENTS: list[tuple[str, str]] = [
-    # Financial-advice / trading intent
     (r"不构成任何投资建议", "仅为个人阅读分享"),
     (r"投资建议", "研究交流"),
     (r"投资参考", "研究参考"),
@@ -73,7 +74,6 @@ LOCAL_REPLACEMENTS: list[tuple[str, str]] = [
     (r"原版", "电子版"),
     (r"无水印", "清晰版"),
     (r"全网最低", "价格友好"),
-    # Direct engagement bait / platform-sensitive CTA
     (r"关注点赞收藏", "欢迎交流收藏"),
     (r"点赞收藏关注", "欢迎交流收藏"),
     (r"关注\s*[、,，和]*\s*点赞", "欢迎交流"),
@@ -84,7 +84,6 @@ LOCAL_REPLACEMENTS: list[tuple[str, str]] = [
     (r"点赞", "收藏"),
     (r"评论区见", "欢迎讨论"),
     (r"评论区留言", "可以一起讨论"),
-    # Extreme marketing terms
     (r"必看", "值得看看"),
     (r"必读", "值得读"),
     (r"爆款", "吸引人的"),
@@ -97,8 +96,6 @@ LOCAL_REPLACEMENTS: list[tuple[str, str]] = [
     (r"绝对", "相对"),
 ]
 
-# Standalone use of “投资” is broad. Replace in public-facing text, but preserve
-# common research terms that are less promotional.
 PROTECTED_TERMS = {
     "投研": "__PROTECT_TOUYAN__",
     "投行": "__PROTECT_TOUHANG__",
@@ -131,7 +128,6 @@ def apply_local_guard(text: str) -> tuple[str, list[str]]:
 
 
 def normalize_xhs_note_tags(text: str) -> tuple[str, list[str]]:
-    """Keep only approved XHS hashtags and append a stable safe tag set."""
     changes: list[str] = []
     original = text
     text = DISALLOWED_XHS_TAGS_RE.sub("", text)
@@ -144,12 +140,10 @@ def normalize_xhs_note_tags(text: str) -> tuple[str, list[str]]:
 
 
 def normalize_xianyu_note(text: str) -> tuple[str, list[str]]:
-    """Remove price/search-keyword fields and normalize Xianyu hashtags."""
     changes: list[str] = []
     original = text
     hashtag_candidates: list[str] = []
     kept_lines: list[str] = []
-
     for raw in text.splitlines():
         line = raw.rstrip()
         stripped = line.strip()
@@ -168,13 +162,10 @@ def normalize_xianyu_note(text: str) -> tuple[str, list[str]]:
         hashtag_match = re.match(r"^(?:Hashtag|hashtag|标签)\s*[:：]\s*(.*)$", stripped)
         if hashtag_match:
             tag_text = DISALLOWED_XIANYU_TAGS_RE.sub("", hashtag_match.group(1))
-            found_tags = re.findall(r"#[^\s#，,、/|;；]+", tag_text)
-            hashtag_candidates.extend(found_tags)
+            hashtag_candidates.extend(re.findall(r"#[^\s#，,、/|;；]+", tag_text))
             changes.append("normalize_existing_xianyu_hashtag_line")
             continue
         kept_lines.append(line)
-
-    # De-duplicate while preserving order, then add safe fallbacks.
     tags: list[str] = []
     for tag in hashtag_candidates + SAFE_XIANYU_TAGS:
         tag = tag.strip()
@@ -186,7 +177,6 @@ def normalize_xianyu_note(text: str) -> tuple[str, list[str]]:
             tags.append(tag)
         if len(tags) >= 10:
             break
-
     text = "\n".join(kept_lines).strip()
     text = re.sub(r"\n{3,}", "\n\n", text)
     text = text + "\n\nHashtag：" + " ".join(tags) + "\n"
@@ -249,7 +239,8 @@ def deepseek_rewrite(text: str, detected_hits: list[dict[str, Any]], model: str,
 5. 不要新增事实、页数、价格、承诺、联系方式。
 6. 小红书 note.md 的标签只能使用 #学习笔记 #研究笔记 #学习研究 #研报解读。
 7. 闲鱼 xianyu_note.md 不要输出“建议价格”或“搜索关键词”，如需关键词请改成 Hashtag。
-8. 只输出改写后的正文，不要解释。
+8. 知乎 zhihu_article.md 保持理性长文风格，不要写关注点赞或财经操作建议。
+9. 只输出改写后的正文，不要解释。
 
 检测命中：
 {json.dumps(detected_hits, ensure_ascii=False)}
