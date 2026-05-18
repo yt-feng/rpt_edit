@@ -40,6 +40,8 @@ SKIP_NAMES = {
 
 SAFE_XHS_TAGS = ["#学习笔记", "#研究笔记", "#学习研究", "#研报解读"]
 DISALLOWED_XHS_TAGS_RE = re.compile(r"#(?:投资学习|财经|金融|股票|基金|理财|小红书笔记|笔记分享|干货分享)\b")
+SAFE_XIANYU_TAGS = ["#学习资料", "#研究笔记", "#学习笔记", "#行业研究", "#研报资料", "#资料整理", "#报告学习", "#案例研究"]
+DISALLOWED_XIANYU_TAGS_RE = re.compile(r"#(?:财经|投资|股票|基金|理财|暴富|内幕|买入|卖出|稳赚|保本)\b")
 
 LOCAL_REPLACEMENTS: list[tuple[str, str]] = [
     # Financial-advice / trading intent
@@ -133,12 +135,63 @@ def normalize_xhs_note_tags(text: str) -> tuple[str, list[str]]:
     changes: list[str] = []
     original = text
     text = DISALLOWED_XHS_TAGS_RE.sub("", text)
-    # Drop any trailing hashtag-only block. Then append our allowed set.
     text = re.sub(r"(?:^|\n)\s*(?:#[^\n#\s]+\s*)+\s*$", "", text, flags=re.MULTILINE).strip()
     text = text + "\n\n" + " ".join(SAFE_XHS_TAGS) + "\n"
     text = re.sub(r"\n{3,}", "\n\n", text)
     if text != original:
         changes.append("normalize_xhs_note_tags")
+    return text, changes
+
+
+def normalize_xianyu_note(text: str) -> tuple[str, list[str]]:
+    """Remove price/search-keyword fields and normalize Xianyu hashtags."""
+    changes: list[str] = []
+    original = text
+    hashtag_candidates: list[str] = []
+    kept_lines: list[str] = []
+
+    for raw in text.splitlines():
+        line = raw.rstrip()
+        stripped = line.strip()
+        if re.match(r"^(?:建议价格|价格建议|参考价格)\s*[:：]", stripped):
+            changes.append("remove_xianyu_price_line")
+            continue
+        keyword_match = re.match(r"^(?:搜索关键词|搜索词|关键词)\s*[:：]\s*(.*)$", stripped)
+        if keyword_match:
+            keyword_text = keyword_match.group(1)
+            parts = [p.strip(" #，,、/|;；") for p in re.split(r"[\s，,、/|;；]+", keyword_text) if p.strip(" #，,、/|;；")]
+            for part in parts:
+                if not re.search(r"财经|投资|股票|基金|理财|暴富|内幕|买入|卖出|稳赚|保本", part):
+                    hashtag_candidates.append("#" + part.lstrip("#"))
+            changes.append("convert_search_keywords_to_hashtag")
+            continue
+        hashtag_match = re.match(r"^(?:Hashtag|hashtag|标签)\s*[:：]\s*(.*)$", stripped)
+        if hashtag_match:
+            tag_text = DISALLOWED_XIANYU_TAGS_RE.sub("", hashtag_match.group(1))
+            found_tags = re.findall(r"#[^\s#，,、/|;；]+", tag_text)
+            hashtag_candidates.extend(found_tags)
+            changes.append("normalize_existing_xianyu_hashtag_line")
+            continue
+        kept_lines.append(line)
+
+    # De-duplicate while preserving order, then add safe fallbacks.
+    tags: list[str] = []
+    for tag in hashtag_candidates + SAFE_XIANYU_TAGS:
+        tag = tag.strip()
+        if not tag.startswith("#"):
+            tag = "#" + tag
+        if DISALLOWED_XIANYU_TAGS_RE.search(tag):
+            continue
+        if tag not in tags:
+            tags.append(tag)
+        if len(tags) >= 10:
+            break
+
+    text = "\n".join(kept_lines).strip()
+    text = re.sub(r"\n{3,}", "\n\n", text)
+    text = text + "\n\nHashtag：" + " ".join(tags) + "\n"
+    if text != original:
+        changes.append("normalize_xianyu_note")
     return text, changes
 
 
@@ -195,7 +248,8 @@ def deepseek_rewrite(text: str, detected_hits: list[dict[str, Any]], model: str,
 4. “投资”相关词尽量改成“研究”“投研”“观察”“学习参考”等，视上下文自然处理。
 5. 不要新增事实、页数、价格、承诺、联系方式。
 6. 小红书 note.md 的标签只能使用 #学习笔记 #研究笔记 #学习研究 #研报解读。
-7. 只输出改写后的正文，不要解释。
+7. 闲鱼 xianyu_note.md 不要输出“建议价格”或“搜索关键词”，如需关键词请改成 Hashtag。
+8. 只输出改写后的正文，不要解释。
 
 检测命中：
 {json.dumps(detected_hits, ensure_ascii=False)}
@@ -229,7 +283,6 @@ def should_process(path: Path) -> bool:
         return False
     if path.name in TARGET_FILENAMES:
         return True
-    # Include additional generated markdown notes, but skip raw/source/prompt files.
     if path.suffix.lower() == ".md" and not path.name.startswith("prompt_") and "source" not in path.name.lower():
         return True
     return False
@@ -254,6 +307,9 @@ def guard_file(path: Path, args: argparse.Namespace) -> dict[str, Any]:
     if path.name == "note.md":
         final_text, tag_changes = normalize_xhs_note_tags(final_text)
         local_changes.extend(tag_changes)
+    if path.name == "xianyu_note.md":
+        final_text, xianyu_changes = normalize_xianyu_note(final_text)
+        local_changes.extend(xianyu_changes)
     changed = final_text != original
     if changed:
         path.write_text(final_text, encoding="utf-8")
