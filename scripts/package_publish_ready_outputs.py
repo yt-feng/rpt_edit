@@ -1,16 +1,9 @@
 #!/usr/bin/env python3
 """Package publish-ready outputs from a completed Final PDF to XHS run.
 
-The input is usually xhs_notes/dropbox/<date>/shard_*/. A shard is included only
-when it contains at least one generated report folder. MinerU raw folders are
-excluded from the ZIP.
-
-GitHub blocks single files over 100 MB, so this script creates multiple ZIP
-parts by default, each targeting less than --max-zip-mb. The workflow can then
-commit the parts safely while the full folder is also uploaded as an artifact.
-
-For mobile publishing convenience, Markdown files are stored inside the ZIP with
-.txt suffixes, without changing the original repository files.
+Only publish-ready materials are included. MinerU raw/source files, prompts,
+logs, JSON metadata, shard summaries and podcast scripts are excluded. Markdown
+files are stored inside the ZIP with .txt suffixes for mobile publishing.
 """
 from __future__ import annotations
 
@@ -27,18 +20,45 @@ REPORT_MARKERS = {
     "note.md",
     "wechat_article.md",
     "wechat_article_en.md",
+    "zhihu_article.md",
     "xianyu_note.md",
-    "podcast_script_zh.md",
-    "podcast_script_en.md",
 }
+PUBLISH_TEXT_FILES = {
+    "note.md",
+    "wechat_article.md",
+    "wechat_article_en.md",
+    "zhihu_article.md",
+    "xianyu_note.md",
+}
+IMAGE_SUFFIXES = {".png", ".jpg", ".jpeg", ".webp"}
 RAW_DIR_PATTERNS = [
     re.compile(r"(^|[-_\s])mineru([-_\s]|$)", re.I),
     re.compile(r"(^|[-_\s])raw([-_\s]|$)", re.I),
     re.compile(r"mineru.*raw|raw.*mineru", re.I),
 ]
-RAW_FILE_PATTERNS = [
-    re.compile(r"mineru.*raw|raw.*mineru", re.I),
-]
+EXCLUDED_FILENAMES = {
+    "source_mineru.md",
+    "shard_run_summary.md",
+    "podcast_en_script.txt",
+    "podcast_script.txt",
+    "podcast_zh_script.txt",
+    "podcast_script_en.md",
+    "podcast_script_zh.md",
+    "podcast_en.md",
+    "podcast_zh.md",
+    "prompt_for_podcast.txt",
+    "prompt_for_podcast.md",
+    "prompt_for_wechat_en.txt",
+    "prompt_for_wechat.txt",
+    "prompt_for_wechat.md",
+    "prompt_for_xhs.txt",
+    "prompt_for_xhs.md",
+    "prompt_for_xianyu.txt",
+    "prompt_for_xianyu.md",
+    "prompt_for_zhihu.txt",
+    "prompt_for_zhihu.md",
+    "status.json",
+}
 
 
 @dataclass
@@ -56,59 +76,53 @@ def log(message: str) -> None:
 
 
 def is_raw_dir(path: Path) -> bool:
-    name = path.name.strip()
-    return any(pattern.search(name) for pattern in RAW_DIR_PATTERNS)
+    return any(pattern.search(path.name.strip()) for pattern in RAW_DIR_PATTERNS)
 
 
-def is_raw_file(path: Path, exclude_source_mineru: bool) -> bool:
+def is_excluded_file(path: Path, exclude_source_mineru: bool) -> bool:
     name = path.name.strip()
+    if name in EXCLUDED_FILENAMES:
+        return True
     if exclude_source_mineru and name == "source_mineru.md":
         return True
-    return any(pattern.search(name) for pattern in RAW_FILE_PATTERNS)
+    if name.endswith(".log") or name.endswith("_progress.log"):
+        return True
+    if path.suffix.lower() == ".json":
+        return True
+    if name.startswith("prompt_for_"):
+        return True
+    if re.search(r"mineru.*raw|raw.*mineru", name, re.I):
+        return True
+    return False
 
 
 def is_report_dir(path: Path) -> bool:
-    if not path.is_dir():
-        return False
-    for marker in REPORT_MARKERS:
-        if (path / marker).exists():
-            return True
-    if (path / "status.json").exists() and any(p.suffix.lower() in {".png", ".jpg", ".jpeg"} for p in path.rglob("*")):
-        return True
-    return False
+    return path.is_dir() and any((path / marker).exists() for marker in REPORT_MARKERS)
 
 
 def shard_report_dirs(shard_dir: Path) -> list[Path]:
     return sorted(p for p in shard_dir.iterdir() if is_report_dir(p))
 
 
-def should_include_top_level_file(path: Path) -> bool:
-    allowed = {
-        "shard_run_summary.md",
-        "finalize_summary.json",
-        "sensitive_content_guard_summary.json",
-        "batch_run_summary.json",
-        "postprocess_summary.json",
-        "selected_to_process_manifest.json",
-        "selected_macro_candidates.json",
-        "macro_classification_all.json",
-    }
-    return path.name in allowed or path.name.endswith("_progress.log")
-
-
 def package_arcname(date_name: str, rel: Path) -> tuple[str, bool]:
-    """Return ZIP path. Rename .md files to .txt for mobile compatibility."""
     renamed = rel.suffix.lower() == ".md"
     if renamed:
         rel = rel.with_suffix(".txt")
     return (Path(date_name) / rel).as_posix(), renamed
 
 
+def include_report_file(path: Path, exclude_source_mineru: bool) -> bool:
+    if is_excluded_file(path, exclude_source_mineru):
+        return False
+    if path.name in PUBLISH_TEXT_FILES:
+        return True
+    if path.suffix.lower() in IMAGE_SUFFIXES:
+        return True
+    return False
+
+
 def iter_files_for_shard(shard_dir: Path, report_dirs: list[Path], exclude_source_mineru: bool) -> list[Path]:
     files: list[Path] = []
-    for path in sorted(shard_dir.iterdir()):
-        if path.is_file() and should_include_top_level_file(path) and not is_raw_file(path, exclude_source_mineru):
-            files.append(path)
     report_set = {p.resolve() for p in report_dirs}
     for report_dir in report_dirs:
         for path in sorted(report_dir.rglob("*")):
@@ -116,9 +130,8 @@ def iter_files_for_shard(shard_dir: Path, report_dirs: list[Path], exclude_sourc
                 continue
             if any(is_raw_dir(parent) for parent in path.parents if parent.resolve() not in report_set and parent != shard_dir):
                 continue
-            if is_raw_file(path, exclude_source_mineru):
-                continue
-            files.append(path)
+            if include_report_file(path, exclude_source_mineru):
+                files.append(path)
     return files
 
 
@@ -145,13 +158,9 @@ def collect_package_files(date_dir: Path, exclude_source_mineru: bool) -> tuple[
         renamed_markdown_count = 0
         for file_path in files:
             rel = file_path.relative_to(date_dir)
-            report_name = None
-            parts = rel.parts
-            if len(parts) >= 2 and parts[1] in report_names:
-                report_name = parts[1]
+            report_name = rel.parts[1] if len(rel.parts) >= 2 and rel.parts[1] in report_names else None
             arcname, renamed_markdown = package_arcname(date_name, rel)
-            if renamed_markdown:
-                renamed_markdown_count += 1
+            renamed_markdown_count += int(renamed_markdown)
             package_files.append(PackageFile(
                 source=file_path,
                 arcname=arcname,
@@ -197,7 +206,6 @@ def split_into_parts(files: list[PackageFile], max_zip_bytes: int) -> list[list[
     current: list[PackageFile] = []
     current_bytes = 0
     for item in files:
-        # Approximate by source size because PNG/JPEG files rarely compress much.
         if current and current_bytes + item.size > max_zip_bytes:
             parts.append(current)
             current = []
@@ -215,8 +223,6 @@ def build_package(date_dir: Path, output_root: Path, exclude_source_mineru: bool
     date_name = date_dir.name
     output_dir = output_root / date_name
     output_dir.mkdir(parents=True, exist_ok=True)
-
-    # Clear stale ZIPs from previous attempts so a failed >100 MB zip does not get committed later.
     for stale in output_dir.glob(f"publish_ready_{date_name}*.zip"):
         stale.unlink()
 
@@ -225,19 +231,14 @@ def build_package(date_dir: Path, output_root: Path, exclude_source_mineru: bool
         raise RuntimeError(f"No publish-ready shard outputs found under {date_dir}")
 
     max_zip_bytes = max_zip_mb * 1024 * 1024
-    if single_zip:
-        parts = [package_files]
-    else:
-        parts = split_into_parts(package_files, max_zip_bytes)
+    parts = [package_files] if single_zip else split_into_parts(package_files, max_zip_bytes)
 
     zip_entries: list[dict[str, Any]] = []
     if len(parts) == 1:
-        zip_path = output_dir / f"publish_ready_{date_name}.zip"
-        zip_entries.append(write_zip(zip_path, parts[0]))
+        zip_entries.append(write_zip(output_dir / f"publish_ready_{date_name}.zip", parts[0]))
     else:
         for idx, part_files in enumerate(parts, 1):
-            zip_path = output_dir / f"publish_ready_{date_name}_part{idx:03d}.zip"
-            zip_entries.append(write_zip(zip_path, part_files))
+            zip_entries.append(write_zip(output_dir / f"publish_ready_{date_name}_part{idx:03d}.zip", part_files))
 
     oversized = [entry for entry in zip_entries if entry["size_bytes"] > 100 * 1024 * 1024]
     if oversized:
@@ -253,6 +254,7 @@ def build_package(date_dir: Path, output_root: Path, exclude_source_mineru: bool
         "single_zip": single_zip,
         "exclude_source_mineru": exclude_source_mineru,
         "markdown_files_renamed_to_txt": True,
+        "excluded_debug_files": True,
         "included_shard_count": len(included_shards),
         "skipped_shards": skipped_shards,
         "total_files": len(package_files),
@@ -278,13 +280,7 @@ def main() -> int:
     parser.add_argument("--max-zip-mb", type=int, default=90, help="target max size per zip part for GitHub commit safety")
     parser.add_argument("--single-zip", action="store_true", help="write one ZIP even if it exceeds GitHub's 100 MB file limit")
     args = parser.parse_args()
-    build_package(
-        Path(args.date_dir),
-        Path(args.output_root),
-        exclude_source_mineru=not args.include_source_mineru,
-        max_zip_mb=args.max_zip_mb,
-        single_zip=args.single_zip,
-    )
+    build_package(Path(args.date_dir), Path(args.output_root), not args.include_source_mineru, args.max_zip_mb, args.single_zip)
     return 0
 
 
