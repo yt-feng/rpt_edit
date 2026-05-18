@@ -1,0 +1,1880 @@
+请基于下面每天新报告的摘要，写一份“市场最新观点汇总”的结构化 JSON，用于生成 PDF。
+
+要求：
+1. 观点要分门别类，例如：宏观与利率、AI/算力、能源与大宗、地产与消费、区域市场、风险偏好等。类别由内容决定，不要机械套模板。
+2. 每个板块要综合多篇报告，不要逐篇复述。
+3. 每个板块必须有 3-8 个要点，每个要点是可读的完整句子。
+4. 每个板块末尾必须给 references，引用报告 ID，不要在正文每句后塞引用。
+5. 可以使用所有 figure_ids，没有总数限制，但只选择真正支撑该板块观点且图表说明干净的图。
+6. 投行名字必须脱敏：常见投行写 GS、JPM、MS、BofA、Citi、UBS、DB 等缩写，不确定就写“投行”。
+7. 不要给投资建议，不要写买卖评级。
+8. 输出必须是 JSON 对象，不要 Markdown 代码块。
+
+JSON 格式：
+{"title":"市场最新观点汇总","subtitle":"一句话说明今天的市场主线","executive_summary":["要点1"],"sections":[{"heading":"板块标题","thesis":"核心判断","bullets":["要点1"],"figure_ids":["F001"],"references":["R001"]}],"closing":"简短收束"}
+
+报告摘要：
+[
+  {
+    "id": "R001",
+    "title": "存储芯片的下一轮定价权，不在三星手里",
+    "digest": "[wechat_article.md]\n# 存储芯片的下一轮定价权，不在三星手里\n\n市场正在经历一轮被低估的结构性变化。当大多数人还在用“周期高点已过”的框架审视存储芯片时，2026年5月的数据和指引正在讲述一个不同的故事。\n\n某外资投行最新发布的全球存储技术研报中，有三个信号值得产业决策者和投资者认真对待：NAND平均售价的增长远超市场共识，三星潜在的劳资纠纷可能成为定价催化剂，以及设备供应链正在经历一次非对称的订单转移。\n\n这些信号合在一起指向一个结论：本轮存储周期的定价权正在从规模最大的供应商，向技术领先和客户结构更优的企业转移。传统上以三星出货量为锚点的定价模型，可能正在失效。\n\n---\n\n![研报原图 1](assets/source_image_01.jpg)\n\n## 1. NAND平均售价的跳升，暴露了市场共识的系统性低估\n\nKioxia最新的指引是本周最值得关注的数据点。其2026年第一季度的NAND平均售价环比增长超过100%，比韩国主要芯片制造商的同期表现高出约20个百分点。更关键的是，第二季度的营收指引环比增长74.5%，隐含的平均售价环比增幅约为70%。\n\n对比之下，市场共识和该投行的预测此前仅为不到50%。即便是最乐观的第三方机构TrendForce，也只预期第二季度NAND价格在70-75%的环比增长后，第三季度仅能再涨8-13%。\n\n这意味着什么？市场共识系统性地低估了NAND价格的上涨弹性。Kioxia的SSD出货结构变化——尤其是企业级解决方案占比的提升——是超预期的主要驱动力。当一家以NAND为主营业务的公司的指引开始显著跑赢行业均值时，这通常不是统计误差，而是结构变化的信号。\n\n台湾NAND模组厂商群联电子4月营收同比增长237%，税前利润率45%，净利润率38%，这些数字已经进入“超级周期”的水平。如果这些数据不能说服市场重新评估NAND的供需平衡，那可能就\n\n[... middle omitted ...]\n\n数据的独立分析，以及那些在公开报告中看不到的细节和假设验证。\n\n![](https://github.com/yt-feng/rpt_edit/blob/main/prompts/zsxq_img.jpg)\n\n<p style=\"color:#999999;font-size:12px;\">Personal reading notes and learning share only. Not investment advice.</p>\n\n[note.md]\nNAND涨价超预期，三星罢工添柴火\n\n存储芯片还能涨多久？\n\n三星罢工、NAND涨价，存储周期走到哪了？\n\n最近某外资投行出了一份全球存储研报，信息量很大。我帮大家把核心逻辑拆出来，看看这波存储行情到底在发生什么。\n\n**1️⃣ NAND涨价，超预期了**\n\n研报里最让我意外的是NAND的涨价幅度。铠侠的1Q26 ASP环比翻了一倍多，比韩国同行80%+的涨幅还高20个百分点。更夸张的是，2Q26营收指引环比增长74.5%，意味着NAND ASP可能继续环比涨70%左右。\n\n台湾群联4月营收同比+237%，税前利润率45%，净利率38%，这已经是超级周期的水平了。\n\n研报说，他们自己之前预测全球NAND ASP在2Q/3Q/4Q26分别环比涨34%/9%/3%，现在看明显偏低。市场上甚至已经有激进观点觉得2Q涨70-75%后，后面还能涨8-13%。\n\n**2️⃣ 三星罢工，可能抬高三季度合约价**\n\n三星是全球DRAM和NAND第一大厂，这次劳资纠纷如果真罢工18天（5月21日-6月7日），虽然理论上影响不大——因为存储工厂高度自动化，但后端封测是劳动密集型的，可能受影响。\n\n更重要的是，OEM和大厂为了备战\n\n[... middle omitted ...]\n\n(8299 TT), also reported super-cycle-level April results (sales +237% YoY; pre-tax profit margin 45%; net profit margin 38%). Overall, we acknowledge high upside risk to our global NAND ASP fo\n\n[... middle omitted ...]\n\nw in accordance with firm policies.\n\nNeither BofA nor any officer or employee of BofA accepts any liability whatsoever for any direct, indirect or consequential damages or losses arising from any use of this information."
+  },
+  {
+    "id": "R002",
+    "title": "菲律宾正经历一场滞胀式能源供给冲击，市场低估了政治尾部风险对增长的压制",
+    "digest": "[wechat_article.md]\n# 菲律宾正经历一场滞胀式能源供给冲击，市场低估了政治尾部风险对增长的压制\n\n当全球投资者的目光仍集中在东南亚制造业转移与供应链重构的叙事上，一份来自某外资投行的菲律宾调研笔记，却揭示了一个更复杂、也更令人不安的现实。\n\n2026年4月，菲律宾CPI同比已升至7.2%，主要驱动力是燃料价格。与此同时，一季度实际GDP增速骤降至2.8%。通胀高企与增长骤冷并存，这不是典型的周期波动，而是一场由能源供给冲击引发的滞胀。更关键的是，菲律宾国内的政策制定者与市场参与者，对增长前景的判断出现了显著分歧——前者倾向于认为下半年会反弹，后者则普遍更加悲观。\n\n这份报告的真正价值，不在于罗列数据，而在于它揭示了三个被主流叙事低估的变量：政治不确定性对投资的压制、财政纪律对刺激空间的约束、以及货币政策的传导路径可能比市场预期的更曲折。本文基于该报告的核心逻辑，提炼出对产业决策者与资产配置者真正有意义的判断框架。\n\n![研报原图 1](assets/xhs_card_01.png)\n\n## 1. 能源价格传导的“快与慢”，决定了通胀二次效应的时间窗口\n\n菲律宾的能源定价机制，决定了其通胀传导路径与印尼、马来西亚截然不同。在《下游石油产业放松管制法》框架下，国内燃料价格基本由市场决定，而非通过广泛补贴缓冲。这意味着，国际油价上涨会快速且直接地反映在CPI中。4月CPI飙升至7.2%，正是这一机制的体现。\n\n然而，政策制定者更关心的不是第一次传导，而是二次效应。他们借鉴2022年的经验，认为二次效应通常在初始冲击后两个季度左右达到峰值。这意味着，通胀的进一步压力可能从2026年三季度末到四季度初才会更加明显。但这次传导会更快吗？政策制定者的回答相对克制：工资调整预计从6月才开始，且幅度不会过大；公共交通票价上调已被暂停，这有助于抑制近期的传导压力。同时，他们正在密切监测消费者通胀预\n\n[... middle omitted ...]\n\n完整研报的原始图表与数据，并围绕这些关键假设展开进一步推演。\n\n![](https://github.com/yt-feng/rpt_edit/blob/main/prompts/zsxq_img.jpg)\n\n<p style=\"color:#999999;font-size:12px;\">Personal reading notes and learning share only. Not investment advice.</p>\n\n[note.md]\n菲律宾正在经历一场滞胀式能源冲击\n\n滞胀压力下的菲律宾\n\n通胀高企、增长放缓、政治波动\n\n---\n\n最近读了一份某外资投行关于菲律宾的研报，信息密度很高，聊聊几个关键观察。\n\n**1/ 通胀压力正在传导，二次效应可能在下半年显现**\n\n菲律宾的油价基本由市场决定，没有像印尼那样的大规模补贴。4月CPI已经冲到7.2%，主要就是燃料价格推动。研报提到，政策制定者参考了2022年的经验——二次效应通常在冲击后两个季度达到顶峰，所以三季度末到四季度初可能看到更明显的通胀脉冲。不过好消息是，工资调整要到6月才开始，且幅度预计不大，公交票价暂缓上调也有助于控制传导。\n\n**2/ 增长前景分歧明显，市场比政策制定者更悲观**\n\nQ1实际GDP增速骤降至2.8%，投资和建筑活动从2025年中就开始放缓，部分原因是反腐丑闻导致的项目中断。政策制定者认为下半年会恢复，但研报作者比较谨慎——从其他经济体的经验看，反腐后投资恢复通常需要时间。而且菲律宾处于电子供应链后端，主要做组装和测试，最近韩国、台湾的半导体需求回暖对它的溢出效应可能没那么直接。\n\n**3/ 财政纪律优先，大规模刺激不太可能**\n\n政策制定者明显把财政整固放在优\n\n[... middle omitted ...]\n\nh has been quick and April CPI rose to $7.2\\%$ yoy, largely reflecting higher fuel prices. Attention remains focused on the potential risk of second-round inflation effects. Policymakers share\n\n[... middle omitted ...]\n\nthis information, in whole or in part, to train or finetune a machine learning or artificial intelligence system, or to provide or reproduce this information, in whole or in part, as a prompt or input to any such system."
+  },
+  {
+    "id": "R003",
+    "title": "市场真正低估的不是顺差收窄，而是资本流动的结构性拐点",
+    "digest": "[wechat_article.md]\n# 市场真正低估的不是顺差收窄，而是资本流动的结构性拐点\n\n中国2026年一季度国际收支数据公布后，市场目光大多落在经常账户顺差从4.5%GDP回落至3.8%这个数字上。这个方向并不意外——能源价格上升、进口量预测上调，顺差收窄本就是某外资投行年初给出的基准情形。真正值得细读的，是这份数据中三个被顺差数字掩盖的信号：资本外流节奏明显放缓、储备资产出现罕见的主动积累、以及直接投资净流出已从百亿量级收窄至十亿量级。\n\n这不是一份“顺差变小了所以人民币承压”的报告。恰恰相反，报告的结论指向一个更微妙的判断：中国的国际收支正在从“贸易顺差驱动”转向“资本流动改善驱动”，而市场对这一结构性转变的定价可能仍不充分。\n\n![研报原图 1](assets/source_image_01.jpg)\n\n## 1. 经常账户顺差收窄的“质”比“量”更值得关注\n\n一季度经常账户顺差1840亿美元，占GDP的3.8%，环比四季度的4.5%确实有所下降。但下降的结构值得拆解：商品贸易顺差同比并未恶化，2470亿美元的规模与2025年一季度持平。顺差收窄主要来自两个季节性因素——进口在春节后恢复性增长，以及服务贸易逆差小幅扩大至600亿美元。\n\n这里有一个容易被忽视的关键点：收入与转移项下的净流出从去年四季度的180亿美元骤降至40亿美元。这一项的波动通常与跨国企业利润汇回节奏有关，但一季度的收窄幅度超出历史季节性规律。如果这一趋势持续，意味着中国居民和企业在海外资产的收益回流正在加速，这对经常账户的支撑将是结构性的，而非一次性。\n\n报告的预测也印证了这一点：2026年全年经常账户顺差预计从2025年的3.7%GDP降至3.4%，但绝对值仍将维持在7510亿美元的历史高位。顺差收窄，但并未失速。\n\n![研报原图 2](assets/source_image_02.jpg)\n\n## 2. \n\n[... middle omitted ...]\n\n我们会第一时间分享更新解读，并围绕三个未解问题展开专题讨论。\n\n![](https://github.com/yt-feng/rpt_edit/blob/main/prompts/zsxq_img.jpg)\n\n<p style=\"color:#999999;font-size:12px;\">Personal reading notes and learning share only. Not investment advice.</p>\n\n[note.md]\n中国Q1国际收支：顺差收窄，但韧性还在\n\n顺差收窄，资本外流放缓\n\n刚刚出炉的Q1国际收支数据，信息量挺大。投行研报的解读，我帮你拆成几个关键点👇\n\n**1/ 经常账户：顺差从高位回落，但依然健康**\n- Q1经常账户顺差1840亿美元，占GDP 3.8%\n- 相比Q4 2025的4.5%有所下降（未经季调）\n- 货物贸易顺差季节性回落，同比基本持平\n- 服务贸易逆差小幅扩大，收入转移项流出减少\n\n整体来看，顺差虽然收窄，但绝对值依然不低。经季调后，Q1顺差占GDP 3.9%，Q4是4.3%。\n\n**2/ 资本金融账户：流出速度明显放缓**\n- 净直接投资（FDI）流出100亿美元（Q4还是流入60亿）\n- 证券投资净流出有所增加（详细数据6月底才出）\n- 净误差与遗漏项数据待公布\n\n资本外流压力在Q1有所缓解，这是个积极信号。\n\n**3/ 储备资产：外汇储备增加**\n- Q1储备资产增加480亿美元（Q4只增60亿）\n- 但官方外汇储备仅增70亿美元\n- 这意味着存在约410亿美元的估值损失（汇率、资产价格变动）\n\n实际储备积累比表面数据更强，估值因素掩盖了真实流入。\n\n**4/ 前瞻：2026年怎么看？*\n\n[... middle omitted ...]\n\nccount (including the net errors and omissions, with net FDI individually reported), and reserve assets flow. In Q1 2026, the current account surplus stood at US\\$184bn, or 3.8% of GDP (NSA ba\n\n[... middle omitted ...]\n\nthis information, in whole or in part, to train or finetune a machine learning or artificial intelligence system, or to provide or reproduce this information, in whole or in part, as a prompt or input to any such system."
+  },
+  {
+    "id": "R004",
+    "title": "经济活动的真相藏在能源和房地产的背离里",
+    "digest": "[wechat_article.md]\n# 经济活动的真相藏在能源和房地产的背离里\n\n一份跟踪到5月中旬的高频数据更新，往往比季度GDP更能揭示当下的真实状态。某外资投行最新发布的周度经济活动与政策追踪报告，覆盖了消费、出行、生产、投资、市场和政策四大维度，数据密集，信号交错。但如果我们不做摘要式的罗列，而是追问“这些数据合在一起到底在说什么”，一个核心判断会浮现出来：\n\n**当前中国经济最值得关注的，不是总量增速的快慢，而是两个结构性背离——能源成本冲击与房地产边际企稳之间的张力，以及消费信心修复与实物消费量不匹配之间的裂缝。**\n\n这份报告没有直接给出这个结论，但它的图表和数字，恰恰为这一判断提供了最新的高频证据。以下是我们从中提炼出的五个关键洞察。\n\n![研报原图 1](assets/source_image_01.jpg)\n\n## 1. 房地产市场的边际企稳正在发生，但驱动力仍需审视\n\n报告中最引人注目的信号来自房地产交易量。30城新房日均成交量在过去一周回升，且高于去年同期水平。16城二手房成交量也出现反弹，同样高于去年同期。从图表数据看，2026年5月的日均成交面积不仅高于2025年同期，甚至在某些时点接近2019年的水平。\n\n这意味着什么？在经历了长达数年的深度调整后，房地产市场可能正在进入一个“基数效应驱动下的边际企稳”阶段。去年的低基数使得同比数据改善，而政策端对保交楼和需求端的持续发力，也的确在部分城市产生了效果。\n\n但这里有两个问题报告没有完全展开回答。第一，成交量的回升是可持续的需求释放，还是积压需求的集中回补？从历史经验看，单周数据的反弹不足以确认趋势反转，尤其是考虑到去年同期的极低基数。第二，新房和二手房的分化仍在继续。二手房成交量反弹幅度更大，说明市场仍然在“以价换量”，卖房者通过降价换取流动性，而新房市场的回暖可能更多依赖于国企开发商和核心城市的供给推动。\n\n对于投\n\n[... middle omitted ...]\n\n期分享更多类似的深度解读，并针对群友关注的具体问题进行讨论。\n\n![](https://github.com/yt-feng/rpt_edit/blob/main/prompts/zsxq_img.jpg)\n\n<p style=\"color:#999999;font-size:12px;\">Personal reading notes and learning share only. Not investment advice.</p>\n\n[note.md]\n房地产回暖，但消费出行在降温\n\n地产回暖，出行降温\n\n5月高频数据出现明显分化\n\n投行研报最新周度追踪显示，5月中旬中国经济活动呈现“地产暖、出行冷”的格局，同时能源价格冲击的影响正在加深。\n\n**1/ 地产：新房和二手房都在回暖**\n- 30城新房成交面积上周回升，同比高于去年同期\n- 16城二手房成交面积同样反弹，也高于去年水平\n- 这是近期少有的积极信号，地产政策效果似乎在逐步显现\n\n**2/ 消费出行：出现明显降温**\n- 国内客运航班量上周大幅下降，低于去年同期\n- 航班取消率飙升，高于去年同期\n- 交通拥堵指数反而上升，说明短途出行增多、长途减少\n- 消费者信心指数（Morning Consult）升至2019年以来最高，但实际消费行为偏谨慎\n\n**3/ 汽车销售：整体走弱**\n- 4月新能源汽车销量小幅回升，但仍低于去年同期\n- 4月整体汽车销量下降，同样低于去年同期\n- 说明消费复苏的基础还不稳固\n\n**4/ 能源价格冲击：正在传导**\n- 5月11日国内汽柴油价格分别上调320元/吨和310元/吨\n- 4月原油进口价格环比大幅上涨至142（3月仅92）\n- 成品油出口价格同步飙升到148\n-\n\n[... middle omitted ...]\n\n311329b538385c9e55fb.jpg)\n\n<details>\n<summary>line</summary>\n\n| Month | 2019 (Thousand sqm) | 2025 (Thousand sqm) | 2026 (Thousand sqm) |\n|-------|---------------------|---------------------|-\n\n[... middle omitted ...]\n\nthis information, in whole or in part, to train or finetune a machine learning or artificial intelligence system, or to provide or reproduce this information, in whole or in part, as a prompt or input to any such system."
+  },
+  {
+    "id": "R005",
+    "title": "欧洲经济正在被重新定价，但市场低估了供给侧的滞后压力",
+    "digest": "[wechat_article.md]\n# 欧洲经济正在被重新定价，但市场低估了供给侧的滞后压力\n\n2026年的欧洲经济叙事，正在被一场地缘冲突重新定义。过去三个月，从天然气远期曲线到消费者信心，从PMI到通胀预期，几乎所有关键变量都在移动。但真正重要的，不是这些数字本身的变化，而是这些变化背后隐含的结构性判断：市场正在把这次冲击与2022年俄乌冲突进行对比，并得出了一个看似合理的结论——这次冲击更小、更可控。\n\n这份来自某外资投行的研报，通过其高频增长模型、金融条件指数和日度消费者信心追踪工具，提供了一个关键信号：当前的价格反应和预期调整，可能仍然低估了供给侧冲击的滞后效应。市场定价的“可控性”假设，正在面临来自能源价格传导、工资-价格螺旋、以及金融条件收紧三个方向的压力测试。\n\n![研报原图 1](assets/source_image_01.jpg)\n\n## 1. 天然气市场的定价逻辑已与2022年完全不同，但风险并未消失\n\n报告中最直观的对比来自天然气远期曲线。2022年3月，TTF天然气价格在冲突爆发当天飙升至230欧元/兆瓦时附近，远期曲线陡峭下行。而当前，现货价格约在50欧元/兆瓦时，远期曲线平坦，且与某外资投行的基线预测基本重合。\n\n这意味着市场目前认为：这次冲击对欧洲天然气供应的影响是有限的、短期的，不会重现2022年的供应危机。背后的逻辑是欧洲已经建立了更充足的LNG接收能力、储气库库存处于高位，以及需求端的结构性下降。\n\n但这里有一个容易被忽略的细节。报告显示，当前远期曲线虽然低于2022年峰值，但相比冲突爆发前的2月水平，实际上已经上移了约20欧元/兆瓦时。更重要的是，远期曲线的后端（2027-2028年合约）并未完全回落到冲突前水平。这意味着市场正在对“长期天然气价格中枢上移”进行渐进式定价，而不是一次性重估。\n\n对于欧洲制造业企业而言，这种缓慢但持续的成本抬升，比202\n\n[... middle omitted ...]\n\n假设如何被重新定价有更深入的兴趣，这可能是你需要的讨论场域。\n\n![](https://github.com/yt-feng/rpt_edit/blob/main/prompts/zsxq_img.jpg)\n\n<p style=\"color:#999999;font-size:12px;\">Personal reading notes and learning share only. Not investment advice.</p>\n\n[note.md]\n欧洲经济正被中东局势悄悄改写\n\n欧洲经济正在经历什么？\n\n最近中东局势对欧洲经济的影响，其实比大多数人想象的要复杂得多。某外资投行最新研报里，用高频数据把这件事拆得很清楚。\n\n**能源冲击，但比2022年温和**\n天然气期货价格虽然涨了，但跟2022年俄乌冲突时比，幅度小很多。当时TTF价格冲到230欧元/兆瓦时，现在大概在50左右。不过油价预期会更持久一些，研报模型显示能源价格对欧洲GDP的拖累约0.25个百分点。\n\n**消费者信心在摇摆**\n有意思的是，虽然4月欧元区消费者信心指数下降了0.9个标准差，但从高频数据看，并没有出现2022年那种断崖式下跌。Morning Consult的消费者信心指数目前稳定在85左右，而2022年最低跌到过45。说明大家虽然谨慎，但还没到恐慌的程度。\n\n**经济增长预期被下调**\n欧元区2026年GDP增速预期已经从年初的1.4%下调到0.5%。英国的情况稍好，从1.4%下调到1.05%。这里有个细节值得注意：英国在冲突前的经济数据其实好于预期，所以下调幅度相对小一些。\n\n**通胀压力在上升**\n这是最棘手的问题。欧元区2026年底的通胀预期从1.5%上调到3.5%，英国\n\n[... middle omitted ...]\n\nent Shock is Seen as More Contained for European Natural Gas Than in 2022; Oil Shock Expected to Be More Persistent   \n![](images/4c3c849af029803fbbe211ad259b29eb28b8fe44ca8e9d15155cc0ed5719a8\n\n[... middle omitted ...]\n\nthis information, in whole or in part, to train or finetune a machine learning or artificial intelligence system, or to provide or reproduce this information, in whole or in part, as a prompt or input to any such system."
+  },
+  {
+    "id": "R006",
+    "title": "市场真正低估的不是通胀读数，而是能源价格传导的“不对称性”",
+    "digest": "[wechat_article.md]\n# 市场真正低估的不是通胀读数，而是能源价格传导的“不对称性”\n\n过去两年，市场对欧元区通胀的关注焦点逐渐从“会不会降”转向“能降到哪”。多数投资者已经接受了核心通胀将在2.5%附近黏住的判断，并据此定价了欧央行两次加息。但一份来自投行研报的最新实证研究揭示了一个更值得警惕的结构性特征：能源价格向核心通胀的传导并非对称的——价格上涨时传导力度远大于价格下跌时的传导力度。这种“火箭与羽毛”模式意味着，即使能源价格从当前水平回落，其对核心通胀的缓解作用可能远低于市场预期；而一旦能源价格再次上行，通胀压力将比模型预测的更为猛烈。\n\n这份报告的核心判断，不是通胀会更高或更低，而是市场对通胀风险分布的理解存在系统性偏差。多数情景分析假设能源价格涨跌对核心通胀的影响是对称的，但数据显示，这个假设不成立。如果不对称传导是欧元区经济的结构性特征，那么当前的通胀预测和政策定价都需要重新校准——不仅是水平上的修正，更是风险方向上的一次重估。\n\n![研报原图 1](assets/source_image_01.jpg)\n\n## 1. 能源涨价对核心通胀的传导效率超过100%，而降价时只有不到60%\n\n不对称传导的第一个证据来自微观企业行为。研报引用了一项对法国制造业的研究：当能源价格上涨时，企业将成本压力转嫁到最终售价的比率超过100%；而当能源价格下跌时，这一比率仅为58%。类似的结果在意大利企业数据中也得到验证——BIS的研究显示，企业对投入成本上升的定价响应远强于对成本下降的响应。\n\n这一差异背后有三个机制在同时起作用。第一，企业面临破产约束时，成本上升必须通过提价来保护利润率，而成本下降时，拥有市场势力的企业更倾向于维持价格以扩大利润空间。第二，菜单成本的存在使得企业在正通胀环境下，调整价格向下比向上更不划算。第三，名义工资和价格的下行黏性意味着，成本下降带来的节省难以通\n\n[... middle omitted ...]\n\n政策含义有不同看法，也欢迎在群内提出，我们期待与你深入交流。\n\n![](https://github.com/yt-feng/rpt_edit/blob/main/prompts/zsxq_img.jpg)\n\n<p style=\"color:#999999;font-size:12px;\">Personal reading notes and learning share only. Not investment advice.</p>\n\n[note.md]\n能源涨如火箭，跌如羽毛\n\n能源涨跌，影响不均\n\n能源价格“火箭与羽毛”式传导，正在悄悄推高核心通胀。\n\n1/ 什么是“火箭与羽毛”？\n能源涨，核心通胀跟得紧；能源跌，核心通胀却松得慢。研报用1999-2025年欧元区数据证实：正能源价格冲击对核心通胀的传导显著，而负冲击的影响微小且不显著。\n\n2/ 为什么会有这种不对称？\n- 企业保护利润：成本涨时被迫提价，成本跌时却倾向于保留利润空间\n- 菜单成本：频繁调价成本高，企业更愿意吸收小幅成本下降\n- 工资刚性：涨工资容易，降工资几乎不可能\n\n3/ 数据怎么说？\n- 法国制造业研究：正能源冲击传导率超100%，负冲击仅58%\n- 意大利企业数据：成本涨时定价反应强烈，成本跌时几乎无反应\n- 欧盟企业调查：能源密集型企业更易在涨价时调整售价，降价时却不做调整\n\n4/ 对未来的启示\n- 核心通胀存在上行风险：能源若进一步上涨，传导效果更强\n- 能源若下跌，对核心通胀的缓解作用有限\n- 这种不对称性可能使通胀更加顽固\n\n结合近期能源市场波动，这个机制值得持续关注。欢迎一起讨论能源价格与通胀的关系。\n\n#学习笔记\n\n[source_mineru.md]\n# EUROPEA\n\n[... middle omitted ...]\n\nvely when costs rise than when they fall (given the possibility of bankruptcy), the “menu” cost of lowering prices tends to be higher with positive trend inflation, and wages and prices are st\n\n[... middle omitted ...]\n\nthis information, in whole or in part, to train or finetune a machine learning or artificial intelligence system, or to provide or reproduce this information, in whole or in part, as a prompt or input to any such system."
+  },
+  {
+    "id": "R007",
+    "title": "市场真正低估的不是通胀，而是通胀风险溢价的重定价",
+    "digest": "[wechat_article.md]\n# 市场真正低估的不是通胀，而是通胀风险溢价的重定价\n\n过去几周，全球利率市场经历了一轮罕见的同步抛售。美债30年期收益率再次突破5%，英、日、德长端收益率同步上行约50个基点。表面看，这轮抛售的导火索是地缘冲突和能源供给冲击。但某外资投行最新发布的全球利率策略报告提出了一个更值得深思的判断：市场正在经历的不只是通胀预期的上修，而是通胀风险溢价在整个收益率曲线上的系统性重定价。这个变化，将从根本上改变债券作为组合对冲工具的有效性，并重新定义“合理收益率水平”的坐标。\n\n报告的核心在于一个被多数投资者忽视的区分：通胀预期上升与通胀风险溢价上升，对资产定价的含义截然不同。前者可以被央行政策应对所消化，后者则意味着市场开始为“通胀路径的不确定性”定价——这种不确定性无法被单一的加息或降息所消除。当这种风险溢价从短端蔓延至长端，整个固定收益资产的定价逻辑就需要重新审视。\n\n![研报原图 1](assets/source_image_01.jpg)\n\n## 1. 全球长端收益率的同步上行，暴露的不是通胀本身，而是通胀路径的不可预测性\n\n报告揭示了一个关键现象：美债30年期收益率突破5%并非孤立事件，而是全球长端利率同步上行的一部分。与2025年三季度美债30年期收益率上一次突破5%时相比，英国、日本和德国30年期收益率的平均值已上升约50个基点。更重要的是，报告通过其全球溢出效应模型估算，今年以来美债的抛售压力，很大程度上来自英国和日本的传导。\n\n这意味着什么？意味着市场对通胀的担忧已经从“美国故事”演变为“全球故事”。每个经济体面临的通胀驱动因素不同——美国是AI投资带来的成本推升，英国是财政风险溢价，日本是货币政策正常化的不确定性——但结果是一致的：投资者不再确信任何主要经济体的通胀能够稳定回归目标水平。\n\n这种全球性的“通胀路径不确定性”，正在被系统性地定价进长\n\n[... middle omitted ...]\n\n整图表数据，深入探讨如何在当前环境下构建更具韧性的久期策略。\n\n![](https://github.com/yt-feng/rpt_edit/blob/main/prompts/zsxq_img.jpg)\n\n<p style=\"color:#999999;font-size:12px;\">Personal reading notes and learning share only. Not investment advice.</p>\n\n[note.md]\n全球利率市场，耐心正在被消耗\n\n📉美债还能避险吗？\n\n最近全球利率市场有点乱，核心逻辑是：供给冲击+通胀预期抬头，让美债作为避险资产的价值变得复杂。\n\n1️⃣ 美债的“避险功能”在减弱\n过去一个月，10年期美债收益率和股市回报的相关性，已经跑到近几十年最负的水平。简单说：股市跌，债市没怎么涨；股市涨，债市反而跌。这意味着传统“股债对冲”策略，现在有点失灵。\n\n原因很直接：伊朗冲突带来的供给不确定性，让通胀风险重新被市场定价。之前市场没太当回事，现在开始认真了。\n\n2️⃣ 美债收益率突破关键位置\n10年期美债突破4.5%，30年期突破5.0%。但这不是美国自己的事——英国、日本、德国的长期收益率也在同步走高。某外资投行测算，今年美债的抛售，很大一部分是来自英国和日本的“传染”。\n\n简单说：全球利率都在往上走，美债想独善其身很难。\n\n3️⃣ 通胀预期终于跟上油价\n之前通胀远期定价一直落后油价，现在终于补涨了。但问题是：当前供给冲击导致的通胀预期，真的能持续吗？研报的观点是：劳动力市场在降温，持续高通胀的理由并不强。但市场情绪偏乐观，加上供给端的不确定性，通胀风险溢价确实需要更高。\n\n另外，AI基建的成本也开始在P\n\n[... middle omitted ...]\n\nto see value to structures that limit downside in further selloffs. European front-end rates remain under pressure as no news on Strait of Hormuz flows weakens the case for longs. While we con\n\n[... middle omitted ...]\n\nthis information, in whole or in part, to train or finetune a machine learning or artificial intelligence system, or to provide or reproduce this information, in whole or in part, as a prompt or input to any such system."
+  },
+  {
+    "id": "R008",
+    "title": "市场真正低估的不是美元强弱，而是贸易条件正在重塑全球汇率的定价锚",
+    "digest": "[wechat_article.md]\n# 市场真正低估的不是美元强弱，而是贸易条件正在重塑全球汇率的定价锚\n\n过去几个月，美元指数几乎原地踏步。但如果只看这个数字，你会错过水面下正在发生的结构性变化。一份来自某外资投行外汇策略团队的最新报告，提供了一个值得认真审视的分析框架：全球汇率市场的核心驱动力，正在从传统的利差和风险偏好，转向一个更底层、更持久的变量——贸易条件。\n\n这不是一个短期的交易主题。报告明确指出，两股力量正在同时冲击全球贸易条件：能源供给冲击和AI驱动的需求爆发。这两股力量对增长的影响方向相反，但在通胀层面却相互强化。最终结果是什么？全球增长预期自3月以来基本稳定，但通胀预期却在持续上移。这个组合，恰恰是美元获得支撑的宏观背景。\n\n更重要的是，报告揭示了一个被广泛忽视的事实：美元指数的相对平静，掩盖了不同货币之间巨大的分化。这种分化不是随机的，而是有清晰的逻辑可循——那些更依赖能源进口、且缺乏高技术出口对冲的经济体，其货币正在承受不成比例的压力。而那些同时拥有商品和周期性敞口的货币，反而在分化中受益。\n\n以下是我们从这份报告中提炼出的五个核心洞察，以及一个报告尚未完全回答的关键问题。\n\n![研报原图 1](assets/source_image_01.jpg)\n\n## 1. 能源冲击与AI需求正在形成双重通胀压力，这为美元提供了新的支撑逻辑\n\n报告最值得关注的判断，不是美元会涨还是会跌，而是驱动美元的逻辑正在切换。过去几个月，美元之所以在区间内震荡，是因为它被两股力量拉扯：一边是周期性、商品货币的上涨，另一边是更严格的汇率管理。但这种平衡正在被打破。\n\n真正让美元重获动能的，是能源冲击和AI需求这两大力量在通胀层面的共振。报告的经济学家团队分析指出，AI繁荣是全球增长仅温和放缓的原因之一，但与此同时，能源流动的中断却在持续推高通胀。这两股力量对增长的影响相互对冲，但对通胀的影响却\n\n[... middle omitted ...]\n\n围绕这些未解问题，结合更多数据和场景分析，展开进一步的推演。\n\n![](https://github.com/yt-feng/rpt_edit/blob/main/prompts/zsxq_img.jpg)\n\n<p style=\"color:#999999;font-size:12px;\">Personal reading notes and learning share only. Not investment advice.</p>\n\n[note.md]\n美元暗流涌动，两大冲击正在重塑汇市\n\n**暗流下的美元**\n\n最近美元指数看起来波澜不惊，但水面下的变化很值得关注🌊\n\n某外资投行最新研报指出，当前有两股力量在同时作用——**能源冲击**和**AI驱动的需求**。\n\n这两大因素对经济增长的影响是反向的（AI热潮抵消了部分能源冲击对经济的拖累），但在通胀方面却是相互强化的。\n\n结果就是：全球增长预期自3月中旬以来基本稳定，而通胀预期却在持续走高📈\n\n这就解释了为什么上周美国通胀数据超预期后，美元反而走强——因为全球债券收益率被推高了。\n\n**英镑：压力正在汇集**\n\n英国地方选举后，政治不确定性上升，英镑表现疲软。\n\n研报用了一个模型来测算英镑的“政治溢价”，发现目前英镑的折价（约1个百分点）相比去年经常出现的2%溢价，还有不小的空间。\n\n更关键的是，能源冲击已经侵蚀了英国财政空间，而能源期货价格还在走高📊\n\n这对英镑是更持久的风险。之前支撑英镑的两个因素——全球风险情绪反弹和跨境并购流入——可能难以持续。\n\n**巴西雷亚尔：噪音中的滑落**\n\n巴西雷亚尔最近表现不佳，但研报发现了一个有趣的现象：\n\n雷亚尔今年以来的升值，大部分是由**全球因素**驱动的（巴西\n\n[... middle omitted ...]\n\n the ToT bullet below). Our economists have laid out how these factors have opposing effects on growth—we think the AI boom is one reason why global growth has slowed only moderately so far de\n\n[... middle omitted ...]\n\nthis information, in whole or in part, to train or finetune a machine learning or artificial intelligence system, or to provide or reproduce this information, in whole or in part, as a prompt or input to any such system."
+  },
+  {
+    "id": "R009",
+    "title": "市场真正定价的不是复苏，而是稀缺的延续",
+    "digest": "[wechat_article.md]\n# 市场真正定价的不是复苏，而是稀缺的延续\n\n过去数周，全球资产价格经历了一轮显著的反弹。美国股市、高息货币、新兴市场以及人工智能相关板块，纷纷回到甚至超越了地缘冲突前的水平。许多投资者将此解读为市场对“风险消退”和“增长复苏”的投票。\n\n然而，某外资投行最新发布的全球市场展望报告揭示了一个更值得推敲的判断：这轮反弹的驱动力，并非对经济周期拐点的确信，而是对“短缺”的再定价。无论是能源供应链的中断，还是人工智能基础设施的供给瓶颈，资本正在追逐的，是那些供给端被压缩、而需求端依然坚挺的领域。\n\n理解这个核心差异，比判断市场短期涨跌重要得多。因为它决定了当前资产价格的脆弱性来源，以及未来风险暴露的方向。当市场从“定价尾部风险消失”转向“定价短缺延续”，其隐含的假设是：供给侧的制约不会快速解除，而需求侧的增长韧性足以支撑更高的价格和估值。这两个假设，任何一个出现松动，都可能引发显著的资产重定价。\n\n这份报告的价值，不仅在于描述了市场正在发生什么，更在于揭示了当前定价逻辑中尚未被充分讨论的结构性矛盾。以下是我们从中提炼出的五个关键层次。\n\n![研报原图 1](assets/source_image_01.jpg)\n\n## 1. 市场已经消化了“最坏情况不再发生”，但并未定价“和平协议何时兑现”\n\n伊朗局势的缓和，以及市场对极端尾部风险（如霍尔木兹海峡长期关闭）概率的调降，是过去一个月风险资产反弹最直接的催化剂。但报告指出了一个容易被忽略的循环：市场之所以能够表现得如此“宽容”，恰恰是因为它假设了最坏的情况已被避免。然而，这个假设本身是脆弱的。\n\n真正的问题在于，市场在定价“风险溢价压缩”时，已经隐含了“和平协议即将达成且能源供应将快速恢复”的乐观情景。但报告中的数据模型显示，即便在相对温和的情景下（假设6月底能源流动完全恢复），油价在2026年下半年仍将维持在每桶9\n\n[... middle omitted ...]\n\n摇时，提前准备好的框架和讨论网络，是应对不确定性的最佳资产。\n\n![](https://github.com/yt-feng/rpt_edit/blob/main/prompts/zsxq_img.jpg)\n\n<p style=\"color:#999999;font-size:12px;\">Personal reading notes and learning share only. Not investment advice.</p>\n\n[note.md]\n全球市场正在经历一场“短缺驱动”的行情反弹\n\n市场在等什么\n\n伊朗局势缓和降低了尾部风险，市场开始抢跑，压缩了各类资产的风险溢价。这种分布收窄往往伴随着剧烈上涨，这次也不例外。尽管油价和利率仍偏高，但美股、商品货币、新兴市场都已大幅反弹，AI热潮更是把相关资产推到了周期新高。\n\n共同主线很清晰：短缺——无论是大宗商品还是AI供应链——正在驱动资本流动。\n\n1/ 中东风险仍是最大隐忧\n反弹之后，风险分布更平衡了。最明显的下行威胁还是中东局势重新升级，或霍尔木兹海峡长期关闭，推高油价、利率，压低增长甚至引发衰退。研报认为，市场对好消息的消化已经比较充分，但对更坏情景的定价可能不足。一个值得注意的循环：市场需要一定的担忧来倒逼各方达成协议恢复油流。如果没有明确的和平协议和海峡重新开放，能源短缺会越来越明显，风险会重新暴露。\n\n2/ 宏观乐观情绪已被充分定价\n从股债联动估算，市场目前定价的美国增长已达2.5%，可能已经超越了短期基本面。虽然科技和大宗商品强势可能夸大了这一读数，但市场显然在跳过短期疲软，直接看2027年的增长。研报认为，伊朗问题解决后，政策有放松空间，但前提是通胀压力消退。目前收益率和股市同步上涨，市\n\n[... middle omitted ...]\n\nThe common element is that shortages—in commodities and the AI supply chain—are driving capital flows. After a sharp recovery, the distribution of risks is more balanced. The most obvious down\n\n[... middle omitted ...]\n\nthis information, in whole or in part, to train or finetune a machine learning or artificial intelligence system, or to provide or reproduce this information, in whole or in part, as a prompt or input to any such system."
+  },
+  {
+    "id": "R010",
+    "title": "全球钢铁市场的真正拐点，不在需求侧，而在供给纪律的兑现",
+    "digest": "[wechat_article.md]\n# 全球钢铁市场的真正拐点，不在需求侧，而在供给纪律的兑现\n\n过去几年，全球钢铁行业一直在一个矛盾中徘徊：需求端信号时好时坏，但价格却始终难以突破一个令人信服的区间。市场参与者习惯于把目光投向基建刺激、汽车产销、房地产开工，试图从下游需求中寻找价格的方向。然而，某外资投行最新发布的5月钢铁市场更新报告，提供了一个值得重新审视的视角。\n\n2026年4月的数据显示，全球扁平材和长材价格正在经历一轮区域分化显著的上涨。巴西热轧卷板价格环比上涨10.3%，年初至今累计涨幅超过20%，在全球样本中表现最强。美国热轧卷板价格环比上涨2.4%，年初至今涨幅也达到14.7%。即便是市场普遍担忧的中国，热轧卷板价格环比也上涨了2.9%，年初至今上涨7.4%。\n\n这些数字本身并不令人震惊。真正值得关注的是，这些价格上涨发生的背景，是全球粗钢产量仍在同比收缩——中国5月前两周产量同比下降3.2%，欧洲3月产量同比下降3%，拉丁美洲同比下降3%。价格上涨叠加产量收缩，意味着市场正在定价一个比需求复苏更重要的变量：供给纪律的兑现。\n\n这份报告真正有价值的洞察，不是“价格涨了”，而是“在产量没有扩张的情况下价格涨了”。对于钢铁行业投资者和产业决策者而言，理解这一结构性变化，远比跟踪月度需求数据更为关键。\n\n![研报原图 1](assets/source_image_01.jpg)\n\n## 1. 区域价格分化的背后，是产能利用率的结构性差异\n\n如果只看全球粗钢产量总量，很容易得出一个笼统的结论：钢铁行业仍在调整期。但这份报告揭示了一个更精细的图景：不同区域的产能利用率差异，才是解释价格分化的核心变量。\n\n截至2026年3月，全球有效产能利用率约为90%，其中中国为94%，而除中国以外的地区达到99%。在除中国外的区域中，印度产能利用率持续维持在100%的满产状态，美国为90%，拉丁美洲在\n\n[... middle omitted ...]\n\n答案，欢迎加入我们，一起从数据中寻找线索，在讨论中完善判断。\n\n![](https://github.com/yt-feng/rpt_edit/blob/main/prompts/zsxq_img.jpg)\n\n<p style=\"color:#999999;font-size:12px;\">Personal reading notes and learning share only. Not investment advice.</p>\n\n[note.md]\n全球钢价正在悄悄爬坡 📈\n\n全球钢价，正在爬坡\n\n最近一个月的区域涨幅盘点\n\n---\n\n最近翻到一份全球钢铁研报，发现一个有意思的趋势：钢价正在悄悄回暖，而且不同地区的涨幅差异挺大。\n\n**1/ 热轧卷板（HRC）谁在领涨？**\n4月份几乎全球都在涨，但巴西最猛，环比涨了10%+。日本紧随其后（+6.5%），中国（+2.9%）和美国（+2.4%）温和上涨，欧盟基本没动。\n\n从年初算起，巴西累计涨了21%，美国涨了15%，其余地区涨幅在6%-13%之间。进入5月初，除了欧盟和黑海地区持平，其他区域还在继续爬坡。\n\n**2/ 螺纹钢（Rebar）也在跟涨**\n4月巴西再次领涨（环比+12%），欧盟（+6.9%）、黑海（+6.1%）、日本（+4.5%）和中国（+2.3%）紧随其后。美国是唯一持平的市场。\n\n年初至今，巴西螺纹钢涨了13%，欧盟涨了10.6%，中国涨了7.8%。5月初，中国/欧盟/日本/巴西继续上涨2%-12%。\n\n**3/ 产量端：中国在收缩，欧盟在恢复**\n中国5月上旬粗钢产量同比降了3.2%，研报里提到“去内卷”和长期产能削减计划还在推进，但2026年的执行力度可能会延迟。\n\n欧盟3月产量环比大\n\n[... middle omitted ...]\n\ncreases from 6%-13%. From early April to early May, HRC prices rose for all regions except for the EU and the Black Sea (both flattish), up by +2%/+3%/+7%/+10% in the US/China/Japan/Brazil.   \n\n[... middle omitted ...]\n\nthis information, in whole or in part, to train or finetune a machine learning or artificial intelligence system, or to provide or reproduce this information, in whole or in part, as a prompt or input to any such system."
+  },
+  {
+    "id": "R011",
+    "title": "印度市场的真正分歧不在涨跌，而在“谁先扛不住”和“谁在悄悄换仓”",
+    "digest": "[wechat_article.md]\n# 印度市场的真正分歧不在涨跌，而在“谁先扛不住”和“谁在悄悄换仓”\n\n5月中旬，某外资投行策略团队在孟买与一批印度本土机构投资者进行了为期两天的交流。回来后，他们写了一份反馈纪要，标题是“Cautious Near-Term, Constructive on Select Alpha”。翻译成市场语言，就是：短期看不清，但选股的机会正在浮现。\n\n这份纪要透露出的信号，远比表面上的“谨慎”二字复杂。它揭示了当前印度市场中一个正在被定价但尚未被充分讨论的结构性张力：本土资金与外资的预期正在脱钩，而真正决定下一阶段回报的，不是谁更乐观，而是谁能更准确地判断“压力会先从哪里释放”。\n\n**这份报告最值得看的判断不是印度市场会不会跌，而是：当前市场正在经历一场由宏观冲击驱动的、但最终会由微观结构决定的资金再分配。** 外资在撤，本土资金在接，但接盘的逻辑和定价权正在发生转移。这轮调整的终点，不是估值见底，而是新的主导资金力量完成建仓。\n\n![研报原图 1](assets/source_image_01.jpg)\n\n## 1. 市场最焦虑的不是油价，而是“不知道油价会高多久”\n\n与直觉相反，印度本土机构投资者对当前宏观风险的认知并不模糊，甚至高度一致：伊朗局势推高油价，印度作为原油净进口国，经济增长和企业盈利必然承压。真正让他们分歧的，不是方向，是持续时间和深度。\n\n报告显示，部分投资者认为一旦地缘冲突缓和，油价回落将直接成为印度股市的催化剂；但也有投资者担忧，即使冲突结束，大宗商品价格的中枢可能已经抬升，这将持续侵蚀下游企业的利润率。这种分歧的实质，是对“供给冲击的粘性”预期不同。\n\n从历史经验来看，某外资投行援引的数据表明，能源供给冲击发生后，印度市场盈利在12个月内被下调6%-13%，中位数为7%。当前市场已经部分反映了这种下调预期，但关键在于：**如果油价在更\n\n[... middle omitted ...]\n\n微信群里继续讨论，我们也会在群内分享更详细的拆解和后续跟踪。\n\n![](https://github.com/yt-feng/rpt_edit/blob/main/prompts/zsxq_img.jpg)\n\n<p style=\"color:#999999;font-size:12px;\">Personal reading notes and learning share only. Not investment advice.</p>\n\n[note.md]\n印度机构投资者最近在想什么？🧐\n\n📌近忧远虑并存\n\n最近和印度本土机构投资者聊了一圈，发现大家的情绪还挺分裂的👇\n\n1️⃣ 半导体周期见顶了吗？\n这是被问最多的问题。很多资金已经在考虑把钱往海外挪了。\n但某外资投行认为，DRAM和NAND的供需缺口还在扩大，加上云服务商的大规模采购，以及存储厂商转向3-5年长协模式，这波利润高企的周期可能比想象中更持久。\n\n2️⃣ 伊朗局势是最大宏观变量\n油价上行风险明显。历史上能源冲击后，印度企业盈利会在12个月内被下调6%-13%（中位数7%）。\n虽然部分投资者期待政府通过财政刺激来对冲，但投行判断：油价会更高更久，近期盈利下行压力不小。\n\n3️⃣ 外资流出vs内资流入\n外资短期内不太可能大举回流——卢比偏弱，印度相比其他新兴市场吸引力下降。\n不过，印度本土资金依然强劲，家庭储蓄向金融资产转移的结构性趋势没有改变。\n\n4️⃣ 选股窗口打开了\n估值回调后，机构开始聚焦：能源安全、数据中心设备、受益于卢比贬值的出口商、中小盘股。\n对IT板块的AI冲击，多数人愿意看短期波动，相信最终会参与AI价值链。\n\n💡几个值得关注的信号：\n- 存储芯片供需缺口持续到2027年\n- AI代理\n\n[... middle omitted ...]\n\nD relative to strong demand growth driven by hyperscaler investment, and the pivot by memory producers toward long-term 3-5 year agreements supports expectations of higher-for-longer profitabi\n\n[... middle omitted ...]\n\nthis information, in whole or in part, to train or finetune a machine learning or artificial intelligence system, or to provide or reproduce this information, in whole or in part, as a prompt or input to any such system."
+  },
+  {
+    "id": "R012",
+    "title": "市场尚未充分定价的，是央行购金正在进入一个“不可见”的新阶段",
+    "digest": "[wechat_article.md]\n# 市场尚未充分定价的，是央行购金正在进入一个“不可见”的新阶段\n\n黄金市场的核心叙事正在发生一次微妙但关键的转移。过去两年，全球央行大规模购金是支撑金价最坚实的逻辑之一，市场对此已有充分认知。但某外资投行最新发布的研报揭示了一个更值得关注的信号：此前用于衡量央行购金量的主流模型，自2025年8月以来已经开始系统性低估真实流量。这不是一个统计误差，而是意味着相当一部分主权购金正在脱离传统的可观测渠道，进入一个“不可见”的轨道。市场若仍沿用旧有的观测框架来定价黄金，很可能低估了结构性需求的实际强度。\n\n这份报告的核心判断并非简单上调购金预测，而是提出了一个更具前瞻性的问题：当央行购金的透明度下降，市场该如何重新建立定价锚点？这背后隐含的，是黄金定价权正在从显性的交易数据向隐性的主权行为转移。\n\n![研报原图 1](assets/source_image_01.jpg)\n\n## 1. 伦敦金库的“出”与英国海关的“记”之间，出现了系统性裂口\n\n理解央行购金的真实规模，关键在于追踪伦敦的实物黄金流向。伦敦是全球最大的场外黄金交易中心，而英国本土几乎不产金，也不具备生产伦敦标准金条的认证精炼厂。因此，所有在伦敦交易的金条都必须先进口，而后要么留在伦敦金库，要么被出口。央行购金，最终表现为黄金从伦敦金库流向主权国家的海外金库。\n\n该投行此前构建的央行购金“即时预测模型”，正是基于这一逻辑：将英国对瑞士以外的金条出口，加上对瑞士出口中可识别为央行需求的部分，作为央行购金的代理变量。这个模型长期以来与伦敦金库的净流出数据高度吻合，验证了其有效性。\n\n然而，自2025年8月起，一个系统性的偏差开始出现。伦敦金库数据显示黄金正在持续流出，但英国海关的出口数据却不再能完全反映这些流出的规模。两者之间的缺口正在逐月累积，到2026年3月，累计的“失踪”主权黄金流量已达到约240吨\n\n[... middle omitted ...]\n\n证数据，进一步拆解主权购金行为演变对黄金定价框架的长期影响。\n\n![](https://github.com/yt-feng/rpt_edit/blob/main/prompts/zsxq_img.jpg)\n\n<p style=\"color:#999999;font-size:12px;\">Personal reading notes and learning share only. Not investment advice.</p>\n\n[note.md]\n央行买金，比数据看起来更猛\n\n央行黄金购买量，超预期\n\n实际购买量，可能比官方数据更高\n\n---\n\n最近看到一份外资投行的黄金研报，把央行购金逻辑拆得很清楚，分享几个重点。\n\n1️⃣ 官方数据可能低估了真实购金量\n\n研报发现，从2025年8月开始，伦敦金库的黄金流出量，和英国海关统计的黄金出口数据之间，出现了一个持续扩大的缺口。\n\n到2026年5月，这个缺口已经累计达到约250吨。研报推测，这部分“消失”的黄金，很可能是没有被完整记录的主权购金行为。\n\n2️⃣ 为什么用英国数据来追踪央行购金？\n\n伦敦是全球最大的场外黄金交易市场，而英国本土并不产金，所有在伦敦交易的黄金都必须进口。黄金进入英国后，要么留在伦敦金库（用于ETF、央行储备等），要么被出口。\n\n出口主要有两个去向：瑞士（重新熔铸成小规格金条，供零售需求），或者直接运往各国央行金库。\n\n所以，研报用“英国对非瑞士地区的金条出口 + 运往瑞士但被认定为央行需求的部分”来估算央行购金量，逻辑上很合理。\n\n3️⃣ 修正后的央行购金节奏\n\n修正前，研报的12个月滚动均线模型显示央行月均购金约29吨；修正后，这个数字上调到了约50吨/月。\n\n研报预测，2026\n\n[... middle omitted ...]\n\nrest in gold, and recent geopolitical developments are likely to reinforce diversification over time — both for central banks and private investors. As a result, we remain constructive on gold\n\n[... middle omitted ...]\n\nthis information, in whole or in part, to train or finetune a machine learning or artificial intelligence system, or to provide or reproduce this information, in whole or in part, as a prompt or input to any such system."
+  },
+  {
+    "id": "R013",
+    "title": "市场正在为“通胀韧性”重新定价资产，而非衰退风险",
+    "digest": "[wechat_article.md]\n# 市场正在为“通胀韧性”重新定价资产，而非衰退风险\n\n过去一周的全球资金流向数据，揭示了一个与主流叙事微妙不同的信号。截至5月13日当周，全球股票基金净流入200亿美元，显著高于前一周的20亿美元。固定收益基金净流入285亿美元，货币市场基金资产增加60亿美元。从表面看，这是一幅风险偏好全面修复的图景——但资金在行业和区域间的结构性分化，远比总量数据更有说服力。\n\n这份报告最值得关注的核心判断是：当前资金流动的主导逻辑，并非对经济衰退担忧的消退，而是对“通胀中枢上移”这一结构性事实的逐步定价。能源基金在经历了前一周40亿美元的强劲流入后，本周转为净流出5亿美元，与大宗商品指数走势高度同步。技术基金和基础设施基金则持续获得净流入。这种轮动暗示，市场正在从“通胀交易”的短期博弈，切换到“通胀韧性下的结构性受益者”的长期布局。\n\n对于产业决策者和高净值投资者而言，理解这一轮资金流动的本质，比追踪任何单一资产价格波动都更重要。它意味着过去三年形成的投资框架——即通胀要么是暂时的，要么会引发衰退——正在被一种新的共识取代：通胀可能比预期更具粘性，但经济增长仍具韧性。这种“金发姑娘”式的组合，正在重塑全球资本的配置逻辑。\n\n![研报原图 1](assets/source_image_01.jpg)\n\n## 1. 资金流向的行业分化表明，市场正在筛选“通胀韧性”的真正受益者\n\n行业层面的资金流向数据，是理解当前市场定价逻辑的核心窗口。截至5月13日当周，技术基金和基础设施基金录得全行业最大的净流入，而消费品基金则遭遇最大净流出。能源基金在经历了前一周的强劲流入后，本周转为净流出5亿美元。\n\n这一轮动模式揭示了一个关键洞察：市场不再简单地将“通胀”视为一个需要对冲的风险，而是开始区分哪些行业能够在这种环境下实现利润扩张，哪些行业将被成本上升侵蚀。技术行业受益于企业持续的数\n\n[... middle omitted ...]\n\n群，继续讨论这些未解问题，获取完整报告的深度解读与原始图表。\n\n![](https://github.com/yt-feng/rpt_edit/blob/main/prompts/zsxq_img.jpg)\n\n<p style=\"color:#999999;font-size:12px;\">Personal reading notes and learning share only. Not investment advice.</p>\n\n[note.md]\n能源基金上周大逆转，资金转向何方\n\n资金流向大反转\n\n全球资金一周复盘：能源基金失宠，科技基建受追捧\n\n上周全球资金流向出现明显分化。根据投行研报数据，截至5月13日当周，全球股票基金净流入约200亿美元，远超前一周的20亿美元。但板块内部，资金正在悄悄调仓。\n\n1️⃣ 能源基金遭获利了结\n能源板块基金在连续大额净流入后，上周出现约5亿美元净流出（前一周净流入约40亿美元）。有意思的是，这个走势与标普GS商品指数（S&P GSCI）基本同步——说明资金在跟着大宗商品价格做波段，并非长期看好。\n\n2️⃣ 科技+基建成新宠\n科技板块和基础设施板块基金是上周行业基金中净流入最多的。消费板块则遭遇最大净流出。从年初至今的累计数据看，工业、能源、基建板块仍是资金最爱，消费板块垫底。\n\n3️⃣ 发达市场 vs 新兴市场\n美国、日本股票基金需求强劲，带动发达市场整体净流入。但新兴市场内部分化明显：全球新兴市场基准基金、中国A股基金、韩国基金都出现净流出。其中中国A股基金最近几周净流出规模最大（研报未给出具体原因，这里推测可能与短期获利了结或情绪波动有关）。\n\n4️⃣ 债券基金持续吸金\n全球债券基金净流入约285亿美元，远超\n\n[... middle omitted ...]\n\nel, consumer goods funds saw the largest net outflows. Technology and infrastructure sector funds saw the largest net inflows across sectors. Energy funds saw outflows after strong inflows in \n\n[... middle omitted ...]\n\nthis information, in whole or in part, to train or finetune a machine learning or artificial intelligence system, or to provide or reproduce this information, in whole or in part, as a prompt or input to any such system."
+  },
+  {
+    "id": "R014",
+    "title": "印度贸易逆差扩大的真正信号：出口韧性背后，是结构性再定价的开始",
+    "digest": "[wechat_article.md]\n# 印度贸易逆差扩大的真正信号：出口韧性背后，是结构性再定价的开始\n\n印度4月贸易逆差扩大至284亿美元，远超市场预期的260亿美元。市场的第一反应是担忧——经常账户赤字压力加大，卢比承压，资本外流风险上升。但这份来自某外资投行的研报揭示了一个更值得关注的判断：真正超预期的不是逆差规模本身，而是出口结构的急剧变化。\n\n4月印度出口同比增长13.8%，从3月的-7.4%大幅反弹，远超市场预期的-4.4%。这不是简单的基数效应或价格扰动。电子产品的出口增速达到40.3%，创下近一年来的新高。与此同时，传统的纺织品和珠宝出口仍在收缩，对美国和欧洲的出口也在放缓。\n\n这意味着什么？印度正在经历一场“出口替代”——不是总量的扩张，而是结构的重塑。出口增长的动力正在从传统劳动密集型产品转向电子制造，从对欧美市场的依赖转向亚洲内部贸易。这是印度制造业政策红利的初步兑现，还是全球供应链重构中的一次性红利？答案将决定印度未来几年经常账户的真实走向。\n\n![研报原图 1](assets/source_image_01.jpg)\n\n## 1. 四月的反弹不是基数效应，而是价格与数量共同推动的结构性转变\n\n4月出口的反弹幅度令人意外。从3月的-7.4%跃升至13.8%，环比经季节调整后增长21.8%。市场预期仅为-4.4%，误差超过18个百分点。\n\n拆解来看，出口增长并非单纯由价格上涨驱动。研报的核心分析显示，剔除石油后的核心出口中，价格效应和数量效应都有贡献。4月核心出口价值增长约10%，其中数量增长贡献了约5个百分点，价格增长贡献了约5个百分点。这与此前几个月价格主导、数量拖累的模式有本质区别。\n\n更关键的是，电子产品的出口增速从3月的-3.3%飙升至40.3%，成为出口增长的最大拉动项。这一增速远超其他品类，且并非基数效应——去年同期电子产品出口增速已经达到15%左右的高基数\n\n[... middle omitted ...]\n\n，我们会在群内分享完整的研报原文、图表以及进一步的解读框架。\n\n![](https://github.com/yt-feng/rpt_edit/blob/main/prompts/zsxq_img.jpg)\n\n<p style=\"color:#999999;font-size:12px;\">Personal reading notes and learning share only. Not investment advice.</p>\n\n[note.md]\n印度4月贸易逆差：出口坚挺但逆差还在扩大\n\n📊 逆差扩大，但出口有亮点\n\n4月印度贸易数据出炉，逆差从3月的207亿美元扩大到284亿美元，超出市场预期的260亿美元。虽然逆差在走阔，但出口表现其实不弱——同比增长13.8%，远超预期的-4.4%。\n\n1️⃣ 出口靠什么撑起来的？\n\n电子产品出口增速高达40.3%，主要受益于智能手机组装的量价齐升。石油和化工产品的出口增长更多是价格因素在支撑。相比之下，纺织品和珠宝首饰出口还在收缩，后者尤其受到对波斯湾地区出货放缓的影响。\n\n从出口目的地看，对美欧的出口依然偏弱，但对中国/香港、新加坡、越南的出口保持强势。对中东的沙特和阿联酋出口仍在收缩，但降幅比3月有所收窄。\n\n2️⃣ 进口端发生了什么？\n\n进口增长10%，同样超出预期。石油进口同比下降，但环比反弹明显——高价进口油抵消了量上的减少。黄金进口猛增81.7%，尽管有媒体报道称黄金因税收政策不明在海关被卡。\n\n核心进口（剔除石油和黄金）增长15.4%，其中消费品进口是主要拉动项，尤其是电子产品。而投资/工业品的进口增速在持续放缓。化工品进口还受到供应链瓶颈的影响。\n\n3️⃣ 接下来会怎么走？\n\n某外资投行预计，\n\n[... middle omitted ...]\n\nbn in March, with strong export growth (13.4% y-o-y vs 7.3% in March).\n\n# April trade deficit widens\n\nIn the second month of the Iran war, India's merchandise trade deficit widened to USD28.4b\n\n[... middle omitted ...]\n\nrmation is available upon request and disclosure information is available at the NOM Disclosure web page:\n\nhttp://go.NOMnow.com/research/m/Disclosures\n\nCopyright © 2026 NOM Singapore Ltd., Singapore. All rights reserved."
+  },
+  {
+    "id": "R015",
+    "title": "市场真正低估的不是AI需求，而是NAND供给侧的再定价",
+    "digest": "[wechat_article.md]\n# 市场真正低估的不是AI需求，而是NAND供给侧的再定价\n\n当所有人都在盯着HBM和AI算力芯片时，NAND闪存市场正在发生一场被严重低估的结构性变化。这份来自某外资投行的最新研报，核心信号非常明确：NAND的定价权正在从买家向卖家转移，而且这个转移的幅度可能比市场预期的要大得多。\n\n某日本NAND厂商Kioxia在5月15日发布的CY1Q26财报，提供了一个难得的“读心”窗口。Kioxia给出的CY2Q26收入指引是环比增长70%，营业利润率指引高达74%。这两个数字意味着什么？意味着当前市场对三星电子和SK海力士NAND业务的ASP增长和利润率预测，很可能都太保守了。\n\n这不是一个短期的库存回补故事。报告明确指出，供给紧张的局面预计将持续到2027年。当一家NAND厂商敢于给出74%的营业利润率指引时，它实际上是在告诉市场：这个行业的盈利天花板，还没有到。\n\n![研报原图 1](assets/source_image_01.jpg)\n\n## 1. 70%的环比收入增长指引，正在重构NAND的定价锚\n\nKioxia的CY2Q26指引是整个报告最值得深挖的数据点。70%的环比收入增长，而且管理层明确表示，出货量增长对收入的贡献“边际化”——这意味着几乎全部增长都将来自ASP的提升。\n\n让我们对比一下某外资投行当前对三星和SK海力士的NAND ASP预测：三星+55%环比，SK海力士+45%环比。而Kioxia的ASP增长幅度显然会超过这个数字。考虑到三家公司在CY1Q26的营业利润率几乎处于同一水平（三星58%、SK海力士57%、Kioxia 60%），Kioxia给出的74%指引意味着，某外资投行对韩国两家公司约60%的NAND OPM预测可能需要上调。\n\n这里的关键逻辑是：NAND市场已经不再是那个“各家各自为战”的分散格局。三家主要供应商的定价行为和\n\n[... middle omitted ...]\n\n士和Kioxia的后续财报，以及NAND定价趋势的最新变化。\n\n![](https://github.com/yt-feng/rpt_edit/blob/main/prompts/zsxq_img.jpg)\n\n<p style=\"color:#999999;font-size:12px;\">Personal reading notes and learning share only. Not investment advice.</p>\n\n[note.md]\nNAND 涨价信号，比预想的更猛\n\n📈 价格还要冲\n\n某外资投行最新研报拆解了日本 NAND 厂商 Kioxia 的财报，发现它对下季度的指引非常强——美元收入环比增长 70%，且主要靠 ASP（平均售价）拉动。这直接指向了三星和 SK 海力士的 NAND 业务，可能还有进一步上修空间。\n\n1️⃣ ASP 涨幅可能被低估\nKioxia 指引下季度收入增长 70%，其中出货量贡献很小，几乎全靠涨价。而目前研报预测三星 NAND ASP 环比+55%，海力士+45%——如果 Kioxia 能涨这么多，韩系厂商的预测可能偏保守了。另外，Kioxia 给出下季度经营利润率 74% 的指引，而三星和海力士目前预测只有 60% 左右，同样存在上修空间。\n\n2️⃣ 供给紧张至少持续到 2027\nKioxia 明确表态，NAND 市场在 2026 和 2027 年都会非常紧张。这和三星此前在电话会上的说法一致。全年 bit 出货增长预计只有高 teens%，2027 年继续供不应求。需求端，AI 数据中心和企业级 SSD 是主要驱动力，所有应用都在增长。\n\n3️⃣ ADR 上市可能提振情绪\nKioxia 宣布准备发行 ADR\n\n[... middle omitted ...]\n\nMaintains bullish market outlook, expecting supply tightness to continue in 2027, and 3) Potential ADR listing of Kioxia could be positive for Hynix sentiment.\n\n■ Stronger ASP growth and highe\n\n[... middle omitted ...]\n\nthis information, in whole or in part, to train or finetune a machine learning or artificial intelligence system, or to provide or reproduce this information, in whole or in part, as a prompt or input to any such system."
+  },
+  {
+    "id": "R016",
+    "title": "欧洲财报季的真正信号：市场对好消息的奖励正在失效",
+    "digest": "[wechat_article.md]\n# 欧洲财报季的真正信号：市场对好消息的奖励正在失效\n\n欧洲1Q26财报季已走过75%的市值覆盖，但截至目前最重要的一条结论不是EPS超预期了多少，而是市场对信息的定价方式正在发生结构性变化。某外资投行最新周报揭示了一个值得产业决策者关注的趋势：EPS超预期的公司，在发布日跑赢市场不到1%；而业绩miss的公司，平均跑输约1.5%。这种不对称性本身并不新鲜，但报告进一步指出，当公司将业绩展望指引低于市场预期时，其股价在发布日的表现几乎与市场持平——这在历史上从未发生过。市场正在用脚投票表明：指引本身的可信度正在下降，投资者不再愿意为“低于预期的预期”付出惩罚性代价。\n\n这不是一个短期噪音，而是宏观不确定性上升后，市场定价机制正在从“追逐信息”转向“重新校准估值框架”的早期信号。对于正在制定下半年预算和资本配置决策的企业管理者而言，理解这一变化的含义，比关注EPS具体超预期几个百分点更为紧迫。\n\n![研报原图 1](assets/source_image_01.jpg)\n\n## 1. 超预期的集中度暴露了欧洲经济的结构性分化\n\n报告显示，EPS超预期约2.3%（市值加权），略低于历史均值。但真正值得关注的不是这个数字本身，而是超预期分布的极不均衡。金融和商品板块继续领跑，这两个板块的公司本身季度披露频率更高，其数据的及时性和透明度也更高。但更关键的是，消费类公司也在边际上贡献了超预期——尽管中东冲突导致中东地区销售下降，Puma和Adidas仍然交出超预期业绩，发布日股价分别上涨5%和8%。\n\n这意味着什么？消费板块的超预期并非来自需求端的全面复苏，而是来自特定品类和特定公司的竞争力。Puma和Adidas的超预期背后，是品牌力和产品创新在不利宏观环境下依然能拉动需求。而在零售领域，Ahold Delhaize的美国业务利润率超预期、Zalando的adj. \n\n[... middle omitted ...]\n\n这些未解问题，我们会在群内分享完整的原始图表和更多情境分析。\n\n![](https://github.com/yt-feng/rpt_edit/blob/main/prompts/zsxq_img.jpg)\n\n<p style=\"color:#999999;font-size:12px;\">Personal reading notes and learning share only. Not investment advice.</p>\n\n[note.md]\n欧洲1Q26财报季：超预期但市场反应冷淡\n\n📊 财报季复盘\n\n欧洲Q1财报季已过75%的公司披露完毕，整体EPS超预期约2.3%，略低于历史均值。但市场反应很有意思——超预期的公司只获得不到1%的超额收益，而miss的公司平均被惩罚1.5%。\n\n1️⃣ 谁在领跑？\n- 金融与大宗商品继续主导正向惊喜\n- 能源板块经营现金流超预期9%，抵消了更高的资本开支\n- 消费者板块也有贡献：Puma和Adidas财报超预期，发布日分别涨5%和8%\n\n2️⃣ 资本品出现隐忧\n- 订单势头强劲（77%的公司超预期），主要受AI/数据中心需求驱动\n- 但分析师指出可能存在提前下单的“虚胖”现象\n- 订单转化为销售的时间在拉长（约70%的公司miss了转化率）\n- 约50%的公司利润率承压，来自投入成本上升\n\n3️⃣ 指引可信度在下降？\n- 发布指引的公司中，约一半低于市场预期\n- 但这些公司发布日股价表现与市场持平，没有额外惩罚\n- 原因可能是宏观不确定性让指引变得不那么可靠\n\n4️⃣ 哪些板块在升级？\n- 能源和基础资源继续带动整体EPS上调\n- 化学品生产商成功将成本转嫁给下游，EPS上调+3%\n- 资本密集型股票（受益于\n\n[... middle omitted ...]\n\npositive surprises. At the margin, and despite lower Middle East sales given the Iran conflict, Consumer companies are also contributing to aggregate earnings beats. Among those under our Equi\n\n[... middle omitted ...]\n\nthis information, in whole or in part, to train or finetune a machine learning or artificial intelligence system, or to provide or reproduce this information, in whole or in part, as a prompt or input to any such system."
+  },
+  {
+    "id": "R017",
+    "title": "市场真正低估的不是需求，而是供给侧的再定价",
+    "digest": "[wechat_article.md]\n# 市场真正低估的不是需求，而是供给侧的再定价\n\n财报季的股价涨跌，表面看是业绩的投票器，但背后往往隐藏着更深的产业逻辑。过去一个月，某外资投行覆盖的能源、公用事业与矿业板块中，涨幅最高的股票上涨了46%，跌幅最大的则下跌了21%。这种极端的分化，不能简单归因于“好公司”与“坏公司”的区别。\n\n真正值得关注的信号是：市场正在重新定价供给侧的稀缺性，而不是需求侧的复苏。\n\n这份研报覆盖了从上游勘探生产到中游管道运输，从传统能源到清洁技术，从公用事业到金属矿业的完整链条。我们仔细梳理了每个子板块中表现最好和最差的标的，发现了一个清晰的规律——那些能够控制供给节奏、拥有不可复制资产、或在区域市场中占据结构性优势的公司，正在获得超额回报。而那些依赖需求弹性、受制于政策不确定性、或供给端出现意外的公司，即使业绩本身并不差，也被市场惩罚。\n\n这不是一个关于“周期来了还是没来”的问题。这是一个关于“谁在真正掌控供给”的问题。\n\n![研报原图 1](assets/source_image_01.jpg)\n\n## 1. 上游勘探生产的分化：不是油价，而是成本曲线的位置\n\n在E&P板块，表现最好的Tourmaline Oil（TOU）上涨了10%，而表现最差的National Fuel Gas（NFG）下跌了9%。两者都是天然气生产商，但市场给出了完全相反的判断。\n\nTOU的上涨逻辑有三个层次。第一层是运营执行：公司通过持续优化现有资产基础、降低单位成本，在天然气价格波动的环境中实现了利润率的改善。第二层是定价能力：TOU通过直接接入LNG出口设施，获得了优于现货市场的天然气实现价格。第三层是结构性增长：公司正在探索数据中心共址机会，利用其垂直整合的业务模式和大规模天然气储备，将供给转化为新的需求场景。\n\nNFG的下跌则揭示了供给端的脆弱性。公司在Utica区块的部分水平井产量\n\n[... middle omitted ...]\n\n迎加入，与更多产业研究者和投资者一起，沿着这些线索继续深挖。\n\n![](https://github.com/yt-feng/rpt_edit/blob/main/prompts/zsxq_img.jpg)\n\n<p style=\"color:#999999;font-size:12px;\">Personal reading notes and learning share only. Not investment advice.</p>\n\n[note.md]\n财报季跑赢跑输榜：能源板块谁在领跑\n\n谁是赢家，谁在掉队\n\n财报季刚过，能源板块内部的分化比想象中大。投行研报梳理了4月中旬到5月中旬各子板块的股价表现，挑几个有意思的说说。\n\n1️⃣ 综合油企：Cenovus领跑+19%\nCenovus靠强劲的1Q26业绩和商品价格上行，在加拿大油企中脱颖而出。West White Rose项目三季度投产，Christina Lake North整合超预期，自由现金流收益率约9-10%。相比之下，ConocoPhillips持平，市场担忧美国天然气变现弱和Willow项目支出高，但研报认为这是机会，预计2030年前自由现金流每股CAGR达20-25%。\n\n2️⃣ 油服：HAL+10% vs FTI+2%\nHAL受益于北美和国际市场均衡布局（约60/40），加上中东扰动后服务需求预期升温。FTI虽然订单积压稳健，但市场更偏好对商品价格弹性高的标的。\n\n3️⃣ E&P：TOU+10% vs NFG-9%\nTOU靠1Q26业绩超预期、商品价格走强和成本优化持续跑赢。NFG则因部分Utica井表现低于预期和宾州监管环境趋严承压。\n\n4️⃣ 中游：KGS+21% vs LNG-6%\n\n[... middle omitted ...]\n\nstocks discussed inside include CVE, COP, HAL, FTI, TOU, KGS, LNG, NEE, NRG, ENPH, NUE, and FCX.\n\n# Integrated & Refining:\n\n# Outperformer: CVE (+19%)\n\nAfter a strong 1Q26 print, we expect Buy\n\n[... middle omitted ...]\n\nthis information, in whole or in part, to train or finetune a machine learning or artificial intelligence system, or to provide or reproduce this information, in whole or in part, as a prompt or input to any such system."
+  },
+  {
+    "id": "R018",
+    "title": "日本市场的真正分化，不在行业之间，而在“动量”与“价值”的定价权转移",
+    "digest": "[wechat_article.md]\n# 日本市场的真正分化，不在行业之间，而在“动量”与“价值”的定价权转移\n\n过去几周，日本股市的财报季呈现出一种让许多投资者感到困惑的图景：整体盈利超预期比例达到54%，超出负向意外近20个百分点，但市场并未给予正向意外相应的奖励。与此同时，地缘政治风险似乎不再像以往那样驱动避险情绪，而一个聚焦“关键资源”的篮子却录得年内43%的涨幅，是TOPIX同期涨幅的三倍有余。\n\n这些信号指向同一个核心判断：日本市场正在经历一轮定价逻辑的结构性切换。传统的行业轮动框架正在失效，取而代之的是两类资产的重新定价——一类是受益于“经济安全”叙事的资源与贸易相关资产，另一类则是被动量交易过度定价、却对盈利负向意外极其敏感的高估值标的。\n\n这份来自某外资投行的周度报告，在4Q财报季进行到84%时提供的观察，恰好为理解这一轮切换提供了关键的数据锚点。以下是我们从中提炼出的五个层次。\n\n![研报原图 1](assets/source_image_01.jpg)\n\n## 1. 财报季的真实信号不是“超预期比例高”，而是市场对好消息与坏消息的反应完全不对称\n\n截至5月14日，84%的TOPIX成分公司已公布4季度财报。从表面数据看，结果并不差：54%的公司实现正向意外，仅35%出现负向意外。整体净利润增速较财报季前的共识高出16个百分点（4Q）和2个百分点（全年）。但若剔除软银集团，4Q净利润增速与共识完全持平——也就是说，整体超预期几乎完全由一家公司驱动。\n\n更关键的信号来自股价反应。报告显示，拥有1个月动量因子的股票，在出现负向意外后3个交易日内，中位数相对收益跑输TOPIX约5个百分点；而在出现正向意外时，这些动量股几乎没有任何正向反应。这与全样本形成鲜明对比：全样本中正向意外股票在公布后1天内获得约0.8个百分点的相对收益。\n\n这意味着什么？动量交易已经拥挤到对“好消息”完全免\n\n[... middle omitted ...]\n\n始图表和数据，还有我们对每一张图表背后二阶效应的进一步拆解。\n\n![](https://github.com/yt-feng/rpt_edit/blob/main/prompts/zsxq_img.jpg)\n\n<p style=\"color:#999999;font-size:12px;\">Personal reading notes and learning share only. Not investment advice.</p>\n\n[note.md]\n日本经济安保红利，跑出43%的超额收益\n\n日本资源篮子\n跑赢TOPIX超30%\n\n最近在翻一份日本投研周报，发现一个很有意思的篮子——日本关键资源篮子（GSJPCRTR），年初至今涨幅43%，而同期TOPIX只涨了12%。这个篮子去年3月首次被提出，核心逻辑是：经济安全焦虑会驱动关键资源的需求爆发。\n\n篮子覆盖了商社、能源资源公司、海运等板块，这些公司正好处在关键资源的开采、运输和加工环节。中东地缘持续波动，这个逻辑短期内还会被反复讨论。\n\n再来看最新财报季的情况（截至5月14日）：\n\n1️⃣ 业绩超预期的公司占比54%，低于预期的35%。整体来看，TOPIX四季度净利润比市场预期高出16%，全年高出2%。但去掉软银集团后，基本和预期持平。\n\n2️⃣ 有意思的是价格反应——1个月动量股在遇到负面惊喜时反应剧烈，股价3天内跌了5%左右；但遇到正面惊喜时几乎没有奖励。这个季度的股价离散度也明显偏高，说明市场在财报季的定价分歧很大。\n\n3️⃣ 管理层给出的新年度指引比历史更保守，比市场共识低了9.2%（10年中位数是-8.1%）。说明企业端也在主动压低预期。\n\n4️⃣ 资金流向方面：海外投资者净买入1.2万亿日元，\n\n[... middle omitted ...]\n\nere companies are involved in the extraction, transportation and/or processing of critical resources (such as Trading Companies, Energy Resources companies and Shippers), and has been a very s\n\n[... middle omitted ...]\n\nthis information, in whole or in part, to train or finetune a machine learning or artificial intelligence system, or to provide or reproduce this information, in whole or in part, as a prompt or input to any such system."
+  },
+  {
+    "id": "R019",
+    "title": "韩国市场真正的机会，藏在指数大涨背后的结构性扭曲里",
+    "digest": "[wechat_article.md]\n# 韩国市场真正的机会，藏在指数大涨背后的结构性扭曲里\n\nKOSPI年初至今涨幅接近8成，但835只上市股票中，只有68只跑赢了指数。这68只股票，占据了全市场近66%的市值。换句话说，绝大多数投资者持有的股票，可能根本没有享受到这轮牛市的收益。\n\n这份来自某外资投行的最新周报，在常规的每周市场回顾之外，用一组“市场宽度脉冲检查”的图表，揭示了一个容易被大涨掩盖的真相：韩国股市的上涨极度集中，而真正的机会，可能恰恰藏在那些被遗忘的角落。\n\n上周五KOSPI单日暴跌6%，抹去了整周涨幅。外资在科技和汽车板块持续流出，韩元兑美元单周贬值2.6%。这些短期波动固然引人注目，但报告真正的价值，在于它提供了一个判断市场结构拐点的框架。当市场宽度从极度狭窄开始反弹，当70%的股票仍低于账面价值，当盈利上修与低估值的交集不断扩大，这不仅仅是一个均值回归的故事，而可能是一次资产定价权的重新洗牌。\n\n![研报原图 1](assets/source_image_01.jpg)\n\n## 1. 指数大涨背后，是市场宽度创纪录的狭窄\n\n报告提供了一个令人警醒的数据点：尽管KOSPI年内涨幅惊人，但只有8%的股票跑赢了指数。这个比例意味着什么？意味着这轮上涨的本质不是“水涨船高”，而是少数巨头的独角戏。\n\n市场宽度，即每日上涨股票数量减去下跌股票数量的百分比，近期一度跌至低于负一个标准差的水平。虽然最近有所反弹，但仍处于历史低位。这就像一场马拉松，只有领跑的前几名在冲刺，后面的选手要么原地踏步，要么在后退。\n\n更值得关注的是，KOSPI 50（大盘股指数）相对于KOSPI 200的中小盘股表现，已经领先超过两个标准差。在统计学上，两个标准差之外的事件属于小概率事件。这种极端的相对表现，本身就在释放一个信号：均值回归的力量可能正在积蓄。\n\n对于产业决策者和投资者而言，这意味着一个关键的观\n\n[... middle omitted ...]\n\n告中的图表和数据分析。一起验证这些判断，比单打独斗更有价值。\n\n![](https://github.com/yt-feng/rpt_edit/blob/main/prompts/zsxq_img.jpg)\n\n<p style=\"color:#999999;font-size:12px;\">Personal reading notes and learning share only. Not investment advice.</p>\n\n[note.md]\n韩国市场大震荡，但有个信号值得留意\n\n市场巨震后的机会在哪\n\nKOSPI上周五单日暴跌6%，把一周涨幅全吐了。外资持续流出，韩元对美元一周贬值2.6%，避险情绪很明显。\n\n但这份研报里，我看到了几个有意思的信号👇\n\n1️⃣ 市场极度集中，但可能正在改变\nKOSPI今年虽然涨了78%，但835只股票里只有68只跑赢指数，这些票占了总市值的66%。换句话说，大部分股票根本没涨。\n\n好消息是：市场宽度指标从-1标准差下方反弹了。大盘股相对中小盘的超额收益已经超过2个标准差，意味着中小盘可能开始补涨。\n\n2️⃣ 近70%的股票还在净资产以下\n虽然指数涨了不少，但KOSPI里仍有约70%的股票交易在净资产以下。研报特别筛选了一批“破净+盈利上调”的股票，基本面改善但估值还在地板上。\n\n我整理了几个有意思的：\n- POSCO Holdings：市净率0.64倍，盈利上调10%\n- LG Chem：市净率0.85倍，盈利上调199%\n- SK Innovation：市净率0.75倍，盈利上调317%\n- GS Holdings：市净率0.47倍，盈利上调26%\n- Hyundai Department Store：市净率0\n\n[... middle omitted ...]\n\nrd earnings revisions, while the Utilities sector was revised down the most this week (Exhibit 23).   \nThe KRW weakened 2.6% vs. USD this week. Also, it weakened by 1.4% both vs. JPY and EUR. \n\n[... middle omitted ...]\n\nthis information, in whole or in part, to train or finetune a machine learning or artificial intelligence system, or to provide or reproduce this information, in whole or in part, as a prompt or input to any such system."
+  },
+  {
+    "id": "R020",
+    "title": "光通信市场真正的转折点不在2025，而在2028年之后",
+    "digest": "[wechat_article.md]\n# 光通信市场真正的转折点不在2025，而在2028年之后\n\n这份来自某外资投行的最新研报，在2026年5月对光通信市场做出了一个看似矛盾、实则深刻的判断：**Datacom市场增速被大幅上调，但真正的结构性拐点——Co-Packaged Optics（CPO）的爆发——要等到2028年之后才会到来。** 而恰恰是这一点，市场可能正在低估。\n\n报告的核心信号并非“AI拉动光模块需求持续增长”这一已为市场消化的叙事，而是：**传统可插拔光模块在2028年前仍是绝对主力，但CPO的规模上量将重新定义供应链价值分配，且当前第三方分析师的预测可能过于保守。**\n\n以下是这份报告最值得关注的几个层次。\n\n![研报原图 1](assets/source_image_01.jpg)\n\n## 1. 市场上调的核心驱动力是1.6T，但800G的“长尾”同样不可忽视\n\nLightCounting最新预测将Datacom市场2025-2028年的CAGR上调至近+35%，总规模从2025年的190亿美元跃升至2028年的470亿美元。但拆解增速来源，结论更加清晰：**1.6T是增长引擎，800G则是稳定的“压舱石”。**\n\n1.6T市场预计以约200%的CAGR增长，到2028年达到210亿美元；800G市场则以约+26%的CAGR同步增长至210亿美元。两者在2028年几乎平分秋色。这意味着，尽管市场焦点已转向更高速率，但800G的生命周期远未结束，其部署节奏将比1.6T更平滑、更持久。\n\n对于光器件供应商而言，这带来的含义是：**短期内（2025-2027年），800G的持续上量仍将贡献可观的收入基础，而1.6T则决定增速的上限。** 任何单一押注800G或1.6T的公司都可能面临风险——真正的赢家是那些能在两个速率段都提供完整解决方案的厂商。\n\n![研报原图 2](asse\n\n[... middle omitted ...]\n\n和交叉验证数据，与您一起推演2028年之后的光通信市场格局。\n\n![](https://github.com/yt-feng/rpt_edit/blob/main/prompts/zsxq_img.jpg)\n\n<p style=\"color:#999999;font-size:12px;\">Personal reading notes and learning share only. Not investment advice.</p>\n\n[note.md]\n数据中心光模块，正在被AI催熟\n\n📈 数据中心光模块市场，正在经历一轮强修正\n\n最近看了份某外资投行的研报，核心观点很直接：第三方机构LightCounting大幅上调了数据中心光模块市场预期，到2028年CAGR接近+35%，从2025年的190亿美金直奔470亿美金。\n\n1/ 驱动力的密码在速率\n- 1.6T光模块是增长引擎，2028年预计贡献210亿美金，CAGR约+200%\n- 800G紧随其后，同样到210亿美金，CAGR约+26%\n- 400G及以下速率，反而会逐步收缩\n\n2/ 每颗XPU的光模块用量在持续爬升\n- 2023年每颗XPU平均配2.7个光模块\n- 2025年预计到4.0个（之前预测是3.5）\n- 2027年预计接近4.5个（之前是4.2）\n- 但不同架构差异很大：Google的TPU用OCS交换机，attach rate约1.5x；NVIDIA的GPU部署则接近6.0x\n\n3/ CPO（共封装光学）市场被低估了\n- LightCounting预测CPO市场2028年达20亿美金，2030年到110亿美金\n- 但Lumentum自己给的指引显示，仅他们一家2028年CPO收入就可能达2\n\n[... middle omitted ...]\n\n towards AI Infrastructure. Key highlights from the latest forecast include:\n\n# Growth Outlook Revised Higher For Datacom\n\nThe datacom growth outlook remains robust, with the total market fore\n\n[... middle omitted ...]\n\nd third-party (“JPM Data”) in any third-party artificial intelligence (“AI”) systems or models when such JPM Data is accessible by a third-party.\n\nCompleted 14 May 2026 11:29 PM EDT\n\nDisseminated 15 May 2026 05:00 AM EDT"
+  }
+]
+
+可选图表候选（已经过滤掉邮箱、电话、HTML/table 噪音）：
+[
+  {
+    "figure_id": "F001",
+    "report_id": "R001",
+    "label": "Exhibit 2",
+    "context": "Exhibit 2: Remained flat MoM but still at record-high level in May (US\\$8.5bn) Korea semis exports – First 10 days of month US\\$bn"
+  },
+  {
+    "figure_id": "F002",
+    "report_id": "R001",
+    "label": "Exhibit 4",
+    "context": "Exhibit 4: Robust MoM growth mostly led by memory names, such as Nanya Tech (+40%), Transcend (+31%), Macronix/Winbond (+34%/33%) Taiwan tech companies' monthly sales – Apr 2026"
+  },
+  {
+    "figure_id": "F003",
+    "report_id": "R001",
+    "label": "Exhibit 3",
+    "context": "Exhibit 3: YoY rebound still high at 150% in May; already four consecutive months of triple-digit growth Korea semis exports – YoY change in first 10 days of month"
+  },
+  {
+    "figure_id": "F004",
+    "report_id": "R001",
+    "label": "Exhibit 5",
+    "context": "Exhibit 5: Also notably strong rebound seen from memory names and resilient growth across most companies including TSMC (+18%), Quanta (+121%), Yageo (+22%) Taiwan tech companies' monthly sales YoY – Apr 2026"
+  },
+  {
+    "figure_id": "F005",
+    "report_id": "R001",
+    "label": "Exhibit 9",
+    "context": "BofA GLOBAL RESEARCH # Memory spot/contract price trend"
+  },
+  {
+    "figure_id": "F006",
+    "report_id": "R001",
+    "label": "Exhibit 10",
+    "context": "Exhibit 10: DRAM spot and contract prices reached record highs (\\~\\$35), then leveled off during April–May following a strong rally in 4Q25 and 1Q26. DRAM spot and contract price - quarterly average trend"
+  },
+  {
+    "figure_id": "F007",
+    "report_id": "R001",
+    "label": "Exhibit 11",
+    "context": "Exhibit 11: NAND wafer contract price rally significantly higher vs spot NAND wafer spot and contract price - quarterly average trend"
+  },
+  {
+    "figure_id": "F008",
+    "report_id": "R001",
+    "label": "Exhibit 12",
+    "context": "Exhibit 12: Prices further up this week and hit an all-time high level, following a volatile April (2H gains offsetting 1H correction). Strong rallies in Oct (+70%), Nov (+60%), and Jan (+25%) were followed by muted trends in Feb–Ma"
+  },
+  {
+    "figure_id": "F009",
+    "report_id": "R001",
+    "label": "Exhibit 14",
+    "context": "Exhibit 14: 8Gb DDR4 prices largely stabilized through April/1H-May, but remain significantly higher YoY due to production cuts by the leading memory suppliers. Prices have risen to around \\$30, well above the previous peak of rough"
+  },
+  {
+    "figure_id": "F010",
+    "report_id": "R001",
+    "label": "Exhibit 16",
+    "context": "Exhibit 16: DDR4 and DDR5 contract prices are similar at US\\$35 (16Gb) – DDR5 price premium no longer exists due to DDR4 shortage 16Gb DDR5 vs 16Gb DDR4 contract price trend, Dec '22-Apr '26"
+  },
+  {
+    "figure_id": "F011",
+    "report_id": "R001",
+    "label": "Exhibit 13",
+    "context": "Exhibit 13: slight uptick was seen in early May, following a sequential slowdown from February (+10%) to flat momentum in March and a minor decline in April, after the strong January (+25%) surge and the sharp October–November rally"
+  },
+  {
+    "figure_id": "F012",
+    "report_id": "R001",
+    "label": "Exhibit 15",
+    "context": "Exhibit 15: Prices declined sharply in Apr–1H-May (\\~25%) after peaking at \\~\\$80 in early Mar, following strong Sep–Dec gains (+30–70%) and Jan (+20%); still up 2000%+ YoY vs \\~\\$3 in Oct-25. 16Gb DDR4 spot price trend, May '23 - M"
+  },
+  {
+    "figure_id": "F013",
+    "report_id": "R001",
+    "label": "Exhibit 17",
+    "context": "BofA GLOBAL RESEARCH 16Gb DDR5 vs 16Gb DDR4 contract price change - MoM, Dec '22-Apr '26"
+  },
+  {
+    "figure_id": "F014",
+    "report_id": "R001",
+    "label": "Exhibit 18",
+    "context": "BofA GLOBAL RESEARCH 512Gb NAND wafer spot price – weekly, Feb '21 - May '26"
+  },
+  {
+    "figure_id": "F015",
+    "report_id": "R001",
+    "label": "Exhibit 20",
+    "context": "Exhibit 20: Current contract price at \\~\\$25, around 10x vs Feb-25 bottom of \\$2.5; prices significantly up in 4Q25 and through 1Q26 NAND wafer contract price trend, Jun '23-Apr '26"
+  },
+  {
+    "figure_id": "F016",
+    "report_id": "R001",
+    "label": "Exhibit 22",
+    "context": "Exhibit 22: 16Gb DDR5 spot and contract prices are in the range of US\\$30-40 vs historical range of US\\$3-5 16Gb DDR5 spot vs contract price trend (US\\$), Jun '23-Apr '26"
+  },
+  {
+    "figure_id": "F017",
+    "report_id": "R001",
+    "label": "Exhibit 19",
+    "context": "Exhibit 19: Slightly corrected in Apr/1H-May vs up +15-20% in Feb/Mar-26 and up +40-70% MoM in Oct/Nov/Dec/Jan 512Gb NAND wafer spot month-average – MoM change, May'21 - May'26"
+  },
+  {
+    "figure_id": "F018",
+    "report_id": "R001",
+    "label": "Exhibit 21",
+    "context": "Exhibit 21: Apr price only up +5% MoM following Jan/Feb/Mar-26 rally (up 20-30% MoM) and Oct/Nov/Dec upturn (up 40-60% MoM) MoM change of NAND contract price (512Gb wafer), Jun '23-Apr '26"
+  },
+  {
+    "figure_id": "F019",
+    "report_id": "R001",
+    "label": "Exhibit 23",
+    "context": "Exhibit 23: Feb/Mar/Apr price rally muted vs Nov/Dec/Jan upturn 16Gb DDR5 spot vs contract price trend – MoM change, Jun '23-Apr '26"
+  },
+  {
+    "figure_id": "F020",
+    "report_id": "R001",
+    "label": "Exhibit 24",
+    "context": "Exhibit 24: Current NAND spot and contract prices are a few times higher than 2025 summer level 512Gb NAND wafer spot vs contract price trend (US\\$), Apr '19 - Apr '26"
+  },
+  {
+    "figure_id": "F021",
+    "report_id": "R001",
+    "label": "Exhibit 26",
+    "context": "Exhibit 26: Current price of 64GB DDR4/DDR5 modules hit all-time high of more than \\$1,000 level (DDR5: US\\$1,200, DDR4: US\\$1,100) Server DRAM contract price trend – DDR5 vs DDR4 modules, Dec '23-Apr '26"
+  },
+  {
+    "figure_id": "F022",
+    "report_id": "R001",
+    "label": "Exhibit 28",
+    "context": "Exhibit 28: SSD pricing surged sharply in 1Q26 and April (per DRAMeXchange), following a more gradual upward trend throughout 2025 Client SSD price trend – mostly for PC (not server), Jan '24 - Apr '26"
+  },
+  {
+    "figure_id": "F023",
+    "report_id": "R001",
+    "label": "Exhibit 25",
+    "context": "Note: SSD prices are as of 30 Apr 2026, reported by DRAMeXchange. TB = terabyte. BofA GLOBAL RESEARCH 512Gb NAND spot vs contract price trend – MoM change, Apr '19 - Apr '26"
+  },
+  {
+    "figure_id": "F024",
+    "report_id": "R001",
+    "label": "Exhibit 27",
+    "context": "Exhibit 27: DDR4/DDR5 server contract prices surged 40–50% MoM in April 2026, similar to the 50–60% spike seen in January, after remaining largely flat during February–March MoM change of server DRAM contract prices, Dec '23-Apr '26"
+  },
+  {
+    "figure_id": "F025",
+    "report_id": "R001",
+    "label": "Exhibit 29",
+    "context": "Exhibit 29: April prices have doubled compared to end-2025 levels, while the 2025 increase was more modest at around 35–40% Client SSD (for PC) price comparison – current vs. end-2025"
+  },
+  {
+    "figure_id": "F026",
+    "report_id": "R001",
+    "label": "Exhibit 31",
+    "context": "Exhibit 31: Robust rally continues led by NAND/HDD companies, followed by DRAM names, memory companies share price significantly up this week driven by AI-led demand Memory companies – 2026 YTD stock performance comparison"
+  },
+  {
+    "figure_id": "F027",
+    "report_id": "R001",
+    "label": "Exhibit 32",
+    "context": "Exhibit 32: CPU names such as Intel and AMD clearly outperforming other US big tech names such as NVIDIA/Apple/QCOM Global major tech companies – 2026 YTD stock performance comparison"
+  },
+  {
+    "figure_id": "F028",
+    "report_id": "R003",
+    "label": "Exhibit 2",
+    "context": "Exhibit 2: Current account balance moderated in Q1"
+  },
+  {
+    "figure_id": "F029",
+    "report_id": "R003",
+    "label": "Exhibit 3",
+    "context": "Exhibit 3: Outward FDI marginally outpaced inward FDI in Q1"
+  },
+  {
+    "figure_id": "F030",
+    "report_id": "R004",
+    "label": "Exhibit 1",
+    "context": "Exhibit 1: 30-city daily property transaction volume in the primary market increased over the last week and was above year-ago level"
+  },
+  {
+    "figure_id": "F031",
+    "report_id": "R004",
+    "label": "Exhibit 2",
+    "context": "Exhibit 2: 16-city daily property transaction volume in the secondary market rebounded and was above year-ago level"
+  },
+  {
+    "figure_id": "F032",
+    "report_id": "R004",
+    "label": "Exhibit 3",
+    "context": "Exhibit 3: China's passenger flights for domestic routes declined sharply over the past week, and were below year ago level"
+  },
+  {
+    "figure_id": "F033",
+    "report_id": "R004",
+    "label": "Exhibit 4",
+    "context": "Exhibit 4: China's passenger flights cancellation rate surged over the last week, and was above year-ago level"
+  },
+  {
+    "figure_id": "F034",
+    "report_id": "R004",
+    "label": "Exhibit 5",
+    "context": "Exhibit 5: Traffic congestion increased over the last week"
+  },
+  {
+    "figure_id": "F035",
+    "report_id": "R004",
+    "label": "Exhibit 6",
+    "context": "Exhibit 6: Domestic gasoline and diesel prices were raised by 320 and 310 RMB/tonne respectively on 11 May"
+  },
+  {
+    "figure_id": "F036",
+    "report_id": "R004",
+    "label": "Exhibit 8",
+    "context": "Exhibit 8: Import prices for crude oil and refined petroleum products surged in April"
+  },
+  {
+    "figure_id": "F037",
+    "report_id": "R004",
+    "label": "Exhibit 9",
+    "context": "Exhibit 9: Export price of refined petroleum products surged in April"
+  },
+  {
+    "figure_id": "F038",
+    "report_id": "R004",
+    "label": "Exhibit 10",
+    "context": "Exhibit 10: The Morning Consult consumer confidence rose to its highest level since 2019"
+  },
+  {
+    "figure_id": "F039",
+    "report_id": "R004",
+    "label": "Exhibit 11",
+    "context": "Exhibit 11: New energy vehicles (NEVs) sales volume edged up in April, but remained below year-ago level"
+  },
+  {
+    "figure_id": "F040",
+    "report_id": "R004",
+    "label": "Exhibit 12",
+    "context": "Exhibit 12: Total auto sales volume declined in April and remained below year-ago level"
+  },
+  {
+    "figure_id": "F041",
+    "report_id": "R004",
+    "label": "Exhibit 13",
+    "context": "Exhibit 13: Steel demand edged up over the past week"
+  },
+  {
+    "figure_id": "F042",
+    "report_id": "R004",
+    "label": "Exhibit 15",
+    "context": "Exhibit 15: Daily coal consumption in coastal provinces increased over the past week and was above year-ago level"
+  },
+  {
+    "figure_id": "F043",
+    "report_id": "R004",
+    "label": "Exhibit 16",
+    "context": "Exhibit 16: RMB 1.36bn local government special bonds have been issued year-to-date"
+  },
+  {
+    "figure_id": "F044",
+    "report_id": "R004",
+    "label": "Exhibit 17",
+    "context": "Exhibit 17: “Municipal construction and industrial park” remained the largest share of local government bonds (LGB) proceeds spending in Jan-Mar 2026"
+  },
+  {
+    "figure_id": "F045",
+    "report_id": "R004",
+    "label": "Exhibit 18",
+    "context": "Exhibit 18: Official port container throughput edged down over the past week but remained above year-ago level"
+  },
+  {
+    "figure_id": "F046",
+    "report_id": "R004",
+    "label": "Exhibit 19",
+    "context": "Exhibit 19: Freight volume of departing ships at 20 major ports continued to edge down over the past week and was below year-ago level"
+  },
+  {
+    "figure_id": "F047",
+    "report_id": "R004",
+    "label": "Exhibit 20",
+    "context": "Exhibit 20: US soybean export sales to China continued to edged down in the first week of May"
+  },
+  {
+    "figure_id": "F048",
+    "report_id": "R004",
+    "label": "Exhibit 21",
+    "context": "Exhibit 21: Our nowcast indicates China oil demand edged down to 16.3mb/d in the latest reading"
+  },
+  {
+    "figure_id": "F049",
+    "report_id": "R004",
+    "label": "Exhibit 22",
+    "context": "Exhibit 22: China visible landed crude inventories remained at around 73 days of demand over the last week"
+  },
+  {
+    "figure_id": "F050",
+    "report_id": "R004",
+    "label": "Exhibit 23",
+    "context": "Exhibit 23: Interbank repo rates remained low"
+  },
+  {
+    "figure_id": "F051",
+    "report_id": "R004",
+    "label": "Exhibit 24",
+    "context": "Exhibit 24: CNY appreciated against the USD while depreciated against the CFETS basket over the past week"
+  },
+  {
+    "figure_id": "F052",
+    "report_id": "R004",
+    "label": "Exhibit 25",
+    "context": "Exhibit 25: USDCNY fixing implied countercyclical factor edged up over the past week"
+  },
+  {
+    "figure_id": "F053",
+    "report_id": "R005",
+    "label": "Exhibit 1",
+    "context": "Exhibit 1: Current Shock is Seen as More Contained for European Natural Gas Than in 2022; Oil Shock Expected to Be More Persistent"
+  },
+  {
+    "figure_id": "F054",
+    "report_id": "R005",
+    "label": "Exhibit 2",
+    "context": "Exhibit 2: Spot Gasoline Prices and Electricity Forward Prices Have Risen Since the Onset of the Conflict But Are Below Their Recent Peaks"
+  },
+  {
+    "figure_id": "F055",
+    "report_id": "R005",
+    "label": "Exhibit 3",
+    "context": "Exhibit 3: Consumer Confidence Appears to Have Stabilised"
+  },
+  {
+    "figure_id": "F056",
+    "report_id": "R005",
+    "label": "Exhibit 4",
+    "context": "Exhibit 4: Euro Area GSFCIs Have Tightened by Around 25bp Since the Start of the War"
+  },
+  {
+    "figure_id": "F057",
+    "report_id": "R005",
+    "label": "Exhibit 5",
+    "context": "Exhibit 5: Our Model Points to a 0.25pp Drag on Growth This Year from the Energy Shock"
+  },
+  {
+    "figure_id": "F058",
+    "report_id": "R005",
+    "label": "Exhibit 6",
+    "context": "Exhibit 6: We Have Downgraded GDP Growth in 2026 by Around 0.8pp in the Euro Area; Pre-War Data Surprised to the Upside in the UK"
+  },
+  {
+    "figure_id": "F059",
+    "report_id": "R005",
+    "label": "Exhibit 7",
+    "context": "Exhibit 7: We Have Raised Our End-2026 Inflation Forecast By Around 1.9pp in the Euro Area and 1.3pp in the UK"
+  },
+  {
+    "figure_id": "F060",
+    "report_id": "R005",
+    "label": "Exhibit 9",
+    "context": "Exhibit 9: Data to Watch in May Exhibit 10: Investor and Consumer Sentiment and Business Surveys Have Softened, Price-Related Surveys Have Risen Euro Area EC Consumer Confidence: Deviations from Previous 6m Average"
+  },
+  {
+    "figure_id": "F061",
+    "report_id": "R006",
+    "label": "Exhibit 1",
+    "context": "Exhibit 1: Previous Studies Point to Uneven Passthrough of Energy Shocks"
+  },
+  {
+    "figure_id": "F062",
+    "report_id": "R006",
+    "label": "Exhibit 2",
+    "context": "Exhibit 2: Top-Down Evidence Clearly Shows an Asymmetry in Food and Energy Shock Passthrough"
+  },
+  {
+    "figure_id": "F063",
+    "report_id": "R006",
+    "label": "Exhibit 3",
+    "context": "Exhibit 3: A Cross-Country Panel Confirms Uneven Passthrough \\*, \\*\\* and \\*\\*\\* means significance at 10/5/1% levels under Driscoll and Kraay (1998) standard errors."
+  },
+  {
+    "figure_id": "F064",
+    "report_id": "R006",
+    "label": "Exhibit 4",
+    "context": "Exhibit 4: Uneven Pricing is also Found in Sectoral Firm Pricing Surveys"
+  },
+  {
+    "figure_id": "F065",
+    "report_id": "R006",
+    "label": "Exhibit 5",
+    "context": "Exhibit 5: The Pricing Asymmetry Creates Upside Risks for Core Inflation"
+  },
+  {
+    "figure_id": "F066",
+    "report_id": "R007",
+    "label": "Exhibit 2",
+    "context": "Exhibit 1: 30y UST yields' renewed break of $5\\%$ has come amid a sustained uptrend in global long-end yields UST 30y yield vs avg of UK, German, Japan 30y yields"
+  },
+  {
+    "figure_id": "F067",
+    "report_id": "R007",
+    "label": "Exhibit 2",
+    "context": "Exhibit 2: Treasuries have been a poor portfolio diversifier since the start of the conflict"
+  },
+  {
+    "figure_id": "F068",
+    "report_id": "R007",
+    "label": "Exhibit 4",
+    "context": "Exhibit 3: Bill supply should return to positive territory over the coming quarters, with the Fed also likely buying at a slower pace for now"
+  },
+  {
+    "figure_id": "F069",
+    "report_id": "R007",
+    "label": "Exhibit 4",
+    "context": "Exhibit 4: Inflation forwards are no longer clearly lagging the change in oil prices"
+  },
+  {
+    "figure_id": "F070",
+    "report_id": "R007",
+    "label": "Exhibit 5",
+    "context": "Exhibit 5: Forward HICP pricing reasonable degree of passthrough from headline to core inflation Change in 2y2y HICP and model fitted value since 1 Jan."
+  },
+  {
+    "figure_id": "F071",
+    "report_id": "R007",
+    "label": "Exhibit 6",
+    "context": "Exhibit 6: UK public interest cost fluctuations are large relative to headroom Vintage-to-vintage changes in the OBR's terminal debt interest forecast vs level of fiscal headroom"
+  },
+  {
+    "figure_id": "F072",
+    "report_id": "R007",
+    "label": "Exhibit 6",
+    "context": "Exhibit 7: Decomposing G4 term premia shows that UK spillovers have only recently began contributing to global upward pressure Estimated using G4 10y GS term premia, following the variance decomposition methodology in Rigobon (2003"
+  },
+  {
+    "figure_id": "F073",
+    "report_id": "R008",
+    "label": "Exhibit 1",
+    "context": "GS & Co. LLC"
+  },
+  {
+    "figure_id": "F074",
+    "report_id": "R008",
+    "label": "Exhibit 2",
+    "context": "Exhibit 2: ...while inflation projections have continued to drift higher"
+  },
+  {
+    "figure_id": "F075",
+    "report_id": "R008",
+    "label": "Exhibit 3",
+    "context": "Exhibit 3: Recent divergence between actual and model-implied EUR/GBP demonstrates a partial reintroduction of political premium in Sterling"
+  },
+  {
+    "figure_id": "F076",
+    "report_id": "R008",
+    "label": "Exhibit 4",
+    "context": "Exhibit 4: The Real's typical beta to Brazil's terms of trade and US equity performance explains most of its performance over the past few months"
+  },
+  {
+    "figure_id": "F077",
+    "report_id": "R008",
+    "label": "Exhibit 5",
+    "context": "Exhibit 5: Currency-negative fundamentals likely explain what appears to be the smaller impact of intervention on USD/JPY since April 30 Spot Move in USD/JPY Over 2 Weeks Following the First Day of Intervention Scaled by Total Si"
+  },
+  {
+    "figure_id": "F078",
+    "report_id": "R008",
+    "label": "Exhibit 6",
+    "context": "Exhibit 6: Asia FX returns have tracked terms of trade moves less closely than elsewhere in EM and the G10"
+  },
+  {
+    "figure_id": "F079",
+    "report_id": "R008",
+    "label": "Exhibit 7",
+    "context": "Exhibit 7: Incorporating tech exports alongside commodity terms of trade better explains recent Asia FX performance"
+  },
+  {
+    "figure_id": "F080",
+    "report_id": "R008",
+    "label": "Exhibit 8",
+    "context": "Exhibit 8: The USD/ARS exchange rate has been trading range-bound and away from the upper flotation band since the October 2025 midterm elections ..."
+  },
+  {
+    "figure_id": "F081",
+    "report_id": "R008",
+    "label": "Exhibit 9",
+    "context": "Exhibit 9: ... which has further eroded the currency's real competitiveness against the Dollar"
+  },
+  {
+    "figure_id": "F082",
+    "report_id": "R008",
+    "label": "Exhibit 10",
+    "context": "Exhibit 10: The Dollar has been appreciating against currencies with small or zero weight in the trade-weighted index"
+  },
+  {
+    "figure_id": "F083",
+    "report_id": "R009",
+    "label": "Exhibit 1",
+    "context": "Exhibit 1: Sharp relief in growth worries, policy shock lingers"
+  },
+  {
+    "figure_id": "F084",
+    "report_id": "R009",
+    "label": "Exhibit 2",
+    "context": "Exhibit 2: Oil price risks still skewed to the upside"
+  },
+  {
+    "figure_id": "F085",
+    "report_id": "R009",
+    "label": "Exhibit 3",
+    "context": "Exhibit 3: Real income softness ahead for the US"
+  },
+  {
+    "figure_id": "F086",
+    "report_id": "R009",
+    "label": "Exhibit 4",
+    "context": "Exhibit 4: Market pricing of US growth already moving past our 2027 growth forecasts"
+  },
+  {
+    "figure_id": "F087",
+    "report_id": "R009",
+    "label": "Exhibit 5",
+    "context": "Exhibit 5: Another sharp rise in hyperscaler capex expectations Consensus US Hyperscaler Capex Estimates"
+  },
+  {
+    "figure_id": "F088",
+    "report_id": "R009",
+    "label": "Exhibit 6",
+    "context": "Exhibit 6: Tech investment already at record levels"
+  },
+  {
+    "figure_id": "F089",
+    "report_id": "R009",
+    "label": "Exhibit 7",
+    "context": "Exhibit 7: Even more value built into AI-related areas Change in Market Cap/Valuation From Nov. 30 2022 to May 14 2026 vs. GS Estimates of PDV of Potential AI Capital Revenues"
+  },
+  {
+    "figure_id": "F090",
+    "report_id": "R009",
+    "label": "Exhibit 8",
+    "context": "Exhibit 8: Rise in single stock volatility more persistent than at the index level"
+  },
+  {
+    "figure_id": "F091",
+    "report_id": "R009",
+    "label": "Exhibit 9",
+    "context": "Exhibit 9: Index volatility and correlations still low versus the late 1990s"
+  },
+  {
+    "figure_id": "F092",
+    "report_id": "R009",
+    "label": "Exhibit 10",
+    "context": "Exhibit 10: Hawkish repricing has extended from front-ends to long-end"
+  },
+  {
+    "figure_id": "F093",
+    "report_id": "R009",
+    "label": "Exhibit 11",
+    "context": "Exhibit 11: Broad Dollar stability masks large moves"
+  },
+  {
+    "figure_id": "F094",
+    "report_id": "R009",
+    "label": "Exhibit 12",
+    "context": "Exhibit 12: EM carry has edged higher YTD and is higher than long-term averages"
+  },
+  {
+    "figure_id": "F095",
+    "report_id": "R009",
+    "label": "Exhibit 13",
+    "context": "Exhibit 13: Best-performing assets mostly linked to either AI or energy shortages"
+  },
+  {
+    "figure_id": "F096",
+    "report_id": "R009",
+    "label": "Exhibit 14",
+    "context": "Exhibit 14: We continue to like hedging for downside tails, with downside in European assets still screening well"
+  },
+  {
+    "figure_id": "F097",
+    "report_id": "R010",
+    "label": "Exhibit 1",
+    "context": "Exhibit 1: HRC Prices in major regions \\$/t"
+  },
+  {
+    "figure_id": "F098",
+    "report_id": "R010",
+    "label": "Exhibit 2",
+    "context": "Exhibit 2: HRC 1m/YTD price performance, \\$ terms Data for April 2026 Exhibit 3: HRC price ranges in the past 4 years US\\$/t"
+  },
+  {
+    "figure_id": "F099",
+    "report_id": "R010",
+    "label": "Exhibit 4",
+    "context": "Exhibit 4: Rebar prices in major regions \\$/t"
+  },
+  {
+    "figure_id": "F100",
+    "report_id": "R010",
+    "label": "Exhibit 5",
+    "context": "Exhibit 5: Rebar 1m/YTD price performance, \\$ terms % Data for April 2026 Exhibit 6: Rebar price ranges in the past 4 years US\\$/t"
+  },
+  {
+    "figure_id": "F101",
+    "report_id": "R010",
+    "label": "Exhibit 7",
+    "context": "Exhibit 7: Global crude steel mn tonnes (monthly)"
+  },
+  {
+    "figure_id": "F102",
+    "report_id": "R010",
+    "label": "Exhibit 8",
+    "context": "Exhibit 8: Global crude steel production, China/ex-China mn tonnes (monthly)"
+  },
+  {
+    "figure_id": "F103",
+    "report_id": "R010",
+    "label": "Exhibit 9",
+    "context": "Exhibit 9: Effective steel capacity utilization Latest monthly output as % of peak output (since 2022)"
+  },
+  {
+    "figure_id": "F104",
+    "report_id": "R010",
+    "label": "Exhibit 10",
+    "context": "Exhibit 10: Ex-China effective steel capacity utilization Latest monthly output as % of peak output (since 2022)"
+  },
+  {
+    "figure_id": "F105",
+    "report_id": "R010",
+    "label": "Exhibit 11",
+    "context": "Exhibit 11: Annualized spare capacity by region mn tonnes"
+  },
+  {
+    "figure_id": "F106",
+    "report_id": "R010",
+    "label": "Exhibit 12",
+    "context": "# China Steel Indicators # Steel Output"
+  },
+  {
+    "figure_id": "F107",
+    "report_id": "R010",
+    "label": "Exhibit 13",
+    "context": "Exhibit 13: China crude steel output change % m/m vs 5Y median trend"
+  },
+  {
+    "figure_id": "F108",
+    "report_id": "R010",
+    "label": "Exhibit 14",
+    "context": "Exhibit 14: China's monthly crude steel production increased $14\\%$ m/m but decreased $-6\\%$ y/y in March'26 mn tonnes"
+  },
+  {
+    "figure_id": "F109",
+    "report_id": "R010",
+    "label": "Exhibit 15",
+    "context": "Exhibit 15: China's Blast Furnace capacity utilization rate %"
+  },
+  {
+    "figure_id": "F110",
+    "report_id": "R010",
+    "label": "Exhibit 16",
+    "context": "Exhibit 16: China auto production (mn units)"
+  },
+  {
+    "figure_id": "F111",
+    "report_id": "R010",
+    "label": "Exhibit 17",
+    "context": "Exhibit 17: 30-city daily property transaction volume in the primary market increased over the last week and was above year-ago level"
+  },
+  {
+    "figure_id": "F112",
+    "report_id": "R010",
+    "label": "Exhibit 18",
+    "context": "Exhibit 18: Our manufacturing growth proxy increased in March while our construction growth proxy fell"
+  },
+  {
+    "figure_id": "F113",
+    "report_id": "R010",
+    "label": "Exhibit 19",
+    "context": "Exhibit 19: FAI-infrastructure (ex water/power supply) increased 8.9% yoy in 3M26, implying a increased of 7.2% in March-26"
+  },
+  {
+    "figure_id": "F114",
+    "report_id": "R010",
+    "label": "Exhibit 20",
+    "context": "Exhibit 20: In the primary market, the sequential decline in 70-city weighted average property price eased to 4.1% mom annualized in March"
+  },
+  {
+    "figure_id": "F115",
+    "report_id": "R010",
+    "label": "Exhibit 21",
+    "context": "Exhibit 21: RMB 1.36bn local government special bonds have been issued year-to-date"
+  },
+  {
+    "figure_id": "F116",
+    "report_id": "R010",
+    "label": "Exhibit 22",
+    "context": "Exhibit 22: Monthly steel trade – China Monthly steel exports (annualised) (mnt)"
+  },
+  {
+    "figure_id": "F117",
+    "report_id": "R010",
+    "label": "Exhibit 23",
+    "context": "Exhibit 23: Steel inventory – social inventory and mills update"
+  },
+  {
+    "figure_id": "F118",
+    "report_id": "R010",
+    "label": "Exhibit 24",
+    "context": "Exhibit 24: Channel checks – steel orderbook trend"
+  },
+  {
+    "figure_id": "F119",
+    "report_id": "R010",
+    "label": "Exhibit 25",
+    "context": "Exhibit 25: Steel demand edged up over the past week"
+  },
+  {
+    "figure_id": "F120",
+    "report_id": "R010",
+    "label": "Exhibit 26",
+    "context": "Exhibit 26: Chinese HRC prices increased 2% m/m and Rebar 1% m/m RMB/t"
+  },
+  {
+    "figure_id": "F121",
+    "report_id": "R010",
+    "label": "Exhibit 27",
+    "context": "Exhibit 27: BF ferrous feed spreads increased 9% m/m for HRC and 3% m/m Rebar in April... BF ferrous feed, RMB/t"
+  },
+  {
+    "figure_id": "F122",
+    "report_id": "R010",
+    "label": "Exhibit 28",
+    "context": "Exhibit 28: ...continuing higher than EAF ferrous feeds RMB/t"
+  },
+  {
+    "figure_id": "F123",
+    "report_id": "R010",
+    "label": "Exhibit 29",
+    "context": "Exhibit 29: EU monthly crude steel production mn tonnes"
+  },
+  {
+    "figure_id": "F124",
+    "report_id": "R010",
+    "label": "Exhibit 30",
+    "context": "Exhibit 30: Europe Steel Prices EUR/t"
+  },
+  {
+    "figure_id": "F125",
+    "report_id": "R010",
+    "label": "Exhibit 31",
+    "context": "Exhibit 31: Europe ferrous feed spreads EUR/t"
+  },
+  {
+    "figure_id": "F126",
+    "report_id": "R010",
+    "label": "Exhibit 32",
+    "context": "Exhibit 32: EU manufacturing PMI Index (lhs), % chg yoy (rhs)"
+  },
+  {
+    "figure_id": "F127",
+    "report_id": "R010",
+    "label": "Exhibit 33",
+    "context": "Exhibit 33: EU monthly auto production (mn units)"
+  },
+  {
+    "figure_id": "F128",
+    "report_id": "R010",
+    "label": "Exhibit 34",
+    "context": "Exhibit 34: US steel production"
+  },
+  {
+    "figure_id": "F129",
+    "report_id": "R010",
+    "label": "Exhibit 35",
+    "context": "Exhibit 35: US steel production capacity utilization"
+  },
+  {
+    "figure_id": "F130",
+    "report_id": "R010",
+    "label": "Exhibit 36",
+    "context": "Exhibit 36: US steel prices"
+  },
+  {
+    "figure_id": "F131",
+    "report_id": "R010",
+    "label": "Exhibit 37",
+    "context": "Exhibit 37: HRC-BOF and HRC-EAF spreads"
+  },
+  {
+    "figure_id": "F132",
+    "report_id": "R010",
+    "label": "Exhibit 38",
+    "context": "Exhibit 38: US Total construction (\\$ bn) spending and change YoY %"
+  },
+  {
+    "figure_id": "F133",
+    "report_id": "R010",
+    "label": "Exhibit 39",
+    "context": "Exhibit 39: Annualised steel imports (mn st)"
+  },
+  {
+    "figure_id": "F134",
+    "report_id": "R010",
+    "label": "Exhibit 40",
+    "context": "Exhibit 40: Monthly steel imports by region (k st)"
+  },
+  {
+    "figure_id": "F135",
+    "report_id": "R010",
+    "label": "Exhibit 42",
+    "context": "Exhibit 42: Total steel shipments"
+  },
+  {
+    "figure_id": "F136",
+    "report_id": "R010",
+    "label": "Exhibit 44",
+    "context": "Exhibit 44: LatAm crude steel production"
+  },
+  {
+    "figure_id": "F137",
+    "report_id": "R010",
+    "label": "Exhibit 41",
+    "context": "Exhibit 41: Annualized monthly apparent demand (mn tons)"
+  },
+  {
+    "figure_id": "F138",
+    "report_id": "R010",
+    "label": "Exhibit 43",
+    "context": "Exhibit 43: North America auto production"
+  },
+  {
+    "figure_id": "F139",
+    "report_id": "R010",
+    "label": "Exhibit 45",
+    "context": "Exhibit 45: Brazil steel prices (R\\$/t)"
+  },
+  {
+    "figure_id": "F140",
+    "report_id": "R010",
+    "label": "Exhibit 46",
+    "context": "Exhibit 46: Brazil's Flat Steel Apparent Consumption (kt)"
+  },
+  {
+    "figure_id": "F141",
+    "report_id": "R010",
+    "label": "Exhibit 47",
+    "context": "Exhibit 47: Brazil's Long Steel Apparent Consumption (kt)"
+  },
+  {
+    "figure_id": "F142",
+    "report_id": "R010",
+    "label": "Exhibit 48",
+    "context": "Exhibit 48: Brazilian steel distributors' shipments (kt)"
+  },
+  {
+    "figure_id": "F143",
+    "report_id": "R010",
+    "label": "Exhibit 49",
+    "context": "Exhibit 49: Brazilian steel distributors' inventories (kt)"
+  },
+  {
+    "figure_id": "F144",
+    "report_id": "R010",
+    "label": "Exhibit 50",
+    "context": "Exhibit 50: Brazil's Auto Production (k units)"
+  },
+  {
+    "figure_id": "F145",
+    "report_id": "R010",
+    "label": "Exhibit 51",
+    "context": "Exhibit 51: Sao Paulo Real Estate LTM Launches (units)"
+  },
+  {
+    "figure_id": "F146",
+    "report_id": "R010",
+    "label": "Exhibit 52",
+    "context": "Exhibit 52: Brazil's steel export sales breakdown (kt)"
+  },
+  {
+    "figure_id": "F147",
+    "report_id": "R010",
+    "label": "Exhibit 53",
+    "context": "Exhibit 53: Brazil's steel imports breakdown (kt)"
+  },
+  {
+    "figure_id": "F148",
+    "report_id": "R010",
+    "label": "Exhibit 54",
+    "context": "Exhibit 54: Brazil's LTM White goods sales volume index"
+  },
+  {
+    "figure_id": "F149",
+    "report_id": "R010",
+    "label": "Exhibit 55",
+    "context": "Exhibit 55: Black Sea crude steel production mn tonnes"
+  },
+  {
+    "figure_id": "F150",
+    "report_id": "R010",
+    "label": "Exhibit 56",
+    "context": "Exhibit 56: India crude steel production mn tonnes"
+  },
+  {
+    "figure_id": "F151",
+    "report_id": "R010",
+    "label": "Exhibit 57",
+    "context": "Exhibit 57: Japan crude steel production mn tonnes"
+  },
+  {
+    "figure_id": "F152",
+    "report_id": "R010",
+    "label": "Exhibit 58",
+    "context": "Exhibit 58: Seaborne iron ore and pellet prices (CIF China) US\\$/dmt"
+  },
+  {
+    "figure_id": "F153",
+    "report_id": "R010",
+    "label": "Exhibit 59",
+    "context": "Exhibit 59: 58% Fe price realisations US\\$/t"
+  },
+  {
+    "figure_id": "F154",
+    "report_id": "R010",
+    "label": "Exhibit 60",
+    "context": "Exhibit 60: High / low grade iron ore premiums / vs 62% Fe US\\$/dmt"
+  },
+  {
+    "figure_id": "F155",
+    "report_id": "R010",
+    "label": "Exhibit 61",
+    "context": "Exhibit 61: Iron ore pricing vs. Rebar and HRC margin US\\$/t"
+  },
+  {
+    "figure_id": "F156",
+    "report_id": "R010",
+    "label": "Exhibit 62",
+    "context": "Exhibit 62: Brazilian iron ore shipments kt"
+  },
+  {
+    "figure_id": "F157",
+    "report_id": "R010",
+    "label": "Exhibit 63",
+    "context": "Exhibit 63: Australian iron ore shipments kt"
+  },
+  {
+    "figure_id": "F158",
+    "report_id": "R010",
+    "label": "Exhibit 64",
+    "context": "Exhibit 64: Australian shipments to China kt"
+  },
+  {
+    "figure_id": "F159",
+    "report_id": "R010",
+    "label": "Exhibit 65",
+    "context": "Exhibit 65: China imports - ex Aus/Brazil mtpa"
+  },
+  {
+    "figure_id": "F160",
+    "report_id": "R010",
+    "label": "Exhibit 66",
+    "context": "Exhibit 66: China ex Aus/Brazil iron ore imports by country"
+  },
+  {
+    "figure_id": "F161",
+    "report_id": "R010",
+    "label": "Exhibit 67",
+    "context": "Exhibit 67: China domestic iron ore production by region (62% FeEq)"
+  },
+  {
+    "figure_id": "F162",
+    "report_id": "R010",
+    "label": "Exhibit 68",
+    "context": "Exhibit 68: Domestic miner iron ore stocks and utilisation rates"
+  },
+  {
+    "figure_id": "F163",
+    "report_id": "R010",
+    "label": "Exhibit 69",
+    "context": "Exhibit 69: China portside iron ore stockpiles"
+  },
+  {
+    "figure_id": "F164",
+    "report_id": "R010",
+    "label": "Exhibit 70",
+    "context": "Exhibit 70: We calculate around 5 weeks of inventory"
+  },
+  {
+    "figure_id": "F165",
+    "report_id": "R010",
+    "label": "Exhibit 71",
+    "context": "Exhibit 71: FMG branded fines stockpile"
+  },
+  {
+    "figure_id": "F166",
+    "report_id": "R010",
+    "label": "Exhibit 72",
+    "context": "Exhibit 72: BHP & RIO inventories # GS Projections and equity views # GS Global steel prices outlook Exhibit 73: GS Global Steel Price Outlook"
+  },
+  {
+    "figure_id": "F167",
+    "report_id": "R011",
+    "label": "Exhibit 1",
+    "context": "Exhibit 1: Demand continues to outpace supply for DRAM and NAND, leading to exceptionally strong memory producer profitability Demand / Supply Balance for DRAM and NAND (%)"
+  },
+  {
+    "figure_id": "F168",
+    "report_id": "R011",
+    "label": "Exhibit 2",
+    "context": "Exhibit 2: By 2030, we estimate consumer and enterprise agents could push token consumption 24X above today's estimated global capacity."
+  },
+  {
+    "figure_id": "F169",
+    "report_id": "R011",
+    "label": "Exhibit 3",
+    "context": "Exhibit 3: The risks to oil prices are skewed to the upside"
+  },
+  {
+    "figure_id": "F170",
+    "report_id": "R011",
+    "label": "Exhibit 4",
+    "context": "Exhibit 4: Historically, we have seen India earnings get downgraded by 6-13% (median 7%) in the 12 months after an energy supply shock"
+  },
+  {
+    "figure_id": "F171",
+    "report_id": "R011",
+    "label": "Exhibit 5",
+    "context": "Exhibit 5: After continued outflows from active global money, domestic clients expressed worry around tapering passive inflows"
+  },
+  {
+    "figure_id": "F172",
+    "report_id": "R011",
+    "label": "Exhibit 6",
+    "context": "Exhibit 6: While much of FII selling may have already occurred in anticipation of a downgrade cycle, low visibility around recovery will likely impede re-buying"
+  },
+  {
+    "figure_id": "F173",
+    "report_id": "R011",
+    "label": "Exhibit 7",
+    "context": "Exhibit 7: Conviction themes among Dlls included energy security, goods exporters, data centers and SMID caps"
+  },
+  {
+    "figure_id": "F174",
+    "report_id": "R012",
+    "label": "Exhibit 2",
+    "context": "Exhibit 1: We Update Our Nowcast of Central Bank Gold Purchases, Because..."
+  },
+  {
+    "figure_id": "F175",
+    "report_id": "R012",
+    "label": "Exhibit 2",
+    "context": "Exhibit 2: ... A Consistent Gap Between London Vault Outlfows and UK Net Exports Suggests Our GS Nowcast Had Been Undershooting Central Bank Gold Purchases Since August 2025"
+  },
+  {
+    "figure_id": "F176",
+    "report_id": "R013",
+    "label": "Exhibit 1",
+    "context": "Exhibit 1: Net Unhedged Flows into US Equity Funds"
+  },
+  {
+    "figure_id": "F177",
+    "report_id": "R016",
+    "label": "Exhibit 3",
+    "context": "Exhibit 1: EPS has surprised by around 2%, only slightly below the historical average Equal Weighted (%)"
+  },
+  {
+    "figure_id": "F178",
+    "report_id": "R016",
+    "label": "Exhibit 3",
+    "context": "Exhibit 3: Guidance surprises are seeing small price reactions SXXP companies. Average price reaction on reporting day (vs. the market). FY1 guidance (vs. consensus one day before the guidance was issued)."
+  },
+  {
+    "figure_id": "F179",
+    "report_id": "R016",
+    "label": "Exhibit 2",
+    "context": "Exhibit 2: Market reactions remain asymmetric Average price reaction on reporting day vs. the market - STOXX 600 companies"
+  },
+  {
+    "figure_id": "F180",
+    "report_id": "R016",
+    "label": "Exhibit 4",
+    "context": "Exhibit 4: Energy and Basic Resources names continue to guide the aggregate upgrades 2026 EPS revisions. STOXX 600 sectors."
+  },
+  {
+    "figure_id": "F181",
+    "report_id": "R016",
+    "label": "Exhibit 5",
+    "context": "Exhibit 5: Earnings of capital-intensive and internationally exposed names are being upgraded 1-month revisions 2026 Earnings - selection of European baskets"
+  },
+  {
+    "figure_id": "F182",
+    "report_id": "R016",
+    "label": "Exhibit 10",
+    "context": "Exhibit 10: Cross-asset performance # Global Strategy Views: Indices and Asset Classes Exhibit 11: GS forecasts across assets"
+  },
+  {
+    "figure_id": "F183",
+    "report_id": "R016",
+    "label": "Exhibit 13",
+    "context": "Exhibit 13: Expected earnings growth and revisions by sector (%) Local currency Exhibit 14: STOXX Europe 600 EPS revisions & earnings sentiment"
+  },
+  {
+    "figure_id": "F184",
+    "report_id": "R016",
+    "label": "Exhibit 17",
+    "context": "Exhibit 17: 3-month sector performance Total Return (€) 3m Total Return Performance"
+  },
+  {
+    "figure_id": "F185",
+    "report_id": "R016",
+    "label": "Exhibit 16",
+    "context": "Exhibit 16: 1-week sector performance Total Return (€) 1w Total Return Performance"
+  },
+  {
+    "figure_id": "F186",
+    "report_id": "R016",
+    "label": "Exhibit 18",
+    "context": "Exhibit 18: YTD sector performance Total Return (€) YTD Total Return Performance"
+  },
+  {
+    "figure_id": "F187",
+    "report_id": "R016",
+    "label": "Exhibit 19",
+    "context": "Exhibit 19: Cyclicals vs. Defensives Cyclicals = Equal Weighted: Industrials, Financials and Cons Discretionary. Defensives = Equal Weighted: Utilities, Health Care, Com Services, Cons Staples"
+  },
+  {
+    "figure_id": "F188",
+    "report_id": "R016",
+    "label": "Exhibit 20",
+    "context": "Exhibit 20: Value vs. Growth price performance MSCI indices"
+  },
+  {
+    "figure_id": "F189",
+    "report_id": "R016",
+    "label": "Exhibit 21",
+    "context": "Exhibit 21: Small-cap vs. Large-cap price performance US: Russell 2000 vs. SPX; Europe: STOXX Small vs. STOXX Europe Large"
+  },
+  {
+    "figure_id": "F190",
+    "report_id": "R016",
+    "label": "Exhibit 22",
+    "context": "Exhibit 22: Momentum vs. Market MSCI indices"
+  },
+  {
+    "figure_id": "F191",
+    "report_id": "R016",
+    "label": "Exhibit 23",
+    "context": "Exhibit 23: Thematic basket relative performance # Sub-Sector Performance Exhibit 24: 1-week sub-sector price performance"
+  },
+  {
+    "figure_id": "F192",
+    "report_id": "R016",
+    "label": "Exhibit 23",
+    "context": "Exhibit 23: Thematic basket relative performance # Sub-Sector Performance Exhibit 24: 1-week sub-sector price performance"
+  },
+  {
+    "figure_id": "F193",
+    "report_id": "R016",
+    "label": "Exhibit 25",
+    "context": "Exhibit 25: YTD Sub-sector price performance YTD Price Performance"
+  },
+  {
+    "figure_id": "F194",
+    "report_id": "R016",
+    "label": "Exhibit 26",
+    "context": "Exhibit 26: International Exposure Baskets Relative performance vs. SXXP (EUR)"
+  },
+  {
+    "figure_id": "F195",
+    "report_id": "R016",
+    "label": "Exhibit 27",
+    "context": "Exhibit 27: Domestic Exposure Baskets Relative performance vs. SXXP (EUR)"
+  },
+  {
+    "figure_id": "F196",
+    "report_id": "R016",
+    "label": "Exhibit 28",
+    "context": "Exhibit 28: Shareholder Return Baskets Relative performance vs. SXXP (EUR)"
+  },
+  {
+    "figure_id": "F197",
+    "report_id": "R016",
+    "label": "Exhibit 29",
+    "context": "Exhibit 29: Fundamental Thematic Baskets Relative performance vs. SXXP (EUR)"
+  },
+  {
+    "figure_id": "F198",
+    "report_id": "R016",
+    "label": "Exhibit 33",
+    "context": "Exhibit 33: STOXX Europe 600 12m fwd P/E"
+  },
+  {
+    "figure_id": "F199",
+    "report_id": "R016",
+    "label": "Exhibit 35",
+    "context": "Exhibit 35: Global valuation range 12m fwd P/E multiple. Data since 2000"
+  },
+  {
+    "figure_id": "F200",
+    "report_id": "R016",
+    "label": "Exhibit 36",
+    "context": "Exhibit 36: Market implied ERP Pan-Europe"
+  },
+  {
+    "figure_id": "F201",
+    "report_id": "R016",
+    "label": "Exhibit 37",
+    "context": "Exhibit 37: Europe STOXX 600 and Europe Composite PMI Europe STOXX 600 (Y/Y % Chg) and Europe Composite PMI (RHS)"
+  },
+  {
+    "figure_id": "F202",
+    "report_id": "R016",
+    "label": "Exhibit 38",
+    "context": "Exhibit 38: Cyclicals vs. Defensives and Europe Composite PMI Europe Cyclicals vs. Defensives (Y/Y % Chg) and Europe Composite PMI (RHS)"
+  },
+  {
+    "figure_id": "F203",
+    "report_id": "R016",
+    "label": "Exhibit 39",
+    "context": "Exhibit 39: MSCI Europe Value vs. Growth and US 10y Bond Yield MSCI Europe Value vs. Growth (Y/Y % Chg) and US 10y Bond Yield (Y/Y Chg, RHS)"
+  },
+  {
+    "figure_id": "F204",
+    "report_id": "R016",
+    "label": "Exhibit 40",
+    "context": "Exhibit 40: Europe STOXX Small vs. Large and EUR/USD Europe STOXX Small vs. Europe STOXX Large (Y/Y % Chg) and EUR/USD (Y/Y % Chg, RHS)"
+  },
+  {
+    "figure_id": "F205",
+    "report_id": "R016",
+    "label": "Exhibit 41",
+    "context": "Exhibit 41: 1-month rolling flows from Global investors into European equities Weekly fund flows (EPFR Country Flows Database)"
+  },
+  {
+    "figure_id": "F206",
+    "report_id": "R016",
+    "label": "Exhibit 42",
+    "context": "Exhibit 42: Calendarised flows from Global investors into European equities Weekly fund flows (EPFR Country Flows Database) Exhibit 43: Flows into developed Europe equity from Foreign and Domestic Investors 1-month rolling sum of"
+  },
+  {
+    "figure_id": "F207",
+    "report_id": "R016",
+    "label": "Exhibit 42",
+    "context": "Exhibit 42: Calendarised flows from Global investors into European equities Weekly fund flows (EPFR Country Flows Database) Exhibit 43: Flows into developed Europe equity from Foreign and Domestic Investors 1-month rolling sum of"
+  },
+  {
+    "figure_id": "F208",
+    "report_id": "R016",
+    "label": "Exhibit 44",
+    "context": "Exhibit 44: Ownership of Euro area equities"
+  },
+  {
+    "figure_id": "F209",
+    "report_id": "R016",
+    "label": "Exhibit 45",
+    "context": "Exhibit 45: Implied volatility (3-month ATM)"
+  },
+  {
+    "figure_id": "F210",
+    "report_id": "R016",
+    "label": "Exhibit 46",
+    "context": "Exhibit 46: Normalised skew (3-month, 25 delta)"
+  },
+  {
+    "figure_id": "F211",
+    "report_id": "R016",
+    "label": "Exhibit 47",
+    "context": "Exhibit 47: STOXX Europe 600 return dispersion"
+  },
+  {
+    "figure_id": "F212",
+    "report_id": "R016",
+    "label": "Exhibit 48",
+    "context": "Exhibit 48: 1-month average pairwise correlation"
+  },
+  {
+    "figure_id": "F213",
+    "report_id": "R016",
+    "label": "Exhibit 54",
+    "context": "Exhibit 54: Macro-data Assessment Platform (MAP) Economic surprise. GS Proprietary Index"
+  },
+  {
+    "figure_id": "F214",
+    "report_id": "R016",
+    "label": "Exhibit 53",
+    "context": "Exhibit 53: Current Activity Index (CAI) GS Proprietary Index"
+  },
+  {
+    "figure_id": "F215",
+    "report_id": "R016",
+    "label": "Exhibit 55",
+    "context": "Exhibit 55: GS Financial Conditions Index (GSFCI) GS Proprietary Index"
+  },
+  {
+    "figure_id": "F216",
+    "report_id": "R017",
+    "label": "Exhibit 1",
+    "context": "Exhibit 1: Energy, Utilities & Mining sub-sector performance Past 90 days (2/13/2026-5/14/2026)"
+  },
+  {
+    "figure_id": "F217",
+    "report_id": "R017",
+    "label": "Exhibit 2",
+    "context": "Exhibit 2: We believe E&Ps are reflecting a cost of capital above 11% 4-week rolling avg. of the implied discount rate for E&Ps based on five-year futures"
+  },
+  {
+    "figure_id": "F218",
+    "report_id": "R017",
+    "label": "Exhibit 3",
+    "context": "Exhibit 3: US Gasoline Inventories Have Drawn Sharply to 5% Below the Historical Seasonal Median; Wholesale Gasoline Prices Are 15% (\\$21/bbl) Higher in the US Than in Asia/EU"
+  },
+  {
+    "figure_id": "F219",
+    "report_id": "R017",
+    "label": "Exhibit 4",
+    "context": "Exhibit 4: Valuations of E&P stocks reflect WTI oil prices below the five-year strip Historical WTI price implied in covered E&Ps and forward oil futures, \\$/bbl"
+  },
+  {
+    "figure_id": "F220",
+    "report_id": "R017",
+    "label": "Exhibit 5",
+    "context": "Exhibit 5: Gas-focused E&Ps are broadly implying \\~\\$3.65/MMBtu long-term gas price vs. our mid-cycle view of \\$3.75/MMBtu, 2026/2027/2028 gas futures at \\~\\$3.66/\\$3.49/\\$3.69 per MMBtu Henry Hub gas price implied by our FCF Yield"
+  },
+  {
+    "figure_id": "F221",
+    "report_id": "R017",
+    "label": "Exhibit 6",
+    "context": "Exhibit 6: Historically, Utilities trade at a P/E multiple premium to the S&P when the 10-year UST remains below \\~3%, however, the relationship weakens in times of negative real rates Utility P/E multiple premium / discount to the"
+  },
+  {
+    "figure_id": "F222",
+    "report_id": "R017",
+    "label": "Exhibit 7",
+    "context": "Exhibit 7: Oil: GS vs. consensus vs. strip GS Commodities estimates vs consensus vs strip prices for WTI oil, \\$/bbl"
+  },
+  {
+    "figure_id": "F223",
+    "report_id": "R017",
+    "label": "Exhibit 8",
+    "context": "Exhibit 8: Natural gas: GS vs. consensus vs. strip GS Commodities estimates vs consensus vs strip prices for natural gas, \\$/MMBtu"
+  },
+  {
+    "figure_id": "F224",
+    "report_id": "R017",
+    "label": "Exhibit 9",
+    "context": "Exhibit 9: Natural gas inventories are in a modest surplus versus the 5-year-average Natural gas storage vs. the five-year average (Bcf) vs. HH front-month natural gas price (\\$/MMBtu)"
+  },
+  {
+    "figure_id": "F225",
+    "report_id": "R018",
+    "label": "Exhibit 1",
+    "context": "Exhibit 1: GSJPCRTT and GSJPCRTR have outperformed TOPIX Data as of May 14, 2026"
+  },
+  {
+    "figure_id": "F226",
+    "report_id": "R018",
+    "label": "Exhibit 2",
+    "context": "Exhibit 2: So far, 4Q positive surprises exceed negative surprises TOPIX constituent companies with Feb/Mar fiscal year-end, as of May 14"
+  },
+  {
+    "figure_id": "F227",
+    "report_id": "R018",
+    "label": "Exhibit 5",
+    "context": "Exhibit 5: FY25 Q4 surprises by sector TOPIX constituent stocks with Feb/Mar fiscal year-ends, as of May 14"
+  },
+  {
+    "figure_id": "F228",
+    "report_id": "R018",
+    "label": "Exhibit 6",
+    "context": "Exhibit 6: Guidance is slightly more conservative than history, -9.2% vs consensus (10y median is -8.1%) Data as of May 14"
+  },
+  {
+    "figure_id": "F229",
+    "report_id": "R018",
+    "label": "Exhibit 7",
+    "context": "Exhibit 7: Share price reaction post results announcement TOPIX constituent stocks with Mar fiscal year-end, median TOPIX-relative price reaction, as of May 15"
+  },
+  {
+    "figure_id": "F230",
+    "report_id": "R018",
+    "label": "Exhibit 8",
+    "context": "Exhibit 8: Momentum stocks reacted strongly to negative surprises and did not react to positive surprises 1M momentum stocks with Mar fiscal year end, median TOPIX-relative price reaction, as of May 15"
+  },
+  {
+    "figure_id": "F231",
+    "report_id": "R018",
+    "label": "Exhibit 9",
+    "context": "Exhibit 9: Spike in standard deviation of +1D price reactions As of May 15"
+  },
+  {
+    "figure_id": "F232",
+    "report_id": "R018",
+    "label": "Exhibit 10",
+    "context": "Exhibit 10: Our 3-/6-/12-month TOPIX targets are 3,800/4,000/4,200 TOPIX"
+  },
+  {
+    "figure_id": "F233",
+    "report_id": "R018",
+    "label": "Exhibit 11",
+    "context": "Exhibit 11: GS Top-down earnings forecast (TOPIX)"
+  },
+  {
+    "figure_id": "F234",
+    "report_id": "R018",
+    "label": "Exhibit 13",
+    "context": "Exhibit 13: Sector recommendation Exhibit 14: GS top-down vs. consensus bottom-up estimates of FY2025 EPS growth"
+  },
+  {
+    "figure_id": "F235",
+    "report_id": "R018",
+    "label": "Exhibit 15",
+    "context": "Exhibit 15: GS top-down vs. consensus bottom-up estimates of FY2026 EPS growth"
+  },
+  {
+    "figure_id": "F236",
+    "report_id": "R018",
+    "label": "Exhibit 16",
+    "context": "Exhibit 16: TOPIX 12-month forward P/E Consensus"
+  },
+  {
+    "figure_id": "F237",
+    "report_id": "R018",
+    "label": "Exhibit 17",
+    "context": "Exhibit 17: TOPIX P/B Actual"
+  },
+  {
+    "figure_id": "F238",
+    "report_id": "R018",
+    "label": "Exhibit 18",
+    "context": "Exhibit 18: TOPIX Index"
+  },
+  {
+    "figure_id": "F239",
+    "report_id": "R018",
+    "label": "Exhibit 19",
+    "context": "Exhibit 19: Global equity indices Indexed, local currency"
+  },
+  {
+    "figure_id": "F240",
+    "report_id": "R018",
+    "label": "Exhibit 22",
+    "context": "Exhibit 22: TSE net equity transaction by investor type ¥ billion"
+  },
+  {
+    "figure_id": "F241",
+    "report_id": "R018",
+    "label": "Exhibit 23",
+    "context": "Exhibit 23: TSE net equity transaction by investor type ¥ billion Exhibit 24: Cumulative announced buyback JPY tn, as of May 14 2026"
+  },
+  {
+    "figure_id": "F242",
+    "report_id": "R018",
+    "label": "Exhibit 25",
+    "context": "Exhibit 25: Margin transaction ¥ billions; Index"
+  },
+  {
+    "figure_id": "F243",
+    "report_id": "R018",
+    "label": "Exhibit 26",
+    "context": "Exhibit 26: TOPIX earnings revision index Indexed"
+  },
+  {
+    "figure_id": "F244",
+    "report_id": "R018",
+    "label": "Exhibit 27",
+    "context": "Exhibit 27: Global earnings revision index indexed, FY2026"
+  },
+  {
+    "figure_id": "F245",
+    "report_id": "R018",
+    "label": "Exhibit 28",
+    "context": "Exhibit 28: Style analysis: Value vs. Growth, Size MSCI Japan Value / MSCI Japan Growth, Topix Large 100 / Mid 400"
+  },
+  {
+    "figure_id": "F246",
+    "report_id": "R018",
+    "label": "Exhibit 30",
+    "context": "Exhibit 30: Japan Portfolio Strategy Baskets performance Exhibit 29: Style analysis: Cyclical / Defensive Relative Performance"
+  },
+  {
+    "figure_id": "F247",
+    "report_id": "R018",
+    "label": "Exhibit 31",
+    "context": "Exhibit 31: Strategy Baskets performance (1) TOPIX relative Exhibit 32: Strategy Baskets performance (2) TOPIX relative"
+  },
+  {
+    "figure_id": "F248",
+    "report_id": "R018",
+    "label": "Exhibit 31",
+    "context": "Exhibit 31: Strategy Baskets performance (1) TOPIX relative Exhibit 32: Strategy Baskets performance (2) TOPIX relative"
+  },
+  {
+    "figure_id": "F249",
+    "report_id": "R018",
+    "label": "Exhibit 33",
+    "context": "Exhibit 33: Strategy Baskets performance (3) TOPIX relative # Sector Performance/Revisions/Valuations Exhibit 34: Sector Performance (Topix Relative, 1-week, %)"
+  },
+  {
+    "figure_id": "F250",
+    "report_id": "R018",
+    "label": "Exhibit 33",
+    "context": "Exhibit 33: Strategy Baskets performance (3) TOPIX relative # Sector Performance/Revisions/Valuations Exhibit 34: Sector Performance (Topix Relative, 1-week, %)"
+  },
+  {
+    "figure_id": "F251",
+    "report_id": "R018",
+    "label": "Exhibit 35",
+    "context": "Exhibit 35: Sector earnings revision momentum/ranking Past 1M, FY2025"
+  },
+  {
+    "figure_id": "F252",
+    "report_id": "R018",
+    "label": "Exhibit 37",
+    "context": "Exhibit 37: SPE index 52 week equal-weighted cumulative weekly performance and best-worst spreads"
+  },
+  {
+    "figure_id": "F253",
+    "report_id": "R019",
+    "label": "Exhibit 8",
+    "context": "Exhibit 1: While Korea's daily market breadth has remained narrow, it has recently rebounded from below the -1 standard deviation level"
+  },
+  {
+    "figure_id": "F254",
+    "report_id": "R019",
+    "label": "Exhibit 3",
+    "context": "Exhibit 3: Only 68 out of 835 listed stocks have outperformed the index, and these names account for nearly 66% of total market capitalization"
+  },
+  {
+    "figure_id": "F255",
+    "report_id": "R019",
+    "label": "Exhibit 2",
+    "context": "Exhibit 2: The KOSPI 50 (large-cap index) has outperformed the KOSPI 200 small- and mid-cap segment by more than 2 standard deviations"
+  },
+  {
+    "figure_id": "F256",
+    "report_id": "R019",
+    "label": "Exhibit 4",
+    "context": "Exhibit 4: Despite the overall market rally, nearly 70% of KOSPI-listed stocks are still trading below book value, which we believe presents attractive valuation opportunities"
+  },
+  {
+    "figure_id": "F257",
+    "report_id": "R019",
+    "label": "Exhibit 10",
+    "context": "Up (↑) = Up wow vs. the previous week Asterisk (\\*) = Expressed in standard deviation of 1-wk change in 1-year Year-to-date Foreign Inflows to Korea"
+  },
+  {
+    "figure_id": "F258",
+    "report_id": "R019",
+    "label": "Exhibit 11",
+    "context": "Exhibit 11: Equity inflows to 5 AEJ markets 4-week rolling sum"
+  },
+  {
+    "figure_id": "F259",
+    "report_id": "R019",
+    "label": "Exhibit 12",
+    "context": "Exhibit 12: Equity inflows to 5 AEJ markets"
+  },
+  {
+    "figure_id": "F260",
+    "report_id": "R019",
+    "label": "Exhibit 13",
+    "context": "Exhibit 13: Bond inflows to 4 AEJ markets 4-week rolling sum"
+  },
+  {
+    "figure_id": "F261",
+    "report_id": "R019",
+    "label": "Exhibit 14",
+    "context": "Exhibit 14: Bond inflows to 4 AEJ markets"
+  },
+  {
+    "figure_id": "F262",
+    "report_id": "R019",
+    "label": "Exhibit 15",
+    "context": "Exhibit 15: Housing prices and rental prices National, monthly and weekly price changes"
+  },
+  {
+    "figure_id": "F263",
+    "report_id": "R019",
+    "label": "Exhibit 16",
+    "context": "Exhibit 16: Living expense price changes Monthly and weekly changes vs. CPI"
+  },
+  {
+    "figure_id": "F264",
+    "report_id": "R019",
+    "label": "Exhibit 17",
+    "context": "Exhibit 17: Daily Financial Condition Index Jan 1, 2013=100"
+  },
+  {
+    "figure_id": "F265",
+    "report_id": "R019",
+    "label": "Exhibit 20",
+    "context": "Exhibit 20: KOSPI and MSCI regional index KOSPI Index price performance (KRW)"
+  },
+  {
+    "figure_id": "F266",
+    "report_id": "R019",
+    "label": "Exhibit 21",
+    "context": "Exhibit 21: Weekly sector performance relative to KOSPI"
+  },
+  {
+    "figure_id": "F267",
+    "report_id": "R019",
+    "label": "Exhibit 23",
+    "context": "Exhibit 23: Weekly earnings momentum for KOSPI and selected sectors"
+  },
+  {
+    "figure_id": "F268",
+    "report_id": "R019",
+    "label": "Exhibit 22",
+    "context": "Exhibit 22: Historical trend of monthly KOSPI earnings momentum"
+  },
+  {
+    "figure_id": "F269",
+    "report_id": "R019",
+    "label": "Exhibit 25",
+    "context": "Exhibit 26: 12-month forward P/E and P/B for KOSPI, since Jan 2008"
+  },
+  {
+    "figure_id": "F270",
+    "report_id": "R019",
+    "label": "Exhibit 27",
+    "context": "Exhibit 27: 12-month forward P/E for MSCI Korea, since Jan 2008"
+  },
+  {
+    "figure_id": "F271",
+    "report_id": "R019",
+    "label": "Exhibit 28",
+    "context": "Exhibit 28: Current 12m forward P/E of KOSPI and selected sectors since Jan 2006"
+  },
+  {
+    "figure_id": "F272",
+    "report_id": "R019",
+    "label": "Exhibit 30",
+    "context": "Exhibit 30: MXKR valuation discount relative to MSCI AC World NTM P/E"
+  },
+  {
+    "figure_id": "F273",
+    "report_id": "R019",
+    "label": "Exhibit 32",
+    "context": "Exhibit 32: NTM P/E Valuation Discount vs. 10-year History by Sector Exhibit 31: MXKR valuation discount relative to MXAPJ NTM P/E"
+  },
+  {
+    "figure_id": "F274",
+    "report_id": "R019",
+    "label": "Exhibit 34",
+    "context": "Exhibit 34: 2025 & 2026 year-to-date KOSPI purchase by investor type Exhibit 35: KOSPI net equity transactions by investor type (KRW bn)"
+  },
+  {
+    "figure_id": "F275",
+    "report_id": "R019",
+    "label": "Exhibit 37",
+    "context": "Exhibit 37: KOSPI sectors, ranked by foreign ownership as a % of total market value"
+  },
+  {
+    "figure_id": "F276",
+    "report_id": "R019",
+    "label": "Exhibit 38",
+    "context": "Exhibit 38: KOSPI sectors ranked by foreign ownership % change Absolute ownership % (market value) changes"
+  },
+  {
+    "figure_id": "F277",
+    "report_id": "R019",
+    "label": "Exhibit 39",
+    "context": "Exhibit 39: Equity net weekly flows (Week ending on Thursday due to data availability)"
+  },
+  {
+    "figure_id": "F278",
+    "report_id": "R019",
+    "label": "Exhibit 40",
+    "context": "Exhibit 40: 12-month forward D/Y for KOSPI and Korea Treasury bond yield"
+  },
+  {
+    "figure_id": "F279",
+    "report_id": "R019",
+    "label": "Exhibit 42",
+    "context": "Exhibit 42: USDKRW and USDCNY rates"
+  },
+  {
+    "figure_id": "F280",
+    "report_id": "R019",
+    "label": "Exhibit 43",
+    "context": "Exhibit 43: USDKRW vs. 10 year bond yields differentials between the US and Korea"
+  },
+  {
+    "figure_id": "F281",
+    "report_id": "R019",
+    "label": "Exhibit 44",
+    "context": "Exhibit 44: Korea Equity Risk Barometer"
+  },
+  {
+    "figure_id": "F282",
+    "report_id": "R019",
+    "label": "Exhibit 45",
+    "context": "Exhibit 45: Loans on Margin account balance"
+  },
+  {
+    "figure_id": "F283",
+    "report_id": "R019",
+    "label": "Exhibit 46",
+    "context": "Exhibit 46: Korea Volatility Index (VKOSPI)"
+  },
+  {
+    "figure_id": "F284",
+    "report_id": "R019",
+    "label": "Exhibit 47",
+    "context": "Exhibit 47: KOSPI Percent of Members above 200 day moving average"
+  },
+  {
+    "figure_id": "F285",
+    "report_id": "R020",
+    "label": "Figure 1",
+    "context": "Figure 1: Datacom Market Forecast by Data Rate \\$ in Billions"
+  },
+  {
+    "figure_id": "F286",
+    "report_id": "R020",
+    "label": "Figure 2",
+    "context": "Figure 2: 800G Datacom Market Forecast \\$ in Billions"
+  },
+  {
+    "figure_id": "F287",
+    "report_id": "R020",
+    "label": "Figure 3",
+    "context": "Figure 3: 1.6T Datacom Market Forecast \\$ in Billions"
+  },
+  {
+    "figure_id": "F288",
+    "report_id": "R020",
+    "label": "Figure 4",
+    "context": "Figure 4: Datacom Attach Rate X"
+  },
+  {
+    "figure_id": "F289",
+    "report_id": "R020",
+    "label": "Figure 5",
+    "context": "Figure 5: Datacom Market Forecast by Technology \\$ in Billions"
+  },
+  {
+    "figure_id": "F290",
+    "report_id": "R020",
+    "label": "Figure 6",
+    "context": "Figure 6: Long-term CPO Market Forecast \\$ in Billions"
+  },
+  {
+    "figure_id": "F291",
+    "report_id": "R020",
+    "label": "Figure 7",
+    "context": "Figure 7: Long-term CPO Forecast \\$ in Billions"
+  },
+  {
+    "figure_id": "F292",
+    "report_id": "R020",
+    "label": "Figure 8",
+    "context": "Figure 8: Telecom & DCI Market Outlook \\$ in Billions"
+  },
+  {
+    "figure_id": "F293",
+    "report_id": "R020",
+    "label": "Figure 9",
+    "context": "Figure 9: Telecom & DCI Market Outlook \\$ in Billions"
+  }
+]
