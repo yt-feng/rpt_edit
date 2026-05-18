@@ -2,10 +2,11 @@
 """Finalize generated report outputs.
 
 Responsibilities:
-1. Sanitize investment-bank brand names in all generated text outputs.
-2. Generate Xianyu listing copy from sanitized MinerU markdown.
-3. Normalize WeChat article ending: ZSXQ image + English gray disclaimer.
-4. Run a compliance-oriented sensitive-content guard on public-facing notes.
+1. Sanitize investment-bank brand names in generated text outputs.
+2. Generate Xianyu listing copy.
+3. Generate Zhihu-style article copy.
+4. Normalize WeChat endings.
+5. Run sensitive-content guard on public-facing notes.
 """
 from __future__ import annotations
 
@@ -13,7 +14,6 @@ import argparse
 import json
 import os
 import re
-import sys
 from pathlib import Path
 from typing import Any
 
@@ -34,18 +34,17 @@ BRAND_PATTERNS: list[tuple[str, str]] = [
     (r"J\.\s*P\.\s*Morgan\s+Research", "JPM"), (r"J\.\s*P\.\s*Morgan", "JPM"), (r"JP\s*Morgan", "JPM"), (r"JPMorgan\s+Chase", "JPM"), (r"JPMorgan", "JPM"), (r"摩根大通研究", "JPM"), (r"摩根大通", "JPM"),
     (r"Morgan\s+Stanley\s+Research", "MS"), (r"Morgan\s+Stanley", "MS"), (r"摩根士丹利研究", "MS"), (r"摩根士丹利", "MS"), (r"大摩", "MS"),
     (r"Bank\s+of\s+America\s+Merrill\s+Lynch", "BofA"), (r"BofA\s+Merrill\s+Lynch", "BofA"), (r"BofA\s+Securities", "BofA"), (r"Bank\s+of\s+America", "BofA"), (r"Merrill\s+Lynch", "BofA"), (r"美银美林", "BofA"), (r"美国银行证券", "BofA"), (r"美银证券", "BofA"), (r"美林证券", "BofA"), (r"美银", "BofA"),
-    (r"Citigroup\s+Research", "Citi"), (r"Citi\s+Research", "Citi"), (r"Citigroup", "Citi"), (r"Citi", "Citi"), (r"花旗研究", "Citi"), (r"花旗银行", "Citi"), (r"花旗", "Citi"),
-    (r"UBS\s+Securities", "UBS"), (r"UBS\s+Research", "UBS"), (r"UBS", "UBS"), (r"瑞银证券", "UBS"), (r"瑞银", "UBS"),
+    (r"Citigroup\s+Research", "Citi"), (r"Citi\s+Research", "Citi"), (r"Citigroup", "Citi"), (r"花旗研究", "Citi"), (r"花旗银行", "Citi"), (r"花旗", "Citi"),
+    (r"UBS\s+Securities", "UBS"), (r"UBS\s+Research", "UBS"), (r"瑞银证券", "UBS"), (r"瑞银", "UBS"),
     (r"Deutsche\s+Bank\s+Research", "DB"), (r"Deutsche\s+Bank", "DB"), (r"德意志银行研究", "DB"), (r"德意志银行", "DB"), (r"德银", "DB"),
-    (r"HSBC\s+Global\s+Research", "HSBC"), (r"HSBC\s+Research", "HSBC"), (r"HSBC", "HSBC"), (r"汇丰环球研究", "HSBC"), (r"汇丰研究", "HSBC"), (r"汇丰", "HSBC"),
+    (r"HSBC\s+Global\s+Research", "HSBC"), (r"HSBC\s+Research", "HSBC"), (r"汇丰环球研究", "HSBC"), (r"汇丰研究", "HSBC"), (r"汇丰", "HSBC"),
     (r"Barclays\s+Research", "BARC"), (r"Barclays", "BARC"), (r"巴克莱研究", "BARC"), (r"巴克莱", "BARC"),
-    (r"BNP\s+Paribas\s+Exane", "BNPP"), (r"BNP\s+Paribas", "BNPP"), (r"巴黎银行研究", "BNPP"), (r"法国巴黎银行", "BNPP"), (r"法巴", "BNPP"),
-    (r"Societe\s+Generale", "SG"), (r"Société\s+Générale", "SG"), (r"SG\s+Research", "SG"), (r"法兴银行", "SG"), (r"法兴", "SG"),
-    (r"Credit\s+Suisse\s+Research", "CS"), (r"Credit\s+Suisse", "CS"), (r"瑞信研究", "CS"), (r"瑞士信贷", "CS"), (r"瑞信", "CS"),
+    (r"BNP\s+Paribas\s+Exane", "BNPP"), (r"BNP\s+Paribas", "BNPP"), (r"法国巴黎银行", "BNPP"), (r"法巴", "BNPP"),
+    (r"Societe\s+Generale", "SG"), (r"Société\s+Générale", "SG"), (r"法兴银行", "SG"), (r"法兴", "SG"),
+    (r"Credit\s+Suisse\s+Research", "CS"), (r"Credit\s+Suisse", "CS"), (r"瑞士信贷", "CS"), (r"瑞信", "CS"),
     (r"Nomura\s+Research", "NOM"), (r"Nomura", "NOM"), (r"野村证券", "NOM"), (r"野村", "NOM"),
-    (r"Daiwa\s+Securities", "Daiwa"), (r"Daiwa", "Daiwa"), (r"大和证券", "Daiwa"), (r"大和", "Daiwa"),
-    (r"Mizuho\s+Securities", "Mizuho"), (r"Mizuho", "Mizuho"), (r"瑞穗证券", "Mizuho"), (r"瑞穗", "Mizuho"),
-    (r"SMBC\s+Nikko", "SMBC"), (r"SMBC", "SMBC"), (r"三井住友", "SMBC"),
+    (r"Daiwa\s+Securities", "Daiwa"), (r"大和证券", "Daiwa"), (r"大和", "Daiwa"),
+    (r"Mizuho\s+Securities", "Mizuho"), (r"瑞穗证券", "Mizuho"), (r"瑞穗", "Mizuho"),
     (r"Macquarie\s+Research", "MQ"), (r"Macquarie", "MQ"), (r"麦格理研究", "MQ"), (r"麦格理", "MQ"),
     (r"CLSA", "CLSA"), (r"里昂证券", "CLSA"), (r"里昂", "CLSA"),
     (r"CICC", "CICC"), (r"中金公司", "CICC"), (r"中金", "CICC"),
@@ -54,21 +53,12 @@ BRAND_PATTERNS: list[tuple[str, str]] = [
     (r"Haitong\s+Securities", "Haitong"), (r"海通证券", "Haitong"),
     (r"Huatai\s+Securities", "HTSC"), (r"华泰证券", "HTSC"),
     (r"Guotai\s+Junan", "GTJA"), (r"国泰君安", "GTJA"),
-    (r"Essence\s+Securities", "Essence"), (r"安信证券", "Essence"),
-    (r"GF\s+Securities", "GF"), (r"广发证券", "GF"),
-    (r"Orient\s+Securities", "Orient"), (r"东方证券", "Orient"),
-    (r"Industrial\s+Securities", "Industrial"), (r"兴业证券", "Industrial"),
-    (r"Jefferies\s+Research", "JEF"), (r"Jefferies", "JEF"), (r"杰富瑞研究", "JEF"), (r"杰富瑞", "JEF"),
-    (r"Bernstein\s+Research", "Bernstein"), (r"Sanford\s+C\.\s+Bernstein", "Bernstein"), (r"Bernstein", "Bernstein"), (r"伯恩斯坦", "Bernstein"),
+    (r"Jefferies\s+Research", "JEF"), (r"Jefferies", "JEF"), (r"杰富瑞", "JEF"),
+    (r"Bernstein\s+Research", "Bernstein"), (r"Sanford\s+C\.\s+Bernstein", "Bernstein"), (r"伯恩斯坦", "Bernstein"),
     (r"Evercore\s+ISI", "Evercore"), (r"Evercore", "Evercore"),
     (r"Guggenheim\s+Securities", "Guggenheim"), (r"Guggenheim", "Guggenheim"),
-    (r"Piper\s+Sandler", "Piper"), (r"Piper\s+Jaffray", "Piper"),
-    (r"Raymond\s+James", "RJ"),
-    (r"RBC\s+Capital\s+Markets", "RBC"), (r"RBC", "RBC"), (r"加拿大皇家银行", "RBC"),
-    (r"TD\s+Cowen", "TD Cowen"), (r"Cowen", "Cowen"), (r"Stifel", "Stifel"), (r"William\s+Blair", "William Blair"),
-    (r"Wolfe\s+Research", "Wolfe"), (r"Needham", "Needham"), (r"Oppenheimer", "Oppenheimer"), (r"KeyBanc", "KeyBanc"),
-    (r"Melius\s+Research", "Melius"), (r"Redburn\s+Atlantic", "Redburn"), (r"Arete\s+Research", "Arete"),
-    (r"Morningstar", "Morningstar"), (r"晨星", "Morningstar"),
+    (r"Piper\s+Sandler", "Piper"), (r"Raymond\s+James", "RJ"),
+    (r"RBC\s+Capital\s+Markets", "RBC"), (r"加拿大皇家银行", "RBC"),
 ]
 
 GENERIC_BANK_PHRASES: list[tuple[str, str]] = [
@@ -88,6 +78,7 @@ def log(message: str) -> None:
 
 
 def sanitize_text(text: str) -> str:
+    text = str(text or "")
     for pattern, replacement in BRAND_PATTERNS:
         text = re.sub(pattern, replacement, text, flags=re.IGNORECASE)
     for pattern, replacement in GENERIC_BANK_PHRASES:
@@ -164,22 +155,22 @@ def parse_json_response(response: requests.Response, label: str) -> dict[str, An
     return data
 
 
-def call_deepseek(prompt: str, args: argparse.Namespace, label: str) -> str:
+def call_deepseek(prompt: str, args: argparse.Namespace, label: str, temperature: float = 0.62) -> str:
     api_key = os.getenv("DEEPSEEK_API_KEY")
     if not api_key:
-        return f"未检测到 DEEPSEEK_API_KEY。请复制 prompt_for_xianyu.md 手动生成：{label}\n"
+        return f"未检测到 DEEPSEEK_API_KEY。请复制对应 prompt 文件手动生成：{label}\n"
     response = requests.post(
         args.deepseek_base_url.rstrip("/") + "/chat/completions",
         headers={"Content-Type": "application/json", "Authorization": f"Bearer {api_key}"},
         json={
             "model": args.model,
-            "temperature": 0.68,
+            "temperature": temperature,
             "messages": [
-                {"role": "system", "content": "你是资料类商品文案编辑。最终输出必须对投行品牌脱敏，并避免收益承诺、金融操作建议、极限词和直接互动诱导。"},
+                {"role": "system", "content": "你是资料类内容编辑。最终输出必须对投行品牌脱敏，并避免收益承诺、金融操作建议、极限词和直接互动诱导。"},
                 {"role": "user", "content": prompt},
             ],
         },
-        timeout=180,
+        timeout=240,
     )
     data = parse_json_response(response, f"DeepSeek generate {label}")
     return sanitize_text(data["choices"][0]["message"]["content"].strip() + "\n")
@@ -194,28 +185,57 @@ def trim_source_text(source_text: str, max_chars: int) -> str:
     return source_text
 
 
-def generate_xianyu_for_item(item_dir: Path, args: argparse.Namespace) -> dict[str, str]:
-    source_path = item_dir / "source_mineru.md"
-    prompt_template_path = Path(args.xianyu_prompt_template)
+def generate_from_template(item_dir: Path, args: argparse.Namespace, source_path: Path, template_path: Path, output_name: str, prompt_name: str, label: str, prompt_chars: int, target_length: int | None = None) -> dict[str, str]:
     status: dict[str, str] = {}
     if not source_path.exists():
-        status["xianyu_error"] = "source_mineru.md not found"
+        status[f"{output_name}_error"] = "source_mineru.md not found"
         return status
-    if not prompt_template_path.exists():
-        status["xianyu_error"] = f"prompt template not found: {prompt_template_path}"
+    if not template_path.exists():
+        status[f"{output_name}_error"] = f"prompt template not found: {template_path}"
         return status
-    source_text = trim_source_text(source_path.read_text(encoding="utf-8", errors="ignore"), args.xianyu_prompt_chars)
-    prompt = sanitize_text(prompt_template_path.read_text(encoding="utf-8").format(source_text=source_text))
-    (item_dir / "prompt_for_xianyu.md").write_text(prompt, encoding="utf-8")
+    source_text = trim_source_text(source_path.read_text(encoding="utf-8", errors="ignore"), prompt_chars)
+    template = template_path.read_text(encoding="utf-8")
+    format_args = {"source_text": source_text}
+    if target_length is not None:
+        format_args["target_length"] = target_length
+    prompt = sanitize_text(template.format(**format_args))
+    (item_dir / prompt_name).write_text(prompt, encoding="utf-8")
     try:
-        note = call_deepseek(prompt, args, "Xianyu listing note")
+        text = call_deepseek(prompt, args, label)
     except Exception as exc:
-        note = f"DeepSeek 生成闲鱼文案失败：{exc}\n\n请复制 prompt_for_xianyu.md 手动生成。\n"
-        status["xianyu_error"] = str(exc)
-    (item_dir / "xianyu_note.md").write_text(sanitize_text(note), encoding="utf-8")
-    status["xianyu_note"] = "xianyu_note.md"
-    status["prompt_for_xianyu"] = "prompt_for_xianyu.md"
+        text = f"DeepSeek 生成 {label} 失败：{exc}\n\n请复制 {prompt_name} 手动生成。\n"
+        status[f"{output_name}_error"] = str(exc)
+    (item_dir / output_name).write_text(sanitize_text(text), encoding="utf-8")
+    status[output_name] = output_name
+    status[prompt_name] = prompt_name
     return status
+
+
+def generate_xianyu_for_item(item_dir: Path, args: argparse.Namespace) -> dict[str, str]:
+    return generate_from_template(
+        item_dir=item_dir,
+        args=args,
+        source_path=item_dir / "source_mineru.md",
+        template_path=Path(args.xianyu_prompt_template),
+        output_name="xianyu_note.md",
+        prompt_name="prompt_for_xianyu.md",
+        label="Xianyu listing note",
+        prompt_chars=args.xianyu_prompt_chars,
+    )
+
+
+def generate_zhihu_for_item(item_dir: Path, args: argparse.Namespace) -> dict[str, str]:
+    return generate_from_template(
+        item_dir=item_dir,
+        args=args,
+        source_path=item_dir / "source_mineru.md",
+        template_path=Path(args.zhihu_prompt_template),
+        output_name="zhihu_article.md",
+        prompt_name="prompt_for_zhihu.md",
+        label="Zhihu article",
+        prompt_chars=args.zhihu_prompt_chars,
+        target_length=args.zhihu_length,
+    )
 
 
 def update_item_status(item_dir: Path, update: dict[str, Any]) -> None:
@@ -257,6 +277,10 @@ def main() -> int:
     parser.add_argument("--generate-xianyu", default="true")
     parser.add_argument("--xianyu-prompt-template", default="prompts/xianyu_report_listing_prompt.md")
     parser.add_argument("--xianyu-prompt-chars", type=int, default=22000)
+    parser.add_argument("--generate-zhihu", default="true")
+    parser.add_argument("--zhihu-prompt-template", default="prompts/zhihu_report_article_prompt.md")
+    parser.add_argument("--zhihu-prompt-chars", type=int, default=26000)
+    parser.add_argument("--zhihu-length", type=int, default=2200)
     parser.add_argument("--sensitive-guard", default="true")
     parser.add_argument("--sensitive-api-url", default=os.getenv("SENSITIVE_API_URL", "https://v.api.aa1.cn/api/api-mgc/index.php"))
     parser.add_argument("--use-free-api", default="true")
@@ -265,15 +289,19 @@ def main() -> int:
 
     output_dir = Path(args.output_dir)
     output_dir.mkdir(parents=True, exist_ok=True)
-
     sanitized_before = sanitize_output_dir(output_dir)
     log(f"Sanitized {sanitized_before} generated text files before finalization.")
 
     summary: list[dict[str, Any]] = []
-    if str(args.generate_xianyu).lower() in {"1", "true", "yes", "y", "on"}:
-        for item_dir in sorted(p for p in output_dir.iterdir() if p.is_dir()):
+    for item_dir in sorted(p for p in output_dir.iterdir() if p.is_dir()):
+        update: dict[str, Any] = {}
+        if str(args.generate_xianyu).lower() in {"1", "true", "yes", "y", "on"}:
             log(f"Generating Xianyu note for {item_dir.name}")
-            update = generate_xianyu_for_item(item_dir, args)
+            update.update(generate_xianyu_for_item(item_dir, args))
+        if str(args.generate_zhihu).lower() in {"1", "true", "yes", "y", "on"}:
+            log(f"Generating Zhihu article for {item_dir.name}")
+            update.update(generate_zhihu_for_item(item_dir, args))
+        if update:
             update_item_status(item_dir, update)
             summary.append({"item": item_dir.name, **update})
 
