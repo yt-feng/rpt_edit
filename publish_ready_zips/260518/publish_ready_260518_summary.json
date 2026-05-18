@@ -1,0 +1,97 @@
+{
+  "created_at_utc": "2026-05-18T22:20:52.720678+00:00",
+  "source_date_dir": "xhs_notes/dropbox/260518",
+  "output_dir": "publish_ready_zips/260518",
+  "max_zip_mb": 90,
+  "single_zip": false,
+  "exclude_source_mineru": true,
+  "markdown_files_renamed_to_txt": true,
+  "excluded_debug_files": true,
+  "included_shard_count": 2,
+  "skipped_shards": [
+    "shard_10",
+    "shard_11",
+    "shard_12",
+    "shard_13",
+    "shard_14",
+    "shard_15",
+    "shard_16",
+    "shard_17",
+    "shard_18",
+    "shard_19",
+    "shard_2",
+    "shard_20",
+    "shard_21",
+    "shard_22",
+    "shard_23",
+    "shard_24",
+    "shard_25",
+    "shard_26",
+    "shard_27",
+    "shard_28",
+    "shard_29",
+    "shard_3",
+    "shard_30",
+    "shard_31",
+    "shard_32",
+    "shard_33",
+    "shard_34",
+    "shard_35",
+    "shard_36",
+    "shard_37",
+    "shard_38",
+    "shard_39",
+    "shard_4",
+    "shard_5",
+    "shard_6",
+    "shard_7",
+    "shard_8",
+    "shard_9"
+  ],
+  "total_files": 171,
+  "total_renamed_markdown_count": 45,
+  "total_raw_file_bytes": 25328761,
+  "zip_count": 1,
+  "zips": [
+    {
+      "path": "publish_ready_zips/260518/publish_ready_260518.zip",
+      "size_bytes": 23546453,
+      "file_count": 171,
+      "renamed_markdown_count": 45,
+      "raw_file_bytes": 25328761,
+      "shards": [
+        "shard_0",
+        "shard_1"
+      ]
+    }
+  ],
+  "included_shards": [
+    {
+      "shard": "shard_0",
+      "report_count": 5,
+      "file_count": 93,
+      "renamed_markdown_count": 25,
+      "raw_file_bytes": 12175911,
+      "reports": [
+        "0001-01-Bernstein-Global-Semi--South-Korea-Equipment-Import-Tracker--Apr-26---Im",
+        "0002-02-Goldman-Sachs-China--70-city-average-primary-property-price-decline-narr",
+        "0003-03-Goldman-Sachs-China--Three-things-in-China-260517",
+        "0004-04-Goldman-Sachs-US-ECONOMICS-ANALYST-Concentration--Profits--and-the-Compe",
+        "0005-05-Nomura-FX-Insights-Continued-inflows-into-US-focused-funds-while-some-ou"
+      ]
+    },
+    {
+      "shard": "shard_1",
+      "report_count": 4,
+      "file_count": 78,
+      "renamed_markdown_count": 20,
+      "raw_file_bytes": 13152850,
+      "reports": [
+        "0001-06-Nomura-China--Weak-April-activity-data-suggest-the-Q1-rebound-was-short-",
+        "0002-07-UBS-China-Brokers-Sector-CSRC-derivatives-measures--structuring-growth--",
+        "0003-08-UBS-European-Economic-Perspectives-Eurozone--Fiscal-policy-in-2026-takea",
+        "0004-09-UBS-Road---Spak-On-production-cuts--the-auto-AI-trade--and-connectors-26"
+      ]
+    }
+  ]
+}
