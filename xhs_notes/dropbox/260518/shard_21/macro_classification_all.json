@@ -1,0 +1,212 @@
+[
+  {
+    "id": 0,
+    "name": "Bernstein-Global Semi： South Korea Equipment Import Tracker （Apr 26）： Import +57% YoY-260518.pdf",
+    "dropbox_path": "/zip_backup/260518/bernstein-global semi： south korea equipment import tracker （apr 26）： import +57% yoy-260518.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/bernstein-global semi： south korea equipment import tracker （apr 26）： import +57% yoy-260518.pdf",
+    "category": "macro_trend",
+    "score": 0.95,
+    "reason": "跟踪韩国半导体设备进口，属于行业供需趋势",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 1,
+    "name": "GS-Ajinomoto （2802.T）： CEO meeting： Prospects for early achievement of 20% ROE and sharp sales growth in ABF-260518.pdf",
+    "dropbox_path": "/zip_backup/260518/GS-ajinomoto （2802.t）： ceo meeting： prospects for early achievement of 20% roe and sharp sales growth in abf-260518.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/GS-ajinomoto （2802.t）： ceo meeting： prospects for early achievement of 20% roe and sharp sales growth in abf-260518.pdf",
+    "category": "company_stock",
+    "score": 0.95,
+    "reason": "明确针对单一公司Ajinomoto的CEO会议和财务展望",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 2,
+    "name": "GS-Asia Communacopia + Technology ~ Key Takeaways： Longsys （NC）： AI to drive storage demand； Customized solution for edge AI market-260518.pdf",
+    "dropbox_path": "/zip_backup/260518/GS-asia communacopia + technology ~ key takeaways： longsys （nc）： ai to drive storage demand； customized solution for edge ai market-260518.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/GS-asia communacopia + technology ~ key takeaways： longsys （nc）： ai to drive storage demand； customized solution for edge ai market-260518.pdf",
+    "category": "company_stock",
+    "score": 0.95,
+    "reason": "聚焦Longsys公司，讨论其AI存储需求与定制化方案",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 3,
+    "name": "Bernstein-Taiwan Semiconductor Manufacturing Co Ltd（2330.TT）： Still the most trustworthy AI compounder-260518.pdf",
+    "dropbox_path": "/zip_backup/260518/bernstein-taiwan semiconductor manufacturing co ltd（2330.tt）： still the most trustworthy ai compounder-260518.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/bernstein-taiwan semiconductor manufacturing co ltd（2330.tt）： still the most trustworthy ai compounder-260518.pdf",
+    "category": "company_stock",
+    "score": 0.95,
+    "reason": "明确针对台积电单一公司的评级和观点",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 4,
+    "name": "GS-Biren （6082.HK）： Asia Communacopia + Technology — Key Takeaways： 2nd  3rd Gen GPUs in the pipeline； Strong demand of domestic GPU-260518.pdf",
+    "dropbox_path": "/zip_backup/260518/GS-biren （6082.hk）： asia communacopia + technology — key takeaways： 2nd  3rd gen gpus in the pipeline； strong demand of domestic gpu-260518.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/GS-biren （6082.hk）： asia communacopia + technology — key takeaways： 2nd  3rd gen gpus in the pipeline； strong demand of domestic gpu-260518.pdf",
+    "category": "company_stock",
+    "score": 0.95,
+    "reason": "聚焦Biren公司，讨论其GPU产品与需求",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 5,
+    "name": "GS-Asia Communacopia + Technology~Key Takeaways： Dongshan： 800G  1.6T optical modules ramp~up with integrated capabilities； AI PCB in-260518.pdf",
+    "dropbox_path": "/zip_backup/260518/GS-asia communacopia + technology~key takeaways： dongshan： 800g  1.6t optical modules ramp~up with integrated capabilities； ai pcb in-260518.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/GS-asia communacopia + technology~key takeaways： dongshan： 800g  1.6t optical modules ramp~up with integrated capabilities； ai pcb in-260518.pdf",
+    "category": "company_stock",
+    "score": 0.95,
+    "reason": "聚焦东山精密公司，讨论其光模块和PCB业务",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 6,
+    "name": "GS-China： 70~city average primary property price decline narrowed in April-260518.pdf",
+    "dropbox_path": "/zip_backup/260518/GS-china： 70~city average primary property price decline narrowed in april-260518.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/GS-china： 70~city average primary property price decline narrowed in april-260518.pdf",
+    "category": "macro_trend",
+    "score": 0.95,
+    "reason": "分析中国70城房价数据，属于宏观趋势",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 7,
+    "name": "GS-China： Three things in China-260517.pdf",
+    "dropbox_path": "/zip_backup/260518/GS-china： three things in china-260517.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/GS-china： three things in china-260517.pdf",
+    "category": "macro_trend",
+    "score": 0.95,
+    "reason": "讨论中国三件事，属于宏观主题策略",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 8,
+    "name": "GS-Kweichow Moutai （600519.SS）： Market~oriented plan #4：Suggested retail price hike of non~standard SKUs on supply demand； Buy-260517.pdf",
+    "dropbox_path": "/zip_backup/260518/GS-kweichow moutai （600519.ss）： market~oriented plan #4：suggested retail price hike of non~standard skus on supply demand； buy-260517.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/GS-kweichow moutai （600519.ss）： market~oriented plan #4：suggested retail price hike of non~standard skus on supply demand； buy-260517.pdf",
+    "category": "company_stock",
+    "score": 0.95,
+    "reason": "明确针对贵州茅台单一公司的定价策略和评级",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 9,
+    "name": "GS-MongoDB Inc. （MDB.US） F1Q Preview： Remain Positive on Atlas Trajectory， AI Positioning-260518.pdf",
+    "dropbox_path": "/zip_backup/260518/GS-mongodb inc. （mdb.us） f1q preview： remain positive on atlas trajectory， ai positioning-260518.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/GS-mongodb inc. （mdb.us） f1q preview： remain positive on atlas trajectory， ai positioning-260518.pdf",
+    "category": "company_stock",
+    "score": 0.95,
+    "reason": "针对MongoDB公司的财报预览和评级",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 10,
+    "name": "GS-US ECONOMICS ANALYST：Concentration， Profits， and the Competitive Landscape Ahead of AI Disruption-260517.pdf",
+    "dropbox_path": "/zip_backup/260518/GS-us economics analyst：concentration， profits， and the competitive landscape ahead of ai disruption-260517.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/GS-us economics analyst：concentration， profits， and the competitive landscape ahead of ai disruption-260517.pdf",
+    "category": "macro_trend",
+    "score": 0.95,
+    "reason": "讨论美国经济集中度、利润和竞争格局，属于宏观趋势",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 11,
+    "name": "MS-KIOXIA Holdings(285A) - Japan Mar-Q Results-Exploring LTA and Shareholder Returns-260517.pdf",
+    "dropbox_path": "/zip_backup/260518/ms-kioxia holdings(285a) - japan mar-q results-exploring lta and shareholder returns-260517.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/ms-kioxia holdings(285a) - japan mar-q results-exploring lta and shareholder returns-260517.pdf",
+    "category": "company_stock",
+    "score": 0.95,
+    "reason": "针对Kioxia Holdings公司的季度业绩分析",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 12,
+    "name": "GS-VPEC （2455.TW）： InP epiwafer in strong demand driven by high~speed connection； WiFi 7 supports growth； Buy with TP up to NT$504-260517.pdf",
+    "dropbox_path": "/zip_backup/260518/GS-vpec （2455.tw）： inp epiwafer in strong demand driven by high~speed connection； wifi 7 supports growth； buy with tp up to nt$504-260517.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/GS-vpec （2455.tw）： inp epiwafer in strong demand driven by high~speed connection； wifi 7 supports growth； buy with tp up to nt$504-260517.pdf",
+    "category": "company_stock",
+    "score": 0.95,
+    "reason": "针对VPEC单一公司的需求分析和评级",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 13,
+    "name": "MS-NIO Inc.（9866.HK）Onvo L80 Launch – The Breakout Bet-260518.pdf",
+    "dropbox_path": "/zip_backup/260518/MS-nio inc.（9866.hk）onvo l80 launch – the breakout bet-260518.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/MS-nio inc.（9866.hk）onvo l80 launch – the breakout bet-260518.pdf",
+    "category": "company_stock",
+    "score": 0.95,
+    "reason": "针对蔚来汽车单一公司的车型发布分析",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 14,
+    "name": "NOM-FX Insights：Continued inflows into US~focused funds while some outflows from EM~focused funds-260518.pdf",
+    "dropbox_path": "/zip_backup/260518/NOM-fx insights：continued inflows into us~focused funds while some outflows from em~focused funds-260518.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/NOM-fx insights：continued inflows into us~focused funds while some outflows from em~focused funds-260518.pdf",
+    "category": "macro_trend",
+    "score": 0.95,
+    "reason": "讨论外汇市场资金流向，属于宏观趋势",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 15,
+    "name": "NOM-China： Weak April activity data suggest the Q1 rebound was short~lived-260518.pdf",
+    "dropbox_path": "/zip_backup/260518/NOM-china： weak april activity data suggest the q1 rebound was short~lived-260518.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/NOM-china： weak april activity data suggest the q1 rebound was short~lived-260518.pdf",
+    "category": "macro_trend",
+    "score": 0.95,
+    "reason": "分析中国4月经济活动数据，属于宏观趋势",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 16,
+    "name": "UBS-China Brokers Sector：CSRC derivatives measures： structuring growth， favouring leaders-260518.pdf",
+    "dropbox_path": "/zip_backup/260518/ubs-china brokers sector：csrc derivatives measures： structuring growth， favouring leaders-260518.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/ubs-china brokers sector：csrc derivatives measures： structuring growth， favouring leaders-260518.pdf",
+    "category": "macro_trend",
+    "score": 0.95,
+    "reason": "讨论中国券商行业监管措施，属于行业趋势",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 17,
+    "name": "UBS-Broadcom Inc. FQ2-26 (Apr) Preview-Raising PT, Adjusting Estimates-260518.pdf",
+    "dropbox_path": "/zip_backup/260518/ubs-broadcom inc. fq2-26 (apr) preview-raising pt, adjusting estimates-260518.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/ubs-broadcom inc. fq2-26 (apr) preview-raising pt, adjusting estimates-260518.pdf",
+    "category": "company_stock",
+    "score": 0.95,
+    "reason": "针对博通公司单一公司的财报预览和评级",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 18,
+    "name": "UBS-European Economic Perspectives：Eurozone： Fiscal policy in 2026~takeaways from budget plans-260518.pdf",
+    "dropbox_path": "/zip_backup/260518/ubs-european economic perspectives：eurozone： fiscal policy in 2026~takeaways from budget plans-260518.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/ubs-european economic perspectives：eurozone： fiscal policy in 2026~takeaways from budget plans-260518.pdf",
+    "category": "macro_trend",
+    "score": 0.95,
+    "reason": "讨论欧元区财政政策，属于宏观趋势",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 19,
+    "name": "UBS-Midea Group（000333）APAC Focus： Transforming from home appliance leader to industrial powerhouse-260518.pdf",
+    "dropbox_path": "/zip_backup/260518/ubs-midea group（000333）apac focus： transforming from home appliance leader to industrial powerhouse-260518.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/ubs-midea group（000333）apac focus： transforming from home appliance leader to industrial powerhouse-260518.pdf",
+    "category": "company_stock",
+    "score": 0.95,
+    "reason": "针对美的集团单一公司的转型分析",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 20,
+    "name": "UBS-Road & Spak：On production cuts， the auto AI trade， and connectors-260517.pdf",
+    "dropbox_path": "/zip_backup/260518/ubs-road & spak：on production cuts， the auto ai trade， and connectors-260517.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/ubs-road & spak：on production cuts， the auto ai trade， and connectors-260517.pdf",
+    "category": "macro_trend",
+    "score": 0.9,
+    "reason": "讨论汽车AI和连接器行业，属于行业趋势",
+    "classifier": "deepseek"
+  }
+]
