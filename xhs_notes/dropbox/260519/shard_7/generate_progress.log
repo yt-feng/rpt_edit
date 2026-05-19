@@ -1,0 +1,18 @@
+Found 42 total PDFs; shard 7/40 has 5 PDFs, skips 0 already converted, will process 5 PDFs with batch_size=5.
+Running batch 1: 5 PDFs
+Found 5 PDFs.
+Uploading PDF to MinerU: /tmp/pdf_batch_001_laq3kb55/pdfs/0001-36-Goldman Sachs-China Consumer Staples- Chengdu Trip- Spirits target 2H26 recovery but visibility low- value retailer store openings on-track- PoS optimization a-260518.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_laq3kb55/pdfs/0002-37-Goldman Sachs-China Spirits Tracker- Feitian Moutai resilient with low inventory on-track prepayment- Wuliangye AGM reinforced shareholder-260518.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_laq3kb55/pdfs/0003-38-MS-Semiconductors Weekly Earnings Week 5 (NVDA- ADI)-260518.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_laq3kb55/pdfs/0004-39-Morgan Stanley-China Broader Consumption Trip - Key Takeaways-260517.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_laq3kb55/pdfs/0005-40-Morgan Stanley-China Healthcare-Trip Takeaways from Pharma Companies-260518.pdf
+MinerU batch_id=60ca35b9-58d4-4958-aa07-0a7c1b67133b
+MinerU states: running, running, pending, pending, pending
+MinerU states: running, running, running, done, running
+MinerU states: running, running, running, done, running
+MinerU states: running, done, running, done, done
+MinerU states: running, done, done, done, done
+MinerU states: running, done, done, done, done
+MinerU states: done, done, done, done, done
+Done. Results written to /home/runner/work/rpt_edit/rpt_edit/xhs_notes/dropbox/260519/shard_7
+All batches completed successfully.

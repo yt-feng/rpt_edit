@@ -1,0 +1,488 @@
+# China Spirits Tracker: Feitian Moutai resilient with low inventory/on-track prepayment; Wuliangye AGM reinforced shareholder
+
+Feitian wholesale price remained resilient (up slightly to Rmb1,640\~Rmb1,680 per bottle) with low channel inventory and steady prepayment progress, per our recent channel checks on East China Regions. Distributors have already completed Jan-May quota with inventory down to c.15 days (vs 20-25 days in Apr) in one province in East China. Distributor inventory level also remains low with products sold within 10 days after being shipped in some regions in East China. May prepayment are completed (await shipment) and Jun prepayment will be in one week with shipment window normally at 20-25 days (i.e. ahead of Dragon Boat Festival). For full-year target, the channel checks indicated 48% of full-year target has been completed and May/Jun quota accounts for MSD%/HSD% of full-year target. Sell-through updates: overall demand increased yoy and stabilizing post Labor Day holiday lapping an easy base (Labor Day Holiday normally not the peak season for mid to high end spirits). In terms of consumption scenarios, residential banquet sell-through grew by teens% yoy with a longer holiday this year while business banquets almost stalled and government related demand decreased significantly. i-Moutai further tightened supply during May slack season: i-Moutai supply cut by c.40% in May vs 1Q26 (April MAU lower to 10mn while DAU at c. 1.1mm, see Exhibit 1), and the supply of original-case (6 bottles per case) has been lowered and substituted with unpacked bottles (2\~4 bottles), leading to tighter supply and firmer pricing for original case. Non-standard SKUs updates: By products consumption scenario, 70%+ consumption scenario of non-standard Feitian is tied to business banquets while gifting demand is still dominated by Feitian. We continue to look for more frequent and commercialized pricing actions under the market-orientation reform (see here), with the higher commissions (5% of elevated Suggested RSP) to benefit channel profits.
+
+Wuliangye AGM highlights: 1) mgmt reiterated its target of delivering DD% growth for 2026 with LT strategy focusing on core brands (1618/39-degree Wuliangye and Wuliangchun to aim at Rmb10bn sales scale each). 2) The mgmt reinforced its commitment of Rmb8-10bn share buybacks within 12 months with full cancellation, alongside Rmb20bn+ annual dividends for 2025 to be completed within 2 months. The company also noted plans to formulate a new 3-year shareholder return plan for 2027-29.
+
+Feitian Moutai wholesale price increased, Common Wuliangye and Guojiao 1573 stayed flattish. In the past 2 weeks, original case Feitian Moutai's wholesale price/bottle increased by Rmb15 from Rmb1,665 to Rmb1,680, and unpacked
+
+# Leaf Liu
+
++852-3966-4169 | leaf.liu@gs.com
+GS (Asia) L.L.C.
+
+# Christina Liu
+
++852-2978-6983 | christina.liu@gs.com
+GS (Asia) L.L.C.
+
+# Valerie Zhou
+
++852-2978-0820 | valerie.zhou@gs.com
+GS (Asia) L.L.C.
+
+Feitian Moutai's wholesale price increased by Rmb10 from Rmb1,630 to Rmb1,640. For non-standard Moutai SKUs, the wholesale price of Jingpin Moutai/Moutai 15 years/1-litre Feitian Moutai increased by Rmb40/50/80 per bottle, Zodiac deceased by Rmb20/bottle. Common Wuliangye's wholesale price/bottle stayed flattish at Rmb840/Rmb790 per "Daily Spirits Prices"/Bairong Wholesale Market, respectively. Guojiao 1573's wholesale price/bottle stayed flattish at Rmb840.
+
+The authors would like to thank Lily Qi for her contribution to this report.
+
+Weekly Momentum of China Spirits Sector   
+![](images/79c054ff440f22528f5f282fd944f166d68a8bacd398ac8b3b3e676e9227d82e.jpg)
+
+Methodology: Red/Yellow/Green represents negative/neutral/positive for each indicator.
+
+• Wholesale price of Moutai Original Case and Package Opened: both up/1 up & 1 down/both down represent positive/neutral/negative, respectively.
+
+• Channel policies that benefits spirits manufacturers are considered positive (e.g. price hikes, sales targets) and vice versa.
+
+Source: GS Global Investment Research
+
+Source: GS Global Investment Research
+
+i-Moutai APP tracker: Our Quest Mobile database indicated monthly active users (MAU) on i-Moutai app reached 12mn/10mn in Mar/Apr 2026 up by 2%/0% yoy vs. 6.7mn in Dec 2025. DAU/MAU penetration ratio was at 11%/11% in Mar/Apr 2026.
+
+Exhibit 1: I-Moutai active users surged from Jan 1st 2026 when Feitian was officially launched on i-Moutai   
+![](images/1d01c0c7f1a343face430ea505edc2a2c361401cbd259c4ce77f51adc11bca65.jpg)
+
+<details>
+<summary>line</summary>
+
+| Date     | DAU/MAU % | Active user (10k) | Avg. daily active users (10k) |
+|----------|-----------|-------------------|-------------------------------|
+| 2022-04  | ~2000     | ~1300             | ~500                          |
+| 2022-06  | ~2300     | ~1350             | ~550                          |
+| 2022-08  | ~2300     | ~1400             | ~550                          |
+| 2022-10  | ~2200     | ~1350             | ~500                          |
+| 2022-12  | ~2100     | ~1300             | ~500                          |
+| 2023-02  | ~2400     | ~1700             | ~700                          |
+| 2023-04  | ~2500     | ~1650             | ~650                          |
+| 2023-06  | ~2450     | ~1600             | ~650                          |
+| 2023-08  | ~2400     | ~1550             | ~650                          |
+| 2023-10  | ~2350     | ~1750             | ~650                          |
+| 2023-12  | ~2300     | ~1800             | ~700                          |
+| 2024-02  | ~2700     | ~2800             | ~1100                         |
+| 2024-04  | ~2600     | ~2500             | ~1150                         |
+| 2024-06  | ~2450     | ~2300             | ~950                          |
+| 2024-08  | ~2350     | ~1850             | ~750                          |
+| 2024-10  | ~2150     | ~1650             | ~650                          |
+| 2024-12  | ~1950     | ~1350             | ~450                          |
+| 2025-02  | ~1950     | ~1750             | ~550                          |
+| 2025-04  | ~1850     | ~1450             | ~450                          |
+| 2025-06  | ~1750     | ~1350             | ~350                          |
+| 2025-08  | ~1650     | ~1150             | ~350                          |
+| 2025-10  | ~1550     | ~950              | ~350                          |
+| 2025-12  | ~950      | ~650              | ~350                          |
+| 2026-02  | ~850      | ~4350             | ~450                          |
+| 2026-04  | ~750      | ~1950             | ~350                          |
+</details>
+
+Source: Quest Mobile
+
+# Key news this week:
+
+Moutai adjusted the opening hours of offline stores (May 18): Kweichow Moutai announced that the opening hours of offline stores (specialty and self-operated stores) will change to 10 a.m. - 8 p.m. (9 a.m. - 6 p.m. previously) and daily product release on i-Moutai app will start at 8 p.m. (9 a.m. previously).   
+i-Moutai app will launch some new SKUs and promotion activities for its 4 year anniversary (May 17): The products to be launched on i-Moutai app include 500ml Moutai 30 years, 50ml\*5 Feitian Moutai (White/Gold edition) and Zodiac (Precious)
+
+etc. Promotion activities include 7-day lucky draw campaign and Store redemption for small gifts.
+
+Moutai 1935 (premium edition) became the first in Sauce-flavor to adopt consignment model (May 13): According to Weijiu, some distributors commented that Moutai 1935 (Premium edition) has become the first product in sauce-flavor to adopt consignment model priced at Rmb998/bottle, and distributors can receive tiered incentives.
+
+# Wholesale price summary of high-end liquors
+
+# From May 3, 2026 to May 17, 2026:
+
+Original case Feitian Moutai's wholesale price/bottle increased by Rmb15 from Rmb1,665 to Rmb1,680, and unpacked Feitian Moutai's wholesale price increased by Rmb10 from Rmb1,630 to Rmb1,640.   
+Common Wuliangye's wholesale price/bottle stayed flattish at Rmb840/ Rmb790 per "Daily Spirits Prices"/Bairong Wholesale Market, respectively.   
+Guojiao 1573's wholesale price/bottle stayed flattish at Rmb840.
+
+# From Jan 1, 2026 to May 17, 2026:
+
+Original case Feitian Moutai's wholesale price/bottle increased by Rmb175 from Rmb1,505 to Rmb1,680. Unpacked Feitian Moutai's wholesale price/bottle increased by Rmb150 from Rmb1,490 to Rmb1,640.   
+Common Wuliangye's wholesale price/bottle decreased by Rmb10 to Rmb840 per "Daily Spirits Prices," and decreased by Rmb20 to Rmb790 per Bairong Wholesale Market.   
+Guojiao 1573's wholesale price/bottle stayed flattish at Rmb840.
+
+Exhibit 2: $53\%$ Feitian Moutai product prices   
+![](images/a1b18f954e0ab1226d54f8b66e86941eed38aa13476fcacba1887dc5057e86d0.jpg)  
+Most recent data points as of May 17, 2026.   
+Source: Daily Spirits Prices, Data compiled by GS Global Investment Research
+
+Exhibit 3: 52% Common Wuliangye product prices   
+![](images/6671c706d916244b1e74b851829632b92a23ec2d20d4ebc94a74c7b99bc6c139.jpg)
+
+<details>
+<summary>line</summary>
+
+| Date | 52% v/v Common Wuliangye ex-factory price (Rmb) | 52% v/v Common Wuliangye wholesale price (source 1) (Rmb) | 52% v/v Common Wuliangye wholesale price (source 2) (Rmb) | 52% v/v Common Wuliangye wholesale price (source 3) (Rmb) |
+|---|---|---|---|---|
+| Jan-22 | 980 | 960 | 970 | 970 |
+| Mar-22 | 980 | 970 | 970 | 970 |
+| May-22 | 980 | 970 | 970 | 970 |
+| Jul-22 | 980 | 970 | 970 | 970 |
+| Oct-22 | 980 | 960 | 960 | 960 |
+| Dec-22 | 980 | 950 | 950 | 950 |
+| Feb-23 | 980 | 940 | 940 | 940 |
+| Apr-23 | 980 | 930 | 930 | 930 |
+| Jun-23 | 980 | 920 | 920 | 920 |
+| Aug-23 | 980 | 910 | 910 | 910 |
+| Oct-23 | 980 | 900 | 900 | 900 |
+| Dec-23 | 1020 | 890 | 880 | 880 |
+| Feb-24 | 1020 | 880 | 870 | 870 |
+| Apr-24 | 1020 | 870 | 860 | 860 |
+| Jun-24 | 1020 | 860 | 850 | 850 |
+| Aug-24 | 1020 | 850 | 840 | 840 |
+| Oct-24 | 1020 | 840 | 830 | 830 |
+| Dec-24 | 1020 | 830 | 820 | 820 |
+| Feb-25 | 1020 | 820 | 810 | 810 |
+| Apr-25 | 1020 | 810 | 800 | 800 |
+| Jun-25 | 1020 | 800 | 790 | 790 |
+| Aug-25 | 1020 | 790 | 780 | 780 |
+| Oct-25 | 1020 | 780 | 770 | 770 |
+| Dec-25 | 900 | - | - | - |
+| Feb-... | - | - | - | - |
+| Apr-Week 1 Mar... | - | - | - | - |
+| Apr Week 3 Apr...May... | - | - | - | - |
+| May... | - | - | - | - |
+| Weekly: - Monthly: - Weekly
+Monthly: - Weekly
+Weekly: - Weekly
+</details>
+
+Most recent data points as of May 17, 2026. Source 1 = Spirits Price References; Source 2 = Daily Spirits Prices; Source 3 = Bairong Wholesale Market   
+Source: Spirits Price References, Daily Spirits Prices, Bairong Wholesale Market, Data compiled by GS Global Investment Research
+
+Exhibit 4: Guojiao 1573 product prices   
+![](images/5f7f436a6c8d69f8001f8dd49a337143fa33ec6c353bd77a418b89b6f46e0d37.jpg)
+
+<details>
+<summary>line</summary>
+
+| Date | Ex-factory price of Guojiao 1573 (Post rebate) (Rmb) | Ex-factory price of Guojiao 1573 (Nominal) (Rmb) | Wholesale price of Guojiao 1573 (Rmb) |
+|---|---|---|---|
+| Jan-22 | 890 | 960 | 930 |
+| Mar-22 | 890 | 960 | 920 |
+| May-22 | 890 | 960 | 910 |
+| Jul-22 | 890 | 960 | 900 |
+| Oct-22 | 890 | 960 | 895 |
+| Dec-22 | 890 | 960 | 895 |
+| Feb-23 | 890 | 960 | 895 |
+| Apr-23 | 890 | 960 | 895 |
+| Jun-23 | 890 | 960 | 895 |
+| Aug-23 | 890 | 960 | 895 |
+| Oct-23 | 890 | 960 | 895 |
+| Dec-23 | 890 | 960 | 895 |
+| Feb-24 | 890 | 960 | 895 |
+| Apr-24 | 890 | 960 | 895 |
+| Jun-24 | 890 | 960 | 895 |
+| Aug-24 | 890 | 960 | 895 |
+| Oct-24 | 890 | 960 | 895 |
+| Dec-24 | 890 | 960 | 895 |
+| Feb-25 | 890 | 960 | 895 |
+| Apr-25 | 890 | 960 | 895 |
+| Jun-25 | 890 | 960 | 895 |
+| Aug-25 | 890 | 960 | 895 |
+| Oct-25 | 890 | 960 | 895 |
+| Dec-25 | 890 | 960 | 895 |
+| Feb... | 890 | 960 | 840 |
+| Mar... | 890 | 960 | 840 |
+| Apr... | 890 | 960 | 840 |
+| May... | 890 | 960 | 840 |
+| May... (Weekly) | - | - | - |
+The chart includes a vertical dashed line at Dec-25 to indicate a period of interest or event. The legend defines three series: Ex-factory price of Guojiao 1573 (Post rebate), Ex-factory price of Guojiao 1573 (Nominal), and Wholesale price of Guojiao 1573. The data is presented in a table format with columns for the time periods. The values are explicitly labeled on the chart.
+</details>
+
+Most recent data points as of May 17, 2026.   
+Source: Daily Spirits Prices, Data compiled by GS Global Investment Research
+
+Moutai non-standard SKUs: In the past 2 weeks, the wholesale price of Jingpin Moutai/Moutai 15 years/1-litre Feitian Moutai increased by Rmb40/50/80 per bottle, Zodiac deceased by Rmb20/bottle.
+
+Exhibit 5: Wholesale prices of Moutai's 4 non-standard SKUs   
+![](images/ecf091ca11de21d98d0a21aaac4e395b766ada3ec7d52c78ef5fbfc680748279.jpg)
+
+<details>
+<summary>line</summary>
+
+| Month | Wholesale price (Rmb/bottle) | Ex-factory price (Rmb/bottle) |
+|-------|-------------------------------|-------------------------------|
+| Jan   | ~3000                         | ~2000                         |
+| Feb   | ~3200                         | ~2000                         |
+| Mar   | ~3400                         | ~2000                         |
+| Apr   | ~3100                         | ~2000                         |
+| May   | ~2900                         | ~2000                         |
+| Jun   | ~2700                         | ~2000                         |
+| Jul   | ~2600                         | ~2000                         |
+| Aug   | ~2500                         | ~2000                         |
+| Sep   | ~2400                         | ~2000                         |
+| Oct   | ~2300                         | ~2000                         |
+| Nov   | ~2200                         | ~2000                         |
+| Dec   | ~2100                         | ~2000                         |
+| Jan   | ~2050                         | ~1804                         |
+| Feb   | ~2100                         | ~1804                         |
+| Mar   | ~2150                         | ~1804                         |
+| Apr   | ~2200                         | ~1804                         |
+| May   | ~2250                         | ~1804                         |
+| Jun   | ~2300                         | ~1804                         |
+| Jul   | ~2350                         | ~1804                         |
+| Aug   | ~2400                         | ~1804                         |
+| Sep   | ~2450                         | ~1804                         |
+| Oct   | ~2500                         | ~1804                         |
+| Nov   | ~2550                         | ~1804                         |
+| Dec   | 2050                          | 1804                          |
+</details>
+
+![](images/c3729c434083377cbdc07832e98f9317a7ad4ca43aa0d4de5b2a8011f9e5843a.jpg)
+
+![](images/e4d018e35cd3bd65028fca5889a1227586c2291cd9ea50e0b3424e21737d8bbc.jpg)
+
+<details>
+<summary>line</summary>
+
+| Month | Ex-factory price | Wholesale price |
+|-------|------------------|-----------------|
+| Weekend | 2,241            | 2,350           |
+</details>
+
+![](images/b827f7499a02103c2d0af03e63846e62d37dfee162b0a87e9c6f4fe3f48b4534.jpg)
+
+<details>
+<summary>line</summary>
+
+| Month     | Wholesale price | Ex-factory price |
+| --------- | --------------- | ---------------- |
+| Dec       | 4290            | 4,065            |
+</details>
+
+Latest data as of May 17, 2026.   
+Source: Data compiled by GS Global Investment Research, Daily Spirits Prices
+
+Exhibit 6: 2024-2026 channel policy and product launch summary of key spirits companies - Part I 
+
+<table><tr><td rowspan="2">Year</td><td rowspan="2">Month</td><td><img src="images/c4bfd8420848877f7f7d502a553de0572314dd119673907cc8a493f9b3d0ef8d.jpg"/></td><td><img src="images/8b675f52f3deb6109c0f0085f40d3696b2547fa46d78fb4edcc3973d160d7d64.jpg"/></td><td>[C330]</td><td>[704D]</td><td><img src="images/b420329031a0aa5ea2660beda55283b2b16760ad95bb5adf8d3b0eeea5b817d3.jpg"/></td><td><img src="images/ef06fbf899941e7723fac550ba82c50262c7fa51caccac3e7131d2d28169c5c7.jpg"/></td></tr><tr><td>Kweichow Moutai (600519.SS)</td><td>Wuliangye Yibin (000858.SZ)</td><td>Luzhou Laojiao (000568.SZ)</td><td>Jiangsu Yanghe (002304.SZ)</td><td>Shanxi Fen Wine (600809.SS)</td><td>Jian Nan Chun(Private, Not Covered)</td></tr><tr><td>2026</td><td>May</td><td>Week3: Moutai raised the RSP of select non-standard SKUs on Moutai APP effective May 16. The scope of price hikes include 53% vol 500ml Moutai 15 years (Rmb4,199/bottle to Rmb4,279/bottle), Jingpin Moutai (Rmb2,299/bottle to Rmb2,359/bottle), Zodiac Moutai (Horse precious) (Rmb2,499/bottle to Rmb2,699/bottle) and 1L Moutai (Rmb2,989/bottle to Rmb3,119/bottle).</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>2026</td><td>Mar</td><td>Week 4: raised the ex-factory price of Feilian Moutai (33% vol 500ml, 2026 edition) from Rmb1,169/bottle to c.Rmb1,269 per bottle (mainly cover wholesale channels), and the RSP of Feilian Moutai from Rmb1,499 to Rmb1,539 (mainly cover direct sales channels, esp. i-Moutai platform), effective immediately from Mar 31, 2026.</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>2026</td><td>Mar</td><td>Week3: introduced a consignment sales policy for non-standard Moutai products; participating distributors must apply and pay a deposit and will receive a c.5% rebate on these products sales</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>2026</td><td>Jan</td><td>Week 3: plans to employ a more market-driven pricing framework to optimize channel investments and safeguard channel profitability, presented new RSP for Feilian Moutai vintage and other non-standard SKUs and lowered ex-factory price for some non-standard/series products</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>2025</td><td>Dec</td><td>Week 5: officially announced the launch of Feilian Moutai across 53% vol 500ml (years 2019-2026), 100ml/1,000ml Feilian, and multiple series on i-Moutai, including Jingpin, Zodiac, Vintage, Cultural, and lower-alcohol variants (Dec 30)</td><td>Week 2: nominal prepayment price for Common Wuliangye lowered to Rmb900 from Rmb1,019 for 2026 and distributor cost below c.Rmb850 (more rebate will be announced on 18 Dec)</td><td></td><td></td><td></td><td></td></tr><tr><td>2025</td><td>Nov</td><td>Week 4: New series of Moutai Prince (Black Gold) new version released</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>2025</td><td>Aug</td><td>W4: New version of Moutai 1935 was launched with suggested retail price set at Rmb998</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>2025</td><td>Jun</td><td>W3: Suspended the shipment of 53% 500ml Feilian Moutai for all channels; Implemented disciplinary measures to distributors including punishments against selling below RMB2,000/bottle and restrictions from shipping to certain retailers.</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>2025</td><td>Apr</td><td>W4: Updated bundled sales policy in self-operated specialty stores for registered enterprise and individual customers</td><td></td><td>W4: Suspended order taking and shipment until pre-Dragon Boat Festival for all SKUs</td><td></td><td></td><td></td></tr><tr><td>2025</td><td>Feb</td><td></td><td></td><td>W3: Suspended order taking and shipment of Tequ 60 and Old Touqu</td><td>W2: Suspended order taking for 6th Ocean Blue in Jiangsu; Suspended order taking for Guiju - Gold/Red in Henan since Feb 14</td><td>W2: Suspended shipment of Qinghua 20; Laobafen 10</td><td></td></tr><tr><td>2025</td><td>Jan</td><td></td><td>W2: Suspended shipment of 8th Common Wuliangye since Jan 8</td><td></td><td>W3: Online Shipment suspension for Sky and Ocean Blue since Jan 17 2025</td><td></td><td></td></tr><tr><td>2024</td><td>Dec</td><td></td><td></td><td></td><td></td><td></td><td>W4: Launched Zodiac Spirits for the Snake year: at .RSP of: Rmb1,299/bottle</td></tr><tr><td>2024</td><td>Nov</td><td>W1: Suspended shipment from distributors to retail terminals of all SKUs in some regions</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>2024</td><td>Aug</td><td></td><td></td><td></td><td></td><td>W4: Launched new super premium: products. &quot;Master&quot;, series on Aug 21</td><td></td></tr><tr><td>2024</td><td>Jul</td><td>W1: Suspended shipment of Moutai 1935 from Jul 2</td><td></td><td>W1: Hiked the within-quota price of 38G Guojiao 1573 by Rmb30 per bottle effective from Jul 2; Laojiao distribution company suspended order-taking and shipment of 52C Laojiao effective from Jul 3</td><td></td><td></td><td></td></tr><tr><td>2024</td><td>Jun</td><td>W1: Asked distributors to spill prepayment to two times for June (3%-4% of annual); Suspended direct sales of Feilian to enterprises at Rmb1,499 in some regions and suspended evaluation of qualifying enterprises W2/W3: Ceased &quot;open case&quot; policy of Feilian...Moutai and distribution of Feilian in large cases; Controlled shipment quota for June; Suspended 37fmi Feilian...on Xunfeng; Suspended shipments of 15-year and Jingpin...Moutai; Communicated with distributors to control wholesale prices above Rmb2,400; Requested supply suspension on channels of...Guizhou distributors</td><td></td><td>W4: Ceased the order-taking and shipment of 38&#x27; Guojiao 1573 since Jun 28</td><td></td><td>W1: Hiked the ex-factory price of Laobafen series by Rmb5/bottle, effective since Jun 20</td><td></td></tr><tr><td>2024</td><td>May</td><td></td><td>W2: Launched 45% common Wuliangye in 1st-batch 52 cities with ex-ff suggested retail price at Rmb839/1,199</td><td></td><td></td><td></td><td></td></tr><tr><td>2024</td><td>Apr</td><td></td><td></td><td>W1: Hiked the outside quota price of Touqu by Rmb14 per bottle, effective immediately</td><td>W1: Hiked the ex-factory price of M6+ by Rmb20 per bottle, effective from...Apr 1st 2024</td><td></td><td></td></tr><tr><td>2024</td><td>Mar</td><td></td><td>W1: Launched new retail sales platform: hiked the Jianzhuang Large glass bottle ex-factory price by 12%</td><td></td><td></td><td></td><td></td></tr><tr><td>2024</td><td>Feb</td><td></td><td>W4: Guided the wholesale price of the 8th Common Wuliangye...and 1618 to not lower than Rmb970/bottle, retail price to not lower than: Rmb1,000 per bottle (&gt;Rmb1,020 in featured stores, &gt;Rmb1,059 in KA malis); targets to maintain the wholesale price of Common Wuliangye and 1618 at not lower than Rmb1,000/1,020 per bottle by Dragon Boat Festival/Mid-Autumn Festival</td><td></td><td></td><td>W4: The presale price of Qinghua 20 will be raised by Rmb20 to Rmb448 from Rmb428 per bottle, effective...on March 20...Some regional distributors also commented that the presale price of Laobafen...is also to be raised by Rmb10 per bottle.</td><td></td></tr><tr><td>2024</td><td>Jan</td><td></td><td>W4: Wuliangye communicated with distributors to hike the ex-factory price by Rmb50 to Rmb1,019 for 8th Common Wuliangye starting from 5 Feb 2024, and prices of other SKUs with different size will increase accordingly</td><td></td><td></td><td></td><td></td></tr></table>
+
+Jian Nan Chun (Private, Not Covered)   
+Source: Yunjiu Toutiao, Jiuyejia, Company reports, Data compiled by GS Global Investment Research
+
+Exhibit 7: 2024-2025 channel policy and product launch summary of key spirits companies - Part II 
+
+<table><tr><td rowspan="2">Year</td><td rowspan="2">Month</td><td><img src="images/aeaa7fbe61178766eac265d2424be4b7c813650bcef00c74de61cf2a17b51521.jpg"/></td><td>[7503]</td><td>[KIC3]</td><td colspan="2">[42X1A]</td><td rowspan="2">Shede Spirits (600702.SS) Not Covered</td></tr><tr><td>Anhui Gujing (000596.SZ)</td><td>Sichuan Swellfun (600779.SS)</td><td>Jiugui Liquor (000799.SZ)</td><td>King&#x27;s Luck (603369.SS)</td><td>ZJLD (6979.HK)</td></tr><tr><td>2025</td><td>Feb</td><td colspan="2"></td><td>W3: Jiugui suspended order taking for 52°/42° 500ml Jiugui Spirits (transparent packaging)</td><td>W1: King&#x27;s Luck has ceased accepting orders for Guoyuan 4K/2K</td><td colspan="2"></td></tr><tr><td>2025</td><td>Jan</td><td colspan="6"></td></tr><tr><td>2024</td><td>Dec</td><td colspan="4"></td><td>W2: ZJLD launched fourth-gen Zhen 15</td><td></td></tr><tr><td>2024</td><td>Nov</td><td colspan="3"></td><td>W3: King&#x27;s Luck launched 3 new SKUs for Planet...Large-bottle series named &quot;Grand moon&quot;/&quot;Grand Earth&quot;/&quot;Grand Sun&quot; (42%, 700ml) at.. RSP of Rmb168/388/268 per bottle.</td><td colspan="2"></td></tr><tr><td>2024</td><td>Oct</td><td></td><td>W1: Raised price of Zhenniang series 52° 500ml by Rmb10 per bottle, effective since Oct 1; W3: suspended order taking of Zhennniang No.8 38c/42c/52c</td><td colspan="4"></td></tr><tr><td>2024</td><td>Aug-Sep</td><td colspan="6"></td></tr><tr><td>2024</td><td>July</td><td></td><td>W2: Adjusted suggested retail prices for Zhenniang No.8; price of 52-degree SKU up by Rmb20 per bottle, and that of 42/38-degree up by Rmb10 per bottle to:Rmb578/538/ 528 respectively, effective since Jun 20</td><td colspan="2"></td><td>W1: Lidu hiked the ex-factory price of the Lidu Sorghum 1308 by Rmb100 per bottle and group-purchase price by Rmb200; hiked the Lidu King ex-factory by Rmb20/bottle and group puchase price by 30</td><td></td></tr><tr><td>2024</td><td>Apr-Jun</td><td colspan="6"></td></tr><tr><td>2024</td><td>Apr</td><td colspan="4"></td><td>W1:Hiked retail price of Yingshanhong products (online exclusive) by 13% W3: suspended supply of 2nd gen Li Du 1955/ 1975 until further notice</td><td>W2: Hiked the ex-factory price of 64.5C Tianzihu 500ml (Chen Flavor and Strong flavor) by 500Rmb/bottle, effective from Apr 15; halved the planned production volume of Tianzihu to 5,000 bottles effective from 2024</td></tr><tr><td>2024</td><td>Mar</td><td colspan="4"></td><td>W1: Lidu launched the 2nd Lidu Sorghum and hiked the price to Rmb1,230 per bottle</td><td>W1: Hiked ex-factory price of Tequ Jiaoling 20/30 by Rmb10/15 per bottle</td></tr><tr><td>2024</td><td>Feb</td><td colspan="3"></td><td>W4: King&#x27;s Luck ceased accepting orders for 4th-gen Guoyuan 4K, and offers 5th-gen Guoyaun 4K/2K/1K with Rmb20/10/8 per bottle higher vs. 4th-gen since March 1, 2024, and suggests to hike wholesale/retail/ group buy price accordingly; Outside quota price to hike Rmb10/bottle</td><td colspan="2"></td></tr><tr><td>2024</td><td>Jan</td><td colspan="6"></td></tr></table>
+
+Source: Yunjiu Toutiao, Jiuyejia, Data compiled by GS Global Investment Research
+
+Exhibit 8: Select Spirits names - 2026 YTD and weekly (May 8 \~May 15) stock performance   
+Jinhui (+1.9%) and Xinjiang Yilite (+0.1%) were relatively better price performers among China Spirits last week   
+YTD and Past Week Performance   
+![](images/d11265a63eda763b371dc61c1eebb13c1fa5d4213c16358f20c979d3b9edaef4.jpg)
+
+<details>
+<summary>bar</summary>
+
+| Company | YTD (%) | Last week (%) |
+|---|---|---|
+| Kweichow Moutai | -3.0 | -2.9 |
+| ZJLD | -7.9 | -1.8 |
+| Jinhui Liquor | -8.1 | 1.9 |
+| Anhui Yingjia | -11.0 | -6.7 |
+| Xinjiang Yilite | -12.0 | 0.1 |
+| Laobaigan | -16.7 | -1.8 |
+| Anhui Golden Seed | -18.0 | -0.1 |
+| Sichuan Swellfun | -18.0 | -3.6 |
+| Shunxin Agriculture | -17.8 | -3.5 |
+| Wuliangye Yibin | -18.0 | -5.7 |
+| King's Luck | -20.2 | -1.4 |
+| Luzhou Laojiao | -22.0 | -6.7 |
+| Fen Wine | -23.5 | -7.2 |
+| Jiugui Liquor | -24.0 | -4.5 |
+| Jiangsu Yanghe | -24.0 | -4.9 |
+| Shede Spirits | -25.0 | -5.0 |
+| Kouzi Distillery | -26.0 | -5.3 |
+| Anhui Gujing | -26.4 | -8.2 |
+</details>
+
+Priced as of May 15, 2026.   
+Source: LSEG Data & Analytics, Data compiled by GS Global Investment Research
+
+# Valuation table
+
+Exhibit 9: China Spirits Comps 
+
+<table><tr><td rowspan="2"></td><td rowspan="2">Company</td><td rowspan="2">Rating</td><td rowspan="2">Mkt cap US$ mn</td><td rowspan="2">Ccy</td><td rowspan="2">Price 5/15/2026</td><td rowspan="2">12-m TP</td><td rowspan="2">+/-</td><td colspan="3">PE</td><td colspan="3">TP Implied PE</td><td rowspan="2">25-27E Rev CAGR</td><td rowspan="2">25-27E NP CAGR</td><td colspan="3">EV/EBITDA</td><td rowspan="2">ROE 2026E</td><td rowspan="2">Div yield 2026E</td><td rowspan="2">YTD perf %</td></tr><tr><td>2025</td><td>2026E</td><td>2027E</td><td>2025</td><td>2026E</td><td>2027E</td><td>2025</td><td>2026E</td><td>2027E</td></tr><tr><td colspan="22">Spirits</td></tr><tr><td>600519. SS</td><td>Kweichow Moutai</td><td>Buy</td><td>246,067</td><td>CNY</td><td>1332.95</td><td>1616.00</td><td>21%</td><td>20X</td><td>20X</td><td>19X</td><td>25X</td><td>24X</td><td>22X</td><td>5%</td><td>5%</td><td>13X</td><td>13X</td><td>12X</td><td>32%</td><td>3.7%</td><td>-3%</td></tr><tr><td>000858. SZ</td><td>Wuliangye Yibin</td><td>Sell</td><td>49,552</td><td>CNY</td><td>86.87</td><td>83.00</td><td>-4%</td><td>38X</td><td>19X</td><td>17X</td><td>36X</td><td>18X</td><td>16X</td><td>21%</td><td>48%</td><td>21X</td><td>11X</td><td>9X</td><td>14%</td><td>5.7%</td><td>-18%</td></tr><tr><td>6979.HK</td><td>ZJLD</td><td>Neutral</td><td>3,179</td><td>HKD</td><td>7.99</td><td>7.00</td><td>-12%</td><td>47X</td><td>29X</td><td>21X</td><td>41X</td><td>25X</td><td>18X</td><td>12%</td><td>46%</td><td>20X</td><td>14X</td><td>11X</td><td>6%</td><td>1.5%</td><td>-8%</td></tr><tr><td>600809. SS</td><td>Shanxi Xinghuacun Fen Wine</td><td>Neutral</td><td>23,561</td><td>CNY</td><td>131.41</td><td>161.00</td><td>23%</td><td>13X</td><td>15X</td><td>14X</td><td>16X</td><td>18X</td><td>17X</td><td>1%</td><td>-3%</td><td>9X</td><td>11X</td><td>10X</td><td>26%</td><td>4.1%</td><td>-23%</td></tr><tr><td>000568. SZ</td><td>Luzhou Laojiao</td><td>Neutral</td><td>19,684</td><td>CNY</td><td>91.00</td><td>98.00</td><td>8%</td><td>12X</td><td>14X</td><td>14X</td><td>13X</td><td>16X</td><td>15X</td><td>-2%</td><td>-4%</td><td>7X</td><td>9X</td><td>8X</td><td>18%</td><td>4.8%</td><td>-22%</td></tr><tr><td>002304. SZ</td><td>Jiangsu Yanghe</td><td>Sell</td><td>10,176</td><td>CNY</td><td>45.95</td><td>38.00</td><td>-17%</td><td>19X</td><td>18X</td><td>16X</td><td>16X</td><td>15X</td><td>13X</td><td>5%</td><td>11%</td><td>11X</td><td>11X</td><td>11X</td><td>8%</td><td>9.1%</td><td>-24%</td></tr><tr><td>000596. SZ</td><td>Anhui Gujing Distillery Co.</td><td>Sell</td><td>7,583</td><td>CNY</td><td>97.62</td><td>129.00</td><td>32%</td><td>12X</td><td>13X</td><td>12X</td><td>16X</td><td>17X</td><td>16X</td><td>2%</td><td>2%</td><td>7X</td><td>7X</td><td>6X</td><td>14%</td><td>4.3%</td><td>-26%</td></tr><tr><td>000799. SZ</td><td>Jiugui Liquor</td><td>Sell</td><td>1,988</td><td>CNY</td><td>41.63</td><td>18.30</td><td>-56%</td><td>n.m.</td><td>67X</td><td>40X</td><td>n.m.</td><td>29X</td><td>18X</td><td>26%</td><td>n.m.</td><td>n.m.</td><td>50X</td><td>31X</td><td>5%</td><td>1.0%</td><td>-24%</td></tr><tr><td>600779. SS</td><td>Sichuan Swellfun Co.</td><td>Sell</td><td>2,269</td><td>CNY</td><td>31.62</td><td>26.50</td><td>-16%</td><td>39X</td><td>26X</td><td>21X</td><td>33X</td><td>22X</td><td>17X</td><td>7%</td><td>37%</td><td>19X</td><td>14X</td><td>11X</td><td>10%</td><td>1.3%</td><td>-18%</td></tr><tr><td>603369. SS</td><td>Jiangsu King&#x27;s Luck Brewery</td><td>Neutral</td><td>5,116</td><td>CNY</td><td>27.75</td><td>39.00</td><td>41%</td><td>12X</td><td>12X</td><td>11X</td><td>17X</td><td>16X</td><td>15X</td><td>6%</td><td>8%</td><td>8X</td><td>8X</td><td>7X</td><td>17%</td><td>3.7%</td><td>-20%</td></tr><tr><td>Avg.</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>24X</td><td>23X</td><td>18X</td><td>24X</td><td>20X</td><td>17X</td><td>8%</td><td>8%</td><td>13X</td><td>15X</td><td>12X</td><td>15%</td><td>3.9%</td><td>-19%</td></tr></table>
+
+Priced as of May 15, 2026.   
+Source: GS Global Investment Research
+
+# Valuation methodology and key risks
+
+Exhibit 10: China Spirits coverage: Valuation methodology and key risks 
+
+<table><tr><td>Ticker</td><td>Company</td><td>Valuation Methodology</td><td>Key Risks</td></tr><tr><td>600519.SS</td><td>Kweichow Moutai</td><td>Our 12-m TP is based on 23.4x 2027E P/E discounted back to end-2026 using a 8.5% COE</td><td>Downside:1) Potential regulation changes such as a consumption tax rate hike; 2) Environmental pollution; 3) A□ slower-than-expected macroeconomic recovery; 4) Capacity constraints; □5) More volatility in US rate hikes given the negative □ correlation between Moutai&#x27;s P/E and the US 10-yr bond yield.</td></tr><tr><td>000858.SZ</td><td>Wuliangye Yibin</td><td>Our 12m TP is based on a 17x 2027E P/E discounted back to mid-2027E at a 7.8% COE.</td><td>Upside: 1) Successful new product roll out, esp. in mid-end price range; 2) Reduced competition in super-premium segment from Moutai/Laojiao. 3) Policy stimulus that will meaningfully drive demand recovery for high-end spirits; 4) More shareholder&#x27;s return enhancements.</td></tr><tr><td>6979.HK</td><td>ZJLD</td><td>Our 12-m TP is based on 19.3x 2027E P/E discounted back to end-2026 using an 8.2% COE. The PE multiple is benchmark to Jiugui liquor 2027E P/E.</td><td>Downside/Upside: 1) More/less □intensified competition in upper mid end; 2) □Shorter/prolonged policy impact on banquet consumption; 3) Better-than-expected product launch/cultivation</td></tr><tr><td>600809.SS</td><td>Shanxi Xinghuacun Fen Wine</td><td>Our 12-m TP is based on 18.5x 2027E P/E discounted back to end-2026 using an 9.7% COE</td><td>Upside/Downside: 1) Shorter/prolonged policy impact on banquet consumption; 2) Better/worse-than-expected macro recovery; 3) Strong/weaker than expected performance of Qinghua 26/30</td></tr><tr><td>000568.SZ</td><td>Luzhou Laojiao</td><td>Our 12-m TP is based on 15.7x 2027E P/E discounted back to end-2026E using an 8.3% COE.</td><td>Upside: 1) Shorter policy impact on banquet consumption; 2) Better-than-expected product launch/cultivationDownside: 1) Prolonged policy impact on banquet consumption; 2) Higher impact of wholesale price evolution to average selling price</td></tr><tr><td>603369.SS</td><td>Jiangsu King&#x27;s Luck Brewery</td><td>Our 12-m TP is based on 16.7x 2027E P/E discounted back to end-2026 using a 9.7% COE benchmark to Yanghe&#x27;s 2015-now P/E excl. Covid period</td><td>Upside: 1) Better-than-expected competitive landscape in Jiangsu province; 2) Stronger-than-expected management execution for national expansion; 3) Better product upgradeDownside: 1) More intensified competition/ worsened demand in Jiangsu; 2) Weaker distributors&#x27; confidence and channel inventory situation</td></tr><tr><td>000596.SZ</td><td>Anhui Gujing Distillery Co.</td><td>Our 12-m TP is based on 16.7x 2027E P/E discounted back to end-2026 using an 7.9% COE, the PE multiple is benchmark to Yanghe&#x27;s 2015-now P/E excl. Covid period</td><td>Upside: 1) Less/ shorter policy impact on banquet consumption in Anhui; 2) More resilient execution for nationwide expansion; 3) Less fierce competition in Anhui than expected</td></tr><tr><td>002304.SZ</td><td>Jiangsu Yanghe</td><td>Our 12-m TP is based on 14.0x 2027E P/E discounted back to end-2026 using a 7.8% COE, the Pe multiple is benchmark to Yanghe&#x27;s avg. fwd P/E in 2012-15 full anti-graft cycle</td><td>Upside: 1) Stronger-than-expected policy stimulus execution; 2) Better-than expected competitive landscape in Jiangsu province; 3) Stronger-than-expected performance outside Jiangsu province</td></tr><tr><td>000799.SZ</td><td>Jiugui Liquor Co.</td><td>Our 12-m TP is based on 19.3x 2027E P/E discounted back to end-2026 using a 9.7% COE</td><td>Upside: 1) Significant improvement on channel inventory level; 2) Stabilization of wholesale prices, especially Neican; 3) Better-than-expected commercial banquet demand recovery.</td></tr><tr><td>600779.SS</td><td>Sichuan Swellfun Co.</td><td>Our 12-m TP is based on 19.3x 2027E P/E discounted back to end-2026 using an 10.9% COE,the PE multiple is benchmark to Jiugui liquor 2027E P/E.</td><td>Upside: 1) Expansion of Diancang series, 2) Faster than expected penetration of Tianhaochen in the mass market, 3) Better than expected inventory digestion</td></tr></table>
+
+Source: GS Global Investment Research
+
+# Disclosure Appendix
+
+# Reg AC
+
+We, Leaf Liu, Christina Liu and Valerie Zhou, hereby certify that all of the views expressed in this report accurately reflect our personal views about the subject company or companies and its or their securities. We also certify that no part of our compensation was, is or will be, directly or indirectly, related to the specific recommendations or views expressed in this report.
+
+Unless otherwise stated, the individuals listed on the cover page of this report are analysts in GS' Global Investment Research division.
+
+Contributing Authors: Leaf Liu GS (Asia) L.L.C., Christina Liu GS (Asia) L.L.C., Valerie Zhou GS (Asia) L.L.C..
+
+Unless otherwise stated, the individuals listed in the Contributing Authors disclosure of this report are analysts in GS' Global Investment Research division.
+
+# GS Factor Profile
+
+The GS Factor Profile provides investment context for a stock by comparing key attributes to the market (i.e. our universe of rated stocks) and its sector peers. The four key attributes depicted are: Growth, Financial Returns, Multiple (e.g. valuation) and Integrated (a composite of Growth, Financial Returns and Multiple). Growth, Financial Returns and Multiple are calculated by using normalized ranks for specific metrics for each stock. The normalized ranks for the metrics are then averaged and converted into percentiles for the relevant attribute. The precise calculation of each metric may vary depending on the fiscal year, industry and region, but the standard approach is as follows:
+
+Growth is based on a stock's forward-looking sales growth, EBITDA growth and EPS growth (for financial stocks, only EPS and sales growth), with a higher percentile indicating a higher growth company. Financial Returns is based on a stock's forward-looking ROE, ROCE and CROCI (for financial stocks, only ROE), with a higher percentile indicating a company with higher financial returns. Multiple is based on a stock's forward-looking P/E, P/B, price/dividend (P/D), EV/EBITDA, EV/FCF and EV/Debt Adjusted Cash Flow (DACF) (for financial stocks, only P/E, P/B and P/D), with a higher percentile indicating a stock trading at a higher multiple. The Integrated percentile is calculated as the average of the Growth percentile, Financial Returns percentile and (100% - Multiple percentile).
+
+Financial Returns and Multiple use the GS analyst forecasts at the fiscal year-end at least three quarters in the future. Growth uses inputs for the fiscal year at least seven quarters in the future compared with the year at least three quarters in the future (on a per-share basis for all metrics).
+
+For a more detailed description of how we calculate the GS Factor Profile, please contact your GS representative.
+
+# M&A Rank
+
+Across our global coverage, we examine stocks using an M&A framework, considering both qualitative factors and quantitative factors (which may vary across sectors and regions) to incorporate the potential that certain companies could be acquired. We then assign a M&A rank as a means of scoring companies under our rated coverage from 1 to 3, with 1 representing high (30%-50%) probability of the company becoming an acquisition target, 2 representing medium (15%-30%) probability and 3 representing low (0%-15%) probability. For companies ranked 1 or 2, in line with our standard departmental guidelines we incorporate an M&A component into our target price. M&A rank of 3 is considered immaterial and therefore does not factor into our price target, and may or may not be discussed in research.
+
+# Quantum
+
+Quantum is GS' proprietary database providing access to detailed financial statement histories, forecasts and ratios. It can be used for in-depth analysis of a single company, or to make comparisons between companies in different sectors and markets.
+
+# Disclosures
+
+# Logo disclosure
+
+Third party brands used in this report are the property of their respective owners, and are used here for informational purposes only. The use of such brands should not be viewed as an endorsement, affiliation or sponsorship by or for GS or any of its products/services.
+
+The rating(s) for Anhui Gujing Distillery Co., Jiangsu King's Luck Brewery, Jiangsu Yanghe, Jiugui Liquor, Kweichow Moutai, Luzhou Laojiao, Shanxi Xinghuacun Fen Wine, Sichuan Swellfun Co. and Wuliangye Yibin is/are relative to the other companies in its/their coverage universe:
+
+Anhui Gujing Distillery Co., Budweiser APAC, Busy Ming Group, China Feihe Ltd., China Resources Beer, China Resources Beverage, Chongqing Brewery, Eastroc Beverage (A), Foshan Haitian Flavouring & Food (A), Foshan Haitian Flavouring & Food (H), Fujian Wanchen Food, Fuling Zhacai, Jiangsu King's Luck Brewery, Jiangsu Yanghe, Jiugui Liquor, Jonjee Hi-Tech, Kweichow Moutai, Luzhou Laojiao, Mengniu Dairy, Nongfu Spring, Qianhe Condiment and Food, Shanghai Bairun, Shanxi Xinghuacun Fen Wine, Sichuan Swellfun Co., Sichuan Teway Food Group, Tingyi, Tsingtao Brewery (A), Tsingtao Brewery (H), Uni-President China, Wuliangye Yibin, Yihai International Holding, Yili Industrial, ZJLD
+
+# Company-specific regulatory disclosures
+
+Compendium report: please see disclosures at https://www.gs.com/research/hedge.html. Disclosures applicable to the companies included in this compendium can be found in the latest relevant published research
+
+# Distribution of ratings/investment banking relationships
+
+GS Investment Research global Equity coverage universe
+
+<table><tr><td rowspan="2"></td><td colspan="3">Rating Distribution</td><td colspan="3">Investment Banking Relationships</td></tr><tr><td>Buy</td><td>Hold</td><td>Sell</td><td>Buy</td><td>Hold</td><td>Sell</td></tr><tr><td>Global</td><td>50%</td><td>34%</td><td>16%</td><td>65%</td><td>60%</td><td>45%</td></tr></table>
+
+As of April 1, 2026, GS Global Investment Research had investment ratings on 3,074 equity securities. GS assigns stocks as Buys and Sells on various regional Investment Lists; stocks not so assigned are deemed Neutral. Such assignments equate to Buy, Hold and Sell for the purposes of the above disclosure required by the FINRA Rules. See ‘Ratings, Coverage universe and related definitions’ below. The Investment Banking Relationships chart reflects the percentage of subject companies within each rating category for whom GS has provided investment banking services within the previous twelve months.
+
+# Price target and rating history chart(s)
+
+Compendium report: please see disclosures at https://www.gs.com/research/hedge.html. Disclosures applicable to the companies included in this compendium can be found in the latest relevant published research
+
+Target price history table(s)   
+Wuliangye Yibin (000858.SZ) 
+
+<table><tr><td>Date of report</td><td>Target price (Rmb)</td><td>Closing price (Rmb)</td></tr><tr><td>05-May-26</td><td>83.00</td><td>97.08</td></tr><tr><td>30-Oct-25</td><td>133.00</td><td>118.47</td></tr><tr><td>16-Sep-25</td><td>145.00</td><td>125.80</td></tr><tr><td>09-Jul-25</td><td>139.00</td><td>121.60</td></tr><tr><td>05-May-25</td><td>170.00</td><td>128.70</td></tr><tr><td>16-Jan-25</td><td>166.00</td><td>131.48</td></tr><tr><td>06-Nov-24</td><td>177.00</td><td>151.25</td></tr><tr><td>10-Sep-24</td><td>180.00</td><td>116.43</td></tr><tr><td>01-Aug-24</td><td>172.00</td><td>124.00</td></tr><tr><td>06-May-24</td><td>188.00</td><td>155.01</td></tr><tr><td>15-Apr-24</td><td>190.00</td><td>147.32</td></tr><tr><td>31-Jan-24</td><td>189.00</td><td>126.30</td></tr><tr><td>29-Oct-23</td><td>202.00</td><td>152.99</td></tr><tr><td>27-Aug-23</td><td>200.00</td><td>161.55</td></tr><tr><td>21-Jul-23</td><td>212.00</td><td>171.27</td></tr></table>
+
+Kweichow Moutai (600519.SS) 
+
+<table><tr><td>Date of report</td><td>Target price (Rmb)</td><td>Closing price (Rmb)</td></tr><tr><td>25-Apr-26</td><td>1,616.00</td><td>1,458.49</td></tr><tr><td>30-Mar-26</td><td>1,592.00</td><td>1,420.00</td></tr><tr><td>13-Jan-26</td><td>1,553.00</td><td>1,411.00</td></tr><tr><td>29-Oct-25</td><td>1,691.00</td><td>1,431.90</td></tr><tr><td>16-Sep-25</td><td>1,724.00</td><td>1,499.98</td></tr><tr><td>12-Aug-25</td><td>1,742.00</td><td>1,437.04</td></tr><tr><td>09-Jul-25</td><td>1,782.00</td><td>1,418.88</td></tr><tr><td>16-Jan-25</td><td>2,017.00</td><td>1,446.38</td></tr><tr><td>06-Nov-24</td><td>1,990.00</td><td>1,571.00</td></tr><tr><td>06-Oct-24</td><td>2,051.00</td><td>1,748.00</td></tr><tr><td>10-Sep-24</td><td>1,811.00</td><td>1,378.00</td></tr><tr><td>01-Aug-24</td><td>2,098.00</td><td>1,386.16</td></tr><tr><td>05-Apr-24</td><td>2,244.00</td><td>1,715.11</td></tr><tr><td>31-Jan-24</td><td>2,202.00</td><td>1,604.91</td></tr><tr><td>31-Oct-23</td><td>2,211.00</td><td>1,684.58</td></tr><tr><td>22-Oct-23</td><td>2,133.00</td><td>1,645.00</td></tr><tr><td>02-Aug-23</td><td>2,217.00</td><td>1,880.00</td></tr><tr><td>21-Jul-23</td><td>2,212.00</td><td>1,771.30</td></tr><tr><td>14-Jun-23</td><td>2,483.00</td><td>1,726.88</td></tr></table>
+
+Luzhou Laojiao (000568.SZ) 
+
+<table><tr><td>Date of report</td><td>Target price (Rmb)</td><td>Closing price (Rmb)</td></tr><tr><td>04-May-26</td><td>98.00</td><td>100.10</td></tr><tr><td>16-Sep-25</td><td>119.00</td><td>138.45</td></tr><tr><td>01-Sep-25</td><td>108.00</td><td>135.85</td></tr><tr><td>09-Jul-25</td><td>107.00</td><td>114.36</td></tr><tr><td>30-Apr-25</td><td>150.00</td><td>123.74</td></tr><tr><td>15-Mar-25</td><td>151.00</td><td>143.61</td></tr><tr><td>16-Jan-25</td><td>152.00</td><td>117.99</td></tr><tr><td>03-Nov-24</td><td>162.00</td><td>136.53</td></tr><tr><td>14-Oct-24</td><td>170.00</td><td>141.20</td></tr><tr><td>10-Sep-24</td><td>183.00</td><td>107.19</td></tr><tr><td>01-Aug-24</td><td>242.00</td><td>124.79</td></tr><tr><td>28-Apr-24</td><td>260.00</td><td>186.42</td></tr><tr><td>15-Apr-24</td><td>259.00</td><td>180.94</td></tr><tr><td>31-Jan-24</td><td>258.00</td><td>146.80</td></tr><tr><td>01-Sep-23</td><td>284.00</td><td>237.80</td></tr><tr><td>21-Jul-23</td><td>271.00</td><td>226.95</td></tr></table>
+
+Sichuan Swellfun Co. (600779.SS) 
+
+<table><tr><td>Date of report</td><td>Target price (Rmb)</td><td>Closing price (Rmb)</td></tr><tr><td>21-Jan-26</td><td>26.50</td><td>38.93</td></tr><tr><td>12-Dec-25</td><td>28.90</td><td>37.20</td></tr><tr><td>16-Sep-25</td><td>33.80</td><td>46.20</td></tr><tr><td>09-Jul-25</td><td>30.70</td><td>42.05</td></tr><tr><td>05-May-25</td><td>32.80</td><td>45.55</td></tr><tr><td>15-Mar-25</td><td>33.30</td><td>53.32</td></tr><tr><td>16-Jan-25</td><td>33.70</td><td>47.39</td></tr><tr><td>06-Nov-24</td><td>36.30</td><td>50.53</td></tr><tr><td>10-Sep-24</td><td>32.60</td><td>32.41</td></tr><tr><td>29-Jul-24</td><td>38.80</td><td>36.41</td></tr><tr><td>28-Apr-24</td><td>42.00</td><td>46.17</td></tr><tr><td>15-Apr-24</td><td>43.00</td><td>44.05</td></tr><tr><td>31-Jan-24</td><td>46.00</td><td>47.73</td></tr><tr><td>15-Oct-23</td><td>50.60</td><td>58.78</td></tr><tr><td>21-Jul-23</td><td>52.00</td><td>64.43</td></tr></table>
+
+Jiangsu King's Luck Brewery (603369.SS) 
+
+<table><tr><td>Date of report</td><td>Target price (Rmb)</td><td>Closing price (Rmb)</td></tr><tr><td>12-Dec-25</td><td>39.00</td><td>34.89</td></tr><tr><td>16-Sep-25</td><td>42.00</td><td>42.16</td></tr><tr><td>09-Jul-25</td><td>38.00</td><td>38.90</td></tr><tr><td>05-May-25</td><td>41.00</td><td>47.40</td></tr><tr><td>16-Apr-25</td><td>43.50</td><td>50.95</td></tr><tr><td>16-Jan-25</td><td>44.50</td><td>43.84</td></tr><tr><td>06-Nov-24</td><td>38.80</td><td>45.27</td></tr><tr><td>10-Sep-24</td><td>40.50</td><td>38.12</td></tr><tr><td>26-Aug-24</td><td>42.40</td><td>38.06</td></tr><tr><td>01-Aug-24</td><td>45.40</td><td>43.11</td></tr><tr><td>06-May-24</td><td>46.30</td><td>56.98</td></tr><tr><td>15-Apr-24</td><td>46.40</td><td>56.91</td></tr><tr><td>31-Jan-24</td><td>45.00</td><td>44.21</td></tr></table>
+
+Jiugui Liquor (000799.SZ) 
+
+<table><tr><td>Date of report</td><td>Target price (Rmb)</td><td>Closing price (Rmb)</td></tr><tr><td>12-Dec-25</td><td>18.30</td><td>55.74</td></tr><tr><td>16-Sep-25</td><td>20.90</td><td>71.86</td></tr><tr><td>09-Jul-25</td><td>20.50</td><td>46.30</td></tr><tr><td>15-Mar-25</td><td>27.20</td><td>51.88</td></tr><tr><td>16-Jan-25</td><td>27.40</td><td>48.30</td></tr><tr><td>14-Oct-24</td><td>26.90</td><td>51.47</td></tr><tr><td>10-Sep-24</td><td>30.20</td><td>36.00</td></tr><tr><td>02-Sep-24</td><td>37.50</td><td>35.20</td></tr><tr><td>01-Aug-24</td><td>38.10</td><td>40.05</td></tr><tr><td>06-May-24</td><td>44.00</td><td>56.20</td></tr><tr><td>15-Apr-24</td><td>47.00</td><td>52.10</td></tr><tr><td>31-Jan-24</td><td>52.00</td><td>62.07</td></tr><tr><td>30-Oct-23</td><td>61.20</td><td>76.49</td></tr></table>
+
+Jiangsu King's Luck Brewery (603369.SS) 
+
+<table><tr><td>Date of report</td><td>Target price (Rmb)</td><td>Closing price (Rmb)</td></tr><tr><td>14-Nov-23</td><td>53.00</td><td>54.06</td></tr><tr><td>21-Sep-23</td><td>51.00</td><td>59.40</td></tr><tr><td>21-Jul-23</td><td>47.00</td><td>56.06</td></tr><tr><td>18-May-23</td><td>52.00</td><td>-</td></tr></table>
+
+Jiugui Liquor (000799.SZ) 
+
+<table><tr><td>Date of report</td><td>Target price (Rmb)</td><td>Closing price (Rmb)</td></tr><tr><td>15-Oct-23</td><td>70.10</td><td>81.82</td></tr><tr><td>01-Sep-23</td><td>77.10</td><td>92.69</td></tr><tr><td>21-Jul-23</td><td>81.00</td><td>94.18</td></tr></table>
+
+Jiangsu Yanghe (002304.SZ) 
+
+<table><tr><td>Date of report</td><td>Target price (Rmb)</td><td>Closing price (Rmb)</td></tr><tr><td>12-Dec-25</td><td>38.00</td><td>62.45</td></tr><tr><td>09-Jul-25</td><td>39.00</td><td>65.37</td></tr><tr><td>05-May-25</td><td>52.00</td><td>68.60</td></tr><tr><td>16-Jan-25</td><td>60.00</td><td>79.77</td></tr><tr><td>06-Nov-24</td><td>76.00</td><td>87.91</td></tr><tr><td>14-Oct-24</td><td>84.00</td><td>86.51</td></tr><tr><td>10-Sep-24</td><td>87.00</td><td>74.20</td></tr><tr><td>01-Aug-24</td><td>98.80</td><td>80.37</td></tr><tr><td>06-May-24</td><td>104.00</td><td>98.44</td></tr><tr><td>31-Jan-24</td><td>113.00</td><td>91.31</td></tr><tr><td>14-Nov-23</td><td>130.00</td><td>118.66</td></tr><tr><td>15-Oct-23</td><td>173.00</td><td>121.87</td></tr><tr><td>21-Jul-23</td><td>178.00</td><td>133.81</td></tr></table>
+
+Shanxi Xinghuacun Fen Wine (600809.SS) 
+
+<table><tr><td>Date of report</td><td>Target price (Rmb)</td><td>Closing price (Rmb)</td></tr><tr><td>30-Apr-26</td><td>161.00</td><td>143.35</td></tr><tr><td>12-Dec-25</td><td>184.00</td><td>180.10</td></tr><tr><td>09-Jul-25</td><td>187.00</td><td>178.28</td></tr><tr><td>16-Apr-25</td><td>234.00</td><td>218.22</td></tr><tr><td>15-Mar-25</td><td>238.00</td><td>222.85</td></tr><tr><td>16-Jan-25</td><td>235.00</td><td>178.30</td></tr><tr><td>31-Oct-24</td><td>242.00</td><td>200.90</td></tr><tr><td>14-Oct-24</td><td>253.00</td><td>202.15</td></tr><tr><td>10-Sep-24</td><td>269.00</td><td>159.65</td></tr><tr><td>28-Aug-24</td><td>267.00</td><td>165.60</td></tr><tr><td>26-Apr-24</td><td>296.00</td><td>252.29</td></tr><tr><td>15-Apr-24</td><td>291.00</td><td>251.79</td></tr><tr><td>31-Jan-24</td><td>281.00</td><td>200.11</td></tr><tr><td>14-Nov-23</td><td>296.00</td><td>240.88</td></tr><tr><td>15-Oct-23</td><td>292.00</td><td>230.25</td></tr><tr><td>21-Sep-23</td><td>288.00</td><td>241.50</td></tr><tr><td>03-Sep-23</td><td>296.00</td><td>249.20</td></tr><tr><td>21-Jul-23</td><td>292.00</td><td>214.52</td></tr><tr><td>28-May-23</td><td>324.00</td><td>217.36</td></tr></table>
+
+Anhui Gujing Distillery Co. (000596.SZ) 
+
+<table><tr><td>Date of report</td><td>Target price (Rmb)</td><td>Closing price (Rmb)</td></tr><tr><td>12-Dec-25</td><td>129.00</td><td>145.47</td></tr><tr><td>16-Sep-25</td><td>140.00</td><td>168.58</td></tr><tr><td>09-Jul-25</td><td>123.00</td><td>137.29</td></tr><tr><td>05-May-25</td><td>183.00</td><td>164.39</td></tr><tr><td>08-Apr-25</td><td>184.00</td><td>172.08</td></tr><tr><td>16-Jan-25</td><td>183.00</td><td>172.35</td></tr><tr><td>06-Nov-24</td><td>190.00</td><td>199.50</td></tr><tr><td>14-Oct-24</td><td>193.00</td><td>199.00</td></tr><tr><td>10-Sep-24</td><td>196.00</td><td>158.35</td></tr><tr><td>01-Aug-24</td><td>309.00</td><td>179.43</td></tr><tr><td>06-May-24</td><td>319.00</td><td>279.12</td></tr><tr><td>15-Apr-24</td><td>320.00</td><td>262.65</td></tr><tr><td>31-Jan-24</td><td>318.00</td><td>199.12</td></tr><tr><td>14-Nov-23</td><td>305.00</td><td>261.35</td></tr><tr><td>21-Sep-23</td><td>300.00</td><td>272.32</td></tr><tr><td>21-Jul-23</td><td>279.00</td><td>252.83</td></tr><tr><td>18-May-23</td><td>310.00</td><td>-</td></tr></table>
+
+Price targets shown in table(s) are unadjusted for corporate actions.
+
+# Regulatory disclosures
+
+# Disclosures required by United States laws and regulations
+
+See company-specific regulatory disclosures above for any of the following disclosures required as to companies referred to in this report: manager or co-manager in a pending transaction; $1\%$ or other ownership; compensation for certain services; types of client relationships; managed/co-managed public offerings in prior periods; directorships; for equity securities, market making and/or specialist role. GS trades or may trade as a principal in debt securities (or in related derivatives) of issuers discussed in this report.
+
+The following are additional required disclosures: Ownership and material conflicts of interest: GS policy prohibits its analysts, professionals reporting to analysts and members of their households from owning securities of any company in the analyst's area of coverage. Analyst compensation: Analysts are paid in part based on the profitability of GS, which includes investment banking revenues. Analyst as officer or director: GS policy generally prohibits its analysts, persons reporting to analysts or members of their households from serving as an officer, director or advisor of any company in the analyst's area of coverage. Non-U.S. Analysts: Non-U.S. analysts may not be associated persons of
+
+GS & Co. LLC and therefore may not be subject to FINRA Rule 2241 or FINRA Rule 2242 restrictions on communications with a subject company, public appearances and trading in securities covered by the analysts.
+
+Distribution of ratings: See the distribution of ratings disclosure above. Price chart: See the price chart, with changes of ratings and price targets in prior periods, above, or, if electronic format or if with respect to multiple companies which are the subject of this report, on the GS website at https://www.gs.com/research/hedge.html.
+
+# Additional disclosures required under the laws and regulations of jurisdictions other than the United States
+
+The following disclosures are those required by the jurisdiction indicated, except to the extent already made above pursuant to United States laws and regulations. Australia: GS Australia Pty Ltd and its affiliates are not authorised deposit-taking institutions (as that term is defined in the Banking Act 1959 (Cth)) in Australia and do not provide banking services, nor carry on a banking business, in Australia. This research, and any access to it, is intended only for “wholesale clients” within the meaning of the Australian Corporations Act, unless otherwise agreed by GS. In producing research reports, members of Global Investment Research of GS Australia may attend site visits and other meetings hosted by the companies and other entities which are the subject of its research reports. In some instances the costs of such site visits or meetings may be met in part or in whole by the issuers concerned if GS Australia considers it is appropriate and reasonable in the specific circumstances relating to the site visit or meeting. To the extent that the contents of this document contains any financial product advice, it is general advice only and has been prepared by GS without taking into account a client’s objectives, financial situation or needs. A client should, before acting on any such advice, consider the appropriateness of the advice having regard to the client’s own objectives, financial situation and needs. A copy of certain GS Australia and New Zealand disclosure of interests and a copy of GS’ Australian Sell-Side Research Independence Policy Statement are available at: https://www.goldmansachs.com/disclosures/australia-new-zealand/index.html. Brazil: Disclosure information in relation to CVM Resolution n. 20 is available at https://www.gs.com/worldwide/brazil/area/gir/index.html. Where applicable, the Brazil-registered analyst primarily responsible for the content of this research report, as defined in Article 20 of CVM Resolution n. 20, is the first author named at the beginning of this report, unless indicated otherwise at the end of the text. Canada: This information is being provided to you for information purposes only and is not, and under no circumstances should be construed as, an advertisement, offering or solicitation by GS & Co. LLC for purchasers of securities in Canada to trade in any Canadian security. GS & Co. LLC is not registered as a dealer in any jurisdiction in Canada under applicable Canadian securities laws and generally is not permitted to trade in Canadian securities and may be prohibited from selling certain securities and products in certain jurisdictions in Canada. If you wish to trade in any Canadian securities or other products in Canada please contact GS Canada Inc., an affiliate of The GS Group Inc., or another registered Canadian dealer. Hong Kong: Further information on the securities of covered companies referred to in this research may be obtained on request from GS (Asia) L.L.C. India: Further information on the subject company or companies referred to in this research may be obtained from GS (India) Securities Private Limited, Research Analyst - SEBI Registration Number INH000001493, 10th Floor, Ascent-Worli, Sudam Kalu Ahire Marg, Worli, Mumbai-400 025, India, Corporate Identity Number U74140MH2006FTC160634, Phone +91 22 6616 9000, Fax +91 22 6616 9001. GS may beneficially own 1% or more of the securities (as such term is defined in clause 2 (h) the Indian Securities Contracts (Regulation) Act, 1956) of the subject company or companies referred to in this research report. Investment in securities market are subject to market risks. Read all the related documents carefully before investing. Registration granted by SEBI and certification from NISM in no way guarantee performance of the intermediary or provide any assurance of returns to investors. GS (India) Securities Private Limited compliance officer and investor grievance contact details can be found at: https://www.goldmansachs.com/worldwide/india/documents/Grievance-Redressal-and-Escalation-Matrix.pdf, and a copy of the annual audit compliance report can be found at this link: https://publishing.gs.com/content/site/india-annual-compliance-report.html. Japan: See below. Korea: This research, and any access to it, is intended only for “professional investors” within the meaning of the Financial Services and Capital Markets Act, unless otherwise agreed by GS. Further information on the subject company or companies referred to in this research may be obtained from GS (Asia) L.L.C., Seoul Branch. New Zealand: GS New Zealand Limited and its affiliates are neither “registered banks” nor “deposit takers” (as defined in the Reserve Bank of New Zealand Act 1989) in New Zealand. This research, and any access to it, is intended for “wholesale clients” (as defined in the Financial Advisers Act 2008) unless otherwise agreed by GS. A copy of certain GS Australia and New Zealand disclosure of interests is available at: https://www.goldmansachs.com/disclosures/australia-new-zealand/index.html. Russia: Research reports distributed in the Russian Federation are not advertising as defined in the Russian legislation, but are information and analysis not having product promotion as their main purpose and do not provide appraisal within the meaning of the Russian legislation on appraisal activity. Research reports do not constitute a personalized investment recommendation as defined in Russian laws and regulations, are not addressed to a specific client, and are prepared without analyzing the financial circumstances, investment profiles or risk profiles of clients. GS assumes no responsibility for any investment decisions that may be taken by a client or any other person based on this research report. Singapore: GS (Singapore) Pte. (Company Number: 198602165W), which is regulated by the Monetary Authority of Singapore, accepts legal responsibility for this research, and should be contacted with respect to any matters arising from, or in connection with, this research. Taiwan: This material is for reference only and must not be reprinted without permission. Investors should carefully consider their own investment risk. Investment results are the responsibility of the individual investor. United Kingdom: Persons who would be categorized as retail clients in the United Kingdom, as such term is defined in the rules of the Financial Conduct Authority, should read this research in conjunction with prior GS on the covered companies referred to herein and should refer to the risk warnings that have been sent to them by GS International. A copy of these risks warnings, and a glossary of certain financial terms used in this report, are available from GS International on request.
+
+European Union and United Kingdom: Disclosure information in relation to Article 6 (2) of the European Commission Delegated Regulation (EU) (2016/958) supplementing Regulation (EU) No 596/2014 of the European Parliament and of the Council (including as that Delegated Regulation is implemented into United Kingdom domestic law and regulation following the United Kingdom's departure from the European Union and the European Economic Area) with regard to regulatory technical standards for the technical arrangements for objective presentation of investment recommendations or other information recommending or suggesting an investment strategy and for disclosure of particular interests or indications of conflicts of interest is available at https://www.gs.com/disclosures/europeanpolicy.html which states the European Policy for Managing Conflicts of Interest in Connection with Investment Research.
+
+Japan: GS Japan Co., Ltd. is a Financial Instrument Dealer registered with the Kanto Financial Bureau under registration number Kinsho 69, and a member of Japan Securities Dealers Association, Financial Futures Association of Japan Type II Financial Instruments Firms Association, and Investment Management Association of Japan. Sales and purchase of equities are subject to commission pre-determined with clients plus consumption tax. See company-specific disclosures as to any applicable disclosures required by Japanese stock exchanges, the Japanese Securities Dealers Association or the Japanese Securities Finance Company.
+
+# Ratings, coverage universe and related definitions
+
+Buy (B), Neutral (N), Sell (S) Analysts recommend stocks as Buys or Sells for inclusion on various regional Investment Lists. Being assigned a Buy or Sell on an Investment List is determined by a stock's total return potential relative to its coverage universe. Any stock not assigned as a Buy or a Sell on an Investment List with an active rating (i.e., a stock that is not Rating Suspended, Not Rated, Early-Stage Biotech, Coverage Suspended or Not Covered), is deemed Neutral. Each region manages Regional Conviction Lists, which are selected from Buy rated stocks on the respective region's Investment Lists and represent investment recommendations focused on the size of the total return potential and/or the likelihood of the realization of the return across their respective areas of coverage. The addition or removal of stocks from such Conviction Lists are managed by the Investment Review Committee or other designated committee in each respective region and do not represent a change in the analysts' investment rating for such stocks.
+
+Total return potential represents the upside or downside differential between the current share price and the price target, including all paid or anticipated dividends, expected during the time horizon associated with the price target. Price targets are required for all covered stocks. The total return potential, price target and associated time horizon are stated in each report adding or reiterating an Investment List membership.
+
+Coverage Universe: A list of all stocks in each coverage universe is available by primary analyst, stock and coverage universe at https://www.gs.com/research/hedge.html.
+
+Not Rated (NR). The investment rating, target price and earnings estimates (where relevant) are removed pursuant to GS policy when GS is acting in an advisory capacity in a merger or in a strategic transaction involving this company, when there are legal, regulatory or policy constraints due to GS' involvement in a transaction, and in certain other circumstances. Early-Stage Biotech (ES). An investment rating and a target price are not assigned pursuant to GS policy when this company has neither a drug, treatment or medical device that has passed a Phase II clinical trial nor a license to distribute a post-Phase II drug, treatment or medical device. Rating Suspended (RS). GS has suspended the investment rating and price target for this stock, because there is not a sufficient fundamental basis for determining an investment rating or target price. The previous investment rating and target price, if any, are no longer in effect for this stock and should not be relied upon. Coverage Suspended (CS). GS has suspended coverage of this company. Not Covered (NC). GS does not cover this company.
+
+# Global product; distributing entities
+
+GS Global Investment Research produces and distributes research products for clients of GS on a global basis. Analysts based in GS offices around the world produce research on industries and companies, and research on macroeconomics, currencies, commodities and portfolio strategy. This research is disseminated in Australia by GS Australia Pty Ltd (ABN 21 006 797 897); in Brazil by GS do Brasil Corretora de Títulos e Valores Mobiliários S.A.; Public Communication Channel GS Brazil: 0800 727 5764 and / or contatogoldmanbrasil@gs.com. Available Weekdays (except holidays), from 9am to 6pm. Canal de Comunicação com o Público GS Brasil: 0800 727 5764 e/ou contatogoldmanbrasil@gs.com. Horário de funcionamento: segunda-feira à sexta-feira (exceto feriados), das 9h às 18h; in Canada by GS & Co. LLC; in Hong Kong by GS (Asia) L.L.C.; in India by GS (India) Securities Private Ltd.; in Japan by GS Japan Co., Ltd.; in the Republic of Korea by GS (Asia) L.L.C., Seoul Branch; in New Zealand by GS New Zealand Limited; in Russia by OOO GS; in Singapore by GS (Singapore) Pte. (Company Number: 198602165W); and in the United States of America by GS & Co. LLC. GS International has approved this research in connection with its distribution in the United Kingdom.
+
+GS International (“GSI”), authorised by the Prudential Regulation Authority (“PRA”) and regulated by the Financial Conduct Authority (“FCA”) and the PRA, has approved this research in connection with its distribution in the United Kingdom.
+
+European Economic Area: GS Bank Europe SE ("GSBE") is a credit institution incorporated in Germany and, within the Single Supervisory Mechanism, subject to direct prudential supervision by the European Central Bank and in other respects supervised by German Federal Financial Supervisory Authority (Bundesanstalt für Finanzdienstleistungsaufsicht, BaFin) and Deutsche Bundesbank and disseminates research within the European Economic Area.
+
+# General disclosures
+
+This research is for our clients only. Other than disclosures relating to GS, this research is based on current public information that we consider reliable, but we do not represent it is accurate or complete, and it should not be relied on as such. The information, opinions, estimates and forecasts contained herein are as of the date hereof and are subject to change without prior notification. We seek to update our research as appropriate, but various regulations may prevent us from doing so. Other than certain industry reports published on a periodic basis, the large majority of reports are published at irregular intervals as appropriate in the analyst's judgment.
+
+GS conducts a global full-service, integrated investment banking, investment management, and brokerage business. We have investment banking and other business relationships with a substantial percentage of the companies covered by Global Investment Research. GS & Co. LLC, the United States broker dealer, is a member of SIPC (https://www.sipc.org).
+
+Our salespeople, traders, and other professionals may provide oral or written market commentary or trading strategies to our clients and principal trading desks that reflect opinions that are contrary to the opinions expressed in this research. Our asset management area, principal trading desks and investing businesses may make investment decisions that are inconsistent with the recommendations or views expressed in this research.
+
+The analysts named in this report may have from time to time discussed with our clients, including GS salespersons and traders, or may discuss in this report, trading strategies that reference catalysts or events that may have a near-term impact on the market price of the equity securities discussed in this report, which impact may be directionally counter to the analyst's published price target expectations for such stocks. Any such trading strategies are distinct from and do not affect the analyst's fundamental equity rating for such stocks, which rating reflects a stock's return potential relative to its coverage universe as described herein.
+
+We and our affiliates, officers, directors, and employees will from time to time have long or short positions in, act as principal in, and buy or sell, the securities or derivatives, if any, referred to in this research, unless otherwise prohibited by regulation or GS policy.
+
+The views attributed to third party presenters at GS arranged conferences, including individuals from other parts of GS, do not necessarily reflect those of Global Investment Research and are not an official view of GS.
+
+Any third party referenced herein, including any salespeople, traders and other professionals or members of their household, may have positions in the products mentioned that are inconsistent with the views expressed by analysts named in this report.
+
+This research is not an offer to sell or the solicitation of an offer to buy any security in any jurisdiction where such an offer or solicitation would be illegal. It does not constitute a personal recommendation or take into account the particular investment objectives, financial situations, or needs of individual clients. Clients should consider whether any advice or recommendation in this research is suitable for their particular circumstances and, if appropriate, seek professional advice, including tax advice. The price and value of investments referred to in this research and the income from them may fluctuate. Past performance is not a guide to future performance, future returns are not guaranteed, and a loss of original capital may occur. Fluctuations in exchange rates could have adverse effects on the value or price of, or income derived from, certain investments.
+
+Certain transactions, including those involving futures, options, and other derivatives, give rise to substantial risk and are not suitable for all investors. Investors should review current options and futures disclosure documents which are available from GS sales representatives or at https://www.theocc.com/about/publications/character-risks.jsp and https://www.goldmansachs.com/disclosures/cftc\_fcm\_disclosures. Transaction costs may be significant in option strategies calling for multiple purchase and sales of options such as spreads. Supporting documentation will be supplied upon request.
+
+Differing Levels of Service provided by Global Investment Research: The level and types of services provided to you by GS Global Investment Research may vary as compared to that provided to internal and other external clients of GS, depending on various factors including your individual preferences as to the frequency and manner of receiving communication, your risk profile and investment focus and perspective (e.g., marketwide, sector specific, long term, short term), the size and scope of your overall client relationship with GS, and legal and regulatory constraints. As an example, certain clients may request to receive notifications when research on specific securities is published, and certain clients may request that specific data underlying analysts' fundamental analysis available on our internal client websites be delivered to them electronically through data feeds or otherwise. No change to an analyst's fundamental research views (e.g., ratings, price targets, or material changes to earnings estimates for equity securities), will be communicated to any client prior to inclusion of such information in a research report broadly disseminated through electronic publication to our internal client websites or through other means, as necessary, to all clients who are entitled to receive such reports.
+
+All research reports are disseminated and available to all clients simultaneously through electronic publication to our internal client websites. Not all research content is redistributed to our clients or available to third-party aggregators, nor is GS responsible for the redistribution of our research by third party aggregators. For research, models or other data related to one or more securities, markets or asset classes (including related services) that may be available to you, please contact your GS representative or go to https://research.gs.com.
+
+Disclosure information is also available at https://www.gs.com/research/hedge.html or from Research Compliance, 200 West Street, New York, NY 10282.
+
+# © 2026 GS.
+
+You are permitted to store, display, analyze, modify, reformat, and print the information made available to you via this service only for your own use. You may not resell or reverse engineer this information to calculate or develop any index for disclosure and/or marketing or create any other derivative works or commercial product(s), data or offering(s) without the express written consent of GS. You are not permitted to publish, transmit, or otherwise reproduce this information, in whole or in part, in any format to any third party without the express written consent of GS. This foregoing restriction includes, without limitation, using, extracting, downloading or retrieving this information, in whole or in part, to train or finetune a machine learning or artificial intelligence system, or to provide or reproduce this information, in whole or in part, as a prompt or input to any such system.

@@ -1,0 +1,50 @@
+{
+  "input_dir": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs",
+  "total_pdf_count_before_shard": 42,
+  "pdf_count_before_skip": 5,
+  "pdf_count": 5,
+  "batch_size": 5,
+  "shard_index": 7,
+  "shard_count": 40,
+  "max_reports_per_shard": 5,
+  "max_total_reports": 0,
+  "skip_existing": true,
+  "skipped_existing_count": 0,
+  "skipped_existing": [],
+  "failures": 0,
+  "batches": [
+    {
+      "batch_index": 1,
+      "pdf_count": 5,
+      "files": [
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/36-GS-China Consumer Staples： Chengdu Trip： Spirits target 2H26 recovery but visibility low； value retailer store openings on~track； PoS optimization a-260518.pdf",
+          "batch_file": "/tmp/pdf_batch_001_laq3kb55/pdfs/0001-36-GS-China Consumer Staples- Chengdu Trip- Spirits target 2H26 recovery but visibility low- value retailer store openings on-track- PoS optimization a-260518.pdf",
+          "stable_index": "1"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/37-GS-China Spirits Tracker： Feitian Moutai resilient with low inventory on~track prepayment； Wuliangye AGM reinforced shareholder-260518.pdf",
+          "batch_file": "/tmp/pdf_batch_001_laq3kb55/pdfs/0002-37-GS-China Spirits Tracker- Feitian Moutai resilient with low inventory on-track prepayment- Wuliangye AGM reinforced shareholder-260518.pdf",
+          "stable_index": "2"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/38-MS-Semiconductors Weekly Earnings Week 5 (NVDA, ADI)-260518.pdf",
+          "batch_file": "/tmp/pdf_batch_001_laq3kb55/pdfs/0003-38-MS-Semiconductors Weekly Earnings Week 5 (NVDA- ADI)-260518.pdf",
+          "stable_index": "3"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/39-MS-China Broader Consumption Trip – Key Takeaways-260517.pdf",
+          "batch_file": "/tmp/pdf_batch_001_laq3kb55/pdfs/0004-39-MS-China Broader Consumption Trip - Key Takeaways-260517.pdf",
+          "stable_index": "4"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/40-MS-China Healthcare：Trip Takeaways from Pharma Companies-260518.pdf",
+          "batch_file": "/tmp/pdf_batch_001_laq3kb55/pdfs/0005-40-MS-China Healthcare-Trip Takeaways from Pharma Companies-260518.pdf",
+          "stable_index": "5"
+        }
+      ],
+      "returncode": 0,
+      "status": "ok"
+    }
+  ]
+}
