@@ -1,0 +1,50 @@
+{
+  "input_dir": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs",
+  "total_pdf_count_before_shard": 42,
+  "pdf_count_before_skip": 5,
+  "pdf_count": 5,
+  "batch_size": 5,
+  "shard_index": 0,
+  "shard_count": 40,
+  "max_reports_per_shard": 5,
+  "max_total_reports": 0,
+  "skip_existing": true,
+  "skipped_existing_count": 0,
+  "skipped_existing": [],
+  "failures": 0,
+  "batches": [
+    {
+      "batch_index": 1,
+      "pdf_count": 5,
+      "files": [
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/01-Bofa-Asia Fund Manager Survey From growth concerns to AI conviction-260519.pdf",
+          "batch_file": "/tmp/pdf_batch_001_g2x51yeu/pdfs/0001-01-Bofa-Asia Fund Manager Survey From growth concerns to AI conviction-260519.pdf",
+          "stable_index": "1"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/02-Bofa-Global Fund Manager Survey In It to Win It-260519.pdf",
+          "batch_file": "/tmp/pdf_batch_001_g2x51yeu/pdfs/0002-02-Bofa-Global Fund Manager Survey In It to Win It-260519.pdf",
+          "stable_index": "2"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/03-DB-Europe Macro Outlook 2026：The two~economy problem，resilience vs rigidity amid an energy shock-260519.pdf",
+          "batch_file": "/tmp/pdf_batch_001_g2x51yeu/pdfs/0003-03-DB-Europe Macro Outlook 2026-The two-economy problem-resilience vs rigidity amid an energy shock-260519.pdf",
+          "stable_index": "3"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/04-GS-China：SAFE data suggest some FX inflows in April-260518.pdf",
+          "batch_file": "/tmp/pdf_batch_001_g2x51yeu/pdfs/0004-04-GS-China-SAFE data suggest some FX inflows in April-260518.pdf",
+          "stable_index": "4"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/05-GS-GOAL Kickstart：The name is bond （again）~rising bond yields weigh on portfolios-260518.pdf",
+          "batch_file": "/tmp/pdf_batch_001_g2x51yeu/pdfs/0005-05-GS-GOAL Kickstart-The name is bond -again--rising bond yields weigh on portfolios-260518.pdf",
+          "stable_index": "5"
+        }
+      ],
+      "returncode": 0,
+      "status": "ok"
+    }
+  ]
+}
