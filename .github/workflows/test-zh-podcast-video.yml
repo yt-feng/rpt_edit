@@ -1,0 +1,165 @@
+name: Test Chinese podcast video
+
+on:
+  workflow_dispatch:
+    inputs:
+      dropbox_root:
+        description: "Dropbox root folder containing date-named backup folders"
+        required: true
+        default: "/zip_backup"
+      model:
+        description: "DeepSeek model"
+        required: true
+        default: "deepseek-chat"
+      deepseek_base_url:
+        description: "DeepSeek API base URL"
+        required: true
+        default: "https://api.deepseek.com"
+      mineru_model:
+        description: "MinerU model_version"
+        required: true
+        default: "vlm"
+      language:
+        description: "MinerU OCR language code"
+        required: true
+        default: "en"
+      ocr:
+        description: "Enable OCR"
+        required: true
+        default: "true"
+      min_pages:
+        description: "Minimum PDF page count for the test PDF"
+        required: true
+        default: "5"
+      podcast_minutes:
+        description: "Target Chinese podcast minutes"
+        required: true
+        default: "5"
+      commit_results:
+        description: "Commit test outputs back to repo"
+        required: true
+        type: boolean
+        default: true
+
+permissions:
+  contents: write
+
+env:
+  PYTHONUNBUFFERED: "1"
+
+concurrency:
+  group: test-zh-podcast-video
+  cancel-in-progress: true
+
+jobs:
+  test-zh-podcast-video:
+    runs-on: ubuntu-latest
+    timeout-minutes: 75
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: "pip"
+
+      - name: Install system packages
+        timeout-minutes: 10
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends ffmpeg fonts-noto-cjk fonts-arphic-ukai
+
+      - name: Install Python dependencies
+        run: |
+          pip install -r requirements.txt
+          pip install piper-tts
+
+      - name: Download Piper Chinese male-capable voice model
+        run: |
+          mkdir -p .piper-voices
+          MODEL_BASE="https://huggingface.co/rhasspy/piper-voices/resolve/main/zh/zh_CN/huayan/medium"
+          if [ ! -f ".piper-voices/zh_CN-huayan-medium.onnx" ]; then
+            curl -L "$MODEL_BASE/zh_CN-huayan-medium.onnx" -o ".piper-voices/zh_CN-huayan-medium.onnx"
+          fi
+          if [ ! -f ".piper-voices/zh_CN-huayan-medium.onnx.json" ]; then
+            curl -L "$MODEL_BASE/zh_CN-huayan-medium.onnx.json" -o ".piper-voices/zh_CN-huayan-medium.onnx.json"
+          fi
+          ls -lh .piper-voices
+
+      - name: Download latest Dropbox PDFs
+        env:
+          DROPBOX_APP_KEY: ${{ secrets.DROPBOX_APP_KEY }}
+          DROPBOX_APP_SECRET: ${{ secrets.DROPBOX_APP_SECRET }}
+          DROPBOX_REFRESH_TOKEN: ${{ secrets.DROPBOX_REFRESH_TOKEN }}
+        run: |
+          python scripts/download_dropbox_latest_pdfs.py \
+            --dropbox-root "${{ github.event.inputs.dropbox_root || '/zip_backup' }}" \
+            --output-dir "_podcast_test_latest_pdfs"
+
+      - name: Select one recent PDF with at least 5 pages
+        id: select_pdf
+        run: |
+          python scripts/select_test_pdf.py \
+            --input-dir "_podcast_test_latest_pdfs" \
+            --output-dir "_podcast_test_selected_pdf" \
+            --min-pages "${{ github.event.inputs.min_pages || '5' }}"
+
+      - name: Convert selected PDF to notes and chart assets
+        env:
+          MINER_U: ${{ secrets.MINER_U }}
+          DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
+          DEEPSEEK_BASE_URL: ${{ github.event.inputs.deepseek_base_url || 'https://api.deepseek.com' }}
+        run: |
+          OUTPUT_DIR="podcast_video_tests/${{ github.run_id }}"
+          echo "OUTPUT_DIR=$OUTPUT_DIR" >> "$GITHUB_ENV"
+          python scripts/run_pdf_to_xhs_in_batches.py \
+            --input-dir "_podcast_test_selected_pdf" \
+            --output-dir "$OUTPUT_DIR" \
+            --batch-size 1 \
+            --continue-on-batch-error false \
+            --shard-index 0 \
+            --shard-count 1 \
+            --max-reports-per-shard 1 \
+            --skip-existing false \
+            --model "${{ github.event.inputs.model || 'deepseek-chat' }}" \
+            --deepseek-base-url "${{ github.event.inputs.deepseek_base_url || 'https://api.deepseek.com' }}" \
+            --mineru-model "${{ github.event.inputs.mineru_model || 'vlm' }}" \
+            --language "${{ github.event.inputs.language || 'en' }}" \
+            --ocr "${{ github.event.inputs.ocr || 'true' }}" \
+            --wechat-length 1800 \
+            --community-cta "欢迎来社群继续拆完整报告" \
+            --max-images 8 \
+            --watermark "KC桌面" 2>&1 | tee "$OUTPUT_DIR/pdf_to_notes_progress.log"
+
+      - name: Generate Chinese two-male podcast and explainer video
+        env:
+          DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
+          DEEPSEEK_BASE_URL: ${{ github.event.inputs.deepseek_base_url || 'https://api.deepseek.com' }}
+        run: |
+          python scripts/generate_test_podcast_video.py \
+            --output-dir "$OUTPUT_DIR" \
+            --model "${{ github.event.inputs.model || 'deepseek-chat' }}" \
+            --deepseek-base-url "${{ github.event.inputs.deepseek_base_url || 'https://api.deepseek.com' }}" \
+            --podcast-minutes "${{ github.event.inputs.podcast_minutes || '5' }}" \
+            --piper-zh-a-model ".piper-voices/zh_CN-huayan-medium.onnx" \
+            --piper-zh-b-model ".piper-voices/zh_CN-huayan-medium.onnx" 2>&1 | tee "$OUTPUT_DIR/podcast_video_progress.log"
+
+      - name: List generated outputs
+        run: |
+          find "$OUTPUT_DIR" -maxdepth 3 -type f -printf '%s bytes %p\n' | sort -n
+
+      - name: Upload podcast/video test artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: zh-podcast-video-test-${{ github.run_id }}
+          path: ${{ env.OUTPUT_DIR }}
+          if-no-files-found: error
+
+      - name: Commit test outputs
+        if: ${{ github.event.inputs.commit_results == 'true' }}
+        run: |
+          bash scripts/commit_output_dir.sh "$OUTPUT_DIR" "Generate Chinese podcast video test ${{ github.run_id }}" 8
