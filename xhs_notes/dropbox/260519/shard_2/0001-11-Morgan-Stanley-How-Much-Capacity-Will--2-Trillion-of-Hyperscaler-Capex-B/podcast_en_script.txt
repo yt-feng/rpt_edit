@@ -1,0 +1,28 @@
+EN_A: So let’s start with the big number. Two trillion dollars. That’s the total hyperscaler capex expected from 2024 to 2027. What does that actually buy?
+EN_B: That’s exactly the question this report tries to answer. Not in terms of chips or servers, but in gigawatts of data center capacity.
+EN_A: Gigawatts. Why focus on power instead of, say, the number of GPUs?
+EN_B: Because compute capacity is still the main bottleneck for GenAI. And power is the most direct way to measure capacity. The report argues that whoever has more gigawatts has a real competitive edge.
+EN_A: So two trillion dollars gets us how many gigawatts?
+EN_B: The report estimates that by 2027, the four major hyperscalers — Amazon, Google, Microsoft, and Meta — will add about 20 gigawatts of incremental capacity.
+EN_A: That sounds huge. Can you put that in perspective?
+EN_B: Sure. AWS added roughly 5 gigawatts in its first 18 years. So 20 gigawatts in a single year is about four times that. It’s enough to power over 15 million U.S. homes for a year.
+EN_A: So who’s leading the charge?
+EN_B: Google is expected to add the most in 2027, around 7 gigawatts. Amazon and Microsoft each add about 5. Meta is around 3.5, but that’s still aggressive because Meta doesn’t have a cloud business. They need to monetize that capacity through products.
+EN_A: Now, a big part of the report seems to be about the cost gap between Nvidia GPUs and custom chips. How big is that gap?
+EN_B: For a 1 gigawatt data center, using Nvidia’s Blackwell GPUs costs roughly twice as much as using custom ASICs like Google’s TPU or Amazon’s Trainium.
+EN_A: Twice as much? Then why isn’t everyone just building with custom chips?
+EN_B: Because cost isn’t everything. Nvidia is 2 to 8 times better in compute performance per watt. So while the upfront cost is higher, you get more compute for every watt of power. The real metric to watch is cost per token per watt.
+EN_A: Got it. Now, the report also talks about who’s buying capacity far in advance. What did they find?
+EN_B: Amazon, Microsoft, and Meta are doing the most forward purchasing. Over 50% of their 2026 capex is for capacity that won’t come online until 2027 or later. That’s a hedge against delays and component inflation.
+EN_A: And Google?
+EN_B: Only about 10% of Google’s 2026 capex is forward-looking. That means they have higher execution risk if anything gets delayed.
+EN_A: What about costs beyond the server itself? Any surprises there?
+EN_B: Networking gear is about 20% of the cost. Power shells are in the low teens. And memory, especially HBM, is a big variable. Nvidia bundles memory with Blackwell, but the next generation, Rubin, might let customers source their own. That could lower costs.
+EN_A: So the report is very detailed. But what questions does it leave open?
+EN_B: Quite a few. For example, how much revenue can you actually generate per gigawatt? That’s key for return on investment. Also, can the next generation of custom chips close the efficiency gap with Nvidia? And there are real-world constraints like power availability and labor shortages.
+EN_A: Those sound like the real make-or-break questions.
+EN_B: Exactly. And one more big unknown: what happens when Amazon starts selling Trainium to third parties? That’s currently not in any model. It’s all upside.
+EN_A: If listeners want to dive into those answers, where can they find the full report?
+EN_B: The full report includes interactive models for cost per gigawatt and capacity deployment. You can read it directly or join our community where we break down these reports regularly.
+EN_A: Great. Thanks for walking us through this.
+EN_B: Thanks for having me. See you next time.
