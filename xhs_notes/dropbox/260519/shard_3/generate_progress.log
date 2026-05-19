@@ -1,0 +1,38 @@
+Found 42 total PDFs; shard 3/40 has 5 PDFs, skips 0 already converted, will process 5 PDFs with batch_size=5.
+Running batch 1: 5 PDFs
+Found 5 PDFs.
+Uploading PDF to MinerU: /tmp/pdf_batch_001_4gh3zz9f/pdfs/0001-16-UBS-Global Strategy-Rates Map-The real message of global yield curves-260518.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_4gh3zz9f/pdfs/0002-17-CITI-Greater China Semiconductors-May Week 3 Recap- H200 Approval Unlikely to Derail China Localization- WFE Upside on Memory Expansion-260517.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_4gh3zz9f/pdfs/0003-18-Goldman Sachs-CHINA PROPERTY WEEKLY WRAP-Week 20 Wrap-Transaction volumes saw sequential rebounds but leading indicators broadly inflected lower-260519.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_4gh3zz9f/pdfs/0004-19-Goldman Sachs-China New Energy Vehicle Weekly Chartbook-2026 Week 20-Weekly NEV orders rebounded to -4 wow yoy driven by new models-260519.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_4gh3zz9f/pdfs/0005-20-MS-Greater China Technology Hardware ABF Substrates Same Thesis- Better Numbers-260518.pdf
+MinerU batch_id=8835ec2c-031b-4dcf-a0b6-bc7384abadd0
+MinerU states: pending, pending, pending, running, waiting-file
+MinerU states: running, running, pending, running, pending
+MinerU states: running, running, running, done, running
+MinerU states: running, running, running, done, running
+MinerU states: running, running, done, done, running
+MinerU states: running, done, done, done, running
+MinerU states: running, done, done, done, done
+MinerU states: running, done, done, done, done
+MinerU states: running, done, done, done, done
+MinerU states: running, done, done, done, done
+MinerU states: running, done, done, done, done
+MinerU states: running, done, done, done, done
+MinerU states: running, done, done, done, done
+MinerU states: running, done, done, done, done
+MinerU states: running, done, done, done, done
+MinerU states: running, done, done, done, done
+MinerU states: running, done, done, done, done
+MinerU states: running, done, done, done, done
+MinerU states: running, done, done, done, done
+MinerU states: running, done, done, done, done
+MinerU states: running, done, done, done, done
+MinerU states: running, done, done, done, done
+MinerU states: running, done, done, done, done
+MinerU states: running, done, done, done, done
+MinerU states: running, done, done, done, done
+MinerU states: running, done, done, done, done
+MinerU states: done, done, done, done, done
+Done. Results written to /home/runner/work/rpt_edit/rpt_edit/xhs_notes/dropbox/260519/shard_3
+All batches completed successfully.
