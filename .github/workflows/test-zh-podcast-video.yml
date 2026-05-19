@@ -114,7 +114,9 @@ jobs:
           DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
           DEEPSEEK_BASE_URL: ${{ github.event.inputs.deepseek_base_url || 'https://api.deepseek.com' }}
         run: |
+          set -o pipefail
           OUTPUT_DIR="podcast_video_tests/${{ github.run_id }}"
+          mkdir -p "$OUTPUT_DIR"
           echo "OUTPUT_DIR=$OUTPUT_DIR" >> "$GITHUB_ENV"
           python scripts/run_pdf_to_xhs_in_batches.py \
             --input-dir "_podcast_test_selected_pdf" \
@@ -140,6 +142,8 @@ jobs:
           DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
           DEEPSEEK_BASE_URL: ${{ github.event.inputs.deepseek_base_url || 'https://api.deepseek.com' }}
         run: |
+          set -o pipefail
+          mkdir -p "$OUTPUT_DIR"
           python scripts/generate_test_podcast_video.py \
             --output-dir "$OUTPUT_DIR" \
             --model "${{ github.event.inputs.model || 'deepseek-chat' }}" \
