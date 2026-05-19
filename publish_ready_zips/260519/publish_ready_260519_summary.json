@@ -1,0 +1,203 @@
+{
+  "created_at_utc": "2026-05-19T22:47:03.386010+00:00",
+  "source_date_dir": "xhs_notes/dropbox/260519",
+  "output_dir": "publish_ready_zips/260519",
+  "max_zip_mb": 90,
+  "single_zip": false,
+  "exclude_source_mineru": true,
+  "markdown_files_renamed_to_txt": true,
+  "excluded_debug_files": true,
+  "included_shard_count": 9,
+  "skipped_shards": [
+    "shard_10",
+    "shard_11",
+    "shard_12",
+    "shard_13",
+    "shard_14",
+    "shard_15",
+    "shard_16",
+    "shard_17",
+    "shard_18",
+    "shard_19",
+    "shard_20",
+    "shard_21",
+    "shard_22",
+    "shard_23",
+    "shard_24",
+    "shard_25",
+    "shard_26",
+    "shard_27",
+    "shard_28",
+    "shard_29",
+    "shard_30",
+    "shard_31",
+    "shard_32",
+    "shard_33",
+    "shard_34",
+    "shard_35",
+    "shard_36",
+    "shard_37",
+    "shard_38",
+    "shard_39",
+    "shard_9"
+  ],
+  "total_files": 896,
+  "total_renamed_markdown_count": 210,
+  "total_raw_file_bytes": 157787413,
+  "zip_count": 2,
+  "zips": [
+    {
+      "path": "publish_ready_zips/260519/publish_ready_260519_part001.zip",
+      "size_bytes": 88044630,
+      "file_count": 483,
+      "renamed_markdown_count": 105,
+      "raw_file_bytes": 94297512,
+      "shards": [
+        "shard_0",
+        "shard_1",
+        "shard_2",
+        "shard_3",
+        "shard_4"
+      ]
+    },
+    {
+      "path": "publish_ready_zips/260519/publish_ready_260519_part002.zip",
+      "size_bytes": 58449676,
+      "file_count": 413,
+      "renamed_markdown_count": 105,
+      "raw_file_bytes": 63489901,
+      "shards": [
+        "shard_4",
+        "shard_5",
+        "shard_6",
+        "shard_7",
+        "shard_8"
+      ]
+    }
+  ],
+  "included_shards": [
+    {
+      "shard": "shard_0",
+      "report_count": 5,
+      "file_count": 107,
+      "renamed_markdown_count": 25,
+      "raw_file_bytes": 18524801,
+      "reports": [
+        "0001-01-Bofa-Asia-Fund-Manager-Survey-From-growth-concerns-to-AI-conviction-2605",
+        "0002-02-Bofa-Global-Fund-Manager-Survey-In-It-to-Win-It-260519",
+        "0003-03-Deutsche-Bank-Europe-Macro-Outlook-2026-The-two-economy-problem-resilien",
+        "0004-04-Goldman-Sachs-China-SAFE-data-suggest-some-FX-inflows-in-April-260518",
+        "0005-05-Goldman-Sachs-GOAL-Kickstart-The-name-is-bond--again--rising-bond-yields"
+      ]
+    },
+    {
+      "shard": "shard_1",
+      "report_count": 5,
+      "file_count": 115,
+      "renamed_markdown_count": 25,
+      "raw_file_bytes": 24827631,
+      "reports": [
+        "0001-06-Goldman-Sachs-GLOBAL-WEEKLY-KICKSTART-Global-equities-flat-amid-persiste",
+        "0002-07-Goldman-Sachs-Global-Strategy-Views-Momentum-risks-yielding-to-bonds-260",
+        "0003-08-Goldman-Sachs-Global--GS-Economic-Indicators-Update--Euro-Area-Activity-",
+        "0004-09-Morgan-Stanley-Asia-Thematic-Strategy-Investor-Presentation--Playing-Asi",
+        "0005-10-Morgan-Stanley-China-Equity-Strategy--Forging-New-Horizons-260517"
+      ]
+    },
+    {
+      "shard": "shard_2",
+      "report_count": 5,
+      "file_count": 111,
+      "renamed_markdown_count": 25,
+      "raw_file_bytes": 22761933,
+      "reports": [
+        "0001-11-Morgan-Stanley-How-Much-Capacity-Will--2-Trillion-of-Hyperscaler-Capex-B",
+        "0002-12-Nomura-Asia-Insights-China-rates--Turn-outright-pay-Jun-3y-NDIRS-260518",
+        "0003-13-Nomura-Global-Memory-Real-AI-boom-is-here--embrace-the-new-regime-260515",
+        "0004-14-UBS-China-Economic-Comment-April-data-weakness-driven-by-administrative-",
+        "0005-15-UBS-Global-Equity-Strategy-The-Consumer--be-selective-260518"
+      ]
+    },
+    {
+      "shard": "shard_3",
+      "report_count": 5,
+      "file_count": 115,
+      "renamed_markdown_count": 25,
+      "raw_file_bytes": 19068345,
+      "reports": [
+        "0001-16-UBS-Global-Strategy-Rates-Map-The-real-message-of-global-yield-curves-26",
+        "0002-17-CITI-Greater-China-Semiconductors-May-Week-3-Recap--H200-Approval-Unlike",
+        "0003-18-Goldman-Sachs-CHINA-PROPERTY-WEEKLY-WRAP-Week-20-Wrap-Transaction-volume",
+        "0004-19-Goldman-Sachs-China-New-Energy-Vehicle-Weekly-Chartbook-2026-Week-20-Wee",
+        "0005-20-MS-Greater-China-Technology-Hardware-ABF-Substrates-Same-Thesis--Better-"
+      ]
+    },
+    {
+      "shard": "shard_4",
+      "report_count": 5,
+      "file_count": 105,
+      "renamed_markdown_count": 25,
+      "raw_file_bytes": 19621063,
+      "reports": [
+        "0001-21-MS-Semiconductor-Capital-Equipment-2Q-26-WFE-update--memory-mismatch-unr",
+        "0002-22-MS-Greater-China-Semiconductors---Asia-Pacific-The-Foundry-Floorplan-All",
+        "0003-23-Morgan-Stanley-Chinese-Airlines-April-2026--Growth-Softened-amid-Pricing",
+        "0004-24-Morgan-Stanley-Greater-China-Technology-Hardware-Automation---Read-acros",
+        "0005-25-Nomura-China-e-commerce-E-commerce-sales-decelerated-in-April-260518"
+      ]
+    },
+    {
+      "shard": "shard_5",
+      "report_count": 5,
+      "file_count": 115,
+      "renamed_markdown_count": 25,
+      "raw_file_bytes": 19062202,
+      "reports": [
+        "0001-26-Nomura-China-consumer-Weakening-retail-sales-momentum-in-April-260518",
+        "0002-27-UBS-Asian-Banks-APAC-Focus--Will-AI-Deliver-What-Technology-Never-Could-",
+        "0003-28-UBS-China-Industrials-Going-global-by-the-numbers--overseas-revenue-to-r",
+        "0004-29-UBS-Asian-Banks-After-two-decades-of-cost-discipline--what-s-next-for-As",
+        "0005-30-UBS-China-Insurance-Sector-The-need-to-know--insurance-fund-flow--sales-"
+      ]
+    },
+    {
+      "shard": "shard_6",
+      "report_count": 5,
+      "file_count": 105,
+      "renamed_markdown_count": 25,
+      "raw_file_bytes": 13683713,
+      "reports": [
+        "0001-31-UBS-U.S.-Software-Software-Budget-Trends---Latest-Insights-from-Customer",
+        "0002-32-UBS-US-Airlines-Travel-Intentions-Among-US-Consumers-is-Broadly-Resilien",
+        "0003-33-UBS-US-Enterprise-Hardware-and-Networking-Earnings-Preview--Expect-in-li",
+        "0004-34-Bernstein-US-Communications-Infrastructure-US-Comms-Infrastructure--FCC-",
+        "0005-35-CITI-China-Auto-Manufacturers-End-Apr-Inventories-estimate-Nio-better-th"
+      ]
+    },
+    {
+      "shard": "shard_7",
+      "report_count": 5,
+      "file_count": 89,
+      "renamed_markdown_count": 25,
+      "raw_file_bytes": 15484295,
+      "reports": [
+        "0001-36-Goldman-Sachs-China-Consumer-Staples--Chengdu-Trip--Spirits-target-2H26-",
+        "0002-37-Goldman-Sachs-China-Spirits-Tracker--Feitian-Moutai-resilient-with-low-i",
+        "0003-38-MS-Semiconductors-Weekly-Earnings-Week-5-NVDA--ADI--260518",
+        "0004-39-Morgan-Stanley-China-Broader-Consumption-Trip---Key-Takeaways-260517",
+        "0005-40-Morgan-Stanley-China-Healthcare-Trip-Takeaways-from-Pharma-Companies-260"
+      ]
+    },
+    {
+      "shard": "shard_8",
+      "report_count": 2,
+      "file_count": 34,
+      "renamed_markdown_count": 10,
+      "raw_file_bytes": 4753430,
+      "reports": [
+        "0001-41-Goldman-Sachs-Asia-Communacopia---Technology-Key-Takeaways--Axera-Chair-",
+        "0002-42-Morgan-Stanley-Three-Actionable-Ideas-260517"
+      ]
+    }
+  ]
+}
