@@ -1,0 +1,539 @@
+# GLOBAL STRATEGY VIEWS
+
+# Momentum risks yielding to bonds
+
+1. Despite the ongoing closure of the Straits of Hormuz, and a deterioration in the growth/inflation mix, equities are making new highs. Why? The main reason is that earnings growth is robust. This partly reflects the ongoing growth in the global economy; our economists estimate nominal global GDP growth this year (the main driver of revenues in the corporate sector) of 5.9%, compared with 4.7% last year. It is also a function of extraordinary growth in technology and energy related earnings – the two main drivers of market returns (Exhibit 1).
+
+Exhibit 1: Year-to-date EPS revisions have been strong for IT and Energy - the two main drivers of market returns   
+MSCI AC World sectors and Global Regions. Local currency   
+![](images/fc911d8addc4e108bc8c8410598b1af9b49eb9dce44a698722deb189b8fd832a.jpg)
+
+<details>
+<summary>bar</summary>
+
+| Sector | 2026 (%) | 2027 (%) |
+| :--- | :--- | :--- |
+| IT | 28 | 36 |
+| MXAPJ | 27.5 | 34.5 |
+| MSCI EM | 26 | 32 |
+| Energy | 47 | 18.5 |
+| Materials | 14.5 | 13.5 |
+| MSCI AC World | 9.5 | 10 |
+| S&P 500 | 7.5 | 7.5 |
+| Topix | 2.5 | 4.5 |
+| Comm Svs | 9.5 | 3 |
+| Industrials | 3.5 | 2.5 |
+| STOXX 600 | 4.5 | 2.5 |
+| Financials | 2.5 | 1.5 |
+| Utilities | -0.5 | 0.5 |
+| Health Care | -5.5 | -0.5 |
+| Consumer Staples | -1.5 | -1.5 |
+| Real Estate | -1.5 | -2.5 |
+| Consumer Discretionary | -3.5 | -3.5 |
+</details>
+
+Source: Datastream, I/B/E/S, STOXX, FactSet, GS Global Investment Research
+
+In the US, for example, bottom-up consensus estimates for S&P 500 EPS in 2026 and 2027 have each risen by 8pp so far this year, but increasing expectations for AI capex spending and higher energy prices have driven the majority of the positive revisions. However, EPS revisions during the past month has been positive in every S&P 500 sector and earnings have been strong across the main regions. In most years, bottom-up analysts' consensus estimates are too optimistic and gradually decline. So far this year, and for next year, global earnings have been revised higher (Exhibit 2).
+
+# Peter Oppenheimer
+
++44(20)7552-5782 | peter.oppenheimer@gs.com GS International
+
+# Sharon Bell
+
++44(20)7552-1341 | sharon.bell@gs.com GS International
+
+# Guillaume Jaisson
+
++44(20)7552-3000 | guillaume.jaisson@gs.com GS International
+
+# Giovanni Ferrannini
+
++44(20)7051-2589 | giovanni.ferrannini@gs.com GS International
+
+Exhibit 2: So far this year, and for next year, global earnings have been revised higher Consensus estimates in USD. MSCI AC World EPS   
+![](images/219c9506777e69f92768b12da063340c906e3111bfa7e9cd22b4489b13abf3dc.jpg)
+
+<details>
+<summary>line</summary>
+
+| Year | Value |
+|------|-------|
+| 2016 | ~25   |
+| 2017 | ~28   |
+| 2018 | ~30   |
+| 2019 | ~35   |
+| 2020 | ~25   |
+| 2021 | ~38   |
+| 2022 | ~40   |
+| 2023 | ~38   |
+| 2024 | ~42   |
+| 2025 | ~45   |
+| 2026 | ~48   |
+| 2027 | ~55   |
+</details>
+
+Source: FactSet, Datastream, STOXX, GS Global Investment Research
+
+# 2. The leadership of technology and energy has been responsible for a strong rise in the ‘Momentum’ factor (see: US Weekly Kickstart: AI, Momentum, and the One Big Trade) (Exhibit 3).
+
+Exhibit 3: Momentum vs. Market   
+MSCI Momentum Indices relative price return (USD)   
+![](images/1caa2773b9f09687eb59be7f917ac5d8e035429b69447a48774b49b6922b87d8.jpg)
+
+<details>
+<summary>line</summary>
+
+| Date   | US   | Europe | Japan | EM   | AC World |
+|--------|------|--------|-------|------|----------|
+| May-25 | 100  | 100    | 100   | 100  | 100      |
+| Jul-25 | 98   | 103    | 103   | 103  | 101      |
+| Sep-25 | 97   | 104    | 104   | 104  | 100      |
+| Nov-25 | 95   | 102    | 103   | 103  | 98       |
+| Jan-26 | 94   | 103    | 104   | 104  | 101      |
+| Mar-26 | 92   | 104    | 105   | 106  | 103      |
+| May-26 | 105  | 107    | 108   | 122  | 115      |
+</details>
+
+Source: Datastream, GS Global Investment Research
+
+The speed of the rebound in technology has been the most dramatic driver in recent weeks and reflected, in our view, the valuation opportunity following the step de-rating earlier in the year (Exhibit 4).
+
+Exhibit 4: The rebound in technology has reflected the valuation opportunity following the de-rating earlier in the year   
+Distribution of returns of World Tech vs. World ex. TMT, data since 1973   
+![](images/f5a6050105d4b2592e3429336474ec2411e9d1c77f5687b665c32aeae5a9d6f1.jpg)
+
+<details>
+<summary>line</summary>
+
+| Month | Current | Median | Top Quartile | Bottom Quartile |
+|-------|---------|--------|--------------|-----------------|
+| Jan   | 0%      | 0%     | 0%           | 0%              |
+| Feb   | -5%     | 0%     | 0%           | 0%              |
+| Mar   | -10%    | 0%     | 0%           | 0%              |
+| Apr   | -5%     | 0%     | 0%           | 0%              |
+| May   | 15%     | 0%     | 0%           | 0%              |
+| Jun   | 0%      | 0%     | 0%           | 0%              |
+| Jul   | 0%      | 0%     | 0%           | 0%              |
+| Aug   | 0%      | 0%     | 0%           | 0%              |
+| Sep   | 0%      | 0%     | 0%           | 0%              |
+| Oct   | 0%      | 0%     | 0%           | 0%              |
+| Nov   | 0%      | 0%     | 0%           | 0%              |
+| Dec   | 0%      | 0%     | 0%           | 0%              |
+</details>
+
+Source: Datastream, GS Global Investment Research
+
+But the recovery in technology, and the rise in commodity related sectors reflected in the rise in momentum has also made the equity rally very concentrated. For example, the S&P 500 has returned ca. $10\%$ YTD in 2026, with TMT accounting for $85\%$ of the return. Korea, at the sharp end of the chips boom, has enjoyed a surge of nearly $80\%$ this year (following similar advances last year) but our Asia strategists now expect $300\%$ profit growth this year for the index. Other regions have also experienced significant concentration of returns driven by either technology, energy or both. Despite the fact that the Momentum rallies across regions has been a reflection of strong underlying profit growth, it does raise the risks in the market of a correction on the back of a deterioration in the growth and inflation mix.
+
+3. These nearer terms risks have also become more elevated given the sharp rise in investor sentiment and positioning. Our Risk Appetite Indicator (RAI) rose above 1.1 last week, in its 99th percentile since 1991, and the highest read since 2021. Rising optimism is also reflected in the surge in retail participation, particularly in the US. GS trading desk estimates show that retail trading volumes have risen by $28\%$ since mid-April and a basket of retail favorite stocks (GSXURFAV) has rallied by $29\%$ over the same period.
+
+At the same time, the rise in equity markets has occurred despite the rise in bond yields, pushing down equity risk premia (ERP) (Exhibit 5), making equity markets more vulnerable to disappointments on growth or inflation.
+
+Exhibit 5: Equity market valuations have increased and largely shrugged off the rise in bond yields, pushing down equity risk premia  
+Global market implied ERP (%)   
+![](images/a92399816b78769160ad2b9eace920469a0b540c01ad5b367873c5a08ab44ec3.jpg)
+
+<details>
+<summary>line</summary>
+
+| Year | Asia Pacific ex Japan | Europe | Japan | US | World* |
+|------|------------------------|--------|-------|----|--------|
+| 2025 | 5.1%                   | 3.8%   | 3.1%  | 2.8% | 2.5%   |
+</details>
+
+Source: GS Global Investment Research
+
+The correlation of equities to bond yields has turned negative (Exhibit 6). If oil disruptions continue into 2H of this year and inflation expectations rise further, there is a real risk of a speed bump for equity markets.
+
+Exhibit 6: The correlation of equities to bond yields has turned negative 3m rolling correlation of daily changes   
+![](images/1df18a40b71e0fd4f5f7b61b63ac6d1b9f7b13bd22d5c19ec5c53ec6296fe004.jpg)
+
+<details>
+<summary>line</summary>
+
+| Year | 3m rolling correlation |
+|------|------------------------|
+| 96   | -0.7                   |
+| 97   | -0.5                   |
+| 98   | 0.5                    |
+| 99   | 0.6                    |
+| 00   | -0.4                   |
+| 01   | 0.1                    |
+| 02   | 0.4                    |
+| 03   | 0.8                    |
+| 04   | 0.3                    |
+| 05   | -0.2                   |
+| 06   | 0.1                    |
+| 07   | -0.5                   |
+| 08   | 0.6                    |
+| 09   | 0.7                    |
+| 10   | 0.4                    |
+| 11   | 0.6                    |
+| 12   | 0.8                    |
+| 13   | 0.6                    |
+| 14   | -0.3                   |
+| 15   | 0.5                    |
+| 16   | 0.6                    |
+| 17   | -0.2                   |
+| 18   | 0.4                    |
+| 19   | 0.6                    |
+| 20   | 0.7                    |
+| 21   | 0.5                    |
+| 22   | -0.4                   |
+| 23   | -0.5                   |
+| 24   | -0.3                   |
+| 25   | -0.2                   |
+| 26   | -0.4                   |
+</details>
+
+Source: Datastream, GS Global Investment Research
+
+While bond yields have been rising, the speed of the adjustment is important and could become a trigger for an equity correction. As shown in Exhibit 7, sharp bond yield moves have coincided with negative equity returns. The surge in government
+
+borrowing is an additional factor pushing up longer dated yields across bond markets. Political developments can rapidly undermine confidence in government funding as they compete to raise money in an environment where capital spending is rising in the private sector. A sharp increase in bond yields from current levels present an additional meaningful risk for equity investors.
+
+Exhibit 7: Sharp bond yield moves have coincided with negative equity returns   
+Average global equities returns depending on absolute moves in US 10-year yields (data since 2000)   
+![](images/9242676ca75d1028e77d6756c33c912dbd5347e995a1885f03faaa2205f141cb.jpg)
+
+<details>
+<summary>bar</summary>
+
+| 1-month (absolute) change in interest rate (measured in standard deviation vs. past 3 years) | US nominal yield (%) | US real yield (%) |
+| :--- | :--- | :--- |
+| 0 to 0.5 | 1.6 | 1.3 |
+| 0.5 to 1 | 1.3 | 1.25 |
+| 1 to 1.5 | 0.8 | 0.7 |
+| 1.5 to 2 | -0.1 | 0.3 |
+| 2 to 2.5 | -0.7 | -0.4 |
+| 2.5 to 3 | -1.2 | -0.6 |
+| 3 to 3.5 | -2.6 | -2.0 |
+| 3.5 to 4 | -3.6 | -2.0 |
+| >4 | -3.4 | -4.4 |
+Current
+</details>
+
+Source: Datastream, GS Global Investment Research
+
+4. Nevertheless, taking a step back from the recent rise in Momentum, and the shorter term risks, we have argued that the core drivers of equity returns, and the distribution between relative winners and losers has shifted. For nearly 15 years equity returns followed a repeated pattern driven by three factors: geography, sector and factor. The US equity market consistently outperformed other regions, technology outperformed other sectors and the ‘Growth’ factor outperformed ‘Value’. Over this period, the technology sector experienced a boom in earnings as the world accelerated its transition to a digital world benefiting software and cloud computing. These companies were largely detached from the sluggish growth in economies around them and benefited from the capex that was installed during the internet boom a decade earlier and very low interest rates. Whereas slow growing ‘old economy’ businesses suffered from overcapacity, sluggish nominal economic growth and private sector deleveraging; rather than accruing value for shareholders, many were seen as ‘Value traps’.
+
+5. What has changed? First, the rise in bond yields and inflation. After years of ultra-low interest rates, we have seen a significant rise in long term bond yields. Only a handful of years ago, a quarter of 10-year government bond yields had a negative yield; even 30-year yields in Germany and Japan were around zero, and in other markets around $1\%$ - they are now between 3.5 and $6\%$ with the US moving above $5\%$ for the first time since 2007. (Exhibit 8).
+
+Exhibit 8: After years of ultra-low interest rates, we have seen a significant rise in long term bond yields   
+30-year government bond benchmark yields   
+![](images/13e1ec6f45adf69ca0f47c71b5bd4beb989b9e6b5b9ac0232a1cb3c722ba4393.jpg)
+
+<details>
+<summary>line</summary>
+
+| Year | US    | Germany | Japan | UK    |
+|------|-------|---------|-------|-------|
+| 10   | 4.8%  | 4.0%    | 2.3%  | 4.5%  |
+| 11   | 4.7%  | 3.8%    | 2.2%  | 4.4%  |
+| 12   | 4.5%  | 3.5%    | 2.1%  | 4.2%  |
+| 13   | 4.3%  | 3.3%    | 2.0%  | 4.0%  |
+| 14   | 4.1%  | 3.1%    | 1.9%  | 3.8%  |
+| 15   | 3.9%  | 2.9%    | 1.8%  | 3.6%  |
+| 16   | 3.7%  | 2.7%    | 1.7%  | 3.4%  |
+| 17   | 3.5%  | 2.5%    | 1.6%  | 3.2%  |
+| 18   | 3.3%  | 2.3%    | 1.5%  | 3.0%  |
+| 19   | 3.1%  | 2.1%    | 1.4%  | 2.8%  |
+| 20   | 2.9%  | 1.9%    | 1.3%  | 2.6%  |
+| 21   | 2.7%  | 1.7%    | 1.2%  | 2.4%  |
+| 22   | 2.5%  | 1.5%    | 1.1%  | 2.2%  |
+| 23   | 2.3%  | 1.3%    | 1.0%  | 2.0%  |
+| 24   | 2.1%  | 1.1%    | 0.9%  | 1.8%  |
+| 25   | 1.9%  | 0.9%    | 0.8%  | 1.6%  |
+| 26   | 1.7%  | 0.7%    | 0.7%  | 1.4%  |
+</details>
+
+Source: Datastream, GS Global Investment Research
+
+The impact of this rise in long term interest rates - reflecting a combination of rising term premium and higher government debt - has both reduced the value of very long duration growth within equity markets, while also undermining the valuation of Defensive and ‘Quality’ parts of the equity market (Exhibit 9), which are most sensitive to interest rates and were largely valued as bond proxies.
+
+Exhibit 9: The rise in long term interest rates has undermined the valuation of Defensive and 'Quality' parts of the equity market   
+MSCI Europe Quality vs. Market   
+![](images/6284f900f8a26c3a81733a580e2659e237b62177621d43c1f61f6b9845f97129.jpg)
+
+<details>
+<summary>line</summary>
+
+| Year | Europe Quality vs. Market | German 10y real interest rates (RHS, Inverted) |
+|------|---------------------------|-----------------------------------------------|
+| 90   | ~100                      | ~4.0                                          |
+| 92   | ~105                      | ~3.5                                          |
+| 94   | ~110                      | ~3.0                                          |
+| 96   | ~115                      | ~2.5                                          |
+| 98   | ~120                      | ~2.0                                          |
+| 00   | ~130                      | ~1.5                                          |
+| 02   | ~140                      | ~1.0                                          |
+| 04   | ~150                      | ~0.5                                          |
+| 06   | ~145                      | ~0.0                                          |
+| 08   | ~160                      | ~-0.5                                         |
+| 10   | ~170                      | ~-1.0                                         |
+| 12   | ~180                      | ~-1.5                                         |
+| 14   | ~190                      | ~-2.0                                         |
+| 16   | ~200                      | ~-2.5                                         |
+| 18   | ~210                      | ~-3.0                                         |
+| 20   | ~230                      | ~-3.5                                         |
+| 22   | ~220                      | ~-4.0                                         |
+| 24   | ~210                      | ~-4.5                                         |
+| 26   | ~185                      | ~-5.0                                         |
+</details>
+
+Source: Datastream, Bloomberg, GS Global Investment Research
+
+6. Second, the increase in capital spending has been dramatic. In the decade and a half post the Global Financial Crisis there was little appetite or incentive for companies to invest heavily in capex. Growth and returns were low and there was excess capacity in many older economy industries. The launch of Chat-GPT, and growing demands for critical infrastructure, has shifted the balance in favour of capital spending. In the US alone, S&P 500 companies have reported year/year capex growth of +38% so far in Q1 2026 vs. just +1% for buybacks, a remarkable shift from the trend over the decade and a half following the financial crisis when companies were generally rewarded for buybacks and penalised for capex. The explosion of spending on capex by the major hyperscalers in the US has been the biggest driver. So far this year consensus estimates for the spend of the top 5 have increased by around \$80bn to \$755bn, 80% higher than a year ago. The result has been a significant boost to the earnings of AI infrastructure companies, including chip manufacturers (Exhibit 10).
+
+Exhibit 10: The explosion of CAPEX spending boosted earnings of AI infrastructure companies, including chip manufacturers   
+![](images/ed581c4ac8cd1bae2bbe2e5ed26f09bb5710b1ae2b0efc9436be50c4b35c019c.jpg)
+
+<details>
+<summary>line</summary>
+
+| Date    | AI infrastructure stocks | S&P 500 | S&P 500 ex. AI infrastructure stocks |
+|---------|--------------------------|---------|----------------------------------------|
+| May-26  | +59%                     | +9%     | +1%                                    |
+</details>
+
+Source: FactSet, GS Global Investment Research
+
+7. In combination, the rise in interest rates and the increase in infrastructure and capex spend have changed the drivers of returns within and across equity markets. The old pattern of US, technology and growth outperformance has given way to a more eclectic mix of returns across geographies, sectors and factors. The rise in capex spending has contributed to outperformance of the main infrastructure beneficiaries, both across technology (chips) and the old economy (energy and industrials) while the rise in bond yields has dampened the valuations and returns in the Defensive and Consumer parts of the market (Exhibit 11).
+
+Exhibit 11: The rise in CAPEX boosted infrastructure beneficiaries; the rise in bond yields has dampened defensive and consumer parts of the market   
+Price performance relative to Global Market. Renewables = GSWDRNEW   
+![](images/b436dfdc3c5f894628fb18f268161a5a927df395f843ba5f283185bf6c1bb1ed.jpg)
+
+<details>
+<summary>line</summary>
+
+| Date   | Renewables | Hardware | Cons. Staples | Cons. Discret. Health Care |
+|--------|------------|----------|---------------|-----------------------------|
+| Jan-25 | 100        | 100      | 100           | 100                         |
+| Apr-25 | 105        | 85       | 115           | 105                         |
+| Jul-25 | 110        | 100      | 105           | 95                          |
+| Oct-25 | 130        | 115      | 95            | 90                          |
+| Jan-26 | 140        | 120      | 90            | 95                          |
+| Apr-26 | 150        | 145      | 85            | 85                          |
+</details>
+
+Source: Datastream, Bloomberg, GS FICC and Equities, GS Global Investment Research
+
+8. The widening of sector performance has broadened geographical returns. The US market has rebounded recently from a period of underperformance, but over the past year all markets have done well and have been mainly driven by earnings growth (Exhibit 12); EM and Asia have led the pack, overtaking the US.
+
+Exhibit 12: Over the past year all markets have done well and have been mainly driven by earnings growth   
+Return in local currency since 31-Dec-2024   
+![](images/737701c7318831ba6377d50415047684ee63044dc9d9ea34fa5cf6dd51cd4a3b.jpg)
+
+<details>
+<summary>bar_stacked</summary>
+
+| Category | Dividend contribution (%) | 12m fwd EPS contribution (%) | 12m fwd P/E contribution (%) | Total return (%) |
+|---|---|---|---|---|
+| MSCI EM | 5.0 | 60.0 | -3.0 | 60.0 |
+| MSCI AP ex-Japan | 4.0 | 58.0 | -4.0 | 56.0 |
+| TOPIX | 3.0 | 22.0 | 18.0 | 43.0 |
+| MSCI AC World | 2.0 | 27.0 | -1.0 | 34.0 |
+| S&P 500 | 1.0 | 29.0 | -3.0 | 28.0 |
+| STOXX 600 | 5.0 | 12.0 | 8.0 | 26.0 |
+</details>
+
+Source: FactSet, Datastream, STOXX, GS Global Investment Research
+
+# 9. The other big change is that there are much wider spreads of returns within
+
+factors. For many years, the factor returns were bifurcated between growth and value, but there are now wide differences of performance within both the Growth and the Value factor. For example, within technology the sector is no longer acting as a homogeneous group. The US Mega Caps have de-rated on concerns over the erosion of free cash flow and future slower returns (Exhibit 13).
+
+Exhibit 13: The valuation premium of the US Mega Caps has fallen S&P 500 12m forward P/E multiple   
+![](images/d9c5d15d4c6a026a89663c3ed4f7ea0d7e6e8a39f65d6f99702bd5d1826875f4.jpg)
+
+<details>
+<summary>line</summary>
+
+| Year | Top 5 largest stocks | Other 495 stocks |
+|------|----------------------|------------------|
+| 95   | ~15x                 | ~12x             |
+| 97   | ~25x                 | ~15x             |
+| 99   | ~45x                 | ~20x             |
+| 01   | ~50x                 | ~22x             |
+| 03   | ~25x                 | ~18x             |
+| 05   | ~18x                 | ~15x             |
+| 07   | ~15x                 | ~14x             |
+| 09   | ~12x                 | ~13x             |
+| 11   | ~10x                 | ~12x             |
+| 13   | ~12x                 | ~14x             |
+| 15   | ~15x                 | ~16x             |
+| 17   | ~20x                 | ~18x             |
+| 19   | ~25x                 | ~20x             |
+| 21   | ~40x                 | ~22x             |
+| 23   | ~30x                 | ~20x             |
+| 25   | ~25x                 | ~22x             |
+</details>
+
+Source: FactSet, GS Global Investment Research
+
+The software companies have de-rated even more on the fear of disruption form agentic AI, undermining their terminal values (Exhibit 14).
+
+Exhibit 14: Fears of innovation from AI models has triggered a sharp de-rating of the Software sector   
+Premium/(Discount) on 12m forward P/E vs. World ex. TMT. Global Sectors.   
+![](images/881c28fe0648ca8c9e0ee472328a43ceedd43d7a352942ae993cd4232420c02e.jpg)
+
+<details>
+<summary>line</summary>
+
+| Year | Software & IT Svc | Hardware & IT Eqpt |
+|------|-------------------|--------------------|
+| 90   | -25%              | 50%                |
+| 92   | 0%                | 25%                |
+| 94   | 90%               | 25%                |
+| 96   | -10%              | 0%                 |
+| 98   | 30%               | 25%                |
+| 00   | 200%              | 175%               |
+| 02   | 150%              | 190%               |
+| 04   | 80%               | 80%                |
+| 06   | 60%               | 60%                |
+| 08   | 40%               | 40%                |
+| 10   | 10%               | 100%               |
+| 12   | 30%               | 30%                |
+| 14   | 40%               | 25%                |
+| 16   | 50%               | 25%                |
+| 18   | 60%               | 25%                |
+| 20   | 75%               | 30%                |
+| 22   | 110%              | 40%                |
+| 24   | 80%               | 60%                |
+| 26   | 30%               | 30%                |
+</details>
+
+Source: Datastream, GS Global Investment Research
+
+The result has been wide divergence of returns within the Technology sector, between Hardware and Software, just as there has been a widening of performance across the Value space, such as European Banks and Autos (Exhibit 15).
+
+Exhibit 15: Performance diverged within both US Growth and European Value Relative price performance indexed in Jan 2024   
+![](images/123142a6a2462e409205ab8dab4b6d0e537968ac7b157fe0f139ab7b102a1832.jpg)
+
+<details>
+<summary>line</summary>
+
+| Date   | Europe Banks vs. Autos | US Hardware vs. Software |
+|--------|------------------------|--------------------------|
+| Jan-24 | 100                    | 100                      |
+| Jul-24 | 130                    | 130                      |
+| Jan-25 | 180                    | 110                      |
+| Jul-25 | 220                    | 130                      |
+| Jan-26 | 290                    | 180                      |
+</details>
+
+Source: Datastream, GS Global Investment Research
+
+10. Widening spreads of returns across geographies and sectors has also broadened the opportunities across factors like growth and value. The rise in technology capex, coinciding with a renewed urgency to strengthen ‘critical infrastructure’ and
+
+defence spending, has boosted the prospective returns in many ‘old economy’ sectors that for many years fell into the value bucket. This transformation of perceived opportunities has resulted in a shift in the relative valuation of capital light and capital heavy businesses. For the first time for over a decade, HALO companies (heavy asset but low obsolescence) are being favoured at a time when many capital light business are seeing their terminal values eroded by fears of competition and/or rapid obsolescence (Exhibit 16).
+
+Exhibit 16: Asset-heavy stocks now trade at a P/E premium to asset light stocks in the US US equities   
+![](images/d725d808fe776d687e5b9d02a1319ff59360ec121e9b9e47eb0cab9c7a07eca0.jpg)
+
+<details>
+<summary>line</summary>
+
+| Year | Asset-heavy P/E premium (% discount) |
+|------|-------------------------------------|
+| 02   | ~28%                                |
+| 04   | ~-5%                                |
+| 06   | ~-10%                               |
+| 08   | ~-15%                               |
+| 10   | ~10%                                |
+| 12   | ~25%                                |
+| 14   | ~-5%                                |
+| 16   | ~10%                                |
+| 18   | ~-15%                               |
+| 20   | ~-20%                               |
+| 22   | ~25%                                |
+| 24   | ~-10%                               |
+| 26   | ~30%                                |
+</details>
+
+Source: FactSet, GS Global Investment Research
+
+While there are growing risks of a correction in the near term if the growth and inflation mix deteriorates, we remain optimistic about opportunities for investors to add alpha. For the first time in many years we see emerging pockets of value in the growth space and emerging pockets of Growth in the Value parts of markets.
+
+# Disclosure Appendix
+
+# Reg AC
+
+We, Peter Oppenheimer, Sharon Bell, Guillaume Jaisson and Giovanni Ferrannini, hereby certify that all of the views expressed in this report accurately reflect our personal views, which have not been influenced by considerations of the firm's business or client relationships.
+
+Unless otherwise stated, the individuals listed on the cover page of this report are analysts in GS' Global Investment Research division.
+
+Contributing Authors: Peter Oppenheimer GS International, Sharon Bell GS International, Guillaume Jaisson GS International, Giovanni Ferrannini GS International.
+
+Unless otherwise stated, the individuals listed in the Contributing Authors disclosure of this report are analysts in GS' Global Investment Research division.
+
+# Disclosures
+
+# MSCI disclosure
+
+All MSCI data used in this report is the exclusive property of MSCI, Inc. (MSCI). Without prior written permission of MSCI, this information and any other MSCI intellectual property may not be reproduced or redisseminated in any form and may not be used to create any financial instruments or products or any indices. This information is provided on an “as is” basis, and the user of this information assumes the entire risk of any use made of this information. Neither MSCI, any of its affiliates nor any third party involved in, or related to, computing or compiling the data makes any express or implied warranties or representations with respect to this information (or the results to be obtained by the use thereof), and MSCI, its affiliates and any such third party hereby expressly disclaim all warranties of originality, accuracy, completeness, merchantability or fitness for a particular purpose with respect to any of this information. Without limiting any of the foregoing, in no event shall MSCI, any of its affiliates or any third party involved in, or related to, computing or compiling the data have any liability for any direct, indirect, special, punitive, consequential or any other damages (including lost profits) even if notified of the possibility of such damages. MSCI and the MSCI indexes are service marks of MSCI and its affiliates. The Global Industry Classification Standard (GICS) were developed by and is the exclusive property of MSCI and Standard & Poor’s. GICS is a service mark of MSCI and S&P and has been licensed for use by The GS Group, Inc.
+
+# Basket disclosure
+
+Marquee disclosure: Marquee is a product of GS FICC and Equities. Any Marquee content linked in this report is not necessarily representative of GS Research views. If you need access to Marquee, please contact your GS salesperson or email the Marquee team at gs-marquee-sales@gs.com.
+
+# Regulatory disclosures
+
+# Disclosures required by United States laws and regulations
+
+See company-specific regulatory disclosures above for any of the following disclosures required as to companies referred to in this report: manager or co-manager in a pending transaction; $1\%$ or other ownership; compensation for certain services; types of client relationships; managed/co-managed public offerings in prior periods; directorships; for equity securities, market making and/or specialist role. GS trades or may trade as a principal in debt securities (or in related derivatives) of issuers discussed in this report.
+
+The following are additional required disclosures: Ownership and material conflicts of interest: GS policy prohibits its analysts, professionals reporting to analysts and members of their households from owning securities of any company in the analyst's area of coverage. Analyst compensation: Analysts are paid in part based on the profitability of GS, which includes investment banking revenues. Analyst as officer or director: GS policy generally prohibits its analysts, persons reporting to analysts or members of their households from serving as an officer, director or advisor of any company in the analyst's area of coverage. Non-U.S. Analysts: Non-U.S. analysts may not be associated persons of GS & Co. LLC and therefore may not be subject to FINRA Rule 2241 or FINRA Rule 2242 restrictions on communications with a subject company, public appearances and trading in securities covered by the analysts.
+
+# Additional disclosures required under the laws and regulations of jurisdictions other than the United States
+
+The following disclosures are those required by the jurisdiction indicated, except to the extent already made above pursuant to United States laws and regulations. Australia: GS Australia Pty Ltd and its affiliates are not authorised deposit-taking institutions (as that term is defined in the Banking Act 1959 (Cth)) in Australia and do not provide banking services, nor carry on a banking business, in Australia. This research, and any access to it, is intended only for “wholesale clients” within the meaning of the Australian Corporations Act, unless otherwise agreed by GS. In producing research reports, members of Global Investment Research of GS Australia may attend site visits and other meetings hosted by the companies and other entities which are the subject of its research reports. In some instances the costs of such site visits or meetings may be met in part or in whole by the issuers concerned if GS Australia considers it is appropriate and reasonable in the specific circumstances relating to the site visit or meeting. To the extent that the contents of this document contains any financial product advice, it is general advice only and has been prepared by GS without taking into account a client’s objectives, financial situation or needs. A client should, before acting on any such advice, consider the appropriateness of the advice having regard to the client’s own objectives, financial situation and needs. A copy of certain GS Australia and New Zealand disclosure of interests and a copy of GS’ Australian Sell-Side Research Independence Policy Statement are available at: https://www.goldmansachs.com/disclosures/australia-new-zealand/index.html. Brazil: Disclosure information in relation to CVM Resolution n. 20 is available at https://www.gs.com/worldwide/brazil/area/gir/index.html. Where applicable, the Brazil-registered analyst primarily responsible for the content of this research report, as defined in Article 20 of CVM Resolution n. 20, is the first author named at the beginning of this report, unless indicated otherwise at the end of the text. Canada: This information is being provided to you for information purposes only and is not, and under no circumstances should be construed as, an advertisement, offering or solicitation by GS & Co. LLC for purchasers of securities in Canada to trade in any Canadian security. GS & Co. LLC is not registered as a dealer in any jurisdiction in Canada under applicable Canadian securities laws and generally is not permitted to trade in Canadian securities and may be prohibited from selling certain securities and products in certain jurisdictions in Canada. If you wish to trade in any Canadian securities or other products in Canada please contact GS Canada Inc., an affiliate of The GS Group Inc., or another registered Canadian dealer. Hong Kong: Further information on the securities of covered companies referred to in this research may be obtained on request from GS (Asia) L.L.C. India: Further information on the subject company or companies referred to in this research may be obtained from GS (India) Securities Private Limited, Research Analyst - SEBI Registration Number INH000001493, 10th Floor, Ascent-Worli, Sudam Kalu Ahire Marg, Worli, Mumbai-400 025, India, Corporate Identity Number U74140MH2006FTC160634, Phone +91 22 6616 9000, Fax +91 22 6616 9001. GS may beneficially own 1% or more of the securities (as such term is defined in clause 2 (h) the Indian Securities Contracts (Regulation) Act, 1956) of the subject company or companies referred to in this research report. Investment in securities market are subject to market risks. Read all the related documents carefully before investing.
+
+Registration granted by SEBI and certification from NISM in no way guarantee performance of the intermediary or provide any assurance of returns to investors. GS (India) Securities Private Limited compliance officer and investor grievance contact details can be found at: https://www.goldmansachs.com/worldwide/india/documents/Grievance-Redressal-and-Escalation-Matrix.pdf, and a copy of the annual audit compliance report can be found at this link: https://publishing.gs.com/content/site/india-annual-compliance-report.html. Japan: See below. Korea: This research, and any access to it, is intended only for “professional investors” within the meaning of the Financial Services and Capital Markets Act, unless otherwise agreed by GS. Further information on the subject company or companies referred to in this research may be obtained from GS (Asia) L.L.C., Seoul Branch. New Zealand: GS New Zealand Limited and its affiliates are neither “registered banks” nor “deposit takers” (as defined in the Reserve Bank of New Zealand Act 1989) in New Zealand. This research, and any access to it, is intended for “wholesale clients” (as defined in the Financial Advisers Act 2008) unless otherwise agreed by GS. A copy of certain GS Australia and New Zealand disclosure of interests is available at: https://www.goldmansachs.com/disclosures/australia-new-zealand/index.html. Russia: Research reports distributed in the Russian Federation are not advertising as defined in the Russian legislation, but are information and analysis not having product promotion as their main purpose and do not provide appraisal within the meaning of the Russian legislation on appraisal activity. Research reports do not constitute a personalized investment recommendation as defined in Russian laws and regulations, are not addressed to a specific client, and are prepared without analyzing the financial circumstances, investment profiles or risk profiles of clients. GS assumes no responsibility for any investment decisions that may be taken by a client or any other person based on this research report. Singapore: GS (Singapore) Pte. (Company Number: 198602165W), which is regulated by the Monetary Authority of Singapore, accepts legal responsibility for this research, and should be contacted with respect to any matters arising from, or in connection with, this research. Taiwan: This material is for reference only and must not be reprinted without permission. Investors should carefully consider their own investment risk. Investment results are the responsibility of the individual investor. United Kingdom: Persons who would be categorized as retail clients in the United Kingdom, as such term is defined in the rules of the Financial Conduct Authority, should read this research in conjunction with prior GS on the covered companies referred to herein and should refer to the risk warnings that have been sent to them by GS International. A copy of these risks warnings, and a glossary of certain financial terms used in this report, are available from GS International on request.
+
+European Union and United Kingdom: Disclosure information in relation to Article 6 (2) of the European Commission Delegated Regulation (EU) (2016/958) supplementing Regulation (EU) No 596/2014 of the European Parliament and of the Council (including as that Delegated Regulation is implemented into United Kingdom domestic law and regulation following the United Kingdom's departure from the European Union and the European Economic Area) with regard to regulatory technical standards for the technical arrangements for objective presentation of investment recommendations or other information recommending or suggesting an investment strategy and for disclosure of particular interests or indications of conflicts of interest is available at https://www.gs.com/disclosures/europeanpolicy.html which states the European Policy for Managing Conflicts of Interest in Connection with Investment Research.
+
+Japan: GS Japan Co., Ltd. is a Financial Instrument Dealer registered with the Kanto Financial Bureau under registration number Kinsho 69, and a member of Japan Securities Dealers Association, Financial Futures Association of Japan Type II Financial Instruments Firms Association, and Investment Management Association of Japan. Sales and purchase of equities are subject to commission pre-determined with clients plus consumption tax. See company-specific disclosures as to any applicable disclosures required by Japanese stock exchanges, the Japanese Securities Dealers Association or the Japanese Securities Finance Company.
+
+# Global product; distributing entities
+
+GS Global Investment Research produces and distributes research products for clients of GS on a global basis. Analysts based in GS offices around the world produce research on industries and companies, and research on macroeconomics, currencies, commodities and portfolio strategy. This research is disseminated in Australia by GS Australia Pty Ltd (ABN 21 006 797 897); in Brazil by GS do Brasil Corretora de Títulos e Valores Mobiliários S.A.; Public Communication Channel GS Brazil: 0800 727 5764 and / or contatogoldmanbrasil@gs.com. Available Weekdays (except holidays), from 9am to 6pm. Canal de Comunicação com o Público GS Brasil: 0800 727 5764 e/ou contatogoldmanbrasil@gs.com. Horário de funcionamento: segunda-feira à sexta-feira (exceto feriados), das 9h às 18h; in Canada by GS & Co. LLC; in Hong Kong by GS (Asia) L.L.C.; in India by GS (India) Securities Private Ltd.; in Japan by GS Japan Co., Ltd.; in the Republic of Korea by GS (Asia) L.L.C., Seoul Branch; in New Zealand by GS New Zealand Limited; in Russia by OOO GS; in Singapore by GS (Singapore) Pte. (Company Number: 198602165W); and in the United States of America by GS & Co. LLC. GS International has approved this research in connection with its distribution in the United Kingdom.
+
+GS International (“GSI”), authorised by the Prudential Regulation Authority (“PRA”) and regulated by the Financial Conduct Authority (“FCA”) and the PRA, has approved this research in connection with its distribution in the United Kingdom.
+
+European Economic Area: GS Bank Europe SE (“GSBE”) is a credit institution incorporated in Germany and, within the Single Supervisory Mechanism, subject to direct prudential supervision by the European Central Bank and in other respects supervised by German Federal Financial Supervisory Authority (Bundesanstalt für Finanzdienstleistungsaufsicht, BaFin) and Deutsche Bundesbank and disseminates research within the European Economic Area.
+
+# General disclosures
+
+This research is for our clients only. Other than disclosures relating to GS, this research is based on current public information that we consider reliable, but we do not represent it is accurate or complete, and it should not be relied on as such. The information, opinions, estimates and forecasts contained herein are as of the date hereof and are subject to change without prior notification. We seek to update our research as appropriate, but various regulations may prevent us from doing so. Other than certain industry reports published on a periodic basis, the large majority of reports are published at irregular intervals as appropriate in the analyst's judgment.
+
+GS conducts a global full-service, integrated investment banking, investment management, and brokerage business. We have investment banking and other business relationships with a substantial percentage of the companies covered by Global Investment Research. GS & Co. LLC, the United States broker dealer, is a member of SIPC (https://www.sipc.org).
+
+Our salespeople, traders, and other professionals may provide oral or written market commentary or trading strategies to our clients and principal trading desks that reflect opinions that are contrary to the opinions expressed in this research. Our asset management area, principal trading desks and investing businesses may make investment decisions that are inconsistent with the recommendations or views expressed in this research.
+
+We and our affiliates, officers, directors, and employees will from time to time have long or short positions in, act as principal in, and buy or sell, the securities or derivatives, if any, referred to in this research, unless otherwise prohibited by regulation or GS policy.
+
+The views attributed to third party presenters at GS arranged conferences, including individuals from other parts of GS, do not necessarily reflect those of Global Investment Research and are not an official view of GS.
+
+Any third party referenced herein, including any salespeople, traders and other professionals or members of their household, may have positions in the products mentioned that are inconsistent with the views expressed by analysts named in this report.
+
+This research is focused on investment themes across markets, industries and sectors. It does not attempt to distinguish between the prospects or performance of, or provide analysis of, individual companies within any industry or sector we describe.
+
+Any trading recommendation in this research relating to an equity or credit security or securities within an industry or sector is reflective of the investment theme being discussed and is not a recommendation of any such security in isolation.
+
+This research is not an offer to sell or the solicitation of an offer to buy any security in any jurisdiction where such an offer or solicitation would be illegal. It does not constitute a personal recommendation or take into account the particular investment objectives, financial situations, or needs of individual clients. Clients should consider whether any advice or recommendation in this research is suitable for their particular circumstances and, if appropriate, seek professional advice, including tax advice. The price and value of investments referred to in this research and the income from them may fluctuate. Past performance is not a guide to future performance, future returns are not guaranteed, and a loss of original capital may occur. Fluctuations in exchange rates could have adverse effects on the value or price of, or income derived from, certain investments.
+
+Certain transactions, including those involving futures, options, and other derivatives, give rise to substantial risk and are not suitable for all investors. Investors should review current options and futures disclosure documents which are available from GS sales representatives or at https://www.theocc.com/about/publications/character-risks.jsp and https://www.goldmansachs.com/disclosures/cftc\_fcm\_disclosures. Transaction costs may be significant in option strategies calling for multiple purchase and sales of options such as spreads. Supporting documentation will be supplied upon request.
+
+Differing Levels of Service provided by Global Investment Research: The level and types of services provided to you by GS Global Investment Research may vary as compared to that provided to internal and other external clients of GS, depending on various factors including your individual preferences as to the frequency and manner of receiving communication, your risk profile and investment focus and perspective (e.g., marketwide, sector specific, long term, short term), the size and scope of your overall client relationship with GS, and legal and regulatory constraints. As an example, certain clients may request to receive notifications when research on specific securities is published, and certain clients may request that specific data underlying analysts' fundamental analysis available on our internal client websites be delivered to them electronically through data feeds or otherwise. No change to an analyst's fundamental research views (e.g., ratings, price targets, or material changes to earnings estimates for equity securities), will be communicated to any client prior to inclusion of such information in a research report broadly disseminated through electronic publication to our internal client websites or through other means, as necessary, to all clients who are entitled to receive such reports.
+
+All research reports are disseminated and available to all clients simultaneously through electronic publication to our internal client websites. Not all research content is redistributed to our clients or available to third-party aggregators, nor is GS responsible for the redistribution of our research by third party aggregators. For research, models or other data related to one or more securities, markets or asset classes (including related services) that may be available to you, please contact your GS representative or go to https://research.gs.com.
+
+Disclosure information is also available at https://www.gs.com/research/hedge.html or from Research Compliance, 200 West Street, New York, NY 10282.
+
+# © 2026 GS.
+
+You are permitted to store, display, analyze, modify, reformat, and print the information made available to you via this service only for your own use. You may not resell or reverse engineer this information to calculate or develop any index for disclosure and/or marketing or create any other derivative works or commercial product(s), data or offering(s) without the express written consent of GS. You are not permitted to publish, transmit, or otherwise reproduce this information, in whole or in part, in any format to any third party without the express written consent of GS. This foregoing restriction includes, without limitation, using, extracting, downloading or retrieving this information, in whole or in part, to train or finetune a machine learning or artificial intelligence system, or to provide or reproduce this information, in whole or in part, as a prompt or input to any such system.

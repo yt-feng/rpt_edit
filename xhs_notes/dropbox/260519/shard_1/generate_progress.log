@@ -1,0 +1,21 @@
+Found 42 total PDFs; shard 1/40 has 5 PDFs, skips 0 already converted, will process 5 PDFs with batch_size=5.
+Running batch 1: 5 PDFs
+Found 5 PDFs.
+Uploading PDF to MinerU: /tmp/pdf_batch_001_n1yycp0l/pdfs/0001-06-Goldman Sachs-GLOBAL WEEKLY KICKSTART-Global equities flat amid persistent geopolitical uncertainty-260518.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_n1yycp0l/pdfs/0002-07-Goldman Sachs-Global Strategy Views-Momentum risks yielding to bonds-260519.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_n1yycp0l/pdfs/0003-08-Goldman Sachs-Global- GS Economic Indicators Update- Euro Area Activity Data Surprises to the Downside Since the Start of The War in Iran-260518.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_n1yycp0l/pdfs/0004-09-Morgan Stanley-Asia Thematic Strategy-Investor Presentation- Playing Asia-s Investment Super-Cycle and Competitive Reinvention-260517.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_n1yycp0l/pdfs/0005-10-Morgan Stanley-China Equity Strategy- Forging New Horizons-260517.pdf
+MinerU batch_id=66571873-b151-4755-9f71-a73dd55223fe
+MinerU states: pending, pending, pending, pending, pending
+MinerU states: running, running, running, running, pending
+MinerU states: running, running, running, running, running
+MinerU states: done, running, running, running, running
+MinerU states: done, running, running, running, running
+MinerU states: done, done, running, running, running
+MinerU states: done, done, running, running, running
+MinerU states: done, done, running, done, done
+MinerU states: done, done, running, done, done
+MinerU states: done, done, done, done, done
+Done. Results written to /home/runner/work/rpt_edit/rpt_edit/xhs_notes/dropbox/260519/shard_1
+All batches completed successfully.
