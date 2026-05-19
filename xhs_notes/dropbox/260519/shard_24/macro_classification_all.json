@@ -1,0 +1,692 @@
+[
+  {
+    "id": 0,
+    "name": "Bofa-Asia Fund Manager Survey From growth concerns to AI conviction-260519.pdf",
+    "dropbox_path": "/zip_backup/260519/bofa-asia fund manager survey from growth concerns to ai conviction-260519.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/bofa-asia fund manager survey from growth concerns to ai conviction-260519.pdf",
+    "category": "macro_trend",
+    "score": 0.95,
+    "reason": "亚洲基金经理调查，宏观情绪与主题",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 1,
+    "name": "Bernstein-CoreWeave， Inc.（CRWV.US）CoreWeave~Blackstone + Google=One very strong AI cloud-260518.pdf",
+    "dropbox_path": "/zip_backup/260519/bernstein-coreweave， inc.（crwv.us）coreweave~blackstone + google=one very strong ai cloud-260518.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/bernstein-coreweave， inc.（crwv.us）coreweave~blackstone + google=one very strong ai cloud-260518.pdf",
+    "category": "company_stock",
+    "score": 0.95,
+    "reason": "明确针对单一公司CoreWeave",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 2,
+    "name": "Bernstein-US Communications Infrastructure US Comms Infrastructure： FCC spectrum moves are net positive for towers-260518.pdf",
+    "dropbox_path": "/zip_backup/260519/bernstein-us communications infrastructure us comms infrastructure： fcc spectrum moves are net positive for towers-260518.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/bernstein-us communications infrastructure us comms infrastructure： fcc spectrum moves are net positive for towers-260518.pdf",
+    "category": "macro_trend",
+    "score": 0.85,
+    "reason": "美国通信基础设施行业分析，非单一公司",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 3,
+    "name": "Bofa-Global Fund Manager Survey In It to Win It-260519.pdf",
+    "dropbox_path": "/zip_backup/260519/bofa-global fund manager survey in it to win it-260519.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/bofa-global fund manager survey in it to win it-260519.pdf",
+    "category": "macro_trend",
+    "score": 0.95,
+    "reason": "全球基金经理调查，宏观主题",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 4,
+    "name": "CITI-Greater China Semiconductors：May Week 3 Recap： H200 Approval Unlikely to Derail China Localization， WFE Upside on Memory Expansion-260517.pdf",
+    "dropbox_path": "/zip_backup/260519/citi-greater china semiconductors：may week 3 recap： h200 approval unlikely to derail china localization， wfe upside on memory expansion-260517.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/citi-greater china semiconductors：may week 3 recap： h200 approval unlikely to derail china localization， wfe upside on memory expansion-260517.pdf",
+    "category": "macro_trend",
+    "score": 0.9,
+    "reason": "大中华半导体行业周报，行业趋势",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 5,
+    "name": "CITI-China Auto Manufacturers：End~Apr Inventories estimate—Nio better than Li； German brands & Chery under pressure-260517.pdf",
+    "dropbox_path": "/zip_backup/260519/citi-china auto manufacturers：end~apr inventories estimate—nio better than li； german brands & chery under pressure-260517.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/citi-china auto manufacturers：end~apr inventories estimate—nio better than li； german brands & chery under pressure-260517.pdf",
+    "category": "macro_trend",
+    "score": 0.85,
+    "reason": "中国汽车制造商行业库存估计，行业分析",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 6,
+    "name": "Citi-Kioxia Holdings (285A.T) Maintain Buy-High Risk — Strong price growth momentum; raise FY3-27 OP estimate to ¥7trn-260517.pdf",
+    "dropbox_path": "/zip_backup/260519/citi-kioxia holdings (285a.t) maintain buy-high risk — strong price growth momentum; raise fy3-27 op estimate to ¥7trn-260517.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/citi-kioxia holdings (285a.t) maintain buy-high risk — strong price growth momentum; raise fy3-27 op estimate to ¥7trn-260517.pdf",
+    "category": "company_stock",
+    "score": 0.95,
+    "reason": "明确针对Kioxia Holdings单一公司",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 7,
+    "name": "DB-Europe Macro Outlook 2026：The two~economy problem，resilience vs rigidity amid an energy shock-260519.pdf",
+    "dropbox_path": "/zip_backup/260519/DB-europe macro outlook 2026：the two~economy problem，resilience vs rigidity amid an energy shock-260519.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/DB-europe macro outlook 2026：the two~economy problem，resilience vs rigidity amid an energy shock-260519.pdf",
+    "category": "macro_trend",
+    "score": 0.95,
+    "reason": "欧洲宏观展望，宏观经济主题",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 8,
+    "name": "CITI-NIO （NIO.US） A ST Game Changer； 2Q margin visibility - BYD Li Xpeng Leapmotor， Buy-260517.pdf",
+    "dropbox_path": "/zip_backup/260519/citi-nio （nio.us） a st game changer； 2q margin visibility - byd li xpeng leapmotor， buy-260517.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/citi-nio （nio.us） a st game changer； 2q margin visibility - byd li xpeng leapmotor， buy-260517.pdf",
+    "category": "company_stock",
+    "score": 0.95,
+    "reason": "明确针对NIO单一公司",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 9,
+    "name": "GS-Asia Communacopia + Technology~Key Takeaways： Axera Chair visit： AI inference SoC for smart vehicles and edge AI； In~house NPU with high-260518.pdf",
+    "dropbox_path": "/zip_backup/260519/GS-asia communacopia + technology~key takeaways： axera chair visit： ai inference soc for smart vehicles and edge ai； in~house npu with high-260518.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/GS-asia communacopia + technology~key takeaways： axera chair visit： ai inference soc for smart vehicles and edge ai； in~house npu with high-260518.pdf",
+    "category": "macro_trend",
+    "score": 0.8,
+    "reason": "亚洲科技行业会议要点，行业趋势",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 10,
+    "name": "GS-CHINA PROPERTY WEEKLY WRAP：Week 20 Wrap~Transaction volumes saw sequential rebounds but leading indicators broadly inflected lower-260519.pdf",
+    "dropbox_path": "/zip_backup/260519/GS-china property weekly wrap：week 20 wrap~transaction volumes saw sequential rebounds but leading indicators broadly inflected lower-260519.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/GS-china property weekly wrap：week 20 wrap~transaction volumes saw sequential rebounds but leading indicators broadly inflected lower-260519.pdf",
+    "category": "macro_trend",
+    "score": 0.9,
+    "reason": "中国房地产周报，行业趋势",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 11,
+    "name": "GS-China Consumer Staples： Chengdu Trip： Spirits target 2H26 recovery but visibility low； value retailer store openings on~track； PoS optimization a-260518.pdf",
+    "dropbox_path": "/zip_backup/260519/GS-china consumer staples： chengdu trip： spirits target 2h26 recovery but visibility low； value retailer store openings on~track； pos optimization a-260518.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/GS-china consumer staples： chengdu trip： spirits target 2h26 recovery but visibility low； value retailer store openings on~track； pos optimization a-260518.pdf",
+    "category": "macro_trend",
+    "score": 0.85,
+    "reason": "中国消费必需品行业调研，行业趋势",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 12,
+    "name": "GS-China：SAFE data suggest some FX inflows in April-260518.pdf",
+    "dropbox_path": "/zip_backup/260519/GS-china：safe data suggest some fx inflows in april-260518.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/GS-china：safe data suggest some fx inflows in april-260518.pdf",
+    "category": "macro_trend",
+    "score": 0.95,
+    "reason": "中国外汇流入数据，宏观经济",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 13,
+    "name": "GS-China Spirits Tracker： Feitian Moutai resilient with low inventory on~track prepayment； Wuliangye AGM reinforced shareholder-260518.pdf",
+    "dropbox_path": "/zip_backup/260519/GS-china spirits tracker： feitian moutai resilient with low inventory on~track prepayment； wuliangye agm reinforced shareholder-260518.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/GS-china spirits tracker： feitian moutai resilient with low inventory on~track prepayment； wuliangye agm reinforced shareholder-260518.pdf",
+    "category": "macro_trend",
+    "score": 0.85,
+    "reason": "中国白酒行业追踪，行业趋势",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 14,
+    "name": "GS-China New Energy Vehicle Weekly Chartbook：2026 Week 20~Weekly NEV orders rebounded to +4 wow yoy driven by new models-260519.pdf",
+    "dropbox_path": "/zip_backup/260519/GS-china new energy vehicle weekly chartbook：2026 week 20~weekly nev orders rebounded to +4 wow yoy driven by new models-260519.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/GS-china new energy vehicle weekly chartbook：2026 week 20~weekly nev orders rebounded to +4 wow yoy driven by new models-260519.pdf",
+    "category": "macro_trend",
+    "score": 0.9,
+    "reason": "中国新能源汽车周报，行业趋势",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 15,
+    "name": "GS-GOAL Kickstart：The name is bond （again）~rising bond yields weigh on portfolios-260518.pdf",
+    "dropbox_path": "/zip_backup/260519/GS-goal kickstart：the name is bond （again）~rising bond yields weigh on portfolios-260518.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/GS-goal kickstart：the name is bond （again）~rising bond yields weigh on portfolios-260518.pdf",
+    "category": "macro_trend",
+    "score": 0.95,
+    "reason": "债券收益率与投资组合，宏观策略",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 16,
+    "name": "GS-GLOBAL WEEKLY KICKSTART：Global equities flat amid persistent geopolitical uncertainty-260518.pdf",
+    "dropbox_path": "/zip_backup/260519/GS-global weekly kickstart：global equities flat amid persistent geopolitical uncertainty-260518.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/GS-global weekly kickstart：global equities flat amid persistent geopolitical uncertainty-260518.pdf",
+    "category": "macro_trend",
+    "score": 0.95,
+    "reason": "全球股市周报，宏观主题",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 17,
+    "name": "GS-Global Strategy Views：Momentum risks yielding to bonds-260519.pdf",
+    "dropbox_path": "/zip_backup/260519/GS-global strategy views：momentum risks yielding to bonds-260519.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/GS-global strategy views：momentum risks yielding to bonds-260519.pdf",
+    "category": "macro_trend",
+    "score": 0.95,
+    "reason": "全球策略观点，宏观资产配置",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 18,
+    "name": "GS-Hua Hong （1347.HK）： Power Semis & SiPh with Node migration at China Semis panel： Asia Communacopia + Technology~Key takeaways-260518.pdf",
+    "dropbox_path": "/zip_backup/260519/GS-hua hong （1347.hk）： power semis & siph with node migration at china semis panel： asia communacopia + technology~key takeaways-260518.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/GS-hua hong （1347.hk）： power semis & siph with node migration at china semis panel： asia communacopia + technology~key takeaways-260518.pdf",
+    "category": "company_stock",
+    "score": 0.95,
+    "reason": "明确针对华虹半导体单一公司",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 19,
+    "name": "GS-Hua Hong （1347.HK）： Asia Communacopia + Technology — Key Takeaways： Solid demand across technology platforms； Capex continues-260518.pdf",
+    "dropbox_path": "/zip_backup/260519/GS-hua hong （1347.hk）： asia communacopia + technology — key takeaways： solid demand across technology platforms； capex continues-260518.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/GS-hua hong （1347.hk）： asia communacopia + technology — key takeaways： solid demand across technology platforms； capex continues-260518.pdf",
+    "category": "company_stock",
+    "score": 0.95,
+    "reason": "明确针对华虹半导体单一公司",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 20,
+    "name": "GS-Global： GS Economic Indicators Update： Euro Area Activity Data Surprises to the Downside Since the Start of The War in Iran-260518.pdf",
+    "dropbox_path": "/zip_backup/260519/GS-global： gs economic indicators update： euro area activity data surprises to the downside since the start of the war in iran-260518.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/GS-global： gs economic indicators update： euro area activity data surprises to the downside since the start of the war in iran-260518.pdf",
+    "category": "macro_trend",
+    "score": 0.95,
+    "reason": "全球经济指标更新，宏观经济",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 21,
+    "name": "GS-Insta360 （688775）： CEO product demo at All Around You panel： Asia Communacopia + Technology~Key takeaways： Innovation matters-260518.pdf",
+    "dropbox_path": "/zip_backup/260519/GS-insta360 （688775）： ceo product demo at all around you panel： asia communacopia + technology~key takeaways： innovation matters-260518.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/GS-insta360 （688775）： ceo product demo at all around you panel： asia communacopia + technology~key takeaways： innovation matters-260518.pdf",
+    "category": "company_stock",
+    "score": 0.95,
+    "reason": "明确针对Insta360单一公司",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 22,
+    "name": "GS-Infosys Ltd. （INFY.BO）： Asia Communacopia + Technology — Key Takeaways： Soft demand with pockets of strength； AI has both risks and-260518.pdf",
+    "dropbox_path": "/zip_backup/260519/GS-infosys ltd. （infy.bo）： asia communacopia + technology — key takeaways： soft demand with pockets of strength； ai has both risks and-260518.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/GS-infosys ltd. （infy.bo）： asia communacopia + technology — key takeaways： soft demand with pockets of strength； ai has both risks and-260518.pdf",
+    "category": "company_stock",
+    "score": 0.95,
+    "reason": "明确针对Infosys单一公司",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 23,
+    "name": "GS-JD Logistics （2618.HK）： Asia Communacopia + Technology — Key Takeaways： deepening integrated supply chain； AI capabilities in-260518.pdf",
+    "dropbox_path": "/zip_backup/260519/GS-jd logistics （2618.hk）： asia communacopia + technology — key takeaways： deepening integrated supply chain； ai capabilities in-260518.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/GS-jd logistics （2618.hk）： asia communacopia + technology — key takeaways： deepening integrated supply chain； ai capabilities in-260518.pdf",
+    "category": "company_stock",
+    "score": 0.95,
+    "reason": "明确针对京东物流单一公司",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 24,
+    "name": "GS-NEC （6701.T）： CEO CFO meeting： Focus on improving IT services productivity through full~scale use of AI tools-260518.pdf",
+    "dropbox_path": "/zip_backup/260519/GS-nec （6701.t）： ceo cfo meeting： focus on improving it services productivity through full~scale use of ai tools-260518.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/GS-nec （6701.t）： ceo cfo meeting： focus on improving it services productivity through full~scale use of ai tools-260518.pdf",
+    "category": "company_stock",
+    "score": 0.95,
+    "reason": "明确针对NEC单一公司",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 25,
+    "name": "GS-Meitu （1357.HK）： Asia Communacopia + Technology — Key Takeaways： AI integration supports paying Rev； Developing in~house vertical model-260518.pdf",
+    "dropbox_path": "/zip_backup/260519/GS-meitu （1357.hk）： asia communacopia + technology — key takeaways： ai integration supports paying rev； developing in~house vertical model-260518.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/GS-meitu （1357.hk）： asia communacopia + technology — key takeaways： ai integration supports paying rev； developing in~house vertical model-260518.pdf",
+    "category": "company_stock",
+    "score": 0.95,
+    "reason": "明确针对美图单一公司",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 26,
+    "name": "GS-MiniMax Group （0100.HK）： Asia Communacopia + Technology — Key Takeaways： ARR ramp up； eyes on upcoming M3 & Hailuo 3 models-260519.pdf",
+    "dropbox_path": "/zip_backup/260519/GS-minimax group （0100.hk）： asia communacopia + technology — key takeaways： arr ramp up； eyes on upcoming m3 & hailuo 3 models-260519.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/GS-minimax group （0100.hk）： asia communacopia + technology — key takeaways： arr ramp up； eyes on upcoming m3 & hailuo 3 models-260519.pdf",
+    "category": "company_stock",
+    "score": 0.95,
+    "reason": "明确针对MiniMax单一公司",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 27,
+    "name": "GS-Sinocera Functional Material （300285）Asia Communacopia + Technology — Key Takeaways：New businesses offer option value-260519.pdf",
+    "dropbox_path": "/zip_backup/260519/GS-sinocera functional material （300285）asia communacopia + technology — key takeaways：new businesses offer option value-260519.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/GS-sinocera functional material （300285）asia communacopia + technology — key takeaways：new businesses offer option value-260519.pdf",
+    "category": "company_stock",
+    "score": 0.95,
+    "reason": "明确针对Sinocera单一公司",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 28,
+    "name": "GS-Tencent Holdings （0700.HK）：Asia Communacopia + Technology — Key Takeaways：Pivoting for long~term success-260518.pdf",
+    "dropbox_path": "/zip_backup/260519/GS-tencent holdings （0700.hk）：asia communacopia + technology — key takeaways：pivoting for long~term success-260518.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/GS-tencent holdings （0700.hk）：asia communacopia + technology — key takeaways：pivoting for long~term success-260518.pdf",
+    "category": "company_stock",
+    "score": 0.95,
+    "reason": "明确针对腾讯控股单一公司",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 29,
+    "name": "GS-Range Intelligent （300442.SZ）： Asia Communacopia + Technology — Key Takeaways： Strategic pivot towards AIDC； Buy-260518.pdf",
+    "dropbox_path": "/zip_backup/260519/GS-range intelligent （300442.sz）： asia communacopia + technology — key takeaways： strategic pivot towards aidc； buy-260518.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/GS-range intelligent （300442.sz）： asia communacopia + technology — key takeaways： strategic pivot towards aidc； buy-260518.pdf",
+    "category": "company_stock",
+    "score": 0.95,
+    "reason": "明确针对Range Intelligent单一公司",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 30,
+    "name": "MS-Greater China Technology Hardware  ABF Substrates Same Thesis, Better Numbers-260518.pdf",
+    "dropbox_path": "/zip_backup/260519/ms-greater china technology hardware  abf substrates same thesis, better numbers-260518.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/ms-greater china technology hardware  abf substrates same thesis, better numbers-260518.pdf",
+    "category": "macro_trend",
+    "score": 0.9,
+    "reason": "大中华科技硬件行业，ABF基板行业趋势",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 31,
+    "name": "MS-Semiconductor Capital Equipment 2Q'26 WFE update, memory mismatch unresolved, LAM up to OW, AMAT down to EW-260518.pdf",
+    "dropbox_path": "/zip_backup/260519/ms-semiconductor capital equipment 2q'26 wfe update, memory mismatch unresolved, lam up to ow, amat down to ew-260518.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/ms-semiconductor capital equipment 2q'26 wfe update, memory mismatch unresolved, lam up to ow, amat down to ew-260518.pdf",
+    "category": "macro_trend",
+    "score": 0.9,
+    "reason": "半导体资本设备行业更新，行业趋势",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 32,
+    "name": "MS-Greater China Semiconductors - Asia Pacific-The Foundry Floorplan-All boats riding on the same tide – mature node up-cycle begins-260518.pdf",
+    "dropbox_path": "/zip_backup/260519/ms-greater china semiconductors - asia pacific-the foundry floorplan-all boats riding on the same tide – mature node up-cycle begins-260518.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/ms-greater china semiconductors - asia pacific-the foundry floorplan-all boats riding on the same tide – mature node up-cycle begins-260518.pdf",
+    "category": "macro_trend",
+    "score": 0.9,
+    "reason": "大中华半导体行业，代工行业周期",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 33,
+    "name": "MS-Semiconductors  Weekly  Earnings Week 5 (NVDA, ADI)-260518.pdf",
+    "dropbox_path": "/zip_backup/260519/ms-semiconductors  weekly  earnings week 5 (nvda, adi)-260518.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/ms-semiconductors  weekly  earnings week 5 (nvda, adi)-260518.pdf",
+    "category": "macro_trend",
+    "score": 0.85,
+    "reason": "半导体行业周报，涵盖多家公司",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 34,
+    "name": "MS-China Broader Consumption Trip – Key Takeaways-260517.pdf",
+    "dropbox_path": "/zip_backup/260519/MS-china broader consumption trip – key takeaways-260517.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/MS-china broader consumption trip – key takeaways-260517.pdf",
+    "category": "macro_trend",
+    "score": 0.85,
+    "reason": "中国消费行业调研，行业趋势",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 35,
+    "name": "MS-Asia Thematic Strategy：Investor Presentation： Playing Asia's Investment Super~Cycle and Competitive Reinvention-260517.pdf",
+    "dropbox_path": "/zip_backup/260519/MS-asia thematic strategy：investor presentation： playing asia's investment super~cycle and competitive reinvention-260517.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/MS-asia thematic strategy：investor presentation： playing asia's investment super~cycle and competitive reinvention-260517.pdf",
+    "category": "macro_trend",
+    "score": 0.95,
+    "reason": "亚洲主题策略，投资超级周期",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 36,
+    "name": "MS-China Jushi（600176）Raising PT on Accelerating AI~driven Glass Fabric-260517.pdf",
+    "dropbox_path": "/zip_backup/260519/MS-china jushi（600176）raising pt on accelerating ai~driven glass fabric-260517.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/MS-china jushi（600176）raising pt on accelerating ai~driven glass fabric-260517.pdf",
+    "category": "company_stock",
+    "score": 0.95,
+    "reason": "明确针对中国巨石单一公司",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 37,
+    "name": "MS-China Healthcare：Trip Takeaways from Pharma Companies-260518.pdf",
+    "dropbox_path": "/zip_backup/260519/MS-china healthcare：trip takeaways from pharma companies-260518.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/MS-china healthcare：trip takeaways from pharma companies-260518.pdf",
+    "category": "macro_trend",
+    "score": 0.85,
+    "reason": "中国医疗保健行业调研，行业趋势",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 38,
+    "name": "MS-China Equity Strategy： Forging New Horizons-260517.pdf",
+    "dropbox_path": "/zip_backup/260519/MS-china equity strategy： forging new horizons-260517.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/MS-china equity strategy： forging new horizons-260517.pdf",
+    "category": "macro_trend",
+    "score": 0.95,
+    "reason": "中国股票策略，宏观主题",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 39,
+    "name": "MS-Giga~Byte Technology Co. Ltd.（2376.TW）Strong 1Q26 margin beat， but likely well expected； stay EW-260517.pdf",
+    "dropbox_path": "/zip_backup/260519/MS-giga~byte technology co. ltd.（2376.tw）strong 1q26 margin beat， but likely well expected； stay ew-260517.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/MS-giga~byte technology co. ltd.（2376.tw）strong 1q26 margin beat， but likely well expected； stay ew-260517.pdf",
+    "category": "company_stock",
+    "score": 0.95,
+    "reason": "明确针对技嘉科技单一公司",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 40,
+    "name": "MS-Chinese Airlines April 2026： Growth Softened amid Pricing Inflation； LCC and Int'l the Bright Spots-260517.pdf",
+    "dropbox_path": "/zip_backup/260519/MS-chinese airlines april 2026： growth softened amid pricing inflation； lcc and int'l the bright spots-260517.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/MS-chinese airlines april 2026： growth softened amid pricing inflation； lcc and int'l the bright spots-260517.pdf",
+    "category": "macro_trend",
+    "score": 0.9,
+    "reason": "中国航空公司行业分析，行业趋势",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 41,
+    "name": "MS-Greater China Technology Hardware：Automation – Read~across from Preliminary JMTBA April 2026 Orders-260517.pdf",
+    "dropbox_path": "/zip_backup/260519/MS-greater china technology hardware：automation – read~across from preliminary jmtba april 2026 orders-260517.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/MS-greater china technology hardware：automation – read~across from preliminary jmtba april 2026 orders-260517.pdf",
+    "category": "macro_trend",
+    "score": 0.9,
+    "reason": "大中华科技硬件自动化行业，行业趋势",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 42,
+    "name": "MS-How Much Capacity Will $2 Trillion of Hyperscaler Capex Bring By ’27？-260517.pdf",
+    "dropbox_path": "/zip_backup/260519/MS-how much capacity will $2 trillion of hyperscaler capex bring by ’27？-260517.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/MS-how much capacity will $2 trillion of hyperscaler capex bring by ’27？-260517.pdf",
+    "category": "macro_trend",
+    "score": 0.95,
+    "reason": "超大规模资本支出行业分析，行业趋势",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 43,
+    "name": "MS-Hangzhou Silan Microelectronics Co. Ltd.（600460）Cyclical recovery in place， awaiting better capital discipline； UW-260517.pdf",
+    "dropbox_path": "/zip_backup/260519/MS-hangzhou silan microelectronics co. ltd.（600460）cyclical recovery in place， awaiting better capital discipline； uw-260517.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/MS-hangzhou silan microelectronics co. ltd.（600460）cyclical recovery in place， awaiting better capital discipline； uw-260517.pdf",
+    "category": "company_stock",
+    "score": 0.95,
+    "reason": "明确针对士兰微单一公司",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 44,
+    "name": "MS-H World Group Ltd（HTHT.US）1Q26 Slight Beat On Costs； Earning Power Established-260517.pdf",
+    "dropbox_path": "/zip_backup/260519/MS-h world group ltd（htht.us）1q26 slight beat on costs； earning power established-260517.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/MS-h world group ltd（htht.us）1q26 slight beat on costs； earning power established-260517.pdf",
+    "category": "company_stock",
+    "score": 0.95,
+    "reason": "明确针对华住集团单一公司",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 45,
+    "name": "MS-Kweichow Moutai Company Ltd.（600519）Minor Retail Price Hikes for Non~Feitain Moutai Products-260517.pdf",
+    "dropbox_path": "/zip_backup/260519/MS-kweichow moutai company ltd.（600519）minor retail price hikes for non~feitain moutai products-260517.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/MS-kweichow moutai company ltd.（600519）minor retail price hikes for non~feitain moutai products-260517.pdf",
+    "category": "company_stock",
+    "score": 0.95,
+    "reason": "明确针对贵州茅台单一公司",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 46,
+    "name": "MS-Meta Platforms Inc （META.US）Headcount Reductions and the Neocloud Backup Optionality-260517.pdf",
+    "dropbox_path": "/zip_backup/260519/MS-meta platforms inc （meta.us）headcount reductions and the neocloud backup optionality-260517.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/MS-meta platforms inc （meta.us）headcount reductions and the neocloud backup optionality-260517.pdf",
+    "category": "company_stock",
+    "score": 0.95,
+    "reason": "明确针对Meta Platforms单一公司",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 47,
+    "name": "MS-NextEra Energy Inc （NEE.US）First Thoughts on Reported D Acquisition-260518.pdf",
+    "dropbox_path": "/zip_backup/260519/MS-nextera energy inc （nee.us）first thoughts on reported d acquisition-260518.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/MS-nextera energy inc （nee.us）first thoughts on reported d acquisition-260518.pdf",
+    "category": "company_stock",
+    "score": 0.95,
+    "reason": "明确针对NextEra Energy单一公司",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 48,
+    "name": "MS-Three Actionable Ideas-260517.pdf",
+    "dropbox_path": "/zip_backup/260519/MS-three actionable ideas-260517.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/MS-three actionable ideas-260517.pdf",
+    "category": "macro_trend",
+    "score": 0.8,
+    "reason": "三个可操作想法，可能为策略或主题",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 49,
+    "name": "NOM-Asia Insights China rates： Turn outright pay Jun~3y NDIRS-260518.pdf",
+    "dropbox_path": "/zip_backup/260519/NOM-asia insights china rates： turn outright pay jun~3y ndirs-260518.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/NOM-asia insights china rates： turn outright pay jun~3y ndirs-260518.pdf",
+    "category": "macro_trend",
+    "score": 0.95,
+    "reason": "亚洲利率策略，宏观主题",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 50,
+    "name": "NOM-Baidu（BIDU.OQ）AI Cloud offsets ad drag-260519.pdf",
+    "dropbox_path": "/zip_backup/260519/NOM-baidu（bidu.oq）ai cloud offsets ad drag-260519.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/NOM-baidu（bidu.oq）ai cloud offsets ad drag-260519.pdf",
+    "category": "company_stock",
+    "score": 0.95,
+    "reason": "明确针对百度单一公司",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 51,
+    "name": "NOM-Global Memory：Real AI boom is here， embrace the new regime-260515 (1).pdf",
+    "dropbox_path": "/zip_backup/260519/NOM-global memory：real ai boom is here， embrace the new regime-260515 (1).pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/NOM-global memory：real ai boom is here， embrace the new regime-260515 (1).pdf",
+    "category": "macro_trend",
+    "score": 0.95,
+    "reason": "全球内存行业，AI驱动新周期",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 52,
+    "name": "NOM-China e~commerce：E~commerce sales decelerated in April-260518.pdf",
+    "dropbox_path": "/zip_backup/260519/NOM-china e~commerce：e~commerce sales decelerated in april-260518.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/NOM-china e~commerce：e~commerce sales decelerated in april-260518.pdf",
+    "category": "macro_trend",
+    "score": 0.9,
+    "reason": "中国电子商务行业销售数据，行业趋势",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 53,
+    "name": "NOM-China consumer：Weakening retail sales momentum in April-260518.pdf",
+    "dropbox_path": "/zip_backup/260519/NOM-china consumer：weakening retail sales momentum in april-260518.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/NOM-china consumer：weakening retail sales momentum in april-260518.pdf",
+    "category": "macro_trend",
+    "score": 0.9,
+    "reason": "中国消费零售销售数据，宏观消费趋势",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 54,
+    "name": "NOM-Kelun Biotech（6990.HK）The first global phase III clinical trial meet primary endpoints， ahead of schedule-260518.pdf",
+    "dropbox_path": "/zip_backup/260519/NOM-kelun biotech（6990.hk）the first global phase iii clinical trial meet primary endpoints， ahead of schedule-260518.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/NOM-kelun biotech（6990.hk）the first global phase iii clinical trial meet primary endpoints， ahead of schedule-260518.pdf",
+    "category": "company_stock",
+    "score": 0.95,
+    "reason": "明确针对科伦博泰单一公司",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 55,
+    "name": "NOM-iQIYI Inc（IQ.OQ）1Q results in~line； muted 2Q business outlook-260518.pdf",
+    "dropbox_path": "/zip_backup/260519/NOM-iqiyi inc（iq.oq）1q results in~line； muted 2q business outlook-260518.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/NOM-iqiyi inc（iq.oq）1q results in~line； muted 2q business outlook-260518.pdf",
+    "category": "company_stock",
+    "score": 0.95,
+    "reason": "明确针对爱奇艺单一公司",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 56,
+    "name": "UBS-Asian Banks APAC：Focus： Will AI Deliver What Technology Never Could for Asian Banks？-260518.pdf",
+    "dropbox_path": "/zip_backup/260519/ubs-asian banks apac：focus： will ai deliver what technology never could for asian banks？-260518.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/ubs-asian banks apac：focus： will ai deliver what technology never could for asian banks？-260518.pdf",
+    "category": "macro_trend",
+    "score": 0.9,
+    "reason": "亚洲银行业AI影响，行业趋势",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 57,
+    "name": "UBS-China Industrials Going global by the numbers： overseas revenue to reach 25% of total in 2030E-260518.pdf",
+    "dropbox_path": "/zip_backup/260519/ubs-china industrials going global by the numbers： overseas revenue to reach 25% of total in 2030e-260518.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/ubs-china industrials going global by the numbers： overseas revenue to reach 25% of total in 2030e-260518.pdf",
+    "category": "macro_trend",
+    "score": 0.9,
+    "reason": "中国工业全球化趋势，行业分析",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 58,
+    "name": "UBS-China Economic Comment：April data weakness driven by administrative policy-260518.pdf",
+    "dropbox_path": "/zip_backup/260519/ubs-china economic comment：april data weakness driven by administrative policy-260518.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/ubs-china economic comment：april data weakness driven by administrative policy-260518.pdf",
+    "category": "macro_trend",
+    "score": 0.95,
+    "reason": "中国经济评论，宏观经济",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 59,
+    "name": "UBS-Asian Banks：After two decades of cost discipline， what’s next for Asian banks？-260518.pdf",
+    "dropbox_path": "/zip_backup/260519/ubs-asian banks：after two decades of cost discipline， what’s next for asian banks？-260518.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/ubs-asian banks：after two decades of cost discipline， what’s next for asian banks？-260518.pdf",
+    "category": "macro_trend",
+    "score": 0.9,
+    "reason": "亚洲银行业成本与未来，行业趋势",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 60,
+    "name": "UBS-Global Equity Strategy：The Consumer： be selective-260518.pdf",
+    "dropbox_path": "/zip_backup/260519/ubs-global equity strategy：the consumer： be selective-260518.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/ubs-global equity strategy：the consumer： be selective-260518.pdf",
+    "category": "macro_trend",
+    "score": 0.95,
+    "reason": "全球股票策略，消费主题",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 61,
+    "name": "UBS-China International Capital（3908.HK）M&A analyst briefing takeaways-260518.pdf",
+    "dropbox_path": "/zip_backup/260519/ubs-china international capital（3908.hk）m&a analyst briefing takeaways-260518.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/ubs-china international capital（3908.hk）m&a analyst briefing takeaways-260518.pdf",
+    "category": "company_stock",
+    "score": 0.95,
+    "reason": "明确针对CICC单一公司",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 62,
+    "name": "UBS-China Insurance Sector The need~to~know： insurance fund flow， sales， and investor feedback on stock performance-260518.pdf",
+    "dropbox_path": "/zip_backup/260519/ubs-china insurance sector the need~to~know： insurance fund flow， sales， and investor feedback on stock performance-260518.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/ubs-china insurance sector the need~to~know： insurance fund flow， sales， and investor feedback on stock performance-260518.pdf",
+    "category": "macro_trend",
+    "score": 0.9,
+    "reason": "中国保险行业，行业趋势",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 63,
+    "name": "UBS-Global Strategy：Rates Map~The real message of global yield curves-260518.pdf",
+    "dropbox_path": "/zip_backup/260519/ubs-global strategy：rates map~the real message of global yield curves-260518.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/ubs-global strategy：rates map~the real message of global yield curves-260518.pdf",
+    "category": "macro_trend",
+    "score": 0.95,
+    "reason": "全球利率策略，宏观主题",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 64,
+    "name": "UBS-Sunresin New Materials（300487）Negatives priced in，current valuation appears attractive-260518.pdf",
+    "dropbox_path": "/zip_backup/260519/ubs-sunresin new materials（300487）negatives priced in，current valuation appears attractive-260518.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/ubs-sunresin new materials（300487）negatives priced in，current valuation appears attractive-260518.pdf",
+    "category": "company_stock",
+    "score": 0.95,
+    "reason": "明确针对蓝晓科技单一公司",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 65,
+    "name": "UBS-Spotify Technology S.A.（SPOT.US） Previewing the Investor Day-260518.pdf",
+    "dropbox_path": "/zip_backup/260519/ubs-spotify technology s.a.（spot.us） previewing the investor day-260518.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/ubs-spotify technology s.a.（spot.us） previewing the investor day-260518.pdf",
+    "category": "company_stock",
+    "score": 0.95,
+    "reason": "明确针对Spotify单一公司",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 66,
+    "name": "UBS-U.S. Software：Software Budget Trends – Latest Insights from Customer IT Execs and Procurement Officers-260518.pdf",
+    "dropbox_path": "/zip_backup/260519/ubs-u.s. software：software budget trends – latest insights from customer it execs and procurement officers-260518.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/ubs-u.s. software：software budget trends – latest insights from customer it execs and procurement officers-260518.pdf",
+    "category": "macro_trend",
+    "score": 0.9,
+    "reason": "美国软件行业预算趋势，行业趋势",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 67,
+    "name": "UBS-US Airlines：Travel Intentions Among US Consumers is Broadly Resilient~Only Slight YoY Volume Moderation Per UBS Survey-260518.pdf",
+    "dropbox_path": "/zip_backup/260519/ubs-us airlines：travel intentions among us consumers is broadly resilient~only slight yoy volume moderation per ubs survey-260518.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/ubs-us airlines：travel intentions among us consumers is broadly resilient~only slight yoy volume moderation per ubs survey-260518.pdf",
+    "category": "macro_trend",
+    "score": 0.9,
+    "reason": "美国航空业消费者调查，行业趋势",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 68,
+    "name": "UBS-US Enterprise Hardware and Networking：Earnings Preview： Expect in~line prints to slight beats in the April qtr but a more difficult H2：26-260518.pdf",
+    "dropbox_path": "/zip_backup/260519/ubs-us enterprise hardware and networking：earnings preview： expect in~line prints to slight beats in the april qtr but a more difficult h2：26-260518.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/ubs-us enterprise hardware and networking：earnings preview： expect in~line prints to slight beats in the april qtr but a more difficult h2：26-260518.pdf",
+    "category": "macro_trend",
+    "score": 0.9,
+    "reason": "美国企业硬件与网络行业，行业趋势",
+    "classifier": "deepseek"
+  }
+]
