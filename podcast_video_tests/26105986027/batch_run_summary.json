@@ -1,0 +1,30 @@
+{
+  "input_dir": "/home/runner/work/rpt_edit/rpt_edit/_podcast_test_selected_pdf",
+  "total_pdf_count_before_shard": 1,
+  "pdf_count_before_skip": 1,
+  "pdf_count": 1,
+  "batch_size": 1,
+  "shard_index": 0,
+  "shard_count": 1,
+  "max_reports_per_shard": 1,
+  "max_total_reports": 0,
+  "skip_existing": false,
+  "skipped_existing_count": 0,
+  "skipped_existing": [],
+  "failures": 0,
+  "batches": [
+    {
+      "batch_index": 1,
+      "pdf_count": 1,
+      "files": [
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_podcast_test_selected_pdf/0001-ubs-road-spak-on-production-cuts-the-auto-ai-trade-and-connectors-260517.pdf",
+          "batch_file": "/tmp/pdf_batch_001_kqzf5wjq/pdfs/0001-0001-ubs-road-spak-on-production-cuts-the-auto-ai-trade-and-connectors-260517.pdf",
+          "stable_index": "1"
+        }
+      ],
+      "returncode": 0,
+      "status": "ok"
+    }
+  ]
+}
