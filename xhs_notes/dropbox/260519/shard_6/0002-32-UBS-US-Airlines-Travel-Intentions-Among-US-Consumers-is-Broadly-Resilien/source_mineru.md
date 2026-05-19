@@ -1,0 +1,843 @@
+# US Airlines
+
+# Travel Intentions Among US Consumers is Broadly Resilient - Only Slight YoY Volume Moderation Per UBS Survey
+
+# US Consumer Travel Intentions moderated only slightly despite the surge in fuel prices
+
+In this note, we present the key findings from US airlines' perspective from the 12th UBS Evidence Lab travel intentions survey (> Access Dataset), which was undertaken during March and early April of 2026 (see here for our global survey note). The key takeaway was that intentions among US consumers to undertake leisure and business travel over the next 12 months remains high, but moderated slightly year-over-year with leisure travel intentions down -30 bps YoY to 82.8%. Intentions for business travel moderated to 32.6% from 35.0% in Mar '25. Still, both leisure and business travel intentions are up relative to 2-yrs ago. With respect to spend, the survey results show that significantly more US consumers expect to increase spend in the next 12 months than spend less on their trips - a trend that's consistent with last year's survey.
+
+\- We believe the year-over-year moderation in travel intentions this year was likely due to higher jet fuel and other geopolitical concerns. Importantly, despite the backdrop, travel intentions among US consumers was still above the March'24 levels and is close to the highs over the past 9 years. We view this a sign that travel remains a priority for US consumers. This is being manifested in recent airline commentary that suggests demand remains strong despite fare increases with limited impact on load factors.
+
+# Spending intentions for leisure travel is strong, but there are some puts & takes
+
+Specifically, around 48% of respondents expect to increase spending on leisure travel in the next 12 months vs. 49% in the Mar'25 survey. Further, 23% expect to decrease spending on leisure travel or not spend at all, down vs. 24% last year. That said, the rate of increase might be slowing as those expecting to increase spend by up to 10% increased 120 bps YoY, but those planning on spending 11-40% more decreased -150 bps YoY.
+
+# What are the key factors driving purchase behavior for leisure air travel in the US?
+
+Price is still the most important consideration with 77% of respondents citing price as the key factor when purchasing airline tickets for leisure purposes. Destination (55%) and airline brand (49%) were also important elements.
+
+- Airline brand was meaningfully more important than 3 years ago (+600 bps) as was seat class (+900 bps vs. 3 years ago). This should bode well for the larger airlines with a stronger loyalty/premium offering including DAL & UAL and also for AAL and ALK. More on figures 9-10.   
+- With respect to travel to locations outside of North America, intentions to travel to Europe remained high among US consumers even as it moderated YoY. Specifically, 36% of US respondents cited plans to travel to Europe for leisure purposes in March'26, down -600 bps YoY. Still, its up 350 bps from 2-yrs ago and also up meaningfully from 2019's 26.2% reading. Overall, we see DAL/UAL benefitting from continued propensity for Transatlantic travel. Separately, intentions to travel to the Caribbean increased 470 bps YoY to 23.4%. Details in figure 11-12.
+
+How are travel intentions among consumers for the largest US airlines?
+
+# Equities
+
+Americas
+
+Airlines
+
+Atul Maheswari
+
+Analyst
+
+atul.maheswari@ubs.com
+
++1-212-713 4103
+
+Jarrod Castle, CFA
+
+Analyst
+
+jarrod.castle@ubs.com
+
++44-20-7568 8883
+
+Thomas Wadewitz
+
+Analyst
+
+thomas.wadewitz@ubs.com
+
++1-212-713 6116
+
+In the survey, we also asked respondents whether they intend to book more, less, or about the same at various US carriers over the next 12 months. Most airlines witnessed a YoY moderation in those willing to fly more while witnessing a corresponding increase in those willing to fly "about the same" at the airline. In total, those willing to spend more or about the same increased 100 bps for DAL to 57% and was down -100 bps YoY for UAL to 59%. This metric was flattish YoY for AAL at 58% and increased 200 bps YoY for LUV to 48% (but was still below Mar'24 of 53%). Details in figures 13-16.
+
+# Around 12% of US respondents cited use of AI assistants for travel booking
+
+From the total base of US respondents in our survey, around 44% of them said they trust these AI tools (Grok, Open AI, Gemini etc.) a fair amount. Another 17% said, they trust these tools a great deal. Separately, 31% said, they do not trust these tools at all or "do not trust them very much".
+
+# SUMMARY
+
+# UBS Evidence Lab Consumer survey on travel intentions
+
+This is the 12th wave of the Europe US Travel Consumer Survey. UBS Evidence Lab conducted an online survey of 6,877 consumers across worldwide (1,754 in the U.S.) between the 3rd of March to the 6th of April 2026. The key takeaways from a US airlines perspective included:
+
+1) Travel Intentions in the US leveled off relative to last year. In the US, Intentions to travel for leisure moderated slightly to 82.8% in Mar'26 relative to 83.1 in Mar'25. Still, it remains modestly above 2-yrs ago. Intentions for business travel in the next 12 months among US based respondents decreased to 32.6% in March '26, down from 35% in March'25, but up from 31.7% in Mar'24.   
+2) Around half of US consumers expect to spend more year-over-year. Around 48% of respondents expect to increase spending on leisure travel for the next 12 months vs. 49% last year. Further, 23% expect to decrease spending on leisure travel or not spend at all vs. 24% last year. Still, there were some mixed trends as the rate of increase might be slowing with those expecting to increase spend by up to 10% increased 120 bps, but those planning on spending 11-40% more decreased -150 bps. Spending on business travel increased with 36% planing on increasing spending, up 200 bps YoY. Those planning on spending nothing on business travel moderated by -300 bps YoY.   
+3) Price remains a key factor when purchasing airline tickets for leisure travel. For leisure flying, around 77% of US respondents answered that price is the important factor. Destination (55%) and airline brand (49%) were also important elements. Airline brand was meaningfully more important than 3 years ago (+600 bps) as was seat class (+900 bps vs. 3 years ago). This should bode well for the larger airlines with a stronger loyalty/premium offering.   
+4) Intentions to travel to Europe moderated, but still remains well above pre-pandemic levels among US consumers per the survey. In the latest survey, intentions for leisure travel to Europe in the next 12 months was cited by 36% of US respondents, down -600 bps YoY, but still up 350 bps compared to Mar'24. Plus, it remains well above the sub-30% levels from pre-pandemic periods.   
+5) Intentions to fly more or about the same was broadly stable across the larger airlines year-over-year. Specifically, percentage of respondents intending to travel more or about the same over the next 12 months was at 57% for DAL (up from 56% in March'25). For UAL, it was at 59%, down from 60% last year. Those planning on traveling more or about the same with AAL remained stable at 58% while for LUV, it increased 200 bps to 48%. However, it remained below Mar'24 level of 53%.
+
+# Survey results in more details below -
+
+Specifically, the likelihood of leisure travel in the next 12 months among US based respondents is slightly lower at 82.8% in March '26 relative to 83.1% in March '25. Those that noted that they are very likely to take a leisure trip in the next 12 months increased to 62.1%, up +20 bps YoY.
+
+Figure 1: Likelihood of leisure travel in the next 12 months - US Passengers   
+![](images/ca0951c99ec53832b889d03b4bdbcd00c0215b768cbbf309e9f6a9de93dc5e6c.jpg)
+
+<details>
+<summary>bar</summary>
+
+| Month    | Very likely | Somewhat likely | Not sure yet | Somewhat unlikely | Very unlikely |
+|----------|-------------|-----------------|--------------|--------------------|---------------|
+| Aug'18   | 60%         | 20%             | 13%          | 3%                 | 5%            |
+| Aug'19   | 57%         | 19%             | 13%          | 5%                 | 5%            |
+| July'20  | 33%         | 24%             | 30%          | 5%                 | 7%            |
+| Mar'21   | 46%         | 24%             | 20%          | 4%                 | 5%            |
+| Mar'22   | 61%         | 21%             | 11%          | 3%                 | 4%            |
+| Mar'23   | 61%         | 19%             | 11%          | 3%                 | 4%            |
+| Mar'24   | 61%         | 21%             | 11%          | 3%                 | 4%            |
+| Mar'25   | 61.9%       | 21.3%           | 10%          | 3%                 | 4%            |
+| Mar'26   | 62.1%       | 20.7%           | 11%          | 3%                 | 4%            |
+</details>
+
+Source: UBS Evidence Lab (> Access Dataset)
+
+Figure 2: Likelihood of leisure travel in the next 12 months - US Passengers   
+![](images/ef844e6081aa9ba70bb9ee1e665ffe367eb03e9b4ec453564063eb4a7bc7a965.jpg)
+
+<details>
+<summary>line</summary>
+
+| Month    | NET: Likely | NET: Unlikely |
+| -------- | ----------- | ------------- |
+| Aug'18   | 78%         | 8%            |
+| Aug'19   | 75%         | 10%           |
+| July'20  | 55%         | 12%           |
+| Mar'21   | 70%         | 8%            |
+| Mar'22   | 80%         | 6%            |
+| Mar'23   | 82%         | 5%            |
+| Mar'24   | 82%         | 5%            |
+| Mar'25   | 83.1%       | 6.6%          |
+| Mar'26   | 82.8%       | 6.3%          |
+</details>
+
+Source: UBS Evidence Lab (> Access Dataset)
+
+Further, the survey results showed that likelihood for business travel has moderated year-over-year, but remains above 2024 survey levels. Specifically, the likelihood of business travel in the next 12 months among US based respondents decreased to 32.6% in March '26, down from 35% in March'25, but up from 31.7% in Mar'24. We also note respondents that are very likely to take a business trip in the next 12 months decreased to 19.8%, down -140 bps YoY. Still, it was up 30 bps vs. March'24.
+
+Figure 3: Likelihood of business travel in the next 12 months - US Passengers   
+![](images/721dae8b5341731772f2676db6734dbe536b4e8c4fb689e3e4ef862f6c242dbc.jpg)
+
+<details>
+<summary>bar</summary>
+
+| Month   | Very likely | Somewhat likely | Not sure yet | Somewhat unlikely | Very unlikely |
+|---------|-------------|-----------------|--------------|--------------------|---------------|
+| Aug'18  | 19%         | 12%             | 14%          | 8%                 | 46%           |
+| Aug'19  | 19%         | 11%             | 15%          | 8%                 | 46%           |
+| July'20 | 14%         | 13%             | 17%          | 8%                 | 46%           |
+| Mar'21  | 19%         | 16%             | 13%          | 7%                 | 43%           |
+| Mar'22  | 23%         | 17%             | 11%          | 6%                 | 41%           |
+| Mar'23  | 24%         | 15%             | 9%           | 7%                 | 43%           |
+| Mar'24  | 19%         | 12%             | 12%          | 8%                 | 47%           |
+| Mar'25  | 21.2%       | 13%             | 12%          | 7%                 | 45.3%         |
+| Mar'26  | 19.8%       | 13%             | 13%          | 8%                 | 45.0%         |
+</details>
+
+Source: UBS Evidence Lab (> Access Dataset)
+
+Figure 4: Likelihood of business travel in the next 12 months - US Passengers   
+![](images/044274c10945fd0a999390bb12aa90cb4c689187b01ec9594d615340aaa3cf25.jpg)
+
+<details>
+<summary>line</summary>
+
+| Month    | NET: Likely | NET: Unlikely |
+| -------- | ----------- | ------------- |
+| Aug'18   | 31.7%       | 55.8%         |
+| Aug'19   | 30.0%       | 54.0%         |
+| July'20  | 27.0%       | 54.0%         |
+| Mar'21   | 35.0%       | 50.0%         |
+| Mar'22   | 41.0%       | 47.0%         |
+| Mar'23   | 39.0%       | 51.0%         |
+| Mar'24   | 31.7%       | 55.8%         |
+| Mar'25   | 35.0%       | 52.7%         |
+| Mar'26   | 32.6%       | 53.4%         |
+</details>
+
+Source: UBS Evidence Lab (> Access Dataset)
+
+Spending intentions - With respect to spending intentions on leisure travel in the next 12 months, there were mixed results from the survey. Notably, 4% of respondents highlighted plans to increase leisure travel spend by more than 40%. This compares to 5% citing plans to increase leisure travel spend by more than 40% in Mar '25. Around 22% of respondents plans to increase leisure spending by up to 10% (vs. 21% in March'25 and 17% in March'24). These increases was partially offset by those noting an 11% to 40% increase (22% in Mar '26 vs. 23% in Mar '25). We believe such results may be interpreted by a partial shift of respondents from up 11% to 40% group to the cohort to those who are planning to increase spending by up to 10%.
+
+Figure 5: Expected Increase/decrease in spending on leisure travel - US Passengers   
+![](images/760584cdb21104a26eed3073b216d87ca8897d1f5cf54ba72ee2072bfc1f4ae6.jpg)
+
+<details>
+<summary>bar</summary>
+
+| Category | Mar'23 | Mar'24 | Mar'25 | Mar'26 |
+| -------- | ------ | ------ | ------ | ------ |
+| Decrease by more than -40% | 5% | 2% | 3% | 3% |
+| Decrease by -11% to -40% | 9% | 6% | 6% | 6% |
+| Decrease by upto -10% | 2% | 3% | 5% | 4% |
+| No Change | 26% | 30% | 28% | 29% |
+| Increase by Up to 10% | 13% | 17% | 21% | 22% |
+| Increase by 11% to 40% | 26% | 26% | 23% | 22% |
+| Increase by more than 40% | 7% | 4% | 5% | 4% |
+| Will Spend Nothing | 11% | 12% | 10% | 11% |
+</details>
+
+Source: UBS Evidence Lab (> Access Dataset)
+
+Further, the UBS Evidence Lab survey shows positive trend in the rate of increase in spending among those expecting to take a business trip in the next 12 months. The group planning 11% to 40% spending increase has grown to 17% in March'26 (from 16% in March'25). Plus, 27% of respondents are planning to spend nothing in next 12 months, down from 30% in March'25 and 37% in March'24. However, those noting >40% spending increase are now at 3% (vs. 5% in March'25).
+
+Figure 6: Expected increase/decrease in spending on business air travel - US Passengers   
+![](images/2c7fa07a24a1c708c145ecd541dc6f3bb147058779f281d84eefba0c2fc45858.jpg)
+
+<details>
+<summary>bar</summary>
+
+| Intentions to Spend on Business Travel | March'23 (%) | March'24 (%) | March'25 (%) | March'26 (%) |
+|---|---|---|---|---|
+| Decrease by more than -40% | 3 | 3 | 3 | 2 |
+| Decrease by -11% to -40% | 5 | 5 | 5 | 6 |
+| Decrease by up to -10% | 2 | 2 | 4 | 5 |
+| No Change | 16 | 19 | 24 | 25 |
+| Increase by Up to 10% | 8 | 13 | 13 | 16 |
+| Increase by 11% to 40% | 18 | 17 | 16 | 17 |
+| Increase by more than 40% | 3 | 4 | 5 | 3 |
+| Will Spend Nothing | 45 | 37 | 30 | 27 |
+Intentions to spend on business travel is positive. Only 27% of US respondents expect to spend nothing (vs. 30% in Mar'25 and 37% in Mar'24).
+</details>
+
+Source: UBS Evidence Lab (> Access Dataset)
+
+Number of flights consumers are planning to take - We also used the results of the survey to showcase how many flights consumers were planning to take in both leisure and business category. As can be seen in figure below, the group of respondents intending to take 1 or 2 leisure related flights declined, but those intending to take 3-6 flights over the next 12 months increased. Last year, around \~47% planned on taking 1-2 flights while in this year, the number moderated to 46%. Importantly, the percentage of respondents expecting to take 3-6 flights increased from 33% to 35%. Those planning on 7-10 flights, and 10+ flights decreased by -60 bps and -130 bps respectively.
+
+When looking at number of business related flights, we notice a mix of respondents which are going to take 1 or 2 flights in next 12 months - with respondents in the 1 category seeing a 70 bps increase from March'25 to 10.4% in March'26 and those in the latter category see a 170 bps decrease YoY . There was a decrease in those planning on taking 3-6 flights and 7-10 flights additionally, but an increase among those with intentions to take 11+ flights for business purposes in the next 12 months.
+
+Figure 7: Number of flights intending to take in next 12 months (Leisure) - US Passengers   
+![](images/2b07b3df2e0d0509c6e1b0681fb5367906df1df8a98efc8e91846b67389b2995.jpg)
+
+<details>
+<summary>bar</summary>
+
+| Category   | March'24 | March'25 | March'26 |
+| ---------- | -------- | -------- | -------- |
+| 1          | 12%      | 10%      | 10%      |
+| 2          | 39%      | 37%      | 36%      |
+| 3 to 6     | 29%      | 33%      | 35%      |
+| 7 to 10    | 6%       | 7%       | 6%       |
+| 11+        | 2%       | 4%       | 2%       |
+| Don't know | 11%      | 10%      | 10%      |
+</details>
+
+Source: UBS Evidence Lab (> Access Dataset)
+
+Figure 8: Number of flights intending to take in next 12 months (Business) - US Passengers   
+![](images/a0c0eb318ca71e8ce0cc2ed5dcf4dfa7ecf3f4d2e77166f5bf29299f51020dd6.jpg)
+
+<details>
+<summary>bar</summary>
+
+| Category   | March'24 | March'25 | March'26 |
+| ---------- | -------- | -------- | -------- |
+| 1          | 9%       | 10%      | 10%      |
+| 2          | 34%      | 38%      | 36%      |
+| 3 to 6     | 29%      | 24%      | 23%      |
+| 7 to 10    | 7%       | 10%      | 6%       |
+| 11+        | 5%       | 6%       | 8%       |
+| Don't know | 17%      | 13%      | 16%      |
+</details>
+
+Source: UBS Evidence Lab (> Access Dataset)
+
+Factors Influencing decision on purchasing flight tickets - In the survey, we also asked US respondents about factors influencing their decision when buying a flight ticket for leisure purposes. Around 77% of respondents answered that price is the important factor. Unsurprisingly, destination (55%) and airline brand (49%) were also significantly important elements. When looking at other factors included in Figure 9 below, cabin cleanliness saw a positive bump between March'25 (19%) to March'26 (\~21%). Several other factors saw slight declines from the same time a year ago. Interestingly, safety ratings significance saw decline from 36% to 33% in the same time.
+
+Figure 9: Factors important in influencing decision when buying a flight ticket for leisure purposes - US Passengers   
+![](images/552bec75e932b06af9800e0b4e227ad52e508ed7176559a1be6d106021c3dbf7.jpg)
+
+<details>
+<summary>bar</summary>
+
+| Factor | March '23 | March '24 | March '25 | March '26 |
+| --- | --- | --- | --- | --- |
+| Price | 68.0% | 75.0% | 77.0% | 77.0% |
+| Safety ratings | 28.0% | 35.0% | 35.0% | 33.1% |
+| Cabin cleanliness | 22.0% | 22.0% | 18.0% | 20.6% |
+| Airline brand | 43.0% | 49.0% | 50.0% | 49.4% |
+| Destination | 50.0% | 55.0% | 55.0% | 54.6% |
+| Frequency of flights | 29.0% | 27.0% | 28.0% | 27.9% |
+| Seat class (e.g. economy, business class etc.) | 26.0% | 34.0% | 35.0% | 35.0% |
+| Quality of in-flight food | 18.0% | 17.0% | 19.0% | 19.2% |
+</details>
+
+Source: UBS Evidence Lab (> Access Dataset)
+
+UBS Evidence Lab results also shows which factors are important for US passengers when they buy ticket for business travel. Unsurprisingly, price of the ticket remains the key aspect, with \~57% of those highlighting this as a main factor in March'26 marking a 200 bps increase from March '25. Airline brand importance turned downward from
+
+46% in March '25 to 44.2% in March '26. Similar to leisure travel respondents, safety ratings significance saw decline from 39% to 33% in the same time, a 570 bps decrease
+
+Figure 10: Factors important in influencing decision when buying a flight ticket for business purposes - US Passengers   
+![](images/1b1861c2217b44cf541b2d21189841c407e501fcbc74ccaf98bb4ab6032bdb30.jpg)
+
+<details>
+<summary>bar</summary>
+
+| Factor | March'23 (%) | March'24 (%) | March'25 (%) | March'26 (%) |
+|---|---|---|---|---|
+| Price | 47 | 54.1 | 53.8 | 56.5 |
+| Safety ratings | 31 | 36.6 | 33.2 | 33.2 |
+| Cabin cleanliness | 20 | 25.0 | 23.5 | 24.5 |
+| Airline brand | 36 | 42.7 | 44.2 | 44.2 |
+| Destination | 39 | 46.9 | 45.0 | 45.0 |
+| Frequency of flights | 29 | 31.5 | 32.5 | 33.7 |
+| Seat class (e.g. economy, business class etc.) | 24 | 31.5 | 32.0 | 32.0 |
+| Quality of in-flight food | 27 | 25.3 | 27.0 | 27.0 |
+The survey shows price, safety, airline brand and destination are the most important for US business travellers (comparing Mar'24 vs. Mar'26). The data is presented as a grouped bar chart with error bars indicating variability.
+</details>
+
+Source: UBS Evidence Lab (> Access Dataset)
+
+Region of intended travel - In Figures 11 & 12 we show which regions gained popularity among US passengers. After North America, Europe was the most sought after destination among US travelers. The intention of leisure travel to Europe has increased by \~10%, from 32.4% in March'24 to 41.9% in March'25. We also note it is up \~16% from 2019 level of 26.2% (pre-pandemic level). Business related trips to Europe has also become more popular, at around 44% in May'26 vs. \~45% in March'25, but up meaningfully compared to 35% from Mar'24.
+
+Figure 11: Region of Intended Leisure Travel - US passengers (Next 12 months)   
+![](images/41e45ad40bfee7a0885d9fc27818e06bb50e76fd9fe7cdc086111af36b811eea.jpg)
+
+<details>
+<summary>bar</summary>
+
+| Month   | North America | Caribbean | Asia  | Europe | Don't Know |
+|---------|---------------|-----------|-------|--------|------------|
+| Aug'18  | 67%           | 23%       | 12%   | 29%    | 5%         |
+| Aug'19  | 61%           | 22%       | 10%   | 26%    | 6%         |
+| July'20 | 54%           | 17%       | 9%    | 23%    | 10%        |
+| Mar'21  | 51%           | 16%       | 9%    | 38%    | 8%         |
+| Mar'22  | 54%           | 18%       | 7%    | 38%    | 7%         |
+| Mar'23  | 57%           | 16%       | 8%    | 41%    | 6%         |
+| Mar'24  | 59%           | 20%       | 9%    | 32%    | 7%         |
+| Mar'25  | 60%           | 19%       | 10%   | 41.9%  | 6%         |
+| Mar'26  | 59%           | 23%       | 11%   | 36.0%  | 5%         |
+</details>
+
+Source: UBS Evidence Lab (> Access Dataset)
+
+Figure 12: Region of Intended Business Travel - US passengers (Next 12 months)   
+![](images/11ac5c4ce07369ff8c5181eaf4022e459657b4e22789d64c0cfddff286a61082.jpg)
+
+<details>
+<summary>bar</summary>
+
+| Month     | North America | Caribbean | Asia  | Europe | Don't Know |
+|-----------|---------------|-----------|-------|--------|------------|
+| August'18 | 68%           | 10%       | 14%   | 25%    | 5%         |
+| August'19 | 62%           | 8%        | 13%   | 27%    | 5%         |
+| July'20   | 55%           | 10%       | 14%   | 27%    | 7%         |
+| March'21  | 48%           | 9%        | 11%   | 52%    | 6%         |
+| March'22  | 45%           | 8%        | 8%    | 50%    | 7%         |
+| March'23  | 61%           | 9%        | 7%    | 43%    | 6%         |
+| March'24  | 60%           | 7%        | 8%    | 35.2%  | 7%         |
+| March'25  | 62%           | 8%        | 10%   | 44.8%  | 5%         |
+| March'26  | 60%           | 9%        | 13%   | 43.8%  | 3%         |
+</details>
+
+Source: UBS Evidence Lab (> Access Dataset)
+
+Intentions to travel on DAL, UAL, AAL, and LUV - UBS Evidence Lab survey results showed that travel intentions is largely leveling off for the large US carriers. Specifically, in March'26, there was a moderation in those citing plans to travel more with DAL, UAL, AAL, and LUV in the next 12 months. This was compensated by an increase in those citing plans to travel about the same with each of the airlines.
+
+Figure 13: YoY Change in leisure travel intentions for the next 12 months - UAL   
+![](images/daf6a0ab8428d5209c42f08b7ae615fc8f5aa5d70e73d36dba4f356b69537e74.jpg)
+
+<details>
+<summary>bar</summary>
+
+| Response Category | March'24 | March'25 | March'26 |
+| ----------------- | -------- | -------- | -------- |
+| Much more often   | 14%      | 15%      | 10%      |
+| Slightly more often | 16%      | 14%      | 12%      |
+| About the same amount | 43%     | 45%      | 50%      |
+| Slightly less often | 6%       | 5%       | 6%       |
+| Much less often   | 9%       | 8%       | 8%       |
+| Don't know        | 12%      | 13%      | 14%      |
+</details>
+
+Source: UBS Evidence Lab (> Access Dataset)
+
+Figure 14: YoY Change in leisure travel intentions for the next 12 months - DAL   
+![](images/3f05b279b72096166ccf7e48a6b653354ea190cc4e397fdb0ef0062a53cad74c.jpg)
+
+<details>
+<summary>bar</summary>
+
+| Response Category | March '24 | March '25 | March '26 |
+| ----------------- | --------- | --------- | --------- |
+| Much more often   | 14%       | 13%       | 11%       |
+| Slightly more often | 18%       | 17%       | 16%       |
+| About the same amount | 42%      | 41%       | 45%       |
+| Slightly less often | 7%        | 7%        | 7%        |
+| Much less often    | 7%        | 9%        | 8%        |
+| Don't know        | 11%       | 13%       | 13%       |
+</details>
+
+Source: UBS Evidence Lab (> Access Dataset)
+
+Figure 15: YoY Change in leisure travel intentions for the next 12 months - AAL   
+![](images/52777ce7946e47f1d6cefc22b732ccfa1a14c7a5d0aafaeb93a2b964481789c0.jpg)
+
+<details>
+<summary>bar</summary>
+
+| Response Category | March '24 | March '25 | March '26 |
+| ----------------- | --------- | --------- | --------- |
+| Much more often   | 15%       | 14%       | 10%       |
+| Slightly more often | 16%       | 17%       | 16%       |
+| About the same amount | 43%     | 42%       | 46%       |
+| Slightly less often | 7%      | 6%        | 7%        |
+| Much less often    | 8%        | 9%        | 8%        |
+| Don't know        | 11%       | 12%       | 14%       |
+</details>
+
+Source: UBS Evidence Lab (> Access Dataset)
+
+Figure 16: YoY Change in leisure travel intentions for the next 12 months - LUV   
+![](images/82d03732947406baa2aef5b52cd838b540e7c430803d86ffadd4df7790639b43.jpg)
+
+<details>
+<summary>bar</summary>
+
+| Response Category       | March'24 | March'25 | March'26 |
+| ----------------------- | -------- | -------- | -------- |
+| Much more often         | 14%      | 11%      | 8%       |
+| Slightly more often     | 19%      | 17%      | 16%      |
+| About the same amount   | 38%      | 39%      | 43%      |
+| Slightly less often     | 8%       | 9%       | 9%       |
+| Much less often         | 10%      | 11%      | 10%      |
+| Don't know              | 12%      | 14%      | 14%      |
+</details>
+
+Source: UBS Evidence Lab (> Access Dataset)
+
+Around 12% of US respondents cited use of AI assistants for travel booking. Further, from the total base of US respondents to our survey, around 44% of them said they trust these AI tools (Grok, Open AI, Gemini etc.) a fair amount. Another 17% said, they trust these tools a great deal. Separately, 31% said, they do not trust these tools at all or do not trust them very much.
+
+Figure 17: US Respondents - How much do you trust the AI Tools to find the best travel option?   
+Trust of A.I. Assistants for Trip Planning- US respondents   
+![](images/6279c35bbf6078c45e9f95df85a448f9576526edd127c28caeafb2b093878cf6.jpg)
+
+<details>
+<summary>bar</summary>
+
+| Category | Percentage (%) |
+| :--- | :--- |
+| Do not trust at all | 15 |
+| Do not trust very much | 16 |
+| Trust a fair amount | 44 |
+| Trust a great deal | 17 |
+| Don't know | 9 |
+</details>
+
+Source: UBS Evidence Lab (> Access Dataset)
+
+Figure 18: US Respondents - Areas AI will have a Positive Impact?   
+Area's AI will have a Postive Impact on - US respondents   
+![](images/1cd7b8c2449cb0f87e128a2a1722dd93578edbd077fa9d74be0ea1e3762e745e.jpg)
+
+<details>
+<summary>bar</summary>
+
+| Category | March '24 (%) | March '25 (%) | March '26 (%) |
+| :--- | :--- | :--- | :--- |
+| Marketing Materials | 30 | 32 | 19 |
+| Customer Service | 37 | 34 | 27 |
+| Prices | 42 | 41 | 40 |
+| Customer Experience | 31 | 33 | 27 |
+| Holiday Discovery / Inspiration | - | - | 21 |
+| Easier booking experience | - | - | 39 |
+| None of these | 24 | - | 24 |
+</details>
+
+Source: UBS Evidence Lab (> Access Dataset)
+
+\*UBS Evidence Lab is a sell-side team of experts that work across numerous specialized labs creating insight-ready datasets. The experts turn data into evidence by applying a combination of tools and techniques to harvest, cleanse, and connect billions of data items each month. Since 2014, UBS analysts have utilized the expertise of UBS Evidence Lab for insight-ready datasets on companies, sectors, and themes, resulting in the production of thousands of differentiated UBS reports. UBS Evidence Lab does not provide investment recommendations or advice but provides insight-ready datasets for further analysis by UBS and by clients. All published UBS Evidence Lab content is available via UBS Neo. The amount and type of content available may vary. Please contact your UBS sales representative if you wish to discuss access.
+
+# Valuation Method and Risk Statement
+
+Airlines are highly dependent on consumer leisure and business travel spending both of which provide minimum visibility. Exogenous events can have a significant impact on airlines and their operating viability. Taken with fuel price volatility, high labor costs and large capital expenditures, the company's earnings and cash flow can swing wildly. Additionally, competitive dynamics can also weigh on profitability as airlines looks to fend off existing competitors as well as newcomers which often bring some form of new competitive operating model (LCCs initially and now ULCCs). Valuation methods in the sector include P/E and EV/EBITDAR analysis.
+
+Alaska Air Group Inc:
+
+Valuation: We use a P/E multiple to determine our price target for ALK. Our price target is based on multiples analysis. We take into account where the stock is currently trading at vs. its historical average as well as relative to peers.
+
+Risk statement: Airlines are highly dependent on consumer leisure and business travel spending both of which provide minimum visibility. Taken with fuel price volatility, high labor costs and large capital expenditures, the company's earnings and cash flow can swing meaningfully. Additionally, competitive dynamics can also weigh on profitability as airlines looks to fend off existing competitors as well as new comers which often bring some form of new competitive operating model (LCCs initially and now ULCCs). Although, airlines are generally better positioned today vs. history given the consolidated nature of the industry and there is potential for the sector to benefit from a more diversified revenue base, the above factors are key risks that one should be mindful of before investing in the space.
+
+Risks specific to ALK broadly relate to a potential macro slowdown, especially in the West Coast and Hawaii (where it has disproportionate exposure to) and also from a slowdown in consumer propensity to trade up to its premium offering. In addition, ALK also has integration related risks due to its recent acquisition of Hawaiian Airlines.
+
+American Airlines Group:
+
+Valuation: We use an P/E multiple to determine our price target for AAL. Our price target is based on multiples analysis. We take into account where the stock is currently trading at vs. its historical average as well as relative to peers.
+
+Risk statement: Airlines are highly dependent on consumer leisure and business travel spending both of which provide minimum visibility. Taken with fuel price volatility, high labor costs and large capital expenditures, the company's earnings and cash flow can swing meaningfully. Additionally, competitive dynamics can also weigh on profitability as airlines looks to fend off existing competitors as well as new comers which often bring some form of new competitive operating model (LCCs initially and now ULCCs). Although, airlines are generally better positioned today vs. history given the consolidated nature of the industry and there is potential for the sector to benefit from a more diversified revenue base, the above factors are key risks that one should be mindful of before investing in the space.
+
+Risks specific to AAL relate to execution and ability to regain lost ground in corporate. Plus, there are also risks related to a potential macro slowdown and spike in oil prices.
+
+Delta Air Lines Inc:
+
+Valuation: We use a P/E multiple to determine our price target for DAL. Our price target is based on multiples analysis. We take into account where the stock is currently trading at vs. its historical average as well as relative to peers.
+
+Risk statement: Airlines are highly dependent on consumer leisure and business travel spending both of which provide minimum visibility. Taken with fuel price volatility, high labor costs and large capital expenditures, the company's earnings and cash flow can swing meaningfully. Additionally, competitive dynamics can also weigh on profitability as airlines looks to fend off existing competitors as well as new comers which often bring some form of new competitive operating model (LCCs initially and now ULCCs). Although, airlines are generally better positioned today vs. history given the consolidated nature of the industry and there is potential for the sector to benefit from a more diversified revenue base, the above factors are key risks that one should be mindful of before investing in the space.
+
+Risks specific to DAL broadly relate to a potential macro slowdown and also from a slowdown in consumer propensity to trade up to its premium offering.
+
+Southwest Airlines:
+
+Valuation: We use an P/E multiple to determine our price target for LUV. Our price target is based on multiples analysis. We take into account where the stock is currently trading at vs. its historical average as well as relative to peers.
+
+Risk statement: Airlines are highly dependent on consumer leisure and business travel spending both of which provide minimum visibility. Taken with fuel price volatility, high labor costs and large capital expenditures, the company's earnings and cash flow can swing meaningfully. Additionally, competitive dynamics can also weigh on profitability as airlines looks to fend off existing competitors as well as new comers which often bring some form of new competitive operating model (LCCs initially and now ULCCs). Although, airlines are generally better positioned today vs. history given the consolidated nature of the industry and there is potential for the sector to benefit from a more diversified revenue base, the above factors are key risks that one should be mindful of before investing in the space.
+
+Upside Risks to our Sell call on LUV could come from a further slowdown in industry capacity, strong customer acceptance of its new offerings, strong execution as well as a moderation in jet fuel prices
+
+United Airlines Holdings Inc:
+
+Valuation: We use an P/E multiple to determine our price target for UAL. Our price target is based on multiples analysis. We take into account where the stock is currently trading at vs. its historical average as well as relative to peers.
+
+Risk statement: Airlines are highly dependent on consumer leisure and business travel spending both of which provide minimum visibility. Taken with fuel price volatility, high labor costs and large capital expenditures, the company's earnings and cash flow can swing meaningfully. Additionally, competitive dynamics can also weigh on profitability as airlines looks to fend off existing competitors as well as new comers which often bring some form of new competitive operating model (LCCs initially and now ULCCs). Although, airlines are generally better positioned today vs. history given the consolidated nature of the industry and there is potential for the sector to benefit from a more diversified revenue base, the above factors are key risks that one should be mindful of before investing in the space.
+
+Risks specific to UAL broadly relate to a potential macro slowdown and also form a slowdown in consumer propensity to trade up to its premium offering.
+
+# Required Disclosures
+
+This document has been prepared by UBS LLC, an affiliate of UBS AG. UBS AG, its subsidiaries, branches and affiliates, including former CS AG and its subsidiaries, branches and affiliates are referred to herein as "UBS".
+
+For information on the ways in which UBS manages conflicts and maintains independence of its UBS Global Research product; historical performance information; certain additional disclosures concerning UBS Global Research recommendations; and terms and conditions for certain third party data used in research report, please visit https://www.ubs.com/disclosures. Unless otherwise indicated, information and data in this report are based on company disclosures including but not limited to annual, interim, quarterly reports and other company announcements. The figures contained in performance charts refer to the past; past performance is not a reliable indicator of future results. Additional information will be made available upon request. UBS Co. Limited is licensed to conduct securities investment consultancy businesses by the China Securities Regulatory Commission. UBS acts or may act as principal in the debt securities (or in related derivatives) that may be the subject of this report. This recommendation was finalized on: 19 May 2026 01:17 AM GMT. UBS has designated certain UBS Global Research department members as Derivatives Research Analysts where those department members publish research principally on the analysis of the price or market for a derivative, and provide information reasonably sufficient upon which to base a decision to enter into a derivatives transaction. Where Derivatives Research Analysts co-author research reports with Equity Research Analysts or Economists, the Derivatives Research Analyst is responsible for the derivatives investment views, forecasts, and/or recommendations. Quantitative Research Review: UBS Global Research publishes a quantitative assessment of its analysts' responses to certain questions about the likelihood of an occurrence of a number of short term factors in a product known as the 'Quantitative Research Review'. Views contained in this assessment on a particular stock reflect only the views on those short term factors which are a different timeframe to the 12-month timeframe reflected in any equity rating set out in this note. For the latest responses, please see the Quantitative Research Review Addendum at the back of this report, where applicable. For previous responses please make reference to (i) previous UBS Global Research reports; and (ii) where no applicable research report was published that month, the Quantitative Research Review which can be found at https://neo.ubs.com/quantitative, or contact your UBS sales representative for access to the report or the Quantitative Research Team on ubs-quant-answers@ubs.com. A consolidated report which contains all responses is also available and again you should contact your UBS sales representative for details and pricing or the Quantitative Research team on the email above.
+
+# Analyst Certification:
+
+Each research analyst primarily responsible for the content of this research report, in whole or in part, certifies that with respect to each security or issuer that the analyst covered in this report: (1) all of the views expressed accurately reflect his or her personal views about those securities or issuers and were prepared in an independent manner, including with respect to UBS, and (2) no part of his or her compensation was, is, or will be, directly or indirectly, related to the specific recommendations or views expressed by that research analyst in the research report.
+
+UBS Global Research: Global Equity Rating Definitions 
+
+<table><tr><td>12-Month Rating</td><td>Definition</td><td>Coverage $^{1}$ </td><td>IB Services $^{2}$ </td></tr><tr><td>Buy</td><td>FSR is &gt; 6% above the MRA.</td><td>54%</td><td>24%</td></tr><tr><td>Neutral</td><td>FSR is between -6% and 6% of the MRA.</td><td>40%</td><td>21%</td></tr><tr><td>Sell</td><td>FSR is &gt; 6% below the MRA.</td><td>6%</td><td>21%</td></tr></table>
+
+Source: UBS. Rating allocations are as of 31 March 2026.   
+1: Percentage of companies under coverage globally within the 12-month rating category.   
+2: Percentage of companies within the 12-month rating category for which investment banking (IB) services were provided within the past 12 months.
+
+KEY DEFINITIONS: Forecast Stock Return (FSR) is defined as expected percentage price appreciation plus gross dividend yield over the next 12 months. In some cases, this yield may be based on accrued dividends. Market Return Assumption (MRA) is defined as the one-year local market interest rate plus 5% (a proxy for, and not a forecast of, the equity risk premium). Under Review (UR) Stocks may be flagged as UR by the analyst, indicating that the stock's price target and/or rating are subject to possible change in the near term, usually in response to an event that may affect the investment case or valuation. Equity Price Targets have an investment horizon of 12 months.
+
+EXCEPTIONS AND SPECIAL CASES:UK and European Investment Fund ratings and definitions are: Buy: Positive on factors such as structure, management, performance record, discount; Neutral: Neutral on factors such as structure, management, performance record, discount; Sell: Negative on factors such as structure, management, performance record, discount. Core Banding Exceptions (CBE): Exceptions to the standard +/-6% bands may be granted by the Investment Review Consultation (IRC). Factors considered by the IRC include the stock's volatility and the credit spread of the respective company's debt. As a result, stocks deemed to be very high or low risk may be subject to higher or lower bands as they relate to the rating. When such exceptions apply, they will be identified in the Company Disclosures table in the relevant research piece.
+
+Research analysts contributing to this report who are employed by any non-US affiliate of UBS LLC are not registered/qualified as research analysts with FINRA. Such analysts may not be associated persons of UBS LLC and therefore are not subject to the FINRA restrictions on communications with a subject company, public appearances, and trading securities held by a research analyst account. The name of each affiliate and analyst employed by that affiliate contributing to this report, if any, follows.
+
+UBS AG London Branch: Jarrod Castle, CFA. UBS LLC: Atul Maheswari, Thomas Wadewitz.
+
+Company Disclosures 
+
+<table><tr><td>Company Name</td><td>Reuters</td><td>12-month rating</td><td>Price</td><td>Price date</td></tr><tr><td>Alaska Air Group Inc $^{16,28,20}$ </td><td>ALK.N</td><td>Buy (CBE)</td><td>US$37.36</td><td>18 May 2026</td></tr><tr><td>American Airlines Group $^{16,28,20}$ </td><td>AAL.O</td><td>Buy (CBE)</td><td>US$12.36</td><td>18 May 2026</td></tr><tr><td>Delta Air Lines Inc $^{16,7,20}$ </td><td>DAL.N</td><td>Buy (CBE)</td><td>US$70.24</td><td>18 May 2026</td></tr><tr><td>Southwest Airlines $^{13,16,28,20}$ </td><td>LUV.N</td><td>Buy (CBE)</td><td>US$38.36</td><td>18 May 2026</td></tr><tr><td>United Airlines Holdings Inc $^{16,28,20}$ </td><td>UAL.O</td><td>Buy (CBE)</td><td>US$92.55</td><td>18 May 2026</td></tr></table>
+
+Source: UBS Global Research; LSEG Eikon. All prices as of local market close. Ratings in this table are the most current published ratings prior to this report. They may be more recent than the stock pricing date.   
+7. Within the past 12 months, UBS has received compensation for products and services other than investment banking services from this company/entity.   
+13. UBS beneficially owned 1% or more of a class of this company's common equity securities as of last month's end (or the prior month's end if this report is dated less than 10 days after the most recent month's end).   
+16. UBS LLC makes a market in the securities and/or ADRs of this company.   
+20. Because this security exhibits higher-than-average volatility, the FSR has been set at 15% above the MRA for a Buy rating, and at -15% below the MRA for a Sell rating (compared with 6/-6% under the normal rating system).   
+28. UBS holds a long or short position of 0.5% or more of the listed shares of this company.
+
+Unless otherwise indicated, please refer to the Valuation and Risk sections within the body of this report. For a complete set of disclosure statements associated with the companies discussed in this report, including information on valuation and risk, please contact UBS LLC, 11 Madison Avenue, New York, NY 10010, USA, Attention: Investment Research.
+
+Alaska Air Group Inc (US\$)   
+![](images/d567ef8edcce83906793f018c105732d83f5b4c6431c2ac1cf763de5b1f0058f.jpg)
+
+<details>
+<summary>line</summary>
+
+| Date       | Stock Price (US$) | Price Target (US$) |
+|------------|-------------------|--------------------|
+| 01-Feb-23  | ~40               | -                  |
+| 01-Apr-23  | ~38               | -                  |
+| 01-Jun-23  | ~42               | -                  |
+| 01-Aug-23  | ~45               | -                  |
+| 01-Oct-23  | ~35               | -                  |
+| 01-Dec-23  | ~36               | -                  |
+| 01-Feb-24  | ~37               | -                  |
+| 01-Apr-24  | ~38               | -                  |
+| 01-Jun-24  | ~37               | -                  |
+| 01-Aug-24  | ~36               | -                  |
+| 01-Oct-24  | ~38               | -                  |
+| 01-Dec-24  | ~45               | ~72                |
+| 01-Feb-25  | ~72               | ~90                |
+| 01-Apr-25  | ~45               | ~54                |
+| 01-Jun-25  | ~40               | ~54                |
+| 01-Aug-25  | ~50               | ~54                |
+| 01-Oct-25  | ~55               | ~90                |
+| 01-Dec-25  | ~45               | ~88                |
+| 01-Feb-26  | ~55               | ~80                |
+| 01-Apr-26  | ~36               | ~54                |
+</details>
+
+Source: UBS Global Research; LSEG Eikon as of 18-May-2026. All prices as of local market close. Ratings as of date shown. 
+
+<table><tr><td>Date</td><td>Stock Price (US$)</td><td>Price Target (US$)</td><td>Rating</td></tr><tr><td>2023-02-17</td><td>49.09</td><td>-</td><td>No Rating</td></tr><tr><td>2024-11-25</td><td>53.44</td><td>72.00</td><td>Buy</td></tr><tr><td>2024-12-10</td><td>61.29</td><td>81.00</td><td>Buy</td></tr><tr><td>2025-01-06</td><td>64.40</td><td>82.00</td><td>Buy</td></tr><tr><td>2025-01-23</td><td>68.85</td><td>87.00</td><td>Buy</td></tr><tr><td>2025-03-19</td><td>54.12</td><td>75.00</td><td>Buy</td></tr><tr><td>2025-04-07</td><td>43.87</td><td>54.00</td><td>Neutral</td></tr><tr><td>2025-04-24</td><td>41.51</td><td>49.00</td><td>Neutral</td></tr><tr><td>2025-07-24</td><td>50.83</td><td>56.00</td><td>Neutral</td></tr><tr><td>2025-09-12</td><td>63.37</td><td>90.00</td><td>Buy</td></tr><tr><td>2025-10-26</td><td>43.77</td><td>83.00</td><td>Buy</td></tr><tr><td>2025-12-11</td><td>52.55</td><td>77.00</td><td>Buy</td></tr><tr><td>2026-03-15</td><td>38.00</td><td>60.00</td><td>Buy</td></tr><tr><td>2026-03-23</td><td>38.63</td><td>53.00</td><td>Buy</td></tr><tr><td>2026-04-14</td><td>42.62</td><td>54.00</td><td>Buy</td></tr></table>
+
+American Airlines Group (US\$)   
+![](images/b0d5906adb9b8824ed4615c03a1f31692a51e6df2a3a6f622a4051a0ef0aac18.jpg)
+
+<details>
+<summary>line</summary>
+
+| Date       | Stock Price (US$) | Price Target (US$) |
+|------------|-------------------|--------------------|
+| 01-Feb-23  | ~17               | -                  |
+| 01-Apr-23  | ~14               | -                  |
+| 01-Jun-23  | ~18               | -                  |
+| 01-Aug-23  | ~16               | -                  |
+| 01-Oct-23  | ~12               | -                  |
+| 01-Dec-23  | ~14               | -                  |
+| 01-Feb-24  | ~16               | -                  |
+| 01-Apr-24  | ~14               | -                  |
+| 01-Jun-24  | ~12               | -                  |
+| 01-Aug-24  | ~10               | -                  |
+| 01-Oct-24  | ~12               | -                  |
+| 01-Dec-24  | ~16               | -                  |
+| 01-Feb-25  | ~18               | -                  |
+| 01-Apr-25  | ~12               | -                  |
+| 01-Jun-25  | ~10               | -                  |
+| 01-Aug-25  | ~12               | -                  |
+| 01-Oct-25  | ~14               | -                  |
+| 01-Dec-25  | ~16               | -                  |
+| 01-Feb-26  | ~18               | -                  |
+| 01-Apr-26  | ~14               | -                  |
+</details>
+
+<table><tr><td>Date</td><td>Stock Price (US$)</td><td>Price Target (US$)</td><td>Rating</td></tr><tr><td>2023-02-17</td><td>16.36</td><td>-</td><td>No Rating</td></tr><tr><td>2024-11-26</td><td>14.64</td><td>16.00</td><td>Neutral</td></tr><tr><td>2024-12-06</td><td>17.40</td><td>19.00</td><td>Neutral</td></tr><tr><td>2025-03-11</td><td>11.46</td><td>13.00</td><td>Neutral</td></tr><tr><td>2025-04-07</td><td>9.71</td><td>9.00</td><td>Neutral</td></tr><tr><td>2025-07-07</td><td>11.59</td><td>12.00</td><td>Neutral</td></tr><tr><td>2025-09-25</td><td>11.39</td><td>13.00</td><td>Neutral</td></tr><tr><td>2025-10-23</td><td>12.77</td><td>14.00</td><td>Neutral</td></tr><tr><td>2025-12-11</td><td>14.96</td><td>20.00</td><td>Buy</td></tr><tr><td>2026-01-05</td><td>15.83</td><td>21.00</td><td>Buy</td></tr><tr><td>2026-03-15</td><td>10.30</td><td>15.00</td><td>Buy</td></tr><tr><td>2026-03-23</td><td>10.81</td><td>14.00</td><td>Buy</td></tr><tr><td>2026-04-14</td><td>12.13</td><td>16.00</td><td>Buy</td></tr></table>
+
+Source: UBS Global Research; LSEG Eikon as of 18-May-2026. All prices as of local market close. Ratings as of date shown.
+
+Delta Air Lines Inc (US\$)   
+![](images/71d0aa92c4ec35139057ee1f60bb3573918a4213310e969cae606009cd3461de.jpg)
+
+<details>
+<summary>line</summary>
+
+| Date       | Price Target (US$) | Stock Price (US$) |
+|------------|--------------------|-------------------|
+| 01-Feb-23  | ~38                | ~38               |
+| 01-Apr-23  | ~35                | ~35               |
+| 01-Jun-23  | ~40                | ~40               |
+| 01-Aug-23  | ~45                | ~45               |
+| 01-Oct-23  | ~35                | ~35               |
+| 01-Dec-23  | ~40                | ~40               |
+| 01-Feb-24  | ~45                | ~45               |
+| 01-Apr-24  | ~50                | ~50               |
+| 01-Jun-24  | ~45                | ~45               |
+| 01-Aug-24  | ~40                | ~40               |
+| 01-Oct-24  | ~50                | ~50               |
+| 01-Dec-24  | ~60                | ~60               |
+| 01-Feb-25  | ~70                | ~70               |
+| 01-Apr-25  | ~40                | ~40               |
+| 01-Jun-25  | ~50                | ~50               |
+| 01-Aug-25  | ~60                | ~60               |
+| 01-Oct-25  | ~70                | ~70               |
+| 01-Dec-25  | ~80                | ~80               |
+| 01-Feb-26  | ~90                | ~90               |
+| 01-Apr-26  | ~95                | ~95               |
+</details>
+
+<table><tr><td>Date</td><td>Stock Price (US$)</td><td>Price Target (US$)</td><td>Rating</td></tr><tr><td>2023-02-17</td><td>38.36</td><td>-</td><td>No Rating</td></tr><tr><td>2024-11-25</td><td>64.49</td><td>88.00</td><td>Buy</td></tr><tr><td>2025-01-12</td><td>66.95</td><td>90.00</td><td>Buy</td></tr><tr><td>2025-03-10</td><td>50.33</td><td>77.00</td><td>Buy</td></tr><tr><td>2025-04-07</td><td>37.29</td><td>42.00</td><td>Neutral</td></tr><tr><td>2025-05-08</td><td>48.54</td><td>46.00</td><td>Neutral</td></tr><tr><td>2025-05-18</td><td>50.92</td><td>66.00</td><td>Buy</td></tr><tr><td>2025-07-07</td><td>50.00</td><td>63.00</td><td>Buy</td></tr><tr><td>2025-07-10</td><td>56.78</td><td>72.00</td><td>Buy</td></tr><tr><td>2025-10-09</td><td>59.57</td><td>75.00</td><td>Buy</td></tr><tr><td>2025-12-11</td><td>70.56</td><td>90.00</td><td>Buy</td></tr><tr><td>2026-01-13</td><td>69.33</td><td>87.00</td><td>Buy</td></tr><tr><td>2026-03-15</td><td>58.78</td><td>83.00</td><td>Buy</td></tr><tr><td>2026-03-23</td><td>65.13</td><td>84.00</td><td>Buy</td></tr><tr><td>2026-04-08</td><td>68.08</td><td>86.00</td><td>Buy</td></tr><tr><td>2026-05-07</td><td>73.11</td><td>95.00</td><td>Buy</td></tr></table>
+
+Source: UBS Global Research; LSEG Eikon as of 18-May-2026. All prices as of local market close. Ratings as of date shown.
+
+United Airlines Holdings Inc (US\$)   
+![](images/05a18b5caa80ff32cb5d9bd1a9f053137479b0827f9b3bae54c4e160984a54ef.jpg)
+
+<details>
+<summary>line</summary>
+
+| Date       | Price Target (US$) | Stock Price (US$) |
+|------------|--------------------|-------------------|
+| 01-Feb-23  | ~45                | ~45               |
+| 01-Apr-23  | ~40                | ~40               |
+| 01-Jun-23  | ~45                | ~45               |
+| 01-Aug-23  | ~40                | ~40               |
+| 01-Oct-23  | ~35                | ~35               |
+| 01-Dec-23  | ~40                | ~40               |
+| 01-Feb-24  | ~45                | ~45               |
+| 01-Apr-24  | ~50                | ~50               |
+| 01-Jun-24  | ~55                | ~55               |
+| 01-Aug-24  | ~60                | ~60               |
+| 01-Oct-24  | ~70                | ~70               |
+| 01-Dec-24  | ~80                | ~80               |
+| 01-Feb-25  | ~90                | ~90               |
+| 01-Apr-25  | ~70                | ~70               |
+| 01-Jun-25  | ~80                | ~80               |
+| 01-Aug-25  | ~90                | ~90               |
+| 01-Oct-25  | ~100               | ~100              |
+| 01-Dec-25  | ~110               | ~110              |
+| 01-Feb-26  | ~120               | ~120              |
+| 01-Apr-26  | ~130               | ~130              |
+</details>
+
+<table><tr><td>Date</td><td>Stock Price (US$)</td><td>Price Target (US$)</td><td>Rating</td></tr><tr><td>2023-02-17</td><td>49.63</td><td>-</td><td>No Rating</td></tr><tr><td>2024-11-26</td><td>96.51</td><td>139.00</td><td>Buy</td></tr><tr><td>2025-01-06</td><td>98.57</td><td>140.00</td><td>Buy</td></tr><tr><td>2025-03-19</td><td>74.43</td><td>107.00</td><td>Buy</td></tr><tr><td>2025-04-07</td><td>58.77</td><td>59.00</td><td>Neutral</td></tr><tr><td>2025-04-16</td><td>66.99</td><td>67.00</td><td>Neutral</td></tr><tr><td>2025-05-18</td><td>77.93</td><td>105.00</td><td>Buy</td></tr><tr><td>2025-07-07</td><td>81.11</td><td>103.00</td><td>Buy</td></tr><tr><td>2025-07-17</td><td>91.22</td><td>114.00</td><td>Buy</td></tr><tr><td>2025-09-25</td><td>99.15</td><td>131.00</td><td>Buy</td></tr><tr><td>2025-10-17</td><td>99.14</td><td>128.00</td><td>Buy</td></tr><tr><td>2025-12-11</td><td>108.39</td><td>142.00</td><td>Buy</td></tr><tr><td>2026-01-05</td><td>114.89</td><td>145.00</td><td>Buy</td></tr><tr><td>2026-01-21</td><td>110.96</td><td>147.00</td><td>Buy</td></tr><tr><td>2026-03-15</td><td>86.60</td><td>134.00</td><td>Buy</td></tr><tr><td>2026-03-23</td><td>93.96</td><td>135.00</td><td>Buy</td></tr><tr><td>2026-04-24</td><td>93.00</td><td>139.00</td><td>Buy</td></tr></table>
+
+Source: UBS Global Research; LSEG Eikon as of 18-May-2026. All prices as of local market close. Ratings as of date shown.
+
+Southwest Airlines (US\$)   
+![](images/a5ee490c50ac9847c8d70038b7382471ab07c5c8bc808b41f8a85bff412dbea5.jpg)
+
+<details>
+<summary>line</summary>
+
+| Date       | Price Target (US$) | Stock Price (US$) |
+|------------|--------------------|-------------------|
+| 01-Feb-23  | 32                 | 32                |
+| 01-Apr-23  | 32                 | 32                |
+| 01-Jun-23  | 32                 | 32                |
+| 01-Aug-23  | 32                 | 32                |
+| 01-Oct-23  | 32                 | 32                |
+| 01-Dec-23  | 32                 | 32                |
+| 01-Feb-24  | 32                 | 32                |
+| 01-Apr-24  | 32                 | 32                |
+| 01-Jun-24  | 32                 | 32                |
+| 01-Aug-24  | 32                 | 32                |
+| 01-Oct-24  | 32                 | 32                |
+| 01-Dec-24  | 32                 | 32                |
+| 01-Feb-25  | 32                 | 32                |
+| 01-Apr-25  | 32                 | 32                |
+| 01-Jun-25  | 32                 | 32                |
+| 01-Aug-25  | 32                 | 32                |
+| 01-Oct-25  | 32                 | 32                |
+| 01-Dec-25  | 32                 | 32                |
+| 01-Feb-26  | 70                 | 70                |
+| 01-Apr-26  | 48                 | 48                |
+</details>
+
+<table><tr><td>Date</td><td>Stock Price (US$)</td><td>Price Target (US$)</td><td>Rating</td></tr><tr><td>2023-02-17</td><td>35.36</td><td>-</td><td>No Rating</td></tr><tr><td>2024-11-25</td><td>32.43</td><td>27.00</td><td>Sell</td></tr><tr><td>2025-01-06</td><td>33.83</td><td>29.00</td><td>Sell</td></tr><tr><td>2025-03-19</td><td>33.60</td><td>36.00</td><td>Neutral</td></tr><tr><td>2025-04-07</td><td>25.96</td><td>27.00</td><td>Neutral</td></tr><tr><td>2025-07-07</td><td>33.81</td><td>34.00</td><td>Neutral</td></tr><tr><td>2025-07-25</td><td>33.21</td><td>35.00</td><td>Neutral</td></tr><tr><td>2025-10-24</td><td>32.20</td><td>33.00</td><td>Neutral</td></tr><tr><td>2025-12-11</td><td>40.74</td><td>43.00</td><td>Neutral</td></tr><tr><td>2026-01-05</td><td>42.44</td><td>45.00</td><td>Neutral</td></tr><tr><td>2026-02-01</td><td>47.52</td><td>51.00</td><td>Neutral</td></tr><tr><td>2026-02-16</td><td>51.11</td><td>73.00</td><td>Buy</td></tr><tr><td>2026-03-15</td><td>38.75</td><td>59.00</td><td>Buy</td></tr><tr><td>2026-03-23</td><td>40.35</td><td>56.00</td><td>Buy</td></tr><tr><td>2026-04-24</td><td>39.45</td><td>49.00</td><td>Buy</td></tr></table>
+
+Source: UBS Global Research; LSEG Eikon as of 18-May-2026. All prices as of local market close. Ratings as of date shown.
+
+# The Disclaimer relevant to Global Wealth Management clients follows the Global Research Disclaimer. The Disclaimer relevant to CS Wealth Management follows the Global Wealth Management Disclaimer.
+
+# UBS Global Research Disclaimer
+
+This document has been prepared by UBS LLC, an affiliate of UBS AG. UBS AG, its subsidiaries, branches and affiliates, including former CS AG and its subsidiaries, branches and affiliates are referred to herein as "UBS".
+
+Any opinions expressed in this document may change without notice and are only current as of the date of publication. Different areas, groups, and personnel within UBS may produce and distribute separate research products independently of each other. For example, research publications from UBS CIO are produced by UBS Global Wealth Management. UBS Global Research is produced by UBS Investment Bank. Research methodologies and rating systems of each separate research organization may differ, for example, in terms of investment recommendations, investment horizon, model assumptions, and valuation methods. As a consequence, except for certain economic forecasts (for which UBS CIO and UBS Global Research may collaborate), investment recommendations, ratings, price targets, and valuations provided by each of the separate research organizations may be different, or inconsistent. You should refer to each relevant research product for the details as to their methodologies and rating system. Not all clients may have access to all products from every organization. Each research product is subject to the policies and procedures of the organization that produces it.
+
+This document is provided solely to recipients who are expressly authorized by UBS to receive it. If you are not so authorized you must immediately destroy the document.
+
+UBS Global Research is provided to our clients through UBS Neo, and in certain instances, UBS.com and any other system or distribution method specifically identified in one or more communications distributed through UBS Neo or UBS.com (each a system) as an approved means for distributing UBS Global Research. It may also be made available through third party vendors and distributed by UBS and/or third parties via e-mail or alternative electronic means.
+
+All UBS Global Research is available on UBS Neo. Please contact your UBS sales representative if you wish to discuss your access to UBS Neo. Where UBS Global Research refers to "UBS Evidence Lab Inside" or has made use of data provided by UBS Evidence Lab and you would like to access that data please contact your UBS sales representative. UBS Evidence Lab data is available on UBS Neo. The level and types of services provided by UBS Global Research and UBS Evidence Lab to a client may vary depending upon various factors such as a client's individual preferences as to the frequency and manner of receiving communications, a client's risk profile and investment focus and perspective (e.g., market wide, sector specific, long-term, short-term, etc.), the size and scope of the overall client relationship with UBS Global Research and UBS Evidence Lab and legal and regulatory constraints. UBS HOLT and UBS Pharma Values are offerings of UBS Global Research. HOLT Lens is a corporate performance platform offering that provides an objective accounting-led framework for comparing and valuing companies and is available to clients of UBS Global Research; for further details and pricing please contact your UBS Sales representative. In particular, HOLT has a variety of warranted prices based on the scenario chosen; please mail UBS LLC, 11 Madison Avenue, New York, NY 10010, USA, Attention: Investment Research, if you are interested in the warranted price on a particular company, again subject to commercial considerations. UBS Pharma Values is an analytical tool that involves the creation of a number of individual product net present value calculations, based on published forecasts of sales for pharmaceuticals, and is available to clients of UBS Global Research; for further details and pricing please contact your UBS Sales representative. For all other specific disclaimers, please see https://www.ubs.com/disclosures.
+
+When you receive UBS Global Research through a system, your access and/or use of such UBS Global Research is subject to this UBS Global Research Disclaimer and to the UBS Neo Platform Use Agreement (the "Neo Terms") together with any other relevant terms of use governing the applicable System.
+
+When you receive UBS Global Research via a third party vendor, e-mail or other electronic means, you agree that use shall be subject to this UBS Global Research Disclaimer, the Neo Terms and where applicable the UBS Investment Bank terms of business (https://www.ubs.com/global/en/investment-bank/regulatory.html) and to UBS's Terms of Use/Disclaimer (https://www.ubs.com/global/en/legalinfo2/disclaimer.html). In addition, you consent to UBS processing your personal data and using cookies in accordance with our Privacy Statement (https://www.ubs.com/global/en/legalinfo2/privacy.html) and cookie notice (https://www.ubs.com/global/en/legal/privacy/users.html).
+
+If you receive UBS Global Research, whether through a System or by any other means, you agree that you shall not copy, revise, amend, create a derivative work, provide to any third party, or in any way commercially exploit any UBS provided via UBS Global Research or otherwise, and that you shall not extract data from any research or estimates provided to you via UBS Global Research or otherwise, without the prior written consent of UBS. You agree not to use UBS Global Research in any artificial intelligence system, without the prior written consent of UBS.
+
+In certain circumstances you may receive UBS Global Research otherwise than in the capacity of a client of UBS and you understand and agree that under these circumstances (i) the UBS Global Research is provided to you for information purposes only; (ii) for the purposes of receiving it you are not intended to be and will not be treated as a “client” of UBS for any legal or regulatory purpose; (iii) the UBS Global Research must not be relied on or acted upon for any purpose; and (iv) such content is subject to the relevant disclaimers that follow.
+
+This document is for distribution only as may be permitted by law. It is not directed to, or intended for distribution to or use by, any person or entity who is a citizen or resident of or located in any locality, state, country or other jurisdiction where such distribution, publication, availability or use would be contrary to law or regulation or would subject UBS to any registration or licensing requirement within such jurisdiction.
+
+This document is a general communication and is educational in nature; it is not an advertisement nor is it a solicitation or an offer to buy or sell any financial instruments or to participate in any particular trading strategy. Nothing in this document constitutes a representation that any investment strategy or recommendation is suitable or appropriate to an investor's individual circumstances or otherwise constitutes a personal recommendation. By providing this document, none of UBS or its representatives has any responsibility or authority to provide or have provided investment advice in a fiduciary capacity or otherwise. Investments involve risks, and investors should exercise prudence and their own judgment in making their investment decisions. None of UBS or its representatives is suggesting that the recipient or any other person take a specific course of action or any action at all. The recipient should carefully read this document in its entirety and not draw inferences or conclusions from the rating alone. By receiving this document, the recipient acknowledges and agrees with the intended purpose described above and further disclaims any expectation or belief that the information constitutes investment advice to the recipient or otherwise purports to meet the investment objectives of the recipient. The financial instruments described in the document may not be eligible for sale in all jurisdictions or to certain categories of investors.
+
+Options, structured derivative products and futures (including OTC derivatives) are not suitable for all investors. Trading in these instruments is considered risky and may be appropriate only for sophisticated investors. Prior to buying or selling an option, and for the complete risks relating to options, you must receive a copy of "The Characteristics and Risks of Standardized Options." You may read the document at https://www.theocc.com/publications/risks/riskchap1.jsp or ask your salesperson for a copy. Various theoretical explanations of the risks associated with these instruments have been published. Supporting documentation for any claims, comparisons, recommendations, statistics or other technical data will be supplied upon request. Past performance is not necessarily indicative of future results. Transaction costs may be significant in option strategies calling for multiple purchases and sales of options, such as spreads and straddles. Because of the importance of tax considerations to many options transactions, the investor considering options should consult with his/her tax advisor as to how taxes affect the outcome of contemplated options transactions.
+
+Mortgage and asset-backed securities may involve a high degree of risk and may be highly volatile in response to fluctuations in interest rates or other market conditions. Foreign currency rates of exchange may adversely affect the value, price or income of any security or related instrument referred to in the document. For investment advice, trade execution or other enquiries, clients should contact their local sales representative.
+
+UBS notes that no globally accepted framework or definition (legal, regulatory or otherwise) currently exists, nor is there a market consensus as to what constitutes an “ESG” (Environmental, Social or Governance) or an equivalent-label, or as to what precise attributes are required for the Information (as defined below) to be defined as ESG or equivalently-labelled. Any information, data or other content including from a third party source contained, referred to herein or used for whatsoever purpose by UBS or a third party (“Information”), in relation to any actual or potential ESG objective, issue or consideration is not intended to be relied upon for ESG classification, regulatory regime or industry initiative purposes (“ESG Regimes”). Nothing in these materials is intended to convey, suggest or indicate that UBS considers or represents any product, service, person or body mentioned in these materials as meeting or qualifying for any ESG classification, labelling or similar standards that may exist under the ESG Regimes. UBS has not conducted any assessment of compliance with ESG Regimes. Parties are reminded to make their own assessments for these purposes.
+
+The value of any investment or income may go down as well as up, and investors may not get back the full (or any) amount invested. Past performance is not necessarily a guide to future performance. Neither UBS nor any of its directors, employees or agents accepts any liability for any loss (including investment loss) or damage arising out of the use of all or any of the Information.
+
+Prior to making any investment or financial decisions, any recipient of this document or the information should take steps to understand the risk and return of the investment and seek individualized advice from his or her personal financial, legal, tax and other professional advisors that takes into account all the particular facts and circumstances of his or her investment objectives.
+
+Any prices stated in this document are for information purposes only and do not represent valuations for individual securities or other financial instruments. There is no representation that any transaction can or could have been effected at those prices, and any prices do not necessarily reflect UBS's internal books and records or theoretical model-based valuations and may be based on certain assumptions. Different assumptions by UBS or any other source may yield substantially different results.
+
+No representation or warranty, either expressed or implied, is provided in relation to the accuracy, completeness or reliability of the information contained in any materials to which this document relates (the "Information"), except with respect to Information concerning UBS. The Information is not intended to be a complete statement or summary of the securities, markets or developments referred to in the document. UBS does not undertake to update or keep current the Information. Any statements contained in this report attributed to a third party represent UBS's interpretation of the data, information and/or opinions provided by that third party either publicly or through a subscription service, and such use and interpretation have not been reviewed by the third party. In no circumstances may this document or any of the Information (including any forecast, value, index or other calculated amount ("Values")) be used for any of the following purposes:
+
+(i) valuation or accounting purposes;
+
+(ii) to determine the amounts due or payable, the price or the value of any financial instrument or financial contract; or
+
+(iii) to measure the performance of any financial instrument including, without limitation, for the purpose of tracking the return or performance of any Value or of defining the asset allocation of portfolio or of computing performance fees.
+
+By receiving this document and the Information you will be deemed to represent and warrant to UBS that you will not use this document or any of the Information for any of the above purposes or otherwise rely upon this document or any of the Information.
+
+UBS has policies and procedures, which include, without limitation, independence policies and permanent information barriers, that are intended, and upon which UBS relies, to manage potential conflicts of interest and control the flow of information within divisions of UBS and among its subsidiaries, branches and affiliates. UBS does and seeks to do business with companies covered in its research reports. As a result, investors should be aware that the firm may have a conflict of interest that could affect the objectivity of this report. Investors should consider this report as only a single factor in making their investment decision. For further information on the ways in which UBS Global Research manages conflicts and maintains independence of its research products, historical performance information and certain additional disclosures concerning UBS Global Research recommendations, please visit https://www.ubs.com/disclosures.
+
+UBS Global Research will initiate, update and cease coverage solely at the discretion of UBS Global Research Management, which will also have sole discretion on the timing and frequency of any published research product. The analysis contained in this document is based on numerous assumptions. All material information in relation to published research reports, such as valuation methodology, risk statements, underlying assumptions (including sensitivity analysis of those assumptions), ratings history etc. as required by the Market Abuse Regulation, can be found on UBS Neo. Different assumptions could result in materially different results.
+
+UBS Global Research may utilise artificial intelligence tools ("AI Tools") in the preparation of this document. Notwithstanding any such use of AI Tools, this document has undergone human review.
+
+The analyst(s) responsible for the preparation of this document may interact with trading desk personnel, sales personnel and other parties for the purpose of gathering, applying and interpreting market information. UBS relies on information barriers to control the flow of information contained in one or more areas within UBS into other areas, units, groups or affiliates of UBS. The compensation of the analyst who prepared this document is determined exclusively by UBS Global Research management and senior management (not including investment banking). Analyst compensation is not based on investment banking revenues; however, compensation may relate to the revenues of UBS and/or its divisions as a whole, of which investment banking, sales and trading are a part, and UBS as a whole.
+
+For financial instruments admitted to trading on an EU regulated market: UBS (excluding UBS LLC) acts as a market maker or liquidity provider (in accordance with the interpretation of these terms under English law or, if not carried out by UBS in the UK the law of the relevant jurisdiction in which UBS determines it carries out the activity) in the financial instruments of the issuer save that where the activity of liquidity provider is carried out in accordance with the definition given to it by the laws and regulations of any other EU jurisdictions, such information is separately disclosed in this document. For financial instruments admitted to trading on a non-EU regulated market: UBS may act as a market maker save that where this activity is carried out in the US in accordance with the definition given to it by the relevant laws and regulations, such activity will be specifically disclosed in this document. UBS may have issued a warrant the value of which is based on one or more of the financial instruments referred to in the document. UBS and its affiliates and employees may have long or short positions, trade as principal and buy and sell in instruments or derivatives identified herein; such transactions or positions may be inconsistent with the opinions expressed in this document.
+
+Within the past 12 months UBS may have received or provided investment services and activities or ancillary services as per MiFID II which may have given rise to a payment or promise of a payment in relation to these services from or to this company.
+
+Please note that all transactions conducted by UBS are consistent with sanctions regulations imposed by Switzerland, the European Union, the United Nations, the United Kingdom and the United States, per UBS' global sanctions policy. UBS opinion as to future investment worthiness assumes no new sanctions are imposed.
+
+US persons are prohibited from purchasing or selling securities of certain companies designated as being associated with the Chinese Military in accordance with the amended US Presidential Executive Order 13959.
+
+United Kingdom: This material is distributed by UBS AG, London Branch to persons who are eligible counterparties or professional clients. UBS AG, London Branch is authorised by the Prudential Regulation Authority and subject to regulation by the Financial Conduct Authority and limited regulation by the Prudential Regulation Authority. Europe: Except as otherwise specified herein, these materials are distributed by UBS Europe SE, a subsidiary of UBS AG, to persons who are eligible counterparties or professional clients (as detailed in the Bundesanstalt für Finanzdienstleistungsaufsicht (BaFin) Rules and according to MIFID) and are only available to such persons. The information does not apply to, and should not be relied upon by, retail clients. UBS Europe SE is authorised by the European Central Bank (ECB) and regulated by the BaFin and the ECB. Germany, Luxembourg, the Netherlands, Belgium and Ireland: Where an analyst of UBS Europe SE has contributed to this document, the document is also deemed to have been prepared by UBS Europe SE. In all cases it is distributed by UBS Europe SE and UBS AG, London Branch. Turkey: Distributed by UBS AG, London Branch. No information in this document is provided for the purpose of offering, marketing and sale by any means of any capital market instruments and services in the Republic of Turkey. Therefore, this document may not be considered as an offer made or to be made to residents of the Republic of Turkey. UBS AG, London Branch is not licensed by the Turkish Capital Market Board under the provisions of the Capital Market Law (Law No. 6362). Accordingly, neither this document nor any other offering material related to the instruments/services may be utilized in connection with providing any capital market services to persons within the Republic of Turkey without the prior approval of the Capital Market Board. However, according to article 15 (d) (ii) of the Decree No. 32, there is no restriction on the purchase or sale of the securities abroad by residents of the Republic of Turkey. Poland: Distributed by UBS Europe SE (spolka z ograniczona odpowiedzialnoscia) Oddzial w Polsce. Where an analyst of UBS Europe SE (spolka z ograniczona odpowiedzialnoscia) Oddzial w Polsce has contributed to this document, the document is also deemed to have been prepared by UBS Europe SE (spolka z ograniczona odpowiedzialnoscia) Oddzial w Polsce. Russia: Prepared and distributed by UBS Bank (OOO). Should not be construed as an individual Investment Recommendation for the purpose of the Russian Law - Federal Law #39-FZ ON THE SECURITIES MARKET Articles 6.1-6.2. Switzerland: Distributed by UBS AG to persons who are institutional investors only. UBS AG is regulated by the Swiss Financial Market Supervisory Authority (FINMA). Italy: Prepared by UBS Europe SE and distributed by UBS Europe SE and UBS Europe SE, Italy Branch. Where an analyst of UBS Europe SE, Italy Branch has contributed to this document, the document is also deemed to have been prepared by UBS Europe SE, Italy Branch. France: Prepared by UBS Europe SE and distributed by UBS Europe SE and UBS Europe SE, France Branch. Where an analyst of UBS Europe SE, France Branch has contributed to this document, the document is also deemed to have been prepared by UBS Europe SE, France Branch. Spain: Prepared by UBS Europe SE and distributed by UBS Europe SE and UBS Europe SE, Spain Branch. Where an analyst of UBS Europe SE, Spain Branch has contributed to this document, the document is also deemed to have been prepared by UBS Europe SE, Spain Branch. Sweden: Prepared by UBS Europe SE and distributed by UBS Europe SE and UBS Europe SE, Sweden Branch. Where an analyst of UBS Europe SE, Sweden Branch has contributed to this document, the document is also deemed to have been prepared by UBS Europe SE, Sweden Branch. South Africa: Distributed by UBS South Africa (Pty) Limited (Registration No. 1995/011140/07), an authorised user of the JSE and an authorised Financial Services Provider (FSP 7328). Saudi
+
+Arabia: This document has been issued by UBS AG (and/or any of its subsidiaries, branches or affiliates), a public company limited by shares, incorporated in Switzerland with its registered offices at Aeschenvorstadt 1, CH-4051 Basel and Bahnhofstrasse 45, CH-8001 Zurich. This publication has been approved by UBS Saudi Arabia (a subsidiary of UBS AG), a Saudi closed joint stock company incorporated in the Kingdom of Saudi Arabia under commercial register number 1010257812 having its registered office at Tatweer Towers, P.O. Box 75724, Riyadh 11588, Kingdom of Saudi Arabia. UBS Saudi Arabia is authorized and regulated by the Capital Market Authority to conduct securities business under license number 08113-37. UAE / Dubai: The information distributed by UBS AG Dubai Branch is only intended for Professional Clients and/or Market Counterparties, as classified under the DFSA rulebook. No other person should act upon this material/communication. The information is not for further distribution within the United Arab Emirates. UBS AG Dubai Branch is regulated by the DFSA in the DIFC. UBS is not licensed to provide banking services in the UAE by the Central Bank of the UAE, nor is it licensed by the UAE Securities and Commodities Authority. Israel: This Material is distributed by UBS AG, London Branch. UBS Israel Ltd is a licensed Investment Marketer that is supervised by the Israel Securities Authority (ISA). UBS AG, London Branch and its affiliates incorporated outside Israel are not licensed under the Israeli Advisory Law. UBS may engage among others in issuance of Financial Assets or in distribution of Financial Assets of other issuers for fees or other benefits. UBS AG, London Branch and its affiliates may prefer various Financial Assets to which they have or may have an Affiliation (as such term is defined under the Israeli Advisory Law). Nothing in this Material should be considered as investment advice under the Israeli Advisory Law. This Material is being issued only to and/or is directed only at persons who are Eligible Clients within the meaning of the Israeli Advisory Law, and this Material must not be furnished to, relied on or acted upon by any other persons. United
+
+States: Distributed to US persons by either UBS LLC or by UBS Financial Services Inc., subsidiaries of UBS AG; or by a group, subsidiary or affiliate of UBS AG that is not registered as a US broker-dealer (a 'non-US affiliate') to major US institutional investors only. UBS LLC or UBS Financial Services Inc. accepts responsibility for the content of a report prepared by another non-US affiliate when distributed to US persons by UBS LLC or UBS Financial Services Inc. All transactions by a US person in the securities mentioned in this report must be effected through UBS LLC or UBS Financial Services Inc., and not through a non-US affiliate. UBS LLC is not acting as a municipal advisor to any municipal entity or obligated person within the meaning of
+
+Section 15B of the Securities Exchange Act (the "Municipal Advisor Rule"), and the opinions or views contained herein are not intended to be, and do not constitute, advice within the meaning of the Municipal Advisor Rule. Canada: Distributed by UBS Canada Inc., a registered investment dealer in Canada and a Member-Canadian Investor Protection Fund, or by another affiliate of UBS AG that is registered to conduct business in Canada or is otherwise exempt from registration. Brazil: Except as otherwise specified herein, this Material is prepared by UBS BB Corretora de Câmbio, Títulos e Valores Mobiliários S.A. (UBS BB CCTV) to persons who are eligible investors residing in Brazil, which are considered to be Professional Investors (Investidores Profissionais), as designated by the applicable regulation, mainly the CVM Resolution No. 30 from the 11th of May 2021 (determines the duty to verify the suitability of products, services and transactions with regards to the client's profile). UBS BB CCTV is a subsidiary of UBS BB Servicos de Assessoria Financeira e Participacoes S.A. ("UBS BB"). UBS BB is an association between UBS AG and Banco do Brasil (through its subsidiary BB – Banco de Investimentos S.A.), of which UBS AG is the majority owner and which provides investment banking services and coverage in Brazil, Argentina, Chile, Paraguay, Peru and Uruguay. UBS BB CCTV is regulated by the Comissao de Valores Mobiliarios (CVM) and by the Central Bank of Brazil. Ombudsman: 0800-940-0266/ https://www.ubs.com/br/pt/ubssb-investment-bank/ombudsman.html. UBS may hold relevant financial and commercial interest in relation to the company subject to this Research report. Hong Kong: Distributed by UBS Asia Limited. Please contact local licensed persons of UBS Asia Limited in respect of any matters arising from, or in connection with, the analysis or document Singapore: Distributed by UBS Pte. Ltd. [Co. Reg. No.: 198500648C] or UBS AG, Singapore Branch. Please contact UBS Pte. Ltd., an exempt financial adviser under the Singapore Financial Advisers Act (Cap. 110); or UBS AG, Singapore Branch, an exempt financial adviser under the Singapore Financial Advisers Act (Cap. 110) and a wholesale bank licensed under the Singapore Banking Act (Cap. 19) regulated by the Monetary Authority of Singapore, in respect of any matters arising from, or in connection with, the analysis or document. The recipients of this document represent and warrant that they are accredited and institutional investors as defined in the Securities and Futures Act (Cap. 289). Japan: Distributed by UBS Japan Co., Ltd. to professional investors (except as otherwise permitted). Where this report has been prepared by UBS Japan Co., Ltd., UBS Japan Co., Ltd. is the author, publisher and distributor of the report. Distributed by UBS AG, Tokyo Branch to Professional Investors (except as otherwise permitted) in relation to foreign exchange and other banking businesses when relevant. Australia: Clients of UBS AG: Distributed by UBS AG (ABN 47 088 129 613 and holder of Australian Financial Services License No. 231087). For all other recipients: Distributed by UBS Australia Ltd (ABN 62 008 586 481 and holder of Australian Financial Services License No. 231098). This document contains general information and/or general advice only and does not constitute personal financial product advice. As such, the Information in this document has been prepared without taking into account any investor's objectives, financial situation or needs, and investors should, before acting on the Information, consider the appropriateness of the Information, having regard to their objectives, financial situation and needs. If the Information contained in this document relates to the acquisition, or potential acquisition of a particular financial product by a 'Retail' client as defined by section 761G of the Corporations Act 2001 where a Product Disclosure Statement would be required, the retail client should obtain and consider the Product Disclosure Statement relating to the product before making any decision about whether to acquire the product. New Zealand: Distributed by UBS New Zealand Ltd. UBS New Zealand Ltd is not a registered bank in New Zealand. You are being provided with this publication or material because you have indicated to UBS that you are a "wholesale client" within the meaning of clause 4 of schedule 5 of the Financial Markets Conduct Act 2013 of New Zealand (Permitted Client). This publication or material is not intended for clients who are not Permitted Clients (non-permitted Clients). If you are a non-permitted Client you must not rely on this publication or material. If despite this warning you nevertheless rely on this publication or material, you hereby (i) acknowledge that you may not rely on the content of this publication or material and that any recommendations or opinions in such this publication or material are not made or provided to you, and (ii) to the maximum extent permitted by law (a) indemnify UBS and its associates or related entities (and their respective Directors, officers, agents and Advisors) (each a 'Relevant Person') for any loss, damage, liability or claim any of them may incur or suffer as a result of, or in connection with, your unauthorised reliance on this publication or material and (b) waive any rights or remedies you may have against any Relevant Person for (or in respect of) any loss, damage, liability or claim you may incur or suffer as a result of, or in connection with, your unauthorised reliance on this publication or material. Korea: Distributed in Korea by UBS Pte. Ltd., Seoul Branch. This report may have been edited or contributed to from time to time by affiliates of UBS Pte. Ltd., Seoul Branch. This material is intended for professional/institutional clients only and not for distribution to any retail clients. Malaysia: This material is authorized to be distributed in Malaysia by UBS Malaysia Sdn. Bhd (Capital Markets Services License No.: CMSL/A0063/2007). This material is intended for professional/institutional clients only and not for distribution to any retail clients. India: Distributed by UBS India Private Ltd. (Corporate Identity Number U67120MH1996PTC097299) 2/F, 3 North Avenue, Maker Maxity, Bandra Kurla Complex, Bandra (East), Mumbai (India) 400051. Phone: +912261556000. It provides brokerage services bearing SEBI Registration Number: INZ000259830; Merchant Banking services bearing SEBI Registration Number: INM000013101; and Research Analyst services bearing SEBI Registration Number: INH000001204. Name of Compliance Officer Mr. Parameshwaran Shivaramakrishnan, Phone: +912261556151, Email: parameshwaran.s@ubs.com, Name of Grievance Officer Parameshwaran Shivaramakrishnan, Phone: +912261556151, Email: ol-ubs-sec-compliance@ubs.com Registration granted by SEBI, and certification from NISM in no way guarantee performance of the intermediary or provide any assurance of returns to investors. UBS may have debt holdings or positions in the subject Indian company/companies. UBS may have financial interests (e.g. loan/derivative products, rights to or interests in investments, etc.) in the subject Indian company/companies from time to time. Within the past 12 months, UBS may have received compensation for non-investment banking securities-related services and/or non-securities services from the subject Indian company/companies. The subject company/companies may have been a client/clients of UBS during the 12 months preceding the date of distribution of the research report with respect to investment banking and/or non-investment banking securities-related services and/or non-securities services. With regard to information on associates, please refer to the Annual Report at: https://www.ubs.com/global/en/about\_ubs/investor\_relations/annualreporting.html The Research Annual Compliance Report for UBS India Private Limited is available on www.ubs.com/ubssi under Research tab. Taiwan: Except as otherwise specified herein, this material may not be distributed in Taiwan. Information and material on securities/instruments that are traded in a Taiwan organized exchange is deemed to be issued and distributed by UBS Pte. LTD., Taipei Branch, which is licensed and regulated by Taiwan Financial Supervisory Commission. Save for securities/instruments that are traded in a Taiwan organized exchange, this material should not constitute "recommendation" to clients or recipients in Taiwan for the covered companies or any companies mentioned in this document. No portion of the document may be reproduced or quoted by the press or any other person without authorisation from UBS. Indonesia: This report is being distributed by PT UBS Sekuritas Indonesia and is delivered by its licensed employee(s), including marketing/sales person, to its client. PT UBS Sekuritas Indonesia, having its registered office at Sequis Tower Level 22 unit 22-1,Jl.Jend. Sudirman, kav.71, SCBD lot 11B, Jakarta 12190. Indonesia, is a subsidiary company of UBS AG and licensed under Capital Market Law no. 8 year 1995, a holder of broker-dealer and underwriter licenses issued by the Capital Market and Financial Institution Supervisory Agency (now Otoritas Jasa Keuangan/OJK). PT UBS Sekuritas Indonesia is also a member of Indonesia Stock Exchange and supervised by Otoritas Jasa Keuangan (OJK). Neither this report nor any copy hereof may be distributed in Indonesia or to any Indonesian citizens except in compliance with applicable Indonesian capital market laws and regulations. This report is not an offer of securities in Indonesia and may not be distributed within the territory of the Republic of Indonesia or to Indonesian citizens in circumstance which constitutes an offering within the meaning of Indonesian capital market laws and regulations.
+
+The disclosures contained in research documents produced by UBS AG, London Branch or UBS Europe SE shall be governed by and construed in accordance with English law.
+
+UBS specifically prohibits the redistribution of this document in whole or in part without the written permission of UBS and in any event UBS accepts no liability whatsoever for any redistribution of this document or its contents or the actions of third parties in this respect. Images may depict objects or elements that are protected by third party copyright, trademarks and other intellectual property rights. © UBS 2026. The key symbol and UBS are among the registered and unregistered trademarks of UBS. All rights reserved.
+
+# Global Wealth Management Disclaimer
+
+You receive this document in your capacity as a client of UBS Global Wealth Management. This publication has been distributed to you by UBS Switzerland AG (regulated by FINMA in Switzerland) or its affiliates ("UBS") with whom you have a banking relationship with. The full name of the distributing affiliate and its competent authority can be found in the country-specific disclaimer at the end of this document. UBS may utilise artificial intelligence tools ("AI Tools") in the preparation of this document. Notwithstanding any such use of AI Tools, this document has undergone human review.
+
+The date and time of the first dissemination of this publication is the same as the date and time of its publication.
+
+# Risk information:
+
+You agree that you shall not copy, revise, amend, create a derivative work, provide to any third party, or in any way commercially exploit any UBS, and that you shall not extract data from any research or estimates, without the prior written consent of UBS.
+
+This document is for distribution only as may be permitted by law. It is not directed to, or intended for distribution to or use by, any person or entity who is a citizen or resident of or located in any locality, state, country or other jurisdiction where such distribution, publication, availability or use would be contrary to law or regulation or would subject UBS to any registration or licensing requirement within such jurisdiction.
+
+This document is for your information only; it is not an advertisement nor is it a solicitation or an offer to buy or sell any financial instruments or to participate in any particular trading strategy. Nothing in this document constitutes a representation that any investment strategy or recommendation is suitable or appropriate to an investor's individual circumstances or otherwise constitutes a personal recommendation. By providing this document, none of UBS or its representatives has any responsibility or authority to provide or have provided investment advice in a fiduciary capacity or otherwise. Investments involve risks, and investors should exercise prudence and their own judgment in making their investment decisions. None of UBS or its representatives is suggesting that the recipient or any other person take a specific course of action or any action at all. By receiving this document, the recipient acknowledges and agrees with the intended purpose described above and further disclaims any expectation or belief that the information constitutes investment advice to the recipient or otherwise purports to meet the investment objectives of the recipient. The financial instruments described in the document may not be eligible for sale in all jurisdictions or to certain categories of investors.
+
+Options, derivative products and futures are not suitable for all investors, and trading in these instruments is considered risky. Mortgage and asset-backed securities may involve a high degree of risk and may be highly volatile in response to fluctuations in interest rates or other market conditions. Foreign currency rates of exchange may adversely affect the value, price or income of any security or related instrument referred to in the document. For investment advice, trade execution or other enquiries, clients should contact their local sales representative.
+
+The value of any investment or income may go down as well as up, and investors may not get back the full (or any) amount invested. Past performance is not necessarily a guide to future performance. Neither UBS nor any of its directors, employees or agents accepts any liability for any loss (including investment loss) or damage arising out of the use of all or any of the information (as defined below).
+
+Prior to making any investment or financial decisions, any recipient of this document or the information should take steps to understand the risk and return of the investment and seek individualized advice from his or her personal financial, legal, tax and other professional advisors that takes into account all the particular facts and circumstances of his or her investment objectives.
+
+Any prices stated in this document are for information purposes only and do not represent valuations for individual securities or other financial instruments. There is no representation that any transaction can or could have been effected at those prices, and any prices do not necessarily reflect UBS's internal books and records or theoretical model-based valuations and may be based on certain assumptions. Different assumptions by UBS or any other source may yield substantially different results.
+
+No representation or warranty, either expressed or implied, is provided in relation to the accuracy, completeness or reliability of the information contained in any materials to which this document relates (the "Information"), except with respect to Information concerning UBS. The Information is not intended to be a complete statement or summary of the securities, markets or developments referred to in the document. UBS does not undertake to update or keep current the Information. Any opinions expressed in this document may change without notice and may differ or be contrary to opinions expressed by other business areas or groups, personnel or other representative of UBS. Any statements contained in this report attributed to a third party represent UBS's interpretation of the data, information and/or opinions provided by that third party either publicly or through a subscription service, and such use and interpretation have not been reviewed by the third party. In no circumstances may this document or any of the Information (including any forecast, value, index or other calculated amount ("Values")) be used for any of the following purposes: (i) valuation or accounting purposes; (ii) to determine the amounts due or payable, the price or the value of any financial instrument or financial contract; or (iii) to measure the performance of any financial instrument including, without limitation, for the purpose of tracking the return or performance of any Value or of defining the asset allocation of portfolio or of computing performance fees.
+
+By receiving this document and the Information you will be deemed to represent and warrant to UBS that you will not use this document or any of the Information for any of the above purposes or otherwise rely upon this document or any of the Information.
+
+UBS has policies and procedures, which include, without limitation, independence policies and permanent information barriers, that are intended, and upon which UBS relies, to manage potential conflicts of interest and control the flow of information within divisions of UBS (including between Global Wealth Management and UBS Global Research) and among its subsidiaries, branches and affiliates. For further information on the ways in which UBS manages conflicts and maintains independence of its research products, historical performance information and certain additional disclosures concerning UBS recommendations, please visit https://www.ubs.com/research-methodology.
+
+Research will initiate, update and cease coverage solely at the discretion of research management, which will also have sole discretion on the timing and frequency of any published research product. The analysis contained in this document is based on numerous assumptions. Different assumptions could result in materially different results.
+
+The analyst(s) responsible for the preparation of this document may interact with trading desk personnel, sales personnel and other parties for the purpose of gathering, applying and interpreting market information. UBS relies on information barriers to control the flow of information contained in one or more areas within UBS into other areas, units, groups or affiliates of UBS. The compensation of the analyst who prepared this document is determined exclusively by research management and senior management (not including investment banking). Analyst compensation is not based on investment banking revenues; however, compensation may relate to the revenues of UBS and/or its divisions as a whole, of which investment banking, sales and trading are a part, and UBS's subsidiaries, branches and affiliates as a whole.
+
+For financial instruments admitted to trading on an EU regulated market: UBS AG, its affiliates or subsidiaries (excluding UBS LLC) acts as a market maker or liquidity provider (in accordance with the interpretation of these terms in the UK) in the financial instruments of the issuer save that where the activity of liquidity provider is carried out in accordance with the definition given to it by the laws and regulations of any other EU jurisdictions, such information is separately disclosed in this document. For financial instruments admitted to trading on a non-EU regulated market: UBS may act as a market maker save that where this activity is carried out in the US in accordance with the definition given to it by the relevant laws and regulations, such activity will be specifically disclosed in this document. UBS may have issued a warrant the value of which is based on one or more of the financial instruments referred to in the document. UBS and its affiliates and employees may have long or short positions, trade as principal and buy and sell in instruments or derivatives identified herein; such transactions or positions may be inconsistent with the opinions expressed in this document.
+
+Options and futures are not suitable for all investors, and trading in these instruments is considered risky and may be appropriate only for sophisticated investors. Prior to buying or selling an option, and for the complete risks relating to options, you must receive a copy of "Characteristics and Risks of Standardized Options". You may read the document at https://www.theocc.com/about/publications/character-risks.jsp or ask your financial advisor for a copy.
+
+Investing in structured investments involves significant risks. For a detailed discussion of the risks involved in investing in any particular structured investment, you must read the relevant offering materials for that investment. Structured investments are unsecured obligations of a particular issuer with returns linked to the performance of an underlying asset. Depending on the terms of the investment, investors could lose all or a substantial portion of their investment based on the performance of the underlying asset. Investors could also lose their entire investment if the issuer becomes insolvent. UBS does not guarantee in any way the obligations or the financial condition of any issuer or the accuracy of any financial information provided by any issuer. Structured investments are not traditional investments and investing in a structured investment is not equivalent to investing directly in the underlying asset. Structured investments may have limited or no liquidity, and investors should be prepared to hold their investment to maturity. The return of structured investments may be limited by a maximum gain, participation rate or other feature. Structured investments may include call features and, if a structured investment is called early, investors would not earn any further return and may not be able to reinvest in similar investments with similar terms. Structured investments include costs and fees which are generally embedded in the price of the investment. The tax treatment of a structured investment may be complex and may differ from a direct investment in the underlying asset. UBS and its employees do not provide tax advice. Investors should consult their own tax advisor about their own tax situation before investing in any securities.
+
+Important Information About Sustainable Investing Strategies: Sustainable investing strategies aim to consider and incorporate environmental, social and governance (ESG) factors into investment process and portfolio construction. Strategies across geographies approach ESG analysis and incorporate the findings in a variety of ways. Incorporating ESG factors or Sustainable Investing considerations may inhibit the portfolio manager's ability to participate in certain investment opportunities that otherwise would be consistent with its investment objective and other principal investment strategies. The returns on a portfolio incorporating ESG factors or Sustainable Investing considerations may be lower or higher than portfolios where ESG factors, exclusions, or other sustainability issues are not considered by the portfolio manager, and the investment opportunities available to such portfolios may differ.
+
+Within the past 12 months UBS Switzerland AG, its affiliates or subsidiaries may have received or provided investment services and activities or ancillary services as per MiFID II which may have given rise to a payment or promise of a payment in relation to these services from or to this company.
+
+Disclosures: If you require detailed information on disclosures of interest or conflict of interest as required by Market Abuse Regulation please contact the mailbox MAR\_disclosure\_twopager@ubs.com. Please note that e-mail communication is unsecured.
+
+External Asset Managers / External Financial Consultants: In case this research or publication is provided to an External Asset Manager or an External Financial Consultant, UBS expressly prohibits that it is redistributed by the External Asset Manager or the External Financial Consultant and is made available to their clients and/or third parties.
+
+Argentina: All securities that will be offered to you by UBS are not authorized by the Argentine Securities and Exchange Commission (CNV) and are not subject to its reporting, periodic information requirements, or oversight. Furthermore, the CNV has not reviewed or endorsed the information provided in any securities offering document, nor the accuracy of any accounting, financial, economic data, or any other information disclosed therein, which remains the sole responsibility of the respective issuer and the other parties involved. Australia: This document is provided by UBS Switzerland AG. UBS Switzerland AG does not hold an Australian Financial Services Licence (AFSL) and relies on an exemption to provide financial services to persons in Australia. This document is intended only for distribution to wholesale clients under the Corporations Act 2001 (Cth). UBS Switzerland AG is a related body corporate of UBS AG, Australia Branch and UBS Australia Limited. This document may be distributed to clients by those entities, but it is provided by UBS Switzerland AG and is not provided under any of the other entities' AFSL. The information in this document is general in nature and is not intended to address the objectives, financial situation or needs of any particular individual or entity. Each recipient should consider their own objectives, financial situation or needs before acting on the advice and obtain the relevant Product Disclosure Statement (if required) before making any decision whether to acquire any product. In Australia, UBS entities, other than UBS AG, Australia Branch, are not authorized deposit-taking institutions for the purposes of the Banking Act 1959 (Cth.) and their obligations do not represent deposits or other liabilities of UBS AG, Australia Branch. UBS AG, Australia Branch does not guarantee or otherwise provide assurance in respect of the obligations of such UBS entities or the funds. An investor is exposed to investment risk including possible delays in repayment and loss of income and principal invested, as relevant. If you do not wish to receive marketing materials from UBS, please contact your UBS representative or the contact details listed in the Australia Privacy Notice: https://www.ubs.com/global/en/legal/privacy.html. Your personal data will be processed in accordance with this notice. Bahrain: This report is being distributed by UBS AG, Bahrain Branch, duly licensed and regulated by the Central Bank of Bahrain (CBB) as an Investment Business Firm - Category 2 (Branch). Related financial services or products are only made available to Accredited Investors, as defined by the CBB, and are not intended for any other persons. UBS AG, Bahrain Branch is a Foreign Branch of UBS AG, Zurich/Switzerland and is located on Level 21, East Tower, Bahrain World Trade Centre, Manama, Kingdom of Bahrain. Brazil: This report is distributed in Brazil by UBS BB Corretora de Câmbio, Títulos e Valores Mobiliários S.A. or its affiliates ("UBS"). Pursuant to CVM Resolution No. 20/2021, of February 25, 2021, the author(s) of the report hereby certify(ies) that the views expressed in this report solely and exclusively reflect their personal opinions and have been prepared independently, including with respect to UBS. Part of the author(s)'s compensation is based on various factors, including the total revenues of the relevant UBS Group entity of which they are in employment of, but no part of the compensation has been, is, or will be related to the specific recommendations or views expressed in this report. In addition, UBS declares that: UBS has provided, and/or may in the future provide investment banking, brokerage, asset management, commercial banking and other financial services to the subject company/companies or its affiliates, for which they have received or may receive customary fees and commissions, and which constituted or may constitute relevant financial or commercial interests in relation to the subject company/companies or the subject securities. Canada: The information contained herein is not, and under no circumstances is to be construed as, a prospectus, an advertisement, a public offering, an offer to sell securities described herein, solicitation of an offer to buy securities described herein, in Canada or any province or territory thereof. Any offer or sale of the securities described herein in Canada will be made only under an exemption from the requirements to file a prospectus with the relevant Canadian securities regulators and only by a dealer properly registered under applicable securities laws or, alternatively, pursuant to an exemption from the dealer registration requirement in the relevant province or territory of Canada in which such offer or sale is made. Under no circumstances is the information contained herein to be construed as investment advice in any province or territory of Canada and is not tailored to the needs of the recipient. To the extent that the information contained herein references securities of an issuer incorporated, formed or created under the laws of Canada or a province or territory of Canada, any trades in such securities must be conducted through a dealer registered in Canada or, alternatively, pursuant to a dealer registration exemption. No securities commission or similar regulatory authority in Canada has reviewed or in any way passed upon these materials, the information contained herein or the merits of the securities described herein and any representation to the contrary is an offence. In Canada, this publication is distributed by UBS Investment Management Canada Inc. China: This report and any offering material such as term sheet, research report, other product or service documentation or any other information (the "Material") sent with this report was done so as a result of a request received by UBS from you and/or persons entitled to make the request on your behalf. Should you have received the material erroneously, UBS asks that you kindly delete it and inform UBS immediately. This report is prepared by UBS Switzerland AG or its offshore subsidiary or affiliate (collectively as "UBS Offshore"). UBS Offshore is an entity incorporated out of China and is not licensed, supervised or regulated in China to carry out banking or securities business. The recipient should not contact the analysts or UBS Offshore which produced this report for advice as they are not licensed to provide securities investment advice in China. UBS Investment Bank (including Research) has its own wholly independent research and views which at times may vary from the views of UBS Global Wealth Management. The recipient should not use this document or otherwise rely on any of the information contained in this report in making investment decisions and UBS takes no responsibility in this regard. Czech Republic: UBS is not a licensed bank in the Czech Republic and thus is not allowed to provide regulated banking or investment services in the Czech Republic. This communication and/or material is distributed for marketing purposes and constitutes a "Commercial Message" under the laws of Czech Republic in relation to banking and/or investment services. Please notify UBS if you do not wish to receive any further correspondence. Denmark: This publication is not intended to constitute a public offer under Danish law. It is distributed only for information purposes to clients of UBS Europe SE, Denmark Branch, filial af UBS Europe SE, with place of business at Sankt Annae Plads 13, 1250 Copenhagen, Denmark, registered with the Danish Commerce and Companies Agency, under No. 38 17 24 33. UBS Europe SE, Denmark Branch, filial af UBS Europe SE is subject to the joint supervision of the European Central Bank, the German Central Bank (Deutsche Bundesbank), the German Federal Financial Services Supervisory Authority (Bundesanstalt für Finanzdienstleistungsaufsicht, "BaFin"), as well as of the Danish Financial Supervisory Authority (Finanstilsynet), to which this publication has not been submitted for approval. UBS Europe SE is a credit institution constituted under German law in the form of a Societas Europaea, duly authorized by BaFin. Egypt: Securities or other investment products are not being offered or sold by UBS to the public in Egypt and they have not been and will not be registered with the Egyptian Financial Regulatory Authority (FRA). France: This publication is not intended to constitute a public offer under French law, it does not constitute a personal recommendation as it is distributed only for information purposes to clients of UBS Europe SE Succursale de France (a branch of UBS Europe SE), having its registered office at 39, rue du Colisée, 75008 Paris, France, registered with the "Registre du Commerce et des Sociétés" of Paris under N°844 425 629. UBS Europe SE Succursale de France is subject to the joint supervision of the European Central Bank, the German Central Bank (Deutsche Bundesbank), the German Federal Financial Services Supervisory Authority (Bundesanstalt für Finanzdienstleistungsaufsicht, "BaFin"), as well as of the French "Autorité de contrôle prudentiel et de résolution" and "Autorité des marchés financiers", to which this publication has not been submitted for approval. UBS Europe SE is a credit institution constituted under German law in the form of a Societas Europaea, duly authorized by BaFin. Germany: This publication is not intended to constitute a public offer under German law. It is distributed only for information purposes to clients of UBS Europe SE, Germany, with place of business at Bockenheimer Landstrasse 2-4, 60306 Frankfurt am Main. UBS Europe SE is a credit institution constituted under German law in the form of a Societas Europaea, duly authorized by the German Federal Financial Services Supervisory Authority (Bundesanstalt für Finanzdienstleistungsaufsicht, "BaFin") and supervised jointly by the European Central Bank, the German Central Bank (Deutsche Bundesbank) and BaFin, to which this publication has not been submitted for approval. Hong Kong SAR: This publication is distributed to clients of UBS AG Hong Kong Branch by UBS AG Hong Kong Branch, a licensed bank under the Hong Kong Banking Ordinance and a registered institution under the Securities and Futures Ordinance. UBS AG Hong Kong Branch is incorporated in Switzerland with limited liability. The contents of this material have not been reviewed by any regulatory authority in Hong Kong. India: UBS India Private Ltd. (Corporate Identity Number U67120MH1996PTC097299) 2/F, 3 North Avenue, Maker Maxity, Bandra Kurla Complex, Bandra (East), Mumbai (India) 400051. Phone: +912261556000. It provides brokerage services bearing SEBI Registration Number: INZ000259830; Merchant Banking services bearing SEBI Registration Number: INM000013101 and Research Analyst services bearing SEBI Registration Number: INH000001204. Name of Compliance Officer Mr. Parameshwaran Shivaramakrishnan, Phone: +912261556151, Email: parameshwaran@ubs.com, Name of Grievance Officer Parameshwaran Shivaramakrishnan, Phone: +912261556151, Email: ol-ubs-sec-compliance@ubs.com. Registration granted by SEBI, and certification from NISM in no way guarantee performance of the intermediary or provide any assurance of returns to investors. UBS AG, its affiliates or subsidiaries may have debt holdings or positions in the subject Indian company/companies. UBS AG, its affiliates or subsidiaries may have financial interests (e.g. loan/derivative products, rights to or interests in investments, etc.) in the subject Indian company/companies from time to time. Within the past 12 months, UBS AG, its affiliates or subsidiaries may have received compensation for non-investment banking securities-related services and/or non-securities services from the subject Indian company/companies. The subject company/companies may have been a client/clients of UBS AG, its affiliates or subsidiaries during the 12 months preceding the date of distribution of the research report with respect to investment banking and/or non-investment banking securities-related services and/or non-securities services. With regard to information on associates, please refer to the Annual Report at: https://www.ubs.com/global/en/about\_ubs/investor\_relations/annualreporting.html. The Research Annual Compliance report for UBS India Private Limited is available on www.ubs.com/ubssj under Research tab. Indonesia: This communication and any offering material term sheet, research report, other product or service documentation or any other information (the "Material") sent with this communication was done so as a result of a request received by UBS from you and/or persons entitled to make the request on your behalf. Should you have received the Material erroneously, UBS asks that you kindly delete/destroy the communication and material and inform UBS immediately. The Material, where provided, was provided for your information only and is not to be further distributed without the consent of UBS. None of the Material has been registered or filed under the prevailing laws and with any financial or regulatory authority in your jurisdiction. The Material may not have been approved, disapproved, endorsed, registered or filed with any financial or regulatory authority in your jurisdiction. UBS has not, by virtue of the Material, made available, issued any invitation to subscribe for or to purchase any investment (including securities or products or futures contracts). The Material is neither an offer nor a solicitation to enter into any transaction or contract (including futures contracts) nor is it an offer to buy or to sell any securities or products. The relevant investments will be subject to restrictions and obligations on transfer as set forth in the Material, and by receiving the Material you undertake to comply fully with such restrictions and obligations. You should carefully study and ensure that you understand and exercise due care and discretion in considering your investment objective, risk appetite and personal circumstances against the risk of the investment. You are advised to seek independent professional advice in case of doubt. Any and all advice provided on and/or trades executed by UBS pursuant to the Material will only have been provided upon your specific request or executed upon your specific instructions, as the case may be, and may be deemed as such by UBS and you. Israel: UBS is a premier global financial firm offering wealth management, asset management and investment banking services from its headquarters in Switzerland and its operations in over 50 countries worldwide to individual, corporate and institutional investors. This publication is intended for information only and is not intended as an offer to buy or solicitation of an offer. Furthermore, this publication is not intended as an investment advice. Nothing contrary to the above, no action has been, or will be, taken in Israel that would permit an offering of the product(s) mentioned in this document or a distribution of this document to the public in Israel. In particular, this document has not been reviewed or approved by the Israeli Securities Authority. The product(s) mentioned in this document is/are being offered to a limited number of sophisticated investors who qualify as one of the investors listed in the first supplement to the Israeli Securities Law, 5728-1968. This document may not be reproduced or used for any other purpose, nor be furnished to any other person other than those to whom copies have been sent. Anyone who purchases the product(s) mentioned herein shall do so for its own benefit and for its own account and not with the aim or intention of distributing or offering the product(s) to other parties. Anyone who purchases the product(s) shall do so in accordance with its own understanding and discretion and after it has received any relevant financial, legal, business, tax or other advice or opinion required by it in connection with such purchase(s). The word "advice" and/or any of its equivalent terms shall be read and construed in conjunction with the definition of the term "investment marketing" as defined under the Israeli Regulation of Investment Advice, Investment Marketing and Portfolio Management Law. The Swiss laws and regulations require a number of mandatory disclosures to be made in independent financial research reports or recommendations. Pursuant to the Swiss Financial Market Infrastructure Act and the Financial Market Infrastructure Ordinance-FINMA, banks must disclose the percentage of voting rights they hold in companies being researched, if these holdings are equal to or exceed the statutory thresholds. In addition, the Directives on the Independence of Financial Research, issued by the Swiss Bankers Association, mandate a number of disclosures, including the disclosure of potential conflicts of interest, the participation within previous 12 months in any securities issues on behalf of the company being researched, as well as the fact that remuneration paid to the financial analysts is based generally upon the performance of (i) the new issues department or investment banking; or (ii) securities trading performance (including proprietary trading) or sales. Italy: This publication is not intended to constitute a public offer under Italian law. It is distributed only for information purposes to clients of UBS Europe SE, Succursale Italia, with place of business at Via del Vecchio Politecnico, 3-20121 Milano. UBS Europe SE, Succursale Italia is subject to the joint supervision of the European Central Bank, the German Central Bank (Deutsche Bundesbank), the German Federal Financial Services Supervisory Authority (Bundesanstalt fur
+
+Finanzdienstleistungsaufsicht, "BaFin"), as well as of the Bank of Italy (Banca d'Italia) and the Italian Financial Markets Supervisory Authority (CONSOB - Commissione Nazionale per le Società e la Borsa), to which this publication has not been submitted for approval. UBS Europe SE is a credit institution constituted under German law in the form of a Societas Europaea, duly authorized by BaFin. Japan: This report is solely distributed in Japan by UBS SuMi TRUST Wealth Management Co., Ltd, Financial Instruments Dealer, Director-General of Kanto Local Finance Bureau (Kinsho) No. 3233, a member of the Japan Securities Dealers Association, Financial Futures Association of Japan, Investment Management Association of Japan. UBS SuMi TRUST Wealth Management Co., Ltd will not distribute or forward this report outside Japan. Jersey: UBS AG, Jersey Branch, is regulated and authorized by the Jersey Financial Services Commission for the conduct of banking, funds and investment business. Where services are provided from outside Jersey, they will not be covered by the Jersey regulatory regime. UBS AG, Jersey Branch is a branch of UBS AG a public company limited by shares, incorporated in Switzerland whose registered offices are at Aeschenvorstadt 1, CH-4051 Basel and Bahnhofstrasse 45, CH 8001 Zurich. UBS AG, Jersey Branch's principal place of business is 1, IFC Jersey, St Helier, Jersey, JE2 3BX. Luxembourg: This publication is not intended to constitute a public offer under Luxembourg law. It is distributed only for information purposes to clients of UBS Europe SE, Luxembourg Branch ("UBS Luxembourg"), R.C.S. Luxembourg n° B209123, with registered office at 33A, Avenue J.F. Kennedy, L-1855 Luxembourg. UBS Europe SE is a credit institution constituted under German law in the form of a Societas Europaea (HRB n° 107046), with registered office at Bockenheimer Landstrasse 2-4, D-60306 Frankfurt am Main, Germany, duly authorized by the German Federal Financial Services Supervisory Authority (Bundesanstalt für Finanzdienstleistungsaufsicht, "BaFin") and subject to the joint prudential supervision of BaFin, the European Central Bank and the central bank of Germany (Deutsche Bundesbank). UBS Luxembourg is furthermore supervised by the Luxembourg prudential supervisory authority (Commission de Surveillance du Secteur Financier), in its role as host member state authority. This publication has not been submitted for approval to any public supervisory authority. Malaysia: This communication and any offering material term sheet, research report, other product or service documentation or any other information (the "Material") sent with this communication was done so as a result of a request received by UBS from you and/or persons entitled to make the request on your behalf. Should you have received the Material erroneously, UBS asks that you kindly delete/destroy the communication and Material and inform UBS immediately. The Material, where provided, was provided for your information only and is not to be further distributed in whole or in part in or into your jurisdiction without the consent of UBS. The Material may not have been reviewed, approved, disapproved, endorsed, registered or filed with any financial or regulatory authority in your jurisdiction. UBS has not, by virtue of the Material, made available, issued any invitation to subscribe for or to purchase any investment (including securities or derivatives products). The Material is neither an offer nor a solicitation to enter into any transaction or contract (including future contracts) nor is it an offer to buy or to sell any securities or derivatives products. The relevant investments will be subject to restrictions and obligations on transfer as set forth in the Material, and by receiving the Material you undertake to comply fully with such restrictions and obligations. You should carefully study and ensure that you understand and exercise due care and discretion in considering your investment objective, risk appetite and personal circumstances against the risk of the investment. You are advised to seek independent professional advice in case of doubt. Any and all advice provided on and/or trades executed by UBS pursuant to the Material will only have been provided upon your specific request or executed upon your specific instructions, as the case may be, and may be deemed as such by UBS and you. Mexico: This information is distributed by UBS Asesores México, S.A. de C.V. ("UBS Asesores"), an affiliate of UBS Switzerland AG, incorporated as a non-independent investment advisor under the Mexican regulation due to the relation with a Foreign Bank. UBS Asesores is registered under number 30060-001-(14115)-21/06/2016 and subject to the supervision of the Mexican Banking and Securities Commission ("CNBV") exclusively regarding the rendering of (i) portfolio management services, (ii) securities investment advisory services, analysis and issuance of individual investment recommendations, and (iii) anti-money laundering and terrorism financing matters. This UBS publication or any material related thereto is addressed only to Sophisticated or Institutional Investors located in Mexico. Research reports only reflect the views of the analysts responsible for the report. The compensation of the analyst(s) who prepared this report is determined exclusively by research management and senior management of any entity of UBS Group to which such analyst(s) render(s) services. Monaco: This document is not intended to constitute a public offering or a comparable solicitation under the Principality of Monaco laws, but might be made available for information purposes to clients of UBS (Monaco) S.A., a regulated bank having its registered office at 2 avenue de Grande Bretagne 98000 Monaco operating under a banking license granted by the "Autorité de Contrôle Prudentiel et de Résolution" (ACPR) and the Monegasque government which authorizes the provision of banking services in Monaco. UBS (Monaco) S.A. is also licensed by the "Commission de Contrôle des Activités Financières" (CCAF) to provide investment services in Monaco. The latter has not approved this publication. Philippines: This communication was done so as a result of a request received by UBS from you and/or persons entitled to make the request on your behalf. Should you have received the Material erroneously, UBS asks that you kindly delete/destroy the communication and Material and inform UBS immediately. The Material, where provided, was provided for your information only and is not to be further distributed in whole or in part in or into your jurisdiction without the consent of UBS. The Material may not have been reviewed; approved, disapproved, endorsed, registered or filed with any financial or regulatory authority in your jurisdiction. UBS has not, by virtue of the Material, made available; issued any invitation to subscribe for or to purchase any investment (including securities or derivatives products). The Material is neither an offer nor a solicitation to enter into any transaction or contract (including future contracts) nor is it an offer to buy or to sell any securities or derivatives products. The relevant investments will be subject to restrictions and obligations on transfer as set forth in the Material, and by receiving the Material you undertake to comply fully with such restrictions and obligations. You should carefully study and ensure that you understanding and exercise due care and discretion in considering your investment objective; risk appetite and personal circumstances against the risk of the investment. You are advised to seek independent professional advice in case of doubt. Any and all advice provided on and/or trades executed by UBS pursuant to the Material will only have been provided upon your specific request or executed upon your specific instructions, as the case may be, and may be deemed as such by UBS and you. Portugal: UBS Switzerland AG is not licensed to conduct banking and financial activities in Portugal nor is UBS Switzerland AG supervised by the portuguese regulators (Bank of Portugal "Banco de Portugal" and Portuguese Securities Exchange Commission "Comissão do Mercado de Valores Mobiliários"). Qatar: UBS Qatar LLC is licensed by the Qatar Financial Centre Authority and authorized by the QFC Regulatory Authority, with QFC no. 01169, and has its registered office at Building No. 36, 4th Floor, Abdulla Bin Thani Street, Doha Design District 1, Msheireb Downtown Doha, State of Qatar. This material is strictly intended for Eligible Counterparties and/or Business Customers only as classified under the QFCRA's Customer and Investor Protection Rules 2019. No other person should act upon this material. Russia: This document or information contained therein is for information purposes only and constitutes neither a public nor a private offering; is not an invitation to make offers; to sell, exchange or otherwise transfer any financial instruments in the Russian Federation to or for the benefit of any Russian person or entity and does not constitute an advertisement or offering of securities in the Russian Federation within the meaning of Russian securities laws. The information contained herein is not an "individual investment recommendation" as defined in Federal Law of 22 April 1996 No 39-FZ "On Securities Market" (as amended) and the financial instruments and operations specified herein may not be suitable for your investment profile or your investment goals or expectations. The determination of whether or not such financial instruments and operations are in your interests or are suitable for your investment goals, investment horizon or the acceptable risk level is your responsibility. We assume no liability for any losses connected with making any such operations or investing into any such financial instruments and we do not recommend to use such information as the only source of information for making an investment decision. Saudi Arabia: This material is for marketing and information purposes by UBS Saudi Arabia only. It has been distributed by UBS Saudi Arabia or reviewed and approved by UBS Saudi Arabia if it was issued by UBS Switzerland AG, by UBS AG, or any of its subsidiaries or branches. UBS Switzerland AG is a public company limited by shares, incorporated in Switzerland with its registered offices at Bahnhofstrasse 45, CH-8001 Zurich. UBS Saudi Arabia (a subsidiary of UBS AG) is a Saudi closed joint stock company incorporated in the Kingdom of Saudi Arabia with a paid capital of 110,000,000 Saudi Riyals under commercial register number 1010257812 having its registered office at Laysen Valley, P.O. Box 75724, Riyadh 11588, Kingdom of Saudi Arabia. UBS Saudi Arabia is authorized and regulated by the Capital Market Authority to conduct securities business under license number 08113-37. This document is distributed only under such circumstances as may be permitted by applicable laws and regulations. The information and – if any - opinions contained in this document have been compiled or arrived at based upon information obtained from sources believed to be reliable and in good faith, but is not guaranteed as being accurate, nor is it a complete statement or summary of the securities, markets or developments referred to in the document. All such information and opinions are subject to changes without notice. Past performance of investments (whether simulated or actual) is not necessarily an indicator of future results. Forward looking data is based on estimates that are subject to changes. Should the currency of a financial product or service not match your reference currency, performance may rise or fall due to currency fluctuations. UBS Switzerland AG and / or other members of the UBS Group may have a position in and may make a purchase and/or sale of any of the securities or other financial instruments mentioned in this document While statements that constitute "forward-looking statements", including, but not limited to, statements relating to our future business development represent UBS judgments and future expectations concerning the development of our business, a number of risks, uncertainties and other important factors could cause actual developments and results to differ materially from our expectations. This document may not be forwarded, reproduced, redistributed or republished for any purpose without the written permission of UBS Saudi Arabia. Source for all data and charts (if not indicated otherwise) is UBS Switzerland AG. Singapore: Where applicable, this material is distributed in Singapore by UBS AG, Singapore Branch, which is licensed by the Monetary Authority of Singapore under the Banking Act 1970 to carry on banking business. UBS AG is incorporated in Switzerland with limited liability. UBS AG has a branch registered in Singapore (UEN S98FC5560C). This material has been prepared and issued for distribution in Singapore to institutional investors, accredited investors and expert investors (each as defined under the Financial Advisers Regulations (the "FAR")) only. By virtue of your status as an institutional investor, accredited investor, or expert investor, UBS AG is exempted from complying with certain requirements under the Financial Advisers Act 2001 (the "FAA"), the FAR and the relevant Notices and Guidelines issued thereunder, in respect of any financial advisory service which UBS AG may provide to you. These include exemptions from complying with: Section 34 of the FAA (pursuant to Regulation 33(1) of the FAR); Section 36 of the FAA (pursuant to Regulation 34(1) of the FAR); and Section 45 of the FAA (pursuant to Regulation 35(1) of the FAR). Singapore recipients and clients of UBS AG, Singapore Branch should contact UBS AG, Singapore Branch for any matters arising from, or in connection with, this material. Where applicable, this communication and any offering material term sheet, research report, other product or service documentation or any other information (the "Material") sent with this communication was done so as a result of a request received by UBS from you and/or persons entitled to make the request on your behalf. Should you have received the Material erroneously, UBS asks that you kindly delete/destroy the communication and Material and inform UBS immediately. The Material, where provided, was provided for your information only and is not too be further distributed in whole or in part in or into your jurisdiction without the consent of UBS. The Material may not have been reviewed, approved, disapproved or endorsed by any financial or regulatory authority in your jurisdiction. UBS has not, by virtue of the Material, made available, issued any invitation to subscribe for or to purchase any investment (including securities or products or futures contracts). The Material is neither an offer nor a solicitation to enter into any transaction or contract (including future contracts) nor is it an offer to buy or to sell any securities or products. The relevant investments will be subject to restrictions and obligations on transfer as set forth in the Material, and by receiving the Material you undertake to comply fully with such restrictions and obligations. You should carefully study and ensure that you understand and exercise due care and discretion in considering your investment objective, risk appetite and personal circumstances against the risk of the investment. You are advised to seek independent professional advice in case of doubt. Any and all advice provided on and/or trades executed by UBS pursuant to the Material will only have been provided upon your specific request or executed upon your specific instructions, as the case may be, and may be deemed as such by UBS and you. Spain: This report is distributed in Spain by UBS AG, Sucursal en España, authorized under number 1460 in the Register by the Banco de España. Sweden: This publication is not intended to constitute a public offer under Swedish law. It is distributed only for information purposes to clients of UBS Europe SE, Sweden Bankfilial, with place of business at Regeringsgatan 38, 11153 Stockholm, Sweden, registered with the Swedish Companies Registration Office under Reg. No 516406-1011. UBS Europe SE, Sweden Bankfilial is subject to the joint supervision of the European Central Bank, the German Central Bank (Deutsche Bundesbank), the German Federal Financial Services Supervisory Authority (Bundesanstalt für Finanzdienstleistungsaufsicht, "BaFin"), as well as of the Swedish supervisory authority (Finansinspektionen), to which this publication has not been submitted for approval. UBS Europe SE is a credit institution constituted under German law in the form of a Societas Europaea, duly authorized by BaFin. Taiwan: This material is provided by UBS AG, Taipei Branch in accordance with laws of Taiwan, in agreement with or at the request of clients/prospects. Thailand: This communication and any offering material, term sheet, research report, other product or service documentation or any other information (the "Material") sent with this communication were done so as a result of a request received by UBS from you and/or persons entitled to make the request on your behalf. Should you have received the Material erroneously, UBS asks that you kindly delete/destroy the communication and Material and inform UBS immediately. The Material, where provided, was provided for your information only and is not to be further distributed in whole or in part in or into your jurisdiction without the consent of UBS. The Material may not have been reviewed, approved, disapproved, endorsed, registered or filed with any financial or regulatory authority in your jurisdiction. UBS has not, by virtue of the Material, made available, issued any invitation to subscribe for or to purchase any investment (including securities or derivatives products). The Material is neither an offer nor a solicitation to enter into any transaction or contract (including future contracts) nor is it an offer to buy or to sell any securities or derivatives products. The relevant investments will be subject to restrictions and obligations on transfer as set forth in the Material, and by receiving the Material you undertake to comply fully with such restrictions and obligations. You should carefully study and ensure that you understand and exercise due care and discretion in considering your investment objective, risk appetite and personal circumstances against the risk of the investment. You are advised to seek independent professional advice in case of doubt. Any and all advice provided and/or trades executed by UBS pursuant to the Material will only have been provided upon your specific request or executed upon your specific instructions, as the case may be, and may be deemed as such by UBS and you. Türkiye: The information in this document is not provided for the purpose of offering, marketing or sale of any capital market instrument or service in the Republic of Türkiye. Therefore, this document may not be considered as an offer made, or to be made, to residents of the Republic of Türkiye in the Republic of Türkiye. UBS Switzerland AG is not licensed by the Capital Markets Board of Türkiye (the CMB) under the provisions of the Capital Market Law (Law No. 6362). Accordingly, neither this document nor any other offering material related to the instrument/service may be utilized in connection with providing any capital market services to persons within the Republic of Türkiye without the prior approval of the CMB. However, according to article 15 (d) (ii) of the Decree No. 32 residents of the Republic of Türkiye are allowed to purchase or sell the financial instruments traded in financial markets outside of the Republic of Türkiye. Further to this, pursuant to article 9 of the Communiqué on Principles Regarding Investment Services, Activities and Ancillary Services No. III-37.1, investment services provided abroad to residents of the Republic of Türkiye based on their own initiative are not restricted. United Arab Emirates (UAE) / DIFC / Abu Dhabi: UBS is not licensed in the UAE by the Central Bank of the UAE nor by the Emirates' Securities and Commodities Authority and does not undertake banking activities in the UAE. This document is provided for your information only and does not constitute financial advice. DIFC: UBS AG Dubai Branch is regulated by the DFSA in the DIFC. This material is strictly intended for Professional Clients and/or Market Counterparties only as classified under the DFSA rulebook. It should not be distributed to Retail Clients. The Investment Research is provided for information purposes only and is not a recommendation or offer to buy/sell/hold a particular investment. The investment research may be out of date. You should seek investment advice before acting on the basis of the Investment Research. Abu Dhabi: UBS AG Abu Dhabi Branch is licensed and regulated by the Financial Services Regulatory Authority ("FSRA") of the Abu Dhabi Global Market. This material is intended solely for professional clients or market counterparties, as defined in the rules of the FSRA. It is not directed at, nor intended for, retail clients or any person who does not meet the criteria of a professional client or market counterparty. United Kingdom: This document is issued by UBS Wealth Management, a division of UBS AG which is authorised and regulated by the Financial Market Supervisory Authority in Switzerland. In the United Kingdom, UBS AG is authorised by the Prudential Regulation Authority and is subject to regulation by the Financial Conduct Authority and limited regulation by the Prudential Regulation Authority. Details about the extent of regulation by the Prudential Regulation Authority are available from us on request. A member of the London Stock Exchange. This publication is distributed to retail clients of UBS Wealth Management. Ukraine: UBS is a premier global financial services firm offering wealth management services to individual, corporate and institutional investors. UBS is established in Switzerland and operates under Swiss law and in over 50 countries and from all major financial centers. UBS is not registered and licensed as a bank/financial institution under Ukrainian legislation and does not provide banking and other financial services in Ukraine. UBS has not made, and will not make, any offer of the mentioned products to the public in Ukraine. No action has been taken to authorize an offer of the mentioned products to the public in Ukraine and the distribution of this document shall not constitute financial services for the purposes of the Law of Ukraine "On Financial Services and Financial Companies" dated 14 December 2021. Any offer of the mentioned products shall not constitute an investment advice, public offer, circulation, transfer, safekeeping, holding or custody of securities in the territory of Ukraine. Accordingly, nothing in this document or any other document, information or communication related to the mentioned products shall be interpreted as containing an offer, a public offer or invitation to offer or to a public offer, or solicitation of securities in the territory of Ukraine or investment advice under Ukrainian law. Electronic communication must not be considered as an offer to enter into an electronic agreement or other electronic instrument within the meaning of the Law of Ukraine "On Electronic Commerce" dated 3 September 2015. This document is strictly for private use by its holder and may not be passed on to third parties or otherwise publicly distributed. USA: Distributed to US persons only by UBS Financial Services Inc. or UBS LLC, subsidiaries of UBS AG. UBS Switzerland AG, UBS Europe SE, UBS Bank, S.A., UBS BB Corretora de Câmbio, Títulos e Valores Mobiliários S.A., UBS Asesores México, S.A. de C.V., UBS SuMi TRUST Wealth Management Co., Ltd., UBS Wealth Management Israel Ltd. and UBS Menkul Degerler AS are affiliates of UBS AG. UBS Financial Services Inc. accepts responsibility for the content of a report prepared by a non-US affiliate when it distributes reports to US persons. All transactions by a US person in the securities mentioned in this report should be effected through a US-registered broker dealer affiliated with UBS, and not through a non-US affiliate. The contents of this report have not been and will not be approved by any securities or investment authority in the United States or elsewhere. UBS Financial Services Inc. is not acting as a municipal advisor to any municipal entity or obligated person within the meaning of Section 15B of the Securities Exchange Act (the "Municipal Advisor Rule") and the opinions or views contained herein are not intended to be, and do not constitute, advice within the meaning of the Municipal Advisor Rule. For information on the ways in which UBS LLC manages conflicts and maintains independence of its UBS Global Research product; historical performance information; certain additional disclosures concerning UBS Global Research recommendations; and terms and conditions for certain third party data used in research report, please visit https://www.ubs.com/disclosures
+
+© UBS 2026. The key symbol and UBS are among the registered and unregistered trademarks of UBS. All rights reserved.
+
+# CS Wealth Management Disclaimer
+
+This disclaimer must be read in conjunction with "Risk information" and "Important Information About Sustainable Investing Strategies" sections of the Global Wealth Management Disclaimer above. You receive this document in your capacity as a client of CS Wealth Management. Your personal data will be processed in accordance with the CS privacy statement accessible at your domicile through the official CS website https://www.credit-suisse.com. In order to provide you with marketing materials concerning our products and services, UBS Group AG and its subsidiaries may process your basic personal data (i.e. contact details such as name, e-mail address) until you notify us that you no longer wish to receive them. You can optout from receiving these materials at any time by informing your Relationship Manager.
+
+Except as otherwise specified herein and/or depending on the local CS entity from which you are receiving this report, this report is distributed by UBS Switzerland AG, authorised and regulated by the Swiss Financial Market Supervisory Authority (FINMA). Saudi Arabia: This document is being distributed by CS Saudi Arabia I Part of UBS Group (CR Number 1010228645, NUN Number 7001515373), duly licensed and regulated by the Saudi Arabian Capital Market Authority pursuant to License Number 08104-37 dated 23/03/1429H corresponding to 21/03/2008AD. CS Saudi Arabia's principal place of business is at King Khaled Road, Laysen Valley, Building number 6, 12329-2376, Riyadh, Saudi Arabia. Website: https://www.credit-suisse.com/sa/en/cssa.html.
+
+© UBS 2026. The key symbol and UBS are among the registered and unregistered trademarks of UBS. All rights reserved.
+
+![](images/639ba32a7ddec6e61d4911d6dc9e019ba85ff19f893a5a941de24a7fc06d3053.jpg)
