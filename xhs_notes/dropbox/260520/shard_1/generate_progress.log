@@ -1,0 +1,31 @@
+Found 36 total PDFs; shard 1/40 has 5 PDFs, skips 0 already converted, will process 5 PDFs with batch_size=5.
+Running batch 1: 5 PDFs
+Found 5 PDFs.
+Uploading PDF to MinerU: /tmp/pdf_batch_001_e71ahjj9/pdfs/0001-06-Barclays-IT Hardware and Communications Equipment-Highlights from Meetings in Asia-260518.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_e71ahjj9/pdfs/0002-07-BofA Securities-Global Equity Volatility Insights-Underestimate FOMO at your own risk-260519.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_e71ahjj9/pdfs/0003-08-BofA Securities-Basic Materials - China-Copper Ally prices remain firm- TC RC drops on tight supply- iron ore holds strong-260518.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_e71ahjj9/pdfs/0004-09-CITI-China Infant Formula-2026 proprietary survey findings-260518.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_e71ahjj9/pdfs/0005-10-CITI-China Property-Apr NBS- Accelerating Starts - REI Decline- Narrower Sales Drop-260518.pdf
+MinerU batch_id=e0a023a2-5e21-4053-ad98-4ea661263621
+MinerU states: running, pending, pending, pending, pending
+MinerU states: done, running, pending, pending, pending
+MinerU states: done, running, running, running, running
+MinerU states: done, running, running, running, running
+MinerU states: done, running, running, running, running
+MinerU states: done, running, running, running, running
+MinerU states: done, running, running, running, running
+MinerU states: done, running, running, running, running
+MinerU states: done, running, done, running, running
+MinerU states: done, running, done, running, running
+MinerU states: done, done, done, done, running
+MinerU states: done, done, done, done, running
+MinerU states: done, done, done, done, running
+MinerU states: done, done, done, done, running
+MinerU states: done, done, done, done, running
+MinerU states: done, done, done, done, running
+MinerU states: done, done, done, done, running
+MinerU states: done, done, done, done, running
+MinerU states: done, done, done, done, running
+MinerU states: done, done, done, done, done
+Done. Results written to /home/runner/work/rpt_edit/rpt_edit/xhs_notes/dropbox/260520/shard_1
+All batches completed successfully.

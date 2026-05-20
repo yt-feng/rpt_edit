@@ -1,0 +1,107 @@
+ZH_A: 最近我们拿到了一份关于亚洲IT硬件供应链的深度报告，你刚从那边回来，能不能先给我们一个最直观的判断？
+
+ZH_B: 整体感受是正面的。几乎所有细分领域的需求都相当强劲，但大家讨论最多的不再是需求本身，而是产能限制、元器件短缺和供应链的多元化。
+
+ZH_A: 所以这份报告真正要回答的核心问题是什么？是供应链现在到底有多紧张吗？
+
+ZH_B: 不完全是。它真正要回答的是：在这轮由AI驱动的需求爆发中，哪些公司真正拿到了订单，哪些只是陪跑。尤其是在TPU、Trainium这些定制芯片领域，供应链正在发生结构性变化。
+
+ZH_A: 说到TPU，我记得半年前你们去亚洲时就已经很看好这个方向了。现在有什么新变化吗？
+
+ZH_B: 当时我们判断TPU产能会在2026年翻倍，现在看来进展符合甚至超出了预期。最核心的供应商是CLS，我们预计它的TPU相关收入会从2025年的10亿美元翻倍到2026年的28亿美元。
+
+ZH_A: 28亿，这个增长幅度很大。那其他公司呢？比如FLEX和JBL，它们也在里面分一杯羹吗？
+
+ZH_B: FLEX一直是CPU制造的第二供应商，虽然有人担心它会丢份额，但我们认为它仍然参与其中，只是收入增速可能不如生态里的其他玩家。JBL的参与方式更间接——它给测试硬件的主供应商提供测试设备，所以测试产能的增长对它是个利好。
+
+ZH_A: 听起来TPU的生态已经很清晰了。那Trainium这边呢？亚马逊的定制芯片，供应链怎么看？
+
+ZH_B: 供应链对Trainium今年的单位增长比较乐观，但规模远不及TPU。我们认为30%以上的增长是合理的，如果被其他云厂商更广泛采用，可能会更高。另外，JBL在2025年中期已经更深入地进入了Trainium整机柜的供应链。
+
+ZH_A: 那除了这些定制芯片，传统的GPU市场呢？比如英伟达和AMD。
+
+ZH_B: 虽然供应链提到这两个项目可能有延迟，但我们看到年底会有强劲的爬坡。比如DELL在GPU服务器上依然很强，CLS在以太网交换上有机会，FN是英伟达光模块的主要供应商，1.6T光模块会重新提振增长。
+
+ZH_A: 听起来整个AI硬件生态都很热闹。但报告里也提到了一些不那么乐观的地方，比如其他加速器项目。
+
+ZH_B: 对，微软的Maia项目有一些动静，但时间和规模都不确定。Meta的项目离商业化更远。而且目前还不清楚北美的EMS公司能否在这个领域找到有意义的角色。
+
+ZH_A: 那传统云CPU市场呢？这个方向好像和AI不太一样。
+
+ZH_B: 和半年前比，通用CPU的前景明显改善。单位讨论从持平变成了增长20%到40%，而且平均售价也在提升。不过这个供应链更偏向亚洲的ODM厂商，而不是北美的EMS公司。
+
+ZH_A: 网络设备这边呢？AI集群对网络的需求应该也很强吧？
+
+ZH_B: 数据中心交换的需求很强劲，和计算支出的增长是同步的。特别是规模化的以太网还在早期阶段，但它很可能成为2027年整个生态的驱动力。CLS是白牌交换的主要受益者，JBL则受益于英伟达的交换设备。
+
+ZH_A: 还有一个很有意思的点，你提到了电源市场。这个领域好像比较分散？
+
+ZH_B: 是的，电源市场非常碎片化，但一个清晰的趋势是每机柜的电源和冷却需求在增长。FLEX是其中敞口最大的，它的云AI业务在FY27和FY28几乎要翻倍增长。JBL也在增长，年收入大约6亿美元，增长超过30%。
+
+ZH_A: 那设备端呢？PC和手机的情况怎么样？
+
+ZH_B: 设备端受到内存价格上涨的影响更大。PC的ODM预计第二季度末会有反弹，但全年单位可能下降5%到10%。手机方面，高端安卓市场开始出现疲软，这是个新信号。iPhone在中国卖得不错，但我们对其可持续性存疑。
+
+ZH_A: 听起来整个报告覆盖了从云端到终端的方方面面。但有没有哪些问题，报告里没有完全展开，值得我们去读完整版？
+
+ZH_B: 有两个关键问题。第一，TPU供应链的产能扩张还能持续多久？虽然目前进展很好，但2026年之后的增长路径仍然需要验证。第二，Trainium能否真正被其他云厂商广泛采用？如果只是亚马逊自己用，那蛋糕可能没有想象中那么大。
+
+ZH_A: 明白了。所以如果你想真正理解哪些公司会在未来两到三年里持续受益，还是得去读完整报告。
+
+ZH_B: 没错。这份报告里还有更多关于具体公司收入模型和竞争格局的细节，能帮你做出更清晰的判断。
+
+ZH_A: 好，那我们今天就聊到这里。如果你想获取完整报告，欢迎加入我们的社区。我们下次再见。
+
+EN_A: We just got our hands on a deep dive report about the IT hardware supply chain in Asia. You just came back from those meetings. What is the one big takeaway?
+
+EN_B: Overall, the tone was positive. Demand across most segments is strong. But the main topic of conversation has shifted from demand to capacity constraints, component shortages, and multi-sourcing strategies.
+
+EN_A: So what is the core question this report is really trying to answer? Is it just about how tight the supply chain is right now?
+
+EN_B: Not exactly. The real question is: in this AI-driven demand surge, which companies are actually getting the orders, and which ones are just along for the ride. Especially in custom chips like TPU and Trainium, the supply chain is going through a structural shift.
+
+EN_A: Speaking of TPU, I remember you were bullish on this six months ago. What has changed?
+
+EN_B: Back then, we expected TPU capacity to double by 2026. Now it looks like that is happening on track or even ahead of plan. The key supplier is CLS. We are modeling their TPU-related revenue to more than double from one billion dollars in 2025 to 2.8 billion in 2026.
+
+EN_A: That is a huge jump. What about other names like FLEX and JBL? Do they have a piece of this?
+
+EN_B: FLEX has traditionally been the second source for CPU manufacturing. There is some concern about them losing share, but we think they are still involved, even if their revenue does not grow as fast as the rest of the ecosystem. JBL is more indirect. They make test equipment for the main testing hardware provider, so growth in testing capacity is a positive for them.
+
+EN_A: So the TPU ecosystem is pretty clear. What about Trainium? Amazon's custom chip. How does the supply chain see it?
+
+EN_B: The supply chain expects solid unit growth for Trainium this year, but not at the scale of TPU. We think 30 percent plus is reasonable, and potentially higher if other cloud providers adopt it more broadly. Also, JBL entered the Trainium rack assembly in a more meaningful way in mid-2025.
+
+EN_A: What about the traditional GPU market? Nvidia and AMD?
+
+EN_B: The supply chain mentioned potential delays for both programs, but we still see strong ramps later this year. Dell remains well positioned in GPU servers. CLS looks good for scale-up Ethernet. And FN is a leading supplier of transceivers to Nvidia, with 1.6T starting to reignite growth.
+
+EN_A: Sounds like the whole AI hardware ecosystem is buzzing. But the report also mentioned some less optimistic areas, like other accelerator projects.
+
+EN_B: Right. Microsoft's Maia program has some activity, but timing and volumes are still uncertain. Meta's project seems further from commercialization. And it is unclear if North American EMS companies will have a meaningful role there.
+
+EN_A: How about the traditional cloud CPU market? That seems different from AI.
+
+EN_B: Compared to six months ago, the outlook is much better. Unit discussions have moved from flat to up 20 to 40 percent, and average selling prices are higher. But this supply chain favors Asian ODMs more than North American EMS companies.
+
+EN_A: What about networking? AI clusters need a lot of network gear.
+
+EN_B: Data center switching demand is strong and tracking with compute spending. Scale-up Ethernet is still in early stages, but it could be a major driver for the ecosystem in 2027. CLS is the main beneficiary in white box switching. JBL benefits from Nvidia switches.
+
+EN_A: You also mentioned the power market. That seems like a fragmented space.
+
+EN_B: It is very fragmented, but one clear trend is that power and cooling requirements per rack are growing. Flex has the most exposure here, with their cloud AI business almost doubling in FY27 and FY28. JBL is also growing, with annual power revenue around 600 million dollars and growing over 30 percent.
+
+EN_A: What about the device side? PCs and smartphones?
+
+EN_B: Devices are more impacted by higher memory prices. PC ODMs expect a rebound later in Q2, but full year units could be down 5 to 10 percent. On smartphones, we are seeing some weakness in the high-end Android market, which is new. iPhones are still selling well in China, but we question the sustainability.
+
+EN_A: So the report covers a lot, from the cloud to the edge. But what questions does it leave open? What would make me want to read the full report?
+
+EN_B: Two things. First, how long can the TPU supply chain keep expanding capacity? It looks good now, but the growth path beyond 2026 still needs to be verified. Second, can Trainium really get broad adoption from other cloud providers? If it is just Amazon, the pie may not be as big as people think.
+
+EN_A: So if you want to really understand which companies will benefit over the next two to three years, you need to read the full report.
+
+EN_B: Exactly. The report has more detailed revenue models and competitive analysis that can help you make a clearer judgment.
+
+EN_A: Great. That is all for today. If you want the full report, join our community. See you next time.
