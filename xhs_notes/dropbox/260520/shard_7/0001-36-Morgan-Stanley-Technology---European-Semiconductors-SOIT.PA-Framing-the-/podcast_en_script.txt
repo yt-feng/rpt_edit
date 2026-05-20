@@ -1,0 +1,17 @@
+EN_A: Today, we are diving into a fascinating report from a global investment bank that significantly raised price targets on two European semiconductor companies. B, what is the main takeaway here?
+EN_B: The core argument is that as AI clusters get bigger and more tightly coupled, optics will move deeper into the data center. This directly benefits Soitec and Besi. Soitec makes photonics SOI wafers, and Besi makes hybrid bonding equipment.
+EN_A: So they are both key players in the optical communication supply chain. What is the single most important question this report is trying to answer?
+EN_B: It is trying to quantify how much the attach rate of optical engines per GPU will increase as we move from single-rack to multi-rack architectures. And the report gives a very specific number.
+EN_A: A specific number? Like how many optical engines per GPU?
+EN_B: Exactly. Today, it is about 2 to 4 optical engines per GPU. With co-packaged optics, or CPO, in a system like NVL576, that jumps to about 17. And in a fully optical configuration, it could go above 35.
+EN_A: So from 4 to 35, that is nearly a tenfold increase. What does that mean?
+EN_B: It means optics is no longer just a cable in the data center. It becomes a core part of the AI compute fabric. The report cites a fiber company that estimates optical content per GPU could grow by 10 times.
+EN_A: How exactly do Soitec and Besi benefit?
+EN_B: Soitec is the more direct play. Its photonics SOI wafers are the base material for making photonic chips. The report models Soitec’s photonics revenue growing from about 100 million dollars today to nearly 500 million by 2028. Besi benefits because TSMC’s COUPE architecture, which is expected to be a leading CPO integration route, uses Besi’s hybrid bonding tools.
+EN_A: So Besi is not just about CPO, but also future GPU and HBM upgrades?
+EN_B: That is right. The report now sees opportunities for hybrid bonding in future GPU stacking and even in HBM memory, something they were more cautious about before.
+EN_A: Are there any questions the report leaves open?
+EN_B: Yes, at least two. First, the timeline for full optical architectures is uncertain. The report says early hybrid CPO racks might start by late 2026, but mainstream adoption likely not until 2028. Second, for Besi, visibility on capex spending beyond 2028 is still limited.
+EN_A: So investors need to watch for upcoming catalysts?
+EN_B: Exactly. The report highlights two key events: Soitec’s earnings and investor meeting on May 27 and 28, and Besi’s investor day on June 18. These could provide more detail.
+EN_A: If you want to dive into the detailed model on optical engine counts, or understand why the price target jumped from 70 euros to 200 euros, join our community to read the full report. See you next time.
