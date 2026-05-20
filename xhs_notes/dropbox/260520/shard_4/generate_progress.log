@@ -1,0 +1,22 @@
+Found 36 total PDFs; shard 4/40 has 5 PDFs, skips 0 already converted, will process 5 PDFs with batch_size=5.
+Running batch 1: 5 PDFs
+Found 5 PDFs.
+Uploading PDF to MinerU: /tmp/pdf_batch_001_tx4nc2t5/pdfs/0001-21-Morgan Stanley-China Hong Kong Consumer-China Retail Sales -Apr 2026-Pace Slowed Further-260518.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_tx4nc2t5/pdfs/0002-22-Morgan Stanley-China Property-Weekly Database Tracker -20-260518.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_tx4nc2t5/pdfs/0003-23-Morgan Stanley-China Telecoms-Rolling Out Token Plans-260518.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_tx4nc2t5/pdfs/0004-24-Morgan Stanley-India Energy-Another Fuel Price Hike-260519.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_tx4nc2t5/pdfs/0005-25-Morgan Stanley-Hong Kong China Insurance- Marketing Pack 1Q26-260518.pdf
+MinerU batch_id=07f2328f-6029-4552-a2ca-ab1360cd36eb
+MinerU states: running, running, pending, pending, waiting-file
+MinerU states: running, done, done, done, pending
+MinerU states: done, done, done, done, running
+MinerU states: done, done, done, done, running
+MinerU states: done, done, done, done, running
+MinerU states: done, done, done, done, running
+MinerU states: done, done, done, done, running
+MinerU states: done, done, done, done, running
+MinerU states: done, done, done, done, running
+MinerU states: done, done, done, done, running
+MinerU states: done, done, done, done, done
+Done. Results written to /home/runner/work/rpt_edit/rpt_edit/xhs_notes/dropbox/260520/shard_4
+All batches completed successfully.

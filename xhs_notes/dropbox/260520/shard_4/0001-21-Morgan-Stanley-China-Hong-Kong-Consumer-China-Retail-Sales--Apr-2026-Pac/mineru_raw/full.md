@@ -1,0 +1,590 @@
+May 18, 2026 05:05 AM GMT
+
+# China/Hong Kong Consumer | Asia Pacific
+
+# China Retail Sales – Apr 2026: Pace Slowed Further
+
+China retail sales rose 0.2% YoY in Apr (2.9% CAGR vs. 2019), below +2% consensus and decelerating vs. Mar 26, with most categories' growth slowing down, in particular discretionary items. For May, we do not expect meaningful recovery, starting with soft consumer sentiment in the Labor Day Holiday.
+
+YoY trend by category (reported YoY, with rebasing among categories): Bigger deceleration from retail sales of goods which first time reported negative growth (-0.1% yoy) pos-Covid and online sales (partly from high comp base). Restaurants relatively resilient with some slowdown to 2.2% from 2.9% in March. Among goods, discretionary categories are the main drag: Gold & Jewelry recorded -21.3% yoy vs. +11.7% in March given the gold price moves; Electronics & Appliances and Home Furnishing decline widened to 15.1% and 10.4% yoy from -5% and -8.7% last month, respectively, on fading subsidy effects and still-soft property-related demand. F&B growth further decelerated to 5.4% from 9.0% in March, of which Alcohol & Tobacco was the only category with growth acceleration (11.7% yoy vs 7.7% in Mar).
+
+Compared with 2019 on a CAGR basis, overall momentum softened to 2.9% from 4.0% in March, with most categories posting slower growth. Restaurants & Dining were the only improvement.
+
+Stock implications: We continue to view the consumption recovery path as gradual and bumpy, and our latest consumer survey shows that overall consumer sentiment has mildly improved, though we caution remains. Our focus remains on: 1) supply recalibration and demand improvement: Mengniu (2319.HK), Yili (600887.SS); 2) improvement in offline consumption: YUMC (YUMC.N), Haidilao (6862.HK), CRB (291.HK) and 3) company-specific drivers leading to turnaround and attractive risk-reward: Giant Biogene (2367.HK).
+
+Exhibit 1: Summary of Retail Sales Trends 
+
+<table><tr><td></td><td colspan="2">Reported YoY Basis</td><td colspan="2">Calculated CAGR vs. 2019</td></tr><tr><td>Categories</td><td>Apr 26</td><td>Mar 26</td><td>Apr 26</td><td>Mar 26</td></tr><tr><td>Overall Retail Sales</td><td>0.2%</td><td>1.7%</td><td>2.9%</td><td>4.0%</td></tr><tr><td>Overall Retail Sales - ex Autos</td><td>1.8%</td><td>3.2%</td><td>3.2%</td><td>4.1%</td></tr><tr><td>Restaurant &amp; Dining</td><td>2.2%</td><td>2.9%</td><td>3.8%</td><td>3.6%</td></tr><tr><td>Enterprises above a designated size</td><td>0.9%</td><td>2.0%</td><td>9.3%</td><td>9.9%</td></tr><tr><td>Retail Sales of Goods</td><td>-0.1%</td><td>1.5%</td><td>2.7%</td><td>4.0%</td></tr><tr><td>Enterprises above a designated size</td><td>-4.9%</td><td>1.2%</td><td>3.0%</td><td>4.9%</td></tr><tr><td>Apparel, Shoes and Textile</td><td>3.6%</td><td>7.0%</td><td>1.5%</td><td>2.6%</td></tr><tr><td>Gold &amp; Jewelry</td><td>-21.3%</td><td>11.7%</td><td>3.0%</td><td>7.3%</td></tr><tr><td>Cosmetics</td><td>4.7%</td><td>8.3%</td><td>6.5%</td><td>7.4%</td></tr><tr><td>Home Furnishing</td><td>-10.4%</td><td>-8.7%</td><td>-0.9%</td><td>-0.8%</td></tr><tr><td>F&amp;B (incl. Alcohol &amp; Tobacco)</td><td>5.4%</td><td>9.0%</td><td>8.4%</td><td>9.4%</td></tr><tr><td>Food, Grain and Oil</td><td>4.1%</td><td>9.5%</td><td>8.5%</td><td>9.6%</td></tr><tr><td>Soft Drinks</td><td>3.6%</td><td>8.2%</td><td>6.9%</td><td>7.7%</td></tr><tr><td>Alcohol &amp; Tobacco</td><td>11.7%</td><td>7.7%</td><td>8.9%</td><td>9.4%</td></tr><tr><td>HPC</td><td>3.5%</td><td>4.6%</td><td>5.8%</td><td>6.9%</td></tr><tr><td>Electronics &amp; Appliances</td><td>-15.1%</td><td>-5.0%</td><td>1.8%</td><td>1.9%</td></tr><tr><td>Sports and Entertainment Equipment</td><td>-8.0%</td><td>-2.0%</td><td>NA</td><td>NA</td></tr><tr><td>Online Retail Sales</td><td>2.3%</td><td>5.8%</td><td>9.8%</td><td>10.8%</td></tr><tr><td>Commercial Goods</td><td>0.2%</td><td>2.5%</td><td>6.5%</td><td>6.7%</td></tr></table>
+
+Source: CEIC, National Bureau of Statistics (NBS), MS
+
+MS ASIA LIMITED+
+
+# Lillian Lou
+
+Equity Analyst
+
+Lillian.Lou@morganstanley.com +852 2848-6502
+
+# Dustin Wei
+
+Equity Analyst
+
+Dustin.Wei@morganstanley.com +852 2239-7823
+
+# Hildy Ling
+
+Equity Analyst
+
+Hildy.Ling@morganstanley.com +852 2239-7834
+
+MS TAIWAN LIMITED+
+
+# Terence Cheng
+
+Equity Analyst
+
+Terence.Cheng@morganstanley.com +886 2 2730-2873
+
+# Jenny Ting
+
+Research Associate
+
+Jenny.Ting@morganstanley.com +886 2 2730-2995
+
+MS ASIA LIMITED+
+
+# Jenny Yu
+
+Research Associate
+
+Jenny.Yu1@morganstanley.com +852 3963-1925
+
+# Carlos Liu, CFA
+
+Research Associate
+
+Carlos.Liu@morganstanley.com +852 2848-5206
+
+CHINA/HONG KONG CONSUMER
+
+Asia Pacific
+
+Industry View In-Line
+
+Read Also:
+
+China/Hong Kong Consumer: China Broader Consumption Trip – Key Takeaways (17 May 2026)
+
+Haidilao International Holding Ltd: April 2026  
+Operation Update (11 May 2026)
+
+China/Hong Kong Consumer: F&B Expert Call Takeaways – Post May Holiday (6 May 2026)
+
+China Tourism Group Duty Free: Hainan duty-free market sales tracking yoy growth deceleration (4 May 2026)
+
+China Consumer Pulse: AlphaWise Consumer Pulse Survey Mar-26 (12 Apr 2026)
+
+MS does and seeks to do business with companies covered in MS. As a result, investors should be aware that the firm may have a conflict of interest that could affect the objectivity of MS. Investors should consider MS as only a single factor in making their investment decision.
+
+# For analyst certification and other important disclosures, refer to the Disclosure Section, located at the end of this report.
+
++= Analysts employed by non-U.S. affiliates are not registered with FINRA, may not be associated persons of the member and may not be subject to FINRA restrictions on communications with a subject company, public appearances and trading securities held by a research analyst account.
+
+# Key Charts
+
+Exhibit 2: We note rebasing adjustments for some categories. We summarize the differences between reported YoY growth rates (with rebase) and YoY growth rates based on previously reported absolute amounts in 2024 & 2025 (without rebase). 
+
+<table><tr><td colspan="8">Comparison of Monthly YoY Trend</td><td colspan="7">YoY growth (No rebase)</td><td colspan="7">Difference</td></tr><tr><td>Monthly yoy</td><td>Sep 25</td><td>Oct 25</td><td>Nov 25</td><td>Dec 25</td><td>Jan-Feb 26</td><td>Mar 26</td><td>Apr 26</td><td>Sep 25</td><td>Oct 25</td><td>Nov 25</td><td>Dec 25</td><td>Jan-Feb 26</td><td>Mar 26</td><td>Apr 26</td><td>Sep 25</td><td>Oct 25</td><td>Nov 25</td><td>Dec 25</td><td>Jan-Feb 26</td><td>Mar 26</td><td>Apr 26</td></tr><tr><td>Retail Sales</td><td>3.0%</td><td>2.9%</td><td>1.3%</td><td>0.9%</td><td>2.8%</td><td>1.7%</td><td>0.2%</td><td>2.1%</td><td>2.0%</td><td>0.3%</td><td>-0.1%</td><td>2.8%</td><td>1.7%</td><td>0.2%</td><td>1%</td><td>1%</td><td>1%</td><td>1%</td><td>0%</td><td>0%</td><td>0%</td></tr><tr><td>Urban</td><td>2.9%</td><td>2.7%</td><td>1.0%</td><td>0.7%</td><td>2.7%</td><td>1.5%</td><td>-0.1%</td><td>2.1%</td><td>2.0%</td><td>0.2%</td><td>0.0%</td><td>2.7%</td><td>1.5%</td><td>-0.1%</td><td>1%</td><td>1%</td><td>1%</td><td>1%</td><td>0%</td><td>0%</td><td>0%</td></tr><tr><td>Rural</td><td>4.0%</td><td>4.1%</td><td>2.8%</td><td>1.7%</td><td>3.2%</td><td>2.7%</td><td>2.1%</td><td>2.0%</td><td>2.1%</td><td>0.8%</td><td>-0.3%</td><td>3.2%</td><td>2.7%</td><td>2.1%</td><td>2%</td><td>2%</td><td>2%</td><td>2%</td><td>0%</td><td>0%</td><td>0%</td></tr><tr><td>Online Retail Sales</td><td>11.4%</td><td>8.1%</td><td>5.4%</td><td>4.0%</td><td>9.2%</td><td>5.8%</td><td>2.3%</td><td>3.4%</td><td>2.6%</td><td>-0.1%</td><td>1.5%</td><td>43.0%</td><td>27.8%</td><td>39.0%</td><td>8%</td><td>6%</td><td>5%</td><td>3%</td><td>-34%</td><td>-22%</td><td>-37%</td></tr><tr><td>Commercial Goods</td><td>7.3%</td><td>4.9%</td><td>1.5%</td><td>0.8%</td><td>10.3%</td><td>2.5%</td><td>0.2%</td><td>-0.1%</td><td>-1.2%</td><td>-3.5%</td><td>-0.2%</td><td>11.7%</td><td>-4.5%</td><td>2.7%</td><td>7%</td><td>6%</td><td>5%</td><td>1%</td><td>-1%</td><td>7%</td><td>-3%</td></tr><tr><td>Service</td><td>33.4%</td><td>26.9%</td><td>35.5%</td><td>25.6%</td><td>7.3%</td><td>11.9%</td><td>6.1%</td><td>22.0%</td><td>25.5%</td><td>26.2%</td><td>11.6%</td><td>184.1%</td><td>197.0%</td><td>220.6%</td><td>11%</td><td>1%</td><td>9%</td><td>14%</td><td>-177%</td><td>-185%</td><td>-215%</td></tr><tr><td>Restaurants &amp; Dining</td><td>0.9%</td><td>3.8%</td><td>3.2%</td><td>2.2%</td><td>4.8%</td><td>2.9%</td><td>2.2%</td><td>2.1%</td><td>5.0%</td><td>4.4%</td><td>3.4%</td><td>4.8%</td><td>2.9%</td><td>2.2%</td><td>-1%</td><td>-1%</td><td>-1%</td><td>-1%</td><td>0%</td><td>0%</td><td>0%</td></tr><tr><td>Enterprises above certain size:</td><td>-1.6%</td><td>3.7%</td><td>1.2%</td><td>-1.1%</td><td>4.7%</td><td>2.0%</td><td>0.9%</td><td>5.3%</td><td>10.4%</td><td>6.4%</td><td>4.3%</td><td>7.4%</td><td>4.9%</td><td>4.6%</td><td>-7%</td><td>-7%</td><td>-5%</td><td>-5%</td><td>-3%</td><td>-3%</td><td>-4%</td></tr><tr><td>Retail Sales of Goods</td><td>3.3%</td><td>2.8%</td><td>1.0%</td><td>0.7%</td><td>2.5%</td><td>1.5%</td><td>-0.1%</td><td>2.1%</td><td>1.6%</td><td>-0.3%</td><td>-0.6%</td><td>2.5%</td><td>1.5%</td><td>-0.1%</td><td>1%</td><td>1%</td><td>1%</td><td>1%</td><td>0%</td><td>0%</td><td>0%</td></tr><tr><td>Enterprises above certain size:</td><td>2.7%</td><td>1.4%</td><td>-2.2%</td><td>-2.0%</td><td>2.5%</td><td>1.2%</td><td>-4.9%</td><td>5.2%</td><td>4.2%</td><td>-0.1%</td><td>0.2%</td><td>0.2%</td><td>-1.5%</td><td>-6.6%</td><td>-2%</td><td>-3%</td><td>-2%</td><td>-2%</td><td>2%</td><td>3%</td><td>2%</td></tr><tr><td>Apparel, Shoes and Textile</td><td>4.7%</td><td>6.3%</td><td>3.5%</td><td>0.6%</td><td>10.4%</td><td>7.0%</td><td>3.6%</td><td>5.3%</td><td>9.2%</td><td>4.2%</td><td>2.0%</td><td>7.9%</td><td>4.5%</td><td>1.8%</td><td>-1%</td><td>-3%</td><td>-1%</td><td>-1%</td><td>3%</td><td>2%</td><td>2%</td></tr><tr><td>Gold &amp; Jewelry</td><td>9.7%</td><td>37.6%</td><td>8.5%</td><td>5.9%</td><td>13.0%</td><td>11.7%</td><td>-21.3%</td><td>11.0%</td><td>39.0%</td><td>9.0%</td><td>5.8%</td><td>10.9%</td><td>9.5%</td><td>-23.0%</td><td>-1%</td><td>-1%</td><td>0%</td><td>0%</td><td>2%</td><td>2%</td><td>2%</td></tr><tr><td>Cosmetics</td><td>8.6%</td><td>9.6%</td><td>6.1%</td><td>8.8%</td><td>4.5%</td><td>8.3%</td><td>4.7%</td><td>11.9%</td><td>11.8%</td><td>7.8%</td><td>10.1%</td><td>4.6%</td><td>8.2%</td><td>5.5%</td><td>-3%</td><td>-2%</td><td>-2%</td><td>-1%</td><td>0%</td><td>0%</td><td>-1%</td></tr><tr><td>Home Furnishing</td><td>16.2%</td><td>9.6%</td><td>-3.8%</td><td>-2.2%</td><td>8.8%</td><td>-8.7%</td><td>-10.4%</td><td>23.9%</td><td>17.8%</td><td>2.6%</td><td>6.7%</td><td>5.3%</td><td>-11.3%</td><td>-12.4%</td><td>-8%</td><td>-8%</td><td>-6%</td><td>-9%</td><td>3%</td><td>3%</td><td>2%</td></tr><tr><td>Sports and Entertainment Equipment</td><td>11.9%</td><td>10.1%</td><td>0.4%</td><td>9.0%</td><td>4.1%</td><td>-2.0%</td><td>-8.0%</td><td>18.3%</td><td>15.4%</td><td>4.1%</td><td>13.4%</td><td>7.3%</td><td>-4.0%</td><td>-2.3%</td><td>-6%</td><td>-5%</td><td>-4%</td><td>-4%</td><td>-3%</td><td>2%</td><td>-6%</td></tr><tr><td>F&amp;B (incl. Alcohol &amp; Tobacco)</td><td>4.6%</td><td>8.0%</td><td>4.0%</td><td>2.3%</td><td>11.8%</td><td>9.0%</td><td>5.4%</td><td>7.5%</td><td>11.0%</td><td>6.4%</td><td>4.6%</td><td>8.3%</td><td>4.0%</td><td>1.8%</td><td>-3%</td><td>-3%</td><td>-2%</td><td>-2%</td><td>4%</td><td>5%</td><td>4%</td></tr><tr><td>Food, Grain and Oil</td><td>6.3%</td><td>9.1%</td><td>6.1%</td><td>3.9%</td><td>10.2%</td><td>9.5%</td><td>4.1%</td><td>9.0%</td><td>12.1%</td><td>8.8%</td><td>6.3%</td><td>6.6%</td><td>4.0%</td><td>0.4%</td><td>-3%</td><td>-3%</td><td>-3%</td><td>-2%</td><td>4%</td><td>6%</td><td>4%</td></tr><tr><td>Soft Drinks</td><td>-0.8%</td><td>7.1%</td><td>2.9%</td><td>1.7%</td><td>6.0%</td><td>8.2%</td><td>3.6%</td><td>2.3%</td><td>11.0%</td><td>5.5%</td><td>4.6%</td><td>2.6%</td><td>3.1%</td><td>0.8%</td><td>-3%</td><td>-4%</td><td>-3%</td><td>-3%</td><td>3%</td><td>5%</td><td>3%</td></tr><tr><td>Alcohol &amp; Tobacco</td><td>1.6%</td><td>4.1%</td><td>-3.4%</td><td>-2.9%</td><td>19.1%</td><td>7.7%</td><td>11.7%</td><td>4.6%</td><td>6.5%</td><td>-1.8%</td><td>-1.4%</td><td>15.9%</td><td>4.7%</td><td>8.0%</td><td>-3%</td><td>-2%</td><td>-2%</td><td>-1%</td><td>3%</td><td>3%</td><td>4%</td></tr><tr><td>Pharma</td><td>1.9%</td><td>3.6%</td><td>4.9%</td><td>1.2%</td><td>0.7%</td><td>5.7%</td><td>4.2%</td><td>3.6%</td><td>5.0%</td><td>6.1%</td><td>2.3%</td><td>-1.7%</td><td>2.8%</td><td>2.2%</td><td>-2%</td><td>-1%</td><td>-1%</td><td>-1%</td><td>2%</td><td>3%</td><td>2%</td></tr><tr><td>HPC</td><td>6.8%</td><td>7.4%</td><td>-0.8%</td><td>3.7%</td><td>6.6%</td><td>4.6%</td><td>3.5%</td><td>9.4%</td><td>10.4%</td><td>0.7%</td><td>5.1%</td><td>3.7%</td><td>1.2%</td><td>0.6%</td><td>-3%</td><td>-3%</td><td>-1%</td><td>-1%</td><td>3%</td><td>3%</td><td>3%</td></tr><tr><td>Electronics &amp; Appliances</td><td>3.3%</td><td>-14.6%</td><td>-19.4%</td><td>-18.7%</td><td>3.3%</td><td>-5.0%</td><td>-15.1%</td><td>7.5%</td><td>-10.3%</td><td>-16.7%</td><td>-14.3%</td><td>2.3%</td><td>-6.3%</td><td>-15.1%</td><td>-4%</td><td>-4%</td><td>-3%</td><td>-4%</td><td>1%</td><td>1%</td><td>0%</td></tr><tr><td>Office Supply</td><td>6.2%</td><td>13.5%</td><td>11.7%</td><td>9.2%</td><td>5.8%</td><td>15.0%</td><td>-6.9%</td><td>10.0%</td><td>17.8%</td><td>15.7%</td><td>12.4%</td><td>2.7%</td><td>11.6%</td><td>-7.5%</td><td>-4%</td><td>-4%</td><td>-4%</td><td>-3%</td><td>3%</td><td>3%</td><td>1%</td></tr><tr><td>Mobile &amp; Communication</td><td>16.2%</td><td>23.2%</td><td>20.6%</td><td>20.9%</td><td>17.8%</td><td>27.3%</td><td>6.2%</td><td>22.5%</td><td>29.3%</td><td>25.9%</td><td>27.7%</td><td>17.6%</td><td>24.4%</td><td>7.7%</td><td>-6%</td><td>-6%</td><td>-5%</td><td>-7%</td><td>0%</td><td>3%</td><td>-2%</td></tr><tr><td>Auto</td><td>1.6%</td><td>-6.6%</td><td>-8.3%</td><td>-5.0%</td><td>-7.3%</td><td>-11.8%</td><td>-15.3%</td><td>3.8%</td><td>-4.4%</td><td>-6.5%</td><td>-3.2%</td><td>-9.3%</td><td>-13.6%</td><td>-16.5%</td><td>-2%</td><td>-2%</td><td>-2%</td><td>-2%</td><td>2%</td><td>2%</td><td>1%</td></tr><tr><td>Oil Related Products</td><td>-7.1%</td><td>-5.9%</td><td>-8.0%</td><td>-11.0%</td><td>-9.7%</td><td>0.1%</td><td>-6.5%</td><td>-6.0%</td><td>-4.8%</td><td>-7.1%</td><td>-10.1%</td><td>-10.7%</td><td>-1.3%</td><td>-7.5%</td><td>-1%</td><td>-1%</td><td>-1%</td><td>-1%</td><td>1%</td><td>1%</td><td>1%</td></tr><tr><td>Construction Materials</td><td>-0.1%</td><td>-8.3%</td><td>-17.0%</td><td>-11.8%</td><td>-2.2%</td><td>-9.0%</td><td>-13.8%</td><td>2.8%</td><td>-4.0%</td><td>-12.9%</td><td>-7.5%</td><td>-17.1%</td><td>-25.8%</td><td>-26.8%</td><td>-3%</td><td>-4%</td><td>-4%</td><td>-4%</td><td>15%</td><td>17%</td><td>13%</td></tr></table>
+
+Source: CEIC, NBS, MS
+
+Exhibit 3: MSCI China vs. Retail Sales   
+![](images/7e1a60c36a4b614da28c0c01c0e487e53818fa9f8112837e01c01d9c52bb3472.jpg)  
+Source: FactSet, CEIC, NBS, MS
+
+Exhibit 4: China Retail Sales by Category   
+![](images/454171c9b50a4723f02b5bee86f61ec6d2f20bae071474f8f62fadcd58215779.jpg)  
+Source: CEIC, NBS, MS
+
+Exhibit 6: Online Retail Sales   
+![](images/940ee8748d1022b0473077374f1503b95cb7b17554ce3509ed52a82c6fffc3e4.jpg)
+
+<details>
+<summary>line</summary>
+
+| Month    | Online Retail Sales | Online retail sales - goods | Online retail sales - service |
+|----------|---------------------|-----------------------------|-------------------------------|
+| Jan-19   | ~20%                | ~30%                        | ~0%                           |
+| Apr-19   | ~25%                | ~25%                        | ~10%                          |
+| Jul-19   | ~20%                | ~20%                        | ~5%                           |
+| Oct-19   | ~15%                | ~15%                        | ~0%                           |
+| Jan-20   | ~10%                | ~10%                        | ~-20%                         |
+| Apr-20   | ~5%                 | ~5%                         | ~-40%                         |
+| Jul-20   | ~10%                | ~10%                        | ~-20%                         |
+| Oct-20   | ~15%                | ~15%                        | ~-10%                         |
+| Jan-21   | ~20%                | ~20%                        | ~30%                          |
+| Apr-21   | ~25%                | ~25%                        | ~60%                          |
+| Jul-21   | ~20%                | ~20%                        | ~40%                          |
+| Oct-21   | ~15%                | ~15%                        | ~20%                          |
+| Jan-22   | ~10%                | ~10%                        | ~-40%                         |
+| Apr-22   | ~5%                 | ~5%                         | ~-60%                         |
+| Jul-22   | ~10%                | ~10%                        | ~-20%                         |
+| Oct-22   | ~15%                | ~15%                        | ~-10%                         |
+| Jan-23   | ~20%                | ~20%                        | ~10%                          |
+| Apr-23   | ~25%                | ~25%                        | ~110%                         |
+| Jul-23   | ~30%                | ~30%                        | ~80%                          |
+| Oct-23   | ~25%                | ~25%                        | ~40%                          |
+| Jan-24   | ~20%                | ~20%                        | ~30%                          |
+| Apr-24   | ~15%                | ~15%                        | ~20%                          |
+| Jul-24   | ~10%                | ~10%                        | ~-10%                         |
+| Oct-24   | ~5%                 | ~5%                         | ~-30%                         |
+| Jan-25   | ~10%                | ~10%                        | ~-60%                         |
+| Apr-25   | ~40%                | ~40%                        | ~120%                         |
+| Jul-25   | ~30%                | ~30%                        | ~30%                          |
+| Oct-25   | ~25%                | ~25%                        | ~35%                          |
+| Jan-26   | ~20%                | ~20%                        | ~30%                          |
+| Apr-26   | ~15%                | ~15%                        | ~20%                          |
+</details>
+
+Source: CEIC, NBS, MS
+
+Exhibit 8: Discretionary Categories   
+![](images/a8c68e7e858f2c0df1bbf8f2c4a36eb901f6f98d251557c33ad23c132f37e767.jpg)
+
+<details>
+<summary>line</summary>
+
+| Month    | Apparel, Shoes and Textile | Gold & Jewelry | Home Furnishing | Electronics & Appliances |
+|----------|-----------------------------|----------------|-----------------|----------------------------|
+| Oct-18   | ~0%                         | ~0%            | ~0%             | ~0%                        |
+| Jan-19   | ~0%                         | ~0%            | ~0%             | ~0%                        |
+| Apr-19   | ~0%                         | ~0%            | ~0%             | ~0%                        |
+| Jul-19   | ~0%                         | ~0%            | ~0%             | ~0%                        |
+| Oct-19   | ~0%                         | ~0%            | ~0%             | ~0%                        |
+| Jan-20   | ~-30%                       | ~-40%          | ~-30%           | ~-35%                      |
+| Apr-20   | ~-10%                       | ~-10%          | ~-10%           | ~-10%                      |
+| Jul-20   | ~-5%                        | ~-5%           | ~-5%            | ~-5%                       |
+| Oct-20   | ~5%                         | ~5%            | ~5%             | ~5%                        |
+| Jan-21   | ~70%                        | ~95%           | ~70%            | ~50%                       |
+| Apr-21   | ~50%                        | ~50%           | ~50%            | ~50%                       |
+| Jul-21   | ~20%                        | ~20%           | ~20%            | ~20%                       |
+| Oct-21   | ~10%                        | ~10%           | ~10%            | ~10%                       |
+| Jan-22   | ~5%                         | ~5%            | ~5%             | ~5%                        |
+| Apr-22   | ~-5%                        | ~-5%           | ~-5%            | ~-5%                       |
+| Jul-22   | ~-10%                       | ~-10%          | ~-10%           | ~-10%                      |
+| Oct-22   | ~-15%                       | ~-15%          | ~-15%           | ~-15%                      |
+| Jan-23   | ~30%                        | ~45%           | ~30%            | ~30%                       |
+| Apr-23   | ~30%                        | ~45%           | ~30%            | ~30%                       |
+| Jul-23   | ~30%                        | ~45%           | ~30%            | ~30%                       |
+| Oct-23   | ~30%                        | ~45%           | ~30%            | ~30%                       |
+| Jan-24   | ~30%                        | ~45%           | ~30%            | ~30%                       |
+| Apr-24   | ~30%                        | ~45%           | ~30%            | ~30%                       |
+| Jul-24   | ~30%                        | ~45%           | ~30%            | ~30%                       |
+| Oct-24   | ~30%                        | ~45%           | ~30%            | ~30%                       |
+| Jan-25   | ~30%                        | ~45%           | ~30%            | ~30%                       |
+| Apr-25   | ~30%                        | ~45%           | ~30%            | ~30%                       |
+| Jul-25   | ~30%                        | ~45%           | ~30%            | ~30%                       |
+| Oct-25   | ~30%                        | ~45%           | ~30%            | ~30%                       |
+| Jan-26   | ~30%                        | ~45%           | ~30%            | ~30%                       |
+| Apr-26   | ~30%                        | ~45%           | ~30%            | ~30%                       |
+</details>
+
+Source: CEIC, NBS, MS
+
+Exhibit 5: Retail Sales Growth   
+![](images/32d458fc1b08173b3c1c8f399dc95335fc48e418b9a3ad22f2a8bd019fed9444.jpg)
+
+<details>
+<summary>line</summary>
+
+| Date    | Overall Retail Sales | Urban | Rural |
+|---------|----------------------|-------|-------|
+| Oct-17  | ~10%                 | ~10%  | ~10%  |
+| Jan-18  | ~10%                 | ~10%  | ~10%  |
+| Apr-18  | ~10%                 | ~10%  | ~10%  |
+| Jul-18  | ~10%                 | ~10%  | ~10%  |
+| Oct-18  | ~10%                 | ~10%  | ~10%  |
+| Jan-19  | ~10%                 | ~10%  | ~10%  |
+| Apr-19  | ~10%                 | ~10%  | ~10%  |
+| Jul-19  | ~10%                 | ~10%  | ~10%  |
+| Oct-19  | ~10%                 | ~10%  | ~10%  |
+| Jan-20  | ~-20%                | ~-20% | ~-20% |
+| Apr-20  | ~-5%                 | ~-5%  | ~-5%  |
+| Jul-20  | ~5%                  | ~5%   | ~5%   |
+| Oct-20  | ~10%                 | ~10%  | ~10%  |
+| Jan-21  | ~35%                 | ~35%  | ~35%  |
+| Apr-21  | ~35%                 | ~35%  | ~35%  |
+| Jul-21  | ~35%                 | ~35%  | ~35%  |
+| Oct-21  | ~35%                 | ~35%  | ~35%  |
+| Jan-22  | ~35%                 | ~35%  | ~35%  |
+| Apr-22  | ~-10%                | ~-10% | ~-10% |
+| Jul-22  | ~-5%                 | ~-5%  | ~-5%  |
+| Oct-22  | ~5%                  | ~5%   | ~5%   |
+| Jan-23  | ~15%                 | ~15%  | ~15%  |
+| Apr-23  | ~15%                 | ~15%  | ~15%  |
+| Jul-23  | ~15%                 | ~15%  | ~15%  |
+| Oct-23  | ~15%                 | ~15%  | ~15%  |
+| Jan-24  | ~15%                 | ~15%  | ~15%  |
+| Apr-24  | ~15%                 | ~15%  | ~15%  |
+| Jul-24  | ~15%                 | ~15%  | ~15%  |
+| Oct-24  | ~15%                 | ~15%  | ~15%  |
+| Jan-25  | ~15%                 | ~15%  | ~15%  |
+| Apr-25  | ~15%                 | ~15%  | ~15%  |
+| Jul-25  | ~15%                 | ~15%  | ~15%  |
+| Oct-25  | ~15%                 | ~15%  | ~15%  |
+| Jan-26  | ~15%                 | ~15%  | ~15%  |
+| Apr-26  | ~15%                 | ~15%  | ~15%  |
+</details>
+
+Source: CEIC, NBS, MS
+
+Exhibit 7: Restaurants & Dining   
+![](images/17a6f852ff43cade193d97fbd90eabb8a9adec93992409c48f0d220becab679b.jpg)
+
+<details>
+<summary>line</summary>
+
+| Date    | Restaurants & Dining | Enterprises above certain size |
+|---------|------------------------|----------------------------------|
+| Apr-17  | ~10%                   | ~10%                             |
+| Aug-17  | ~10%                   | ~10%                             |
+| Dec-17  | ~10%                   | ~10%                             |
+| Apr-18  | ~10%                   | ~10%                             |
+| Aug-18  | ~10%                   | ~10%                             |
+| Dec-18  | ~10%                   | ~10%                             |
+| Apr-19  | ~10%                   | ~10%                             |
+| Aug-19  | ~10%                   | ~10%                             |
+| Dec-19  | ~10%                   | ~10%                             |
+| Apr-20  | ~-40%                  | ~-40%                            |
+| Aug-20  | ~-20%                  | ~-20%                            |
+| Dec-20  | ~60%                   | ~60%                             |
+| Apr-21  | ~90%                   | ~120%                            |
+| Aug-21  | ~20%                   | ~20%                             |
+| Dec-21  | ~-20%                  | ~-20%                            |
+| Apr-22  | ~-20%                  | ~-20%                            |
+| Aug-22  | ~-20%                  | ~-20%                            |
+| Dec-22  | ~40%                   | ~40%                             |
+| Apr-23  | ~20%                   | ~20%                             |
+| Aug-23  | ~40%                   | ~40%                             |
+| Dec-23  | ~20%                   | ~20%                             |
+| Apr-24  | ~10%                   | ~10%                             |
+| Aug-24  | ~10%                   | ~10%                             |
+| Dec-24  | ~10%                   | ~10%                             |
+| Apr-25  | ~10%                   | ~10%                             |
+| Aug-25  | ~10%                   | ~10%                             |
+| Dec-25  | ~10%                   | ~10%                             |
+| Apr-26  | ~10%                   | ~10%                             |
+</details>
+
+Source: CEIC, NBS, MS
+
+Exhibit 9: Staples Categories   
+![](images/700bd5f493bc0c7ac83b140172048283fc88baca635279eb3dcaeeb4a13a8d6b.jpg)
+
+<details>
+<summary>line</summary>
+
+| Date   | F&B (incl. Alcohol & Tobacco) | HPC  | Cosmetics |
+|--------|-------------------------------|------|-----------|
+| Jan-18 | 10%                           | 10%  | 10%       |
+| Apr-18 | 10%                           | 15%  | 20%       |
+| Jul-18 | 10%                           | 15%  | 10%       |
+| Oct-18 | 10%                           | 15%  | 10%       |
+| Jan-19 | 10%                           | 15%  | 10%       |
+| Apr-19 | 10%                           | 15%  | 20%       |
+| Jul-19 | 10%                           | 15%  | 20%       |
+| Oct-19 | 10%                           | 15%  | 20%       |
+| Jan-20 | 10%                           | -5%  | -15%      |
+| Apr-20 | 10%                           | 10%  | 20%       |
+| Jul-20 | 10%                           | 10%  | 20%       |
+| Oct-20 | 10%                           | 10%  | 30%       |
+| Jan-21 | 10%                           | 35%  | 40%       |
+| Apr-21 | 10%                           | 35%  | 40%       |
+| Jul-21 | 10%                           | 15%  | 15%       |
+| Oct-21 | 10%                           | 20%  | 10%       |
+| Jan-22 | 10%                           | -5%  | -25%      |
+| Apr-22 | 10%                           | -5%  | -25%      |
+| Jul-22 | 10%                           | -5%  | -25%      |
+| Oct-22 | 10%                           | -5%  | -25%      |
+| Jan-23 | 10%                           | -5%  | -25%      |
+| Apr-23 | 10%                           | -5%  | -25%      |
+| Jul-23 | 10%                           | -5%  | -25%      |
+| Oct-23 | 10%                           | -5%  | -25%      |
+| Jan-24 | 10%                           | -5%  | -25%      |
+| Apr-24 | 10%                           | -5%  | -25%      |
+| Jul-24 | 10%                           | -5%  | -25%      |
+| Oct-24 | 10%                           | -5%  | -30%      |
+| Jan-25 | 10%                           | -5%  | -30%      |
+| Apr-25 | 10%                           | -5%  | -30%      |
+| Jul-25 | 10%                           | -5%  | -30%      |
+| Oct-25 | 10%                           | -5%  | -30%      |
+| Jan-26 | 10%                           | -5%  | -30%      |
+| Apr-26 | 10%                           | -5%  | -30%      |
+</details>
+
+Source: CEIC, NBS, MS
+
+Exhibit 10: Discretionary as a % of 2019   
+![](images/6401c8cc3307bac0ed0300e869e8b49cad9c5e57419779e1547be2e62c7779ae.jpg)
+
+<details>
+<summary>line</summary>
+
+| Month   | Apparel, Shoes and Textile | Gold & Jewelry | Electronics & Appliances | Home Furnishing |
+|---------|----------------------------|----------------|---------------------------|-----------------|
+| Jan-21  | ~95%                       | ~110%          | ~105%                     | ~90%            |
+| Apr-21  | ~100%                      | ~115%          | ~110%                     | ~95%            |
+| Jul-21  | ~105%                      | ~120%          | ~115%                     | ~100%           |
+| Oct-21  | ~110%                      | ~125%          | ~120%                     | ~105%           |
+| Jan-22  | ~105%                      | ~130%          | ~115%                     | ~100%           |
+| Apr-22  | ~90%                       | ~135%          | ~110%                     | ~95%            |
+| Jul-22  | ~100%                      | ~140%          | ~115%                     | ~100%           |
+| Oct-22  | ~105%                      | ~145%          | ~120%                     | ~105%           |
+| Jan-23  | ~100%                      | ~150%          | ~125%                     | ~110%           |
+| Apr-23  | ~105%                      | ~155%          | ~130%                     | ~115%           |
+| Jul-23  | ~110%                      | ~160%          | ~135%                     | ~120%           |
+| Oct-23  | ~105%                      | ~165%          | ~140%                     | ~125%           |
+| Jan-24  | ~100%                      | ~170%          | ~145%                     | ~130%           |
+| Apr-24  | ~105%                      | ~175%          | ~150%                     | ~135%           |
+| Jul-24  | ~110%                      | ~180%          | ~155%                     | ~140%           |
+| Oct-24  | ~115%                      | ~185%          | ~160%                     | ~145%           |
+| Jan-25  | ~120%                      | ~190%          | ~165%                     | ~150%           |
+| Apr-25  | ~125%                      | ~195%          | ~170%                     | ~155%           |
+| Jul-25  | ~130%                      | ~200%          | ~175%                     | ~160%           |
+| Oct-25  | ~135%                      | ~205%          | ~180%                     | ~165%           |
+| Jan-26  | ~140%                      | ~210%          | ~185%                     | ~170%           |
+| Apr-26  | ~145%                      | ~215%          | ~190%                     | ~175%           |
+</details>
+
+Source: CEIC, NBS, MS. Note: levels as a % of 2019 are compared to the level of the respective month in 2019.
+
+Exhibit 12: Office & Mobile Categories   
+![](images/49e7467da8caeec561967f570c87a8a57b26fce208941dd3d30207ad733a8400.jpg)
+
+<details>
+<summary>line</summary>
+
+Office & Mobile
+| Date | Office Supply (%) | Mobile & Communication (%) |
+|---|---|---|
+| Oct-16 | 15 | 5 |
+| Jan-17 | 18 | 10 |
+| Apr-17 | 10 | 5 |
+| Jul-17 | 15 | 10 |
+| Oct-17 | 5 | 35 |
+| Jan-18 | -5 | 10 |
+| Apr-18 | 15 | 10 |
+| Jul-18 | 10 | 15 |
+| Oct-18 | -5 | 5 |
+| Jan-19 | -5 | 10 |
+| Apr-19 | 20 | 10 |
+| Jul-19 | -5 | 20 |
+| Oct-19 | -5 | 10 |
+| Jan-20 | -10 | -10 |
+| Apr-20 | 5 | 20 |
+| Jul-20 | 10 | 25 |
+| Oct-20 | 10 | 45 |
+| Jan-21 | 40 | 55 |
+| Apr-21 | 25 | 15 |
+| Jul-21 | 20 | -20 |
+| Oct-21 | 20 | 35 |
+| Jan-22 | 10 | -25 |
+| Apr-22 | 5 | -5 |
+| Jul-22 | 10 | -20 |
+| Oct-22 | -5 | -10 |
+| Jan-23 | -5 | -5 |
+| Apr-23 | -10 | 25 |
+| Jul-23 | -5 | 10 |
+| Oct-23 | -10 | 15 |
+| Jan-24 | -5 | 10 |
+| Apr-24 | -5 | 15 |
+| Jul-24 | -5 | 10 |
+| Oct-24 | -5 | -10 |
+| Jan-25 | 30 | 30 |
+| Apr-25 | 35 | 20 |
+| Jul-25 | 30 | 35 |
+| Oct-25 | 20 | 20 |
+| Jan-26 | 10 | 25 |
+| Apr-26 | -5 | 5 |
+</details>
+
+Source: CEIC, NBS, MS
+
+Exhibit 11: Staples as a % of 2019   
+![](images/026ea59c126bd14d2e3949c34efd06d262fcf44cfb720f4babc1f040c79ce1c1.jpg)
+
+<details>
+<summary>line</summary>
+
+| Month   | F&B   | Cosmetics | HPC   |
+|---------|-------|-----------|-------|
+| Jan-21  | 110%  | 115%      | 110%  |
+| Apr-21  | 120%  | 130%      | 125%  |
+| Jul-21  | 125%  | 140%      | 130%  |
+| Oct-21  | 130%  | 170%      | 120%  |
+| Jan-22  | 135%  | 140%      | 135%  |
+| Apr-22  | 140%  | 100%      | 140%  |
+| Jul-22  | 135%  | 160%      | 130%  |
+| Oct-22  | 130%  | 170%      | 125%  |
+| Jan-23  | 135%  | 140%      | 130%  |
+| Apr-23  | 140%  | 150%      | 135%  |
+| Jul-23  | 145%  | 170%      | 140%  |
+| Oct-23  | 150%  | 160%      | 135%  |
+| Jan-24  | 155%  | 170%      | 140%  |
+| Apr-24  | 160%  | 180%      | 145%  |
+| Jul-24  | 165%  | 190%      | 150%  |
+| Oct-24  | 170%  | 200%      | 155%  |
+| Jan-25  | 175%  | 180%      | 160%  |
+| Apr-25  | 180%  | 190%      | 165%  |
+| Jul-25  | 185%  | 200%      | 170%  |
+| Oct-25  | 190%  | 220%      | 175%  |
+| Jan-26  | 195%  | 160%      | 180%  |
+| Apr-26  | 200%  | 170%      | 185%  |
+</details>
+
+Source: CEIC, NBS, MS. Note: levels as a % of 2019 are compared to the level of the respective month in 2019.
+
+Exhibit 13: Other Categories   
+![](images/a6f019f2acb4d46b3c6c7bb1654a0b6e9fd964375daa9f69868e5963d7c9cb29.jpg)  
+Source: CEIC, NBS, MS
+
+# Disclosure Section
+
+The information and opinions in MS were prepared or are disseminated by MS Asia Limited (which accepts the responsibility for its contents) and/or MS Asia (Singapore) Pte. (Registration number 199206298Z) and/or MS Asia (Singapore) Securities Pte Ltd (Registration number 200008434H), regulated by the Monetary Authority of Singapore (which accepts legal responsibility for its contents and should be contacted with respect to any matters arising from, or in connection with, MS), and/or MS Taiwan Limited and/or MS & Co International plc, Seoul Branch, and/or MS Australia Limited (A.B.N. 67 003 734 576, holder of Australian financial services license No. 233742, which accepts responsibility for its contents), and/or MS Wealth Management Australia Pty Ltd (A.B.N. 19 009 145 555, holder of Australian financial services license No. 240813, which accepts responsibility for its contents), and/or MS India Company Private Limited having Corporate Identification No (CIN) U22990MH1998PTC115305, regulated by the Securities and Exchange Board of India ("SEBI") and holder of licenses as a Research Analyst (SEBI Registration No. INH000001105); Stock Broker (SEBI Stock Broker Registration No. INZ000244438), Merchant Banker (SEBI Registration No. INM000011203), and depository participant with National Securities Depository Limited (SEBI Registration No. IN-DP-NSDL-567-2021) having registered office at Altimus, Level 39 & 40, Pandurang Budhkar Marg, Worli, Mumbai 400018, India; Telephone no. +91-22-61181000; Compliance Officer Details: Mr. Tejarshi Hardas, Tel. No.: +91-22-61181000 or Email: tejarshi.hardas@morganstanley.com; Grievance officer details: Mr. Tejarshi Hardas, Tel. No.: +91-22-61181000 or Email: msic-compliance@morganstanley.com which accepts the responsibility for its contents and should be contacted with respect to any matters arising from, or in connection with, MS, and their affiliates (collectively, "MS"). MS India Company Private Limited (MSICPL) may use AI tools in providing research services. All recommendations contained herein are made by the duly qualified research analysts.
+
+For important disclosures, stock price charts and equity rating histories regarding companies that are the subject of this report, please see the MS Disclosure Website at www.morganstanley.com/eqr/disclosures/webapp/generalresearch, or contact your investment representative or MS at 1585 Broadway, (Attention: Research Management), New York, NY, 10036 USA.
+
+For valuation methodology and risks associated with any recommendation, rating or price target referenced in this research report, please contact the Client Support Team as follows: US/Canada +1 800 303-2495; Hong Kong +852 2848-5999; Latin America +1 718 754-5444 (U.S.); London +44 (0)20-7425-8169; Singapore +65 6834-6860; Sydney +61 (0)2-9770-1505; Tokyo +81 (0)3-6836-9000. Alternatively you may contact your investment representative or MS at 1585 Broadway, (Attention: Research Management), New York, NY 10036 USA.
+
+# Analyst Certification
+
+The following analysts hereby certify that their views about the companies and their securities discussed in this report are accurately expressed and that they have not received and will not receive direct or indirect compensation in exchange for expressing specific recommendations or views in this report: Terence Cheng; Hildy Ling; Lillian Lou; Dustin Wei.
+
+# Global Research Conflict Management Policy
+
+MS has been published in accordance with our conflict management policy, which is available at www.morganstanley.com/institutional/research/conflictpolicies. A Portuguese version of the policy can be found at www.morganstanley.com.br
+
+# Important Regulatory Disclosures on Subject Companies
+
+As of April 30, 2026, MS beneficially owned $1\%$ or more of a class of common equity securities of the following companies covered in MS: Anhui Gujing Distillery Company Limited, Chagee Holdings Ltd, Foshan Haitian Flavouring and Food, Hangzhou Greatstar Industrial Co Ltd, Li Ning, Muyuan Foodstuff Co. Ltd, Samsonite Group.
+
+Within the last 12 months, MS managed or co-managed a public offering (or 144A offering) of securities of Eastroc Beverages, Foshan Haitian Flavouring and Food, Laopu Gold, Muyuan Foodstuff Co. Ltd, WH Group.
+
+Within the last 12 months, MS has received compensation for investment banking services from Eastroc Beverages, Health and Happiness (H&H), Laopu Gold, Midea Group Co Ltd., Muyuan Foodstuff Co. Ltd, Samsonite Group, WH Group.
+
+In the next 3 months, MS expects to receive or intends to seek compensation for investment banking services from ANTA Sports Products, Chagee Holdings Ltd, Crystal International Group Ltd., Eastroc Beverages, Foshan Haitian Flavouring and Food, Gongniu Group Co Ltd, Gree Electric Appliances Inc of Zhuhai, Haidilao International Holding Ltd, Haier Smart Home Co Ltd, Health and Happiness (H&H), Hengan International Group, Laopu Gold, Mao Geping Cosmetics Co., Ltd, Midea Group Co Ltd., Muyuan Foodstuff Co. Ltd, Nongfu Spring Co Ltd, Pop Mart International Group, Proya Cosmetics Co. Ltd., Samsonite Group, Sun Art Retail Group Limited, Super Hi, Techtronic Industries Co Ltd, Topsports International Holdings Ltd, Weilong Delicious Global Holdings Ltd, WH Group, Yili Industrial, ZJLD Group.
+
+Within the last 12 months, MS has received compensation for products and services other than investment banking services from ANTA Sports Products, Bosideng International Holdings Limited, Chow Tai Fook Jewellery Group Ltd, Gree Electric Appliances Inc of Zhuhai, Haidilao International Holding Ltd, Haier Smart Home Co Ltd, Health and Happiness (H&H), Midea Group Co Ltd., Pop Mart International Group, Samsonite Group, Stella International Holdings Ltd, Techtronic Industries Co Ltd, Topsports International Holdings Ltd, Uni-President China, WH Group, Yanjing Brewery, Yue Yuen Industrial Hldg, Yum China Holdings Inc..
+
+Within the last 12 months, MS has provided or is providing investment banking services to, or has an investment banking client relationship with, the following company: ANTA Sports Products, Chagee Holdings Ltd, Crystal International Group Ltd., Eastroc Beverages, Foshan Haitian Flavouring and Food, Gongniu Group Co Ltd, Gree Electric Appliances Inc of Zhuhai, Haidilao International Holding Ltd, Haier Smart Home Co Ltd, Health and Happiness (H&H), Hengan International Group, Laopu Gold, Mao Geping Cosmetics Co., Ltd, Midea Group Co Ltd., Muyuan Foodstuff Co. Ltd, Nongfu Spring Co Ltd, Pop Mart International Group, Proya Cosmetics Co. Ltd., Samsonite Group, Sun Art Retail Group Limited, Super Hi, Techtronic Industries Co Ltd, Topsports International Holdings Ltd, Weilong Delicious Global Holdings Ltd, WH Group, Yili Industrial, ZJLD Group.
+
+Within the last 12 months, MS has either provided or is providing non-investment banking, securities-related services to and/or in the past has entered into an agreement to provide services or has a client relationship with the following company: ANTA Sports Products, Bosideng International Holdings Limited, Chow Tai Fook Jewellery Group Ltd, Eastroc Beverages, Gree Electric Appliances Inc of Zhuhai, Haidilao International Holding Ltd, Haier Smart Home Co Ltd, Health and Happiness (H&H), Hengan International Group, Laopu Gold, Midea Group Co Ltd., Nongfu Spring Co Ltd, Pop Mart International Group, Samsonite Group, Stella International Holdings Ltd, Techtronic Industries Co Ltd, Topsports International Holdings Ltd, Uni-President China, WH Group, Yanjing Brewery, Yue Yuen Industrial Hldg, Yum China Holdings Inc..
+
+MS & Co. LLC makes a market in the securities of Super Hi.
+
+The equity research analysts or strategists principally responsible for the preparation of MS have received compensation based upon various factors, including quality of research, investor client feedback, stock picking, competitive factors, firm revenues and overall investment banking revenues. Equity Research analysts' or strategists' compensation is not linked to investment banking or capital markets transactions performed by MS or the profitability or revenues of particular trading desks.
+
+MS and its affiliates do business that relates to companies/instruments covered in MS, including market making, providing liquidity, fund management, commercial banking, extension of credit, investment services and investment banking. MS sells to and buys from customers the securities/instruments of companies covered in
+
+MS on a principal basis. MS may have a position in the debt of the Company or instruments discussed in this report. MS trades or may trade as principal in the debt securities (or in related derivatives) that are the subject of the debt research report.
+
+Certain disclosures listed above are also for compliance with applicable regulations in non-US jurisdictions.
+
+# STOCK RATINGS
+
+MS uses a relative rating system using terms such as Overweight, Equal-weight, Not-Rated or Underweight (see definitions below). MS does not assign ratings of Buy, Hold or Sell to the stocks we cover. Overweight, Equal-weight, Not-Rated and Underweight are not the equivalent of buy, hold and sell. Investors should carefully read the definitions of all ratings used in MS. In addition, since MS contains more complete information concerning the analyst's views, investors should carefully read MS, in its entirety, and not infer the contents from the rating alone. In any case, ratings (or research) should not be used or relied upon as investment advice. An investor's decision to buy or sell a stock should depend on individual circumstances (such as the investor's existing holdings) and other considerations.
+
+# Global Stock Ratings Distribution
+
+(as of April 30, 2026)
+
+The Stock Ratings described below apply to MS's Fundamental Equity Research and do not apply to Debt Research produced by the Firm.
+
+For disclosure purposes only (in accordance with FINRA requirements), we include the category headings of Buy, Hold, and Sell alongside our ratings of Overweight, Equal-weight, Not-Rated and Underweight. MS does not assign ratings of Buy, Hold or Sell to the stocks we cover. Overweight, Equal-weight, Not-Rated and Underweight are not the equivalent of buy, hold, and sell but represent recommended relative weightings (see definitions below). To satisfy regulatory requirements, we correspond Overweight, our most positive stock rating, with a buy recommendation; we correspond Equal-weight and Not-Rated to hold and Underweight to sell recommendations, respectively.
+
+<table><tr><td></td><td colspan="2">Coverage Universe</td><td colspan="3">Investment Banking Clients (IBC)</td><td colspan="2">Other Material Investment Services Clients (MISC)</td></tr><tr><td>Stock Rating Category</td><td>Count</td><td>% of Total</td><td>Count</td><td>% of Total IBC</td><td>% of Rating Category</td><td>Count</td><td>% of Total Other MISC</td></tr><tr><td>Overweight/Buy</td><td>1546</td><td>42%</td><td>467</td><td>51%</td><td>30%</td><td>709</td><td>44%</td></tr><tr><td>Equal-weight/Hold</td><td>1568</td><td>43%</td><td>358</td><td>39%</td><td>23%</td><td>715</td><td>44%</td></tr><tr><td>Not-Rated/Hold</td><td>4</td><td>0%</td><td>0</td><td>0%</td><td>0%</td><td>1</td><td>0%</td></tr><tr><td>Underweight/Sell</td><td>555</td><td>15%</td><td>84</td><td>9%</td><td>15%</td><td>202</td><td>12%</td></tr><tr><td>Total</td><td>3,673</td><td></td><td>909</td><td></td><td></td><td>1627</td><td></td></tr></table>
+
+Data include common stock and ADRs currently assigned ratings. Investment Banking Clients are companies from whom MS received investment banking compensation in the last 12 months. Due to rounding off of decimals, the percentages provided in the "% of total" column may not add up to exactly 100 percent.
+
+# Analyst Stock Ratings
+
+Overweight (O). The stock's total return is expected to exceed the average total return of the analyst's industry (or industry team's) coverage universe, on a risk-adjusted basis, over the next 12-18 months.
+
+Equal-weight (E). The stock's total return is expected to be in line with the average total return of the analyst's industry (or industry team's) coverage universe, on a risk-adjusted basis, over the next 12-18 months.
+
+Not-Rated (NR). Currently the analyst does not have adequate conviction about the stock's total return relative to the average total return of the analyst's industry (or industry team's) coverage universe, on a risk-adjusted basis, over the next 12-18 months.
+
+Underweight (U). The stock's total return is expected to be below the average total return of the analyst's industry (or industry team's) coverage universe, on a risk-adjusted basis, over the next 12-18 months.
+
+Unless otherwise specified, the time frame for price targets included in MS is 12 to 18 months.
+
+# Analyst Industry Views
+
+Attractive (A): The analyst expects the performance of his or her industry coverage universe over the next 12-18 months to be attractive vs. the relevant broad market benchmark, as indicated below.
+
+In-Line (I): The analyst expects the performance of his or her industry coverage universe over the next 12-18 months to be in line with the relevant broad market benchmark, as indicated below. Cautious (C): The analyst views the performance of his or her industry coverage universe over the next 12-18 months with caution vs. the relevant broad market benchmark, as indicated below. Benchmarks for each region are as follows: North America - S&P 500; Latin America - relevant MSCI country index or MSCI Latin America Index; Europe - MSCI Europe; Japan - TOPIX; Asia - relevant MSCI country index or MSCI sub-regional index or MSCI AC Asia Pacific ex Japan Index.
+
+# Important Disclosures for MS Smith Barney LLC Customers
+
+Important disclosures regarding any material conflict of interest that can reasonably be expected to have influenced MS Smith Barney LLC's choice of a third-party research provider or the subject company of a third-party research report, are available on the MS Wealth Management disclosure website at www.morganstanley.com/online/researchdisclosures. For MS specific disclosures, you may refer to https://www.morganstanley.com/eqr/disclosures/webapp/generalresearch.
+
+Each MS report is reviewed and approved on behalf of MS Smith Barney LLC. This review and approval is conducted by the same person who reviews the research report on behalf of MS. This could create a conflict of interest.
+
+# Other Important Disclosures
+
+MS policy is to update research reports as and when the Research Analyst and Research Management deem appropriate, based on developments with the issuer, the sector, or the market that may have a material impact on the research views or opinions stated therein. In addition, certain Research publications are intended to be updated on a regular periodic basis (weekly/monthly/quarterly/annual) and will ordinarily be updated with that frequency, unless the Research Analyst and Research Management determine that a different publication
+
+schedule is appropriate based on current conditions.
+
+MS is not acting as a municipal advisor and the opinions or views contained herein are not intended to be, and do not constitute, advice within the meaning of Section 975 of the Dodd-Frank Wall Street Reform and Consumer Protection Act.
+
+MS produces an equity research product called a "Tactical Idea." Views contained in a "Tactical Idea" on a particular stock may be contrary to the recommendations or views expressed in research on the same stock. This may be the result of differing time horizons, methodologies, market events, or other factors. For all research available on a particular stock, please contact your sales representative or go to Matrix at http://www.morganstanley.com/matrix.
+
+MS is provided to our clients through our proprietary research portal on Matrix and also distributed electronically by MS to clients. Certain, but not all, MS products are also made available to clients through third-party vendors or redistributed to clients through alternate electronic means as a convenience. For access to all available MS, please contact your sales representative or go to Matrix at http://www.morganstanley.com/matrix.
+
+Any access and/or use of MS is subject to MS's Terms of Use (http://www.morganstanley.com/terms.html). By accessing and/or using MS, you are indicating that you have read and agree to be bound by our Terms of Use (http://www.morganstanley.com/terms.html). In addition you consent to MS processing your personal data and using cookies in accordance with our Privacy Policy and our Global Cookies Policy (http://www.morganstanley.com/privacy\_pledge.html), including for the purposes of setting your preferences and to collect readership data so that we can deliver better and more personalized service and products to you. To find out more information about how MS processes personal data, how we use cookies and how to reject cookies see our Privacy Policy and our Global Cookies Policy (http://www.morganstanley.com/privacy\_pledge.html). Please use the provided link to review the Terms and Conditions and Most Important Terms and Conditions for MS India Company Private Limited (https://www.morganstanley.com/assets/pdfs/about-us-global-offices/india/Terms\_and\_conditions.pdf) and the following link to review the audit report (https://ny.matrix.ms.com/eqr/research/webapp/researchdocs/MSICPL\_Morgan\_Stanley\_Research\_Audit\_Report.pdf).
+
+If you do not agree to our Terms of Use and/or if you do not wish to provide your consent to MS processing your personal data or using cookies please do not access our research. MS does not provide individually tailored investment advice. MS has been prepared without regard to the circumstances and objectives of those who receive it. MS recommends that investors independently evaluate particular investments and strategies, and encourages investors to seek the advice of a financial adviser. The appropriateness of an investment or strategy will depend on an investor's circumstances and objectives. The securities, instruments, or strategies discussed in MS may not be suitable for all investors, and certain investors may not be eligible to purchase or participate in some or all of them. MS is not an offer to buy or sell or the solicitation of an offer to buy or sell any security/instrument or to participate in any particular trading strategy. The value of and income from your investments may vary because of changes in interest rates, foreign exchange rates, default rates, prepayment rates, securities/instruments prices, market indexes, operational or financial conditions of companies or other factors. There may be time limitations on the exercise of options or other rights in securities/instruments transactions. Past performance is not necessarily a guide to future performance. Estimates of future performance are based on assumptions that may not be realized. If provided, and unless otherwise stated, the closing price on the cover page is that of the primary exchange for the subject company's securities/instruments.
+
+The fixed income research analysts, strategists or economists principally responsible for the preparation of MS have received compensation based upon various factors, including quality, accuracy and value of research, firm profitability or revenues (which include fixed income trading and capital markets profitability or revenues), client feedback and competitive factors. Fixed Income Research analysts', strategists' or economists' compensation is not linked to investment banking or capital markets transactions performed by MS or the profitability or revenues of particular trading desks.
+
+The "Important Regulatory Disclosures on Subject Companies" section in MS lists all companies mentioned where MS owns 1% or more of a class of common equity securities of the companies. For all other companies mentioned in MS, MS may have an investment of less than 1% in securities/instruments or derivatives of securities/instruments of companies and may trade them in ways different from those discussed in MS. Employees of MS not involved in the preparation of MS may have investments in securities/instruments or derivatives of securities/instruments of companies mentioned and may trade them in ways different from those discussed in MS. Derivatives may be issued by MS or associated persons.
+
+With the exception of information regarding MS, MS is based on public information. MS makes every effort to use reliable, comprehensive information, but we make no representation that it is accurate or complete. We have no obligation to tell you when opinions or information in MS change apart from when we intend to discontinue equity research coverage of a subject company. Facts and views presented in MS have not been reviewed by, and may not reflect information known to, professionals in other MS business areas, including investment banking personnel.
+
+MS personnel may participate in company events such as site visits and are generally prohibited from accepting payment by the company of associated expenses unless pre-approved by authorized members of Research management.
+
+MS may make investment decisions that are inconsistent with the recommendations or views in this report.
+
+To our readers based in Taiwan or trading in Taiwan securities/instruments: Information on securities/instruments that trade in Taiwan is distributed by MS Taiwan Limited ("MSTL"). Such information is for your reference only. The reader should independently evaluate the investment risks and is solely responsible for their investment decisions. MS may not be distributed to the public media or quoted or used by the public media without the express written consent of MS. Any non-customer reader within the scope of Article 7-1 of the Taiwan Stock Exchange Recommendation Regulations accessing and/or receiving MS is not permitted to provide MS to any third party (including but not limited to related parties, affiliated companies and any other third parties) or engage in any activities regarding MS which may create or give the appearance of creating a conflict of interest. Information on securities/instruments that do not trade in Taiwan is for informational purposes only and is not to be construed as a recommendation or a solicitation to trade in such securities/instruments. MSTL may not execute transactions for clients in these securities/instruments.
+
+Certain information in MS was sourced by employees of the Shanghai Representative Office of MS Asia Limited for the use of MS Asia Limited. MS is not incorporated under PRC law and the research in relation to this report is conducted outside the PRC. MS does not constitute an offer to sell or the solicitation of an offer to buy any securities in the PRC. PRC investors shall have the relevant qualifications to invest in such securities and shall be responsible for obtaining all relevant approvals, licenses, verifications and/or registrations from the relevant governmental authorities themselves. Neither this report nor any part of it is intended as, or shall constitute, provision of any consultancy or advisory service of securities investment as defined under PRC law. Such information is provided for your reference only.
+
+MS is disseminated in Brazil by MS C.T.V.M. S.A. located at Av. Brigadeiro Faria Lima, 3600, 6th floor, São Paulo - SP, Brazil; and is regulated by the Comissão de Valores Mobiliários; in Mexico by MS México, Casa de Bolsa, S.A. de C.V which is regulated by Comision Nacional Bancaria y de Valores. Paseo de los Tamarindos 90, Torre 1, Col. Bosques de las Lomas Floor 29, 05120 Mexico City; in Japan by MS MUFG Securities Co., Ltd. and, for Commodities related research reports only, MS Capital Group Japan Co., Ltd; in Hong Kong by MS Asia Limited (which accepts responsibility for its contents) and by MS Bank Asia Limited; in Singapore by MS Asia (Singapore) Pte. (Registration number 199206298Z) and/or MS Asia (Singapore) Securities Pte Ltd (Registration number 200008434H), regulated by the Monetary Authority of Singapore (which accepts legal responsibility for its contents and should be contacted with respect to any matters arising from, or in connection with, MS) and by MS Bank Asia Limited, Singapore Branch (Registration number T14FC0118)); in Australia to "wholesale clients" within the meaning of the Australian Corporations Act by MS Australia Limited A.B.N. 67 003 734 576, holder of Australian financial services license No. 233742, which accepts responsibility for its contents; in Australia to "wholesale clients" and "retail clients" within the meaning of the Australian Corporations Act by MS Wealth Management Australia Pty Ltd (A.B.N. 19 009 145 555, holder of Australian financial services license No. 240813, which accepts responsibility for its contents; in Korea by MS & Co International plc, Seoul Branch; in India by MS India Company Private Limited having Corporate Identification No (CIN) U22990MH1998PTC115305, regulated by the Securities and Exchange Board of India ("SEBI") and holder of licenses as a Research Analyst (SEBI Registration No. INH000001105); Stock Broker (SEBI Stock Broker Registration No. INZ000244438), Merchant Banker (SEBI Registration No. INM000011203), and depository participant with National Securities Depository Limited (SEBI Registration No. IN-DP-NSDL-567-2021) having registered office at Altimus, Level 39 & 40, Pandurang Budhkar Marg, Worli, Mumbai 400018, India; Telephone no. +91-22-61181000; Compliance Officer Details: Mr. Tejarshi Hardas, Tel. No.: +91-22-61181000 or Email: tejarshi.hardas@morganstanley.com; Grievance officer details: Mr. Tejarshi Hardas, Tel. No.: +91-22-61181000 or Email: msic-compliance@morganstanley.com. MS India Company Private Limited (MSICPL) may use AI tools in providing research services. All recommendations contained herein are made by the duly qualified research analysts; in Canada by MS Canada Limited; in Germany and the European Economic Area where required by MS Europe S.E., authorised and regulated by Bundesanstalt fuer Finanzdienstleistungsaufsicht (BaFin) under the reference number 149169; in the US by MS & Co. LLC, which accepts responsibility for its contents. MS & Co. International plc, authorized by the Prudential Regulation Authority and regulated by the Financial Conduct Authority and the Prudential Regulation Authority, disseminates in the UK research that it has prepared, and research which has been prepared by any of its affiliates, only to persons who (i) are investment professionals falling within Article 19(5) of the Financial Services and Markets Act 2000 (Financial Promotion) Order 2005 (as amended, the "Order"); (ii) are persons who are high net worth entities falling within Article 49(2)(a) to (d) of the Order; or (iii) are persons to whom an invitation or inducement to engage in investment activity (within the meaning of section 21 of the Financial Services and Markets Act 2000, as amended) may otherwise lawfully be communicated or caused to be communicated. RMB MS Proprietary Limited is a member of the JSE Limited and A2X (Pty) Ltd. RMB MS Proprietary Limited is a joint venture owned equally by MS International Holdings Inc. and RMB Investment Advisory (Proprietary) Limited, which is wholly owned by FirstRand Limited. The information in MS is being disseminated by MS Saudi Arabia, regulated by the Capital Market Authority in the Kingdom of Saudi Arabia, and is directed at Sophisticated investors only.
+
+MS Hong Kong Securities Limited is the liquidity provider/market maker for securities of ANTA Sports Products, China Mengniu Dairy, China Resources Beer Holdings Co Ltd, China Tourism Group Duty Free, Chow Tai Fook Jewellery Group Ltd, Giant Biogene Holding Co Ltd, Haidilao International Holding Ltd, Laopu Gold, Li Ning, Mao Geping Cosmetics Co., Ltd, Midea Group Co Ltd., Nongfu Spring Co Ltd, Pop Mart International Group, Shenzhou International Group Holdings, Techtronic Industries Co Ltd listed on the Stock Exchange of Hong Kong Limited. An updated list can be found on HKEx website: http://www.hkex.com.hk.
+
+The information in MS is being communicated by MS & Co. International plc (DIFC Branch), regulated by the Dubai Financial Services Authority (the DFSA) or by MS & Co. International plc (ADGM Branch), regulated by the Financial Services Regulatory Authority Abu Dhabi (the FSRA), and is directed at Professional Clients only, as defined by the DFSA or the FSRA, respectively. The financial products or financial services to which this research relates will only be made available to a customer who we are satisfied meets the regulatory criteria of a Professional Client. A distribution of the different MS Research ratings or recommendations, in percentage terms for Investments in each sector covered, is available upon request from your sales representative.
+
+The information in MS is being communicated by MS & Co. International plc (QFC Branch), regulated by the Qatar Financial Centre Regulatory Authority (the QFCRA), and is directed at business customers and market counterparties only and is not intended for Retail Customers as defined by the QFCRA.
+
+As required by the Capital Markets Board of Turkey, investment information, comments and recommendations stated here, are not within the scope of investment advisory activity. Investment advisory service is provided exclusively to persons based on their risk and income preferences by the authorized firms. Comments and recommendations stated here are general in nature. These opinions may not fit to your financial status, risk and return preferences. For this reason, to make an investment decision by relying solely to this information stated here may not bring about outcomes that fit your expectations.
+
+The trademarks and service marks contained in MS are the property of their respective owners. Third-party data providers make no warranties or representations relating to the accuracy, completeness, or timeliness of the data they provide and shall not have liability for any damages relating to such data. The Global Industry Classification Standard (GICS) was developed by and is the exclusive property of MSCI and S&P.
+
+MS, or any portion thereof may not be reprinted, sold or redistributed without the written consent of MS.
+
+Indicators and trackers referenced in MS may not be used as, or treated as, a benchmark under Regulation EU 2016/1011, or any other similar framework.
+
+The issuers and/or fixed income products recommended or discussed in certain fixed income research reports may not be continuously followed. Accordingly, investors should regard those fixed income research reports as providing stand-alone analysis and should not expect continuing analysis or additional reports relating to such issuers and/or individual fixed income products. MS may hold, from time to time, material financial and commercial interests regarding the company subject to the Research report.
+
+Registration granted by SEBI and certification from the National Institute of Securities Markets (NISM) in no way guarantee performance of the intermediary or provide any assurance of returns to investors. Investment in securities market are subject to market risks. Read all the related documents carefully before investing.
+
+Stock Ratings are subject to change. Please see latest research for each company.   
+\* Historical prices are not split adjusted.   
+INDUSTRY COVERAGE: China/Hong Kong Consumer 
+
+<table><tr><td>COMPANY (TICKER)</td><td>RATING (AS OF)</td><td>PRICE* (05/15/2026)</td></tr><tr><td>Dustin Wei</td><td></td><td></td></tr><tr><td>ANTA Sports Products (2020.HK)</td><td>++</td><td>HK$76.25</td></tr><tr><td>Bosideng International Holdings Limited (3998.HK)</td><td>O (11/27/2024)</td><td>HK$4.28</td></tr><tr><td>C&amp;S Paper Co Ltd (002511.SZ)</td><td>U (09/22/2021)</td><td>Rmb7.90</td></tr><tr><td>Chacha Food Co Ltd (002557.SZ)</td><td>U (02/20/2025)</td><td>Rmb21.30</td></tr><tr><td>Giant Biogene Holding Co Ltd (2367.HK)</td><td>O (08/08/2024)</td><td>HK$29.32</td></tr><tr><td>Health and Happiness (H&amp;H) (1112.HK)</td><td>E (07/12/2021)</td><td>HK$13.47</td></tr><tr><td>Hengan International Group (1044.HK)</td><td>E (05/06/2021)</td><td>HK$26.14</td></tr><tr><td>Li Ning (2331.HK)</td><td>O (10/09/2019)</td><td>HK$18.72</td></tr><tr><td>Mao Geping Cosmetics Co., Ltd (1318.HK)</td><td>O (03/10/2026)</td><td>HK$61.60</td></tr><tr><td>Pop Mart International Group (9992.HK)</td><td>O (05/17/2021)</td><td>HK$152.40</td></tr><tr><td>Proya Cosmetics Co. Ltd. (603605.SS)</td><td>O (10/12/2021)</td><td>Rmb56.12</td></tr><tr><td>Samsonite Group (1910.HK)</td><td>O (06/15/2020)</td><td>HK$14.61</td></tr><tr><td>Shanghai Jahwa United Co. Ltd. (600315.SS)</td><td>U (07/07/2023)</td><td>Rmb19.06</td></tr><tr><td>Sun Art Retail Group Limited (6808.HK)</td><td>E (03/05/2019)</td><td>HK$1.48</td></tr><tr><td>Topsports International Holdings Ltd (6110.HK)</td><td>O (11/13/2019)</td><td>HK$2.96</td></tr><tr><td>Weilong Delicious Global Holdings Ltd (9985.HK)</td><td>O (06/11/2025)</td><td>HK$8.87</td></tr><tr><td>Yonghui Superstores (601933.SS)</td><td>U (05/18/2023)</td><td>Rmb3.66</td></tr><tr><td colspan="3">Ildy Ling</td></tr><tr><td>Beijing Roborock Technology Co Ltd (688169.SS)</td><td>O (09/25/2024)</td><td>Rmb122.12</td></tr><tr><td>China Tourism Group Duty Free (1880.HK)</td><td>E (12/13/2023)</td><td>HK$57.10</td></tr><tr><td>China Tourism Group Duty Free (601888.SS)</td><td>E (12/13/2023)</td><td>Rmb59.00</td></tr><tr><td>Chow Tai Fook Jewellery Group Ltd (1929.HK)</td><td>O (03/04/2025)</td><td>HK$11.09</td></tr><tr><td>Chow Tai Seng Jewellery Co Ltd (002867.SZ)</td><td>U (03/04/2025)</td><td>Rmb12.63</td></tr><tr><td>Ecovacs Robotics Co Ltd (603486.SS)</td><td>E (10/30/2023)</td><td>Rmb65.15</td></tr><tr><td>Foshan Haitian Flavouring and Food (603288.SS)</td><td>E (07/28/2025)</td><td>Rmb36.81</td></tr><tr><td>Foshan Haitian Flavouring and Food (3288.HK)</td><td>O (07/28/2025)</td><td>HK$32.42</td></tr><tr><td>Haidilao International Holding Ltd (6862.HK)</td><td>O (05/26/2021)</td><td>HK$14.68</td></tr><tr><td>Hangzhou Robam Appliances Co Ltd (002508.SZ)</td><td>U (02/21/2024)</td><td>Rmb17.92</td></tr><tr><td>Laopu Gold (6181.HK)</td><td>O (10/20/2025)</td><td>HK$567.50</td></tr><tr><td>Super Hi (HDL.O)</td><td>E (01/14/2025)</td><td>US$14.83</td></tr><tr><td>Zhejiang Supor Co. Ltd. (002032.SZ)</td><td>E (01/17/2022)</td><td>Rmb48.40</td></tr><tr><td colspan="3">illian Lou</td></tr><tr><td>Angel Yeast Co. Ltd. (600298.SS)</td><td>O (02/20/2025)</td><td>Rmb36.25</td></tr><tr><td>Anhui Gujing Distillery Company Limited (000596.SZ)</td><td>U (02/13/2026)</td><td>Rmb97.62</td></tr><tr><td>Budweiser Brewing Company APAC Ltd (1876.HK)</td><td>O (11/04/2019)</td><td>HK$7.76</td></tr><tr><td>Chagee Holdings Ltd (CHA.O)</td><td>O (06/02/2025)</td><td>US$9.84</td></tr><tr><td>China Mengniu Dairy (2319.HK)</td><td>O (09/14/2017)</td><td>HK$17.72</td></tr><tr><td>China Resources Beer Holdings Co Ltd (0291.HK)</td><td>O (12/11/2018)</td><td>HK$26.68</td></tr><tr><td>Chongqing Brewery Co. Ltd. (600132.SS)</td><td>U (07/30/2021)</td><td>Rmb52.44</td></tr><tr><td>Eastroc Beverages (605499.SS)</td><td>O (03/12/2026)</td><td>Rmb186.09</td></tr><tr><td>Eastroc Beverages (9980.HK)</td><td>O (03/12/2026)</td><td>HK$169.10</td></tr><tr><td>Gree Electric Appliances Inc of Zhuhai (000651.SZ)</td><td>O (04/14/2020)</td><td>Rmb40.28</td></tr><tr><td>Haier Smart Home Co Ltd (600690.SS)</td><td>E (01/17/2022)</td><td>Rmb21.40</td></tr><tr><td>Haier Smart Home Co Ltd (6690.HK)</td><td>E (01/17/2022)</td><td>HK$21.04</td></tr><tr><td>Kweichow Moutai Company Ltd. (600519.SS)</td><td>O (10/17/2014)</td><td>Rmb1,332.95</td></tr><tr><td>Luzhou Lao Jiao Co. Ltd (000568.SZ)</td><td>E (01/23/2019)</td><td>Rmb91.00</td></tr><tr><td>Midea Group Co Ltd. (0300.HK)</td><td>O (11/01/2024)</td><td>HK$91.65</td></tr><tr><td>Midea Group Co Ltd. (000333.SZ)</td><td>O (01/17/2022)</td><td>Rmb82.57</td></tr><tr><td>Muyuan Foodstuff Co. Ltd (2714.HK)</td><td>O (03/17/2026)</td><td>HK$39.26</td></tr><tr><td>Muyuan Foodstuff Co. Ltd (002714.SZ)</td><td>O (03/17/2026)</td><td>Rmb42.50</td></tr><tr><td>Nongfu Spring Co Ltd (9633.HK)</td><td>E (07/30/2021)</td><td>HK$43.66</td></tr><tr><td>Shanxi Xinghuacun Fen Wine Factory Co. (600809.SS)</td><td>O (10/28/2020)</td><td>Rmb131.41</td></tr><tr><td>Shuanghui Development (000895.SZ)</td><td>U (03/16/2021)</td><td>Rmb26.58</td></tr><tr><td>Tingyi (Cayman Islands) (0322.HK)</td><td>E (07/25/2025)</td><td>HK$12.43</td></tr><tr><td>Tsingtao Brewery Co Ltd (0168.HK)</td><td>E (11/01/2024)</td><td>HK$51.95</td></tr><tr><td>Tsingtao Brewery Co Ltd (600600.SS)</td><td>E (02/28/2024)</td><td>Rmb61.76</td></tr><tr><td>Uni-President China (0220.HK)</td><td>E (07/25/2025)</td><td>HK$8.12</td></tr><tr><td>Want Want China Holdings Ltd (0151.HK)</td><td>E (11/29/2023)</td><td>HK$4.27</td></tr><tr><td>WH Group (0288.HK)</td><td>O (02/24/2025)</td><td>HK$9.41</td></tr><tr><td>Wuliangye Yibin Company Ltd. (000858.SZ)</td><td>E (08/15/2024)</td><td>Rmb86.87</td></tr><tr><td>Yanghe Brewery (002304.SZ)</td><td>U (01/05/2021)</td><td>Rmb45.95</td></tr><tr><td>Yanjing Brewery (000729.SZ)</td><td>U (09/02/2015)</td><td>Rmb12.27</td></tr><tr><td>Yili Industrial (600887.SS)</td><td>O (01/29/2014)</td><td>Rmb27.61</td></tr><tr><td>Yum China Holdings Inc. (YUMC.N)</td><td>O (03/20/2018)</td><td>US$45.51</td></tr><tr><td>ZJLD Group (6979.HK)</td><td>E (02/13/2026)</td><td>HK$7.99</td></tr><tr><td colspan="3">Terence Cheng</td></tr><tr><td>Chervon Holdings Ltd. (2285.HK)</td><td>E (04/12/2024)</td><td>HK$17.80</td></tr><tr><td>Crystal International Group Ltd. (2232.HK)</td><td>E (06/23/2025)</td><td>HK$6.10</td></tr><tr><td>Gongniu Group Co Ltd (603195.SS)</td><td>O (05/08/2023)</td><td>Rmb42.79</td></tr><tr><td>Hangzhou Greatstar Industrial Co Ltd (002444.SZ)</td><td>E (10/26/2022)</td><td>Rmb34.70</td></tr><tr><td>Huali Industrial Group Co (300979.SZ)</td><td>U (02/10/2026)</td><td>Rmb38.16</td></tr><tr><td>Shenzhou International Group Holdings (2313.HK)</td><td>O (07/13/2017)</td><td>HK$46.50</td></tr><tr><td>Stella International Holdings Ltd (1836.HK)</td><td>E (06/23/2025)</td><td>HK$14.76</td></tr><tr><td>Techtronic Industries Co Ltd (0669.HK)</td><td>O (12/05/2019)</td><td>HK$118.00</td></tr><tr><td>Yue Yuen Industrial Hldg (0551.HK)</td><td>E (09/14/2021)</td><td>HK$14.98</td></tr></table>
+
+© 2026 MS
