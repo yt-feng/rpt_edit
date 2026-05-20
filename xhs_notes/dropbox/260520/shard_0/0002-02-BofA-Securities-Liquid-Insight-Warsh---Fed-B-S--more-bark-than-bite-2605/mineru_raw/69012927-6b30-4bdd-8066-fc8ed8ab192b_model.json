@@ -1,0 +1,3486 @@
+[
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.04,
+                0.016,
+                0.214,
+                0.043
+            ],
+            "angle": 0,
+            "content": "Liquid Insight"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.039,
+                0.06,
+                0.567,
+                0.085
+            ],
+            "angle": 0,
+            "content": "Warsh & Fed B/S: more bark than bite"
+        },
+        {
+            "type": "title",
+            "bbox": [
+                0.039,
+                0.161,
+                0.191,
+                0.18
+            ],
+            "angle": 0,
+            "content": "Key takeaways"
+        },
+        {
+            "type": "list",
+            "bbox": [
+                0.038,
+                0.185,
+                0.62,
+                0.257
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.038,
+                0.185,
+                0.586,
+                0.2
+            ],
+            "angle": 0,
+            "content": "- Warsh is Fed B/S critic; he won't change much. Focus on (1) size (2) composition",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.038,
+                0.205,
+                0.617,
+                0.22
+            ],
+            "angle": 0,
+            "content": "- Size = big drop unlikely. Composition = Fed UST WAM shorter but won't matter much",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.038,
+                0.225,
+                0.618,
+                0.256
+            ],
+            "angle": 0,
+            "content": "- Blue sky: bank SRP at IOR + reporting changes = reserve buffer drop. Blue sky may be more impactful vs conventional views",
+            "merge_prev": false
+        },
+        {
+            "type": "title",
+            "bbox": [
+                0.04,
+                0.278,
+                0.339,
+                0.298
+            ],
+            "angle": 0,
+            "content": "By Mark Cabana & Katie Craig"
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.055,
+                0.3,
+                0.307,
+                0.313
+            ],
+            "angle": 0,
+            "content": "Exhibit 1: Fed balance sheet liabilities (\\$tn)"
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.055,
+                0.314,
+                0.468,
+                0.328
+            ],
+            "angle": 0,
+            "content": "Currency, reserves, and TGA make up the largest shares of the Fed's liabilities"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.057,
+                0.336,
+                0.605,
+                0.527
+            ],
+            "angle": 0,
+            "content": "| Year | Currency | Reserves | TGA | Foreign RRP | ON RRP | Other |\n|---|---|---|---|---|---|---|\n| 2008 | 0.7 | 0.1 | 0.0 | 0.0 | 0.0 | 0.0 |\n| 2010 | 0.8 | 1.5 | 0.0 | 0.0 | 0.0 | 1.0 |\n| 2012 | 0.9 | 2.0 | 0.0 | 0.0 | 0.0 | 1.5 |\n| 2014 | 1.0 | 3.0 | 0.5 | 0.5 | 0.5 | 2.5 |\n| 2016 | 1.1 | 3.5 | 1.0 | 1.0 | 1.0 | 3.0 |\n| 2018 | 1.2 | 3.5 | 1.5 | 1.5 | 1.5 | 3.5 |\n| 2020 | 1.3 | 3.5 | 2.0 | 2.0 | 2.0 | 4.0 |\n| 2022 | 1.4 | 4.5 | 2.5 | 2.5 | 3.5 | 5.0 |\n| 2024 | 1.5 | 4.5 | 2.5 | 2.5 | 3.5 | 4.5 |\n| 2026 | 1.6 | 4.5 | 2.5 | 2.5 | 3.5 | 4.5 |",
+            "sub_type": "bar_stacked"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.056,
+                0.532,
+                0.141,
+                0.544
+            ],
+            "angle": 0,
+            "content": "Source: Bloomberg"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.519,
+                0.544,
+                0.626,
+                0.555
+            ],
+            "angle": 0,
+            "content": "BofA GLOBAL RESEARCH"
+        },
+        {
+            "type": "title",
+            "bbox": [
+                0.038,
+                0.562,
+                0.559,
+                0.58
+            ],
+            "angle": 0,
+            "content": "Warsh & Fed balance sheet: all hat, almost no cattle"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.037,
+                0.582,
+                0.61,
+                0.613
+            ],
+            "angle": 0,
+            "content": "Kevin Warsh is now Senate confirmed as the new Fed Chair. A frequent client Q: \"what will Warsh do on the Fed balance sheet?\" Our A: \"not much\". We elaborate below.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.037,
+                0.623,
+                0.624,
+                0.656
+            ],
+            "angle": 0,
+            "content": "Clients should focus on 2 aspects of Fed sheet: (1) size (2) composition. Size likely won't change much, composition will. We expect neither to matter much for markets.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.038,
+                0.665,
+                0.594,
+                0.714
+            ],
+            "angle": 0,
+            "content": "Size: after Fed sheet normalized in Q4 '25, total size now determined by liabilities (Exhibit 1). The Fed has 3 big liabilities: (1) currency (2) TGA (3) reserves. Warsh will likely only be able to marginally move needle on reserve demand via liquidity de-reg.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.038,
+                0.723,
+                0.614,
+                0.755
+            ],
+            "angle": 0,
+            "content": "Composition: Warsh will keep letting MBS reinvest in UST bills. He will likely accelerate Fed UST WAM reduction. UST unlikely to offset WAM impact, so market impact = nil.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.038,
+                0.765,
+                0.595,
+                0.781
+            ],
+            "angle": 0,
+            "content": "Most important Q: Warsh reserve regime preference: ample or scarce? Our A: ample.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.038,
+                0.791,
+                0.568,
+                0.807
+            ],
+            "angle": 0,
+            "content": "Blue sky: we propose new Fed regime with bank SRP=IOR. It could move needle.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.038,
+                0.817,
+                0.622,
+                0.832
+            ],
+            "angle": 0,
+            "content": "Bottom line: Warsh impact on Fed B/S will be small & have minimal impact on markets.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.037,
+                0.866,
+                0.591,
+                0.903
+            ],
+            "angle": 0,
+            "content": "Trading ideas and investment strategies discussed herein may give rise to significant risk and are not suitable for all investors. Investors should have experience in relevant markets and the financial resources to absorb any losses arising from applying these ideas or strategies.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.037,
+                0.903,
+                0.565,
+                0.951
+            ],
+            "angle": 0,
+            "content": "BofA does and seeks to do business with issuers covered in its research reports. As a result, investors should be aware that the firm may have a conflict of interest that could affect the objectivity of this report. Investors should consider this report as only a single factor in making their investment decision.",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.039,
+                0.951,
+                0.332,
+                0.964
+            ],
+            "angle": 0,
+            "content": "Refer to important disclosures on page 8 to 10."
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.548,
+                0.952,
+                0.596,
+                0.962
+            ],
+            "angle": 0,
+            "content": "12975247"
+        },
+        {
+            "type": "title",
+            "bbox": [
+                0.706,
+                0.158,
+                0.789,
+                0.171
+            ],
+            "angle": 0,
+            "content": "18 May 2026"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.705,
+                0.18,
+                0.911,
+                0.208
+            ],
+            "angle": 0,
+            "content": "Rates and Currencies Research Global",
+            "merge_prev": false
+        },
+        {
+            "type": "title",
+            "bbox": [
+                0.705,
+                0.234,
+                0.9,
+                0.256
+            ],
+            "angle": 0,
+            "content": "Global Rates & Currencies Research\nMLI (UK)"
+        },
+        {
+            "type": "title",
+            "bbox": [
+                0.706,
+                0.261,
+                0.807,
+                0.272
+            ],
+            "angle": 0,
+            "content": "Mark Cabana, CFA"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.707,
+                0.273,
+                0.788,
+                0.283
+            ],
+            "angle": 0,
+            "content": "Rates Strategist",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.707,
+                0.283,
+                0.74,
+                0.291
+            ],
+            "angle": 0,
+            "content": "BofAS",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.707,
+                0.292,
+                0.794,
+                0.302
+            ],
+            "angle": 0,
+            "content": "+1 646 743 7013",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.707,
+                0.303,
+                0.824,
+                0.312
+            ],
+            "angle": 0,
+            "content": "mark.cabana@bofa.com",
+            "merge_prev": false
+        },
+        {
+            "type": "title",
+            "bbox": [
+                0.706,
+                0.319,
+                0.769,
+                0.33
+            ],
+            "angle": 0,
+            "content": "Katie Craig"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.707,
+                0.33,
+                0.788,
+                0.34
+            ],
+            "angle": 0,
+            "content": "Rates Strategist",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.707,
+                0.34,
+                0.74,
+                0.349
+            ],
+            "angle": 0,
+            "content": "BofAS",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.707,
+                0.35,
+                0.794,
+                0.359
+            ],
+            "angle": 0,
+            "content": "+1 646 743 7016",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.707,
+                0.36,
+                0.814,
+                0.37
+            ],
+            "angle": 0,
+            "content": "katie.craig@bofa.com",
+            "merge_prev": false
+        },
+        {
+            "type": "title",
+            "bbox": [
+                0.706,
+                0.376,
+                0.804,
+                0.387
+            ],
+            "angle": 0,
+            "content": "Oliver Levingston"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.707,
+                0.388,
+                0.824,
+                0.397
+            ],
+            "angle": 0,
+            "content": "FX and Rates Strategist",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.707,
+                0.397,
+                0.834,
+                0.407
+            ],
+            "angle": 0,
+            "content": "BofA (Hong Kong)",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.707,
+                0.407,
+                0.789,
+                0.416
+            ],
+            "angle": 0,
+            "content": "+852 3508 4631",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.707,
+                0.417,
+                0.843,
+                0.427
+            ],
+            "angle": 0,
+            "content": "oliver.levingston@bofa.com",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.706,
+                0.433,
+                0.88,
+                0.445
+            ],
+            "angle": 0,
+            "content": "See Team Page for List of Analysts",
+            "merge_prev": false
+        },
+        {
+            "type": "title",
+            "bbox": [
+                0.72,
+                0.475,
+                0.806,
+                0.489
+            ],
+            "angle": 0,
+            "content": "Liquid Insight"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.72,
+                0.49,
+                0.834,
+                0.502
+            ],
+            "angle": 0,
+            "content": "Recent Publications",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.72,
+                0.539,
+                0.948,
+                0.565
+            ],
+            "angle": 0,
+            "content": "14-May-26 Global government bond supply update: same same, but different",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.721,
+                0.566,
+                0.928,
+                0.578
+            ],
+            "angle": 0,
+            "content": "13-May-26 Fading the USD Vibe-cession",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.721,
+                0.579,
+                0.93,
+                0.591
+            ],
+            "angle": 0,
+            "content": "12-May-26 Occam's razor applies in rates",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.721,
+                0.593,
+                0.935,
+                0.605
+            ],
+            "angle": 0,
+            "content": "11-May-26 US rates: hike risk underpriced",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.721,
+                0.606,
+                0.944,
+                0.631
+            ],
+            "angle": 0,
+            "content": "7-May-26 April jobs: Fed hike pricing in the balance",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.72,
+                0.633,
+                0.927,
+                0.671
+            ],
+            "angle": 0,
+            "content": "6-May-26 German 2027 draft budget – regular procedures, irregular budgets 06 May 2026",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.72,
+                0.673,
+                0.861,
+                0.684
+            ],
+            "angle": 0,
+            "content": "5-May-26 Dollar on mute",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.72,
+                0.686,
+                0.913,
+                0.698
+            ],
+            "angle": 0,
+            "content": "4-May-26 ECB balance sheet update",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.72,
+                0.699,
+                0.932,
+                0.724
+            ],
+            "angle": 0,
+            "content": "30-Apr-26 RBA preview: Front-loading as the path of least resistance",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.72,
+                0.726,
+                0.93,
+                0.752
+            ],
+            "angle": 0,
+            "content": "29-Apr-26 ECB preview: on hold, but not for long",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.836,
+                0.767,
+                0.943,
+                0.779
+            ],
+            "angle": 0,
+            "content": "BofA GLOBAL RESEARCH",
+            "merge_prev": false
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.04,
+                0.012,
+                0.163,
+                0.023
+            ],
+            "angle": 0,
+            "content": "BofA GLOBAL RESEARCH"
+        },
+        {
+            "type": "title",
+            "bbox": [
+                0.042,
+                0.042,
+                0.414,
+                0.06
+            ],
+            "angle": 0,
+            "content": "Warsh & Fed B/S: size & composition"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.062,
+                0.624,
+                0.107
+            ],
+            "angle": 0,
+            "content": "Incoming Fed Chair Warsh is a longstanding critic of the Fed balance sheet. We expect he would quickly establish “working groups” to examine ways to shrink Fed sheet. Warsh will try to impact 2 parts of Fed B/S: (1) size (2) composition. Market impact likely small.",
+            "merge_prev": false
+        },
+        {
+            "type": "title",
+            "bbox": [
+                0.042,
+                0.121,
+                0.206,
+                0.134
+            ],
+            "angle": 0,
+            "content": "Fed balance sheet size"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.137,
+                0.624,
+                0.167
+            ],
+            "angle": 0,
+            "content": "Central bank balance sheet sizes, once right sized, are determined by their liabilities. The Fed right sized its sheet via QT until money markets reflected tightness in Q4 '25.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.178,
+                0.611,
+                0.208
+            ],
+            "angle": 0,
+            "content": "To reduce sheet further the Fed needs to shrink one of its key 3 liabilities: (1) currency (2) TGA (3) reserves. We offer thoughts (TL;DR: reserves are the only shot; Exhibit 2).",
+            "merge_prev": false
+        },
+        {
+            "type": "table_caption",
+            "bbox": [
+                0.057,
+                0.219,
+                0.327,
+                0.232
+            ],
+            "angle": 0,
+            "content": "Exhibit 2: Fed balance sheet composition (\\$bn)"
+        },
+        {
+            "type": "table_caption",
+            "bbox": [
+                0.057,
+                0.233,
+                0.453,
+                0.247
+            ],
+            "angle": 0,
+            "content": "Fed assets = mostly UST assets, Fed liabilities = mostly reserves + currency"
+        },
+        {
+            "type": "table",
+            "bbox": [
+                0.056,
+                0.254,
+                0.631,
+                0.307
+            ],
+            "angle": 0,
+            "content": "<table><tr><td colspan=\"4\">Assets</td><td colspan=\"6\">Liabilities</td></tr><tr><td>Total</td><td>USTs</td><td>Agy MBS</td><td>Other</td><td>Reserves</td><td>Currency</td><td>UST Cash Balance</td><td>Foreign RRP</td><td>ON RRP</td><td>Other</td></tr><tr><td>6779.9</td><td>4450.2</td><td>1981.1</td><td>348.6</td><td>3117.4</td><td>2458.0</td><td>807.4</td><td>322.6</td><td>3.7</td><td>70.7</td></tr><tr><td>%</td><td>66%</td><td>29%</td><td>5%</td><td>46%</td><td>36%</td><td>12%</td><td>5%</td><td>0%</td><td>1%</td></tr></table>"
+        },
+        {
+            "type": "table_footnote",
+            "bbox": [
+                0.057,
+                0.312,
+                0.141,
+                0.322
+            ],
+            "angle": 0,
+            "content": "Source: Bloomberg"
+        },
+        {
+            "type": "table_footnote",
+            "bbox": [
+                0.523,
+                0.323,
+                0.628,
+                0.332
+            ],
+            "angle": 0,
+            "content": "BofA GLOBAL RESEARCH"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.339,
+                0.626,
+                0.384
+            ],
+            "angle": 0,
+            "content": "Currency: central banks believe currency is an “exogenous” liability. Exogenous liabilities are beyond the central banks control. To reduce currency the Fed could tax or eliminate currency / large denomination bills (ECB cut EUR500 notes). It won’t happen in the US.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.395,
+                0.624,
+                0.456
+            ],
+            "angle": 0,
+            "content": "TGA: UST cash balance could be reduced. UST has signaled minimal interest or desire to reduce TGA (TGA expected to rise: end Q2 $900b, end Q3 $950b). UST could consider marginal adjustments, such as excess cash investment in repo or TT&L (see: TGA repo investment & TT&L). TGA repo may happen but impact small. TT&L very unlikely.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.467,
+                0.624,
+                0.497
+            ],
+            "angle": 0,
+            "content": "Reserves: lower reserves are Warsh best shot to reduce sheet. There are 2 conventional ways for Warsh to reduce reserves (1) bank unfriendly (2) bank friendly.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.507,
+                0.625,
+                0.568
+            ],
+            "angle": 0,
+            "content": "Bank unfriendly: Warsh can tell banks that reserves are capped or tiered (tier = some reserves not fully paid IOR). Reserve caps or tiers would make banks sub-optimally liquid. Sub-optimally liquid banks likely less willing to take risk (i.e. less market making, less loan growth willingness). Less bank risk = slower economy. Warsh unlikely to do it.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.579,
+                0.617,
+                0.639
+            ],
+            "angle": 0,
+            "content": "Bank friendly: Warsh likely to pursue bank friendly ways to reduce reserve demand via de-reg. This will include allowing banks to pre-pledge collateral to Fed discount window for instant monetization. Pre-pledging collateral will expand bank HQLA. More HQLA = fewer reserves needed. We estimate reserve drop of $200-500b (~10% total) & slow.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.65,
+                0.625,
+                0.711
+            ],
+            "angle": 0,
+            "content": "Bank friendly approach will shift the “reserve demand curve”. Lower reserve demand will first put downward pressure on funding (Exhibit 3). Fed can later grow sheet slower / reduce sheet to normalize funding (Exhibit 4). Importantly, bank de-reg reserve demand drop will not tighten fin conditions (FCI). If no FCI tightening, no need for rate cuts.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.722,
+                0.624,
+                0.782
+            ],
+            "angle": 0,
+            "content": "Other: foreign repo pool adjustment is possible but small peas. Warsh could lower or cap foreign RRP rate to push cash out of Fed into repo or bills. We have long argued this would diminish USD reserve currency status & hurt national interest (see: RRP & national interest). Warsh may see smaller sheet > national interest. We advise otherwise.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.793,
+                0.61,
+                0.854
+            ],
+            "angle": 0,
+            "content": "Warsh will also likely have a high bar to intervene in disorderly markets. His initial intuition is likely to remain out of markets but could be forced to act depending on extent of market dysfunction (he did support Fed emergency actions post GFC). Warsh market invention bar will be high but not insurmountable depending on shock extent.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.865,
+                0.627,
+                0.91
+            ],
+            "angle": 0,
+            "content": "Size summary: Warsh likely to find Fed B/S reduction hard via conventional means. Best shot is via bank liquidity de-reg, impact modest & slow. Liquidity de-reg & initial funding ease will not justify Fed rate cuts. Blue sky may be more impactful or Fed B/S reduction.",
+            "merge_prev": false
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.041,
+                0.954,
+                0.051,
+                0.963
+            ],
+            "angle": 0,
+            "content": "2"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.085,
+                0.954,
+                0.245,
+                0.965
+            ],
+            "angle": 0,
+            "content": "Liquid Insight | 18 May 2026"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.915,
+                0.948,
+                0.955,
+                0.967
+            ],
+            "angle": 0,
+            "content": "[Non-Text]"
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.04,
+                0.012,
+                0.163,
+                0.023
+            ],
+            "angle": 0,
+            "content": "BofA GLOBAL RESEARCH"
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.055,
+                0.067,
+                0.59,
+                0.096
+            ],
+            "angle": 0,
+            "content": "Exhibit 3: Stylized Fed reserve demand and supply curves if reserve demand curve shifts left. If reserve demand curve shifts left due to de-reg, it will place downward pressure on funding rates"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.066,
+                0.108,
+                0.641,
+                0.384
+            ],
+            "angle": 0,
+            "content": "| Reserve balances | Money market rates |\n| ---------------- | ------------------ |\n| R1               | TGCR current      |\n| R1               | TGCR new           |\n| R1               | Downward pressure on funding |\n| R1               | IORB               |",
+            "sub_type": "line"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.055,
+                0.392,
+                0.633,
+                0.414
+            ],
+            "angle": 0,
+            "content": "Source: BofA Global Research. Note: Dark gray shaded area signifies \"ample\" reserves in current reserve demand environment, light gray in new reserve demand environment."
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.538,
+                0.415,
+                0.644,
+                0.426
+            ],
+            "angle": 0,
+            "content": "BofA GLOBAL RESEARCH"
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.055,
+                0.46,
+                0.637,
+                0.49
+            ],
+            "angle": 0,
+            "content": "Exhibit 4: Stylized Fed reserve demand and supply curves if reserve demand curve shifts left and Fed reduces supply of reserves"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.055,
+                0.49,
+                0.631,
+                0.517
+            ],
+            "angle": 0,
+            "content": "If funding rates decline, the Fed can reduce the supply of reserves and bring money market rates back up to IORB but maintain \"ample\" reserves"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.067,
+                0.524,
+                0.641,
+                0.799
+            ],
+            "angle": 0,
+            "content": "| Reserve balances | Money market rates |\n| ---------------- | ------------------ |\n| R2               | TGCR new           |\n| R1               | TGCR current       |\n| IORB             | Fed reduces supply of reserves (upper) |",
+            "sub_type": "line"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.055,
+                0.806,
+                0.633,
+                0.829
+            ],
+            "angle": 0,
+            "content": "Source: BofA Global Research. Note: Dark gray shaded area signifies \"ample\" reserves in current reserve demand environment, light gray in new reserve demand environment."
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.538,
+                0.83,
+                0.644,
+                0.84
+            ],
+            "angle": 0,
+            "content": "BofA GLOBAL RESEARCH"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.042,
+                0.948,
+                0.081,
+                0.968
+            ],
+            "angle": 0,
+            "content": "[Non-Text]"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.757,
+                0.952,
+                0.919,
+                0.966
+            ],
+            "angle": 0,
+            "content": "Liquid Insight | 18 May 2026"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.945,
+                0.953,
+                0.955,
+                0.964
+            ],
+            "angle": 0,
+            "content": "3"
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.04,
+                0.012,
+                0.162,
+                0.022
+            ],
+            "angle": 0,
+            "content": "BofA GLOBAL RESEARCH"
+        },
+        {
+            "type": "title",
+            "bbox": [
+                0.042,
+                0.046,
+                0.266,
+                0.06
+            ],
+            "angle": 0,
+            "content": "Fed balance sheet composition"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.062,
+                0.625,
+                0.107
+            ],
+            "angle": 0,
+            "content": "Warsh will also likely further adjust the composition of Fed assets in two ways (1) return to mostly Treasury portfolio (2) shorten WAM of Fed's UST holdings. Both are happening now. Warsh likely to speed WAM shortening, but it won't impact markets b/c mechanics.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.118,
+                0.609,
+                0.179
+            ],
+            "angle": 0,
+            "content": "Mostly UST portfolio: Fed is slowly reducing their $2tn in MBS at a pace of $10-$20b/m by allowing maturing and prepaid MBS to roll-off & reinvest in T-bills. Fed unlikely to sell MBS (unless they were bought directly by Fannie or Freddie, which we see as low likelihood). Fed MBS roll-off practice to remain & is well priced by markets.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.189,
+                0.611,
+                0.25
+            ],
+            "angle": 0,
+            "content": "WAM: Fed is shortening WAM by purchasing T-bills via RMPs and MBS reinvestment (Exhibit 5). Warsh can speed Fed UST WAM reduction by shifting maturing coupon reinvestments into shorter-dated tenors (we assume 2-3y coupons in Exhibit 5). Warsh WAM shortening highly unlikely to see Fed asset sales. Market impact = small.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.261,
+                0.617,
+                0.337
+            ],
+            "angle": 0,
+            "content": "Market impact will be small due to WAM shortening mechanics. Recall, Fed UST coupon maturities are currently reinvested at auction into new-issue USTs. Fed reinvestment is proportional to UST auction amounts, thereby investing in-line with UST market. The Fed matches maturing USTs with USTs that settle on same day (i.e. mid-month maturities invested in 3/10/30Y USTs, end-month maturities invested in 2/5/7Y USTs).",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.348,
+                0.618,
+                0.424
+            ],
+            "angle": 0,
+            "content": "Warsh will likely change this process by reinvesting in the shortest tenor new issue UST coupons. For example, in a mid-month settlement Fed will no longer rollover into 3/10/30Y issues but instead reinvest in all 3Y notes (example in Exhibit 6). Importantly, Fed reinvestments are an “add on” at auction. “Add on” means that the total size & composition of UST debt outstanding is increased by size of the Fed reinvestment.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.435,
+                0.618,
+                0.495
+            ],
+            "angle": 0,
+            "content": "The Fed's \"add on\" into 2 or 3Y notes will shorten WAM of total UST market. The key Q then becomes: will the US Treasury offset the mechanical UST WAM shortening from Fed reinvestments? Our A: no. If we are right, Fed WAM shortening has zero impact on UST market or fin conditions. No FCI impact = no reason for Warsh to cut rates.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.507,
+                0.623,
+                0.552
+            ],
+            "angle": 0,
+            "content": "Composition summary: Fed B/S composition changes are unlikely to matter for markets. The MBS maturity & reinvest practice already in place & priced. Fed shortening of their UST WAM will not have a market impact unless Bessent surprisingly offsets.",
+            "merge_prev": false
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.057,
+                0.566,
+                0.406,
+                0.58
+            ],
+            "angle": 0,
+            "content": "Exhibit 5: Fed WAM and WAM projection scenarios (months)"
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.057,
+                0.58,
+                0.443,
+                0.619
+            ],
+            "angle": 0,
+            "content": "Fed WAM has already started to decline due to RMPs and MBS reinvestments into T-bills but shifting coupon reinvestments into short-dated tenors would speed up this decline"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.059,
+                0.626,
+                0.457,
+                0.824
+            ],
+            "angle": 0,
+            "content": "| Year | Fed WAM | Current trend projection | 2y-3y reinvestment |\n|------|---------|--------------------------|-------------------|\n| 2004 | ~35     | -                        | -                 |\n| 2008 | ~80     | -                        | -                 |\n| 2012 | ~75     | -                        | -                 |\n| 2016 | ~100    | -                        | -                 |\n| 2020 | ~90     | -                        | -                 |\n| 2024 | ~105    | ~100                     | ~100              |\n| 2028 | -       | ~85                      | ~75               |",
+            "sub_type": "line"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.057,
+                0.829,
+                0.215,
+                0.839
+            ],
+            "angle": 0,
+            "content": "Source: BofA Global Research, FRBNY"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.362,
+                0.84,
+                0.468,
+                0.85
+            ],
+            "angle": 0,
+            "content": "BofA GLOBAL RESEARCH"
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.544,
+                0.566,
+                0.904,
+                0.58
+            ],
+            "angle": 0,
+            "content": "Exhibit 6: Stylized example of Fed reinvestment practice (\\$bn)"
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.544,
+                0.58,
+                0.938,
+                0.593
+            ],
+            "angle": 0,
+            "content": "Fed current invests pro rata across curve, we expect this will be shortened"
+        },
+        {
+            "type": "table",
+            "bbox": [
+                0.542,
+                0.602,
+                0.928,
+                0.817
+            ],
+            "angle": 0,
+            "content": "<table><tr><td colspan=\"3\">Current Practice</td><td colspan=\"3\">Future Possible Practice</td></tr><tr><td colspan=\"3\">UST Auction Size</td><td colspan=\"3\">UST Auction Size</td></tr><tr><td>3Y</td><td>10Y</td><td>30Y</td><td>3Y</td><td>10Y</td><td>30Y</td></tr><tr><td>50</td><td>25</td><td>25</td><td>50</td><td>25</td><td>25</td></tr><tr><td colspan=\"3\">Fed Maturing</td><td colspan=\"3\">Fed Maturing</td></tr><tr><td></td><td>10</td><td></td><td></td><td>10</td><td></td></tr><tr><td colspan=\"3\">Fed UST Auction Add On</td><td colspan=\"3\">Fed UST Auction Add On</td></tr><tr><td>3Y</td><td>10Y</td><td>30Y</td><td>3Y</td><td>10Y</td><td>30Y</td></tr><tr><td>5</td><td>2.5</td><td>2.5</td><td>10</td><td>0</td><td>0</td></tr><tr><td colspan=\"3\">UST Size Outstanding</td><td colspan=\"3\">UST Size Outstanding</td></tr><tr><td>3Y</td><td>10Y</td><td>30Y</td><td>3Y</td><td>10Y</td><td>30Y</td></tr><tr><td>55</td><td>27.5</td><td>27.5</td><td>60</td><td>25</td><td>25</td></tr></table>"
+        },
+        {
+            "type": "table_footnote",
+            "bbox": [
+                0.544,
+                0.823,
+                0.67,
+                0.833
+            ],
+            "angle": 0,
+            "content": "Source: BofA Global Research"
+        },
+        {
+            "type": "table_footnote",
+            "bbox": [
+                0.849,
+                0.835,
+                0.955,
+                0.844
+            ],
+            "angle": 0,
+            "content": "BofA GLOBAL RESEARCH"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.041,
+                0.954,
+                0.051,
+                0.963
+            ],
+            "angle": 0,
+            "content": "4"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.084,
+                0.953,
+                0.245,
+                0.965
+            ],
+            "angle": 0,
+            "content": "Liquid Insight | 18 May 2026"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.915,
+                0.948,
+                0.954,
+                0.967
+            ],
+            "angle": 0,
+            "content": "[Non-Text]"
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.04,
+                0.012,
+                0.163,
+                0.023
+            ],
+            "angle": 0,
+            "content": "BofA GLOBAL RESEARCH"
+        },
+        {
+            "type": "title",
+            "bbox": [
+                0.042,
+                0.04,
+                0.597,
+                0.058
+            ],
+            "angle": 0,
+            "content": "Warsh big Q: ample or scarce? Our A: ample, all the way"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.06,
+                0.618,
+                0.105
+            ],
+            "angle": 0,
+            "content": "Most important Warsh B/S Q (to us): does Warsh support ample or scarce reserves? Our A: ample. Recall, Fed definitions of ample & scarce, for a given move in reserves: ample = limited money market movement; scarce = large money market movement.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.115,
+                0.615,
+                0.177
+            ],
+            "angle": 0,
+            "content": "We strongly believe Warsh would support ample; if not, he would likely be forced to support it. Ample benefit = easy to implement, ensures banking system flush with cash, limits money market volatility, & supports modestly easier financial conditions. Ample cost = slightly larger balance sheet. Scarce benefits & costs are opposite of ample.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.187,
+                0.614,
+                0.232
+            ],
+            "angle": 0,
+            "content": "We expect Warsh will support ample because it underpins easy financial conditions. We believe Trump cares much more about easy financial conditions than size of Fed B/S. Warsh expected to have open ear for Trump policy preferences.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.243,
+                0.619,
+                0.32
+            ],
+            "angle": 0,
+            "content": "Warsh will likely be forced to accept ample by rest of Fed. The Fed formally adopted an ample reserve regime in 2019 and all members of Fed leadership support. Some are quite vocal & colorful in support. Specifically, Fed Governor Waller reportedly said in a NABE Feb '26 speech: \"You don't want banks searching under sofa cushions for money every night... That is incredibly inefficient and stupid.\" Quote last word stands out to us.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.33,
+                0.465,
+                0.345
+            ],
+            "angle": 0,
+            "content": "Ample vs scarce summary: Warsh very likely to support ample.",
+            "merge_prev": false
+        },
+        {
+            "type": "title",
+            "bbox": [
+                0.042,
+                0.354,
+                0.576,
+                0.372
+            ],
+            "angle": 0,
+            "content": "Blue sky: set bank SRP = IOR to reduce reserve buffer"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.374,
+                0.625,
+                0.403
+            ],
+            "angle": 0,
+            "content": "Warsh will likely be looking for other ideas to reduce the balance sheet. We offer a novel approach, which Dallas Fed President Logan has previously referenced: bank SRP = IOR.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.414,
+                0.617,
+                0.506
+            ],
+            "angle": 0,
+            "content": "Our idea: bank SRP = IOR. Banks could borrow cash from the Fed using UST or agency collateral at a level equal to their deposit rate. We see bank SRP open throughout the day, like discount window (no discrete operation times). It would allow banks to monetize UST or agency paper at a market rate & hold less reserve buffer. Banks likely willing to use SRP at IOR b/c more cost efficient v today & less stigma b/c at market. The Bank of England currently operates policy in this way (see: Global plumbing primer).",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.516,
+                0.623,
+                0.593
+            ],
+            "angle": 0,
+            "content": "To be most effective the Fed could further reduce stigma by changing reporting. Specifically, the Fed could remove the weekly reporting practice that shows regional Fed district reserve distribution. When Fed liquidity tools are tapped the street uses the weekly regional Fed reserve distribution data to narrow in on firms that may be in trouble. Removing this reporting requirement would make bank SRP=IOR more effective.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.603,
+                0.623,
+                0.663
+            ],
+            "angle": 0,
+            "content": "Bank reserve buffer can be reduced via (1) bank SRP=IOR (2) stigma reduction. Reserve buffer is dropped b/c banks have more attractive terms to monetize USTs or agency paper. Monetizing via always open SRP also improves intraday liquidity options. Reduced reserve demand can then allow Warsh to shrink Fed sheet.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.675,
+                0.62,
+                0.751
+            ],
+            "angle": 0,
+            "content": "Note: we see an important distinction between bank SRP & dealer SRP. Our comments above are focused on bank SRP, i.e. commercial bank SRP access. We expect dealer SRP to be treated differently. We would expect dealer SRP at 5-10bp above bank SRP & IOR. Dealer SRP > bank SRP b/c (1) banks tend not to lend in repo unless 5-10bp > IOR (2) dealer SRP > IOR would allow more room for free repo market trading.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.762,
+                0.614,
+                0.792
+            ],
+            "angle": 0,
+            "content": "Blue sky summary: bank reserve demand can be reduced by (1) bank SRP=IOR (2) Fed reporting change to reduce stigma. It's not widely discussed now, we think it will be.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.803,
+                0.627,
+                0.848
+            ],
+            "angle": 0,
+            "content": "Bottom line: Warsh B/S bark worse than bite. Warsh unlikely to meaningfully reduce Fed B/S size; he will adjust Fed B/S composition but it shouldn't impact markets. Warsh will likely support ample. Blue sky ideas are possible: bank SPR=IOR could be effective.",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.042,
+                0.948,
+                0.081,
+                0.967
+            ],
+            "angle": 0,
+            "content": "[Non-Text]"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.757,
+                0.953,
+                0.919,
+                0.965
+            ],
+            "angle": 0,
+            "content": "Liquid Insight | 18 May 2026"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.945,
+                0.954,
+                0.955,
+                0.964
+            ],
+            "angle": 0,
+            "content": "5"
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.04,
+                0.012,
+                0.163,
+                0.022
+            ],
+            "angle": 0,
+            "content": "BofA GLOBAL RESEARCH"
+        },
+        {
+            "type": "title",
+            "bbox": [
+                0.04,
+                0.042,
+                0.137,
+                0.056
+            ],
+            "angle": 0,
+            "content": "Acronym list:"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.04,
+                0.067,
+                0.245,
+                0.082
+            ],
+            "angle": 0,
+            "content": "TGA: Treasury general account",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.04,
+                0.093,
+                0.167,
+                0.107
+            ],
+            "angle": 0,
+            "content": "SRP: standing repo",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.04,
+                0.118,
+                0.205,
+                0.131
+            ],
+            "angle": 0,
+            "content": "IOR: interest on reserves",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.04,
+                0.143,
+                0.218,
+                0.157
+            ],
+            "angle": 0,
+            "content": "TL;DR: too long, don't read",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.04,
+                0.168,
+                0.25,
+                0.183
+            ],
+            "angle": 0,
+            "content": "HQLA: high quality liquid assets",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.04,
+                0.194,
+                0.159,
+                0.208
+            ],
+            "angle": 0,
+            "content": "RRP: reverse repo",
+            "merge_prev": false
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.041,
+                0.953,
+                0.051,
+                0.963
+            ],
+            "angle": 0,
+            "content": "6"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.084,
+                0.952,
+                0.245,
+                0.965
+            ],
+            "angle": 0,
+            "content": "Liquid Insight | 18 May 2026"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.915,
+                0.948,
+                0.955,
+                0.967
+            ],
+            "angle": 0,
+            "content": "[Non-Text]"
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.039,
+                0.012,
+                0.163,
+                0.022
+            ],
+            "angle": 0,
+            "content": "BofA GLOBAL RESEARCH"
+        },
+        {
+            "type": "title",
+            "bbox": [
+                0.04,
+                0.062,
+                0.471,
+                0.084
+            ],
+            "angle": 0,
+            "content": "Notable Rates and FX Research"
+        },
+        {
+            "type": "list",
+            "bbox": [
+                0.039,
+                0.089,
+                0.596,
+                0.206
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.04,
+                0.09,
+                0.595,
+                0.117
+            ],
+            "angle": 0,
+            "content": "- Global Macro Year Ahead 2026 – Attitude determines altitude, 23 November 2025",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.04,
+                0.133,
+                0.578,
+                0.148
+            ],
+            "angle": 0,
+            "content": "• Global Rates Year Ahead 2026 – When carry met rally, 25 November 2025",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.04,
+                0.162,
+                0.596,
+                0.177
+            ],
+            "angle": 0,
+            "content": "• G10 FX Year Ahead 2026 – the (USD) long and short of it, 25 November 2025",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.04,
+                0.191,
+                0.497,
+                0.206
+            ],
+            "angle": 0,
+            "content": "• 2025 reflections Liquid Cross Border Flows, 8 December 2025",
+            "merge_prev": false
+        },
+        {
+            "type": "title",
+            "bbox": [
+                0.04,
+                0.222,
+                0.48,
+                0.246
+            ],
+            "angle": 0,
+            "content": "Rates, FX & EM trades for 2026"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.038,
+                0.252,
+                0.538,
+                0.282
+            ],
+            "angle": 0,
+            "content": "For a complete list of our open trade recommendations as well as our trade recommendations closed over the past 12 months, see the reports below:",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.039,
+                0.293,
+                0.354,
+                0.308
+            ],
+            "angle": 0,
+            "content": "Global FX weekly: Breaking bonds 15 May 2026",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.04,
+                0.318,
+                0.361,
+                0.333
+            ],
+            "angle": 0,
+            "content": "Global Rates Weekly: NACHO rates 15 May 2026",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.042,
+                0.948,
+                0.081,
+                0.967
+            ],
+            "angle": 0,
+            "content": "[Non-Text]"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.757,
+                0.952,
+                0.919,
+                0.965
+            ],
+            "angle": 0,
+            "content": "Liquid Insight | 18 May 2026"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.944,
+                0.953,
+                0.955,
+                0.963
+            ],
+            "angle": 0,
+            "content": "7"
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.04,
+                0.012,
+                0.163,
+                0.023
+            ],
+            "angle": 0,
+            "content": "BofA GLOBAL RESEARCH"
+        },
+        {
+            "type": "title",
+            "bbox": [
+                0.04,
+                0.043,
+                0.2,
+                0.065
+            ],
+            "angle": 0,
+            "content": "Disclosures"
+        },
+        {
+            "type": "title",
+            "bbox": [
+                0.04,
+                0.07,
+                0.262,
+                0.089
+            ],
+            "angle": 0,
+            "content": "Important Disclosures"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.037,
+                0.122,
+                0.94,
+                0.181
+            ],
+            "angle": 0,
+            "content": "BofA Global Research personnel (including the analyst(s) responsible for this report) receive compensation based upon, among other factors, the overall profitability of BofA Corporation, including profits derived from investment banking. The analyst(s) responsible for this report may also receive compensation based upon, among other factors, the overall profitability of the Bank's sales and trading businesses relating to the class of securities or financial instruments for which such analyst is responsible. BofA fixed income analysts regularly interact with sales and trading desk personnel in connection with their research, including to ascertain pricing and liquidity in the fixed income markets.",
+            "merge_prev": false
+        },
+        {
+            "type": "title",
+            "bbox": [
+                0.04,
+                0.2,
+                0.325,
+                0.218
+            ],
+            "angle": 0,
+            "content": "Other Important Disclosures"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.037,
+                0.222,
+                0.945,
+                0.269
+            ],
+            "angle": 0,
+            "content": "Prices are indicative and for information purposes only. Except as otherwise stated in the report, for any recommendation in relation to an equity security, the price referenced is the publicly traded price of the security as of close of business on the day prior to the date of the report or, if the report is published during intraday trading, the price referenced is indicative of the traded price as of the date and time of the report and in relation to a debt security (including equity preferred and CDS), prices are indicative as of the date and time of the report and are from various sources including BofA trading desks.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.038,
+                0.269,
+                0.915,
+                0.282
+            ],
+            "angle": 0,
+            "content": "The date and time of completion of the production of any recommendation in this report shall be the date and time of dissemination of this report as recorded in the report timestamp.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.037,
+                0.29,
+                0.94,
+                0.36
+            ],
+            "angle": 0,
+            "content": "This report may refer to fixed income securities or other financial instruments that may not be offered or sold in one or more states or jurisdictions, or to certain categories of investors, including retail investors. Readers of this report are advised that any discussion, recommendation or other mention of such instruments is not a solicitation or offer to transact in such instruments. Investors should contact their BofA representative or Merrill Global Wealth Management financial advisor for information relating to such instruments. Rule 144A securities may be offered or sold only to persons in the U.S. who are Qualified Institutional Buyers within the meaning of Rule 144A under the Securities Act of 1933, as amended. SECURITIES OR OTHER FINANCIAL INSTRUMENTS DISCUSSED HEREIN MAY BE RATED BELOW INVESTMENT GRADE AND SHOULD THEREFORE ONLY BE CONSIDERED FOR INCLUSION IN ACCOUNTS QUALIFIED FOR SPECULATIVE INVESTMENT.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.037,
+                0.36,
+                0.945,
+                0.384
+            ],
+            "angle": 0,
+            "content": "Recipients who are not institutional investors or market professionals should seek the advice of their independent financial advisor before considering information in this report in connection with any investment decision, or for a necessary explanation of its contents.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.038,
+                0.384,
+                0.93,
+                0.407
+            ],
+            "angle": 0,
+            "content": "The securities or other financial instruments discussed in this report may be traded over-the-counter. Retail sales and/or distribution of this report may be made only in states where these instruments are exempt from registration or have been qualified for sale.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.038,
+                0.407,
+                0.805,
+                0.418
+            ],
+            "angle": 0,
+            "content": "Officers of BofAS or one or more of its affiliates (other than research analysts) may have a financial interest in securities of the issuer(s) or in related investments.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.038,
+                0.418,
+                0.93,
+                0.441
+            ],
+            "angle": 0,
+            "content": "This report, and the securities or other financial instruments discussed herein, may not be eligible for distribution or sale in all countries or to certain categories of investors, including retail investors.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.038,
+                0.441,
+                0.37,
+                0.453
+            ],
+            "angle": 0,
+            "content": "Refer to BofA Global Research policies relating to conflicts of interest.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.037,
+                0.453,
+                0.945,
+                0.487
+            ],
+            "angle": 0,
+            "content": "\"BofA\" includes BofA, Inc. (\"BofAS\") and its affiliates. Investors should contact their BofA representative or Merrill Global Wealth Management financial advisor if they have questions concerning this report or concerning the appropriateness of any investment idea described herein for such investor. \"BofA\" is a global brand for BofA Global Research.",
+            "merge_prev": false
+        },
+        {
+            "type": "title",
+            "bbox": [
+                0.038,
+                0.488,
+                0.57,
+                0.5
+            ],
+            "angle": 0,
+            "content": "Information relating to Non-US affiliates of BofA and Distribution of Affiliate Research Reports:"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.036,
+                0.5,
+                0.956,
+                0.882
+            ],
+            "angle": 0,
+            "content": "BofAS and/or BofA, Pierce, Fenner & Smith Incorporated (\"MLPF&S\") may in the future distribute, information of the following non-US affiliates in the US (short name: legal name, regulator): BofA (South Africa): BofA South Africa (Pty) Ltd., regulated by the Financial Sector Conduct Authority; MLI (UK): BofA International, regulated by the Financial Conduct Authority (FCA) and the Prudential Regulation Authority (PRA); BofASE (France): BofA Europe SA is authorized by the Autorité de Contrôle Prudentiel et de Résolution (ACPR) and regulated by the ACPR and the Autorité des Marchés Financiers (AMF). BofA Europe SA (\"BofASE\") with registered address at 51, rue La Boétie, 75008 Paris is registered under no 842 602 690 RCS Paris. In accordance with the provisions of French Code Monétaire et Financier (Monetary and Financial Code), BofASE is an établissement de crédit et d'investissement (credit and investment institution) that is authorised and supervised by the European Central Bank and the Autorité de Contrôle Prudentiel et de Résolution (ACPR) and regulated by the ACPR and the Autorité des Marchés Financiers. BofASE's share capital can be found at www.bofaml.com/BofASEdisclaimer; BofA Europe (Milan): BofA Europe Designated Activity Company, Milan Branch, regulated by the Bank of Italy, the European Central Bank (ECB) and the Central Bank of Ireland (CBI); BofA Europe (Frankfurt): BofA Europe Designated Activity Company, Frankfurt Branch regulated by BaFin, the ECB and the CBI; BofA Europe (Zurich): BofA Europe Designated Activity Company, Zurich Branch, regulated by the Swiss Financial Market Supervisory Authority FINMA, the ECB and CBI; BofA Europe (Madrid): BofA Europe Designated Activity Company, Sucursal en España, regulated by the Bank of Spain, the ECB and the CBI; BofA (Australia): BofA Equities (Australia) Limited, regulated by the Australian Securities and Investments Commission; BofA (Hong Kong): BofA (Asia Pacific) Limited, regulated by the Hong Kong Securities and Futures Commission (HKSFC); BofA (Singapore): BofA (Singapore) Pte Ltd, regulated by the Monetary Authority of Singapore (MAS); BofA (Canada): BofA Canada Inc, regulated by the Canadian Investment Regulatory Organization; BofA (Mexico): BofA Mexico, SA de CV, Casa de Bolsa, regulated by the Comisión Nacional Bancaria y de Valores; BofAS Japan: BofA Japan Co., Ltd., regulated by the Financial Services Agency; BofA (Seoul): BofA International, LLC Seoul Branch, regulated by the Financial Supervisory Service; BofA (Taiwan): BofA (Taiwan) Ltd., regulated by the Securities and Futures Bureau; BofAS India: BofA India Limited, regulated by the Securities and Exchange Board of India (SEBI); BofA (Israel): BofA Israel Limited, regulated by Israel Securities Authority; BofA (DIFC): BofA International (DIFC Branch), regulated by the Dubai Financial Services Authority (DFSA); BofA (Brazil): BofA S.A. Corretora de Títulos e Valores Mobiliários, regulated by Comissão de Valores Mobiliários; BofA KSA Company: BofA Kingdom of Saudi Arabia Company, regulated by the Capital Market Authority. This information: has been approved for publication and is distributed in the United Kingdom (UK) to professional clients and eligible counterparties (as each is defined in the rules of the FCA and the PRA) by MLI (UK), which is authorized by the PRA and regulated by the FCA and the PRA - details about the extent of our regulation by the FCA and PRA are available from us on request; has been approved for publication and is distributed in the European Economic Area (EEA) by BofASE (France), which is authorized by the ACPR and regulated by the ACPR and the AMF; has been considered and distributed in Japan by BofAS Japan, a registered securities dealer under the Financial Instruments and Exchange Act in Japan, or its permitted affiliates; is issued and distributed in Hong Kong by BofA (Hong Kong) which is regulated by HKSFC; is issued and distributed in Taiwan by BofA (Taiwan); is issued and distributed in India by BofAS India; and is issued and distributed in Singapore to institutional investors and/or accredited investors (each as defined under the Financial Advisers Regulations) by BofA (Singapore) (Company Registration No 198602883D). BofA (Singapore) is regulated by MAS. BofA Equities (Australia) Limited (ABN 65 006 276 795), AFS License 235132 (MLEA) distributes this information in Australia only to 'Wholesale' clients as defined by s.761G of the Corporations Act 2001. With the exception of BofA N.A., Australia Branch, neither MLEA nor any of its affiliates involved in preparing this information is an Authorised Deposit-Taking Institution under the Banking Act 1959 nor regulated by the Australian Prudential Regulation Authority. No approval is required for publication or distribution of this information in Brazil and its local distribution is by BofA (Brazil) in accordance with applicable regulations. BofA (DIFC) is authorized and regulated by the DFSA. Information prepared and issued by BofA (DIFC) is done so in accordance with the requirements of the DFSA conduct of business rules. BofA Europe (Frankfurt) distributes this information in Germany and is regulated by BaFin, the ECB and the CBI. BofA entities, including BofA Europe and BofASE (France), may outsource/delegate the marketing and/or provision of certain research services or aspects of research services to other branches or members of the BofA group. You may be contacted by a different BofA entity acting for and on behalf of your service provider where permitted by applicable law. This does not change your service provider. Please refer to the Electronic Communications Disclaimers for further information.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.037,
+                0.883,
+                0.954,
+                0.919
+            ],
+            "angle": 0,
+            "content": "This information has been prepared and issued by BofAS and/or one or more of its non-US affiliates. The author(s) of this information may not be licensed to carry on regulated activities in your jurisdiction and, if not licensed, do not hold themselves out as being able to do so. BofAS and/or MLPF&S is the distributor of this information in the US and accepts full responsibility for information distributed to BofAS and/or MLPF&S clients in the US by its non-US affiliates. Any US person receiving this information and wishing to effect any transaction in any security",
+            "merge_prev": false
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.041,
+                0.953,
+                0.052,
+                0.964
+            ],
+            "angle": 0,
+            "content": "8"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.084,
+                0.952,
+                0.246,
+                0.965
+            ],
+            "angle": 0,
+            "content": "Liquid Insight | 18 May 2026"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.915,
+                0.948,
+                0.955,
+                0.968
+            ],
+            "angle": 0,
+            "content": "[Non-Text]"
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.04,
+                0.013,
+                0.162,
+                0.022
+            ],
+            "angle": 0,
+            "content": "BofA GLOBAL RESEARCH"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.041,
+                0.953,
+                0.088
+            ],
+            "angle": 0,
+            "content": "discussed herein should do so through BofAS and/or MLPF&S and not such foreign affiliates. Hong Kong recipients of this information should contact BofA (Asia Pacific) Limited in respect of any matters relating to dealing in securities or provision of specific advice on securities or any other matters arising from, or in connection with, this information. Singapore recipients of this information should contact BofA (Singapore) Pte Ltd in respect of any matters arising from, or in connection with, this information. For clients that are not accredited investors, expert investors or institutional investors BofA (Singapore) Pte Ltd accepts full responsibility for the contents of this information distributed to such clients in Singapore.",
+            "merge_prev": false
+        },
+        {
+            "type": "title",
+            "bbox": [
+                0.041,
+                0.089,
+                0.243,
+                0.099
+            ],
+            "angle": 0,
+            "content": "General Investment Related Disclosures:"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.1,
+                0.947,
+                0.122
+            ],
+            "angle": 0,
+            "content": "Taiwan Readers: Neither the information nor any opinion expressed herein constitutes an offer or a solicitation of an offer to transact in any securities or other financial instrument. No part of this report may be used or reproduced or quoted in any manner whatsoever in Taiwan by the press or any other person without the express written consent of BofA.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.123,
+                0.955,
+                0.215
+            ],
+            "angle": 0,
+            "content": "This document provides general information only, and has been prepared for, and is intended for general distribution to, BofA clients. Neither the information nor any opinion expressed constitutes an offer or an invitation to make an offer, to buy or sell any securities or other financial instrument or any derivative related to such securities or instruments (e.g., options, futures, warrants, and contracts for differences). This document is not intended to provide personal investment advice and it does not take into account the specific investment objectives, financial situation and the particular needs of, and is not directed to, any specific person(s). This document and its content do not constitute, and should not be considered to constitute, investment advice for purposes of ERISA, the US tax code, the Investment Advisers Act or otherwise. Investors should seek financial advice regarding the appropriateness of investing in financial instruments and implementing investment strategies discussed or recommended in this document and should understand that statements regarding future prospects may not be realized. Any decision to purchase or subscribe for securities in any offering must be based solely on existing public information on such security or the information in the prospectus or other offering document issued in connection with such offering, and not on this document.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.216,
+                0.954,
+                0.296
+            ],
+            "angle": 0,
+            "content": "Securities and other financial instruments referred to herein, or recommended, offered or sold by BofA, are not insured by the Federal Deposit Insurance Corporation and are not deposits or other obligations of any insured depository institution (including, BofA, N.A.). Investments in general and, derivatives, in particular, involve numerous risks, including, among others, market risk, counterparty default risk and liquidity risk. No security, financial instrument or derivative is suitable for all investors. Digital assets are extremely speculative, volatile and are largely unregulated. In some cases, securities and other financial instruments may be difficult to value or sell and reliable information about the value or risks related to the security or financial instrument may be difficult to obtain. Investors should note that income from such securities and other financial instruments, if any, may fluctuate and that price or value of such securities and instruments may rise or fall and, in some cases, investors may lose their entire principal investment. Past performance is not necessarily a guide to future performance. Levels and basis for taxation may change.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.297,
+                0.92,
+                0.319
+            ],
+            "angle": 0,
+            "content": "Futures and options are not appropriate for all investors. Such financial instruments may expire worthless. Before investing in futures or options, clients must receive the appropriate risk disclosure documents. Investment strategies explained in this report may not be appropriate at all times. Costs of such strategies do not include commission or margin expenses.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.32,
+                0.938,
+                0.354
+            ],
+            "angle": 0,
+            "content": "BofA is aware that the implementation of the ideas expressed in this report may depend upon an investor's ability to \"short\" securities or other financial instruments and that such action may be limited by regulations prohibiting or restricting \"shortselling\" in many jurisdictions. Investors are urged to seek advice regarding the applicability of such regulations prior to executing any short idea contained in this report.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.355,
+                0.952,
+                0.389
+            ],
+            "angle": 0,
+            "content": "This report may contain a trading idea or recommendation which highlights a specific identified near-term catalyst or event impacting a security, issuer, industry sector or the market generally that presents a transaction opportunity, but does not have any impact on the analyst's particular \"Overweight\" or \"Underweight\" rating (which is based on a three month trade horizon). Trading ideas and recommendations may differ directionally from the analyst's rating on a security or issuer because they reflect the impact of a near-term catalyst or event.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.39,
+                0.95,
+                0.412
+            ],
+            "angle": 0,
+            "content": "Foreign currency rates of exchange may adversely affect the value, price or income of any security or financial instrument mentioned in this report. Investors in such securities and instruments effectively assume currency risk.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.413,
+                0.953,
+                0.435
+            ],
+            "angle": 0,
+            "content": "BofAS or one of its affiliates is a regular issuer of traded financial instruments linked to securities that may have been recommended in this report. BofAS or one of its affiliates may, at any time, hold a trading position (long or short) in the securities and financial instruments discussed in this report.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.436,
+                0.955,
+                0.528
+            ],
+            "angle": 0,
+            "content": "BofA, through business units other than BofA Global Research, may have issued and may in the future issue trading ideas or recommendations that are inconsistent with, and reach different conclusions from, the information presented herein. Such ideas or recommendations may reflect different time frames, assumptions, views and analytical methods of the persons who prepared them, and BofA is under no obligation to ensure that such other trading ideas or recommendations are brought to the attention of any recipient of this information. In the event that the recipient received this information pursuant to a contract between the recipient and BofAS for the provision of research services for a separate fee, and in connection therewith BofAS may be deemed to be acting as an investment adviser, such status relates, if at all, solely to the person with whom BofAS has contracted directly and does not extend beyond the delivery of this report (unless otherwise agreed specifically in writing by BofAS). If such recipient uses the services of BofAS in connection with the sale or purchase of a security referred to herein, BofAS may act as principal for its own account or as agent for another person. BofAS is and continues to act solely as a broker-dealer in connection with the execution of any transactions, including transactions in any securities referred to herein.",
+            "merge_prev": false
+        },
+        {
+            "type": "title",
+            "bbox": [
+                0.041,
+                0.529,
+                0.218,
+                0.54
+            ],
+            "angle": 0,
+            "content": "Copyright and General Information:"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.541,
+                0.953,
+                0.655
+            ],
+            "angle": 0,
+            "content": "Copyright 2026 BofA Corporation. All rights reserved. iQdatabase® is a registered service mark of BofA Corporation. This information is prepared for the use of BofA clients and may not be redistributed, retransmitted or disclosed, in whole or in part, or in any form or manner, without the express written consent of BofA. This document and its content is provided solely for informational purposes and cannot be used for training or developing artificial intelligence (AI) models or as an input in any AI application (collectively, an AI tool). Any attempt to utilize this document or any of its content in connection with an AI tool without explicit written permission from BofA Global Research is strictly prohibited. BofA Global Research utilizes AI, including machine learning and other technologies, to enhance the services we provide to our clients. These technologies assist our analysts in various aspects of their work, including but not limited to data analysis, content extraction, content creation, data aggregation and summarization and identifying relevant information from diverse sources. All AI-driven processes are subject to review by BofA Global Research employees. BofA Global Research information is distributed simultaneously to internal and client websites and other portals by BofA and is not publicly-available material. Any unauthorized use or disclosure is prohibited. Receipt and review of this information constitutes your agreement not to redistribute, retransmit, or disclose to others the contents, opinions, conclusion, or information contained herein (including any investment recommendations, estimates or price targets) without first obtaining express permission from an authorized officer of BofA.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.657,
+                0.949,
+                0.749
+            ],
+            "angle": 0,
+            "content": "Materials prepared by BofA Global Research personnel are based on public information. Facts and views presented in this material have not been reviewed by, and may not reflect information known to, professionals in other business areas of BofA, including investment banking personnel. BofA has established information barriers between BofA Global Research and certain business groups. As a result, BofA does not disclose certain client relationships with, or compensation received from, such issuers. To the extent this material discusses any legal proceeding or issues, it has not been prepared as nor is it intended to express any legal conclusion, opinion or advice. Investors should consult their own legal advisers as to issues of law relating to the subject matter of this material. BofA Global Research personnel's knowledge of legal proceedings in which any BofA entity and/or its directors, officers and employees may be plaintiffs, defendants, co-defendants or co-plaintiffs with or involving issuers mentioned in this material is based on public information. Facts and views presented in this material that relate to any such proceedings have not been reviewed by, discussed with, and may not reflect information known to, professionals in other business areas of BofA in connection with the legal proceedings or matters relevant to such proceedings.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.75,
+                0.943,
+                0.795
+            ],
+            "angle": 0,
+            "content": "This information has been prepared independently of any issuer of securities mentioned herein and not in connection with any proposed offering of securities or as agent of any issuer of any securities. None of BofAS any of its affiliates or their research analysts has any authority whatsoever to make any representation or warranty on behalf of the issuer(s). BofA Global Research policy prohibits research personnel from disclosing a recommendation, investment rating, or investment thesis for review by an issuer prior to the publication of a research report containing such rating, recommendation or investment thesis.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.796,
+                0.928,
+                0.818
+            ],
+            "angle": 0,
+            "content": "Any information relating to sustainability in this material is limited as discussed herein and is not intended to provide a comprehensive view on any sustainability claim with respect to any issuer or security.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.82,
+                0.936,
+                0.841
+            ],
+            "angle": 0,
+            "content": "Any information relating to the tax status of financial instruments discussed herein is not intended to provide tax advice or to be used by anyone to provide tax advice. Investors are urged to seek tax advice based on their particular circumstances from an independent tax professional.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.843,
+                0.955,
+                0.899
+            ],
+            "angle": 0,
+            "content": "The information herein (other than disclosure information relating to BofA and its affiliates) was obtained from various sources and we do not guarantee its accuracy. This information may contain links to third-party websites. BofA is not responsible for the content of any third-party website or any linked content contained in a third-party website. Content contained on such third-party websites is not part of this information and is not incorporated by reference. The inclusion of a link does not imply any endorsement by or any affiliation with BofA. Access to any third-party website is at your own risk, and you should always review the terms and privacy policies at third-party websites before submitting any personal information to them. BofA is not responsible for such terms and privacy policies and expressly disclaims any liability for them.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.901,
+                0.941,
+                0.923
+            ],
+            "angle": 0,
+            "content": "All opinions, projections and estimates constitute the judgment of the author as of the date of publication and are subject to change without notice. Prices also are subject to change without notice. BofA is under no obligation to update this information and BofA ability to publish information on the subject issuer(s) in the future is subject to applicable quiet",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.042,
+                0.949,
+                0.08,
+                0.967
+            ],
+            "angle": 0,
+            "content": "[Non-Text]"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.757,
+                0.953,
+                0.919,
+                0.965
+            ],
+            "angle": 0,
+            "content": "Liquid Insight | 18 May 2026"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.945,
+                0.954,
+                0.955,
+                0.963
+            ],
+            "angle": 0,
+            "content": "9"
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.04,
+                0.012,
+                0.163,
+                0.022
+            ],
+            "angle": 0,
+            "content": "BofA GLOBAL RESEARCH"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.041,
+                0.637,
+                0.053
+            ],
+            "angle": 0,
+            "content": "periods. You should therefore assume that BofA will not update any fact, circumstance or opinion contained herein.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.054,
+                0.955,
+                0.076
+            ],
+            "angle": 0,
+            "content": "Certain outstanding reports or investment opinions relating to securities, financial instruments and/or issuers may no longer be current. Always refer to the most recent research report relating to an issuer prior to making an investment decision.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.077,
+                0.955,
+                0.122
+            ],
+            "angle": 0,
+            "content": "In some cases, an issuer may be classified as Restricted or may be Under Review or Extended Review. In each case, investors should consider any investment opinion relating to such issuer (or its security and/or financial instruments) to be suspended or withdrawn and should not rely on the analyses and investment opinion(s) pertaining to such issuer (or its securities and/or financial instruments) nor should the analyses or opinion(s) be considered a solicitation of any kind. Sales persons and financial advisors affiliated with BofAS or any of its affiliates may not solicit purchases of securities or financial instruments that are Restricted or Under Review and may only solicit securities under Extended Review in accordance with firm policies.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.123,
+                0.935,
+                0.145
+            ],
+            "angle": 0,
+            "content": "Neither BofA nor any officer or employee of BofA accepts any liability whatsoever for any direct, indirect or consequential damages or losses arising from any use of this information.",
+            "merge_prev": false
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.042,
+                0.953,
+                0.059,
+                0.964
+            ],
+            "angle": 0,
+            "content": "10"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.084,
+                0.953,
+                0.245,
+                0.965
+            ],
+            "angle": 0,
+            "content": "Liquid Insight | 18 May 2026"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.915,
+                0.948,
+                0.955,
+                0.967
+            ],
+            "angle": 0,
+            "content": "[Non-Text]"
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.04,
+                0.013,
+                0.162,
+                0.022
+            ],
+            "angle": 0,
+            "content": "BofA GLOBAL RESEARCH"
+        },
+        {
+            "type": "title",
+            "bbox": [
+                0.04,
+                0.039,
+                0.292,
+                0.065
+            ],
+            "angle": 0,
+            "content": "Research Analysts"
+        },
+        {
+            "type": "title",
+            "bbox": [
+                0.041,
+                0.068,
+                0.064,
+                0.08
+            ],
+            "angle": 0,
+            "content": "US"
+        },
+        {
+            "type": "title",
+            "bbox": [
+                0.041,
+                0.083,
+                0.1,
+                0.093
+            ],
+            "angle": 0,
+            "content": "Ralph Axel"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.094,
+                0.122,
+                0.103
+            ],
+            "angle": 0,
+            "content": "Rates Strategist",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.103,
+                0.073,
+                0.112
+            ],
+            "angle": 0,
+            "content": "BofAS",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.113,
+                0.126,
+                0.121
+            ],
+            "angle": 0,
+            "content": "+1 646 743 7011",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.122,
+                0.143,
+                0.132
+            ],
+            "angle": 0,
+            "content": "ralph.axel@bofa.com",
+            "merge_prev": false
+        },
+        {
+            "type": "title",
+            "bbox": [
+                0.041,
+                0.138,
+                0.129,
+                0.148
+            ],
+            "angle": 0,
+            "content": "Paul Ciana, CMT"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.149,
+                0.14,
+                0.158
+            ],
+            "angle": 0,
+            "content": "Technical Strategist",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.159,
+                0.073,
+                0.167
+            ],
+            "angle": 0,
+            "content": "BofAS",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.168,
+                0.128,
+                0.177
+            ],
+            "angle": 0,
+            "content": "+1 646 743 7014",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.178,
+                0.145,
+                0.187
+            ],
+            "angle": 0,
+            "content": "paul.ciana@bofa.com",
+            "merge_prev": false
+        },
+        {
+            "type": "title",
+            "bbox": [
+                0.041,
+                0.194,
+                0.094,
+                0.203
+            ],
+            "angle": 0,
+            "content": "John Shin"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.204,
+                0.107,
+                0.213
+            ],
+            "angle": 0,
+            "content": "FX Strategist",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.214,
+                0.073,
+                0.222
+            ],
+            "angle": 0,
+            "content": "BofAS",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.223,
+                0.127,
+                0.232
+            ],
+            "angle": 0,
+            "content": "+1 646 855 2582",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.233,
+                0.155,
+                0.243
+            ],
+            "angle": 0,
+            "content": "joong.s.shin@bofa.com",
+            "merge_prev": false
+        },
+        {
+            "type": "title",
+            "bbox": [
+                0.041,
+                0.249,
+                0.14,
+                0.259
+            ],
+            "angle": 0,
+            "content": "Mark Cabana, CFA"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.26,
+                0.122,
+                0.269
+            ],
+            "angle": 0,
+            "content": "Rates Strategist",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.27,
+                0.073,
+                0.277
+            ],
+            "angle": 0,
+            "content": "BofAS",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.279,
+                0.127,
+                0.288
+            ],
+            "angle": 0,
+            "content": "+1 646 743 7013",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.289,
+                0.159,
+                0.298
+            ],
+            "angle": 0,
+            "content": "mark.cabana@bofa.com",
+            "merge_prev": false
+        },
+        {
+            "type": "title",
+            "bbox": [
+                0.041,
+                0.305,
+                0.156,
+                0.314
+            ],
+            "angle": 0,
+            "content": "Bruno Braizinha, CFA"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.315,
+                0.122,
+                0.324
+            ],
+            "angle": 0,
+            "content": "Rates Strategist",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.325,
+                0.073,
+                0.333
+            ],
+            "angle": 0,
+            "content": "BofAS",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.334,
+                0.127,
+                0.343
+            ],
+            "angle": 0,
+            "content": "+1 646 743 7012",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.344,
+                0.171,
+                0.353
+            ],
+            "angle": 0,
+            "content": "bruno.braizinha@bofa.com",
+            "merge_prev": false
+        },
+        {
+            "type": "title",
+            "bbox": [
+                0.041,
+                0.36,
+                0.154,
+                0.37
+            ],
+            "angle": 0,
+            "content": "Meghan Swiber, CFA"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.371,
+                0.122,
+                0.38
+            ],
+            "angle": 0,
+            "content": "Rates Strategist",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.381,
+                0.073,
+                0.388
+            ],
+            "angle": 0,
+            "content": "BofAS",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.39,
+                0.128,
+                0.398
+            ],
+            "angle": 0,
+            "content": "+1 646 743 7020",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.4,
+                0.171,
+                0.409
+            ],
+            "angle": 0,
+            "content": "meghan.swiber@bofa.com",
+            "merge_prev": false
+        },
+        {
+            "type": "title",
+            "bbox": [
+                0.041,
+                0.417,
+                0.094,
+                0.43
+            ],
+            "angle": 0,
+            "content": "Europe"
+        },
+        {
+            "type": "title",
+            "bbox": [
+                0.041,
+                0.431,
+                0.142,
+                0.44
+            ],
+            "angle": 0,
+            "content": "Ralf Preusser, CFA"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.441,
+                0.122,
+                0.45
+            ],
+            "angle": 0,
+            "content": "Rates Strategist",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.451,
+                0.085,
+                0.459
+            ],
+            "angle": 0,
+            "content": "MLI (UK)",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.461,
+                0.133,
+                0.469
+            ],
+            "angle": 0,
+            "content": "+44 20 7995 7331",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.47,
+                0.158,
+                0.479
+            ],
+            "angle": 0,
+            "content": "ralf.preusser@bofa.com",
+            "merge_prev": false
+        },
+        {
+            "type": "title",
+            "bbox": [
+                0.041,
+                0.486,
+                0.162,
+                0.496
+            ],
+            "angle": 0,
+            "content": "Ruben Segura-Cayuela"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.497,
+                0.131,
+                0.505
+            ],
+            "angle": 0,
+            "content": "Europe Economist",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.506,
+                0.147,
+                0.516
+            ],
+            "angle": 0,
+            "content": "BofA Europe (Madrid)",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.517,
+                0.127,
+                0.525
+            ],
+            "angle": 0,
+            "content": "+34 91 514 3053",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.526,
+                0.2,
+                0.535
+            ],
+            "angle": 0,
+            "content": "ruben.segura-cayuela@bofa.com",
+            "merge_prev": false
+        },
+        {
+            "type": "title",
+            "bbox": [
+                0.041,
+                0.542,
+                0.121,
+                0.552
+            ],
+            "angle": 0,
+            "content": "Mark Capleton"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.553,
+                0.122,
+                0.562
+            ],
+            "angle": 0,
+            "content": "Rates Strategist",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.563,
+                0.084,
+                0.571
+            ],
+            "angle": 0,
+            "content": "MLI (UK)",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.572,
+                0.134,
+                0.58
+            ],
+            "angle": 0,
+            "content": "+44 20 7995 6118",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.581,
+                0.166,
+                0.59
+            ],
+            "angle": 0,
+            "content": "mark.capleton@bofa.com",
+            "merge_prev": false
+        },
+        {
+            "type": "title",
+            "bbox": [
+                0.041,
+                0.597,
+                0.106,
+                0.607
+            ],
+            "angle": 0,
+            "content": "Sphia Salim"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.608,
+                0.122,
+                0.617
+            ],
+            "angle": 0,
+            "content": "Rates Strategist",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.618,
+                0.085,
+                0.626
+            ],
+            "angle": 0,
+            "content": "MLI (UK)",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.627,
+                0.133,
+                0.635
+            ],
+            "angle": 0,
+            "content": "+44 20 7996 2227",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.636,
+                0.151,
+                0.646
+            ],
+            "angle": 0,
+            "content": "sphia.salim@bofa.com",
+            "merge_prev": false
+        },
+        {
+            "type": "title",
+            "bbox": [
+                0.041,
+                0.653,
+                0.12,
+                0.662
+            ],
+            "angle": 0,
+            "content": "Kamal Sharma"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.663,
+                0.107,
+                0.672
+            ],
+            "angle": 0,
+            "content": "FX Strategist",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.673,
+                0.085,
+                0.681
+            ],
+            "angle": 0,
+            "content": "MLI (UK)",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.682,
+                0.134,
+                0.691
+            ],
+            "angle": 0,
+            "content": "+44 20 7996 4855",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.692,
+                0.151,
+                0.701
+            ],
+            "angle": 0,
+            "content": "ksharma32@bofa.com",
+            "merge_prev": false
+        },
+        {
+            "type": "title",
+            "bbox": [
+                0.041,
+                0.708,
+                0.106,
+                0.717
+            ],
+            "angle": 0,
+            "content": "Ronald Man"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.718,
+                0.122,
+                0.727
+            ],
+            "angle": 0,
+            "content": "Rates Strategist",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.728,
+                0.085,
+                0.737
+            ],
+            "angle": 0,
+            "content": "MLI (UK)",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.738,
+                0.134,
+                0.746
+            ],
+            "angle": 0,
+            "content": "+44 20 7995 1143",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.747,
+                0.151,
+                0.756
+            ],
+            "angle": 0,
+            "content": "ronald.man@bofa.com",
+            "merge_prev": false
+        },
+        {
+            "type": "title",
+            "bbox": [
+                0.041,
+                0.763,
+                0.137,
+                0.773
+            ],
+            "angle": 0,
+            "content": "Michalis Rousakis"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.774,
+                0.107,
+                0.783
+            ],
+            "angle": 0,
+            "content": "FX Strategist",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.783,
+                0.085,
+                0.792
+            ],
+            "angle": 0,
+            "content": "MLI (UK)",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.793,
+                0.134,
+                0.802
+            ],
+            "angle": 0,
+            "content": "+44 20 7995 0336",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.803,
+                0.179,
+                0.812
+            ],
+            "angle": 0,
+            "content": "michalis.rousakis@bofa.com",
+            "merge_prev": false
+        },
+        {
+            "type": "title",
+            "bbox": [
+                0.041,
+                0.82,
+                0.101,
+                0.832
+            ],
+            "angle": 0,
+            "content": "Pac Rim"
+        },
+        {
+            "type": "title",
+            "bbox": [
+                0.041,
+                0.833,
+                0.113,
+                0.843
+            ],
+            "angle": 0,
+            "content": "Adarsh Sinha"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.844,
+                0.158,
+                0.854
+            ],
+            "angle": 0,
+            "content": "FX and Rates Strategist",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.855,
+                0.085,
+                0.863
+            ],
+            "angle": 0,
+            "content": "MLI (UK)",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.864,
+                0.134,
+                0.872
+            ],
+            "angle": 0,
+            "content": "+44 20 7995 9745",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.874,
+                0.158,
+                0.882
+            ],
+            "angle": 0,
+            "content": "adarsh.sinha@bofa.com",
+            "merge_prev": false
+        },
+        {
+            "type": "title",
+            "bbox": [
+                0.364,
+                0.068,
+                0.423,
+                0.077
+            ],
+            "angle": 0,
+            "content": "Janice Xue"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.365,
+                0.078,
+                0.517,
+                0.088
+            ],
+            "angle": 0,
+            "content": "Emerging Asia FI/FX Strategist",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.365,
+                0.089,
+                0.492,
+                0.097
+            ],
+            "angle": 0,
+            "content": "BofA (Hong Kong)",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.365,
+                0.098,
+                0.448,
+                0.106
+            ],
+            "angle": 0,
+            "content": "+852 3508 8587",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.365,
+                0.107,
+                0.47,
+                0.116
+            ],
+            "angle": 0,
+            "content": "janice.xue@bofa.com",
+            "merge_prev": false
+        },
+        {
+            "type": "title",
+            "bbox": [
+                0.365,
+                0.123,
+                0.485,
+                0.133
+            ],
+            "angle": 0,
+            "content": "Shusuke Yamada, CFA"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.365,
+                0.134,
+                0.462,
+                0.143
+            ],
+            "angle": 0,
+            "content": "FX/Rates Strategist",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.365,
+                0.144,
+                0.426,
+                0.152
+            ],
+            "angle": 0,
+            "content": "BofAS Japan",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.365,
+                0.153,
+                0.451,
+                0.161
+            ],
+            "angle": 0,
+            "content": "+81 3 6225 8515",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.365,
+                0.162,
+                0.5,
+                0.172
+            ],
+            "angle": 0,
+            "content": "shusuke.yamada@bofa.com",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.364,
+                0.197,
+                0.614,
+                0.268
+            ],
+            "angle": 0,
+            "content": "Trading ideas and investment strategies discussed herein may give rise to significant risk and are not suitable for all investors. Investors should have experience in relevant markets and the financial resources to absorb any losses arising from applying these ideas or strategies.",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.042,
+                0.948,
+                0.081,
+                0.968
+            ],
+            "angle": 0,
+            "content": "[Non-Text]"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.379,
+                0.952,
+                0.919,
+                0.966
+            ],
+            "angle": 0,
+            "content": "Liquid Insight | 18 May 2026"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.938,
+                0.953,
+                0.953,
+                0.964
+            ],
+            "angle": 0,
+            "content": "11"
+        }
+    ]
+]

@@ -1,0 +1,818 @@
+# MS Global Macro Forum
+
+Mid-Year Outlook: Our Highest-Conviction Views
+
+May 18, 2026
+
+Serena Tang – Global Head of Cross-Asset Strategy | Strategist
+
+Matthew Hornbach – Global Head of Macro Strategy | Strategist
+
+Michael Wilson – Chief US Equity Strategist and Chief Investment Officer | Strategist
+
+Vishwas Patkar – Head of US Credit Strategy | Strategist
+
+MS & CO. LLC
+
+James Lord – Global Head of FX/EM Strategy | Strategist
+
+MS & CO. INTERNATIONAL PLC+
+
+Chetan Ahya – Chief Asia Economist
+
+MS ASIA LIMITED+
+
+MS does and seeks to do business with companies covered in MS. As a result, investors should be aware that the firm may have a conflict of interest that could affect the objectivity of MS. Investors should consider MS as only a single factor in making their investment decision.
+
+For analyst certification and other important disclosures, refer to the Disclosure Section, located at the end of this report.
+
++= Analysts employed by non-U.S. affiliates are not registered with FINRA, may not be associated persons of the member and may not be subject to FINRA restrictions on communications with a subject company, public appearances and trading securities held by a research analyst account.
+
+# Chetan Ahya
+
+# Chief Asia Economist
+
+# We Remain Constructive On Asia's Macro Outlook
+
+# The strength of the industrial super-cycle to outweigh the energy shock
+
+Two key factors influencing Asia macro outlook:
+
+• The strength of the industrial cycle; and   
+- Disruptions posed by the energy shock.
+
+<table><tr><td>Real GDP (%Y)</td><td>2025</td><td>2026E</td><td>2027E</td></tr><tr><td>Global</td><td>3.5</td><td>3.2</td><td>3.4</td></tr><tr><td>G10</td><td>1.8</td><td>1.4</td><td>1.7</td></tr><tr><td>US</td><td>2.1</td><td>2.2</td><td>2.5</td></tr><tr><td>Euro Area</td><td>1.5</td><td>0.6</td><td>1.0</td></tr><tr><td>EM</td><td>4.9</td><td>4.6</td><td>4.6</td></tr><tr><td>Asia</td><td>5.0</td><td>4.8</td><td>4.7</td></tr><tr><td>Asia ex China</td><td>5.0</td><td>4.7</td><td>4.7</td></tr><tr><td>China</td><td>5.0</td><td>4.8</td><td>4.7</td></tr></table>
+
+2026 growth revised up by 40bps to $4.8\%$ YoY 
+
+<table><tr><td></td><td colspan="3">Annual</td></tr><tr><td>Real GDP (%Y)</td><td>2025</td><td>2026E</td><td>2027E</td></tr><tr><td>China</td><td>5.0</td><td>4.8</td><td>4.7</td></tr><tr><td>Hong Kong</td><td>3.6</td><td>4.8</td><td>4.5</td></tr><tr><td>India</td><td>7.5</td><td>6.8</td><td>7.0</td></tr><tr><td>Indonesia</td><td>5.1</td><td>5.1</td><td>5.0</td></tr><tr><td>Korea</td><td>1.1</td><td>2.8</td><td>2.2</td></tr><tr><td>Malaysia</td><td>5.1</td><td>4.6</td><td>4.7</td></tr><tr><td>Philippines</td><td>4.5</td><td>4.0</td><td>5.0</td></tr><tr><td>Singapore</td><td>5.0</td><td>2.9</td><td>2.6</td></tr><tr><td>Taiwan</td><td>8.6</td><td>8.9</td><td>4.7</td></tr><tr><td>Thailand</td><td>2.4</td><td>1.6</td><td>2.3</td></tr><tr><td>Australia</td><td>2.0</td><td>1.9</td><td>1.5</td></tr><tr><td>Japan</td><td>1.2</td><td>0.4</td><td>1.0</td></tr><tr><td>Asia</td><td>5.0</td><td>4.8</td><td>4.7</td></tr><tr><td>Asia ex China</td><td>5.0</td><td>4.7</td><td>4.7</td></tr></table>
+
+Source: Haver, CEIC, MS Estimates   
+Source: Haver, CEIC, MS Estimates
+
+# High-Frequency Data Are Affirming that the Industrial Cycle is Pulling Ahead
+
+Asia and global manufacturing PMIs inflected higher again in April   
+![](images/d29886a24367c17b863be51fe334aa4d0dd3d84eee5ada3160d59ea2d730c07e.jpg)
+
+<details>
+<summary>line</summary>
+
+| Date   | Global | Asia |
+|--------|--------|------|
+| Apr-16 | 50.0   | 49.8 |
+| Oct-16 | 51.5   | 51.2 |
+| Apr-17 | 52.8   | 51.8 |
+| Oct-17 | 54.2   | 52.5 |
+| Apr-18 | 53.0   | 51.8 |
+| Oct-18 | 51.5   | 50.8 |
+| Apr-19 | 50.5   | 50.2 |
+| Oct-19 | 49.5   | 49.0 |
+| Apr-20 | 48.0   | 48.0 |
+| Oct-20 | 53.5   | 54.0 |
+| Apr-21 | 56.0   | 53.0 |
+| Oct-21 | 54.5   | 52.5 |
+| Apr-22 | 52.0   | 51.0 |
+| Oct-22 | 49.0   | 49.5 |
+| Apr-23 | 48.5   | 49.0 |
+| Oct-23 | 49.0   | 49.5 |
+| Apr-24 | 50.5   | 52.0 |
+| Oct-24 | 49.0   | 49.5 |
+| Apr-25 | 50.0   | 51.0 |
+| Oct-25 | 51.0   | 52.0 |
+| Apr-26 | 52.5   | 53.0 |
+</details>
+
+Source: Haver, CEIC, MS
+
+Policymakers have limited the passthrough from international oil price rise to domestic fuel prices to roughly a quarter so far   
+![](images/b63e5ca30564263911c268442e3d8d825cf4ea2e0030f9fc256692d0c7dcad4b.jpg)
+
+<details>
+<summary>line</summary>
+
+| Date   | Asia industrial production (%Y, 3MMA) | FIBER Industrial Materials Index: Core (%Y, 3MMA, RS) |
+|--------|----------------------------------------|----------------------------------------------------------|
+| Apr-26 | 5.9%                                   | 8.8%                                                     |
+</details>
+
+Source: Haver, CEIC, MS
+
+# The Recovery Is Broadening Out Toward Non-Tech Exports and Capex
+
+# April early reporter non-tech exports is growing at an annualized pace of $19\%$
+
+![](images/969bc9d948999b4a7c95b2c240c71bdf340bd12d2f162ac34ed41ce33c76c119.jpg)
+
+<details>
+<summary>line</summary>
+
+| Month    | Asia  | Early reporters (CN, KR, TW, IN) |
+| -------- | ----- | ------------------------------- |
+| Dec-24   | 100.0 | 100.0                           |
+| Jan-25   | 98.5  | 98.0                            |
+| Feb-25   | 98.0  | 98.0                            |
+| Mar-25   | 98.5  | 99.0                            |
+| Apr-25   | 100.0 | 100.0                           |
+| May-25   | 101.5 | 101.5                           |
+| Jun-25   | 101.0 | 100.0                           |
+| Jul-25   | 101.0 | 100.0                           |
+| Aug-25   | 101.0 | 100.0                           |
+| Sep-25   | 101.5 | 100.5                           |
+| Oct-25   | 101.5 | 100.0                           |
+| Nov-25   | 103.0 | 101.5                           |
+| Dec-25   | 104.0 | 102.0                           |
+| Jan-26   | 106.0 | 104.0                           |
+| Feb-26   | 110.0 | 109.5                           |
+| Mar-26   | 109.5 | 108.0                           |
+| Apr-26   | 109.0 | 108.5                           |
+</details>
+
+Source: Haver, CEIC, MS
+
+# Capex momentum remains strong
+
+![](images/370b2437014931d90a64a9ef1175060f422cc5991aa31e17a6106182b7b986fb.jpg)
+
+<details>
+<summary>line</summary>
+
+| Date   | Global | Asia |
+|--------|--------|------|
+| Mar-16 | -7%    | -8%  |
+| Mar-17 | 5%     | 8%   |
+| Mar-18 | 17%    | 16%  |
+| Mar-19 | -4%    | -6%  |
+| Mar-20 | -9%    | -5%  |
+| Mar-21 | 30%    | 25%  |
+| Mar-22 | 5%     | 10%  |
+| Mar-23 | -5%    | -15% |
+| Mar-24 | 10%    | 12%  |
+| Mar-25 | 12%    | 15%  |
+| Mar-26 | 22%    | 27%  |
+</details>
+
+Source: Haver, CEIC, MS, Note: For LHS, As China and Korea's April export data is currently available for a limited set of products, we calculate their non-tech exports as the residual from total exports after excluding early-reporting tech items.
+
+# Asia Headed Toward a Capex Super-Cycle
+
+Asia's industrial and capex cycle is backed by multiple new structural demand drivers: 1) AI and AI-related infrastructure spending; 2) energy and energy-transition-related spending; 3) global increase in defense spending; and 4) positive spillover to broader industrial capex.
+
+Global ex-China capex growth will improve from $3.6\%$ YoY in 2025 to $3.8\%$ in 2026 and $4.2\%$ in 2027
+
+Gross fixed investment   
+![](images/e25e45a2ee48e15e0f005004ef64632acd36695a770793940dc3fd7d8cb65150.jpg)
+
+<details>
+<summary>bar</summary>
+
+| Year | Global ex China |
+|---|---|
+| 2025 | 3.6 |
+| 2026E | 3.8 |
+| 2027E | 4.2 |
+</details>
+
+Source: Haver, CEIC, MS estimates; Note: We exclude China real estate capex given the structural decline in property demand.
+
+Asia's gross fixed investment to rise to \$16trn by 2030
+
+Asia gross fixed investment\* (US\$trn)  
+![](images/6dbf65ae3a4a959b7e484d8bf6cd7c23f0405d7a3458247dfc78093ed54ec9e6.jpg)
+
+<details>
+<summary>line</summary>
+
+| Year | Value |
+| ---- | ----- |
+| 2025E | $11tr |
+| 2030E | $16tr |
+</details>
+
+Source: Haver, CEIC, MS; Note: \*We exclude China real estate capex given the structural decline in property demand.
+
+# Monetary Policy: Inflation Trajectory Holds the Key for the Fed and Asian Central Banks
+
+# We expect the Fed to stay on hold through 2026, before cutting by 50bps in 1H27
+
+![](images/8bdb261d7678f88b9241c6146c283dfd9a2c4fc8a8bf8afeb6676356178a49fa.jpg)
+
+<details>
+<summary>line</summary>
+
+| Date     | US nominal policy rate (%) |
+| -------- | -------------------------- |
+| Dec-26   | 3.625                      |
+| Dec-27   | 3.125                      |
+</details>
+
+Source: Haver, CEIC, MS estimates
+
+# Overall, we see a gradual and modest rate hike cycle in Asia, with BOJ, RBA and BOK among those with tightening bias
+
+![](images/fab0eab0cb9048cb712ca1d0b9a455ffcfbc5bbbf6c64980071ba3bebf169d98.jpg)
+
+<details>
+<summary>line</summary>
+
+| Date    | Asia | BOJ, RBA and BOK | Other Asian central banks |
+|---------|------|------------------|----------------------------|
+| Dec-26  | 2.6  | 1.8              | 2.7                        |
+| Dec-27  | 2.8  | 2.2              | 2.9                        |
+</details>
+
+Source: Haver, CEIC, MS estimates
+
+# James Lord
+
+# Global Head of FX/EM Strategy
+
+# We Expect USD Weakness in 2H26, but a Rebound Thereafter
+
+USD hedging costs should fall as CBs deliver on policy rates. US economic strength keeps USD weakness cyclical
+
+We see DXY at 95 before rebounding   
+![](images/f822f15b3a09638d2d1b704953283e2c6e95901c73be40dfa42414e1bae0bd5d.jpg)
+
+<details>
+<summary>line</summary>
+
+| Period | Implied USD Discount (RHS, %) | 2y OIS-Implied FV | MS Forecast |
+|--------|-------------------------------|-------------------|-------------|
+| 1Q25   | 105.00                        | 105.00            | 105.00      |
+| 2Q25   | 98.00                         | 104.00            | 97.00       |
+| 3Q25   | 97.00                         | 103.00            | 98.00       |
+| 4Q25   | 98.00                         | 102.00            | 98.50       |
+| 1Q26   | 100.00                        | 101.00            | 99.00       |
+| Current| 101.00                        | 100.50            | 98.50       |
+| 2Q26   | 103.00                        | 103.50            | 97.50       |
+| 3Q26   | 101.00                        | 102.50            | 95.50       |
+| 4Q26   | 102.00                        | 102.00            | 96.50       |
+| 1Q27   | 103.00                        | 101.50            | 97.50       |
+| 2Q27   | 111.00                        | 101.00            | 98.50       |
+</details>
+
+USD asset hedging costs for European investors should cheapen   
+![](images/6edd3e48f953d3d44eada280f733e618589b13ba9cb3a992eea00e6b7a65a500.jpg)
+
+<details>
+<summary>line</summary>
+
+| Year | Historical | Forecast |
+|------|------------|----------|
+| 2015 | -0.4       | -        |
+| 2016 | -0.8       | -        |
+| 2017 | -1.2       | -        |
+| 2018 | -1.8       | -        |
+| 2019 | -2.5       | -        |
+| 2020 | -3.5       | -        |
+| 2021 | -0.8       | -        |
+| 2022 | -1.5       | -        |
+| 2023 | -2.8       | -        |
+| 2024 | -1.5       | -        |
+| 2025 | -2.5       | -        |
+| 2026 | -1.8       | -        |
+| 2027 | -1.0       | -0.8     |
+</details>
+
+Source: MS, Bloomberg
+
+# We See More USD Weakness Than the Consensus Near Term
+
+Consensus and forwards are more constructive on USD near term. JPY-funded carry trades have best risk/reward
+
+USD down first, then up   
+![](images/a0192a4a70fc9aba5b98b7ee43dcf835410197c19564bce91ba6bc182ed9ab42.jpg)
+
+<details>
+<summary>line</summary>
+
+| Date   | Consensus | Forward | MS Forecast |
+|--------|-----------|---------|-------------|
+| Jun-25 | 97.0      | 97.0    | 97.0        |
+| Dec-25 | 98.0      | 98.0    | 98.0        |
+| Jun-26 | 100.0     | 98.0    | 100.0       |
+| Dec-26 | 97.0      | 97.0    | 95.0        |
+| Jun-27 | 96.0      | 96.0    | 98.0        |
+| Dec-27 | 95.0      | 96.0    | 99.0        |
+</details>
+
+We also think the consensus underestimates CHF strength   
+![](images/8d4e769f70b6b2490b58f0d9f895e64e7b667351e3b8f6846f760213dfa3c80d.jpg)
+
+<details>
+<summary>bar</summary>
+
+| Country | CCY/USD Dec-26 forecast relative to Bloomberg consensus (%) |
+|---|---|
+| JPY | -2.8 |
+| DXY | -0.7 |
+| CAD | 0.0 |
+| EUR | 0.8 |
+| GBP | 2.2 |
+| SEK | 2.6 |
+| NZD | 3.3 |
+| AUD | 4.1 |
+| NOK | 4.5 |
+| CHF | 4.9 |
+The chart includes a note that MS is more bullish on CCY than the market. The arrow indicates this is an upward trend.
+</details>
+
+Source: MS, Bloomberg
+
+# EM vs DM Outperformance to Continue
+
+We see moderate EM gains vs USD to year-end but persistent strength vs G3. We prefer CEEMEA and Latam over AXJ
+
+We expect EM to continue outperforming G3   
+![](images/1d9155a6efa9e320105d5dfab3cee2ea5c420a12ef58258222bf7be5f8787146.jpg)
+
+<details>
+<summary>line</summary>
+
+| Date   | EM FX vs G3 | EM FX vs USD | Forecast |
+|--------|-------------|--------------|----------|
+| Jun-19 | 100         | 100          | -        |
+| Jun-21 | 100         | 95           | -        |
+| Jun-23 | 120         | 105          | -        |
+| Jun-25 | 140         | 120          | 165      |
+| Jun-27 | 170         | 130          | 170      |
+</details>
+
+Solid total returns in parts of EM   
+![](images/19fb2a50a2643ebb71b29bca601f2d3c1bf022497fd85dc172cbf543c471b378.jpg)  
+Source: MS, Bloomberg
+
+# Matthew Hornbach
+
+# Global Head of Macro Strategy
+
+# We Expect Less Net Issuance in 2026 and 2027 Than in 2025
+
+Fiscal concerns may play idiosyncratic roles in driving bond yields higher, but we don't see supply playing a systemic role – we see less net supply across the G7
+
+Gross coupon bond issuance net of redemptions, notional in USD, 2007-25 actual, 2026-27 expected
+
+![](images/cc747e6ed703c80b4ea574c366541b8985e42a14ea54c556ba0972f8c9bff3ae.jpg)
+
+<details>
+<summary>bar_stacked</summary>
+
+| Year | US ($ bn) | AUD ($ bn) | NZ ($ bn) | CAN ($ bn) | Japan ($ bn) | UK ($ bn) | Euro ($ bn) |
+|---|---|---|---|---|---|---|---|
+| 07 | 150 | 0 | 0 | 0 | 400 | 0 | 300 |
+| 09 | 1600 | 0 | 0 | 0 | 800 | 400 | 600 |
+| 11 | 1400 | 0 | 0 | 0 | 800 | 300 | 700 |
+| 13 | 900 | 0 | 0 | 0 | 600 | 300 | 500 |
+| 15 | 550 | 0 | 0 | 0 | 400 | 200 | 450 |
+| 17 | 450 | 0 | 0 | 0 | 350 | 250 | 450 |
+| 19 | 1100 | 0 | 0 | 0 | 250 | 150 | 350 |
+| 21 | 2600 | 400 | 150 | 150 | 600 | 350 | 850 |
+| 23 | 1550 | 150 | 150 | 150 | 350 | 250 | 450 |
+| 25 | 1850 | 150 | 150 | 150 | 350 | 250 | 650 |
+| 27e | 1450 | 150 | 150 | 150 | 350 | 250 | 650 |
+The chart displays a stacked bar chart with currency labels and a legend indicating currency codes such as US, AUD, NZ, CAN, Japan, UK, and Euro. The values are in USD billions.
+</details>
+
+Gross coupon bond issuance net of redemptions and central bank purchases, notional in USD, 2007-25 actual, 2026-27 expected
+
+![](images/ad73612aa567e438ec13a49d02888ea7e05758cf3e4f6c9cec0af77b296639d3.jpg)
+
+<details>
+<summary>bar_line</summary>
+
+| Year | US ($ bn) | AUD ($ bn) | NZ ($ bn) | CAN ($ bn) | Japan ($ bn) | UK ($ bn) | Euro ($ bn) | G7 Total |
+|---|---|---|---|---|---|---|---|---|
+| 07 | 100 | 50 | 30 | 40 | 60 | 20 | 10 | 650 |
+| 08 | 400 | 100 | 20 | 50 | 100 | 30 | 20 | 1200 |
+| 09 | 1300 | 150 | 30 | 60 | 150 | 40 | 30 | 2350 |
+| 10 | 1400 | 200 | 40 | 70 | 200 | 50 | 40 | 2900 |
+| 11 | 700 | 30 | 50 | 80 | 250 | 60 | 50 | 1800 |
+| 12 | 900 | 40 | 60 | 90 | 300 | 70 | 60 | 1650 |
+| 13 | 300 | 20 | 15 | 25 | 45 | 15 | 15 | 1050 |
+| 14 | 350 | 25 | 15 | 35 | 55 | 25 | 25 | 850 |
+| 15 | -150 | -25 | -15 | -25 | -35 | -25 | -35 | -150 |
+| 16 | -450 | -35 | -25 | -35 | -45 | -35 | -45 | -350 |
+| 17 | -250 | -35 | -25 | -35 | -45 | -35 | -45 | -150 |
+| 18 | -150 | -35 | -25 | -35 | -45 | -35 | -45 | -125 |
+| 19 | -750 | -45 | -35 | -45 | -55 | -45 | -55 | -750 |
+| 20 | -450 | -45 | -35 | -45 | -55 | -45 | -55 | -450 |
+| 21 | 1750 | 1750 | 1750 | 1750 | 2000 | 2000 | -250 | 1750 |
+| 22 | 1750 | 1750 | 1750 | 1750 | 2000 | 2000 | -250 | 1750 |
+| 23 | 1750 | 1750 | 1750 | 1750 | 2000 | 2000 | -250 | 1750 |
+| 24 | 1875 | 1875 | 1875 | 1875 | 2250 | 2250 | -250 | 2875 |
+| 25e-26e-27e-27e-27e-27e-27e-27e-27e-27e-27e-27e-27e-27e-27e-27e-27e-27e-27e-27e-27e-27e-27e-27e-27e-27e-27e-26e-26e-26e-26e-26e-26e-26e-26e-26e-26e-26e-26e-26e-26e-26e-26e-26e-26e-26e-26e-26e-26e-26e-26e-26e-24e-26e-26e-26e-26e-26e-26e-26e-26e-26e-26e-26e-26e-26e-26e-26e-26e-26e-26e-26e-26e-26e-26e-26e-26e-28e-26e-26e-26e-26e-26e-26e-26e-26e-26e-26e-26e-26e-26e-26e-26e-26e-26e-26e-26e-26e-26e-26e-26e-26e-29e-33
+G7 Total
+</details>
+
+Source: MS, Bloomberg
+
+# Market-Implied Path Too Hawkish vs. Our Economists' View
+
+Current market pricing implies tightening vs the easing in the probability-weighted path envisioned by our economists
+
+Target fed funds range upper bound and the US Economics baseline and 4 scenarios   
+![](images/a63d18c3c0376137d847fa3e7b4c57b93ba7bc35d89b724f9461dbb8f05df427.jpg)
+
+<details>
+<summary>line</summary>
+
+| Year | Baseline | Demand | Productivity | Recession | Oil premium |
+|------|----------|--------|--------------|-----------|-------------|
+| '27  | 3.75     | 4.75   | 3.00         | 2.75      | 3.75        |
+</details>
+
+Target fed funds range upper bound and probability-weighted mean vs. market pricing   
+![](images/46d368cb52ae1b53264816f30204297fdd89e1140797ea2bb9896b13a948f8ad.jpg)
+
+<details>
+<summary>line</summary>
+
+| Year | Economist probability-weighted mean | Market pricing (upperbound) |
+|------|-------------------------------------|-----------------------------|
+| '27  | 3.48                                | 3.89                        |
+</details>
+
+Source: MS estimates, Federal Reserve, Bloomberg
+
+# Market-Implied Trough Rate Places No Probability on Recession
+
+Current market prices suggest a zero risk of a recession, $20\%$ chance of an aggregate demand shock, and $75\%$ chance of a permanent oil premium
+
+Target fed funds upper bound and market-price-aligned probability-weighted mean   
+![](images/d5df7a83c78206e468650a65f16ddaeb2dbc03d99bacf8339d431c3e8c85e3ee.jpg)
+
+<details>
+<summary>line</summary>
+
+| Year | Market-equivalent probability-weighted mean | Market pricing (upperbound) |
+|------|---------------------------------------------|-----------------------------|
+| '27  | 3.91                                        | 3.89                        |
+</details>
+
+Subjective probabilities that produce a market-implied path aligned to current price   
+![](images/1792bf69f57f4308e5dbc07843494ee093280bcad85a1df5481beee16a6281df.jpg)
+
+<details>
+<summary>bar</summary>
+
+| Category | Market-implied subjective probability assigned (%) |
+| :--- | :--- |
+| Permanent oil premium | 74 |
+| Global oil-led recession | 0 |
+| US AI productivity boost | 0 |
+| US aggregate demand shock | 19 |
+| Baseline | 6 |
+</details>
+
+Source: MS estimates, Federal Reserve, Bloomberg
+
+# Michael Wilson
+
+Chief US Equity Strategist and Chief Investment Officer
+
+# Vishwas Patkar
+
+# Head of US Credit Strategy
+
+# US Credit Outlook: Writing Bigger Checks
+
+- Playbook comparable to 1997/98 or 2005/06; healthy economy, accelerating capex and M&A, rising issuance. Credit lagging equities.   
+• We see IG spreads modestly wider with supply hitting a new record. HY outperforms on robust earnings.   
+• Total returns healthy at 6%+ across segments.
+
+We forecast modest widening across US IG and Loans; HY in the sweet spot   
+![](images/ec17378f2986eaa866b8887ea2644a4ad878e278e4b6dede32dccfa0657f10bc.jpg)
+
+<details>
+<summary>line</summary>
+
+| Year | IG Spread | HY Spread | Loan Spread | Bull | Base | Bear |
+|------|-----------|-----------|-------------|------|------|------|
+| 2022 | ~100      | ~300      | ~400        | -    | -    | -    |
+| 2023 | ~150      | ~550      | ~550        | -    | -    | -    |
+| 2024 | ~100      | ~400      | ~450        | -    | -    | -    |
+| 2025 | ~80       | ~300      | ~400        | -    | -    | -    |
+| 2026 | ~70       | ~250      | ~350        | -    | -    | -    |
+| 2027 | ~90       | ~275      | ~440        | 275  | 275  | 90   |
+</details>
+
+Source: Bloomberg, MS
+
+1997/98 and 2005/06 are interesting comparisons for the current set-up 
+
+<table><tr><td rowspan="2">Year</td><td colspan="2">Capex</td><td colspan="2">M&amp;A</td><td rowspan="2">S&amp;P500YoY</td><td rowspan="2">USIGYoY(bp)</td><td rowspan="2">IG Non-FinLeverage Y/Y(x)</td><td rowspan="2">US 10yr(YE)</td><td rowspan="2">CorePCE(YE)</td><td rowspan="2">USU-3Unemploy.</td></tr><tr><td>Capex YoY</td><td>Ex-En.YoY</td><td>M&amp;A YoY</td><td>M&amp;A(% of GDP)</td></tr><tr><td>1997</td><td>7%</td><td>5%</td><td>40%</td><td>24%</td><td>31%</td><td>9</td><td>+0.15</td><td>5.7</td><td>1.9</td><td>4.9</td></tr><tr><td>1998</td><td>9%</td><td>10%</td><td>38%</td><td>32%</td><td>27%</td><td>51</td><td>+0.33</td><td>4.6</td><td>1.5</td><td>4.5</td></tr><tr><td>2005</td><td>14%</td><td>9%</td><td>31%</td><td>29%</td><td>3%</td><td>9</td><td>-0.13</td><td>4.1</td><td>2.3</td><td>5.1</td></tr><tr><td>2006</td><td>20%</td><td>17%</td><td>76%</td><td>48%</td><td>14%</td><td>-2</td><td>+0.05</td><td>4.7</td><td>2.3</td><td>4.5</td></tr><tr><td>Avg.</td><td>12%</td><td>10%</td><td>46%</td><td>34%</td><td>19%</td><td>17</td><td>+0.10</td><td>4.8</td><td>2.0</td><td>4.8</td></tr><tr><td>2026e</td><td>21%</td><td>23%</td><td>20%</td><td>21%</td><td>17%</td><td>13</td><td>-</td><td>4.2</td><td>2.8</td><td>4.3</td></tr><tr><td>Diff</td><td>9%</td><td>13%</td><td>-26%</td><td>-12%</td><td>-2%</td><td>-4</td><td>-</td><td>-0.6</td><td>0.8</td><td>-0.5</td></tr></table>
+
+Source: Dealogic, Federal Reserve, Bloomberg, FactSet, BLS, MS
+
+# Supply Stays Heavy to Fund Capex/M&A; Defaults to Rise in Loans/PC
+
+• We forecast a record year in IG supply at \$2.25tn, +25% y/y.   
+• We mark up our HY issuance to \$440bn (+34% y/y) due to higher AI financing needs.   
+- Expect a Software-led increase in Loan and PC default rates to $5.5\%$ and $8\%$ . HY defaults moderate to $3.5\%$ .
+
+IG and HY to see a notable increase in supply Y/Y, while Loans see a slight decline   
+![](images/8b9e9f96fd66f8a92c53b635a687b39356e742633994913859bbc9c097c8f8e4.jpg)
+
+<details>
+<summary>bar</summary>
+
+US Credit Supply Forecast
+| Category | 2025 ($bn) | 2026E ($bn) |
+|---|---|---|
+| IG | 1810 | 2250 |
+| HY | 330 | 440 |
+| Loans | 440 | 425 |
+</details>
+
+Source: Dealogic, Pitchbook | LCD, MS
+
+HY defaults tick down to 3.5%, and Loans and PC up from current levels to 5.5% and 8% by 2H27, respectively   
+![](images/752e06a282099405d166fefc56c92b70ea3b0376f6cb3a8b2ae132856194d637.jpg)
+
+<details>
+<summary>line</summary>
+
+| Date   | HY Bonds | Loans | Direct Lending |
+|--------|----------|-------|----------------|
+| Dec-26 | 3.5%     | 5.5%  | 8.0%           |
+</details>
+
+Source: Moody's, PitchBook | LCD, MS
+
+# Positioning Themes
+
+• In IG: OW Banks, Utilities, Yankee Corps, and UW Technology. We like BBBs over high quality.   
+• In leveraged credit: Like BB Loans for carry. In HY prefer single-Bs over BBs.   
+- OW HY data center debt, which includes project finance-style deals with structural protections for creditors; guarantees/backstops from HQ hyperscalers.
+
+Expect B-rated issuers to deliver stronger EBITDA growth through the second half of 2026   
+US HY: Consensus Quarterly EBITDA Y/Y growth   
+![](images/8139d6017f2521212ff22b0eb52d8a9be1a1afb5946478e4f69d9d67bea8d6c3.jpg)
+
+<details>
+<summary>bar</summary>
+
+| Quarter | BBB (%) | BB (%) | B (%) |
+| :--- | :--- | :--- | :--- |
+| 1Q26 | 10 | 7 | 1 |
+| 2Q26E | 18 | 12 | 12 |
+| 3Q26E | 13 | 14 | 16 |
+| 4Q26E | 13 | 15 | 16 |
+</details>
+
+Source: FactSet, MS
+
+The HY data-center has grown sharply to over \$35bn, we like the risk-reward vs, overall market   
+![](images/c5212d9b912fe085cfb1bcb64d2c60fcc0b608b65706af963454602c7688c5cf.jpg)
+
+<details>
+<summary>line</summary>
+
+| Date   | BB Data Center Average OAS | BB Index OAS |
+|--------|-----------------------------|--------------|
+| Jan-26 | 390                         | 165          |
+| Feb-26 | 300                         | 160          |
+| Mar-26 | 270                         | 180          |
+| Apr-26 | 250                         | 210          |
+| May-26 | 220                         | 160          |
+</details>
+
+Source: Bloomberg, MS
+
+# Serena Tang
+
+# Global Head of Cross-Asset Strategy
+
+# Risk On: Overweight Equities over Fixed Income
+
+# We upgrade global equities to OW. Corporate credit remains our least-favoured asset class
+
+![](images/11620fa4872dd0b4142451c2c5229cf84ebf15a4d305422d6a211e01cc7a183a.jpg)
+
+<details>
+<summary>bar</summary>
+
+| Asset | Allocation (%) | OW/UW (%) | vs Bnch (%) | vs Last (%) |
+| :--- | :--- | :--- | :--- | :--- |
+| EQUITIES |  | +5 |  | +5 |
+| US |  | +3 |  | +1 |
+| Europe |  | +1 |  | +1 |
+| Japan |  | +1 |  | +1 |
+| EM |  | +0 |  | +2 |
+| CORE FIXED INC. |  | -3 |  | +0 |
+| Govt Bonds |  | +3 |  | -1 |
+| USTs |  | +2 |  | -2 |
+| EGBs |  | +1 |  | +1 |
+| Agency MBS |  | +0 |  | +0 |
+| IG Corporate |  | -6 |  | +1 |
+| US IG Corp |  | -5 |  | +0 |
+| EUR IG Corp |  | -1 |  | +1 |
+| OTHER FIXED INC. |  | -2 |  | +3 |
+| US HY Corp |  | -1 |  | +1 |
+| EM $ Sov |  | -2 |  | +0 |
+| EM Local |  | +0 |  | +2 |
+| US Lev Loans |  | -1 |  | +0 |
+| CLO AAA |  | +2 |  | +0 |
+| COMMODITIES |  | +0 |  | +0 |
+| Brent |  | +0 |  | +0 |
+| Gold |  | +0 |  | +0 |
+| Copper |  | +0 |  | +0 |
+| CASH |  | +0 |  | -8 |
+</details>
+
+Source: MS; Note: Overweights and underweights are versus our cross-asset benchmark; see MS Cross-Asset Benchmark for the full breakdown. 'vs Last' is versus last published March 27, 2026.
+
+- Equities to OW: Upgrade DM equities to overweight, driven by strong AI-led earnings. Prefer the US given favorable bull-bear skew and resilience amid geopolitical risks.   
+- Rates neutral positioning: Maintain overall OW in government bonds, shifting from USTs (to EW) into EGBs on better relative value; focus on curve dynamics over outright duration.   
+- Reiterate large corporate credit US: Stay underweight global credit, especially US IG where AI-driven issuance pressures spreads; selectively favor EUR IG on stronger technicals and positive excess returns.
+
+# MS 2Q 2027 Targets
+
+Equities and government bonds have good risk-reward, while US IG corporate credit is projected to see negative excess returns
+
+<table><tr><td rowspan="2"></td><td rowspan="2">As of May 15, 2026</td><td colspan="3">Q2 2027 Forecast</td><td colspan="3">Q2 2027 Return Forecast</td><td rowspan="2">Volatility</td><td rowspan="2">Base Case Return/Risk</td></tr><tr><td>Bear</td><td>Base</td><td>Bull</td><td>Bear</td><td>Base</td><td>Bull</td></tr><tr><td>Equities</td><td></td><td></td><td></td><td></td><td colspan="3">Total Returns</td><td></td><td></td></tr><tr><td>S&amp;P 500</td><td>7,409</td><td>5,900</td><td>8,300</td><td>9,400</td><td>-19.3%</td><td>13.1%</td><td>28.0%</td><td>18%</td><td>0.71</td></tr><tr><td>MSCI Europe</td><td>2,413</td><td>1,820</td><td>2,700</td><td>3,020</td><td>-21.6%</td><td>14.8%</td><td>28.1%</td><td>15%</td><td>1.00</td></tr><tr><td>Topix</td><td>3,864</td><td>2,600</td><td>4,300</td><td>4,900</td><td>-30.7%</td><td>13.3%</td><td>28.8%</td><td>19%</td><td>0.72</td></tr><tr><td>MSCI EM</td><td>1,668</td><td>1,100</td><td>1,800</td><td>2,100</td><td>-32.1%</td><td>9.9%</td><td>27.9%</td><td>16%</td><td>0.61</td></tr><tr><td>FX</td><td></td><td></td><td></td><td></td><td colspan="3">Total Returns</td><td></td><td></td></tr><tr><td>JPY*</td><td>159</td><td>163</td><td>156</td><td>145</td><td>-6.0%</td><td>-1.3%</td><td>6.7%</td><td>9%</td><td>-0.14</td></tr><tr><td>EUR</td><td>1.16</td><td>1.00</td><td>1.16</td><td>1.30</td><td>-15.3%</td><td>-1.5%</td><td>10.5%</td><td>7%</td><td>-0.21</td></tr><tr><td>GBP</td><td>1.33</td><td>1.20</td><td>1.34</td><td>1.45</td><td>-9.5%</td><td>1.0%</td><td>9.2%</td><td>9%</td><td>0.11</td></tr><tr><td>AUD</td><td>0.72</td><td>0.68</td><td>0.73</td><td>0.76</td><td>-4.0%</td><td>3.0%</td><td>7.2%</td><td>10%</td><td>0.31</td></tr><tr><td>INR*</td><td>96.0</td><td>92.0</td><td>95.0</td><td>100.0</td><td>7.8%</td><td>4.0%</td><td>-0.8%</td><td>5%</td><td>0.85</td></tr><tr><td>ZAR*</td><td>16.7</td><td>15.0</td><td>16.3</td><td>18.7</td><td>14.6%</td><td>5.6%</td><td>-7.5%</td><td>15%</td><td>0.37</td></tr><tr><td>BRL*</td><td>5.06</td><td>4.40</td><td>4.90</td><td>5.40</td><td>23.6%</td><td>11.9%</td><td>2.4%</td><td>15%</td><td>0.79</td></tr><tr><td>MXN*</td><td>17.3</td><td>16.5</td><td>17.2</td><td>19.5</td><td>8.4%</td><td>4.1%</td><td>-7.7%</td><td>13%</td><td>0.33</td></tr><tr><td>Rates (% percent)</td><td></td><td></td><td></td><td></td><td colspan="3">Total Returns</td><td></td><td></td></tr><tr><td>UST 10yr</td><td>4.59</td><td>5.10</td><td>4.20</td><td>3.55</td><td>0.9%</td><td>8.1%</td><td>13.6%</td><td>7%</td><td>1.21</td></tr><tr><td>DBR 10yr</td><td>3.17</td><td>3.05</td><td>2.45</td><td>2.40</td><td>4.6%</td><td>9.5%</td><td>10.0%</td><td>6%</td><td>1.67</td></tr><tr><td>UKT 10yr</td><td>5.17</td><td>4.65</td><td>4.40</td><td>4.20</td><td>9.5%</td><td>11.6%</td><td>13.3%</td><td>7%</td><td>1.75</td></tr><tr><td>JGB 10yr</td><td>2.71</td><td>3.10</td><td>2.25</td><td>1.40</td><td>0.4%</td><td>7.3%</td><td>14.6%</td><td>3%</td><td>2.92</td></tr><tr><td>Credit (bps)</td><td></td><td></td><td></td><td></td><td colspan="3">Excess Returns</td><td></td><td></td></tr><tr><td>US IG</td><td>73</td><td>125</td><td>90</td><td>70</td><td>-2.0%</td><td>-0.4%</td><td>1.0%</td><td>3%</td><td>-0.12</td></tr><tr><td>US HY</td><td>267</td><td>425</td><td>275</td><td>230</td><td>-3.4%</td><td>1.8%</td><td>3.7%</td><td>5%</td><td>0.33</td></tr><tr><td>EUR IG</td><td>78</td><td>150</td><td>80</td><td>60</td><td>-2.4%</td><td>0.7%</td><td>1.6%</td><td>2%</td><td>0.40</td></tr><tr><td>EUR HY</td><td>257</td><td>500</td><td>300</td><td>225</td><td>-5.9%</td><td>0.4%</td><td>3.0%</td><td>5%</td><td>0.09</td></tr><tr><td>EM $ Sov</td><td>237</td><td>400</td><td>260</td><td>210</td><td>-8.1%</td><td>0.9%</td><td>4.1%</td><td>7%</td><td>0.13</td></tr><tr><td>Sec. Products (bps)</td><td></td><td></td><td></td><td></td><td colspan="3">Excess Returns</td><td></td><td></td></tr><tr><td>US Agency MBS</td><td>26</td><td>40</td><td>20</td><td>15</td><td>-0.6%</td><td>0.6%</td><td>0.9%</td><td>2%</td><td>0.33</td></tr><tr><td>US CMBS AAA</td><td>71</td><td>110</td><td>75</td><td>60</td><td>-3.2%</td><td>0.3%</td><td>1.8%</td><td>2%</td><td>0.20</td></tr><tr><td>US CMBS BBB-</td><td>465</td><td>750</td><td>470</td><td>390</td><td>-23.6%</td><td>4.2%</td><td>12.1%</td><td>3%</td><td>1.21</td></tr><tr><td>Commodities</td><td></td><td></td><td></td><td></td><td colspan="3">Total Returns</td><td></td><td></td></tr><tr><td>Brent</td><td>109</td><td>65</td><td>80</td><td>180</td><td>-21.3%</td><td>-3.1%</td><td>118.0%</td><td>39%</td><td>-0.08</td></tr><tr><td>Copper</td><td>13,503</td><td>10,670</td><td>13,000</td><td>15,609</td><td>-21.4%</td><td>-4.2%</td><td>15.0%</td><td>21%</td><td>-0.20</td></tr><tr><td>Gold</td><td>4,528</td><td>4,250</td><td>5,000</td><td>6,000</td><td>-10.9%</td><td>4.8%</td><td>25.8%</td><td>16%</td><td>0.31</td></tr></table>
+
+Source: Bloomberg, MSCI, MS forecasts; Note: Returns are total returns, except for credit, where we forecast excess returns versus government bonds. Commodity returns are calculated relative to futures to account for carry. Brent spot is shown as front-month contract, while returns are calculated on the Jun-27 contract. Volatility is 10y realized vol. All currency returns are shown as XXXUSD return. \*Currency forecasts shown for USDXXX.
+
+# Key Takeaways
+
+- Strong macro and micro fundamentals—reinforced by a powerful AI-driven capex cycle—support risk assets despite energy-led volatility widening return dispersion. With the growing role of credit markets in funding AI capex a headwind for spreads, the balance of risks continues to favor DM equities.   
+- Economics – We are constructive on growth, but with increased caution amid the energy supply shock. Global growth is supported by US momentum in AI-driven capex and high-end consumer spending, which over time should allow for a broadening in macro drivers. China is more insulated than Europe, although in each case the energy shock will damp but not derail the expansion.   
+- Global equities – DM to outperform: DM equity expected returns in the low-teens are compelling. While the upside is similar across DM, a favorable bull-bear skew and strong earnings from positive operating leverage tilt us toward the US.   
+- G10 rates – curve performance is key: In the US, expect 2s10s to flatten to 40bp in 2Q26, then steepen to 70bp by end-2027, about 15bp steeper than forwards. The front-end drives the curve steepening, while term premium, supply, and oil uncertainty restrain the long end and constrain a bullish duration view. JGBs offer the most risk-adjusted value versus forwards.   
+- G10 FX – the macro backdrop supports a softer USD: Modest USD weakness continues through 2H26 amid easing core inflation, lower rates, and strong global risk appetite, but US growth leadership and European political risks should support USD recovery into 2027. Risk-sensitive currencies outperform during USD weakness.   
+- Corporate credit – AI financing is the story: The credit market is set to lag competing asset classes due to the tension between strong/improving fundamentals and robust demand at elevated yield levels, vs accelerating supply related to AI capex financing and corporate 'animal spirits'. US HY is in the sweet spot.   
+- Cross-asset strategy – risk-on: Uncertainties driven by the conflict in the Middle East drive a wider-than-average range of return outcomes, but the micro and macro fundamentals are largely supportive. OW equities over fixed income, US stocks over RoW.
+
+# Disclosure Section
+
+The information and opinions in MS were prepared by MS & Co. LLC, and/or MS C.T.V.M. S.A., and/or MS Mexico, Casa de Bolsa, S.A. de C.V., and/or MS Canada Limited. As used in this disclosure section, "MS" includes MS & Co. LLC, MS C.T.V.M. S.A., MS Mexico, Casa de Bolsa, S.A. de C.V., MS Canada Limited and their affiliates as necessary.
+
+For important disclosures, stock price charts and equity rating histories regarding companies that are the subject of this report, please see the MS Disclosure Website at www.morganstanley.com/eqr/disclosures/webapp/generalresearch, or contact your investment representative or MS at 1585 Broadway, (Attention: Research Management), New York, NY, 10036 USA.
+
+For valuation methodology and risks associated with any recommendation, rating or price target referenced in this research report, please contact the Client Support Team as follows: US/Canada +1 800 303-2495; Hong Kong +852 2848-5999; Latin America +1 718 754-5444 (U.S.); London +44 (0)20-7425-8169; Singapore +65 6834-6860; Sydney +61 (0)2-9770-1505; Tokyo +81 (0)3-6836-9000. Alternatively you may contact your investment representative or MS at 1585 Broadway, (Attention: Research Management), New York, NY 10036 USA.
+
+# Analyst Certification
+
+The following analysts hereby certify that their views about the companies and their securities discussed in this report are accurately expressed and that they have not received and will not receive direct or indirect compensation in exchange for expressing specific recommendations or views in this report: Serena Tang, Matthew Hornbach, Michael Wilson, Vishwas Patkar, James Lord
+
+# Global Research Conflict Management Policy
+
+MS has been published in accordance with our conflict management policy, which is available at www.morganstanley.com/institutional/research/conflictpolicies. A Portuguese version of the policy can be found at www.morganstanley.com.br
+
+# Important Regulatory Disclosures on Subject Companies
+
+The equity research analysts or strategists principally responsible for the preparation of MS have received compensation based upon various factors, including quality of research, investor client feedback, stock picking, competitive factors, firm revenues and overall investment banking revenues. Equity Research analysts' or strategists' compensation is not linked to investment banking or capital markets transactions performed by MS or the profitability or revenues of particular trading desks.
+
+MS and its affiliates do business that relates to companies/instruments covered in MS, including market making, providing liquidity, fund management, commercial banking, extension of credit, investment services and investment banking. MS sells to and buys from customers the securities/instruments of companies covered in MS on a principal basis. MS may have a position in the debt of the Company or instruments discussed in this report. MS trades or may trade as principal in the debt securities (or in related derivatives) that are the subject of the debt research report.
+
+Certain disclosures listed above are also for compliance with applicable regulations in non-US jurisdictions.
+
+# Disclosure Section (Cont.)
+
+# STOCK RATINGS
+
+MS uses a relative rating system using terms such as Overweight, Equal-weight, Not-Rated or Underweight (see definitions below). MS does not assign ratings of Buy, Hold or Sell to the stocks we cover. Overweight, Equal-weight, Not-Rated and Underweight are not the equivalent of buy, hold and sell. Investors should carefully read the definitions of all ratings used in MS. In addition, since MS contains more complete information concerning the analyst's views, investors should carefully read MS, in its entirety, and not infer the contents from the rating alone. In any case, ratings (or research) should not be used or relied upon as investment advice. An investor's decision to buy or sell a stock should depend on individual circumstances (such as the investor's existing holdings) and other considerations.
+
+# Global Stock Ratings Distribution
+
+(as of April 30, 2026)
+
+The Stock Ratings described below apply to MS's Fundamental Equity Research and do not apply to Debt Research produced by the Firm.
+
+For disclosure purposes only (in accordance with FINRA requirements), we include the category headings of Buy, Hold, and Sell alongside our ratings of Overweight, Equal-weight, Not-Rated and Underweight. MS does not assign ratings of Buy, Hold or Sell to the stocks we cover. Overweight, Equal-weight, Not-Rated and Underweight are not the equivalent of buy, hold, and sell but represent recommended relative weightings (see definitions below). To satisfy regulatory requirements, we correspond Overweight, our most positive stock rating, with a buy recommendation; we correspond Equal-weight and Not-Rated to hold and Underweight to sell recommendations, respectively.
+
+<table><tr><td rowspan="2">Stock Rating Category</td><td colspan="2">Coverage Universe</td><td colspan="3">Investment Banking Clients (IBC)</td><td colspan="2">Other Material Investment Services Clients (MISC)</td></tr><tr><td>Count</td><td>% of Total</td><td>Count</td><td>% of Total IBC</td><td>% of Rating Category</td><td>Count</td><td>% of Total Other MISC</td></tr><tr><td>Overweight/Buy</td><td>1546</td><td>42%</td><td>467</td><td>51%</td><td>30%</td><td>709</td><td>44%</td></tr><tr><td>Equal-weight/Hold</td><td>1568</td><td>43%</td><td>358</td><td>39%</td><td>23%</td><td>715</td><td>44%</td></tr><tr><td>Not-Rated/Hold</td><td>4</td><td>0%</td><td>0</td><td>0%</td><td>0%</td><td>1</td><td>0%</td></tr><tr><td>Underweight/Sell</td><td>555</td><td>15%</td><td>84</td><td>9%</td><td>15%</td><td>202</td><td>12%</td></tr><tr><td>Total</td><td>3,673</td><td></td><td>909</td><td></td><td></td><td>1627</td><td></td></tr></table>
+
+Data include common stock and ADRs currently assigned ratings. Investment Banking Clients are companies from whom MS received investment banking compensation in the last 12 months. Due to rounding off of decimals, the percentages provided in the "% of total" column may not add up to exactly 100 percent.
+
+# Disclosure Section (Cont.)
+
+# Analyst Stock Ratings
+
+Overweight (O). The stock's total return is expected to exceed the average total return of the analyst's industry (or industry team's) coverage universe, on a risk-adjusted basis, over the next 12-18 months. Equal-weight (E). The stock's total return is expected to be in line with the average total return of the analyst's industry (or industry team's) coverage universe, on a risk-adjusted basis, over the next 12-18 months.
+
+Not-Rated (NR). Currently the analyst does not have adequate conviction about the stock's total return relative to the average total return of the analyst's industry (or industry team's) coverage universe, on a risk-adjusted basis, over the next 12-18 months.
+
+Underweight (U). The stock's total return is expected to be below the average total return of the analyst's industry (or industry team's) coverage universe, on a risk-adjusted basis, over the next 12-18 months. Unless otherwise specified, the time frame for price targets included in MS is 12 to 18 months.
+
+# Analyst Industry Views
+
+Attractive (A): The analyst expects the performance of his or her industry coverage universe over the next 12-18 months to be attractive vs. the relevant broad market benchmark, as indicated below.
+
+In-Line (I): The analyst expects the performance of his or her industry coverage universe over the next 12-18 months to be in line with the relevant broad market benchmark, as indicated below.
+
+Cautious (C): The analyst views the performance of his or her industry coverage universe over the next 12-18 months with caution vs. the relevant broad market benchmark, as indicated below.
+
+Benchmarks for each region are as follows: North America - S&P 500; Latin America - relevant MSCI country index or MSCI Latin America Index; Europe - MSCI Europe; Japan - TOPIX; Asia - relevant MSCI country index or MSCI sub-regional index or MSCI AC Asia Pacific ex Japan Index.
+
+# Important Disclosures for MS Smith Barney LLC Customers
+
+Important disclosures regarding any material conflict of interest that can reasonably be expected to have influenced MS Smith Barney LLC's choice of a third-party research provider or the subject company of a third-party research report, are available on the MS Wealth Management disclosure website at www.morganstanley.com/online/researchdisclosures. For MS specific disclosures, you may refer to https://www.morganstanley.com/eqr/disclosures/webapp/generalresearch.
+
+Each MS report is reviewed and approved on behalf of MS Smith Barney LLC. This review and approval is conducted by the same person who reviews the research report on behalf of MS. This could create a conflict of interest.
+
+# Other Important Disclosures
+
+MS policy is to update research reports as and when the Research Analyst and Research Management deem appropriate, based on developments with the issuer, the sector, or the market that may have a material impact on the research views or opinions stated therein. In addition, certain Research publications are intended to be updated on a regular periodic basis (weekly/monthly/quarterly/annual) and will ordinarily be updated with that frequency, unless the Research Analyst and Research Management determine that a different publication schedule is appropriate based on current conditions.
+
+MS is not acting as a municipal advisor and the opinions or views contained herein are not intended to be, and do not constitute, advice within the meaning of Section 975 of the Dodd-Frank Wall Street Reform and Consumer Protection Act.
+
+MS produces an equity research product called a "Tactical Idea." Views contained in a "Tactical Idea" on a particular stock may be contrary to the recommendations or views expressed in research on the same stock. This may be the result of differing time horizons, methodologies, market events, or other factors. For all research available on a particular stock, please contact your sales representative or go to Matrix at http://www.morganstanley.com/matrix.
+
+MS is provided to our clients through our proprietary research portal on Matrix and also distributed electronically by MS to clients. Certain, but not all, MS products are also made available to clients through third-party vendors or redistributed to clients through alternate electronic means as a convenience. For access to all available MS, please contact your sales representative or go to Matrix at http://www.morganstanley.com/matrix.
+
+# Disclosure Section (Cont.)
+
+Any access and/or use of MS is subject to MS's Terms of Use (http://www.morganstanley.com/terms.html). By accessing and/or using MS, you are indicating that you have read and agree to be bound by our Terms of Use (http://www.morganstanley.com/terms.html). In addition you consent to MS processing your personal data and using cookies in accordance with our Privacy Policy and our Global Cookies Policy (http://www.morganstanley.com/privacy\_pledge.html), including for the purposes of setting your preferences and to collect readership data so that we can deliver better and more personalized service and products to you. To find out more information about how MS processes personal data, how we use cookies and how to reject cookies see our Privacy Policy and our Global Cookies Policy (http://www.morganstanley.com/privacy\_pledge.html). Please use the provided link to review the Terms and Conditions and Most Important Terms and Conditions for MS India Company Private Limited (https://www.morganstanley.com/assets/pdfs/about-us-global-offices/india/Terms\_and\_conditions.pdf) and the following link to review the audit report
+
+(https://ny.matrix.ms.com/eqr/research/webapp/researchdocs/MSICPL\_Morgan\_Stanley\_Research\_Audit\_Report.pdf).
+
+If you do not agree to our Terms of Use and/or if you do not wish to provide your consent to MS processing your personal data or using cookies please do not access our research.
+
+MS does not provide individually tailored investment advice. MS has been prepared without regard to the circumstances and objectives of those who receive it. MS recommends that investors independently evaluate particular investments and strategies, and encourages investors to seek the advice of a financial adviser. The appropriateness of an investment or strategy will depend on an investor's circumstances and objectives. The securities, instruments, or strategies discussed in MS may not be suitable for all investors, and certain investors may not be eligible to purchase or participate in some or all of them. MS is not an offer to buy or sell or the solicitation of an offer to buy or sell any security/instrument or to participate in any particular trading strategy. The value of and income from your investments may vary because of changes in interest rates, foreign exchange rates, default rates, prepayment rates, securities/instruments prices, market indexes, operational or financial conditions of companies or other factors. There may be time limitations on the exercise of options or other rights in securities/instruments transactions. Past performance is not necessarily a guide to future performance. Estimates of future performance are based on assumptions that may not be realized. If provided, and unless otherwise stated, the closing price on the cover page is that of the primary exchange for the subject company's securities/instruments.
+
+The fixed income research analysts, strategists or economists principally responsible for the preparation of MS have received compensation based upon various factors, including quality, accuracy and value of research, firm profitability or revenues (which include fixed income trading and capital markets profitability or revenues), client feedback and competitive factors. Fixed Income Research analysts', strategists' or economists' compensation is not linked to investment banking or capital markets transactions performed by MS or the profitability or revenues of particular trading desks.
+
+The "Important Regulatory Disclosures on Subject Companies" section in MS lists all companies mentioned where MS owns $1\%$ or more of a class of common equity securities of the companies. For all other companies mentioned in MS, MS may have an investment of less than $1\%$ in securities/instruments or derivatives of securities/instruments of companies and may trade them in ways different from those discussed in MS. Employees of MS not involved in the preparation of MS may have investments in securities/instruments or derivatives of securities/instruments of companies mentioned and may trade them in ways different from those discussed in MS. Derivatives may be issued by MS or associated persons.
+
+With the exception of information regarding MS, MS is based on public information. MS makes every effort to use reliable, comprehensive information, but we make no representation that it is accurate or complete. We have no obligation to tell you when opinions or information in MS change apart from when we intend to discontinue equity research coverage of a subject company. Facts and views presented in MS have not been reviewed by, and may not reflect information known to, professionals in other MS business areas, including investment banking personnel.
+
+MS personnel may participate in company events such as site visits and are generally prohibited from accepting payment by the company of associated expenses unless pre-approved by authorized members of Research management.
+
+MS may make investment decisions that are inconsistent with the recommendations or views in this report.
+
+# Disclosure Section (Cont.)
+
+To our readers based in Taiwan or trading in Taiwan securities/instruments: Information on securities/instruments that trade in Taiwan is distributed by MS Taiwan Limited ("MSTL"). Such information is for your reference only. The reader should independently evaluate the investment risks and is solely responsible for their investment decisions. MS may not be distributed to the public media or quoted or used by the public media without the express written consent of MS. Any non-customer reader within the scope of Article 7-1 of the Taiwan Stock Exchange Recommendation Regulations accessing and/or receiving MS is not permitted to provide MS to any third party (including but not limited to related parties, affiliated companies and any other third parties) or engage in any activities regarding MS which may create or give the appearance of creating a conflict of interest. Information on securities/instruments that do not trade in Taiwan is for informational purposes only and is not to be construed as a recommendation or a solicitation to trade in such securities/instruments. MSTL may not execute transactions for clients in these securities/instruments.
+
+MS is not incorporated under PRC law and the research in relation to this report is conducted outside the PRC. MS does not constitute an offer to sell or the solicitation of an offer to buy any securities in the PRC. PRC investors shall have the relevant qualifications to invest in such securities and shall be responsible for obtaining all relevant approvals, licenses, verifications and/or registrations from the relevant governmental authorities themselves. Neither this report nor any part of it is intended as, or shall constitute, provision of any consultancy or advisory service of securities investment as defined under PRC law. Such information is provided for your reference only.
+
+MS is disseminated in Brazil by MS C.T.V.M. S.A. located at Av. Brigadeiro Faria Lima, 3600, 6th floor, São Paulo - SP, Brazil; and is regulated by the Comissão de Valores Mobiliários; in Mexico by MS México, Casa de Bolsa, S.A. de C.V which is regulated by Comision Nacional Bancaria y de Valores. Paseo de los Tamarindos 90, Torre 1, Col. Bosques de las Lomas Floor 29, 05120 Mexico City; in Japan by MS MUFG Securities Co., Ltd. and, for Commodities related research reports only, MS Capital Group Japan Co., Ltd; in Hong Kong by MS Asia Limited (which accepts responsibility for its contents) and by MS Bank Asia Limited; in Singapore by MS Asia (Singapore) Pte. (Registration number 199206298Z) and/or MS Asia (Singapore) Securities Pte Ltd (Registration number 200008434H),
+
+regulated by the Monetary Authority of Singapore (which accepts legal responsibility for its contents and should be contacted with respect to any matters arising from, or in connection with, MS) and by MS Bank Asia Limited, Singapore Branch (Registration number T14FC0118J); in Australia to "wholesale clients" within the meaning of the Australian Corporations Act by MS Australia Limited A.B.N. 67 003 734 576, holder of Australian financial services license No. 233742, which accepts responsibility for its contents; in Australia to "wholesale clients" and "retail clients" within the meaning of the Australian Corporations Act by MS Wealth Management Australia Pty Ltd (A.B.N. 19 009 145 555, holder of Australian financial services license No. 240813, which accepts responsibility for its contents; in Korea by MS & Co International plc, Seoul Branch; in India by MS India Company Private Limited having Corporate Identification No (CIN) U22990MH1998PTC115305, regulated by the Securities and Exchange Board of India ("SEBI") and holder of licenses as a Research Analyst (SEBI Registration No. INH000001105); Stock Broker (SEBI Stock Broker Registration No. INZ000244438), Merchant Banker (SEBI Registration No. INM000011203), and depository participant with National Securities Depository Limited (SEBI Registration No. IN-DP-NSDL-567-2021) having registered office at Altimus, Level 39 & 40, Pandurang Budhkar Marg, Worli, Mumbai 400018, India; Telephone no. +91-22-61181000; Compliance Officer Details: Mr. Tejarshi Hardas, Tel. No.: +91-22-61181000 or Email: msic-compliance@morganstanley.com. MS India Company Private Limited (MSICPL) may use AI tools in providing research services. All recommendations contained herein are made by the duly qualified research analysts; in Canada by MS Canada Limited; in Germany and the European Economic Area where required by MS Europe S.E., authorised and regulated by Bundesanstalt fuer Finanzdienstleistungsaufsicht (BaFin) under the reference number 149169; in the US by MS & Co. LLC, which accepts responsibility for its contents. MS & Co. International plc, authorized by the Prudential Regulation Authority and regulated by the Financial Conduct Authority and the Prudential Regulation Authority, disseminates in the UK research that it has prepared, and research which has been prepared by any of its affiliates, only to persons who (i) are investment professionals falling within Article 19(5) of the Financial Services and Markets Act 2000 (Financial Promotion) Order 2005 (as amended, the "Order"); (ii) are persons who are high net worth entities falling within Article 49(2)(a) to (d) of the Order; or (iii) are persons to whom an invitation or inducement to engage in investment activity (within the meaning of section 21 of the Financial Services and Markets Act 2000, as amended) may otherwise lawfully be communicated or caused to be communicated. RMB MS Proprietary Limited is a member of the JSE Limited and A2X (Pty) Ltd. RMB MS Proprietary Limited is a joint venture owned equally by MS International Holdings Inc. and RMB Investment Advisory (Proprietary) Limited, which is wholly owned by FirstRand Limited. The information in MS is being disseminated by MS Saudi Arabia, regulated by the Capital Market Authority in the Kingdom of Saudi Arabia, and is directed at Sophisticated investors only.
+
+# Disclosure Section (Cont.)
+
+The information in MS is being communicated by MS & Co. International plc (DIFC Branch), regulated by the Dubai Financial Services Authority (the DFSA) or by MS & Co. International plc (ADGM Branch), regulated by the Financial Services Regulatory Authority Abu Dhabi (the FSRA), and is directed at Professional Clients only, as defined by the DFSA or the FSRA, respectively. The financial products or financial services to which this research relates will only be made available to a customer who we are satisfied meets the regulatory criteria of a Professional Client. A distribution of the different MS Research ratings or recommendations, in percentage terms for Investments in each sector covered, is available upon request from your sales representative.
+
+The information in MS is being communicated by MS & Co. International plc (QFC Branch), regulated by the Qatar Financial Centre Regulatory Authority (the QFCRA), and is directed at business customers and market counterparties only and is not intended for Retail Customers as defined by the QFCRA.
+
+As required by the Capital Markets Board of Turkey, investment information, comments and recommendations stated here, are not within the scope of investment advisory activity. Investment advisory service is provided exclusively to persons based on their risk and income preferences by the authorized firms. Comments and recommendations stated here are general in nature. These opinions may not fit to your financial status, risk and return preferences. For this reason, to make an investment decision by relying solely to this information stated here may not bring about outcomes that fit your expectations.
+
+The trademarks and service marks contained in MS are the property of their respective owners. Third-party data providers make no warranties or representations relating to the accuracy, completeness, or timeliness of the data they provide and shall not have liability for any damages relating to such data. The Global Industry Classification Standard (GICS) was developed by and is the exclusive property of MSCI and S&P.
+
+MS, or any portion thereof may not be reprinted, sold or redistributed without the written consent of MS.
+
+Indicators and trackers referenced in MS may not be used as, or treated as, a benchmark under Regulation EU 2016/1011, or any other similar framework.
+
+The issuers and/or fixed income products recommended or discussed in certain fixed income research reports may not be continuously followed. Accordingly, investors should regard those fixed income research reports as providing stand-alone analysis and should not expect continuing analysis or additional reports relating to such issuers and/or individual fixed income products.
+
+MS may hold, from time to time, material financial and commercial interests regarding the company subject to the Research report.
+
+Registration granted by SEBI and certification from the National Institute of Securities Markets (NISM) in no way guarantee performance of the intermediary or provide any assurance of returns to investors. Investment in securities market are subject to market risks. Read all the related documents carefully before investing.
+
+The following authors are neither Equity Research Analysts/Strategists nor Fixed Income Research Analysts/Strategists and are not opining on or expressing recommendations on equity or fixed income securities: Chetan Ahya.
+
+dr1805
+
+# The Americas
+
+1585 Broadway
+
+New York, NY 10036-8293
+
+United States
+
++1 212 761 4000
+
+# Europe
+
+20 Bank Street, Canary Wharf
+
+London E14 4AD
+
+United Kingdom
+
++44 (0)20 7425 8000
+
+# Japan
+
+1-9-7 Otemachi, Chiyoda-ku
+
+Tokyo 100-8104
+
+Japan
+
++81 (0) 3 6836 5000
+
+# Asia/Pacific
+
+1 Austin Road West
+
+Kowloon
+
+Hong Kong
+
++852 2848 5200

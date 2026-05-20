@@ -1,0 +1,432 @@
+你是闲鱼资料类商品文案编辑，擅长把一份投研/行业/公司研报改写成适合闲鱼发布的商品说明。
+
+【目标】
+- 基于下面研报解析内容，生成一份可以复制到闲鱼商品详情里的中文文案。
+- 风格参考用户提供的闲鱼对标笔记：标题直给、信息密度高、用途明确、适合人群明确、交付方式清楚。
+- 语言要自然，像真实卖家发布，不要像公众号文章、小红书笔记或 AI 摘要。
+- 不要使用太夸张的营销词，不要承诺收益，不要说“稳赚”“内幕”“必涨”。
+- 可以适度口语化，但不要低俗。
+
+【必须输出结构】
+1. `闲鱼标题：` 一行，控制在 30 字以内，适合商品标题。
+2. `商品描述：` 正文，适合直接粘贴到闲鱼详情页。
+3. `Hashtag：` 一行，给 6-10 个平台可用标签，用 `#` 开头，空格分隔。
+
+【严禁输出】
+- 不要输出 `建议价格：`。
+- 不要输出 `搜索关键词：`。
+- 不要输出“搜索词”“关键词”“搜索关键词”等栏目。
+- 不要给具体价格区间、成交承诺或价格建议。
+
+【商品描述写法】
+- 第一段：直接说明这是什么报告，页数/语言/主题/公司或行业。如果页数、日期、语言不确定，就不要编。
+- 第二段：说明适合谁，比如投研、券商面试、PE/VC、行业研究、学习参考、写报告等。
+- 第三段：用 3-5 个亮点 bullet，风格参考：
+  ✅ 三大情景框架：DCF、P/ARR、EV/Sales
+  ✅ 关键变量分析
+  ✅ 估值逻辑、假设、终值占比等核心内容覆盖
+  ✅ 适合准备 AI 相关面试、研究 AI 估值的同学
+- 第四段：交付说明，参考：`资料为电子版 PDF，拍下后 24 小时内发网盘链接或邮箱。`
+- 第五段：虚拟商品说明，参考：`电子类资料一经发货不退不换，有问题可以提前咨询。`
+- 可以补一句：`需要其他报告也可以私聊，支持一站式咨询。`
+
+【Hashtag 写法】
+- 只输出平台相对安全、偏学习和资料属性的标签。
+- 推荐从这些里选择：`#学习资料` `#研究笔记` `#学习笔记` `#行业研究` `#研报资料` `#资料整理` `#报告学习` `#案例研究`。
+- 不要输出 `#财经` `#投资` `#股票` `#基金` `#理财` `#暴富` `#内幕` 等敏感标签。
+
+【平台发布合规要求】
+- 不要出现“投资建议”“买入”“卖出”“强烈推荐”“稳赚”“保本”“必涨”“抄底”“上车”“内幕”“翻倍”等金融操作或收益承诺表达。
+- “投资”相关词尽量改成“投研”“研究”“观察”“学习参考”；如果必须保留，也要保持中性。
+- 不要出现“独家”“原版”“内部”“无水印”“全网最低”“最全”“最强”“必看”等高风险或极限词。
+- 不要写“关注”“点赞”“求关注”“评论区留言”等直接互动诱导。
+- 不要承诺资料一定可用于获利、就业、通过面试或获得收益。
+
+【合规与避坑】
+- 默认避免出现具体投行品牌名，比如“GS”“GS”“MS”，统一写作“投行研报”或“投行研报”。
+- 不要承诺研究或交易结果。
+- 不要伪造页数、日期、作者、公司覆盖范围。研报未给出时就不写。
+- 不要输出解释说明，只输出闲鱼文案本身。
+
+【研报解析内容】
+"""
+# US Rates Watch
+
+# Long goodbye
+
+# Longs find the exit
+
+Longs have capitulated across the curve, leaving only limited residual out of the money exposure, while shorts now dominate and sit largely in the money. Global asset managers are also contending with potential Fed hikes & are adjusting positioning accordingly (see: Fed hikes enter the chat). CTAs are stretched short and increasingly so further out the curve. At the same time, active managers remain underweight USTs and overweight spreads, with IG and MBS outperformance reinforcing that tilt.
+
+The key tension is in flows. Even as positioning washes out and longs exit, higher yields are drawing money back in. Fund inflows have accelerated—led by Agg, short-duration, and IG—while long-duration funds see outflows, signaling shift toward shorter WAM.
+
+Foreign dynamics add another layer. Japanese investors remained net sellers through March, though extent of recent FX intervention selling is still unclear. For now, there is limited evidence of large, sustained official UST liquidation, but the risk remains if intervention flows scale further.
+
+# Exhibit 1: Curve-o-meter
+
+Rates to trade like positioning is modestly short & in flattener; residual out of the money longs continue to bias rates to selloff
+
+![](images/f5d3a27edcc27505a11806aa5c4f6039bc4281eae054983a55a32bbb40933694.jpg)
+
+<details>
+<summary>gauge</summary>
+
+| Category                  | Value |
+| ------------------------- | ----- |
+| Short duration Steeper curve | 30    |
+| Long duration Flatter curve   | 100   |
+</details>
+
+Source: BofA Global Research, Note: dial shows duration = average 5y percentiles of CTA positioning + net OTM position implied from futures positioning proxy + CFTC non-comm ex LF + fund regression duration beta. Curve = avg 5y percentiles of CTA betas + futures positioning proxy + fund regression curve beta
+
+BofA GLOBAL RESEARCH
+
+# Long capitulation
+
+Our futures positioning proxy shows that out of the money longs were closed across the curve last week (Exhibit 11 and Exhibit 12). Long exposure has thinned across the curve, with only residual OTM longs in TU, TY, and WN. Shorts now dominate and sit largely ITM. Positioning still skews bearish, with net OTM longs keeping a selloff bias intact.
+
+Report continued on subsequent pages...
+
+Trading ideas and investment strategies discussed herein may give rise to significant risk and are not suitable for all investors. Investors should have experience in relevant markets and the financial resources to absorb any losses arising from applying these ideas or strategies.
+
+BofA does and seeks to do business with issuers covered in its research reports. As a result, investors should be aware that the firm may have a conflict of interest that could affect the objectivity of this report. Investors should consider this report as only a single factor in making their investment decision.
+
+Refer to important disclosures on page 24 to 26. Analyst Certification on page 24. 12975167
+
+# 18 May 2026
+
+Rates Research
+
+United States
+
+Meghan Swiber, CFA
+
+Rates Strategist
+
+BofAS
+
+meghan.swiber@bofa.com
+
+Eleanor Xiao
+
+Rates Strategist
+
+BofAS
+
+eleanor.xiao@bofa.com
+
+US Rates Research
+
+BofAS
+
+See Team Page for List of Analysts
+
+CFTC: Commodities Futures Trading Commission
+
+CTA: Commodity Trading Adviser
+
+FV: Treasury 5Y contract
+
+ITM: In the Money
+
+MBS: Mortgage Backed Securities
+
+OTM: Out of the Money
+
+US: Treasury 20Y contract.
+
+UST: Treasury Security
+
+SF: SOFR Futures
+
+TY: Treasury 10Y contract
+
+TIC: Treasury International Capital
+
+WN = Treasury 30Y contract
+
+See Appendix on page 23 for a detailed list of abbreviations and acronyms.
+
+# CTAs are at stretched shorts across the curve
+
+Our systematic strategies team sees stretched CTA shorts shifting from the front end to the long end in recent weeks (Exhibit 2 & Exhibit 3, see Flows monitor). They note the next moves in positioning will be largely dependent on vol. Should futures continue to decline on lower vol, shorts could continue to grow, but if vol increases, they we would expect shorts to pull back.
+
+Exhibit 2: 2y contract CTA positioning across different lookback models   
+All lookback models suggest CTAs are short 2y   
+![](images/4b822e507e7d9fbb83a20276c67ad773127ceccf66991b1b5a3d2c1aff4a4a2c.jpg)
+
+<details>
+<summary>line</summary>
+
+| Date   | Short | Medium | Long |
+|--------|-------|--------|------|
+| May-25 | -5%   | -10%   | 5%   |
+| Jul-25 | -10%  | -5%    | -10% |
+| Oct-25 | 15%   | 15%    | 15%  |
+| Dec-25 | -15%  | 5%     | 15%  |
+| Feb-26 | -20%  | -5%    | -10% |
+| Apr-26 | -20%  | -10%   | -20% |
+</details>
+
+Source: BoFA Global Research   
+BofA GLOBAL RESEARCH
+
+Exhibit 3: 30y contract CTA positioning across different lookback models   
+All lookback models suggest CTAs are short 30y   
+![](images/e665c1968377865aa88eae4e8fbad8dad8715733fc263c79c8a6a6dd445a6779.jpg)
+
+<details>
+<summary>line</summary>
+
+| Date   | Short | Medium | Long |
+|--------|-------|--------|------|
+| May-25 | -3%   | -4%    | -5%  |
+| Jul-25 | -1%   | -2%    | -3%  |
+| Oct-25 | 8%    | 7%     | 6%   |
+| Dec-25 | 9%    | 10%    | 11%  |
+| Feb-26 | -7%   | 0%     | 1%   |
+| Apr-26 | -5%   | -3%    | -2%  |
+</details>
+
+Source: BofA Global Research   
+BofA GLOBAL RESEARCH
+
+# Asset managers also get shorter
+
+Asset managers largely added to shorts or closed longs last week (Exhibit 9). Net shorts were increased across all points besides US & WN. New longs were only created at the long end of the curve, pointing to some flattener repositioning. Total flows over the last 4w also reflect net short positioning pivot (Exhibit 10).
+
+# Active funds are OW spreads, UW USTs
+
+Active benchmark Agg funds remain underweight (UW) USTs and overweight (OW) MBS & IG (Exhibit 43- Exhibit 48). They are also relatively neutral curve. Over the past month, the biggest change in positioning has been the growing IG overweight. Spread overweights have supported active performance with IG & MBS outperforming USTs since the start of April (Exhibit 42).
+
+# Higher yields have driven inflows & WAM shortening
+
+Positioning still looks broadly short, but fund flows have firmed as duration sold off (Exhibit 37). US FI funds took in \$18bn last week—2x the 12-week pace. Inflows were led by Agg, short gov, and IG, while long gov was the lone outflow, reinforcing a shift to shorter WAM alongside renewed hike pricing.
+
+# Japanese private investors sell in March
+
+MoF data released last week shows Japanese private investors sold \$14bn of USTs in March after \$18bn of sales in Feb, when rates were at low end of recent range. Much of the selling was driven by banks, though pensions & lifers were active sellers as well (Exhibit 35). In recent weeks however, foreign private bond holdings have been inflecting higher suggesting some dip buying (Exhibit 27).
+
+# Potential of JPY intervention signs in Fed data
+
+Recent suspected JPY intervention has raised questions on funding source and whether it drove UST sales. Our JPY strategists estimate \~\$72bn intervention flow—potentially largest since '22—with implied UST sales of \$40–50bn (see: Japan Rates and FX Watch).
+
+Initial changes in foreign RRP & custodial flows showed little evidence of foreign sales the week before or after suspected intervention (as of April 30). Data released Thursday for the week ending May 13 showed a \$23bn decline from the week prior and a more modest \$10bn decline since week before potential intervention. Foreign RRP, a proxy for official sector cash, has been little changed (Exhibit 33 & Exhibit 34). Changes on net are significantly lower than potential intervention size. The widening in front-end swap spreads since April 29 is also inconsistent with market-moving official sales.
+
+Funding of the intervention thus remains unclear. There was sharp official selling through March, likely contributing to weaker auction demand (see: Tail spin). Monday's TIC data should clarify which regions drove March sales.
+
+If further JPY intervention requires sales, something closer to \~\$100bn would likely be more consequential for the UST market. That scale aligns with custodial declines at the start of the Iran conflict which likely contributed to the pullback in broader demand and may pose a headwind to long front-end spread positions.
+
+# Week Ahead
+
+Exhibit 4: On deck next week
+
+Calendar of upcoming events
+
+<table><tr><td></td><td colspan="3">US Data</td><td>Fed Speaker / Event</td><td colspan="3">Treasury Auction</td><td colspan="2">Treasury Settlements</td></tr><tr><td></td><td>Series</td><td>BofA</td><td>BB Consensus</td><td></td><td>Security</td><td>Amount ($bn)</td><td>Prior Δ</td><td>Security</td><td>($bn)</td></tr><tr><td rowspan="2">M, May 18</td><td rowspan="2">NAHB Housing Market Index</td><td rowspan="2">34</td><td rowspan="2">34</td><td rowspan="2"></td><td>13-Week Bills</td><td>89</td><td>0</td><td rowspan="2"></td><td rowspan="2"></td></tr><tr><td>26-Week Bills</td><td>77</td><td>0</td></tr><tr><td rowspan="2">T, May 19</td><td>ADP Weekly Employment Change</td><td>—</td><td>—</td><td>8:00 Fed&#x27;s Waller in Moderated Discussion</td><td rowspan="2">6-Week Bills</td><td rowspan="2">85</td><td rowspan="2">5</td><td rowspan="2">Bills</td><td rowspan="2">40</td></tr><tr><td>Pending Home Sales MoM</td><td>1.50%</td><td>1.60%</td><td>19:00 Fed&#x27;s Paulson Speaks on Economic Outlook</td></tr><tr><td>W, May 20</td><td>FOMC Meeting Minutes</td><td>—</td><td>—</td><td>9:15 Fed&#x27;s Barr Speaks on Consumer Financial Health</td><td>20-Year Bond</td><td>16</td><td></td><td></td><td></td></tr><tr><td rowspan="6">T, May 21</td><td>Initial Jobless Claims</td><td>207k</td><td>—</td><td rowspan="6"></td><td rowspan="6">9-Year 8-Month TIPS</td><td rowspan="6">19</td><td rowspan="6"></td><td rowspan="6">Bills</td><td rowspan="6">17</td></tr><tr><td>Philadelphia Fed Business Outlook</td><td>15</td><td>12</td></tr><tr><td>Housing Starts</td><td>1400k</td><td>1420k</td></tr><tr><td>Building Permits</td><td>1350k</td><td>1385k</td></tr><tr><td>S&amp;P Global US Manufacturing PMI</td><td>53.8</td><td>—</td></tr><tr><td>S&amp;P Global US Services PMI</td><td>51.5</td><td>—</td></tr><tr><td>F, May 22</td><td>U. of Mich. Sentiment</td><td>48</td><td>48.2</td><td>10:00 Fed&#x27;s Waller Speaks on Economic Outlook</td><td></td><td></td><td></td><td></td><td></td></tr></table>
+
+Source: BofA Global Research, Bloomberg, US Treasury
+
+BofA GLOBAL RESEARCH
+
+# Positioning indicators
+
+Exhibit 5: 5y percentile of 10 equivalent duration positioning (percentile: higher = longer)
+
+Futures proxy shows longs are still out of the money, funds are underweight, our top down 10y momentum figure suggests modest CTA shorts
+
+![](images/9585b997d0f8d4b9df9c786e6260551c8cceb6b5e7b450ed679fb8c8e49b9583.jpg)
+
+<details>
+<summary>line</summary>
+
+| Date   | Fund regression | CTA momentum | Futures proxy |
+|--------|-----------------|--------------|---------------|
+| May-25 | 30              | 95           | 80            |
+| Jun-25 | 15              | 60           | 70            |
+| Jul-25 | 25              | 80           | 10            |
+| Aug-25 | 75              | 85           | 70            |
+| Sep-25 | 90              | 85           | 40            |
+| Oct-25 | 75              | 85           | 35            |
+| Nov-25 | 60              | 75           | 0             |
+| Dec-25 | 50              | 65           | 75            |
+| Jan-26 | 40              | 70           | 40            |
+| Feb-26 | 35              | 50           | 30            |
+| Mar-26 | 80              | 65           | 80            |
+| Apr-26 | 30              | 50           | 70            |
+| May-26 | 0               | 45           | 80            |
+</details>
+
+Source: BofA Global Research, Bloomberg
+
+BofA GLOBAL RESEARCH
+
+Exhibit 6: 5y percentile of curve positioning (percentile: higher = longer back-end relative to front end)   
+Futures proxy skewed flatter; fund regression still relatively neutral while CTAs regression implies steepener   
+![](images/2991c1e8b40e23811477bc65c8d0fce0009b74e627756d675bc333f956258f48.jpg)
+
+<details>
+<summary>line</summary>
+
+| Month   | Fund regression | Futures proxy | CTA regression |
+|---------|-----------------|---------------|----------------|
+| May-25  | 0               | 100           | 75             |
+| Jun-25  | 0               | 80            | 70             |
+| Jul-25  | 95              | 95            | 90             |
+| Aug-25  | 10              | 60            | 85             |
+| Sep-25  | 20              | 80            | 70             |
+| Oct-25  | 30              | 30            | 60             |
+| Nov-25  | 40              | 10            | 60             |
+| Dec-25  | 50              | 70            | 70             |
+| Jan-26  | 90              | 55            | 80             |
+| Feb-26  | 95              | 75            | 70             |
+| Mar-26  | 85              | 60            | 85             |
+| Apr-26  | 80              | 40            | 60             |
+| May-26  | 60              | 80            | 25             |
+</details>
+
+Source: BofA Global Research, Bloomberg   
+BofA GLOBAL RESEARCH
+
+Exhibit 7: Asset manager and leveraged fund positioning (10y equivalent, \$bn)   
+Asset manager longs correspond with leveraged fund shorts   
+![](images/81a46476a5920be04e30579e6a02407f777feb207cef42b11e5c63ad9eb88414.jpg)
+
+<details>
+<summary>line</summary>
+
+| Year | Asset Manager | Leveraged Funds (RHS) |
+|------|---------------|------------------------|
+| 2016 | ~100          | ~50                    |
+| 2018 | ~300          | ~200                   |
+| 2020 | ~450          | ~500                   |
+| 2022 | ~250          | ~150                   |
+| 2024 | ~700          | ~600                   |
+| 2026 | ~850          | ~750                   |
+</details>
+
+Source: BofA Global Research, Bloomberg   
+BofA GLOBAL RESEARCH
+
+Exhibit 8: Asset manager futures positioning in 10y equivalents (\$bn)   
+More longs in TU-TY vs UXY – WN but deviation is narrowing   
+![](images/82296f44153fadfaef7fec00d56de96e790bfb0306cffcc0847ae52722557a95.jpg)
+
+<details>
+<summary>line</summary>
+
+| Date   | TU-TY | UXY - WN |
+|--------|-------|----------|
+| Jan-23 | 200   | 210      |
+| Jul-23 | 250   | 240      |
+| Jan-24 | 280   | 270      |
+| Jul-24 | 350   | 300      |
+| Jan-25 | 400   | 320      |
+| Jul-25 | 480   | 350      |
+| Jan-26 | 420   | 390      |
+</details>
+
+Source: BofA Global Research, Bloomberg   
+BofA GLOBAL RESEARCH
+
+Exhibit 9: Decomposition of 1w change in asset manager open interest (10y equivalent, \$bn)   
+More AM shorts created last week; significant new longs created at WN only   
+![](images/ddd932e125e25a82158849549b14f818267413b3bd25ac0d8f21f0bc53fbf106.jpg)
+
+<details>
+<summary>bar_line</summary>
+
+| Category | New Long | Long covering | New short | Short covering | Net |
+| -------- | -------- | ------------- | --------- | -------------- | --- |
+| SFR      |          |               |           |                |     |
+| TU       |          |               |           |                |     |
+| FV       |          |               |           |                |     |
+| TY       |          |               |           |                |     |
+| US       |          |               |           |                  |     |
+| UXY      |          |               |           |                |     |
+| WN       |          |               |           |                |     |
+</details>
+
+Source: BofA Global Research, Bloomberg   
+BofA GLOBAL RESEARCH
+
+Exhibit 11: Proxies for futures positioning (\$mil '01, duration-weighted by contract)   
+In the money positions are predominantly shorts with some long out of the money in TY and WN points of the curve   
+![](images/d1a6987603b55512ef741d22828e9f47a45381cdeedb3697dc92f5b3d20216cb.jpg)
+
+<detail
+
+[中间内容因长度限制已省略]
+
+ctors, officers and employees may be plaintiffs, defendants, co-defendants or co-plaintiffs with or involving issuers mentioned in this material is based on public information. Facts and views presented in this material that relate to any such proceedings have not been reviewed by, discussed with, and may not reflect information known to, professionals in other business areas of BofA in connection with the legal proceedings or matters relevant to such proceedings.
+
+This information has been prepared independently of any issuer of securities mentioned herein and not in connection with any proposed offering of securities or as agent of any issuer of any securities. None of BofAS any of its affiliates or their research analysts has any authority whatsoever to make any representation or warranty on behalf of the issuer(s). BofA Global Research policy prohibits research personnel from disclosing a recommendation, investment rating, or investment thesis for review by an issuer prior to the publication of a research report containing such rating, recommendation or investment thesis.
+
+Any information relating to sustainability in this material is limited as discussed herein and is not intended to provide a comprehensive view on any sustainability claim with respect to any issuer or security.
+
+Any information relating to the tax status of financial instruments discussed herein is not intended to provide tax advice or to be used by anyone to provide tax advice. Investors are urged to seek tax advice based on their particular circumstances from an independent tax professional.
+
+The information herein (other than disclosure information relating to BofA and its affiliates) was obtained from various sources and we do not guarantee its accuracy. This information may contain links to third-party websites. BofA is not responsible for the content of any third-party website or any linked content contained in a third-party website. Content contained on such third-party websites is not part of this information and is not incorporated by reference. The inclusion of a link does not imply any endorsement by or any affiliation with BofA. Access to any third-party website is at your own risk, and you should always review the terms and privacy policies at third-party websites before submitting any personal information to them. BofA is not responsible for such terms and privacy policies and expressly disclaims any liability for them.
+
+All opinions, projections and estimates constitute the judgment of the author as of the date of publication and are subject to change without notice. Prices also are subject to change without notice. BofA is under no obligation to update this information and BofA ability to publish information on the subject issuer(s) in the future is subject to applicable quiet periods. You should therefore assume that BofA will not update any fact, circumstance or opinion contained herein.
+
+Certain outstanding reports or investment opinions relating to securities, financial instruments and/or issuers may no longer be current. Always refer to the most recent research report relating to an issuer prior to making an investment decision.
+
+In some cases, an issuer may be classified as Restricted or may be Under Review or Extended Review. In each case, investors should consider any investment opinion relating to such issuer (or its security and/or financial instruments) to be suspended or withdrawn and should not rely on the analyses and investment opinion(s) pertaining to such issuer (or its securities and/or financial instruments) nor should the analyses or opinion(s) be considered a solicitation of any kind. Sales persons and financial advisors affiliated with BofAS or any of its affiliates may not solicit purchases of securities or financial instruments that are Restricted or Under Review and may only solicit securities under Extended Review in accordance with firm policies.
+
+Neither BofA nor any officer or employee of BofA accepts any liability whatsoever for any direct, indirect or consequential damages or losses arising from any use of this information.
+
+# Research Analysts
+
+# US Rates Research
+
+Ralph Axel
+
+Rates Strategist
+
+BofAS
+
+ralph.axel@bofa.com
+
+# Bruno Braizinha, CFA
+
+Rates Strategist
+
+BofAS
+
+bruno.braizinha@bofa.com
+
+# Mark Cabana, CFA
+
+Rates Strategist
+
+BofAS
+
+mark.cabana@bofa.com
+
+# Meghan Swiber, CFA
+
+Rates Strategist
+
+BofAS
+
+meghan.swiber@bofa.com
+
+# Katie Craig
+
+Rates Strategist
+
+BofAS
+
+katie.craig@bofa.com
+
+# Eleanor Xiao
+
+Rates Strategist
+
+BofAS
+
+eleanor.xiao@bofa.com
+
+Trading ideas and investment strategies discussed herein may give rise to significant risk and are not suitable for all investors. Investors should have experience in relevant markets and the financial resources to absorb any losses arising from applying these ideas or strategies.
+"""
