@@ -1,0 +1,362 @@
+[
+  {
+    "id": 7,
+    "name": "BofA-High Frequency Monitor：Inflation scare-260518.pdf",
+    "dropbox_path": "/zip_backup/260520/BofA-high frequency monitor：inflation scare-260518.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/BofA-high frequency monitor：inflation scare-260518.pdf",
+    "category": "macro_trend",
+    "score": 0.95,
+    "reason": "通胀高频监测宏观报告",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 8,
+    "name": "BofA-Liquid Insight Warsh & Fed B S： more bark than bite-260518.pdf",
+    "dropbox_path": "/zip_backup/260520/BofA-liquid insight warsh & fed b s： more bark than bite-260518.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/BofA-liquid insight warsh & fed b s： more bark than bite-260518.pdf",
+    "category": "macro_trend",
+    "score": 0.95,
+    "reason": "美联储政策评论宏观报告",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 9,
+    "name": "BofA-US Rates Watch：Long goodbye-260518.pdf",
+    "dropbox_path": "/zip_backup/260520/BofA-us rates watch：long goodbye-260518.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/BofA-us rates watch：long goodbye-260518.pdf",
+    "category": "macro_trend",
+    "score": 0.95,
+    "reason": "美国利率观察宏观报告",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 74,
+    "name": "MS-MS Global Macro Forum：Mid~Year Outlook： Our Highest~Conviction Views-260518.pdf",
+    "dropbox_path": "/zip_backup/260520/MS-MS global macro forum：mid~year outlook： our highest~conviction views-260518.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/MS-MS global macro forum：mid~year outlook： our highest~conviction views-260518.pdf",
+    "category": "macro_trend",
+    "score": 0.95,
+    "reason": "全球宏观论坛年中展望",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 86,
+    "name": "UBS-Japan Economic Comment：Q1 GDP confirmed broad~based strength-260519.pdf",
+    "dropbox_path": "/zip_backup/260520/ubs-japan economic comment：q1 gdp confirmed broad~based strength-260519.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/ubs-japan economic comment：q1 gdp confirmed broad~based strength-260519.pdf",
+    "category": "macro_trend",
+    "score": 0.95,
+    "reason": "日本GDP经济评论",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 1,
+    "name": "BARC-IT Hardware and Communications Equipment：Highlights from Meetings in Asia-260518.pdf",
+    "dropbox_path": "/zip_backup/260520/BARC-it hardware and communications equipment：highlights from meetings in asia-260518.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/BARC-it hardware and communications equipment：highlights from meetings in asia-260518.pdf",
+    "category": "macro_trend",
+    "score": 0.9,
+    "reason": "行业趋势报告，不针对单一公司",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 3,
+    "name": "BofA-Global Equity Volatility Insights：Underestimate FOMO at your own risk-260519.pdf",
+    "dropbox_path": "/zip_backup/260520/BofA-global equity volatility insights：underestimate fomo at your own risk-260519.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/BofA-global equity volatility insights：underestimate fomo at your own risk-260519.pdf",
+    "category": "macro_trend",
+    "score": 0.9,
+    "reason": "全球股市波动率宏观策略报告",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 5,
+    "name": "BofA-Basic Materials ~ China：Copper Ally prices remain firm； TC RC drops on tight supply； iron ore holds strong-260518.pdf",
+    "dropbox_path": "/zip_backup/260520/BofA-basic materials ~ china：copper ally prices remain firm； tc rc drops on tight supply； iron ore holds strong-260518.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/BofA-basic materials ~ china：copper ally prices remain firm； tc rc drops on tight supply； iron ore holds strong-260518.pdf",
+    "category": "macro_trend",
+    "score": 0.9,
+    "reason": "中国基础材料行业供需趋势",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 12,
+    "name": "CITI-China Infant Formula：2026 proprietary survey findings-260518.pdf",
+    "dropbox_path": "/zip_backup/260520/citi-china infant formula：2026 proprietary survey findings-260518.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/citi-china infant formula：2026 proprietary survey findings-260518.pdf",
+    "category": "macro_trend",
+    "score": 0.9,
+    "reason": "中国奶粉行业调查，非单一公司",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 14,
+    "name": "CITI-China Property：Apr NBS： Accelerating Starts & REI Decline； Narrower Sales Drop-260518.pdf",
+    "dropbox_path": "/zip_backup/260520/citi-china property：apr nbs： accelerating starts & rei decline； narrower sales drop-260518.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/citi-china property：apr nbs： accelerating starts & rei decline； narrower sales drop-260518.pdf",
+    "category": "macro_trend",
+    "score": 0.9,
+    "reason": "中国房地产行业数据报告",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 15,
+    "name": "CITI-Metal Matters：Aluminium ~ The most bullish set~up in over~50 years， next stop $4，000 t-260518.pdf",
+    "dropbox_path": "/zip_backup/260520/citi-metal matters：aluminium ~ the most bullish set~up in over~50 years， next stop $4，000 t-260518.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/citi-metal matters：aluminium ~ the most bullish set~up in over~50 years， next stop $4，000 t-260518.pdf",
+    "category": "macro_trend",
+    "score": 0.9,
+    "reason": "铝金属大宗商品趋势报告",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 18,
+    "name": "DB-China Solar Sector：Takeaways from Chinese Companies at DB's Virtual Global Solar Conference-260518.pdf",
+    "dropbox_path": "/zip_backup/260520/DB-china solar sector：takeaways from chinese companies at db's virtual global solar conference-260518.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/DB-china solar sector：takeaways from chinese companies at db's virtual global solar conference-260518.pdf",
+    "category": "macro_trend",
+    "score": 0.9,
+    "reason": "中国太阳能行业会议总结",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 22,
+    "name": "DB-New Energy Vehicle：Top 15 countries' new energy vehicle sales volume tracker~March 2026-260519.pdf",
+    "dropbox_path": "/zip_backup/260520/DB-new energy vehicle：top 15 countries' new energy vehicle sales volume tracker~march 2026-260519.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/DB-new energy vehicle：top 15 countries' new energy vehicle sales volume tracker~march 2026-260519.pdf",
+    "category": "macro_trend",
+    "score": 0.9,
+    "reason": "新能源汽车行业销量追踪",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 40,
+    "name": "GS-Natural Gas Comment： US Production Showing Signs of Price Sensitivity-260519.pdf",
+    "dropbox_path": "/zip_backup/260520/GS-natural gas comment： us production showing signs of price sensitivity-260519.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/GS-natural gas comment： us production showing signs of price sensitivity-260519.pdf",
+    "category": "macro_trend",
+    "score": 0.9,
+    "reason": "天然气行业评论，非单一公司",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 50,
+    "name": "HSBC-China Chemicals：Investor marketing feedback-260518.pdf",
+    "dropbox_path": "/zip_backup/260520/hsbc-china chemicals：investor marketing feedback-260518.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/hsbc-china chemicals：investor marketing feedback-260518.pdf",
+    "category": "macro_trend",
+    "score": 0.9,
+    "reason": "中国化工行业投资者反馈",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 51,
+    "name": "HSBC-China Real Estate：Construction decline： Less built， less left-260518.pdf",
+    "dropbox_path": "/zip_backup/260520/hsbc-china real estate：construction decline： less built， less left-260518.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/hsbc-china real estate：construction decline： less built， less left-260518.pdf",
+    "category": "macro_trend",
+    "score": 0.9,
+    "reason": "中国房地产行业趋势报告",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 53,
+    "name": "HSBC-China EV Tracker：Exports offset soft domestic demand-260518.pdf",
+    "dropbox_path": "/zip_backup/260520/hsbc-china ev tracker：exports offset soft domestic demand-260518.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/hsbc-china ev tracker：exports offset soft domestic demand-260518.pdf",
+    "category": "macro_trend",
+    "score": 0.9,
+    "reason": "中国电动车行业追踪报告",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 56,
+    "name": "JEF-China - Technology：PCB CCL Update： Will High~speed Copper Foil Become Another Bottleneck？-260518.pdf",
+    "dropbox_path": "/zip_backup/260520/JEF-china - technology：pcb ccl update： will high~speed copper foil become another bottleneck？-260518.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/JEF-china - technology：pcb ccl update： will high~speed copper foil become another bottleneck？-260518.pdf",
+    "category": "macro_trend",
+    "score": 0.9,
+    "reason": "中国PCB/CCL行业更新",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 60,
+    "name": "MS-China Coal：Weekly Coal Update： Coal Production Declined Seasonally in May-260518.pdf",
+    "dropbox_path": "/zip_backup/260520/MS-china coal：weekly coal update： coal production declined seasonally in may-260518.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/MS-china coal：weekly coal update： coal production declined seasonally in may-260518.pdf",
+    "category": "macro_trend",
+    "score": 0.9,
+    "reason": "中国煤炭行业周报",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 63,
+    "name": "MS-China Property：Softer Sales Declines in April； We Stay Prudent on Durability-260518.pdf",
+    "dropbox_path": "/zip_backup/260520/MS-china property：softer sales declines in april； we stay prudent on durability-260518.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/MS-china property：softer sales declines in april； we stay prudent on durability-260518.pdf",
+    "category": "macro_trend",
+    "score": 0.9,
+    "reason": "中国房地产行业数据报告",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 64,
+    "name": "MS-China Hong Kong Consumer：China Retail Sales –Apr 2026：Pace Slowed Further-260518.pdf",
+    "dropbox_path": "/zip_backup/260520/MS-china hong kong consumer：china retail sales –apr 2026：pace slowed further-260518.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/MS-china hong kong consumer：china retail sales –apr 2026：pace slowed further-260518.pdf",
+    "category": "macro_trend",
+    "score": 0.9,
+    "reason": "中国零售销售宏观数据报告",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 66,
+    "name": "MS-China Property：Weekly Database Tracker #20-260518.pdf",
+    "dropbox_path": "/zip_backup/260520/MS-china property：weekly database tracker #20-260518.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/MS-china property：weekly database tracker #20-260518.pdf",
+    "category": "macro_trend",
+    "score": 0.9,
+    "reason": "中国房地产行业数据库追踪",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 68,
+    "name": "MS-China Telecoms：Rolling Out Token Plans-260518.pdf",
+    "dropbox_path": "/zip_backup/260520/MS-china telecoms：rolling out token plans-260518.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/MS-china telecoms：rolling out token plans-260518.pdf",
+    "category": "macro_trend",
+    "score": 0.9,
+    "reason": "中国电信行业报告",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 70,
+    "name": "MS-India Energy：Another Fuel Price Hike-260519.pdf",
+    "dropbox_path": "/zip_backup/260520/MS-india energy：another fuel price hike-260519.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/MS-india energy：another fuel price hike-260519.pdf",
+    "category": "macro_trend",
+    "score": 0.9,
+    "reason": "印度能源行业报告",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 71,
+    "name": "MS-Hong Kong China Insurance： Marketing Pack 1Q26-260518.pdf",
+    "dropbox_path": "/zip_backup/260520/MS-hong kong china insurance： marketing pack 1q26-260518.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/MS-hong kong china insurance： marketing pack 1q26-260518.pdf",
+    "category": "macro_trend",
+    "score": 0.9,
+    "reason": "香港/中国保险行业营销资料",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 82,
+    "name": "NOM-Global Physical AI：Humanoid commercialization-260519.pdf",
+    "dropbox_path": "/zip_backup/260520/NOM-global physical ai：humanoid commercialization-260519.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/NOM-global physical ai：humanoid commercialization-260519.pdf",
+    "category": "macro_trend",
+    "score": 0.9,
+    "reason": "全球物理AI/人形机器人主题报告",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 84,
+    "name": "UBS-Mining Expert Calls：#1 China Economics： Resilience-260519.pdf",
+    "dropbox_path": "/zip_backup/260520/ubs-mining expert calls：#1 china economics： resilience-260519.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/ubs-mining expert calls：#1 china economics： resilience-260519.pdf",
+    "category": "macro_trend",
+    "score": 0.9,
+    "reason": "中国经济专家电话会议",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 2,
+    "name": "Bernstein-Global Oil Services Oil Services – Artificial Intelligence： later， not quite yet ~ who cares of the ego of an Agentic AI in the Oil Services industry？-260519.pdf",
+    "dropbox_path": "/zip_backup/260520/bernstein-global oil services oil services – artificial intelligence： later， not quite yet ~ who cares of the ego of an agentic ai in the oil services industry？-260519.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/bernstein-global oil services oil services – artificial intelligence： later， not quite yet ~ who cares of the ego of an agentic ai in the oil services industry？-260519.pdf",
+    "category": "macro_trend",
+    "score": 0.85,
+    "reason": "全球油服行业主题报告",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 10,
+    "name": "BofA-Software ~ China （H A） China Conference Takeaways： accelerating AI monetization； focus on growth visibility-260518.pdf",
+    "dropbox_path": "/zip_backup/260520/BofA-software ~ china （h a） china conference takeaways： accelerating ai monetization； focus on growth visibility-260518.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/BofA-software ~ china （h a） china conference takeaways： accelerating ai monetization； focus on growth visibility-260518.pdf",
+    "category": "macro_trend",
+    "score": 0.85,
+    "reason": "中国软件行业会议总结，非单一公司",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 17,
+    "name": "CITI-US Semiconductors：CPU TAM of $132B by 2030E； Raising TPs on INTC & AMD-260518.pdf",
+    "dropbox_path": "/zip_backup/260520/citi-us semiconductors：cpu tam of $132b by 2030e； raising tps on intc & amd-260518.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/citi-us semiconductors：cpu tam of $132b by 2030e； raising tps on intc & amd-260518.pdf",
+    "category": "macro_trend",
+    "score": 0.85,
+    "reason": "美国半导体行业TAM分析，非单一公司",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 59,
+    "name": "MS-US Technology  Large-Cap Institutional Ownership 1Q26 Mega-Cap Tech Under-Ownership Narrows-260519.pdf",
+    "dropbox_path": "/zip_backup/260520/ms-us technology  large-cap institutional ownership 1q26 mega-cap tech under-ownership narrows-260519.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/ms-us technology  large-cap institutional ownership 1q26 mega-cap tech under-ownership narrows-260519.pdf",
+    "category": "macro_trend",
+    "score": 0.85,
+    "reason": "美国科技股机构持仓分析",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 62,
+    "name": "MS-China Autos & Shared Mobility：Europe Marketing Feedback~Global Auto Shake~up-260518.pdf",
+    "dropbox_path": "/zip_backup/260520/MS-china autos & shared mobility：europe marketing feedback~global auto shake~up-260518.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/MS-china autos & shared mobility：europe marketing feedback~global auto shake~up-260518.pdf",
+    "category": "macro_trend",
+    "score": 0.85,
+    "reason": "中国汽车与共享出行行业反馈",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 73,
+    "name": "MS-Investor Presentation：Electronic Components： Renewed Focus on ValueAdded N. American Smartphone Components Plus AI Computing-260519.pdf",
+    "dropbox_path": "/zip_backup/260520/MS-investor presentation：electronic components： renewed focus on valueadded n. american smartphone components plus ai computing-260519.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/MS-investor presentation：electronic components： renewed focus on valueadded n. american smartphone components plus ai computing-260519.pdf",
+    "category": "macro_trend",
+    "score": 0.85,
+    "reason": "电子元器件行业投资者演示",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 77,
+    "name": "MS-Tech Bytes：LTAs – How They Are Affecting Memory-260518.pdf",
+    "dropbox_path": "/zip_backup/260520/MS-tech bytes：ltas – how they are affecting memory-260518.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/MS-tech bytes：ltas – how they are affecting memory-260518.pdf",
+    "category": "macro_trend",
+    "score": 0.85,
+    "reason": "存储行业技术分析",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 4,
+    "name": "Bernstein-Midcap Research：Nice European Small and Midcap conference： 10 questions for management-260519.pdf",
+    "dropbox_path": "/zip_backup/260520/bernstein-midcap research：nice european small and midcap conference： 10 questions for management-260519.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/bernstein-midcap research：nice european small and midcap conference： 10 questions for management-260519.pdf",
+    "category": "macro_trend",
+    "score": 0.8,
+    "reason": "中小盘股会议纪要，非单一公司",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 79,
+    "name": "MS-Technology ~ European Semiconductors（SOIT.PA）Framing the CPO opportunity for Soitec and Besi-260519.pdf",
+    "dropbox_path": "/zip_backup/260520/MS-technology ~ european semiconductors（soit.pa）framing the cpo opportunity for soitec and besi-260519.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/MS-technology ~ european semiconductors（soit.pa）framing the cpo opportunity for soitec and besi-260519.pdf",
+    "category": "macro_trend",
+    "score": 0.8,
+    "reason": "欧洲半导体行业技术分析",
+    "classifier": "deepseek"
+  }
+]
