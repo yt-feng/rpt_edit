@@ -1,0 +1,188 @@
+{
+  "created_at_utc": "2026-05-20T22:52:57.496881+00:00",
+  "source_date_dir": "xhs_notes/dropbox/260520",
+  "output_dir": "publish_ready_zips/260520",
+  "max_zip_mb": 90,
+  "single_zip": false,
+  "exclude_source_mineru": true,
+  "markdown_files_renamed_to_txt": true,
+  "excluded_debug_files": true,
+  "included_shard_count": 8,
+  "skipped_shards": [
+    "shard_10",
+    "shard_11",
+    "shard_12",
+    "shard_13",
+    "shard_14",
+    "shard_15",
+    "shard_16",
+    "shard_17",
+    "shard_18",
+    "shard_19",
+    "shard_20",
+    "shard_21",
+    "shard_22",
+    "shard_23",
+    "shard_24",
+    "shard_25",
+    "shard_26",
+    "shard_27",
+    "shard_28",
+    "shard_29",
+    "shard_30",
+    "shard_31",
+    "shard_32",
+    "shard_33",
+    "shard_34",
+    "shard_35",
+    "shard_36",
+    "shard_37",
+    "shard_38",
+    "shard_39",
+    "shard_8",
+    "shard_9"
+  ],
+  "total_files": 722,
+  "total_renamed_markdown_count": 180,
+  "total_raw_file_bytes": 125412948,
+  "zip_count": 2,
+  "zips": [
+    {
+      "path": "publish_ready_zips/260520/publish_ready_260520_part001.zip",
+      "size_bytes": 88492130,
+      "file_count": 541,
+      "renamed_markdown_count": 135,
+      "raw_file_bytes": 94140964,
+      "shards": [
+        "shard_0",
+        "shard_1",
+        "shard_2",
+        "shard_3",
+        "shard_4",
+        "shard_5"
+      ]
+    },
+    {
+      "path": "publish_ready_zips/260520/publish_ready_260520_part002.zip",
+      "size_bytes": 29056567,
+      "file_count": 181,
+      "renamed_markdown_count": 45,
+      "raw_file_bytes": 31271984,
+      "shards": [
+        "shard_5",
+        "shard_6",
+        "shard_7"
+      ]
+    }
+  ],
+  "included_shards": [
+    {
+      "shard": "shard_0",
+      "report_count": 5,
+      "file_count": 111,
+      "renamed_markdown_count": 25,
+      "raw_file_bytes": 21244876,
+      "reports": [
+        "0001-01-BofA-Securities-High-Frequency-Monitor-Inflation-scare-260518",
+        "0002-02-BofA-Securities-Liquid-Insight-Warsh---Fed-B-S--more-bark-than-bite-2605",
+        "0003-03-BofA-Securities-US-Rates-Watch-Long-goodbye-260518",
+        "0004-04-Morgan-Stanley-Morgan-Stanley-Global-Macro-Forum-Mid-Year-Outlook--Our-H",
+        "0005-05-UBS-Japan-Economic-Comment-Q1-GDP-confirmed-broad-based-strength-260519"
+      ]
+    },
+    {
+      "shard": "shard_1",
+      "report_count": 5,
+      "file_count": 101,
+      "renamed_markdown_count": 25,
+      "raw_file_bytes": 22515581,
+      "reports": [
+        "0001-06-Barclays-IT-Hardware-and-Communications-Equipment-Highlights-from-Meetin",
+        "0002-07-BofA-Securities-Global-Equity-Volatility-Insights-Underestimate-FOMO-at-",
+        "0003-08-BofA-Securities-Basic-Materials---China-Copper-Ally-prices-remain-firm--",
+        "0004-09-CITI-China-Infant-Formula-2026-proprietary-survey-findings-260518",
+        "0005-10-CITI-China-Property-Apr-NBS--Accelerating-Starts---REI-Decline--Narrower"
+      ]
+    },
+    {
+      "shard": "shard_2",
+      "report_count": 5,
+      "file_count": 103,
+      "renamed_markdown_count": 25,
+      "raw_file_bytes": 16408857,
+      "reports": [
+        "0001-11-CITI-Metal-Matters-Aluminium---The-most-bullish-set-up-in-over-50-years-",
+        "0002-12-Deutsche-Bank-China-Solar-Sector-Takeaways-from-Chinese-Companies-at-DB-",
+        "0003-13-Deutsche-Bank-New-Energy-Vehicle-Top-15-countries--new-energy-vehicle-sa",
+        "0004-14-Goldman-Sachs-Natural-Gas-Comment--US-Production-Showing-Signs-of-Price-",
+        "0005-15-HSBC-China-Chemicals-Investor-marketing-feedback-260518"
+      ]
+    },
+    {
+      "shard": "shard_3",
+      "report_count": 5,
+      "file_count": 103,
+      "renamed_markdown_count": 25,
+      "raw_file_bytes": 14617162,
+      "reports": [
+        "0001-16-HSBC-China-Real-Estate-Construction-decline--Less-built--less-left-26051",
+        "0002-17-HSBC-China-EV-Tracker-Exports-offset-soft-domestic-demand-260518",
+        "0003-18-Jefferies-China---Technology-PCB-CCL-Update--Will-High-speed-Copper-Foil",
+        "0004-19-Morgan-Stanley-China-Coal-Weekly-Coal-Update--Coal-Production-Declined-S",
+        "0005-20-Morgan-Stanley-China-Property-Softer-Sales-Declines-in-April--We-Stay-Pr"
+      ]
+    },
+    {
+      "shard": "shard_4",
+      "report_count": 5,
+      "file_count": 87,
+      "renamed_markdown_count": 25,
+      "raw_file_bytes": 13379546,
+      "reports": [
+        "0001-21-Morgan-Stanley-China-Hong-Kong-Consumer-China-Retail-Sales--Apr-2026-Pac",
+        "0002-22-Morgan-Stanley-China-Property-Weekly-Database-Tracker--20-260518",
+        "0003-23-Morgan-Stanley-China-Telecoms-Rolling-Out-Token-Plans-260518",
+        "0004-24-Morgan-Stanley-India-Energy-Another-Fuel-Price-Hike-260519",
+        "0005-25-Morgan-Stanley-Hong-Kong-China-Insurance--Marketing-Pack-1Q26-260518"
+      ]
+    },
+    {
+      "shard": "shard_5",
+      "report_count": 5,
+      "file_count": 87,
+      "renamed_markdown_count": 25,
+      "raw_file_bytes": 15358611,
+      "reports": [
+        "0001-26-Nomura-Global-Physical-AI-Humanoid-commercialization-260519",
+        "0002-27-UBS-Mining-Expert-Calls--1-China-Economics--Resilience-260519",
+        "0003-28-Bernstein-Global-Oil-Services-Oil-Services---Artificial-Intelligence--la",
+        "0004-29-BofA-Securities-Software---China--H-A--China-Conference-Takeaways--accel",
+        "0005-30-CITI-US-Semiconductors-CPU-TAM-of--132B-by-2030E--Raising-TPs-on-INTC---"
+      ]
+    },
+    {
+      "shard": "shard_6",
+      "report_count": 5,
+      "file_count": 107,
+      "renamed_markdown_count": 25,
+      "raw_file_bytes": 18944447,
+      "reports": [
+        "0001-31-MS-US-Technology-Large-Cap-Institutional-Ownership-1Q26-Mega-Cap-Tech-Un",
+        "0002-32-Morgan-Stanley-China-Autos---Shared-Mobility-Europe-Marketing-Feedback-G",
+        "0003-33-Morgan-Stanley-Investor-Presentation-Electronic-Components--Renewed-Focu",
+        "0004-34-Morgan-Stanley-Tech-Bytes-LTAs---How-They-Are-Affecting-Memory-260518",
+        "0005-35-Bernstein-Midcap-Research-Nice-European-Small-and-Midcap-conference--10-"
+      ]
+    },
+    {
+      "shard": "shard_7",
+      "report_count": 1,
+      "file_count": 23,
+      "renamed_markdown_count": 5,
+      "raw_file_bytes": 2943868,
+      "reports": [
+        "0001-36-Morgan-Stanley-Technology---European-Semiconductors-SOIT.PA-Framing-the-"
+      ]
+    }
+  ]
+}
