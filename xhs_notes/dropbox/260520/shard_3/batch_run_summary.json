@@ -1,0 +1,50 @@
+{
+  "input_dir": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs",
+  "total_pdf_count_before_shard": 36,
+  "pdf_count_before_skip": 5,
+  "pdf_count": 5,
+  "batch_size": 5,
+  "shard_index": 3,
+  "shard_count": 40,
+  "max_reports_per_shard": 5,
+  "max_total_reports": 0,
+  "skip_existing": true,
+  "skipped_existing_count": 0,
+  "skipped_existing": [],
+  "failures": 0,
+  "batches": [
+    {
+      "batch_index": 1,
+      "pdf_count": 5,
+      "files": [
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/16-HSBC-China Real Estate：Construction decline： Less built， less left-260518.pdf",
+          "batch_file": "/tmp/pdf_batch_001_a3hb125i/pdfs/0001-16-HSBC-China Real Estate-Construction decline- Less built- less left-260518.pdf",
+          "stable_index": "1"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/17-HSBC-China EV Tracker：Exports offset soft domestic demand-260518.pdf",
+          "batch_file": "/tmp/pdf_batch_001_a3hb125i/pdfs/0002-17-HSBC-China EV Tracker-Exports offset soft domestic demand-260518.pdf",
+          "stable_index": "2"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/18-JEF-China - Technology：PCB CCL Update： Will High~speed Copper Foil Become Another Bottleneck？-260518.pdf",
+          "batch_file": "/tmp/pdf_batch_001_a3hb125i/pdfs/0003-18-JEF-China - Technology-PCB CCL Update- Will High-speed Copper Foil Become Another Bottleneck--260518.pdf",
+          "stable_index": "3"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/19-MS-China Coal：Weekly Coal Update： Coal Production Declined Seasonally in May-260518.pdf",
+          "batch_file": "/tmp/pdf_batch_001_a3hb125i/pdfs/0004-19-MS-China Coal-Weekly Coal Update- Coal Production Declined Seasonally in May-260518.pdf",
+          "stable_index": "4"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/20-MS-China Property：Softer Sales Declines in April； We Stay Prudent on Durability-260518.pdf",
+          "batch_file": "/tmp/pdf_batch_001_a3hb125i/pdfs/0005-20-MS-China Property-Softer Sales Declines in April- We Stay Prudent on Durability-260518.pdf",
+          "stable_index": "5"
+        }
+      ],
+      "returncode": 0,
+      "status": "ok"
+    }
+  ]
+}

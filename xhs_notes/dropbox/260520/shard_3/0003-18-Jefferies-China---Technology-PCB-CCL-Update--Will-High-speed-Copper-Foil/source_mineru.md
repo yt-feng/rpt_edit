@@ -1,0 +1,874 @@
+# PCB/CCL Update: Will High-speed Copper Foil Become Another Bottleneck?
+
+We estimate HVLP demand to expand from $\sim 1.3\mathrm{kt / mo}$ in 2025 to $>6\mathrm{kt}/$ mo in 2030, driven by $30 - 40\%$ CAGR of AI CCL demand for infra buildout. Spec upgrades from HVLP1/2/3 to HVLP4 and wider adoption of DTH are key drivers of soaring ASP. Industrywide supply tightness to create opportunities for Chinese vendors on high-end copper foil to fill the gap for 3.5-4.0kt/month of HVLP4 equivalent demand in 2027. Shengyi is a major beneficiary in our coverage.
+
+Copper foil to dance with AI PCB/CCL. Echoing our previous initiation on PCB (Link), given we forecast \~60%/70% CAGR of AI PCB/CCL TAM in 2025-30E driven by tech giants' rising capex plans on AI infra buildout, this trend has also brought structural changes to electrolytic copper foil as one of key upstream materials. We estimate AI CCL monthly demand at \~1.8m sheets/month in 2025 and expect 30-40% CAGR to reach >9m sheets/month in 2030. As a result, we forecast demand of HVLP, as a critical high-speed copper foil for AI infra with significantly higher value and technical barrier vs traditional copper foil, to grow from \~1.3kt/month in 2025 to >6kt/month in 2030.
+
+Soaring ASP from spec upgrade a key driver. Major AI players (NVIDIA/Google/Amazon) will largely transfer their copper foil spec from HVLP1/2/3 to HVLP4 on their upcoming new AI servers in 2H26, creating significant demand on the latter. The outlook from Mitsui on its HVLP sales growth CAGR at 15-20% in 2025-30 seems conservative, potentially creating spillover opportunities for other vendors. We also see rising demand on DTH as another advanced copper foil driven by memory and optical transceiver. We estimate HVLP4 could reach >10x as of traditional HTE on pricing, and DTH could even be roughly 2x as of HVLP4. As demand continues to shift toward higher-spec HVLP/DTH going forward, driven by AI infra construction, we believe the copper foil industry's ASP will continue to rise.
+
+AI copper foil supply gap could be there, but Chinese vendors are gaining traction to fill it up. With industrywide supply tightness caused by surging AI-related demand, we think domestic players could demonstrate their advantage in production capacity and potentially enable them to gain more traction on high-end copper foil. We anticipate notable supply gap in the next 1-2 years for HVLP4-equivalent demand if we only count international players' capacity. But by including TGCF/Defu as emerging suppliers on high-speed copper foil, we now expect global major players' HVLP capacity to increase from \~2kt/month in 2025 to >5kt/month in 2027 (or 3.5-4.0kt/month of HVLP4-equivalent capacity), roughly on a par with demand by then, though it still depends on each vendor's execution on HVLP4's capacity ramp.
+
+Implications on the industry & our coverage. We believe such trend will benefit those copper foil and equipment vendors technically redied. TGCF/Defu are now leading Chinese players in AI copper foil in customer verification and shipment volume. For TGCF, its RTF/HVLP already took up the majority of its gross profit in 2025, making it almost a direct AI play. For Defu, in addition to capabilities for high-speed copper foil, we see an active capacity expansion plan (another 50kt capacity in 2027-28 focusing on RTF/HVLP), which may demonstrate its strength in acquiring critical tools. Equipment makers such as Taijin New Energy could also have potential spillover opportunities. Among our coverage, we expect Sytech to have advantages in securing sufficient materials going forward as it continues to diversify its supply sources (Chinese upstream suppliers are more proactive in expanding capacity vs international vendors), enabling it to further expand its market share in AI CCL supply chain.
+
+Chart 1 - Global AI CCL Demand Forecast   
+![](images/8b637c5cc4ec5fffcf7ba1080afe15c66e4fec13ae2d0620c227145c242ed720.jpg)
+
+<details>
+<summary>bar_stacked</summary>
+
+2025-30E CAGR 30-40%
+| Year | NVIDIA (m sheets/month) | Non-NVIDIA (m sheets/month) | Switch (m sheets/month) | Others (m sheets/month) |
+| :--- | :--- | :--- | :--- | :--- |
+| 2025 | 1.8 | 0.6 | 0.4 | 0.1 |
+| 2026E | 3.2 | 1.1 | 0.5 | 0.2 |
+| 2027E | 5.2 | 1.9 | 0.8 | 0.3 |
+| 2028E | 6.6 | 2.5 | 1.1 | 0.4 |
+| 2029E | 8.0 | 3.1 | 1.4 | 0.5 |
+| 2030E | 9.1 | 3.8 | 1.7 | 0.6 |
+</details>
+
+Source: JEF estimates
+
+Chart 2 - Global AI HVLP Demand Forecast   
+![](images/3b82781dfba63f000d3a7bbceb5614375808309502fc167c65e37a4bef0455d8.jpg)
+
+<details>
+<summary>bar_stacked</summary>
+
+| Year | NVIDIA (k tons/month) | Non-NVIDIA (k tons/month) | Switch (k tons/month) | Others (k tons/month) |
+| :--- | :--- | :--- | :--- | :--- |
+| 2025 | 0.6 | 0.8 | 0.4 | 1.3 |
+| 2026E | 0.9 | 1.1 | 0.5 | 2.3 |
+| 2027E | 1.1 | 1.4 | 0.6 | 3.7 |
+| 2028E | 1.4 | 1.7 | 0.7 | 4.7 |
+| 2029E | 1.8 | 2.1 | 0.8 | 5.6 |
+| 2030E | 2.1 | 2.5 | 0.9 | 6.3 |
+The chart includes a red annotation stating '2025-30E CAGR 30-40%' above the bars.
+</details>
+
+Source: JEF estimates
+
+Chart 3 - HVLP Capacity by Major Supplier   
+![](images/d9eaa09763d5ea68f6ae5b0d86b86528f02f6b388619d9195f1ccdca768293b4.jpg)
+
+<details>
+<summary>bar_line</summary>
+
+| Year | Non-China (k tons/month) | China (k tons/month) | China Vendor Share (%) |
+| :--- | :--- | :--- | :--- |
+| 2025 | 1.9 | 0.4 | 15 |
+| 2026E | 3.2 | 1.1 | 25 |
+| 2027E | 5.2 | 1.8 | 35 |
+</details>
+
+Source: Company data, JEF estimates
+
+Chart 4 - HVLP4 Equivalent Supply vs Demand   
+![](images/e47abc51c5ff86ef953ca95991b2560958ebb56308ae1e88744cde7533f3b184.jpg)
+
+<details>
+<summary>bar</summary>
+
+| Year   | HVLP4 Equiv. Supply | HVLP4 Equiv. Al Demand | HVLP4 Equiv. Non-Al Demand |
+| ------ | ------------------- | ---------------------- | -------------------------- |
+| 2025   | 1.4                 | 1.4                    | -                          |
+| 2026E  | 2.4                 | 2.5                    | -                          |
+| 2027E  | 3.8                 | 3.9                    | -                          |
+</details>
+
+Source: Company data, JEF estimates
+
+Jacky He \* | Equity Analyst
+
++852 3743 8084 | jacky.he@JEF.com
+
+Edison Lee, CFA \* | Equity Analyst
+
+852 3743 8009 | edison.lee@JEF.com
+
+Nick Cheng \* | Equity Analyst
+
++852 3743 8750 | nick.cheng@JEF.com
+
+Matt Ma \* | Equity Analyst
+
+852 3767 1109 | matt.ma@JEF.com
+
+Annie Ping, CFA, FRM \* | Equity Associate
+
++852 3767 1273 | annie.ping@JEF.com
+
+# Copper Foil's Revival: Riding the Tide of Booming AI PCB Demand
+
+Copper foil to ride on booming AI PCB/CCL demand. As indicated in our initiation on several PCB names (Link), we forecast \~15% CAGR in 2025-30 for the global TAM of PCB, mainly driven by \~60%/70% CAGR of AI PCB/CCL TAM, as AI infrastructure growth is likely to continue to be supported by tech giants' rising capex plans. We believe this trend has also brought structural changes to electrolytic copper foil, which acts as one of key upstream materials for PCB/CCL to be adopted on computing infra (represented by data center equipment such as server, switch, optical transceiver, etc.). In addition to PCB, copper foil is also widely adopted in LIB (lithium battery), and we observe the industry demand is accelerating as well, further fueling the expansion of copper foil's market size.
+
+Chart 5 - PCB Supply Chain   
+![](images/d9b5b1c9fd713c5394c4662b9ae6541264ea6de5d7d3e72dfd76331750cfba8f.jpg)
+
+<details>
+<summary>flowchart</summary>
+
+```mermaid
+graph TD
+    A["Copper Foil"] --> D["PCB"]
+    B["Fiberglass Cloth"] --> D
+    C["Epoxy Resin"] --> D
+    D --> E["Prepreg"]
+    D --> F["Copper Foil"]
+    D --> G["Copper Ball"]
+    D --> H["Copper Clad Laminate"]
+    D --> I["Gold Salts, Inks, etc."]
+    D --> J["Electronic Components"]
+    J --> K["SMT Patches"]
+    L["Communication"] --> M["Consumer Electronics"]
+    N["Computer"] --> O["Automotive"]
+    P["Industrial"] --> Q["Medical"]
+    R["Defense"] --> S["Aerospace"]
+```
+</details>
+
+Source: Company data, JEF
+
+Chart 6 - Electrolytic Copper Foil Supply Chain   
+![](images/431943644f0b72ff6c4d6c012e6dca89e1169214f70c1e91ff5cd5f8c6b065ac.jpg)
+
+<details>
+<summary>flowchart</summary>
+
+```mermaid
+graph LR
+    A["Upstream"] --> B["Midstream"]
+    B --> C["Downstream"]
+
+    A1["Supply of Raw Material and Equipment"] --> A2["Core Equipment"]
+    A1 --> A3["Raw Material"]
+    A2 --> A4["Cathode Roller"]
+    A2 --> A5["Foil Electrodeposition Machine"]
+    A2 --> A6["Surface Treatment Machine"]
+    A2 --> A7["Slitting Machine"]
+
+    B1["Manufacturing and Processing"] --> B2["Dissolve and Electrolyze"]
+    B2 --> B3["Surface Treatment"]
+    B3 --> B4["Slitting and Detection"]
+
+    C1["Application"] --> C2["Lithium Battery Copper Foil"]
+    C1 --> C3["PCB-grade Copper Foil"]
+    C2 --> C4["New Energy"]
+    C2 --> C5["AI Server"]
+    C2 --> C6["Energy Storage"]
+    C2 --> C7["Consumer Electronics"]
+    C2 --> C8["Consumer Electronics"]
+    C2 --> C9["Automotive Electronics"]
+    C2 --> C10["Drones, eVTOL, Embodied AI Robots, Electric Construction Machinery, Electric Agricultural Machinery, Electric Vessels, etc."]
+    C2 --> C11["Computers and Related Equipment"]
+    C2 --> C12["Industrial Control Equipment"]
+```
+</details>
+
+Source: Company data, JEF
+
+Chart 7 - Global AI PCB TAM Forecast   
+![](images/b632ac226251b51c223c280e7fff6a3185384f765ddc41f58691139ce76cda65.jpg)
+
+<details>
+<summary>bar_stacked</summary>
+
+| Year | NVIDIA (US$bn) | Non-NVIDIA (US$bn) | Switch (US$bn) | Optical Transceiver (US$bn) | Others (US$bn) |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| 2025 | 3 | 1 | 1 | 0 | 0 |
+| 2026E | 4 | 4 | 2 | 1 | 1 |
+| 2027E | 8 | 8 | 3 | 1 | 2 |
+| 2028E | 12 | 14 | 4 | 2 | 3 |
+| 2029E | 18 | 22 | 5 | 3 | 4 |
+| 2030E | 23 | 28 | 6 | 4 | 5 |
+2025-30E CAGR ~60%
+</details>
+
+Chart 8 - Global AI CCL TAM Forecast   
+![](images/e199696597b7d91f4799b895f9e91a9b2350fb37f8575eab8f3bc00f2998fa40.jpg)
+
+<details>
+<summary>bar_stacked</summary>
+
+| Year | NVIDIA (US$bn) | Non-NVIDIA (US$bn) | Switch (US$bn) | Optical Transceiver (US$bn) | Others (US$bn) |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| 2025 | 1.5 | 1.0 | 0.5 | 0.5 | 0.5 |
+| 2026E | 2.5 | 1.5 | 0.5 | 0.5 | 0.5 |
+| 2027E | 4.0 | 3.0 | 1.0 | 0.5 | 1.0 |
+| 2028E | 6.5 | 5.5 | 1.5 | 1.0 | 1.5 |
+| 2029E | 10.5 | 9.0 | 2.0 | 1.5 | 2.0 |
+| 2030E | 13.5 | 14.5 | 2.5 | 1.5 | 2.5 |
+The chart includes a diagonal reference line starting at (2025, 3) and ending at (2030E, 39). The annotation '2025-30E CAGR ~70%' indicates the compound annual growth rate over this period.
+</details>
+
+Source: Prismark, JEF estimates   
+Source: Prismark, JEF estimates
+
+We forecast CAGR of 30-40% for AI HVLP shipment. To meet the rising requirement of data transmission, HVLP (high-volume low-pressure) copper foil as a high-end material has already become the mainstream solution for AI infra, which has significantly higher value and technical barriers compared with traditional copper foil, and we see continued product upgrade for stronger performance going forward. Based on current AI chip volume and allocation to each player (NVIDIA, CSP, etc.), AI PCB spec adopted and future roadmap, we estimate AI CCL monthly demand at \~1.8m sheets/month in 2025 (including GPU/ASIC server, high-speed, and others), translating to \~1.3k tons/month demand on HVLP. We then forecast 30-40% CAGR for HVLP's demand to reach >6k tons/month in 2030, assuming 1) AI players continue to afford rising capex; 2) ongoing spec upgrade for increasing dollar content; and 3) smooth capacity expansion by major copper foil vendors without significant disruption in supply chain.
+
+Chart 9 - Global PCB Copper Foil TAM Forecast   
+![](images/2bc29cf0d8fc86da1a620790b6e2df2394d1c958d01a9029a1a4e07327d283c7.jpg)
+
+<details>
+<summary>bar_stacked</summary>
+
+| Year | AI PCB (Rmb bn) | Non-AI PCB (Rmb bn) |
+| :--- | :--- | :--- |
+| 2020 | 0 | 32 |
+| 2021 | 0 | 53 |
+| 2022 | 0 | 56 |
+| 2023 | 4 | 45 |
+| 2024 | 3 | 48 |
+| 2025 | 8 | 61 |
+| 2026E | 11 | 72 |
+| 2027E | 29 | 85 |
+| 2028E | 36 | 98 |
+| 2029E | 66 | 121 |
+| 2030E | 80 | 143 |
+</details>
+
+Chart 10 - Global PCB Copper Foil Shipment Forecast   
+![](images/4e8ac781c71e87a7938e362d497bb8886edc824d3a0f35e8ca2da8d1642fdd3e.jpg)
+
+<details>
+<summary>bar_stacked</summary>
+
+| Year | AI PCB (k tons) | Non-AI PCB (k tons) |
+| :--- | :--- | :--- |
+| 2020 | 10 | 420 |
+| 2021 | 15 | 530 |
+| 2022 | 20 | 585 |
+| 2023 | 15 | 520 |
+| 2024 | 20 | 544 |
+| 2025 | 100 | 686 |
+| 2026E | 100 | 635 |
+| 2027E | 150 | 708 |
+| 2028E | 200 | 770 |
+| 2029E | 280 | 855 |
+| 2030E | 310 | 898 |
+</details>
+
+Source: CCFA, JEF estimates   
+Source: CCFA, JEF estimates
+
+Chart 11 - Global AI CCL Demand Forecast   
+![](images/26003720530fa52f90921293b4420551bd94cef6eb70d9e0299c0feb30362498.jpg)
+
+<details>
+<summary>bar_stacked</summary>
+
+| Year | NVIDIA (m sheets/month) | Non-NVIDIA (m sheets/month) | Others (m sheets/month) |
+| :--- | :--- | :--- | :--- |
+| 2025 | 0.6 | 0.7 | 0.1 |
+| 2026E | 0.9 | 1.4 | 0.3 |
+| 2027E | 1.4 | 2.1 | 0.6 |
+| 2028E | 2.0 | 2.7 | 0.8 |
+| 2029E | 2.6 | 3.5 | 1.0 |
+| 2030E | 3.0 | 4.1 | 1.1 |
+2025-30E CAGR: 30-40%
+Line trend: Line graph; text annotation at top right indicates '2025-30E CAGR' with '30-40%' noted.
+</details>
+
+Chart 12 - Global AI HVLP Demand Forecast   
+![](images/b7c6f983a4506dc6899b7d6dbe3163c3208e3a43d6468cb3a2286da2494b7809.jpg)
+
+<details>
+<summary>bar_stacked</summary>
+
+| Year | NVIDIA (k tons/month) | Non-NVIDIA (k tons/month) | Others (k tons/month) |
+| :--- | :--- | :--- | :--- |
+| 2025 | 0.4 | 0.6 | 0.1 |
+| 2026E | 0.7 | 1.2 | 0.3 |
+| 2027E | 1.0 | 1.5 | 0.5 |
+| 2028E | 1.4 | 1.9 | 0.7 |
+| 2029E | 1.9 | 2.4 | 0.8 |
+| 2030E | 2.1 | 2.8 | 0.9 |
+2025-30E CAGR: 30-40%
+Line trend: Line chart
+</details>
+
+Source: JEF estimates   
+Source: JEF estimates
+
+# Moving towards Higher-end: From HTE/RTF to HVLP/DTH
+
+Materials upgrade to push PCB/CCL's evolution. The major end devices that adopt high-end PCB include AI server (mainboard, OAM, UBB, etc.), high-speed switch, and optical transceiver (>=400G), and copper foil generally takes up \~30% of CCL's cost and another <5% of PCB's cost (adopted on both PCB/CCL individually). While HTE (high-temperature elongation) acts as a commodity-like product with wide applications in many downstream markets and RTF (reverse-treated foil) used to be a major solution on general server/switch, high-end materials such as HVLP and DTH have now been widely adopted in AI infra, thanks to its much stronger signal transmission capabilities, though at a higher cost, enabling better performance of PCB/CCL on AI server/switch, etc.
+
+Table 1 - PCB Copper Foil Spec Comparison 
+
+<table><tr><td>Parameters</td><td>HTE</td><td>RTF</td><td>HVLP</td></tr><tr><td>Roughness</td><td>&gt;4um (Rz)</td><td>Smooth surface 0.5-4um (Rz)</td><td>≤1.0um (Rz)</td></tr><tr><td>Core advantage</td><td>High temperature elongation</td><td>Simplified manufacturing process</td><td>Ultra-low signal loss</td></tr><tr><td>Applicable frequency</td><td>Low to mid frequency</td><td>Mid to high frequency</td><td>High to ultra-high frequency</td></tr><tr><td>Main defect</td><td>High frequency loss</td><td>Signal loss higher than HVLP</td><td>Poor lamination adhesion</td></tr><tr><td>Cost</td><td>Low</td><td>Medium</td><td>High</td></tr></table>
+
+Source: GPCA, JEF
+
+Table 2 - CCL Spec By Grade 
+
+<table><tr><td>Grade</td><td>Ethernet</td><td>Loss</td><td>Dk</td><td>Df</td><td>Fiberglass</td><td>Copper Foil</td><td>Application</td></tr><tr><td>FR4</td><td>&lt;5Gbps</td><td>Standard Loss</td><td>~4.7</td><td>0.023-0.015</td><td>E Glass</td><td>RTF</td><td>General</td></tr><tr><td>M2</td><td>8Gbps</td><td>Medium Loss</td><td>~4.3</td><td>0.015-0.010</td><td>E Glass</td><td>RTF</td><td>PCIe 2.0, 10G Ethernet</td></tr><tr><td>M4</td><td>10Gbps</td><td>Low Loss</td><td>~3.9</td><td>0.010-0.005</td><td>E Glass</td><td>RTF/HVLP1</td><td>PCIe 3.0, 10G/100G Ethernet</td></tr><tr><td>M6</td><td>25Gbps</td><td>Very Low Loss</td><td>~3.8</td><td>0.005-0.003</td><td>E Glass</td><td>HVLP2</td><td>PCIe 5.0, 100G/400G Ethernet</td></tr><tr><td>M7</td><td>56Gbps</td><td>Ultra Low Loss</td><td>~3.5</td><td>0.003-0.0015</td><td>Low-Dk1</td><td>HVLP2/3</td><td>PCIe 6.0, 400G/800G Ethernet</td></tr><tr><td>M8</td><td>112Gbps</td><td>Extreme Low Loss</td><td>~3.0</td><td>0.0015-0.0010</td><td>Low-Dk1/2</td><td>HVLP2/3/4</td><td>PCIe 7.0, 800G/1.6T Ethernet</td></tr><tr><td>M9</td><td>224Gbps</td><td>/</td><td>&lt;3.0</td><td>0.0009-0.0007</td><td>Q-Glass/Low-Dk2</td><td>HVLP4/5</td><td>&gt;=PCIe 7.0, &gt;=1.6T Ethernet</td></tr></table>
+
+urce: Company data, JEF
+
+Chart 13 - Conventional PCB Cost Structure   
+![](images/724f53ced59e71a2c1f85849910fb5ab78da69173e06da4e89c525cee61ee754.jpg)
+
+<details>
+<summary>pie</summary>
+
+| Category | Percentage (%) |
+| :--- | :--- |
+| CCL | 30 |
+| Prepreg | 8 |
+| Copper Foil | 9 |
+| Copper Ball | 6 |
+| Manufacturing | 40 |
+| Others | 7 |
+</details>
+
+Source: AskCI Consulting, JEF
+
+Chart 15 - Conventional CCL Cost Structure   
+![](images/6961621d0095ed00f0b7d2d0aa91bb3dbd717d5041f4b32c946bd3150caaacca.jpg)
+
+<details>
+<summary>pie</summary>
+
+| Category | Percentage (%) |
+| :--- | :--- |
+| Copper Foil | 42 |
+| Fiberglass | 19 |
+| Resin | 26 |
+| Others | 13 |
+</details>
+
+Source: AskCI Consulting, JEF
+
+Chart 14 - A Certain High-end PCB Cost Structure   
+![](images/07a1749e414ada6eb9f7e2508092a6277a7bd61a81f618aa54e25c276abed352.jpg)
+
+<details>
+<summary>pie</summary>
+
+| Category | Percentage (%) |
+| :--- | :--- |
+| CCL | 40 |
+| Manufacturing | 37 |
+| Prepreg | 8 |
+| Copper Ball | 5 |
+| Others | 5 |
+Copper Foil | 5 |
+</details>
+
+Source: JEF estimates
+
+Chart 16 - A Certain High-end CCL Cost Structure   
+![](images/58326924e36edcbf054d45088e68bf11191bd820d3316b7cdb11f5c927739755.jpg)
+
+<details>
+<summary>pie</summary>
+
+| Category | Percentage (%) |
+| :--- | :--- |
+| Copper Foil | 33 |
+| Fiberglass | 32 |
+| Resin | 23 |
+| Others | 12 |
+</details>
+
+Source: JEF estimates
+
+HVLP to migrate from gen 1 to gen 4; International leader's outlook seems conservative. As a typical high-end copper foil, HVLP is generally differentiated by the surface profile (including adhesion, roughness, etc.) as a key property. The higher the spec, the lower the transmission loss will be for HVLP. After years of product evolution, HVLP has been upgraded from the initial gen 1 to gen 4, which has now been gradually deployed in mass volume (HVLP5 also in R&D stage in the industry, poised for commercialization likely in next 1-2 years). Our channel checks suggest major AI players, including NVIDIA, Google, and Amazon, will largely transfer their copper foil spec on compute/switch boards from originally HVLP1/2/3 to HVLP4 on their upcoming new AI servers in 2H26, creating significant demand on the latter going forward. Mitsui Kinzoku is currently the largest supplier of HVLP with \~60% market share in HVLP2 and above in 2025 and running at \~600t/month of HVLP capacity, per the company, while its outlook on its HVLP sales growth CAGR at 15-20% in 2025-30 seems conservative compared with our forecast of 30-40% demand CAGR, potentially creating spillover opportunities to other vendors for market share expansion, in our view.
+
+Table 3 - Major AI Server Copper Foil Spec/Suppiler 
+
+<table><tr><td>Product</td><td>Content</td><td>CCL Spec</td><td>Fiberglass Spec</td><td>Copper Foil Spec</td></tr><tr><td colspan="5">NVIDIA</td></tr><tr><td rowspan="2">GB200/300</td><td>Compute Board</td><td>M8</td><td>Low-Dk1</td><td>HVLP3</td></tr><tr><td>Switch Board</td><td>M8</td><td>Low-Dk2</td><td>HVLP2</td></tr><tr><td rowspan="3">VR200</td><td>Compute Board</td><td>M8</td><td>Low-Dk1</td><td>HVLP4</td></tr><tr><td>Switch Board</td><td>M8.5</td><td>Low-Dk2</td><td>HVLP4</td></tr><tr><td>Midplane</td><td>M8.5</td><td>Low-Dk2</td><td>HVLP4</td></tr><tr><td rowspan="2">VR300</td><td>Backplane</td><td>M9/10/PTFE?</td><td>Q Glass/Low-Dk2?</td><td>HVLP4/5?</td></tr><tr><td>CoWoP</td><td>M8/9/10?</td><td>Q Glass/Low-Dk2?</td><td>HVLP4/5?</td></tr><tr><td colspan="5">Google</td></tr><tr><td>v5</td><td>UBB</td><td>M7</td><td>Low-Dk1</td><td>HVLP2</td></tr><tr><td>v6/v7</td><td>UBB</td><td>M7</td><td>Low-Dk1</td><td>HVLP2</td></tr><tr><td>v8</td><td>UBB</td><td>M8</td><td>Low-Dk1/2?</td><td>HVLP4</td></tr><tr><td>v9</td><td>OAM</td><td>M9/10/PTFE?</td><td>Q Glass/Low-Dk2?</td><td>HVLP4/5?</td></tr><tr><td colspan="5">Amazon</td></tr><tr><td rowspan="2">Trainium 2</td><td>OAM</td><td>M6</td><td>Low-Dk1</td><td>HVLP2</td></tr><tr><td>UBB</td><td>M8</td><td>Low-Dk1</td><td>HVLP2</td></tr><tr><td rowspan="2">Trainium 2.5</td><td>OAM</td><td>M6</td><td>Low-Dk2</td><td>HVLP3</td></tr><tr><td>UBB</td><td>M8</td><td>Low-Dk2</td><td>HVLP4</td></tr><tr><td rowspan="2">Trainium 3</td><td>OAM</td><td>M7</td><td>Low-Dk2</td><td>HVLP4</td></tr><tr><td>UBB</td><td>M8</td><td>Low-Dk2</td><td>HVLP4</td></tr></table>
+
+Source: Company data, JEF estimates
+
+Chart 17 - Mitsui HVLP Market Demand Forecast   
+![](images/1f023de249e987fee844aa1b70d7d92ac10963ead21cd84a601cf7cbab426021.jpg)
+
+<details>
+<summary>bar_stacked</summary>
+
+| Year | HVLP2 (tons/month) | HVLP3 (tons/month) | HVLP4 or Higher (tons/month) |
+| :--- | :--- | :--- | :--- |
+| 2022 | - | 50 | - |
+| 2023 | 100 | 100 | - |
+| 2024 | 150 | 150 | - |
+| 2025E | 350 | 400 | 300 |
+| 2026E | 350 | 450 | 700 |
+| 2027E | 350 | 500 | 950 |
+| 2028E | 450 | 600 | 1150 |
+| 2029E | 550 | 750 | 1350 |
+| 2030E | 800 | 950 | 1450 |
+2025-30E CAGR 24%
+</details>
+
+Chart 18 - Mitsui HVLP Sales/Capacity Plan   
+![](images/8cfe4bc36b46ef052546d0449a51cd7f06075b46f29f88d6faec9ca08e39dded.jpg)
+
+<details>
+<summary>bar_stacked</summary>
+
+| Year | HVLP Capacity (tons/month) | HVLP1 (tons/month) | HVLP2 (tons/month) | HVLP3 (tons/month) | HVLP4 or Higher (tons/month) |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| FY22 | 400 | 180 | 0 | 0 | 0 |
+| FY23 | 450 | 150 | 0 | 50 | 0 |
+| FY24 | 550 | 160 | 100 | 100 | 0 |
+| FY25 | 600 | 120 | 150 | 150 | 100 |
+| FY26 | 750 | 50 | 50 | 250 | 350 |
+| FY27 | 900 | 30 | 0 | 250 | 650 |
+| FY28 | 1050 | 20 | 0 | 100 | 950 |
+| FY29 | 1100 | 20 | 0 | 100 | 1050 |
+| FY30 | 1150 | 20 | 0 | 100 | 1150 |
+2025-30E CAGR: 16%
+</details>
+
+Source: Company data, JEF   
+Source: Company data, JEF
+
+DTH as another higher-end product facing surging demand. In addition to HVLP, we see rising demand on DTH (double thin, or carrier-supported), which is an ultra-thin functional copper layer (typically 1.5-5um) supported by a thicker carrier foil. DTH is mainly used in advanced PCB and IC packaging to enable ultra-fine-line trace manufacturing, with concentrated adoptions on smartphone's substrate (SoC, memory, RF, etc.) and mainboard (SLP). However, we also see increasing demand from AI infra, especially on memory and high-speed optical transceiver (800G/1.6T). Currently, Mitsui has >95% market share on DTH, and we expect potential new entrants to be introduced going forward, due to supply tightness, though the technical barrier is considerably high.
+
+Table 4 - DTH Copper Foil Application 
+
+<table><tr><td rowspan="2">Equipment</td><td rowspan="2">Substrate</td><td colspan="3">Target L/S (um)</td></tr><tr><td>&gt;30/30um</td><td>30/30 to 10/10 um</td><td>10/10 um&gt;</td></tr><tr><td rowspan="5">Smartphone</td><td>SoC</td><td>-</td><td>○</td><td>○</td></tr><tr><td>DRAM (LPDDR)</td><td>-</td><td>○</td><td>-</td></tr><tr><td>Mobile NAND</td><td>-</td><td>○</td><td>-</td></tr><tr><td>RF Module</td><td>-</td><td>○</td><td>-</td></tr><tr><td>mmW Antenna and AiP</td><td>-</td><td>○</td><td>-</td></tr><tr><td rowspan="5">Server/PC</td><td>CPU</td><td>-</td><td>-</td><td>-</td></tr><tr><td>GPU</td><td>-</td><td>-</td><td>-</td></tr><tr><td>DRAM (DDR)-DIMM</td><td>-</td><td>○</td><td>-</td></tr><tr><td>NAND-SSD</td><td>-</td><td>○</td><td>-</td></tr><tr><td>Controller-SSD</td><td>-</td><td>○</td><td>-</td></tr></table>
+
+Source: Company data, JEF
+
+Chart 19 - DTH Copper Foil Structure   
+![](images/3ce0cc8a10c56b633f9b30c797fc6b120704fee1e6f7252989d809dce2e36a3f.jpg)
+
+<details>
+<summary>text_image</summary>
+
+Carrier Foil
+Thickness:
+18-12µm
+Thickness:
+5-1.5µm
+Nodular Particles
+Ultra-thin Copper Foil
+Release Layer
+</details>
+
+Source: Company data, JEF
+
+Chart 20 - Mitsui Ultra Thin Copper Foil Sales/Capacity Plan   
+![](images/a4104c4f3c215949921459f37f9fbe93db91ca095f05f84c1fb32b5be44b2fb8.jpg)
+
+<details>
+<summary>bar_stacked</summary>
+
+| Fiscal Year | DTH Capacity (m sqm/month) | PKG (Non-Smartphone) (m sqm/month) | PKG (Smartphone) (m sqm/month) | HDI (m sqm/month) | New Application (m sqm/month) |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| FY22 | 1.8 | 0.6 | 0.9 | 0.4 | 0.0 |
+| FY23 | 1.9 | 0.7 | 1.0 | 0.4 | 0.0 |
+| FY24 | 2.0 | 0.8 | 1.1 | 0.4 | 0.0 |
+| FY25 | 2.1 | 1.3 | 1.3 | 0.5 | 0.1 |
+| FY26 | 2.2 | 1.3 | 1.4 | 0.5 | 0.1 |
+| FY27 | 2.3 | 1.5 | 1.5 | 0.6 | 0.2 |
+| FY28 | 2.4 | 1.7 | 1.6 | 0.6 | 0.3 |
+| FY29 | 2.5 | 1.9 | 1.7 | 0.7 | 0.4 |
+| FY30 | 2.6 | 2.1 | 1.8 | 0.8 | 0.5 |
+</details>
+
+Source: Company data, JEF
+
+Significantly higher ASP from HVLP/DTH vs traditional products. The copper foil's pricing structure is made up by copper's price (fully transferred to the downstream) and processing fee. Given the considerably higher technical barrier on HVLP/DTH (such as surface treatment technique) and lower throughput efficiency (as a result of lower line speed, lower yield rate, etc.) compared with traditional products (HTE/RTF), there could be significant processing fee premium from the former. Due to gradually tightening supply, we see ongoing price hikes on most copper foil products in general in the industry from 2025. As of 1Q26, we estimate the market's processing fee of HTE/RTF was roughly Rmb10-20k/30-80k/t (depending on spec), while HVLP4 could reach >10x as of HTE based on Mitsui's pricing. While DTH's processing fee is generally counted in area (square meter), we estimate DTH could be roughly 2x as of HVLP4 by translating to the weight for comparison. As demand continues to shift toward higher-spec HVLP/DTH going forward, driven by AI infra construction, we believe the copper foil industry's ASP will continue to rise; Mitsui's outlook on rising ROIC of copper foil segment echoes this trend.
+
+Chart 21 - HVLP/DTH Processing Fee Estimates (End-1Q26)   
+![](images/622fe9c2c60c488e881c9373249bc88fec50d6c77e48c4fb0d299d43f6f7f790.jpg)
+
+<details>
+<summary>bar</summary>
+
+| Category       | Value (Rmb k/ton) |
+| -------------- | ----------------- |
+| HTE (Market)   | ~20               |
+| RTF (Market)   | ~60               |
+| HVLP1          | ~100              |
+| HVLP2          | ~130              |
+| HVLP3          | ~170              |
+| HVLP4          | ~260              |
+| DTH            | ~500              |
+</details>
+
+Source: Company data, JEF estimates
+
+Chart 22 - Mitsui ROIC Target by Segment   
+![](images/c5b573d1625498ee3094582d843f6c319337fb36ed2b42a7c8b9a78fdb9b0176.jpg)
+
+<details>
+<summary>line</summary>
+
+| Year | Copper Foil | Catalysts | Metal Business | Other Business | Company-wide |
+|------|-------------|-----------|----------------|----------------|--------------|
+| 2024 | 27%         | 25%       | 11%            | 15%            | 11%          |
+| 2027 | 39%         | 19%       | 7%             | 11%            | 11%          |
+| 2030 | 49%         | 20%       | 7%             | 14%            | 14%          |
+</details>
+
+Source: Company data, JEF
+
+Overall copper foil bottoming out with accelerated demand growth and disciplined capacity expansion. LIB is the other key downstream market for copper coil (10-15% of total cost in general). Due to aggressive capacity expansion from multiple LIB copper foil suppliers in earlier years amid rapid penetration of EV/ESS, the entire industry had been in a state of oversupply since 2022, reflected in the slump in processing fees and utilization rate. With many players are subsequently operating at a marginal profit or even loss, capacity expansion has been gradually controlled in the industry. As a result, we think the profitability of most suppliers has rebounded since 2024. Driven by the gradual recovery of downstream demand with strong performance in some subsectors, such as energy storage, we observe the utilization rates of many copper foil suppliers are returning to higher levels, even with potential signal of price hike going forward.
+
+Chart 23 - China Lithium Battery Copper Foil Average Processing Fee Trend   
+![](images/4729ebafa04f42d2388bc6a58c821a9177ad7fd3a0438949b9372c633b671902.jpg)
+
+<details>
+<summary>line</summary>
+
+| Date       | 8um  | 6um  | 4.5um |
+| ---------- | ---- | ---- | ----- |
+| 2022-01-04 | 40   | 50   | 80    |
+| 2023-01-04 | 30   | 40   | 70    |
+| 2024-01-04 | 15   | 20   | 30    |
+| 2025-01-04 | 15   | 15   | 30    |
+| 2026-01-04 | 15   | 20   | 30    |
+</details>
+
+Source: Wind, JEF
+
+Chart 24 - China Copper Foil Vendor Net Margin Trend   
+![](images/f870ef3aaf8067fa21dd912d49199334b67c4402b997c9af41a3666a05e9d28d.jpg)
+
+<details>
+<summary>line</summary>
+
+| Quarter | Defu  | TGCF  | Jiayuan | Nuode | Zhongyi |
+|---------|-------|-------|---------|-------|---------|
+| 1Q21    | 8%    | 9%    | 21%     | 7%    | 20%     |
+| 2Q21    | 9%    | 10%   | 20%     | 12%   | 18%     |
+| 3Q21    | 8%    | 9%    | 19%     | 10%   | 16%     |
+| 4Q21    | 9%    | 8%    | 18%     | 8%    | 14%     |
+| 1Q22    | 10%   | 7%    | 17%     | 6%    | 12%     |
+| 2Q22    | 9%    | 6%    | 16%     | 4%    | 10%     |
+| 3Q22    | 8%    | 5%    | 15%     | 2%    | 8%      |
+| 4Q22    | 7%    | 4%    | 14%     | 0%    | 6%      |
+| 1Q23    | 6%    | 3%    | 13%     | -2%   | 4%      |
+| 2Q23    | 5%    | 2%    | 12%     | -4%   | 2%      |
+| 3Q23    | 4%    | 1%    | 11%     | -6%   | 0%      |
+| 4Q23    | 3%    | 0%    | 10%     | -8%   | -2%     |
+| 1Q24    | -5%   | -3%   | -8%     | -10%  | -4%     |
+| 2Q24    | -4%   | -2%   | -7%     | -9%   | -6%     |
+| 3Q24    | -3%   | -1%   | -6%     | -8%   | -8%     |
+| 4Q24    | -2%   | 0%    | -5%     | -7%   | -9%     |
+| 1Q25    | -1%   | 1%    | -4%     | -6%   | -8%     |
+| 2Q25    | 0%    | 2%    | -3%     | -5%   | -7%     |
+| 3Q25    | 1%    | 3%    | -2%     | -4%   | -6%     |
+| 4Q25    | 2%    | 4%    | -1%     | -3%   | -5%     |
+| 1Q26    | 3%    | 5%    | 0%      | -2%   | -4%     |
+</details>
+
+Source: Company data, JEF
+
+# Supply Tightness Going on: Chinese Players Are Catching Up on High-end
+
+Chinese players lead in overall copper foil capacity, but with low exposure to mid-/high-end products. In terms of overall copper foil shipment, Chinese suppliers hold the majority share (9 out of the top 10 global players in 2024), with a focus mainly on the LIB market. However, the mid-/high-end copper foil market including RTF/HVLP is still dominated by suppliers outside China Mainland, represented by Japan, Korea, and Taiwan. Previously, due to the limited downstream applications of mid-/high-end copper foil, Chinese vendors had few opportunities in this field. However, thanks to the surging demand for AI-related mid-/high-end copper foil, we see domestic players could also demonstrate their advantage in production capacity and potentially enable them to gain more tractions to be introduced to AI customers' supply chains.
+
+Chart 25 - Global Copper Foil Shipment Market Share by Vendor (2024)   
+![](images/42b0c404dad76fa816e3f8f9ee291ef21059f6df52409690d978c7acc5ccf924.jpg)
+
+<details>
+<summary>pie</summary>
+
+| Company | Share (%) |
+| :--- | :--- |
+| Others | 52.0 |
+| Londian Wason | 8.6 |
+| Defu | 6.3 |
+| Kingboard | 4.9 |
+| Jiayuan | 4.8 |
+| Huachuang New Material | 4.7 |
+| Nuode | 4.3 |
+| Zhongyi | 4.1 |
+| Solus | 3.9 |
+| TGCF | 3.7 |
+| Jiangxi Tongbo | 2.7 |
+</details>
+
+Source: Company data, JEF
+
+Chart 26 - LIB Copper Foil Shipment Market Share by Vendor (2024)   
+![](images/5b2157b9cce179b98c727b9d304ea25358c3d0923120350d06c4e16c57cf4054.jpg)
+
+<details>
+<summary>pie</summary>
+
+| Company | Share (%) |
+| :--- | :--- |
+| Other | 42.5 |
+| Londian Wason | 9.3 |
+| Defu | 7.4 |
+| Huachuang New Material | 7.1 |
+| Jiayuan | 7.1 |
+| Solus | 6.2 |
+| Nuode | 5.4 |
+| Zhongyi | 5.2 |
+| Jiangxi Tongbo | 3.8 |
+| Haitian | 2.5 |
+| Lotte Energy | 3.5 |
+</details>
+
+Source: Company data, JEF
+
+Chart 27 - HVLP Shipment Market Share by Region (2022)   
+![](images/55d6b183c006e67c6aeed3faed82cf1f9d7aa6f44851758f7bfc46e835de839b.jpg)
+
+<details>
+<summary>pie</summary>
+
+| Category | Percentage (%) |
+| :--- | :--- |
+| Japan | 59 |
+| Korea | 26 |
+| Taiwan | 12 |
+| China Mainland | 1 |
+| Others | 2 |
+</details>
+
+Chart 28 - High-speed Copper Foil Shipment Market Share by Region (2022)   
+![](images/fb605909893303e5de2074f144960fecd2ce4232fd4469a28150cf0572fae834.jpg)
+
+<details>
+<summary>pie</summary>
+
+| Country/Region | Percentage (%) |
+| :--- | :--- |
+| Japan | 42 |
+| Taiwan | 41 |
+| Korea | 10 |
+| China Mainland | 7 |
+| Others | 1 |
+</details>
+
+Source: JEF   
+Source: CPCA, JEF
+
+Table 5 - High Speed Copper Foil Production Line 
+
+<table><tr><td>Type</td><td>Roughness (um)</td><td>Mitsui</td><td>Furukawa</td><td>Fukuda</td><td>CFL</td><td>Lotte</td><td>Co-Tech</td><td>Chang Chun</td><td>Defu</td><td>TGCF</td></tr><tr><td>RTF1</td><td>&lt;=5.0</td><td>MLS-G</td><td>DGTSEU2-MP</td><td>TGFB-DSTF</td><td>TZA-B</td><td></td><td>RT311</td><td>RTF-3</td><td>RHS1</td><td>√</td></tr><tr><td>RTF2</td><td>&lt;=2.3</td><td>MLS-G3</td><td></td><td>T9-DS2</td><td>TZA-B2</td><td></td><td>RG311</td><td>RTF-25</td><td>RHS2</td><td>√</td></tr><tr><td>RTF3</td><td>&lt;=2.1</td><td>MLS-G4</td><td></td><td>T9-DS3</td><td>TZA-B3</td><td>HRT</td><td>RG312</td><td>RTF-35</td><td>RHS3</td><td>√</td></tr><tr><td>RTF4</td><td>&lt;=1.7</td><td>MLS-G5</td><td></td><td>T9-DS4</td><td></td><td>MRT</td><td>RG313</td><td>RTF-45</td><td>RHS4</td><td>√</td></tr><tr><td>RTF5</td><td>&lt;=1.5</td><td></td><td></td><td></td><td></td><td>SRT</td><td>RG315</td><td>RTF-55</td><td></td><td>√</td></tr><tr><td>HVLP1</td><td>&lt;=2.0</td><td>HS1-VP</td><td>FV-WS</td><td>T9FB-SV</td><td>BF-TZA</td><td>LH1</td><td>VL410</td><td>VFP-111</td><td>VHS1</td><td>√</td></tr><tr><td>HVLP2</td><td>&lt;=1.5</td><td>HS2-VSP</td><td>FZ-WS</td><td>T9S-SV</td><td>BF-ANP</td><td>LH2</td><td>VG410</td><td>VFP-101</td><td>VHS2</td><td>√</td></tr><tr><td>HVLP3</td><td>&lt;=1.0</td><td>SI-VSP</td><td></td><td>DSV-A</td><td>BFL-NN</td><td>LH3</td><td>VL411</td><td>VFP-200</td><td>VHS3</td><td>√</td></tr><tr><td>HVLP4</td><td>&lt;=0.8</td><td>SI2-VSP</td><td></td><td>T9DA-SV</td><td>BFL-NX</td><td>LH4</td><td>PF511</td><td>VFP-250</td><td>VHS4</td><td>√</td></tr><tr><td>HVLP5</td><td>&lt;=0.7</td><td>SI3-VSP</td><td></td><td>T9DC-SV</td><td>BFL-NF</td><td>LH5</td><td></td><td></td><td></td><td></td></tr></table>
+
+Source: Company data, JEF
+
+Will there be supply gap for AI copper foil? Chinese vendors are filling it up (though not 100% guarantee depending on execution). To meet the strong demand for HVLP, we see major global suppliers have developed capacity expansion plans for the next few years, either through brownfield construction or conversion from existing traditional production lines. However, by compiling capacity expansion plans from major international HVLP vendors only, considering the certain capacity reduction caused by spec upgrades, we anticipate the HVLP4 equivalent demand (as the next-gen mainstream solution) will still see a notable supply gap in the next 1-2 years. Thus, we witness a new trend where AI players are actively bringing in new suppliers, including certain Chinese players that are technically capable. Specifically, TGCF (Tongguan Copper Foil) entered AI supply chain previously by supplying mainly to CCL vendors such as Sytech/EMC/TUC, and Defu has also gradually passed the verifications of multiple PCB/CCL customers and begun to penetrate the AI customers. By including the capacity plans of TGCF/Defu, we now expect the global major players' HVLP capacity to increase from \~2kt/month in 2025 to >5kt/month in 2027. This could roughly translate to 3.5-4.0kt/month of HVLP4-equivalent capacity, roughly on par with the demand by then. However, this assumption rests on 1) each supplier's capacity expansion meeting its original expectations and 2) each supplier having the ability to convert to HVLP4 capacity with sufficient yield/efficiency. Due to current supply shortage of critical tools in the industry, especially surface treatment machine dominated by Japan's Mifune Corp (>70% market share), with limited capacity and the high technical challenge of manufacturing HVLP4, we think a supply gap is still likely to emerge in the future. Therefore, the execution of each supplier is worth monitoring.
+
+Chart 29 - HVLP Capacity by Major Supplier   
+![](images/73fa461575e2f88fe1d49fa98eda1ea382d9d3206d1faba629d0e17527157bbc.jpg)
+
+<details>
+<summary>bar_line</summary>
+
+| Year | Mitsubishi | Co-Tech | Fukuda | CFL | Lotte | TGCF | Defu | TGCF & Defu Market Share (%) |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| 2025 | 0.8 | 0.3 | 0.2 | 0.4 | 0.3 | 0.6 | 0.1 | 14 |
+| 2026E | 0.9 | 0.4 | 0.3 | 0.5 | 0.4 | 0.8 | 0.2 | 26 |
+| 2027E | 1.0 | 0.6 | 0.4 | 0.6 | 0.5 | 1.1 | 0.5 | 35 |
+</details>
+
+Source: Company data, JEF estimates
+
+Chart 30 - HVLP4 Equivalent Supply vs Demand   
+![](images/a7caab675a0d7cc4807ee032224a462af6e092414c0f085e633e66f6db9eb4b0.jpg)
+
+<details>
+<summary>bar_stacked</summary>
+
+| Year | HVLP4 Equiv. Supply (k tons/month) | HVLP4 Equiv. Non-AI Demand (k tons/month) | HVLP4 Equiv. AI Demand (k tons/month) |
+| :--- | :--- | :--- | :--- |
+| 2025 | 1.4 | 0.3 | 1.4 |
+| 2026E | 2.4 | 0.3 | 2.5 |
+| 2027E | 3.8 | 0.3 | 3.9 |
+</details>
+
+Source: Company data, JEF estimates
+
+# Supply chain opportunities: TGCF currently leading in AI among domestic suppliers while Defu has more capacity advantages; rising demand on critical tools to benefit local vendors like Taijin.
+
+Based on public information, TGCF and Defu are now leading Chinese players in AI copper foil in terms of customer verification and shipment volume. For TGCF, its high-speed copper foil (RTF/HVLP) took up $>20\%$ of its total copper foil shipment in 2025 and the majority of total gross profit, making it the player with the highest exposure to high-speed copper foil among domestic vendors, and it has stable partnerships with other AI supply chain players based on its disclosure. On the other hand, Defu, although it is a relative newcomer in this area, already possesses competitive production capabilities for high-speed copper foil with an active capacity expansion plan. Although both companies will continue to convert existing capacity of traditional copper foil to high-end products, Defu has scheduled to build another 50kt annual capacity in 2027-28 for PCB copper foil focusing on RTF/HVLP, while TGCF has yet to announce additional capacity plans. This may demonstrate Defu's strength in acquiring critical equipment from both external procurement and self-development, per the company. In addition, due to limited capacity of critical tools from international vendors such as Mifune, we expect spillover opportunities for other vendors, and Taijin New Energy as a Chinese supplier with comprehensive equipment portfolio, including surface treatment machine, may be one of major beneficiaries here.
+
+Chart 31 - TGCF vs Defu on Copper Foil Annual Capacity   
+![](images/bbd334c34cf6e21b99d2a78c3416b02933d5714d1d9877d238c944fdf7449dc2.jpg)
+
+<details>
+<summary>bar</summary>
+
+| Year | TGCF (k tons, year-end) | Defu (k tons, year-end) |
+| :--- | :--- | :--- |
+| 2020 | 45 | 30 |
+| 2021 | 45 | 49 |
+| 2022 | 55 | 85 |
+| 2023 | 55 | 125 |
+| 2024 | 80 | 150 |
+| 2025 | 80 | 195 |
+</details>
+
+Source: Company data, JEF   
+Note: Defu's capacity includes 175kt at end-2025 and 20kt from newly acquired Anhui Huiru Technology
+
+Chart 32 - TGCF vs Defu on Product Shipment Structure (2025)   
+![](images/2caaed6de1a122e4b7df96e041ffca53880f102322c6c6f12b57eab739aeecbf.jpg)
+
+<details>
+<summary>bar</summary>
+
+| Company | TGCF (k tons, year-end) | Defu (k tons, year-end) |
+| :--- | :--- | :--- |
+| RTF | 12 | 2 |
+| HVLP | 3 | 0 |
+| HTE | 25 | 18 |
+| LIB | 32 | 120 |
+</details>
+
+Source: Company data, JEF
+
+Implication to our coverage: Sytech to benefit from active capacity expansion from local upstream suppliers. As upstream material supplies, including fiberglass cloth and copper foil, become increasingly tightened, we expect the ability to secure sufficient materials to become another critical differentiator for CCL suppliers in AI supply chain going forward. We also observe a trend that Chinese suppliers are more proactive in expanding production capacity compared to international vendors. Therefore, as a Chinese player, Sytech will likely have a greater advantage in supply chain security going forward, as it continues to diversify its supply sources, enabling it to further expand its market share in AI CCL supply chain.
+
+# Company Valuation/Risks
+
+For Important Disclosure information on companies recommended in this report, please visit our website at https://avatar.bluematrix.com/sellside/Disclosures.action or call 212.284.2300.
+
+# Analyst Certification:
+
+I, Jacky He, certify that all of the views expressed in this research report accurately reflect my personal views about the subject security(ies) and subject company(ies). I also certify that no part of my compensation was, is, or will be, directly or indirectly, related to the specific recommendations or views expressed in this research report.
+
+I, Edison Lee, CFA, certify that all of the views expressed in this research report accurately reflect my personal views about the subject security(ies) and subject company(ies). I also certify that no part of my compensation was, is, or will be, directly or indirectly, related to the specific recommendations or views expressed in this research report.
+
+I, Nick Cheng, certify that all of the views expressed in this research report accurately reflect my personal views about the subject security(ies) and subject company(ies). I also certify that no part of my compensation was, is, or will be, directly or indirectly, related to the specific recommendations or views expressed in this research report.
+
+I, Matt Ma, certify that all of the views expressed in this research report accurately reflect my personal views about the subject security(ies) and subject company(ies). I also certify that no part of my compensation was, is, or will be, directly or indirectly, related to the specific recommendations or views expressed in this research report.
+
+I, Annie Ping, CFA, FRM, certify that all of the views expressed in this research report accurately reflect my personal views about the subject security(ies) and subject company(ies). I also certify that no part of my compensation was, is, or will be, directly or indirectly, related to the specific recommendations or views expressed in this research report.
+
+Registration of non-US analysts: Jacky He is employed by JEF Hong Kong Limited, a non-US affiliate of JEF LLC and is not registered/qualified as a research analyst with FINRA. This analyst(s) may not be an associated person of JEF LLC, a FINRA member firm, and therefore may not be subject to the FINRA Rule 2241 and restrictions on communications with a subject company, public appearances and trading securities held by a research analyst.
+
+Registration of non-US analysts: Edison Lee, CFA is employed by JEF Hong Kong Limited, a non-US affiliate of JEF LLC and is not registered/qualified as a research analyst with FINRA. This analyst(s) may not be an associated person of JEF LLC, a FINRA member firm, and therefore may not be subject to the FINRA Rule 2241 and restrictions on communications with a subject company, public appearances and trading securities held by a research analyst.
+
+Registration of non-US analysts: Nick Cheng is employed by JEF Hong Kong Limited, a non-US affiliate of JEF LLC and is not registered/qualified as a research analyst with FINRA. This analyst(s) may not be an associated person of JEF LLC, a FINRA member firm, and therefore may not be subject to the FINRA Rule 2241 and restrictions on communications with a subject company, public appearances and trading securities held by a research analyst.
+
+Registration of non-US analysts: Matt Ma is employed by JEF Hong Kong Limited, a non-US affiliate of JEF LLC and is not registered/qualified as a research analyst with FINRA. This analyst(s) may not be an associated person of JEF LLC, a FINRA member firm, and therefore may not be subject to the FINRA Rule 2241 and restrictions on communications with a subject company, public appearances and trading securities held by a research analyst.
+
+Registration of non-US analysts: Annie Ping, CFA, FRM is employed by JEF Hong Kong Limited, a non-US affiliate of JEF LLC and is not registered/qualified as a research analyst with FINRA. This analyst(s) may not be an associated person of JEF LLC, a FINRA member firm, and therefore may not be subject to the FINRA Rule 2241 and restrictions on communications with a subject company, public appearances and trading securities held by a research analyst.
+
+As is the case with all JEF employees, the analyst(s) responsible for the coverage of the financial instruments discussed in this report receives compensation based in part on the overall performance of the firm, including investment banking income. We seek to update our research as appropriate, but various regulations may prevent us from doing so. Aside from certain industry reports published on a periodic basis, the large majority of reports are published at irregular intervals as appropriate in the analyst's judgement.
+
+# Investment Recommendation Record
+
+(Article 3(1)e and Article 7 of MAR)
+
+Recommendation Published
+
+May 18, 2026 13:05 P.M.
+
+Recommendation Distributed
+
+May 18, 2026 13:05 P.M.
+
+# Company Specific Disclosures
+
+JEF is involved in the deal where Volta Energy Solutions S a r l is selling Circuit Foil Luxembourg S a r l to Jiujiang Defu Technology Co Ltd 301511 CH Solus Advanced Materials Co Ltd 336370 KS is the parent company of Volta Energy Solutions S a r l
+
+Rayyan Matraji owns shares of Amazon.com common stock.
+
+Steven DeSanctis owns shares of Amazon.com common shares.
+
+For Important Disclosure information on companies recommended in this report, please visit our website at https://javatar.bluematrix.com/sellside/Disclosures.action or call 212.284.2300.
+
+# Explanation of JEF Ratings
+
+Buy - Describes securities that we expect to provide a total return (price appreciation plus yield) of 15% or more within a 12-month period.
+
+Hold - Describes securities that we expect to provide a total return (price appreciation plus yield) of plus 15% or minus 10% within a 12-month period.
+
+Underperform - Describes securities that we expect to provide a total return (price appreciation plus yield) of minus 10% or less within a 12-month period. The expected total return (price appreciation plus yield) for Buy rated securities with an average security price consistently below \$10 is 20% or more within a 12-month period as these companies are typically more volatile than the overall stock market. For Hold rated securities with an average security price consistently below \$10, the expected total return (price appreciation plus yield) is plus or minus 20% within a 12-month period. For Underperform rated securities with an average security price consistently below \$10, the expected total return (price appreciation plus yield) is minus 20% or less within a 12-month period.
+
+NR - The investment rating and price target have been temporarily suspended. Such suspensions are in compliance with applicable regulations and/or JEF policies.
+
+CS - Coverage Suspended. JEF has suspended coverage of this company.
+
+NC - Not covered. JEF does not cover this company.
+
+Restricted - Describes issuers where, in conjunction with JEF engagement in certain transactions, company policy or applicable securities regulations prohibit certain types of communications, including investment recommendations.
+
+Monitor - Describes securities whose company fundamentals and financials are being monitored, and for which no financial projections or opinions on the investment merits of the company are provided.
+
+# Valuation Methodology
+
+JEF' methodology for assigning ratings may include the following: market capitalization, maturity, growth/value, volatility and expected total return over the next 12 months. The price targets are based on several methodologies, which may include, but are not restricted to, analyses of market risk, growth rate, revenue stream, discounted cash flow (DCF), EBITDA, EPS, cash flow (CF), free cash flow (FCF), EV/EBITDA, P/E, PE/growth, P/CF, P/FCF, premium (discount)/average group EV/EBITDA, premium (discount)/average group P/E, sum of the parts, net asset value, dividend returns, and return on equity (ROE) over the next 12 months.
+
+# JEF Franchise Picks
+
+JEF Franchise Picks include stock selections from among the best stock ideas from our equity analysts over a 12 month period. Stock selection is based on fundamental analysis and may take into account other factors such as analyst conviction, differentiated analysis, a favorable risk/reward ratio and investment themes that JEF analysts are recommending. JEF Franchise Picks will include only Buy rated stocks and the number can vary depending on analyst recommendations for inclusion. Stocks will be added as new opportunities arise and removed when the reason for inclusion changes, the stock has met its desired return, if it is no longer rated Buy and/or if it triggers a stop loss. Stocks having 120 day volatility in the bottom quartile of S&P stocks will continue to have a 15% stop loss, and the remainder will have a 20% stop. Franchise Picks are not intended to represent a recommended portfolio of stocks and is not sector based, but we may note where we believe a Pick falls within an investment style such as growth or value.
+
+# Risks which may impede the achievement of our Price Target
+
+This report was prepared for general circulation and does not provide investment recommendations specific to individual investors. As such, the financial instruments discussed in this report may not be suitable for all investors and investors must make their own investment decisions based upon their specific investment objectives and financial situation utilizing their own financial advisors as they deem necessary. Past performance of the financial instruments recommended in this report should not be taken as an indication or guarantee of future results. The price, value of, and income from, any of the financial instruments mentioned in this report can rise as well as fall and may be affected by changes in economic, financial and political factors. If a financial instrument is denominated in a currency other than the investor's home currency, a change in exchange rates may adversely affect the price of, value of, or income derived from the financial instrument described in this report. To the extent prices are shown in non-US currency, please note that our local currency price targets are based on a currency conversion using an exchange rate as of the prior trading day (unless otherwise noted). Should there be fluctuations in the exchange rate after this date, that will affect the non-US target prices and should no longer be relied upon. In addition, investors in securities such as ADRs, whose values are affected by the currency of the underlying security, effectively assume currency risk.
+
+# Other Companies Mentioned in This Report
+
+• Alphabet, Inc. (GOOGL: \$396.78, BUY)   
+• Amazon.com, Inc (AMZN: \$264.14, BUY)   
+• Mitsui & Company (8031 JP: ¥6,106, HOLD)   
+• Mitsui Kinzoku Company (5706 JP: ¥46,640, BUY)   
+• NVIDIA Corporation (NVDA: \$225.32, BUY)  
+• Shengyi Technology Co Ltd (600183 CH: CNY89.95, BUY)
+
+Distribution of Ratings   
+IB Serv./Past12 Mos.   
+JIL Mkt Serv./Past12 Mos. 
+
+<table><tr><td></td><td>Count</td><td>Percent</td><td>Count</td><td>Percent</td><td>Count</td><td>Percent</td></tr><tr><td>BUY</td><td>2186</td><td>62.08%</td><td>376</td><td>17.20%</td><td>109</td><td>4.99%</td></tr><tr><td>HOLD</td><td>1177</td><td>33.43%</td><td>111</td><td>9.43%</td><td>20</td><td>1.70%</td></tr><tr><td>UNDERPERFORM</td><td>158</td><td>4.49%</td><td>1</td><td>0.63%</td><td>1</td><td>0.63%</td></tr></table>
+
+# Other Important Disclosure
+
+# Other Important Disclosures
+
+JEF does business and seeks to do business with companies covered in its research reports, and expects to receive or intends to seek compensation for investment banking services among other activities from such companies. As a result, investors should be aware that JEF may have a conflict of interest that could affect the objectivity of this report. Investors should consider this report as only a single factor in making their investment decision.
+
+JEF Equity Research refers to research reports produced by analysts employed by one of the following JEF Financial Group Inc. ("JEF") companies:
+
+United States: JEF LLC which is an SEC registered broker-dealer and a member of FINRA (and distributed by JEF Services, LLC, an SEC registered Investment Adviser, to clients paying separately for such research).
+
+Canada: JEF Securities Inc., which is an investment dealer registered in each of the thirteen Canadian jurisdictions and a dealer member of the Canadian Investment Regulatory Organization, including research reports produced jointly by JEF Securities Inc. and another JEF entity (and distributed by JEF Securities Inc.).
+
+Where JEF Securities Inc. distributes research reports produced by JEF LLC, JEF International Limited, JEF Japan Company Limited, or JEF India Private Limited, you are advised that each of JEF LLC, JEF International Limited, JEF Japan Company Limited, and JEF India Private Limited operates as a dealer in your jurisdiction under an exemption from the dealer registration requirements contained in National Instrument 31-103 Registration Requirements, Exemptions and Ongoing Registrant Obligations and, as such, each of JEF LLC, JEF International Limited, JEF Japan Compay Limited, and JEF India Private Limited is not required to be and is not a registered dealer or adviser in your jurisdiction. You are advised that where JEF LLC or JEF International Limited prepared this research report, it was not prepared in accordance with Canadian disclosure requirements relating to research reports in Canada.
+
+United Kingdom: JEF International Limited, which is authorized and regulated by the Financial Conduct Authority; registered in England and Wales No. 1978621; registered office: 100 Bishopsgate, London EC2N 4JL; telephone +44 (0)20 7029 8000; facsimile +44 (0)20 7029 8010.
+
+Germany: JEF GmbH, which is authorized and regulated by the Bundesanstalt fuer Finanzdienstleistungsaufsicht, BaFin-ID: 10150151; registered office: Bockenheimer Landstr. 24, 60323 Frankfurt a.M., Germany; telephone: +49 (0) 69 719 1870
+
+Hong Kong: JEF Hong Kong Limited, which is licensed by the Securities and Futures Commission of Hong Kong with CE number ATS546; located at Level 26, Two International Finance Center, 8 Finance Street, Central, Hong Kong; telephone: +852 3743 8000.
+
+Singapore: JEF Singapore Limited, which is licensed by the Monetary Authority of Singapore; located at 10 Collyer Quay #41-01, Ocean Financial Centre, Singapore 049315, telephone: +65 6551 3950.
+
+Japan: JEF Japan Company Limited, which is a securities company registered by the Financial Services Agency of Japan and is a member of the Japan Securities Dealers Association; located at Tokyo Midtown Hibiya 30F Hibiya Mitsui Tower, 1-1-2 Yuraku-cho, Chiyoda-ku, Tokyo 100-0006; telephone +813 5251 6100; facsimile +813 5251 6101.
+
+India: JEF India Private Limited (CIN - U74140MH2007PTC200509), licensed by the Securities and Exchange Board of India for: Stock Broker (NSE & BSE) INZ000243033, Research Analyst INH000000701 and Merchant Banker INM000011443, located at Level 16, Express Towers, Nariman Point, Mumbai 400 021, India; Tel +91 22 4356 6000. Compliance Officer name: Sanjay Pai, Tel No: +91 22 42246150, Email: spai@JEF.com, Grievance officer name: Sanjay Pai, Tel no. +91 22 42246150, Email: compliance\_india@JEF.com. Registration granted by SEBI and certification from NISM in no way guarantee performance of the intermediary or provide any assurance of returns to investors.
+
+Australia: JEF (Australia) Pty Limited (ACN 623 059 898), which holds an Australian financial services license (AFSL 504712) and is located at Level 20, 60 Martin Place, Sydney NSW 2000; telephone +61 2 9364 2800.
+
+Dubai: JEF International Limited, Dubai branch, which is licensed by the Dubai Financial Services Authority (DFSA Reference Number F007325); registered office Unit L31-06, L31-07, Level 31, ICD Brookfield Pace, DIFC, PO Box 121208, Dubai, UAE.
+
+This report was prepared by personnel who are associated with JEF (JEF Securities Inc., JEF International Limited, JEF GmbH, JEF Hong Kong Limited, JEF Singapore Limited, JEF Japan Company Limited, JEF India Private Limited), and JEF (Australia) Pty Ltd; or by personnel who are associated with both JEF LLC and JEF Services LLC ("JRS"). JEF LLC is a US registered broker-dealer and is affiliated with JRS, which is a US registered investment adviser. JRS does not create tailored or personalized research and all research provided by JRS is impersonal. If you are paying separately for this research, it is being provided to you by JRS. Otherwise, it is being provided by JEF LLC. JEF LLC, JRS, and their affiliates are collectively referred to below as "JEF". JEF may seek to do business with companies covered in this research report. As a result, investors should be aware that JEF may have a conflict of interest that could affect the objectivity of this report. Investors should consider this report as only one of many factors in making their investment decisions. Specific conflict of interest and other disclosures that are required by FINRA, the Canadian Investment Regulatory Organization and other rules are set forth in this disclosure section.
+
+\*\*\*
+
+If you are receiving this report from a non-US JEF entity, please note the following: Unless prohibited by the provisions of Regulation S of the U.S. Securities Act of 1933, as amended, this material is distributed in the United States by JEF LLC, which accepts responsibility for its contents in accordance with the provisions of Rule 15a-6 under the US Securities Exchange Act of 1934, as amended. Transactions by or on behalf of any US person may only be effected through JEF LLC. In the United Kingdom and European Economic Area this report is issued and/or approved for distribution by JEF International Limited ("JIL") and/or JEF GmbH and is intended for use only by persons who have, or have been assessed as having, suitable professional experience and expertise, or by persons to whom it can be otherwise lawfully distributed. JEF LLC, JIL, JEF GmbH and their affiliates, may make a market or provide liquidity in the financial instruments referred to in this report; and where they do make a market, such activity is disclosed specifically in this report under "company specific disclosures".
+
+For Canadian investors, this material is intended for use only by professional or institutional investors. None of the investments or investment services mentioned or described herein is available to other persons or to anyone in Canada who is not a "permitted client" as defined by National Instrument 31-103 Registration Requirements, Exemptions and Ongoing Registrant Obligations, as applicable. This research report is a general discussion of the merits and risks of a security or securities only, and is not in any way meant to be tailored to the needs and circumstances of any recipient. The information contained herein is not, and under no circumstances is to be construed as, an offer to sell securities described herein, or solicitation of an offer to buy securities described herein, in Canada or any province or territory thereof. Any offer or sale of the securities described herein in Canada will be made only under an exemption from the requirements to file a prospectus with the relevant Canadian securities regulators, if applicable, and only by a dealer properly registered under applicable securities laws or, alternatively, pursuant to an exemption from the dealer registration requirement in the relevant province or territory of Canada in which such offer or sale is made. The information contained herein is under no circumstances to be construed as investment advice in any province or territory of Canada and is not tailored to the needs of the recipient. To the extent that the information contained herein references securities of an issuer incorporated, formed or created under the laws of Canada or a province or territory of Canada, any trades in such securities must be conducted through a dealer registered in Canada. No securities commission or similar regulatory authority in Canada has reviewed or in any way passed judgment upon this research report, the information contained herein or the merits of the securities described herein, and any representation to the contrary is an offence. In Singapore, JEF Singapore Limited ("JSL") is regulated by the Monetary Authority of Singapore. For investors in the Republic of Singapore, where this material is prepared and issued by a JEF affiliate outside of Singapore, it is distributed by JSL pursuant to Regulation 32C of the Financial Advisers Regulations. The material contained in this document is intended solely for accredited, expert or institutional investors, as defined under the Securities and Futures Act 2001 (Singapore). If there are any matters arising from, or in connection with this material, please contact JSL, located at 80 Raffles Place #15-20, UOB Plaza 2, Singapore 048624, telephone: +65 6551 3950. In Dubai, this material is issued and distributed by JEF International Limited, Dubai branch, and is intended solely for Professional Clients and should not be distributed to, or relied upon by, Retail Clients (as defined by DFSA). A distribution of ratings in percentage terms in each sector covered is available upon request from your sales representative. In Japan, this material is issued and distributed by JEF Japan Company Limited to institutional investors only. In Hong Kong, this report is issued and approved by JEF Hong Kong Limited and is intended for use only by professional investors as defined in the Hong Kong Securities and Futures Ordinance and its subsidiary legislation. In the Republic of China (Taiwan), this report should not be distributed. The research in relation to this report is conducted outside the People's Republic of China ("PRC"). This report does not constitute an offer to sell or the solicitation of an offer to buy any securities in the PRC. PRC investors shall have the relevant qualifications to invest in such securities and shall be responsible for obtaining all relevant approvals, licenses, verifications and/or registrations from the relevant governmental authorities themselves. In India, this report is made available by JEF India Private Limited. In Australia, this report is issued and/or approved for distribution by, or on behalf of, JEF (Australia) Securities Pty Ltd (ACN 610 977 074), which holds an Australian financial services license (AFSL 487263). It is directed solely at wholesale clients within the meaning of the Corporations Act 2001 (Cth) of Australia (the "Corporations Act"), in connection with their consideration of any investment or investment service that is the subject of this report. This report may contain general financial product advice. Where this report refers to a particular financial product, you should obtain a copy of the relevant product disclosure statement or offer document before making any decision in relation to the product. Recipients of this document in any other jurisdictions should inform themselves about and observe any applicable legal requirements in relation to the receipt of this document.
+
+This report is not an offer or solicitation of an offer to buy or sell any security or derivative instrument, or to make any investment. Any opinion or estimate constitutes the preparer's best judgment as of the date of preparation, and is subject to change without notice. JEF assumes no obligation to maintain or update this report based on subsequent information and events. JEF, and their respective officers, directors, and employees, may have long or short positions in, or may buy or sell any of the securities, derivative instruments or other investments mentioned or described herein, either as agent or as principal for their own account. This material is provided solely for informational purposes and is not tailored to any recipient, and is not based on, and does not take into account, the particular investment objectives, portfolio holdings, strategy, financial situation, or needs of any recipient. As such, any advice or recommendation in this report may not be suitable for a particular recipient. JEF assumes recipients of this report are capable of evaluating the information contained herein and of exercising independent judgment. A recipient of this report should not make any investment decision without first considering whether any advice or recommendation in this report is suitable for the recipient based on the recipient's particular circumstances and, if appropriate or otherwise needed, seeking professional advice, including tax advice. JEF does not perform any suitability or other analysis to check whether an investment decision made by the recipient based on this report is consistent with a recipient's investment objectives, portfolio holdings, strategy, financial situation, or needs.
+
+By providing this report, neither JRS nor any other JEF entity accepts any authority, discretion, or control over the management of the recipient's assets. Any action taken by the recipient of this report, based on the information in the report, is at the recipient's sole judgment and risk. The recipient must perform his or her own independent review of any prospective investment. If the recipient uses the services of JEF LLC (or other affiliated broker-dealers), in connection with a purchase or sale of a security that is a subject of these materials, such broker-dealer may act as principal for its own accounts or as agent for another person. Only JRS is registered with the SEC as an investment adviser; and therefore neither JEF LLC nor any other JEF affiliate has any fiduciary duty in connection with distribution of these reports.
+
+The price and value of the investments referred to herein and the income from them may fluctuate. Past performance is not a guide to future performance, future returns are not guaranteed, and a loss of original capital may occur. Fluctuations in exchange rates could have adverse effects on the value or price of, or income derived from, certain investments.
+
+This report may contain forward looking statements that may be affected by inaccurate assumptions or by known or unknown risks, uncertainties, and other important factors. As a result, the actual results, events, performance or achievements of the financial product may be materially different from those expressed or implied in such statements.
+
+This report has been prepared independently of any issuer of securities mentioned herein and not as agent of any issuer of securities. No Equity Research personnel have authority whatsoever to make any representations or warranty on behalf of the issuer(s). Any comments or statements made herein are those of the JEF entity producing this report and may differ from the views of other JEF entities.
+
+This report may contain information obtained from third parties, including ratings from credit ratings agencies such as Standard & Poor's, and information derived from third-party or proprietary generative artificial intelligence (Gen AI) models. JEF does not guarantee the accuracy, completeness, timeliness or availability of this information, and is not responsible for any errors or omissions (negligent or otherwise), regardless of the cause, or for the results obtained from the use of such content. Neither JEF nor any third-party content providers, including providers of Gen AI models, give any express or implied warranties, including, but not limited to, any warranties of merchantability or fitness for a particular purpose or use. Neither JEF nor any third-party content provider shall be liable for any direct, indirect, incidental, exemplary, compensatory, punitive, special or consequential damages, costs, expenses, legal fees, or losses (including lost income or profits and opportunity costs) in connection with any use of their content, including ratings. Credit ratings are statements of opinions and are not statements of fact or recommendations to purchase, hold or sell securities. They do not address the suitability of securities or the suitability of securities for investment purposes, and should not be relied on as investment advice. Reproduction and distribution of third party content in any form is prohibited except with the prior written permission of the related third party.
+
+JEF reports are disseminated and available electronically, and, in some cases, also in printed form. Electronic research is simultaneously made available to all clients. This report or any portion hereof may not be copied, reprinted, sold, or redistributed or disclosed by the recipient or any third party, by content scraping or extraction, automated processing, or any other form or means, without the prior written consent of JEF. Any unauthorized use is prohibited. Neither JEF nor any of its respective directors, officers or employees, is responsible for guaranteeing the financial success of any investment, or accepts any liability whatsoever for any direct, indirect or consequential damages or losses arising from any use of this report or its contents. Nothing herein shall be construed to waive any liability JEF has under applicable U.S. federal or state securities laws.
+
+For Important Disclosure information relating to JRS, please see https://adviserinfo.sec.gov/IAPD/Content/Common/crd\_iapd\_Brochure.aspx?BRCHR\_VRSN\_ID=483878 and https://adviserinfo.sec.gov/Firm/292142 or visit our website at https://javatar.bluematrix.com/sellside/Disclosures.action, or www.JEF.com, or call 1.888.JEF.
+
+© 2026 JEF
