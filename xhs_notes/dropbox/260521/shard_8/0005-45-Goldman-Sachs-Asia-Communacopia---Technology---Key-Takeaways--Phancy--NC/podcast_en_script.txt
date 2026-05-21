@@ -1,0 +1,18 @@
+EN_A: So there’s this new buzzword in AI — “token factory.” What is it, and why should we care?
+EN_B: A global investment bank just put out a deep dive on this. Their main takeaway: AI infrastructure is shifting from just renting GPUs to offering full-stack solutions. And a company called Phancy is leading that shift.
+EN_A: So we’re not talking about the models themselves, but how you turn computing power into something you can sell by the token?
+EN_B: Exactly. The report says applications like AI video generation, AI coding, and AI agents are exploding demand. But here’s the real problem: most GPU utilization is only around 10%.
+EN_A: 10%? So 90% of that expensive hardware is just sitting idle?
+EN_B: Right. That’s where Phancy’s vGPU technology comes in. It virtualizes the memory and computing power across different AI chips. Management claims it can push utilization to 40% to 60%.
+EN_A: So that means huge cost savings for customers?
+EN_B: Yes, but it’s more than that. Phancy’s token factory is end-to-end — from procuring the computing resources to deploying models and offering API output. Management expects tight supply for the next 5 to 10 years, so full-stack players will win.
+EN_A: And the report also mentions SenseTime. What’s the connection?
+EN_B: The analysts see Phancy’s bullish view on token demand as validation for SenseTime. With China’s “AI plus” policy, corporate software budgets are moving from traditional tools to generative AI. That’s a tailwind for SenseTime’s foundation models and data center rental revenue.
+EN_A: But how exactly does the vGPU technology work? Does the report go into detail?
+EN_B: Not fully. It says it uses virtualization to match memory and compute, but the actual architecture and benchmark data are left for the full report.
+EN_A: So this is more of a teaser — it tells you where to look, but the details are behind the paywall?
+EN_B: Exactly. For example, does vGPU really hit 40% to 60% utilization across all workloads? That still needs verification.
+EN_A: If listeners want the full story, where should they go?
+EN_B: Join our community — we share these full reports regularly. Or just search for the report title online.
+EN_A: Great. So remember: when it comes to AI, utilization is the hidden battlefield. Thanks for breaking it down.
+EN_B: Thanks for having me.

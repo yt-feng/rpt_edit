@@ -1,0 +1,69 @@
+ZH_A: 最近AI圈有个词特别火，叫“token工厂”，这到底是什么？我们刚拿到一份外资投行的深度报告，聊的就是这个。
+
+ZH_B: 对，这份报告的核心判断是：AI基础设施的需求正在从单纯的算力租赁，转向更复杂的全栈解决方案。而Phancy这家公司，就是这种转变的代表。
+
+ZH_A: 所以我们今天不聊大模型本身，而是聊怎么把算力变成像水电一样可计量的服务？
+
+ZH_B: 没错。报告里提到，AI视频生成、AI编程、AI智能体这些应用的爆发，让算力需求猛增。但真正的问题是：GPU资源利用率太低，行业平均只有10%左右。
+
+ZH_A: 10%？那岂不是90%的算力都浪费了？
+
+ZH_B: 对，这就是Phancy的独特之处。他们有自己的vGPU技术，通过虚拟化来调度不同AI芯片的内存和算力，据管理层说，能把利用率提升到40%到60%。
+
+ZH_A: 这意味着客户能省下大量的成本？
+
+ZH_B: 是的，而且不光是省钱。Phancy的token工厂是端到端的，从采购算力资源到模型部署，再到API输出，一站式搞定。管理层认为，未来5到10年算力供应都会紧张，所以这种全链条服务会更有竞争力。
+
+ZH_A: 那这和商汤有什么关系？报告里也提到了商汤。
+
+ZH_B: 报告认为，Phancy管理层对token需求的乐观判断，验证了商汤的正面逻辑。随着国家“AI+”政策推动，企业软件预算会从功能型工具转向生成式AI软件，这对商汤的大模型和AIDC租赁收入都是利好。
+
+ZH_A: 但Phancy的vGPU技术，具体是怎么实现的？报告里有没有详细解释？
+
+ZH_B: 报告没有完全展开。它只提到是通过虚拟化来匹配和分配内存与算力，但具体的技术架构和性能测试数据，需要看完整版才能知道。
+
+ZH_A: 也就是说，这份报告更像是一个“引子”，告诉我们方向在哪，但细节需要你自己去挖？
+
+ZH_B: 对。比如，vGPU技术在不同场景下的实际表现如何，是否真的能稳定达到40%到60%的利用率，这些都还需要继续验证。
+
+ZH_A: 那如果听众想了解更多，应该去哪里看完整报告？
+
+ZH_B: 可以加入我们的社群，我们会定期分享这些深度研报的完整版。或者直接搜索报告标题，也能找到更多细节。
+
+ZH_A: 好，今天我们先聊到这。记住，算力利用率才是AI时代真正的“隐形战场”。
+
+EN_A: So there’s this new buzzword in AI — “token factory.” What is it, and why should we care?
+
+EN_B: A global investment bank just put out a deep dive on this. Their main takeaway: AI infrastructure is shifting from just renting GPUs to offering full-stack solutions. And a company called Phancy is leading that shift.
+
+EN_A: So we’re not talking about the models themselves, but how you turn computing power into something you can sell by the token?
+
+EN_B: Exactly. The report says applications like AI video generation, AI coding, and AI agents are exploding demand. But here’s the real problem: most GPU utilization is only around 10%.
+
+EN_A: 10%? So 90% of that expensive hardware is just sitting idle?
+
+EN_B: Right. That’s where Phancy’s vGPU technology comes in. It virtualizes the memory and computing power across different AI chips. Management claims it can push utilization to 40% to 60%.
+
+EN_A: So that means huge cost savings for customers?
+
+EN_B: Yes, but it’s more than that. Phancy’s token factory is end-to-end — from procuring the computing resources to deploying models and offering API output. Management expects tight supply for the next 5 to 10 years, so full-stack players will win.
+
+EN_A: And the report also mentions SenseTime. What’s the connection?
+
+EN_B: The analysts see Phancy’s bullish view on token demand as validation for SenseTime. With China’s “AI plus” policy, corporate software budgets are moving from traditional tools to generative AI. That’s a tailwind for SenseTime’s foundation models and data center rental revenue.
+
+EN_A: But how exactly does the vGPU technology work? Does the report go into detail?
+
+EN_B: Not fully. It says it uses virtualization to match memory and compute, but the actual architecture and benchmark data are left for the full report.
+
+EN_A: So this is more of a teaser — it tells you where to look, but the details are behind the paywall?
+
+EN_B: Exactly. For example, does vGPU really hit 40% to 60% utilization across all workloads? That still needs verification.
+
+EN_A: If listeners want the full story, where should they go?
+
+EN_B: Join our community — we share these full reports regularly. Or just search for the report title online.
+
+EN_A: Great. So remember: when it comes to AI, utilization is the hidden battlefield. Thanks for breaking it down.
+
+EN_B: Thanks for having me.
