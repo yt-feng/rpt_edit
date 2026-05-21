@@ -1,0 +1,2509 @@
+[
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.04,
+                0.015,
+                0.543,
+                0.044
+            ],
+            "angle": 0,
+            "content": "China A-share W&W Indicator - Monthly"
+        },
+        {
+            "type": "title",
+            "bbox": [
+                0.04,
+                0.06,
+                0.606,
+                0.117
+            ],
+            "angle": 0,
+            "content": "The W&W Indicator further signals “Very Bullish” sign for A-share market"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.04,
+                0.12,
+                0.139,
+                0.135
+            ],
+            "angle": 0,
+            "content": "Equity Strategy",
+            "merge_prev": false
+        },
+        {
+            "type": "title",
+            "bbox": [
+                0.039,
+                0.16,
+                0.54,
+                0.18
+            ],
+            "angle": 0,
+            "content": "Indicator reiterates \"very bullish\" sign for A-share"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.037,
+                0.18,
+                0.625,
+                0.353
+            ],
+            "angle": 0,
+            "content": "Monthly average of the BofA China A-share Wax & Wane Indicator improved to 29 in May, with weekly average also at 29 – firmly in the bullish zone. Daily reading hit 13 (“very bullish”) on May 11 \\( ^{th} \\) , the strongest level since Sep-2024, following another “very bullish” signal on Apr 16 \\( ^{th} \\) . Earnings revision is positive, liquidity is ample, fund flow is supportive, albeit with elevated leverage and positioning and rich valuation. Global markets delivered mixed returns in the past one month amid lingering geopolitical tensions yet still-strong AI trades. Within China, Star 50, ChiNext and CSI1000 outperformed while NASDAQ Golden Dragon, MSCI China and HSCEI lagged. Sentiment is bullish, with strong interest in China’s tech and industrials. Market is trading in an “A share style”: thematic-driven, fast rotation, and favoring mid/small caps. Reiterate our view that A-share’s outperformance over H may continue (see China Conference feedback).",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.038,
+                0.359,
+                0.613,
+                0.391
+            ],
+            "angle": 0,
+            "content": "Leverage: 75%, high. Margin trading as a % of A-share daily turnover edged lower to 9.9% in May-26, but still higher than its long-term average of 9.0%.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.038,
+                0.395,
+                0.545,
+                0.412
+            ],
+            "angle": 0,
+            "content": "Valuation: \\(84\\%\\), high. P/E at 24.3x is above its long-term average of 21.2x.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.038,
+                0.416,
+                0.603,
+                0.448
+            ],
+            "angle": 0,
+            "content": "Positioning: 64%, high. 86.9% of stock mutual funds' position is currently invested, higher than its long-term average of 84.7%.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.038,
+                0.453,
+                0.617,
+                0.484
+            ],
+            "angle": 0,
+            "content": "Liquidity: 21%, loose. The 10-year government bond yield has risen to 1.76% in May-26 from its record lows of 1.6% in Jan-25.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.038,
+                0.489,
+                0.593,
+                0.521
+            ],
+            "angle": 0,
+            "content": "Fund flow: 34%, supportive. Turnover/market cap stands at 2.8% in May-26, well above its long-term average of 1.1% since 2007.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.038,
+                0.526,
+                0.606,
+                0.558
+            ],
+            "angle": 0,
+            "content": "Earnings: 26%, positive. CSI 300 earnings revision has recovered from -12% YoY in Sep-24 to 10.1% YoY in May-26.",
+            "merge_prev": false
+        },
+        {
+            "type": "title",
+            "bbox": [
+                0.055,
+                0.564,
+                0.397,
+                0.579
+            ],
+            "angle": 0,
+            "content": "Exhibit 1: BofA China A-share W&W Indicator in May 2026"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.055,
+                0.579,
+                0.527,
+                0.594
+            ],
+            "angle": 0,
+            "content": "The latest daily reading at 37 is \"marginally bullish\". The monthly average at 29 is bullish",
+            "merge_prev": false
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.142,
+                0.606,
+                0.348,
+                0.619
+            ],
+            "angle": 0,
+            "content": "BofA China A-share Wax & Wane Indicator"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.082,
+                0.622,
+                0.402,
+                0.741
+            ],
+            "angle": 0,
+            "content": "| Rating | Value |\n|---|---|\n| Waning | 20 |\n| Bullish | 40 |\n| Neutral | 60 |\n| Bearish | 80 |\n| Very Bearish | 100 |",
+            "sub_type": "gauge"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.054,
+                0.748,
+                0.624,
+                0.783
+            ],
+            "angle": 0,
+            "content": "Source: Wind, CEIC, Bloomberg; Disclaimer: The BofA China A-share W&W Indicator identified as an indicator above is intended to be an indicative metric only and may not be used for reference purposes or as a measure of performance for any financial instrument or contract, or otherwise relied upon by third parties for any other purpose, without the prior written consent of BofA Global Research. This BofA China A-share W&W Indicator was not created to act as a benchmark"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.52,
+                0.783,
+                0.626,
+                0.794
+            ],
+            "angle": 0,
+            "content": "BofA GLOBAL RESEARCH",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.037,
+                0.815,
+                0.591,
+                0.852
+            ],
+            "angle": 0,
+            "content": "Trading ideas and investment strategies discussed herein may give rise to significant risk and are not suitable for all investors. Investors should have experience in relevant markets and the financial resources to absorb any losses arising from applying these ideas or strategies.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.038,
+                0.852,
+                0.576,
+                0.875
+            ],
+            "angle": 0,
+            "content": ">> Employed by a non-US affiliate of BofAS and is not registered/qualified as a research analyst under the FINRA rules.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.038,
+                0.876,
+                0.589,
+                0.9
+            ],
+            "angle": 0,
+            "content": "Refer to \"Other Important Disclosures\" for information on certain BofA entities that take responsibility for the information herein in particular jurisdictions.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.038,
+                0.9,
+                0.564,
+                0.948
+            ],
+            "angle": 0,
+            "content": "BofA does and seeks to do business with issuers covered in its research reports. As a result, investors should be aware that the firm may have a conflict of interest that could affect the objectivity of this report. Investors should consider this report as only a single factor in making their investment decision.",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.039,
+                0.948,
+                0.332,
+                0.96
+            ],
+            "angle": 0,
+            "content": "Refer to important disclosures on page 8 to 10."
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.548,
+                0.949,
+                0.597,
+                0.959
+            ],
+            "angle": 0,
+            "content": "12975840"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.706,
+                0.158,
+                0.79,
+                0.172
+            ],
+            "angle": 0,
+            "content": "19 May 2026",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.705,
+                0.18,
+                0.811,
+                0.209
+            ],
+            "angle": 0,
+            "content": "Equity Strategy China",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.706,
+                0.227,
+                0.738,
+                0.238
+            ],
+            "angle": 0,
+            "content": "BofA",
+            "merge_prev": false
+        },
+        {
+            "type": "title",
+            "bbox": [
+                0.706,
+                0.242,
+                0.808,
+                0.288
+            ],
+            "angle": 0,
+            "content": "Data Analytics"
+        },
+        {
+            "type": "image",
+            "bbox": [
+                0.827,
+                0.22,
+                0.887,
+                0.289
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.705,
+                0.337,
+                0.783,
+                0.347
+            ],
+            "angle": 0,
+            "content": "Winnie Wu >>",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.706,
+                0.348,
+                0.792,
+                0.358
+            ],
+            "angle": 0,
+            "content": "Research Analyst",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.706,
+                0.359,
+                0.835,
+                0.369
+            ],
+            "angle": 0,
+            "content": "BofA (Hong Kong)",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.707,
+                0.369,
+                0.791,
+                0.378
+            ],
+            "angle": 0,
+            "content": "+852 3508 3058",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.707,
+                0.379,
+                0.813,
+                0.388
+            ],
+            "angle": 0,
+            "content": "winnie.wu@bofa.com",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.706,
+                0.395,
+                0.77,
+                0.405
+            ],
+            "angle": 0,
+            "content": "Gina Wu >>",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.707,
+                0.406,
+                0.758,
+                0.415
+            ],
+            "angle": 0,
+            "content": "Strategist",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.707,
+                0.416,
+                0.834,
+                0.426
+            ],
+            "angle": 0,
+            "content": "BofA (Hong Kong)",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.707,
+                0.426,
+                0.791,
+                0.435
+            ],
+            "angle": 0,
+            "content": "+852 3508 8008",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.707,
+                0.436,
+                0.801,
+                0.446
+            ],
+            "angle": 0,
+            "content": "gina.wu@bofa.com",
+            "merge_prev": false
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.04,
+                0.013,
+                0.162,
+                0.023
+            ],
+            "angle": 0,
+            "content": "BofA GLOBAL RESEARCH"
+        },
+        {
+            "type": "title",
+            "bbox": [
+                0.041,
+                0.04,
+                0.583,
+                0.066
+            ],
+            "angle": 0,
+            "content": "W&W Indicator vs CSI300 performance"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.069,
+                0.613,
+                0.099
+            ],
+            "angle": 0,
+            "content": "The exhibits below show the historical correlation between the W&W Indicator and the CSI300 Index forward performance for the following 1/2/3 month(s) since 2015.",
+            "merge_prev": false
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.055,
+                0.109,
+                0.689,
+                0.123
+            ],
+            "angle": 0,
+            "content": "Exhibit 2: W&W Indicator vs percentage change in CSI300 in the following 1mth (Back-tested) since Jan-2015"
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.055,
+                0.124,
+                0.486,
+                0.138
+            ],
+            "angle": 0,
+            "content": "W&W Indicator has been fairly good in predicting the CSI300 1mth performance"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.058,
+                0.145,
+                0.938,
+                0.32
+            ],
+            "angle": 0,
+            "content": "| Date    | CSI 1mth chg (LHS) | W&W Indicator (RHS) |\n|---------|--------------------|---------------------|\n| Jan-15  | ~0%                | ~30%                |\n| Apr-15  | ~-24%              | ~24%                |\n| Jul-15  | ~-30%              | ~28%                |\n| Oct-15  | ~-24%              | ~24%                |\n| Jan-16  | ~-24%              | ~24%                |\n| Apr-16  | ~-24%              | ~24%                |\n| Jul-16  | ~-24%              | ~24%                |\n| Oct-16  | ~-24%              | ~24%                |\n| Jan-17  | ~-24%              | ~24%                |\n| Apr-17  | ~-24%              | ~24%                |\n| Jul-17  | ~-24%              | ~24%                |\n| Oct-17  | ~-24%              | ~24%                |\n| Jan-18  | ~-24%              | ~24%                |\n| Apr-18  | ~-24%              | ~24%                |\n| Jul-18  | ~-24%              | ~24%                |\n| Oct-18  | ~-24%              | ~24%                |\n| Jan-19  | ~-24%              | ~24%                |\n| Apr-19  | ~-24%              | ~24%                |\n| Jul-19  | ~-24%              | ~24%                |\n| Oct-19  | ~-24%              | ~24%                |\n| Jan-20  | ~-24%              | ~24%                |\n| Apr-20  | ~-24%              | ~24%                |\n| Jul-20  | ~-24%              | ~24%                |\n| Oct-20  | ~-24%              | ~24%                |\n| Jan-21  | ~-24%              | ~24%                |\n| Apr-21  | ~-24%              | ~24%                |\n| Jul-21  | ~-24%              | ~24%                |\n| Oct-21  | ~-24%              | ~24%                |\n| Jan-22  | ~-24%              | ~24%                |\n| Apr-22  | ~-24%              | ~24%                |\n| Jul-22  | ~-24%              | ~24%                |\n| Oct-22  | ~-24%              | ~24%                |\n| Jan-23  | ~-24%              | ~24%                |\n| Apr-23  | ~-24%              | ~24%                |\n| Jul-23  | ~-24%              | ~24%                |\n| Oct-23  | ~-24%              | ~24%                |\n| Jan-24  | ~-24%              | ~24%                |\n| Apr-24  | ~-24%              | ~24%                |\n| Jul-24  | ~-24%              | ~24%                |\n| Oct-24  | ~-24%              | ~24%                |\n| Jan-25  | ~-24%              | ~24%                |\n| Apr-25  | ~-24%              | ~24%                |\n| Jul-25  | ~-24%              | ~24%                |\n| Oct-25  | ~-24%              | ~24%                |\n| Jan-26  | ~-24%              | ~24%                |\n| Apr-26  | ~-24%              | ~24%                |",
+            "sub_type": "line"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.056,
+                0.324,
+                0.955,
+                0.354
+            ],
+            "angle": 0,
+            "content": "Source: Wind, Bloomberg ^Note: Backtesting for Jan-2010 to Jun-2021, actual starts Jul-2021. #W&W Indicator's input factors rose from six to ten from Jan-2010 to Apr-2015, due to data availability, thus the historical reading before and after Apr-15 may not be fully comparable. This performance is back-tested and does not represent the actual performance of any account or fund. Back-tested performance depicts the theoretical (not actual) performance of a particular strategy over the time period indicated. No representation is being made that any actual portfolio is likely to have achieved returns similar to those shown herein."
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.849,
+                0.352,
+                0.956,
+                0.362
+            ],
+            "angle": 0,
+            "content": "BofA GLOBAL RESEARCH",
+            "merge_prev": false
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.055,
+                0.367,
+                0.695,
+                0.382
+            ],
+            "angle": 0,
+            "content": "Exhibit 3: W&W Indicator vs percentage change in CSI300 in the following 2mths (Back-tested) since Jan-2015"
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.055,
+                0.382,
+                0.486,
+                0.396
+            ],
+            "angle": 0,
+            "content": "W&W Indicator has been fairly good in predicting the CSI300 2mth performance"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.058,
+                0.403,
+                0.936,
+                0.582
+            ],
+            "angle": 0,
+            "content": "| Date    | CSI 2mth chg (LHS) | W&W Indicator (RHS) |\n|---------|--------------------|---------------------|\n| Jan-15  | ~38%               | ~35%                |\n| Apr-15  | ~-32%              | ~-24%               |\n| Jul-15  | ~-16%              | ~-24%               |\n| Oct-15  | ~-8%               | ~-24%               |\n| Jan-16  | ~-16%              | ~-24%               |\n| Apr-16  | ~-8%               | ~-24%               |\n| Jul-16  | ~-8%               | ~-24%               |\n| Oct-16  | ~-8%               | ~-24%               |\n| Jan-17  | ~-8%               | ~-24%               |\n| Apr-17  | ~-8%               | ~-24%               |\n| Jul-17  | ~-8%               | ~-24%               |\n| Oct-17  | ~-8%               | ~-24%               |\n| Jan-18  | ~-8%               | ~-24%               |\n| Apr-18  | ~-8%               | ~-24%               |\n| Jul-18  | ~-8%               | ~-24%               |\n| Oct-18  | ~-8%               | ~-24%               |\n| Jan-19  | ~24%               | ~20%                |\n| Apr-19  | ~24%               | ~20%                |\n| Jul-19  | ~24%               | ~20%                |\n| Oct-19  | ~24%               | ~20%                |\n| Jan-20  | ~24%               | ~20%                |\n| Apr-20  | ~24%               | ~20%                |\n| Jul-20  | ~24%               | ~20%                |\n| Oct-20  | ~24%               | ~20%                |\n| Jan-21  | ~24%               | ~20%                |\n| Apr-21  | ~24%               | ~20%                |\n| Jul-21  | ~24%               | ~20%                |\n| Oct-21  | ~24%               | ~20%                |\n| Jan-22  | ~24%               | ~20%                |\n| Apr-22  | ~24%               | ~20%                |\n| Jul-22  | ~24%               | ~20%                |\n| Oct-22  | ~24%               | ~20%                |\n| Jan-23  | ~24%               | ~20%                |\n| Apr-23  | ~24%               | ~20%                |\n| Jul-23  | ~24%               | ~20%                |\n| Oct-23  | ~24%               | ~20%                |\n| Jan-24  | ~24%               | ~20%                |\n| Apr-24  | ~24%               | ~20%                |\n| Jul-24  | ~24%               | ~20%                |\n| Oct-24  | ~24%               | ~20%                |\n| Jan-25  | ~24%               | ~20%                |\n| Apr-25  | ~24%               | ~20%                |\n| Jul-25  | ~24%               | ~20%                |\n| Oct-25  | ~24%               | ~20%                |\n| Jan-26  | ~24%               | ~20%                |\n| Apr-26  | ~24%               | ~20%                |",
+            "sub_type": "line"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.056,
+                0.587,
+                0.955,
+                0.617
+            ],
+            "angle": 0,
+            "content": "Source: Wind, Bloomberg ^Note: Backtesting for Jan-2010 to Jun-2021, actual starts Jul-2021. #W&W Indicator's input factors rose from six to ten from Jan-2010 to Apr-2015, due to data availability, thus the historical reading before and after Apr-15 may not be fully comparable. This performance is back-tested and does not represent the actual performance of any account or fund. Back-tested performance depicts the theoretical (not actual) performance of a particular strategy over the time period indicated. No representation is being made that any actual portfolio is likely to have achieved returns similar to those shown herein."
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.849,
+                0.615,
+                0.956,
+                0.625
+            ],
+            "angle": 0,
+            "content": "BofA GLOBAL RESEARCH",
+            "merge_prev": false
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.055,
+                0.63,
+                0.695,
+                0.645
+            ],
+            "angle": 0,
+            "content": "Exhibit 4: W&W Indicator vs percentage change in CSI300 in the following 3mths (Back-tested) since Jan-2015"
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.055,
+                0.645,
+                0.486,
+                0.659
+            ],
+            "angle": 0,
+            "content": "W&W Indicator has been fairly good in predicting the CSI300 3mth performance"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.058,
+                0.666,
+                0.935,
+                0.839
+            ],
+            "angle": 0,
+            "content": "| Date    | CSI 3mth chg (LHS) | W&W Indicator (RHS) |\n|---------|--------------------|---------------------|\n| Jan-15  | ~45%               | ~45%                |\n| Apr-15  | ~-40%              | ~35%                |\n| Jul-15  | ~-20%              | ~30%                |\n| Oct-15  | ~-10%              | ~25%                |\n| Jan-16  | ~0%                | ~20%                |\n| Apr-16  | ~0%                | ~25%                |\n| Jul-16  | ~0%                | ~30%                |\n| Oct-16  | ~0%                | ~35%                |\n| Jan-17  | ~0%                | ~20%                |\n| Apr-17  | ~0%                | ~25%                |\n| Jul-17  | ~0%                | ~30%                |\n| Oct-17  | ~0%                | ~35%                |\n| Jan-18  | ~0%                | ~40%                |\n| Apr-18  | ~0%                | ~35%                |\n| Jul-18  | ~0%                | ~30%                |\n| Oct-18  | ~0%                | ~25%                |\n| Jan-19  | ~0%                | ~30%                |\n| Apr-19  | ~0%                | ~35%                |\n| Jul-19  | ~0%                | ~40%                |\n| Oct-19  | ~0%                | ~35%                |\n| Jan-20  | ~0%                | ~30%                |\n| Apr-20  | ~0%                | ~25%                |\n| Jul-20  | ~0%                | ~20%                |\n| Oct-20  | ~0%                | ~15%                |\n| Jan-21  | ~0%                | ~10%                |\n| Apr-21  | ~0%                | ~5%                 |\n| Jul-21  | ~0%                | ~0%                 |\n| Oct-21  | ~0%                | ~5%                 |\n| Jan-22  | ~0%                | ~10%                |\n| Apr-22  | ~0%                | ~15%                |\n| Jul-22  | ~0%                | ~20%                |\n| Oct-22  | ~0%                | ~25%                |\n| Jan-23  | ~0%                | ~30%                |\n| Apr-23  | ~0%                | ~35%                |\n| Jul-23  | ~0%                | ~40%                |\n| Oct-23  | ~0%                | ~45%                |\n| Jan-24  | ~0%                | ~50%                |\n| Apr-24  | ~0%                | ~55%                |\n| Jul-24  | ~0%                | ~60%                |\n| Oct-24  | ~0%                | ~65%                |\n| Jan-25  | ~0%                | ~70%                |\n| Apr-25  | ~0%                | ~75%                |\n| Jul-25  | ~0%                | ~80%                |\n| Oct-25  | ~0%                | ~85%                |\n| Jan-26  | ~0%                | ~90%                |\n| Apr-26  | ~0%                | ~95%                |",
+            "sub_type": "line"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.056,
+                0.844,
+                0.955,
+                0.873
+            ],
+            "angle": 0,
+            "content": "Source: Wind, Bloomberg ^Note: Backtesting for Jan-2010 to Jun-2021, actual starts Jul-2021. #W&W Indicator's input factors rose from six to ten from Jan-2010 to Apr-2015, due to data availability, thus the historical reading before and after Apr-15 may not be fully comparable. This performance is back-tested and does not represent the actual performance of any account or fund. Back-tested performance depicts the theoretical (not actual) performance of a particular strategy over the time period indicated. No representation is being made that any actual portfolio is likely to have achieved returns similar to those shown herein."
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.849,
+                0.872,
+                0.956,
+                0.882
+            ],
+            "angle": 0,
+            "content": "BofA GLOBAL RESEARCH",
+            "merge_prev": false
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.041,
+                0.954,
+                0.051,
+                0.964
+            ],
+            "angle": 0,
+            "content": "2"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.084,
+                0.952,
+                0.392,
+                0.966
+            ],
+            "angle": 0,
+            "content": "China A-share W&W Indicator - Monthly | 19 May 2026"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.915,
+                0.948,
+                0.955,
+                0.968
+            ],
+            "angle": 0,
+            "content": "[Non-Text]"
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.04,
+                0.013,
+                0.162,
+                0.023
+            ],
+            "angle": 0,
+            "content": "BofA GLOBAL RESEARCH"
+        },
+        {
+            "type": "title",
+            "bbox": [
+                0.04,
+                0.04,
+                0.246,
+                0.058
+            ],
+            "angle": 0,
+            "content": "Market performance"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.052,
+                0.06,
+                0.953,
+                0.091
+            ],
+            "angle": 0,
+            "content": "Exhibit 5: Global markets delivered mixed returns amid lingering geopolitical tensions yet still-strong AI momentum. Within China, Star 50, ChiNext and CSI1000 outperformed the most while NASDAQ Golden Dragon, MSCI China and HSCEI lagged",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.055,
+                0.091,
+                0.225,
+                0.104
+            ],
+            "angle": 0,
+            "content": "Performance of major indices",
+            "merge_prev": false
+        },
+        {
+            "type": "table",
+            "bbox": [
+                0.052,
+                0.109,
+                0.958,
+                0.372
+            ],
+            "angle": 0,
+            "content": "<table><tr><td rowspan=\"2\"></td><td rowspan=\"2\">Current level</td><td colspan=\"8\">Performance (%)</td><td colspan=\"8\">Ranking</td></tr><tr><td>1M</td><td>3M</td><td>6M</td><td>12M</td><td>YTD</td><td>3yr</td><td>5yr</td><td>10yr</td><td>1M</td><td>3M</td><td>6M</td><td>12M</td><td>YTD</td><td>3yr</td><td>5yr</td><td>10yr</td></tr><tr><td colspan=\"18\">Major indices</td></tr><tr><td>S&amp;P 500</td><td>7,403</td><td>3.9</td><td>7.6</td><td>11.9</td><td>24.2</td><td>8.1</td><td>76.3</td><td>79.3</td><td>261.5</td><td>6</td><td>5</td><td>8</td><td>10</td><td>8</td><td>3</td><td>2</td><td>2</td></tr><tr><td>Dow Jones</td><td>49,686</td><td>0.5</td><td>0.0</td><td>7.8</td><td>16.5</td><td>3.4</td><td>48.2</td><td>45.9</td><td>183.5</td><td>10</td><td>11</td><td>12</td><td>12</td><td>12</td><td>7</td><td>4</td><td>3</td></tr><tr><td>NASDAQ</td><td>26,091</td><td>6.6</td><td>14.7</td><td>16.3</td><td>35.8</td><td>12.3</td><td>105.6</td><td>96.1</td><td>450.5</td><td>3</td><td>3</td><td>7</td><td>6</td><td>6</td><td>1</td><td>1</td><td>1</td></tr><tr><td>Euro Stoxx 50</td><td>5,849</td><td>-4.6</td><td>-5.4</td><td>6.4</td><td>12.7</td><td>0.3</td><td>45.0</td><td>39.3</td><td>104.3</td><td>16</td><td>15</td><td>13</td><td>13</td><td>13</td><td>8</td><td>5</td><td>6</td></tr><tr><td>FTSE 100</td><td>10,324</td><td>-4.1</td><td>-4.1</td><td>10.4</td><td>20.3</td><td>3.8</td><td>44.5</td><td>38.9</td><td>53.9</td><td>15</td><td>12</td><td>10</td><td>11</td><td>11</td><td>10</td><td>6</td><td>8</td></tr><tr><td>Nikkei 225</td><td>60,816</td><td>3.4</td><td>3.5</td><td>22.3</td><td>47.9</td><td>18.8</td><td>73.4</td><td>46.7</td><td>152.3</td><td>7</td><td>9</td><td>5</td><td>5</td><td>3</td><td>4</td><td>3</td><td>4</td></tr><tr><td>Russell 2000</td><td>2,775</td><td>-0.1</td><td>4.4</td><td>18.2</td><td>31.3</td><td>11.8</td><td>55.5</td><td>25.5</td><td>151.6</td><td>11</td><td>8</td><td>6</td><td>8</td><td>7</td><td>6</td><td>8</td><td>5</td></tr><tr><td>MSCI China</td><td>78</td><td>-4.0</td><td>-7.1</td><td>-8.5</td><td>4.6</td><td>-6.4</td><td>23.0</td><td>-27.4</td><td>44.6</td><td>14</td><td>16</td><td>16</td><td>15</td><td>16</td><td>16</td><td>16</td><td>11</td></tr><tr><td>NASDAQ Golden Dragon</td><td>6,791</td><td>-6.1</td><td>-10.4</td><td>-12.9</td><td>-8.1</td><td>-9.8</td><td>6.5</td><td>-52.5</td><td>2.5</td><td>17</td><td>17</td><td>17</td><td>17</td><td>17</td><td>17</td><td>17</td><td>17</td></tr><tr><td>HSI</td><td>25,675</td><td>-1.9</td><td>-4.1</td><td>-1.6</td><td>9.7</td><td>-0.4</td><td>30.1</td><td>-11.0</td><td>28.4</td><td>12</td><td>13</td><td>14</td><td>14</td><td>14</td><td>12</td><td>13</td><td>13</td></tr><tr><td>HSCEI</td><td>8,598</td><td>-2.8</td><td>-5.4</td><td>-6.9</td><td>1.3</td><td>-4.1</td><td>28.0</td><td>-20.0</td><td>2.7</td><td>13</td><td>14</td><td>15</td><td>16</td><td>15</td><td>14</td><td>15</td><td>16</td></tr><tr><td>SHCOMP</td><td>4,132</td><td>2.2</td><td>2.8</td><td>9.6</td><td>30.1</td><td>7.0</td><td>29.7</td><td>10.6</td><td>41.5</td><td>9</td><td>10</td><td>11</td><td>9</td><td>10</td><td>13</td><td>12</td><td>12</td></tr><tr><td>CSI300</td><td>4,834</td><td>2.5</td><td>5.3</td><td>10.6</td><td>31.8</td><td>7.3</td><td>26.4</td><td>-12.0</td><td>51.5</td><td>8</td><td>6</td><td>9</td><td>7</td><td>9</td><td>15</td><td>14</td><td>9</td></tr><tr><td>CSI500</td><td>8,554</td><td>4.4</td><td>4.7</td><td>25.1</td><td>58.7</td><td>17.8</td><td>44.5</td><td>22.5</td><td>46.1</td><td>5</td><td>7</td><td>3</td><td>3</td><td>5</td><td>9</td><td>9</td><td>10</td></tr><tr><td>CSI1000</td><td>8,720</td><td>5.2</td><td>7.9</td><td>22.4</td><td>52.4</td><td>18.0</td><td>37.1</td><td>27.0</td><td>8.8</td><td>4</td><td>4</td><td>4</td><td>4</td><td>4</td><td>11</td><td>7</td><td>15</td></tr><tr><td>ChiNext</td><td>3,915</td><td>6.7</td><td>21.3</td><td>33.4</td><td>103.5</td><td>25.6</td><td>77.9</td><td>19.7</td><td>86.4</td><td>2</td><td>1</td><td>1</td><td>1</td><td>2</td><td>2</td><td>11</td><td>7</td></tr><tr><td>Star 50</td><td>1,710</td><td>20.4</td><td>18.1</td><td>31.7</td><td>82.2</td><td>30.7</td><td>71.0</td><td>22.3</td><td>17.6</td><td>1</td><td>2</td><td>2</td><td>2</td><td>1</td><td>5</td><td>10</td><td>14</td></tr></table>"
+        },
+        {
+            "type": "table_footnote",
+            "bbox": [
+                0.055,
+                0.374,
+                0.329,
+                0.386
+            ],
+            "angle": 0,
+            "content": "Source: Bloomberg, MSCI, data as of May 18, 2026, in USD terms"
+        },
+        {
+            "type": "table_footnote",
+            "bbox": [
+                0.849,
+                0.385,
+                0.956,
+                0.397
+            ],
+            "angle": 0,
+            "content": "BofA GLOBAL RESEARCH"
+        },
+        {
+            "type": "title",
+            "bbox": [
+                0.039,
+                0.426,
+                0.371,
+                0.446
+            ],
+            "angle": 0,
+            "content": "Performance of key input factors"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.039,
+                0.448,
+                0.19,
+                0.463
+            ],
+            "angle": 0,
+            "content": "Leverage: 75%, high",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.038,
+                0.464,
+                0.621,
+                0.495
+            ],
+            "angle": 0,
+            "content": "Margin trading as a % of A-share daily turnover edged lower to 9.9% in May-26, but still higher than its long-term average of 9.0%.",
+            "merge_prev": false
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.055,
+                0.507,
+                0.438,
+                0.522
+            ],
+            "angle": 0,
+            "content": "Exhibit 6: Margin financing as % of daily turnover since May 2015"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.055,
+                0.523,
+                0.468,
+                0.549
+            ],
+            "angle": 0,
+            "content": "The current margin financing as \\% of A-share daily turnover is above its long-term average",
+            "merge_prev": false
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.057,
+                0.556,
+                0.465,
+                0.763
+            ],
+            "angle": 0,
+            "content": "| Date    | Value |\n|---------|-------|\n| May-15  | 18%   |\n| Nov-15  | 14%   |\n| May-16  | 12%   |\n| Nov-16  | 11%   |\n| May-17  | 10%   |\n| Nov-17  | 12%   |\n| May-18  | 9%    |\n| Nov-18  | 8%    |\n| May-19  | 10%   |\n| Nov-19  | 11%   |\n| May-20  | 13%   |\n| Nov-20  | 10%   |\n| May-21  | 9%    |\n| Nov-21  | 8%    |\n| May-22  | 9%    |\n| Nov-22  | 5%    |\n| May-23  | 17%   |\n| Nov-23  | 9%    |\n| May-24  | 10%   |\n| Nov-24  | 9%    |\n| May-25  | 13%   |\n| Nov-25  | 10%   |\n| May-26  | 9%    |",
+            "sub_type": "line"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.055,
+                0.768,
+                0.232,
+                0.779
+            ],
+            "angle": 0,
+            "content": "Source: BofA Global Research, Wind, CEIC"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.361,
+                0.779,
+                0.468,
+                0.79
+            ],
+            "angle": 0,
+            "content": "BofA GLOBAL RESEARCH"
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.541,
+                0.507,
+                0.897,
+                0.522
+            ],
+            "angle": 0,
+            "content": "Exhibit 7: Margin financing as % of daily turnover since 2025"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.542,
+                0.523,
+                0.861,
+                0.536
+            ],
+            "angle": 0,
+            "content": "Margin financing reached 9.9% of daily turnover in May-26",
+            "merge_prev": false
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.543,
+                0.543,
+                0.943,
+                0.75
+            ],
+            "angle": 0,
+            "content": "| Month   | Value |\n|---------|-------|\n| Jan-25  | 8%    |\n| Feb-25  | 9%    |\n| Mar-25  | 10%   |\n| Apr-25  | 7%    |\n| May-25  | 9%    |\n| Jun-25  | 8%    |\n| Jul-25  | 10%   |\n| Aug-25  | 11%   |\n| Sep-25  | 12%   |\n| Oct-25  | 13%   |\n| Nov-25  | 12%   |\n| Dec-25  | 11%   |\n| Jan-26  | 10%   |\n| Feb-26  | 9%    |\n| Mar-26  | 10%   |\n| Apr-26  | 9%    |\n| May-26  | 10%   |",
+            "sub_type": "line"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.543,
+                0.755,
+                0.719,
+                0.766
+            ],
+            "angle": 0,
+            "content": "Source: BofA Global Research, Wind, CEIC"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.849,
+                0.766,
+                0.955,
+                0.777
+            ],
+            "angle": 0,
+            "content": "BofA GLOBAL RESEARCH"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.042,
+                0.948,
+                0.081,
+                0.968
+            ],
+            "angle": 0,
+            "content": "[Non-Text]"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.612,
+                0.952,
+                0.919,
+                0.966
+            ],
+            "angle": 0,
+            "content": "China A-share W&W Indicator - Monthly | 19 May 2026"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.945,
+                0.953,
+                0.955,
+                0.964
+            ],
+            "angle": 0,
+            "content": "3"
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.04,
+                0.013,
+                0.162,
+                0.023
+            ],
+            "angle": 0,
+            "content": "BofA GLOBAL RESEARCH"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.04,
+                0.045,
+                0.192,
+                0.06
+            ],
+            "angle": 0,
+            "content": "Valuation: \\(84\\%\\), high",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.04,
+                0.061,
+                0.609,
+                0.091
+            ],
+            "angle": 0,
+            "content": "Currently, A-share P/E valuation is at 24.3x, higher than its long-term average of 21.2x since 2007.",
+            "merge_prev": false
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.055,
+                0.105,
+                0.329,
+                0.119
+            ],
+            "angle": 0,
+            "content": "Exhibit 8: A-share P/E valuation since Jan-2007"
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.055,
+                0.12,
+                0.397,
+                0.134
+            ],
+            "angle": 0,
+            "content": "The current 24.3x P/E of A-share is above its long-term average"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.055,
+                0.141,
+                0.462,
+                0.349
+            ],
+            "angle": 0,
+            "content": "| Date    | Value |\n|---------|-------|\n| Jan-07  | 30x   |\n| Dec-07  | 60x   |\n| Nov-08  | 15x   |\n| Oct-09  | 35x   |\n| Sep-10  | 25x   |\n| Aug-11  | 20x   |\n| Jul-12  | 15x   |\n| Jun-13  | 15x   |\n| May-14  | 15x   |\n| Apr-15  | 30x   |\n| Mar-16  | 25x   |\n| Feb-17  | 25x   |\n| Jan-18  | 20x   |\n| Dec-18  | 15x   |\n| Nov-19  | 20x   |\n| Oct-20  | 25x   |\n| Sep-21  | 25x   |\n| Aug-22  | 20x   |\n| Jul-23  | 15x   |\n| Jun-24  | 15x   |\n| May-25  | 20x   |\n| Apr-26  | 25x   |",
+            "sub_type": "line"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.056,
+                0.352,
+                0.21,
+                0.364
+            ],
+            "angle": 0,
+            "content": "Source: BofA Global Research, Wind"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.361,
+                0.363,
+                0.468,
+                0.375
+            ],
+            "angle": 0,
+            "content": "BofA GLOBAL RESEARCH"
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.543,
+                0.105,
+                0.794,
+                0.118
+            ],
+            "angle": 0,
+            "content": "Exhibit 9: A-share P/E valuation since 2025"
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.543,
+                0.119,
+                0.91,
+                0.134
+            ],
+            "angle": 0,
+            "content": "A-share P/E rose further from 23.7x to 24.3x in the past one month"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.542,
+                0.141,
+                0.955,
+                0.344
+            ],
+            "angle": 0,
+            "content": "| Month   | Value |\n|---------|-------|\n| Jan-25  | 18.0x |\n| Feb-25  | 19.0x |\n| Mar-25  | 19.5x |\n| Apr-25  | 17.0x |\n| May-25  | 19.0x |\n| Jun-25  | 19.5x |\n| Jul-25  | 20.0x |\n| Aug-25  | 21.0x |\n| Sep-25  | 22.0x |\n| Oct-25  | 23.0x |\n| Nov-25  | 22.5x |\n| Dec-25  | 21.5x |\n| Jan-26  | 23.0x |\n| Feb-26  | 23.5x |\n| Mar-26  | 24.0x |\n| Apr-26  | 23.0x |\n| May-26  | 25.0x |",
+            "sub_type": "line"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.543,
+                0.352,
+                0.697,
+                0.364
+            ],
+            "angle": 0,
+            "content": "Source: BofA Global Research, Wind"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.849,
+                0.363,
+                0.955,
+                0.375
+            ],
+            "angle": 0,
+            "content": "BofA GLOBAL RESEARCH"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.04,
+                0.398,
+                0.205,
+                0.412
+            ],
+            "angle": 0,
+            "content": "Flow: 34%, supportive",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.04,
+                0.414,
+                0.593,
+                0.444
+            ],
+            "angle": 0,
+            "content": "Turnover/market cap stands at 2.8% in May-26, well above its long-term average of 1.1% since 2007. A-share main funds continued to be net sellers in the past month.",
+            "merge_prev": false
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.055,
+                0.457,
+                0.381,
+                0.471
+            ],
+            "angle": 0,
+            "content": "Exhibit 10: A-share turnover/market cap since Jan-2007"
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.055,
+                0.472,
+                0.465,
+                0.486
+            ],
+            "angle": 0,
+            "content": "The current A-share turnover/market cap is well above its long-term average"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.055,
+                0.493,
+                0.467,
+                0.704
+            ],
+            "angle": 0,
+            "content": "| Date    | Value |\n|---------|-------|\n| Jan-07  | 1.5%  |\n| Oct-07  | 2.3%  |\n| Jul-08  | 0.5%  |\n| Apr-09  | 1.8%  |\n| Jan-10  | 2.0%  |\n| Oct-10  | 1.2%  |\n| Jul-11  | 0.8%  |\n| Apr-12  | 1.0%  |\n| Jan-13  | 1.2%  |\n| Oct-13  | 1.5%  |\n| Jul-14  | 3.7%  |\n| Apr-15  | 3.8%  |\n| Jan-16  | 2.8%  |\n| Oct-16  | 1.5%  |\n| Jul-17  | 1.2%  |\n| Apr-18  | 0.8%  |\n| Jan-19  | 2.2%  |\n| Oct-19  | 1.5%  |\n| Jul-20  | 2.5%  |\n| Apr-21  | 2.0%  |\n| Jan-22  | 1.8%  |\n| Oct-22  | 1.5%  |\n| Jul-23  | 1.8%  |\n| Apr-24  | 4.2%  |\n| Jan-25  | 3.5%  |\n| Oct-25  | 3.8%  |",
+            "sub_type": "line"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.056,
+                0.711,
+                0.232,
+                0.722
+            ],
+            "angle": 0,
+            "content": "Source: BofA Global Research, Wind, CEIC"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.362,
+                0.723,
+                0.468,
+                0.734
+            ],
+            "angle": 0,
+            "content": "BofA GLOBAL RESEARCH"
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.543,
+                0.457,
+                0.845,
+                0.471
+            ],
+            "angle": 0,
+            "content": "Exhibit 11: A-share turnover/market cap since 2025"
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.543,
+                0.472,
+                0.793,
+                0.485
+            ],
+            "angle": 0,
+            "content": "Turnover/market cap reached 2.8% in May-26"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.542,
+                0.493,
+                0.955,
+                0.703
+            ],
+            "angle": 0,
+            "content": "| Date   | Value |\n|--------|-------|\n| Jan-25 | 1.8%  |\n| Mar-25 | 2.7%  |\n| May-25 | 1.3%  |\n| Jul-25 | 1.9%  |\n| Sep-25 | 3.4%  |\n| Nov-25 | 2.5%  |\n| Jan-26 | 3.9%  |\n| Mar-26 | 2.0%  |\n| May-26 | 3.3%  |",
+            "sub_type": "line"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.543,
+                0.711,
+                0.719,
+                0.722
+            ],
+            "angle": 0,
+            "content": "Source: BofA Global Research, Wind, CEIC"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.849,
+                0.723,
+                0.955,
+                0.734
+            ],
+            "angle": 0,
+            "content": "BofA GLOBAL RESEARCH"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.041,
+                0.953,
+                0.051,
+                0.963
+            ],
+            "angle": 0,
+            "content": "4"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.084,
+                0.952,
+                0.392,
+                0.966
+            ],
+            "angle": 0,
+            "content": "China A-share W&W Indicator - Monthly | 19 May 2026"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.915,
+                0.948,
+                0.955,
+                0.968
+            ],
+            "angle": 0,
+            "content": "[Non-Text]"
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.04,
+                0.013,
+                0.162,
+                0.023
+            ],
+            "angle": 0,
+            "content": "BofA GLOBAL RESEARCH"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.04,
+                0.044,
+                0.205,
+                0.059
+            ],
+            "angle": 0,
+            "content": "Positioning: 64%, high",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.04,
+                0.061,
+                0.601,
+                0.091
+            ],
+            "angle": 0,
+            "content": "86.9% of stock mutual funds' position is invested currently, higher than its long-term average of 84.7%.",
+            "merge_prev": false
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.054,
+                0.104,
+                0.447,
+                0.131
+            ],
+            "angle": 0,
+            "content": "Exhibit 12: % of position invested by stock mutual funds since May-2007"
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.057,
+                0.133,
+                0.428,
+                0.147
+            ],
+            "angle": 0,
+            "content": "Stock fund positioning is at \\(86.9\\%\\), higher than its long-term average"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.055,
+                0.154,
+                0.462,
+                0.356
+            ],
+            "angle": 0,
+            "content": "| Date    | Value |\n|---------|-------|\n| May-07  | 85%   |\n| Jan-08  | 80%   |\n| Sep-08  | 70%   |\n| May-09  | 90%   |\n| Jan-10  | 75%   |\n| Sep-10  | 85%   |\n| May-11  | 80%   |\n| Jan-12  | 85%   |\n| Sep-12  | 75%   |\n| May-13  | 85%   |\n| Jan-14  | 80%   |\n| Sep-14  | 90%   |\n| May-15  | 95%   |\n| Jan-16  | 90%   |\n| Sep-16  | 85%   |\n| May-17  | 80%   |\n| Jan-18  | 85%   |\n| Sep-18  | 85%   |\n| May-19  | 85%   |\n| Jan-20  | 90%   |\n| Sep-20  | 85%   |\n| May-21  | 85%   |\n| Jan-22  | 85%   |\n| Sep-22  | 85%   |\n| May-23  | 85%   |\n| Jan-24  | 85%   |\n| Sep-24  | 90%   |\n| May-25  | 85%   |\n| Jan-26  | 85%   |",
+            "sub_type": "line"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.056,
+                0.365,
+                0.21,
+                0.377
+            ],
+            "angle": 0,
+            "content": "Source: BofA Global Research, Wind"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.362,
+                0.377,
+                0.468,
+                0.388
+            ],
+            "angle": 0,
+            "content": "BofA GLOBAL RESEARCH"
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.542,
+                0.104,
+                0.936,
+                0.133
+            ],
+            "angle": 0,
+            "content": "Exhibit 13: % of position invested by stock mutual funds since 2025  \nStock fund positioning declined further to \\(86.9\\%\\) in May-26"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.542,
+                0.139,
+                0.953,
+                0.343
+            ],
+            "angle": 0,
+            "content": "| Month   | Value  |\n|---------|--------|\n| Jan-25  | 86.5%  |\n| Feb-25  | 87.0%  |\n| Mar-25  | 88.5%  |\n| Apr-25  | 90.5%  |\n| May-25  | 89.0%  |\n| Jun-25  | 88.0%  |\n| Jul-25  | 86.0%  |\n| Aug-25  | 85.0%  |\n| Sep-25  | 89.0%  |\n| Oct-25  | 88.0%  |\n| Nov-25  | 87.5%  |\n| Dec-25  | 87.0%  |\n| Jan-26  | 86.0%  |\n| Feb-26  | 87.0%  |\n| Mar-26  | 87.5%  |\n| Apr-26  | 87.0%  |\n| May-26  | 87.0%  |",
+            "sub_type": "line"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.543,
+                0.351,
+                0.697,
+                0.362
+            ],
+            "angle": 0,
+            "content": "Source: BofA Global Research, Wind"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.849,
+                0.362,
+                0.955,
+                0.373
+            ],
+            "angle": 0,
+            "content": "BofA GLOBAL RESEARCH"
+        },
+        {
+            "type": "title",
+            "bbox": [
+                0.04,
+                0.418,
+                0.195,
+                0.433
+            ],
+            "angle": 0,
+            "content": "Liquidity: \\(21\\%\\), loose"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.04,
+                0.434,
+                0.611,
+                0.464
+            ],
+            "angle": 0,
+            "content": "The 10-year government bond yield has risen to \\(1.76\\%\\) in May-26 from its record lows of \\(1.6\\%\\) in Jan-25.",
+            "merge_prev": false
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.055,
+                0.478,
+                0.411,
+                0.492
+            ],
+            "angle": 0,
+            "content": "Exhibit 14: China 10yr government bond yield since Jan-2007"
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.057,
+                0.493,
+                0.314,
+                0.506
+            ],
+            "angle": 0,
+            "content": "The current 10yr CGB yield remains at low levels"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.055,
+                0.513,
+                0.467,
+                0.716
+            ],
+            "angle": 0,
+            "content": "| Date    | Value |\n|---------|-------|\n| Jan-07  | 3.0%  |\n| Dec-07  | 4.5%  |\n| Nov-08  | 2.7%  |\n| Oct-09  | 3.5%  |\n| Sep-10  | 3.2%  |\n| Aug-11  | 4.0%  |\n| Jul-12  | 3.3%  |\n| Jun-13  | 4.7%  |\n| May-14  | 4.2%  |\n| Apr-15  | 3.5%  |\n| Mar-16  | 2.8%  |\n| Feb-17  | 3.5%  |\n| Jan-18  | 4.0%  |\n| Dec-18  | 3.5%  |\n| Nov-19  | 2.5%  |\n| Oct-20  | 3.2%  |\n| Sep-21  | 2.8%  |\n| Aug-22  | 2.9%  |\n| Jul-23  | 2.7%  |\n| Jun-24  | 2.0%  |\n| May-25  | 1.6%  |\n| Apr-26  | 1.8%  |",
+            "sub_type": "line"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.056,
+                0.725,
+                0.21,
+                0.736
+            ],
+            "angle": 0,
+            "content": "Source: BofA Global Research, Wind"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.362,
+                0.737,
+                0.468,
+                0.747
+            ],
+            "angle": 0,
+            "content": "BofA GLOBAL RESEARCH"
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.542,
+                0.478,
+                0.876,
+                0.492
+            ],
+            "angle": 0,
+            "content": "Exhibit 15: China 10yr government bond yield since 2025"
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.544,
+                0.493,
+                0.796,
+                0.506
+            ],
+            "angle": 0,
+            "content": "10yr CGB yield stayed low at 1.76% in May-26"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.543,
+                0.513,
+                0.95,
+                0.716
+            ],
+            "angle": 0,
+            "content": "| Month   | Value  |\n|---------|--------|\n| Jan-25  | 1.60%  |\n| Feb-25  | 1.65%  |\n| Mar-25  | 1.75%  |\n| Apr-25  | 1.80%  |\n| May-25  | 1.65%  |\n| Jun-25  | 1.70%  |\n| Jul-25  | 1.65%  |\n| Aug-25  | 1.75%  |\n| Sep-25  | 1.85%  |\n| Oct-25  | 1.90%  |\n| Nov-25  | 1.80%  |\n| Dec-25  | 1.85%  |\n| Jan-26  | 1.90%  |\n| Feb-26  | 1.80%  |\n| Mar-26  | 1.85%  |\n| Apr-26  | 1.80%  |\n| May-26  | 1.75%  |",
+            "sub_type": "line"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.543,
+                0.725,
+                0.697,
+                0.736
+            ],
+            "angle": 0,
+            "content": "Source: BofA Global Research, Wind"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.849,
+                0.737,
+                0.955,
+                0.747
+            ],
+            "angle": 0,
+            "content": "BofA GLOBAL RESEARCH"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.042,
+                0.948,
+                0.081,
+                0.968
+            ],
+            "angle": 0,
+            "content": "[Non-Text]"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.612,
+                0.952,
+                0.919,
+                0.966
+            ],
+            "angle": 0,
+            "content": "China A-share W&W Indicator - Monthly | 19 May 2026"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.945,
+                0.953,
+                0.955,
+                0.964
+            ],
+            "angle": 0,
+            "content": "5"
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.04,
+                0.013,
+                0.162,
+                0.023
+            ],
+            "angle": 0,
+            "content": "BofA GLOBAL RESEARCH"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.04,
+                0.046,
+                0.214,
+                0.06
+            ],
+            "angle": 0,
+            "content": "Earnings: 26%, positive",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.04,
+                0.061,
+                0.618,
+                0.077
+            ],
+            "angle": 0,
+            "content": "CSI 300 earnings revision has recovered to \\(10.1\\%\\) YoY in May-26 amid an uptrend since",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.078,
+                0.094,
+                0.092
+            ],
+            "angle": 0,
+            "content": "Sep-24.",
+            "merge_prev": false
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.055,
+                0.105,
+                0.359,
+                0.119
+            ],
+            "angle": 0,
+            "content": "Exhibit 16: CSI 300 earnings revision since Jan-2007"
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.055,
+                0.12,
+                0.361,
+                0.133
+            ],
+            "angle": 0,
+            "content": "CSI 300 earnings revision has been positive since Sep-25"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.059,
+                0.141,
+                0.466,
+                0.352
+            ],
+            "angle": 0,
+            "content": "| Date    | Value |\n|---------|-------|\n| Jan-07  | 40%   |\n| Oct-07  | 80%   |\n| Jul-08  | 60%   |\n| Apr-09  | -20%  |\n| Jan-10  | 30%   |\n| Oct-10  | 20%   |\n| Jul-11  | 10%   |\n| Apr-12  | -5%   |\n| Jan-13  | 5%    |\n| Oct-13  | 10%   |\n| Jul-14  | 5%    |\n| Apr-15  | 10%   |\n| Jan-16  | -10%  |\n| Oct-16  | 5%    |\n| Jul-17  | 15%   |\n| Apr-18  | 10%   |\n| Jan-19  | 5%    |\n| Oct-19  | 10%   |\n| Jul-20  | 5%    |\n| Apr-21  | 10%   |\n| Jan-22  | 5%    |\n| Oct-22  | 0%    |\n| Jul-23  | -5%   |\n| Apr-24  | -10%  |\n| Jan-25  | -5%   |\n| Oct-25  | 10%   |",
+            "sub_type": "line"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.056,
+                0.359,
+                0.234,
+                0.372
+            ],
+            "angle": 0,
+            "content": "Source: BofA Global Research, Bloomberg"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.362,
+                0.371,
+                0.468,
+                0.382
+            ],
+            "angle": 0,
+            "content": "BofA GLOBAL RESEARCH"
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.543,
+                0.105,
+                0.824,
+                0.119
+            ],
+            "angle": 0,
+            "content": "Exhibit 17: CSI 300 earnings revision since 2025"
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.543,
+                0.12,
+                0.892,
+                0.134
+            ],
+            "angle": 0,
+            "content": "CSI 300 earnings revision has recovered to \\(10.1\\%\\) YoY in May-26"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.546,
+                0.141,
+                0.953,
+                0.351
+            ],
+            "angle": 0,
+            "content": "| Date   | Value |\n|--------|-------|\n| Jan-25 | -8%   |\n| Mar-25 | -5%   |\n| May-25 | -3%   |\n| Jul-25 | -2%   |\n| Sep-25 | 4%    |\n| Nov-25 | 6%    |\n| Jan-26 | 7%    |\n| Mar-26 | 8%    |\n| May-26 | 10%   |",
+            "sub_type": "line"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.543,
+                0.359,
+                0.721,
+                0.372
+            ],
+            "angle": 0,
+            "content": "Source: BofA Global Research, Bloomberg"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.849,
+                0.371,
+                0.955,
+                0.382
+            ],
+            "angle": 0,
+            "content": "BofA GLOBAL RESEARCH"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.041,
+                0.953,
+                0.051,
+                0.963
+            ],
+            "angle": 0,
+            "content": "6"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.084,
+                0.952,
+                0.392,
+                0.966
+            ],
+            "angle": 0,
+            "content": "China A-share W&W Indicator - Monthly | 19 May 2026"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.915,
+                0.948,
+                0.955,
+                0.968
+            ],
+            "angle": 0,
+            "content": "[Non-Text]"
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.04,
+                0.013,
+                0.163,
+                0.023
+            ],
+            "angle": 0,
+            "content": "BofA GLOBAL RESEARCH"
+        },
+        {
+            "type": "title",
+            "bbox": [
+                0.041,
+                0.04,
+                0.137,
+                0.059
+            ],
+            "angle": 0,
+            "content": "Appendix"
+        },
+        {
+            "type": "title",
+            "bbox": [
+                0.041,
+                0.062,
+                0.3,
+                0.076
+            ],
+            "angle": 0,
+            "content": "BofA China A-share W&W indicator"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.079,
+                0.625,
+                0.201
+            ],
+            "angle": 0,
+            "content": "The BofA China A-share Wax & Wane (W&W) Indicator is a contrarian sentiment indicator, using fund flows, liquidity, positioning, leverage, earnings and valuation data. While the China Investment Compass guides us phases in the cycle and sectors to select, our W&W Indicator helps to gauge the short-term market sentiment and technical drivers. We believe the Indicator can offer predictive value on how the A-share market (ie. CSI300 Index) is likely to perform in the following 6 months – when the Indicator wanes, it usually creates buying opportunities, whereas when the Indicator waxes, it tends to become selling opportunities.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.212,
+                0.603,
+                0.273
+            ],
+            "angle": 0,
+            "content": "The Wax & Wane Indicator has a reading between 0 and 100: When the Indicator exceeds the threshold of 80, sentiment is extremely strong, and it makes a \"Very Bearish\" signal. When the Indicator falls between 60 and 80, it is a \"Bearish\" signal.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.283,
+                0.623,
+                0.329
+            ],
+            "angle": 0,
+            "content": "When the Indicator drops below the threshold of 20, sentiment is extremely weak, and it makes a \"Very Bullish\" signal. When the Indicator falls between 20 and 40, it is a \"Bullish\" signal.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.34,
+                0.587,
+                0.37
+            ],
+            "angle": 0,
+            "content": "Please refer to our Relaunching the China A-share Wax & Wane Indicator report for details of the methodology.",
+            "merge_prev": false
+        },
+        {
+            "type": "title",
+            "bbox": [
+                0.042,
+                0.404,
+                0.276,
+                0.424
+            ],
+            "angle": 0,
+            "content": "Back-testing disclaimer"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.431,
+                0.627,
+                0.709
+            ],
+            "angle": 0,
+            "content": "The analysis of the BofA China A-share Wax & Wane (W&W) Indicator in this report is back-tested and does not represent the actual performance of any account or fund. Back-tested performance depicts the hypothetical back-tested performance of a particular strategy over the time period indicated. In future periods, market and economic conditions will differ and the same strategy will not necessarily produce the same results. No representation is being made that any actual portfolio is likely to have achieved returns similar to those shown herein. In fact, there are frequently sharp differences between back-tested returns and the actual results realized in the actual management of a portfolio. Back-tested performance results are created by applying an investment strategy or methodology to historical data and attempts to give an indication as to how a strategy might have performed during a certain period in the past if the product had been in existence during such time. Back-tested results have inherent limitations including the fact that they are calculated with the full benefit of hindsight, which allows the security selection methodology to be adjusted to maximize the returns. Further, the results shown do not reflect actual trading or the impact that material economic and market factors might have had on a portfolio manager's decision-making under actual circumstances. Back-tested returns do not reflect advisory fees, trading costs, or other fees or expenses.",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.042,
+                0.948,
+                0.081,
+                0.967
+            ],
+            "angle": 0,
+            "content": "[Non-Text]"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.612,
+                0.952,
+                0.919,
+                0.965
+            ],
+            "angle": 0,
+            "content": "China A-share W&W Indicator - Monthly | 19 May 2026"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.945,
+                0.953,
+                0.955,
+                0.963
+            ],
+            "angle": 0,
+            "content": "7"
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.04,
+                0.013,
+                0.163,
+                0.023
+            ],
+            "angle": 0,
+            "content": "BofA GLOBAL RESEARCH"
+        },
+        {
+            "type": "title",
+            "bbox": [
+                0.04,
+                0.043,
+                0.201,
+                0.065
+            ],
+            "angle": 0,
+            "content": "Disclosures"
+        },
+        {
+            "type": "title",
+            "bbox": [
+                0.04,
+                0.07,
+                0.262,
+                0.089
+            ],
+            "angle": 0,
+            "content": "Important Disclosures"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.037,
+                0.11,
+                0.957,
+                0.216
+            ],
+            "angle": 0,
+            "content": "FUNDAMENTAL EQUITY OPINION KEY: Opinions include a Volatility Risk Rating, an Investment Rating and an Income Rating. VOLATILITY RISK RATINGS, indicators of potential price fluctuation, are: A - Low, B - Medium and C - High. INVESTMENT RATINGS reflect the analyst's assessment of both a stock's absolute total return potential as well as its attractiveness for investment relative to other stocks within its Coverage Cluster (defined below). Our investment ratings are: 1 - Buy stocks are expected to have a total return of at least 10% and are the most attractive stocks in the coverage cluster; 2 - Neutral stocks are expected to remain flat or increase in value and are less attractive than Buy rated stocks and 3 - Underperform stocks are the least attractive stocks in a coverage cluster. An investment rating of 6 (No Rating) indicates that a stock is no longer trading on the basis of fundamentals. Analysts assign investment ratings considering, among other things, the 0-12 month total return expectation for a stock and the firm's guidelines for ratings dispersions (shown in the table below). The current price objective for a stock should be referenced to better understand the total return expectation at any given time. The price objective reflects the analyst's view of the potential price appreciation (depreciation).",
+            "merge_prev": false
+        },
+        {
+            "type": "table",
+            "bbox": [
+                0.038,
+                0.218,
+                0.936,
+                0.288
+            ],
+            "angle": 0,
+            "content": "<table><tr><td>Investment rating</td><td>Total return expectation (within 12-month period of date of initial rating)</td><td>Ratings dispersion guidelines for coverage cluster<eq>^{R1}</eq></td></tr><tr><td>Buy</td><td>≥ 10%</td><td>≤ 70%</td></tr><tr><td>Neutral</td><td>≥ 0%</td><td>≤ 30%</td></tr><tr><td>Underperform</td><td>N/A</td><td>≥ 20%</td></tr></table>"
+        },
+        {
+            "type": "table_footnote",
+            "bbox": [
+                0.038,
+                0.289,
+                0.942,
+                0.303
+            ],
+            "angle": 0,
+            "content": "\\( ^{R1} \\) Ratings dispersions may vary from time to time where BofA Global Research believes it better reflects the investment prospects of stocks in a Coverage Cluster."
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.037,
+                0.307,
+                0.955,
+                0.345
+            ],
+            "angle": 0,
+            "content": "INCOME RATINGS, indicators of potential cash dividends, are: 7 - same/higher (dividend considered to be secure), 8 - same/lower (dividend not considered to be secure) and 9 - pays no cash dividend. Coverage Cluster is comprised of stocks covered by a single analyst or two or more analysts sharing a common industry, sector, region or other classification(s). A stock's coverage cluster is included in the most recent BofA Global Research report referencing the stock.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.037,
+                0.355,
+                0.921,
+                0.379
+            ],
+            "angle": 0,
+            "content": "Due to the nature of strategic analysis, the issuers or securities recommended or discussed in this report are not continuously followed. Accordingly, investors must regard this report as providing stand-alone analysis and should not expect continuing analysis or additional reports relating to such issuers and/or securities.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.037,
+                0.379,
+                0.911,
+                0.415
+            ],
+            "angle": 0,
+            "content": "BofA Global Research personnel (including the analyst(s) responsible for this report) receive compensation based upon, among other factors, the overall profitability of BofA Corporation, including profits derived from investment banking. The analyst(s) responsible for this report may also receive compensation based upon, among other factors, the overall profitability of the Bank's sales and trading businesses relating to the class of securities or financial instruments for which such analyst is responsible.",
+            "merge_prev": false
+        },
+        {
+            "type": "title",
+            "bbox": [
+                0.039,
+                0.433,
+                0.325,
+                0.451
+            ],
+            "angle": 0,
+            "content": "Other Important Disclosures"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.037,
+                0.455,
+                0.915,
+                0.479
+            ],
+            "angle": 0,
+            "content": "From time to time research analysts conduct site visits of covered issuers. BofA Global Research policies prohibit research analysts from accepting payment or reimbursement for travel expenses from the issuer for such visits.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.037,
+                0.479,
+                0.946,
+                0.526
+            ],
+            "angle": 0,
+            "content": "Prices are indicative and for information purposes only. Except as otherwise stated in the report, for any recommendation in relation to an equity security, the price referenced is the publicly traded price of the security as of close of business on the day prior to the date of the report or, if the report is published during intraday trading, the price referenced is indicative of the traded price as of the date and time of the report and in relation to a debt security (including equity preferred and CDS), prices are indicative as of the date and time of the report and are from various sources including BofA trading desks.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.038,
+                0.525,
+                0.915,
+                0.538
+            ],
+            "angle": 0,
+            "content": "The date and time of completion of the production of any recommendation in this report shall be the date and time of dissemination of this report as recorded in the report timestamp.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.037,
+                0.547,
+                0.946,
+                0.571
+            ],
+            "angle": 0,
+            "content": "Recipients who are not institutional investors or market professionals should seek the advice of their independent financial advisor before considering information in this report in connection with any investment decision, or for a necessary explanation of its contents.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.038,
+                0.571,
+                0.806,
+                0.582
+            ],
+            "angle": 0,
+            "content": "Officers of BofAS or one or more of its affiliates (other than research analysts) may have a financial interest in securities of the issuer(s) or in related investments.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.038,
+                0.582,
+                0.371,
+                0.594
+            ],
+            "angle": 0,
+            "content": "Refer to BofA Global Research policies relating to conflicts of interest.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.037,
+                0.593,
+                0.945,
+                0.628
+            ],
+            "angle": 0,
+            "content": "\"BofA\" includes BofA, Inc. (\"BofAS\") and its affiliates. Investors should contact their BofA representative or Merrill Global Wealth Management financial advisor if they have questions concerning this report or concerning the appropriateness of any investment idea described herein for such investor. \"BofA\" is a global brand for BofA Global Research.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.038,
+                0.628,
+                0.57,
+                0.64
+            ],
+            "angle": 0,
+            "content": "Information relating to Non-US affiliates of BofA and Distribution of Affiliate Research Reports:",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.037,
+                0.64,
+                0.957,
+                0.921
+            ],
+            "angle": 0,
+            "content": "BofAS and/or BofA, Pierce, Fenner & Smith Incorporated (\"MLPF&S\") may in the future distribute, information of the following non-US affiliates in the US (short name: legal name, regulator): BofA (South Africa): BofA South Africa (Pty) Ltd., regulated by the Financial Sector Conduct Authority; MLI (UK): BofA International, regulated by the Financial Conduct Authority (FCA) and the Prudential Regulation Authority (PRA); BofASE (France): BofA Europe SA is authorized by the Autorité de Contrôle Prudentiel et de Résolution (ACPR) and regulated by the ACPR and the Autorité des Marchés Financiers (AMF). BofA Europe SA (\"BofASE\") with registered address at 51, rue La Boétie, 75008 Paris is registered under no 842 602 690 RCS Paris. In accordance with the provisions of French Code Monétaire et Financier (Monetary and Financial Code), BofASE is an établissement de crédit et d'investissement (credit and investment institution) that is authorised and supervised by the European Central Bank and the Autorité de Contrôle Prudentiel et de Résolution (ACPR) and regulated by the ACPR and the Autorité des Marchés Financiers. BofASE's share capital can be found at www.bofaml.com/BofASEdisclaimer; BofA Europe (Milan): BofA Europe Designated Activity Company, Milan Branch, regulated by the Bank of Italy, the European Central Bank (ECB) and the Central Bank of Ireland (CBI); BofA Europe (Frankfurt): BofA Europe Designated Activity Company, Frankfurt Branch regulated by BaFin, the ECB and the CBI; BofA Europe (Zurich): BofA Europe Designated Activity Company, Zurich Branch, regulated by the Swiss Financial Market Supervisory Authority FINMA, the ECB and CBI; BofA Europe (Madrid): BofA Europe Designated Activity Company, Sucursal en España, regulated by the Bank of Spain, the ECB and the CBI; BofA (Australia): BofA Equities (Australia) Limited, regulated by the Australian Securities and Investments Commission; BofA (Hong Kong): BofA (Asia Pacific) Limited, regulated by the Hong Kong Securities and Futures Commission (HKSFC); BofA (Singapore): BofA (Singapore) Pte Ltd, regulated by the Monetary Authority of Singapore (MAS); BofA (Canada): BofA Canada Inc, regulated by the Canadian Investment Regulatory Organization; BofA (Mexico): BofA Mexico, SA de CV, Casa de Bolsa, regulated by the Comisión Nacional Bancaria y de Valores; BofAS Japan: BofA Japan Co., Ltd., regulated by the Financial Services Agency; BofA (Seoul): BofA International, LLC Seoul Branch, regulated by the Financial Supervisory Service; BofA (Taiwan): BofA (Taiwan) Ltd., regulated by the Securities and Futures Bureau; BofAS India: BofA India Limited, regulated by the Securities and Exchange Board of India (SEBI); BofA (Israel): BofA Israel Limited, regulated by Israel Securities Authority; BofA (DIFC): BofA International (DIFC Branch), regulated by the Dubai Financial Services Authority (DFSA); BofA (Brazil): BofA S.A. Corretora de Títulos e Valores Mobiliários, regulated by Comissão de Valores Mobiliários; BofA KSA Company: BofA Kingdom of Saudi Arabia Company, regulated by the Capital Market Authority. This information: has been approved for publication and is distributed in the United Kingdom (UK) to professional clients and eligible counterparties (as each is defined in the rules of the FCA and the PRA) by MLI (UK), which is authorized by the PRA and regulated by the FCA and the PRA - details about the extent of our regulation by the FCA and PRA are available from us on request; has been approved for publication and is distributed in the European Economic Area (EEA) by BofASE (France), which is authorized by the ACPR and regulated by the ACPR and the AMF; has been considered and distributed in Japan by BofAS Japan, a registered securities dealer under the Financial Instruments and Exchange Act in Japan, or its permitted affiliates; is issued and distributed in Hong Kong by BofA (Hong Kong) which is regulated by HKSFC; is issued and distributed in Taiwan by BofA (Taiwan); is issued and distributed in India by BofAS India; and is issued and distributed in Singapore to institutional investors and/or accredited investors (each as defined under the Financial Advisers Regulations) by BofA (Singapore)",
+            "merge_prev": false
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.041,
+                0.953,
+                0.052,
+                0.964
+            ],
+            "angle": 0,
+            "content": "8"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.084,
+                0.952,
+                0.392,
+                0.966
+            ],
+            "angle": 0,
+            "content": "China A-share W&W Indicator - Monthly | 19 May 2026"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.914,
+                0.948,
+                0.955,
+                0.968
+            ],
+            "angle": 0,
+            "content": "[Non-Text]"
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.04,
+                0.013,
+                0.162,
+                0.023
+            ],
+            "angle": 0,
+            "content": "BofA GLOBAL RESEARCH"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.041,
+                0.957,
+                0.146
+            ],
+            "angle": 0,
+            "content": "(Company Registration No 198602883D). BofA (Singapore) is regulated by MAS. BofA Equities (Australia) Limited (ABN 65 006 276 795), AFS License 235132 (MLEA) distributes this information in Australia only to 'Wholesale' clients as defined by s.761G of the Corporations Act 2001. With the exception of BofA N.A., Australia Branch, neither MLEA nor any of its affiliates involved in preparing this information is an Authorised Deposit-Taking Institution under the Banking Act 1959 nor regulated by the Australian Prudential Regulation Authority. No approval is required for publication or distribution of this information in Brazil and its local distribution is by BofA (Brazil) in accordance with applicable regulations. BofA (DIFC) is authorized and regulated by the DFSA. Information prepared and issued by BofA (DIFC) is done so in accordance with the requirements of the DFSA conduct of business rules. BofA Europe (Frankfurt) distributes this information in Germany and is regulated by BaFin, the ECB and the CBI. BofA entities, including BofA Europe and BofASE (France), may outsource/delegate the marketing and/or provision of certain research services or aspects of research services to other branches or members of the BofA group. You may be contacted by a different BofA entity acting for and on behalf of your service provider where permitted by applicable law. This does not change your service provider. Please refer to the Electronic Communications Disclaimers for further information.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.147,
+                0.954,
+                0.227
+            ],
+            "angle": 0,
+            "content": "This information has been prepared and issued by BofAS and/or one or more of its non-US affiliates. The author(s) of this information may not be licensed to carry on regulated activities in your jurisdiction and, if not licensed, do not hold themselves out as being able to do so. BofAS and/or MLPF&S is the distributor of this information in the US and accepts full responsibility for information distributed to BofAS and/or MLPF&S clients in the US by its non-US affiliates. Any US person receiving this information and wishing to effect any transaction in any security discussed herein should do so through BofAS and/or MLPF&S and not such foreign affiliates. Hong Kong recipients of this information should contact BofA (Asia Pacific) Limited in respect of any matters relating to dealing in securities or provision of specific advice on securities or any other matters arising from, or in connection with, this information. Singapore recipients of this information should contact BofA (Singapore) Pte Ltd in respect of any matters arising from, or in connection with, this information. For clients that are not accredited investors, expert investors or institutional investors BofA (Singapore) Pte Ltd accepts full responsibility for the contents of this information distributed to such clients in Singapore.",
+            "merge_prev": false
+        },
+        {
+            "type": "title",
+            "bbox": [
+                0.041,
+                0.228,
+                0.243,
+                0.238
+            ],
+            "angle": 0,
+            "content": "General Investment Related Disclosures:"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.239,
+                0.956,
+                0.355
+            ],
+            "angle": 0,
+            "content": "Taiwan Readers: Neither the information nor any opinion expressed herein constitutes an offer or a solicitation of an offer to transact in any securities or other financial instrument. No part of this report may be used or reproduced or quoted in any manner whatsoever in Taiwan by the press or any other person without the express written consent of BofA. This document provides general information only, and has been prepared for, and is intended for general distribution to, BofA clients. Neither the information nor any opinion expressed constitutes an offer or an invitation to make an offer, to buy or sell any securities or other financial instrument or any derivative related to such securities or instruments (e.g., options, futures, warrants, and contracts for differences). This document is not intended to provide personal investment advice and it does not take into account the specific investment objectives, financial situation and the particular needs of, and is not directed to, any specific person(s). This document and its content do not constitute, and should not be considered to constitute, investment advice for purposes of ERISA, the US tax code, the Investment Advisers Act or otherwise. Investors should seek financial advice regarding the appropriateness of investing in financial instruments and implementing investment strategies discussed or recommended in this document and should understand that statements regarding future prospects may not be realized. Any decision to purchase or subscribe for securities in any offering must be based solely on existing public information on such security or the information in the prospectus or other offering document issued in connection with such offering, and not on this document.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.356,
+                0.954,
+                0.436
+            ],
+            "angle": 0,
+            "content": "Securities and other financial instruments referred to herein, or recommended, offered or sold by BofA, are not insured by the Federal Deposit Insurance Corporation and are not deposits or other obligations of any insured depository institution (including, BofA, N.A.). Investments in general and, derivatives, in particular, involve numerous risks, including, among others, market risk, counterparty default risk and liquidity risk. No security, financial instrument or derivative is suitable for all investors. Digital assets are extremely speculative, volatile and are largely unregulated. In some cases, securities and other financial instruments may be difficult to value or sell and reliable information about the value or risks related to the security or financial instrument may be difficult to obtain. Investors should note that income from such securities and other financial instruments, if any, may fluctuate and that price or value of such securities and instruments may rise or fall and, in some cases, investors may lose their entire principal investment. Past performance is not necessarily a guide to future performance. Levels and basis for taxation may change.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.437,
+                0.943,
+                0.482
+            ],
+            "angle": 0,
+            "content": "This report may contain a short-term trading idea or recommendation, which highlights a specific near-term catalyst or event impacting the issuer or the market that is anticipated to have a short-term price impact on the equity securities of the issuer. Short-term trading ideas and recommendations are different from and do not affect a stock's fundamental equity rating, which reflects both a longer term total return expectation and attractiveness for investment relative to other stocks within its Coverage Cluster. Short-term trading ideas and recommendations may be more or less positive than a stock's fundamental equity rating.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.483,
+                0.938,
+                0.517
+            ],
+            "angle": 0,
+            "content": "BofA is aware that the implementation of the ideas expressed in this report may depend upon an investor's ability to \"short\" securities or other financial instruments and that such action may be limited by regulations prohibiting or restricting \"shortselling\" in many jurisdictions. Investors are urged to seek advice regarding the applicability of such regulations prior to executing any short idea contained in this report.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.518,
+                0.92,
+                0.54
+            ],
+            "angle": 0,
+            "content": "Foreign currency rates of exchange may adversely affect the value, price or income of any security or financial instrument mentioned herein. Investors in such securities and instruments, including ADRs, effectively assume currency risk.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.541,
+                0.953,
+                0.563
+            ],
+            "angle": 0,
+            "content": "BofAS or one of its affiliates is a regular issuer of traded financial instruments linked to securities that may have been recommended in this report. BofAS or one of its affiliates may, at any time, hold a trading position (long or short) in the securities and financial instruments discussed in this report.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.564,
+                0.956,
+                0.656
+            ],
+            "angle": 0,
+            "content": "BofA, through business units other than BofA Global Research, may have issued and may in the future issue trading ideas or recommendations that are inconsistent with, and reach different conclusions from, the information presented herein. Such ideas or recommendations may reflect different time frames, assumptions, views and analytical methods of the persons who prepared them, and BofA is under no obligation to ensure that such other trading ideas or recommendations are brought to the attention of any recipient of this information. In the event that the recipient received this information pursuant to a contract between the recipient and BofAS for the provision of research services for a separate fee, and in connection therewith BofAS may be deemed to be acting as an investment adviser, such status relates, if at all, solely to the person with whom BofAS has contracted directly and does not extend beyond the delivery of this report (unless otherwise agreed specifically in writing by BofAS). If such recipient uses the services of BofAS in connection with the sale or purchase of a security referred to herein, BofAS may act as principal for its own account or as agent for another person. BofAS is and continues to act solely as a broker-dealer in connection with the execution of any transactions, including transactions in any securities referred to herein.",
+            "merge_prev": false
+        },
+        {
+            "type": "title",
+            "bbox": [
+                0.041,
+                0.658,
+                0.218,
+                0.668
+            ],
+            "angle": 0,
+            "content": "Copyright and General Information:"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.669,
+                0.954,
+                0.783
+            ],
+            "angle": 0,
+            "content": "Copyright 2026 BofA Corporation. All rights reserved. iQdatabase® is a registered service mark of BofA Corporation. This information is prepared for the use of BofA clients and may not be redistributed, retransmitted or disclosed, in whole or in part, or in any form or manner, without the express written consent of BofA. This document and its content is provided solely for informational purposes and cannot be used for training or developing artificial intelligence (AI) models or as an input in any AI application (collectively, an AI tool). Any attempt to utilize this document or any of its content in connection with an AI tool without explicit written permission from BofA Global Research is strictly prohibited. BofA Global Research utilizes AI, including machine learning and other technologies, to enhance the services we provide to our clients. These technologies assist our analysts in various aspects of their work, including but not limited to data analysis, content extraction, content creation, data aggregation and summarization and identifying relevant information from diverse sources. All AI-driven processes are subject to review by BofA Global Research employees. BofA Global Research information is distributed simultaneously to internal and client websites and other portals by BofA and is not publicly-available material. Any unauthorized use or disclosure is prohibited. Receipt and review of this information constitutes your agreement not to redistribute, retransmit, or disclose to others the contents, opinions, conclusion, or information contained herein (including any investment recommendations, estimates or price targets) without first obtaining express permission from an authorized officer of BofA.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.784,
+                0.949,
+                0.877
+            ],
+            "angle": 0,
+            "content": "Materials prepared by BofA Global Research personnel are based on public information. Facts and views presented in this material have not been reviewed by, and may not reflect information known to, professionals in other business areas of BofA, including investment banking personnel. BofA has established information barriers between BofA Global Research and certain business groups. As a result, BofA does not disclose certain client relationships with, or compensation received from, such issuers. To the extent this material discusses any legal proceeding or issues, it has not been prepared as nor is it intended to express any legal conclusion, opinion or advice. Investors should consult their own legal advisers as to issues of law relating to the subject matter of this material. BofA Global Research personnel's knowledge of legal proceedings in which any BofA entity and/or its directors, officers and employees may be plaintiffs, defendants, co-defendants or co-plaintiffs with or involving issuers mentioned in this material is based on public information. Facts and views presented in this material that relate to any such proceedings have not been reviewed by, discussed with, and may not reflect information known to, professionals in other business areas of BofA in connection with the legal proceedings or matters relevant to such proceedings.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.878,
+                0.943,
+                0.923
+            ],
+            "angle": 0,
+            "content": "This information has been prepared independently of any issuer of securities mentioned herein and not in connection with any proposed offering of securities or as agent of any issuer of any securities. None of BofAS any of its affiliates or their research analysts has any authority whatsoever to make any representation or warranty on behalf of the issuer(s). BofA Global Research policy prohibits research personnel from disclosing a recommendation, investment rating, or investment thesis for review by an issuer prior to the publication of a research report containing such rating, recommendation or investment thesis.",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.042,
+                0.949,
+                0.081,
+                0.967
+            ],
+            "angle": 0,
+            "content": "[Non-Text]"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.612,
+                0.953,
+                0.919,
+                0.965
+            ],
+            "angle": 0,
+            "content": "China A-share W&W Indicator - Monthly | 19 May 2026"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.945,
+                0.954,
+                0.955,
+                0.963
+            ],
+            "angle": 0,
+            "content": "9"
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.04,
+                0.013,
+                0.162,
+                0.023
+            ],
+            "angle": 0,
+            "content": "BofA GLOBAL RESEARCH"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.041,
+                0.928,
+                0.065
+            ],
+            "angle": 0,
+            "content": "Any information relating to sustainability in this material is limited as discussed herein and is not intended to provide a comprehensive view on any sustainability claim with respect to any issuer or security.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.065,
+                0.936,
+                0.088
+            ],
+            "angle": 0,
+            "content": "Any information relating to the tax status of financial instruments discussed herein is not intended to provide tax advice or to be used by anyone to provide tax advice. Investors are urged to seek tax advice based on their particular circumstances from an independent tax professional.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.088,
+                0.956,
+                0.146
+            ],
+            "angle": 0,
+            "content": "The information herein (other than disclosure information relating to BofA and its affiliates) was obtained from various sources and we do not guarantee its accuracy. This information may contain links to third-party websites. BofA is not responsible for the content of any third-party website or any linked content contained in a third-party website. Content contained on such third-party websites is not part of this information and is not incorporated by reference. The inclusion of a link does not imply any endorsement by or any affiliation with BofA. Access to any third-party website is at your own risk, and you should always review the terms and privacy policies at third-party websites before submitting any personal information to them. BofA is not responsible for such terms and privacy policies and expressly disclaims any liability for them.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.146,
+                0.941,
+                0.181
+            ],
+            "angle": 0,
+            "content": "All opinions, projections and estimates constitute the judgment of the author as of the date of publication and are subject to change without notice. Prices also are subject to change without notice. BofA is under no obligation to update this information and BofA ability to publish information on the subject issuer(s) in the future is subject to applicable quiet periods. You should therefore assume that BofA will not update any fact, circumstance or opinion contained herein.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.181,
+                0.955,
+                0.204
+            ],
+            "angle": 0,
+            "content": "Certain outstanding reports or investment opinions relating to securities, financial instruments and/or issuers may no longer be current. Always refer to the most recent research report relating to an issuer prior to making an investment decision.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.204,
+                0.955,
+                0.25
+            ],
+            "angle": 0,
+            "content": "In some cases, an issuer may be classified as Restricted or may be Under Review or Extended Review. In each case, investors should consider any investment opinion relating to such issuer (or its security and/or financial instruments) to be suspended or withdrawn and should not rely on the analyses and investment opinion(s) pertaining to such issuer (or its securities and/or financial instruments) nor should the analyses or opinion(s) be considered a solicitation of any kind. Sales persons and financial advisors affiliated with BofAS or any of its affiliates may not solicit purchases of securities or financial instruments that are Restricted or Under Review and may only solicit securities under Extended Review in accordance with firm policies.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.041,
+                0.25,
+                0.935,
+                0.274
+            ],
+            "angle": 0,
+            "content": "Neither BofA nor any officer or employee of BofA accepts any liability whatsoever for any direct, indirect or consequential damages or losses arising from any use of this information.",
+            "merge_prev": false
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.042,
+                0.953,
+                0.059,
+                0.964
+            ],
+            "angle": 0,
+            "content": "10"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.084,
+                0.953,
+                0.391,
+                0.965
+            ],
+            "angle": 0,
+            "content": "China A-share W&W Indicator - Monthly | 19 May 2026"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.915,
+                0.948,
+                0.955,
+                0.967
+            ],
+            "angle": 0,
+            "content": "[Non-Text]"
+        }
+    ]
+]
