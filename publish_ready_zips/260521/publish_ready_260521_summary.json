@@ -1,0 +1,215 @@
+{
+  "created_at_utc": "2026-05-21T22:55:23.075912+00:00",
+  "source_date_dir": "xhs_notes/dropbox/260521",
+  "output_dir": "publish_ready_zips/260521",
+  "max_zip_mb": 90,
+  "single_zip": false,
+  "exclude_source_mineru": true,
+  "markdown_files_renamed_to_txt": true,
+  "excluded_debug_files": true,
+  "included_shard_count": 10,
+  "skipped_shards": [
+    "shard_10",
+    "shard_11",
+    "shard_12",
+    "shard_13",
+    "shard_14",
+    "shard_15",
+    "shard_16",
+    "shard_17",
+    "shard_18",
+    "shard_19",
+    "shard_20",
+    "shard_21",
+    "shard_22",
+    "shard_23",
+    "shard_24",
+    "shard_25",
+    "shard_26",
+    "shard_27",
+    "shard_28",
+    "shard_29",
+    "shard_30",
+    "shard_31",
+    "shard_32",
+    "shard_33",
+    "shard_34",
+    "shard_35",
+    "shard_36",
+    "shard_37",
+    "shard_38",
+    "shard_39"
+  ],
+  "total_files": 891,
+  "total_renamed_markdown_count": 225,
+  "total_raw_file_bytes": 159012739,
+  "zip_count": 2,
+  "zips": [
+    {
+      "path": "publish_ready_zips/260521/publish_ready_260521_part001.zip",
+      "size_bytes": 88125019,
+      "file_count": 566,
+      "renamed_markdown_count": 145,
+      "raw_file_bytes": 94285232,
+      "shards": [
+        "shard_0",
+        "shard_1",
+        "shard_2",
+        "shard_3",
+        "shard_4",
+        "shard_5",
+        "shard_6"
+      ]
+    },
+    {
+      "path": "publish_ready_zips/260521/publish_ready_260521_part002.zip",
+      "size_bytes": 59855020,
+      "file_count": 325,
+      "renamed_markdown_count": 80,
+      "raw_file_bytes": 64727507,
+      "shards": [
+        "shard_6",
+        "shard_7",
+        "shard_8",
+        "shard_9"
+      ]
+    }
+  ],
+  "included_shards": [
+    {
+      "shard": "shard_0",
+      "report_count": 4,
+      "file_count": 82,
+      "renamed_markdown_count": 20,
+      "raw_file_bytes": 10900909,
+      "reports": [
+        "0001-01-Barclays-AI-gets-physical-The-decade-of-the-robot-belongs-to-China-26051",
+        "0002-02-Barclays-Global-economic-drivers-How-humanoid-robotics-matters-for-macro",
+        "0003-03-BofA-Securities-China-A-share-W-W-Indicator-Monthly-The-W-W-Indicator-fu",
+        "0004-04-BofA-Securities-Global-Research-Unlocked-Why-we-believe-AI-reshapes-work"
+      ]
+    },
+    {
+      "shard": "shard_1",
+      "report_count": 5,
+      "file_count": 85,
+      "renamed_markdown_count": 25,
+      "raw_file_bytes": 12244935,
+      "reports": [
+        "0001-06-Deutsche-Bank-US-Economic-Notes-Wisdom-of-crowds-and-markets-agree--Rate",
+        "0002-07-Goldman-Sachs-Japan--April-Trade--Crude-Oil-Import-Unit-Price-Surges-whi",
+        "0003-08-Goldman-Sachs-South-Korea--Rebound-in-Early-May-Exports--Driven-by-Semic",
+        "0004-09-J.P.-Morgan-Rising-AI-tide-lifts-all-equity-markets-Highlights-from-the-",
+        "0005-10-JPM-Flows---Liquidity-Are-bond-yields-becoming-a-problem-for-equities--2"
+      ]
+    },
+    {
+      "shard": "shard_2",
+      "report_count": 5,
+      "file_count": 93,
+      "renamed_markdown_count": 25,
+      "raw_file_bytes": 13415220,
+      "reports": [
+        "0001-11-Nomura-Asia-Chart-Alert-Nomura-s-leading-index-of-Asian-exports-260520",
+        "0002-12-UBS-China-Equity-Strategy-How-crowded-is-the-AI-trade-and-other-frequent",
+        "0003-13-Nomura-USD-CNY-fix-model--Projection--6.7927-260521",
+        "0004-14-Bernstein-Americas-Energy---Transition-Americas-Oil--GPR-analysis-sugges",
+        "0005-15-Bernstein-Global-Luxury-Goods--The-accelerating-loop-of-Story-Social-Sho"
+      ]
+    },
+    {
+      "shard": "shard_3",
+      "report_count": 5,
+      "file_count": 103,
+      "renamed_markdown_count": 25,
+      "raw_file_bytes": 16377026,
+      "reports": [
+        "0001-16-Bernstein-Global-Luxury-Goods--10-Key-Takeaways-from-Our-Trip-to-China-2",
+        "0002-17-Bernstein-China-Pharma-and-Biotech-The-Long-View--Comparing-R-D-muscles-",
+        "0003-18-Bernstein-US-Industrials---Tech--The-Data-Center-Project-Pipeline---Capa",
+        "0004-19-Bernstein-US-eCommerce--Has-Active-Buyer-growth-turned-the-corner--26052",
+        "0005-20-BofA-Securities-Greater-China-Industrials--H-A--2026-BofA-China-Conferen"
+      ]
+    },
+    {
+      "shard": "shard_4",
+      "report_count": 5,
+      "file_count": 95,
+      "renamed_markdown_count": 25,
+      "raw_file_bytes": 21069633,
+      "reports": [
+        "0001-21-BofA-Securities-Greater-China-Industrials-April-automation--moderate-ind",
+        "0002-22-BofA-Securities-Greater-China--Autos-April-PV-insurance-19--YoY--7--MoM-",
+        "0003-23-CITI-China-Auto-Manufacturers-Weekly-EV-Orders--Except-NIO--continually-",
+        "0004-24-Bofa-Pacific-Positioning-Dividing-the-crowd-260521",
+        "0005-25-CITI-China-Battery-Materials-What-s-New-from-Citi-2026-Pan-Asia-Conferen"
+      ]
+    },
+    {
+      "shard": "shard_5",
+      "report_count": 5,
+      "file_count": 103,
+      "renamed_markdown_count": 25,
+      "raw_file_bytes": 18476680,
+      "reports": [
+        "0001-26-GS-Mutual-Fundamentals_-Funds-widen-tilt-to-Semis-over-Software-260520",
+        "0002-27-Goldman-Sachs-CHINA-CONSUMER-STAPLES-Assessing-potential-impact-of-logis",
+        "0003-28-HSBC-China-Real-Estate-A-pause-before-more-catalysts-materialise-260519",
+        "0004-29-HSBC-China-telcos-Token-based-plans-to-monetize-the-AI-boom-260519",
+        "0005-30-J.P.-Morgan-China-Basic-Materials-Apr-26-NBS-data--Weakening-domestic-de"
+      ]
+    },
+    {
+      "shard": "shard_6",
+      "report_count": 5,
+      "file_count": 115,
+      "renamed_markdown_count": 25,
+      "raw_file_bytes": 29426765,
+      "reports": [
+        "0001-31-J.P.-Morgan-China-Property-Tier-1-cities--home-price-stabilization-exten",
+        "0002-32-J.P.-Morgan-China-Regional-Banks-4Q25-1Q26--NII-recovery-supports-growth",
+        "0003-33-J.P.-Morgan-China-Tanker-Shipping-Hormuz-disruption-monitor-week-11--CSE",
+        "0004-34-J.P.-Morgan-Clean-Energy-and-Power-Infrastructure-2026-Spring-Series-260",
+        "0005-35-J.P.-Morgan-Payment-Processing-Snippets-From-Market-Share-Handbook-2026-"
+      ]
+    },
+    {
+      "shard": "shard_7",
+      "report_count": 5,
+      "file_count": 101,
+      "renamed_markdown_count": 25,
+      "raw_file_bytes": 16593790,
+      "reports": [
+        "0001-36-J.P.-Morgan-Spring-Series-2026-A-Good-Start-with-AI-Tailwinds-Ahead-2605",
+        "0002-37-J.P.-Morgan-US-TMC-Conference-Feedback-on-US-wireless--the-satellite-deb",
+        "0003-38-MS-Greater-China-Technology-Hardware---Asia-Pacific-Analysis-of-Rubin-ra",
+        "0004-39-Morgan-Stanley-Global-Sugar---Latin-America-Timing-the-Turning-Point-260",
+        "0005-40-Morgan-Stanley-China-Property--An-Inflection-or-Another-False-Start--260"
+      ]
+    },
+    {
+      "shard": "shard_8",
+      "report_count": 5,
+      "file_count": 91,
+      "renamed_markdown_count": 25,
+      "raw_file_bytes": 15987258,
+      "reports": [
+        "0001-41-Morgan-Stanley-Greater-China-Semiconductors-Semi-Distributors--AI-Contin",
+        "0002-42-Nomura-Japan-semiconductor-packaging-industry-update-Record-high-shipmen",
+        "0003-43-Bernstein-U.S.-IT-Hardware-Server-OEMs--Agentic-AI-driving-next-leg-of-A",
+        "0004-44-BofA-Securities-Component-Signals-MLCC-production--Maintain-Buy-on-Murat",
+        "0005-45-Goldman-Sachs-Asia-Communacopia---Technology---Key-Takeaways--Phancy--NC"
+      ]
+    },
+    {
+      "shard": "shard_9",
+      "report_count": 1,
+      "file_count": 23,
+      "renamed_markdown_count": 5,
+      "raw_file_bytes": 4520523,
+      "reports": [
+        "0001-46-Goldman-Sachs-Japan-Electronic-Components-Semiconductors--NVDA-results-r"
+      ]
+    }
+  ]
+}
