@@ -1,0 +1,462 @@
+[
+  {
+    "id": 0,
+    "name": "BARC-AI gets physical：The decade of the robot belongs to China-260519.pdf",
+    "dropbox_path": "/zip_backup/260521/BARC-ai gets physical：the decade of the robot belongs to china-260519.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/BARC-ai gets physical：the decade of the robot belongs to china-260519.pdf",
+    "category": "macro_trend",
+    "score": 0.95,
+    "reason": "讨论机器人十年趋势，属于宏观主题策略",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 2,
+    "name": "BARC-Global economic drivers：How humanoid robotics matters for macro-260519.pdf",
+    "dropbox_path": "/zip_backup/260521/BARC-global economic drivers：how humanoid robotics matters for macro-260519.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/BARC-global economic drivers：how humanoid robotics matters for macro-260519.pdf",
+    "category": "macro_trend",
+    "score": 0.95,
+    "reason": "讨论人形机器人对宏观的影响，属于宏观趋势",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 10,
+    "name": "BofA-China A~share W&W Indicator~Monthly：The W&W Indicator further signals \"Very Bullish” sign for A~share market-260519.pdf",
+    "dropbox_path": "/zip_backup/260521/BofA-china a~share w&w indicator~monthly：the w&w indicator further signals \"very bullish” sign for a~share market-260519.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/BofA-china a~share w&w indicator~monthly：the w&w indicator further signals \"very bullish” sign for a~share market-260519.pdf",
+    "category": "macro_trend",
+    "score": 0.95,
+    "reason": "A股市场指标信号，属于宏观/市场策略",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 13,
+    "name": "BofA-Global Research Unlocked：Why we believe AI reshapes work more so than it reduces overall payrolls-260519.pdf",
+    "dropbox_path": "/zip_backup/260521/BofA-global research unlocked：why we believe ai reshapes work more so than it reduces overall payrolls-260519.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/BofA-global research unlocked：why we believe ai reshapes work more so than it reduces overall payrolls-260519.pdf",
+    "category": "macro_trend",
+    "score": 0.95,
+    "reason": "讨论AI对就业的影响，属于宏观/主题策略",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 23,
+    "name": "CITI-China Economics：A \"Golden Window” for RMB Internationalization？-260519.pdf",
+    "dropbox_path": "/zip_backup/260521/citi-china economics：a \"golden window” for rmb internationalization？-260519.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/citi-china economics：a \"golden window” for rmb internationalization？-260519.pdf",
+    "category": "macro_trend",
+    "score": 0.95,
+    "reason": "讨论人民币国际化，属于宏观/政策趋势",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 25,
+    "name": "DB-US Economic Notes：Wisdom of crowds and markets agree： Rate hike risks are rising-260520.pdf",
+    "dropbox_path": "/zip_backup/260521/DB-us economic notes：wisdom of crowds and markets agree： rate hike risks are rising-260520.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/DB-us economic notes：wisdom of crowds and markets agree： rate hike risks are rising-260520.pdf",
+    "category": "macro_trend",
+    "score": 0.95,
+    "reason": "美国经济笔记，讨论加息风险，属于宏观趋势",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 37,
+    "name": "GS-Japan： April Trade： Crude Oil Import Unit Price Surges while Import Volume Plunges. Stable LNG Import Price-260521.pdf",
+    "dropbox_path": "/zip_backup/260521/GS-japan： april trade： crude oil import unit price surges while import volume plunges. stable lng import price-260521.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/GS-japan： april trade： crude oil import unit price surges while import volume plunges. stable lng import price-260521.pdf",
+    "category": "macro_trend",
+    "score": 0.95,
+    "reason": "日本贸易数据，涉及原油和LNG进口，属于宏观/商品趋势",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 39,
+    "name": "GS-South Korea： Rebound in Early May Exports， Driven by Semiconductors-260521.pdf",
+    "dropbox_path": "/zip_backup/260521/GS-south korea： rebound in early may exports， driven by semiconductors-260521.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/GS-south korea： rebound in early may exports， driven by semiconductors-260521.pdf",
+    "category": "macro_trend",
+    "score": 0.95,
+    "reason": "韩国出口数据反弹，属于宏观/国家市场趋势",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 65,
+    "name": "JPM-Rising AI tide lifts all equity markets：Highlights from the Paris Global Markets Conference-260519.pdf",
+    "dropbox_path": "/zip_backup/260521/JPM-rising ai tide lifts all equity markets：highlights from the paris global markets conference-260519.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/JPM-rising ai tide lifts all equity markets：highlights from the paris global markets conference-260519.pdf",
+    "category": "macro_trend",
+    "score": 0.95,
+    "reason": "讨论AI对全球股市的影响，属于宏观/主题策略",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 67,
+    "name": "JPM-Flows & Liquidity Are bond yields becoming a problem for equities--260520.pdf",
+    "dropbox_path": "/zip_backup/260521/jpm-flows & liquidity are bond yields becoming a problem for equities--260520.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/jpm-flows & liquidity are bond yields becoming a problem for equities--260520.pdf",
+    "category": "macro_trend",
+    "score": 0.95,
+    "reason": "讨论债券收益率对股市的影响，属于宏观/资产配置",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 77,
+    "name": "NOM-Asia Chart Alert：NOM’s leading index of Asian exports-260520.pdf",
+    "dropbox_path": "/zip_backup/260521/NOM-asia chart alert：NOM’s leading index of asian exports-260520.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/NOM-asia chart alert：NOM’s leading index of asian exports-260520.pdf",
+    "category": "macro_trend",
+    "score": 0.95,
+    "reason": "亚洲出口领先指数，属于宏观/区域趋势",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 80,
+    "name": "UBS-China Equity Strategy How crowded is the AI trade and other frequently asked investor questions-260521.pdf",
+    "dropbox_path": "/zip_backup/260521/ubs-china equity strategy how crowded is the ai trade and other frequently asked investor questions-260521.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/ubs-china equity strategy how crowded is the ai trade and other frequently asked investor questions-260521.pdf",
+    "category": "macro_trend",
+    "score": 0.95,
+    "reason": "中国股票策略，讨论AI交易拥挤度，属于市场策略",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 81,
+    "name": "NOM-USD CNY fix model ：Projection： 6.7927-260521.pdf",
+    "dropbox_path": "/zip_backup/260521/NOM-usd cny fix model ：projection： 6.7927-260521.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/NOM-usd cny fix model ：projection： 6.7927-260521.pdf",
+    "category": "macro_trend",
+    "score": 0.95,
+    "reason": "美元/人民币汇率预测模型，属于宏观/汇率趋势",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 1,
+    "name": "Bernstein-Americas Energy & Transition Americas Oil： GPR analysis suggests oil price is stickier than expected-260520.pdf",
+    "dropbox_path": "/zip_backup/260521/bernstein-americas energy & transition americas oil： gpr analysis suggests oil price is stickier than expected-260520.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/bernstein-americas energy & transition americas oil： gpr analysis suggests oil price is stickier than expected-260520.pdf",
+    "category": "macro_trend",
+    "score": 0.9,
+    "reason": "分析油价粘性，属于商品/宏观趋势",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 3,
+    "name": "Bernstein-Global Luxury Goods： The accelerating loop of Story~Social~Shop-260520.pdf",
+    "dropbox_path": "/zip_backup/260521/bernstein-global luxury goods： the accelerating loop of story~social~shop-260520.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/bernstein-global luxury goods： the accelerating loop of story~social~shop-260520.pdf",
+    "category": "macro_trend",
+    "score": 0.9,
+    "reason": "全球奢侈品行业趋势，属于行业趋势",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 4,
+    "name": "Bernstein-Global Luxury Goods： 10 Key Takeaways from Our Trip to China-260520.pdf",
+    "dropbox_path": "/zip_backup/260521/bernstein-global luxury goods： 10 key takeaways from our trip to china-260520.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/bernstein-global luxury goods： 10 key takeaways from our trip to china-260520.pdf",
+    "category": "macro_trend",
+    "score": 0.9,
+    "reason": "全球奢侈品行业中国之行要点，属于行业趋势",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 5,
+    "name": "Bernstein-China Pharma and Biotech：The Long View： Comparing R&D muscles of China Pharma & Biotech-260521.pdf",
+    "dropbox_path": "/zip_backup/260521/bernstein-china pharma and biotech：the long view： comparing r&d muscles of china pharma & biotech-260521.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/bernstein-china pharma and biotech：the long view： comparing r&d muscles of china pharma & biotech-260521.pdf",
+    "category": "macro_trend",
+    "score": 0.9,
+    "reason": "中国制药与生物技术行业研发对比，属于行业趋势",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 7,
+    "name": "Bernstein-US Industrials & Tech： The Data Center Project Pipeline ~ Capacity， Construction & Cancellations （April '26）-260520.pdf",
+    "dropbox_path": "/zip_backup/260521/bernstein-us industrials & tech： the data center project pipeline ~ capacity， construction & cancellations （april '26）-260520.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/bernstein-us industrials & tech： the data center project pipeline ~ capacity， construction & cancellations （april '26）-260520.pdf",
+    "category": "macro_trend",
+    "score": 0.9,
+    "reason": "美国工业与科技行业数据中心项目管道分析，属于行业趋势",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 9,
+    "name": "Bernstein-US eCommerce： Has Active Buyer growth turned the corner？-260520.pdf",
+    "dropbox_path": "/zip_backup/260521/bernstein-us ecommerce： has active buyer growth turned the corner？-260520.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/bernstein-us ecommerce： has active buyer growth turned the corner？-260520.pdf",
+    "category": "macro_trend",
+    "score": 0.9,
+    "reason": "美国电商行业买家增长趋势，属于行业趋势",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 12,
+    "name": "BofA-Greater China Industrials （H A） 2026 BofA China Conference： key takeaways from China Industrial-260519.pdf",
+    "dropbox_path": "/zip_backup/260521/BofA-greater china industrials （h a） 2026 bofa china conference： key takeaways from china industrial-260519.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/BofA-greater china industrials （h a） 2026 bofa china conference： key takeaways from china industrial-260519.pdf",
+    "category": "macro_trend",
+    "score": 0.9,
+    "reason": "中国工业行业会议要点，属于行业趋势",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 16,
+    "name": "BofA-Greater China Industrials：April automation： moderate industrial activities growth； industrial robots solid-260519.pdf",
+    "dropbox_path": "/zip_backup/260521/BofA-greater china industrials：april automation： moderate industrial activities growth； industrial robots solid-260519.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/BofA-greater china industrials：april automation： moderate industrial activities growth； industrial robots solid-260519.pdf",
+    "category": "macro_trend",
+    "score": 0.9,
+    "reason": "中国工业自动化月度数据，属于行业趋势",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 17,
+    "name": "BofA-Greater China~ Autos：April PV insurance~19% YoY ~7% MoM； channel inventory declined； EV ~6% YoY-260519.pdf",
+    "dropbox_path": "/zip_backup/260521/BofA-greater china~ autos：april pv insurance~19% yoy ~7% mom； channel inventory declined； ev ~6% yoy-260519.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/BofA-greater china~ autos：april pv insurance~19% yoy ~7% mom； channel inventory declined； ev ~6% yoy-260519.pdf",
+    "category": "macro_trend",
+    "score": 0.9,
+    "reason": "中国汽车行业月度保险数据，属于行业趋势",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 19,
+    "name": "CITI-China Auto Manufacturers：Weekly EV Orders （Except NIO） continually missed （11~17 May）-260519.pdf",
+    "dropbox_path": "/zip_backup/260521/citi-china auto manufacturers：weekly ev orders （except nio） continually missed （11~17 may）-260519.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/citi-china auto manufacturers：weekly ev orders （except nio） continually missed （11~17 may）-260519.pdf",
+    "category": "macro_trend",
+    "score": 0.9,
+    "reason": "中国汽车制造商周度订单数据，属于行业趋势",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 20,
+    "name": "Bofa-Pacific Positioning Dividing the crowd-260521.pdf",
+    "dropbox_path": "/zip_backup/260521/bofa-pacific positioning dividing the crowd-260521.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/bofa-pacific positioning dividing the crowd-260521.pdf",
+    "category": "macro_trend",
+    "score": 0.9,
+    "reason": "讨论太平洋地区市场定位，属于区域/市场策略",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 22,
+    "name": "CITI-China Battery Materials What’s New from Citi 2026 Pan~Asia Conference： Takeaways from Meetings with ZE Consulting-260519.pdf",
+    "dropbox_path": "/zip_backup/260521/citi-china battery materials what’s new from citi 2026 pan~asia conference： takeaways from meetings with ze consulting-260519.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/citi-china battery materials what’s new from citi 2026 pan~asia conference： takeaways from meetings with ze consulting-260519.pdf",
+    "category": "macro_trend",
+    "score": 0.9,
+    "reason": "中国电池材料行业会议要点，属于行业趋势",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 24,
+    "name": "GS-Mutual Fundamentals_ Funds widen tilt to Semis over Software-260520.pdf",
+    "dropbox_path": "/zip_backup/260521/gs-mutual fundamentals_ funds widen tilt to semis over software-260520.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/gs-mutual fundamentals_ funds widen tilt to semis over software-260520.pdf",
+    "category": "macro_trend",
+    "score": 0.9,
+    "reason": "基金持仓偏向半导体而非软件，属于行业/主题趋势",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 30,
+    "name": "GS-CHINA CONSUMER STAPLES：Assessing potential impact of logistics costs inflation across covered names-260520.pdf",
+    "dropbox_path": "/zip_backup/260521/GS-china consumer staples：assessing potential impact of logistics costs inflation across covered names-260520.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/GS-china consumer staples：assessing potential impact of logistics costs inflation across covered names-260520.pdf",
+    "category": "macro_trend",
+    "score": 0.9,
+    "reason": "中国消费必需品行业物流成本影响评估，属于行业趋势",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 45,
+    "name": "HSBC-China Real Estate：A pause before more catalysts materialise-260519.pdf",
+    "dropbox_path": "/zip_backup/260521/hsbc-china real estate：a pause before more catalysts materialise-260519.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/hsbc-china real estate：a pause before more catalysts materialise-260519.pdf",
+    "category": "macro_trend",
+    "score": 0.9,
+    "reason": "中国房地产行业催化剂分析，属于行业趋势",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 46,
+    "name": "HSBC-China telcos：Token~based plans to monetize the AI boom-260519.pdf",
+    "dropbox_path": "/zip_backup/260521/hsbc-china telcos：token~based plans to monetize the ai boom-260519.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/hsbc-china telcos：token~based plans to monetize the ai boom-260519.pdf",
+    "category": "macro_trend",
+    "score": 0.9,
+    "reason": "中国电信行业代币化计划，属于行业趋势",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 49,
+    "name": "JPM-China Basic Materials：Apr 26 NBS data： Weakening domestic demand to be partially offset by exports； macro and supply are stronger short~term drivers-260519.pdf",
+    "dropbox_path": "/zip_backup/260521/JPM-china basic materials：apr 26 nbs data： weakening domestic demand to be partially offset by exports； macro and supply are stronger short~term drivers-260519.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/JPM-china basic materials：apr 26 nbs data： weakening domestic demand to be partially offset by exports； macro and supply are stronger short~term drivers-260519.pdf",
+    "category": "macro_trend",
+    "score": 0.9,
+    "reason": "中国基础材料行业NBS数据分析，属于行业趋势",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 51,
+    "name": "JPM-China Property：Tier 1 cities’ home price stabilization extends into April-260519.pdf",
+    "dropbox_path": "/zip_backup/260521/JPM-china property：tier 1 cities’ home price stabilization extends into april-260519.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/JPM-china property：tier 1 cities’ home price stabilization extends into april-260519.pdf",
+    "category": "macro_trend",
+    "score": 0.9,
+    "reason": "中国房地产行业房价稳定分析，属于行业趋势",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 53,
+    "name": "JPM-China Regional Banks：4Q25 1Q26： NII recovery supports growth， while fees and AQ drive divergence； downgrade BoSH and BoBJ-260519.pdf",
+    "dropbox_path": "/zip_backup/260521/JPM-china regional banks：4q25 1q26： nii recovery supports growth， while fees and aq drive divergence； downgrade bosh and bobj-260519.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/JPM-china regional banks：4q25 1q26： nii recovery supports growth， while fees and aq drive divergence； downgrade bosh and bobj-260519.pdf",
+    "category": "macro_trend",
+    "score": 0.9,
+    "reason": "中国区域银行业季度分析，属于行业趋势",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 54,
+    "name": "JPM-China Tanker Shipping：Hormuz disruption monitor~week 11： CSET recovers as shadow fleet risks build-260520.pdf",
+    "dropbox_path": "/zip_backup/260521/JPM-china tanker shipping：hormuz disruption monitor~week 11： cset recovers as shadow fleet risks build-260520.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/JPM-china tanker shipping：hormuz disruption monitor~week 11： cset recovers as shadow fleet risks build-260520.pdf",
+    "category": "macro_trend",
+    "score": 0.9,
+    "reason": "中国油轮航运行业霍尔木兹海峡干扰监测，属于行业趋势",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 56,
+    "name": "JPM-Clean Energy and Power Infrastructure 2026 Spring Series-260521.pdf",
+    "dropbox_path": "/zip_backup/260521/JPM-clean energy and power infrastructure 2026 spring series-260521.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/JPM-clean energy and power infrastructure 2026 spring series-260521.pdf",
+    "category": "macro_trend",
+    "score": 0.9,
+    "reason": "清洁能源和电力基础设施系列报告，属于行业趋势",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 61,
+    "name": "JPM-Payment Processing：Snippets From Market Share Handbook 2026 Edition-260521.pdf",
+    "dropbox_path": "/zip_backup/260521/JPM-payment processing：snippets from market share handbook 2026 edition-260521.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/JPM-payment processing：snippets from market share handbook 2026 edition-260521.pdf",
+    "category": "macro_trend",
+    "score": 0.9,
+    "reason": "支付处理行业市场份额手册，属于行业趋势",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 63,
+    "name": "JPM-Spring Series 2026：A Good Start with AI Tailwinds Ahead-260521.pdf",
+    "dropbox_path": "/zip_backup/260521/JPM-spring series 2026：a good start with ai tailwinds ahead-260521.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/JPM-spring series 2026：a good start with ai tailwinds ahead-260521.pdf",
+    "category": "macro_trend",
+    "score": 0.9,
+    "reason": "春季系列报告，AI顺风，属于行业/主题趋势",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 68,
+    "name": "JPM-US TMC Conference：Feedback on US wireless， the satellite debate， and AI related upside-260520.pdf",
+    "dropbox_path": "/zip_backup/260521/JPM-us tmc conference：feedback on us wireless， the satellite debate， and ai related upside-260520.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/JPM-us tmc conference：feedback on us wireless， the satellite debate， and ai related upside-260520.pdf",
+    "category": "macro_trend",
+    "score": 0.9,
+    "reason": "美国TMC会议反馈，涉及无线、卫星和AI，属于行业趋势",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 69,
+    "name": "MS-Greater China Technology Hardware - Asia Pacific Analysis of Rubin rack BOM, component content, and ODM value-added-260520.pdf",
+    "dropbox_path": "/zip_backup/260521/ms-greater china technology hardware - asia pacific analysis of rubin rack bom, component content, and odm value-added-260520.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/ms-greater china technology hardware - asia pacific analysis of rubin rack bom, component content, and odm value-added-260520.pdf",
+    "category": "macro_trend",
+    "score": 0.9,
+    "reason": "中国科技硬件行业Rubin机架BOM分析，属于行业趋势",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 72,
+    "name": "MS-Global Sugar - Latin America：Timing the Turning Point-260520.pdf",
+    "dropbox_path": "/zip_backup/260521/MS-global sugar - latin america：timing the turning point-260520.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/MS-global sugar - latin america：timing the turning point-260520.pdf",
+    "category": "macro_trend",
+    "score": 0.9,
+    "reason": "全球糖市拉丁美洲转折点分析，属于商品/行业趋势",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 73,
+    "name": "MS-China Property： An Inflection or Another False Start？-260519.pdf",
+    "dropbox_path": "/zip_backup/260521/MS-china property： an inflection or another false start？-260519.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/MS-china property： an inflection or another false start？-260519.pdf",
+    "category": "macro_trend",
+    "score": 0.9,
+    "reason": "中国房地产行业拐点分析，属于行业趋势",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 74,
+    "name": "MS-Greater China Semiconductors：Semi Distributors： AI Continues to Drive a Stronger Outlook-260519.pdf",
+    "dropbox_path": "/zip_backup/260521/MS-greater china semiconductors：semi distributors： ai continues to drive a stronger outlook-260519.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/MS-greater china semiconductors：semi distributors： ai continues to drive a stronger outlook-260519.pdf",
+    "category": "macro_trend",
+    "score": 0.9,
+    "reason": "中国半导体分销商行业AI驱动展望，属于行业趋势",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 79,
+    "name": "NOM-Japan semiconductor packaging industry update：Record~high shipments of package substrates in March-260521.pdf",
+    "dropbox_path": "/zip_backup/260521/NOM-japan semiconductor packaging industry update：record~high shipments of package substrates in march-260521.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/NOM-japan semiconductor packaging industry update：record~high shipments of package substrates in march-260521.pdf",
+    "category": "macro_trend",
+    "score": 0.9,
+    "reason": "日本半导体封装行业更新，属于行业趋势",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 8,
+    "name": "Bernstein-U.S. IT Hardware Server OEMs： Agentic AI driving next leg of AI infra build~what does this mean for DELL， HPE， SMCI？-260520.pdf",
+    "dropbox_path": "/zip_backup/260521/bernstein-u.s. it hardware server oems： agentic ai driving next leg of ai infra build~what does this mean for dell， hpe， smci？-260520.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/bernstein-u.s. it hardware server oems： agentic ai driving next leg of ai infra build~what does this mean for dell， hpe， smci？-260520.pdf",
+    "category": "macro_trend",
+    "score": 0.85,
+    "reason": "讨论AI基础设施对多家OEM的影响，属于行业主题",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 14,
+    "name": "BofA-Component Signals：MLCC production： Maintain Buy on Murata and TDK on solid earnings support-260519.pdf",
+    "dropbox_path": "/zip_backup/260521/BofA-component signals：mlcc production： maintain buy on murata and tdk on solid earnings support-260519.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/BofA-component signals：mlcc production： maintain buy on murata and tdk on solid earnings support-260519.pdf",
+    "category": "macro_trend",
+    "score": 0.85,
+    "reason": "MLCC生产行业信号，涉及多家公司，属于行业趋势",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 29,
+    "name": "GS-Asia Communacopia + Technology — Key Takeaways： Phancy （NC）： Token factory rising on AI infra demand； vGPU optimizing utilization-260520.pdf",
+    "dropbox_path": "/zip_backup/260521/GS-asia communacopia + technology — key takeaways： phancy （nc）： token factory rising on ai infra demand； vgpu optimizing utilization-260520.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/GS-asia communacopia + technology — key takeaways： phancy （nc）： token factory rising on ai infra demand； vgpu optimizing utilization-260520.pdf",
+    "category": "macro_trend",
+    "score": 0.85,
+    "reason": "亚洲通信与科技会议要点，涉及AI基础设施，属于行业主题",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 33,
+    "name": "GS-Japan Electronic Components Semiconductors： NVDA results read~across： bullish on Ibiden， Murata， Yuden， Renesas， MARUWA-260521.pdf",
+    "dropbox_path": "/zip_backup/260521/GS-japan electronic components semiconductors： nvda results read~across： bullish on ibiden， murata， yuden， renesas， maruwa-260521.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/GS-japan electronic components semiconductors： nvda results read~across： bullish on ibiden， murata， yuden， renesas， maruwa-260521.pdf",
+    "category": "macro_trend",
+    "score": 0.85,
+    "reason": "日本电子元件半导体行业NVDA业绩影响分析，涉及多家公司，属于行业趋势",
+    "classifier": "deepseek"
+  }
+]
