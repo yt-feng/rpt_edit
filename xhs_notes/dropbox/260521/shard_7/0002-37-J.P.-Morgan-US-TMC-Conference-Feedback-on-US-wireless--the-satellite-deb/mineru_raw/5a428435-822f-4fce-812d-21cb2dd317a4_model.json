@@ -1,0 +1,1983 @@
+[
+    [
+        {
+            "type": "aside_text",
+            "bbox": [
+                0.0,
+                0.568,
+                0.103,
+                0.88
+            ],
+            "angle": 270,
+            "content": "Washon N."
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.135,
+                0.024,
+                0.348,
+                0.062
+            ],
+            "angle": 0,
+            "content": "JPM"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.691,
+                0.027,
+                0.865,
+                0.041
+            ],
+            "angle": 0,
+            "content": "Europe Equity Research"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.691,
+                0.042,
+                0.771,
+                0.055
+            ],
+            "angle": 0,
+            "content": "20 May 2026"
+        },
+        {
+            "type": "title",
+            "bbox": [
+                0.136,
+                0.11,
+                0.448,
+                0.135
+            ],
+            "angle": 0,
+            "content": "US TMC Conference"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.134,
+                0.145,
+                0.641,
+                0.185
+            ],
+            "angle": 0,
+            "content": "Feedback on US wireless, the satellite debate, and AI related upside",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.134,
+                0.205,
+                0.665,
+                0.514
+            ],
+            "angle": 0,
+            "content": "Over the last two days, JPM has hosted its (ongoing) 54 \\( ^{th} \\) TMC conference in Boston. Key feedback, as it pertains to our EMEA coverage universe, includes: (1) US wireless: Investors remain a little nervous on near-term competitive unknowns given Verizon’s planned Q2 tariff refresh, and CEO Schulman’s insistence that his FY net adds guide is conservative. That said, the bigger picture (for us) was that the BIG3 seem collectively confident in their growth outlooks, which are more centered around driving share gains across new TAMs (FWA, fibre, convergence), and leveraging AI to accelerate cost efficiencies as well as reduce churn, (2) Satellites: Reassuring messages, with the BIG3 stressing they have no appetite to offer satellite operators an MVNO, that D2D volumes are extremely low (just 0.0002% of TMUS’ total network traffic), and that satellite is in their minds complementary, rather than a threat (a view reinforced by the BIG3 D2D JV), (3) AI: The most confident AI messages came from Twilio (its AI product stack is far superior to that of Sinch, but offers insights into what is possible should Sinch close the gap), and AMT (led by its datacentre unit CoreSite, but includes hopes of mid-term benefits to the tower ecosystem), (4) DT: On Monday (here) we argued DT’s shares screened oversold, and we believe this supportive US conference feedback should see the recent rebound run further. That said, several unknowns remain, and furthermore we continue to see European consolidation plays as offering the most compelling risk-reward ahead. US Telcos are covered by Sebastiano Petti and US Towers by Richard Choe.",
+            "merge_prev": false
+        },
+        {
+            "type": "title",
+            "bbox": [
+                0.135,
+                0.53,
+                0.427,
+                0.548
+            ],
+            "angle": 0,
+            "content": "T-Mobile – Srini Gopalan (CEO)"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.134,
+                0.551,
+                0.666,
+                0.861
+            ],
+            "angle": 0,
+            "content": "Takeaways: (1) Network perception: The CEO believes this can drive years of ongoing share gains given an identified 20m+ addressable “network seeker”; (2) ARPA growth: Expect this to be supported by the fact that port-in ARPA is 20% higher than port-out ARPA (hence volume growth is accretive), expanding customer relationships, and thoughtful more-for-more pricing; (3) SMRA: Momentum to continue. Q1 share of 24% marked the 12th consecutive quarter of win-share leadership; (4) FWA: Reiterated guidance for 15m FWA customers by FY30E (underpinned by fallow capacity, without considering upside from new spectrum wins or technology driven improvements in spectral efficiency); (5) Fibre: TMUS remains disciplined, targeting double-digit IRRs and first-to-fiber areas. The CEO noted first year fibre penetration rates of ~20%, a preference for fibre ownership over wholesale deals, and that cable M&A is “structurally off the table” given cable’s overpriced back book; (6) DT-TMUS merger: TMUS would not comment on “market speculation”, reiterating that under Delaware law, any such hypothetical transaction would require majority approval of disinterested shareholders; (7) Satellite: The recent D2D JV with Verizon and AT&T includes implementing satellite as a standard feature on premium rate plans, driving a uniform device ecosystem, and standardizing spectrum. TMUS reiterated that D2D is complementary to terrestrial wireless. The company sees no incremental TAM opportunity from offering satellite an MVNO arrangement, and noted satellite usage today is extremely limited (0.0002% of total network traffic).",
+            "merge_prev": false
+        },
+        {
+            "type": "title",
+            "bbox": [
+                0.691,
+                0.206,
+                0.905,
+                0.232
+            ],
+            "angle": 0,
+            "content": "European Telecommunication Services"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.691,
+                0.237,
+                0.796,
+                0.25
+            ],
+            "angle": 0,
+            "content": "Akhil Dattani AC",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.692,
+                0.252,
+                0.79,
+                0.263
+            ],
+            "angle": 0,
+            "content": "(44-20) 7134-4725",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.692,
+                0.265,
+                0.84,
+                0.275
+            ],
+            "angle": 0,
+            "content": "akhil.dattani@JPM.com",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.692,
+                0.276,
+                0.826,
+                0.287
+            ],
+            "angle": 0,
+            "content": "JPM Securities plc",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.692,
+                0.291,
+                0.816,
+                0.303
+            ],
+            "angle": 0,
+            "content": "Ankur Baheti, CFA",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.692,
+                0.305,
+                0.789,
+                0.316
+            ],
+            "angle": 0,
+            "content": "(91-86) 5796-8820",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.692,
+                0.317,
+                0.843,
+                0.328
+            ],
+            "angle": 0,
+            "content": "ankur.baheti@jpmchase.com",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.692,
+                0.329,
+                0.861,
+                0.34
+            ],
+            "angle": 0,
+            "content": "JPM India Private Limited",
+            "merge_prev": false
+        },
+        {
+            "type": "title",
+            "bbox": [
+                0.691,
+                0.351,
+                0.917,
+                0.365
+            ],
+            "angle": 0,
+            "content": "Specialist Sales contact details:"
+        },
+        {
+            "type": "title",
+            "bbox": [
+                0.691,
+                0.37,
+                0.896,
+                0.394
+            ],
+            "angle": 0,
+            "content": "Scott Silver - Specialist Sales - European TMT"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.692,
+                0.395,
+                0.79,
+                0.406
+            ],
+            "angle": 0,
+            "content": "(44-20) 7134-0412",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.692,
+                0.407,
+                0.833,
+                0.419
+            ],
+            "angle": 0,
+            "content": "scott.silver@JPM.com",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.134,
+                0.935,
+                0.851,
+                0.953
+            ],
+            "angle": 0,
+            "content": "See page 5 for analyst certification and important disclosures, including non-US analyst disclosures."
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.07,
+                0.056,
+                0.152,
+                0.066
+            ],
+            "angle": 0,
+            "content": "Akhil Dattani AC"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.07,
+                0.067,
+                0.17,
+                0.078
+            ],
+            "angle": 0,
+            "content": "(44-20) 7134-4725"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.07,
+                0.078,
+                0.219,
+                0.089
+            ],
+            "angle": 0,
+            "content": "akhil.dattani@JPM.com"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.343,
+                0.056,
+                0.479,
+                0.067
+            ],
+            "angle": 0,
+            "content": "Europe Equity Research"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.343,
+                0.067,
+                0.413,
+                0.078
+            ],
+            "angle": 0,
+            "content": "20 May 2026"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.798,
+                0.053,
+                0.928,
+                0.078
+            ],
+            "angle": 0,
+            "content": "JPM"
+        },
+        {
+            "type": "title",
+            "bbox": [
+                0.069,
+                0.15,
+                0.36,
+                0.168
+            ],
+            "angle": 0,
+            "content": "Verizon – Dan Schulman (CEO)"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.068,
+                0.172,
+                0.665,
+                0.525
+            ],
+            "angle": 0,
+            "content": "Key takeaways: (1) Costs: Want to be the most efficient Telco in the world. Already well on the way to cutting $5bn in opex (with risk potentially to the upside), as well as $4bn in capex (it seems there could even be room to cut further mid-term, depending somewhat on how much spectrum Verizon secures in upcoming auctions). But Schulman was clear that costs were an output, rather than an input, with the core objective being to “delight customers”; (2) Driving change: Schulman believes Verizon was historically too slow, too process orientated, and too risk averse. Today they are one of the 1\\( ^{st} \\) 30 companies to have worked with Anthropic, they are becoming AI-native, and they are working to drive major improvements to every layer of the customer experience. Churn in Q4 was 95bp. This fell to 90bp in Q1, and 85bp by the end of Q1. This is helping lower both the cost per gross add and retention costs. Over 50% of the FY net adds improvement will come from churn reductions; (3) Q2 tariff refresh: The CEO noted their targeted Q2 “valuation proposition refresh” has been worked on for some time. Whilst he did not provide any clear colour, he suggested it would be about changing “lots of small things” and being “fiscally responsible”. He noted a desire to move away from clumsy “free handset” offers to tools that create tangible, and durable, improvements in customer experience and satisfaction; (4) Shareholder value: The CEO noted Verizon in the past was a substitute for a bond yield given 20 years of ongoing dividend growth. But he now wants to pivot to driving a step function change in revenue and bottom-line growth, which in turn should deliver greater shareholder value; (5) D2D partnership: Seen as a pragmatic agreement that will eliminate deadzones, create standards for all satellite operators, and simplify the ecosystem. Like TMUS, Verizon also indicated no appetite for offering satellite operators an MVNO. Finally, Schulman argued he could not see satellites being anything but complimentary to wireless over the next 10 years given the vast differences in urban capacity.",
+            "merge_prev": false
+        },
+        {
+            "type": "title",
+            "bbox": [
+                0.068,
+                0.539,
+                0.449,
+                0.558
+            ],
+            "angle": 0,
+            "content": "AT&T – John Stankey (Chairman & CEO)"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.068,
+                0.561,
+                0.664,
+                0.899
+            ],
+            "angle": 0,
+            "content": "Takeaways: (1) Fibre: Lumen integration is progressing well. On further fibre M&A, AT&T reiterated no interest in fragmented “postage stamp” fiber assets, noting a preference for scaled, metro-dense fiber at fair value. That said, the CEO is also open to aggregating mismanaged assets cleansed through bankruptcy if any such opportunity arises. But for now, an organic strategy is the company’s focus; (2) Churn: AT&T believes the recent deterioration (attributed to competitor buy-out offers) should plateau as they have now worked through the base. Longer term, AT&T believes convergence can deliver “dramatic improvement[s] in churn and longevity”. On the value segment push, Stankey framed it as a network utilization decision (which he considers accretive to returns); (3) Cable: AT&T stressed that their fibre growth was coming from competitive wins, not base transition, given the absence of any remaining DSL base to harvest. The company also suggested cable-wireless bases may become increasingly vulnerable to fibre share gains; (4) AI: AT&T sees the company’s role across three layers: (i) Preferred access: Fiber has the lowest marginal cost, and is the most future-proofed technology for heavy workloads, which paired with EchoStar spectrum enables more symmetrical low-band upstream on wireless; (ii) Metro aggregation and backbone: Actively building shared dark and lit fiber infrastructure into hyperscaler access points; and (iii) Edge compute: A potential opportunity “if we think it makes sense” but conviction seemed low; (5) D2D: AT&T see satellite as a “great complement” with a seamless D2D product expected in 2H26. AT&T notes it would make no sense for the BIG3 to each separately lobby for spectrum harmonisation and shared network standards, nor for each to build out duplicate ground-station infrastructure. A detailed term sheet should materialise shortly, with the regulatory timeline a little more difficult to call.",
+            "merge_prev": false
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.071,
+                0.953,
+                0.081,
+                0.963
+            ],
+            "angle": 0,
+            "content": "2"
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.07,
+                0.056,
+                0.152,
+                0.066
+            ],
+            "angle": 0,
+            "content": "Akhil Dattani AC"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.07,
+                0.067,
+                0.17,
+                0.078
+            ],
+            "angle": 0,
+            "content": "(44-20) 7134-4725"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.07,
+                0.078,
+                0.219,
+                0.089
+            ],
+            "angle": 0,
+            "content": "akhil.dattani@JPM.com"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.343,
+                0.056,
+                0.479,
+                0.067
+            ],
+            "angle": 0,
+            "content": "Europe Equity Research"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.343,
+                0.067,
+                0.413,
+                0.078
+            ],
+            "angle": 0,
+            "content": "20 May 2026"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.798,
+                0.053,
+                0.928,
+                0.078
+            ],
+            "angle": 0,
+            "content": "JPM"
+        },
+        {
+            "type": "title",
+            "bbox": [
+                0.069,
+                0.15,
+                0.351,
+                0.168
+            ],
+            "angle": 0,
+            "content": "Twilio – Aidan Viggiano (CFO)"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.067,
+                0.171,
+                0.665,
+                0.364
+            ],
+            "angle": 0,
+            "content": "Takeaways: (1) AI-first: Twilio has recently embedded several new AI capabilities to its offering which can now maintain one continuous customer conversation across all channels, remembers conversations/context, and leverages AI to turn conversations into actionable, real-time intelligence that enhances human agents and triggers immediate actions like automated workflows across voice and messaging channels; (2) Q1 acceleration usage-led: The company's organic growth in Q1 was broad-based across products and the recent acceleration was attributed to AI native offerings. On the 5% beat last quarter, management commented that they wouldn't see it as “kind of the new norm”, however attributed it to their usage-based model; (3) Q2 guide prudent: On the debate regarding Q2 guide screening conservative, given it implies a deceleration in organic growth, management commented that “it's pretty consistent with how we've guided... we're usage-based... we plan a bit more prudently”. They also added that they “feel really good about the opportunity ahead.. and about the setup for Q2 and the balance of the year”.",
+            "merge_prev": false
+        },
+        {
+            "type": "title",
+            "bbox": [
+                0.068,
+                0.378,
+                0.468,
+                0.396
+            ],
+            "angle": 0,
+            "content": "AST – Scott Wisniewski (President & CSO)"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.067,
+                0.4,
+                0.665,
+                0.621
+            ],
+            "angle": 0,
+            "content": "Takeaways: (1) Commercialisation: 45+ satellites in orbit is the threshold needed to achieve full commercial service in priority markets like the US. D2D broad integration is expected from 2027 onward; (2) Spectrum: S-Band spectrum is being pursued opportunistically around the world, notably in Europe where licenses are underutilized. Since the company's satellites were being built regardless, the incremental cost of adding new spectrum bands is relatively low, enabling fast and strategic spectrum acquisition; (3) Revenues: Revenues are expected to grow sequentially each quarter toward $150-200m in 2026, all from pre-commercial service activity. A roughly 50/50 split between government and commercial revenue is anticipated, with upside potential in both. More than half of the remaining 2026 guidance is already contracted, with the rest covered several times over by the pipeline; (4) Backlog: Minimum revenue commitments secured from operators, contributing $100m+ per year across multi-year agreements (ranging from 2 to 10 years), spread pro-rata i.e. not back-end loaded; (5) Outlook: The company thinks it can reach positive operating FCF well before hitting $1bn in revenue. Active in-orbit testing is underway for multiple US government revenue-producing opportunities.",
+            "merge_prev": false
+        },
+        {
+            "type": "title",
+            "bbox": [
+                0.068,
+                0.635,
+                0.392,
+                0.654
+            ],
+            "angle": 0,
+            "content": "AMT – Rodney Smith (EVP & CFO)"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.067,
+                0.657,
+                0.664,
+                0.952
+            ],
+            "angle": 0,
+            "content": "Takeaways: (1) Outlook: Mid-single-digit revenue growth in the US is expected to underpin industry-leading AFFO per share growth, complemented by faster growth in emerging markets and double-digit growth in the data center platform, collectively targeting mid to upper single-digit AFFO per share growth reliably; (2) Europe: The region is outperforming its original business case, with mid single-digit or better revenue growth expected. The portfolio is insulated from material one-time churn events, as the majority of revenue is tied to long-term contracts with Telefonica; (3) LatAm: The region is going through a consolidation. Hence 2026 marks peak churn, particularly in Brazil, which is transitioning to a three-carrier market. Starting next year, churn is expected to decrease rapidly with new business activity likely accelerating; (4) Africa: Upper single-digit organic tenant billings growth, even after absorbing a few hundred basis points of churn, which management views as a normal operating environment for the region; (5) CoreSite: Datacenter investments have been scaled up from $200m to $800m now. The long-term vision is to connect CoreSite facilities directly into tower assets, positioning the company to benefit from the convergence of mobile network densification and AI-driven edge compute demand. Capital reallocation in datacenters has been deliberate with investment appetite shifted away from emerging markets and toward the US and CoreSite; (6) AI workloads: These are increasingly tipping out of large language models, and hyperscale facilities, into edge facilities like CoreSite, which management views as a meaningful and growing source of upside. Future wireless network evolution will require uplink and downlink symmetry, improved latency, more",
+            "merge_prev": false
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.918,
+                0.953,
+                0.928,
+                0.964
+            ],
+            "angle": 0,
+            "content": "3"
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.07,
+                0.056,
+                0.152,
+                0.067
+            ],
+            "angle": 0,
+            "content": "Akhil Dattani AC"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.07,
+                0.067,
+                0.17,
+                0.078
+            ],
+            "angle": 0,
+            "content": "(44-20) 7134-4725"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.07,
+                0.078,
+                0.219,
+                0.089
+            ],
+            "angle": 0,
+            "content": "akhil.dattani@JPM.com"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.343,
+                0.056,
+                0.479,
+                0.067
+            ],
+            "angle": 0,
+            "content": "Europe Equity Research"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.343,
+                0.067,
+                0.413,
+                0.078
+            ],
+            "angle": 0,
+            "content": "20 May 2026"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.798,
+                0.053,
+                0.928,
+                0.078
+            ],
+            "angle": 0,
+            "content": "JPM"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.068,
+                0.149,
+                0.663,
+                0.18
+            ],
+            "angle": 0,
+            "content": "antennas, and compute power paired directly at tower sites, potentially including cloud on-ramps and interconnection capabilities.",
+            "merge_prev": false
+        },
+        {
+            "type": "title",
+            "bbox": [
+                0.069,
+                0.194,
+                0.409,
+                0.213
+            ],
+            "angle": 0,
+            "content": "SBA – Marc Montagner (EVP & CFO)"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.068,
+                0.216,
+                0.665,
+                0.481
+            ],
+            "angle": 0,
+            "content": "Takeaways: (1) US: Long-term US growth is framed as 3% escalators + 2.5-3% new lease activity from the big three MNOs - 1% churn, arriving 4.5-5% baseline growth rate, assuming a three-carrier market. Upside scenarios beyond the baseline include new use cases such as drone delivery, self-driving cars, and edge computing for AI inference, as well as potential satellite spectrum deployment, which management believes would be a net positive for tower demand. 6G expected in late 2028-2029, combined with new use cases and edge computing demand, could meaningfully exceed the current 3+3-1 growth framework over the long term; (2) AI: AI-driven latency requirements are expected to push compute closer to the network edge, creating potential incremental demand at tower sites; (3) BTS: New BTS rates offered by the big three carriers in the US were previously unattractive, leading SBA to largely sit out. However, the dialogue is shifting and conversations are resuming, with management willing to participate at the right returns; (4) Brazil: SBA could see peak churn this year due to Oi Mobile's consolidation, however churn is expected to persist for another ~2 years. The long-term outlook remains high single-digit growth, assuming ~5-6% CPI and ~4% lease-up; (5) Shareholder returns: Buybacks remain a priority. $500m was spent on repurchases last year and management expect to lean toward buybacks again this year. The dividend was increased 13% last year with a ~41% payout ratio, and low-teens dividend growth is expected to be maintained for the next three years.",
+            "merge_prev": false
+        },
+        {
+            "type": "title",
+            "bbox": [
+                0.069,
+                0.496,
+                0.375,
+                0.515
+            ],
+            "angle": 0,
+            "content": "Uniti – Kenny Gunderman (CEO)"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.068,
+                0.518,
+                0.664,
+                0.885
+            ],
+            "angle": 0,
+            "content": "In April 2026, press reports speculated T-Mobile's interest in Uniti's Consumer fibre assets (here). The presentation covered (in great detail) Uniti's build strategy, competitive dynamics, business moats, and hyperscaler opportunity. Takeaways: (1) Fibre: Uniti's core strategy is to build fiber first, where no fiber exists, focusing on clustered strategic markets rather than a patchwork of builds across the country, in order to capture go-to-market, construction, and operational synergies; (2) Q1 phasing: Winter storms were cited as a partial reason for the Q1 slowdown, but March and April each saw ~45k homes built, which annualizes to 500k+ homes and is directionally where the company wants to be; (3) Churn: Fiber churn is tracking “better than expected” and is now a bonus metric; (4) Overbuilders: Altnets have largely stayed away from Uniti's footprint, as rural markets are harder to enter due to smaller addressable populations, limited backhaul options (Uniti is often the only provider and does not sell to overbuilders), and the company's strategy of building as fast as possible to raise barriers to entry; (5) Cable: Overlap exists in roughly 50% of the footprint, which is well below the industry average; (6) Penetration: The 40% long-term penetration guidance is viewed as increasingly conservative, with management noting that virtually all original model assumptions are proving prudent; (7) Backbone: Uniti's rural backbone infrastructure, built across Tier 2 and Tier 3 long-haul corridors, has proven to be strategically valuable to hyperscalers who are targeting those locations for land and power accessibility. This gives Uniti a deployment speed and cost advantage, as 80% of hyperscaler deals involve selling existing infrastructure or infrastructure attached to existing routes. (8) Outlook: The company is targeting ~$1.5bn of revenue from anchor hyperscaler builds over the next several years, expected to generate ~$500m of recurring revenue, representing a meaningful share of what management estimates to be a $75bn TAM for fiber companies. Management noted these numbers could be larger when revisited next year; (9) IRRs: Blended IRR on anchor plus lease-up hyperscaler economics is tracking at 30%.",
+            "merge_prev": false
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.071,
+                0.953,
+                0.081,
+                0.963
+            ],
+            "angle": 0,
+            "content": "4"
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.07,
+                0.056,
+                0.152,
+                0.067
+            ],
+            "angle": 0,
+            "content": "Akhil Dattani AC"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.07,
+                0.068,
+                0.17,
+                0.078
+            ],
+            "angle": 0,
+            "content": "(44-20) 7134-4725"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.07,
+                0.078,
+                0.219,
+                0.089
+            ],
+            "angle": 0,
+            "content": "akhil.dattani@JPM.com"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.343,
+                0.056,
+                0.479,
+                0.067
+            ],
+            "angle": 0,
+            "content": "Europe Equity Research"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.343,
+                0.067,
+                0.413,
+                0.078
+            ],
+            "angle": 0,
+            "content": "20 May 2026"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.798,
+                0.053,
+                0.926,
+                0.078
+            ],
+            "angle": 0,
+            "content": "JPM"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.068,
+                0.147,
+                0.925,
+                0.244
+            ],
+            "angle": 0,
+            "content": "Companies Discussed in This Report (all prices in this report as of market close on 19 May 2026, unless otherwise indicated) AT&T(T/$24.98/OW), American Tower(AMT/$183.00/OW), Cellnex(CLNX.MC/€29.16/N), Deutsche Telekom(DTEGn.DE/€29.25/OW), Elisa(ELISA.HE/€41.72/UW), Inwit(INWT.MI/€6.76/N), KPN(KPN.AS/€4.67/N), Liberty Global(LBTYA/$12.15/NR), NOS(NOS.LS/€5.42/UW), OTE(OTEr.AT/€18.70/N), Orange SA(ORAN.PA/€18.74/OW), SBA Communications(SBAC/$207.51/N), Swisscom(SCMN.S/CHF684.50/UW), T-Mobile US Inc.(TMUS/$193.42/OW), Tele2(TEL2b.ST/Skr185.15/OW), Telecom Italia(TLIT.MI/€0.72/NR), Telecom Italia (Savings)(TLITn.MI/€0.76/NR), Twilio(TWLO/$195.95/OW), Uniti Group Inc(UNIT/$10.67/N), Verizon Communications(VZ/$47.74/N), Vodafone(VOD.L/113p/UW)",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.068,
+                0.268,
+                0.925,
+                0.37
+            ],
+            "angle": 0,
+            "content": "Analyst Certification: The Research Analyst(s) denoted by an “AC” on the cover of this report certifies (or, where multiple Research Analysts are primarily responsible for this report, the Research Analyst denoted by an “AC” on the cover or within the document individually certifies, with respect to each security or issuer that the Research Analyst covers in this research) that: (1) all of the views expressed in this report accurately reflect the Research Analyst’s personal views about any and all of the subject securities or issuers; and (2) no part of any of the Research Analyst's compensation was, is, or will be directly or indirectly related to the specific recommendations or views expressed by the Research Analyst(s) in this report. For all Korea-based Research Analysts listed on the front cover, if applicable, they also certify, as per KOFIA requirements, that the Research Analyst’s analysis was made in good faith and that the views reflect the Research Analyst’s own opinion, without undue influence or intervention.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.068,
+                0.377,
+                0.9,
+                0.404
+            ],
+            "angle": 0,
+            "content": "All authors named within this report are Research Analysts who produce independent research unless otherwise specified. In Europe, Sector Specialists (Sales and Trading) may be shown on this report as contacts but are not authors of the report or part of the Research Department.",
+            "merge_prev": false
+        },
+        {
+            "type": "title",
+            "bbox": [
+                0.07,
+                0.41,
+                0.23,
+                0.425
+            ],
+            "angle": 0,
+            "content": "Important Disclosures"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.068,
+                0.435,
+                0.927,
+                0.514
+            ],
+            "angle": 0,
+            "content": "Company-Specific Disclosures: JPM does and seeks to do business with companies covered in its research reports. As a result, investors should be aware that the firm may have a conflict of interest that could affect the objectivity of this report. Investors should consider this report as only a single factor in making their investment decision. Important disclosures, including price charts and credit opinion history tables (if applicable), are available for compendium reports and all JPM-covered companies, and certain non-covered companies, by visiting https://www.jpmm.com/research/disclosures, calling 1-800-477-0406, or e-mailing research.disclosure.inquiries@JPM.com with your request.",
+            "merge_prev": false
+        },
+        {
+            "type": "title",
+            "bbox": [
+                0.068,
+                0.52,
+                0.637,
+                0.533
+            ],
+            "angle": 0,
+            "content": "Explanation of Equity Research Ratings, Designations and Analyst(s) Coverage Universe:"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.067,
+                0.532,
+                0.927,
+                0.699
+            ],
+            "angle": 0,
+            "content": "JPM uses the following rating system: Overweight (over the duration of the price target indicated in this report, we expect this stock will outperform the average total return of the stocks in the Research Analyst's, or the Research Analyst's team's, coverage universe); Neutral (over the duration of the price target indicated in this report, we expect this stock will perform in line with the average total return of the stocks in the Research Analyst's, or the Research Analyst's team's, coverage universe); and Underweight (over the duration of the price target indicated in this report, we expect this stock will underperform the average total return of the stocks in the Research Analyst's, or the Research Analyst's team's, coverage universe. NR is Not Rated. In this case, JPM has removed the rating and, if applicable, the price target, for this stock because of either a lack of a sufficient fundamental basis or for legal, regulatory or policy reasons. The previous rating and, if applicable, the price target, no longer should be relied upon. An NR designation is not a recommendation or a rating. Some stocks under coverage have a rating but no price target; in these cases, we expect the stock will outperform/perform in line/underperform the average total return of the stocks in the Research Analyst's, or the Research Analyst's team's, coverage universe of the relevant duration of the region. In our Asia (ex-Australia and ex-India) and U.K. small- and mid-cap Equity Research, each stock's expected total return is compared to the expected total return of a benchmark country market index, not to those Research Analysts' coverage universe. If it does not appear in the Important Disclosures section of this report, the certifying Research Analyst's coverage universe can be found on JPM's Research website, https://www.JPMmarkets.com.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.068,
+                0.703,
+                0.9,
+                0.756
+            ],
+            "angle": 0,
+            "content": "Coverage Universe: Dattani, Akhil : Airtel Africa (AAF.L), BT Group (BT.L), Bouygues (BOUY.PA), Cellnex (CLNX.MC), Deutsche Telekom (DTEGn.DE), Eutelsat (ETL.PA), Inwit (INWT.MI), Liberty Global (LBTYA), MTN Group Limited (MTNJ.J), Orange SA (ORAN.PA), Proximus (PROX.BR), SES (SESFd.PA), Sinch (SINCH.ST), Telefonica (TEF.MC), Truecaller (TRUEb.ST), Vodacom Group (VODJ.J), Vodafone (VOD.L), e& (EAND.AD), stc (7010.SE)",
+            "merge_prev": false
+        },
+        {
+            "type": "table_caption",
+            "bbox": [
+                0.069,
+                0.769,
+                0.52,
+                0.784
+            ],
+            "angle": 0,
+            "content": "JPM Equity Research Ratings Distribution, as of April 04, 2026"
+        },
+        {
+            "type": "table",
+            "bbox": [
+                0.069,
+                0.784,
+                0.647,
+                0.862
+            ],
+            "angle": 0,
+            "content": "<table><tr><td></td><td>Overweight (buy)</td><td>Neutral (hold)</td><td>Underweight (sell)</td></tr><tr><td>JPM Global Equity Research Coverage*</td><td>51%</td><td>37%</td><td>12%</td></tr><tr><td>IB clients**</td><td>83%</td><td>79%</td><td>74%</td></tr><tr><td>JPMS Equity Research Coverage*</td><td>49%</td><td>39%</td><td>13%</td></tr><tr><td>IB clients**</td><td>94%</td><td>93%</td><td>85%</td></tr></table>"
+        },
+        {
+            "type": "table_footnote",
+            "bbox": [
+                0.068,
+                0.869,
+                0.553,
+                0.882
+            ],
+            "angle": 0,
+            "content": "*Please note that the percentages may not add to 100% because of rounding."
+        },
+        {
+            "type": "table_footnote",
+            "bbox": [
+                0.07,
+                0.882,
+                0.865,
+                0.904
+            ],
+            "angle": 0,
+            "content": "**Percentage of subject companies within each of the \"buy,\" \"hold\" and \"sell\" categories for which JPM has provided investment banking services within the previous 12 months."
+        },
+        {
+            "type": "table_footnote",
+            "bbox": [
+                0.07,
+                0.905,
+                0.917,
+                0.928
+            ],
+            "angle": 0,
+            "content": "For purposes of FINRA ratings distribution rules only, our Overweight rating falls into a buy rating category; our Neutral rating falls into a hold rating category; and our Underweight rating falls into a sell rating category. Please note that stocks with an NR designation"
+        },
+        {
+            "type": "list",
+            "bbox": [
+                0.068,
+                0.869,
+                0.917,
+                0.928
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.918,
+                0.953,
+                0.928,
+                0.963
+            ],
+            "angle": 0,
+            "content": "5"
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.07,
+                0.056,
+                0.152,
+                0.067
+            ],
+            "angle": 0,
+            "content": "Akhil Dattani AC"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.07,
+                0.068,
+                0.17,
+                0.078
+            ],
+            "angle": 0,
+            "content": "(44-20) 7134-4725"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.07,
+                0.078,
+                0.219,
+                0.089
+            ],
+            "angle": 0,
+            "content": "akhil.dattani@JPM.com"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.343,
+                0.056,
+                0.479,
+                0.067
+            ],
+            "angle": 0,
+            "content": "Europe Equity Research"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.343,
+                0.067,
+                0.413,
+                0.078
+            ],
+            "angle": 0,
+            "content": "20 May 2026"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.798,
+                0.053,
+                0.926,
+                0.078
+            ],
+            "angle": 0,
+            "content": "JPM"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.069,
+                0.147,
+                0.78,
+                0.162
+            ],
+            "angle": 0,
+            "content": "are not included in the table above. This information is current as of the end of the most recent calendar quarter.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.068,
+                0.177,
+                0.916,
+                0.255
+            ],
+            "angle": 0,
+            "content": "Equity Valuation and Risks: For valuation methodology and risks associated with covered companies or price targets for covered companies, please see the most recent company-specific research report at http://www.JPMmarkets.com, contact the primary analyst or your JPM representative, or email research.disclosure.inquiries@JPM.com. For material information about the proprietary models used, please see the Summary of Financials in company-specific research reports and the Company Tearsheets, which are available to download on the company pages of our client website, http://www.JPMmarkets.com. This report also sets out within it the material underlying assumptions used.",
+            "merge_prev": false
+        },
+        {
+            "type": "title",
+            "bbox": [
+                0.07,
+                0.261,
+                0.336,
+                0.273
+            ],
+            "angle": 0,
+            "content": "History of Investment Recommendations:"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.068,
+                0.274,
+                0.875,
+                0.3
+            ],
+            "angle": 0,
+            "content": "A history of JPM investment recommendations disseminated during the preceding 12 months can be accessed on the Research & Commentary page of http://www.JPMmarkets.com where you can also search by analyst name, sector or financial instrument.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.068,
+                0.306,
+                0.918,
+                0.334
+            ],
+            "angle": 0,
+            "content": "Analysts' Compensation: The research analysts responsible for the preparation of this report receive compensation based upon various factors, including the quality and accuracy of research, client feedback, competitive factors, and overall firm revenues.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.068,
+                0.339,
+                0.912,
+                0.391
+            ],
+            "angle": 0,
+            "content": "Registration of non-US Analysts: Unless otherwise noted, the non-US analysts listed on the front of this report are employees of non-US affiliates of JPM Securities LLC, may not be registered as research analysts under FINRA rules, may not be associated persons of JPM Securities LLC, and may not be subject to FINRA Rule 2241 or 2242 restrictions on communications with covered companies, public appearances, and trading securities held by a research analyst account.",
+            "merge_prev": false
+        },
+        {
+            "type": "title",
+            "bbox": [
+                0.07,
+                0.397,
+                0.199,
+                0.411
+            ],
+            "angle": 0,
+            "content": "Other Disclosures"
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.068,
+                0.443,
+                0.897,
+                0.457
+            ],
+            "angle": 0,
+            "content": "JPM is a marketing name for investment banking businesses of JPM Chase & Co. and its subsidiaries and affiliates worldwide."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.068,
+                0.463,
+                0.921,
+                0.491
+            ],
+            "angle": 0,
+            "content": "UK MIFID FICC research unbundling exemption: UK clients should refer to UK MIFID Research Unbundling exemption for details of JPM's implementation of the FICC research exemption and guidance on relevant FICC research categorisation."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.068,
+                0.496,
+                0.89,
+                0.535
+            ],
+            "angle": 0,
+            "content": "All research material made available to clients are simultaneously available on our client website, JPM Markets, unless specifically permitted by relevant laws. Not all research content is redistributed, e-mailed or made available to third-party aggregators. For all research material available on a particular stock, please contact your sales representative."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.068,
+                0.541,
+                0.918,
+                0.569
+            ],
+            "angle": 0,
+            "content": "Any long form nomenclature for references to China; Hong Kong; Taiwan; and Macau within this research material are Mainland China; Hong Kong SAR (China); Taiwan (China); and Macau SAR (China)."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.068,
+                0.574,
+                0.925,
+                0.627
+            ],
+            "angle": 0,
+            "content": "JPM may, from time to time, write on issuers or securities targeted by economic or financial sanctions imposed or administered by the governmental authorities of the U.S., EU, UK or other relevant jurisdictions (Sanctioned Securities). Nothing in this report is intended to be read or construed as encouraging, facilitating, promoting or otherwise approving investment or dealing in such Sanctioned Securities. Clients should be aware of their own legal and compliance obligations when making investment decisions."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.068,
+                0.632,
+                0.892,
+                0.66
+            ],
+            "angle": 0,
+            "content": "Any digital or crypto assets discussed in this research report are subject to a rapidly changing regulatory landscape. For relevant regulatory advisories on crypto assets, including bitcoin and ether, please see https://www.JPM.com/disclosures/cryptoasset-disclosure."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.068,
+                0.665,
+                0.898,
+                0.692
+            ],
+            "angle": 0,
+            "content": "The author(s) of this research report may not be licensed to carry on regulated activities in your jurisdiction and, if not licensed, do not hold themselves out as being able to do so."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.068,
+                0.698,
+                0.927,
+                0.774
+            ],
+            "angle": 0,
+            "content": "Exchange-Traded Funds (ETFs): JPM Securities LLC (“JPMS”) acts as authorized participant for substantially all U.S.-listed ETFs. To the extent that any ETFs are mentioned in this report, JPMS may earn commissions and transaction-based compensation in connection with the distribution of those ETF shares and may earn fees for performing other trade-related services, such as securities lending to short sellers of the ETF shares. JPMS may also perform services for the ETFs themselves, including acting as a broker or dealer to the ETFs. In addition, affiliates of JPMS may perform services for the ETFs, including trust, custodial, administration, lending, index calculation and/or maintenance and other services."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.068,
+                0.781,
+                0.914,
+                0.858
+            ],
+            "angle": 0,
+            "content": "Options and Futures related research: If the information contained herein regards options- or futures-related research, such information is available only to persons who have received the proper options or futures risk disclosure documents. Please contact your JPM Representative or visit https://www.theocc.com/components/docs/riskstoc.pdf for a copy of the Option Clearing Corporation's Characteristics and Risks of Standardized Options or https://www.finra.org/sites/default/files/2020-08/Security_Futures_Risk_Disclosure_Statement_2020.pdf for a copy of the Security Futures Risk Disclosure Statement."
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.068,
+                0.865,
+                0.925,
+                0.905
+            ],
+            "angle": 0,
+            "content": "Changes to Interbank Offered Rates (IBORs) and other benchmark rates: Certain interest rate benchmarks are, or may in the future become, subject to ongoing international, national and other regulatory guidance, reform and proposals for reform. For more information, please consult: https://www.JPM.com/global/disclosures/interbank_offered_rates"
+        },
+        {
+            "type": "ref_text",
+            "bbox": [
+                0.068,
+                0.91,
+                0.927,
+                0.937
+            ],
+            "angle": 0,
+            "content": "Private Bank Clients: Where you are receiving research as a client of the private banking businesses offered by JPM Chase & Co. and its subsidiaries (“JPM Private Bank”), research is provided to you by JPM Private Bank and not by any other division of JPM,"
+        },
+        {
+            "type": "list",
+            "bbox": [
+                0.068,
+                0.443,
+                0.927,
+                0.937
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.071,
+                0.953,
+                0.081,
+                0.963
+            ],
+            "angle": 0,
+            "content": "6"
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.07,
+                0.056,
+                0.152,
+                0.067
+            ],
+            "angle": 0,
+            "content": "Akhil Dattani AC"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.07,
+                0.068,
+                0.17,
+                0.078
+            ],
+            "angle": 0,
+            "content": "(44-20) 7134-4725"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.07,
+                0.078,
+                0.219,
+                0.089
+            ],
+            "angle": 0,
+            "content": "akhil.dattani@JPM.com"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.343,
+                0.056,
+                0.479,
+                0.067
+            ],
+            "angle": 0,
+            "content": "Europe Equity Research"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.343,
+                0.068,
+                0.413,
+                0.078
+            ],
+            "angle": 0,
+            "content": "20 May 2026"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.798,
+                0.053,
+                0.926,
+                0.078
+            ],
+            "angle": 0,
+            "content": "JPM"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.068,
+                0.148,
+                0.726,
+                0.162
+            ],
+            "angle": 0,
+            "content": "including, but not limited to, the JPM Corporate and Investment Bank and its Global Research division.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.068,
+                0.168,
+                0.927,
+                0.284
+            ],
+            "angle": 0,
+            "content": "Legal entity responsible for the production and distribution of research: The legal entity identified below the name of the Reg AC Research Analyst who authored this material is the legal entity responsible for the production of this research. Where multiple Reg AC Research Analysts authored this material with different legal entities identified below their names, these legal entities are jointly responsible for the production of this research. Where more than one legal entity is listed under an analyst's name, the first legal entity is responsible for the production unless stated otherwise. Research Analysts from various JPM affiliates may have contributed to the production of this material but may not be licensed to carry out regulated activities in your jurisdiction (and do not hold themselves out as being able to do so). Unless otherwise stated below in the legal entity disclosures, this material has been distributed by the legal entity responsible for production, or where more than one legal entity is listed under the analyst's name, the first legal entity will be responsible for distribution. If you have any queries, please contact the relevant Research Analyst in your jurisdiction or the entity in your jurisdiction that has distributed this research material.",
+            "merge_prev": false
+        },
+        {
+            "type": "title",
+            "bbox": [
+                0.068,
+                0.29,
+                0.506,
+                0.303
+            ],
+            "angle": 0,
+            "content": "Legal Entities Disclosures and Country-/Region-Specific Disclosures:"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.068,
+                0.303,
+                0.897,
+                0.33
+            ],
+            "angle": 0,
+            "content": "Argentina: JPM Chase Bank N.A Sucursal Buenos Aires is regulated by Banco Central de la República Argentina (“BCRA”- Central Bank of Argentina) and Comisión Nacional de Valores (“CNV”- Argentinian Securities Commission - ALYC y AN Integral N°51).",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.068,
+                0.335,
+                0.927,
+                0.463
+            ],
+            "angle": 0,
+            "content": "Australia: JPM Securities Australia Limited (“JPMSAL”) (ABN 61 003 245 234/AFS Licence No: 238066) is regulated by the Australian Securities and Investments Commission and is a Market Participant of ASX Limited, a Clearing and Settlement Participant of ASX Clear Pty Limited and a Clearing Participant of ASX Clear (Futures) Pty Limited. This material is issued and distributed in Australia by or on behalf of JPMSAL only to \"wholesale clients\" (as defined in section 761G of the Corporations Act 2001). A list of all financial products covered can be found by visiting https://www.jpmm.com/research/disclosures. JPM seeks to cover companies of relevance to the domestic and international investor base across all Global Industry Classification Standard (GICS) sectors, as well as across a range of market capitalisation sizes. If applicable, in the course of conducting public side due diligence on the subject company(ies), the Research Analyst team may at times perform such diligence through corporate engagements such as site visits, discussions with company representatives, management presentations, etc. Research issued by JPMSAL has been prepared in accordance with JPM Australia’s Research Independence Policy which can be found at the following link: JPM Australia - Research Independence Policy.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.068,
+                0.469,
+                0.905,
+                0.496
+            ],
+            "angle": 0,
+            "content": "Brazil: Banco JPM S.A. is regulated by the Comissao de Valores Mobiliarios (CVM) and by the Central Bank of Brazil. Ombudsman JPM: 0800-7700847 / 0800-7700810 (For Hearing Impaired) / ouvidoria.jp.morgan@jpmchase.com.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.068,
+                0.502,
+                0.92,
+                0.54
+            ],
+            "angle": 0,
+            "content": "Canada: JPM Securities Canada Inc. is a registered investment dealer, regulated by the Canadian Investment Regulatory Organization and the Ontario Securities Commission and is the participating member on Canadian exchanges. This material is distributed in Canada by or on behalf of JPM Securities Canada Inc.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.068,
+                0.547,
+                0.588,
+                0.561
+            ],
+            "angle": 0,
+            "content": "Chile: Inversiones JPM Limitada is an unregulated entity incorporated in Chile.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.068,
+                0.567,
+                0.874,
+                0.593
+            ],
+            "angle": 0,
+            "content": "China: JPM Securities (China) Company Limited has been approved by CSRC to conduct the securities investment consultancy business.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.068,
+                0.6,
+                0.915,
+                0.652
+            ],
+            "angle": 0,
+            "content": "Colombia: Banco JPM Colombia S.A. is supervised by the Superintendencia Financiera de Colombia (SFC). Any reference in this material to products or services offered abroad by entities other than the Bank in Colombia is included exclusively for descriptive purposes. Such references do not constitute, and should not be construed as, promotional activity or the provision of financial products or services within Colombian territory, as defined under applicable Colombian regulation.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.068,
+                0.658,
+                0.908,
+                0.71
+            ],
+            "angle": 0,
+            "content": "Dubai International Financial Centre (DIFC): JPM Chase Bank, N.A., Dubai Branch is regulated by the Dubai Financial Services Authority (DFSA) and its registered address is Dubai International Financial Centre - The Gate, West Wing, Level 3 and 9 PO Box 506551, Dubai, UAE. This material has been distributed by JPM Chase Bank, N.A., Dubai Branch to persons regarded as professional clients or market counterparties as defined under the DFSA rules.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.068,
+                0.716,
+                0.922,
+                0.819
+            ],
+            "angle": 0,
+            "content": "European Economic Area (EEA): Unless specified to the contrary, research is distributed in the EEA by JPM SE (“JPM SE”), which is authorised as a credit institution by the Federal Financial Supervisory Authority (Bundesanstalt für Finanzdienstleistungsaufsicht, BaFin) and jointly supervised by the BaFin, the German Central Bank (Deutsche Bundesbank) and the European Central Bank (ECB). JPM SE is a company headquartered in Frankfurt with registered address at TaunusTurm, Taunustor 1, Frankfurt am Main, 60310, Germany. The material has been distributed in the EEA to persons regarded as professional investors (or equivalent) pursuant to Art. 4 para. 1 no. 10 and Annex II of MiFID II and its respective implementation in their home jurisdictions (“EEA professional investors”). This material must not be acted on or relied on by persons who are not EEA professional investors. Any investment or investment activity to which this material relates is only available to EEA relevant persons and will be engaged in only with EEA relevant persons.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.068,
+                0.825,
+                0.927,
+                0.903
+            ],
+            "angle": 0,
+            "content": "Hong Kong: JPM Securities (Asia Pacific) Limited (CE number AAJ321) is regulated by the Hong Kong Monetary Authority and the Securities and Futures Commission in Hong Kong, and JPM Broking (Hong Kong) Limited (CE number AAB027) is regulated by the Securities and Futures Commission in Hong Kong. JPM Chase Bank, N.A., Hong Kong Branch (CE Number AAL996) is regulated by the Hong Kong Monetary Authority and the Securities and Futures Commission, is organized under the laws of the United States with limited liability. Where the distribution of this material is a regulated activity in Hong Kong, the material is distributed in Hong Kong by or through JPM Securities (Asia Pacific) Limited and/or JPM Broking (Hong Kong) Limited.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.068,
+                0.908,
+                0.925,
+                0.935
+            ],
+            "angle": 0,
+            "content": "India: JPM India Private Limited (Corporate Identity Number - U67120MH1992FTC068724), having its registered office at JPM Tower, Off. C.S.T. Road, Kalina, Santacruz - East, Mumbai – 400098, is registered with the Securities and Exchange Board of India (SEBI) as a",
+            "merge_prev": false
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.918,
+                0.953,
+                0.927,
+                0.963
+            ],
+            "angle": 0,
+            "content": "7"
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.07,
+                0.056,
+                0.152,
+                0.067
+            ],
+            "angle": 0,
+            "content": "Akhil Dattani AC"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.07,
+                0.068,
+                0.17,
+                0.078
+            ],
+            "angle": 0,
+            "content": "(44-20) 7134-4725"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.07,
+                0.078,
+                0.219,
+                0.089
+            ],
+            "angle": 0,
+            "content": "akhil.dattani@JPM.com"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.343,
+                0.056,
+                0.479,
+                0.067
+            ],
+            "angle": 0,
+            "content": "Europe Equity Research"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.343,
+                0.068,
+                0.413,
+                0.078
+            ],
+            "angle": 0,
+            "content": "20 May 2026"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.798,
+                0.053,
+                0.926,
+                0.078
+            ],
+            "angle": 0,
+            "content": "JPM"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.068,
+                0.148,
+                0.927,
+                0.29
+            ],
+            "angle": 0,
+            "content": "'Research Analyst' having registration number INH000001873. JPM India Private Limited is also registered with SEBI as a member of the National Stock Exchange of India Limited and the Bombay Stock Exchange Limited (SEBI Registration Number – INZ000239730) and as a Merchant Banker (SEBI Registration Number - MB/INM000002970). Telephone: 91-22-6157 3000, Facsimile: 91-22-6157 3990 and Website: http://www.jpmipl.com. JPM Chase Bank, N.A. - Mumbai Branch is licensed by the Reserve Bank of India (RBI) (Licence No. 53/Licence No. BY.4/94; SEBI - IN/CUS/014/ CDSL : IN-DP-CDSL-444-2008/ IN-DP-NSDL-285-2008/ INBI00000984/ INE231311239) as a Scheduled Commercial Bank in India, which is its primary license allowing it to carry on Banking business in India and other activities, which a Bank branch in India are permitted to undertake. For non-local research material, this material is not distributed in India by JPM India Private Limited. Compliance Officer: Ashutosh Sharma; ashutosh.j.sharma@jpmchase.com; +912261575002. Grievance Officer: Ramprasadh K, jpmipl.research.feedback@JPM.com; +912261573000. Registration granted by SEBI and certification from NISM in no way guarantee performance of the intermediary or provide any assurance of returns to investors. Please visit Terms and Conditions and Most Important Terms and Conditions (MITC). The annual Compliance audit report is available at http://www.jpmipl.com/#research.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.068,
+                0.294,
+                0.91,
+                0.322
+            ],
+            "angle": 0,
+            "content": "Indonesia: PT JPM Sekuritas Indonesia is a member of the Indonesia Stock Exchange and is registered and supervised by the Otoritas Jasa Keuangan (OJK).",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.068,
+                0.327,
+                0.925,
+                0.38
+            ],
+            "angle": 0,
+            "content": "Korea: JPM Securities (Far East) Limited, Seoul Branch, is a member of the Korea Exchange (KRX). JPM Chase Bank, N.A., Seoul Branch, is licensed as a branch office of foreign bank (JPM Chase Bank, N.A.) in Korea. Both entities are regulated by the Financial Services Commission (FSC) and the Financial Supervisory Service (FSS). For non-macro research material, the material is distributed in Korea by or through JPM Securities (Far East) Limited, Seoul Branch.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.068,
+                0.385,
+                0.923,
+                0.412
+            ],
+            "angle": 0,
+            "content": "Japan: JPM Securities Japan Co., Ltd. and JPM Chase Bank, N.A., Tokyo Branch are regulated by the Financial Services Agency in Japan.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.068,
+                0.418,
+                0.915,
+                0.446
+            ],
+            "angle": 0,
+            "content": "Malaysia: This material is issued and distributed in Malaysia by JPM Securities (Malaysia) Sdn Bhd (18146-X), which is a Participating Organization of Bursa Malaysia Berhad and holds a Capital Markets Services License issued by the Securities Commission in Malaysia.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.068,
+                0.451,
+                0.918,
+                0.491
+            ],
+            "angle": 0,
+            "content": "Mexico: JPM Casa de Bolsa, S.A. de C.V., JPM Grupo Financiero is member of the Mexican Stock Exchange (“Bolsa Mexicana de Valores”) and the Institutional Stock Exchange (“Bolsa Institucional de Valores”), and it is authorized to act as a broker dealer by the National Banking and Securities Exchange Commission (“Comisión Nacional Bancaria y de Valores”).",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.068,
+                0.496,
+                0.892,
+                0.535
+            ],
+            "angle": 0,
+            "content": "New Zealand: This material is issued and distributed by JPMSAL in New Zealand only to \"wholesale clients\" (as defined in the Financial Markets Conduct Act 2013). JPMSAL is registered as a Financial Service Provider under the Financial Service providers (Registration and Dispute Resolution) Act of 2008.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.068,
+                0.542,
+                0.923,
+                0.569
+            ],
+            "angle": 0,
+            "content": "Philippines: JPM Securities Philippines Inc. is a Trading Participant of the Philippine Stock Exchange and a member of the Securities Clearing Corporation of the Philippines and the Securities Investor Protection Fund. It is regulated by the Securities and Exchange Commission.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.068,
+                0.575,
+                0.925,
+                0.678
+            ],
+            "angle": 0,
+            "content": "Singapore: This material is issued and distributed in Singapore by or through JPM Securities Singapore Private Limited (JPMSS) [MDDI (P) 057/08/2025 and Co. Reg. No.: 199405335R], which is a member of the Singapore Exchange Securities Trading Limited, and/or JPM Chase Bank, N.A., Singapore branch (JPMCB Singapore), both of which are regulated by the Monetary Authority of Singapore. This material is issued and distributed in Singapore only to accredited investors, expert investors and institutional investors, as defined in Section 4A of the Securities and Futures Act, Cap. 289 (SFA). This material is not intended to be issued or distributed to any retail investors or any other investors that do not fall into the classes of “accredited investors,” “expert investors” or “institutional investors,” as defined under Section 4A of the SFA. Recipients of this material in Singapore are to contact JPMSS or JPMCB Singapore in respect of any matters arising from, or in connection with, the material.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.068,
+                0.683,
+                0.915,
+                0.711
+            ],
+            "angle": 0,
+            "content": "South Africa: JPM Equities South Africa Proprietary Limited and JPM Chase Bank, N.A., Johannesburg Branch are members of the Johannesburg Securities Exchange and are regulated by the Financial Services Conduct Authority (FSCA).",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.068,
+                0.716,
+                0.925,
+                0.844
+            ],
+            "angle": 0,
+            "content": "Taiwan: JPM Securities (Taiwan) Limited is a participant of the Taiwan Stock Exchange (company-type) and regulated by the Taiwan Securities and Futures Bureau. Material relating to equity securities is issued and distributed in Taiwan by JPM Securities (Taiwan) Limited, subject to the license scope and the applicable laws and the regulations in Taiwan. To the extent that JPM Securities (Taiwan) Limited produces research materials on securities not listed on the Taiwan Stock Exchange or Taipei Exchange (“Non-Taiwan Listed Securities”), these materials shall not constitute securities recommendations for the purpose of applicable Taiwan regulations, and, for the avoidance of doubt, JPM Securities (Taiwan) Limited does not act as broker for Non-Taiwan Listed Securities. According to Paragraph 2, Article 7-1 of Operational Regulations Governing Securities Firms Recommending Trades in Securities to Customers (as amended or supplemented) and/or other applicable laws or regulations, please note that the recipient of this material is not permitted to engage in any activities in connection with the material that may give rise to conflicts of interests, unless otherwise disclosed in the “Important Disclosures” in this material.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.068,
+                0.85,
+                0.927,
+                0.89
+            ],
+            "angle": 0,
+            "content": "Thailand: This material is issued and distributed in Thailand by JPM Securities (Thailand) Ltd., which is a member of the Stock Exchange of Thailand and is regulated by the Ministry of Finance and the Securities and Exchange Commission. The registered address is 548 One City Center Building, 50th Floor, Ploenchit Road, Lymphini, Pathum Wan, Bangkok 10330.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.068,
+                0.895,
+                0.922,
+                0.935
+            ],
+            "angle": 0,
+            "content": "UK: Research is produced in the UK by JPM Securities plc (“JPMS plc”) which is a member of the London Stock Exchange and is authorised by the Prudential Regulation Authority and regulated by the Financial Conduct Authority and the Prudential Regulation Authority or JPM Markets Limited (“JPMML Ltd”) which is authorised and regulated by the Financial Conduct Authority. Unless specified to the",
+            "merge_prev": false
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.071,
+                0.953,
+                0.081,
+                0.963
+            ],
+            "angle": 0,
+            "content": "8"
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.07,
+                0.056,
+                0.152,
+                0.067
+            ],
+            "angle": 0,
+            "content": "Akhil Dattani AC"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.07,
+                0.068,
+                0.17,
+                0.078
+            ],
+            "angle": 0,
+            "content": "(44-20) 7134-4725"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.07,
+                0.078,
+                0.219,
+                0.089
+            ],
+            "angle": 0,
+            "content": "akhil.dattani@JPM.com"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.343,
+                0.056,
+                0.479,
+                0.067
+            ],
+            "angle": 0,
+            "content": "Europe Equity Research"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.343,
+                0.068,
+                0.413,
+                0.078
+            ],
+            "angle": 0,
+            "content": "20 May 2026"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.798,
+                0.053,
+                0.926,
+                0.078
+            ],
+            "angle": 0,
+            "content": "JPM"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.068,
+                0.148,
+                0.93,
+                0.252
+            ],
+            "angle": 0,
+            "content": "contrary, this material is distributed in the UK by JPMS plc and is directed in the UK only to: (a) persons having professional experience in matters relating to investments falling within article 19(5) of the Financial Services and Markets Act 2000 (Financial Promotion) (Order) 2005 (“the FPO”); (b) persons outlined in article 49 of the FPO (high net worth companies, unincorporated associations or partnerships, the trustees of high value trusts, etc.); or (c) any persons to whom this communication may otherwise lawfully be made; all such persons being referred to as \"UK relevant persons\". This material must not be acted on or relied on by persons who are not UK relevant persons. Any investment or investment activity to which this material relates is only available to UK relevant persons and will be engaged in only with UK relevant persons. A description of JPM EMEA’s policy for prevention and avoidance of conflicts of interest related to the production of Research can be found at the following link: JPM EMEA - Research Independence Policy.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.068,
+                0.257,
+                0.915,
+                0.284
+            ],
+            "angle": 0,
+            "content": "U.S.: JPM Securities LLC (“JPMS”) is a member of the NYSE, FINRA, SIPC, and the NFA. JPM Chase Bank, N.A. is a member of the FDIC. Material published by non-U.S. affiliates is distributed in the U.S. by JPMS who accepts responsibility for its content.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.068,
+                0.289,
+                0.928,
+                0.72
+            ],
+            "angle": 0,
+            "content": "General: Additional information is available upon request. The information in this material has been obtained from sources believed to be reliable. While all reasonable care has been taken to ensure that the facts stated in this material are accurate and that the forecasts, opinions and expectations contained herein are fair and reasonable, JPM Chase & Co. or its affiliates and/or subsidiaries (collectively JPM) make no representations or warranties whatsoever to the completeness or accuracy of the material provided, except with respect to any disclosures relative to JPM and the Research Analyst's involvement with the issuer that is the subject of the material. Accordingly, no reliance should be placed on the accuracy, fairness or completeness of the information contained in this material. There may be certain discrepancies with data and/or limited content in this material as a result of calculations, adjustments, translations to different languages, and/or local regulatory restrictions, as applicable. These discrepancies should not impact the overall investment analysis, views and/or recommendations of the subject company(ies) that may be discussed in the material. Artificial intelligence tools may have been used in the preparation of this material, including assisting in data analysis, pattern recognition, and content drafting for research material. JPM accepts no liability whatsoever for any loss arising from any use of this material or its contents, and neither JPM nor any of its respective directors, officers or employees, shall be in any way responsible for the contents hereof, apart from the liabilities and responsibilities that may be imposed on them by the relevant regulatory authority in the jurisdiction in question, or the regulatory regime thereunder. Opinions, forecasts or projections contained in this material represent JPM's current opinions or judgment as of the date of the material only and are therefore subject to change without notice. Periodic updates may be provided on companies/industries based on company-specific developments or announcements, market conditions or any other publicly available information. There can be no assurance that future results or events will be consistent with any such opinions, forecasts or projections, which represent only one possible outcome. Furthermore, such opinions, forecasts or projections are subject to certain risks, uncertainties and assumptions that have not been verified, and future actual results or events could differ materially. The value of, or income from, any investments referred to in this material may fluctuate and/or be affected by changes in exchange rates. All pricing is indicative as of the close of market for the securities discussed, unless otherwise stated. Past performance is not indicative of future results. Accordingly, investors may receive back less than originally invested. This material is not intended as an offer or solicitation for the purchase or sale of any financial instrument. The opinions and recommendations herein do not take into account individual client circumstances, objectives, or needs and are not intended as recommendations of particular securities, financial instruments or strategies to particular clients. This material may include views on structured securities, options, futures and other derivatives. These are complex instruments, may involve a high degree of risk and may be appropriate investments only for sophisticated investors who are capable of understanding and assuming the risks involved. The recipients of this material must make their own independent decisions regarding any securities or financial instruments mentioned herein and should seek advice from such independent financial, legal, tax or other adviser as they deem necessary. JPM may trade as a principal on the basis of the Research Analysts' views and research, and it may also engage in transactions for its own account or for its clients' accounts in a manner inconsistent with the views taken in this material, and JPM is under no obligation to ensure that such other communication is brought to the attention of any recipient of this material. Others within JPM, including Strategists, Sales staff and other Research Analysts, may take views that are inconsistent with those taken in this material. Employees of JPM not involved in the preparation of this material may have investments in the securities (or derivatives of such securities) mentioned in this material and may trade them in ways different from those discussed in this material. This material is not an advertisement for or marketing of any issuer, its products or services, or its securities in any jurisdiction.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.068,
+                0.726,
+                0.924,
+                0.83
+            ],
+            "angle": 0,
+            "content": "Confidentiality and Security Notice: This transmission may contain information that is privileged, confidential, legally privileged, and/or exempt from disclosure under applicable law. If you are not the intended recipient, you are hereby notified that any disclosure, copying, distribution, or use of the information contained herein (including any reliance thereon) is STRICTLY PROHIBITED. Although this transmission and any attachments are believed to be free of any virus or other defect that might affect any computer system into which it is received and opened, it is the responsibility of the recipient to ensure that it is virus free and no responsibility is accepted by JPM Chase & Co., its subsidiaries and affiliates, as applicable, for any loss or damage arising in any way from its use. If you received this transmission in error, please immediately contact the sender and destroy the material in its entirety, whether in electronic or hard copy format. This message is subject to electronic monitoring: https://www.JPM.com/disclosures/email",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.068,
+                0.835,
+                0.924,
+                0.901
+            ],
+            "angle": 0,
+            "content": "MSCI: Certain information herein (“Information”) is reproduced by permission of MSCI Inc., its affiliates and information providers (“MSCI”) ©2026. No reproduction or dissemination of the Information is permitted without an appropriate license. MSCI MAKES NO EXPRESS OR IMPLIED WARRANTIES (INCLUDING MERCHANTABILITY OR FITNESS) AS TO THE INFORMATION AND DISCLAIMS ALL LIABILITY TO THE EXTENT PERMITTED BY LAW. No Information constitutes investment advice, except for any applicable Information from MSCI ESG Research. Subject also to msci.com/disclaimer",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.068,
+                0.906,
+                0.881,
+                0.933
+            ],
+            "angle": 0,
+            "content": "Sustainalytics: Certain information, data, analyses and opinions contained herein are reproduced by permission of Sustainalytics and: (1) includes the proprietary information of Sustainalytics; (2) may not be copied or redistributed except as specifically authorized; (3) do not",
+            "merge_prev": false
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.917,
+                0.953,
+                0.928,
+                0.963
+            ],
+            "angle": 0,
+            "content": "9"
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.07,
+                0.056,
+                0.152,
+                0.067
+            ],
+            "angle": 0,
+            "content": "Akhil Dattani AC"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.07,
+                0.068,
+                0.17,
+                0.078
+            ],
+            "angle": 0,
+            "content": "(44-20) 7134-4725"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.07,
+                0.078,
+                0.219,
+                0.089
+            ],
+            "angle": 0,
+            "content": "akhil.dattani@JPM.com"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.343,
+                0.056,
+                0.479,
+                0.067
+            ],
+            "angle": 0,
+            "content": "Europe Equity Research"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.343,
+                0.067,
+                0.413,
+                0.078
+            ],
+            "angle": 0,
+            "content": "20 May 2026"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.798,
+                0.053,
+                0.926,
+                0.078
+            ],
+            "angle": 0,
+            "content": "JPM"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.068,
+                0.148,
+                0.917,
+                0.2
+            ],
+            "angle": 0,
+            "content": "constitute investment advice nor an endorsement of any product or project; (4) are provided solely for informational purposes; and (5) are not warranted to be complete, accurate or timely. Sustainalytics is not responsible for any trading decisions, damages or other losses related to it or its use. The use of the data is subject to conditions available at https://www.sustainalytics.com/legal-disclaimers. ©2026 Sustainalytics. All Rights Reserved.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.07,
+                0.206,
+                0.352,
+                0.22
+            ],
+            "angle": 0,
+            "content": "\"Other Disclosures\" last revised May 16, 2026.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.068,
+                0.231,
+                0.923,
+                0.284
+            ],
+            "angle": 0,
+            "content": "Copyright 2026 JPM Chase & Co. All rights reserved. This material or any portion hereof may not be reprinted, sold or redistributed without the written consent of JPM. It is strictly prohibited to use or share without prior written consent from JPM any research material received from JPM or an authorized third-party (“JPM Data”) in any third-party artificial intelligence (“AI”) systems or models when such JPM Data is accessible by a third-party.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.07,
+                0.289,
+                0.314,
+                0.303
+            ],
+            "angle": 0,
+            "content": "Completed 19 May 2026 11:41 PM BST",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.666,
+                0.289,
+                0.928,
+                0.303
+            ],
+            "angle": 0,
+            "content": "Disseminated 20 May 2026 12:15 AM BST",
+            "merge_prev": false
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.072,
+                0.953,
+                0.088,
+                0.963
+            ],
+            "angle": 0,
+            "content": "10"
+        }
+    ]
+]

@@ -1,0 +1,71 @@
+ZH_A: 最近我看到一份来自某外资投行的2026年春季网络安全报告，标题叫“Spring Series 2026”，副标题是“AI顺风下的良好开局”。这份报告到底在说什么？
+
+ZH_B: 简单来说，报告的核心判断是：网络安全需求正在加速增长，而最大的驱动力是AI。AI不仅扩大了攻击面，还让攻击变得更快、更便宜、更自主。平台型安全厂商，比如CrowdStrike和Palo Alto Networks，是最大的受益者。
+
+ZH_A: 等一下，AI攻击这个概念我们听过很多次了。这份报告有没有什么特别新的东西？
+
+ZH_B: 有的。报告重点提到了一款名为Mythos的AI模型，由Anthropic开发。它能够自主发现零日漏洞，并开发出完整的工作攻击工具，过程无需人类干预。这不再是一个概念，而是已经发生的事。
+
+ZH_A: 自主发现零日漏洞？这听起来像是科幻电影。这意味着什么？
+
+ZH_B: 这意味着攻击的门槛被彻底降低了。以前，你需要一个顶尖的黑客团队花几周甚至几个月才能完成的事，现在用AI，可能只需要几个小时，成本还不到1000美元。报告里有一个数据，平均漏洞利用时间已经变成了负7天，也就是说，攻击者比补丁出现还早7天就开始利用漏洞了。
+
+ZH_A: 负7天？这太可怕了。那企业怎么防御？传统的安全工具还有用吗？
+
+ZH_B: 这正是报告的关键洞察之一。它指出，传统的漏洞扫描工具已经不够了。Mythos发现了一些存在了27年、17年的漏洞，这些漏洞之前从未被任何自动化工具发现。所以，报告认为，只有那些拥有深度遥测数据、多年领域经验和平台整合能力的安全厂商，才可能应对这种新威胁。
+
+ZH_A: 所以报告里提到的那些“超配”评级，比如CrowdStrike和Palo Alto，都是基于这个逻辑？
+
+ZH_B: 是的。报告认为它们是最明显的受益者。但报告也指出，其他厂商，比如Check Point、Zscaler、SentinelOne，也在积极参与，但有些可能因为合作协议而受限。这里有一个悬念：报告没有完全展开，哪些厂商的合作关系会成为真正的竞争优势，哪些只是表面功夫。
+
+ZH_A: 我注意到报告还提到了一个叫“Glasswing”的项目。
+
+ZH_B: 对，这是Anthropic发起的一个受限联盟，只允许52个经过审查的组织使用Mythos进行防御性扫描。这说明，最先进的AI能力目前是受控的。但报告同时警告，开源模型的能力正在快速追赶，比如中国的Kimi K2.6模型，其编码能力已经达到了一个阈值，可以复现类似的攻击能力。
+
+ZH_A: 所以，这是一个“防御者暂时领先，但优势窗口正在关闭”的局面。
+
+ZH_B: 没错。这就是为什么报告说，这是一个“良好的开局”，但真正的挑战还在后面。报告里还有一个非常有意思的数据：到目前为止，Mythos发现的漏洞中，只有不到1%被修复了。这意味着，整个行业的补丁能力将面临巨大压力。
+
+ZH_A: 不到1%？那岂不是说，企业现在就像坐在一个随时可能爆炸的火药桶上？
+
+ZH_B: 可以这么理解。所以，报告最后提出了一个很值得思考的问题：如果发现漏洞的速度远超修复速度，那么市场最终会怎样定价网络安全？是更贵的保险，还是更强制性的合规要求？这部分，报告没有给出明确的答案，留给读者自己去完整阅读和思考。
+
+ZH_A: 好，那如果听众想了解更多细节，比如具体的投资组合建议，或者那些未解之谜的深入分析，应该怎么做？
+
+ZH_B: 我们会在我们的社群和完整报告中继续展开。如果你对这份报告的完整版感兴趣，或者想加入我们的讨论，欢迎在节目简介中找到我们的联系方式。我们下期再见。
+
+EN_A: We just got our hands on a pretty striking cybersecurity report from a major global investment bank. It’s called the “Spring Series 2026”, and the subtitle is “A Good Start with AI Tailwinds Ahead”. So what’s the big picture here?
+
+EN_B: The core argument is that demand for cybersecurity is about to accelerate significantly, and the main driver is AI. AI is not just expanding the attack surface, it’s making attacks faster, cheaper, and fully autonomous. The report argues that platform vendors like CrowdStrike and Palo Alto Networks are the clear winners here.
+
+EN_A: We’ve heard about AI-powered attacks before. What’s actually new in this report?
+
+EN_B: The report zeroes in on a specific AI model called Mythos, built by Anthropic. This model can autonomously discover zero-day vulnerabilities and then develop a full working exploit, all without human guidance. This isn’t hypothetical anymore. It’s already been used in real attacks.
+
+EN_A: Autonomous zero-day discovery? That sounds like something out of a sci-fi movie. So what does that actually mean for companies?
+
+EN_B: It means the barrier to entry for launching sophisticated attacks has collapsed. What used to take a team of elite hackers weeks or months can now be done in hours, for less than a thousand dollars. The report highlights that the average time-to-exploit is now negative 7 days. Attackers are using vulnerabilities before a patch even exists.
+
+EN_A: Negative 7 days? That’s terrifying. So are traditional security tools just useless now?
+
+EN_B: That’s one of the key insights. The report says traditional scanners are no longer enough. Mythos found critical vulnerabilities that had been hiding for 27 years and 17 years, things that no automated tool had ever caught. So the report’s logic is that only platform vendors with deep telemetry, decades of domain expertise, and integrated solutions can hope to keep up.
+
+EN_A: So the “overweight” ratings on names like CrowdStrike and Palo Alto are based on that logic?
+
+EN_B: Exactly. They’re seen as the obvious beneficiaries. But the report also points out that others, like Check Point, Zscaler, and SentinelOne, are actively involved, though some may be limited by partnership agreements. Here’s the open question the report doesn’t fully answer: which partnerships are real competitive moats, and which are just marketing?
+
+EN_A: I also noticed a mention of a project called “Glasswing”.
+
+EN_B: Yes. That’s a restricted coalition launched by Anthropic. Only 52 vetted organizations get access to Mythos for defensive purposes. It shows that the most advanced AI capability is currently controlled. But the report warns that open-source models are catching up fast. A Chinese model called Kimi K2.6 has already matched the coding threshold where real-world exploit capability was demonstrated.
+
+EN_A: So it’s a “defenders have a head start, but the window is closing” kind of situation.
+
+EN_B: Exactly. That’s why the report calls it a “good start”, but the real challenge is ahead. There’s one staggering stat in the report: less than 1% of the vulnerabilities discovered by Mythos have been fixed so far. That means the entire industry’s patching capacity is about to be severely tested.
+
+EN_A: Less than 1%? So companies are basically sitting on a ticking time bomb?
+
+EN_B: That’s one way to put it. The report ends with a really interesting question: if discovery outpaces remediation, how will the market ultimately price cybersecurity? Will it be more expensive insurance, or more mandatory compliance? The report doesn’t give a clear answer on that. It’s one of the things you’ll need to read the full report to explore.
+
+EN_A: So if our listeners want to dive deeper into those unanswered questions and the specific investment ideas, what should they do?
+
+EN_B: We’ll be continuing this discussion in our community and in the full report summary. If you’re interested in getting the complete report or joining our conversation, check the show notes for how to connect. We’ll see you next time.
