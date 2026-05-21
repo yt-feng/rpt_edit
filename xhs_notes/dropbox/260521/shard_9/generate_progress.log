@@ -1,0 +1,10 @@
+Found 46 total PDFs; shard 9/40 has 1 PDFs, skips 0 already converted, will process 1 PDFs with batch_size=5.
+Running batch 1: 1 PDFs
+Found 1 PDFs.
+Uploading PDF to MinerU: /tmp/pdf_batch_001_ewvqv5vy/pdfs/0001-46-Goldman Sachs-Japan Electronic Components Semiconductors- NVDA results read-across- bullish on Ibiden- Murata- Yuden- Renesas- MARUWA-260521.pdf
+MinerU batch_id=96df3a30-5bd0-462a-9257-080bd5f48678
+MinerU states: waiting-file
+MinerU states: running
+MinerU states: done
+Done. Results written to /home/runner/work/rpt_edit/rpt_edit/xhs_notes/dropbox/260521/shard_9
+All batches completed successfully.

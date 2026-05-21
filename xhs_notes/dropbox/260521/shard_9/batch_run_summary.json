@@ -1,0 +1,30 @@
+{
+  "input_dir": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs",
+  "total_pdf_count_before_shard": 46,
+  "pdf_count_before_skip": 1,
+  "pdf_count": 1,
+  "batch_size": 5,
+  "shard_index": 9,
+  "shard_count": 40,
+  "max_reports_per_shard": 5,
+  "max_total_reports": 0,
+  "skip_existing": true,
+  "skipped_existing_count": 0,
+  "skipped_existing": [],
+  "failures": 0,
+  "batches": [
+    {
+      "batch_index": 1,
+      "pdf_count": 1,
+      "files": [
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/46-GS-Japan Electronic Components Semiconductors： NVDA results read~across： bullish on Ibiden， Murata， Yuden， Renesas， MARUWA-260521.pdf",
+          "batch_file": "/tmp/pdf_batch_001_ewvqv5vy/pdfs/0001-46-GS-Japan Electronic Components Semiconductors- NVDA results read-across- bullish on Ibiden- Murata- Yuden- Renesas- MARUWA-260521.pdf",
+          "stable_index": "1"
+        }
+      ],
+      "returncode": 0,
+      "status": "ok"
+    }
+  ]
+}
