@@ -1,0 +1,50 @@
+{
+  "input_dir": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs",
+  "total_pdf_count_before_shard": 46,
+  "pdf_count_before_skip": 5,
+  "pdf_count": 5,
+  "batch_size": 5,
+  "shard_index": 6,
+  "shard_count": 40,
+  "max_reports_per_shard": 5,
+  "max_total_reports": 0,
+  "skip_existing": true,
+  "skipped_existing_count": 0,
+  "skipped_existing": [],
+  "failures": 0,
+  "batches": [
+    {
+      "batch_index": 1,
+      "pdf_count": 5,
+      "files": [
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/31-JPM-China Property：Tier 1 cities’ home price stabilization extends into April-260519.pdf",
+          "batch_file": "/tmp/pdf_batch_001_6mho38mt/pdfs/0001-31-JPM-China Property-Tier 1 cities- home price stabilization extends into April-260519.pdf",
+          "stable_index": "1"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/32-JPM-China Regional Banks：4Q25 1Q26： NII recovery supports growth， while fees and AQ drive divergence； downgrade BoSH and BoBJ-260519.pdf",
+          "batch_file": "/tmp/pdf_batch_001_6mho38mt/pdfs/0002-32-JPM-China Regional Banks-4Q25 1Q26- NII recovery supports growth- while fees and AQ drive divergence- downgrade BoSH and BoBJ-260519.pdf",
+          "stable_index": "2"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/33-JPM-China Tanker Shipping：Hormuz disruption monitor~week 11： CSET recovers as shadow fleet risks build-260520.pdf",
+          "batch_file": "/tmp/pdf_batch_001_6mho38mt/pdfs/0003-33-JPM-China Tanker Shipping-Hormuz disruption monitor-week 11- CSET recovers as shadow fleet risks build-260520.pdf",
+          "stable_index": "3"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/34-JPM-Clean Energy and Power Infrastructure 2026 Spring Series-260521.pdf",
+          "batch_file": "/tmp/pdf_batch_001_6mho38mt/pdfs/0004-34-JPM-Clean Energy and Power Infrastructure 2026 Spring Series-260521.pdf",
+          "stable_index": "4"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/35-JPM-Payment Processing：Snippets From Market Share Handbook 2026 Edition-260521.pdf",
+          "batch_file": "/tmp/pdf_batch_001_6mho38mt/pdfs/0005-35-JPM-Payment Processing-Snippets From Market Share Handbook 2026 Edition-260521.pdf",
+          "stable_index": "5"
+        }
+      ],
+      "returncode": 0,
+      "status": "ok"
+    }
+  ]
+}
