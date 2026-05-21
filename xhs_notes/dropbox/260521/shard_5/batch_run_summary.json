@@ -1,0 +1,50 @@
+{
+  "input_dir": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs",
+  "total_pdf_count_before_shard": 46,
+  "pdf_count_before_skip": 5,
+  "pdf_count": 5,
+  "batch_size": 5,
+  "shard_index": 5,
+  "shard_count": 40,
+  "max_reports_per_shard": 5,
+  "max_total_reports": 0,
+  "skip_existing": true,
+  "skipped_existing_count": 0,
+  "skipped_existing": [],
+  "failures": 0,
+  "batches": [
+    {
+      "batch_index": 1,
+      "pdf_count": 5,
+      "files": [
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/26-GS-Mutual Fundamentals_ Funds widen tilt to Semis over Software-260520.pdf",
+          "batch_file": "/tmp/pdf_batch_001_gdi1di2w/pdfs/0001-26-GS-Mutual Fundamentals_ Funds widen tilt to Semis over Software-260520.pdf",
+          "stable_index": "1"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/27-GS-CHINA CONSUMER STAPLES：Assessing potential impact of logistics costs inflation across covered names-260520.pdf",
+          "batch_file": "/tmp/pdf_batch_001_gdi1di2w/pdfs/0002-27-GS-CHINA CONSUMER STAPLES-Assessing potential impact of logistics costs inflation across covered names-260520.pdf",
+          "stable_index": "2"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/28-HSBC-China Real Estate：A pause before more catalysts materialise-260519.pdf",
+          "batch_file": "/tmp/pdf_batch_001_gdi1di2w/pdfs/0003-28-HSBC-China Real Estate-A pause before more catalysts materialise-260519.pdf",
+          "stable_index": "3"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/29-HSBC-China telcos：Token~based plans to monetize the AI boom-260519.pdf",
+          "batch_file": "/tmp/pdf_batch_001_gdi1di2w/pdfs/0004-29-HSBC-China telcos-Token-based plans to monetize the AI boom-260519.pdf",
+          "stable_index": "4"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/30-JPM-China Basic Materials：Apr 26 NBS data： Weakening domestic demand to be partially offset by exports； macro and supply are stronger short~term drivers-260519.pdf",
+          "batch_file": "/tmp/pdf_batch_001_gdi1di2w/pdfs/0005-30-JPM-China Basic Materials-Apr 26 NBS data- Weakening domestic demand to be partially offset by exports- macro and supply are stronger short-term drivers-260519.pdf",
+          "stable_index": "5"
+        }
+      ],
+      "returncode": 0,
+      "status": "ok"
+    }
+  ]
+}
