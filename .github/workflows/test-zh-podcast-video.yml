@@ -35,6 +35,14 @@ on:
         description: "Target Chinese podcast minutes"
         required: true
         default: "5"
+      eleven_voice_a_id:
+        description: "ElevenLabs male voice ID for host, or auto"
+        required: true
+        default: "auto"
+      eleven_voice_b_id:
+        description: "ElevenLabs male voice ID for analyst, or auto"
+        required: true
+        default: "auto"
       commit_results:
         description: "Commit test outputs back to repo"
         required: true
@@ -74,21 +82,7 @@ jobs:
           sudo apt-get install -y --no-install-recommends ffmpeg fonts-noto-cjk fonts-arphic-ukai
 
       - name: Install Python dependencies
-        run: |
-          pip install -r requirements.txt
-          pip install piper-tts
-
-      - name: Download Piper Chinese male-capable voice model
-        run: |
-          mkdir -p .piper-voices
-          MODEL_BASE="https://huggingface.co/rhasspy/piper-voices/resolve/main/zh/zh_CN/huayan/medium"
-          if [ ! -f ".piper-voices/zh_CN-huayan-medium.onnx" ]; then
-            curl -L "$MODEL_BASE/zh_CN-huayan-medium.onnx" -o ".piper-voices/zh_CN-huayan-medium.onnx"
-          fi
-          if [ ! -f ".piper-voices/zh_CN-huayan-medium.onnx.json" ]; then
-            curl -L "$MODEL_BASE/zh_CN-huayan-medium.onnx.json" -o ".piper-voices/zh_CN-huayan-medium.onnx.json"
-          fi
-          ls -lh .piper-voices
+        run: pip install -r requirements.txt
 
       - name: Download latest Dropbox PDFs
         env:
@@ -137,20 +131,21 @@ jobs:
             --max-images 8 \
             --watermark "KC桌面" 2>&1 | tee "$OUTPUT_DIR/pdf_to_notes_progress.log"
 
-      - name: Generate Chinese two-male podcast and explainer video
+      - name: Generate ElevenLabs Chinese two-male podcast and explainer video
         env:
           DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
           DEEPSEEK_BASE_URL: ${{ github.event.inputs.deepseek_base_url || 'https://api.deepseek.com' }}
+          ELEVEN_KEY: ${{ secrets.ELEVEN_KEY }}
         run: |
           set -o pipefail
           mkdir -p "$OUTPUT_DIR"
-          python scripts/generate_test_podcast_video.py \
+          python scripts/generate_test_podcast_video_eleven.py \
             --output-dir "$OUTPUT_DIR" \
             --model "${{ github.event.inputs.model || 'deepseek-chat' }}" \
             --deepseek-base-url "${{ github.event.inputs.deepseek_base_url || 'https://api.deepseek.com' }}" \
             --podcast-minutes "${{ github.event.inputs.podcast_minutes || '5' }}" \
-            --piper-zh-a-model ".piper-voices/zh_CN-huayan-medium.onnx" \
-            --piper-zh-b-model ".piper-voices/zh_CN-huayan-medium.onnx" 2>&1 | tee "$OUTPUT_DIR/podcast_video_progress.log"
+            --voice-a-id "${{ github.event.inputs.eleven_voice_a_id || 'auto' }}" \
+            --voice-b-id "${{ github.event.inputs.eleven_voice_b_id || 'auto' }}" 2>&1 | tee "$OUTPUT_DIR/podcast_video_progress.log"
 
       - name: List generated outputs
         run: |
@@ -166,4 +161,4 @@ jobs:
       - name: Commit test outputs
         if: ${{ github.event.inputs.commit_results == 'true' }}
         run: |
-          bash scripts/commit_output_dir.sh "$OUTPUT_DIR" "Generate Chinese podcast video test ${{ github.run_id }}" 8
+          bash scripts/commit_output_dir.sh "$OUTPUT_DIR" "Generate ElevenLabs Chinese podcast video test ${{ github.run_id }}" 8
