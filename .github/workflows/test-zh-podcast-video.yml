@@ -1,4 +1,4 @@
-name: Test Chinese podcast video
+name: Test bilingual podcast video
 
 on:
   workflow_dispatch:
@@ -32,17 +32,9 @@ on:
         required: true
         default: "5"
       podcast_minutes:
-        description: "Target Chinese podcast minutes"
+        description: "Target minutes for each Chinese and English podcast"
         required: true
         default: "5"
-      eleven_voice_a_id:
-        description: "ElevenLabs male voice ID for host, or auto"
-        required: true
-        default: "auto"
-      eleven_voice_b_id:
-        description: "ElevenLabs male voice ID for analyst, or auto"
-        required: true
-        default: "auto"
       commit_results:
         description: "Commit test outputs back to repo"
         required: true
@@ -56,13 +48,13 @@ env:
   PYTHONUNBUFFERED: "1"
 
 concurrency:
-  group: test-zh-podcast-video
+  group: test-bilingual-podcast-video
   cancel-in-progress: true
 
 jobs:
-  test-zh-podcast-video:
+  test-bilingual-podcast-video:
     runs-on: ubuntu-latest
-    timeout-minutes: 75
+    timeout-minutes: 90
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -131,7 +123,7 @@ jobs:
             --max-images 8 \
             --watermark "KC桌面" 2>&1 | tee "$OUTPUT_DIR/pdf_to_notes_progress.log"
 
-      - name: Generate ElevenLabs Chinese two-male podcast and explainer video
+      - name: Generate ElevenLabs bilingual podcast and explainer videos
         env:
           DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
           DEEPSEEK_BASE_URL: ${{ github.event.inputs.deepseek_base_url || 'https://api.deepseek.com' }}
@@ -143,9 +135,7 @@ jobs:
             --output-dir "$OUTPUT_DIR" \
             --model "${{ github.event.inputs.model || 'deepseek-chat' }}" \
             --deepseek-base-url "${{ github.event.inputs.deepseek_base_url || 'https://api.deepseek.com' }}" \
-            --podcast-minutes "${{ github.event.inputs.podcast_minutes || '5' }}" \
-            --voice-a-id "${{ github.event.inputs.eleven_voice_a_id || 'auto' }}" \
-            --voice-b-id "${{ github.event.inputs.eleven_voice_b_id || 'auto' }}" 2>&1 | tee "$OUTPUT_DIR/podcast_video_progress.log"
+            --podcast-minutes "${{ github.event.inputs.podcast_minutes || '5' }}" 2>&1 | tee "$OUTPUT_DIR/podcast_video_progress.log"
 
       - name: List generated outputs
         run: |
@@ -154,11 +144,11 @@ jobs:
       - name: Upload podcast/video test artifact
         uses: actions/upload-artifact@v4
         with:
-          name: zh-podcast-video-test-${{ github.run_id }}
+          name: bilingual-podcast-video-test-${{ github.run_id }}
           path: ${{ env.OUTPUT_DIR }}
           if-no-files-found: error
 
       - name: Commit test outputs
         if: ${{ github.event.inputs.commit_results == 'true' }}
         run: |
-          bash scripts/commit_output_dir.sh "$OUTPUT_DIR" "Generate ElevenLabs Chinese podcast video test ${{ github.run_id }}" 8
+          bash scripts/commit_output_dir.sh "$OUTPUT_DIR" "Generate bilingual ElevenLabs podcast video test ${{ github.run_id }}" 8
