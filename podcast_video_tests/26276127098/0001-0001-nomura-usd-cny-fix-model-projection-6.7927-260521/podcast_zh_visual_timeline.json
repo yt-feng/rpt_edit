@@ -1,0 +1,331 @@
+[
+  {
+    "speaker": "ZH_A",
+    "text": "欢迎来到KC桌面。今天我们用一份最新\n研报，拆一个值得继续跟踪的问题。",
+    "start": 0.0,
+    "end": 6.827,
+    "voice_id": "UFDAUkGzdLAEJlINT3Fx",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "KC桌面",
+      "研报"
+    ],
+    "page_index": 1,
+    "page_count": 1
+  },
+  {
+    "speaker": "ZH_A",
+    "text": "今天咱们聊一份很特别的研报，它讲的是\n人民币中间价模型，这个模型预测了一个\n数字，比上次低了470个基点。",
+    "start": 7.187,
+    "end": 16.893,
+    "voice_id": "UFDAUkGzdLAEJlINT3Fx",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "人民币中间价模型",
+      "470个基点"
+    ],
+    "page_index": 1,
+    "page_count": 1
+  },
+  {
+    "speaker": "ZH_A",
+    "text": "这听起来挺关键的，B，你觉得这份报告\n真正想告诉我们什么？",
+    "start": 17.253,
+    "end": 22.965,
+    "voice_id": "UFDAUkGzdLAEJlINT3Fx",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "这听起来挺关",
+      "键的"
+    ],
+    "page_index": 1,
+    "page_count": 1
+  },
+  {
+    "speaker": "ZH_A",
+    "text": "ZH_B: 对，这份报告的核心不是简\n单预测数字，而是想揭示央行在设定人民\n币中间价时，背后到底考虑了哪些因素。",
+    "start": 23.325,
+    "end": 35.213,
+    "voice_id": "UFDAUkGzdLAEJlINT3Fx",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "央行",
+      "人民币中间价"
+    ],
+    "page_index": 1,
+    "page_count": 1
+  },
+  {
+    "speaker": "ZH_A",
+    "text": "它用了一个量化模型，把各种货币的波动\n贡献都拆解出来，比如卢布、澳元、欧元\n和韩元，这些权重最高的货币加起来能解\n释大",
+    "start": 35.573,
+    "end": 47.694,
+    "voice_id": "UFDAUkGzdLAEJlINT3Fx",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "量化模型",
+      "卢布",
+      "澳元"
+    ],
+    "page_index": 1,
+    "page_count": 1
+  },
+  {
+    "speaker": "ZH_A",
+    "text": "部分变动。",
+    "start": 48.054,
+    "end": 49.354,
+    "voice_id": "UFDAUkGzdLAEJlINT3Fx",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "部分变动"
+    ],
+    "page_index": 1,
+    "page_count": 1
+  },
+  {
+    "speaker": "ZH_A",
+    "text": "ZH_A: 那这个模型预测的数字是6\n. 7927，和之前的6. 8397\n相比，低了这么多，这说明了什么？",
+    "start": 49.714,
+    "end": 61.046,
+    "voice_id": "UFDAUkGzdLAEJlINT3Fx",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "ZH",
+      "那这个模型预"
+    ],
+    "page_index": 1,
+    "page_count": 1
+  },
+  {
+    "speaker": "ZH_A",
+    "text": "ZH_B: 这说明模型认为，如果没有\n央行干预，人民币应该更强。 但报告还\n加了一个反周期因子调整后的数字是6.",
+    "start": 61.406,
+    "end": 73.109,
+    "voice_id": "UFDAUkGzdLAEJlINT3Fx",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "央行干预",
+      "反周期因子"
+    ],
+    "page_index": 1,
+    "page_count": 1
+  },
+  {
+    "speaker": "ZH_A",
+    "text": "8058，这暗示央行可能在刻意压低升\n值幅度，保持汇率稳定。",
+    "start": 73.469,
+    "end": 79.227,
+    "voice_id": "UFDAUkGzdLAEJlINT3Fx",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "升值幅度"
+    ],
+    "page_index": 1,
+    "page_count": 1
+  },
+  {
+    "speaker": "ZH_A",
+    "text": "所以，这个模型误差很大，比如去年一月\n误差高达1800个基点，这意味着模型\n本身有局限，但趋势方向很重要。",
+    "start": 79.587,
+    "end": 89.943,
+    "voice_id": "UFDAUkGzdLAEJlINT3Fx",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "1800个基点",
+      "趋势方向"
+    ],
+    "page_index": 1,
+    "page_count": 1
+  },
+  {
+    "speaker": "ZH_A",
+    "text": "ZH_A: 我注意到报告里有一个图表\n，显示了每日中间价的变化，大部分时候\n是零，只有三月中旬突然跳了150个基\n点。",
+    "start": 90.303,
+    "end": 103.306,
+    "voice_id": "UFDAUkGzdLAEJlINT3Fx",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "150个基点"
+    ],
+    "page_index": 1,
+    "page_count": 1
+  },
+  {
+    "speaker": "ZH_A",
+    "text": "这背后有什么故事吗？ ZH_B: 是\n的，这个跳跃很关键。 它可能对应某个\n政策事件或市场冲击。",
+    "start": 103.666,
+    "end": 113.883,
+    "voice_id": "UFDAUkGzdLAEJlINT3Fx",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "政策事件",
+      "市场冲击"
+    ],
+    "page_index": 1,
+    "page_count": 1
+  },
+  {
+    "speaker": "ZH_A",
+    "text": "报告里还列了一个事件日历，比如七月底\n的政策环境局会议、十月的APEC会议\n，以及年底中国领导人可能访美。",
+    "start": 114.243,
+    "end": 125.296,
+    "voice_id": "UFDAUkGzdLAEJlINT3Fx",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "政策环境局会议",
+      "APEC",
+      "访美"
+    ],
+    "page_index": 1,
+    "page_count": 1
+  },
+  {
+    "speaker": "ZH_A",
+    "text": "这些事件都可能影响汇率政策。",
+    "start": 125.656,
+    "end": 128.489,
+    "voice_id": "UFDAUkGzdLAEJlINT3Fx",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "这些事件都可",
+      "能影响汇率政"
+    ],
+    "page_index": 1,
+    "page_count": 1
+  },
+  {
+    "speaker": "ZH_A",
+    "text": "但报告没有完全展开，比如那个150个\n基点的跳跃具体由什么触发，值得去读完\n整版找答案。",
+    "start": 128.849,
+    "end": 137.022,
+    "voice_id": "UFDAUkGzdLAEJlINT3Fx",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "150个基点"
+    ],
+    "page_index": 1,
+    "page_count": 1
+  },
+  {
+    "speaker": "ZH_A",
+    "text": "ZH_A: 所以，这个模型本身有误差\n，但通过分析这些误差和事件，我们能更\n好地理解央行的思路。",
+    "start": 137.382,
+    "end": 147.553,
+    "voice_id": "UFDAUkGzdLAEJlINT3Fx",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "央行",
+      "思路"
+    ],
+    "page_index": 1,
+    "page_count": 1
+  },
+  {
+    "speaker": "ZH_A",
+    "text": "那这份报告还有什么没讲完的悬念？ Z\nH_B: 有两个地方特别值得深挖。",
+    "start": 147.913,
+    "end": 155.436,
+    "voice_id": "UFDAUkGzdLAEJlINT3Fx",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "悬念"
+    ],
+    "page_index": 1,
+    "page_count": 1
+  },
+  {
+    "speaker": "ZH_A",
+    "text": "第一，模型误差很大，比如去年十月有6\n00个基点的偏差，这背后是模型忽略了\n什么关键变量？",
+    "start": 155.796,
+    "end": 164.573,
+    "voice_id": "UFDAUkGzdLAEJlINT3Fx",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "600个基点",
+      "关键变量"
+    ],
+    "page_index": 1,
+    "page_count": 1
+  },
+  {
+    "speaker": "ZH_A",
+    "text": "第二，反周期因子如何调整，报告只给了\n数字，但没有解释调整的逻辑。 这些在\n完整报告里会有更详细的分析。",
+    "start": 164.933,
+    "end": 176.682,
+    "voice_id": "UFDAUkGzdLAEJlINT3Fx",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "反周期因子"
+    ],
+    "page_index": 1,
+    "page_count": 1
+  },
+  {
+    "speaker": "ZH_A",
+    "text": "ZH_A: 明白了，看来这份报告只是\n冰山一角。 如果想深入了解，我们得去\n看完整版，看看那些误差和调整背后的原\n因。",
+    "start": 177.042,
+    "end": 190.278,
+    "voice_id": "UFDAUkGzdLAEJlINT3Fx",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "冰山一角"
+    ],
+    "page_index": 1,
+    "page_count": 1
+  },
+  {
+    "speaker": "ZH_A",
+    "text": "ZH_B: 没错，而且报告还提到了未\n来几个月的重要事件，比如政策环境局会\n议和APEC，这些都可能成为汇率变动\n的催",
+    "start": 190.638,
+    "end": 202.573,
+    "voice_id": "UFDAUkGzdLAEJlINT3Fx",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "政策环境局会议",
+      "APEC",
+      "汇率变动"
+    ],
+    "page_index": 1,
+    "page_count": 1
+  },
+  {
+    "speaker": "ZH_A",
+    "text": "化剂。",
+    "start": 202.933,
+    "end": 203.815,
+    "voice_id": "UFDAUkGzdLAEJlINT3Fx",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "化剂"
+    ],
+    "page_index": 1,
+    "page_count": 1
+  },
+  {
+    "speaker": "ZH_A",
+    "text": "如果你对人民币走势感兴趣，这份完整报\n告能帮你搭起一个分析框架。 ZH_A\n: 好，那我们今天就聊到这里。",
+    "start": 204.175,
+    "end": 215.414,
+    "voice_id": "UFDAUkGzdLAEJlINT3Fx",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "分析框架"
+    ],
+    "page_index": 1,
+    "page_count": 1
+  },
+  {
+    "speaker": "ZH_A",
+    "text": "如果你想获取完整报告，可以加入我们的\n投研社群，那里有更多深度内容。 我们\n下期再见。 ZH_B: 下期见。",
+    "start": 215.774,
+    "end": 227.105,
+    "voice_id": "UFDAUkGzdLAEJlINT3Fx",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "投研社群"
+    ],
+    "page_index": 1,
+    "page_count": 1
+  }
+]
