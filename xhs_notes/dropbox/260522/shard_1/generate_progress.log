@@ -1,0 +1,14 @@
+Found 24 total PDFs; shard 1/40 has 5 PDFs, skips 0 already converted, will process 5 PDFs with batch_size=5.
+Running batch 1: 5 PDFs
+Found 5 PDFs.
+Uploading PDF to MinerU: /tmp/pdf_batch_001_4ki42bqu/pdfs/0001-06-Morgan Stanley-Quant Matters-2026 DM Quant Equity Mid-Year Outlook-Factors for an AI and Energy-Led Cycle-260521.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_4ki42bqu/pdfs/0002-07-Bernstein-Global Semiconductor Equipment--200bn WFE in sight-260521.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_4ki42bqu/pdfs/0003-08-CITI-Metal Matters-Gold price under pressure of energy-driven inflation concerns over the near term- China gold imports still robust-260520.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_4ki42bqu/pdfs/0004-09-Deutsche Bank-China Autos - Auto Technology-Chinese Automakers Monthly European Market Volume Monitor- Mar. 2026-260520.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_4ki42bqu/pdfs/0005-10-Goldman Sachs-CHINA MATTERS-Not Too Worried About the April Data Miss-260521.pdf
+MinerU batch_id=25db783a-5008-4334-861a-f59bcc84c3c7
+MinerU states: running, running, running, running, waiting-file
+MinerU states: running, running, done, done, done
+MinerU states: done, done, done, done, done
+Done. Results written to /home/runner/work/rpt_edit/rpt_edit/xhs_notes/dropbox/260522/shard_1
+All batches completed successfully.

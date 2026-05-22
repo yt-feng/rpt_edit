@@ -1,0 +1,927 @@
+# Global Semiconductor Capital Equipment
+
+# Global Semiconductor Equipment: \$200bn WFE in sight
+
+![](images/ee7633b4b9c2e99fff4c7c9d68e4e9493a0e4cb82f500217d1269139192877b2.jpg)
+
+David Dai, CFA
+
++852 2918 5704
+
+david.dai@bernsteinsg.com
+
+![](images/e9ff894fd6895c6cbd4dd04fa89cebd2c0ab340d7da4f3a454810ad79f8fb5b7.jpg)
+
+Stacy A. Rasgon, Ph.D.
+
++1 213 559 5917
+
+stacy.rasgon@bernsteinsg.com
+
+![](images/44c5dec4c1a224487825d7eab2b5247316efe9722a23fb9e2ea99de19b290ebf.jpg)
+
+Qingyuan Lin, Ph.D.
+
++852 2123 2654
+
+qingyuan.lin@bernsteinsg.com
+
+![](images/34475ace00066eb9a0f81ccace63cf4a98779d272cda4a3a8a4252b18a4cb6f2.jpg)
+
+Mark Li
+
++852 2123 2645
+
+mark.li@bernsteinsg.com
+
+![](images/ae2142925d872878cb2fda7e406b664f40a314a8ddd6697d83166494276eb7bf.jpg)
+
+Juho Hwang
+
++852 2123 2632
+
+juho.hwang@bernsteinsg.com
+
+![](images/f0f81624936bed6cc90cc9d25074ba6d53c0246511f5fe4b4f8a6a39d8e24004.jpg)
+
+Carmine Milano, CFA
+
++44 20 7762 1857
+
+carmine.milano@bernsteinsg.com
+
+![](images/dfe137e9cc64cda888f4b0a4a797a0a315cdf39addc2e08cfcb627ec8bebabfa.jpg)
+
+Alrick Shaw
+
++1 917 344 8454
+
+alrick.shaw@bernsteinsg.com
+
+![](images/6d20f46c4e6f08f5010e4c35a0a62e5d2f696add01a2b3c10ef9c6544e4a5541.jpg)
+
+Arpad von Nemes
+
++1 917 344 8461
+
+arpad.vonnemes@bernsteinsg.com
+
+![](images/c4282907a962cd33671ab56aea16454d70d383edc1d46d3a0f28b457d8f88591.jpg)
+
+Zheng Cui
+
++852 2123 2694
+
+zheng.cui@bernsteinsg.com
+
+We lift our 2026 WFE to \$148bn (+21.4% YoY) from 141bn (+18.5% YoY), 2027 WFE to \$175bn (+18.2% YoY) from \$158bn (+11.8% YoY), and 2028 WFE to \$198bn (+13% YoY) from \$164bn (+4% YoY), mostly based on improved outlook on memory expansion, both in China and ex-China, and to a lesser extent, the front end equipment for wafer-level packaging. Our forecast can be downloaded here: Bernstein WFE model.
+
+We forecast global ex-China WFE to grow 25% in 2026 followed by 21% in 2027, mainly by lifting DRAM forecasts. We keep our 2026 ex-China numbers. For 2027, we revise up DRAM WFE by \$3.4bn to now see +25% (prior +15%) growth in 2027. Other than DRAM, we slightly adjust 2027 IDM logic / NAND capex up, each by \$0.6bn. For 2028, we revise up our ex-China WFE estimates by \$12bn to now see +13% (+5% prior) growth, for which the majority of revision also comes mostly from DRAM. We also see wafer level packaging growing to \$11bn in 2028 from \$6bn in 2025 based on TI estimates.
+
+We significantly revised up China WFE demand by \$2.3/6.7/16.1bn from 2026-28.
+
+China Memory is the major driver, as we see more positive signal for YMTC & CXMT to expand further. In terms of DRAM, we expect China will need to build more DRAM capacity to support future local HBM manufacturing, and CXMT IPO will allow them to have more cash and accelerate capacity expansion. We already have high expectation on China NAND capacity expansion but still revised up slightly due to stronger NAND upcycle.
+
+We adjust our LRCX and KLAC models upward to align with our new WFE updates and take target prices up on higher estimates (our AMAT estimates were already aligned given the company's recent report, and remain unchanged). While valuations remain somewhat elevated in the space, we are growing more positive on the idea that the current upcycle in equipment spending could be multi-year, and believe WFE estimates have the potential to continue moving higher. We like all three of our names, though probably ordering in preference AMAT first (most exposure to leading edge logic, DRAM, and packaging, and cheapest of the three) followed by LRCX (more expensive but great execution and NAND upgrade exposure) followed by KLAC (growing a bit slower than the others this year given longer leadtimes but with the most leading edge logic and a high likelihood of a potentially strong 2027 as those longer leadtimes meet oncoming cleanroom space). We raise our LRCX price target to \$340 (\$325 prior) and KLAC to \$1975 (\$1875 prior), maintaining our \$525 price target for AMAT. All three stocks - Outperform.
+
+For Japan semi, we continue to prefer Kokusai (OP) and Tokyo Electron (OP) to benefit from the stronger memory capex. As we revise up mainly DRAM WFE, we prefer companies with more memory exposure in our coverage, in the order Kokusai > TEL > Screen. As for China, Kokusai's exposure doesn't get cannibalized by localization in the near term; instead benefits from the capacity ramp up. TEL/Screen both face China share loss this year: we continue to expect strong spending from China logic and memory to benefit TEL more, Screen has minimal exposure to China memory now. (next page please)
+
+(Continued from previous page...)
+
+In EU Semis, ASML stands out as our top pick. We expect topline to grow at a 23% CAGR25–28E, driven by a materially improving outlook, supported by rising capex in adv. logic and especially in DRAM, as well as higher litho intensity. We expect strong growth for both EUV and DUV tools. While we forecast declining China revenue in line with guidance, we see potential upside driven by continued strength in China's demand.
+
+# For Chinese semicap, we maintain Outperform on AMEC, NAURA and Piotech.
+
+Our channel check on DRAM/NAND/Adv logic capacity expansion are both higher than companies' guidance, indicate potential upward revision on order could come in the next few months to further drive up the stock price.
+
+BERNSTEIN TICKER TABLE 
+
+<table><tr><td rowspan="2">Ticker</td><td rowspan="2">Rating</td><td rowspan="2">Cur</td><td rowspan="2">19 May2026ClosingPrice</td><td rowspan="2">PriceTarget</td><td rowspan="2">TTMRel.Perf.</td><td colspan="4">Reported EPS</td><td colspan="3">Reported P/E (x)</td></tr><tr><td>Cur</td><td>2025A</td><td>2026E</td><td>2027E</td><td>2025A</td><td>2026E</td><td>2027E</td></tr><tr><td>8035.JP (Tokyo Electron)</td><td>O</td><td>JPY</td><td>47,160</td><td>59,200</td><td>64.8%</td><td>JPY</td><td>1,250.88</td><td>1,504.14</td><td>1,848.77</td><td>37.7</td><td>31.4</td><td>25.5</td></tr><tr><td>7735.JP (Screen)</td><td>M</td><td>JPY</td><td>10,520</td><td>12,600</td><td>59.3%</td><td>JPY</td><td>486.61</td><td>572.60</td><td>662.24</td><td>21.6</td><td>18.4</td><td>15.9</td></tr><tr><td>6525.JP (Kokusai)</td><td>O</td><td>JPY</td><td>6,600.00</td><td>8,240.00</td><td>79.9%</td><td>JPY</td><td>128.63</td><td>200.23</td><td>274.61</td><td>51.3</td><td>33.0</td><td>24.0</td></tr><tr><td>6920.JP (Lasertec)</td><td>O</td><td>JPY</td><td>36,060</td><td>50,000</td><td>116.9%</td><td>JPY</td><td>937.82</td><td>893.18</td><td>976.61</td><td>38.5</td><td>40.4</td><td>36.9</td></tr><tr><td>6146.JP (DISCO)</td><td>O</td><td>JPY</td><td>61,600</td><td>85,000</td><td>38.4%</td><td>JPY</td><td>1,246.28</td><td>1,733.62</td><td>2,127.33</td><td>49.4</td><td>35.5</td><td>29.0</td></tr><tr><td>6857.JP (Advantest)</td><td>O</td><td>JPY</td><td>25,290</td><td>39,200</td><td>218.3%</td><td>JPY</td><td>534.21</td><td>735.65</td><td>870.09</td><td>47.3</td><td>34.4</td><td>29.1</td></tr><tr><td>AMAT (Applied Materials)</td><td>O</td><td>USD</td><td>413.57</td><td>525.00</td><td>124.1%</td><td>USD</td><td>9.42</td><td>12.17</td><td>15.56</td><td>43.9</td><td>34.0</td><td>26.6</td></tr><tr><td>LRCX (Lam Research)</td><td>O</td><td>USD</td><td>277.96</td><td>340.00</td><td>206.5%</td><td>USD</td><td>4.14</td><td>5.68</td><td>7.98</td><td>67.2</td><td>49.0</td><td>34.8</td></tr><tr><td>OLD</td><td></td><td></td><td></td><td>325.00</td><td></td><td></td><td></td><td></td><td>7.49</td><td></td><td></td><td></td></tr><tr><td>KLAC</td><td>O</td><td>USD</td><td>1,756.45</td><td>1,975.00</td><td>98.1%</td><td>USD</td><td>33.28</td><td>36.93</td><td>51.22</td><td>52.8</td><td>47.6</td><td>34.3</td></tr><tr><td>OLD</td><td></td><td></td><td></td><td>1,875.00</td><td></td><td></td><td></td><td></td><td>49.89</td><td></td><td></td><td></td></tr><tr><td>002371.CH (NAURA)</td><td>O</td><td>CNY</td><td>619.70</td><td>680.00</td><td>55.5%</td><td>CNY</td><td>5.66</td><td>10.22</td><td>16.41</td><td>109.4</td><td>60.7</td><td>37.8</td></tr><tr><td>688012.CH (AMEC)</td><td>O</td><td>CNY</td><td>479.51</td><td>500.00</td><td>131.4%</td><td>CNY</td><td>3.40</td><td>4.95</td><td>7.18</td><td>141.0</td><td>96.9</td><td>66.7</td></tr><tr><td>688072.CH (Piotech)</td><td>O</td><td>CNY</td><td>554.93</td><td>580.00</td><td>226.2%</td><td>CNY</td><td>3.32</td><td>8.12</td><td>12.40</td><td>167.1</td><td>68.3</td><td>44.8</td></tr><tr><td>ASML.NA (ASML)</td><td>O</td><td>EUR</td><td>1,264.40</td><td>1,700.00</td><td>77.4%</td><td>EUR</td><td>24.72</td><td>32.69</td><td>46.98</td><td>51.2</td><td>38.7</td><td>26.9</td></tr><tr><td>ASML (ASML)</td><td>O</td><td>USD</td><td>1,472.39</td><td>1,971.00</td><td>71.4%</td><td>USD</td><td>27.95</td><td>36.96</td><td>53.13</td><td>45.3</td><td>34.3</td><td>23.8</td></tr><tr><td>JPL</td><td></td><td></td><td>2,461.85</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>SPX</td><td></td><td></td><td>7,432.97</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>ASIAX</td><td></td><td></td><td>1,891.82</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>EDME</td><td></td><td></td><td>1,536.51</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr></table>
+
+# PRICE TARGET CHANGE / ESTIMATE CHANGE IN BOLD
+
+O - Outperform, M - Market-Perform, U - Underperform, NR - Not Rated, CS - Coverage Suspended
+
+AMAT estimate is Adjusted EPS EBITDA Margin (%); LRCX, KLAC estimate is Adjusted EPS; AMAT, LRCX, KLAC valuation is Adjusted P/E (x);
+
+Source: Bloomberg, Bernstein estimates and analysis.
+
+# INVESTMENT IMPLICATIONS
+
+Tokyo Electron: Outperform, PT=¥59,200. TEL is the #4 SPE supplier globally and the biggest Japanese SPE supplier with major presence in 6 product segments. It is expected to gain share and expand margins with competitive pricing after yen depreciation.
+
+ASML: Outperform, PT: EUR 1,700.00. We expect ASML to deliver solid growth over the next five years, supported by rising capex in DRAM and advanced logic. We value ASML using a target PE of 35x, and applying it to our Q5–8 EPS of EUR 49.2 translates in our TP stable at EUR 1,700. We reiterate our Outperform rating and top pick. For ASML's U.S. listing, we convert this using the EUR/USD exchange rate, which yields a price target of USD 1,971.00.
+
+Kokusai: Outperform, PT=¥8,240.00. Kokusai is the leader in batch ALD (atomic level deposition), which should see more adoption in advanced nodes especially GAA (gate-all-around). The biggest use of batch ALD is in NAND, for which we are seeing positive signs.
+
+Screen: Market-Perform, PT=¥12,600. Leading supplier in cleaning equipment with the lowest valuation in our coverage, but also the one with the least specific growth drivers. Cleaning intensity is not increasing, and the market is competitive with both global rivals (TEL, Lam) and Chinese (ACMR, Naura). Declining China revenue contribution presents margin downside risk. Potential upside from panel level packaging is worth watching.
+
+Lasertec: Outperform, PT=¥50,000. As major supplier for mask inspection (\~50% share) and sole supplier for actinic inspection, Lasertec delivered phenomenal growth in the past. We anticipate the revenue growth to reaccelerate as ACTIS 200 HiT enters the market and see more wafer fab adoption. KLA's potential launch of actinic inspection presents a major threat.
+
+AMAT (Outperform, \$525.00): Numbers look reset, exposure to key inflections is strong, and China exposure appears de-risked.
+
+LRCX (Outperform, \$340.00): The company is benefiting from key inflections (GAA, packaging, HBM, NAND upgrades) and CY26 commentary seems supportive.
+
+KLAC (Outperform, \$1,975.00): Amid positive WFE trends KLAC possesses structural growth drivers, a strong and durable competitive position, lower China replacement risk, and disciplined capital allocation, warranting premium valuation.
+
+NAURA (Outperform, CNY 680.00): As the domestic WFE leader, NAURA has the broadest product portfolio covering Deposition (PVD, CVD), Dry Etch (ICP), Thermo Processes, and Cleaning, as well as a more diverse client base covering leading logic, DRAM, NAND players, benefiting from the WFE domestic substitution in China with acceleration share gain.
+
+AMEC (Outperform, CNY 500.00): Primarily focus on Dry Etch (CCP, ICP) with rapid expansion in Deposition (ALD, LPCVD, EPI), commonly perceived as the domestic WFE company with the best technology and widest global recognition, continue to benefit from the WFE domestic substitution in China with acceleration share gain.
+
+Piotech (Outperform, CNY 580.00): Rising domestic WFE vendor primarily focus on Deposition (PECVD, HDPCVD, SACVD, ALD) with expansion in W2W and C2W hybrid bonding equipment for advanced packaging. Piotech has a strong track record of product innovation, which will allow it to benefit from the WFE domestic substitution in China with acceleration share gain.
+
+# DETAILS
+
+# We further lift our WFE forecast for CY2026 to \$148bn (\$141bn prior) and CY2027 to \$175bn (\$158bn prior)
+
+- For CY26, we lift the WFE growth estimate to +21% YoY (+18% prior) which is largely in line with the range of the latest commentary from the major semicap suppliers (Exhibit 1-Exhibit 5), and now forecast \$148bn (\$141bn prior) WFE spending. The upward revision is mainly based on a stronger outlook on China DRAM, as well as some revision in wafer-level packaging (WLP). Geographically, we kept ex-China estimates unchanged (except for \$4.2bn upward for WLP), and our revision for 2026 is mainly from China, of \$2.3bn.   
+- China: We further revise up our forecast of China WFE by \$2.3bn for CY26 due to more positive signs of CapEx in Memory. Recently AMEC has revised up their annual order growth guidance from 30% to 50%, reflecting a stronger growth in Memory. Besides, CXMT just released their updated prospectus, showing better than expected profitability to support the expansion.   
+- For CY27, we now forecast \$175bn WFE spending (\$158bn prior) with growth to +18% YoY (+12% prior). The revision is mainly to reflect our improved outlook on DRAM both in ex-China and China, as well as some adjustment to WLP. Geographically, we lift our 2027 China WFE by \$6.7bn, and ex-China WFE by \$10bn (\$4.6bn excluding WLP).   
+- DRAM/NAND: We raise our memory WFE capex to \$75bn (\$64bn prior) and DRAM WFE capex to \$57bn (prior \$48bn) in 2027 (Exhibit 6). This reflects our view of accelerated spending from both ex-China and China DRAM makers. In China, the outlook on DRAM and NAND are both higher than our previous projection given both YMTC and CXMT likely will IPO soon, and their profitability is better during this upcycle hence could allocate more cash flow to capacity expansion. Channel checks show that they will start to fill two new fabs each in 2027 that boost up the WFE in 2027/28.   
+- Logic/Foundry: We keep our logic / foundry WFE capex largely unchanged at \$89bn (Exhibit 7), and see +8% YoY (+7% prior). Incrementally, we mainly expect a slightly higher logic IDM spending from Intel. China estimates are unchanged.   
+- China: given our channel checks on domestic Advanced Logic/Memory CapEx expansion plan, we revise up our 2027 number by \$6.7bn. China's WFE upcycle could sustain longer than our expectation with more aggressive push on localization.   
+- For CY28, we now forecast \$198bn WFE spending (\$164bn prior) with growth of +13% (+4% prior). Again, the revision is mainly from DRAM (up \$20bn), followed by NAND (up \$7.2bn). By region, we revise up China by \$16bn and ex-China by \$17.7bn (\$12bn excluding WLP).   
+- Throughout our estimate years, we revise our WLP estimates, and lift 2025 by \$2.4bn, 2026 by \$4.2bn, and 2027-28 by \$5.4bn. For WLP, we now use TechInsights estimates (Exhibit 8).   
+• Guidance from major semicap companies on CY26 now suggest that their China revenue will be flattish vs CY25.
+
+The tones were better than previous quarters where they indicate China revenue will be down, and we expect the global companies to future revise that up in the next few quarters. Stronger order growth from local players will be reflected in CY27 spending due to 1-year of lead time from order to revenue recognition.
+
+EXHIBIT 1: We revise up our WFE projection for CY26-CY28 to reflect our latest views...   
+![](images/6cb25b283c3dfc11451a83bcf19309839c8440bd2d4223100ff2addcc5aec547.jpg)
+
+<details>
+<summary>bar</summary>
+
+| Year   | Old est. | Bernstein | Delta |
+| ------ | -------- | --------- | ----- |
+| CY2025 | 119      | 122       | 3%    |
+| CY2026E| 141      | 148       | 5%    |
+| CY2027E| 158      | 175       | 10%   |
+| CY2028E| 164      | 198       | 21%   |
+</details>
+
+Source: Gartner, SEMI, Bernstein estimates and analysis.
+
+EXHIBIT 3: In China, we now see +15% / +15% YoY (+10% / +7% prior) in 2026 / 2027.   
+![](images/c78ef598ac4ab55b1151de65576322ac3fdedd9aee493f80b1dbe8848a609188.jpg)
+
+<details>
+<summary>line</summary>
+
+| Year     | Old est. | Bernstein |
+| -------- | -------- | --------- |
+| CY2015   | 12%      | 12%       |
+| CY2016   | 40%      | 40%       |
+| CY2017   | (3%)     | (3%)      |
+| CY2018   | 71%      | 71%       |
+| CY2019   | 4%       | 4%        |
+| CY2020   | 40%      | 40%       |
+| CY2021   | 55%      | 55%       |
+| CY2022   | 4%       | 4%        |
+| CY2023   | 39%      | 39%       |
+| CY2024   | 23%      | 23%       |
+| CY2025   | 12%      | 12%       |
+| CY2026E  | 10%      | 15%       |
+| CY2027E  | 7%       | 15%       |
+| CY2028E  | 2%       | 16%       |
+</details>
+
+Source: Gartner, SEMI, Bernstein estimates and analysis.
+
+EXHIBIT 2: ...and we now model +21% YoY in CY26 (+18% prior). For CY27 we now model +18% (+12% prior) growth.   
+![](images/45ab4d3dec54c053d228f7baf2d8e4cb7985619bcf77915ae5fcf8003c6d703d.jpg)
+
+<details>
+<summary>line</summary>
+
+| Year     | Old est. | Bernstein |
+| -------- | -------- | --------- |
+| CY2014   |          | 16%       |
+| CY2015   |          | -1%       |
+| CY2016   |          | 11%       |
+| CY2017   |          | 36%       |
+| CY2018   |          | 15%       |
+| CY2019   |          | -8%       |
+| CY2020   |          | 18%       |
+| CY2021   |          | 45%       |
+| CY2022   |          | 7%        |
+| CY2023   |          | 0%        |
+| CY2024   |          | 13%       |
+| CY2025   |          | 10%       |
+| CY2026E  | 18%      | 21%       |
+| CY2027E  | 12%      | 18%       |
+| CY2028E  | 4%       | 13%       |
+</details>
+
+Source: Gartner, SEMI, Bernstein estimates and analysis.
+
+EXHIBIT 4: We lift our 2026/2027 ex-China WFE to +25%/+21% YoY (+25%/+15% prior).   
+![](images/6902934cb6903c03ab8a443f44c2bb684ec8b08bd65d412633929b5083e3eade.jpg)
+
+<details>
+<summary>line</summary>
+
+| Year     | Old est. | Bernstein |
+| -------- | -------- | --------- |
+| CY2015   |          | 6%        |
+| CY2016   |          | 6%        |
+| CY2017   |          | 45%       |
+| CY2018   |          | 7%        |
+| CY2019   |          | -11%      |
+| CY2020   |          | 8%        |
+| CY2021   |          | 41%       |
+| CY2022   |          | 8%        |
+| CY2023   |          | -15%      |
+| CY2024   |          | 2%        |
+| CY2025   |          | 10%       |
+| CY2026E  | 25%      | 25%       |
+| CY2027E  | 15%      | 21%       |
+| CY2028E  | 5%       | 13%       |
+</details>
+
+Source: Gartner, SEMI, Bernstein estimates and analysis.
+
+EXHIBIT 5: Our WFE forecast of +21% YoY (or \$148bn) for CY2026 is slightly towards the higher end of the latest forecasts by major semicap companies. 
+
+<table><tr><td>Company Name</td><td>Ticker</td><td>CY2025 WFE</td><td>CY2026 WFE</td><td>CY2027 WFE</td></tr><tr><td>Tokyo Electron</td><td>8035.JP</td><td>~120</td><td>150-170</td><td>150-170</td></tr><tr><td>Lam Research</td><td>LRCX.US</td><td>close to 110</td><td>&gt;140</td><td>Another strong year</td></tr><tr><td>KLA</td><td>KLAC.US</td><td>low 120s</td><td>&gt;140</td><td></td></tr><tr><td>Screen</td><td>7735.JP</td><td>117</td><td>134-140</td><td></td></tr><tr><td>Kokusai</td><td>6525.JP</td><td>5% YoY</td><td>15% YoY</td><td></td></tr></table>
+
+Tokyo Electron, Screen and Kokusai are covered by Bernstein Japan Semiconductor Team. Lam Research and KLA are covered by Bernstein US Semiconductor Team.   
+Source: Company disclosures, Bernstein analysis.
+
+EXHIBIT 6: We now estimate 2027/2028 WFE spending for DRAM to be \$57bn / \$71bn (\$48bn / \$51bn prior) / NAND \$18bn / \$23bn (\$16bn / \$16bn prior), respectively...   
+![](images/f690d269cd92116ed83818593c1d508cc15ce81468fb50d20fa026b92df5cd95.jpg)
+
+<details>
+<summary>bar_line</summary>
+
+2016-2028E: Memory WFE estimates
+| Period | DRAM (USD bn) | NAND (USD bn) | % YoY (%) |
+| :--- | :--- | :--- | :--- |
+| CY2016 | 7 | 11 | - |
+| CY2017 | 11 | 17 | 85 |
+| CY2018 | 17 | 21 | 65 |
+| CY2019 | 11 | 11 | -34 |
+| CY2020 | 12 | 14 | 55 |
+| CY2021 | 19 | 20 | 75 |
+| CY2022 | 19 | 20 | 40 |
+| CY2023 | 22 | 7 | -29 |
+| CY2024 | 28 | 6 | 17 |
+| CY2025E | 30 | 9 | 19 |
+| CY2026E | 44 | 12 | 43 |
+| CY2027E | 57 | 18 | 38 |
+| CY2028E | 71 | 23 | 30 |
+</details>
+
+EXHIBIT 7: ...and for Logic/Foundry, we keep our 2026-27 estimates, and lift 2028 to \$93bn (\$92bn prior).   
+![](images/7d5605230d528f10b4a5028b6d4485cb70e44ffec9f65bef128f99e6eb3cfba5.jpg)
+
+<details>
+<summary>bar_line</summary>
+
+2016-2028E: Logic / Foundry WFE estimates
+| Year | Logic / Foundry (USD bn) | % YoY (%) |
+| :--- | :--- | :--- |
+| CY2016 | 18 | |
+| CY2017 | 20 | 15 |
+| CY2018 | 18 | -10 |
+| CY2019 | 29 | 60 |
+| CY2020 | 35 | 10 |
+| CY2021 | 50 | 45 |
+| CY2022 | 55 | 10 |
+| CY2023 | 65 | 20 |
+| CY2024 | 71 | 10 |
+| CY2025E | 77 | 10 |
+| CY2026E | 83 | 10 |
+| CY2027E | 89 | 5 |
+| CY2028E | 93 | 5 |
+</details>
+
+Source: Gartner, SEMI, Bernstein estimates and analysis.   
+Source: Gartner, SEMI, Bernstein estimates and analysis.
+
+EXHIBIT 8: We expect a strong growth in WLP over the next two years.   
+![](images/bca551ccbdf76bf17d608cbc9bddc752434043b7c1d01d95f9be014ae8108d73.jpg)
+
+<details>
+<summary>bar_line</summary>
+
+2016-2028E: Wafer-level Packaging WFE estimates
+| Year | Wafer-level Packaging (USD bn) | % YoY (%) |
+| :--- | :--- | :--- |
+| CY2016 | 1.4 | |
+| CY2017 | 1.7 | 25 |
+| CY2018 | 1.7 | 15 |
+| CY2019 | 1.5 | -10 |
+| CY2020 | 1.7 | 20 |
+| CY2021 | 2.5 | 48 |
+| CY2022 | 2.6 | 15 |
+| CY2023 | 3.0 | 18 |
+| CY2024 | 6.3 | 118 |
+| CY2025 | 6.5 | 5 |
+| CY2026E | 9.0 | 40 |
+| CY2027E | 10.6 | 20 |
+| CY2028E | 11.0 | 5 |
+</details>
+
+Source: TechInsights, Bernstein analysis.
+
+EXHIBIT 9: All five companies expect China WFE to be roughly flat YoY but China as a percentage of revenue to normalize lower in 2026 vs. the elevated 2024–2025 levels 
+
+<table><tr><td>Company</td><td>Ticker</td><td>Lastest Comments on China WFE (CY2Q26 &amp; CY2026)</td></tr><tr><td>ASML</td><td>ASML.NV</td><td>ASML guided China to represent approximately 20% of total net sales in 2026, consistent with its current system backlog — a significant decline from 33% in 2025 and 41% in 2024.Management views the elevated 2024–2025 China sales levels as unsustainable, reflecting a normalization after fulfilling a substantial backlog.</td></tr><tr><td>Applied Materials</td><td>AMAT</td><td>In Q2 FY2026, China accounted for 24% of semiconductor systems plus AGS revenue, down from 30% of overall sales in Q1 FY2026, where revenue declined 7% year-over-year.For the full calendar year, Applied Materials expects its China business, along with its ICAPS business worldwide, to be flat to slightly higher — an improvement from the prior guidance of down year-over-year.Management expects China to be flat to slightly up for the calendar year, with ICAPS globally also guided to be flattish.</td></tr><tr><td>Lam Research</td><td>LRCX</td><td>China accounted for 34% of total revenue in Q3 FY2026, a slight decrease from 35% in Q2 FY2026, though it grew approximately $115 million quarter-over-quarter in absolute terms. Lam anticipates China revenue will decline in the June 2026 quarter from current levels.The company expects China&#x27;s percentage of total revenue to decrease over time as growth from global multinational customers outside China increases.</td></tr><tr><td>KLA</td><td>KLAC</td><td>China represented 24% of total revenue in Q3 FY2026, down from approximately 30% in Q2 FY2026, with minimal impact expected from additional US export bans.KLA&#x27;s view is that China WFE will grow at a slower rate than overall WFE, with spending levels in China remaining relatively flat over the last few years. Growth in China is expected to be more greenfield-focused rather than technology-upgrade driven. For CY2026, KLA models China&#x27;s contribution to revenue in the mid-to-high 20% range</td></tr><tr><td>Tokyo Electron</td><td>8035.JP</td><td>For FY2026 (ended March 2026), China represented 34.1% of total sales, declining to 26.8% in Q4 FY2026 — a 5 percentage point sequential drop — as leading-edge node spending grew faster than mature nodes.Management guided China&#x27;s share of revenue to be in the mid-30s for 2026, a normalization from the high-30s seen in the prior year.</td></tr></table>
+
+Source: Company reports, Bernstein analysis
+
+We adjust our LRCX and KLAC models upward to align with our new WFE updates and take target prices up on higher estimates (our AMAT estimates were already aligned, and remain unchanged. While valuations remain somewhat elevated in the space, we are growing more positive on the idea that the current upcycle in equipment spending could be multi-year, and believe WFE estimates have the potential to continue moving higher. We like all three of our names, though probably ordering in preference AMAT first (most exposure to leading edge logic, DRAM, and packaging, and cheapest of the three) followed by LRCX (more expensive but great execution and NAND upgrade exposure) followed by KLAC (growing a bit slower than the others this year given longer leadtimes but with the most leading edge logic and a high likelihood of a potentially strong 2027 as those longer leadtimes meet oncoming cleanroom space). We raise our LRCX price target to \$340 (vs \$325 prior) and KLAC to \$1975 (vs \$1875 prior), maintaining our \$525 price target for AMAT. We rate all three stocks Outperform.
+
+- We adjust our LRCX and KLAC models upward to align with our WFE updates, taking up numbers. Our AMAT model was already aligned given the company's recent report, and remain unchanged. A comparison of our new estimates vs old for LRCX and AMAT can be found in Exhibit 10 and Exhibit 11.   
+- While valuations remain somewhat elevated in the space (Exhibit 12-Exhibit 18) we are growing more positive on the idea that the current upcycle in equipment spending could be multi-year, and believe WFE estimates have the potential to continue moving higher.   
+- We like all three of our names, though probably ordering in preference AMAT first (most exposure to leading edge logic, DRAM, and packaging, and cheapest of the three) followed by LRCX (more expensive but great execution and NAND upgrade exposure) followed by KLAC (growing a bit slower than the others this year given longer leadtimes but with the most leading edge logic and a high likelihood of a potentially strong 2027 as those longer leadtimes meet oncoming cleanroom space).   
+- We raise our LRCX price target to \$340 (vs \$325 prior) and KLAC to \$1975 (vs \$1875 prior), maintaining our \$525 price target for AMAT. We rate all three stocks Outperform.   
+• We remain Outperform on all three stocks.
+
+EXHIBIT 10: Bernstein LRCX estimates vs prior 
+
+<table><tr><td rowspan="2">LRCX</td><td colspan="3">FY2026E</td><td colspan="3">FY2027E</td><td colspan="3">FY2028E</td></tr><tr><td>Bernstein</td><td>Old</td><td>Chg</td><td>Bernstein</td><td>Old</td><td>Chg</td><td>Bernstein</td><td>Old</td><td>Chg</td></tr><tr><td>Revenue</td><td>$23,123</td><td>$23,123</td><td>0%</td><td>$30,205</td><td>$28,622</td><td>6%</td><td>$32,515</td><td>$30,719</td><td>6%</td></tr><tr><td>YoY</td><td>25.4%</td><td>25.4%</td><td></td><td>30.6%</td><td>23.8%</td><td></td><td>7.6%</td><td>7.3%</td><td></td></tr><tr><td>Gross Margin</td><td>50.2%</td><td>50.2%</td><td>0%</td><td>50.8%</td><td>50.8%</td><td>0%</td><td>51.3%</td><td>51.3%</td><td>0%</td></tr><tr><td>Operating Margin</td><td>35.3%</td><td>35.3%</td><td>0%</td><td>37.5%</td><td>37.1%</td><td>1%</td><td>38.4%</td><td>38.0%</td><td>1%</td></tr><tr><td>EPS</td><td>$5.68</td><td>$5.68</td><td>0%</td><td>$7.98</td><td>$7.49</td><td>7%</td><td>$8.99</td><td>$8.41</td><td>7%</td></tr><tr><td>YoY</td><td>37.1%</td><td>37.1%</td><td></td><td>40.5%</td><td>31.9%</td><td></td><td>12.7%</td><td>12.3%</td><td></td></tr></table>
+
+Source: Bernstein estimates and analysis
+
+EXHIBIT 11: Bernstein KLAC estimates vs prior 
+
+<table><tr><td rowspan="2">KLAC</td><td colspan="3">FY2026E</td><td colspan="3">FY2027E</td><td colspan="3">FY2028E</td></tr><tr><td>Bernstein</td><td>Old</td><td>Chg</td><td>Bernstein</td><td>Old</td><td>Chg</td><td>Bernstein</td><td>Old</td><td>Chg</td></tr><tr><td>Revenue</td><td>$13,497</td><td>$13,497</td><td>0%</td><td>$17,318</td><td>$16,947</td><td>2%</td><td>$19,781</td><td>$18,804</td><td>5%</td></tr><tr><td>YoY</td><td>11.0%</td><td>11.0%</td><td></td><td>28.3%</td><td>25.6%</td><td></td><td>14.2%</td><td>11.0%</td><td></td></tr><tr><td>Gross Margin</td><td>62.2%</td><td>62.2%</td><td>0%</td><td>62.3%</td><td>62.3%</td><td>0%</td><td>63.0%</td><td>63.0%</td><td>0%</td></tr><tr><td>Operating Margin</td><td>42.9%</td><td>42.9%</td><td>0%</td><td>45.3%</td><td>45.1%</td><td>0%</td><td>45.9%</td><td>45.5%</td><td>1%</td></tr><tr><td>EPS</td><td>$36.93</td><td>$36.93</td><td>0%</td><td>$51.22</td><td>$49.89</td><td>3%</td><td>$60.60</td><td>$57.05</td><td>6%</td></tr><tr><td>YoY</td><td>11.0%</td><td>11.0%</td><td></td><td>38.7%</td><td>35.1%</td><td></td><td>18.3%</td><td>14.3%</td><td></td></tr></table>
+
+Source: Bernstein estimates and analysis
+
+EXHIBIT 12: LRCX trades at \~37.2x...   
+LRCX P/FE   
+![](images/b0ffda44887768576dc2b98257ec66fbb83af1395d4f4e5becf5d922d3fb07aa.jpg)
+
+<details>
+<summary>line</summary>
+
+| Date       | Value |
+| ---------- | ----- |
+| 12/31/2014 | 15.0x |
+| 12/31/2015 | 13.0x |
+| 12/31/2016 | 14.0x |
+| 12/31/2017 | 12.0x |
+| 12/31/2018 | 9.0x  |
+| 12/31/2019 | 16.0x |
+| 12/31/2020 | 25.0x |
+| 12/31/2021 | 20.0x |
+| 12/31/2022 | 9.0x  |
+| 12/31/2023 | 28.0x |
+| 12/31/2024 | 32.0x |
+| 12/31/2025 | 45.0x |
+</details>
+
+Bloomberg data as of 5/18/2026   
+Source: Bloomberg, Bernstein analysis
+
+EXHIBIT 14: AMAT trades at \~29.4x forward earnings...   
+AMAT P/FE   
+![](images/097f8a1a9641f17ba189add8bbf2d7c3a7994f8deda24cc48540fce9a0f8c265.jpg)
+
+<details>
+<summary>line</summary>
+
+| Date       | Value |
+| ---------- | ----- |
+| 12/31/2014 | 18.0x |
+| 12/31/2015 | 12.0x |
+| 12/31/2016 | 14.0x |
+| 12/31/2017 | 16.0x |
+| 12/31/2018 | 8.0x  |
+| 12/31/2019 | 16.0x |
+| 12/31/2020 | 23.0x |
+| 12/31/2021 | 19.0x |
+| 12/31/2022 | 10.0x |
+| 12/31/2023 | 25.0x |
+| 12/31/2024 | 28.0x |
+| 12/31/2025 | 35.0x |
+| Current    | 29.4x |
+10yr average | 16.5x |
+</details>
+
+Bloomberg data as of 5/18/2026   
+Source: Bloomberg, Bernstein analysis
+
+EXHIBIT 13: ...a \~36% premium to the SOX and a \~71% premium to the SPX   
+LRCX Relative Forward P/E   
+![](images/3dd6a9b8422b6bfaaafa57dfcc77f7c052edf86f34a67c0a5802c6acfded201f.jpg)
+
+<details>
+<summary>line</summary>
+
+| Date       | vs. SOX | vs. SPX |
+| ---------- | ------- | ------- |
+| 12/31/2014 | 1.00    | 1.00    |
+| 12/31/2015 | 0.80    | 0.75    |
+| 12/31/2016 | 0.90    | 0.85    |
+| 12/31/2017 | 0.95    | 0.90    |
+| 12/31/2018 | 0.85    | 0.75    |
+| 12/31/2019 | 0.95    | 0.90    |
+| 12/31/2020 | 1.00    | 0.95    |
+| 12/31/2021 | 0.90    | 0.85    |
+| 12/31/2022 | 1.00    | 0.95    |
+| 12/31/2023 | 1.30    | 1.40    |
+| 12/31/2024 | 0.80    | 0.90    |
+| 12/31/2025 | 1.40    | 1.80    |
+</details>
+
+Bloomberg data as of 5/18/2026   
+Source: Bloomberg, Bernstein analysis
+
+EXHIBIT 15: ...a \~7% premium to the SOX and a \~34% premium to the SPX   
+AMAT Relative Forward P/E   
+![](images/c2674343a4aaaf653141c18fbb3808ab0e59ee1448b3164eaa0c9f557687107d.jpg)
+
+<details>
+<summary>line</summary>
+
+| Date       | vs. SOX | vs. SPX |
+| ---------- | ------- | ------- |
+| 12/31/2014 | 1.20    | 1.10    |
+| 12/31/2015 | 0.90    | 0.85    |
+| 12/31/2016 | 0.95    | 0.90    |
+| 12/31/2017 | 1.10    | 0.95    |
+| 12/31/2018 | 0.85    | 0.75    |
+| 12/31/2019 | 0.90    | 0.85    |
+| 12/31/2020 | 0.70    | 0.65    |
+| 12/31/2021 | 0.85    | 0.80    |
+| 12/31/2022 | 0.95    | 0.90    |
+| 12/31/2023 | 1.05    | 1.00    |
+| 12/31/2024 | 0.80    | 0.75    |
+| 12/31/2025 | 1.60    | 1.55    |
+</details>
+
+Bloomberg data as of 5/18/2026   
+Source: Bloomberg, Bernstein analysis
+
+EXHIBIT 16: KLAC trades at \~37.2x P/FE...   
+KLAC P/FE   
+![](images/9bbf2c78533d00a9996598d0a5c1d783541e55df479ce94841cd552a6b6b6547.jpg)
+
+<details>
+<summary>line</summary>
+
+| Date       | Value |
+| ---------- | ----- |
+| 12/31/2014 | 18.7x |
+| Current    | 37.2x |
+</details>
+
+Bloomberg data as of 5/18/2026   
+Source: Bloomberg, Bernstein analysis
+
+EXHIBIT 17: ...a 35% premium to the SOX and \~70% premium to the SPX   
+KLAC Relative Forward P/E   
+![](images/cb52edfc17e465258be1345afd0ac4e58d2e114452d58d19eccd743efe296b55.jpg)
+
+<details>
+<summary>line</summary>
+
+| Date       | vs. SOX | vs. SPX |
+| ---------- | ------- | ------- |
+| 12/31/2014 | 1.10    | 1.05    |
+| 12/31/2015 | 1.05    | 0.95    |
+| 12/31/2016 | 1.08    | 0.98    |
+| 12/31/2017 | 1.02    | 0.92    |
+| 12/31/2018 | 0.95    | 0.85    |
+| 12/31/2019 | 0.98    | 0.90    |
+| 12/31/2020 | 0.92    | 0.88    |
+| 12/31/2021 | 0.95    | 0.93    |
+| 12/31/2022 | 0.98    | 0.95    |
+| 12/31/2023 | 1.05    | 1.08    |
+| 12/31/2024 | 0.95    | 0.98    |
+| 12/31/2025 | 1.40    | 1.50    |
+</details>
+
+Bloomberg data as of 5/18/2026   
+Source: Bloomberg, Bernstein analysis
+
+EXHIBIT 18: AMAT remains among the cheapest of the “big-5” semicaps; Lam is the most expensive; KLAC is amongst the more expensive   
+"Big 5" Semicap P/FE   
+![](images/2a07f7cb1cf0eb3762ff97ced91159e6265de6d07d304ee7481554a5c14b96e1.jpg)
+
+<details>
+<summary>bar</summary>
+
+| Category | Value |
+| -------- | ----- |
+| AMAT     | 29.4  |
+| TEL      | 31.7  |
+| ASML     | 36.8  |
+| KLAC     | 37.2  |
+| LRCX     | 37.5  |
+</details>
+
+Bloomberg data as of 5/18/2026   
+Source: Bloomberg, Bernstein analysis
+
+For Japan semi, we continue to prefer Kokusai (OP) and Tokyo Electron (OP) to benefit from the stronger memory capex.
+
+\- As we revise up DRAM WFE once again, we prefer companies with more memory exposure in our coverage, in the order Kokusai > TEL > Screen.
+
+- Kokusai's DRAM China exposure was down a lot last year, but we believe it should recover as we see more China DRAM spending into next year. Conversely, Kokusai's upside from NAND capex has not materialized yet but could see upside as NAND companies turn to not only migration but also capacity investment. The recent weak guidance is conservative, and we believe they are likely to beat and raise along the year, and view the share price weakness as a good entry point.   
+- As for China, while we believe TEL / Screen both saw share loss in China last year, we continue to expect strong spending from China foundries, and their business with the existing foundries should be largely intact. Increased memory spending in China will also benefit both TEL and Kokusai.   
+- Screen, although rated as Market-Perform, will also benefit from the upcycle as they both enjoy the increased spending especially for logic.
+
+For EU Semis, ASML stands out as our top pick. We expect topline to grow at a 23% CAGR25–28E, driven by a materially improving outlook, supported by rising capex in adv. logic and especially in DRAM, as well as higher litho intensity. We expect strong growth for both EUV and DUV tools. While we forecast declining China revenue in line with guidance, we see potential upside driven by continued strength in China's demand for DUV systems.
+
+- We anticipate that higher DRAM and advanced logic capex, coupled with increasing litho intensity, will drive a 23% CAGR in sales over the next three years. Litho intensity is expected to rise significantly, supported by (1) the rapid penetration of 1c in DRAM, which has materially higher lithography intensity than prior 1a/1b nodes, and (2) advanced logic, which is structurally more EUV-intensive than mature logic and is growing at a faster pace. As a result, ASML has increased its FY26 sales guidance to EUR 36–40Bn. We expect FY26 revenue to land slightly above the upper end of this range, representing 23% YoY growth. We further anticipate continued strong growth in FY27 of approximately 25% YoY, followed by a moderate deceleration to around 11% YoY in FY28 (Exhibit 19).   
+- We expected EUV to lead growth with a 31% CAGR, with units almost doubling from 48 in 2025 to 87 in 2028. ASP should also contribute, growing at a 10% CAGR in line with throughput improvements. In addition, we expect DUV to grow at a 12% CAGR over the next three years, as advanced logic and especially DRAM capacity ramp-up requires not only more EUV but also more DUV. For DRAM, we estimate that each EUV machine requires around two ArFi tools (Exhibit 20).   
+- While we model China revenue in 2026 to decline significantly after three years of strong sales, in line with company guidance, we continue to expect relatively resilient demand. This is supported by increasing advanced logic capacity, which could provide further upside to our estimates.
+
+EXHIBIT 19: We expect ASML's system sales to conitnue to grow at a rapid pace over the next three years, achieving a 23% CAGR and reaching more than USD 51 Bn by 2028.   
+![](images/966cfd1c9db83bb156381387ca6e31eb381b603602925daf00204220aefee462.jpg)
+
+<details>
+<summary>bar_stacked</summary>
+
+| Year   | EUV  | DUV  | M&I  |
+| ------ | ---- | ---- | ---- |
+| 2024   | 9    | 14   | 1    |
+| 2025   | 13   | 14   | 1    |
+| 2026E  | 19   | 17   | 1    |
+| 2027E  | 27   | 23   | 1    |
+| 2028E  | 30   | 23   | 1    |
+</details>
+
+Source: Company reports, Bernstein analysis and estimates
+
+![](images/a5ad2157189dc52ecb8dc9a062495a6c53b2990a44c051576c66438f9d12e439.jpg)
+
+<details>
+<summary>bar</summary>
+
+| Year   | Low-NA | High-NA |
+| ------ | ------ | ------- |
+| 2020   | 31     | 0       |
+| 2021   | 42     | 0       |
+| 2022   | 40     | 0       |
+| 2023   | 53     | 0       |
+| 2024   | 43     | 3       |
+| 2025   | 44     | 5       |
+| 2026E  | 60     | 7       |
+| 2027E  | 80     | 8       |
+| 2028E  | 80     | 9       |
+</details>
+
+Source: Company reports, Bernstein analysis and estimates
+
+# For Chinese semicap, we maintain Outperform on AMEC, NAURA and Piotech.
+
+- After a strong April rebound, we expect some correction might still exist in the near term, but we expect 2026 to be a very strong year given AI and DRAM/HBM demand localization, therefore the dip will create a good opportunity to add. CXMT IPO and YMTC prospectus are also positive catalyst to watch out for. Local companies are gradually guiding up their 2026 order growth and we expect further revision to come in 2H26.   
+- Due to higher memory exposure, we like AMEC>Piotech>NAURA for now.
+
+EXHIBIT 21: Mar import was \$3.1bn   
+![](images/df0cefbc0ded38f7386a217e91470eefc80142a99ecdaf476c31fc404264b4fd.jpg)
+
+<details>
+<summary>line</summary>
+
+| Month     | Value (USDmn) |
+| --------- | ------------- |
+| Oct 2022  | 3,297         |
+| Mar 26    | 3,113         |
+</details>
+
+Source: General Administration of Customs of the People's Republic of China, Bernstein analysis
+
+EXHIBIT 22: 2026 YTD import -17% YoY   
+Total WFE imports to China by year   
+![](images/a9546fe511eb4e7b976011b8ff00907b806a1a918aea8d881d7e895ed35073b9.jpg)
+
+<details>
+<summary>bar_line</summary>
+
+| Year | Value | Percentage (%) |
+| :--- | :--- | :--- |
+| 2015 | 4,810 | |
+| 2016 | 5,779 | 20 |
+| 2017 | 7,071 | 22 |
+| 2018 | 12,747 | 80 |
+| 2019 | 11,300 | -7 |
+| 2020 | 15,257 | 28 |
+| 2021 | 23,839 | 56 |
+| 2022 | 22,008 | -8 |
+| 2023 | 31,530 | 43 |
+| 2024 | 37,903 | 20 |
+| 2025 | 39,166 | 3 |
+| 2026 YTD | 7,300 | -17 |
+</details>
+
+Source: General Administration of Customs of the People's Republic of China, Bernstein analysis
+
+EXHIBIT 23: Bernstein AMAT Income Statement 
+
+<table><tr><td>INCOME STATEMENTFiscal Period</td><td>2025</td><td>2026E</td><td>2027E</td><td>2028E</td><td>Q125</td><td>Q225</td><td>Q325</td><td>Q425</td><td>Q126</td><td>Q226</td><td>Q326E</td><td>Q426E</td><td>Q127E</td><td>Q227E</td><td>Q327E</td><td>Q427E</td></tr><tr><td>Net Sales</td><td>$28,368</td><td>$33,233</td><td>$40,688</td><td>$46,646</td><td>$7,166</td><td>$7,100</td><td>$7,302</td><td>$6,800</td><td>$7,012</td><td>$7,910</td><td>$8,951</td><td>$9,360</td><td>$9,620</td><td>$9,967</td><td>$10,345</td><td>$10,756</td></tr><tr><td>COGS</td><td>$14,533</td><td>$16,655</td><td>$20,159</td><td>$22,925</td><td>$3,663</td><td>$3,609</td><td>$3,733</td><td>$3,528</td><td>$3,570</td><td>$3,957</td><td>$4,466</td><td>$4,661</td><td>$4,781</td><td>$4,944</td><td>$5,121</td><td>$5,314</td></tr><tr><td>Non-GAAP Gross Profit</td><td>$13,835</td><td>$16,578</td><td>$20,529</td><td>$23,722</td><td>$3,503</td><td>$3,491</td><td>$3,569</td><td>$3,272</td><td>$3,442</td><td>$3,953</td><td>$4,484</td><td>$4,699</td><td>$4,839</td><td>$5,024</td><td>$5,224</td><td>$5,443</td></tr><tr><td>Non-GAAP Operating Expenses</td><td>$5,273</td><td>$5,780</td><td>$6,673</td><td>$7,274</td><td>$1,313</td><td>$1,311</td><td>$1,324</td><td>$1,325</td><td>$1,335</td><td>$1,417</td><td>$1,486</td><td>$1,542</td><td>$1,729</td><td>$1,613</td><td>$1,643</td><td>$1,687</td></tr><tr><td>R&amp;D</td><td>$3,570</td><td>$4,203</td><td>$4,932</td><td>$5,352</td><td>$859</td><td>$893</td><td>$901</td><td>$917</td><td>$928</td><td>$1,027</td><td>$1,101</td><td>$1,147</td><td>$1,289</td><td>$1,196</td><td>$1,210</td><td>$1,237</td></tr><tr><td>Marketing and Selling</td><td>$858</td><td>$922</td><td>$1,041</td><td>$1,166</td><td>$206</td><td>$216</td><td>$224</td><td>$212</td><td>$222</td><td>$233</td><td>$233</td><td>$234</td><td>$265</td><td>$249</td><td>$259</td><td>$269</td></tr><tr><td>General and administrative</td><td>$910</td><td>$683</td><td>$747</td><td>$804</td><td>$256</td><td>$207</td><td>$204</td><td>$243</td><td>$189</td><td>$164</td><td>$161</td><td>$168</td><td>$188</td><td>$179</td><td>$186</td><td>$194</td></tr><tr><td>Other</td><td>$181</td><td>$265</td><td>$0</td><td>$0</td><td>$0</td><td>$0</td><td>$0</td><td>$181</td><td>$265</td><td>$0</td><td>$0</td><td>$0</td><td>$0</td><td>$0</td><td>$0</td><td>$0</td></tr><tr><td>Non-GAAP adjustment</td><td>($246)</td><td>($292)</td><td>($48)</td><td>($48)</td><td>($8)</td><td>($5)</td><td>($5)</td><td>($228)</td><td>($269)</td><td>($7)</td><td>($9)</td><td>($7)</td><td>($12)</td><td>($12)</td><td>($12)</td><td>($12)</td></tr><tr><td>Non-GAAP Operating Income</td><td>$8,562</td><td>$10,796</td><td>$13,857</td><td>$16,448</td><td>$2,190</td><td>$2,180</td><td>$2,245</td><td>$1,947</td><td>$2,107</td><td>$2,536</td><td>$2,997</td><td>$3,157</td><td>$3,110</td><td>$3,411</td><td>$3,581</td><td>$3,755</td></tr><tr><td>Interest Expenses</td><td>($269)</td><td>($231)</td><td>($172)</td><td>($172)</td><td>($64)</td><td>($68)</td><td>($66)</td><td>($71)</td><td>($69)</td><td>($69)</td><td>($50)</td><td>($43)</td><td>($43)</td><td>($43)</td><td>($43)</td><td>($43)</td></tr><tr><td>Interest and other Income, net</td><td>$1,251</td><td>$1,481</td><td>$300</td><td>$341</td><td>$8</td><td>$221</td><td>$396</td><td>$626</td><td>$566</td><td>$771</td><td>$72</td><td>$72</td><td>$79</td><td>$69</td><td>$73</td><td>$79</td></tr><tr><td>Others</td><td>($842)</td><td>($1,140)</td><td>$0</td><td>$0</td><td>$97</td><td>($119)</td><td>($298)</td><td>($522)</td><td>($470)</td><td>($670)</td><td>$0</td><td>$0</td><td>$0</td><td>$0</td><td>$0</td><td>$0</td></tr><tr><td>Non-GAAP Pre-tax Income</td><td>$8,702</td><td>$10,906</td><td>$13,985</td><td>$16,616</td><td>$2,231</td><td>$2,214</td><td>$2,277</td><td>$1,980</td><td>$2,134</td><td>$2,568</td><td>$3,019</td><td>$3,185</td><td>$3,145</td><td>$3,437</td><td>$3,612</td><td>$3,791</td></tr><tr><td>Provision for Income taxes</td><td>$1,095</td><td>$1,199</td><td>$1,818</td><td>$2,326</td><td>$285</td><td>$274</td><td>$288</td><td>$248</td><td>$235</td><td>$282</td><td>$332</td><td>$350</td><td>$409</td><td>$447</td><td>$469</td><td>$493</td></tr><tr><td>Non-GAAP Net Income</td><td>$7,607</td><td>$9,707</td><td>$12,167</td><td>$14,290</td><td>$1,946</td><td>$1,940</td><td>$1,989</td><td>$1,732</td><td>$1,899</td><td>$2,286</td><td>$2,687</td><td>$2,835</td><td>$2,737</td><td>$2,990</td><td>$3,142</td><td>$3,298</td></tr><tr><td colspan="17"></td></tr><tr><td>GAAP Basic Share Outstanding</td><td>803</td><td>793</td><td>777</td><td>760</td><td>814</td><td>809</td><td>798</td><td>794</td><td>793</td><td>794</td><td>794</td><td>790</td><td>785</td><td>780</td><td>775</td><td>770</td></tr><tr><td>GAAP Basic EPS</td><td>$8.72</td><td>$13.03</td><td>$15.59</td><td>$18.74</td><td>$1.46</td><td>$2.64</td><td>$2.23</td><td>$2.39</td><td>$2.55</td><td>$3.53</td><td>$3.37</td><td>$3.57</td><td>$3.47</td><td>$3.82</td><td>$4.04</td><td>$4.27</td></tr><tr><td>GAAP Diluted Share Outstanding</td><td>807</td><td>798</td><td>782</td><td>765</td><td>819</td><td>812</td><td>802</td><td>798</td><td>799</td><td>799</td><td>799</td><td>795</td><td>790</td><td>785</td><td>780</td><td>775</td></tr><tr><td>GAAP Diluted EPS</td><td>$8.67</td><td>$12.94</td><td>$15.49</td><td>$18.62</td><td>$1.45</td><td>$2.63</td><td>$2.22</td><td>$2.38</td><td>$2.54</td><td>$3.51</td><td>$3.35</td><td>$3.55</td><td>$3.45</td><td>$3.79</td><td>$4.01</td><td>$4.24</td></tr><tr><td>Non-GAAP Diluted EPS</td><td>$9.42</td><td>$12.17</td><td>$15.56</td><td>$18.69</td><td>$2.38</td><td>$2.39</td><td>$2.48</td><td>$2.17</td><td>$2.38</td><td>$2.86</td><td>$3.36</td><td>$3.57</td><td>$3.46</td><td>$3.81</td><td>$4.03</td><td>$4.26</td></tr><tr><td colspan="17">Pro-Forma Reconciliation</td></tr><tr><td>GAAP Gross Profit</td><td>$13,808</td><td>$16,553</td><td>$20,525</td><td>$23,718</td><td>$3,496</td><td>$3,485</td><td>$3,562</td><td>$3,265</td><td>$3,435</td><td>$3,947</td><td>$4,478</td><td>$4,693</td><td>$4,838</td><td>$5,023</td><td>$5,223</td><td>$5,442</td></tr><tr><td>Total adjustment</td><td>$27</td><td>$25</td><td>$4</td><td>$4</td><td>$7</td><td>$6</td><td>$7</td><td>$7</td><td>$7</td><td>$6</td><td>$6</td><td>$6</td><td>$1</td><td>$1</td><td>$1</td><td>$1</td></tr><tr><td>Non-GAAP Gross Profit</td><td>$13,835</td><td>$16,578</td><td>$20,529</td><td>$23,722</td><td>$3,503</td><td>$3,491</td><td>$3,569</td><td>$3,272</td><td>$3,442</td><td>$3,953</td><td>$4,484</td><td>$4,699</td><td>$4.839</td><td>$5,024</td><td>$5,224</td><td>$5,443</td></tr><tr><td colspan="17"></td></tr><tr><td>GAAP Operating expenses</td><td>$5,519</td><td>$6,072</td><td>$6,721</td><td>$7,322</td><td>$1,321</td><td>$1,316</td><td>$1,329</td><td>$1,553</td><td>$1,604</td><td>$1,424</td><td>$1,495</td><td>$1,549</td><td>$1,741</td><td>$1,625</td><td>$1,655</td><td>$1,699</td></tr><tr><td>Total adjustment</td><td>($246)</td><td>($290)</td><td>($48)</td><td>($48)</td><td>($8)</td><td>($5)</td><td>($5)</td><td>($228)</td><td>($269)</td><td>($7)</td><td>($7)</td><td>($7)</td><td>($12)</td><td>($12)</td><td>($12)</td><td>($12)</td></tr><tr><td>Non-GAAP Operating expenses</td><td>$5,273</td><td>$5,780</td><td>$6,673</td><td>$7,274</td><td>$1,313</td><td>$1,311</td><td>$1,324</td><td>$1,325</td><td>$1,335</td><td>$1,417</td><td>$1,486</td><td>$1,542</td><td>$1,729</td><td>$1,613</td><td>1,643</td><td>$1,687</td></tr><tr><td colspan="17"></td></tr><tr><td>GAAP Operating Income</td><td>$8,289</td><td>$10,481</td><td>$13,805</td><td>$16,396</td><td>$2,175</td><td>$2,169</td><td>$2,233</td><td>$1,712</td><td>$1,831</td><td>$2,523</td><td>$2,984</td><td>$3,144</td><td>$3,097</td><td>$3,398</td><td>$3,568</td><td>$3,742</td></tr><tr><td>Total adjustment</td><td>$273</td><td>$315</td><td>$52</td><td>$52</td><td>$15</td><td>$11</td><td>$12</td><td>$235</td><td>$276</td><td>$13</td><td>$13</td><td>$13</td><td>$13</td><td>$13</td><td>$13</td><td>$13</td></tr><tr><td>Non-GAAP Operating Income</td><td>$8,562</td><td>$10,796</td><td>$13,857</td><td>$16,448</td><td>$2,190</td><td>$2,180</td><td>$2,245</td><td>$1,947</td><td>$2,107</td><td>$2,536</td><td>$2,997</td><td>$3,157</td><td>$3,310</td><td>$3,411</td><td>$3,581</td><td>$3,755</td></tr><tr><td colspan="17"></td></tr><tr><td>GAAP Provision for income taxes</td><td>$2,273</td><td>$1,403</td><td>$1,818</td><td>$2,326</td><td>$934</td><td>$185</td><td>$784</td><td>$370</td><td>$302</td><td>$419</td><td>$332</td><td>$350</td><td>$409</td><td>$447</td><td>$469</td><td>$493</td></tr><tr><td>Total adjustment</td><td>($1,178)</td><td>($204)</td><td>$0</td><td>$0</td><td>($649)</td><td>$89</td><td>($496)</td><td>($122)</td><td>($67)</td><td>($137)</td><td>$0</td><td>$0</td><td>$0</td><td>$0</td><td>$0</td><td>$0</td></tr><tr><td>Non-GAAP adjusted provision for income taxes</td><td>$1,095</td><td>$1,199</td><td>$1,818</td><td>$2,326</td><td>$285</td><td>$274</td><td>$288</td><td>$248</td><td>$235</td><td>$282</td><td>$332</td><td>$350</td><td>$409</td><td>$447</td><td>$469</td><td>$493</td></tr><tr><td colspan="17"></td></tr><tr><td>GAAP Pre-tax income</td><td>$9,271</td><td>$11,731</td><td>$13,933</td><td>$16,564</td><td>$2,119</td><td>$2,322</td><td>$2,563</td><td>$2,267</td><td>$2,328</td><td>$3,225</td><td>$3,006</td><td>$3,172</td><td>$3,132</td><td>$3,424</td><td>$3,599</td><td>$3,778</td></tr><tr><td>Total adjustment</td><td>($569)</td><td>($825)</td><td>$52</td><td>$52</td><td>$112</td><td>($108)</td><td>($286)</td><td>($287)</td><td>($194)</td><td>($657)</td><td>$13</td><td>$13</td><td>$13</td><td>$13</td><td>$13</td><td>$13</td></tr><tr><td>Non-GAAP Pre-tax income</td><td>$8,702</td><td>$10,906</td><td>$13,985</td><td>$16,616</td><td>$2,231</td><td>$2,214</td><td>$2,277</td><td>$1,980</td><td>$2,134</td><td>$2,568</td><td>$3,019</td><td>$3,185</td><td>$3,145</td><td>$3,457</td><td>$3,612</td><td>$3,791</td></tr><tr><td colspan="17"></td></tr><tr><td>GAAP Net Income</td><td>$6,998</td><td>$10,328</td><td>$12,115</td><td>$14,238</td><td>$1,185</td><td>$2,137</td><td>$1,779</td><td>$1,897</td><td>$2,026</td><td>$2,806</td><td>$2,674</td><td>$2,822</td><td>$2,724</td><td>$2,977</td><td>$3,129</td><td>$3,285</td></tr><tr><td>Total adjustment</td><td>$609</td><td>($621)</td><td>$52</td><td>$52</td><td>$761</td><td>($197)</td><td>$210</td><td>($165)</td><td>($127)</td><td>($520)</td><td>$13</td><td>$13</td><td>$13</td><td>$13</td><td>$13</td><td>$13</td></tr><tr><td>Non-GAAP Net Income</td><td>$7,607</td><td>$9,707</td><td>$12,167</td><td>$14,290</td><td>$1,946</td><td>$1,940</td><td>$1,989</td><td>$1,732</td><td>$1,899</td><td>$2,286</td><td>$2,687</td><td>$2,835</td><td>$2,377</td><td>$2,990</td><td>$3,142</td><td>$3,298</td></tr><tr><td colspan="17"></td></tr><tr><td colspan="17">Growth and Margins</td></tr><tr><td>QoQ Revenue Growth</td><td></td><td></td><td></td><td></td><td>1.7%</td><td>(0.9%)</td><td>2.8%</td><td>(6.9%)</td><td>3.1%</td><td>12.8%</td><td>13.2%</td><td>4.6%</td><td>2.8%</td><td>3.6%</td><td>3.8%</td><td>4.0%</td></tr><tr><td>YoY Revenue Growth</td><td>4.4%</td><td>17.1%</td><td>22.4%</td><td>14.6%</td><td>6.8%</td><td>6.8%</td><td>7.7%</td><td>(3.5%)</td><td>(2.1%)</td><td>11.4%</td><td>22.6%</td><td>37.6%</td><td>37.2%</td><td>26.0%</td><td>15.6%</td><td>14.9%</td></tr><tr><td>Non-GAAP Gross Margin</td><td>48.8%</td><td>49.9%</td><td>50.5%</td><td>50.9%</td><td>48.9%</td><td>49.2%</td><td>48.9%</td><td>48.1%</td><td>49.1%</td><td>50.0%</td><td>50.1%</td><td>50.2%</td><td>50.3%</td><td>50.4%</td><td>50.5%</td><td>50.6%</td></tr><tr><td>R&amp;D as % of Sales</td><td>12.6%</td><td>12.6%</td><td>12.1%</td><td>11.5%</td><td>12.0%</td><td>12.6%</td><td>12.3%</td><td>13.5%</td><td>13.2%</td><td>13.0%</td><td>12.3%</td><td>12.3%</td><td>13.4%</td><td>12.0%</td><td>11.7%</td><td>11.5%</td></tr><tr><td>Marketing as % of Sales</td><td>3.0%</td><td>2.8%</td><td>2.6%</td><td>2.5%</td><td>2.9%</td><td>3.0%</td><td>3.1%</td><td>3.1%</td><td>3.2%</td><td>2.9%</td><td>2.6%</td><td>2.5%</td><td>2.8%</td><td>2.5%</td><td>2.5%</td><td>2.5%</td></tr><tr><td>G&amp;A as % of Sales</td><td>3.2%</td><td>2.1%</td><td>1.8%</td><td>1.7%</td><td>3.6%</td><td>2.9%</td><td>2.8%</td><td>3.6%</td><td>2.7%</td><td>2.1%</td><td>1.8%</td><td>1.8%</td><td>2.0%</td><td>1.8%</td><td>1.8%</td><td>1.8%</td></tr><tr><td>Non-GAAP Opex as % of Sales</td><td>18.6%</td><td>17.4%</td><td>16.4%</td><td>15.6%</td><td>18.3%</td><td>18.5%</td><td>18.1%</td><td>19.5%</td><td>19.0%</td><td>17.9%</td><td>16.6%</td><td>16.5%</td><td>18.0%</td><td>16.2%</td><td>15.9%</td><td>15.7%</td></tr><tr><td>Opex YoY Growth</td><td>6.1%</td><td>8.8%</td><td>15.7%</td><td>8.9%</td><td>6.7%</td><td>6.3%</td><td>5.2%</td><td>3.9%</td><td>1.7%</td><td>8.1%</td><td>12.2%</td><td>16.4%</td><td>29.5%</td><td>13.8%</td><td>10.6%</td><td>9.4%</td></tr><tr><td>PF Operating Margin</td><td>30.2%</td><td>32.5%</td><td>34.1%</td><td>35.3%</td><td>30.6%</td><td>30.7%</td><td>30.7%</td><td>28.6%</td><td>30.0%</td><td>32.1%</td><td>33.5%</td><td>33.7%</td><td>32.3%</td><td>34.2%</td><td>34.6%</td><td>34.9%</td></tr><tr><td>Tax Rate</td><td>12.6%</td><td>11.0%</td><td>13.0%</td><td>14.0%</td><td>12.8%</td><td>12.4%</td><td>12.6%</td><td>12.5%</td><td>11.0%</td><td>11.0%</td><td>11.0%</td><td>11.0%</td><td>13.0%</td><td>13.0%</td><td>13.0%</td><td>13.0%</td></tr><tr><td>Net Margin</td><td>26.8%</td><td>29.2%</td><td>29.9%</td><td>30.6%</td><td>27.2%</td><td>27.3%</td><td>27.2%</td><td>25.5%</td><td>27.1%</td><td>28.9%</td><td>30.0%</td><td>30.3%</td><td>28.4%</td><td>30.0%</td><td>30.4%</td><td>30.7%</td></tr></table>
+
+Source: Company reports, Bernstein estimates and analysis
+
+EXHIBIT 24: Bernstein AMAT Balance Sheet and Cash Flow Statement 
+
+<table><tr><td>BALANCE SHEETFiscal Period</td><td>2025</td><td>2026E</td><td>2027E</td><td>2028E</td><td>Q125</td><td>Q225</td><td>Q325</td><td>Q425</td><td>Q126</td><td>Q226</td><td>Q326E</td><td>Q426E</td><td>Q127E</td><td>Q227E</td><td>Q327E</td><td>Q427E</td></tr><tr><td colspan="17">Assets</td></tr><tr><td colspan="17">Current Assets:</td></tr><tr><td>Cash and cash equivalents</td><td>$7,241.0</td><td>$7,077.0</td><td>$7,558.1</td><td>$8,879.0</td><td>$6,264.0</td><td>$6,169.0</td><td>$5,384.0</td><td>$7,241.0</td><td>$7,218.0</td><td>$6,301.0</td><td>$6,255.0</td><td>$7,077.0</td><td>$5,924.7</td><td>$6,450.2</td><td>$7,072.4</td><td>$7,558.1</td></tr><tr><td>Short-term investments</td><td>$1,332.0</td><td>$1,940.0</td><td>$1,940.0</td><td>$1,940.0</td><td>$1,949.0</td><td>$578.0</td><td>$1,630.0</td><td>$1,332.0</td><td>$1,293.0</td><td>$1,940.0</td><td>$1,940.0</td><td>$1,940.0</td><td>$1,940.0</td><td>$1,940.0</td><td>$1,940.0</td><td>$1,940.0</td></tr><tr><td>Accounts receivable, net</td><td>$5,185.0</td><td>$6,372.0</td><td>$6,372.0</td><td>$6,372.0</td><td>$5,998.0</td><td>$6,187.0</td><td>$5,772.0</td><td>$5,185.0</td><td>$4,977.0</td><td>$6,372.0</td><td>$6,372.0</td><td>$6,372.0</td><td>$6,372.0</td><td>$6,372.0</td><td>$6,372.0</td><td>$6,372.0</td></tr><tr><td>Inventories</td><td>$5,915.0</td><td>$7,171.2</td><td>$7,590.7</td><td>$8,211.3</td><td>$5,501.0</td><td>$5,656.0</td><td>$5,807.0</td><td>$5,915.0</td><td>$5,997.0</td><td>$6,343.0</td><td>$7,116.7</td><td>$7,171.2</td><td>$7,355.4</td><td>$7,334.2</td><td>$7,315.5</td><td>$7,590.7</td></tr><tr><td>Other current assets</td><td>$1,208.0</td><td>$1,615.0</td><td>$1,615.0</td><td>$1,615.0</td><td>$982.0</td><td>$1,118.0</td><td>$1,125.0</td><td>$1,208.0</td><td>$1,564.0</td><td>$1,615.0</td><td>$1,615.0</td><td>$1,615.0</td><td>$1,615.0</td><td>$1,615.0</td><td>$1,615.0</td><td>$1,615.0</td></tr><tr><td>Total current assets</td><td>$20,881.0</td><td>$24,175.1</td><td>$25,075.8</td><td>$27,017.3</td><td>$20,694.0</td><td>$19,708.0</td><td>$19,718.0</td><td>$20,881.0</td><td>$21,049.0</td><td>$22,571.0</td><td>$23,298.8</td><td>$24,175.1</td><td>$23,207.1</td><td>$23,711.4</td><td>$24,314.9</td><td>$25,075.8</td></tr><tr><td>Long-term investments</td><td>$4,327.0</td><td>$5,142.0</td><td>$5,142.0</td><td>$5,142.0</td><td>$2,686.0</td><td>$3,638.0</td><td>$4,133.0</td><td>$4,327.0</td><td>$4,968.0</td><td>$5,142.0</td><td>$5,142.0</td><td>$5,142.0</td><td>$5,142.0</td><td>$5,142.0</td><td>$5,142.0</td><td>$5,142.0</td></tr><tr><td>PP&amp;E, net</td><td>$4,610.0</td><td>$5,899.9</td><td>$7,293.3</td><td>$8,839.5</td><td>$3,563.0</td><td>$3,832.0</td><td>$4,124.0</td><td>$4,610.0</td><td>$4,949.0</td><td>$5,255.0</td><td>$5,571.2</td><td>$5,899.9</td><td>$6,233.4</td><td>$6,575.9</td><td>$6,928.8</td><td>$7,293.3</td></tr><tr><td>Goodwill</td><td>$3,707.0</td><td>$3,824.0</td><td>$3,824.0</td><td>$3,824.0</td><td>$3,768.0</td><td>$3,748.0</td><td>$3,748.0</td><td>$3,707.0</td><td>$3,707.0</td><td>$3,824.0</td><td>$3,824.0</td><td>$3,824.0</td><td>$3,824.0</td><td>$3,824.0</td><td>$3,824.0</td><td>$3,824.0</td></tr><tr><td>Purchased technology and other intangible assets, net</td><td>$226.0</td><td>$310.0</td><td>$270.0</td><td>$230.0</td><td>$237.0</td><td>$249.0</td><td>$238.0</td><td>$226.0</td><td>$215.0</td><td>$330.0</td><td>$320.0</td><td>$310.0</td><td>$300.0</td><td>$290.0</td><td>$280.0</td><td>$270.0</td></tr><tr><td>Deferred income taxes and other assets</td><td>$2,548.0</td><td>$3,164.0</td><td>$3,164.0</td><td>$3,164.0</td><td>$2,390.0</td><td>$2,457.0</td><td>$2,250.0</td><td>$2,548.0</td><td>$2,756.0</td><td>$3,164.0</td><td>$3,164.0</td><td>$3,164.0</td><td>$3,164.0</td><td>$3,164.0</td><td>$3,164.0</td><td>$3,164.0</td></tr><tr><td>Total assets</td><td>$36,299.0</td><td>$42,515.0</td><td>$44,769.1</td><td>$48,216.8</td><td>$33,338.0</td><td>$33,632.0</td><td>$34,211.0</td><td>$36,299.0</td><td>$37,644.0</td><td>$40,286.0</td><td>$41,319.9</td><td>$42,515.0</td><td>$41,870.5</td><td>$42,707.3</td><td>$43,653.7</td><td>$44,769.1</td></tr><tr><td colspan="17">Liabilities and Stockholders&#x27; Equity</td></tr><tr><td colspan="17">Current liabilities:</td></tr><tr><td>Short-term debt</td><td>$100.0</td><td>$1,199.0</td><td>$0.0</td><td>$0.0</td><td>$799.0</td><td>$799.0</td><td>$799.0</td><td>$100.0</td><td>$100.0</td><td>$1,199.0</td><td>$1,199.0</td><td>$1,199.0</td><td>$0.0</td><td>$0.0</td><td>$0.0</td><td>$0.0</td></tr><tr><td>Accounts payable, notes payable and accrued expenses</td><td>$5,333.0</td><td>$5,229.0</td><td>$5,229.0</td><td>$5,229.0</td><td>$4,485.0</td><td>$4,706.0</td><td>$4,614.0</td><td>$5,333.0</td><td>$5,181.0</td><td>$5,229.0</td><td>$5,229.0</td><td>$5,229.0</td><td>$5,229.0</td><td>$5,229.0</td><td>$5,229.0</td><td>$5,229.0</td></tr><tr><td>Contract Liabilities</td><td>$2,566.0</td><td>$2,808.0</td><td>$3,226.8</td><td>$3,659.9</td><td>$2,452.0</td><td>$2,491.0</td><td>$2,470.0</td><td>$2,566.0</td><td>$2,472.0</td><td>$2,570.0</td><td>$2,685.2</td><td>$2,808.0</td><td>$2,885.9</td><td>$2,990.2</td><td>$3,103.6</td><td>$3,226.8</td></tr><tr><td>Total current liabilities</td><td>$7,999.0</td><td>$9,236.0</td><td>$8,455.8</td><td>$8,888.9</td><td>$7,736.0</td><td>$7,996.0</td><td>$7,883.0</td><td>$7,999.0</td><td>$7,753.0</td><td>$8,998.0</td><td>$9,113.2</td><td>$9,236.0</td><td>$8,114.9</td><td>$8,219.2</td><td>$8,332.6</td><td>$8,455.8</td></tr><tr><td>Long-term debt</td><td>$6,455.0</td><td>$5,253.0</td><td>$5,253.0</td><td>$5,253.0</td><td>$5,461.0</td><td>$5,462.0</td><td>$5,463.0</td><td>$6,455.0</td><td>$6,453.0</td><td>$5,256.0</td><td>$5,253.0</td><td>$5,253.0</td><td>$5,253.0</td><td>$5,253.0</td><td>$5,253.0</td><td>$5,253.0</td></tr><tr><td>Other liabilities + Income Taxes Payable</td><td>$1,430.0</td><td>$2,123.0</td><td>$2,123.0</td><td>$2,123.0</td><td>$1,516.0</td><td>$1,213.0</td><td>$1,361.0</td><td>$1,430.0</td><td>$1,721.0</td><td>$2,123.0</td><td>$2,123.0</td><td>$2,123.0</td><td>$2,123.0</td><td>$2,123.0</td><td>$2,123.0</td><td>$2,123.0</td></tr><tr><td>Total liabilities</td><td>$15,884.0</td><td>$16,612.0</td><td>$15,831.8</td><td>$16,264.9</td><td>$14,713.0</td><td>$14,671.0</td><td>$14,707.0</td><td>$15,884.0</td><td>$15,927.0</td><td>$16,377.0</td><td>$16,489.2</td><td>$16,612.0</td><td>$15,490.9</td><td>$15,595.2</td><td>$15,708.6</td><td>$15,831.8</td></tr><tr><td>Total stockholders&#x27; equity</td><td>$20,415.0</td><td>$25,903.0</td><td>$28,937.3</td><td>$31,951.9</td><td>$18,625.0</td><td>$18,961.0</td><td>$19,504.0</td><td>$20,415.0</td><td>$21,717.0</td><td>$23,909.0</td><td>$24,830.8</td><td>$25,903.0</td><td>$26,379.6</td><td>$27,112.1</td><td>$27,945.1</td><td>$28,937.3</td></tr><tr><td>Total liabilities and stockholders&#x27; equity</td><td>$36,299.0</td><td>$42,515.0</td><td>$44,769.1</td><td>$48,216.8</td><td>$33,338.0</td><td>$33,632.0</td><td>$34,211.0</td><td>$36,299.0</td><td>$37,644.0</td><td>$40,286. 0</td><td>$41,319.9</td><td>$42,515.0</td><td>$41,870.5</td><td>$42,707.3</td><td>$43,653.7</td><td>$44,769.1</td></tr><tr><td colspan="17"></td></tr><tr><td colspan="17">CASH FLOW STATEMENT</td></tr><tr><td>Fiscal Period</td><td>2025</td><td>2026E</td><td>2027E</td><td>2028E</td><td>Q125</td><td>Q225</td><td>Q325</td><td>Q425</td><td>Q126</td><td>Q226</td><td>Q326E</td><td>Q426E</td><td>Q127E</td><td>Q227E</td><td>Q327E</td><td>Q427E</td></tr><tr><td colspan="17">Cash flows from operating activities:</td></tr><tr><td>Net income</td><td>$6,998.0</td><td>$10,327.5</td><td>$12,114.7</td><td>$14,238.2</td><td>$1,185.0</td><td>$2,137.0</td><td>$1,779.0</td><td>$1,897.0</td><td>$2,026.0</td><td>$2,806.0</td><td>$2,673.6</td><td>$2,822.0</td><td>$2,723.6</td><td>$2,976.9</td><td>$3,129.0</td><td>$3,285.2</td></tr><tr><td>Depreciation and amortization</td><td>$435.0</td><td>$552.7</td><td>$680.9</td><td>$826.2</td><td>$105.0</td><td>$103.0</td><td>$113.0</td><td>$114.0</td><td>$127.0</td><td>$135.0</td><td>$141.4</td><td>$149.3</td><td>$157.5</td><td>$165.8</td><td>$174.4</td><td>$183.2</td></tr><tr><td>Share-based compensation</td><td>$668.0</td><td>$714.0</td><td>$676.0</td><td>$676.0</td><td>$195.0</td><td>$159.0</td><td>$158.0</td><td>$156.0</td><td>$207.0</td><td>$169.0</td><td>$169.0</td><td>$169.0</td><td>$169.0</td><td>$169.0</td><td>$169.0</td><td>$169.0</td></tr><tr><td>Excess tax benefits from share-based compensation</td><td>$0.0</td><td>$0.0</td><td>$0.0</td><td>$0.0</td><td>$0.0</td><td>$0.0</td><td>$0.0</td><td>$0.0</td><td>$0.0</td><td>$0.0</td><td>$0.0</td><td>$0.0</td><td>$0.0</td><td>$0.0</td><td>$0.0</td><td>$0.0</td></tr><tr><td>Deferred income taxes</td><td>$639.0</td><td>$74.0</td><td>$0.0</td><td>$0.0</td><td>$668.0</td><td>$4.0</td><td>$280.0</td><td>($313.0)</td><td>($78.0)</td><td>$152.0</td><td>$0.0</td><td>$0.0</td><td>$0.0</td><td>$0.0</td><td>$0.0</td><td>$0.0</td></tr><tr><td>Other</td><td>($582.0)</td><td>($869.0)</td><td>$0.0</td><td>$0.0</td><td>$95.0</td><td>($109.0)</td><td>($284.0)</td><td>($284.0)</td><td>($202.0)</td><td>($667.0)</td><td>$0.0</td><td>$0.0</td><td>$0.0</td><td>$0.0</td><td>$0.0</td><td>$0.0</td></tr><tr><td>Net change in operating assets and liabilities</td><td>($200.0)</td><td>($2,734.2)</td><td>($0.7)</td><td>($187.5)</td><td>($1,323.0)</td><td>($723.0)</td><td>$588.0</td><td>$1,258.0</td><td>($394.0)</td><td>($1,750.0)</td><td>($658.5)</td><td>$68.4</td><td>($106.3)</td><td>$125.5</td><td>$132.0</td><td>($151.9)</td></tr><tr><td>Cash provided by operating activities</td><td>$7,958.0</td><td>$8,065.0</td><td>$13,471.0</td><td>$15,552.8</td><td>$925.0</td><td>$1,571.0</td><td>$2,634.0</td><td>$2,828.0</td><td>$1,686.0</td><td>$845.0</td><td>$2,325.4</td><td>$3,208.6</td><td>$2,943.8</td><td>$3,437.2</td><td>$3,604.5</td><td>$3,485.5</td></tr><tr><td colspan="17"></td></tr><tr><td colspan="17">Cash flows from investing activities:</td></tr><tr><td>Capital expenditures</td><td>($2,260.0)</td><td>($2,196.5)</td><td>($2,034.4)</td><td>($2,332.3)</td><td>($381.0)</td><td>($510.0)</td><td>($584.0)</td><td>($785.0)</td><td>($646.0)</td><td>($635.0)</td><td>($447.5)</td><td>($468.0)</td><td>($481.0)</td><td>($498.4)</td><td>($517.3)</td><td>($537.8)</td></tr><tr><td>Cash paid for acquisitions</td><td>($29.0)</td><td>($175.0)</td><td>$0.0</td><td>$0.0</td><td>($28.0)</td><td>($1.0)</td><td>$0.0</td><td>$0.0</td><td>$0.0</td><td>($175.0)</td><td>$0.0</td><td>$0.0</td><td>$0.0</td><td>$0.0</td><td>$0.0</td><td>$0.0</td></tr><tr><td>Proceeds from sale of facility</td><td>$33.0</td><td>$6.0</td><td>$0.0</td><td>$0.0</td><td>$0.0</td><td>$33.0</td><td>$0.0</td><td>$0.0</td><td>$0.0</td><td>$6.0</td><td>$0.0</td><td>$0.0</td><td>$0.0</td><td>$0.0</td><td>$0.0</td><td>$0.0</td></tr><tr><td>Proceeds from sales and maturities of investments</td><td>$5,528.0</td><td>$3,234.0</td><td>$0.0</td><td>$0.0</td><td>$1,223.0</td><td>$1,921.0</td><td>$793.0</td><td>$1,591.0</td><td>$1,143.0</td><td>$2,091.0</td><td>$0.0</td><td>$0.0</td><td>$0.0</td><td>$0.0</td><td>$0.0</td><td>$0.0</td></tr><tr><td>Purchases of investments</td><td>($6,054.0)</td><td>($3,523.0)</td><td>$0.0</td><td>$0.0</td><td>($1,711.0)</td><td>($1,222.0)</td><td>($2,176.0)</td><td>($945.0)</td><td>($1,277.0)</td><td>($2,246.0)</td><td>$0.0</td><td>$0.0</td><td>$0.0</td><td>$0.0</td><td>$0.0</td><td>$0.0</td></tr><tr><td>Cash used in investing activities</td><td>($2,782.0)</td><td>($2,654.5)</td><td>($2,034.4)</td><td>($2,332.3)</td><td>($897.0)</td><td>$221.0</td><td>($1,967.0)</td><td>($139.0)</td><td>($780.0)</td><td>($959.0)</td><td>($447.5)</td><td>($468.0)</td><td>($481.0)</td><td>($498.4)</td><td>($517.3)</td><td>($537.8)</td></tr><tr><td colspan="17"></td></tr><tr><td colspan="17">Cash flows from financing activities:</td></tr><tr><td>Net Change in Debt</td><td>$292.0</td><td>($103.0)</td><td>($1,199.0)</td><td>$0.0</td><td>$0.0</td><td>$0.0</td><td>$0.0</td><td>$292.0</td><td>$0.0</td><td>($100.0)</td><td>($3.0)</td><td>$0.0</td><td>($1,199.0)</td><td>$0.0</td><td>$0.0</td><td>$0.0</td></tr><tr><td>Proceeds from common stock issuances</td><td>$261.0</td><td>$131.0</td><td>$0.0</td><td>$0.0</td><td>$0.0</td><td>$129.0</td><td>$0.0</td><td>$132.0</td><td>$0.0</td><td>$131.0</td><td>$0.0</td><td>$0.0</td><td>$0.0</td><td>$0.0</td><td>$0.0</td><td>$0.0</td></tr><tr><td>Common stock repurchases</td><td>($4,895.0)</td><td>($3,737.0)</td><td>($8,000.0)</td><td>($10,000.0)</td><td>($1,318.0)</td><td>($1,670.0)</td><td>($1,056.0)</td><td>($851.0)</td><td>($337.0)</td><td>($400.0)</td><td>($1,500.0)</td><td>($1,500.0)</td><td>($2,000.0)</td><td>($2,000.0)</td><td>($2,000.0)</td><td>($2,000.0)</td></tr><tr><td>Excess tax benefits from share-based compensation</td><td>($248.0)</td><td>($309.0)</td><td>$0.0</td><td>$0.0</td><td>($142.0)</td><td>($35.0)</td><td>($33.0)</td><td>($38.0)</td><td>($229.0)</td><td>($80.0)</td><td>$0.0</td><td>$0.0</td><td>$0.0</td><td>$0.0</td><td>$0.0</td><td>$0.0</td></tr><tr><td>Dividends</td><td>($1,384.0)</td><td>($1,569.5)</td><td>($1,756.5)</td><td>($1,899.6)</td><td>($326.0)</td><td>($325.0)</td><td>($368.0)</td><td>($365.0)</td><td>($365.0)</td><td>($365.0)</td><td>($420.8)</td><td>($418.7)</td><td>($416.1)</td><td>($413.4)</td><td>($465.0)</td><td>($462.0)</td></tr><tr><td>Other</td><td>($3.0)</td><td>$0.0</td><td>$0.0</td><td>$0.0</td><td>$0.0</td><td>($2.0)</td><td>$0.0</td><td>($1.0)</td><td>$0.0</td><td>$0.0</td><td>$0.0</td><td>$0.0</td><td>$0.0</td><td>$0.0</td><td>$0.0</td><td>$0.0</td></tr><tr><td>Cash used in financing activities</td><td>($5,977.0)</td><td>($5,587.5)</td><td>($10,955.5)</td><td>($11,899.6)</td><td>($1,786.0)</td><td>($1,903.0)</td><td>($1,457.0)</td><td>($831.0)</td><td>($931.0)</td><td>($814.0)</td><td>($1,923.8)</td><td>($1,918.7)</td><td>($3,615.1)</td><td>($2,4</td><td></td><td></td></tr></table>
+
+Source: Company reports, Bernstein estimates and analysis
+
+EXHIBIT 25: Bernstein LRCX Income Statement 
+
+<table><tr><td colspan="5">INCOME STATEMENT</td><td rowspan="13"></td><td colspan="4"></td><td colspan="8"></td></tr><tr><td>Fiscal Period</td><td>2025</td><td>2026E</td><td>2027E</td><td>2028E</td><td>Q125</td><td>Q225</td><td>Q325</td><td>Q425</td><td>Q126</td><td>Q226</td><td>Q326</td><td>Q426E</td><td>Q127E</td><td>Q227E</td><td>Q327E</td><td>Q427E</td></tr><tr><td>Non-GAAP Revenue</td><td>$18,436</td><td>$23,123</td><td>$30,205</td><td>$32,515</td><td>$4,168</td><td>$4,376</td><td>$4,720</td><td>$5,171</td><td>$5,324</td><td>$5,345</td><td>$5,841</td><td>$6,613</td><td>$7,029</td><td>$7,604</td><td>$7,720</td><td>$7,853</td></tr><tr><td>Non-GAAP COGS</td><td>$9,436</td><td>$11,519</td><td>$14,874</td><td>$15,848</td><td>$2,159</td><td>$2,299</td><td>$2,408</td><td>$2,570</td><td>$2,631</td><td>$2,687</td><td>$2,928</td><td>$3,273</td><td>$3,479</td><td>$3,764</td><td>$3,783</td><td>$3,848</td></tr><tr><td>Non-GAAP Gross Profit</td><td>$9,000</td><td>$11,605</td><td>$15,332</td><td>$16,667</td><td>$2,009</td><td>$2,077</td><td>$2,312</td><td>$2,601</td><td>$2,694</td><td>$2,658</td><td>$2,913</td><td>$3,340</td><td>$3,550</td><td>$3,840</td><td>$3,937</td><td>$4,005</td></tr><tr><td>Non-GAAP Operating Expenses</td><td>$3,042</td><td>$3,451</td><td>$4,004</td><td>$4,181</td><td>$722</td><td>$735</td><td>$763</td><td>$822</td><td>$832</td><td>$827</td><td>$866</td><td>$926</td><td>$975</td><td>$1,000</td><td>$1,016</td><td>$1,013</td></tr><tr><td>Non-GAAP R&amp;D</td><td>$2,078</td><td>$2,351</td><td>$2,758</td><td>$2,875</td><td>$487</td><td>$493</td><td>$533</td><td>$565</td><td>$566</td><td>$565</td><td>$585</td><td>$635</td><td>$666</td><td>$693</td><td>$704</td><td>$695</td></tr><tr><td>Non-GAAP SG&amp;A</td><td>$965</td><td>$1,100</td><td>$1,245</td><td>$1,306</td><td>$235</td><td>$242</td><td>$230</td><td>$258</td><td>$266</td><td>$262</td><td>$281</td><td>$291</td><td>$308</td><td>$307</td><td>$312</td><td>$318</td></tr><tr><td>Non-GAAP Operating Income</td><td>$5,957</td><td>$8,153</td><td>$11,328</td><td>$12,486</td><td>$1,287</td><td>$1,343</td><td>$1,549</td><td>$1,779</td><td>$1,862</td><td>$1,831</td><td>$2,047</td><td>$2,414</td><td>$2,575</td><td>$2,840</td><td>$2,921</td><td>$2,992</td></tr><tr><td>Non-GAAP Other expense, net</td><td>$21</td><td>$13</td><td>$85</td><td>$188</td><td>$13</td><td>$11</td><td>($7)</td><td>$4</td><td>$8</td><td>$10</td><td>($8)</td><td>$2</td><td>$15</td><td>$17</td><td>$22</td><td>$31</td></tr><tr><td>Non-GAAP Pre-tax Income</td><td>$5,978</td><td>$8,166</td><td>$11,413</td><td>$12,674</td><td>$1,300</td><td>$1,353</td><td>$1,542</td><td>$1,783</td><td>$1,869</td><td>$1,841</td><td>$2,039</td><td>$2,416</td><td>$2,589</td><td>$2,857</td><td>$2,943</td><td>$3,023</td></tr><tr><td>Non-GAAP Provision for Income taxes</td><td>($648)</td><td>($1,010)</td><td>($1,484)</td><td>($1,648)</td><td>($179)</td><td>($178)</td><td>($206)</td><td>($85)</td><td>($265)</td><td>($244)</td><td>($188)</td><td>($314)</td><td>($337)</td><td>($371)</td><td>($383)</td><td>($393)</td></tr><tr><td>Non-GAAP Net Income</td><td>$5,330</td><td>$7,155</td><td>$9,929</td><td>$11,026</td><td>$1,122</td><td>$1,175</td><td>$1,336</td><td>$1,698</td><td>$1,605</td><td>$1,598</td><td>$1,851</td><td>$2,102</td><td>$2,253</td><td>$2,486</td><td>$2,560</td><td>$2,630</td></tr><tr><td colspan="5"></td><td rowspan="7"></td><td colspan="4"></td><td colspan="8"></td></tr><tr><td>GAAP Basic Share Outstanding</td><td>1,285</td><td>1,253</td><td>1,237</td><td>1,219</td><td>1,299</td><td>1,287</td><td>1,284</td><td>1,274</td><td>1,264</td><td>1,255</td><td>1,250</td><td>1,247</td><td>1,243</td><td>1,239</td><td>1,235</td><td>1,231</td></tr><tr><td>GAAP Basic EPS</td><td>$4.17</td><td>$5.65</td><td>$8.01</td><td>$9.04</td><td>$0.86</td><td>$0.93</td><td>$1.04</td><td>$1.35</td><td>$1.24</td><td>$1.27</td><td>$1.46</td><td>$1.68</td><td>$1.81</td><td>$2.00</td><td>$2.07</td><td>$2.13</td></tr><tr><td>GAAP Diluted Share Outstanding</td><td>1,289</td><td>1,260</td><td>1,245</td><td>1,226</td><td>1,304</td><td>1,291</td><td>1,288</td><td>1,277</td><td>1,269</td><td>1,262</td><td>1,257</td><td>1,255</td><td>1,251</td><td>1,247</td><td>1,243</td><td>1,239</td></tr><tr><td>GAAP Diluted EPS</td><td>$4.16</td><td>$5.62</td><td>$7.97</td><td>$8.98</td><td>$0.86</td><td>$0.92</td><td>$1.03</td><td>$1.35</td><td>$1.24</td><td>$1.26</td><td>$1.45</td><td>$1.67</td><td>$1.80</td><td>$1.99</td><td>$2.06</td><td>$2.12</td></tr><tr><td>Non-GAAP Diluted Share Outstanding</td><td>1,289</td><td>1,260</td><td>1,245</td><td>1,226</td><td>1,304</td><td>1,291</td><td>1,288</td><td>1,277</td><td>1,269</td><td>1,262</td><td>1,257</td><td>1,255</td><td>1,251</td><td>1,247</td><td>1,243</td><td>1,243</td></tr><tr><td>Non-GAAP Diluted EPS</td><td>$4.14</td><td>$5.68</td><td>$7.98</td><td>$8.99</td><td>$0.86</td><td>$0.91</td><td>$1.04</td><td>$1.33</td><td>$1.26</td><td>$1.27</td><td>$1.47</td><td>$1.67</td><td>$1.80</td><td>$1.99</td><td>$2.06</td><td>$2.12</td></tr><tr><td colspan="5"></td><td></td><td colspan="4"></td><td colspan="8"></td></tr><tr><td colspan="5">Pro-Forma Reconciliation</td><td rowspan="5"></td><td colspan="4"></td><td colspan="8"></td></tr><tr><td>GAAP Revenue</td><td>$18,436</td><td>$23,123</td><td>$30,205</td><td>$32,515</td><td>$4,168</td><td>$4,376</td><td>$4,720</td><td>$5,171</td><td>$5,324</td><td>$5,345</td><td>$5,841</td><td>$6,613</td><td>$7,029</td><td>$ 7,604</td><td>$7,720</td><td>$7,853</td></tr><tr><td>GAAP Gross Profit</td><td>$8,979</td><td>$11,583</td><td>$15,321</td><td>$16,656</td><td>$2,003</td><td>$2,073</td><td>$2,314</td><td>$2,590</td><td>$2,685</td><td>$2,651</td><td>$2,911</td><td>$3,337</td><td>$3,547</td><td>$3,837</td><td>$3,934</td><td>$4,002</td></tr><tr><td>GAAP Operating Income</td><td>$5,901</td><td>$8,097</td><td>$11,316</td><td>$12,474</td><td>$1,264</td><td>$1,334</td><td>$1,562</td><td>$1,741</td><td>$1,829</td><td>$1,810</td><td>$2,047</td><td>$2,411</td><td>$2,572</td><td>$2,837</td><td>$2,918</td><td>$2,989</td></tr><tr><td>GAAP Net Income</td><td>$5,358</td><td>$7,086</td><td>$9,915</td><td>$11,011</td><td>$1,116</td><td>$1,191</td><td>$1,331</td><td>$1,720</td><td>$1,569</td><td>$1,594</td><td>$1,825</td><td>$2,098</td><td>$2,249</td><td>$2,482</td><td>$2,557</td><td>$2,627</td></tr><tr><td colspan="5"></td><td></td><td colspan="4"></td><td colspan="8"></td></tr><tr><td colspan="5">Margins and Growth Rates</td><td rowspan="8"></td><td colspan="4"></td><td colspan="8"></td></tr><tr><td>PF Gross Margins</td><td>48.8%</td><td>50.2%</td><td>50.8%</td><td>51.3%</td><td>48.2%</td><td>47.5%</td><td>49.0%</td><td>50.3%</td><td>50.6%</td><td>49.7%</td><td>49.9%</td><td>50.5%</td><td>50.5%</td><td>50.5%</td><td>51.0%</td><td>51.0%</td></tr><tr><td>R&amp;D as % of Sales</td><td>11.3%</td><td>10.2%</td><td>9.1%</td><td>8.8%</td><td>11.7%</td><td>11.3%</td><td>11.3%</td><td>10.9%</td><td>10.6%</td><td>10.6%</td><td>10.0%</td><td>9.6%</td><td>9.5%</td><td>9.1%</td><td>9.1%</td><td>8.9%</td></tr><tr><td>SG&amp;A as % of Sales</td><td>5.2%</td><td>4.8%</td><td>4.1%</td><td>4.0%</td><td>5.6%</td><td>5.5%</td><td>4.9%</td><td>5.0%</td><td>5.0%</td><td>4.9%</td><td>4.8%</td><td>4.4%</td><td>4.4%</td><td>4.0%</td><td>4.0%</td><td>4.0%</td></tr><tr><td>PF Opex as % of Sales</td><td>16.5%</td><td>14.9%</td><td>13.3%</td><td>12.9%</td><td>17.3%</td><td>16.8%</td><td>16.2%</td><td>15.9%</td><td>15.6%</td><td>15.5%</td><td>14.8%</td><td>14.0%</td><td>13.9%</td><td>13.2%</td><td>13.2%</td><td>12.9%</td></tr><tr><td>PF OPM</td><td>32.3%</td><td>35.3%</td><td>37.5%</td><td>38.4%</td><td>30.9%</td><td>30.7%</td><td>32.8%</td><td>34.4%</td><td>35.0%</td><td>34.3%</td><td>35.0%</td><td>36.5%</td><td>36.6%</td><td>37.3%</td><td>37.8%</td><td>38.1%</td></tr><tr><td>Tax Rate</td><td>(10.8%)</td><td>(12.4%)</td><td>(13.0%)</td><td>(13.0%)</td><td>(13.8%)</td><td>(13.2%)</td><td>(13.3%)</td><td>(4.8%)</td><td>(14.2%)</td><td>(13.2%)</td><td>(9.2%)</td><td>(13.0%)</td><td>(13.0%)</td><td>(13.0%)</td><td>(13.0%)</td><td>(13.0%)</td></tr><tr><td>Net Margin</td><td>28.9%</td><td>30.9%</td><td>32.9%</td><td>33.9%</td><td>26.9%</td><td>26.9%</td><td>28.3%</td><td>32.8%</td><td>30.1%</td><td>29.9%</td><td>31.7%</td><td>31.8%</td><td>32.0%</td><td>32.7%</td><td>33.2%</td><td>33.5%</td></tr><tr><td colspan="5"></td><td></td><td colspan="4"></td><td colspan="8"></td></tr><tr><td colspan="5">QoQ</td><td></td><td colspan="4"></td><td colspan="8"></td></tr><tr><td>Sales</td><td></td><td></td><td></td><td></td><td></td><td>7.7%</td><td>5.0%</td><td>7.9%</td><td>9.6%</td><td>3.0%</td><td>0.4%</td><td>9.3%</td><td>13.2%</td><td>6.3%</td><td>8.2%</td><td>1.5%</td><td>1.7%</td></tr><tr><td>Gross Profit</td><td></td><td></td><td></td><td></td><td></td><td>7.1%</td><td>3.4%</td><td>11.3%</td><td>12.5%</td><td>3.6%</td><td>(1.3%)</td><td>9.6%</td><td>14.6%</td><td>6.3%</td><td>8.2%</td><td>2.5%</td><td>1.7%</td></tr><tr><td>R&amp;D</td><td></td><td></td><td></td><td></td><td></td><td>0.5%</td><td>1.1%</td><td>8.2%</td><td>5.9%</td><td>0.1%</td><td>(0.0%)</td><td>3.6%</td><td>8.4%</td><td>5.0%</td><td>4.0%</td><td>1.5%</td><td>(1.2%)</td></tr><tr><td>SGA</td><td></td><td></td><td></td><td></td><td></td><td>15.0%</td><td>3.0%</td><td>(4.8%)</td><td>11.9%</td><td>3.4%</td><td>(1.6%)</td><td>7.1%</td><td>3.6%</td><td>6.0%</td><td>(0.4%)</td><td>1.7%</td><td>1.7%</td></tr><tr><td>Operating Profit</td><td></td><td></td><td></td><td></td><td></td><td>8.4%</td><td>4.3%</td><td>15.4%</td><td>14.8%</td><td>4.7%</td><td>(1.7%)</td><td>11.8%</td><td>17.9%</td><td>6.7%</td><td>10.3%</td><td>2.9%</td><td>2.4%</td></tr><tr><td>Tax Rate</td><td></td><td></td><td></td><td></td><td></td><td>-221 bps</td><td>58 bps</td><td>-17 bps</td><td>856 bps</td><td>-938 bps</td><td>93 bps</td><td>401 bps</td><td>-378 bps</td><td>00 bps</td><td>00 bps</td><td>00 bps</td><td>00 bps</td></tr><tr><td>Net Income</td><td></td><td></td><td></td><td></td><td></td><td>5.1%</td><td>4.8%</td><td>13.7%</td><td>27.1%</td><td>(5.5%)</td><td>(0.4%)</td><td>15.9%</td><td>13.5%</td><td>7.2%</td><td>10.3%</td><td>3.0%</td><td>2.7%</td></tr><tr><td>DSO</td><td></td><td></td><td></td><td></td><td></td><td>(0.5%)</td><td>(1.0%)</td><td>(0.3%)</td><td>(0.9%)</td><td>(0.6%)</td><td>(0.6%)</td><td>(0.3%)</td><td>(0.2%)</td><td>(0.3%)</td><td>(0.3%)</td><td>(0.3%)</td><td>(0.3%)</td></tr><tr><td>EPS</td><td></td><td></td><td></td><td></td><td></td><td>5.7%</td><td>5.8%</td><td>14.0%</td><td>28.2%</td><td>(4.9%)</td><td>0.2%</td><td>16.3%</td><td>13.7%</td><td>7.5%</td><td>10.7%</td><td>3.3%</td><td>3.1%</td></tr><tr><td colspan="5"></td><td></td><td colspan="4"></td><td colspan="8"></td></tr><tr><td colspan="5">YoY</td><td rowspan="10"></td><td colspan="4"></td><td colspan="8"></td></tr><tr><td>Sales</td><td>23.7%</td><td>25.4%</td><td>30.6%</td><td>7.6%</td><td>19.7%</td><td>16.4%</td><td>24.4%</td><td>33.6%</td><td>27.7%</td><td>22.1%</td><td>23.8%</td><td>27.9%</td><td>32.0%</td><td>42.3%</td><td>32.2%</td><td>18.7%</td></tr><tr><td>Gross Profit</td><td>25.3%</td><td>28.9%</td><td>32.1%</td><td>8.7%</td><td>20.3%</td><td>16.0%</td><td>25.1%</td><td>38.6%</td><td>34.1%</td><td>28.0%</td><td>26.0%</td><td>28.4%</td><td>31.8%</td><td>44.5%</td><td>35.2%</td><td>19.9%</td></tr><tr><td>R&amp;D</td><td>11.6%</td><td>13.2%</td><td>17.3%</td><td>4.2%</td><td>15.0%</td><td>7.5%</td><td>7.6%</td><td>16.5%</td><td>16.1%</td><td>14.8%</td><td>9.8%</td><td>12.4%</td><td>17.8%</td><td>22.6%</td><td>20.2%</td><td>9.5%</td></tr><tr><td>SGA</td><td>19.2%</td><td>14.0%</td><td>13.2%</td><td>4.9%</td><td>18.3%</td><td>18.5%</td><td>13.8%</td><td>26.1%</td><td>13.4%</td><td>8.3%</td><td>21.9%</td><td>13.0%</td><td>15.8%</td><td>17.2%</td><td>11.2%</td><td>9.1%</td></tr><tr><td>Operating Profit</td><td>32.0%</td><td>36.9%</td><td>38.9%</td><td>10.2%</td><td>22.9%</td><td>19.0%</td><td>34.7%</td><td>49.8%</td><td>44.7%</td><td>36.4%</td><td>32.1%</td><td>35.7%</td><td>38.3%</td><td>55.1%</td><td>42.7%</td><td>24.0%</td></tr><tr><td>Tax Rate</td><td>136 bps</td><td>-154 bps</td><td>-63 bps</td><td>00 bps</td><td>-34 bps</td><td>-91 bps</td><td>-160 bps</td><td>676 bps</td><td>-41 bps</td><td>-06 bps</td><td>412 bps</td><td>-822 bps</td><td>116 bps</td><td>23 bps</td><td>-378 bps</td><td>00 bps</td></tr><tr><td>Net Income</td><td>33.3%</td><td>34.2%</td><td>38.8%</td><td>11.0%</td><td>22.9%</td><td>18.2%</td><td>30.4%</td><td>59.1%</td><td>43.1%</td><td>36.0%</td><td>38.6%</td><td>23.8%</td><td>40.4%</td><td>55.6%</td><td>38.3%</td><td>25.2%</td></tr><tr><td>DSO</td><td>(2.3%)</td><td>(2.2%)</td><td>(1.2%)</td><td>(1.5%)</td><td>(2.1%)</td><td>(2.3%)</td><td>(2.1%)</td><td>(2.6%)</td><td>(2.7%)</td><td>(2.3%)</td><td>(2.4%)</td><td>(1.7%)</td><td>(1.4%)</td><td>(1.2%)</td><td>(1.1%)</td><td>(1.3%)</td></tr><tr><td>EPS</td><td>36.5%</td><td>37.3%</td><td>40.5%</td><td>12.7%</td><td>25.5%</td><td>21.0%</td><td>33.2%</td><td>63.4%</td><td>47.0%</td><td>39.2%</td><td>42.0%</td><td>26.0%</td><td>42.4%</td><td>57.4%</td><td>39.9%</td><td>26.8%</td></tr></table>
+
+Source: Company reports, Bernstein estimates and analysis
+
+EXHIBIT 26: Bernstein LRCX Balance Sheet and Cash Flow Statement 
+
+<table><tr><td colspan="5">BALANCE SHEET</td><td rowspan="16"></td><td colspan="12"></td></tr><tr><td>Fiscal Period</td><td>2025E</td><td>2026E</td><td>2027E</td><td>2028E</td><td>Q125</td><td>Q225</td><td>Q325</td><td>Q425</td><td>Q126</td><td>Q226</td><td>Q326</td><td>Q426E</td><td>Q127E</td><td>Q227E</td><td>Q327E</td><td>Q427E</td></tr><tr><td colspan="5">Assets</td><td colspan="12"></td></tr><tr><td colspan="5">Current Assets:</td><td colspan="12"></td></tr><tr><td>Cash and cash equivalents</td><td>$6,391</td><td>$6,286</td><td>$8,978</td><td>$12,326</td><td>$6,067</td><td>$5,665</td><td>$5,451</td><td>$6,391</td><td>$6,693</td><td>$6,180</td><td>$4,751</td><td>$6,286</td><td>$6,606</td><td>$7,168</td><td>$8,324</td><td>$8,978</td></tr><tr><td>Investments</td><td>$0</td><td>$0</td><td>$0</td><td>$0</td><td>$0</td><td>$0</td><td>$0</td><td>$0</td><td>$0</td><td>$0</td><td>$0</td><td>$0</td><td>$0</td><td>$0</td><td>$0</td><td>$0</td></tr><tr><td>Accounts receivable, net</td><td>$3,378</td><td>$4,679</td><td>$5,556</td><td>$6,126</td><td>$2,937</td><td>$3,305</td><td>$3,228</td><td>$3,378</td><td>$3,633</td><td>$3,492</td><td>$4,133</td><td>$4,679</td><td>$4,973</td><td>$5,380</td><td>$5,462</td><td>$5,556</td></tr><tr><td>Inventories</td><td>$4,308</td><td>$4,419</td><td>$5,002</td><td>$5,250</td><td>$4,210</td><td>$4,358</td><td>$4,463</td><td>$4,308</td><td>$4,095</td><td>$4,038</td><td>$4,000</td><td>$4,419</td><td>$4,697</td><td>$4,968</td><td>$4,728</td><td>$5,002</td></tr><tr><td>Prepaid expenses and other current assets</td><td>$440</td><td>$473</td><td>$541</td><td>$594</td><td>$278</td><td>$284</td><td>$318</td><td>$440</td><td>$386</td><td>$308</td><td>$413</td><td>$473</td><td>$478</td><td>$509</td><td>$535</td><td>$541</td></tr><tr><td>Non-cash current assets</td><td>$8,126</td><td>$9,571</td><td>$11,099</td><td>$11,970</td><td>$7,425</td><td>$7,947</td><td>$8,010</td><td>$8,126</td><td>$8,114</td><td>$7,838</td><td>$8,546</td><td>$9,571</td><td>$10,148</td><td>$10,858</td><td>$10,725</td><td>$11,099</td></tr><tr><td>Total current assets</td><td>$14,517</td><td>$15,857</td><td>$20,077</td><td>$24,296</td><td>$13,492</td><td>$13,613</td><td>$13,460</td><td>$14,517</td><td>$14,807</td><td>$14,018</td><td>$13,297</td><td>$15,857</td><td>$16,754</td><td>$18,025</td><td>$19,049</td><td>$20,077</td></tr><tr><td>PP&amp;E, net</td><td>$2,429</td><td>$3,035</td><td>$3,849</td><td>$4,635</td><td>$2,214</td><td>$2,314</td><td>$2,372</td><td>$2,429</td><td>$2,511</td><td>$2,711</td><td>$2,854</td><td>$3,035</td><td>$3,228</td><td>$3,438</td><td>$3,644</td><td>$3,849</td></tr><tr><td>Restricted cash and investments</td><td>$0</td><td>$0</td><td>$0</td><td>$0</td><td>$0</td><td>$0</td><td>$0</td><td>$0</td><td>$0</td><td>$0</td><td>$0</td><td>$0</td><td>$0</td><td>$0</td><td>$0</td><td>$0</td></tr><tr><td>Goodwill and intangible assets</td><td>$1,809</td><td>$1,879</td><td>$1,867</td><td>$1,855</td><td>$1,758</td><td>$1,761</td><td>$1,795</td><td>$1,809</td><td>$1,827</td><td>$1,864</td><td>$1,882</td><td>$1,879</td><td>$1,876</td><td>$1,873</td><td>$1,870</td><td>$1,867</td></tr><tr><td>Other assets</td><td>$2,591</td><td>$3,331</td><td>$3,935</td><td>$4,329</td><td>$2,068</td><td>$2,152</td><td>$2,341</td><td>$2,591</td><td>$2,756</td><td>$2,798</td><td>$2,759</td><td>$3,331</td><td>$3,545</td><td>$3,809</td><td>$3,824</td><td>$3,935</td></tr><tr><td>Total assets</td><td>$21,345</td><td>$24,101</td><td>$29,728</td><td>$35,115</td><td>$19,532</td><td>$19,840</td><td>$19,968</td><td>$21,345</td><td>$21,900</td><td>$21,391</td><td>$20,792</td><td>$24,101</td><td>$25,403</td><td>$27,145</td><td>$28,387</td><td>$29,728</td></tr><tr><td colspan="5">Liabilities and Stockholders&#x27; Equity</td><td rowspan="10"></td><td colspan="12"></td></tr><tr><td>Non-debt current liabilities</td><td>$5,814</td><td>$7,274</td><td>$8,636</td><td>$9,522</td><td>$4,838</td><td>$4,846</td><td>$4,736</td><td>$5,814</td><td>$5,954</td><td>$5,459</td><td>$5,238</td><td>$7,274</td><td>$7,726</td><td>$8,363</td><td>$8,491</td><td>$8,636</td></tr><tr><td>Current portion of convertible notes and capital leases</td><td>$754</td><td>$4</td><td>$4</td><td>$4</td><td>$505</td><td>$504</td><td>$754</td><td>$754</td><td>$754</td><td>$754</td><td>$4</td><td>$4</td><td>$4</td><td>$4</td><td>$4</td><td>$4</td></tr><tr><td>Total current liabilities</td><td>$6,568</td><td>$7,278</td><td>$8,640</td><td>$9,527</td><td>$5,343</td><td>$5,350</td><td>$5,490</td><td>$6,568</td><td>$6,708</td><td>$6,213</td><td>$5,242</td><td>$7,278</td><td>$7,730</td><td>$8,367</td><td>$8,495</td><td>$8,640</td></tr><tr><td>Senior notes, convertible notes, and capital leases, less current por</td><td>$3,730</td><td>$3,730</td><td>$3,730</td><td>$3,730</td><td>$4,479</td><td>$4,478</td><td>$3,730</td><td>$3,730</td><td>$3,730</td><td>$3,730</td><td>$3,730</td><td>$3,730</td><td>$3,730</td><td>$3,730</td><td>$3,730</td><td>$3,730</td></tr><tr><td>Income taxes payable</td><td>$603</td><td>$622</td><td>$622</td><td>$622</td><td>$665</td><td>$670</td><td>$691</td><td>$603</td><td>$646</td><td>$668</td><td>$622</td><td>$622</td><td>$622</td><td>$622</td><td>$622</td><td>$622</td></tr><tr><td>Other long-term liabilities</td><td>$582</td><td>$759</td><td>$898</td><td>$981</td><td>$574</td><td>$534</td><td>$547</td><td>$582</td><td>$624</td><td>$635</td><td>$613</td><td>$759</td><td>$810</td><td>$883</td><td>$885</td><td>$898</td></tr><tr><td>Total liabilities</td><td>$11,484</td><td>$12,389</td><td>$13,889</td><td>$14,860</td><td>$11,061</td><td>$11,032</td><td>$10,457</td><td>$11,484</td><td>$11,707</td><td>$11,246</td><td>$10,207</td><td>$12,389</td><td>$12,892</td><td>$13,602</td><td>$13,732</td><td>$13,889</td></tr><tr><td>Total stockholders&#x27; equity</td><td>$9,862</td><td>$11,713</td><td>$15,838</td><td>$20,256</td><td>$8,472</td><td>$8,808</td><td>$9,511</td><td>$9,862</td><td>$10,193</td><td>$10,145</td><td>$10,585</td><td>$11,713</td><td>$12,510</td><td>$13,543</td><td>$14,655</td><td>$15,838</td></tr><tr><td>Total liabilities and stockholders&#x27; equity</td><td>$21,345</td><td>$24,101</td><td>$29,728</td><td>$35,115</td><td>$19,532</td><td>$19,840</td><td>$19,968</td><td>$21,345</td><td>$21,900</td><td>$21,391</td><td>$20,792</td><td>$24,101</td><td>$ 25,403</td><td>$27,145</td><td>$28,387</td><td>$29,728</td></tr><tr><td colspan="5"></td><td></td><td colspan="12"></td></tr><tr><td colspan="5">CASH FLOW STATEMENT</td><td rowspan="2"></td><td colspan="12"></td></tr><tr><td>Fiscal Period</td><td>2025</td><td>2026E</td><td>Q209</td><td>Q210</td><td>Q125</td><td>Q225</td><td>Q325</td><td>Q425</td><td>Q126</td><td>Q226</td><td>Q326</td><td>Q426E</td><td>Q127E</td><td>Q227E</td><td>Q327E</td><td>Q427E</td></tr><tr><td colspan="5">Cash flows from operating activities:</td><td rowspan="5"></td><td colspan="12"></td></tr><tr><td>Net income</td><td>$5,358</td><td>$7,086</td><td>$9,915</td><td>$11,011</td><td>$1,116</td><td>$1,191</td><td>$1,331</td><td>$1,720</td><td>$1,569</td><td>$1,594</td><td>$1,825</td><td>$2,098</td><td>$2,249</td><td>$2,482</td><td>$2,557</td><td>$2,627</td></tr><tr><td>Depreciation and amortization</td><td>$386</td><td>$441</td><td>$558</td><td>$689</td><td>$94</td><td>$96</td><td>$97</td><td>$98</td><td>$102</td><td>$104</td><td>$116</td><td>$119</td><td>$127</td><td>$135</td><td>$144</td><td>$152</td></tr><tr><td>Other changes to operating cash flows</td><td>$429</td><td>($219)</td><td>($186)</td><td>$171</td><td>$358</td><td>($545)</td><td>($119)</td><td>$736</td><td>$109</td><td>($218)</td><td>($800)</td><td>$690</td><td>($179)</td><td>($154)</td><td>$361</td><td>($214)</td></tr><tr><td>Cash provided by operating activities</td><td>$6,173</td><td>$7,308</td><td>$10,287</td><td>$11,872</td><td>$1,568</td><td>$742</td><td>$1,309</td><td>$2,554</td><td>$1,779</td><td>$1,480</td><td>$1,141</td><td>$2,907</td><td>$2,197</td><td>$2,463</td><td>$3,062</td><td>$2,565</td></tr><tr><td colspan="5"></td><td rowspan="7"></td><td colspan="12"></td></tr><tr><td>Capital expenditures and intangible assets</td><td>($759)</td><td>($1,075)</td><td>($1,359)</td><td>($1,463)</td><td>($111)</td><td>($188)</td><td>($288)</td><td>($172)</td><td>($185)</td><td>($261)</td><td>($332)</td><td>($298)</td><td>($316)</td><td>($342)</td><td>($347)</td><td>($353)</td></tr><tr><td>Business acquisition, net of cash acquired</td><td>$0</td><td>$0</td><td>$0</td><td>$0</td><td>$0</td><td>$0</td><td>$0</td><td>$0</td><td>$0</td><td>$0</td><td>$0</td><td>$0</td><td>$0</td><td>$0</td><td>$0</td><td>$0</td></tr><tr><td>Net sales from available-for-sale investments</td><td>$0</td><td>$0</td><td>$0</td><td>$0</td><td>$0</td><td>$0</td><td>$0</td><td>$0</td><td>$0</td><td>$0</td><td>$0</td><td>$0</td><td>$0</td><td>$0</td><td>$0</td><td>$0</td></tr><tr><td>Transfers of restricted cash and investments</td><td>$0</td><td>$0</td><td>$0</td><td>$0</td><td>$0</td><td>$0</td><td>$0</td><td>$0</td><td>$0</td><td>$0</td><td>$0</td><td>$0</td><td>$0</td><td>$0</td><td>$0</td><td>$0</td></tr><tr><td>Other</td><td>$51</td><td>($1)</td><td>$0</td><td>$0</td><td>$0</td><td>$13</td><td>($5)</td><td>$43</td><td>($1)</td><td>$3</td><td>($3)</td><td>$0</td><td>$0</td><td>$0</td><td>$0</td><td>$0</td></tr><tr><td>Cash used in investing activities</td><td>($708)</td><td>($1,076)</td><td>($1,359)</td><td>($1,463)</td><td>($111)</td><td>($175)</td><td>($293)</td><td>($129)</td><td>($186)</td><td>($258)</td><td>($335)</td><td>($298)</td><td>($316)</td><td>($342)</td><td>($347)</td><td>($353)</td></tr><tr><td colspan="5"></td><td></td><td colspan="12"></td></tr><tr><td colspan="5">Cash flows from financing activities:</td><td rowspan="10"></td><td colspan="12"></td></tr><tr><td>Debt repayments</td><td>($507)</td><td>($754)</td><td>$0</td><td>$0</td><td>($1)</td><td>($1)</td><td>($504)</td><td>($1)</td><td>($1)</td><td>($1)</td><td>($751)</td><td>$0</td><td>$0</td><td>$0</td><td>$0</td><td>$0</td></tr><tr><td>Debt issuance</td><td>$0</td><td>$0</td><td>$0</td><td>$0</td><td>$0</td><td>$0</td><td>$0</td><td>$0</td><td>$0</td><td>$0</td><td>$0</td><td>$0</td><td>$0</td><td>$0</td><td>$0</td><td>$0</td></tr><tr><td>Excess tax benefit on share-based compensation</td><td>$0</td><td>$0</td><td>$0</td><td>$0</td><td>$0</td><td>$0</td><td>$0</td><td>$0</td><td>$0</td><td>$0</td><td>$0</td><td>$0</td><td>$0</td><td>$0</td><td>$0</td><td>$0</td></tr><tr><td>Treasury stock purchases</td><td>($3,422)</td><td>($4,355)</td><td>($4,800)</td><td>($5,500)</td><td>($997)</td><td>($698)</td><td>($435)</td><td>($1,292)</td><td>($976)</td><td>($1,466)</td><td>($1,163)</td><td>($750)</td><td>($1,200)</td><td>($1,200)</td><td>($1,200)</td><td>($1,200)</td></tr><tr><td>Dividends paid</td><td>($1,150)</td><td>($1,270)</td><td>($1,435)</td><td>($1,560)</td><td>($261)</td><td>($298)</td><td>($296)</td><td>($295)</td><td>($292)</td><td>($328)</td><td>($326)</td><td>($324)</td><td>($361)</td><td>($359)</td><td>($358)</td><td>($357)</td></tr><tr><td>Reissuance of treasury stock related to employee stock purchase p</td><td>$140</td><td>$67</td><td>$0</td><td>$0</td><td>$0</td><td>$61</td><td>$0</td><td>$80</td><td>$0</td><td>$67</td><td>$0</td><td>$0</td><td>$0</td><td>$0</td><td>$0</td><td>$0</td></tr><tr><td>Proceeds from issuance of common stock</td><td>$2</td><td>$13</td><td>$0</td><td>$0</td><td>($0)</td><td>($0)</td><td>$2</td><td>$1</td><td>$0</td><td>$4</td><td>$9</td><td>$0</td><td>$0</td><td>$0</td><td>$0</td><td>$0</td></tr><tr><td>Other</td><td>$0</td><td>($14)</td><td>$0</td><td>$0</td><td>($0)</td><td>$1</td><td>$1</td><td>($1)</td><td>($12)</td><td>($1)</td><td>$0</td><td>$0</td><td>$0</td><td>$0</td><td>$0</td><td>$0</td></tr><tr><td>Cash used in financing activities</td><td>($4,937)</td><td>($6,312)</td><td>($6,235)</td><td>($7,060)</td><td>($1,259)</td><td>($935)</td><td>($1,233)</td><td>($1,510)</td><td>($1,282)</td><td>($1,725)</td><td>($2,231)</td><td>($1,074)</td><td>($1,561)</td><td>($1,559)</td><td>($1,558)</td><td>($1,557)</td></tr><tr><td colspan="5"></td><td rowspan="2"></td><td colspan="12"></td></tr><tr><td>Free Cash Flow</td><td>$5,414</td><td>$6,232</td><td>$8,927</td><td>$10,408</td><td>$1,458</td><td>$554</td><td>$1,021</td><td>$2,382</td><td>$1,594</td><td>$1,219</td><td>$810</td><td>$2,610</td><td>$1,881</td><td>$2,121</td><td>$2,715</td><td>$2,211</td></tr></table>
+
+EXHIBIT 27: KLAC - Income Statement 
+
+<table><tr><td>Income Statement (Non-GAAP), USD in millions except per shareFiscal Period (Fiscal Year ending June 30)</td><td>2025</td><td>2026E</td><td>2027E</td><td>2028E</td><td>Q125</td><td>Q225</td><td>Q325</td><td>Q425</td><td>Q126</td><td>Q226</td><td>Q326</td><td>Q426E</td><td>Q127E</td><td>Q227E</td><td>Q327E</td><td>Q427E</td></tr><tr><td>Revenue</td><td>12,156</td><td>13,497</td><td>17,318</td><td>19,781</td><td>2,842</td><td>3,077</td><td>3,063</td><td>3,175</td><td>3,210</td><td>3,297</td><td>3,415</td><td>3,575</td><td>3,891</td><td>4,293</td><td>4,471</td><td>4,663</td></tr><tr><td>COGS</td><td>4,581</td><td>5,096</td><td>6,522</td><td>7,319</td><td>1,102</td><td>1,178</td><td>1,134</td><td>1,167</td><td>1,205</td><td>1,233</td><td>1,291</td><td>1,368</td><td>1,477</td><td>1,620</td><td>1,677</td><td>1,749</td></tr><tr><td>Gross Profit</td><td>7,575</td><td>8,401</td><td>10,796</td><td>12,462</td><td>1,739</td><td>1,899</td><td>1,929</td><td>2,008</td><td>2,005</td><td>2,064</td><td>2,125</td><td>2,208</td><td>2,414</td><td>2,673</td><td>2,794</td><td>2,914</td></tr><tr><td>R&amp;D</td><td>1,355</td><td>1,526</td><td>1,758</td><td>2,030</td><td>322</td><td>342</td><td>338</td><td>353</td><td>360</td><td>384</td><td>389</td><td>393</td><td>404</td><td>414</td><td>463</td><td>478</td></tr><tr><td>SG&amp;A</td><td>979</td><td>1,080</td><td>1,186</td><td>1,355</td><td>238</td><td>254</td><td>237</td><td>250</td><td>258</td><td>269</td><td>281</td><td>272</td><td>276</td><td>282</td><td>308</td><td>319</td></tr><tr><td>Operating Expenses</td><td>2,334</td><td>2,606</td><td>2,944</td><td>3,385</td><td>560</td><td>596</td><td>575</td><td>603</td><td>618</td><td>653</td><td>670</td><td>665</td><td>680</td><td>695</td><td>771</td><td>797</td></tr><tr><td>Operating Income</td><td>5,241</td><td>5,795</td><td>7,852</td><td>9,077</td><td>1,179</td><td>1,303</td><td>1,354</td><td>1,405</td><td>1,386</td><td>1,411</td><td>1,454</td><td>1,543</td><td>1,734</td><td>1,978</td><td>2,023</td><td>2,117</td></tr><tr><td>Non-operating Expense / (Income)</td><td>(171)</td><td>(205)</td><td>(182)</td><td>(187)</td><td>(41)</td><td>(44)</td><td>(36)</td><td>(50)</td><td>(43)</td><td>(38)</td><td>(80)</td><td>(45)</td><td>(47)</td><td>(44)</td><td>(46)</td><td>(45)</td></tr><tr><td>Interest Expense</td><td>302</td><td>281</td><td>278</td><td>278</td><td>82</td><td>75</td><td>72</td><td>73</td><td>71</td><td>70</td><td>70</td><td>69</td><td>69</td><td>69</td><td>69</td><td>69</td></tr><tr><td>Earnings Before Taxes</td><td>5,110</td><td>5,720</td><td>7,757</td><td>8,986</td><td>1,138</td><td>1,272</td><td>1,318</td><td>1,382</td><td>1,359</td><td>1,379</td><td>1,464</td><td>1,518</td><td>1,712</td><td>1,953</td><td>2,000</td><td>2,092</td></tr><tr><td>Income Tax Expense / (Benefit)</td><td>659</td><td>848</td><td>1,125</td><td>1,303</td><td>150</td><td>174</td><td>197</td><td>137</td><td>192</td><td>211</td><td>225</td><td>220</td><td>248</td><td>283</td><td>290</td><td>303</td></tr><tr><td>Minority/Non Controlling Interest</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr><tr><td>Net Income</td><td>4,452</td><td>4,871</td><td>6,632</td><td>7,683</td><td>988</td><td>1,098</td><td>1,121</td><td>1,244</td><td>1,167</td><td>1,168</td><td>1,239</td><td>1,298</td><td>1,464</td><td>1,670</td><td>1,710</td><td>1,789</td></tr><tr><td colspan="17"></td></tr><tr><td>Basic EPS</td><td>$33.46</td><td>$37.15</td><td>$51.56</td><td>$61.00</td><td>$7.37</td><td>$8.24</td><td>$8.45</td><td>$9.43</td><td>$8.86</td><td>$8.90</td><td>$9.46</td><td>$9.94</td><td>$11.28</td><td>$12.94</td><td>$13.34</td><td>$14.03</td></tr><tr><td>Weighted Avg. Shares - Basic (M)</td><td>133.0</td><td>131.1</td><td>128.6</td><td>125.9</td><td>134.1</td><td>133.3</td><td>132.6</td><td>132.0</td><td>131.8</td><td>131.3</td><td>130.9</td><td>130.6</td><td>129.8</td><td>129.0</td><td>128.2</td><td>127.5</td></tr><tr><td>Diluted EPS</td><td>$33.28</td><td>$36.93</td><td>$51.22</td><td>$60.60</td><td>$7.33</td><td>$8.20</td><td>$8.41</td><td>$9.38</td><td>$8.81</td><td>$8.85</td><td>$9.40</td><td>$9.87</td><td>$11.20</td><td>$12.86</td><td>$13.25</td><td>$13.94</td></tr><tr><td>Weighted Avg. Shares - Diluted (M)</td><td>133.8</td><td>131.9</td><td>129.5</td><td>126.8</td><td>134.9</td><td>133.9</td><td>133.3</td><td>132.7</td><td>132.4</td><td>132.0</td><td>131.8</td><td>131.4</td><td>130.6</td><td>129.9</td><td>129.1</td><td>128.3</td></tr><tr><td colspan="17"></td></tr><tr><td colspan="17">Growth and Margins</td></tr><tr><td>Revenue QoQ/YoY %</td><td>23.9%</td><td>11.0%</td><td>28.3%</td><td>14.2%</td><td>10.6%</td><td>8.3%</td><td>(0.4%)</td><td>3.6%</td><td>1.1%</td><td>2.7%</td><td>3.6%</td><td>4.7%</td><td>8.8%</td><td>10.3%</td><td>4.1%</td><td>4.3%</td></tr><tr><td>Revenue YoY %</td><td>23.9%</td><td>11.0%</td><td>28.3%</td><td>14.2%</td><td>18.5%</td><td>23.7%</td><td>29.8%</td><td>23.6%</td><td>13.0%</td><td>7.2%</td><td>11.5%</td><td>12.6%</td><td>21.2%</td><td>30.2%</td><td>30.9%</td><td>30.4%</td></tr><tr><td>Gross Margin %</td><td>62.3%</td><td>62.2%</td><td>62.3%</td><td>63.0%</td><td>61.2%</td><td>61.7%</td><td>63.0%</td><td>63.2%</td><td>62.5%</td><td>62.6%</td><td>62.2%</td><td>61.8%</td><td>62.0%</td><td>62.3%</td><td>62.5%</td><td>62.5%</td></tr><tr><td>Incremental Gross Margin %</td><td>64.2%</td><td>61.6%</td><td>62.7%</td><td>67.6%</td><td>48.7%</td><td>68.0%</td><td>(217.1%)</td><td>70.3%</td><td>(8.7%)</td><td>67.8%</td><td>51.3%</td><td>52.0%</td><td>65.4%</td><td>64.4%</td><td>68.1%</td><td>62.5%</td></tr><tr><td>R&amp;D / Sales %</td><td>11.1%</td><td>11.3%</td><td>10.2%</td><td>10.3%</td><td>11.3%</td><td>11.1%</td><td>11.0%</td><td>11.1%</td><td>11.2%</td><td>11.6%</td><td>11.4%</td><td>11.0%</td><td>10.4%</td><td>9.6%</td><td>10.4%</td><td>10.3%</td></tr><tr><td>SG&amp;A / Sales %</td><td>8.1%</td><td>8.0%</td><td>6.8%</td><td>6.9%</td><td>8.4%</td><td>8.3%</td><td>7.7%</td><td>7.9%</td><td>8.0%</td><td>8.2%</td><td>8.2%</td><td>7.6%</td><td>7.1%</td><td>6.6%</td><td>6.9%</td><td>6.9%</td></tr><tr><td>Opex/Sales %</td><td>19.2%</td><td>19.3%</td><td>17.0%</td><td>17.1%</td><td>19.7%</td><td>19.4%</td><td>18.8%</td><td>19.0%</td><td>19.3%</td><td>19.8%</td><td>19.6%</td><td>18.6%</td><td>17.5%</td><td>16.2%</td><td>17.3%</td><td>17.1%</td></tr><tr><td>Operating Margin %</td><td>43.1%</td><td>42.9%</td><td>45.3%</td><td>45.9%</td><td>41.5%</td><td>42.3%</td><td>44.2%</td><td>44.2%</td><td>43.2%</td><td>42.8%</td><td>42.6%</td><td>43.2%</td><td>44.6%</td><td>46.1%</td><td>45.3%</td><td>45.4%</td></tr><tr><td>Incremental Operating Margin %</td><td>57.4%</td><td>41.3%</td><td>53.9%</td><td>49.7%</td><td>46.1%</td><td>52.5%</td><td>(369.8%)</td><td>45.2%</td><td>(52.5%)</td><td>28.5%</td><td>36.7%</td><td>55.1%</td><td>60.6%</td><td>60.6%</td><td>25.4%</td><td>48.9%</td></tr><tr><td>Tax Rate %</td><td>12.9%</td><td>14.8%</td><td>14.5%</td><td>14.5%</td><td>13.2%</td><td>13.7%</td><td>15.0%</td><td>9.9%</td><td>14.1%</td><td>15.3%</td><td>15.4%</td><td>14.5%</td><td>14.5%</td><td>14.5%</td><td>14.5%</td><td>14.5%</td></tr><tr><td>Net Margin %</td><td>36.6%</td><td>36.1%</td><td>38.3%</td><td>38.8%</td><td>34.8%</td><td>35.7%</td><td>36.6%</td><td>39.2%</td><td>36.4%</td><td>35.4%</td><td>36.3%</td><td>36.3%</td><td>37.6%</td><td>38.9%</td><td>38.2%</td><td>38.4%</td></tr><tr><td>Diluted EPS QoQ/YoY %</td><td>40.2%</td><td>11.0%</td><td>38.7%</td><td>18.3%</td><td>11.1%</td><td>11.9%</td><td>2.5%</td><td>11.5%</td><td>(6.0%)</td><td>0.4%</td><td>6.2%</td><td>5.0%</td><td>13.5%</td><td>14.7%</td><td>3.0%</td><td>5.2%</td></tr><tr><td>Diluted EPS YoY %</td><td>40.2%</td><td>11.0%</td><td>38.7%</td><td>18.3%</td><td>27.7%</td><td>33.2%</td><td>59.7%</td><td>42.1%</td><td>20.3%</td><td>7.9%</td><td>11.8%</td><td>5.3%</td><td>27.1%</td><td>45.3%</td><td>40.9%</td><td>41.2%</td></tr></table>
+
+Source: Company reports, Bernstein estimates and analysis
+
+EXHIBIT 28: KLAC - Cash Flow Statement 
+
+<table><tr><td>Cash Flow Statement, USD in millionsFiscal Period (Fiscal Year ending June 30)</td><td>2025</td><td>2026E</td><td>2027E</td><td>2028E</td></tr><tr><td>Net income (GAAP)</td><td>4,062</td><td>4,739</td><td>6,559</td><td>7,660</td></tr><tr><td>Depreciation and Amortization</td><td>394</td><td>396</td><td>371</td><td>338</td></tr><tr><td>Unrealized foreign exchange loss and other</td><td>15</td><td>0</td><td>-</td><td>-</td></tr><tr><td>Stock-based compensation</td><td>265</td><td>308</td><td>396</td><td>452</td></tr><tr><td>Deferred income taxes</td><td>(247)</td><td>(305)</td><td>(571)</td><td>(454)</td></tr><tr><td>Goodwill and other impairment charges</td><td>239</td><td>-</td><td>-</td><td>-</td></tr><tr><td>Other operating cash flow</td><td>(0)</td><td>(1)</td><td>-</td><td>-</td></tr><tr><td>Accounts receivable</td><td>(368)</td><td>(15)</td><td>(689)</td><td>(285)</td></tr><tr><td>Inventories</td><td>(155)</td><td>(312)</td><td>(780)</td><td>(350)</td></tr><tr><td>Other assets</td><td>(10)</td><td>(26)</td><td>(470)</td><td>(194)</td></tr><tr><td>Accounts payable</td><td>34</td><td>52</td><td>140</td><td>53</td></tr><tr><td>Deferred system revenue</td><td>(169)</td><td>188</td><td>362</td><td>150</td></tr><tr><td>Deferred service revenue</td><td>100</td><td>237</td><td>289</td><td>119</td></tr><tr><td>Other liabilities</td><td>(78)</td><td>309</td><td>972</td><td>402</td></tr><tr><td>Cash Flow from operating activities</td><td>4,082</td><td>5,571</td><td>6,580</td><td>7,891</td></tr><tr><td>Capital expenditures</td><td>(335)</td><td>(394)</td><td>(520)</td><td>(593)</td></tr><tr><td>Net Proceeds from sale of assets / businesses</td><td>0</td><td>-</td><td>-</td><td>-</td></tr><tr><td>Business acquisitions, net of cash acquired</td><td>(5)</td><td>17</td><td>-</td><td>-</td></tr><tr><td>Net purchases of securities</td><td>130</td><td>(750)</td><td>-</td><td>-</td></tr><tr><td>Net proceeds from other investments</td><td>1</td><td>-</td><td>-</td><td>-</td></tr><tr><td>Other investing cash flow</td><td>6</td><td>2</td><td>-</td><td>-</td></tr><tr><td>Cash Flow from investing activities</td><td>(202)</td><td>(1,124)</td><td>(520)</td><td>(593)</td></tr><tr><td>Common stock repurchases</td><td>(2,150)</td><td>(2,369)</td><td>(5,500)</td><td>(3,750)</td></tr><tr><td>Issuance of common stock</td><td>152</td><td>173</td><td>225</td><td>249</td></tr><tr><td>Tax withholding payments related to vested and released RSUs</td><td>(133)</td><td>(129)</td><td>(119)</td><td>(140)</td></tr><tr><td>Dividend to stockholders</td><td>(905)</td><td>(1,053)</td><td>(1,219)</td><td>(1,337)</td></tr><tr><td>Proceeds from debt issuance, net of issuance costs</td><td>-</td><td>(2)</td><td>-</td><td>-</td></tr><tr><td>Repayment of debt</td><td>(750)</td><td>(1)</td><td>-</td><td>-</td></tr><tr><td>Other financing cash flow</td><td>-</td><td>-</td><td>-</td><td>-</td></tr><tr><td>Cash Flow from financing activities</td><td>(3,786)</td><td>(3,380)</td><td>(6,612)</td><td>(4,977)</td></tr><tr><td>Effect of exchange rate changes on cash and cash equivalents</td><td>8</td><td>(3)</td><td>-</td><td>-</td></tr><tr><td>Net increase (decrease) in cash and cash equivalents</td><td>102</td><td>1,063</td><td>(552)</td><td>2,320</td></tr><tr><td>Cash and cash equivalents at beginning of period</td><td>1,977</td><td>2,079</td><td>3,142</td><td>2,591</td></tr><tr><td>Cash and cash equivalents at end of period</td><td>2,079</td><td>3,142</td><td>2,591</td><td>4,911</td></tr><tr><td colspan="5"></td></tr><tr><td colspan="5">Summary metrics</td></tr><tr><td>FCF ($M)</td><td>3,747</td><td>5,177</td><td>6,061</td><td>7,298</td></tr><tr><td>FCF margin (% sales)</td><td>30.8%</td><td>38.4%</td><td>35.0%</td><td>36.9%</td></tr><tr><td>FCF conversion (% PF net income)</td><td>84.2%</td><td>106.3%</td><td>91.4%</td><td>95.0%</td></tr><tr><td>Capex intensity (% sales)</td><td>(2.8%)</td><td>(2.9%)</td><td>(3.0%)</td><td>(3.0%)</td></tr><tr><td>Dividends (% FCF)</td><td>24.1%</td><td>20.3%</td><td>20.1%</td><td>18.3%</td></tr><tr><td>Share repurchases (% FCF)</td><td>57.4%</td><td>45.8%</td><td>90.7%</td><td>51.4%</td></tr><tr><td>Capital returns (% FCF)</td><td>81.5%</td><td>66.1%</td><td>110.9%</td><td>69.7%</td></tr></table>
+
+Source: Company reports, Bernstein estimates and analysis
+
+EXHIBIT 29: KLAC - Balance Sheet 
+
+<table><tr><td>Balance Sheet, USD in millionsFiscal Period (Fiscal Year ending June 30)</td><td>2025</td><td>2026E</td><td>2027E</td><td>2028E</td></tr><tr><td>Cash and Equivalents &amp; Marketable Securities</td><td>4,495</td><td>6,313</td><td>5,762</td><td>8,082</td></tr><tr><td>Accounts Receivable</td><td>2,264</td><td>2,264</td><td>2,953</td><td>3,238</td></tr><tr><td>Inventories</td><td>3,212</td><td>3,495</td><td>4,275</td><td>4,624</td></tr><tr><td>Other Current Assets</td><td>728</td><td>710</td><td>926</td><td>1,015</td></tr><tr><td>Total Current Assets</td><td>10,699</td><td>12,783</td><td>13,915</td><td>16,959</td></tr><tr><td>Property Plant &amp; Equipment, Net</td><td>1,253</td><td>1,416</td><td>1,694</td><td>1,998</td></tr><tr><td>Deferred Tax Assets</td><td>1,106</td><td>1,388</td><td>1,997</td><td>2,394</td></tr><tr><td>Purchased Intangible Assets, net</td><td>445</td><td>255</td><td>126</td><td>76</td></tr><tr><td>Goodwill</td><td>1,792</td><td>1,788</td><td>1,788</td><td>1,788</td></tr><tr><td>Other Noncurrent Assets</td><td>774</td><td>836</td><td>1,090</td><td>1,195</td></tr><tr><td>Total Assets</td><td>16,068</td><td>18,466</td><td>20,610</td><td>24,411</td></tr><tr><td>Accounts Payable</td><td>459</td><td>503</td><td>643</td><td>695</td></tr><tr><td>Current Portion of Long-Term Debt</td><td>-</td><td>-</td><td>-</td><td>-</td></tr><tr><td>Deferred Revenue (systems+services)</td><td>1,365</td><td>1,852</td><td>2,416</td><td>2,649</td></tr><tr><td>Other Current Liabilities</td><td>2,262</td><td>2,453</td><td>3,200</td><td>3,509</td></tr><tr><td>Total Current Liabilities</td><td>4,086</td><td>4,808</td><td>6,258</td><td>6,853</td></tr><tr><td>Long Term Debt</td><td>5,884</td><td>5,886</td><td>5,886</td><td>5,886</td></tr><tr><td>Deferred Income Taxes (Liabilities)</td><td>447</td><td>432</td><td>470</td><td>413</td></tr><tr><td>Deferred Revenue (Long-Term, Service)</td><td>349</td><td>286</td><td>373</td><td>409</td></tr><tr><td>Other Noncurrent Liabilities</td><td>610</td><td>743</td><td>969</td><td>1,062</td></tr><tr><td>Total Liabilities</td><td>11,375</td><td>12,155</td><td>13,956</td><td>14,623</td></tr><tr><td>Non Controlling Interest</td><td>-</td><td>-</td><td>-</td><td>-</td></tr><tr><td>Common Stock and capital in excess of par value</td><td>2,512</td><td>2,675</td><td>2,675</td><td>2,675</td></tr><tr><td>Accumulated Other Comprehensive Income</td><td>1</td><td>(32)</td><td>(32)</td><td>(32)</td></tr><tr><td>Retained Earnings</td><td>2,179</td><td>3,668</td><td>4,011</td><td>7,146</td></tr><tr><td>Total Equity</td><td>4,692</td><td>6,311</td><td>6,654</td><td>9,789</td></tr><tr><td>Total Liabilities and Shareholders Equity</td><td>16,068</td><td>18,466</td><td>20,610</td><td>24,411</td></tr><tr><td colspan="5">Summary metrics</td></tr><tr><td>EBITDA</td><td>5,635</td><td>6,191</td><td>8,224</td><td>9,415</td></tr><tr><td>LTM EBITDA</td><td>5,635</td><td>6,191</td><td>8,224</td><td>9,415</td></tr><tr><td>Net Debt</td><td>1,390</td><td>(427)</td><td>125</td><td>(2,196)</td></tr><tr><td>Leverage (Net Debt/EBITDA)</td><td>0.2x</td><td>(0.1x)</td><td>0.0x</td><td>(0.2x)</td></tr><tr><td>Invested Capital / Net Operating Assets</td><td>5,797</td><td>6,244</td><td>6,328</td><td>7,147</td></tr><tr><td>NOPAT</td><td>4,333</td><td>4,981</td><td>6,714</td><td>7,761</td></tr><tr><td>ROIC (annualized)</td><td>75%</td><td>80%</td><td>106%</td><td>109%</td></tr></table>
+
+Source: Company reports, Bernstein estimates and analysis
+
+# I. REQUIRED DISCLOSURES
+
+References to "Bernstein" or the "Firm" in these disclosures relate to the following entities: Bernstein Institutional Services LLC (April 1, 2024 onwards), Bernstein & Co., LLC (pre April 1, 2024), Bernstein Autonomous LLP, BSG France S.A. (April 1, 2024 onwards), Bernstein (Hong Kong) Limited 盛博香港有限公司, Bernstein (Canada) Limited, Bernstein (India) Private Limited (SEBI registration no. INH000006378), Bernstein (Singapore) Private Limited, Bernstein Japan KK (サンフォード・C・バーンスタイン株式会社) and analysts employed by SG Africa Technologies & Services to produce Bernstein under a Global Services Agreement in place between Bernstein and SG.
+
+Bernstein is part of a joint venture between SG (SG) and AllianceBernstein, L.P. (AB). Unless specifically noted otherwise, for purposes of these disclosures, references to Bernstein's “affiliates” relate to both SG and AB and their respective affiliates.
+
+# VALUATION METHODOLOGY
+
+This research publication covers six or more companies. For valuation methodology and other company disclosures:
+
+Please visit: https://bernstein-autonomous.bluematrix.com/sellside/Disclosures.action.
+
+Or, you can also write to the Director of Compliance, Bernstein Institutional Services LLC, 245 Park Avenue, New York, NY 10167.
+
+# RISKS
+
+This research publication covers six or more companies. For risks and other company disclosures:
+
+Please visit: https://bernstein-autonomous.bluematrix.com/sellside/Disclosures.action.
+
+Or, you can also write to the Director of Compliance, Bernstein Institutional Services LLC, 245 Park Avenue, New York, NY 10167.
+
+# RATINGS DEFINITIONS, BENCHMARKS AND DISTRIBUTION
+
+# EQUITY RATINGS DEFINITIONS
+
+# Bernstein brand
+
+The Bernstein brand rates stocks based on forecasts of relative performance for the next 12 months versus the S&P 500 for stocks listed on the U.S. and Canadian exchanges, versus the Bloomberg Europe Developed Markets Large and Mid Cap Price Return Index EUR (EDME) for stocks listed on the European exchanges and emerging markets exchanges outside of the Asia Pacific region, versus the Bloomberg Japan Large and Mid Cap Price Return Index USD (JPL) for stocks listed on the Japanese exchanges, and versus the Bloomberg Asia ex-Japan Large and Mid Cap Price Return Index (ASIAX) for stocks listed on the Asian (ex-Japan) exchanges -unless otherwise specified.
+
+The Bernstein brand has three categories of ratings:
+
+- Outperform: Stock will outpace the market index by more than 15 pp   
+• Market-Perform: Stock will perform in line with the market index to within +/-15 pp   
+• Underperform: Stock will trail the performance of the market index by more than 15 pp
+
+Coverage Suspended: Coverage of a company under the Bernstein brand has been suspended. Ratings and price targets are suspended temporarily, are no longer current, and should therefore not be relied upon.
+
+Not Rated: A rating assigned when the stock cannot be accurately valued, or the performance of the company accurately predicted, at the present time. The covering analyst may continue to publish research reports on the company to update investors on events and developments.
+
+Not Covered (NC) denotes companies that are not under coverage.
+
+Bernstein brand stock ratings are based on a 12-month time horizon.
+
+# Autonomous brand – common stocks
+
+The Autonomous brand rates common stocks as indicated below. As our benchmarks we use the Bloomberg Europe 500 Banks And Financial Services Index (BEBANKS) and Bloomberg Europe Dev Mkt Financials Large and Mid Cap Price Ret Index EUR (EDMFI) index for developed European banks and Payments, the Bloomberg Europe 500 Insurance Index (BEINSUR) for European insurers, the S&P 500 and S&P Financials for US banks and Payments coverage, S5LIFE for US Insurance, the S&P Insurance Select Industry (SPSIINS) for US Non-Life Insurers coverage, and the Bloomberg Emerging Markets Financials Large, Mid and Small Cap Price Return Index (EMLSF) for emerging market banks and insurers and Payments. Ratings are stated relative to the sector (not the market).
+
+The Autonomous brand has three categories of common stock ratings:
+
+- Outperform (OP): Stock will outpace the relevant index by more than 10 pp   
+- Neutral (N): Stock will perform in line with the market index to within +/-10 pp   
+• Underperform (UP): Stock will trail the performance of the relevant index by more than 10 pp
+
+Coverage Suspended: Coverage of a company under the Autonomous research brand has been suspended. Ratings and price targets are suspended temporarily, are no longer current, and should therefore not be relied upon.
+
+Not Rated: A rating assigned when the stock cannot be accurately valued, or the performance of the company accurately predicted, at the present time. The covering analyst may continue to publish research reports on the company to update investors on events and developments.
+
+Those denoted as ‘Feature’ (e.g., Feature Outperform FOP, Feature Under Outperform FUP) are our core ideas.
+
+Not Covered (NC) denotes companies that are not under coverage.
+
+Autonomous brand common stock ratings are based on a 12-month time horizon.
+
+# Autonomous brand – preferred stocks
+
+The Autonomous brand has three categories of preferred stock ratings:
+
+- Outperform (OP): The total return of the preferred instrument is expected to outperform preferred securities of other issuers operating in similar sectors or rating categories over the next six months.   
+- Neutral (N): The total return of the preferred instrument is expected to perform in line with preferred securities of other issuers operating in similar sectors or rating categories over the next six months.   
+- Underperform (UP): The total return of the preferred instrument is expected to underperform preferred securities of other issuers operating in similar sectors or rating categories over the next six months.
+
+Autonomous preferred stock ratings are based on a 6-month time horizon.
+
+# AUTONOMOUS CREDIT RESEARCH
+
+Where this report contains investment recommendations for credit instruments, as defined in article 3(1)(35) of the Market Abuse Regulation, the information below is presented to comply with its disclosure requirements.
+
+The report may also include reference(s) to published opinions by other Autonomous or Bernstein analysts covering the equity securities of the issuer(s) referenced herein. Please note an investment recommendation for credit instruments published by the author(s) of this report may differ from the published view of the analyst covering equity securities for the issuer(s) contained in this report and vice versa.
+
+# CREDIT RATINGS DEFINITIONS
+
+The Autonomous brand has three categories of credit ratings:
+
+\- Credit Outperform (C-OP): The total return of the Reference Credit Instrument is expected to outperform the credit spread of bonds of other issuers operating in similar sectors or rating categories over the next six months.
+
+- Credit Neutral (C-N): The total return of the Reference Credit Instrument is expected to perform in line with the credit spread of bonds of other issuers operating in similar sectors or rating categories over the next six months.   
+- Credit Underperform (C-UP): The total return of the Reference Credit Instrument is expected to underperform the credit spread of bonds of other issuers operating in similar sectors or rating categories over the next six months.
+
+Autonomous credit ratings are based on a 6-month time horizon.
+
+A list of all investment recommendations produced by the author(s) of this report alongside credit ratings history are available upon request.
+
+It is at the sole discretion of the Firm as to when to initiate, update and cease research coverage. The Firm has established, maintains and relies on information barriers to control the flow of information contained in one or more areas (i.e. the private side) within the Firm, and into other areas, units, groups or affiliates (i.e. public side) of the Firm
+
+DISTRIBUTION OF EQUITY RATINGS/INVESTMENT BANKING SERVICES 
+
+<table><tr><td>Equity Rating</td><td>Market Abuse Regulation (MAR) and FINRA Rating Category</td><td>Global Rating Distribution</td><td>Investment Banking Relationships*</td></tr><tr><td>Outperform</td><td>BUY</td><td>51.1%</td><td>16.5%</td></tr><tr><td>Market-Perform (Bernstein Brand) Neutral (Autonomous Brand)</td><td>HOLD</td><td>36.3%</td><td>17.8%</td></tr><tr><td>Underperform</td><td>SELL</td><td>12.6%</td><td>14.9%</td></tr></table>
+
+\* These figures represent the percentage of companies within each equity rating category for which affiliates of Bernstein have provided investment banking services within the previous 12 months.
+
+As of March 31, 2026. All figures are updated quarterly.
+
+Prior to April 1, 2024, Bernstein & Co., LLC. issued the ratings and price target information in the graph(s) below for the following companies: Applied Materials Inc and Lam Research Corp.
+
+# PRICE CHARTS/ RATINGS AND PRICE TARGET HISTORY
+
+This research publication covers six or more companies. For price chart and other company disclosures, please visit https://bernstein-autonomous.bluematrix.com/sellside/Disclosures.action or you can write to the Director of Compliance, Bernstein Institutional Services LLC, 245 Park Avenue, New York, NY 10167.
+
+# CONFLICTS OF INTEREST
+
+All statements in this report attributable to Gartner represent Bernstein's interpretation of data, research opinion or viewpoints published as part of a syndicated subscription service by Gartner, Inc., and have not been reviewed by Gartner. Each Gartner publication speaks as of its original publication date (and not as of the date of this report). The opinions expressed in Gartner publications are not representations of fact, and are subject to change without notice.
+
+Stacy A. Rasgon maintains long positions in various crypto currencies.
+
+SG and/or its affiliates beneficially own 1% or more of a class of common equity securities of the following companies: Kokusai Electric Corp and Lasertec Corp.
+
+Bernstein Autonomous LLP or BSG France SA, beneficially, has either a net long or short position of 0.5% or more of the total issued share capital of a class of common equity securities of the following MiFID eligible securities: Applied Materials Inc.
+
+Bernstein and/or affiliates have received compensation for non-investment banking securities-related products or services in the previous twelve months from the following clients: Screen Holdings Co Ltd.
+
+Certain affiliates of Bernstein act as market maker or liquidity provider in the debt securities of: Screen Holdings Co Ltd.
+
+Certain affiliates of Bernstein act as market maker or liquidity provider in the equities securities of: Applied Materials Inc, Lam Research Corp and ASML Holding NV.
+
+# OTHER MATTERS
+
+The legal entity(ies) employing the analyst(s) listed in this report, and their location, can be determined by the country code of their phone number, as follows:
+
++1 Bernstein Institutional Services LLC; New York, New York, USA
+
++44 Bernstein Autonomous LLP; London UK
+
++212 SG Africa Technologies & Services; Casablanca, Morocco
+
++33 BSG France S.A.; Paris, France
+
++34 BSG France S.A.; Madrid, Spain
+
++41 Bernstein Autonomous LLP; Geneva, Switzerland
+
++49 BSG France S.A.; Frankfurt, Germany
+
++91 Bernstein (India) Private Limited; Mumbai, India
+
++852 Bernstein (Hong Kong) Limited 盛博香港有限公司; Hong Kong, China
+
++65 Bernstein (Singapore) Private Limited; Singapore
+
++81 Bernstein Japan KK; Tokyo, Japan
+
+Where this report has been prepared by research analyst(s) employed by a non-US affiliate, such analyst(s), is/are (unless otherwise expressly noted below) not registered as associated persons of Bernstein Institutional Services LLC or any other SEC-registered broker-dealer and are not licensed or qualified as research analysts with FINRA. Accordingly, such analyst(s) may not be subject to FINRA's restrictions regarding (among other things) communications by research analysts with a subject company, interactions between research analysts and investment banking personnel, participation by research analysts in solicitation and marketing activities relating to investment banking transactions, public appearances by research analysts, and trading securities held by a research analyst account.
+
+Where this report has been prepared by research analyst(s) employed by SG Africa Technologies & Services (part of the SG group of companies), it has been prepared on behalf of a Bernstein company under a Global Services Agreement in place between Bernstein and SG.
+
+# CERTIFICATION
+
+Each research analyst listed in this report, who is primarily responsible for the preparation of the content of this report, certifies that all of the views expressed in this publication accurately reflect that analyst's personal views about any and all of the subject securities or issuers and that no part of that analyst's compensation was, is, or will be, directly or indirectly, related to the specific recommendations or views in this publication.
+
+# II. ADDITIONAL GLOBAL CONFLICT DISCLOSURES
+
+It is at the sole discretion of the Firm as to when to initiate, update and cease research coverage. The Firm has established, maintains and relies on information barriers to control the flow of information contained in one or more areas (i.e., the private side) within the Firm, and into other areas, units, groups or affiliates (i.e., public side) of the Firm.
+
+# III. OTHER IMPORTANT INFORMATION AND DISCLOSURES
+
+Separate branding is maintained for “Bernstein” and “Autonomous” research products.
+
+\- Bernstein produces a number of different types of research products including, among others, fundamental analysis and quantitative analysis under both the “Autonomous” and “Bernstein” brands. Recommendations contained within one type of research product may differ from recommendations contained within other types of research products, whether as a result of differing time horizons, methodologies or otherwise. Furthermore, views or recommendations within a research product issued under one brand may differ from views or recommendations under the same type of research product issued under the other brand. The Research Ratings System for the two brands and other information related to those Rating Systems are included in the previous section.
+
+\- Autonomous operates as a separate business unit within the following entities: Bernstein Institutional Services LLC, Bernstein Autonomous LLP, Bernstein (Hong Kong) Limited 盛博香港有限公司 and Bernstein (India) Private Limited. For information relating to “Autonomous” branded products (including certain Sales materials) please visit: www.autonomous.com. For information relating to Bernstein branded products please visit: www.bernsteinresearch.com.
+
+Analysts are compensated based on aggregate contributions to the research franchise as measured by account penetration, productivity and proactivity of investment ideas. No analysts are compensated based on performance in, or contributions to, generating investment banking revenues.
+
+This report has been produced by an independent analyst as defined in Article 3 (1)(34)(i) of EU 596/2014 Market Abuse Regulation (“MAR”) and the same article of MAR as it forms part of United Kingdom domestic law by virtue of the European Union (Withdrawal) Act 2018.
+
+To our readers in the United States: Bernstein Institutional Services LLC, a broker-dealer registered with the U.S. Securities and Exchange Commission (“SEC”) and a member of the U.S. Financial Industry Regulatory Authority, Inc. (“FINRA”) is distributing this publication in the United States and accepts responsibility for its contents. Where this material contains an analysis of debt product(s), such material is intended only for institutional investors and is not subject to the US independence and disclosure standards applicable to debt research prepared for retail investors.
+
+Bernstein Institutional Services LLC may act as principal for its own account or as agent for another person (including an affiliate) in sales or purchases of any security which is a subject of this report. This report does not purport to meet the objectives or needs of any specific individuals, entities or accounts.
+
+To our readers in Canada: If this publication pertains to a Canadian domiciled company, it is being distributed in Canada by Bernstein (Canada) Limited, which is licensed and regulated by the Canadian Investment Regulatory Organization. If the publication pertains to a non-Canadian domiciled company, it is being distributed by Bernstein Institutional Services LLC, which is licensed and regulated by both the SEC and FINRA, into Canada under the International Dealers Exemption.
+
+This document may not be passed onto any person in Canada unless that person qualifies as "permitted client" as defined in Section 1.1 of NI 31-103.
+
+To our readers in Brazil: This report has been prepared by Bernstein Institutional Services LLC, and Banco BTG Pactual S.A. ("BTG") is responsible for the distribution of this report in Brazil.
+
+To readers in the United Kingdom: This publication has been issued or approved for issue in the United Kingdom by Bernstein Autonomous LLP, authorised and regulated by the Financial Conduct Authority and located at 60 London Wall, London EC2M 5SH, +44 (0)20-7170-5000. Registered in England & Wales No OC343985.
+
+This document is for distribution only to persons who (i) have professional experience in matters relating to investments falling within Article 19(5) of the Financial Services and Markets Act 2000 (Financial Promotion) Order 2005 (as amended, the “Financial Promotion Order”), (ii) are persons falling within Article 49(2)(a) to (d) (“high net worth companies, unincorporated associations, etc.”) of the Financial Promotion Order, (iii) are outside the United Kingdom, or (iv) are persons to whom an invitation or inducement to engage in investment activity (within the meaning of section 21 of the FSMA) in connection with the issue or sale of any securities may otherwise lawfully be communicated or caused to be communicated (all such persons together being referred to as “relevant persons”). This document is directed only at relevant persons and must not be acted on or relied on by persons who are not relevant persons. Any investment or investment activity to which this document relates is available only to relevant persons and will be engaged in only with relevant persons.
+
+To our readers in the member states of the EEA: This publication is being distributed by BSG France SA, which is authorised and regulated by the Autorité de Contrôle Prudentiel et de Résolution (ACPR) and Autorité des Marchés Financiers (AMF).
+
+To our readers in Hong Kong: This publication is being distributed in Hong Kong by Bernstein (Hong Kong) Limited 盛博香港有限公司, which is licensed and regulated by the Hong Kong Securities and Futures Commission (Central Entity No. AXC846) to carry out Type 4 (Advising on Securities) regulated activities and subject to the licensing conditions mentioned in the SFC Public Register (https://www.sfc.hk/publicregWeb/corp/AXC846/details)). This publication is solely for professional investors, as defined in the Securities and Futures Ordinance (Cap. 571). The purpose of this report is solely to provide an analysis of the issuers referred to in this report and is not intended for any purpose contrary to the laws of Hong Kong.
+
+To our readers in Singapore: This publication is being distributed in Singapore by Bernstein (Singapore) Private Limited, only to accredited investors or institutional investors, as defined in the Securities and Futures Act 2001 of Singapore ("SFA"). Recipients in Singapore should contact Bernstein (Singapore) Private Limited in respect of matters arising from, or in connection with, this publication. Bernstein (Singapore) Private Limited is regulated by the Monetary Authority of Singapore and licensed under the SFA as a capital markets services licence holder for dealing in capital markets products that are securities and collective investment schemes and an exempt financial adviser for advising on, issuing and promulgating analyses and reports on securities. Bernstein (Singapore) Private Limited is registered in Singapore with Company Registration No. 20213710W and located at One Raffles Quay, #27-11 South Tower, Singapore 048583, +65-6230-4612.
+
+To our readers in the People's Republic of China: The securities referred to in this document are not being offered or sold and may not be offered or sold, directly or indirectly, in the People's Republic of China (for such purposes, not including the Hong Kong and Macau Special Administrative Regions or Taiwan, the "PRC") in contravention of any applicable laws of the PRC.
+
+This document does not constitute an offer to sell or the solicitation of an offer to buy any securities in the PRC to any person to whom it is unlawful to make the offer or solicitation in the PRC.
+
+We do not represent that this document may be lawfully distributed, or that any securities may be lawfully offered, in compliance with any applicable registration or other requirements in the PRC, or pursuant to an exemption available thereunder, or assume any responsibility for facilitating any such distribution or offering. In particular, no action has been taken by us which would permit a public offering of any securities or distribution of this document in the PRC. Accordingly, the securities are not being offered or sold within the PRC by means of this document or any other document. Neither this document nor any advertisement or other offering material may be distributed or published in the PRC, except under circumstances that will result in compliance with any applicable laws and regulations.
+
+To our readers in Japan: This publication is being distributed in Japan by Bernstein Japan KK (サンフォード・C・バーンスタイン株式会社), which is registered in Japan as a Financial Instruments Business Operator with the Kanto Local Finance Bureau (registration number: The Director-General of Kanto Local Finance Bureau (FIBO) No.3387) and regulated by the Financial Services Agency. It is also a member of Japan Investment Advisers Association. This publication is solely for qualified institutional investors in Japan only, as defined in Article 2, paragraph (3), items (i) of the Financial Instruments and Exchange Act.
+
+For the institutional client readers in Japan who have been granted access to the Bernstein website by Daiwa Group Inc. ("Daiwa"), your access to this document should not be construed as meaning that Bernstein is providing you with investment advice for any purposes. Whilst Bernstein has prepared this document, your relationship is, and will remain with, Daiwa, and Bernstein has neither any contractual relationship with you nor any obligations towards you.
+
+To our readers in Australia: Bernstein (Hong Kong) Limited 盛博香港有限公司 is responsible for distributing research in Australia. It is regulated by the Securities and Exchange Commission under U.S. laws, by the Financial Conduct Authority under U.K. laws, which differs from Australian laws. Bernstein (Hong Kong) Limited 盛博香港有限公司 is exempt from the requirement to hold an Australian financial services license under the Corporations Act 2001 in respect of the provision of the following financial services to wholesale clients:
+
+• providing financial product advice;   
+• dealing in a financial product;   
+• making a market for a financial product; and   
+• providing a custodial or depository service.
+
+To our readers in India: This publication is being distributed in India by Bernstein (India) Private Limited (SCB India) which is licensed and regulated by Securities and Exchange Board of India ("SEBI") as a research analyst entity under the SEBI (Research Analyst) Regulations, 2014, having registration no. INH000006378 and as a stock broker having registration no. INZ000213537. SCB India is currently engaged in the business of providing research and stock broking services. Please refer to www.bernsteinresearch.in for more information.
+
+\- SCB India is a Private limited company incorporated under the Companies Act, 2013, on April 12, 2017 bearing corporate identification number U65999MH2017FTC293762, and registered office at Level 3A, 4th Floor, First International Financial Centre, Plot Nos C-54 and C-55, G Block, Near CBI Office, Bandra Kurla Complex, Bandra (East), Mumbai 400098, Maharashtra, India (Phone No: +91-22-68421401).
+
+- For details of Associates (i.e., affiliates/group companies) of SCB India, kindly email MUM-BERNSTEIN-InCompliance@bernsteinsg.com.   
+• SCB India does not have any disciplinary history as on the date of this report.   
+- Except as noted above, SCB India and/or its Associates (i.e., affiliates/group companies), the Research Analysts authoring this report, and their relatives
+
+• do not have any financial interest in the subject company   
+• do not have actual/beneficial ownership of one percent or more in securities of the subject company;   
+- is not engaged in any investment banking activities for Indian companies, as such;   
+• have not managed or co-managed a public offering in the past twelve months for any Indian companies;
+
+\- have not received any compensation for investment banking services or merchant banking services from the subject company in the past 12 months;
+
+• have not received compensation for brokerage services from the subject company in the past twelve months;
+
+\- have not received any compensation or other benefits from the subject company or third party related to the specific recommendations or views in this report; and
+
+\- do not currently, but may in the future, act as a market maker in the financial instruments of the companies covered in the report.
+
+\- do not have any conflict of interest in the subject company as of the date of this report.
+
+- Except as noted above, the subject company has not been a client of SCB India during twelve months preceding the date of distribution of this research report. Neither SCB India nor its Associates (i.e., affiliates/group companies) have received compensation for products or services other than investment banking, merchant banking or brokerage services from the subject company in the past twelve months.   
+- The principal research analyst(s) who prepared this report, members of the analysts' team, and members of their households are not an officer, director, employee or advisory board member of the companies covered in the report.   
+- Our Compliance officer / Grievance officer is Ms. Rupal Talati, who can be reached at +91-22-68421451, or MUM-BERNSTEIN-InCompliance@bernsteinsg.com / Scbin-investorgrievance@bernsteinsg.com   
+- The Research investor charter and Terms & Conditions of SCB India are available on its website and may be accessed at Bernstein (India) Private Limited (https://bernsteinresearch.in/) for your reference.   
+- Disclaimer: Registration granted by SEBI, and certification from NISM, is in no way a guarantee of performance of the intermediary or provide any assurance of returns to investors. Investments in securities market are subject to market risks. Read all the related documents carefully before investing.
+
+To our readers in Switzerland: This document is provided in Switzerland by or through Bernstein Autonomous LLP, and is provided only to qualified investors as defined in article 10 of the Swiss Collective Investment Scheme Act (“CISA”) and related provisions of the Collective Investment Scheme Ordinance and in strict compliance with applicable Swiss law and regulations. The products mentioned in this document may not be suitable for all types of investors. This document is based on the Directives on the Independence of Financial Research issued by the Swiss Bankers Association (SBA) in January 2008.
+
+To our readers in the Middle East: Bernstein Autonomous LLP, DIFC branch has its principal office at Gate Village 06, DIFC, Dubai, UAE. Bernstein Autonomous LLP, DIFC branch is regulated by the Dubai Financial Services Authority (DFSA) with the registration number CL10040 and is provisioned for Arranging Deals in Investments and Advising on Financial Products. All communications and services are directed at Professional Clients and Market Counterparties only (as defined in the DFSA rulebook). Persons other than Professional Clients and Market Counterparties, such as Retail Clients, are not the intended recipients of our communications or services.
+
+# LEGAL
+
+All research publications are disseminated to our clients through posting on the firm's password protected websites, bernsteinresearch.com and autonomous.com. Certain, but not all, research publications are also made available to clients through third-party vendors or redistributed to clients through alternate electronic means as a convenience.
+
+This publication has been published and distributed in accordance with the Firm's policy for management of conflicts of interest in investment research, a copy of which is available from Bernstein Institutional Services LLC, Director of Compliance, 245 Park Avenue, New York, NY 10167. Additional disclosures and information regarding Bernstein's business are available on our website www.bernsteinresearch.com.
+
+The securities described herein may not be eligible for sale in all jurisdictions or to certain categories of investors where that permission profile is not consistent with the licenses held by the entities noted herein. This document is for distribution only as may be permitted by law. This publication is not directed to, or intended for distribution to or use by, any person or entity who is a citizen or resident of, or located in any locality, state, country or other jurisdiction where such distribution, publication, availability or use would be contrary to law or regulation or which would subject any of the entities referenced herein or any of their subsidiaries or affiliates to any registration or licensing requirement within such jurisdiction. This publication is based upon public sources we believe to be reliable, but no representation is made by us that the publication is accurate or complete. We do not undertake to advise you of any change in the reported information or in the opinions herein. This publication was prepared and issued by entity referred to herein for distribution to eligible counterparties or professional clients. This publication is not an offer to buy or sell any security, and it does not constitute investment, legal or tax advice. The investments referred to herein may not be suitable for you. Investors must make their own investment decisions in consultation with their professional advisors in light of their specific circumstances. The value of investments may fluctuate, and investments that are denominated in foreign currencies may fluctuate in value as a result of exposure to exchange rate movements. Information about past performance of an investment is not necessarily a guide to, indicator of, or assurance of, future performance.
+
+This report is directed to and intended only for our clients who are “eligible counterparties”, “professional clients”, “institutional investors” and/or “professional investors” as defined by the aforementioned regulators, and must not be redistributed to retail clients as defined by the aforementioned regulators. Retail clients who receive this report should note that the services of the entities noted herein are not available to them and should not rely on the material herein to make an investment decision. The result of such act will not hold the entities noted herein liable for any loss thus incurred as the entities noted herein are not registered/authorised/licensed to deal with retail clients and will not enter into any contractual agreement/arrangement with retail clients. This report is provided subject to the terms and conditions of any agreement that the clients may have entered into with the entities noted herein. All research reports are disseminated on a simultaneous basis to eligible clients through electronic publication to our client portal.
+
+The information in this report was prepared by Bernstein solely for the internal business use of our clients. Clients may store, display, analyze, reformat and print the information in this report for this limited use only. Clients may not copy, alter, create derivative works, resell, reverse engineer, commercially exploit, share or distribute any part of the information contained herein for any purpose without Bernstein's express written consent. These restrictions include extracting data or using the content to develop indices or other products. Further, you may not use this report, or any portion of this report, to train or finetune any third-party machine learning or artificial intelligence system, or as a prompt or input into any such system. You also may not, without Bernstein's express written consent, do any of the foregoing in connection with your own internal machine learning or artificial intelligence system.
+
+Bernstein may use artificial intelligence tools in the preparation of its materials. Any such materials are reviewed by Bernstein's research analysts prior to publication.
+
+This report has been prepared for information purposes only and is based on current public information that we consider reliable, but the entities noted herein do not warrant or represent (express or implied) as to the sources of information or data contained herein are accurate, complete, not misleading or as to its fitness for the purpose intended even though the entities noted herein rely on reputable or trustworthy data providers, it should not be relied upon as such. Opinions expressed are the author(s)' current opinions as of the date appearing on the material only and we do not undertake to advise you of any change in the reported information or in the opinions herein.
+
+This publication was prepared and issued by the entity referred to herein for distribution to eligible counterparties or professional clients. The information in this report is intended for general circulation and does not constitute an offer to buy or sell any security, investment, legal or tax advice nor a personal recommendation, as defined by any of the aforementioned regulators. It does not take into account the particular investment objectives, financial situations, or needs of individual investors. The report has not been reviewed by any of the aforementioned regulators and does not represent any official recommendation from the aforementioned regulators. The investments referred to herein may not be suitable for you. Investors must make their own investment decisions in consultation with advice sought from a financial adviser regarding the suitability of the investment product, taking into account the specific investment objectives, financial situation or particular needs of any recipient of the recommendation, before the recipient
+
+makes a commitment to purchase the investment product.
+
+The analysis contained herein is based on numerous assumptions. Different assumptions could result in materially different results. The information in this report does not constitute, or form part of, any offer to sell or issue, or any offer to purchase or subscribe for shares, or to induce engage in any other investment activity. The value of any securities or financial instruments mentioned in this report may fluctuate subject to market conditions. Information about past performance of an investment is not necessarily a guide to, indicative of, or assurance of future performance. Estimates of future performance mentioned by the research analyst in this report are based on assumptions that may not be realized due to unforeseen factors like market volatility/fluctuation. In relation to securities or financial instruments denominated in a foreign currency other than the clients' home currency, movements in exchange rates will have an effect on the value, either favorable or unfavorable. Before acting on any recommendations in this report, recipients should consider the appropriateness of investing in the subject securities or financial instruments mentioned in this report and, if necessary, seek for independent professional advice.
+
+The securities described herein may not be eligible for sale in all jurisdictions or to certain categories of investors where that permission profile is not consistent with the licenses held by the entities noted herein. This document is for distribution only as may be permitted by law. It is not directed to, or intended for distribution to or use by, any person or entity who is a citizen or resident of or located in any locality, state, country or other jurisdiction where such distribution, publication, availability or use would be contrary to law or regulation or would subject the entities noted herein to any regulation or licensing requirement within such jurisdiction.
+
+Source: Bloomberg Index Services Limited. BLOOMBERG® is a trademark and service mark of Bloomberg Finance L.P. and its affiliates (collectively “Bloomberg”). Bloomberg or Bloomberg’s licensors own all proprietary rights in the Bloomberg Indices. Neither Bloomberg nor Bloomberg’s licensors approves or endorses this material, or guarantees the accuracy or completeness of any information herein, or makes any warranty, express or implied, as to the results to be obtained therefrom and, to the maximum extent allowed by law, neither shall have any liability or responsibility for injury or damages arising in connection therewith.
+
+No part of this material may be reproduced, distributed or transmitted or otherwise made available without prior consent of the entities noted herein. Copyright Bernstein Institutional Services LLC Bernstein Autonomous LLP, BSG France S.A., Bernstein (Hong Kong) Limited 盛博香港有限公司, Bernstein (Canada) Limited, Bernstein (India) Private Limited (SEBI registration no. INH000006378), Bernstein (Singapore) Private Limited and Bernstein Japan KK (サンフォード・C・バーンスタイン株式会社). All rights reserved. The trademarks and service marks contained herein are the property of their respective owners. Any unauthorized use or disclosure is strictly prohibited. The entities noted herein may pursue legal action if the unauthorized use results in any defamation and/or reputational risk to the entities noted herein and research published under the Bernstein and Autonomous brands.
