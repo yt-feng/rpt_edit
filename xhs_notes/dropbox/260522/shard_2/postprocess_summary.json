@@ -1,0 +1,113 @@
+[
+  {
+    "item": "0001-11-Goldman-Sachs-Global-Economics-Comment--EM-Technology-Adoption-Cycles-an",
+    "source_pdf": "/tmp/pdf_batch_001_oepepja9/pdfs/0001-11-GS-Global Economics Comment- EM Technology Adoption Cycles and Implications for Artificial Intelligence-260521.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "cover_short_title": "海外新兴市场的AI追",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png"
+    ],
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md",
+    "wechat_images": [
+      "assets/source_image_01.jpg",
+      "assets/source_image_02.jpg",
+      "assets/source_image_03.jpg"
+    ],
+    "wechat_article_en": "wechat_article_en.md",
+    "podcast_script": "podcast_script.txt"
+  },
+  {
+    "item": "0002-12-Goldman-Sachs-Natural-Gas-Comment--China-s-Destocking-Through-April-Sugg",
+    "source_pdf": "/tmp/pdf_batch_001_oepepja9/pdfs/0002-12-GS-Natural Gas Comment- China-s Destocking Through April Suggests Higher LNG Imports Ahead of The Winter-260521.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "cover_short_title": "中国天然气去库加速，",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png"
+    ],
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md",
+    "wechat_images": [
+      "assets/source_image_01.jpg",
+      "assets/source_image_02.jpg",
+      "assets/source_image_03.jpg"
+    ],
+    "wechat_article_en": "wechat_article_en.md",
+    "podcast_script": "podcast_script.txt"
+  },
+  {
+    "item": "0003-13-J.P.-Morgan-ESS-Battery-4M26--109-y-y--attention-turns-to-lithium-carbon",
+    "source_pdf": "/tmp/pdf_batch_001_oepepja9/pdfs/0003-13-JPM-ESS Battery-4M26 -109-y y- attention turns to lithium carbonate price tolerance and demand implications-260520.pdf",
+    "mineru_state": "failed",
+    "mineru_error": "parsing failed, please try again later",
+    "error": "MinerU did not return a successful full_zip_url for this PDF.",
+    "podcast_error": "source_mineru.md not found"
+  },
+  {
+    "item": "0004-14-J.P.-Morgan-Epoxy-Resins-China-April-Exports-and-Prices-Higher-Y-Y-26052",
+    "source_pdf": "/tmp/pdf_batch_001_oepepja9/pdfs/0004-14-JPM-Epoxy Resins-China April Exports and Prices Higher Y Y-260520.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "cover_short_title": "环氧树脂4月出口：量",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png"
+    ],
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md",
+    "wechat_images": [
+      "assets/source_image_01.jpg",
+      "assets/source_image_02.jpg",
+      "assets/source_image_03.jpg"
+    ],
+    "wechat_article_en": "wechat_article_en.md",
+    "podcast_script": "podcast_script.txt"
+  },
+  {
+    "item": "0005-15-J.P.-Morgan-Methanol-China-April-Import-Export-Prices-Higher-260520",
+    "source_pdf": "/tmp/pdf_batch_001_oepepja9/pdfs/0005-15-JPM-Methanol-China April Import Export Prices Higher-260520.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "cover_short_title": "甲醇4月贸易数据：进",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png"
+    ],
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md",
+    "wechat_images": [
+      "assets/source_image_01.jpg",
+      "assets/source_image_02.jpg",
+      "assets/source_image_03.jpg"
+    ],
+    "wechat_article_en": "wechat_article_en.md",
+    "podcast_script": "podcast_script.txt"
+  }
+]

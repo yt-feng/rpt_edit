@@ -1,0 +1,9 @@
+{
+  "source_pdf": "/tmp/pdf_batch_001_oepepja9/pdfs/0003-13-JPM-ESS Battery-4M26 -109-y y- attention turns to lithium carbonate price tolerance and demand implications-260520.pdf",
+  "mineru_state": "failed",
+  "mineru_error": "parsing failed, please try again later",
+  "error": "MinerU did not return a successful full_zip_url for this PDF.",
+  "podcast_error": "source_mineru.md not found",
+  "xianyu_note.md_error": "source_mineru.md not found",
+  "zhihu_article.md_error": "source_mineru.md not found"
+}

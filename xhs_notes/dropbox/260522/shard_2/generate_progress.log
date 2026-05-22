@@ -1,0 +1,14 @@
+Found 24 total PDFs; shard 2/40 has 5 PDFs, skips 0 already converted, will process 5 PDFs with batch_size=5.
+Running batch 1: 5 PDFs
+Found 5 PDFs.
+Uploading PDF to MinerU: /tmp/pdf_batch_001_oepepja9/pdfs/0001-11-Goldman Sachs-Global Economics Comment- EM Technology Adoption Cycles and Implications for Artificial Intelligence-260521.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_oepepja9/pdfs/0002-12-Goldman Sachs-Natural Gas Comment- China-s Destocking Through April Suggests Higher LNG Imports Ahead of The Winter-260521.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_oepepja9/pdfs/0003-13-J.P. Morgan-ESS Battery-4M26 -109-y y- attention turns to lithium carbonate price tolerance and demand implications-260520.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_oepepja9/pdfs/0004-14-J.P. Morgan-Epoxy Resins-China April Exports and Prices Higher Y Y-260520.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_oepepja9/pdfs/0005-15-J.P. Morgan-Methanol-China April Import Export Prices Higher-260520.pdf
+MinerU batch_id=68900f04-7b55-440d-ae48-fe7781e47bf7
+MinerU states: running, running, failed, pending, waiting-file
+MinerU states: done, done, failed, running, running
+MinerU states: done, done, failed, done, done
+Done. Results written to /home/runner/work/rpt_edit/rpt_edit/xhs_notes/dropbox/260522/shard_2
+All batches completed successfully.
