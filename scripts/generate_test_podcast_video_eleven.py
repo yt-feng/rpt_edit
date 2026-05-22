@@ -1,9 +1,11 @@
 #!/usr/bin/env python3
-"""Generate a Chinese two-male-voice podcast and vertical explainer video.
+"""Generate Chinese and English ElevenLabs podcast audio + vertical videos.
 
-This test script uses ElevenLabs for TTS through the ELEVEN_KEY secret.
-The subtitle text is the exact text sent to TTS, and each video frame duration
-is based on the measured duration of that exact audio segment.
+Key design:
+- Voice IDs are fixed to the user-specified ElevenLabs voices.
+- Subtitles use exactly the same text sent to ElevenLabs TTS.
+- Video frame durations are measured from each generated audio segment.
+- Title and body keywords are highlighted with DeepSeek-selected keywords.
 """
 from __future__ import annotations
 
@@ -11,7 +13,6 @@ import argparse
 import json
 import os
 import re
-import shutil
 import subprocess
 import tempfile
 import wave
@@ -25,8 +26,45 @@ SIZE = (1080, 1920)
 BG = (9, 31, 64)
 ACCENT = (255, 214, 102)
 WATERMARK = "KC桌面"
-VOICE_A_FALLBACK = "pNInz6obpgDQGcFmaJgB"
-VOICE_B_FALLBACK = "ErXwobaYiN019PkySvjV"
+
+LANGS: dict[str, dict[str, Any]] = {
+    "zh": {
+        "prompt": "prompts/podcast_zh_only_prompt.md",
+        "prefixes": ("ZH_A", "ZH_B"),
+        "language_code": "zh",
+        "host_label": "主持人",
+        "analyst_label": "研究员",
+        "audio": "podcast_zh.wav",
+        "script": "podcast_zh_script.txt",
+        "timeline": "podcast_zh_timeline.json",
+        "srt": "podcast_zh_subtitles.srt",
+        "video": "podcast_zh_explainer.mp4",
+        "prompt_out": "prompt_for_podcast_zh.md",
+        "voice_a": "fQj4gJSexpu8RDE2Ii5m",
+        "voice_b": "r6qgCCGI7RWKXCagm158",
+        "title_fallback": "研报讲解",
+        "line_width": 18,
+        "title_width": 15,
+    },
+    "en": {
+        "prompt": "prompts/podcast_en_only_prompt.md",
+        "prefixes": ("EN_A", "EN_B"),
+        "language_code": "en",
+        "host_label": "Host",
+        "analyst_label": "Analyst",
+        "audio": "podcast_en.wav",
+        "script": "podcast_en_script.txt",
+        "timeline": "podcast_en_timeline.json",
+        "srt": "podcast_en_subtitles.srt",
+        "video": "podcast_en_explainer.mp4",
+        "prompt_out": "prompt_for_podcast_en.md",
+        "voice_a": "XZEfcFyBnzsNJrdvkWdI",
+        "voice_b": "ISCzWD5dlKGqdgkYePJf",
+        "title_fallback": "Research Briefing",
+        "line_width": 34,
+        "title_width": 26,
+    },
+}
 
 
 def log(message: str) -> None:
@@ -47,7 +85,7 @@ def post_json(url: str, headers: dict[str, str], payload: dict[str, Any], timeou
     return response.json()
 
 
-def deepseek(prompt: str, args: argparse.Namespace, temperature: float = 0.72) -> str:
+def deepseek(prompt: str, args: argparse.Namespace, temperature: float = 0.55) -> str:
     key = os.getenv("DEEPSEEK_API_KEY")
     if not key:
         raise RuntimeError("Missing DEEPSEEK_API_KEY")
@@ -58,7 +96,7 @@ def deepseek(prompt: str, args: argparse.Namespace, temperature: float = 0.72) -
             "model": args.model,
             "temperature": temperature,
             "messages": [
-                {"role": "system", "content": "你是中文播客制作人，输出适合男声双人对话朗读的脚本。"},
+                {"role": "system", "content": "You are a careful podcast and short-video producer. Return exactly the requested format."},
                 {"role": "user", "content": prompt},
             ],
         },
@@ -79,7 +117,7 @@ def trim(text: str, limit: int) -> str:
         return text
     head = int(limit * 0.72)
     tail = int(limit * 0.22)
-    return text[:head] + "\n\n[中间内容省略]\n\n" + text[-tail:]
+    return text[:head] + "\n\n[Middle content omitted]\n\n" + text[-tail:]
 
 
 def normalize_text(text: str) -> str:
@@ -89,9 +127,9 @@ def normalize_text(text: str) -> str:
     return text
 
 
-def parse_script(script: str) -> list[tuple[str, str]]:
+def parse_script(script: str, prefixes: tuple[str, str]) -> list[tuple[str, str]]:
     rows: list[tuple[str, str]] = []
-    pattern = re.compile(r"^(ZH_A|ZH_B)\s*[:：]\s*(.+)$", re.I)
+    pattern = re.compile(rf"^({'|'.join(prefixes)})\s*[:：]\s*(.+)$", re.I)
     for raw in script.splitlines():
         match = pattern.match(raw.strip().lstrip("-• ").strip())
         if match:
@@ -107,48 +145,6 @@ def eleven_key() -> str:
     if not key:
         raise RuntimeError("Missing ELEVEN_KEY. Please add it to repo secrets.")
     return key
-
-
-def score_voice(voice: dict[str, Any]) -> int:
-    blob = (json.dumps(voice.get("labels") or {}, ensure_ascii=False) + " " + str(voice.get("name", ""))).lower()
-    score = 0
-    if "male" in blob or "男" in blob:
-        score += 10
-    if any(word in blob for word in ["deep", "calm", "professional", "narration", "news", "authoritative"]):
-        score += 3
-    if any(word in blob for word in ["chinese", "mandarin", "中文", "普通话"]):
-        score += 2
-    return score
-
-
-def choose_voices(args: argparse.Namespace, item_dir: Path) -> tuple[str, str]:
-    voice_a = args.voice_a_id
-    voice_b = args.voice_b_id
-    if voice_a != "auto" and voice_b != "auto":
-        return voice_a, voice_b
-    try:
-        response = requests.get(
-            args.eleven_base_url.rstrip("/") + "/v1/voices",
-            headers={"xi-api-key": eleven_key()},
-            timeout=45,
-        )
-        if response.status_code >= 400:
-            raise RuntimeError(response.text[:800])
-        voices = response.json().get("voices") or []
-        voices = sorted([v for v in voices if v.get("voice_id")], key=score_voice, reverse=True)
-        if voices and voice_a == "auto":
-            voice_a = str(voices[0]["voice_id"])
-        if voices and voice_b == "auto":
-            pick = next((v for v in voices if str(v["voice_id"]) != voice_a), voices[0])
-            voice_b = str(pick["voice_id"])
-        (item_dir / "elevenlabs_selected_voices.json").write_text(json.dumps(voices[:8], ensure_ascii=False, indent=2), encoding="utf-8")
-    except Exception as exc:
-        log(f"ElevenLabs voice auto-select failed; using fallback male voices: {exc}")
-    if voice_a == "auto":
-        voice_a = VOICE_A_FALLBACK
-    if voice_b == "auto" or voice_b == voice_a:
-        voice_b = VOICE_B_FALLBACK
-    return voice_a, voice_b
 
 
 def wav_duration(path: Path) -> float:
@@ -170,7 +166,7 @@ def combine_wavs(parts: list[Path], output: Path, silence_ms: int = 360) -> None
             dst.writeframes(silence)
 
 
-def eleven_tts(text: str, voice_id: str, mp3_path: Path, wav_path: Path, args: argparse.Namespace) -> None:
+def eleven_tts(text: str, voice_id: str, language_code: str, mp3_path: Path, wav_path: Path, args: argparse.Namespace) -> None:
     response = requests.post(
         args.eleven_base_url.rstrip("/") + f"/v1/text-to-speech/{voice_id}",
         params={"output_format": args.output_format},
@@ -178,7 +174,7 @@ def eleven_tts(text: str, voice_id: str, mp3_path: Path, wav_path: Path, args: a
         json={
             "text": text,
             "model_id": args.eleven_model,
-            "language_code": "zh",
+            "language_code": language_code,
             "voice_settings": {
                 "stability": args.stability,
                 "similarity_boost": args.similarity_boost,
@@ -194,18 +190,18 @@ def eleven_tts(text: str, voice_id: str, mp3_path: Path, wav_path: Path, args: a
     run(["ffmpeg", "-y", "-i", str(mp3_path), "-ar", "44100", "-ac", "1", "-c:a", "pcm_s16le", str(wav_path)], timeout=180)
 
 
-def make_audio(rows: list[tuple[str, str]], item_dir: Path, args: argparse.Namespace) -> list[dict[str, Any]]:
-    voice_a, voice_b = choose_voices(args, item_dir)
+def make_audio(rows: list[tuple[str, str]], item_dir: Path, lang: str, args: argparse.Namespace) -> list[dict[str, Any]]:
+    cfg = LANGS[lang]
     timeline: list[dict[str, Any]] = []
     wav_parts: list[Path] = []
-    with tempfile.TemporaryDirectory(prefix="eleven_segments_") as temp_dir:
+    with tempfile.TemporaryDirectory(prefix=f"eleven_{lang}_segments_") as temp_dir:
         tmp = Path(temp_dir)
         cursor = 0.0
         for index, (speaker, text) in enumerate(rows[:120], 1):
             mp3 = tmp / f"seg_{index:03d}.mp3"
             wav = tmp / f"seg_{index:03d}.wav"
-            voice_id = voice_a if speaker == "ZH_A" else voice_b
-            eleven_tts(text, voice_id, mp3, wav, args)
+            voice_id = cfg["voice_a"] if speaker == cfg["prefixes"][0] else cfg["voice_b"]
+            eleven_tts(text, voice_id, cfg["language_code"], mp3, wav, args)
             duration = wav_duration(wav)
             timeline.append({
                 "speaker": speaker,
@@ -217,8 +213,8 @@ def make_audio(rows: list[tuple[str, str]], item_dir: Path, args: argparse.Names
             })
             cursor += duration + 0.36
             wav_parts.append(wav)
-        combine_wavs(wav_parts, item_dir / "podcast_zh.wav")
-    log(f"ElevenLabs voices used: ZH_A={voice_a}, ZH_B={voice_b}")
+        combine_wavs(wav_parts, item_dir / cfg["audio"])
+    log(f"{lang.upper()} ElevenLabs voices: A={cfg['voice_a']}, B={cfg['voice_b']}")
     return timeline
 
 
@@ -230,11 +226,12 @@ def srt_time(seconds: float) -> str:
     return f"{hh:02d}:{mm:02d}:{ss:02d},{ms:03d}"
 
 
-def write_srt(timeline: list[dict[str, Any]], path: Path) -> None:
+def write_srt(timeline: list[dict[str, Any]], path: Path, lang: str) -> None:
+    cfg = LANGS[lang]
     blocks: list[str] = []
     for index, seg in enumerate(timeline, 1):
-        label = "主持人" if seg["speaker"] == "ZH_A" else "研究员"
-        blocks.append(f"{index}\n{srt_time(float(seg['start']))} --> {srt_time(float(seg['end']))}\n{label}：{seg['text']}\n")
+        label = cfg["host_label"] if seg["speaker"] == cfg["prefixes"][0] else cfg["analyst_label"]
+        blocks.append(f"{index}\n{srt_time(float(seg['start']))} --> {srt_time(float(seg['end']))}\n{label}: {seg['text']}\n")
     path.write_text("\n".join(blocks), encoding="utf-8")
 
 
@@ -250,8 +247,22 @@ def load_font(size: int, bold: bool = False) -> ImageFont.ImageFont:
     return ImageFont.load_default()
 
 
-def wrap_text(text: str, width: int) -> list[str]:
-    text = re.sub(r"\s+", " ", text).strip()
+def wrap_text(text: str, width: int, lang: str) -> list[str]:
+    text = re.sub(r"\s+", " ", text or "").strip()
+    if lang == "en":
+        words = text.split()
+        lines: list[str] = []
+        current = ""
+        for word in words:
+            if len(current) + len(word) + 1 <= width:
+                current = (current + " " + word).strip()
+            else:
+                if current:
+                    lines.append(current)
+                current = word
+        if current:
+            lines.append(current)
+        return lines or [""]
     return [text[i : i + width] for i in range(0, len(text), width)] or [""]
 
 
@@ -264,15 +275,70 @@ def report_images(item_dir: Path) -> list[Path]:
     return source_images or sorted(p for p in assets.glob("xhs_card_*.png") if p.suffix.lower() in suffixes)
 
 
-def report_title(item_dir: Path) -> str:
-    for filename in ["note.md", "wechat_article.md"]:
+def report_title(item_dir: Path, lang: str) -> str:
+    preferred = ["wechat_article_en.md", "wechat_article.md", "note.md"] if lang == "en" else ["note.md", "wechat_article.md"]
+    for filename in preferred:
         path = item_dir / filename
         if path.exists():
             for raw in path.read_text(encoding="utf-8", errors="ignore").splitlines():
                 line = re.sub(r"^[#>*\-\s]+", "", raw).strip()
-                if line and not line.startswith("封面"):
-                    return line[:34]
-    return "研报讲解"
+                if line and not line.startswith("封面") and not line.startswith("!"):
+                    return line[:60 if lang == "en" else 34]
+    return str(LANGS[lang]["title_fallback"])
+
+
+def extract_json_array_or_object(text: str) -> Any:
+    match = re.search(r"(\{[\s\S]*\}|\[[\s\S]*\])", text)
+    return json.loads(match.group(1) if match else text)
+
+
+def fallback_terms(text: str, lang: str, limit: int = 3) -> list[str]:
+    if lang == "en":
+        words = [w.strip(".,:;!?()[]{}\"'") for w in text.split()]
+        words = [w for w in words if len(w) >= 5 and w.lower() not in {"about", "there", "which", "their", "report", "market"}]
+        out: list[str] = []
+        for word in words:
+            if word not in out and word in text:
+                out.append(word)
+            if len(out) >= limit:
+                break
+        return out
+    return re.findall(r"[\u4e00-\u9fff]{2,6}|[A-Za-z0-9]{2,}", text)[:limit]
+
+
+def apply_highlights(title: str, timeline: list[dict[str, Any]], lang: str, args: argparse.Namespace) -> tuple[list[str], list[dict[str, Any]]]:
+    sample = [{"i": i, "text": seg["text"]} for i, seg in enumerate(timeline[:90])]
+    prompt = f"""
+Analyze the following {lang} video title and subtitles. Pick concise highlight keywords for visual emphasis.
+
+Rules:
+1. Return JSON only, no markdown.
+2. Format: {{"title_keywords": ["..."], "lines": [{{"i": 0, "keywords": ["..."]}}]}}
+3. Each keyword must be an exact continuous substring from the original title or subtitle line.
+4. Pick 1-3 title keywords and 0-3 keywords per line.
+5. Prefer numbers, sectors, companies, variables, turning points, and core concepts.
+6. Avoid generic words like report, market, this, today, because, 所以, 报告, 我们.
+
+Title: {title}
+Subtitles: {json.dumps(sample, ensure_ascii=False)}
+""".strip()
+    title_terms: list[str] = []
+    mapping: dict[int, list[str]] = {}
+    try:
+        data = extract_json_array_or_object(deepseek(prompt, args, temperature=0.1))
+        title_terms = [str(x) for x in data.get("title_keywords", []) if str(x) in title][:3]
+        for row in data.get("lines", []):
+            idx = int(row.get("i"))
+            text = timeline[idx]["text"] if idx < len(timeline) else ""
+            mapping[idx] = [str(k) for k in row.get("keywords", []) if str(k) in text][:3]
+    except Exception as exc:
+        log(f"Highlight keyword analysis failed for {lang}, using fallback: {exc}")
+    if not title_terms:
+        title_terms = fallback_terms(title, lang, 3)
+    for i, seg in enumerate(timeline):
+        terms = mapping.get(i) or fallback_terms(str(seg.get("text", "")), lang, 2)
+        seg["highlight_terms"] = [t for t in terms if t and t in seg.get("text", "")][:3]
+    return title_terms, timeline
 
 
 def background() -> Image.Image:
@@ -292,7 +358,39 @@ def fit_image(path: Path) -> Image.Image | None:
         return None
 
 
-def draw_frame(image_path: Path | None, title: str, seg: dict[str, Any], output: Path, index: int, total: int) -> None:
+def split_highlight_chunks(text: str, terms: list[str]) -> list[tuple[str, bool]]:
+    chunks: list[tuple[str, bool]] = [(text, False)]
+    for term in sorted(set(terms), key=len, reverse=True):
+        if not term:
+            continue
+        next_chunks: list[tuple[str, bool]] = []
+        for chunk, marked in chunks:
+            if marked or term not in chunk:
+                next_chunks.append((chunk, marked))
+                continue
+            parts = chunk.split(term)
+            for idx, part in enumerate(parts):
+                if part:
+                    next_chunks.append((part, False))
+                if idx < len(parts) - 1:
+                    next_chunks.append((term, True))
+        chunks = next_chunks
+    return chunks
+
+
+def draw_highlighted_line(draw: ImageDraw.ImageDraw, line: str, terms: list[str], font: ImageFont.ImageFont, y: int, center: bool = False) -> int:
+    chunks = split_highlight_chunks(line, terms)
+    widths = [draw.textbbox((0, 0), chunk, font=font)[2] - draw.textbbox((0, 0), chunk, font=font)[0] for chunk, _ in chunks]
+    total_w = sum(widths)
+    x = (SIZE[0] - total_w) // 2 if center else 120
+    for (chunk, marked), width in zip(chunks, widths):
+        draw.text((x, y), chunk, font=font, fill=ACCENT if marked else (255, 255, 255))
+        x += width
+    return y
+
+
+def draw_frame(image_path: Path | None, title: str, title_terms: list[str], seg: dict[str, Any], output: Path, index: int, total: int, lang: str) -> None:
+    cfg = LANGS[lang]
     canvas = background()
     draw = ImageDraw.Draw(canvas)
     title_font = load_font(54, True)
@@ -300,9 +398,8 @@ def draw_frame(image_path: Path | None, title: str, seg: dict[str, Any], output:
     small_font = load_font(30)
 
     y = 66
-    for line in wrap_text(title, 15)[:2]:
-        box = draw.textbbox((0, 0), line, font=title_font)
-        draw.text(((SIZE[0] - (box[2] - box[0])) // 2, y), line, font=title_font, fill=(255, 255, 255))
+    for line in wrap_text(title, int(cfg["title_width"]), lang)[:2]:
+        draw_highlighted_line(draw, line, title_terms, title_font, y, center=True)
         y += 68
     draw.rounded_rectangle((70, 190, 1010, 198), radius=4, fill=ACCENT)
 
@@ -319,14 +416,15 @@ def draw_frame(image_path: Path | None, title: str, seg: dict[str, Any], output:
             canvas.paste(image.convert("RGBA"), ((SIZE[0] - image.width) // 2, stage[1] + (stage[3] - stage[1] - image.height) // 2), image.convert("RGBA"))
 
     draw.rounded_rectangle((70, 1190, 1010, 1660), radius=38, fill=(0, 0, 0, 185))
-    label = "主持人" if seg["speaker"] == "ZH_A" else "研究员"
-    label_color = (37, 99, 235) if seg["speaker"] == "ZH_A" else (20, 130, 100)
-    draw.rounded_rectangle((116, 1234, 248, 1282), radius=24, fill=label_color)
-    draw.text((140, 1238), label, font=small_font, fill=(255, 255, 255))
+    label = cfg["host_label"] if seg["speaker"] == cfg["prefixes"][0] else cfg["analyst_label"]
+    label_color = (37, 99, 235) if seg["speaker"] == cfg["prefixes"][0] else (190, 96, 135)
+    draw.rounded_rectangle((116, 1234, 286 if lang == "en" else 248, 1282), radius=24, fill=label_color)
+    draw.text((136, 1238), str(label), font=small_font, fill=(255, 255, 255))
 
     yy = 1318
-    for line in wrap_text(str(seg["text"]), 18)[:4]:
-        draw.text((120, yy), line, font=subtitle_font, fill=(255, 255, 255))
+    text = str(seg["text"])
+    for line in wrap_text(text, int(cfg["line_width"]), lang)[:4]:
+        draw_highlighted_line(draw, line, list(seg.get("highlight_terms", [])), subtitle_font, yy, center=False)
         yy += 66
 
     draw.text((70, 1728), f"{index + 1}/{total}", font=small_font, fill=(200, 215, 235))
@@ -344,24 +442,56 @@ def frame_duration(timeline: list[dict[str, Any]], index: int) -> float:
     return max(0.5, float(timeline[index]["end"]) - float(timeline[index]["start"]) + 0.36)
 
 
-def make_video(item_dir: Path, timeline: list[dict[str, Any]]) -> None:
+def make_video(item_dir: Path, timeline: list[dict[str, Any]], lang: str, title: str, title_terms: list[str]) -> None:
+    cfg = LANGS[lang]
     images = report_images(item_dir)
-    title = report_title(item_dir)
-    with tempfile.TemporaryDirectory(prefix="kc_frames_") as temp_dir:
+    with tempfile.TemporaryDirectory(prefix=f"kc_{lang}_frames_") as temp_dir:
         tmp = Path(temp_dir)
         concat = tmp / "concat.txt"
         concat_lines: list[str] = []
         for index, seg in enumerate(timeline):
             frame = tmp / f"frame_{index:04d}.png"
             image_path = images[index % len(images)] if images else None
-            draw_frame(image_path, title, seg, frame, index, len(timeline))
+            draw_frame(image_path, title, title_terms, seg, frame, index, len(timeline), lang)
             concat_lines.append(f"file '{frame.as_posix()}'\n")
             concat_lines.append(f"duration {frame_duration(timeline, index):.3f}\n")
         concat_lines.append(concat_lines[-2])
         concat.write_text("".join(concat_lines), encoding="utf-8")
         silent = tmp / "silent.mp4"
         run(["ffmpeg", "-y", "-f", "concat", "-safe", "0", "-i", str(concat), "-vsync", "vfr", "-pix_fmt", "yuv420p", str(silent)], timeout=1200)
-        run(["ffmpeg", "-y", "-i", str(silent), "-i", str(item_dir / "podcast_zh.wav"), "-c:v", "libx264", "-preset", "medium", "-crf", "23", "-c:a", "aac", "-b:a", "160k", "-shortest", str(item_dir / "podcast_zh_explainer.mp4")], timeout=1200)
+        run([
+            "ffmpeg", "-y", "-i", str(silent), "-i", str(item_dir / cfg["audio"]),
+            "-c:v", "libx264", "-preset", "medium", "-crf", "23", "-c:a", "aac", "-b:a", "160k",
+            "-shortest", str(item_dir / cfg["video"]),
+        ], timeout=1200)
+
+
+def generate_language(item_dir: Path, lang: str, source_text: str, args: argparse.Namespace) -> dict[str, Any]:
+    cfg = LANGS[lang]
+    prompt_template = Path(str(cfg["prompt"])).read_text(encoding="utf-8")
+    prompt = prompt_template.format(podcast_minutes=args.podcast_minutes, source_text=source_text)
+    (item_dir / str(cfg["prompt_out"])).write_text(prompt, encoding="utf-8")
+    script = deepseek(prompt, args, temperature=0.72)
+    (item_dir / str(cfg["script"])).write_text(script, encoding="utf-8")
+    rows = parse_script(script, cfg["prefixes"])
+    if not rows:
+        raise RuntimeError(f"DeepSeek returned no {cfg['prefixes'][0]}/{cfg['prefixes'][1]} rows for {lang}")
+    timeline = make_audio(rows, item_dir, lang, args)
+    title = report_title(item_dir, lang)
+    title_terms, timeline = apply_highlights(title, timeline, lang, args)
+    (item_dir / str(cfg["timeline"])).write_text(json.dumps(timeline, ensure_ascii=False, indent=2), encoding="utf-8")
+    write_srt(timeline, item_dir / str(cfg["srt"]), lang)
+    make_video(item_dir, timeline, lang, title, title_terms)
+    return {
+        f"podcast_{lang}_script": cfg["script"],
+        f"podcast_{lang}_audio": cfg["audio"],
+        f"podcast_{lang}_subtitles": cfg["srt"],
+        f"podcast_{lang}_timeline": cfg["timeline"],
+        f"podcast_{lang}_video": cfg["video"],
+        f"podcast_{lang}_voice_a": cfg["voice_a"],
+        f"podcast_{lang}_voice_b": cfg["voice_b"],
+        f"podcast_{lang}_title_highlights": title_terms,
+    }
 
 
 def main() -> int:
@@ -369,14 +499,11 @@ def main() -> int:
     parser.add_argument("--output-dir", required=True)
     parser.add_argument("--model", default=os.getenv("DEEPSEEK_MODEL", "deepseek-chat"))
     parser.add_argument("--deepseek-base-url", default=os.getenv("DEEPSEEK_BASE_URL", "https://api.deepseek.com"))
-    parser.add_argument("--prompt-template", default="prompts/podcast_zh_only_prompt.md")
     parser.add_argument("--podcast-minutes", type=int, default=5)
     parser.add_argument("--prompt-chars", type=int, default=26000)
     parser.add_argument("--eleven-base-url", default=os.getenv("ELEVEN_BASE_URL", "https://api.elevenlabs.io"))
     parser.add_argument("--eleven-model", default="eleven_multilingual_v2")
     parser.add_argument("--output-format", default="mp3_44100_128")
-    parser.add_argument("--voice-a-id", default="auto")
-    parser.add_argument("--voice-b-id", default="auto")
     parser.add_argument("--stability", type=float, default=0.45)
     parser.add_argument("--similarity-boost", type=float, default=0.78)
     parser.add_argument("--style", type=float, default=0.18)
@@ -385,18 +512,15 @@ def main() -> int:
     output_dir = Path(args.output_dir)
     item_dir = find_item(output_dir)
     source_text = trim((item_dir / "source_mineru.md").read_text(encoding="utf-8", errors="ignore"), args.prompt_chars)
-    prompt = Path(args.prompt_template).read_text(encoding="utf-8").format(podcast_minutes=args.podcast_minutes, source_text=source_text)
-    (item_dir / "prompt_for_podcast_zh.md").write_text(prompt, encoding="utf-8")
-    script = deepseek(prompt, args)
-    (item_dir / "podcast_zh_script.txt").write_text(script, encoding="utf-8")
-    rows = parse_script(script)
-    if not rows:
-        raise RuntimeError("DeepSeek returned no ZH_A/ZH_B rows")
-
-    timeline = make_audio(rows, item_dir, args)
-    (item_dir / "podcast_zh_timeline.json").write_text(json.dumps(timeline, ensure_ascii=False, indent=2), encoding="utf-8")
-    write_srt(timeline, item_dir / "podcast_zh_subtitles.srt")
-    make_video(item_dir, timeline)
+    status_update: dict[str, Any] = {
+        "podcast_video_watermark": WATERMARK,
+        "podcast_tts_engine_actual": "elevenlabs",
+        "subtitle_source": "same text as TTS, frame durations from measured audio",
+        "highlight_source": "DeepSeek title and subtitle keyword analysis",
+    }
+    for lang in ["zh", "en"]:
+        log(f"Generating {lang.upper()} podcast audio/video")
+        status_update.update(generate_language(item_dir, lang, source_text, args))
 
     status_path = item_dir / "status.json"
     status: dict[str, Any] = {}
@@ -405,17 +529,9 @@ def main() -> int:
             status = json.loads(status_path.read_text(encoding="utf-8", errors="ignore"))
         except Exception:
             status = {}
-    status.update({
-        "podcast_zh_script": "podcast_zh_script.txt",
-        "podcast_zh_audio": "podcast_zh.wav",
-        "podcast_zh_subtitles": "podcast_zh_subtitles.srt",
-        "podcast_zh_video": "podcast_zh_explainer.mp4",
-        "podcast_tts_engine_actual": "elevenlabs",
-        "subtitle_source": "same text as TTS, frame durations from measured audio",
-        "podcast_video_watermark": WATERMARK,
-    })
+    status.update(status_update)
     status_path.write_text(json.dumps(status, ensure_ascii=False, indent=2), encoding="utf-8")
-    log(f"Generated ElevenLabs podcast/video in {item_dir}")
+    log(f"Generated bilingual ElevenLabs podcast/video in {item_dir}")
     return 0
 
 
