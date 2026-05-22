@@ -1,0 +1,42 @@
+Generating ZH podcast audio/video
+$ ffmpeg -y -i /tmp/eleven_zh_segments_ghewq5ae/seg_001.mp3 -ar 44100 -ac 1 -c:a pcm_s16le /tmp/eleven_zh_segments_ghewq5ae/seg_001.wav
+$ ffmpeg -y -i /tmp/eleven_zh_segments_ghewq5ae/seg_002.mp3 -ar 44100 -ac 1 -c:a pcm_s16le /tmp/eleven_zh_segments_ghewq5ae/seg_002.wav
+$ ffmpeg -y -i /tmp/eleven_zh_segments_ghewq5ae/seg_003.mp3 -ar 44100 -ac 1 -c:a pcm_s16le /tmp/eleven_zh_segments_ghewq5ae/seg_003.wav
+$ ffmpeg -y -i /tmp/eleven_zh_segments_ghewq5ae/seg_004.mp3 -ar 44100 -ac 1 -c:a pcm_s16le /tmp/eleven_zh_segments_ghewq5ae/seg_004.wav
+$ ffmpeg -y -i /tmp/eleven_zh_segments_ghewq5ae/seg_005.mp3 -ar 44100 -ac 1 -c:a pcm_s16le /tmp/eleven_zh_segments_ghewq5ae/seg_005.wav
+$ ffmpeg -y -i /tmp/eleven_zh_segments_ghewq5ae/seg_006.mp3 -ar 44100 -ac 1 -c:a pcm_s16le /tmp/eleven_zh_segments_ghewq5ae/seg_006.wav
+$ ffmpeg -y -i /tmp/eleven_zh_segments_ghewq5ae/seg_007.mp3 -ar 44100 -ac 1 -c:a pcm_s16le /tmp/eleven_zh_segments_ghewq5ae/seg_007.wav
+$ ffmpeg -y -i /tmp/eleven_zh_segments_ghewq5ae/seg_008.mp3 -ar 44100 -ac 1 -c:a pcm_s16le /tmp/eleven_zh_segments_ghewq5ae/seg_008.wav
+$ ffmpeg -y -i /tmp/eleven_zh_segments_ghewq5ae/seg_009.mp3 -ar 44100 -ac 1 -c:a pcm_s16le /tmp/eleven_zh_segments_ghewq5ae/seg_009.wav
+$ ffmpeg -y -i /tmp/eleven_zh_segments_ghewq5ae/seg_010.mp3 -ar 44100 -ac 1 -c:a pcm_s16le /tmp/eleven_zh_segments_ghewq5ae/seg_010.wav
+$ ffmpeg -y -i /tmp/eleven_zh_segments_ghewq5ae/seg_011.mp3 -ar 44100 -ac 1 -c:a pcm_s16le /tmp/eleven_zh_segments_ghewq5ae/seg_011.wav
+$ ffmpeg -y -i /tmp/eleven_zh_segments_ghewq5ae/seg_012.mp3 -ar 44100 -ac 1 -c:a pcm_s16le /tmp/eleven_zh_segments_ghewq5ae/seg_012.wav
+$ ffmpeg -y -i /tmp/eleven_zh_segments_ghewq5ae/seg_013.mp3 -ar 44100 -ac 1 -c:a pcm_s16le /tmp/eleven_zh_segments_ghewq5ae/seg_013.wav
+$ ffmpeg -y -i /tmp/eleven_zh_segments_ghewq5ae/seg_014.mp3 -ar 44100 -ac 1 -c:a pcm_s16le /tmp/eleven_zh_segments_ghewq5ae/seg_014.wav
+$ ffmpeg -y -i /tmp/eleven_zh_segments_ghewq5ae/seg_015.mp3 -ar 44100 -ac 1 -c:a pcm_s16le /tmp/eleven_zh_segments_ghewq5ae/seg_015.wav
+$ ffmpeg -y -i /tmp/eleven_zh_segments_ghewq5ae/seg_016.mp3 -ar 44100 -ac 1 -c:a pcm_s16le /tmp/eleven_zh_segments_ghewq5ae/seg_016.wav
+$ ffmpeg -y -i /tmp/eleven_zh_segments_ghewq5ae/seg_017.mp3 -ar 44100 -ac 1 -c:a pcm_s16le /tmp/eleven_zh_segments_ghewq5ae/seg_017.wav
+$ ffmpeg -y -i /tmp/eleven_zh_segments_ghewq5ae/seg_018.mp3 -ar 44100 -ac 1 -c:a pcm_s16le /tmp/eleven_zh_segments_ghewq5ae/seg_018.wav
+ZH ElevenLabs voices: A=fQj4gJSexpu8RDE2Ii5m, B=r6qgCCGI7RWKXCagm158
+$ ffmpeg -y -f concat -safe 0 -i /tmp/kc_zh_frames_sy58pvih/concat.txt -vsync vfr -pix_fmt yuv420p /tmp/kc_zh_frames_sy58pvih/silent.mp4
+$ ffmpeg -y -i /tmp/kc_zh_frames_sy58pvih/silent.mp4 -i podcast_video_tests/26271172090/0001-0001-nomura-usd-cny-fix-model-projection-6.7927-260521/podcast_zh.wav -c:v libx264 -preset medium -crf 23 -c:a aac -b:a 160k -shortest podcast_video_tests/26271172090/0001-0001-nomura-usd-cny-fix-model-projection-6.7927-260521/podcast_zh_explainer.mp4
+Generating EN podcast audio/video
+$ ffmpeg -y -i /tmp/eleven_en_segments_o5ukak7w/seg_001.mp3 -ar 44100 -ac 1 -c:a pcm_s16le /tmp/eleven_en_segments_o5ukak7w/seg_001.wav
+$ ffmpeg -y -i /tmp/eleven_en_segments_o5ukak7w/seg_002.mp3 -ar 44100 -ac 1 -c:a pcm_s16le /tmp/eleven_en_segments_o5ukak7w/seg_002.wav
+$ ffmpeg -y -i /tmp/eleven_en_segments_o5ukak7w/seg_003.mp3 -ar 44100 -ac 1 -c:a pcm_s16le /tmp/eleven_en_segments_o5ukak7w/seg_003.wav
+$ ffmpeg -y -i /tmp/eleven_en_segments_o5ukak7w/seg_004.mp3 -ar 44100 -ac 1 -c:a pcm_s16le /tmp/eleven_en_segments_o5ukak7w/seg_004.wav
+$ ffmpeg -y -i /tmp/eleven_en_segments_o5ukak7w/seg_005.mp3 -ar 44100 -ac 1 -c:a pcm_s16le /tmp/eleven_en_segments_o5ukak7w/seg_005.wav
+$ ffmpeg -y -i /tmp/eleven_en_segments_o5ukak7w/seg_006.mp3 -ar 44100 -ac 1 -c:a pcm_s16le /tmp/eleven_en_segments_o5ukak7w/seg_006.wav
+$ ffmpeg -y -i /tmp/eleven_en_segments_o5ukak7w/seg_007.mp3 -ar 44100 -ac 1 -c:a pcm_s16le /tmp/eleven_en_segments_o5ukak7w/seg_007.wav
+$ ffmpeg -y -i /tmp/eleven_en_segments_o5ukak7w/seg_008.mp3 -ar 44100 -ac 1 -c:a pcm_s16le /tmp/eleven_en_segments_o5ukak7w/seg_008.wav
+$ ffmpeg -y -i /tmp/eleven_en_segments_o5ukak7w/seg_009.mp3 -ar 44100 -ac 1 -c:a pcm_s16le /tmp/eleven_en_segments_o5ukak7w/seg_009.wav
+$ ffmpeg -y -i /tmp/eleven_en_segments_o5ukak7w/seg_010.mp3 -ar 44100 -ac 1 -c:a pcm_s16le /tmp/eleven_en_segments_o5ukak7w/seg_010.wav
+$ ffmpeg -y -i /tmp/eleven_en_segments_o5ukak7w/seg_011.mp3 -ar 44100 -ac 1 -c:a pcm_s16le /tmp/eleven_en_segments_o5ukak7w/seg_011.wav
+$ ffmpeg -y -i /tmp/eleven_en_segments_o5ukak7w/seg_012.mp3 -ar 44100 -ac 1 -c:a pcm_s16le /tmp/eleven_en_segments_o5ukak7w/seg_012.wav
+$ ffmpeg -y -i /tmp/eleven_en_segments_o5ukak7w/seg_013.mp3 -ar 44100 -ac 1 -c:a pcm_s16le /tmp/eleven_en_segments_o5ukak7w/seg_013.wav
+$ ffmpeg -y -i /tmp/eleven_en_segments_o5ukak7w/seg_014.mp3 -ar 44100 -ac 1 -c:a pcm_s16le /tmp/eleven_en_segments_o5ukak7w/seg_014.wav
+$ ffmpeg -y -i /tmp/eleven_en_segments_o5ukak7w/seg_015.mp3 -ar 44100 -ac 1 -c:a pcm_s16le /tmp/eleven_en_segments_o5ukak7w/seg_015.wav
+EN ElevenLabs voices: A=XZEfcFyBnzsNJrdvkWdI, B=ISCzWD5dlKGqdgkYePJf
+$ ffmpeg -y -f concat -safe 0 -i /tmp/kc_en_frames_kxktg0na/concat.txt -vsync vfr -pix_fmt yuv420p /tmp/kc_en_frames_kxktg0na/silent.mp4
+$ ffmpeg -y -i /tmp/kc_en_frames_kxktg0na/silent.mp4 -i podcast_video_tests/26271172090/0001-0001-nomura-usd-cny-fix-model-projection-6.7927-260521/podcast_en.wav -c:v libx264 -preset medium -crf 23 -c:a aac -b:a 160k -shortest podcast_video_tests/26271172090/0001-0001-nomura-usd-cny-fix-model-projection-6.7927-260521/podcast_en_explainer.mp4
+Generated bilingual ElevenLabs podcast/video in podcast_video_tests/26271172090/0001-0001-nomura-usd-cny-fix-model-projection-6.7927-260521
