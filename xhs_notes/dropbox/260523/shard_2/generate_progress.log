@@ -1,0 +1,32 @@
+Found 18 total PDFs; shard 2/40 has 5 PDFs, skips 0 already converted, will process 5 PDFs with batch_size=5.
+Running batch 1: 5 PDFs
+Found 5 PDFs.
+Uploading PDF to MinerU: /tmp/pdf_batch_001_6yljlmhr/pdfs/0001-11-J.P. Morgan-JPM CHINA SUMMIT- Day 2 Wrap-ESS - NEV-260522.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_6yljlmhr/pdfs/0002-12-Morgan Stanley-Energy-Refreshing Estimates - Revisiting Sensitivities-260521.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_6yljlmhr/pdfs/0003-13-Morgan Stanley-Greater China Materials-China Steel and Iron Ore Weekly Update-260521.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_6yljlmhr/pdfs/0004-14-Bernstein-China Pharma and Biotech China Pharma - Biotech- ASCO 2026 Part 1 -meet the best Keytruda booster-260522.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_6yljlmhr/pdfs/0005-15-Bernstein-Korea Internet and European Food Delivery Korea Food Delivery- A stable duopoly with fragile fault lines-260522.pdf
+MinerU batch_id=35a0e86f-601d-4d44-a8a0-f2213b312835
+MinerU states: running, pending, running, pending, waiting-file
+MinerU states: done, running, done, running, running
+MinerU states: done, running, done, running, running
+MinerU states: done, running, done, running, running
+MinerU states: done, running, done, running, running
+MinerU states: done, running, done, running, running
+MinerU states: done, running, done, done, running
+MinerU states: done, running, done, done, running
+MinerU states: done, running, done, done, done
+MinerU states: done, running, done, done, done
+MinerU states: done, running, done, done, done
+MinerU states: done, running, done, done, done
+MinerU states: done, running, done, done, done
+MinerU states: done, running, done, done, done
+MinerU states: done, running, done, done, done
+MinerU states: done, running, done, done, done
+MinerU states: done, running, done, done, done
+MinerU states: done, running, done, done, done
+MinerU states: done, running, done, done, done
+MinerU states: done, running, done, done, done
+MinerU states: done, done, done, done, done
+Done. Results written to /home/runner/work/rpt_edit/rpt_edit/xhs_notes/dropbox/260523/shard_2
+All batches completed successfully.
