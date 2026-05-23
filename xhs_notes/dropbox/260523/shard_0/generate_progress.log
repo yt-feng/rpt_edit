@@ -1,0 +1,21 @@
+Found 18 total PDFs; shard 0/40 has 5 PDFs, skips 0 already converted, will process 5 PDFs with batch_size=5.
+Running batch 1: 5 PDFs
+Found 5 PDFs.
+Uploading PDF to MinerU: /tmp/pdf_batch_001_evxpwwi4/pdfs/0001-01-Bernstein-Global Semiconductor Capital Equipment China WFE Import Tracker -Apr 2026-- YTD YoY -13- with weaker lithography import due to supply constrain-260521.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_evxpwwi4/pdfs/0002-02-J.P. Morgan-China- Trade blows out- but composition matters-260522.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_evxpwwi4/pdfs/0003-03-J.P. Morgan-Japan Equity Strategy -Japanese equities heading into a phase of 3- yields- where to go- AI and financials--260521.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_evxpwwi4/pdfs/0004-04-Nomura-CNH- BoP flow dynamics remain supportive-260521.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_evxpwwi4/pdfs/0005-05-Nomura-USD CNY fix model-260522.pdf
+MinerU batch_id=1dd6cc2c-0af6-4d1d-8750-4c7f9f21a0e9
+MinerU states: running, running, running, running, pending
+MinerU states: running, done, running, done, done
+MinerU states: running, done, running, done, done
+MinerU states: running, done, running, done, done
+MinerU states: running, done, running, done, done
+MinerU states: running, done, running, done, done
+MinerU states: running, done, running, done, done
+MinerU states: running, done, done, done, done
+MinerU states: running, done, done, done, done
+MinerU states: done, done, done, done, done
+Done. Results written to /home/runner/work/rpt_edit/rpt_edit/xhs_notes/dropbox/260523/shard_0
+All batches completed successfully.
