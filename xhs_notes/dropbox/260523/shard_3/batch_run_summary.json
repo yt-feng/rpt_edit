@@ -1,0 +1,40 @@
+{
+  "input_dir": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs",
+  "total_pdf_count_before_shard": 18,
+  "pdf_count_before_skip": 3,
+  "pdf_count": 3,
+  "batch_size": 5,
+  "shard_index": 3,
+  "shard_count": 40,
+  "max_reports_per_shard": 5,
+  "max_total_reports": 0,
+  "skip_existing": true,
+  "skipped_existing_count": 0,
+  "skipped_existing": [],
+  "failures": 0,
+  "batches": [
+    {
+      "batch_index": 1,
+      "pdf_count": 3,
+      "files": [
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/16-GS-CHINA COSMETICS 618 pulse check： Top tier KOL Day 1 livestreaming better than Women’s day though not overly exciting； Mao Geping continues to lead-260522.pdf",
+          "batch_file": "/tmp/pdf_batch_001_ra3m5sym/pdfs/0001-16-GS-CHINA COSMETICS 618 pulse check- Top tier KOL Day 1 livestreaming better than Women-s day though not overly exciting- Mao Geping continues to lead-260522.pdf",
+          "stable_index": "1"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/17-GS-Japan Healthcare： Medical Devices： China business climate for Medtech： Global company views from results briefings-260522.pdf",
+          "batch_file": "/tmp/pdf_batch_001_ra3m5sym/pdfs/0002-17-GS-Japan Healthcare- Medical Devices- China business climate for Medtech- Global company views from results briefings-260522.pdf",
+          "stable_index": "2"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/18-JPM-China Healthcare Global China Summit Takeaways （Day 2）： AI applications in early and late drug development； China pharma panel-260522.pdf",
+          "batch_file": "/tmp/pdf_batch_001_ra3m5sym/pdfs/0003-18-JPM-China Healthcare Global China Summit Takeaways -Day 2-- AI applications in early and late drug development- China pharma panel-260522.pdf",
+          "stable_index": "3"
+        }
+      ],
+      "returncode": 0,
+      "status": "ok"
+    }
+  ]
+}
