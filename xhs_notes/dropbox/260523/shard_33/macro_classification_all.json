@@ -1,0 +1,642 @@
+[
+  {
+    "id": 0,
+    "name": "Bernstein-Bernstein Energy & Power： Falling in love with an accounting standard？ Hmm... Will it be in Jan 2027 with the new IFRS 18 ？ A playbook.-260522.pdf",
+    "dropbox_path": "/zip_backup/260523/bernstein-bernstein energy & power： falling in love with an accounting standard？ hmm... will it be in jan 2027 with the new ifrs 18 ？ a playbook.-260522.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/bernstein-bernstein energy & power： falling in love with an accounting standard？ hmm... will it be in jan 2027 with the new ifrs 18 ？ a playbook.-260522.pdf",
+    "category": "macro_trend",
+    "score": 0.9,
+    "reason": "讨论能源与电力行业及会计准则影响，属于行业趋势",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 1,
+    "name": "Bernstein-China Pharma and Biotech China Pharma & Biotech： ASCO 2026 Part 1 ~meet the best Keytruda booster-260522.pdf",
+    "dropbox_path": "/zip_backup/260523/bernstein-china pharma and biotech china pharma & biotech： asco 2026 part 1 ~meet the best keytruda booster-260522.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/bernstein-china pharma and biotech china pharma & biotech： asco 2026 part 1 ~meet the best keytruda booster-260522.pdf",
+    "category": "macro_trend",
+    "score": 0.85,
+    "reason": "中国制药与生物技术行业报告，覆盖行业整体而非单一公司",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 2,
+    "name": "Bernstein-China Semiconductors China Semicap： The surging memory capacity expansion-260521.pdf",
+    "dropbox_path": "/zip_backup/260523/bernstein-china semiconductors china semicap： the surging memory capacity expansion-260521.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/bernstein-china semiconductors china semicap： the surging memory capacity expansion-260521.pdf",
+    "category": "macro_trend",
+    "score": 0.9,
+    "reason": "中国半导体行业产能扩张，属于行业趋势",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 3,
+    "name": "Bernstein-Global Semiconductor Capital Equipment China WFE Import Tracker （Apr 2026）： YTD YoY ~13% with weaker lithography import due to supply constrain-260521.pdf",
+    "dropbox_path": "/zip_backup/260523/bernstein-global semiconductor capital equipment china wfe import tracker （apr 2026）： ytd yoy ~13% with weaker lithography import due to supply constrain-260521.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/bernstein-global semiconductor capital equipment china wfe import tracker （apr 2026）： ytd yoy ~13% with weaker lithography import due to supply constrain-260521.pdf",
+    "category": "macro_trend",
+    "score": 0.95,
+    "reason": "全球半导体资本设备及中国WFE进口追踪，行业供需趋势",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 4,
+    "name": "Bernstein-Korea Internet and European Food Delivery Korea Food Delivery： A stable duopoly with fragile fault lines-260522.pdf",
+    "dropbox_path": "/zip_backup/260523/bernstein-korea internet and european food delivery korea food delivery： a stable duopoly with fragile fault lines-260522.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/bernstein-korea internet and european food delivery korea food delivery： a stable duopoly with fragile fault lines-260522.pdf",
+    "category": "macro_trend",
+    "score": 0.85,
+    "reason": "韩国外卖行业双头垄断分析，行业趋势",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 5,
+    "name": "Bernstein-Cummins Inc（CMI.US）Cummins： 2026 Analyst Day ~ Entering prime power market， but guide falls short-260521.pdf",
+    "dropbox_path": "/zip_backup/260523/bernstein-cummins inc（cmi.us）cummins： 2026 analyst day ~ entering prime power market， but guide falls short-260521.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/bernstein-cummins inc（cmi.us）cummins： 2026 analyst day ~ entering prime power market， but guide falls short-260521.pdf",
+    "category": "company_stock",
+    "score": 0.95,
+    "reason": "明确针对Cummins Inc.个股的分析师日点评",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 6,
+    "name": "Bernstein-Walmart （WMT.US） 1Q27： Fundamentals intact； EBIT growth needed to support momentum-260522.pdf",
+    "dropbox_path": "/zip_backup/260523/bernstein-walmart （wmt.us） 1q27： fundamentals intact； ebit growth needed to support momentum-260522.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/bernstein-walmart （wmt.us） 1q27： fundamentals intact； ebit growth needed to support momentum-260522.pdf",
+    "category": "company_stock",
+    "score": 0.95,
+    "reason": "明确针对Walmart个股的财报点评",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 7,
+    "name": "Bernstein-Spotify Technology SA（SPOT.US）Spotify 2030： Could the superfan opportunities in audiobooks & podcasts be as rich as in music （or richer）？-260521.pdf",
+    "dropbox_path": "/zip_backup/260523/bernstein-spotify technology sa（spot.us）spotify 2030： could the superfan opportunities in audiobooks & podcasts be as rich as in music （or richer）？-260521.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/bernstein-spotify technology sa（spot.us）spotify 2030： could the superfan opportunities in audiobooks & podcasts be as rich as in music （or richer）？-260521.pdf",
+    "category": "company_stock",
+    "score": 0.95,
+    "reason": "明确针对Spotify Technology个股的未来机会分析",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 8,
+    "name": "Bernstein-Weekend Healthcare Pulse： Is GSK's Bepirovirsen the Next \"Hepititan\"-260522.pdf",
+    "dropbox_path": "/zip_backup/260523/bernstein-weekend healthcare pulse： is gsk's bepirovirsen the next \"hepititan\"-260522.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/bernstein-weekend healthcare pulse： is gsk's bepirovirsen the next \"hepititan\"-260522.pdf",
+    "category": "company_stock",
+    "score": 0.9,
+    "reason": "聚焦GSK特定药物，属于单一公司产品分析",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 9,
+    "name": "GS-Anta Sports Products （2020.HK）： Data update： factoring in stronger associate income from Amer； Buy-260522.pdf",
+    "dropbox_path": "/zip_backup/260523/GS-anta sports products （2020.hk）： data update： factoring in stronger associate income from amer； buy-260522.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/GS-anta sports products （2020.hk）： data update： factoring in stronger associate income from amer； buy-260522.pdf",
+    "category": "company_stock",
+    "score": 0.95,
+    "reason": "明确针对Anta Sports Products个股的数据更新及评级",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 10,
+    "name": "GS-Anjoy Foods Group （603345）： AGM： Sustaining growth supported by new products， channels and overseas expansion； Buy-260521.pdf",
+    "dropbox_path": "/zip_backup/260523/GS-anjoy foods group （603345）： agm： sustaining growth supported by new products， channels and overseas expansion； buy-260521.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/GS-anjoy foods group （603345）： agm： sustaining growth supported by new products， channels and overseas expansion； buy-260521.pdf",
+    "category": "company_stock",
+    "score": 0.95,
+    "reason": "明确针对Anjoy Foods Group个股的股东大会点评",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 11,
+    "name": "GS-CHINA COSMETICS 618 pulse check： Top tier KOL Day 1 livestreaming better than Women’s day though not overly exciting； Mao Geping continues to lead-260522.pdf",
+    "dropbox_path": "/zip_backup/260523/GS-china cosmetics 618 pulse check： top tier kol day 1 livestreaming better than women’s day though not overly exciting； mao geping continues to lead-260522.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/GS-china cosmetics 618 pulse check： top tier kol day 1 livestreaming better than women’s day though not overly exciting； mao geping continues to lead-260522.pdf",
+    "category": "macro_trend",
+    "score": 0.85,
+    "reason": "中国化妆品行业618促销脉冲检查，行业整体趋势",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 12,
+    "name": "GS-China Grid Tech： Power Transformer Export Tracker： April China transformer total exports at 27% yoy， while switchgear exports picked-260522.pdf",
+    "dropbox_path": "/zip_backup/260523/GS-china grid tech： power transformer export tracker： april china transformer total exports at 27% yoy， while switchgear exports picked-260522.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/GS-china grid tech： power transformer export tracker： april china transformer total exports at 27% yoy， while switchgear exports picked-260522.pdf",
+    "category": "macro_trend",
+    "score": 0.9,
+    "reason": "中国电网技术及电力变压器出口追踪，行业供需趋势",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 13,
+    "name": "GS-Japan Healthcare： Medical Devices： China business climate for Medtech： Global company views from results briefings-260522.pdf",
+    "dropbox_path": "/zip_backup/260523/GS-japan healthcare： medical devices： china business climate for medtech： global company views from results briefings-260522.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/GS-japan healthcare： medical devices： china business climate for medtech： global company views from results briefings-260522.pdf",
+    "category": "macro_trend",
+    "score": 0.85,
+    "reason": "日本医疗设备行业及中国业务环境，行业趋势",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 14,
+    "name": "GS-HESAI GROUP （2525.HK）Main business robust， secondary growth curve set in motion； Buy-260522.pdf",
+    "dropbox_path": "/zip_backup/260523/GS-hesai group （2525.hk）main business robust， secondary growth curve set in motion； buy-260522.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/GS-hesai group （2525.hk）main business robust， secondary growth curve set in motion； buy-260522.pdf",
+    "category": "company_stock",
+    "score": 0.95,
+    "reason": "明确针对HESAI GROUP个股的点评及评级",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 15,
+    "name": "GS-Lenovo （0992.HK）： Mar~Q beat； Server OPM up to +3.6% with PC OPM sustaining at 7.0% despite rising memory costs； Buy-260522.pdf",
+    "dropbox_path": "/zip_backup/260523/GS-lenovo （0992.hk）： mar~q beat； server opm up to +3.6% with pc opm sustaining at 7.0% despite rising memory costs； buy-260522.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/GS-lenovo （0992.hk）： mar~q beat； server opm up to +3.6% with pc opm sustaining at 7.0% despite rising memory costs； buy-260522.pdf",
+    "category": "company_stock",
+    "score": 0.95,
+    "reason": "明确针对Lenovo个股的财报点评及评级",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 16,
+    "name": "GS-Mitsui Kinzoku Co. （5706.T）： MTP briefing： Large~scale capex in VSP~fueled copper foil business； agility key to enhancing EV-260522.pdf",
+    "dropbox_path": "/zip_backup/260523/GS-mitsui kinzoku co. （5706.t）： mtp briefing： large~scale capex in vsp~fueled copper foil business； agility key to enhancing ev-260522.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/GS-mitsui kinzoku co. （5706.t）： mtp briefing： large~scale capex in vsp~fueled copper foil business； agility key to enhancing ev-260522.pdf",
+    "category": "company_stock",
+    "score": 0.95,
+    "reason": "明确针对Mitsui Kinzoku个股的MTP简报",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 17,
+    "name": "GS-Kelun Biotech （6990.HK）： Combo of sac~TMT pembro set a new bar in 1L PD~L1 positive NSCLC； eyes on maturing PFS and Lung06 data-260522.pdf",
+    "dropbox_path": "/zip_backup/260523/GS-kelun biotech （6990.hk）： combo of sac~tmt pembro set a new bar in 1l pd~l1 positive nsclc； eyes on maturing pfs and lung06 data-260522.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/GS-kelun biotech （6990.hk）： combo of sac~tmt pembro set a new bar in 1l pd~l1 positive nsclc； eyes on maturing pfs and lung06 data-260522.pdf",
+    "category": "company_stock",
+    "score": 0.95,
+    "reason": "明确针对Kelun Biotech个股的临床数据点评",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 18,
+    "name": "GS-NAURA （002371）： Advanced tools ramp up； Strong orders on rising China Semis Capex； Buy-260522.pdf",
+    "dropbox_path": "/zip_backup/260523/GS-naura （002371）： advanced tools ramp up； strong orders on rising china semis capex； buy-260522.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/GS-naura （002371）： advanced tools ramp up； strong orders on rising china semis capex； buy-260522.pdf",
+    "category": "company_stock",
+    "score": 0.95,
+    "reason": "明确针对NAURA个股的订单及评级",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 19,
+    "name": "GS-NSIG （688126）： Mgmt. visit： Photonics SOI expansion on strong demand； 300mm capacity expansion with mix upgrade-260521.pdf",
+    "dropbox_path": "/zip_backup/260523/GS-nsig （688126）： mgmt. visit： photonics soi expansion on strong demand； 300mm capacity expansion with mix upgrade-260521.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/GS-nsig （688126）： mgmt. visit： photonics soi expansion on strong demand； 300mm capacity expansion with mix upgrade-260521.pdf",
+    "category": "company_stock",
+    "score": 0.95,
+    "reason": "明确针对NSIG个股的管理层拜访点评",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 20,
+    "name": "GS-NIO INC. （9866.HK） Cost pressure well managed， expect non~GAAP OP break~even in 2026E； Neutral-260522.pdf",
+    "dropbox_path": "/zip_backup/260523/GS-nio inc. （9866.hk） cost pressure well managed， expect non~gaap op break~even in 2026e； neutral-260522.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/GS-nio inc. （9866.hk） cost pressure well managed， expect non~gaap op break~even in 2026e； neutral-260522.pdf",
+    "category": "company_stock",
+    "score": 0.95,
+    "reason": "明确针对NIO INC.个股的成本及盈利分析",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 21,
+    "name": "GS-Sichuan Kelun Pharmaceutical Co. （002422.SZ）： Strong survival benefit of sac~TMT pembro combo in 1L PD~L1 positive NSCLC； maintain Buy-260522.pdf",
+    "dropbox_path": "/zip_backup/260523/GS-sichuan kelun pharmaceutical co. （002422.sz）： strong survival benefit of sac~tmt pembro combo in 1l pd~l1 positive nsclc； maintain buy-260522.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/GS-sichuan kelun pharmaceutical co. （002422.sz）： strong survival benefit of sac~tmt pembro combo in 1l pd~l1 positive nsclc； maintain buy-260522.pdf",
+    "category": "company_stock",
+    "score": 0.95,
+    "reason": "明确针对Sichuan Kelun Pharmaceutical个股的临床数据点评",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 22,
+    "name": "GS-Shengyi Tech （600183）： CCL pricing uptrend supported by increased AI demand； TP up to Rmb127.4； Buy-260522.pdf",
+    "dropbox_path": "/zip_backup/260523/GS-shengyi tech （600183）： ccl pricing uptrend supported by increased ai demand； tp up to rmb127.4； buy-260522.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/GS-shengyi tech （600183）： ccl pricing uptrend supported by increased ai demand； tp up to rmb127.4； buy-260522.pdf",
+    "category": "company_stock",
+    "score": 0.95,
+    "reason": "明确针对Shengyi Tech个股的定价趋势及评级",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 23,
+    "name": "GS-Taiyo Yuden （6976.T）： CEO meeting： Reaffirmed position to benefit from AI server demand； maintain Buy-260521.pdf",
+    "dropbox_path": "/zip_backup/260523/GS-taiyo yuden （6976.t）： ceo meeting： reaffirmed position to benefit from ai server demand； maintain buy-260521.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/GS-taiyo yuden （6976.t）： ceo meeting： reaffirmed position to benefit from ai server demand； maintain buy-260521.pdf",
+    "category": "company_stock",
+    "score": 0.95,
+    "reason": "明确针对Taiyo Yuden个股的CEO会议点评",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 24,
+    "name": "JPM-China Banks：Diverging views on JSBs post China Summit and Financial Tour-260521.pdf",
+    "dropbox_path": "/zip_backup/260523/JPM-china banks：diverging views on jsbs post china summit and financial tour-260521.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/JPM-china banks：diverging views on jsbs post china summit and financial tour-260521.pdf",
+    "category": "macro_trend",
+    "score": 0.9,
+    "reason": "中国银行业行业观点分歧，行业趋势",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 25,
+    "name": "JPM-Asian Tech NVDA 1QFY27 key takeaways-260521.pdf",
+    "dropbox_path": "/zip_backup/260523/JPM-asian tech nvda 1qfy27 key takeaways-260521.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/JPM-asian tech nvda 1qfy27 key takeaways-260521.pdf",
+    "category": "company_stock",
+    "score": 0.95,
+    "reason": "明确针对NVDA个股的财报要点",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 26,
+    "name": "GS-Tongcheng Travel Holdings （0780.HK）1Q26 results inline ~ Lower revenue guidance on long~haul travel slowdown； potential readacross for TCOM； Buy-260522.pdf",
+    "dropbox_path": "/zip_backup/260523/GS-tongcheng travel holdings （0780.hk）1q26 results inline ~ lower revenue guidance on long~haul travel slowdown； potential readacross for tcom； buy-260522.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/GS-tongcheng travel holdings （0780.hk）1q26 results inline ~ lower revenue guidance on long~haul travel slowdown； potential readacross for tcom； buy-260522.pdf",
+    "category": "company_stock",
+    "score": 0.95,
+    "reason": "明确针对Tongcheng Travel Holdings个股的业绩点评",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 27,
+    "name": "JPM-Cummins Inc（CMI.US）2026 Analyst Day Recap-260521.pdf",
+    "dropbox_path": "/zip_backup/260523/JPM-cummins inc（cmi.us）2026 analyst day recap-260521.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/JPM-cummins inc（cmi.us）2026 analyst day recap-260521.pdf",
+    "category": "company_stock",
+    "score": 0.95,
+    "reason": "明确针对Cummins Inc个股的分析师日回顾",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 28,
+    "name": "JPM-China Healthcare Global China Summit Takeaways （Day 2）： AI applications in early and late drug development； China pharma panel-260522.pdf",
+    "dropbox_path": "/zip_backup/260523/JPM-china healthcare global china summit takeaways （day 2）： ai applications in early and late drug development； china pharma panel-260522.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/JPM-china healthcare global china summit takeaways （day 2）： ai applications in early and late drug development； china pharma panel-260522.pdf",
+    "category": "macro_trend",
+    "score": 0.85,
+    "reason": "中国医疗健康行业峰会要点，行业趋势",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 29,
+    "name": "JPM-China： Trade blows out， but composition matters-260522.pdf",
+    "dropbox_path": "/zip_backup/260523/JPM-china： trade blows out， but composition matters-260522.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/JPM-china： trade blows out， but composition matters-260522.pdf",
+    "category": "macro_trend",
+    "score": 0.95,
+    "reason": "中国贸易宏观分析，宏观趋势",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 30,
+    "name": "JPM-Hana Microelectronics（HANA.BK）AI optionality compounds with new customers； Stay OW-260521.pdf",
+    "dropbox_path": "/zip_backup/260523/JPM-hana microelectronics（hana.bk）ai optionality compounds with new customers； stay ow-260521.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/JPM-hana microelectronics（hana.bk）ai optionality compounds with new customers； stay ow-260521.pdf",
+    "category": "company_stock",
+    "score": 0.95,
+    "reason": "明确针对Hana Microelectronics个股的评级",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 31,
+    "name": "JPM-JPM - CHINA SUMMIT： Day 2 Wrap~No Sulfur or Diesel Shortages， Stark Aluminum Dislocation， Trouble in Mali， Indonesia’s latest shocker， ESS Cost Pressures-260522.pdf",
+    "dropbox_path": "/zip_backup/260523/JPM-jpm - china summit： day 2 wrap~no sulfur or diesel shortages， stark aluminum dislocation， trouble in mali， indonesia’s latest shocker， ess cost pressures-260522.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/JPM-jpm - china summit： day 2 wrap~no sulfur or diesel shortages， stark aluminum dislocation， trouble in mali， indonesia’s latest shocker， ess cost pressures-260522.pdf",
+    "category": "macro_trend",
+    "score": 0.9,
+    "reason": "中国峰会总结，涵盖多个商品及行业宏观议题",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 32,
+    "name": "JPM-GDS Holdings（GDS.US）Strong 3~year bookings target； revenue expected to accelerate from 2H27-260521.pdf",
+    "dropbox_path": "/zip_backup/260523/JPM-gds holdings（gds.us）strong 3~year bookings target； revenue expected to accelerate from 2h27-260521.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/JPM-gds holdings（gds.us）strong 3~year bookings target； revenue expected to accelerate from 2h27-260521.pdf",
+    "category": "company_stock",
+    "score": 0.95,
+    "reason": "明确针对GDS Holdings个股的预订目标及收入预期",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 33,
+    "name": "JPM-JPM CHINA SUMMIT： Day 2 Wrap~ESS & NEV-260522.pdf",
+    "dropbox_path": "/zip_backup/260523/JPM-jpm china summit： day 2 wrap~ess & nev-260522.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/JPM-jpm china summit： day 2 wrap~ess & nev-260522.pdf",
+    "category": "macro_trend",
+    "score": 0.9,
+    "reason": "中国峰会储能及新能源车行业总结，行业趋势",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 34,
+    "name": "JPM-Japan Equity Strategy ：Japanese equities heading into a phase of 3% yields； where to go， AI and financials？-260521.pdf",
+    "dropbox_path": "/zip_backup/260523/JPM-japan equity strategy ：japanese equities heading into a phase of 3% yields； where to go， ai and financials？-260521.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/JPM-japan equity strategy ：japanese equities heading into a phase of 3% yields； where to go， ai and financials？-260521.pdf",
+    "category": "macro_trend",
+    "score": 0.95,
+    "reason": "日本股票策略，宏观市场趋势及配置",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 35,
+    "name": "JPM-NIO （NIO.US）A solid beat in 1Q26 and upbeat in 2026-260522.pdf",
+    "dropbox_path": "/zip_backup/260523/JPM-nio （nio.us）a solid beat in 1q26 and upbeat in 2026-260522.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/JPM-nio （nio.us）a solid beat in 1q26 and upbeat in 2026-260522.pdf",
+    "category": "company_stock",
+    "score": 0.95,
+    "reason": "明确针对NIO个股的财报点评",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 36,
+    "name": "JPM-Sany Heavy（600031）Global China Summit takeaways： Share gains drive 2Q momentum； discipline over price wars-260521.pdf",
+    "dropbox_path": "/zip_backup/260523/JPM-sany heavy（600031）global china summit takeaways： share gains drive 2q momentum； discipline over price wars-260521.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/JPM-sany heavy（600031）global china summit takeaways： share gains drive 2q momentum； discipline over price wars-260521.pdf",
+    "category": "company_stock",
+    "score": 0.95,
+    "reason": "明确针对Sany Heavy个股的峰会要点",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 37,
+    "name": "JPM-SK Inc（034730.KS）All about semi NAV asset upside； PT raised to streethigh W870K-260521.pdf",
+    "dropbox_path": "/zip_backup/260523/JPM-sk inc（034730.ks）all about semi nav asset upside； pt raised to streethigh w870k-260521.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/JPM-sk inc（034730.ks）all about semi nav asset upside； pt raised to streethigh w870k-260521.pdf",
+    "category": "company_stock",
+    "score": 0.95,
+    "reason": "明确针对SK Inc个股的资产价值及目标价",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 38,
+    "name": "JPM-Ping An Insurance Group ~ H（2318.HK）Global China Summit Takeaways： Strong confidence in the core earnings growth outlook-260521.pdf",
+    "dropbox_path": "/zip_backup/260523/JPM-ping an insurance group ~ h（2318.hk）global china summit takeaways： strong confidence in the core earnings growth outlook-260521.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/JPM-ping an insurance group ~ h（2318.hk）global china summit takeaways： strong confidence in the core earnings growth outlook-260521.pdf",
+    "category": "company_stock",
+    "score": 0.95,
+    "reason": "明确针对Ping An Insurance个股的峰会要点",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 39,
+    "name": "MS-Dell Technologies Inc.（DELL.UN）F1Q27 Earnings Preview – It's A Tricky One-260521.pdf",
+    "dropbox_path": "/zip_backup/260523/MS-dell technologies inc.（dell.un）f1q27 earnings preview – it's a tricky one-260521.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/MS-dell technologies inc.（dell.un）f1q27 earnings preview – it's a tricky one-260521.pdf",
+    "category": "company_stock",
+    "score": 0.95,
+    "reason": "明确针对Dell Technologies个股的财报预览",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 40,
+    "name": "JPM-Tongcheng Travel Holdings Ltd（0780.HK）Better prudent than sorry； staying Neutral-260522.pdf",
+    "dropbox_path": "/zip_backup/260523/JPM-tongcheng travel holdings ltd（0780.hk）better prudent than sorry； staying neutral-260522.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/JPM-tongcheng travel holdings ltd（0780.hk）better prudent than sorry； staying neutral-260522.pdf",
+    "category": "company_stock",
+    "score": 0.95,
+    "reason": "明确针对Tongcheng Travel Holdings个股的评级",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 41,
+    "name": "MS-Beijing Kingsoft Office Software Inc（688111） 2026 618 Promotion Observation-260521.pdf",
+    "dropbox_path": "/zip_backup/260523/MS-beijing kingsoft office software inc（688111） 2026 618 promotion observation-260521.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/MS-beijing kingsoft office software inc（688111） 2026 618 promotion observation-260521.pdf",
+    "category": "company_stock",
+    "score": 0.95,
+    "reason": "明确针对Beijing Kingsoft Office个股的促销观察",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 42,
+    "name": "MS-Gosuncn Technology Group Co Ltd（300098）Risk Reward Update-260521.pdf",
+    "dropbox_path": "/zip_backup/260523/MS-gosuncn technology group co ltd（300098）risk reward update-260521.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/MS-gosuncn technology group co ltd（300098）risk reward update-260521.pdf",
+    "category": "company_stock",
+    "score": 0.95,
+    "reason": "明确针对Gosuncn Technology个股的风险回报更新",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 43,
+    "name": "MS-Energy：Refreshing Estimates & Revisiting Sensitivities-260521.pdf",
+    "dropbox_path": "/zip_backup/260523/MS-energy：refreshing estimates & revisiting sensitivities-260521.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/MS-energy：refreshing estimates & revisiting sensitivities-260521.pdf",
+    "category": "macro_trend",
+    "score": 0.9,
+    "reason": "能源行业估计及敏感性更新，行业趋势",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 44,
+    "name": "MS-FUJIFILM Holdings （4901.T）Japan Summit 2026 Feedback： High Investor Interest in the Semiconductor Materials Business-260521.pdf",
+    "dropbox_path": "/zip_backup/260523/MS-fujifilm holdings （4901.t）japan summit 2026 feedback： high investor interest in the semiconductor materials business-260521.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/MS-fujifilm holdings （4901.t）japan summit 2026 feedback： high investor interest in the semiconductor materials business-260521.pdf",
+    "category": "company_stock",
+    "score": 0.95,
+    "reason": "明确针对FUJIFILM Holdings个股的峰会反馈",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 45,
+    "name": "MS-HSBC（HSBA.L）Feedback from the Asia Seminar-260521.pdf",
+    "dropbox_path": "/zip_backup/260523/MS-hsbc（hsba.l）feedback from the asia seminar-260521.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/MS-hsbc（hsba.l）feedback from the asia seminar-260521.pdf",
+    "category": "company_stock",
+    "score": 0.95,
+    "reason": "明确针对HSBC个股的研讨会反馈",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 46,
+    "name": "MS-Greater China Materials：China Steel and Iron Ore Weekly Update-260521.pdf",
+    "dropbox_path": "/zip_backup/260523/MS-greater china materials：china steel and iron ore weekly update-260521.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/MS-greater china materials：china steel and iron ore weekly update-260521.pdf",
+    "category": "macro_trend",
+    "score": 0.9,
+    "reason": "中国钢铁及铁矿石周度更新，行业供需趋势",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 47,
+    "name": "MS-HSBC Holdings（0005.HK）Feedback from the Asia Seminar-260522.pdf",
+    "dropbox_path": "/zip_backup/260523/MS-hsbc holdings（0005.hk）feedback from the asia seminar-260522.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/MS-hsbc holdings（0005.hk）feedback from the asia seminar-260522.pdf",
+    "category": "company_stock",
+    "score": 0.95,
+    "reason": "明确针对HSBC Holdings个股的研讨会反馈",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 48,
+    "name": "MS-Kawasaki Heavy Industries（7012.T）Partnering on AI Adoption in Robot Business with US Semi Makers， Says Media Report-260522.pdf",
+    "dropbox_path": "/zip_backup/260523/MS-kawasaki heavy industries（7012.t）partnering on ai adoption in robot business with us semi makers， says media report-260522.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/MS-kawasaki heavy industries（7012.t）partnering on ai adoption in robot business with us semi makers， says media report-260522.pdf",
+    "category": "company_stock",
+    "score": 0.95,
+    "reason": "明确针对Kawasaki Heavy Industries个股的AI合作报道",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 49,
+    "name": "MS-KIOXIA Holdings （285A.T）Japan Summit 2026 Feedback-260521.pdf",
+    "dropbox_path": "/zip_backup/260523/MS-kioxia holdings （285a.t）japan summit 2026 feedback-260521.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/MS-kioxia holdings （285a.t）japan summit 2026 feedback-260521.pdf",
+    "category": "company_stock",
+    "score": 0.95,
+    "reason": "明确针对KIOXIA Holdings个股的峰会反馈",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 50,
+    "name": "MS-Knowledge Atlas Technology JSC Ltd（2513.HK） ZCube： New Network Architecture to Improve Inference Efficiency-260521.pdf",
+    "dropbox_path": "/zip_backup/260523/MS-knowledge atlas technology jsc ltd（2513.hk） zcube： new network architecture to improve inference efficiency-260521.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/MS-knowledge atlas technology jsc ltd（2513.hk） zcube： new network architecture to improve inference efficiency-260521.pdf",
+    "category": "company_stock",
+    "score": 0.95,
+    "reason": "明确针对Knowledge Atlas Technology个股的网络架构分析",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 51,
+    "name": "MS-Murata Manufacturing （6981.T）Japan Summit 2026： Expects 85~ 90% YoY Sales Growth for MLCCs for AI Servers-260521.pdf",
+    "dropbox_path": "/zip_backup/260523/MS-murata manufacturing （6981.t）japan summit 2026： expects 85~ 90% yoy sales growth for mlccs for ai servers-260521.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/MS-murata manufacturing （6981.t）japan summit 2026： expects 85~ 90% yoy sales growth for mlccs for ai servers-260521.pdf",
+    "category": "company_stock",
+    "score": 0.95,
+    "reason": "明确针对Murata Manufacturing个股的峰会预期",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 52,
+    "name": "MS-NVIDIA Corp.（NVDA.US）Risk Reward Update-260521.pdf",
+    "dropbox_path": "/zip_backup/260523/MS-nvidia corp.（nvda.us）risk reward update-260521.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/MS-nvidia corp.（nvda.us）risk reward update-260521.pdf",
+    "category": "company_stock",
+    "score": 0.95,
+    "reason": "明确针对NVIDIA Corp.个股的风险回报更新",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 53,
+    "name": "MS-Mitsubishi Heavy Industries （7011.T）Japan Summit 2026： Sustained Growth and Margin Improvement in Energy business-260521.pdf",
+    "dropbox_path": "/zip_backup/260523/MS-mitsubishi heavy industries （7011.t）japan summit 2026： sustained growth and margin improvement in energy business-260521.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/MS-mitsubishi heavy industries （7011.t）japan summit 2026： sustained growth and margin improvement in energy business-260521.pdf",
+    "category": "company_stock",
+    "score": 0.95,
+    "reason": "明确针对Mitsubishi Heavy Industries个股的峰会反馈",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 54,
+    "name": "MS-Walmart Inc（WMT.US）Is Fine Good Enough？-260521.pdf",
+    "dropbox_path": "/zip_backup/260523/MS-walmart inc（wmt.us）is fine good enough？-260521.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/MS-walmart inc（wmt.us）is fine good enough？-260521.pdf",
+    "category": "company_stock",
+    "score": 0.95,
+    "reason": "明确针对Walmart Inc个股的业绩点评",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 55,
+    "name": "MS-Taiyo Yuden （6976.T）Sell~side Small Meeting with President Sase-260521.pdf",
+    "dropbox_path": "/zip_backup/260523/MS-taiyo yuden （6976.t）sell~side small meeting with president sase-260521.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/MS-taiyo yuden （6976.t）sell~side small meeting with president sase-260521.pdf",
+    "category": "company_stock",
+    "score": 0.95,
+    "reason": "明确针对Taiyo Yuden个股的会议点评",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 56,
+    "name": "MS-Standard Chartered Bank（STAN.L）Feedback from Asia Seminar-260522.pdf",
+    "dropbox_path": "/zip_backup/260523/MS-standard chartered bank（stan.l）feedback from asia seminar-260522.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/MS-standard chartered bank（stan.l）feedback from asia seminar-260522.pdf",
+    "category": "company_stock",
+    "score": 0.95,
+    "reason": "明确针对Standard Chartered Bank个股的研讨会反馈",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 57,
+    "name": "MS-Xiaomi Corp（1810.HK）YU7 GT Launched with another Price Competitive Family Member-260521.pdf",
+    "dropbox_path": "/zip_backup/260523/MS-xiaomi corp（1810.hk）yu7 gt launched with another price competitive family member-260521.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/MS-xiaomi corp（1810.hk）yu7 gt launched with another price competitive family member-260521.pdf",
+    "category": "company_stock",
+    "score": 0.95,
+    "reason": "明确针对Xiaomi Corp个股的新车发布点评",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 58,
+    "name": "MS-Walmart Inc（WMT.US）：Sweating Some Small Things， But Not The Big Stuff-260522.pdf",
+    "dropbox_path": "/zip_backup/260523/MS-walmart inc（wmt.us）：sweating some small things， but not the big stuff-260522.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/MS-walmart inc（wmt.us）：sweating some small things， but not the big stuff-260522.pdf",
+    "category": "company_stock",
+    "score": 0.95,
+    "reason": "明确针对Walmart Inc个股的业绩点评",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 59,
+    "name": "NOM-CNH： BoP flow dynamics remain supportive-260521.pdf",
+    "dropbox_path": "/zip_backup/260523/NOM-cnh： bop flow dynamics remain supportive-260521.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/NOM-cnh： bop flow dynamics remain supportive-260521.pdf",
+    "category": "macro_trend",
+    "score": 0.95,
+    "reason": "人民币汇率及国际收支宏观分析",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 60,
+    "name": "NOM-Innovent（1801.HK）IBI363 PoC data released-260522.pdf",
+    "dropbox_path": "/zip_backup/260523/NOM-innovent（1801.hk）ibi363 poc data released-260522.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/NOM-innovent（1801.hk）ibi363 poc data released-260522.pdf",
+    "category": "company_stock",
+    "score": 0.95,
+    "reason": "明确针对Innovent个股的临床数据点评",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 61,
+    "name": "NOM-NIO Inc（NIO.US）Solid 1Q26； expecting sequential improvement ahead-260522.pdf",
+    "dropbox_path": "/zip_backup/260523/NOM-nio inc（nio.us）solid 1q26； expecting sequential improvement ahead-260522.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/NOM-nio inc（nio.us）solid 1q26； expecting sequential improvement ahead-260522.pdf",
+    "category": "company_stock",
+    "score": 0.95,
+    "reason": "明确针对NIO Inc个股的财报点评",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 62,
+    "name": "NOM-Kelun Biotech（6990.HK）Another big win for sac~TMT in upcoming ASCO-260522.pdf",
+    "dropbox_path": "/zip_backup/260523/NOM-kelun biotech（6990.hk）another big win for sac~tmt in upcoming asco-260522.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/NOM-kelun biotech（6990.hk）another big win for sac~tmt in upcoming asco-260522.pdf",
+    "category": "company_stock",
+    "score": 0.95,
+    "reason": "明确针对Kelun Biotech个股的临床数据点评",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 63,
+    "name": "NOM-USD CNY fix model-260522.pdf",
+    "dropbox_path": "/zip_backup/260523/NOM-usd cny fix model-260522.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/NOM-usd cny fix model-260522.pdf",
+    "category": "macro_trend",
+    "score": 0.95,
+    "reason": "美元人民币汇率模型，宏观趋势",
+    "classifier": "deepseek"
+  }
+]
