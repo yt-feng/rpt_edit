@@ -1,0 +1,124 @@
+{
+  "created_at_utc": "2026-05-23T22:20:37.455916+00:00",
+  "source_date_dir": "xhs_notes/dropbox/260523",
+  "output_dir": "publish_ready_zips/260523",
+  "max_zip_mb": 90,
+  "single_zip": false,
+  "exclude_source_mineru": true,
+  "markdown_files_renamed_to_txt": true,
+  "excluded_debug_files": true,
+  "included_shard_count": 4,
+  "skipped_shards": [
+    "shard_10",
+    "shard_11",
+    "shard_12",
+    "shard_13",
+    "shard_14",
+    "shard_15",
+    "shard_16",
+    "shard_17",
+    "shard_18",
+    "shard_19",
+    "shard_20",
+    "shard_21",
+    "shard_22",
+    "shard_23",
+    "shard_24",
+    "shard_25",
+    "shard_26",
+    "shard_27",
+    "shard_28",
+    "shard_29",
+    "shard_30",
+    "shard_31",
+    "shard_32",
+    "shard_33",
+    "shard_34",
+    "shard_35",
+    "shard_36",
+    "shard_37",
+    "shard_38",
+    "shard_39",
+    "shard_4",
+    "shard_5",
+    "shard_6",
+    "shard_7",
+    "shard_8",
+    "shard_9"
+  ],
+  "total_files": 348,
+  "total_renamed_markdown_count": 90,
+  "total_raw_file_bytes": 56089037,
+  "zip_count": 1,
+  "zips": [
+    {
+      "path": "publish_ready_zips/260523/publish_ready_260523.zip",
+      "size_bytes": 52018467,
+      "file_count": 348,
+      "renamed_markdown_count": 90,
+      "raw_file_bytes": 56089037,
+      "shards": [
+        "shard_0",
+        "shard_1",
+        "shard_2",
+        "shard_3"
+      ]
+    }
+  ],
+  "included_shards": [
+    {
+      "shard": "shard_0",
+      "report_count": 5,
+      "file_count": 99,
+      "renamed_markdown_count": 25,
+      "raw_file_bytes": 14497541,
+      "reports": [
+        "0001-01-Bernstein-Global-Semiconductor-Capital-Equipment-China-WFE-Import-Tracke",
+        "0002-02-J.P.-Morgan-China--Trade-blows-out--but-composition-matters-260522",
+        "0003-03-J.P.-Morgan-Japan-Equity-Strategy--Japanese-equities-heading-into-a-phas",
+        "0004-04-Nomura-CNH--BoP-flow-dynamics-remain-supportive-260521",
+        "0005-05-Nomura-USD-CNY-fix-model-260522"
+      ]
+    },
+    {
+      "shard": "shard_1",
+      "report_count": 5,
+      "file_count": 99,
+      "renamed_markdown_count": 25,
+      "raw_file_bytes": 14392925,
+      "reports": [
+        "0001-06-Bernstein-Bernstein-Energy---Power--Falling-in-love-with-an-accounting-s",
+        "0002-07-Bernstein-China-Semiconductors-China-Semicap--The-surging-memory-capacit",
+        "0003-08-Goldman-Sachs-China-Grid-Tech--Power-Transformer-Export-Tracker--April-C",
+        "0004-09-J.P.-Morgan-China-Banks-Diverging-views-on-JSBs-post-China-Summit-and-Fi",
+        "0005-10-J.P.-Morgan-JPM---CHINA-SUMMIT--Day-2-Wrap-No-Sulfur-or-Diesel-Shortages"
+      ]
+    },
+    {
+      "shard": "shard_2",
+      "report_count": 5,
+      "file_count": 95,
+      "renamed_markdown_count": 25,
+      "raw_file_bytes": 18433600,
+      "reports": [
+        "0001-11-J.P.-Morgan-JPM-CHINA-SUMMIT--Day-2-Wrap-ESS---NEV-260522",
+        "0002-12-Morgan-Stanley-Energy-Refreshing-Estimates---Revisiting-Sensitivities-26",
+        "0003-13-Morgan-Stanley-Greater-China-Materials-China-Steel-and-Iron-Ore-Weekly-U",
+        "0004-14-Bernstein-China-Pharma-and-Biotech-China-Pharma---Biotech--ASCO-2026-Par",
+        "0005-15-Bernstein-Korea-Internet-and-European-Food-Delivery-Korea-Food-Delivery-"
+      ]
+    },
+    {
+      "shard": "shard_3",
+      "report_count": 3,
+      "file_count": 55,
+      "renamed_markdown_count": 15,
+      "raw_file_bytes": 8764971,
+      "reports": [
+        "0001-16-Goldman-Sachs-CHINA-COSMETICS-618-pulse-check--Top-tier-KOL-Day-1-livest",
+        "0002-17-Goldman-Sachs-Japan-Healthcare--Medical-Devices--China-business-climate-",
+        "0003-18-J.P.-Morgan-China-Healthcare-Global-China-Summit-Takeaways--Day-2---AI-a"
+      ]
+    }
+  ]
+}
