@@ -1,0 +1,351 @@
+[
+  {
+    "speaker": "EN_A",
+    "text": "Welcome to KC Desk Notes. Today we are unpacking one fresh research report and the question it raises.",
+    "start": 0.0,
+    "end": 6.316,
+    "voice_id": "XZEfcFyBnzsNJrdvkWdI",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "KC Desk Notes",
+      "research report"
+    ]
+  },
+  {
+    "speaker": "EN_A",
+    "text": "So the PBOC just set another fix for the USDCNY. What is the market reading from this latest number?",
+    "start": 6.676,
+    "end": 13.502,
+    "voice_id": "XZEfcFyBnzsNJrdvkWdI",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "PBOC",
+      "fix",
+      "USDCNY"
+    ]
+  },
+  {
+    "speaker": "EN_B",
+    "text": "Right. This report from Nomura’s Asia FX strategy team gives us their model projection. The fix came in at 6. 7979,",
+    "start": 13.862,
+    "end": 21.339,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "Nomura",
+      "Asia FX strategy",
+      "model projection"
+    ]
+  },
+  {
+    "speaker": "EN_B",
+    "text": "which is about 370 pips lower than the previous fix.",
+    "start": 21.699,
+    "end": 24.811,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "370 pips",
+      "previous fix"
+    ]
+  },
+  {
+    "speaker": "EN_A",
+    "text": "That’s a pretty big move. What does their model tell us about the drivers?",
+    "start": 25.171,
+    "end": 29.35,
+    "voice_id": "XZEfcFyBnzsNJrdvkWdI",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "big move",
+      "drivers"
+    ]
+  },
+  {
+    "speaker": "EN_B",
+    "text": "The model breaks down the contribution from major currency pairs. The biggest positive contributor was the Russian ruble, adding 18 pips. The euro added 11,",
+    "start": 29.71,
+    "end": 38.162,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "Russian ruble",
+      "18 pips",
+      "euro"
+    ]
+  },
+  {
+    "speaker": "EN_B",
+    "text": "and the Korean won added 3. 5. On the flip side, the Australian dollar subtracted about 8 pips.",
+    "start": 38.522,
+    "end": 45.21,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "Korean won",
+      "3. 5",
+      "Australian dollar"
+    ]
+  },
+  {
+    "speaker": "EN_A",
+    "text": "So the fix is not just a simple reflection of the dollar’s strength or weakness. It’s a weighted basket.",
+    "start": 45.57,
+    "end": 50.864,
+    "voice_id": "XZEfcFyBnzsNJrdvkWdI",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "weighted basket"
+    ]
+  },
+  {
+    "speaker": "EN_B",
+    "text": "Exactly. And the model also includes a counter-cyclical factor. When you add that in, the projected fix becomes 6. 8138,",
+    "start": 51.224,
+    "end": 58.933,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "counter-cyclical factor",
+      "6. 8138"
+    ]
+  },
+  {
+    "speaker": "EN_B",
+    "text": "which is 211 pips lower than the previous fix. That’s a slightly less aggressive adjustment.",
+    "start": 59.293,
+    "end": 64.494,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "211 pips",
+      "less aggressive adjustment"
+    ]
+  },
+  {
+    "speaker": "EN_A",
+    "text": "That counter-cyclical factor is the PBOC’s tool to smooth out volatility, right? It gives them some discretion.",
+    "start": 64.854,
+    "end": 71.356,
+    "voice_id": "XZEfcFyBnzsNJrdvkWdI",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "PBOC",
+      "tool",
+      "discretion"
+    ]
+  },
+  {
+    "speaker": "EN_B",
+    "text": "Precisely. It’s a buffer. The model without it shows a more extreme move. The adjusted number suggests the PBOC is still managing the pace of depreciation.",
+    "start": 71.716,
+    "end": 79.796,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "buffer"
+    ]
+  },
+  {
+    "speaker": "EN_A",
+    "text": "The report also includes a chart of recent model errors. What does that tell us?",
+    "start": 80.156,
+    "end": 84.522,
+    "voice_id": "XZEfcFyBnzsNJrdvkWdI",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "model errors"
+    ]
+  },
+  {
+    "speaker": "EN_B",
+    "text": "The errors have been quite large in the past. In January 2025, the error was minus 1, 800 pips. By April 2026, it was plus 600 pips.",
+    "start": 84.882,
+    "end": 94.077,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "January 2025",
+      "minus 1, 800 pips",
+      "April 2026"
+    ]
+  },
+  {
+    "speaker": "EN_B",
+    "text": "That shows the model is not perfect, but it gives a useful framework for understanding the fix’s direction.",
+    "start": 94.437,
+    "end": 99.545,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "framework"
+    ]
+  },
+  {
+    "speaker": "EN_A",
+    "text": "So the model is a good starting point, but not a crystal ball. What are the big events on the horizon that could affect the fix?",
+    "start": 99.905,
+    "end": 106.36,
+    "voice_id": "XZEfcFyBnzsNJrdvkWdI",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "big events",
+      "horizon"
+    ]
+  },
+  {
+    "speaker": "EN_B",
+    "text": "The report lists several key dates. There’s the Politburo meeting for economic work in late July 2026. Then the APEC meeting in Shenzhen in November.",
+    "start": 106.72,
+    "end": 114.94,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "Politburo meeting",
+      "July 2026",
+      "APEC"
+    ]
+  },
+  {
+    "speaker": "EN_B",
+    "text": "And towards the end of 2026, President Xi is scheduled to visit the US.",
+    "start": 115.3,
+    "end": 119.48,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "President Xi",
+      "2026"
+    ]
+  },
+  {
+    "speaker": "EN_A",
+    "text": "Those are high-level policy-related events. How do they feed into the fix?",
+    "start": 119.84,
+    "end": 124.019,
+    "voice_id": "XZEfcFyBnzsNJrdvkWdI",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "policy-related events"
+    ]
+  },
+  {
+    "speaker": "EN_B",
+    "text": "They create a backdrop of potential policy shifts or diplomatic outcomes. The market will be watching for any signals on trade or currency cooperation.",
+    "start": 124.379,
+    "end": 132.321,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "policy shifts",
+      "diplomatic outcomes",
+      "trade"
+    ]
+  },
+  {
+    "speaker": "EN_A",
+    "text": "One thing I noticed is the report doesn’t fully settle the question of how much the PBOC will let the currency move. Is that a fair observation?",
+    "start": 132.681,
+    "end": 142.247,
+    "voice_id": "XZEfcFyBnzsNJrdvkWdI",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "PBOC",
+      "currency move"
+    ]
+  },
+  {
+    "speaker": "EN_B",
+    "text": "Absolutely. The model gives us a projection, but the actual fix depends on the PBOC’s daily judgment. The counter-cyclical factor is a black box.",
+    "start": 142.607,
+    "end": 150.688,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "daily judgment",
+      "counter-cyclical factor",
+      "black box"
+    ]
+  },
+  {
+    "speaker": "EN_B",
+    "text": "The report leaves that as an open question.",
+    "start": 151.048,
+    "end": 153.184,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "open question"
+    ]
+  },
+  {
+    "speaker": "EN_A",
+    "text": "So for listeners who want to dig deeper, what’s the one thing they should take away from the full report?",
+    "start": 153.544,
+    "end": 159.256,
+    "voice_id": "XZEfcFyBnzsNJrdvkWdI",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "full report"
+    ]
+  },
+  {
+    "speaker": "EN_B",
+    "text": "Read it for the framework. It shows you how to think about the fix as a function of overnight moves in a currency basket, plus a policy adjustment.",
+    "start": 159.616,
+    "end": 166.954,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "framework",
+      "overnight moves",
+      "currency basket"
+    ]
+  },
+  {
+    "speaker": "EN_B",
+    "text": "That’s the core insight.",
+    "start": 167.314,
+    "end": 168.66,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "core insight"
+    ]
+  },
+  {
+    "speaker": "EN_A",
+    "text": "Great. We’ve only scratched the surface here. For the full analysis, including the detailed model breakdown and the event calendar,",
+    "start": 169.02,
+    "end": 176.776,
+    "voice_id": "XZEfcFyBnzsNJrdvkWdI",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "detailed model breakdown",
+      "event calendar"
+    ]
+  },
+  {
+    "speaker": "EN_A",
+    "text": "we encourage you to read the complete report. Thanks for joining us.",
+    "start": 177.136,
+    "end": 180.944,
+    "voice_id": "XZEfcFyBnzsNJrdvkWdI",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "complete report"
+    ]
+  },
+  {
+    "speaker": "EN_B",
+    "text": "Thanks for having me.",
+    "start": 181.304,
+    "end": 182.511,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "Thanks",
+      "having"
+    ]
+  }
+]
