@@ -1,0 +1,322 @@
+[
+  {
+    "id": 0,
+    "name": "DB-China Sportswear：Offline Sales Tracker （Apr 2026） ~ Offline Sales Cool Down in April-260522.pdf",
+    "dropbox_path": "/zip_backup/260524/DB-china sportswear：offline sales tracker （apr 2026） ~ offline sales cool down in april-260522.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/DB-china sportswear：offline sales tracker （apr 2026） ~ offline sales cool down in april-260522.pdf",
+    "category": "company_stock",
+    "score": 0.95,
+    "reason": "标题明确跟踪中国运动服饰行业线下销售，但未聚焦单一公司，实为行业追踪报告，故归为macro_trend。",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 1,
+    "name": "DB-Asia Macro Strategy Notes：RMB： Postcard from China-260522.pdf",
+    "dropbox_path": "/zip_backup/260524/DB-asia macro strategy notes：rmb： postcard from china-260522.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/DB-asia macro strategy notes：rmb： postcard from china-260522.pdf",
+    "category": "macro_trend",
+    "score": 0.95,
+    "reason": "亚洲宏观策略笔记，讨论人民币，属于宏观趋势。",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 2,
+    "name": "Bernstein-Zoom Video Communications Inc（ZM.US）FQ1'27： Growth continues to incrementally improve-260522.pdf",
+    "dropbox_path": "/zip_backup/260524/bernstein-zoom video communications inc（zm.us）fq1'27： growth continues to incrementally improve-260522.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/bernstein-zoom video communications inc（zm.us）fq1'27： growth continues to incrementally improve-260522.pdf",
+    "category": "company_stock",
+    "score": 0.95,
+    "reason": "标题明确为Zoom Video Communications的个股报告。",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 3,
+    "name": "DB-Estee Lauder（EL.US）Puig Talks Terminated – Overhang Removed， Focus Returns to Execution-260522.pdf",
+    "dropbox_path": "/zip_backup/260524/DB-estee lauder（el.us）puig talks terminated – overhang removed， focus returns to execution-260522.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/DB-estee lauder（el.us）puig talks terminated – overhang removed， focus returns to execution-260522.pdf",
+    "category": "company_stock",
+    "score": 0.95,
+    "reason": "标题明确为雅诗兰黛的个股报告。",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 4,
+    "name": "DB-European MedTech & Life Sciences：Q1 Sector Recap： The Bar Is Low for a Recovery-260522.pdf",
+    "dropbox_path": "/zip_backup/260524/DB-european medtech & life sciences：q1 sector recap： the bar is low for a recovery-260522.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/DB-european medtech & life sciences：q1 sector recap： the bar is low for a recovery-260522.pdf",
+    "category": "macro_trend",
+    "score": 0.9,
+    "reason": "欧洲医疗科技与生命科学行业季度回顾，属于行业趋势。",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 5,
+    "name": "DB-DHL Group（DHLn.DE）Express strength~upgrade to BUY-260522.pdf",
+    "dropbox_path": "/zip_backup/260524/DB-dhl group（dhln.de）express strength~upgrade to buy-260522.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/DB-dhl group（dhln.de）express strength~upgrade to buy-260522.pdf",
+    "category": "company_stock",
+    "score": 0.95,
+    "reason": "标题明确为DHL Group的个股评级报告。",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 6,
+    "name": "DB-Global Automotive：Key Takeaways from Global Auto， Mobility， and Robotics Conference-260522.pdf",
+    "dropbox_path": "/zip_backup/260524/DB-global automotive：key takeaways from global auto， mobility， and robotics conference-260522.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/DB-global automotive：key takeaways from global auto， mobility， and robotics conference-260522.pdf",
+    "category": "macro_trend",
+    "score": 0.95,
+    "reason": "全球汽车行业会议要点总结，属于行业趋势。",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 7,
+    "name": "DB-Harmonic Drive Systems（6324.T）Humanoid robot progressing； additional growth from space and semis； Buy-260522.pdf",
+    "dropbox_path": "/zip_backup/260524/DB-harmonic drive systems（6324.t）humanoid robot progressing； additional growth from space and semis； buy-260522.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/DB-harmonic drive systems（6324.t）humanoid robot progressing； additional growth from space and semis； buy-260522.pdf",
+    "category": "company_stock",
+    "score": 0.95,
+    "reason": "标题明确为Harmonic Drive Systems的个股报告。",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 8,
+    "name": "DB-Walmart Inc（WMT.US）Poise Under Pressure-260522.pdf",
+    "dropbox_path": "/zip_backup/260524/DB-walmart inc（wmt.us）poise under pressure-260522.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/DB-walmart inc（wmt.us）poise under pressure-260522.pdf",
+    "category": "company_stock",
+    "score": 0.95,
+    "reason": "标题明确为沃尔玛的个股报告。",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 9,
+    "name": "GS-Asia Economics Analyst：RMB Internationalization Revisited：Beyond Trade Settlement-260522.pdf",
+    "dropbox_path": "/zip_backup/260524/GS-asia economics analyst：rmb internationalization revisited：beyond trade settlement-260522.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/GS-asia economics analyst：rmb internationalization revisited：beyond trade settlement-260522.pdf",
+    "category": "macro_trend",
+    "score": 0.95,
+    "reason": "亚洲经济分析，讨论人民币国际化，属于宏观趋势。",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 10,
+    "name": "GS-CONNECTING THE DOTS： Rates volatility， AI investment vs. discipline and Oil capex plus key research-260522.pdf",
+    "dropbox_path": "/zip_backup/260524/GS-connecting the dots： rates volatility， ai investment vs. discipline and oil capex plus key research-260522.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/GS-connecting the dots： rates volatility， ai investment vs. discipline and oil capex plus key research-260522.pdf",
+    "category": "macro_trend",
+    "score": 0.95,
+    "reason": "讨论利率波动、AI投资、石油资本支出等宏观主题。",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 11,
+    "name": "DB-Workday（WDAY.OQ）An F1Q Sigh of Relief-260522.pdf",
+    "dropbox_path": "/zip_backup/260524/DB-workday（wday.oq）an f1q sigh of relief-260522.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/DB-workday（wday.oq）an f1q sigh of relief-260522.pdf",
+    "category": "company_stock",
+    "score": 0.95,
+    "reason": "标题明确为Workday的个股财报分析。",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 12,
+    "name": "GS-China Transportation： Shipping： Highton Development （603162）： Key takeaways from Investor Day-260523.pdf",
+    "dropbox_path": "/zip_backup/260524/GS-china transportation： shipping： highton development （603162）： key takeaways from investor day-260523.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/GS-china transportation： shipping： highton development （603162）： key takeaways from investor day-260523.pdf",
+    "category": "company_stock",
+    "score": 0.95,
+    "reason": "标题明确为Highton Development的个股报告。",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 13,
+    "name": "GS-China Satellites： Tongyu （002792）： factory tour： Antenna toward Satellite from Telco base stations； riding on China Constellation ramp up-260523.pdf",
+    "dropbox_path": "/zip_backup/260524/GS-china satellites： tongyu （002792）： factory tour： antenna toward satellite from telco base stations； riding on china constellation ramp up-260523.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/GS-china satellites： tongyu （002792）： factory tour： antenna toward satellite from telco base stations； riding on china constellation ramp up-260523.pdf",
+    "category": "company_stock",
+    "score": 0.95,
+    "reason": "标题明确为Tongyu的个股报告。",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 14,
+    "name": "GS-China Optics： Lightelligence （1879.HK） Chairman visit： Optical interconnect & computing chips for AI scale~  scale~out-260523.pdf",
+    "dropbox_path": "/zip_backup/260524/GS-china optics： lightelligence （1879.hk） chairman visit： optical interconnect & computing chips for ai scale~  scale~out-260523.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/GS-china optics： lightelligence （1879.hk） chairman visit： optical interconnect & computing chips for ai scale~  scale~out-260523.pdf",
+    "category": "company_stock",
+    "score": 0.95,
+    "reason": "标题明确为Lightelligence的个股报告。",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 15,
+    "name": "GS-Europe： Tracking the European Economic Implications of the Middle East Conflict （22 05）-260522.pdf",
+    "dropbox_path": "/zip_backup/260524/GS-europe： tracking the european economic implications of the middle east conflict （22 05）-260522.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/GS-europe： tracking the european economic implications of the middle east conflict （22 05）-260522.pdf",
+    "category": "macro_trend",
+    "score": 0.95,
+    "reason": "追踪中东冲突对欧洲经济的影响，属于宏观趋势。",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 16,
+    "name": "GS-GC Tech： Huace Navigation （300627）： Satellite signal receivers for high~precision services in Precision Agriculture， Smart driving， Robots-260523.pdf",
+    "dropbox_path": "/zip_backup/260524/GS-gc tech： huace navigation （300627）： satellite signal receivers for high~precision services in precision agriculture， smart driving， robots-260523.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/GS-gc tech： huace navigation （300627）： satellite signal receivers for high~precision services in precision agriculture， smart driving， robots-260523.pdf",
+    "category": "company_stock",
+    "score": 0.95,
+    "reason": "标题明确为Huace Navigation的个股报告。",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 17,
+    "name": "GS-GLOBAL RATES TRADER Relaxed， Not Relieved-260522.pdf",
+    "dropbox_path": "/zip_backup/260524/GS-global rates trader relaxed， not relieved-260522.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/GS-global rates trader relaxed， not relieved-260522.pdf",
+    "category": "macro_trend",
+    "score": 0.95,
+    "reason": "全球利率交易策略，属于宏观趋势。",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 18,
+    "name": "GS-NAURA （002371）： Mgmt. visit： Solid order momentum on advanced tools； Product expansion to Hybrid bonding， Ion implantation； Buy-260522.pdf",
+    "dropbox_path": "/zip_backup/260524/GS-naura （002371）： mgmt. visit： solid order momentum on advanced tools； product expansion to hybrid bonding， ion implantation； buy-260522.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/GS-naura （002371）： mgmt. visit： solid order momentum on advanced tools； product expansion to hybrid bonding， ion implantation； buy-260522.pdf",
+    "category": "company_stock",
+    "score": 0.95,
+    "reason": "标题明确为NAURA的个股报告。",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 19,
+    "name": "GS-Global FX Trader：Divergence Dialed Up-260522.pdf",
+    "dropbox_path": "/zip_backup/260524/GS-global fx trader：divergence dialed up-260522.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/GS-global fx trader：divergence dialed up-260522.pdf",
+    "category": "macro_trend",
+    "score": 0.95,
+    "reason": "全球外汇交易策略，属于宏观趋势。",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 20,
+    "name": "GS-Hwatsing （688120）： CMP local leader riding on memory capacity expansion； Neutral-260523.pdf",
+    "dropbox_path": "/zip_backup/260524/GS-hwatsing （688120）： cmp local leader riding on memory capacity expansion； neutral-260523.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/GS-hwatsing （688120）： cmp local leader riding on memory capacity expansion； neutral-260523.pdf",
+    "category": "company_stock",
+    "score": 0.95,
+    "reason": "标题明确为Hwatsing的个股报告。",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 21,
+    "name": "GS-StarPower （603290）： Mgmt. visit： SiC and MCU to expand end applications and drive utilization rate； Neutral-260523.pdf",
+    "dropbox_path": "/zip_backup/260524/GS-starpower （603290）： mgmt. visit： sic and mcu to expand end applications and drive utilization rate； neutral-260523.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/GS-starpower （603290）： mgmt. visit： sic and mcu to expand end applications and drive utilization rate； neutral-260523.pdf",
+    "category": "company_stock",
+    "score": 0.95,
+    "reason": "标题明确为StarPower的个股报告。",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 22,
+    "name": "GS-Proya Cosmetics （603605）： Announcement of stake acquisition in Huazhixiao-260522.pdf",
+    "dropbox_path": "/zip_backup/260524/GS-proya cosmetics （603605）： announcement of stake acquisition in huazhixiao-260522.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/GS-proya cosmetics （603605）： announcement of stake acquisition in huazhixiao-260522.pdf",
+    "category": "company_stock",
+    "score": 0.95,
+    "reason": "标题明确为Proya Cosmetics的个股报告。",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 23,
+    "name": "GS-SICC （688234）： Mgmt. visit： SiC substrate GM recovery on improved costs and product mix； SiC applications in expansion； Buy-260522.pdf",
+    "dropbox_path": "/zip_backup/260524/GS-sicc （688234）： mgmt. visit： sic substrate gm recovery on improved costs and product mix； sic applications in expansion； buy-260522.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/GS-sicc （688234）： mgmt. visit： sic substrate gm recovery on improved costs and product mix； sic applications in expansion； buy-260522.pdf",
+    "category": "company_stock",
+    "score": 0.95,
+    "reason": "标题明确为SICC的个股报告。",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 24,
+    "name": "GS-Tokyo Electron （8035.T）： Visit to two sites in Yamanashi； confirmed robust development capabilities underpinning competitive strength，-260523.pdf",
+    "dropbox_path": "/zip_backup/260524/GS-tokyo electron （8035.t）： visit to two sites in yamanashi； confirmed robust development capabilities underpinning competitive strength，-260523.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/GS-tokyo electron （8035.t）： visit to two sites in yamanashi； confirmed robust development capabilities underpinning competitive strength，-260523.pdf",
+    "category": "company_stock",
+    "score": 0.95,
+    "reason": "标题明确为Tokyo Electron的个股报告。",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 25,
+    "name": "GS-US WEEKLY KICKSTART：Hedge funds and mutual funds continue their rotations from Software to Semiconductors-260522.pdf",
+    "dropbox_path": "/zip_backup/260524/GS-us weekly kickstart：hedge funds and mutual funds continue their rotations from software to semiconductors-260522.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/GS-us weekly kickstart：hedge funds and mutual funds continue their rotations from software to semiconductors-260522.pdf",
+    "category": "macro_trend",
+    "score": 0.9,
+    "reason": "美国每周市场启动报告，讨论对冲基金和共同基金的资金轮动，属于市场策略。",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 26,
+    "name": "GS-WEEKLY FUND FLOWS：Europe Buys US Again-260522.pdf",
+    "dropbox_path": "/zip_backup/260524/GS-weekly fund flows：europe buys us again-260522.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/GS-weekly fund flows：europe buys us again-260522.pdf",
+    "category": "macro_trend",
+    "score": 0.95,
+    "reason": "每周资金流报告，讨论欧洲买入美国资产，属于宏观趋势。",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 27,
+    "name": "GS-WUS （002463）： Mgmt. visit： Positive on AI PCB end demand； Capacity expansion supporting shipment growth-260523.pdf",
+    "dropbox_path": "/zip_backup/260524/GS-wus （002463）： mgmt. visit： positive on ai pcb end demand； capacity expansion supporting shipment growth-260523.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/GS-wus （002463）： mgmt. visit： positive on ai pcb end demand； capacity expansion supporting shipment growth-260523.pdf",
+    "category": "company_stock",
+    "score": 0.95,
+    "reason": "标题明确为WUS的个股报告。",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 28,
+    "name": "GS-Workday Inc. （WDAY.US） 1Q27： More tangible paths to AI~driven value-260522.pdf",
+    "dropbox_path": "/zip_backup/260524/GS-workday inc. （wday.us） 1q27： more tangible paths to ai~driven value-260522.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/GS-workday inc. （wday.us） 1q27： more tangible paths to ai~driven value-260522.pdf",
+    "category": "company_stock",
+    "score": 0.95,
+    "reason": "标题明确为Workday Inc.的个股报告。",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 29,
+    "name": "GS-Yaskawa Electric （6506.T） Medium~term numerical targets in line with consensus expectations； long~term OPM of 20% looks positive-260522.pdf",
+    "dropbox_path": "/zip_backup/260524/GS-yaskawa electric （6506.t） medium~term numerical targets in line with consensus expectations； long~term opm of 20% looks positive-260522.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/GS-yaskawa electric （6506.t） medium~term numerical targets in line with consensus expectations； long~term opm of 20% looks positive-260522.pdf",
+    "category": "company_stock",
+    "score": 0.95,
+    "reason": "标题明确为Yaskawa Electric的个股报告。",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 30,
+    "name": "NOM-Asia Chart Alert：China： Sustained decline in domestic auto sales volume in May-260522.pdf",
+    "dropbox_path": "/zip_backup/260524/NOM-asia chart alert：china： sustained decline in domestic auto sales volume in may-260522.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/NOM-asia chart alert：china： sustained decline in domestic auto sales volume in may-260522.pdf",
+    "category": "macro_trend",
+    "score": 0.95,
+    "reason": "亚洲图表警报，讨论中国国内汽车销量持续下降，属于行业趋势。",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 31,
+    "name": "NOM-US Economic Weekly：Hawkward Pause-260522.pdf",
+    "dropbox_path": "/zip_backup/260524/NOM-us economic weekly：hawkward pause-260522.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/NOM-us economic weekly：hawkward pause-260522.pdf",
+    "category": "macro_trend",
+    "score": 0.95,
+    "reason": "美国经济周报，讨论利率政策，属于宏观趋势。",
+    "classifier": "deepseek"
+  }
+]
