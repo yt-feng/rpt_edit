@@ -1,0 +1,959 @@
+[
+  {
+    "speaker": "EN_A",
+    "text": "Welcome to KC Desk Notes. Today we are unpacking one fresh research report and the question it raises.",
+    "start": 0.0,
+    "end": 2.995,
+    "voice_id": "XZEfcFyBnzsNJrdvkWdI",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "KC Desk Notes",
+      "research report"
+    ],
+    "text_en": "Welcome to KC Desk Notes. Today\nwe are unpacking one fresh",
+    "text_zh": "欢迎收看KCDeskNotes。今天\n解读一份最新研究报告及其提出的问题。",
+    "page_index": 1,
+    "page_count": 2
+  },
+  {
+    "speaker": "EN_A",
+    "text": "Welcome to KC Desk Notes. Today we are unpacking one fresh research report and the question it raises.",
+    "start": 2.995,
+    "end": 5.991,
+    "voice_id": "XZEfcFyBnzsNJrdvkWdI",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "KC Desk Notes",
+      "research report"
+    ],
+    "text_en": "research report and the question\nit raises.",
+    "text_zh": "欢迎收看KCDeskNotes。今天\n解读一份最新研究报告及其提出的问题。",
+    "page_index": 2,
+    "page_count": 2
+  },
+  {
+    "speaker": "EN_A",
+    "text": "So the USD/CNY fix is moving again. What’s the latest from the model?",
+    "start": 6.351,
+    "end": 8.673,
+    "voice_id": "XZEfcFyBnzsNJrdvkWdI",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "USD/CNY fix",
+      "moving",
+      "model"
+    ],
+    "text_en": "So the USD/CNY fix is moving\nagain. What’s the latest from",
+    "text_zh": "美元/人民币中间价再次\n变动。模型最新预测如何？",
+    "page_index": 1,
+    "page_count": 2
+  },
+  {
+    "speaker": "EN_A",
+    "text": "So the USD/CNY fix is moving again. What’s the latest from the model?",
+    "start": 8.673,
+    "end": 10.995,
+    "voice_id": "XZEfcFyBnzsNJrdvkWdI",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "USD/CNY fix",
+      "moving",
+      "model"
+    ],
+    "text_en": "the model?",
+    "text_zh": "美元/人民币中间价再次\n变动。模型最新预测如何？",
+    "page_index": 2,
+    "page_count": 2
+  },
+  {
+    "speaker": "EN_B",
+    "text": "The Nomura model projects the fix at 6.7979 today. That’s about 370 pips lower than the previous fix.",
+    "start": 11.355,
+    "end": 14.513,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "Nomura model",
+      "6.7979",
+      "370 pips"
+    ],
+    "text_en": "The Nomura model projects the\nfix at 6.7979 today. That’s",
+    "text_zh": "野村模型预测今日中间价为6.7979，\n较前次下调约370点。",
+    "page_index": 1,
+    "page_count": 2
+  },
+  {
+    "speaker": "EN_B",
+    "text": "The Nomura model projects the fix at 6.7979 today. That’s about 370 pips lower than the previous fix.",
+    "start": 14.513,
+    "end": 17.671,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "Nomura model",
+      "6.7979",
+      "370 pips"
+    ],
+    "text_en": "about 370 pips lower than the\nprevious fix.",
+    "text_zh": "野村模型预测今日中间价为6.7979，\n较前次下调约370点。",
+    "page_index": 2,
+    "page_count": 2
+  },
+  {
+    "speaker": "EN_A",
+    "text": "That’s a pretty big drop. What’s driving that?",
+    "start": 18.031,
+    "end": 20.074,
+    "voice_id": "XZEfcFyBnzsNJrdvkWdI",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "big drop",
+      "driving"
+    ],
+    "text_en": "That’s a pretty big drop. What’s\ndriving that?",
+    "text_zh": "降幅不小。原因是什么？",
+    "page_index": 1,
+    "page_count": 1
+  },
+  {
+    "speaker": "EN_B",
+    "text": "The main contributors are the Russian ruble and the euro. They added 18 and 11 pips respectively to the projected change.",
+    "start": 20.434,
+    "end": 22.369,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "Russian ruble",
+      "euro",
+      "18"
+    ],
+    "text_en": "The main contributors are the\nRussian ruble and the euro. They",
+    "text_zh": "主要贡献来自俄罗斯卢布和欧元，\n分别推动预测变动18点和11点。",
+    "page_index": 1,
+    "page_count": 3
+  },
+  {
+    "speaker": "EN_B",
+    "text": "The main contributors are the Russian ruble and the euro. They added 18 and 11 pips respectively to the projected change.",
+    "start": 22.369,
+    "end": 24.304,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "Russian ruble",
+      "euro",
+      "18"
+    ],
+    "text_en": "added 18 and 11 pips\nrespectively to the projected",
+    "text_zh": "主要贡献来自俄罗斯卢布和欧元，\n分别推动预测变动18点和11点。",
+    "page_index": 2,
+    "page_count": 3
+  },
+  {
+    "speaker": "EN_B",
+    "text": "The main contributors are the Russian ruble and the euro. They added 18 and 11 pips respectively to the projected change.",
+    "start": 24.304,
+    "end": 26.239,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "Russian ruble",
+      "euro",
+      "18"
+    ],
+    "text_en": "change.",
+    "text_zh": "主要贡献来自俄罗斯卢布和欧元，\n分别推动预测变动18点和11点。",
+    "page_index": 3,
+    "page_count": 3
+  },
+  {
+    "speaker": "EN_B",
+    "text": "The Australian dollar pulled the other way by 8 pips.",
+    "start": 26.599,
+    "end": 29.107,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "Australian dollar",
+      "8 pips"
+    ],
+    "text_en": "The Australian dollar pulled the\nother way by 8 pips.",
+    "text_zh": "澳元则反向拉动8点。",
+    "page_index": 1,
+    "page_count": 1
+  },
+  {
+    "speaker": "EN_A",
+    "text": "So the model is saying the fix could be lower, but there’s also a counter-cyclical factor, right?",
+    "start": 29.467,
+    "end": 31.881,
+    "voice_id": "XZEfcFyBnzsNJrdvkWdI",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "counter-cyclical factor"
+    ],
+    "text_en": "So the model is saying the fix\ncould be lower, but there’s also",
+    "text_zh": "模型显示中间价可能下调，\n但还有逆周期因子，对吧？",
+    "page_index": 1,
+    "page_count": 2
+  },
+  {
+    "speaker": "EN_A",
+    "text": "So the model is saying the fix could be lower, but there’s also a counter-cyclical factor, right?",
+    "start": 31.881,
+    "end": 34.296,
+    "voice_id": "XZEfcFyBnzsNJrdvkWdI",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "counter-cyclical factor"
+    ],
+    "text_en": "a counter-cyclical factor,\nright?",
+    "text_zh": "模型显示中间价可能下调，\n但还有逆周期因子，对吧？",
+    "page_index": 2,
+    "page_count": 2
+  },
+  {
+    "speaker": "EN_B",
+    "text": "Exactly. When you include that adjustment, the projection is 6. 8138. That’s still 211 pips lower than the previous fix,",
+    "start": 34.656,
+    "end": 38.952,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "adjustment",
+      "211 pips",
+      "lower"
+    ],
+    "text_en": "Exactly. When you include that\nadjustment, the projection is 6.",
+    "text_zh": "没错。加入该调整后，预测值为6.8138，\n仍较前次下调211点。",
+    "page_index": 1,
+    "page_count": 2
+  },
+  {
+    "speaker": "EN_B",
+    "text": "Exactly. When you include that adjustment, the projection is 6. 8138. That’s still 211 pips lower than the previous fix,",
+    "start": 38.952,
+    "end": 43.248,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "adjustment",
+      "211 pips",
+      "lower"
+    ],
+    "text_en": "8138. That’s still 211 pips\nlower than the previous fix,",
+    "text_zh": "没错。加入该调整后，预测值为6.8138，\n仍较前次下调211点。",
+    "page_index": 2,
+    "page_count": 2
+  },
+  {
+    "speaker": "EN_B",
+    "text": "but it shows the PBOC is smoothing the move.",
+    "start": 43.608,
+    "end": 45.93,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "PBOC",
+      "smoothing"
+    ],
+    "text_en": "but it shows the PBOC is\nsmoothing the move.",
+    "text_zh": "但这表明央行在平滑波动。",
+    "page_index": 1,
+    "page_count": 1
+  },
+  {
+    "speaker": "EN_A",
+    "text": "Why would they smooth it? What’s the thinking there?",
+    "start": 46.29,
+    "end": 48.38,
+    "voice_id": "XZEfcFyBnzsNJrdvkWdI",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "smooth",
+      "thinking"
+    ],
+    "text_en": "Why would they smooth it? What’s\nthe thinking there?",
+    "text_zh": "为何要平滑？背后的考量是什么？",
+    "page_index": 1,
+    "page_count": 1
+  },
+  {
+    "speaker": "EN_B",
+    "text": "The counter-cyclical factor is a tool to manage volatility. It’s a signal that the authorities want to avoid sharp moves that could disrupt markets.",
+    "start": 48.74,
+    "end": 51.155,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "counter-cyclical factor",
+      "tool",
+      "volatility"
+    ],
+    "text_en": "The counter-cyclical factor is a\ntool to manage volatility. It’s",
+    "text_zh": "逆周期因子是管理波动的工具，\n意在避免剧烈波动扰乱市场。",
+    "page_index": 1,
+    "page_count": 3
+  },
+  {
+    "speaker": "EN_B",
+    "text": "The counter-cyclical factor is a tool to manage volatility. It’s a signal that the authorities want to avoid sharp moves that could disrupt markets.",
+    "start": 51.155,
+    "end": 53.569,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "counter-cyclical factor",
+      "tool",
+      "volatility"
+    ],
+    "text_en": "a signal that the authorities\nwant to avoid sharp moves that",
+    "text_zh": "逆周期因子是管理波动的工具，\n意在避免剧烈波动扰乱市场。",
+    "page_index": 2,
+    "page_count": 3
+  },
+  {
+    "speaker": "EN_B",
+    "text": "The counter-cyclical factor is a tool to manage volatility. It’s a signal that the authorities want to avoid sharp moves that could disrupt markets.",
+    "start": 53.569,
+    "end": 55.984,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "counter-cyclical factor",
+      "tool",
+      "volatility"
+    ],
+    "text_en": "could disrupt markets.",
+    "text_zh": "逆周期因子是管理波动的工具，\n意在避免剧烈波动扰乱市场。",
+    "page_index": 3,
+    "page_count": 3
+  },
+  {
+    "speaker": "EN_A",
+    "text": "So the model itself is one thing, but the actual fix depends on policy decisions.",
+    "start": 56.344,
+    "end": 58.527,
+    "voice_id": "XZEfcFyBnzsNJrdvkWdI",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "model",
+      "actual fix",
+      "policy decisions"
+    ],
+    "text_en": "So the model itself is one\nthing, but the actual fix",
+    "text_zh": "所以模型是一回事，\n实际中间价取决于政策决策。",
+    "page_index": 1,
+    "page_count": 2
+  },
+  {
+    "speaker": "EN_A",
+    "text": "So the model itself is one thing, but the actual fix depends on policy decisions.",
+    "start": 58.527,
+    "end": 60.71,
+    "voice_id": "XZEfcFyBnzsNJrdvkWdI",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "model",
+      "actual fix",
+      "policy decisions"
+    ],
+    "text_en": "depends on policy decisions.",
+    "text_zh": "所以模型是一回事，\n实际中间价取决于政策决策。",
+    "page_index": 2,
+    "page_count": 2
+  },
+  {
+    "speaker": "EN_B",
+    "text": "Right. The model gives a technical projection based on overnight moves. The actual fix is a policy choice.",
+    "start": 61.07,
+    "end": 64.413,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "technical projection",
+      "overnight moves",
+      "policy choice"
+    ],
+    "text_en": "Right. The model gives a\ntechnical projection based on",
+    "text_zh": "对。模型基于隔夜走势给出技术预测，\n实际中间价是政策选择。",
+    "page_index": 1,
+    "page_count": 2
+  },
+  {
+    "speaker": "EN_B",
+    "text": "Right. The model gives a technical projection based on overnight moves. The actual fix is a policy choice.",
+    "start": 64.413,
+    "end": 67.757,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "technical projection",
+      "overnight moves",
+      "policy choice"
+    ],
+    "text_en": "overnight moves. The actual fix\nis a policy choice.",
+    "text_zh": "对。模型基于隔夜走势给出技术预测，\n实际中间价是政策选择。",
+    "page_index": 2,
+    "page_count": 2
+  },
+  {
+    "speaker": "EN_A",
+    "text": "The report also mentions some recent model errors. What do those tell us?",
+    "start": 68.117,
+    "end": 70.253,
+    "voice_id": "XZEfcFyBnzsNJrdvkWdI",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "model errors"
+    ],
+    "text_en": "The report also mentions some\nrecent model errors. What do",
+    "text_zh": "报告还提到近期模型\n误差。这说明了什么？",
+    "page_index": 1,
+    "page_count": 2
+  },
+  {
+    "speaker": "EN_A",
+    "text": "The report also mentions some recent model errors. What do those tell us?",
+    "start": 70.253,
+    "end": 72.389,
+    "voice_id": "XZEfcFyBnzsNJrdvkWdI",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "model errors"
+    ],
+    "text_en": "those tell us?",
+    "text_zh": "报告还提到近期模型\n误差。这说明了什么？",
+    "page_index": 2,
+    "page_count": 2
+  },
+  {
+    "speaker": "EN_B",
+    "text": "Over the past year, the errors have been significant. In January 2025, the error was minus 1800 pips. More recently, in April 2026, it was 600 pips.",
+    "start": 72.749,
+    "end": 75.892,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "January 2025",
+      "minus 1800 pips",
+      "April 2026"
+    ],
+    "text_en": "Over the past year, the errors\nhave been significant. In",
+    "text_zh": "过去一年误差显著。2025年1月误差为负1800点，\n2026年4月为600点。",
+    "page_index": 1,
+    "page_count": 3
+  },
+  {
+    "speaker": "EN_B",
+    "text": "Over the past year, the errors have been significant. In January 2025, the error was minus 1800 pips. More recently, in April 2026, it was 600 pips.",
+    "start": 75.892,
+    "end": 79.034,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "January 2025",
+      "minus 1800 pips",
+      "April 2026"
+    ],
+    "text_en": "January 2025, the error was\nminus 1800 pips. More recently,",
+    "text_zh": "过去一年误差显著。2025年1月误差为负1800点，\n2026年4月为600点。",
+    "page_index": 2,
+    "page_count": 3
+  },
+  {
+    "speaker": "EN_B",
+    "text": "Over the past year, the errors have been significant. In January 2025, the error was minus 1800 pips. More recently, in April 2026, it was 600 pips.",
+    "start": 79.034,
+    "end": 82.177,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "January 2025",
+      "minus 1800 pips",
+      "April 2026"
+    ],
+    "text_en": "in April 2026, it was 600 pips.",
+    "text_zh": "过去一年误差显著。2025年1月误差为负1800点，\n2026年4月为600点。",
+    "page_index": 3,
+    "page_count": 3
+  },
+  {
+    "speaker": "EN_A",
+    "text": "So the model isn’t always accurate?",
+    "start": 82.537,
+    "end": 84.441,
+    "voice_id": "XZEfcFyBnzsNJrdvkWdI",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "model",
+      "accurate"
+    ],
+    "text_en": "So the model isn’t always\naccurate?",
+    "text_zh": "模型并非总是准确？",
+    "page_index": 1,
+    "page_count": 1
+  },
+  {
+    "speaker": "EN_B",
+    "text": "It’s a framework, not a perfect predictor. The errors show when the fix deviates from the model’s projection, which often reflects policy intervention.",
+    "start": 84.801,
+    "end": 87.154,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "framework",
+      "predictor",
+      "errors"
+    ],
+    "text_en": "It’s a framework, not a perfect\npredictor. The errors show when",
+    "text_zh": "它是一个框架，而非完美预测器。误差反映中间价偏离模型预测，\n常源于政策干预。",
+    "page_index": 1,
+    "page_count": 3
+  },
+  {
+    "speaker": "EN_B",
+    "text": "It’s a framework, not a perfect predictor. The errors show when the fix deviates from the model’s projection, which often reflects policy intervention.",
+    "start": 87.154,
+    "end": 89.507,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "framework",
+      "predictor",
+      "errors"
+    ],
+    "text_en": "the fix deviates from the\nmodel’s projection, which often",
+    "text_zh": "它是一个框架，而非完美预测器。误差反映中间价偏离模型预测，\n常源于政策干预。",
+    "page_index": 2,
+    "page_count": 3
+  },
+  {
+    "speaker": "EN_B",
+    "text": "It’s a framework, not a perfect predictor. The errors show when the fix deviates from the model’s projection, which often reflects policy intervention.",
+    "start": 89.507,
+    "end": 91.86,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "framework",
+      "predictor",
+      "errors"
+    ],
+    "text_en": "reflects policy intervention.",
+    "text_zh": "它是一个框架，而非完美预测器。误差反映中间价偏离模型预测，\n常源于政策干预。",
+    "page_index": 3,
+    "page_count": 3
+  },
+  {
+    "speaker": "EN_A",
+    "text": "What about the calendar of events? There are some key dates coming up.",
+    "start": 92.22,
+    "end": 94.031,
+    "voice_id": "XZEfcFyBnzsNJrdvkWdI",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "calendar",
+      "key dates"
+    ],
+    "text_en": "What about the calendar of\nevents? There are some key dates",
+    "text_zh": "有哪些关键事件？\n未来有重要日期吗？",
+    "page_index": 1,
+    "page_count": 2
+  },
+  {
+    "speaker": "EN_A",
+    "text": "What about the calendar of events? There are some key dates coming up.",
+    "start": 94.031,
+    "end": 95.842,
+    "voice_id": "XZEfcFyBnzsNJrdvkWdI",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "calendar",
+      "key dates"
+    ],
+    "text_en": "coming up.",
+    "text_zh": "有哪些关键事件？\n未来有重要日期吗？",
+    "page_index": 2,
+    "page_count": 2
+  },
+  {
+    "speaker": "EN_B",
+    "text": "There’s a Politburo meeting in late July, the APEC meeting in November, and a potential Xi-Trump meeting towards the end of 2026.",
+    "start": 96.202,
+    "end": 98.648,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "Politburo meeting",
+      "late July",
+      "APEC meeting"
+    ],
+    "text_en": "There’s a Politburo meeting in\nlate July, the APEC meeting in",
+    "text_zh": "7月底政策环境局会议、11月APEC会议，\n以及2026年底可能的中美领导人会晤。",
+    "page_index": 1,
+    "page_count": 3
+  },
+  {
+    "speaker": "EN_B",
+    "text": "There’s a Politburo meeting in late July, the APEC meeting in November, and a potential Xi-Trump meeting towards the end of 2026.",
+    "start": 98.648,
+    "end": 101.093,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "Politburo meeting",
+      "late July",
+      "APEC meeting"
+    ],
+    "text_en": "November, and a potential\nXi-Trump meeting towards the end",
+    "text_zh": "7月底政策环境局会议、11月APEC会议，\n以及2026年底可能的中美领导人会晤。",
+    "page_index": 2,
+    "page_count": 3
+  },
+  {
+    "speaker": "EN_B",
+    "text": "There’s a Politburo meeting in late July, the APEC meeting in November, and a potential Xi-Trump meeting towards the end of 2026.",
+    "start": 101.093,
+    "end": 103.539,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "Politburo meeting",
+      "late July",
+      "APEC meeting"
+    ],
+    "text_en": "of 2026.",
+    "text_zh": "7月底政策环境局会议、11月APEC会议，\n以及2026年底可能的中美领导人会晤。",
+    "page_index": 3,
+    "page_count": 3
+  },
+  {
+    "speaker": "EN_B",
+    "text": "These events could shape the policy backdrop.",
+    "start": 103.899,
+    "end": 106.314,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "events",
+      "policy backdrop"
+    ],
+    "text_en": "These events could shape the\npolicy backdrop.",
+    "text_zh": "这些事件可能影响政策背景。",
+    "page_index": 1,
+    "page_count": 1
+  },
+  {
+    "speaker": "EN_A",
+    "text": "So the fix is part of a bigger picture involving trade and diplomacy.",
+    "start": 106.674,
+    "end": 108.416,
+    "voice_id": "XZEfcFyBnzsNJrdvkWdI",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "fix",
+      "trade",
+      "diplomacy"
+    ],
+    "text_en": "So the fix is part of a bigger\npicture involving trade and",
+    "text_zh": "所以中间价是贸易和\n外交大局的一部分。",
+    "page_index": 1,
+    "page_count": 2
+  },
+  {
+    "speaker": "EN_A",
+    "text": "So the fix is part of a bigger picture involving trade and diplomacy.",
+    "start": 108.416,
+    "end": 110.157,
+    "voice_id": "XZEfcFyBnzsNJrdvkWdI",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "fix",
+      "trade",
+      "diplomacy"
+    ],
+    "text_en": "diplomacy.",
+    "text_zh": "所以中间价是贸易和\n外交大局的一部分。",
+    "page_index": 2,
+    "page_count": 2
+  },
+  {
+    "speaker": "EN_B",
+    "text": "Absolutely. The fix is a key channel for policy signals, especially during periods of trade tension or major diplomatic events.",
+    "start": 110.517,
+    "end": 112.684,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "key channel",
+      "policy signals",
+      "trade tension"
+    ],
+    "text_en": "Absolutely. The fix is a key\nchannel for policy signals,",
+    "text_zh": "完全正确。中间价是政策信号的关键渠道，\n尤其在贸易紧张或重大外交活动期间。",
+    "page_index": 1,
+    "page_count": 3
+  },
+  {
+    "speaker": "EN_B",
+    "text": "Absolutely. The fix is a key channel for policy signals, especially during periods of trade tension or major diplomatic events.",
+    "start": 112.684,
+    "end": 114.852,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "key channel",
+      "policy signals",
+      "trade tension"
+    ],
+    "text_en": "especially during periods of\ntrade tension or major",
+    "text_zh": "完全正确。中间价是政策信号的关键渠道，\n尤其在贸易紧张或重大外交活动期间。",
+    "page_index": 2,
+    "page_count": 3
+  },
+  {
+    "speaker": "EN_B",
+    "text": "Absolutely. The fix is a key channel for policy signals, especially during periods of trade tension or major diplomatic events.",
+    "start": 114.852,
+    "end": 117.019,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "key channel",
+      "policy signals",
+      "trade tension"
+    ],
+    "text_en": "diplomatic events.",
+    "text_zh": "完全正确。中间价是政策信号的关键渠道，\n尤其在贸易紧张或重大外交活动期间。",
+    "page_index": 3,
+    "page_count": 3
+  },
+  {
+    "speaker": "EN_A",
+    "text": "The report also has a lot of technical details. What’s one thing the model doesn’t fully settle?",
+    "start": 117.379,
+    "end": 120.142,
+    "voice_id": "XZEfcFyBnzsNJrdvkWdI",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "technical details",
+      "model",
+      "settle"
+    ],
+    "text_en": "The report also has a lot of\ntechnical details. What’s one",
+    "text_zh": "报告技术细节很多。模型\n未能完全解决什么问题？",
+    "page_index": 1,
+    "page_count": 2
+  },
+  {
+    "speaker": "EN_A",
+    "text": "The report also has a lot of technical details. What’s one thing the model doesn’t fully settle?",
+    "start": 120.142,
+    "end": 122.905,
+    "voice_id": "XZEfcFyBnzsNJrdvkWdI",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "technical details",
+      "model",
+      "settle"
+    ],
+    "text_en": "thing the model doesn’t fully\nsettle?",
+    "text_zh": "报告技术细节很多。模型\n未能完全解决什么问题？",
+    "page_index": 2,
+    "page_count": 2
+  },
+  {
+    "speaker": "EN_B",
+    "text": "It doesn’t fully explain the timing or magnitude of policy intervention. The model gives a baseline, but the actual fix depends on the PBOC’s reaction function.",
+    "start": 123.265,
+    "end": 126.129,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "timing",
+      "magnitude",
+      "policy intervention"
+    ],
+    "text_en": "It doesn’t fully explain the\ntiming or magnitude of policy",
+    "text_zh": "它未能完全解释政策干预的时机或力度。模型提供基准，\n但实际中间价取决于央行的反应函数。",
+    "page_index": 1,
+    "page_count": 3
+  },
+  {
+    "speaker": "EN_B",
+    "text": "It doesn’t fully explain the timing or magnitude of policy intervention. The model gives a baseline, but the actual fix depends on the PBOC’s reaction function.",
+    "start": 126.129,
+    "end": 128.993,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "timing",
+      "magnitude",
+      "policy intervention"
+    ],
+    "text_en": "intervention. The model gives a\nbaseline, but the actual fix",
+    "text_zh": "它未能完全解释政策干预的时机或力度。模型提供基准，\n但实际中间价取决于央行的反应函数。",
+    "page_index": 2,
+    "page_count": 3
+  },
+  {
+    "speaker": "EN_B",
+    "text": "It doesn’t fully explain the timing or magnitude of policy intervention. The model gives a baseline, but the actual fix depends on the PBOC’s reaction function.",
+    "start": 128.993,
+    "end": 131.857,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "timing",
+      "magnitude",
+      "policy intervention"
+    ],
+    "text_en": "depends on the PBOC’s reaction\nfunction.",
+    "text_zh": "它未能完全解释政策干预的时机或力度。模型提供基准，\n但实际中间价取决于央行的反应函数。",
+    "page_index": 3,
+    "page_count": 3
+  },
+  {
+    "speaker": "EN_A",
+    "text": "So there’s more to dig into in the full report.",
+    "start": 132.217,
+    "end": 134.446,
+    "voice_id": "XZEfcFyBnzsNJrdvkWdI",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "full report"
+    ],
+    "text_en": "So there’s more to dig into in\nthe full report.",
+    "text_zh": "完整报告还有更多内容可深入。",
+    "page_index": 1,
+    "page_count": 1
+  },
+  {
+    "speaker": "EN_B",
+    "text": "Exactly. The full report has the detailed methodology, the historical error analysis, and the event calendar.",
+    "start": 134.806,
+    "end": 137.593,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "methodology",
+      "historical error analysis",
+      "event calendar"
+    ],
+    "text_en": "Exactly. The full report has the\ndetailed methodology, the",
+    "text_zh": "没错。完整报告包含详细方法\n论、历史误差分析和事件日历。",
+    "page_index": 1,
+    "page_count": 2
+  },
+  {
+    "speaker": "EN_B",
+    "text": "Exactly. The full report has the detailed methodology, the historical error analysis, and the event calendar.",
+    "start": 137.593,
+    "end": 140.379,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "methodology",
+      "historical error analysis",
+      "event calendar"
+    ],
+    "text_en": "historical error analysis, and\nthe event calendar.",
+    "text_zh": "没错。完整报告包含详细方法\n论、历史误差分析和事件日历。",
+    "page_index": 2,
+    "page_count": 2
+  },
+  {
+    "speaker": "EN_B",
+    "text": "It’s a great reference for anyone watching the CNY fix.",
+    "start": 140.739,
+    "end": 143.525,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "CNY fix"
+    ],
+    "text_en": "It’s a great reference for\nanyone watching the CNY fix.",
+    "text_zh": "对关注人民币中间价的\n人来说是很好的参考。",
+    "page_index": 1,
+    "page_count": 1
+  },
+  {
+    "speaker": "EN_A",
+    "text": "Great. Thanks for walking us through that.",
+    "start": 143.885,
+    "end": 145.882,
+    "voice_id": "XZEfcFyBnzsNJrdvkWdI",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "Great",
+      "Thanks"
+    ],
+    "text_en": "Great. Thanks for walking us\nthrough that.",
+    "text_zh": "感谢你的解读。",
+    "page_index": 1,
+    "page_count": 1
+  },
+  {
+    "speaker": "EN_B",
+    "text": "My pleasure. If you want to dive deeper, the full report is available on the research portal.",
+    "start": 146.242,
+    "end": 148.564,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "full report",
+      "research portal"
+    ],
+    "text_en": "My pleasure. If you want to dive\ndeeper, the full report is",
+    "text_zh": "不客气。如需深入了解，\n完整报告可在研究门户获取。",
+    "page_index": 1,
+    "page_count": 2
+  },
+  {
+    "speaker": "EN_B",
+    "text": "My pleasure. If you want to dive deeper, the full report is available on the research portal.",
+    "start": 148.564,
+    "end": 150.886,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "full report",
+      "research portal"
+    ],
+    "text_en": "available on the research\nportal.",
+    "text_zh": "不客气。如需深入了解，\n完整报告可在研究门户获取。",
+    "page_index": 2,
+    "page_count": 2
+  },
+  {
+    "speaker": "EN_A",
+    "text": "And we can continue the discussion in the community. Thanks for listening.",
+    "start": 151.246,
+    "end": 152.964,
+    "voice_id": "XZEfcFyBnzsNJrdvkWdI",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "community"
+    ],
+    "text_en": "And we can continue the\ndiscussion in the community.",
+    "text_zh": "欢迎在社区继续讨论。感谢收听。",
+    "page_index": 1,
+    "page_count": 2
+  },
+  {
+    "speaker": "EN_A",
+    "text": "And we can continue the discussion in the community. Thanks for listening.",
+    "start": 152.964,
+    "end": 154.682,
+    "voice_id": "XZEfcFyBnzsNJrdvkWdI",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "community"
+    ],
+    "text_en": "Thanks for listening.",
+    "text_zh": "欢迎在社区继续讨论。感谢收听。",
+    "page_index": 2,
+    "page_count": 2
+  }
+]

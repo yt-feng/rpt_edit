@@ -1,0 +1,350 @@
+[
+  {
+    "speaker": "ZH_A",
+    "text": "欢迎来到KC桌面。今天我们用一份最新研报，拆一个值得继续跟踪的问题。",
+    "start": 0.0,
+    "end": 7.384,
+    "voice_id": "UFDAUkGzdLAEJlINT3Fx",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "KC桌面",
+      "研报"
+    ]
+  },
+  {
+    "speaker": "ZH_A",
+    "text": "最近我看到一份关于人民币中间价的研报，里面有个数字挺有意思，模型预测到了6.7979，比之前的6.",
+    "start": 7.744,
+    "end": 17.775,
+    "voice_id": "UFDAUkGzdLAEJlINT3Fx",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "人民币中间价",
+      "研报",
+      "6.7979"
+    ]
+  },
+  {
+    "speaker": "ZH_A",
+    "text": "8349低了370个基点。这到底意味着什么？",
+    "start": 18.135,
+    "end": 22.175,
+    "voice_id": "UFDAUkGzdLAEJlINT3Fx",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "8349",
+      "低了"
+    ]
+  },
+  {
+    "speaker": "ZH_B",
+    "text": "这个变化确实值得关注。简单来说，模型预测的中间价大幅下调，说明在岸人民币可能面临一定的升值压力。",
+    "start": 22.535,
+    "end": 33.82,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "这个变化确实",
+      "值得关注"
+    ]
+  },
+  {
+    "speaker": "ZH_B",
+    "text": "但关键是，这背后有一整套复杂的机制在起作用，不是单纯看一个数字就能下结论的。",
+    "start": 34.18,
+    "end": 42.354,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "但关键是",
+      "这背后有一整"
+    ]
+  },
+  {
+    "speaker": "ZH_A",
+    "text": "那这份报告真正要回答的问题是什么？是预测人民币会涨还是会跌吗？",
+    "start": 42.714,
+    "end": 49.54,
+    "voice_id": "UFDAUkGzdLAEJlINT3Fx",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "那这份报告真",
+      "正要回答的问"
+    ]
+  },
+  {
+    "speaker": "ZH_B",
+    "text": "不完全是。它更多是在拆解人民币中间价的形成机制。比如，模型会考虑隔夜汇率变动，像卢布、欧元、",
+    "start": 49.9,
+    "end": 60.303,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "卢布",
+      "欧元"
+    ]
+  },
+  {
+    "speaker": "ZH_B",
+    "text": "韩元这些货币的波动都会影响最终结果。报告里就列出了前四大贡献货币，卢布贡献了18个基点，",
+    "start": 60.663,
+    "end": 71.808,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "货币",
+      "波动"
+    ]
+  },
+  {
+    "speaker": "ZH_A",
+    "text": "欧元贡献了11个基点，而澳元是负贡献。",
+    "start": 72.168,
+    "end": 75.884,
+    "voice_id": "UFDAUkGzdLAEJlINT3Fx",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "欧元贡献了",
+      "11"
+    ]
+  },
+  {
+    "speaker": "ZH_A",
+    "text": "所以，这些货币的波动会直接推高或压低中间价？那这意味着什么？",
+    "start": 76.244,
+    "end": 82.606,
+    "voice_id": "UFDAUkGzdLAEJlINT3Fx",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "所以",
+      "这些货币的波"
+    ]
+  },
+  {
+    "speaker": "ZH_B",
+    "text": "对，这意味着人民币中间价不是随意定的，而是有一套量化模型在驱动。但更重要的是，",
+    "start": 82.966,
+    "end": 92.393,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "这意味着人民",
+      "币中间价不是"
+    ]
+  },
+  {
+    "speaker": "ZH_B",
+    "text": "报告还提到了一个“逆周期因子”。考虑了逆周期因子后，模型预测的中间价是6.8138，",
+    "start": 92.753,
+    "end": 102.088,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "中间价"
+    ]
+  },
+  {
+    "speaker": "ZH_A",
+    "text": "比没考虑时高了211个基点。这说明政策工具在关键时刻会起到缓冲作用。",
+    "start": 102.448,
+    "end": 110.992,
+    "voice_id": "UFDAUkGzdLAEJlINT3Fx",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "比没考虑时高",
+      "211"
+    ]
+  },
+  {
+    "speaker": "ZH_A",
+    "text": "逆周期因子？这个听起来像是官方在干预市场。那它具体怎么运作？能举个例子吗？",
+    "start": 111.352,
+    "end": 119.247,
+    "voice_id": "UFDAUkGzdLAEJlINT3Fx",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "逆周期因子",
+      "这个听起来像"
+    ]
+  },
+  {
+    "speaker": "ZH_B",
+    "text": "你可以把它想象成一个调节阀。当市场波动太大时，官方会通过这个因子来平滑中间价，避免汇率出现剧烈升贬值。",
+    "start": 119.607,
+    "end": 130.521,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "你可以把它想",
+      "象成一个调节"
+    ]
+  },
+  {
+    "speaker": "ZH_B",
+    "text": "比如，如果模型预测中间价要大幅下调，逆周期因子可能会让它下调得少一点。报告里还提到了模型误差的历史数据，",
+    "start": 130.881,
+    "end": 142.676,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "比如",
+      "如果模型预测"
+    ]
+  },
+  {
+    "speaker": "ZH_A",
+    "text": "从2025年初到现在，误差从负1800个基点变成了正600个基点，这说明模型的准确性在变化，",
+    "start": 143.036,
+    "end": 152.278,
+    "voice_id": "UFDAUkGzdLAEJlINT3Fx",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "2025",
+      "年初到现在"
+    ]
+  },
+  {
+    "speaker": "ZH_B",
+    "text": "也反映了市场的动态。",
+    "start": 152.638,
+    "end": 154.542,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "也反映了市场",
+      "的动态"
+    ]
+  },
+  {
+    "speaker": "ZH_A",
+    "text": "误差变化这么大？那这个模型到底靠不靠谱？我们该怎么理解这些数字？",
+    "start": 154.902,
+    "end": 160.939,
+    "voice_id": "UFDAUkGzdLAEJlINT3Fx",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "误差变化这么",
+      "那这个模型到"
+    ]
+  },
+  {
+    "speaker": "ZH_B",
+    "text": "模型本身是个工具，它的价值在于提供参考，而不是绝对预测。误差的变化恰恰说明了市场的复杂性。比如，",
+    "start": 161.299,
+    "end": 173.281,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "模型本身是个",
+      "工具"
+    ]
+  },
+  {
+    "speaker": "ZH_B",
+    "text": "2025年初误差很大，可能跟当时政策调整有关。而最近误差收窄，说明模型和实际走势在趋同。",
+    "start": 173.641,
+    "end": 183.021,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "2025",
+      "年初误差很大"
+    ]
+  },
+  {
+    "speaker": "ZH_A",
+    "text": "但报告里还提到了一个更关键的点，就是未来几个月有几件大事可能会改变整个格局。",
+    "start": 183.381,
+    "end": 191.323,
+    "voice_id": "UFDAUkGzdLAEJlINT3Fx",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "但报告里还提",
+      "到了一个更关"
+    ]
+  },
+  {
+    "speaker": "ZH_A",
+    "text": "哦？什么事？能透露一下吗？",
+    "start": 191.683,
+    "end": 194.051,
+    "voice_id": "UFDAUkGzdLAEJlINT3Fx",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "什么事",
+      "能透露一下吗"
+    ]
+  },
+  {
+    "speaker": "ZH_B",
+    "text": "比如7月底的政策环境局会议，还有年底的中央经济工作会议，以及中美领导人会晤。这些事件都可能影响政策方向，",
+    "start": 194.411,
+    "end": 207.182,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "比如",
+      "月底的政策环"
+    ]
+  },
+  {
+    "speaker": "ZH_B",
+    "text": "从而改变人民币的走势。但具体怎么影响，报告里只是埋了个伏笔，没有完全展开。",
+    "start": 207.542,
+    "end": 216.134,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "从而改变人民",
+      "币的走势"
+    ]
+  },
+  {
+    "speaker": "ZH_A",
+    "text": "这么说，读完整份报告才能看到这些事件的具体分析？那我们听众如果想深入了解，该怎么办？",
+    "start": 216.494,
+    "end": 225.224,
+    "voice_id": "UFDAUkGzdLAEJlINT3Fx",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "这么说",
+      "读完整份报告"
+    ]
+  },
+  {
+    "speaker": "ZH_B",
+    "text": "没错，这些悬念就是报告的精髓。如果你想看到完整的分析框架，包括每个事件对人民币中间价可能产生的影响，",
+    "start": 225.584,
+    "end": 236.962,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "没错",
+      "这些悬念就是"
+    ]
+  },
+  {
+    "speaker": "ZH_B",
+    "text": "以及模型如何应对这些不确定性，最好的方式就是去阅读原报告。我们这期节目只是抛砖引玉，更多细节都在里面。",
+    "start": 237.322,
+    "end": 248.142,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "以及模型如何",
+      "应对这些不确"
+    ]
+  },
+  {
+    "speaker": "ZH_A",
+    "text": "好，那感兴趣的朋友可以去获取完整报告，自己研究一下。感谢今天的分享，我们下期再见。",
+    "start": 248.502,
+    "end": 257.373,
+    "voice_id": "UFDAUkGzdLAEJlINT3Fx",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "那感兴趣的朋",
+      "友可以去获取"
+    ]
+  }
+]
