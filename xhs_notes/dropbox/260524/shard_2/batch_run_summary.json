@@ -1,0 +1,35 @@
+{
+  "input_dir": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs",
+  "total_pdf_count_before_shard": 12,
+  "pdf_count_before_skip": 2,
+  "pdf_count": 2,
+  "batch_size": 5,
+  "shard_index": 2,
+  "shard_count": 40,
+  "max_reports_per_shard": 5,
+  "max_total_reports": 0,
+  "skip_existing": true,
+  "skipped_existing_count": 0,
+  "skipped_existing": [],
+  "failures": 0,
+  "batches": [
+    {
+      "batch_index": 1,
+      "pdf_count": 2,
+      "files": [
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/11-DB-European MedTech & Life Sciences：Q1 Sector Recap： The Bar Is Low for a Recovery-260522.pdf",
+          "batch_file": "/tmp/pdf_batch_001_ed7ed3hg/pdfs/0001-11-DB-European MedTech - Life Sciences-Q1 Sector Recap- The Bar Is Low for a Recovery-260522.pdf",
+          "stable_index": "1"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/12-GS-US WEEKLY KICKSTART：Hedge funds and mutual funds continue their rotations from Software to Semiconductors-260522.pdf",
+          "batch_file": "/tmp/pdf_batch_001_ed7ed3hg/pdfs/0002-12-GS-US WEEKLY KICKSTART-Hedge funds and mutual funds continue their rotations from Software to Semiconductors-260522.pdf",
+          "stable_index": "2"
+        }
+      ],
+      "returncode": 0,
+      "status": "ok"
+    }
+  ]
+}
