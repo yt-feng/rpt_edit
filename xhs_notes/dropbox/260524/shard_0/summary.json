@@ -1,0 +1,83 @@
+[
+  {
+    "source_pdf": "/tmp/pdf_batch_001_2khpu5e0/pdfs/0001-01-DB-Asia Macro Strategy Notes-RMB- Postcard from China-260522.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "cover_short_title": "中国经济的AB面：一",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png"
+    ],
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  },
+  {
+    "source_pdf": "/tmp/pdf_batch_001_2khpu5e0/pdfs/0002-02-DB-Global Automotive-Key Takeaways from Global Auto- Mobility- and Robotics Conference-260522.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "cover_short_title": "全球车市暗流涌动，一",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png"
+    ],
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  },
+  {
+    "source_pdf": "/tmp/pdf_batch_001_2khpu5e0/pdfs/0003-03-GS-Asia Economics Analyst-RMB Internationalization Revisited-Beyond Trade Settlement-260522.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "cover_short_title": "人民币国际化，不止于",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png",
+      "assets/xhs_card_09.png"
+    ],
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  },
+  {
+    "source_pdf": "/tmp/pdf_batch_001_2khpu5e0/pdfs/0004-04-GS-CONNECTING THE DOTS- Rates volatility- AI investment vs. discipline and Oil capex plus key research-260522.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "cover_short_title": "利率波动加剧，AI投",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png"
+    ],
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  },
+  {
+    "source_pdf": "/tmp/pdf_batch_001_2khpu5e0/pdfs/0005-05-GS-Europe- Tracking the European Economic Implications of the Middle East Conflict -22 05--260522.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "cover_short_title": "中东局势冲击欧洲经济",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png",
+      "assets/xhs_card_09.png"
+    ],
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  }
+]
