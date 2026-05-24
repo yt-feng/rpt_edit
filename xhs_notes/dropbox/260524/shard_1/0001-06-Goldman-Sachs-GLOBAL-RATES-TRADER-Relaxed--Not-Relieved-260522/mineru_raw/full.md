@@ -1,0 +1,1214 @@
+GLOBAL RATES TRADER
+
+Relaxed, Not Relieved
+
+Last week's range break in long-end US yields gave way to stabilization amid lower energy prices and supportive headlines out of the UK and Japan. The fundamental challenges are still broadly in place, however, and while long-end USTs are slightly cheap to fair, valuations are not sufficiently stretched to make the case for a deeper rally without a shift in macro risks. European rates continue to outperform as duration is protected by front-footed central bank action—we expect this to continue and recommend long 5y5y EUR real rates. European sovereign credit may have less room to tighten but still offers reasonable carry that should be insulated from front-end rates volatility. There is a growing valuation case for long Gilts, assisted by weakening activity data. But with political risks lingering, compression in Gilt risk premium is likely to be gradual. The moderation in long-end JGB yields partly reflects the ongoing sensitivity to supply/demand dynamics, but we continue to think that without inflation moderation or fiscal restraint, it is up to policy rate outcomes to bring lasting stability to long-end yields.
+
+# United States and Canada
+
+Settling down, but not yet turning around. The sharp selloff that extended into the start of this week found some stability, helped in part by lower energy prices amid another round of optimism about a potential resolution to the conflict. Additionally, just as foreign factors had been a source of bearish spillovers onto US duration through the first several months of the year, quieting domestic news in the UK and Japan helped with the stabilization effort. Even with yields down from the recent (and in the case of 30s, cycle) peak, they remain in the upper part of the range and are still lacking the ingredients for a more sustained reversal. A genuine resumption of energy flows is one route to rate relief, while evidence that the underlying inflation and growth/labor market paths are more dovish than the market anticipates is another; our baseline for lower yields over time is based on a mix of these two factors materializing. Sufficiently cheap valuations and a clearer challenge to risk assets from elevated yield levels is a third potential path to moderation. As things stand, longer-term forwards are modestly above our macro framework's estimate of fair, but valuations aren't stretched (Exhibit 1). Further, the mix of global pressures, the supply shock's damage to duration's portfolio value, and underlying effects from a more debt financed investment cycle—a backdrop that we've found can raise the sensitivity
+
+# George Cole
+
++44(20)7552-1214
+
+george.cole@gs.com
+
+GS International
+
+# William Marshall
+
++1(212)357-0413
+
+william.c.marshall@gs.com
+
+GS & Co. LLC
+
+# Simon Freycenet
+
++44(20)7774-5017
+
+simon.freycenet@gs.com
+
+GS Bank Europe SE - Paris
+
+Branch
+
+# Isabella Rosenberg
+
++1(212)357-7628
+
+isabella.rosenberg@gs.com
+
+GS & Co. LLC
+
+# Friedrich Schaper
+
++1(917)343-3214
+
+friedrich.schaper@gs.com
+
+GS & Co. LLC
+
+# Loic Mathys
+
++44(20)7051-1664
+
+loic.mathys@gs.com
+
+GS International
+
+of yields to debt supply and skew longer term yields higher relative to our model fair value—for now challenge the case for a deeper rally without a macro catalyst.
+
+Convexity risk and the range break. Last week's break above 4.5% and 5.0% in 10-year and 30-year US Treasury yields brought an uptick in rate volatility and questions about whether negative convexity dynamics may have played an amplifying role after strong performance of short gamma strategies in April, and a more sustained period of GSE mortgage purchases. On rate vol specifically, the implied volatility response has been relatively mild compared to the magnitude of the yield range shift (Exhibit 2). That noted, our estimate of gamma exposure in TY options suggests the selloff this month resulted in an abrupt shift away from “peak” gamma (which we estimate was around 4.4%); to the extent that vol sellers are less frequent/threshold hedgers (and dealers are net long vol and hedging more actively), it is possible that the sharp move resulted in a relative pick-up in short gamma hedging. On the mortgage side, although GSE-retained portfolios have grown substantially—FNMA’s more than doubled and FHLMC’s grew by \~50% over the 12 months through March—their hedging behavior remains unclear, as the accumulation of larger duration gaps suggests increased tolerance for interest rate risk. We estimate the selloff from the start of May to the yield peak implied an extension worth roughly \$40 billion in 10-year equivalents for the universe of MBS held by traditional hedgers, but given the observed comfort with a larger duration gap, it is less clear how much was actually hedged. While we think the underlying pressures and yield valuations primarily reflect fundamental risks, these dynamics plausibly helped to amplify the price action in the more acute phase of the selloff. Looking ahead, we think the potential magnitude of any hedging should diminish given selloffs should bring less extension risk from here, while rallies would help to undo any accumulated duration gap.
+
+Exhibit 1: Longer term UST forwards are only modestly cheap to our macro framework's estimate of fair value 5y5y UST yield vs model fair value with $+/-1$ standard deviation bands   
+![](images/0b6e978caf12284e49e1fd7e6c11e24d855aa60a9b328fd55a12fd68d5a7f5e9.jpg)
+
+<details>
+<summary>line</summary>
+
+| Year | UST 5y5y | Fitted Value | Residual |
+|------|----------|--------------|----------|
+| 2010 | 5.5      | 5.0          | 0.5      |
+| 2012 | 4.0      | 4.5          | -1.0     |
+| 2014 | 4.5      | 3.5          | 0.5      |
+| 2016 | 3.0      | 2.5          | -0.5     |
+| 2018 | 3.5      | 3.0          | 0.0      |
+| 2020 | 1.0      | 1.5          | -1.0     |
+| 2022 | 3.0      | 3.5          | 0.0      |
+| 2024 | 5.0      | 4.5          | 1.0      |
+| 2026 | 4.5      | 4.0          | 0.0      |
+</details>
+
+Source: Bloomberg, GS Global Investment Research
+
+Exhibit 2: Implied vol has lagged the magnitude of the rate shift   
+1m trailing range on 10y swap vs 1m10y implied vol   
+![](images/c67f932fe4171cfd03680e1dd790638d2413b02e500cc838cce7b6d52b27ce5d.jpg)
+
+<details>
+<summary>line</summary>
+
+| Date    | 1m range, 10y USD | 1m10y Implied Vol (rhs) |
+|---------|-------------------|--------------------------|
+| May-21  | ~15               | ~4                       |
+| Feb-22  | ~75               | ~8                       |
+| Nov-22  | ~85               | ~9                       |
+| Aug-23  | ~60               | ~7                       |
+| May-24  | ~50               | ~6                       |
+| Feb-25  | ~40               | ~5                       |
+| Nov-25  | ~30               | ~4                       |
+| Aug-26  | ~40               | ~5                       |
+</details>
+
+Source: GS FICC and Equities, GS Global Investment Research
+
+■ Funding costs ease further. Repo rates continued to decline this week, and while the broader trend suggests reserve demand has likely shifted relative to late last year, we think a few other factors have likely exacerbated the move. First, as noted previously, negative bill issuance had combined with Fed reserve management purchases (RMPs) and a drop in the TGA to constrain bill supply and boost system-wide liquidity; those effects are starting to turn. Second, this week overlaps with GSEs' "float period," during which MBS issuers build up cash reserves that temporarily deploy into the repo market ahead of making principal and interest payments. Third, limited carry in cash/futures bases may have led to reduced demand for leverage, with a steady reduction in levered funds' short position (Exhibit 3). We expect some reversal of this downdraft in funding costs over the coming weeks. Bill issuance has turned positive and the Fed has reduced RMPs, any effects from the "float period" should fade, and the TGA is likely to increase to levels closer to Treasury's target over the coming month. Even accounting for these factors, we think there is likely scope for RMPs to slow further, with our baseline for purchases to decline to a \$5bn per month average until early 2027, which we expect to take the steady state level of reserves to \~11% of bank assets (versus 11.5-12.0% recently)—levels we estimate are consistent with tri-party rates settling slightly below IORB. As discussed earlier this week, there are downside risks to our Fed balance sheet projections, but we see a high bar to a meaningful decline in balance sheet size.
+
+# - Fourth consecutive downside inflation surprise makes two-sided BoC outlook.
+
+Despite unfavorable base effects and the energy shock, Canadian CPI surprised to the downside for the fourth consecutive time this week. We think this reinforces the on-hold baseline for the BoC and argues for more two-sided risks around that modal case than market pricing implies. Benign underlying inflation (CPI-trim is back at the BoC's target), a pickup in the unemployment rate and soft growth were the ingredients that caused a restart of the BoC's cutting cycle late last year. And with those conditions present again, and transmission from higher oil prices to other categories limited thus far, we see further room for front-end hike premium to fade, especially in the near term. Given greater insulation against directional shifts in the oil price trajectory, we continue to like expressing this via 2s5s CAD curve steepeners, and given recent performance have tightened the stop, but would look to shift to outright longs if the front-end cheapens from here.
+
+# Europe
+
+Improving risk-reward for EUR rate longs. With the market still buffeted by energy prices (in both directions), we continue to think that EUR rates markets have broadly done enough to reprice inflation risk stemming from the conflict in Iran, even as the absence of tangible signs of progress limits the scope for European rates to rally. This week's PMIs highlight the ongoing passthrough of energy price pressures to broader inflation measures, while weakness in activity data points to precautionary rather than urgent ECB action. We expect this to solidify pricing for a June hike, while 1y1y will likely continue to be the point of the curve most sensitive to shifts in commodities markets. Further out the curve, we continue to see evidence that a front-footed central bank response should help anchor yields, with 5y5y forwards in EUR (and AUD — an early hiker) outperforming other curves. This is consistent with our spillover framework, which shows that Bunds have contributed bullish shocks to
+
+G4 rates during the global sell-off (Exhibit 4). We think this dynamic will continue — while a protracted closure of the Strait of Hormuz may still see European rates move higher, we would expect this to be front-end-led, with the curve flattening and inverting. We continue to recommend 5y5y real yields longs.
+
+Exhibit 3: The reduction in levered fund shorts in Treasury futures may in part reflect the diminished carry in Treasury basis   
+Leveraged fund net UST futures position (notional, adjusted for valuation changes)   
+![](images/00fe985d6f6742a53bb62abd62c959187096f5cc4912b7d42719304b33bcd10b.jpg)
+
+<details>
+<summary>line</summary>
+
+| Date   | Value ($bn) |
+|--------|-------------|
+| Jan-24 | -800        |
+| Jul-24 | -1000       |
+| Jan-25 | -1300       |
+| Jul-25 | -1100       |
+| Jan-26 | -1200       |
+| Jul-26 | -1100       |
+</details>
+
+Source: CFTC, Haver Analytics, GS Global Investment Research
+
+Exhibit 4: Bunds have been a receiver rather than provider of bearish shocks   
+G4 yields decomposition following our spillover framework   
+![](images/3b12d5a10fd0f44654ad5ccd96fa53103a505014917210f1b6a20c9ee8c6a90d.jpg)
+
+<details>
+<summary>bar_line</summary>
+
+| Date | US (bp) | UK (bp) | DE (bp) | JP (bp) | 10y Bunds (bp) |
+|---|---|---|---|---|---|
+| 01-Jan | 0 | -1 | 0 | 0 | 0 |
+| 16-Jan | 8 | -13 | -14 | 11 | -5 |
+| 06-Feb | 7 | -10 | -19 | 13 | -7 |
+| 27-Feb | -5 | -10 | -28 | 3 | -28 |
+| 20-Mar | 1 | 17 | -13 | 14 | 14 |
+| 10-Apr | -3 | 14 | -8 | 19 | 10 |
+| 01-May | -4 | 16 | -22 | 26 | 6 |
+| 22-May | 6 | 15 | -24 | 33 | 18 |
+</details>
+
+Source: GS Global Investment Research, Bloomberg
+
+Status quo in European sovereign spreads. Amid the stalemate in the conflict in Iran, sovereign spread compression has broadly stalled after a strong period of tightening. We continue to think that rates volatility will prove a better guide to sovereign credit performance than rates levels. As long as re-escalation is avoided, sovereign spreads can remain near current tights and offer reasonable carry, despite high and sticky front-end rates. We continue to recommend sovereign spread longs (FR, IT, and ES) vs ESTR at the front-end of the curve. For a more directional view on the conflict, we find that Greek and (to a lesser extent) Italian bonds continue to provide the strongest exposure to potential commodities price relief (Exhibit 5). Albeit with a lower beta, we note that the Spanish credit curve has also exhibited a strong sensitivity to oil price shifts. Government fiscal support across European economies for households and firms also remains contained — while some relief has been extended in France for instance, it remains modest in comparison to the 2022 energy shock. As long as this remains the case, we continue to think sovereign credit offers reasonable carry and should remain somewhat insulated from an increase in front-end rates volatility.
+
+Gilts gain from softer data. Macro data weakened in the UK this week, with downside surprises in inflation, the labour market, services PMIs and retail sales. Energy and supply chain pressures are still likely to build throughout 2026, as illustrated by the strength in PPI, but we think this weakening in broad activity data reinforces our view that the BoE will remain on hold. We continue to expect Gilts to rally over the medium term despite lingering risk premium associated with political and fiscal risks. In our view, this rally will be driven by the ongoing repricing of a more dovish BoE path rather than a compression in risk premium. With any potential leadership challenge likely to follow a lengthy process, Gilt risk premium is unlikely to relax decisively; however, we increasingly see a positive valuation case to be long 10y Gilts — both on an overshoot of rate expectations vs what we forecast the BoE will deliver, and on 5y5y, which sits high relative to our valuation framework (Exhibit 6).
+
+Exhibit 5: In the EMU-4, Italian bonds look best placed to benefit from potential oil price relief
+
+Using GS fitted yields. Credit curve = 5s10s Country XX – Germany. Beta computed since the start of the Iran conflict.
+
+![](images/e99ce6de83f1dea4de91b4f84fcf97c17affd6e101f53032803ca0123c6fe56a.jpg)
+
+<details>
+<summary>bar_line</summary>
+
+| Category | 10y spread (bp/$/bbl) | Credit curve (RHS) (bp/$/bbl) |
+|---|---|---|
+| gr | 0.67 | 0.25 |
+| it | 0.51 | 0.08 |
+| fr | 0.26 | 0.02 |
+| pt | 0.24 | 0.05 |
+| es | 0.23 | 0.07 |
+| be | 0.22 | 0.03 |
+| at | 0.09 | 0.02 |
+| fi | 0.06 | -0.03 |
+| nl | 0.05 | 0.01 |
+</details>
+
+Source: GS Global Investment Research, GS FICC and Equities   
+Difference between UK 5y5y and fair value
+
+Exhibit 6: UK 5y5y levels look stretched from a macro perspective
+
+![](images/38f85adec470aa8c6cfa95ccf385e2607e115f86bb7a87c5d39af1a888def47c.jpg)
+
+<details>
+<summary>line</summary>
+
+| Year | 5y5y UK Actual - fitted value (%) |
+|------|------------------------------------|
+| 1993 | ~0.8                               |
+| 1997 | ~1.6                               |
+| 2001 | ~-1.5                              |
+| 2005 | ~0.0                               |
+| 2009 | ~1.3                               |
+| 2013 | ~0.8                               |
+| 2017 | ~-0.5                              |
+| 2021 | ~-1.2                              |
+| 2025 | ~1.2                               |
+</details>
+
+Source: GS Global Investment Research, GS FICC and Equities, Bloomberg, Consensus Economics
+
+# Japan
+
+Long-end meets rate relief. Comments from Governor Ueda brought some reprieve to pressure on long-end JGBs this week, as he emphasized that the BoJ would coordinate with the government to watch the bond market with a focus on rising long-term bond yields, and that the Bank would conduct interest rate policy for “stable inflation.” This focus on supply risks, particularly after the supplementary budget announcement, and the perceived validation of hike pricing saw long-end yields move lower and the front-end cheapen slightly. That said, our economists do not think a change to the BoJ QT path in June is likely following the results of the latest Bond Market Survey. While this could incrementally reverse some long-end rate relief, we still think interest rate policy remains the key driver for yields and risk premium across the curve. The latest JSDA data show that lifers net purchased super long-term bonds in April, as they had been signaling some openness to do, following net sales from Jan-Feb. If sustained, these purchases could alleviate pressure on 30s, but it remains to be seen whether this appetite only materializes during periods of relative market calm—longer term JGB yields were relatively stable in April before volatility picked back up in May. Ultimately, while supply risks remain, we continue to think that it is up to macro factors—inflation moderation, fiscal restraint, or front-loaded rate policy—to bring lasting stability to long-end yields.
+
+# Australia and New Zealand
+
+Too early to relax about RBA hike risk. The unexpected pickup in the unemployment rate caused a relief rally across the AUD curve, taking yields close to the post-March lows. While the data likely delays the timing of the next hike (our economists now expect the RBA to hike in August, vs June before) we still think
+
+markets are underpricing near-term hawkish risks, with only 19bp of hike risk priced through September. We think this is at odds with the minutes released this week, which stated that while the previous hikes have provided some space to assess the conflict's impact, the growth impact from higher oil prices is likely to be cushioned, and instead highlighting the upside risks to the inflation forecast. Next week's inflation print may offer incremental clarity into the urgency for further hikes. Given current cheapness and RBA's doubts on how restrictive the current stance is, we think positions such as paying September RBA vs terminal rate longs make sense, as we still see room for 2y1y to decline, especially should a forceful RBA reaction function begin to slow activity more acutely.
+
+# Latest Thematic Research:
+
+Global Markets Analyst: Revisiting the Outlook for the Fed's Balance Sheet — 21 May 2026
+
+Global Rates Notes: US Treasury Valuations and Requirements for a Yield Reversal — 20 May 2026
+
+Global Markets Analyst: UK T-bills: Not A Magic Bullet For Gilts — 11 May 2026
+
+Global Markets Comment: Market Stress Monitor — 11 May 2026
+
+Rates Vol Monitor: A Look at Hedging the Right Tail — 8 May 2026
+
+# Latest Global Markets Dailies:
+
+Why Always Gilts? — 14 May 2026
+
+A More Durable Risk Premium in JGBs — 8 May 2026
+
+Trading Terms of Trade Shocks in the Smaller G10 Rates Markets — 21 April 2026
+
+Redefining Rate Relief — 14 April 2026
+
+TIPS During Oil Shocks — 27 March 2026
+
+# Forecasts
+
+G10 10y yield forecast 
+
+<table><tr><td colspan="14">G10 10-Year Yield Forecasts</td></tr><tr><td></td><td>USD</td><td>DEM</td><td>FRA</td><td>ITA</td><td>ESP</td><td>GBP</td><td>JPY</td><td>CAD</td><td>CHF</td><td>SEK</td><td>NOK</td><td>AUD</td><td>NZD</td></tr><tr><td>Spot</td><td>4.57</td><td>3.06</td><td>3.68</td><td>3.79</td><td>3.49</td><td>4.91</td><td>2.76</td><td>3.55</td><td>0.58</td><td>2.84</td><td>4.48</td><td>4.92</td><td>4.69</td></tr><tr><td>2Q26</td><td>4.30</td><td>2.90</td><td>3.65</td><td>3.70</td><td>3.45</td><td>4.65</td><td>2.50</td><td>3.45</td><td>0.30</td><td>3.15</td><td>4.10</td><td>4.85</td><td>4.50</td></tr><tr><td>3Q26</td><td>4.20</td><td>2.95</td><td>3.70</td><td>3.80</td><td>3.50</td><td>4.50</td><td>2.50</td><td>3.50</td><td>0.40</td><td>3.20</td><td>4.00</td><td>4.75</td><td>4.50</td></tr><tr><td>4Q26</td><td>4.10</td><td>3.00</td><td>3.75</td><td>3.85</td><td>3.55</td><td>4.40</td><td>2.50</td><td>3.50</td><td>0.50</td><td>3.25</td><td>4.00</td><td>4.70</td><td>4.50</td></tr><tr><td>1Q27</td><td>4.10</td><td>3.00</td><td>3.75</td><td>3.90</td><td>3.60</td><td>4.40</td><td>2.45</td><td>3.50</td><td>0.50</td><td>3.25</td><td>4.00</td><td>4.60</td><td>4.50</td></tr><tr><td>2Q27</td><td>4.10</td><td>3.00</td><td>3.75</td><td>3.90</td><td>3.60</td><td>4.30</td><td>2.40</td><td>3.50</td><td>0.50</td><td>3.25</td><td>4.00</td><td>4.50</td><td>4.50</td></tr><tr><td>3Q27</td><td>4.15</td><td>3.00</td><td>3.75</td><td>3.90</td><td>3.60</td><td>4.30</td><td>2.30</td><td>3.50</td><td>0.50</td><td>3.25</td><td>4.00</td><td>4.50</td><td>4.50</td></tr><tr><td>4Q27</td><td>4.15</td><td>3.00</td><td>3.75</td><td>3.90</td><td>3.60</td><td>4.25</td><td>2.25</td><td>3.50</td><td>0.50</td><td>3.25</td><td>4.00</td><td>4.50</td><td>4.50</td></tr></table>
+
+<table><tr><td colspan="14">Deviation from Forwards</td></tr><tr><td></td><td>USD</td><td>DEM</td><td>FRA</td><td>ITA</td><td>ESP</td><td>GBP</td><td>JPY</td><td>CAD</td><td>CHF</td><td>SEK</td><td>NOK</td><td>AUD</td><td>NZD</td></tr><tr><td>2Q26</td><td>-0.29</td><td>-0.19</td><td>-0.08</td><td>-0.13</td><td>-0.07</td><td>-0.31</td><td>-0.29</td><td>-0.13</td><td>-0.28</td><td>0.32</td><td>-0.38</td><td>-0.09</td><td>-0.22</td></tr><tr><td>3Q26</td><td>-0.45</td><td>-0.20</td><td>-0.12</td><td>-0.12</td><td>-0.08</td><td>-0.55</td><td>-0.35</td><td>-0.14</td><td>-0.22</td><td>0.35</td><td>-0.47</td><td>-0.21</td><td>-0.28</td></tr><tr><td>4Q26</td><td>-0.60</td><td>-0.19</td><td>-0.12</td><td>-0.14</td><td>-0.08</td><td>-0.70</td><td>-0.44</td><td>-0.18</td><td>-0.14</td><td>0.37</td><td>-0.46</td><td>-0.28</td><td>-0.35</td></tr><tr><td>1Q27</td><td>-0.65</td><td>-0.23</td><td>-0.17</td><td>-0.15</td><td>-0.08</td><td>-0.74</td><td>-0.56</td><td>-0.21</td><td>-0.16</td><td>0.34</td><td>-0.46</td><td>-0.41</td><td>-0.42</td></tr></table>
+
+Source: GS Global Investment Research
+
+G4 Curve Forecast   
+![](images/26307ad442426c2919c7fbff3289ef9c432a1f4ddfcffd2e44a21853a106e289.jpg)
+
+<details>
+<summary>line</summary>
+
+USD
+| Tenors | Current (%) | YE 2026, GS (%) | YE 2026, Forwards (%) |
+|---|---|---|---|
+| 2 | 4.1 | 3.4 | 4.3 |
+| 5 | 4.3 | 3.7 | 4.5 |
+| 10 | 4.5 | 4.1 | 4.7 |
+| 30 | 5.1 | 4.7 | 5.1 |
+</details>
+
+![](images/05de3d757f7bf41e3cf81acc069fac0e35b679974faf9ce65687cb54fbef41f8.jpg)
+
+<details>
+<summary>line</summary>
+
+DEM
+| X-Axis | Current (%) | YE 2026, GS (%) | YE 2026, Forwards (%) |
+|---|---|---|---|
+| 2 | 2.7 | 2.3 | 2.8 |
+| 5 | 2.8 | 2.7 | 3.0 |
+| 10 | 3.0 | 3.0 | 3.3 |
+| 30 | 3.5 | 3.5 | 3.6 |
+</details>
+
+![](images/0cb9b85a476fa05cc7b06e745ae5e8a0608a8d2c12f9717dcf5d514a81eed960.jpg)
+
+<details>
+<summary>line</summary>
+
+GBP
+| Tenors | Current (%) | YE 2026, GS (%) | YE 2026, Forwards (%) |
+|---|---|---|---|
+| 2 | 4.35 | 3.9 | 4.45 |
+| 5 | 4.45 | 4.0 | 4.55 |
+| 10 | 4.85 | 4.4 | 5.15 |
+| 30 | 5.6 | 5.05 | 5.6 |
+</details>
+
+![](images/d82a4ecf1a75973bf68c4bc571fbe26b26dd839bc3ebabaef6db955dd1ff2f16.jpg)
+
+<details>
+<summary>line</summary>
+
+JPY
+| Tenors | Current (%) | YE 2026, GS (%) | YE 2026, Forwards (%) |
+|---|---|---|---|
+| 2 | 1.4 | 1.3 | 1.7 |
+| 5 | 2.0 | 1.9 | 2.3 |
+| 10 | 2.6 | 2.4 | 2.8 |
+| 30 | 3.8 | 3.7 | 4.0 |
+</details>
+
+Source: Bloomberg, GS Global Investment Research
+
+# Central Bank Dashboard
+
+Cumulative amount of hikes/cuts priced from today   
+![](images/c5e857646bf9f40a31b2d5a044f803211f106e8ccb2972581a1d9841250b605e.jpg)
+
+<details>
+<summary>line</summary>
+
+Today vs. 3m Ago
+| Months from today | USD current (bp) | EUR (bp) | GBP (bp) | JPY (bp) | USD 3m ago (bp) | EUR (bp) | GBP (bp) | JPY (bp) |
+|---|---|---|---|---|---|---|---|---|
+| 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
+| 12 | 40 | 60 | 50 | 80 | -50 | -10 | -30 | 70 |
+| 24 | 30 | 55 | 45 | 110 | -60 | -15 | -40 | 90 |
+| 36 | 25 | 55 | 45 | 140 | -65 | -20 | -45 | 110 |
+| 48 | 25 | 60 | 50 | 160 | -70 | -25 | -50 | 130 |
+| 60 | 30 | 65 | 55 | 180 | -75 | -30 | -55 | 150 |
+| 72 | 40 | 70 | 60 | 200 | -80 | -35 | -60 | 170 |
+| 84 | 50 | 75 | 65 | 220 | -85 | -40 | -65 | 190 |
+| 96 | 70 | 80 | 70 | 250 | -90 | -45 | -70 | 210 |
+</details>
+
+Source: GS Global Investment Research
+
+Expected hikes by year, GS vs. Market   
+![](images/2871aef4dce8c42b002b4f6dd23618c236f878788ffa3f47e3cb819b724a8d46.jpg)
+
+<details>
+<summary>scatter</summary>
+
+Cumulative hikes expected per year (in pp)
+| Region | Year | GS Forecast | Market |
+| :--- | :--- | :--- | :--- |
+| AU | 2026 | 1.00 | 1.00 |
+| GB | 2027 | -0.75 | -0.25 |
+| NO | 2027 | -0.50 | -0.25 |
+| US | 2026 | -0.25 | 0.20 |
+| CH | 2026 | -0.25 | 0.15 |
+| US | 2027 | -0.50 | 0.05 |
+| GB | 2026 | 0.00 | 0.45 |
+| CA | 2026 | 0.00 | 0.35 |
+| SE | 2026 | 0.25 | 0.35 |
+| NZ | 2026 | 0.25 | 0.80 |
+| JP | 2026 | 0.35 | 0.45 |
+| EU | 2027 | 0.50 | 0.65 |
+| NO | 2027 | 0.50 | 0.65 |
+| CA | 2027 | 0.50 | 0.40 |
+| NZ | 2026 | 0.25 | 0.35 |
+The dashed line indicates a linear trend between GS Forecast and Market values across the same regions. The data points are labeled with country codes and abbreviations (e.g., “US”, “CA”, “NZ”).
+</details>
+
+Source: GS Global Investment Research
+
+Central bank ownership of sovereign bonds, current vs. 1y ago   
+![](images/ce7c488b2a9abc312004245413dbd2a9d99b068399cb6100324b1bbf75625927.jpg)
+
+<details>
+<summary>bar</summary>
+
+| Currency | 1y ago (%) | Latest estimate (%) |
+| :--- | :--- | :--- |
+| USD | 18 | 17 |
+| DEM | 38 | 35 |
+| FRA | 26 | 24 |
+| ITA | 25 | 21 |
+| ESP | 32 | 28 |
+| BoE | 23 | 20 |
+| BoJ | 51 | 47 |
+| CAD | 18 | 13 |
+| AUD | 25 | 20 |
+| NZD | 10 | 6 |
+| SEK | 14 | 8 |
+</details>
+
+Source: Haver Analytics
+
+Central bank assets as a share of GDP   
+![](images/c43c6f729d5e5b1c1604cd660d4e68a1b2a6a071d700c403bb7d987de3128069.jpg)
+
+<details>
+<summary>line</summary>
+
+| Year | Fed | ECB | BOE | BoJ |
+|------|-----|-----|-----|-----|
+| 2000 | 5   | 10  | 5   | 15  |
+| 2004 | 5   | 10  | 5   | 25  |
+| 2008 | 10  | 15  | 10  | 20  |
+| 2012 | 15  | 25  | 15  | 30  |
+| 2016 | 20  | 35  | 20  | 70  |
+| 2020 | 30  | 60  | 35  | 120 |
+| 2024 | 25  | 40  | 30  | 110 |
+</details>
+
+Source: Haver Analytics
+
+# Positioning and Flows Monitor
+
+Option implied position indicator   
+![](images/9dd54aba157b298f08c3bc182bcf0ad9674945c76c1124d9803712c30ac2dde1.jpg)
+
+<details>
+<summary>line</summary>
+
+| Year | US OPI | +/- 0.5 St. Dev | +/- 0.75 St. Dev |
+|------|--------|-----------------|------------------|
+| 2019 | -1.0   | -1.5            | -2.0             |
+| 2020 | -3.0   | -2.5            | -3.5             |
+| 2021 | -6.0   | -5.5            | -6.5             |
+| 2022 | 5.0    | 4.5             | 5.5              |
+| 2023 | 6.0    | 5.5             | 6.5              |
+| 2024 | -2.0   | -1.5            | -2.5             |
+| 2025 | 3.0    | 2.5             | 3.5              |
+| 2026 | 1.0    | 0.5             | 1.5              |
+</details>
+
+Source: GS Global Investment Research
+
+US Data Response Indicator (DRI)   
+![](images/8c7c114fdbc65eeb4b19e901e58835c610a8edf826ac6f52f02195d2768d0d88.jpg)
+
+<details>
+<summary>line</summary>
+
+| Year | US DRI | +/- 0.5 St. Dev | +/- 0.75 St. Dev |
+|------|--------|-----------------|------------------|
+| 2019 | 0.1    | 0.2             | 0.2              |
+| 2020 | -0.2   | -0.1            | -0.1             |
+| 2021 | 0.2    | 0.1             | 0.1              |
+| 2022 | 0.4    | 0.3             | 0.3              |
+| 2023 | -0.1   | -0.1            | -0.1             |
+| 2024 | 0.1    | 0.1             | 0.1              |
+| 2025 | -0.2   | -0.1            | -0.1             |
+| 2026 | 0.1    | 0.1             | 0.1              |
+</details>
+
+Source: GS Global Investment Research
+
+GS Fund Positioning Indicator   
+![](images/06b01450bde4b1448f92b7ab89becf60bcd35e5f1866ea42bf49e7a0e5563cad.jpg)
+
+<details>
+<summary>line</summary>
+
+| Year | US FPI | +/- 0.5 St. Dev | +/- 0.75 St. Dev |
+|------|--------|-----------------|------------------|
+| 2019 | 0.75   | 0.30            | 0.40             |
+| 2020 | -0.25  | -0.10           | -0.15            |
+| 2021 | 0.75   | 0.35            | 0.45             |
+| 2022 | -0.25  | -0.15           | -0.20            |
+| 2023 | -0.50  | -0.30           | -0.35            |
+| 2024 | 0.25   | 0.10            | 0.20             |
+| 2025 | -0.10  | -0.15           | -0.25            |
+| 2026 | 0.10   | 0.15            | 0.25             |
+</details>
+
+Source: GS Global Investment Research
+
+# CFTC Commitment of Traders and Traders in Financial Futures
+
+Duration-weighted net position by investor type
+
+Duration-Weighted Positioning, by Contract 
+
+<table><tr><td>$mm/bp</td><td>SFR</td><td>TU</td><td>FV</td><td>TY</td><td>TN</td><td>US</td><td>WN</td></tr><tr><td>Spec Current</td><td>-44.3</td><td>-55.9</td><td>-55.6</td><td>-47.0</td><td>-7.8</td><td>-24.3</td><td>-41.5</td></tr><tr><td>Spec 1w Change</td><td>-1.1</td><td>2.4</td><td>3.4</td><td>-1.3</td><td>1.4</td><td>-1.2</td><td>3.9</td></tr><tr><td>LF Current</td><td>-45.6</td><td>-67.7</td><td>-96.1</td><td>-122.6</td><td>-21.6</td><td>-42.3</td><td>-151.6</td></tr><tr><td>LF 1w Change</td><td>-4.3</td><td>2.9</td><td>5.1</td><td>1.4</td><td>2.6</td><td>-3.1</td><td>1.7</td></tr><tr><td>AM + Other Current</td><td>1.0</td><td>76.9</td><td>116.9</td><td>141.6</td><td>54.4</td><td>61.0</td><td>200.8</td></tr><tr><td>AM + Other 1w Change</td><td>-4.4</td><td>-3.5</td><td>-2.2</td><td>-0.9</td><td>-3.7</td><td>3.3</td><td>-0.9</td></tr><tr><td>Dealer Current</td><td>44.6</td><td>-12.1</td><td>-23.5</td><td>-21.9</td><td>-21.4</td><td>-31.8</td><td>-46.6</td></tr><tr><td>Dealer 1w Change</td><td>8.7</td><td>0.5</td><td>-2.6</td><td>1.3</td><td>1.2</td><td>-1.8</td><td>-0.1</td></tr></table>
+
+Source: CFTC, GS Global Investment Research
+
+Net positions in Eurodollars   
+![](images/fdd8706b908053d714c6d3d84fbd2c43fa21d08d6a98d27c415df651dc8cb938.jpg)
+
+<details>
+<summary>line</summary>
+
+| Date    | Spec SFR | LF SFR | AM + Other SFR |
+|---------|----------|--------|----------------|
+| May-21  | 0        | 0      | 0              |
+| Dec-21  | -1       | -1     | 0              |
+| Jul-22  | -3       | -2     | 0              |
+| Feb-23  | 1        | 1      | 0              |
+| Sep-23  | 0        | 2      | 0              |
+| Apr-24  | -1       | -1     | 0              |
+| Nov-24  | -2       | -2     | 0              |
+| Jun-25  | -3       | -3     | 0              |
+| Jan-26  | -3       | -3     | 0              |
+</details>
+
+Note: Duration-weighted net position (long - short) as a % of duration-weighted gross exposure (long + short + spreading)   
+Source: CFTC, GS Global Investment Research
+
+# Primary dealer transactions
+
+Net dealer position in US Treasuries
+
+![](images/a67aa2327bd761868255b9e8754e3eaffd86e8b5456c2acda8f27ccf3f568a7b.jpg)
+
+<details>
+<summary>line</summary>
+
+| Date    | Total notional ($bn) | Duration weighted (RHS) (mm/bp) |
+|---------|------------------------|----------------------------------|
+| May-21  | ~150                   | ~100                             |
+| Jan-22  | ~100                   | ~125                             |
+| Sep-22  | ~180                   | ~150                             |
+| May-23  | ~250                   | ~175                             |
+| Jan-24  | ~300                   | ~200                             |
+| Sep-24  | ~350                   | ~225                             |
+| May-25  | ~450                   | ~275                             |
+| Jan-26  | ~550                   | ~325                             |
+</details>
+
+Source: Federal Reserve Bank of New York, GS Global Investment Research
+
+Net positions in UST futures   
+![](images/11fc0fb73e8d5efbe4506c92b47f3cef2ffe0aeecea83a7e6e5e02f1802ea865.jpg)
+
+<details>
+<summary>line</summary>
+
+| Date   | Spec UST | LF UST | AM + Other UST |
+|--------|----------|--------|----------------|
+| May-21 | -10      | -15    | 10             |
+| Jan-22 | -20      | -25    | 15             |
+| Sep-22 | -15      | -30    | 20             |
+| May-23 | -18      | -28    | 25             |
+| Jan-24 | -17      | -32    | 28             |
+| Sep-24 | -16      | -35    | 30             |
+| May-25 | -18      | -38    | 32             |
+| Jan-26 | -19      | -36    | 31             |
+</details>
+
+Note: Duration-weighted net position (long - short) as a % of duration-weighted gross exposure (long + short + spreading)   
+Source: CFTC, GS Global Investment Research
+
+# US Commercial Banks' Holdings of Treasury and Agency Securities
+
+Total domestic and foreign holdings, all commercial banks
+
+![](images/c0bfb7b1b3c6c6f4101dde8cd9f033ee3a9d1b5f8bdc09e91b6789ecf2f432da.jpg)
+
+<details>
+<summary>area</summary>
+
+| Date   | Value ($bn) |
+|--------|-------------|
+| May-25 | 1,870       |
+| Jul-25 | 1,950       |
+| Sep-25 | 1,980       |
+| Nov-25 | 1,960       |
+| Jan-26 | 2,000       |
+| Mar-26 | 2,050       |
+</details>
+
+Source: Federal Reserve Board
+
+# NY Fed Custody Holdings
+
+Marketable US Treasuries
+
+![](images/d59d5bb75d1a669f8b3551660fe3a37adce190fb0113332047d31dbb93490f00.jpg)
+
+<details>
+<summary>line</summary>
+
+| Date   | Value ($bn) |
+|--------|-------------|
+| May-25 | 2,900       |
+| Jul-25 | 2,875       |
+| Sep-25 | 2,800       |
+| Nov-25 | 2,750       |
+| Jan-26 | 2,775       |
+| Mar-26 | 2,700       |
+</details>
+
+Source: Federal Reserve Bank of New York
+
+Net monthly purchases of short- and long-term US Treasuries by Japanese investors   
+![](images/c830a68ed4f03fe838766984bc288b7b9cb95ec1a3b3765eb14b17cbe1a739b7.jpg)
+
+<details>
+<summary>bar</summary>
+
+Japan BoP: Net Investment in Treasuries
+| Date | Net Investment (¥tn) |
+|---|---|
+| Oct-20 | 0.3 |
+| Nov-20 | 3.9 |
+| Dec-20 | -0.1 |
+| Jan-21 | 1.2 |
+| Feb-21 | 1.6 |
+| Mar-21 | -0.4 |
+| Apr-21 | 1.5 |
+| May-21 | -0.8 |
+| Jun-21 | -3.3 |
+| Jul-21 | -2.7 |
+| Aug-21 | -2.9 |
+| Sep-21 | -3.8 |
+| Oct-21 | -0.3 |
+| Nov-21 | -0.5 |
+| Dec-21 | -2.4 |
+| Jan-22 | -0.6 |
+| Feb-22 | -0.3 |
+| Mar-22 | 0.5 |
+| Apr-22 | 4.6 |
+| May-22 | -2.3 |
+| Jun-22 | -3.8 |
+| Jul-22 | -0.5 |
+| Aug-22 | 0.5 |
+| Sep-22 | -2.4 |
+| Oct-22 | -0.6 |
+| Nov-22 | 0.5 |
+| Dec-22 | 4.6 |
+| Jan-23 | 4.4 |
+| Feb-23 | 3.1 |
+| Mar-23 | 1.8 |
+| Apr-23 | 0.5 |
+| May-23 | 3.1 |
+| Jun-23 | 0.5 |
+| Jul-23 | 1.8 |
+| Aug-23 | 3.1 |
+| Sep-23 | 1.8 |
+| Oct-23 | 3.1 |
+| Nov-23 | 1.8 |
+| Dec-23 | 3.1 |
+| Jan-24 | -3.1 |
+| Feb-24 | 5.6 |
+| Mar-24 | 1.5 |
+| Apr-24 | -1.7 |
+| May-24 | 0.5 |
+| Jun-24 | 0.5 |
+| Jul-24 | 0.5 |
+| Aug-24 | 0.5 |
+| Sep-24 | 0.5 |
+| Oct-24 | 0.5 |
+| Nov-24 | 0.5 |
+| Dec-24 | 0.5 |
+| Jan-25 | 0.5 |
+| Feb-25 | 0.5 |
+| Mar-25 | 0.5 |
+| Apr-25 | 0.5 |
+| May-25 | 0.5 |
+| Jun-25 | 0.5 |
+| Jul-25 | 0.5 |
+| Aug-25 | 0.5 |
+| Sep-25 | 0.5 |
+| Oct-25 | -2.4 |
+</details>
+
+Source: Bank of Japan, Haver Analytics
+
+# US TIC Treasury Flows
+
+12m change in valuation-adjusted holdings of USTs, by holder of debt
+
+![](images/83d43a84bf930f9a73598fa67cc1e68aa57ba04d68f03bef037604df63d2b079.jpg)
+
+<details>
+<summary>bar</summary>
+
+| Region | Value ($bn) |
+|---|---|
+| Rest of Europe | 70 |
+| Euro Area | 30 |
+| Middle East | 15 |
+| Africa | -5 |
+| Japan | -10 |
+| Lat-Am | -40 |
+| Rest of World | -35 |
+| China | -95 |
+</details>
+
+Source: US Treasury, GS Global Investment Research
+
+Flow of Funds annual net purchases of US Treasuries, by sector   
+![](images/4ddfeb6156d407f7d37d3f8c87c99e699fa7cdc3b5bd7d597f0b182dd7d4e283.jpg)
+
+<details>
+<summary>bar</summary>
+
+| Category | 2023 ($bn) | 2024 ($bn) | 2025 Estimated ($bn) |
+|---|---|---|---|
+| Fed | -750 | -500 | 100 |
+| Foreign Official | 50 | 50 | 50 |
+| Households | 900 | 20 | 400 |
+| Pensions | 100 | 350 | 200 |
+| Asset Managers | 100 | 200 | 150 |
+| MMMFs | 1200 | 700 | 150 |
+| Foreign Private | 550 | 550 | 550 |
+| Banks | -100 | 200 | 200 |
+| Brokers/ Dealers | 100 | 150 | 50 |
+| Other Sectors | 200 | 250 | 150 |
+</details>
+
+Source: Federal Reserve Board, GS Global Investment Research
+
+# Outright Carry
+
+Bar chart shows top two carry points by currency, with solid reflecting carry to a long position and striped carry to a short position. Scatter illustrates top 25 carry/vol points by currency, with top point by currency noted
+
+![](images/338dfc028204c5dcbf70604837d5f6f1316b3fdb6f939c576adf0d0cf94b6a03.jpg)
+
+<details>
+<summary>bar</summary>
+
+Solid represents carry to being long Striped represents carry to being short
+| Currency | Time Period | Value (bp) |
+| :--- | :--- | :--- |
+| USD | 3m1y | 9 |
+| USD | 6m1y | 6 |
+| EUR | 3m1y | 12 |
+| EUR | 6m1y | 7.5 |
+| GBP | 3m1y | 15.5 |
+| GBP | 6m1y | 8.5 |
+| JPY | 6m1y | 17 |
+| JPY | 3m1y | 16.5 |
+| CAD | 6m1y | 16 |
+| CAD | 3m2y | 10.5 |
+| AUD | 3m1y | 7 |
+| AUD | 1y1y | 4 |
+| NZD | 3m1y | 32 |
+| NZD | 6m1y | 25.5 |
+The chart displays a grouped bar chart with values in bp on the Y-axis. The legend indicates that solid and striped bars represent different representations. The title explicitly states that 'Long' represents long and 'Short' represents short.
+</details>
+
+![](images/7c7c01406236e140206cd5bb41cb7e9dcc86cc84a3c95145710b092b75dbf014.jpg)
+
+<details>
+<summary>scatter</summary>
+
+| Currency | Delivered Vol (3m) | Outright Carry (3m) |
+|----------|---------------------|----------------------|
+| USD      | 40                  | 9                    |
+| EUR      | 35                  | 2                    |
+| GBP      | 50                  | 4                    |
+| JPY      | 10                  | 16                   |
+| CAD      | 45                  | 7                    |
+| AUD      | 55                  | -5                   |
+| NZD      | 58                  | 18                   |
+</details>
+
+Source: GS Global Investment Research
+
+# Curve Carry
+
+Bar chart shows top two carry curves by currency, with solid reflecting carry to a steepening position and striped carry to a flattening position. Scatter illustrates top 5 carry/vol curves by currency, with top curve by currency noted
+
+![](images/a8420c3b33ea981ca775e658b67b33b91cbecc3f2a39b7e979098fbc5783a500.jpg)
+
+<details>
+<summary>bar</summary>
+
+Solid represents carry to steepener Striped represents carry to flattener
+| Currency | Series 1 (1s30s 1s20s) | Series 2 (1s30s 1s20s) |
+| :--- | :--- | :--- |
+| USD | 8.5 | 7.8 |
+| EUR | 10.8 | 10.2 |
+| GBP | 13.5 | 12.9 |
+| JPY | 13.2 | 11.9 |
+| CAD | 9.2 | 8.1 |
+| AUD | 6.4 | 5.9 |
+| NZD | 27.8 | 26.9 |
+</details>
+
+![](images/6eeb9c103c8fbd9015c36cb12aa2eb48c6646605512ede6d5b9dab28898e2151.jpg)  
+Source: GS Global Investment Research
+
+# Fly Carry
+
+Bar chart shows top two carry flies by currency, with solid reflecting carry to a belly-richening fly and striped carry to a belly-cheapening fly. Scatter illustrates top 5 carry/vol flies by currency, with top fly by currency noted.
+
+![](images/11e9f4f6bd6a3211b0be1bccfd654614aea0ef6ffef701f6a476a015d58cabd3.jpg)
+
+<details>
+<summary>bar</summary>
+
+Solid represents carry to belly richening fly; Striped represents carry to belly cheapening fly
+| Currency Pair | Bond | Value (bp) |
+| :--- | :--- | :--- |
+| USD | 1s4s7s 1s4s10s | 7 |
+| USD | 1s4s7s 1s4s10s | 7 |
+| EUR | 1s20s30s 1s15s20s | 9 |
+| EUR | 1s20s30s 1s15s20s | 8.5 |
+| GBP | 1s4s7s 1s4s7s | 12 |
+| GBP | 1s4s7s 1s4s7s | 12 |
+| JPY | 1s20s30s 1s15s20s | 10.5 |
+| JPY | 1s20s30s 1s15s20s | 9.5 |
+| CAD | 2s20s30s 2s15s20s | 6.5 |
+| CAD | 2s20s30s 2s15s20s | 6 |
+| AUD | 1s3s7s 1s3s10s | 6.5 |
+| AUD | 1s3s7s 1s3s10s | 6.5 |
+| NZD | 1s20s30s 1s15s20s | 26 |
+| NZD | 1s20s30s 1s15s20s | 25.5 |
+The chart displays a single bar for each currency pair representing the spread in basis points for two distinct series. The legend indicates 'Striped' and 'Solid'. The values for the striped series are explicitly labeled on the bars.
+</details>
+
+![](images/6bcb5b0a50883ccefa3ee04fc129189eaf258d5cc471d399cefffd6a95c8b607.jpg)
+
+<details>
+<summary>scatter</summary>
+
+| Currency Pair | Delivered Vol (3m) | Outright Carry (3m) |
+|---|---|---|
+| USD: 1s3s4s | 10.5 | -7.2 |
+| EUR: 1s2s3s | 1.8 | -0.5 |
+| GBP: 1s2s3s | 7.8 | -9.1 |
+| JPY: 2s5s7s | 2.5 | -0.8 |
+| CAD: 3s4s5s | 4.2 | -2.1 |
+| AUD | 8.5 | -6.3 |
+| NZD: 5s7s30s | 3.2 | 2.5 |
+| EUR: 1s2s3s | 7.5 | -6.8 |
+| GBP: 1s2s3s | 10.8 | -4.5 |
+| JPY: 2s5s7s | 5.8 | -3.2 |
+| AUD | 10.2 | -5.1 |
+| EUR: 1s2s3s | 11.5 | -7.9 |
+| GBP: 1s2s3s | 14.8 | -10.5 |
+| JPY: 2s5s7s | 10.9 | -4.8 |
+| AUD | 16.2 | -11.2 |
+| EUR: 1s2s3s | 13.5 | -8.7 |
+| GBP: 1s2s3s | 15.8 | -10.9 |
+| JPY: 2s5s7s | 10.6 | -4.6 |
+| AUD | 17.9 | -6.5 |
+| EUR: 1s2s3s | 14.2 | -9.3 |
+| GBP: 1s2s3s | 16.5 | -10.8 |
+| JPY: 2s5s7s | 10.7 | -4.9 |
+| AUD | 20.1 | -6.7 |
+| EUR: 1s2s3s | 8.9 | -6.4 |
+| GBP: 1s2s3s | 14.5 | -10.6 |
+| JPY: 2s5s7s | 5.6 | -3.8 |
+| AUD | 27.3 | -22.1 |
+Belly Richening
+Belly Cheapening
+</details>
+
+Source: GS Global Investment Research
+
+Gross Treasury auction size estimates by year end, with GS projections 
+
+<table><tr><td colspan="12">Monthly Auction Amounts at End of Calendar Year ($ billions)</td></tr><tr><td></td><td>2y FRNs</td><td>2y</td><td>3y</td><td>5y</td><td>7y</td><td>10y</td><td>20y</td><td>30y</td><td>5y TIPS</td><td>10y TIPS</td><td>30y TIPS</td></tr><tr><td>YE-25 (CY)</td><td>30 / 28 (r)</td><td>69</td><td>58</td><td>70</td><td>44</td><td>42 / 39 (r)</td><td>16 / 13 (r)</td><td>25 / 22 (r)</td><td>26 / 24 (r)</td><td>21 / 19 (r)</td><td>9 / 8 (r)</td></tr><tr><td>YE-26 (CY, GS)</td><td>30 / 28 (r)</td><td>69</td><td>58</td><td>70</td><td>44</td><td>42 / 39 (r)</td><td>16 / 13 (r)</td><td>25 / 22 (r)</td><td>26 / 24 (r)</td><td>21 / 19 (r)</td><td>9 / 8 (r)</td></tr><tr><td>YE-27 (CY, GS)</td><td>33 / 30 (r)</td><td>83</td><td>72</td><td>84</td><td>58</td><td>42 / 39 (r)</td><td>16 / 13 (r)</td><td>25 / 22 (r)</td><td>28 / 26 (r)</td><td>21 / 19 (r)</td><td>9 / 8 (r)</td></tr></table>
+
+\* Original Issue / Reopening listed for FRNs, 10s, 20s, 30s, and TIPS.
+
+<table><tr><td colspan="7">US Treasury Net Issuance by Calendar Year ($ billions)</td></tr><tr><td></td><td>Net Coupons</td><td>Fed</td><td>Net of Fed</td><td>Net Bills</td><td>Fed</td><td>Net of Fed</td></tr><tr><td>CY 2024</td><td>1346</td><td>-475</td><td>1821</td><td>511</td><td>-23</td><td>534</td></tr><tr><td>CY 2025</td><td>1566</td><td>-115</td><td>1681</td><td>360</td><td>38</td><td>322</td></tr><tr><td>CY 2026, GS</td><td>1225</td><td>-1</td><td>1226</td><td>811</td><td>422</td><td>389</td></tr><tr><td>CY 2027, GS</td><td>1286</td><td>0</td><td>1286</td><td>927</td><td>449</td><td>478</td></tr></table>
+
+<table><tr><td colspan="3">Duration supply ($bn 10y equiv)</td></tr><tr><td>Gross supply</td><td>Fed</td><td>Net of Fed</td></tr><tr><td>2765</td><td>0</td><td>2765</td></tr><tr><td>2797</td><td>0</td><td>2797</td></tr><tr><td>2803</td><td>0</td><td>2803</td></tr><tr><td>2996</td><td>0</td><td>2996</td></tr></table>
+
+Source: GS Global Investment Research, US Department of the Treasury
+
+Net issuance per quarter   
+![](images/ad9c4ea2683e8934beee35bc74e2aedaf359c3c1089a42d7afc91ec719044f36.jpg)
+
+<details>
+<summary>bar</summary>
+
+| Quarter | Net coupons ($bn) | Net bills ($bn) | Total net supply ($bn) |
+|---------|-------------------|-----------------|------------------------|
+| Q1 2026 | 150               | 300             | 400                    |
+| Q2 2026 | 200               | -150            | 100                    |
+| Q3 2026 | 200               | 400             | 600                    |
+| Q4 2026 | 250               | 350             | 550                    |
+| Q1 2027 | 250               | 450             | 700                    |
+| Q2 2027 | -100              | -50             | 50                     |
+| Q3 2027 | 200               | 350             | 500                    |
+| Q4 2027 | 300               | 350             | 600                    |
+| Q1 2028 | 250               | 450             | 700                    |
+| Q2 2028 | -250              | -150            | 100                    |
+| Q3 2028 | 150               | 450             | 550                    |
+| Q4 2028 | 350               | 350             | 600                    |
+</details>
+
+Source: GS Global Investment Research, US Department of the Treasury
+
+Average monthly UST issuance, gross and net of Fed purchases; \$bn 10y equivalents   
+![](images/fcb293e00b67e664e34751be9274f16d9c39c62579371401851351cbe667c8ad.jpg)
+
+<details>
+<summary>bar_line</summary>
+
+| Quarter | Gross Issuance ($bn) | Fed Purchases ($bn) | Issuance net of Fed purchases ($bn) |
+|---|---|---|---|
+| Q4-22 | 180 | 180 | 185 |
+| Q2-23 | 175 | 175 | 180 |
+| Q4-23 | 200 | 200 | 205 |
+| Q2-24 | 230 | 230 | 235 |
+| Q4-24 | 235 | 235 | 235 |
+| Q2-25 | 230 | 230 | 230 |
+| Q4-25 | 230 | 230 | 230 |
+| Q2-26 | 230 | 230 | 230 |
+| Q4-26 | 235 | 235 | 235 |
+</details>
+
+Source: GS Global Investment Research, US Department of the Treasury
+
+Free float (Treasuries outstanding less Fed and foreign official holdings) as % of GDP   
+![](images/3b05f1ea280a57771da2a58d6cd67856421a96b6bdc5ea6394358164c7f3b5d0.jpg)
+
+<details>
+<summary>line</summary>
+
+| Date   | Coupon free float | Bill free float (RHS) |
+|--------|-------------------|------------------------|
+| Mar-17 | 32                | 7                      |
+| Mar-19 | 36                | 11                     |
+| Mar-21 | 33                | 21                     |
+| Mar-23 | 44                | 17                     |
+| Mar-25 | 52                | 19                     |
+</details>
+
+Source: Haver Analytics, US Treasury, GS Global Investment Research
+
+Bills as a share of Treasuries outstanding and GS forecast Gray shading denotes TBAC recommended 15-20% range   
+![](images/4cc131df55d00c4485a87f3aa5dafcd1a5e45b29e35c57a92fa5ddd32cfa4033.jpg)
+
+<details>
+<summary>line</summary>
+
+| Year | Actual | GS Forecast |
+|------|--------|-------------|
+| 2018 | 14.0   | -           |
+| 2019 | 15.0   | -           |
+| 2020 | 14.5   | -           |
+| 2021 | 25.5   | -           |
+| 2022 | 16.5   | -           |
+| 2023 | 15.5   | -           |
+| 2024 | 22.5   | -           |
+| 2025 | 21.5   | -           |
+| 2026 | 21.0   | -           |
+| 2027 | -      | 23.0        |
+| 2028 | -      | 24.5        |
+</details>
+
+Source: US Treasury, GS Global Investment Research
+
+# GS Term Premium Decomposition
+
+1y Range of G10 10y Yields, by Term Premium and Expectations Components   
+![](images/852b2243f8f9c636b5d1558550ce43e7ddcb826ba650b1c864ee933f3619965a.jpg)
+
+<details>
+<summary>boxplot</summary>
+
+G10 10-Year Term Premium
+| Country | Low (%) | High (%) | Last (%) | Average (%) |
+|---|---|---|---|---|
+| US | 1.1 | 1.6 | 1.4 | 1.3 |
+| AU | 0.7 | 1.0 | 1.1 | 0.9 |
+| NZ | 0.7 | 0.9 | 0.8 | 0.8 |
+| CA | 0.7 | 1.1 | 1.0 | 0.9 |
+| NO | 0.4 | 0.8 | 0.5 | 0.6 |
+| GB | 1.4 | 1.9 | 1.7 | 1.6 |
+| EA | 0.9 | 1.3 | 1.2 | 1.1 |
+| SE | 0.6 | 1.0 | 0.9 | 0.8 |
+| JP | 1.1 | 2.2 | 2.3 | 1.5 |
+| CH | -0.1 | 0.2 | 0.2 | 0.1 |
+</details>
+
+![](images/4d9add9df0bdddb4022a07e134bed45b72743ea1321b7760c7d4dd734ed4c76f.jpg)
+
+<details>
+<summary>boxplot</summary>
+
+G10 10-Year Expectations
+1y Range
+| Country | Low (%) | High (%) | Last (%) | Average (%) |
+|---|---|---|---|---|
+| US | 2.8 | 3.0 | 3.3 | 3.0 |
+| AU | 3.4 | 4.0 | 3.7 | 3.6 |
+| NZ | 3.4 | 4.0 | 3.9 | 3.7 |
+| CA | 2.4 | 2.6 | 2.7 | 2.5 |
+| NO | 3.2 | 4.0 | 4.0 | 3.5 |
+| GB | 2.7 | 3.5 | 3.2 | 3.0 |
+| EA | 1.4 | 2.0 | 2.0 | 1.7 |
+| SE | 1.6 | 1.9 | 1.9 | 1.8 |
+| JP | 0.3 | 0.4 | 0.4 | 0.4 |
+| CH | 0.2 | 0.3 | 0.3 | 0.3 |
+</details>
+
+Term Structure of Fitted Yields, by Component   
+![](images/3cef81102cad7f51422a1c7e012fbe21ad41ae5475c8c0218da8fb2f4ae26ff7.jpg)
+
+<details>
+<summary>line</summary>
+
+United States
+| Years | Expectations (%) | Expectations, 1y ago (%) | Term Premium (1y ago) (%) |
+|---|---|---|---|
+| 1 | 3.7 | 3.6 | 0.2 |
+| 2 | 3.6 | 3.5 | 0.4 |
+| 3 | 3.5 | 3.4 | 0.6 |
+| 4 | 3.5 | 3.3 | 0.8 |
+| 5 | 3.4 | 3.2 | 1.0 |
+| 6 | 3.4 | 3.1 | 1.2 |
+| 7 | 3.3 | 3.0 | 1.3 |
+| 8 | 3.2 | 2.9 | 1.4 |
+| 9 | 3.1 | 2.8 | 1.5 |
+| 10 | 3.1 | 2.7 | 1.6 |
+</details>
+
+![](images/152de168e6f5e43d1dd7451178bdbec4ff2e2ac4c4093ff400d945a25a3f2b8d.jpg)
+
+<details>
+<summary>line</summary>
+
+Europe
+| Years | Expectations (%) | Expectations, 1y ago (%) | Term Premium (%) | Term Premium, 1y ago (%) |
+|---|---|---|---|---|
+| 1 | 2.5 | 1.7 | -0.05 | 0.05 |
+| 2 | 2.55 | 1.65 | 0.05 | 0.15 |
+| 3 | 2.5 | 1.6 | 0.2 | 0.3 |
+| 4 | 2.45 | 1.55 | 0.35 | 0.45 |
+| 5 | 2.4 | 1.5 | 0.5 | 0.65 |
+| 6 | 2.3 | 1.45 | 0.65 | 0.8 |
+| 7 | 2.25 | 1.4 | 0.8 | 0.95 |
+| 8 | 2.2 | 1.35 | 0.9 | 1.05 |
+| 9 | 2.1 | 1.3 | 1.0 | 1.15 |
+| 10 | 2.05 | 1.25 | 1.1 | 1.25 |
+</details>
+
+![](images/b19120a54d3b0e4bdc883fbb0afe873729c01dbd4424813bb0e51919f0cb2d29.jpg)
+
+<details>
+<summary>line</summary>
+
+United Kingdom
+| Years | Expectations (%) | Expectations, 1y ago (%) | Term Premium (1y ago) (%) |
+|---|---|---|---|
+| 1 | 3.8 | 3.6 | 0.2 |
+| 2 | 3.7 | 3.4 | 0.4 |
+| 3 | 3.6 | 3.3 | 0.6 |
+| 4 | 3.5 | 3.2 | 0.8 |
+| 5 | 3.4 | 3.1 | 1.0 |
+| 6 | 3.3 | 3.0 | 1.2 |
+| 7 | 3.2 | 2.9 | 1.4 |
+| 8 | 3.1 | 2.8 | 1.5 |
+| 9 | 3.0 | 2.7 | 1.6 |
+| 10 | 2.9 | 2.6 | 1.7 |
+</details>
+
+![](images/fc2faedad1ef33a7cdc8f5235a18f6f650e34ddf071c55369b867827320fb519.jpg)
+
+<details>
+<summary>line</summary>
+
+Japan
+| Years | Expectations (%) | Term Premium (%) | Expectations, 1y ago (%) | Term Premium, 1y ago (%) |
+|---|---|---|---|---|
+| 1 | 0.85 | 0.25 | 0.45 | 0.1 |
+| 2 | 0.75 | 0.6 | 0.35 | 0.25 |
+| 3 | 0.7 | 0.9 | 0.35 | 0.4 |
+| 4 | 0.65 | 1.2 | 0.35 | 0.55 |
+| 5 | 0.6 | 1.45 | 0.35 | 0.65 |
+| 6 | 0.55 | 1.65 | 0.35 | 0.8 |
+| 7 | 0.5 | 1.85 | 0.35 | 0.9 |
+| 8 | 0.48 | 2.0 | 0.35 | 1.0 |
+| 9 | 0.45 | 2.15 | 0.35 | 1.1 |
+| 10 | 0.45 | 2.25 | 0.35 | 1.2 |
+</details>
+
+Source: GS Global Investment Research
+
+2026 Trade Recommendations 
+
+<table><tr><td colspan="7">GS Rates Trades</td></tr><tr><td>Active</td><td>Entry Date</td><td>Opened</td><td>Latest</td><td>Stop</td><td>Target</td><td>Performance</td></tr><tr><td>1. Long 3y France, Spain, Italy vs OIS (equally weighted)</td><td>10-Apr-26</td><td>0.33</td><td>0.29</td><td>0.32</td><td>0.23</td><td>+4 bps</td></tr><tr><td>2. Long 3y SOFR swap spread</td><td>17-Apr-26</td><td>-0.226</td><td>-0.208</td><td>-0.255</td><td>-0.180</td><td>+2 bps</td></tr><tr><td>3. 2s5s CAD steepeners</td><td>24-Apr-26</td><td>0.20</td><td>0.23</td><td>0.10</td><td>0.35</td><td>+3 bps</td></tr><tr><td>4. Long 5y5y EUR OIS - HICP</td><td>01-May-26</td><td>1.09</td><td>1.10</td><td>1.22</td><td>0.88</td><td>-1 bps</td></tr><tr><td>5. Long 5y Receivers on 3m 2s5s10s Receiver Fly (bp running)</td><td>08-May-26</td><td>0.01</td><td>-0.01</td><td>-0.05</td><td>0.10</td><td>-2 bps</td></tr><tr><td>Closed</td><td>Entry Date</td><td>Closed</td><td>Performance</td><td></td><td></td><td></td></tr><tr><td>1. SFRZ6/Z7 steepeners</td><td>21-Nov-25</td><td>14-Jan-26</td><td>+6bps</td><td></td><td></td><td></td></tr><tr><td>2. Long 10y Gilts on ASW</td><td>21-Nov-25</td><td>30-Jan-26</td><td>+12 bps</td><td></td><td></td><td></td></tr><tr><td>3. Long USD 3m2y A-25 receiver vs short 3m10y A-25 receiver (return in bp running)</td><td>07-Nov-25</td><td>09-Feb-26</td><td>-2 bps</td><td></td><td></td><td></td></tr><tr><td>4. 2s5s CORRA steepener</td><td>16-Jan-26</td><td>13-Feb-26</td><td>+0 bps</td><td></td><td></td><td></td></tr><tr><td>5. Receive AUD 5y5y IRS vs pay NZD 5y5y</td><td>28-Nov-25</td><td>18-Feb-26</td><td>+0 bps</td><td></td><td></td><td></td></tr><tr><td>6. Long 20s on 10s20s30s weighted SOFR fly (weights 0.6x : 2x : 1.4x)</td><td>01-Aug-25</td><td>02-Mar-26</td><td>+6 bps</td><td></td><td></td><td></td></tr><tr><td>7. Long SFIU6</td><td>30-Jan-26</td><td>03-Mar-26</td><td>+7 bps</td><td></td><td></td><td></td></tr><tr><td>8. Long 10y Gilts vs Bunds</td><td>07-Nov-25</td><td>09-Mar-26</td><td>+4 bps</td><td></td><td></td><td></td></tr><tr><td>9. 3m10y A+5/A+20/A+27.5 payer ladders (bp running)</td><td>20-Feb-26</td><td>23-Mar-26</td><td>-5 bps</td><td></td><td></td><td></td></tr><tr><td>10. Long 10y NOK vs SEK</td><td>13-Feb-26</td><td>25-Mar-26</td><td>+20 bps</td><td></td><td></td><td></td></tr><tr><td>11. Long EU 30y on the fly against 30y Austria and Spain</td><td>27-Feb-26</td><td>10-Apr-26</td><td>-5 bps</td><td></td><td></td><td></td></tr><tr><td>12. Long USD 3m 2s10s A+10/A+25 curve cap spread (bp of notional)</td><td>23-Jan-26</td><td>15-Apr-26</td><td>-2 bps</td><td></td><td></td><td></td></tr><tr><td>13. USD 3m3y A-5/A-40 receiver spreads</td><td>13-Mar-26</td><td>30-Apr-26</td><td>-7 bps</td><td></td><td></td><td></td></tr><tr><td>14. Long 10y Inflation Swap vs 0.25x Receive 10y SOFR</td><td>27-Mar-26</td><td>07-May-26</td><td>+15 bps</td><td></td><td></td><td></td></tr><tr><td>15. Pay 10s on 5s10s30s SOFR fly</td><td>09-Jan-26</td><td>08-May-26</td><td>-1 bps</td><td></td><td></td><td></td></tr></table>
+
+Note: Potential profit/loss estimates are given as per unit of duration risk, through yesterday's close.   
+Source: GS Global Investment Research
+
+# Global Interest Rates Strategy
+
+# George Cole
+
++44(20)7552-1214
+
+george.cole@gs.com
+
+GS International
+
+# William Marshall
+
++1(212)357-0413
+
+william.c.marshall@gs.com
+
+GS & Co. LLC
+
+# Simon Freycenet
+
++44(20)7774-5017
+
+simon.freycenet@gs.com
+
+GS Bank Europe SE - Paris
+
+Branch
+
+# Isabella Rosenberg
+
++1(212)357-7628
+
+isabella.rosenberg@gs.com
+
+GS & Co. LLC
+
+# Friedrich Schaper
+
++1(917)343-3214
+
+friedrich.schaper@gs.com
+
+GS & Co. LLC
+
+# Loic Mathys
+
++44(20)7051-1664
+
+loic.mathys@gs.com
+
+GS International
+
+# Disclosure Appendix
+
+# Reg AC
+
+We, George Cole, William Marshall, Simon Freycenet, Isabella Rosenberg, Friedrich Schaper and Loic Mathys, hereby certify that all of the views expressed in this report accurately reflect our personal views, which have not been influenced by considerations of the firm's business or client relationships.
+
+Unless otherwise stated, the individuals listed on the cover page of this report are analysts in GS' Global Investment Research division.
+
+Contributing Authors: George Cole GS International, William Marshall GS & Co. LLC, Simon Freycenet GS Bank Europe SE - Paris Branch, Isabella Rosenberg GS & Co. LLC, Friedrich Schaper GS & Co. LLC, Loic Mathys GS International.
+
+Unless otherwise stated, the individuals listed in the Contributing Authors disclosure of this report are analysts in GS' Global Investment Research division.
+
+# Disclosures
+
+# Option Specific Disclosures
+
+Price target methodology: Please refer to the analyst's previously published research for methodology and risks associated with equity price targets.
+
+Pricing Disclosure: Option prices and volatility levels in this note are indicative only, and are based on our estimates of recent mid-market levels (unless otherwise noted). All prices and levels exclude transaction costs unless otherwise stated.
+
+General Options Risks – The risks below and any other options risks mentioned in this research report pertain both to specific derivative trade recommendations mentioned and to discussion of general opportunities and advantages of derivative strategies. Unless otherwise noted, options strategies mentioned in this report may be a combination of the strategies below and therefore carry with them the risks of those strategies.
+
+Buying Options – Investors who buy call (put) options risk loss of the entire premium paid if the underlying security finishes below (above) the strike price at expiration. Investors who buy call or put spreads also risk a maximum loss of the premium paid. The maximum gain on a long call or put spread is the difference between the strike prices, less the premium paid.
+
+Selling Options – Investors who sell calls on securities they do not own risk unlimited loss of the security price less the strike price. Investors who sell covered calls (sell calls while owning the underlying security) risk having to deliver the underlying security or pay the difference between the security price and the strike price, depending on whether the option is settled by physical delivery or cash-settled. Investors who sell puts risk loss of the strike price less the premium received for selling the put. Investors who sell put or call spreads risk a maximum loss of the difference between the strikes less the premium received, while their maximum gain is the premium received.
+
+For options settled by physical delivery, the above risks assume the options buyer or seller, buys or sells the resulting securities at the settlement price on expiry.
+
+# Regulatory disclosures
+
+# Disclosures required by United States laws and regulations
+
+See company-specific regulatory disclosures above for any of the following disclosures required as to companies referred to in this report: manager or co-manager in a pending transaction; $1\%$ or other ownership; compensation for certain services; types of client relationships; managed/co-managed public offerings in prior periods; directorships; for equity securities, market making and/or specialist role. GS trades or may trade as a principal in debt securities (or in related derivatives) of issuers discussed in this report.
+
+The following are additional required disclosures: Ownership and material conflicts of interest: GS policy prohibits its analysts, professionals reporting to analysts and members of their households from owning securities of any company in the analyst's area of coverage. Analyst compensation: Analysts are paid in part based on the profitability of GS, which includes investment banking revenues. Analyst as officer or director: GS policy generally prohibits its analysts, persons reporting to analysts or members of their households from serving as an officer, director or advisor of any company in the analyst's area of coverage. Non-U.S. Analysts: Non-U.S. analysts may not be associated persons of GS & Co. LLC and therefore may not be subject to FINRA Rule 2241 or FINRA Rule 2242 restrictions on communications with a subject company, public appearances and trading in securities covered by the analysts.
+
+# Additional disclosures required under the laws and regulations of jurisdictions other than the United States
+
+The following disclosures are those required by the jurisdiction indicated, except to the extent already made above pursuant to United States laws and regulations. Australia: GS Australia Pty Ltd and its affiliates are not authorised deposit-taking institutions (as that term is defined in the Banking Act 1959 (Cth)) in Australia and do not provide banking services, nor carry on a banking business, in Australia. This research, and any access to it, is intended only for “wholesale clients” within the meaning of the Australian Corporations Act, unless otherwise agreed by GS. In producing research reports, members of Global Investment Research of GS Australia may attend site visits and other meetings hosted by the companies and other entities which are the subject of its research reports. In some instances the costs of such site visits or meetings may be met in part or in whole by the issuers concerned if GS Australia considers it is appropriate and reasonable in the specific circumstances relating to the site visit or meeting. To the extent that the contents of this document contains any financial product advice, it is general advice only and has been prepared by GS without taking into account a client’s objectives, financial situation or needs. A client should, before acting on any such advice, consider the appropriateness of the advice having regard to the client’s own objectives, financial situation and needs. A copy of certain GS Australia and New Zealand disclosure of interests and a copy of GS’ Australian Sell-Side Research Independence Policy Statement are available at: https://www.goldmansachs.com/disclosures/australia-new-zealand/index.html. Brazil: Disclosure information in relation to CVM Resolution n. 20 is available at https://www.gs.com/worldwide/brazil/area/gir/index.html. Where applicable, the Brazil-registered analyst primarily responsible for the content of this research report, as defined in Article 20 of CVM Resolution n. 20, is the first author named at the beginning of this report, unless indicated otherwise at the end of the text. Canada: This information is being provided to you for information purposes only and is not, and under no circumstances should be construed as, an advertisement, offering or solicitation by GS & Co. LLC for purchasers of securities in Canada to trade in any Canadian security. GS & Co. LLC is not registered as a dealer in any jurisdiction in Canada under applicable Canadian securities laws and generally is not permitted to trade in Canadian securities and may be prohibited from selling certain securities and products in certain jurisdictions in Canada. If you wish to trade in any Canadian securities or other products in Canada please contact GS Canada Inc., an affiliate of The GS Group Inc., or another registered Canadian dealer. Hong Kong: Further information on the securities of covered companies referred to in this research may be obtained on request from GS (Asia) L.L.C. India: Further information on the subject company or companies referred to in this research may be obtained from GS (India) Securities Private Limited, Research Analyst – SEBI Registration Number INH000001493, 10th Floor, Ascent-Worli, Sudam Kalu Ahire Marg, Worli, Mumbai-400 025, India, Corporate Identity Number U74140MH2006FTC160634, Phone +91 22 6616 9000, Fax +91 22 6616 9001. GS may beneficially own 1% or more of the securities (as such term is defined in clause 2 (h) the Indian Securities Contracts (Regulation) Act, 1956) of the subject company or companies referred to in this research report. Investment in securities market are subject to market risks. Read all the related documents carefully before investing. Registration granted by SEBI and certification from NISM in no way guarantee performance of the intermediary or provide any assurance of returns to investors. GS (India) Securities Private Limited compliance officer and investor grievance contact details can be found at: https://www.goldmansachs.com/worldwide/india/documents/Grievance-Redressal-and-Escalation-Matrix.pdf, and a copy of the annual audit compliance report can be found at this link: https://publishing.gs.com/content/site/india-annual-compliance-report.html. Japan: See below. Korea: This research, and any access to it, is intended only for “professional investors” within the meaning of the Financial Services and Capital Markets Act, unless otherwise agreed by GS. Further information on the subject company or companies referred to in this research may be obtained from GS (Asia) L.L.C., Seoul Branch. New Zealand: GS New Zealand Limited and its affiliates are neither “registered banks” nor “deposit takers” (as defined in the Reserve Bank of New Zealand Act 1989) in New Zealand. This research, and any access to it, is intended for “wholesale clients” (as defined in the Financial Advisers Act 2008) unless otherwise agreed by GS. A copy of certain GS Australia and New Zealand disclosure of interests is available at: https://www.goldmansachs.com/disclosures/australia-new-zealand/index.html. Russia: Research reports distributed in the Russian Federation are not advertising as defined in the Russian legislation, but are information and analysis not having product promotion as their main purpose and do not provide appraisal within the meaning of the Russian legislation on appraisal activity. Research reports do not constitute a personalized investment recommendation as defined in Russian laws and regulations, are not addressed to a specific client, and are prepared without analyzing the financial circumstances, investment profiles or risk profiles of clients. GS assumes no responsibility for any investment decisions that may be taken by a client or any other person based on this research report. Singapore: GS (Singapore) Pte. (Company Number: 198602165W), which is regulated by the Monetary Authority of Singapore, accepts legal responsibility for this research, and should be contacted with respect to any matters arising from, or in connection with, this research. Taiwan: This material is for reference only and must not be reprinted without permission. Investors should carefully consider their own investment risk. Investment results are the responsibility of the individual investor. United Kingdom: Persons who would be categorized as retail clients in the United Kingdom, as such term is defined in the rules of the Financial Conduct Authority, should read this research in conjunction with prior GS on the covered companies referred to herein and should refer to the risk warnings that have been sent to them by GS International. A copy of these risks warnings, and a glossary of certain financial terms used in this report, are available from GS International on request.
+
+European Union and United Kingdom: Disclosure information in relation to Article 6 (2) of the European Commission Delegated Regulation (EU) (2016/958) supplementing Regulation (EU) No 596/2014 of the European Parliament and of the Council (including as that Delegated Regulation is implemented into United Kingdom domestic law and regulation following the United Kingdom's departure from the European Union and the European Economic Area) with regard to regulatory technical standards for the technical arrangements for objective presentation of investment recommendations or other information recommending or suggesting an investment strategy and for disclosure of particular interests or indications of conflicts of interest is available at https://www.gs.com/disclosures/europeanpolicy.html which states the European Policy for Managing Conflicts of Interest in Connection with Investment Research.
+
+Japan: GS Japan Co., Ltd. is a Financial Instrument Dealer registered with the Kanto Financial Bureau under registration number Kinsho 69, and a member of Japan Securities Dealers Association, Financial Futures Association of Japan Type II Financial Instruments Firms Association, and Investment Management Association of Japan. Sales and purchase of equities are subject to commission pre-determined with clients plus consumption tax. See company-specific disclosures as to any applicable disclosures required by Japanese stock exchanges, the Japanese Securities Dealers Association or the Japanese Securities Finance Company.
+
+# Global product; distributing entities
+
+GS Global Investment Research produces and distributes research products for clients of GS on a global basis. Analysts based in GS offices around the world produce research on industries and companies, and research on macroeconomics, currencies, commodities and portfolio strategy. This research is disseminated in Australia by GS Australia Pty Ltd (ABN 21 006 797 897); in Brazil by GS do Brasil Corretora de Títulos e Valores Mobiliários S.A.; Public Communication Channel GS Brazil: 0800 727 5764 and / or contatogoldmanbrasil@gs.com. Available Weekdays (except holidays), from 9am to 6pm. Canal de Comunicação com o Público GS Brasil: 0800 727 5764 e/ou contatogoldmanbrasil@gs.com. Horário de funcionamento: segunda-feira à sexta-feira (exceto feriados), das 9h às 18h; in Canada by GS & Co. LLC; in Hong Kong by GS (Asia) L.L.C.; in India by GS (India) Securities Private Ltd.; in Japan by GS Japan Co., Ltd.; in the Republic of Korea by GS (Asia) L.L.C., Seoul Branch; in New Zealand by GS New Zealand Limited; in Russia by OOO GS; in Singapore by GS (Singapore) Pte. (Company Number: 198602165W); and in the United States of America by GS & Co. LLC. GS International has approved this research in connection with its distribution in the United Kingdom.
+
+GS International (“GSI”), authorised by the Prudential Regulation Authority (“PRA”) and regulated by the Financial Conduct Authority (“FCA”) and the PRA, has approved this research in connection with its distribution in the United Kingdom.
+
+European Economic Area: GS Bank Europe SE (“GSBE”) is a credit institution incorporated in Germany and, within the Single Supervisory Mechanism, subject to direct prudential supervision by the European Central Bank and in other respects supervised by German Federal Financial Supervisory Authority (Bundesanstalt für Finanzdienstleistungsaufsicht, BaFin) and Deutsche Bundesbank and disseminates research within the European Economic Area.
+
+# General disclosures
+
+This research is for our clients only. Other than disclosures relating to GS, this research is based on current public information that we consider reliable, but we do not represent it is accurate or complete, and it should not be relied on as such. The information, opinions, estimates and forecasts contained herein are as of the date hereof and are subject to change without prior notification. We seek to update our research as appropriate, but various regulations may prevent us from doing so. Other than certain industry reports published on a periodic basis, the large majority of reports are published at irregular intervals as appropriate in the analyst's judgment.
+
+GS conducts a global full-service, integrated investment banking, investment management, and brokerage business. We have investment banking and other business relationships with a substantial percentage of the companies covered by Global Investment Research. GS & Co. LLC, the United States broker dealer, is a member of SIPC (https://www.sipc.org).
+
+Our salespeople, traders, and other professionals may provide oral or written market commentary or trading strategies to our clients and principal trading desks that reflect opinions that are contrary to the opinions expressed in this research. Our asset management area, principal trading desks and investing businesses may make investment decisions that are inconsistent with the recommendations or views expressed in this research.
+
+We and our affiliates, officers, directors, and employees will from time to time have long or short positions in, act as principal in, and buy or sell, the securities or derivatives, if any, referred to in this research, unless otherwise prohibited by regulation or GS policy.
+
+The views attributed to third party presenters at GS arranged conferences, including individuals from other parts of GS, do not
+
+necessarily reflect those of Global Investment Research and are not an official view of GS.
+
+Any third party referenced herein, including any salespeople, traders and other professionals or members of their household, may have positions in the products mentioned that are inconsistent with the views expressed by analysts named in this report.
+
+This research is focused on investment themes across markets, industries and sectors. It does not attempt to distinguish between the prospects or performance of, or provide analysis of, individual companies within any industry or sector we describe.
+
+Any trading recommendation in this research relating to an equity or credit security or securities within an industry or sector is reflective of the investment theme being discussed and is not a recommendation of any such security in isolation.
+
+This research is not an offer to sell or the solicitation of an offer to buy any security in any jurisdiction where such an offer or solicitation would be illegal. It does not constitute a personal recommendation or take into account the particular investment objectives, financial situations, or needs of individual clients. Clients should consider whether any advice or recommendation in this research is suitable for their particular circumstances and, if appropriate, seek professional advice, including tax advice. The price and value of investments referred to in this research and the income from them may fluctuate. Past performance is not a guide to future performance, future returns are not guaranteed, and a loss of original capital may occur. Fluctuations in exchange rates could have adverse effects on the value or price of, or income derived from, certain investments.
+
+Certain transactions, including those involving futures, options, and other derivatives, give rise to substantial risk and are not suitable for all investors. Investors should review current options and futures disclosure documents which are available from GS sales representatives or at https://www.theocc.com/about/publications/character-risks.jsp and https://www.goldmansachs.com/disclosures/cftc\_fcm\_disclosures. Transaction costs may be significant in option strategies calling for multiple purchase and sales of options such as spreads. Supporting documentation will be supplied upon request.
+
+Differing Levels of Service provided by Global Investment Research: The level and types of services provided to you by GS Global Investment Research may vary as compared to that provided to internal and other external clients of GS, depending on various factors including your individual preferences as to the frequency and manner of receiving communication, your risk profile and investment focus and perspective (e.g., marketwide, sector specific, long term, short term), the size and scope of your overall client relationship with GS, and legal and regulatory constraints. As an example, certain clients may request to receive notifications when research on specific securities is published, and certain clients may request that specific data underlying analysts' fundamental analysis available on our internal client websites be delivered to them electronically through data feeds or otherwise. No change to an analyst's fundamental research views (e.g., ratings, price targets, or material changes to earnings estimates for equity securities), will be communicated to any client prior to inclusion of such information in a research report broadly disseminated through electronic publication to our internal client websites or through other means, as necessary, to all clients who are entitled to receive such reports.
+
+All research reports are disseminated and available to all clients simultaneously through electronic publication to our internal client websites. Not all research content is redistributed to our clients or available to third-party aggregators, nor is GS responsible for the redistribution of our research by third party aggregators. For research, models or other data related to one or more securities, markets or asset classes (including related services) that may be available to you, please contact your GS representative or go to https://research.gs.com.
+
+Disclosure information is also available at https://www.gs.com/research/hedge.html or from Research Compliance, 200 West Street, New York, NY 10282.
+
+# © 2026 GS.
+
+You are permitted to store, display, analyze, modify, reformat, and print the information made available to you via this service only for your own use. You may not resell or reverse engineer this information to calculate or develop any index for disclosure and/or marketing or create any other derivative works or commercial product(s), data or offering(s) without the express written consent of GS. You are not permitted to publish, transmit, or otherwise reproduce this information, in whole or in part, in any format to any third party without the express written consent of GS. This foregoing restriction includes, without limitation, using, extracting, downloading or retrieving this information, in whole or in part, to train or finetune a machine learning or artificial intelligence system, or to provide or reproduce this information, in whole or in part, as a prompt or input to any such system.
