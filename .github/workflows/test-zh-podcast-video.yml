@@ -28,7 +28,11 @@ on:
         required: true
         default: "true"
       min_pages:
-        description: "Minimum PDF page count for the test PDF"
+        description: "Minimum PDF page count for each test PDF"
+        required: true
+        default: "5"
+      test_pdf_count:
+        description: "How many PDFs / bilingual video sets to generate"
         required: true
         default: "5"
       podcast_minutes:
@@ -54,7 +58,7 @@ concurrency:
 jobs:
   test-bilingual-podcast-video:
     runs-on: ubuntu-latest
-    timeout-minutes: 90
+    timeout-minutes: 180
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -86,15 +90,16 @@ jobs:
             --dropbox-root "${{ github.event.inputs.dropbox_root || '/zip_backup' }}" \
             --output-dir "_podcast_test_latest_pdfs"
 
-      - name: Select one recent PDF with at least 5 pages
+      - name: Select recent PDFs with at least 5 pages
         id: select_pdf
         run: |
           python scripts/select_test_pdf.py \
             --input-dir "_podcast_test_latest_pdfs" \
             --output-dir "_podcast_test_selected_pdf" \
-            --min-pages "${{ github.event.inputs.min_pages || '5' }}"
+            --min-pages "${{ github.event.inputs.min_pages || '5' }}" \
+            --max-pdfs "${{ github.event.inputs.test_pdf_count || '5' }}"
 
-      - name: Convert selected PDF to notes and chart assets
+      - name: Convert selected PDFs to notes and chart assets
         env:
           MINER_U: ${{ secrets.MINER_U }}
           DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
@@ -104,6 +109,7 @@ jobs:
           OUTPUT_DIR="podcast_video_tests/${{ github.run_id }}"
           mkdir -p "$OUTPUT_DIR"
           echo "OUTPUT_DIR=$OUTPUT_DIR" >> "$GITHUB_ENV"
+          COUNT="${{ github.event.inputs.test_pdf_count || '5' }}"
           python scripts/run_pdf_to_xhs_in_batches.py \
             --input-dir "_podcast_test_selected_pdf" \
             --output-dir "$OUTPUT_DIR" \
@@ -111,7 +117,7 @@ jobs:
             --continue-on-batch-error false \
             --shard-index 0 \
             --shard-count 1 \
-            --max-reports-per-shard 1 \
+            --max-reports-per-shard "$COUNT" \
             --skip-existing false \
             --model "${{ github.event.inputs.model || 'deepseek-chat' }}" \
             --deepseek-base-url "${{ github.event.inputs.deepseek_base_url || 'https://api.deepseek.com' }}" \
@@ -131,8 +137,9 @@ jobs:
         run: |
           set -o pipefail
           mkdir -p "$OUTPUT_DIR"
-          python scripts/generate_test_podcast_video_eleven.py \
+          python scripts/generate_test_podcast_video_eleven_batch.py \
             --output-dir "$OUTPUT_DIR" \
+            --max-items "${{ github.event.inputs.test_pdf_count || '5' }}" \
             --model "${{ github.event.inputs.model || 'deepseek-chat' }}" \
             --deepseek-base-url "${{ github.event.inputs.deepseek_base_url || 'https://api.deepseek.com' }}" \
             --podcast-minutes "${{ github.event.inputs.podcast_minutes || '5' }}" 2>&1 | tee "$OUTPUT_DIR/podcast_video_progress.log"
@@ -151,4 +158,4 @@ jobs:
       - name: Commit test outputs
         if: ${{ github.event.inputs.commit_results == 'true' }}
         run: |
-          bash scripts/commit_output_dir.sh "$OUTPUT_DIR" "Generate bilingual ElevenLabs podcast video test ${{ github.run_id }}" 8
+          bash scripts/commit_output_dir.sh "$OUTPUT_DIR" "Generate 5 bilingual ElevenLabs podcast video tests ${{ github.run_id }}" 8
