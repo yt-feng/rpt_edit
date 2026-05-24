@@ -1,0 +1,308 @@
+[
+  {
+    "speaker": "ZH_A",
+    "text": "欢迎来到KC桌面。今天我们用一份最新研报，拆一个值得继续跟踪的问题。",
+    "start": 0.0,
+    "end": 7.848,
+    "voice_id": "UFDAUkGzdLAEJlINT3Fx",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "KC桌面",
+      "最新研报"
+    ]
+  },
+  {
+    "speaker": "ZH_A",
+    "text": "最近人民币离岸汇率表现挺强，我看不少朋友都在讨论，这背后到底是什么逻辑？",
+    "start": 8.208,
+    "end": 17.032,
+    "voice_id": "UFDAUkGzdLAEJlINT3Fx",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "人民币离岸汇率"
+    ]
+  },
+  {
+    "speaker": "ZH_B",
+    "text": "对，这份投行研报就专门分析了CNH为什么能持续跑赢，核心是几个结构性因素在支撑。",
+    "start": 17.392,
+    "end": 25.38,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "投行研报",
+      "CNH",
+      "结构性因素"
+    ]
+  },
+  {
+    "speaker": "ZH_A",
+    "text": "那这份报告真正要回答的问题是什么？",
+    "start": 25.74,
+    "end": 28.944,
+    "voice_id": "UFDAUkGzdLAEJlINT3Fx",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "那这份报告真",
+      "正要回答的问"
+    ]
+  },
+  {
+    "speaker": "ZH_B",
+    "text": "它想搞清楚的是，在美元整体走强的背景下，人民币为什么没有跟着贬值，反而还升值了。",
+    "start": 29.304,
+    "end": 37.942,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "人民币",
+      "升值"
+    ]
+  },
+  {
+    "speaker": "ZH_A",
+    "text": "所以这意味着什么？是短期现象还是长期趋势？",
+    "start": 38.302,
+    "end": 42.714,
+    "voice_id": "UFDAUkGzdLAEJlINT3Fx",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "短期现象",
+      "长期趋势"
+    ]
+  },
+  {
+    "speaker": "ZH_B",
+    "text": "报告认为这背后有很强的基本面支撑，比如中国的外汇结算净流入一直很强劲，",
+    "start": 43.074,
+    "end": 51.061,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "基本面支撑",
+      "外汇结算净流入"
+    ]
+  },
+  {
+    "speaker": "ZH_B",
+    "text": "四月份的数据显示净结汇盈余有477亿美元。",
+    "start": 51.421,
+    "end": 55.74,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "四月份",
+      "净结汇盈余",
+      "477亿美元"
+    ]
+  },
+  {
+    "speaker": "ZH_A",
+    "text": "477亿，这个数字确实不小。那这和人民币走强有什么关系？",
+    "start": 56.1,
+    "end": 62.555,
+    "voice_id": "UFDAUkGzdLAEJlINT3Fx",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "477亿"
+    ]
+  },
+  {
+    "speaker": "ZH_B",
+    "text": "简单说，出口企业把赚到的美元换成人民币，增加了对人民币的需求，自然就推高了汇率。",
+    "start": 62.915,
+    "end": 71.507,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "出口企业",
+      "美元",
+      "人民币"
+    ]
+  },
+  {
+    "speaker": "ZH_A",
+    "text": "那除了企业结汇，还有什么因素？",
+    "start": 71.867,
+    "end": 74.839,
+    "voice_id": "UFDAUkGzdLAEJlINT3Fx",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "企业结汇"
+    ]
+  },
+  {
+    "speaker": "ZH_B",
+    "text": "还有一个很关键的点，就是中美关系最近出现了一些积极信号，比如之前的会晤，这直接带动了外资流入。",
+    "start": 75.199,
+    "end": 84.765,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "中美关系",
+      "积极信号",
+      "会晤"
+    ]
+  },
+  {
+    "speaker": "ZH_A",
+    "text": "外资流入？具体表现在哪里？",
+    "start": 85.125,
+    "end": 87.494,
+    "voice_id": "UFDAUkGzdLAEJlINT3Fx",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "外资流入"
+    ]
+  },
+  {
+    "speaker": "ZH_B",
+    "text": "报告提到，五月中旬那周，中国相关的股票ETF净流入就有18亿美元，会晤结束后那天单日就流入了8亿多美元。",
+    "start": 87.854,
+    "end": 99.185,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "五月中旬",
+      "股票ETF",
+      "18亿美元"
+    ]
+  },
+  {
+    "speaker": "ZH_A",
+    "text": "看来市场对这个会晤的反应很正面。那人民币现在是不是已经偏贵了？",
+    "start": 99.545,
+    "end": 105.443,
+    "voice_id": "UFDAUkGzdLAEJlINT3Fx",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "会晤",
+      "人民币",
+      "偏贵"
+    ]
+  },
+  {
+    "speaker": "ZH_B",
+    "text": "恰恰相反，报告用四个估值模型测算，认为人民币目前仍然被低估，平均低估幅度在9.5%左右。",
+    "start": 105.803,
+    "end": 117.042,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "四个估值模型",
+      "低估",
+      "9.5%"
+    ]
+  },
+  {
+    "speaker": "ZH_A",
+    "text": "那照这个逻辑，人民币是不是还有继续升值的空间？",
+    "start": 117.402,
+    "end": 121.628,
+    "voice_id": "UFDAUkGzdLAEJlINT3Fx",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "那照这个逻辑",
+      "人民币是不是"
+    ]
+  },
+  {
+    "speaker": "ZH_B",
+    "text": "报告对做空美元兑离岸人民币的交易给出了中等信心评级，目标价看到6.60。",
+    "start": 121.988,
+    "end": 130.347,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "做空美元兑离岸人民币",
+      "中等信心",
+      "6.60"
+    ]
+  },
+  {
+    "speaker": "ZH_A",
+    "text": "60？那距离现在的水平还有不少空间。但我注意到，报告里还提到了一些不确定因素。",
+    "start": 130.707,
+    "end": 138.509,
+    "voice_id": "UFDAUkGzdLAEJlINT3Fx",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "60",
+      "不确定因素"
+    ]
+  },
+  {
+    "speaker": "ZH_B",
+    "text": "对，比如中东局势对美元的影响，还有官方在中间价上的一些动作，这些细节在完整报告里都有更深入的展开。",
+    "start": 138.869,
+    "end": 148.482,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "中东局势",
+      "美元",
+      "中间价"
+    ]
+  },
+  {
+    "speaker": "ZH_A",
+    "text": "那看来这份报告的分析框架很完整，从资金流到地缘环境再到估值，都覆盖到了。",
+    "start": 148.842,
+    "end": 155.436,
+    "voice_id": "UFDAUkGzdLAEJlINT3Fx",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "资金流",
+      "地缘环境",
+      "估值"
+    ]
+  },
+  {
+    "speaker": "ZH_B",
+    "text": "是的，如果你对人民币的后续走势感兴趣，建议去读一下完整报告，",
+    "start": 155.796,
+    "end": 162.484,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "人民币",
+      "后续走势",
+      "完整报告"
+    ]
+  },
+  {
+    "speaker": "ZH_B",
+    "text": "里面还有关于出口增长预测和贸易顺差的最新数据，这些内容我们今天就先不展开了。",
+    "start": 162.844,
+    "end": 170.367,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "出口增长预测",
+      "贸易顺差"
+    ]
+  },
+  {
+    "speaker": "ZH_A",
+    "text": "好的，那我们今天就聊到这里。想获取完整报告的朋友，可以加入我们的社群，我们会定期分享高质量的投研内容。",
+    "start": 170.727,
+    "end": 182.615,
+    "voice_id": "UFDAUkGzdLAEJlINT3Fx",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "社群",
+      "投研内容"
+    ]
+  },
+  {
+    "speaker": "ZH_B",
+    "text": "对，更多精彩内容都在完整版里，我们下期再见。",
+    "start": 182.975,
+    "end": 187.341,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "完整版"
+    ]
+  }
+]

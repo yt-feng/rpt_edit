@@ -1,0 +1,446 @@
+[
+  {
+    "speaker": "ZH_A",
+    "text": "欢迎来到KC桌面。今天我们用一份最新研报，拆一个值得继续跟踪的问题。",
+    "start": 0.0,
+    "end": 6.502,
+    "voice_id": "UFDAUkGzdLAEJlINT3Fx",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "KC桌面",
+      "研报"
+    ]
+  },
+  {
+    "speaker": "ZH_A",
+    "text": "最近新能源车企的财报密集发布，有一家的数据特别有意思，营收翻了一倍多，但环比却跌了四分之一，",
+    "start": 6.862,
+    "end": 16.242,
+    "voice_id": "UFDAUkGzdLAEJlINT3Fx",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "新能源车企",
+      "财报",
+      "营收"
+    ]
+  },
+  {
+    "speaker": "ZH_A",
+    "text": "这到底该怎么看？",
+    "start": 16.602,
+    "end": 18.181,
+    "voice_id": "UFDAUkGzdLAEJlINT3Fx",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "这到底该怎么"
+    ]
+  },
+  {
+    "speaker": "ZH_B",
+    "text": "你说的是蔚来，他们刚发了2026年第一季度的业绩。营收255亿人民币，同比大增112%，这确实很亮眼，",
+    "start": 18.541,
+    "end": 29.78,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "蔚来",
+      "2026年第一季度",
+      "营收"
+    ]
+  },
+  {
+    "speaker": "ZH_B",
+    "text": "但环比下降26%，因为一季度是传统淡季，交付量也受春节影响。",
+    "start": 30.14,
+    "end": 37.663,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "环比",
+      "下降26%",
+      "一季度"
+    ]
+  },
+  {
+    "speaker": "ZH_A",
+    "text": "那这个同比弹性较高的增长，是靠什么撑起来的？是卖得更多了，还是单车价格上去了？",
+    "start": 38.023,
+    "end": 46.197,
+    "voice_id": "UFDAUkGzdLAEJlINT3Fx",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "同比",
+      "弹性",
+      "增长"
+    ]
+  },
+  {
+    "speaker": "ZH_B",
+    "text": "两者都有。交付量8.35万辆，同比增了98%，接近弹性较高。更重要的是，单车均价环比还涨了8%，",
+    "start": 46.557,
+    "end": 59.328,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "交付量",
+      "8.35万辆",
+      "同比"
+    ]
+  },
+  {
+    "speaker": "ZH_B",
+    "text": "主要是高端车型ES8卖得好，占了总销量的54%。",
+    "start": 59.688,
+    "end": 65.121,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "高端车型",
+      "ES8",
+      "总销量"
+    ]
+  },
+  {
+    "speaker": "ZH_A",
+    "text": "所以ES8成了利润奶牛？那毛利率应该也改善了不少吧。",
+    "start": 65.481,
+    "end": 70.775,
+    "voice_id": "UFDAUkGzdLAEJlINT3Fx",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "ES8",
+      "利润奶牛",
+      "毛利率"
+    ]
+  },
+  {
+    "speaker": "ZH_B",
+    "text": "对，整体毛利率达到19%，同比提升了11.4个百分点，车辆毛利率也有18.8%。",
+    "start": 71.135,
+    "end": 79.494,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "毛利率",
+      "19%",
+      "同比"
+    ]
+  },
+  {
+    "speaker": "ZH_B",
+    "text": "这已经是连续第二个季度实现非通用会计准则下的盈利了，净利润虽然还是亏了4.96亿，",
+    "start": 79.854,
+    "end": 88.167,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "连续第二个季度",
+      "非通用会计准则",
+      "盈利"
+    ]
+  },
+  {
+    "speaker": "ZH_A",
+    "text": "但亏损同比缩小了93%。",
+    "start": 88.527,
+    "end": 91.267,
+    "voice_id": "UFDAUkGzdLAEJlINT3Fx",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "亏损",
+      "同比"
+    ]
+  },
+  {
+    "speaker": "ZH_A",
+    "text": "这听起来像是基本面在持续好转。那对于二季度，管理层给了什么指引？",
+    "start": 91.627,
+    "end": 97.85,
+    "voice_id": "UFDAUkGzdLAEJlINT3Fx",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "基本面",
+      "二季度",
+      "管理层"
+    ]
+  },
+  {
+    "speaker": "ZH_B",
+    "text": "二季度交付指引是11万到11.5万辆，同比增53%到60%。营收指引是328亿到344亿，",
+    "start": 98.21,
+    "end": 108.752,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "二季度",
+      "交付指引",
+      "11万"
+    ]
+  },
+  {
+    "speaker": "ZH_B",
+    "text": "同比增72%到81%。算下来，二季度的单车均价大概在26.7万左右，比一季度微降2%。",
+    "start": 109.112,
+    "end": 118.539,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "同比",
+      "72%",
+      "81%"
+    ]
+  },
+  {
+    "speaker": "ZH_A",
+    "text": "为什么均价会微降？是不是因为新车型开始上量了？",
+    "start": 118.899,
+    "end": 123.822,
+    "voice_id": "UFDAUkGzdLAEJlINT3Fx",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "均价",
+      "微降",
+      "新车型"
+    ]
+  },
+  {
+    "speaker": "ZH_B",
+    "text": "没错，二季度会有新车型，比如乐道L80和ES9。尤其是ES9，下周就要正式发布了。根据行业调研，",
+    "start": 124.182,
+    "end": 135.188,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "二季度",
+      "新车型",
+      "乐道L80"
+    ]
+  },
+  {
+    "speaker": "ZH_B",
+    "text": "ES9的预订单反馈不错，市场都在盯着它的表现，这可能会成为下半年的关键变量。",
+    "start": 135.548,
+    "end": 143.489,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "ES9",
+      "预订单",
+      "市场"
+    ]
+  },
+  {
+    "speaker": "ZH_A",
+    "text": "那关于成本方面，有什么值得关注的点吗？原材料价格波动对毛利有没有影响？",
+    "start": 143.849,
+    "end": 150.908,
+    "voice_id": "UFDAUkGzdLAEJlINT3Fx",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "成本",
+      "原材料价格",
+      "毛利"
+    ]
+  },
+  {
+    "speaker": "ZH_B",
+    "text": "管理层提到，锂、铝、铜这些原材料涨价，每辆车成本大概会增加一万块，但一季度因为库存的原因还没完全体现。",
+    "start": 151.268,
+    "end": 162.785,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "锂",
+      "铝",
+      "铜"
+    ]
+  },
+  {
+    "speaker": "ZH_B",
+    "text": "不过他们仍然维持二季度和全年车辆毛利率17%到18%的目标，说明对成本控制有信心。",
+    "start": 163.145,
+    "end": 172.433,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "二季度",
+      "全年",
+      "车辆毛利率"
+    ]
+  },
+  {
+    "speaker": "ZH_A",
+    "text": "那除了卖车，蔚来在其他业务上有没有新的布局？",
+    "start": 172.793,
+    "end": 177.484,
+    "voice_id": "UFDAUkGzdLAEJlINT3Fx",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "那除了卖车",
+      "蔚来在其他业"
+    ]
+  },
+  {
+    "speaker": "ZH_B",
+    "text": "有，管理层强调非车辆业务的毛利率目标是20%。另外，他们的自研芯片神玑NX9031，",
+    "start": 177.844,
+    "end": 187.41,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "非车辆业务",
+      "毛利率",
+      "20%"
+    ]
+  },
+  {
+    "speaker": "ZH_B",
+    "text": "目标是到下半年渗透率达到80%到85%。换电站方面，今年计划新建1000座，",
+    "start": 187.77,
+    "end": 197.383,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "下半年",
+      "渗透率",
+      "80%"
+    ]
+  },
+  {
+    "speaker": "ZH_A",
+    "text": "第三代换电站从三季度开始部署。",
+    "start": 197.743,
+    "end": 200.855,
+    "voice_id": "UFDAUkGzdLAEJlINT3Fx",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "第三代换电站",
+      "三季度",
+      "部署"
+    ]
+  },
+  {
+    "speaker": "ZH_A",
+    "text": "这些听起来都是长期投入，那短期来看，他们今年能实现经营利润转正吗？",
+    "start": 201.215,
+    "end": 207.484,
+    "voice_id": "UFDAUkGzdLAEJlINT3Fx",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "经营利润",
+      "转正"
+    ]
+  },
+  {
+    "speaker": "ZH_B",
+    "text": "管理层维持了2026年非通用会计准则下经营利润盈亏平衡的指引。但实现这个目标，",
+    "start": 207.844,
+    "end": 215.832,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "2026年",
+      "非通用会计准则",
+      "经营利润"
+    ]
+  },
+  {
+    "speaker": "ZH_B",
+    "text": "关键要看新车型ES9能不能持续热销，以及原材料成本压力能不能顺利传导。",
+    "start": 216.192,
+    "end": 222.74,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "新车型",
+      "ES9",
+      "热销"
+    ]
+  },
+  {
+    "speaker": "ZH_A",
+    "text": "这些细节在完整报告里有更深入的分析。",
+    "start": 223.1,
+    "end": 227.372,
+    "voice_id": "UFDAUkGzdLAEJlINT3Fx",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "完整报告"
+    ]
+  },
+  {
+    "speaker": "ZH_A",
+    "text": "那这份报告里还有哪些没有完全展开的悬念？",
+    "start": 227.732,
+    "end": 231.865,
+    "voice_id": "UFDAUkGzdLAEJlINT3Fx",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "悬念"
+    ]
+  },
+  {
+    "speaker": "ZH_B",
+    "text": "报告里提到，ES9的发布可能会影响到ES8的订单结构，但具体会怎么演变，需要等正式上市后的数据。另外，",
+    "start": 232.225,
+    "end": 242.907,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "ES9",
+      "发布",
+      "ES8"
+    ]
+  },
+  {
+    "speaker": "ZH_B",
+    "text": "管理层说五座版ES8在下半年推出，这个新车型对品牌高端定位的支撑作用，也是值得持续跟踪的。",
+    "start": 243.267,
+    "end": 252.601,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "五座版ES8",
+      "下半年",
+      "品牌高端定位"
+    ]
+  },
+  {
+    "speaker": "ZH_A",
+    "text": "看来想了解蔚来下半年的完整逻辑，还得去读完整报告。如果想获取更多类似的深度解读，可以加入我们的研报社群，",
+    "start": 252.961,
+    "end": 263.874,
+    "voice_id": "UFDAUkGzdLAEJlINT3Fx",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "蔚来",
+      "下半年",
+      "完整报告"
+    ]
+  },
+  {
+    "speaker": "ZH_A",
+    "text": "每周都有精选的投行分析。",
+    "start": 264.234,
+    "end": 266.742,
+    "voice_id": "UFDAUkGzdLAEJlINT3Fx",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "每周",
+      "投行分析"
+    ]
+  },
+  {
+    "speaker": "ZH_B",
+    "text": "对，完整报告里还有更详细的财务模型和风险提示，能帮你更系统地理解这家公司的研究逻辑。",
+    "start": 267.102,
+    "end": 275.926,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "完整报告",
+      "财务模型",
+      "风险提示"
+    ]
+  }
+]

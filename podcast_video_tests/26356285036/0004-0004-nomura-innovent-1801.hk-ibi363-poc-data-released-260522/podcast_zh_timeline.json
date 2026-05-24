@@ -1,0 +1,356 @@
+[
+  {
+    "speaker": "ZH_A",
+    "text": "欢迎来到KC桌面。今天我们用一份最新研报，拆一个值得继续跟踪的问题。",
+    "start": 0.0,
+    "end": 6.548,
+    "voice_id": "UFDAUkGzdLAEJlINT3Fx",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "KC桌面",
+      "研报",
+      "跟踪"
+    ]
+  },
+  {
+    "speaker": "ZH_A",
+    "text": "最近信达生物有一款新药IBI363的数据发布了，听说在ASCO之前就提前公开了，这药到底有什么特别的？",
+    "start": 6.908,
+    "end": 16.103,
+    "voice_id": "UFDAUkGzdLAEJlINT3Fx",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "信达生物",
+      "IBI363",
+      "ASCO"
+    ]
+  },
+  {
+    "speaker": "ZH_B",
+    "text": "这份研报重点分析了IBI363在非小细胞肺癌上的早期临床数据，一个是一线治疗，",
+    "start": 16.463,
+    "end": 24.544,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "IBI363",
+      "非小细胞肺癌",
+      "一线治疗"
+    ]
+  },
+  {
+    "speaker": "ZH_B",
+    "text": "另一个是对免疫治疗耐药的后线治疗，数据都挺有看头的。",
+    "start": 24.904,
+    "end": 30.291,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "免疫治疗耐药",
+      "后线治疗"
+    ]
+  },
+  {
+    "speaker": "ZH_A",
+    "text": "所以这份报告真正要回答的问题是什么？",
+    "start": 30.651,
+    "end": 33.994,
+    "voice_id": "UFDAUkGzdLAEJlINT3Fx",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "所以这份报告",
+      "真正要回答的"
+    ]
+  },
+  {
+    "speaker": "ZH_B",
+    "text": "它想回答的是，IBI363作为一款PD-1和IL2的双靶点药物，",
+    "start": 34.354,
+    "end": 40.066,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "IBI363",
+      "PD-1",
+      "IL2"
+    ]
+  },
+  {
+    "speaker": "ZH_B",
+    "text": "能不能在竞争激烈的肺癌领域找到自己的位置，尤其是那些对现有免疫疗法没反应的患者。",
+    "start": 40.426,
+    "end": 50.272,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "肺癌",
+      "免疫疗法",
+      "没反应"
+    ]
+  },
+  {
+    "speaker": "ZH_A",
+    "text": "那关键洞察有哪些？先说一线治疗这块吧。",
+    "start": 50.632,
+    "end": 54.858,
+    "voice_id": "UFDAUkGzdLAEJlINT3Fx",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "一线治疗"
+    ]
+  },
+  {
+    "speaker": "ZH_B",
+    "text": "在一线治疗里，有个剂量组的效果特别亮眼，客观缓解率达到了86.4%，",
+    "start": 55.218,
+    "end": 62.602,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "剂量组",
+      "客观缓解率",
+      "86.4%"
+    ]
+  },
+  {
+    "speaker": "ZH_B",
+    "text": "比同类药物50%到60%的水平高出一截。",
+    "start": 62.962,
+    "end": 66.584,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "同类药物",
+      "50%",
+      "60%"
+    ]
+  },
+  {
+    "speaker": "ZH_A",
+    "text": "4%确实很高，但这意味着什么？是数据有水分吗？",
+    "start": 66.944,
+    "end": 71.217,
+    "voice_id": "UFDAUkGzdLAEJlINT3Fx",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "4%",
+      "数据",
+      "水分"
+    ]
+  },
+  {
+    "speaker": "ZH_B",
+    "text": "研报也承认了，这个数据基于的病例数不多，所以不能直接说它一定更好，但至少信号非常积极，值得进一步观察。",
+    "start": 71.577,
+    "end": 82.536,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "病例数",
+      "信号"
+    ]
+  },
+  {
+    "speaker": "ZH_A",
+    "text": "那对耐药患者呢？这部分市场应该更难啃吧。",
+    "start": 82.896,
+    "end": 87.355,
+    "voice_id": "UFDAUkGzdLAEJlINT3Fx",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "耐药患者",
+      "市场"
+    ]
+  },
+  {
+    "speaker": "ZH_B",
+    "text": "对，在免疫治疗耐药的后线治疗中，3毫克每公斤剂量组的中位总生存期达到了18.2个月，",
+    "start": 87.715,
+    "end": 98.21,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "3毫克每公斤",
+      "中位总生存期",
+      "18.2个月"
+    ]
+  },
+  {
+    "speaker": "ZH_B",
+    "text": "而一个大型历史试验的数据只有9.4个月，差距很明显。",
+    "start": 98.57,
+    "end": 103.214,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "历史试验",
+      "9.4个月"
+    ]
+  },
+  {
+    "speaker": "ZH_A",
+    "text": "这意味着它可能填补了目前临床上很大的空白，对吧？",
+    "start": 103.574,
+    "end": 107.893,
+    "voice_id": "UFDAUkGzdLAEJlINT3Fx",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "空白"
+    ]
+  },
+  {
+    "speaker": "ZH_B",
+    "text": "没错，研报直接说这可能是它的“甜蜜点”，就是针对那些已经对其他免疫药没反应的患者，这个市场目前需求很大，",
+    "start": 108.253,
+    "end": 119.306,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "甜蜜点",
+      "免疫药",
+      "没反应"
+    ]
+  },
+  {
+    "speaker": "ZH_B",
+    "text": "但有效药物不多。",
+    "start": 119.666,
+    "end": 121.245,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "有效药物"
+    ]
+  },
+  {
+    "speaker": "ZH_A",
+    "text": "听起来前景不错，但新药通常都有安全问题，这份报告有没有提到？",
+    "start": 121.605,
+    "end": 128.106,
+    "voice_id": "UFDAUkGzdLAEJlINT3Fx",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "安全问题"
+    ]
+  },
+  {
+    "speaker": "ZH_B",
+    "text": "提到了，安全性一直是这款药从研发之初就关注的焦点。比如在后线治疗中，有99.",
+    "start": 128.466,
+    "end": 136.686,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "安全性",
+      "研发"
+    ]
+  },
+  {
+    "speaker": "ZH_B",
+    "text": "3%的患者出现了治疗相关的不良事件，其中三级以上的严重事件占到了48.5%。",
+    "start": 137.046,
+    "end": 147.541,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "不良事件",
+      "三级以上",
+      "48.5%"
+    ]
+  },
+  {
+    "speaker": "ZH_A",
+    "text": "将近一半的患者有严重副作用，这比例可不低，那具体是哪些问题？",
+    "start": 147.901,
+    "end": 154.496,
+    "voice_id": "UFDAUkGzdLAEJlINT3Fx",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "严重副作用"
+    ]
+  },
+  {
+    "speaker": "ZH_B",
+    "text": "常见的是关节痛、贫血和皮疹。研报说需要持续监测，但没完全展开讲怎么管理这些副作用。",
+    "start": 154.856,
+    "end": 163.308,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "关节痛",
+      "贫血",
+      "皮疹"
+    ]
+  },
+  {
+    "speaker": "ZH_A",
+    "text": "那这份报告里还有哪些问题没讲完，值得我们去读完整版？",
+    "start": 163.668,
+    "end": 168.823,
+    "voice_id": "UFDAUkGzdLAEJlINT3Fx",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "那这份报告里",
+      "还有哪些问题"
+    ]
+  },
+  {
+    "speaker": "ZH_B",
+    "text": "一个很关键的悬念是，IBI363目前正在和标准疗法比如帕博利珠单抗做头对头试验，这个对比结果还没出来。",
+    "start": 169.183,
+    "end": 180.421,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "IBI363",
+      "帕博利珠单抗",
+      "头对头"
+    ]
+  },
+  {
+    "speaker": "ZH_B",
+    "text": "另外，全球三期试验的设计也会在ASCO会议上公布，这两个点都会决定它未来能不能真正上市。",
+    "start": 180.781,
+    "end": 190.255,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "全球三期",
+      "ASCO"
+    ]
+  },
+  {
+    "speaker": "ZH_A",
+    "text": "看来完整报告里还有不少干货。那我们今天就先聊到这里，想深入了解的朋友可以去看看完整研报，",
+    "start": 190.615,
+    "end": 200.089,
+    "voice_id": "UFDAUkGzdLAEJlINT3Fx",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "完整研报"
+    ]
+  },
+  {
+    "speaker": "ZH_A",
+    "text": "或者加入我们的讨论社群，一起跟进后续进展。",
+    "start": 200.449,
+    "end": 204.86,
+    "voice_id": "UFDAUkGzdLAEJlINT3Fx",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "讨论社群"
+    ]
+  },
+  {
+    "speaker": "ZH_B",
+    "text": "对，尤其是ASCO上的数据公布，很值得关注。",
+    "start": 205.22,
+    "end": 208.889,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "ASCO",
+      "数据公布"
+    ]
+  }
+]

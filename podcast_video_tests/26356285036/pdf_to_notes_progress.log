@@ -1,0 +1,38 @@
+Found 5 total PDFs; shard 0/1 has 5 PDFs, skips 0 already converted, will process 5 PDFs with batch_size=1.
+Running batch 1: 1 PDFs
+Found 1 PDFs.
+Uploading PDF to MinerU: /tmp/pdf_batch_001_i9b1p2_m/pdfs/0001-0001-nomura-usd-cny-fix-model-260522.pdf
+MinerU batch_id=b78ac81e-7841-4809-beb2-b0ec4cedf10b
+MinerU states: waiting-file
+MinerU states: done
+Done. Results written to /home/runner/work/rpt_edit/rpt_edit/podcast_video_tests/26356285036
+Running batch 2: 1 PDFs
+Found 1 PDFs.
+Uploading PDF to MinerU: /tmp/pdf_batch_002_ubonfs2p/pdfs/0002-0002-nomura-kelun-biotech-6990.hk-another-big-win-for-sac-tmt-in-upcoming-asco-260522.pdf
+MinerU batch_id=4143f857-67cd-4252-9d22-a9838c96fbd2
+MinerU states: waiting-file
+MinerU states: done
+Done. Results written to /home/runner/work/rpt_edit/rpt_edit/podcast_video_tests/26356285036
+Running batch 3: 1 PDFs
+Found 1 PDFs.
+Uploading PDF to MinerU: /tmp/pdf_batch_003_aag77tcp/pdfs/0003-0003-nomura-nio-inc-nio.us-solid-1q26-expecting-sequential-improvement-ahead-260522.pdf
+MinerU batch_id=f4c0c4a1-5bf9-4d6f-ad97-1b6c3ca04480
+MinerU states: pending
+MinerU states: running
+MinerU states: done
+Done. Results written to /home/runner/work/rpt_edit/rpt_edit/podcast_video_tests/26356285036
+Running batch 4: 1 PDFs
+Found 1 PDFs.
+Uploading PDF to MinerU: /tmp/pdf_batch_004_kfwgyncu/pdfs/0004-0004-nomura-innovent-1801.hk-ibi363-poc-data-released-260522.pdf
+MinerU batch_id=f37d279d-f4c9-4b84-bdf0-5aa76c11e9df
+MinerU states: pending
+MinerU states: done
+Done. Results written to /home/runner/work/rpt_edit/rpt_edit/podcast_video_tests/26356285036
+Running batch 5: 1 PDFs
+Found 1 PDFs.
+Uploading PDF to MinerU: /tmp/pdf_batch_005_ll9xx8zh/pdfs/0005-0005-nomura-cnh-bop-flow-dynamics-remain-supportive-260521.pdf
+MinerU batch_id=a333bda9-aad7-4441-9ab6-a86dd7898cfa
+MinerU states: waiting-file
+MinerU states: done
+Done. Results written to /home/runner/work/rpt_edit/rpt_edit/podcast_video_tests/26356285036
+All batches completed successfully.

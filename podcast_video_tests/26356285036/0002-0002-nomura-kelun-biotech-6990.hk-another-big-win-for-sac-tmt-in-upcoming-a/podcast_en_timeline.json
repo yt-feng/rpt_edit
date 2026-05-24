@@ -1,0 +1,377 @@
+[
+  {
+    "speaker": "EN_A",
+    "text": "Welcome to KC desk note. Today we are unpacking one fresh research report and the question it raises.",
+    "start": 0.0,
+    "end": 6.455,
+    "voice_id": "XZEfcFyBnzsNJrdvkWdI",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "KC desk note",
+      "research report"
+    ]
+  },
+  {
+    "speaker": "EN_A",
+    "text": "Welcome back to the show. Today we’re looking at a big data readout from Kelun Biotech, just ahead of the ASCO conference.",
+    "start": 6.815,
+    "end": 13.828,
+    "voice_id": "XZEfcFyBnzsNJrdvkWdI",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "big data readout",
+      "Kelun Biotech",
+      "ASCO"
+    ]
+  },
+  {
+    "speaker": "EN_B",
+    "text": "That’s right. The company announced encouraging results from its OptiTROP-Lung05 trial for sac-TMT, a TROP-2 ADC,",
+    "start": 14.188,
+    "end": 21.572,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "OptiTROP-Lung05",
+      "sac-TMT",
+      "TROP-2 ADC"
+    ]
+  },
+  {
+    "speaker": "EN_B",
+    "text": "in first-line PD-L1 positive non-small cell lung cancer.",
+    "start": 21.932,
+    "end": 24.997,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "first-line",
+      "PD-L1 positive",
+      "non-small cell lung cancer"
+    ]
+  },
+  {
+    "speaker": "EN_A",
+    "text": "So what’s the key question this report is trying to answer?",
+    "start": 25.357,
+    "end": 28.097,
+    "voice_id": "XZEfcFyBnzsNJrdvkWdI",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "what’s",
+      "question"
+    ]
+  },
+  {
+    "speaker": "EN_B",
+    "text": "Essentially, can sac-TMT combined with pembrolizumab beat pembrolizumab alone in this setting? And the data suggests a clear yes.",
+    "start": 28.457,
+    "end": 35.005,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "sac-TMT",
+      "pembrolizumab",
+      "beat"
+    ]
+  },
+  {
+    "speaker": "EN_A",
+    "text": "Let’s get into the numbers. What stood out to you?",
+    "start": 35.365,
+    "end": 37.872,
+    "voice_id": "XZEfcFyBnzsNJrdvkWdI",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "Let’s",
+      "numbers"
+    ]
+  },
+  {
+    "speaker": "EN_B",
+    "text": "The progression-free survival, or PFS, data is quite striking. The combination had a hazard ratio of 0. 35,",
+    "start": 38.232,
+    "end": 45.245,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "progression-free survival",
+      "PFS",
+      "hazard ratio"
+    ]
+  },
+  {
+    "speaker": "EN_B",
+    "text": "meaning a 65% reduction in the risk of progression compared to pembrolizumab alone.",
+    "start": 45.605,
+    "end": 50.156,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "65% reduction",
+      "risk of progression",
+      "pembrolizumab"
+    ]
+  },
+  {
+    "speaker": "EN_A",
+    "text": "That’s a pretty big improvement. How does it compare to other treatments in the space?",
+    "start": 50.516,
+    "end": 54.695,
+    "voice_id": "XZEfcFyBnzsNJrdvkWdI",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "That’s",
+      "pretty"
+    ]
+  },
+  {
+    "speaker": "EN_B",
+    "text": "It sets a high bar. Other regimens, like ivonescimab or pembro plus chemo, reported hazard ratios around 0.50. So this is a meaningful step forward.",
+    "start": 55.055,
+    "end": 63.647,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "ivonescimab",
+      "pembro plus chemo",
+      "hazard ratios"
+    ]
+  },
+  {
+    "speaker": "EN_A",
+    "text": "And the overall survival trend?",
+    "start": 64.007,
+    "end": 65.679,
+    "voice_id": "XZEfcFyBnzsNJrdvkWdI",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "overall survival"
+    ]
+  },
+  {
+    "speaker": "EN_B",
+    "text": "The hazard ratio for OS was 0. 55, which is positive but not yet statistically significant. The report notes it’s an encouraging trend,",
+    "start": 66.039,
+    "end": 74.491,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "hazard ratio",
+      "OS",
+      "encouraging trend"
+    ]
+  },
+  {
+    "speaker": "EN_B",
+    "text": "but we’ll need to see more mature data.",
+    "start": 74.851,
+    "end": 76.848,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "mature data"
+    ]
+  },
+  {
+    "speaker": "EN_A",
+    "text": "There’s also some interesting subgroup analysis. What did you find there?",
+    "start": 77.208,
+    "end": 80.551,
+    "voice_id": "XZEfcFyBnzsNJrdvkWdI",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "subgroup analysis"
+    ]
+  },
+  {
+    "speaker": "EN_B",
+    "text": "Yes, the effect was even stronger in patients with PD-L1 TPS of 1 to 49%, with a PFS hazard ratio of 0. 28, compared to 0. 47 for those with TPS above 50%.",
+    "start": 80.911,
+    "end": 92.986,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "PD-L1 TPS",
+      "1 to 49%",
+      "PFS hazard ratio"
+    ]
+  },
+  {
+    "speaker": "EN_B",
+    "text": "That’s a notable difference.",
+    "start": 93.346,
+    "end": 94.832,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "That’s",
+      "notable"
+    ]
+  },
+  {
+    "speaker": "EN_A",
+    "text": "So what does this mean for the competitive landscape?",
+    "start": 95.192,
+    "end": 97.421,
+    "voice_id": "XZEfcFyBnzsNJrdvkWdI",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "competitive landscape"
+    ]
+  },
+  {
+    "speaker": "EN_B",
+    "text": "It suggests sac-TMT could become a new standard-of-care option in this indication. The report also mentions it’s under priority review by the Chinese regulator,",
+    "start": 97.781,
+    "end": 105.629,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "sac-TMT",
+      "standard-of-care",
+      "priority review"
+    ]
+  },
+  {
+    "speaker": "EN_B",
+    "text": "which could accelerate market access.",
+    "start": 105.989,
+    "end": 108.079,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "market access"
+    ]
+  },
+  {
+    "speaker": "EN_A",
+    "text": "The report also raises the target price. What’s driving that?",
+    "start": 108.439,
+    "end": 111.643,
+    "voice_id": "XZEfcFyBnzsNJrdvkWdI",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "target price"
+    ]
+  },
+  {
+    "speaker": "EN_B",
+    "text": "The analysts increased their revenue estimates for sac-TMT, both in China and overseas, and lifted the DCF-based target from HKD 438 to HKD 544.",
+    "start": 112.003,
+    "end": 122.034,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "revenue estimates",
+      "sac-TMT",
+      "China"
+    ]
+  },
+  {
+    "speaker": "EN_B",
+    "text": "That reflects higher sales expectations.",
+    "start": 122.394,
+    "end": 124.484,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "sales expectations"
+    ]
+  },
+  {
+    "speaker": "EN_A",
+    "text": "But the report doesn’t settle everything. What’s still uncertain?",
+    "start": 124.844,
+    "end": 127.909,
+    "voice_id": "XZEfcFyBnzsNJrdvkWdI",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "doesn’t",
+      "settle"
+    ]
+  },
+  {
+    "speaker": "EN_B",
+    "text": "We don’t have full details on safety or long-term OS data yet. Also, the overseas regulatory path and pricing are still open questions.",
+    "start": 128.269,
+    "end": 134.957,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "safety",
+      "long-term OS",
+      "overseas regulatory path"
+    ]
+  },
+  {
+    "speaker": "EN_B",
+    "text": "That’s why the full report and the upcoming ASCO presentation are worth a closer look.",
+    "start": 135.317,
+    "end": 139.125,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "ASCO presentation"
+    ]
+  },
+  {
+    "speaker": "EN_A",
+    "text": "Good point. And the company is hosting a session to discuss the results on May 31st.",
+    "start": 139.485,
+    "end": 144.872,
+    "voice_id": "XZEfcFyBnzsNJrdvkWdI",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "May 31st"
+    ]
+  },
+  {
+    "speaker": "EN_B",
+    "text": "Exactly. There’s a lot to unpack, and the community will have plenty to debate after that.",
+    "start": 145.232,
+    "end": 149.783,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "Exactly",
+      "There’s"
+    ]
+  },
+  {
+    "speaker": "EN_A",
+    "text": "Thanks for breaking it down. For listeners, we’ll leave a link to the full report in the show notes.",
+    "start": 150.143,
+    "end": 155.53,
+    "voice_id": "XZEfcFyBnzsNJrdvkWdI",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "Thanks",
+      "breaking"
+    ]
+  },
+  {
+    "speaker": "EN_A",
+    "text": "Join the discussion in our community to share your thoughts.",
+    "start": 155.89,
+    "end": 158.908,
+    "voice_id": "XZEfcFyBnzsNJrdvkWdI",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "discussion",
+      "community"
+    ]
+  },
+  {
+    "speaker": "EN_B",
+    "text": "Thanks for listening. See you next time.",
+    "start": 159.268,
+    "end": 161.265,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "Thanks",
+      "listening"
+    ]
+  }
+]

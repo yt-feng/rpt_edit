@@ -1,0 +1,365 @@
+[
+  {
+    "speaker": "EN_A",
+    "text": "Welcome to KC desk note. Today we are unpacking one fresh research report and the question it raises.",
+    "start": 0.0,
+    "end": 6.13,
+    "voice_id": "XZEfcFyBnzsNJrdvkWdI",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "KC desk note",
+      "research report"
+    ]
+  },
+  {
+    "speaker": "EN_A",
+    "text": "Welcome back to the show. Today we’re diving into NIO’s first quarter 2026 results. The headline numbers look solid—revenue up 112% year on year.",
+    "start": 6.49,
+    "end": 18.286,
+    "voice_id": "XZEfcFyBnzsNJrdvkWdI",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "NIO",
+      "first quarter 2026",
+      "revenue"
+    ]
+  },
+  {
+    "speaker": "EN_A",
+    "text": "But what really stands out is that they posted a second consecutive quarter of non-GAAP profit. So, what’s the real story here?",
+    "start": 18.646,
+    "end": 26.819,
+    "voice_id": "XZEfcFyBnzsNJrdvkWdI",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "second consecutive quarter",
+      "non-GAAP profit"
+    ]
+  },
+  {
+    "speaker": "EN_B",
+    "text": "That’s exactly the key frame. NIO delivered a strong quarter with revenue at the high end of guidance.",
+    "start": 27.179,
+    "end": 32.52,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "NIO",
+      "revenue",
+      "high end of guidance"
+    ]
+  },
+  {
+    "speaker": "EN_B",
+    "text": "But the sequential drop from Q4 is expected—it’s a seasonal weak period. The more important takeaway is the margin improvement and the path to profitability.",
+    "start": 32.88,
+    "end": 41.75,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "sequential drop",
+      "Q4",
+      "seasonal weak period"
+    ]
+  },
+  {
+    "speaker": "EN_A",
+    "text": "So the market was watching for margins. What did we see?",
+    "start": 42.11,
+    "end": 44.664,
+    "voice_id": "XZEfcFyBnzsNJrdvkWdI",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "margins"
+    ]
+  },
+  {
+    "speaker": "EN_B",
+    "text": "Gross margin hit 19%, up 11. 4 percentage points year on year and 1. 5 points sequentially. Vehicle margin was 18. 8%.",
+    "start": 45.024,
+    "end": 54.591,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "Gross margin",
+      "19%",
+      "Vehicle margin"
+    ]
+  },
+  {
+    "speaker": "EN_B",
+    "text": "That’s driven by a richer product mix—especially the ES8, which made up 54% of sales in Q1. Higher ASPs helped offset the volume dip.",
+    "start": 54.951,
+    "end": 63.31,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "product mix",
+      "ES8",
+      "54% of sales"
+    ]
+  },
+  {
+    "speaker": "EN_A",
+    "text": "And the profit picture—they still reported a net loss, but it’s shrinking fast.",
+    "start": 63.67,
+    "end": 68.082,
+    "voice_id": "XZEfcFyBnzsNJrdvkWdI",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "net loss",
+      "shrinking"
+    ]
+  },
+  {
+    "speaker": "EN_B",
+    "text": "Right. Net loss narrowed 93% year on year to just under 500 million yuan. And on a non-GAAP basis, they were profitable for the second quarter in a row.",
+    "start": 68.442,
+    "end": 77.962,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "Net loss",
+      "93%",
+      "500 million yuan"
+    ]
+  },
+  {
+    "speaker": "EN_B",
+    "text": "That’s a big milestone. Operating margin was minus 1. 2%, but that’s a massive improvement from minus 53% a year ago.",
+    "start": 78.322,
+    "end": 85.566,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "milestone",
+      "Operating margin",
+      "minus 53%"
+    ]
+  },
+  {
+    "speaker": "EN_A",
+    "text": "So they’re getting closer to breakeven. But what about the outlook for Q2?",
+    "start": 85.926,
+    "end": 89.688,
+    "voice_id": "XZEfcFyBnzsNJrdvkWdI",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "breakeven",
+      "outlook",
+      "Q2"
+    ]
+  },
+  {
+    "speaker": "EN_B",
+    "text": "Guidance is for 110 to 115 thousand deliveries, up over 50% year on year. Revenue is expected between 32. 8 and 34. 4 billion yuan.",
+    "start": 90.048,
+    "end": 99.986,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "Guidance",
+      "110 to 115 thousand deliveries",
+      "50%"
+    ]
+  },
+  {
+    "speaker": "EN_B",
+    "text": "That implies ASP might dip slightly to around 267k, because newer models like the Onvo L80 and the upcoming ES9 could shift the mix.",
+    "start": 100.346,
+    "end": 107.591,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "ASP",
+      "267k",
+      "Onvo L80"
+    ]
+  },
+  {
+    "speaker": "EN_A",
+    "text": "The ES9 launch is next Wednesday. That seems like a big catalyst.",
+    "start": 107.951,
+    "end": 111.62,
+    "voice_id": "XZEfcFyBnzsNJrdvkWdI",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "ES9 launch",
+      "next Wednesday",
+      "catalyst"
+    ]
+  },
+  {
+    "speaker": "EN_B",
+    "text": "Absolutely. The report highlights that pre-order data is positive, based on industry surveys. And management noted that with ES9 in stores,",
+    "start": 111.98,
+    "end": 120.153,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "pre-order data",
+      "industry surveys",
+      "ES9 in stores"
+    ]
+  },
+  {
+    "speaker": "EN_B",
+    "text": "foot traffic has increased, which also helped ES8 orders. In fact, the first 20 days of May saw the highest ES8 order volume since October last year.",
+    "start": 120.513,
+    "end": 129.244,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "foot traffic",
+      "ES8 orders",
+      "20 days of May"
+    ]
+  },
+  {
+    "speaker": "EN_A",
+    "text": "So the new model is pulling in customers for the whole brand. That’s a nice halo effect.",
+    "start": 129.604,
+    "end": 133.83,
+    "voice_id": "XZEfcFyBnzsNJrdvkWdI",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "halo effect"
+    ]
+  },
+  {
+    "speaker": "EN_B",
+    "text": "Exactly. But there are headwinds too. Management flagged that input costs—like lithium, memory, aluminum, and copper—are rising. The impact is about 10,",
+    "start": 134.19,
+    "end": 143.431,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "headwinds",
+      "input costs",
+      "lithium"
+    ]
+  },
+  {
+    "speaker": "EN_B",
+    "text": "000 yuan per vehicle, but it hasn’t fully hit Q1 results due to inventory. They still target vehicle gross margins of 17 to 18 percent for Q2 and the full year.",
+    "start": 143.791,
+    "end": 153.079,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "vehicle gross margins",
+      "17 to 18 percent",
+      "Q2"
+    ]
+  },
+  {
+    "speaker": "EN_A",
+    "text": "That’s a key risk to watch. So the report is bullish, but it doesn’t settle everything. What’s one thing the full report dives into that we’re skipping here?",
+    "start": 153.439,
+    "end": 161.798,
+    "voice_id": "XZEfcFyBnzsNJrdvkWdI",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "risk",
+      "bullish"
+    ]
+  },
+  {
+    "speaker": "EN_B",
+    "text": "One area is the detailed cost structure—R&D spending, SG&A targets, and the chip penetration plans for their self-developed Shenji NX9031.",
+    "start": 162.158,
+    "end": 171.493,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "cost structure",
+      "R&D spending",
+      "SG&A targets"
+    ]
+  },
+  {
+    "speaker": "EN_B",
+    "text": "The report has a lot of granularity on how they plan to control costs while scaling. That’s worth reading closely.",
+    "start": 171.853,
+    "end": 177.193,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "control costs",
+      "scaling"
+    ]
+  },
+  {
+    "speaker": "EN_A",
+    "text": "And the analyst maintains a research view rating with an USD 8. 6 target price. The stock trades at about 0. 7 times forward sales.",
+    "start": 177.553,
+    "end": 187.77,
+    "voice_id": "XZEfcFyBnzsNJrdvkWdI",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "analyst",
+      "research view rating",
+      "target price"
+    ]
+  },
+  {
+    "speaker": "EN_A",
+    "text": "That seems reasonable if the margin story holds.",
+    "start": 188.13,
+    "end": 190.777,
+    "voice_id": "XZEfcFyBnzsNJrdvkWdI",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "margin story"
+    ]
+  },
+  {
+    "speaker": "EN_B",
+    "text": "It does. But the real debate is whether NIO can sustain this momentum as competition heats up and costs rise. The report leaves that open for discussion.",
+    "start": 191.137,
+    "end": 200.379,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "competition",
+      "costs rise"
+    ]
+  },
+  {
+    "speaker": "EN_A",
+    "text": "Great. We’ll leave it there for now.",
+    "start": 200.739,
+    "end": 202.318,
+    "voice_id": "XZEfcFyBnzsNJrdvkWdI",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "Great",
+      "We’ll"
+    ]
+  },
+  {
+    "speaker": "EN_A",
+    "text": "If you want to dig into the full report—especially the cost breakdown and margin assumptions—join the community conversation. Thanks for listening.",
+    "start": 202.678,
+    "end": 211.223,
+    "voice_id": "XZEfcFyBnzsNJrdvkWdI",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "cost breakdown",
+      "margin assumptions",
+      "community conversation"
+    ]
+  },
+  {
+    "speaker": "EN_B",
+    "text": "Thanks for having me.",
+    "start": 211.583,
+    "end": 212.79,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "Thanks",
+      "having"
+    ]
+  }
+]

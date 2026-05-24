@@ -1,0 +1,359 @@
+[
+  {
+    "speaker": "EN_A",
+    "text": "Welcome to KC desk note. Today we are unpacking one fresh research report and the question it raises.",
+    "start": 0.0,
+    "end": 5.944,
+    "voice_id": "XZEfcFyBnzsNJrdvkWdI",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "KC desk note",
+      "research report"
+    ]
+  },
+  {
+    "speaker": "EN_A",
+    "text": "Welcome back to our podcast. Today we’re looking at a fresh report on the offshore renminbi.",
+    "start": 6.304,
+    "end": 11.134,
+    "voice_id": "XZEfcFyBnzsNJrdvkWdI",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "offshore renminbi"
+    ]
+  },
+  {
+    "speaker": "EN_B",
+    "text": "That’s right. The report argues that CNH is set to outperform, driven by strong capital flows and a supportive policy-related backdrop.",
+    "start": 11.494,
+    "end": 19.157,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "CNH",
+      "outperform",
+      "capital flows"
+    ]
+  },
+  {
+    "speaker": "EN_A",
+    "text": "So what’s the core question this report is trying to answer?",
+    "start": 19.517,
+    "end": 22.257,
+    "voice_id": "XZEfcFyBnzsNJrdvkWdI",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "core question"
+    ]
+  },
+  {
+    "speaker": "EN_B",
+    "text": "It’s really about whether the renminbi can continue to strengthen even when the US dollar is strong. The answer, based on the data, is yes.",
+    "start": 22.617,
+    "end": 30.279,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "renminbi",
+      "strengthen",
+      "US dollar"
+    ]
+  },
+  {
+    "speaker": "EN_A",
+    "text": "Let’s dig into the first key insight. What’s driving this outperformance?",
+    "start": 30.639,
+    "end": 34.54,
+    "voice_id": "XZEfcFyBnzsNJrdvkWdI",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "first key insight",
+      "outperformance"
+    ]
+  },
+  {
+    "speaker": "EN_B",
+    "text": "The first big factor is China’s strong external sector. Despite the US dollar index rising, USD/CNH has actually fallen. That’s unusual.",
+    "start": 34.9,
+    "end": 43.352,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "external sector",
+      "USD/CNH",
+      "fallen"
+    ]
+  },
+  {
+    "speaker": "EN_A",
+    "text": "So the renminbi is behaving differently than other currencies?",
+    "start": 43.712,
+    "end": 46.684,
+    "voice_id": "XZEfcFyBnzsNJrdvkWdI",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "renminbi",
+      "behaving differently"
+    ]
+  },
+  {
+    "speaker": "EN_B",
+    "text": "Exactly. The sensitivity of USD/CNH to a rising dollar is only about 28%, but when the dollar falls, that sensitivity jumps to 62%.",
+    "start": 47.044,
+    "end": 55.914,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "sensitivity",
+      "28%",
+      "62%"
+    ]
+  },
+  {
+    "speaker": "EN_B",
+    "text": "So there’s an asymmetric response.",
+    "start": 56.274,
+    "end": 57.946,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "asymmetric response"
+    ]
+  },
+  {
+    "speaker": "EN_A",
+    "text": "That suggests the market is already pricing in a stronger renminbi. What’s the second insight?",
+    "start": 58.306,
+    "end": 63.415,
+    "voice_id": "XZEfcFyBnzsNJrdvkWdI",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "pricing in",
+      "stronger renminbi",
+      "second insight"
+    ]
+  },
+  {
+    "speaker": "EN_B",
+    "text": "Corporate FX repatriation is a major driver. In April, net FX trade settlement hit over 47 billion dollars. Exporters are bringing money back onshore.",
+    "start": 63.775,
+    "end": 72.552,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "Corporate FX repatriation",
+      "net FX trade settlement",
+      "47 billion dollars"
+    ]
+  },
+  {
+    "speaker": "EN_A",
+    "text": "Why are they doing that now?",
+    "start": 72.912,
+    "end": 74.259,
+    "voice_id": "XZEfcFyBnzsNJrdvkWdI",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "Why"
+    ]
+  },
+  {
+    "speaker": "EN_B",
+    "text": "Strong export growth and expectations for further renminbi appreciation.",
+    "start": 74.619,
+    "end": 78.473,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "export growth",
+      "renminbi appreciation"
+    ]
+  },
+  {
+    "speaker": "EN_B",
+    "text": "The report notes that a de-escalation in the Middle East could be a catalyst for even more repatriation.",
+    "start": 78.833,
+    "end": 84.174,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "de-escalation",
+      "Middle East",
+      "catalyst"
+    ]
+  },
+  {
+    "speaker": "EN_A",
+    "text": "So the flow dynamics are very supportive. What about the policy-related side?",
+    "start": 84.534,
+    "end": 88.388,
+    "voice_id": "XZEfcFyBnzsNJrdvkWdI",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "flow dynamics",
+      "policy-related side"
+    ]
+  },
+  {
+    "speaker": "EN_B",
+    "text": "The recent Xi-Trump summit has created a constructive backdrop. Foreign inflows into China-focused equity ETFs jumped after the meeting,",
+    "start": 88.748,
+    "end": 95.714,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "Xi-Trump summit",
+      "constructive backdrop",
+      "equity ETFs"
+    ]
+  },
+  {
+    "speaker": "EN_B",
+    "text": "totaling over 2 billion dollars month-to-date.",
+    "start": 96.074,
+    "end": 98.489,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "2 billion dollars",
+      "month-to-date"
+    ]
+  },
+  {
+    "speaker": "EN_A",
+    "text": "That’s a clear signal of improved sentiment. Are there any technical factors at play?",
+    "start": 98.849,
+    "end": 102.982,
+    "voice_id": "XZEfcFyBnzsNJrdvkWdI",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "improved sentiment",
+      "technical factors"
+    ]
+  },
+  {
+    "speaker": "EN_B",
+    "text": "Yes. The daily USD/CNY fixing has been drifting lower, even with a stronger dollar. That’s a deliberate signal from the authorities.",
+    "start": 103.342,
+    "end": 109.983,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "USD/CNY fixing",
+      "drifting lower",
+      "signal"
+    ]
+  },
+  {
+    "speaker": "EN_A",
+    "text": "And what about valuation? Is the renminbi cheap?",
+    "start": 110.343,
+    "end": 113.037,
+    "voice_id": "XZEfcFyBnzsNJrdvkWdI",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "valuation",
+      "renminbi cheap"
+    ]
+  },
+  {
+    "speaker": "EN_B",
+    "text": "According to the report, the renminbi is undervalued by an average of 9.5% across four models. That’s a significant discount.",
+    "start": 113.397,
+    "end": 120.409,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "undervalued",
+      "9.5%",
+      "four models"
+    ]
+  },
+  {
+    "speaker": "EN_A",
+    "text": "So the case for a stronger renminbi seems pretty solid. But what doesn’t the report fully settle?",
+    "start": 120.769,
+    "end": 126.435,
+    "voice_id": "XZEfcFyBnzsNJrdvkWdI",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "case",
+      "stronger renminbi"
+    ]
+  },
+  {
+    "speaker": "EN_B",
+    "text": "One open question is the impact of any renewed US dollar strength. The report acknowledges that a stronger dollar could temporarily slow the downtrend.",
+    "start": 126.795,
+    "end": 134.132,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "US dollar strength",
+      "temporarily slow",
+      "downtrend"
+    ]
+  },
+  {
+    "speaker": "EN_A",
+    "text": "So there’s still some uncertainty there. That’s a good reason to read the full report.",
+    "start": 134.492,
+    "end": 138.718,
+    "voice_id": "XZEfcFyBnzsNJrdvkWdI",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "uncertainty",
+      "full report"
+    ]
+  },
+  {
+    "speaker": "EN_B",
+    "text": "Absolutely. The report also has detailed charts on FX settlement and exporter behavior that are worth exploring.",
+    "start": 139.078,
+    "end": 144.605,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "charts",
+      "FX settlement",
+      "exporter behavior"
+    ]
+  },
+  {
+    "speaker": "EN_A",
+    "text": "Thanks for breaking that down. For our listeners, we’ll leave the link to the full report in the show notes.",
+    "start": 144.965,
+    "end": 150.305,
+    "voice_id": "XZEfcFyBnzsNJrdvkWdI",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "link",
+      "show notes"
+    ]
+  },
+  {
+    "speaker": "EN_B",
+    "text": "And if you want to discuss the trade ideas or the valuation models, join the conversation in our community.",
+    "start": 150.665,
+    "end": 156.099,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "trade ideas",
+      "valuation models",
+      "community"
+    ]
+  },
+  {
+    "speaker": "EN_A",
+    "text": "Thanks for listening, and we’ll see you next time.",
+    "start": 156.459,
+    "end": 159.152,
+    "voice_id": "XZEfcFyBnzsNJrdvkWdI",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "Thanks",
+      "listening"
+    ]
+  }
+]

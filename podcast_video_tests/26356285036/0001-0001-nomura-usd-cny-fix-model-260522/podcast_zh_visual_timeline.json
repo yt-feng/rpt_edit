@@ -1,0 +1,367 @@
+[
+  {
+    "speaker": "ZH_A",
+    "text": "欢迎来到KC桌面。今天我们用一份最新\n研报，拆一个值得继续跟踪的问题。",
+    "start": 0.0,
+    "end": 6.966,
+    "voice_id": "UFDAUkGzdLAEJlINT3Fx",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "KC桌面",
+      "最新研报"
+    ],
+    "page_index": 1,
+    "page_count": 1
+  },
+  {
+    "speaker": "ZH_A",
+    "text": "最近我看到一份投行研报，讲的是人民币\n中间价的预测模型，你觉得这份报告有什\n么特别的地方？",
+    "start": 7.326,
+    "end": 16.753,
+    "voice_id": "UFDAUkGzdLAEJlINT3Fx",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "投行研报",
+      "人民币中间价",
+      "预测模型"
+    ],
+    "page_index": 1,
+    "page_count": 1
+  },
+  {
+    "speaker": "ZH_B",
+    "text": "这份报告确实很有意思，它用的模型给出\n了一个预测值，大概是6.7979，比\n之前的6.",
+    "start": 17.113,
+    "end": 24.451,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "预测值",
+      "6.7979"
+    ],
+    "page_index": 1,
+    "page_count": 1
+  },
+  {
+    "speaker": "ZH_B",
+    "text": "8349低了差不多370个点。",
+    "start": 24.811,
+    "end": 27.597,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "8349",
+      "370个点"
+    ],
+    "page_index": 1,
+    "page_count": 1
+  },
+  {
+    "speaker": "ZH_A",
+    "text": "370个点？这可不是个小数字。那它为\n什么这么预测呢？",
+    "start": 27.957,
+    "end": 32.508,
+    "voice_id": "UFDAUkGzdLAEJlINT3Fx",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "370个点"
+    ],
+    "page_index": 1,
+    "page_count": 1
+  },
+  {
+    "speaker": "ZH_B",
+    "text": "核心是它用了一个模型，考虑了隔夜汇率\n的变化，比如卢布、欧元这些货币的走势\n，然后加权算出一个结果。",
+    "start": 32.868,
+    "end": 43.549,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "模型",
+      "隔夜汇率",
+      "卢布"
+    ],
+    "page_index": 1,
+    "page_count": 1
+  },
+  {
+    "speaker": "ZH_A",
+    "text": "所以这个模型就是看其他货币怎么动，然\n后推人民币？",
+    "start": 43.909,
+    "end": 48.043,
+    "voice_id": "UFDAUkGzdLAEJlINT3Fx",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "模型",
+      "其他货币"
+    ],
+    "page_index": 1,
+    "page_count": 1
+  },
+  {
+    "speaker": "ZH_B",
+    "text": "对，但还有一个关键点，它加了一个叫“\n逆周期因子”的调整。加上这个因子后，\n预测值就变成了6.8138，",
+    "start": 48.403,
+    "end": 59.595,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "逆周期因子",
+      "6.8138"
+    ],
+    "page_index": 1,
+    "page_count": 1
+  },
+  {
+    "speaker": "ZH_B",
+    "text": "只低了211个点。",
+    "start": 59.955,
+    "end": 61.626,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "211个点"
+    ],
+    "page_index": 1,
+    "page_count": 1
+  },
+  {
+    "speaker": "ZH_A",
+    "text": "这个逆周期因子是什么？听起来像是人为\n干预的手段。",
+    "start": 61.986,
+    "end": 66.63,
+    "voice_id": "UFDAUkGzdLAEJlINT3Fx",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "逆周期因子",
+      "人为干预"
+    ],
+    "page_index": 1,
+    "page_count": 1
+  },
+  {
+    "speaker": "ZH_B",
+    "text": "你可以理解为央行用来平滑市场波动的一\n个工具。报告里其实还提到了模型的历史\n误差，比如今年年初误差特别大，",
+    "start": 66.99,
+    "end": 77.95,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "央行",
+      "平滑市场波动",
+      "历史误差"
+    ],
+    "page_index": 1,
+    "page_count": 1
+  },
+  {
+    "speaker": "ZH_B",
+    "text": "有1800个点。",
+    "start": 78.31,
+    "end": 79.796,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "1800个点"
+    ],
+    "page_index": 1,
+    "page_count": 1
+  },
+  {
+    "speaker": "ZH_A",
+    "text": "1800个点？那模型是不是不太准？",
+    "start": 80.156,
+    "end": 83.036,
+    "voice_id": "UFDAUkGzdLAEJlINT3Fx",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "模型",
+      "不太准"
+    ],
+    "page_index": 1,
+    "page_count": 1
+  },
+  {
+    "speaker": "ZH_B",
+    "text": "误差大说明市场波动剧烈，但报告也在跟\n踪这些误差的变化，来判断模型的可靠性\n。另外，",
+    "start": 83.396,
+    "end": 92.451,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "误差",
+      "市场波动",
+      "可靠性"
+    ],
+    "page_index": 1,
+    "page_count": 1
+  },
+  {
+    "speaker": "ZH_B",
+    "text": "它还列出了未来几个月的重要事件。",
+    "start": 92.811,
+    "end": 95.644,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "未来几个月",
+      "重要事件"
+    ],
+    "page_index": 1,
+    "page_count": 1
+  },
+  {
+    "speaker": "ZH_A",
+    "text": "什么事件？比如政策环境局的会议之类的\n？",
+    "start": 96.004,
+    "end": 99.952,
+    "voice_id": "UFDAUkGzdLAEJlINT3Fx",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "政策环境局",
+      "会议"
+    ],
+    "page_index": 1,
+    "page_count": 1
+  },
+  {
+    "speaker": "ZH_B",
+    "text": "对，像7月底的政策环境局经济工作会议\n，还有年底的中央经济工作会议，这些都\n会影响汇率走势。",
+    "start": 100.312,
+    "end": 109.089,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "7月底",
+      "政策环境局经济工作会议",
+      "中央经济工作会议"
+    ],
+    "page_index": 1,
+    "page_count": 1
+  },
+  {
+    "speaker": "ZH_A",
+    "text": "那这些事件对模型预测有什么影响呢？",
+    "start": 109.449,
+    "end": 112.653,
+    "voice_id": "UFDAUkGzdLAEJlINT3Fx",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "事件",
+      "模型预测"
+    ],
+    "page_index": 1,
+    "page_count": 1
+  },
+  {
+    "speaker": "ZH_B",
+    "text": "报告里没有完全展开，但你可以想象，政\n策信号出来前后，逆周期因子可能会调整\n，模型也会修正。",
+    "start": 113.013,
+    "end": 122.626,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "政策信号",
+      "逆周期因子"
+    ],
+    "page_index": 1,
+    "page_count": 1
+  },
+  {
+    "speaker": "ZH_B",
+    "text": "这也是为什么值得读完整报告。",
+    "start": 122.986,
+    "end": 125.494,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "完整报告"
+    ],
+    "page_index": 1,
+    "page_count": 1
+  },
+  {
+    "speaker": "ZH_A",
+    "text": "我明白了，所以这份报告的核心其实就是\n用一个模型来预测中间价，同时关注政策\n因素。",
+    "start": 125.854,
+    "end": 134.631,
+    "voice_id": "UFDAUkGzdLAEJlINT3Fx",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "模型",
+      "预测中间价",
+      "政策因素"
+    ],
+    "page_index": 1,
+    "page_count": 1
+  },
+  {
+    "speaker": "ZH_B",
+    "text": "没错，而且报告里还提到了一个悬念，就\n是模型误差为什么会这么大，以及未来如\n何修正。",
+    "start": 134.991,
+    "end": 142.607,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "模型误差"
+    ],
+    "page_index": 1,
+    "page_count": 1
+  },
+  {
+    "speaker": "ZH_A",
+    "text": "这个悬念很关键。如果听众想深入了解，\n应该去哪里看完整报告？",
+    "start": 142.967,
+    "end": 149.004,
+    "voice_id": "UFDAUkGzdLAEJlINT3Fx",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "完整报告"
+    ],
+    "page_index": 1,
+    "page_count": 1
+  },
+  {
+    "speaker": "ZH_B",
+    "text": "可以关注我们的公众号，或者加入社群，\n我们会定期分享类似的投研分析。完整报\n告里有更详细的数据和图表。",
+    "start": 149.364,
+    "end": 160.231,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "公众号",
+      "社群",
+      "投研分析"
+    ],
+    "page_index": 1,
+    "page_count": 1
+  },
+  {
+    "speaker": "ZH_A",
+    "text": "好的，今天先聊到这里，感谢你的分享。",
+    "start": 160.591,
+    "end": 163.935,
+    "voice_id": "UFDAUkGzdLAEJlINT3Fx",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "好的",
+      "今天先聊到这"
+    ],
+    "page_index": 1,
+    "page_count": 1
+  },
+  {
+    "speaker": "ZH_B",
+    "text": "谢谢，我们下期再聊。",
+    "start": 164.295,
+    "end": 166.246,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "谢谢",
+      "我们下期再聊"
+    ],
+    "page_index": 1,
+    "page_count": 1
+  }
+]

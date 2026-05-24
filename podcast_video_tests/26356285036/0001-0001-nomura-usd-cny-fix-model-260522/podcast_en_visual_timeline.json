@@ -1,0 +1,421 @@
+[
+  {
+    "speaker": "EN_A",
+    "text": "Welcome to KC desk note. Today we\nare unpacking one fresh research\nreport and the question it raises.",
+    "start": 0.0,
+    "end": 6.548,
+    "voice_id": "XZEfcFyBnzsNJrdvkWdI",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "KC desk note",
+      "research report"
+    ],
+    "page_index": 1,
+    "page_count": 1
+  },
+  {
+    "speaker": "EN_A",
+    "text": "So the PBOC just released its\nlatest USD/CNY fixing. What’s the\nkey takeaway here?",
+    "start": 6.908,
+    "end": 13.038,
+    "voice_id": "XZEfcFyBnzsNJrdvkWdI",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "PBOC",
+      "USD/CNY fixing"
+    ],
+    "page_index": 1,
+    "page_count": 1
+  },
+  {
+    "speaker": "EN_B",
+    "text": "Right, the model projection came\nin at 6.7979, which is about 370\npips lower than the previous fix.\nThat suggests a deliberate shift",
+    "start": 13.398,
+    "end": 18.39,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "model projection",
+      "6.7979",
+      "370 pips"
+    ],
+    "page_index": 1,
+    "page_count": 2
+  },
+  {
+    "speaker": "EN_B",
+    "text": "in the fixing strategy.",
+    "start": 18.39,
+    "end": 23.383,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "model projection",
+      "6.7979",
+      "370 pips"
+    ],
+    "page_index": 2,
+    "page_count": 2
+  },
+  {
+    "speaker": "EN_A",
+    "text": "Deliberate shift? So this isn’t\njust a random number?",
+    "start": 23.743,
+    "end": 26.901,
+    "voice_id": "XZEfcFyBnzsNJrdvkWdI",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "Deliberate shift"
+    ],
+    "page_index": 1,
+    "page_count": 1
+  },
+  {
+    "speaker": "EN_B",
+    "text": "Exactly. The model includes a\ncounter-cyclical factor, which\nadjusted the projection to 6.\n8138. That’s still 211 pips lower",
+    "start": 27.261,
+    "end": 31.441,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "counter-cyclical factor",
+      "211 pips"
+    ],
+    "page_index": 1,
+    "page_count": 2
+  },
+  {
+    "speaker": "EN_B",
+    "text": "than before.",
+    "start": 31.441,
+    "end": 35.62,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "counter-cyclical factor",
+      "211 pips"
+    ],
+    "page_index": 2,
+    "page_count": 2
+  },
+  {
+    "speaker": "EN_B",
+    "text": "It’s a clear signal they want to\nmanage expectations.",
+    "start": 35.98,
+    "end": 38.488,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "manage expectations"
+    ],
+    "page_index": 1,
+    "page_count": 1
+  },
+  {
+    "speaker": "EN_A",
+    "text": "What’s driving this change? Any\nspecific currencies?",
+    "start": 38.848,
+    "end": 41.634,
+    "voice_id": "XZEfcFyBnzsNJrdvkWdI",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "specific currencies"
+    ],
+    "page_index": 1,
+    "page_count": 1
+  },
+  {
+    "speaker": "EN_B",
+    "text": "The report highlights four major\ncontributors. The Russian ruble\nand the euro are pushing the fix\nlower, while the Australian dollar",
+    "start": 41.994,
+    "end": 45.617,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "Russian ruble",
+      "euro",
+      "Australian dollar"
+    ],
+    "page_index": 1,
+    "page_count": 2
+  },
+  {
+    "speaker": "EN_B",
+    "text": "is pulling it higher.",
+    "start": 45.617,
+    "end": 49.239,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "Russian ruble",
+      "euro",
+      "Australian dollar"
+    ],
+    "page_index": 2,
+    "page_count": 2
+  },
+  {
+    "speaker": "EN_B",
+    "text": "But the net effect is still lower.",
+    "start": 49.599,
+    "end": 51.178,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "net effect",
+      "lower"
+    ],
+    "page_index": 1,
+    "page_count": 1
+  },
+  {
+    "speaker": "EN_A",
+    "text": "So the PBOC is leaning toward a\nweaker yuan?",
+    "start": 51.538,
+    "end": 53.952,
+    "voice_id": "XZEfcFyBnzsNJrdvkWdI",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "weaker yuan"
+    ],
+    "page_index": 1,
+    "page_count": 1
+  },
+  {
+    "speaker": "EN_B",
+    "text": "Not necessarily weaker, but more\ncontrolled. The model errors have\nbeen large in the past—like minus\n1800 pips in January 2025.",
+    "start": 54.312,
+    "end": 61.603,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "model errors",
+      "minus 1800 pips",
+      "January 2025"
+    ],
+    "page_index": 1,
+    "page_count": 1
+  },
+  {
+    "speaker": "EN_B",
+    "text": "That shows the fix isn’t always\npredictable. This time, they’re\nbeing more precise.",
+    "start": 61.963,
+    "end": 66.004,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "precise"
+    ],
+    "page_index": 1,
+    "page_count": 1
+  },
+  {
+    "speaker": "EN_A",
+    "text": "Precision matters, but what’s the\nbig picture? Why should we care?",
+    "start": 66.364,
+    "end": 69.336,
+    "voice_id": "XZEfcFyBnzsNJrdvkWdI",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "big picture"
+    ],
+    "page_index": 1,
+    "page_count": 1
+  },
+  {
+    "speaker": "EN_B",
+    "text": "This fix sets the tone for the\nentire trading day. A lower fix\ncan ease depreciation pressure,\nbut it also signals policy",
+    "start": 69.696,
+    "end": 73.017,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "trading day",
+      "depreciation pressure",
+      "policy intentions"
+    ],
+    "page_index": 1,
+    "page_count": 2
+  },
+  {
+    "speaker": "EN_B",
+    "text": "intentions.",
+    "start": 73.017,
+    "end": 76.337,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "trading day",
+      "depreciation pressure",
+      "policy intentions"
+    ],
+    "page_index": 2,
+    "page_count": 2
+  },
+  {
+    "speaker": "EN_B",
+    "text": "The report ties this to upcoming\nevents like the Politburo meeting\nin July and the APEC summit in\nNovember.",
+    "start": 76.697,
+    "end": 82.362,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "Politburo meeting",
+      "July",
+      "APEC summit"
+    ],
+    "page_index": 1,
+    "page_count": 1
+  },
+  {
+    "speaker": "EN_A",
+    "text": "So there’s a policy-related angle?\nTrade negotiations?",
+    "start": 82.722,
+    "end": 85.973,
+    "voice_id": "XZEfcFyBnzsNJrdvkWdI",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "policy-related",
+      "Trade negotiations"
+    ],
+    "page_index": 1,
+    "page_count": 1
+  },
+  {
+    "speaker": "EN_B",
+    "text": "Possibly. The report notes a\nplanned visit by China’s president\nto the US later this year. That\ncould influence currency policy.",
+    "start": 86.333,
+    "end": 93.16,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "China’s president",
+      "US",
+      "currency policy"
+    ],
+    "page_index": 1,
+    "page_count": 1
+  },
+  {
+    "speaker": "EN_B",
+    "text": "But the report doesn’t settle that\ndebate—it’s more of a framework.",
+    "start": 93.52,
+    "end": 96.956,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "framework"
+    ],
+    "page_index": 1,
+    "page_count": 1
+  },
+  {
+    "speaker": "EN_A",
+    "text": "Framework? So what’s the one thing\nthe report doesn’t fully answer?",
+    "start": 97.316,
+    "end": 100.753,
+    "voice_id": "XZEfcFyBnzsNJrdvkWdI",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "Framework",
+      "what’s"
+    ],
+    "page_index": 1,
+    "page_count": 1
+  },
+  {
+    "speaker": "EN_B",
+    "text": "It doesn’t tell you whether this\nfix is a one-off or part of a\nlonger trend. The model errors\nshow volatility,",
+    "start": 101.113,
+    "end": 106.872,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "model errors",
+      "volatility"
+    ],
+    "page_index": 1,
+    "page_count": 1
+  },
+  {
+    "speaker": "EN_B",
+    "text": "but the report leaves that\nquestion open for further\nresearch.",
+    "start": 107.232,
+    "end": 110.157,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "further research"
+    ],
+    "page_index": 1,
+    "page_count": 1
+  },
+  {
+    "speaker": "EN_A",
+    "text": "Good point. So for anyone wanting\nto dig deeper, the full report has\nthe data on model errors and event\ncalendars.",
+    "start": 110.517,
+    "end": 117.437,
+    "voice_id": "XZEfcFyBnzsNJrdvkWdI",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "model errors",
+      "event calendars"
+    ],
+    "page_index": 1,
+    "page_count": 1
+  },
+  {
+    "speaker": "EN_B",
+    "text": "Exactly. If you want to understand\nthe nuances of the\ncounter-cyclical factor or the\nrecent fix changes, the full",
+    "start": 117.797,
+    "end": 121.303,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "counter-cyclical factor",
+      "fix changes"
+    ],
+    "page_index": 1,
+    "page_count": 2
+  },
+  {
+    "speaker": "EN_B",
+    "text": "report is worth reading.",
+    "start": 121.303,
+    "end": 124.809,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "counter-cyclical factor",
+      "fix changes"
+    ],
+    "page_index": 2,
+    "page_count": 2
+  },
+  {
+    "speaker": "EN_A",
+    "text": "Fair enough. We’ll leave that for\nthe community to discuss. Thanks\nfor breaking it down.",
+    "start": 125.169,
+    "end": 129.349,
+    "voice_id": "XZEfcFyBnzsNJrdvkWdI",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "community"
+    ],
+    "page_index": 1,
+    "page_count": 1
+  },
+  {
+    "speaker": "EN_B",
+    "text": "My pleasure. Let’s keep an eye on\nhow this plays out.",
+    "start": 129.709,
+    "end": 132.495,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "plays out"
+    ],
+    "page_index": 1,
+    "page_count": 1
+  }
+]

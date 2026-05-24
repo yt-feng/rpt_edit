@@ -1,0 +1,631 @@
+[
+  {
+    "speaker": "EN_A",
+    "text": "Welcome to KC desk note. Today we\nare unpacking one fresh research\nreport and the question it raises.",
+    "start": 0.0,
+    "end": 6.13,
+    "voice_id": "XZEfcFyBnzsNJrdvkWdI",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "KC desk note",
+      "research report"
+    ],
+    "page_index": 1,
+    "page_count": 1
+  },
+  {
+    "speaker": "EN_A",
+    "text": "Welcome back to the show. Today\nwe’re diving into NIO’s first\nquarter 2026 results. The headline\nnumbers look solid—revenue up 112%",
+    "start": 6.49,
+    "end": 12.388,
+    "voice_id": "XZEfcFyBnzsNJrdvkWdI",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "NIO",
+      "first quarter 2026",
+      "revenue"
+    ],
+    "page_index": 1,
+    "page_count": 2
+  },
+  {
+    "speaker": "EN_A",
+    "text": "year on year.",
+    "start": 12.388,
+    "end": 18.286,
+    "voice_id": "XZEfcFyBnzsNJrdvkWdI",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "NIO",
+      "first quarter 2026",
+      "revenue"
+    ],
+    "page_index": 2,
+    "page_count": 2
+  },
+  {
+    "speaker": "EN_A",
+    "text": "But what really stands out is that\nthey posted a second consecutive\nquarter of non-GAAP profit. So,\nwhat’s the real story here?",
+    "start": 18.646,
+    "end": 26.819,
+    "voice_id": "XZEfcFyBnzsNJrdvkWdI",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "second consecutive quarter",
+      "non-GAAP profit"
+    ],
+    "page_index": 1,
+    "page_count": 1
+  },
+  {
+    "speaker": "EN_B",
+    "text": "That’s exactly the key frame. NIO\ndelivered a strong quarter with\nrevenue at the high end of\nguidance.",
+    "start": 27.179,
+    "end": 32.52,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "NIO",
+      "revenue",
+      "high end of guidance"
+    ],
+    "page_index": 1,
+    "page_count": 1
+  },
+  {
+    "speaker": "EN_B",
+    "text": "But the sequential drop from Q4 is\nexpected—it’s a seasonal weak\nperiod. The more important\ntakeaway is the margin improvement",
+    "start": 32.88,
+    "end": 37.315,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "sequential drop",
+      "Q4",
+      "seasonal weak period"
+    ],
+    "page_index": 1,
+    "page_count": 2
+  },
+  {
+    "speaker": "EN_B",
+    "text": "and the path to profitability.",
+    "start": 37.315,
+    "end": 41.75,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "sequential drop",
+      "Q4",
+      "seasonal weak period"
+    ],
+    "page_index": 2,
+    "page_count": 2
+  },
+  {
+    "speaker": "EN_A",
+    "text": "So the market was watching for\nmargins. What did we see?",
+    "start": 42.11,
+    "end": 44.664,
+    "voice_id": "XZEfcFyBnzsNJrdvkWdI",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "margins"
+    ],
+    "page_index": 1,
+    "page_count": 1
+  },
+  {
+    "speaker": "EN_B",
+    "text": "Gross margin hit 19%, up 11. 4\npercentage points year on year and\n1. 5 points sequentially. Vehicle\nmargin was 18. 8%.",
+    "start": 45.024,
+    "end": 54.591,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "Gross margin",
+      "19%",
+      "Vehicle margin"
+    ],
+    "page_index": 1,
+    "page_count": 1
+  },
+  {
+    "speaker": "EN_B",
+    "text": "That’s driven by a richer product\nmix—especially the ES8, which made\nup 54% of sales in Q1. Higher ASPs\nhelped offset the volume dip.",
+    "start": 54.951,
+    "end": 63.31,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "product mix",
+      "ES8",
+      "54% of sales"
+    ],
+    "page_index": 1,
+    "page_count": 1
+  },
+  {
+    "speaker": "EN_A",
+    "text": "And the profit picture—they still\nreported a net loss, but it’s\nshrinking fast.",
+    "start": 63.67,
+    "end": 68.082,
+    "voice_id": "XZEfcFyBnzsNJrdvkWdI",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "net loss",
+      "shrinking"
+    ],
+    "page_index": 1,
+    "page_count": 1
+  },
+  {
+    "speaker": "EN_B",
+    "text": "Right. Net loss narrowed 93% year\non year to just under 500 million\nyuan. And on a non-GAAP basis,\nthey were profitable for the",
+    "start": 68.442,
+    "end": 73.202,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "Net loss",
+      "93%",
+      "500 million yuan"
+    ],
+    "page_index": 1,
+    "page_count": 2
+  },
+  {
+    "speaker": "EN_B",
+    "text": "second quarter in a row.",
+    "start": 73.202,
+    "end": 77.962,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "Net loss",
+      "93%",
+      "500 million yuan"
+    ],
+    "page_index": 2,
+    "page_count": 2
+  },
+  {
+    "speaker": "EN_B",
+    "text": "That’s a big milestone. Operating\nmargin was minus 1. 2%, but that’s\na massive improvement from minus\n53% a year ago.",
+    "start": 78.322,
+    "end": 85.566,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "milestone",
+      "Operating margin",
+      "minus 53%"
+    ],
+    "page_index": 1,
+    "page_count": 1
+  },
+  {
+    "speaker": "EN_A",
+    "text": "So they’re getting closer to\nbreakeven. But what about the\noutlook for Q2?",
+    "start": 85.926,
+    "end": 89.688,
+    "voice_id": "XZEfcFyBnzsNJrdvkWdI",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "breakeven",
+      "outlook",
+      "Q2"
+    ],
+    "page_index": 1,
+    "page_count": 1
+  },
+  {
+    "speaker": "EN_B",
+    "text": "Guidance is for 110 to 115\nthousand deliveries, up over 50%\nyear on year. Revenue is expected\nbetween 32. 8 and 34. 4 billion",
+    "start": 90.048,
+    "end": 95.017,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "Guidance",
+      "110 to 115 thousand deliveries",
+      "50%"
+    ],
+    "page_index": 1,
+    "page_count": 2
+  },
+  {
+    "speaker": "EN_B",
+    "text": "yuan.",
+    "start": 95.017,
+    "end": 99.986,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "Guidance",
+      "110 to 115 thousand deliveries",
+      "50%"
+    ],
+    "page_index": 2,
+    "page_count": 2
+  },
+  {
+    "speaker": "EN_B",
+    "text": "That implies ASP might dip\nslightly to around 267k, because\nnewer models like the Onvo L80 and\nthe upcoming ES9 could shift the",
+    "start": 100.346,
+    "end": 103.969,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "ASP",
+      "267k",
+      "Onvo L80"
+    ],
+    "page_index": 1,
+    "page_count": 2
+  },
+  {
+    "speaker": "EN_B",
+    "text": "mix.",
+    "start": 103.969,
+    "end": 107.591,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "ASP",
+      "267k",
+      "Onvo L80"
+    ],
+    "page_index": 2,
+    "page_count": 2
+  },
+  {
+    "speaker": "EN_A",
+    "text": "The ES9 launch is next Wednesday.\nThat seems like a big catalyst.",
+    "start": 107.951,
+    "end": 111.62,
+    "voice_id": "XZEfcFyBnzsNJrdvkWdI",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "ES9 launch",
+      "next Wednesday",
+      "catalyst"
+    ],
+    "page_index": 1,
+    "page_count": 1
+  },
+  {
+    "speaker": "EN_B",
+    "text": "Absolutely. The report highlights\nthat pre-order data is positive,\nbased on industry surveys. And\nmanagement noted that with ES9 in",
+    "start": 111.98,
+    "end": 116.067,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "pre-order data",
+      "industry surveys",
+      "ES9 in stores"
+    ],
+    "page_index": 1,
+    "page_count": 2
+  },
+  {
+    "speaker": "EN_B",
+    "text": "stores,",
+    "start": 116.067,
+    "end": 120.153,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "pre-order data",
+      "industry surveys",
+      "ES9 in stores"
+    ],
+    "page_index": 2,
+    "page_count": 2
+  },
+  {
+    "speaker": "EN_B",
+    "text": "foot traffic has increased, which\nalso helped ES8 orders. In fact,\nthe first 20 days of May saw the\nhighest ES8 order volume since",
+    "start": 120.513,
+    "end": 124.879,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "foot traffic",
+      "ES8 orders",
+      "20 days of May"
+    ],
+    "page_index": 1,
+    "page_count": 2
+  },
+  {
+    "speaker": "EN_B",
+    "text": "October last year.",
+    "start": 124.879,
+    "end": 129.244,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "foot traffic",
+      "ES8 orders",
+      "20 days of May"
+    ],
+    "page_index": 2,
+    "page_count": 2
+  },
+  {
+    "speaker": "EN_A",
+    "text": "So the new model is pulling in\ncustomers for the whole brand.\nThat’s a nice halo effect.",
+    "start": 129.604,
+    "end": 133.83,
+    "voice_id": "XZEfcFyBnzsNJrdvkWdI",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "halo effect"
+    ],
+    "page_index": 1,
+    "page_count": 1
+  },
+  {
+    "speaker": "EN_B",
+    "text": "Exactly. But there are headwinds\ntoo. Management flagged that input\ncosts—like lithium, memory,\naluminum, and copper—are rising.",
+    "start": 134.19,
+    "end": 138.81,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "headwinds",
+      "input costs",
+      "lithium"
+    ],
+    "page_index": 1,
+    "page_count": 2
+  },
+  {
+    "speaker": "EN_B",
+    "text": "The impact is about 10,",
+    "start": 138.81,
+    "end": 143.431,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "headwinds",
+      "input costs",
+      "lithium"
+    ],
+    "page_index": 2,
+    "page_count": 2
+  },
+  {
+    "speaker": "EN_B",
+    "text": "000 yuan per vehicle, but it\nhasn’t fully hit Q1 results due to\ninventory. They still target\nvehicle gross margins of 17 to 18",
+    "start": 143.791,
+    "end": 148.435,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "vehicle gross margins",
+      "17 to 18 percent",
+      "Q2"
+    ],
+    "page_index": 1,
+    "page_count": 2
+  },
+  {
+    "speaker": "EN_B",
+    "text": "percent for Q2 and the full year.",
+    "start": 148.435,
+    "end": 153.079,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "vehicle gross margins",
+      "17 to 18 percent",
+      "Q2"
+    ],
+    "page_index": 2,
+    "page_count": 2
+  },
+  {
+    "speaker": "EN_A",
+    "text": "That’s a key risk to watch. So the\nreport is bullish, but it doesn’t\nsettle everything. What’s one\nthing the full report dives into",
+    "start": 153.439,
+    "end": 157.618,
+    "voice_id": "XZEfcFyBnzsNJrdvkWdI",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "risk",
+      "bullish"
+    ],
+    "page_index": 1,
+    "page_count": 2
+  },
+  {
+    "speaker": "EN_A",
+    "text": "that we’re skipping here?",
+    "start": 157.618,
+    "end": 161.798,
+    "voice_id": "XZEfcFyBnzsNJrdvkWdI",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "risk",
+      "bullish"
+    ],
+    "page_index": 2,
+    "page_count": 2
+  },
+  {
+    "speaker": "EN_B",
+    "text": "One area is the detailed cost\nstructure—R&D spending, SG&A\ntargets, and the chip penetration\nplans for their self-developed",
+    "start": 162.158,
+    "end": 166.825,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "cost structure",
+      "R&D spending",
+      "SG&A targets"
+    ],
+    "page_index": 1,
+    "page_count": 2
+  },
+  {
+    "speaker": "EN_B",
+    "text": "Shenji NX9031.",
+    "start": 166.825,
+    "end": 171.493,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "cost structure",
+      "R&D spending",
+      "SG&A targets"
+    ],
+    "page_index": 2,
+    "page_count": 2
+  },
+  {
+    "speaker": "EN_B",
+    "text": "The report has a lot of\ngranularity on how they plan to\ncontrol costs while scaling.\nThat’s worth reading closely.",
+    "start": 171.853,
+    "end": 177.193,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "control costs",
+      "scaling"
+    ],
+    "page_index": 1,
+    "page_count": 1
+  },
+  {
+    "speaker": "EN_A",
+    "text": "And the analyst maintains a\nresearch view rating with an USD\n8. 6 target price. The stock\ntrades at about 0. 7 times forward",
+    "start": 177.553,
+    "end": 182.661,
+    "voice_id": "XZEfcFyBnzsNJrdvkWdI",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "analyst",
+      "research view rating",
+      "target price"
+    ],
+    "page_index": 1,
+    "page_count": 2
+  },
+  {
+    "speaker": "EN_A",
+    "text": "sales.",
+    "start": 182.661,
+    "end": 187.77,
+    "voice_id": "XZEfcFyBnzsNJrdvkWdI",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "analyst",
+      "research view rating",
+      "target price"
+    ],
+    "page_index": 2,
+    "page_count": 2
+  },
+  {
+    "speaker": "EN_A",
+    "text": "That seems reasonable if the\nmargin story holds.",
+    "start": 188.13,
+    "end": 190.777,
+    "voice_id": "XZEfcFyBnzsNJrdvkWdI",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "margin story"
+    ],
+    "page_index": 1,
+    "page_count": 1
+  },
+  {
+    "speaker": "EN_B",
+    "text": "It does. But the real debate is\nwhether NIO can sustain this\nmomentum as competition heats up\nand costs rise. The report leaves",
+    "start": 191.137,
+    "end": 195.758,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "competition",
+      "costs rise"
+    ],
+    "page_index": 1,
+    "page_count": 2
+  },
+  {
+    "speaker": "EN_B",
+    "text": "that open for discussion.",
+    "start": 195.758,
+    "end": 200.379,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "competition",
+      "costs rise"
+    ],
+    "page_index": 2,
+    "page_count": 2
+  },
+  {
+    "speaker": "EN_A",
+    "text": "Great. We’ll leave it there for\nnow.",
+    "start": 200.739,
+    "end": 202.318,
+    "voice_id": "XZEfcFyBnzsNJrdvkWdI",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "Great",
+      "We’ll"
+    ],
+    "page_index": 1,
+    "page_count": 1
+  },
+  {
+    "speaker": "EN_A",
+    "text": "If you want to dig into the full\nreport—especially the cost\nbreakdown and margin\nassumptions—join the community",
+    "start": 202.678,
+    "end": 206.951,
+    "voice_id": "XZEfcFyBnzsNJrdvkWdI",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "cost breakdown",
+      "margin assumptions",
+      "community conversation"
+    ],
+    "page_index": 1,
+    "page_count": 2
+  },
+  {
+    "speaker": "EN_A",
+    "text": "conversation. Thanks for\nlistening.",
+    "start": 206.951,
+    "end": 211.223,
+    "voice_id": "XZEfcFyBnzsNJrdvkWdI",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "cost breakdown",
+      "margin assumptions",
+      "community conversation"
+    ],
+    "page_index": 2,
+    "page_count": 2
+  },
+  {
+    "speaker": "EN_B",
+    "text": "Thanks for having me.",
+    "start": 211.583,
+    "end": 212.79,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "Thanks",
+      "having"
+    ],
+    "page_index": 1,
+    "page_count": 1
+  }
+]

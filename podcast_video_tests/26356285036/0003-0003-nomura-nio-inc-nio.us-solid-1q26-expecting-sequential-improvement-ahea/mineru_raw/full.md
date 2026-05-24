@@ -1,0 +1,261 @@
+# Solid 1Q26; expecting sequential improvement ahead Quick Note
+
+# 1Q26: revenue +112% y-y and -26% q-q while GPM +11.4pp y-y and +1.5pp q-q; second consecutive quarter with non-GAAP profit achieved
+
+NIO reported 1Q26 results on 21 May before US market open. The company delivered a revenue of CNY25.5bn, +112% y-y while -26% q-q, at the high-end of its original guidance and in line with market expectation. While vehicle shipments reached 83.5k, +98% y-y and -33% q-q (also at the high-end of its guidance), vehicle sales were at CNY22.8bn, +129% y-y and -28% q-q, as a result of an 8% q-q sequential increase in vehicle ASP due to the solid sales of ES8, which contributed 54% of total sales in 1Q26. NIO's GPM was at 19.0%, +11.4pp y-y and +1.5pp q-q, and its vehicle margin was at 18.8% in the quarter, +8.6pp y-y and +0.8pp q-q, again owing to both shipment growth and/or product mix improvement. Its OPM was at -1.2%, +52.1pp y-y and -3.5pp q-q, as a result of less favourable operating leverage during the weak auto season. As a result, NIO reported a net loss of CNY496mn in 1Q26, with the loss decreasing 93% y-y. Its non-GAAP net profit was at CNY43.5mn, as the company recorded a second consecutive quarter with non-GAAP profit.
+
+On 2Q26 guidance, the company expects to deliver 110-115k units of sales, +53-60% y-y, also implying an average 41-43k sales into May/Jun-26. On top line, the company guided for a revenue range of CNY32.8-34.4bn in 2Q, potentially +72-81% y-y. With that, we estimate that the implied ASP per unit in 2Q26F would be around CNY267k, slightly down 2% q-q from 1Q26 ASP of 273k, considering more shipments may come from new models like Onvo L80 and ES9 in 2Q26.
+
+While Onvo L80 is already launched, we believe the entire market would be tracking ES9's performance as the model would be launched next Wednesday (27 May). With a sustainable ES8 shipment/order situation, we believe NIO will need to have more in-demand models to further support its shipment, market share and margin profile.
+
+Considering a good feedback for its ES9 pre-order data, according to our industry survey, we remain positive on the name and expect NIO to deliver a sequential improvement in shipment and financials into following quarters in 2026. We maintain our Buy rating and DCF-based TP of USD8.6 for the share. The stock is currently trading at 2026F P/S of 0.7x.
+
+# Earnings call takeaways:
+
+- With ES9 reaching stores, the company said that it has attracted more in-store visits in the past one month, therefore helping ES8 getting more orders. Management mentioned that in the first 20 days in May, its orders locked for ES8 reached the highest level for the same period since Oct-25.   
+- Looking at the GPM outlook for 2Q26 and entire 2026, management mentioned that the BOM (bill of materials) cost increase, including lithium price, memory, aluminium and copper (the impact of the increase to be CNY10k per vehicle) are not yet fully reflected in 1Q26 due to its inventory. Overall, the company continues to target for a $17 - 18\%$ vehicle GPM for 2Q26 and full-year 2026. Meanwhile, NOI targets to maintain a $20\%$ GPM for its business other than vehicle sales.   
+- For 2H26, NIO will release a five-seat version of ES8 and targets three-five new models each year in the next few years. The core strategy for NIO is to establish itself as a premium brand, targeting at becoming the next car after BBA (Benz, BMW and Audi) brands.
+
+<table><tr><td>RatingRemains</td><td>Buy</td></tr><tr><td>Target priceRemains</td><td>USD 8.60</td></tr><tr><td>Closing price20 May 2026</td><td>USD 5.59</td></tr></table>
+
+# Research Analysts
+
+# China Autos & Auto Parts
+
+Joel Ying, CFA - NIHK
+
+joel.ying@nomura.com
+
++852 2252 2153
+
+# Global EV Batteries & Materials
+
+Ethan Zhang - NIHK
+
+ethan.zhang@nomura.com
+
++852 2252 2157
+
+- In terms of R&D cost, the company reiterated a CNY2.0-2.5bn quarterly expenditure. On SG&A expense, NIO maintained its target to control it at 10% of total sales for full-year 2026 while there could be fluctuations during quarters. As key new models releasing in 2Q26, management expects selling expense to grow evidently q-q. NIO maintained its guidance to achieve non-GAPP operating profit breakeven in 2026E.   
+- For its self-developed Shenji NX9031 chips, management targets for $80 - 85\%$ penetration of it within its total shipment into 2H26.   
+- For its battery swap station, the company targets to build 1k new stations in 2026 while its third generation station will start to deploy from 3Q26.
+
+Fig. 1: NIO - 1Q26 results review 
+
+<table><tr><td rowspan="2" colspan="2">(CNY mn)</td><td rowspan="2">1Q25A</td><td rowspan="2">2Q25A</td><td rowspan="2">3Q25A</td><td rowspan="2">4Q25A</td><td rowspan="2">1Q26A</td><td colspan="2">% chg</td><td rowspan="2" colspan="2">2Q26Guidance</td><td rowspan="2">2023A</td><td rowspan="2">2024A</td><td rowspan="2">2025A</td></tr><tr><td>y-y</td><td>q-q</td></tr><tr><td colspan="2">Total revenue</td><td>12,035</td><td>19,009</td><td>21,794</td><td>34,650</td><td>25,533</td><td>112%</td><td>-26%</td><td>32,777</td><td>34,436</td><td>55,618</td><td>65,732</td><td>87,488</td></tr><tr><td></td><td>% y-y</td><td>21%</td><td>9%</td><td>17%</td><td>76%</td><td>112%</td><td></td><td></td><td>72.4%</td><td>81.2%</td><td>13%</td><td>18%</td><td>33%</td></tr><tr><td colspan="2">Vehicle sales</td><td>9,939</td><td>16,136</td><td>19,202</td><td>31,606</td><td>22,784</td><td>129%</td><td>-28%</td><td></td><td></td><td>49,257</td><td>58,234</td><td>76,884</td></tr><tr><td></td><td>% y-y</td><td>19%</td><td>3%</td><td>15%</td><td>81%</td><td>129%</td><td></td><td></td><td></td><td></td><td>8%</td><td>18%</td><td>32%</td></tr><tr><td colspan="2">COGS</td><td>(11,115)</td><td>(17,111)</td><td>(18,769)</td><td>(28,576)</td><td>(20,674)</td><td>86%</td><td>-28%</td><td></td><td></td><td>(52,566)</td><td>(59,239)</td><td>(75,572)</td></tr><tr><td></td><td>% y-y</td><td>18%</td><td>9%</td><td>13%</td><td>64%</td><td>86%</td><td></td><td></td><td></td><td></td><td>19%</td><td>13%</td><td>28%</td></tr><tr><td colspan="2">Vehicle COGS</td><td>(8,926)</td><td>(14,473)</td><td>(16,379)</td><td>(25,893)</td><td>(18,491)</td><td>107%</td><td>-29%</td><td></td><td></td><td>(44,588)</td><td>(51,095)</td><td>(65,671)</td></tr><tr><td></td><td>% y-y</td><td>17%</td><td>5%</td><td>13%</td><td>70%</td><td>107%</td><td></td><td></td><td></td><td></td><td>14%</td><td>15%</td><td>29%</td></tr><tr><td colspan="2">Gross profit</td><td>920</td><td>1,898</td><td>3,025</td><td>6,074</td><td>4,859</td><td>428%</td><td>-20%</td><td></td><td></td><td>3,052</td><td>6,493</td><td>11,916</td></tr><tr><td></td><td>% y-y</td><td>89%</td><td>12%</td><td>51%</td><td>163%</td><td>428%</td><td></td><td></td><td></td><td></td><td>-41%</td><td>113%</td><td>84%</td></tr><tr><td colspan="2">Vehicle GP</td><td>1,014</td><td>1,663</td><td>2,824</td><td>5,713</td><td>4,292</td><td>323%</td><td>-25%</td><td></td><td></td><td>4,670</td><td>7,139</td><td>11,213</td></tr><tr><td></td><td>% y-y</td><td>32%</td><td>-13%</td><td>29%</td><td>150%</td><td>323%</td><td></td><td></td><td></td><td></td><td>-25%</td><td>53%</td><td>57%</td></tr><tr><td colspan="2">OPEX</td><td>(7,338)</td><td>(6,806)</td><td>(6,546)</td><td>(5,267)</td><td>(5,168)</td><td>-30%</td><td>-2%</td><td></td><td></td><td>(25,707)</td><td>(28,778)</td><td>(25,957)</td></tr><tr><td colspan="2">SG&amp;A</td><td>(4,401)</td><td>(3,965)</td><td>(4,185)</td><td>(3,537)</td><td>(3,497)</td><td>-21%</td><td>-1%</td><td></td><td></td><td>(12,885)</td><td>(15,741)</td><td>(16,088)</td></tr><tr><td colspan="2">R&amp;D expense</td><td>(3,181)</td><td>(3,007)</td><td>(2,391)</td><td>(2,026)</td><td>(1,885)</td><td>-41%</td><td>-7%</td><td></td><td></td><td>(13,431)</td><td>(13,037)</td><td>(10,605)</td></tr><tr><td colspan="2">Operating profit</td><td>(6,418)</td><td>(4,909)</td><td>(3,522)</td><td>807</td><td>(309)</td><td>-95%</td><td>-138%</td><td></td><td></td><td>(22,655)</td><td>(22,286)</td><td>(14,041)</td></tr><tr><td></td><td>% y-y</td><td>19%</td><td>-6%</td><td>-33%</td><td>-113%</td><td>-95%</td><td></td><td></td><td></td><td></td><td>45%</td><td>-2%</td><td>-37%</td></tr><tr><td colspan="2">Interest and investment income</td><td>173</td><td>108</td><td>354</td><td>127</td><td>116</td><td></td><td></td><td></td><td></td><td>2,210</td><td>854</td><td>762</td></tr><tr><td colspan="2">Interest expense</td><td>(245)</td><td>(213)</td><td>(223)</td><td>(205)</td><td>(214)</td><td></td><td></td><td></td><td></td><td>(404)</td><td>(798)</td><td>(885)</td></tr><tr><td colspan="2">Pretax income</td><td>(6,745)</td><td>(4,952)</td><td>(3,423)</td><td>300</td><td>(320)</td><td>-95%</td><td>-207%</td><td></td><td></td><td>(20,459)</td><td>(22,425)</td><td>(14,821)</td></tr><tr><td></td><td>% y-y</td><td>30%</td><td>-2%</td><td>-32%</td><td>-104%</td><td>-95%</td><td></td><td></td><td></td><td></td><td>42%</td><td>10%</td><td>-34%</td></tr><tr><td colspan="2">Taxes</td><td>(5)</td><td>(43)</td><td>(57)</td><td>(17)</td><td>(12)</td><td></td><td></td><td></td><td></td><td>(261)</td><td>23</td><td>(122)</td></tr><tr><td colspan="2">Net income</td><td>(6,891)</td><td>(5,141)</td><td>(3,661)</td><td>122</td><td>(496)</td><td>-93%</td><td>-505%</td><td></td><td></td><td>(21,147)</td><td>(22,658)</td><td>(15,571)</td></tr><tr><td></td><td>% y-y</td><td>31%</td><td>0%</td><td>-29%</td><td>-102%</td><td>-93%</td><td></td><td></td><td></td><td></td><td>45%</td><td>7%</td><td>-31%</td></tr><tr><td colspan="14">Ratio Analysis</td></tr><tr><td colspan="2">GPM</td><td>7.6%</td><td>10.0%</td><td>13.9%</td><td>17.5%</td><td>19.0%</td><td>11.4pp</td><td>1.5pp</td><td></td><td></td><td>5.5%</td><td>9.9%</td><td>13.6%</td></tr><tr><td colspan="2">Vehicle GPM</td><td>10.2%</td><td>10.3%</td><td>14.7%</td><td>18.1%</td><td>18.8%</td><td>8.6pp</td><td>0.8pp</td><td></td><td></td><td>9.5%</td><td>12.3%</td><td>14.6%</td></tr><tr><td colspan="2">OPEX</td><td>-61.0%</td><td>-35.8%</td><td>-30.0%</td><td>-15.2%</td><td>-20.2%</td><td>40.7pp</td><td>-5.0pp</td><td></td><td></td><td>-46.2%</td><td>-43.8%</td><td>-29.7%</td></tr><tr><td colspan="2">OPM</td><td>-53.3%</td><td>-25.8%</td><td>-16.2%</td><td>2.3%</td><td>-1.2%</td><td>52.1pp</td><td>-3.5pp</td><td></td><td></td><td>-40.7%</td><td>-33.9%</td><td>-16.0%</td></tr><tr><td colspan="2">NPM</td><td>-57.3%</td><td>-27.0%</td><td>-16.8%</td><td>0.4%</td><td>-1.9%</td><td>55.3pp</td><td>-2.3pp</td><td></td><td></td><td>-38.0%</td><td>-34.5%</td><td>-17.8%</td></tr></table>
+
+Source: Company data, Nomura research
+
+Fig. 2: NIO - quarterly shipment trend 
+
+<table><tr><td rowspan="2" colspan="2"></td><td rowspan="2">1Q25A</td><td rowspan="2">2Q25A</td><td rowspan="2">3Q25A</td><td rowspan="2">4Q25A</td><td rowspan="2">1Q26A</td><td colspan="2">% chg</td><td rowspan="2" colspan="2">2Q26Guidance</td><td rowspan="2">2023A</td><td rowspan="2">2024A</td><td rowspan="2">2025A</td></tr><tr><td>y-y</td><td>q-q</td></tr><tr><td colspan="2">Total vehicle delivery</td><td>42,094</td><td>72,056</td><td>87,071</td><td>124,807</td><td>83,465</td><td>98%</td><td>-33%</td><td>110,000</td><td>115,000</td><td>160,038</td><td>221,970</td><td>326,028</td></tr><tr><td></td><td>% y-y</td><td>40%</td><td>26%</td><td>41%</td><td>72%</td><td>98%</td><td></td><td></td><td>52.7%</td><td>59.6%</td><td>31%</td><td>39%</td><td>47%</td></tr><tr><td>ET series</td><td></td><td>11,658</td><td>21,961</td><td>19,600</td><td>16,278</td><td>7,804</td><td>-33%</td><td>-52%</td><td></td><td></td><td>67,852</td><td>84,681</td><td>69,497</td></tr><tr><td></td><td>% y-y</td><td>-5%</td><td>-11%</td><td>-23%</td><td>-27%</td><td>-33%</td><td></td><td></td><td></td><td></td><td>94%</td><td>25%</td><td>-18%</td></tr><tr><td>ES series</td><td></td><td>10,924</td><td>18,434</td><td>13,231</td><td>48,177</td><td>49,256</td><td>351%</td><td>2%</td><td></td><td></td><td>77,201</td><td>86,437</td><td>90,766</td></tr><tr><td></td><td>% y-y</td><td>-16%</td><td>-24%</td><td>-51%</td><td>118%</td><td>351%</td><td></td><td></td><td></td><td></td><td>9%</td><td>12%</td><td>5%</td></tr><tr><td>EC series</td><td></td><td>4,731</td><td>6,737</td><td>4,097</td><td>2,978</td><td>1,483</td><td>-69%</td><td>-50%</td><td></td><td></td><td>14,985</td><td>30,091</td><td>18,543</td></tr><tr><td></td><td>% y-y</td><td>-2%</td><td>-19%</td><td>-52%</td><td>-65%</td><td>-69%</td><td></td><td></td><td></td><td></td><td>-12%</td><td>101%</td><td>-38%</td></tr><tr><td>Onvo</td><td></td><td>14,781</td><td>17,081</td><td>37,656</td><td>38,290</td><td>13,339</td><td>-10%</td><td>-65%</td><td></td><td></td><td></td><td>20,761</td><td>107,808</td></tr><tr><td></td><td>% y-y</td><td></td><td></td><td>4426%</td><td>92%</td><td>-10%</td><td></td><td></td><td></td><td></td><td></td><td></td><td>419%</td></tr><tr><td>Firefly</td><td></td><td>-</td><td>7,843</td><td>12,487</td><td>19,084</td><td>11,583</td><td>n.a.</td><td>-39%</td><td></td><td></td><td></td><td></td><td>39,414</td></tr><tr><td></td><td>% y-y</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr></table>
+
+Source: Company data, CAAM, Nomura research
+
+Fig. 3: NIO – monthly sales by sub brands   
+![](images/a4da35d784e2ab281729fd70df9a2349b660c9b1d3f6c86ce6e5e00471764668.jpg)
+
+<details>
+<summary>bar_stacked</summary>
+
+| Month | NIO brand sales (k units) | Onvo sales (k units) | Firefly sales (k units) |
+|---|---|---|---|
+| Jan-24 | 10 | 0 | 0 |
+| Mar-24 | 8 | 0 | 0 |
+| May-24 | 15 | 0 | 0 |
+| Jul-24 | 21 | 0 | 0 |
+| Sep-24 | 20 | 1 | 0 |
+| Nov-24 | 15 | 3 | 0 |
+| Jan-25 | 20 | 7 | 0 |
+| Mar-25 | 8 | 3 | 0 |
+| May-25 | 18 | 4 | 1 |
+| Jul-25 | 13 | 5 | 0 |
+| Sep-25 | 10 | 11 | 9 |
+| Nov-25 | 17 | 11 | 11 |
+| Jan-26 | 31 | 9 | 13 |
+| Mar-26 | 15 | 4 | 7 |
+| End of Year | 19 | 4 | 6 |
+</details>
+
+Source: Company data, CAAM, Nomura research
+
+Fig. 4: NIO - EV market share trend in China   
+![](images/cbdb255cea10bcc2818b85bbaaa4a0357c945131610fdfd72f7cb4c132861889.jpg)
+
+<details>
+<summary>line</summary>
+
+| Month    | Value |
+| -------- | ----- |
+| Jan-24   | 1.5%  |
+| Mar-24   | 2.0%  |
+| May-24   | 2.5%  |
+| Jul-24   | 2.3%  |
+| Sep-24   | 2.0%  |
+| Nov-24   | 1.8%  |
+| Jan-25   | 2.4%  |
+| Mar-25   | 1.9%  |
+| May-25   | 2.7%  |
+| Jul-25   | 2.3%  |
+| Sep-25   | 2.8%  |
+| Nov-25   | 3.2%  |
+| Jan-26   | 4.5%  |
+| Mar-26   | 4.0%  |
+</details>
+
+Source: Company data, CPCA, Nomura research
+
+# Appendix A-1
+
+This report has been produced by Nomura International (Hong Kong) Ltd. (NIHK), Hong Kong.
+
+See Disclaimers for Nomura Group entity details.
+
+# Analyst Certification
+
+I, Joel Ying, hereby certify (1) that the views expressed in this Research report accurately reflect my personal views about any or all of the subject securities or issuers referred to in this Research report, (2) no part of my compensation was, is or will be directly or indirectly related to the specific recommendations or views expressed in this Research report and (3) no part of my compensation is tied to any specific investment banking transactions performed by Nomura Securities International, Inc., Nomura International plc or any other Nomura Group company.
+
+# Issuer Specific Regulatory Disclosures
+
+The terms "Nomura" and "Nomura Group" used herein refer to Nomura Holdings, Inc. and its affiliates and subsidiaries, including Nomura Securities International, Inc. ('NSI') and Instinet, LLC ('ILLC'), U. S. registered broker dealers and members of SIPC.
+
+Materially mentioned issuers 
+
+<table><tr><td>Issuer</td><td>Ticker</td><td>Price</td><td>Price date</td><td>Stock rating</td><td>Sector rating</td><td>Disclosures</td></tr><tr><td>NIO Inc</td><td>NIO US</td><td>USD 5.59</td><td>20-May-2026</td><td>Buy</td><td>N/A</td><td></td></tr></table>
+
+# NIO Inc (NIO US)
+
+Rating and target price chart (three year history)   
+![](images/76e6d08db2182d24888c63e1cd66f80c0083d491bbf04638a79e526be88dde52.jpg)
+
+<details>
+<summary>line</summary>
+
+| Date       | Closing Price | Target Price Change | Recommendation Changes |
+| ---------- | ------------- | ------------------- | ----------------------- |
+| 2023/07/01 | ~15.00        | -                   | 7.50                    |
+| 2024/01/01 | ~9.00         | -                   | -                       |
+| 2025/01/01 | ~5.00         | 5.00                | -                       |
+| 2026/01/01 | ~6.50         | 8.50                | 5.50                    |
+</details>
+
+USD 5.59 (20-May-2026) Buy (Sector rating: N/A) 
+
+<table><tr><td>Date</td><td>Rating</td><td>Target price</td><td>Closing price</td></tr><tr><td>22-Apr-26</td><td></td><td>8.60</td><td>6.48</td></tr><tr><td>11-Mar-26</td><td>Buy</td><td></td><td>5.47</td></tr><tr><td>11-Mar-26</td><td></td><td>6.60</td><td>5.47</td></tr><tr><td>22-Sep-25</td><td></td><td>8.40</td><td>6.91</td></tr><tr><td>23-Mar-25</td><td></td><td>5.00</td><td>4.50</td></tr><tr><td>11-Jun-23</td><td>Neutral</td><td></td><td>7.73</td></tr><tr><td>11-Jun-23</td><td></td><td>7.50</td><td>7.73</td></tr></table>
+
+Source: LSEG, Nomura   
+For explanation of ratings refer to the stock rating keys located after chart(s)
+
+Valuation Methodology Our TP of USD8.60 is based on DCF valuation method. Our DCF valuation assumes a WACC of 9.8%, market risk premium of 10.1% and terminal growth rate of 1.5% while we discounted back cash flow to 2026 as a 12 months forward valuation. Our TP implies 1.1x 2026F P/S. The benchmark index for this stock is the NASDAQ Composite Index.
+
+Risks that may impede the achievement of the target price Downside risks include: 1) failure to ramp up production capacity meeting its rising demand; 2) fail to gain further market share from new models; 3) less than expected opex improvement lead to more pressure on its financials.
+
+# Important Disclosures
+
+# Online availability of research and conflict-of-interest disclosures
+
+Nomura Group research is available on www.nomuranow.com/research, Bloomberg, Capital IQ, Factset, LSEG.
+
+Important disclosures may be read at http://go.nomuranow.com/research/m/Disclosures or requested from Nomura Securities International, Inc. If you have any difficulties with the website, please email grpsupport@nomura.com for help.
+
+The analysts responsible for preparing this report have received compensation based upon various factors including the firm's total revenues, a portion of which is generated by Investment Banking activities. Unless otherwise noted, the non-US analysts listed at the front of this report are not registered/qualified as research analysts under FINRA rules, may not be associated persons of NSI, and may not be subject to FINRA Rule
+
+2241 restrictions on communications with covered companies, public appearances, and trading securities held by a research analyst account.
+
+Nomura Global Financial Products Inc. (NGFP) Nomura Derivative Products Inc. (NDP) and Nomura International plc. (NIplc) are registered with the Commodities Futures Trading Commission and the National Futures Association (NFA) as swap dealers. NGFP, NDPI, and NIplc are generally engaged in the trading of swaps and other derivative products, any of which may be the subject of this report.
+
+# Distribution of ratings (Nomura Group)
+
+The distribution of all ratings published by Nomura Group Global Equity Research is as follows:
+
+57% have been assigned a Buy rating which, for purposes of mandatory disclosures, are classified as a Buy rating; 34% of companies with this rating are investment banking clients of the Nomura Group\*. 0% of companies (which are admitted to trading on a regulated market in the EEA) with this rating were supplied material services\*\* by the Nomura Group.
+
+41% have been assigned a Neutral rating which, for purposes of mandatory disclosures, is classified as a Hold rating; 57% of companies with this rating are investment banking clients of the Nomura Group\*. 0% of companies (which are admitted to trading on a regulated market in the EEA) with this rating were supplied material services by the Nomura Group
+
+2% have been assigned a Reduce rating which, for purposes of mandatory disclosures, are classified as a Sell rating; 0% of companies with this rating are investment banking clients of the Nomura Group\*. 0% of companies (which are admitted to trading on a regulated market in the EEA) with this rating were supplied material services by the Nomura Group.
+
+As at 31 March 2026.
+
+\*The Nomura Group as defined in the Disclaimer section at the end of this report.
+
+\*\* As defined by the EU Market Abuse Regulation
+
+# Definition of Nomura Group's equity research rating system and sectors
+
+The rating system is a relative system, indicating expected performance against a specific benchmark identified for each individual stock, subject to limited management discretion. An analyst's target price is an assessment of the current intrinsic fair value of the stock based on an appropriate valuation methodology determined by the analyst. Valuation methodologies include, but are not limited to, discounted cash flow analysis, expected return on equity and multiple analysis. Analysts may also indicate expected absolute upside/downside relative to the stated target price, defined as (target price - current price)/current price.
+
+# STOCKS
+
+A rating of 'Buy', indicates that the analyst expects the stock to outperform the Benchmark over the next 12 months. A rating of 'Neutral', indicates that the analyst expects the stock to perform in line with the Benchmark over the next 12 months. A rating of 'Reduce', indicates that the analyst expects the stock to underperform the Benchmark over the next 12 months. A rating of 'Suspended', indicates that the rating, target price and estimates have been suspended temporarily to comply with applicable regulations and/or firm policies. Securities and/or companies that are labelled as 'Not rated' or shown as 'No rating' are not in regular research coverage. Investors should not expect continuing or additional information from Nomura relating to such securities and/or companies. Benchmarks are as follows: United States/Europe/Asia ex-Japan: please see valuation methodologies for explanations of relevant benchmarks for stocks, which can be accessed at:
+
+http://go.nomuranow.com/research/m/Disclosures; Global Emerging Markets (ex-Asia): MSCI Emerging Markets ex-Asia, unless otherwise stated in the valuation methodology; Japan: Russell/Nomura Large Cap.
+
+# SECTORS
+
+A 'Bullish' stance, indicates that the analyst expects the sector to outperform the Benchmark during the next 12 months. A 'Neutral' stance, indicates that the analyst expects the sector to perform in line with the Benchmark during the next 12 months. A 'Bearish' stance, indicates that the analyst expects the sector to underperform the Benchmark during the next 12 months. Sectors that are labelled as 'Not rated' or shown as 'N/A' are not assigned ratings. Benchmarks are as follows: United States: S&P 500; Europe: Dow Jones STOXX 600; Global Emerging Markets (ex-Asia): MSCI Emerging Markets ex-Asia. Japan/Asia ex-Japan: Sector ratings are not assigned.
+
+# Target Price
+
+A Target Price, if discussed, indicates the analyst's forecast for the share price with a 12-month time horizon, reflecting in part the analyst's estimates for the company's earnings. The achievement of any target price may be impeded by general market and macroeconomic trends, and by other risks related to the company or the market, and may not occur if the company's earnings differ from estimates.
+
+# Disclaimers
+
+This publication contains material that has been prepared by the Nomura Group entity identified on page 1 and, if applicable, with the contributions of one or more Nomura Group entities whose employees and their respective affiliations are specified on page 1 or identified elsewhere in this publication. The term "Nomura Group" used herein refers to Nomura Holdings, Inc. and its affiliates and subsidiaries including: (a) Nomura Securities Co., Ltd. ('NSC') Tokyo, Japan, (b) Nomura Financial Products Europe GmbH ('NFPE'), Germany, (c) Nomura International plc ('NIplc'), UK, (d) Nomura Securities International, Inc. ('NSI'), New York, US, (e) Nomura International (Hong Kong) Ltd. ('NIHK'), Hong Kong, (f) Nomura Financial Investment (Korea) Co., Ltd. ('NFIK'), Korea (Information on Nomura analysts registered with the Korea Financial Investment Association ('KOFIA') can be found on the KOFIA Intranet at http://dis.kofia.or.kr, (g) Nomura Singapore Ltd. ('NSL'), Singapore (Registration number 197201440E, regulated by the Monetary Authority of Singapore) (h) Nomura Australia Ltd. ('NAL'), Australia (ABN 48 003 032 513), regulated by the Australian Securities and Investment Commission ('ASIC') and holder of an Australian financial services licence number 246412, (i) Nomura Securities Malaysia Sdn. Bhd. ('NSM'), Malaysia, (j) NIHK, Taipei Branch ('NITB'), Taiwan, (k) Nomura Financial Advisory and Securities (India) Private Limited ('NFASL'), Mumbai, India (Registered Address: Ceejay House, Level 11, Plot F, Shivsagar Estate, Dr. Annie Besant Road, Worli, Mumbai- 400 018, India; Tel: 91 22 4037 4037, Fax: 91 22 4037 4111; CIN No: U74140MH2007PTC169116, SEBI Registration No. for Stock Broking activities : INZ000255633; SEBI Registration No. for Merchant Banking : INM000011419; SEBI Registration No. for Research: INH000001014 - Compliance Officer: Ms. Pratiksha Tondwalkar, 91 22 40374904, grievance email: investorgrievancesra@nomura.com Webpage: LINK
+
+For reports with respect to Indian public companies or authored by India-based NFASL research analysts: (i) Investment in securities markets is subject to market risks. Read all the related documents carefully before investing. (ii) Registration granted by SEBI, and certification from NISM in no way guarantee performance of the intermediary or provide any assurance of returns to investors. (iii) NFASL terms and conditions for availing research services is disclosed on NFASL webpage.
+
+(I) Nomura Fiduciary Research & Consulting Co., Ltd. ('NFRC') Tokyo, Japan. (m) Nomura Orient International Securities Co., Ltd ("NOI"), is a majority owned joint venture amongst Nomura Group, Orient International (Holding) Co., Ltd, and Shanghai Huangpu Investment Holding (Group) Co., Ltd. In accordance with the laws of the People's Republic of China ("PRC", excluding Hong Kong, Macau and Taiwan, for the purpose of this document), NOI is licensed in the PRC to provide securities research and investment recommendations and it operates independently from the other members of the Nomura Group; in particular, NOI's interests in PRC securities are not disclosed to, or aggregated with the holdings of, any other Nomura Group entities and the interests in PRC securities of other Nomura Group entities are not disclosed to, or aggregated with the holdings of, NOI. An individual name printed next to NOI on the front page of a research report indicates that individual is employed by NOI to provide research assistance to NIHK under a research partnership agreement. 'NSFSPL' next to an employee's name on the front page of a research report indicates that the individual is employed by Nomura Structured Finance Services Private Limited to provide assistance to certain Nomura entities under inter-company agreements. 'Verdhana' next to an individual's name on the front page of a research report indicates that the individual is employed by PT Verdhana Sekuritas Indonesia ('Verdhana') to provide research assistance to NIHK under a research partnership agreement and neither Verdhana nor such individual is licensed outside of Indonesia.
+
+THIS MATERIAL IS: (I) FOR YOUR PRIVATE INFORMATION, AND WE ARE NOT SOLICITING ANY ACTION BASED UPON IT; (II) NOT TO BE CONSTRUED AS AN OFFER TO SELL OR A SOLICITATION OF AN OFFER TO BUY ANY SECURITIES IN ANY JURISDICTION WHERE SUCH OFFER OR SOLICITATION WOULD BE ILLEGAL; AND (III) OTHER THAN DISCLOSURES RELATING TO THE NOMURA GROUP, BASED UPON INFORMATION FROM SOURCES THAT WE CONSIDER RELIABLE, BUT HAS NOT BEEN INDEPENDENTLY VERIFIED BY NOMURA GROUP.
+
+Other than disclosures relating to the Nomura Group, the Nomura Group does not warrant, represent or undertake, express or implied, that the document is fair, accurate, complete, correct, reliable or fit for any particular purpose or merchantable, and to the maximum extent permissible by law and/or regulation, does not accept liability (in negligence or otherwise, and in whole or in part) for any act (or decision not to act) resulting from use of this document and related data. To the maximum extent permissible by law and/or regulation, all warranties and other assurances by the Nomura Group are hereby excluded and the Nomura Group shall have no liability (in negligence or otherwise, and in whole or in part) for any loss howsoever arising from the use, misuse, or distribution of this material or the information contained in this material or otherwise arising in connection therewith.
+
+Opinions or estimates expressed are current opinions as of the original publication date appearing on this material and the information, including the opinions and estimates contained herein, are subject to change without notice. The Nomura Group, however, expressly disclaims any obligation, and therefore is under no duty, to update or revise this document. Any comments or statements made herein are those of the author(s) and may differ from views held by other parties within Nomura Group. Clients should consider whether any advice or recommendation in this report is suitable for their particular circumstances and, if appropriate, seek professional advice, including tax advice. The Nomura Group does not provide tax advice.
+
+The Nomura Group, and/or its officers, directors, employees and affiliates, may, to the extent permitted by applicable law and/or regulation, deal as principal, agent, or otherwise, or have long or short positions in, or buy or sell, the securities, commodities or instruments, or options or other derivative instruments based thereon, of issuers or securities mentioned herein. The Nomura Group companies may also act as market maker or liquidity provider (within the meaning of applicable regulations in the UK) in the financial instruments of the issuer. Where the activity of market maker is carried out in accordance with the definition given to it by specific laws and regulations of the US or other jurisdictions, this will be separately disclosed within the specific issuer disclosures.
+
+This document may contain information obtained from third parties, including, but not limited to, ratings from credit ratings agencies such as Standard & Poor's. The Nomura Group hereby expressly disclaims all representations, warranties or undertakings of originality, fairness, accuracy, completeness, correctness, merchantability or fitness for a particular purpose with respect to any of the information obtained from third parties contained in this material or otherwise arising in connection therewith, and shall not be liable (in negligence or otherwise, and in whole or in part) for any direct, indirect, incidental, exemplary, compensatory, punitive, special or consequential damages, costs, expenses, legal fees, or losses (including lost income or profits and opportunity costs) in connection with any use or misuse of any of the information obtained from third parties contained in this material or otherwise arising in connection therewith. Reproduction and distribution of third-party content in any form is prohibited except with the prior written permission of the related third-party. Third-party content providers do not, express or implied, guarantee the fairness, accuracy, completeness, correctness, timeliness or availability of any information, including ratings, and are not in any way responsible for any errors or omissions (negligent or otherwise), regardless of the cause, or for the results obtained from the use or misuse of such content. Third-party content providers give no express or implied warranties, including, but not limited to, any warranties of merchantability or fitness for a particular purpose or use. Third-party content providers shall not be liable (in negligence or otherwise, and in whole or in part) for any direct, indirect, incidental, exemplary, compensatory, punitive, special or consequential damages, costs, expenses, legal fees, or losses (including lost income or profits and opportunity costs) in connection with any use or misuse of their content, including ratings. Credit ratings are statements of opinions and are not statements of fact or recommendations to purchase hold or sell securities. They do not address the suitability of securities or the suitability of securities for investment purposes, and should not be relied on as investment advice. Any MSCI sourced information in this document is the exclusive property of MSCI Inc. ('MSCI'). Without prior written permission of MSCI, this information and any other MSCI intellectual property may not be duplicated, reproduced, re-disseminated, redistributed or used, in whole or in part, for any purpose whatsoever, including creating any financial products and any indices. This information is provided on an "as is" basis. The user assumes the entire risk of any use made of this information. MSCI, its affiliates and any third party involved in, or related to, computing or compiling the information hereby expressly disclaim all representations, warranties or undertakings of originality, fairness, accuracy,
+
+completeness, correctness, merchantability or fitness for a particular purpose with respect to any of this material or the information contained in this material or otherwise arising in connection therewith. Without limiting any of the foregoing, in no event shall MSCI, any of its affiliates or any third party involved in, or related to, computing or compiling the information have any liability (in negligence or otherwise, and in whole or in part) for any damages of any kind. MSCI and the MSCI indexes are services marks of MSCI and its affiliates.
+
+The intellectual property rights and any other rights, in Russell/Nomura Japan Equity Index belong to Nomura Fiduciary Research & Consulting Co., Ltd. ("NFRC") and FTSE Russell ("Russell"). NFRC and Russell do not guarantee fairness, accuracy, completeness, correctness, reliability, usefulness, marketability, merchantability or fitness of the Index, and do not account for business activities or services that any index user and/or its affiliates undertakes with the use of the Index.
+
+Investors should consider this document as only a single factor in making their investment decision and, as such, the report should not be viewed as identifying or suggesting all risks, direct or indirect, that may be associated with any investment decision. Nomura Group produces a number of different types of research product including, among others, fundamental analysis and quantitative analysis; recommendations contained in one type of research product may differ from recommendations contained in other types of research product, whether as a result of differing time horizons, methodologies or otherwise. The Nomura Group publishes research product in a number of different ways including the posting of product on the Nomura Group portals and/or distribution directly to clients. Different groups of clients may receive different products and services from the research department depending on their individual requirements.
+
+Figures presented herein may refer to past performance or simulations based on past performance which are not reliable indicators of future or likely performance. Where the information contains an expectation, projection or indication of future performance and business prospects, such forecasts may not be a reliable indicator of future or likely performance. Moreover, simulations are based on models and simplifying assumptions which may oversimplify and not reflect the future distribution of returns. Any figure, strategy or index created and published for illustrative purposes within this document is not intended for “use” as a “benchmark” as defined by the European Benchmark Regulation.
+
+Certain securities are subject to fluctuations in exchange rates that could have an adverse effect on the value or price of, or income derived from, the investment.
+
+With respect to Fixed Income Research: Recommendations fall into two categories: tactical, which typically last up to three months; or strategic, which typically last from 6-12 months. However, trade recommendations may be reviewed at any time as circumstances change. 'Stop loss' levels for trades are also provided; which, if hit, closes the trade recommendation automatically. Prices and yields shown in recommendations are taken at the time of submission for publication and are based on either indicative Bloomberg, LSEG or Nomura prices and yields at that time. The prices and yields shown are not necessarily those at which the trade recommendation can be implemented.
+
+The securities described herein may not have been registered under the US Securities Act of 1933 (the '1933 Act'), and, in such case, may not be offered or sold in the US or to US persons unless they have been registered under the 1933 Act, or except in compliance with an exemption from the registration requirements of the 1933 Act. Unless governing law permits otherwise, any transaction should be executed via a Nomura entity in your home jurisdiction.
+
+This document has been approved for distribution in the UK as investment research by NIplc. NIplc is authorised by the Prudential Regulation Authority and regulated by the Financial Conduct Authority and the Prudential Regulation Authority. NIplc is a member of the London Stock Exchange. This document does not constitute a personal recommendation within the meaning of applicable regulations in the UK, or take into account the particular investment objectives, financial situations, or needs of individual investors. This document is intended only for investors who are 'eligible counterparties' or 'professional clients' for the purposes of applicable regulations in the UK, and may not, therefore, be redistributed to persons who are 'retail clients' for such purposes.
+
+This document has been approved for distribution in the European Economic Area as investment research by Nomura Financial Products Europe GmbH ("NFPE"). NFPE is a company organized as a limited liability company under German law registered in the Commercial Register of the Court of Frankfurt/Main under HRB 110223. NFPE is authorized and regulated by the German Federal Financial Supervisory Authority (BaFin).
+
+This document has been approved by NIHK, which is regulated by the Hong Kong Securities and Futures Commission, for distribution in Hong Kong by NIHK. This document is intended only for investors who are 'professional investors' for the purposes of applicable regulations in Hong Kong and may not, therefore, be redistributed to persons who are not 'professional investors' for such purposes.
+
+This document has been approved for distribution in Australia by NAL, which is authorized and regulated in Australia by the ASIC.
+
+This document has also been approved for distribution in Malaysia by NSM.
+
+In Singapore, this document has been distributed by NSL, an exempt financial adviser as defined under the Financial Advisers Act (Chapter 110), among other things, and regulated by the Monetary Authority of Singapore. NSL may distribute this document produced by its foreign affiliates pursuant to an arrangement under Regulation 32C of the Financial Advisers Regulations. This document is intended for accredited, expert or institutional investors as defined by the Securities and Futures Act (Chapter 289). Where the recipient of this document is not an accredited, expert or institutional investor, NSL accepts legal responsibility for the contents of this document in respect of such recipient only to the extent required by law. Recipients of this document in Singapore should contact NSL in respect of matters arising from, or in connection with, this document. THIS DOCUMENT IS INTENDED FOR GENERAL CIRCULATION. IT DOES NOT TAKE INTO ACCOUNT THE SPECIFIC INVESTMENT OBJECTIVES, FINANCIAL SITUATION OR PARTICULAR NEEDS OF ANY PARTICULAR PERSON. RECIPIENTS SHOULD TAKE INTO ACCOUNT THEIR SPECIFIC INVESTMENT OBJECTIVES, FINANCIAL SITUATION OR PARTICULAR NEEDS BEFORE MAKING A COMMITMENT TO PURCHASE ANY SECURITIES, INCLUDING SEEKING ADVICE FROM AN INDEPENDENT FINANCIAL ADVISER REGARDING THE SUITABILITY OF THE INVESTMENT, UNDER A SEPARATE ENGAGEMENT, AS THE RECIPIENT DEEMS FIT. Unless prohibited by the provisions of Regulation S of the 1933 Act, this material is distributed in the US, by NSI, a US-registered broker-dealer, which accepts responsibility for its contents in accordance with the provisions of Rule 15a-6, under the US Securities Exchange Act of 1934. The entity that prepared this document permits its separately operated affiliates within the Nomura Group to make copies of such documents available to their clients.
+
+This document has not been approved for distribution to persons other than ‘Authorised Persons’, ‘Exempt Persons’ or ‘Institutions’ (as defined by the Capital Markets Authority) in the Kingdom of Saudi Arabia ('Saudi Arabia') or a 'Market Counterparty' or a 'Professional Client' (as defined by the Dubai Financial Services Authority) in the United Arab Emirates ('UAE') or a 'Market Counterparty' or a 'Business Customer' (as defined by the Qatar Financial Centre Regulatory Authority) in the State of Qatar ('Qatar') by Nomura Saudi Arabia, NIplc or any other member of the Nomura Group, as the case may be. Neither this document nor any copy thereof may be taken or transmitted or distributed, directly or indirectly, by any person other than those authorised to do so into Saudi Arabia or in the UAE or in Qatar or to any person other than 'Authorised Persons', 'Exempt Persons' or 'Institutions' located in Saudi Arabia or a 'Market Counterparty' or a 'Professional Client' in the UAE or a 'Market Counterparty' or a 'Business Customer' in Qatar. Any failure to comply with these restrictions may constitute a violation of the laws of the UAE or Saudi Arabia or Qatar.
+
+For report with reference of TAIWAN public companies or authored by Taiwan based research analyst:
+
+THIS DOCUMENT IS SOLELY FOR REFERENCE ONLY. You should independently evaluate the investment risks and are solely responsible for your investment decisions. NO PORTION OF THE REPORT MAY BE REPRODUCED OR QUOTED BY THE PRESS OR ANY OTHER PERSON WITHOUT WRITTEN AUTHORIZATION FROM NOMURA GROUP. Pursuant to Operational Regulations Governing Securities Firms Recommending Trades in Securities to Customers and/or other applicable laws or regulations in Taiwan, you are prohibited to provide the reports to others (including but not limited to related parties, affiliated companies and any other third parties) or engage in any activities in connection with the reports which may involve conflicts of interests. INFORMATION ON SECURITIES / INSTRUMENTS NOT EXECUTABLE BY NOMURA INTERNATIONAL (HONG KONG) LTD., TAIPEI BRANCH IS FOR INFORMATIONAL PURPOSES ONLY AND IS NOT BE CONSTRUED AS A RECOMMENDATION OR A SOLICITATION TO TRADE IN SUCH SECURITIES / INSTRUMENTS.
+
+This material may not be distributed in Indonesia or passed on within the territory of the Republic of Indonesia or to persons who are Indonesian citizens (wherever they are domiciled or located) or entities of or residents in Indonesia in a manner which constitutes a public offering under the laws of the Republic of Indonesia. The securities mentioned in this document may not be offered or sold in Indonesia or to persons who are citizens of Indonesia (wherever they are domiciled or located) or entities of or residents in Indonesia in a manner which constitutes a public offering under the laws of the Republic of Indonesia.
+
+An individual name printed next to NOI on the front page of a research report indicates that this document is a translation of a research report issued by NOI in the PRC. In all other cases, this document is prepared by Nomura Group or its subsidiary or affiliate (collectively, “Offshore Issuers”) that is not licensed in the PRC to provide securities research. This research report is not approved or intended to be circulated in the PRC. The A-share related analysis (if any) is not produced for any persons located or incorporated in the PRC. The recipients should not rely on any information contained in this research report in making investment decisions and Offshore Issuers take no responsibility in this regard. NO PART OF THIS MATERIAL MAY BE (I) COPIED, PHOTOCOPIED, REPRODUCED OR DUPLICATED IN ANY FORM, BY ANY MEANS; OR (II) REDISSEMINATED, REPUBLISHED OR REDISTRIBUTED WITHOUT THE PRIOR WRITTEN CONSENT OF A MEMBER OF THE NOMURA GROUP. If this document has been distributed by electronic transmission, such as e-mail, then such transmission cannot be guaranteed to be secure or error-free as information could be intercepted, corrupted, lost, destroyed, arrive late or incomplete, or contain viruses. The sender therefore does not accept liability (in negligence or otherwise, and in whole or in part) for any errors or omissions in the contents of this document, which may arise as a result of electronic transmission. If verification is required, please request a hard-copy version.
+
+The Nomura Group manages conflicts with respect to the production of research through its compliance policies and procedures (including, but not limited to, Conflicts of Interest, Chinese Wall and Confidentiality policies) as well as through the maintenance of Chinese Walls and employee training.
+
+Additional information regarding the methodologies or models used in the production of any investment recommendations contained within this document is available upon request by contacting the Research Analysts of Nomura listed on the front page. Disclosures information is available upon request and disclosure information is available at the Nomura Disclosure web page:
+
+http://go.nomuranow.com/research/m/Disclosures
+
+Copyright © 2026 Nomura International (Hong Kong) Ltd., Hong Kong. All rights reserved.
