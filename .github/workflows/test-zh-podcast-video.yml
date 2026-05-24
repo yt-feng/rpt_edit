@@ -137,7 +137,7 @@ jobs:
         run: |
           set -o pipefail
           mkdir -p "$OUTPUT_DIR"
-          python scripts/generate_test_podcast_video_eleven_batch.py \
+          python scripts/generate_test_podcast_video_eleven_batch_v2.py \
             --output-dir "$OUTPUT_DIR" \
             --max-items "${{ github.event.inputs.test_pdf_count || '5' }}" \
             --model "${{ github.event.inputs.model || 'deepseek-chat' }}" \
