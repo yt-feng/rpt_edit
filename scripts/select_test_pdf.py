@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Select one test PDF with at least N pages from a downloaded Dropbox folder."""
+"""Select test PDFs with at least N pages from a downloaded Dropbox folder."""
 from __future__ import annotations
 
 import argparse
@@ -55,6 +55,7 @@ def main() -> int:
     parser.add_argument("--input-dir", required=True)
     parser.add_argument("--output-dir", required=True)
     parser.add_argument("--min-pages", type=int, default=5)
+    parser.add_argument("--max-pdfs", type=int, default=1)
     args = parser.parse_args()
 
     input_dir = Path(args.input_dir).resolve()
@@ -77,24 +78,29 @@ def main() -> int:
     if not candidates:
         raise RuntimeError(f"No PDF with at least {args.min_pages} pages found under {input_dir}")
 
-    selected = candidates[0]
-    src: Path = selected["path"]
-    dst = output_dir / f"0001-{slug(src.name)}.pdf"
-    shutil.copy2(src, dst)
+    selected = candidates[: max(1, args.max_pdfs)]
+    selected_rows: list[dict[str, Any]] = []
+    for index, row in enumerate(selected, 1):
+        src: Path = row["path"]
+        dst = output_dir / f"{index:04d}-{slug(src.name)}.pdf"
+        shutil.copy2(src, dst)
+        selected_rows.append({"selected_pdf": str(src), "selected_copy": str(dst), "page_count": row["pages"]})
+        log(f"Selected test PDF {index}: {dst} ({row['pages']} pages)")
 
     summary = {
-        "selected_pdf": str(src),
-        "selected_copy": str(dst),
-        "page_count": selected["pages"],
+        "selected_pdfs": selected_rows,
+        "selected_count": len(selected_rows),
         "min_pages": args.min_pages,
+        "max_pdfs": args.max_pdfs,
         "latest_folder": manifest.get("latest_folder", ""),
         "candidate_count": len(candidates),
     }
     (output_dir / "selected_test_pdf.json").write_text(json.dumps(summary, ensure_ascii=False, indent=2), encoding="utf-8")
-    write_github_output("selected_pdf", str(dst))
-    write_github_output("page_count", str(selected["pages"]))
-    write_github_output("selected_name", src.name)
-    log(f"Selected test PDF: {dst} ({selected['pages']} pages)")
+    first = selected_rows[0]
+    write_github_output("selected_pdf", first["selected_copy"])
+    write_github_output("page_count", str(first["page_count"]))
+    write_github_output("selected_count", str(len(selected_rows)))
+    write_github_output("selected_name", Path(first["selected_pdf"]).name)
     return 0
 
 
