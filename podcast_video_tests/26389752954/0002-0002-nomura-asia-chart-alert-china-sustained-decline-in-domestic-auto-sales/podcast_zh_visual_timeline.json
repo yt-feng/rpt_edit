@@ -1,0 +1,435 @@
+[
+  {
+    "speaker": "ZH_A",
+    "text": "欢迎来到KC桌面。今天我们用一份最新\n研报，拆一个值得继续跟踪的问题。",
+    "start": 0.0,
+    "end": 7.012,
+    "voice_id": "UFDAUkGzdLAEJlINT3Fx",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "KC桌面",
+      "最新研报"
+    ],
+    "page_index": 1,
+    "page_count": 1
+  },
+  {
+    "speaker": "ZH_A",
+    "text": "最近我看到一份投行研报，讲的是中国汽\n车市场，数据挺有意思的。",
+    "start": 7.372,
+    "end": 13.41,
+    "voice_id": "UFDAUkGzdLAEJlINT3Fx",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "投行研报",
+      "中国汽车市场"
+    ],
+    "page_index": 1,
+    "page_count": 1
+  },
+  {
+    "speaker": "ZH_B",
+    "text": "没错，这份报告的核心判断是，国内汽车\n销量在五月继续下滑，而且和出口市场的\n分化越来越明显。",
+    "start": 13.77,
+    "end": 23.986,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "国内汽车销量",
+      "五月",
+      "下滑"
+    ],
+    "page_index": 1,
+    "page_count": 1
+  },
+  {
+    "speaker": "ZH_A",
+    "text": "下滑幅度有多大？能给个具体数字吗？",
+    "start": 24.346,
+    "end": 27.319,
+    "voice_id": "UFDAUkGzdLAEJlINT3Fx",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "下滑幅度",
+      "具体数字"
+    ],
+    "page_index": 1,
+    "page_count": 1
+  },
+  {
+    "speaker": "ZH_B",
+    "text": "根据乘联会的初步估算，五月国内汽车销\n量同比增速可能降到负百分之二十一点六\n。",
+    "start": 27.679,
+    "end": 36.874,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "乘联会",
+      "五月",
+      "国内汽车销量"
+    ],
+    "page_index": 1,
+    "page_count": 1
+  },
+  {
+    "speaker": "ZH_A",
+    "text": "负百分之二十一，这比四月和一季度都差\n。",
+    "start": 37.234,
+    "end": 40.67,
+    "voice_id": "UFDAUkGzdLAEJlINT3Fx",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "负百分之二十一",
+      "四月",
+      "一季度"
+    ],
+    "page_index": 1,
+    "page_count": 1
+  },
+  {
+    "speaker": "ZH_B",
+    "text": "对，四月是负百分之二十，一季度是负百\n分之十七，所以五月的跌幅是在加深的。",
+    "start": 41.03,
+    "end": 48.879,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "四月",
+      "负百分之二十",
+      "一季度"
+    ],
+    "page_index": 1,
+    "page_count": 1
+  },
+  {
+    "speaker": "ZH_A",
+    "text": "这背后的原因是什么？为什么突然跌得这\n么厉害？",
+    "start": 49.239,
+    "end": 53.325,
+    "voice_id": "UFDAUkGzdLAEJlINT3Fx",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "原因"
+    ],
+    "page_index": 1,
+    "page_count": 1
+  },
+  {
+    "speaker": "ZH_B",
+    "text": "报告里提到了两个主要原因，一个是去年\n以旧换新政策退出的后遗症，",
+    "start": 53.685,
+    "end": 60.187,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "以旧换新政策退出",
+      "后遗症"
+    ],
+    "page_index": 1,
+    "page_count": 1
+  },
+  {
+    "speaker": "ZH_B",
+    "text": "另一个是新能源车购置税从零恢复到了百\n分之五。",
+    "start": 60.547,
+    "end": 64.68,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "新能源车购置税",
+      "零",
+      "百分之五"
+    ],
+    "page_index": 1,
+    "page_count": 1
+  },
+  {
+    "speaker": "ZH_A",
+    "text": "所以是政策红利退潮，市场在消化这个影\n响。",
+    "start": 65.04,
+    "end": 69.312,
+    "voice_id": "UFDAUkGzdLAEJlINT3Fx",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "政策红利退潮",
+      "消化"
+    ],
+    "page_index": 1,
+    "page_count": 1
+  },
+  {
+    "speaker": "ZH_B",
+    "text": "对，而且报告还指出，汽车行业占GDP\n的百分之三点二，国内销售持续疲软，会\n对经济增长造成明显拖累。",
+    "start": 69.672,
+    "end": 80.075,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "汽车行业",
+      "GDP",
+      "百分之三点二"
+    ],
+    "page_index": 1,
+    "page_count": 1
+  },
+  {
+    "speaker": "ZH_A",
+    "text": "那出口这块呢？我看到报告里说出口增长\n很快。",
+    "start": 80.435,
+    "end": 84.382,
+    "voice_id": "UFDAUkGzdLAEJlINT3Fx",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "出口",
+      "增长很快"
+    ],
+    "page_index": 1,
+    "page_count": 1
+  },
+  {
+    "speaker": "ZH_B",
+    "text": "是的，四月出口量同比增长了百分之八十\n四点一，比一季度的百分之六十点七还要\n快。",
+    "start": 84.742,
+    "end": 92.916,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "四月",
+      "出口量",
+      "同比增长"
+    ],
+    "page_index": 1,
+    "page_count": 1
+  },
+  {
+    "speaker": "ZH_A",
+    "text": "出口这么猛，能弥补国内的下滑吗？",
+    "start": 93.276,
+    "end": 96.387,
+    "voice_id": "UFDAUkGzdLAEJlINT3Fx",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "出口",
+      "弥补"
+    ],
+    "page_index": 1,
+    "page_count": 1
+  },
+  {
+    "speaker": "ZH_B",
+    "text": "报告认为不能完全弥补，因为出口只占整\n个汽车市场销量的百分之十九左右。",
+    "start": 96.747,
+    "end": 103.899,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "不能完全弥补",
+      "出口",
+      "汽车市场销量"
+    ],
+    "page_index": 1,
+    "page_count": 1
+  },
+  {
+    "speaker": "ZH_A",
+    "text": "所以内外市场是冰火两重天。",
+    "start": 104.259,
+    "end": 107.138,
+    "voice_id": "UFDAUkGzdLAEJlINT3Fx",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "内外市场",
+      "冰火两重天"
+    ],
+    "page_index": 1,
+    "page_count": 1
+  },
+  {
+    "speaker": "ZH_B",
+    "text": "对，国内是冰，出口是火，而且报告预测\n这个分化会贯穿整个二零二六年。",
+    "start": 107.498,
+    "end": 114.789,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "国内",
+      "冰",
+      "出口"
+    ],
+    "page_index": 1,
+    "page_count": 1
+  },
+  {
+    "speaker": "ZH_A",
+    "text": "二零二六年，那说明这不是短期现象。",
+    "start": 115.149,
+    "end": 118.725,
+    "voice_id": "UFDAUkGzdLAEJlINT3Fx",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "二零二六年",
+      "短期现象"
+    ],
+    "page_index": 1,
+    "page_count": 1
+  },
+  {
+    "speaker": "ZH_B",
+    "text": "没错，报告里还提到，全球油气价格上升\n，反而给中国新能源车出口创造了一些独\n特优势。",
+    "start": 119.085,
+    "end": 127.63,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "全球油气价格上升",
+      "中国新能源车出口",
+      "独特优势"
+    ],
+    "page_index": 1,
+    "page_count": 1
+  },
+  {
+    "speaker": "ZH_A",
+    "text": "这个角度很有意思，能源价格波动反而成\n了中国车企的利好。",
+    "start": 127.99,
+    "end": 133.935,
+    "voice_id": "UFDAUkGzdLAEJlINT3Fx",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "能源价格波动",
+      "中国车企",
+      "利好"
+    ],
+    "page_index": 1,
+    "page_count": 1
+  },
+  {
+    "speaker": "ZH_B",
+    "text": "对，但报告没有展开讲这个“独特优势”\n具体是什么，比如是成本优势还是供应链\n优势。",
+    "start": 134.295,
+    "end": 141.864,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "独特优势",
+      "成本优势",
+      "供应链优势"
+    ],
+    "page_index": 1,
+    "page_count": 1
+  },
+  {
+    "speaker": "ZH_A",
+    "text": "这个悬念留得好，看来要去看完整报告才\n能搞清楚。",
+    "start": 142.224,
+    "end": 146.915,
+    "voice_id": "UFDAUkGzdLAEJlINT3Fx",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "悬念",
+      "完整报告"
+    ],
+    "page_index": 1,
+    "page_count": 1
+  },
+  {
+    "speaker": "ZH_B",
+    "text": "是的，而且报告里关于国内销量下滑的深\n度分析，比如哪些车型受冲击最大，也没\n有完全展开。",
+    "start": 147.275,
+    "end": 154.705,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "国内销量下滑",
+      "深度分析",
+      "车型"
+    ],
+    "page_index": 1,
+    "page_count": 1
+  },
+  {
+    "speaker": "ZH_A",
+    "text": "那这些细节应该都在完整版的报告里。",
+    "start": 155.065,
+    "end": 158.269,
+    "voice_id": "UFDAUkGzdLAEJlINT3Fx",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "细节"
+    ],
+    "page_index": 1,
+    "page_count": 1
+  },
+  {
+    "speaker": "ZH_B",
+    "text": "对，我们今天只是挑了几个关键点聊，完\n整报告里的数据图表和分析框架更详细。",
+    "start": 158.629,
+    "end": 165.224,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "关键点",
+      "完整报告",
+      "数据图表"
+    ],
+    "page_index": 1,
+    "page_count": 1
+  },
+  {
+    "speaker": "ZH_A",
+    "text": "好，如果大家想深入了解这个内外分化的\n趋势，可以去看看这份报告的完整版。",
+    "start": 165.584,
+    "end": 171.853,
+    "voice_id": "UFDAUkGzdLAEJlINT3Fx",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "内外分化",
+      "趋势",
+      "完整版"
+    ],
+    "page_index": 1,
+    "page_count": 1
+  },
+  {
+    "speaker": "ZH_B",
+    "text": "对，另外我们的社群也会定期分享这类研\n报的解读和讨论，欢迎感兴趣的朋友加入\n。",
+    "start": 172.213,
+    "end": 180.387,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "社群",
+      "研报",
+      "解读"
+    ],
+    "page_index": 1,
+    "page_count": 1
+  },
+  {
+    "speaker": "ZH_A",
+    "text": "好，那我们今天就聊到这里，感谢大家收\n听。",
+    "start": 180.747,
+    "end": 184.926,
+    "voice_id": "UFDAUkGzdLAEJlINT3Fx",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "那我们今天就",
+      "聊到这里"
+    ],
+    "page_index": 1,
+    "page_count": 1
+  },
+  {
+    "speaker": "ZH_B",
+    "text": "下次见。",
+    "start": 185.286,
+    "end": 186.401,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "下次见"
+    ],
+    "page_index": 1,
+    "page_count": 1
+  }
+]

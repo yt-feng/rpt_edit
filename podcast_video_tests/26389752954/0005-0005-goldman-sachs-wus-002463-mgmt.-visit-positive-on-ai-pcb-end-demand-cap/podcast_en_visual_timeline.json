@@ -1,0 +1,609 @@
+[
+  {
+    "speaker": "EN_A",
+    "text": "Welcome to KC Desk Notes. Today we\nare unpacking one fresh research\nreport and the question it raises.",
+    "start": 0.0,
+    "end": 5.851,
+    "voice_id": "XZEfcFyBnzsNJrdvkWdI",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "KC Desk Notes",
+      "research report"
+    ],
+    "page_index": 1,
+    "page_count": 1
+  },
+  {
+    "speaker": "EN_A",
+    "text": "So we just got back from a China\ntech tour, and one name that came\nup repeatedly was WUS.",
+    "start": 6.211,
+    "end": 11.413,
+    "voice_id": "XZEfcFyBnzsNJrdvkWdI",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "China tech tour",
+      "WUS"
+    ],
+    "page_index": 1,
+    "page_count": 1
+  },
+  {
+    "speaker": "EN_B",
+    "text": "Right, WUS is a major PCB\nmanufacturer, and we hosted their\nmanagement in Shanghai recently.",
+    "start": 11.773,
+    "end": 17.253,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "WUS",
+      "PCB manufacturer",
+      "Shanghai"
+    ],
+    "page_index": 1,
+    "page_count": 1
+  },
+  {
+    "speaker": "EN_A",
+    "text": "And the big question everyone is\nasking—what’s the outlook for\nAI-related demand in the PCB\nspace?",
+    "start": 17.613,
+    "end": 23.789,
+    "voice_id": "XZEfcFyBnzsNJrdvkWdI",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "AI-related demand",
+      "PCB space"
+    ],
+    "page_index": 1,
+    "page_count": 1
+  },
+  {
+    "speaker": "EN_B",
+    "text": "Management is very positive. They\nsee strong and rising end demand\nfor AI PCBs, and they’re backing\nthat up with aggressive capacity",
+    "start": 24.149,
+    "end": 27.957,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "AI PCBs",
+      "capacity expansion"
+    ],
+    "page_index": 1,
+    "page_count": 2
+  },
+  {
+    "speaker": "EN_B",
+    "text": "expansion.",
+    "start": 27.957,
+    "end": 31.765,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "AI PCBs",
+      "capacity expansion"
+    ],
+    "page_index": 2,
+    "page_count": 2
+  },
+  {
+    "speaker": "EN_A",
+    "text": "But is this just about volume, or\nis there something more structural\nhappening?",
+    "start": 32.125,
+    "end": 36.258,
+    "voice_id": "XZEfcFyBnzsNJrdvkWdI",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "volume",
+      "structural"
+    ],
+    "page_index": 1,
+    "page_count": 1
+  },
+  {
+    "speaker": "EN_B",
+    "text": "It’s both. The report highlights\nthree key drivers. First, the AI\ninfrastructure upcycle is\naccelerating.",
+    "start": 36.618,
+    "end": 42.516,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "three key drivers",
+      "AI infrastructure upcycle"
+    ],
+    "page_index": 1,
+    "page_count": 1
+  },
+  {
+    "speaker": "EN_A",
+    "text": "That’s the big picture. But what\nspecifically is driving the PCB\ndemand within that?",
+    "start": 42.876,
+    "end": 47.056,
+    "voice_id": "XZEfcFyBnzsNJrdvkWdI",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "PCB demand"
+    ],
+    "page_index": 1,
+    "page_count": 1
+  },
+  {
+    "speaker": "EN_B",
+    "text": "For one, the specifications are\nupgrading. We’re seeing better\nmaterials and higher layer counts\nto support high-speed connections.",
+    "start": 47.416,
+    "end": 54.614,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "specifications",
+      "higher layer counts",
+      "high-speed connections"
+    ],
+    "page_index": 1,
+    "page_count": 1
+  },
+  {
+    "speaker": "EN_A",
+    "text": "So it’s not just more boards, but\nmore complex and valuable boards.",
+    "start": 54.974,
+    "end": 58.596,
+    "voice_id": "XZEfcFyBnzsNJrdvkWdI",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "complex",
+      "valuable boards"
+    ],
+    "page_index": 1,
+    "page_count": 1
+  },
+  {
+    "speaker": "EN_B",
+    "text": "Exactly. And third, the usage of\nPCBs is expanding within AI server\nracks themselves—think midplanes,\nbackplanes, and chip-to-chip",
+    "start": 58.956,
+    "end": 62.904,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "AI server racks",
+      "midplanes",
+      "backplanes"
+    ],
+    "page_index": 1,
+    "page_count": 2
+  },
+  {
+    "speaker": "EN_B",
+    "text": "connections.",
+    "start": 62.904,
+    "end": 66.851,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "AI server racks",
+      "midplanes",
+      "backplanes"
+    ],
+    "page_index": 2,
+    "page_count": 2
+  },
+  {
+    "speaker": "EN_A",
+    "text": "So the total addressable market is\ngrowing, and WUS is positioned to\ncapture that.",
+    "start": 67.211,
+    "end": 71.623,
+    "voice_id": "XZEfcFyBnzsNJrdvkWdI",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "total addressable market",
+      "WUS"
+    ],
+    "page_index": 1,
+    "page_count": 1
+  },
+  {
+    "speaker": "EN_B",
+    "text": "That’s the research team’s view.\nThey expect the global PCB TAM\nvalue to grow over 100%\nyear-on-year in 2026 and 2027.",
+    "start": 71.983,
+    "end": 80.063,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "global PCB TAM",
+      "100% year-on-year",
+      "2026"
+    ],
+    "page_index": 1,
+    "page_count": 1
+  },
+  {
+    "speaker": "EN_A",
+    "text": "That’s a massive jump. How is WUS\nplanning to handle that growth?",
+    "start": 80.423,
+    "end": 84.371,
+    "voice_id": "XZEfcFyBnzsNJrdvkWdI",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "WUS",
+      "growth"
+    ],
+    "page_index": 1,
+    "page_count": 1
+  },
+  {
+    "speaker": "EN_B",
+    "text": "They’re not just adding capacity\nblindly. Management emphasized\nthat their strategy is\ndemand-driven.",
+    "start": 84.731,
+    "end": 90.025,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "demand-driven"
+    ],
+    "page_index": 1,
+    "page_count": 1
+  },
+  {
+    "speaker": "EN_A",
+    "text": "What does that mean in practice?",
+    "start": 90.385,
+    "end": 92.103,
+    "voice_id": "XZEfcFyBnzsNJrdvkWdI",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "practice"
+    ],
+    "page_index": 1,
+    "page_count": 1
+  },
+  {
+    "speaker": "EN_B",
+    "text": "They look at end demand, their own\ntechnology readiness, and product\nquality.",
+    "start": 92.463,
+    "end": 95.993,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "end demand",
+      "technology readiness",
+      "product quality"
+    ],
+    "page_index": 1,
+    "page_count": 1
+  },
+  {
+    "speaker": "EN_B",
+    "text": "The goal is to ensure new capacity\nconverts into revenue efficiently\nand continues to improve the\nproduct mix.",
+    "start": 96.353,
+    "end": 101.554,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "capacity",
+      "revenue",
+      "product mix"
+    ],
+    "page_index": 1,
+    "page_count": 1
+  },
+  {
+    "speaker": "EN_A",
+    "text": "So it’s a disciplined expansion,\nnot a race to build the most\nfactories.",
+    "start": 101.914,
+    "end": 106.372,
+    "voice_id": "XZEfcFyBnzsNJrdvkWdI",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "disciplined expansion"
+    ],
+    "page_index": 1,
+    "page_count": 1
+  },
+  {
+    "speaker": "EN_B",
+    "text": "Right. And the numbers back that\nup. Their capex jumped 53%\nquarter-over-quarter in Q4 last\nyear and another 34% in Q1 this",
+    "start": 106.732,
+    "end": 110.726,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "capex",
+      "53% quarter-over-quarter",
+      "Q4"
+    ],
+    "page_index": 1,
+    "page_count": 2
+  },
+  {
+    "speaker": "EN_B",
+    "text": "year.",
+    "start": 110.726,
+    "end": 114.72,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "capex",
+      "53% quarter-over-quarter",
+      "Q4"
+    ],
+    "page_index": 2,
+    "page_count": 2
+  },
+  {
+    "speaker": "EN_A",
+    "text": "And what’s the outlook for that\nspending?",
+    "start": 115.08,
+    "end": 116.798,
+    "voice_id": "XZEfcFyBnzsNJrdvkWdI",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "what’s",
+      "outlook"
+    ],
+    "page_index": 1,
+    "page_count": 1
+  },
+  {
+    "speaker": "EN_B",
+    "text": "They expect capex to be around six\nbillion renminbi this year, up\nfrom three billion in 2025, and\nthey plan to keep it at that",
+    "start": 117.158,
+    "end": 122.382,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "six billion renminbi",
+      "three billion",
+      "2025"
+    ],
+    "page_index": 1,
+    "page_count": 2
+  },
+  {
+    "speaker": "EN_B",
+    "text": "elevated level through 2028.",
+    "start": 122.382,
+    "end": 127.607,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "six billion renminbi",
+      "three billion",
+      "2025"
+    ],
+    "page_index": 2,
+    "page_count": 2
+  },
+  {
+    "speaker": "EN_A",
+    "text": "That’s a multi-year commitment.\nBut what about the risks? The\nreport doesn’t paint a completely\nlower-risk picture.",
+    "start": 127.967,
+    "end": 134.329,
+    "voice_id": "XZEfcFyBnzsNJrdvkWdI",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "multi-year commitment",
+      "risks"
+    ],
+    "page_index": 1,
+    "page_count": 1
+  },
+  {
+    "speaker": "EN_B",
+    "text": "No, it doesn’t. The key risks\ninclude slower-than-expected\nmigration to high-end AI servers\nand high-speed switches.",
+    "start": 134.689,
+    "end": 140.587,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "high-end AI servers",
+      "high-speed switches"
+    ],
+    "page_index": 1,
+    "page_count": 1
+  },
+  {
+    "speaker": "EN_A",
+    "text": "And competition?",
+    "start": 140.947,
+    "end": 142.201,
+    "voice_id": "XZEfcFyBnzsNJrdvkWdI",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "competition"
+    ],
+    "page_index": 1,
+    "page_count": 1
+  },
+  {
+    "speaker": "EN_B",
+    "text": "Yes, fiercer competition in the AI\nPCB market is another risk. Also,\nif capacity expansion doesn’t go\nas planned, that could be a",
+    "start": 142.561,
+    "end": 146.555,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "AI PCB market",
+      "capacity expansion"
+    ],
+    "page_index": 1,
+    "page_count": 2
+  },
+  {
+    "speaker": "EN_B",
+    "text": "headwind.",
+    "start": 146.555,
+    "end": 150.549,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "AI PCB market",
+      "capacity expansion"
+    ],
+    "page_index": 2,
+    "page_count": 2
+  },
+  {
+    "speaker": "EN_A",
+    "text": "So there are real uncertainties,\neven with the positive outlook.",
+    "start": 150.909,
+    "end": 153.881,
+    "voice_id": "XZEfcFyBnzsNJrdvkWdI",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "uncertainties"
+    ],
+    "page_index": 1,
+    "page_count": 1
+  },
+  {
+    "speaker": "EN_B",
+    "text": "Exactly. The report is a research\nframework, not a guarantee. It’s a\ndetailed look at the opportunity,",
+    "start": 154.241,
+    "end": 160.185,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "research framework"
+    ],
+    "page_index": 1,
+    "page_count": 1
+  },
+  {
+    "speaker": "EN_B",
+    "text": "but the full analysis is worth\nreading to understand the nuances.",
+    "start": 160.545,
+    "end": 163.61,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "full analysis"
+    ],
+    "page_index": 1,
+    "page_count": 1
+  },
+  {
+    "speaker": "EN_A",
+    "text": "Good point. So for listeners who\nwant to dive deeper, the full\nreport covers the valuation and\nthe specific catalyst timing.",
+    "start": 163.97,
+    "end": 170.797,
+    "voice_id": "XZEfcFyBnzsNJrdvkWdI",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "valuation",
+      "catalyst timing"
+    ],
+    "page_index": 1,
+    "page_count": 1
+  },
+  {
+    "speaker": "EN_B",
+    "text": "Right. The report uses a target\nP/E multiple based on peer\ncomparisons and future EPS growth.\nBut we’re not going to get into",
+    "start": 171.157,
+    "end": 174.733,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "target P/E multiple",
+      "peer comparisons",
+      "EPS growth"
+    ],
+    "page_index": 1,
+    "page_count": 2
+  },
+  {
+    "speaker": "EN_B",
+    "text": "that here.",
+    "start": 174.733,
+    "end": 178.309,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "target P/E multiple",
+      "peer comparisons",
+      "EPS growth"
+    ],
+    "page_index": 2,
+    "page_count": 2
+  },
+  {
+    "speaker": "EN_A",
+    "text": "Fair enough. So to wrap up, the\nkey takeaway is that AI is\nstructurally boosting PCB demand,\nand WUS is investing heavily to",
+    "start": 178.669,
+    "end": 183.22,
+    "voice_id": "XZEfcFyBnzsNJrdvkWdI",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "AI",
+      "PCB demand",
+      "WUS"
+    ],
+    "page_index": 1,
+    "page_count": 2
+  },
+  {
+    "speaker": "EN_A",
+    "text": "capture that,",
+    "start": 183.22,
+    "end": 187.771,
+    "voice_id": "XZEfcFyBnzsNJrdvkWdI",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "AI",
+      "PCB demand",
+      "WUS"
+    ],
+    "page_index": 2,
+    "page_count": 2
+  },
+  {
+    "speaker": "EN_A",
+    "text": "but with a disciplined approach.",
+    "start": 188.131,
+    "end": 189.663,
+    "voice_id": "XZEfcFyBnzsNJrdvkWdI",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "disciplined approach"
+    ],
+    "page_index": 1,
+    "page_count": 1
+  },
+  {
+    "speaker": "EN_B",
+    "text": "That’s a good summary. For anyone\ninterested in the detailed numbers\nand the risk analysis, the full\nreport is a great resource.",
+    "start": 190.023,
+    "end": 196.339,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "detailed numbers",
+      "risk analysis"
+    ],
+    "page_index": 1,
+    "page_count": 1
+  },
+  {
+    "speaker": "EN_A",
+    "text": "Thanks for breaking that down.\nWe’ll leave the rest for the\ncommunity discussion.",
+    "start": 196.699,
+    "end": 200.74,
+    "voice_id": "XZEfcFyBnzsNJrdvkWdI",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "community discussion"
+    ],
+    "page_index": 1,
+    "page_count": 1
+  },
+  {
+    "speaker": "EN_B",
+    "text": "Happy to. Let’s keep the\nconversation going.",
+    "start": 201.1,
+    "end": 203.607,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "Happy",
+      "Let’s"
+    ],
+    "page_index": 1,
+    "page_count": 1
+  }
+]

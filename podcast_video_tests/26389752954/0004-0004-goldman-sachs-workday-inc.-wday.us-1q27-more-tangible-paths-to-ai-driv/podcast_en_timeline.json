@@ -1,0 +1,300 @@
+[
+  {
+    "speaker": "EN_A",
+    "text": "Welcome to KC Desk Notes. Today we are unpacking one fresh research report and the question it raises.",
+    "start": 0.0,
+    "end": 6.084,
+    "voice_id": "XZEfcFyBnzsNJrdvkWdI",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "KC Desk Notes",
+      "research report"
+    ]
+  },
+  {
+    "speaker": "EN_A",
+    "text": "Workday just reported its fiscal first-quarter results, and the stock popped 11 percent after hours.",
+    "start": 6.444,
+    "end": 12.574,
+    "voice_id": "XZEfcFyBnzsNJrdvkWdI",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "Workday",
+      "fiscal first-quarter",
+      "stock popped 11 percent"
+    ]
+  },
+  {
+    "speaker": "EN_B",
+    "text": "That’s right. It was a beat on sUBScription revenue, margins, and EPS, and it came after a tough fourth quarter and fairly bearish expectations.",
+    "start": 12.934,
+    "end": 21.757,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "sUBScription revenue",
+      "margins",
+      "EPS"
+    ]
+  },
+  {
+    "speaker": "EN_A",
+    "text": "So what was the main surprise that changed the narrative?",
+    "start": 22.117,
+    "end": 24.811,
+    "voice_id": "XZEfcFyBnzsNJrdvkWdI",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "main surprise",
+      "changed the narrative"
+    ]
+  },
+  {
+    "speaker": "EN_B",
+    "text": "The headline is that Workday delivered its best first quarter for new net annual contract value in five years.",
+    "start": 25.171,
+    "end": 30.326,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "best first quarter",
+      "new net annual contract value",
+      "five years"
+    ]
+  },
+  {
+    "speaker": "EN_B",
+    "text": "And they gave more concrete details on how AI can drive revenue.",
+    "start": 30.686,
+    "end": 33.89,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "AI",
+      "drive revenue"
+    ]
+  },
+  {
+    "speaker": "EN_A",
+    "text": "Concrete details—that’s what investors have been waiting for. What did they actually lay out?",
+    "start": 34.25,
+    "end": 40.009,
+    "voice_id": "XZEfcFyBnzsNJrdvkWdI",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "Concrete details",
+      "investors"
+    ]
+  },
+  {
+    "speaker": "EN_B",
+    "text": "They outlined three clear monetization paths for AI. First, selling their own AI agents and taking full responsibility for total cost of ownership. Second,",
+    "start": 40.369,
+    "end": 49.889,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "three clear monetization paths",
+      "AI agents",
+      "total cost of ownership"
+    ]
+  },
+  {
+    "speaker": "EN_B",
+    "text": "growing their Extend Pro platform so customers can build their own AI applications on top of Workday.",
+    "start": 50.249,
+    "end": 55.218,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "Extend Pro platform",
+      "customers",
+      "AI applications"
+    ]
+  },
+  {
+    "speaker": "EN_A",
+    "text": "And the third path?",
+    "start": 55.578,
+    "end": 56.878,
+    "voice_id": "XZEfcFyBnzsNJrdvkWdI",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "third path"
+    ]
+  },
+  {
+    "speaker": "EN_B",
+    "text": "Providing the APIs and infrastructure for an ecosystem of third-party developers. So it’s not just one AI product—it’s a whole platform strategy.",
+    "start": 57.238,
+    "end": 64.901,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "APIs",
+      "infrastructure",
+      "ecosystem"
+    ]
+  },
+  {
+    "speaker": "EN_A",
+    "text": "That sounds ambitious. But does the core business still have momentum?",
+    "start": 65.261,
+    "end": 69.208,
+    "voice_id": "XZEfcFyBnzsNJrdvkWdI",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "core business",
+      "momentum"
+    ]
+  },
+  {
+    "speaker": "EN_B",
+    "text": "Yes, but it’s stable rather than accelerating. If you strip out AI-related revenue,",
+    "start": 69.568,
+    "end": 74.351,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "stable",
+      "AI-related revenue"
+    ]
+  },
+  {
+    "speaker": "EN_B",
+    "text": "core sUBScription growth has been around 12 percent for five straight quarters. The AI layer is what could reaccelerate growth.",
+    "start": 74.711,
+    "end": 81.538,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "core sUBScription growth",
+      "12 percent",
+      "five straight quarters"
+    ]
+  },
+  {
+    "speaker": "EN_A",
+    "text": "And they also announced entry into IT service management. Why does that matter?",
+    "start": 81.898,
+    "end": 85.753,
+    "voice_id": "XZEfcFyBnzsNJrdvkWdI",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "entry",
+      "IT service management"
+    ]
+  },
+  {
+    "speaker": "EN_B",
+    "text": "It expands their total addressable market beyond HR and finance into the employee lifecycle more broadly. It’s a logical extension of their domain expertise.",
+    "start": 86.113,
+    "end": 93.682,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "total addressable market",
+      "HR",
+      "finance"
+    ]
+  },
+  {
+    "speaker": "EN_A",
+    "text": "So the beat was solid, and the AI narrative is getting more tangible. But the report still keeps a Neutral rating. Why?",
+    "start": 94.042,
+    "end": 101.055,
+    "voice_id": "XZEfcFyBnzsNJrdvkWdI",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "beat",
+      "AI narrative",
+      "tangible"
+    ]
+  },
+  {
+    "speaker": "EN_B",
+    "text": "Because a sustained re-rating depends on successful rollout of organically built AI agents and product-market fit for these newer offerings.",
+    "start": 101.415,
+    "end": 107.823,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "sustained re-rating",
+      "organically built AI agents",
+      "product-market fit"
+    ]
+  },
+  {
+    "speaker": "EN_B",
+    "text": "The next twelve months are really a transition year.",
+    "start": 108.183,
+    "end": 111.016,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "next twelve months",
+      "transition year"
+    ]
+  },
+  {
+    "speaker": "EN_A",
+    "text": "So what’s the one thing the report doesn’t fully settle?",
+    "start": 111.376,
+    "end": 113.977,
+    "voice_id": "XZEfcFyBnzsNJrdvkWdI",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "one thing",
+      "doesn’t fully settle"
+    ]
+  },
+  {
+    "speaker": "EN_B",
+    "text": "Whether the “headless” enterprise software vision actually drives material revenue growth, or if it’s still an experiment.",
+    "start": 114.337,
+    "end": 120.606,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "material revenue growth",
+      "experiment"
+    ]
+  },
+  {
+    "speaker": "EN_B",
+    "text": "The full report goes deeper into that risk and the valuation framework.",
+    "start": 120.966,
+    "end": 124.542,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "full report",
+      "risk",
+      "valuation framework"
+    ]
+  },
+  {
+    "speaker": "EN_A",
+    "text": "Good point. We’ll leave that for the community discussion.",
+    "start": 124.902,
+    "end": 127.456,
+    "voice_id": "XZEfcFyBnzsNJrdvkWdI",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "community discussion"
+    ]
+  },
+  {
+    "speaker": "EN_B",
+    "text": "Exactly. There’s a lot more in the full note on the GAAP-based valuation change and the margin trajectory. Worth a read if you’re following the software space.",
+    "start": 127.816,
+    "end": 135.479,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "GAAP-based valuation change",
+      "margin trajectory",
+      "software space"
+    ]
+  }
+]

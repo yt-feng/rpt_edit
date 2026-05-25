@@ -1,0 +1,40 @@
+Found 5 total PDFs; shard 0/1 has 5 PDFs, skips 0 already converted, will process 5 PDFs with batch_size=1.
+Running batch 1: 1 PDFs
+Found 1 PDFs.
+Uploading PDF to MinerU: /tmp/pdf_batch_001_51uu1cz6/pdfs/0001-0001-nomura-us-economic-weekly-hawkward-pause-260522.pdf
+MinerU batch_id=931c3a20-babe-4773-a4bb-747c9d47319e
+MinerU states: waiting-file
+MinerU states: done
+Done. Results written to /home/runner/work/rpt_edit/rpt_edit/podcast_video_tests/26389752954
+Running batch 2: 1 PDFs
+Found 1 PDFs.
+Uploading PDF to MinerU: /tmp/pdf_batch_002_43vf4eqd/pdfs/0002-0002-nomura-asia-chart-alert-china-sustained-decline-in-domestic-auto-sales-volume-in-may-260522.pdf
+MinerU batch_id=b1503e22-b414-49ce-ae09-b951559c55ad
+MinerU states: waiting-file
+MinerU states: done
+Done. Results written to /home/runner/work/rpt_edit/rpt_edit/podcast_video_tests/26389752954
+Running batch 3: 1 PDFs
+Found 1 PDFs.
+Uploading PDF to MinerU: /tmp/pdf_batch_003_97y9fhk7/pdfs/0003-0003-goldman-sachs-yaskawa-electric-6506.t-medium-term-numerical-targets-in-line-with-consensus-expectations-long-term-opm-of.pdf
+MinerU batch_id=6fdf2459-4c3a-4be5-ba75-882b65e00965
+MinerU states: waiting-file
+MinerU states: running
+MinerU states: done
+Done. Results written to /home/runner/work/rpt_edit/rpt_edit/podcast_video_tests/26389752954
+Running batch 4: 1 PDFs
+Found 1 PDFs.
+Uploading PDF to MinerU: /tmp/pdf_batch_004_4mjxyh3z/pdfs/0004-0004-goldman-sachs-workday-inc.-wday.us-1q27-more-tangible-paths-to-ai-driven-value-260522.pdf
+MinerU batch_id=63910ee1-617d-470d-ba6a-ddd6f4ef7ddd
+MinerU states: waiting-file
+MinerU states: running
+MinerU states: done
+Done. Results written to /home/runner/work/rpt_edit/rpt_edit/podcast_video_tests/26389752954
+Running batch 5: 1 PDFs
+Found 1 PDFs.
+Uploading PDF to MinerU: /tmp/pdf_batch_005__2apusb0/pdfs/0005-0005-goldman-sachs-wus-002463-mgmt.-visit-positive-on-ai-pcb-end-demand-capacity-expansion-supporting-shipment-growth-260523.pdf
+MinerU batch_id=d050681f-c74b-4539-844c-0d19c611c596
+MinerU states: waiting-file
+MinerU states: running
+MinerU states: done
+Done. Results written to /home/runner/work/rpt_edit/rpt_edit/podcast_video_tests/26389752954
+All batches completed successfully.

@@ -1,0 +1,306 @@
+[
+  {
+    "speaker": "ZH_A",
+    "text": "欢迎来到KC桌面。今天我们用一份最新研报，拆一个值得继续跟踪的问题。",
+    "start": 0.0,
+    "end": 6.548,
+    "voice_id": "UFDAUkGzdLAEJlINT3Fx",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "KC桌面",
+      "研报"
+    ]
+  },
+  {
+    "speaker": "ZH_A",
+    "text": "最近AI方向的热度一直很高，但落实到具体产业链环节，到底哪块最值得持续跟踪？",
+    "start": 6.908,
+    "end": 14.571,
+    "voice_id": "UFDAUkGzdLAEJlINT3Fx",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "AI",
+      "产业链",
+      "跟踪"
+    ]
+  },
+  {
+    "speaker": "ZH_B",
+    "text": "我们最近刚参与了一场沪电股份的管理层交流会，他们最新的判断很关键——AI对PCB的需求不仅在增长，",
+    "start": 14.931,
+    "end": 24.59,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "沪电股份",
+      "管理层交流会",
+      "AI"
+    ]
+  },
+  {
+    "speaker": "ZH_B",
+    "text": "还在升级。",
+    "start": 24.95,
+    "end": 26.111,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "升级"
+    ]
+  },
+  {
+    "speaker": "ZH_A",
+    "text": "等一下，PCB就是印刷电路板对吧？AI服务器里用到的PCB和普通的有区别吗？",
+    "start": 26.471,
+    "end": 33.391,
+    "voice_id": "UFDAUkGzdLAEJlINT3Fx",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "PCB",
+      "印刷电路板",
+      "AI服务器"
+    ]
+  },
+  {
+    "speaker": "ZH_B",
+    "text": "区别非常大。管理层的核心观点是，AI基础设施的周期才刚刚开始，而且规格在持续提升。比如材料要更好、",
+    "start": 33.751,
+    "end": 43.596,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "管理层",
+      "AI基础设施",
+      "周期"
+    ]
+  },
+  {
+    "speaker": "ZH_B",
+    "text": "层数要更高，才能实现高速连接。",
+    "start": 43.956,
+    "end": 47.067,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "层数",
+      "高速连接"
+    ]
+  },
+  {
+    "speaker": "ZH_A",
+    "text": "所以这意味着，不是简单的量增长，而是整个产品的价值量在往上走？",
+    "start": 47.427,
+    "end": 53.697,
+    "voice_id": "UFDAUkGzdLAEJlINT3Fx",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "量",
+      "价值量"
+    ]
+  },
+  {
+    "speaker": "ZH_B",
+    "text": "对。报告里提到，AI服务器带来的芯片需求还在高速增长，而PCB作为连接芯片和系统的关键部件，",
+    "start": 54.057,
+    "end": 64.274,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "AI服务器",
+      "芯片",
+      "PCB"
+    ]
+  },
+  {
+    "speaker": "ZH_B",
+    "text": "它的用量也在增加。比如服务器机柜内部、机柜之间，甚至芯片之间的连接，都需要更复杂的PCB。",
+    "start": 64.634,
+    "end": 73.782,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "服务器机柜",
+      "机柜之间",
+      "芯片之间"
+    ]
+  },
+  {
+    "speaker": "ZH_A",
+    "text": "那沪电股份自己是怎么应对这个趋势的？他们扩产了吗？",
+    "start": 74.142,
+    "end": 78.647,
+    "voice_id": "UFDAUkGzdLAEJlINT3Fx",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "沪电股份",
+      "扩产"
+    ]
+  },
+  {
+    "speaker": "ZH_B",
+    "text": "他们的策略很有意思。管理层强调，不是看到产能利用率高就盲目扩产，而是要看终端需求、技术准备度和产品质量。",
+    "start": 79.007,
+    "end": 90.988,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "管理层",
+      "产能利用率",
+      "终端需求"
+    ]
+  },
+  {
+    "speaker": "ZH_B",
+    "text": "要确保新产能投下去，能高效转化成收入，还能推动产品结构升级。",
+    "start": 91.348,
+    "end": 98.407,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "新产能",
+      "收入",
+      "产品结构升级"
+    ]
+  },
+  {
+    "speaker": "ZH_A",
+    "text": "听起来很理性。那实际投入有多大？",
+    "start": 98.767,
+    "end": 102.436,
+    "voice_id": "UFDAUkGzdLAEJlINT3Fx",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "投入"
+    ]
+  },
+  {
+    "speaker": "ZH_B",
+    "text": "数据很直观。他们的资本支出在2025年是30亿人民币左右，但预计2026年会弹性较高到60亿，",
+    "start": 102.796,
+    "end": 113.013,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "资本支出",
+      "2025年",
+      "30亿"
+    ]
+  },
+  {
+    "speaker": "ZH_B",
+    "text": "而且这个高位会维持到2028年。",
+    "start": 113.373,
+    "end": 116.206,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "2028年"
+    ]
+  },
+  {
+    "speaker": "ZH_A",
+    "text": "60亿？那确实是大手笔。不过，这种高投入会不会有风险？",
+    "start": 116.566,
+    "end": 122.417,
+    "voice_id": "UFDAUkGzdLAEJlINT3Fx",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "60亿",
+      "风险"
+    ]
+  },
+  {
+    "speaker": "ZH_B",
+    "text": "任何高速发展的行业都有不确定性。比如AI服务器向更高端迁移的速度会不会慢于预期，",
+    "start": 122.777,
+    "end": 132.111,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "AI服务器",
+      "高端"
+    ]
+  },
+  {
+    "speaker": "ZH_B",
+    "text": "或者竞争会不会变得更激烈。但完整报告里对这些风险做了更深入的分析。",
+    "start": 132.471,
+    "end": 139.763,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "报告",
+      "风险"
+    ]
+  },
+  {
+    "speaker": "ZH_A",
+    "text": "看来这份报告的细节比我们聊的要多得多。比如刚才提到的产品结构升级，具体是怎么实现的？",
+    "start": 140.123,
+    "end": 148.017,
+    "voice_id": "UFDAUkGzdLAEJlINT3Fx",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "产品结构升级"
+    ]
+  },
+  {
+    "speaker": "ZH_B",
+    "text": "这正是报告里重点展开的部分。除了需求增长，还有几个更细致的洞察，比如不同应用场景下PCB的规格差异，",
+    "start": 148.377,
+    "end": 158.223,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "需求增长",
+      "应用场景",
+      "PCB"
+    ]
+  },
+  {
+    "speaker": "ZH_B",
+    "text": "以及这些差异如何影响公司的利润率。这些内容我们今天就先不展开了。",
+    "start": 158.583,
+    "end": 166.199,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "利润率"
+    ]
+  },
+  {
+    "speaker": "ZH_A",
+    "text": "那如果听众想了解这些更深入的信息，去哪里看完整报告？",
+    "start": 166.559,
+    "end": 171.714,
+    "voice_id": "UFDAUkGzdLAEJlINT3Fx",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "完整报告"
+    ]
+  },
+  {
+    "speaker": "ZH_B",
+    "text": "可以加入我们的投研社群，完整报告和后续的跟踪都会在里面分享。我们也会定期组织类似的解读。",
+    "start": 172.074,
+    "end": 181.78,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "投研社群",
+      "报告",
+      "跟踪"
+    ]
+  },
+  {
+    "speaker": "ZH_A",
+    "text": "好，今天先聊到这里。感谢研究员带来的分享，我们下期再见。",
+    "start": 182.14,
+    "end": 188.037,
+    "voice_id": "UFDAUkGzdLAEJlINT3Fx",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "研究员"
+    ]
+  }
+]

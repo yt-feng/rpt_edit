@@ -1,0 +1,639 @@
+[
+  {
+    "speaker": "EN_A",
+    "text": "Welcome to KC Desk Notes. Today we\nare unpacking one fresh research\nreport and the question it raises.",
+    "start": 0.0,
+    "end": 5.851,
+    "voice_id": "XZEfcFyBnzsNJrdvkWdI",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "KC Desk Notes",
+      "research report"
+    ],
+    "page_index": 1,
+    "page_count": 1
+  },
+  {
+    "speaker": "EN_A",
+    "text": "Welcome back to the show. Today\nwe’re digging into a major shift\nin Fed policy expectations.",
+    "start": 6.211,
+    "end": 11.506,
+    "voice_id": "XZEfcFyBnzsNJrdvkWdI",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "Fed policy expectations"
+    ],
+    "page_index": 1,
+    "page_count": 1
+  },
+  {
+    "speaker": "EN_A",
+    "text": "The latest report from Nomura now\nsees the Fed on hold indefinitely.\nEN_B, what’s the big picture here?",
+    "start": 11.866,
+    "end": 18.739,
+    "voice_id": "XZEfcFyBnzsNJrdvkWdI",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "Nomura",
+      "Fed on hold indefinitely"
+    ],
+    "page_index": 1,
+    "page_count": 1
+  },
+  {
+    "speaker": "EN_B",
+    "text": "That’s right. The report’s title,\n‘Hawkward Pause, ’ really captures\nit. The analysts had previously\nforecast two rate cuts this year,",
+    "start": 19.099,
+    "end": 26.715,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "Hawkward Pause",
+      "two rate cuts"
+    ],
+    "page_index": 1,
+    "page_count": 1
+  },
+  {
+    "speaker": "EN_B",
+    "text": "in September and December. Now\nthey expect no cuts at all for the\nforeseeable future.",
+    "start": 27.075,
+    "end": 31.301,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "September",
+      "December",
+      "no cuts"
+    ],
+    "page_index": 1,
+    "page_count": 1
+  },
+  {
+    "speaker": "EN_A",
+    "text": "So what changed their minds? Was\nit one big thing or a combination\nof factors?",
+    "start": 31.661,
+    "end": 36.537,
+    "voice_id": "XZEfcFyBnzsNJrdvkWdI",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "changed",
+      "minds"
+    ],
+    "page_index": 1,
+    "page_count": 1
+  },
+  {
+    "speaker": "EN_B",
+    "text": "It’s a combination. The report\npoints to three main drivers.\nFirst, policy-related pressure for\nrate cuts has eased. Second,",
+    "start": 36.897,
+    "end": 40.891,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "three main drivers",
+      "policy-related pressure",
+      "inflation"
+    ],
+    "page_index": 1,
+    "page_count": 2
+  },
+  {
+    "speaker": "EN_B",
+    "text": "inflation is proving sticky.",
+    "start": 40.891,
+    "end": 44.885,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "three main drivers",
+      "policy-related pressure",
+      "inflation"
+    ],
+    "page_index": 2,
+    "page_count": 2
+  },
+  {
+    "speaker": "EN_B",
+    "text": "And third, the economy is still\ngrowing strongly. Together, they\nmake a strong case for a prolonged\npause.",
+    "start": 45.245,
+    "end": 51.143,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "economy",
+      "growing strongly",
+      "prolonged pause"
+    ],
+    "page_index": 1,
+    "page_count": 1
+  },
+  {
+    "speaker": "EN_A",
+    "text": "Let’s start with the\npolicy-related side. The report\nmentions President Trump and\nincoming Fed Chair Kevin Warsh.",
+    "start": 51.503,
+    "end": 55.961,
+    "voice_id": "XZEfcFyBnzsNJrdvkWdI",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "President Trump",
+      "Kevin Warsh"
+    ],
+    "page_index": 1,
+    "page_count": 2
+  },
+  {
+    "speaker": "EN_A",
+    "text": "How does that play into the call?",
+    "start": 55.961,
+    "end": 60.419,
+    "voice_id": "XZEfcFyBnzsNJrdvkWdI",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "President Trump",
+      "Kevin Warsh"
+    ],
+    "page_index": 2,
+    "page_count": 2
+  },
+  {
+    "speaker": "EN_B",
+    "text": "Interestingly, the report says\nPresident Trump has appeared to\nback off from pushing for rate\ncuts.",
+    "start": 60.779,
+    "end": 65.098,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "President Trump",
+      "back off",
+      "rate cuts"
+    ],
+    "page_index": 1,
+    "page_count": 1
+  },
+  {
+    "speaker": "EN_B",
+    "text": "He’s quoted in Fortune saying you\ncan’t really look at the figures\nuntil the war is over. And he\nreportedly said he’ll let Warsh do",
+    "start": 65.458,
+    "end": 68.848,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "Fortune",
+      "war",
+      "Warsh"
+    ],
+    "page_index": 1,
+    "page_count": 2
+  },
+  {
+    "speaker": "EN_B",
+    "text": "what he wants.",
+    "start": 68.848,
+    "end": 72.238,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "Fortune",
+      "war",
+      "Warsh"
+    ],
+    "page_index": 2,
+    "page_count": 2
+  },
+  {
+    "speaker": "EN_A",
+    "text": "So the policy-related heat has\ndiminished.",
+    "start": 72.598,
+    "end": 74.734,
+    "voice_id": "XZEfcFyBnzsNJrdvkWdI",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "policy-related heat",
+      "diminished"
+    ],
+    "page_index": 1,
+    "page_count": 1
+  },
+  {
+    "speaker": "EN_A",
+    "text": "And what about Warsh himself?\nWouldn’t he be inclined to cut?",
+    "start": 75.094,
+    "end": 78.577,
+    "voice_id": "XZEfcFyBnzsNJrdvkWdI",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "Warsh"
+    ],
+    "page_index": 1,
+    "page_count": 1
+  },
+  {
+    "speaker": "EN_B",
+    "text": "The report thinks he likely is\nstill motivated to ease. But the\nkey point is that support among\nother Fed officials for an easing",
+    "start": 78.937,
+    "end": 82.675,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "ease",
+      "Fed officials",
+      "waning"
+    ],
+    "page_index": 1,
+    "page_count": 2
+  },
+  {
+    "speaker": "EN_B",
+    "text": "bias has been waning.",
+    "start": 82.675,
+    "end": 86.414,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "ease",
+      "Fed officials",
+      "waning"
+    ],
+    "page_index": 2,
+    "page_count": 2
+  },
+  {
+    "speaker": "EN_B",
+    "text": "Even dovish members are no longer\nadvocating for cuts. So Warsh\nwould need to convince a majority,\nand that’s looking tough.",
+    "start": 86.774,
+    "end": 93.137,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "dovish members",
+      "majority"
+    ],
+    "page_index": 1,
+    "page_count": 1
+  },
+  {
+    "speaker": "EN_A",
+    "text": "Let’s talk about the inflation\npicture. The report mentions some\nnew price pressures. What’s\ndriving that?",
+    "start": 93.497,
+    "end": 99.441,
+    "voice_id": "XZEfcFyBnzsNJrdvkWdI",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "inflation",
+      "price pressures"
+    ],
+    "page_index": 1,
+    "page_count": 1
+  },
+  {
+    "speaker": "EN_B",
+    "text": "Tariff inflation has started to\nfade, but new pressures have\nemerged. The report specifically\ncites the Iran war and a global",
+    "start": 99.801,
+    "end": 103.562,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "Tariff inflation",
+      "Iran war",
+      "memory chips"
+    ],
+    "page_index": 1,
+    "page_count": 2
+  },
+  {
+    "speaker": "EN_B",
+    "text": "shortage of memory chips.",
+    "start": 103.562,
+    "end": 107.324,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "Tariff inflation",
+      "Iran war",
+      "memory chips"
+    ],
+    "page_index": 2,
+    "page_count": 2
+  },
+  {
+    "speaker": "EN_B",
+    "text": "These are pushing up input costs.\nThe S&P Manufacturing PMI input\nprice index surged to 79. 5 in\nMay, the largest monthly increase",
+    "start": 107.684,
+    "end": 111.98,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "S&P Manufacturing PMI",
+      "May"
+    ],
+    "page_index": 1,
+    "page_count": 2
+  },
+  {
+    "speaker": "EN_B",
+    "text": "on record.",
+    "start": 111.98,
+    "end": 116.275,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "S&P Manufacturing PMI",
+      "May"
+    ],
+    "page_index": 2,
+    "page_count": 2
+  },
+  {
+    "speaker": "EN_A",
+    "text": "That’s a big jump. And on the\ngrowth side, the economy seems to\nbe holding up well.",
+    "start": 116.635,
+    "end": 120.861,
+    "voice_id": "XZEfcFyBnzsNJrdvkWdI",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "growth",
+      "economy"
+    ],
+    "page_index": 1,
+    "page_count": 1
+  },
+  {
+    "speaker": "EN_B",
+    "text": "Exactly. The report highlights\nrobust investment and steady\nconsumption. Manufacturing and\nbusiness capex are accelerating.",
+    "start": 121.221,
+    "end": 126.097,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "robust investment",
+      "consumption",
+      "Manufacturing"
+    ],
+    "page_index": 1,
+    "page_count": 2
+  },
+  {
+    "speaker": "EN_B",
+    "text": "Their Q2 GDP tracking is at 2. 6%,",
+    "start": 126.097,
+    "end": 130.974,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "robust investment",
+      "consumption",
+      "Manufacturing"
+    ],
+    "page_index": 2,
+    "page_count": 2
+  },
+  {
+    "speaker": "EN_B",
+    "text": "and real final sales to private\ndomestic purchasers are at 2. 9%.\nThat’s not an economy that needs\nstimulus.",
+    "start": 131.334,
+    "end": 136.303,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "real final sales",
+      "stimulus"
+    ],
+    "page_index": 1,
+    "page_count": 1
+  },
+  {
+    "speaker": "EN_A",
+    "text": "So with strong growth and sticky\ninflation, the Fed has little\nreason to cut. But what about the\nlabor market? Is that also",
+    "start": 136.663,
+    "end": 141.005,
+    "voice_id": "XZEfcFyBnzsNJrdvkWdI",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "labor market"
+    ],
+    "page_index": 1,
+    "page_count": 2
+  },
+  {
+    "speaker": "EN_A",
+    "text": "supporting the pause?",
+    "start": 141.005,
+    "end": 145.347,
+    "voice_id": "XZEfcFyBnzsNJrdvkWdI",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "labor market"
+    ],
+    "page_index": 2,
+    "page_count": 2
+  },
+  {
+    "speaker": "EN_B",
+    "text": "Yes. The report says labor markets\nare stabilizing. ADP data shows\nprivate payrolls accelerating. And\ninitial jobless claims are",
+    "start": 145.707,
+    "end": 149.376,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "ADP",
+      "private payrolls",
+      "initial jobless claims"
+    ],
+    "page_index": 1,
+    "page_count": 2
+  },
+  {
+    "speaker": "EN_B",
+    "text": "sideways,",
+    "start": 149.376,
+    "end": 153.045,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "ADP",
+      "private payrolls",
+      "initial jobless claims"
+    ],
+    "page_index": 2,
+    "page_count": 2
+  },
+  {
+    "speaker": "EN_B",
+    "text": "which is actually positive given\nthe seasonal tendency for them to\nrise into summer. So no signs of\nweakness there.",
+    "start": 153.405,
+    "end": 159.303,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "summer"
+    ],
+    "page_index": 1,
+    "page_count": 1
+  },
+  {
+    "speaker": "EN_A",
+    "text": "That all sounds very clear. But is\nthere anything in the report\nthat’s still uncertain? Something\nthat makes the full report worth",
+    "start": 159.663,
+    "end": 163.216,
+    "voice_id": "XZEfcFyBnzsNJrdvkWdI",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "sounds",
+      "clear"
+    ],
+    "page_index": 1,
+    "page_count": 2
+  },
+  {
+    "speaker": "EN_A",
+    "text": "reading?",
+    "start": 163.216,
+    "end": 166.768,
+    "voice_id": "XZEfcFyBnzsNJrdvkWdI",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "sounds",
+      "clear"
+    ],
+    "page_index": 2,
+    "page_count": 2
+  },
+  {
+    "speaker": "EN_B",
+    "text": "Definitely. The report doesn’t\nfully settle what happens if\ninflation surprises to the upside\nor if growth suddenly falters.",
+    "start": 167.128,
+    "end": 173.862,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "inflation surprises"
+    ],
+    "page_index": 1,
+    "page_count": 1
+  },
+  {
+    "speaker": "EN_B",
+    "text": "It also leaves open how Warsh’s\nleadership might evolve. The full\nreport has more detailed data and\nscenarios. For example,",
+    "start": 174.222,
+    "end": 181.141,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "Warsh",
+      "leadership"
+    ],
+    "page_index": 1,
+    "page_count": 1
+  },
+  {
+    "speaker": "EN_A",
+    "text": "it breaks down the April FOMC\nminutes and shows how support for\neasing has shifted.",
+    "start": 181.501,
+    "end": 186.61,
+    "voice_id": "XZEfcFyBnzsNJrdvkWdI",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "April FOMC minutes",
+      "easing"
+    ],
+    "page_index": 1,
+    "page_count": 1
+  },
+  {
+    "speaker": "EN_A",
+    "text": "Good point. So for listeners who\nwant the full picture, the report\nis a must-read. EN_B, any final\nthought on what this means for the",
+    "start": 186.97,
+    "end": 191.382,
+    "voice_id": "XZEfcFyBnzsNJrdvkWdI",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "market debate"
+    ],
+    "page_index": 1,
+    "page_count": 2
+  },
+  {
+    "speaker": "EN_A",
+    "text": "market debate?",
+    "start": 191.382,
+    "end": 195.793,
+    "voice_id": "XZEfcFyBnzsNJrdvkWdI",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "market debate"
+    ],
+    "page_index": 2,
+    "page_count": 2
+  },
+  {
+    "speaker": "EN_B",
+    "text": "I’d say this report reinforces the\nidea that we’re in a new regime.\nThe old playbook of cutting rates\nat the first sign of trouble may",
+    "start": 196.153,
+    "end": 199.543,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "new regime",
+      "old playbook"
+    ],
+    "page_index": 1,
+    "page_count": 2
+  },
+  {
+    "speaker": "EN_B",
+    "text": "not apply.",
+    "start": 199.543,
+    "end": 202.933,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "new regime",
+      "old playbook"
+    ],
+    "page_index": 2,
+    "page_count": 2
+  },
+  {
+    "speaker": "EN_B",
+    "text": "The Fed is comfortable holding\nsteady, and the data supports\nthat. It’s a fascinating time for\nmonetary policy.",
+    "start": 203.293,
+    "end": 208.866,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "Fed",
+      "holding steady",
+      "monetary policy"
+    ],
+    "page_index": 1,
+    "page_count": 1
+  },
+  {
+    "speaker": "EN_A",
+    "text": "Great insights. We’ll leave it\nthere for now. Thanks for walking\nus through the report. And to our\naudience,",
+    "start": 209.226,
+    "end": 214.799,
+    "voice_id": "XZEfcFyBnzsNJrdvkWdI",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "Great",
+      "insights"
+    ],
+    "page_index": 1,
+    "page_count": 1
+  },
+  {
+    "speaker": "EN_A",
+    "text": "feel free to join the community\ndiscussion on the full report.\nUntil next time.",
+    "start": 215.159,
+    "end": 219.431,
+    "voice_id": "XZEfcFyBnzsNJrdvkWdI",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "community discussion"
+    ],
+    "page_index": 1,
+    "page_count": 1
+  }
+]

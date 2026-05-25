@@ -1,0 +1,401 @@
+[
+  {
+    "speaker": "ZH_A",
+    "text": "欢迎来到KC桌面。今天我们用一份最新研报，拆一个值得继续跟踪的问题。",
+    "start": 0.0,
+    "end": 6.873,
+    "voice_id": "UFDAUkGzdLAEJlINT3Fx",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "KC桌面",
+      "研报"
+    ]
+  },
+  {
+    "speaker": "ZH_A",
+    "text": "最近有一份关于Workday的研报，核心是讲它如何在AI时代找到新的增长路径。",
+    "start": 7.233,
+    "end": 14.153,
+    "voice_id": "UFDAUkGzdLAEJlINT3Fx",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "Workday",
+      "AI",
+      "增长路径"
+    ]
+  },
+  {
+    "speaker": "ZH_A",
+    "text": "你觉得这份报告最值得关注的点是什么？",
+    "start": 14.513,
+    "end": 17.81,
+    "voice_id": "UFDAUkGzdLAEJlINT3Fx",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "报告"
+    ]
+  },
+  {
+    "speaker": "ZH_B",
+    "text": "我觉得最核心的是，Workday提出了一个叫“无头企业软件”的愿景。简单说，就是不再只是卖座位数，",
+    "start": 18.17,
+    "end": 28.154,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "无头企业软件",
+      "卖座位数"
+    ]
+  },
+  {
+    "speaker": "ZH_B",
+    "text": "而是通过AI代理、平台和API三种方式来变现。",
+    "start": 28.514,
+    "end": 34.273,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "AI代理",
+      "平台",
+      "API"
+    ]
+  },
+  {
+    "speaker": "ZH_A",
+    "text": "无头企业软件？这个听起来有点抽象。它到底要解决什么问题？",
+    "start": 34.633,
+    "end": 39.695,
+    "voice_id": "UFDAUkGzdLAEJlINT3Fx",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "无头企业软件",
+      "抽象"
+    ]
+  },
+  {
+    "speaker": "ZH_B",
+    "text": "传统的企业软件，比如HR或者财务系统，是按人头收费的。但Workday在思考，",
+    "start": 40.055,
+    "end": 47.439,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "HR",
+      "财务系统",
+      "按人头收费"
+    ]
+  },
+  {
+    "speaker": "ZH_B",
+    "text": "如果未来AI可以替代很多人工操作，那增长从哪里来？所以他们提出了“熄灯式”的财务和HR，",
+    "start": 47.799,
+    "end": 56.251,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "AI",
+      "增长",
+      "熄灯式"
+    ]
+  },
+  {
+    "speaker": "ZH_A",
+    "text": "就是让流程自动化到几乎不需要人工干预。",
+    "start": 56.611,
+    "end": 60.698,
+    "voice_id": "UFDAUkGzdLAEJlINT3Fx",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "流程自动化",
+      "人工干预"
+    ]
+  },
+  {
+    "speaker": "ZH_A",
+    "text": "所以这意味着Workday在主动颠覆自己的商业模式？",
+    "start": 61.058,
+    "end": 65.469,
+    "voice_id": "UFDAUkGzdLAEJlINT3Fx",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "颠覆",
+      "商业模式"
+    ]
+  },
+  {
+    "speaker": "ZH_B",
+    "text": "没错。他们现在有三大变现路径。第一是卖自己的AI代理，直接帮客户实现自动化。",
+    "start": 65.829,
+    "end": 73.771,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "三大变现路径",
+      "AI代理",
+      "自动化"
+    ]
+  },
+  {
+    "speaker": "ZH_B",
+    "text": "第二是让客户在Workday平台上自己搭建AI应用。第三是提供底层API，让第三方开发者来构建生态。",
+    "start": 74.131,
+    "end": 84.394,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "Workday平台",
+      "AI应用",
+      "底层API"
+    ]
+  },
+  {
+    "speaker": "ZH_A",
+    "text": "听起来有点像从卖产品变成卖平台。那这份报告里有没有提到，这个转型目前进展如何？",
+    "start": 84.754,
+    "end": 93.206,
+    "voice_id": "UFDAUkGzdLAEJlINT3Fx",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "卖产品",
+      "卖平台",
+      "转型"
+    ]
+  },
+  {
+    "speaker": "ZH_B",
+    "text": "有个数字很关键。报告里提到，Workday的AI相关年化经常性收入已经达到5亿美元，",
+    "start": 93.566,
+    "end": 102.343,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "5亿美元",
+      "年化经常性收入"
+    ]
+  },
+  {
+    "speaker": "ZH_B",
+    "text": "占新增净年化经常性收入的30%以上。这说明他们的AI产品已经开始产生实质性的收入贡献了。",
+    "start": 102.703,
+    "end": 112.13,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "新增净年化经常性收入",
+      "30%",
+      "AI产品"
+    ]
+  },
+  {
+    "speaker": "ZH_A",
+    "text": "5亿美元？那确实不是小数目。不过，我注意到报告里也提到，",
+    "start": 112.49,
+    "end": 117.645,
+    "voice_id": "UFDAUkGzdLAEJlINT3Fx",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "5亿美元"
+    ]
+  },
+  {
+    "speaker": "ZH_A",
+    "text": "Workday的核心订阅收入增长其实稳定在12%左右。这是不是说明老业务在放缓？",
+    "start": 118.005,
+    "end": 125.9,
+    "voice_id": "UFDAUkGzdLAEJlINT3Fx",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "核心订阅收入",
+      "12%",
+      "老业务"
+    ]
+  },
+  {
+    "speaker": "ZH_B",
+    "text": "对，这正是报告要强调的。AI收入在增长，但传统按座位收费的业务增长确实在放缓。所以，这些新的变现路径，",
+    "start": 126.26,
+    "end": 139.82,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "AI收入",
+      "按座位收费",
+      "变现路径"
+    ]
+  },
+  {
+    "speaker": "ZH_B",
+    "text": "正是用来对冲老业务增长压力的关键。",
+    "start": 140.18,
+    "end": 143.524,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "对冲",
+      "增长压力"
+    ]
+  },
+  {
+    "speaker": "ZH_A",
+    "text": "那除此之外，报告里还有没有提到其他值得关注的战略动作？",
+    "start": 143.884,
+    "end": 148.76,
+    "voice_id": "UFDAUkGzdLAEJlINT3Fx",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "战略动作"
+    ]
+  },
+  {
+    "speaker": "ZH_B",
+    "text": "有。Workday还宣布进入了IT服务管理这个新市场。这个动作很有意思，",
+    "start": 149.12,
+    "end": 155.576,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "IT服务管理",
+      "新市场"
+    ]
+  },
+  {
+    "speaker": "ZH_B",
+    "text": "因为它是在利用自己在员工生命周期管理上的经验，去拓展更大的市场空间。",
+    "start": 155.936,
+    "end": 163.598,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "市场空间"
+    ]
+  },
+  {
+    "speaker": "ZH_A",
+    "text": "所以，这份报告的核心结论是什么？读者应该怎么看待Workday？",
+    "start": 163.958,
+    "end": 169.113,
+    "voice_id": "UFDAUkGzdLAEJlINT3Fx",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "核心结论",
+      "Workday"
+    ]
+  },
+  {
+    "speaker": "ZH_B",
+    "text": "报告认为，虽然这一季度的业绩超出预期，但股价能否持续重估，取决于他们能否成功推出自研的AI代理，",
+    "start": 169.473,
+    "end": 180.433,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "业绩超出预期"
+    ]
+  },
+  {
+    "speaker": "ZH_B",
+    "text": "以及“无头”和ITSM产品能否找到市场认可。未来12个月，很可能是一个转型过渡年。",
+    "start": 180.793,
+    "end": 189.523,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "转型过渡年"
+    ]
+  },
+  {
+    "speaker": "ZH_A",
+    "text": "也就是说，现在看好坏参半。那报告里有没有哪些问题是没有完全展开的？",
+    "start": 189.883,
+    "end": 196.199,
+    "voice_id": "UFDAUkGzdLAEJlINT3Fx",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "好坏参半"
+    ]
+  },
+  {
+    "speaker": "ZH_B",
+    "text": "有两个悬念。第一，Workday的“无头”模式具体怎么定价，报告没有细说。第二，他们进入ITSM市场后，",
+    "start": 196.559,
+    "end": 208.216,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "定价",
+      "ITSM市场"
+    ]
+  },
+  {
+    "speaker": "ZH_B",
+    "text": "会面临什么样的竞争格局？这些内容在完整报告里有更深入的分析。",
+    "start": 208.576,
+    "end": 215.077,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "会面临什么样",
+      "的竞争格局"
+    ]
+  },
+  {
+    "speaker": "ZH_A",
+    "text": "好的，那如果想了解更多细节，比如具体的定价模型和竞争分析，应该去哪里看？",
+    "start": 215.437,
+    "end": 222.961,
+    "voice_id": "UFDAUkGzdLAEJlINT3Fx",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "好的",
+      "那如果想了解"
+    ]
+  },
+  {
+    "speaker": "ZH_B",
+    "text": "对，这些都在完整版的研报里。如果你对这份报告感兴趣，可以加入我们的社群，或者直接联系我们获取完整版本。",
+    "start": 223.321,
+    "end": 234.745,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "社群",
+      "完整版本"
+    ]
+  },
+  {
+    "speaker": "ZH_B",
+    "text": "我们也会在后续的播客里继续拆解这些悬念。",
+    "start": 235.105,
+    "end": 238.681,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "播客",
+      "悬念"
+    ]
+  },
+  {
+    "speaker": "ZH_A",
+    "text": "好，那我们就先聊到这里。感谢你今天的分享。",
+    "start": 239.041,
+    "end": 243.36,
+    "voice_id": "UFDAUkGzdLAEJlINT3Fx",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "那我们就先聊",
+      "到这里"
+    ]
+  },
+  {
+    "speaker": "ZH_B",
+    "text": "谢谢，我们下期再见。",
+    "start": 243.72,
+    "end": 245.577,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "谢谢",
+      "我们下期再见"
+    ]
+  }
+]
