@@ -1,0 +1,112 @@
+[
+  {
+    "id": 3,
+    "name": "GS-EUROPEAN ECONOMICS ANALYST：Spain – Structural Resilience Beyond the Energy Shock-260524.pdf",
+    "dropbox_path": "/zip_backup/260525/GS-european economics analyst：spain – structural resilience beyond the energy shock-260524.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/GS-european economics analyst：spain – structural resilience beyond the energy shock-260524.pdf",
+    "category": "macro_trend",
+    "score": 0.95,
+    "reason": "标题为欧洲经济分析，属于宏观趋势",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 1,
+    "name": "GS-CHINA WEEKLY KICKSTART：China indexes flat to down 2% wow； President Putin visited Beijing； April activity data broadly missed expectations； Hang Seng Indexes announced review results-260525.pdf",
+    "dropbox_path": "/zip_backup/260525/GS-china weekly kickstart：china indexes flat to down 2% wow； president putin visited beijing； april activity data broadly missed expectations； hang seng indexes announced review results-260525.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/GS-china weekly kickstart：china indexes flat to down 2% wow； president putin visited beijing； april activity data broadly missed expectations； hang seng indexes announced review results-260525.pdf",
+    "category": "macro_trend",
+    "score": 0.9,
+    "reason": "标题涉及中国市场指数、宏观数据、政策，属于宏观趋势",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 8,
+    "name": "GS-Korea Views： May MPC Preview — A Measured Hawkish Turn-260524.pdf",
+    "dropbox_path": "/zip_backup/260525/GS-korea views： may mpc preview — a measured hawkish turn-260524.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/GS-korea views： may mpc preview — a measured hawkish turn-260524.pdf",
+    "category": "macro_trend",
+    "score": 0.9,
+    "reason": "标题为韩国货币政策预览，属于宏观趋势",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 20,
+    "name": "NOM-FX Insights：Increased scope for a US~Iran deal – strategy trades-260525.pdf",
+    "dropbox_path": "/zip_backup/260525/NOM-fx insights：increased scope for a us~iran deal – strategy trades-260525.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/NOM-fx insights：increased scope for a us~iran deal – strategy trades-260525.pdf",
+    "category": "macro_trend",
+    "score": 0.9,
+    "reason": "标题为外汇策略分析，属于宏观趋势",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 21,
+    "name": "NOM-USD CNY fix model：Projection： 6.7870-260525.pdf",
+    "dropbox_path": "/zip_backup/260525/NOM-usd cny fix model：projection： 6.7870-260525.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/NOM-usd cny fix model：projection： 6.7870-260525.pdf",
+    "category": "macro_trend",
+    "score": 0.9,
+    "reason": "标题为汇率模型预测，属于宏观趋势",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 2,
+    "name": "GS-Asia Index Strategy：Hang Seng Indexes Rebalancing Review and Flow Implications （June 2026）-260524.pdf",
+    "dropbox_path": "/zip_backup/260525/GS-asia index strategy：hang seng indexes rebalancing review and flow implications （june 2026）-260524.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/GS-asia index strategy：hang seng indexes rebalancing review and flow implications （june 2026）-260524.pdf",
+    "category": "macro_trend",
+    "score": 0.85,
+    "reason": "标题为指数策略和再平衡分析，属于市场整体趋势",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 15,
+    "name": "JPM-Insurance and Diversified Financials：Major changes in online distribution coming~takeaways from Google I O 2026 and how they will likely affect our listed coverage-260525.pdf",
+    "dropbox_path": "/zip_backup/260525/JPM-insurance and diversified financials：major changes in online distribution coming~takeaways from google i o 2026 and how they will likely affect our listed coverage-260525.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/JPM-insurance and diversified financials：major changes in online distribution coming~takeaways from google i o 2026 and how they will likely affect our listed coverage-260525.pdf",
+    "category": "macro_trend",
+    "score": 0.85,
+    "reason": "标题为行业整体分析，不针对单一公司，属于行业趋势",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 17,
+    "name": "JPM-China Gas Utilities：Global China Summit Takeaways： Cautious on lackluster core trends-260525.pdf",
+    "dropbox_path": "/zip_backup/260525/JPM-china gas utilities：global china summit takeaways： cautious on lackluster core trends-260525.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/JPM-china gas utilities：global china summit takeaways： cautious on lackluster core trends-260525.pdf",
+    "category": "macro_trend",
+    "score": 0.85,
+    "reason": "标题为中国燃气公用事业行业分析，属于行业趋势",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 18,
+    "name": "MS-China Coal：Major mine accident triggers safety inspections in multiregions； seen supporting nearterm coal prices-260524.pdf",
+    "dropbox_path": "/zip_backup/260525/MS-china coal：major mine accident triggers safety inspections in multiregions； seen supporting nearterm coal prices-260524.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/MS-china coal：major mine accident triggers safety inspections in multiregions； seen supporting nearterm coal prices-260524.pdf",
+    "category": "macro_trend",
+    "score": 0.85,
+    "reason": "标题为中国煤炭行业分析，属于行业趋势",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 19,
+    "name": "MS-Greater China Semis： AI Packaging Innovation： CoWoS， CPO and WoW-260522.pdf",
+    "dropbox_path": "/zip_backup/260525/MS-greater china semis： ai packaging innovation： cowos， cpo and wow-260522.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/MS-greater china semis： ai packaging innovation： cowos， cpo and wow-260522.pdf",
+    "category": "macro_trend",
+    "score": 0.85,
+    "reason": "标题为大中华半导体行业创新分析，属于行业趋势",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 16,
+    "name": "JPM-European Luxury Goods：A quick look at Chanel FY25 results-260520.pdf",
+    "dropbox_path": "/zip_backup/260525/JPM-european luxury goods：a quick look at chanel fy25 results-260520.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/JPM-european luxury goods：a quick look at chanel fy25 results-260520.pdf",
+    "category": "macro_trend",
+    "score": 0.8,
+    "reason": "标题为欧洲奢侈品行业整体分析，属于行业趋势",
+    "classifier": "deepseek"
+  }
+]
