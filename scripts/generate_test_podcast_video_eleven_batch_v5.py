@@ -11,9 +11,10 @@ from __future__ import annotations
 from pathlib import Path
 from typing import Any
 
-from PIL import Image, ImageDraw, ImageFilter, ImageFont
+from PIL import Image, ImageDraw, ImageFilter, ImageFont, ImageOps
 
 import generate_test_podcast_video_eleven as gen
+import generate_test_podcast_video_eleven_batch as base_batch
 import generate_test_podcast_video_eleven_batch_v2 as v2
 import generate_test_podcast_video_eleven_batch_v4 as v4
 
@@ -93,7 +94,7 @@ def draw_standard_frame_safe(image_path: Path | None, title: str, title_terms: l
 
     title = v4.clean_display_text(title, lang)
     y = TITLE_Y
-    for line in v2.title_lines(title, lang, 2):
+    for line in base_batch.title_lines(title, lang, 2):
         gen.draw_highlighted_line(draw, line, title_terms, title_font, y, center=True)
         y += 62
     separator_y = y + 18
@@ -146,10 +147,10 @@ def draw_mixed_frame_safe(image_path: Path | None, title_zh: str, title_en: str,
     title_zh = v4.sanitize_title(title_zh, "zh")
     title_en = v4.sanitize_title(title_en, "en")
     y = TITLE_Y
-    for line in v2.title_lines(title_zh, "zh", 2):
+    for line in base_batch.title_lines(title_zh, "zh", 2):
         center_text(draw, line, title_font_zh, y, WHITE)
         y += 58
-    for line in v2.wrap_words_balanced(title_en, 40, 2)[:2]:
+    for line in base_batch.wrap_words_balanced(title_en, 40, 2)[:2]:
         center_text(draw, line, title_font_en, y, SOFT_WHITE)
         y += 38
     separator_y = y + 14
