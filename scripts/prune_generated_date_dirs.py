@@ -14,6 +14,7 @@ DEFAULT_ROOTS = [
     "publish_ready_zips",
     "bank_report_catalogs",
     "market_view_summaries",
+    "bilingual_podcast_videos",
 ]
 
 

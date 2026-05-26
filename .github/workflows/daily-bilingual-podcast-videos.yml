@@ -1,4 +1,4 @@
-name: Test bilingual podcast video
+name: Daily bilingual podcast videos
 
 on:
   workflow_dispatch:
@@ -28,11 +28,11 @@ on:
         required: true
         default: "true"
       min_pages:
-        description: "Minimum PDF page count for each test PDF"
+        description: "Minimum PDF page count for each selected report"
         required: true
         default: "5"
-      test_pdf_count:
-        description: "How many PDFs / bilingual video sets to generate"
+      video_count:
+        description: "How many latest Dropbox reports / bilingual videos to generate"
         required: true
         default: "5"
       podcast_minutes:
@@ -40,10 +40,13 @@ on:
         required: true
         default: "5"
       commit_results:
-        description: "Commit test outputs back to repo"
+        description: "Commit generated video outputs back to repo"
         required: true
         type: boolean
         default: true
+  schedule:
+    # 23:00 UTC = 07:00 Asia/Shanghai.
+    - cron: "0 23 * * *"
 
 permissions:
   contents: write
@@ -52,11 +55,11 @@ env:
   PYTHONUNBUFFERED: "1"
 
 concurrency:
-  group: test-bilingual-podcast-video
+  group: daily-bilingual-podcast-videos
   cancel-in-progress: true
 
 jobs:
-  test-bilingual-podcast-video:
+  daily-bilingual-podcast-videos:
     runs-on: ubuntu-latest
     timeout-minutes: 180
     steps:
@@ -64,6 +67,9 @@ jobs:
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
+
+      - name: Pull latest main
+        run: git pull --rebase origin main || git pull origin main
 
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -81,6 +87,7 @@ jobs:
         run: pip install -r requirements.txt
 
       - name: Download latest Dropbox PDFs
+        id: dropbox
         env:
           DROPBOX_APP_KEY: ${{ secrets.DROPBOX_APP_KEY }}
           DROPBOX_APP_SECRET: ${{ secrets.DROPBOX_APP_SECRET }}
@@ -88,16 +95,16 @@ jobs:
         run: |
           python scripts/download_dropbox_latest_pdfs.py \
             --dropbox-root "${{ github.event.inputs.dropbox_root || '/zip_backup' }}" \
-            --output-dir "_podcast_test_latest_pdfs"
+            --output-dir "_daily_bilingual_latest_pdfs"
 
-      - name: Select recent PDFs with at least 5 pages
+      - name: Select latest reports for video generation
         id: select_pdf
         run: |
           python scripts/select_test_pdf.py \
-            --input-dir "_podcast_test_latest_pdfs" \
-            --output-dir "_podcast_test_selected_pdf" \
+            --input-dir "_daily_bilingual_latest_pdfs" \
+            --output-dir "_daily_bilingual_selected_pdfs" \
             --min-pages "${{ github.event.inputs.min_pages || '5' }}" \
-            --max-pdfs "${{ github.event.inputs.test_pdf_count || '5' }}"
+            --max-pdfs "${{ github.event.inputs.video_count || '5' }}"
 
       - name: Convert selected PDFs to notes and chart assets
         env:
@@ -106,12 +113,12 @@ jobs:
           DEEPSEEK_BASE_URL: ${{ github.event.inputs.deepseek_base_url || 'https://api.deepseek.com' }}
         run: |
           set -o pipefail
-          OUTPUT_DIR="podcast_video_tests/${{ github.run_id }}"
+          OUTPUT_DIR="bilingual_podcast_videos/${{ steps.dropbox.outputs.latest_folder }}/${{ github.run_id }}"
           mkdir -p "$OUTPUT_DIR"
           echo "OUTPUT_DIR=$OUTPUT_DIR" >> "$GITHUB_ENV"
-          COUNT="${{ github.event.inputs.test_pdf_count || '5' }}"
+          COUNT="${{ github.event.inputs.video_count || '5' }}"
           python scripts/run_pdf_to_xhs_in_batches.py \
-            --input-dir "_podcast_test_selected_pdf" \
+            --input-dir "_daily_bilingual_selected_pdfs" \
             --output-dir "$OUTPUT_DIR" \
             --batch-size 1 \
             --continue-on-batch-error false \
@@ -139,7 +146,7 @@ jobs:
           mkdir -p "$OUTPUT_DIR"
           python scripts/generate_test_podcast_video_eleven_batch_v5.py \
             --output-dir "$OUTPUT_DIR" \
-            --max-items "${{ github.event.inputs.test_pdf_count || '5' }}" \
+            --max-items "${{ github.event.inputs.video_count || '5' }}" \
             --model "${{ github.event.inputs.model || 'deepseek-chat' }}" \
             --deepseek-base-url "${{ github.event.inputs.deepseek_base_url || 'https://api.deepseek.com' }}" \
             --podcast-minutes "${{ github.event.inputs.podcast_minutes || '5' }}" 2>&1 | tee "$OUTPUT_DIR/podcast_video_progress.log"
@@ -148,14 +155,14 @@ jobs:
         run: |
           find "$OUTPUT_DIR" -maxdepth 3 -type f -printf '%s bytes %p\n' | sort -n
 
-      - name: Upload podcast/video test artifact
+      - name: Upload podcast/video artifact
         uses: actions/upload-artifact@v4
         with:
-          name: bilingual-podcast-video-test-${{ github.run_id }}
+          name: bilingual-podcast-videos-${{ steps.dropbox.outputs.latest_folder }}-${{ github.run_id }}
           path: ${{ env.OUTPUT_DIR }}
           if-no-files-found: error
 
-      - name: Commit test outputs
-        if: ${{ github.event.inputs.commit_results == 'true' }}
+      - name: Commit generated video outputs
+        if: ${{ github.event_name == 'schedule' || github.event.inputs.commit_results == 'true' }}
         run: |
-          bash scripts/commit_output_dir.sh "$OUTPUT_DIR" "Generate 5 bilingual ElevenLabs podcast video tests ${{ github.run_id }}" 8
+          bash scripts/commit_output_dir.sh "$OUTPUT_DIR" "Generate daily bilingual podcast videos ${{ steps.dropbox.outputs.latest_folder }} ${{ github.run_id }}" 8
