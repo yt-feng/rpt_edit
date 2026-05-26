@@ -16,7 +16,7 @@ import generate_test_podcast_video_eleven_batch_v2 as v2
 import generate_test_podcast_video_eleven_batch_v3 as v3
 
 SAFE_SYMBOLS = set("%$€£¥+−-/–—_=#&@.,;:!?()[]{}<>‘’'\"“”·…，。！？；：、（）《》【】")
-BAD_TITLE_CHARS = set("□■☐☑☒�")
+BAD_TITLE_CHARS = set("□■☐☑☒�龱")
 
 
 def clean_display_text(text: str, lang: str = "zh") -> str:
@@ -76,22 +76,7 @@ def wrap_by_pixel(draw: Any, text: str, font: Any, max_width: int, lang: str, ma
             # Avoid leaving a Latin word fragment at the end: because Latin words are atomic,
             # the entire word will move to the next line when it does not fit.
             lines.append(current)
-        # If a single token is too wide, only then fall back to character slicing.
-        if v2.text_size(draw, unit, font)[0] > max_width and re.match(r"^[A-Za-z0-9._%+-]+$", unit):
-            buf = ""
-            for ch in unit:
-                cand = buf + ch
-                if v2.text_size(draw, cand, font)[0] <= max_width:
-                    buf = cand
-                else:
-                    if buf:
-                        lines.append(buf)
-                    buf = ch
-                    if len(lines) >= max_lines:
-                        break
-            current = buf
-        else:
-            current = unit
+        current = unit
         if len(lines) >= max_lines:
             break
     if current and len(lines) < max_lines:

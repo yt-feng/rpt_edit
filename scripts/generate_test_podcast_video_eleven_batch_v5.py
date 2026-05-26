@@ -3,7 +3,7 @@
 
 Builds on v4 and fixes:
 - top/bottom safe areas for iPhone notch and WeChat Channels controls;
-- Chinese font preference closer to Microsoft YaHei by using WenQuanYi Micro Hei;
+- Chinese font preference closer to Microsoft YaHei with Simplified Chinese CJK fonts;
 - mixed-video title glyph cleanup and Latin word wrapping from v4.
 """
 from __future__ import annotations
@@ -25,30 +25,38 @@ SOFT_WHITE = (220, 232, 248)
 ZH_BRAND = "KC桌面"
 EN_BRAND = "KC Desk Notes"
 
-TOP_SAFE = 132
-BOTTOM_SAFE_START = 1690
-TITLE_Y = 138
-STAGE_TOP_MIN = 328
-STANDARD_STAGE_H = 545
-MIXED_STAGE_H = 500
-BOX_TOP = 1038
-BOX_BOTTOM = 1518
-PROGRESS_Y = 1582
-WATERMARK_Y = 1628
+TOP_SAFE = 172
+BOTTOM_SAFE_START = 1600
+TITLE_Y = 178
+STAGE_TOP_MIN = 382
+STANDARD_STAGE_H = 500
+MIXED_STAGE_H = 440
+BOX_TOP = 998
+BOX_BOTTOM = 1458
+PROGRESS_Y = 1510
+WATERMARK_Y = 1552
 
 
-def load_font_microhei(size: int, bold: bool = False) -> ImageFont.ImageFont:
-    """Prefer a Microsoft-YaHei-like open font on Ubuntu runners."""
+def load_font_cjk_sans(size: int, bold: bool = False) -> ImageFont.ImageFont:
+    """Prefer Simplified Chinese CJK sans fonts available on Ubuntu runners."""
     candidates = [
-        "/usr/share/fonts/truetype/wqy/wqy-microhei.ttc",
-        "/usr/share/fonts/truetype/wqy/wqy-zenhei.ttc",
-        "/usr/share/fonts/opentype/noto/NotoSansCJK-Bold.ttc" if bold else "/usr/share/fonts/opentype/noto/NotoSansCJK-Regular.ttc",
-        "/usr/share/fonts/truetype/noto/NotoSansCJK-Bold.ttc" if bold else "/usr/share/fonts/truetype/noto/NotoSansCJK-Regular.ttc",
-        "/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf" if bold else "/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf",
+        ("/usr/share/fonts/opentype/noto/NotoSansCJK-Bold.ttc" if bold else "/usr/share/fonts/opentype/noto/NotoSansCJK-Regular.ttc", 2),
+        ("/usr/share/fonts/truetype/noto/NotoSansCJK-Bold.ttc" if bold else "/usr/share/fonts/truetype/noto/NotoSansCJK-Regular.ttc", 2),
+        ("/usr/share/fonts/truetype/wqy/wqy-microhei.ttc", 0),
+        ("/usr/share/fonts/truetype/wqy/wqy-zenhei.ttc", 0),
+        ("/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf" if bold else "/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf", 0),
     ]
-    for candidate in candidates:
+    for candidate, index in candidates:
         if Path(candidate).exists():
-            return ImageFont.truetype(candidate, size)
+            try:
+                return ImageFont.truetype(candidate, size, index=index)
+            except TypeError:
+                try:
+                    return ImageFont.truetype(candidate, size)
+                except OSError:
+                    continue
+            except OSError:
+                continue
     return ImageFont.load_default()
 
 
@@ -202,8 +210,8 @@ def apply_safe_area_patch() -> None:
     # v4 first: title glyph cleanup, Latin word wrapping, and sensitive filtering.
     v4.apply_display_patch()
     # Then font and layout patches.
-    gen.load_font = load_font_microhei
-    v2.gen.load_font = load_font_microhei
+    gen.load_font = load_font_cjk_sans
+    v2.gen.load_font = load_font_cjk_sans
     v2.draw_frame_v2 = draw_standard_frame_safe
     v2.draw_mixed_frame = draw_mixed_frame_safe
 
