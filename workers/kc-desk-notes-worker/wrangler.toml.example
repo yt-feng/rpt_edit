@@ -1,6 +1,6 @@
 name = "kc-desk-notes-worker"
 main = "src/index.js"
-compatibility_date = "2026-05-27"
+compatibility_date = "2026-05-01"
 
 [vars]
 R2_OBJECT_PREFIX = "reports"

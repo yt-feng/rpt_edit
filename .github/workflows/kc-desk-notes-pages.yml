@@ -159,7 +159,7 @@ jobs:
           cat > workers/kc-desk-notes-worker/wrangler.toml <<EOF
           name = "kc-desk-notes-worker"
           main = "src/index.js"
-          compatibility_date = "2026-05-27"
+          compatibility_date = "2026-05-01"
 
           [vars]
           R2_OBJECT_PREFIX = "$R2_OBJECT_PREFIX"
