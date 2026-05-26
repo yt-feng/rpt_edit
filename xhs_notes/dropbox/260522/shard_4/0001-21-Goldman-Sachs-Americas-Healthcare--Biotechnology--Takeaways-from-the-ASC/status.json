@@ -1,9 +1,0 @@
-{
-  "source_pdf": "/tmp/pdf_batch_001_94zoj59f/pdfs/0001-21-GS-Americas Healthcare- Biotechnology- Takeaways from the ASCO abstracts-260521.pdf",
-  "mineru_state": "failed",
-  "mineru_error": "parsing failed, please try again later",
-  "error": "MinerU did not return a successful full_zip_url for this PDF.",
-  "podcast_error": "source_mineru.md not found",
-  "xianyu_note.md_error": "source_mineru.md not found",
-  "zhihu_article.md_error": "source_mineru.md not found"
-}

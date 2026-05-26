@@ -1,0 +1,57 @@
+name: Prune generated date folders
+
+on:
+  workflow_dispatch:
+    inputs:
+      keep:
+        description: "Latest date folders to keep in each generated output root"
+        required: true
+        default: "3"
+  schedule:
+    # UTC 04:00 = Asia/Shanghai 12:00.
+    - cron: "0 4 * * *"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: prune-generated-date-folders
+  cancel-in-progress: false
+
+env:
+  PYTHONUNBUFFERED: "1"
+
+jobs:
+  prune:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Pull latest main
+        run: git pull --rebase origin main || git pull origin main
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Prune old generated date folders
+        run: |
+          python scripts/prune_generated_date_dirs.py \
+            --keep "${{ github.event.inputs.keep || '3' }}"
+
+      - name: Commit cleanup
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A xhs_notes/dropbox publish_ready_zips bank_report_catalogs market_view_summaries
+          if git diff --cached --quiet; then
+            echo "No generated date folders to prune."
+            exit 0
+          fi
+          git commit -m "Prune old generated date folders"
+          git push origin HEAD:main
