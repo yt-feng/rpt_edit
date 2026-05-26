@@ -81,6 +81,19 @@ function findPasswordGroup(rules, groupId) {
   return (rules.groups || []).find((group) => group.id === target && group.active !== false);
 }
 
+function normalizePassword(value) {
+  return String(value || "").trim().toLowerCase();
+}
+
+function derivedReportPassword(id) {
+  const cleanId = String(id || "").trim().toLowerCase();
+  return `KC-${cleanId.slice(0, 8)}-${cleanId.slice(-4)}`;
+}
+
+function derivedPasswordMatches(id, password) {
+  return normalizePassword(password) === normalizePassword(derivedReportPassword(id));
+}
+
 async function sha256Hex(value) {
   const data = new TextEncoder().encode(value);
   const digest = await crypto.subtle.digest("SHA-256", data);
@@ -139,9 +152,8 @@ async function handleDownload(request, env) {
   }
 
   let catalog;
-  let rules;
   try {
-    [catalog, rules] = await Promise.all([loadCatalog(env), loadRules(env)]);
+    catalog = await loadCatalog(env);
   } catch (error) {
     return jsonResponse(request, env, 503, { error: error.message || "Worker is not configured." });
   }
@@ -154,16 +166,18 @@ async function handleDownload(request, env) {
     return jsonResponse(request, env, 404, { error: "PDF is not mirrored to R2 yet." });
   }
 
-  const group = findPasswordGroup(rules, report.password_group || rules.default_group);
-  if (!group) {
-    return jsonResponse(request, env, 503, { error: "Password group is not configured." });
-  }
-
-  try {
-    const ok = await passwordMatches(env, group, password);
-    if (!ok) return jsonResponse(request, env, 401, { error: "Password is incorrect." });
-  } catch (error) {
-    return jsonResponse(request, env, 503, { error: error.message || "Password validation failed." });
+  if (!derivedPasswordMatches(id, password)) {
+    try {
+      const rules = await loadRules(env);
+      const group = findPasswordGroup(rules, report.password_group || rules.default_group);
+      if (!group) {
+        return jsonResponse(request, env, 503, { error: "Password group is not configured." });
+      }
+      const ok = await passwordMatches(env, group, password);
+      if (!ok) return jsonResponse(request, env, 401, { error: "Password is incorrect." });
+    } catch (error) {
+      return jsonResponse(request, env, 503, { error: error.message || "Password validation failed." });
+    }
   }
 
   if (!env.REPORT_BUCKET) {

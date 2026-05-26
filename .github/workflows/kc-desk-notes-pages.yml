@@ -99,7 +99,7 @@ jobs:
 
       - name: Build static Pages artifact
         env:
-          KC_DESK_WORKER_URL: ${{ vars.KC_DESK_WORKER_URL }}
+          KC_DESK_WORKER_URL: ${{ vars.KC_DESK_WORKER_URL || 'https://kc-desk-notes-worker.yt-feng.workers.dev' }}
           KC_DESK_DOWNLOAD_PASSWORD: ${{ secrets.KC_DESK_DOWNLOAD_PASSWORD }}
           PASSWORD_SECRET: ${{ secrets.PASSWORD_SECRET }}
         run: |

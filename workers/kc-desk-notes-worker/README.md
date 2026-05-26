@@ -11,6 +11,14 @@ Required Worker configuration:
 
 The GitHub Actions deployment can keep `kc_desk_notes/password_rules.json` as a template. If `KC_DESK_DOWNLOAD_PASSWORD` and `PASSWORD_SECRET` are present as GitHub Actions secrets, the Pages artifact receives the generated password hash automatically.
 
+Per-report pseudo-passwords are also accepted. The rule is:
+
+```text
+KC-<first 8 chars of report id>-<last 4 chars of report id>
+```
+
+Example: `ff028dc03bb041a90f516174` becomes `KC-ff028dc0-6174`.
+
 The Pages workflow can generate a `wrangler.toml` during deployment when the GitHub repository has:
 
 - Secret `CLOUDFLARE_API_TOKEN`

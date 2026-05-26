@@ -197,7 +197,7 @@ bilingual_podcast_videos/<日期>/<run_id>/<报告文件夹>/
 
 ```text
 kc_desk_notes/data/catalog.json      # 长期保留历史文件名和 report id，不随 Dropbox 清理删除
-kc_desk_notes/password_rules.json    # 密码组 hash 对照表和分配规则
+kc_desk_notes/password_rules.json    # 全局密码组 hash 对照表和分配规则，作为备用
 kc_desk_notes/site_src/              # GitHub Pages 静态站点源码
 workers/kc-desk-notes-worker/        # Cloudflare Worker 代码
 ```
@@ -210,6 +210,14 @@ workers/kc-desk-notes-worker/        # Cloudflare Worker 代码
 4. 将当前扫描到的 PDF 上传到私有 R2，object key 为 `reports/<report_id>.pdf`。
 5. 生成 Pages artifact 并部署。
 6. Cloudflare 配置齐全时，自动部署 Worker。
+
+下载密码优先使用按 report id 推导出的伪密码：
+
+```text
+KC-<report id 前 8 位>-<report id 后 4 位>
+```
+
+例如 `ff028dc03bb041a90f516174` 对应 `KC-ff028dc0-6174`。如果需要，也可以继续使用 `KC_DESK_DOWNLOAD_PASSWORD` 作为全局备用密码。
 
 ### 3.6 Legacy repo-local PDF flow
 

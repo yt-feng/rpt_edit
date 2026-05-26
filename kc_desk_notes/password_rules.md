@@ -19,6 +19,14 @@ KC_DESK_DOWNLOAD_PASSWORD
 
 The plain download password should not be committed to this repo unless the repo and Pages setup are intentionally treated as non-sensitive.
 
+The Worker also accepts a deterministic per-report pseudo-password, so a separate password table is not required for normal use:
+
+```text
+KC-<first 8 chars of report id>-<last 4 chars of report id>
+```
+
+For report id `ff028dc03bb041a90f516174`, the pseudo-password is `KC-ff028dc0-6174`.
+
 Generate a hash locally with:
 
 ```bash
