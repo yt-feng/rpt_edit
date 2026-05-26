@@ -75,7 +75,7 @@ jobs:
         timeout-minutes: 10
         run: |
           sudo apt-get update
-          sudo apt-get install -y --no-install-recommends ffmpeg fonts-noto-cjk fonts-arphic-ukai
+          sudo apt-get install -y --no-install-recommends ffmpeg fonts-noto-cjk fonts-arphic-ukai fonts-wqy-microhei fonts-wqy-zenhei
 
       - name: Install Python dependencies
         run: pip install -r requirements.txt
@@ -137,7 +137,7 @@ jobs:
         run: |
           set -o pipefail
           mkdir -p "$OUTPUT_DIR"
-          python scripts/generate_test_podcast_video_eleven_batch_v3.py \
+          python scripts/generate_test_podcast_video_eleven_batch_v5.py \
             --output-dir "$OUTPUT_DIR" \
             --max-items "${{ github.event.inputs.test_pdf_count || '5' }}" \
             --model "${{ github.event.inputs.model || 'deepseek-chat' }}" \
