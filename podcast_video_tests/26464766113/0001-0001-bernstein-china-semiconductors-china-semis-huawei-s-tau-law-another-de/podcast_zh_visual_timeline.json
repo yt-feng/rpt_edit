@@ -1,0 +1,644 @@
+[
+  {
+    "speaker": "ZH_A",
+    "text": "欢迎来到KC桌面。今天我们用一份最新\n研报，拆一个值得继续跟踪的问题。",
+    "start": 0.0,
+    "end": 7.523,
+    "voice_id": "UFDAUkGzdLAEJlINT3Fx",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "KC桌面",
+      "研报"
+    ],
+    "page_index": 1,
+    "page_count": 1
+  },
+  {
+    "speaker": "ZH_A",
+    "text": "最近半导体圈子里都在讨论一个叫“Ta\nu定律”的东西，你怎么看？",
+    "start": 7.883,
+    "end": 12.992,
+    "voice_id": "UFDAUkGzdLAEJlINT3Fx",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "半导体",
+      "Tau定律"
+    ],
+    "page_index": 1,
+    "page_count": 1
+  },
+  {
+    "speaker": "ZH_B",
+    "text": "对，这是华为在ISCAS会议上提出的\n一个全新路线图，很多人把它称作“又一\n个DeepSeek时刻”。",
+    "start": 13.352,
+    "end": 21.572,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "华为",
+      "ISCAS",
+      "路线图"
+    ],
+    "page_index": 1,
+    "page_count": 1
+  },
+  {
+    "speaker": "ZH_A",
+    "text": "为什么大家会用DeepSeek来类比\n？这听起来好像不是一个简单的技术升级\n。",
+    "start": 21.932,
+    "end": 28.294,
+    "voice_id": "UFDAUkGzdLAEJlINT3Fx",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "DeepSeek",
+      "类比",
+      "技术升级"
+    ],
+    "page_index": 1,
+    "page_count": 1
+  },
+  {
+    "speaker": "ZH_B",
+    "text": "核心在于，DeepSeek证明了中国\nAI算法可以绕过算力瓶颈，而Tau定\n律则试图证明，",
+    "start": 28.654,
+    "end": 37.106,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "DeepSeek",
+      "AI算法",
+      "算力瓶颈"
+    ],
+    "page_index": 1,
+    "page_count": 1
+  },
+  {
+    "speaker": "ZH_B",
+    "text": "中国半导体可以在没有EUV光刻机的情\n况下，持续提升芯片性能。",
+    "start": 37.466,
+    "end": 43.596,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "中国半导体",
+      "EUV光刻机",
+      "芯片性能"
+    ],
+    "page_index": 1,
+    "page_count": 1
+  },
+  {
+    "speaker": "ZH_A",
+    "text": "所以这份报告真正要回答的问题是，中国\n半导体到底能不能绕过EUV的限制，找\n到一条自己的路？",
+    "start": 43.956,
+    "end": 52.362,
+    "voice_id": "UFDAUkGzdLAEJlINT3Fx",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "中国半导体",
+      "EUV",
+      "限制"
+    ],
+    "page_index": 1,
+    "page_count": 1
+  },
+  {
+    "speaker": "ZH_B",
+    "text": "没错。报告认为，Tau定律提供了一个\n可预测的、可扩展的路线图，它不再追求\n把晶体管做得更小，",
+    "start": 52.722,
+    "end": 62.056,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "Tau定律",
+      "路线图",
+      "晶体管"
+    ],
+    "page_index": 1,
+    "page_count": 1
+  },
+  {
+    "speaker": "ZH_B",
+    "text": "而是追求把信号延迟降得更低。",
+    "start": 62.416,
+    "end": 65.481,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "信号延迟"
+    ],
+    "page_index": 1,
+    "page_count": 1
+  },
+  {
+    "speaker": "ZH_A",
+    "text": "信号延迟？这个怎么理解？",
+    "start": 65.841,
+    "end": 68.442,
+    "voice_id": "UFDAUkGzdLAEJlINT3Fx",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "信号延迟"
+    ],
+    "page_index": 1,
+    "page_count": 1
+  },
+  {
+    "speaker": "ZH_B",
+    "text": "简单说，就是芯片里从一个晶体管到另一\n个晶体管，信号传输的时间。Tau定律\n的核心，",
+    "start": 68.802,
+    "end": 76.929,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "晶体管",
+      "信号传输",
+      "Tau定律"
+    ],
+    "page_index": 1,
+    "page_count": 1
+  },
+  {
+    "speaker": "ZH_B",
+    "text": "就是在整个芯片堆叠的各个环节，系统性\n地降低这个时间常数。",
+    "start": 77.289,
+    "end": 82.722,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "芯片堆叠",
+      "时间常数"
+    ],
+    "page_index": 1,
+    "page_count": 1
+  },
+  {
+    "speaker": "ZH_A",
+    "text": "听起来是个很底层的创新。那具体到技术\n实现上，有什么关键亮点吗？",
+    "start": 83.082,
+    "end": 90.048,
+    "voice_id": "UFDAUkGzdLAEJlINT3Fx",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "技术实现"
+    ],
+    "page_index": 1,
+    "page_count": 1
+  },
+  {
+    "speaker": "ZH_B",
+    "text": "报告里提到了一个叫“LogicFol\nding”的技术。乍一看，它和台积电\n的SoIC有点像，",
+    "start": 90.408,
+    "end": 97.328,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "LogicFolding",
+      "台积电",
+      "SoIC"
+    ],
+    "page_index": 1,
+    "page_count": 1
+  },
+  {
+    "speaker": "ZH_B",
+    "text": "都是把两个芯片堆叠在一起。",
+    "start": 97.688,
+    "end": 100.01,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "芯片堆叠"
+    ],
+    "page_index": 1,
+    "page_count": 1
+  },
+  {
+    "speaker": "ZH_A",
+    "text": "那区别在哪？",
+    "start": 100.37,
+    "end": 101.623,
+    "voice_id": "UFDAUkGzdLAEJlINT3Fx",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "区别"
+    ],
+    "page_index": 1,
+    "page_count": 1
+  },
+  {
+    "speaker": "ZH_B",
+    "text": "区别在于堆叠的颗粒度。台积电的SoI\nC是芯片级别的堆叠，比如把SRAM堆\n在逻辑芯片上。",
+    "start": 101.983,
+    "end": 109.832,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "堆叠",
+      "颗粒度",
+      "台积电"
+    ],
+    "page_index": 1,
+    "page_count": 1
+  },
+  {
+    "speaker": "ZH_B",
+    "text": "但华为的LogicFolding做到\n了亚微米级的键合间距，可以实现“单元\n对单元”的堆叠。",
+    "start": 110.192,
+    "end": 116.693,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "华为",
+      "LogicFolding",
+      "亚微米级"
+    ],
+    "page_index": 1,
+    "page_count": 1
+  },
+  {
+    "speaker": "ZH_A",
+    "text": "单元对单元？这意味着什么？",
+    "start": 117.053,
+    "end": 119.793,
+    "voice_id": "UFDAUkGzdLAEJlINT3Fx",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "单元对单元"
+    ],
+    "page_index": 1,
+    "page_count": 1
+  },
+  {
+    "speaker": "ZH_B",
+    "text": "意味着他们能把逻辑电路里的计算部分和\n存储部分，直接上下堆叠起来。",
+    "start": 120.153,
+    "end": 126.609,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "逻辑电路",
+      "计算",
+      "存储"
+    ],
+    "page_index": 1,
+    "page_count": 1
+  },
+  {
+    "speaker": "ZH_B",
+    "text": "这样信号从一个单元走到另一个单元的距\n离就大大缩短了，延迟自然就降下来了。",
+    "start": 126.969,
+    "end": 134.445,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "信号",
+      "距离",
+      "延迟"
+    ],
+    "page_index": 1,
+    "page_count": 1
+  },
+  {
+    "speaker": "ZH_A",
+    "text": "所以不仅提升了密度，还提升了频率？",
+    "start": 134.805,
+    "end": 137.917,
+    "voice_id": "UFDAUkGzdLAEJlINT3Fx",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "密度",
+      "频率"
+    ],
+    "page_index": 1,
+    "page_count": 1
+  },
+  {
+    "speaker": "ZH_B",
+    "text": "对，报告里给出的数据是，在2026年\n，",
+    "start": 138.277,
+    "end": 142.038,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "2026年"
+    ],
+    "page_index": 1,
+    "page_count": 1
+  },
+  {
+    "speaker": "ZH_B",
+    "text": "他们目标是把晶体管密度从155 MT\nr/mm2提升到238 MTr/mm\n2，",
+    "start": 142.398,
+    "end": 151.408,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "晶体管密度",
+      "155 MTr/mm2",
+      "238 MTr/mm2"
+    ],
+    "page_index": 1,
+    "page_count": 1
+  },
+  {
+    "speaker": "ZH_A",
+    "text": "同时核心频率也能提升13%以上。",
+    "start": 151.768,
+    "end": 155.065,
+    "voice_id": "UFDAUkGzdLAEJlINT3Fx",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "核心频率",
+      "13%"
+    ],
+    "page_index": 1,
+    "page_count": 1
+  },
+  {
+    "speaker": "ZH_A",
+    "text": "这听起来确实很厉害。但这是不是意味着\n中国半导体就能追上全球领先水平了？",
+    "start": 155.425,
+    "end": 163.041,
+    "voice_id": "UFDAUkGzdLAEJlINT3Fx",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "中国半导体",
+      "全球领先"
+    ],
+    "page_index": 1,
+    "page_count": 1
+  },
+  {
+    "speaker": "ZH_B",
+    "text": "报告并没有这么乐观。它明确指出了几个\n约束条件。第一，Tau定律高度依赖先\n进的3D封装技术，",
+    "start": 163.401,
+    "end": 172.968,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "约束条件",
+      "3D封装"
+    ],
+    "page_index": 1,
+    "page_count": 1
+  },
+  {
+    "speaker": "ZH_B",
+    "text": "而台积电在这方面仍然有巨大的技术和生\n态优势。",
+    "start": 173.328,
+    "end": 178.111,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "台积电",
+      "技术",
+      "生态优势"
+    ],
+    "page_index": 1,
+    "page_count": 1
+  },
+  {
+    "speaker": "ZH_A",
+    "text": "所以封装技术成了新的瓶颈？",
+    "start": 178.471,
+    "end": 181.583,
+    "voice_id": "UFDAUkGzdLAEJlINT3Fx",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "封装技术",
+      "瓶颈"
+    ],
+    "page_index": 1,
+    "page_count": 1
+  },
+  {
+    "speaker": "ZH_B",
+    "text": "是的。第二，堆叠芯片会带来巨大的功耗\n密度问题，散热是个大麻烦。第三，良率\n和成本也是商业化必须解决的难题。",
+    "start": 181.943,
+    "end": 192.949,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "功耗密度",
+      "散热",
+      "良率"
+    ],
+    "page_index": 1,
+    "page_count": 1
+  },
+  {
+    "speaker": "ZH_A",
+    "text": "那这份报告里，有没有提到哪些公司可能\n会受益于这个路线图？",
+    "start": 193.309,
+    "end": 198.882,
+    "voice_id": "UFDAUkGzdLAEJlINT3Fx",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "公司",
+      "受益",
+      "路线图"
+    ],
+    "page_index": 1,
+    "page_count": 1
+  },
+  {
+    "speaker": "ZH_B",
+    "text": "报告重点提到了几家。比如中芯国际，因\n为它是华为实现这个路线图的关键制造伙\n伴。还有北方华创，",
+    "start": 199.242,
+    "end": 208.669,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "中芯国际",
+      "华为",
+      "制造伙伴"
+    ],
+    "page_index": 1,
+    "page_count": 1
+  },
+  {
+    "speaker": "ZH_B",
+    "text": "因为它能提供先进逻辑制造所需的设备。",
+    "start": 209.029,
+    "end": 212.326,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "先进逻辑制造",
+      "设备"
+    ],
+    "page_index": 1,
+    "page_count": 1
+  },
+  {
+    "speaker": "ZH_A",
+    "text": "那还有一家叫拓荆科技的公司，报告里也\n提到了。",
+    "start": 212.686,
+    "end": 217.144,
+    "voice_id": "UFDAUkGzdLAEJlINT3Fx",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "拓荆科技"
+    ],
+    "page_index": 1,
+    "page_count": 1
+  },
+  {
+    "speaker": "ZH_B",
+    "text": "对，报告认为拓荆科技在键合设备上可能\n有潜力，所以市场会把它看作核心受益方\n之一。",
+    "start": 217.504,
+    "end": 224.517,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "拓荆科技",
+      "键合设备",
+      "核心受益方"
+    ],
+    "page_index": 1,
+    "page_count": 1
+  },
+  {
+    "speaker": "ZH_A",
+    "text": "听你这么说，这份报告其实不只是讲技术\n，更像是在讲一个完整的产业故事？",
+    "start": 224.877,
+    "end": 231.1,
+    "voice_id": "UFDAUkGzdLAEJlINT3Fx",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "产业故事"
+    ],
+    "page_index": 1,
+    "page_count": 1
+  },
+  {
+    "speaker": "ZH_B",
+    "text": "没错。DeepSeek让中国AI产业\n有了信心去研究AI，",
+    "start": 231.46,
+    "end": 235.732,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "DeepSeek",
+      "中国AI",
+      "信心"
+    ],
+    "page_index": 1,
+    "page_count": 1
+  },
+  {
+    "speaker": "ZH_B",
+    "text": "而Tau定律则让中国半导体产业有了信\n心去研究整个本土半导体产业链。",
+    "start": 236.092,
+    "end": 242.965,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "Tau定律",
+      "中国半导体",
+      "信心"
+    ],
+    "page_index": 1,
+    "page_count": 1
+  },
+  {
+    "speaker": "ZH_A",
+    "text": "那报告里有没有哪些问题是没有完全展开\n的？比如这个路线图具体什么时候能真正\n落地？",
+    "start": 243.325,
+    "end": 251.127,
+    "voice_id": "UFDAUkGzdLAEJlINT3Fx",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "路线图",
+      "落地"
+    ],
+    "page_index": 1,
+    "page_count": 1
+  },
+  {
+    "speaker": "ZH_B",
+    "text": "报告确实没有详细展开商业化时间表。比\n如LogicFolding的良率到底\n能不能达到量产标准，",
+    "start": 251.487,
+    "end": 259.754,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "商业化时间表",
+      "LogicFolding",
+      "良率"
+    ],
+    "page_index": 1,
+    "page_count": 1
+  },
+  {
+    "speaker": "ZH_B",
+    "text": "以及在高性能计算场景下，功耗墙到底怎\n么突破，这些在完整报告里应该有更深入\n的讨论。",
+    "start": 260.114,
+    "end": 267.915,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "高性能计算",
+      "功耗墙"
+    ],
+    "page_index": 1,
+    "page_count": 1
+  },
+  {
+    "speaker": "ZH_A",
+    "text": "那看来要真正理解这个路线图的潜力，还\n是得去读完整版报告。",
+    "start": 268.275,
+    "end": 273.198,
+    "voice_id": "UFDAUkGzdLAEJlINT3Fx",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "路线图",
+      "潜力",
+      "完整版报告"
+    ],
+    "page_index": 1,
+    "page_count": 1
+  },
+  {
+    "speaker": "ZH_B",
+    "text": "是的。如果你也想加入我们的投研社群，\n获取这份报告的完整解读，欢迎在节目详\n情页找到我们的联系方式。",
+    "start": 273.558,
+    "end": 282.707,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "投研社群",
+      "完整解读"
+    ],
+    "page_index": 1,
+    "page_count": 1
+  },
+  {
+    "speaker": "ZH_A",
+    "text": "好，感谢你今天的分享，我们下期再聊。",
+    "start": 283.067,
+    "end": 286.178,
+    "voice_id": "UFDAUkGzdLAEJlINT3Fx",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "分享"
+    ],
+    "page_index": 1,
+    "page_count": 1
+  },
+  {
+    "speaker": "ZH_B",
+    "text": "谢谢，下期见。",
+    "start": 286.538,
+    "end": 288.024,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "谢谢",
+      "下期见"
+    ],
+    "page_index": 1,
+    "page_count": 1
+  }
+]

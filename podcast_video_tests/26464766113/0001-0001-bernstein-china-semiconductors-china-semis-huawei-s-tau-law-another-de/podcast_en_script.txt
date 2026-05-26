@@ -1,0 +1,36 @@
+EN_A: Welcome to KC Desk Notes. Today we are unpacking one fresh research report and the question it raises.
+EN_A: Welcome back to the podcast. Today we’re talking about a new concept that’s generating a lot of buzz in China’s semiconductor space.
+EN_A: It’s called the Tau Scaling Law, and some are calling it another DeepSeek moment. So what exactly is it?
+EN_B: Great question. The Tau Law, proposed by Huawei at a recent conference, is essentially a new roadmap for improving chip performance.
+EN_B: Instead of focusing on making transistors smaller, which is what Moore’s Law did, it focuses on reducing signal latency across the entire chip stack.
+EN_A: Think of it as a shift from geometric scaling to temporal scaling.
+EN_A: Temporal scaling. That sounds like a big conceptual shift. Why is this important right now?
+EN_B: It’s important because it offers a path forward for China’s semiconductor industry,
+EN_B: which faces export controls that limit access to extreme ultraviolet lithography, or EUV. The Tau Law provides a clear,
+EN_A: predictable roadmap for continuous improvement without relying on the most advanced manufacturing tools.
+EN_A: So it’s a workaround of sorts. But how does it actually work in practice? What are the key innovations?
+EN_B: One of the most interesting innovations is something called LogicFolding. At first glance, it looks similar to TSMC’s SoIC technology,
+EN_B: where you stack two dies on top of each other. But Huawei’s approach is different. They’ve achieved a sub-2 micron bonding pitch,
+EN_A: which allows them to stack logic on top of logic at the cell level, not just at the chip level. This reduces latency and improves both density and frequency.
+EN_A: So they’re not just stacking chips, they’re stacking individual circuit blocks. That’s a much finer level of integration. What does that mean for performance?
+EN_B: It means significant gains. For example,
+EN_B: they project a jump in transistor density from 155 million transistors per square millimeter in 2025 to 238 million in 2026.
+EN_A: That’s equivalent to TSMC’s N3 node density, even though they’re using older manufacturing nodes. And they’re targeting 400 plus by 2031.
+EN_A: That’s impressive on paper. But what about the bigger picture? How does this scale to AI clusters?
+EN_B: That’s where the system-level improvements come in. They’re also working on near-packaged optical I/O, called Hi-ONE, and a unified bus network.
+EN_B: These technologies aim to reduce communication latency between chips from tens of microseconds to about 100 nanoseconds.
+EN_A: They’re targeting a 125 times improvement in compute power at the superpod level over the next five years.
+EN_A: So the Tau Law is not just about the chip itself, but the entire system around it. But there must be some constraints. This can’t be a magic bullet, right?
+EN_B: Absolutely. There are several challenges. First, it relies heavily on advanced 3DIC packaging, where global leaders like TSMC still hold a significant lead.
+EN_B: Second, stacking more dies increases power density, which creates thermal issues that need innovative power delivery solutions. And third,
+EN_A: yield and cost will be major barriers if not managed carefully.
+EN_A: So it’s a promising roadmap, but it doesn’t mean China will close the gap overnight. What does this mean for investors?
+EN_B: The report sees it as structurally positive for the entire China semiconductor ecosystem. Key beneficiaries include foundries like SMIC,
+EN_B: which will be critical for manufacturing these advanced logic and packaging solutions. Also, domestic tool vendors like NAURA and Piotech,
+EN_A: which provide equipment for advanced logic fabrication and bonding tools.
+EN_A: So the Tau Law is essentially a new framework for the industry to rally around. But there are still open questions.
+EN_B: What does the report leave unsolved that makes the full analysis worth reading?
+EN_B: One key question is how fast Huawei can solve the thermal and yield challenges. Another is whether this roadmap can truly narrow the gap with global leaders,
+EN_A: or if it will just keep China in a parallel track. The report goes into much more detail on the trade-offs and the specific companies that are best positioned.
+EN_A: Sounds like there’s plenty more to dig into. For anyone who wants the full picture, the Bernstein report is a great resource. Thanks for breaking it down.
+EN_B: My pleasure. There’s a lot to watch in this space, and the Tau Law is definitely a development worth following.

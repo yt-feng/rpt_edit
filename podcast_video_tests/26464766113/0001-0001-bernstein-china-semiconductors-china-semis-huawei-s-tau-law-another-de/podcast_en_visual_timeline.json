@@ -1,0 +1,742 @@
+[
+  {
+    "speaker": "EN_A",
+    "text": "Welcome to KC Desk Notes. Today we\nare unpacking one fresh research\nreport and the question it raises.",
+    "start": 0.0,
+    "end": 5.991,
+    "voice_id": "XZEfcFyBnzsNJrdvkWdI",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "KC Desk Notes",
+      "research report"
+    ],
+    "page_index": 1,
+    "page_count": 1
+  },
+  {
+    "speaker": "EN_A",
+    "text": "Welcome back to the podcast. Today\nwe’re talking about a new concept\nthat’s generating a lot of buzz in\nChina’s semiconductor space.",
+    "start": 6.351,
+    "end": 13.549,
+    "voice_id": "XZEfcFyBnzsNJrdvkWdI",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "podcast",
+      "new concept"
+    ],
+    "page_index": 1,
+    "page_count": 1
+  },
+  {
+    "speaker": "EN_A",
+    "text": "It’s called the Tau Scaling Law,\nand some are calling it another\nDeepSeek moment. So what exactly\nis it?",
+    "start": 13.909,
+    "end": 19.946,
+    "voice_id": "XZEfcFyBnzsNJrdvkWdI",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "Tau Scaling Law",
+      "DeepSeek moment"
+    ],
+    "page_index": 1,
+    "page_count": 1
+  },
+  {
+    "speaker": "EN_B",
+    "text": "Great question. The Tau Law,\nproposed by Huawei at a recent\nconference, is essentially a new\nroadmap for improving chip",
+    "start": 20.306,
+    "end": 23.975,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "Tau Law",
+      "Huawei",
+      "conference"
+    ],
+    "page_index": 1,
+    "page_count": 2
+  },
+  {
+    "speaker": "EN_B",
+    "text": "performance.",
+    "start": 23.975,
+    "end": 27.644,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "Tau Law",
+      "Huawei",
+      "conference"
+    ],
+    "page_index": 2,
+    "page_count": 2
+  },
+  {
+    "speaker": "EN_B",
+    "text": "Instead of focusing on making\ntransistors smaller, which is what\nMoore’s Law did, it focuses on\nreducing signal latency across the",
+    "start": 28.004,
+    "end": 31.719,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "transistors smaller",
+      "signal latency",
+      "chip stack"
+    ],
+    "page_index": 1,
+    "page_count": 2
+  },
+  {
+    "speaker": "EN_B",
+    "text": "entire chip stack.",
+    "start": 31.719,
+    "end": 35.434,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "transistors smaller",
+      "signal latency",
+      "chip stack"
+    ],
+    "page_index": 2,
+    "page_count": 2
+  },
+  {
+    "speaker": "EN_A",
+    "text": "Think of it as a shift from\ngeometric scaling to temporal\nscaling.",
+    "start": 35.794,
+    "end": 39.416,
+    "voice_id": "XZEfcFyBnzsNJrdvkWdI",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "geometric scaling",
+      "temporal scaling"
+    ],
+    "page_index": 1,
+    "page_count": 1
+  },
+  {
+    "speaker": "EN_A",
+    "text": "Temporal scaling. That sounds like\na big conceptual shift. Why is\nthis important right now?",
+    "start": 39.776,
+    "end": 44.049,
+    "voice_id": "XZEfcFyBnzsNJrdvkWdI",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "Temporal scaling",
+      "conceptual shift"
+    ],
+    "page_index": 1,
+    "page_count": 1
+  },
+  {
+    "speaker": "EN_B",
+    "text": "It’s important because it offers a\npath forward for China’s\nsemiconductor industry,",
+    "start": 44.409,
+    "end": 48.588,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "path forward"
+    ],
+    "page_index": 1,
+    "page_count": 1
+  },
+  {
+    "speaker": "EN_B",
+    "text": "which faces export controls that\nlimit access to extreme\nultraviolet lithography, or EUV.\nThe Tau Law provides a clear,",
+    "start": 48.948,
+    "end": 56.332,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "export controls",
+      "extreme ultraviolet lithography",
+      "EUV"
+    ],
+    "page_index": 1,
+    "page_count": 1
+  },
+  {
+    "speaker": "EN_A",
+    "text": "predictable roadmap for continuous\nimprovement without relying on the\nmost advanced manufacturing tools.",
+    "start": 56.692,
+    "end": 62.172,
+    "voice_id": "XZEfcFyBnzsNJrdvkWdI",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "predictable roadmap",
+      "continuous improvement",
+      "advanced manufacturing tools"
+    ],
+    "page_index": 1,
+    "page_count": 1
+  },
+  {
+    "speaker": "EN_A",
+    "text": "So it’s a workaround of sorts. But\nhow does it actually work in\npractice? What are the key\ninnovations?",
+    "start": 62.532,
+    "end": 67.734,
+    "voice_id": "XZEfcFyBnzsNJrdvkWdI",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "workaround",
+      "key innovations"
+    ],
+    "page_index": 1,
+    "page_count": 1
+  },
+  {
+    "speaker": "EN_B",
+    "text": "One of the most interesting\ninnovations is something called\nLogicFolding. At first glance, it\nlooks similar to TSMC’s SoIC",
+    "start": 68.094,
+    "end": 71.762,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "LogicFolding"
+    ],
+    "page_index": 1,
+    "page_count": 2
+  },
+  {
+    "speaker": "EN_B",
+    "text": "technology,",
+    "start": 71.762,
+    "end": 75.431,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "LogicFolding"
+    ],
+    "page_index": 2,
+    "page_count": 2
+  },
+  {
+    "speaker": "EN_B",
+    "text": "where you stack two dies on top of\neach other. But Huawei’s approach\nis different. They’ve achieved a\nsub-2 micron bonding pitch,",
+    "start": 75.791,
+    "end": 82.432,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "sub-2 micron bonding pitch"
+    ],
+    "page_index": 1,
+    "page_count": 1
+  },
+  {
+    "speaker": "EN_A",
+    "text": "which allows them to stack logic\non top of logic at the cell level,\nnot just at the chip level. This\nreduces latency and improves both",
+    "start": 82.792,
+    "end": 87.412,
+    "voice_id": "XZEfcFyBnzsNJrdvkWdI",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "latency",
+      "density",
+      "frequency"
+    ],
+    "page_index": 1,
+    "page_count": 2
+  },
+  {
+    "speaker": "EN_A",
+    "text": "density and frequency.",
+    "start": 87.412,
+    "end": 92.033,
+    "voice_id": "XZEfcFyBnzsNJrdvkWdI",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "latency",
+      "density",
+      "frequency"
+    ],
+    "page_index": 2,
+    "page_count": 2
+  },
+  {
+    "speaker": "EN_A",
+    "text": "So they’re not just stacking\nchips, they’re stacking individual\ncircuit blocks. That’s a much\nfiner level of integration. What",
+    "start": 92.393,
+    "end": 96.874,
+    "voice_id": "XZEfcFyBnzsNJrdvkWdI",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "stacking chips",
+      "circuit blocks",
+      "integration"
+    ],
+    "page_index": 1,
+    "page_count": 2
+  },
+  {
+    "speaker": "EN_A",
+    "text": "does that mean for performance?",
+    "start": 96.874,
+    "end": 101.356,
+    "voice_id": "XZEfcFyBnzsNJrdvkWdI",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "stacking chips",
+      "circuit blocks",
+      "integration"
+    ],
+    "page_index": 2,
+    "page_count": 2
+  },
+  {
+    "speaker": "EN_B",
+    "text": "It means significant gains. For\nexample,",
+    "start": 101.716,
+    "end": 103.992,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "significant gains"
+    ],
+    "page_index": 1,
+    "page_count": 1
+  },
+  {
+    "speaker": "EN_B",
+    "text": "they project a jump in transistor\ndensity from 155 million\ntransistors per square millimeter\nin 2025 to 238 million in 2026.",
+    "start": 104.352,
+    "end": 112.525,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "transistor density",
+      "155 million",
+      "238 million"
+    ],
+    "page_index": 1,
+    "page_count": 1
+  },
+  {
+    "speaker": "EN_A",
+    "text": "That’s equivalent to TSMC’s N3\nnode density, even though they’re\nusing older manufacturing nodes.\nAnd they’re targeting 400 plus by",
+    "start": 112.885,
+    "end": 117.32,
+    "voice_id": "XZEfcFyBnzsNJrdvkWdI",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "older manufacturing nodes",
+      "400 plus",
+      "2031"
+    ],
+    "page_index": 1,
+    "page_count": 2
+  },
+  {
+    "speaker": "EN_A",
+    "text": "2031.",
+    "start": 117.32,
+    "end": 121.755,
+    "voice_id": "XZEfcFyBnzsNJrdvkWdI",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "older manufacturing nodes",
+      "400 plus",
+      "2031"
+    ],
+    "page_index": 2,
+    "page_count": 2
+  },
+  {
+    "speaker": "EN_A",
+    "text": "That’s impressive on paper. But\nwhat about the bigger picture? How\ndoes this scale to AI clusters?",
+    "start": 122.115,
+    "end": 126.759,
+    "voice_id": "XZEfcFyBnzsNJrdvkWdI",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "AI clusters"
+    ],
+    "page_index": 1,
+    "page_count": 1
+  },
+  {
+    "speaker": "EN_B",
+    "text": "That’s where the system-level\nimprovements come in. They’re also\nworking on near-packaged optical\nI/O, called Hi-ONE, and a unified",
+    "start": 127.119,
+    "end": 130.928,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "near-packaged optical I/O",
+      "Hi-ONE",
+      "unified bus network"
+    ],
+    "page_index": 1,
+    "page_count": 2
+  },
+  {
+    "speaker": "EN_B",
+    "text": "bus network.",
+    "start": 130.928,
+    "end": 134.736,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "near-packaged optical I/O",
+      "Hi-ONE",
+      "unified bus network"
+    ],
+    "page_index": 2,
+    "page_count": 2
+  },
+  {
+    "speaker": "EN_B",
+    "text": "These technologies aim to reduce\ncommunication latency between\nchips from tens of microseconds to\nabout 100 nanoseconds.",
+    "start": 135.096,
+    "end": 140.9,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "communication latency",
+      "tens of microseconds",
+      "100 nanoseconds"
+    ],
+    "page_index": 1,
+    "page_count": 1
+  },
+  {
+    "speaker": "EN_A",
+    "text": "They’re targeting a 125 times\nimprovement in compute power at\nthe superpod level over the next\nfive years.",
+    "start": 141.26,
+    "end": 148.691,
+    "voice_id": "XZEfcFyBnzsNJrdvkWdI",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "125 times improvement",
+      "compute power",
+      "superpod"
+    ],
+    "page_index": 1,
+    "page_count": 1
+  },
+  {
+    "speaker": "EN_A",
+    "text": "So the Tau Law is not just about\nthe chip itself, but the entire\nsystem around it. But there must\nbe some constraints. This can’t be",
+    "start": 149.051,
+    "end": 153.649,
+    "voice_id": "XZEfcFyBnzsNJrdvkWdI",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "Tau Law",
+      "chip",
+      "system"
+    ],
+    "page_index": 1,
+    "page_count": 2
+  },
+  {
+    "speaker": "EN_A",
+    "text": "a magic bullet, right?",
+    "start": 153.649,
+    "end": 158.246,
+    "voice_id": "XZEfcFyBnzsNJrdvkWdI",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "Tau Law",
+      "chip",
+      "system"
+    ],
+    "page_index": 2,
+    "page_count": 2
+  },
+  {
+    "speaker": "EN_B",
+    "text": "Absolutely. There are several\nchallenges. First, it relies\nheavily on advanced 3DIC\npackaging, where global leaders",
+    "start": 158.606,
+    "end": 162.925,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "challenges",
+      "3DIC packaging",
+      "TSMC"
+    ],
+    "page_index": 1,
+    "page_count": 2
+  },
+  {
+    "speaker": "EN_B",
+    "text": "like TSMC still hold a significant\nlead.",
+    "start": 162.925,
+    "end": 167.244,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "challenges",
+      "3DIC packaging",
+      "TSMC"
+    ],
+    "page_index": 2,
+    "page_count": 2
+  },
+  {
+    "speaker": "EN_B",
+    "text": "Second, stacking more dies\nincreases power density, which\ncreates thermal issues that need\ninnovative power delivery",
+    "start": 167.604,
+    "end": 171.714,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "power density",
+      "thermal issues",
+      "power delivery solutions"
+    ],
+    "page_index": 1,
+    "page_count": 2
+  },
+  {
+    "speaker": "EN_B",
+    "text": "solutions. And third,",
+    "start": 171.714,
+    "end": 175.824,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "power density",
+      "thermal issues",
+      "power delivery solutions"
+    ],
+    "page_index": 2,
+    "page_count": 2
+  },
+  {
+    "speaker": "EN_A",
+    "text": "yield and cost will be major\nbarriers if not managed carefully.",
+    "start": 176.184,
+    "end": 179.295,
+    "voice_id": "XZEfcFyBnzsNJrdvkWdI",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "yield",
+      "cost",
+      "barriers"
+    ],
+    "page_index": 1,
+    "page_count": 1
+  },
+  {
+    "speaker": "EN_A",
+    "text": "So it’s a promising roadmap, but\nit doesn’t mean China will close\nthe gap overnight. What does this\nmean for investors?",
+    "start": 179.655,
+    "end": 185.692,
+    "voice_id": "XZEfcFyBnzsNJrdvkWdI",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "promising roadmap",
+      "gap",
+      "investors"
+    ],
+    "page_index": 1,
+    "page_count": 1
+  },
+  {
+    "speaker": "EN_B",
+    "text": "The report sees it as structurally\npositive for the entire China\nsemiconductor ecosystem. Key\nbeneficiaries include foundries",
+    "start": 186.052,
+    "end": 189.674,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "structurally positive",
+      "China semiconductor ecosystem",
+      "foundries"
+    ],
+    "page_index": 1,
+    "page_count": 2
+  },
+  {
+    "speaker": "EN_B",
+    "text": "like SMIC,",
+    "start": 189.674,
+    "end": 193.297,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "structurally positive",
+      "China semiconductor ecosystem",
+      "foundries"
+    ],
+    "page_index": 2,
+    "page_count": 2
+  },
+  {
+    "speaker": "EN_B",
+    "text": "which will be critical for\nmanufacturing these advanced logic\nand packaging solutions. Also,\ndomestic tool vendors like NAURA",
+    "start": 193.657,
+    "end": 197.442,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "domestic tool vendors",
+      "NAURA",
+      "Piotech"
+    ],
+    "page_index": 1,
+    "page_count": 2
+  },
+  {
+    "speaker": "EN_B",
+    "text": "and Piotech,",
+    "start": 197.442,
+    "end": 201.227,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "domestic tool vendors",
+      "NAURA",
+      "Piotech"
+    ],
+    "page_index": 2,
+    "page_count": 2
+  },
+  {
+    "speaker": "EN_A",
+    "text": "which provide equipment for\nadvanced logic fabrication and\nbonding tools.",
+    "start": 201.587,
+    "end": 205.813,
+    "voice_id": "XZEfcFyBnzsNJrdvkWdI",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "provide",
+      "equipment"
+    ],
+    "page_index": 1,
+    "page_count": 1
+  },
+  {
+    "speaker": "EN_A",
+    "text": "So the Tau Law is essentially a\nnew framework for the industry to\nrally around. But there are still\nopen questions.",
+    "start": 206.173,
+    "end": 212.814,
+    "voice_id": "XZEfcFyBnzsNJrdvkWdI",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "open questions"
+    ],
+    "page_index": 1,
+    "page_count": 1
+  },
+  {
+    "speaker": "EN_B",
+    "text": "What does the report leave\nunsolved that makes the full\nanalysis worth reading?",
+    "start": 213.174,
+    "end": 217.075,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "report",
+      "full analysis"
+    ],
+    "page_index": 1,
+    "page_count": 1
+  },
+  {
+    "speaker": "EN_B",
+    "text": "One key question is how fast\nHuawei can solve the thermal and\nyield challenges. Another is\nwhether this roadmap can truly",
+    "start": 217.435,
+    "end": 221.127,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "thermal",
+      "yield challenges",
+      "roadmap"
+    ],
+    "page_index": 1,
+    "page_count": 2
+  },
+  {
+    "speaker": "EN_B",
+    "text": "narrow the gap with global\nleaders,",
+    "start": 221.127,
+    "end": 224.819,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "thermal",
+      "yield challenges",
+      "roadmap"
+    ],
+    "page_index": 2,
+    "page_count": 2
+  },
+  {
+    "speaker": "EN_A",
+    "text": "or if it will just keep China in a\nparallel track. The report goes\ninto much more detail on the\ntrade-offs and the specific",
+    "start": 225.179,
+    "end": 229.242,
+    "voice_id": "XZEfcFyBnzsNJrdvkWdI",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "trade-offs",
+      "specific companies",
+      "best positioned"
+    ],
+    "page_index": 1,
+    "page_count": 2
+  },
+  {
+    "speaker": "EN_A",
+    "text": "companies that are best\npositioned.",
+    "start": 229.242,
+    "end": 233.305,
+    "voice_id": "XZEfcFyBnzsNJrdvkWdI",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "trade-offs",
+      "specific companies",
+      "best positioned"
+    ],
+    "page_index": 2,
+    "page_count": 2
+  },
+  {
+    "speaker": "EN_A",
+    "text": "Sounds like there’s plenty more to\ndig into. For anyone who wants the\nfull picture, the Bernstein report\nis a great resource. Thanks for",
+    "start": 233.665,
+    "end": 237.914,
+    "voice_id": "XZEfcFyBnzsNJrdvkWdI",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "Bernstein report",
+      "resource"
+    ],
+    "page_index": 1,
+    "page_count": 2
+  },
+  {
+    "speaker": "EN_A",
+    "text": "breaking it down.",
+    "start": 237.914,
+    "end": 242.164,
+    "voice_id": "XZEfcFyBnzsNJrdvkWdI",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "Bernstein report",
+      "resource"
+    ],
+    "page_index": 2,
+    "page_count": 2
+  },
+  {
+    "speaker": "EN_B",
+    "text": "My pleasure. There’s a lot to\nwatch in this space, and the Tau\nLaw is definitely a development\nworth following.",
+    "start": 242.524,
+    "end": 248.608,
+    "voice_id": "bdt3B5N3GXM2nOc0SUW7",
+    "tts_engine": "elevenlabs",
+    "highlight_terms": [
+      "Tau Law",
+      "development"
+    ],
+    "page_index": 1,
+    "page_count": 1
+  }
+]

@@ -1,0 +1,143 @@
+1
+00:00:00,000 --> 00:00:05,991
+Host: Welcome to KC Desk Notes. Today we are unpacking one fresh research report and the question it raises.
+
+2
+00:00:06,351 --> 00:00:13,549
+Host: Welcome back to the podcast. Today we’re talking about a new concept that’s generating a lot of buzz in China’s semiconductor space.
+
+3
+00:00:13,909 --> 00:00:19,946
+Host: It’s called the Tau Scaling Law, and some are calling it another DeepSeek moment. So what exactly is it?
+
+4
+00:00:20,306 --> 00:00:27,644
+Guest: Great question. The Tau Law, proposed by Huawei at a recent conference, is essentially a new roadmap for improving chip performance.
+
+5
+00:00:28,004 --> 00:00:35,434
+Guest: Instead of focusing on making transistors smaller, which is what Moore’s Law did, it focuses on reducing signal latency across the entire chip stack.
+
+6
+00:00:35,794 --> 00:00:39,416
+Host: Think of it as a shift from geometric scaling to temporal scaling.
+
+7
+00:00:39,776 --> 00:00:44,049
+Host: Temporal scaling. That sounds like a big conceptual shift. Why is this important right now?
+
+8
+00:00:44,409 --> 00:00:48,588
+Guest: It’s important because it offers a path forward for China’s semiconductor industry,
+
+9
+00:00:48,948 --> 00:00:56,332
+Guest: which faces export controls that limit access to extreme ultraviolet lithography, or EUV. The Tau Law provides a clear,
+
+10
+00:00:56,692 --> 00:01:02,172
+Host: predictable roadmap for continuous improvement without relying on the most advanced manufacturing tools.
+
+11
+00:01:02,532 --> 00:01:07,734
+Host: So it’s a workaround of sorts. But how does it actually work in practice? What are the key innovations?
+
+12
+00:01:08,094 --> 00:01:15,431
+Guest: One of the most interesting innovations is something called LogicFolding. At first glance, it looks similar to TSMC’s SoIC technology,
+
+13
+00:01:15,791 --> 00:01:22,432
+Guest: where you stack two dies on top of each other. But Huawei’s approach is different. They’ve achieved a sub-2 micron bonding pitch,
+
+14
+00:01:22,792 --> 00:01:32,033
+Host: which allows them to stack logic on top of logic at the cell level, not just at the chip level. This reduces latency and improves both density and frequency.
+
+15
+00:01:32,393 --> 00:01:41,356
+Host: So they’re not just stacking chips, they’re stacking individual circuit blocks. That’s a much finer level of integration. What does that mean for performance?
+
+16
+00:01:41,716 --> 00:01:43,992
+Guest: It means significant gains. For example,
+
+17
+00:01:44,352 --> 00:01:52,525
+Guest: they project a jump in transistor density from 155 million transistors per square millimeter in 2025 to 238 million in 2026.
+
+18
+00:01:52,885 --> 00:02:01,755
+Host: That’s equivalent to TSMC’s N3 node density, even though they’re using older manufacturing nodes. And they’re targeting 400 plus by 2031.
+
+19
+00:02:02,115 --> 00:02:06,759
+Host: That’s impressive on paper. But what about the bigger picture? How does this scale to AI clusters?
+
+20
+00:02:07,119 --> 00:02:14,736
+Guest: That’s where the system-level improvements come in. They’re also working on near-packaged optical I/O, called Hi-ONE, and a unified bus network.
+
+21
+00:02:15,096 --> 00:02:20,900
+Guest: These technologies aim to reduce communication latency between chips from tens of microseconds to about 100 nanoseconds.
+
+22
+00:02:21,260 --> 00:02:28,691
+Host: They’re targeting a 125 times improvement in compute power at the superpod level over the next five years.
+
+23
+00:02:29,051 --> 00:02:38,246
+Host: So the Tau Law is not just about the chip itself, but the entire system around it. But there must be some constraints. This can’t be a magic bullet, right?
+
+24
+00:02:38,606 --> 00:02:47,244
+Guest: Absolutely. There are several challenges. First, it relies heavily on advanced 3DIC packaging, where global leaders like TSMC still hold a significant lead.
+
+25
+00:02:47,604 --> 00:02:55,824
+Guest: Second, stacking more dies increases power density, which creates thermal issues that need innovative power delivery solutions. And third,
+
+26
+00:02:56,184 --> 00:02:59,295
+Host: yield and cost will be major barriers if not managed carefully.
+
+27
+00:02:59,655 --> 00:03:05,692
+Host: So it’s a promising roadmap, but it doesn’t mean China will close the gap overnight. What does this mean for investors?
+
+28
+00:03:06,052 --> 00:03:13,297
+Guest: The report sees it as structurally positive for the entire China semiconductor ecosystem. Key beneficiaries include foundries like SMIC,
+
+29
+00:03:13,657 --> 00:03:21,227
+Guest: which will be critical for manufacturing these advanced logic and packaging solutions. Also, domestic tool vendors like NAURA and Piotech,
+
+30
+00:03:21,587 --> 00:03:25,813
+Host: which provide equipment for advanced logic fabrication and bonding tools.
+
+31
+00:03:26,173 --> 00:03:32,814
+Host: So the Tau Law is essentially a new framework for the industry to rally around. But there are still open questions.
+
+32
+00:03:33,174 --> 00:03:37,075
+Guest: What does the report leave unsolved that makes the full analysis worth reading?
+
+33
+00:03:37,435 --> 00:03:44,819
+Guest: One key question is how fast Huawei can solve the thermal and yield challenges. Another is whether this roadmap can truly narrow the gap with global leaders,
+
+34
+00:03:45,179 --> 00:03:53,305
+Host: or if it will just keep China in a parallel track. The report goes into much more detail on the trade-offs and the specific companies that are best positioned.
+
+35
+00:03:53,665 --> 00:04:02,164
+Host: Sounds like there’s plenty more to dig into. For anyone who wants the full picture, the Bernstein report is a great resource. Thanks for breaking it down.
+
+36
+00:04:02,524 --> 00:04:08,608
+Guest: My pleasure. There’s a lot to watch in this space, and the Tau Law is definitely a development worth following.
