@@ -29,10 +29,10 @@ KC Desk Notes / Cloudflare R2 额外需要：
 
 | Secret / Variable | 用途 |
 | --- | --- |
-| `R2_ACCOUNT_ID` | R2 S3 API account id，可放 secret 或 repo variable |
+| `R2_ACCOUNT_ID` | R2 S3 API account id，KC Desk Notes workflow 已默认使用 `8182ec40eab8c484e11ebf5d6a516fbd` |
 | `R2_ACCESS_KEY_ID` | R2 S3 API access key |
 | `R2_SECRET_ACCESS_KEY` | R2 S3 API secret key |
-| `R2_BUCKET` | R2 bucket 名，可放 secret 或 repo variable |
+| `R2_BUCKET` | R2 bucket 名，KC Desk Notes workflow 已默认使用 `kc-desk-notes-pdfs` |
 | `PASSWORD_SECRET` | Worker 端密码 hash pepper |
 | `CLOUDFLARE_API_TOKEN` | 可选，用于 Action 自动部署 Worker |
 | `CLOUDFLARE_ACCOUNT_ID` | 可选，用于 Action 自动部署 Worker |

@@ -11,4 +11,4 @@ ALLOWED_ORIGIN = "https://YOUR_GITHUB_PAGES_HOST"
 
 [[r2_buckets]]
 binding = "REPORT_BUCKET"
-bucket_name = "YOUR_R2_BUCKET_NAME"
+bucket_name = "kc-desk-notes-pdfs"
