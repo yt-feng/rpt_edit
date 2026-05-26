@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>KC Desk Notes</title>
+    <link rel="stylesheet" href="assets/styles.css">
+  </head>
+  <body data-page="index">
+    <header class="topbar">
+      <a class="brand" href="index.html" aria-label="KC Desk Notes home">
+        <img src="assets/kc-mark.svg" alt="" width="34" height="34">
+        <span>KC Desk Notes</span>
+      </a>
+      <div class="catalog-meta" id="catalogMeta">Loading catalog...</div>
+    </header>
+
+    <main class="shell">
+      <section class="search-panel" aria-labelledby="searchTitle">
+        <div>
+          <h1 id="searchTitle">KC Desk Notes</h1>
+          <p class="subtle">Search sanitized report titles mirrored from Dropbox. PDFs stay private until password unlock.</p>
+        </div>
+        <label class="search-box">
+          <span>Search</span>
+          <input id="searchInput" type="search" autocomplete="off" placeholder="Title, bank, or date">
+        </label>
+      </section>
+
+      <section class="results-section" aria-live="polite">
+        <div class="results-heading">
+          <h2>Reports</h2>
+          <span id="resultCount">0 items</span>
+        </div>
+        <div id="results" class="results-list"></div>
+      </section>
+    </main>
+
+    <script src="assets/app.js"></script>
+  </body>
+</html>

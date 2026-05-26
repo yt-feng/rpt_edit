@@ -3,3 +3,5 @@ __pycache__/
 .env
 mineru_result.zip
 .DS_Store
+_kc_desk_notes_pages/
+workers/kc-desk-notes-worker/wrangler.toml

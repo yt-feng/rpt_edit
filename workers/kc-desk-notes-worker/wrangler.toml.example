@@ -1,0 +1,14 @@
+name = "kc-desk-notes-worker"
+main = "src/index.js"
+compatibility_date = "2026-05-27"
+
+[vars]
+R2_OBJECT_PREFIX = "reports"
+# Set these to the GitHub Pages URLs after deployment.
+CATALOG_URL = "https://YOUR_GITHUB_PAGES_HOST/rpt_edit/data/catalog.json"
+PASSWORD_RULES_URL = "https://YOUR_GITHUB_PAGES_HOST/rpt_edit/data/password_rules.json"
+ALLOWED_ORIGIN = "https://YOUR_GITHUB_PAGES_HOST"
+
+[[r2_buckets]]
+binding = "REPORT_BUCKET"
+bucket_name = "YOUR_R2_BUCKET_NAME"

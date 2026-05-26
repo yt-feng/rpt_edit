@@ -1,0 +1,184 @@
+name: KC Desk Notes Pages
+
+on:
+  workflow_dispatch:
+    inputs:
+      dropbox_root:
+        description: "Dropbox root folder containing date-named backup folders"
+        required: true
+        default: "/zip_backup"
+      days:
+        description: "Latest Dropbox date folders to scan. 0 scans all current date folders."
+        required: true
+        default: "0"
+      sync_r2:
+        description: "Mirror current Dropbox PDFs to private Cloudflare R2"
+        required: true
+        type: boolean
+        default: true
+      force_upload:
+        description: "Upload current PDFs even if the catalog says they were already mirrored"
+        required: true
+        type: boolean
+        default: false
+      deploy_worker:
+        description: "Deploy the Cloudflare Worker when Cloudflare config is available"
+        required: true
+        type: boolean
+        default: true
+  schedule:
+    # UTC 01:30 = Asia/Shanghai 09:30.
+    - cron: "30 1 * * *"
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: kc-desk-notes-pages
+  cancel-in-progress: false
+
+env:
+  PYTHONUNBUFFERED: "1"
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Pull latest main
+        run: git pull --rebase origin main || git pull origin main
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: "pip"
+
+      - name: Install Python dependencies
+        run: pip install requests boto3
+
+      - name: Update catalog and mirror current PDFs to R2
+        id: catalog
+        env:
+          DROPBOX_APP_KEY: ${{ secrets.DROPBOX_APP_KEY }}
+          DROPBOX_APP_SECRET: ${{ secrets.DROPBOX_APP_SECRET }}
+          DROPBOX_REFRESH_TOKEN: ${{ secrets.DROPBOX_REFRESH_TOKEN }}
+          R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID || vars.R2_ACCOUNT_ID }}
+          R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+          R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+          R2_BUCKET: ${{ secrets.R2_BUCKET || vars.R2_BUCKET }}
+          R2_OBJECT_PREFIX: ${{ vars.R2_OBJECT_PREFIX || 'reports' }}
+        run: |
+          SYNC_R2="${{ github.event.inputs.sync_r2 || 'true' }}"
+          FORCE_UPLOAD="${{ github.event.inputs.force_upload || 'false' }}"
+          EXTRA_ARGS=()
+          if [ "$SYNC_R2" = "true" ]; then
+            EXTRA_ARGS+=(--sync-r2)
+          fi
+          if [ "$FORCE_UPLOAD" = "true" ]; then
+            EXTRA_ARGS+=(--force-upload)
+          fi
+          python scripts/kc_desk_notes_catalog.py \
+            --dropbox-root "${{ github.event.inputs.dropbox_root || '/zip_backup' }}" \
+            --days "${{ github.event.inputs.days || '0' }}" \
+            --catalog-path "kc_desk_notes/data/catalog.json" \
+            --password-rules "kc_desk_notes/password_rules.json" \
+            --r2-prefix "${R2_OBJECT_PREFIX}" \
+            "${EXTRA_ARGS[@]}"
+
+      - name: Build static Pages artifact
+        env:
+          KC_DESK_WORKER_URL: ${{ vars.KC_DESK_WORKER_URL }}
+        run: |
+          python scripts/build_kc_desk_notes_site.py \
+            --catalog-path "kc_desk_notes/data/catalog.json" \
+            --password-rules "kc_desk_notes/password_rules.json" \
+            --site-src "kc_desk_notes/site_src" \
+            --output-dir "_kc_desk_notes_pages" \
+            --worker-base-url "$KC_DESK_WORKER_URL"
+
+      - name: Configure GitHub Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: _kc_desk_notes_pages
+
+      - name: Deploy GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
+
+      - name: Commit persistent catalog
+        run: |
+          bash scripts/commit_output_dir.sh "kc_desk_notes/data" "Update KC Desk Notes catalog" 8
+
+      - name: Prepare Cloudflare Worker deploy config
+        id: worker_config
+        env:
+          DEPLOY_WORKER: ${{ github.event.inputs.deploy_worker || 'true' }}
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID || vars.CLOUDFLARE_ACCOUNT_ID || secrets.R2_ACCOUNT_ID || vars.R2_ACCOUNT_ID }}
+          R2_BUCKET_NAME: ${{ secrets.R2_BUCKET || vars.R2_BUCKET }}
+          PASSWORD_SECRET: ${{ secrets.PASSWORD_SECRET }}
+          PAGES_URL: ${{ vars.KC_DESK_PAGES_URL || steps.deployment.outputs.page_url }}
+          R2_OBJECT_PREFIX: ${{ vars.R2_OBJECT_PREFIX || 'reports' }}
+        run: |
+          if [ "$DEPLOY_WORKER" != "true" ]; then
+            echo "enabled=false" >> "$GITHUB_OUTPUT"
+            echo "Worker deploy disabled by input."
+            exit 0
+          fi
+          if [ -z "$CLOUDFLARE_API_TOKEN" ] || [ -z "$CLOUDFLARE_ACCOUNT_ID" ] || [ -z "$R2_BUCKET_NAME" ] || [ -z "$PASSWORD_SECRET" ] || [ -z "$PAGES_URL" ]; then
+            echo "enabled=false" >> "$GITHUB_OUTPUT"
+            echo "Skipping Worker deploy because Cloudflare token/account, R2 bucket, PASSWORD_SECRET, or Pages URL is missing."
+            exit 0
+          fi
+          if grep -q "REPLACE_WITH_SHA256_HASH" kc_desk_notes/password_rules.json; then
+            echo "enabled=false" >> "$GITHUB_OUTPUT"
+            echo "Skipping Worker deploy because kc_desk_notes/password_rules.json still contains the placeholder password hash."
+            exit 0
+          fi
+
+          PAGES_URL="${PAGES_URL%/}"
+          PAGES_ORIGIN="$(node -e "console.log(new URL(process.env.PAGES_URL).origin)")"
+          cat > workers/kc-desk-notes-worker/wrangler.toml <<EOF
+          name = "kc-desk-notes-worker"
+          main = "src/index.js"
+          compatibility_date = "2026-05-27"
+
+          [vars]
+          R2_OBJECT_PREFIX = "$R2_OBJECT_PREFIX"
+          CATALOG_URL = "$PAGES_URL/data/catalog.json"
+          PASSWORD_RULES_URL = "$PAGES_URL/data/password_rules.json"
+          ALLOWED_ORIGIN = "$PAGES_ORIGIN"
+
+          [[r2_buckets]]
+          binding = "REPORT_BUCKET"
+          bucket_name = "$R2_BUCKET_NAME"
+          EOF
+          echo "enabled=true" >> "$GITHUB_OUTPUT"
+
+      - name: Deploy Cloudflare Worker
+        if: ${{ steps.worker_config.outputs.enabled == 'true' }}
+        uses: cloudflare/wrangler-action@v3
+        env:
+          PASSWORD_SECRET: ${{ secrets.PASSWORD_SECRET }}
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID || vars.CLOUDFLARE_ACCOUNT_ID || secrets.R2_ACCOUNT_ID || vars.R2_ACCOUNT_ID }}
+          workingDirectory: workers/kc-desk-notes-worker
+          command: deploy
+          secrets: |
+            PASSWORD_SECRET

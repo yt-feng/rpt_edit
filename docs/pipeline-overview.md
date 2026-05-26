@@ -25,6 +25,21 @@
 | `DROPBOX_APP_SECRET` | Dropbox API |
 | `DROPBOX_REFRESH_TOKEN` | Dropbox refresh token，用于读取 `/zip_backup` |
 
+KC Desk Notes / Cloudflare R2 额外需要：
+
+| Secret / Variable | 用途 |
+| --- | --- |
+| `R2_ACCOUNT_ID` | R2 S3 API account id，可放 secret 或 repo variable |
+| `R2_ACCESS_KEY_ID` | R2 S3 API access key |
+| `R2_SECRET_ACCESS_KEY` | R2 S3 API secret key |
+| `R2_BUCKET` | R2 bucket 名，可放 secret 或 repo variable |
+| `PASSWORD_SECRET` | Worker 端密码 hash pepper |
+| `CLOUDFLARE_API_TOKEN` | 可选，用于 Action 自动部署 Worker |
+| `CLOUDFLARE_ACCOUNT_ID` | 可选，用于 Action 自动部署 Worker |
+| `KC_DESK_WORKER_URL` | Pages 前端调用的 Worker URL |
+| `KC_DESK_PAGES_URL` | 可选，Worker 读取 catalog/password rules 的 Pages URL |
+| `R2_OBJECT_PREFIX` | 可选，R2 内 PDF 前缀，默认 `reports` |
+
 可选环境变量：
 
 | 变量 | 默认值 | 用途 |
@@ -132,42 +147,74 @@ market_view_summaries/<日期>/figures/
 - 图表会优先选择带 Exhibit / Figure / 图表编号的候选。
 - 已对邮箱、电话、HTML、表格残片等异常 caption 做过滤。
 
-### 3.4 Test Chinese podcast video
+### 3.4 Daily bilingual podcast videos
 
-文件：`.github/workflows/test-zh-podcast-video.yml`
+文件：`.github/workflows/daily-bilingual-podcast-videos.yml`
 
-用途：测试中文 podcast + 竖屏讲解视频链路。不会影响每日主流程。
+用途：每天从 Dropbox 最新日期文件夹中挑选 5 篇报告，生成中文、英文和 mixed bilingual podcast 讲解视频。
+
+触发方式：
+
+- 手动运行：Actions → **Daily bilingual podcast videos**
+- 定时运行：北京时间 07:00，cron 为 `0 23 * * *`
 
 流程：
 
-1. 从 Dropbox 最新日期文件夹里选择一份至少 5 页的 PDF。
+1. 从 Dropbox 最新日期文件夹下载 PDF。
 2. 用 MinerU 解析文本和图表。
-3. 生成中文双男声对话脚本。
-4. 使用本地 Piper TTS 生成中文 wav。
-5. 用 Pillow + ffmpeg 生成 Remotion-like 竖屏讲解视频。
-6. 视频底部水印为 `KC桌面`。
+3. 默认选择 5 份至少 5 页的报告。
+4. 用 DeepSeek 生成 podcast 脚本。
+5. 用 ElevenLabs 生成中英文音频。
+6. 输出中文、英文、mixed bilingual 三版讲解视频。
 
 输出目录：
 
 ```text
-podcast_video_tests/<run_id>/<报告文件夹>/
-  podcast_zh_script.txt
-  podcast_zh.wav
-  podcast_zh_timeline.json
+bilingual_podcast_videos/<日期>/<run_id>/<报告文件夹>/
   podcast_zh_explainer.mp4
+  podcast_en_explainer.mp4
+  podcast_mixed_bilingual_explainer.mp4
 ```
 
 说明：
 
-- 当前为测试流程，只生成中文。
-- 两个角色都是男声：`ZH_A` 主持人，`ZH_B` 研究员。
-- 用同一个 Piper 中文模型，通过音频后处理做两种男声音色区分。
+- 视频脚本和标题会复用 `finalize_outputs.py` 的脱敏规则。
+- mixed bilingual 版本有安全区、中文字体和英文单词高亮断行修复。
 
-### 3.5 PDF to Xiaohongshu notes
+### 3.5 KC Desk Notes Pages
 
-文件：`.github/workflows/pdf-to-xhs.yml`
+文件：`.github/workflows/kc-desk-notes-pages.yml`
 
-用途：手动处理 repo 内 `pdfs/` 文件夹里的 PDF。适合临时丢 PDF 进去跑一批。
+用途：生成 GitHub Pages 搜索站点 **KC Desk Notes**。站点只展示脱敏后的 Dropbox PDF 标题；PDF 不进入 repo，也不在前端暴露 Dropbox token 或 R2 key。点击报告进入详情页后，必须输入密码，由 Cloudflare Worker 校验后从私有 R2 以 attachment 方式返回 PDF。
+
+触发方式：
+
+- 手动运行：Actions → **KC Desk Notes Pages**
+- 定时运行：北京时间 09:30，cron 为 `30 1 * * *`
+
+核心数据：
+
+```text
+kc_desk_notes/data/catalog.json      # 长期保留历史文件名和 report id，不随 Dropbox 清理删除
+kc_desk_notes/password_rules.json    # 密码组 hash 对照表和分配规则
+kc_desk_notes/site_src/              # GitHub Pages 静态站点源码
+workers/kc-desk-notes-worker/        # Cloudflare Worker 代码
+```
+
+流程：
+
+1. 扫描 Dropbox `/zip_backup/<日期>/` 下当前仍存在的 PDF。
+2. 用既有投行脱敏规则生成页面标题。
+3. 合并到长期 `catalog.json`，历史条目保留。
+4. 将当前扫描到的 PDF 上传到私有 R2，object key 为 `reports/<report_id>.pdf`。
+5. 生成 Pages artifact 并部署。
+6. Cloudflare 配置齐全时，自动部署 Worker。
+
+### 3.6 Legacy repo-local PDF flow
+
+说明文档：`docs/pdf-to-xhs-workflow.md`
+
+用途：旧版手动处理 repo 内 `pdfs/` 文件夹里的 PDF。当前日常默认走 Dropbox 主流程；如果后续恢复 repo-local Action，优先同步更新这里。
 
 输入目录：
 
@@ -195,7 +242,10 @@ xhs_notes/<报告文件夹>/
 | `scripts/build_market_views_pdf.py` | 生成市场观点汇总结构化 JSON 和 LaTeX 源文件 |
 | `scripts/render_market_views_reportlab_pdf.py` | 用 ReportLab 快速渲染市场观点 PDF |
 | `scripts/select_test_pdf.py` | 测试 podcast/video 时选择 5 页以上 PDF |
-| `scripts/generate_test_podcast_video.py` | 生成中文双男声 podcast 和讲解视频 |
+| `scripts/generate_test_podcast_video_eleven_batch_v5.py` | 批量生成中英文和 mixed bilingual podcast 讲解视频 |
+| `scripts/kc_desk_notes_catalog.py` | 扫描 Dropbox PDF、合并长期 catalog、同步当前 PDF 到 R2 |
+| `scripts/build_kc_desk_notes_site.py` | 生成 KC Desk Notes GitHub Pages 静态站点 artifact |
+| `scripts/hash_kc_desk_notes_password.py` | 生成 `password_rules.json` 里的密码 hash |
 | `scripts/commit_output_dir.sh` | GitHub Action 里提交输出目录，带重试和强制 add PDF |
 
 ## 5. Prompt 文件
@@ -347,8 +397,9 @@ sensitive_content_guard_summary.json
 1. 每天自动跑：**Final PDF to XHS notes**。
 2. 如果最终 ZIP 出问题，只跑：**Debug package publish-ready ZIP**。
 3. 如果要看市场观点总览，跑：**Market views daily PDF**。
-4. 如果要测试音频/视频，跑：**Test Chinese podcast video**。
-5. 如果只是手动上传 repo 内 PDF，跑：**PDF to Xiaohongshu notes**。
+4. 如果要生成每日中英双语视频，跑：**Daily bilingual podcast videos**。
+5. 如果要更新 PDF 搜索站点，跑：**KC Desk Notes Pages**。
+6. 如果只是手动上传 repo 内 PDF，参考旧版 `docs/pdf-to-xhs-workflow.md`。
 
 ## 13. 常见问题
 
