@@ -28,7 +28,7 @@ function allowedOrigin(request, env) {
 function corsHeaders(request, env) {
   return {
     "Access-Control-Allow-Origin": allowedOrigin(request, env),
-    "Access-Control-Allow-Methods": "POST, OPTIONS",
+    "Access-Control-Allow-Methods": "GET, POST, OPTIONS",
     "Access-Control-Allow-Headers": "Content-Type",
     "Access-Control-Expose-Headers": "Content-Disposition",
     "Vary": "Origin",
@@ -85,13 +85,48 @@ function normalizePassword(value) {
   return String(value || "").trim().toLowerCase();
 }
 
-function derivedReportPassword(id) {
-  const cleanId = String(id || "").trim().toLowerCase();
-  return `KC-${cleanId.slice(0, 8)}-${cleanId.slice(-4)}`;
+function base32NoPadding(bytes) {
+  const alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ234567";
+  let output = "";
+  let buffer = 0;
+  let bitsLeft = 0;
+  for (const byte of bytes) {
+    buffer = (buffer << 8) | byte;
+    bitsLeft += 8;
+    while (bitsLeft >= 5) {
+      output += alphabet[(buffer >> (bitsLeft - 5)) & 31];
+      bitsLeft -= 5;
+    }
+  }
+  if (bitsLeft > 0) {
+    output += alphabet[(buffer << (5 - bitsLeft)) & 31];
+  }
+  return output;
 }
 
-function derivedPasswordMatches(id, password) {
-  return normalizePassword(password) === normalizePassword(derivedReportPassword(id));
+async function hmacSha256Bytes(secret, message) {
+  const encoder = new TextEncoder();
+  const key = await crypto.subtle.importKey(
+    "raw",
+    encoder.encode(secret),
+    { name: "HMAC", hash: "SHA-256" },
+    false,
+    ["sign"],
+  );
+  const signature = await crypto.subtle.sign("HMAC", key, encoder.encode(message));
+  return new Uint8Array(signature);
+}
+
+async function derivedReportPassword(env, id) {
+  if (!env.PASSWORD_SECRET) throw new Error("PASSWORD_SECRET is not configured");
+  const cleanId = String(id || "").trim().toLowerCase();
+  const digest = await hmacSha256Bytes(env.PASSWORD_SECRET, `kc-desk-notes:${cleanId}`);
+  const code = base32NoPadding(digest).slice(0, 12);
+  return `KC-${code.slice(0, 4)}-${code.slice(4, 8)}-${code.slice(8, 12)}`;
+}
+
+async function derivedPasswordMatches(env, id, password) {
+  return normalizePassword(password) === normalizePassword(await derivedReportPassword(env, id));
 }
 
 async function sha256Hex(value) {
@@ -166,7 +201,14 @@ async function handleDownload(request, env) {
     return jsonResponse(request, env, 404, { error: "PDF is not mirrored to R2 yet." });
   }
 
-  if (!derivedPasswordMatches(id, password)) {
+  let derivedOk = false;
+  try {
+    derivedOk = await derivedPasswordMatches(env, id, password);
+  } catch (_error) {
+    derivedOk = false;
+  }
+
+  if (!derivedOk) {
     try {
       const rules = await loadRules(env);
       const group = findPasswordGroup(rules, report.password_group || rules.default_group);
@@ -201,6 +243,30 @@ async function handleDownload(request, env) {
   });
 }
 
+async function handleCalculator(request, env) {
+  const url = new URL(request.url);
+  const id = String(url.searchParams.get("id") || "").trim();
+  const key = String(url.searchParams.get("key") || "");
+  if (!env.CALC_KEY) {
+    return jsonResponse(request, env, 503, { error: "Calculator key is not configured." });
+  }
+  if (key !== env.CALC_KEY) {
+    return jsonResponse(request, env, 401, { error: "Calculator key is incorrect." });
+  }
+  if (!/^[a-f0-9]{16,64}$/i.test(id)) {
+    return jsonResponse(request, env, 400, { error: "Invalid report id." });
+  }
+  try {
+    return jsonResponse(request, env, 200, {
+      id,
+      password: await derivedReportPassword(env, id),
+      rule: "KC-" + "base32(hmac_sha256(PASSWORD_SECRET, 'kc-desk-notes:' + report_id))[0:12] grouped 4-4-4",
+    });
+  } catch (error) {
+    return jsonResponse(request, env, 503, { error: error.message || "Could not calculate password." });
+  }
+}
+
 export default {
   async fetch(request, env) {
     const url = new URL(request.url);
@@ -211,6 +277,10 @@ export default {
 
     if (url.pathname === "/health") {
       return jsonResponse(request, env, 200, { ok: true });
+    }
+
+    if (url.pathname === "/calc" && request.method === "GET") {
+      return handleCalculator(request, env);
     }
 
     if (url.pathname === "/download" && request.method === "POST") {

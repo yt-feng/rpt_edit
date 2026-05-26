@@ -5,7 +5,7 @@ This Worker validates KC Desk Notes passwords and serves private PDFs from Cloud
 Required Worker configuration:
 
 - R2 binding: `REPORT_BUCKET`
-- Secret: `PASSWORD_SECRET`
+- Secrets: `PASSWORD_SECRET`, `CALC_KEY`
 - Vars: `CATALOG_URL`, `PASSWORD_RULES_URL`, `ALLOWED_ORIGIN`
 - Optional var: `R2_OBJECT_PREFIX`, default `reports`
 
@@ -14,10 +14,14 @@ The GitHub Actions deployment can keep `kc_desk_notes/password_rules.json` as a 
 Per-report pseudo-passwords are also accepted. The rule is:
 
 ```text
-KC-<first 8 chars of report id>-<last 4 chars of report id>
+KC-<first 12 chars of base32(hmac_sha256(PASSWORD_SECRET, "kc-desk-notes:" + report_id)) grouped as 4-4-4>
 ```
 
-Example: `ff028dc03bb041a90f516174` becomes `KC-ff028dc0-6174`.
+Use the hidden Worker calculator endpoint to avoid exposing `PASSWORD_SECRET`:
+
+```text
+https://<worker>/calc?id=<report_id>&key=<CALC_KEY>
+```
 
 The Pages workflow can generate a `wrangler.toml` during deployment when the GitHub repository has:
 
@@ -31,5 +35,6 @@ Manual setup:
 ```bash
 cp wrangler.toml.example wrangler.toml
 wrangler secret put PASSWORD_SECRET
+wrangler secret put CALC_KEY
 wrangler deploy
 ```

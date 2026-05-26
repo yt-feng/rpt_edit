@@ -178,6 +178,7 @@ jobs:
         uses: cloudflare/wrangler-action@v3
         env:
           PASSWORD_SECRET: ${{ secrets.PASSWORD_SECRET }}
+          CALC_KEY: ${{ secrets.CALC_KEY }}
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID || vars.CLOUDFLARE_ACCOUNT_ID || secrets.R2_ACCOUNT_ID || vars.R2_ACCOUNT_ID || '8182ec40eab8c484e11ebf5d6a516fbd' }}
@@ -185,3 +186,4 @@ jobs:
           command: deploy
           secrets: |
             PASSWORD_SECRET
+            CALC_KEY

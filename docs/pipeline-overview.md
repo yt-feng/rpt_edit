@@ -34,6 +34,7 @@ KC Desk Notes / Cloudflare R2 额外需要：
 | `R2_SECRET_ACCESS_KEY` | R2 S3 API secret key |
 | `R2_BUCKET` | R2 bucket 名，KC Desk Notes workflow 已默认使用 `kc-desk-notes-pdfs` |
 | `PASSWORD_SECRET` | Worker 端密码 hash pepper |
+| `CALC_KEY` | Worker 隐藏计算器 key，用于计算每篇报告的伪密码 |
 | `KC_DESK_DOWNLOAD_PASSWORD` | PDF 下载密码，Action 会用它和 `PASSWORD_SECRET` 生成公开 hash |
 | `CLOUDFLARE_API_TOKEN` | 可选，用于 Action 自动部署 Worker |
 | `CLOUDFLARE_ACCOUNT_ID` | 可选，用于 Action 自动部署 Worker |
@@ -211,13 +212,19 @@ workers/kc-desk-notes-worker/        # Cloudflare Worker 代码
 5. 生成 Pages artifact 并部署。
 6. Cloudflare 配置齐全时，自动部署 Worker。
 
-下载密码优先使用按 report id 推导出的伪密码：
+下载密码优先使用按 report id 推导出的 HMAC 伪密码：
 
 ```text
-KC-<report id 前 8 位>-<report id 后 4 位>
+KC-<base32(hmac_sha256(PASSWORD_SECRET, "kc-desk-notes:" + report_id)) 前 12 位，按 4-4-4 分组>
 ```
 
-例如 `ff028dc03bb041a90f516174` 对应 `KC-ff028dc0-6174`。如果需要，也可以继续使用 `KC_DESK_DOWNLOAD_PASSWORD` 作为全局备用密码。
+不要把 `PASSWORD_SECRET` 放前端。需要计算时访问隐藏 Worker 计算器：
+
+```text
+https://<worker>/calc?id=<report_id>&key=<CALC_KEY>
+```
+
+如果需要，也可以继续使用 `KC_DESK_DOWNLOAD_PASSWORD` 作为全局备用密码。
 
 ### 3.6 Legacy repo-local PDF flow
 

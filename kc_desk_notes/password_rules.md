@@ -19,13 +19,17 @@ KC_DESK_DOWNLOAD_PASSWORD
 
 The plain download password should not be committed to this repo unless the repo and Pages setup are intentionally treated as non-sensitive.
 
-The Worker also accepts a deterministic per-report pseudo-password, so a separate password table is not required for normal use:
+The Worker also accepts a deterministic per-report pseudo-password, so a separate password table is not required for normal use. The rule is:
 
 ```text
-KC-<first 8 chars of report id>-<last 4 chars of report id>
+KC-<first 12 chars of base32(hmac_sha256(PASSWORD_SECRET, "kc-desk-notes:" + report_id)) grouped as 4-4-4>
 ```
 
-For report id `ff028dc03bb041a90f516174`, the pseudo-password is `KC-ff028dc0-6174`.
+Use the hidden Worker calculator endpoint to avoid exposing `PASSWORD_SECRET`:
+
+```text
+https://<worker>/calc?id=<report_id>&key=<CALC_KEY>
+```
 
 Generate a hash locally with:
 
