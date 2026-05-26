@@ -1,0 +1,126 @@
+{
+  "created_at_utc": "2026-05-26T22:44:14.818126+00:00",
+  "source_date_dir": "xhs_notes/dropbox/260526",
+  "output_dir": "publish_ready_zips/260526",
+  "max_zip_mb": 90,
+  "single_zip": false,
+  "exclude_source_mineru": true,
+  "markdown_files_renamed_to_txt": true,
+  "excluded_debug_files": true,
+  "included_shard_count": 4,
+  "skipped_shards": [
+    "shard_10",
+    "shard_11",
+    "shard_12",
+    "shard_13",
+    "shard_14",
+    "shard_15",
+    "shard_16",
+    "shard_17",
+    "shard_18",
+    "shard_19",
+    "shard_20",
+    "shard_21",
+    "shard_22",
+    "shard_23",
+    "shard_24",
+    "shard_25",
+    "shard_26",
+    "shard_27",
+    "shard_28",
+    "shard_29",
+    "shard_30",
+    "shard_31",
+    "shard_32",
+    "shard_33",
+    "shard_34",
+    "shard_35",
+    "shard_36",
+    "shard_37",
+    "shard_38",
+    "shard_39",
+    "shard_4",
+    "shard_5",
+    "shard_6",
+    "shard_7",
+    "shard_8",
+    "shard_9"
+  ],
+  "total_files": 412,
+  "total_renamed_markdown_count": 100,
+  "total_raw_file_bytes": 67647937,
+  "zip_count": 1,
+  "zips": [
+    {
+      "path": "publish_ready_zips/260526/publish_ready_260526.zip",
+      "size_bytes": 63289312,
+      "file_count": 412,
+      "renamed_markdown_count": 100,
+      "raw_file_bytes": 67647937,
+      "shards": [
+        "shard_0",
+        "shard_1",
+        "shard_2",
+        "shard_3"
+      ]
+    }
+  ],
+  "included_shards": [
+    {
+      "shard": "shard_0",
+      "report_count": 5,
+      "file_count": 83,
+      "renamed_markdown_count": 25,
+      "raw_file_bytes": 11735481,
+      "reports": [
+        "0001-01-Deutsche-Bank-Hawkish-from-Fed-s-Waller--inflation-expectations-jump-in-",
+        "0002-02-Goldman-Sachs-China-Three-things-in-China-260525",
+        "0003-03-J.P.-Morgan-EM-USD-10s30s-Spread-Curve-Report-260526",
+        "0004-04-Goldman-Sachs-US-Economics-Analyst-2026-Mid-Year-Capex-Update--On-Track-",
+        "0005-05-Nomura-USD-CNY-fix-model-Projection--6.7827-260526"
+      ]
+    },
+    {
+      "shard": "shard_1",
+      "report_count": 5,
+      "file_count": 105,
+      "renamed_markdown_count": 25,
+      "raw_file_bytes": 17252429,
+      "reports": [
+        "0001-06-Bernstein-Asia-Industrial-Technology-and-Asia-Emerging-Robotics-Humanoid",
+        "0002-07-Bernstein-China-Semiconductors-China-Semis--Huawei-s-Tau-----Law--anothe",
+        "0003-08-Bernstein-Global-Digital-Assets-The-Tokenization-Memo--Crypto-s-transfor",
+        "0004-09-Bernstein-Global-Energy-Storage-Battery-Weekly-26-May-260526",
+        "0005-10-BofA-Securities-European-Rates-Watch-EGB-supply--positioning---flows-260"
+      ]
+    },
+    {
+      "shard": "shard_2",
+      "report_count": 5,
+      "file_count": 115,
+      "renamed_markdown_count": 25,
+      "raw_file_bytes": 21884961,
+      "reports": [
+        "0001-11-Bofa-Global-Semiconductors-Watts-to-Tokens-AI-Power-Semis-and-the-Transi",
+        "0002-12-Goldman-Sachs-CHINA-PROPERTY-WEEKLY-WRAP-Week-21-Wrap-Leading-indicators",
+        "0003-13-Goldman-Sachs-China-New-Energy-Vehicle-Weekly-Chartbook-2026-Week-21-Wee",
+        "0004-14-J.P.-Morgan-South-Africa-Strategy--What-to-buy-when-the-Strait-re-opens-",
+        "0005-15-Bernstein-Chemicals-The-Long-View--Chemicals-Analysing-the-lasting-impac"
+      ]
+    },
+    {
+      "shard": "shard_3",
+      "report_count": 5,
+      "file_count": 109,
+      "renamed_markdown_count": 25,
+      "raw_file_bytes": 16775066,
+      "reports": [
+        "0001-16-Bernstein-European-Technology-Software-Civil-engineering-services-sector",
+        "0002-17-Deutsche-Bank-CB-in-CA---LCR-level-1--lower-growth-of-global-supra-suppl",
+        "0003-18-Goldman-Sachs-CHINA-FINANCIAL-SERVICES-Assessing-Regulatory-Impact-on-On",
+        "0004-19-Goldman-Sachs-China-Healthcare--Device-VBP---5--DES-VBP-2nd-renewal--Pri",
+        "0005-20-Nomura-China-healthcare-Another-proposal-from-the-US-that-might-hinder-c"
+      ]
+    }
+  ]
+}
