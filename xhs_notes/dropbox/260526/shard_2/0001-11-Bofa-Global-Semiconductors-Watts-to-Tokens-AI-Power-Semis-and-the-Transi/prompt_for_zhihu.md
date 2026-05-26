@@ -1,0 +1,223 @@
+你是知乎商业/行业研究作者，擅长把英文/中文研报改写成适合知乎发布的长文。
+
+【目标】
+- 基于下面研报解析内容，生成一篇中文知乎文章。
+- 风格接近微信公众号文章，但更适合知乎：论证更完整、语气更克制、有问题意识、有推理链条。
+- 文章不需要把研报所有内容讲完，要留下继续阅读完整报告或加入社群讨论的空间。
+- 目标长度：约 2200 字，允许上下浮动 20%。
+
+【结构要求】
+1. 第一行：知乎标题，直接讲观点，不要标题党，不要夸张极限词。
+2. 开头 2-3 段：用一个真实问题或市场分歧切入，说明为什么这份报告值得看。
+3. 正文按金字塔原则组织：先给核心判断，再展开 3-5 个支撑逻辑。
+4. 每个小标题都要像观点句，不要写“核心判断”“支撑逻辑一”“对读者的启发”这种模板名。
+5. 内容要比小红书更理性，比微信更像问答式分析，可以适度提出反问。
+6. 结尾自然留下讨论空间，可使用这类表达：`完整报告里还有不少细节，适合放在社群里继续拆。`
+
+【平台发布合规要求】
+- 不要出现“投资建议”“买入”“卖出”“强烈推荐”“稳赚”“保本”“必涨”“抄底”“上车”“内幕”“翻倍”等金融操作或收益承诺表达。
+- 不要写“非投资建议”“仅做学习交流”这种免责声明，也不要出现包含“投资”的免责声明。
+- “投资”相关词尽量改成“投研”“研究”“观察”“学习参考”。
+- 不要写“关注”“点赞”“求关注”“评论区留言”等直接互动诱导。
+- 不要使用“爆款”“震惊”“必看”“必读”“最强”“最全”“唯一”“全网首发”等极限词。
+
+【内容要求】
+- 只能基于研报原文和解析内容推导，不要编造数据、页数、作者、结论或引用。
+- 可以基于报告内容做适度发散，但必须明确哪些是报告内容，哪些是你的延展观察。
+- 默认避免具体投行品牌名，比如“GS”“GS”，统一写作“投行研报”或使用 GS/JPM/MS 等缩写。
+- 不要输出解释说明，只输出知乎文章正文。
+
+【研报解析内容】
+"""
+# Global Semiconductors
+
+# Watts to Tokens: AI Power Semis and the Transition to 800V Data Centers
+
+Industry Overview
+
+# AI Power: transformative opportunity for analog semis
+
+Power is becoming a critical constraint in AI scaling. We estimate rising compute density drives rack power capacity up 100x from 10-15kW in traditional cloud servers to 1.5MW for Nvidia's Feynman platform (CY29/30). Existing infrastructure cannot meet demand, requiring wholesale revamp of power delivery from grid to rack to GPU/XPU core. This creates a transformative opportunity for analog semi vendors to shift mix away from cyclical auto/industrial demand toward secular, durable AI markets, where diverse architectures, new components, novel materials (wide-bandgap semis), and products create an unparalleled chance to differentiate and take share. In this report, we build a bottoms-up AI analog semi industry model translating accelerator/rack demand into content pools across components (VRM, IBC, SST, etc.) and device types (Si, SiC, GaN, etc.) into supplier revenue share across low power (<200kW) and high power (600kW+) racks. We estimate \~233GWs deployed through CY30 expands today's \$7.9bn AI analog market to \$27bn by CY30 (28% CAGR) inside a \$1.7tn AI data center systems LT TAM.
+
+# Data Centers: \$25bn TAM led by 100x jump in rack power
+
+We estimate rack content grows \~25x from \$36K today to nearly \$300K per 600kW rack and approaching \$1mn in the MW-class era. The TAM from “rack-to-core” expands to \$25bn CY30 from \$7.6bn today (27% CAGR). Value shifts towards components closest to the accelerator including multi-phase voltage regulator modules (Infineon, TXN, ADI, Renesas) and intermediate bus converters (IBC; ON, Infineon,) but also optics (STMicro, ADI, TXN). As high-performance power density becomes critical in 800 VDC architecture, silicon carbide (SiC) and gallium nitride (GaN) are greenfield new markets.
+
+# Power Infra: additional \$2bn TAM as microgrids inflect
+
+Select strategic opportunities in power infrastructure grow to \$38.9K per MW during the 800 VDC evolution from \$12.4K per MW today. The “grid-to-data hall” TAM grows to \$1.8bn by CY30 from \~\$245mn today (49% CAGR). Legacy equipment makes way for emerging tech like solid-state transformers (SSTs) and solid-state circuit breakers (SSCB) as facilities transition to microgrids. SiC is a big materials winner but we see ample analog IC, MCU, and sensing content in a market where there was little before.
+
+# Revenue opp led by analog ICs; discretes gain most share
+
+Best positioned vendors are those with: (1) broadest portfolio spanning the power tree across multiple device types; (2) products that meet high voltage and elite reliability requirements (similar to auto/industrial semi products); (3) provide system-level design expertise and optimization from grid-to-core. TXN's leading power semi franchise gives it the highest share in the market. Infineon boasts the broadest AI portfolio across Si, SiC, and GaN and may gain the most share CY25-30 from grid-to-core. ADI enjoys the third biggest revenue opportunity and also gains share enhanced by the Empower acquisition. ON has high leverage to novel SiC and GaN tech boosting share of wallet.
+
+# 25 May 2026
+
+Equity
+
+Global
+
+Semiconductors
+
+Vivek Arya
+
+Research Analyst
+
+BofAS
+
+vivek.arya@bofa.com
+
+Duksan Jang
+
+Research Analyst
+
+BofAS
+
+duksan.jang@bofa.com
+
+Michael Mani
+
+Research Analyst
+
+BofAS
+
+michael.mani@bofa.com
+
+Didier Scemama >>
+
+Research Analyst
+
+MLI (UK)
+
+didier.scemama@bofa.com
+
+Mikio Hirakawa >>
+
+Research Analyst
+
+BofAS Japan
+
+mikio.hirakawa@bofa.com
+
+# Contents
+
+Power is the ultimate AI scaling constraint 3   
+Compute roadmap: 1MW per rack by CY30 4   
+GW model: AI needs 233GW through CY30 7   
+How power is delivered today 8   
+800 VDC: power delivery for the GW era 9   
+Analog semis: key beneficiaries in high power 14   
+Data center: \$25bn TAM from rack to core 18   
+Power Supply Units (PSU) 19   
+Intermediate Bus Conversion (IBC) 20   
+Server Board (GPU/XPU power, CPU, VRM, multi-phase) 23   
+Other components (protection, sensors, optics, etc.) 26   
+Power Infra: \$2bn TAM from grid to hall 29   
+Energy Storage System (ESS)/Uninterruptible Power Supply (UPS) 30   
+Solid-State Transformer (SST) 31   
+Solid-State Circuit Breakers (SSCB) 32   
+AI Power Analog Semi Model 34   
+Glossary 44
+
+# Power is the ultimate AI scaling constraint
+
+Multiple bottlenecks are emerging in the multi-year AI infrastructure buildout – memory, optics, leading-edge logic wafers, advanced substrates, etc. – but among the greatest constraints to scaling is arguably power.
+
+# Higher compute density is translating to higher power demands
+
+Traditional cloud data center operators mainly worried about compute space as power and cooling infrastructure occupied a significantly smaller physical footprint. When the AI investment cycle began, server CPUs transitioned to power hungry GPUs, ordinary internet traffic evolved into intense training and inference workloads, and heavy computational needs turned into heavy power needs. As demand surges and clusters become larger, the need for higher compute density per server rack (e.g. Hopper had only 8 GPUs in a node while Blackwell's scale-up domain is 72) to optimize performance means power per rack also goes up. Whereas a traditional cloud rack may consume 10-15 kilowatts (kW), Blackwell generation racks require 100-120kW, and future generations like Feynman may drive a staggering over 1 megawatt per rack (enough to power up to 1000 US homes) as up to 576 GPUs are packed into a single node (exhibit 1).
+
+Exhibit 1: By the end of the decade, we think Nvidia's roadmap could lead to $>1.5$ megawatt racks for the Feynman era, nearly 100x higher than a standard server CPU rack at 10-15 kilowatts   
+Power capacity per rack (kilowatts) across various generations of Nvidia platforms vs. a traditional server rack   
+![](images/942e58ec5e7e5757faaf7435e90a56a57624a68ce13375f0b28656432340018e.jpg)
+
+<details>
+<summary>bar</summary>
+
+| Category | Value (kW) |
+| :--- | :--- |
+| Traditional Server Rack | ~50 |
+| H100 HGX (2022) | ~80 |
+| Grace Blackwell NVL72 (2024) | ~150 |
+| Grace Blackwell Ultra NVL 72 (2025) | ~160 |
+| Vera Rubin NVL144 (2026) | ~190 |
+| Vera Rubin Ultra NVL576 (2027) | ~720 |
+| Rosa Feynman (2028+) | ~1550 |
+~100x increase
+</details>
+
+Source: BofA Global Research estimates, Nvidia, company reports   
+BofA GLOBAL RESEARCH
+
+Performance-per-watt is a critical metric for operators as it determines the amount of tokens you can generate per unit of power, and thus, the amount of revenue. Data Centers operate inside a fixed power envelope which is heavily dependent on location, so maximizing access to power and converting it to tokens in an efficient manner is crucial.
+
+# Bringing gigawatt-scale power online takes time
+
+The gating factor in power stems having to build the entire physical infrastructure flow for a new data center from grid interconnects, substations, transformers, switchgear, cooling and more. It takes time to bring this capacity online. Key equipment is also constrained, including gas turbines (5-year delivery timeline) and transformers (2–3-year lead times) Sites that have secured grid power may be able to reach 1GW capacity in 1-4 years from construction but a greenfield project could take as long as 5 years, according to the International Energy Agency, before project delays.
+
+# Compute roadmap: 1MW per rack by CY30
+
+Hopper H100 HGX was Nvidia's first flagship anchor accelerator platform for the AI-era launched in 2022 and utilized Hopper GPUs where thermal design power (TDP) fetched only $0.7\mathrm{kW}$ per package while other functions like switches, CPUs, and NICs, represented a small part of the power budget all in an architecture that was air-cooled (exhibit 2).
+
+As we moved into Blackwell (GB200 NVL72), total GPU power budget jumped +400% from 17kW to 86kW as GPU TDP increased and GPU die count multiplied to 144. Networking and CPUs became more relevant driving up power consumption and an entirely new liquid-cooled rack, Oberon, was required to handle the heat generation. Total power increased from 25kW per rack to 100-120kw per rack.
+
+As the launch of Rubin gets underway, power climbs again albeit to a lesser extent, but Rubin Ultra in CY27 represents another inflection to over 600kW per rack (+240% platform-over-platform), with its significantly larger scale-up domain of up to 576 GPUs, higher TDPs in the 3kW range, 144 Vera CPUs equipped for agentic AI, and powerful NVSwitch 6 inside the next-generation Kyber rack form factor. This is when we would expect to see initial deployments of 800 VDC due to the power demands.
+
+While we can only speculate on specifications as official details are sparse, these same trends should persist as we approach the Feynman era (likely launches CY29/30) where architectures begin to migrate to hybrid microgrids (more on this later) and compute TDP likely takes another step up again. The roadmap then enters the zone of 1MW class racks where the sheer amount of power density packed into the physical space of filing cabinets necessitates completely new infrastructure.
+
+Exhibit 2: The main driver of higher rack power advancing towards 1MW per rack by CY30 (Feynman) is GPU where TDP (thermal design power) is approaching 5kW per package. Rising switching, NIC, CPU, and DPU power budgets are also factors.   
+Detailed power budget estimates across various generations of Nvidia platforms 
+
+<table><tr><td colspan="7">Nvidia</td></tr><tr><td>Compute Platform</td><td>Hopper (H100) H100 HGX Rack</td><td>GB200 (Blackwell B200) Grace Blackwell NVL72</td><td>GB300 (Blackwell Ultra/B300) Grace Blackwell Ultra NVL 72</td><td>Rubin (VR200) Vera Rubin NVL72</td><td>Rubin Ultra (VR300 Ultra) Vera Rubin Ultra NVL144</td><td>Feynman (RF200) Rosa Feynman NVL576</td></tr><tr><td>Rack Architecture</td><td>Air-Cooled</td><td>Oberon; Liquid-cooled</td><td>Oberon; Liquid-cooled</td><td>Oberon; Liquid-cooled</td><td>Kyber; Liquid-cooled</td><td>Hybrid microgrid</td></tr><tr><td>GPU</td><td>Hopper</td><td>Blackwell</td><td>Blackwell Ultra</td><td>Rubin</td><td>Rubin Ultra</td><td>Feynman</td></tr><tr><td>GPU Package Count</td><td>32</td><td>72</td><td>72</td><td>72</td><td>144</td><td>576</td></tr><tr><td>GPU Die Count per Package</td><td>1</td><td>2</td><td>2</td><td>2</td><td>4</td><td>2</td></tr><tr><td>Total Dies per Rack</td><td>32</td><td>144</td><td>144</td><td>144</td><td>576</td><td>1152</td></tr><tr><td>GPU Power per Package Consumption (kW)</td><td>0.7</td><td>1.2</td><td>1.4</td><td>1.8</td><td>3.6</td><td>1.8</td></tr><tr><td>GPU Power Budget (kW)</td><td>22.4</td><td>86.4</td><td>100.8</td><td>129.6</td><td>518.4</td><td>1036.8</td></tr><tr><td>CPU</td><td>Xeon/EPYC</td><td>Grace</td><td>Grace</td><td>Vera</td><td>Vera</td><td>Rosa</td></tr><tr><td>CPU Count</td><td>8</td><td>36</td><td>36</td><td>36</td><td>72</td><td>288</td></tr><tr><td>CPU Power Consumption (kW)</td><td>0.30</td><td>0.30</td><td>0.30</td><td>0.35</td><td>0.35</td><td>0.35</td></tr><tr><td>CPU Power Budget (kW)</td><td>2.4</td><td>10.8</td><td>10.8</td><td>12.6</td><td>25.2</td><td>100.8</td></tr><tr><td>NIC</td><td>CX-7</td><td>CX-7</td><td>CX-8</td><td>CX-9</td><td>CX-9</td><td>Next Gen CX</td></tr><tr><td>NIC Die Count</td><td>32</td><td>72</td><td>72</td><td>72</td><td>144</td><td>576</td></tr><tr><td>NIC Power Consumption (kw)</td><td>0.03</td><td>0.03</td><td>0.03</td><td>0.03</td><td>0.03</td><td>0.05</td></tr><tr><td>NIC Power Budget (kW)</td><td>0.8</td><td>1.8</td><td>2.2</td><td>2.2</td><td>4.3</td><td>28.8</td></tr><tr><td>NVLink Switch</td><td>NVSwitch3</td><td>NVSwitch5</td><td>NVSwitch5</td><td>NVSwitch6</td><td>NVSwitch7</td><td>Next Gen NVSwitch</td></tr><tr><td>Switch Die Count</td><td>12</td><td>18</td><td>18</td><td>18</td><td>36</td><td>144</td></tr><tr><td>Switch Power Consumption (kW)</td><td>0.3</td><td>0.8</td><td>0.8</td><td>1.1</td><td>2</td><td>2</td></tr><tr><td>Switch Power Budget (kW)</td><td>3.0</td><td>14.4</td><td>14.4</td><td>19.8</td><td>54.45</td><td>288</td></tr><tr><td>DPU</td><td>BlueField-3</td><td>BlueField-3</td><td>BlueField-3</td><td>BlueField-4</td><td>BlueField-4</td><td>Next Gen BlueField</td></tr><tr><td>DPU Die Count</td><td>3</td><td>18</td><td>18</td><td>18</td><td>36</td><td>144</td></tr><tr><td>DPU Power Consumption (kW)</td><td>0.1</td><td>0.1</td><td>0.1</td><td>0.2</td><td>0.2</td><td>0.2</td></tr><tr><td>DPU Power Budget (kW)</td><td>0.2</td><td>1.4</td><td>1.4</td><td>2.7</td><td>5.4</td><td>28.8</td></tr><tr><td>PSU Conversion Losses (kW)</td><td>0.7</td><td>3.5</td><td>3.9</td><td>5.7</td><td>22.8</td><td>31.4</td></tr><tr><td>Cooling (kW)</td><td>1.5</td><td>1.5</td><td>1.5</td><td>2</td><td>12</td><td>15</td></tr><tr><td>Other (kW)</td><td>0.5</td><td>1.0</td><td>1.0</td><td>2.0</td><td>3.0</td><td>5.0</td></tr><tr><td>Overhead Power Budget (kW)</td><td>2.7</td><td>6</td><td>6.4</td><td>9.7</td><td>37.8</td><td>51.4</td></tr><tr><td>Total Rack Power (kW)</td><td>32</td><td>121</td><td>136</td><td>177</td><td>646</td><td>1535</td></tr></table>
+
+Source: BofA Global Research estimates, Nvidia
+
+BofA GLOBAL RESEARCH
+
+# Compute and networking contribute the most to rising power
+
+As observed, when CPUs and GPUs improve, TDP typically increases 20% generation over generation thus leading to higher server power over time. As GPUs are networked together (via NVLink or another protocol for non-NVDA platforms) to upgrade performance by functioning as a synchronized node of compute, the use of copper interconnects for scale-up means that GPUs cannot be too far from each other (limited reach). Thus, limitation of tightly integrating GPUs on the same copper domain at limited distances creates a direct relationship between maximum power density and the ability to drive maximum performance as you need to pack as many GPUs possible into a smaller physical space in order to scale (Nvidia calls this the performance-density trap). Moving from Hopper to Blackwell led to a 75% increase in TDP but a 3.4x increase in rack power density which in turn translated to a 50x increase in performance. Every subsequent increase in the scale-up networking domain size is now translating into up to 2-4x increases in total power (exhibit 3).
+
+Exhibit 3: Large inflections in power tend to coincide with architecture shifts like when Nvidia migrated to Oberon racks for Blackwell and eventually Kyber for Rubin Ultra. GPUs generally consume most power (65-75%) followed by Switches (10-13%)   
+Nvidia power budget analysis spanning Hopper to Feynman 
+
+<table><tr><td colspan="7">Power Budget Analysis (kW)</td></tr><tr><td>Compute Platform</td><td>Hopper (H200) H100 HGX</td><td>GB200 (Blackwell B200) Grace Blackwell NVL72</td><td>GB300 (Blackwell Ultra/B300) Grace Blackwell Ultra NVL 72</td><td>Rubin (VR200) Vera Rubin NVL144</td><td>Rubin Ultra (VR300 Ultra) Vera Rubin Ultra NVL576</td><td>Feynman (RF200) Rosa Feynman</td></tr><tr><td>GPU</td><td>22.4</td><td>86.4</td><td>100.8</td><td>129.6</td><td>518.4</td><td>1036.8</td></tr><tr><td>CPU</td><td>2.4</td><td>10.8</td><td>10.8</td><td>12.6</td><td>25.2</td><td>100.8</td></tr><tr><td>NIC</td><td>0.8</td><td>1.8</td><td>2.2</td><td>2.2</td><td>4.3</td><td>28.8</td></tr><tr><td>Switch</td><td>3.0</td><td>14.4</td><td>14.4</td><td>19.8</td><td>54.5</td><td>288.0</td></tr><tr><td>DPU</td><td>0.2</td><td>1.4</td><td>1.4</td><td>2.7</td><td>5.4</td><td>28.8</td></tr><tr><td>Overhead</td><td>2.7</td><td>6.0</td><td>6.4</td><td>9.7</td><td>37.8</td><td>51.4</td></tr><tr><td>Total Rack Power</td><td>32</td><td>121</td><td>136</td><td>177</td><td>646</td><td>1535</td></tr><tr><td colspan="7">Power Budget Analysis (% budget mix)</td></tr><tr><td>GPU</td><td>71.1%</td><td>71.6%</td><td>74.2%</td><td>73.4%</td><td>80.3%</td><td>67.6%</td></tr><tr><td>CPU</td><td>7.6%</td><td>8.9%</td><td>7.9%</td><td>7.1%</td><td>3.9%</td><td>6.6%</td></tr><tr><td>NIC</td><td>2.5%</td><td>1.5%</td><td>1.6%</td><td>1.2%</td><td>0.7%</td><td>1.9%</td></tr><tr><td>Switch</td><td>9.5%</td><td>11.9%</td><td>10.6%</td><td>11.2%</td><td>8.4%</td><td>18.8%</td></tr><tr><td>DPU</td><td>0.7%</td><td>1.1%</td><td>1.0%</td><td>1.5%</td><td>0.8%</td><td>1.9%</td></tr><tr><td>Overhead</td><td>8.6%</td><td>5.0%</td><td>4.7%</td><td>5.5%</td><td>5.9%</td><td>3.3%</td></tr><tr><td>Total Rack Power</td><td>100.0%</td><td>100.0%</td><td>100.0%</td><td>100.0%</td><td>100.0%</td><td>100.0%</td></tr><tr><td colspan="7">Power Budget Analysis (platform % change)</td></tr><tr><td>GPU</td><td>-</td><td>286%</td><td>17%</td><td>29%</td><td>300%</td><td>100%</td></tr><tr><td>CPU</td><td>-</td><td>350%</td><td>0%</td><td>17%</td><td>100%</td><td>300%</td></tr><tr><td>NIC</td><td>-</td><td>125%</td><td>20%</td><td>0%</td><td>100%</td><td>567%</td></tr><tr><td>Switch</td><td>-</td><td>380%</td><td>0%</td><td>38%</td><td>175%</td><td>429%</td></tr><tr><td>DPU</td><td>-</td><td>500%</td><td>0%</td><td>100%</td><td>100%</td><td>433%</td></tr><tr><td>Overhead</td><td>-</td><td>122%</td><td>7%</td><td>52%</td><td>290%</td><td>36%</td></tr><tr><td>Total Rack Power</td><td>-</td><td>283%</td><td>13%</td><td>30%</td><td>266%</td><td>138%</td></tr></table>
+
+Source: BofA Global Research estimates, Nvidia
+
+BofA GLOBAL RESEARCH
+
+We think this relationship between packing more GPUs in a single domain, tighter integration, and larger networking topologies will be the common themes commanding higher power capacity in future Nvidia platforms for years to come.
+
+# Alternative platforms to Nvidia also see rising power due to similar trends
+
+Similarly, we think these trends apply to Nvidia alternatives also in the market (Exhibit 4). As of now, competing platforms offered by AMD or Intel are less power hungry as compute lags a generation behind Nvidia and there is less integrated networking. Custom ASICs are generally lower power consuming as key functions are optimized for specific tasks making them more efficient. Yet we still believe future platforms will converge towards higher power capacities as compute and networking intensity rise as this will be necessary for them to become competitive options against Nvidia's leading performance-per-watt offering. This evolution is evident in the latest platforms like AMD Helios where power budget exceeds 100kW.
+
+Exhibit 4: Other merchant GPUs and custom ASIC platforms are seeing rising power over time due to higher compute and networking density
+
+Merchant GPU and custom ASIC power budget analysis
+
+<table><tr><td colspan="6">Other Merchant and Custom</td></tr><tr><td>Company Platform</td><td>AMD MI
+
+[中间内容因长度限制已省略]
+
+and summarization and identifying relevant information from diverse sources. All AI-driven processes are subject to review by BofA Global Research employees. BofA Global Research information is distributed simultaneously to internal and client websites and other portals by BofA and is not publicly-available material. Any unauthorized use or disclosure is prohibited. Receipt and review of this information constitutes your agreement not to redistribute, retransmit, or disclose to others the contents, opinions, conclusion, or information contained herein (including any investment recommendations, estimates or price targets) without first obtaining express permission from an authorized officer of BofA.
+
+Materials prepared by BofA Global Research personnel are based on public information. Facts and views presented in this material have not been reviewed by, and may not reflect information known to, professionals in other business areas of BofA, including investment banking personnel. BofA has established information barriers between BofA Global Research and certain business groups. As a result, BofA does not disclose certain client relationships with, or compensation received from, such issuers. To the extent this material discusses any legal proceeding or issues, it has not been prepared as nor is it intended to express any legal conclusion, opinion or advice. Investors should consult their own legal advisers as to issues of law relating to the subject matter of this material. BofA Global Research personnel's knowledge of legal proceedings in which any BofA entity and/or its directors, officers and employees may be plaintiffs, defendants, co-defendants or co-plaintiffs with or involving issuers mentioned in this material is based on public information. Facts and views presented in this material that relate to any such proceedings have not been reviewed by, discussed with, and may not reflect information known to, professionals in other business areas of BofA in connection with the legal proceedings or matters relevant to such proceedings.
+
+This information has been prepared independently of any issuer of securities mentioned herein and not in connection with any proposed offering of securities or as agent of any issuer of any securities. None of BofAS any of its affiliates or their research analysts has any authority whatsoever to make any representation or warranty on behalf of the issuer(s). BofA Global Research policy prohibits research personnel from disclosing a recommendation, investment rating, or investment thesis for review by an issuer prior to the publication of a research report containing such rating, recommendation or investment thesis.
+
+Any information relating to sustainability in this material is limited as discussed herein and is not intended to provide a comprehensive view on any sustainability claim with respect to any issuer or security.
+
+Any information relating to the tax status of financial instruments discussed herein is not intended to provide tax advice or to be used by anyone to provide tax advice. Investors are urged to seek tax advice based on their particular circumstances from an independent tax professional.
+
+The information herein (other than disclosure information relating to BofA and its affiliates) was obtained from various sources and we do not guarantee its accuracy. This information may contain links to third-party websites. BofA is not responsible for the content of any third-party website or any linked content contained in a third-party website. Content contained on such third-party websites is not part of this information and is not incorporated by reference. The inclusion of a link does not imply any endorsement by or any affiliation with BofA. Access to any third-party website is at your own risk, and you should always review the terms and privacy policies at third-party websites before submitting any personal information to them. BofA is not responsible for such terms and privacy policies and expressly disclaims any liability for them.
+
+All opinions, projections and estimates constitute the judgment of the author as of the date of publication and are subject to change without notice. Prices also are subject to change without notice. BofA is under no obligation to update this information and BofA ability to publish information on the subject issuer(s) in the future is subject to applicable quiet periods. You should therefore assume that BofA will not update any fact, circumstance or opinion contained herein.
+
+Certain outstanding reports or investment opinions relating to securities, financial instruments and/or issuers may no longer be current. Always refer to the most recent research report relating to an issuer prior to making an investment decision.
+
+In some cases, an issuer may be classified as Restricted or may be Under Review or Extended Review. In each case, investors should consider any investment opinion relating to such issuer (or its security and/or financial instruments) to be suspended or withdrawn and should not rely on the analyses and investment opinion(s) pertaining to such issuer (or its securities and/or financial instruments) nor should the analyses or opinion(s) be considered a solicitation of any kind. Sales persons and financial advisors affiliated with BofAS or any of its affiliates may not solicit purchases of securities or financial instruments that are Restricted or Under Review and may only solicit securities under Extended Review in accordance with firm policies.
+
+Neither BofA nor any officer or employee of BofA accepts any liability whatsoever for any direct, indirect or consequential damages or losses arising from any use of this information.
+"""
