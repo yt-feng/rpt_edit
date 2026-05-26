@@ -1,0 +1,3947 @@
+[
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "US ECONOMICS ANALYST "
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                109,
+                78,
+                302,
+                94
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "2026 Mid-Year Capex Update: On Track for a Solid Year "
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                107,
+                104,
+                687,
+                132
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "text_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "We and other forecasters expected strong AI spending and new tax incentives to support solid capex growth in 2026, and early data look broadly consistent with that view. Real business fixed investment rose at a  "
+                            },
+                            {
+                                "type": "equation_inline",
+                                "content": "10.4\\%"
+                            },
+                            {
+                                "type": "text",
+                                "content": " annualized rate in 2026Q1, a notable step-up from the already solid  "
+                            },
+                            {
+                                "type": "equation_inline",
+                                "content": "5.6\\%"
+                            },
+                            {
+                                "type": "text",
+                                "content": " pace last year. Although part of the headline strength reflected higher equipment imports, which boosted capex but had no net effect on GDP, we estimate that underlying domestic capex growth also picked up to  "
+                            },
+                            {
+                                "type": "equation_inline",
+                                "content": "5\\%"
+                            },
+                            {
+                                "type": "text",
+                                "content": " from  "
+                            },
+                            {
+                                "type": "equation_inline",
+                                "content": "2.4\\%"
+                            },
+                            {
+                                "type": "text",
+                                "content": " in 2025. This week, we update our outlook for the rest of the year. "
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "AI-related spending will continue to boost equipment and structures investment in 2026 as companies press ahead with the infrastructure buildout. AI-related software and R&D spending should become more visible too as enterprise adoption increases. We estimate that AI will boost true capex growth by 3.3pp in 2026 and measured capex growth by 2.8pp, with the gap reflecting continued undermeasurement of semiconductor investment. After accounting for the offset from AI-related equipment imports, this translates to a boost of 0.3pp to true GDP growth and 0.1pp to measured GDP growth. "
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "The impact of the tax incentives included in the One Big Beautiful Bill Act on business investment is beginning to show up in the data. Early evidence from 2026Q1 reveals a meaningful increase in capex growth among categories most exposed to these incentives, broadly consistent with our prior estimates based on academic studies. We continue to expect the bill's provisions to boost capex growth by roughly 3pp in 2026. "
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "We do not expect higher oil prices to have a material impact on overall capex growth. Historically, higher oil prices tended to boost energy-sector capital spending, but this relationship has weakened considerably in recent years as producers have prioritized capital discipline over production growth, and high-frequency data through May show little change in drilling and production activity so far. Outside the energy sector, equipment investment has tended to decline only modestly in response to higher energy costs, with the pullback concentrated mainly in the transportation sector. On net, this suggests that higher oil prices are likely to impose at most a modest drag on capex growth. "
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "■ Two policy-related headwinds weighed on capex growth in 2025 but should diminish this year. First, a decline in manufacturing construction that had been subsidized by the Inflation Reduction Act and CHIPS Act subtracted about 1.0pp "
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                78,
+                211,
+                699,
+                890
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Elsie Peng "
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                720,
+                212,
+                792,
+                225
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "+1(212)357-3137 | elsie.peng@gs.com "
+                    }
+                ]
+            },
+            "bbox": [
+                720,
+                225,
+                906,
+                234
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "GS & Co. LLC "
+                    }
+                ]
+            },
+            "bbox": [
+                720,
+                234,
+                841,
+                243
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Goldman Research Sachs "
+                    }
+                ]
+            },
+            "bbox": [
+                78,
+                3,
+                297,
+                41
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Economics Research "
+                    }
+                ]
+            },
+            "bbox": [
+                764,
+                7,
+                916,
+                21
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "25 May 2026 | 9:14PM EDT "
+                    }
+                ]
+            },
+            "bbox": [
+                718,
+                28,
+                916,
+                43
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "Investors should consider this report as only a single factor in making their investment decision. For Reg AC certification and other important disclosures, see the Disclosure Appendix, or go to www.gs.com/research/hedge.html. "
+                    }
+                ]
+            },
+            "bbox": [
+                78,
+                925,
+                854,
+                972
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "from capex growth in 2025 but should subtract a smaller 0.6pp in 2026. Second, we estimate that the drag on capex growth from higher tariffs, which increased uncertainty and raised the cost of capital goods, should fade from 1.5pp in 2025 to 0.7pp in 2026. "
+                    }
+                ]
+            },
+            "bbox": [
+                299,
+                39,
+                908,
+                115
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Taken together, we expect business investment to grow  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "7.8\\%"
+                    },
+                    {
+                        "type": "text",
+                        "content": " in 2026 on a Q4/Q4 basis (vs.  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "6.5\\%"
+                    },
+                    {
+                        "type": "text",
+                        "content": " previously), driven by strong AI investment demand, expanded expensing provisions, and fading drags from the normalization of factory construction and tariffs. Coupled with last week's GDP tracking data, this implies 2026 GDP growth of  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "2.1\\%"
+                    },
+                    {
+                        "type": "text",
+                        "content": " on both a Q4/Q4 and full-year basis. "
+                    }
+                ]
+            },
+            "bbox": [
+                272,
+                123,
+                890,
+                217
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "GS "
+                    }
+                ]
+            },
+            "bbox": [
+                80,
+                6,
+                184,
+                19
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "US Economics Analyst "
+                    }
+                ]
+            },
+            "bbox": [
+                769,
+                7,
+                916,
+                23
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "25 May 2026 "
+                    }
+                ]
+            },
+            "bbox": [
+                81,
+                954,
+                158,
+                966
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "2 "
+                    }
+                ]
+            },
+            "bbox": [
+                906,
+                954,
+                916,
+                965
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "2026 Mid-Year Capex Update: On Track for a Solid Year "
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                80,
+                39,
+                532,
+                61
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "We and other forecasters expected strong AI spending and new tax incentives to support solid capex growth in 2026, and early data look broadly consistent with that view. Real business fixed investment rose at a  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "10.4\\%"
+                    },
+                    {
+                        "type": "text",
+                        "content": " annualized rate in 2026Q1, a notable step-up from the already solid  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "5.6\\%"
+                    },
+                    {
+                        "type": "text",
+                        "content": " pace last year. Although part of the headline strength reflected higher equipment imports, which boosted capex but had no net effect on GDP, we estimate that underlying domestic capex growth—after stripping out increases in equipment imports and other special factors—also picked up to  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "5\\%"
+                    },
+                    {
+                        "type": "text",
+                        "content": " from  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "2.4\\%"
+                    },
+                    {
+                        "type": "text",
+                        "content": " in 2025. This week, we update our business investment outlook for the rest of the year. "
+                    }
+                ]
+            },
+            "bbox": [
+                272,
+                87,
+                913,
+                247
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/fc140fd7de92f6ea5ba5e559a35cef55cd36c21f47eb1ac5b3d7c0f799c5cbd9.jpg"
+                },
+                "content": "QoQ Annualized Real Nonresidential Fixed Investment Growth\n| Quarter | Total (%) | Distortions in IPP Software Deflator (%) | Computers and Peripheral Equipment Investment (Offset in GDP) (%) | Underlying Domestic Capex (%) | Tariff Frontloading (%) | Structure Spending Related to IRA and CHIPS Act (%) |\n|---|---|---|---|---|---|---|\n| Q1 2023 | 8.5 | 0.5 | -1.0 | 7.0 | 0.5 | 1.0 |\n| Q2 2023 | 11.0 | 0.5 | 0.0 | 8.0 | 0.5 | 1.5 |\n| Q3 2023 | 1.5 | 0.0 | 0.0 | 1.5 | 0.0 | 0.5 |\n| Q4 2023 | 5.5 | 0.0 | 3.5 | 3.5 | 0.0 | 2.0 |\n| Q1 2024 | 1.5 | -1.0 | -1.5 | -1.0 | 0.0 | 2.5 |\n| Q2 2024 | 2.5 | -1.5 | 1.5 | 2.0 | 0.0 | 3.0 |\n| Q3 2024 | 3.5 | -1.5 | 2.5 | 3.0 | 0.0 | 4.5 |\n| Q4 2024 | -4.0 | -1.5 | -2.5 | -1.5 | -1.5 | -3.0 |\n| Q1 2025 | 9.5 | 10.0 | 6.5 | 1.0 | 9.5 | -1.5 |\n| Q2 2025 | 7.5 | 9.5 | 4.5 | 4.0 | -1.5 | -1.5 |\n| Q3 2025 | 3.0 | -3.0 | -6.0 | 3.0 | -6.0 | -1.5 |\n| Q4 2025 | 2.5 | -3.0 | -1.5 | 1.0 | -1.5 | -1.5 |\n| Q1 2026 | 10.5 | 12.5 | 6.5 | 5.5 | -1.5 | -1.5 |",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Exhibit 1: After Stripping Out Increases in Equipment Imports and Other Special Factors, We Estimate That “Underlying” Domestic Capex Growth Picked Up to 5% in 2026Q1 from 2.4% in 2025 "
+                    }
+                ],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: GS Global Investment Research, Department of Commerce "
+                    }
+                ]
+            },
+            "sub_type": "bar_line",
+            "bbox": [
+                276,
+                327,
+                913,
+                597
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "AI Investment "
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                272,
+                646,
+                401,
+                662
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "We expect AI-related spending to continue boosting equipment and structures investment in 2026 as companies press ahead with the infrastructure buildout. Over time, the impact on software and R&D should also become more visible as enterprise adoption broadens and more of that spending is captured in the GDP statistics. "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "^{1}"
+                    }
+                ]
+            },
+            "bbox": [
+                272,
+                664,
+                890,
+                735
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Exhibit 2 shows that total nominal spending on AI—estimated as the revenue received by public US companies providing key AI infrastructure, relative to equity analysts' forecasts prior to the start of the current AI investment wave—has reached $650bn (annualized) in 2026Q1 and is projected to surpass $800bn by year-end. "
+                    }
+                ]
+            },
+            "bbox": [
+                272,
+                748,
+                898,
+                819
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "GS "
+                    }
+                ]
+            },
+            "bbox": [
+                81,
+                6,
+                184,
+                18
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "US Economics Analyst "
+                    }
+                ]
+            },
+            "bbox": [
+                771,
+                7,
+                916,
+                21
+            ]
+        },
+        {
+            "type": "page_footnote",
+            "content": {
+                "page_footnote_content": [
+                    {
+                        "type": "text",
+                        "content": "For example, as our Global Economics team recently noted, cloud and data services are eventually recorded as part of own-account software investment when they are used repeatedly and continuously in the regular production of goods or services for more than one year under the Bureau of Economic Analysis's current methodology. "
+                    }
+                ]
+            },
+            "bbox": [
+                272,
+                881,
+                910,
+                934
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "25 May 2026 "
+                    }
+                ]
+            },
+            "bbox": [
+                81,
+                954,
+                158,
+                966
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "3 "
+                    }
+                ]
+            },
+            "bbox": [
+                906,
+                954,
+                916,
+                963
+            ]
+        }
+    ],
+    [
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/476b7f0cfa84f510045b48d144fc2af9baffc9f4127aa23c502cbd914fff9938.jpg"
+                },
+                "content": "Change in Revenues of Public US Companies Providing Key AI Infrastructure, Relative to Equity Analysts' Forecasts as of March 2023\n| Quarter | Total Revenue (Billions of dollars) | Utilities | Cloud Providers | Data Centers | Semiconductors | Other* |\n|---|---|---|---|---|---|---|\n| Q1 2023 | 80 | 10 | 5 | 5 | 5 | 5 |\n| Q2 2023 | 30 | 10 | 5 | 5 | 5 | 5 |\n| Q3 2023 | 40 | 10 | 5 | 5 | 5 | 5 |\n| Q4 2023 | 60 | 10 | 5 | 5 | 5 | 5 |\n| Q1 2024 | 90 | 10 | 5 | 5 | 5 | 5 |\n| Q2 2024 | 100 | 10 | 5 | 5 | 5 | 5 |\n| Q3 2024 | 130 | 10 | 5 | 5 | 5 | 5 |\n| Q4 2024 | 170 | 10 | 5 | 5 | 5 | 5 |\n| Q1 2025 | 210 | 10 | 5 | 5 | 5 | 5 |\n| Q2 2025 | 240 | 10 | 5 | 5 | 5 | 5 |\n| Q3 2025 | 330 | 10 | 5 | 5 | 5 | 5 |\n| Q4 2025 | 460 | 10 | 5 | 5 | 5 | 5 |\n| Q1 2026 | 670 | 10 | 5 | 5 | 5 | 5 |\n| Q2 2026 | 690 | 10 | 5 | 5 | 5 | 5 |\n| Q3 2026 | 790 | 10 | 5 | 5 | 5 | 5 |\n| Q4 2026 | 890 | 10 | 5 | 5 | 5 | 5 |\nEquity Analysts' Forecasts as of May 2026",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Exhibit 2: Annualized AI-Related Spending Has Reached $650bn in 2026Q1, and Our Analysts Expect It to Rise to $800bn by Year-End "
+                    }
+                ],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "*Includes companies providing memory storage, servers, networking services, and manufacturing equipment. See our Global Economics team's AI adoption tracker \"April 2026: Adoption Rises to 19.8%\" for more information on these firms. "
+                    },
+                    {
+                        "type": "text",
+                        "content": "Source: GS Global Investment Research, FactSet "
+                    }
+                ]
+            },
+            "sub_type": "bar_line",
+            "bbox": [
+                276,
+                97,
+                915,
+                319
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "To assess how this increase in AI spending affects US capex and GDP, we build on our prior approach to estimating the impact of AI on both true and measured GDP. Because AI-related investment spans multiple GDP components—equipment, structures, software, and R&D—we estimate its contribution to each one separately. "
+                    }
+                ]
+            },
+            "bbox": [
+                272,
+                400,
+                908,
+                471
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "text_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "■ Equipment: We aggregate increases in imports and domestic manufacturing shipments since 2022 across product categories tied to data center construction, including servers, memory storage devices, semiconductors, and power transmission equipment. "
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "■ Structures: We aggregate increases in construction spending on data centers and power facilities since 2022, based on the Census construction spending survey. "
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "- Software: We aggregate increases in revenue from public US companies providing key AI software services relative to equity analysts' expectations in late 2022, removing the portion that does not count as business fixed investment in GDP. "
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "R&D: We aggregate increases in R&D spending reported by AI hyperscalers and leading chip providers since 2022, removing non-cash and non-recurring items—that is, expenses like stock-based compensation that do not involve direct cash spending—to align with the Bureau of Economic Analysis's (BEA) methodology. "
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                272,
+                485,
+                913,
+                757
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "To project how investment in each component may evolve, we start with equity analysts' revenue forecasts for companies providing the corresponding investment goods and services. We then adjust for how much of these revenues will be (or should be) captured in the national accounts (see Exhibit 4 of our earlier report for details). "
+                    }
+                ]
+            },
+            "bbox": [
+                272,
+                771,
+                911,
+                842
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Our analysis suggests that AI-related spending will boost true capex growth by about 3.3pp in 2026. However, as we noted previously, BEA currently treats semiconductors as intermediate inputs and therefore excludes them from the investment component. This means that the impact of AI on measured capex growth is likely smaller—roughly 2.8pp. "
+                    }
+                ]
+            },
+            "bbox": [
+                272,
+                855,
+                911,
+                925
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "GS "
+                    }
+                ]
+            },
+            "bbox": [
+                81,
+                6,
+                184,
+                18
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "US Economics Analyst "
+                    }
+                ]
+            },
+            "bbox": [
+                771,
+                9,
+                916,
+                21
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "25 May 2026 "
+                    }
+                ]
+            },
+            "bbox": [
+                81,
+                954,
+                158,
+                966
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "4 "
+                    }
+                ]
+            },
+            "bbox": [
+                906,
+                954,
+                916,
+                963
+            ]
+        }
+    ],
+    [
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/180f118245ac7c308f3c7d64a5fcfcd321d09ebb2942eb6321cf6d55ec643bb7.jpg"
+                },
+                "content": "AI Spending Contribution to QoQ Annualized Capex Growth\n| Quarter | Measured AI Capex - Equipment (%) | Measured AI Capex - Structures (%) | Measured AI Capex - IPP (%) | Total Effect on Measured Capex (%) | Total Effect on True Capex (%) |\n|---|---|---|---|---|---|\n| Q1 2023 | -0.8 | 1.5 | 0.0 | 0.8 | 0.7 |\n| Q2 2023 | -0.5 | 1.2 | 0.0 | 0.7 | 0.6 |\n| Q3 2023 | -0.3 | 1.1 | 0.0 | 0.9 | 0.8 |\n| Q4 2023 | 0.5 | 1.3 | 0.0 | 2.4 | 1.9 |\n| Q1 2024 | -0.6 | 0.8 | 0.0 | -0.5 | 0.6 |\n| Q2 2024 | 1.0 | 1.4 | 0.0 | 2.3 | 1.8 |\n| Q3 2024 | 1.2 | 1.5 | 0.0 | 2.3 | 1.8 |\n| Q4 2024 | -0.4 | 0.3 | 0.0 | 0.6 | 0.5 |\n| Q1 2025 | 3.8 | 1.4 | 0.0 | 5.4 | 4.9 |\n| Q2 2025 | 1.6 | 1.1 | 0.0 | 2.5 | 2.3 |\n| Q3 2025 | 1.4 | 1.1 | 0.0 | 2.3 | 2.2 |\n| Q4 2025 | 4.5 | 4.5 | 3.5 | 10.4 | 10.6 |\n| Q1 2026 | -2.5 | -1.8 | -1.8 | -1.8 | -1.8 |\n| Q2 2026 | 1.7 | 1.3 | 0.0 | 4.1 | 3.7 |\n| Q3 2026 | 1.6 | 1.3 | 0.0 | 4.1 | 3.7 |\n| Q4 2026 | 1.3 | 1.1 | 0.0 | 3.3 | 3.3 |\nGS Forecast",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Exhibit 3: We Estimate That AI-Related Spending Will Boost True Capex Growth by About 3.3pp and Measured Capex Growth by 2.8pp in 2026, With the Gap Reflecting Undermeasurement of Semiconductor Investment "
+                    }
+                ],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: GS Global Investment Research "
+                    }
+                ]
+            },
+            "sub_type": "bar_line",
+            "bbox": [
+                274,
+                112,
+                915,
+                375
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "We expect this sizable capex impact to translate into a relatively modest boost to GDP, for two reasons. First, much of the AI-related equipment is sourced from abroad, so the investment boost is largely offset by higher imports. Second, US exports of tech services remain very low, suggesting that sales of intellectual property and related services (namely, chip design) to foreign manufacturers may not be fully captured in the GDP statistics. "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "^{2}"
+                    },
+                    {
+                        "type": "text",
+                        "content": " Taking these two factors into account, we estimate that AI-related spending will add 0.3pp to true GDP growth but only 0.1pp to measured GDP growth in 2026. "
+                    }
+                ]
+            },
+            "bbox": [
+                269,
+                409,
+                911,
+                534
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "GS "
+                    }
+                ]
+            },
+            "bbox": [
+                81,
+                6,
+                184,
+                18
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "US Economics Analyst "
+                    }
+                ]
+            },
+            "bbox": [
+                771,
+                7,
+                916,
+                21
+            ]
+        },
+        {
+            "type": "page_footnote",
+            "content": {
+                "page_footnote_content": [
+                    {
+                        "type": "equation_inline",
+                        "content": "^{2}"
+                    },
+                    {
+                        "type": "text",
+                        "content": "  We assume that unmeasured IP exports amount to roughly 60% of imported semiconductor value in recent years. This estimate is based on academic studies, which showed that upstream chip design originated in the US accounts for approximately 50–60% of the total value of finished chips. "
+                    }
+                ]
+            },
+            "bbox": [
+                269,
+                894,
+                910,
+                934
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "25 May 2026 "
+                    }
+                ]
+            },
+            "bbox": [
+                81,
+                953,
+                158,
+                966
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "5 "
+                    }
+                ]
+            },
+            "bbox": [
+                906,
+                954,
+                916,
+                963
+            ]
+        }
+    ],
+    [
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/260e7e9438752f646250cdb8f35cd867f296eb5b007faf6669115fe7c8d5b703.jpg"
+                },
+                "content": "AI Impact on Nominal US GDP Level\n| Year | Quarter | Measured AI Imports (%) | Measured AI Capex - Equipment (%) | Measured AI Capex - Structures (%) | Measured AI Capex - IPP (%) | Unmeasured AI Exports* (%) | Total Effect on True GDP (%) |\n|---|---|---|---|---|---|---|---|\n| 2023 | Q1 | 0.0 | 0.0 | 0.0 | 0.0 | 0.0 | 0.2 |\n| 2023 | Q2 | 0.0 | 0.0 | 0.0 | 0.0 | 0.0 | 0.2 |\n| 2023 | Q3 | 0.0 | 0.0 | 0.0 | 0.0 | 0.0 | 0.2 |\n| 2023 | Q4 | 0.0 | 0.0 | 0.0 | 0.0 | 0.0 | 0.2 |\n| 2024 | Q1 | -0.1 | 0.1 | 0.1 | 0.1 | 0.1 | 0.3 |\n| 2024 | Q2 | -0.1 | 0.1 | 0.1 | 0.1 | 0.1 | 0.3 |\n| 2024 | Q3 | -0.1 | 0.1 | 0.1 | 0.1 | 0.1 | 0.3 |\n| 2024 | Q4 | -0.1 | 0.1 | 0.1 | 0.1 | 0.1 | 0.3 |\n| 2025 | Q1 | -0.3 | 0.3 | 0.3 | 0.3 | 0.3 | 0.5 |\n| 2025 | Q2 | -0.3 | 0.3 | 0.3 | 0.3 | 0.3 | 0.5 |\n| 2025 | Q3 | -0.3 | 0.3 | 0.3 | 0.3 | 0.3 | 0.5 |\n| 2025 | Q4 | -0.7 | 0.6 | 0.6 | 0.6 | 0.6 | 0.8 |\n| GS Forecast (Q1-Q4) | Q1 | -1.1 | -1.1 | -1.1 | -1.1 | -1.1 | -1.1 |\n| GS Forecast (Q2-Q4) | Q2 | -1.1 | -1.1 | -1.1 | -1.1 | -1.1 | -1.1 |\n| GS Forecast (Q3-Q4) | Q3 | -1.1 | -1.1 | -1.1 | -1.1 | -1.1 | -1.1 |\n| GS Forecast (Q4) | Q4 | -1.1 | -1.1 | -1.1 | -1.1 | -1.1 | -1.1 |\nThe chart displays a stacked bar chart with two data series: 'Measured AI Imports' (green bars) and 'Measured AI Capex' (orange bars). The total effect on true GDP is shown as a dashed blue line, while the total effect on measured GDP is shown as a solid black line with markers.",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Exhibit 4: We Estimate That AI-Related Spending Will Boost True GDP Growth by 0.3pp but Measured GDP Growth by Only 0.1pp in 2026, With the Gap Reflecting Undermeasurement of Semiconductor Investment and AI-Related Intellectual Property Exports in the GDP Statistics "
+                    }
+                ],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "*Undermeasurement of tech-related intellectual property service exports. "
+                    },
+                    {
+                        "type": "text",
+                        "content": "**Undermeasurement of semiconductor investment. "
+                    },
+                    {
+                        "type": "text",
+                        "content": "Source: GS Global Investment Research "
+                    }
+                ]
+            },
+            "sub_type": "bar_line",
+            "bbox": [
+                274,
+                126,
+                915,
+                360
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "What if AI-related spending were to contract sharply, as investment did during the 2000–2001 dot-com bust? We estimate that a pullback concentrated in equipment would barely dent GDP, because lower investment would be largely offset by lower imports. However, if the contraction extends to structures and intellectual property investment, the drag would be more meaningful, subtracting roughly 0.2–0.4pp from GDP growth in 2026. That said, these estimates capture only the direct mechanical impact on GDP. A sharp contraction in AI spending would likely be accompanied by broader financial market stress, which could amplify the drag on growth beyond these mechanical estimates. "
+                    }
+                ]
+            },
+            "bbox": [
+                269,
+                426,
+                898,
+                586
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/3312e641bea69ed64f0115f00ff4230982e8006b207463f4613d603609dfd10e.jpg"
+                },
+                "content": "Impact of AI on 2026 Capex Growth (Q4/Q4), by Different Scenario\n| Scenario | Category | Measured Capex (Percentage points) | True Capex (Percentage points) |\n|---|---|---|---|\n| AI Investment Grows in Line with Our Equity Analysts' Expectations (Current Baseline) | AI Investment Grows in Line with Our Equity Analysts' Expectations (Current Baseline) | 2.8 | 3.2 |\n| AI-Related Equipment Investment Declines by 8% | AI-Related Equipment Investment Declines by 8% | -0.5 | -0.8 |\n| AI Structures and IPP Investment Also Decline by 10% and 3%, Respectively | AI Structures and IPP Investment Also Decline by 10% and 3%, Respectively | -1.8 | -2.5 |\nThe chart displays a vertical dotted line at 8% on the x-axis, indicating a reference point for the comparison between measured and true capex values.",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Exhibit 5: A Pullback in AI-Related Equipment Investment Would Barely Dent GDP Because Lower Imports Would Offset Much of the Hit, but a Broader Pullback in Structures and IPP Would Have a Meaningful Impact "
+                    }
+                ],
+                "chart_footnote": []
+            },
+            "sub_type": "bar",
+            "bbox": [
+                94,
+                645,
+                486,
+                876
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/9a5a7b03e68c014268a5ef863c99067a43c37f907e6419560fc7b4fc39eba2b2.jpg"
+                },
+                "content": "Impact of AI on 2026 GDP Growth (Q4/Q4), by Different Scenario\n| Scenario | Measured GDP (%) | True GDP (%) |\n|---|---|---|\n| AI Investment Grows in Line with Our Equity Analysts' Expectations (Current Baseline) | 0.08 | 0.28 |\n| AI-Related Equipment Declines by 8% | 0.03 | -0.1 |\n| AI Structures and IPP Investment Also Decline by 10% and 3%, Respectively | -0.25 | -0.4 |",
+                "chart_caption": [],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Note: In our scenario analysis, we assume equipment, structures, and IPP investment decline by magnitudes similar to those seen during the 2000–2001 dot-com bust. "
+                    }
+                ]
+            },
+            "sub_type": "bar",
+            "bbox": [
+                493,
+                645,
+                893,
+                873
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "GS "
+                    }
+                ]
+            },
+            "bbox": [
+                81,
+                6,
+                184,
+                18
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "US Economics Analyst "
+                    }
+                ]
+            },
+            "bbox": [
+                771,
+                7,
+                916,
+                21
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "Source: GS Global Investment Research "
+                    }
+                ]
+            },
+            "bbox": [
+                80,
+                909,
+                346,
+                921
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "25 May 2026 "
+                    }
+                ]
+            },
+            "bbox": [
+                81,
+                954,
+                158,
+                966
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "6 "
+                    }
+                ]
+            },
+            "bbox": [
+                906,
+                954,
+                916,
+                963
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "The Boost from New Tax Incentives Appears to Be Underway "
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                274,
+                39,
+                813,
+                57
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The impact of the tax incentives included in the One Big Beautiful Bill Act (OBBBA) on business investment is beginning to show up in the data. "
+                    }
+                ]
+            },
+            "bbox": [
+                274,
+                60,
+                890,
+                94
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "In our 2026 capex outlook, we argued that new tax provisions from OBBBA would incentivize business investment by lowering the cost of capital for US companies. We estimated that manufacturing, transportation, mining, and several other goods-producing industries would see the largest reduction in their user cost of capital due to these tax changes. "
+                    }
+                ]
+            },
+            "bbox": [
+                274,
+                106,
+                903,
+                195
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "We combine these industry-level estimates with data on the propensity of each industry to invest in different investment goods and services from the BEA's capital flows survey to construct an investment-category level exposure index. Exhibit 6 shows that capex growth in categories most exposed to these new tax incentives has increased meaningfully in 2026Q1, and the magnitude of the increase is broadly consistent with our prior estimates based on academic studies. "
+                    }
+                ]
+            },
+            "bbox": [
+                274,
+                208,
+                911,
+                314
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/760c8fe28bd72750540209006c6d682b5e7c7ba07d71ff7f734ce77e24110c1c.jpg"
+                },
+                "content": "Estimated Impact of New OBBBA Tax Provisions on Growth of Nonresidential Business Investment in 2026Q1\n| Investment Component | Estimated Change in User Cost of Capital as a Result of OBBBA Tax Provisions (%) | QoQ Annualized Capex Growth in 2026Q1* (%) |\n| :--- | :--- | :--- |\n| Metalworking machinery | -5.8 | 18 |\n| Materials handling equipment | -4.3 | 3 |\n| Railroad equipment | -3.0 | 5 |\n| Construction machinery | -2.2 | -45 |\n| Software | -2.7 | 25 |\n| Electrical equipment | -2.5 | 25 |\n| Power facility | 2.1 | -35 |",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Exhibit 6: Early Evidence from 2026Q1 Reveals a Meaningful Increase in Capex Growth Among Categories Most Exposed to OBBBA's Expanded Expensing Provisions "
+                    }
+                ],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "*Each component's capex growth is demeaned using the pre-pandemic average. "
+                    },
+                    {
+                        "type": "text",
+                        "content": "**The change in user cost of capital for each investment component is a weighted average of industry-level changes resulting from new OBBBA tax provisions, where the weights are each industry's share of investment in that component. For details on the construction of industry-level user cost of capital estimates, see our prior report, \"US Economics Analyst: 2026 Capex Outlook: Adding Up the Tailwinds.\" "
+                    },
+                    {
+                        "type": "text",
+                        "content": "Source: GS Global Investment Research, Department of Commerce "
+                    }
+                ]
+            },
+            "sub_type": "scatter",
+            "bbox": [
+                297,
+                382,
+                885,
+                621
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "As a result, we continue to expect the bill's provisions to boost capex growth by roughly 3pp in 2026, with the impact peaking around mid-year. "
+                    }
+                ]
+            },
+            "bbox": [
+                274,
+                708,
+                908,
+                743
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "GS "
+                    }
+                ]
+            },
+            "bbox": [
+                81,
+                6,
+                184,
+                18
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "US Economics Analyst "
+                    }
+                ]
+            },
+            "bbox": [
+                771,
+                9,
+                916,
+                21
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "25 May 2026 "
+                    }
+                ]
+            },
+            "bbox": [
+                81,
+                954,
+                158,
+                966
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "7 "
+                    }
+                ]
+            },
+            "bbox": [
+                906,
+                954,
+                916,
+                963
+            ]
+        }
+    ],
+    [
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/624f84246d37b67578fc1d72b12ad4813d2af3d5f8e4a596caccf21c7981945a.jpg"
+                },
+                "content": "Impulse to QoQ Annualized Capex Growth From OBBBA Tax Provisions, GS Estimates\n| Period | Impulse to QoQ Annualized Capex Growth (Percentage points) |\n|---|---|\n| Q2 2025 | 0.4 |\n| Q3 2025 | 1.5 |\n| Q4 2025 | 2.8 |\n| Q1 2026 | 3.9 |\n| Q2 2026 | 4.3 |\n| Q3 2026 | 3.3 |\n| Q4 2026 | 1.7 |\n| Q1 2027 | -0.4 |\n| Q2 2027 | -0.8 |\n| Q3 2027 | -0.5 |\n| Q4 2027 | -0.3 |",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Exhibit 7: We Continue to Expect OBBBA to Boost Capex Growth by About 3pp in 2026 "
+                    }
+                ],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: GS Global Investment Research "
+                    }
+                ]
+            },
+            "sub_type": "bar",
+            "bbox": [
+                274,
+                85,
+                915,
+                350
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "The Oil Price Shock Should Have a Limited Net Effect on Capex "
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                272,
+                402,
+                828,
+                420
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "We do not expect higher oil prices to have a material impact on overall capex growth. "
+                    }
+                ]
+            },
+            "bbox": [
+                272,
+                422,
+                890,
+                439
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Historically, higher oil prices tended to boost energy-sector capital spending. But this relationship has weakened considerably in recent years, as producers have prioritized capital discipline and shareholder returns over production growth. Despite the recent sharp rise in oil prices, high-frequency data through May show little change in drilling or production activity so far (Exhibit 8). Our energy equity analysts expect activity to remain unchanged throughout 2026 but see a more meaningful increase in energy capex in 2027, once companies reset their budgets and investment guidelines at year-end, provided that oil prices remain elevated. "
+                    }
+                ]
+            },
+            "bbox": [
+                272,
+                451,
+                916,
+                592
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "GS "
+                    }
+                ]
+            },
+            "bbox": [
+                81,
+                6,
+                184,
+                18
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "US Economics Analyst "
+                    }
+                ]
+            },
+            "bbox": [
+                771,
+                9,
+                916,
+                23
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "25 May 2026 "
+                    }
+                ]
+            },
+            "bbox": [
+                81,
+                954,
+                158,
+                966
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "8 "
+                    }
+                ]
+            },
+            "bbox": [
+                906,
+                954,
+                916,
+                963
+            ]
+        }
+    ],
+    [
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/16e00802f6c84d21143f0fc5a87c46df21b03bbb28b9352126565adbede75f58.jpg"
+                },
+                "content": "| Year | Brent Spot Price (left) | Baker Hughes Active Rig Count* (right) | Baker Hughes Fracture Spread Count** (right) |\n|------|--------------------------|----------------------------------------|---------------------------------------------|\n| 2013 | ~115                     | ~120                                   | ~60                                         |\n| 2014 | ~110                     | ~130                                   | ~70                                         |\n| 2015 | ~60                      | ~135                                   | ~50                                         |\n| 2016 | ~40                      | ~30                                    | ~30                                         |\n| 2017 | ~50                      | ~60                                    | ~40                                         |\n| 2018 | ~70                      | ~70                                    | ~60                                         |\n| 2019 | ~80                      | ~75                                    | ~55                                         |\n| 2020 | ~40                      | ~20                                    | ~10                                         |\n| 2021 | ~60                      | ~40                                    | ~30                                         |\n| 2022 | ~125                     | ~55                                    | ~45                                         |\n| 2023 | ~90                      | ~50                                    | ~40                                         |\n| 2024 | ~85                      | ~45                                    | ~35                                         |\n| 2025 | ~80                      | ~40                                    | ~30                                         |\n| 2026 | ~65                      | ~35                                    | ~25                                         |\n| 2027 | ~125                     | ~35                                    | ~25                                         |",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Exhibit 8: Higher Energy Prices Have Not Led to a Meaningful Increase in Energy Capex in Recent Years, as Producers Have Prioritized Capital Discipline and Shareholder Returns Over Production Growth "
+                    }
+                ],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "*Number of active and operating drilling rigs. "
+                    },
+                    {
+                        "type": "text",
+                        "content": "**Number of active hydraulic fracturing crews actively operating on newly drilled wells to prepare them for oil or gas production. "
+                    }
+                ]
+            },
+            "sub_type": "line",
+            "bbox": [
+                287,
+                105,
+                890,
+                351
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Source: GS Global Investment Research, Haver Analytics "
+                    }
+                ]
+            },
+            "bbox": [
+                271,
+                405,
+                624,
+                418
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Outside the energy sector, the effects are also likely to be limited. Equipment investment has tended to decline only modestly in response to higher energy costs, with the pullback concentrated mainly in the transportation sector (Exhibit 9). There is little evidence of a meaningful impact on structures or IPP investment. "
+                    }
+                ]
+            },
+            "bbox": [
+                269,
+                425,
+                916,
+                494
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "On net, we estimate that recent oil price increases should only impose a modest 0.1-0.3pp drag on overall capex growth. "
+                    }
+                ]
+            },
+            "bbox": [
+                269,
+                507,
+                854,
+                543
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "GS "
+                    }
+                ]
+            },
+            "bbox": [
+                81,
+                6,
+                184,
+                18
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "US Economics Analyst "
+                    }
+                ]
+            },
+            "bbox": [
+                771,
+                9,
+                916,
+                21
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "25 May 2026 "
+                    }
+                ]
+            },
+            "bbox": [
+                81,
+                954,
+                158,
+                966
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "9 "
+                    }
+                ]
+            },
+            "bbox": [
+                906,
+                954,
+                916,
+                963
+            ]
+        }
+    ],
+    [
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/425863a7742fb780a98010df516f204116aa8b8ea9333861595d983340162f25.jpg"
+                },
+                "content": "Impact of Oil Price Increases in GS Baseline on Industry-Level Equipment Capex Growth\n| Industry | Percentage points |\n|---|---|\n| Air transportation | -3.5 |\n| Utilities | -2.5 |\n| Water transportation | -2.4 |\n| Truck transportation | -2.2 |\n| Chemical products | -1.5 |\n| Rail transportation | -1.4 |\n| Transport. support | -1.3 |\n| Ground transportation | -0.9 |\n| Construction | -0.8 |\n| Farms | -0.7 |\n| Plastics & rubbers | -0.6 |\n| Warehousing | -0.5 |\n| Textile | -0.4 |\n| Primary metals | -0.3 |\n| Total | -0.1 |",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Exhibit 9: Higher Oil Prices Tend to Have a Modest Negative Impact on Non-Energy Equipment Capex, With the Pullback Concentrated in the Transportation Sector "
+                    }
+                ],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Note: To estimate how oil price increases affect capital expenditure, we regress industry-level equipment (or structures) capex growth on oil price shocks interacted with each industry's oil exposure. An industry's oil exposure is defined as the share of oil and related refined inputs in total production costs. Oil price shocks are identified as price increases driven by OPEC production announcements that shift the global supply of oil (Kanzig, 2021). Our estimation sample covers 1980 to 2024, though we obtain similar estimates when restricting the sample to more recent decades. Our baseline assumes oil prices average $100 in May before declining to $90 by 2026Q4. "
+                    }
+                ]
+            },
+            "sub_type": "bar",
+            "bbox": [
+                289,
+                91,
+                890,
+                333
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Source: GS Global Investment Research "
+                    }
+                ]
+            },
+            "bbox": [
+                272,
+                421,
+                540,
+                432
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Fading Policy Headwinds "
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                272,
+                457,
+                496,
+                475
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Two policy-related headwinds weighed on capex growth in 2025 but should diminish this year. "
+                    }
+                ]
+            },
+            "bbox": [
+                272,
+                476,
+                888,
+                511
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The first is the unwinding of subsidized manufacturing construction under the Inflation Reduction Act and CHIPS Act. As spending associated with projects funded by these programs moved past its peak, the resulting decline subtracted about 1.0pp from capex growth in 2025. That drag is not over but should shrink to roughly 0.6pp by year-end (see our prior report for details of how we form these forecasts). "
+                    }
+                ]
+            },
+            "bbox": [
+                272,
+                524,
+                911,
+                612
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "GS "
+                    }
+                ]
+            },
+            "bbox": [
+                81,
+                6,
+                184,
+                18
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "US Economics Analyst "
+                    }
+                ]
+            },
+            "bbox": [
+                771,
+                9,
+                916,
+                23
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "25 May 2026 "
+                    }
+                ]
+            },
+            "bbox": [
+                81,
+                954,
+                158,
+                966
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "10 "
+                    }
+                ]
+            },
+            "bbox": [
+                900,
+                954,
+                916,
+                965
+            ]
+        }
+    ],
+    [
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/7776d84b57aef6d1660b81acdb04368844d8ca0bbaa805d02c5ad134d9d5069a.jpg"
+                },
+                "content": "| Year | Actual Data (Billions of 2022 dollars) | GS Forecast* (Billions of 2022 dollars) |\n|------|------------------------------------------|------------------------------------------|\n| 2018 | ~15                                      | -                                        |\n| 2019 | ~18                                      | -                                        |\n| 2020 | ~22                                      | -                                        |\n| 2021 | ~20                                      | -                                        |\n| 2022 | ~35                                      | -                                        |\n| 2023 | ~80                                      | -                                        |\n| 2024 | ~130                                     | -                                        |\n| 2025 | ~125                                     | -                                        |\n| 2026 | ~80                                      | -                                        |\n| 2027 | ~40                                      | -                                        |",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Exhibit 10: Manufacturing Construction Subsidized by the Inflation Reduction Act and CHIPS Act Will Continue to Fall and Weigh on Capex Growth, but the Drag Will Gradually Fade from 1pp in 2025 to 0.6pp by 2026Q4 "
+                    }
+                ],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: GS Global Investment Research, Department of Commerce "
+                    }
+                ]
+            },
+            "sub_type": "line",
+            "bbox": [
+                277,
+                112,
+                903,
+                369
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The second fading policy headwind is the impact of tariffs. Higher tariffs have raised the cost of capital goods (Exhibit 11, left)—particularly transportation and industrial equipment—and increased uncertainty. Together, these forces shaved about 1.5pp off capex growth in 2025. Looking ahead, however, this drag should gradually fade in 2026, as tariff rates have stabilized and producers have largely passed these cost increases through to consumers (Exhibit 11, right). "
+                    }
+                ]
+            },
+            "bbox": [
+                269,
+                414,
+                910,
+                521
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/a9b8c8c26e288b3d1d9b56ec6577fa57c99279488240659124358b7feafe415a.jpg"
+                },
+                "content": "Predicted Tariff-Driven Cost Increases* in 2025, by Type of Equipment Investment\n| Category | Predicted Tariff-Driven Cost Increases* (in 2025) |\n|---|---|\n| Autos | 12.3 |\n| Trucks | 8.1 |\n| Agricultural machinery | 7.9 |\n| Electrical equipment | 7.8 |\n| Photocopy equipment | 7.6 |\n| Furniture and fixtures | 7.4 |\n| Construction machinery | 6.0 |\n| Electrical transmission | 6.0 |\n| Industrial equipment | 6.0 |\n| Railroad equipment | 5.8 |\n| Fabricated metal products | 5.7 |\n| Metalworking machinery | 4.6 |\n| Engines and turbines | 4.4 |\n| Total | 5.0 |",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Exhibit 11: We Estimate That Higher Tariffs Lowered Capex Growth by 1.5pp in 2025 but Expect the Impact to Gradually Fade in 2026 "
+                    }
+                ],
+                "chart_footnote": []
+            },
+            "sub_type": "bar",
+            "bbox": [
+                107,
+                583,
+                486,
+                837
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/1c153227e46b4d25a9d2f35a7c84cf1b1b131e561718ec645dd07ed3d7a4d09c.jpg"
+                },
+                "content": "Estimated Impact of Tariff Increases on Capex Growth**, QoQ AR\n| Period | Estimated Impact |\n|---|---|\n| Q1 2025 | -1.2 |\n| Q2 2025 | -0.6 |\n| Q3 2025 | -0.9 |\n| Q4 2025 | -3.1 |\n| Q1 2026 | -2.3 |\n| Q2 2026 | -1.5 |\n| Q3 2026 | -1.1 |\n| Q4 2026 | -0.6 |\n| Q1 2027 | -0.3 |\n| Q2 2027 | -0.2 |\n| Q3 2027 | -0.1 |\n| Q4 2027 | 0.0 |",
+                "chart_caption": [],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "*For each equipment component, the predicted tariff-driven cost increase is the weighted average of tariff increases on all direct and indirect inputs, where the weights are each input's import share of production costs. This approach implicitly assumes  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "100\\%"
+                    },
+                    {
+                        "type": "text",
+                        "content": " passthrough of tariffs to equipment prices.  \n**We estimate the tariff impact on capex by regressing component-level capex growth on these predicted tariff-driven cost increases. "
+                    }
+                ]
+            },
+            "sub_type": "bar",
+            "bbox": [
+                493,
+                583,
+                890,
+                837
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "GS "
+                    }
+                ]
+            },
+            "bbox": [
+                81,
+                6,
+                184,
+                18
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "US Economics Analyst "
+                    }
+                ]
+            },
+            "bbox": [
+                771,
+                7,
+                916,
+                21
+            ]
+        },
+        {
+            "type": "page_footnote",
+            "content": {
+                "page_footnote_content": [
+                    {
+                        "type": "text",
+                        "content": "Source: GS Global Investment Research, Department of Commerce "
+                    }
+                ]
+            },
+            "bbox": [
+                78,
+                886,
+                485,
+                898
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "25 May 2026 "
+                    }
+                ]
+            },
+            "bbox": [
+                81,
+                954,
+                158,
+                966
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "11 "
+                    }
+                ]
+            },
+            "bbox": [
+                900,
+                954,
+                915,
+                963
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Capex Outlook "
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                274,
+                39,
+                408,
+                57
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "We estimate that the impact of AI investment, new OBBBA tax provisions, higher oil prices, declining manufacturing construction spending, and tariffs will result in a net boost to measured capex growth of just over 4pp in 2026. "
+                    }
+                ]
+            },
+            "bbox": [
+                274,
+                60,
+                880,
+                112
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/fc1b504464cafc50674b9a6c735794e59cb78c18292d7bf89f648858a181f2bb.jpg"
+                },
+                "content": "GS Estimates of Impulses to Quarterly Annualized Real Capex Growth\n| Period | Total (Measured) | AI (Unmeasured) | AI (Measured) | Fiscal Policy (OBBBA) | Tariff Frontloading | IRA and CHIPS Act | Tariff | Oil Price Shock |\n|---|---|---|---|---|---|---|---|---|\n| Q1 2025 | 6.5 | 6.0 | 8.0 | 0.0 | 3.0 | 0.0 | -1.0 | 0.0 |\n| Q2 2025 | -1.0 | 1.0 | 1.5 | 0.0 | 0.5 | 0.0 | -1.5 | 0.0 |\n| Q3 2025 | -1.5 | 1.5 | 2.0 | 0.5 | 1.0 | 0.5 | -2.0 | 0.0 |\n| Q4 2025 | 2.5 | 12.0 | 7.5 | 3.0 | -3.0 | 1.5 | -4.5 | 0.0 |\n| Q1 2026 | 3.5 | 6.5 | 6.5 | 4.0 | -2.5 | 1.5 | -3.0 | 0.0 |\n| Q2 2026 | 4.5 | 7.5 | 6.0 | 4.5 | -2.0 | 1.5 | -2.5 | 0.0 |\n| Q3 2026 | 5.5 | 8.5 | 6.5 | 5.0 | -1.5 | 1.5 | -2.0 | 0.0 |\n| Q4 2026 | 4.5 | 7.5 | 5.5 | 4.5 | -1.0 | 1.5 | -1.5 | 0.0 |\n| Q1 2027 | 3.0 | 5.5 | 3.5 | 1.5 | -1.0 | 1.0 | -1.0 | 0.0 |\n| Q2 2027 | -1.0 | 1.5 | 1.0 | -1.5 | -1.5 | -1.5 | -1.5 | -1.0 |\n| Q3 2027 | -1.5 | 1.5 | 1.0 | -1.5 | -1.5 | -1.5 | -1.5 | -1.0 |\n| Q4 2027 | -1.5 | 1.5 | 1.0 | -1.5 | -1.5 | -1.5 | -1.5 | -1.0 |",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Exhibit 12: We Estimate That the Impact of AI Investment, New OBBBA Tax Provisions, Higher Oil Prices, Declining Manufacturing Construction Spending, and Tariffs Will Result in a Net Boost to Measured Capex Growth of Just Over 4pp in 2026 "
+                    }
+                ],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: GS Global Investment Research "
+                    }
+                ]
+            },
+            "sub_type": "bar_line",
+            "bbox": [
+                277,
+                190,
+                911,
+                456
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Combining these updated impulses with the underlying trend pace of capex growth, we forecast that capex will grow  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "7.8\\%"
+                    },
+                    {
+                        "type": "text",
+                        "content": " in 2026 on a Q4/Q4 basis (vs.  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "6.5\\%"
+                    },
+                    {
+                        "type": "text",
+                        "content": " previously). We expect structures investment to remain weak in 2026, as the unwinding of subsidized manufacturing construction under the Inflation Reduction Act and CHIPS Act continues throughout the year. However, this weaker growth should be more than offset by strong equipment and IPP investment. "
+                    }
+                ]
+            },
+            "bbox": [
+                274,
+                493,
+                908,
+                599
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "GS "
+                    }
+                ]
+            },
+            "bbox": [
+                81,
+                6,
+                184,
+                18
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "US Economics Analyst "
+                    }
+                ]
+            },
+            "bbox": [
+                771,
+                9,
+                916,
+                21
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "25 May 2026 "
+                    }
+                ]
+            },
+            "bbox": [
+                81,
+                954,
+                158,
+                965
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "12 "
+                    }
+                ]
+            },
+            "bbox": [
+                901,
+                954,
+                916,
+                963
+            ]
+        }
+    ],
+    [
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/fe80a4a8dbe33ead0490512bb9dc7dc60c37fd4a6c1d470f921db9867f6e21ba.jpg"
+                },
+                "content": "QoQ Annualized Real Nonresidential Fixed Investment Growth\n| Category | 2025 (Q4/Q4) (%) | 2026Q1 (%) | 2026Q2 (%) | 2026Q3 (%) | 2026Q4 (%) |\n|---|---|---|---|---|---|\n| Total | 5.5 | 10.3 | 6.3 | 7.0 | 6.5 |\n| Structures | -5.8 | -7.2 | -3.0 | -1.0 | -0.5 |\n| Equipment | 9.8 | 17.1 | 9.9 | 11.0 | 9.4 |\n| IPP | 8.1 | 13.0 | 7.4 | 8.0 | 7.3 |\nShaded bars indicate GS forecasts.",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Exhibit 13: We Expect Strong Equipment and IPP Investment Growth to More Than Offset Declining Structures Investment "
+                    }
+                ],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: GS Global Investment Research "
+                    }
+                ]
+            },
+            "sub_type": "bar",
+            "bbox": [
+                274,
+                97,
+                915,
+                359
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "We expect some of the boost to equipment investment will still be met by higher imports, which subtract from GDP in the national accounts, resulting in a smaller net contribution to GDP growth. Incorporating last week's GDP tracking data and our revised capex forecast, we now estimate 2026 GDP growth of  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "2.1\\%"
+                    },
+                    {
+                        "type": "text",
+                        "content": " on both a Q4/Q4 and full-year basis. "
+                    }
+                ]
+            },
+            "bbox": [
+                269,
+                400,
+                888,
+                489
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Elsie Peng "
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                272,
+                514,
+                351,
+                530
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "GS "
+                    }
+                ]
+            },
+            "bbox": [
+                81,
+                6,
+                184,
+                18
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "US Economics Analyst "
+                    }
+                ]
+            },
+            "bbox": [
+                771,
+                9,
+                916,
+                23
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "25 May 2026 "
+                    }
+                ]
+            },
+            "bbox": [
+                81,
+                954,
+                158,
+                966
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "13 "
+                    }
+                ]
+            },
+            "bbox": [
+                900,
+                954,
+                916,
+                965
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "The US Economic and Financial Outlook "
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                80,
+                39,
+                406,
+                59
+            ]
+        },
+        {
+            "type": "table",
+            "content": {
+                "image_source": {
+                    "path": "images/3116384709c6bce442d8d78debc1cf7ea3f9baaa94049ecf6b87ed2c86a2c3b6.jpg"
+                },
+                "table_caption": [
+                    {
+                        "type": "text",
+                        "content": "(% change on previous period, annualized, except where noted) "
+                    }
+                ],
+                "table_footnote": [
+                    {
+                        "type": "text",
+                        "content": "* Weighted average of metro-level HPIs for 381 metro cities where the weights are dollar values of housing stock reported in the American Community Survey. Annual numbers are Q4/Q4. "
+                    },
+                    {
+                        "type": "text",
+                        "content": "** Annual inflation numbers are December year-on-year values. Quarterly values are Q4/Q4. "
+                    },
+                    {
+                        "type": "text",
+                        "content": "† PCE = Personal consumption expenditures. ^ Denotes end of period. "
+                    },
+                    {
+                        "type": "text",
+                        "content": "Note: Published figures in bold. "
+                    }
+                ],
+                "html": "<table><tr><td rowspan=\"2\"></td><td rowspan=\"2\">2023</td><td rowspan=\"2\">2024</td><td rowspan=\"2\">2025</td><td rowspan=\"2\">2026</td><td rowspan=\"2\">2027</td><td rowspan=\"2\">2025 Q4</td><td colspan=\"4\">2026</td><td colspan=\"4\">2027</td></tr><tr><td>Q1</td><td>Q2</td><td>Q3</td><td>Q4</td><td>Q1</td><td>Q2</td><td>Q3</td><td>Q4</td></tr><tr><td colspan=\"15\">OUTPUT AND SPENDING</td></tr><tr><td>Real GDP</td><td>2.9</td><td>2.8</td><td>2.1</td><td>2.1</td><td>2.1</td><td>0.5</td><td>2.0</td><td>2.0</td><td>2.1</td><td>2.1</td><td>2.0</td><td>2.2</td><td>2.2</td><td>2.3</td></tr><tr><td>Real GDP (annual=Q4/Q4, quarterly=yoy)</td><td>3.4</td><td>2.4</td><td>2.0</td><td>2.1</td><td>2.2</td><td>2.0</td><td>2.7</td><td>2.2</td><td>1.6</td><td>2.1</td><td>2.1</td><td>2.1</td><td>2.1</td><td>2.2</td></tr><tr><td>Consumer Expenditures</td><td>2.6</td><td>2.9</td><td>2.6</td><td>1.9</td><td>1.8</td><td>1.9</td><td>1.6</td><td>1.5</td><td>1.4</td><td>1.5</td><td>1.9</td><td>2.0</td><td>2.1</td><td>2.2</td></tr><tr><td>Residential Fixed Investment</td><td>-7.8</td><td>3.2</td><td>-2.2</td><td>-4.0</td><td>1.6</td><td>-1.7</td><td>-8.0</td><td>-3.5</td><td>1.5</td><td>1.5</td><td>2.2</td><td>2.2</td><td>2.2</td><td>2.2</td></tr><tr><td>Business Fixed Investment</td><td>7.3</td><td>2.9</td><td>4.1</td><td>6.4</td><td>5.7</td><td>2.4</td><td>10.4</td><td>6.4</td><td>7.5</td><td>7.0</td><td>4.9</td><td>4.9</td><td>4.9</td><td>4.9</td></tr><tr><td>Structures</td><td>16.7</td><td>1.1</td><td>-5.3</td><td>-4.7</td><td>1.8</td><td>-6.6</td><td>-6.7</td><td>-3.0</td><td>-1.0</td><td>-0.2</td><td>3.5</td><td>3.5</td><td>3.5</td><td>3.5</td></tr><tr><td>Equipment</td><td>2.9</td><td>3.5</td><td>8.3</td><td>10.1</td><td>6.8</td><td>4.3</td><td>17.2</td><td>10.0</td><td>11.0</td><td>9.5</td><td>5.0</td><td>5.0</td><td>5.0</td><td>5.0</td></tr><tr><td>Intellectual Property Products</td><td>6.2</td><td>3.5</td><td>5.6</td><td>8.8</td><td>6.4</td><td>5.4</td><td>13.0</td><td>7.5</td><td>8.2</td><td>7.8</td><td>5.5</td><td>5.5</td><td>5.5</td><td>5.5</td></tr><tr><td>Federal Government</td><td>3.3</td><td>3.8</td><td>-1.2</td><td>-1.0</td><td>0.9</td><td>-16.7</td><td>9.4</td><td>0.0</td><td>1.0</td><td>1.0</td><td>1.0</td><td>1.0</td><td>1.0</td><td>1.0</td></tr><tr><td>State &amp; Local Government</td><td>3.6</td><td>3.8</td><td>2.5</td><td>1.3</td><td>0.9</td><td>1.5</td><td>1.6</td><td>0.5</td><td>0.5</td><td>1.0</td><td>1.0</td><td>1.0</td><td>1.0</td><td>1.0</td></tr><tr><td>Net Exports ($bn, &#x27;17)</td><td>-925</td><td>-1,033</td><td>-1,091</td><td>-1,106</td><td>-1,178</td><td>-969</td><td>-1,068</td><td>-1,100</td><td>-1,118</td><td>-1,139</td><td>-1,155</td><td>-1,170</td><td>-1,186</td><td>-1,202</td></tr><tr><td>Inventory Investment ($bn, &#x27;17)</td><td>47</td><td>44</td><td>29</td><td>25</td><td>49</td><td>-16</td><td>-8</td><td>27</td><td>35</td><td>45</td><td>45</td><td>48</td><td>50</td><td>53</td></tr><tr><td>Nominal GDP</td><td>6.7</td><td>5.3</td><td>5.0</td><td>6.0</td><td>4.7</td><td>4.2</td><td>5.6</td><td>8.1</td><td>5.0</td><td>4.6</td><td>4.4</td><td>4.3</td><td>4.3</td><td>4.3</td></tr><tr><td>Industrial Production, Mfg.</td><td>-1.0</td><td>-1.0</td><td>0.9</td><td>3.0</td><td>3.6</td><td>-3.1</td><td>5.7</td><td>4.8</td><td>4.2</td><td>4.0</td><td>3.3</td><td>3.2</td><td>3.3</td><td>3.3</td></tr><tr><td colspan=\"15\">HOUSING MARKET</td></tr><tr><td>Housing Starts (units, thous)</td><td>1,421</td><td>1,371</td><td>1,356</td><td>1,286</td><td>1,322</td><td>1,323</td><td>1,280</td><td>1,290</td><td>1,280</td><td>1,292</td><td>1,304</td><td>1,316</td><td>1,328</td><td>1,340</td></tr><tr><td>New Home Sales (units, thous)</td><td>665</td><td>685</td><td>672</td><td>670</td><td>644</td><td>680</td><td>690</td><td>690</td><td>662</td><td>638</td><td>626</td><td>632</td><td>649</td><td>670</td></tr><tr><td>Existing Home Sales (units, thous)</td><td>4,103</td><td>4,067</td><td>4,076</td><td>4,212</td><td>4,375</td><td>4,157</td><td>4,169</td><td>4,189</td><td>4,223</td><td>4,267</td><td>4,310</td><td>4,353</td><td>4,396</td><td>4,440</td></tr><tr><td>Case-Shiller Home Prices (%yoy)*</td><td>5.3</td><td>3.8</td><td>0.6</td><td>0.8</td><td>2.2</td><td>0.6</td><td>0.3</td><td>0.8</td><td>0.7</td><td>0.8</td><td>1.1</td><td>1.4</td><td>1.8</td><td>2.2</td></tr><tr><td colspan=\"15\">INFLATION (% ch, yr/yr)</td></tr><tr><td>Consumer Price Index (CPI)**</td><td>3.3</td><td>2.9</td><td>2.7</td><td>3.7</td><td>2.0</td><td>2.7</td><td>2.7</td><td>3.9</td><td>3.7</td><td>3.7</td><td>3.3</td><td>2.3</td><td>2.2</td><td>2.1</td></tr><tr><td>Core CPI **</td><td>3.9</td><td>3.2</td><td>2.6</td><td>2.2</td><td>2.0</td><td>2.7</td><td>2.5</td><td>2.7</td><td>2.4</td><td>2.3</td><td>2.0</td><td>1.8</td><td>1.8</td><td>2.0</td></tr><tr><td>Core PCE** †</td><td>3.1</td><td>3.0</td><td>3.0</td><td>2.8</td><td>2.0</td><td>2.9</td><td>3.1</td><td>3.3</td><td>3.1</td><td>2.9</td><td>2.4</td><td>2.0</td><td>1.9</td><td>1.9</td></tr><tr><td colspan=\"15\">LABOR MARKET</td></tr><tr><td>Unemployment Rate (%)^</td><td>3.8</td><td>4.1</td><td>4.4</td><td>4.6</td><td>4.4</td><td>4.4</td><td>4.3</td><td>4.4</td><td>4.6</td><td>4.6</td><td>4.6</td><td>4.5</td><td>4.5</td><td>4.4</td></tr><tr><td>U6 Underemployment Rate (%)^</td><td>7.2</td><td>7.6</td><td>8.4</td><td>8.7</td><td>8.3</td><td>8.4</td><td>8.0</td><td>8.4</td><td>8.6</td><td>8.7</td><td>8.7</td><td>8.6</td><td>8.4</td><td>8.3</td></tr><tr><td>Payrolls (thous, monthly rate)</td><td>210</td><td>122</td><td>10</td><td>51</td><td>92</td><td>-39</td><td>63</td><td>65</td><td>30</td><td>47</td><td>70</td><td>97</td><td>100</td><td>100</td></tr><tr><td>Employment-Population Ratio (%)^</td><td>60.1</td><td>59.9</td><td>59.7</td><td>58.9</td><td>58.8</td><td>59.7</td><td>59.2</td><td>59.1</td><td>59.0</td><td>58.9</td><td>58.9</td><td>58.8</td><td>58.8</td><td>58.8</td></tr><tr><td>Labor Force Participation Rate (%)^</td><td>62.5</td><td>62.5</td><td>62.4</td><td>61.8</td><td>61.5</td><td>62.4</td><td>61.9</td><td>61.8</td><td>61.8</td><td>61.8</td><td>61.7</td><td>61.6</td><td>61.6</td><td>61.5</td></tr><tr><td>Average Hourly Earnings (%yoy)</td><td>4.4</td><td>3.9</td><td>4.0</td><td>3.9</td><td>3.8</td><td>4.0</td><td>4.0</td><td>4.0</td><td>3.9</td><td>3.8</td><td>3.8</td><td>3.8</td><td>3.8</td><td>3.8</td></tr><tr><td colspan=\"15\">GOVERNMENT FINANCE</td></tr><tr><td>Federal Budget (FY, $bn)</td><td>-1,694</td><td>-1,833</td><td>-1,775</td><td>-1,950</td><td>-2,050</td><td>--</td><td>--</td><td>--</td><td>--</td><td>--</td><td>--</td><td>--</td><td>--</td><td>--</td></tr><tr><td colspan=\"15\">FINANCIAL INDICATORS</td></tr><tr><td>FF Target Range (Bottom-Top, %)^</td><td>5.25-5.5</td><td>4.25-4.5</td><td>3.5-3.75</td><td>3.25-3.5</td><td>3-3.25</td><td>3.5-3.75</td><td>3.5-3.75</td><td>3.5-3.75</td><td>3.5-3.75</td><td>3.25-3.5</td><td>3-3.25</td><td>3-3.25</td><td>3-3.25</td><td>3-3.25</td></tr><tr><td>10-Year Treasury Note^</td><td>3.88</td><td>4.58</td><td>4.18</td><td>4.10</td><td>4.15</td><td>4.18</td><td>4.30</td><td>4.30</td><td>4.20</td><td>4.10</td><td>4.10</td><td>4.10</td><td>4.15</td><td>4.15</td></tr><tr><td>Euro (€/$)^</td><td>1.11</td><td>1.04</td><td>1.17</td><td>1.18</td><td>1.20</td><td>1.17</td><td>1.15</td><td>1.16</td><td>1.19</td><td>1.18</td><td>1.19</td><td>1.20</td><td>1.20</td><td>1.20</td></tr><tr><td>Yen ($/¥)^</td><td>141</td><td>157</td><td>157</td><td>158</td><td>141</td><td>157</td><td>159</td><td>158</td><td>158</td><td>158</td><td>156</td><td>141</td><td>101</td><td>141</td></tr></table>",
+                "table_type": "complex_table",
+                "table_nest_level": 1
+            },
+            "bbox": [
+                91,
+                96,
+                903,
+                490
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Source: GS Global Investment Research "
+                    }
+                ]
+            },
+            "bbox": [
+                80,
+                539,
+                346,
+                550
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "GS "
+                    }
+                ]
+            },
+            "bbox": [
+                81,
+                6,
+                184,
+                18
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "US Economics Analyst "
+                    }
+                ]
+            },
+            "bbox": [
+                771,
+                7,
+                916,
+                21
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "25 May 2026 "
+                    }
+                ]
+            },
+            "bbox": [
+                81,
+                954,
+                158,
+                966
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "14 "
+                    }
+                ]
+            },
+            "bbox": [
+                900,
+                954,
+                916,
+                965
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "The US Economics Team "
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                284,
+                50,
+                483,
+                68
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Jan Hatzius "
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                285,
+                92,
+                364,
+                104
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "+1(212)902-0394 "
+                    }
+                ]
+            },
+            "bbox": [
+                285,
+                105,
+                372,
+                114
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "jan.hatzius@gs.com "
+                    }
+                ]
+            },
+            "bbox": [
+                285,
+                115,
+                379,
+                123
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "GS & Co. LLC "
+                    }
+                ]
+            },
+            "bbox": [
+                285,
+                123,
+                405,
+                132
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Alec Phillips "
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                496,
+                92,
+                578,
+                106
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "+1(202)637-3746 "
+                    }
+                ]
+            },
+            "bbox": [
+                496,
+                106,
+                583,
+                114
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "alec.phillips@gs.com "
+                    }
+                ]
+            },
+            "bbox": [
+                496,
+                115,
+                594,
+                123
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "GS & Co. LLC "
+                    }
+                ]
+            },
+            "bbox": [
+                496,
+                123,
+                616,
+                132
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "David Mericle "
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                707,
+                92,
+                800,
+                105
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "+1(212)357-2619 "
+                    }
+                ]
+            },
+            "bbox": [
+                707,
+                105,
+                794,
+                114
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "david.mericle@gs.com "
+                    }
+                ]
+            },
+            "bbox": [
+                707,
+                115,
+                813,
+                123
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "GS & Co. LLC "
+                    }
+                ]
+            },
+            "bbox": [
+                707,
+                123,
+                826,
+                132
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Ronnie Walker "
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                285,
+                148,
+                383,
+                159
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "+1(917)343-4543 "
+                    }
+                ]
+            },
+            "bbox": [
+                285,
+                159,
+                372,
+                168
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "ronnie.walker@gs.com "
+                    }
+                ]
+            },
+            "bbox": [
+                285,
+                168,
+                390,
+                177
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "GS & Co. LLC "
+                    }
+                ]
+            },
+            "bbox": [
+                285,
+                177,
+                405,
+                186
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Manuel Abecasis "
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                496,
+                148,
+                609,
+                159
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "+1(212)902-8357 "
+                    }
+                ]
+            },
+            "bbox": [
+                496,
+                159,
+                583,
+                168
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "manuel.abecasis@gs.com "
+                    }
+                ]
+            },
+            "bbox": [
+                496,
+                168,
+                617,
+                177
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "GS & Co. LLC "
+                    }
+                ]
+            },
+            "bbox": [
+                496,
+                177,
+                616,
+                186
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Elsie Peng "
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                707,
+                148,
+                774,
+                161
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "+1(212)357-3137 "
+                    }
+                ]
+            },
+            "bbox": [
+                707,
+                161,
+                792,
+                168
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "elsie.peng@gs.com "
+                    }
+                ]
+            },
+            "bbox": [
+                707,
+                168,
+                797,
+                177
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "GS & Co. LLC "
+                    }
+                ]
+            },
+            "bbox": [
+                707,
+                177,
+                826,
+                186
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Pierfrancesco Mei "
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                285,
+                203,
+                406,
+                215
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "+1(212)902-8809 "
+                    }
+                ]
+            },
+            "bbox": [
+                285,
+                215,
+                372,
+                224
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "pierfrancesco.mei@gs.com "
+                    }
+                ]
+            },
+            "bbox": [
+                285,
+                224,
+                413,
+                233
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "GS & Co. LLC "
+                    }
+                ]
+            },
+            "bbox": [
+                285,
+                233,
+                405,
+                242
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Jessica Rindels "
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                496,
+                203,
+                596,
+                215
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "+1(972)368-1516 "
+                    }
+                ]
+            },
+            "bbox": [
+                496,
+                215,
+                583,
+                224
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "jessica.rindels@gs.com "
+                    }
+                ]
+            },
+            "bbox": [
+                496,
+                224,
+                604,
+                233
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "GS & Co. LLC "
+                    }
+                ]
+            },
+            "bbox": [
+                496,
+                233,
+                616,
+                242
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "GS "
+                    }
+                ]
+            },
+            "bbox": [
+                81,
+                6,
+                184,
+                18
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "US Economics Analyst "
+                    }
+                ]
+            },
+            "bbox": [
+                771,
+                9,
+                916,
+                23
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "25 May 2026 "
+                    }
+                ]
+            },
+            "bbox": [
+                81,
+                954,
+                158,
+                966
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "15 "
+                    }
+                ]
+            },
+            "bbox": [
+                900,
+                954,
+                916,
+                965
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Disclosure Appendix "
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                80,
+                39,
+                251,
+                61
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Reg AC "
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                81,
+                82,
+                135,
+                97
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "I, Elsie Peng, hereby certify that all of the views expressed in this report accurately reflect my personal views, which have not been influenced by considerations of the firm's business or client relationships. "
+                    }
+                ]
+            },
+            "bbox": [
+                81,
+                104,
+                872,
+                128
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Unless otherwise stated, the individuals listed on the cover page of this report are analysts in GS' Global Investment Research division. "
+                    }
+                ]
+            },
+            "bbox": [
+                81,
+                134,
+                885,
+                146
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Contributing Authors: Elsie Peng GS & Co. LLC. "
+                    }
+                ]
+            },
+            "bbox": [
+                81,
+                152,
+                416,
+                164
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Unless otherwise stated, the individuals listed in the Contributing Authors disclosure of this report are analysts in GS' Global Investment Research division. "
+                    }
+                ]
+            },
+            "bbox": [
+                81,
+                170,
+                893,
+                194
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Disclosures "
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                81,
+                207,
+                168,
+                221
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Regulatory disclosures "
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                81,
+                226,
+                251,
+                240
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Disclosures required by United States laws and regulations "
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                81,
+                244,
+                514,
+                259
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "See company-specific regulatory disclosures above for any of the following disclosures required as to companies referred to in this report: manager or co-manager in a pending transaction;  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "1\\%"
+                    },
+                    {
+                        "type": "text",
+                        "content": " or other ownership; compensation for certain services; types of client relationships; managed/co-managed public offerings in prior periods; directorships; for equity securities, market making and/or specialist role. GS trades or may trade as a principal in debt securities (or in related derivatives) of issuers discussed in this report. "
+                    }
+                ]
+            },
+            "bbox": [
+                81,
+                259,
+                906,
+                304
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The following are additional required disclosures: Ownership and material conflicts of interest: GS policy prohibits its analysts, professionals reporting to analysts and members of their households from owning securities of any company in the analyst's area of coverage. Analyst compensation: Analysts are paid in part based on the profitability of GS, which includes investment banking revenues. Analyst as officer or director: GS policy generally prohibits its analysts, persons reporting to analysts or members of their households from serving as an officer, director or advisor of any company in the analyst's area of coverage. Non-U.S. Analysts: Non-U.S. analysts may not be associated persons of GS & Co. LLC and therefore may not be subject to FINRA Rule 2241 or FINRA Rule 2242 restrictions on communications with a subject company, public appearances and trading in securities covered by the analysts. "
+                    }
+                ]
+            },
+            "bbox": [
+                81,
+                310,
+                911,
+                389
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Additional disclosures required under the laws and regulations of jurisdictions other than the United States "
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                81,
+                400,
+                872,
+                414
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The following disclosures are those required by the jurisdiction indicated, except to the extent already made above pursuant to United States laws and regulations. Australia: GS Australia Pty Ltd and its affiliates are not authorised deposit-taking institutions (as that term is defined in the Banking Act 1959 (Cth)) in Australia and do not provide banking services, nor carry on a banking business, in Australia. This research, and any access to it, is intended only for “wholesale clients” within the meaning of the Australian Corporations Act, unless otherwise agreed by GS. In producing research reports, members of Global Investment Research of GS Australia may attend site visits and other meetings hosted by the companies and other entities which are the subject of its research reports. In some instances the costs of such site visits or meetings may be met in part or in whole by the issuers concerned if GS Australia considers it is appropriate and reasonable in the specific circumstances relating to the site visit or meeting. To the extent that the contents of this document contains any financial product advice, it is general advice only and has been prepared by GS without taking into account a client’s objectives, financial situation or needs. A client should, before acting on any such advice, consider the appropriateness of the advice having regard to the client’s own objectives, financial situation and needs. A copy of certain GS Australia and New Zealand disclosure of interests and a copy of GS’ Australian Sell-Side Research Independence Policy Statement are available at: https://www.goldmansachs.com/disclosures/australia-new-zealand/index.html. Brazil: Disclosure information in relation to CVM Resolution n. 20 is available at https://www.gs.com/worldwide/brazil/area/gir/index.html. Where applicable, the Brazil-registered analyst primarily responsible for the content of this research report, as defined in Article 20 of CVM Resolution n. 20, is the first author named at the beginning of this report, unless indicated otherwise at the end of the text. Canada: This information is being provided to you for information purposes only and is not, and under no circumstances should be construed as, an advertisement, offering or solicitation by GS & Co. LLC for purchasers of securities in Canada to trade in any Canadian security. GS & Co. LLC is not registered as a dealer in any jurisdiction in Canada under applicable Canadian securities laws and generally is not permitted to trade in Canadian securities and may be prohibited from selling certain securities and products in certain jurisdictions in Canada. If you wish to trade in any Canadian securities or other products in Canada please contact GS Canada Inc., an affiliate of The GS Group Inc., or another registered Canadian dealer. Hong Kong: Further information on the securities of covered companies referred to in this research may be obtained on request from GS (Asia) L.L.C. India: Further information on the subject company or companies referred to in this research may be obtained from GS (India) Securities Private Limited, Research Analyst - SEBI Registration Number INH000001493, 10th Floor, Ascent-Worli, Sudam Kalu Ahire Marg, Worli, Mumbai-400 025, India, Corporate Identity Number U74140MH2006FTC160634, Phone +91 22 6616 9000, Fax +91 22 6616 9001. GS may beneficially own 1% or more of the securities (as such term is defined in clause 2 (h) the Indian Securities Contracts (Regulation) Act, 1956) of the subject company or companies referred to in this research report. Investment in securities market are subject to market risks. Read all the related documents carefully before investing. Registration granted by SEBI and certification from NISM in no way guarantee performance of the intermediary or provide any assurance of returns to investors. GS (India) Securities Private Limited compliance officer and investor grievance contact details can be found at: https://www.goldmansachs.com/worldwide/india/documents/Grievance-Redressal-and-Escalation-Matrix.pdf, and a copy of the annual audit compliance report can be found at this link: https://publishing.gs.com/content/site/india-annual-compliance-report.html. Japan: See below. Korea: This research, and any access to it, is intended only for “professional investors” within the meaning of the Financial Services and Capital Markets Act, unless otherwise agreed by GS. Further information on the subject company or companies referred to in this research may be obtained from GS (Asia) L.L.C., Seoul Branch. New Zealand: GS New Zealand Limited and its affiliates are neither “registered banks” nor “deposit takers” (as defined in the Reserve Bank of New Zealand Act 1989) in New Zealand. This research, and any access to it, is intended for “wholesale clients” (as defined in the Financial Advisers Act 2008) unless otherwise agreed by GS. A copy of certain GS Australia and New Zealand disclosure of interests is available at: https://www.goldmansachs.com/disclosures/australia-new-zealand/index.html. Russia: Research reports distributed in the Russian Federation are not advertising as defined in the Russian legislation, but are information and analysis not having product promotion as their main purpose and do not provide appraisal within the meaning of the Russian legislation on appraisal activity. Research reports do not constitute a personalized investment recommendation as defined in Russian laws and regulations, are not addressed to a specific client, and are prepared without analyzing the financial circumstances, investment profiles or risk profiles of clients. GS assumes no responsibility for any investment decisions that may be taken by a client or any other person based on this research report. Singapore: GS (Singapore) Pte. (Company Number: 198602165W), which is regulated by the Monetary Authority of Singapore, accepts legal responsibility for this research, and should be contacted with respect to any matters arising from, or in connection with, this research. Taiwan: This material is for reference only and must not be reprinted without permission. Investors should carefully consider their own investment risk. Investment results are the responsibility of the individual investor. United Kingdom: Persons who would be categorized as retail clients in the United Kingdom, as such term is defined in the rules of the Financial Conduct Authority, should read this research in conjunction with prior GS on the covered "
+                    }
+                ]
+            },
+            "bbox": [
+                81,
+                414,
+                916,
+                925
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "GS "
+                    }
+                ]
+            },
+            "bbox": [
+                81,
+                6,
+                184,
+                18
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "US Economics Analyst "
+                    }
+                ]
+            },
+            "bbox": [
+                771,
+                9,
+                916,
+                21
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "25 May 2026 "
+                    }
+                ]
+            },
+            "bbox": [
+                81,
+                954,
+                158,
+                966
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "16 "
+                    }
+                ]
+            },
+            "bbox": [
+                901,
+                954,
+                916,
+                963
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "companies referred to herein and should refer to the risk warnings that have been sent to them by GS International. A copy of these risks warnings, and a glossary of certain financial terms used in this report, are available from GS International on request. "
+                    }
+                ]
+            },
+            "bbox": [
+                81,
+                41,
+                901,
+                64
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "European Union and United Kingdom: Disclosure information in relation to Article 6 (2) of the European Commission Delegated Regulation (EU) (2016/958) supplementing Regulation (EU) No 596/2014 of the European Parliament and of the Council (including as that Delegated Regulation is implemented into United Kingdom domestic law and regulation following the United Kingdom's departure from the European Union and the European Economic Area) with regard to regulatory technical standards for the technical arrangements for objective presentation of investment recommendations or other information recommending or suggesting an investment strategy and for disclosure of particular interests or indications of conflicts of interest is available at https://www.gs.com/disclosures/europeanpolicy.html which states the European Policy for Managing Conflicts of Interest in Connection with Investment Research. "
+                    }
+                ]
+            },
+            "bbox": [
+                81,
+                70,
+                906,
+                149
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Japan: GS Japan Co., Ltd. is a Financial Instrument Dealer registered with the Kanto Financial Bureau under registration number Kinsho 69, and a member of Japan Securities Dealers Association, Financial Futures Association of Japan Type II Financial Instruments Firms Association, and Investment Management Association of Japan. Sales and purchase of equities are subject to commission pre-determined with clients plus consumption tax. See company-specific disclosures as to any applicable disclosures required by Japanese stock exchanges, the Japanese Securities Dealers Association or the Japanese Securities Finance Company. "
+                    }
+                ]
+            },
+            "bbox": [
+                81,
+                155,
+                913,
+                212
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Global product; distributing entities "
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                81,
+                225,
+                349,
+                239
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "GS Global Investment Research produces and distributes research products for clients of GS on a global basis. Analysts based in GS offices around the world produce research on industries and companies, and research on macroeconomics, currencies, commodities and portfolio strategy. This research is disseminated in Australia by GS Australia Pty Ltd (ABN 21 006 797 897); in Brazil by GS do Brasil Corretora de Títulos e Valores Mobiliários S.A.; Public Communication Channel GS Brazil: 0800 727 5764 and / or contatogoldmanbrasil@gs.com. Available Weekdays (except holidays), from 9am to 6pm. Canal de Comunicação com o Público GS Brasil: 0800 727 5764 e/ou contatogoldmanbrasil@gs.com. Horário de funcionamento: segunda-feira à sexta-feira (exceto feriados), das 9h às 18h; in Canada by GS & Co. LLC; in Hong Kong by GS (Asia) L.L.C.; in India by GS (India) Securities Private Ltd.; in Japan by GS Japan Co., Ltd.; in the Republic of Korea by GS (Asia) L.L.C., Seoul Branch; in New Zealand by GS New Zealand Limited; in Russia by OOO GS; in Singapore by GS (Singapore) Pte. (Company Number: 198602165W); and in the United States of America by GS & Co. LLC. GS International has approved this research in connection with its distribution in the United Kingdom. "
+                    }
+                ]
+            },
+            "bbox": [
+                81,
+                238,
+                916,
+                360
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "GS International (“GSI”), authorised by the Prudential Regulation Authority (“PRA”) and regulated by the Financial Conduct Authority (“FCA”) and the PRA, has approved this research in connection with its distribution in the United Kingdom. "
+                    }
+                ]
+            },
+            "bbox": [
+                81,
+                365,
+                879,
+                390
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "European Economic Area: GS Bank Europe SE (\"GSBE\") is a credit institution incorporated in Germany and, within the Single Supervisory Mechanism, subject to direct prudential supervision by the European Central Bank and in other respects supervised by German Federal Financial Supervisory Authority (Bundesanstalt für Finanzdienstleistungsaufsicht, BaFin) and Deutsche Bundesbank and disseminates research within the European Economic Area. "
+                    }
+                ]
+            },
+            "bbox": [
+                81,
+                396,
+                903,
+                440
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "General disclosures "
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                81,
+                454,
+                228,
+                467
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "This research is for our clients only. Other than disclosures relating to GS, this research is based on current public information that we consider reliable, but we do not represent it is accurate or complete, and it should not be relied on as such. The information, opinions, estimates and forecasts contained herein are as of the date hereof and are subject to change without prior notification. We seek to update our research as appropriate, but various regulations may prevent us from doing so. Other than certain industry reports published on a periodic basis, the large majority of reports are published at irregular intervals as appropriate in the analyst's judgment. "
+                    }
+                ]
+            },
+            "bbox": [
+                81,
+                467,
+                913,
+                524
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "GS conducts a global full-service, integrated investment banking, investment management, and brokerage business. We have investment banking and other business relationships with a substantial percentage of the companies covered by Global Investment Research. GS & Co. LLC, the United States broker dealer, is a member of SIPC (https://www.sipc.org). "
+                    }
+                ]
+            },
+            "bbox": [
+                81,
+                530,
+                913,
+                564
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Our salespeople, traders, and other professionals may provide oral or written market commentary or trading strategies to our clients and principal trading desks that reflect opinions that are contrary to the opinions expressed in this research. Our asset management area, principal trading desks and investing businesses may make investment decisions that are inconsistent with the recommendations or views expressed in this research. "
+                    }
+                ]
+            },
+            "bbox": [
+                81,
+                570,
+                913,
+                605
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "We and our affiliates, officers, directors, and employees will from time to time have long or short positions in, act as principal in, and buy or sell, the securities or derivatives, if any, referred to in this research, unless otherwise prohibited by regulation or GS policy. "
+                    }
+                ]
+            },
+            "bbox": [
+                81,
+                610,
+                888,
+                634
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The views attributed to third party presenters at GS arranged conferences, including individuals from other parts of GS, do not necessarily reflect those of Global Investment Research and are not an official view of GS. "
+                    }
+                ]
+            },
+            "bbox": [
+                81,
+                640,
+                913,
+                664
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Any third party referenced herein, including any salespeople, traders and other professionals or members of their household, may have positions in the products mentioned that are inconsistent with the views expressed by analysts named in this report. "
+                    }
+                ]
+            },
+            "bbox": [
+                81,
+                670,
+                911,
+                693
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "This research is focused on investment themes across markets, industries and sectors. It does not attempt to distinguish between the prospects or performance of, or provide analysis of, individual companies within any industry or sector we describe. "
+                    }
+                ]
+            },
+            "bbox": [
+                81,
+                699,
+                883,
+                722
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Any trading recommendation in this research relating to an equity or credit security or securities within an industry or sector is reflective of the investment theme being discussed and is not a recommendation of any such security in isolation. "
+                    }
+                ]
+            },
+            "bbox": [
+                81,
+                729,
+                866,
+                752
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "This research is not an offer to sell or the solicitation of an offer to buy any security in any jurisdiction where such an offer or solicitation would be illegal. It does not constitute a personal recommendation or take into account the particular investment objectives, financial situations, or needs of individual clients. Clients should consider whether any advice or recommendation in this research is suitable for their particular circumstances and, if appropriate, seek professional advice, including tax advice. The price and value of investments referred to in this research and the income from them may fluctuate. Past performance is not a guide to future performance, future returns are not guaranteed, and a loss of original capital may occur. Fluctuations in exchange rates could have adverse effects on the value or price of, or income derived from, certain investments. "
+                    }
+                ]
+            },
+            "bbox": [
+                81,
+                757,
+                916,
+                826
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Certain transactions, including those involving futures, options, and other derivatives, give rise to substantial risk and are not suitable for all investors. Investors should review current options and futures disclosure documents which are available from GS sales representatives or at https://www.theocc.com/about/publications/character-risks.jsp and https://www.goldmansachs.com/disclosures/cftc_fcm_disclosures. Transaction costs may be significant in option strategies calling for multiple purchase and sales of options such as spreads. Supporting documentation will be supplied upon request. "
+                    }
+                ]
+            },
+            "bbox": [
+                81,
+                832,
+                903,
+                889
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Differing Levels of Service provided by Global Investment Research: The level and types of services provided to you by GS Global Investment Research may vary as compared to that provided to internal and other external clients of GS, depending on various factors including your individual preferences as to the frequency and manner of receiving communication, your risk profile and investment focus and perspective (e.g., "
+                    }
+                ]
+            },
+            "bbox": [
+                81,
+                895,
+                898,
+                929
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "GS "
+                    }
+                ]
+            },
+            "bbox": [
+                81,
+                7,
+                184,
+                18
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "US Economics Analyst "
+                    }
+                ]
+            },
+            "bbox": [
+                771,
+                9,
+                916,
+                21
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "25 May 2026 "
+                    }
+                ]
+            },
+            "bbox": [
+                81,
+                954,
+                158,
+                966
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "17 "
+                    }
+                ]
+            },
+            "bbox": [
+                901,
+                954,
+                916,
+                963
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "marketwide, sector specific, long term, short term), the size and scope of your overall client relationship with GS, and legal and regulatory constraints. As an example, certain clients may request to receive notifications when research on specific securities is published, and certain clients may request that specific data underlying analysts' fundamental analysis available on our internal client websites be delivered to them electronically through data feeds or otherwise. No change to an analyst's fundamental research views (e.g., ratings, price targets, or material changes to earnings estimates for equity securities), will be communicated to any client prior to inclusion of such information in a research report broadly disseminated through electronic publication to our internal client websites or through other means, as necessary, to all clients who are entitled to receive such reports. "
+                    }
+                ]
+            },
+            "bbox": [
+                80,
+                41,
+                903,
+                108
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "All research reports are disseminated and available to all clients simultaneously through electronic publication to our internal client websites. Not all research content is redistributed to our clients or available to third-party aggregators, nor is GS responsible for the redistribution of our research by third party aggregators. For research, models or other data related to one or more securities, markets or asset classes (including related services) that may be available to you, please contact your GS representative or go to https://research.gs.com. "
+                    }
+                ]
+            },
+            "bbox": [
+                81,
+                115,
+                897,
+                159
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Disclosure information is also available at https://www.gs.com/research/hedge.html or from Research Compliance, 200 West Street, New York, NY 10282. "
+                    }
+                ]
+            },
+            "bbox": [
+                81,
+                166,
+                887,
+                189
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "© 2026 GS. "
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                81,
+                195,
+                220,
+                208
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "You are permitted to store, display, analyze, modify, reformat, and print the information made available to you via this service only for your own use. You may not resell or reverse engineer this information to calculate or develop any index for disclosure and/or marketing or create any other derivative works or commercial product(s), data or offering(s) without the express written consent of GS. You are not permitted to publish, transmit, or otherwise reproduce this information, in whole or in part, in any format to any third party without the express written consent of GS. This foregoing restriction includes, without limitation, using, extracting, downloading or retrieving this information, in whole or in part, to train or finetune a machine learning or artificial intelligence system, or to provide or reproduce this information, in whole or in part, as a prompt or input to any such system. "
+                    }
+                ]
+            },
+            "bbox": [
+                81,
+                213,
+                911,
+                293
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "GS "
+                    }
+                ]
+            },
+            "bbox": [
+                81,
+                6,
+                184,
+                18
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "US Economics Analyst "
+                    }
+                ]
+            },
+            "bbox": [
+                771,
+                9,
+                916,
+                21
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "25 May 2026 "
+                    }
+                ]
+            },
+            "bbox": [
+                81,
+                954,
+                158,
+                966
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "18 "
+                    }
+                ]
+            },
+            "bbox": [
+                901,
+                954,
+                916,
+                963
+            ]
+        }
+    ]
+]

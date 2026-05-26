@@ -1,0 +1,14 @@
+Found 20 total PDFs; shard 0/40 has 5 PDFs, skips 0 already converted, will process 5 PDFs with batch_size=5.
+Running batch 1: 5 PDFs
+Found 5 PDFs.
+Uploading PDF to MinerU: /tmp/pdf_batch_001_aurekc9v/pdfs/0001-01-Deutsche Bank-Hawkish from Fed-s Waller- inflation expectations jump in Michigan survey-260525.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_aurekc9v/pdfs/0002-02-Goldman Sachs-China-Three things in China-260525.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_aurekc9v/pdfs/0003-03-J.P. Morgan-EM USD 10s30s Spread Curve Report-260526.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_aurekc9v/pdfs/0004-04-Goldman Sachs-US Economics Analyst-2026 Mid-Year Capex Update- On Track for a Solid Year-260525.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_aurekc9v/pdfs/0005-05-Nomura-USD CNY fix model Projection- 6.7827-260526.pdf
+MinerU batch_id=993351cf-bfce-467f-a1f8-e90f4fbddd56
+MinerU states: done, running, running, running, pending
+MinerU states: done, done, running, done, done
+MinerU states: done, done, done, done, done
+Done. Results written to /home/runner/work/rpt_edit/rpt_edit/xhs_notes/dropbox/260526/shard_0
+All batches completed successfully.

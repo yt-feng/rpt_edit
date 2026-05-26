@@ -1,0 +1,50 @@
+{
+  "input_dir": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs",
+  "total_pdf_count_before_shard": 20,
+  "pdf_count_before_skip": 5,
+  "pdf_count": 5,
+  "batch_size": 5,
+  "shard_index": 0,
+  "shard_count": 40,
+  "max_reports_per_shard": 5,
+  "max_total_reports": 0,
+  "skip_existing": true,
+  "skipped_existing_count": 0,
+  "skipped_existing": [],
+  "failures": 0,
+  "batches": [
+    {
+      "batch_index": 1,
+      "pdf_count": 5,
+      "files": [
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/01-DB-Hawkish from Fed's Waller； inflation expectations jump in Michigan survey-260525.pdf",
+          "batch_file": "/tmp/pdf_batch_001_aurekc9v/pdfs/0001-01-DB-Hawkish from Fed-s Waller- inflation expectations jump in Michigan survey-260525.pdf",
+          "stable_index": "1"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/02-GS-China：Three things in China-260525.pdf",
+          "batch_file": "/tmp/pdf_batch_001_aurekc9v/pdfs/0002-02-GS-China-Three things in China-260525.pdf",
+          "stable_index": "2"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/03-JPM-EM USD 10s30s Spread Curve Report-260526.pdf",
+          "batch_file": "/tmp/pdf_batch_001_aurekc9v/pdfs/0003-03-JPM-EM USD 10s30s Spread Curve Report-260526.pdf",
+          "stable_index": "3"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/04-GS-US Economics Analyst：2026 Mid~Year Capex Update： On Track for a Solid Year-260525.pdf",
+          "batch_file": "/tmp/pdf_batch_001_aurekc9v/pdfs/0004-04-GS-US Economics Analyst-2026 Mid-Year Capex Update- On Track for a Solid Year-260525.pdf",
+          "stable_index": "4"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/05-NOM-USD CNY fix model Projection： 6.7827-260526.pdf",
+          "batch_file": "/tmp/pdf_batch_001_aurekc9v/pdfs/0005-05-NOM-USD CNY fix model Projection- 6.7827-260526.pdf",
+          "stable_index": "5"
+        }
+      ],
+      "returncode": 0,
+      "status": "ok"
+    }
+  ]
+}
