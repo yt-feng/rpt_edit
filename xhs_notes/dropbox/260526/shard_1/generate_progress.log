@@ -1,0 +1,14 @@
+Found 20 total PDFs; shard 1/40 has 5 PDFs, skips 0 already converted, will process 5 PDFs with batch_size=5.
+Running batch 1: 5 PDFs
+Found 5 PDFs.
+Uploading PDF to MinerU: /tmp/pdf_batch_001_sle81w6d/pdfs/0001-06-Bernstein-Asia Industrial Technology and Asia Emerging Robotics Humanoid robots- The road toward attractive ROI in warehouses-260526.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_sle81w6d/pdfs/0002-07-Bernstein-China Semiconductors China Semis- Huawei-s Tau -τ- Law- another DeepSeek moment-260525.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_sle81w6d/pdfs/0003-08-Bernstein-Global Digital Assets The Tokenization Memo- Crypto-s transformation to real world assets -1 n--260526.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_sle81w6d/pdfs/0004-09-Bernstein-Global Energy Storage-Battery Weekly 26 May-260526.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_sle81w6d/pdfs/0005-10-BofA Securities-European Rates Watch-EGB supply- positioning - flows-260525.pdf
+MinerU batch_id=9c6e0e47-37bb-4c9d-930b-c28223b12bbf
+MinerU states: running, done, running, running, waiting-file
+MinerU states: done, done, done, running, done
+MinerU states: done, done, done, done, done
+Done. Results written to /home/runner/work/rpt_edit/rpt_edit/xhs_notes/dropbox/260526/shard_1
+All batches completed successfully.
