@@ -34,6 +34,7 @@ KC Desk Notes / Cloudflare R2 额外需要：
 | `R2_SECRET_ACCESS_KEY` | R2 S3 API secret key |
 | `R2_BUCKET` | R2 bucket 名，KC Desk Notes workflow 已默认使用 `kc-desk-notes-pdfs` |
 | `PASSWORD_SECRET` | Worker 端密码 hash pepper |
+| `KC_DESK_DOWNLOAD_PASSWORD` | PDF 下载密码，Action 会用它和 `PASSWORD_SECRET` 生成公开 hash |
 | `CLOUDFLARE_API_TOKEN` | 可选，用于 Action 自动部署 Worker |
 | `CLOUDFLARE_ACCOUNT_ID` | 可选，用于 Action 自动部署 Worker |
 | `KC_DESK_WORKER_URL` | Pages 前端调用的 Worker URL |

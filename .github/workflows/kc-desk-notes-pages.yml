@@ -100,6 +100,8 @@ jobs:
       - name: Build static Pages artifact
         env:
           KC_DESK_WORKER_URL: ${{ vars.KC_DESK_WORKER_URL }}
+          KC_DESK_DOWNLOAD_PASSWORD: ${{ secrets.KC_DESK_DOWNLOAD_PASSWORD }}
+          PASSWORD_SECRET: ${{ secrets.PASSWORD_SECRET }}
         run: |
           python scripts/build_kc_desk_notes_site.py \
             --catalog-path "kc_desk_notes/data/catalog.json" \
@@ -132,6 +134,7 @@ jobs:
           CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID || vars.CLOUDFLARE_ACCOUNT_ID || secrets.R2_ACCOUNT_ID || vars.R2_ACCOUNT_ID || '8182ec40eab8c484e11ebf5d6a516fbd' }}
           R2_BUCKET_NAME: ${{ secrets.R2_BUCKET || vars.R2_BUCKET || 'kc-desk-notes-pdfs' }}
           PASSWORD_SECRET: ${{ secrets.PASSWORD_SECRET }}
+          KC_DESK_DOWNLOAD_PASSWORD: ${{ secrets.KC_DESK_DOWNLOAD_PASSWORD }}
           PAGES_URL: ${{ vars.KC_DESK_PAGES_URL || steps.deployment.outputs.page_url }}
           R2_OBJECT_PREFIX: ${{ vars.R2_OBJECT_PREFIX || 'reports' }}
         run: |
@@ -145,9 +148,9 @@ jobs:
             echo "Skipping Worker deploy because Cloudflare token/account, R2 bucket, PASSWORD_SECRET, or Pages URL is missing."
             exit 0
           fi
-          if grep -q "REPLACE_WITH_SHA256_HASH" kc_desk_notes/password_rules.json; then
+          if grep -q "REPLACE_WITH_SHA256_HASH" kc_desk_notes/password_rules.json && [ -z "$KC_DESK_DOWNLOAD_PASSWORD" ]; then
             echo "enabled=false" >> "$GITHUB_OUTPUT"
-            echo "Skipping Worker deploy because kc_desk_notes/password_rules.json still contains the placeholder password hash."
+            echo "Skipping Worker deploy because kc_desk_notes/password_rules.json still contains the placeholder password hash and KC_DESK_DOWNLOAD_PASSWORD is missing."
             exit 0
           fi
 

@@ -9,6 +9,8 @@ Required Worker configuration:
 - Vars: `CATALOG_URL`, `PASSWORD_RULES_URL`, `ALLOWED_ORIGIN`
 - Optional var: `R2_OBJECT_PREFIX`, default `reports`
 
+The GitHub Actions deployment can keep `kc_desk_notes/password_rules.json` as a template. If `KC_DESK_DOWNLOAD_PASSWORD` and `PASSWORD_SECRET` are present as GitHub Actions secrets, the Pages artifact receives the generated password hash automatically.
+
 The Pages workflow can generate a `wrangler.toml` during deployment when the GitHub repository has:
 
 - Secret `CLOUDFLARE_API_TOKEN`

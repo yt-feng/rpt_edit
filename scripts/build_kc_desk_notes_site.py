@@ -4,7 +4,9 @@
 from __future__ import annotations
 
 import argparse
+import hashlib
 import json
+import os
 import shutil
 from pathlib import Path
 from typing import Any
@@ -55,10 +57,16 @@ def public_catalog(catalog: dict[str, Any]) -> dict[str, Any]:
 def public_password_rules(rules: dict[str, Any]) -> dict[str, Any]:
     groups = []
     for group in rules.get("groups", []):
+        password_hash = group.get("password_sha256")
+        if password_hash == "REPLACE_WITH_SHA256_HASH":
+            password_secret = os.getenv("PASSWORD_SECRET", "")
+            download_password = os.getenv("KC_DESK_DOWNLOAD_PASSWORD", "")
+            if password_secret and download_password:
+                password_hash = hashlib.sha256(f"{password_secret}:{download_password}".encode("utf-8")).hexdigest()
         groups.append({
             "id": group.get("id"),
             "label": group.get("label"),
-            "password_sha256": group.get("password_sha256"),
+            "password_sha256": password_hash,
             "active": bool(group.get("active", True)),
         })
     return {
