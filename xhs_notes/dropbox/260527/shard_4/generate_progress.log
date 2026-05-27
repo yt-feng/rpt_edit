@@ -1,0 +1,17 @@
+Found 50 total PDFs; shard 4/40 has 5 PDFs, skips 0 already converted, will process 5 PDFs with batch_size=5.
+Running batch 1: 5 PDFs
+Found 5 PDFs.
+Uploading PDF to MinerU: /tmp/pdf_batch_001_me4qlmsq/pdfs/0001-21-UBS-Global Macro Chart of the Day --88-- Can AI offset energy--260526.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_me4qlmsq/pdfs/0002-22-UBS-Global Strategy-Rates Map - Reality Checks on Fed- AI and Transitory Pricing-260526.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_me4qlmsq/pdfs/0003-23-Bernstein-Payments- Processors - IT Services Payments- Shopify-s platform partnerships with payment companies-key takeaways from our expert conversation-260526.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_me4qlmsq/pdfs/0004-24-BofA Securities-Semiconductors-Taiwan-Beneficiaries of further tightening S D in power semis - testing interface-260525.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_me4qlmsq/pdfs/0005-25-BofA Securities-Technology Hardware - Taiwan ABF substrate- stay constructive on favorable supply demand ahead-260525.pdf
+MinerU batch_id=ca573204-030b-4a01-b32c-71627ce8d730
+MinerU states: running, running, running, pending, pending
+MinerU states: done, running, running, done, running
+MinerU states: done, running, running, done, running
+MinerU states: done, running, running, done, running
+MinerU states: done, done, done, done, running
+MinerU states: done, done, done, done, done
+Done. Results written to /home/runner/work/rpt_edit/rpt_edit/xhs_notes/dropbox/260527/shard_4
+All batches completed successfully.
