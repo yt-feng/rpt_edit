@@ -1,0 +1,1960 @@
+# US Banks
+
+# Top ten questions: Asked, answered...and revisited: Mid-year check-In
+
+Industry Overview
+
+# #1 Will bank stocks (once again) outperform the S&P?
+
+Maybe (vs. Yes in January). YTD underperformance resets the bar. Macro clarity + EPS resiliency into 2027 could drive a bid, with large caps at 9–10x 2027E P/E vs. \~12% EPS growth. Three Rs intact—but tested: Regulation, Rates, Rebound still in place, but challenged by stagflation risks. Exhibits 1–4.
+
+# # 2 Will regional banks outperform GSIBs?
+
+Maybe (vs. No). YTD dispersion: capital markets stocks (GS, MS, Trust Banks) and SMID caps have led, while money centers/super-regionals lagged. Increasingly idiosyncratic vs. size-driven. 2H26 could see Main Street reassert itself over Wall Street. Exhibits 5–10.
+
+# #3 Will regulatory shift remain a tailwind?
+
+Yes (Unchanged). Capital proposals largely as expected. Excess capital unlock at regionals surprised positively. Regulatory arbitrage vs. non-banks narrowing; next up: tailoring, liquidity rules. Exhibits 11–15.
+
+# #4 Will bank M&A accelerate?
+
+Yes (Unchanged). Structural headwinds (deposit costs, tech spend, succession, intellectual capital) and a supportive regulatory backdrop should drive M&A, especially ahead of the 2028 election window. Exhibits 16-19.
+
+# #5 Will lack of Fed rate cuts derail bank stocks?
+
+No (Unchanged). Higher-for-longer and curve flattening = negative optics, but macro strength should outweigh pressures (housing, CRE, small/mid business). Exhibits 20-28.
+
+# #6 Will bank stocks become an AI play?
+
+Maybe (vs. No). Narrative skewed to disruption (jobs, deposits, software) vs. productivity gains. We see banks as net beneficiaries, but structural ROE shift unlikely. Exhibits 29-31.
+
+# #7 Will credit quality improve?
+
+No (Unchanged). Stable net charge-offs remain base case, with continued C&I “one-offs” as normalization continues. A full cycle unlikely absent recession. Exhibits 32-39.
+
+# #8 Will digital assets/stablecoins go mainstream?
+
+No (Unchanged). Tokenization gaining traction; faster adoption in B2B (especially capital markets) vs. P2P. CLARITY Act could accelerate institutional uptake. Exhibits 40-41.
+
+# #9 Will domestic capex pick-up?
+
+Yes (Unchanged). Still anchored in AI/data centers, but early signs of modest broadening beyond that core. Exhibits 42-45.
+
+# #10 Will capital markets meet lofty expectations?
+
+Yes (Unchanged). Investment banking momentum (M&A, IPOs, debt issuance), resilient trading, and regulatory flexibility remain tailwinds. Exhibits 46-52.
+
+BofA does and seeks to do business with issuers covered in its research reports. As a result, investors should be aware that the firm may have a conflict of interest that could affect the objectivity of this report. Investors should consider this report as only a single factor in making their investment decision.
+
+Refer to important disclosures on page 39 to 42. Analyst Certification on page 37. Price Objective Basis/Risk on page 31.
+
+# 26 May 2026
+
+Equity
+
+United States
+
+US Banks
+
+Ebrahim H. Poonawala
+
+Research Analyst
+
+BofAS
+
++1 646 743 0490
+
+ebrahim.poonawala@bofa.com
+
+Brandon Berman
+
+Research Analyst
+
+BofAS
+
++1 646 855 3933
+
+brandon.berman@bofa.com
+
+Gabriel Angelini
+
+Research Analyst
+
+BofAS
+
++1 646 855 3081
+
+gabriel.angelini@bofa.com
+
+Michael Campos
+
+Research Analyst
+
+BofAS
+
++1 646 855 3912
+
+michael.c.campos@bofa.com
+
+# Glossary
+
+Also see our January report: US Banks:
+
+Year Ahead 2026: Top ten questions
+
+asked (and answered)
+
+# #1 Will bank stocks outperform S&P 500?
+
+Maybe (vs. Yes in January) after YTD underperformance. Macro clarity + EPS resiliency into 2027 could drive a post-Labor Day/mid-term bid, with large-caps at 9–10x 2027 P/E vs. 13% EPS growth. Bank underperformance is particularly notable, in our view, because of the lack of fundamental drivers. Industry loan growth was very strong in the first quarter (+6% YoY, +9% large caps, +3% mid caps) and NII has proven resilient while rate cut expectations have continued to migrate into 2027. Capital markets momentum was extremely robust in the first quarter, with investment banking revenue rising +30% YoY and trading +17%.
+
+Three Rs intact—but tested: Regulation, Rates, Rebound still in place, but challenged by stagflation risks. While growth trends have been inline to better than we expected in January, the single biggest fundamental shift has occurred in the interest rate backdrop. Higher-for-longer rates while manageable, could create pressure on net interest margins (due to deposit costs), while serving as a headwind to rate sensitive sectors (housing, commercial real estate, small-to-mid businesses). Decisive end to the Iran conflict that leads to lower oil prices could once again cause investors to recalibrate weighting towards a still strong domestic capex cycle, in our opinion.
+
+So, why have banks underperformed? Banks, and in particular large caps, have been the victims of a series of negative headlines despite positive earnings revisions year-to-date. Beginning in January with the proposed cap on credit card interest rates, banks have underperformed the SPX by 670bp (large caps) and 90bp (smid-caps). Concerns around card profitability were closely followed by concerns around NDFI (non-bank) lending with more headline credit issues as well as AI disruption risk (particularly to wealth management franchises). Increasing momentum around the CLARITY Act subsequently resurfaced concerns on the long-term viability of bank funding models.
+
+Exhibit 1: Large cap banks have underperformed the S&P by 650bp+ YTD on negative headlines
+
+Performance vs the S&P 500 index
+
+<table><tr><td>Year</td><td>BKX</td><td>KRX</td><td>S5BANKX</td><td>SPX</td><td>GS</td><td>MS</td><td>C</td><td>JPM</td></tr><tr><td>1995</td><td>54.6%</td><td></td><td>53.9%</td><td>34.1%</td><td></td><td>38.7%</td><td>94.2%</td><td>63.8%</td></tr><tr><td>1996</td><td>36.5%</td><td></td><td>36.7%</td><td>20.3%</td><td></td><td>41.0%</td><td>44.9%</td><td>52.1%</td></tr><tr><td>1997</td><td>40.5%</td><td></td><td>41.9%</td><td>31.0%</td><td></td><td>78.5%</td><td>78.1%</td><td>22.5%</td></tr><tr><td>1998</td><td>6.6%</td><td></td><td>3.7%</td><td>26.7%</td><td></td><td>20.1%</td><td>-7.8%</td><td>29.7%</td></tr><tr><td>1999</td><td>-4.4%</td><td></td><td>-16.0%</td><td>19.5%</td><td></td><td>101.1%</td><td>68.1%</td><td>9.4%</td></tr><tr><td>2000</td><td>17.1%</td><td></td><td>15.3%</td><td>-10.1%</td><td>13.5%</td><td>33.8%</td><td>22.3%</td><td>-12.3%</td></tr><tr><td>2001</td><td>-4.6%</td><td>12.4%</td><td>-2.8%</td><td>-13.0%</td><td>-13.3%</td><td>-29.4%</td><td>-1.1%</td><td>-20.0%</td></tr><tr><td>2002</td><td>-13.0%</td><td>3.6%</td><td>-3.9%</td><td>-23.4%</td><td>-26.6%</td><td>-28.6%</td><td>-25.1%</td><td>-34.0%</td></tr><tr><td>2003</td><td>30.3%</td><td>28.4%</td><td>22.8%</td><td>26.4%</td><td>45.0%</td><td>45.0%</td><td>37.9%</td><td>53.0%</td></tr><tr><td>2004</td><td>6.8%</td><td>18.0%</td><td>10.9%</td><td>9.0%</td><td>5.4%</td><td>-4.1%</td><td>-0.7%</td><td>6.2%</td></tr><tr><td>2005</td><td>-0.3%</td><td>0.5%</td><td>-4.8%</td><td>3.0%</td><td>22.8%</td><td>2.2%</td><td>0.7%</td><td>1.7%</td></tr><tr><td>2006</td><td>13.2%</td><td>5.6%</td><td>12.3%</td><td>13.6%</td><td>56.1%</td><td>43.5%</td><td>14.8%</td><td>21.7%</td></tr><tr><td>2007</td><td>-24.6%</td><td>-24.4%</td><td>-32.5%</td><td>3.5%</td><td>7.9%</td><td>-34.8%</td><td>-47.1%</td><td>-9.6%</td></tr><tr><td>2008</td><td>-50.0%</td><td>-21.7%</td><td>-49.9%</td><td>-38.5%</td><td>-60.8%</td><td>-69.8%</td><td>-77.2%</td><td>-27.8%</td></tr><tr><td>2009</td><td>-3.6%</td><td>-24.2%</td><td>-8.9%</td><td>23.5%</td><td>100.1%</td><td>84.5%</td><td>-50.7%</td><td>32.2%</td></tr><tr><td>2010</td><td>22.2%</td><td>18.2%</td><td>18.7%</td><td>12.8%</td><td>-0.4%</td><td>-8.1%</td><td>42.9%</td><td>1.8%</td></tr><tr><td>2011</td><td>-24.6%</td><td>-7.1%</td><td>-12.3%</td><td>0.0%</td><td>-46.2%</td><td>-44.4%</td><td>-44.4%</td><td>-21.6%</td></tr><tr><td>2012</td><td>30.2%</td><td>10.5%</td><td>21.2%</td><td>13.4%</td><td>41.1%</td><td>26.4%</td><td>50.4%</td><td>32.2%</td></tr><tr><td>2013</td><td>35.1%</td><td>43.7%</td><td>32.3%</td><td>29.6%</td><td>39.0%</td><td>64.0%</td><td>31.7%</td><td>33.0%</td></tr><tr><td>2014</td><td>7.2%</td><td>0.2%</td><td>13.3%</td><td>11.4%</td><td>9.3%</td><td>23.7%</td><td>3.8%</td><td>7.0%</td></tr><tr><td>2015</td><td>-1.6%</td><td>3.5%</td><td>-1.1%</td><td>-0.7%</td><td>-7.0%</td><td>-18.0%</td><td>-4.4%</td><td>5.5%</td></tr><tr><td>2016</td><td>25.6%</td><td>35.7%</td><td>21.4%</td><td>9.5%</td><td>32.9%</td><td>32.8%</td><td>14.8%</td><td>30.7%</td></tr><tr><td>2017</td><td>16.3%</td><td>-0.3%</td><td>20.0%</td><td>19.4%</td><td>6.4%</td><td>24.2%</td><td>25.2%</td><td>23.9%</td></tr><tr><td>2018</td><td>-19.6%</td><td>-19.4%</td><td>-18.4%</td><td>-6.2%</td><td>-34.4%</td><td>-24.4%</td><td>-30.0%</td><td>-8.7%</td></tr><tr><td>2019</td><td>32.1%</td><td>20.4%</td><td>36.5%</td><td>28.9%</td><td>37.6%</td><td>28.9%</td><td>53.5%</td><td>42.8%</td></tr><tr><td>2020</td><td>-13.6%</td><td>-12.1%</td><td>-16.8%</td><td>16.3%</td><td>14.7%</td><td>34.1%</td><td>-22.8%</td><td>-8.8%</td></tr><tr><td>2021</td><td>35.0%</td><td>33.2%</td><td>32.3%</td><td>26.9%</td><td>45.1%</td><td>43.2%</td><td>-2.1%</td><td>24.6%</td></tr><tr><td>2022</td><td>-23.7%</td><td>-9.5%</td><td>-21.6%</td><td>-19.4%</td><td>-10.2%</td><td>-13.4%</td><td>-25.1%</td><td>-15.3%</td></tr><tr><td>2023</td><td>-4.8%</td><td>-4.0%</td><td>7.1%</td><td>24.2%</td><td>12.3%</td><td>9.7%</td><td>13.7%</td><td>26.8%</td></tr><tr><td>2024</td><td>32.8%</td><td>9.6%</td><td>34.2%</td><td>23.3%</td><td>48.4%</td><td>34.8%</td><td>36.8%</td><td>40.9%</td></tr><tr><td>2025</td><td>28.8%</td><td>3.3%</td><td>30.4%</td><td>16.4%</td><td>53.5%</td><td>41.2%</td><td>65.8%</td><td>34.4%</td></tr><tr><td>2026</td><td>2.5%</td><td>8.3%</td><td>-4.3%</td><td>9.2%</td><td>13.4%</td><td>13.2%</td><td>7.2%</td><td>-4.9%</td></tr></table>
+
+Source: Bloomberg   
+BofA GLOBAL RESEARCH
+
+That said, we continue to believe the backdrop remains constructive for banks. The banking industry is currently benefitting from two structural shifts: 1) regulatory changes (the most important of which were announced in March) following 15 years of ever-changing regulatory burdens that hampered the competitiveness of the sector vs non-regulated financials (reflected in the historic P/E discount for large cap banks vs midcaps); 2) sustained period of normalized interest rates serving as a tailwind to NIM.
+
+Feels like 1998: Banks outperformed the S&P 500 over a 3+ year time horizon in both the mid-to-late 1990s and in the early 2000s.
+
+Mid-to-late 1990s had tailwinds from bank de-regulation coupled with a strong US economy and expectations for tech-led productivity gains that were fueling equity markets, while the early 2000s saw a tech-driven market sell-off due to the dotcom bubble bursting.
+
+Strong performance of capital markets-related names in late 1990s noteworthy (highlight 1999 below) as a reminder of investor appetite to own these stocks during periods of accelerating capital markets momentum.
+
+On top of these fundamental tailwinds, from a macro perspective banks also stand to benefit from what may be a generational capex cycle as corporates invest in AI. With that in mind, it is worth remembering how banks performed the last time the economy underwent a fundamental technological shift.
+
+Banks outperformed the S&P 500 for three consecutive years in late 1990s, and then again in early 2000s. We see similarities to both: The 1990s had strong macro tailwinds coupled with banking de-regulation, while the early 2000s featured a tech led sell-off driven by a new, cutting-edge tech innovation (internet then, AI now).
+
+Not surprisingly bank stocks stopped outperforming on a consistent basis following the Great Financial Crisis (2008-09) as the industry lost control over capital management given an unpredictable regulatory backdrop (right until 2024), saw its competitiveness erode vs. nonregulated financials, while dealing with zero-bound interest rates that pressured net interest margins.
+
+Exhibit 2: Banks trade at a steep discount to the S&P 500   
+Fwd P/E of S&P 500 ex Mag7 vs BKX, KRX P/E   
+![](images/06a805b661522482434e699986c6585c981ec6738476fdeec29083968dcee93a.jpg)
+
+<details>
+<summary>line</summary>
+
+| Year | S&P ex M7 spread vs BKX | S&P ex M7 spread vs KRX | Median BKX spread vs S&P ex M7 | Median KRX spread vs S&P ex M7 |
+|------|--------------------------|--------------------------|----------------------------------|----------------------------------|
+| 2011 | ~0x                      | ~6x                      | ~-4x                             | ~-3x                             |
+| 2012 | ~-2x                     | ~0x                      | ~-4x                             | ~-3x                             |
+| 2013 | ~-3x                     | ~1x                      | ~-4x                             | ~-3x                             |
+| 2014 | ~-4x                     | ~0x                      | ~-4x                             | ~-3x                             |
+| 2015 | ~-5x                     | ~-1x                     | ~-4x                             | ~-3x                             |
+| 2016 | ~-6x                     | ~2x                      | ~-4x                             | ~-3x                             |
+| 2017 | ~-4x                     | ~-1x                     | ~-4x                             | ~-3x                             |
+| 2018 | ~-5x                     | ~-2x                     | ~-4x                             | ~-3x                             |
+| 2019 | ~-6x                     | ~-3x                     | ~-4x                             | ~-3x                             |
+| 2020 | ~-7x                     | ~-5x                     | ~-4x                             | ~-3x                             |
+| 2021 | ~-8x                     | ~-6x                     | ~-4x                             | ~-3x                             |
+| 2022 | ~-7x                     | ~-5x                     | ~-4x                             | ~-3x                             |
+| 2023 | ~-8x                     | ~-6x                     | ~-4x                             | ~-3x                             |
+| 2024 | ~-9x                     | ~-7x                     | ~-4x                             | ~-3x                             |
+| 2025 | ~-8x                     | ~-9x                     | ~-4x                             | ~-3x                             |
+</details>
+
+Source: Bloomberg, BofA Global Research   
+BofA GLOBAL RESEARCH
+
+Bank EPS outlook today is best it has been post-GFC: Late 1990s saw bank stocks generate low double-digit EPS growth behind the dual tailwinds of a strong US economy and de-regulation. When the economy stumbled in the early 2000s, banks grew EPS at a higher rate than S&P 500 and outperformed the broader market.
+
+Coming out of the Global Financial Crisis, bank EPS growth has been weaker growing at an avg of just \~6.5%/yr from 2010-2019. More recently, EPS growth has been negative (2022-2023) due to sharp rate hikes.
+
+Today, we see the backdrop as having more similarities to the late 90s/early 2000s than at any point post GFC and expect banks to generate low double-digit EPS growth over this period.
+
+Exhibit 3: Bank P/E multiples, valuations between banks have not recovered to pre-GFC levels   
+P/E valuation by year, average, and maximum P/E of BKX constituents that have existed 1990-present   
+![](images/c297a45f75389e8e0e1443b83b9aa15e81f16fed5f29ee7ab3abc99c1a6c912c.jpg)
+
+<details>
+<summary>line</summary>
+
+| Year | Avg  | Max  |
+|------|------|------|
+| 1990 | 6.0  | 11.0 |
+| 1995 | 11.0 | 12.5 |
+| 2000 | 18.0 | 26.0 |
+| 2005 | 12.5 | 17.0 |
+| 2010 | 12.0 | 12.5 |
+| 2015 | 12.5 | 17.0 |
+| 2020 | 12.0 | 17.5 |
+| 2025 | 12.0 | 12.5 |
+</details>
+
+Source: Bloomberg   
+BofA GLOBAL RESEARCH
+
+Mid-1990s saw P/E expand by \~7x due to de-reg driven by lifting interstate banking restrictions and a booming US economy with internet led productivity gains on the come. We see similar dynamics occurring today with punitive post-GFC regulations being lifted, GDP growth expected to receive a boost from fiscal actions while AI investments are raising expectations for productivity gains.
+
+Exhibit 4: Bank P/E ratios expanded sharply during the 1990s, which had similar dynamics to today. Forward P/E ratios by multi-year period since the 1990s   
+![](images/d60d34276b71675c892b20195c1749271638970a09452280b9ade5f4b309d90f.jpg)
+
+<details>
+<summary>bar</summary>
+
+| Period | Avg P/E (x) | Max P/E (x) | Avg P/E Expansion (x) |
+| :--- | :--- | :--- | :--- |
+| 1990-1995 | 9.5 | 13.8 | 1.9 |
+| 1996-1999 | 14.2 | 21.3 | 6.6 |
+| 2000-2006 | 13.2 | 18.9 | 0.0 |
+| 2012-2025 | 11.4 | 13.6 | 1.0 |
+</details>
+
+Source: Bloomberg   
+BofA GLOBAL RESEARCH
+
+# #2 Will regional banks outperform GSIBs?
+
+Maybe (vs. No). YTD dispersion: capital markets stocks (GS, MS, Trust Banks) and SMID caps have led, while money centers/super-regionals lagged. Increasingly idiosyncratic vs. size-driven. 2H26 could see Main Street reassert over Wall Street given the relatively discounted valuations, renewed confidence in domestic capex cycle.
+
+Capital markets momentum likely to continue: We continue to favor the capital markets theme, view money center banks – we view JPM and Citi as offering relatively more attractive risk/reward to position for this theme, but both banks exposed to consumer slowdown, AI-driven deposit disruption concerns. Pure play – GS and MS should see momentum continue on the back of the positive EPS revision cycle, improving capital flex.
+
+Trust banks capital markets beneficiaries, we recommend BNY driven by significant runway for self-help, best positioned for AI and digital asset adoption.
+
+Regional banks awaiting macro clarity that could drive a re-rating in stocks. Domestic capex momentum, improving capital flex (on the back of the Standardized Approach capital proposals) underpin our forecast for double digit EPS growth 2026 and 2027. Top stocks: Fifth Third, PNC, US Bancorp, KeyCorp, East West, UMB Financial, First Horizon.
+
+Large banks surged +5% in the first week of the year; however concerns around a potential cap on credit card interest rates became the first in a series of negative headlines to hamper large cap bank performance despite what has remained, in our view, strong fundamental performance. Large cap banks were also hurt by AI disruption concerns (particularly in wealth management) in early February as well as credit concerns on banks' lending to NDFI (non-bank financial institutions) after the default of a large borrower in the UK. Diversion in performance is increasingly idiosyncratic.
+
+Exhibit 5: Large banks 1-year forward P/E ratio still trading more than 1 st dev above historic avg. Large cap banks 1 year forward P/E, % of mid cap banks   
+![](images/665e987e78bb274491d7f2cf7283614c5c1e2691b0b90f39c28a4b61b1dbcb1f.jpg)
+
+<details>
+<summary>line</summary>
+
+| Year | BKX P/E % KRX |
+|------|---------------|
+| 2016 | ~75%          |
+| 2017 | ~85%          |
+| 2018 | ~88%          |
+| 2019 | ~90%          |
+| 2020 | ~130%         |
+| 2021 | ~105%         |
+| 2022 | ~85%          |
+| 2023 | ~100%         |
+| 2024 | ~105%         |
+| 2025 | ~115%         |
+| 2026 | ~110%         |
+</details>
+
+Source: Bloomberg   
+BofA GLOBAL RESEARCH
+
+GSIBs have outperformed over the last 1, 3, and 5 years through the combination of fortress balance sheets (high quality), greater exposure to capital markets (investment banking + trading).
+
+Exhibit 6: GSIBs have outperformed regionals over the past 1, 3, and 5 years   
+1 year, 3 year, and 5 year performance by industry group   
+![](images/69062c0f05fbdfc47d9bfae1f84b90b0a26ff2179251df33960f33db63c395ac.jpg)
+
+<details>
+<summary>bar</summary>
+
+| Category | 1 year (%) | 3 year (%) | 5 year (%) |
+| :--- | :--- | :--- | :--- |
+| GSIBs | 44 | 149 | 103 |
+| Trust Banks | 58 | 169 | 97 |
+| Super-Regionals | 24 | 83 | 22 |
+| Smid Caps | 26 | 81 | 26 |
+</details>
+
+Source: Bloomberg   
+BofA GLOBAL RESEARCH
+
+While rate cut expectations have been delayed, the yield curve has flattened, but continues to support current valuations.
+
+Exhibit 7: Forward curve provides support for current valuation mltpls
+Bank 1 year forward P/E multiple vs 2s/10s spread   
+![](images/179fca2f3e85c7dea57ea277c385b82967af0624afa274be8a099eba29ae1de2.jpg)
+
+<details>
+<summary>line</summary>
+
+| Year | USYC2Y10 (bp) | S5BANKX (bp) |
+|------|---------------|--------------|
+| 2026 | 12.0          | 12.0         |
+</details>
+
+Source: Bloomberg   
+BofA GLOBAL RESEARCH
+
+Exhibit 8: Recent ISM acceleration may be catalyst for sentiment
+Bank P/E has trended similarly to ISM over last 25+ years   
+![](images/ff97dfcec02c89bb6125790e6340094b3854334402eb75dbc54e8d9b41683deb.jpg)
+
+<details>
+<summary>line</summary>
+
+| Year | ISM  | Banks P/E |
+|------|------|-----------|
+| 1998 | 59   | 59        |
+| 2001 | 46   | 53        |
+| 2004 | 59   | 53        |
+| 2007 | 53   | 53        |
+| 2010 | 59   | 53        |
+| 2013 | 53   | 53        |
+| 2016 | 59   | 53        |
+| 2019 | 53   | 53        |
+| 2022 | 59   | 53        |
+| 2025 | 53   | 53        |
+</details>
+
+Source: Bloomberg   
+BofA GLOBAL RESEARCH
+
+# Yes, we thought loan growth should actually pick-up in 2026...
+
+heading into the year, we argued that loan growth could accelerate and outperform consensus estimates for 2026. Loan growth started off the year strong, +9% YoY 1Q26 at large caps and +3% at mid-caps on the back of strong industry growth through March as seen in H.8 data. However macro uncertainty, tied, in particular, to the war in Iran, seem to have more recently put a damper on lending momentum.
+
+Exhibit 9: Loan growth has rebounded on resilient GDP growth   
+YoY GDP, loan growth 1987-present   
+![](images/bcb791d1b951165482c1433cb71f8d958c9d007cf04cee5c8da0df3c44afcbc5.jpg)
+
+<details>
+<summary>line</summary>
+
+| Year | GDP    | Loan Growth |
+|------|--------|-------------|
+| 1978 | ~12.0% | ~18.0%      |
+| 1982 | ~14.0% | ~10.0%      |
+| 1986 | ~8.0%  | ~14.0%      |
+| 1990 | ~6.0%  | ~8.0%       |
+| 1994 | ~5.0%  | ~-2.0%      |
+| 1998 | ~6.0%  | ~12.0%      |
+| 2002 | ~4.0%  | ~12.0%      |
+| 2006 | ~7.0%  | ~13.0%      |
+| 2010 | ~-5.0% | ~-8.0%      |
+| 2014 | ~4.0%  | ~8.0%       |
+| 2018 | ~5.0%  | ~8.0%       |
+| 2022 | ~-8.0% | ~-5.0%      |
+| 2026 | ~5.0%  | ~7.0%       |
+</details>
+
+Source: Bloomberg   
+BofA GLOBAL RESEARCH
+
+Exhibit 10: Implied loan growth remains 7%+ despite recent decel.   
+YoY growth in loans across all commercial banks   
+![](images/df49c9075f7ea0cd5cbe815b73598a788550d834389a8f1840606edfa256f417.jpg)
+
+<details>
+<summary>line</summary>
+
+| Date       | Value |
+| ---------- | ----- |
+| 1/3/2024   | 2.5%  |
+| 6/3/2024   | 2.8%  |
+| 11/3/2024  | 2.6%  |
+| 4/3/2025   | 3.5%  |
+| 9/3/2025   | 5.0%  |
+| 2/3/2026   | 7.5%  |
+</details>
+
+Source: Bloomberg   
+BofA GLOBAL RESEARCH
+
+# #3 Will regulatory shift remain a tailwind?
+
+Yes (Unchanged). Capital proposals largely as expected, but excess capital unlock at regionals surprised positively. Gap vs. non-banks narrowing; next up: tailoring, liquidity rules. Relevant research: US Banks: Regulatory regime shift continues with capital proposals
+
+Regulatory arbitrage vs. non-banks narrowing: Capital proposals (GSIBs, regionals) released in March reaffirmed our confidence in the structural shift vs. post-GFC years. Combined with a more pragmatic supervisory approach this has significantly boosted the competitive positioning of the banks vs. non-banks.
+
+Regional bank should see \~100bp ROTCE boost from a shift towards Standardized Approach (reduced risk density) creating significant flex to fund growth, and return capital to shareholders.
+
+Disintermediation risks on lending that have been elevated over the past five years reduced as banks regain their footing while non-bank lenders enter a period of recalibration.
+
+We view the regulatory regime shift currently underway as a multi-year, structural tailwind that should rebase growth and profitability outlooks. Importantly, the inflection point on post-crisis regulations, which had consistently demanded increasing capital, occurred in 2023-2024 under a Democratic administration. We highlight this to address frequent investor questions around the risk of reversal should there be a change in administration following the 2028 US Presidential elections. While tone at the top matters, we believe the likelihood of a material reversal is low.
+
+Exhibit 11: Federal reserve estimates suggest +1.9% aggregate RWA inflation   
+RWA inflation by risk category 
+
+<table><tr><td></td><td>Std</td><td>Adv</td><td>ERBA</td><td>vs Adv</td><td>vs Std</td></tr><tr><td>Credit risk</td><td></td><td>$4,890</td><td>$6,165</td><td>26%</td><td></td></tr><tr><td>Operational Risk</td><td>$7,235</td><td>1745</td><td>927</td><td>-47%</td><td></td></tr><tr><td>CVA</td><td></td><td>280</td><td>207</td><td>-26%</td><td></td></tr><tr><td>Market Risk</td><td>453</td><td>453</td><td>546</td><td>21%</td><td>21%</td></tr><tr><td>Total</td><td>7673</td><td>7362</td><td>7820</td><td>6.2%</td><td>1.9%</td></tr></table>
+
+Source: Federal Reserve   
+BofA GLOBAL RESEARCH
+
+JPM expects RWA could rise 6% from ERBA, as proposed, while Wells Fargo expects RWA to fall 7%. Citi anticipates a moderate net benefit. See Exhibits 12 and 13.
+
+Exhibit 12: GSIB surcharges would rise to 3.1%, on average, in 2028 if current rules remain in effect
+
+GSIB surcharges based on year-end 2025 data and current rules
+
+<table><tr><td>Systemic indicator</td><td>Coefficient</td><td>JPM</td><td>C</td><td>WFC</td><td>GS</td><td>MS</td><td>BK</td><td>STT</td></tr><tr><td>Total exposures</td><td>4.42%</td><td>237</td><td>147</td><td>110</td><td>102</td><td>77</td><td>22</td><td>17</td></tr><tr><td>Intra-financial assets</td><td>12.01%</td><td>51</td><td>33</td><td>33</td><td>37</td><td>29</td><td>10</td><td>11</td></tr><tr><td>Intra-financial liabilities</td><td>12.49%</td><td>73</td><td>50</td><td>20</td><td>20</td><td>13</td><td>41</td><td>32</td></tr><tr><td>Securities outstanding</td><td>9.06%</td><td>139</td><td>71</td><td>58</td><td>71</td><td>67</td><td>12</td><td>6</td></tr><tr><td>Interconnectedness</td><td></td><td>263</td><td>155</td><td>110</td><td>127</td><td>109</td><td>63</td><td>49</td></tr><tr><td>Notional OTC derivs</td><td>0.16%</td><td>79</td><td>69</td><td>26</td><td>63</td><td>47</td><td>2</td><td>4</td></tr><tr><td>Trdg and AFS securities</td><td>30.17%</td><td>93</td><td>38</td><td>31</td><td>78</td><td>59</td><td>15</td><td>4</td></tr><tr><td>Level 3 assets</td><td>161.18%</td><td>41</td><td>17</td><td>11</td><td>34</td><td>15</td><td>0</td><td>0</td></tr><tr><td>Complexity</td><td></td><td>213</td><td>124</td><td>69</td><td>175</td><td>121</td><td>17</td><td>9</td></tr><tr><td>Cross-jurisdictional claims</td><td>9.28%</td><td>106</td><td>102</td><td>24</td><td>63</td><td>39</td><td>10</td><td>10</td></tr><tr><td>Cross-jurisdictional liabilities</td><td>9.93%</td><td>105</td><td>120</td><td>11</td><td>65</td><td>28</td><td>18</td><td>15</td></tr><tr><td>Cross-jurisdictional activity</td><td></td><td>211</td><td>222</td><td>35</td><td>128</td><td>66</td><td>28</td><td>25</td></tr><tr><td>S/T Wholesale Funding</td><td></td><td>165</td><td>142</td><td>54</td><td>271</td><td>332</td><td>179</td><td>124</td></tr><tr><td>Total G-SIB Score (bp)</td><td></td><td>1,089</td><td>790</td><td>378</td><td>803</td><td>706</td><td>310</td><td>223</td></tr><tr><td>G-SIB Surcharge</td><td></td><td>5.5%</td><td>4.0%</td><td>2.0%</td><td>4.0%</td><td>3.5%</td><td>1.5%</td><td>1.0%</td></tr></table>
+
+Source: Company filings, BofA Global Research   
+BofA GLOBAL RESEARCH
+
+Exhibit 13: Under the proposed rule, we estimate GSIB surcharges would be just 2.5%, on average, in 2028
+
+GSIB surcharges based on 2025 data and proposed rules
+
+<table><tr><td>Systemic indicator</td><td>Coefficient</td><td>JPM</td><td>C</td><td>WFC</td><td>GS</td><td>MS</td><td>BK</td><td>STT</td></tr><tr><td>Total exposures</td><td>3.686%</td><td>192.7</td><td>118.8</td><td>87.7</td><td>82.5</td><td>61.2</td><td>17.9</td><td>14.2</td></tr><tr><td>Intra-financial assets</td><td>10.006%</td><td>43.5</td><td>28</td><td>24</td><td>29</td><td>24</td><td>9</td><td>9</td></tr><tr><td>Intra-financial liabilities</td><td>10.408%</td><td>62.9</td><td>40</td><td>16</td><td>15</td><td>10</td><td>33</td><td>27</td></tr><tr><td>Securities outstanding</td><td>7.547%</td><td>111.1</td><td>57</td><td>45</td><td>54</td><td>50</td><td>9</td><td>5</td></tr><tr><td>Interconnectedness</td><td></td><td>217.6</td><td>125</td><td>84</td><td>98</td><td>84</td><td>51</td><td>41</td></tr><tr><td>Notional OTC derivs</td><td>0.129%</td><td>74.2</td><td>62</td><td>20</td><td>54</td><td>45</td><td>2</td><td>4</td></tr><tr><td>Trdg and AFS securities</td><td>25.141%</td><td>101.4</td><td>33</td><td>23</td><td>63</td><td>52</td><td>12</td><td>4</td></tr><tr><td>Level 3 assets</td><td>134.314%</td><td>33.7</td><td>13</td><td>10</td><td>29</td><td>12</td><td>0</td><td>0</td></tr><tr><td>Complexity</td><td></td><td>209.2</td><td>108</td><td>54</td><td>146</td><td>109</td><td>13</td><td>8</td></tr><tr><td>Cross-jurisdictional claims</td><td>7.731%</td><td>99.9</td><td>92</td><td>16</td><td>54</td><td>33</td><td>9</td><td>9</td></tr><tr><td>Cross-jurisdictional liabilities</td><td>8.272%</td><td>100.2</td><td>102</td><td>8</td><td>56</td><td>24</td><td>15</td><td>14</td></tr><tr><td>Cross-jurisdictional activity</td><td></td><td>200.1</td><td>194</td><td>24</td><td>109</td><td>56</td><td>24</td><td>22</td></tr><tr><td>S/T Wholesale Funding</td><td>23.003%</td><td>194.9</td><td>115</td><td>40</td><td>121</td><td>105</td><td>19</td><td>11</td></tr><tr><td>Total G-SIB Score (bp)</td><td></td><td>1,044</td><td>679</td><td>298</td><td>573</td><td>428</td><td>129</td><td>98</td></tr><tr><td>G-SIB Surcharge</td><td></td><td>5.3%</td><td>3.5%</td><td>1.6%</td><td>3.0%</td><td>2.2%</td><td>1.0%</td><td>1.0%</td></tr></table>
+
+Source: BofA Global Research, Company filings   
+BofA GLOBAL RESEARCH
+
+Super-regional banks disclosed Basel 3 impact suggests an \~9% RWA benefit, on average.
+
+Exhibit 14: Super regional banks expect 9% RWA benefit, on average   
+Super regional expected RWA benefit from capital proposals   
+![](images/c907944af121888448aea7909ec7f4d30ad9a2c9019a00f4553375df9615f431.jpg)
+
+<details>
+<summary>bar</summary>
+
+| Category | Value (%) |
+|---|---|
+| PNFP | -6.0 |
+| USB | -7.0 |
+| HBAN | -7.8 |
+| MTB | -8.0 |
+| TFC | -9.0 |
+| KEY | -9.0 |
+| PNC | -10.0 |
+| FITB | -10.0 |
+| CFG | -10.0 |
+| RF | -10.0 |
+</details>
+
+Source: Company filings, BofA Global Research   
+BofA GLOBAL RESEARCH
+
+The Fed expects proposed changes to the annual stress test could provide an additional 240bp benefit to CET1 capital requirements across Category I/II banks.
+
+Exhibit 15: The proposed 2026 stress test scenario is slightly more punitive vs 2025   
+2026 proposed stress test scenario vs historic scenarios 
+
+<table><tr><td></td><td>Starting Point</td><td>Stressed Level</td><td>Ending Point</td><td>2020</td><td>2021</td><td>2022</td><td>2023</td><td>2024</td><td>2025</td><td>2026</td><td>vs 2025 Δ</td><td>More/less Severe</td></tr><tr><td colspan="13">Domestic</td></tr><tr><td>Dow Jones Index</td><td>62,543</td><td>29,053</td><td>56,289</td><td>-50%</td><td>-55%</td><td>-55%</td><td>-45%</td><td>-55%</td><td>-50%</td><td>-54%</td><td>(355bp)</td><td>More</td></tr><tr><td>Real GDP growth</td><td>0.80%</td><td>(6.10%)</td><td>3.90%</td><td>(1,190bp)</td><td>(920bp)</td><td>(1,210bp)</td><td>(1,427bp)</td><td>(1,310bp)</td><td>(1,120bp)</td><td>(690bp)</td><td>430bp</td><td>Less</td></tr><tr><td>Unemployment rate</td><td>4.50%</td><td>10.00%</td><td>8.00%</td><td>(650bp)</td><td>(400bp)</td><td>(580bp)</td><td>(640bp)</td><td>(630bp)</td><td>(590bp)</td><td>(550bp)</td><td>40bp</td><td>Less</td></tr><tr><td>10-year Treasury yield</td><td>4.30%</td><td>2.30%</td><td>2.40%</td><td>(110bp)</td><td>(60bp)</td><td>(90bp)</td><td>(317bp)</td><td>(370bp)</td><td>(330bp)</td><td>(200bp)</td><td>130bp</td><td>Less</td></tr><tr><td>Mortgage rate</td><td>6.40%</td><td>6.40%</td><td>4.80%</td><td>70bp</td><td>100bp</td><td>70bp</td><td>0bp</td><td>0bp</td><td>0bp</td><td>0bp</td><td>0bp</td><td>Similar</td></tr><tr><td>Market Volatility Index (VIX)</td><td>23</td><td>72</td><td>28</td><td>240%</td><td>74%</td><td>141%</td><td>123%</td><td>223%</td><td>136%</td><td>210%</td><td>(7,484bp)</td><td>More</td></tr><tr><td>CRE Price Index</td><td>311</td><td>187</td><td>196</td><td>-35%</td><td>-40%</td><td>-39%</td><td>-40%</td><td>-40%</td><td>-30%</td><td>-40%</td><td>(1,010bp)</td><td>More</td></tr><tr><td>House Price Index</td><td>315</td><td>225</td><td>243</td><td>-28%</td><td>-24%</td><td>-29%</td><td>-38%</td><td>-36%</td><td>-34%</td><td>-29%</td><td>497bp</td><td>Less</td></tr><tr><td>BBB corporate yield</td><td>5.60%</td><td>8.20%</td><td>4.20%</td><td>330bp</td><td>370bp</td><td>390bp</td><td>52bp</td><td>40bp</td><td>60bp</td><td>260bp</td><td>200bp</td><td>More</td></tr></table>
+
+<table><tr><td colspan="13">International</td></tr><tr><td>Euro area real GDP growth</td><td>1.00%</td><td>(4.70%)</td><td>8.10%</td><td>(910bp)</td><td>0bp</td><td>(850bp)</td><td>(511bp)</td><td>(470bp)</td><td>(570bp)</td><td>(860bp)</td><td>(290bp)</td><td>More</td></tr><tr><td>USD/euro exchange rate</td><td>1.04</td><td>0.93</td><td>1.02</td><td>-12%</td><td>-4%</td><td>-12%</td><td>-6%</td><td>-9%</td><td>-10%</td><td>-13%</td><td>(258bp)</td><td>More</td></tr><tr><td>Developing Asia real GDP growth</td><td>4.50%</td><td>(1.30%)</td><td>5.80%</td><td>(690bp)</td><td>(1,300bp)</td><td>(830bp)</td><td>(570bp)</td><td>(700bp)</td><td>(580bp)</td><td>(220bp)</td><td>360bp</td><td>Less</td></tr><tr><td>Japan real GDP growth</td><td>1.30%</td><td>(8.80%)</td><td>8.50%</td><td>(960bp)</td><td>(1,110bp)</td><td>(1,050bp)</td><td>(1,156bp)</td><td>(840bp)</td><td>(1,010bp)</td><td>(810bp)</td><td>200bp</td><td>Less</td></tr><tr><td>Yen/USD exchange rate</td><td>157.40</td><td>153.40</td><td>154.60</td><td>-3%</td><td>-2%</td><td>-9%</td><td>-4%</td><td>-2%</td><td>-3%</td><td>-1%</td><td>156bp</td><td>Less</td></tr><tr><td>U.K. real GDP growth</td><td>1.60%</td><td>(3.90%)</td><td>7.90%</td><td>(730bp)</td><td>0bp</td><td>(680bp)</td><td>(440bp)</td><td>(530bp)</td><td>(550bp)</td><td>(890bp)</td><td>(340bp)</td><td>More</td></tr><tr><td>USD/pound exchange rate</td><td>1.25</td><td>1.12</td><td>1.23</td><td>0%</td><td>0%</td><td>-12%</td><td>-6%</td><td>-9%</td><td>-10%</td><td>-13%</td><td>(258bp)</td><td>More</td></tr></table>
+
+Source: Federal Reserve, BofA Global Research
+
+BofA GLOBAL RESEARCH
+
+# #4 Will bank M&A accelerate?
+
+Yes (Unchanged). Structural headwinds (deposit costs, tech spend, succession, intellectual capital) and a supportive regulatory backdrop should drive M&A, especially ahead of the 2028 election window.
+
+Bid-ask spread + macro limiting factors: Lack of relative valuation differential between potential buyers (limiting ability to pay an attractive takeout premium) and potential sellers (lack of deal premium tempers desire to give up independence) remains among the biggest headwind to deal-making. Macro-economic clarity, mid-term elections could set the stage for a pick-up in M&A activity over the next 12-24 months.
+
+While deal activity among large cap banks has been tepid YTD, in part driven by weaker valuations, we expect an acceleration in the second half of the year now that major rule makings (Basel 3, GSIB, ERBA) are behind us and banks have more visibility on capital requirements than at any point in the last decade. Also worth noting that the first half of 2026 saw the integration or closing of several large transactions including HBAN/VBTX, HBAN/CADE, FITB/CMA, PFNP/SNV, and PNC/FBK. Consolidation has been a multi-decade theme for the sector, and we expect regional banks to continue adding scale, product capabilities, lower cost deposits via M&A as they look to better position themselves to compete against money center bank peers and non-banks.
+
+Exhibit 16: Bank deals closing 36% faster than 2021-2024   
+Days to close for bank M&A, by year 2021-2025   
+![](images/511d3361c5184180caba4b7098ad686916049e202b52c0ce503ecd6663d29616.jpg)
+
+<details>
+<summary>bar</summary>
+
+| Year | Value |
+|---|---|
+| 2021 announced | 209 |
+| 2022 announced | 236 |
+| 2023 announced | 227 |
+| 2024 announced | 213 |
+| 2025 announced | 137 |
+Biden-era, 223
+</details>
+
+Source: S&P Cap IQ Pro   
+BofA GLOBAL RESEARCH
+
+Exhibit 17: Quantity, value of bank M&A accelerated in 2025   
+Bank M&A transactions by size, value   
+![](images/f23c06a269cb4a73b5f54f2912fe0f3d5997f63e5955ed0fef639fda9007b62a.jpg)  
+Source: S&P Cap IQ Pro   
+BofA GLOBAL RESEARCH
+
+Exhibit 18: Lower deal premiums have not accelerated bank M&A   
+Deal multiples remain above industry-wide valuation   
+![](images/2a5a108d5323521e81a83314e9678a4fd02a00418c25c7ae8dd311483373acf4.jpg)
+
+<details>
+<summary>line</summary>
+
+| Year | Deal Multiple | 2Y fwd P/E |
+|------|---------------|------------|
+| 2012 | 19.0          | 13.0       |
+| 2013 | 17.5          | 13.5       |
+| 2014 | 26.0          | 13.8       |
+| 2015 | 21.5          | 14.0       |
+| 2016 | 21.8          | 13.8       |
+| 2017 | 22.2          | 14.1       |
+| 2018 | 18.8          | 13.2       |
+| 2019 | 17.5          | 10.5       |
+| 2020 | 13.8          | 9.9        |
+| 2021 | 16.8          | 13.2       |
+| 2022 | 14.2          | 10.0       |
+| 2023 | 10.5          | 9.3        |
+| 2024 | 16.5          | 10.1       |
+| 2025 | 14.0          | 9.7        |
+| 2026 | 11.8          | 9.9        |
+</details>
+
+Source: S&P Cap IQ Pro   
+BofA GLOBAL RESEARCH
+
+Near term pain for longer term gain: While the track record of bank M&A to generate alpha has been less than stellar, we do think that sound M&A can be an accretive way for banks to add scale, low-cost deposits while improving efficiencies.
+
+Exhibit 19: Buyers have lagged super regional peers who have not announced a deal   
+PNC, HBAN, FITB price performance vs non-deal super regionals 1D, 1W, 1M, 3M post deal announcement   
+![](images/e029837b47c1a4925ca5f8dfbf096dd04b17ddfca82803957ea0f76b73b5fdaf.jpg)
+
+<details>
+<summary>bar</summary>
+
+| Category | +1D (%) | +1W (%) | +1M (%) | +3M (%) |
+| :--- | :--- | :--- | :--- | :--- |
+| PNC | -0.2 | -1.5 | -2.4 | -5.1 |
+| HBAN | -1.6 | -2.5 | -2.8 | -7.2 |
+| FITB | -0.8 | 0.7 | 1.3 | -2.4 |
+</details>
+
+Source: BofA Global Research, Bloomberg   
+BofA GLOBAL RESEARCH
+
+# #5 Will lack of Fed rate cuts derail stocks?
+
+No (Unchanged). Higher-for-longer and curve flattening = negative optics, but macro strength should outweigh pressures (housing, CRE, small/mid business).
+
+While rate volatility was muted at the start of the year, recent elevated volatility / uncertainty, particularly at the long end of the yield curve, could be negative for trading. Revived activity in housing / mortgage markets likely needs to see a 10-year US Treasury yield of \~4% or lower before activity picks up.
+
+We think banks today are well-positioned for slight/moderate changes in the yield curve. In a scenario where rates rise 100bp, disclosures indicate that large cap banks expect a 90bp increase to NII; mid-cap banks expect NII 200bp higher.
+
+If base rates remain unchanged, margin should continue to benefit from fixed asset repricing tailwinds (which we expect will persist into 2026 and beyond given at least 10-20% in fixed rate assets that are yet to reprice), partially offset by expectation of rising deposit competition.
+
+Margin tailwinds: Structurally higher Fed Funds rate (2.5-3.5% or higher vs 3.75% today) combined with a relatively steep UST yield curve (2/10yr UST spread at 43bp) positive for sector wide net interest margins. Between 1995-2005 Fed Funds rate averaged: 404bp, 2/10yr spread: 86bp and industry net interest margin: 3.86% vs 3.39% as of 4Q25. In the near-term, we are attentive to margin pressures from rising deposit costs.
+
+Exhibit 20: Structurally higher fed funds rate should be a positive for sector wide margins Industry NIM (lhs), avg. effective fed funds rate (rhs)   
+![](images/32fc281de77d93b86336000b6bd9b90a3ffc8889dbf22cfe04de6539a95b0a44.jpg)
+
+<details>
+<summary>line</summary>
+
+| Year | NIM (lhs) | Avg. Eff. FF Rate (rhs) |
+|------|-----------|--------------------------|
+| 1990 | 3.4%      | 4.3%                     |
+| 1995 | 4.1%      | 3.8%                     |
+| 2000 | 3.7%      | 3.9%                     |
+| 2005 | 3.5%      | 2.7%                     |
+| 2010 | 3.8%      | 2.5%                     |
+| 2015 | 3.1%      | 2.5%                     |
+| 2020 | 2.5%      | 3.0%                     |
+| 2025 | 3.3%      | 4.5%                     |
+</details>
+
+Source: Bloomberg, FDIC   
+BofA GLOBAL RESEARCH
+
+Exhibit 21: WFC, PNFP see biggest NII benefit from higher rates   
+% NII benefit from +100bp move in base rates – large-cap banks   
+![](images/d45d82087ae5c4a3773a5b08142957327f4e235d772a0e979903341710be2340.jpg)
+
+<details>
+<summary>bar</summary>
+
+| Category | Value |
+|---|---|
+| WFC | 3.4 |
+| PNFP | 2.5 |
+| C | 1.8 |
+| JPM | 1.8 |
+| CFG | 1.3 |
+| HBAN | 1.3 |
+| RF | 0.5 |
+| FITB | 0.5 |
+| KEY | 0.2 |
+| PNC | 0.0 |
+| MTB | -0.3 |
+| USB | -0.4 |
+| TFC | -0.4 |
+</details>
+
+Source: Company filings, S&P Cap IQ Pro   
+BofA GLOBAL RESEARCH
+
+Exhibit 22: WAL, ZION see biggest NII benefit from higher rates   
+% NII benefit from +100bp move in base rates – mid-cap banks   
+![](images/f9819456c7dfbdcb1e400964a8b204863a3af9b022a5204b69909cc7b743f3a0.jpg)
+
+<details>
+<summary>bar</summary>
+
+| Entity | Value |
+| :--- | :--- |
+| WAL | 6.0 |
+| ZION | 3.7 |
+| CBC | 3.6 |
+| FHB | 3.5 |
+| TCBI | 2.8 |
+| FBP | 2.3 |
+| PB | 2.2 |
+| ASB | 2.0 |
+| FHN | 1.9 |
+| EWBC | 1.7 |
+| CBSH | 1.4 |
+| CFR | 1.3 |
+| FNB | 1.3 |
+| BOH | 0.8 |
+| FLG | 0.7 |
+| WASH | 0.3 |
+| BPOP | 0.3 |
+| UMBF | -0.2 |
+</details>
+
+Source: Company filings, S&P Cap IQ Pro   
+BofA GLOBAL RESEARCH
+
+Exhibit 23: USB, HBAN CTD deposit betas are below prior cycle   
+Prior through-the-cycle betas less current betas, large-cap banks   
+![](images/0779c45ea99beae95a543b88d25bb30adefe1de3b2ea30e7d00f88082e156ead.jpg)
+
+<details>
+<summary>bar</summary>
+
+| Entity | Value (%) |
+| :--- | :--- |
+| USB | 11 |
+| HBAN | 10 |
+| STT | 8 |
+| TFC | 6 |
+| RF | 5 |
+| C | 4 |
+| WFC | 3 |
+| FITB | 3 |
+| JPM | 2 |
+| PNC | 2 |
+| CFG | 1 |
+| MTB | -2 |
+| KEY | -5 |
+| BK | -13 |
+| NTRS | -16 |
+</details>
+
+Source: S&P Cap IQ Pro, Bloomberg. Excludes PNFP.   
+BofA GLOBAL RESEARCH
+
+Exhibit 24: FBP, CBC, PB cycle-to-date deposit betas below prior cycle   
+Prior through-the-cycle betas less current betas, mid-cap banks   
+![](images/3ca9d52da8bd2ff88cf26bbdfddfe983fed5112912a7e88d2ec5bbb4d00d27d4.jpg)
+
+<details>
+<summary>bar</summary>
+
+| Entity | Value (%) |
+| :--- | :--- |
+| FBP | 19 |
+| CBC | 17 |
+| PB | 16 |
+| CBSH | 13 |
+| FNB | 11 |
+| ASB | 7 |
+| WAL* | 5 |
+| EWBC | 5 |
+| WASH | 3 |
+| ZION | 3 |
+| TCBI | 0 |
+| BPOP | -1 |
+| FHB | -2 |
+| FLG | -4 |
+| UMBF | -4 |
+| BOH | -4 |
+| CFR | -9 |
+| FHN | -11 |
+</details>
+
+Source: S&P Cap IQ Pro, Bloomberg. Note: WAL excludes the impact from higher cost on ECR deposits.   
+BofA GLOBAL RESEARCH
+
+Mortgage boom on pause: Lower 10yr yields likely needed before housing and mortgage markets unlock, could serve as a tailwind to fee income growth for mortgage exposed banks.
+
+Exhibit 25: CFG could benefit from pick-up in mortgage   
+Change in mortgage banking revs as % of total, 2026e vs 2020, large caps   
+![](images/4e8c901edf96d5be34948f7e3f9b06ef393a325cec792efda92345804f89bd37.jpg)
+
+<details>
+<summary>bar</summary>
+
+| Category | Value |
+|---|---|
+| CFG | -1,122 |
+| USB | -673 |
+| HBAN | -625 |
+| MTB | -407 |
+| WFC | -362 |
+| PNC | -355 |
+| RF | -349 |
+| FITB | -249 |
+| TFC | -200 |
+| JPM | -187 |
+| KEY | -67 |
+</details>
+
+Source: Visible Alpha   
+Note: units are in basis points   
+BofA GLOBAL RESEARCH
+
+Exhibit 26: WAL largest beneficiary of potential mortgage pick-up   
+Change in mortgage banking revs as % of total, 2026e vs 2020, mid-caps   
+![](images/a2f0a800d76a0516a844413d780c51bce1535f9d37abd78e80f27ad6c69aa50b.jpg)
+
+<details>
+<summary>bar</summary>
+
+| Entity | Value |
+| :--- | :--- |
+| WAL | -2,779 |
+| WASH | -1,547 |
+| FHN | -372 |
+| FNB | -312 |
+| ASB | -270 |
+| BOH | -216 |
+| FBP | -155 |
+| WBS | -151 |
+| PB | -60 |
+| BPOP | 4 |
+| TCBI | 73 |
+</details>
+
+Source: Visible Alpha   
+Note: units are in basis points   
+BofA GLOBAL RESEARCH
+
+Lower interest rates that deliver a “soft landing 2.0” for the US economy could boost fee revenue ranging across capital markets, wealth management and mortgage banking.
+
+Exhibit 27: GSIBs have larger % of revenues from fee income   
+Consensus 2026e % of revenue from fees vs NII, large caps   
+![](images/7b93452509067d59aa530fe3af5c089782cb8a5ec7dbd8e95ced8d2c134f9588.jpg)
+
+<details>
+<summary>bar</summary>
+
+| Category | Value (%) |
+|---|---|
+| MS | 85 |
+| GS | 77 |
+| JPM | 48 |
+| WFC | 43 |
+| USB | 42 |
+| KEY | 36 |
+| PNC | 36 |
+| RF | 34 |
+| FITB | 32 |
+| C | 31 |
+| TFC | 30 |
+| CFG | 28 |
+| MTB | 28 |
+| HBAN | 26 |
+| PNFP | 22 |
+Median, 34%
+</details>
+
+Source: Visible Alpha   
+BofA GLOBAL RESEARCH
+
+Exhibit 28: CBSH highest % of rev from fee income among mid-caps   
+Consensus 2026e % of revenue from fees vs NII, mid-caps   
+![](images/26e770700fe427fccd8c0cd94795aff1888e9c63e0b6b10ea07c05fd9dcec5b1.jpg)
+
+<details>
+<summary>bar</summary>
+
+| Entity | Value (%) |
+| :--- | :--- |
+| CBSH | 37 |
+| WASH | 30 |
+| UMBF | 27 |
+| FHB | 24 |
+| FHN | 23 |
+| ZION | 22 |
+| CFR | 22 |
+| BOH | 21 |
+| TCBI | 21 |
+| FNB | 20 |
+| WAL | 19 |
+| CBC | 19 |
+| ASB | 18 |
+| BPOP | 18 |
+| FLG | 14 |
+| EWBC | 13 |
+| FBP | 12 |
+| PB | 12 |
+Median, 20%
+</details>
+
+Source: Visible Alpha   
+BofA GLOBAL RESEARCH
+
+# #6 Will bank stocks become a play on AI?
+
+Maybe (vs. No). Narrative skewed to disruption (jobs, deposits, software) vs. productivity gains. We see banks as net beneficiaries, but unlikely to structurally shift ROE.
+
+AI disruption vs. opportunities: We think investors have been overly focused on disruption risks vs. productivity boost from AI. Deposit disruption risk most closely watched. In our view, a significant amount of industry deposits (mid-to-large business, High Net Worth) are already efficiently managed. The real opportunity could be in mid-to-small business and lower-balance checking accounts—but this will likely play out over several years. The productivity boost across back-office and frontline bankers is becoming more apparent. While productivity gains may not flow to the bottom line, at least at this point, we believe that AI-led productivity gains should allow the industry to absorb pressure on margins, legacy revenue streams.
+
+Certain wealth management stocks saw pressure due to AI headlines as smaller industry players made waves with claims about their ability to disrupt entrenched players, particularly in wealth management. While banks are investing in AI across areas like client experience, technology & operations, risk management, and data infrastructure, we don't expect bank stocks will be viewed as outsized beneficiaries of the AI trade in the near term. This is due to the lack of proof points (likely forthcoming over the coming months) that would support the case for AI-led productivity gains to materially boost the profitability of the sector. Even if AI-led productivity lives up to its hype, there is the question of whether these gains will be competed away.
+
+# Exhibit 29: 2026 AI themes: areas where banks have discussed deploying AI
+
+Efficiency & Productivity, Client Experience, Risk & Compliance, Infrastructure & Data, Workforce Enablement
+
+![](images/f09e2d54224c46df124a4e720c99c5ebed73b14ccf01f1b968008a60249fa76b.jpg)
+
+<details>
+<summary>flowchart</summary>
+
+```mermaid
+graph TD
+    A["Efficiency & Productivity\n• Code reviews & developer copilots\n• Workflow automation\n• Doc summarization\n• Auto-decisioning"] --> B["Client Experience\n• Personalized banking\n• Virtual assistants & chatbots\n• Enhanced wealth advisory tools"]
+    B --> C["Risk & Compliance\n• Fraud detection\n• KYC/AML screening\n• Transaction monitoring\n• Predictive risk modeling"]
+    C --> D["Infrastructure & Data\n• Cloud migration\n• Proprietary AI platforms\n• Data pipelines"]
+    D --> E["Workforce Enablement\n• AI training\n• Task automation\n• Cultural shift"]
+    E --> A
+    style A fill:#4A90E2,stroke:#333
+    style B fill:#4A90E2,stroke:#333
+    style C fill:#4A90E2,stroke:#333
+    style D fill:#4A90E2,stroke:#333
+    style E fill:#4A90E2,stroke:#333
+```
+</details>
+
+Source: BofA Global Research
+
+BofA GLOBAL RESEARCH
+
+Near term efficiency gains are unlikely to move the needle, as early savings are often reinvested. That said, markets could start to price in the potential before earnings benefits materialize, especially if more banks announce formal targets and demonstrate progress at scale. Over time, AI could become a meaningful driver of productivity and returns, but for now, it remains a longer-term story rather than a near-term valuation catalyst. We expect mgmt. teams will announce additional use cases and more specificity on AI investment and savings during the course of the year.
+
+# Explicit mgmt. guidance on AI investment & savings
+
+JPM: JPM's \$2bn investment in AI has generated approximately \$2bn in benefits, effectively paying for itself.
+
+CFG: The \$400mn+ target encompasses both AI-driven and non-AI initiatives, as CFG categorizes roughly 50% of Reimagine projects as "tech and AI-enabled" (e.g., agentic AI for call centers, fraud detection, pricing) and 50% as "traditional" (e.g., vendor simplification, facility optimization).
+
+RY: \$700mn-\$1bn in enterprise value generated from AI-driven benefits by 2027.
+
+TD: TD targets CAD \$1bn in annual AI value - half from revenue uplift and half from cost savings.
+
+Exhibit 30: Productivity gains have been a multi-decade theme for US companies   
+S&P 500 companies' real revenue per worker (\$M 1986 dollar)   
+![](images/1c3e7a96b104dc63156b20ef8a673f29a6f1b9058d032406a70468b2e0079755.jpg)
+
+<details>
+<summary>line</summary>
+
+| Year | Revenue/worker ($M; 1986 dollar) |
+|------|-----------------------------------|
+| 86   | ~$0.13                            |
+| 87   | ~$0.13                            |
+| 88   | ~$0.14                            |
+| 89   | ~$0.14                            |
+| 90   | ~$0.14                            |
+| 91   | ~$0.14                            |
+| 92   | ~$0.14                            |
+| 93   | ~$0.15                            |
+| 94   | ~$0.15                            |
+| 95   | ~$0.16                            |
+| 96   | ~$0.16                            |
+| 97   | ~$0.17                            |
+| 98   | ~$0.17                            |
+| 99   | ~$0.17                            |
+| 00   | ~$0.18                            |
+| 01   | ~$0.18                            |
+| 02   | ~$0.17                            |
+| 03   | ~$0.17                            |
+| 04   | ~$0.18                            |
+| 05   | ~$0.19                            |
+| 06   | ~$0.20                            |
+| 07   | ~$0.20                            |
+| 08   | ~$0.20                            |
+| 09   | ~$0.18                            |
+| 10   | ~$0.19                            |
+| 11   | ~$0.19                            |
+| 12   | ~$0.19                            |
+| 13   | ~$0.19                            |
+| 14   | ~$0.19                            |
+| 15   | ~$0.18                            |
+| 16   | ~$0.18                            |
+| 17   | ~$0.18                            |
+| 18   | ~$0.19                            |
+| 19   | ~$0.19                            |
+| 20   | ~$0.19                            |
+| 21   | ~$0.19                            |
+| 22   | ~$0.20                            |
+| 23   | ~$0.20                            |
+| 24   | ~$0.22                            |
+</details>
+
+Source: BofA US Equity & Quant Strategy, FactSet, Bloomberg   
+BofA GLOBAL RESEARCH
+
+Exhibit 31: AI may disrupt employment in some of the most labor-intensive industries   
+Employee/sales (\$mn) by S&P 500 industry group (red = industries with potential use cases for AI, per BofA Strategy)   
+![](images/18d0df8d4e361e1904fe843c22bbe7306e428fd31d86f5d8c8d102bf210b4508.jpg)
+
+<details>
+<summary>bar</summary>
+
+| Industry | Employee/Sales ($mn) |
+| :--- | :--- |
+| IT Svcs | 8.5 |
+| Air Freight & Logistics | 6.0 |
+| Specialty Retail | 3.8 |
+| Life Sciences Tools & Svcs. | 3.4 |
+| Professional Svcs. | 3.2 |
+| Containers & Packaging | 3.1 |
+| Personal Care Products | 3.0 |
+| Building Products | 2.9 |
+| Industrial Conglomerates | 2.8 |
+| Distributors | 2.7 |
+| Construction & Engineering | 2.6 |
+| Textiles, Apparel & Luxury Goods | 2.6 |
+| Construction Materials | 2.5 |
+| Media | 2.4 |
+| Entertainment | 2.3 |
+| Comm. Equipment | 2.2 |
+| Ground Transportation | 2.1 |
+| Banks | 2.0 |
+| Food Products | 1.9 |
+| Insurance | 1.8 |
+| Semis & Semir Equipment | 1.7 |
+| Automobiles | 1.6 |
+| Diversified Telecom Svcs. | 1.5 |
+| Consumer Finance | 1.4 |
+| Biotechnology | 1.3 |
+| Technology HW, Storage & Periph. | 1.2 |
+| Household Durables | 1.1 |
+| Interactive Media & Svcs. | 1.0 |
+| Oil, Gas & Consumable Fuels | 0.9 |
+</details>
+
+Source: BofA US Equity & Quant Strategy, FactSet
+
+BofA GLOBAL RESEARCH
+
+# #7 Will credit quality improve?
+
+No (Unchanged). Stable NCOs as base case, with continued C&I “one-offs” as normalization continues. A full cycle unlikely absent a recession.
+
+Despite bank stocks being caught up in the private credit related headlines, credit quality trends (as reported during 1Q results in April) remain strong. Significantly higher interest rates (including the Fed shifting to rate hikes), a slump in the job market, or a sharp equity market correction, i.e. “negative wealth effect”, likely needed to drive materially higher credit losses.
+
+Idiosyncratic credit issues will likely continue to be a source of volatility, as evidenced by the multiple drawdowns WAL has endured since the first problem credit that the bank announced last fall. We think we will continue to see pockets of stress occur due to higher-for-longer interest rates, which will likely add some volatility into banks exposed to these troubled sectors. If 10/30yr yields remain elevated at or above levels observed in 2023, concerns around CRE repricing my return to the foreground.
+
+Exhibit 32: WAL, ZION lost \~15% of market value in 2 days after reporting NDFI-related credit issues   
+Stock performance during credit-related sell-off in October   
+![](images/a3bfe5900bc3df10c4836fe845bdb70033e332b4c675faa9724da7356e21dfb0.jpg)
+
+<details>
+<summary>line</summary>
+
+| Date   | BKX    | KRX    | WAL    | ZION   |
+|--------|--------|--------|--------|--------|
+| 10/14  | 0%     | 0%     | 0%     | 0%     |
+| 10/15  | ~0%    | ~-2%   | ~-3%   | ~-3%   |
+| 10/16  | ~-3%   | ~-8%   | ~-15%  | ~-15%  |
+| 10/17  | ~-2%   | ~-6%   | ~-12%  | ~-10%  |
+</details>
+
+Source: Bloomberg   
+BofA GLOBAL RESEARCH
+
+NDFI (Non-Depository Financial Institutions) first became a credit theme after the ZION/WAL credit headlines in 3Q25. Since then, other large banks have become victim to negative NDFI headlines. We continue to believe NDFI remains the key credit headline risk given the rapid growth of lending to this subsector.
+
+Exhibit 33: PNC, WFC most exposed to NDFI among large cap banks
+Non-depository financial institution loans by category   
+![](images/5e7b647e6835bb201dec88eca82b4c0bed2412d47f370acda11be8d72f279746.jpg)
+
+<details>
+<summary>bar_stacked</summary>
+
+| Category | Business Credit Intermediaries (%) | Private Equity (%) | Consumer Credit (%) | Other (%) |
+| :--- | :---: | :---: | :---: | :---: |
+| PNC | 9.5 | 7.0 | 0.3 | 2.5 |
+| WFC | 7.2 | 4.8 | 2.6 | 2.6 |
+| KEY | 8.7 | 1.2 | 0.0 | 6.8 |
+| BAC | 3.0 | 2.8 | 2.5 | 5.5 |
+| CFG | 3.6 | 5.8 | 0.7 | 2.8 |
+| RF | 5.0 | 1.8 | 0.6 | 4.8 |
+| C | 6.2 | 1.0 | 3.0 | 1.8 |
+| JPM | 3.5 | 3.8 | 2.2 | 1.9 |
+| TFC | 6.3 | 1.5 | 1.3 | 1.4 |
+| USB | 3.3 | 3.5 | 1.9 | 1.4 |
+| PNFP | 4.3 | 0.4 | 0.6 | 2.6 |
+| HBAN | 1.4 | 2.4 | 0.3 | 3.4 |
+| FITB | 1.5 | 2.4 | 0.6 | 1.4 |
+| MTB | 1.4 | 2.6 | 0.6 | 0.7 |
+</details>
+
+Source: S&P Capital IQ   
+BofA GLOBAL RESEARCH
+
+Exhibit 34: EWBC, TCBI most exposed to NDFI among SMID cap banks
+Non-depository financial institution loans by category   
+![](images/5962c422f75afed079570ff88ca6a4c41d828221690a6252bf418eabac1efa63.jpg)
+
+<details>
+<summary>bar_stacked</summary>
+
+| Entity | Business Credit Intermediaries (%) | Private Equity (%) | Consumer Credit (%) | Other (%) |
+| :--- | :---: | :---: | :---: | :---: |
+| EWBC | 4.5 | 5.0 | 2.0 | 1.5 |
+| TCBI | 2.0 | 2.0 | 2.0 | 3.0 |
+| WAL | 5.5 | 1.5 | 0.0 | 2.0 |
+| UMBF | 1.5 | 2.0 | 0.5 | 2.0 |
+| FHN | 1.5 | 0.5 | 2.5 | 1.5 |
+| CFR | 1.5 | 1.0 | 0.5 | 2.0 |
+| FLG | 0.0 | 0.5 | 1.5 | 1.0 |
+| ZION | 1.5 | 0.5 | 0.5 | 0.5 |
+| ASB | 1.5 | 0.5 | 0.5 | 1.5 |
+| CBSH | 0.5 | 0.0 | 0.0 | 1.5 |
+| FBP | 1.5 | 0.0 | 0.0 | 0.5 |
+| BPOP | 0.5 | 0.0 | 0.5 | 1.0 |
+| FNB | 0.0 | 0.0 | 0.5 | 1.0 |
+| PB | 0.0 | 0.0 | 0.5 | 0.5 |
+| CBC | 0.0 | 0.0 | 0.5 | 1.0 |
+| BOH | 0.0 | 0.0 | 0.0 | 1.0 |
+| FHB | 0.0 | 0.0 | 0.0 | 1.0 |
+</details>
+
+Source: S&P Capital IQ   
+BofA GLOBAL RESEARCH
+
+# Knock on wood...but still no signs of broad stress in credit
+
+No signs that banks have become undisciplined in managing credit. NCOs and NPLs are in-line / below pre-COVID levels. This while loan loss reserves remain well above pre-COVID levels, partly driven by accounting rule changes in 2020.
+
+In our view, this helps mitigate the risk of one-off credit problems. Banks are well-reserved for (some) credit deterioration; the primary risk that could de-rail the rally in bank stocks is a true credit event that rattles the entire sector.
+
+Exhibit 35: NCOs remain in-line with pre-COVID levels   
+Median NCOs, FY2015-FY2019 & 1Q24-present   
+![](images/86a3ec25d02cc68b142614441b8e4f63272645e91b86cf24225b8155e3e9fcbc.jpg)
+
+<details>
+<summary>bar</summary>
+
+| Period | Value (%) |
+|---|---|
+| FY-2015 | 0.20 |
+| FY-2016 | 0.28 |
+| FY-2017 | 0.22 |
+| FY-2018 | 0.26 |
+| FY-2019 | 0.27 |
+| 1Q24 | 0.29 |
+| 2Q24 | 0.26 |
+| 3Q24 | 0.25 |
+| 4Q24 | 0.30 |
+| 1Q25 | 0.26 |
+| 2Q25 | 0.22 |
+| 3Q25 | 0.23 |
+| 4Q25 | 0.24 |
+| 1Q26 | 0.30 |
+</details>
+
+Source: Visible Alpha   
+BofA GLOBAL RESEARCH
+
+Exhibit 36: NPLs are below pre-COVID levels   
+Median NPLs, FY2015-FY2019 & 1Q24-present   
+![](images/60bc2b471d5d61ec4ce369cf1a0dd6667a023b4808fa2c4ea6b80ee22de1a345.jpg)
+
+<details>
+<summary>bar</summary>
+
+| Period | Value (%) |
+|---|---|
+| FY-2015 | 0.75 |
+| FY-2016 | 0.75 |
+| FY-2017 | 0.59 |
+| FY-2018 | 0.49 |
+| FY-2019 | 0.50 |
+| 1Q24 | 0.55 |
+| 2Q24 | 0.53 |
+| 3Q24 | 0.57 |
+| 4Q24 | 0.50 |
+| 1Q25 | 0.51 |
+| 2Q25 | 0.51 |
+| 3Q25 | 0.50 |
+| 4Q25 | 0.52 |
+| 1Q26 | 0.54 |
+</details>
+
+Source: Visible Alpha   
+BofA GLOBAL RESEARCH
+
+NCOs/NCLs are in-line to better than pre-Covid levels. Since the introduction of CECL (1/1/20) reserves structurally higher.
+
+Exhibit 37: LLRs have remained elevated vs pre-COVID since introduction of CECL in 2020   
+Median loan loss reserves, FY2015-FY2019 & 1Q24-present   
+![](images/0363d0382bd56c76f4d2690d190e9220424b9953533958751a1979a6178029a6.jpg)
+
+<details>
+<summary>bar</summary>
+
+| Period | Value |
+|---|---|
+| FY-2015 | 1.22 |
+| FY-2016 | 1.16 |
+| FY-2017 | 1.12 |
+| FY-2018 | 1.03 |
+| FY-2019 | 1.02 |
+| 1Q24 | 1.37 |
+| 2Q24 | 1.38 |
+| 3Q24 | 1.38 |
+| 4Q24 | 1.34 |
+| 1Q25 | 1.36 |
+| 2Q25 | 1.37 |
+| 3Q25 | 1.37 |
+| 4Q25 | 1.33 |
+| 1Q26 | 1.32 |
+</details>
+
+Source: Visible Alpha   
+BofA GLOBAL RESEARCH
+
+# Differences in credit metrics, reserving since 2019
+
+Majority of banks have better credit metrics today than their 2015-2019 peak (both NPLs, NCOs are lower, on average).
+
+Notable to see WAL, FHB, CBSH as banks whose NPLs have worsened yet reserve levels are lower.
+
+On the other hand, banks like UMBF, C, HBAN have all had credit improvements yet have built up reserves.
+
+Exhibit 38: C, HBAN have seen improved credit and loan loss reserves
+
+NPLs today vs 2015-2019 max vs LLR today vs 2015-2019 max, large-cap banks
+
+![](images/21840cd066d001256aabda527ed7f59bfa7817a23b745ee60c72e4c286811e4b.jpg)
+
+<details>
+<summary>scatter</summary>
+
+| Label | LLR today vs 2015-2019 max | NPLs today vs 2015-2019 max |
+|-------|-----------------------------|------------------------------|
+| KEY   | -0.05                       | -0.15%                       |
+| PNF   | 0.10                        | 0.05%                        |
+| JPM   | 0.10                        | -0.15%                       |
+| PNC   | -0.05                       | -0.45%                       |
+| WFC   | 0.10                        | -0.45%                       |
+| FITB  | 0.25                        | -0.35%                       |
+| RF    | 0.25                        | -0.65%                       |
+| CFG   | 0.25                        | -0.15%                       |
+| MTB   | 0.45                        | -0.25%                       |
+| USB   | 0.50                        | -0.25%                       |
+| TFG   | 0.45                        | -0.15%                       |
+| HBAN  | 0.55                        | -0.25%                       |
+| C     | 0.40                        | -0.45%                       |
+</details>
+
+Source: Visible Alpha, company filings
+
+BofA GLOBAL RESEARCH
+
+Exhibit 39: WAL has increased NPLs, lowered its loan loss reserve
+
+NPLs today vs 2015-2019 max vs LLR today vs 2015-2019 max, mid-cap banks
+
+![](images/83df4e40f67f5f63e0c776d053a1704f411b96e53ee86d50fb2c53dd83959a1b.jpg)
+
+<details>
+<summary>scatter</summary>
+
+| Label | LLR today vs 2015-2019 max | NPLs today vs 2015-2019 max |
+|-------|-----------------------------|------------------------------|
+| WAI   | -0.30                       | 0.40%                        |
+| FHB   | -0.08                       | 0.90%                        |
+| FHN   | -0.06                       | 0.85%                        |
+| WBS   | 0.12                        | 0.95%                        |
+| PB    | 0.68                        | 0.95%                        |
+| CW    | -0.35                       | 0.22%                        |
+| CBSH  | -0.28                       | 0.22%                        |
+| FOH   | -0.32                       | 0.55%                        |
+| WASH  | -0.07                       | 0.55%                        |
+| FNB   | 0.10                        | 0.18%                        |
+| UMBF  | 0.25                        | 0.18%                        |
+| TCBI  | 0.15                        | 0.65%                        |
+| FWBC  | 0.35                        | 0.20%                        |
+| CFR   | -0.05                       | -0.80%                       |
+| ASB   | -0.30                       | -1.10%                       |
+</details>
+
+Source: Visible Alpha, company filings. Excludes FLG, FBP, ZION.
+
+BofA GLOBAL RESEARCH
+
+# #8 Will digital assets go mainstream?
+
+No (Unchanged). Tokenization gaining traction; faster adoption in B2B (esp. capital markets) vs. P2P. CLARITY Act could accelerate institutional uptake. While CLARITY was voted out of committee in a bi-partisan vote on 5/14, concerns around elected officials' ability trade crypto assets and stablecoins' ability to pay a yield-like reward are likely to be key hurdles when CLARITY comes up for a floor vote.
+
+Relevant research: US Banks: On-Chain: Crypto Gets Real: Bank Regulators Act / US Banks: On-Chain: Crypto Gets Real: Bank Regulators Act
+
+Six banking trade associations sent a letter to the Senate Banking Committee advocating technical refinements to the proposed payment stablecoin yield language under Section 404 of the CLARITY Act. The Committee is expected to vote on the bill in the coming days, goal of passage by July 4, 2026. Section 404 seeks to prohibit the payment of interest or yield on payment stablecoins in a manner that resembles bank deposits. The letter outlines the industry's core concern:
+
+"Our concern is that payment stablecoin yield, or incentives that act like yield, can reduce U.S. deposits and, in turn, banks' capacity to extend credit across the country. We are aligned with the distinction the proposal is trying to draw—that certain payment stablecoin transactions and activities will be allowed to generate rewards, like a rebate or incentive provided in connection with the acceptance or use of a payment stablecoin, while interest-like payments on stablecoin balances or other stores of value will be prohibited. We are concerned, however, that the proposed language includes exceptions that will enable evasion of the intended prohibition and incentivize customers to hold and grow stablecoin balances at the expense of deposits."
+
+During a recent BofA Expert Insights fireside, Cody Carbone, CEO of crypto advocacy group The Digital Chamber, noted that policymakers are focused on closing loopholes that would allow yield-like features on stablecoin balances. The trade groups echo this in their letter, calling for the elimination of “interest-like reward structures.”
+
+Relevant research: US Banks: On-Chain: The Final Push for Crypto Clarity: Policy Insights from Capitol Hill
+
+Exhibit 40: Stablecoin circulation increased as inflation soared...   
+Total stablecoin mkt cap (\$bn) vs PPI (y/y)   
+![](images/91ce6fcce90df44388465ace2b6e6292060b3e5a6a02210e5ba8f4d4e1729b4a.jpg)
+
+<details>
+<summary>bar_line</summary>
+
+| Date    | Stablecoin Mkt Cap ($bn, lhs) | PPI y/y (rhs) |
+|---------|-------------------------------|---------------|
+| Sep-20  | ~$10                          | ~0%           |
+| Jan-21  | ~$50                          | ~5%           |
+| May-21  | ~$100                         | ~10%          |
+| Sep-21  | ~$150                         | ~15%          |
+| Jan-22  | ~$180                         | ~18%          |
+| May-22  | ~$160                         | ~20%          |
+| Sep-22  | ~$140                         | ~15%          |
+| Jan-23  | ~$130                         | ~10%          |
+| May-23  | ~$10                          | ~-5%          |
+| Sep-23  | ~$120                         | ~0%           |
+| Jan-24  | ~$140                         | ~5%           |
+| May-24  | ~$160                         | ~10%          |
+| Sep-24  | ~$180                         | ~5%           |
+| Jan-25  | ~$200                         | ~10%          |
+| May-25  | ~$250                         | ~5%           |
+| Sep-25  | ~$300                         | ~10%          |
+| Jan-26  | ~$320                         | ~5%           |
+| May-26  | ~$330                         | ~10%          |
+</details>
+
+Source: DefiLlama, Bloomberg   
+BofA GLOBAL RESEARCH
+
+Exhibit 41: ...and increased as currency volatility accelerated   
+Total stablecoin market cap (\$bn) vs CVIX Index   
+![](images/11310dbbb78d0f85bc69c64243b6cfffab5ebf8c0e8521efc01e224af6115159.jpg)
+
+<details>
+<summary>bar_line</summary>
+
+| Date    | Stablecoin Mkt Cap ($bn, lhs) | CVIX Index (rhs) |
+|---------|-------------------------------|------------------|
+| Sep-20  | ~10                           | ~8               |
+| Jan-21  | ~50                           | ~7               |
+| May-21  | ~100                          | ~6               |
+| Sep-21  | ~150                          | ~7               |
+| Jan-22  | ~180                          | ~9               |
+| May-22  | ~160                          | ~10              |
+| Sep-22  | ~140                          | ~13              |
+| Jan-23  | ~130                          | ~11              |
+| May-23  | ~120                          | ~9               |
+| Sep-23  | ~110                          | ~8               |
+| Jan-24  | ~120                          | ~7               |
+| May-24  | ~150                          | ~8               |
+| Sep-24  | ~170                          | ~9               |
+| Jan-25  | ~200                          | ~10              |
+| May-25  | ~250                          | ~9               |
+| Sep-25  | ~300                          | ~8               |
+| Jan-26  | ~320                          | ~7               |
+</details>
+
+Source: DefiLlama, Bloomberg   
+BofA GLOBAL RESEARCH
+
+# #9 Will domestic capex pick-up?
+
+Yes (Unchanged). Still anchored in AI/data centers, but early signs of modest broadening beyond that core. Stars were aligned - stable-to-lower rates, tax incentives, reindustrialization, and regulatory shifts making this a “now or never” moment. We believe the key to continued momentum will be whether the recent spike in long-end rates proves short-lived.
+
+Continued AI infrastructure investments, corresponding energy/utility needs both major demand drivers in 2026. BofA Industrials analyst Andrew Obin also views pharma as a key next wave of the reshoring story, with \$470bn of announced capex plans to date (relevant research: Industrials/Multi-Industry: 2026 Year Ahead: short-cycle recovery with a few hazards).
+
+# AI a key catalyst for 2026 domestic CapEx story
+
+AI / tech infrastructure spend is expected to be over \$2.5T (+44% y/y) in 2026, utility CapEx is expected to grow 30% y/y.
+
+Exhibit 42: AI-related CapEx expected to cross over \$2.5T in 2026   
+AI spending grew at 78% y/y in 2025, another +44% growth expected in '26   
+![](images/f276bf5707252d7e1004c025e93b5fba9859045264f52fd3efcd481d511488b9.jpg)
+
+<details>
+<summary>bar</summary>
+
+| Year | Value |
+| :--- | :--- |
+| 2024 | 988 |
+| 2025 | 1,757 |
+| 2026e | 2,528 |
+</details>
+
+Source: Gartner (\$ in Billions)   
+BofA GLOBAL RESEARCH
+
+Exhibit 43: Energy and Utility CapEx another tailwind in 2026   
+16% growth in 2025 expected to grow another 30% in 2026   
+![](images/2a84601ee5dd2740ffe9861d961a7fb4e6db3cbd9073b592dcf162b1213fb715.jpg)
+
+<details>
+<summary>bar</summary>
+
+| Year | Value |
+| :--- | :--- |
+| 2024 | 173 |
+| 2025 | 200 |
+| 2026e | 259 |
+</details>
+
+Source: S&P Cap IQ Pro (\$ in Billions)   
+BofA GLOBAL RESEARCH
+
+Exhibit 44: Capex expectations have remained steady   
+Avg. of 6 mos capex diffusion indexes   
+![](images/b133d5d88cfe9c6a9c9a55b52a06465be7aefdc031d4d2c692ef783133fb45cd.jpg)
+
+<details>
+<summary>line</summary>
+
+| Year | Value |
+| ---- | ----- |
+| 2015 | 6.00  |
+| 2016 | 18.00 |
+| 2017 | 30.00 |
+| 2018 | 28.00 |
+| 2019 | -18.00|
+| 2020 | 17.00 |
+| 2021 | 29.00 |
+| 2022 | 6.00  |
+| 2023 | -4.00 |
+| 2024 | 18.00 |
+| 2025 | 17.00 |
+</details>
+
+Source: BofA Global Research, Philadelphia Federal Reserve, New York Federal Reserve, Dallas Federal Reserve   
+BofA GLOBAL RESEARCH
+
+Exhibit 45: Nondefense capital goods orders continue to accelerate   
+![](images/cf937ea5b6b9ed6216176ebd2a945fa25ab9361bba76cddf9be2d7f3a1555b9f.jpg)
+
+<details>
+<summary>line</summary>
+
+| Year | Nondefense Capital Goods Excluding Aircraft |
+| ---- | ------------------------------------------ |
+| 2013 | 70000                                      |
+| 2014 | 68000                                      |
+| 2015 | 69000                                      |
+| 2016 | 65000                                      |
+| 2017 | 62000                                      |
+| 2018 | 66000                                      |
+| 2019 | 69000                                      |
+| 2020 | 56000                                      |
+| 2021 | 70000                                      |
+| 2022 | 77000                                      |
+| 2023 | 76000                                      |
+| 2024 | 74000                                      |
+| 2025 | 77000                                      |
+| 2026 | 84000                                      |
+</details>
+
+Source: US Census Bureau. Note: includes farm, construction, mining, industrial, commercial, and metalworking machinery; power generation, transmission, and other electrical equipment; electronic, communications, and control equipment; truck, rail, and ship equipment; and medical & office equipment   
+BofA GLOBAL RESEARCH
+
+# #10 Capital mkts meet lofty expectations?
+
+Yes (Unchanged). IB momentum (M&A, IPOs, record debt issuance), resilient trading, and regulatory flexibility remain tailwinds. The first quarter saw robust capital markets activity (banking +30% YoY, trading +17%) as a combination of stable valuations, rates, and a generational capex cycle driving a need for scale supported both banking and trading. We believe that a favorable regulatory backdrop and the increased need for scale should continue to drive demand from strategies and sponsors. On the equity issuance front, the market continues to wait for several marquee IPOs later this year.
+
+Capital markets revenues (advisory, DCM, and ECM) are expected to remain robust, supported, in particular, by marquee ECM transactions.
+
+Exhibit 46: Advisory revenues +21% y/y avg   
+Cons. 2026e YoY advisory revenue growth   
+![](images/e574cf5963a73d38194209ee76b51cb064e81714275596d4319ed12ad30b97fa.jpg)
+
+<details>
+<summary>bar</summary>
+
+| Category | Value (%) |
+|---|---|
+| JPM | 29 |
+| MS | 29 |
+| GS | 21 |
+| BAC | 19 |
+| C | 10 |
+</details>
+
+Source: Visible Alpha   
+BofA GLOBAL RESEARCH
+
+Exhibit 47: DCM revenues +5% y/y on avg   
+Cons. 2026e YoY DCM revenue growth   
+![](images/5b6292eb1058a2ace45a9de2535d0675d848d1d3644a611b53bf126f9d399f63.jpg)
+
+<details>
+<summary>bar</summary>
+
+| Category | Value (%) |
+|---|---|
+| GS | 10 |
+| MS | 5 |
+| BAC | 5 |
+| JPM | 4 |
+| C | 1 |
+</details>
+
+Source: Visible Alpha   
+BofA GLOBAL RESEARCH
+
+Exhibit 48: ECM revenues +24% y/y on avg   
+Cons. 2026e YoY ECM revenue growth   
+![](images/c9ac784bb7257940b21859a02095121db1a574060ca6e1ea83c2d7a6687a3bbd.jpg)
+
+<details>
+<summary>bar</summary>
+
+| Category | Value (%) |
+|---|---|
+| C | 27 |
+| GS | 26 |
+| BAC | 24 |
+| JPM | 19 |
+| MS | 8 |
+</details>
+
+Source: Visible Alpha   
+BofA GLOBAL RESEARCH
+
+Transaction volume rebounded in 2025 driven by a strong third quarter, but when measured as a percentage of global market cap volume remained below levels observed in recent years.
+
+Exhibit 49: Global M&A volume on pace to grow +18% YoY in 2026   
+Strategic and sponsor transaction volume, US \$ trillion   
+![](images/dfced52c6536d019d7034e3c669ada371bfda972f44cef8d80c0194a0faf575c.jpg)
+
+<details>
+<summary>bar_stacked</summary>
+
+| Year | Strategic ($) | Sponsor ($) |
+| :--- | :--- | :--- |
+| 2015 | 3.0 | 1.4 |
+| 2016 | 3.0 | 1.4 |
+| 2017 | 2.9 | 1.4 |
+| 2018 | 3.2 | 1.6 |
+| 2019 | 2.9 | 1.4 |
+| 2020 | 2.5 | 1.5 |
+| 2021 | 3.6 | 2.5 |
+| 2022 | 2.8 | 2.1 |
+| 2023 | 2.1 | 1.5 |
+| 2024 | 2.0 | 1.5 |
+| 2025 | 2.9 | 1.6 |
+| 2026 | 3.3 | 1.9 |
+</details>
+
+Source: Dealogic, BofA Global Research   
+BofA GLOBAL RESEARCH
+
+Exhibit 50: Sponsors sitting on more than \$4tn of dry powder   
+Sponsor total dry powder, US\$ billion   
+![](images/77787552011480623c953805432bed953122cbbd7893004972e63dbe70dab677.jpg)
+
+<details>
+<summary>line</summary>
+
+| Date   | Value |
+| ------ | ----- |
+| Jan-00 | 500   |
+| Jan-02 | 750   |
+| Jan-04 | 1000  |
+| Jan-06 | 1500  |
+| Jan-08 | 1750  |
+| Jan-10 | 1600  |
+| Jan-12 | 1750  |
+| Jan-14 | 2000  |
+| Jan-16 | 2500  |
+| Jan-18 | 3000  |
+| Jan-20 | 3500  |
+| Jan-22 | 4500  |
+| Jan-24 | 4800  |
+| Jan-26 | 4500  |
+</details>
+
+Source: Preqin   
+BofA GLOBAL RESEARCH
+
+2025 US M&A volume was 140bp below 2022/23 average levels, while global M&A remains 230bp lower.
+
+Exhibit 51: US M&A rebounded +30bp to 3.1% of market cap in 2025   
+M&A, IPO volume as % of S&P 500 market cap   
+![](images/52a3308ac0e60a76724b4a3a29e281e7d5fe4b3403f3cdb0b391d3f218b11b87.jpg)
+
+<details>
+<summary>line</summary>
+
+| Year | M&A (lhs) | IPO (rhs) |
+|------|-----------|-----------|
+| 2014 | ~7.5%     | ~0.3%     |
+| 2015 | ~9.0%     | ~0.1%     |
+| 2016 | ~8.5%     | ~0.1%     |
+| 2017 | ~7.5%     | ~0.2%     |
+| 2018 | ~8.5%     | ~0.3%     |
+| 2019 | ~7.5%     | ~0.3%     |
+| 2020 | ~6.0%     | ~0.5%     |
+| 2021 | ~7.5%     | ~12.0%    |
+| 2022 | ~6.0%     | ~0.1%     |
+| 2023 | ~4.0%     | ~0.1%     |
+| 2024 | ~3.5%     | ~0.1%     |
+| 2025 | ~3.5%     | ~0.2%     |
+| 2026 | ~4.5%     | ~0.3%     |
+</details>
+
+Source: BofA Global Research, Dealogic, Bloomberg   
+BofA GLOBAL RESEARCH
+
+Exhibit 52: Global M&A rebounded +20bp to 4.7% of market cap '25   
+M&A, IPO volume as a % of global market cap   
+![](images/c118f6fe79646948e1908011cbcc21b2478f448b8fe349cca734e43ab5a0d268.jpg)
+
+<details>
+<summary>line</summary>
+
+| Year | M&A (lhs) | IPO (rhs) |
+|------|-----------|-----------|
+| 2014 | 8.5%      | 1.0%      |
+| 2015 | 12.5%     | 0.7%      |
+| 2016 | 11.0%     | 0.5%      |
+| 2017 | 9.0%      | 0.6%      |
+| 2018 | 12.0%     | 0.8%      |
+| 2019 | 8.0%      | 0.6%      |
+| 2020 | 7.5%      | 0.7%      |
+| 2021 | 8.5%      | 1.0%      |
+| 2022 | 8.0%      | 0.5%      |
+| 2023 | 6.0%      | 0.3%      |
+| 2024 | 4.5%      | 0.3%      |
+| 2025 | 4.0%      | 0.3%      |
+| 2026 | 4.5%      | 0.4%      |
+</details>
+
+Source: BofA Global Research, Dealogic, Bloomberg   
+BofA GLOBAL RESEARCH
+
+# Glossary
+
+ACL: Allowance for credit losses
+
+AML: Anti money laundering
+
+API: Application programming interface
+
+ATM: Automated teller machine
+
+BSA: Bank Secrecy Act
+
+CET1: Common equity tier 1
+
+CIB: Commercial & Investment Bank
+
+CRE: Commercial real estate
+
+CTD: Cycle to date
+
+DRIP: Dividend reinvestment plan
+
+DSB: Domestic stability buffer
+
+eSLR Enhanced Supplementary leverage ratio
+
+FICC: Fixed Income, Currency, and Commodities
+
+FRC: First Republic
+
+GILs: Gross impaired loans
+
+GSIB: Global systematically important bank
+
+HNW: High net worth
+
+HPI: Historical principal investments
+
+HPI: Historical principal investments
+
+IB: Interest-bearing
+
+IB: Investment banking
+
+L/D Ratio: Loan-to-deposit ratio
+
+NALs: Non-accruing loans
+
+NCLs: Net credit losses
+
+NCOs: Net charge-offs
+
+NIB: Non-interest bearing
+
+NII: Net interest income
+
+NIM: Net interest margin
+
+NPAs: Non-performing assets
+
+NPLs: Non-performing loans
+
+OSFI: Office of the Superintendent of Financial Institutions
+
+PCL: Provision for credit losses
+
+R&D: Research and development
+
+ROA: Return on assets
+
+ROE: Return on equity
+
+ROTCE: Return on tangible common equity
+
+RWA: Risk weighted assets
+
+SCB: Stress capital buffer
+
+SLR: Supplementary leverage ratio
+
+TA: Tangible assets
+
+TBV: Tangible book value
+
+TBV: Tangible book value
+
+TCE: Tangible common equity
+
+TTC: Through the cycle
+
+UHNW: Ultra-high net worth
+
+Exhibit 53: Companies mentioned
+
+Companies mentioned in this report
+
+<table><tr><td>BofA Ticker</td><td>Bloomberg ticker</td><td>Company name</td><td>Price</td><td>Rating</td></tr><tr><td>ASB</td><td>ASB US</td><td>Associated Banc</td><td>US$ 28.01</td><td>B-2-7</td></tr><tr><td>BOH</td><td>BOH US</td><td>Bank of Hawaii</td><td>US$ 77.79</td><td>B-3-7</td></tr><tr><td>BK</td><td>BK US</td><td>BNY Mellon</td><td>US$ 137.16</td><td>B-1-7</td></tr><tr><td>CBC</td><td>CBC US</td><td>Central Bancompany</td><td>US$ 28.45</td><td>B-1-7</td></tr><tr><td>C</td><td>C US</td><td>Citi</td><td>US$ 125.09</td><td>B-1-7</td></tr><tr><td>CFG</td><td>CFG US</td><td>Citizens Financial</td><td>US$ 62.89</td><td>B-1-7</td></tr><tr><td>CBSH</td><td>CBSH US</td><td>Commerce Bancshares</td><td>US$ 52.37</td><td>B-2-7</td></tr><tr><td>CFR</td><td>CFR US</td><td>Cullen/Frost</td><td>US$ 139.38</td><td>B-1-7</td></tr><tr><td>EWBC</td><td>EWBC US</td><td>East-West</td><td>US$ 123.12</td><td>B-1-7</td></tr><tr><td>FITB</td><td>FITB US</td><td>Fifth Third Bank</td><td>US$ 49.48</td><td>B-1-7</td></tr><tr><td>FBP</td><td>FBP US</td><td>First Bancorp PR</td><td>US$ 24.11</td><td>B-1-7</td></tr><tr><td>FHB</td><td>FHB US</td><td>First Hawaiian Inc.</td><td>US$ 27.35</td><td>B-3-7</td></tr><tr><td>FHN</td><td>FHN US</td><td>First Horizon Corp.</td><td>US$ 24.23</td><td>B-1-7</td></tr><tr><td>FLG</td><td>FLG US</td><td>Flagstar Bank</td><td>US$ 13.85</td><td>C-2-8</td></tr><tr><td>FNB</td><td>FNB US</td><td>FNB Corp</td><td>US$ 17.53</td><td>B-1-7</td></tr><tr><td>GS</td><td>GS US</td><td>GS</td><td>US$ 996.73</td><td>B-1-7</td></tr><tr><td>HBAN</td><td>HBAN US</td><td>Huntington</td><td>US$ 15.92</td><td>B-1-7</td></tr><tr><td>JPM</td><td>JPM US</td><td>JPM Chase</td><td>US$ 306.38</td><td>B-1-7</td></tr><tr><td>KEY</td><td>KEY US</td><td>KeyCorp</td><td>US$ 21.56</td><td>B-1-8</td></tr><tr><td>MTB</td><td>MTB US</td><td>M&amp;T Bank</td><td>US$ 213.18</td><td>B-2-7</td></tr><tr><td>MS</td><td>MS US</td><td>MS</td><td>US$ 201.03</td><td>B-1-7</td></tr><tr><td>NTRS</td><td>NTRS US</td><td>Northern Trust</td><td>US$ 167.77</td><td>B-1-7</td></tr><tr><td>PNFP</td><td>PNFP US</td><td>Pinnacle</td><td>US$ 97.15</td><td>C-1-7</td></tr><tr><td>BPOP</td><td>BPOP US</td><td>Popular Inc</td><td>US$ 150.5</td><td>B-1-7</td></tr><tr><td>PB</td><td>PB US</td><td>Prosperity Bncsh</td><td>US$ 69.09</td><td>B-2-7</td></tr><tr><td>RF</td><td>RF US</td><td>Regions Financial</td><td>US$ 27.83</td><td>B-2-7</td></tr><tr><td>STT</td><td>STT US</td><td>State Street</td><td>US$ 153.95</td><td>B-2-7</td></tr><tr><td>TCBI</td><td>TCBI US</td><td>Texas Capital Bancsh</td><td>US$ 99.39</td><td>B-1-7</td></tr><tr><td>PNC</td><td>PNC US</td><td>The PNC Financial</td><td>US$ 219.23</td><td>B-1-7</td></tr><tr><td>TFC</td><td>TFC US</td><td>Truist Financial</td><td>US$ 48.38</td><td>B-1-7</td></tr><tr><td>USB</td><td>USB US</td><td>U.S. Bancorp</td><td>US$ 54.83</td><td>B-1-7</td></tr><tr><td>UMBF</td><td>UMBF US</td><td>UMB Financial Corp</td><td>US$ 131.21</td><td>B-1-7</td></tr><tr><td>WASH</td><td>WASH US</td><td>Washington Trust</td><td>US$ 32.09</td><td>B-2-8</td></tr><tr><td>WFC</td><td>WFC US</td><td>Wells Fargo</td><td>US$ 76.4</td><td>B-1-7</td></tr><tr><td>WAL</td><td>WAL US</td><td>Western Alliance</td><td>US$ 78.59</td><td>C-1-7</td></tr><tr><td>ZION</td><td>ZION US</td><td>Zions</td><td>US$ 62.12</td><td>C-2-7</td></tr></table>
+
+Source: BofA Global Research   
+BofA GLOBAL RESEARCH
+
+# Price objective basis & risk
+
+# Associated Banc-Corp (ASB)
+
+Our \$34 PO is based on 50% FY26e P/E and 50% FY26e P/TBV. Assign 11x to FY26e EPS, 1.6x YE26e TBV, in line with pre-pandemic (2015-19) average multiples.
+
+Upside risk: stronger-than-expected balance sheet growth and greater NIM expansion relative to peers. Downside risk: higher-than-expected expense growth, accelerated credit migration, slower balance sheet growth.
+
+# Bank of Hawaii Corp. (BOH)
+
+Our \$85 PO is based on 50% FY26e P/E and 50% FY26e P/TBV. Assign 13x to FY26e EPS, 1.8x YE26e TBV. Both metrics below respective pre-pandemic (2015-19) average multiples due to a lower return profile.
+
+Downside risks to our price objective are a longer-than-anticipated low rate environment and a reversal of local economic improvement. Upside risks are a stronger-than-expected economic rebound, better-than-expected capital distribution and a shorter-than-anticipated low rate environment.
+
+# BNY (BK)
+
+Our \$150 PO is based on 50% FY26e P/E and 50% FY26e P/TBV. Assign 19x to FY26e EPS, 3.8x YE26e TBV vs. the bank's 5 year pre pandemic median of 13.1x/3.1x given an attractive combination of a capital light, high ROE business with limited credit risk and sticky client relationships.
+
+Risks to the upside is stronger equity/bond markets. Risks to the downside are a severe selloff in equity/bond markets that that could put downward pressure on fee growth and M&A that could temper capital return.
+
+# Central Bancompany (CBC)
+
+Our \$29.50 PO is based on 50% FY26e P/E and 50% FY26e P/TBV. Assign 12.5x to pro forma FY26e EPS (including incremental earnings from capital deployment) and 1.6x YE26e TBV. This compares to sector medians of 11.4x P/E and 1.4x P/TBV. Premium multiples reflect above average return profile.
+
+Downside risk: Above average credit losses, destructive acquisition, increased deposit competition, and elevated public company costs.
+
+# Citi Inc. (C)
+
+Our \$170 PO is based on 50% FY26e P/E and 50% FY26e P/TBV. Assign 15.0x to FY26e EPS, 1.7x YE26e TBV. These multiples are above historical averages (10x P/E, 1.0x P/TBV) given our expectations for an acceleration in earnings growth.
+
+Downside risks to our PO are execution risk tied to management's franchise transformation efforts, an economic downturn or a macro-economic shock, increased costs tied to the regulatory consent orders, regulatory changes. Faster pace of share buybacks, better-than-expected operating leverage.
+
+# Citizens Financial Group (CFG)
+
+Our \$76 PO is based on 50% FY26e P/E and 50% FY26e P/TBV. Assign 14.5x to FY26e EPS, 1.9x YE26e TBV vs. the bank's 5 year pre-pandemic median of 13.2x/1.2x given reduced uncertainty surrounding EPS/ROTCE outlooks.
+
+Downside risks to our PO: a greater than expected decline in interest rates (FF sub-2.5%) that would weigh on our NIM forecast, deterioration in the macro-economic outlook that raises concerns around a credit cycle and would temper appetite to own regional banks.
+
+# Commerce Bancshares Inc. (CBSH)
+
+Our \$69 PO is based on 50% FY26e P/E and 50% FY26e P/TBV. Assign 15.5x to FY26e EPS, 2.4x YE26e TBV vs. the bank's 5 year pre pandemic average of 17.6x/2.4x.
+
+Upside risks: stronger than expected balance sheet growth, quicker return to profitability, and greater NIM expansion relative to peers. Downside risks: higher than expected expense growth, accelerated credit migration, and greater impact on fee income from regulatory changes.
+
+# Cullen/Frost Bankers Inc (CFR)
+
+Our \$163 PO is based on 50% FY26e P/E and 50% FY26e P/TBV. Assign 16x to FY26e EPS, 2.3x YE26e TBV, above the bank's 5 year pre-pandemic medians of 15.3x/2.3x. Downside risks to our PO are worse-than-expected credit losses, greater-than-expected net interest margin compression, and slower-than-expected economic growth. Upside risks to our PO are credit resilience, better-than-expected margin performance, and stronger-than-expected economic growth.
+
+# East West Bancorp, Incorporated (EWBC)
+
+Our \$140 PO is based on 50% FY26e P/E and 50% FY26e P/TBV. Assign 14x to FY26e EPS, 1.9x YE26e TBV. These are below the bank's 5 year pre pandemic median of 14.3x/2.4x given heightened uncertainty surrounding EPS/ROTCE outlooks, owing to the macro backdrop. Downside risks to our PO are: worse than expected credit losses, greater than expected net interest margin compression, and slower than expected economic growth. Upside risks to our PO are: credit resilience, better than expected margin performance, and stronger than expected economic growth.
+
+# Fifth Third Bank (FITB)
+
+Our \$58 PO is based on 50% FY26e P/E and 50% FY26e P/TBV. Assign 14.5x to FY26e EPS, 2.1x YE26e TBV, above the bank's 5 year pre pandemic median of 11.9x/1.4x given favorable EPS/ROTCE outlooks. Downside risks to our PO: slower-than-guided loan growth on weaker economic activity, and/or a deterioration in credit quality. Upside risks to our PO are a better-than-expected improvement in the macro environment, stronger-than-anticipated balance sheet growth, and/or better expense management.
+
+# First Bancorp Puerto Rico (FBP)
+
+Our \$26 PO is based on 50% FY26e P/E and 50% FY26e P/TBV. Assign 11x to FY26e EPS, 1.8x YE26e TBV vs. the bank's 5 year pre pandemic average of 13.5x/0.8x. Downside risks to our price objective are a worse-than-expected restructuring of PR government debt and a deterioration in the Puerto Rican economy that could hurt the ongoing credit and earnings recovery at FBP.
+
+Upside risks to our price objective are a much stronger economic improvement in Puerto Rico, deployment of excess capital into share purchase agreement and a better-than-expected improvement in asset quality trends at FBP.
+
+# First Hawaiian Inc. (FHB)
+
+Our \$28 PO is based on 50% FY26e P/E and 50% FY26e P/TBV. Assign 11.0x to FY26e EPS, 1.8x YE26e TBV. Both metrics below respective pre-pandemic (2015-19) average multiples given heightened uncertainty surrounding EPS/ROTCE outlooks, owing to the macro backdrop.
+
+Downside risks are 1) FHB's reliance on the Hawaiian economy, with 80% of the franchise spread across Hawaii, Guam, and Saipan, poses downside risk to EPS from a severe economic downturn in this region. 2) While FHB has a history of conservative underwriting, its exposure to auto loans could serve as an overhang if investor concerns around the health of the auto sector and consumer increase. Upside risk to our PO is a quick economic recovery in Hawaii and better-than-expected NIM expansion.
+
+# First Horizon Corporation (FHN)
+
+Our \$27 PO is based on 50% FY26e P/E and 50% FY26e P/TBV. Assign 14x to FY26e EPS, 1.6x YE26e TBV. These are below/inline the bank's 5-year pre-pandemic median of 14.5x/1.7x given combination of uncertainty surrounding EPS/ROTCE outlooks, owing to the macro backdrop, partially offset by improving fundamentals. Risks to the upside are stronger-than-expected loan/deposit growth and better-than-expected mgmt. execution post-TD acquisition termination. Risks to the downside are: greater than expected expense growth as mgmt plays catch-up on tech spend, a deterioration in the funding backdrop that drives higher than expected deposit pricing, worse than expected credit losses.
+
+# Flagstar Bank, N.A. (FLG)
+
+Our \$15.00 PO is based on FY26e P/TBV. Assign 0.9x YE26e TBV vs. the bank's 5 year pre pandemic median of 1.7x owing to the ongoing franchise transformation and the sale of non-strategic assets. Upside risks to our price objective are: better than expected growth, faster than expected decline in market interest rates that would provide relief in funding costs and to its CRE borrowers, and better than expected deal synergies.
+
+Downside risks to our price objective are: worse than expected credit losses, higher deposit costs, severe downturn in the NYC economy and the NYC commercial real estate market, additional loan loss reserve and external capital raise.
+
+# FNB Corporation (FNB)
+
+Our \$20 PO is based on 50% FY26e P/E and 50% FY26e P/TBV. Assign 10.5x to FY26e EPS, 1.4x YE26e TBV, above pre-pandemic (2015-19) average multiples driven by improved capital position and fee growth opportunity.
+
+Upside risks: stronger than expected balance sheet growth, quicker return to profitability, and greater NIM expansion relative to peers. Downside risks: higher than expected expense growth, accelerated credit migration, and slower balance sheet growth.
+
+# GS (GS)
+
+Our \$1,050 PO is based on 50% FY26e P/E and 50% FY26e P/TBV. Assign 17.0x to FY26e EPS, 3.1x YE26e TBV, above the bank's 5-year pre pandemic median of 10.1x/1.2x given potential for a positive EPS revision cycle and upside to our EPS/ROE forecast.
+
+Downside risks to our PO: weaker economy/capital markets, macro or geo-political issues, competition, structural pressures, tougher global regulation, and litigation.
+
+Upside risks: stronger capital markets activity.
+
+# Huntington Bancshares Inc. (HBAN)
+
+Our \$18 PO is based on 50% FY26e P/E and 50% FY26e P/TBV. Assign 11.5x to FY26e EPS, 1.7x YE26e TBV vs. the bank's 5 year pre pandemic median of 12.2x/1.8x given improved clarity around EPS/ROTCE outlooks despite an uncertain macro backdrop. Downside risks to our PO: higher for longer interest rate environment increasing deposit costs, greater-than-expected expenses, hard landing leading to outsized losses. Upside risks to our PO: better-than-expected PPNR growth.
+
+# JPM Chase & Co. (JPM)
+
+Our \$362 PO is based on 50% FY26e P/E and 50% FY26e P/TBV. We assign 17x to FY26e EPS, 3.0x YE26e TBV, above the 5-year pre-pandemic average (11.8x/1.7x, respectively) due to the bank's best-in-class revenue generation and better EPS defensibility.
+
+Downside risks to our price objective are macro risks, such as a faster pace to rate cuts, additional regulatory requirements, and scrutiny of the financials industry.
+
+Upside risks are better-than-expected credit quality (i.e., lower loan losses) and better interest rate defensibility.
+
+# KeyCorp (KEY)
+
+Our \$25 PO is based on 50% FY26e P/E and 50% FY26e P/TBV. Assign 14x to FY26e EPS, 1.7x YE26e TBV vs. the bank's 5-year pre pandemic median of 11.4x/1.4x given expected tailwinds from asset repricing, capital markets.
+
+Downside risks to our PO: higher-for-longer interest rate environment increasing deposit costs, greater-than-expected expenses, inability to maximize balance sheet efficiency, and the announcement of expensive deals. Upside risks: lower-than-expected credit losses and better-than-expected PPNR growth.
+
+# M&T Bank (MTB)
+
+Our \$217 PO is based on 50% FY26e P/E and 50% FY26e P/TBV. Assign 11.5x to FY26e EPS, 1.8x YE26e TBV, respectively, below the bank's 5 year pre pandemic median of 14.7x/2.2x given heightened uncertainty surrounding EPS/ROTCE outlooks, owing to the macro backdrop. Downside risks to our PO: a significant deterioration in the CRE market beyond office that would weigh on credit quality, higher funding costs that would squeeze the net interest margin, and rising regulatory burden. Upside risks: stronger growth, lower funding costs, opportunistic M&A.
+
+# MS (MS)
+
+Our \$225 PO is based on 50% FY26e P/E and 50% FY26e P/TBV. Assign 19x to FY26e EPS, 4.1x YE26e TBV, above the bank's 5-year pre-pandemic median of 11.0x/1.3x given an improved (stickier) revenue mix driven by its wealth and asset management segments.
+
+Risks to the upside are stronger wealth/asset management trends and capital markets activity and higher rates.
+
+Risks to the downside are a weak economy/capital markets, increased macro issues, tougher regulation, and litigation.
+
+# Northern Trust Corporation (NTRS)
+
+Our \$190 PO is based on 50% FY26e P/E and 50% FY26e P/TBV. Assign 19.0x to FY26e EPS, 2.8x YE26e TBV, above the bank's 5 year pre pandemic median of 16.5x/2.3x given reduced uncertainty surrounding EPS/ROTCE outlooks.
+
+Downside risks are a selloff in equity/bond markets that would put downward pressure on fee growth, rising deposit costs that would put downward pressure on net interest income, management's inability to execute on efficiency/profitability goals. Upside risks are stronger equity/bond markets, sooner than expected achievement of mgmt's profitability/strategic targets.
+
+# Pinnacle Financial Partners (PNFP)
+
+Our \$120 PO is based on 50% FY26e P/E and 50% FY26e P/TBV. Assign 12x to FY26e EPS, 1.6x YE26e TBV vs. the bank's 5 year pre-pandemic median of 16.3x/2.7x given uncertainty tied to integration of the Synovus acquisition. Downside risks to our PO: banker and client attrition driven by a troubled deal integration, material deterioration in the macro backdrop driving higher credit losses.
+
+# Popular Inc (BPOP)
+
+Our \$163 PO is based on 50% FY26e P/E and 50% FY26e P/TBV. Assign 10x to FY26e EPS, 1.5x YE26e TBV vs. the bank's 5 year pre pandemic average of 9.9x/0.9x.
+
+Upside risks: a better-than-expected improvement in the macro environment and credit performance, and larger cost savings.
+
+Downside risks: slower-than-expected federal aid disbursement, a deterioration in credit quality and/or increase in expenses.
+
+# Prosperity Bancshares Inc (PB)
+
+Our \$78 PO is based on 50% FY26e P/E and 50% FY26e P/TBV. Assign 13.0x to FY26e EPS, 1.8x YE26e TBV. These are below the bank's 5 year pre pandemic median of 14.6x/2.4x given heightened uncertainty surrounding EPS/ROTCE outlooks, owing to the macro backdrop.
+
+Downside risks to our PO are: worse than expected credit losses, greater than expected net interest margin compression, and slower than expected economic growth. Upside risks to our PO are: better than expected margin performance, and stronger than expected economic growth.
+
+# Regions Financial (RF)
+
+Our \$30 PO is based on 50% FY26e P/E and 50% FY26e P/TBV. Assign 11.4x to FY26e EPS, 2.1x YE26e TBV vs. the bank's 5 year pre pandemic median of 12.3x/1.5x given reduced uncertainty surrounding EPS/ROTCE outlooks. Downside risks to our PO: higher-than-expected credit losses, greater-than-expected revenue pressure, regulatory changes that would impact growth/profitability, greater-than-anticipated operating losses due to check fraud.
+
+# State Street Corporation (STT)
+
+Our \$160 PO is based on 50% FY26e P/E and 50% FY26e P/TBV. Assign 14.0x to FY26e EPS, 2.5x YE26e TBV vs. the bank's 5 year pre pandemic median of 10.4x/2.0x given heightened uncertainty surrounding EPS/ROTCE outlooks, owing to the macro backdrop.
+
+Downside risks to our PO: severe selloff in equity/bond markets that that could put downward pressure on fee growth and M&A that could temper capital return. Upside risks: stronger equity/bond markets.
+
+# Texas Capital Bancshares Inc. (TCBI)
+
+Our \$111 PO is based on 50% FY26e P/E and 50% FY26e P/TBV. Assign 15x to FY26e EPS, 1.2x YE26e TBV in line with the bank's 5 year pre-pandemic median but P/TBV multiples below recent highs due to residual execution risk.
+
+Upside risks: stronger than expected balance sheet growth, quicker return to profitability and greater NIM expansion relative to peers. Downside risks: higher than expected expense growth, accelerated credit migration, slower balance sheet growth.
+
+# The PNC Financial Services Group, Inc. (PNC)
+
+Our \$264 PO is based on 50% FY26e P/E and 50% FY26e P/TBV. Assign 13x to FY26e EPS, 2.3x YE26e TBV vs. the bank's 5-year pre-pandemic median of 12.8x/1.7x given reduced uncertainty surrounding EPS/ROTCE outlooks, owing to the improving macro backdrop. Downside risks to our PO: higher than expected credit losses, greater than expected revenue pressure, regulatory changes that would impact growth/profitability, an acquisition that is not well received by the markets.
+
+# Truist Financial (TFC)
+
+Our \$56 PO is based on 50% FY26e P/E and 50% FY26e P/TBV. Assign 11.5x to FY26e EPS, 1.6x YE26e TBV vs. the bank's 5 year pre pandemic median of 12.7x/2.2x given reduced uncertainty surrounding EPS/ROTCE outlooks, owing to the macro backdrop. Downside risks to our PO: higher than expected credit losses, greater than expected revenue pressure, regulatory changes that would impact growth/profitability, execution risk tied to STI/BBT merger of equals that completed in December 2019.
+
+# U.S. Bancorp (USB)
+
+Our \$61 PO is based on 50% FY26e P/E and 50% FY26e P/TBV. We assign 11.5x to FY26e EPS, 2.0x YE26e TBV, below the bank's 5-year pre-pandemic median of 13.3x/2.5x given heightened uncertainty surrounding EPS/ROTCE outlooks, owing to the macro backdrop.
+
+Downside risks to our PO: higher-than-expected credit losses, greater-than-expected revenue pressure, regulatory changes that would impact growth/profitability, not fully realizing synergies expected with the acquisition of Union Bank.
+
+# UMB Financial Corporation (UMBF)
+
+Our \$152 PO is based on 50% FY26e P/E and 50% FY26e P/TBV. Assign 14x to FY26e EPS, 1.6x YE26e TBV. The discount to pre-pandemic multiples (15x/1.4x, respectively) reflects the near-term macro headwinds as well as merger integration risks.
+
+Upside risk: stronger than expected balance sheet growth and greater NIM expansion relative to peers. Downside risk: higher than expected expense growth, accelerated credit migration, and greater impact on fee income from regulatory changes
+
+# Washington Trust Bancorp Inc (WASH)
+
+Our \$31 PO is based on 50% FY26e P/E and 50% FY26e P/TBV. Assign 10x to FY26e EPS, 1.3x YE26e TBV in line with respective pre-pandemic average.
+
+Upside risk: stronger than expected balance sheet growth, greater NIM expansion relative to peers from reduced deposit costs, and stronger fee income generation. Downside risk: lower than expected deposit growth, accelerated credit migration, and lower fee income growth.
+
+# Wells Fargo & Company (WFC)
+
+Our \$95 PO is based on 50% FY26e P/E and 50% FY26e P/TBV. Assign 13.5x to FY26e EPS, 2.0x YE26e TBV. These are above the bank's 5 year pre pandemic median of 12.4x/1.8x given heightened uncertainty surrounding EPS/ROTCE outlooks, owing to the macro backdrop.
+
+Downside risks to our PO: worse-than-expected economic downturn that leads to significantly higher-than-expected credit losses, elevated expense trajectory, slower-than-expected resolution of its consent orders. Upside risks: better-than-expected credit quality (i.e., lower loan losses) and material expense management that improve visibility on future earnings.
+
+# Western Alliance Bancorp (WAL)
+
+Our \$86 PO is based on 50% FY26e P/E and 50% FY26e P/TBV. Assign 8.5x to FY26e EPS, 1.3x YE26e TBV. These are below the bank's 5 year pre pandemic median of 14.8x/2.8x given heightened uncertainty surrounding EPS/ROTCE outlooks, owing to the macro backdrop. Downside risks to our PO are: worse than expected credit losses, greater than expected net interest margin compression, and slower than expected economic growth. Upside risks to our PO are: credit resilience, better than expected margin performance, and stronger than expected economic growth.
+
+# Zions Bancorp (ZION)
+
+Our \$67 PO is based on 50% FY26e P/E and 50% FY26e P/TBV. Assign 11x to FY26e EPS and 1.2x YE26e TBV, reflecting a discount to ROTCE implied PTBV given above average credit concerns.
+
+Upside risks to our PO are better-than-expected expense management and/or continued benign credit.
+
+Downside risks are a deterioration in energy prices and/or an interest rate shock that drives higher debt service costs, potentially creating a credit issue.
+
+# Analyst Certification
+
+We, Ebrahim H. Poonawala and Brandon Berman, hereby certify that the views each of us has expressed in this research report accurately reflect each of our respective personal views about the subject securities and issuers. We also certify that no part of our respective compensation was, is, or will be, directly or indirectly, related to the specific recommendations or view expressed in this research report.
+
+North America - Banks Coverage Cluster 
+
+<table><tr><td>Investment rating</td><td>Company</td><td>BofA Ticker</td><td>Bloomberg symbol</td><td>Analyst</td></tr><tr><td colspan="5">BUY</td></tr><tr><td></td><td>Ally Financial</td><td>ALLY</td><td>ALLY US</td><td>Brandon Berman</td></tr><tr><td></td><td>Ares Capital Corporation</td><td>ARCC</td><td>ARCC US</td><td>Derek Hewett</td></tr><tr><td></td><td>Barings BDC Inc</td><td>BBDC</td><td>BBDC US</td><td>Derek Hewett</td></tr><tr><td></td><td>Blackstone Secured Lending Fund</td><td>BXSL</td><td>BXSL US</td><td>Derek Hewett</td></tr><tr><td></td><td>Blue Owl Capital Corporation</td><td>OBDC</td><td>OBDC US</td><td>Derek Hewett</td></tr><tr><td></td><td>BNY</td><td>BK</td><td>BK US</td><td>Ebrahim H. Poonawala</td></tr><tr><td></td><td>Canadian Imperial Bank of Commerce</td><td>CM</td><td>CM US</td><td>Ebrahim H. Poonawala</td></tr><tr><td></td><td>Canadian Imperial Bank of Commerce</td><td>YCM</td><td>CM CN</td><td>Ebrahim H. Poonawala</td></tr><tr><td></td><td>Central Bancompany</td><td>CBC</td><td>CBC US</td><td>Brandon Berman</td></tr><tr><td></td><td>Citi Inc.</td><td>C</td><td>C US</td><td>Ebrahim H. Poonawala</td></tr><tr><td></td><td>Citizens Financial Group</td><td>CFG</td><td>CFG US</td><td>Ebrahim H. Poonawala</td></tr><tr><td></td><td>Crescent Capital BDC</td><td>CCAP</td><td>CCAP US</td><td>Derek Hewett</td></tr><tr><td></td><td>Cullen/Frost Bankers Inc</td><td>CFR</td><td>CFR US</td><td>Ebrahim H. Poonawala</td></tr><tr><td></td><td>East West Bancorp, Incorporated</td><td>EWBC</td><td>EWBC US</td><td>Ebrahim H. Poonawala</td></tr><tr><td></td><td>Evercore Inc.</td><td>EVR</td><td>EVR US</td><td>Ebrahim H. Poonawala</td></tr><tr><td></td><td>Fifth Third Bank</td><td>FITB</td><td>FITB US</td><td>Ebrahim H. Poonawala</td></tr><tr><td></td><td>First Bancorp Puerto Rico</td><td>FBP</td><td>FBP US</td><td>Brandon Berman</td></tr><tr><td></td><td>First Horizon Corporation</td><td>FHN</td><td>FHN US</td><td>Ebrahim H. Poonawala</td></tr><tr><td></td><td>FNB Corporation</td><td>FNB</td><td>FNB US</td><td>Brandon Berman</td></tr><tr><td></td><td>GS</td><td>GS</td><td>GS US</td><td>Ebrahim H. Poonawala</td></tr><tr><td></td><td>Golub Capital BDC, Inc.</td><td>GBDC</td><td>GBDC US</td><td>Derek Hewett</td></tr><tr><td></td><td>Huntington Bancshares Inc.</td><td>HBAN</td><td>HBAN US</td><td>Ebrahim H. Poonawala</td></tr><tr><td></td><td>JPM Chase &amp; Co.</td><td>JPM</td><td>JPM US</td><td>Ebrahim H. Poonawala</td></tr><tr><td></td><td>Kayne Anderson BDC, Inc.</td><td>KBDC</td><td>KBDC US</td><td>Derek Hewett</td></tr><tr><td></td><td>KeyCorp</td><td>KEY</td><td>KEY US</td><td>Ebrahim H. Poonawala</td></tr><tr><td></td><td>Lazard Inc.</td><td>LAZ</td><td>LAZ US</td><td>Ebrahim H. Poonawala</td></tr><tr><td></td><td>MS</td><td>MS</td><td>MS US</td><td>Ebrahim H. Poonawala</td></tr><tr><td></td><td>National Bank of Canada</td><td>YNA</td><td>NA CN</td><td>Ebrahim H. Poonawala</td></tr><tr><td></td><td>Northern Trust Corporation</td><td>NTRS</td><td>NTRS US</td><td>Ebrahim H. Poonawala</td></tr><tr><td></td><td>Nuveen Churchill Direct Lending</td><td>NCDL</td><td>NCDL US</td><td>Derek Hewett</td></tr><tr><td></td><td>Pinnacle Financial Partners</td><td>PNFP</td><td>PNFP US</td><td>Ebrahim H. Poonawala</td></tr><tr><td></td><td>Popular Inc</td><td>BPOP</td><td>BPOP US</td><td>Brandon Berman</td></tr><tr><td></td><td>Royal Bank of Canada</td><td>RY</td><td>RY US</td><td>Ebrahim H. Poonawala</td></tr><tr><td></td><td>Royal Bank of Canada</td><td>YRY</td><td>RY CN</td><td>Ebrahim H. Poonawala</td></tr><tr><td></td><td>Safehold, Inc</td><td>SAFE</td><td>SAFE US</td><td>Derek Hewett</td></tr><tr><td></td><td>Sixth Street Specialty Lending, Inc</td><td>TSLX</td><td>TSLX US</td><td>Derek Hewett</td></tr><tr><td></td><td>Texas Capital Bancshares Inc.</td><td>TCBI</td><td>TCBI US</td><td>Brandon Berman</td></tr><tr><td></td><td>The PNC Financial Services Group, Inc.</td><td>PNC</td><td>PNC US</td><td>Ebrahim H. Poonawala</td></tr><tr><td></td><td>Toronto-Dominion Bank</td><td>TD</td><td>TD US</td><td>Ebrahim H. Poonawala</td></tr><tr><td></td><td>Toronto-Dominion Bank</td><td>YTD</td><td>TD CN</td><td>Ebrahim H. Poonawala</td></tr><tr><td></td><td>Truist Financial</td><td>TFC</td><td>TFC US</td><td>Ebrahim H. Poonawala</td></tr><tr><td></td><td>U.S. Bancorp</td><td>USB</td><td>USB US</td><td>Ebrahim H. Poonawala</td></tr><tr><td></td><td>UMB Financial Corporation</td><td>UMBF</td><td>UMBF US</td><td>Brandon Berman</td></tr><tr><td></td><td>Wells Fargo &amp; Company</td><td>WFC</td><td>WFC US</td><td>Ebrahim H. Poonawala</td></tr><tr><td></td><td>Western Alliance Bancorp</td><td>WAL</td><td>WAL US</td><td>Ebrahim H. Poonawala</td></tr><tr><td colspan="5">NEUTRAL</td></tr><tr><td></td><td>AGNC Investment Corp</td><td>AGNC</td><td>AGNC US</td><td>Derek Hewett</td></tr><tr><td></td><td>Annaly Capital Management</td><td>NLY</td><td>NLY US</td><td>Derek Hewett</td></tr><tr><td></td><td>Apollo Commercial Real Estate Finance</td><td>ARI</td><td>ARI US</td><td>Derek Hewett</td></tr><tr><td></td><td>Associated Banc-Corp</td><td>ASB</td><td>ASB US</td><td>Brandon Berman</td></tr><tr><td></td><td>Bain Capital Specialty Finance, Inc.</td><td>BCSF</td><td>BCSF US</td><td>Derek Hewett</td></tr><tr><td></td><td>Bank of Montreal</td><td>BMO</td><td>BMO US</td><td>Ebrahim H. Poonawala</td></tr><tr><td></td><td>Bank of Montreal</td><td>YBMO</td><td>BMO CN</td><td>Ebrahim H. Poonawala</td></tr><tr><td></td><td>Bank of Nova Scotia</td><td>YBNS</td><td>BNS CN</td><td>Ebrahim H. Poonawala</td></tr><tr><td></td><td>Bank of Nova Scotia</td><td>BNS</td><td>BNS US</td><td>Ebrahim H. Poonawala</td></tr><tr><td></td><td>Blackstone Mortgage Trust Inc</td><td>BXMT</td><td>BXMT US</td><td>Derek Hewett</td></tr><tr><td></td><td>Blue Owl Technology Finance Corp.</td><td>OTF</td><td>OTF US</td><td>Derek Hewett</td></tr><tr><td></td><td>Commerce Bancshares Inc.</td><td>CBSH</td><td>CBSH US</td><td>Brandon Berman</td></tr><tr><td></td><td>Flagstar Bank, N.A.</td><td>FLG</td><td>FLG US</td><td>Ebrahim H. Poonawala</td></tr><tr><td></td><td>GS BDC, Inc.</td><td>GSBD</td><td>GSBD US</td><td>Derek Hewett</td></tr><tr><td></td><td>Ladder Capital Corp</td><td>LADR</td><td>LADR US</td><td>Derek Hewett</td></tr><tr><td></td><td>M&amp;T Bank</td><td>MTB</td><td>MTB US</td><td>Ebrahim H. Poonawala</td></tr><tr><td></td><td>Moelis &amp; Company</td><td>MC</td><td>MC US</td><td>Ebrahim H. Poonawala</td></tr></table>
+
+North America - Banks Coverage Cluster 
+
+<table><tr><td>Investment rating</td><td>Company</td><td>BofA Ticker</td><td>Bloomberg symbol</td><td>Analyst</td></tr><tr><td></td><td>Palmer Square Capital BDC</td><td>PSBD</td><td>PSBD US</td><td>Derek Hewett</td></tr><tr><td></td><td>PennyMac Mortgage Investment Trust</td><td>PMT</td><td>PMT US</td><td>Derek Hewett</td></tr><tr><td></td><td>Prosperity Bancshares Inc</td><td>PB</td><td>PB US</td><td>Brandon Berman</td></tr><tr><td></td><td>Regions Financial</td><td>RF</td><td>RF US</td><td>Ebrahim H. Poonawala</td></tr><tr><td></td><td>Runway Growth</td><td>RWAY</td><td>RWAY US</td><td>Derek Hewett</td></tr><tr><td></td><td>Starwood Property Trust</td><td>STWD</td><td>STWD US</td><td>Derek Hewett</td></tr><tr><td></td><td>State Street Corporation</td><td>STT</td><td>STT US</td><td>Ebrahim H. Poonawala</td></tr><tr><td></td><td>Washington Trust Bancorp Inc</td><td>WASH</td><td>WASH US</td><td>Brandon Berman</td></tr><tr><td></td><td>Zions Bancorp</td><td>ZION</td><td>ZION US</td><td>Brandon Berman</td></tr><tr><td colspan="5">UNDERPERFORM</td></tr><tr><td></td><td>Ares Commercial Real Estate Corporation</td><td>ACRE</td><td>ACRE US</td><td>Derek Hewett</td></tr><tr><td></td><td>Bank of Hawaii Corp.</td><td>BOH</td><td>BOH US</td><td>Brandon Berman</td></tr><tr><td></td><td>BrightSpire Capital Inc.</td><td>BRSP</td><td>BRSP US</td><td>Derek Hewett</td></tr><tr><td></td><td>Carlyle Secured Lending Inc</td><td>CGBD</td><td>CGBD US</td><td>Derek Hewett</td></tr><tr><td></td><td>First Hawaiian Inc.</td><td>FHB</td><td>FHB US</td><td>Brandon Berman</td></tr><tr><td></td><td>Invesco Mortgage Capital, Inc.</td><td>IVR</td><td>IVR US</td><td>Derek Hewett</td></tr><tr><td></td><td>loanDepot Inc</td><td>LDI</td><td>LDI US</td><td>Mihir Bhatia</td></tr><tr><td></td><td>MidCap Financial Investment Co</td><td>MFIC</td><td>MFIC US</td><td>Derek Hewett</td></tr><tr><td></td><td>New Mountain Finance Corporation</td><td>NMFC</td><td>NMFC US</td><td>Derek Hewett</td></tr><tr><td></td><td>Piper</td><td>PIPR</td><td>PIPR US</td><td>Ebrahim H. Poonawala</td></tr><tr><td></td><td>TPG RE Finance Trust, Inc.</td><td>TRTX</td><td>TRTX US</td><td>Derek Hewett</td></tr><tr><td colspan="5">RSTR</td></tr><tr><td></td><td>Webster Financial Corp.</td><td>WBS</td><td>WBS US</td><td>Brandon Berman</td></tr><tr><td colspan="5">RVW</td></tr><tr><td></td><td>Compass Diversified Holdings</td><td>CODI</td><td>CODI US</td><td>Derek Hewett</td></tr></table>
+
+# Disclosures
+
+# Important Disclosures
+
+Equity Investment Rating Distribution: Banks Group (as of 31 Mar 2026) 
+
+<table><tr><td>Coverage Universe</td><td>Count</td><td>Percent</td><td>Inv. Banking Relationships $^{R1}$ </td><td>Count</td><td>Percent</td></tr><tr><td>Buy</td><td>117</td><td>53.42%</td><td>Buy</td><td>98</td><td>83.76%</td></tr><tr><td>Hold</td><td>59</td><td>26.94%</td><td>Hold</td><td>47</td><td>79.66%</td></tr><tr><td>Sell</td><td>43</td><td>19.63%</td><td>Sell</td><td>35</td><td>81.40%</td></tr><tr><td colspan="6">Equity Investment Rating Distribution: Financial Services Group (as of 31 Mar 2026)</td></tr><tr><td>Coverage Universe</td><td>Count</td><td>Percent</td><td>Inv. Banking Relationships $^{R1}$ </td><td>Count</td><td>Percent</td></tr><tr><td>Buy</td><td>170</td><td>56.67%</td><td>Buy</td><td>110</td><td>64.71%</td></tr><tr><td>Hold</td><td>79</td><td>26.33%</td><td>Hold</td><td>51</td><td>64.56%</td></tr><tr><td>Sell</td><td>51</td><td>17.00%</td><td>Sell</td><td>36</td><td>70.59%</td></tr></table>
+
+Equity Investment Rating Distribution: Global Group (as of 31 Mar 2026) 
+
+<table><tr><td>Coverage Universe</td><td>Count</td><td>Percent</td><td>Inv. Banking RelationshipsR1</td><td>Count</td><td>Percent</td></tr><tr><td>Buy</td><td>1993</td><td>55.76%</td><td>Buy</td><td>1186</td><td>59.51%</td></tr><tr><td>Hold</td><td>821</td><td>22.97%</td><td>Hold</td><td>509</td><td>62.00%</td></tr><tr><td>Sell</td><td>760</td><td>21.26%</td><td>Sell</td><td>400</td><td>52.63%</td></tr></table>
+
+$^{R1}$ Issuers that were investment banking clients of BofA or one of its affiliates within the past 12 months. For purposes of this Investment Rating Distribution, the coverage universe includes only stocks. A stock rated Neutral is included as a Hold, and a stock rated Underperform is included as a Sell.
+
+FUNDAMENTAL EQUITY OPINION KEY: Opinions include a Volatility Risk Rating, an Investment Rating and an Income Rating. VOLATILITY RISK RATINGS, indicators of potential price fluctuation, are: A - Low, B - Medium and C - High. INVESTMENT RATINGS reflect the analyst's assessment of both a stock's absolute total return potential as well as its attractiveness for investment relative to other stocks within its Coverage Cluster (defined below). Our investment ratings are: 1 - Buy stocks are expected to have a total return of at least 10% and are the most attractive stocks in the coverage cluster; 2 - Neutral stocks are expected to remain flat or increase in value and are less attractive than Buy rated stocks and 3 - Underperform stocks are the least attractive stocks in a coverage cluster. An investment rating of 6 (No Rating) indicates that a stock is no longer trading on the basis of fundamentals. Analysts assign investment ratings considering, among other things, the 0-12 month total return expectation for a stock and the firm's guidelines for ratings dispersions (shown in the table below). The current price objective for a stock should be referenced to better understand the total return expectation at any given time. The price objective reflects the analyst's view of the potential price appreciation (depreciation).
+
+<table><tr><td>Investment rating</td><td>Total return expectation (within 12-month period of date of initial rating)</td><td>Ratings dispersion guidelines for coverage cluster $^{R2}$ </td></tr><tr><td>Buy</td><td>≥ 10%</td><td>≤ 70%</td></tr><tr><td>Neutral</td><td>≥ 0%</td><td>≤ 30%</td></tr><tr><td>Underperform</td><td>N/A</td><td>≥ 20%</td></tr></table>
+
+$^{R2}$ Ratings dispersions may vary from time to time where BofA Global Research believes it better reflects the investment prospects of stocks in a Coverage Cluster.
+
+INCOME RATINGS, indicators of potential cash dividends, are: 7 - same/higher (dividend considered to be secure), 8 - same/lower (dividend not considered to be secure) and 9 - pays no cash dividend. Coverage Cluster is comprised of stocks covered by a single analyst or two or more analysts sharing a common industry, sector, region or other classification(s). A stock's coverage cluster is included in the most recent BofA Global Research report referencing the stock.
+
+Price Charts for the securities referenced in this research report are available on the Price Charts website, or call 1-800-MERRILL to have them mailed.
+
+BofAS or one of its affiliates acts as a market maker for the equity securities recommended in the report: Associated Banc, Bank of Hawaii, BNY Mellon, Central Bancompany, Citi, Citizens Financial, Commerce Bancshares, Cullen/Frost, East-West, Fifth Third Bank, First Bancorp PR, First Hawaiian Inc., First Horizon Corp., Flagstar Bank, FNB Corp, GS, Huntington, JPM Chase, KeyCorp, M&T Bank, MS, Northern Trust, Pinnacle, Popular Inc, Prosperity Bncsh, Regions Financial, State Street, Texas Capital Bancsh, The PNC Financial, Truist Financial, U.S. Bancorp, UMB Financial Corp, Washington Trust, Wells Fargo, Western Alliance, Zions.
+
+BofAS or an affiliate was a manager of a public offering of securities of this issuer within the last 12 months: Bank of New York Mel, Central Bancompany, Citizens Financial, Fifth Third, Huntington Banc, M&T Bank, Northern Trust Corpo, Pinnacle Financial, Truist Financial, Zions.
+
+The issuer is or was, within the last 12 months, an investment banking client of BofAS and/or one or more of its affiliates: Assoc Banc-Corp, Bank Hawaii Corp, Bank of New York Mel, Central Bancompany, Citi, Citizens Financial, Cullen/Frost Bankers, East-West, Fifth Third, First Bancorp PR, First Hawaiian Inc., First Horizon Corp., Flagstar Bank, FNB Corp, GS, Huntington Banc, JPM Chase, KeyCorp, M&T Bank, MS, Northern Trust Corpo, Pinnacle Financial, PNC, Popular, Regions Financial, State Street, Texas Capital Bancsh, Truist Financial, U.S. Bancorp, UMB Financial Corp, Washington TB, Wells Fargo, Western Alliance, Zions.
+
+BofAS or an affiliate has received compensation from the issuer for non-investment banking services or products within the past 12 months: Assoc Banc-Corp, Bank Hawaii Corp, Bank of New York Mel, Central Bancompany, Citi, Citizens Financial, Commerce Bancshares, Cullen/Frost Bankers, East-West, Fifth Third, First Bancorp PR, First Hawaiian Inc., First Horizon Corp., Flagstar Bank, FNB Corp, GS, Huntington Banc, JPM Chase, KeyCorp, M&T Bank, MS, Northern Trust Corpo, Pinnacle Financial, PNC, Popular, Regions Financial, State Street, Texas Capital Bancsh, Truist Financial, U.S. Bancorp, UMB Financial Corp, Washington TB, Wells Fargo, Western Alliance, Zions.
+
+The issuer is or was, within the last 12 months, a non-securities business client of BofAS and/or one or more of its affiliates: Assoc Banc-Corp, Bank Hawaii Corp, Bank of New York Mel, Central Bancompany, Citi, Citizens Financial, Commerce Bancshares, Cullen/Frost Bankers, East-West, Fifth Third, First Bancorp PR, First Hawaiian Inc., First Horizon Corp., Flagstar Bank, GS, Huntington Banc, JPM Chase, KeyCorp, M&T Bank, MS, Northern Trust Corpo, Pinnacle Financial, PNC, Popular, Regions Financial, State Street, Truist Financial, U.S. Bancorp, UMB Financial Corp, Wells Fargo, Western Alliance, Zions.
+
+BofAS or an affiliate has received compensation for investment banking services from this issuer within the past 12 months: Assoc Banc-Corp, Bank of New York Mel, Central Bancompany, Citi, Citizens Financial, Cullen/Frost Bankers, East-West, Fifth Third, First Bancorp PR, First Horizon Corp., FNB Corp, GS, Huntington Banc, JPM Chase, KeyCorp, M&T Bank, MS, Northern Trust Corpo, Pinnacle Financial, PNC, Popular, Regions Financial, State Street, Texas Capital Bancsh, Truist Financial, U.S. Bancorp, UMB Financial Corp, Wells Fargo, Western Alliance, Zions.
+
+BofAS or an affiliate expects to receive or intends to seek compensation for investment banking services from this issuer or an affiliate of the issuer within the next three months: Assoc Banc-Corp, Bank Hawaii Corp, Bank of New York Mel, Citi, Citizens Financial, East-West, Fifth Third, First Hawaiian Inc., First Horizon Corp., Flagstar Bank, FNB Corp, GS, Huntington Banc, JPM Chase, KeyCorp, M&T Bank, MS, Northern Trust Corpo, Pinnacle Financial, PNC, Popular, Regions Financial, State Street, Truist Financial, U.S. Bancorp, UMB Financial Corp, Washington TB, Wells Fargo, Western Alliance, Zions.
+
+BofAS together with its affiliates beneficially owns one percent or more of the common stock of this issuer. If this report was issued on or after the 9th day of the month, it reflects the ownership position on the last day of the previous month. Reports issued before the 9th day of a month reflect the ownership position at the end of the second month preceding the date of the report: Bank Hawaii Corp, Bank of New York Mel, Citi, Citizens Financial, Cullen/Frost Bankers, East-West, Fifth Third, First Bancorp PR, First Hawaiian Inc., First Horizon Corp., FNB Corp, GS, Huntington Banc, JPM Chase, KeyCorp, M&T Bank, MS, Northern Trust Corpo, PNC, Regions Financial, State Street, Texas Capital Bancsh, Truist Financial, U.S. Bancorp, UMB Financial Corp, Wells Fargo.
+
+BofAS or one of its affiliates is willing to sell to, or buy from, clients the common equity of the issuer on a principal basis: Associated Banc, Bank of Hawaii, BNY Mellon, Central Bancompany, Citi, Citizens Financial, Commerce Bancshares, Cullen/Frost, East-West, Fifth Third Bank, First Bancorp PR, First Hawaiian Inc., First Horizon Corp., Flagstar Bank, FNB Corp, GS, Huntington, JPM Chase, KeyCorp, M&T Bank, MS, Northern Trust, Pinnacle, Popular Inc, Prosperity Bncsh, Regions Financial, State Street, Texas Capital Bancsh, The PNC Financial, Truist Financial, U.S. Bancorp, UMB Financial Corp, Washington Trust, Wells Fargo, Western Alliance, Zions.
+
+The issuer is or was, within the last 12 months, a securities business client (non-investment banking) of BofAS and/or one or more of its affiliates: Assoc Banc-Corp, Bank Hawaii Corp, Bank of New York Mel, Central Bancompany, Citi, Citizens Financial, Commerce Bancshares, Cullen/Frost Bankers, East-West, Fifth Third, First Bancorp PR, First Hawaiian Inc., First Horizon Corp., Flagstar Bank, FNB Corp, GS, Huntington Banc, JPM Chase, KeyCorp, M&T Bank, MS, Northern Trust Corpo, Pinnacle Financial, PNC, Popular, Regions Financial, State Street, Texas Capital Bancsh, Truist Financial, U.S. Bancorp, UMB Financial Corp, Washington TB, Wells Fargo, Western Alliance, Zions.
+
+BofA Global Research personnel (including the analyst(s) responsible for this report) receive compensation based upon, among other factors, the overall profitability of BofA Corporation, including profits derived from investment banking. The analyst(s) responsible for this report may also receive compensation based upon, among other factors, the overall profitability of the Bank's sales and trading businesses relating to the class of securities or financial instruments for which such analyst is responsible.
+
+# Other Important Disclosures
+
+From time to time research analysts conduct site visits of covered issuers. BofA Global Research policies prohibit research analysts from accepting payment or reimbursement for travel expenses from the issuer for such visits.
+
+Prices are indicative and for information purposes only. Except as otherwise stated in the report, for any recommendation in relation to an equity security, the price referenced is the publicly traded price of the security as of close of business on the day prior to the date of the report or, if the report is published during intraday trading, the price referenced is indicative of the traded price as of the date and time of the report and in relation to a debt security (including equity preferred and CDS), prices are indicative as of the date and time of the report and are from various sources including BofA trading desks.
+
+The date and time of completion of the production of any recommendation in this report shall be the date and time of dissemination of this report as recorded in the report timestamp.
+
+Recipients who are not institutional investors or market professionals should seek the advice of their independent financial advisor before considering information in this report in connection with any investment decision, or for a necessary explanation of its contents.
+
+Officers of BofAS or one or more of its affiliates (other than research analysts) may have a financial interest in securities of the issuer(s) or in related investments. Refer to BofA Global Research policies relating to conflicts of interest.
+
+"BofA" includes BofA, Inc. ("BofAS") and its affiliates. Investors should contact their BofA representative or Merrill Global Wealth Management financial advisor if they have questions concerning this report or concerning the appropriateness of any investment idea described herein for such investor. "BofA" is a global brand for BofA Global Research.
+
+# Information relating to Non-US affiliates of BofA and Distribution of Affiliate Research Reports:
+
+BofAS and/or BofA, Pierce, Fenner & Smith Incorporated ("MLPF&S") may in the future distribute, information of the following non-US affiliates in the US (short name: legal name, regulator): BofA (South Africa): BofA South Africa (Pty) Ltd., regulated by the Financial Sector Conduct Authority; MLI (UK): BofA International, regulated by the Financial Conduct Authority (FCA) and the Prudential Regulation Authority (PRA); BofASE (France): BofA Europe SA is authorized by the Autorité de Contrôle Prudentiel et de Résolution (ACPR) and regulated by the ACPR and the Autorité des Marchés Financiers (AMF). BofA Europe SA ("BofASE") with registered address at 51, rue La Boétie, 75008 Paris is registered under no 842 602 690 RCS Paris. In accordance with the provisions of French Code Monétaire et Financier (Monetary and Financial Code), BofASE is an établissement de crédit et d'investissement (credit and investment institution) that is authorised and supervised by the European Central Bank and the Autorité de Contrôle Prudentiel et de Résolution (ACPR) and regulated by the ACPR and the Autorité des Marchés Financiers. BofASE's share capital can be found at www.bofaml.com/BofASEdisclaimer; BofA Europe (Milan): BofA Europe Designated Activity Company, Milan Branch, regulated by the Bank of Italy, the European Central Bank (ECB) and the Central Bank of Ireland (CBI); BofA Europe (Frankfurt): BofA Europe Designated Activity Company, Frankfurt Branch regulated by BaFin, the ECB and the CBI; BofA Europe (Zurich): BofA Europe Designated Activity Company, Zurich Branch, regulated by the Swiss Financial Market Supervisory Authority FINMA, the ECB and CBI; BofA Europe (Madrid): BofA Europe Designated Activity Company, Sucursal en España, regulated by the Bank of Spain, the ECB and the CBI; BofA (Australia): BofA Equities (Australia) Limited, regulated by the Australian Securities and Investments Commission; BofA (Hong Kong): BofA (Asia Pacific) Limited, regulated by the Hong Kong Securities and Futures Commission (HKSFC); BofA (Singapore): BofA (Singapore) Pte Ltd, regulated by the Monetary Authority of Singapore (MAS); BofA (Canada): BofA Canada Inc, regulated by the Canadian Investment Regulatory Organization; BofA (Mexico): BofA Mexico, SA de CV, Casa de Bolsa, regulated by the Comisión Nacional Bancaria y de Valores; BofAS Japan: BofA Japan Co., Ltd., regulated by the Financial Services Agency; BofA (Seoul): BofA International, LLC Seoul Branch, regulated by the Financial Supervisory Service; BofA (Taiwan): BofA (Taiwan) Ltd., regulated by the Securities and Futures Bureau; BofAS India: BofA India Limited, regulated by the Securities and Exchange Board of India (SEBI); BofA (Israel): BofA Israel Limited, regulated by Israel Securities Authority; BofA (DIFC): BofA International (DIFC Branch), regulated by the Dubai Financial Services Authority (DFSA); BofA (Brazil): BofA S.A. Corretora de Títulos e Valores Mobiliários, regulated by Comissão de Valores Mobiliários; BofA KSA Company: BofA Kingdom of Saudi Arabia Company, regulated by the Capital Market Authority. This information: has been approved for publication and is distributed in the United Kingdom (UK) to professional clients and eligible counterparties (as each is defined in the rules of the FCA and the PRA) by MLI (UK), which is authorized by the PRA and regulated by the FCA and the PRA - details about the extent of our regulation by the FCA and PRA are available from us on request; has been approved for publication and is distributed in the European Economic Area (EEA) by BofASE (France), which is authorized by the ACPR and regulated by the ACPR and the AMF; has been considered and distributed in Japan by BofAS Japan, a registered securities dealer under the Financial Instruments and Exchange Act in Japan, or its permitted affiliates; is issued and distributed in Hong Kong by BofA (Hong Kong) which is regulated by HKSFC; is issued and distributed in Taiwan by BofA (Taiwan); is issued and distributed in India by BofAS India; and is issued and distributed in Singapore to institutional investors and/or accredited investors (each as defined under the Financial Advisers Regulations) by BofA (Singapore) (Company Registration No 198602883D). BofA (Singapore) is regulated by MAS. BofA Equities (Australia) Limited (ABN 65 006 276 795), AFS License 235132 (MLEA) distributes this information in Australia only to 'Wholesale' clients as defined by s.761G of the Corporations Act 2001. With the exception of BofA N.A., Australia Branch, neither MLEA nor any of its affiliates involved in preparing this information is an Authorised Deposit-Taking Institution under the Banking Act 1959 nor regulated by the Australian Prudential Regulation Authority. No approval is required for publication or distribution of this information in Brazil and its local distribution is by BofA (Brazil) in accordance with applicable regulations. BofA (DIFC) is authorized and regulated by the DFSA. Information prepared and issued by BofA (DIFC) is done so in accordance with the requirements of the DFSA conduct of business rules. BofA Europe (Frankfurt) distributes this information in Germany and is regulated by BaFin, the ECB and the CBI. BofA entities, including BofA Europe and BofASE (France), may outsource/delegate the marketing and/or provision of certain research services or aspects of research services to other branches or members of the BofA group. You may be contacted by a different BofA entity acting for and on behalf of your service provider where permitted by applicable law. This does not change your service provider. Please refer to the Electronic Communications Disclaimers for further information.
+
+This information has been prepared and issued by BofAS and/or one or more of its non-US affiliates. The author(s) of this information may not be licensed to carry on regulated activities in your jurisdiction and, if not licensed, do not hold themselves out as being able to do so. BofAS and/or MLPF&S is the distributor of this information in the US and accepts full responsibility for information distributed to BofAS and/or MLPF&S clients in the US by its non-US affiliates. Any US person receiving this information and wishing to effect any transaction in any security discussed herein should do so through BofAS and/or MLPF&S and not such foreign affiliates. Hong Kong recipients of this information should contact BofA (Asia Pacific) Limited in respect of any matters relating to dealing in securities or provision of specific advice on securities or any other matters arising from, or in connection with, this information. Singapore recipients of this information should contact BofA (Singapore) Pte Ltd in respect of any matters arising from, or in connection with, this information. For clients that are not accredited investors, expert investors or institutional investors BofA (Singapore) Pte Ltd accepts full responsibility for the contents of this information distributed to such clients in Singapore.
+
+# General Investment Related Disclosures:
+
+Taiwan Readers: Neither the information nor any opinion expressed herein constitutes an offer or a solicitation of an offer to transact in any securities or other financial instrument. No part of this report may be used or reproduced or quoted in any manner whatsoever in Taiwan by the press or any other person without the express written consent of BofA. This document provides general information only, and has been prepared for, and is intended for general distribution to, BofA clients. Neither the information nor any opinion expressed constitutes an offer or an invitation to make an offer, to buy or sell any securities or other financial instrument or any derivative related to such securities or instruments (e.g., options, futures, warrants, and contracts for differences). This document is not intended to provide personal investment advice and it does not take into account the specific investment objectives, financial situation and the particular needs of, and is not directed to, any specific person(s). This document and its content do not constitute, and should not be considered to constitute, investment advice for purposes of ERISA, the US tax code, the Investment Advisers Act or otherwise. Investors should seek financial advice regarding the appropriateness of investing in financial instruments and implementing investment strategies discussed or recommended in this document and should understand that statements regarding future prospects may not be realized. Any decision to purchase or subscribe for securities in any offering must be based solely on existing public information on such security or the information in the prospectus or other offering document issued in connection with such offering, and not on this document.
+
+Securities and other financial instruments referred to herein, or recommended, offered or sold by BofA, are not insured by the Federal Deposit Insurance Corporation and are not deposits or other obligations of any insured depository institution (including, BofA, N.A.). Investments in general and, derivatives, in particular, involve numerous risks, including, among others, market risk, counterparty default risk and liquidity risk. No security, financial instrument or derivative is suitable for all investors. Digital assets are extremely speculative, volatile and are largely unregulated. In some cases, securities and other financial instruments may be difficult to value or sell and reliable information about the value or risks related to the security or financial instrument may be difficult to obtain. Investors should note that income from such securities and other financial instruments, if any, may fluctuate and that price or value of such securities and instruments may rise or fall and, in some cases, investors may lose their entire principal investment. Past performance is not necessarily a guide to future performance. Levels and basis for taxation may change.
+
+This report may contain a short-term trading idea or recommendation, which highlights a specific near-term catalyst or event impacting the issuer or the market that is anticipated to have a short-term price impact on the equity securities of the issuer. Short-term trading ideas and recommendations are different from and do not affect a stock's fundamental equity rating, which reflects both a longer term total return expectation and attractiveness for investment relative to other stocks within its Coverage Cluster. Short-term trading ideas and recommendations may be more or less positive than a stock's fundamental equity rating.
+
+BofA is aware that the implementation of the ideas expressed in this report may depend upon an investor's ability to "short" securities or other financial instruments and that such action may be limited by regulations prohibiting or restricting "shortselling" in many jurisdictions. Investors are urged to seek advice regarding the applicability of such regulations prior to executing any short idea contained in this report.
+
+Foreign currency rates of exchange may adversely affect the value, price or income of any security or financial instrument mentioned herein. Investors in such securities and instruments, including ADRs, effectively assume currency risk.
+
+BofAS or one of its affiliates is a regular issuer of traded financial instruments linked to securities that may have been recommended in this report. BofAS or one of its affiliates may, at any time, hold a trading position (long or short) in the securities and financial instruments discussed in this report.
+
+BofA, through business units other than BofA Global Research, may have issued and may in the future issue trading ideas or recommendations that are inconsistent with, and reach different conclusions from, the information presented herein. Such ideas or recommendations may reflect different time frames, assumptions, views and analytical methods of the persons who prepared them, and BofA is under no obligation to ensure that such other trading ideas or recommendations are brought to the attention of any recipient of this information. In the event that the recipient received this information pursuant to a contract between the recipient and BofAS for the provision of research services for a separate fee, and in connection therewith BofAS may be deemed to be acting as an investment adviser, such status relates, if at all, solely to the person with whom BofAS has contracted directly and does not extend beyond the delivery of this report (unless otherwise agreed specifically in writing by BofAS). If such recipient uses the services of BofAS in connection with the sale or purchase of a security referred to herein, BofAS may act as principal for its own account or as agent for another person. BofAS is and continues to act solely as a broker-dealer in connection with the execution of any transactions, including transactions in any securities referred to herein.
+
+# Copyright and General Information:
+
+Copyright 2026 BofA Corporation. All rights reserved. iQdatabase® is a registered service mark of BofA Corporation. This information is prepared for the use of BofA clients and may not be redistributed, retransmitted or disclosed, in whole or in part, or in any form or manner, without the express written consent of BofA. This document and its content is provided solely for informational purposes and cannot be used for training or developing artificial intelligence (AI) models or as an input in any AI application (collectively, an AI tool). Any attempt to utilize this document or any of its content in connection with an AI tool without explicit written permission from BofA Global Research is strictly prohibited. BofA Global Research utilizes AI, including machine learning and other technologies, to enhance the services we provide to our clients. These technologies assist our analysts in various aspects of their work, including but not limited to data analysis, content extraction, content creation, data aggregation and summarization and identifying relevant information from diverse sources. All AI-driven processes are subject to review by BofA Global Research employees. BofA Global Research information is distributed simultaneously to internal and client websites and other portals by BofA and is not publicly-available material. Any unauthorized use or disclosure is prohibited. Receipt and review of this information constitutes your agreement not to redistribute, retransmit, or disclose to others the contents, opinions, conclusion, or information contained herein (including any investment recommendations, estimates or price targets) without first obtaining express permission from an authorized officer of BofA.
+
+Materials prepared by BofA Global Research personnel are based on public information. Facts and views presented in this material have not been reviewed by, and may not reflect information known to, professionals in other business areas of BofA, including investment banking personnel. BofA has established information barriers between BofA Global Research and certain business groups. As a result, BofA does not disclose certain client relationships with, or compensation received from, such issuers. To the extent this material discusses any legal proceeding or issues, it has not been prepared as nor is it intended to express any legal conclusion, opinion or advice. Investors should consult their own legal advisers as to issues of law relating to the subject matter of this material. BofA Global Research personnel's knowledge of legal proceedings in which any BofA entity and/or its directors, officers and employees may be plaintiffs, defendants, co-defendants or co-plaintiffs with or involving issuers mentioned in this material is based on public information. Facts and views presented in this material that relate to any such proceedings have not been reviewed by, discussed with, and may not reflect information known to, professionals in other business areas of BofA in connection with the legal proceedings or matters relevant to such proceedings.
+
+This information has been prepared independently of any issuer of securities mentioned herein and not in connection with any proposed offering of securities or as agent of any issuer of any securities. None of BofAS any of its affiliates or their research analysts has any authority whatsoever to make any representation or warranty on behalf of the issuer(s). BofA Global Research policy prohibits research personnel from disclosing a recommendation, investment rating, or investment thesis for review by an issuer prior to the publication of a research report containing such rating, recommendation or investment thesis.
+
+Any information relating to sustainability in this material is limited as discussed herein and is not intended to provide a comprehensive view on any sustainability claim with respect to any issuer or security.
+
+Any information relating to the tax status of financial instruments discussed herein is not intended to provide tax advice or to be used by anyone to provide tax advice. Investors are urged to seek tax advice based on their particular circumstances from an independent tax professional.
+
+The information herein (other than disclosure information relating to BofA and its affiliates) was obtained from various sources and we do not guarantee its accuracy. This information may contain links to third-party websites. BofA is not responsible for the content of any third-party website or any linked content contained in a third-party website. Content contained on such third-party websites is not part of this information and is not incorporated by reference. The inclusion of a link does not imply any endorsement by or any affiliation with BofA. Access to any third-party website is at your own risk, and you should always review the terms and privacy policies at third-party websites before submitting any personal information to them. BofA is not responsible for such terms and privacy policies and expressly disclaims any liability for them.
+
+All opinions, projections and estimates constitute the judgment of the author as of the date of publication and are subject to change without notice. Prices also are subject to change without notice. BofA is under no obligation to update this information and BofA ability to publish information on the subject issuer(s) in the future is subject to applicable quiet periods. You should therefore assume that BofA will not update any fact, circumstance or opinion contained herein.
+
+Subject to the quiet period applicable under laws of the various jurisdictions in which we distribute research reports and other legal and BofA policy-related restrictions on the publication of research reports, fundamental equity reports are produced on a regular basis as necessary to keep the investment recommendation current.
+
+Certain outstanding reports or investment opinions relating to securities, financial instruments and/or issuers may no longer be current. Always refer to the most recent research report relating to an issuer prior to making an investment decision.
+
+In some cases, an issuer may be classified as Restricted or may be Under Review or Extended Review. In each case, investors should consider any investment opinion relating to such issuer (or its security and/or financial instruments) to be suspended or withdrawn and should not rely on the analyses and investment opinion(s) pertaining to such issuer (or its securities and/or financial instruments) nor should the analyses or opinion(s) be considered a solicitation of any kind. Sales persons and financial advisors affiliated with BofAS or any of its affiliates may not solicit purchases of securities or financial instruments that are Restricted or Under Review and may only solicit securities under Extended Review in accordance with firm policies.
+
+Neither BofA nor any officer or employee of BofA accepts any liability whatsoever for any direct, indirect or consequential damages or losses arising from any use of this information.
