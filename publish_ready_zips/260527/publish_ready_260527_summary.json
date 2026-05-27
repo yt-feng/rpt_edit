@@ -1,0 +1,206 @@
+{
+  "created_at_utc": "2026-05-27T23:19:30.456882+00:00",
+  "source_date_dir": "xhs_notes/dropbox/260527",
+  "output_dir": "publish_ready_zips/260527",
+  "max_zip_mb": 90,
+  "single_zip": false,
+  "exclude_source_mineru": true,
+  "markdown_files_renamed_to_txt": true,
+  "excluded_debug_files": true,
+  "included_shard_count": 9,
+  "skipped_shards": [
+    "shard_0",
+    "shard_10",
+    "shard_11",
+    "shard_12",
+    "shard_13",
+    "shard_14",
+    "shard_15",
+    "shard_16",
+    "shard_17",
+    "shard_18",
+    "shard_19",
+    "shard_20",
+    "shard_21",
+    "shard_22",
+    "shard_23",
+    "shard_24",
+    "shard_25",
+    "shard_26",
+    "shard_27",
+    "shard_28",
+    "shard_29",
+    "shard_30",
+    "shard_31",
+    "shard_32",
+    "shard_33",
+    "shard_34",
+    "shard_35",
+    "shard_36",
+    "shard_37",
+    "shard_38",
+    "shard_39"
+  ],
+  "total_files": 867,
+  "total_renamed_markdown_count": 225,
+  "total_raw_file_bytes": 135457153,
+  "zip_count": 2,
+  "zips": [
+    {
+      "path": "publish_ready_zips/260527/publish_ready_260527_part001.zip",
+      "size_bytes": 87181752,
+      "file_count": 635,
+      "renamed_markdown_count": 165,
+      "raw_file_bytes": 94007081,
+      "shards": [
+        "shard_1",
+        "shard_2",
+        "shard_3",
+        "shard_4",
+        "shard_5",
+        "shard_6",
+        "shard_7"
+      ]
+    },
+    {
+      "path": "publish_ready_zips/260527/publish_ready_260527_part002.zip",
+      "size_bytes": 38371933,
+      "file_count": 232,
+      "renamed_markdown_count": 60,
+      "raw_file_bytes": 41450072,
+      "shards": [
+        "shard_7",
+        "shard_8",
+        "shard_9"
+      ]
+    }
+  ],
+  "included_shards": [
+    {
+      "shard": "shard_1",
+      "report_count": 5,
+      "file_count": 115,
+      "renamed_markdown_count": 25,
+      "raw_file_bytes": 20060392,
+      "reports": [
+        "0001-06-Bernstein-Asian-Industrial-Technology-Global-Automation--2026-Asia-Autom",
+        "0002-07-BofA-Securities-Energy-China-Weekly--China-s-coal-safety-supervision-exp",
+        "0003-08-BofA-Securities-US-Banks-Top-ten-questions-Asked--answered-and-revisited",
+        "0004-09-Deutsche-Bank-Steel-Spread-Tracker-US-plate-and-HRC-prices-continue-to-r",
+        "0005-10-Goldman-Sachs-US-Tariff-Impact-Tracker--Import-Outlook-Remains-Positive-"
+      ]
+    },
+    {
+      "shard": "shard_2",
+      "report_count": 5,
+      "file_count": 101,
+      "renamed_markdown_count": 25,
+      "raw_file_bytes": 17546853,
+      "reports": [
+        "0001-11-Goldman-Sachs-TRACKING-U.S.-SUPPLY-CHAIN-CONGESTION-GS-Supply-Chain-Cong",
+        "0002-12-Goldman-Sachs-US-Equity-Views-Earnings-growth-paves-a-bumpy-path-to-high",
+        "0003-13-J.P.-Morgan-China-Coal-Shanxi-mine-disaster-to-lead-to-further-regulator",
+        "0004-14-J.P.-Morgan-Coal-China-Mine-Disaster--Genuine-Met-Coal-Shock--But-Grade-",
+        "0005-15-J.P.-Morgan-Iron-ore-Prices-recalibrate-higher-as-marginal-costs-increas"
+      ]
+    },
+    {
+      "shard": "shard_3",
+      "report_count": 5,
+      "file_count": 95,
+      "renamed_markdown_count": 25,
+      "raw_file_bytes": 14064154,
+      "reports": [
+        "0001-16-Morgan-Stanley-2026-US-Securitized-Credit-Mid-Year-Outlook-More-Pictures",
+        "0002-17-Morgan-Stanley-China-Property-Weekly-Database-Tracker--21-260525",
+        "0003-18-Morgan-Stanley-Widening-K-shaped-Growth--Looking-Beyond-April-Air-Pocket",
+        "0004-19-Nomura-USD-CNY-fix-model-Projection--6.7876-260527",
+        "0005-20-UBS-Global-Rates-Strategy-Tighter-EGB-spreads--yes.-Time-to-relax--not-y"
+      ]
+    },
+    {
+      "shard": "shard_4",
+      "report_count": 5,
+      "file_count": 103,
+      "renamed_markdown_count": 25,
+      "raw_file_bytes": 13429566,
+      "reports": [
+        "0001-21-UBS-Global-Macro-Chart-of-the-Day---88---Can-AI-offset-energy--260526",
+        "0002-22-UBS-Global-Strategy-Rates-Map---Reality-Checks-on-Fed--AI-and-Transitory",
+        "0003-23-Bernstein-Payments--Processors---IT-Services-Payments--Shopify-s-platfor",
+        "0004-24-BofA-Securities-Semiconductors-Taiwan-Beneficiaries-of-further-tightenin",
+        "0005-25-BofA-Securities-Technology-Hardware---Taiwan-ABF-substrate--stay-constru"
+      ]
+    },
+    {
+      "shard": "shard_5",
+      "report_count": 5,
+      "file_count": 79,
+      "renamed_markdown_count": 25,
+      "raw_file_bytes": 11840721,
+      "reports": [
+        "0001-26-Citi-Taiwan-Semiconductors-and-Electronic-Components---Equipment-COMPUTE",
+        "0002-27-BofA-Securities-Technology-Taiwan-HK-marketing-feedback---balancing-grow",
+        "0003-29-Goldman-Sachs-Greater-China-Semis--April--IC-import-export-value--54.7--",
+        "0004-30-Goldman-Sachs-Metals---Mining--Met-Coal--China-supply-outage-may-present",
+        "0005-31-Goldman-Sachs-Korea-Financials---Fintech--SG-marketing-feedback--Finding"
+      ]
+    },
+    {
+      "shard": "shard_6",
+      "report_count": 5,
+      "file_count": 63,
+      "renamed_markdown_count": 25,
+      "raw_file_bytes": 6163379,
+      "reports": [
+        "0001-32-J.P.-Morgan-China-Healthcare-First-take-on-ASCO-26-abstracts--Overall-so",
+        "0002-33-J.P.-Morgan-China-Property-Global-China-Summit-Takeaways--Mixed-views-on",
+        "0003-34-J.P.-Morgan-China-Healthcare-Two-day-Healthcare-Tour-takeaways--Rising-i",
+        "0004-35-J.P.-Morgan-China-Healthcare-Global-China-Summit-Takeaways--Day-3---AI-d",
+        "0005-36-J.P.-Morgan-China-Utilities---Renewables-Global-China-Summit-panel-ESS-a"
+      ]
+    },
+    {
+      "shard": "shard_7",
+      "report_count": 5,
+      "file_count": 109,
+      "renamed_markdown_count": 25,
+      "raw_file_bytes": 14701895,
+      "reports": [
+        "0001-37-J.P.-Morgan-China-Technology-Global-China-Summit-Takeaways-260525",
+        "0002-38-J.P.-Morgan-Hardware---Networking-Cloud-DC-Capex-Outlook-Strengthened-Fu",
+        "0003-39-J.P.-Morgan-GDW-Asia-What-EMAX-proposes--China-disposes-260525",
+        "0004-40-J.P.-Morgan-J.P.-Morgan-MedTech-Down-but-Not-Out--The-Argument-for-Ownin",
+        "0005-41-J.P.-Morgan-Silicon-carbide-sector-Updates-on-AI-and-auto-applications--"
+      ]
+    },
+    {
+      "shard": "shard_8",
+      "report_count": 5,
+      "file_count": 99,
+      "renamed_markdown_count": 25,
+      "raw_file_bytes": 20035753,
+      "reports": [
+        "0001-42-Morgan-Stanley-Biopharma-Lateral-Takeaways-from-Japan-Pharma-Bus-Tour-26",
+        "0002-43-Morgan-Stanley-AI-Transceivers--t--Tau--Law-provides-solid-support-for-e",
+        "0003-44-Morgan-Stanley-China-Financials-Earlier-than-expected-NIM-rebound-and-de",
+        "0004-45-Morgan-Stanley-Investor-Presentation-Mid-Small-Cap-Manufacturer--Tech-Mo",
+        "0005-46-Morgan-Stanley-Semiconductor-Production-Equipment--Tech-Monthly-May-2026"
+      ]
+    },
+    {
+      "shard": "shard_9",
+      "report_count": 5,
+      "file_count": 103,
+      "renamed_markdown_count": 25,
+      "raw_file_bytes": 17614440,
+      "reports": [
+        "0001-47-Morgan-Stanley-What-Lenovo-s-Results-Mean-for-US-Enterprise-Hardware-OEM",
+        "0002-48-Nomura-Global-AI-Trend-Tracker-AI-expert-call--68--SerDes-trend-and-impa",
+        "0003-49-Nomura-China-Internet---New-Media-Tactical-window-ahead-of-1Q-print-2605",
+        "0004-50-Nomura-India-Metals-China-coking-coal-disruption-260526",
+        "0005-51-UBS-Mining-Strategy-On-the-Road--China-trip-feedback----Better...-260525"
+      ]
+    }
+  ]
+}
