@@ -1,0 +1,22 @@
+Found 50 total PDFs; shard 2/40 has 5 PDFs, skips 0 already converted, will process 5 PDFs with batch_size=5.
+Running batch 1: 5 PDFs
+Found 5 PDFs.
+Uploading PDF to MinerU: /tmp/pdf_batch_001_tf4oqin8/pdfs/0001-11-Goldman Sachs-TRACKING U.S. SUPPLY CHAIN CONGESTION GS Supply Chain Congestion Scale- May 26th- Bottleneck Scale Remains at -2-260526.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_tf4oqin8/pdfs/0002-12-Goldman Sachs-US Equity Views-Earnings growth paves a bumpy path to higher returns-260526.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_tf4oqin8/pdfs/0003-13-J.P. Morgan-China Coal-Shanxi mine disaster to lead to further regulatory tightening-260526.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_tf4oqin8/pdfs/0004-14-J.P. Morgan-Coal China Mine Disaster- Genuine Met Coal Shock- But Grade and Duration Matter-260525.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_tf4oqin8/pdfs/0005-15-J.P. Morgan-Iron ore-Prices recalibrate higher as marginal costs increase- raising short-term prices and long-term price-260525.pdf
+MinerU batch_id=fe840bf6-9bda-43f1-b050-1962afacf563
+MinerU states: running, running, running, pending, waiting-file
+MinerU states: running, running, running, done, running
+MinerU states: running, running, running, done, running
+MinerU states: running, done, done, done, running
+MinerU states: done, done, done, done, running
+MinerU states: done, done, done, done, running
+MinerU states: done, done, done, done, running
+MinerU states: done, done, done, done, running
+MinerU states: done, done, done, done, running
+MinerU states: done, done, done, done, running
+MinerU states: done, done, done, done, done
+Done. Results written to /home/runner/work/rpt_edit/rpt_edit/xhs_notes/dropbox/260527/shard_2
+All batches completed successfully.
