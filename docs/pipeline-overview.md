@@ -153,35 +153,49 @@ market_view_summaries/<日期>/figures/
 
 文件：`.github/workflows/daily-bilingual-podcast-videos.yml`
 
-用途：每天从 Dropbox 最新日期文件夹中挑选 5 篇报告，生成中文、英文和 mixed bilingual podcast 讲解视频。
+用途：每天从 Dropbox 最新日期文件夹中默认挑选 1 篇报告，生成 mixed bilingual podcast 讲解视频。当前默认模式只产出 mixed bilingual 版本，避免同时生成中文、英文 standalone 视频造成 ElevenLabs 额度浪费；手动运行时可以把 `output_mode` 切到 `all` 恢复三版输出。
 
 触发方式：
 
 - 手动运行：Actions → **Daily bilingual podcast videos**
 - 定时运行：北京时间 07:00，cron 为 `0 23 * * *`
 
+主要参数：
+
+- `video_count`：默认 `1`。
+- `output_mode`：默认 `bilingual_only`，只生成 mixed bilingual 视频和从最终视频抽出的音频；可选 `all`，生成中文、英文、mixed 三版。
+- `podcast_minutes`：控制生成脚本和 TTS 的目标时长。
+
 流程：
 
 1. 从 Dropbox 最新日期文件夹下载 PDF。
 2. 用 MinerU 解析文本和图表。
-3. 默认选择 5 份至少 5 页的报告。
+3. 默认选择 1 份至少 5 页的报告。
 4. 用 DeepSeek 生成 podcast 脚本。
-5. 用 ElevenLabs 生成中英文音频。
-6. 输出中文、英文、mixed bilingual 三版讲解视频。
+5. `bilingual_only` 模式只跑一次 ElevenLabs TTS，生成英文音频/timeline。
+6. 用这一次音频渲染 mixed bilingual 视频，并从最终 mp4 抽出音频文件。
+7. `all` 模式保留旧逻辑：生成中文、英文、mixed 三版讲解视频。
 
-输出目录：
+默认输出目录：
 
 ```text
 bilingual_podcast_videos/<日期>/<run_id>/<报告文件夹>/
+  podcast_mixed_bilingual_explainer.mp4
+  podcast_mixed_bilingual_audio.m4a
+```
+
+`output_mode=all` 时额外输出：
+
+```text
   podcast_zh_explainer.mp4
   podcast_en_explainer.mp4
-  podcast_mixed_bilingual_explainer.mp4
 ```
 
 说明：
 
 - 视频脚本和标题会复用 `finalize_outputs.py` 的脱敏规则。
 - mixed bilingual 版本有安全区、中文字体和英文单词高亮断行修复。
+- 默认模式会删除中间的 `podcast_en.wav`，最终音频以 `podcast_mixed_bilingual_audio.m4a` 为准。
 
 ### 3.5 KC Desk Notes Pages
 

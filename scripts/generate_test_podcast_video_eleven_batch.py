@@ -5,7 +5,7 @@ This wrapper reuses generate_test_podcast_video_eleven.py and adds the latest
 visual requirements:
 - both speakers are male; the second speaker uses the requested ElevenLabs ID;
 - up to N generated report folders are processed;
-- Chinese, English, and mixed bilingual videos are produced;
+- output mode can produce all variants or only the mixed bilingual video/audio;
 - speaker avatars are drawn above the subtitle panel;
 - English/Chinese title wrapping avoids overlap and awkward one-character lines;
 - English and mixed watermarks use "KC Desk Notes".
@@ -348,6 +348,47 @@ def make_mixed_video(item_dir: Path, args: argparse.Namespace, status: dict[str,
     }
 
 
+def normalize_output_mode(value: str) -> str:
+    mode = str(value or "all").strip().lower().replace("-", "_")
+    if mode in {"bilingual", "bilingual_only", "mixed", "mixed_only"}:
+        return "bilingual_only"
+    if mode == "all":
+        return "all"
+    raise RuntimeError(f"Unsupported output mode: {value}")
+
+
+def outputs_for_mode(mode: str, extract_mixed_audio: bool = False) -> list[str]:
+    if mode == "bilingual_only":
+        return ["podcast_mixed_bilingual_explainer.mp4", "podcast_mixed_bilingual_audio.m4a"]
+    outputs = ["podcast_zh_explainer.mp4", "podcast_en_explainer.mp4", "podcast_mixed_bilingual_explainer.mp4"]
+    if extract_mixed_audio:
+        outputs.append("podcast_mixed_bilingual_audio.m4a")
+    return outputs
+
+
+def extract_mixed_audio(item_dir: Path) -> dict[str, Any]:
+    video = item_dir / "podcast_mixed_bilingual_explainer.mp4"
+    audio = item_dir / "podcast_mixed_bilingual_audio.m4a"
+    if not video.exists():
+        raise RuntimeError(f"Mixed bilingual video missing: {video}")
+    gen.run(["ffmpeg", "-y", "-i", str(video), "-map", "0:a:0", "-vn", "-c:a", "copy", str(audio)], timeout=300)
+    return {
+        "podcast_mixed_audio": audio.name,
+        "podcast_mixed_audio_source": video.name,
+        "podcast_mixed_render_audio_source": "podcast_en.wav",
+        "podcast_mixed_audio_extracted_from": video.name,
+        "podcast_mixed_audio_extraction": "ffmpeg -c:a copy from final mixed video",
+    }
+
+
+def remove_intermediate_english_audio(item_dir: Path, status_update: dict[str, Any]) -> None:
+    audio = item_dir / "podcast_en.wav"
+    if audio.exists():
+        audio.unlink()
+        status_update["podcast_en_audio_intermediate_removed"] = audio.name
+    status_update.pop("podcast_en_audio", None)
+
+
 def apply_runtime_patches() -> None:
     # Force the B-speaker voice in both Chinese and English to the requested male voice.
     gen.LANGS["zh"]["voice_b"] = SECOND_MALE_VOICE_ID
@@ -362,10 +403,12 @@ def apply_runtime_patches() -> None:
 def process_one(item_dir: Path, args: argparse.Namespace) -> dict[str, Any]:
     raw_source = (item_dir / "source_mineru.md").read_text(encoding="utf-8", errors="ignore")
     source_text = gen.trim(gen.sanitize_public_text(raw_source, "zh"), args.prompt_chars)
+    output_mode = normalize_output_mode(args.output_mode)
     status_update: dict[str, Any] = {
         "podcast_video_watermark_zh": ZH_BRAND,
         "podcast_video_watermark_en": EN_BRAND,
         "podcast_tts_engine_actual": "elevenlabs",
+        "podcast_output_mode": output_mode,
         "subtitle_source": "same text as TTS; role tags normalized; rows split by punctuation before TTS; long visual subtitles are paged",
         "highlight_source": "DeepSeek title and subtitle keyword analysis",
         "sensitive_filter": "local xhs_notes-style replacements before TTS and rendering",
@@ -373,11 +416,27 @@ def process_one(item_dir: Path, args: argparse.Namespace) -> dict[str, Any]:
         "speaker_avatar_style": "fixed circular A/B avatars above subtitle panel",
         "second_speaker_voice_id": SECOND_MALE_VOICE_ID,
     }
-    for lang in ["zh", "en"]:
-        log(f"Generating {lang.upper()} podcast audio/video for {item_dir.name}")
-        status_update.update(gen.generate_language(item_dir, lang, source_text, args))
-    log(f"Generating MIXED bilingual video for {item_dir.name}")
-    status_update.update(make_mixed_video(item_dir, args, status_update))
+
+    if output_mode == "bilingual_only":
+        log(f"Generating EN podcast audio/timeline only for MIXED bilingual video for {item_dir.name}")
+        status_update.update(gen.generate_language(item_dir, "en", source_text, args, render_video=False))
+        status_update["podcast_zh_title"] = gen.report_title(item_dir, "zh", source_text, args)
+        status_update["podcast_zh_title_source"] = "report metadata only; Chinese standalone TTS/video skipped"
+        status_update["podcast_tts_passes"] = 1
+        log(f"Generating MIXED bilingual video for {item_dir.name}")
+        status_update.update(make_mixed_video(item_dir, args, status_update))
+        status_update.update(extract_mixed_audio(item_dir))
+        remove_intermediate_english_audio(item_dir, status_update)
+    else:
+        status_update["podcast_tts_passes"] = 2
+        for lang in ["zh", "en"]:
+            log(f"Generating {lang.upper()} podcast audio/video for {item_dir.name}")
+            status_update.update(gen.generate_language(item_dir, lang, source_text, args))
+        log(f"Generating MIXED bilingual video for {item_dir.name}")
+        status_update.update(make_mixed_video(item_dir, args, status_update))
+        if args.extract_mixed_audio:
+            status_update.update(extract_mixed_audio(item_dir))
+
     status_path = item_dir / "status.json"
     status = load_status(status_path)
     status.update(status_update)
@@ -393,6 +452,8 @@ def main() -> int:
     parser.add_argument("--deepseek-base-url", default=os.getenv("DEEPSEEK_BASE_URL", "https://api.deepseek.com"))
     parser.add_argument("--podcast-minutes", type=int, default=5)
     parser.add_argument("--prompt-chars", type=int, default=26000)
+    parser.add_argument("--output-mode", default=os.getenv("PODCAST_VIDEO_OUTPUT_MODE", "all"), help="all or bilingual_only")
+    parser.add_argument("--extract-mixed-audio", action="store_true", help="also write podcast_mixed_bilingual_audio.m4a from the final mixed video")
     parser.add_argument("--eleven-base-url", default=os.getenv("ELEVEN_BASE_URL", "https://api.elevenlabs.io"))
     parser.add_argument("--eleven-model", default="eleven_multilingual_v2")
     parser.add_argument("--output-format", default="mp3_44100_128")
@@ -404,11 +465,13 @@ def main() -> int:
     apply_runtime_patches()
     output_dir = Path(args.output_dir)
     item_dirs = find_item_dirs(output_dir, args.max_items)
+    output_mode = normalize_output_mode(args.output_mode)
     summary: dict[str, Any] = {
         "max_items": args.max_items,
         "processed_count": 0,
+        "output_mode": output_mode,
         "second_speaker_voice_id": SECOND_MALE_VOICE_ID,
-        "outputs_per_item": ["podcast_zh_explainer.mp4", "podcast_en_explainer.mp4", "podcast_mixed_bilingual_explainer.mp4"],
+        "outputs_per_item": outputs_for_mode(output_mode, args.extract_mixed_audio),
         "items": [],
     }
     for idx, item_dir in enumerate(item_dirs, 1):

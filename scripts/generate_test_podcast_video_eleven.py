@@ -622,7 +622,7 @@ def make_video(item_dir: Path, timeline: list[dict[str, Any]], lang: str, title:
     return visual_timeline
 
 
-def generate_language(item_dir: Path, lang: str, source_text: str, args: argparse.Namespace) -> dict[str, Any]:
+def generate_language(item_dir: Path, lang: str, source_text: str, args: argparse.Namespace, render_video: bool = True) -> dict[str, Any]:
     cfg = LANGS[lang]
     prompt = Path(str(cfg["prompt"])).read_text(encoding="utf-8").format(podcast_minutes=args.podcast_minutes, source_text=source_text)
     (item_dir / str(cfg["prompt_out"])).write_text(prompt, encoding="utf-8")
@@ -635,17 +635,21 @@ def generate_language(item_dir: Path, lang: str, source_text: str, args: argpars
     timeline = make_audio(rows, item_dir, lang, args)
     title = report_title(item_dir, lang, source_text, args)
     title_terms, timeline = apply_highlights(title, timeline, lang, args)
-    visual_timeline = make_video(item_dir, timeline, lang, title, title_terms)
     (item_dir / str(cfg["timeline"])).write_text(json.dumps(timeline, ensure_ascii=False, indent=2), encoding="utf-8")
-    (item_dir / str(cfg["visual_timeline"])).write_text(json.dumps(visual_timeline, ensure_ascii=False, indent=2), encoding="utf-8")
     write_srt(timeline, item_dir / str(cfg["srt"]), lang)
-    return {
+    result = {
         f"podcast_{lang}_script": cfg["script"], f"podcast_{lang}_audio": cfg["audio"],
         f"podcast_{lang}_subtitles": cfg["srt"], f"podcast_{lang}_timeline": cfg["timeline"],
-        f"podcast_{lang}_visual_timeline": cfg["visual_timeline"], f"podcast_{lang}_video": cfg["video"],
         f"podcast_{lang}_voice_a": cfg["voice_a"], f"podcast_{lang}_voice_b": cfg["voice_b"],
         f"podcast_{lang}_title_highlights": title_terms, f"podcast_{lang}_title": title,
+        f"podcast_{lang}_video_rendered": bool(render_video),
     }
+    if render_video:
+        visual_timeline = make_video(item_dir, timeline, lang, title, title_terms)
+        (item_dir / str(cfg["visual_timeline"])).write_text(json.dumps(visual_timeline, ensure_ascii=False, indent=2), encoding="utf-8")
+        result[f"podcast_{lang}_visual_timeline"] = cfg["visual_timeline"]
+        result[f"podcast_{lang}_video"] = cfg["video"]
+    return result
 
 
 def main() -> int:

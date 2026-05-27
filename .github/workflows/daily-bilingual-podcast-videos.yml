@@ -34,9 +34,17 @@ on:
       video_count:
         description: "How many latest Dropbox reports / bilingual videos to generate"
         required: true
-        default: "5"
+        default: "1"
+      output_mode:
+        description: "Video outputs to generate"
+        required: true
+        type: choice
+        options:
+          - bilingual_only
+          - all
+        default: "bilingual_only"
       podcast_minutes:
-        description: "Target minutes for each Chinese and English podcast"
+        description: "Target minutes for generated podcast audio"
         required: true
         default: "5"
       commit_results:
@@ -104,7 +112,7 @@ jobs:
             --input-dir "_daily_bilingual_latest_pdfs" \
             --output-dir "_daily_bilingual_selected_pdfs" \
             --min-pages "${{ github.event.inputs.min_pages || '5' }}" \
-            --max-pdfs "${{ github.event.inputs.video_count || '5' }}"
+            --max-pdfs "${{ github.event.inputs.video_count || '1' }}"
 
       - name: Convert selected PDFs to notes and chart assets
         env:
@@ -116,7 +124,7 @@ jobs:
           OUTPUT_DIR="bilingual_podcast_videos/${{ steps.dropbox.outputs.latest_folder }}/${{ github.run_id }}"
           mkdir -p "$OUTPUT_DIR"
           echo "OUTPUT_DIR=$OUTPUT_DIR" >> "$GITHUB_ENV"
-          COUNT="${{ github.event.inputs.video_count || '5' }}"
+          COUNT="${{ github.event.inputs.video_count || '1' }}"
           python scripts/run_pdf_to_xhs_in_batches.py \
             --input-dir "_daily_bilingual_selected_pdfs" \
             --output-dir "$OUTPUT_DIR" \
@@ -146,7 +154,8 @@ jobs:
           mkdir -p "$OUTPUT_DIR"
           python scripts/generate_test_podcast_video_eleven_batch_v5.py \
             --output-dir "$OUTPUT_DIR" \
-            --max-items "${{ github.event.inputs.video_count || '5' }}" \
+            --max-items "${{ github.event.inputs.video_count || '1' }}" \
+            --output-mode "${{ github.event.inputs.output_mode || 'bilingual_only' }}" \
             --model "${{ github.event.inputs.model || 'deepseek-chat' }}" \
             --deepseek-base-url "${{ github.event.inputs.deepseek_base_url || 'https://api.deepseek.com' }}" \
             --podcast-minutes "${{ github.event.inputs.podcast_minutes || '5' }}" 2>&1 | tee "$OUTPUT_DIR/podcast_video_progress.log"
