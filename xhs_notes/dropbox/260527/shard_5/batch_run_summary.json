@@ -1,0 +1,50 @@
+{
+  "input_dir": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs",
+  "total_pdf_count_before_shard": 50,
+  "pdf_count_before_skip": 5,
+  "pdf_count": 5,
+  "batch_size": 5,
+  "shard_index": 5,
+  "shard_count": 40,
+  "max_reports_per_shard": 5,
+  "max_total_reports": 0,
+  "skip_existing": true,
+  "skipped_existing_count": 0,
+  "skipped_existing": [],
+  "failures": 0,
+  "batches": [
+    {
+      "batch_index": 1,
+      "pdf_count": 5,
+      "files": [
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/26-Citi-Taiwan Semiconductors and Electronic Components & Equipment COMPUTEX and GTC Taipei preview-From GPU Racks to AI Factories-260526.pdf",
+          "batch_file": "/tmp/pdf_batch_001_utm0n2ij/pdfs/0001-26-Citi-Taiwan Semiconductors and Electronic Components - Equipment COMPUTEX and GTC Taipei preview-From GPU Racks to AI Factories-260526.pdf",
+          "stable_index": "1"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/27-BofA-Technology~Taiwan：HK marketing feedback – balancing growth visibility and supply tightness-260525.pdf",
+          "batch_file": "/tmp/pdf_batch_001_utm0n2ij/pdfs/0002-27-BofA-Technology-Taiwan-HK marketing feedback - balancing growth visibility and supply tightness-260525.pdf",
+          "stable_index": "2"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/29-GS-Greater China Semis： April： IC import export value +54.7% +99.6% YoY-260526.pdf",
+          "batch_file": "/tmp/pdf_batch_001_utm0n2ij/pdfs/0003-29-GS-Greater China Semis- April- IC import export value -54.7- -99.6- YoY-260526.pdf",
+          "stable_index": "3"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/30-GS-Metals & Mining： Met Coal： China supply outage may present upward pressure on Seaborne prices-260526.pdf",
+          "batch_file": "/tmp/pdf_batch_001_utm0n2ij/pdfs/0004-30-GS-Metals - Mining- Met Coal- China supply outage may present upward pressure on Seaborne prices-260526.pdf",
+          "stable_index": "4"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/31-GS-Korea Financials & Fintech： SG marketing feedback： Finding value as defensives amid market volatility-260526.pdf",
+          "batch_file": "/tmp/pdf_batch_001_utm0n2ij/pdfs/0005-31-GS-Korea Financials - Fintech- SG marketing feedback- Finding value as defensives amid market volatility-260526.pdf",
+          "stable_index": "5"
+        }
+      ],
+      "returncode": 0,
+      "status": "ok"
+    }
+  ]
+}

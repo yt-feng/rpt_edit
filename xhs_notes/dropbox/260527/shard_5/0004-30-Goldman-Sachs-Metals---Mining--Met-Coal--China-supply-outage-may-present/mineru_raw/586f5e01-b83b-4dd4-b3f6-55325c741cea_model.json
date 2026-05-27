@@ -1,0 +1,2014 @@
+[
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.08,
+                0.006,
+                0.298,
+                0.044
+            ],
+            "angle": 0,
+            "content": "Goldman Research Sachs"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.795,
+                0.008,
+                0.919,
+                0.025
+            ],
+            "angle": 0,
+            "content": "Equity Research"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.711,
+                0.03,
+                0.918,
+                0.046
+            ],
+            "angle": 0,
+            "content": "26 May 2026 | 10:01PM BST"
+        },
+        {
+            "type": "title",
+            "bbox": [
+                0.08,
+                0.077,
+                0.805,
+                0.131
+            ],
+            "angle": 0,
+            "content": "Metals & Mining: Met Coal: China supply outage may present upward pressure on Seaborne prices"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.079,
+                0.174,
+                0.696,
+                0.283
+            ],
+            "angle": 0,
+            "content": "On 22 May 2026, a fatal gas explosion at the Liushenyu Coal Mine in Qinyuan county, Shanxi, triggered local voluntary mine suspensions and raised the potential for broader regulatory safety measures. We take no view on supply recovery timelines, but attempt to quantify the potential annualised impact of the outages, refresh our import arb charts for Australia PLV HCC into China, and assess NTM EBITDA sensitivities to coking coal prices for GLEN and BHP.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.08,
+                0.294,
+                0.699,
+                0.543
+            ],
+            "angle": 0,
+            "content": "Initial estimates suggest up to ~40Mt (~80Mt ROM) annualised production could be impacted (~8% domestic output): The impacted mine has capacity of ~1.2Mtpa, but reports suggest a wider shutdown in Qinyuan county could impact ~25Mt of annualised ROM met coal. Wider implications (mandatory temporary safety shutdowns/inspections) could bring the total impact closer to ~80Mtpa. Based on China's 2025 domestic coking coal output of ~480Mt and assuming a yield factor of 50%, the annualised impact of the incident could be ~8% of clean domestic coking coal output; however, we believe it is unlikely this capacity will be completely offline for an extended period due to the voluntary nature of the shutdowns. A potential offsetting factor for the temporary supply outage is the lowering seasonal demand from India (monsoon season) for spot cargoes, which may temper near-term expectations of a deficit emerging in the seaborne market.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.08,
+                0.551,
+                0.699,
+                0.84
+            ],
+            "angle": 0,
+            "content": "Depending on length and scope, Shanxi suspensions could pose a risk to China's coal blend: Since 2020, China has reduced its dependence on Australian met coal imports; it has increasingly turned to Mongolia (Exhibit 2) and Russia (Exhibit 3), removing dependency from Australia (Exhibit 4). The emerging supply of coal from Shanxi has been critical to coal blends, as it complements the coal from Russia/Mongolia to produce a suitable met coke without the need for imports from Australia, displacing it as a key seaborne supplier. While the timeline and scope of the safety-related disruptions are unclear, the loss of supply from Shanxi could disrupt the ability for steel mills to blend coal to meet specifications, forcing mills to turn to the seaborne market to secure premium tonnes, which could benefit Australian and Canadian producers. We also note that Mongolia relies heavily on trucking for mine to border transportation, and diesel prices and availability could pose further supply risks in 2H'26. For now, however, import data shows that Mongolian exports are ~70% higher YoY for Jan-Apr'26.",
+            "merge_prev": false
+        },
+        {
+            "type": "title",
+            "bbox": [
+                0.721,
+                0.175,
+                0.81,
+                0.187
+            ],
+            "angle": 0,
+            "content": "Matt Greene"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.721,
+                0.187,
+                0.819,
+                0.197
+            ],
+            "angle": 0,
+            "content": "+44(20)7051-0489",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.721,
+                0.197,
+                0.824,
+                0.205
+            ],
+            "angle": 0,
+            "content": "matt.greene@gs.com",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.721,
+                0.205,
+                0.858,
+                0.215
+            ],
+            "angle": 0,
+            "content": "GS International",
+            "merge_prev": false
+        },
+        {
+            "type": "title",
+            "bbox": [
+                0.721,
+                0.223,
+                0.839,
+                0.235
+            ],
+            "angle": 0,
+            "content": "Riccardo D'Agata"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.721,
+                0.235,
+                0.816,
+                0.244
+            ],
+            "angle": 0,
+            "content": "+44(20)7051-0958",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.721,
+                0.244,
+                0.84,
+                0.254
+            ],
+            "angle": 0,
+            "content": "riccardo.dagata@gs.com",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.721,
+                0.254,
+                0.858,
+                0.262
+            ],
+            "angle": 0,
+            "content": "GS International",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.08,
+                0.877,
+                0.918,
+                0.97
+            ],
+            "angle": 0,
+            "content": "GS does and seeks to do business with companies covered in its research reports. As a result, investors should be aware that the firm may have a conflict of interest that could affect the objectivity of this report. Investors should consider this report as only a single factor in making their investment decision. For Reg AC certification and other important disclosures, see the Disclosure Appendix, or go to www.gs.com/research/hedge.html. Analysts employed by non-US affiliates are not registered/qualified as research analysts with FINRA in the U.S."
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.082,
+                0.008,
+                0.186,
+                0.021
+            ],
+            "angle": 0,
+            "content": "GS"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.81,
+                0.01,
+                0.918,
+                0.025
+            ],
+            "angle": 0,
+            "content": "Metals & Mining"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.272,
+                0.042,
+                0.91,
+                0.135
+            ],
+            "angle": 0,
+            "content": "China price increases needed to open import arbitrage for Australian coal (Exhibit 6): On our estimates, China CFR prices need to increase a further ~$37/t to incentivise imports of Australian coals (Exhibit 6); for a while now, China prices have been undercutting Australian coals (Exhibit 7), and increasing seaborne freight rates further reduce competitiveness (Exhibit 5).",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.272,
+                0.144,
+                0.898,
+                0.334
+            ],
+            "angle": 0,
+            "content": "- Across our coverage, GLEN & BHP are positioned favourably if seaborne prices recover as both offer metallurgical coal exposure: The majority of GLEN's met coal comes from their Canadian operation (EVR), which is not subject to the same royalties and has ~$15/t higher all-in margins vs. Australian (Queensland) peers, which face onerous royalties that limit pricing upside. Based on a +$10/t move in QLD Met coal prices, we would expect an uplift to NTM EBITDA (Exhibit 1) of +$0.2bn for GLEN (+1.2% GSe EBITDA) and +$0.1bn for BHP (+0.5%). On our estimates GLEN also offers more upside due to higher production volumes and Canadian vs QLD royalties - this also excludes any potential upside from GLEN's marketing division.",
+            "merge_prev": false
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.08,
+                0.358,
+                0.468,
+                0.401
+            ],
+            "angle": 0,
+            "content": "Exhibit 1: GLEN is more favourably exposed to upside to moves in met coal prices due to more volumes and a favourable royalty regime in Canada vs QLD Australia"
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.08,
+                0.401,
+                0.486,
+                0.425
+            ],
+            "angle": 0,
+            "content": "NTM EBITDA sensitivities to moves in QLD FOB met coal prices vs. GS base case"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.092,
+                0.443,
+                0.476,
+                0.615
+            ],
+            "angle": 0,
+            "content": "NTM EBITDA sensitivity to met coal price\n| NTM EBITDA Sensitivities | GLEN ($bn) | BHP ($bn) |\n| :--- | :--- | :--- |\n| + $10/t | 0.2 | 0.1 |\n| + $20/t | 0.5 | 0.3 |\n| + $30/t | 0.7 | 0.4 |\n| + $40/t | 0.9 | 0.5 |",
+            "sub_type": "bar"
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.08,
+                0.645,
+                0.483,
+                0.681
+            ],
+            "angle": 0,
+            "content": "NTM EBITDA is a sum of calendar 2H'26 (GSe $195/t vs spot of $241) and 1H'27 (GSe $205/t) GSe. Our sensitivity does not reflect any uplift from GLEN's potential Marketing margin expansion."
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.508,
+                0.358,
+                0.871,
+                0.401
+            ],
+            "angle": 0,
+            "content": "Exhibit 2: China imports are dominated by Mongolia (~50% in 2025), with 2026 volumes up ~70% YTD compared to the same period last year"
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.51,
+                0.401,
+                0.79,
+                0.414
+            ],
+            "angle": 0,
+            "content": "China Coking Coal Import Volumes: Mongolia"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.516,
+                0.439,
+                0.907,
+                0.628
+            ],
+            "angle": 0,
+            "content": "| Month | 2026 (Mtpa) | 2025 (Mtpa) | 2024 (Mtpa) | 2023 (Mtpa) | 2022 (Mtpa) |\n|---|---|---|---|---|---|\n| Jan | 78 | 40 | 57 | 33 | 8 |\n| Feb | 55 | 38 | 45 | 48 | 7 |\n| Mar | 95 | 55 | 65 | 58 | 12 |\n| Apr | 93 | 57 | 66 | 48 | 16 |\n| May | - | 53 | 60 | 38 | 20 |\n| Jun | - | 55 | 67 | 48 | 24 |\n| Jul | - | 58 | 60 | 52 | 33 |\n| Aug | - | 73 | 58 | 70 | 35 |\n| Sep | - | 71 | 55 | 65 | 39 |\n| Oct | - | 65 | 48 | 44 | 33 |\n| Nov | - | 78 | 63 | 75 | 29 |\n| Dec | - | 81 | 51 | 79 | 48 |\nThe chart includes a dashed red line labeled 'Mtpa' above the x-axis, likely representing a reference or target value for that year. The y-axis is unlabeled but represents the magnitude of the data points. The legend indicates the years: 2026, 2025, 2024, 2023, and 2022. The chart visually compares the performance trends of these three years over time, though specific numerical values are not explicitly labeled on the graph.",
+            "sub_type": "line"
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.51,
+                0.645,
+                0.838,
+                0.657
+            ],
+            "angle": 0,
+            "content": "Source: Bloomberg, GS Global Investment Research"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.08,
+                0.689,
+                0.427,
+                0.702
+            ],
+            "angle": 0,
+            "content": "Source: Company data, GS Global Investment Research"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.082,
+                0.955,
+                0.16,
+                0.967
+            ],
+            "angle": 0,
+            "content": "26 May 2026"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.908,
+                0.956,
+                0.917,
+                0.966
+            ],
+            "angle": 0,
+            "content": "2"
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.082,
+                0.008,
+                0.185,
+                0.02
+            ],
+            "angle": 0,
+            "content": "GS"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.81,
+                0.01,
+                0.918,
+                0.024
+            ],
+            "angle": 0,
+            "content": "Metals & Mining"
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.081,
+                0.054,
+                0.474,
+                0.097
+            ],
+            "angle": 0,
+            "content": "Exhibit 3: Total Russian exports have increased \\(\\sim 10\\%\\) compared to the same period last year, but April exports are trending broadly in line with 2025"
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.081,
+                0.097,
+                0.334,
+                0.11
+            ],
+            "angle": 0,
+            "content": "Total Russia Coking Coal Export Volumes"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.086,
+                0.123,
+                0.476,
+                0.298
+            ],
+            "angle": 0,
+            "content": "| Month | 2022 (Mtpa) | 2023 (Mtpa) | 2024 (Mtpa) | 2025 (Mtpa) | 2026 (Mtpa) |\n|---|---|---|---|---|---|\n| Jan | 29 | 47 | 48 | 60 | 70 |\n| Feb | 54 | 47 | 51 | 58 | 58 |\n| Mar | 53 | 60 | 60 | 61 | 75 |\n| Apr | 51 | 66 | 68 | 55 | 55 |\n| May | 51 | 53 | 67 | 55 | 53 |\n| Jun | 50 | 53 | 61 | 56 | 53 |\n| Jul | 49 | 41 | 64 | 69 | 53 |\n| Aug | 37 | 53 | 63 | 64 | 53 |\n| Sep | 44 | 57 | 58 | 64 | 53 |\n| Oct | 47 | 44 | 56 | 64 | 53 |\n| Nov | 49 | 51 | 55 | 64 | 53 |\n| Dec | 40 | 52 | 54 | 72 | 53 |",
+            "sub_type": "line"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.08,
+                0.328,
+                0.461,
+                0.352
+            ],
+            "angle": 0,
+            "content": "Source: Argus Media, Data compiled by GS Global Investment Research"
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.509,
+                0.054,
+                0.915,
+                0.097
+            ],
+            "angle": 0,
+            "content": "Exhibit 4: Australia remains a small share of China imports (~7% in 2025), with Aus exports to China down materially from pre-2020"
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.51,
+                0.097,
+                0.8,
+                0.11
+            ],
+            "angle": 0,
+            "content": "Australia Coking Coal Export Volumes to China"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.517,
+                0.123,
+                0.907,
+                0.31
+            ],
+            "angle": 0,
+            "content": "| Month | 2018 (Mtpa) | 2019 (Mtpa) | 2023 (Mtpa) | 2024 (Mtpa) | 2025 (Mtpa) | 2026 (Mtpa) |\n|---|---|---|---|---|---|---|\n| Jan | 29 | 38 | -1 | 8 | 7 | 14 |\n| Feb | 25 | 28 | 3 | 5 | 5 | 8 |\n| Mar | 26 | 41 | 3 | 6 | 6 | 7 |\n| Apr | 27 | 30 | 4 | 7 | 7 | 6 |\n| May | 45 | 45 | 5 | 10 | 11 | 5 |\n| Jun | 62 | 52 | -3 | 11 | 6 | 4 |\n| Jul | 31 | 49 | -4 | 8 | 7 | - |\n| Aug | 42 | 52 | 8 | 10 | 9 | - |\n| Sep | 48 | 50 | 10 | 18 | 10 | - |\n| Oct | 51 | 40 | 8 | 20 | 11 | - |\n| Nov | 37 | 38 | 7 | 21 | 15 | - |\n| Dec | 50 | 49 | 10 | 14 | 20 | - |\nThe chart displays the monthly values for each year from January to December. The data is presented in a single column format with the same color coding for each year.",
+            "sub_type": "line"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.51,
+                0.328,
+                0.838,
+                0.34
+            ],
+            "angle": 0,
+            "content": "Source: Bloomberg, GS Global Investment Research"
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.08,
+                0.37,
+                0.455,
+                0.398
+            ],
+            "angle": 0,
+            "content": "Exhibit 5: Seaborne coal freight rates have stepped up $5-10/t since the ME conflict started,"
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.081,
+                0.399,
+                0.341,
+                0.412
+            ],
+            "angle": 0,
+            "content": "Seaborne freight ($/t) - Australia to China"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.097,
+                0.439,
+                0.476,
+                0.618
+            ],
+            "angle": 0,
+            "content": "| Date    | Seaborne freight ($/t) |\n|---------|------------------------|\n| Mar-26  | 15                     |\n| May-26  | 23                     |",
+            "sub_type": "line"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.08,
+                0.643,
+                0.444,
+                0.656
+            ],
+            "angle": 0,
+            "content": "Source: Bloomberg, Platts, GS Global Investment Research"
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.509,
+                0.37,
+                0.898,
+                0.413
+            ],
+            "angle": 0,
+            "content": "Exhibit 6: Based on spot FOB, China CFR and freight, we estimate a ~$37/t spread needs to tighten (higher China prices) to incentivise Australian imports"
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.51,
+                0.414,
+                0.719,
+                0.426
+            ],
+            "angle": 0,
+            "content": "HCC Aus-China arb at spot prices"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.511,
+                0.437,
+                0.916,
+                0.627
+            ],
+            "angle": 0,
+            "content": "| Category | Value (US$/t) |\n|---|---|\n| China CFR (Spot) | 226 |\n| Import arb | 37 |\n| Aus-China CFR net fwd | 263 |\n| Seaborne freight | 22 |\n| Aus QLD FOB (spot) | 241 |\nSpot Aus FOB price is $37/t too expensive to compete with China CFR spot pricing.",
+            "sub_type": "bar"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.51,
+                0.643,
+                0.873,
+                0.656
+            ],
+            "angle": 0,
+            "content": "Source: Bloomberg, Platts, GS Global Investment Research"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.082,
+                0.955,
+                0.16,
+                0.967
+            ],
+            "angle": 0,
+            "content": "26 May 2026"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.908,
+                0.956,
+                0.917,
+                0.965
+            ],
+            "angle": 0,
+            "content": "3"
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.082,
+                0.008,
+                0.185,
+                0.02
+            ],
+            "angle": 0,
+            "content": "GS"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.81,
+                0.01,
+                0.918,
+                0.025
+            ],
+            "angle": 0,
+            "content": "Metals & Mining"
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.081,
+                0.054,
+                0.465,
+                0.097
+            ],
+            "angle": 0,
+            "content": "Exhibit 7: Higher freight has contributed to keeping the China import arb closed, leaving Australian coal uncompetitive for the time being"
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.081,
+                0.097,
+                0.398,
+                0.11
+            ],
+            "angle": 0,
+            "content": "China HCC netback to Aus QLD vs. FOB price (spot)"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.086,
+                0.121,
+                0.498,
+                0.309
+            ],
+            "angle": 0,
+            "content": "| Date   | CFR China | CFR net forward | Aus FOB |\n|--------|-----------|-----------------|---------|\n| May-25 | ~170      | ~200            | ~30     |\n| Jul-25 | ~160      | ~190            | ~25     |\n| Sep-25 | ~180      | ~200            | ~35     |\n| Nov-25 | ~190      | ~210            | ~40     |\n| Jan-26 | ~210      | ~230            | ~50     |\n| Mar-26 | ~230      | ~250            | ~55     |\n| May-26 | ~220      | ~260            | ~50     |",
+            "sub_type": "line"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.081,
+                0.324,
+                0.476,
+                0.347
+            ],
+            "angle": 0,
+            "content": "Source: Company data, Bloomberg, Platts, GS Global Investment Research"
+        },
+        {
+            "type": "title",
+            "bbox": [
+                0.275,
+                0.369,
+                0.646,
+                0.384
+            ],
+            "angle": 0,
+            "content": "Price Target, Methodologies and Investment Risks"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.275,
+                0.387,
+                0.902,
+                0.42
+            ],
+            "angle": 0,
+            "content": "We are Neutral Rated on GLEN.L. Our 12m TP is £6.0/sh set at 50:50 1x NAV and 6.5x EV/EBITDA.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.275,
+                0.433,
+                0.918,
+                0.54
+            ],
+            "angle": 0,
+            "content": "Investment risks: 1) Coal, copper, and zinc metal price volatility; (2) Operational uncertainty, including labour-related risks (availability, industrial action), technical disruptions and external impacts such as extreme weather; (3) Material commodity price movements and logistical challenges that could impact the marketing division; (4) Higher capex and opex owing to industry cost inflation; (5) Strategic uncertainty surrounding M&A, given the Buy vs. Build dynamics facing the industry.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.275,
+                0.553,
+                0.905,
+                0.587
+            ],
+            "angle": 0,
+            "content": "We continue to rate BHP.L a Neutral. Our NAV is £32.7/sh and our 12m PT is £29. Our 12m PT is set at an equal 50:50 blend of NAV and EV/EBITDA with a 6x target multiple.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.275,
+                0.6,
+                0.885,
+                0.669
+            ],
+            "angle": 0,
+            "content": "Investment risks: (1) Macro factors: FX (AUD, CLP, CAD), commodity prices over the next 12 months, (2) Fluctuating operating costs and capex, (3) Project execution timelines, (4) Fiscal risks, (5) External M&A, (6) Ongoing and higher charges with rehabilitation at Samarco in Brazil.",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.082,
+                0.955,
+                0.16,
+                0.967
+            ],
+            "angle": 0,
+            "content": "26 May 2026"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.908,
+                0.956,
+                0.917,
+                0.965
+            ],
+            "angle": 0,
+            "content": "4"
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.082,
+                0.008,
+                0.185,
+                0.021
+            ],
+            "angle": 0,
+            "content": "GS"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.81,
+                0.01,
+                0.918,
+                0.025
+            ],
+            "angle": 0,
+            "content": "Metals & Mining"
+        },
+        {
+            "type": "title",
+            "bbox": [
+                0.081,
+                0.042,
+                0.253,
+                0.063
+            ],
+            "angle": 0,
+            "content": "Disclosure Appendix"
+        },
+        {
+            "type": "title",
+            "bbox": [
+                0.081,
+                0.084,
+                0.137,
+                0.098
+            ],
+            "angle": 0,
+            "content": "Reg AC"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.082,
+                0.106,
+                0.885,
+                0.141
+            ],
+            "angle": 0,
+            "content": "We, Matt Greene and Riccardo D'Agata, hereby certify that all of the views expressed in this report accurately reflect our personal views about the subject company or companies and its or their securities. We also certify that no part of our compensation was, is or will be, directly or indirectly, related to the specific recommendations or views expressed in this report.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.082,
+                0.146,
+                0.885,
+                0.159
+            ],
+            "angle": 0,
+            "content": "Unless otherwise stated, the individuals listed on the cover page of this report are analysts in GS' Global Investment Research division.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.082,
+                0.165,
+                0.711,
+                0.178
+            ],
+            "angle": 0,
+            "content": "Contributing Authors: Matt Greene GS International, Riccardo D'Agata GS International.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.082,
+                0.183,
+                0.895,
+                0.207
+            ],
+            "angle": 0,
+            "content": "Unless otherwise stated, the individuals listed in the Contributing Authors disclosure of this report are analysts in GS' Global Investment Research division.",
+            "merge_prev": false
+        },
+        {
+            "type": "title",
+            "bbox": [
+                0.082,
+                0.22,
+                0.208,
+                0.232
+            ],
+            "angle": 0,
+            "content": "GS Factor Profile"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.082,
+                0.233,
+                0.916,
+                0.289
+            ],
+            "angle": 0,
+            "content": "The GS Factor Profile provides investment context for a stock by comparing key attributes to the market (i.e. our universe of rated stocks) and its sector peers. The four key attributes depicted are: Growth, Financial Returns, Multiple (e.g. valuation) and Integrated (a composite of Growth, Financial Returns and Multiple). Growth, Financial Returns and Multiple are calculated by using normalized ranks for specific metrics for each stock. The normalized ranks for the metrics are then averaged and converted into percentiles for the relevant attribute. The precise calculation of each metric may vary depending on the fiscal year, industry and region, but the standard approach is as follows:",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.082,
+                0.295,
+                0.907,
+                0.363
+            ],
+            "angle": 0,
+            "content": "Growth is based on a stock's forward-looking sales growth, EBITDA growth and EPS growth (for financial stocks, only EPS and sales growth), with a higher percentile indicating a higher growth company. Financial Returns is based on a stock's forward-looking ROE, ROCE and CROCI (for financial stocks, only ROE), with a higher percentile indicating a company with higher financial returns. Multiple is based on a stock's forward-looking P/E, P/B, price/dividend (P/D), EV/EBITDA, EV/FCF and EV/Debt Adjusted Cash Flow (DACF) (for financial stocks, only P/E, P/B and P/D), with a higher percentile indicating a stock trading at a higher multiple. The Integrated percentile is calculated as the average of the Growth percentile, Financial Returns percentile and (100% - Multiple percentile).",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.082,
+                0.369,
+                0.91,
+                0.393
+            ],
+            "angle": 0,
+            "content": "Financial Returns and Multiple use the GS analyst forecasts at the fiscal year-end at least three quarters in the future. Growth uses inputs for the fiscal year at least seven quarters in the future compared with the year at least three quarters in the future (on a per-share basis for all metrics).",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.082,
+                0.398,
+                0.703,
+                0.411
+            ],
+            "angle": 0,
+            "content": "For a more detailed description of how we calculate the GS Factor Profile, please contact your GS representative.",
+            "merge_prev": false
+        },
+        {
+            "type": "title",
+            "bbox": [
+                0.082,
+                0.423,
+                0.162,
+                0.435
+            ],
+            "angle": 0,
+            "content": "M&A Rank"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.082,
+                0.436,
+                0.911,
+                0.504
+            ],
+            "angle": 0,
+            "content": "Across our global coverage, we examine stocks using an M&A framework, considering both qualitative factors and quantitative factors (which may vary across sectors and regions) to incorporate the potential that certain companies could be acquired. We then assign a M&A rank as a means of scoring companies under our rated coverage from 1 to 3, with 1 representing high (30%-50%) probability of the company becoming an acquisition target, 2 representing medium (15%-30%) probability and 3 representing low (0%-15%) probability. For companies ranked 1 or 2, in line with our standard departmental guidelines we incorporate an M&A component into our target price. M&A rank of 3 is considered immaterial and therefore does not factor into our price target, and may or may not be discussed in research.",
+            "merge_prev": false
+        },
+        {
+            "type": "title",
+            "bbox": [
+                0.082,
+                0.517,
+                0.154,
+                0.529
+            ],
+            "angle": 0,
+            "content": "Quantum"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.082,
+                0.53,
+                0.888,
+                0.552
+            ],
+            "angle": 0,
+            "content": "Quantum is GS' proprietary database providing access to detailed financial statement histories, forecasts and ratios. It can be used for in-depth analysis of a single company, or to make comparisons between companies in different sectors and markets.",
+            "merge_prev": false
+        },
+        {
+            "type": "title",
+            "bbox": [
+                0.082,
+                0.565,
+                0.168,
+                0.578
+            ],
+            "angle": 0,
+            "content": "Disclosures"
+        },
+        {
+            "type": "title",
+            "bbox": [
+                0.082,
+                0.584,
+                0.306,
+                0.598
+            ],
+            "angle": 0,
+            "content": "Pricing information disclosure"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.082,
+                0.598,
+                0.365,
+                0.61
+            ],
+            "angle": 0,
+            "content": "BHP Group Ltd. (3,137p) and Glencore Plc (569.1p)",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.082,
+                0.615,
+                0.858,
+                0.639
+            ],
+            "angle": 0,
+            "content": "The rating(s) for BHP Group Ltd. and Glencore Plc is/are relative to the other companies in its/their coverage universe: Antofagasta Plc, ArcelorMittal SA, BHP Group Ltd., Glencore Plc, Lundin Mining Corp., Norsk Hydro, Rio Tinto Plc",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.082,
+                0.645,
+                0.913,
+                0.68
+            ],
+            "angle": 0,
+            "content": "The rating(s) for BHP Group Ltd. is/are relative to the other companies in its/their coverage universe: BHP Group Ltd., Champion Iron Ltd., Deterra Royalties Ltd., Fortescue Metals Group, Iluka Resources, Lynas Rare Earths Ltd., Mineral Resources, New Hope Corp., Rio Tinto Ltd., Sandfire Resources, Sims Ltd., South32 Ltd., WA1 Resources, Whitehaven Coal Ltd.",
+            "merge_prev": false
+        },
+        {
+            "type": "title",
+            "bbox": [
+                0.082,
+                0.692,
+                0.385,
+                0.706
+            ],
+            "angle": 0,
+            "content": "Company-specific regulatory disclosures"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.082,
+                0.706,
+                0.903,
+                0.728
+            ],
+            "angle": 0,
+            "content": "The following disclosures relate to relationships between The GS Group, Inc. (with its affiliates, “GS”) and companies covered by GS Global Investment Research and referred to in this research.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.082,
+                0.734,
+                0.887,
+                0.758
+            ],
+            "angle": 0,
+            "content": "GS has received compensation for investment banking services in the past 12 months: BHP Billiton Plc (ADR) (\\$64.18), BHP Group Ltd. (A\\$60.35) and BHP Group Ltd. (3,196p)",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.082,
+                0.764,
+                0.871,
+                0.788
+            ],
+            "angle": 0,
+            "content": "GS expects to receive or intends to seek compensation for investment banking services in the next 3 months: BHP Billiton Plc (ADR) ($64.18), BHP Group Ltd. (A$60.35), BHP Group Ltd. (3,196p) and Glencore Plc (585.5p)",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.082,
+                0.793,
+                0.797,
+                0.806
+            ],
+            "angle": 0,
+            "content": "GS has received compensation for non-investment banking services during the past 12 months: Glencore Plc (585.5p)",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.082,
+                0.811,
+                0.908,
+                0.835
+            ],
+            "angle": 0,
+            "content": "GS had an investment banking services client relationship during the past 12 months with: BHP Billiton Plc (ADR) (\\$64.18), BHP Group Ltd. (A\\$60.35), BHP Group Ltd. (3,196p) and Glencore Plc (585.5p)",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.082,
+                0.841,
+                0.888,
+                0.865
+            ],
+            "angle": 0,
+            "content": "GS had a non-investment banking securities-related services client relationship during the past 12 months with: BHP Billiton Plc (ADR) ($64.18), BHP Group Ltd. (A$60.35), BHP Group Ltd. (3,196p) and Glencore Plc (585.5p)",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.082,
+                0.87,
+                0.872,
+                0.894
+            ],
+            "angle": 0,
+            "content": "GS had a non-securities services client relationship during the past 12 months with: BHP Billiton Plc (ADR) (\\$64.18), BHP Group Ltd. (A\\$60.35), BHP Group Ltd. (3,196p) and Glencore Plc (585.5p)",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.082,
+                0.899,
+                0.892,
+                0.913
+            ],
+            "angle": 0,
+            "content": "A director and/or employee of GS is a director: BHP Billiton Plc (ADR) (\\$64.18), BHP Group Ltd. (A\\$60.35) and BHP Group Ltd. (3,196p)",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.082,
+                0.918,
+                0.903,
+                0.931
+            ],
+            "angle": 0,
+            "content": "GS makes a market in the securities or derivatives thereof: BHP Billiton Plc (ADR) (\\$64.18), BHP Group Ltd. (A\\$60.35) and BHP Group Ltd.",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.082,
+                0.955,
+                0.16,
+                0.967
+            ],
+            "angle": 0,
+            "content": "26 May 2026"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.908,
+                0.956,
+                0.916,
+                0.965
+            ],
+            "angle": 0,
+            "content": "5"
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.082,
+                0.008,
+                0.186,
+                0.021
+            ],
+            "angle": 0,
+            "content": "GS"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.81,
+                0.01,
+                0.918,
+                0.025
+            ],
+            "angle": 0,
+            "content": "Metals & Mining"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.081,
+                0.042,
+                0.132,
+                0.056
+            ],
+            "angle": 0,
+            "content": "(3,196p)",
+            "merge_prev": false
+        },
+        {
+            "type": "title",
+            "bbox": [
+                0.08,
+                0.067,
+                0.502,
+                0.082
+            ],
+            "angle": 0,
+            "content": "Distribution of ratings/investment banking relationships"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.08,
+                0.082,
+                0.463,
+                0.093
+            ],
+            "angle": 0,
+            "content": "GS Investment Research global Equity coverage universe",
+            "merge_prev": false
+        },
+        {
+            "type": "table",
+            "bbox": [
+                0.08,
+                0.1,
+                0.761,
+                0.151
+            ],
+            "angle": 0,
+            "content": "<table><tr><td rowspan=\"2\"></td><td colspan=\"3\">Rating Distribution</td><td colspan=\"3\">Investment Banking Relationships</td></tr><tr><td>Buy</td><td>Hold</td><td>Sell</td><td>Buy</td><td>Hold</td><td>Sell</td></tr><tr><td>Global</td><td>50%</td><td>34%</td><td>16%</td><td>65%</td><td>60%</td><td>45%</td></tr></table>"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.079,
+                0.163,
+                0.907,
+                0.22
+            ],
+            "angle": 0,
+            "content": "As of April 1, 2026, GS Global Investment Research had investment ratings on 3,074 equity securities. GS assigns stocks as Buys and Sells on various regional Investment Lists; stocks not so assigned are deemed Neutral. Such assignments equate to Buy, Hold and Sell for the purposes of the above disclosure required by the FINRA Rules. See ‘Ratings, Coverage universe and related definitions’ below. The Investment Banking Relationships chart reflects the percentage of subject companies within each rating category for whom GS has provided investment banking services within the previous twelve months.",
+            "merge_prev": false
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.08,
+                0.232,
+                0.368,
+                0.248
+            ],
+            "angle": 0,
+            "content": "Price target and rating history chart(s)"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.085,
+                0.259,
+                0.482,
+                0.446
+            ],
+            "angle": 0,
+            "content": "| Date       | Stock Price | Index Price |\n|------------|-------------|-------------|\n| May 3      | 49.9        | 49.9        |\n| May 3      | 50.5        | 50.5        |\n| May 3      | 46.9        | 46.9        |\n| May 3      | 45.6        | 45.6        |\n| May 3      | 46.1        | 46.1        |\n| May 3      | 45.8        | 45.8        |\n| May 3      | 46.5        | 46.5        |\n| May 3      | 49.9        | 49.9        |\n| May 3      | 50.5        | 50.5        |\n| May 3      | 49.9        | 49.9        |\n| May 3      | 49.2        | 49.2        |\n| May 3      | 49          | 49          |\n| May 3      | 48.4        | 48.4        |\n| May 3      | 47.5        | 47.5        |\n| May 3      | 47.8        | 47.8        |\n| May 3      | 47.4        | 47.4        |\n| May 3      | 47.5        | 47.5        |\n| May 3      | 46.8        | 46.8        |\n| May 3      | 47.3        | 47.3        |\n| May 3      | 47.4        | 47.4        |\n| May 3      | 45.1        | 45.1        |\n| May 3      | 44.4        | 44.4        |\n| May 3      | 45.9        | 45.9        |\n| May 3      | 45.4        | 45.4        |\n| May 3      | 48.2        | 48.2        |\n| May 3      | 48.1        | 48.1        |\n| May 3      | 57.7        | 57.7        |\n| May 3      | 58.8        | 58.8        |\n| Jun 5      | -           | -           |\n| Jun 5      | -           | -           |\n| Jun 5      | -           | -           |\n| Jun 5      | -           | -           |\n| Jun 5      | -           | -           |\n| Jun 5      | -           | -           |\n| Jun 5      | -           | -           |\n| Jun 5      | -           | -           |\n| Jun 5      | -           | -           |\n| Jun, Dec   | -           | -           |\n| Jun, Dec   | -           | -           |\n| Jun, Dec   | -           | -           |\n| Jun, Dec   | -           | -           |\n| Jun, Dec   | -           | -           |\n| Jun, Dec   | -           | -           |\n| Jun, Dec   | -           | -           |\n| Jun, Dec   | -           | -           |\n| Jun, Dec   | -           = B     | B           |\n| Jun, Dec   | -           = A     | A           |\n| Jun, Dec   | -           = D     | D           |\n| Jun, Dec   | -           = N     | N           |\n| Jun, Dec   | -           = O     | O           |\n| Jun, Dec   | -           = S     | S           |\n| Jun, Dec   | -           = F     | F           |\n| Jun, Dec   | -           = M     | M           |\n| Jun, Dec   | -           = N     | N           |\n| Jun, Dec   | -           = O     | O           |\n| Jun, Dec   | -           = R     | R           |\n| Jun, Dec   | -           = S     | S           |\n| Jun, Dec   | -           = T     | T           |\n| Jun, Dec   | -           = U     | U           |\n| Jun, Dec   | -           = V     | V           |\n| Jun, Dec   | -           = W     | W           |\n| Jun, Dec   | -           = X     | X           |\n| Jun, Dec   | -           = Y     | Y           |\n| Jun, Dec   | -           = Z     | Z           |\n| Jun, Dec   | -           = AA    | AA          |\n| Jun, Dec   | -           = AB    | AB          |\n| Jun, Dec   | -           = AC    | AC          |\n| Jun, Dec   | -           = AD    | AD          |\n| Jun, Dec   | -           = AE    | AE          |\n| Jun, Dec   | -           = AF    | AF          |\n| Jun, Dec   | -           = AG    | AG          |\n| Jun, Dec   | -           = AH    | AH          |\n| Jun, Dec   | -            | AH          |\n| Jun, Dec   | -            | AK          |\n| Jun, Dec   | -            | AL          |\n| Jun, Dec   | -            | AM          |\n| Jun, Dec   | -            | AN          |\n| Jun, Dec   | -            | AU          |\n| Jun, Dec   | -            | AV          |\n| Jun, Dec   | -            | AW          |\n| Jun, Dec   | -            | AX          |\n| Jun, Dec   | -            | AZ          |\n| Jun, Dec   | -            | AR          |\n| Jun, Dec   | -            | AS          |\n| Jun, Dec   | -            | AT          |\n| Jun, Dec   | -            | AU          |\n| Jun, Dec   | -            | AV          |\n| Jun, Dec   | -            | AV          |\n| Jun, Dec   | -            | AV          |\n| Jun, Dec   | -            | AV          |\n| Jun, Dec   | -            | AV          |\n| Jun, Dec   | -            | AV          |\n| Jun, Dec   | -            | AV          |\n| Jun, Dec   | -            | AV          |\n| Jun, Dec   | -            | AV          |\n| Jul, Dec   | -            | AV          |\n| Jul, Dec   | -            | AV          |\n| Jul, Dec   | -            | AV          |\n| Jul, Dec   | -            | AV          |\n| Jul, Dec   | -            | AV          |\n| Jul, Dec   | -            | AV          |\n| Jul, Dec   | -            | AV          |\n| Jul, Dec   | -            | AV          |\n| Jul, Dec   (Apr) to NR (May) (May) (Jun) (Jul) (Aug) (Sep) (Oct) (Nov) (Dec) (Jan) (Feb) (Mar) (Apr) (May) (Jun) (Jul) (Aug) (Sep) (Oct) (Nov) (Dec) (Jan) (Feb) (Mar) (Mar) (Apr) (May) (Jun) (Jul) (Aug) (Sep) (Oct) (Nov) (Dec) (Jan) (Feb) (Mar) (Mar) (Apr) (May) (Jun) (Jul) (Aug) (Sep) (Oct) (Nov) (Dec) (Jan) (Feb) (Mar) (Mar) (Apr) (May) (Jun) (Jul) (Aug) (Sep). \nSource: GS Investment Research for ratings and price targets; FactSet closing prices as of 3/31/2026.\nIndex: Price\nStock Price Currency: Australian Dollar",
+            "sub_type": "line"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.082,
+                0.456,
+                0.471,
+                0.474
+            ],
+            "angle": 0,
+            "content": "The price targets shown should be considered in the context of all prior published GS, which may or may not have included price targets, as well as developments relating to the company, its industry and financial markets."
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.515,
+                0.26,
+                0.908,
+                0.453
+            ],
+            "angle": 0,
+            "content": "",
+            "sub_type": "line"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.511,
+                0.456,
+                0.899,
+                0.474
+            ],
+            "angle": 0,
+            "content": "The price targets shown should be considered in the context of all prior published GS, which may or may not have included price targets, as well as developments relating to the company, its industry and financial markets."
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.085,
+                0.503,
+                0.49,
+                0.7
+            ],
+            "angle": 0,
+            "content": "| Date       | Stock Price | Rating | Price Target | Price Target at Removal | FTSE World Europe (GBP) |\n|------------|-------------|--------|--------------|--------------------------|--------------------------|\n| Dec 13, 2023 to NA | -           | -      | -            | -                        | -                        |\n| Apr 25, 2024 to NR | -         | -      | -            | -                        | -                        |\n| Jan 11     | 2500        | -      | N            | -                        | -                        |\n| Jun 5      | 2400        | -      | N            | -                        | -                        |\n| Jun 5      | 2400        | -      | N            | -                        | -                        |\n| Jun 5      | 2300        | -      | N            | -                        | -                        |\n| Jun 5      | 2400        | -      | N            | -                        | -                        |\n| Jun 5      | 2300        | -      | N            | -                        | -                        |\n| Jun 5      | 2200        | -      | N            | -                        | -                        |\n| Jun 5      | 2400        | -      | N            | -                        | -                        |\n| Jun 5      | 2700        | -      | N            | -                        | -                        |\n| Jun 5      | 2600        | -      | N            | -                        | -                        |\nSource: GS Investment Research for ratings and price targets; FactSet closing prices as of 3/31/2026.",
+            "sub_type": "line"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.082,
+                0.705,
+                0.482,
+                0.722
+            ],
+            "angle": 0,
+            "content": "The price targets shown should be considered in the context of all prior published GS, which may or may not have included price targets, as well as developments relating to the company, its industry and financial markets."
+        },
+        {
+            "type": "table_caption",
+            "bbox": [
+                0.08,
+                0.75,
+                0.29,
+                0.765
+            ],
+            "angle": 0,
+            "content": "Target price history table(s)"
+        },
+        {
+            "type": "table_caption",
+            "bbox": [
+                0.08,
+                0.767,
+                0.234,
+                0.781
+            ],
+            "angle": 0,
+            "content": "Glencore Plc (GLEN.L)"
+        },
+        {
+            "type": "table",
+            "bbox": [
+                0.08,
+                0.782,
+                0.705,
+                0.928
+            ],
+            "angle": 0,
+            "content": "<table><tr><td>Date of report</td><td>Target price (£)</td><td>Closing price (£)</td><td>Date of report</td><td>Target price (A$)</td><td>Closing price (A$)</td></tr><tr><td>30-Apr-26</td><td>600</td><td>567.8</td><td>11-May-26</td><td>58.50</td><td>58.33</td></tr><tr><td>10-Apr-26</td><td>610</td><td>565.7</td><td>22-Apr-26</td><td>58.40</td><td>56.17</td></tr><tr><td>19-Feb-26</td><td>540</td><td>505</td><td>13-Apr-26</td><td>57.10</td><td>54.35</td></tr><tr><td>29-Jan-26</td><td>520</td><td>507.9</td><td>09-Apr-26</td><td>56.70</td><td>54.56</td></tr><tr><td>14-Jan-26</td><td>460</td><td>484.2</td><td>17-Feb-26</td><td>58.40</td><td>52.74</td></tr><tr><td>30-Oct-25</td><td>340</td><td>365.35</td><td>20-Jan-26</td><td>58.80</td><td>47.78</td></tr><tr><td>09-Oct-25</td><td>350</td><td>357.15</td><td>12-Jan-26</td><td>57.70</td><td>46.51</td></tr><tr><td>07-Aug-25</td><td>310</td><td>280.45</td><td>21-Oct-25</td><td>48.10</td><td>44.13</td></tr><tr><td>31-Jul-25</td><td>330</td><td>304.75</td><td>08-Oct-25</td><td>48.20</td><td>41.89</td></tr></table>"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.082,
+                0.955,
+                0.16,
+                0.967
+            ],
+            "angle": 0,
+            "content": "26 May 2026"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.908,
+                0.956,
+                0.917,
+                0.965
+            ],
+            "angle": 0,
+            "content": "6"
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.082,
+                0.008,
+                0.185,
+                0.02
+            ],
+            "angle": 0,
+            "content": "GS"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.81,
+                0.01,
+                0.918,
+                0.024
+            ],
+            "angle": 0,
+            "content": "Metals & Mining"
+        },
+        {
+            "type": "table_caption",
+            "bbox": [
+                0.082,
+                0.045,
+                0.233,
+                0.059
+            ],
+            "angle": 0,
+            "content": "Glencore Plc (GLEN.L)"
+        },
+        {
+            "type": "table",
+            "bbox": [
+                0.081,
+                0.061,
+                0.348,
+                0.262
+            ],
+            "angle": 0,
+            "content": "<table><tr><td>Date of report</td><td>Target price (£)</td><td>Closing price (£)</td></tr><tr><td>08-Jul-25</td><td>310</td><td>306.4</td></tr><tr><td>30-Apr-25</td><td>300</td><td>244.4</td></tr><tr><td>10-Apr-25</td><td>310</td><td>245</td></tr><tr><td>20-Feb-25</td><td>420</td><td>325.55</td></tr><tr><td>30-Jan-25</td><td>500</td><td>352.95</td></tr><tr><td>11-Oct-24</td><td>540</td><td>424.25</td></tr><tr><td>07-Aug-24</td><td>520</td><td>404.2</td></tr><tr><td>31-Jul-24</td><td>530</td><td>429.8</td></tr><tr><td>09-Jul-24</td><td>510</td><td>476.05</td></tr><tr><td>30-Apr-24</td><td>480</td><td>467.7</td></tr><tr><td>22-Feb-24</td><td>490</td><td>379.9</td></tr><tr><td>02-Feb-24</td><td>510</td><td>417.6</td></tr><tr><td>11-Jan-24</td><td>530</td><td>445.2</td></tr></table>"
+        },
+        {
+            "type": "table_caption",
+            "bbox": [
+                0.421,
+                0.045,
+                0.597,
+                0.059
+            ],
+            "angle": 0,
+            "content": "BHP Group Ltd. (BHP.AX)"
+        },
+        {
+            "type": "table",
+            "bbox": [
+                0.42,
+                0.061,
+                0.705,
+                0.467
+            ],
+            "angle": 0,
+            "content": "<table><tr><td>Date of report</td><td>Target price (A$)</td><td>Closing price (A$)</td></tr><tr><td>29-Sep-25</td><td>45.40</td><td>41.91</td></tr><tr><td>19-Aug-25</td><td>45.90</td><td>42.12</td></tr><tr><td>18-Jul-25</td><td>45.60</td><td>40.29</td></tr><tr><td>07-Jul-25</td><td>44.40</td><td>38.60</td></tr><tr><td>08-Apr-25</td><td>45.10</td><td>35.38</td></tr><tr><td>12-Mar-25</td><td>47.30</td><td>38.95</td></tr><tr><td>18-Feb-25</td><td>47.40</td><td>40.97</td></tr><tr><td>21-Jan-25</td><td>46.80</td><td>40.61</td></tr><tr><td>09-Jan-25</td><td>47.50</td><td>39.27</td></tr><tr><td>01-Dec-24</td><td>47.40</td><td>40.57</td></tr><tr><td>29-Oct-24</td><td>47.30</td><td>43.04</td></tr><tr><td>17-Oct-24</td><td>47.80</td><td>42.99</td></tr><tr><td>08-Oct-24</td><td>47.50</td><td>43.79</td></tr><tr><td>27-Aug-24</td><td>48.80</td><td>41.35</td></tr><tr><td>02-Jul-24</td><td>48.40</td><td>43.16</td></tr><tr><td>05-Jun-24</td><td>49.00</td><td>43.90</td></tr><tr><td>18-Apr-24</td><td>49.00</td><td>45.09</td></tr><tr><td>03-Apr-24</td><td>49.20</td><td>44.86</td></tr><tr><td>18-Jan-24</td><td>49.40</td><td>45.73</td></tr><tr><td>10-Jan-24</td><td>50.50</td><td>47.86</td></tr><tr><td>14-Nov-23</td><td>49.90</td><td>46.02</td></tr><tr><td>10-Oct-23</td><td>46.50</td><td>44.15</td></tr><tr><td>11-Sep-23</td><td>45.80</td><td>43.66</td></tr><tr><td>22-Aug-23</td><td>46.10</td><td>43.21</td></tr><tr><td>20-Jul-23</td><td>45.60</td><td>44.62</td></tr><tr><td>05-Jul-23</td><td>45.70</td><td>45.00</td></tr><tr><td>13-Jun-23</td><td>46.90</td><td>44.29</td></tr></table>"
+        },
+        {
+            "type": "table_caption",
+            "bbox": [
+                0.082,
+                0.484,
+                0.254,
+                0.498
+            ],
+            "angle": 0,
+            "content": "BHP Group Ltd. (BHPB.L)"
+        },
+        {
+            "type": "table",
+            "bbox": [
+                0.081,
+                0.5,
+                0.347,
+                0.673
+            ],
+            "angle": 0,
+            "content": "<table><tr><td>Date of report</td><td>Target price (£)</td><td>Closing price (£)</td></tr><tr><td>10-Apr-26</td><td>2,900</td><td>2,879.5</td></tr><tr><td>17-Feb-26</td><td>2,600</td><td>2,715</td></tr><tr><td>14-Jan-26</td><td>2,700</td><td>2,440</td></tr><tr><td>09-Oct-25</td><td>2,400</td><td>2,114</td></tr><tr><td>29-Sep-25</td><td>2,200</td><td>2,093</td></tr><tr><td>12-Mar-25</td><td>2,300</td><td>1,880</td></tr><tr><td>18-Feb-25</td><td>2,400</td><td>2,065</td></tr><tr><td>21-Jan-25</td><td>2,300</td><td>2,040</td></tr><tr><td>05-Jun-24</td><td>2,400</td><td>2,282</td></tr><tr><td>04-Apr-24</td><td>2,400</td><td>2,328</td></tr><tr><td>11-Jan-24</td><td>2,500</td><td>2,481.5</td></tr></table>"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.08,
+                0.688,
+                0.457,
+                0.701
+            ],
+            "angle": 0,
+            "content": "Price targets shown in table(s) are unadjusted for corporate actions.",
+            "merge_prev": false
+        },
+        {
+            "type": "title",
+            "bbox": [
+                0.08,
+                0.713,
+                0.252,
+                0.727
+            ],
+            "angle": 0,
+            "content": "Regulatory disclosures"
+        },
+        {
+            "type": "title",
+            "bbox": [
+                0.08,
+                0.732,
+                0.515,
+                0.746
+            ],
+            "angle": 0,
+            "content": "Disclosures required by United States laws and regulations"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.082,
+                0.747,
+                0.908,
+                0.79
+            ],
+            "angle": 0,
+            "content": "See company-specific regulatory disclosures above for any of the following disclosures required as to companies referred to in this report: manager or co-manager in a pending transaction; \\(1\\%\\) or other ownership; compensation for certain services; types of client relationships; managed/co-managed public offerings in prior periods; directorships; for equity securities, market making and/or specialist role. GS trades or may trade as a principal in debt securities (or in related derivatives) of issuers discussed in this report.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.082,
+                0.797,
+                0.913,
+                0.876
+            ],
+            "angle": 0,
+            "content": "The following are additional required disclosures: Ownership and material conflicts of interest: GS policy prohibits its analysts, professionals reporting to analysts and members of their households from owning securities of any company in the analyst's area of coverage. Analyst compensation: Analysts are paid in part based on the profitability of GS, which includes investment banking revenues. Analyst as officer or director: GS policy generally prohibits its analysts, persons reporting to analysts or members of their households from serving as an officer, director or advisor of any company in the analyst's area of coverage. Non-U.S. Analysts: Non-U.S. analysts may not be associated persons of GS & Co. LLC and therefore may not be subject to FINRA Rule 2241 or FINRA Rule 2242 restrictions on communications with a subject company, public appearances and trading in securities covered by the analysts.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.082,
+                0.882,
+                0.916,
+                0.916
+            ],
+            "angle": 0,
+            "content": "Distribution of ratings: See the distribution of ratings disclosure above. Price chart: See the price chart, with changes of ratings and price targets in prior periods, above, or, if electronic format or if with respect to multiple companies which are the subject of this report, on the GS website at https://www.gs.com/research/hedge.html.",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.082,
+                0.955,
+                0.16,
+                0.967
+            ],
+            "angle": 0,
+            "content": "26 May 2026"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.908,
+                0.956,
+                0.917,
+                0.965
+            ],
+            "angle": 0,
+            "content": "7"
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.082,
+                0.008,
+                0.185,
+                0.02
+            ],
+            "angle": 0,
+            "content": "GS"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.81,
+                0.01,
+                0.918,
+                0.024
+            ],
+            "angle": 0,
+            "content": "Metals & Mining"
+        },
+        {
+            "type": "title",
+            "bbox": [
+                0.082,
+                0.043,
+                0.874,
+                0.057
+            ],
+            "angle": 0,
+            "content": "Additional disclosures required under the laws and regulations of jurisdictions other than the United States"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.081,
+                0.058,
+                0.917,
+                0.59
+            ],
+            "angle": 0,
+            "content": "The following disclosures are those required by the jurisdiction indicated, except to the extent already made above pursuant to United States laws and regulations. Australia: GS Australia Pty Ltd and its affiliates are not authorised deposit-taking institutions (as that term is defined in the Banking Act 1959 (Cth)) in Australia and do not provide banking services, nor carry on a banking business, in Australia. This research, and any access to it, is intended only for “wholesale clients” within the meaning of the Australian Corporations Act, unless otherwise agreed by GS. In producing research reports, members of Global Investment Research of GS Australia may attend site visits and other meetings hosted by the companies and other entities which are the subject of its research reports. In some instances the costs of such site visits or meetings may be met in part or in whole by the issuers concerned if GS Australia considers it is appropriate and reasonable in the specific circumstances relating to the site visit or meeting. To the extent that the contents of this document contains any financial product advice, it is general advice only and has been prepared by GS without taking into account a client’s objectives, financial situation or needs. A client should, before acting on any such advice, consider the appropriateness of the advice having regard to the client’s own objectives, financial situation and needs. A copy of certain GS Australia and New Zealand disclosure of interests and a copy of GS’ Australian Sell-Side Research Independence Policy Statement are available at: https://www.goldmansachs.com/disclosures/australia-new-zealand/index.html. Brazil: Disclosure information in relation to CVM Resolution n. 20 is available at https://www.gs.com/worldwide/brazil/area/gir/index.html. Where applicable, the Brazil-registered analyst primarily responsible for the content of this research report, as defined in Article 20 of CVM Resolution n. 20, is the first author named at the beginning of this report, unless indicated otherwise at the end of the text. Canada: This information is being provided to you for information purposes only and is not, and under no circumstances should be construed as, an advertisement, offering or solicitation by GS & Co. LLC for purchasers of securities in Canada to trade in any Canadian security. GS & Co. LLC is not registered as a dealer in any jurisdiction in Canada under applicable Canadian securities laws and generally is not permitted to trade in Canadian securities and may be prohibited from selling certain securities and products in certain jurisdictions in Canada. If you wish to trade in any Canadian securities or other products in Canada please contact GS Canada Inc., an affiliate of The GS Group Inc., or another registered Canadian dealer. Hong Kong: Further information on the securities of covered companies referred to in this research may be obtained on request from GS (Asia) L.L.C. India: Further information on the subject company or companies referred to in this research may be obtained from GS (India) Securities Private Limited, Research Analyst - SEBI Registration Number INH000001493, 10th Floor, Ascent-Worli, Sudam Kalu Ahire Marg, Worli, Mumbai-400 025, India, Corporate Identity Number U74140MH2006FTC160634, Phone +91 22 6616 9000, Fax +91 22 6616 9001. GS may beneficially own 1% or more of the securities (as such term is defined in clause 2 (h) the Indian Securities Contracts (Regulation) Act, 1956) of the subject company or companies referred to in this research report. Investment in securities market are subject to market risks. Read all the related documents carefully before investing. Registration granted by SEBI and certification from NISM in no way guarantee performance of the intermediary or provide any assurance of returns to investors. GS (India) Securities Private Limited compliance officer and investor grievance contact details can be found at: https://www.goldmansachs.com/worldwide/india/documents/Grievance-Redressal-and-Escalation-Matrix.pdf, and a copy of the annual audit compliance report can be found at this link: https://publishing.gs.com/content/site/india-annual-compliance-report.html. Japan: See below. Korea: This research, and any access to it, is intended only for “professional investors” within the meaning of the Financial Services and Capital Markets Act, unless otherwise agreed by GS. Further information on the subject company or companies referred to in this research may be obtained from GS (Asia) L.L.C., Seoul Branch. New Zealand: GS New Zealand Limited and its affiliates are neither “registered banks” nor “deposit takers” (as defined in the Reserve Bank of New Zealand Act 1989) in New Zealand. This research, and any access to it, is intended for “wholesale clients” (as defined in the Financial Advisers Act 2008) unless otherwise agreed by GS. A copy of certain GS Australia and New Zealand disclosure of interests is available at: https://www.goldmansachs.com/disclosures/australia-new-zealand/index.html. Russia: Research reports distributed in the Russian Federation are not advertising as defined in the Russian legislation, but are information and analysis not having product promotion as their main purpose and do not provide appraisal within the meaning of the Russian legislation on appraisal activity. Research reports do not constitute a personalized investment recommendation as defined in Russian laws and regulations, are not addressed to a specific client, and are prepared without analyzing the financial circumstances, investment profiles or risk profiles of clients. GS assumes no responsibility for any investment decisions that may be taken by a client or any other person based on this research report. Singapore: GS (Singapore) Pte. (Company Number: 198602165W), which is regulated by the Monetary Authority of Singapore, accepts legal responsibility for this research, and should be contacted with respect to any matters arising from, or in connection with, this research. Taiwan: This material is for reference only and must not be reprinted without permission. Investors should carefully consider their own investment risk. Investment results are the responsibility of the individual investor. United Kingdom: Persons who would be categorized as retail clients in the United Kingdom, as such term is defined in the rules of the Financial Conduct Authority, should read this research in conjunction with prior GS on the covered companies referred to herein and should refer to the risk warnings that have been sent to them by GS International. A copy of these risks warnings, and a glossary of certain financial terms used in this report, are available from GS International on request.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.082,
+                0.595,
+                0.909,
+                0.673
+            ],
+            "angle": 0,
+            "content": "European Union and United Kingdom: Disclosure information in relation to Article 6 (2) of the European Commission Delegated Regulation (EU) (2016/958) supplementing Regulation (EU) No 596/2014 of the European Parliament and of the Council (including as that Delegated Regulation is implemented into United Kingdom domestic law and regulation following the United Kingdom's departure from the European Union and the European Economic Area) with regard to regulatory technical standards for the technical arrangements for objective presentation of investment recommendations or other information recommending or suggesting an investment strategy and for disclosure of particular interests or indications of conflicts of interest is available at https://www.gs.com/disclosures/europeanpolicy.html which states the European Policy for Managing Conflicts of Interest in Connection with Investment Research.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.082,
+                0.68,
+                0.915,
+                0.736
+            ],
+            "angle": 0,
+            "content": "Japan: GS Japan Co., Ltd. is a Financial Instrument Dealer registered with the Kanto Financial Bureau under registration number Kinsho 69, and a member of Japan Securities Dealers Association, Financial Futures Association of Japan Type II Financial Instruments Firms Association, and Investment Management Association of Japan. Sales and purchase of equities are subject to commission pre-determined with clients plus consumption tax. See company-specific disclosures as to any applicable disclosures required by Japanese stock exchanges, the Japanese Securities Dealers Association or the Japanese Securities Finance Company.",
+            "merge_prev": false
+        },
+        {
+            "type": "title",
+            "bbox": [
+                0.082,
+                0.749,
+                0.452,
+                0.763
+            ],
+            "angle": 0,
+            "content": "Ratings, coverage universe and related definitions"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.082,
+                0.763,
+                0.917,
+                0.84
+            ],
+            "angle": 0,
+            "content": "Buy (B), Neutral (N), Sell (S) Analysts recommend stocks as Buys or Sells for inclusion on various regional Investment Lists. Being assigned a Buy or Sell on an Investment List is determined by a stock's total return potential relative to its coverage universe. Any stock not assigned as a Buy or a Sell on an Investment List with an active rating (i.e., a stock that is not Rating Suspended, Not Rated, Early-Stage Biotech, Coverage Suspended or Not Covered), is deemed Neutral. Each region manages Regional Conviction Lists, which are selected from Buy rated stocks on the respective region's Investment Lists and represent investment recommendations focused on the size of the total return potential and/or the likelihood of the realization of the return across their respective areas of coverage. The addition or removal of stocks from such Conviction Lists are managed by the Investment Review Committee or other designated committee in each respective region and do not represent a change in the analysts' investment rating for such stocks.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.082,
+                0.847,
+                0.89,
+                0.881
+            ],
+            "angle": 0,
+            "content": "Total return potential represents the upside or downside differential between the current share price and the price target, including all paid or anticipated dividends, expected during the time horizon associated with the price target. Price targets are required for all covered stocks. The total return potential, price target and associated time horizon are stated in each report adding or reiterating an Investment List membership.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.082,
+                0.887,
+                0.779,
+                0.911
+            ],
+            "angle": 0,
+            "content": "Coverage Universe: A list of all stocks in each coverage universe is available by primary analyst, stock and coverage universe at https://www.gs.com/research/hedge.html.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.082,
+                0.917,
+                0.885,
+                0.929
+            ],
+            "angle": 0,
+            "content": "Not Rated (NR). The investment rating, target price and earnings estimates (where relevant) are removed pursuant to GS policy when",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.082,
+                0.955,
+                0.16,
+                0.967
+            ],
+            "angle": 0,
+            "content": "26 May 2026"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.908,
+                0.956,
+                0.917,
+                0.965
+            ],
+            "angle": 0,
+            "content": "8"
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.082,
+                0.008,
+                0.185,
+                0.02
+            ],
+            "angle": 0,
+            "content": "GS"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.81,
+                0.01,
+                0.918,
+                0.024
+            ],
+            "angle": 0,
+            "content": "Metals & Mining"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.081,
+                0.043,
+                0.913,
+                0.133
+            ],
+            "angle": 0,
+            "content": "GS is acting in an advisory capacity in a merger or in a strategic transaction involving this company, when there are legal, regulatory or policy constraints due to GS' involvement in a transaction, and in certain other circumstances. Early-Stage Biotech (ES). An investment rating and a target price are not assigned pursuant to GS policy when this company has neither a drug, treatment or medical device that has passed a Phase II clinical trial nor a license to distribute a post-Phase II drug, treatment or medical device. Rating Suspended (RS). GS has suspended the investment rating and price target for this stock, because there is not a sufficient fundamental basis for determining an investment rating or target price. The previous investment rating and target price, if any, are no longer in effect for this stock and should not be relied upon. Coverage Suspended (CS). GS has suspended coverage of this company. Not Covered (NC). GS does not cover this company.",
+            "merge_prev": false
+        },
+        {
+            "type": "title",
+            "bbox": [
+                0.082,
+                0.145,
+                0.351,
+                0.159
+            ],
+            "angle": 0,
+            "content": "Global product; distributing entities"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.081,
+                0.159,
+                0.917,
+                0.281
+            ],
+            "angle": 0,
+            "content": "GS Global Investment Research produces and distributes research products for clients of GS on a global basis. Analysts based in GS offices around the world produce research on industries and companies, and research on macroeconomics, currencies, commodities and portfolio strategy. This research is disseminated in Australia by GS Australia Pty Ltd (ABN 21 006 797 897); in Brazil by GS do Brasil Corretora de Títulos e Valores Mobiliários S.A.; Public Communication Channel GS Brazil: 0800 727 5764 and / or contatogoldmanbrasil@gs.com. Available Weekdays (except holidays), from 9am to 6pm. Canal de Comunicação com o Público GS Brasil: 0800 727 5764 e/ou contatogoldmanbrasil@gs.com. Horário de funcionamento: segunda-feira à sexta-feira (exceto feriados), das 9h às 18h; in Canada by GS & Co. LLC; in Hong Kong by GS (Asia) L.L.C.; in India by GS (India) Securities Private Ltd.; in Japan by GS Japan Co., Ltd.; in the Republic of Korea by GS (Asia) L.L.C., Seoul Branch; in New Zealand by GS New Zealand Limited; in Russia by OOO GS; in Singapore by GS (Singapore) Pte. (Company Number: 198602165W); and in the United States of America by GS & Co. LLC. GS International has approved this research in connection with its distribution in the United Kingdom.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.082,
+                0.287,
+                0.88,
+                0.311
+            ],
+            "angle": 0,
+            "content": "GS International (“GSI”), authorised by the Prudential Regulation Authority (“PRA”) and regulated by the Financial Conduct Authority (“FCA”) and the PRA, has approved this research in connection with its distribution in the United Kingdom.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.082,
+                0.316,
+                0.905,
+                0.362
+            ],
+            "angle": 0,
+            "content": "European Economic Area: GS Bank Europe SE (\"GSBE\") is a credit institution incorporated in Germany and, within the Single Supervisory Mechanism, subject to direct prudential supervision by the European Central Bank and in other respects supervised by German Federal Financial Supervisory Authority (Bundesanstalt für Finanzdienstleistungsaufsicht, BaFin) and Deutsche Bundesbank and disseminates research within the European Economic Area.",
+            "merge_prev": false
+        },
+        {
+            "type": "title",
+            "bbox": [
+                0.082,
+                0.375,
+                0.229,
+                0.387
+            ],
+            "angle": 0,
+            "content": "General disclosures"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.082,
+                0.388,
+                0.913,
+                0.444
+            ],
+            "angle": 0,
+            "content": "This research is for our clients only. Other than disclosures relating to GS, this research is based on current public information that we consider reliable, but we do not represent it is accurate or complete, and it should not be relied on as such. The information, opinions, estimates and forecasts contained herein are as of the date hereof and are subject to change without prior notification. We seek to update our research as appropriate, but various regulations may prevent us from doing so. Other than certain industry reports published on a periodic basis, the large majority of reports are published at irregular intervals as appropriate in the analyst's judgment.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.082,
+                0.45,
+                0.915,
+                0.485
+            ],
+            "angle": 0,
+            "content": "GS conducts a global full-service, integrated investment banking, investment management, and brokerage business. We have investment banking and other business relationships with a substantial percentage of the companies covered by Global Investment Research. GS & Co. LLC, the United States broker dealer, is a member of SIPC (https://www.sipc.org).",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.082,
+                0.491,
+                0.915,
+                0.525
+            ],
+            "angle": 0,
+            "content": "Our salespeople, traders, and other professionals may provide oral or written market commentary or trading strategies to our clients and principal trading desks that reflect opinions that are contrary to the opinions expressed in this research. Our asset management area, principal trading desks and investing businesses may make investment decisions that are inconsistent with the recommendations or views expressed in this research.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.082,
+                0.531,
+                0.915,
+                0.587
+            ],
+            "angle": 0,
+            "content": "The analysts named in this report may have from time to time discussed with our clients, including GS salespersons and traders, or may discuss in this report, trading strategies that reference catalysts or events that may have a near-term impact on the market price of the equity securities discussed in this report, which impact may be directionally counter to the analyst's published price target expectations for such stocks. Any such trading strategies are distinct from and do not affect the analyst's fundamental equity rating for such stocks, which rating reflects a stock's return potential relative to its coverage universe as described herein.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.082,
+                0.594,
+                0.89,
+                0.617
+            ],
+            "angle": 0,
+            "content": "We and our affiliates, officers, directors, and employees will from time to time have long or short positions in, act as principal in, and buy or sell, the securities or derivatives, if any, referred to in this research, unless otherwise prohibited by regulation or GS policy.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.082,
+                0.623,
+                0.915,
+                0.646
+            ],
+            "angle": 0,
+            "content": "The views attributed to third party presenters at GS arranged conferences, including individuals from other parts of GS, do not necessarily reflect those of Global Investment Research and are not an official view of GS.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.082,
+                0.653,
+                0.913,
+                0.676
+            ],
+            "angle": 0,
+            "content": "Any third party referenced herein, including any salespeople, traders and other professionals or members of their household, may have positions in the products mentioned that are inconsistent with the views expressed by analysts named in this report.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.082,
+                0.682,
+                0.915,
+                0.75
+            ],
+            "angle": 0,
+            "content": "This research is not an offer to sell or the solicitation of an offer to buy any security in any jurisdiction where such an offer or solicitation would be illegal. It does not constitute a personal recommendation or take into account the particular investment objectives, financial situations, or needs of individual clients. Clients should consider whether any advice or recommendation in this research is suitable for their particular circumstances and, if appropriate, seek professional advice, including tax advice. The price and value of investments referred to in this research and the income from them may fluctuate. Past performance is not a guide to future performance, future returns are not guaranteed, and a loss of original capital may occur. Fluctuations in exchange rates could have adverse effects on the value or price of, or income derived from, certain investments.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.082,
+                0.756,
+                0.905,
+                0.813
+            ],
+            "angle": 0,
+            "content": "Certain transactions, including those involving futures, options, and other derivatives, give rise to substantial risk and are not suitable for all investors. Investors should review current options and futures disclosure documents which are available from GS sales representatives or at https://www.theocc.com/about/publications/character-risks.jsp and https://www.goldmansachs.com/disclosures/cftc_fcm_disclosures. Transaction costs may be significant in option strategies calling for multiple purchase and sales of options such as spreads. Supporting documentation will be supplied upon request.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.082,
+                0.818,
+                0.905,
+                0.92
+            ],
+            "angle": 0,
+            "content": "Differing Levels of Service provided by Global Investment Research: The level and types of services provided to you by GS Global Investment Research may vary as compared to that provided to internal and other external clients of GS, depending on various factors including your individual preferences as to the frequency and manner of receiving communication, your risk profile and investment focus and perspective (e.g., marketwide, sector specific, long term, short term), the size and scope of your overall client relationship with GS, and legal and regulatory constraints. As an example, certain clients may request to receive notifications when research on specific securities is published, and certain clients may request that specific data underlying analysts' fundamental analysis available on our internal client websites be delivered to them electronically through data feeds or otherwise. No change to an analyst's fundamental research views (e.g., ratings, price targets, or material changes to earnings estimates for equity securities), will be communicated to any client prior to inclusion of such information in a research report broadly disseminated through electronic publication to our internal client websites or through other means, as necessary, to all clients who are entitled to receive such reports.",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.082,
+                0.955,
+                0.16,
+                0.967
+            ],
+            "angle": 0,
+            "content": "26 May 2026"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.908,
+                0.956,
+                0.917,
+                0.965
+            ],
+            "angle": 0,
+            "content": "9"
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.082,
+                0.008,
+                0.185,
+                0.02
+            ],
+            "angle": 0,
+            "content": "GS"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.81,
+                0.01,
+                0.918,
+                0.024
+            ],
+            "angle": 0,
+            "content": "Metals & Mining"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.08,
+                0.043,
+                0.898,
+                0.089
+            ],
+            "angle": 0,
+            "content": "All research reports are disseminated and available to all clients simultaneously through electronic publication to our internal client websites. Not all research content is redistributed to our clients or available to third-party aggregators, nor is GS responsible for the redistribution of our research by third party aggregators. For research, models or other data related to one or more securities, markets or asset classes (including related services) that may be available to you, please contact your GS representative or go to https://research.gs.com.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.08,
+                0.094,
+                0.889,
+                0.117
+            ],
+            "angle": 0,
+            "content": "Disclosure information is also available at https://www.gs.com/research/hedge.html or from Research Compliance, 200 West Street, New York, NY 10282.",
+            "merge_prev": false
+        },
+        {
+            "type": "title",
+            "bbox": [
+                0.081,
+                0.124,
+                0.221,
+                0.136
+            ],
+            "angle": 0,
+            "content": "© 2026 GS."
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.08,
+                0.142,
+                0.911,
+                0.222
+            ],
+            "angle": 0,
+            "content": "You are permitted to store, display, analyze, modify, reformat, and print the information made available to you via this service only for your own use. You may not resell or reverse engineer this information to calculate or develop any index for disclosure and/or marketing or create any other derivative works or commercial product(s), data or offering(s) without the express written consent of GS. You are not permitted to publish, transmit, or otherwise reproduce this information, in whole or in part, in any format to any third party without the express written consent of GS. This foregoing restriction includes, without limitation, using, extracting, downloading or retrieving this information, in whole or in part, to train or finetune a machine learning or artificial intelligence system, or to provide or reproduce this information, in whole or in part, as a prompt or input to any such system.",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.082,
+                0.955,
+                0.16,
+                0.967
+            ],
+            "angle": 0,
+            "content": "26 May 2026"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.901,
+                0.956,
+                0.918,
+                0.966
+            ],
+            "angle": 0,
+            "content": "10"
+        }
+    ]
+]

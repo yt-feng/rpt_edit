@@ -1,0 +1,75 @@
+ZH_A: 听说你刚看完一份关于Computex 2026的研报，这次的重点好像和往年很不一样？
+
+ZH_B: 对，这次的转变非常大。报告的核心判断是，AI基础设施的叙事正在从“GPU集群”转向“AI工厂”。
+
+ZH_A: AI工厂？这听起来不像只是换个说法，它背后到底在讲什么？
+
+ZH_B: 没错，不是换说法。之前大家盯着GPU、HBM这些单一芯片，但这次Computex要展示的是一个完全不同的系统设计思路。
+
+ZH_A: 所以这份报告真正要回答的问题是什么？
+
+ZH_B: 报告要回答的是：当AI算力不再只靠GPU堆叠，整个供应链会如何重构。英伟达这次不仅会推Rubin GPU，还会重点展示Vera CPU、Spectrum-X网络、CPO光学互联、液冷和高压电源。
+
+ZH_A: 等一下，英伟达要做CPU？这不是要和英特尔、AMD正面竞争吗？
+
+ZH_B: 报告认为不是。Vera CPU不是传统服务器CPU，它是为AI工厂的“调度层”设计的。在智能体AI里，CPU要处理请求调度、工作流控制、内存索引这些任务，它更像交通管制员。
+
+ZH_A: 那这对供应链意味着什么？之前大家只关心台积电和CoWoS产能。
+
+ZH_B: 机会正在扩散。报告提到ABF载板、插座、散热模组、电源架、汇流排、光学组装、BMC控制器，还有整机柜集成，都会成为新的增长点。台湾供应链不再只看单一组件，而是看谁能交付完整的AI系统。
+
+ZH_A: 你刚才提到电源和散热，这次好像也是重点？
+
+ZH_B: 对，这可能是最实际的瓶颈。Hopper机柜功耗大约40到60千瓦，用空气冷却就够了。Blackwell NVL72推到120到140千瓦，必须用直接液冷。而Rubin NVL72预计在180到220千瓦以上，Rubin Ultra甚至可能到300到600千瓦。
+
+ZH_A: 600千瓦一个机柜？那电源架构也得改吧？
+
+ZH_B: 完全正确。54伏下200千瓦意味着4000安培电流，铜排和连接器都快撑不住了。所以英伟达在推800伏直流、电源机柜、110千瓦电源架和BBU。未来的机柜不只是服务器柜，它是一台电热一体机。
+
+ZH_A: 听起来这次Computex会看到很多新东西。但报告有没有留下一些还没完全展开的问题？
+
+ZH_B: 有，而且很重要。比如CPO的采用曲线，报告说2025到2026年是可插拔光学和LPO，2026到2027年才是交换机侧CPO，但具体怎么过渡，报告并没有完全定论。
+
+ZH_A: 所以这个悬念值得去读完整报告？
+
+ZH_B: 对，还有像Vera CPU的出货量预期，报告提到2026年准备约200万颗，但实际需求能消化多少，也需要继续验证。这些细节都在完整报告里。
+
+ZH_A: 好，那今天我们就聊到这里。如果你也想深入了解AI工厂时代的投资机会，可以找我们要完整报告。感谢收听，我们下期再见。
+
+ZH_B: 再见。
+
+EN_A: So you just finished a research report on Computex 2026. I heard this year is different from previous ones.
+
+EN_B: It really is a major shift. The report's core argument is that the AI infrastructure narrative is moving from GPU clusters to AI factories.
+
+EN_A: AI factories? That sounds like more than just a buzzword. What does it actually mean?
+
+EN_B: Exactly. It is not a buzzword. Previously, everyone focused on GPUs, HBM, and CoWoS capacity. This year, the center of gravity is moving much broader. NVIDIA is expected to emphasize not just Rubin GPUs, but also Vera CPUs, Spectrum-X networking, CPO, liquid cooling, and high-voltage power.
+
+EN_A: Wait, NVIDIA is making CPUs? Are they going head to head with Intel and AMD?
+
+EN_B: The report says no. Vera CPU is not a traditional server CPU. It is designed for the orchestration layer of AI factories. In agentic AI, the CPU handles request scheduling, workflow control, and memory indexing. It is more like a traffic controller.
+
+EN_A: So what does that mean for the supply chain? Everyone used to just watch TSMC and CoWoS.
+
+EN_B: The opportunity is broadening. The report points to ABF substrates, sockets, thermal modules, power shelves, busbars, optical assembly, BMC controllers, and rack integration. Taiwan's supply chain will be judged less by single-component exposure and more by the ability to deliver complete AI systems.
+
+EN_A: You mentioned power and cooling. Is that a big theme this year too?
+
+EN_B: It might be the most practical bottleneck. Hopper racks operated around 40 to 60 kilowatts with air cooling. Blackwell NVL72 pushes to 120 to 140 kilowatts, making direct liquid cooling standard. Rubin NVL72 is estimated at 180 to 220 kilowatts or more. Rubin Ultra could reach 300 to 600 kilowatts.
+
+EN_A: 600 kilowatts per rack? That must change the power architecture too.
+
+EN_B: Absolutely. At 54 volts, a 200 kilowatt rack means around 4000 amps of current. Copper and connectors are reaching their limits. That is why NVIDIA is pushing 800 volt DC, power racks, 110 kilowatt power shelves, and BBU support. The future rack is an electrical-thermal machine.
+
+EN_A: Sounds like Computex will have a lot to show. But does the report leave any questions unanswered?
+
+EN_B: Yes, and they are important. For example, the CPO adoption curve. The report says pluggable optics and LPO in 2025 to 2026, switch-side CPO in 2026 to 2027. But exactly how that transition plays out is not fully settled.
+
+EN_A: So that is worth reading the full report for?
+
+EN_B: Definitely. Also, Vera CPU production preparation is estimated at about 2 million units in 2026. But actual demand is still something to verify. Those details are in the full report.
+
+EN_A: Great. That is all we have time for today. If you want to dive deeper into the AI factory era, check out the full report. Thanks for listening, and see you next time.
+
+EN_B: See you.
