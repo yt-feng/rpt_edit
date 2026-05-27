@@ -1,0 +1,16 @@
+Found 50 total PDFs; shard 6/40 has 5 PDFs, skips 0 already converted, will process 5 PDFs with batch_size=5.
+Running batch 1: 5 PDFs
+Found 5 PDFs.
+Uploading PDF to MinerU: /tmp/pdf_batch_001_n5p6ccbt/pdfs/0001-32-J.P. Morgan-China Healthcare First take on ASCO-26 abstracts- Overall solid efficacy safety-260526.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_n5p6ccbt/pdfs/0002-33-J.P. Morgan-China Property Global China Summit Takeaways- Mixed views on recent green shoots-260525.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_n5p6ccbt/pdfs/0003-34-J.P. Morgan-China Healthcare-Two-day Healthcare Tour takeaways- Rising innovation bar- smarter BD- and verifiable AIDD revenue-260526.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_n5p6ccbt/pdfs/0004-35-J.P. Morgan-China Healthcare Global China Summit Takeaways -Day 3-- AI drug discovery validation on the way- BD and global market focus- service sector update-260525.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_n5p6ccbt/pdfs/0005-36-J.P. Morgan-China Utilities - Renewables-Global China Summit panel-ESS and Power Infrastructure-s Role in the AI Race-260525.pdf
+MinerU batch_id=f4db8ab5-41db-495b-8763-a664e65740db
+MinerU states: running, running, running, running, waiting-file
+MinerU states: running, running, done, done, done
+MinerU states: running, running, done, done, done
+MinerU states: running, done, done, done, done
+MinerU states: done, done, done, done, done
+Done. Results written to /home/runner/work/rpt_edit/rpt_edit/xhs_notes/dropbox/260527/shard_6
+All batches completed successfully.
