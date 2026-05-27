@@ -1,0 +1,50 @@
+{
+  "input_dir": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs",
+  "total_pdf_count_before_shard": 50,
+  "pdf_count_before_skip": 5,
+  "pdf_count": 5,
+  "batch_size": 5,
+  "shard_index": 3,
+  "shard_count": 40,
+  "max_reports_per_shard": 5,
+  "max_total_reports": 0,
+  "skip_existing": true,
+  "skipped_existing_count": 0,
+  "skipped_existing": [],
+  "failures": 0,
+  "batches": [
+    {
+      "batch_index": 1,
+      "pdf_count": 5,
+      "files": [
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/16-MS-2026 US Securitized Credit Mid~Year Outlook：More Pictures and Fewer Words-260526.pdf",
+          "batch_file": "/tmp/pdf_batch_001_ifxrb5r6/pdfs/0001-16-MS-2026 US Securitized Credit Mid-Year Outlook-More Pictures and Fewer Words-260526.pdf",
+          "stable_index": "1"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/17-MS-China Property：Weekly Database Tracker #21-260525.pdf",
+          "batch_file": "/tmp/pdf_batch_001_ifxrb5r6/pdfs/0002-17-MS-China Property-Weekly Database Tracker -21-260525.pdf",
+          "stable_index": "2"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/18-MS-Widening K~shaped Growth： Looking Beyond April Air Pocket-260524.pdf",
+          "batch_file": "/tmp/pdf_batch_001_ifxrb5r6/pdfs/0003-18-MS-Widening K-shaped Growth- Looking Beyond April Air Pocket-260524.pdf",
+          "stable_index": "3"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/19-NOM-USD CNY fix model Projection： 6.7876-260527.pdf",
+          "batch_file": "/tmp/pdf_batch_001_ifxrb5r6/pdfs/0004-19-NOM-USD CNY fix model Projection- 6.7876-260527.pdf",
+          "stable_index": "4"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/20-UBS-Global Rates Strategy：Tighter EGB spreads， yes. Time to relax， not yet.-260526.pdf",
+          "batch_file": "/tmp/pdf_batch_001_ifxrb5r6/pdfs/0005-20-UBS-Global Rates Strategy-Tighter EGB spreads- yes. Time to relax- not yet.-260526.pdf",
+          "stable_index": "5"
+        }
+      ],
+      "returncode": 0,
+      "status": "ok"
+    }
+  ]
+}
