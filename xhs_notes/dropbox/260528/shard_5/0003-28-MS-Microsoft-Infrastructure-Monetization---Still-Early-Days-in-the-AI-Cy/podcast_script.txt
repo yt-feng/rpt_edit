@@ -1,0 +1,115 @@
+ZH_A: 今天我们要聊一份很有意思的报告，是关于微软AI基础设施变现的。研究员，这份报告的核心判断是什么？
+
+ZH_B: 简单来说，报告认为市场对微软AI收入的预期可能过于保守。尽管微软在疯狂投入资本开支，但收入端并没有跟上，这意味着未来存在很大的上调空间。
+
+ZH_A: 等一下，资本开支一直在涨，这我们都知道。但你说收入预期反而滞后了，这听起来有点反直觉。你能解释一下吗？
+
+ZH_B: 好问题。报告使用了一个非常直观的指标，叫“每兆瓦收入”。他们估算微软的数据中心装机容量，从2024财年的约5吉瓦，到2028财年会扩大到约20吉瓦。
+
+ZH_A: 所以容量在翻倍增长，那每兆瓦收入应该也在涨才对？
+
+ZH_B: 恰恰相反。报告测算，每兆瓦收入反而会从当前的约2500万美元，下降到2028财年的约1700万美元。
+
+ZH_A: 这听起来像是效率在下降，这不是坏消息吗？
+
+ZH_B: 研究员不这么看。他们认为，这恰恰说明微软是在“超前部署”。他们现在建的很多AI专用数据中心，还没有被充分利用起来。
+
+ZH_A: 所以你的意思是，这些容量是给未来的需求准备的，但现在的收入报表还没反映出来？
+
+ZH_B: 完全正确。这就引出了报告第二个关键洞察。他们做了一个“资本开支隐含的AI收入”模型，结果非常惊人。
+
+ZH_A: 这个模型是怎么算的？
+
+ZH_B: 简单讲，他们算出微软到2029财年，累计会拥有相当于9800万块H100芯片的算力。然后根据不同的毛利率假设，倒推出这些算力能产生多少收入。
+
+ZH_A: 结果是什么？
+
+ZH_B: 只要Azure AI的毛利率能维持在15%到20%以上，他们模型算出来的潜在收入，就远高于目前市场对Azure AI的营收预测。
+
+ZH_A: 这意味着，如果AI需求如期爆发，微软的利润弹性会非常大？
+
+ZH_B: 对。报告认为，微软现有的基础设施，其实有能力支撑比当前预期高得多的长期收入。
+
+ZH_A: 那报告有没有提到什么风险？或者哪些问题还没完全讲清楚？
+
+ZH_B: 有的。最关键的一点是，报告的大部分分析，都基于对微软真实装机容量的估算。但微软并不直接披露这个数据。
+
+ZH_A: 所以这些数字是推算出来的？
+
+ZH_B: 对，是通过公开新闻、管理层评论和一些假设拼出来的。报告自己也承认，实际利用率、部署计划都可能和估算有很大出入。
+
+ZH_A: 那如果实际利用率低于预期呢？比如AI推理需求没有想象中那么快？
+
+ZH_B: 这正是报告留下的最大悬念。如果AI采用速度放缓，或者推理负载没有大规模增长，那这些提前建好的容量，就会变成一段时间的“闲置资产”。
+
+ZH_A: 所以报告看多的逻辑，是建立在一个“需求会持续加速”的假设上。
+
+ZH_B: 没错。但报告也暗示了另一个可能性，就是如果微软自己的软件，比如Copilot、Azure、GitHub这些产品的渗透率超预期提升，收入弹性可能会更大。这部分在完整报告里有更详细的展开。
+
+ZH_A: 好的，那最后一个问题，对于普通投资者来说，这份报告最值得记住的一点是什么？
+
+ZH_B: 一句话概括：微软这一轮AI投资，可能不是“投入即产出”，而是“先建产能，再等需求”。现在的财报数字可能看起来很重，但背后埋着很大的收入弹性。
+
+ZH_A: 这个视角确实能帮助我们理解为什么市场对微软的资本开支如此关注。如果想了解更详细的模型和假设，可以去找完整的报告来看。
+
+ZH_B: 是的，报告中还有关于折旧、不同AI业务收入拆解等更细致的分析。今天就先聊到这里。
+
+ZH_A: 感谢研究员带来的精彩解读，我们下期再见。
+
+EN_A: So today we are diving into a report about Microsoft and its AI infrastructure. What is the main takeaway here?
+
+EN_B: The report argues that the market might be underestimating Microsoft's AI revenue potential. Even though the company is spending heavily on data centers, the revenue side has not caught up yet, which leaves room for upgrades.
+
+EN_A: Wait, we all know CapEx is going up. But you are saying revenue expectations are actually lagging behind. That sounds a bit counterintuitive.
+
+EN_B: It is. The report uses a very simple metric called "revenue per megawatt" of data center capacity. They estimate Microsoft's installed capacity will grow from about 5 gigawatts in fiscal year 2024 to roughly 20 gigawatts by fiscal year 2028.
+
+EN_A: So capacity is quadrupling. Revenue per megawatt should be going up too, right?
+
+EN_B: Actually, the opposite. The report estimates that revenue per megawatt will actually decline from around 25 million dollars today to about 17 million dollars by fiscal year 2028.
+
+EN_A: That sounds like efficiency is dropping. Is that a bad sign?
+
+EN_B: The analyst does not see it that way. They believe this is a sign of "building ahead of demand." Microsoft is deploying a lot of AI-specific capacity that is not yet fully utilized.
+
+EN_A: So you are saying these data centers are built for future demand, but the current revenue numbers do not reflect it yet?
+
+EN_B: Exactly. And that leads to the second key insight. They built a model called "CapEx-implied AI revenue," and the results are quite striking.
+
+EN_A: How does that model work?
+
+EN_B: Simply put, they calculate that Microsoft will have accumulated the equivalent of about 98 million H100 chips in compute power by fiscal year 2029. Then, using different gross margin assumptions, they back out how much revenue those chips could generate.
+
+EN_A: And what did they find?
+
+EN_B: As long as Azure AI gross margins stay above 15 to 20 percent, the potential revenue from their model is much higher than what the market currently expects for Azure AI.
+
+EN_A: So if AI demand takes off as expected, Microsoft's profit leverage could be huge?
+
+EN_B: Yes. The report argues that Microsoft's existing infrastructure can support significantly higher long-term revenue than current estimates suggest.
+
+EN_A: Did the report mention any risks? Or questions that are still not fully answered?
+
+EN_B: Yes. The biggest one is that most of the analysis is based on estimates of Microsoft's actual installed capacity. Microsoft does not disclose that number directly.
+
+EN_A: So these numbers are all estimates?
+
+EN_B: Right. They are pieced together from public news, management comments, and some assumptions. The report itself acknowledges that actual utilization and deployment plans could differ materially.
+
+EN_A: What if actual utilization is lower than expected? For example, if AI inference demand does not ramp up as quickly?
+
+EN_B: That is the biggest unanswered question. If AI adoption slows down or inference workloads do not scale, all that pre-built capacity could become idle for a while.
+
+EN_A: So the bullish case really hinges on the assumption that demand will keep accelerating.
+
+EN_B: Exactly. But the report also hints at another possibility. If Microsoft's own software, like Copilot, Azure, and GitHub, sees faster adoption than expected, the revenue upside could be even bigger. That part is explored in more detail in the full report.
+
+EN_A: Okay, last question. For a regular investor, what is the single most important thing to remember from this report?
+
+EN_B: One sentence: Microsoft's AI investment cycle might not be "spend and earn immediately." It is more like "build capacity first, then wait for demand." The current earnings numbers might look heavy, but there is a lot of embedded revenue elasticity.
+
+EN_A: That perspective really helps explain why the market is so focused on Microsoft's CapEx numbers. If you want to see the detailed models and assumptions, you should check out the full report.
+
+EN_B: Yes, the report also has more detailed analysis on depreciation and revenue breakdowns across different AI businesses. That is all for today.
+
+EN_A: Thank you to our analyst for the great insights. See you next time.
