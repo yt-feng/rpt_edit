@@ -1,0 +1,99 @@
+ZH_A: 最近有一份关于AI制药的研报很有意思，我们请到了一位行业里的关键人物来做分享。你觉得这份报告真正想告诉我们什么？
+
+ZH_B: 其实核心就一句话：AI在制药里的作用，被很多人高估了。它确实能提速，但远没到颠覆整个研发流程的地步。
+
+ZH_A: 所以这不是一个“AI取代科学家”的故事？
+
+ZH_B: 对。Insilico的CEO亲口说，AI最实在的价值，是加速早期药物发现和降低风险，而不是替代核心科学判断。他们自己有13个项目进了临床，三个到了二期，这算是行业内最拿得出手的案例之一了。
+
+ZH_A: 那它真正能解决的问题是什么？我们听众可能更关心，AI到底在哪个环节有用。
+
+ZH_B: 报告里明确指出来了：最立竿见影的地方，是从靶点发现到临床前候选化合物的阶段。Insilico说他们做到这一步只需要12到18个月，花300到500万美元。这比传统方式快很多。但后面的环节，比如IND申报和临床试验，还是受监管和生物学限制，AI帮不上大忙。
+
+ZH_A: 这意味着什么？是不是说AI只能当个“加速器”，而不是“改变游戏规则”的东西？
+
+ZH_B: 没错。它更像一个效率工具，尤其是在hit-to-lead和先导化合物优化阶段。但你不能指望它缩短整个新药研发的周期。
+
+ZH_A: 那数据呢？很多人觉得谁数据多谁就赢，Insilico怎么看？
+
+ZH_B: 这一点很有意思。Insilico自己手里有3000多个疾病-靶点关联数据，但CEO却说，光靠数据堆砌是个“坟场”。很多公司只靠数据差异化，最后都没做出药来。他认为真正的护城河，是整合性的基准测试系统，他们有1200多个内部基准，还有模型编排能力。
+
+ZH_A: 所以“数据为王”这个说法，在AI制药里不成立？
+
+ZH_B: 至少现在看，不是决定性因素。真正的瓶颈在别的地方。
+
+ZH_A: 比如什么？
+
+ZH_B: 比如动物模型的局限性。报告里专门讨论了，类器官和其他非人替代方法，短期内还替代不了动物实验。为什么？因为问题不在安全性验证，而在疗效的可靠性。很多慢性病，像阿尔茨海默症、帕金森、纤维化，动物根本没法自然模拟人类的病程。
+
+ZH_A: 那公司怎么办？不做动物实验了？
+
+ZH_B: 不行。监管机构目前不接受完全无动物的验证包。所以不管是机器人实验室还是类器官，都只能部分改善安全性测试。疗效验证这个坎，暂时跨不过去。
+
+ZH_A: 那商业化呢？AI制药公司怎么赚钱？
+
+ZH_B: CEO讲了一个很务实的权衡：靶点的新颖性和验证程度之间要做取舍。新颖的靶点理论价值高，但需要做到二期临床才能吸引合作伙伴，资金消耗大、周期长。反之，验证过的靶点，配上更好的分子设计，早期就能变现。Insilico现在的策略，就是在靶点和化学新颖性之间找平衡，优化对外授权的机会。
+
+ZH_A: 所以AI制药公司要活下去，得学会“既要又要”？
+
+ZH_B: 对，但得聪明地选。你不能只追新颖，也不能只做老靶子。
+
+ZH_A: 听下来，这份报告其实给AI制药泼了一点冷水？
+
+ZH_B: 不是泼冷水，是去泡沫。它把AI的真实位置画清楚了：一个非常有用的生产力工具，但不是灵丹妙药。报告里还有几个问题没有完全展开，比如AI在临床设计里到底能起多大作用，以及未来监管会不会松动。这些在完整报告里有更深的讨论。
+
+ZH_A: 那听众如果想深入了解，应该怎么做？
+
+ZH_B: 可以去找完整报告来读。我们也会在社群里继续拆解更多细节，比如Insilico的具体管线策略，还有他们对数据护城河的完整论证。欢迎加入我们的讨论。
+
+ZH_A: 好，那我们今天就聊到这里。感谢收听，下次见。
+
+EN_A: So we just sat down with a pretty interesting research report on AI in drug development. What’s the one takeaway you walked away with?
+
+EN_B: Honestly, it’s this: AI’s role in pharma is being oversold. It can speed things up, but it’s nowhere near a full-blown disruption of the R&D process.
+
+EN_A: So it’s not about AI replacing scientists?
+
+EN_B: No. The CEO of Insilico Medicine was pretty clear. The real value of AI is in accelerating and de-risking early-stage discovery. Not replacing core scientific judgment. They’ve moved 13 internal programs into the clinic, three of them are in Phase 2. That’s one of the strongest track records in the space.
+
+EN_A: So where does AI actually shine? Our listeners probably want to know which part of the pipeline it helps most.
+
+EN_B: The report pinpoints one area: from target discovery to preclinical candidate. Insilico says they can get there in 12 to 18 months, spending about three to five million dollars. That’s a lot faster than traditional methods. But everything after that, like IND filing and clinical trials, is still bound by regulatory and biological constraints. AI can’t really speed that up.
+
+EN_A: So it’s more of an accelerator than a game changer?
+
+EN_B: Exactly. It’s a productivity tool, especially in hit-to-lead and lead optimization. But you shouldn’t expect it to shorten the entire drug development timeline.
+
+EN_A: What about data? A lot of people think having more data means you win. What does Insilico think?
+
+EN_B: This is the interesting part. Insilico has over 3,000 disease-target associations. But the CEO said relying on proprietary data alone is a “graveyard.” A lot of data-centric companies failed to deliver actual drugs. He argues the real moat is in integrated benchmarking systems. They have about 1,200 proprietary benchmarks and a strong model orchestration capability.
+
+EN_A: So “data is king” doesn’t hold in AI drug development?
+
+EN_B: Not really. At least not as the deciding factor. The real bottleneck is somewhere else.
+
+EN_A: Like what?
+
+EN_B: The limitations of animal models. The report goes into this. Organoids and other non-human alternatives won’t replace animal studies anytime soon. Why? Because the problem isn’t safety testing—that can be partially improved. The real issue is efficacy. Many chronic diseases, like Alzheimer’s, Parkinson’s, and fibrosis, can’t be naturally replicated in short-lived animals.
+
+EN_A: So companies just have to keep using animal tests?
+
+EN_B: Yes. Regulators won’t accept a fully animal-free validation package yet. Robotic labs and organoids can help with safety, but efficacy validation is still a hard wall.
+
+EN_A: And what about making money? How do AI drug developers actually commercialize?
+
+EN_B: The CEO laid out a very practical trade-off: novelty versus validation. Novel targets have higher theoretical value, but you often need Phase 2 data to attract partners. That means more capital and longer timelines. On the other hand, working with validated targets and better molecular design lets you monetize earlier. Insilico’s strategy now is to balance novelty across both target and chemistry to optimize out-licensing.
+
+EN_A: So they have to play both sides?
+
+EN_B: Yes, but smartly. You can’t just chase novelty or just stick to old targets.
+
+EN_A: It sounds like this report is cooling down some of the hype around AI in pharma.
+
+EN_B: I’d say it’s more about removing the hype. It clearly defines AI’s role: a very useful productivity tool, not a miracle cure. The report also leaves a few questions open, like how AI could impact clinical trial design, or whether regulation will eventually loosen up. The full report goes deeper into those.
+
+EN_A: So if our listeners want to dig in, what should they do?
+
+EN_B: Find the full report. And we’ll keep breaking it down in our community, including Insilico’s pipeline strategy and their full argument on data as a moat. Feel free to join the discussion.
+
+EN_A: Great. That’s all for today. Thanks for listening, and see you next time.
