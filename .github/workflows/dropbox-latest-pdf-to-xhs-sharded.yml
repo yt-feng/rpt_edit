@@ -249,6 +249,7 @@ jobs:
             --mineru-model "${{ needs.resolve-inputs.outputs.mineru_model }}" \
             --language "${{ needs.resolve-inputs.outputs.language }}" \
             --ocr "${{ needs.resolve-inputs.outputs.ocr }}" \
+            --poll-timeout 3600 \
             --wechat-length "${{ needs.resolve-inputs.outputs.wechat_length }}" \
             --community-cta "${{ needs.resolve-inputs.outputs.community_cta }}" 2>&1 | tee "$OUTPUT_DIR/generate_progress.log"
       - name: Post-process shard articles and podcast scripts
@@ -329,6 +330,7 @@ jobs:
       - name: Build split publish-ready ZIPs
         id: package
         run: |
+          set -o pipefail
           DATE_DIR="xhs_notes/dropbox/${{ needs.select-macro-reports.outputs.latest_folder }}"
           echo "::notice::Packaging publish-ready outputs from $DATE_DIR, excluding MinerU raw/source files."
           echo "::notice::Using split ZIPs with --max-zip-mb 90 so every committed ZIP stays below GitHub's 100 MB file limit."

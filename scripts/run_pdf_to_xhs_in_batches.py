@@ -24,6 +24,7 @@ from pathlib import Path
 from typing import Any
 
 PDFRecord = tuple[int, Path]
+REPORT_MARKERS = {"note.md", "wechat_article.md"}
 
 
 def log(message: str) -> None:
@@ -84,6 +85,15 @@ def expected_item_dir(output_dir: Path, pdf: Path, index: int) -> Path:
 def is_already_converted(item_dir: Path) -> bool:
     required = ["source_mineru.md", "note.md", "wechat_article.md"]
     return item_dir.is_dir() and all((item_dir / name).exists() for name in required)
+
+
+def count_generated_report_dirs(output_dir: Path) -> int:
+    if not output_dir.exists():
+        return 0
+    return sum(
+        1 for path in output_dir.iterdir()
+        if path.is_dir() and all((path / marker).exists() for marker in REPORT_MARKERS)
+    )
 
 
 def split_existing(records: list[PDFRecord], output_dir: Path, skip_existing: bool) -> tuple[list[PDFRecord], list[dict[str, str]]]:
@@ -160,6 +170,7 @@ def write_empty_summary(output_dir: Path, input_dir: Path, args: argparse.Namesp
         "input_dir": str(input_dir),
         "total_pdf_count_before_shard": total_pdf_count,
         "pdf_count": 0,
+        "generated_report_count": 0,
         "batch_size": int(args.batch_size),
         "shard_index": int(args.shard_index),
         "shard_count": int(args.shard_count),
@@ -196,7 +207,7 @@ def main() -> int:
     parser.add_argument("--wechat-length", type=int, default=3000)
     parser.add_argument("--community-cta", default="加入社群，领取完整研报解读与原始图表。")
     parser.add_argument("--max-images", type=int, default=8)
-    parser.add_argument("--poll-timeout", type=int, default=1800)
+    parser.add_argument("--poll-timeout", type=int, default=3600)
     parser.add_argument("--poll-interval", type=int, default=15)
     parser.add_argument("--watermark", default="KC桌面")
     args = parser.parse_args()
@@ -253,11 +264,14 @@ def main() -> int:
             if not continue_on_error:
                 break
 
+    generated_report_count = count_generated_report_dirs(output_dir)
+
     write_summary(output_dir, {
         "input_dir": str(input_dir),
         "total_pdf_count_before_shard": len(all_pdfs),
         "pdf_count_before_skip": len(sharded_pdfs),
         "pdf_count": len(records),
+        "generated_report_count": generated_report_count,
         "batch_size": batch_size,
         "shard_index": int(args.shard_index),
         "shard_count": int(args.shard_count),
@@ -271,8 +285,11 @@ def main() -> int:
     })
     if failures:
         log(f"Completed with {failures} failed batch(es). See {output_dir / 'batch_run_summary.json'}")
+        if generated_report_count == 0:
+            log("No publish-ready report directories were generated; treating this shard as failed.")
+            return 2
         return 0 if continue_on_error else 2
-    log("All batches completed successfully.")
+    log(f"All batches completed successfully. Generated {generated_report_count} report directories.")
     return 0
 
 

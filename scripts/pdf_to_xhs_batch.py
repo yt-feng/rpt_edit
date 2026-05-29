@@ -93,7 +93,7 @@ def submit_to_mineru(pdfs: list[Path], input_dir: Path, token: str, args: argpar
     return str(batch_id), data_id_to_pdf
 
 
-def poll_mineru(batch_id: str, token: str, timeout_seconds: int, interval_seconds: int) -> list[dict[str, Any]]:
+def poll_mineru(batch_id: str, token: str, timeout_seconds: int, interval_seconds: int) -> tuple[list[dict[str, Any]], bool]:
     deadline = time.time() + timeout_seconds
     url = f"{MINERU_BASE_URL}/api/v4/extract-results/batch/{batch_id}"
     last_response: dict[str, Any] | None = None
@@ -106,8 +106,17 @@ def poll_mineru(batch_id: str, token: str, timeout_seconds: int, interval_second
         if states:
             log("MinerU states: " + ", ".join(states))
         if rows and all(state in DONE_STATES or state in FAILED_STATES for state in states):
-            return rows
+            return rows, False
         time.sleep(interval_seconds)
+
+    rows = (last_response or {}).get("data", {}).get("extract_result") or []
+    done_count = sum(1 for row in rows if str(row.get("state", "")).lower() in DONE_STATES and row.get("full_zip_url"))
+    if done_count:
+        log(
+            f"MinerU batch {batch_id} timed out after {timeout_seconds}s; "
+            f"continuing with {done_count}/{len(rows)} completed PDF(s)."
+        )
+        return rows, True
     raise RuntimeError(f"Timed out waiting for MinerU batch {batch_id}. Last response: {json.dumps(last_response, ensure_ascii=False)[:1000]}")
 
 
@@ -516,10 +525,6 @@ def make_cover(pdf_path: Path, cover_path: Path, title: str, subtitle: str, wate
 
 
 def process_pdf(pdf_path: Path, result_row: dict[str, Any], output_root: Path, args: argparse.Namespace) -> dict[str, Any]:
-    item_dir = output_root / slug(pdf_path.name)
-    raw_dir = item_dir / "mineru_raw"
-    assets_dir = item_dir / "assets"
-    item_dir.mkdir(parents=True, exist_ok=True)
     state = str(result_row.get("state", "")).lower()
     fallback_title = slug(pdf_path.name)[:18]
     status: dict[str, Any] = {
@@ -529,8 +534,13 @@ def process_pdf(pdf_path: Path, result_row: dict[str, Any], output_root: Path, a
     }
     if state not in DONE_STATES or not result_row.get("full_zip_url"):
         status["error"] = "MinerU did not return a successful full_zip_url for this PDF."
-        (item_dir / "status.json").write_text(json.dumps(status, ensure_ascii=False, indent=2), encoding="utf-8")
+        log(f"Skipping incomplete MinerU result for {pdf_path.name}: state={result_row.get('state')}")
         return status
+
+    item_dir = output_root / slug(pdf_path.name)
+    raw_dir = item_dir / "mineru_raw"
+    assets_dir = item_dir / "assets"
+    item_dir.mkdir(parents=True, exist_ok=True)
     download_and_unzip(result_row["full_zip_url"], raw_dir)
     markdown_path = find_markdown(raw_dir)
     if not markdown_path:
@@ -585,7 +595,7 @@ def build_arg_parser() -> argparse.ArgumentParser:
     parser.add_argument("--max-images", type=int, default=8)
     parser.add_argument("--prompt-chars", type=int, default=24000)
     parser.add_argument("--wechat-prompt-chars", type=int, default=26000)
-    parser.add_argument("--poll-timeout", type=int, default=1800)
+    parser.add_argument("--poll-timeout", type=int, default=3600)
     parser.add_argument("--poll-interval", type=int, default=15)
     parser.add_argument("--watermark", default=XHS_WATERMARK)
     return parser
@@ -606,8 +616,9 @@ def main() -> int:
         log(f"Found {len(pdfs)} PDFs.")
         batch_id, data_id_to_pdf = submit_to_mineru(pdfs, input_dir, token, args)
         log(f"MinerU batch_id={batch_id}")
-        rows = poll_mineru(batch_id, token, args.poll_timeout, args.poll_interval)
+        rows, mineru_timed_out = poll_mineru(batch_id, token, args.poll_timeout, args.poll_interval)
         summary = []
+        successful_reports = 0
         for row in rows:
             pdf_path = data_id_to_pdf.get(row.get("data_id"))
             if not pdf_path:
@@ -616,10 +627,16 @@ def main() -> int:
             if not pdf_path:
                 summary.append({"mineru_row": row, "error": "Could not map MinerU result row back to a repo PDF."})
                 continue
-            summary.append(process_pdf(pdf_path, row, output_dir, args))
+            status = process_pdf(pdf_path, row, output_dir, args)
+            summary.append(status)
+            if not status.get("error") and status.get("wechat_article") == "wechat_article.md":
+                successful_reports += 1
         (output_dir / "summary.json").write_text(json.dumps(summary, ensure_ascii=False, indent=2), encoding="utf-8")
-        log(f"Done. Results written to {output_dir}")
-        return 0
+        log(
+            f"Done. Results written to {output_dir}; "
+            f"successful_reports={successful_reports}; mineru_timed_out={mineru_timed_out}"
+        )
+        return 0 if successful_reports else 2
     except Exception as exc:
         print(f"ERROR: {exc}", file=sys.stderr)
         return 2
