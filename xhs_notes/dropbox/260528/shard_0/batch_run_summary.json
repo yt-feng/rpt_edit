@@ -3,6 +3,7 @@
   "total_pdf_count_before_shard": 34,
   "pdf_count_before_skip": 5,
   "pdf_count": 5,
+  "generated_report_count": 5,
   "batch_size": 5,
   "shard_index": 0,
   "shard_count": 40,
@@ -11,7 +12,7 @@
   "skip_existing": true,
   "skipped_existing_count": 0,
   "skipped_existing": [],
-  "failures": 1,
+  "failures": 0,
   "batches": [
     {
       "batch_index": 1,
@@ -19,32 +20,32 @@
       "files": [
         {
           "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/01-Bernstein-Asia~Pacific Oil & Gas Bernstein Energy： Global Oil Marginal Cost Survey. What is the long term price for oil？-260528.pdf",
-          "batch_file": "/tmp/pdf_batch_001_ryzspkbc/pdfs/0001-01-Bernstein-Asia-Pacific Oil - Gas Bernstein Energy- Global Oil Marginal Cost Survey. What is the long term price for oil--260528.pdf",
+          "batch_file": "/tmp/pdf_batch_001_zj8t3qsb/pdfs/0001-01-Bernstein-Asia-Pacific Oil - Gas Bernstein Energy- Global Oil Marginal Cost Survey. What is the long term price for oil--260528.pdf",
           "stable_index": "1"
         },
         {
           "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/02-Bernstein-Global Semiconductors Auto Semis Cycle Tracker 1Q26-Price hikes underway as demand recovers-260528.pdf",
-          "batch_file": "/tmp/pdf_batch_001_ryzspkbc/pdfs/0002-02-Bernstein-Global Semiconductors Auto Semis Cycle Tracker 1Q26-Price hikes underway as demand recovers-260528.pdf",
+          "batch_file": "/tmp/pdf_batch_001_zj8t3qsb/pdfs/0002-02-Bernstein-Global Semiconductors Auto Semis Cycle Tracker 1Q26-Price hikes underway as demand recovers-260528.pdf",
           "stable_index": "2"
         },
         {
           "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/03-BofA-Japan Insight： BofA Strategy Monthly：Reassessing Japan equities in the age of AI， hardware and physical assets-260526.pdf",
-          "batch_file": "/tmp/pdf_batch_001_ryzspkbc/pdfs/0003-03-BofA-Japan Insight- BofA Strategy Monthly-Reassessing Japan equities in the age of AI- hardware and physical assets-260526.pdf",
+          "batch_file": "/tmp/pdf_batch_001_zj8t3qsb/pdfs/0003-03-BofA-Japan Insight- BofA Strategy Monthly-Reassessing Japan equities in the age of AI- hardware and physical assets-260526.pdf",
           "stable_index": "3"
         },
         {
           "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/04-DB-Asia Chart Alert：PBoC is pulling out liquidity at a record pace-260526.pdf",
-          "batch_file": "/tmp/pdf_batch_001_ryzspkbc/pdfs/0004-04-DB-Asia Chart Alert-PBoC is pulling out liquidity at a record pace-260526.pdf",
+          "batch_file": "/tmp/pdf_batch_001_zj8t3qsb/pdfs/0004-04-DB-Asia Chart Alert-PBoC is pulling out liquidity at a record pace-260526.pdf",
           "stable_index": "4"
         },
         {
           "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/05-DB-Asia Chart Alert：PBoC is pulling out liquidity at a record pace-260526 2.pdf",
-          "batch_file": "/tmp/pdf_batch_001_ryzspkbc/pdfs/0005-05-DB-Asia Chart Alert-PBoC is pulling out liquidity at a record pace-260526 2.pdf",
+          "batch_file": "/tmp/pdf_batch_001_zj8t3qsb/pdfs/0005-05-DB-Asia Chart Alert-PBoC is pulling out liquidity at a record pace-260526 2.pdf",
           "stable_index": "5"
         }
       ],
-      "returncode": 2,
-      "status": "failed"
+      "returncode": 0,
+      "status": "ok"
     }
   ]
 }
