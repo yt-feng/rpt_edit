@@ -1,0 +1,3568 @@
+[
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Global AI Trend Tracker "
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                68,
+                107,
+                500,
+                133
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Global Markets Research "
+                    }
+                ]
+            },
+            "bbox": [
+                741,
+                99,
+                952,
+                113
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "27 May 2026 "
+                    }
+                ]
+            },
+            "bbox": [
+                843,
+                119,
+                954,
+                135
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "EQUITY: TECHNOLOGY "
+                    }
+                ]
+            },
+            "bbox": [
+                67,
+                148,
+                206,
+                159
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Google's next-gen AI network for TPUv8t / v8i... "
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                67,
+                175,
+                640,
+                196
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "...And implications for the AI networking value chain "
+                    }
+                ]
+            },
+            "bbox": [
+                68,
+                211,
+                611,
+                231
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "TPU v8t & v8i's networking architecture may lead to stronger demand for OCS and benefit Google's TPU supply chain "
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                65,
+                250,
+                665,
+                274
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Google (GOOG US, Not rated) released its eighth-generation tensor processing unit (TPU) at its Cloud Next 2026 in April, and the company for the first time distinguished its TPU products into training (TPU 8t) and inference (TPU vi). TPU 8t improves large-scale pre-training performance with SparseCore cores and Virgo network topology, while TPU 8i is designed for real-time reasoning and complex decision-making, with CAE (Collectives Acceleration Engine) and new Boardfly topology solving the latency bottleneck of long context reasoning to a certain extent. We think the purpose-built networks for TPUv8t and v8i reflect the AI market trend of decoupling network architecture for training and inference, in order to better unlock their performance in different scenarios, while reducing cost and power consumption at the same time. We think Boardfly network brings incremental demand for optical circuit switches (OCS0 at both the scale-up and the scale-out level). Meanwhile, as a technology leader in optical networks, we expect Google's stronger TPU shipments of would accelerate its adoption of all the mainstream optical communication solutions, including 1.6T pluggable transceivers, NPO (near-field packaged optics) and CPO (co-packaged optics). We think this is positive for Google's TPU supply chain, including substrate and PCB suppliers such as VGT (300476 CH/2476 HK, Buy), as well as optical communication solution providers. "
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                276,
+                675,
+                537
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Google introduced Virgo Network and Boardfly topology for TPU 8t and 8i, respectively, aiming at lower latency and higher bandwidth "
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                65,
+                544,
+                606,
+                567
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Regarding networking solutions, TPU 8t still uses 3D Torus topology (similar to TPU v7) to connect chips at the scale-up level to form a pod with up to 9,600 cards, and we think that there are still 48 OCS in each pod, but the number of ports may increase to  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "300^{*}300"
+                    },
+                    {
+                        "type": "text",
+                        "content": " (from 288*288). Google introduced Virgo Network, a flat two-layer non-blocking topology, for TPU V8t scale-out network. According to the company, this new network architecture enables up to 4x increased data center network (DCN) bandwidth and uses high-radix switches that reduce network layers by allowing more ports per switch. Moreover, Google has designed a new network topology, called Boardfly, for the TPU 8i cluster that can connect up to 1,152 of chips. The network connects 8 boards via copper cabling and further scales to 36 groups (up to 1,024 active chips) linked through OCS. "
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                569,
+                675,
+                715
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Growth of CPU demand accelerates in agentic era "
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                67,
+                721,
+                431,
+                734
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "In addition, both eighth-generation TPU chips will be working with Google's self-developed ARM-based Axion CPU as the main controller. We think CPUs may become the key to running large AI clusters in the future, due to the exponential growth of inference workloads. According to comments from Intel's CEO during the company's 1Q26 earnings call, the CPU-to-GPU attach rate used to be 1:8, which has increased to 1:4 now, and may increase to 1:1 in the future. We think this reflects growing demand for CPUs in AI clusters for the agentic era. "
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                734,
+                665,
+                837
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Research Analysts "
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                694,
+                174,
+                842,
+                188
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "China Technology "
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                694,
+                194,
+                828,
+                208
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Bing Duan - NIHK "
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                694,
+                210,
+                821,
+                222
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "bing.duan1@NOM.com "
+                    }
+                ]
+            },
+            "bbox": [
+                694,
+                223,
+                843,
+                234
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "+852 2252 2141 "
+                    }
+                ]
+            },
+            "bbox": [
+                694,
+                236,
+                788,
+                246
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Joel Ying, CFA - NIHK "
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                692,
+                253,
+                850,
+                266
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "joel.ying@NOM.com "
+                    }
+                ]
+            },
+            "bbox": [
+                692,
+                267,
+                826,
+                279
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "+852 2252 2153 "
+                    }
+                ]
+            },
+            "bbox": [
+                694,
+                280,
+                789,
+                291
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "NOM "
+                    }
+                ]
+            },
+            "bbox": [
+                68,
+                4,
+                297,
+                41
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "Production Complete: 2026-05-27 10:59 UTC "
+                    }
+                ]
+            },
+            "bbox": [
+                747,
+                935,
+                954,
+                947
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "See Appendix A-1 for analyst certification, important disclosures and the status of non-US analysts. "
+                    }
+                ]
+            },
+            "bbox": [
+                67,
+                973,
+                808,
+                987
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Introduction to TPU V8i & V8t "
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                70,
+                33,
+                448,
+                54
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "On 22 April 2026, Google released its eighth-generation TPU at the Cloud Next 2026 conference, which is divided into the TPU 8t training chip and the TPU 8i inference chip. From the perspective of Google's chip development path, the current divergence between training and inference architecture requirements is widening, with training clusters focusing on optimizing computing power and inference clusters focusing on optimizing HBM bandwidth and memory capacity. The current mainstream large language models (LLM) are all MoE architectures, which require long context reasoning and the chain of thought scheme, and the importance of communication efficiency, memory access speed, and low-latency synchronization between chips far exceeds that of single-chip computing power. Therefore, Google designed the training chip and the inference chip separately and optimized their internal architectures to achieve high computing performance and low latency for the training chip, and high memory and low power consumption for the inference chip. "
+                    }
+                ]
+            },
+            "bbox": [
+                70,
+                61,
+                670,
+                247
+            ]
+        },
+        {
+            "type": "table",
+            "content": {
+                "image_source": {
+                    "path": "images/120d62f86a1733e0929219f4f610fbad50dca9c0e2ad7ac11831d27cd00f3929.jpg"
+                },
+                "table_caption": [
+                    {
+                        "type": "text",
+                        "content": "Fig. 1: Development path of Google TPU "
+                    }
+                ],
+                "table_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: Google, NOM "
+                    }
+                ],
+                "html": "<table><tr><td></td><td>TPU</td><td>TPU chips per superpod</td><td>Topology</td><td>ICI bandwidth per TPU chip</td><td>ICI optical transceiver</td><td>Optical lane rate</td><td>OCS</td></tr><tr><td>2018</td><td>v2</td><td>256</td><td>2D Torus</td><td>800GB/s</td><td>None</td><td>NA</td><td>None</td></tr><tr><td>2020</td><td>v3</td><td>1024</td><td>2D Torus</td><td>800GB/s</td><td>400G AOC</td><td>50G</td><td>None</td></tr><tr><td>2022</td><td>v4</td><td>4096</td><td>3D Torus</td><td>600GB/s</td><td>400G OSFP</td><td>50G</td><td>OCS</td></tr><tr><td>2023</td><td>v5p</td><td>8960</td><td>3D Torus</td><td>1200GB/s</td><td>800G OSFP</td><td>100G</td><td>OCS</td></tr><tr><td>2025</td><td>v7</td><td>9216</td><td>3D Torus</td><td>1200GB/s</td><td>800G OSFP</td><td>200G</td><td>OCS</td></tr><tr><td>2026</td><td>V8t</td><td>9600</td><td>3D Torus</td><td>2400GB/s</td><td>NA</td><td>400G</td><td>OCS</td></tr><tr><td>2026</td><td>V8i</td><td>1152</td><td>Boardfly</td><td>2400GB/s</td><td>NA</td><td>400G</td><td>OCS</td></tr></table>",
+                "table_type": "simple_table",
+                "table_nest_level": 1
+            },
+            "bbox": [
+                78,
+                296,
+                927,
+                518
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "TPU 8t improves large-scale pre-training performance with SparseCore and Virgo network topology. TPU 8i is designed for real-time reasoning and complex decision-making, and its CAE acceleration engine and new Boardfly topology solve the latency bottleneck of long context reasoning to a certain extent, allowing AI to evolve from single-next-word prediction to scene simulation and deep logical reasoning, and AI responses will become more timely and coherent. Supported by the computing power of Google's self-developed ARM Axion architecture CPUs, Boardfly topology has achieved a double leap in energy efficiency. "
+                    }
+                ]
+            },
+            "bbox": [
+                70,
+                563,
+                668,
+                679
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The SparseCore is a specialized accelerator designed to handle the irregular memory access patterns of embedding lookups. The MoE LLM only activates a small number of parameters each time, and although the hybrid expert technology is highly energy efficient, it produces a large number of irregular memory accesses. SparseCore technology is specifically designed to handle this task, working with the Matrix Multiply Unit (MXU) to keep the chip running at high load. Moreover, TPU 8t minimizes exposed vector operation time by implementing more balanced Vector Processing Unit (VPU) scaling. In terms of computing, TPU 8t introduces native 4-bit floating point (FP4) to overcome memory bandwidth bottlenecks, doubling MXU throughput while maintaining accuracy for LLMs even at lower-precision quantization. In terms of memory, TPU 8t adopts de-intermediated TPU Direct technology, and HBM memory can directly talk to the Network Interface Card (NIC), bypassing the CPU and DRAM, resulting in 10x faster memory access speed than the previous generation TPU. Overall, TPU 8t solves several key bottlenecks in training tasks: efficiently processing sparse data, reducing data handling overhead between memory and compute units, and optimizing network communication between large-scale chip clusters. Google claims that compared with the previous generation, the \"performance per dollar\" of the 8T in training scenarios can be improved by up to 2.7x. "
+                    }
+                ]
+            },
+            "bbox": [
+                70,
+                685,
+                670,
+                945
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "NOM | Global AI Trend Tracker "
+                    }
+                ]
+            },
+            "bbox": [
+                55,
+                0,
+                235,
+                7
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "27 May 2026 "
+                    }
+                ]
+            },
+            "bbox": [
+                845,
+                0,
+                917,
+                7
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "2 "
+                    }
+                ]
+            },
+            "bbox": [
+                914,
+                954,
+                924,
+                964
+            ]
+        }
+    ],
+    [
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/22524d3bfe91baad58cbdf154b3f08709f9931bca0326dc5903ad01a8a8748db.jpg"
+                },
+                "content": "```mermaid\ngraph TD\n    A[\"Host\"] --> B[\"gBMC\"]\n    B --> C[\"PCIe Gen5 x16\"]\n    B --> D[\"PCIe Gen2 x1\"]\n    C --> E[\"Sparse core\"]\n    D --> F[\"Sparse core\"]\n    G[\"Chip manger\"] --> H[\"HBM3E Ctrl\"]\n    G --> I[\"HBM3E Stack\"]\n    J[\"TensorCore\"] --> K[\"VPU + Vmem\"]\n    K --> L[\"XLU\"]\n    K --> M[\"XLU\"]\n    K --> N[\"MXU\"]\n    K --> O[\"TCS\"]\n    O --> P[\"XLU\"]\n    O --> Q[\"MXU\"]\n    R[\"8-hi\"] --> S[\"HBM3E stack\"]\n    R --> T[\"HBM3E Stack\"]\n    U[\"Memory and DMA interconnect\"] --> V[\"HBM3E Ctrl\"]\n    U --> W[\"HBM3E Stack\"]\n    X[\"ICI\"] --> Y[\"ICR Router\"]\n    X --> Z[\"3x Link Stack + MAX2 PHY\"]\n    X --> AA[\"3x Link Stack + MAX2 PHY\"]\n    AB[\"6x224G SerDes octals\"] --> AC[\"Zebra package\"]\n    AD[\"Compute\"] --> AE[\"Interconnect\"]\n    AF[\"Memory and DNA\"] --> AG[\"Interconnect\"]\n    AH[\"Storage\"] --> AI[\"Storage\"]\n    AJ[\"Logic chiplet\"] --> AK[\"Logic chiplet\"]\n    AL[\"SerDes chiplet\"] --> AM[\"SerDes chiplet\"]\n```",
+                "image_caption": [
+                    {
+                        "type": "text",
+                        "content": "Fig. 2: TPU 8t ASIC block diagram "
+                    }
+                ],
+                "image_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: Google, NOM "
+                    }
+                ]
+            },
+            "sub_type": "flowchart",
+            "bbox": [
+                84,
+                70,
+                915,
+                494
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "TPU 8i is a new chip designed for inference tasks, with the most notable feature being the tilt of resource allocation towards memory. Although its peak hash rate is lower than that of 8t, it is equipped with a 384MB on-chip SRAM cache (3x that of 8t), higher HBM memory capacity (288GB), and greater bandwidth. Google claimed that TPU 8i can host a larger KV Cache entirely on silicon, significantly reducing the idle time of the cores during long-context decoding. In addition, when an LLM performs inference, chips need to frequently synchronize data and summarize results, a process called collective communication. Chains-of-thought require multiple computing cores to frequently synchronize intermediate results, and traditional synchronization operations have extremely high latency. Therefore, TPU 8i uses the CAE, which aggregates results across cores with near-zero latency, specifically accelerating the reduction and synchronization steps required during auto-regressive decoding and chain-of-thought processing. For each TPU 8i chip, there are two Tensor Cores (TC) on-core dies and one CAE on the chiplet die, replacing four SparseCores (SCs) on core dies in the previous-generation Ironwood TPU. CAE further reduces the on-chip latency of collectives by 5x. Lower latency per collective operation means less time spent waiting, directly contributing to higher throughput required to run millions of agents concurrently. "
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                547,
+                675,
+                794
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "NOM | Global AI Trend Tracker "
+                    }
+                ]
+            },
+            "bbox": [
+                55,
+                0,
+                235,
+                7
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "27 May 2026 "
+                    }
+                ]
+            },
+            "bbox": [
+                845,
+                0,
+                917,
+                7
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "3 "
+                    }
+                ]
+            },
+            "bbox": [
+                914,
+                954,
+                924,
+                964
+            ]
+        }
+    ],
+    [
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/75e8ab3a037fae501ca14c3eacabd9a761a756d2a6a1670686a1594792f677ed.jpg"
+                },
+                "content": "```mermaid\ngraph TD\n    A[\"Host\"] --> B[\"gBMC\"]\n    B --> C[\"PCIe Gen5 x16\"]\n    B --> D[\"PCIe Gen2 x1\"]\n    C --> E[\"Chip manger\"]\n    D --> E\n    E --> F[\"TensorCore\"]\n    F --> G[\"XLU\"]\n    F --> H[\"VPU + Vmem\"]\n    F --> I[\"MXU\"]\n    G --> J[\"TCS\"]\n    H --> K[\"XLU\"]\n    H --> L[\"MXU\"]\n    J --> M[\"TensorCore\"]\n    K --> N[\"TCS\"]\n    L --> O[\"XLU\"]\n    M --> P[\"Memory and DMA interconnect\"]\n    N --> Q[\"Memory and DMA interconnect\"]\n    O --> P\n    P --> R[\"HBM3 Ctrl\"]\n    P --> S[\"HBM3 Ctrl\"]\n    P --> T[\"HBM3 Ctrl\"]\n    P --> U[\"HBM3 Ctrl\"]\n    P --> V[\"HBM3 Ctrl\"]\n    R --> W[\"HBM3E stack\"]\n    S --> X[\"HBM3E stack\"]\n    T --> Y[\"HBM3E stack\"]\n    U --> Z[\"HBM3E stack\"]\n    V --> AA[\"HBM3E stack\"]\n    W --> AB[\"8-hi\"]\n    X --> AB\n    Y --> AB\n    Z --> AB\n    AB --> AC[\"HBM3E stack\"]\n    AB --> AD[\"HBM3E stack\"]\n    AB --> AE[\"HBM3E stack\"]\n    AB --> AF[\"HBM3E stack\"]\n    AC --> AG[\"HBM3E stack\"]\n    AD --> AH[\"HBM3E stack\"]\n    AE --> AI[\"HBM3E stack\"]\n    AF --> AJ[\"HBM3E stack\"]\n    AG --> AK[\"ICI Router\"]\n    AG --> AL[\"6x Link Stack\"]\n    AK --> AM[\"SC-CAE\"]\n    AL --> AM\n    AM --> AN[\"6x200G SerDes octals + PCS\"]\n    AN --> AO[\"TN1 TC\"]\n    AN --> AP[\"TN2 TC\"]\n    AO --> AQ[\"Chiplet\"]\n    AP --> AQ\n```",
+                "image_caption": [
+                    {
+                        "type": "text",
+                        "content": "Fig. 3: TPU 8i ASIC block diagram "
+                    }
+                ],
+                "image_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: Google, NOM "
+                    }
+                ]
+            },
+            "sub_type": "flowchart",
+            "bbox": [
+                87,
+                71,
+                927,
+                470
+            ]
+        },
+        {
+            "type": "table",
+            "content": {
+                "image_source": {
+                    "path": "images/e8fe9bc8c4941c314fd90c6a073bb26ce7f9476be6eb35fe351d2b84d877affe.jpg"
+                },
+                "table_caption": [
+                    {
+                        "type": "text",
+                        "content": "Fig. 4: Comparison of TPU v7, TPU v8t and TPU v8i "
+                    }
+                ],
+                "table_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: Google, NOM "
+                    }
+                ],
+                "html": "<table><tr><td></td><td>TPU v7</td><td>TPU 8t</td><td>TPU 8i</td></tr><tr><td>Primary workload</td><td>High-performance ASIC for training and inference</td><td>Focus on large-scale training</td><td>Focus on large-scale inference</td></tr><tr><td>Design of die</td><td>Dual die</td><td>Single die</td><td>Dual die</td></tr><tr><td>HBM capacity</td><td>192GB HBM3E</td><td>216GB HBM</td><td>288GB HBM</td></tr><tr><td>HBM bandwidth</td><td>7.3TB/s</td><td>6.5TB/s</td><td>8.6TB/s</td></tr><tr><td>on-chip SRAM</td><td>-</td><td>128MB</td><td>384MB</td></tr><tr><td>Core feature</td><td>SparseCore, shared memory</td><td>SparseCore and LLM decoder engine, native FP4, Vrigo network</td><td>CAE, large SRAM, Boardfly network</td></tr><tr><td>Pod size</td><td>9216</td><td>9600</td><td>1152</td></tr><tr><td>Network topology</td><td>3D Torus</td><td>3D Torus</td><td>Boardfly</td></tr><tr><td>Peak FP4 PFLOPs</td><td>4.6</td><td>12.6</td><td>10.1</td></tr></table>",
+                "table_type": "simple_table",
+                "table_nest_level": 1
+            },
+            "bbox": [
+                78,
+                559,
+                927,
+                733
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "With the explosive growth of inference workloads, CPUs are the key to determining the efficiency and cost of AI systems. Data orchestration and memory management of inference tasks are highly dependent on the CPU, and the \"logical scheduling\" and \"serial processing\" used by AI Agents to perform complex tasks such as reading databases, running code, and parsing documents are the expertise of CPUs. According to comments from the Intel CEO during the company's 1Q26 earnings call, the CPU-to-GPU attach rate used to be 1:8, which has increased to 1:4 now, and may increase to 1:1 in the future. We think this reflects growing demand for CPU in AI clusters for agentic era. "
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                777,
+                673,
+                893
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Axion is Google's first custom ARM architecture-based CPU designed specifically for data centers, announced in 2024. For AI inference, Axion's dedicated optimizations can significantly boost performance, enabling AI workloads to run faster and more efficiently, according to management. The Axion product portfolio now includes three options: N4A, C4A, and C4A metal. Compared to virtual machines using mainstream x86 architecture CPUs, N4A offers twice the cost-performance ratio and leads in energy efficiency by up to 80% per watt, according to Google. In the TPU v8 series, Google is the first to use the Axion CPU as the main computing header, effectively reducing data preprocessing latency and ensuring the TPU computing engine runs at full capacity. "
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                899,
+                673,
+                943
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "NOM | Global AI Trend Tracker "
+                    }
+                ]
+            },
+            "bbox": [
+                55,
+                0,
+                235,
+                7
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "27 May 2026 "
+                    }
+                ]
+            },
+            "bbox": [
+                845,
+                0,
+                917,
+                7
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "4 "
+                    }
+                ]
+            },
+            "bbox": [
+                914,
+                954,
+                924,
+                964
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": []
+            },
+            "bbox": [
+                65,
+                24,
+                673,
+                112
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Fig. 5: AI inference performance on Axion CPU "
+                    }
+                ]
+            },
+            "bbox": [
+                70,
+                122,
+                394,
+                136
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "AI Inference Performance on Google Axion "
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                188,
+                169,
+                833,
+                197
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Prompt Encoding & Tokens Generated /Sec "
+                    }
+                ]
+            },
+            "bbox": [
+                305,
+                212,
+                712,
+                232
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Gemma-3-12b "
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                369,
+                270,
+                648,
+                299
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Arm Neoverse based Google Axion "
+                    }
+                ]
+            },
+            "bbox": [
+                315,
+                309,
+                705,
+                328
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "c4a-highmem with 48 vCPU "
+                    }
+                ]
+            },
+            "bbox": [
+                401,
+                330,
+                626,
+                345
+            ]
+        },
+        {
+            "type": "equation_interline",
+            "content": {
+                "math_content": "+29 \\%",
+                "math_type": "latex",
+                "image_source": {
+                    "path": "images/5bdd4fbf81c1f089e3d64a11a15a27fa6a35c9a8f109c7c369239c2c85e091e2.jpg"
+                }
+            },
+            "bbox": [
+                287,
+                374,
+                416,
+                407
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Better Performance over "
+                    }
+                ]
+            },
+            "bbox": [
+                236,
+                413,
+                467,
+                429
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "AMD Turin "
+                    }
+                ]
+            },
+            "bbox": [
+                297,
+                432,
+                405,
+                447
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "c4d-highmem-48 vCPU "
+                    }
+                ]
+            },
+            "bbox": [
+                263,
+                451,
+                433,
+                466
+            ]
+        },
+        {
+            "type": "equation_interline",
+            "content": {
+                "math_content": "+23 \\%",
+                "math_type": "latex",
+                "image_source": {
+                    "path": "images/3d3f31a8db1fe49dfe6cb48d605832d536f7cb78c688f7dbb90144a376cfd50a.jpg"
+                }
+            },
+            "bbox": [
+                598,
+                374,
+                726,
+                407
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Better Performance over "
+                    }
+                ]
+            },
+            "bbox": [
+                547,
+                413,
+                776,
+                429
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Intel Granite Rapids "
+                    }
+                ]
+            },
+            "bbox": [
+                569,
+                432,
+                752,
+                449
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "c4-highmem-48 vCPU "
+                    }
+                ]
+            },
+            "bbox": [
+                584,
+                451,
+                746,
+                466
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Model Format: w8a8 | Benchmark: Throughput Serving | Serving Framework: vLLM | Concurrency: 1 and 16 "
+                    }
+                ]
+            },
+            "bbox": [
+                85,
+                477,
+                929,
+                494
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "(Compared to x86 based Instances) "
+                    }
+                ]
+            },
+            "bbox": [
+                371,
+                511,
+                645,
+                528
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Source: Google, NOM "
+                    }
+                ]
+            },
+            "bbox": [
+                70,
+                545,
+                243,
+                556
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "TPU V8i & V8t networking solutions "
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                67,
+                582,
+                527,
+                604
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "TPU 8t still uses 3D Torus topology to connect chips at the scale-up level to form a pod. The pod volume has increased to 9,600 cards (vs. 9216 cards for Ironwood), and the single-card scale-up bidirectional bandwidth is 19.2Tb (2x that of Ironwood), and we think that there are still 48 OCS in each pod, but the number of ports may increase to 300*300. To support the massive data requirements of TPU 8t, Google introduced Virgo Network for scale-out networking. This new networking architecture enables up to 4x increased data center network (DCN) bandwidth on TPU 8t training over DCN. Built on high-radix switches that reduce network layers by allowing more ports per switch, Virgo Network employs a flat, two-layer non-blocking topology. Compared with traditional datacenter networks, this significantly reduces latency by minimizing network tiers. It features a multi-planar design with independent control domains to connect TPU 8t chips. The TPU 8t racks also connect with the Jupiter north-south fabric to access compute and memory services. Virgo Network can connect more than 1 million TPU chips into a single training cluster, with a single network architecture connecting 134,000 chips. "
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                609,
+                673,
+                813
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "NOM | Global AI Trend Tracker "
+                    }
+                ]
+            },
+            "bbox": [
+                55,
+                0,
+                236,
+                8
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "27 May 2026 "
+                    }
+                ]
+            },
+            "bbox": [
+                845,
+                0,
+                919,
+                8
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "5 "
+                    }
+                ]
+            },
+            "bbox": [
+                914,
+                954,
+                926,
+                964
+            ]
+        }
+    ],
+    [
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/4890ee838e7f057546970b9aeaf2ad2537789258c143d358e6cd543c6f4265a1.jpg"
+                },
+                "content": "```mermaid\ngraph TD\n    subgraph Virgo Network\n        A[\"1\"] --> B[\"2-layer switching\"]\n        B --> C[\"3\"]\n        D[\"2\"] --> E[\"3\"]\n        F[\"3\"] --> G[\"3\"]\n        H[\"3\"] --> I[\"3\"]\n        J[\"3\"] --> K[\"3\"]\n        L[\"3\"] --> M[\"3\"]\n        N[\"3\"] --> O[\"3\"]\n        P[\"3\"] --> Q[\"3\"]\n        R[\"3\"] --> S[\"3\"]\n        T[\"3\"] --> U[\"3\"]\n        V[\"3\"] --> W[\"3\"]\n        X[\"3\"] --> Y[\"3\"]\n        Z[\"3\"] --> AA[\"3\"]\n        AB[\"3\"] --> AC[\"3\"]\n        AD[\"3\"] --> AE[\"3\"]\n        AF[\"3\"] --> AG[\"3\"]\n        AH[\"3\"] --> AI[\"3\"]\n        AJ[\"3\"] --> AK[\"3\"]\n        AL[\"3\"] --> AM[\"3\"]\n        AN[\"3\"] --> AO[\"3\"]\n        AP[\"3\"] --> AQ[\"3\"]\n        AR[\"3\"] --> AS[\"3\"]\n        AT[\"3\"] --> AU[\"3\"]\n        AV[\"3\"] --> AW[\"3\"]\n        AX[\"3\"] --> AY[\"3\"]\n        AZ[\"3\"] --> BA[\"3\"]\n        BB[\"3\"] --> BC[\"3\"]\n        BD[\"3\"] --> BE[\"3\"]\n        BF[\"3\"] --> BG[\"3\"]\n        BH[\"3\"] --> BI[\"3\"]\n        BJ[\"3\"] --> BK[\"3\"]\n        BL[\"3\"] --> BM[\"3\"]\n        BN[\"3\"] --> BO[\"3\"]\n        BP[\"3\"] --> BQ[\"3\"]\n        BR[\"3\"] --> BS[\"3\"]\n        BT[\"3\"] --> BU[\"3\"]\n        BV[\"3\"] --> BW[\"3\"]\n        BX[\"3\"] --> BY[\"3\"]\n        BZ[\"3\"] --> CA[\"3\"]\n        CB[\"3\"] --> CD[\"3\"]\n        CE[\"3\"] --> CF[\"3\"]\n        CG[\"3\"] --> DH[\"3\"]\n        DI[\"3\"] --> DJ[\"3\"]\n        DE[\"3\"] --> DF[\"3\"]\n        DG[\"3\"] --> DH\n    end\n\n    subgraph Jupiter Network\n        E\n        F\n        G\n        H\n        I\n        J\n        K\n        L\n        M\n        N\n        O\n        P\n        Q\n        R\n        S\n        T\n        U\n        V\n        W\n        X\n        Y\n        Z\n        AA\n        AB\n        AC\n        AD\n    end\n\n    subgraph Data Center Building\n    AE\n    AF\n    AG\n    AH\n    AI\n    AJ\n    AK\n    AL\n    AM\n    AN\n    AO\n    AP\n    AQ\n    AR\n    AS\n    AT\n    AU\n    AV\n    AW\n    AX\n    AY\n    AZ\n    BA\n    BB\n    BC\n    BD\n    AE\n    AF\n    AG\n    AH\n    AI\n    AJ\n    AK\n    AL\n    AM\n    AN\n    AO\n    AP\n    AQ\n    AR\n    AS\n    AT\n    AU\n    AV\n    AW\n    AX\n    AY\n    AZ\n    BA\n    BB\n    AC\n    AD\n    AE\n    AF\n    AG\n    AH\n    AI\n    AJ\n    AK\n    AL\n    AM\n    AO\n    AP\n    AQ\n    AR\n    AS\n    AT\n    AU\n    AV\n    AW\n   AX\n   AB\n   AC\n   AD\n    AE\n    AF\n    AG\n    AH\n   AI\n   AD\n    AO\n    AP\n    AQ\n   AR\n   AS\n   AT\n    AU\n    AV\n   AB\n   AC\n   AD\n    AE\n    AF\n    AG\n    AH\n   AI\n   AD\n    AO\n    AP\n    AQ\n   AR\n   AS\n   AT\n    AU\n    AV\n   AB\n   AC\n   AD\n    AE\n    AF\n    AG\n    AH\n   AI\n   AD\n    AO\n    AP\n    AQ\n   AR\n   AS\n   AT\n    AU1: 2 layer switching, fully non-blocking; 2 layer switching, fully non-blocking; resilient fabric with independent planes; expandable to multi-datacenter sites; ICI (Inter-Chip Interconnect)/SPOCS; 7.5% TPU 8t racks; 10% TPU 8t racks; More TPU 8t racks; More TPU 8t racks; More TPU 8t racks; More TPU 8t racks; More TPU 8t racks; More TPU 8t racks; More TPU 8t racks; More TPU 8t racks; More TPU 8t racks; More TPU 8t racks; More TPU 8t racks; More TPU 8t racks; More TPU 6s; More TPU 6s; More TPU 6s; More TPU 6s; More TPU 6s; More TPU 6s; More TPU 6s; More TPU 6s; More TPU 6s; More TPU 6s; More TPU 6s; More TPU 6s; More TPU 6s; More TPU 6s; More TPU 6s; Total Data Center Building: Distributed Global WAN\n```",
+                "image_caption": [
+                    {
+                        "type": "text",
+                        "content": "Fig. 6: Virgo Network architecture "
+                    }
+                ],
+                "image_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: Google, NOM "
+                    }
+                ]
+            },
+            "sub_type": "flowchart",
+            "bbox": [
+                84,
+                70,
+                924,
+                408
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Google designed TPU 8i with a new serving optimized network topology called Boardfly. Boardfly is a flat two-layer architecture, significantly reducing the latency. Utilizing a high-radix design, Google connects up to 1,152 of these chips together, reducing the network diameter and the number of hops a data packet must take to cross the system. By slashing the hops required for all-to-all communication, Boardfly achieves up to a  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "50\\%"
+                    },
+                    {
+                        "type": "text",
+                        "content": " improvement in latency for communication-intensive workloads, according to Google. For that same 1,024-chip pod, Boardfly reduces the network diameter from 16 hops down to 7, which directly leads to lower tail latency. "
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                458,
+                668,
+                575
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Boardfly consists of the following elements, and its topology is hierarchical by nature: "
+                    }
+                ]
+            },
+            "bbox": [
+                67,
+                581,
+                640,
+                594
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "text_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "1. Building Block (BB): Each tray forms a four-chip ring using internal ICI links (connected by PCB), providing 16 external connections for broader networking. "
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "2. Group (G): 8 boards are fully connected via copper cabling to create a localized group, utilizing 11 of the available external links for intra-group communication. "
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "3. Pod structure: The final architecture scales to 36 groups (up to 1,024 active chips) linked through Optical Circuit Switches (OCS), ensuring a maximum latency of seven hops for any chip-to-chip communication. "
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                77,
+                605,
+                653,
+                720
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "NOM | Global AI Trend Tracker "
+                    }
+                ]
+            },
+            "bbox": [
+                55,
+                0,
+                235,
+                8
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "27 May 2026 "
+                    }
+                ]
+            },
+            "bbox": [
+                845,
+                0,
+                917,
+                8
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "6 "
+                    }
+                ]
+            },
+            "bbox": [
+                914,
+                954,
+                924,
+                964
+            ]
+        }
+    ],
+    [
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/61887190db42d2fe8dde6cef6b7275276fac5a667bfaf07d54933c26e8320c81.jpg"
+                },
+                "content": "```mermaid\ngraph LR\n    A[\"Fullly connected\\n4 TPUs on each tray which\\nis building block (BB)\"] --> B[\"BB-BB#2\\nCu links\"]\n    B --> C[\"Group (G) of 8 fully connected trays/BB\"]\n    C --> D[\"Fully connected\\n36 groups\"]\n```",
+                "image_caption": [
+                    {
+                        "type": "text",
+                        "content": "Fig. 7: TPU 8i hierarchical Boardfly topology "
+                    }
+                ],
+                "image_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: Google, NOM "
+                    }
+                ]
+            },
+            "sub_type": "flowchart",
+            "bbox": [
+                82,
+                68,
+                924,
+                282
+            ]
+        },
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/6c5698a16e6cc4c4f9310e221f63a898307a936f970458ce394f756b9da2c49b.jpg"
+                },
+                "content": "```mermaid\ngraph LR\n    Start --> GroupN\n    GroupN -->|1| GroupN2\n    GroupN -->|2| GroupN3\n    GroupN -->|3| GroupN4\n    GroupN2 -->|4| GroupM\n    GroupN3 -->|5| GroupM2\n    GroupM -->|6| Destination\n    GroupM2 -->|7| Destination\n    OpticalHop[\"Optical hop OCS\"] --> GroupM2\n```",
+                "image_caption": [
+                    {
+                        "type": "text",
+                        "content": "Fig. 8: ICI network diameter via optical circuit switch on TPU 8i pod "
+                    }
+                ],
+                "image_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: Google, NOM "
+                    }
+                ]
+            },
+            "sub_type": "flowchart",
+            "bbox": [
+                82,
+                374,
+                924,
+                588
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Impact of TPU v8 on AI networking "
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                67,
+                640,
+                515,
+                663
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The scale-up networking of TPU 8t continues the 3D Torus topology, and the pod volume has increased to 9,600 cards. The number of copper cables has also increased accordingly, while the optical transceiver ratio is about 1:1.5, according to Semi analysis, but the absolute number increases with the number of TPUs. "
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                668,
+                668,
+                726
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "NOM | Global AI Trend Tracker "
+                    }
+                ]
+            },
+            "bbox": [
+                55,
+                0,
+                235,
+                7
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "27 May 2026 "
+                    }
+                ]
+            },
+            "bbox": [
+                845,
+                0,
+                917,
+                7
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "7 "
+                    }
+                ]
+            },
+            "bbox": [
+                914,
+                952,
+                924,
+                963
+            ]
+        }
+    ],
+    [
+        {
+            "type": "table",
+            "content": {
+                "image_source": {
+                    "path": "images/5eadce9179b8ddb3e3f1c92680b6642bf08cb7a022f3ea9cfe592a2aabe579f1.jpg"
+                },
+                "table_caption": [
+                    {
+                        "type": "text",
+                        "content": "Fig. 9: TPU v7 3D Torus connection solutions "
+                    }
+                ],
+                "table_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: SemiAnalysis, NOM "
+                    }
+                ],
+                "html": "<table><tr><td colspan=\"3\">TPU v7 3D Torus Connection Solutions</td></tr><tr><td></td><td>Per TPU</td><td>Rack Total</td></tr><tr><td colspan=\"3\">8 Interior TPUs</td></tr><tr><td>Copper cables</td><td>4</td><td>32</td></tr><tr><td>PCB Traces</td><td>2</td><td>16</td></tr><tr><td>Optical Transceivers</td><td>0</td><td>0</td></tr><tr><td colspan=\"3\">8 Corner TPUs</td></tr><tr><td>Copper cables</td><td>1</td><td>8</td></tr><tr><td>PCB Traces</td><td>2</td><td>16</td></tr><tr><td>Optical Transceivers</td><td>3</td><td>24</td></tr><tr><td colspan=\"3\">24 Edge TPUs</td></tr><tr><td>Copper cables</td><td>2</td><td>48</td></tr><tr><td>PCB Traces</td><td>2</td><td>48</td></tr><tr><td>Optical Transceivers</td><td>2</td><td>48</td></tr><tr><td colspan=\"3\">24 Face TPUs</td></tr><tr><td>Copper cables</td><td>3</td><td>72</td></tr><tr><td>PCB Traces</td><td>2</td><td>48</td></tr><tr><td>Optical Transceivers</td><td>1</td><td>24</td></tr><tr><td colspan=\"3\">Total for 64 TPU Rack</td></tr><tr><td>Copper cables</td><td>1.25</td><td>80</td></tr><tr><td>PCB Traces</td><td>1.00</td><td>64</td></tr><tr><td>Optical Transceivers</td><td>1.50</td><td>96</td></tr></table>",
+                "table_type": "complex_table",
+                "table_nest_level": 1
+            },
+            "bbox": [
+                77,
+                64,
+                670,
+                610
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The design of Google TPU 8i shows that in addition to model training requiring high-density computing clusters, large-scale inference involving multi-agent collaboration and complex chain-of-thought is also communication-intensive, which increases the requirements for low latency between chips. Judging from Google's new Boardfly topology, copper cables are still the main interconnect method at the ICI level, and the demand for OCS extends from scale-out to scale-up between chipsets. "
+                    }
+                ]
+            },
+            "bbox": [
+                70,
+                654,
+                662,
+                740
+            ]
+        },
+        {
+            "type": "table",
+            "content": {
+                "image_source": {
+                    "path": "images/d8476b3f2d1817440b03a0d818d33b8c569b7a501f66469d10f2fe4287c6ebd1.jpg"
+                },
+                "table_caption": [
+                    {
+                        "type": "text",
+                        "content": "Fig. 10: Calculation of usage of DAC/optical transceiver/OCS in TPU 8i pod "
+                    }
+                ],
+                "table_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: NOM estimates "
+                    }
+                ],
+                "html": "<table><tr><td></td><td>BB</td><td>Group</td><td>Between group</td></tr><tr><td>DAC</td><td>8x11x36=3168</td><td>-</td><td>-</td></tr><tr><td>Optical transceiver</td><td>-</td><td>5x8x36=1440</td><td>-</td></tr><tr><td>OCS</td><td>-</td><td>-</td><td>20 72*72 OCS / 5 288*288 OCS</td></tr></table>",
+                "table_type": "simple_table",
+                "table_nest_level": 1
+            },
+            "bbox": [
+                78,
+                787,
+                668,
+                883
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Theoretically, the switching response speed of scale-up networking for OCS is required to reach nanoseconds. The MEMS-based OCS relies on the mechanical motion of the micromirror and the DLC-based OCS relies on the rearrangement of liquid crystal molecules, both of which have a switching time in the millisecond range, which cannot meet this requirement in terms of physical principle. However, the SiPh-based OCS can achieve nanosecond-level switching by virtue of the principle of electronically controlled refractive index, which matches the requirements of the scale-up networking, but it is still in the small-batch delivery stage. As a representative manufacturer of SiPh-based OCS, iPronics (unlisted) has released a 32*32-port SiPh-based OCS in 2025 and expects to release a 64*64-port OCS in 2026. Meanwhile, it has cooperated with Fabrinet (FN US, Not rated) to build the world's first mass-produced SiPh-based OCS production line, which should enter operation from 2Q26, according to company. The new manufacturing line enables iPronics to scale production rapidly to meet customer demand for SiPh-based OCS in training and inference AI clusters. On the other hand, although MEMS-based OCS switching speed is relatively slow, Google has made up for its switching delay through software scheduling, which is also the current strategy adopted by Google. Therefore, we believe that both the solutions have the potential to be used in TPU v8 clusters, and we will continue to catch up the latest progress in SiPh-based OCS. "
+                    }
+                ]
+            },
+            "bbox": [
+                70,
+                929,
+                672,
+                943
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "NOM | Global AI Trend Tracker "
+                    }
+                ]
+            },
+            "bbox": [
+                55,
+                0,
+                235,
+                7
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "27 May 2026 "
+                    }
+                ]
+            },
+            "bbox": [
+                845,
+                0,
+                917,
+                7
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "8 "
+                    }
+                ]
+            },
+            "bbox": [
+                914,
+                954,
+                924,
+                964
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": []
+            },
+            "bbox": [
+                70,
+                25,
+                673,
+                270
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "In addition, both the eighth-generation TPU chips are equipped with Google's self-developed ARM architecture Axion CPU as the main controller, which solves the host computing power bottleneck caused by data preprocessing delays. The number of CPUs has been upgraded from \"1 CPU with 4 TPUs\" to \"1 CPU with 2 TPUs\", and the number of CPU hosts per server has doubled. The CEO of Arm, Rene Haas, mentioned in latest earnings call that as AI shifts from \"human-computer interaction\" to \"agentized continuous workloads\", data center CPU capacity will more than quadruple and the market size will exceed USD100bn by 2030. We think that the rapid growth of demand for CPUs will drive revenue growth of CPU PCB suppliers, server foundries and other related supply chain manufacturers. "
+                    }
+                ]
+            },
+            "bbox": [
+                70,
+                276,
+                670,
+                420
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Google's TPU v8 series chips adopt a dual-vendor strategy, with the TPU 8t being co-designed by Google and Broadcom (AVGO US, Not rated), and the TPU 8i being designed by Google and MediaTek (2454 TT, Buy; covered by Aaron Jeng) for the first time. Broadcom has rich experience in high-performance ASIC design, and the pursuit of extreme computing performance and interconnect bandwidth in training chips is Broadcom's strength, while MediaTek has advantages in power efficiency and cost optimization. Compared to single-chip performance, inference chips need to provide higher inference throughput per-unit power consumption. MediaTek's low-power design experience in the mobile SoC market could be well used for the inference chip. "
+                    }
+                ]
+            },
+            "bbox": [
+                70,
+                428,
+                667,
+                558
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Based on Counterpoint Research's latest Global AI Server Compute ASIC Shipment Forecast, the combined TPU v8t and v8e shipments are projected to approach 5mn units in 2028, more than 10x growth from the ~400k units shipped in 2026. We believe that the separation of TPU v8 training and inference chips and strong demand will likely help further expand Google's TPU supply chain. "
+                    }
+                ]
+            },
+            "bbox": [
+                70,
+                564,
+                667,
+                637
+            ]
+        },
+        {
+            "type": "table",
+            "content": {
+                "image_source": {
+                    "path": "images/9ce5724453381251dea2c9eb0f5acffa4315254a12e12ca039d96ef30814bc97.jpg"
+                },
+                "table_caption": [
+                    {
+                        "type": "text",
+                        "content": "Fig. 11: Google PCB and CCL supply chain "
+                    }
+                ],
+                "table_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: NOM "
+                    }
+                ],
+                "html": "<table><tr><td>Generation</td><td>Content</td><td>Time</td><td>Structure</td><td>CCL Material</td><td>CCL Supplier(s)</td><td>PCB Supplier(s)</td></tr><tr><td rowspan=\"2\">TPU v6p</td><td>TPU UBB</td><td>2H25~</td><td>34L PCB (16+18, N+M)</td><td>M7, HVLP2</td><td>Panasonic, EMC</td><td>WUS, ISU, TTM, VGT</td></tr><tr><td>CPU board (New)</td><td>4Q25~</td><td>22L PCB</td><td>M8</td><td>EMC, Panasonic</td><td>VGT, WUS, ISU, TTM, others?</td></tr><tr><td rowspan=\"3\">TPU v7p, v7e</td><td>TPU UBB</td><td>mid-26~</td><td>36~40L+ PCB</td><td>M8+M8, HVLP3</td><td>Panasonic, EMC</td><td>WUS, ISU, TTM, LCS, VGT?</td></tr><tr><td>CPU board (New)</td><td>4Q25~</td><td>22L PCB</td><td>M8</td><td>EMC, Panasonic</td><td>VGT, WUS, ISU, TTM, others?</td></tr><tr><td>PCIe switch (New)</td><td>mid-26~</td><td>22-24L PCB</td><td>M8?</td><td>EMC</td><td>WUS, ISU, GCE, ZDT, others?</td></tr><tr><td rowspan=\"2\">TPU v8t, v8i</td><td>TPU UBB?</td><td>2028?</td><td>24~28L? HDI?</td><td>M8.5? MBQ?</td><td>Panasonic? EMC?</td><td>WUS, ISU, Unimicron, others?</td></tr><tr><td colspan=\"6\">More other boards?</td></tr></table>",
+                "table_type": "complex_table",
+                "table_nest_level": 1
+            },
+            "bbox": [
+                73,
+                681,
+                929,
+                775
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "NOM | Global AI Trend Tracker "
+                    }
+                ]
+            },
+            "bbox": [
+                57,
+                0,
+                235,
+                7
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "27 May 2026 "
+                    }
+                ]
+            },
+            "bbox": [
+                845,
+                0,
+                917,
+                7
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "9 "
+                    }
+                ]
+            },
+            "bbox": [
+                915,
+                954,
+                924,
+                964
+            ]
+        }
+    ],
+    [
+        {
+            "type": "table",
+            "content": {
+                "image_source": {
+                    "path": "images/c0b2e77967ea721d7b2b19ead547c273107c4ffb3aaddae02d522ef603a74b87.jpg"
+                },
+                "table_caption": [
+                    {
+                        "type": "text",
+                        "content": "Fig. 12: OCS industry supply chain "
+                    }
+                ],
+                "table_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: Company data, NOM "
+                    }
+                ],
+                "html": "<table><tr><td colspan=\"5\">MEMS</td></tr><tr><td>Core components</td><td>MEMS array</td><td>Optical filter</td><td>Fiber collimator array</td><td>Lens array</td></tr><tr><td>Global supplier</td><td>Silex</td><td></td><td>Corning</td><td></td></tr><tr><td>Domestic supplier</td><td>Yitoa Intelligent</td><td>Optowide Technologies, DOTI Micro</td><td>TFC, T&amp;S, EverProX, Optowide Technologies</td><td>Focuslight Technologies</td></tr><tr><td>OCS manufacturer/foundry</td><td colspan=\"4\">Lumentum, Accelink, Eoptolink, Triple-stone, Calient, Advanced Fiber Resources (foundry), Taclink (foundry)</td></tr><tr><td colspan=\"5\">DLC</td></tr><tr><td>Core components</td><td>Liquid crystal light module</td><td>Fiber collimator array</td><td> ${\\mathrm{{YVO}}}_{4}$  crystal</td><td></td></tr><tr><td>Global supplier</td><td>Coherent</td><td>Corning</td><td></td><td></td></tr><tr><td>Domestic supplier</td><td></td><td>TFC, T&amp;S, EverProX, Optowide Technologies</td><td>Castech, Optowide Technologies</td><td></td></tr><tr><td>OCS manufacturer/foundry</td><td colspan=\"4\">Coherent, Celestica (foundry)</td></tr><tr><td colspan=\"5\">DLBS</td></tr><tr><td>Core components</td><td>Piezoelectric Ceramics module</td><td>Fiber collimator array</td><td></td><td></td></tr><tr><td>Global supplier</td><td>Polatis</td><td>Corning</td><td></td><td></td></tr><tr><td>Domestic supplier</td><td>Luster</td><td>TFC, T&amp;S, EverProX, Optowide Technologies</td><td></td><td></td></tr><tr><td>OCS manufacturer/foundry</td><td colspan=\"4\">Polatis, Luster</td></tr><tr><td colspan=\"5\">SiPh-based solution</td></tr><tr><td>Core components</td><td>SiPh chip</td><td>PIC</td><td>MPO</td><td>PCB</td></tr><tr><td>Global supplier</td><td>iPronic</td><td></td><td>Corning</td><td></td></tr><tr><td>Domestic supplier</td><td></td><td></td><td>T&amp;S, EverProX</td><td></td></tr><tr><td>OCS manufacturer/foundry</td><td colspan=\"4\">iPronic, Taclink</td></tr></table>",
+                "table_type": "complex_table",
+                "table_nest_level": 1
+            },
+            "bbox": [
+                77,
+                64,
+                927,
+                409
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "NOM | Global AI Trend Tracker "
+                    }
+                ]
+            },
+            "bbox": [
+                55,
+                0,
+                235,
+                7
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "27 May 2026 "
+                    }
+                ]
+            },
+            "bbox": [
+                845,
+                0,
+                917,
+                7
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "10 "
+                    }
+                ]
+            },
+            "bbox": [
+                915,
+                954,
+                934,
+                964
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Appendix A-1 "
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                67,
+                38,
+                265,
+                62
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "This report has been produced by NOM International (Hong Kong) Ltd. (NIHK), Hong Kong. "
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                74,
+                631,
+                88
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "See Disclaimers for NOM Group entity details. "
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                89,
+                361,
+                102
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Analyst Certification "
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                67,
+                117,
+                268,
+                134
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "I, Bing Duan, hereby certify (1) that the views expressed in this Research report accurately reflect my personal views about any or all of the subject securities or issuers referred to in this Research report, (2) no part of my compensation was, is or will be directly or indirectly related to the specific recommendations or views expressed in this Research report and (3) no part of my compensation is tied to any specific investment banking transactions performed by NOM Securities International, Inc., NOM International plc or any other NOM Group company. "
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                149,
+                922,
+                206
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Issuer Specific Regulatory Disclosures "
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                73,
+                224,
+                420,
+                241
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The terms \"NOM\" and \"NOM Group\" used herein refer to NOM Holdings, Inc. and its affiliates and subsidiaries, including NOM Securities International, Inc. ('NSI') and Instinet, LLC ('ILLC'), U. S. registered broker dealers and members of SIPC. "
+                    }
+                ]
+            },
+            "bbox": [
+                72,
+                259,
+                897,
+                290
+            ]
+        },
+        {
+            "type": "table",
+            "content": {
+                "image_source": {
+                    "path": "images/009cb6f46ae1bba0016c396769465503a75ce19231be5da8a2210e7d0a3b2ddd.jpg"
+                },
+                "table_caption": [
+                    {
+                        "type": "text",
+                        "content": "Materially mentioned issuers "
+                    }
+                ],
+                "table_footnote": [],
+                "html": "<table><tr><td>Issuer</td><td>Ticker</td><td>Price</td><td>Price date</td><td>Stock rating</td><td>Sector rating</td><td>Disclosures</td></tr><tr><td>MediaTek</td><td>2454 TT</td><td>TWD 4,265.00</td><td>26-May-2026</td><td>Buy</td><td>N/A</td><td></td></tr><tr><td>Victory Giant</td><td>2476 HK</td><td>HKD 436.80</td><td>27-May-2026</td><td>Buy</td><td>N/A</td><td></td></tr><tr><td>Victory Giant</td><td>300476 CH</td><td>CNY 379.30</td><td>27-May-2026</td><td>Buy</td><td>N/A</td><td></td></tr></table>",
+                "table_type": "simple_table",
+                "table_nest_level": 1
+            },
+            "bbox": [
+                70,
+                319,
+                927,
+                389
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "MediaTek (2454 TT) "
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                73,
+                414,
+                201,
+                426
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Rating and target price chart (three year history) "
+                    }
+                ]
+            },
+            "bbox": [
+                73,
+                431,
+                366,
+                444
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "TWD 4,265.00 (26-May-2026) Buy (Sector rating: N/A) "
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                502,
+                414,
+                833,
+                426
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/5cf2ea0e141c64c99d70ae0e08a70d6487eea54f6c7f39a9aa7fb2a5a05f4f13.jpg"
+                },
+                "content": "| Date       | Closing Price | Target Price Change | Recommendation Changes |\n| ---------- | ------------- | ------------------- | ---------------------- |\n| 2023/07/01 | ~750.00       | ~750.00             | -                      |\n| 2024/01/01 | ~1000.00      | ~1000.00            | -                      |\n| 2024/07/01 | ~1400.00      | ~1400.00            | -                      |\n| 2025/01/01 | ~1500.00      | ~1500.00            | -                      |\n| 2025/07/01 | ~1300.00      | ~1300.00            | -                      |\n| 2026/01/01 | ~1800.00      | ~2000.00            | -                      |\n| 2026/12/14 | ~3500.00      | ~3500.00            | 1450.00                |",
+                "chart_caption": [],
+                "chart_footnote": []
+            },
+            "sub_type": "line",
+            "bbox": [
+                78,
+                444,
+                645,
+                723
+            ]
+        },
+        {
+            "type": "table",
+            "content": {
+                "image_source": {
+                    "path": "images/b939da4a1228ee508fa2323357598d273c107d5142fb1bf11557539fd26877a4.jpg"
+                },
+                "table_caption": [],
+                "table_footnote": [
+                    {
+                        "type": "text",
+                        "content": "For explanation of ratings refer to the stock rating keys located after chart(s) "
+                    }
+                ],
+                "html": "<table><tr><td>Date</td><td>Rating</td><td>Target price</td><td>Closing price</td></tr><tr><td>30-Apr-26</td><td></td><td>3,400.00</td><td>2,610.00</td></tr><tr><td>30-Mar-26</td><td>Buy</td><td></td><td>1,510.00</td></tr><tr><td>01-Feb-26</td><td></td><td>2,000.00</td><td>1,760.00</td></tr><tr><td>16-Oct-25</td><td></td><td>1,350.00</td><td>1,330.00</td></tr><tr><td>05-Feb-25</td><td></td><td>1,500.00</td><td>1,525.00</td></tr><tr><td>17-Oct-24</td><td></td><td>1,250.00</td><td>1,275.00</td></tr><tr><td>26-Apr-24</td><td></td><td>1,040.00</td><td>1,005.00</td></tr><tr><td>27-Oct-23</td><td></td><td>890.00</td><td>801.00</td></tr><tr><td>28-Jul-23</td><td></td><td>740.00</td><td>658.00</td></tr></table>",
+                "table_type": "simple_table",
+                "table_nest_level": 1
+            },
+            "bbox": [
+                658,
+                444,
+                934,
+                559
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Valuation Methodology Our TP of TWD3,400 is based on 25x our average 2027-28F EPS. Our target multiple of 25x is at its high end of historical range. The benchmark index for this stock is TAIEX. "
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                737,
+                914,
+                761
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Risks that may impede the achievement of the target price Key downside risks include: 1) fierce price competition from Qualcomm and Spreadtrum; 2) the company's execution (i.e. a continuous rollout of good products in terms of specification, price and cost); 3) smartphone demand, especially in China and emerging markets, where MediaTek has higher revenue exposure; and 4) ASIC execution and competition. "
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                761,
+                899,
+                806
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "NOM | Global AI Trend Tracker "
+                    }
+                ]
+            },
+            "bbox": [
+                55,
+                0,
+                235,
+                8
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "27 May 2026 "
+                    }
+                ]
+            },
+            "bbox": [
+                845,
+                0,
+                917,
+                8
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "11 "
+                    }
+                ]
+            },
+            "bbox": [
+                915,
+                954,
+                932,
+                964
+            ]
+        }
+    ],
+    [
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/f0cb65a8cdbe8dd633f9f6fcfdb73f4e50f4a60968c37d74328edb1ad123268f.jpg"
+                },
+                "content": "| Date       | Closing Price | Target Price Change | Recommendation Changes |\n| ---------- | ------------- | ------------------- | ---------------------- |\n| 2026/01/01 | ~350.00       | ~480.00             | ~320.00                |",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Victory Giant (2476 HK) "
+                    },
+                    {
+                        "type": "text",
+                        "content": "Rating and target price chart (three year history) "
+                    }
+                ],
+                "chart_footnote": []
+            },
+            "sub_type": "line",
+            "bbox": [
+                77,
+                61,
+                645,
+                340
+            ]
+        },
+        {
+            "type": "table",
+            "content": {
+                "image_source": {
+                    "path": "images/90531355fe3bd37e2226fd1124b9ec14910a2aee757927343aca1cde2953f614.jpg"
+                },
+                "table_caption": [
+                    {
+                        "type": "text",
+                        "content": "HKD 436.80 (27-May-2026) Buy (Sector rating: N/A) "
+                    }
+                ],
+                "table_footnote": [
+                    {
+                        "type": "text",
+                        "content": "For explanation of ratings refer to the stock rating keys located after chart(s) "
+                    }
+                ],
+                "html": "<table><tr><td>Date</td><td>Rating</td><td>Target price</td><td>Closing price</td></tr><tr><td>30-Apr-26</td><td>Buy</td><td></td><td>319.40</td></tr><tr><td>30-Apr-26</td><td></td><td>479.00</td><td>319.40</td></tr></table>",
+                "table_type": "simple_table",
+                "table_nest_level": 1
+            },
+            "bbox": [
+                658,
+                61,
+                934,
+                96
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Valuation Methodology Our TP of HKD479.00 is based on 27x 2027F EPS of CNY15.44, in line with its A-share historical median P/E. The benchmark index is Hang Seng Index. "
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                355,
+                892,
+                378
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Risks that may impede the achievement of the target price Downside risks: 1) lower-than-expected PCB demand in downstream sectors such as servers and auto electronics; 2) more fierce competition in the high-end PCB market leading to pressure on margins; 3) higher-than-expected raw material cost pressure, and 4) worse-than-expected geopolitical tensions in global AI value chain. "
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                378,
+                914,
+                423
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/afd2d576a07a66b82c4816435f18af4cac77b52f416bc3dd6ce8abd345c99b27.jpg"
+                },
+                "content": "| Date       | Closing Price | Target Price Change | Recommendation Changes |\n| ---------- | ------------- | ------------------- | ---------------------- |\n| 2026/01/01 | ~380.00       | ~410.00             | Yes                    |",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Victory Giant (300476 CH) "
+                    },
+                    {
+                        "type": "text",
+                        "content": "Rating and target price chart (three year history) "
+                    }
+                ],
+                "chart_footnote": []
+            },
+            "sub_type": "line",
+            "bbox": [
+                77,
+                476,
+                645,
+                755
+            ]
+        },
+        {
+            "type": "table",
+            "content": {
+                "image_source": {
+                    "path": "images/e65ef9c3dc52cad12da6521c93b72839e94af89cc2f0ecfdd3ffeb0846ac64b7.jpg"
+                },
+                "table_caption": [
+                    {
+                        "type": "text",
+                        "content": "CNY 379.30 (27-May-2026) Buy (Sector rating: N/A) "
+                    }
+                ],
+                "table_footnote": [
+                    {
+                        "type": "text",
+                        "content": "For explanation of ratings refer to the stock rating keys located after chart(s) "
+                    }
+                ],
+                "html": "<table><tr><td>Date</td><td>Rating</td><td>Target price</td><td>Closing price</td></tr><tr><td>30-Apr-26</td><td></td><td>417.00</td><td>328.49</td></tr><tr><td>15-Jan-26</td><td></td><td>333.00</td><td>283.07</td></tr><tr><td>24-Oct-25</td><td>Buy</td><td></td><td>308.98</td></tr><tr><td>24-Oct-25</td><td></td><td>392.00</td><td>308.98</td></tr></table>",
+                "table_type": "simple_table",
+                "table_nest_level": 1
+            },
+            "bbox": [
+                658,
+                476,
+                934,
+                534
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Valuation Methodology Our target price of CNY417.00 is based on 27x 2027F EPS of CNY15.44, in line with company's historical median P/E of 27x. The benchmark index is CSI300. "
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                770,
+                884,
+                792
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Risks that may impede the achievement of the target price Downside risks include: 1) key customers' supply chain diversification and more intensified competition from peers; 2) technology changes such as COWOP which may change the competition landscape and threat company's market shares; 3) slower technology upgrade in AI PCB market; and 4) escalations on geopolitical tensions. "
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                792,
+                927,
+                837
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Important Disclosures "
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                67,
+                851,
+                265,
+                866
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Online availability of research and conflict-of-interest disclosures "
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                67,
+                877,
+                542,
+                891
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "NOM Group research is available on www.NOMnow.com/research, Bloomberg, Capital IQ, Factset, LSEG. "
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                902,
+                734,
+                914
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Important disclosures may be read at http://go.NOMnow.com/research/m/Disclosures or requested from NOM Securities International, Inc. If you have any difficulties with the website, please email grpsupport@NOM.com for help. "
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                917,
+                922,
+                944
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "NOM | Global AI Trend Tracker "
+                    }
+                ]
+            },
+            "bbox": [
+                55,
+                0,
+                235,
+                7
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "27 May 2026 "
+                    }
+                ]
+            },
+            "bbox": [
+                845,
+                0,
+                917,
+                7
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "12 "
+                    }
+                ]
+            },
+            "bbox": [
+                915,
+                952,
+                932,
+                964
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The analysts responsible for preparing this report have received compensation based upon various factors including the firm's total revenues, a portion of which is generated by Investment Banking activities. Unless otherwise noted, the non-US analysts listed at the front of this report are not registered/qualified as research analysts under FINRA rules, may not be associated persons of NSI, and may not be subject to FINRA Rule 2241 restrictions on communications with covered companies, public appearances, and trading securities held by a research analyst account. "
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                39,
+                924,
+                95
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "NOM Global Financial Products Inc. (NGFP) NOM Derivative Products Inc. (NDP) and NOM International plc. (NIplc) are registered with the Commodities Futures Trading Commission and the National Futures Association (NFA) as swap dealers. NGFP, NDPI, and NIplc are generally engaged in the trading of swaps and other derivative products, any of which may be the subject of this report. "
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                111,
+                929,
+                154
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Distribution of ratings (NOM Group) "
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                67,
+                166,
+                351,
+                181
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The distribution of all ratings published by NOM Group Global Equity Research is as follows: "
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                191,
+                636,
+                203
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "57% have been assigned a Buy rating which, for purposes of mandatory disclosures, are classified as a Buy rating; 34% of companies with this rating are investment banking clients of the NOM Group*. 0% of companies (which are admitted to trading on a regulated market in the EEA) with this rating were supplied material services** by the NOM Group. "
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                205,
+                924,
+                247
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "41% have been assigned a Neutral rating which, for purposes of mandatory disclosures, is classified as a Hold rating; 57% of companies with this rating are investment banking clients of the NOM Group*. 0% of companies (which are admitted to trading on a regulated market in the EEA) with this rating were supplied material services by the NOM Group "
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                249,
+                914,
+                291
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "2% have been assigned a Reduce rating which, for purposes of mandatory disclosures, are classified as a Sell rating; 0% of companies with this rating are investment banking clients of the NOM Group*. 0% of companies (which are admitted to trading on a regulated market in the EEA) with this rating were supplied material services by the NOM Group. "
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                292,
+                929,
+                334
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "As at 31 March 2026. "
+                    }
+                ]
+            },
+            "bbox": [
+                67,
+                336,
+                200,
+                348
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "*The NOM Group as defined in the Disclaimer section at the end of this report. "
+                    }
+                ]
+            },
+            "bbox": [
+                67,
+                350,
+                552,
+                363
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "** As defined by the EU Market Abuse Regulation "
+                    }
+                ]
+            },
+            "bbox": [
+                67,
+                365,
+                366,
+                377
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Definition of NOM Group's equity research rating system and sectors "
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                67,
+                392,
+                591,
+                406
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The rating system is a relative system, indicating expected performance against a specific benchmark identified for each individual stock, subject to limited management discretion. An analyst's target price is an assessment of the current intrinsic fair value of the stock based on an appropriate valuation methodology determined by the analyst. Valuation methodologies include, but are not limited to, discounted cash flow analysis, expected return on equity and multiple analysis. Analysts may also indicate expected absolute upside/downside relative to the stated target price, defined as (target price - current price)/current price. "
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                415,
+                917,
+                487
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "STOCKS"
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                67,
+                500,
+                136,
+                513
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "A rating of 'Buy', indicates that the analyst expects the stock to outperform the Benchmark over the next 12 months. A rating of 'Neutral', indicates that the analyst expects the stock to perform in line with the Benchmark over the next 12 months. A rating of 'Reduce', indicates that the analyst expects the stock to underperform the Benchmark over the next 12 months. A rating of 'Suspended', indicates that the rating, target price and estimates have been suspended temporarily to comply with applicable regulations and/or firm policies. Securities and/or companies that are labelled as 'Not rated' or shown as 'No rating' are not in regular research coverage. Investors should not expect continuing or additional information from NOM relating to such securities and/or companies. Benchmarks are as follows: United States/Europe/Asia ex-Japan: please see valuation methodologies for explanations of relevant benchmarks for stocks, which can be accessed at: http://go.NOMnow.com/research/m/Disclosures; Global Emerging Markets (ex-Asia): MSCI Emerging Markets ex-Asia, unless otherwise stated in the valuation methodology; Japan: Russell/NOM Large Cap. "
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                524,
+                926,
+                654
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "SECTORS "
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                67,
+                667,
+                144,
+                680
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "A 'Bullish' stance, indicates that the analyst expects the sector to outperform the Benchmark during the next 12 months. A 'Neutral' stance, indicates that the analyst expects the sector to perform in line with the Benchmark during the next 12 months. A 'Bearish' stance, indicates that the analyst expects the sector to underperform the Benchmark during the next 12 months. Sectors that are labelled as 'Not rated' or shown as 'N/A' are not assigned ratings. Benchmarks are as follows: United States: S&P 500; Europe: Dow Jones STOXX 600; Global Emerging Markets (ex-Asia): MSCI Emerging Markets ex-Asia. Japan/Asia ex-Japan: Sector ratings are not assigned. "
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                691,
+                924,
+                762
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Target Price "
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                67,
+                776,
+                159,
+                789
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "A Target Price, if discussed, indicates the analyst's forecast for the share price with a 12-month time horizon, reflecting in part the analyst's estimates for the company's earnings. The achievement of any target price may be impeded by general market and macroeconomic trends, and by other risks related to the company or the market, and may not occur if the company's earnings differ from estimates. "
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                800,
+                927,
+                842
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Disclaimers "
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                67,
+                856,
+                166,
+                869
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "This publication contains material that has been prepared by the NOM Group entity identified on page 1 and, if applicable, with the contributions of one or more NOM Group entities whose employees and their respective affiliations are specified on page 1 or identified elsewhere in this publication. The term \"NOM Group\" used herein refers to NOM Holdings, Inc. and its affiliates and subsidiaries including: (a) NOM Securities Co., Ltd. ('NSC') Tokyo, Japan, (b) NOM Financial Products Europe GmbH ('NFPE'), Germany, (c) NOM International plc ('NIplc'), UK, (d) NOM Securities International, Inc. ('NSI'), New York, US, (e) NOM International (Hong Kong) Ltd. "
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                882,
+                926,
+                954
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "NOM | Global AI Trend Tracker "
+                    }
+                ]
+            },
+            "bbox": [
+                55,
+                0,
+                235,
+                7
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "27 May 2026 "
+                    }
+                ]
+            },
+            "bbox": [
+                845,
+                0,
+                917,
+                7
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "13 "
+                    }
+                ]
+            },
+            "bbox": [
+                915,
+                954,
+                934,
+                964
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "('NIHK'), Hong Kong, (f) NOM Financial Investment (Korea) Co., Ltd. ('NFIK'), Korea (Information on NOM analysts registered with the Korea Financial Investment Association ('KOFIA') can be found on the KOFIA Intranet at http://dis.kofia.or.kr, (g) NOM Singapore Ltd. ('NSL'), Singapore (Registration number 197201440E, regulated by the Monetary Authority of Singapore) (h) NOM Australia Ltd. ('NAL'), Australia (ABN 48 003 032 513), regulated by the Australian Securities and Investment Commission ('ASIC') and holder of an Australian financial services licence number 246412, (i) NOM Securities Malaysia Sdn. Bhd. ('NSM'), Malaysia, (j) NIHK, Taipei Branch ('NITB'), Taiwan, (k) NOM Financial Advisory and Securities (India) Private Limited ('NFASL'), Mumbai, India (Registered Address: Ceejay House, Level 11, Plot F, Shivsagar Estate, Dr. Annie Besant Road, Worli, Mumbai- 400 018, India; Tel: 91 22 4037 4037, Fax: 91 22 4037 4111; CIN No: U74140MH2007PTC169116, SEBI Registration No. for Stock Broking activities : INZ000255633; SEBI Registration No. for Merchant Banking : INM000011419; SEBI Registration No. for Research: INH000001014 - Compliance Officer: Ms. Pratiksha Tondwalkar, 91 22 40374904, grievance email: investorgrievancesra@NOM.com Webpage: LINK "
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                24,
+                931,
+                168
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "For reports with respect to Indian public companies or authored by India-based NFASL research analysts: (i) Investment in securities markets is subject to market risks. Read all the related documents carefully before investing. (ii) Registration granted by SEBI, and certification from NISM in no way guarantee performance of the intermediary or provide any assurance of returns to investors. (iii) NFASL terms and conditions for availing research services is disclosed on NFASL webpage. "
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                170,
+                904,
+                258
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "(I) NOM Fiduciary Research & Consulting Co., Ltd. ('NFRC') Tokyo, Japan. (m) NOM Orient International Securities Co., Ltd (\"NOI\"), is a majority owned joint venture amongst NOM Group, Orient International (Holding) Co., Ltd, and Shanghai Huangpu Investment Holding (Group) Co., Ltd. In accordance with the laws of the People's Republic of China (\"PRC\", excluding Hong Kong, Macau and Taiwan, for the purpose of this document), NOI is licensed in the PRC to provide securities research and investment recommendations and it operates independently from the other members of the NOM Group; in particular, NOI's interests in PRC securities are not disclosed to, or aggregated with the holdings of, any other NOM Group entities and the interests in PRC securities of other NOM Group entities are not disclosed to, or aggregated with the holdings of, NOI. An individual name printed next to NOI on the front page of a research report indicates that individual is employed by NOI to provide research assistance to NIHK under a research partnership agreement. 'NSFSPL' next to an employee's name on the front page of a research report indicates that the individual is employed by NOM Structured Finance Services Private Limited to provide assistance to certain NOM entities under inter-company agreements. 'Verdhana' next to an individual's name on the front page of a research report indicates that the individual is employed by PT Verdhana Sekuritas Indonesia ('Verdhana') to provide research assistance to NIHK under a research partnership agreement and neither Verdhana nor such individual is licensed outside of Indonesia. "
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                259,
+                929,
+                432
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "THIS MATERIAL IS: (I) FOR YOUR PRIVATE INFORMATION, AND WE ARE NOT SOLICITING ANY ACTION BASED UPON IT; (II) NOT TO BE CONSTRUED AS AN OFFER TO SELL OR A SOLICITATION OF AN OFFER TO BUY ANY SECURITIES IN ANY JURISDICTION WHERE SUCH OFFER OR SOLICITATION WOULD BE ILLEGAL; AND (III) OTHER THAN DISCLOSURES RELATING TO THE NOM GROUP, BASED UPON INFORMATION FROM SOURCES THAT WE CONSIDER RELIABLE, BUT HAS NOT BEEN INDEPENDENTLY VERIFIED BY NOM GROUP. "
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                432,
+                929,
+                504
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Other than disclosures relating to the NOM Group, the NOM Group does not warrant, represent or undertake, express or implied, that the document is fair, accurate, complete, correct, reliable or fit for any particular purpose or merchantable, and to the maximum extent permissible by law and/or regulation, does not accept liability (in negligence or otherwise, and in whole or in part) for any act (or decision not to act) resulting from use of this document and related data. To the maximum extent permissible by law and/or regulation, all warranties and other assurances by the NOM Group are hereby excluded and the NOM Group shall have no liability (in negligence or otherwise, and in whole or in part) for any loss howsoever arising from the use, misuse, or distribution of this material or the information contained in this material or otherwise arising in connection therewith. "
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                506,
+                929,
+                605
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Opinions or estimates expressed are current opinions as of the original publication date appearing on this material and the information, including the opinions and estimates contained herein, are subject to change without notice. The NOM Group, however, expressly disclaims any obligation, and therefore is under no duty, to update or revise this document. Any comments or statements made herein are those of the author(s) and may differ from views held by other parties within NOM Group. Clients should consider whether any advice or recommendation in this report is suitable for their particular circumstances and, if appropriate, seek professional advice, including tax advice. The NOM Group does not provide tax advice. "
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                608,
+                929,
+                694
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The NOM Group, and/or its officers, directors, employees and affiliates, may, to the extent permitted by applicable law and/or regulation, deal as principal, agent, or otherwise, or have long or short positions in, or buy or sell, the securities, commodities or instruments, or options or other derivative instruments based thereon, of issuers or securities mentioned herein. The NOM Group companies may also act as market maker or liquidity provider (within the meaning of applicable regulations in the UK) in the financial instruments of the issuer. Where the activity of market maker is carried out in accordance with the definition given to it by specific laws and regulations of the US or other jurisdictions, this will be separately disclosed within the specific issuer disclosures. "
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                695,
+                927,
+                781
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "This document may contain information obtained from third parties, including, but not limited to, ratings from credit ratings agencies such as Standard & Poor's. The NOM Group hereby expressly disclaims all representations, warranties or undertakings of originality, fairness, accuracy, completeness, correctness, merchantability or fitness for a particular purpose with respect to any of the information obtained from third parties contained in this material or otherwise arising in connection therewith, and shall not be liable (in negligence or otherwise, and in whole or in part) for any direct, indirect, incidental, exemplary, compensatory, punitive, special or consequential damages, costs, expenses, legal fees, or losses (including lost income or profits and opportunity costs) in connection with any use or misuse of any of the information obtained from third parties contained in this material or otherwise arising in connection therewith. Reproduction and distribution of third-party content in any form is prohibited except with the prior written permission of the related third-party. Third-party content providers do not, express or implied, guarantee the fairness, accuracy, completeness, correctness, timeliness or availability of any information, including ratings, and are not in any way responsible for any errors or omissions (negligent or otherwise), regardless of the cause, or for the results obtained from the use or misuse of such content. Third-party content providers give no express or implied warranties, including, but not limited to, any warranties of merchantability or fitness for a particular purpose or use. Third-party content providers shall not be liable (in negligence or otherwise, and in whole or in part) for any direct, indirect, incidental, exemplary, compensatory, punitive, special or consequential damages, costs, expenses, legal fees, or losses (including lost income or profits and opportunity costs) in connection with any use or misuse of their content, including ratings. Credit ratings are statements of opinions and are not statements of fact or recommendations to purchase hold or sell securities. They do not address the suitability of securities or the suitability of securities for investment purposes, and should not be relied on as investment advice. Any MSCI sourced information in this document is the exclusive property of MSCI Inc. ('MSCI'). Without prior written permission of MSCI, this information and any other MSCI intellectual property may not be duplicated, reproduced, re-disseminated, redistributed or used, in whole or in part, for any purpose whatsoever, including creating any financial products and any indices. This information is provided on an \"as is\" basis. The user assumes the entire risk of any use made of this information. MSCI, its affiliates and any third party involved in, or related to, computing or compiling the information hereby expressly disclaim all representations, warranties or undertakings of originality, fairness, accuracy, completeness, correctness, merchantability or fitness for a particular purpose with respect to any of this material or the information contained in this material or otherwise arising in connection therewith. Without limiting any of the foregoing, in no event shall MSCI, any of its affiliates or any third party involved in, or related to, computing or compiling the information have any liability (in negligence or otherwise, and in whole or in part) for any damages of any kind. MSCI and the MSCI indexes are services marks of MSCI and its affiliates. "
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                782,
+                924,
+                941
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "NOM | Global AI Trend Tracker "
+                    }
+                ]
+            },
+            "bbox": [
+                55,
+                0,
+                235,
+                7
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "27 May 2026 "
+                    }
+                ]
+            },
+            "bbox": [
+                845,
+                0,
+                917,
+                7
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "14 "
+                    }
+                ]
+            },
+            "bbox": [
+                915,
+                954,
+                934,
+                964
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": []
+            },
+            "bbox": [
+                65,
+                24,
+                929,
+                224
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The intellectual property rights and any other rights, in Russell/NOM Japan Equity Index belong to NOM Fiduciary Research & Consulting Co., Ltd. (\"NFRC\") and FTSE Russell (\"Russell\"). NFRC and Russell do not guarantee fairness, accuracy, completeness, correctness, reliability, usefulness, marketability, merchantability or fitness of the Index, and do not account for business activities or services that any index user and/or its affiliates undertakes with the use of the Index. "
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                227,
+                927,
+                282
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Investors should consider this document as only a single factor in making their investment decision and, as such, the report should not be viewed as identifying or suggesting all risks, direct or indirect, that may be associated with any investment decision. NOM Group produces a number of different types of research product including, among others, fundamental analysis and quantitative analysis; recommendations contained in one type of research product may differ from recommendations contained in other types of research product, whether as a result of differing time horizons, methodologies or otherwise. The NOM Group publishes research product in a number of different ways including the posting of product on the NOM Group portals and/or distribution directly to clients. Different groups of clients may receive different products and services from the research department depending on their individual requirements. "
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                285,
+                927,
+                385
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Figures presented herein may refer to past performance or simulations based on past performance which are not reliable indicators of future or likely performance. Where the information contains an expectation, projection or indication of future performance and business prospects, such forecasts may not be a reliable indicator of future or likely performance. Moreover, simulations are based on models and simplifying assumptions which may oversimplify and not reflect the future distribution of returns. Any figure, strategy or index created and published for illustrative purposes within this document is not intended for “use” as a “benchmark” as defined by the European Benchmark Regulation. "
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                386,
+                921,
+                458
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Certain securities are subject to fluctuations in exchange rates that could have an adverse effect on the value or price of, or income derived from, the investment. "
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                459,
+                900,
+                486
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "With respect to Fixed Income Research: Recommendations fall into two categories: tactical, which typically last up to three months; or strategic, which typically last from 6-12 months. However, trade recommendations may be reviewed at any time as circumstances change. 'Stop loss' levels for trades are also provided; which, if hit, closes the trade recommendation automatically. Prices and yields shown in recommendations are taken at the time of submission for publication and are based on either indicative Bloomberg, LSEG or NOM prices and yields at that time. The prices and yields shown are not necessarily those at which the trade recommendation can be implemented. "
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                488,
+                924,
+                559
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The securities described herein may not have been registered under the US Securities Act of 1933 (the '1933 Act'), and, in such case, may not be offered or sold in the US or to US persons unless they have been registered under the 1933 Act, or except in compliance with an exemption from the registration requirements of the 1933 Act. Unless governing law permits otherwise, any transaction should be executed via a NOM entity in your home jurisdiction. "
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                561,
+                921,
+                617
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "This document has been approved for distribution in the UK as investment research by NIplc. NIplc is authorised by the Prudential Regulation Authority and regulated by the Financial Conduct Authority and the Prudential Regulation Authority. NIplc is a member of the London Stock Exchange. This document does not constitute a personal recommendation within the meaning of applicable regulations in the UK, or take into account the particular investment objectives, financial situations, or needs of individual investors. This document is intended only for investors who are 'eligible counterparties' or 'professional clients' for the purposes of applicable regulations in the UK, and may not, therefore, be redistributed to persons who are 'retail clients' for such purposes. "
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                619,
+                914,
+                704
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "This document has been approved for distribution in the European Economic Area as investment research by NOM Financial Products Europe GmbH (\"NFPE\"). NFPE is a company organized as a limited liability company under German law registered in the Commercial Register of the Court of Frankfurt/Main under HRB 110223. NFPE is authorized and regulated by the German Federal Financial Supervisory Authority (BaFin). "
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                706,
+                924,
+                762
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "This document has been approved by NIHK, which is regulated by the Hong Kong Securities and Futures Commission, for distribution in Hong Kong by NIHK. This document is intended only for investors who are 'professional investors' for the purposes of applicable regulations in Hong Kong and may not, therefore, be redistributed to persons who are not 'professional investors' for such purposes. "
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                764,
+                917,
+                806
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "This document has been approved for distribution in Australia by NAL, which is authorized and regulated in Australia by the ASIC. This document has also been approved for distribution in Malaysia by NSM. "
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                807,
+                842,
+                835
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "In Singapore, this document has been distributed by NSL, an exempt financial adviser as defined under the Financial Advisers Act (Chapter 110), among other things, and regulated by the Monetary Authority of Singapore. NSL may distribute this document produced by its foreign affiliates pursuant to an arrangement under Regulation 32C of the Financial Advisers Regulations. This document is intended for accredited, expert or institutional investors as defined by the Securities and Futures Act (Chapter 289). Where the recipient of this document is not an accredited, expert or institutional investor, NSL accepts legal responsibility for the contents of this document in respect of such recipient only to the extent required by law. Recipients of this document in Singapore should contact NSL in respect of matters arising from, or in connection with, this document. THIS DOCUMENT IS INTENDED FOR GENERAL CIRCULATION. IT DOES NOT TAKE INTO ACCOUNT THE SPECIFIC INVESTMENT OBJECTIVES, FINANCIAL SITUATION OR PARTICULAR NEEDS OF ANY PARTICULAR PERSON. RECIPIENTS SHOULD "
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                836,
+                924,
+                951
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "NOM | Global AI Trend Tracker "
+                    }
+                ]
+            },
+            "bbox": [
+                55,
+                0,
+                235,
+                7
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "27 May 2026 "
+                    }
+                ]
+            },
+            "bbox": [
+                845,
+                0,
+                917,
+                7
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "15 "
+                    }
+                ]
+            },
+            "bbox": [
+                915,
+                954,
+                934,
+                964
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "TAKE INTO ACCOUNT THEIR SPECIFIC INVESTMENT OBJECTIVES, FINANCIAL SITUATION OR PARTICULAR NEEDS BEFORE MAKING A COMMITMENT TO PURCHASE ANY SECURITIES, INCLUDING SEEKING ADVICE FROM AN INDEPENDENT FINANCIAL ADVISER REGARDING THE SUITABILITY OF THE INVESTMENT, UNDER A SEPARATE ENGAGEMENT, AS THE RECIPIENT DEEMS FIT. Unless prohibited by the provisions of Regulation S of the 1933 Act, this material is distributed in the US, by NSI, a US-registered broker-dealer, which accepts responsibility for its contents in accordance with the provisions of Rule 15a-6, under the US Securities Exchange Act of 1934. The entity that prepared this document permits its separately operated affiliates within the NOM Group to make copies of such documents available to their clients. "
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                24,
+                927,
+                123
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "This document has not been approved for distribution to persons other than ‘Authorised Persons’, ‘Exempt Persons’ or ‘Institutions’ (as defined by the Capital Markets Authority) in the Kingdom of Saudi Arabia (‘Saudi Arabia’) or a ‘Market Counterparty’ or a ‘Professional Client’ (as defined by the Dubai Financial Services Authority) in the United Arab Emirates (‘UAE’) or a ‘Market Counterparty’ or a ‘Business Customer’ (as defined by the Qatar Financial Centre Regulatory Authority) in the State of Qatar (‘Qatar’) by NOM Saudi Arabia, NIplc or any other member of the NOM Group, as the case may be. Neither this document nor any copy thereof may be taken or transmitted or distributed, directly or indirectly, by any person other than those authorised to do so into Saudi Arabia or in the UAE or in Qatar or to any person other than ‘Authorised Persons’, ‘Exempt Persons’ or ‘Institutions’ located in Saudi Arabia or a ‘Market Counterparty’ or a ‘Professional Client’ in the UAE or a ‘Market Counterparty’ or a ‘Business Customer’ in Qatar. Any failure to comply with these restrictions may constitute a violation of the laws of the UAE or Saudi Arabia or Qatar. "
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                126,
+                929,
+                253
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "For report with reference of TAIWAN public companies or authored by Taiwan based research analyst: "
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                256,
+                680,
+                268
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "THIS DOCUMENT IS SOLELY FOR REFERENCE ONLY. You should independently evaluate the investment risks and are solely responsible for your investment decisions. NO PORTION OF THE REPORT MAY BE REPRODUCED OR QUOTED BY THE PRESS OR ANY OTHER PERSON WITHOUT WRITTEN AUTHORIZATION FROM NOM GROUP. Pursuant to Operational Regulations Governing Securities Firms Recommending Trades in Securities to Customers and/or other applicable laws or regulations in Taiwan, you are prohibited to provide the reports to others (including but not limited to related parties, affiliated companies and any other third parties) or engage in any activities in connection with the reports which may involve conflicts of interests. INFORMATION ON SECURITIES / INSTRUMENTS NOT EXECUTABLE BY NOM INTERNATIONAL (HONG KONG) LTD., TAIPEI BRANCH IS FOR INFORMATIONAL PURPOSES ONLY AND IS NOT BE CONSTRUED AS A RECOMMENDATION OR A SOLICITATION TO TRADE IN SUCH SECURITIES / INSTRUMENTS. "
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                270,
+                924,
+                384
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "This material may not be distributed in Indonesia or passed on within the territory of the Republic of Indonesia or to persons who are Indonesian citizens (wherever they are domiciled or located) or entities of or residents in Indonesia in a manner which constitutes a public offering under the laws of the Republic of Indonesia. The securities mentioned in this document may not be offered or sold in Indonesia or to persons who are citizens of Indonesia (wherever they are domiciled or located) or entities of or residents in Indonesia in a manner which constitutes a public offering under the laws of the Republic of Indonesia. "
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                386,
+                927,
+                457
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "An individual name printed next to NOI on the front page of a research report indicates that this document is a translation of a research report issued by NOI in the PRC. In all other cases, this document is prepared by NOM Group or its subsidiary or affiliate (collectively, “Offshore Issuers”) that is not licensed in the PRC to provide securities research. This research report is not approved or intended to be circulated in the PRC. The A-share related analysis (if any) is not produced for any persons located or incorporated in the PRC. The recipients should not rely on any information contained in this research report in making investment decisions and Offshore Issuers take no responsibility in this regard. NO PART OF THIS MATERIAL MAY BE (I) COPIED, PHOTOCOPIED, REPRODUCED OR DUPLICATED IN ANY FORM, BY ANY MEANS; OR (II) REDISSEMINATED, REPUBLISHED OR REDISTRIBUTED WITHOUT THE PRIOR WRITTEN CONSENT OF A MEMBER OF THE NOM GROUP. If this document has been distributed by electronic transmission, such as e-mail, then such transmission cannot be guaranteed to be secure or error-free as information could be intercepted, corrupted, lost, destroyed, arrive late or incomplete, or contain viruses. The sender therefore does not accept liability (in negligence or otherwise, and in whole or in part) for any errors or omissions in the contents of this document, which may arise as a result of electronic transmission. If verification is required, please request a hard-copy version. "
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                459,
+                927,
+                617
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The NOM Group manages conflicts with respect to the production of research through its compliance policies and procedures (including, but not limited to, Conflicts of Interest, Chinese Wall and Confidentiality policies) as well as through the maintenance of Chinese Walls and employee training. "
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                633,
+                921,
+                675
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Additional information regarding the methodologies or models used in the production of any investment recommendations contained within this document is available upon request by contacting the Research Analysts of NOM listed on the front page. Disclosures information is available upon request and disclosure information is available at the NOM Disclosure web page: "
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                677,
+                926,
+                718
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "http://go.NOMnow.com/research/m/Disclosures "
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                721,
+                369,
+                733
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Copyright © 2026 NOM International (Hong Kong) Ltd., Hong Kong. All rights reserved. "
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                735,
+                603,
+                748
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "NOM | Global AI Trend Tracker "
+                    }
+                ]
+            },
+            "bbox": [
+                55,
+                0,
+                235,
+                7
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "27 May 2026 "
+                    }
+                ]
+            },
+            "bbox": [
+                845,
+                0,
+                917,
+                7
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "16 "
+                    }
+                ]
+            },
+            "bbox": [
+                915,
+                954,
+                932,
+                964
+            ]
+        }
+    ]
+]
