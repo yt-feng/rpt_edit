@@ -1,0 +1,14 @@
+Found 32 total PDFs; shard 1/40 has 5 PDFs, skips 0 already converted, will process 5 PDFs with batch_size=5.
+Running batch 1: 5 PDFs
+Found 5 PDFs.
+Uploading PDF to MinerU: /tmp/pdf_batch_001_pbolkg7e/pdfs/0001-06-Morgan Stanley-China Equity Strategy-China Five-factor Consumer Activity Z-Score vs. MSCI China-260527.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_pbolkg7e/pdfs/0002-07-Nomura-Economic Insights-US- Skewed vision - evaluating trimmed-mean inflation-260529.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_pbolkg7e/pdfs/0003-08-Bernstein-ABF Substrate- Renaissance of CPU drives ABF shortage- Lifting Ibiden PT to -23-900-260529.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_pbolkg7e/pdfs/0004-09-CITI-Japan IT Services-Implications of results at Salesforce Snowflake - software as a means of boosting AI RoI-260527.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_pbolkg7e/pdfs/0005-10-CITI-Taiwan PCB - Laminates-ABF BT sector- audited April EPS seemingly suggests late contribution from price hike-260527.pdf
+MinerU batch_id=120a64f5-0e2f-48bc-bcae-2a52c4c0b7a6
+MinerU states: running, running, running, pending, waiting-file
+MinerU states: done, done, done, running, running
+MinerU states: done, done, done, done, done
+Done. Results written to /home/runner/work/rpt_edit/rpt_edit/xhs_notes/dropbox/260529/shard_1; successful_reports=5; mineru_timed_out=False
+All batches completed successfully. Generated 5 report directories.
