@@ -16,7 +16,7 @@
     "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/bernstein-akeso inc（9926.hk）asco 2026 part 2~akeso's harmoni~6 preview-260528.pdf",
     "category": "company_stock",
     "score": 0.95,
-    "reason": "标题明确为Akeso公司ASCO预览，单一公司",
+    "reason": "标题明确针对Akeso公司，属于个股研报",
     "classifier": "deepseek"
   },
   {
@@ -26,7 +26,7 @@
     "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/BARC-gxo logistics， inc.（gxo.us）margin opportunities abound； upgrade to overweight-260527.pdf",
     "category": "company_stock",
     "score": 0.95,
-    "reason": "GXO Logistics公司评级上调，单一公司",
+    "reason": "标题明确针对GXO Logistics公司，属于个股研报",
     "classifier": "deepseek"
   },
   {
@@ -36,7 +36,7 @@
     "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/bernstein-boeing：ceo kelly ortberg at bernstein's strategic decisions conference 2026-260527.pdf",
     "category": "company_stock",
     "score": 0.95,
-    "reason": "波音公司CEO参会，单一公司",
+    "reason": "标题明确针对Boeing公司，属于个股研报",
     "classifier": "deepseek"
   },
   {
@@ -46,7 +46,7 @@
     "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/bernstein-china internet pdd holdings inc.（pdd.us）pdd q1： sticks and stones may break my bones...-260528.pdf",
     "category": "company_stock",
     "score": 0.95,
-    "reason": "PDD Holdings一季度回顾，单一公司",
+    "reason": "标题明确针对PDD Holdings公司，属于个股研报",
     "classifier": "deepseek"
   },
   {
@@ -56,7 +56,7 @@
     "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/bernstein-china semiconductors：china semicap： 2025 wfe competitive dynamics in china-260528.pdf",
     "category": "macro_trend",
     "score": 0.9,
-    "reason": "中国半导体行业竞争动态，行业趋势",
+    "reason": "中国半导体行业竞争动态，属于行业趋势",
     "classifier": "deepseek"
   },
   {
@@ -66,7 +66,7 @@
     "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/bernstein-ge aerospace： chairman & ceo larry culp at bernstein's strategic decisions conference 2026-260527.pdf",
     "category": "company_stock",
     "score": 0.95,
-    "reason": "GE Aerospace CEO参会，单一公司",
+    "reason": "标题明确针对GE Aerospace公司，属于个股研报",
     "classifier": "deepseek"
   },
   {
@@ -76,7 +76,7 @@
     "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/bernstein-global luxury goods hermès： the secondhand pricing tracker~may 2026-260527.pdf",
     "category": "macro_trend",
     "score": 0.9,
-    "reason": "全球奢侈品二手价格追踪，行业趋势",
+    "reason": "全球奢侈品行业二手价格追踪，属于行业趋势",
     "classifier": "deepseek"
   },
   {
@@ -86,7 +86,7 @@
     "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/bernstein-global semiconductors auto semis cycle tracker 1q26-price hikes underway as demand recovers-260528.pdf",
     "category": "macro_trend",
     "score": 0.95,
-    "reason": "全球半导体汽车芯片周期追踪，行业周期",
+    "reason": "全球半导体汽车芯片周期追踪，属于行业趋势",
     "classifier": "deepseek"
   },
   {
@@ -96,7 +96,7 @@
     "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/bernstein-qualcomm （qcom.us）： key takeaways from bernstein’s sdc-260527.pdf",
     "category": "company_stock",
     "score": 0.95,
-    "reason": "高通公司参会要点，单一公司",
+    "reason": "标题明确针对Qualcomm公司，属于个股研报",
     "classifier": "deepseek"
   },
   {
@@ -106,7 +106,7 @@
     "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/bernstein-soitec（soi.fp）： fy26 results on 27 may~testing the photonics rally-260526.pdf",
     "category": "company_stock",
     "score": 0.95,
-    "reason": "SOITEC公司业绩预览，单一公司",
+    "reason": "标题明确针对SOITEC公司，属于个股研报",
     "classifier": "deepseek"
   },
   {
@@ -116,7 +116,7 @@
     "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/bernstein-hp inc（hpq.us）fq2'26： better than feared， increasing tp to $27-260527.pdf",
     "category": "company_stock",
     "score": 0.95,
-    "reason": "HP Inc季度业绩及目标价，单一公司",
+    "reason": "标题明确针对HP Inc公司，属于个股研报",
     "classifier": "deepseek"
   },
   {
@@ -126,7 +126,7 @@
     "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/BofA-equity strategy~china：light positioning， watching catalysts~singapore investors’ feedback-260526.pdf",
     "category": "macro_trend",
     "score": 0.9,
-    "reason": "中国权益策略，市场定位与催化剂，宏观策略",
+    "reason": "中国权益策略，讨论市场定位和催化剂，属于宏观策略",
     "classifier": "deepseek"
   },
   {
@@ -136,7 +136,7 @@
     "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/bernstein-us emerging internet ebay and etsy： takeaways from bernstein's sdc-260527.pdf",
     "category": "company_stock",
     "score": 0.9,
-    "reason": "EBAY和ETSY两家公司参会要点，但明确为单一公司分析",
+    "reason": "标题提及EBAY和ETSY两家公司，但属于个股分析",
     "classifier": "deepseek"
   },
   {
@@ -146,7 +146,7 @@
     "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/BofA-japan insight： bofa strategy monthly：reassessing japan equities in the age of ai， hardware and physical assets-260526.pdf",
     "category": "macro_trend",
     "score": 0.95,
-    "reason": "日本策略月报，宏观主题",
+    "reason": "日本策略月报，讨论AI时代日本股市，属于宏观策略",
     "classifier": "deepseek"
   },
   {
@@ -156,7 +156,7 @@
     "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/citi-china auto manufacturers：weekly ev orders continually missed （18~24 may）-260526.pdf",
     "category": "macro_trend",
     "score": 0.9,
-    "reason": "中国汽车制造商周度EV订单，行业数据",
+    "reason": "中国汽车制造商周度EV订单追踪，属于行业趋势",
     "classifier": "deepseek"
   },
   {
@@ -166,7 +166,7 @@
     "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/citi-samsung electro~mechanics  （009150.ks） key beneficiary across mlcc，fc~bga，and silicon capacitor-260526.pdf",
     "category": "company_stock",
     "score": 0.95,
-    "reason": "三星电机公司受益分析，单一公司",
+    "reason": "标题明确针对Samsung Electro-Mechanics公司，属于个股研报",
     "classifier": "deepseek"
   },
   {
@@ -176,7 +176,7 @@
     "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/citi-greater china semiconductors：the new tauism： huawei’s tau scaling advances chip performance-260526.pdf",
     "category": "macro_trend",
     "score": 0.9,
-    "reason": "大中华半导体华为芯片技术进展，行业技术趋势",
+    "reason": "中国半导体行业，讨论华为技术，属于行业趋势",
     "classifier": "deepseek"
   },
   {
@@ -186,7 +186,7 @@
     "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/DB-asia chart alert：pboc is pulling out liquidity at a record pace-260526.pdf",
     "category": "macro_trend",
     "score": 0.95,
-    "reason": "亚洲图表警报：中国央行流动性操作，宏观政策",
+    "reason": "亚洲图表警报，讨论央行流动性，属于宏观政策",
     "classifier": "deepseek"
   },
   {
@@ -196,7 +196,7 @@
     "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/DB-asia chart alert：pboc is pulling out liquidity at a record pace-260526 2.pdf",
     "category": "macro_trend",
     "score": 0.95,
-    "reason": "亚洲图表警报：中国央行流动性操作，宏观政策",
+    "reason": "与id18重复，亚洲图表警报，讨论央行流动性",
     "classifier": "deepseek"
   },
   {
@@ -206,7 +206,7 @@
     "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/DB-miniso（mnso.us）1q26 review：strong revenue but margins continue to face headwinds-260527.pdf",
     "category": "company_stock",
     "score": 0.95,
-    "reason": "Miniso公司一季度回顾，单一公司",
+    "reason": "标题明确针对Miniso公司，属于个股研报",
     "classifier": "deepseek"
   },
   {
@@ -216,7 +216,7 @@
     "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/DB-xpeng（9868.hk）\"gx\" suv's competitive price fuels substantial growth in may new orders-260526.pdf",
     "category": "company_stock",
     "score": 0.95,
-    "reason": "小鹏汽车新订单增长，单一公司",
+    "reason": "标题明确针对XPeng公司，属于个股研报",
     "classifier": "deepseek"
   },
   {
@@ -226,7 +226,7 @@
     "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/DB-zscaler（zs.us）f3q~kitchen sink or sinking kitchen？-260527.pdf",
     "category": "company_stock",
     "score": 0.95,
-    "reason": "Zscaler公司季度分析，单一公司",
+    "reason": "标题明确针对Zscaler公司，属于个股研报",
     "classifier": "deepseek"
   },
   {
@@ -236,7 +236,7 @@
     "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/DB-pony.ai（pony.us）1q results beat； raise year~end robotaxi fleet size guidance to 3，500 units-260527.pdf",
     "category": "company_stock",
     "score": 0.95,
-    "reason": "Pony.ai公司业绩及指引，单一公司",
+    "reason": "标题明确针对Pony.ai公司，属于个股研报",
     "classifier": "deepseek"
   },
   {
@@ -246,7 +246,7 @@
     "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/gs-marvell technology inc. (mrvl)_ first take_ guidance above the street, with commentary pointing to uptick to fy27_28 guidance-260527.pdf",
     "category": "company_stock",
     "score": 0.95,
-    "reason": "Marvell Technology公司业绩快评，单一公司",
+    "reason": "标题明确针对Marvell Technology公司，属于个股研报",
     "classifier": "deepseek"
   },
   {
@@ -256,7 +256,7 @@
     "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/GS-cspc pharma （1093.hk）： earnings review： finished drugs back to growth in 1q； earnings dragged by api and booking of license income-260528.pdf",
     "category": "company_stock",
     "score": 0.95,
-    "reason": "CSPC Pharma公司业绩回顾，单一公司",
+    "reason": "标题明确针对CSPC Pharma公司，属于个股研报",
     "classifier": "deepseek"
   },
   {
@@ -266,7 +266,7 @@
     "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/gs-nokia (nokia.he)_ ai infrastructure build underpins upgraded optical and ip outlook-260527.pdf",
     "category": "company_stock",
     "score": 0.95,
-    "reason": "Nokia公司AI基础设施展望，单一公司",
+    "reason": "标题明确针对Nokia公司，属于个股研报",
     "classifier": "deepseek"
   },
   {
@@ -276,7 +276,7 @@
     "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/GS-china metals & mining：china coal sector~assessing potential impact to industry production and prices post recent accident-260528.pdf",
     "category": "macro_trend",
     "score": 0.9,
-    "reason": "中国煤炭行业事故影响评估，行业供需趋势",
+    "reason": "中国煤炭行业，评估事故对产量和价格影响，属于行业趋势",
     "classifier": "deepseek"
   },
   {
@@ -285,8 +285,8 @@
     "dropbox_path": "/zip_backup/260528/GS-china consumer staples value retailers：addressing key investor questions on recent competition；reiterate buy on busy ming wanchen-260528.pdf",
     "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/GS-china consumer staples value retailers：addressing key investor questions on recent competition；reiterate buy on busy ming wanchen-260528.pdf",
     "category": "macro_trend",
-    "score": 0.85,
-    "reason": "中国消费必需品价值零售商竞争问题，行业主题",
+    "score": 0.9,
+    "reason": "中国消费必需品价值零售商，讨论竞争问题，属于行业趋势",
     "classifier": "deepseek"
   },
   {
@@ -296,7 +296,7 @@
     "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/GS-china healthcare：asco 2026 preview for china pharma biotech：takeaways from abstracts-260528.pdf",
     "category": "macro_trend",
     "score": 0.9,
-    "reason": "中国医疗保健ASCO预览，行业趋势",
+    "reason": "中国医疗保健行业，ASCO预览，属于行业趋势",
     "classifier": "deepseek"
   },
   {
@@ -306,7 +306,7 @@
     "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/GS-fujitsu （6702.t）：announces business partnerships with anthropic and openai to strengthen fde product development security in~house use-260528.pdf",
     "category": "company_stock",
     "score": 0.95,
-    "reason": "富士通公司业务合作公告，单一公司",
+    "reason": "标题明确针对Fujitsu公司，属于个股研报",
     "classifier": "deepseek"
   },
   {
@@ -316,7 +316,7 @@
     "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/GS-fuji electric co. （6504.t）：strategy briefing：high likelihood of profit growth centered on energy， but valuation appeal lacking-260527.pdf",
     "category": "company_stock",
     "score": 0.95,
-    "reason": "富士电机公司战略简报，单一公司",
+    "reason": "标题明确针对Fuji Electric公司，属于个股研报",
     "classifier": "deepseek"
   },
   {
@@ -326,7 +326,7 @@
     "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/GS-china resources beer （0291.hk）： ndr highlights： full year outlook maintained， beer premiumization intact； spirits still challenging； buy-260528.pdf",
     "category": "company_stock",
     "score": 0.95,
-    "reason": "华润啤酒公司NDR要点，单一公司",
+    "reason": "标题明确针对China Resources Beer公司，属于个股研报",
     "classifier": "deepseek"
   },
   {
@@ -336,7 +336,7 @@
     "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/GS-global markets daily：the energy shock impact on foreign official treasury demand-260527.pdf",
     "category": "macro_trend",
     "score": 0.95,
-    "reason": "全球市场日报：能源冲击对国债需求影响，宏观主题",
+    "reason": "全球市场日报，讨论能源冲击对国债需求影响，属于宏观趋势",
     "classifier": "deepseek"
   },
   {
@@ -346,7 +346,7 @@
     "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/GS-kingsoft cloud （kc.us） earnings review： 1q26 beat； ai billings +90% yoy driven by xiaomi and top external customers； maas emerging as a margin~accretive growth driver； buy-260528.pdf",
     "category": "company_stock",
     "score": 0.95,
-    "reason": "金山云公司业绩回顾，单一公司",
+    "reason": "标题明确针对Kingsoft Cloud公司，属于个股研报",
     "classifier": "deepseek"
   },
   {
@@ -356,7 +356,7 @@
     "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/GS-kuaishou technology （1024.hk） earnings review： 1q26 in~line， kling upsurge should drive the narrative shift； buy-260528.pdf",
     "category": "company_stock",
     "score": 0.95,
-    "reason": "快手科技业绩回顾，单一公司",
+    "reason": "标题明确针对Kuaishou Technology公司，属于个股研报",
     "classifier": "deepseek"
   },
   {
@@ -366,7 +366,7 @@
     "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/GS-miniso （mnso.us）： ndr takeaways： membership， ip， store upgrade and mature overseas market margin improvement to mitigate macro-260527.pdf",
     "category": "company_stock",
     "score": 0.95,
-    "reason": "Miniso公司NDR要点，单一公司",
+    "reason": "标题明确针对Miniso公司，属于个股研报",
     "classifier": "deepseek"
   },
   {
@@ -376,7 +376,7 @@
     "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/GS-marvell technology inc. （mrvl.us）：uptick to medium~term guidance， with significant custom silicon opportunity in 2028-260527.pdf",
     "category": "company_stock",
     "score": 0.95,
-    "reason": "Marvell Technology公司指引上调，单一公司",
+    "reason": "标题明确针对Marvell Technology公司，属于个股研报",
     "classifier": "deepseek"
   },
   {
@@ -386,7 +386,7 @@
     "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/GS-logitech （logn.s）：key takeaways from netherlands roadshow-260528.pdf",
     "category": "company_stock",
     "score": 0.95,
-    "reason": "Logitech公司路演要点，单一公司",
+    "reason": "标题明确针对Logitech公司，属于个股研报",
     "classifier": "deepseek"
   },
   {
@@ -396,7 +396,7 @@
     "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/GS-murata mfg. （6981.t）： ceo meeting： positive on murata’s strategy and competitiveness in gaining significant share of ai mlcc； buy （on cl）-260527.pdf",
     "category": "company_stock",
     "score": 0.95,
-    "reason": "Murata公司CEO会议，单一公司",
+    "reason": "标题明确针对Murata Mfg公司，属于个股研报",
     "classifier": "deepseek"
   },
   {
@@ -406,7 +406,7 @@
     "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/GS-mitsubishi heavy industries （7011.t）： mtbp progress briefing： ito results emerging； confirmed mid~to long~term growth investment approach-260527.pdf",
     "category": "company_stock",
     "score": 0.95,
-    "reason": "三菱重工公司进展简报，单一公司",
+    "reason": "标题明确针对Mitsubishi Heavy Industries公司，属于个股研报",
     "classifier": "deepseek"
   },
   {
@@ -416,7 +416,7 @@
     "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/GS-mitsui chemicals inc. （4183.t） business briefing： new ceo structure begins， with robust plan for accelerated portfolio transformation and realization of a \"truly global specialty company”-260527.pdf",
     "category": "company_stock",
     "score": 0.95,
-    "reason": "三井化学公司业务简报，单一公司",
+    "reason": "标题明确针对Mitsui Chemicals公司，属于个股研报",
     "classifier": "deepseek"
   },
   {
@@ -426,7 +426,7 @@
     "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/GS-pdd holdings （pdd.us） 1q26 review： a step closer to its ‘costco+disney’ vision with multi~year growth runway； buy-260528.pdf",
     "category": "company_stock",
     "score": 0.95,
-    "reason": "PDD Holdings一季度回顾，单一公司",
+    "reason": "标题明确针对PDD Holdings公司，属于个股研报",
     "classifier": "deepseek"
   },
   {
@@ -436,7 +436,7 @@
     "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/GS-us consumer dashboard： may 2026： low confidence-260527.pdf",
     "category": "macro_trend",
     "score": 0.95,
-    "reason": "美国消费者仪表盘，宏观消费趋势",
+    "reason": "美国消费者仪表盘，讨论消费信心，属于宏观趋势",
     "classifier": "deepseek"
   },
   {
@@ -446,7 +446,7 @@
     "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/GS-small cap snippets：wagners （wgn； nc），favorable industry dynamics supporting growth-260528.pdf",
     "category": "company_stock",
     "score": 0.95,
-    "reason": "Wagners公司小盘股分析，单一公司",
+    "reason": "标题明确针对Wagners公司，属于个股研报",
     "classifier": "deepseek"
   },
   {
@@ -456,7 +456,7 @@
     "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/GS-yihai international holding （1579.hk）： agm takeaways： maintain dd% 3rd~party sales momentum with 2c 2b improvement； expect dd% np-260527.pdf",
     "category": "company_stock",
     "score": 0.95,
-    "reason": "颐海国际控股AGM要点，单一公司",
+    "reason": "标题明确针对Yihai International公司，属于个股研报",
     "classifier": "deepseek"
   },
   {
@@ -466,7 +466,7 @@
     "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/GS-winway technology co. （6515.tw） accelerating long~term tam growth outlook extends expansion visibility into 2030； reiterate buy and nt$15，000 tp-260526.pdf",
     "category": "company_stock",
     "score": 0.95,
-    "reason": "Winway Technology公司TAM展望，单一公司",
+    "reason": "标题明确针对Winway Technology公司，属于个股研报",
     "classifier": "deepseek"
   },
   {
@@ -476,7 +476,7 @@
     "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/hsbc-china real estate：demand reawakens： affordability at a decade~best level-260526.pdf",
     "category": "macro_trend",
     "score": 0.95,
-    "reason": "中国房地产需求复苏，行业趋势",
+    "reason": "中国房地产行业，讨论需求复苏和可负担性，属于行业趋势",
     "classifier": "deepseek"
   },
   {
@@ -486,7 +486,7 @@
     "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/hsbc-gds holdings（gds.us）buy： lower tp； lacking catalysts in the near term-260526.pdf",
     "category": "company_stock",
     "score": 0.95,
-    "reason": "GDS Holdings公司评级及目标价，单一公司",
+    "reason": "标题明确针对GDS Holdings公司，属于个股研报",
     "classifier": "deepseek"
   },
   {
@@ -496,7 +496,7 @@
     "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/hsbc-marvell technology （mrvl.us）upgrade to buy： ready to ride the ai~networking super~cycle-260526.pdf",
     "category": "company_stock",
     "score": 0.95,
-    "reason": "Marvell Technology公司评级上调，单一公司",
+    "reason": "标题明确针对Marvell Technology公司，属于个股研报",
     "classifier": "deepseek"
   },
   {
@@ -506,7 +506,7 @@
     "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/hsbc-guizhou chanhen （002895）buy： remains resilient amid sulphur inflation pressure-260526.pdf",
     "category": "company_stock",
     "score": 0.95,
-    "reason": "贵州川恒公司评级，单一公司",
+    "reason": "标题明确针对Guizhou Chanhen公司，属于个股研报",
     "classifier": "deepseek"
   },
   {
@@ -515,8 +515,8 @@
     "dropbox_path": "/zip_backup/260528/hsbc-powering ai：positive read~across from cummins and deere-260526.pdf",
     "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/hsbc-powering ai：positive read~across from cummins and deere-260526.pdf",
     "category": "macro_trend",
-    "score": 0.85,
-    "reason": "AI电力需求主题，跨公司行业趋势",
+    "score": 0.9,
+    "reason": "讨论AI电力需求，从Cummins和Deere看行业，属于行业趋势",
     "classifier": "deepseek"
   },
   {
@@ -526,7 +526,7 @@
     "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/JPM-china steel~channel checker：10~day china steel production~1% vs previous （+1% yoy）. fob iron ore prices flat since start of conflict as shipping costs rise-260526.pdf",
     "category": "macro_trend",
     "score": 0.95,
-    "reason": "中国钢铁产量及铁矿石价格，行业供需",
+    "reason": "中国钢铁行业渠道检查，讨论产量和铁矿石价格，属于行业趋势",
     "classifier": "deepseek"
   },
   {
@@ -536,7 +536,7 @@
     "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/ms-greater china semiconductors - asia pacific old memory-upside surprise  ahead-260528.pdf",
     "category": "macro_trend",
     "score": 0.9,
-    "reason": "大中华半导体存储器行业，行业趋势",
+    "reason": "中国半导体行业，讨论内存，属于行业趋势",
     "classifier": "deepseek"
   },
   {
@@ -546,7 +546,7 @@
     "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/ms-microsoft infrastructure monetization – still early days in the ai cycle-260527.pdf",
     "category": "macro_trend",
     "score": 0.9,
-    "reason": "微软基础设施货币化，AI周期主题",
+    "reason": "微软基础设施货币化，讨论AI周期，属于行业趋势",
     "classifier": "deepseek"
   },
   {
@@ -556,7 +556,7 @@
     "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/ms-soitec sa what (not) to expect into the print-260526.pdf",
     "category": "company_stock",
     "score": 0.95,
-    "reason": "Soitec SA公司业绩预期，单一公司",
+    "reason": "标题明确针对Soitec SA公司，属于个股研报",
     "classifier": "deepseek"
   },
   {
@@ -566,7 +566,7 @@
     "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/ms-greater china semiconductors double catalysts from memory expansion and huawei's t (tau)-law-260527.pdf",
     "category": "macro_trend",
     "score": 0.9,
-    "reason": "大中华半导体双重催化剂，行业趋势",
+    "reason": "中国半导体行业，讨论内存和华为技术，属于行业趋势",
     "classifier": "deepseek"
   },
   {
@@ -576,7 +576,7 @@
     "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/MS-china autos & shared mobility：china ev weekly orders – wild swings persist as a steady stream of new models steal the show-260526.pdf",
     "category": "macro_trend",
     "score": 0.9,
-    "reason": "中国电动汽车周度订单，行业数据",
+    "reason": "中国汽车和共享出行，周度EV订单追踪，属于行业趋势",
     "classifier": "deepseek"
   },
   {
@@ -586,7 +586,7 @@
     "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/MS-china free liquidity vs. msci china yoy change-260526.pdf",
     "category": "macro_trend",
     "score": 0.95,
-    "reason": "中国流动性 vs MSCI中国，宏观策略",
+    "reason": "中国自由流动性 vs MSCI中国，属于宏观策略",
     "classifier": "deepseek"
   },
   {
@@ -596,7 +596,7 @@
     "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/MS-asia economics：the viewpoint，marketing feedback – addressing questions from investors-260526.pdf",
     "category": "macro_trend",
     "score": 0.95,
-    "reason": "亚洲经济观点，宏观主题",
+    "reason": "亚洲经济观点，讨论投资者问题，属于宏观策略",
     "classifier": "deepseek"
   },
   {
@@ -606,7 +606,7 @@
     "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/MS-china materials：aluminum overproduction inspection starts， reports-260526.pdf",
     "category": "macro_trend",
     "score": 0.95,
-    "reason": "中国铝业产能检查，行业供需",
+    "reason": "中国材料行业，铝产能检查，属于行业趋势",
     "classifier": "deepseek"
   },
   {
@@ -616,7 +616,7 @@
     "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/MS-chinese urea export window opens-260526.pdf",
     "category": "macro_trend",
     "score": 0.95,
-    "reason": "中国尿素出口窗口，商品政策",
+    "reason": "中国尿素出口窗口开放，属于商品/政策趋势",
     "classifier": "deepseek"
   },
   {
@@ -626,7 +626,7 @@
     "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/MS-greater china semiconductors：pc semis： new growth drivers needed-260527.pdf",
     "category": "macro_trend",
     "score": 0.9,
-    "reason": "大中华半导体PC半导体，行业趋势",
+    "reason": "中国半导体行业，PC半导体，属于行业趋势",
     "classifier": "deepseek"
   },
   {
@@ -636,7 +636,7 @@
     "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/MS-large cap banks：how did gsib scores trend in 1q26？-260527.pdf",
     "category": "macro_trend",
     "score": 0.9,
-    "reason": "大型银行GSIB评分趋势，行业分析",
+    "reason": "大型银行，讨论GSIB评分趋势，属于行业趋势",
     "classifier": "deepseek"
   },
   {
@@ -646,7 +646,7 @@
     "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/MS-mao geping（1318.hk）a win~win opportunity-260526.pdf",
     "category": "company_stock",
     "score": 0.95,
-    "reason": "毛戈平公司机会分析，单一公司",
+    "reason": "标题明确针对Mao Geping公司，属于个股研报",
     "classifier": "deepseek"
   },
   {
@@ -656,7 +656,7 @@
     "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/MS-machine tools： apr 2026 confirmed orders：china recovers to record levels，sharp domestic expansion led by autos & electrical-260526.pdf",
     "category": "macro_trend",
     "score": 0.95,
-    "reason": "机床订单数据，行业趋势",
+    "reason": "机床行业，讨论中国订单恢复，属于行业趋势",
     "classifier": "deepseek"
   },
   {
@@ -666,7 +666,7 @@
     "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/MS-soitec sa（soit.pa） decent print and stronger guide； hidden gem is photonics growth-260527.pdf",
     "category": "company_stock",
     "score": 0.95,
-    "reason": "Soitec SA公司业绩及指引，单一公司",
+    "reason": "标题明确针对Soitec SA公司，属于个股研报",
     "classifier": "deepseek"
   },
   {
@@ -676,7 +676,7 @@
     "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/MS-tesla inc（tsla.us）our guide to robotaxi safety data： early signals from austin-260527.pdf",
     "category": "company_stock",
     "score": 0.95,
-    "reason": "特斯拉公司Robotaxi安全数据，单一公司",
+    "reason": "标题明确针对Tesla Inc公司，属于个股研报",
     "classifier": "deepseek"
   },
   {
@@ -686,7 +686,7 @@
     "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/MS-semtech corp.（smtc.us）optical momentum accelerates-260527.pdf",
     "category": "company_stock",
     "score": 0.95,
-    "reason": "Semtech公司光学动量，单一公司",
+    "reason": "标题明确针对Semtech Corp公司，属于个股研报",
     "classifier": "deepseek"
   },
   {
@@ -696,7 +696,7 @@
     "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/MS-tongcheng travel holdings （0780.hk）1q26 post earnings ndr takeaways-260526.pdf",
     "category": "company_stock",
     "score": 0.95,
-    "reason": "同程旅行NDR要点，单一公司",
+    "reason": "标题明确针对Tongcheng Travel公司，属于个股研报",
     "classifier": "deepseek"
   },
   {
@@ -706,7 +706,7 @@
     "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/MS-winway technology co ltd（6515.tw）aggressive expansion plans support strong revenue visibility； stay ow-260526.pdf",
     "category": "company_stock",
     "score": 0.95,
-    "reason": "WinWay Technology公司扩张计划，单一公司",
+    "reason": "标题明确针对WinWay Technology公司，属于个股研报",
     "classifier": "deepseek"
   },
   {
@@ -716,7 +716,7 @@
     "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/MS-the viewpoint： is asia’s macro story all about semis？-260520.pdf",
     "category": "macro_trend",
     "score": 0.95,
-    "reason": "亚洲宏观故事是否全在半导体，宏观主题",
+    "reason": "亚洲宏观故事是否全是半导体，属于宏观策略",
     "classifier": "deepseek"
   },
   {
@@ -726,7 +726,7 @@
     "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/NOM-china power equipment：riding the global power equipment supercycle-260527.pdf",
     "category": "macro_trend",
     "score": 0.95,
-    "reason": "中国电力设备超级周期，行业趋势",
+    "reason": "中国电力设备行业，讨论全球超级周期，属于行业趋势",
     "classifier": "deepseek"
   },
   {
@@ -736,7 +736,7 @@
     "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/MS-xiaomi corp（1810.hk）1q26： smartphone + aiot margin beat vs. ev loss； sequential recovery highly likely in 2q26-260526.pdf",
     "category": "company_stock",
     "score": 0.95,
-    "reason": "小米集团一季度业绩，单一公司",
+    "reason": "标题明确针对Xiaomi Corp公司，属于个股研报",
     "classifier": "deepseek"
   },
   {
@@ -746,7 +746,7 @@
     "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/NOM-china healthcare：2026 asco： highlights from covered companies-260527.pdf",
     "category": "macro_trend",
     "score": 0.9,
-    "reason": "中国医疗保健ASCO亮点，行业趋势",
+    "reason": "中国医疗保健行业，ASCO亮点，属于行业趋势",
     "classifier": "deepseek"
   },
   {
@@ -756,7 +756,7 @@
     "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/NOM-himile（002595）three core businesses to sustain steady growth-260527.pdf",
     "category": "company_stock",
     "score": 0.95,
-    "reason": "Himile公司核心业务增长，单一公司",
+    "reason": "标题明确针对Himile公司，属于个股研报",
     "classifier": "deepseek"
   },
   {
@@ -766,7 +766,7 @@
     "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/NOM-india metal：aluminium： china shutdown fears lift prices-260527.pdf",
     "category": "macro_trend",
     "score": 0.95,
-    "reason": "印度金属铝价受中国影响，行业供需",
+    "reason": "印度金属行业，铝价受中国影响，属于行业趋势",
     "classifier": "deepseek"
   },
   {
@@ -776,7 +776,7 @@
     "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/NOM-global ai trend tracker：google’s next~gen ai network for tpuv8t   v8i...-260527.pdf",
     "category": "macro_trend",
     "score": 0.9,
-    "reason": "全球AI趋势追踪，行业技术趋势",
+    "reason": "全球AI趋势追踪，讨论谷歌网络，属于行业趋势",
     "classifier": "deepseek"
   },
   {
@@ -786,7 +786,7 @@
     "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/NOM-kingsoft cloud （3896.hk）strong top~line growth， but gpm decline a warning sign-260527.pdf",
     "category": "company_stock",
     "score": 0.95,
-    "reason": "金山云公司业绩分析，单一公司",
+    "reason": "标题明确针对Kingsoft Cloud公司，属于个股研报",
     "classifier": "deepseek"
   },
   {
@@ -796,7 +796,7 @@
     "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/NOM-kingsoft（3888.hk）another weak quarter on gaming， partially offset by software-260527.pdf",
     "category": "company_stock",
     "score": 0.95,
-    "reason": "金山软件公司季度分析，单一公司",
+    "reason": "标题明确针对Kingsoft公司，属于个股研报",
     "classifier": "deepseek"
   },
   {
@@ -806,7 +806,7 @@
     "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/NOM-jinpan smart technology （688676）ai data center demand to extend growth runway-260527.pdf",
     "category": "company_stock",
     "score": 0.95,
-    "reason": "金盘智能科技公司增长，单一公司",
+    "reason": "标题明确针对Jinpan Smart Technology公司，属于个股研报",
     "classifier": "deepseek"
   },
   {
@@ -816,7 +816,7 @@
     "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/NOM-pharmaron（3759.hk）cny5bn capex to expand cdmo capacity-260527.pdf",
     "category": "company_stock",
     "score": 0.95,
-    "reason": "康龙化成公司资本开支，单一公司",
+    "reason": "标题明确针对Pharmaron公司，属于个股研报",
     "classifier": "deepseek"
   },
   {
@@ -826,7 +826,7 @@
     "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/NOM-pdd holdings（pdd.us）weak china e~commerce， resilient temu-260528.pdf",
     "category": "company_stock",
     "score": 0.95,
-    "reason": "PDD Holdings电商分析，单一公司",
+    "reason": "标题明确针对PDD Holdings公司，属于个股研报",
     "classifier": "deepseek"
   },
   {
@@ -836,7 +836,7 @@
     "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/NOM-kuaishou technology（1024.hk）mixed 1q， lower 2q guidance-260528.pdf",
     "category": "company_stock",
     "score": 0.95,
-    "reason": "快手科技季度业绩，单一公司",
+    "reason": "标题明确针对Kuaishou Technology公司，属于个股研报",
     "classifier": "deepseek"
   },
   {
@@ -846,7 +846,7 @@
     "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/NOM-shemar electric（603530）composite insulator leader rides grid upcycle-260527.pdf",
     "category": "company_stock",
     "score": 0.95,
-    "reason": "神马电力公司电网周期受益，单一公司",
+    "reason": "标题明确针对Shemar Electric公司，属于个股研报",
     "classifier": "deepseek"
   }
 ]
