@@ -1,0 +1,792 @@
+# China Semiconductors
+
+# China Semicap: 2025 WFE Competitive dynamics in China
+
+![](images/f2aeb03d98de063ebb31e70253a1f7d5e0fea68cc78b1b7b1c62cf2c89ea1112.jpg)
+
+Qingyuan Lin, Ph.D.
+
++852 2123 2654
+
+qingyuan.lin@bernsteinsg.com
+
+![](images/a34181e66c87defe1c1cfd3c82acb5e9f2a283371c6b0a7792175ccff7aae435.jpg)
+
+Stacy A. Rasgon, Ph.D.
+
++1 213 559 5917
+
+stacy.rasgon@bernsteinsg.com
+
+![](images/27333f3a6ef1b5c5b086bf179df894e52067f13fc88c218da7f168a34f712e68.jpg)
+
+David Dai, CFA
+
++852 2918 5704
+
+david.dai@bernsteinsg.com
+
+![](images/b75af4b8198a908aa61f4d1feac26db8947aafff0f9f53a54c680359407d333c.jpg)
+
+Zheng Cui
+
++852 2123 2694
+
+zheng.cui@bernsteinsg.com
+
+![](images/32d9b95cc8bd546265fcaf2d3fddb043608dc09e9fce504d0fc3f72333738b46.jpg)
+
+Francis Ma
+
++852 2123 2626
+
+francis.ma@bernsteinsg.com
+
+![](images/f3eccb85c2e0b0b060e10ed3fc19ac65e259876cada1228e4005515f19ddafd3.jpg)
+
+Alrick Shaw
+
++1 917 344 8454
+
+alrick.shaw@bernsteinsg.com
+
+![](images/00ac38ed916595b22e73e474716c2b6be5b74366e66239a108356b2e6f1c76ee.jpg)
+
+Arpad von Nemes
+
++1 917 344 8461
+
+arpad.vonnemes@bernsteinsg.com
+
+![](images/d14785876392ecca02bb68c6b5b797dba61d58253267d801c43ede6f482e95d6.jpg)
+
+Carmine Milano, CFA
+
++44 20 7762 1857
+
+carmine.milano@bernsteinsg.com
+
+![](images/17a9c40e30b826dcd1c03099160914fd91cd5131488f4ec20fc0939c39d9d116.jpg)
+
+Juho Hwang
+
++852 2123 2632
+
+juho.hwang@bernsteinsg.com
+
+![](images/71a838771c4bc951ce652dcbc32209563c953c69317f7dab57ebac17b206188d.jpg)
+
+Jack Lin
+
++852 2123 2683
+
+jack.lin@bernsteinsg.com
+
+We track the WFE competitive dynamics in China annually (2023, 2024); in this call we refresh the numbers for 2025. Overall localization ratio rose from 16% in 2024 to 21% in 2025; Deposition, Doping and Process Control made the best progress in growth. Lithography and Track remain the two sectors with the lowest localization ratios.
+
+In our latest China WFE model update (report and model), we estimated that China's WFE self-sufficiency reached 21% in 2025 (Exhibit 2). Dry Etch and Deposition are still the two most important segments for local vendors, the localization ratio reached 31%/27% (Exhibit 3), supported by strong YoY growth at 37%/67% (Exhibit 4), respectively. The progress on Doping/Process Control was better than expected with 86%/63% YoY growth for local players, self-sufficiency reached 13/10%, above 10% for the first time. Lithography/Track still didn't make much progress with LSD self-sufficiency. Cleaning was growing surprisingly slow at only 8% YoY. Thermo Processing and CMP achieved decent YoY growth at 43%/33% respectively.
+
+Among local players, AMEC/NAURA are gaining share in Deposition, and NAURA is expanding market presence in Doping (Exhibit 5). Comparing 2025 share to 2024, NAURA further expanded share in Deposition from 64% to 65%, and AMEC also expanded from 1% to 3%, while Piotech/ACMR slightly lost share with delay in revenue recognition. NAURA recognized doping revenue for the first year and is already the second-largest local player in the sector with 27% share. Within Dry Etch, AMEC/NAURA shares are stable at 47%/48%. The dynamics within other sectors remain largely unchanged.
+
+Most global vendors' growth in China slowed in 2025 (Exhibit 11), with LRCX the only exception at $+36\%$ YoY. From 2018-24, ASML/KLAC's China revenue captured strong growth at $32\% / 28\%$ CAGR, but in 2025 the revenue was down HSD YoY, indicating that there is indeed some pull forwards as the competition from local players was very limited. Comparing TEL/AMAT/LRCX where the competition with Chinese vendors in Deposition/Dry Etch is more intense, between 2018-24 clearly TEL benefited more than AMAT/LRCX as the priority for local fabs is to de-Americanize rather than fully localize, with 2018-24 CAGR at $25\% / 12\% / 15\%$ , respectively. However, interestingly LRCX revenue in 2025 was up $36\%$ YoY with TEL/AMAT at $-20\% / -12\%$ , we believe it's mainly due to the customer mix change, as the incremental demand in 2025 was mainly advanced logic where LRCX has higher share (most Dry Etch tools are not banned). Looking beyond 2025, we expect global vendors' exposure in China will further normalize as non-China demand is growing faster, and local players could accelerate share gain given the pull-forward from the global players slowed down.
+
+Maintain Outperform on NAURA, AMEC, Piotech. Within our coverage, as Deposition / Dry Etch segments have large TAM and self-sufficiency is still accelerating, we still like all three that benefits from the irreversible localization trend. We believe the share gain story will be a multi-year runway given the certainty of domestic fab expansion. Recently the local memory customers have significantly revised up their plan on capacity expansion for the next few years due to the memory supercycle, and we believe advanced logic will also accelerate capacity expansion given the surge in demand for local AI chips.
+
+BERNSTEIN TICKER TABLE 
+
+<table><tr><td rowspan="2">Ticker</td><td rowspan="2">Rating</td><td rowspan="2">Cur</td><td rowspan="2">27 May 2026 Closing Price</td><td rowspan="2">Price Target</td><td rowspan="2">TTM Rel. Perf.</td><td colspan="4">Reported EPS</td><td colspan="3">Reported P/E (x)</td></tr><tr><td>Cur</td><td>2025A</td><td>2026E</td><td>2027E</td><td>2025A</td><td>2026E</td><td>2027E</td></tr><tr><td>688012.CH (AMEC)</td><td>O</td><td>CNY</td><td>455.05</td><td>500.00</td><td>120.0%</td><td>CNY</td><td>3.40</td><td>4.95</td><td>7.18</td><td>133.8</td><td>92.0</td><td>63.3</td></tr><tr><td>002371.CH (NAURA)</td><td>O</td><td>CNY</td><td>654.77</td><td>680.00</td><td>65.6%</td><td>CNY</td><td>5.66</td><td>10.22</td><td>16.41</td><td>115.6</td><td>64.1</td><td>39.9</td></tr><tr><td>688072.CH (Piotech)</td><td>O</td><td>CNY</td><td>667.00</td><td>580.00</td><td>312.9%</td><td>CNY</td><td>3.32</td><td>8.12</td><td>12.40</td><td>200.9</td><td>82.1</td><td>53.8</td></tr><tr><td>8035.JP (Tokyo Electron)</td><td>O</td><td>JPY</td><td>52,500</td><td>59,200</td><td>83.9%</td><td>JPY</td><td>1,250.88</td><td>1,504.14</td><td>1,848.77</td><td>42.0</td><td>34.9</td><td>28.4</td></tr><tr><td>AMAT (Applied Materials)</td><td>O</td><td>USD</td><td>454.89</td><td>525.00</td><td>148.2%</td><td>USD</td><td>9.42</td><td>12.17</td><td>15.56</td><td>48.3</td><td>37.4</td><td>29.2</td></tr><tr><td>LRCX (Lam Research)</td><td>O</td><td>USD</td><td>322.68</td><td>340.00</td><td>249.8%</td><td>USD</td><td>4.14</td><td>5.68</td><td>7.98</td><td>78.0</td><td>56.8</td><td>40.4</td></tr><tr><td>6525.JP (Kokusai)</td><td>O</td><td>JPY</td><td>7,770.00</td><td>8,240.00</td><td>107.0%</td><td>JPY</td><td>128.63</td><td>200.23</td><td>274.61</td><td>60.4</td><td>38.8</td><td>28.3</td></tr><tr><td>6146.JP (DISCO)</td><td>O</td><td>JPY</td><td>67,630</td><td>85,000</td><td>58.9%</td><td>JPY</td><td>1,246.28</td><td>1,733.62</td><td>2,127.33</td><td>54.3</td><td>39.0</td><td>31.8</td></tr><tr><td>6857.JP (Advantest)</td><td>O</td><td>JPY</td><td>27,130</td><td>39,200</td><td>231.2%</td><td>JPY</td><td>534.21</td><td>735.65</td><td>870.09</td><td>50.8</td><td>36.9</td><td>31.2</td></tr><tr><td>7735.JP (Screen)</td><td>M</td><td>JPY</td><td>11,220</td><td>12,600</td><td>70.5%</td><td>JPY</td><td>486.61</td><td>572.60</td><td>662.24</td><td>23.1</td><td>19.6</td><td>16.9</td></tr><tr><td>6920.JP (Lasertec)</td><td>O</td><td>JPY</td><td>41,530</td><td>50,000</td><td>134.1%</td><td>JPY</td><td>937.82</td><td>893.18</td><td>976.61</td><td>44.3</td><td>46.5</td><td>42.5</td></tr><tr><td>ASML.NA (ASML)</td><td>O</td><td>EUR</td><td>1,376.40</td><td>1,700.00</td><td>92.1%</td><td>EUR</td><td>24.72</td><td>32.69</td><td>46.98</td><td>55.7</td><td>42.1</td><td>29.3</td></tr><tr><td>ASML (ASML)</td><td>O</td><td>USD</td><td>1,632.03</td><td>1,971.00</td><td>83.9%</td><td>USD</td><td>27.95</td><td>36.96</td><td>53.13</td><td>50.3</td><td>38.0</td><td>26.4</td></tr><tr><td>ASIAX</td><td></td><td></td><td>1,997.51</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>JPL</td><td></td><td></td><td>2,551.66</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>SPX</td><td></td><td></td><td>7,520.36</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>EDME</td><td></td><td></td><td>1,556.49</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr></table>
+
+O - Outperform, M - Market-Perform, U - Underperform, NR - Not Rated, CS - Coverage Suspended   
+AMAT, LRCX estimate is Adjusted EPS; AMAT, LRCX valuation is Adjusted P/E (x);   
+Source: Bloomberg, Bernstein estimates and analysis.
+
+# INVESTMENT IMPLICATIONS
+
+NAURA (Outperform, CNY 680.00): As the domestic WFE leader, NAURA has the broadest product portfolio covering Deposition (PVD, CVD), Dry Etch (ICP), Thermo Processes, and Cleaning, as well as a more diverse client base covering leading logic, DRAM, NAND players, benefiting from the WFE domestic substitution in China with acceleration share gain.
+
+AMEC (Outperform, CNY 500.00): Primarily focused on Dry Etch (CCP, ICP) with rapid expansion in Deposition (ALD, LPCVD, EPI), commonly perceived as the domestic WFE company with the best technology and widest global recognition, continue to benefit from the WFE domestic substitution in China with acceleration share gain.
+
+Piotech (Outperform, CNY 580.00): Rising domestic WFE vendor primarily focused on Deposition (PECVD, HDPCVD, SACVD, ALD) with expansion in W2W and C2W hybrid bonding equipment for advanced packaging. Piotech has a strong track record of product innovation, which should allow it to benefit from the WFE domestic substitution in China with acceleration share gain.
+
+Tokyo Electron (Outperform, ¥59,200): TEL is the #4 SPE supplier globally and the biggest Japanese SPE supplier with major presence in 6 product segments. It is expected to gain share and expand margins with competitive pricing after yen depreciation.
+
+Kokusai (Outperform, ¥8,240.00): Batch ALD should see more adoption in advanced nodes especially GAA (gate-all-around). The biggest use of batch ALD is in NAND, and NAND capex recovery is accelerating.
+
+Screen (Market-Perform, ¥12,600): Cleaning intensity is not increasing, and the market is competitive with both global rivals (TEL, Lam) and Chinese (ACMR, Naura). Potential upside from panel level packaging is worth watching.
+
+AMAT (Outperform, \$525.00): We maintain a positive view on secular WFE growth and see a number of drivers for AMAT including SAM growth, an increasing services narrative, and capital return.
+
+LRCX (Outperform, \$340.00): CY25 commentary seems supportive, and a NAND upgrade cycle may be starting.
+
+ASML (Outperform, EUR 1,700.00): We rate ASML Outperform.
+
+# DETAILS
+
+In our competitive dynamics report last year (China Semicap: 2024 WFE Competitive dynamics in China), we provided a cross-section view on China Semicap progress and an in-depth analysis of individual Chinese WFE vendors. In this report, we refresh our data to 2025 and offer our latest insights on the competitive dynamics shift within China.
+
+2025 was another record-high year for China's WFE demand, reaching \$50bn (accounting for 41% of the global TAM of \$122bn, Exhibit 1). Domestic substitution continued at a remarkably fast pace, driving the overall localization ratio to rise from 16% in 2024 to 21% in 2025 (Exhibit 2). We highlight that while there was pull-forward demand in the 2023 and 2024 China total WFE numbers, the accelerated share gains by domestic vendors represent genuine technological and commercial breakthroughs. Looking into 2026 and 2027, we expect domestic vendors to continue outgrowing their global peers, ensuring that the rapid share shift remains a multi-year secular trend.
+
+EXHIBIT 1: Global WFE: China demand expected to be weaker while non-China could still go up in 2025   
+![](images/8305ba4b43621c8b84169d3ccdd41e9c7e23f67738777d559d38218fa56aebad.jpg)
+
+<details>
+<summary>bar_stacked</summary>
+
+Global & China Wafer Fab Equipment (WFE) TAM USD bn
+| Year | Total Revenue (USD bn) | China Demand (USD bn) | RoW Demand (%) | Global TAM CAGR (%) |
+| :--- | :--- | :--- | :--- | :--- |
+| 2017 | 51 | 44 | 13 | |
+| 2018 | 59 | 47 | 20 | |
+| 2019 | 54 | 40 | 26 | |
+| 2020 | 64 | 47 | 26 | +12% |
+| 2021 | 92 | 68 | 26 | |
+| 2022 | 97 | 72 | 26 | |
+| 2023 | 97 | 61 | 38 | |
+| 2024 | 110 | 65 | 41 | +18% |
+| 2025E | 122 | 72 | 41 | |
+| 2026E | 148 | 90 | 39 | |
+| 2027E | 175 | 108 | 38 | |
+| 2028E | 198 | 121 | 39 | |
+China TAM Share: Total Revenue (USD bn) |
+| China TAM Share: Total Revenue (USD bn) |
+| China TAM Share: China Demand (%) |
+| China TAM Share: China Demand (%) |
+| RoW Demand: China Demand (%) |
+| RoW Demand: China Demand (%) |
+| RoW Demand: China Demand (%) |
+| RoW Demand: China Demand (%) |
+| RoW Demand: China Demand (%) |
+| RoW Demand: China Demand (%) |
+| RoW Demand: China Demand (%) |
+| RoW Demand: China Demand (%) |
+| RoW Demand: China Demand (%) |
+| RoW Demand: China Demand (%) |
+| RoW Demand: China Demand (%) |
+| RoW Demand (China Demand) (%) |
+| RoW Demand (China Demand) (%) |
+| RoW Demand (China Demand) (%) |
+| RoW Demand (China Demand) (%) |
+| RoW Demand (China Demand) (%) |
+| RoW Demand (China Demand) (%) |
+| RoW Demand (China Demand) (%) |
+| RoW Demand (China Demand) (%) |
+| RoW Demand (China Demand) (%) |
+| RoW Demand (China Demand) (%) |
+| RoW Demand (China Demand)
+China TAM Share: Total Revenue (USD bn) |
+| China TAM Share: Total Revenue (USD bn) |
+| China TAM Share: China Demand (%) |
+| China TAM Share: China Demand (%) |
+| China TAM Share: China Demand (%) |
+| China TAM Share: China Demand (%) |
+| China TAM Share: China Demand (%) |
+| China TAM Share: China Demand (%) |
+| China TAM Share: China Demand (%) |
+| China TAM Share: China Demand (%) |
+| China TAM Share: China Demand (%) |
+| China TAM Share: China Demand (%) |
+| China TAM Share: China Demand (%) |
+| China TAM Share: China Demand (%) | China TAM Share: China Demand (%) |
+| China TAM Share: China Demand (%) |
+| China TAM Share: China Demand (%) |
+| China TAM Share: China Demand (%) |
+| China TAM Share: China Demand (%) |
+| China TAM Share: China Demand (%) |
+| China TAM Share: China Demand (%) |
+| China TAM Share: China Demand (%) |
+| China TAM Share: China Demand (%) |
+| China TAM Share: China Demand (%) |
+| China TAM Share: China Demand (%) |
+| Chinese TAM Share: China Demand (%) |
+| Chinese TAM Share: China Demand (%) |
+| Chinese TAM Share: China Demand (%) |
+| Chinese TAM Share: China Demand (%) |
+| Chinese TAM Share: China Demand (%) |
+| Chinese TAM Share: China Demand (%) |
+| Chinese TAM Share: China Demand (%) |
+| Chinese TAM Share: China Demand (%) |
+| Chinese TAM Share: China Demand (%) |
+| Chinese TAM Share: China Demand (%) |
+| Chinese TAM Share: China Demand (%) |
+| Chinese India / USA / EU / Mexico / Canada / Russia / Mexico / Turkey / South Africa / North Africa / South Korea / Australia / Canada / Mexico / Argentina / Spain / Chile / Turkey / Mexico / Turkey / Canada / Mexico / Brazil / Mexico / Chile / Peru / Mexico / Chile / Venezuela / Mexico / Venezuela / Venezuela / Venezuela / Venezuela / Venezuela / Venezuela / Venezuela / Venezuela / Venezuela / Venezuela / Venezuela / Venezuela / Venezuela / Venezuela / Venezuela / Venezuela / Venezuela / Venezuela / Venezuela / Venezuela / Venezuela / Venezuela / Venezuela / Venezuela / Venezuela / Venezuela / Venezuela / Venezuela / Venezuela / Venezuela / Venezuela / Venezuela / Venezuela / Venezuela / Venezuela / Venezuela / Venezuela / Venezuela / Venezuela / Venezuela / Venezuela / Venezuela / Venezuela / Venezuela / Venezuela / Venezuela / Venezuela / Venezuela / Venezuela / Venezuela / Ecuador, Ecuador, Ecuador, Ecuador, Ecuador, Ecuador, Ecuador, Ecuador, Ecuador, Ecuador, Ecuador, Ecuador, Ecuador, Ecuador, Ecuador, Ecuador, Ecuador, Ecuador, Ecuador, Ecuador, Ecuador, Ecuador, Ecuador, Ecuador, Ecuador, Ecuador, Ecuador, Ecuador, Ecuador, Ecuador, Ecuador, Ecuador, Ecuador, Ecuador, Ecuador, Ecuador, Ecuador, Ecuador, Ecuador, Ecuador, Ecuador, Ecuador, Ecuador, Ecuador, Ecuador, Ecuador, Ecuador, Ecuador, Ecuador, Ecuador, Ecuador/ Ecuador, Ecuador/ Ecuador/ Ecuador/ Ecuador/ Ecuador/ Ecuador/ Ecuador/ Ecuador/ Ecuador/ Ecuador/ Ecuador/ Ecuador/ Ecuador/ Ecuador/ Ecuador/ Ecuador/ Ecuador/ Ecuador/ Ecuador/ Ecuador/ Ecuador/ Ecuador/ Ecuador/ Ecuador/ Ecuador/ Ecuador/ Ecuador/ Ecuador/ Ecuador/ Ecuador/ Ecuador/ Ecuador/ Ecuador/ Ecuador/ Ecuador/ Ecuador/ Ecuador/ Ecuador/ Ecuador/ Ecuador/ Ecuador/ Ecuador/ Ecuador/ Ecuador/ Ecuador/ Ecuador/ Ecuador/ Ecuador/ Ecuador/ Ecuador/ Ecuador, Ecuador/ Ecuador/ Ecuador/ Ecuador/ Ecuador/ Ecuador/ Ecuador/ Ecuador/ Ecuador/ Ecuador/ Ecuador/ Ecuador/ Ecuador/ Ecuador/ Ecuador/ Ecuador/ Ecuador/ Ecuador/ Ecuador/ Ecuador/ Ecuador/ Ecuador/ Ecuador/ Ecuador/ Ecuador/ Ecuador/ Ecuador/ Ecuador/ Ecuador/ Ecuador/ Ecuador/ Ecuador/ Ecuador/ Ecuador/ Ecuador/ Ecuador/ Ecuador/ Ecuador/ Ecuador/ Ecuador/ Ecuador/ Ecuador/ Ecuador/ Ecuador/ Ecuador/ Ecuador/ Ecuador/ Ecuador, Ecuador/ Ecuador, Ecuador/ Ecuador, Ecuador/ Ecuador, Ecuador/ Ecuador, Ecuador/ Ecuador, Ecuador/ Ecuador, Ecuador/ Ecuador, Ecuador/ Ecuador, Ecuador/ Ecuador, Ecuador/ Ecuador, Ecuador/ Ecuador, Ecuador/ Ecuador, Ecuador/ Ecuador, Ecuador/ Ecuador, Ecuador/ Ecuador, Ecuador/ Ecuador, Ecuador/ Ecuador, Ecuador/ Ecuador, Ecuador, Ecuador/Ecuador/Ecuador/Ecuador/Ecuador/Ecuador/Ecuador/Ecuador/Ecuador/Ecuador/Ecuador/Ecuador/Ecuador/Ecuador/Ecuador/Ecuador/Ecuador/Ecuador/Ecuador/Ecuador/Ecuador/Ecuador/Ecuador/Ecuador/Ecuador/Ecuador/Ecuador/Ecuador/Ecuador/Ecuador/Ecuador/Ecuador/Ecuador/Ecuador/Ecuador/Ecuador/Ecuador/Ecuador/Ecuador/Ecuador/Ecuador/Ecuador/Ecuador/Ecuador/Ecuador/Ecuador/Ecuador/Ecuador/Ecuador/Ecuador/Ecuador/Eanco/Eanco/Eturo/Eturo/Eturo/Eturo/Eturo/Eturo/Eturo/Eturo/Eturo/Eturo/Eturo/Eturo/Eturo/Eturo/Eturo/Eturo/Eturo/Eturo/Eturo/Eturo/Eturo/Eturo/Eturo/Eturo/Eturo/Eturo/Eturo/Eturo/Eturo/Eturo/Eturo/Eturo/Eturo/Eturo(Eturo) Etc/Ac/Ac/Ac/Ac/Ac/Ac/Ac/Ac/Ac/Ac/Ac/Ac/Ac/Ac/Ac/Ac/Ac/Ac/Ac/Ac/Ac/Ac/Ac/Ac/Ac/Ac/Ac/Ac/Ac/Ac/Ac/Ac/Ac/Ac/Ac/Ac/Ac/Ac/Ac/Ac/Ac/Ac/Ac/Ac/Ac/Ac/Ac/Ac/Ac/Ac/Acc/Acc/Acc/Acc/Acc/Acc/Acc/Acc/Acc/Acc/Acc/Acc/Acc/Acc/Acc/Acc/Acc/Acc/Acc/Acc/Acc/Acc/Acc/Acc/Acc/Acc/Acc/Acc/Acc/Acc/Acc/Acc/Acc/Acc/Acc/Acc/Acc/Acc/Acc/Acc/Acc/Acc/Acc/Acc/Acc/Acc/Acc/Acc/Acc/Acc/Accc/Acc/Acc/Acc/Acc/Acc/Acc/Acc/Acc/Acc/Acc/Acc/Acc/Acc/Acc/Acc/Acc/Acc/Acc/Acc/Acc/Acc/Acc/Acc/Acc/Acc/Acc/Acc/Acc/Acc/Acc/Acc/Acc/Acc/Acc/Acc/Acc/Acc/Acc/Acc/Acc/Acc/Acc/Acc/Acc/Acc/Acc/Acc/Acc/Acc/Agcc-Acc/Acc/Acc/Acc/Acc/Acc/Acc/Acc/Acc/Acc/Acc/Acc/Acc/Acc/Acc/Acc/Acc/Acc/Acc/Acc/Acc/Acc/Acc/Acc(Acc/Oce)/Aca/Oce/SOCC/DAC/DAC/DAC/DAC/DAC/DAC/DAC/DAC/DAC/DAC/DAC/DAC/DAC/DAC/DAC/DAC/DAC/DAC/DAC/DAC/DAC/DAC/DAC/DAC/DAC/DAC/DAC/DAC/DAC/DAC/DAC/DAC/DAC/DAC/DAC/DAC/DAC/DAC/DAC/DAC/DAC/DAC/DAC/DAC/DAC/DAC/DAC/DAC/DAC/DAC/DAS DAS DAS DAS DAS DAS DAS DAS DAS DAS DAS DAS DAS DAS DAS DAS DAS DAS DAS DAS DAS DAS DAS DAS DAS DAS DAS DAS DAS DAS DAS DAS DAS DAS DAS DAS DAS DAS DAS DAS DAS DAS DAS DAS DAS DAS DAS DAS DAS DAS DAS Etc A/c A/c A/c A/c A/c A/c A/c A/c A/c A/c A/c A/c A/c A/c A/c A/c A/c A/c A/c A/c A/c A/c A/c A/c A/c A/c A/c A/c A/c A/c A/c A/c A/c A/c A/c A/c A/c A/c A/c A/c A/c A/c A/c A/c A/c A/c A/c A/c A/c A/c A/C A/c A/c A/c A/c A/c A/c A/c A/c A/c A/c A/c A/c A/c A/c A/c A/c A/c A/c A/c A/c A/c A/c A/c A/c A/c A/c A/c A/c A/c A/c A/c A/c A/c A/c A/c A/c A/c A/c A/c A/c A/c A/c A/c A/c A/c A/c A/c A/c A/c A/moA/moA/moA/moA/moA/moA/moA/moA/moA/moA/moA/moA/moA/moA/moA/moA/moA/moA/moA/moA/moA/moA/moA/moA/moA/moA/moA/moA/moA/moA/moA/moA/moA/moA/bocA/bocA/bocA/bocA/bocA/bocA/bocA/bocA/bocA/bocA/bocA/bocA/bocA/bocA/bocA/bocA/bocA/bocA/bocA/bocA/bocA/bocA/bocA/bocA/bocA/bocA/bocA/bocA/bocA/bocA/bocA/bocA/bocA/boc<fcel>China TAM Share: Total Revenue (USD bn) | China TAM Share: Total Revenue (USD bn) | China TAM Share: Total Revenue (USD bn) | Total Revenue (USD bn) | Total Revenue (USD bn) | Total Revenue (USD bn) | Total Revenue (USD bn) | Total Revenue (USD bn) | Total Revenue (USD bn) | Total Revenue (USD bn) | Total Revenue (USD bn) | Total Revenue (USD bn) | Total Revenue (USD bn) | Total Revenue (USD bn) | Total Revenue (USD bn) | Total Revenue (USD bn) | Total Revenue (USD bn) | Total Revenues ($bn)<nl>
+</details>
+
+Source: Gartner, SEMI, Bernstein estimates and analysis
+
+EXHIBIT 2: China WFE: Acceleration in domestic substitution continues, expect the self-sufficiency to reach 26% by 2026   
+China Wafer Fab Equipment (WFE) TAM and Domestic Share USD bn   
+![](images/d4ad831fb04d9b5becc664bec397a250698f2da33e47533fd7fd537e5fc2c941.jpg)
+
+<details>
+<summary>bar_line</summary>
+
+| Year | Total (USD bn) | Domestic supplier share (%) | Self-sufficiency (Domestic Share) (%) |
+| :--- | :--- | :--- | :--- |
+| 2017 | 7 | 6 | 4 |
+| 2018 | 12 | 11 | 3 |
+| 2019 | 14 | 13 | 4 |
+| 2020 | 17 | 16 | 6 |
+| 2021 | 23 | 22 | 8 |
+| 2022 | 25 | 22 | 13 |
+| 2023 | 37 | 32 | 14 |
+| 2024 | 45 | 38 | 16 |
+| 2025 | 50 | 39 | 21 |
+| 2026E | 58 | 43 | 26 |
+| 2027E | 67 | 44 | 34 |
+| 2028E | 77 | 44 | 43 |
+China TAM: Global supplier share; Domestic supplier share; '17-'25 CAGR; '25-'28 CAGR; Self-sufficiency (Domestic Share); Global supplier share; Domestic supplier share; '17-'25 CAGR; '25-'28 CAGR
+</details>
+
+Source: Gartner, SEMI, Company reports, Bernstein estimates and analysis
+
+# CHINA WFE COMPETITIVE DYNAMICS BY SEGMENT
+
+China's WFE self-sufficiency ratio advanced to 21% in 2025, yet the progress remains highly bifurcated across different process steps. Based on domestic self-sufficiency and the China Total Addressable Market (TAM) for each segment, we categorize the market into three types: (you can find the definition of each segment in our previous report Global Semicap: Short primer on segments of Wafer Fab Equipment (WFE)):
+
+- Type A: Large segments where Chinese players are making substantial progress (Dry Etch and Deposition). Because the technology barriers, while high, are more surmountable than in lithography, leading domestic players have successfully broken into core supply chains. In 2025, self-sufficiency in Dry Etch and Deposition reached 31% and 27%, respectively. This was supported by robust YoY growth of 37% for Dry Etch and 67% for Deposition among local players. These figures confirm our thesis that these two segments are in the sweet spot for rapid domestic substitution acceleration.   
+- Type B: High-barrier segments with low self-sufficiency (Lithography, Process Control, Doping, and Photoresist Processing). Lithography remains the most challenging bottleneck, showing virtually no progress in domestic substitution. However, Process Control outperformed our expectations, achieving a 63% YoY growth for local players; yet given the low base, overall self-sufficiency remains minimal at roughly 10%. Conversely, local supply in Doping and Photoresist Processing failed to capture strong growth, reflecting the persistently high entry barriers and slow progress of domestic players in these areas.   
+- Type C: Smaller segments with relatively high self-sufficiency (Cleaning, Thermo Processing, CMP, and other Materials Removal). With relatively lower technological hurdles, domestic leaders have made substantial headway. In 2025, Cleaning, Thermo Processing, and CMP achieved strong YoY growth of 8%, 43%, and 38%, respectively. Chinese equipment makers now dominate the mature nodes in these areas and are steadily pushing into higher-end, advanced-node sub-segments.
+
+EXHIBIT 3: In 2025, Chinese players kept growing in Deposition & Dry Etch where U.S. players were traditionally stronger   
+China WFE TAM, China supply & Self-sufficiency by segment (2025)   
+![](images/ac5fb8e7deeef0c22892958540fba5e5bd2dae1622a825c377aae742cd35bb4f.jpg)
+
+<details>
+<summary>bubble</summary>
+
+| Type   | China TAM (USD mn) | Self sufficiency (%) | Size of bubble (USD mn) |
+|--------|--------------------|---------------------|-------------------------|
+| Type B | 1,000              | 45                  | 656                     |
+| Type B | 2,000              | 39                  | 577                     |
+| Type B | 3,000              | 29                  | 823                     |
+| Type A | 10,000             | 30                  | 2,881                   |
+| Type A | 13,000             | 25                  | 3,447                   |
+| Type C | 1,000              | 13                  | 158                     |
+| Type C | 2,000              | 7                   | 104                     |
+| Type C | 5,000              | 10                  | 522                     |
+| Type C | 11,000             | 5                   | 143                     |
+</details>
+
+Every data point has Bernstein estimates factored in given company usually doesn't disclose such details.   
+Source: Gartner, Company reports, Bernstein analysis and estimates
+
+EXHIBIT 4: China WFE supply & YoY growth   
+China Supply (USD mn) & YoY Growth (CY2025 vs. CY2024)   
+![](images/aa39324eea241d539f21e37146946af452c9364f5d9724004f81a27ecc631f66.jpg)
+
+<details>
+<summary>bar_line</summary>
+
+| Category | 2024 | 2025 | YoY (RHS) (%) |
+| :--- | :--- | :--- | :--- |
+| Lithography | 26 | 143 | |
+| Deposition | 2,070 | 3,447 | 66.5 |
+| Dry Etch | 2,111 | 2,881 | 36.5 |
+| Process Control | 321 | 522 | 62.7 |
+| Cleaning | 764 | 823 | 7.8 |
+| CMP | 476 | 656 | 38.0 |
+| Photoresist Processing | 78 | 104 | 33.2 |
+| Doping | 85 | 158 | 86.2 |
+| Thermal Processes | 403 | 577 | 43.3 |
+| Other Mat. Removal | 351 | 389 | 10.8 |
+</details>
+
+Source: Gartner, Company reports, Bernstein analysis and estimates
+
+Regarding the competition within each sector, we first analyze the competitive dynamics amongst Chinese vendors. Due to the high barriers in WFE, the market share is skewed to a few large players in each segment as we can see in the global sector, and we observed a similar pattern in China based on our bottom-up analysis (Exhibit 5). The dynamics within each segment are illustrated below (please refer to the glossary in the appendix for the explanation of the abbreviations):
+
+- Deposition: NAURA and Piotech remain the two major players. NAURA dominates in PVD, maintains a monopoly in that equipment type, and continues to secure a larger share of the overall local deposition market. It is also developing a variety of CVD equipment (such as CVD/ALD for High-K Metal Gate) with revenue contributions continuing to ramp up. Piotech leads in PECVD and its ALD is also growing fast, though it experienced slight share dilution due to delays in revenue recognition. AMEC has started to recognize revenue in LPCVD/ALD as it aggressively develops new equipment within the segment. ACMR's strength is in ECP, and it is also doing R&D on PECVD, though we don't expect the latter to contribute meaningful revenue in the near term. Leadmicro is a smaller player working on ALD, currently in the earlier stages of commercialization for WFE. Although competition is intensifying, they still focus on different processes and thus the overlap remains manageable. We believe the leaders (NAURA and Piotech) will continue to capture strong momentum given their technical competency and deeper bonding with leading fabs, while AMEC is emerging as a strong new entrant with its solid tech capabilities.
+
+\- Dry Etch: AMEC and NAURA are the two leaders in the space. AMEC continues to gain share within this segment, driven by its established strength in CCP and strong ongoing growth in ICP in 2025. NAURA still mainly focuses on ICP, and its CCP revenue will likely start to emerge more meaningfully in 2026 based on orders from late 2024 and 2025. The specific equipment types that NAURA and AMEC have developed still have limited overlap, but they will eventually enter head-to-head competition. Over the medium to long term, after Chinese vendors have exhausted the white space expansion, the competition between these two giants will be inevitable, as fabs will seek a secondary supplier for supply chain resiliency. However, new entrants in Dry Etch are highly unlikely, given that NAURA and AMEC have already built a strong tech moat through decades of R&D and co-development support from leading fabs.
+
+\- Lithography: SMEE (private, together with Yuliangsheng 宇量昇) remains the only player that has commercially available lithography equipment in China (with the majority of the revenue from back-end lithography equipment), and self-sufficiency remains extremely low. China is investing aggressively in Lithography (DUV and EUV), but given the extremely high barriers, it will likely still take years to make any meaningful commercial breakthrough.
+
+\- Process Control: Skyverse is the leader in Unpatterned Wafer Inspection and is actively developing Patterned Wafer Inspection equipment. Overall progress for local players in this segment was better than our expectations in 2025, driven by strong YoY growth, though aggregate self-sufficiency remains low. There are many start-ups focusing on different subsegments of Process Control in China given the fragmented nature of the equipment types, and SiCARRIER is entering the space with strong momentum.
+
+- Cleaning & Other Materials Removal: The technology barrier in some mature cleaning processes is lower, so there are more players in this space, though each leader focuses on different areas. ACMR has seen a significant share gain and expanded its market presence to become the dominant player in the Cleaning segment, leveraging its strength in wet cleaning equipment. Mattson (acquired by E-town, private), remains the largest player in the Other Material Removal segment, with its core strength in Dry Strip.   
+- Thermal Processes: NAURA is the leader, covering both the furnace and RTP sub-segments. Mattson's strength remains in RTP.   
+- Doping: CETC (private) and Kingstone are the leaders. Both companies have a strong presence in High Current Implanters, while CETC has more exposure to Medium Current Implanters and Kingstone has more exposure to High Voltage Implanters. Local supply did not grow as rapidly as other segments in 2025, reflecting the high barriers and the slower progress of domestic players in this space.   
+- CMP: Hwatsing is the undisputed leader in CMP, and its equipment has been widely used in leading local fabs.   
+- Photoresist Processing (Track): Kingsemi is the leader and is currently the only Chinese manufacturer that can provide mass-produced Front-End photoresist coater & developer equipment (recently acquired by NAURA). Similar to lithography and doping, localization progress remains slow. ACMR is also developing its track products, with revenue expected to begin scaling progressively.
+
+EXHIBIT 5: Major Chinese vendor's share within domestic suppliers, CY2025 
+
+<table><tr><td colspan="13">Major Chinese Wafer Fab Equipment suppliers by segment (CY2025)</td></tr><tr><td>Segment</td><td>Lithography</td><td>Deposition</td><td>Dry Etch</td><td>Process Control</td><td>Cleaning</td><td>CMP</td><td>Photoresist Processing</td><td>Doping</td><td>Thermal Processes</td><td>Other Mat. Removal</td><td>Mfg. Automation</td><td>Others</td></tr><tr><td>Share of WFE</td><td>21%</td><td>25%</td><td>19%</td><td>10%</td><td>6%</td><td>3%</td><td>3%</td><td>2%</td><td>3%</td><td>1%</td><td>3%</td><td>3%</td></tr><tr><td>China TAM (USD mn)</td><td>10,762</td><td>12,779</td><td>9,393</td><td>5,019</td><td>2,857</td><td>1,662</td><td>1,609</td><td>1,205</td><td>1,280</td><td>413</td><td>1,592</td><td>1,581</td></tr><tr><td>China supply (USD mn)</td><td>143</td><td>3,447</td><td>2,881</td><td>522</td><td>823</td><td>656</td><td>104</td><td>158</td><td>577</td><td>389</td><td>N/A</td><td>N/A</td></tr><tr><td>Self sufficiency</td><td>1%</td><td>27%</td><td>31%</td><td>10%</td><td>29%</td><td>39%</td><td>6%</td><td>13%</td><td>45%</td><td>94%</td><td>N/A</td><td>N/A</td></tr><tr><td rowspan="5">Major Chinese Vendors in China</td><td rowspan="4">SMEE 100%</td><td>NAURA 65%</td><td>NAURA 48%</td><td>Skyverse 47%</td><td>NAURA 16%</td><td rowspan="5">Hwatsing 85%</td><td rowspan="5">Kingsemi 85%</td><td>NAURA 27%</td><td rowspan="3">NAURA 67%</td><td rowspan="5">Other Chinese suppliers</td><td rowspan="5"></td><td rowspan="5"></td></tr><tr><td>AMEC 3%</td><td rowspan="2">AMEC 47%</td><td rowspan="2">Jingce 13%</td><td rowspan="2">ACMR 68%</td><td rowspan="2">Kingstone 18%</td></tr><tr><td>Piotech 22%</td></tr><tr><td rowspan="2">ACMR 4%</td><td rowspan="2">Mattson 3%</td><td rowspan="2">Kingsemi 7%</td><td rowspan="2">PNC 4%</td><td rowspan="2">CETC 52%</td><td rowspan="2">Mattson 25%</td></tr><tr><td>Leadmicro 3%</td></tr></table>
+
+1) Market share is calculated with each company's forecasted WFE revenue excluding services and parts; 2) AMEC, NAURA and Piotech are covered by Bernstein; all other companies are not covered; SMEE, CETC and Mattson are private; 3) All listed companies are listed in China, except that ACMR is dual-listed in China (688082.CH) and U.S. (ACMR.US)   
+Source: SEMI, Gartner, MIR, Company reports, Bernstein analysis and estimates
+
+EXHIBIT 6: Major Chinese vendor's share within domestic suppliers, CY2024 
+
+<table><tr><td colspan="13">Major Chinese Wafer Fab Equipment suppliers by segment (CY2024)</td></tr><tr><td>Segment</td><td>Lithography</td><td>Deposition</td><td>Dry Etch</td><td>Process Control</td><td>Cleaning</td><td>CMP</td><td>Photoresist Processing</td><td>Doping</td><td>Thermal Processes</td><td>Other Mat. Removal</td><td>Mfg. Automation</td><td>Others</td></tr><tr><td>Share of WFE</td><td>24%</td><td>23%</td><td>16%</td><td>12%</td><td>6%</td><td>3%</td><td>3%</td><td>3%</td><td>3%</td><td>1%</td><td>4%</td><td>3%</td></tr><tr><td>China TAM (USD mn)</td><td>10,750</td><td>10,418</td><td>7,283</td><td>5,214</td><td>2,831</td><td>1,248</td><td>1,446</td><td>1,421</td><td>1,375</td><td>385</td><td>1,651</td><td>1,249</td></tr><tr><td>China supply (USD mn)</td><td>26</td><td>2,070</td><td>2,111</td><td>321</td><td>764</td><td>476</td><td>78</td><td>85</td><td>403</td><td>351</td><td>N/A</td><td>N/A</td></tr><tr><td>Self sufficiency</td><td>0%</td><td>20%</td><td>29%</td><td>6%</td><td>27%</td><td>38%</td><td>5%</td><td>6%</td><td>29%</td><td>91%</td><td>N/A</td><td>N/A</td></tr><tr><td rowspan="3">Major Chinese Players</td><td rowspan="3">SMEE 100%</td><td>NAURA 64%</td><td>NAURA 47%</td><td>Skyverse 52%</td><td>NAURA 17%</td><td rowspan="3">Hwatsing 85%</td><td rowspan="3">Kingsemi 85%</td><td>Kingstone 24%</td><td>NAURA 65%</td><td rowspan="3">Other Chinese suppliers</td><td rowspan="3"></td><td rowspan="3"></td></tr><tr><td>AMEC 1%</td><td>AMEC 47%</td><td rowspan="2">Jingce 8%</td><td>ACMR 68%</td><td rowspan="2">CETC 73%</td><td>NAURA 65%</td></tr><tr><td>Piotech 25%</td><td>Mattson 3%</td><td>PNC 10%</td><td>Mattson 27%</td></tr></table>
+
+1) Market share is calculated with each company's forecasted WFE revenue excluding services and parts; 2) AMEC, NAURA and Piotech are covered by Bernstein; all other companies are not covered; SMEE, CETC and Mattson are private; 3) All listed companies are listed in China, except that ACMR is dual-listed in China (688082.CH) and U.S. (ACMR.US)   
+Source: SEMI, Gartner, MIR, Company reports, Bernstein analysis and estimates
+
+EXHIBIT 7: China WFE competitive landscape within domestic suppliers, CY2023 
+
+<table><tr><td colspan="13">Major Chinese Wafer Fab Equipment suppliers by segment (CY2023)</td></tr><tr><td>Segment</td><td>Lithography</td><td>Deposition</td><td>Dry Etch</td><td>Process Control</td><td>Cleaning</td><td>CMP</td><td>Photoresist Processing</td><td>Doping</td><td>Thermal Processes</td><td>Other Mat. Removal</td><td>Mfg. Automation</td><td>Others</td></tr><tr><td>Share of WFE</td><td>24%</td><td>23%</td><td>15%</td><td>12%</td><td>6%</td><td>3%</td><td>3%</td><td>4%</td><td>3%</td><td>1%</td><td>4%</td><td>3%</td></tr><tr><td>China TAM (USD mn)</td><td>8,762</td><td>8,358</td><td>5,640</td><td>4,320</td><td>2,098</td><td>1,016</td><td>1,285</td><td>1,299</td><td>1,115</td><td>303</td><td>1,447</td><td>1,120</td></tr><tr><td>China supply (USD mn)</td><td>26</td><td>1,398</td><td>1,447</td><td>199</td><td>529</td><td>375</td><td>77</td><td>87</td><td>295</td><td>253</td><td>N/A</td><td>N/A</td></tr><tr><td>Self sufficiency</td><td>0.3%</td><td>17%</td><td>26%</td><td>5%</td><td>25%</td><td>37%</td><td>6%</td><td>7%</td><td>26%</td><td>83%</td><td>N/A</td><td>N/A</td></tr><tr><td rowspan="3">Major Chinese Players</td><td rowspan="3">SMEE 100%</td><td>NAURA 63%</td><td>NAURA 49%</td><td>Skyverse 52%</td><td>NAURA 19%</td><td rowspan="3">Hwatsing 85%</td><td rowspan="3">Kingsemi 85%</td><td>Kingstone 32%</td><td>NAURA 62%</td><td rowspan="3">NAURA 15%</td><td rowspan="3">Other Chinese suppliers</td><td rowspan="3"></td></tr><tr><td>PIotech 26%</td><td>AMEC 45%</td><td>Jingce 8%</td><td rowspan="2">ACMR 59%</td><td rowspan="2">CETC 65%</td><td rowspan="2">Mattson 30%</td></tr><tr><td>ACMR 8%</td><td>Mattson 3%</td><td>PNC 17%</td></tr></table>
+
+1) Market share is calculated with each company's forecasted WFE revenue excluding services and parts; 2) AMEC, NAURA and Piotech are covered by Bernstein; all other companies are not covered; SMEE, CETC and Mattson are private; 3) All listed companies are listed in China, except that ACMR is dual-listed in China (688082.CH) and U.S. (ACMR.US)   
+Source: SEMI, Gartner, MIR, Company reports, Bernstein analysis and estimates
+
+Japan and domestic players continue to benefit from structural de-Americanization trends (except LRCX); in other words, U.S. vendors (except LRCX) are persistently losing market share to Japan and China WFE vendors within the domestic market. The detailed competitive dynamics are illustrated in Exhibit 8. Each column of this exhibit represents an equipment segment, the major players, and their market shares. The top of each column records the share of that segment within total WFE and the size of the China TAM, which reached an estimated \$50bn in 2025, accounting for a massive 41% of global WFE demand.
+
+Lithography remains the segment with the largest Total Addressable Market (TAM). Following the significant pull-in demand observed in recent years driven by fears of further U.S. sanctions, demand for lithography equipment remained structurally robust. With virtually no viable local alternatives and domestic substitution making zero meaningful progress in 2025, ASML continues to be the dominant player and the primary beneficiary of this sustained capacity expansion.
+
+Deposition represents another core segment of the China WFE market. In 2025, domestic players made substantial progress, reaching a 27% self-sufficiency ratio supported by a strong 67% YoY growth among local suppliers. Within the domestic competitive landscape, NAURA successfully secured a larger piece of the pie, expanding its market share from 13% in 2024 to 18% in 2025. Concurrently, AMEC started to recognize small CVD revenues, marking a strategic entry into the deposition space, whereas Piotech experienced a slight share loss due to delays in revenue recognition. On the global front, the de-Americanization priority of local fabs is highly visible: Tokyo Electron (TEL) has capitalized on this trend far more effectively, capturing market share at the expense of U.S. peers like Applied Materials (AMAT) and Lam Research (LAM).
+
+Dry Etch continues to be a battleground where domestic players are catching up at an impressive pace. In 2025, local suppliers achieved a 37% YoY growth, driving the segment's self-sufficiency ratio to 31%. AMEC demonstrated remarkable commercial momentum, maintaining its share at 14%. NAURA also remains a formidable leading competitor in this space. Notably, LRCX's Dry Etch share in China expands to 28% in 2025 from 22% in 2024.
+
+Process Control delivered progress that significantly exceeded our expectations, with local players recording a remarkable 61% YoY growth in 2025. However, given the historically low base, the overall self-sufficiency ratio remains marginal at approximately 10%. The dominant player in China remains KLA (KLAC.US); the company continues to benefit immensely from the indispensable nature of its advanced metrology and inspection tools, maintaining a tight grip on the market. While Chinese competitors like Skyverse and Jingce are making incremental inroads, the massive gap in product diversity implies it will take several more years for local players to fully close the technological deficit.
+
+Cleaning equipment saw solid momentum, with local suppliers largely maintained the share. Notably, Kingsemi is expanding its footprint in cleaning equipment and we expect it will gain more momentum after its consolidation with NAURA.
+
+CMP equipment achieved a steady $38\%$ YoY growth among local suppliers in 2025. Because this area has relatively lower technological barriers, China maintains a high self-sufficiency ratio. Domestic player Hwatsing continues to challenge AMAT's historical leadership, while Japanese supplier Ebara remains a key beneficiary of the ongoing shift away from U.S. vendors.
+
+Photoresist Processing (Track) remains one of the most challenging sectors, characterized by a persistently low localization ratio. Similar to the dynamics observed previously, local supply growth in 2025 remained sluggish, reflecting the formidable technological barriers and the slow progress of domestic players against the dominating incumbent, TEL.
+
+Doping equipment mirrored the struggles seen in the Track segment. Local supply failed to capture the high-growth trajectory seen in Deposition or Etch, underscoring the high barriers to entry. Because doping requires extensive verification times—often only evaluated at the very last step of the process due to its impact on electrical performance—domestic players have found it exceptionally challenging to close the technology and know-how gap against established platform leaders.
+
+Thermal Processes achieved a healthy 43% YoY growth among domestic players in 2025. The technological maturity of Chinese players here is already quite high, with NAURA leading in vertical furnaces and Mattson (a Chinese-acquired entity) leading in Rapid Thermal Processing (RTP) systems.
+
+Other Materials Removal equipment, which includes Dry Strip and Bevel Edge Removal, continues to be led by Mattson with its stronghold in Dry Strip equipment, followed by NAURA and LAM. Manufacturing and Automation and Others segment takes the remaining low-single-digit share of the China WFE market.
+
+EXHIBIT 8: Global & Chinese semicap companies competitive landscape within the China market in CY2025 
+
+<table><tr><td colspan="13">Major Global &amp; Chinese suppliers of Wafer Fab Equipment in China by segment (CY2025)</td></tr><tr><td>Segment</td><td>Lithography</td><td>Deposition</td><td>Dry Etch</td><td>Process Control</td><td>Cleaning</td><td>CMP</td><td>Photoresist Processing</td><td>Doping</td><td>Thermal Processes</td><td>Other Mat. Removal</td><td>Mfg. Automation</td><td>Others</td></tr><tr><td>Share of WFE</td><td>21%</td><td>25%</td><td>19%</td><td>10%</td><td>6%</td><td>3%</td><td>3%</td><td>2%</td><td>3%</td><td>1%</td><td>3%</td><td>3%</td></tr><tr><td>TAM(USD mn)</td><td>10,762</td><td>12,779</td><td>9,393</td><td>5,019</td><td>2,857</td><td>1,662</td><td>1,609</td><td>1,205</td><td>1,280</td><td>413</td><td>1,592</td><td>1,581</td></tr><tr><td>SMEE1%</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td rowspan="8">Major Global and China vendor in China</td><td>AMEC1%</td><td>NAURA 18%</td><td>NAURA 15%</td><td>Skyverse 5%</td><td>NAURA 5%</td><td rowspan="2">Hwatsing 34%</td><td rowspan="2">Kingsemi 6%</td><td>NAURA 4% Kingstone 2%</td><td rowspan="2">NAURA 30%</td><td rowspan="8">Mattson 55%</td><td rowspan="8">Others 100%</td><td rowspan="8">Others 100%</td></tr><tr><td>ACMR 1%</td><td>Piotech 6%</td><td>AMEC 14%</td><td>ASML 6%</td><td>ACMR 20%</td><td>CETC 7%</td></tr><tr><td>AMAT 20%</td><td>AMAT 10%</td><td rowspan="2">KLA 57%</td><td>Kingsemi 2%</td><td>LAM 16%</td><td rowspan="2">AMAT 26%</td><td rowspan="2">TEL 66%</td><td>AMAT 33%</td><td>Mattson 11%</td></tr><tr><td>LAM 12%</td><td>LAM 28%</td><td>TEL 16%</td><td>AMAT 26%</td><td>Axcelis 20%</td><td>AMAT 21%</td></tr><tr><td>TEL 6%</td><td>Kokusai 3%</td><td rowspan="2">Screen 39%</td><td rowspan="2">Ebara 26%</td><td rowspan="2">Screen 2%</td><td rowspan="2">Screen 2%</td><td rowspan="2">Others 27%</td><td rowspan="2">Screen 35%</td><td>Tel 8%</td></tr><tr><td>ASMI 6%</td><td>Tel 18%</td><td>Kokusai 9%</td></tr><tr><td>Others 26%</td><td>Others 14%</td><td>Nova 5%</td><td>Screen 2%</td><td>Others 14%</td><td>Others 27%</td><td>Others 35%</td><td>Veeco ASMI 6%</td><td>LAM 7%</td></tr><tr><td>Canon 5%</td><td>Nikon 1%</td><td>Others 19%</td><td>Others 2%</td><td>Others 14%</td><td>Others 14%</td><td>Others 14%</td><td>Others 11%</td><td>Others 9%</td></tr></table>
+
+Every data point has Bernstein estimates factored in given company usually doesn't disclose such details. Source: SEMI, Gartner, MIR, Company reports, Bernstein analysis and estimates
+
+EXHIBIT 9: Global & Chinese semicap companies competitive landscape within the China market in CY2024   
+![](images/6f9ba82a96fc4dddc443601372ed6e9799d2fbd86d28337345fcf01ffe3659d8.jpg)
+
+<details>
+<summary>bar_stacked</summary>
+
+Major Global & Chinese suppliers of Wafer Fab Equipment in China by segment (CY2024)
+| Segment | Lithography (%) | Deposition (%) | Dry Etch (%) | Process Control (%) | Cleaning (%) | CMP (%) | Photoresist Processing (%) | Doping (%) | Thermal Processes (%) | Other Mat. Removal (%) | Mfg. Automation (%) | Others (%) |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| Share of WFE | 24 | 23 | 16 | 12 | 6 | 3 | 3 | 3 | 3 | 1 | 4 | 3 |
+| TAM (USD mn) | 10,750 | 10,418 | 7,283 | 5,214 | 2,831 | 1,248 | 1,446 | 1,421 | 1,375 | 385 | 1,651 | 1,249 |
+| SMEE Major Global and Chinese Players in China
+| ASML 89% | NAURA 13% | NAURA 14% | NAURA 5% | Skyverse 3% | NAURA 5% | Kingsemi 5% | Kingstone 1% | CETC 4% NAURA 19% | NAURA 19% | Mattson 68%<fcel>Others 100% | Others 100% |
+|                   | PIotech ACMI 1% | AMEC 5% | AMAT 7% | KLA 60% | ACMR 18% | PNC 3% | Hwatsing 32% | AMAT 45% | Mattson 8% | AMAT 23% |                 |
+|                   | AMAT 34% | AMAT 11% | LAM 22% | TEL 18% | LAM 6% | AMAT 29% | TEL 84% | Others 49% | TEL 16% | Kokusai 11% |                 |
+|                   | LAM 10% | TEL 10% | Kokusai 3% | Screen 48% | Ebara 31% | Screen 2% | Others 49% |                   |                 | Veeco ASMI 7% |                 |
+|                   | ASM 5% | Others 9% | Others 21% | Others 3% | Others 8% | Others 9% |                   |                   |                 |                 |                 |
+|                   | Canon Nikon 2% |                   |                   |                   |                   |                   |                   |                   |                 |                 |                 |
+|                   |                   |                   |                   |                   |                   |                   |                   |                   |                 |                 |                 |
+|                   |                   |                   |                   |                   |                   |                   |                   |                   |                 |                 |                 |
+|                   |                   |                   |                   |                   |                   |                   |                   |                   |                 |                 |                 |
+|                   |                   |                   |                   |                   |                   |                   |                   |                   |                 |                 |                 |
+|                   | Other                  |                   |                   |                   |                   |                   |                   |                   |                 |                 |                 |
+|                   |                   |                   |                   |                   |                   |                   |                   |                   |                 |                 |                 |
+|                   |                   |                   |                   |                   |                   |                   |                   |                   |                 |                 |                 |
+|                   |                   |                   |                   |                   |                   |                   |                   |                   |                 |                 |                 |
+|                   |                    |                   |                   |                   |                   |                   |                   |                   |                 |                 |                 |
+|                   |                    |                   |                   |                   |                   |                   |                   |                   |                 |                 |                 |
+|                   |                    |                   |                   |                   |                   |                   |                   |                   |                 |                 |                 |
+|                   |                    |                   |                   |                   |                   |                   |                   |                   |                 |                 |                 |
+|                   | NCOR Nikon   -2%    ;                    / Other                  / Total          / Percentage / %              / Total / Percentage / %              / Total / Percentage / %              / Total / Percentage / %              / Total / Percentage / %              / Total / Percentage / %              / Total / Percentage / %              / Total / Percentage / %              / Total / Percentage / %              / Total / Percentage / %              / Total / Percentage / %              / Total / Percentage / %              / Total / Percentage / %              / Total / Percentage / %              / Total / Percentage / %              / Total / Percentile / Total Percentile / Total Percentile / Total Percentile / Total Percentile / Total Percentile / Total Percentile / Total Percentile / Total Percentile / Total Percentile / Total Percentile / Total Percentile / Total Percentile / Total Percentile / Total Percentile / Total Percentile / Total Percentile / Total Percentile / Total Percentile / Total Percentile / Total Percentile / Total Percentile / Total Percentile / Total Percentile / Total Percentile / Total Percentile / Other Percentile / Total Percentile / Total Percentile / Total Percentile / Total Percentile / Total Percentile / Total Percentile / Total Percentile / Total Percentile / Total Percentile / Total Percentile / Total Percentile / Total Percentile / Total Percentile / Total Percentile / Total Percentile / Total Percentile / Total Percentile / Total Percentile / Total Percentile / Total Percentile / Total Percentile / Total Percentile / Total Percentile / Total Percentile / All Other Percentiles/Total Percentiles/Total Percentiles/Total Percentiles/Total Percentiles/Total Percentiles/Total Percentiles/Total Percentiles/Total Percentiles/Total Percentiles/Total Percentiles/Total Percentiles/Total Percentiles/Total Percentiles/Total Percentiles/Total Percentiles/Total Percentiles/Total Percentiles/Total Percentiles/Total Percentiles/Total Percentiles/Total Percentiles/Total Percentiles/Total Percentiles/Total Percentiles/Total Percentiles/All Other Percentiles/Total Percentiles/Total Percentiles/Total Percentiles/Total Percentiles/Total Percentiles/Total Percentiles/Total Percentiles/Total Percentiles/Total Percentiles/Total Percentiles/Total Percentiles/Total Percentiles/Total Percentiles/Total Percentiles/Total Percentiles/Total Percentiles/Total Percentiles/Total Percentiles/Total Percentiles/Total Percentiles/Total Percentiles/Total Percentiles/Total Percentiles/Total Percentiles or Total Percentiles or Total Percentiles or Total Percentiles or Total Percentiles or Total Percentiles or Total Percentiles or Total Percentiles or Total Percentiles or Total Percentiles or Total Percentiles or Total Percentiles or Total Percentiles or Total Percentiles or Total Percentiles or Total Percentiles or Total Percentiles or Total Percentiles or Total Percentiles or Total Percentiles or Total Percentiles or Total Percentiles or Total Percentiles or Total Percentiles or Total Percentiles or Total Percentiles or All Other Percentile or Total Percentile or Total Percentile or Total Percentile or Total Percentile or Total Percentile or Total Percentile or Total Percentile or Total Percentile or Total Percentile or Total Percentile or Total Percentile or Total Percentile or Total Percentile or Total Percentile or Total Percentile or Total Percentile or Total Percentile or Total Percentile or Total Percentile or Total Percentile or Total Percentile or Total Percentile or Total Percentile or Total Percentile or Total Percentile or All Other Percentile or Total Percentile or Total Percentile or Total Percentile or Total Percentile or TotalPercent of TotalPercent of TotalPercent of TotalPercent of TotalPercent of TotalPercent of TotalPercent of TotalPercent of TotalPercent of TotalPercent of TotalPercent of TotalPercent of TotalPercent of TotalPercent of TotalPercent of TotalPercent of TotalPercent of TotalPercent of TotalPercent of TotalPercent of TotalPercent of TotalPercent of TotalPercent of TotalPercent of TotalPercent of TotalPercent of TotalPercent of TotalPercent of TotalPercent of TotalPercent of TotalPercent of TotalPercent of TotalPercent of TotalPercent ofTotalPercent of TotalPercent of TotalPercent of TotalPercent of TotalPercent of TotalPercent of TotalPercent ofTotalPercent of TotalPercent of TotalPercent ofTotalPercent of TotalPercent ofTotalPercent of TotalPercent ofTotalPercent ofTotalPercent ofTotalPercent ofTotalPercent ofTotalPercent ofTotalPercent ofTotalPercent ofTotalPercent ofTotalPercent ofTotalPercent ofTotalPercent ofTotalPercent ofTotalPercent ofTotalPercent ofTotalPercent ofTotalPercent ofTotalPercent ofTotalPercent ofTotalPercent ofTotalPercent ofTotalPercent ofTotalPercent ofTotalPercent ofTotalPercent ofTotalPercent ofTotalPercent ofTotalPercent ofTotalPercent ofTotalPercent ofTotalPercent ofTotalPercent ofTotalPercent ofTotalPercent ofTotal percent of total percent per total percent per total percent per total percent per total percent per total percent per total percent per total percent per total percent per total percent per total percent per total percent per total percent per total percent per total percent per total percent per total percent per total percent per total percent per total percent per total percent per total percent per total percent per total percent per total percent per total percent per total percent per total percent per total percent per total percent per total percent per total percent per total percent per total percent per full percentage per full percent per full percent per full percent per full percent per full percent per full percent per full percent per full percent per full percent per full percent per full percent per full percent per full percent per full percent per full percent per full percent per full percent per full percent per full percent per full percent per full percent per full percent per full percent per full percent per full percent per full percent per full percent per full percent per full percent per full percent per full percent per full percent per full percent per full percent Per Gallon (68%) (67%) (66%) (65%) (64%) (63%) (62%) (61%) (60%) (59%) (58%) (57%) (56%) (55%) (54%) (53%) (52%) (51%) (50%) (49%) (48%) (47%) (46%) (45%) (44%) (43%) (42%) (41%) (40%) (39%) (38%) (37%) (36%) (35%) (34%) (33%) (32%) (31%) (30%) (29%) (28%) (27%) (26%) (25%) (24%) (23%) (22%) (21%) (20%) (19%) (18%) (17%) (16%) (15%) (14%) (13%) (12%) (11%) (10%) (9%) (8%) (7%) (6%) (5%) (4%) (3%) (2%) (1%) (0%).
+</details>
+
+Every data point has Bernstein estimates factored in given company usually doesn't disclose such details.   
+Source: SEMI, Gartner, MIR, Company reports, Bernstein analysis and estimates
+
+EXHIBIT 10: Global & Chinese semicap companies competitive landscape within the China market in CY2023   
+![](images/84848e80df3c7598a95e4a92008e590235ecb7d3722d69a9d44e36cafcad5b5b.jpg)
+
+<details>
+<summary>bar_stacked</summary>
+
+Major Global & Chinese suppliers of Wafer Fab Equipment in China by segment (CY2023)
+| Segment | Lithography | Deposition | Dry Etch | Process Control | Cleaning | CMP | Photoresist Processing | Doping | Thermal Processes | Other Mat. Removal | Mfg. Automation | Others |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| Share of WFE | 24% | 23% | 15% | 12% | 6% | 3% | 3% | 4% | 3% | 1% | 4% | 3% |
+| TAM (USD mn) | 8,762 | 8,358 | 5,640 | 4,320 | 2,098 | 1,016 | 1,285 | 1,299 | 1,115 | 303 | 1,447 | 1,120 |
+| SMEE Major Global and Chinese Players in China
+| ASML 83% | NAURA 11% | NAURA 13% | ASML 4% | NAURA 2% | NAURA 3% | Hwatsing 31% | Kingsemi 5% | Kingstone 2% | CETC 4%NAURA 16% | NAURA 8%<fcel>Others 100%<fcel>Others 100% |
+|                  | ACMR 1% | Piotech 4% | AMEC 11% | AMAT 9% | ACMR 14% | PNC 4% | LAM 11% | AMAT 54% | Mattson 8% |                 |                 |
+|                  | AMAT 44% | AMAT 16% | KLA 54% |                   | TEL 18% | AMAT 43% | TEL 80% |                 | AMAT 33% |                 |                 |
+|                  | LAM 30% |                   |                   |                   | Screen 45% | Ebara 18% | Screen 3%   |                 |                 |                 |                 |
+|                  | LAM 11% |                   |                   |                   |                   |                   |                   |                 |                 |                 |                 |
+|                  | TEL 10% |                   |                   | Nova 3%         |                   |                   |                   |                 |                 |                 |                 |
+|                  | Kokusai 2%    |                   |                   | Others 27%      |                   |                   |                   |                 |                 |                 |                 |
+|                  | ASMI 5%    |                   |                   |                   |                   |                   |                   |                 |                 |                 |                 |
+|                  | Nikon 7%    |                   |                   | Others 7%       |                   |                   |                   |                 |                 |                 |                 |
+|                  |                   |                   |                   |                   |                   |                   |                   |                 |                 |                 |                 |
+|                  |                   |                   |                   |                   |                   |                   |                   |                 |                 |                 |                 |
+|                  |                   |                   |                   |                   |                   |                   |                   |                 |                 |                 |                 |
+|                  |                   |                   |                   |                   |                   |                   |                   |                 |                 |                 |                 |
+|                  |                   |                   |                   |                    |                   |                   |                   |                 |                 |                 |                 |
+|                  |                   |                   |                   |                    |                   |                   |                   |                 |                 |                 |                 |
+|                  |                   |                   |                   |                    |                   |                   |                   |                 |                 |                 |                 |
+|                  |                   |                   |                   |                    |                   |                   |                   |                 |                 |                 |                 |
+|                  |                   |                   |                   | SOYA 21%        / Others 27% - Others 4% - Others 8% - Others 12% - Others 40% - Others 40% - Others 40% - Others 40% - Others 40% - Others 40% - Others 40% - Others 40% - Others 40% - Others 40% - Others 40% - Others 40% - Others 40% - Others 40% - Others 40% - Others 40% - Others 40% - Others
+</details>
+
+Every data point has Bernstein estimates factored in given company usually doesn't disclose such details.   
+Source: SEMI, Gartner, MIR, Company reports, Bernstein analysis and estimates
+
+We highlight that while the record-high China WFE spending in 2023 and 2024 was partially inflated by pull-forward demand ahead of geopolitical restrictions, the accelerated share gains by domestic vendors reflect genuine, sustainable commercial breakthroughs. Looking into 2026 and 2027, we expect domestic vendors to structurally outgrow their global peers. Our latest industry model forecasts that domestic top 10 equipment players will expand their market share from 17% in 2025 to approximately 25% by 2028. This trajectory implies a strong \~35% CAGR for Chinese Semicap players between 2024 and 2028, completely eclipsing the muted, low-single-digit growth profile of global peers in the region. As domestic fabs increasingly prioritize supply chain resilience, this rapid share shift will remain a definitive multi-year secular trend.
+
+EXHIBIT 11: China WFE market buildup - global top 5 takes about 50% share, while China top 10 takes about 20% share   
+Top 5 Global WFE Players & Top 10 China Aggregated China System Revenue (CY, USD bn) & Share of China total WFE Market   
+![](images/c120accb6dec6fcebd463f6f8b499bb137b2ea0a7c03df516ee35d3cb746f30b.jpg)
+
+<details>
+<summary>bar_stacked</summary>
+
+| Year | Tokyo Electron (%) | ASML (%) | Applied Materials (%) | Lam Research (%) | KLA (%) | China Top 10 (%) | Others (%) |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| 2018 | 12 | 15 | 26 | 17 | 4 | 1 | 20 |
+| 2019 | 14 | 9 | 21 | 17 | 4 | 1 | 33 |
+| 2020 | 17 | 11 | 20 | 22 | 3 | 2 | 21 |
+| 2021 | 23 | 15 | 18 | 21 | 7 | 3 | 21 |
+| 2022 | 25 | 11 | 14 | 21 | 9 | 1 | 24 |
+| 2023 | 37 | 10 | 16 | 13 | 7 | 11 | 25 |
+| 2024 | 45 | 12 | 21 | 13 | 7 | 13 | 21 |
+| 2025 | 50 | 8 | 18 | 14 | 6 | 17 | 26 |
+</details>
+
+Source: Company reports, Bloomberg, Bernstein analysis and estimates
+
+EXHIBIT 12: TEL has the highest China revenue share while AMAT has the lowest China share   
+Top 5 Global WFE Players China Revenue Share (CY, %)   
+![](images/3eee1c4d528b48522cafa18b2960057d8b37e4f41eb8c9cd5063f7a1180aa38c.jpg)
+
+<details>
+<summary>line</summary>
+
+| Year | Tokyo Electron | ASML | Applied Materials | Lam Research | KLA |
+|------|----------------|------|-------------------|--------------|-----|
+| 2018 | 16%            | 19%  | 30%               | 24%          | 24% |
+| 2019 | 18%            | 12%  | 30%               | 36%          | 25% |
+| 2020 | 22%            | 18%  | 27%               | 45%          | 26% |
+| 2021 | 27%            | 15%  | 24%               | 45%          | 27% |
+| 2022 | 22%            | 14%  | 18%               | 42%          | 28% |
+| 2023 | 37%            | 30%  | 29%               | 55%          | 35% |
+| 2024 | 45%            | 40%  | 30%               | 60%          | 41% |
+| 2025 | 36%            | 33%  | 24%               | 53%          | 31% |
+</details>
+
+AMAT's China revenue shares are estimated by Bernstein. We excluded AMAT's pannel business given most of its display customers are based in China which will make AMAT's China revenue proportion higher.   
+Source: Company reports, Bernstein analysis and estimates
+
+EXHIBIT 13: All five companies expect China WFE to be roughly flat YoY but China as a percentage of revenue to normalize lower in 2026 vs. the elevated 2024–2025 levels 
+
+<table><tr><td>Company</td><td>Ticker</td><td>Lastest Comments on China WFE (CY2Q26 &amp; CY2026)</td></tr><tr><td>ASML</td><td>ASML.NV</td><td>ASML guided China to represent approximately 20% of total net sales in 2026, consistent with its current system backlog — a significant decline from 33% in 2025 and 41% in 2024.Management views the elevated 2024–2025 China sales levels as unsustainable, reflecting a normalization after fulfilling a substantial backlog.</td></tr><tr><td>Applied Materials</td><td>AMAT</td><td>In Q2 FY2026, China accounted for 24% of semiconductor systems plus AGS revenue, down from 30% of overall sales in Q1 FY2026, where revenue declined 7% year-over-year.For the full calendar year, Applied Materials expects its China business, along with its ICAPS business worldwide, to be flat to slightly higher — an improvement from the prior guidance of down year-over-year.Management expects China to be flat to slightly up for the calendar year, with ICAPS globally also guided to be flattish.</td></tr><tr><td>Lam Research</td><td>LRCX</td><td>China accounted for 34% of total revenue in Q3 FY2026, a slight decrease from 35% in Q2 FY2026, though it grew approximately $115 million quarter-over-quarter in absolute terms. Lam anticipates China revenue will decline in the June 2026 quarter from current levels.The company expects China&#x27;s percentage of total revenue to decrease over time as growth from global multinational customers outside China increases.</td></tr><tr><td>KLA</td><td>KLAC</td><td>China represented 24% of total revenue in Q3 FY2026, down from approximately 30% in Q2 FY2026, with minimal impact expected from additional US export bans.KLA&#x27;s view is that China WFE will grow at a slower rate than overall WFE, with spending levels in China remaining relatively flat over the last few years. Growth in China is expected to be more greenfield-focused rather than technology-upgrade driven. For CY2026, KLA models China&#x27;s contribution to revenue in the mid-to-high 20% range</td></tr><tr><td>Tokyo Electron</td><td>8035.JP</td><td>For FY2026 (ended March 2026), China represented 34.1% of total sales, declining to 26.8% in Q4 FY2026 — a 5 percentage point sequential drop — as leading-edge node spending grew faster than mature nodes.Management guided China&#x27;s share of revenue to be in the mid-30s for 2026, a normalization from the high-30s seen in the prior year.</td></tr></table>
+
+Source: Company reports, Bernstein analysis
+
+EXHIBIT 14: Global semicap competitive landscape in CY2025 
+
+<table><tr><td colspan="13">Major Global suppliers of Wafer Fab Equipment by segment (CY2025)</td></tr><tr><td>Segment</td><td>Lithography</td><td>Deposition</td><td>Dry Etch</td><td>Process Control</td><td>Cleaning</td><td>CMP</td><td>Photoresist Processing</td><td>Doping</td><td>Thermal Processes</td><td>Other Mat. Removal</td><td>Mfg. Automation</td><td>Others</td></tr><tr><td>Share of WFE</td><td>24%</td><td>23%</td><td>18%</td><td>13%</td><td>6%</td><td>3%</td><td>3%</td><td>2%</td><td>2%</td><td>1%</td><td>3%</td><td>3%</td></tr><tr><td>TAM (USD mn)</td><td>29,152</td><td>27,818</td><td>21,781</td><td>16,490</td><td>6,775</td><td>3,718</td><td>3,599</td><td>2,388</td><td>2,863</td><td>847</td><td>3,562</td><td>3,537</td></tr><tr><td rowspan="19">Major Global Players</td><td rowspan="19">ASML 91%</td><td rowspan="19">AMAT 39%</td><td rowspan="19">AMAT 18%</td><td>ASML 6%</td><td rowspan="2">LAM 24%</td><td rowspan="2">AMAT 50%</td><td rowspan="13">TEL 89%</td><td rowspan="13">AMAT 71%</td><td rowspan="13">AMAT 40%</td><td rowspan="13">LAM 41%</td><td rowspan="13">AMAT 7%</td><td rowspan="2">TEL 21%</td></tr><tr><td>AMAT 8%</td></tr><tr><td>KLA 58%</td><td rowspan="6">TEL 20%</td><td rowspan="11">Ebara 32%</td><td rowspan="11">SEMES 3%</td></tr><tr><td>LAM 41%</td></tr><tr><td>ASML 18%</td></tr><tr><td>AMAT 19%</td></tr><tr><td>TEL 8%</td></tr><tr><td>ASMI 10%</td></tr><tr><td>TEL 23%</td><td>SCREEN 36%</td></tr><tr><td>Hitachi 6%</td><td>Ebara 32%</td></tr><tr><td>NAURA 8%</td><td>NAURA 2%</td></tr><tr><td>NASERTEC 7%</td><td>SEMES 6%</td></tr><tr><td>LASERTEC 7%</td><td>SEMES 6%</td></tr><tr><td>ACMR 8%</td><td>SEMES 2%</td><td>SCREEN 2%</td><td>SEMES 2%</td><td>Axcelis 24%</td><td>NAURA 2%</td><td>NAURA 13%</td><td>Mattson 30%</td><td>Daifuku 41%</td></tr><tr><td>Kokusai 3%</td><td rowspan="4">Kingsemi 2%</td><td rowspan="4">Kingse 4%</td><td rowspan="4">Kingse 4%</td><td rowspan="4">Others 4%</td><td rowspan="4">Others 13%</td><td rowspan="4">Others 15%</td><td rowspan="4">Others 15%</td><td rowspan="4">Others 15%</td></tr><tr><td>KIPTech 3%</td></tr><tr><td>AMEC 6%</td></tr><tr><td>Others 15%</td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr></table>
+
+Source: Gartner, Bernstein analysis
+
+EXHIBIT 15: Global semicap competitive landscape in CY2024   
+![](images/cdec7bfe07709f653d69b6e150c0c88923c28722148a525519d65c721ee15e58.jpg)  
+Source: Gartner, Bernstein analysis
+
+EXHIBIT 16: Global semicap competitive landscape in CY2023   
+![](images/eaca9a4c2f4d31ba20b7fc85361a3e8da54d7adf62373d40649773533fdf7432.jpg)  
+Source: Gartner, Bernstein analysis
+
+# APPENDIX
+
+# METHODOLOGY FOR THE TAM SIZING BY SEGMENT
+
+- We used the lithography total imports to China plus our estimated Chinese player total sales in this segment to represent China's Lithography TAM. For competitive dynamics, we used the lithography imports from Netherland to calculate ASML's share (the numbers are slightly different from ASML's China WFE revenue, potentially due to revenue recognition timing difference); we used the lithography imports from Japan and multiply by their global market share mix reported by Gartner to estimate Nikon and Canon's share in China.   
+- We used the Process Control imports to China, plus the estimated local players aggregated sales in this segment to represent China's Process Control TAM.   
+- We allocated the rest of China's total TAM (total market size minus the TAM of Lithography and Process Control) proportionally based on Gartner's global market size allocation by segment.   
+- We estimated each public global suppliers' China total WFE by multiplying their total revenue, China revenue mix, and WFE revenue mix. We then allocated each player's China WFE revenue to different segments based on their product mix by segment in global market (from Gartner), with some adjustments based on cross-checking with total segment data.   
+- We tracked each public Chinese supplier's revenue and exclude their non-WFE and non-China revenue. For companies like NAURA that don't disclose the mix, we made estimates based on our communication with companies and channel checks. We refer to Gartner for some private Chinese supplier's revenue.
+
+# GLOSSARY
+
+EXHIBIT 17: Glossary of some semiconductor manufacturing techniques 
+
+<table><tr><td>Abbreviation</td><td>Full name</td><td>Process</td><td>Detailed explanation</td></tr><tr><td>Semicap</td><td>Semiconductor Capital Equipment</td><td></td><td>Semicap refers to the broader category of equipment used in the semiconductor industry, including WFE, assembly and packaging equipment, and testing equipment</td></tr><tr><td>WFE</td><td>Wafer Fabrication Equipment</td><td></td><td>WFE is a subset of Semicap that specifically refers to the machines and tools used in the manufacturing process of semiconductor wafers, i.e., Front End of chip manufacturing (including part of advanced packaging where the equipment is also used to process wafers)</td></tr><tr><td>ICP-RIE</td><td>Inductively Coupled Plasma - Reactive Ion Etching</td><td>Dry etch</td><td>ICP-RIE uses a high-frequency electromagnetic field to generate a dense and highly reactive plasma remove material from a substrate</td></tr><tr><td>CCP-RIE</td><td>Capacitively Coupled Plasma - Reactive Ion Etching</td><td>Dry etch</td><td>CCP-RIE uses a radio frequency electric field to generate a plasma and remove material from a substrate</td></tr><tr><td>PVD</td><td>Physical Vapor Deposition</td><td>Deposition</td><td>PVD is a thin film deposition technique that involves the transfer of material from a source to a substrate in a vacuum environment</td></tr><tr><td>PECVD</td><td>Plasma-Enhanced Chemical Vapor Deposition</td><td>Deposition</td><td>PECVD is a thin film deposition technique that uses a plasma to enhance the chemical reactions between gases and a substrate to deposit a thin film on a substrate</td></tr><tr><td>LPCVD</td><td>Low Pressure Chemical Vapor Deposition</td><td>Deposition</td><td>LPCVD involves the reaction of gases at low pressure and high temperature to deposit a thin film on a substrate</td></tr><tr><td>SACVD</td><td>Sub-Atmospheric Pressure Chemical Vapor Deposition</td><td>Deposition</td><td>SACVD involves the reaction of gases at sub-atmospheric pressure and high temperature to deposit a thin film on a substrate</td></tr><tr><td>ALD</td><td>Atomic Layer Deposition</td><td>Deposition</td><td>ALD involves the sequential exposure of a substrate to alternating gas-phase precursors, resulting in a highly controlled and conformal deposition of thin films with atomic-scale precision</td></tr><tr><td>ACHM</td><td>Amorphous Carbon Hard Mask</td><td>Deposition</td><td>One of the advanced dielectric films deposited, which can provide good etch selectivity</td></tr><tr><td>UV Cure</td><td>Ultraviolet Cure</td><td>Deposition</td><td>UV cure is a process of curing or hardening a material using ultraviolet light, which triggers a chemical reaction that causes the material to harden or cure in a matter of seconds</td></tr><tr><td>HDP-CVD</td><td>High-Density Plasma Chemical Vapor Deposition</td><td>Deposition</td><td>HDP-CVD deposits a thin film on a substrate at relatively low temperature, which helps to minimize thermal stress on the substrate and reduce the risk of defects</td></tr><tr><td>CMP</td><td>Chemical Mechanical Planarization</td><td></td><td>CMP is a polishing process used in chip manufacturing to remove imperfections and create a smooth, flat surface on the semiconductor wafer after it has been processed with various layers of materials</td></tr></table>
+
+Source: Encyclopedia of Integrated Circuit Industry, Bernstein analysis
+
+EXHIBIT 18: Glossary of different materials used in semiconductor manufacturing 
+
+<table><tr><td>Abbreviation</td><td>Full name</td><td>Detailed explanation</td></tr><tr><td>ACHM</td><td>Amorphous Carbon Hard Mask</td><td>One of the advanced dielectric films deposited, which can provide good etch selectivity, good pattern transfer fidelity, and low defect density.</td></tr><tr><td>SiN</td><td>Silicon Nitride</td><td>Similar to silicon dioxide, but SiN is a better diffusion barrier than silicon dioxide for water molecules and sodium ions as a passivation layer. SiN is an excellent moisture barrier but thick layers are not transparent to UV light.</td></tr><tr><td>SiON</td><td>Silicon Oxynitride</td><td>Similar to SiN, but SiON is typically used for forming dielectric layers and for passivation of non-volatile memory products since it is UV transparent.</td></tr><tr><td>PSG</td><td>Phosphosilicate Glass</td><td>PSG is a dielectric material used interlayer dielectric (ILD) applications. PSG contains phosphorus atoms, which increase the etch rate, making it useful for planarizing topography and filling gaps between metal lines in high-density ICs. PSG is also used as a sacrificial layer in the fabrication of microelectromechanical systems (MEMS) devices.</td></tr><tr><td>BPSG</td><td>Borophosphosilicate Glass</td><td>BPSG is used as a dielectric material, dopant source, and sacrificial layer in MEMS devices. BPSG has a lower melting point and higher flow rate than PSG, making it useful for filling gaps and planarizing topography. However, BPSG is more prone to stress-induced defects than PSG. BPSG is also used as a dopant source for boron and phosphorus during the diffusion process to create the source and drain regions of MOSFETs.</td></tr><tr><td>FSG</td><td>Fluorosilicate Glass</td><td>FSG is a dielectric material used for interlayer dielectric (ILD) applications. FSG contains fluorine atoms, which reduce the dielectric constant, reducing signal delay and crosstalk in high-speed IC.</td></tr><tr><td>TEOS</td><td>Tetraethyl Orthosilicate</td><td>TEOS is a silicon source used as a precursor in CVD/PECVD processes to deposit high-quality silicon dioxide thin films. It is preferred over other sources due to its low boiling point and reduced risk of particle formation and contamination.</td></tr><tr><td>Thick TEOS</td><td>Thick Tetraethyl Orthosilicate</td><td>TEOS at micron level resolution</td></tr><tr><td>HSN</td><td>High Selectivity Nitride</td><td>HSN PECVD technique is used for stress memorization technique (SMT) layer in front-of-the-line (FEOL) processes. SMT involves depositing a stress-inducing layer, such as silicon nitride or silicon carbon, on top of the transistor channel to induce stress and increase charge carrier mobility, so as to improve transistor performance.</td></tr><tr><td>SiOC</td><td>Silicon Oxycarbide</td><td>SiOC is a ceramic material used as a low dielectric material for advanced interconnects. It has a low dielectric constant, reducing signal delay and crosstalk in high-speed integrated circuits. SiOC is thermally stable and suitable for use in the back-end-of-line (BEOL) process.</td></tr><tr><td>Lok I</td><td>Low-k I</td><td>Doped carbon oxide silicon film (SIOC) is a low dielectric constant film mainly used as an interlayer dielectric in the back-end-of-line (BEOL) of integrated circuit chips. By utilizing its ultra-low dielectric constant (low k), it reduces leakage current and capacitance effects between wires, thereby improving the performance of the chip.</td></tr><tr><td>Lok II</td><td>Low-k II</td><td>The ultra-low dielectric constant film is the next generation of Lok I. By utilizing an even lower dielectric constant than Lok I, it reduces leakage current and capacitance effects between wires, thereby improving the performance of the chip.</td></tr><tr><td>ADC I</td><td>Advanced Nitrogen-doped Carbide</td><td>Nitrogen doped carbide, is an advanced nitrogen-doped silicon carbide film mainly used as a diffusion barrier layer and etch stop layer. Due to its low dielectric constant, it reduces capacitance effects between wires, thereby improving the overall transmission performance of the chip.</td></tr><tr><td>NO Stack, ONON</td><td>Oxide-Nitride-Oxide</td><td>The oxide-nitride-oxide-nitride (ONO) stack is a step in the process of depositing SiO2 and SiN for the production of 3D NAND flash memory chips. It involves the alternating deposition of oxide and nitride layers to form a stack.</td></tr><tr><td>SAF</td><td>High Aspect Ratio Silicon Dioxide Film</td><td>The high aspect ratio silicon dioxide film process is a technique used to deposit SiO2 films with a high aspect ratio, typically used to create deep trenches or vias in advanced memory and logic devices.</td></tr><tr><td>CMOS</td><td>Complementary Metal-Oxide-Semiconductor</td><td>CMOS technology uses a combination of metal, oxide, and semiconductor materials to create tiny transistors that can switch on and off very quickly. These transistors are used to store and process information in digital circuits. CMOS technology is known for its low power consumption, which makes it ideal for use in portable devices like smartphones and laptops.</td></tr><tr><td>CMOS (BSI)</td><td>Backside Illuminated (BSI) CMOS</td><td>BSI CMOS is an improved design of CMOS sensors that arranges the components differently, allowing for more efficient light capture and reducing image noise.</td></tr><tr><td>STI</td><td>Shallow Trench Isolation</td><td>STI is a technique used in computer chip manufacturing to isolate different components on the chip by creating a barrier between them using an insulating material. It improves the performance and reliability of the chip and is commonly used in microprocessors and memory chips.</td></tr><tr><td>ILD</td><td>Interlayer Dielectric</td><td>Interlayer Dielectric (ILD) is an insulating material that separates the different layers of a computer chip to prevent interference and ensure proper function.The ILD is like a sandwich filling that separates the layers of the chip. It is a thin, non-conductive material that doesn&#x27;t take up much space.</td></tr></table>
+
+Source: Encyclopedia of Integrated Circuit Industry, Bernstein analysis
+
+# I. REQUIRED DISCLOSURES
+
+References to "Bernstein" or the "Firm" in these disclosures relate to the following entities: Bernstein Institutional Services LLC (April 1, 2024 onwards), Bernstein & Co., LLC (pre April 1, 2024), Bernstein Autonomous LLP, BSG France S.A. (April 1, 2024 onwards), Bernstein (Hong Kong) Limited 盛博香港有限公司, Bernstein (Canada) Limited, Bernstein (India) Private Limited (SEBI registration no. INH000006378), Bernstein (Singapore) Private Limited, Bernstein Japan KK (サンフォード・C・バーンスタイン株式会社) and analysts employed by SG Africa Technologies & Services to produce Bernstein under a Global Services Agreement in place between Bernstein and SG.
+
+Bernstein is part of a joint venture between SG (SG) and AllianceBernstein, L.P. (AB). Unless specifically noted otherwise, for purposes of these disclosures, references to Bernstein's “affiliates” relate to both SG and AB and their respective affiliates.
+
+# VALUATION METHODOLOGY
+
+This research publication covers six or more companies. For valuation methodology and other company disclosures:
+
+Please visit: https://bernstein-autonomous.bluematrix.com/sellside/Disclosures.action.
+
+Or, you can also write to the Director of Compliance, Bernstein Institutional Services LLC, 245 Park Avenue, New York, NY 10167.
+
+# RISKS
+
+This research publication covers six or more companies. For risks and other company disclosures:
+
+Please visit: https://bernstein-autonomous.bluematrix.com/sellside/Disclosures.action.
+
+Or, you can also write to the Director of Compliance, Bernstein Institutional Services LLC, 245 Park Avenue, New York, NY 10167.
+
+# RATINGS DEFINITIONS, BENCHMARKS AND DISTRIBUTION
+
+# EQUITY RATINGS DEFINITIONS
+
+# Bernstein brand
+
+The Bernstein brand rates stocks based on forecasts of relative performance for the next 12 months versus the S&P 500 for stocks listed on the U.S. and Canadian exchanges, versus the Bloomberg Europe Developed Markets Large and Mid Cap Price Return Index EUR (EDME) for stocks listed on the European exchanges and emerging markets exchanges outside of the Asia Pacific region, versus the Bloomberg Japan Large and Mid Cap Price Return Index USD (JPL) for stocks listed on the Japanese exchanges, and versus the Bloomberg Asia ex-Japan Large and Mid Cap Price Return Index (ASIAX) for stocks listed on the Asian (ex-Japan) exchanges -unless otherwise specified.
+
+The Bernstein brand has three categories of ratings:
+
+- Outperform: Stock will outpace the market index by more than 15 pp   
+• Market-Perform: Stock will perform in line with the market index to within +/-15 pp   
+• Underperform: Stock will trail the performance of the market index by more than 15 pp
+
+Coverage Suspended: Coverage of a company under the Bernstein brand has been suspended. Ratings and price targets are suspended temporarily, are no longer current, and should therefore not be relied upon.
+
+Not Rated: A rating assigned when the stock cannot be accurately valued, or the performance of the company accurately predicted, at the present time. The covering analyst may continue to publish research reports on the company to update investors on events and developments.
+
+Not Covered (NC) denotes companies that are not under coverage.
+
+Bernstein brand stock ratings are based on a 12-month time horizon.
+
+# Autonomous brand – common stocks
+
+The Autonomous brand rates common stocks as indicated below. As our benchmarks we use the Bloomberg Europe 500 Banks And Financial Services Index (BEBANKS) and Bloomberg Europe Dev Mkt Financials Large and Mid Cap Price Ret Index EUR (EDMFI) index for developed European banks and Payments, the Bloomberg Europe 500 Insurance Index (BEINSUR) for European insurers, the S&P 500 and S&P Financials for US banks and Payments coverage, S5LIFE for US Insurance, the S&P Insurance Select Industry (SPSIINS) for US Non-Life Insurers coverage, and the Bloomberg Emerging Markets Financials Large, Mid and Small Cap Price Return Index (EMLSF) for emerging market banks and insurers and Payments. Ratings are stated relative to the sector (not the market).
+
+The Autonomous brand has three categories of common stock ratings:
+
+- Outperform (OP): Stock will outpace the relevant index by more than 10 pp   
+- Neutral (N): Stock will perform in line with the market index to within +/-10 pp   
+• Underperform (UP): Stock will trail the performance of the relevant index by more than 10 pp
+
+Coverage Suspended: Coverage of a company under the Autonomous research brand has been suspended. Ratings and price targets are suspended temporarily, are no longer current, and should therefore not be relied upon.
+
+Not Rated: A rating assigned when the stock cannot be accurately valued, or the performance of the company accurately predicted, at the present time. The covering analyst may continue to publish research reports on the company to update investors on events and developments.
+
+Those denoted as ‘Feature’ (e.g., Feature Outperform FOP, Feature Under Outperform FUP) are our core ideas.
+
+Not Covered (NC) denotes companies that are not under coverage.
+
+Autonomous brand common stock ratings are based on a 12-month time horizon.
+
+# Autonomous brand – preferred stocks
+
+The Autonomous brand has three categories of preferred stock ratings:
+
+- Outperform (OP): The total return of the preferred instrument is expected to outperform preferred securities of other issuers operating in similar sectors or rating categories over the next six months.   
+- Neutral (N): The total return of the preferred instrument is expected to perform in line with preferred securities of other issuers operating in similar sectors or rating categories over the next six months.   
+- Underperform (UP): The total return of the preferred instrument is expected to underperform preferred securities of other issuers operating in similar sectors or rating categories over the next six months.
+
+Autonomous preferred stock ratings are based on a 6-month time horizon.
+
+# AUTONOMOUS CREDIT RESEARCH
+
+Where this report contains investment recommendations for credit instruments, as defined in article 3(1)(35) of the Market Abuse Regulation, the information below is presented to comply with its disclosure requirements.
+
+The report may also include reference(s) to published opinions by other Autonomous or Bernstein analysts covering the equity securities of the issuer(s) referenced herein. Please note an investment recommendation for credit instruments published by the author(s) of this report may differ from the published view of the analyst covering equity securities for the issuer(s) contained in this report and vice versa.
+
+# CREDIT RATINGS DEFINITIONS
+
+The Autonomous brand has three categories of credit ratings:
+
+\- Credit Outperform (C-OP): The total return of the Reference Credit Instrument is expected to outperform the credit spread of bonds of other issuers operating in similar sectors or rating categories over the next six months.
+
+- Credit Neutral (C-N): The total return of the Reference Credit Instrument is expected to perform in line with the credit spread of bonds of other issuers operating in similar sectors or rating categories over the next six months.   
+- Credit Underperform (C-UP): The total return of the Reference Credit Instrument is expected to underperform the credit spread of bonds of other issuers operating in similar sectors or rating categories over the next six months.
+
+Autonomous credit ratings are based on a 6-month time horizon.
+
+A list of all investment recommendations produced by the author(s) of this report alongside credit ratings history are available upon request.
+
+It is at the sole discretion of the Firm as to when to initiate, update and cease research coverage. The Firm has established, maintains and relies on information barriers to control the flow of information contained in one or more areas (i.e. the private side) within the Firm, and into other areas, units, groups or affiliates (i.e. public side) of the Firm
+
+DISTRIBUTION OF EQUITY RATINGS/INVESTMENT BANKING SERVICES 
+
+<table><tr><td>Equity Rating</td><td>Market Abuse Regulation (MAR) and FINRA Rating Category</td><td>Global Rating Distribution</td><td>Investment Banking Relationships*</td></tr><tr><td>Outperform</td><td>BUY</td><td>51.1%</td><td>16.5%</td></tr><tr><td>Market-Perform (Bernstein Brand) Neutral (Autonomous Brand)</td><td>HOLD</td><td>36.3%</td><td>17.8%</td></tr><tr><td>Underperform</td><td>SELL</td><td>12.6%</td><td>14.9%</td></tr></table>
+
+\* These figures represent the percentage of companies within each equity rating category for which affiliates of Bernstein have provided investment banking services within the previous 12 months.
+
+As of March 31, 2026. All figures are updated quarterly.
+
+Prior to April 1, 2024, Bernstein & Co., LLC. issued the ratings and price target information in the graph(s) below for the following companies: Applied Materials Inc and Lam Research Corp.
+
+# PRICE CHARTS/ RATINGS AND PRICE TARGET HISTORY
+
+This research publication covers six or more companies. For price chart and other company disclosures, please visit https://bernstein-autonomous.bluematrix.com/sellside/Disclosures.action or you can write to the Director of Compliance, Bernstein Institutional Services LLC, 245 Park Avenue, New York, NY 10167.
+
+# CONFLICTS OF INTEREST
+
+All statements in this report attributable to Gartner represent Bernstein's interpretation of data, research opinion or viewpoints published as part of a syndicated subscription service by Gartner, Inc., and have not been reviewed by Gartner. Each Gartner publication speaks as of its original publication date (and not as of the date of this report). The opinions expressed in Gartner publications are not representations of fact, and are subject to change without notice.
+
+Stacy A. Rasgon maintains long positions in various crypto currencies.
+
+Bernstein Autonomous LLP or BSG France SA, beneficially, has either a net long or short position of 0.5% or more of the total issued share capital of a class of common equity securities of the following MiFID eligible securities: Applied Materials Inc.
+
+SG and/or its affiliates beneficially own 1% or more of a class of common equity securities of the following company: Kokusai Electric Corp.
+
+Bernstein and/or affiliates have received compensation for non-investment banking securities-related products or services in the previous twelve months from the following clients: Screen Holdings Co Ltd.
+
+Certain affiliates of Bernstein act as market maker or liquidity provider in the equities securities of: Applied Materials Inc, Lam Research Corp and ASML Holding NV.
+
+Certain affiliates of Bernstein act as market maker or liquidity provider in the debt securities of: Screen Holdings Co Ltd.
+
+# OTHER MATTERS
+
+The legal entity(ies) employing the analyst(s) listed in this report, and their location, can be determined by the country code of their phone number, as follows:
+
++1 Bernstein Institutional Services LLC; New York, New York, USA
+
++44 Bernstein Autonomous LLP; London UK
+
++212 SG Africa Technologies & Services; Casablanca, Morocco
+
++33 BSG France S.A.; Paris, France
+
++34 BSG France S.A.; Madrid, Spain
+
++41 Bernstein Autonomous LLP; Geneva, Switzerland
+
++49 BSG France S.A.; Frankfurt, Germany
+
++91 Bernstein (India) Private Limited; Mumbai, India
+
++852 Bernstein (Hong Kong) Limited 盛博香港有限公司; Hong Kong, China
+
++65 Bernstein (Singapore) Private Limited; Singapore
+
++81 Bernstein Japan KK; Tokyo, Japan
+
+Where this report has been prepared by research analyst(s) employed by a non-US affiliate, such analyst(s), is/are (unless otherwise expressly noted below) not registered as associated persons of Bernstein Institutional Services LLC or any other SEC-registered broker-dealer and are not licensed or qualified as research analysts with FINRA. Accordingly, such analyst(s) may not be subject to FINRA's restrictions regarding (among other things) communications by research analysts with a subject company, interactions between research analysts and investment banking personnel, participation by research analysts in solicitation and marketing activities relating to investment banking transactions, public appearances by research analysts, and trading securities held by a research analyst account.
+
+Where this report has been prepared by research analyst(s) employed by SG Africa Technologies & Services (part of the SG group of companies), it has been prepared on behalf of a Bernstein company under a Global Services Agreement in place between Bernstein and SG.
+
+# CERTIFICATION
+
+Each research analyst listed in this report, who is primarily responsible for the preparation of the content of this report, certifies that all of the views expressed in this publication accurately reflect that analyst's personal views about any and all of the subject securities or issuers and that no part of that analyst's compensation was, is, or will be, directly or indirectly, related to the specific recommendations or views in this publication.
+
+# II. ADDITIONAL GLOBAL CONFLICT DISCLOSURES
+
+It is at the sole discretion of the Firm as to when to initiate, update and cease research coverage. The Firm has established, maintains and relies on information barriers to control the flow of information contained in one or more areas (i.e., the private side) within the Firm, and into other areas, units, groups or affiliates (i.e., public side) of the Firm.
+
+# III. OTHER IMPORTANT INFORMATION AND DISCLOSURES
+
+Separate branding is maintained for “Bernstein” and “Autonomous” research products.
+
+\- Bernstein produces a number of different types of research products including, among others, fundamental analysis and quantitative analysis under both the “Autonomous” and “Bernstein” brands. Recommendations contained within one type of research product may differ from recommendations contained within other types of research products, whether as a result of differing time horizons, methodologies or otherwise. Furthermore, views or recommendations within a research product issued under one brand may differ from views or recommendations under the same type of research product issued under the other brand. The Research Ratings System for the two brands and other information related to those Rating Systems are included in the previous section.
+
+\- Autonomous operates as a separate business unit within the following entities: Bernstein Institutional Services LLC, Bernstein Autonomous LLP, Bernstein (Hong Kong) Limited 盛博香港有限公司 and Bernstein (India) Private Limited. For information relating to “Autonomous” branded products (including certain Sales materials) please visit: www.autonomous.com. For information relating to Bernstein branded products please visit: www.bernsteinresearch.com.
+
+Analysts are compensated based on aggregate contributions to the research franchise as measured by account penetration, productivity and proactivity of investment ideas. No analysts are compensated based on performance in, or contributions to, generating investment banking revenues.
+
+This report has been produced by an independent analyst as defined in Article 3 (1)(34)(i) of EU 596/2014 Market Abuse Regulation (“MAR”) and the same article of MAR as it forms part of United Kingdom domestic law by virtue of the European Union (Withdrawal) Act 2018.
+
+To our readers in the United States: Bernstein Institutional Services LLC, a broker-dealer registered with the U.S. Securities and Exchange Commission (“SEC”) and a member of the U.S. Financial Industry Regulatory Authority, Inc. (“FINRA”) is distributing this publication in the United States and accepts responsibility for its contents. Where this material contains an analysis of debt product(s), such material is intended only for institutional investors and is not subject to the US independence and disclosure standards applicable to debt research prepared for retail investors.
+
+Bernstein Institutional Services LLC may act as principal for its own account or as agent for another person (including an affiliate) in sales or purchases of any security which is a subject of this report. This report does not purport to meet the objectives or needs of any specific individuals, entities or accounts.
+
+To our readers in Canada: If this publication pertains to a Canadian domiciled company, it is being distributed in Canada by Bernstein (Canada) Limited, which is licensed and regulated by the Canadian Investment Regulatory Organization. If the publication pertains to a non-Canadian domiciled company, it is being distributed by Bernstein Institutional Services LLC, which is licensed and regulated by both the SEC and FINRA, into Canada under the International Dealers Exemption.
+
+This document may not be passed onto any person in Canada unless that person qualifies as "permitted client" as defined in Section 1.1 of NI 31-103.
+
+To our readers in Brazil: This report has been prepared by Bernstein Institutional Services LLC, and Banco BTG Pactual S.A. ("BTG") is responsible for the distribution of this report in Brazil.
+
+To readers in the United Kingdom: This publication has been issued or approved for issue in the United Kingdom by Bernstein Autonomous LLP, authorised and regulated by the Financial Conduct Authority and located at 60 London Wall, London EC2M 5SH, +44 (0)20-7170-5000. Registered in England & Wales No OC343985.
+
+This document is for distribution only to persons who (i) have professional experience in matters relating to investments falling within Article 19(5) of the Financial Services and Markets Act 2000 (Financial Promotion) Order 2005 (as amended, the “Financial Promotion Order”), (ii) are persons falling within Article 49(2)(a) to (d) (“high net worth companies, unincorporated associations, etc.”) of the Financial Promotion Order, (iii) are outside the United Kingdom, or (iv) are persons to whom an invitation or inducement to engage in investment activity (within the meaning of section 21 of the FSMA) in connection with the issue or sale of any securities may otherwise lawfully be communicated or caused to be communicated (all such persons together being referred to as “relevant persons”). This document is directed only at relevant persons and must not be acted on or relied on by persons who are not relevant persons. Any investment or investment activity to which this document relates is available only to relevant persons and will be engaged in only with relevant persons.
+
+To our readers in the member states of the EEA: This publication is being distributed by BSG France SA, which is authorised and regulated by the Autorité de Contrôle Prudentiel et de Résolution (ACPR) and Autorité des Marchés Financiers (AMF).
+
+To our readers in Hong Kong: This publication is being distributed in Hong Kong by Bernstein (Hong Kong) Limited 盛博香港有限公司, which is licensed and regulated by the Hong Kong Securities and Futures Commission (Central Entity No. AXC846) to carry out Type 4 (Advising on Securities) regulated activities and subject to the licensing conditions mentioned in the SFC Public Register (https://www.sfc.hk/publicregWeb/corp/AXC846/details)). This publication is solely for professional investors, as defined in the Securities and Futures Ordinance (Cap. 571). The purpose of this report is solely to provide an analysis of the issuers referred to in this report and is not intended for any purpose contrary to the laws of Hong Kong.
+
+To our readers in Singapore: This publication is being distributed in Singapore by Bernstein (Singapore) Private Limited, only to accredited investors or institutional investors, as defined in the Securities and Futures Act 2001 of Singapore ("SFA"). Recipients in Singapore should contact Bernstein (Singapore) Private Limited in respect of matters arising from, or in connection with, this publication. Bernstein (Singapore) Private Limited is regulated by the Monetary Authority of Singapore and licensed under the SFA as a capital markets services licence holder for dealing in capital markets products that are securities and collective investment schemes and an exempt financial adviser for advising on, issuing and promulgating analyses and reports on securities. Bernstein (Singapore) Private Limited is registered in Singapore with Company Registration No. 20213710W and located at One Raffles Quay, #27-11 South Tower, Singapore 048583, +65-6230-4612.
+
+To our readers in the People's Republic of China: The securities referred to in this document are not being offered or sold and may not be offered or sold, directly or indirectly, in the People's Republic of China (for such purposes, not including the Hong Kong and Macau Special Administrative Regions or Taiwan, the "PRC") in contravention of any applicable laws of the PRC.
+
+This document does not constitute an offer to sell or the solicitation of an offer to buy any securities in the PRC to any person to whom it is unlawful to make the offer or solicitation in the PRC.
+
+We do not represent that this document may be lawfully distributed, or that any securities may be lawfully offered, in compliance with any applicable registration or other requirements in the PRC, or pursuant to an exemption available thereunder, or assume any responsibility for facilitating any such distribution or offering. In particular, no action has been taken by us which would permit a public offering of any securities or distribution of this document in the PRC. Accordingly, the securities are not being offered or sold within the PRC by means of this document or any other document. Neither this document nor any advertisement or other offering material may be distributed or published in the PRC, except under circumstances that will result in compliance with any applicable laws and regulations.
+
+To our readers in Japan: This publication is being distributed in Japan by Bernstein Japan KK (サンフォード・C・バーンスタイン株式会社), which is registered in Japan as a Financial Instruments Business Operator with the Kanto Local Finance Bureau (registration number: The Director-General of Kanto Local Finance Bureau (FIBO) No.3387) and regulated by the Financial Services Agency. It is also a member of Japan Investment Advisers Association. This publication is solely for qualified institutional investors in Japan only, as defined in Article 2, paragraph (3), items (i) of the Financial Instruments and Exchange Act.
+
+For the institutional client readers in Japan who have been granted access to the Bernstein website by Daiwa Group Inc. ("Daiwa"), your access to this document should not be construed as meaning that Bernstein is providing you with investment advice for any purposes. Whilst Bernstein has prepared this document, your relationship is, and will remain with, Daiwa, and Bernstein has neither any contractual relationship with you nor any obligations towards you.
+
+To our readers in Australia: Bernstein (Hong Kong) Limited 盛博香港有限公司 is responsible for distributing research in Australia. It is regulated by the Securities and Exchange Commission under U.S. laws, by the Financial Conduct Authority under U.K. laws, which differs from Australian laws. Bernstein (Hong Kong) Limited 盛博香港有限公司 is exempt from the requirement to hold an Australian financial services license under the Corporations Act 2001 in respect of the provision of the following financial services to wholesale clients:
+
+• providing financial product advice;   
+• dealing in a financial product;   
+- making a market for a financial product; and   
+• providing a custodial or depository service.
+
+To our readers in India: This publication is being distributed in India by Bernstein (India) Private Limited (SCB India) which is licensed and regulated by Securities and Exchange Board of India ("SEBI") as a research analyst entity under the SEBI (Research Analyst) Regulations, 2014, having registration no. INH000006378 and as a stock broker having registration no. INZ000213537. SCB India is currently engaged in the business of providing research and stock broking services. Please refer to www.bernsteinresearch.in for more information.
+
+\- SCB India is a Private limited company incorporated under the Companies Act, 2013, on April 12, 2017 bearing corporate identification number U65999MH2017FTC293762, and registered office at Level 3A, 4th Floor, First International Financial Centre, Plot Nos C-54 and C-55, G Block, Near CBI Office, Bandra Kurla Complex, Bandra (East), Mumbai 400098, Maharashtra, India (Phone No: +91-22-68421401).
+
+- For details of Associates (i.e., affiliates/group companies) of SCB India, kindly email MUM-BERNSTEIN-InCompliance@bernsteinsg.com.   
+• SCB India does not have any disciplinary history as on the date of this report.   
+- Except as noted above, SCB India and/or its Associates (i.e., affiliates/group companies), the Research Analysts authoring this report, and their relatives
+
+• do not have any financial interest in the subject company   
+• do not have actual/beneficial ownership of one percent or more in securities of the subject company;   
+- is not engaged in any investment banking activities for Indian companies, as such;   
+• have not managed or co-managed a public offering in the past twelve months for any Indian companies;
+
+\- have not received any compensation for investment banking services or merchant banking services from the subject company in the past 12 months;
+
+• have not received compensation for brokerage services from the subject company in the past twelve months;
+
+\- have not received any compensation or other benefits from the subject company or third party related to the specific recommendations or views in this report; and
+
+\- do not currently, but may in the future, act as a market maker in the financial instruments of the companies covered in the report.
+
+\- do not have any conflict of interest in the subject company as of the date of this report.
+
+- Except as noted above, the subject company has not been a client of SCB India during twelve months preceding the date of distribution of this research report. Neither SCB India nor its Associates (i.e., affiliates/group companies) have received compensation for products or services other than investment banking, merchant banking or brokerage services from the subject company in the past twelve months.   
+- The principal research analyst(s) who prepared this report, members of the analysts' team, and members of their households are not an officer, director, employee or advisory board member of the companies covered in the report.   
+- Our Compliance officer / Grievance officer is Ms. Rupal Talati, who can be reached at +91-22-68421451, or MUM-BERNSTEIN-InCompliance@bernsteinsg.com / Scbin-investorgrievance@bernsteinsg.com   
+- The Research investor charter and Terms & Conditions of SCB India are available on its website and may be accessed at Bernstein (India) Private Limited (https://bernsteinresearch.in/) for your reference.   
+- Disclaimer: Registration granted by SEBI, and certification from NISM, is in no way a guarantee of performance of the intermediary or provide any assurance of returns to investors. Investments in securities market are subject to market risks. Read all the related documents carefully before investing.
+
+To our readers in Switzerland: This document is provided in Switzerland by or through Bernstein Autonomous LLP, and is provided only to qualified investors as defined in article 10 of the Swiss Collective Investment Scheme Act (“CISA”) and related provisions of the Collective Investment Scheme Ordinance and in strict compliance with applicable Swiss law and regulations. The products mentioned in this document may not be suitable for all types of investors. This document is based on the Directives on the Independence of Financial Research issued by the Swiss Bankers Association (SBA) in January 2008.
+
+To our readers in the Middle East: Bernstein Autonomous LLP, DIFC branch has its principal office at Gate Village 06, DIFC, Dubai, UAE. Bernstein Autonomous LLP, DIFC branch is regulated by the Dubai Financial Services Authority (DFSA) with the registration number CL10040 and is provisioned for Arranging Deals in Investments and Advising on Financial Products. All communications and services are directed at Professional Clients and Market Counterparties only (as defined in the DFSA rulebook). Persons other than Professional Clients and Market Counterparties, such as Retail Clients, are not the intended recipients of our communications or services.
+
+# LEGAL
+
+All research publications are disseminated to our clients through posting on the firm's password protected websites, bernsteinresearch.com and autonomous.com. Certain, but not all, research publications are also made available to clients through third-party vendors or redistributed to clients through alternate electronic means as a convenience.
+
+This publication has been published and distributed in accordance with the Firm's policy for management of conflicts of interest in investment research, a copy of which is available from Bernstein Institutional Services LLC, Director of Compliance, 245 Park Avenue, New York, NY 10167. Additional disclosures and information regarding Bernstein's business are available on our website www.bernsteinresearch.com.
+
+The securities described herein may not be eligible for sale in all jurisdictions or to certain categories of investors where that permission profile is not consistent with the licenses held by the entities noted herein. This document is for distribution only as may be permitted by law. This publication is not directed to, or intended for distribution to or use by, any person or entity who is a citizen or resident of, or located in any locality, state, country or other jurisdiction where such distribution, publication, availability or use would be contrary to law or regulation or which would subject any of the entities referenced herein or any of their subsidiaries or affiliates to any registration or licensing requirement within such jurisdiction. This publication is based upon public sources we believe to be reliable, but no representation is made by us that the publication is accurate or complete. We do not undertake to advise you of any change in the reported information or in the opinions herein. This publication was prepared and issued by entity referred to herein for distribution to eligible counterparties or professional clients. This publication is not an offer to buy or sell any security, and it does not constitute investment, legal or tax advice. The investments referred to herein may not be suitable for you. Investors must make their own investment decisions in consultation with their professional advisors in light of their specific circumstances. The value of investments may fluctuate, and investments that are denominated in foreign currencies may fluctuate in value as a result of exposure to exchange rate movements. Information about past performance of an investment is not necessarily a guide to, indicator of, or assurance of, future performance.
+
+This report is directed to and intended only for our clients who are “eligible counterparties”, “professional clients”, “institutional investors” and/or “professional investors” as defined by the aforementioned regulators, and must not be redistributed to retail clients as defined by the aforementioned regulators. Retail clients who receive this report should note that the services of the entities noted herein are not available to them and should not rely on the material herein to make an investment decision. The result of such act will not hold the entities noted herein liable for any loss thus incurred as the entities noted herein are not registered/authorised/licensed to deal with retail clients and will not enter into any contractual agreement/arrangement with retail clients. This report is provided subject to the terms and conditions of any agreement that the clients may have entered into with the entities noted herein. All research reports are disseminated on a simultaneous basis to eligible clients through electronic publication to our client portal.
+
+The information in this report was prepared by Bernstein solely for the internal business use of our clients. Clients may store, display, analyze, reformat and print the information in this report for this limited use only. Clients may not copy, alter, create derivative works, resell, reverse engineer, commercially exploit, share or distribute any part of the information contained herein for any purpose without Bernstein's express written consent. These restrictions include extracting data or using the content to develop indices or other products. Further, you may not use this report, or any portion of this report, to train or finetune any third-party machine learning or artificial intelligence system, or as a prompt or input into any such system. You also may not, without Bernstein's express written consent, do any of the foregoing in connection with your own internal machine learning or artificial intelligence system.
+
+Bernstein may use artificial intelligence tools in the preparation of its materials. Any such materials are reviewed by Bernstein's research analysts prior to publication.
+
+This report has been prepared for information purposes only and is based on current public information that we consider reliable, but the entities noted herein do not warrant or represent (express or implied) as to the sources of information or data contained herein are accurate, complete, not misleading or as to its fitness for the purpose intended even though the entities noted herein rely on reputable or trustworthy data providers, it should not be relied upon as such. Opinions expressed are the author(s)' current opinions as of the date appearing on the material only and we do not undertake to advise you of any change in the reported information or in the opinions herein.
+
+This publication was prepared and issued by the entity referred to herein for distribution to eligible counterparties or professional clients. The information in this report is intended for general circulation and does not constitute an offer to buy or sell any security, investment, legal or tax advice nor a personal recommendation, as defined by any of the aforementioned regulators. It does not take into account the particular investment objectives, financial situations, or needs of individual investors. The report has not been reviewed by any of the aforementioned regulators and does not represent any official recommendation from the aforementioned regulators. The investments referred to herein may not be suitable for you. Investors must make their own investment decisions in consultation with advice sought from a financial adviser regarding the suitability of the investment product, taking into account the specific investment objectives, financial situation or particular needs of any recipient of the recommendation, before the recipient
+
+makes a commitment to purchase the investment product.
+
+The analysis contained herein is based on numerous assumptions. Different assumptions could result in materially different results. The information in this report does not constitute, or form part of, any offer to sell or issue, or any offer to purchase or subscribe for shares, or to induce engage in any other investment activity. The value of any securities or financial instruments mentioned in this report may fluctuate subject to market conditions. Information about past performance of an investment is not necessarily a guide to, indicative of, or assurance of future performance. Estimates of future performance mentioned by the research analyst in this report are based on assumptions that may not be realized due to unforeseen factors like market volatility/fluctuation. In relation to securities or financial instruments denominated in a foreign currency other than the clients' home currency, movements in exchange rates will have an effect on the value, either favorable or unfavorable. Before acting on any recommendations in this report, recipients should consider the appropriateness of investing in the subject securities or financial instruments mentioned in this report and, if necessary, seek for independent professional advice.
+
+The securities described herein may not be eligible for sale in all jurisdictions or to certain categories of investors where that permission profile is not consistent with the licenses held by the entities noted herein. This document is for distribution only as may be permitted by law. It is not directed to, or intended for distribution to or use by, any person or entity who is a citizen or resident of or located in any locality, state, country or other jurisdiction where such distribution, publication, availability or use would be contrary to law or regulation or would subject the entities noted herein to any regulation or licensing requirement within such jurisdiction.
+
+Source: Bloomberg Index Services Limited. BLOOMBERG® is a trademark and service mark of Bloomberg Finance L.P. and its affiliates (collectively “Bloomberg”). Bloomberg or Bloomberg’s licensors own all proprietary rights in the Bloomberg Indices. Neither Bloomberg nor Bloomberg’s licensors approves or endorses this material, or guarantees the accuracy or completeness of any information herein, or makes any warranty, express or implied, as to the results to be obtained therefrom and, to the maximum extent allowed by law, neither shall have any liability or responsibility for injury or damages arising in connection therewith.
+
+No part of this material may be reproduced, distributed or transmitted or otherwise made available without prior consent of the entities noted herein. Copyright Bernstein Institutional Services LLC Bernstein Autonomous LLP, BSG France S.A., Bernstein (Hong Kong) Limited 盛博香港有限公司, Bernstein (Canada) Limited, Bernstein (India) Private Limited (SEBI registration no. INH000006378), Bernstein (Singapore) Private Limited and Bernstein Japan KK (サンフォード・C・バーンスタイン株式会社). All rights reserved. The trademarks and service marks contained herein are the property of their respective owners. Any unauthorized use or disclosure is strictly prohibited. The entities noted herein may pursue legal action if the unauthorized use results in any defamation and/or reputational risk to the entities noted herein and research published under the Bernstein and Autonomous brands.

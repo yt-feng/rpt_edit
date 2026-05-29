@@ -1,0 +1,1188 @@
+# China Power Equipment
+
+EQUITY: Electrical Equipment
+
+# Riding the global power equipment “supercycle”
+
+China supply chain players poised to capture overseas demand spillover
+
+# Multiple drivers point to a long-term upcycle in global power equipment
+
+We are optimistic that global power equipment demand is entering a long-term upcycle, underpinned by three core drivers: (1) AI data center buildout driving up power loads: Grid Strategies forecasts US power load to grow 3.7% annually over 2025-30 (vs. 2.8% in 2024), and incremental summer peak demand to reach 166GW, further revised up from the 120GW forecast in Apr 2025, with data centers accounting for 55% of the total (90GW); (2) EV penetration and renewable installations spurring demand for new power systems: We expect China's average annual grid investment to reach CNY1tn during the 15th Five-Year Plan period (2026-30), with extensive grid expansion, UHV (ultra-high voltage) rollouts, and distribution network upgrades; (3) Overseas grid modernization generating incremental demand for power equipment: According to Wood Mackenzie, demand for various types of power equipment in the US increased significantly in 2019-2025, with multiple products facing domestic supply shortages in the US. We believe these drivers are highly sustainable and will support a long-term upcycle in global power equipment demand, creating long-term investment opportunities across the relevant supply chain.
+
+# Three investment themes: China players to benefit from overseas demand spillover
+
+Amid robust global power demand and potentially escalating trade friction risks, we believe core China supply-chain companies are well placed to capture overseas demand spillover. We highlight three investment themes:
+
+- AI data center buildout supports power architecture upgrades. As global tech leaders have clearly guided for higher AI server rack power, we expect power architecture upgrades to emerge as a major growth driver for data-center power equipment. New products such as HVDC power modules and solid-state transformers, supported by customer adoption, should become key revenue/earnings drivers for related industry participants, in our view. We initiate coverage on Jinpan Smart Technology (688676 CH) with Buy, given its leadership in modular power equipment and solid-state transformers, and its strong exposure to AI data-center buildout.   
+- AI baseload power demand creates overseas opportunities for gas turbine components. The US is leading the current AI data-center investment cycle. Given AI data centers' need for stable power and fast connection, we expect demand for gas-fired power equipment, especially gas turbines, to stay strong. As Chinese suppliers still lag in complete gas-turbine systems, we prefer component makers with early customer access, certification and long delivery track records. We initiate coverage on Himile (002595 CH) with Buy.   
+- Grid upgrades and UHV construction drive incremental demand for insulators. China's new power-system buildout and UHV project commissioning should continue to support insulator demand, in our view. Overseas grid upgrades in Europe and the US should also lift composite-insulator penetration. We initiate coverage on Shemar Electric (603530 CH) with Buy, given its leading position in composite insulators and its exposure to domestic and overseas grid investment.
+
+Fig. 1: China Power Equipment Sector – Stocks for action 
+
+<table><tr><td>Company</td><td>Ticker</td><td>Rating</td><td>Mkt cap (USDmn)</td><td>3M avg TO (USDmn)</td><td>Price (CNY)</td><td>Target price (CNY)</td><td>Upside (%)</td></tr><tr><td>Jinpan Smart Technology</td><td>688676 CH</td><td>Buy</td><td>6,469.08</td><td>211.71</td><td>96.08</td><td>121.55</td><td>26.5%</td></tr><tr><td>Himile Technology</td><td>002595 CH</td><td>Buy</td><td>9,198.40</td><td>58.30</td><td>54.15</td><td>68.04</td><td>25.7%</td></tr><tr><td>Shemar Electric</td><td>603530 CH</td><td>Buy</td><td>3,581.78</td><td>65.59</td><td>56.66</td><td>84.32</td><td>48.8%</td></tr></table>
+
+Note: Priced as of 26 May 2026.
+Source: Wind, NOM estimates
+
+# Research Analysts
+
+China Electrical Equipment and Renewables
+
+# Xiaoming Ma - NOI
+
+noiresearch@NOM.com
+
+SAC Registration No.: S1720522060001
+
+# Peiyu Li - NOI
+
+noiresearch@NOM.com
+
+SAC Registration No.: S1720525040001
+
+This document is an English translation of the original Chinese report released on 27 May 2026 by NOM Orient International Securities Co., Ltd. in the People's Republic of China. In case of any discrepancy between the English translation and the Chinese original, the Chinese version shall prevail.
+
+# Focus charts
+
+Fig. 2: US grid load growth is likely to accelerate   
+![](images/54cd426b77495b481e0391a979ad6992635a8fbccb588ff13aa596364fe5f353.jpg)
+
+<details>
+<summary>bar</summary>
+
+US grid annual load growth
+| Year | US grid annual load growth (%) |
+| :--- | :--- |
+| 1950 | 8.8 |
+| 1960 | 7.4 |
+| 1970 | 4.7 |
+| 1980 | 3.0 |
+| 1990 | 2.4 |
+| 2000 | 0.7 |
+| 2010 | 0.6 |
+| 2022 | 0.6 |
+| 2023 | 0.9 |
+| 2024 | 2.8 |
+| 2025-2030E | 3.7 |
+</details>
+
+Note: 2025-30 data are based on Grid Strategies forecasts.
+Sources: Grid Strategies, Strategic Industries Surging (Apr 2025); Grid Strategies, Power Demand Forecasts Revised Up for Third Year Running, Led by Data Centers (Nov 2025); NOM
+
+Fig. 3: We expect a notable increase in China's grid investment during the 15th Five-Year Plan period   
+![](images/11c4e9599899452315ce82dabaafc9b6ad6baf7d0c83bca4bbb90e64c5a660c9.jpg)
+
+<details>
+<summary>bar</summary>
+
+CNYbn
+| Year | China grid investment (CNYbn) |
+| :--- | :--- |
+| 2021 | 495 |
+| 2022 | 501 |
+| 2023 | 528 |
+| 2024 | 608 |
+| 2025 | 640 |
+| 2026-30F | 1000 |
+</details>
+
+Note: 2026-30 data are based on the investment plans of State Grid and China Southern Power Grid, using annual averages.
+Sources: Wind, Xinhuanet, Chinapower, NOM estimates
+
+Fig. 4: US demand for power equipment increased meaningfully over 2019-25   
+![](images/10770cfae341923384a37d662f01145e84a17197d005a3e6ec2641af696453ca.jpg)
+
+<details>
+<summary>bar</summary>
+
+2019-2025 US demand growth
+| Category | 2019-2025 US demand growth (%) |
+| :--- | :--- |
+| Generation transformer | 275 |
+| Power transformer | 115 |
+| Wire & cable | 110 |
+| HV switchgear | 95 |
+| Substation | 90 |
+| MV circuit breaker | 70 |
+| 3 Phs transformer | 68 |
+| HV circuit breaker | 67 |
+| MV switchgear | 62 |
+| 1 Phs transformer | 45 |
+| Pole top | 35 |
+</details>
+
+Source: Wood Mackenzie, NOM
+
+Fig. 5: The US domestic market faces shortages across multiple types of power equipment   
+![](images/7c9eed8f7b042eaedd6cf5d08b3bb238704f106b49192ff3fe248205f6784434.jpg)
+
+<details>
+<summary>bar</summary>
+
+2025 US domestic supply deficit
+| Category | 2025 US domestic supply deficit (%) |
+| :--- | :--- |
+| Generation transformer | 100 |
+| Power transformer | 40 |
+| Wire & cable | 8 |
+| HV switchgear | 36 |
+| Substation | 41 |
+| MV circuit breaker | 30 |
+| 3 Phs transformer | 13 |
+| HV circuit breaker | 20 |
+| MV switchgear | 15 |
+| 1 Phs transformer | 8 |
+| Pole top | 4 |
+</details>
+
+Source: Wood Mackenzie, NOM
+
+Fig. 6: Global gas turbine capacity is still expanding, but near-term delivery bottlenecks are unlikely to ease quickly   
+![](images/360b0d26f3a86ad7988f1502098f09c7248e0b2de5c1a230d8295a33b28000e5.jpg)
+
+<details>
+<summary>bar</summary>
+
+| Turbine Type | Lead time (Months) |
+| :--- | :--- |
+| Light gas turbine | 12 |
+| Aero gas turbine | 24 |
+| Heavy gas turbine | 36 |
+</details>
+
+Source: Rystad Energy, Gas Turbine Report forecasts (Oct 2025); NOM
+
+Fig. 7: Global gas turbine capacity is still expanding, but near-term delivery bottlenecks are unlikely to ease quickly   
+![](images/33e3e612ef76ad174ce206be8d2ea58a4f4614d9ef3d90c2b0595ccaa9bbf47c.jpg)
+
+<details>
+<summary>bar</summary>
+
+Global gas turbine capacity
+| Year | Global gas turbine capacity (GW) |
+| :--- | :--- |
+| 2025 | 72 |
+| 2028E | 97 |
+</details>
+
+Source: Rystad Energy, Gas Turbine Report (Oct 2025); NOM
+
+Fig. 8: AI power demand should drive rapid expansion of the global solid-state transformer market   
+![](images/1829f7f6ef949aff703321a4837c218e9de35cc1d7be72c4849a9deba8fb2573.jpg)
+
+<details>
+<summary>bar</summary>
+
+SST-Global market size
+| Year | SST-Global market size (USDmn) |
+| :--- | :--- |
+| 2025 | 50 |
+| 2026F | 180 |
+| 2027F | 450 |
+| 2028F | 880 |
+| 2029F | 1900 |
+| 2030F | 2555 |
+</details>
+
+Source: RAND, AI's Power Requirements Under Exponential Growth; Trade Map; NOM estimates
+
+Fig. 9: Jinpan Smart Technology – Strong overseas order growth backed by data-center power capabilities   
+![](images/4e7acfac434931637833f31189006bb0a3a454b3a6007f5e7c76ece483119b5a.jpg)
+
+<details>
+<summary>other</summary>
+
+| Category             | Description                          | Value     |
+|----------------------|--------------------------------------|-----------|
+| Capabilities         | New products include solid-state transformers and high-voltage DC power supplies | (not labeled) |
+| Project experience   | Served c.400 data-center projects                  | →         |
+| Overseas footprint   | US subsidiary established in 1998; workforce mainly local/foreign employees          | (not labeled) |
+| Order momentum       | Overseas new orders (1Q26)              | (not labeled) |
+| Order momentum       | CNY2.25bn                           | 67.3%     |
+| Order momentum       | Overseas backlog (1Q26)               | (not labeled) |
+| Order momentum       | CNY5.14bn                           | 57.1%     |
+</details>
+
+Source: Jinpan IR meeting minutes (announcement No. 20260513); NOM
+
+Fig. 10: AI baseload power demand is driving the global gas turbine component market towards USD10bn   
+![](images/d982826d0a49d067ae9be3a3366735a491f557fc5c070616f7471a74f592f823.jpg)
+
+<details>
+<summary>bar</summary>
+
+Gas turbine component - global market size
+| Year | Global Market Size (USD bn) |
+| :--- | :--- |
+| 2024 | 8.2 |
+| 2025 | 8.6 |
+| 2026E | 9.0 |
+| 2027E | 9.4 |
+| 2028E | 9.8 |
+| 2029E | 10.3 |
+| 2030E | 10.7 |
+</details>
+
+Source: Global Market Insights forecasts, NOM
+
+Fig. 11: Himile - We forecast its global share in gas turbine components to reach 10% by 2028F   
+![](images/b0095c217d7e58e6247197fdfb1cba88dda5d47071bf9a2d9b4211b99a80b0a3.jpg)
+
+<details>
+<summary>bar</summary>
+
+| Year   | Components bussiness revenue (CNYmn) | Global market share of gas turbine components (RHS) |
+| ------ | ------------------------------------ | -------------------------------------------------- |
+| 2024   | 33                                   | 6%                                                 |
+| 2025   | 40                                   | 7%                                                 |
+| 2026F  | 47                                   | 8%                                                 |
+| 2027F  | 55                                   | 9%                                                 |
+| 2028F  | 65                                   | 10%                                                |
+</details>
+
+Source: Global Market Insights, Wind, Himile 2024-25 annual reports, NOM estimates
+
+Fig. 12: Grid upgrading is likely to lift the global composite insulator market above USD3.8bn by 2030   
+![](images/42a16ea143af99ab1d649a1fbfd7926906795519b54ea304c1b82fea34c5aacf.jpg)
+
+<details>
+<summary>bar</summary>
+
+Composite insulator-global market share
+| Year | Composite insulator-global market share (USDmn) |
+| :--- | :--- |
+| 2024 | 2600 |
+| 2025 | 2780 |
+| 2026E | 2960 |
+| 2027E | 3160 |
+| 2028E | 3380 |
+| 2029E | 3600 |
+| 2030E | 3837 |
+</details>
+
+Source: Global Market Insights forecasts, NOM
+
+Fig. 13: Shemar Electric - We forecast its global share in composite insulators to reach 18% by 2028F   
+![](images/ba99c6eb2d61cb83b939ecd03c5d7330152b939aefce78ddb649bfb6cd24ddd5.jpg)
+
+<details>
+<summary>bar_line</summary>
+
+| Year | Revenue (USDmn) | Global market share in composite insulators (%) |
+| :--- | :--- | :--- |
+| 2024 | 1350 | 7.5 |
+| 2025 | 1700 | 9.5 |
+| 2026F | 2500 | 13.5 |
+| 2027F | 3350 | 15.5 |
+| 2028F | 4050 | 18.5 |
+</details>
+
+Source: Global Market Insights, Wind, Shemar 2024-25 annual reports, NOM estimates
+
+# Investment highlights
+
+# Global power equipment upcycle is gaining momentum
+
+We believe global power equipment is entering a long-cycle upturn, supported by rising electricity demand across key markets:
+
+• US: AI data centers are a key driver behind upward revisions to load forecasts.   
+According to Grid Strategies, US power load grew 2.8% in 2024, vs. less than 1% growth in 2022-23, and is expected to grow 3.7% over 2025-30. US summer peak load demand is forecast to increase by 166GW over 2025-30, up from the 120GW forecast in Apr 2025, with data centers contributing 90GW, or 55% of the increase.   
+• Europe: EV adoption and renewable installations should support a better power-demand outlook, in our view.   
+We believe Europe's power demand should improve as EV penetration rises and renewable capacity additions continue. McKinsey expects power demand in major European countries such as Germany, France and the UK to return to growth over 2023-30, with incremental demand of 294-461TWh, mainly from data centers (70-91TWh), green hydrogen (79-101TWh) and transport electrification (70-128TWh).   
+• Middle East: Clean-energy transition and economic growth should underpin demand growth, in our view.   
+We believe the Middle East's power demand growth will be supported by clean-energy transition and continued economic development. Ember data show that power demand in the Middle East grew at a $5\%$ CAGR over 2000-24. Siemens expects incremental power demand in the region to reach 184GW over 2016-35, with gas and solar PV contributing 100GW and 62GW, respectively.   
+• China: Power demand should remain robust, in our view   
+We believe China's power demand will continue to grow strongly, driven by economic growth, higher NEV penetration and the buildout of power-intensive AI industries. According to Ember, China's power demand grew at a $9\%$ CAGR over 2000-24. In our view, the rapid increase in renewable installations on the generation side has already created visible grid integration pressure. Grid investment is therefore likely to grow faster than generation-side investment in 2025-27, in line with China's new power-system development targets, according to our estimates.
+
+# Chinese companies well positioned to capture overseas demand spillover
+
+We believe leading Chinese power equipment suppliers are well positioned to benefit from overseas demand spillover, but the opportunity will vary by application and product category. We see three key demand drivers: 1) AI data center power architecture upgrades; 2) rising demand for gas turbine components as AI data centers require reliable baseload power; and 3) growth in grid equipment demand, including insulators, driven by grid upgrades and UHV construction. In stock selection, we focus on companies with strong product iteration capabilities, established access to overseas customers, certification experience, and proven global delivery capabilities.
+
+\- AI data center buildout supports power architecture upgrades: As AI data center construction accelerates, power systems are evolving toward 800V high-voltage DC architecture, driving rapid demand growth for new products such as solid-state transformers. We expect the global solid-state transformer market to exceed USD2.5bn by 2030. In our view, companies with data center project experience, sustained R&D capabilities, commercialization progress in solid-state transformers and high-voltage DC power products, and an established overseas customer base are more likely to win early orders during the initial adoption phase. We are positive on Jinpan Smart Technology's product portfolio and project track record in modular power equipment, solid-state transformers and high-voltage DC power products. We believe the company is well positioned to benefit from power equipment upgrades driven by AI data center construction.
+
+\- AI baseload power demand creates overseas opportunities for gas turbine components: AI data centers require stable power supply, fast grid connection and continuous operation. We believe AI data center construction in the US will support demand for gas turbines and related components. Given Chinese companies are still catching up in complete gas turbine systems, we prefer component suppliers that have already entered the supply chains of leading overseas customers and have product certification and long-term delivery experience. We expect Himile to leverage its customer resources and manufacturing capabilities in large components to capture demand spillover from the overseas gas turbine supply chain, driving its global market share in gas turbine components from 6% in 2024 to 10% in 2028F.
+
+\- Grid upgrades and UHV construction drive incremental demand for insulators: We believe China's new power system buildout, UHV project commissioning, and aging grid upgrades in Europe and the US should jointly drive demand for grid equipment, including insulators. In equipment segments where technology evolves relatively slowly but customer certification and product reliability requirements are high, Chinese companies with competitive products, established customer relationships and global delivery capabilities are better positioned to gain share, in our view. We are positive on Shemar Electric, given its strengths in composite insulators. We expect the company to benefit from domestic UHV construction and overseas grid modernization, driving its global market share in composite insulators from 8% in 2024 to 18% in 2028F.
+
+# Stocks for action
+
+# Jinpan Smart Technology (688676 CH, Buy): Data-center revenue surged in 2025; emerging product pipeline continues to advance
+
+Jinpan's 2025 annual report points to strong momentum in data centers and continued progress in new products. Data-center revenue rose $197\%$ y-y in 2025, as the company successfully entered the global data-center supply chain. It secured CNY8.83bn in new sales orders (excluding tax), and added 754 new customers during the year. Backlog reached CNY7.21bn by end-2025, up $10.7\%$ y-y, providing support for future revenue growth. On new products, Jinpan has completed the design and production of its solid-state transformer prototype, with product iteration still underway. The company has also launched self-developed HVDC products for use in its AI-enabled smart factory. In addition, its self-manufactured large-capacity transformer has been put into operation, while its 345kV extra-high-voltage large power transformer has been delivered overseas. We believe global AI data-center construction will drive incremental demand for Jinpan's power transmission and distribution equipment and energy storage solutions, supporting its medium-term growth outlook.
+
+# Himile (002595 CH, Buy): Global tire mold leader with multiple growth engines
+
+We expect Himile's three core businesses to sustain solid growth: 1) its CNC machine tool business offers meaningful growth potential. The company continues to develop mid- to high-end machine tools and has made external sales a clear strategic priority. As product competitiveness improves, we believe Himile is well positioned to benefit from domestic substitution in machine tools and deliver faster revenue growth. 2) recovering downstream demand should support a rebound in the large components business, whose end-markets mainly include wind power and gas turbines, in our view. We expect the business to benefit from improving wind power demand and a recovery in wind turbine pricing. Meanwhile, Himile's gas turbine business already serves leading domestic and overseas customers. We believe incremental AI-related power demand could flow through generation-side capex into stronger demand for gas turbines and related components. 3) the tire mold business is shifting toward a more global and platform-based model. We expect Himile to continue gaining global share as Chinese tire manufacturers expand overseas.
+
+# Shemar Electric (603530 CH, Buy): Composite insulator leader positioned to benefit from domestic UHV projects and overseas grid upgrades
+
+As a global leader in composite insulators, Shemar offers exposure to three key demand drivers: 1) global power demand is entering a new upcycle, which should support demand for the company's core composite insulator products. 2) in China, the State Grid website indicates that 15 UHV DC projects are planned for commissioning during the 15th Five-Year Plan period from 2026 to 2030. We believe this should drive demand for Shemar's related products. 3) in overseas markets, we expect grid capex in the US and Europe to remain on a relatively fast growth track in 2025-27, supported by AI data-center construction, rising EV penetration and the power system clean-energy transition. This should create a favorable backdrop for Shemar's product exports and overseas expansion.
+
+Fig. 14: China power equipment sector – Valuation comparables 
+
+<table><tr><td rowspan="2">Sub-sector</td><td rowspan="2">Ticker</td><td rowspan="2">Company name</td><td rowspan="2">Rating</td><td rowspan="2">Target price (LC)</td><td rowspan="2">Price (LC)</td><td rowspan="2">Mkt cap (USDmn)</td><td colspan="3">PE (x)</td><td rowspan="2">EPS CAGR 2026-28F</td><td colspan="3">ROE (%)</td></tr><tr><td>2026F</td><td>2027F</td><td>2028F</td><td>2026F</td><td>2027F</td><td>2028F</td></tr><tr><td rowspan="5">AI power</td><td>688676 CH</td><td>Jinpan Smart Technology</td><td>Buy</td><td>121.55</td><td>96.08</td><td>6,469.08</td><td>43.4</td><td>33.2</td><td>24.5</td><td>40%</td><td>17.6</td><td>20.6</td><td>24.3</td></tr><tr><td>002028 CH</td><td>Sieyuan Electric</td><td>Buy</td><td>273.00</td><td>194.10</td><td>22,240.18</td><td>35.5</td><td>27.1</td><td>20.0</td><td>34%</td><td>22.4</td><td>23.7</td><td>25.3</td></tr><tr><td>002922 CH</td><td>Eaglerise Electric</td><td>Not Rated</td><td>-</td><td>44.19</td><td>2,734.59</td><td>38.8</td><td>25.6</td><td>17.0</td><td>73%</td><td>12.0</td><td>16.5</td><td>21.4</td></tr><tr><td>002364 CH</td><td>Zhongheng Electric</td><td>Not Rated</td><td>-</td><td>53.70</td><td>4,431.74</td><td>114.6</td><td>71.2</td><td>50.9</td><td>69%</td><td>9.8</td><td>14.0</td><td>17.8</td></tr><tr><td>601126 CH</td><td>Sifang Automation</td><td>Not Rated</td><td>-</td><td>76.00</td><td>9,271.91</td><td>64.3</td><td>55.0</td><td>45.1</td><td>19%</td><td>18.8</td><td>20.3</td><td>22.1</td></tr><tr><td>Average</td><td></td><td></td><td></td><td></td><td></td><td></td><td>63.3</td><td>44.7</td><td>33.3</td><td>49%</td><td>15.8</td><td>18.6</td><td>21.7</td></tr><tr><td>Median</td><td></td><td></td><td></td><td></td><td></td><td></td><td>51.5</td><td>41.0</td><td>32.5</td><td>51%</td><td>15.4</td><td>18.4</td><td>21.7</td></tr><tr><td rowspan="4">Gas turbine components</td><td>002595 CH</td><td>Himile</td><td>Buy</td><td>68.04</td><td>54.15</td><td>9,198.40</td><td>21.5</td><td>17.5</td><td>14.2</td><td>8%</td><td>21.0</td><td>22.0</td><td>23.0</td></tr><tr><td>605060 CH</td><td>Allied Machinery</td><td>Not Rated</td><td>-</td><td>53.90</td><td>1,899.00</td><td>39.3</td><td>29.7</td><td>22.1</td><td>37%</td><td>12.4</td><td>14.9</td><td>17.0</td></tr><tr><td>601882 CH</td><td>Haitian Precision</td><td>Not Rated</td><td>-</td><td>23.26</td><td>1,778.02</td><td>23.8</td><td>20.5</td><td>17.9</td><td>17%</td><td>15.5</td><td>15.7</td><td>15.8</td></tr><tr><td>688305 CH</td><td>Kede Numerical Control</td><td>Not Rated</td><td>-</td><td>68.10</td><td>1,325.41</td><td>66.4</td><td>52.4</td><td>43.4</td><td>33%</td><td>6.8</td><td>8.1</td><td>9.1</td></tr><tr><td>Average</td><td></td><td></td><td></td><td></td><td></td><td></td><td>43.2</td><td>34.2</td><td>27.8</td><td>29%</td><td>11.6</td><td>12.9</td><td>14.0</td></tr><tr><td>Median</td><td></td><td></td><td></td><td></td><td></td><td></td><td>39.3</td><td>29.7</td><td>22.1</td><td>33%</td><td>12.4</td><td>14.9</td><td>15.8</td></tr><tr><td rowspan="6">Composite insulators</td><td>603530 CH</td><td>Shemar Electric</td><td>Buy</td><td>84.32</td><td>56.66</td><td>3,581.78</td><td>41.61</td><td>30.51</td><td>24.69</td><td>32%</td><td>27.79</td><td>31.87</td><td>32.90</td></tr><tr><td>002028 CH</td><td>Sieyuan Electric</td><td>Buy</td><td>273.0</td><td>194.10</td><td>22,240.18</td><td>35.5</td><td>27.1</td><td>20.0</td><td>34%</td><td>22.4</td><td>23.7</td><td>25.3</td></tr><tr><td>688676 CH</td><td>Jinpan Smart Technology</td><td>Buy</td><td>121.6</td><td>96.08</td><td>6,469.08</td><td>44.9</td><td>34.3</td><td>25.3</td><td>40%</td><td>17.7</td><td>20.6</td><td>24.4</td></tr><tr><td>002270 CH</td><td>Huaming Power Equipment</td><td>Not Rated</td><td>-</td><td>23.26</td><td>3,052.69</td><td>24.7</td><td>20.4</td><td>16.1</td><td>22%</td><td>24.2</td><td>26.3</td><td>28.6</td></tr><tr><td>600312 CH</td><td>Pinggao Electric</td><td>Not Rated</td><td>-</td><td>21.00</td><td>4,172.82</td><td>20.1</td><td>16.6</td><td>14.3</td><td>21%</td><td>11.8</td><td>12.9</td><td>13.2</td></tr><tr><td>601179 CH</td><td>China XD Electric</td><td>Not Rated</td><td>-</td><td>16.18</td><td>12,145.15</td><td>53.3</td><td>43.3</td><td>36.6</td><td>21%</td><td>6.5</td><td>7.5</td><td>8.3</td></tr><tr><td>Average</td><td></td><td></td><td></td><td></td><td></td><td></td><td>35.7</td><td>28.3</td><td>22.5</td><td>28%</td><td>16.5</td><td>18.2</td><td>20.0</td></tr><tr><td>Median</td><td></td><td></td><td></td><td></td><td></td><td></td><td>35.5</td><td>20.4</td><td>16.1</td><td>21%</td><td>11.8</td><td>12.9</td><td>13.2</td></tr></table>
+
+Note: Priced as of 26 May 2026; NOM estimates for rated stocks and Wind consensus for not rated stocks. Source: Wind, NOM estimates
+
+EQUITY: Electrical Equipment
+
+# AI data center demand to extend growth runway
+
+Initiate at Buy with a TP of CNY121.55, implying 26.5% upside
+
+# Power equipment exports entering an opportunity cycle; 1Q orders accelerated
+
+Jinpan has long focused on transformers, integrated electrical equipment and energy storage products, while actively expanding overseas. With the global power equipment market likely to remain tight through 2026, we see scope for Jinpan to capture incremental overseas demand as customers diversify supply chains and turn to Chinese alternatives. According to the company's IR meeting minutes, new orders reached CNY3.34bn in 1Q26, up $64.5\%$ y-y. Jinpan has production bases in China and overseas markets including Malaysia, supporting delivery capability and supply chain resilience. We believe its global manufacturing footprint positions it well to benefit from robust global power equipment demand, supporting sustained revenue and profit growth. We forecast 2026-28F revenue/net profit CAGRs of $27\% / 40\%$ .
+
+# Global AI data center buildout brings a new growth driver
+
+Jinpan has made visible progress in AI data center-related products in recent years. According to its 2025 annual report, revenue from the data center segment reached CNY1.34bn in 2025, up $196.8\%$ y-y, becoming an important growth driver. In 2026, we expect continued product launches in AI data center power transmission and distribution to strengthen its competitive position. According to the company's IR meeting minutes, its R&D priorities include: 1) AI data center segment, with ongoing upgrades to core solid-state transformer technology; 2) transformers and power transmission/distribution, with multiple high-capacity transformer products under development; and 3) energy storage, with planned R&D and rollout of products including 13MW dry-type transformers for energy storage applications. We like Jinpan's early positioning in AI data center-related products, and forecast 2026-28F revenue CAGRs of $25\% / 45\% / 40\%$ for transmission and distribution equipment/energy storage/digital solutions.
+
+# Initiate at Buy with a TP of CNY121.55, implying 26.5% upside
+
+We believe the AI data center buildout cycle will remain a key driver of the company's core business growth, and forecast revenue and net profit CAGRs of 27% and 40% in 2026-28F, respectively. We value the company at 55x 2026F P/E, a discount to the 63x peer average to reflect our expectation that its earnings growth will lag the peer average. Based on 2026F EPS of CNY2.21, we derive our TP of CNY121.55, implying 26.5% upside; initiate at Buy. The stock trades at 43.4x 2026F P/E and has underperformed the CSI 300 by 0.1pp over the past month as of 26 May, which we attribute to fund outflows from related sectors amid a lack of catalysts for power equipment exports and solid-state transformer progress. Key catalysts include stronger-than-expected AI data center-related orders and greater-than-expected benefits from China's “anti-involution” efforts in energy storage. Key downside risks include weaker orders, slower overseas expansion and slower progress than expected in emerging businesses.
+
+<table><tr><td>Year-end 31 Dec</td><td>FY25</td><td colspan="2">FY26F</td><td colspan="2">FY27F</td><td colspan="2">FY28F</td></tr><tr><td>Currency (CNY)</td><td>Actual</td><td>Old</td><td>New</td><td>Old</td><td>New</td><td>Old</td><td>New</td></tr><tr><td>Revenue (mn)</td><td>7,295</td><td></td><td>9,245</td><td></td><td>11,743</td><td></td><td>14,952</td></tr><tr><td>Reported net profit (mn)</td><td>660</td><td></td><td>1,018</td><td></td><td>1,332</td><td></td><td>1,806</td></tr><tr><td>Normalised net profit (mn)</td><td>610</td><td></td><td>968</td><td></td><td>1,332</td><td></td><td>1,806</td></tr><tr><td>FD normalised EPS</td><td>1.33</td><td></td><td>2.10</td><td></td><td>2.90</td><td></td><td>3.93</td></tr><tr><td>FD norm. EPS growth (%)</td><td>10.6</td><td></td><td>58.7</td><td></td><td>37.7</td><td></td><td>35.6</td></tr><tr><td>FD normalised P/E (x)</td><td>72.5</td><td></td><td>45.7</td><td></td><td>33.2</td><td></td><td>24.5</td></tr><tr><td>EV/EBITDA (x)</td><td>42.5</td><td></td><td>31.3</td><td></td><td>25.1</td><td></td><td>19.4</td></tr><tr><td>Price/book (x)</td><td>7.9</td><td></td><td>7.7</td><td></td><td>6.8</td><td></td><td>6.0</td></tr><tr><td>Dividend yield (%)</td><td>0.7</td><td></td><td>1.1</td><td></td><td>1.4</td><td></td><td>1.9</td></tr><tr><td>ROE (%)</td><td>12.6</td><td></td><td>17.6</td><td></td><td>20.6</td><td></td><td>24.3</td></tr><tr><td>Net debt/equity (%)</td><td>net cash</td><td></td><td>net cash</td><td></td><td>net cash</td><td></td><td>net cash</td></tr></table>
+
+Source: Wind, company data, NOM estimates
+
+<table><tr><td>RatingStarts at</td><td>Buy</td></tr></table>
+
+<table><tr><td>Target price</td><td>CNY 121.55</td></tr><tr><td>Starts at</td><td></td></tr></table>
+
+<table><tr><td>Closing price26 May 2026</td><td>CNY 96.08</td></tr></table>
+
+<table><tr><td>Implied upside</td><td>+26.5%</td></tr></table>
+
+<table><tr><td>Market Cap (USD mn)</td><td>6,469.1</td></tr><tr><td>ADT (USD mn)</td><td>210.6</td></tr></table>
+
+Relative performance chart   
+![](images/20bb85c11311d19cf2dab0aeafe6cdbe1d1c0a5bb31c5c8922363c97211acd9d.jpg)
+
+<details>
+<summary>line</summary>
+
+| Date   | Price | CSI300 |
+|--------|-------|--------|
+| 25/05  | -5    | -5     |
+| 25/08  | ~88   | ~10    |
+| 25/11  | ~182  | ~15    |
+| 26/02  | ~135  | ~20    |
+| 26/05  | ~229  | ~25    |
+</details>
+
+Source: Gildata
+
+# Research Analysts
+
+# China Electrical Equipment and Renewables
+
+Xiaoming Ma - NOI
+
+noiresearch@NOM.com
+
+SAC Registration No.: S1720522060001
+
+Peiyu Li - NOI
+
+noiresearch@NOM.com
+
+SAC Registration No.: S1720525040001
+
+This document is an English translation of the original Chinese report released on 27 May 2026 by NOM Orient International Securities Co., Ltd. in the People's Republic of China. In case of any discrepancy between the English translation and the Chinese original, the Chinese version shall prevail.
+
+# Key data on Jinpan Smart Technology
+
+Performance 
+
+<table><tr><td>(%)</td><td>1M</td><td>3M</td><td>12M</td><td></td><td></td></tr><tr><td>Absolute (CNY)</td><td>3.6</td><td>-7.5</td><td>197.4</td><td>M cap (USDmn)</td><td>6,469.1</td></tr><tr><td>Absolute (USD)</td><td>4.2</td><td>-6.2</td><td>212.8</td><td>Free float (%)</td><td>51.9</td></tr><tr><td>Rel to CSI 300</td><td>-0.1</td><td>-12.2</td><td>169.2</td><td>3-mth ADT (USDmn)</td><td>210.6</td></tr><tr><td colspan="6">Source: Gildata</td></tr></table>
+
+Income statement (CNYmn) 
+
+<table><tr><td>Year-end 31 Dec</td><td>FY24</td><td>FY25</td><td>FY26F</td><td>FY27F</td><td>FY28F</td></tr><tr><td>Revenue</td><td>6,901</td><td>7,295</td><td>9,245</td><td>11,743</td><td>14,952</td></tr><tr><td>Cost of goods sold</td><td>-5,223</td><td>-5,409</td><td>-6,770</td><td>-8,576</td><td>-10,834</td></tr><tr><td>Gross profit</td><td>1,678</td><td>1,886</td><td>2,475</td><td>3,167</td><td>4,118</td></tr><tr><td>SG&amp;A</td><td>-1,007</td><td>-1,101</td><td>-1,348</td><td>-1,732</td><td>-2,205</td></tr><tr><td>Employee share expense</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>Operating profit</td><td>618</td><td>718</td><td>1,105</td><td>1,449</td><td>1,965</td></tr><tr><td>EBITDA</td><td>955</td><td>995</td><td>1,431</td><td>1,797</td><td>2,340</td></tr><tr><td>Depreciation</td><td>-230</td><td>-246</td><td>-277</td><td>-301</td><td>-324</td></tr><tr><td>Amortisation</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>EBIT</td><td>725</td><td>749</td><td>1,154</td><td>1,496</td><td>2,016</td></tr><tr><td>Net interest expense</td><td>-28</td><td>-59</td><td>-47</td><td>-45</td><td>-48</td></tr><tr><td>Associates &amp; JCEs</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr><tr><td>Other income</td><td>-26</td><td>-3</td><td>26</td><td>61</td><td>103</td></tr><tr><td>Earnings before tax</td><td>617</td><td>723</td><td>1,107</td><td>1,451</td><td>1,968</td></tr><tr><td>Income tax</td><td>-46</td><td>-69</td><td>-97</td><td>-128</td><td>-175</td></tr><tr><td>Net profit after tax</td><td>571</td><td>654</td><td>1,010</td><td>1,324</td><td>1,793</td></tr><tr><td>Minority interests</td><td>4</td><td>5</td><td>7</td><td>10</td><td>14</td></tr><tr><td>Other items</td><td>0</td><td>0</td><td>0</td><td>-2</td><td>-1</td></tr><tr><td>Preferred dividends</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>Normalised NPAT</td><td>551</td><td>610</td><td>968</td><td>1,332</td><td>1,806</td></tr><tr><td>Extraordinary items</td><td>23</td><td>50</td><td>50</td><td>0</td><td>0</td></tr><tr><td>Reported NPAT</td><td>574</td><td>660</td><td>1,018</td><td>1,332</td><td>1,806</td></tr><tr><td>Dividends</td><td>-231</td><td>-312</td><td>-482</td><td>-630</td><td>-855</td></tr><tr><td>Transfer to reserves</td><td>344</td><td>347</td><td>536</td><td>702</td><td>951</td></tr><tr><td>Valuations and ratios</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>Reported P/E (x)</td><td>33.0</td><td>63.0</td><td>43.4</td><td>33.2</td><td>24.5</td></tr><tr><td>Normalised P/E (x)</td><td>34.4</td><td>68.1</td><td>45.7</td><td>33.2</td><td>24.5</td></tr><tr><td>FD normalised P/E (x)</td><td>80.2</td><td>72.5</td><td>45.7</td><td>33.2</td><td>24.5</td></tr><tr><td>Dividend yield (%)</td><td>0.5</td><td>0.7</td><td>1.1</td><td>1.4</td><td>1.9</td></tr><tr><td>Price/cashflow (x)</td><td>-</td><td>73.5</td><td>49.2</td><td>67.3</td><td>44.8</td></tr><tr><td>Price/book (x)</td><td>4.3</td><td>7.9</td><td>7.7</td><td>6.8</td><td>6.0</td></tr><tr><td>EV/EBITDA (x)</td><td>20.8</td><td>42.5</td><td>31.3</td><td>25.1</td><td>19.4</td></tr><tr><td>EV/EBIT (x)</td><td>62.3</td><td>59.9</td><td>38.8</td><td>30.2</td><td>22.5</td></tr><tr><td>Gross margin (%)</td><td>24.3</td><td>25.9</td><td>26.8</td><td>27.0</td><td>27.5</td></tr><tr><td>EBITDA margin (%)</td><td>13.8</td><td>13.6</td><td>15.5</td><td>15.3</td><td>15.6</td></tr><tr><td>EBIT margin (%)</td><td>10.5</td><td>10.3</td><td>12.5</td><td>12.7</td><td>13.5</td></tr><tr><td>Net margin (%)</td><td>8.3</td><td>9.0</td><td>11.0</td><td>11.3</td><td>12.1</td></tr><tr><td>Effective tax rate (%)</td><td>7.5</td><td>9.5</td><td>8.8</td><td>8.8</td><td>8.9</td></tr><tr><td>Dividend payout (%)</td><td>40.1</td><td>47.3</td><td>47.3</td><td>47.3</td><td>47.3</td></tr><tr><td>ROE (%)</td><td>12.9</td><td>12.6</td><td>17.6</td><td>20.6</td><td>24.3</td></tr><tr><td>ROA (pretax %)</td><td>8.0</td><td>6.8</td><td>8.8</td><td>10.1</td><td>11.9</td></tr><tr><td>Growth (%)</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>Revenue</td><td>3.5</td><td>5.7</td><td>26.7</td><td>27.0</td><td>27.3</td></tr><tr><td>EBITDA</td><td>25.3</td><td>4.2</td><td>43.8</td><td>25.6</td><td>30.2</td></tr><tr><td>Normalised EPS</td><td>7.0</td><td>10.0</td><td>58.7</td><td>37.7</td><td>35.6</td></tr><tr><td>Normalised FDEPS</td><td>14.6</td><td>10.6</td><td>58.7</td><td>37.7</td><td>35.6</td></tr></table>
+
+Source: Wind, company data, NOM estimates
+
+Cashflow statement (CNYmn) 
+
+<table><tr><td>Year-end 31 Dec</td><td>FY24</td><td>FY25</td><td>FY26F</td><td>FY27F</td><td>FY28F</td></tr><tr><td>EBITDA</td><td>955</td><td>995</td><td>1,431</td><td>1,797</td><td>2,340</td></tr><tr><td>Change in working capital</td><td>-983</td><td>-419</td><td>-547</td><td>-1,133</td><td>-1,293</td></tr><tr><td>Other operating cashflow</td><td>-9</td><td>25</td><td>14</td><td>-7</td><td>-61</td></tr><tr><td>Cashflow from operations</td><td>-37</td><td>601</td><td>899</td><td>657</td><td>986</td></tr><tr><td>Capital expenditure</td><td>-433</td><td>-380</td><td>-272</td><td>-286</td><td>-279</td></tr><tr><td>Free cashflow</td><td>-470</td><td>221</td><td>627</td><td>371</td><td>706</td></tr><tr><td>Reduction in investments</td><td>-11</td><td>-11</td><td>0</td><td>0</td><td>0</td></tr><tr><td>Net acquisitions</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr><tr><td>Dec in other LT assets</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr><tr><td>Inc in other LT liabilities</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr><tr><td>Adjustments</td><td>6</td><td>5</td><td>39</td><td>16</td><td>20</td></tr><tr><td>CF after investing acts</td><td>-475</td><td>214</td><td>666</td><td>386</td><td>726</td></tr><tr><td>Cash dividends</td><td>-231</td><td>-312</td><td>-482</td><td>-630</td><td>-855</td></tr><tr><td>Equity issue</td><td>30</td><td>1,683</td><td>0</td><td>0</td><td>0</td></tr><tr><td>Debt issue</td><td>561</td><td>612</td><td>84</td><td>0</td><td>0</td></tr><tr><td>Convertible debt issue</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>Others</td><td>-118</td><td>61</td><td>-75</td><td>-78</td><td>-78</td></tr><tr><td>CF from financial acts</td><td>243</td><td>2,044</td><td>-473</td><td>-708</td><td>-932</td></tr><tr><td>Net cashflow</td><td>-220</td><td>2,260</td><td>182</td><td>-322</td><td>-206</td></tr><tr><td>Beginning cash</td><td>735</td><td>515</td><td>2,776</td><td>2,957</td><td>2,635</td></tr><tr><td>Ending cash</td><td>515</td><td>2,776</td><td>2,957</td><td>2,635</td><td>2,429</td></tr><tr><td>Ending net debt</td><td>507</td><td>-1,364</td><td>-1,546</td><td>-1,224</td><td>-1,017</td></tr></table>
+
+Balance sheet (CNYmn) 
+
+<table><tr><td>As at 31 Dec</td><td>FY24</td><td>FY25</td><td>FY26F</td><td>FY27F</td><td>FY28F</td></tr><tr><td>Cash &amp; equivalents</td><td>515</td><td>2,776</td><td>2,957</td><td>2,635</td><td>2,429</td></tr><tr><td>Marketable securities</td><td>45</td><td>63</td><td>63</td><td>63</td><td>63</td></tr><tr><td>Accounts receivable</td><td>3,080</td><td>2,878</td><td>3,830</td><td>4,761</td><td>5,987</td></tr><tr><td>Inventories</td><td>2,119</td><td>2,590</td><td>2,899</td><td>3,762</td><td>4,764</td></tr><tr><td>Other current assets</td><td>1,270</td><td>1,208</td><td>1,358</td><td>1,713</td><td>2,077</td></tr><tr><td>Total current assets</td><td>7,029</td><td>9,515</td><td>11,108</td><td>12,935</td><td>15,320</td></tr><tr><td>LT investments</td><td>133</td><td>300</td><td>300</td><td>300</td><td>300</td></tr><tr><td>Fixed assets</td><td>1,967</td><td>2,061</td><td>2,085</td><td>2,100</td><td>2,085</td></tr><tr><td>Goodwill</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr><tr><td>Other intangible assets</td><td>263</td><td>259</td><td>248</td><td>237</td><td>226</td></tr><tr><td>Other LT assets</td><td>224</td><td>256</td><td>212</td><td>195</td><td>178</td></tr><tr><td>Total assets</td><td>9,616</td><td>12,391</td><td>13,954</td><td>15,767</td><td>18,109</td></tr><tr><td>Short-term debt</td><td>168</td><td>492</td><td>492</td><td>492</td><td>492</td></tr><tr><td>Accounts payable</td><td>2,504</td><td>2,471</td><td>3,151</td><td>3,987</td><td>5,024</td></tr><tr><td>Other current liabilities</td><td>1,388</td><td>1,556</td><td>1,925</td><td>2,209</td><td>2,577</td></tr><tr><td>Total current liabilities</td><td>4,061</td><td>4,518</td><td>5,567</td><td>6,688</td><td>8,092</td></tr><tr><td>Long-term debt</td><td>854</td><td>920</td><td>920</td><td>920</td><td>920</td></tr><tr><td>Convertible debt</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>Other LT liabilities</td><td>255</td><td>1,732</td><td>1,727</td><td>1,727</td><td>1,727</td></tr><tr><td>Total liabilities</td><td>5,169</td><td>7,170</td><td>8,215</td><td>9,335</td><td>10,739</td></tr><tr><td>Minority interest</td><td>-3</td><td>-10</td><td>-17</td><td>-25</td><td>-38</td></tr><tr><td>Preferred stock</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>Common stock</td><td>457</td><td>460</td><td>460</td><td>460</td><td>460</td></tr><tr><td>Retained earnings</td><td>1,953</td><td>2,382</td><td>2,907</td><td>3,608</td><td>4,559</td></tr><tr><td>Proposed dividends</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>Other equity and reserves</td><td>2,039</td><td>2,388</td><td>2,390</td><td>2,390</td><td>2,390</td></tr><tr><td>Total shareholders&#x27; equity</td><td>4,447</td><td>5,221</td><td>5,739</td><td>6,432</td><td>7,370</td></tr><tr><td>Total equity &amp; liabilities</td><td>9,616</td><td>12,391</td><td>13,954</td><td>15,767</td><td>18,109</td></tr></table>
+
+Liquidity (x) 
+
+<table><tr><td>Current ratio</td><td>1.73</td><td>2.11</td><td>2.00</td><td>1.93</td><td>1.89</td></tr><tr><td>Interest cover</td><td>25.5</td><td>12.6</td><td>24.8</td><td>33.6</td><td>41.9</td></tr><tr><td colspan="6">Leverage</td></tr><tr><td>Net debt/EBITDA (x)</td><td>0.53</td><td>net cash</td><td>net cash</td><td>net cash</td><td>net cash</td></tr><tr><td>Net debt/equity (%)</td><td>11.4</td><td>net cash</td><td>net cash</td><td>net cash</td><td>net cash</td></tr></table>
+
+Per share 
+
+<table><tr><td>Reported EPS (CNY)</td><td>1.29</td><td>1.44</td><td>2.21</td><td>2.90</td><td>3.93</td></tr><tr><td>Norm EPS (CNY)</td><td>1.20</td><td>1.33</td><td>2.10</td><td>2.90</td><td>3.93</td></tr><tr><td>FD norm EPS (CNY)</td><td>1.20</td><td>1.33</td><td>2.10</td><td>2.90</td><td>3.93</td></tr><tr><td>BVPS (CNY)</td><td>9.73</td><td>11.38</td><td>12.52</td><td>14.04</td><td>16.11</td></tr><tr><td>DPS (CNY)</td><td>0.51</td><td>0.68</td><td>1.05</td><td>1.37</td><td>1.86</td></tr><tr><td colspan="6">Activity (days)</td></tr><tr><td>Days receivable</td><td>159.1</td><td>147.0</td><td>130.6</td><td>131.7</td><td>129.4</td></tr><tr><td>Days inventory</td><td>132.9</td><td>156.7</td><td>145.9</td><td>139.8</td><td>141.7</td></tr><tr><td>Days payable</td><td>168.6</td><td>165.6</td><td>149.5</td><td>149.8</td><td>149.7</td></tr><tr><td>Cash cycle</td><td>123.3</td><td>138.1</td><td>127.1</td><td>121.7</td><td>121.3</td></tr></table>
+
+Source: Wind, company data, NOM estimates
+
+# Company profile
+
+Jinpan is a global power equipment supplier engaged in the R&D, production and sales of transformers, integrated electrical equipment and energy storage products. The company has fully adopted a digital manufacturing model, and provides power supply solutions and high-end equipment for renewable energy, AIDC power systems, new infrastructure, energy efficiency and rail transportation applications.
+
+# Valuation Methodology
+
+Our target price of CNY121.55 is based on a target P/E of 55x and 2026F EPS of CNY2.21. We apply a discount to the peer valuation average to reflect the company's relatively lower profit growth profile. The stock's benchmark index is the CSI 300.
+
+# Risks that may impede the achievement of the target price
+
+Key downside risks include weaker-than-expected orders, slower-than-expected overseas expansion and weaker-than-expected progress in emerging businesses.
+
+# ESG
+
+Jinpan has developed integrated energy management systems, PV monitoring and O&M systems, and centralized renewable energy control systems to improve environmental risk management and energy efficiency. The company also supports emissions reduction through green power procurement and Green Electricity Certificate-based carbon offsetting. Four of its zero-carbon factories are currently in operation.
+
+# Financial forecasts
+
+We expect Jinpan to benefit from robust global power equipment demand and profitability improvement from the launch of high-value AI data center-related products. We forecast a 27% revenue CAGR in 2026-28F, with gross margin rising to 26.8%/27.0%/27.5% in 2026/27/28F from 25.9% in 2025. We expect the company's selling, general and administrative (SG&A) expense ratio to decline to 14.6%-14.7% in 2026-28F from 15.1% in 2025, reflecting operating efficiency improvement. Based on these assumptions, we forecast net profit of CNY1,018mn/CNY1,332mn/CNY1,806mn in 2026/27/28F, implying a 40% CAGR over the period.
+
+Fig. 1: Jinpan Smart Technology – Key financial forecasts 
+
+<table><tr><td>CNYmn</td><td>2025</td><td>2026F</td><td>2027F</td><td>2028F</td></tr><tr><td>Revenue</td><td>7,295</td><td>9,245</td><td>11,743</td><td>14,952</td></tr><tr><td>Transmission &amp; distribution equipment</td><td>6,273</td><td>7,842</td><td>9,802</td><td>12,253</td></tr><tr><td>Energy storage</td><td>621</td><td>900</td><td>1,305</td><td>1,893</td></tr><tr><td>Digital solutions</td><td>112</td><td>157</td><td>220</td><td>308</td></tr><tr><td>Others</td><td>289</td><td>346</td><td>415</td><td>499</td></tr><tr><td>Gross profit</td><td>1,886</td><td>2,475</td><td>3,167</td><td>4,118</td></tr><tr><td>Gross margin</td><td>25.9%</td><td>26.8%</td><td>27.0%</td><td>27.5%</td></tr><tr><td>Taxes and surcharges</td><td>42</td><td>51</td><td>66</td><td>83</td></tr><tr><td>SG&amp;A</td><td>1,101</td><td>1,348</td><td>1,732</td><td>2,205</td></tr><tr><td>Operating profit</td><td>718</td><td>1,105</td><td>1,448</td><td>1,964</td></tr><tr><td>Operating margin</td><td>9.8%</td><td>12.0%</td><td>12.3%</td><td>13.1%</td></tr><tr><td>Depreciation</td><td>246</td><td>277</td><td>301</td><td>324</td></tr><tr><td>Income tax</td><td>69</td><td>97</td><td>128</td><td>175</td></tr><tr><td>Net profit</td><td>660</td><td>1,018</td><td>1,332</td><td>1,806</td></tr><tr><td>Net margin</td><td>9.0%</td><td>11.0%</td><td>11.3%</td><td>12.1%</td></tr><tr><td>EPS (CNY)</td><td>1.44</td><td>2.21</td><td>2.90</td><td>3.93</td></tr></table>
+
+Source: Wind, Jinpan 2025 annual report, NOM estimates
+
+Our revenue and net profit forecasts are above Wind consensus, mainly because we expect the company's strengths in overseas data center customer resources, product positioning and certifications to well translate into revenue and profit. Our 2026 net profit forecast is notably more bullish than consensus, reflecting our expectation that accelerated shipments of AI data center-related products will support profitability improvement. For 2027-28F, our net profit forecasts are closer to Wind consensus, as we factor in potentially intensifying competition from Chinese companies in overseas markets.
+
+Fig. 2: Jinpan Smart Technology – NOM estimates vs. Wind consensus 
+
+<table><tr><td rowspan="2">CNYmn</td><td colspan="3">NOM estimates</td><td colspan="3">Wind consensus</td><td colspan="3">Diff. (%)</td></tr><tr><td>2026F</td><td>2027F</td><td>2028F</td><td>2026E</td><td>2027E</td><td>2028E</td><td>2026F</td><td>2027F</td><td>2028F</td></tr><tr><td>Revenue</td><td>9,245</td><td>11,743</td><td>14,952</td><td>8,831</td><td>10,973</td><td>13,385</td><td>4.7%</td><td>7.0%</td><td>11.7%</td></tr><tr><td>Net profit</td><td>1,018</td><td>1,332</td><td>1,806</td><td>926</td><td>1,298</td><td>1,720</td><td>9.9%</td><td>2.6%</td><td>5.0%</td></tr></table>
+
+Source: Wind, NOM estimates
+
+# Valuation methodology and risks
+
+# Initiate at Buy with a TP of CNY121.55
+
+Given our expectation for sustained profit growth, we value Jinpan using a P/E methodology. We select domestic power equipment companies with active overseas expansion and AI data center product exposure as peers, including Sieyuan Electric (002028 CH, Buy), Eaglerise Electric (002922 CH, Not Rated), Zhongheng Electric (002364 CH, Not Rated) and Sifang Automation (601126 CH, Not Rated).
+
+Our peer set focuses on companies with closer comparability to Jinpan's transformer export opportunities and AI data center-related product positioning. Based on Wind consensus, the peer group trades at an average 2026F P/E of 63x. While we expect Jinpan to benefit from strong demand for AI data centers and power equipment exports, we forecast a $40\%$ EPS CAGR for the company in 2026-28F, below the peer average of $49\%$ over the same period. We therefore apply a 55x target P/E multiple, at a discount to the peer average. Based on 2026F EPS of CNY2.21, our target price is CNY121.55, implying $26.5\%$ upside. We initiate coverage with a Buy rating.
+
+Fig. 3: Jinpan Smart Technology – Valuation comparables 
+
+<table><tr><td rowspan="2">Ticker</td><td rowspan="2">Company name</td><td rowspan="2">Rating</td><td rowspan="2">TP (LC)</td><td rowspan="2">CP (LC)</td><td rowspan="2">Mkt cap (USDmn)</td><td colspan="3">PE (x)</td><td rowspan="2">EPS CAGR 2026-28F</td><td colspan="3">ROE (%)</td></tr><tr><td>2026F</td><td>2027F</td><td>2028F</td><td>2026F</td><td>2027F</td><td>2028F</td></tr><tr><td>688676 CH</td><td>Jinpan Smart Technology</td><td>Buy</td><td>121.55</td><td>96.08</td><td>6,469.08</td><td>43.4</td><td>33.2</td><td>24.5</td><td>40%</td><td>17.6</td><td>20.6</td><td>24.3</td></tr><tr><td>002028 CH</td><td>Sieyuan Electric</td><td>Buy</td><td>273.00</td><td>194.10</td><td>22,240.18</td><td>35.5</td><td>27.1</td><td>20.0</td><td>34%</td><td>22.4</td><td>23.7</td><td>25.3</td></tr><tr><td>002922 CH</td><td>Eaglerise Electric</td><td>Not Rated</td><td>-</td><td>44.19</td><td>2,734.59</td><td>38.8</td><td>25.6</td><td>17.0</td><td>73%</td><td>12.0</td><td>16.5</td><td>21.4</td></tr><tr><td>002364 CH</td><td>Zhongheng Electric</td><td>Not Rated</td><td>-</td><td>53.70</td><td>4,431.74</td><td>114.6</td><td>71.2</td><td>50.9</td><td>69%</td><td>9.8</td><td>14.0</td><td>17.8</td></tr><tr><td>601126 CH</td><td>Sifang Automation</td><td>Not Rated</td><td>-</td><td>76.00</td><td>9,271.91</td><td>64.3</td><td>55.0</td><td>45.1</td><td>19%</td><td>18.8</td><td>20.3</td><td>22.1</td></tr><tr><td colspan="6">Average</td><td>63.3</td><td>44.7</td><td>33.3</td><td>49%</td><td>15.8</td><td>18.6</td><td>21.7</td></tr></table>
+
+Note: Priced at close of 26 May; NOM estimates for rated stocks and Wind consensus estimates for not rated stocks; averages exclude Jinpan.
+Source: Wind, NOM estimates
+
+Fig. 4: Jinpan Smart Technology – P/E band   
+![](images/500fb2c05cfe57033f978df007ed63f03b45132cf1045af367b2257beb2af3c5.jpg)
+
+<details>
+<summary>line</summary>
+
+| Date     | Closing price | 42x  | 30x  | 47x  | 36x  | 24x  |
+|----------|---------------|------|------|------|------|------|
+| 2023/05  | ~30           | ~35  | ~30  | ~35  | ~30  | ~20  |
+| 2023/08  | ~35           | ~40  | ~35  | ~40  | ~35  | ~25  |
+| 2023/11  | ~35           | ~45  | ~40  | ~45  | ~40  | ~30  |
+| 2024/02  | ~40           | ~50  | ~45  | ~50  | ~45  | ~35  |
+| 2024/05  | ~55           | ~55  | ~50  | ~55  | ~50  | ~40  |
+| 2024/08  | ~30           | ~50  | ~45  | ~50  | ~45  | ~35  |
+| 2024/11  | ~35           | ~55  | ~50  | ~55  | ~50  | ~40  |
+| 2025/02  | ~40           | ~60  | ~55  | ~60  | ~55  | ~45  |
+| 2025/05  | ~35           | ~65  | ~60  | ~65  | ~60  | ~50  |
+| 2025/08  | ~60           | ~70  | ~65  | ~70  | ~65  | ~55  |
+| 2025/11  | ~80           | ~75  | ~70  | ~75  | ~70  | ~60  |
+| 2026/02  | ~100          | ~80  | ~75  | ~80  | ~75  | ~65  |
+| 2026/05  | ~95           | ~85  | ~80  | ~85  | ~80  | ~70  |
+</details>
+
+Note: Priced as of 26 May   
+Source: Wind, NOM
+
+Fig. 5: Jinpan Smart Technology – P/B band   
+![](images/456ff2274dd9602bdd3426df72f94fb9ba939ce9adb9586a4517f380f5b3e569.jpg)
+
+<details>
+<summary>line</summary>
+
+| Date     | Closing price | 6.8x | 5.9x | 5.0x | 4.1x | 3.2x |
+|----------|---------------|------|------|------|------|------|
+| 2023/05  | ~30           | ~40  | ~35  | ~30  | ~25  | ~20  |
+| 2023/08  | ~35           | ~45  | ~40  | ~35  | ~30  | ~25  |
+| 2023/11  | ~40           | ~50  | ~45  | ~40  | ~35  | ~30  |
+| 2024/02  | ~45           | ~55  | ~50  | ~45  | ~40  | ~35  |
+| 2024/05  | ~55           | ~60  | ~55  | ~50  | ~45  | ~40  |
+| 2024/08  | ~30           | ~65  | ~60  | ~55  | ~50  | ~45  |
+| 2024/11  | ~35           | ~70  | ~65  | ~60  | ~55  | ~50  |
+| 2025/02  | ~40           | ~75  | ~70  | ~65  | ~60  | ~55  |
+| 2025/05  | ~35           | ~80  | ~75  | ~70  | ~65  | ~60  |
+| 2025/08  | ~60           | ~85  | ~80  | ~75  | ~70  | ~65  |
+| 2025/11  | ~80           | ~90  | ~85  | ~80  | ~75  | ~70  |
+| 2026/02  | ~100          | ~95  | ~90  | ~85  | ~80  | ~75  |
+| 2026/05  | ~95           | ~90  | ~85  | ~80  | ~75  | ~70  |
+</details>
+
+Note: Priced as of 26 May   
+Source: Wind, NOM
+
+# Key downside risks
+
+1) Weaker-than-expected orders: Power equipment products are the company's core business, and customer orders are an important leading indicator of future performance. If future order intake falls short of our expectations, revenue and profit growth could be adversely affected.   
+2) Slower-than-expected overseas expansion: The company is actively expanding overseas, but overseas operations are subject to factors including trade frictions, changes in industrial policies and shifts in the competitive environment. If overseas expansion falls short of our expectations, overseas revenue growth and overall profitability improvement could be adversely affected.   
+3) Weaker-than-expected progress in emerging businesses: The market has relatively positive expectations for the company's AI data center-related emerging products, and the potential valuation uplift from new businesses has been partly priced in. However, progress in new businesses also depends on other parts of the industry chain. If the company's emerging businesses develop more slowly than we expect, its overall valuation could come under pressure.
+
+EQUITY: Machinery and Equipment
+
+# Three core businesses to sustain steady growth
+
+Initiate at Buy with a TP of CNY68.04, implying 25.7% upside
+
+# Strong global gas turbine demand to lift large components business
+
+Building on manufacturing capabilities developed in tire molds, Himile has expanded into large components and CNC (computer numerical control) machine tools. We believe rising power demand from AI data center buildout should support gas turbine demand and create incremental growth opportunities for the company's large components business. According to Himile's 2025 annual report, its strengths in the large components business include: 1) a broad product portfolio and integrated casting/machining capabilities, enabling blank-to-finished-product solutions; 2) a diversified customer base, supported by long-term partnerships with global leaders (such as Siemens), and leading domestic companies (such as Dongfang Electric); and 3) capacity expansion to support potential demand growth, with total casting capacity reaching 300kt after completion of the 65ktpa casting expansion project in 2H25.
+
+# Three core businesses set to sustain steady growth
+
+Himile's core businesses include tire molds, large mechanical components and CNC machine tools. We forecast 2026-28F revenue CAGRs of $30\%$ for CNC machine tools, $18\%$ for large mechanical components and $15\%$ for tire molds. We expect CNC machine tools to deliver the fastest growth, supported by product/customer breakthroughs and a low revenue base. For large components, strong demand from wind power and gas turbine applications, together with capacity expansion, should support solid revenue growth, in our view. For tire molds, Himile remains a clear global leader, but we expect slower revenue growth than the other two segments, as upside is likely to come mainly from Chinese tire makers' overseas expansion and tire product upgrades in a replacement-driven global tire market.
+
+# Initiate at Buy with a TP of CNY68.04, implying 25.7% upside
+
+We expect the company's net profit to reach CNY2,922mn/CNY3,585mn/CNY4,419mn in 2026-28F, driven by steady growth across Himile's three core businesses. Factoring in margin pressure on tire molds, as recent EU regulations may raise compliance costs for Chinese tire makers expanding overseas and increase customers' focus on cost control, we forecast gross margin to edge up from $33.6\%$ in 2025 to $33.9\% / 34.4\% / 34.9\%$ in 2026-28F. We value Himile at 27x 2026F P/E, below the 43x 2026E peer average, to reflect our expectation that the company's earnings growth will trail its peers. Based on 2026F EPS forecast of CNY2.52, we derive a TP of CNY68.04, implying $25.7\%$ upside. Currently the stock trades at 21.5x 2026F P/E. Over the past month as of 26 May, Himile's unadjusted share price underperformed the CSI 300 by 43.1pp, mainly due to the technical impact of the conversion of capital reserves into share capital and ex-rights/ex-dividend adjustment, in our view. Key catalysts include stronger-than-expected orders for large mechanical components and CNC machine tools. Key downside risks include weaker downstream tire demand, slower-than-expected domestic substitution in CNC machine tools, and exchange-rate fluctuation risk.
+
+<table><tr><td>Year-end 31 Dec</td><td>FY25</td><td colspan="2">FY26F</td><td colspan="2">FY27F</td><td colspan="2">FY28F</td></tr><tr><td>Currency (CNY)</td><td>Actual</td><td>Old</td><td>New</td><td>Old</td><td>New</td><td>Old</td><td>New</td></tr><tr><td>Revenue (mn)</td><td>11,078</td><td></td><td>13,228</td><td></td><td>15,875</td><td></td><td>19,170</td></tr><tr><td>Reported net profit (mn)</td><td>2,393</td><td></td><td>2,922</td><td></td><td>3,585</td><td></td><td>4,419</td></tr><tr><td>Normalised net profit (mn)</td><td>2,267</td><td></td><td>2,904</td><td></td><td>3,585</td><td></td><td>4,419</td></tr><tr><td>FD normalised EPS</td><td>1.95</td><td></td><td>2.50</td><td></td><td>3.09</td><td></td><td>3.81</td></tr><tr><td>FD norm. EPS growth (%)</td><td>20.2</td><td></td><td>28.1</td><td></td><td>23.5</td><td></td><td>23.3</td></tr><tr><td>FD normalised P/E (x)</td><td>28.4</td><td></td><td>22.2</td><td>-</td><td>18.0</td><td></td><td>14.6</td></tr><tr><td>EV/EBITDA (x)</td><td>21.9</td><td></td><td>17.2</td><td>-</td><td>14.0</td><td></td><td>11.3</td></tr><tr><td>Price/book (x)</td><td>5.6</td><td></td><td>4.6</td><td>-</td><td>4.0</td><td></td><td>3.3</td></tr><tr><td>Dividend yield (%)</td><td>1.8</td><td></td><td>1.5</td><td></td><td>1.9</td><td></td><td>2.3</td></tr><tr><td>ROE (%)</td><td>19.9</td><td></td><td>21.0</td><td></td><td>22.0</td><td></td><td>23.0</td></tr><tr><td>Net debt/equity (%)</td><td>net cash</td><td></td><td>net cash</td><td></td><td>net cash</td><td></td><td>net cash</td></tr></table>
+
+Source: Wind, company data, NOM estimates
+
+<table><tr><td>RatingStarts at</td><td>Buy</td></tr></table>
+
+<table><tr><td>Target priceStarts at</td><td>CNY 68.04</td></tr></table>
+
+<table><tr><td>Closing price26 May 2026</td><td>CNY 54.15</td></tr></table>
+
+<table><tr><td>Implied upside</td><td>+25.7%</td></tr></table>
+
+<table><tr><td>Market Cap (USD mn)</td><td>9,194.4</td></tr><tr><td>ADT (USD mn)</td><td>57.6</td></tr></table>
+
+Relative performance chart   
+![](images/48de47abfaa14e922f6fffdeffdcb49e1792fe2006e296230151a5627715f9b2.jpg)
+
+<details>
+<summary>line</summary>
+
+| Date   | Price | CSI300 |
+|--------|-------|--------|
+| 25/05  | 3     | 3      |
+| 25/08  | -11   | 17     |
+| 25/11  | 45    | 17     |
+| 26/02  | 59    | 17     |
+| 26/05  | 31    | 31     |
+</details>
+
+Source: Gildata
+
+# Research Analysts
+
+# China Electrical Equipment and Renewables
+
+Peiyu Li - NOI
+
+noiresearch@NOM.com
+
+SAC Registration No.: S1720525040001
+
+Xiaoming Ma - NOI
+
+noiresearch@NOM.com
+
+SAC Registration No.: S1720522060001
+
+This document is an English translation of the original Chinese report released on 27 May 2026 by NOM Orient International Securities Co., Ltd. in the People's Republic of China. In case of any discrepancy between the English translation and the Chinese original, the Chinese version shall prevail.
+
+# Key data on Himile
+
+Performance 
+
+<table><tr><td>(%)</td><td>1M</td><td>3M</td><td>12M</td><td></td><td></td></tr><tr><td>Absolute (CNY)</td><td>-39.3</td><td>-44.5</td><td>-13.2</td><td>M cap (USDmn)</td><td>9,194.4</td></tr><tr><td>Absolute (USD)</td><td>-39.0</td><td>-43.7</td><td>-8.7</td><td>Free float (%)</td><td>48.9</td></tr><tr><td>Rel to CSI 300</td><td>-43.1</td><td>-49.1</td><td>-41.4</td><td>3-mth ADT (USDmn)</td><td>57.6</td></tr><tr><td colspan="6">Source: Gildata</td></tr></table>
+
+Income statement (CNYmn) 
+
+<table><tr><td>Year-end 31 Dec</td><td>FY24</td><td>FY25</td><td>FY26F</td><td>FY27F</td><td>FY28F</td></tr><tr><td>Revenue</td><td>8,813</td><td>11,078</td><td>13,228</td><td>15,875</td><td>19,170</td></tr><tr><td>Cost of goods sold</td><td>-5,790</td><td>-7,361</td><td>-8,745</td><td>-10,414</td><td>-12,482</td></tr><tr><td>Gross profit</td><td>3,023</td><td>3,718</td><td>4,483</td><td>5,462</td><td>6,688</td></tr><tr><td>SG&amp;A</td><td>-857</td><td>-1,130</td><td>-1,310</td><td>-1,583</td><td>-1,914</td></tr><tr><td>Employee share expense</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>Operating profit</td><td>2,294</td><td>2,743</td><td>3,342</td><td>4,099</td><td>5,053</td></tr><tr><td>EBITDA</td><td>2,574</td><td>3,029</td><td>3,622</td><td>4,365</td><td>5,292</td></tr><tr><td>Depreciation</td><td>-340</td><td>-386</td><td>-300</td><td>-300</td><td>-292</td></tr><tr><td>Amortisation</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>EBIT</td><td>2,234</td><td>2,642</td><td>3,322</td><td>4,065</td><td>5,000</td></tr><tr><td>Net interest expense</td><td>10</td><td>56</td><td>17</td><td>31</td><td>50</td></tr><tr><td>Associates &amp; JCEs</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr><tr><td>Other income</td><td>117</td><td>93</td><td>149</td><td>187</td><td>227</td></tr><tr><td>Earnings before tax</td><td>2,293</td><td>2,738</td><td>3,339</td><td>4,096</td><td>5,050</td></tr><tr><td>Income tax</td><td>-279</td><td>-343</td><td>-415</td><td>-508</td><td>-628</td></tr><tr><td>Net profit after tax</td><td>2,014</td><td>2,395</td><td>2,924</td><td>3,588</td><td>4,422</td></tr><tr><td>Minority interests</td><td>-2</td><td>-2</td><td>-2</td><td>-3</td><td>-3</td></tr><tr><td>Other items</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr><tr><td>Preferred dividends</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>Normalised NPAT</td><td>1,887</td><td>2,267</td><td>2,904</td><td>3,585</td><td>4,419</td></tr><tr><td>Extraordinary items</td><td>125</td><td>126</td><td>19</td><td>0</td><td>0</td></tr><tr><td>Reported NPAT</td><td>2,011</td><td>2,393</td><td>2,922</td><td>3,585</td><td>4,419</td></tr><tr><td>Dividends</td><td>-1,419</td><td>-800</td><td>-977</td><td>-1,198</td><td>-1,477</td></tr><tr><td>Transfer to reserves</td><td>593</td><td>1,593</td><td>1,946</td><td>2,387</td><td>2,942</td></tr><tr><td>Valuations and ratios</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>Reported P/E (x)</td><td>20.0</td><td>28.2</td><td>22.1</td><td>18.0</td><td>14.6</td></tr><tr><td>Normalised P/E (x)</td><td>21.3</td><td>29.8</td><td>22.2</td><td>18.0</td><td>14.6</td></tr><tr><td>FD normalised P/E (x)</td><td>34.2</td><td>28.4</td><td>22.2</td><td>18.0</td><td>14.6</td></tr><tr><td>Dividend yield (%)</td><td>1.4</td><td>1.8</td><td>1.5</td><td>1.9</td><td>2.3</td></tr><tr><td>Price/cashflow (x)</td><td>56.6</td><td>62.4</td><td>32.8</td><td>24.9</td><td>20.8</td></tr><tr><td>Price/book (x)</td><td>4.1</td><td>5.6</td><td>4.6</td><td>4.0</td><td>3.3</td></tr><tr><td>EV/EBITDA (x)</td><td>15.2</td><td>21.9</td><td>17.2</td><td>14.0</td><td>11.3</td></tr><tr><td>EV/EBIT (x)</td><td>28.3</td><td>23.9</td><td>18.8</td><td>15.0</td><td>11.9</td></tr><tr><td>Gross margin (%)</td><td>34.3</td><td>33.6</td><td>33.9</td><td>34.4</td><td>34.9</td></tr><tr><td>EBITDA margin (%)</td><td>29.2</td><td>27.3</td><td>27.4</td><td>27.5</td><td>27.6</td></tr><tr><td>EBIT margin (%)</td><td>25.3</td><td>23.9</td><td>25.1</td><td>25.6</td><td>26.1</td></tr><tr><td>Net margin (%)</td><td>22.8</td><td>21.6</td><td>22.1</td><td>22.6</td><td>23.1</td></tr><tr><td>Effective tax rate (%)</td><td>12.2</td><td>12.5</td><td>12.4</td><td>12.4</td><td>12.4</td></tr><tr><td>Dividend payout (%)</td><td>70.5</td><td>33.4</td><td>33.4</td><td>33.4</td><td>33.4</td></tr><tr><td>ROE (%)</td><td>20.4</td><td>19.9</td><td>21.0</td><td>22.0</td><td>23.0</td></tr><tr><td>ROA (pretax %)</td><td>20.7</td><td>20.0</td><td>21.0</td><td>22.2</td><td>23.2</td></tr><tr><td>Growth (%)</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>Revenue</td><td>23.0</td><td>25.7</td><td>19.4</td><td>20.0</td><td>20.8</td></tr><tr><td>EBITDA</td><td>22.6</td><td>17.7</td><td>19.6</td><td>20.5</td><td>21.2</td></tr><tr><td>Normalised EPS</td><td>20.5</td><td>20.2</td><td>-11.7</td><td>23.5</td><td>23.3</td></tr><tr><td>Normalised FDEPS</td><td>20.5</td><td>20.2</td><td>28.1</td><td>23.5</td><td>23.3</td></tr></table>
+
+Source: Wind, company data, NOM estimates
+
+Cashflow statement (CNYmn) 
+
+<table><tr><td>Year-end 31 Dec</td><td>FY24</td><td>FY25</td><td>FY26F</td><td>FY27F</td><td>FY28F</td></tr><tr><td>EBITDA</td><td>2,574</td><td>3,029</td><td>3,622</td><td>4,365</td><td>5,292</td></tr><tr><td>Change in working capital</td><td>-1,200</td><td>-1,796</td><td>-1,243</td><td>-1,278</td><td>-1,584</td></tr><tr><td>Other operating cashflow</td><td>-235</td><td>-199</td><td>-412</td><td>-501</td><td>-613</td></tr><tr><td>Cashflow from operations</td><td>1,139</td><td>1,034</td><td>1,967</td><td>2,586</td><td>3,095</td></tr><tr><td>Capital expenditure</td><td>-371</td><td>-910</td><td>-145</td><td>-165</td><td>-245</td></tr><tr><td>Free cashflow</td><td>768</td><td>124</td><td>1,821</td><td>2,421</td><td>2,850</td></tr><tr><td>Reduction in investments</td><td>64</td><td>149</td><td>0</td><td>0</td><td>0</td></tr><tr><td>Net acquisitions</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr><tr><td>Dec in other LT assets</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr><tr><td>Inc in other LT liabilities</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr><tr><td>Adjustments</td><td>48</td><td>46</td><td>78</td><td>74</td><td>88</td></tr><tr><td>CF after investing acts</td><td>880</td><td>319</td><td>1,899</td><td>2,495</td><td>2,939</td></tr><tr><td>Cash dividends</td><td>-1,419</td><td>-800</td><td>-977</td><td>-1,198</td><td>-1,477</td></tr><tr><td>Equity issue</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr><tr><td>Debt issue</td><td>41</td><td>167</td><td>2</td><td>0</td><td>0</td></tr><tr><td>Convertible debt issue</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>Others</td><td>627</td><td>512</td><td>8</td><td>-5</td><td>-5</td></tr><tr><td>CF from financial acts</td><td>-750</td><td>-120</td><td>-967</td><td>-1,204</td><td>-1,482</td></tr><tr><td>Net cashflow</td><td>150</td><td>223</td><td>909</td><td>1,292</td><td>1,456</td></tr><tr><td>Beginning cash</td><td>1,076</td><td>1,227</td><td>1,450</td><td>2,359</td><td>3,651</td></tr><tr><td>Ending cash</td><td>1,227</td><td>1,450</td><td>2,359</td><td>3,651</td><td>5,107</td></tr><tr><td>Ending net debt</td><td>-1,141</td><td>-1,240</td><td>-2,149</td><td>-3,441</td><td>-4,897</td></tr></table>
+
+Balance sheet (CNYmn) 
+
+<table><tr><td>As at 31 Dec</td><td>FY24</td><td>FY25</td><td>FY26F</td><td>FY27F</td><td>FY28F</td></tr><tr><td>Cash &amp; equivalents</td><td>1,227</td><td>1,450</td><td>2,359</td><td>3,651</td><td>5,107</td></tr><tr><td>Marketable securities</td><td>274</td><td>483</td><td>483</td><td>483</td><td>483</td></tr><tr><td>Accounts receivable</td><td>3,104</td><td>4,170</td><td>4,814</td><td>5,768</td><td>6,965</td></tr><tr><td>Inventories</td><td>2,478</td><td>2,693</td><td>3,359</td><td>4,004</td><td>4,749</td></tr><tr><td>Other current assets</td><td>1,200</td><td>1,185</td><td>1,269</td><td>1,404</td><td>1,582</td></tr><tr><td>Total current assets</td><td>8,283</td><td>9,980</td><td>12,284</td><td>15,311</td><td>18,887</td></tr><tr><td>LT investments</td><td>173</td><td>108</td><td>108</td><td>108</td><td>108</td></tr><tr><td>Fixed assets</td><td>2,388</td><td>3,572</td><td>3,439</td><td>3,325</td><td>3,291</td></tr><tr><td>Goodwill</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr><tr><td>Other intangible assets</td><td>515</td><td>652</td><td>637</td><td>621</td><td>605</td></tr><tr><td>Other LT assets</td><td>319</td><td>455</td><td>435</td><td>427</td><td>427</td></tr><tr><td>Total assets</td><td>11,678</td><td>14,767</td><td>16,903</td><td>19,792</td><td>23,318</td></tr><tr><td>Short-term debt</td><td>45</td><td>210</td><td>210</td><td>210</td><td>210</td></tr><tr><td>Accounts payable</td><td>525</td><td>881</td><td>886</td><td>1,100</td><td>1,330</td></tr><tr><td>Other current liabilities</td><td>924</td><td>1,266</td><td>1,449</td><td>1,734</td><td>2,085</td></tr><tr><td>Total current liabilities</td><td>1,493</td><td>2,357</td><td>2,545</td><td>3,044</td><td>3,626</td></tr><tr><td>Long-term debt</td><td>41</td><td>0</td><td>0</td><td>0</td><td>0</td></tr><tr><td>Convertible debt</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>Other LT liabilities</td><td>258</td><td>374</td><td>426</td><td>426</td><td>426</td></tr><tr><td>Total liabilities</td><td>1,792</td><td>2,731</td><td>2,971</td><td>3,470</td><td>4,051</td></tr><tr><td>Minority interest</td><td>7</td><td>9</td><td>11</td><td>14</td><td>17</td></tr><tr><td>Preferred stock</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>Common stock</td><td>800</td><td>800</td><td>1,160</td><td>1,160</td><td>1,160</td></tr><tr><td>Retained earnings</td><td>8,554</td><td>10,687</td><td>12,610</td><td>14,996</td><td>17,938</td></tr><tr><td>Proposed dividends</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>Other equity and reserves</td><td>525</td><td>540</td><td>151</td><td>151</td><td>151</td></tr><tr><td>Total shareholders&#x27; equity</td><td>9,886</td><td>12,036</td><td>13,932</td><td>16,322</td><td>19,267</td></tr><tr><td>Total equity &amp; liabilities</td><td>11,678</td><td>14,767</td><td>16,903</td><td>19,792</td><td>23,318</td></tr></table>
+
+Liquidity (x) 
+
+<table><tr><td>Current ratio</td><td>5.55</td><td>4.23</td><td>4.83</td><td>5.03</td><td>5.21</td></tr><tr><td>Interest cover</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr></table>
+
+Leverage 
+
+<table><tr><td>Net debt/EBITDA (x)</td><td>net cash</td><td>net cash</td><td>net cash</td><td>net cash</td><td>net cash</td></tr><tr><td>Net debt/equity (%)</td><td>net cash</td><td>net cash</td><td>net cash</td><td>net cash</td><td>net cash</td></tr></table>
+
+Per share 
+
+<table><tr><td>Reported EPS (CNY)</td><td>2.53</td><td>3.00</td><td>2.52</td><td>3.09</td><td>3.81</td></tr><tr><td>Norm EPS (CNY)</td><td>2.36</td><td>2.83</td><td>2.50</td><td>3.09</td><td>3.81</td></tr><tr><td>FD norm EPS (CNY)</td><td>1.63</td><td>1.95</td><td>2.50</td><td>3.09</td><td>3.81</td></tr><tr><td>BVPS (CNY)</td><td>12.35</td><td>15.03</td><td>12.00</td><td>14.06</td><td>16.59</td></tr><tr><td>DPS (CNY)</td><td>0.78</td><td>1.00</td><td>0.84</td><td>1.03</td><td>1.27</td></tr><tr><td colspan="6">Activity (days)</td></tr><tr><td>Days receivable</td><td>116.4</td><td>118.2</td><td>122.2</td><td>120.0</td><td>119.6</td></tr><tr><td>Days inventory</td><td>129.0</td><td>126.5</td><td>124.6</td><td>127.3</td><td>126.2</td></tr><tr><td>Days payable</td><td>26.2</td><td>34.4</td><td>36.4</td><td>34.3</td><td>35.1</td></tr><tr><td>Cash cycle</td><td>219.2</td><td>210.3</td><td>210.4</td><td>212.9</td><td>210.8</td></tr></table>
+
+Source: Wind, company data, NOM estimates
+
+# Company profile
+
+Himile's core businesses include tire molds, casting and precision machining of large mechanical components, and the R&D, production and sales of machine tools. In large mechanical components, the company has established long-term relationships with leading domestic and overseas customers and has received multiple best supplier awards.
+
+# Valuation Methodology
+
+Our target price of CNY68.04 is based on a 27x target 2026F P/E multiple and 2026F EPS of CNY2.52. We apply a discount to the 2026E peer average P/E to reflect our expectation that the company's earnings growth will lag the peer average. The stock's benchmark index is the CSI 300.
+
+# Risks that may impede the achievement of the target price
+
+Key downside risks include weaker-than-expected demand in the downstream tire industry, slower-than-expected domestic substitution in CNC machine tools and exchange-rate fluctuation risk.
+
+# ESG
+
+Himile was among the first national-level green factories and national clean production demonstration enterprises in China, and has participated in the formulation of comprehensive green manufacturing standards for the industry. The company continues to explore low-carbon development across clean energy use, design and development, production and processing, and waste treatment.
+
+# Financial forecasts
+
+We expect steady growth across Himile's three core businesses. However, we believe the recent EU regulatory measures may increase compliance costs for Chinese tire companies expanding overseas and strengthen downstream customers' focus on supply chain pricing and cost control. We therefore forecast gross margin to edge up from $33.6\%$ in 2025 to $33.9\% / 34.4\% / 34.9\%$ in 2026/27/28F. Based on these assumptions, we forecast net profit of CNY2,922mn/CNY3,585mn/CNY4,419mn in 2026/27/28F.
+
+Fig. 1: Himile – Key financial forecasts 
+
+<table><tr><td>CNYmn</td><td>2025</td><td>2026F</td><td>2027F</td><td>2028F</td></tr><tr><td>Revenue</td><td>11,078</td><td>13,228</td><td>15,875</td><td>19,170</td></tr><tr><td>Tire molds</td><td>5,509</td><td>6,335</td><td>7,286</td><td>8,379</td></tr><tr><td>Large mechanical components</td><td>3,964</td><td>4,678</td><td>5,519</td><td>6,513</td></tr><tr><td>CNC Machine Tool</td><td>968</td><td>1,258</td><td>1,636</td><td>2,127</td></tr><tr><td>Others</td><td>637</td><td>956</td><td>1,434</td><td>2,152</td></tr><tr><td>Gross profit</td><td>3,718</td><td>4,483</td><td>5,462</td><td>6,688</td></tr><tr><td>Gross margin</td><td>33.6%</td><td>33.9%</td><td>34.4%</td><td>34.9%</td></tr><tr><td>Taxes and surcharges</td><td>103</td><td>125</td><td>148</td><td>180</td></tr><tr><td>SG&amp;A</td><td>1,130</td><td>1,310</td><td>1,583</td><td>1,914</td></tr><tr><td>Operating profit</td><td>2,743</td><td>3,342</td><td>4,099</td><td>5,053</td></tr><tr><td>Operating margin</td><td>24.8%</td><td>25.3%</td><td>25.8%</td><td>26.4%</td></tr><tr><td>Depreciation</td><td>386</td><td>300</td><td>300</td><td>292</td></tr><tr><td>Income tax</td><td>343</td><td>415</td><td>508</td><td>628</td></tr><tr><td>Net profit</td><td>2,393</td><td>2,922</td><td>3,585</td><td>4,419</td></tr><tr><td>Net margin</td><td>21.6%</td><td>22.1%</td><td>22.6%</td><td>23.1%</td></tr><tr><td>EPS (CNY)</td><td>3.00</td><td>2.52</td><td>3.09</td><td>3.81</td></tr></table>
+
+Source: Wind, Himile 2025 annual report, NOM estimates
+
+Our revenue and net profit forecasts are above Wind consensus, mainly because we expect the company's high-quality gas turbine customer resources in large components to translate into earnings growth. We also believe the CNC machine tool business is making good progress in market development and could outperform market expectations by leveraging the company's existing tire mold customer channels.
+
+Fig. 1: Himile – NOM estimates vs. Wind consensus 
+
+<table><tr><td rowspan="2">CNYmn</td><td colspan="3">NOM estimates</td><td colspan="3">Wind consensus</td><td colspan="3">Diff. (%)</td></tr><tr><td>2026F</td><td>2027F</td><td>2028F</td><td>2026E</td><td>2027E</td><td>2028E</td><td>2026F</td><td>2027F</td><td>2028F</td></tr><tr><td>Revenue</td><td>13,228</td><td>15,875</td><td>19,170</td><td>13,134</td><td>15,725</td><td>18,553</td><td>0.7%</td><td>1.0%</td><td>3.3%</td></tr><tr><td>Net profit</td><td>2,922</td><td>3,585</td><td>4,419</td><td>2,906</td><td>3,473</td><td>4,133</td><td>0.6%</td><td>3.2%</td><td>6.9%</td></tr></table>
+
+Source: Wind, NOM estimates
+
+# Valuation methodology and risks
+
+# Initiate at Buy with a TP of CNY68.04
+
+Given our expectation for steady profit growth, we value Himile using a P/E methodology. We select domestic companies with exposure to casting and CNC machine tools as peers, including Allied Machinery (605060 CH, Not Rated), Haitian Precision (601882 CH, Not Rated) and Kede Numerical Control (688305 CH, Not Rated).
+
+We value Himile at 27x 2026F P/E, a discount to the 2026E peer average of 43x, mainly reflecting our expectation that Himile's future earnings growth will lag the peer average. We forecast the company's 2026-28F EPS CAGR at $8\%$ , below the peer average of $29\%$ over the same period. Based on 2026F EPS of CNY2.52, we derive our target price of CNY68.04, implying $25.7\%$ upside. We initiate coverage with a Buy rating.
+
+Fig. 2: Himile – Valuation comparables 
+
+<table><tr><td rowspan="2">Ticker</td><td rowspan="2">Company name</td><td rowspan="2">Rating</td><td rowspan="2">TP (LC)</td><td rowspan="2">CP (LC)</td><td rowspan="2">Mkt cap (USDmn)</td><td colspan="3">PE (x)</td><td rowspan="2">EPS CAGR 2026-28F</td><td colspan="3">ROE (%)</td></tr><tr><td>2026F</td><td>2027F</td><td>2028F</td><td>2026F</td><td>2027F</td><td>2028F</td></tr><tr><td>002595 CH</td><td>Himile</td><td>Buy</td><td>68.04</td><td>54.15</td><td>9,198.40</td><td>21.5</td><td>17.5</td><td>14.2</td><td>8%</td><td>21.0</td><td>22.0</td><td>23.0</td></tr><tr><td>605060 CH</td><td>Allied Machinery</td><td>Not Rated</td><td>-</td><td>53.90</td><td>1,899.00</td><td>39.3</td><td>29.7</td><td>22.1</td><td>37%</td><td>12.4</td><td>14.9</td><td>17.0</td></tr><tr><td>601882 CH</td><td>Haitian Precision</td><td>Not Rated</td><td>-</td><td>23.26</td><td>1,778.02</td><td>23.8</td><td>20.5</td><td>17.9</td><td>17%</td><td>15.5</td><td>15.7</td><td>15.8</td></tr><tr><td>688305 CH</td><td>Kede Numerical Control</td><td>Not Rated</td><td>-</td><td>68.10</td><td>1,325.41</td><td>66.4</td><td>52.4</td><td>43.4</td><td>33%</td><td>6.8</td><td>8.1</td><td>9.1</td></tr><tr><td>Average</td><td></td><td></td><td></td><td></td><td></td><td>43.2</td><td>34.2</td><td>27.8</td><td>29%</td><td>11.6</td><td>12.9</td><td>14.0</td></tr></table>
+
+Note: Priced at close of 26 May 2026; NOM estimates for rated stocks and Wind consensus estimates for not rated stocks; averages exclude Himile. Source: Wind, NOM estimates
+
+Fig. 3: Himile – P/E band   
+![](images/52b1f3971c1292e0254e0a7dc52b19e01cfe74dbb9ef1f1b7c5ac4dce8dd9080.jpg)  
+Note: Priced as of 26 May 2026   
+Source: Wind, NOM
+
+Fig. 4: Himile – P/B band   
+![](images/4b0fc0ad0473615480f43cdd0b187dc1783ab96149920359289dd551becf4c56.jpg)
+
+<details>
+<summary>line</summary>
+
+| Date     | Closing price | 5.2X | 4.6X | 3.3X | 3.9X | 2.6X |
+|----------|---------------|------|------|------|------|------|
+| 2023/05  | ~22           | ~35  | ~30  | ~28  | ~25  | ~17  |
+| 2023/08  | ~20           | ~36  | ~31  | ~29  | ~26  | ~17  |
+| 2023/11  | ~18           | ~37  | ~32  | ~30  | ~27  | ~17  |
+| 2024/02  | ~17           | ~38  | ~33  | ~31  | ~28  | ~17  |
+| 2024/05  | ~19           | ~39  | ~34  | ~32  | ~29  | ~18  |
+| 2024/08  | ~25           | ~40  | ~35  | ~33  | ~30  | ~19  |
+| 2024/11  | ~28           | ~41  | ~36  | ~34  | ~31  | ~20  |
+| 2025/02  | ~35           | ~45  | ~38  | ~36  | ~33  | ~21  |
+| 2025/05  | ~40           | ~48  | ~40  | ~38  | ~35  | ~22  |
+| 2025/08  | ~45           | ~50  | ~42  | ~40  | ~37  | ~23  |
+| 2025/11  | ~50           | ~52  | ~44  | ~42  | ~39  | ~24  |
+| 2026/02  | ~65           | ~55  | ~46  | ~44  | ~41  | ~25  |
+| 2026/05  | ~55           | ~58  | ~48  | ~46  | ~43  | ~26  |
+</details>
+
+Note: Priced as of 26 May 2026   
+Source: Wind, NOM
+
+# Key downside risks
+
+(1) Weaker-than-expected demand in the downstream tire industry: The performance of Himile's tire mold business is mainly driven by downstream tire demand. As tire molds are consumable products, incremental demand is largely driven by model replacement frequency and greater diversification of tire types. Given the global auto industry's transition toward EVs, if EV tires become more standardized and replacement cycles slow, the tire mold business could perform below our expectations.   
+(2) Slower-than-expected domestic substitution in CNC machine tools: Himile's CNC machine tool business could create market value upside as it benefits from domestic substitution. However, China's CNC machine tool industry still relies on imported suppliers for certain key components, including ball screws, guide rails and CNC systems. If Himile's technological progress in these key components falls short of expectations, the business could face pricing pressure after capacity expansion, and future profitability improvement could be weaker than we expect.   
+(3) Exchange-rate fluctuation risk: The company has long been committed to overseas market expansion. Exchange-rate fluctuations may affect the pricing of its export products, thereby weighing on profitability and posing risks to operations. In addition, as the scale of its export business continues to grow, the company's foreign-currency assets are likely to increase accordingly, which could lead to foreign-exchange gains or losses due to CNY fluctuations against foreign currencies. If the CNY sees significant volatility against major currencies such as the USD and EUR, the company's earnings growth may fall short of our expectations.
+
+EQUITY: Electrical Equipment
+
+# Composite insulator leader rides grid upcycle
+
+Initiate at Buy with a TP of CNY84.32, implying 48.8% upside
+
+# Leading composite insulator supplier positioned to benefit from grid capex tailwinds
+
+Shemar has a long operating track record in composite insulators, supported by strong product performance and an entrenched customer base. We expect its composite insulator products to remain a key top-line/bottom-line contributor, driven by higher grid and UHV investment during China's 15th Five-Year Plan period, as well as overseas grid upgrades and capacity expansion led by the energy transition and AI data center buildout. We forecast a $33\%$ CAGR for the company's revenue in 2026-28F. Considering operating leverage from revenue growth and continued overseas expansion, we expect gross margin to rise to $46.7\% / 46.8\% / 47.4\%$ in 2026/27/28F from $46.2\%$ in 2025.
+
+# Solid competitive position in core business; new growth areas under development
+
+According to the company's IR disclosures: 1) Shemar believes transformer and switchgear customers lack economies of scale in in-house insulator production, making it uneconomical for the customers to produce insulators themselves. Against the backdrop of accelerating global grid investment, we believe the company's leadership in composite insulators remains intact and should allow it to capture incremental orders from downstream demand growth; and 2) Shemar is actively developing external insulation and sealing products for power transmission and transformation equipment as future growth drivers. We forecast a $41\%$ revenue CAGR in 2026-28F for the company's composite external insulation business for power transmission and transformation lines.
+
+# Initiate at Buy with a TP of CNY84.32, implying 48.8% upside
+
+We expect Shemar to continue benefiting from domestic UHV construction and overseas grid upgrades, and forecast revenue and net profit CAGRs of 33% and 32% in 2026-28F, respectively. We value Shemar at 62x 2026F P/E, a premium to the 36x peer average to reflect its stronger expected profit growth and higher ROE than peers. Based on 2026F EPS of CNY1.36, we derive our TP of CNY84.32, implying 48.8% upside; initiate at Buy. The stock trades at 41.6x 2026F P/E and has underperformed the CSI 300 by 10.8pp over the past month as of 26 May, likely reflecting market concerns over power equipment exports and the pace of domestic UHV project execution, in our view. Key catalysts include faster-than-expected ramp-up of overseas plants and faster-than-expected domestic UHV construction. Key downside risks include product quality issues, exchange rate fluctuation risk and raw material price volatility
+
+<table><tr><td>Year-end 31 Dec</td><td>FY25</td><td colspan="2">FY26F</td><td colspan="2">FY27F</td><td colspan="2">FY28F</td></tr><tr><td>Currency (CNY)</td><td>Actual</td><td>Old</td><td>New</td><td>Old</td><td>New</td><td>Old</td><td>New</td></tr><tr><td>Revenue (mn)</td><td>1,721</td><td></td><td>2,531</td><td></td><td>3,359</td><td></td><td>4,091</td></tr><tr><td>Reported net profit (mn)</td><td>432</td><td></td><td>588</td><td></td><td>802</td><td></td><td>990</td></tr><tr><td>Normalised net profit (mn)</td><td>419</td><td></td><td>585</td><td></td><td>802</td><td></td><td>990</td></tr><tr><td>FD normalised EPS</td><td>0.97</td><td></td><td>1.35</td><td></td><td>1.86</td><td></td><td>2.29</td></tr><tr><td>FD norm. EPS growth (%)</td><td>38.7</td><td></td><td>39.4</td><td></td><td>37.1</td><td></td><td>23.6</td></tr><tr><td>FD normalised P/E (x)</td><td>58.3</td><td></td><td>41.8</td><td></td><td>30.5</td><td></td><td>24.7</td></tr><tr><td>EV/EBITDA (x)</td><td>30.4</td><td></td><td>30.4</td><td></td><td>23.1</td><td></td><td>18.9</td></tr><tr><td>Price/book (x)</td><td>9.9</td><td></td><td>11.6</td><td></td><td>9.7</td><td></td><td>8.1</td></tr><tr><td>Dividend yield (%)</td><td>0.6</td><td></td><td>0.8</td><td></td><td>1.6</td><td></td><td>2.0</td></tr><tr><td>ROE (%)</td><td>24.0</td><td></td><td>27.8</td><td></td><td>31.9</td><td></td><td>32.9</td></tr><tr><td>Net debt/equity (%)</td><td>14.7</td><td></td><td>net cash</td><td></td><td>net cash</td><td></td><td>net cash</td></tr></table>
+
+Source: Wind, company data, NOM estimates
+
+<table><tr><td>RatingStarts at</td><td>Buy</td></tr></table>
+
+<table><tr><td>Target priceStarts at</td><td>CNY 84.32</td></tr></table>
+
+<table><tr><td>Closing price26 May 2026</td><td>CNY 56.66</td></tr></table>
+
+<table><tr><td>Implied upside</td><td>+48.8%</td></tr></table>
+
+<table><tr><td>Market Cap (USD mn)</td><td>3,581.8</td></tr><tr><td>ADT (USD mn)</td><td>64.4</td></tr></table>
+
+Relative performance chart   
+![](images/06a0d441187f74994896bdfb3b46a79271783b8fccf468d5a4d9ae348f683605.jpg)
+
+<details>
+<summary>line</summary>
+
+| Date   | Price | CSI300 |
+|--------|-------|--------|
+| 25/05  | -8    | -8     |
+| 25/08  | 29    | 29     |
+| 25/11  | 66    | 29     |
+| 26/02  | 177   | 29     |
+| 26/05  | 140   | 29     |
+</details>
+
+Source: Gildata
+
+# Research Analysts
+
+# China Electrical Equipment and Renewables
+
+Peiyu Li - NOI
+
+noiresearch@NOM.com
+
+SAC Registration No.: S1720525040001
+
+Xiaoming Ma - NOI
+
+noiresearch@NOM.com
+
+SAC Registration No.: S1720522060001
+
+This document is an English translation of the original Chinese report released on 27 May 2026 by NOM Orient International Securities Co., Ltd. in the People's Republic of China. In case of any discrepancy between the English translation and the Chinese original, the Chinese version shall prevail.
+
+# Key data on Shemar Electric
+
+Performance 
+
+<table><tr><td>(%)</td><td>1M</td><td>3M</td><td>12M</td><td></td><td></td></tr><tr><td>Absolute (CNY)</td><td>-7.1</td><td>3.6</td><td>116.1</td><td>M cap (USDmn)</td><td>3,581.8</td></tr><tr><td>Absolute (USD)</td><td>-6.6</td><td>5.0</td><td>127.3</td><td>Free float (%)</td><td>20.9</td></tr><tr><td>Rel to CSI 300</td><td>-10.8</td><td>-1.1</td><td>87.9</td><td>3-mth ADT (USDmn)</td><td>64.4</td></tr><tr><td colspan="6">Source: Gildata</td></tr></table>
+
+Income statement (CNYmn) 
+
+<table><tr><td>Year-end 31 Dec</td><td>FY24</td><td>FY25</td><td>FY26F</td><td>FY27F</td><td>FY28F</td></tr><tr><td>Revenue</td><td>1,345</td><td>1,721</td><td>2,531</td><td>3,359</td><td>4,091</td></tr><tr><td>Cost of goods sold</td><td>-758</td><td>-926</td><td>-1,350</td><td>-1,787</td><td>-2,153</td></tr><tr><td>Gross profit</td><td>587</td><td>795</td><td>1,181</td><td>1,572</td><td>1,939</td></tr><tr><td>SG&amp;A</td><td>-242</td><td>-296</td><td>-518</td><td>-679</td><td>-835</td></tr><tr><td>Employee share expense</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>Operating profit</td><td>366</td><td>506</td><td>687</td><td>935</td><td>1,155</td></tr><tr><td>EBITDA</td><td>440</td><td>589</td><td>802</td><td>1,054</td><td>1,272</td></tr><tr><td>Depreciation</td><td>-82</td><td>-90</td><td>-106</td><td>-115</td><td>-115</td></tr><tr><td>Amortisation</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>EBIT</td><td>358</td><td>499</td><td>696</td><td>939</td><td>1,157</td></tr><tr><td>Net interest expense</td><td>7</td><td>5</td><td>-10</td><td>-4</td><td>-3</td></tr><tr><td>Associates &amp; JCEs</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr><tr><td>Other income</td><td>13</td><td>4</td><td>34</td><td>46</td><td>53</td></tr><tr><td>Earnings before tax</td><td>365</td><td>508</td><td>686</td><td>935</td><td>1,154</td></tr><tr><td>Income tax</td><td>-55</td><td>-77</td><td>-98</td><td>-133</td><td>-163</td></tr><tr><td>Net profit after tax</td><td>311</td><td>432</td><td>588</td><td>802</td><td>990</td></tr><tr><td>Minority interests</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr><tr><td>Other items</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr><tr><td>Preferred dividends</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>Normalised NPAT</td><td>302</td><td>419</td><td>585</td><td>802</td><td>990</td></tr><tr><td>Extraordinary items</td><td>8</td><td>12</td><td>3</td><td>0</td><td>0</td></tr><tr><td>Reported NPAT</td><td>311</td><td>432</td><td>588</td><td>802</td><td>990</td></tr><tr><td>Dividends</td><td>-197</td><td>-147</td><td>-200</td><td>-401</td><td>-495</td></tr><tr><td>Transfer to reserves</td><td>113</td><td>285</td><td>388</td><td>401</td><td>495</td></tr><tr><td>Valuations and ratios</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>Reported P/E (x)</td><td>34.4</td><td>41.1</td><td>41.6</td><td>30.5</td><td>24.7</td></tr><tr><td>Normalised P/E (x)</td><td>35.3</td><td>42.3</td><td>41.8</td><td>30.5</td><td>24.7</td></tr><tr><td>FD normalised P/E (x)</td><td>80.9</td><td>58.3</td><td>41.8</td><td>30.5</td><td>24.7</td></tr><tr><td>Dividend yield (%)</td><td>0.8</td><td>0.6</td><td>0.8</td><td>1.6</td><td>2.0</td></tr><tr><td>Price/cashflow (x)</td><td>152.7</td><td>208.7</td><td>37.8</td><td>43.4</td><td>30.5</td></tr><tr><td>Price/book (x)</td><td>6.0</td><td>9.9</td><td>11.6</td><td>9.7</td><td>8.1</td></tr><tr><td>EV/EBITDA (x)</td><td>23.7</td><td>30.4</td><td>30.4</td><td>23.1</td><td>18.9</td></tr><tr><td>EV/EBIT (x)</td><td>67.6</td><td>49.4</td><td>35.0</td><td>25.9</td><td>20.8</td></tr><tr><td>Gross margin (%)</td><td>43.6</td><td>46.2</td><td>46.6</td><td>46.8</td><td>47.4</td></tr><tr><td>EBITDA margin (%)</td><td>32.7</td><td>34.3</td><td>31.7</td><td>31.4</td><td>31.1</td></tr><tr><td>EBIT margin (%)</td><td>26.6</td><td>29.0</td><td>27.5</td><td>28.0</td><td>28.3</td></tr><tr><td>Net margin (%)</td><td>23.1</td><td>25.1</td><td>23.2</td><td>23.9</td><td>24.2</td></tr><tr><td>Effective tax rate (%)</td><td>15.0</td><td>15.1</td><td>14.3</td><td>14.2</td><td>14.2</td></tr><tr><td>Dividend payout (%)</td><td>63.5</td><td>34.0</td><td>34.0</td><td>50.0</td><td>50.0</td></tr><tr><td>ROE (%)</td><td>17.5</td><td>24.0</td><td>27.8</td><td>31.9</td><td>32.9</td></tr><tr><td>ROA (pretax %)</td><td>15.9</td><td>19.5</td><td>22.5</td><td>23.8</td><td>24.7</td></tr><tr><td>Growth (%)</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>Revenue</td><td>40.2</td><td>27.9</td><td>47.1</td><td>32.7</td><td>21.8</td></tr><tr><td>EBITDA</td><td>84.1</td><td>34.1</td><td>36.1</td><td>31.4</td><td>20.7</td></tr><tr><td>Normalised EPS</td><td>102.2</td><td>38.9</td><td>39.4</td><td>37.1</td><td>23.6</td></tr><tr><td>Normalised FDEPS</td><td>102.2</td><td>38.7</td><td>39.4</td><td>37.1</td><td>23.6</td></tr></table>
+
+Source: Wind, company data, NOM estimates
+
+Cashflow statement (CNYmn) 
+
+<table><tr><td>Year-end 31 Dec</td><td>FY24</td><td>FY25</td><td>FY26F</td><td>FY27F</td><td>FY28F</td></tr><tr><td>EBITDA</td><td>440</td><td>589</td><td>802</td><td>1,054</td><td>1,272</td></tr><tr><td>Change in working capital</td><td>-238</td><td>-418</td><td>-63</td><td>-376</td><td>-330</td></tr><tr><td>Other operating cashflow</td><td>-42</td><td>-54</td><td>-92</td><td>-115</td><td>-139</td></tr><tr><td>Cashflow from operations</td><td>160</td><td>117</td><td>648</td><td>564</td><td>803</td></tr><tr><td>Capital expenditure</td><td>-92</td><td>-233</td><td>-99</td><td>-101</td><td>-6</td></tr><tr><td>Free cashflow</td><td>68</td><td>-116</td><td>549</td><td>463</td><td>797</td></tr><tr><td>Reduction in investments</td><td>-57</td><td>10</td><td>0</td><td>0</td><td>0</td></tr><tr><td>Net acquisitions</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr><tr><td>Dec in other LT assets</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr><tr><td>Inc in other LT liabilities</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr><tr><td>Adjustments</td><td>3</td><td>2</td><td>0</td><td>5</td><td>5</td></tr><tr><td>CF after investing acts</td><td>14</td><td>-104</td><td>549</td><td>467</td><td>802</td></tr><tr><td>Cash dividends</td><td>-197</td><td>-147</td><td>-200</td><td>-401</td><td>-495</td></tr><tr><td>Equity issue</td><td>52</td><td>2</td><td>0</td><td>0</td><td>0</td></tr><tr><td>Debt issue</td><td>101</td><td>362</td><td>12</td><td>49</td><td>0</td></tr><tr><td>Convertible debt issue</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>Others</td><td>4</td><td>-298</td><td>-63</td><td>-17</td><td>-18</td></tr><tr><td>CF from financial acts</td><td>-41</td><td>-80</td><td>-251</td><td>-369</td><td>-513</td></tr><tr><td>Net cashflow</td><td>-27</td><td>-183</td><td>294</td><td>98</td><td>289</td></tr><tr><td>Beginning cash</td><td>410</td><td>383</td><td>200</td><td>494</td><td>592</td></tr><tr><td>Ending cash</td><td>383</td><td>200</td><td>494</td><td>592</td><td>881</td></tr><tr><td>Ending net debt</td><td>-282</td><td>263</td><td>-19</td><td>-69</td><td>-358</td></tr></table>
+
+Balance sheet (CNYmn) 
+
+<table><tr><td>As at 31 Dec</td><td>FY24</td><td>FY25</td><td>FY26F</td><td>FY27F</td><td>FY28F</td></tr><tr><td>Cash &amp; equivalents</td><td>383</td><td>200</td><td>494</td><td>592</td><td>881</td></tr><tr><td>Marketable securities</td><td>91</td><td>82</td><td>82</td><td>82</td><td>82</td></tr><tr><td>Accounts receivable</td><td>648</td><td>862</td><td>1,208</td><td>1,607</td><td>1,954</td></tr><tr><td>Inventories</td><td>327</td><td>400</td><td>551</td><td>733</td><td>876</td></tr><tr><td>Other current assets</td><td>206</td><td>132</td><td>280</td><td>372</td><td>440</td></tr><tr><td>Total current assets</td><td>1,655</td><td>1,677</td><td>2,615</td><td>3,387</td><td>4,233</td></tr><tr><td>LT investments</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr><tr><td>Fixed assets</td><td>662</td><td>748</td><td>742</td><td>727</td><td>617</td></tr><tr><td>Goodwill</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr><tr><td>Other intangible assets</td><td>115</td><td>114</td><td>109</td><td>104</td><td>99</td></tr><tr><td>Other LT assets</td><td>45</td><td>96</td><td>103</td><td>103</td><td>103</td></tr><tr><td>Total assets</td><td>2,477</td><td>2,635</td><td>3,568</td><td>4,321</td><td>5,051</td></tr><tr><td>Short-term debt</td><td>101</td><td>250</td><td>262</td><td>310</td><td>310</td></tr><tr><td>Accounts payable</td><td>357</td><td>113</td><td>552</td><td>745</td><td>886</td></tr><tr><td>Other current liabilities</td><td>189</td><td>196</td><td>341</td><td>452</td><td>546</td></tr><tr><td>Total current liabilities</td><td>647</td><td>559</td><td>1,155</td><td>1,507</td><td>1,743</td></tr><tr><td>Long-term debt</td><td>0</td><td>213</td><td>213</td><td>213</td><td>213</td></tr><tr><td>Convertible debt</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>Other LT liabilities</td><td>53</td><td>66</td><td>84</td><td>84</td><td>84</td></tr><tr><td>Total liabilities</td><td>700</td><td>839</td><td>1,453</td><td>1,805</td><td>2,040</td></tr><tr><td>Minority interest</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr><tr><td>Preferred stock</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>Common stock</td><td>432</td><td>432</td><td>432</td><td>432</td><td>432</td></tr><tr><td>Retained earnings</td><td>943</td><td>1,178</td><td>1,562</td><td>1,963</td><td>2,458</td></tr><tr><td>Proposed dividends</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>Other equity and reserves</td><td>402</td><td>186</td><td>121</td><td>121</td><td>121</td></tr><tr><td>Total shareholders&#x27; equity</td><td>1,777</td><td>1,796</td><td>2,115</td><td>2,516</td><td>3,011</td></tr><tr><td>Total equity &amp; liabilities</td><td>2,477</td><td>2,635</td><td>3,568</td><td>4,321</td><td>5,051</td></tr></table>
+
+Liquidity (x) 
+
+<table><tr><td>Current ratio</td><td>2.56</td><td>3.00</td><td>2.26</td><td>2.25</td><td>2.43</td></tr><tr><td>Interest cover</td><td>-</td><td>-</td><td>68.2</td><td>212.6</td><td>403.0</td></tr><tr><td colspan="6">Leverage</td></tr><tr><td>Net debt/EBITDA (x)</td><td>net cash</td><td>0.45</td><td>net cash</td><td>net cash</td><td>net cash</td></tr><tr><td>Net debt/equity (%)</td><td>net cash</td><td>14.7</td><td>net cash</td><td>net cash</td><td>net cash</td></tr></table>
+
+Per share 
+
+<table><tr><td>Reported EPS (CNY)</td><td>0.73</td><td>1.02</td><td>1.36</td><td>1.86</td><td>2.29</td></tr><tr><td>Norm EPS (CNY)</td><td>0.70</td><td>0.97</td><td>1.35</td><td>1.86</td><td>2.29</td></tr><tr><td>FD norm EPS (CNY)</td><td>0.70</td><td>0.97</td><td>1.35</td><td>1.86</td><td>2.29</td></tr><tr><td>BVPS (CNY)</td><td>4.11</td><td>4.16</td><td>4.90</td><td>5.83</td><td>6.98</td></tr><tr><td>DPS (CNY)</td><td>0.46</td><td>0.35</td><td>0.46</td><td>0.93</td><td>1.15</td></tr><tr><td colspan="6">Activity (days)</td></tr><tr><td>Days receivable</td><td>145.6</td><td>158.0</td><td>147.2</td><td>150.9</td><td>156.7</td></tr><tr><td>Days inventory</td><td>128.8</td><td>141.3</td><td>126.8</td><td>129.3</td><td>134.5</td></tr><tr><td>Days payable</td><td>126.8</td><td>91.4</td><td>88.7</td><td>130.7</td><td>136.4</td></tr><tr><td>Cash cycle</td><td>147.6</td><td>207.9</td><td>185.4</td><td>149.5</td><td>154.8</td></tr></table>
+
+Source: Wind, company data, NOM estimates
+
+# Company profile
+
+Founded in 1996, Shemar has long focused on new-material external insulation products and related grid solutions, while continuing to expand its global business footprint. The company has developed nine major product categories with technical performance at an internationally advanced level.
+
+# Valuation Methodology
+
+Our target price of CNY84.32 is based on a 62x target 2026F P/E multiple and 2026F EPS of CNY1.36. We apply a premium to the peer valuation average to reflect our expectation that the company has relatively stronger profit growth outlook and higher ROE than peers. The stock's benchmark index is the CSI 300.
+
+# Risks that may impede the achievement of the target price
+
+Key downside risks include product quality issues, exchange rate fluctuation risk and raw material price volatility.
+
+# ESG
+
+According to the company's 2025 annual report, Shemar has been recognized as a national green factory and a national 5G factory. It has also participated in the drafting of 56 national, industry and State Grid enterprise standards.
+
+# Financial forecasts
+
+We expect Shemar to continue benefiting from domestic UHV project construction and incremental demand from overseas grid upgrades. We also believe product upgrades in composite insulation should further support profitability improvement. We forecast a 33% revenue CAGR in 2026-28F, with gross margin rising to 46.7%/46.8%/47.4% in 2026/27/28F from 46.2% in 2025. We forecast the SG&A expense ratio to rise to 20.5% in 2026F from 17.2% in 2025, reflecting higher expenses related to overseas channel expansion and the ramp-up of the US plant. We expect the SG&A expense ratio to remain broadly stable at 20.2%-20.4% in 2027-28F, with modest improvement from operating efficiency gains. Based on these assumptions, we forecast net profit of CNY588mn/CNY802mn/CNY990mn in 2026/27/28F, implying a 32% CAGR over 2026-28F.
+
+Fig. 1: Shemar Electric – Key financial forecasts 
+
+<table><tr><td>CNYmn</td><td>2025</td><td>2026F</td><td>2027F</td><td>2028F</td></tr><tr><td>Revenue</td><td>1,721</td><td>2,531</td><td>3,359</td><td>4,091</td></tr><tr><td>Insulation for substation</td><td>1,244</td><td>1,847</td><td>2,438</td><td>2,943</td></tr><tr><td>Rubber seals</td><td>270</td><td>374</td><td>457</td><td>555</td></tr><tr><td>Insulation for transmission</td><td>169</td><td>253</td><td>378</td><td>472</td></tr><tr><td>Others</td><td>38</td><td>57</td><td>86</td><td>121</td></tr><tr><td>Gross profit</td><td>795</td><td>1,181</td><td>1,572</td><td>1,939</td></tr><tr><td>Gross margin</td><td>46.2%</td><td>46.7%</td><td>46.8%</td><td>47.4%</td></tr><tr><td>Taxes and surcharges</td><td>17</td><td>30</td><td>40</td><td>49</td></tr><tr><td>SG&amp;A</td><td>296</td><td>518</td><td>679</td><td>835</td></tr><tr><td>SG&amp;A expense ratio</td><td>17.2%</td><td>20.5%</td><td>20.2%</td><td>20.4%</td></tr><tr><td>Operating profit</td><td>506</td><td>687</td><td>935</td><td>1,155</td></tr><tr><td>Operating margin</td><td>29.4%</td><td>27.1%</td><td>27.8%</td><td>28.2%</td></tr><tr><td>Depreciation</td><td>90</td><td>106</td><td>115</td><td>115</td></tr><tr><td>Income tax</td><td>77</td><td>98</td><td>133</td><td>163</td></tr><tr><td>Net profit</td><td>432</td><td>588</td><td>802</td><td>990</td></tr><tr><td>Net margin</td><td>25.1%</td><td>23.2%</td><td>23.9%</td><td>24.2%</td></tr><tr><td>EPS (CNY)</td><td>1.02</td><td>1.36</td><td>1.86</td><td>2.29</td></tr></table>
+
+Source: Wind, Shemar 2025 annual report, NOM estimates
+
+Our revenue and net profit forecasts are above Wind consensus, mainly because we believe the commissioning and ramp-up of the company's US plant could be faster than the market expects, supporting accelerated shipments of higher-value composite insulation products into overseas markets. However, factoring in potential profit pressure from raw material price volatility, we take a relatively cautious view on net profit. Our 2026F/2028F forecasts are below Wind consensus, while our 2027 forecast is slightly above consensus.
+
+Fig. 2: Shemar Electric – NOM estimates vs. Wind consensus 
+
+<table><tr><td rowspan="2">CNYmn</td><td colspan="3">NOM estimates</td><td colspan="3">Wind consensus</td><td colspan="3">Diff. (%)</td></tr><tr><td>2026F</td><td>2027F</td><td>2028F</td><td>2026E</td><td>2027E</td><td>2028E</td><td>2026F</td><td>2027F</td><td>2028F</td></tr><tr><td>Revenue</td><td>2,531</td><td>3,359</td><td>4,091</td><td>2,362</td><td>3,064</td><td>3,996</td><td>7.1%</td><td>9.6%</td><td>2.4%</td></tr><tr><td>Net profit</td><td>588</td><td>802</td><td>990</td><td>608</td><td>799</td><td>1,050</td><td>-3.3%</td><td>0.3%</td><td>-5.7%</td></tr></table>
+
+Source: Wind, NOM estimates
+
+# Valuation methodology and risks
+
+# Initiate at Buy with a TP of CNY84.32
+
+Given our expectation for sustained profit growth, we value Shemar using a P/E methodology. We select domestic power equipment companies that are actively expanding overseas and benefiting from incremental demand created by AI data center buildout as peers, including Sieyuan Electric (002028 CH, Buy), Jinpan Smart Technology (688676 CH, Buy), Huaming Power Equipment (002270 CH, Not Rated), Pinggao Electric (600312 CH, Not Rated) and China XD Electric (601179 CH, Not Rated).
+
+Based on Wind consensus, the peer group trades at an average 2026E P/E of 36x. We apply a 62x target P/E multiple, at a premium to the peer average, reflecting our expectation that Shemar's profit growth and ROE will be above the peer average. We forecast a $32\%$ EPS CAGR for the company in 2026-28F, above the peer average of $28\%$ over the same period. We also forecast the company's ROE of $27.8\% - 32.9\%$ in 2026-28F, above the peer average of $16.5\% - 20.0\%$ . Based on 2026F EPS of CNY1.36, our target price is CNY84.32, implying $48.8\%$ upside. We initiate coverage with a Buy rating.
+
+Fig. 3: Shemar Electric – Valuation comparables 
+
+<table><tr><td rowspan="2">Ticker</td><td rowspan="2">Company name</td><td rowspan="2">Rating</td><td rowspan="2">TP (LC)</td><td rowspan="2">CP (LC)</td><td rowspan="2">Mkt cap (USDmn)</td><td colspan="3">PE (x)</td><td rowspan="2">EPS CAGR 2026-28F</td><td colspan="3">ROE (%)</td></tr><tr><td>2026F</td><td>2027F</td><td>2028F</td><td>2026F</td><td>2027F</td><td>2028F</td></tr><tr><td>603530 CH</td><td>Shemar Electric</td><td>Buy</td><td>84.32</td><td>56.66</td><td>3,581.78</td><td>41.6</td><td>30.5</td><td>24.7</td><td>32%</td><td>27.8</td><td>31.9</td><td>32.9</td></tr><tr><td>002028 CH</td><td>Sieyuan Electric</td><td>Buy</td><td>273.00</td><td>194.10</td><td>22,240.18</td><td>37.2</td><td>28.4</td><td>20.9</td><td>34%</td><td>22.4</td><td>23.7</td><td>25.3</td></tr><tr><td>688676 CH</td><td>Jinpan Smart Technology</td><td>Not Rated</td><td>121.55</td><td>96.08</td><td>6,469.08</td><td>44.9</td><td>34.3</td><td>25.3</td><td>40%</td><td>17.7</td><td>20.6</td><td>24.4</td></tr><tr><td>002270 CH</td><td>Huaming Power Equipment</td><td>Not Rated</td><td>-</td><td>23.26</td><td>3,052.69</td><td>24.7</td><td>20.4</td><td>16.1</td><td>22%</td><td>24.2</td><td>26.3</td><td>28.6</td></tr><tr><td>600312 CH</td><td>Pinggao Electric</td><td>Not Rated</td><td>-</td><td>21.00</td><td>4,172.82</td><td>20.1</td><td>16.6</td><td>14.3</td><td>21%</td><td>11.8</td><td>12.9</td><td>13.2</td></tr><tr><td>601179 CH</td><td>China XD Electric</td><td>Not Rated</td><td>-</td><td>16.18</td><td>12,145.15</td><td>53.3</td><td>43.3</td><td>36.6</td><td>21%</td><td>6.5</td><td>7.5</td><td>8.3</td></tr><tr><td colspan="6">Average</td><td>36.0</td><td>28.6</td><td>22.7</td><td>28%</td><td>16.5</td><td>18.2</td><td>20.0</td></tr></table>
+
+Note: Priced at close of 26 May 2026; NOM estimates for rated stocks and Wind consensus estimates for not rated stocks; averages exclude Shemar. Source: Wind, NOM estimates
+
+Fig. 4: Shemar Electric – P/E band   
+![](images/9218293d9af53bcd31e987ee7006efecf88ba5665cc49200bda5c720da7636aa.jpg)
+
+<details>
+<summary>line</summary>
+
+| Date     | Closing price | 58x | 41x | 67x | 50x | 33x |
+|----------|---------------|-----|-----|-----|-----|-----|
+| 2023/05  | ~15           | ~10 | ~8  | ~10 | ~8  | ~5  |
+| 2023/08  | ~15           | ~10 | ~8  | ~10 | ~8  | ~5  |
+| 2023/11  | ~15           | ~10 | ~8  | ~10 | ~8  | ~5  |
+| 2024/02  | ~20           | ~15 | ~10 | ~15 | ~10 | ~5  |
+| 2024/05  | ~25           | ~20 | ~15 | ~20 | ~15 | ~10 |
+| 2024/08  | ~25           | ~25 | ~20 | ~25 | ~20 | ~15 |
+| 2024/11  | ~25           | ~30 | ~25 | ~30 | ~25 | ~20 |
+| 2025/02  | ~25           | ~35 | ~30 | ~35 | ~30 | ~25 |
+| 2025/05  | ~30           | ~40 | ~35 | ~40 | ~35 | ~30 |
+| 2025/08  | ~35           | ~45 | ~40 | ~45 | ~40 | ~35 |
+| 2025/11  | ~40           | ~50 | ~45 | ~50 | ~45 | ~40 |
+| 2026/02  | ~60           | ~65 | ~55 | ~65 | ~60 | ~45 |
+| 2026/05  | ~65           | ~70 | ~60 | ~75 | ~65 | ~50 |
+</details>
+
+Note: Priced as of 26 May 2026
+Source: Wind, NOM
+
+Fig. 5: Shemar Electric – P/B band   
+![](images/98adf9f80af773f00b755cfe15ad137a5d5610c5424ee505b2c56723baa31a61.jpg)
+
+<details>
+<summary>line</summary>
+
+| Date     | Closing price | 8.2x | 5.2x | 9.6x | 6.7x | 3.8x |
+|----------|---------------|------|------|------|------|------|
+| 2023/05  | ~14           | ~30  | ~18  | ~35  | ~24  | ~14  |
+| 2023/08  | ~15           | ~30  | ~18  | ~35  | ~24  | ~14  |
+| 2023/11  | ~16           | ~30  | ~18  | ~35  | ~24  | ~14  |
+| 2024/02  | ~18           | ~30  | ~18  | ~35  | ~24  | ~14  |
+| 2024/05  | ~20           | ~30  | ~18  | ~35  | ~24  | ~14  |
+| 2024/08  | ~25           | ~30  | ~18  | ~35  | ~24  | ~14  |
+| 2024/11  | ~23           | ~30  | ~18  | ~35  | ~24  | ~14  |
+| 2025/02  | ~25           | ~30  | ~18  | ~35  | ~24  | ~14  |
+| 2025/05  | ~27           | ~30  | ~18  | ~35  | ~24  | ~14  |
+| 2025/08  | ~28           | ~30  | ~18  | ~35  | ~24  | ~14  |
+| 2025/11  | ~30           | ~30  | ~18  | ~35  | ~24  | ~14  |
+| 2026/02  | ~40           | ~30  | ~18  | ~35  | ~24  | ~14  |
+| 2026/05  | ~60           | ~35  | ~20  | ~40  | ~28  | ~16  |
+| 2026/08* | ~58           | ~35  | ~20  | ~40  | ~28  | ~16  |
+| 2026/11* | ~55           | ~35  | ~20  | ~40  | ~28  | ~16  |
+| 2026/14* | ~57           | ~35  | ~20  | ~40  | ~28  | ~16  |
+| 2026/17* | ~55           | ~35  | ~20  | ~40  | ~28  | ~16  |
+| 2026/20* | ~57           | ~35  | ~20  | ~40  | ~28  | ~16  |
+| 2026/23* | ~55           | ~35  | ~20  | ~40  | ~28  | ~16  |
+| 2026/26* | ~57           | ~35  | ~20  | ~40  | ~28  | ~16  |
+| 2026/30* | ~55           | ~35  | ~20  | ~40  | ~28  | ~16  |
+| Note: The data is already in CSV format as it is not available for meaningful text extraction. The numbers provided above the data points are estimated based on the code provided in the code. There is no additional data series in this case. The values for the last row of the data point are explicitly labeled as '3.8x'.
+</details>
+
+Note: Priced as of 26 May 2026
+Source: Wind, NOM
+
+# Key downside risks
+
+1) Product quality risk: Insulators are critical basic electrical components for safe and stable grid operation. Although the company's insulator products have been used in large quantities globally and have demonstrated stable quality and performance, any major quality issue in insulators used in power transmission and transformation projects could lead to local or even widespread grid outages. Such an event could cause power system failures or accidents and have a negative impact on the company's products and brand.   
+2) Exchange rate fluctuation risk: The company's exports are mainly sold to developed markets such as the US and Europe, as well as developing markets such as India and Brazil. Major changes in China's foreign exchange policies, export-destination FX policies or the CNY exchange rate against major global currencies could affect the company's profitability.   
+3) Raw material price volatility: The company's key raw materials include winding yarn, silicone rubber and aluminum ingots, and changes in raw material prices have a direct impact on profitability. Some of the company's raw material procurement costs have risen to varying degrees in recent years. If raw material prices increase significantly and the company is unable to raise selling prices for its key products accordingly, profitability could be adversely affected.
+
+# Appendix A-1
+
+This report has been produced by NOM Orient International Securities Co., Ltd., the People's Republic of China. See Disclaimers for NOM Group entity details.
+
+# Analyst Certification
+
+We, Xiaoming Ma, Peiyu Li, hereby certify (1) that the views expressed in this Research report accurately reflect our personal views about any or all of the subject securities or issuers referred to in this Research report, (2) no part of our compensation was, is or will be directly or indirectly related to the specific recommendations or views expressed in this Research report and (3) no part of our compensation is tied to any specific investment banking transactions performed by NOM Securities International, Inc., NOM International plc or any other NOM Group company.
+
+# Issuer Specific Regulatory Disclosures
+
+The terms "NOM" and "NOM Group" used herein refer to NOM Holdings, Inc. and its affiliates and subsidiaries, including NOM Securities International, Inc. ('NSI') and Instinet, LLC ('ILLC'), U. S. registered broker dealers and members of SIPC.
+
+<table><tr><td>Issuer</td><td>Ticker</td><td>Price</td><td>Price date</td><td>Stock rating</td><td>Sector rating</td><td>Disclosures</td></tr><tr><td>Jinpan Smart Technology</td><td>688676 CH</td><td>CNY 103.75</td><td>27-May-2026</td><td>Buy</td><td>N/A</td><td></td></tr><tr><td>Himile</td><td>002595 CH</td><td>CNY 53.08</td><td>27-May-2026</td><td>Buy</td><td>N/A</td><td></td></tr><tr><td>Shemar Electric</td><td>603530 CH</td><td>CNY 56.47</td><td>27-May-2026</td><td>Buy</td><td>N/A</td><td></td></tr></table>
+
+# Jinpan Smart Technology (688676 CH)
+
+CNY 103.75 (27-May-2026) Buy (Sector rating: N/A)
+
+Rating and target price chart (three year history)
+
+![](images/a06b9331c67c29bb1ae4c7db127c0cc6ef151f45734ce07acf2467336226b82d.jpg)
+
+<details>
+<summary>line</summary>
+
+| Date       | Closing Price | Target Price Change | Recommendation Changes |
+| ---------- | ------------- | ------------------- | ---------------------- |
+| 27-May-2026 | ~100.00       | -                   | -                      |
+</details>
+
+Date Rating Target Price Closing price
+
+For explanation of ratings refer to the stock rating keys located after chart(s)
+
+Valuation Methodology Our target price of CNY121.55 is based on a target P/E of 55x and 2026F EPS of CNY2.21. We apply a discount to the peer valuation average to reflect the company's relatively lower profit growth profile. The stock's benchmark index is the CSI 300.
+
+Risks that may impede the achievement of the target price Key downside risks include weaker-than-expected orders, slower-than-expected overseas expansion and weaker-than-expected progress in emerging businesses.
+
+# Himile (002595 CH)
+
+CNY 53.08 (27-May-2026) Buy (Sector rating: N/A)
+
+Rating and target price chart (three year history)
+
+Himile Mechanical   
+![](images/d56295c169e0daf8e231de857e2bcffd1da66bfbdeb93a41b9eac42a73558d97.jpg)
+
+<details>
+<summary>line</summary>
+
+| Date       | Closing Price | Target Price Change | Recommendation Changes |
+| ---------- | ------------- | ------------------- | ---------------------- |
+| 2023/07/01 | ~24.00        | -                   | -                      |
+| 2024/01/01 | ~20.00        | -                   | -                      |
+| 2024/07/01 | ~28.00        | -                   | -                      |
+| 2025/01/01 | ~35.00        | -                   | -                      |
+| 2025/07/01 | ~45.00        | -                   | -                      |
+| 2026/01/01 | ~65.00        | -                   | -                      |
+| As of 27-May-2026 | ~55.00      | -                   | -                      |
+</details>
+
+Date
+
+Rating Target Price Closing price
+
+For explanation of ratings refer to the stock rating keys located after chart(s)
+
+Valuation Methodology Our target price of CNY68.04 is based on a 27x target 2026F P/E multiple and 2026F EPS of CNY2.52. We apply a discount to the 2026E peer average P/E to reflect our expectation that the company's earnings growth will lag the peer average. The stock's benchmark index is the CSI 300.
+
+Risks that may impede the achievement of the target price Key downside risks include weaker-than-expected demand in the downstream tire industry, slower-than-expected domestic substitution in CNC machine tools and exchange-rate fluctuation risk.
+
+# Shemar Electric (603530 CH)
+
+CNY 56.47 (27-May-2026) Buy (Sector rating: N/A)
+
+Rating and target price chart (three year history)
+
+Jiangsu Shemar Electric   
+![](images/06acc0b763a89202348204442b49a98d05e302b4ca18491003b999209271160b.jpg)
+
+<details>
+<summary>line</summary>
+
+| Date       | Closing Price | Target Price Change | Recommendation Changes |
+| ---------- | ------------- | ------------------- | ----------------------- |
+| 2023/07/01 | ~15.00        | -                   | -                       |
+| 2024/01/01 | ~20.00        | -                   | -                       |
+| 2024/07/01 | ~28.00        | -                   | -                       |
+| 2025/01/01 | ~25.00        | -                   | -                       |
+| 2025/07/01 | ~30.00        | -                   | -                       |
+| 2026/01/01 | ~70.00        | -                   | -                       |
+| As of 27-May-2026 | -           | -                   | -                       |
+</details>
+
+Date
+
+Rating Target Price Closing price
+
+Source: LSEG, NOM
+
+For explanation of ratings refer to the stock rating keys located after chart(s)
+
+Valuation Methodology Our CNY84.32 TP is based on a 62x target 2026F P/E multiple and 2026F EPS of CNY1.36. We apply a premium to the peer valuation average to reflect our expectation that the company has relatively stronger profit growth outlook and higher ROE than peers. The stock's benchmark index is the CSI 300.
+
+Risks that may impede the achievement of the target price Key downside risks include product quality issues, exchange rate fluctuation risk and raw material price volatility.
+
+Rating and target price changes 
+
+<table><tr><td>Issuer</td><td>Ticker</td><td>Old Stock Rating</td><td>New Stock Rating</td><td>Old Target Price</td><td>New Target Price</td></tr><tr><td>Jinpan Smart Technology</td><td>688676 CH</td><td>Not Rated</td><td>Buy</td><td>N/A</td><td>CNY 121.55</td></tr><tr><td>Himile</td><td>002595 CH</td><td>Not Rated</td><td>Buy</td><td>N/A</td><td>CNY 68.04</td></tr><tr><td>Shemar Electric</td><td>603530 CH</td><td>Not Rated</td><td>Buy</td><td>N/A</td><td>CNY 84.32</td></tr></table>
+
+# Definition of Equity Research Ratings
+
+A rating of 'Buy', indicates that the analyst expects the stock to outperform the Benchmark\* over the next 12 months. A rating of 'Neutral', indicates that the analyst expects the stock to perform in line with the Benchmark over the next 12 months. A rating of 'Reduce', indicates that the analyst expects the stock to underperform the Benchmark over the next 12 months.
+
+\*The Benchmark for A-shares is CSI 300, the Benchmark for Hong Kong-listed stocks is Hang Seng Index and the Benchmark for US-listed stocks is Nasdaq Composite or S&P 500.
+
+# Disclaimers
+
+Depending on the actual distribution of this report in various countries or regions globally, and unless otherwise specified in this disclaimer, “this report” as referred to herein may include its simplified Chinese and/or English versions.
+
+This report has been produced by NOM Orient International Securities Co., Ltd. (“NOM Orient International Securities”). The information contained herein has been obtained from publicly available sources acknowledged by NOM Orient International Securities, including information from third parties, such as rating information from credit rating agencies. NOM Orient International Securities and its affiliates do not make any guarantee as to the accuracy, completeness, or timeliness of such information, nor do they guarantee that such information will not change. In particular, this report does not provide any tax-related information or opinions.
+
+The information and opinions contained herein are for investors' reference only and shall not be construed as an offer or solicitation to buy or sell any securities or other financial products, nor do they constitute services to advise on any investment decision. Such information and opinions do not take into account the particular investment objectives, financial situation, or specific needs of any recipient of this report, and under no circumstances shall the information contained herein or the opinions expressed herein constitute a personal recommendation or actionable investment advice for any individual. Investors shall make their own independent evaluation of the information and opinions contained herein, and make decisions independently and prudently at their own risk. Before making any decision based on the information and opinions contained herein, investors shall consider their individual investment objectives, financial situations and specific needs at the time, consult with professional consultants regarding such decision, and bear all the risks. NOM Orient International Securities and/or its affiliates (including their respective employees) shall not be held liable for any errors or omissions in the information and opinions herein (regardless of the reasons for such errors or omissions), or for any consequences arising from the use of or reference upon this report.
+
+The opinions, assessments and forecasts contained herein are only the opinions and judgments at the time of this report's production and publication (or the specific date stated in the report). Such opinions, assessments and forecasts are subject to change and may be amended without any notification. At different periods, NOM Orient International Securities may release reports which are inconsistent with the opinions, assessments and forecasts contained herein.
+
+The analyst(s) named in this report may, within this report or in communications with clients, sales personnel, trading personnel and other business personnel of NOM Orient International Securities, discuss trading strategies regarding events that may have a short-term impact on the market price of the subject securities or other financial products covered in this report. Such analysis of short-term impact may be contrary to or inconsistent with the analyst's published views on the price target, rating, valuation, or forecast of the subject securities or other financial products. Regardless of any such contradiction or inconsistency, this does not affect the analyst's fundamental rating or assessment of the subject securities or other financial products under their coverage.
+
+NOM Orient International Securities and/or its affiliates may issue other reports inconsistent with or reaching different conclusions from the information contained in this report. The views, insights, and analytical methods expressed in this report reflect those of the named analyst(s), and do not necessarily represent the views of NOM Orient International Securities and/or its affiliates. Sales personnel, trading personnel and other business personnel of NOM Orient International Securities and/or its affiliates may provide market commentary and/or trading ideas, orally or in writing, that differ from the opinions and recommendations in this report, based on different assumptions, standards or analytical methods. NOM Orient International Securities is under no obligation to update such recommendations and opinions for all recipients of this report. The asset management, proprietary trading and other investment-related departments of NOM Orient International Securities and/or its affiliates may make investment decisions independently that are inconsistent with the recommendations or opinions expressed in this report.
+
+Unless stated otherwise, any performance data referenced in this report represents past performance. Past performance is not an indicator of future performance. No representation or warranty is made by NOM Orient International Securities that any returns indicated will be achieved. Forecasts included in the analysis may be based on certain assumptions. Changes to these assumptions may have a material impact on any such returns detailed.
+
+This report is provided solely on the basis that the recipient is deemed capable of independently evaluating investment risks and exercising independent judgment in making investment decisions. Independent investment judgment means that investment decisions are made independently by the investors themselves based on their own assessment of potential investment objectives, needs, opportunities, risks, market factors and other investment considerations.
+
+This report is distributed in Mainland China in accordance with the laws and regulations of the People's Republic of China (the "PRC").
+
+After the simplified Chinese version of this report is published in Mainland China, the English version of this report will be uploaded to the Global Research Portal of NOM Holdings, Inc. (“NOM Group”) and distributed in Hong Kong SAR by
+
+NOM International (Hong Kong) Limited (“NIHK”). The Global Research Portal of NOM Group is accessible to the Group’s global clients and, subject to applicable local requirements, the English version of this report may be distributed in other countries or regions by qualified NOM Group affiliates.
+
+NOM Orient International Securities and NIHK are both controlled by NOM Group. NOM Orient International Securities holds the securities investment consulting business qualification approved by the China Securities Regulatory Commission ('CSRC') and operates under the CSRC's regulation. Concurrently, NIHK is regulated by the Hong Kong Securities and Futures Commission.
+
+# Special Disclaimer
+
+To the extent permitted by law, NOM Orient International Securities and/or its affiliates may be in the process of establishing or seeking to establish business or service relationships with companies mentioned in this report. NOM Orient International Securities and/or its affiliates (including their respective employees) may, to the extent permitted by applicable laws, hold or buy or sell the underlying securities or other financial products mentioned in this report on their own or on behalf of others for a long or short period of time. NOM Orient International Securities and/or its affiliates may also assume the identity of a market maker or liquidity provider for such securities or other financial products. Therefore, investors shall consider that there may be potential conflicts of interest that affect the objectivity of the opinions contained in this report.
+
+This report is distributed only to clients and specific cooperative institutions authorized by NOM Orient International Securities and/or its affiliates. It is not publicly available, and its use is restricted solely to the recipient, who is bound by confidentiality obligations. NOM Orient International Securities and/or its affiliates do not consider individuals who receive or access this report through unauthorized channels as its clients.
+
+This report may contain information obtained from third parties, such as rating information provided by credit rating agencies. NOM Orient International Securities values and protects the legitimate rights and interests of others, including personal rights and intellectual property rights, and has made reasonable efforts to verify the objectivity and authenticity of information sources, and to appropriately indicate third-party sources and rights information to protect their legitimate interests. Should any right holder identify content within this report that they believe may infringe upon their legitimate rights and interests, the right holder is entitled to raise an objection with NOM Orient International Securities. Upon due verification, NOM Orient International Securities will undertake measures to modify, remove, or delete relevant content in accordance with applicable laws and regulations of the PRC. Unless expressly permitted by prior written consent from such third parties, their information may not be reprocessed or forwarded.
+
+The copyright of this report is exclusively owned by NOM Orient International Securities. No institution or individual may forward, reprint, reproduce, publish, quote or reprocess this report in any form without prior written permission. Any unauthorized use beyond the scope of permission granted by NOM Orient International Securities and/or its affiliates, or any modification of this report not made by NOM Orient International Securities, that infringes upon third-party intellectual property rights shall be the sole responsibility of the user. NOM Orient International Securities and/or its affiliates (including their respective employees) assume no liability for such actions. Except as otherwise stated in the third paragraph of this special disclaimer, NOM Orient International Securities is under no obligation to update or revise this report.
+
+NOM Orient International Securities reserves the right to modify and exercise final interpretation of this report and its associated disclaimers.
+
+# Important Disclosures
+
+# Online availability of research and conflict-of-interest disclosures
+
+NOM Group research is available on www.NOMnow.com/research, Bloomberg, Capital IQ, Factset, LSEG.
+
+Important disclosures may be read at http://go.NOMnow.com/research/m/Disclosures or requested from NOM Securities International, Inc. If you have any difficulties with the website, please email grpsupport@NOM.com for help.
+
+The analysts responsible for preparing this report have received compensation based upon various factors including the firm's total revenues, a portion of which is generated by Investment Banking activities. Unless otherwise noted, the non-US analysts listed at the front of this report are not registered/qualified as research analysts under FINRA rules, may not be associated persons of NSI, and may not be subject to FINRA Rule 2241 restrictions on communications with covered companies, public appearances, and trading securities held by a research analyst account.
+
+NOM Global Financial Products Inc. (NGFP) NOM Derivative Products Inc. (NDP) and NOM International plc. (NIplc) are registered with the Commodities Futures Trading Commission and the National Futures Association (NFA) as swap dealers. NGFP, NDPI, and NIplc are generally engaged in the trading of swaps and other derivative products, any of which may be the subject of this report.
+
+# Distribution of ratings (NOM Group)
+
+The distribution of all ratings published by NOM Group Global Equity Research is as follows:
+
+57% have been assigned a Buy rating which, for purposes of mandatory disclosures, are classified as a Buy rating; 34% of companies with this rating are investment banking clients of the NOM Group\*. 0% of companies (which are admitted to trading on a regulated market in the EEA) with this rating were supplied material services\*\* by the NOM Group.
+
+41% have been assigned a Neutral rating which, for purposes of mandatory disclosures, is classified as a Hold rating; 57% of companies with this rating are investment banking clients of the NOM Group\*. 0% of companies (which are admitted to trading on a regulated market in the EEA) with this rating were supplied material services by the NOM Group
+
+2% have been assigned a Reduce rating which, for purposes of mandatory disclosures, are classified as a Sell rating; 0% of companies with this rating are investment banking clients of the NOM Group\*. 0% of companies (which are admitted to trading on a regulated market in the EEA) with this rating were supplied material services by the NOM Group.
+
+As at 31 March 2026.
+
+\*The NOM Group as defined in the Disclaimer section at the end of this report.
+
+\*\* As defined by the EU Market Abuse Regulation
+
+# Definition of NOM Group's equity research rating system and sectors
+
+The rating system is a relative system, indicating expected performance against a specific benchmark identified for each individual stock, subject to limited management discretion. An analyst's target price is an assessment of the current intrinsic fair value of the stock based on an appropriate valuation methodology determined by the analyst. Valuation methodologies include, but are not limited to, discounted cash flow analysis, expected return on equity and multiple analysis. Analysts may also indicate expected absolute upside/downside relative to the stated target price, defined as (target price - current price)/current price.
+
+# STOCKS
+
+A rating of 'Buy', indicates that the analyst expects the stock to outperform the Benchmark over the next 12 months. A rating of 'Neutral', indicates that the analyst expects the stock to perform in line with the Benchmark over the next 12 months. A rating of 'Reduce', indicates that the analyst expects the stock to underperform the Benchmark over the next 12 months. A rating of 'Suspended', indicates that the rating, target price and estimates have been suspended temporarily to comply with applicable regulations and/or firm policies. Securities and/or companies that are labelled as 'Not rated' or shown as 'No rating' are not in regular research coverage. Investors should not expect continuing or additional information from NOM relating to such securities and/or companies. Benchmarks are as follows: United States/Europe/Asia ex-Japan: please see valuation methodologies for explanations of relevant benchmarks for stocks, which can be accessed at: http://go.NOMnow.com/research/m/Disclosures; Global Emerging Markets (ex-Asia): MSCI Emerging Markets ex-Asia, unless otherwise stated in the valuation methodology; Japan: Russell/NOM Large Cap.
+
+# SECTORS
+
+A 'Bullish' stance, indicates that the analyst expects the sector to outperform the Benchmark during the next 12 months. A 'Neutral' stance, indicates that the analyst expects the sector to perform in line with the Benchmark during the next 12 months. A 'Bearish' stance, indicates that the analyst expects the sector to underperform the Benchmark during the next 12 months. Sectors that are labelled as 'Not rated' or shown as 'N/A' are not assigned ratings. Benchmarks are as follows: United States: S&P 500; Europe: Dow Jones STOXX 600; Global Emerging Markets (ex-Asia): MSCI Emerging Markets ex-Asia. Japan/Asia ex-Japan: Sector ratings are not assigned.
+
+# Target Price
+
+A Target Price, if discussed, indicates the analyst's forecast for the share price with a 12-month time horizon, reflecting in part the analyst's estimates for the company's earnings. The achievement of any target price may be impeded by general market and macroeconomic trends, and by other risks related to the company or the market, and may not occur if the company's earnings differ from estimates.
+
+# Disclaimers
+
+This publication contains material that has been prepared by the NOM Group entity identified on page 1 and, if applicable, with the contributions of one or more NOM Group entities whose employees and their respective affiliations are specified on page 1 or identified elsewhere in this publication. The term "NOM Group" used herein refers to NOM Holdings, Inc. and its affiliates and subsidiaries including: (a) NOM Securities Co., Ltd. ('NSC') Tokyo, Japan, (b) NOM Financial Products Europe GmbH ('NFPE'), Germany, (c) NOM International plc ('NIplc'), UK, (d) NOM Securities International, Inc. ('NSI'), New York, US, (e) NOM International (Hong Kong) Ltd. ('NIHK'), Hong Kong, (f) NOM Financial Investment (Korea) Co., Ltd. ('NFIK'), Korea (Information on NOM analysts registered with the Korea Financial Investment Association ('KOFIA') can be found on the KOFIA Intranet at http://dis.kofia.or.kr, (g) NOM Singapore Ltd. ('NSL'), Singapore (Registration number 197201440E, regulated by the Monetary Authority of Singapore) (h) NOM Australia Ltd. ('NAL'), Australia (ABN 48 003 032 513), regulated by the Australian Securities and Investment Commission ('ASIC') and holder of an Australian financial services licence number 246412, (i) NOM Securities Malaysia Sdn. Bhd. ('NSM'), Malaysia, (j) NIHK, Taipei Branch ('NITB'), Taiwan, (k) NOM Financial Advisory and Securities (India) Private Limited ('NFASL'), Mumbai, India (Registered Address: Ceejay House, Level 11, Plot F, Shivsagar Estate, Dr. Annie Besant Road, Worli, Mumbai- 400 018, India; Tel: 91 22 4037 4037, Fax: 91 22 4037 4111; CIN No: U74140MH2007PTC169116, SEBI Registration No. for Stock Broking activities : INZ000255633; SEBI Registration No. for Merchant
+
+Banking : INM000011419; SEBI Registration No. for Research: INH000001014 - Compliance Officer: Ms. Pratiksha Tondwalkar, 91 22 40374904, grievance email: investorgrievancesra@NOM.com Webpage: LINK
+
+For reports with respect to Indian public companies or authored by India-based NFASL research analysts: (i) Investment in securities markets is subject to market risks. Read all the related documents carefully before investing. (ii) Registration granted by SEBI, and certification from NISM in no way guarantee performance of the intermediary or provide any assurance of returns to investors. (iii) NFASL terms and conditions for availing research services is disclosed on NFASL webpage.
+
+(I) NOM Fiduciary Research & Consulting Co., Ltd. ('NFRC') Tokyo, Japan. (m) NOM Orient International Securities Co., Ltd ("NOI"), is a majority owned joint venture amongst NOM Group, Orient International (Holding) Co., Ltd, and Shanghai Huangpu Investment Holding (Group) Co., Ltd. In accordance with the laws of the People's Republic of China ("PRC", excluding Hong Kong, Macau and Taiwan, for the purpose of this document), NOI is licensed in the PRC to provide securities research and investment recommendations and it operates independently from the other members of the NOM Group; in particular, NOI's interests in PRC securities are not disclosed to, or aggregated with the holdings of, any other NOM Group entities and the interests in PRC securities of other NOM Group entities are not disclosed to, or aggregated with the holdings of, NOI. An individual name printed next to NOI on the front page of a research report indicates that individual is employed by NOI to provide research assistance to NIHK under a research partnership agreement. 'NSFSPL' next to an employee's name on the front page of a research report indicates that the individual is employed by NOM Structured Finance Services Private Limited to provide assistance to certain NOM entities under inter-company agreements. 'Verdhana' next to an individual's name on the front page of a research report indicates that the individual is employed by PT Verdhana Sekuritas Indonesia ('Verdhana') to provide research assistance to NIHK under a research partnership agreement and neither Verdhana nor such individual is licensed outside of Indonesia.
+
+THIS MATERIAL IS: (I) FOR YOUR PRIVATE INFORMATION, AND WE ARE NOT SOLICITING ANY ACTION BASED UPON IT; (II) NOT TO BE CONSTRUED AS AN OFFER TO SELL OR A SOLICITATION OF AN OFFER TO BUY ANY SECURITIES IN ANY JURISDICTION WHERE SUCH OFFER OR SOLICITATION WOULD BE ILLEGAL; AND (III) OTHER THAN DISCLOSURES RELATING TO THE NOM GROUP, BASED UPON INFORMATION FROM SOURCES THAT WE CONSIDER RELIABLE, BUT HAS NOT BEEN INDEPENDENTLY VERIFIED BY NOM GROUP.
+
+Other than disclosures relating to the NOM Group, the NOM Group does not warrant, represent or undertake, express or implied, that the document is fair, accurate, complete, correct, reliable or fit for any particular purpose or merchantable, and to the maximum extent permissible by law and/or regulation, does not accept liability (in negligence or otherwise, and in whole or in part) for any act (or decision not to act) resulting from use of this document and related data. To the maximum extent permissible by law and/or regulation, all warranties and other assurances by the NOM Group are hereby excluded and the NOM Group shall have no liability (in negligence or otherwise, and in whole or in part) for any loss howsoever arising from the use, misuse, or distribution of this material or the information contained in this material or otherwise arising in connection therewith.
+
+Opinions or estimates expressed are current opinions as of the original publication date appearing on this material and the information, including the opinions and estimates contained herein, are subject to change without notice. The NOM Group, however, expressly disclaims any obligation, and therefore is under no duty, to update or revise this document. Any comments or statements made herein are those of the author(s) and may differ from views held by other parties within NOM Group. Clients should consider whether any advice or recommendation in this report is suitable for their particular circumstances and, if appropriate, seek professional advice, including tax advice. The NOM Group does not provide tax advice.
+
+The NOM Group, and/or its officers, directors, employees and affiliates, may, to the extent permitted by applicable law and/or regulation, deal as principal, agent, or otherwise, or have long or short positions in, or buy or sell, the securities, commodities or instruments, or options or other derivative instruments based thereon, of issuers or securities mentioned herein. The NOM Group companies may also act as market maker or liquidity provider (within the meaning of applicable regulations in the UK) in the financial instruments of the issuer. Where the activity of market maker is carried out in accordance with the definition given to it by specific laws and regulations of the US or other jurisdictions, this will be separately disclosed within the specific issuer disclosures.
+
+This document may contain information obtained from third parties, including, but not limited to, ratings from credit ratings agencies such as Standard & Poor's. The NOM Group hereby expressly disclaims all representations, warranties or undertakings of originality, fairness, accuracy, completeness, correctness, merchantability or fitness for a particular purpose with respect to any of the information obtained from third parties contained in this material or otherwise arising in connection therewith, and shall not be liable (in negligence or otherwise, and in whole or in part) for any direct, indirect, incidental, exemplary, compensatory, punitive, special or consequential damages, costs, expenses, legal fees, or losses (including lost income or profits and opportunity costs) in connection with any use or misuse of any of the information obtained from third parties contained in this material or otherwise arising in connection therewith. Reproduction and distribution of third-party content in any form is prohibited except with the prior written permission of the related third-party. Third-party content providers do not, express or implied, guarantee the fairness, accuracy, completeness, correctness, timeliness or availability of any information, including ratings, and are not in any way responsible for any errors or omissions (negligent or otherwise), regardless of the cause, or for the results obtained from the use or misuse of such content. Third-party content providers give no express or implied warranties, including, but not limited to, any warranties of merchantability or fitness for a particular purpose or use. Third-party content providers shall not be liable (in negligence or otherwise, and in whole or in part) for any direct, indirect, incidental, exemplary, compensatory, punitive, special or consequential damages, costs, expenses, legal fees, or losses (including lost income or profits and opportunity costs) in connection with any use or misuse of their content, including ratings. Credit ratings are statements of opinions and are not statements of fact or recommendations to purchase hold or sell securities. They do not address the suitability of securities or the suitability of securities for investment purposes, and should not be relied on as investment advice.
+
+Any MSCI sourced information in this document is the exclusive property of MSCI Inc. ('MSCI'). Without prior written permission of MSCI, this information and any other MSCI intellectual property may not be duplicated, reproduced, re-disseminated, redistributed or used, in whole or in part, for any purpose whatsoever, including creating any financial products and any indices. This information is provided on an "as is" basis. The user assumes the entire risk of any use made of this information. MSCI, its affiliates and any third party involved in, or related to, computing or compiling the information hereby expressly disclaim all representations, warranties or undertakings of originality, fairness, accuracy, completeness, correctness, merchantability or fitness for a particular purpose with respect to any of this material or the information contained in this material or otherwise arising in connection therewith. Without limiting any of the foregoing, in no event shall MSCI, any of its affiliates or any third party involved in, or related to, computing or compiling the information have any liability (in negligence or otherwise, and in whole or in part) for any damages of any kind. MSCI and the MSCI indexes are services marks of MSCI and its affiliates.
+
+The intellectual property rights and any other rights, in Russell/NOM Japan Equity Index belong to NOM Fiduciary Research & Consulting Co., Ltd. ("NFRC") and FTSE Russell ("Russell"). NFRC and Russell do not guarantee fairness, accuracy, completeness, correctness, reliability, usefulness, marketability, merchantability or fitness of the Index, and do not account for business activities or services that any index user and/or its affiliates undertakes with the use of the Index.
+
+Investors should consider this document as only a single factor in making their investment decision and, as such, the report should not be viewed as identifying or suggesting all risks, direct or indirect, that may be associated with any investment decision. NOM Group produces a number of different types of research product including, among others, fundamental analysis and quantitative analysis; recommendations contained in one type of research product may differ from recommendations contained in other types of research product, whether as a result of differing time horizons, methodologies or otherwise. The NOM Group publishes research product in a number of different ways including the posting of product on the NOM Group portals and/or distribution directly to clients. Different groups of clients may receive different products and services from the research department depending on their individual requirements.
+
+Figures presented herein may refer to past performance or simulations based on past performance which are not reliable indicators of future or likely performance. Where the information contains an expectation, projection or indication of future performance and business prospects, such forecasts may not be a reliable indicator of future or likely performance. Moreover, simulations are based on models and simplifying assumptions which may oversimplify and not reflect the future distribution of returns. Any figure, strategy or index created and published for illustrative purposes within this document is not intended for “use” as a “benchmark” as defined by the European Benchmark Regulation. Certain securities are subject to fluctuations in exchange rates that could have an adverse effect on the value or price of, or income derived from, the investment.
+
+With respect to Fixed Income Research: Recommendations fall into two categories: tactical, which typically last up to three months; or strategic, which typically last from 6-12 months. However, trade recommendations may be reviewed at any time as circumstances change. 'Stop loss' levels for trades are also provided; which, if hit, closes the trade recommendation automatically. Prices and yields shown in recommendations are taken at the time of submission for publication and are based on either indicative Bloomberg, LSEG or NOM prices and yields at that time. The prices and yields shown are not necessarily those at which the trade recommendation can be implemented. The securities described herein may not have been registered under the US Securities Act of 1933 (the '1933 Act'), and, in such case, may not be offered or sold in the US or to US persons unless they have been registered under the 1933 Act, or except in compliance with an exemption from the registration requirements of the 1933 Act. Unless governing law permits otherwise, any transaction should be executed via a NOM entity in your home jurisdiction.
+
+This document has been approved for distribution in the UK as investment research by NIplc. NIplc is authorised by the Prudential Regulation Authority and regulated by the Financial Conduct Authority and the Prudential Regulation Authority. NIplc is a member of the London Stock Exchange. This document does not constitute a personal recommendation within the meaning of applicable regulations in the UK, or take into account the particular investment objectives, financial situations, or needs of individual investors. This document is intended only for investors who are 'eligible counterparties' or 'professional clients' for the purposes of applicable regulations in the UK, and may not, therefore, be redistributed to persons who are 'retail clients' for such purposes.
+
+This document has been approved for distribution in the European Economic Area as investment research by NOM Financial Products Europe GmbH (“NFPE”). NFPE is a company organized as a limited liability company under German law registered in the Commercial Register of the Court of Frankfurt/Main under HRB 110223. NFPE is authorized and regulated by the German Federal Financial Supervisory Authority (BaFin).
+
+This document has been approved by NIHK, which is regulated by the Hong Kong Securities and Futures Commission, for distribution in Hong Kong by NIHK. This document is intended only for investors who are 'professional investors' for the purposes of applicable regulations in Hong Kong and may not, therefore, be redistributed to persons who are not 'professional investors' for such purposes.
+
+This document has been approved for distribution in Australia by NAL, which is authorized and regulated in Australia by the ASIC. This document has also been approved for distribution in Malaysia by NSM.
+
+In Singapore, this document has been distributed by NSL, an exempt financial adviser as defined under the Financial Advisers Act (Chapter 110), among other things, and regulated by the Monetary Authority of Singapore. NSL may distribute this document produced by its foreign affiliates pursuant to an arrangement under Regulation 32C of the Financial Advisers Regulations. This document is intended for accredited, expert or institutional investors as defined by the Securities and Futures Act (Chapter 289). Where the recipient of this document is not an accredited, expert or institutional investor, NSL accepts legal responsibility for the contents of this document in respect of such recipient only to the extent required by law. Recipients of this document in Singapore should contact NSL in respect of matters arising from, or in connection with, this document. THIS DOCUMENT IS INTENDED FOR GENERAL CIRCULATION. IT DOES NOT TAKE INTO ACCOUNT THE SPECIFIC INVESTMENT OBJECTIVES, FINANCIAL SITUATION OR PARTICULAR NEEDS OF ANY PARTICULAR PERSON. RECIPIENTS SHOULD TAKE INTO ACCOUNT THEIR SPECIFIC INVESTMENT OBJECTIVES, FINANCIAL SITUATION OR PARTICULAR NEEDS BEFORE MAKING A COMMITMENT TO PURCHASE ANY SECURITIES, INCLUDING SEEKING ADVICE FROM AN INDEPENDENT FINANCIAL ADVISER REGARDING THE SUITABILITY OF THE INVESTMENT, UNDER A SEPARATE ENGAGEMENT, AS THE RECIPIENT DEEMS FIT.
+
+Unless prohibited by the provisions of Regulation S of the 1933 Act, this material is distributed in the US, by NSI, a US-registered broker-dealer, which accepts responsibility for its contents in accordance with the provisions of Rule 15a-6, under the US Securities Exchange Act of
+
+1934. The entity that prepared this document permits its separately operated affiliates within the NOM Group to make copies of such documents available to their clients.
+
+This document has not been approved for distribution to persons other than ‘Authorised Persons’, ‘Exempt Persons’ or ‘Institutions’ (as defined by the Capital Markets Authority) in the Kingdom of Saudi Arabia (‘Saudi Arabia’) or a ‘Market Counterparty’ or a ‘Professional Client’ (as defined by the Dubai Financial Services Authority) in the United Arab Emirates (‘UAE’) or a ‘Market Counterparty’ or a ‘Business Customer’ (as defined by the Qatar Financial Centre Regulatory Authority) in the State of Qatar (‘Qatar’) by NOM Saudi Arabia, NIplc or any other member of the NOM Group, as the case may be. Neither this document nor any copy thereof may be taken or transmitted or distributed, directly or indirectly, by any person other than those authorised to do so into Saudi Arabia or in the UAE or in Qatar or to any person other than ‘Authorised Persons’, ‘Exempt Persons’ or ‘Institutions’ located in Saudi Arabia or a ‘Market Counterparty’ or a ‘Professional Client’ in the UAE or a ‘Market Counterparty’ or a ‘Business Customer’ in Qatar. Any failure to comply with these restrictions may constitute a violation of the laws of the UAE or Saudi Arabia or Qatar.
+
+For report with reference of TAIWAN public companies or authored by Taiwan based research analyst:
+
+THIS DOCUMENT IS SOLELY FOR REFERENCE ONLY. You should independently evaluate the investment risks and are solely responsible for your investment decisions. NO PORTION OF THE REPORT MAY BE REPRODUCED OR QUOTED BY THE PRESS OR ANY OTHER PERSON WITHOUT WRITTEN AUTHORIZATION FROM NOM GROUP. Pursuant to Operational Regulations Governing Securities Firms Recommending Trades in Securities to Customers and/or other applicable laws or regulations in Taiwan, you are prohibited to provide the reports to others (including but not limited to related parties, affiliated companies and any other third parties) or engage in any activities in connection with the reports which may involve conflicts of interests. INFORMATION ON SECURITIES / INSTRUMENTS NOT EXECUTABLE BY NOM INTERNATIONAL (HONG KONG) LTD., TAIPEI BRANCH IS FOR INFORMATIONAL PURPOSES ONLY AND IS NOT BE CONSTRUED AS A RECOMMENDATION OR A SOLICITATION TO TRADE IN SUCH SECURITIES / INSTRUMENTS.
+
+This material may not be distributed in Indonesia or passed on within the territory of the Republic of Indonesia or to persons who are Indonesian citizens (wherever they are domiciled or located) or entities of or residents in Indonesia in a manner which constitutes a public offering under the laws of the Republic of Indonesia. The securities mentioned in this document may not be offered or sold in Indonesia or to persons who are citizens of Indonesia (wherever they are domiciled or located) or entities of or residents in Indonesia in a manner which constitutes a public offering under the laws of the Republic of Indonesia.
+
+An individual name printed next to NOI on the front page of a research report indicates that this document is a translation of a research report issued by NOI in the PRC. In all other cases, this document is prepared by NOM Group or its subsidiary or affiliate (collectively, “Offshore Issuers”) that is not licensed in the PRC to provide securities research. This research report is not approved or intended to be circulated in the PRC. The A-share related analysis (if any) is not produced for any persons located or incorporated in the PRC. The recipients should not rely on any information contained in this research report in making investment decisions and Offshore Issuers take no responsibility in this regard. NO PART OF THIS MATERIAL MAY BE (I) COPIED, PHOTOCOPIED, REPRODUCED OR DUPLICATED IN ANY FORM, BY ANY MEANS; OR (II) REDISSEMINATED, REPUBLISHED OR REDISTRIBUTED WITHOUT THE PRIOR WRITTEN CONSENT OF A MEMBER OF THE NOM GROUP. If this document has been distributed by electronic transmission, such as e-mail, then such transmission cannot be guaranteed to be secure or error-free as information could be intercepted, corrupted, lost, destroyed, arrive late or incomplete, or contain viruses. The sender therefore does not accept liability (in negligence or otherwise, and in whole or in part) for any errors or omissions in the contents of this document, which may arise as a result of electronic transmission. If verification is required, please request a hard-copy version.
+
+The NOM Group manages conflicts with respect to the production of research through its compliance policies and procedures (including, but not limited to, Conflicts of Interest, Chinese Wall and Confidentiality policies) as well as through the maintenance of Chinese Walls and employee training.
+
+Additional information regarding the methodologies or models used in the production of any investment recommendations contained within this document is available upon request by contacting the Research Analysts of NOM listed on the front page. Disclosures information is available upon request and disclosure information is available at the NOM Disclosure web page: http://go.NOMnow.com/research/m/Disclosures
+
+Copyright © 2026 NOM. All rights reserved.
+
+Disclosures as of 27-May-2026.
