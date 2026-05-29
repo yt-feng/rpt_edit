@@ -1,0 +1,17 @@
+EN_A: I came across a report recently that asks a really specific question: for every gigawatt of new computing capacity these cloud giants add, how much revenue should we expect?
+EN_B: That is actually the core question. And the report has a strong view on it: current market expectations for cloud revenue growth might be too conservative.
+EN_A: Too conservative? Given all the AI hype, that is a bold claim.
+EN_B: It is. But the report does not just make a claim. It builds a bottom-up model, from chips to racks to data centers, to estimate exactly how much capacity AWS and Google Cloud will bring online by 2027.
+EN_A: And then it connects that capacity to revenue. What does it find?
+EN_B: It calculates a key metric: incremental revenue per incremental gigawatt. For 2027, its base case shows around 11 to 14 billion dollars per GW for AWS and Google Cloud. But here is the catch.
+EN_A: I am listening.
+EN_B: The report argues these numbers look reasonable, and if anything, they are conservative. It gives three reasons. First, 2025 results are already running ahead of this model. Second, neo-cloud companies that rent out bare metal GPUs are generating around 10 dollars per watt. And hyperscalers with software layers should command a premium.
+EN_A: That makes sense. What is the third reason?
+EN_B: Industry conversations suggest new capacity deals are being negotiated at over 20 billion dollars per GW. That is almost double the report’s 2027 estimate.
+EN_A: So the report is basically saying, if this capacity comes online, the revenue will likely be higher than what the market is pricing in.
+EN_B: Exactly. And it singles out Google Cloud as having the most potential upside. Its implied revenue per GW actually drops in 2027, which seems inconsistent with the overall trend.
+EN_A: Why would Google Cloud look more conservative? Is it because of their TPU strategy?
+EN_B: You hit on a key point. The report excludes external TPU sales from its Google Cloud revenue calculation. That alone could be a significant factor. But even without that, the supply-demand math suggests there is more room to run. That is why the report raised its bull case for Alphabet to 460 dollars.
+EN_A: So capacity is a leading indicator for revenue. But what are the risks? What does the report not fully answer?
+EN_B: It leaves a few important questions open. For example, how much of this planned capacity will actually come online on time? There are real bottlenecks in power and supply chains. Also, will the revenue per GW metric compress as competition heats up? These are questions the full report explores in more detail.
+EN_A: Sounds like the full report has the answers. We will leave it there for now. If you want to dig into the interactive models and the full capacity breakdown, check out the complete report in our community.

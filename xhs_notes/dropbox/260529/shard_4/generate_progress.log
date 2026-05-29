@@ -1,0 +1,16 @@
+Found 32 total PDFs; shard 4/40 has 5 PDFs, skips 0 already converted, will process 5 PDFs with batch_size=5.
+Running batch 1: 5 PDFs
+Found 5 PDFs.
+Uploading PDF to MinerU: /tmp/pdf_batch_001_hggi3_xv/pdfs/0001-21-Morgan Stanley-China - Clean Energy-Solar Products Price Tracker - Week 22- 2026-260527.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_hggi3_xv/pdfs/0002-22-Morgan Stanley-Global Sugar Brazil Sugar- Strong Season Start. Supply Surge Pressures Prices Amid Ethanol Shift-260528.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_hggi3_xv/pdfs/0003-23-Morgan Stanley-Hong Kong Property -Expert Call on Real Estate with Knight Frank-260527.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_hggi3_xv/pdfs/0004-24-Morgan Stanley-Internet-How Much Revenue per GW Could Be Generated with the Capacity Ahead--260527.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_hggi3_xv/pdfs/0005-25-Morgan Stanley-Healthcare Technology-Digital Health 2.0- Doubling Down on HNGE and OMDA-260527.pdf
+MinerU batch_id=5a3f6ff3-4731-4a32-83fa-98818fa168da
+MinerU states: running, running, running, running, pending
+MinerU states: done, running, done, done, running
+MinerU states: done, running, done, done, done
+MinerU states: done, running, done, done, done
+MinerU states: done, done, done, done, done
+Done. Results written to /home/runner/work/rpt_edit/rpt_edit/xhs_notes/dropbox/260529/shard_4; successful_reports=5; mineru_timed_out=False
+All batches completed successfully. Generated 5 report directories.
