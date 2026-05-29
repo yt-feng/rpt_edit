@@ -1,0 +1,2732 @@
+[
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.064,
+                0.025,
+                0.264,
+                0.052
+            ],
+            "angle": 0,
+            "content": "MS"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.296,
+                0.032,
+                0.364,
+                0.044
+            ],
+            "angle": 0,
+            "content": "RESEARCH"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.065,
+                0.057,
+                0.255,
+                0.072
+            ],
+            "angle": 0,
+            "content": "May 20, 2026 07:17 PM GMT"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.886,
+                0.028,
+                0.933,
+                0.048
+            ],
+            "angle": 0,
+            "content": "IDEA"
+        },
+        {
+            "type": "title",
+            "bbox": [
+                0.065,
+                0.079,
+                0.367,
+                0.098
+            ],
+            "angle": 0,
+            "content": "Asia Economics | Asia Pacific"
+        },
+        {
+            "type": "title",
+            "bbox": [
+                0.065,
+                0.112,
+                0.559,
+                0.186
+            ],
+            "angle": 0,
+            "content": "The Viewpoint: Is Asia's macro story all about semis?"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.064,
+                0.204,
+                0.59,
+                0.286
+            ],
+            "angle": 0,
+            "content": "The sharp rise in Asia's non-tech exports over the past six months has gone largely unnoticed. We expect the strength in non-tech exports to be sustained, which will help broaden Asia's recovery from exports to capex and then to consumption.",
+            "merge_prev": false
+        },
+        {
+            "type": "title",
+            "bbox": [
+                0.07,
+                0.305,
+                0.203,
+                0.323
+            ],
+            "angle": 0,
+            "content": "Key Takeaways"
+        },
+        {
+            "type": "list",
+            "bbox": [
+                0.064,
+                0.329,
+                0.596,
+                0.51
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.065,
+                0.329,
+                0.596,
+                0.363
+            ],
+            "angle": 0,
+            "content": "Asia's non-tech exports have risen \\(27\\%\\) annualized over the past six months, highlighting that Asia's export recovery extends well beyond just semiconductors.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.065,
+                0.37,
+                0.588,
+                0.404
+            ],
+            "angle": 0,
+            "content": "■ Stronger capital and intermediate goods exports have driven this. A broad capex upturn has helped to support this stronger exports trend.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.065,
+                0.412,
+                0.572,
+                0.445
+            ],
+            "angle": 0,
+            "content": "We expect capex in both tech and non-tech sectors to stay strong, supporting Asia's exports growth.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.065,
+                0.453,
+                0.577,
+                0.487
+            ],
+            "angle": 0,
+            "content": "This recovery in both tech and non-tech exports will spill over positively to job creation, income growth, and consumer spending across Asia.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.065,
+                0.494,
+                0.57,
+                0.51
+            ],
+            "angle": 0,
+            "content": "The risk is if geopolitical tensions emerge and weigh on corporate confidence.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.064,
+                0.528,
+                0.581,
+                0.58
+            ],
+            "angle": 0,
+            "content": "In this report, we highlight how the sharp rise in non-tech exports is contributing to strong overall exports growth in Asia. We explore the implications of this broader recovery in exports.",
+            "merge_prev": false
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.065,
+                0.591,
+                0.519,
+                0.607
+            ],
+            "angle": 0,
+            "content": "Exhibit 1: A sharp rise in Asia's non tech exports since October 2025"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.073,
+                0.612,
+                0.596,
+                0.844
+            ],
+            "angle": 0,
+            "content": "| Month    | Asia  | Asia early reporters |\n| -------- | ----- | -------------------- |\n| Apr-26   | 114   | 115                  |",
+            "sub_type": "line"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.064,
+                0.851,
+                0.589,
+                0.889
+            ],
+            "angle": 0,
+            "content": "Source: CEIC, Haver, MS; Note: Asia includes China, India, Indonesia, Korea, Malaysia, Thailand, Taiwan, Australia, and Japan. Non-tech non-fuel exports have risen at an annualized run rate of 25% (and 27% for the early reporters – China, India, Korea, and Taiwan – which account for 60% of Asia's exports) since October 2025 when the US signed trade deals with most Asia economies."
+        },
+        {
+            "type": "title",
+            "bbox": [
+                0.625,
+                0.078,
+                0.759,
+                0.088
+            ],
+            "angle": 0,
+            "content": "MS ASIA LIMITED"
+        },
+        {
+            "type": "title",
+            "bbox": [
+                0.626,
+                0.091,
+                0.705,
+                0.105
+            ],
+            "angle": 0,
+            "content": "Chetan Ahya"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.626,
+                0.106,
+                0.71,
+                0.115
+            ],
+            "angle": 0,
+            "content": "Chief Asia Economist",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.626,
+                0.117,
+                0.933,
+                0.128
+            ],
+            "angle": 0,
+            "content": "Chetan.Ahya@morganstanley.com +852 2239-7812",
+            "merge_prev": false
+        },
+        {
+            "type": "title",
+            "bbox": [
+                0.625,
+                0.14,
+                0.796,
+                0.15
+            ],
+            "angle": 0,
+            "content": "MS ASIA (SINGAPORE) PTE."
+        },
+        {
+            "type": "title",
+            "bbox": [
+                0.626,
+                0.153,
+                0.713,
+                0.166
+            ],
+            "angle": 0,
+            "content": "Derrick Y Kam"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.626,
+                0.168,
+                0.689,
+                0.177
+            ],
+            "angle": 0,
+            "content": "Asia Economist",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.626,
+                0.179,
+                0.933,
+                0.19
+            ],
+            "angle": 0,
+            "content": "Derrick.Kam@morganstanley.com +65 6834-8272",
+            "merge_prev": false
+        },
+        {
+            "type": "title",
+            "bbox": [
+                0.625,
+                0.202,
+                0.758,
+                0.212
+            ],
+            "angle": 0,
+            "content": "MS ASIA LIMITED"
+        },
+        {
+            "type": "title",
+            "bbox": [
+                0.626,
+                0.215,
+                0.73,
+                0.229
+            ],
+            "angle": 0,
+            "content": "Jonathan Cheung"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.626,
+                0.23,
+                0.67,
+                0.239
+            ],
+            "angle": 0,
+            "content": "Economist",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.626,
+                0.241,
+                0.933,
+                0.251
+            ],
+            "angle": 0,
+            "content": "Jonathan.Cheung@morganstanley.com +852 2848-5652",
+            "merge_prev": false
+        },
+        {
+            "type": "title",
+            "bbox": [
+                0.626,
+                0.257,
+                0.696,
+                0.271
+            ],
+            "angle": 0,
+            "content": "Kelly Wang"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.626,
+                0.272,
+                0.67,
+                0.281
+            ],
+            "angle": 0,
+            "content": "Economist",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.626,
+                0.283,
+                0.933,
+                0.294
+            ],
+            "angle": 0,
+            "content": "Kelly.Wang@morganstanley.com +852 3963-0891",
+            "merge_prev": false
+        },
+        {
+            "type": "title",
+            "bbox": [
+                0.625,
+                0.303,
+                0.841,
+                0.313
+            ],
+            "angle": 0,
+            "content": "MS INDIA COMPANY PRIVATE LIMITED"
+        },
+        {
+            "type": "title",
+            "bbox": [
+                0.626,
+                0.316,
+                0.747,
+                0.33
+            ],
+            "angle": 0,
+            "content": "Sudhanshu Agarwal"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.626,
+                0.331,
+                0.67,
+                0.34
+            ],
+            "angle": 0,
+            "content": "Economist",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.626,
+                0.342,
+                0.933,
+                0.353
+            ],
+            "angle": 0,
+            "content": "Sudhanshu.Agarwal@morganstanley.com +91 22 6995-4568",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.625,
+                0.925,
+                0.922,
+                0.951
+            ],
+            "angle": 0,
+            "content": "For important disclosures, refer to the Disclosure Section, located at the end of this report."
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.066,
+                0.026,
+                0.25,
+                0.042
+            ],
+            "angle": 0,
+            "content": "MS | RESEARCH"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.905,
+                0.029,
+                0.933,
+                0.04
+            ],
+            "angle": 0,
+            "content": "IDEA"
+        },
+        {
+            "type": "title",
+            "bbox": [
+                0.068,
+                0.096,
+                0.168,
+                0.12
+            ],
+            "angle": 0,
+            "content": "Details"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.365,
+                0.141,
+                0.93,
+                0.229
+            ],
+            "angle": 0,
+            "content": "Investors' view is that Asia's macro story is all about semis: On Asia, the focus amongst investors is very much around the tech cycle and what's driving it. A parallel narrative that runs alongside this tech-driven growth is that of a K-shaped recovery – where investors perceive the exports boom to be narrow and where there would be limited spillovers to consumption growth.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.365,
+                0.241,
+                0.932,
+                0.329
+            ],
+            "angle": 0,
+            "content": "Our view – don't underestimate the recovery in non-tech exports: Investors appear to be underestimating the strength in non-tech exports. In our conversations, most investors are surprised by the sharp turnaround in non-tech exports. While tech exports drove Asia's exports for the first nine months of 2025, non-tech exports have already inflected meaningfully higher from 4Q25 onwards.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.365,
+                0.34,
+                0.93,
+                0.446
+            ],
+            "angle": 0,
+            "content": "From October 2025 to March 2026, non-tech exports for Asia have risen an annualized \\(25\\%\\) in US dollar terms. Key non-tech exports include ships, networking and telecom equipment, and construction machinery. This strength has extended into April 2026. For the select early reporting Asian economies – China, India, Korea, and Taiwan (which account for about \\(60\\%\\) of Asia's exports) – non-tech exports have risen an annualized \\(27\\%\\) between October 2025 and April 2026.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.365,
+                0.458,
+                0.929,
+                0.581
+            ],
+            "angle": 0,
+            "content": "Non-tech exports growth, on a three-month YoY basis, also reached a three-and-a-half year high in April 2026. The growth rate of \\(14\\%\\) is also comparable to the peak of \\(14\\%\\) reached during 2017-18 – the last time a global synchronous recovery was underway. Indeed, between October 2025 and March 2026, non-tech exports contributed 8.3ppt to overall exports growth, much higher than the 3.7ppt contribution over January-September 2025. In the latter section, we look more closely at the drivers of Asia's non-tech exports recovery.",
+            "merge_prev": false
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.065,
+                0.594,
+                0.481,
+                0.626
+            ],
+            "angle": 0,
+            "content": "Exhibit 2: A sharp rise in Asia's non tech exports since October 2025"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.073,
+                0.633,
+                0.482,
+                0.814
+            ],
+            "angle": 0,
+            "content": "| Month    | Asia  | Asia early reporters (CN, IN, KR, TW) |\n| -------- | ----- | ------------------------------------ |\n| Apr-26   | 114   | 115                                  |",
+            "sub_type": "line"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.066,
+                0.823,
+                0.482,
+                0.86
+            ],
+            "angle": 0,
+            "content": "Source: CEIC, Haver, MS; Note: Asia includes China, India, Indonesia, Korea, Malaysia, Thailand, Taiwan, Australia and Japan. Non-tech non-fuel exports have risen by an annualized run rate of \\(25\\%\\) (and \\(27\\%\\) for the early reporters – China, India, Korea, and Taiwan, which account for \\(60\\%\\) of Asia's exports) since October 2025 when the US signed trade deals with most Asia economies."
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.514,
+                0.594,
+                0.921,
+                0.626
+            ],
+            "angle": 0,
+            "content": "Exhibit 3: Non-tech exports for early reporters in Asia grew at \\(15\\%\\) Y in April"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.52,
+                0.637,
+                0.93,
+                0.817
+            ],
+            "angle": 0,
+            "content": "| Date   | Asia (%) | Asia early reporters (%) |\n|--------|----------|--------------------------|\n| Apr-26 | 14       | 15                       |",
+            "sub_type": "line"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.514,
+                0.826,
+                0.899,
+                0.845
+            ],
+            "angle": 0,
+            "content": "Source: CEIC, Haver, MS; Note: Asia includes China, India, Indonesia, Korea, Malaysia, Thailand, Taiwan, Australia and Japan."
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.365,
+                0.873,
+                0.913,
+                0.942
+            ],
+            "angle": 0,
+            "content": "Non-tech exports help broaden Asia's recovery: We have been highlighting that Asia's recovery will broaden out to non-tech this year. This is particularly important because non-tech exports have much stronger spillovers into the real economy, as compared to tech exports, which tend to be more capital intensive.",
+            "merge_prev": false
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.067,
+                0.969,
+                0.076,
+                0.977
+            ],
+            "angle": 0,
+            "content": "2"
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.066,
+                0.026,
+                0.249,
+                0.042
+            ],
+            "angle": 0,
+            "content": "MS | RESEARCH"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.905,
+                0.029,
+                0.933,
+                0.04
+            ],
+            "angle": 0,
+            "content": "IDEA"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.367,
+                0.088,
+                0.929,
+                0.247
+            ],
+            "angle": 0,
+            "content": "We think Asia is in a virtuous cycle, where the rise in exports – both tech and non-tech – and the robust capex cycle will help to support job creation and wage growth – underpinning consumption growth. This backdrop will generate positive spillovers to Asia’s growth momentum. For China, considering the starting point of excess capacity and deflationary pressures, we think that the strength in exports will first show up in improving capacity utilization, which will then reduce deflationary pressures and improve nominal GDP growth. As that unfolds, corporate revenue growth should pick up, followed by wage growth. Meanwhile, job creation should improve with a lag, as companies will first utilize the slack in their capacity before looking to start hiring.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.367,
+                0.26,
+                0.93,
+                0.473
+            ],
+            "angle": 0,
+            "content": "Asia's capex and industrial super-cycle will continue to lift non-tech exports: Asia's industrial cycle is entering its strongest period since the mid-2000s, underpinned by a sustained, multi-year rise in capital expenditure rather than a cyclical rebound. The drivers are structural: AI and AI-related infrastructure, energy and energy transition, defense spending, and spillovers into broader industrial capex. This dynamic matters especially for Asia because the region is the world's largest industrial base, accounting for nearly half of global industrial value added, and sits at the center of the supply chains needed for AI hardware, semiconductors, energy-transition inputs, defense equipment, intermediate goods, and capital goods. As global capex rises and Asia's own domestic capex accelerates, the region stands to benefit twice: through stronger export demand and through a self-reinforcing domestic investment cycle that supports production, jobs, wages, consumption, and further capex.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.367,
+                0.485,
+                0.932,
+                0.627
+            ],
+            "angle": 0,
+            "content": "The risk is if geopolitical tensions escalate: The key downside risk would be re-escalation of geopolitical tensions. In that scenario, oil prices could exceed US\\$150/bbl and remain elevated for several months – which would trigger a global recession. Pricing could also remain elevated for other materials critical to the supply chain, including petrochemicals and fertilizers, plastics, and inputs for semis manufacturing, metal processing, battery manufacturing, etc. While this will create a dent in the near-term growth momentum, we think that the structural drivers to the capex and industrial cycle will mean that non-tech exports will stage a quick and strong rebound from the trough.",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.067,
+                0.968,
+                0.241,
+                0.979
+            ],
+            "angle": 0,
+            "content": "MS"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.924,
+                0.969,
+                0.931,
+                0.977
+            ],
+            "angle": 0,
+            "content": "3"
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.066,
+                0.026,
+                0.25,
+                0.042
+            ],
+            "angle": 0,
+            "content": "MS | RESEARCH"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.905,
+                0.029,
+                0.933,
+                0.04
+            ],
+            "angle": 0,
+            "content": "IDEA"
+        },
+        {
+            "type": "title",
+            "bbox": [
+                0.067,
+                0.092,
+                0.631,
+                0.125
+            ],
+            "angle": 0,
+            "content": "A deeper dive into Asia's exports trends"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.365,
+                0.141,
+                0.932,
+                0.229
+            ],
+            "angle": 0,
+            "content": "In this section, we review the trends in Asia's exports by product categories as well as by exports to various destinations, then delve into the growth drivers. While semis exports have continued to accelerate into 2Q26, non-tech exports are also exhibiting sustained, broad-based strength. The strength of the capex cycle has been key in driving the recovery in non-tech exports.",
+            "merge_prev": false
+        },
+        {
+            "type": "title",
+            "bbox": [
+                0.067,
+                0.266,
+                0.411,
+                0.296
+            ],
+            "angle": 0,
+            "content": "Trends in Semis Exports"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.365,
+                0.313,
+                0.932,
+                0.401
+            ],
+            "angle": 0,
+            "content": "Still surging... Asia's semiconductor exports grew \\(74\\%\\)Y on a 3MMA basis in March, almost tripling in YoY pace vs. the already strong \\(28\\%\\) in 4Q25. Semiconductor exports now account for \\(10\\%\\) of overall regional exports, up from \\(7\\%\\) in 2023. Korea's daily exports data for the first 10 days of May suggest that semiconductor exports momentum has continued in 2Q.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.365,
+                0.413,
+                0.918,
+                0.464
+            ],
+            "angle": 0,
+            "content": "...driven by strong demand from hyperscalers: Underpinning this has been continued strong US hyperscaler capex. At an aggregate level, US real IT capex grew 18%Y in 1Q26, accelerating from 5%Y in December 2024.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.365,
+                0.476,
+                0.925,
+                0.563
+            ],
+            "angle": 0,
+            "content": "Faster agentic AI adoption to drive continued surge in hardware demand: Our US Internet research team expects hyperscaler capex (including Amazon, Microsoft, Google, and Meta) to rise 78%Y in 2026, to US$737bn, growing tfurther o over US$1trn in 2027 (see Internet: How Much Capacity Will $2 Trillion of Hyperscaler Capex Bring By '27? May 17, 2026).",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.365,
+                0.575,
+                0.931,
+                0.717
+            ],
+            "angle": 0,
+            "content": "Shawn Kim, our Head of Asia and Europe Technology Research, also highlights 1Q26 as a breakout quarter for agentic AI, with many companies moving from experimental pilot programs to full-scale enterprise deployment. Shawn notes that with agentic AI scaling up faster than initially anticipated, corporate commentaries are guiding that hyperscaler data center deployments are requiring denser CPU infrastructure around GPU clusters. Against this backdrop, he expects total server CPU TAM of US\\$125bn by 2030, with DRAM demand likely to grow at 1.7x 2026 DRAM supply by 2030 (for more details, please see Global Technology: Agentic AI – The Surge Begins, 2, May 11, 026).",
+            "merge_prev": false
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.067,
+                0.969,
+                0.076,
+                0.977
+            ],
+            "angle": 0,
+            "content": "4"
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.066,
+                0.026,
+                0.25,
+                0.042
+            ],
+            "angle": 0,
+            "content": "MS | RESEARCH"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.905,
+                0.029,
+                0.933,
+                0.04
+            ],
+            "angle": 0,
+            "content": "IDEA"
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.067,
+                0.095,
+                0.416,
+                0.11
+            ],
+            "angle": 0,
+            "content": "Exhibit 4: Asia's semis exports growth – still surging"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.068,
+                0.114,
+                0.482,
+                0.305
+            ],
+            "angle": 0,
+            "content": "Asia semiconductor exports (%Y 3mma)\n| Date | Value (%) |\n|---|---|\n| Mar-18 | 30 |\n| Mar-19 | -7 |\n| Mar-20 | -8 |\n| Mar-21 | 29 |\n| Mar-22 | 28 |\n| Mar-23 | -25 |\n| Mar-24 | 9 |\n| Mar-25 | 12 |\n| Mar-26 | 74 |",
+            "sub_type": "line"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.067,
+                0.309,
+                0.23,
+                0.319
+            ],
+            "angle": 0,
+            "content": "Source: Haver, MS"
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.067,
+                0.336,
+                0.445,
+                0.368
+            ],
+            "angle": 0,
+            "content": "Exhibit 6: US hyperscaler capex to sustain strong growth through 2027"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.067,
+                0.374,
+                0.482,
+                0.58
+            ],
+            "angle": 0,
+            "content": "| Year | AMZN ($bn) | MSFT ($bn) | GOOGL ($bn) | META ($bn) | Total ($bn) |\n| :--- | :--- | :--- | :--- | :--- | :--- |\n| 2024 | 83 | 76 | 53 | 39 | 250 |\n| 2025 | 132 | 118 | 91 | 72 | 413 |\n| 2026 | 212 | 190 | 190 | 145 | 737 |\n| 2027 | 268 | 276 | 299 | 174 | 1,018 |\nY/Y Growth (%) indicated by red dashed boxes: 62%, 65%, 78%, and 38% respectively.",
+            "sub_type": "bar_stacked"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.067,
+                0.584,
+                0.422,
+                0.591
+            ],
+            "angle": 0,
+            "content": "Source: Company data, MS Estimates; Note: AMZN = Total Company Capex excluding proceeds from property and equipment sales and incentives"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.067,
+                0.6,
+                0.265,
+                0.61
+            ],
+            "angle": 0,
+            "content": "Source: MS US Equity Research team"
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.513,
+                0.095,
+                0.921,
+                0.128
+            ],
+            "angle": 0,
+            "content": "Exhibit 5: Korea's daily exports data suggest that momentum has been maintained into the first 10 days of May"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.517,
+                0.135,
+                0.93,
+                0.317
+            ],
+            "angle": 0,
+            "content": "Korea daily semis exports (%Y)\n| Date | Full-month (%) | First 10 days (%) |\n|---|---|---|\n| May-22 | -5 | -8 |\n| Nov-22 | -10 | -12 |\n| May-23 | -55 | -58 |\n| Nov-23 | -15 | -18 |\n| May-24 | 45 | 40 |\n| Nov-24 | 30 | 35 |\n| May-25 | -10 | -8 |\n| Nov-25 | -7 | -5 |\n| May-26 | 171 | 150 |",
+            "sub_type": "line"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.515,
+                0.321,
+                0.678,
+                0.331
+            ],
+            "angle": 0,
+            "content": "Source: Haver, MS"
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.515,
+                0.336,
+                0.908,
+                0.351
+            ],
+            "angle": 0,
+            "content": "Exhibit 7: Strong US IT capex to sustain Asia's tech exports"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.515,
+                0.356,
+                0.932,
+                0.539
+            ],
+            "angle": 0,
+            "content": "| Date | US real IT capex (%Y) (%) | Asia semiconductors exports (RS, %Y 3MMA) (%) |\n|---|---|---|\n| Mar-18 | 12.5 | 10.5 |\n| Mar-19 | 6.0 | 3.0 |\n| Mar-20 | 4.5 | 5.5 |\n| Mar-21 | 14.5 | 10.5 |\n| Mar-22 | 12.5 | 9.5 |\n| Mar-23 | 3.0 | -1.0 |\n| Mar-24 | 7.0 | 15.0 |\n| Mar-25 | 5.5 | 18.0 |\n| Mar-26 | 19.0 | 74.0 |\n| Mar-26 (right axis) | 18.3 | 18.3 |",
+            "sub_type": "line"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.515,
+                0.55,
+                0.678,
+                0.56
+            ],
+            "angle": 0,
+            "content": "Source: Haver, MS"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.067,
+                0.968,
+                0.242,
+                0.979
+            ],
+            "angle": 0,
+            "content": "MS"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.924,
+                0.969,
+                0.932,
+                0.977
+            ],
+            "angle": 0,
+            "content": "5"
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.066,
+                0.026,
+                0.25,
+                0.042
+            ],
+            "angle": 0,
+            "content": "MS | RESEARCH"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.905,
+                0.029,
+                0.933,
+                0.04
+            ],
+            "angle": 0,
+            "content": "IDEA"
+        },
+        {
+            "type": "title",
+            "bbox": [
+                0.068,
+                0.094,
+                0.562,
+                0.125
+            ],
+            "angle": 0,
+            "content": "Trends in non-tech, non-oil exports"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.365,
+                0.141,
+                0.932,
+                0.266
+            ],
+            "angle": 0,
+            "content": "Non-tech exports are joining in the recovery: Over the past six months, there has been a sustained rising trend in non-tech exports. On an annualized basis, non-tech exports for Asia's early reporting economies (China, India, Korea and Taiwan – which collectively account for 60% of Asia's exports) have grown at 27% since October through April. On a YoY three-month trailing basis, non-tech exports growth has accelerated to 14%Y (vs. 5%Y 3MMA in October 2025). Non-tech exports growth also reached a three-and-a-half year high, with growth rates very similar to 2017-18.",
+            "merge_prev": false
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.066,
+                0.277,
+                0.471,
+                0.329
+            ],
+            "angle": 0,
+            "content": "Exhibit 8: On an annualized basis, non-tech exports for Asia's early reporting economies have grown at \\(27\\%\\) since October through April"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.071,
+                0.334,
+                0.482,
+                0.515
+            ],
+            "angle": 0,
+            "content": "| Month    | Asia  | Asia early reporters |\n| -------- | ----- | -------------------- |\n| Dec-24   | 100   | 100                  |\n| Jan-25   | 99    | 99                   |\n| Feb-25   | 99    | 99                   |\n| Mar-25   | 100   | 100                  |\n| Apr-25   | 102   | 102                  |\n| May-25   | 103   | 102                  |\n| Jun-25   | 103   | 102                  |\n| Jul-25   | 103   | 102                  |\n| Aug-25   | 103   | 102                  |\n| Sep-25   | 103   | 102                  |\n| Oct-25   | 104   | 103                  |\n| Nov-25   | 106   | 105                  |\n| Dec-25   | 108   | 107                  |\n| Jan-26   | 110   | 109                  |\n| Feb-26   | 114   | 114                  |\n| Mar-26   | 114   | 114                  |\n| Apr-26   | 115   | 115                  |",
+            "sub_type": "line"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.066,
+                0.525,
+                0.478,
+                0.562
+            ],
+            "angle": 0,
+            "content": "Source: CEIC, MS; Note: Asia includes China, India, Indonesia, Korea, Malaysia, Thailand, Taiwan, Australia and Japan. Non-tech non-fuel exports have risen at an annualized run rate of \\(25\\%\\) (and \\(27\\%\\) for early reporters) since October 2025, when the US signed trade deals with most Asian economies."
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.513,
+                0.277,
+                0.923,
+                0.311
+            ],
+            "angle": 0,
+            "content": "Exhibit 9: On a YoY three-month trailing basis, Asia's non-tech exports growth has accelerated to \\(14\\%\\) Y"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.517,
+                0.321,
+                0.915,
+                0.492
+            ],
+            "angle": 0,
+            "content": "Exports ex semiconductors ex fuels (%Y 3mma, as of April-26 or latest)\n| Country | Exports (%) |\n| :--- | :--- |\n| Taiwan | 44 |\n| Malaysia | 24 |\n| Australia | 18 |\n| Thailand | 18 |\n| China | 16 |\n| Asia | 14 |\n| Korea | 10 |\n| Japan | 6 |\n| Indonesia | 2 |\n| India | 2 |",
+            "sub_type": "bar"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.514,
+                0.506,
+                0.674,
+                0.517
+            ],
+            "angle": 0,
+            "content": "Source: CEIC, MS"
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.067,
+                0.567,
+                0.324,
+                0.582
+            ],
+            "angle": 0,
+            "content": "Exhibit 10: Non-tech exports strength..."
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.068,
+                0.587,
+                0.484,
+                0.774
+            ],
+            "angle": 0,
+            "content": "Exports ex semiconductors ex fuels (SA, Dec-24=100, 3mma)\n| Month | China | Korea | Japan | Taiwan (RS) |\n|---|---|---|---|---|\n| Dec-24 | 100 | 100 | 100 | 95 |\n| Jan-25 | 99 | 96 | 99 | 97 |\n| Feb-25 | 98 | 97 | 101 | 100 |\n| Mar-25 | 99 | 96 | 102 | 101 |\n| Apr-25 | 99 | 99 | 103 | 102 |\n| May-25 | 101 | 98 | 103 | 103 |\n| Jun-25 | 99 | 99 | 104 | 104 |\n| Jul-25 | 99 | 99 | 103 | 105 |\n| Aug-25 | 99 | 100 | 102 | 105 |\n| Sep-25 | 100 | 103 | 102 | 105 |\n| Oct-25 | 99 | 102 | 103 | 106 |\n| Nov-25 | 101 | 102 | 103 | 107 |\n| Dec-25 | 103 | 101 | 104 | 108 |\n| Jan-26 | 105 | 103 | 105 | 109 |\n| Feb-26 | 114 | 103 | 106 | 110 |\n| Mar-26 | 113 | 108 | 107 | 179 |\n| Apr-26 | 113 | 109 | 108 | 179 |",
+            "sub_type": "line"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.067,
+                0.78,
+                0.227,
+                0.791
+            ],
+            "angle": 0,
+            "content": "Source: CEIC, MS"
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.513,
+                0.567,
+                0.928,
+                0.582
+            ],
+            "angle": 0,
+            "content": "Exhibit 11: ...has been relatively broad-based across economies"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.517,
+                0.587,
+                0.929,
+                0.774
+            ],
+            "angle": 0,
+            "content": "| Month    | Indonesia | Malaysia | Thailand | Australia | India |\n|----------|-----------|----------|----------|-----------|-------|\n| Dec-24   | 100       | 100      | 100      | 100       | 100   |\n| Jan-25   | 100       | 99       | 99       | 99        | 101   |\n| Feb-25   | 100       | 99       | 99       | 98        | 101   |\n| Mar-25   | 101       | 101      | 101      | 101       | 101   |\n| Apr-25   | 103       | 103      | 103      | 102       | 101   |\n| May-25   | 105       | 105      | 104      | 103       | 102   |\n| Jun-25   | 107       | 107      | 106      | 104       | 102   |\n| Jul-25   | 109       | 108      | 107      | 105       | 103   |\n| Aug-25   | 108       | 109      | 106      | 106       | 103   |\n| Sep-25   | 107       | 110      | 107      | 107       | 104   |\n| Oct-25   | 106       | 111      | 108      | 108       | 105   |\n| Nov-25   | 105       | 112      | 109      | 109       | 106   |\n| Dec-25   | 106       | 113      | 110      | 110       | 107   |\n| Jan-26   | 107       | 114      | 111      | 111       | 108   |\n| Feb-26   | 108       | 115      | 112      | 112       | 109   |\n| Mar-26   | 109       | 124      | 120      | 118       | 104   |\n| Apr-26   | 104       | 124      | 120      | 118       | 102   |",
+            "sub_type": "line"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.514,
+                0.78,
+                0.674,
+                0.791
+            ],
+            "angle": 0,
+            "content": "Source: CEIC, MS"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.365,
+                0.804,
+                0.932,
+                0.838
+            ],
+            "angle": 0,
+            "content": "Lower tariffs and stronger capex cycle are lifting non-tech exports: Two reasons explain the strength in non-tech exports.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.391,
+                0.854,
+                0.927,
+                0.903
+            ],
+            "angle": 0,
+            "content": "1. Most Asian economies had started to sign trade deals with the US which led to a lowering of tariffs. Tariffs on Asia have now been lowered from 25% on average in September 2025 to 17% currently.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.391,
+                0.908,
+                0.901,
+                0.94
+            ],
+            "angle": 0,
+            "content": "2. There has been broad-based strength in the US and global capex cycle. Global capital goods imports growth – the key proxy for equipment capex – is",
+            "merge_prev": false
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.068,
+                0.969,
+                0.076,
+                0.977
+            ],
+            "angle": 0,
+            "content": "6"
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.066,
+                0.026,
+                0.25,
+                0.042
+            ],
+            "angle": 0,
+            "content": "MS | RESEARCH"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.905,
+                0.029,
+                0.933,
+                0.04
+            ],
+            "angle": 0,
+            "content": "IDEA"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.415,
+                0.088,
+                0.927,
+                0.193
+            ],
+            "angle": 0,
+            "content": "accelerating to beyond 2017-18 highs (excluding the pickup in 2021-22 driven by Covid base effects). In the US, the decline in non-IT capex has been narrowing and in 1Q26, non-IT capex growth (ex-transport equipment) turned positive. The broadening of the capex cycle is also reflected in US and Euro Area import trends. Capital goods imports (excluding semiconductors) have also led overall imports and have inflected since 4Q25.",
+            "merge_prev": false
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.065,
+                0.215,
+                0.471,
+                0.266
+            ],
+            "angle": 0,
+            "content": "Exhibit 12: Capital goods imports growth – the key equipment capex proxy – is accelerating to beyond 2017-18 highs (excluding the pickup in 2021-22 driven by Covid base effects)"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.068,
+                0.271,
+                0.475,
+                0.455
+            ],
+            "angle": 0,
+            "content": "| Date   | Global | Asia |\n|--------|--------|------|\n| Mar-16 | -5%    | -5%  |\n| Mar-17 | 10%    | 8%   |\n| Mar-18 | 18%    | 15%  |\n| Mar-19 | -5%    | -3%  |\n| Mar-20 | -10%   | -5%  |\n| Mar-21 | 30%    | 25%  |\n| Mar-22 | 5%     | 3%   |\n| Mar-23 | -5%    | -15% |\n| Mar-24 | 5%     | 3%   |\n| Mar-25 | 10%    | 15%  |\n| Mar-26 | 25%    | 28%  |",
+            "sub_type": "line"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.067,
+                0.458,
+                0.23,
+                0.468
+            ],
+            "angle": 0,
+            "content": "Source: Haver, MS"
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.065,
+                0.474,
+                0.471,
+                0.506
+            ],
+            "angle": 0,
+            "content": "Exhibit 14: The broadening of the capex cycle is also reflected in import trends in the US..."
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.071,
+                0.516,
+                0.47,
+                0.695
+            ],
+            "angle": 0,
+            "content": "| Month    | Total imports | Fuels | Semiconductor | Intermediate | Consumer goods | Passenger cars |\n|----------|---------------|-------|--------------|--------------|----------------|----------------|\n| Dec-24   | 100           | 100   | 100          | 100          | 100            | 100            |\n| Jan-25   | 110           | 105   | 95           | 130          | 105            | 105            |\n| Feb-25   | 115           | 108   | 90           | 120          | 110            | 100            |\n| Mar-25   | 120           | 110   | 95           | 115          | 115            | 115            |\n| Apr-25   | 95            | 85    | 80           | 90           | 110            | 75             |\n| May-25   | 90            | 88    | 85           | 85           | 115            | 95             |\n| Jun-25   | 95            | 85    | 80           | 90           | 115            | 85             |\n| Jul-25   | 98            | 88    | 75           | 95           | 115            | 80             |\n| Aug-25   | 90            | 90    | 70           | 85           | 110            | 85             |\n| Sep-25   | 95            | 85    | 75           | 80           | 105            | 80             |\n| Oct-25   | 90            | 80    | 80           | 75           | 100            | 75             |\n| Nov-25   | 95            | 75    | 90           | 70           | 105            | 75             |\n| Dec-25   | 98            | 80    | 95           | 75           | 110            | 80             |\n| Jan-26   | 95            | 85    | 100          | 75           | 115            | 75             |\n| Feb-26   | 100           | 90    | 110          | 75           | 120            | 75             |\n| Mar-26   | 105           | 95    | 130          | 75           | 140            | 90             |",
+            "sub_type": "line"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.067,
+                0.704,
+                0.23,
+                0.714
+            ],
+            "angle": 0,
+            "content": "Source: Haver, MS"
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.513,
+                0.215,
+                0.892,
+                0.266
+            ],
+            "angle": 0,
+            "content": "Exhibit 13: US non-IT investment is improving, and our US economics team expects a gradual broadening of the investment cycle"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.517,
+                0.271,
+                0.935,
+                0.453
+            ],
+            "angle": 0,
+            "content": "| Date   | Private non-residential: IT capex | Private non-residential: Non-IT capex ex transport equipment | Public capex |\n|--------|------------------------------------|---------------------------------------------------------------|--------------|\n| Mar-19 | 5.0%                               | 4.0%                                                          | 4.0%         |\n| Mar-20 | 3.0%                               | -4.0%                                                         | 4.0%         |\n| Mar-21 | 15.0%                              | 7.0%                                                          | -2.0%        |\n| Mar-22 | 12.0%                              | 4.0%                                                          | -3.0%        |\n| Mar-23 | 12.0%                              | 8.0%                                                          | 8.0%         |\n| Mar-24 | 8.0%                               | 2.0%                                                          | 6.0%         |\n| Mar-25 | 16.0%                              | -2.0%                                                         | 4.0%         |\n| Mar-26 | 18.3%                              | 0.9%                                                          | 0.8%         |",
+            "sub_type": "line"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.515,
+                0.459,
+                0.678,
+                0.469
+            ],
+            "angle": 0,
+            "content": "Source: Haver, MS"
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.515,
+                0.474,
+                0.718,
+                0.488
+            ],
+            "angle": 0,
+            "content": "Exhibit 15: ...and the Euro Area"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.517,
+                0.499,
+                0.919,
+                0.668
+            ],
+            "angle": 0,
+            "content": "| Month   | Total imports | Semiconductors | Intermediate Goods | Capital Goods | Consumer Goods |\n|---------|---------------|----------------|--------------------|---------------|----------------|\n| Dec-24  | 100           | 100            | 100                | 100           | 100            |\n| Jan-25  | 102           | 95             | 103                | 99            | 104            |\n| Feb-25  | 103           | 105            | 104                | 99            | 106            |\n| Mar-25  | 108           | 110            | 107                | 105           | 112            |\n| Apr-25  | 107           | 102            | 106                | 107           | 108            |\n| May-25  | 106           | 104            | 105                | 106           | 107            |\n| Jun-25  | 113           | 108            | 112                | 118           | 115            |\n| Jul-25  | 112           | 110            | 110                | 117           | 114            |\n| Aug-25  | 110           | 106            | 108                | 115           | 113            |\n| Sep-25  | 113           | 118            | 112                | 117           | 114            |\n| Oct-25  | 107           | 119            | 106                | 118           | 113            |\n| Nov-25  | 109           | 116            | 107                | 115           | 112            |\n| Dec-25  | 112           | 127            | 108                | 119           | 113            |\n| Jan-26  | 109           | 127            | 106                | 120           | 112            |\n| Feb-26  | 113           | 129            | 109                | 120           | 113            |",
+            "sub_type": "line"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.515,
+                0.676,
+                0.678,
+                0.687
+            ],
+            "angle": 0,
+            "content": "Source: Haver, MS"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.067,
+                0.968,
+                0.242,
+                0.979
+            ],
+            "angle": 0,
+            "content": "MS"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.924,
+                0.969,
+                0.932,
+                0.977
+            ],
+            "angle": 0,
+            "content": "7"
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.066,
+                0.026,
+                0.25,
+                0.042
+            ],
+            "angle": 0,
+            "content": "MS | RESEARCH"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.905,
+                0.029,
+                0.933,
+                0.04
+            ],
+            "angle": 0,
+            "content": "IDEA"
+        },
+        {
+            "type": "title",
+            "bbox": [
+                0.065,
+                0.094,
+                0.908,
+                0.158
+            ],
+            "angle": 0,
+            "content": "Which non-semis exports product segments are driving the rebound?"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.386,
+                0.196,
+                0.899,
+                0.248
+            ],
+            "angle": 0,
+            "content": "The non-semis exports recovery has been broad-based across end-use product segments, with capital goods, cars, and intermediate goods driving the first leg of the recovery, while consumer goods exports have also joined in the recovery.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.362,
+                0.275,
+                0.929,
+                0.435
+            ],
+            "angle": 0,
+            "content": "Capital and intermediate goods: Capital goods exports – which account for 26% of Asia's exports – have benefited from the capex cycle strength and showed the strongest growth at 21%Y 3MMA in March 2026. While part of the strength has come from AI-related products including and power equipment/components, other segments have exhibited strong growth too. For instance, there has been momentum in capital goods exports, including industrial equipment as well as non-passenger car transport equipment. Meanwhile, intermediate goods have been the second-fastest growing segment, lifted by the exports of parts which are linked to the production of capital and consumer goods exports.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.362,
+                0.447,
+                0.925,
+                0.516
+            ],
+            "angle": 0,
+            "content": "Consumer goods: Consumer goods exports troughed in October 2025 but started to rise more meaningfully from December 2025 onwards. In the early part of 2025, consumer goods lagged because of the imposition of tariffs – but as trade deals began to be signed from October onwards, they also started to recover.",
+            "merge_prev": false
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.065,
+                0.528,
+                0.46,
+                0.56
+            ],
+            "angle": 0,
+            "content": "Exhibit 16: The non-semis exports recovery has been broad-based across end-use product segments"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.076,
+                0.566,
+                0.484,
+                0.729
+            ],
+            "angle": 0,
+            "content": "| Month   | Exports ex semiconductors ex fuels | Intermediate goods (37%) | Capital goods (26%) | Consumer goods (15%) | Passenger cars (4%) |\n|---------|-------------------------------------|---------------------------|---------------------|----------------------|--------------------|\n| Dec-24  | 100                                 | 100                       | 100                 | 100                  | 100                |\n| Jan-25  | 99                                  | 99                        | 99                  | 98                   | 99                 |\n| Feb-25  | 98                                  | 98                        | 98                  | 97                   | 100                |\n| Mar-25  | 99                                  | 99                        | 99                  | 98                   | 102                |\n| Apr-25  | 100                                 | 100                       | 100                 | 99                   | 105                |\n| May-25  | 101                                 | 101                       | 102                 | 100                  | 108                |\n| Jun-25  | 102                                 | 102                       | 104                 | 101                  | 110                |\n| Jul-25  | 103                                 | 103                       | 105                 | 102                  | 111                |\n| Aug-25  | 104                                 | 104                       | 106                 | 103                  | 112                |\n| Sep-25  | 105                                 | 105                       | 107                 | 104                  | 113                |\n| Oct-25  | 106                                 | 106                       | 108                 | 105                  | 114                |\n| Nov-25  | 107                                 | 107                       | 109                 | 106                  | 115                |\n| Dec-25  | 108                                 | 108                       | 110                 | 107                  | 116                |\n| Jan-26  | 109                                 | 109                       | 111                 | 108                  | 117                |\n| Feb-26  | 110                                 | 110                       | 112                 | 109                  | 118                |\n| Mar-26  | 114                                 | 110                       | 123                 | 104                  | 121                |",
+            "sub_type": "line"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.064,
+                0.738,
+                0.484,
+                0.793
+            ],
+            "angle": 0,
+            "content": "Source: Haver, MS; Note: Capital goods are durable assets used by firms to produce other goods and services, such as computers, machinery and equipment, and transport equipment used in production. Intermediate goods are goods that are processed further or incorporated into final products. Intermediate goods include raw materials (e.g. crude oil, iron ore), processed materials (e.g. steel, chemicals), components and parts (e.g. electronic components, auto parts). We excluded semiconductors and fuels from intermediate goods."
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.511,
+                0.528,
+                0.924,
+                0.579
+            ],
+            "angle": 0,
+            "content": "Exhibit 17: Cars and intermediate goods drove the first leg of the recovery, while consumer goods exports have also joined in the recovery"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.52,
+                0.583,
+                0.916,
+                0.75
+            ],
+            "angle": 0,
+            "content": "| Month    | Exports ex semiconductors ex fuels | Intermediate goods (37%) | Capital goods (26%) | Consumer goods (15%) | Passenger cars (4%) |\n|----------|------------------------------------|---------------------------|---------------------|----------------------|--------------------|\n| Mar-22   | ~12%                               | ~28%                      | ~16%                | ~14%                 | ~8%                |\n| Jun-22   | ~10%                               | ~22%                      | ~14%                | ~16%                 | ~4%                |\n| Sep-22   | ~5%                                | ~15%                      | ~10%                | ~12%                 | ~35%               |\n| Dec-22   | ~-5%                               | ~-10%                     | ~-5%                | ~-10%                | ~-10%              |\n| Mar-23   | ~-10%                              | ~-5%                      | ~-5%                | ~-5%                 | ~-5%               |\n| Jun-23   | ~-5%                               | ~-10%                     | ~-5%                | ~-5%                 | ~-5%               |\n| Sep-23   | ~-10%                              | ~-5%                      | ~-5%                | ~-5%                 | ~-5%               |\n| Dec-23   | ~-5%                               | ~0%                       | ~0%                 | ~0%                  | ~0%                |\n| Mar-24   | ~5%                                | ~5%                       | ~5%                 | ~5%                  | ~5%                |\n| Jun-24   | ~10%                               | ~10%                      | ~10%                | ~10%                 | ~10%               |\n| Sep-24   | ~15%                               | ~15%                      | ~15%                | ~15%                 | ~15%               |\n| Dec-24   | ~10%                               | ~10%                      | ~10%                | ~10%                 | ~10%               |\n| Mar-25   | ~15%                               | ~15%                      | ~15%                | ~15%                 | ~15%               |\n| Jun-25   | ~10%                               | ~10%                      | ~10%                | ~10%                 | ~10%               |\n| Sep-25   | ~15%                               | ~15%                      | ~15%                | ~15%                 | ~15%               |\n| Dec-25   | ~20%                               | ~20%                      | ~20%                | ~20%                 | ~20%               |\n| Mar-26   | ~15%                               | ~15%                      | ~15%                | ~15%                 | ~15%               |",
+            "sub_type": "line"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.511,
+                0.754,
+                0.932,
+                0.81
+            ],
+            "angle": 0,
+            "content": "Source: Haver, MS; Note: Capital goods are durable assets used by firms to produce other goods and services, such as computers, machinery and equipment, and transport equipment used in production. Intermediate goods are goods that are processed further or incorporated into final products. Intermediate goods include raw materials (e.g. crude oil, iron ore), processed materials (e.g. steel, chemicals), components and parts (e.g. electronic components, auto parts). We excluded semiconductors and fuels from intermediate goods"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.068,
+                0.969,
+                0.076,
+                0.977
+            ],
+            "angle": 0,
+            "content": "8"
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.066,
+                0.026,
+                0.25,
+                0.042
+            ],
+            "angle": 0,
+            "content": "MS | RESEARCH"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.905,
+                0.029,
+                0.933,
+                0.04
+            ],
+            "angle": 0,
+            "content": "IDEA"
+        },
+        {
+            "type": "title",
+            "bbox": [
+                0.068,
+                0.094,
+                0.912,
+                0.124
+            ],
+            "angle": 0,
+            "content": "Which regions have contributed to the strength in exports?"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.365,
+                0.142,
+                0.926,
+                0.319
+            ],
+            "angle": 0,
+            "content": "A near-synchronous rise in exports: Looking at the breakdown of Asia's exports by destinations, there has been a near-synchronous rise in exports to almost all regions, with the recent exception of exports to the Middle East, as a result of geopolitical tensions. In particular, intra-regional trade has been relatively strong, given the cross-border production network. For Asia ex China, exports to the US have been the strongest, while China's exports to US have weighed on overall Asia's aggregates, given the differential in tariff rates. To break this down further, we looked at the change in US imports by segment; again, we find that capital goods imports from the US have been outpacing overall import growth as compared to consumer goods, which in turn again reflects the tariff situation.",
+            "merge_prev": false
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.066,
+                0.332,
+                0.474,
+                0.365
+            ],
+            "angle": 0,
+            "content": "Exhibit 18: A near-synchronous rise in Asia's exports to almost all regions"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.071,
+                0.37,
+                0.479,
+                0.549
+            ],
+            "angle": 0,
+            "content": "| Month    | Total | Intra region (55%) | US (14%) | RoW (10%) | EA (9%) | Central Europe & Africa (4%) | Middle-east (4%) | LATAM (4%) |\n|----------|-------|--------------------|----------|-----------|---------|-----------------------------|------------------|------------|\n| Dec-24   | 100   | 100                | 100      | 100       | 100     | 100                         | 100              | 100        |\n| Jan-25   | 102   | 102                | 102      | 102       | 102     | 102                         | 102              | 102        |\n| Feb-25   | 104   | 104                | 104      | 104       | 104     | 104                         | 104              | 104        |\n| Mar-25   | 106   | 106                | 106      | 106       | 106     | 106                         | 106              | 106        |\n| Apr-25   | 108   | 108                | 108      | 108       | 108     | 108                         | 108              | 108        |\n| May-25   | 110   | 110                | 110      | 110       | 110     | 110                         | 110              | 110        |\n| Jun-25   | 112   | 112                | 112      | 112       | 112     | 112                         | 112              | 112        |\n| Jul-25   | 114   | 114                | 114      | 114       | 114     | 114                         | 114              | 114        |\n| Aug-25   | 116   | 116                | 116      | 116       | 116     | 116                         | 116              | 116        |\n| Sep-25   | 118   | 118                | 118      | 118       | 118     | 118                         | 118              | 118        |\n| Oct-25   | 120   | 120                | 120      | 120       | 120     | 120                         | 120              | 120        |\n| Nov-25   | 122   | 122                | 122      | 122       | 122     | 122                         | 122              | 122        |\n| Dec-25   | 124   | 124                | 124      | 124       | 124     | 124                         | 124              | 124        |\n| Jan-26   | 126   | 126                | 126      | 126       | 126     | 126                         | 126              | 126        |\n| Feb-26   | 128   | 128                | 128      | 128       | 128     | 128                         | 128              | 128        |\n| Mar-26   | 130   | 130                | 130      | 130       | 130     | 89                          | -                | -          |\nThe chart includes a legend for each data series. The Y-axis represents export volume in millions of metric tons.",
+            "sub_type": "line"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.067,
+                0.552,
+                0.23,
+                0.562
+            ],
+            "angle": 0,
+            "content": "Source: Haver, MS"
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.513,
+                0.332,
+                0.916,
+                0.365
+            ],
+            "angle": 0,
+            "content": "Exhibit 19: For Asia ex China, exports to the US have been the strongest"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.52,
+                0.37,
+                0.928,
+                0.548
+            ],
+            "angle": 0,
+            "content": "",
+            "sub_type": "line"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.514,
+                0.552,
+                0.678,
+                0.562
+            ],
+            "angle": 0,
+            "content": "Source: Haver, MS"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.067,
+                0.968,
+                0.242,
+                0.979
+            ],
+            "angle": 0,
+            "content": "MS"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.924,
+                0.969,
+                0.931,
+                0.977
+            ],
+            "angle": 0,
+            "content": "9"
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.066,
+                0.026,
+                0.188,
+                0.044
+            ],
+            "angle": 0,
+            "content": "MS"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.205,
+                0.029,
+                0.25,
+                0.039
+            ],
+            "angle": 0,
+            "content": "RESEARCH"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.905,
+                0.029,
+                0.933,
+                0.04
+            ],
+            "angle": 0,
+            "content": "IDEA"
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.065,
+                0.094,
+                0.444,
+                0.128
+            ],
+            "angle": 0,
+            "content": "Exhibit 20: US capital goods imports: broad-based pickup beyond tech-related goods"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.068,
+                0.135,
+                0.487,
+                0.4
+            ],
+            "angle": 0,
+            "content": "US capital goods imports (SA, %change since Oct-25 import trough)\n| Category | Change (%) |\n|---|---|\n| Computers | 69.4 |\n| Specialized Mining | 51 |\n| Commercial Vessels, Other | 38 |\n| Spacecraft, Excluding Military | 31 |\n| Wood, Glass, Plastic Equipment | 28 |\n| Metalworking Machine Tools | 27 |\n| Capital goods imports | 24 |\n| Computer Accessories | 22 |\n| Photo, Service Industry Machinery | 22 |\n| Telecommunications Equipment | 21 |\n| Railway Transportation Equipment | 20 |\n| Materials Handling Equipment | 19 |\n| Business Machines & Equipment | 19 |\n| Overall imports | 18 |\n| Nonfarm Tractors & Parts | 16 |\n| Industrial Machines: Other | 14 |\n| Excavating Machinery | 12 |\n| Agricultural Machinery, Equipment | 11 |\n| Food, Tobacco Machinery | 11 |\n| Laboratory Testing Instruments | 10 |\n| Measuring, Testing, Control Instruments | 8 |\n| Parts-Civilian Aircraft | 8 |\n| Marine Engines, Parts | 8 |\n| Electric Apparatus | 8 |\n| Industrial Engines | 7 |\n| Pulp & Paper Machinery | 6 |\n| Medicinal Equipment | 5 |\n| Engines-Civilian Aircraft | 1 |\n| Generators, Accessories | 0 |\n| Imports: Customs: sa: Capital Goods (CPG): Civilian Aircraft | -6 |\n| Drilling & Oilfield Equipment | -7 |\n| Textile, Sewing Machines | -18 |",
+            "sub_type": "bar"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.067,
+                0.41,
+                0.23,
+                0.421
+            ],
+            "angle": 0,
+            "content": "Source: Haver, MS"
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.513,
+                0.094,
+                0.871,
+                0.128
+            ],
+            "angle": 0,
+            "content": "Exhibit 21: US consumer goods imports: supported by discretionary items"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.558,
+                0.138,
+                0.925,
+                0.482
+            ],
+            "angle": 0,
+            "content": "US consumer goods imports (SA, %change since Oct-25 import trough)\n| Category | Share in overall imports in brackets (%) |\n|---|---|\n| Stereo Equipment | 55 |\n| Glassware & Chinaware | 43 |\n| Cookware, Cutlery & Tools | 39 |\n| Recorded Media | 38 |\n| Books & Printed Matter | 33 |\n| Coins, Gems, Jewelry, & Collectibles | 30 |\n| Pleasure boats and motors | 28 |\n| Footwear | 27 |\n| Cell Phones & Other Household Goods | 22 |\n| Textile Apparel & Household Goods | 22 |\n| Motorcycles and Parts | 20 |\n| Toys, games & sporting Goods | 20 |\n| Other Consumer Nondurables | 19 |\n| Overall imports | 18 |\n| Furniture, Household Goods, etc | 16 |\n| Nontextile Apparel & Household Goods | 16 |\n| Toiletries and Cosmetics | 13 |\n| Photo Equipment | 13 |\n| Consumer Goods ex Food ex Autos | 11 |\n| Musical instruments | 10 |\n| Rugs | 6 |\n| Camping Apparel and Gear | 6 |",
+            "sub_type": "bar"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.513,
+                0.494,
+                0.915,
+                0.514
+            ],
+            "angle": 0,
+            "content": "Source: Haver, MS; Note: Only top 20 consumer goods with highest growth are shown in the chart."
+        },
+        {
+            "type": "title",
+            "bbox": [
+                0.066,
+                0.555,
+                0.191,
+                0.583
+            ],
+            "angle": 0,
+            "content": "Outlook"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.362,
+                0.603,
+                0.927,
+                0.744
+            ],
+            "angle": 0,
+            "content": "Non-tech exports to stay supported by acceleration in the global capex cycle: Our global economics team expects the global trade outlook to improve, led by an acceleration in the capex cycle. Global fixed investment (excluding China's property capex to remove the effects of the structural drag) is projected to improve from \\(3.9\\%\\) Y in 2025 to \\(4.3\\%\\) in 2026. This also means that global capex growth will be much stronger than overall GDP growth. In Asia, fixed investment (excluding China's property capex) will also accelerate from \\(4.6\\%\\) in 2025 to \\(5.1\\%\\) in 2026. This backdrop will continue to support Asia's trade.",
+            "merge_prev": false
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.068,
+                0.968,
+                0.084,
+                0.978
+            ],
+            "angle": 0,
+            "content": "10"
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.066,
+                0.026,
+                0.25,
+                0.042
+            ],
+            "angle": 0,
+            "content": "MS | RESEARCH"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.905,
+                0.029,
+                0.933,
+                0.04
+            ],
+            "angle": 0,
+            "content": "IDEA"
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.065,
+                0.094,
+                0.479,
+                0.127
+            ],
+            "angle": 0,
+            "content": "Exhibit 22: Global capex growth (ex-China property investment) will improve from \\(3.9\\%\\) Y in 2025 to \\(4.3\\%\\) in 2026"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.068,
+                0.138,
+                0.471,
+                0.314
+            ],
+            "angle": 0,
+            "content": "Global gross fixed investment (%Y)\n| Year | Global (%) |\n| :--- | :--- |\n| 2025 | 3.9 |\n| 2026E | 4.3 |\n| 2027E | 4.3 |",
+            "sub_type": "bar"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.067,
+                0.322,
+                0.242,
+                0.332
+            ],
+            "angle": 0,
+            "content": "Source: MS forecasts"
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.513,
+                0.094,
+                0.918,
+                0.127
+            ],
+            "angle": 0,
+            "content": "Exhibit 23: Excluding China, we expect global capex growth to accelerate from \\(3.6\\%\\), to \\(3.8\\%\\) in 2026 and \\(4.2\\%\\) in 2027"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.513,
+                0.138,
+                0.918,
+                0.314
+            ],
+            "angle": 0,
+            "content": "Global ex China goss fixed investment (%Y)\n| Year | Value (%) |\n|---|---|\n| 2025 | 3.6 |\n| 2026E | 3.8 |\n| 2027E | 4.2 |",
+            "sub_type": "bar"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.515,
+                0.322,
+                0.691,
+                0.332
+            ],
+            "angle": 0,
+            "content": "Source: MS forecasts"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.364,
+                0.346,
+                0.91,
+                0.398
+            ],
+            "angle": 0,
+            "content": "The growth cycle is broadening: We think Asia is in a virtuous cycle, where the rise in exports – both tech and non-tech – and the robust capex cycle will help to support job creation and wage growth – underpinning consumption growth.",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.067,
+                0.968,
+                0.242,
+                0.979
+            ],
+            "angle": 0,
+            "content": "MS"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.918,
+                0.969,
+                0.931,
+                0.978
+            ],
+            "angle": 0,
+            "content": "11"
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.066,
+                0.026,
+                0.25,
+                0.042
+            ],
+            "angle": 0,
+            "content": "MS | RESEARCH"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.905,
+                0.029,
+                0.933,
+                0.04
+            ],
+            "angle": 0,
+            "content": "IDEA"
+        },
+        {
+            "type": "title",
+            "bbox": [
+                0.067,
+                0.094,
+                0.225,
+                0.121
+            ],
+            "angle": 0,
+            "content": "Chart Scan"
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.067,
+                0.142,
+                0.368,
+                0.157
+            ],
+            "angle": 0,
+            "content": "Exhibit 24: China – non-tech, non-fuel exports"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.07,
+                0.167,
+                0.484,
+                0.345
+            ],
+            "angle": 0,
+            "content": "China non-tech non-fuel exports\n| Month | SA, Dec-24=100, 3mma | SA, Dec-24=100 |\n|---|---|---|\n| Dec-24 | 100 | 100 |\n| Jan-25 | 99 | 98 |\n| Feb-25 | 98 | 92 |\n| Mar-25 | 99 | 103 |\n| Apr-25 | 99 | 98 |\n| May-25 | 101 | 98 |\n| Jun-25 | 100 | 98 |\n| Jul-25 | 100 | 98 |\n| Aug-25 | 100 | 98 |\n| Sep-25 | 100 | 97 |\n| Oct-25 | 100 | 97 |\n| Nov-25 | 101 | 103 |\n| Dec-25 | 103 | 105 |\n| Jan-26 | 105 | 106 |\n| Feb-26 | 114 | 125 |\n| Mar-26 | 113 | 101 |\n| Apr-26 | 113 | 108 |",
+            "sub_type": "line"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.067,
+                0.355,
+                0.227,
+                0.365
+            ],
+            "angle": 0,
+            "content": "Source: CEIC, MS"
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.513,
+                0.142,
+                0.81,
+                0.157
+            ],
+            "angle": 0,
+            "content": "Exhibit 25: India – non-tech, non-fuel exports"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.52,
+                0.167,
+                0.931,
+                0.345
+            ],
+            "angle": 0,
+            "content": "| Month   | SA, Dec-24=100, 3mma | SA, Dec-24=100 |\n|---------|----------------------|----------------|\n| Apr-26  | 102                  | 111            |",
+            "sub_type": "line"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.514,
+                0.355,
+                0.674,
+                0.365
+            ],
+            "angle": 0,
+            "content": "Source: CEIC, MS"
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.067,
+                0.379,
+                0.393,
+                0.394
+            ],
+            "angle": 0,
+            "content": "Exhibit 26: Indonesia – non-tech, non-fuel exports"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.072,
+                0.399,
+                0.484,
+                0.581
+            ],
+            "angle": 0,
+            "content": "Indonesia non-tech non-fuel exports\n| Month | SA, Dec-24=100, 3mma | SA, Dec-24=100 |\n|---|---|---|\n| Dec-24 | 100 | 100 |\n| Jan-25 | 99 | 102 |\n| Feb-25 | 100 | 107 |\n| Mar-25 | 101 | 104 |\n| Apr-25 | 103 | 108 |\n| May-25 | 105 | 112 |\n| Jun-25 | 108 | 113 |\n| Jul-25 | 110 | 115 |\n| Aug-25 | 109 | 108 |\n| Sep-25 | 109 | 114 |\n| Oct-25 | 106 | 106 |\n| Nov-25 | 105 | 102 |\n| Dec-25 | 106 | 116 |\n| Jan-26 | 106 | 109 |\n| Feb-26 | 109 | 111 |\n| Mar-26 | 104 | 101 |",
+            "sub_type": "line"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.067,
+                0.591,
+                0.227,
+                0.602
+            ],
+            "angle": 0,
+            "content": "Source: CEIC, MS"
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.513,
+                0.379,
+                0.816,
+                0.394
+            ],
+            "angle": 0,
+            "content": "Exhibit 27: Korea – non-tech, non-fuel exports"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.521,
+                0.404,
+                0.931,
+                0.581
+            ],
+            "angle": 0,
+            "content": "Korea non-tech non-fuel exports\n| Month | SA, Dec-24=100, 3mma | SA, Dec-24=100 |\n|---|---|---|\n| Dec-24 | 100 | 100 |\n| Jan-25 | 96 | 90 |\n| Feb-25 | 97 | 101 |\n| Mar-25 | 96 | 98 |\n| Apr-25 | 99 | 101 |\n| May-25 | 98 | 96 |\n| Jun-25 | 99 | 101 |\n| Jul-25 | 99 | 101 |\n| Aug-25 | 100 | 98 |\n| Sep-25 | 103 | 110 |\n| Oct-25 | 102 | 98 |\n| Nov-25 | 102 | 99 |\n| Dec-25 | 100 | 104 |\n| Jan-26 | 103 | 105 |\n| Feb-26 | 103 | 101 |\n| Mar-26 | 106 | 113 |\n| Apr-26 | 109 | 115 |",
+            "sub_type": "line"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.514,
+                0.591,
+                0.674,
+                0.602
+            ],
+            "angle": 0,
+            "content": "Source: CEIC, MS"
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.067,
+                0.615,
+                0.387,
+                0.63
+            ],
+            "angle": 0,
+            "content": "Exhibit 28: Malaysia – non-tech, non-fuel exports"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.073,
+                0.636,
+                0.484,
+                0.817
+            ],
+            "angle": 0,
+            "content": "Malaysia non-tech non-fuel exports\n| Month | SA, Dec-24=100, 3mma | SA, Dec-24=100 |\n|---|---|---|\n| Dec-24 | 98.5 | 98.7 |\n| Jan-25 | 98.2 | 98.5 |\n| Feb-25 | 98.3 | 104.5 |\n| Mar-25 | 98.6 | 104.3 |\n| Apr-25 | 100.0 | 107.5 |\n| May-25 | 103.5 | 110.5 |\n| Jun-25 | 103.0 | 100.0 |\n| Jul-25 | 107.8 | 118.0 |\n| Aug-25 | 107.8 | 110.5 |\n| Sep-25 | 108.8 | 110.8 |\n| Oct-25 | 109.0 | 117.8 |\n| Nov-25 | 109.5 | 114.5 |\n| Dec-25 | 113.5 | 123.5 |\n| Jan-26 | 117.5 | 126.5 |\n| Feb-26 | 123.5 | 128.5 |\n| Mar-26 | 122.5 | 122.0 |",
+            "sub_type": "line"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.067,
+                0.827,
+                0.227,
+                0.838
+            ],
+            "angle": 0,
+            "content": "Source: CEIC, MS"
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.513,
+                0.615,
+                0.824,
+                0.63
+            ],
+            "angle": 0,
+            "content": "Exhibit 29: Taiwan – non-tech, non-fuel exports"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.521,
+                0.636,
+                0.931,
+                0.817
+            ],
+            "angle": 0,
+            "content": "Taiwan non-tech non-fuel exports\n| Month | SA, Dec-24=100, 3mma | SA, Dec-24=100 |\n|---|---|---|\n| Dec-24 | 98 | 97 |\n| Jan-25 | 105 | 98 |\n| Feb-25 | 110 | 118 |\n| Mar-25 | 115 | 112 |\n| Apr-25 | 125 | 128 |\n| May-25 | 130 | 130 |\n| Jun-25 | 135 | 132 |\n| Jul-25 | 140 | 138 |\n| Aug-25 | 145 | 140 |\n| Sep-25 | 145 | 130 |\n| Oct-25 | 150 | 155 |\n| Nov-25 | 155 | 160 |\n| Dec-25 | 160 | 155 |\n| Jan-26 | 170 | 170 |\n| Feb-26 | 165 | 145 |\n| Mar-26 | 175 | 185 |\n| Apr-26 | 179 | 168 |",
+            "sub_type": "line"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.514,
+                0.827,
+                0.674,
+                0.838
+            ],
+            "angle": 0,
+            "content": "Source: CEIC, MS"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.068,
+                0.969,
+                0.084,
+                0.978
+            ],
+            "angle": 0,
+            "content": "12"
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.066,
+                0.026,
+                0.25,
+                0.042
+            ],
+            "angle": 0,
+            "content": "MS | RESEARCH"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.905,
+                0.029,
+                0.933,
+                0.04
+            ],
+            "angle": 0,
+            "content": "IDEA"
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.067,
+                0.095,
+                0.385,
+                0.109
+            ],
+            "angle": 0,
+            "content": "Exhibit 30: Thailand – non-tech, non-fuel exports"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.074,
+                0.116,
+                0.481,
+                0.298
+            ],
+            "angle": 0,
+            "content": "Thailand non-tech non-fuel exports\n| Month | SA, Dec-24=100, 3mma | SA, Dec-24=100 |\n|---|---|---|\n| Dec-24 | 98.5 | 98.5 |\n| Jan-25 | 98.7 | 103.5 |\n| Feb-25 | 99.0 | 104.5 |\n| Mar-25 | 99.1 | 102.5 |\n| Apr-25 | 99.2 | 103.5 |\n| May-25 | 100.0 | 110.5 |\n| Jun-25 | 100.5 | 106.5 |\n| Jul-25 | 101.0 | 109.5 |\n| Aug-25 | 100.5 | 106.5 |\n| Sep-25 | 101.0 | 113.0 |\n| Oct-25 | 101.5 | 113.0 |\n| Nov-25 | 102.0 | 108.5 |\n| Dec-25 | 103.0 | 118.5 |\n| Jan-26 | 108.0 | 123.0 |\n| Feb-26 | 110.0 | 117.5 |\n| Mar-26 | 112.0 | 122.0 |",
+            "sub_type": "line"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.067,
+                0.307,
+                0.227,
+                0.318
+            ],
+            "angle": 0,
+            "content": "Source: CEIC, MS"
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.515,
+                0.095,
+                0.834,
+                0.109
+            ],
+            "angle": 0,
+            "content": "Exhibit 31: Australia – non-tech, non-fuel exports"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.52,
+                0.116,
+                0.93,
+                0.297
+            ],
+            "angle": 0,
+            "content": "Australia non-tech non-fuel exports\n| Month | SA, Dec-24=100, 3mma | SA, Dec-24=100 |\n|---|---|---|\n| Dec-24 | 100 | 100 |\n| Jan-25 | 98 | 100 |\n| Feb-25 | 97 | 100 |\n| Mar-25 | 99 | 105 |\n| Apr-25 | 101 | 103 |\n| May-25 | 102 | 103 |\n| Jun-25 | 103 | 108 |\n| Jul-25 | 104 | 112 |\n| Aug-25 | 103 | 99 |\n| Sep-25 | 106 | 116 |\n| Oct-25 | 110 | 124 |\n| Nov-25 | 115 | 115 |\n| Dec-25 | 115 | 117 |\n| Jan-26 | 113 | 114 |\n| Feb-26 | 117 | 125 |\n| Mar-26 | 118 | 118 |",
+            "sub_type": "line"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.514,
+                0.307,
+                0.674,
+                0.318
+            ],
+            "angle": 0,
+            "content": "Source: CEIC, MS"
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.067,
+                0.331,
+                0.371,
+                0.346
+            ],
+            "angle": 0,
+            "content": "Exhibit 32: Japan – non-tech, non-fuel exports"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.074,
+                0.352,
+                0.483,
+                0.533
+            ],
+            "angle": 0,
+            "content": "Japan non-tech non-fuel exports\n| Month | SA, Dec-24=100, 3mma | SA, Dec-24=100 |\n|---|---|---|\n| Dec-24 | 100 | 100 |\n| Jan-25 | 99 | 99 |\n| Feb-25 | 101 | 105 |\n| Mar-25 | 102 | 102 |\n| Apr-25 | 103 | 104 |\n| May-25 | 103 | 105 |\n| Jun-25 | 104 | 104 |\n| Jul-25 | 103 | 102 |\n| Aug-25 | 102 | 101 |\n| Sep-25 | 101 | 102 |\n| Oct-25 | 102 | 104 |\n| Nov-25 | 103 | 104 |\n| Dec-25 | 103 | 103 |\n| Jan-26 | 107 | 114 |\n| Feb-26 | 108 | 106 |\n| Mar-26 | 108 | 106 |",
+            "sub_type": "line"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.067,
+                0.543,
+                0.226,
+                0.554
+            ],
+            "angle": 0,
+            "content": "Source: CEIC, MS"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.067,
+                0.968,
+                0.242,
+                0.979
+            ],
+            "angle": 0,
+            "content": "MS"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.918,
+                0.969,
+                0.932,
+                0.978
+            ],
+            "angle": 0,
+            "content": "13"
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.066,
+                0.026,
+                0.25,
+                0.042
+            ],
+            "angle": 0,
+            "content": "MS | RESEARCH"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.905,
+                0.029,
+                0.933,
+                0.04
+            ],
+            "angle": 0,
+            "content": "IDEA"
+        },
+        {
+            "type": "title",
+            "bbox": [
+                0.069,
+                0.078,
+                0.283,
+                0.098
+            ],
+            "angle": 0,
+            "content": "Disclosure Section"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.068,
+                0.1,
+                0.934,
+                0.311
+            ],
+            "angle": 0,
+            "content": "Information and opinions in MS were prepared or are disseminated by one or more of the following, which accept responsibility for its contents: MS Asia Limited, and/or MS Asia (Singapore) Pte. (Registration number 199206298Z) and/or MS Asia (Singapore) Securities Pte Ltd (Registration number 200008434H), regulated by the Monetary Authority of Singapore (which accepts legal responsibility for its contents and should be contacted with respect to any matters arising from, or in connection with, MS), and/or MS Taiwan Limited and/or MS & Co International plc, Seoul Branch, and/or MS Australia Limited (A.B.N. 67 003 734 576, holder of Australian financial services license No. 233742), and/or MS Wealth Management Australia Pty Ltd (A.B.N. 19 009 145 555, holder of Australian financial services license No. 240813, and/or MS India Company Private Limited having Corporate Identification No (CIN) U22990MH1998PTC115305, regulated by the Securities and Exchange Board of India (\"SEBI\") and holder of licenses as a Research Analyst (SEBI Registration No. INH000001105), Stock Broker (SEBI Stock Broker Registration No. INZ000244438), Merchant Banker (SEBI Registration No. INM000011203), and depository participant with National Securities Depository Limited (SEBI Registration No. IN-DP-NSDL-567-2021) having registered office at Altimus, Level 39 & 40, Pandurang Budhkar Marg, Worli, Mumbai 400018, India; Telephone no. +91-22-61181000; Compliance Officer Details: Mr. Tejarshi Hardas, Tel. No.: +91-22-61181000 or Email: tejarshi.hardas@morganstanley.com; Grievance officer details: Mr. Tejarshi Hardas, Tel. No.: +91-22-61181000 or Email: msic-compliance@morganstanley.com which accepts the responsibility for its contents and should be contacted with respect to any matters arising from, or in connection with, MS and their affiliates (collectively, \"MS\"). MS India Company Private Limited (MSICPL) may use AI tools in providing research services. All recommendations contained herein are made by the duly qualified research analysts; For important disclosures, stock price charts and equity rating histories regarding companies that are the subject of this report, please see the MS Disclosure Website at www.morganstanley.com/eqr/disclosures/webapp/generalresearch, or contact your investment representative or MS at 1585 Broadway, (Attention: Research Management), New York, NY, 10036 USA.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.068,
+                0.313,
+                0.934,
+                0.355
+            ],
+            "angle": 0,
+            "content": "For valuation methodology and risks associated with any recommendation, rating or price target referenced in this research report, please contact the Client Support Team as follows: US/Canada +1 800 303-2495; Hong Kong +852 2848-5999; Latin America +1 718 754-5444 (U.S.); London +44 (0)20-7425-8169; Singapore +65 6834-6860; Sydney +61 (0)2-9770-1505; Tokyo +81 (0)3-6836-9000. Alternatively you may contact your investment representative or MS at 1585 Broadway, (Attention: Research Management), New York, NY 10036 USA.",
+            "merge_prev": false
+        },
+        {
+            "type": "title",
+            "bbox": [
+                0.069,
+                0.362,
+                0.385,
+                0.378
+            ],
+            "angle": 0,
+            "content": "Global Research Conflict Management Policy"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.068,
+                0.379,
+                0.934,
+                0.406
+            ],
+            "angle": 0,
+            "content": "MS has been published in accordance with our conflict management policy, which is available at www.morganstanley.com/institutional/research/conflictpolicies. A Portuguese version of the policy can be found at www.morganstanley.com.br",
+            "merge_prev": false
+        },
+        {
+            "type": "title",
+            "bbox": [
+                0.069,
+                0.414,
+                0.227,
+                0.429
+            ],
+            "angle": 0,
+            "content": "Important Disclosures"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.068,
+                0.43,
+                0.934,
+                0.457
+            ],
+            "angle": 0,
+            "content": "MS is not acting as a municipal advisor and the opinions or views contained herein are not intended to be, and do not constitute, advice within the meaning of Section 975 of the Dodd-Frank Wall Street Reform and Consumer Protection Act.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.068,
+                0.459,
+                0.934,
+                0.585
+            ],
+            "angle": 0,
+            "content": "MS does not provide individually tailored investment advice. MS has been prepared without regard to the circumstances and objectives of those who receive it. MS recommends that investors independently evaluate particular investments and strategies, and encourages investors to seek the advice of a financial adviser. The appropriateness of an investment or strategy will depend on an investor's circumstances and objectives. The securities, instruments, or strategies discussed in MS may not be suitable for all investors, and certain investors may not be eligible to purchase or participate in some or all of them. MS is not an offer to buy or sell or the solicitation of an offer to buy or sell any security/instrument or to participate in any particular trading strategy. The value of and income from your investments may vary because of changes in interest rates, foreign exchange rates, default rates, prepayment rates, securities/instruments prices, market indexes, operational or financial conditions of companies or other factors. There may be time limitations on the exercise of options or other rights in securities/instruments transactions. Past performance is not necessarily a guide to future performance. Estimates of future performance are based on assumptions that may not be realized. If provided, and unless otherwise stated, the closing price on the cover page is that of the primary exchange for the subject company's securities/instruments.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.068,
+                0.587,
+                0.934,
+                0.642
+            ],
+            "angle": 0,
+            "content": "The fixed income research analysts, strategists or economists principally responsible for the preparation of MS have received compensation based upon various factors, including quality, accuracy and value of research, firm profitability or revenues (which include fixed income trading and capital markets profitability or revenues), client feedback and competitive factors. Fixed Income Research analysts', strategists' or economists' compensation is not linked to investment banking or capital markets transactions performed by MS or the profitability or revenues of particular trading desks.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.068,
+                0.643,
+                0.934,
+                0.699
+            ],
+            "angle": 0,
+            "content": "With the exception of information regarding MS, MS is based on public information. MS makes every effort to use reliable, comprehensive information, but we make no representation that it is accurate or complete. We have no obligation to tell you when opinions or information in MS change apart from when we intend to discontinue equity research coverage of a subject company. Facts and views presented in MS have not been reviewed by, and may not reflect information known to, professionals in other MS business areas, including investment banking personnel.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.068,
+                0.7,
+                0.624,
+                0.713
+            ],
+            "angle": 0,
+            "content": "MS may make investment decisions that are inconsistent with the recommendations or views in this report.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.068,
+                0.714,
+                0.934,
+                0.812
+            ],
+            "angle": 0,
+            "content": "To our readers based in Taiwan or trading in Taiwan securities/instruments: Information on securities/instruments that trade in Taiwan is distributed by MS Taiwan Limited (\"MSTL\"). Such information is for your reference only. The reader should independently evaluate the investment risks and is solely responsible for their investment decisions. MS may not be distributed to the public media or quoted or used by the public media without the express written consent of MS. Any non-customer reader within the scope of Article 7-1 of the Taiwan Stock Exchange Recommendation Regulations accessing and/or receiving MS is not permitted to provide MS to any third party (including but not limited to related parties, affiliated companies and any other third parties) or engage in any activities regarding MS which may create or give the appearance of creating a conflict of interest. Information on securities/instruments that do not trade in Taiwan is for informational purposes only and is not to be construed as a recommendation or a solicitation to trade in such securities/instruments. MSTL may not execute transactions for clients in these securities/instruments.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.068,
+                0.814,
+                0.934,
+                0.869
+            ],
+            "angle": 0,
+            "content": "MS is not incorporated under PRC law and the research in relation to this report is conducted outside the PRC. MS does not constitute an offer to sell or the solicitation of an offer to buy any securities in the PRC. PRC investors shall have the relevant qualifications to invest in such securities and shall be responsible for obtaining all relevant approvals, licenses, verifications and/or registrations from the relevant governmental authorities themselves. Neither this report nor any part of it is intended as, or shall constitute, provision of any consultancy or advisory service of securities investment as defined under PRC law. Such information is provided for your reference only.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.068,
+                0.87,
+                0.934,
+                0.94
+            ],
+            "angle": 0,
+            "content": "MS is disseminated in Brazil by MS C.T.V.M. S.A. located at Av. Brigadeiro Faria Lima, 3600, 6th floor, São Paulo - SP, Brazil; and is regulated by the Comissão de Valores Mobiliários; in Mexico by MS México, Casa de Bolsa, S.A. de C.V which is regulated by Comision Nacional Bancaria y de Valores. Paseo de los Tamarindos 90, Torre 1, Col. Bosques de las Lomas Floor 29, 05120 Mexico City; in Japan by MS MUFG Securities Co., Ltd. and, for Commodities related research reports only, MS Capital Group Japan Co., Ltd; in Hong Kong by MS Asia Limited (which accepts responsibility for its contents) and by MS Bank Asia Limited; in Singapore by MS Asia (Singapore) Pte. (Registration number 199206298Z) and/or MS Asia (Singapore) Securities Pte Ltd (Registration number 200008434H), regulated by the Monetary Authority of",
+            "merge_prev": false
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.069,
+                0.969,
+                0.084,
+                0.978
+            ],
+            "angle": 0,
+            "content": "14"
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.066,
+                0.026,
+                0.249,
+                0.042
+            ],
+            "angle": 0,
+            "content": "MS | RESEARCH"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.905,
+                0.029,
+                0.933,
+                0.04
+            ],
+            "angle": 0,
+            "content": "IDEA"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.065,
+                0.086,
+                0.934,
+                0.369
+            ],
+            "angle": 0,
+            "content": "Singapore (which accepts legal responsibility for its contents and should be contacted with respect to any matters arising from, or in connection with, MS) and by MS Bank Asia Limited, Singapore Branch (Registration number T14FC0118); in Australia to \"wholesale clients\" within the meaning of the Australian Corporations Act by MS Australia Limited A.B.N. 67 003 734 576, holder of Australian financial services license No. 233742, which accepts responsibility for its contents; in Australia to \"wholesale clients\" and \"retail clients\" within the meaning of the Australian Corporations Act by MS Wealth Management Australia Pty Ltd (A.B.N. 19 009 145 555, holder of Australian financial services license No. 240813, which accepts responsibility for its contents; in Korea by MS & Co International plc, Seoul Branch; in India by MS India Company Private Limited having Corporate Identification No (CIN) U22990MH1998PTC115305, regulated by the Securities and Exchange Board of India (\"SEBI\") and holder of licenses as a Research Analyst (SEBI Registration No. INH000001105); Stock Broker (SEBI Stock Broker Registration No. INZ000244438), Merchant Banker (SEBI Registration No. INM000011203), and depository participant with National Securities Depository Limited (SEBI Registration No. IN-DP-NSDL-567-2021) having registered office at Altimus, Level 39 & 40, Pandurang Budhkar Marg, Worli, Mumbai 400018, India; Telephone no. +91-22-61181000; Compliance Officer Details: Mr. Tejarshi Hardas, Tel. No.: +91-22-61181000 or Email: tejarshi.hardas@morganstanley.com; Grievance officer details: Mr. Tejarshi Hardas, Tel. No.: +91-22-61181000 or Email: msic-compliance@morganstanley.com. MS India Company Private Limited (MSICPL) may use AI tools in providing research services. All recommendations contained herein are made by the duly qualified research analysts; in Canada by MS Canada Limited; in Germany and the European Economic Area where required by MS Europe S.E., regulated by Bundesanstalt fuer Finanzdienstleistungsaufsicht (BaFin) under the reference number 149169; in the United States by MS & Co. LLC, which accepts responsibility for its contents. MS & Co. International plc, authorized by the Prudential Regulation Authority and regulated by the Financial Conduct Authority and the Prudential Regulation Authority, disseminates in the UK research that it has prepared, and research which has been prepared by any of its affiliates, only to persons who (i) are investment professionals falling within Article 19(5) of the Financial Services and Markets Act 2000 (Financial Promotion) Order 2005 (as amended, the \"Order\"); (ii) are persons who are high net worth entities falling within Article 49(2)(a) to (d) of the Order; or (iii) are persons to whom an invitation or inducement to engage in investment activity (within the meaning of section 21 of the Financial Services and Markets Act 2000, as amended) may otherwise lawfully be communicated or caused to be communicated. RMB MS Proprietary Limited is a member of the JSE Limited and A2X (Pty) Ltd. RMB MS Proprietary Limited is a joint venture owned equally by MS International Holdings Inc. and RMB Investment Advisory (Proprietary) Limited, which is wholly owned by FirstRand Limited. The information in MS is being disseminated by MS Saudi Arabia, regulated by the Capital Market Authority in the Kingdom of Saudi Arabia, and is directed at Sophisticated investors only.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.065,
+                0.37,
+                0.934,
+                0.411
+            ],
+            "angle": 0,
+            "content": "The trademarks and service marks contained in MS are the property of their respective owners. Third-party data providers make no warranties or representations relating to the accuracy, completeness, or timeliness of the data they provide and shall not have liability for any damages relating to such data. The Global Industry Classification Standard (GICS) was developed by and is the exclusive property of MSCI and S&P.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.065,
+                0.413,
+                0.72,
+                0.425
+            ],
+            "angle": 0,
+            "content": "MS, or any portion thereof may not be reprinted, sold or redistributed without the written consent of MS.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.065,
+                0.427,
+                0.875,
+                0.438
+            ],
+            "angle": 0,
+            "content": "Indicators and trackers referenced in MS may not be used as, or treated as, a benchmark under Regulation EU 2016/1011, or any other similar framework.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.065,
+                0.441,
+                0.934,
+                0.51
+            ],
+            "angle": 0,
+            "content": "The information in MS is being communicated by MS & Co. International plc (DIFC Branch), regulated by the Dubai Financial Services Authority (the DFSA) or by MS & Co. International plc (ADGM Branch), regulated by the Financial Services Regulatory Authority Abu Dhabi (the FSRA), and is directed at Professional Clients only, as defined by the DFSA or the FSRA, respectively. The financial products or financial services to which this research relates will only be made available to a customer who we are satisfied meets the regulatory criteria of a Professional Client. A distribution of the different MS Research ratings or recommendations, in percentage terms for Investments in each sector covered, is available upon request from your sales representative.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.065,
+                0.512,
+                0.934,
+                0.539
+            ],
+            "angle": 0,
+            "content": "The information in MS is being communicated by MS & Co. International plc (QFC Branch), regulated by the Qatar Financial Centre Regulatory Authority (the QFCRA), and is directed at business customers and market counterparties only and is not intended for Retail Customers as defined by the QFCRA.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.065,
+                0.54,
+                0.934,
+                0.596
+            ],
+            "angle": 0,
+            "content": "As required by the Capital Markets Board of Turkey, investment information, comments and recommendations stated here, are not within the scope of investment advisory activity. Investment advisory service is provided exclusively to persons based on their risk and income preferences by the authorized firms. Comments and recommendations stated here are general in nature. These opinions may not fit to your financial status, risk and return preferences. For this reason, to make an investment decision by relying solely to this information stated here may not bring about outcomes that fit your expectations.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.065,
+                0.599,
+                0.934,
+                0.651
+            ],
+            "angle": 0,
+            "content": "Registration granted by SEBI and certification from the National Institute of Securities Markets (NISM) in no way guarantee performance of the intermediary or provide any assurance of returns to investors. Investment in securities market are subject to market risks. Read all the related documents carefully before investing.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.066,
+                0.682,
+                0.235,
+                0.699
+            ],
+            "angle": 0,
+            "content": "© 2026 MS",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.067,
+                0.968,
+                0.242,
+                0.979
+            ],
+            "angle": 0,
+            "content": "MS"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.918,
+                0.969,
+                0.933,
+                0.978
+            ],
+            "angle": 0,
+            "content": "15"
+        }
+    ]
+]
