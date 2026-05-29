@@ -1,0 +1,381 @@
+# ASX MedTech: Framing the sector from a top down perspective
+
+We highlight the look through for our MedTech coverage (RMD, FPH, COH and NAN) from our US MedTech team's note, analysing the broader sector's performance and catalysts for turnaround. Whilst the key investor debate for ASX names have rightfully focused on stock specific drivers (RMD: Philips re-entry, GLP-1, COH: Nexa market share, CI market growth), this underperformance has not been in isolation with Large Cap US MedTech peers \~-20% YTD26 driven by slowing organic revenue growth and a sharp multiple contraction. Consequently, in assessing the outlook for ASX MedTech, we believe the earnings trajectory and broader sector sentiment is also worth considering. Company specific drivers which have assisted in driving a turnaround in previous cycles include new product launches/ M&A and a step up in share repurchase activity. RMD and FPH in particular have demonstrated progress on these fronts. RMD we believe is on the cusp of new product launches and has recently expanded its product offering through the Noctrix acquisition whilst preserving its \~U\$700m buy back program. FPH has several products in its pipeline ready for launch (post FDA approval) with further capital management initiatives on the cards following the recent step up in DPS. For NAN - the roll out of CORIS will take time to offset the risk of a slowdown of Trophon upgrades. Retain Buy on these 3 stocks and Neutral on COH.
+
+The research from our US Medtech team raises 2 key points:
+
+Earnings perspective: US MedTech revenue growth has recently decelerated due to US utilization from payor/ funding changes. Sales in China on balance have also acted as a drag. Our team believes on average the headwinds from US Managed Care changes and US Medicaid cuts have not been adequately captured in CY26 guidance. For context, across the last cycle (excluding COVID), organic growth slowed for \~3 years (2010 to 2013).
+
+■ Multiple perspective: PE contraction over CY26 to date has been material (\~500bps vs CY25) with the sector \~700bps below the 20-year average. The last cycle (excluding COVID), valuations bottomed at \~11x in 2011 (currently: \~19x) with the recovery led by (1) Significant share repurchase activity, (2) Full re-basing of forward earnings expectations and (3) Positive growth catalysts (new product approval, M&A).
+
+Davin Thillainathan, CFA
+
++61(2)9321-8465
+
+davin.thillainathan@gs.com
+
+GS Australia Pty Ltd
+
+Roy Taouk
+
++61(2)9321-8380 | roy.taouk@gs.com
+
+GS Australia Pty Ltd
+
+Exhibit 1: YTD performance of Australian Med Device companies versus global Med Device Indices   
+![](images/bcf500c90a3829da12b40915a7bc10260875f7834d99efe2366fca89714a2b71.jpg)
+
+<details>
+<summary>bar</summary>
+
+| Category | Value (%) |
+|---|---|
+| Large Cap (LC) MedTech | -20 |
+| SMID Cap MedTech | -12 |
+| RMD-AU | -18 |
+| FPH-AU | -3 |
+| NAN-AU | -19 |
+| COH-AU | -62 |
+</details>
+
+Source: FactSet, Data compiled by GS Global Investment Research
+
+Exhibit 2: MedTech Industry Organic/CC Revenue Growth   
+![](images/92f4a5b6e4140bf408e75a11e4acadf9f15f14ec075d315c1120d9867d35b43e.jpg)
+
+<details>
+<summary>line</summary>
+
+| Year   | Organic/CC Revenue Growth |
+| ------ | -------------------------- |
+| 2006   | 15.0%                      |
+| 2007   | 14.5%                      |
+| 2008   | 13.0%                      |
+| 2009   | 5.0%                       |
+| 2010   | 7.5%                       |
+| 2011   | 6.5%                       |
+| 2012   | 6.0%                       |
+| 2013   | 4.5%                       |
+| 2014   | 4.0%                       |
+| 2015   | 5.5%                       |
+| 2016   | 7.0%                       |
+| 2017   | 6.5%                       |
+| 2018   | 6.5%                       |
+| 2019   | 7.5%                       |
+| 2020   | -8.0%                      |
+| 2021   | 12.0%                      |
+| 2022   | 6.5%                       |
+| 2023   | 8.0%                       |
+| 2024   | 7.5%                       |
+| 2025   | 7.0%                       |
+| 2026E  | 6.0%                       |
+</details>
+
+Source: FactSet
+
+Exhibit 3: NTM PE Multiples Over Time (Annual Averages)   
+![](images/b105c4c2188ca0e432304688622a680915513c651c01f8e8fd3b5c9587bdca4d.jpg)
+
+<details>
+<summary>line</summary>
+
+| Year | MedTech | SPX |
+|------|---------|-----|
+| 2006 | 18.9x   | 15.9x |
+| 2007 | 17.8x   | 14.4x |
+| 2008 | 13.3x   | 10.5x |
+| 2009 | 13.7x   | 15.6x |
+| 2010 | 12.0x   | 13.8x |
+| 2011 | 11.5x   | 12.2x |
+| 2012 | 15.1x   | 13.2x |
+| 2013 | 16.1x   | 15.7x |
+| 2014 | 18.1x   | 16.3x |
+| 2015 | 18.2x   | 16.1x |
+| 2016 | 17.5x   | 17.3x |
+| 2017 | 19.3x   | 18.4x |
+| 2018 | 20.5x   | 14.7x |
+| 2019 | 23.3x   | 18.5x |
+| 2020 | 25.9x   | 23.2x |
+| 2021 | 27.0x   | 21.7x |
+| 2022 | 23.6x   | 16.6x |
+| 2023 | 23.2x   | 19.5x |
+| 2024 | 23.7x   | 21.5x |
+| 2025 | 21.7x   | 23.0x |
+| Current | 16.8x | 22.2x |
+</details>
+
+<table><tr><td>Reference</td><td>Sector Dynamics</td></tr><tr><td>1</td><td>Peak product cycles (ICDs, drug eluting stents) and industry growth &gt;10%</td></tr><tr><td>2</td><td>Macro slowdown in utilization and hospital capex drove sector growth to trough at 2-4%</td></tr><tr><td>3</td><td>Significant increase in capital returns to shareholders</td></tr><tr><td>4</td><td>Cyclical recovery + ACA implementation supported top-line acceleration to ~4-5%</td></tr><tr><td>5</td><td>Product cycle inflection drove sustained organic growth momentum to ~5%+</td></tr><tr><td>6</td><td>Peak growth and multiples coming out of COVID recovery (8%+)</td></tr><tr><td>7</td><td>Moderating organic growth but still well above historical averages (~7-8%)</td></tr><tr><td>8</td><td>Decelerating growth and mixed earnings results drive stocks toward trough multiples</td></tr></table>
+
+Priced as of 5/22/26   
+Source: FactSet
+
+Exhibit 4: Capital Returned to Shareholders vs. Large Cap MedTech Performance \$s in millions 
+
+<table><tr><td></td><td>2009</td><td>2010</td><td>2011</td><td>2012</td><td>2013</td><td>2014</td><td>2015</td></tr><tr><td>Share Repurchases</td><td>$6,096</td><td>$7,425</td><td>$9,145</td><td>$11,057</td><td>$11,038</td><td>$9,734</td><td>$6,497</td></tr><tr><td>Dividends</td><td>$4,792</td><td>$6,651</td><td>$5,922</td><td>$6,579</td><td>$4,715</td><td>$5,529</td><td>$5,245</td></tr><tr><td>Cash Returned to Shareholders</td><td>$10,889</td><td>$14,076</td><td>$15,067</td><td>$17,635</td><td>$15,753</td><td>$15,263</td><td>$11,741</td></tr><tr><td>Acquisitions</td><td>$5,965</td><td>$14,791</td><td>$5,629</td><td>$3,461</td><td>$9,280</td><td>$7,923</td><td>$82,110</td></tr><tr><td>% of FCF Returned to Shareholders</td><td>58.4%</td><td>66.4%</td><td>72.2%</td><td>76.3%</td><td>88.1%</td><td>79.6%</td><td>96.2%</td></tr><tr><td>Net Debt/EBITDA</td><td>0.5x</td><td>0.6x</td><td>0.5x</td><td>0.5x</td><td>0.1x</td><td>0.9x</td><td>1.3x</td></tr><tr><td>MedTech Stock Performance</td><td>22.2%</td><td>(3.7%)</td><td>7.3%</td><td>16.7%</td><td>31.9%</td><td>26.9%</td><td>5.9%</td></tr><tr><td>vs. XLV</td><td>5.2%</td><td>(5.1%)</td><td>(2.8%)</td><td>1.7%</td><td>(7.1%)</td><td>3.6%</td><td>0.6%</td></tr><tr><td>vs. S&amp;P 500</td><td>(1.2%)</td><td>(16.5%)</td><td>7.3%</td><td>3.3%</td><td>2.3%</td><td>15.5%</td><td>6.6%</td></tr></table>
+
+Source: Factset, Data compiled by GS Global Investment Research
+
+# Price Target Risks and Methodology - Cochlear Ltd.
+
+We derive our 12m target price of A\$130.80 which is based on 50%/50% blended 10-year DCF and EV/EBIT valuation methodology. Our DCF valuation is based on a
+
+10-year forecast of COH's current business and new opportunities from its Innovation Fund. Our EV/EBIT multiple for COH is based on the stock's history relative to the index (ASX200) and relative to its peers, normalising for differences in growth.
+
+# Key Risks Upside Risks
+
+1. Reimbursement expansion: Changes to payor policies have driven acceleration of implant sales for COH historically. The material opportunities over the next 3 years include US Medicare coverage for single sided deafness (SSD) following COH's FDA label extension in 2022. The American Cochlear Implant (ACI) alliance, a key industry body, in November 2024 submitted a formal request to CMS for SSD coverage. In the UK, efforts are underway requesting the NHS to lower the hearing threshold to 70dB.   
+2. New patient growth: The entry of Apple in the hearing health space via the launch of the AirPods Pro 2 is likely to increase patient awareness on hearing loss. The device acts as a test for hearing loss and has capability for mild to moderate hearing loss. Whilst this device is unlikely to directly drive a material increase in cochlear implant candidates, it has the potential to spur audiologists to tweak their business model to reduce bundled charges for hearing aids and professional service. This separation should assist the referral base for cochlear implants.   
+3. Investments portfolio optionality: Across CY25/26, COH's innovation fund has several investments which could commence first sales in the US.
+
+# Downside Risks
+
+1. Market share loss: Material reduction in COH market share driven by factors including (i) COH product recall due to reliability / safety issues, (ii) New feature launches from SOON or MED-EI, (iii) New market entrant especially in China. COH's reliability track record, R&D investment and manufacturing scale are key mitigating factors.   
+2. Supply chain shortages: Restriction of raw materials or critical minerals could impact availability of key inputs to COH's products. Whilst China is a Top 5 sourcing location for COH, we note the bulk of electronics, batteries and precious metals are sourced from Australia, the US and Switzerland. Pricing for products from these countries could increase should there be a global shortage which will likely weigh on COH's GM%.   
+3. Capacity constraints: As a specialized procedure, CI surgery is largely performed within a concentrated cohort of clinics and hospitals. Should the strategy to expand existing clinical capacity take longer to materialize, unit growth is likely to slow. Further, COH may need to increase sales and marketing spend to broaden its referral source which will weigh on earnings margins.
+
+# Price Target Risks and Methodology - Nanosonics Ltd.
+
+We value NAN at A\$4.50 based on a SOTP for Trophon and CORIS. We value the businesses separately as CORIS' stage of lifecycle (pre-revenue) in our view warrants a higher cost of capital and terminal growth assumption relative to Trophon's which is a more mature business. We value the Trophon business based on a blended $50\% / 50\%$ weighting between our DCF valuation and EV/EBIT relative valuation. Our DCF valuation is based on a WACC of $9.2\%$ and a terminal growth rate of $3.0\%$ . Our EV/EBIT multiple is based on the median of global competitors in the field of infection prevention. We value the CORIS business based on a blended $50\% / 50\%$ weighting between our DCF valuation and EV/Revenue relative valuation. Our DCF valuation is based on a WACC of $10\%$ and a terminal growth rate of $4.0\%$ . Our relative valuation is based on a EV/Revenue multiple to FY30 revenue which is then discounted to its present value based on a WACC of $10\%$ . The EV/Revenue multiple adopted is in line with ASX pre revenue MedTech peers. Key risks include: Launch of CORIS, Competition risks for Trophon, Departure of Key Management Personnel and product recalls for Trophon & CORIS.
+
+# Price Target Risks and Methodology - FPH.AX
+
+Our 12-month price target of A\$42.30 is based on a 50%/50% blended 10-year DCF (8.4% WACC and 4.0% TGR) and EV/EBIT valuation methodology. Our DCF valuation is based on a 10-year forecast of FPH's current business and new opportunities which include the US NHFT home market. Our EV/EBIT multiple for FPH is based on the stock's history relative to the index (ASX200) and relative to its peers, normalizing for differences in growth. Over the last 10 years, FPH's premium to the ASX200 has ranged from 1.5x-4.5x. We adopt a premium which is towards the top end of this range driven by the expansion in the company's TAM from the opportunity in anaesthesiology. Our EV/EBIT multiple reflects a growth adjusted ratio which is comparable to other MedTech growth stocks. Key risks include: (1) Material slowdown in US hospitals purchasing, (2) Market share decline and (3) Failure of NHFT US home clinical trial.
+
+# Price Target Risks and Methodology - RMD.AX
+
+Our 12-month price target of A\$46.20 is based on a 50%/50% blended DCF (8.1% WACC/3.0% TGR) and NTM EV/EBIT valuation methodology. Our DCF valuation is based on a 10-year forecast of RMD's current business and new opportunities which include High Flow Oxygen Therapy (HFOT). Our EV/EBIT multiple of 21x for RMD is based on the stock's history relative to the index (ASX200) and relative to its peers, normalising for differences in growth. Key risks include: (1) US tariffs implementation, (2) US reimbursement pressures, (3) Reduction in therapy compliance.
+
+# Disclosure Appendix
+
+# Reg AC
+
+We, Davin Thillainathan, CFA and Roy Taouk, hereby certify that all of the views expressed in this report accurately reflect our personal views about the subject company or companies and its or their securities. We also certify that no part of our compensation was, is or will be, directly or indirectly, related to the specific recommendations or views expressed in this report.
+
+Unless otherwise stated, the individuals listed on the cover page of this report are analysts in GS' Global Investment Research division.
+
+Contributing Authors: Davin Thillainathan, CFA GS Australia Pty Ltd, Roy Taouk GS Australia Pty Ltd.
+
+Unless otherwise stated, the individuals listed in the Contributing Authors disclosure of this report are analysts in GS' Global Investment Research division.
+
+# GS Factor Profile
+
+The GS Factor Profile provides investment context for a stock by comparing key attributes to the market (i.e. our universe of rated stocks) and its sector peers. The four key attributes depicted are: Growth, Financial Returns, Multiple (e.g. valuation) and Integrated (a composite of Growth, Financial Returns and Multiple). Growth, Financial Returns and Multiple are calculated by using normalized ranks for specific metrics for each stock. The normalized ranks for the metrics are then averaged and converted into percentiles for the relevant attribute. The precise calculation of each metric may vary depending on the fiscal year, industry and region, but the standard approach is as follows:
+
+Growth is based on a stock's forward-looking sales growth, EBITDA growth and EPS growth (for financial stocks, only EPS and sales growth), with a higher percentile indicating a higher growth company. Financial Returns is based on a stock's forward-looking ROE, ROCE and CROCI (for financial stocks, only ROE), with a higher percentile indicating a company with higher financial returns. Multiple is based on a stock's forward-looking P/E, P/B, price/dividend (P/D), EV/EBITDA, EV/FCF and EV/Debt Adjusted Cash Flow (DACF) (for financial stocks, only P/E, P/B and P/D), with a higher percentile indicating a stock trading at a higher multiple. The Integrated percentile is calculated as the average of the Growth percentile, Financial Returns percentile and (100% - Multiple percentile).
+
+Financial Returns and Multiple use the GS analyst forecasts at the fiscal year-end at least three quarters in the future. Growth uses inputs for the fiscal year at least seven quarters in the future compared with the year at least three quarters in the future (on a per-share basis for all metrics).
+
+For a more detailed description of how we calculate the GS Factor Profile, please contact your GS representative.
+
+# M&A Rank
+
+Across our global coverage, we examine stocks using an M&A framework, considering both qualitative factors and quantitative factors (which may vary across sectors and regions) to incorporate the potential that certain companies could be acquired. We then assign a M&A rank as a means of scoring companies under our rated coverage from 1 to 3, with 1 representing high (30%-50%) probability of the company becoming an acquisition target, 2 representing medium (15%-30%) probability and 3 representing low (0%-15%) probability. For companies ranked 1 or 2, in line with our standard departmental guidelines we incorporate an M&A component into our target price. M&A rank of 3 is considered immaterial and therefore does not factor into our price target, and may or may not be discussed in research.
+
+# Quantum
+
+Quantum is GS' proprietary database providing access to detailed financial statement histories, forecasts and ratios. It can be used for in-depth analysis of a single company, or to make comparisons between companies in different sectors and markets.
+
+# Disclosures
+
+# Rating and pricing information
+
+Cochlear Ltd. (Neutral, A\$97.97), Fisher & Paykel Healthcare Corp. (Buy, A\$31.29), Nanosonics (Buy, A\$3.24) and ResMed Inc. (Buy, A\$29.36)
+
+# Financial Advisory Disclosure
+
+Nanosonics Limited (ASX: NAN) (“Company”) has announced its intention to undertake an on-market buy-back as part of the Company’s ongoing capital management strategy. GS Australia Pty Ltd (“GS”) has been appointed to act as the Company’s broker in relation to the buy-back. GS and/ or its affiliates may receive fees, benefit from indemnification, or receive commissions or other consideration in connection with acting in this capacity.
+
+The rating(s) for Cochlear Ltd., Fisher & Paykel Healthcare Corp., Nanosonics and ResMed Inc. is/are relative to the other companies in its/their coverage universe: Ansell, Australian Clinical Labs Ltd., CSL Ltd., Cochlear Ltd., Fisher & Paykel Healthcare Corp., Healius Ltd., Integral Diagnostics Ltd., Nanosonics, Ramsay Health Care Ltd., ResMed Inc., Sonic Healthcare Ltd.
+
+# Company-specific regulatory disclosures
+
+The following disclosures relate to relationships between The GS Group, Inc. (with its affiliates, “GS”) and companies covered by GS Global Investment Research and referred to in this research.
+
+GS expects to receive or intends to seek compensation for investment banking services in the next 3 months: Cochlear Ltd. (A\$97.97), Fisher & Paykel Healthcare Corp. (NZ\$37.60), Fisher & Paykel Healthcare Corp. (A\$31.29), Nanosonics (A\$3.24), ResMed Inc. (A\$29.36) and ResMed Inc. (\$206.10)
+
+GS has received compensation for non-investment banking services during the past 12 months: Nanosonics (A\$3.24)
+
+GS had an investment banking services client relationship during the past 12 months with: Cochlear Ltd. (A\$97.97), Fisher & Paykel Healthcare Corp. (NZ\$37.60), Fisher & Paykel Healthcare Corp. (A\$31.29), Nanosonics (A\$3.24), ResMed Inc. (A\$29.36) and ResMed Inc. (\$206.10)
+
+GS had a non-investment banking securities-related services client relationship during the past 12 months with: Nanosonics (A\$3.24)
+
+GS makes a market in the securities or derivatives thereof: ResMed Inc. (A\$29.36) and ResMed Inc. (\$206.10)
+
+# Distribution of ratings/investment banking relationships
+
+GS Investment Research global Equity coverage universe
+
+<table><tr><td rowspan="2"></td><td colspan="3">Rating Distribution</td></tr><tr><td>Buy</td><td>Hold</td><td>Sell</td></tr><tr><td>Global</td><td>50%</td><td>34%</td><td>16%</td></tr></table>
+
+<table><tr><td colspan="3">Investment Banking Relationships</td></tr><tr><td>Buy</td><td>Hold</td><td>Sell</td></tr><tr><td>65%</td><td>60%</td><td>45%</td></tr></table>
+
+As of April 1, 2026, GS Global Investment Research had investment ratings on 3,074 equity securities. GS assigns stocks as Buys and Sells on various regional Investment Lists; stocks not so assigned are deemed Neutral. Such assignments equate to Buy, Hold and Sell for the purposes of the above disclosure required by the FINRA Rules. See ‘Ratings, Coverage universe and related definitions’ below. The Investment Banking Relationships chart reflects the percentage of subject companies within each rating category for whom GS has provided investment banking services within the previous twelve months.
+
+Price target and rating history chart(s)   
+![](images/20fcaaaf45ebd467d1b884e20138cd9b49388c4885dcde8687577775daf8686f.jpg)
+
+<details>
+<summary>line</summary>
+
+| Date       | Stock Price | Index Price | Rating | Price target |
+|------------|-------------|-------------|--------|--------------|
+| Jan 29     | 26          | 7,500       | B      |              |
+| Jan 29     | 25          | 7,500       | B      |              |
+| Jan 29     | 24          | 7,500       | B      |              |
+| Jan 29     | 24.3        | 7,500       | B      |              |
+| Jan 16     | 42.7        | 8,500       | B      |              |
+| Jan 16     | 42.1        | 8,500       | B      |              |
+| Jan 16     | 40.9        | 8,500       | B      |              |
+| Jan 16     | 41          | 8,500       | B      |              |
+| Jan 16     | 42.8        | 8,500       | B      |              |
+| Jan 16     | 44.1        | 8,500       | B      |              |
+| Jan 16     | 42.8        | 8,500       | B      |              |
+</details>
+
+The price targets shown should be considered in the context of all prior published GS, which may or may not have included price targets, as well as developments relating to the company, its industry and financial markets.
+
+![](images/70ad7cab83ea44d9fc180abeb77f735a322943346d47ba0b307bc1824fc8d214.jpg)
+
+<details>
+<summary>line</summary>
+
+| Date       | Stock Price | Index Price | Rating | Price Target |
+|------------|-------------|-------------|--------|--------------|
+| Jan 29     | ~3.8        | ~7,000      |        |              |
+| May 27     | ~4.9        | ~8,500      |        |              |
+| Sep 25     | ~4.6        | ~8,000      |        |              |
+| Feb 2026   | ~4.5        | ~7,500      |        |              |
+</details>
+
+The price targets shown should be considered in the context of all prior published GS, which may or may not have included price targets, as well as developments relating to the company, its industry and financial markets.
+
+![](images/609228e2a4db64c509eb10715565e15e44de06cc66cae0ce1060bf0d3f09f8e1.jpg)
+
+<details>
+<summary>line</summary>
+
+| Date       | Stock Price | Index Price | Rating | Price Target |
+|------------|-------------|-------------|--------|--------------|
+| Jan 29     | 280         | 7,500       | B      |              |
+| Jan 16     | 294.9       | 8,500       | CS     |              |
+| Jan 16     | 282.5       | 7,500       | N      |              |
+| Jan 16     | 272.5       | 8,500       |        |              |
+| Jan 16     | 289.5       | 8,500       |        |              |
+| Jan 16     | 285.9       | 8,500       |        |              |
+| Jan 16     | 244.9       | 8,500       |        |              |
+| Jan 16     | 215.8       | 8,500       |        |              |
+</details>
+
+The price targets shown should be considered in the context of all prior published GS, which may or may not have included price targets, as well as developments relating to the company, its industry and financial markets.
+
+![](images/cb4e67fccc2302b0c7e402ea6638b4d855ea572191027aa82cde386e656955c7.jpg)
+
+<details>
+<summary>line</summary>
+
+| Date       | Stock Price | Index Price | Rating | Price target | Price target at removal | S&P/ASX 200 |
+|------------|-------------|-------------|--------|--------------|--------------------------|--------------|
+| Jan 29     | ~39.6       | ~6,500      |        |              |                          |              |
+| Dec 2023   | ~38.4       | ~7,000      |        |              |                          |              |
+| Dec 2024   | ~32         | ~8,000      |        |              |                          |              |
+| Jan 2025   | ~33.5       | ~8,500      |        |              |                          |              |
+| Feb 2025   | ~48.9       | ~9,000      |        |              |                          |              |
+| Mar 2025   | ~46.9       | ~8,500      |        |              |                          |              |
+| Apr 2025   | ~49.8       | ~8,000      |        |              |                          |              |
+| May 2025   | ~52.4       | ~7,500      |        |              |                          |              |
+| Jun 2025   | ~52.2       | ~7,000      |        |              |                          |              |
+| Jul 2025   | ~53.2       | ~6,500      |        |              |                          |              |
+| Aug 2025   |             | ~7,000      |        |              |                          |              |
+| Sep 2025   |             | ~7,500      |        |              |                          |              |
+| Oct 2025   |             | ~8,000      |        |              |                          |              |
+| Nov 2025   |             | ~8,500      |        |              |                          |              |
+| Dec 2025   |             | ~9,000      |        |              |                          |              |
+| Jan 2026   |             | ~9,500      |        |              |                          |              |
+| Feb 2026   |             | ~10,000     |        |              |                          |              |
+Source: GS Investment Research for ratings and price targets; FactSet closing prices as of 3/31/2026.
+</details>
+
+The price targets shown should be considered in the context of all prior published GS, which may or may not have included price targets, as well as developments relating to the company, its industry and financial markets.
+
+Target price history table(s)   
+Nanosonics (NAN.AX) 
+
+<table><tr><td>Date of report</td><td>Target price (A$)</td><td>Closing price (A$)</td></tr><tr><td>24-Feb-26</td><td>4.50</td><td>3.28</td></tr><tr><td>12-Feb-26</td><td>4.60</td><td>3.70</td></tr><tr><td>25-Sep-25</td><td>4.90</td><td>4.12</td></tr><tr><td>23-Jan-24</td><td>3.00</td><td>4.37</td></tr><tr><td>22-Aug-23</td><td>3.80</td><td>4.50</td></tr></table>
+
+Cochlear Ltd. (COH.AX) 
+
+<table><tr><td>Date of report</td><td>Target price (A$)</td><td>Closing price (A$)</td></tr><tr><td>22-Apr-26</td><td>130.80</td><td>99.58</td></tr><tr><td>12-Mar-26</td><td>215.80</td><td>179.16</td></tr><tr><td>13-Feb-26</td><td>244.90</td><td>199.22</td></tr><tr><td>04-Feb-26</td><td>285.90</td><td>260.01</td></tr><tr><td>15-Aug-25</td><td>289.50</td><td>309.03</td></tr><tr><td>14-Jun-25</td><td>272.50</td><td>272.85</td></tr><tr><td>09-Apr-25</td><td>282.50</td><td>249.78</td></tr><tr><td>16-Feb-25</td><td>294.90</td><td>262.73</td></tr><tr><td>16-Jan-25</td><td>316.70</td><td>303.89</td></tr><tr><td>15-Aug-23</td><td>280.00</td><td>246.47</td></tr></table>
+
+ResMed Inc. (RMD.AX) 
+
+<table><tr><td>Date of report</td><td>Target price (A$)</td><td>Closing price (A$)</td><td>Date of report</td><td>Target price (A$)</td><td>Closing price (A$)</td></tr><tr><td>01-May-26</td><td>46.20</td><td>28.73</td><td>18-May-26</td><td>42.30</td><td>26.67</td></tr><tr><td>21-Apr-26</td><td>45.60</td><td>31.54</td><td>12-Mar-26</td><td>42.80</td><td>31.87</td></tr><tr><td>12-Mar-26</td><td>52.00</td><td>33.14</td><td>23-Feb-26</td><td>44.10</td><td>32.91</td></tr><tr><td>01-Feb-26</td><td>53.20</td><td>37.54</td><td>26-Nov-25</td><td>42.80</td><td>33.35</td></tr><tr><td>31-Oct-25</td><td>52.20</td><td>39.53</td><td>22-Oct-25</td><td>41.00</td><td>30.83</td></tr><tr><td>01-Aug-25</td><td>52.40</td><td>42.88</td><td>13-Aug-25</td><td>40.90</td><td>33.87</td></tr><tr><td>25-Jun-25</td><td>49.80</td><td>39.50</td><td>28-May-25</td><td>41.20</td><td>32.49</td></tr><tr><td>27-Apr-25</td><td>49.30</td><td>36.08</td><td>09-Apr-25</td><td>42.10</td><td>30.59</td></tr><tr><td>09-Apr-25</td><td>46.90</td><td>34.35</td><td>03-Feb-25</td><td>40.70</td><td>31.80</td></tr><tr><td>31-Jan-25</td><td>49.00</td><td>40.18</td><td>16-Jan-25</td><td>42.70</td><td>34.02</td></tr><tr><td>16-Jan-25</td><td>48.90</td><td>37.54</td><td>29-Nov-23</td><td>24.30</td><td>22.20</td></tr><tr><td>25-Jan-24</td><td>33.50</td><td>28.45</td><td>25-Sep-23</td><td>24.00</td><td>20.19</td></tr><tr><td>27-Oct-23</td><td>32.00</td><td>21.56</td><td>29-Aug-23</td><td>25.00</td><td>20.23</td></tr><tr><td>25-Sep-23</td><td>33.00</td><td>21.44</td><td></td><td></td><td></td></tr><tr><td>04-Aug-23</td><td>38.40</td><td>30.70</td><td></td><td></td><td></td></tr></table>
+
+Price targets shown in table(s) are unadjusted for corporate actions.
+
+# Regulatory disclosures
+
+# Disclosures required by United States laws and regulations
+
+See company-specific regulatory disclosures above for any of the following disclosures required as to companies referred to in this report: manager or co-manager in a pending transaction; $1\%$ or other ownership; compensation for certain services; types of client relationships; managed/co-managed public offerings in prior periods; directorships; for equity securities, market making and/or specialist role. GS trades or may trade as a principal in debt securities (or in related derivatives) of issuers discussed in this report.
+
+The following are additional required disclosures: Ownership and material conflicts of interest: GS policy prohibits its analysts, professionals reporting to analysts and members of their households from owning securities of any company in the analyst's area of coverage. Analyst compensation: Analysts are paid in part based on the profitability of GS, which includes investment banking revenues. Analyst as officer or director: GS policy generally prohibits its analysts, persons reporting to analysts or members of their households from serving as an officer, director or advisor of any company in the analyst's area of coverage. Non-U.S. Analysts: Non-U.S. analysts may not be associated persons of GS & Co. LLC and therefore may not be subject to FINRA Rule 2241 or FINRA Rule 2242 restrictions on communications with a subject company, public appearances and trading in securities covered by the analysts.
+
+Distribution of ratings: See the distribution of ratings disclosure above. Price chart: See the price chart, with changes of ratings and price targets in prior periods, above, or, if electronic format or if with respect to multiple companies which are the subject of this report, on the GS website at https://www.gs.com/research/hedge.html.
+
+# Additional disclosures required under the laws and regulations of jurisdictions other than the United States
+
+The following disclosures are those required by the jurisdiction indicated, except to the extent already made above pursuant to United States laws and regulations. Australia: GS Australia Pty Ltd and its affiliates are not authorised deposit-taking institutions (as that term is defined in the Banking Act 1959 (Cth)) in Australia and do not provide banking services, nor carry on a banking business, in Australia. This research, and any access to it, is intended only for “wholesale clients” within the meaning of the Australian Corporations Act, unless otherwise agreed by GS. In producing research reports, members of Global Investment Research of GS Australia may attend site visits and other meetings hosted by the companies and other entities which are the subject of its research reports. In some instances the costs of such site visits or meetings may be met in part or in whole by the issuers concerned if GS Australia considers it is appropriate and reasonable in the specific circumstances relating to the site visit or meeting. To the extent that the contents of this document contains any financial product advice, it is general advice only and has been prepared by GS without taking into account a client’s objectives, financial situation or needs. A client should, before acting on any such advice, consider the appropriateness of the advice having regard to the client’s own objectives, financial situation and needs. A copy of certain GS Australia and New Zealand disclosure of interests and a copy of GS’ Australian Sell-Side Research Independence Policy Statement are available at: https://www.goldmansachs.com/disclosures/australia-new-zealand/index.html. Brazil: Disclosure information in relation to CVM Resolution n. 20 is available at https://www.gs.com/worldwide/brazil/area/gir/index.html. Where applicable, the Brazil-registered analyst primarily responsible for the content of this research report, as defined in Article 20 of CVM Resolution n. 20, is the first author named at the beginning of this report, unless indicated otherwise at the end of the text. Canada: This information is being provided to you for information purposes only and is not, and under no circumstances should be construed as, an advertisement, offering or solicitation by GS & Co. LLC for purchasers of securities in Canada to trade in any Canadian security. GS & Co. LLC is not registered as a dealer in any jurisdiction in Canada under applicable Canadian securities laws and generally is not permitted to trade in Canadian securities and may be prohibited from selling certain securities and products in certain jurisdictions in Canada. If you wish to trade in any Canadian securities or other products in Canada please contact GS Canada Inc., an affiliate of The GS Group Inc., or another registered Canadian dealer. Hong Kong: Further information on the securities of covered companies referred to in this research may be obtained on request from GS (Asia) L.L.C. India: Further information on the subject company or companies referred to in this research may be obtained from GS (India) Securities Private Limited, Research Analyst - SEBI Registration Number INH000001493, 10th Floor, Ascent-Worli, Sudam Kalu Ahire Marg, Worli, Mumbai-400 025, India, Corporate Identity Number U74140MH2006FTC160634, Phone +91 22 6616 9000, Fax +91 22 6616 9001. GS may beneficially own 1% or more of the securities (as such term is defined in clause 2 (h) the Indian Securities Contracts (Regulation) Act, 1956) of the subject company or companies referred to in this research report. Investment in securities market are subject to market risks. Read all the related documents carefully before investing. Registration granted by SEBI and certification from NISM in no way guarantee performance of the intermediary or provide any assurance of returns to investors. GS (India) Securities Private Limited compliance officer and investor grievance contact details can be found at: https://www.goldmansachs.com/worldwide/india/documents/Grievance-Redressal-and-Escalation-Matrix.pdf, and a copy of the annual audit compliance report can be found at this link: https://publishing.gs.com/content/site/india-annual-compliance-report.html. Japan: See below. Korea: This research, and any access to it, is intended only for “professional investors” within the meaning of the Financial Services and Capital Markets Act, unless otherwise agreed by GS. Further information on the subject company or companies referred to in this research may be obtained from GS (Asia) L.L.C., Seoul Branch. New Zealand: GS New Zealand Limited and its affiliates are neither “registered banks” nor "deposit takers" (as defined in the Reserve Bank of New Zealand Act 1989) in New Zealand. This research, and any access to it, is intended for "wholesale clients" (as defined in the Financial Advisers Act 2008) unless otherwise agreed by GS. A copy of certain GS Australia and New Zealand disclosure of interests is available at: https://www.goldmansachs.com/disclosures/australia-new-zealand/index.html. Russia: Research reports distributed in the Russian Federation are not advertising as defined in the Russian legislation, but are information and analysis not having product promotion as their main purpose and do not provide appraisal within the meaning of the Russian legislation on appraisal activity. Research reports do not constitute a personalized investment recommendation as defined in Russian laws and regulations, are not addressed to a specific client, and are prepared without analyzing the financial circumstances, investment profiles or risk profiles of clients. GS assumes no responsibility for any investment decisions that may be taken by a client or any other person based on this research report. Singapore: GS (Singapore) Pte. (Company Number: 198602165W), which is regulated by the Monetary Authority of Singapore, accepts legal responsibility for this research, and should be contacted with respect to any matters arising from, or in connection with, this research. Taiwan: This material is for reference only and must not be reprinted without permission. Investors should carefully consider their own investment risk. Investment results are the responsibility of the individual investor. United Kingdom: Persons who would be categorized as retail clients in the United Kingdom, as such term is defined in the rules of the Financial Conduct Authority, should read this research in conjunction with prior GS on the covered companies referred to herein and should refer to the risk warnings that have been sent to them by GS International. A copy of these risks warnings, and a glossary of certain financial terms used in this report, are available from GS International on request.
+
+European Union and United Kingdom: Disclosure information in relation to Article 6 (2) of the European Commission Delegated Regulation (EU) (2016/958) supplementing Regulation (EU) No 596/2014 of the European Parliament and of the Council (including as that Delegated Regulation is implemented into United Kingdom domestic law and regulation following the United Kingdom's departure from the European Union and the European Economic Area) with regard to regulatory technical standards for the technical arrangements for objective presentation of investment recommendations or other information recommending or suggesting an investment strategy and for disclosure of particular interests or indications of conflicts of interest is available at https://www.gs.com/disclosures/europeanpolicy.html which states the European Policy for Managing Conflicts of Interest in Connection with Investment Research.
+
+Japan: GS Japan Co., Ltd. is a Financial Instrument Dealer registered with the Kanto Financial Bureau under registration number Kinsho 69, and a member of Japan Securities Dealers Association, Financial Futures Association of Japan Type II Financial Instruments Firms Association, and Investment Management Association of Japan. Sales and purchase of equities are subject to commission pre-determined with clients plus consumption tax. See company-specific disclosures as to any applicable disclosures required by Japanese stock exchanges, the Japanese Securities Dealers Association or the Japanese Securities Finance Company.
+
+# Ratings, coverage universe and related definitions
+
+Buy (B), Neutral (N), Sell (S) Analysts recommend stocks as Buys or Sells for inclusion on various regional Investment Lists. Being assigned a Buy or Sell on an Investment List is determined by a stock's total return potential relative to its coverage universe. Any stock not assigned as a Buy or a Sell on an Investment List with an active rating (i.e., a stock that is not Rating Suspended, Not Rated, Early-Stage Biotech, Coverage Suspended or Not Covered), is deemed Neutral. Each region manages Regional Conviction Lists, which are selected from Buy rated stocks on the respective region's Investment Lists and represent investment recommendations focused on the size of the total return potential and/or the likelihood of the realization of the return across their respective areas of coverage. The addition or removal of stocks from such Conviction Lists are managed by the Investment Review Committee or other designated committee in each respective region and do not represent a change in the analysts' investment rating for such stocks.
+
+Total return potential represents the upside or downside differential between the current share price and the price target, including all paid or anticipated dividends, expected during the time horizon associated with the price target. Price targets are required for all covered stocks. The total return potential, price target and associated time horizon are stated in each report adding or reiterating an Investment List membership.
+
+Coverage Universe: A list of all stocks in each coverage universe is available by primary analyst, stock and coverage universe at https://www.gs.com/research/hedge.html.
+
+Not Rated (NR). The investment rating, target price and earnings estimates (where relevant) are removed pursuant to GS policy when GS is acting in an advisory capacity in a merger or in a strategic transaction involving this company, when there are legal, regulatory or policy constraints due to GS' involvement in a transaction, and in certain other circumstances. Early-Stage Biotech (ES). An investment rating and a target price are not assigned pursuant to GS policy when this company has neither a drug, treatment or medical device that has passed a Phase II clinical trial nor a license to distribute a post-Phase II drug, treatment or medical device. Rating Suspended (RS). GS has suspended the investment rating and price target for this stock, because there is not a sufficient fundamental basis for determining an investment rating or target price. The previous investment rating and target price, if any, are no longer in effect for this stock and should not be relied upon. Coverage Suspended (CS). GS has suspended coverage of this company. Not Covered (NC). GS does not cover this company.
+
+# Global product; distributing entities
+
+GS Global Investment Research produces and distributes research products for clients of GS on a global basis. Analysts based in GS offices around the world produce research on industries and companies, and research on macroeconomics, currencies, commodities and portfolio strategy. This research is disseminated in Australia by GS Australia Pty Ltd (ABN 21 006 797 897); in Brazil by GS do Brasil Corretora de Títulos e Valores Mobiliários S.A.; Public Communication Channel GS Brazil: 0800 727 5764 and / or contatogoldmanbrasil@gs.com. Available Weekdays (except holidays), from 9am to 6pm. Canal de Comunicação com o Público GS Brasil: 0800 727 5764 e/ou contatogoldmanbrasil@gs.com. Horário de funcionamento: segunda-feira à sexta-feira (exceto feriados), das 9h às 18h; in Canada by GS & Co. LLC; in Hong Kong by GS (Asia) L.L.C.; in India by GS (India) Securities Private Ltd.; in Japan by GS Japan Co., Ltd.; in the Republic of Korea by GS (Asia) L.L.C., Seoul Branch; in New Zealand by GS New Zealand Limited; in Russia by OOO GS; in Singapore by GS (Singapore) Pte. (Company Number: 198602165W); and in the United States of America by GS & Co. LLC. GS International has approved this research in connection with its distribution in the United Kingdom.
+
+GS International (“GSI”), authorised by the Prudential Regulation Authority (“PRA”) and regulated by the Financial Conduct Authority (“FCA”) and the PRA, has approved this research in connection with its distribution in the United Kingdom.
+
+European Economic Area: GS Bank Europe SE ("GSBE") is a credit institution incorporated in Germany and, within the Single Supervisory Mechanism, subject to direct prudential supervision by the European Central Bank and in other respects supervised by German Federal Financial Supervisory Authority (Bundesanstalt für Finanzdienstleistungsaufsicht, BaFin) and Deutsche Bundesbank and disseminates research within the European Economic Area.
+
+# General disclosures
+
+This research is for our clients only. Other than disclosures relating to GS, this research is based on current public information that we consider reliable, but we do not represent it is accurate or complete, and it should not be relied on as such. The information, opinions, estimates and forecasts contained herein are as of the date hereof and are subject to change without prior notification. We seek to update our research as
+
+appropriate, but various regulations may prevent us from doing so. Other than certain industry reports published on a periodic basis, the large majority of reports are published at irregular intervals as appropriate in the analyst's judgment.
+
+GS conducts a global full-service, integrated investment banking, investment management, and brokerage business. We have investment banking and other business relationships with a substantial percentage of the companies covered by Global Investment Research. GS & Co. LLC, the United States broker dealer, is a member of SIPC (https://www.sipc.org).
+
+Our salespeople, traders, and other professionals may provide oral or written market commentary or trading strategies to our clients and principal trading desks that reflect opinions that are contrary to the opinions expressed in this research. Our asset management area, principal trading desks and investing businesses may make investment decisions that are inconsistent with the recommendations or views expressed in this research.
+
+The analysts named in this report may have from time to time discussed with our clients, including GS salespersons and traders, or may discuss in this report, trading strategies that reference catalysts or events that may have a near-term impact on the market price of the equity securities discussed in this report, which impact may be directionally counter to the analyst's published price target expectations for such stocks. Any such trading strategies are distinct from and do not affect the analyst's fundamental equity rating for such stocks, which rating reflects a stock's return potential relative to its coverage universe as described herein.
+
+We and our affiliates, officers, directors, and employees will from time to time have long or short positions in, act as principal in, and buy or sell, the securities or derivatives, if any, referred to in this research, unless otherwise prohibited by regulation or GS policy.
+
+The views attributed to third party presenters at GS arranged conferences, including individuals from other parts of GS, do not necessarily reflect those of Global Investment Research and are not an official view of GS.
+
+Any third party referenced herein, including any salespeople, traders and other professionals or members of their household, may have positions in the products mentioned that are inconsistent with the views expressed by analysts named in this report.
+
+This research is not an offer to sell or the solicitation of an offer to buy any security in any jurisdiction where such an offer or solicitation would be illegal. It does not constitute a personal recommendation or take into account the particular investment objectives, financial situations, or needs of individual clients. Clients should consider whether any advice or recommendation in this research is suitable for their particular circumstances and, if appropriate, seek professional advice, including tax advice. The price and value of investments referred to in this research and the income from them may fluctuate. Past performance is not a guide to future performance, future returns are not guaranteed, and a loss of original capital may occur. Fluctuations in exchange rates could have adverse effects on the value or price of, or income derived from, certain investments.
+
+Certain transactions, including those involving futures, options, and other derivatives, give rise to substantial risk and are not suitable for all investors. Investors should review current options and futures disclosure documents which are available from GS sales representatives or at https://www.theocc.com/about/publications/character-risks.jsp and https://www.goldmansachs.com/disclosures/cftc\_fcm\_disclosures. Transaction costs may be significant in option strategies calling for multiple purchase and sales of options such as spreads. Supporting documentation will be supplied upon request.
+
+Differing Levels of Service provided by Global Investment Research: The level and types of services provided to you by GS Global Investment Research may vary as compared to that provided to internal and other external clients of GS, depending on various factors including your individual preferences as to the frequency and manner of receiving communication, your risk profile and investment focus and perspective (e.g., marketwide, sector specific, long term, short term), the size and scope of your overall client relationship with GS, and legal and regulatory constraints. As an example, certain clients may request to receive notifications when research on specific securities is published, and certain clients may request that specific data underlying analysts' fundamental analysis available on our internal client websites be delivered to them electronically through data feeds or otherwise. No change to an analyst's fundamental research views (e.g., ratings, price targets, or material changes to earnings estimates for equity securities), will be communicated to any client prior to inclusion of such information in a research report broadly disseminated through electronic publication to our internal client websites or through other means, as necessary, to all clients who are entitled to receive such reports.
+
+All research reports are disseminated and available to all clients simultaneously through electronic publication to our internal client websites. Not all research content is redistributed to our clients or available to third-party aggregators, nor is GS responsible for the redistribution of our research by third party aggregators. For research, models or other data related to one or more securities, markets or asset classes (including related services) that may be available to you, please contact your GS representative or go to https://research.gs.com.
+
+Disclosure information is also available at https://www.gs.com/research/hedge.html or from Research Compliance, 200 West Street, New York, NY 10282.
+
+# © 2026 GS.
+
+You are permitted to store, display, analyze, modify, reformat, and print the information made available to you via this service only for your own use. You may not resell or reverse engineer this information to calculate or develop any index for disclosure and/or marketing or create any other derivative works or commercial product(s), data or offering(s) without the express written consent of GS. You are not permitted to publish, transmit, or otherwise reproduce this information, in whole or in part, in any format to any third party without the express written consent of GS. This foregoing restriction includes, without limitation, using, extracting, downloading or retrieving this information, in whole or in part, to train or finetune a machine learning or artificial intelligence system, or to provide or reproduce this information, in whole or in part, as a prompt or input to any such system.

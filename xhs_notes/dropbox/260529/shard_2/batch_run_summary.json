@@ -1,0 +1,51 @@
+{
+  "input_dir": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs",
+  "total_pdf_count_before_shard": 32,
+  "pdf_count_before_skip": 5,
+  "pdf_count": 5,
+  "generated_report_count": 5,
+  "batch_size": 5,
+  "shard_index": 2,
+  "shard_count": 40,
+  "max_reports_per_shard": 5,
+  "max_total_reports": 0,
+  "skip_existing": true,
+  "skipped_existing_count": 0,
+  "skipped_existing": [],
+  "failures": 0,
+  "batches": [
+    {
+      "batch_index": 1,
+      "pdf_count": 5,
+      "files": [
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/11-GS-ASX MedTech： Framing the sector from a top down perspective-260528.pdf",
+          "batch_file": "/tmp/pdf_batch_001_b4bfar8f/pdfs/0001-11-GS-ASX MedTech- Framing the sector from a top down perspective-260528.pdf",
+          "stable_index": "1"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/12-GS-CHINA & KOREA DEVICE AND SERVICES Investor Feedback： positioning turns more selective Post~1Q， awaiting 2Q confirmation for execution and margin delivery-260528.pdf",
+          "batch_file": "/tmp/pdf_batch_001_b4bfar8f/pdfs/0002-12-GS-CHINA - KOREA DEVICE AND SERVICES Investor Feedback- positioning turns more selective Post-1Q- awaiting 2Q confirmation for execution and margin delivery-260528.pdf",
+          "stable_index": "2"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/13-GS-China Consumer Connection： Online Brand Tracker： Apr~26： Diverged performance before 618； Pet foods led； Beauty IMF White Goods lag-260513.pdf",
+          "batch_file": "/tmp/pdf_batch_001_b4bfar8f/pdfs/0003-13-GS-China Consumer Connection- Online Brand Tracker- Apr-26- Diverged performance before 618- Pet foods led- Beauty IMF White Goods lag-260513.pdf",
+          "stable_index": "3"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/14-GS-JAPAN MACHINERY：Prefer stocks positioned beyond peak cycle on AI Capex tailwind； Keyence THK up to Buy Neutral， SMC down to Neutral-260528.pdf",
+          "batch_file": "/tmp/pdf_batch_001_b4bfar8f/pdfs/0004-14-GS-JAPAN MACHINERY-Prefer stocks positioned beyond peak cycle on AI Capex tailwind- Keyence THK up to Buy Neutral- SMC down to Neutral-260528.pdf",
+          "stable_index": "4"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/15-GS-Japan Machinery： Automation： Trade statistics： April 2026 robot Robodrill volume inferred from customs data-260529.pdf",
+          "batch_file": "/tmp/pdf_batch_001_b4bfar8f/pdfs/0005-15-GS-Japan Machinery- Automation- Trade statistics- April 2026 robot Robodrill volume inferred from customs data-260529.pdf",
+          "stable_index": "5"
+        }
+      ],
+      "returncode": 0,
+      "status": "ok"
+    }
+  ]
+}

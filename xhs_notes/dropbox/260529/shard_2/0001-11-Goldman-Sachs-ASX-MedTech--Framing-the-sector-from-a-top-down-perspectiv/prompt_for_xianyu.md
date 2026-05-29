@@ -1,0 +1,245 @@
+你是闲鱼资料类商品文案编辑，擅长把一份投研/行业/公司研报改写成适合闲鱼发布的商品说明。
+
+【目标】
+- 基于下面研报解析内容，生成一份可以复制到闲鱼商品详情里的中文文案。
+- 风格参考用户提供的闲鱼对标笔记：标题直给、信息密度高、用途明确、适合人群明确、交付方式清楚。
+- 语言要自然，像真实卖家发布，不要像公众号文章、小红书笔记或 AI 摘要。
+- 不要使用太夸张的营销词，不要承诺收益，不要说“稳赚”“内幕”“必涨”。
+- 可以适度口语化，但不要低俗。
+
+【必须输出结构】
+1. `闲鱼标题：` 一行，控制在 30 字以内，适合商品标题。
+2. `商品描述：` 正文，适合直接粘贴到闲鱼详情页。
+3. `Hashtag：` 一行，给 6-10 个平台可用标签，用 `#` 开头，空格分隔。
+
+【严禁输出】
+- 不要输出 `建议价格：`。
+- 不要输出 `搜索关键词：`。
+- 不要输出“搜索词”“关键词”“搜索关键词”等栏目。
+- 不要给具体价格区间、成交承诺或价格建议。
+
+【商品描述写法】
+- 第一段：直接说明这是什么报告，页数/语言/主题/公司或行业。如果页数、日期、语言不确定，就不要编。
+- 第二段：说明适合谁，比如投研、券商面试、PE/VC、行业研究、学习参考、写报告等。
+- 第三段：用 3-5 个亮点 bullet，风格参考：
+  ✅ 三大情景框架：DCF、P/ARR、EV/Sales
+  ✅ 关键变量分析
+  ✅ 估值逻辑、假设、终值占比等核心内容覆盖
+  ✅ 适合准备 AI 相关面试、研究 AI 估值的同学
+- 第四段：交付说明，参考：`资料为电子版 PDF，拍下后 24 小时内发网盘链接或邮箱。`
+- 第五段：虚拟商品说明，参考：`电子类资料一经发货不退不换，有问题可以提前咨询。`
+- 可以补一句：`需要其他报告也可以私聊，支持一站式咨询。`
+
+【Hashtag 写法】
+- 只输出平台相对安全、偏学习和资料属性的标签。
+- 推荐从这些里选择：`#学习资料` `#研究笔记` `#学习笔记` `#行业研究` `#研报资料` `#资料整理` `#报告学习` `#案例研究`。
+- 不要输出 `#财经` `#投资` `#股票` `#基金` `#理财` `#暴富` `#内幕` 等敏感标签。
+
+【平台发布合规要求】
+- 不要出现“投资建议”“买入”“卖出”“强烈推荐”“稳赚”“保本”“必涨”“抄底”“上车”“内幕”“翻倍”等金融操作或收益承诺表达。
+- “投资”相关词尽量改成“投研”“研究”“观察”“学习参考”；如果必须保留，也要保持中性。
+- 不要出现“独家”“原版”“内部”“无水印”“全网最低”“最全”“最强”“必看”等高风险或极限词。
+- 不要写“关注”“点赞”“求关注”“评论区留言”等直接互动诱导。
+- 不要承诺资料一定可用于获利、就业、通过面试或获得收益。
+
+【合规与避坑】
+- 默认避免出现具体投行品牌名，比如“GS”“GS”“MS”，统一写作“投行研报”或“投行研报”。
+- 不要承诺研究或交易结果。
+- 不要伪造页数、日期、作者、公司覆盖范围。研报未给出时就不写。
+- 不要输出解释说明，只输出闲鱼文案本身。
+
+【研报解析内容】
+"""
+# ASX MedTech: Framing the sector from a top down perspective
+
+We highlight the look through for our MedTech coverage (RMD, FPH, COH and NAN) from our US MedTech team's note, analysing the broader sector's performance and catalysts for turnaround. Whilst the key investor debate for ASX names have rightfully focused on stock specific drivers (RMD: Philips re-entry, GLP-1, COH: Nexa market share, CI market growth), this underperformance has not been in isolation with Large Cap US MedTech peers \~-20% YTD26 driven by slowing organic revenue growth and a sharp multiple contraction. Consequently, in assessing the outlook for ASX MedTech, we believe the earnings trajectory and broader sector sentiment is also worth considering. Company specific drivers which have assisted in driving a turnaround in previous cycles include new product launches/ M&A and a step up in share repurchase activity. RMD and FPH in particular have demonstrated progress on these fronts. RMD we believe is on the cusp of new product launches and has recently expanded its product offering through the Noctrix acquisition whilst preserving its \~U\$700m buy back program. FPH has several products in its pipeline ready for launch (post FDA approval) with further capital management initiatives on the cards following the recent step up in DPS. For NAN - the roll out of CORIS will take time to offset the risk of a slowdown of Trophon upgrades. Retain Buy on these 3 stocks and Neutral on COH.
+
+The research from our US Medtech team raises 2 key points:
+
+Earnings perspective: US MedTech revenue growth has recently decelerated due to US utilization from payor/ funding changes. Sales in China on balance have also acted as a drag. Our team believes on average the headwinds from US Managed Care changes and US Medicaid cuts have not been adequately captured in CY26 guidance. For context, across the last cycle (excluding COVID), organic growth slowed for \~3 years (2010 to 2013).
+
+■ Multiple perspective: PE contraction over CY26 to date has been material (\~500bps vs CY25) with the sector \~700bps below the 20-year average. The last cycle (excluding COVID), valuations bottomed at \~11x in 2011 (currently: \~19x) with the recovery led by (1) Significant share repurchase activity, (2) Full re-basing of forward earnings expectations and (3) Positive growth catalysts (new product approval, M&A).
+
+Davin Thillainathan, CFA
+
++61(2)9321-8465
+
+davin.thillainathan@gs.com
+
+GS Australia Pty Ltd
+
+Roy Taouk
+
++61(2)9321-8380 | roy.taouk@gs.com
+
+GS Australia Pty Ltd
+
+Exhibit 1: YTD performance of Australian Med Device companies versus global Med Device Indices   
+![](images/bcf500c90a3829da12b40915a7bc10260875f7834d99efe2366fca89714a2b71.jpg)
+
+<details>
+<summary>bar</summary>
+
+| Category | Value (%) |
+|---|---|
+| Large Cap (LC) MedTech | -20 |
+| SMID Cap MedTech | -12 |
+| RMD-AU | -18 |
+| FPH-AU | -3 |
+| NAN-AU | -19 |
+| COH-AU | -62 |
+</details>
+
+Source: FactSet, Data compiled by GS Global Investment Research
+
+Exhibit 2: MedTech Industry Organic/CC Revenue Growth   
+![](images/92f4a5b6e4140bf408e75a11e4acadf9f15f14ec075d315c1120d9867d35b43e.jpg)
+
+<details>
+<summary>line</summary>
+
+| Year   | Organic/CC Revenue Growth |
+| ------ | -------------------------- |
+| 2006   | 15.0%                      |
+| 2007   | 14.5%                      |
+| 2008   | 13.0%                      |
+| 2009   | 5.0%                       |
+| 2010   | 7.5%                       |
+| 2011   | 6.5%                       |
+| 2012   | 6.0%                       |
+| 2013   | 4.5%                       |
+| 2014   | 4.0%                       |
+| 2015   | 5.5%                       |
+| 2016   | 7.0%                       |
+| 2017   | 6.5%                       |
+| 2018   | 6.5%                       |
+| 2019   | 7.5%                       |
+| 2020   | -8.0%                      |
+| 2021   | 12.0%                      |
+| 2022   | 6.5%                       |
+| 2023   | 8.0%                       |
+| 2024   | 7.5%                       |
+| 2025   | 7.0%                       |
+| 2026E  | 6.0%                       |
+</details>
+
+Source: FactSet
+
+Exhibit 3: NTM PE Multiples Over Time (Annual Averages)   
+![](images/b105c4c2188ca0e432304688622a680915513c651c01f8e8fd3b5c9587bdca4d.jpg)
+
+<details>
+<summary>line</summary>
+
+| Year | MedTech | SPX |
+|------|---------|-----|
+| 2006 | 18.9x   | 15.9x |
+| 2007 | 17.8x   | 14.4x |
+| 2008 | 13.3x   | 10.5x |
+| 2009 | 13.7x   | 15.6x |
+| 2010 | 12.0x   | 13.8x |
+| 2011 | 11.5x   | 12.2x |
+| 2012 | 15.1x   | 13.2x |
+| 2013 | 16.1x   | 15.7x |
+| 2014 | 18.1x   | 16.3x |
+| 2015 | 18.2x   | 16.1x |
+| 2016 | 17.5x   | 17.3x |
+| 2017 | 19.3x   | 18.4x |
+| 2018 | 20.5x   | 14.7x |
+| 2019 | 23.3x   | 18.5x |
+| 2020 | 25.9x   | 23.2x |
+| 2021 | 27.0x   | 21.7x |
+| 2022 | 23.6x   | 16.6x |
+| 2023 | 23.2x   | 19.5x |
+| 2024 | 23.7x   | 21.5x |
+| 2025 | 21.7x   | 23.0x |
+| Current | 16.8x | 22.2x |
+</details>
+
+<table><tr><td>Reference</td><td>Sector Dynamics</td></tr><tr><td>1</td><td>Peak product cycles (ICDs, drug eluting stents) and industry growth &gt;10%</td></tr><tr><td>2</td><td>Macro slowdown in utilization and hospital capex drove sector growth to trough at 2-4%</td></tr><tr><td>3</td><td>Significant increase in capital returns to shareholders</td></tr><tr><td>4</td><td>Cyclical recovery + ACA implementation supported top-line acceleration to ~4-5%</td></tr><tr><td>5</td><td>Product cycle inflection drove sustained organic growth momentum to ~5%+</td></tr><tr><td>6</td><td>Peak growth and multiples coming out of COVID recovery (8%+)</td></tr><tr><td>7</td><td>Moderating organic growth but still well above historical averages (~7-8%)</td></tr><tr><td>8</td><td>Decelerating growth and mixed earnings results drive stocks toward trough multiples</td></tr></table>
+
+Priced as of 5/22/26   
+Source: FactSet
+
+Exhibit 4: Capital Returned to Shareholders vs. Large Cap MedTech Performance \$s in millions 
+
+<table><tr><td></td><td>2009</td><td>2010</td><td>2011</td><td>2012</td><td>2013</td><td>2014</td><td>2015</td></tr><tr><td>Share Repurchases</td><td>$6,096</td><td>$7,425</td><td>$9,145</td><td>$11,057</td><td>$11,038</td><td>$9,734</td><td>$6,497</td></tr><tr><td>Dividends</td><td>$4,792</td><td>$6,651</td><td>$5,922</td><td>$6,579</td><td>$4,715</td><td>$5,529</td><td>$5,245</td></tr><tr><td>Cash Returned to Shareholders</td><td>$10,889</td><td>$14,076</td><td>$15,067</td><td>$17,635</td><td>$15,753</td><td>$15,263</td><td>$11,741</td></tr><tr><td>Acquisitions</td><td>$5,965</td><td>$14,791</td><td>$5,629</td><td>$3,461</td><td>$9,280</td><td>$7,923</td><td>$82,110</td></tr><tr><td>% of FCF Returned to Shareholders</td><td>58.4%</td><td>66.4%</td><td>72.2%</td><td>76.3%</td><td>88.1%</td><td>79.6%</td><td>96.2%</td></tr><tr><td>Net Debt/EBITDA</td><td>0.5x</td><td>0.6x</td><td>0.5x</td><td>0.5x</td><td>0.1x</td><td>0.9x</td><td>1.3x</td></tr><tr><td>MedTech Stock Performance</td><td>22.2%</td><td>(3.7%)</td><td>7.3%</td><td>16.7%</td><td>31.9%</td><td>26.9%</td><td>5.9%</td></tr><tr><td>vs. XLV</td><td>5.2%</td><td>(5.1%)</td><td>(2.8%)</td><td>1.7%</td><td>(7.1%)</td><td>3.6%</td><td>0.6%</td></tr><tr><td>vs. S&amp;P 500</td><td>(1.2%)</td><td>(16.5%)</td><td>7.3%</td><td>3.3%</td><td>2.3%</td><td>15.5%</td><td>6.6%</td></tr></table>
+
+Source: Factset, Data compiled by GS Global Investment Research
+
+# Price Target Risks and Methodology - Cochlear Ltd.
+
+We derive our 12m target price of A\$130.80 which is based on 50%/50% blended 10-year DCF and EV/EBIT valuation methodology. Our DCF valuation is based on a
+
+10-year forecast of COH's current business and new opportunities from its Innovation Fund. Our EV/EBIT multiple for COH is based on the stock's history relative to the index (ASX200) and relative to its peers, normalising for differences in growth.
+
+# Key Risks Upside Risks
+
+1. Reimbursement expansion: Changes to payor policies have driven acceleration of implant sales for COH historically. The material opportunities over the next 3 years include US Medicare coverage for single sided deafness (SSD) following COH's FDA label extension in 2022. The American Cochlear Implant (ACI) alliance, a key industry body, in November 2024 submitted a formal request to CMS for SSD coverage. In the UK, efforts are underway requesting the NHS to lower the hearing threshold to 70dB.   
+2. New patient growth: The entry of Apple in the hearing health space via the launch of the AirPods Pro 2 is likely to increase patient awareness on hearing loss. The device acts as a test for hearing loss and has capability for mild to moderate hearing loss. Whilst this device is unlikely to directly drive a material increase in cochlear implant candidates, it has the potential to spur audiologists to tweak their business model to reduce bundled charges for hearing aids and professional service. This separation should assist the referral base for cochlear implants.   
+3. Investments portfolio optionality: Across CY25/26, COH's innovation fund has several investments which could commence first sales in the US.
+
+# Downside Risks
+
+1. Market share loss: Material reduction in COH market share driven by factors including (i) COH product recall due to reliability / safety issues, (ii) New feature launches from SOON or MED-EI, (iii) New market entrant especially in China. COH's reliability track record, R&D investment and manufacturing scale are key mitigating factors.   
+2. Supply chain shortages: Restriction of raw materials or critical minerals could impact availability of key inputs to COH's products. Whilst China is a Top 5 sourcing location for COH, we note the bulk of electronics, batteries and precious metals are sourced from Australia, the US and Switzerland. Pricing for products from these countries could increase should there be a global shortage which will likely weigh on COH's GM%.   
+3. Capacity constraints: As a specialized procedure, CI surgery is largely performed within a concentrated cohort of clinics and hospitals. Should the strategy to expand existing clinical capacity take longer to materialize, unit growth is likely to slow. Further, COH may need to increase sales and marketing spend to broaden its referral source which will weigh on earnings margins.
+
+# Price Target Risks and Methodology - Nanosonics Ltd.
+
+We value NAN at A\$4.50 based on a SOTP for Trophon and CORIS. We value the businesses separately as CORIS' stage of lifecycle (pre-revenue) in our view warrants a higher cost of capital and terminal growth assumption relative to Trophon's which is a more mature business. We value the Trophon business based on a blended $50\% / 50\%$ weighting between our DCF valuation and EV/EBIT relative valuation. Our DCF valuation is based on a WACC of $9.2\%$ and a terminal growth rate of $3.0\%$ . Our EV/EBIT multiple is based on the median of global competitors in the field of infection prevention. We value the CORIS business based on a blended $50\% / 50\%$ weighting between our DCF valuation and EV/Revenue relative valuation. Our DCF valuation is based on a WACC of $10\%$ and a terminal growth rate of $4.0\%$ . Our relative valuation is based on a EV/Revenue multiple to FY30 revenue which is then discounted to its present value based on a WACC of $10\%$ . The EV/Revenue multiple adopted is in line with ASX pre revenue MedTech peers. Key risks include: Launch of CORIS, Competition risks for Trophon, Departure of Key Management Personnel and product recalls for Trophon & CORIS.
+
+# Price Target Risks and Methodology - FPH.AX
+
+Our 12-month price target of A\$42.30 is based on a 50%/50% blended 10-year DCF (8.4% WACC and 4.0% TGR) and EV/EBIT valuation methodology. Our DCF valuation is based on a 10-year forecast of FPH's current business and new opportunities which include the US NHFT home market. Our EV/EBIT multiple for FPH is based on the stock's history relative to the index (ASX200) and relative to its peers, normalizing for differences in growth. Over the last 10 years, FPH's premium to the ASX200 has ranged from 1.5x-4.5x. We adopt a premium which is towards the top end of this range driven by the expansion in the company's TAM from the opportunity in anaesthesiology. Our EV/EBIT multiple reflects a growth adjusted ratio which is comparable to other MedTech growth stocks. Key risks include: (1) Material slowdown in US hospitals purchasing, (2) Market share decline and (3) Failure of NHFT US home clinical trial.
+
+# Price Target Risks and Methodology - RMD.AX
+
+Our 12-month price target of A\$46.20 is based on a 50%/50% blended DCF (8.1% WACC/3.0% TGR) and NTM EV/EBIT valuation methodology. Our DCF valuation is based on a 10-year forecast of RMD's current business and new opportunities which include High Flow Oxygen Therapy (HFOT). Our EV/EBIT multiple of 21x for RMD is based on the stock's history relative to the index (ASX200) and relative to its peers, normalising for differences in growth. Key risks include: (1) US tariffs implementation, (2) US reimbursement pressures, (3) Reduction in therapy compliance.
+
+# Disclosure Appendix
+
+# Reg AC
+
+We, Davin Thillainathan, CFA and Roy Taouk, hereby certify that all of the views expressed in this report accurately reflect our personal views about the subject company or companies and its or their securities. We also certify that no part of our compensation was, is or will be, directly or indirectly, related to the specific recommendations or views expressed in this report.
+
+Unless otherwise stated, the individuals listed on the cover page of this report are analysts in GS' Global Investment Research division.
+
+Contributing Authors: Davin Thillainathan, CFA GS Australia Pty Ltd, Roy Taouk GS Australia Pty Ltd.
+
+Unless otherwise stated, the individuals listed in the Contributing Authors disclosure of this report are analysts in GS' Global Investment Research division.
+
+# GS Factor Profile
+
+The GS Factor Profile provides investment context for a stock by comparing key attributes to the market (i.e. our universe of rated stocks) and its sector peers. The four key attributes depicted are: Growth, Financial Returns, Multiple (e.g. valuation) and Integrated (a composite of Growth, Financial Returns and Multiple). Growth, Financial Returns and Multiple are calculated by using normalized ranks for specific metrics for each stock. The normalized ranks for the metrics are then averaged and converted into percentiles for the relevant attribute. The precise calculation of each metric may vary depending on the fiscal year, industry and region, but the standard approach is as follows:
+
+Growth is based on a stock's forward-looking sales growth, EBITDA growth and EPS growth (for financial stocks, only EPS and sales growth), with a higher percentile indicating a higher growth company. Financial Returns is based on a stock's forward-looking ROE, ROCE and CROCI (for financial stocks, only ROE), with a higher percentile indicating a company with higher financial returns. Multiple is based on a stock's forward-looking P/E, P/B, price/dividend (P/D), EV/EBITDA, EV/FCF and EV/Debt Adjusted Cash Flow (DACF) (for financial stocks, only P/E, P/B and P/D), with a higher percentile indicating a stock trading at a higher multiple. The Integrated percentile is calculated as the average of the Growth percentile, Financial Returns percentile and (100% - Multiple percentile).
+
+Financial Returns and Multiple use the GS analyst forecasts at the fiscal year-end at least three quarters in the future. Growth uses inputs for the fiscal year at least seven quarters in the future compared with the year at least three quarters in the future (on a per-share basis for all metrics).
+
+For a more detailed description of how we calculate the GS Factor Profile, please contact your GS representative.
+
+# M&A Rank
+
+Across our global covera
+
+[中间内容因长度限制已省略]
+
+, including individuals from other parts of GS, do not necessarily reflect those of Global Investment Research and are not an official view of GS.
+
+Any third party referenced herein, including any salespeople, traders and other professionals or members of their household, may have positions in the products mentioned that are inconsistent with the views expressed by analysts named in this report.
+
+This research is not an offer to sell or the solicitation of an offer to buy any security in any jurisdiction where such an offer or solicitation would be illegal. It does not constitute a personal recommendation or take into account the particular investment objectives, financial situations, or needs of individual clients. Clients should consider whether any advice or recommendation in this research is suitable for their particular circumstances and, if appropriate, seek professional advice, including tax advice. The price and value of investments referred to in this research and the income from them may fluctuate. Past performance is not a guide to future performance, future returns are not guaranteed, and a loss of original capital may occur. Fluctuations in exchange rates could have adverse effects on the value or price of, or income derived from, certain investments.
+
+Certain transactions, including those involving futures, options, and other derivatives, give rise to substantial risk and are not suitable for all investors. Investors should review current options and futures disclosure documents which are available from GS sales representatives or at https://www.theocc.com/about/publications/character-risks.jsp and https://www.goldmansachs.com/disclosures/cftc\_fcm\_disclosures. Transaction costs may be significant in option strategies calling for multiple purchase and sales of options such as spreads. Supporting documentation will be supplied upon request.
+
+Differing Levels of Service provided by Global Investment Research: The level and types of services provided to you by GS Global Investment Research may vary as compared to that provided to internal and other external clients of GS, depending on various factors including your individual preferences as to the frequency and manner of receiving communication, your risk profile and investment focus and perspective (e.g., marketwide, sector specific, long term, short term), the size and scope of your overall client relationship with GS, and legal and regulatory constraints. As an example, certain clients may request to receive notifications when research on specific securities is published, and certain clients may request that specific data underlying analysts' fundamental analysis available on our internal client websites be delivered to them electronically through data feeds or otherwise. No change to an analyst's fundamental research views (e.g., ratings, price targets, or material changes to earnings estimates for equity securities), will be communicated to any client prior to inclusion of such information in a research report broadly disseminated through electronic publication to our internal client websites or through other means, as necessary, to all clients who are entitled to receive such reports.
+
+All research reports are disseminated and available to all clients simultaneously through electronic publication to our internal client websites. Not all research content is redistributed to our clients or available to third-party aggregators, nor is GS responsible for the redistribution of our research by third party aggregators. For research, models or other data related to one or more securities, markets or asset classes (including related services) that may be available to you, please contact your GS representative or go to https://research.gs.com.
+
+Disclosure information is also available at https://www.gs.com/research/hedge.html or from Research Compliance, 200 West Street, New York, NY 10282.
+
+# © 2026 GS.
+
+You are permitted to store, display, analyze, modify, reformat, and print the information made available to you via this service only for your own use. You may not resell or reverse engineer this information to calculate or develop any index for disclosure and/or marketing or create any other derivative works or commercial product(s), data or offering(s) without the express written consent of GS. You are not permitted to publish, transmit, or otherwise reproduce this information, in whole or in part, in any format to any third party without the express written consent of GS. This foregoing restriction includes, without limitation, using, extracting, downloading or retrieving this information, in whole or in part, to train or finetune a machine learning or artificial intelligence system, or to provide or reproduce this information, in whole or in part, as a prompt or input to any such system.
+"""

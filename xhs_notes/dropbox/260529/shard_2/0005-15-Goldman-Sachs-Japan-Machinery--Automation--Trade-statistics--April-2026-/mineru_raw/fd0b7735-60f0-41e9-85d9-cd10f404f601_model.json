@@ -1,0 +1,1840 @@
+[
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.079,
+                0.003,
+                0.298,
+                0.042
+            ],
+            "angle": 0,
+            "content": "Goldman Research Sachs"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.795,
+                0.006,
+                0.917,
+                0.022
+            ],
+            "angle": 0,
+            "content": "Equity Research"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.712,
+                0.028,
+                0.917,
+                0.043
+            ],
+            "angle": 0,
+            "content": "29 May 2026 | 12:38AM JST"
+        },
+        {
+            "type": "title",
+            "bbox": [
+                0.08,
+                0.075,
+                0.691,
+                0.128
+            ],
+            "angle": 0,
+            "content": "Japan Machinery: Automation: Trade statistics: April 2026 robot/Robodrill volume inferred from customs data"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.079,
+                0.172,
+                0.7,
+                0.351
+            ],
+            "angle": 0,
+            "content": "The Ministry of Finance announced April 2026 trade statistics (customs data) during morning trading on May 28. We use this data as an indicator of volume trends for Fanuc's (Sell) robots and Robodrill No. 30 vertical machining centers, and Yaskawa Electric's (Buy, on the CL) robots. Japanese companies have a large share of the global robot market and high domestic production ratios. Since Japan accounts for the majority of global robot production, we believe export volume trends from Japan to the rest of the world can be viewed as an indicator of investment in robots and automation, mainly in the auto and electronics industries. In this note, we outline our views on the robot industry and casing demand trends inferred from this month's data.",
+            "merge_prev": false
+        },
+        {
+            "type": "title",
+            "bbox": [
+                0.722,
+                0.174,
+                0.837,
+                0.186
+            ],
+            "angle": 0,
+            "content": "Yuichiro Isayama"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.722,
+                0.186,
+                0.813,
+                0.195
+            ],
+            "angle": 0,
+            "content": "+81(3)4587-9806",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.723,
+                0.195,
+                0.845,
+                0.204
+            ],
+            "angle": 0,
+            "content": "yuichiro.isayama@gs.com",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.723,
+                0.204,
+                0.865,
+                0.213
+            ],
+            "angle": 0,
+            "content": "GS Japan Co., Ltd.",
+            "merge_prev": false
+        },
+        {
+            "type": "title",
+            "bbox": [
+                0.723,
+                0.221,
+                0.82,
+                0.232
+            ],
+            "angle": 0,
+            "content": "Takeru Adachi"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.723,
+                0.233,
+                0.812,
+                0.242
+            ],
+            "angle": 0,
+            "content": "+81(3)4587-4067",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.723,
+                0.242,
+                0.831,
+                0.251
+            ],
+            "angle": 0,
+            "content": "takeru.adachi@gs.com",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.723,
+                0.251,
+                0.865,
+                0.26
+            ],
+            "angle": 0,
+            "content": "GS Japan Co., Ltd.",
+            "merge_prev": false
+        },
+        {
+            "type": "title",
+            "bbox": [
+                0.723,
+                0.269,
+                0.81,
+                0.28
+            ],
+            "angle": 0,
+            "content": "Takato Enoki"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.723,
+                0.281,
+                0.812,
+                0.29
+            ],
+            "angle": 0,
+            "content": "+81(3)4587-1739",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.723,
+                0.29,
+                0.825,
+                0.299
+            ],
+            "angle": 0,
+            "content": "takato.enoki@gs.com",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.723,
+                0.299,
+                0.865,
+                0.308
+            ],
+            "angle": 0,
+            "content": "GS Japan Co., Ltd.",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.08,
+                0.877,
+                0.916,
+                0.97
+            ],
+            "angle": 0,
+            "content": "GS does and seeks to do business with companies covered in its research reports. As a result, investors should be aware that the firm may have a conflict of interest that could affect the objectivity of this report. Investors should consider this report as only a single factor in making their investment decision. For Reg AC certification and other important disclosures, see the Disclosure Appendix, or go to www.gs.com/research/hedge.html. Analysts employed by non-US affiliates are not registered/qualified as research analysts with FINRA in the U.S."
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.082,
+                0.005,
+                0.185,
+                0.019
+            ],
+            "angle": 0,
+            "content": "GS"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.719,
+                0.008,
+                0.918,
+                0.022
+            ],
+            "angle": 0,
+            "content": "Japan Machinery: Automation"
+        },
+        {
+            "type": "table_caption",
+            "bbox": [
+                0.082,
+                0.052,
+                0.383,
+                0.067
+            ],
+            "angle": 0,
+            "content": "Exhibit 1: Robots: Trade statistics summary"
+        },
+        {
+            "type": "table",
+            "bbox": [
+                0.085,
+                0.073,
+                0.482,
+                0.22
+            ],
+            "angle": 0,
+            "content": "<table><tr><td colspan=\"5\">Robot: Japan</td></tr><tr><td></td><td>N. America</td><td>Europe</td><td>China</td><td>Global</td></tr><tr><td>Volume</td><td>2,065</td><td>1,991</td><td>6,206</td><td>14,271</td></tr><tr><td>yoy</td><td>-4%</td><td>74%</td><td>33%</td><td>41%</td></tr><tr><td>mom</td><td>-19%</td><td>13%</td><td>-18%</td><td>-4%</td></tr><tr><td>Value (¥mn)</td><td>5,569</td><td>5,187</td><td>10,899</td><td>27,532</td></tr><tr><td>yoy</td><td>-9%</td><td>87%</td><td>41%</td><td>33%</td></tr><tr><td>mom</td><td>-22%</td><td>7%</td><td>-18%</td><td>-7%</td></tr><tr><td>ASP (¥mn)</td><td>2.70</td><td>2.61</td><td>1.76</td><td>1.93</td></tr><tr><td>yoy</td><td>-5%</td><td>7%</td><td>6%</td><td>-6%</td></tr><tr><td>mom</td><td>-4%</td><td>-5%</td><td>0%</td><td>-4%</td></tr></table>"
+        },
+        {
+            "type": "table",
+            "bbox": [
+                0.086,
+                0.23,
+                0.482,
+                0.381
+            ],
+            "angle": 0,
+            "content": "<table><tr><td colspan=\"5\">Robot: Fanuc (GSE)</td></tr><tr><td></td><td>N. America</td><td>Europe</td><td>China</td><td>Global</td></tr><tr><td>Volume</td><td>1,633</td><td>1,578</td><td>4,665</td><td>9,398</td></tr><tr><td>yoy</td><td>-1%</td><td>142%</td><td>38%</td><td>49%</td></tr><tr><td>mom</td><td>-23%</td><td>18%</td><td>-14%</td><td>-4%</td></tr><tr><td>Value (¥mn)</td><td>4,834</td><td>4,532</td><td>9,245</td><td>20,536</td></tr><tr><td>yoy</td><td>-8%</td><td>130%</td><td>40%</td><td>35%</td></tr><tr><td>mom</td><td>-23%</td><td>15%</td><td>-14%</td><td>-8%</td></tr><tr><td>ASP (¥mn)</td><td>2.96</td><td>2.87</td><td>1.98</td><td>2.19</td></tr><tr><td>yoy</td><td>-7%</td><td>-5%</td><td>1%</td><td>-9%</td></tr><tr><td>mom</td><td>-1%</td><td>-2%</td><td>0%</td><td>-4%</td></tr></table>"
+        },
+        {
+            "type": "table_footnote",
+            "bbox": [
+                0.08,
+                0.387,
+                0.449,
+                0.399
+            ],
+            "angle": 0,
+            "content": "Source: Ministry of Finance, GS Global Investment Research"
+        },
+        {
+            "type": "table_caption",
+            "bbox": [
+                0.51,
+                0.052,
+                0.834,
+                0.067
+            ],
+            "angle": 0,
+            "content": "Exhibit 2: Robodrills: Trade statistics summary"
+        },
+        {
+            "type": "table",
+            "bbox": [
+                0.515,
+                0.073,
+                0.912,
+                0.22
+            ],
+            "angle": 0,
+            "content": "<table><tr><td colspan=\"5\">Robodrill: Japan</td></tr><tr><td></td><td>Asia</td><td>China</td><td>AeCJ</td><td>Global</td></tr><tr><td>Volume</td><td>1,571</td><td>837</td><td>734</td><td>1,642</td></tr><tr><td>yoy</td><td>-25%</td><td>-27%</td><td>-22%</td><td>-24%</td></tr><tr><td>mom</td><td>12%</td><td>-6%</td><td>43%</td><td>8%</td></tr><tr><td>Value (¥mn)</td><td>10,925</td><td>5,991</td><td>4,934</td><td>12,621</td></tr><tr><td>yoy</td><td>-8%</td><td>-1%</td><td>-15%</td><td>-5%</td></tr><tr><td>mom</td><td>0%</td><td>-6%</td><td>7%</td><td>-5%</td></tr><tr><td>ASP (¥mn)</td><td>6.95</td><td>7.16</td><td>6.72</td><td>7.69</td></tr><tr><td>yoy</td><td>23%</td><td>36%</td><td>9%</td><td>24%</td></tr><tr><td>mom</td><td>-11%</td><td>1%</td><td>-25%</td><td>-12%</td></tr></table>"
+        },
+        {
+            "type": "table",
+            "bbox": [
+                0.515,
+                0.23,
+                0.912,
+                0.381
+            ],
+            "angle": 0,
+            "content": "<table><tr><td colspan=\"5\">Robodrill: Fanuc (GSE)</td></tr><tr><td></td><td>Asia</td><td>China</td><td>AeCJ</td><td>Global</td></tr><tr><td>Volume</td><td>1,147</td><td>621</td><td>526</td><td>1,149</td></tr><tr><td>yoy</td><td>-24%</td><td>-16%</td><td>-31%</td><td>-24%</td></tr><tr><td>mom</td><td>5%</td><td>-11%</td><td>34%</td><td>4%</td></tr><tr><td>Value (¥mn)</td><td>6,789</td><td>3,869</td><td>2,920</td><td>6,842</td></tr><tr><td>yoy</td><td>-17%</td><td>-3%</td><td>-30%</td><td>-18%</td></tr><tr><td>mom</td><td>-7%</td><td>-12%</td><td>1%</td><td>-9%</td></tr><tr><td>ASP (¥mn)</td><td>5.92</td><td>6.23</td><td>5.55</td><td>5.95</td></tr><tr><td>yoy</td><td>9%</td><td>16%</td><td>1%</td><td>8%</td></tr><tr><td>mom</td><td>-11%</td><td>-1%</td><td>-24%</td><td>-12%</td></tr></table>"
+        },
+        {
+            "type": "table_footnote",
+            "bbox": [
+                0.51,
+                0.387,
+                0.879,
+                0.399
+            ],
+            "angle": 0,
+            "content": "Source: Ministry of Finance, GS Global Investment Research"
+        },
+        {
+            "type": "title",
+            "bbox": [
+                0.271,
+                0.419,
+                0.763,
+                0.435
+            ],
+            "angle": 0,
+            "content": "Robot export volume (Fanuc, Yaskawa Electric, and Japan overall)"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.272,
+                0.438,
+                0.918,
+                0.629
+            ],
+            "angle": 0,
+            "content": "Fanuc: We estimate that Fanuc robots made at its Yamanashi main plant and its Tsukuba plant account for the bulk of exports from Tokyo/Yokohama. We believe the mom decline in export volume is attributable to the unwinding of the fiscal year-end effect. We think mom momentum of \\(-14\\%\\) in export volume to China suggests that Fanuc is not seeing the same sustained growth as some machine tools and FA equipment. We assume that companies with a strong presence in smaller 6-axis or SCARA robots are better positioned to benefit from AI-related demand in China. Although there are differences in the prior-year comparison base, yoy momentum for North America has also turned negative, and we will need to watch for whether the environment here is also changing.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.272,
+                0.637,
+                0.918,
+                0.809
+            ],
+            "angle": 0,
+            "content": "Yaskawa Electric (global exports from Moji in April: 1,309 units, +35% yoy/+33% mom): Yaskawa Electric is the only major robot maker with a production base in Kyushu, and we therefore believe its robots account for the majority of export volume from the port of Moji. Exports were flat to down for South Korea (372 units; 0% mom) and China (104 units; -21% mom). At the same time, the trend in exports to India (381 units) improved, rising +140% mom. Given the characteristics of the company's regional exports, we believe the increase was mainly driven by automotive-related projects, and reflects project circumstances specific to India rather than a global trend.",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.082,
+                0.955,
+                0.16,
+                0.967
+            ],
+            "angle": 0,
+            "content": "29 May 2026"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.908,
+                0.956,
+                0.917,
+                0.965
+            ],
+            "angle": 0,
+            "content": "2"
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.082,
+                0.005,
+                0.185,
+                0.018
+            ],
+            "angle": 0,
+            "content": "GS"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.719,
+                0.009,
+                0.918,
+                0.022
+            ],
+            "angle": 0,
+            "content": "Japan Machinery: Automation"
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.081,
+                0.052,
+                0.455,
+                0.081
+            ],
+            "angle": 0,
+            "content": "Exhibit 3: Fanuc: Robot shipment value by destination (GSe)"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.088,
+                0.098,
+                0.481,
+                0.27
+            ],
+            "angle": 0,
+            "content": "| Date     | Total | US   | Europe | China |\n|----------|-------|------|--------|-------|\n| 2010/01  | 1000  | 500  | 300    | 200   |\n| 2011/01  | 2000  | 800  | 400    | 300   |\n| 2012/01  | 3000  | 1200 | 600    | 400   |\n| 2013/01  | 4000  | 1500 | 800    | 500   |\n| 2014/01  | 5000  | 1800 | 1000   | 600   |\n| 2015/01  | 6000  | 2200 | 1200   | 700   |\n| 2016/01  | 7000  | 2500 | 1500   | 800   |\n| 2017/01  | 8000  | 3000 | 1800   | 900   |\n| 2018/01  | 9000  | 3500 | 2200   | 1100  |\n| 2019/01  | 10000 | 4000 | 2500   | 1300  |\n| 2020/01  | 11000 | 4500 | 3000   | 1500  |\n| 2021/01  | 12000 | 5000 | 3500   | 1700  |\n| 2022/01  | 13000 | 5500 | 4000   | 1900  |\n| 2023/01  | 14000 | 6000 | 4500   | 2100  |\n| 2024/01  | 15000 | 6500 | 5000   | 2300  |\n| 2025/01  | 16000 | 7000 | 5500   | 2500  |\n| 2026/01  | 17000 | 7500 | 6000   | 2700  |",
+            "sub_type": "line"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.081,
+                0.29,
+                0.449,
+                0.302
+            ],
+            "angle": 0,
+            "content": "Source: Ministry of Finance, GS Global Investment Research"
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.51,
+                0.052,
+                0.885,
+                0.067
+            ],
+            "angle": 0,
+            "content": "Exhibit 4: Japan: Robot shipment value by destination"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.517,
+                0.098,
+                0.913,
+                0.27
+            ],
+            "angle": 0,
+            "content": "| Date     | Total  | US    | Europe | China |\n|----------|--------|-------|--------|-------|\n| 2010/01  | 5000   | 1000  | 500    | 500   |\n| 2011/01  | 8000   | 1500  | 800    | 800   |\n| 2012/01  | 12000  | 2000  | 1200   | 1200  |\n| 2013/01  | 15000  | 2500  | 1500   | 1500  |\n| 2014/01  | 18000  | 3000  | 1800   | 1800  |\n| 2015/01  | 22000  | 3500  | 2200   | 2200  |\n| 2016/01  | 25000  | 4000  | 2500   | 2500  |\n| 2017/01  | 30000  | 4500  | 3000   | 3000  |\n| 2018/01  | 35000  | 5000  | 3500   | 3500  |\n| 2019/01  | 40000  | 5500  | 4000   | 4000  |\n| 2020/01  | 45000  | 6000  | 4500   | 4500  |\n| 2021/01  | 55000  | 7000  | 5500   | 5500  |\n| 2022/01  | 65000  | 8500  | 6500   | 6500  |\n| 2023/01  | 75000  | 12500 | 7500   | 7500  |\n| 2024/01  | 85000  | 15500 | 8500   | 8500  |\n| 2025/01  | 95000  | 18500 | 9500   | 9500  |\n| 2026/01  | 115667 | 23567 | 13567  | 13567 |",
+            "sub_type": "line"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.51,
+                0.29,
+                0.863,
+                0.313
+            ],
+            "angle": 0,
+            "content": "Source: Ministry of Finance, Data compiled by GS Global Investment Research"
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.081,
+                0.332,
+                0.439,
+                0.361
+            ],
+            "angle": 0,
+            "content": "Exhibit 5: Fanuc: Robot export volume to China and average export price (GSe)"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.088,
+                0.379,
+                0.485,
+                0.552
+            ],
+            "angle": 0,
+            "content": "| Date     | Unit (LHS) | ASP (RHS) |\n|----------|------------|-----------|\n| 2010/01  | ~500       | ~2,500    |\n| 2011/01  | ~700       | ~2,800    |\n| 2012/01  | ~800       | ~3,000    |\n| 2013/01  | ~900       | ~3,200    |\n| 2014/01  | ~1,000     | ~3,500    |\n| 2015/01  | ~1,200     | ~3,300    |\n| 2016/01  | ~1,500     | ~3,100    |\n| 2017/01  | ~1,800     | ~3,000    |\n| 2018/01  | ~2,000     | ~2,900    |\n| 2019/01  | ~2,200     | ~2,800    |\n| 2020/01  | ~2,500     | ~2,700    |\n| 2021/01  | ~3,500     | ~2,600    |\n| 2022/01  | ~4,500     | ~2,500    |\n| 2023/01  | ~5,500     | ~2,400    |\n| 2024/01  | ~4,500     | ~2,300    |\n| 2025/01  | ~5,500     | ~2,200    |\n| 2026/01  | ~6,500     | ~2,100    |",
+            "sub_type": "line"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.081,
+                0.569,
+                0.449,
+                0.581
+            ],
+            "angle": 0,
+            "content": "Source: Ministry of Finance, GS Global Investment Research"
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.51,
+                0.332,
+                0.901,
+                0.361
+            ],
+            "angle": 0,
+            "content": "Exhibit 6: Fanuc: Robot export volume to North America and average export price (GSe)"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.517,
+                0.376,
+                0.908,
+                0.555
+            ],
+            "angle": 0,
+            "content": "| Date | Unit (LHS) (Units) | ASP (RHS) ($'000$) |\n|---|---|---|\n| 2010/01 | 300 | 28 |\n| 2010/07 | 500 | 24 |\n| 2011/01 | 800 | 29 |\n| 2011/07 | 1000 | 30 |\n| 2012/01 | 1200 | 35 |\n| 2012/07 | 1300 | 36 |\n| 2013/01 | 1100 | 33 |\n| 2013/07 | 1200 | 28 |\n| 2014/01 | 1300 | 25 |\n| 2014/07 | 1400 | 24 |\n| 2015/01 | 1500 | 23 |\n| 2015/07 | 1600 | 22 |\n| 2016/01 | 1400 | 23 |\n| 2016/07 | 1800 | 24 |\n| 2017/01 | 2500 | 25 |\n| 2017/07 | 2600 | 24 |\n| 2018/01 | 2400 | 23 |\n| 2018/07 | 2300 | 22 |\n| 2019/01 | 500 | 24 |\n| 2019/07 | 800 | 25 |\n| 2020/01 | 1400 | 24 |\n| 2020/07 | 1600 | 23 |\n| 2021/01 | 1800 | 22 |\n| 2021/07 | 2800 | 21 |\n| 2022/01 | 2600 | 23 |\n| 2022/07 | 3800 | 19 |\n| 2023/01 | 450 | 35 |\n| 2023/07 | 1600 | 24 |\n| 2024/01 | 450 | 25 |\n| 2024/07 | 850 | 23 |\n| 2025/01 | 1550 | 24 |\n| 2025/07 | 1650 | 23 |\n| 2026/01 | 1550 | 23 |",
+            "sub_type": "line"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.51,
+                0.569,
+                0.879,
+                0.582
+            ],
+            "angle": 0,
+            "content": "Source: Ministry of Finance, GS Global Investment Research"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.082,
+                0.955,
+                0.16,
+                0.967
+            ],
+            "angle": 0,
+            "content": "29 May 2026"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.908,
+                0.956,
+                0.917,
+                0.965
+            ],
+            "angle": 0,
+            "content": "3"
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.082,
+                0.005,
+                0.185,
+                0.019
+            ],
+            "angle": 0,
+            "content": "GS"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.719,
+                0.009,
+                0.918,
+                0.022
+            ],
+            "angle": 0,
+            "content": "Japan Machinery: Automation"
+        },
+        {
+            "type": "title",
+            "bbox": [
+                0.271,
+                0.04,
+                0.873,
+                0.076
+            ],
+            "angle": 0,
+            "content": "Vertical machining center export volume from Tokyo/Yokohama (assumes Fanuc accounts for the majority of export volume)"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.273,
+                0.079,
+                0.908,
+                0.309
+            ],
+            "angle": 0,
+            "content": "Fanuc: We estimate that Robodrills made at Fanuc's Tsukuba plant account for the bulk of the No. 30 vertical machining centers exported to Asia from Tokyo/Yokohama customs. Mom momentum in export volume to China was down \\(-11\\%\\), and we believe this is due to a roll over from peak post-Lunar New Year demand from major customers, such as leading US smartphone makers. Moreover, the peak season ended early, with exports down \\(-16\\%\\) yoy. We assume momentum in the current cycle may have been limited due to factors such as persistently high labor costs. While momentum in export volume to India grew a sharp \\(+328\\%\\) mom, the volume figure is low compared with past levels. Volume still looks too small to suggest that demand from US smartphone makers has completely shifted to India, but this warrants continued monitoring. We think that smartphone-related demand could remain limited in CY26 although this needs further monitoring.",
+            "merge_prev": false
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.08,
+                0.331,
+                0.471,
+                0.362
+            ],
+            "angle": 0,
+            "content": "Exhibit 7: Fanuc: Breakdown of Robodrill export volume by region (GSe)"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.09,
+                0.377,
+                0.48,
+                0.555
+            ],
+            "angle": 0,
+            "content": "| Date | Mainland China plus HK (units) | Vietnam (units) | India (units) |\n|---|---|---|---|\n| 2010/01 | 800 | 0 | 0 |\n| 2010/07 | 1000 | 0 | 0 |\n| 2011/01 | 1200 | 0 | 0 |\n| 2011/07 | 1500 | 0 | 0 |\n| 2012/01 | 2500 | 0 | 0 |\n| 2012/07 | 3000 | 0 | 0 |\n| 2013/01 | 2800 | 0 | 0 |\n| 2013/07 | 1500 | 0 | 0 |\n| 2014/01 | 3500 | 0 | 0 |\n| 2014/07 | 3600 | 3500 | 0 |\n| 2015/01 | 3500 | 4800 | 0 |\n| 2015/07 | 3500 | 3500 | 500 |\n| 2016/01 | 1500 | 500 | 50 |\n| 2016/07 | 1500 | 500 | 50 |\n| 2017/01 | 2200 | 500 | 50 |\n| 2017/07 | 2500 | 500 | 50 |\n| 2018/01 | 2200 | 500 | 50 |\n| 2018/07 | 2500 | 500 | 50 |\n| 2019/01 | 500 | 50 | 5 |\n| 2019/07 | 500 | 50 | 5 |\n| 2020/01 | 500 | 50 | 5 |\n| 2020/07 | 1200 | 50 | 5 |\n| 2021/01 | 2800 | 50 | 5 |\n| 2021/07 | 3500 | 50 | 5 |\n| 2022/01 | 1500 | 50 | 5 |\n| 2022/07 | 1500 | 50 | 5 |\n| 2023/01 | 800 | 50 | 5 |\n| 2023/07 | 800 | 50 | 5 |\n| 2024/01 | 800 | 50 | 5 |\n| 2024/07 | 800 | 50 | 5 |\n| 2025/01 | 800 | 50 | 856 |\n| 2025/07 | 800 | 50 | 856 |\n| 2026/01 | 800 | 50 | 856 |",
+            "sub_type": "area"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.081,
+                0.569,
+                0.449,
+                0.582
+            ],
+            "angle": 0,
+            "content": "Source: Ministry of Finance, GS Global Investment Research"
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.509,
+                0.331,
+                0.89,
+                0.362
+            ],
+            "angle": 0,
+            "content": "Exhibit 8: Fanuc: Robodrill export volume to China and average export price (GSe)"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.517,
+                0.373,
+                0.915,
+                0.557
+            ],
+            "angle": 0,
+            "content": "| Date     | Unit (LHS) | ASP (RHS) |\n|----------|------------|-----------|\n| 2010/01  | ~1,000     | ~6,000    |\n| 2011/01  | ~1,500     | ~6,500    |\n| 2012/01  | ~2,000     | ~7,000    |\n| 2013/01  | ~3,000     | ~8,000    |\n| 2014/01  | ~1,500     | ~6,500    |\n| 2015/01  | ~2,500     | ~12,000   |\n| 2016/01  | ~1,500     | ~8,000    |\n| 2017/01  | ~2,000     | ~9,000    |\n| 2018/01  | ~1,500     | ~7,500    |\n| 2019/01  | ~2,500     | ~12,500   |\n| 2020/01  | ~1,500     | ~8,500    |\n| 2021/01  | ~2,500     | ~9,500    |\n| 2022/01  | ~1,500     | ~7,500    |\n| 2023/01  | ~1,500     | ~8,500    |\n| 2024/01  | ~1,500     | ~7,500    |\n| 2025/01  | ~1,500     | ~8,500    |\n| 2026/01  | ~1,500     | ~8,500    |",
+            "sub_type": "line"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.51,
+                0.569,
+                0.879,
+                0.582
+            ],
+            "angle": 0,
+            "content": "Source: Ministry of Finance, GS Global Investment Research"
+        },
+        {
+            "type": "title",
+            "bbox": [
+                0.271,
+                0.602,
+                0.744,
+                0.618
+            ],
+            "angle": 0,
+            "content": "Price Target Risks and Methodology - Yaskawa Electric (6506.T)"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.271,
+                0.62,
+                0.88,
+                0.655
+            ],
+            "angle": 0,
+            "content": "Our 12-month target price of ¥9,200 is based on FY2/28E EV/EBITDA, applying the sector-average multiple of 10X and a 90% sector-relative premium.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.271,
+                0.667,
+                0.908,
+                0.738
+            ],
+            "angle": 0,
+            "content": "Key downside risks include (1) a slowdown in semiconductor and AI Capex related business, (2) slower-than-expected results from cost optimization measures, and (3) disappointment in the capital policy and growth strategy in the next medium-term plan and long-term vision.",
+            "merge_prev": false
+        },
+        {
+            "type": "title",
+            "bbox": [
+                0.271,
+                0.763,
+                0.666,
+                0.779
+            ],
+            "angle": 0,
+            "content": "Price Target Risks and Methodology - Fanuc (6954.T)"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.271,
+                0.781,
+                0.879,
+                0.815
+            ],
+            "angle": 0,
+            "content": "Our 12-month target price of ¥5,600 is based on FY3/28E EV/EBITDA, applying the sector-average multiple of 10X and a 70% sector-relative premium.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.271,
+                0.828,
+                0.908,
+                0.88
+            ],
+            "angle": 0,
+            "content": "Key upside risks include sales in the FA business recovering to levels above past peaks, greater-than-expected improvement in robot business margins, and share buybacks or other moves to strengthen shareholder returns.",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.082,
+                0.955,
+                0.16,
+                0.967
+            ],
+            "angle": 0,
+            "content": "29 May 2026"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.908,
+                0.956,
+                0.917,
+                0.965
+            ],
+            "angle": 0,
+            "content": "4"
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.082,
+                0.006,
+                0.185,
+                0.018
+            ],
+            "angle": 0,
+            "content": "GS"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.719,
+                0.009,
+                0.918,
+                0.022
+            ],
+            "angle": 0,
+            "content": "Japan Machinery: Automation"
+        },
+        {
+            "type": "title",
+            "bbox": [
+                0.081,
+                0.04,
+                0.253,
+                0.06
+            ],
+            "angle": 0,
+            "content": "Disclosure Appendix"
+        },
+        {
+            "type": "title",
+            "bbox": [
+                0.081,
+                0.082,
+                0.137,
+                0.096
+            ],
+            "angle": 0,
+            "content": "Reg AC"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.082,
+                0.104,
+                0.911,
+                0.139
+            ],
+            "angle": 0,
+            "content": "We, Yuichiro Isayama, Takeru Adachi and Takato Enoki, hereby certify that all of the views expressed in this report accurately reflect our personal views about the subject company or companies and its or their securities. We also certify that no part of our compensation was, is or will be, directly or indirectly, related to the specific recommendations or views expressed in this report.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.082,
+                0.144,
+                0.886,
+                0.157
+            ],
+            "angle": 0,
+            "content": "Unless otherwise stated, the individuals listed on the cover page of this report are analysts in GS' Global Investment Research division.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.082,
+                0.163,
+                0.898,
+                0.187
+            ],
+            "angle": 0,
+            "content": "Contributing Authors: Yuichiro Isayama GS Japan Co., Ltd., Takeru Adachi GS Japan Co., Ltd., Takato Enoki GS Japan Co., Ltd..",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.082,
+                0.192,
+                0.895,
+                0.216
+            ],
+            "angle": 0,
+            "content": "Unless otherwise stated, the individuals listed in the Contributing Authors disclosure of this report are analysts in GS' Global Investment Research division.",
+            "merge_prev": false
+        },
+        {
+            "type": "title",
+            "bbox": [
+                0.082,
+                0.228,
+                0.208,
+                0.242
+            ],
+            "angle": 0,
+            "content": "GS Factor Profile"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.082,
+                0.242,
+                0.916,
+                0.299
+            ],
+            "angle": 0,
+            "content": "The GS Factor Profile provides investment context for a stock by comparing key attributes to the market (i.e. our universe of rated stocks) and its sector peers. The four key attributes depicted are: Growth, Financial Returns, Multiple (e.g. valuation) and Integrated (a composite of Growth, Financial Returns and Multiple). Growth, Financial Returns and Multiple are calculated by using normalized ranks for specific metrics for each stock. The normalized ranks for the metrics are then averaged and converted into percentiles for the relevant attribute. The precise calculation of each metric may vary depending on the fiscal year, industry and region, but the standard approach is as follows:",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.082,
+                0.304,
+                0.907,
+                0.372
+            ],
+            "angle": 0,
+            "content": "Growth is based on a stock's forward-looking sales growth, EBITDA growth and EPS growth (for financial stocks, only EPS and sales growth), with a higher percentile indicating a higher growth company. Financial Returns is based on a stock's forward-looking ROE, ROCE and CROCI (for financial stocks, only ROE), with a higher percentile indicating a company with higher financial returns. Multiple is based on a stock's forward-looking P/E, P/B, price/dividend (P/D), EV/EBITDA, EV/FCF and EV/Debt Adjusted Cash Flow (DACF) (for financial stocks, only P/E, P/B and P/D), with a higher percentile indicating a stock trading at a higher multiple. The Integrated percentile is calculated as the average of the Growth percentile, Financial Returns percentile and (100% - Multiple percentile).",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.082,
+                0.378,
+                0.911,
+                0.402
+            ],
+            "angle": 0,
+            "content": "Financial Returns and Multiple use the GS analyst forecasts at the fiscal year-end at least three quarters in the future. Growth uses inputs for the fiscal year at least seven quarters in the future compared with the year at least three quarters in the future (on a per-share basis for all metrics).",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.082,
+                0.408,
+                0.703,
+                0.42
+            ],
+            "angle": 0,
+            "content": "For a more detailed description of how we calculate the GS Factor Profile, please contact your GS representative.",
+            "merge_prev": false
+        },
+        {
+            "type": "title",
+            "bbox": [
+                0.082,
+                0.433,
+                0.162,
+                0.446
+            ],
+            "angle": 0,
+            "content": "M&A Rank"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.082,
+                0.447,
+                0.911,
+                0.513
+            ],
+            "angle": 0,
+            "content": "Across our global coverage, we examine stocks using an M&A framework, considering both qualitative factors and quantitative factors (which may vary across sectors and regions) to incorporate the potential that certain companies could be acquired. We then assign a M&A rank as a means of scoring companies under our rated coverage from 1 to 3, with 1 representing high (30%-50%) probability of the company becoming an acquisition target, 2 representing medium (15%-30%) probability and 3 representing low (0%-15%) probability. For companies ranked 1 or 2, in line with our standard departmental guidelines we incorporate an M&A component into our target price. M&A rank of 3 is considered immaterial and therefore does not factor into our price target, and may or may not be discussed in research.",
+            "merge_prev": false
+        },
+        {
+            "type": "title",
+            "bbox": [
+                0.082,
+                0.527,
+                0.154,
+                0.539
+            ],
+            "angle": 0,
+            "content": "Quantum"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.082,
+                0.539,
+                0.888,
+                0.562
+            ],
+            "angle": 0,
+            "content": "Quantum is GS' proprietary database providing access to detailed financial statement histories, forecasts and ratios. It can be used for in-depth analysis of a single company, or to make comparisons between companies in different sectors and markets.",
+            "merge_prev": false
+        },
+        {
+            "type": "title",
+            "bbox": [
+                0.082,
+                0.575,
+                0.169,
+                0.588
+            ],
+            "angle": 0,
+            "content": "Disclosures"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.082,
+                0.588,
+                0.911,
+                0.622
+            ],
+            "angle": 0,
+            "content": "The rating(s) for Fanuc and Yaskawa Electric is/are relative to the other companies in its/their coverage universe: AeroEdge, CKD, Daifuku, Daikin Industries, Fanuc, Harmonic Drive Systems, Hoshizaki, IHI, Japan Steel Works, Kawasaki Heavy Industries, Keyence, Makita, Misumi Group, Mitsubishi Heavy Industries, Okuma, Omron, SKY Perfect JSAT Corp, SMC, THK, Yaskawa Electric",
+            "merge_prev": false
+        },
+        {
+            "type": "title",
+            "bbox": [
+                0.082,
+                0.635,
+                0.386,
+                0.649
+            ],
+            "angle": 0,
+            "content": "Company-specific regulatory disclosures"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.082,
+                0.649,
+                0.903,
+                0.671
+            ],
+            "angle": 0,
+            "content": "The following disclosures relate to relationships between The GS Group, Inc. (with its affiliates, “GS”) and companies covered by GS Global Investment Research and referred to in this research.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.082,
+                0.677,
+                0.754,
+                0.69
+            ],
+            "angle": 0,
+            "content": "GS had a non-securities services client relationship during the past 12 months with: Yaskawa Electric (¥7,136)",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.082,
+                0.696,
+                0.426,
+                0.708
+            ],
+            "angle": 0,
+            "content": "There are no company-specific disclosures for: Fanuc (¥7,984)",
+            "merge_prev": false
+        },
+        {
+            "type": "title",
+            "bbox": [
+                0.082,
+                0.72,
+                0.502,
+                0.735
+            ],
+            "angle": 0,
+            "content": "Distribution of ratings/investment banking relationships"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.082,
+                0.735,
+                0.464,
+                0.746
+            ],
+            "angle": 0,
+            "content": "GS Investment Research global Equity coverage universe",
+            "merge_prev": false
+        },
+        {
+            "type": "table",
+            "bbox": [
+                0.082,
+                0.754,
+                0.761,
+                0.805
+            ],
+            "angle": 0,
+            "content": "<table><tr><td rowspan=\"2\"></td><td colspan=\"3\">Rating Distribution</td><td colspan=\"3\">Investment Banking Relationships</td></tr><tr><td>Buy</td><td>Hold</td><td>Sell</td><td>Buy</td><td>Hold</td><td>Sell</td></tr><tr><td>Global</td><td>50%</td><td>34%</td><td>16%</td><td>65%</td><td>60%</td><td>45%</td></tr></table>"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.082,
+                0.816,
+                0.905,
+                0.873
+            ],
+            "angle": 0,
+            "content": "As of April 1, 2026, GS Global Investment Research had investment ratings on 3,074 equity securities. GS assigns stocks as Buys and Sells on various regional Investment Lists; stocks not so assigned are deemed Neutral. Such assignments equate to Buy, Hold and Sell for the purposes of the above disclosure required by the FINRA Rules. See ‘Ratings, Coverage universe and related definitions’ below. The Investment Banking Relationships chart reflects the percentage of subject companies within each rating category for whom GS has provided investment banking services within the previous twelve months.",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.082,
+                0.955,
+                0.16,
+                0.967
+            ],
+            "angle": 0,
+            "content": "29 May 2026"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.908,
+                0.956,
+                0.916,
+                0.965
+            ],
+            "angle": 0,
+            "content": "5"
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.082,
+                0.006,
+                0.185,
+                0.018
+            ],
+            "angle": 0,
+            "content": "GS"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.719,
+                0.009,
+                0.918,
+                0.022
+            ],
+            "angle": 0,
+            "content": "Japan Machinery: Automation"
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.081,
+                0.04,
+                0.368,
+                0.056
+            ],
+            "angle": 0,
+            "content": "Price target and rating history chart(s)"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.084,
+                0.069,
+                0.479,
+                0.254
+            ],
+            "angle": 0,
+            "content": "| Date       | Stock Price | Index Price | Rating | Price Target | Price Target at Removal | Not Covered by Current Analyst | TOPIX |\n|------------|-------------|-------------|--------|--------------|--------------------------|-------------------------------|-------|\n| Jul 8      | 7800        | 1,500       |        |              |                          |                               |       |\n| Oct 13     | 6300        | 3,500       |        |              |                          |                               |       |\n| Jul 14     | 7500        | 3,000       |        |              |                          |                               |       |\n| Jul 15     | 6700        | 2,500       |        |              |                          |                               |       |\n| Jul 16     | 6400        | 3,000       |        |              |                          |                               |       |\n| Jul 17     | 5500        | 2,500       |        |              |                          |                               |       |\n| Jul 18     | 5300        | 2,500       |        |              |                          |                               |       |\n| Jul 19     | 4600        | 2,500       |        |              |                          |                               |       |\n| Jul 20     | 3900        | 2,500       |        |              |                          |                               |       |\n| Jul 21     | 3700        | 2,500       |        |              |                          |                               |       |\n| Jul 22     | 3000        | 2,500       |        |              |                          |                               |       |\n| Jul 23     | 3400        | 2,500       |        |              |                          |                               |       |\n| Jul 24     | 5000        | 2,500       |        |              |                          |                               |       |\n| Jul 25     | 6000        | 2,500       |        |              |                          |                               |       |\n| Jul 26     | 6300        | 2,500       |        |              |                          |                               |       |\nSource: GS Investment Research for ratings and price targets; FactSet closing prices as of 3/31/2026.",
+            "sub_type": "line"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.082,
+                0.266,
+                0.469,
+                0.283
+            ],
+            "angle": 0,
+            "content": "The price targets shown should be considered in the context of all prior published GS, which may or may not have included price targets, as well as developments relating to the company, its industry and financial markets."
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.513,
+                0.069,
+                0.908,
+                0.254
+            ],
+            "angle": 0,
+            "content": "| Date       | Stock Price | Index Price | Rating | Price Target | Not Covered by Current Analyst |\n|------------|-------------|-------------|--------|--------------|-------------------------------|\n| Jul 13     | 3,000       | 1,500       | B      |              |                               |\n|            |             |             |        |              |                               |\n|            |             |             |        |              |                               |\n|            |             |             |        |              |                               |\n|            |             |             |        |              |                               |\n|            |             |             |        |              |                               |\n|            |             |             |        |              |                               |\n|            |             |             |        |              |                               |\n|            |             |             |        |              |                               |\n|            | D           |             |        |              |                               |\n|            | D           |             |        |              |                               |\n|            | D           |             |        |              |                               |\n|            | D           |             |        |              |                               |\n|            | D           |             |        |              |                               |\n|            | D           |             |        |              |                               |\n|            | D           |             |        |              |                               |\n|            | D           | D           |        |              |                               |\n|            | D           | D           |        |              |                               |\n|            | D           | D           |        |              |                               |\n|            | D           | D           |        |              |                               |\n|            | D           | D           |        |              |                               |\n|            | D           | D           |        |              |                               |\n|            | D           | D           |        |              |                               |\n|            (Note: Some values are not explicitly labeled as 'B' or 'S') in the provided code. The actual values may vary based on the provided code. Values are estimated based on the given code. )",
+            "sub_type": "line"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.512,
+                0.266,
+                0.899,
+                0.283
+            ],
+            "angle": 0,
+            "content": "The price targets shown should be considered in the context of all prior published GS, which may or may not have included price targets, as well as developments relating to the company, its industry and financial markets."
+        },
+        {
+            "type": "table_caption",
+            "bbox": [
+                0.081,
+                0.31,
+                0.289,
+                0.325
+            ],
+            "angle": 0,
+            "content": "Target price history table(s)"
+        },
+        {
+            "type": "table_caption",
+            "bbox": [
+                0.081,
+                0.328,
+                0.185,
+                0.341
+            ],
+            "angle": 0,
+            "content": "Fanuc (6954.T)"
+        },
+        {
+            "type": "table",
+            "bbox": [
+                0.081,
+                0.342,
+                0.348,
+                0.56
+            ],
+            "angle": 0,
+            "content": "<table><tr><td>Date of report</td><td>Target price (¥)</td><td>Closing price (¥)</td></tr><tr><td>28-May-26</td><td>5,600</td><td>7,984</td></tr><tr><td>26-Apr-26</td><td>5,300</td><td>6,256</td></tr><tr><td>14-Jan-26</td><td>5,000</td><td>6,935</td></tr><tr><td>31-Oct-25</td><td>4,300</td><td>4,909</td></tr><tr><td>13-Oct-25</td><td>4,100</td><td>4,780</td></tr><tr><td>25-Jul-25</td><td>3,400</td><td>4,220</td></tr><tr><td>20-Jun-25</td><td>3,300</td><td>3,713</td></tr><tr><td>11-Apr-25</td><td>3,200</td><td>3,388</td></tr><tr><td>12-Jan-25</td><td>3,600</td><td>4,116</td></tr><tr><td>19-Nov-24</td><td>3,400</td><td>4,099</td></tr><tr><td>31-Oct-23</td><td>3,300</td><td>3,653</td></tr><tr><td>13-Sep-23</td><td>3,400</td><td>4,081</td></tr><tr><td>28-Jul-23</td><td>4,500</td><td>4,689</td></tr><tr><td>13-Jul-23</td><td>5,200</td><td>4,762</td></tr></table>"
+        },
+        {
+            "type": "table_caption",
+            "bbox": [
+                0.421,
+                0.328,
+                0.599,
+                0.341
+            ],
+            "angle": 0,
+            "content": "Yaskawa Electric (6506.T)"
+        },
+        {
+            "type": "table",
+            "bbox": [
+                0.42,
+                0.342,
+                0.688,
+                0.633
+            ],
+            "angle": 0,
+            "content": "<table><tr><td>Date of report</td><td>Target price (¥)</td><td>Closing price (¥)</td></tr><tr><td>28-May-26</td><td>9,200</td><td>7,136</td></tr><tr><td>29-Apr-26</td><td>7,300</td><td>5,381</td></tr><tr><td>10-Apr-26</td><td>6,500</td><td>4,894</td></tr><tr><td>09-Mar-26</td><td>6,300</td><td>4,325</td></tr><tr><td>09-Jan-26</td><td>6,000</td><td>5,026</td></tr><tr><td>13-Oct-25</td><td>5,000</td><td>4,085</td></tr><tr><td>03-Oct-25</td><td>3,400</td><td>3,178</td></tr><tr><td>08-Jul-25</td><td>3,000</td><td>2,833</td></tr><tr><td>20-Jun-25</td><td>3,700</td><td>3,190</td></tr><tr><td>11-Apr-25</td><td>3,900</td><td>2,881</td></tr><tr><td>06-Apr-25</td><td>4,600</td><td>3,344</td></tr><tr><td>10-Jan-25</td><td>5,300</td><td>4,271</td></tr><tr><td>24-Dec-24</td><td>5,500</td><td>3,950</td></tr><tr><td>04-Oct-24</td><td>6,400</td><td>5,023</td></tr><tr><td>16-Aug-24</td><td>6,700</td><td>4,796</td></tr><tr><td>05-Jul-24</td><td>7,000</td><td>5,972</td></tr><tr><td>05-Apr-24</td><td>7,500</td><td>6,174</td></tr><tr><td>13-Sep-23</td><td>7,000</td><td>5,725</td></tr><tr><td>20-Jun-23</td><td>7,800</td><td>6,635</td></tr></table>"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.08,
+                0.648,
+                0.457,
+                0.66
+            ],
+            "angle": 0,
+            "content": "Price targets shown in table(s) are unadjusted for corporate actions.",
+            "merge_prev": false
+        },
+        {
+            "type": "title",
+            "bbox": [
+                0.08,
+                0.673,
+                0.252,
+                0.687
+            ],
+            "angle": 0,
+            "content": "Regulatory disclosures"
+        },
+        {
+            "type": "title",
+            "bbox": [
+                0.08,
+                0.692,
+                0.516,
+                0.707
+            ],
+            "angle": 0,
+            "content": "Disclosures required by United States laws and regulations"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.082,
+                0.708,
+                0.908,
+                0.751
+            ],
+            "angle": 0,
+            "content": "See company-specific regulatory disclosures above for any of the following disclosures required as to companies referred to in this report: manager or co-manager in a pending transaction; \\(1\\%\\) or other ownership; compensation for certain services; types of client relationships; managed/co-managed public offerings in prior periods; directorships; for equity securities, market making and/or specialist role. GS trades or may trade as a principal in debt securities (or in related derivatives) of issuers discussed in this report.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.082,
+                0.757,
+                0.913,
+                0.836
+            ],
+            "angle": 0,
+            "content": "The following are additional required disclosures: Ownership and material conflicts of interest: GS policy prohibits its analysts, professionals reporting to analysts and members of their households from owning securities of any company in the analyst's area of coverage. Analyst compensation: Analysts are paid in part based on the profitability of GS, which includes investment banking revenues. Analyst as officer or director: GS policy generally prohibits its analysts, persons reporting to analysts or members of their households from serving as an officer, director or advisor of any company in the analyst's area of coverage. Non-U.S. Analysts: Non-U.S. analysts may not be associated persons of GS & Co. LLC and therefore may not be subject to FINRA Rule 2241 or FINRA Rule 2242 restrictions on communications with a subject company, public appearances and trading in securities covered by the analysts.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.082,
+                0.842,
+                0.916,
+                0.877
+            ],
+            "angle": 0,
+            "content": "Distribution of ratings: See the distribution of ratings disclosure above. Price chart: See the price chart, with changes of ratings and price targets in prior periods, above, or, if electronic format or if with respect to multiple companies which are the subject of this report, on the GS website at https://www.gs.com/research/hedge.html.",
+            "merge_prev": false
+        },
+        {
+            "type": "title",
+            "bbox": [
+                0.082,
+                0.889,
+                0.874,
+                0.903
+            ],
+            "angle": 0,
+            "content": "Additional disclosures required under the laws and regulations of jurisdictions other than the United States"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.082,
+                0.904,
+                0.908,
+                0.926
+            ],
+            "angle": 0,
+            "content": "The following disclosures are those required by the jurisdiction indicated, except to the extent already made above pursuant to United States laws and regulations. Australia: GS Australia Pty Ltd and its affiliates are not authorised deposit-taking institutions (as that term is defined in the",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.082,
+                0.955,
+                0.16,
+                0.967
+            ],
+            "angle": 0,
+            "content": "29 May 2026"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.908,
+                0.956,
+                0.917,
+                0.965
+            ],
+            "angle": 0,
+            "content": "6"
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.082,
+                0.006,
+                0.185,
+                0.018
+            ],
+            "angle": 0,
+            "content": "GS"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.719,
+                0.009,
+                0.918,
+                0.022
+            ],
+            "angle": 0,
+            "content": "Japan Machinery: Automation"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.081,
+                0.04,
+                0.917,
+                0.552
+            ],
+            "angle": 0,
+            "content": "Banking Act 1959 (Cth)) in Australia and do not provide banking services, nor carry on a banking business, in Australia. This research, and any access to it, is intended only for “wholesale clients” within the meaning of the Australian Corporations Act, unless otherwise agreed by GS. In producing research reports, members of Global Investment Research of GS Australia may attend site visits and other meetings hosted by the companies and other entities which are the subject of its research reports. In some instances the costs of such site visits or meetings may be met in part or in whole by the issuers concerned if GS Australia considers it is appropriate and reasonable in the specific circumstances relating to the site visit or meeting. To the extent that the contents of this document contains any financial product advice, it is general advice only and has been prepared by GS without taking into account a client’s objectives, financial situation or needs. A client should, before acting on any such advice, consider the appropriateness of the advice having regard to the client’s own objectives, financial situation and needs. A copy of certain GS Australia and New Zealand disclosure of interests and a copy of GS’ Australian Sell-Side Research Independence Policy Statement are available at: https://www.goldmansachs.com/disclosures/australia-new-zealand/index.html. Brazil: Disclosure information in relation to CVM Resolution n. 20 is available at https://www.gs.com/worldwide/brazil/area/gir/index.html. Where applicable, the Brazil-registered analyst primarily responsible for the content of this research report, as defined in Article 20 of CVM Resolution n. 20, is the first author named at the beginning of this report, unless indicated otherwise at the end of the text. Canada: This information is being provided to you for information purposes only and is not, and under no circumstances should be construed as, an advertisement, offering or solicitation by GS & Co. LLC for purchasers of securities in Canada to trade in any Canadian security. GS & Co. LLC is not registered as a dealer in any jurisdiction in Canada under applicable Canadian securities laws and generally is not permitted to trade in Canadian securities and may be prohibited from selling certain securities and products in certain jurisdictions in Canada. If you wish to trade in any Canadian securities or other products in Canada please contact GS Canada Inc., an affiliate of The GS Group Inc., or another registered Canadian dealer. Hong Kong: Further information on the securities of covered companies referred to in this research may be obtained on request from GS (Asia) L.L.C. India: Further information on the subject company or companies referred to in this research may be obtained from GS (India) Securities Private Limited, Research Analyst - SEBI Registration Number INH000001493, 10th Floor, Ascent-Worli, Sudam Kalu Ahire Marg, Worli, Mumbai-400 025, India, Corporate Identity Number U74140MH2006FTC160634, Phone +91 22 6616 9000, Fax +91 22 6616 9001. GS may beneficially own 1% or more of the securities (as such term is defined in clause 2 (h) the Indian Securities Contracts (Regulation) Act, 1956) of the subject company or companies referred to in this research report. Investment in securities market are subject to market risks. Read all the related documents carefully before investing. Registration granted by SEBI and certification from NISM in no way guarantee performance of the intermediary or provide any assurance of returns to investors. GS (India) Securities Private Limited compliance officer and investor grievance contact details can be found at: https://www.goldmansachs.com/worldwide/india/documents/Grievance-Redressal-and-Escalation-Matrix.pdf, and a copy of the annual audit compliance report can be found at this link: https://publishing.gs.com/content/site/india-annual-compliance-report.html. Japan: See below. Korea: This research, and any access to it, is intended only for “professional investors” within the meaning of the Financial Services and Capital Markets Act, unless otherwise agreed by GS. Further information on the subject company or companies referred to in this research may be obtained from GS (Asia) L.L.C., Seoul Branch. New Zealand: GS New Zealand Limited and its affiliates are neither “registered banks” nor “deposit takers” (as defined in the Reserve Bank of New Zealand Act 1989) in New Zealand. This research, and any access to it, is intended for “wholesale clients” (as defined in the Financial Advisers Act 2008) unless otherwise agreed by GS. A copy of certain GS Australia and New Zealand disclosure of interests is available at: https://www.goldmansachs.com/disclosures/australia-new-zealand/index.html. Russia: Research reports distributed in the Russian Federation are not advertising as defined in the Russian legislation, but are information and analysis not having product promotion as their main purpose and do not provide appraisal within the meaning of the Russian legislation on appraisal activity. Research reports do not constitute a personalized investment recommendation as defined in Russian laws and regulations, are not addressed to a specific client, and are prepared without analyzing the financial circumstances, investment profiles or risk profiles of clients. GS assumes no responsibility for any investment decisions that may be taken by a client or any other person based on this research report. Singapore: GS (Singapore) Pte. (Company Number: 198602165W), which is regulated by the Monetary Authority of Singapore, accepts legal responsibility for this research, and should be contacted with respect to any matters arising from, or in connection with, this research. Taiwan: This material is for reference only and must not be reprinted without permission. Investors should carefully consider their own investment risk. Investment results are the responsibility of the individual investor. United Kingdom: Persons who would be categorized as retail clients in the United Kingdom, as such term is defined in the rules of the Financial Conduct Authority, should read this research in conjunction with prior GS on the covered companies referred to herein and should refer to the risk warnings that have been sent to them by GS International. A copy of these risks warnings, and a glossary of certain financial terms used in this report, are available from GS International on request.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.08,
+                0.559,
+                0.908,
+                0.637
+            ],
+            "angle": 0,
+            "content": "European Union and United Kingdom: Disclosure information in relation to Article 6 (2) of the European Commission Delegated Regulation (EU) (2016/958) supplementing Regulation (EU) No 596/2014 of the European Parliament and of the Council (including as that Delegated Regulation is implemented into United Kingdom domestic law and regulation following the United Kingdom's departure from the European Union and the European Economic Area) with regard to regulatory technical standards for the technical arrangements for objective presentation of investment recommendations or other information recommending or suggesting an investment strategy and for disclosure of particular interests or indications of conflicts of interest is available at https://www.gs.com/disclosures/europeanpolicy.html which states the European Policy for Managing Conflicts of Interest in Connection with Investment Research.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.08,
+                0.644,
+                0.915,
+                0.701
+            ],
+            "angle": 0,
+            "content": "Japan: GS Japan Co., Ltd. is a Financial Instrument Dealer registered with the Kanto Financial Bureau under registration number Kinsho 69, and a member of Japan Securities Dealers Association, Financial Futures Association of Japan Type II Financial Instruments Firms Association, and Investment Management Association of Japan. Sales and purchase of equities are subject to commission pre-determined with clients plus consumption tax. See company-specific disclosures as to any applicable disclosures required by Japanese stock exchanges, the Japanese Securities Dealers Association or the Japanese Securities Finance Company.",
+            "merge_prev": false
+        },
+        {
+            "type": "title",
+            "bbox": [
+                0.081,
+                0.713,
+                0.452,
+                0.726
+            ],
+            "angle": 0,
+            "content": "Ratings, coverage universe and related definitions"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.08,
+                0.727,
+                0.917,
+                0.805
+            ],
+            "angle": 0,
+            "content": "Buy (B), Neutral (N), Sell (S) Analysts recommend stocks as Buys or Sells for inclusion on various regional Investment Lists. Being assigned a Buy or Sell on an Investment List is determined by a stock's total return potential relative to its coverage universe. Any stock not assigned as a Buy or a Sell on an Investment List with an active rating (i.e., a stock that is not Rating Suspended, Not Rated, Early-Stage Biotech, Coverage Suspended or Not Covered), is deemed Neutral. Each region manages Regional Conviction Lists, which are selected from Buy rated stocks on the respective region's Investment Lists and represent investment recommendations focused on the size of the total return potential and/or the likelihood of the realization of the return across their respective areas of coverage. The addition or removal of stocks from such Conviction Lists are managed by the Investment Review Committee or other designated committee in each respective region and do not represent a change in the analysts' investment rating for such stocks.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.08,
+                0.811,
+                0.892,
+                0.846
+            ],
+            "angle": 0,
+            "content": "Total return potential represents the upside or downside differential between the current share price and the price target, including all paid or anticipated dividends, expected during the time horizon associated with the price target. Price targets are required for all covered stocks. The total return potential, price target and associated time horizon are stated in each report adding or reiterating an Investment List membership.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.08,
+                0.852,
+                0.779,
+                0.875
+            ],
+            "angle": 0,
+            "content": "Coverage Universe: A list of all stocks in each coverage universe is available by primary analyst, stock and coverage universe at https://www.gs.com/research/hedge.html.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.08,
+                0.881,
+                0.9,
+                0.927
+            ],
+            "angle": 0,
+            "content": "Not Rated (NR). The investment rating, target price and earnings estimates (where relevant) are removed pursuant to GS policy when GS is acting in an advisory capacity in a merger or in a strategic transaction involving this company, when there are legal, regulatory or policy constraints due to GS' involvement in a transaction, and in certain other circumstances. Early-Stage Biotech (ES). An investment rating and a target price are not assigned pursuant to GS policy when this company has neither a drug, treatment or medical device that",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.082,
+                0.955,
+                0.16,
+                0.967
+            ],
+            "angle": 0,
+            "content": "29 May 2026"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.908,
+                0.956,
+                0.917,
+                0.965
+            ],
+            "angle": 0,
+            "content": "7"
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.082,
+                0.006,
+                0.185,
+                0.018
+            ],
+            "angle": 0,
+            "content": "GS"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.719,
+                0.009,
+                0.918,
+                0.022
+            ],
+            "angle": 0,
+            "content": "Japan Machinery: Automation"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.081,
+                0.04,
+                0.913,
+                0.098
+            ],
+            "angle": 0,
+            "content": "has passed a Phase II clinical trial nor a license to distribute a post-Phase II drug, treatment or medical device. Rating Suspended (RS). GS has suspended the investment rating and price target for this stock, because there is not a sufficient fundamental basis for determining an investment rating or target price. The previous investment rating and target price, if any, are no longer in effect for this stock and should not be relied upon. Coverage Suspended (CS). GS has suspended coverage of this company. Not Covered (NC). GS does not cover this company.",
+            "merge_prev": false
+        },
+        {
+            "type": "title",
+            "bbox": [
+                0.082,
+                0.11,
+                0.351,
+                0.124
+            ],
+            "angle": 0,
+            "content": "Global product; distributing entities"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.082,
+                0.124,
+                0.917,
+                0.246
+            ],
+            "angle": 0,
+            "content": "GS Global Investment Research produces and distributes research products for clients of GS on a global basis. Analysts based in GS offices around the world produce research on industries and companies, and research on macroeconomics, currencies, commodities and portfolio strategy. This research is disseminated in Australia by GS Australia Pty Ltd (ABN 21 006 797 897); in Brazil by GS do Brasil Corretora de Títulos e Valores Mobiliários S.A.; Public Communication Channel GS Brazil: 0800 727 5764 and / or contatogoldmanbrasil@gs.com. Available Weekdays (except holidays), from 9am to 6pm. Canal de Comunicação com o Público GS Brasil: 0800 727 5764 e/ou contatogoldmanbrasil@gs.com. Horário de funcionamento: segunda-feira à sexta-feira (exceto feriados), das 9h às 18h; in Canada by GS & Co. LLC; in Hong Kong by GS (Asia) L.L.C.; in India by GS (India) Securities Private Ltd.; in Japan by GS Japan Co., Ltd.; in the Republic of Korea by GS (Asia) L.L.C., Seoul Branch; in New Zealand by GS New Zealand Limited; in Russia by OOO GS; in Singapore by GS (Singapore) Pte. (Company Number: 198602165W); and in the United States of America by GS & Co. LLC. GS International has approved this research in connection with its distribution in the United Kingdom.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.082,
+                0.252,
+                0.88,
+                0.276
+            ],
+            "angle": 0,
+            "content": "GS International (“GSI”), authorised by the Prudential Regulation Authority (“PRA”) and regulated by the Financial Conduct Authority (“FCA”) and the PRA, has approved this research in connection with its distribution in the United Kingdom.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.082,
+                0.282,
+                0.905,
+                0.327
+            ],
+            "angle": 0,
+            "content": "European Economic Area: GS Bank Europe SE (“GSBE”) is a credit institution incorporated in Germany and, within the Single Supervisory Mechanism, subject to direct prudential supervision by the European Central Bank and in other respects supervised by German Federal Financial Supervisory Authority (Bundesanstalt für Finanzdienstleistungsaufsicht, BaFin) and Deutsche Bundesbank and disseminates research within the European Economic Area.",
+            "merge_prev": false
+        },
+        {
+            "type": "title",
+            "bbox": [
+                0.082,
+                0.34,
+                0.229,
+                0.353
+            ],
+            "angle": 0,
+            "content": "General disclosures"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.082,
+                0.354,
+                0.915,
+                0.41
+            ],
+            "angle": 0,
+            "content": "This research is for our clients only. Other than disclosures relating to GS, this research is based on current public information that we consider reliable, but we do not represent it is accurate or complete, and it should not be relied on as such. The information, opinions, estimates and forecasts contained herein are as of the date hereof and are subject to change without prior notification. We seek to update our research as appropriate, but various regulations may prevent us from doing so. Other than certain industry reports published on a periodic basis, the large majority of reports are published at irregular intervals as appropriate in the analyst's judgment.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.082,
+                0.416,
+                0.915,
+                0.451
+            ],
+            "angle": 0,
+            "content": "GS conducts a global full-service, integrated investment banking, investment management, and brokerage business. We have investment banking and other business relationships with a substantial percentage of the companies covered by Global Investment Research. GS & Co. LLC, the United States broker dealer, is a member of SIPC (https://www.sipc.org).",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.082,
+                0.456,
+                0.916,
+                0.491
+            ],
+            "angle": 0,
+            "content": "Our salespeople, traders, and other professionals may provide oral or written market commentary or trading strategies to our clients and principal trading desks that reflect opinions that are contrary to the opinions expressed in this research. Our asset management area, principal trading desks and investing businesses may make investment decisions that are inconsistent with the recommendations or views expressed in this research.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.082,
+                0.497,
+                0.916,
+                0.553
+            ],
+            "angle": 0,
+            "content": "The analysts named in this report may have from time to time discussed with our clients, including GS salespersons and traders, or may discuss in this report, trading strategies that reference catalysts or events that may have a near-term impact on the market price of the equity securities discussed in this report, which impact may be directionally counter to the analyst's published price target expectations for such stocks. Any such trading strategies are distinct from and do not affect the analyst's fundamental equity rating for such stocks, which rating reflects a stock's return potential relative to its coverage universe as described herein.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.082,
+                0.56,
+                0.89,
+                0.583
+            ],
+            "angle": 0,
+            "content": "We and our affiliates, officers, directors, and employees will from time to time have long or short positions in, act as principal in, and buy or sell, the securities or derivatives, if any, referred to in this research, unless otherwise prohibited by regulation or GS policy.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.082,
+                0.589,
+                0.916,
+                0.613
+            ],
+            "angle": 0,
+            "content": "The views attributed to third party presenters at GS arranged conferences, including individuals from other parts of GS, do not necessarily reflect those of Global Investment Research and are not an official view of GS.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.082,
+                0.619,
+                0.913,
+                0.643
+            ],
+            "angle": 0,
+            "content": "Any third party referenced herein, including any salespeople, traders and other professionals or members of their household, may have positions in the products mentioned that are inconsistent with the views expressed by analysts named in this report.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.082,
+                0.648,
+                0.916,
+                0.716
+            ],
+            "angle": 0,
+            "content": "This research is not an offer to sell or the solicitation of an offer to buy any security in any jurisdiction where such an offer or solicitation would be illegal. It does not constitute a personal recommendation or take into account the particular investment objectives, financial situations, or needs of individual clients. Clients should consider whether any advice or recommendation in this research is suitable for their particular circumstances and, if appropriate, seek professional advice, including tax advice. The price and value of investments referred to in this research and the income from them may fluctuate. Past performance is not a guide to future performance, future returns are not guaranteed, and a loss of original capital may occur. Fluctuations in exchange rates could have adverse effects on the value or price of, or income derived from, certain investments.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.082,
+                0.722,
+                0.905,
+                0.78
+            ],
+            "angle": 0,
+            "content": "Certain transactions, including those involving futures, options, and other derivatives, give rise to substantial risk and are not suitable for all investors. Investors should review current options and futures disclosure documents which are available from GS sales representatives or at https://www.theocc.com/about/publications/character-risks.jsp and https://www.goldmansachs.com/disclosures/cftc_fcm_disclosures. Transaction costs may be significant in option strategies calling for multiple purchase and sales of options such as spreads. Supporting documentation will be supplied upon request.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.082,
+                0.785,
+                0.905,
+                0.886
+            ],
+            "angle": 0,
+            "content": "Differing Levels of Service provided by Global Investment Research: The level and types of services provided to you by GS Global Investment Research may vary as compared to that provided to internal and other external clients of GS, depending on various factors including your individual preferences as to the frequency and manner of receiving communication, your risk profile and investment focus and perspective (e.g., marketwide, sector specific, long term, short term), the size and scope of your overall client relationship with GS, and legal and regulatory constraints. As an example, certain clients may request to receive notifications when research on specific securities is published, and certain clients may request that specific data underlying analysts' fundamental analysis available on our internal client websites be delivered to them electronically through data feeds or otherwise. No change to an analyst's fundamental research views (e.g., ratings, price targets, or material changes to earnings estimates for equity securities), will be communicated to any client prior to inclusion of such information in a research report broadly disseminated through electronic publication to our internal client websites or through other means, as necessary, to all clients who are entitled to receive such reports.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.082,
+                0.892,
+                0.898,
+                0.927
+            ],
+            "angle": 0,
+            "content": "All research reports are disseminated and available to all clients simultaneously through electronic publication to our internal client websites. Not all research content is redistributed to our clients or available to third-party aggregators, nor is GS responsible for the redistribution of our research by third party aggregators. For research, models or other data related to one or more securities, markets or asset classes (including related",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.082,
+                0.955,
+                0.16,
+                0.967
+            ],
+            "angle": 0,
+            "content": "29 May 2026"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.908,
+                0.956,
+                0.917,
+                0.965
+            ],
+            "angle": 0,
+            "content": "8"
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.082,
+                0.006,
+                0.185,
+                0.018
+            ],
+            "angle": 0,
+            "content": "GS"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.719,
+                0.009,
+                0.918,
+                0.022
+            ],
+            "angle": 0,
+            "content": "Japan Machinery: Automation"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.081,
+                0.04,
+                0.69,
+                0.053
+            ],
+            "angle": 0,
+            "content": "services) that may be available to you, please contact your GS representative or go to https://research.gs.com.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.08,
+                0.059,
+                0.888,
+                0.081
+            ],
+            "angle": 0,
+            "content": "Disclosure information is also available at https://www.gs.com/research/hedge.html or from Research Compliance, 200 West Street, New York, NY 10282.",
+            "merge_prev": false
+        },
+        {
+            "type": "title",
+            "bbox": [
+                0.081,
+                0.089,
+                0.221,
+                0.1
+            ],
+            "angle": 0,
+            "content": "© 2026 GS."
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.08,
+                0.107,
+                0.911,
+                0.186
+            ],
+            "angle": 0,
+            "content": "You are permitted to store, display, analyze, modify, reformat, and print the information made available to you via this service only for your own use. You may not resell or reverse engineer this information to calculate or develop any index for disclosure and/or marketing or create any other derivative works or commercial product(s), data or offering(s) without the express written consent of GS. You are not permitted to publish, transmit, or otherwise reproduce this information, in whole or in part, in any format to any third party without the express written consent of GS. This foregoing restriction includes, without limitation, using, extracting, downloading or retrieving this information, in whole or in part, to train or finetune a machine learning or artificial intelligence system, or to provide or reproduce this information, in whole or in part, as a prompt or input to any such system.",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.082,
+                0.955,
+                0.16,
+                0.967
+            ],
+            "angle": 0,
+            "content": "29 May 2026"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.908,
+                0.956,
+                0.917,
+                0.965
+            ],
+            "angle": 0,
+            "content": "9"
+        }
+    ]
+]
