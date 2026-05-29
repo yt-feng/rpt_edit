@@ -1,0 +1,3391 @@
+[
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "China Real Estate "
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                60,
+                95,
+                448,
+                126
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Demand reawakens: Affordability at a decade-best level "
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                60,
+                162,
+                626,
+                181
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Equities REMD "
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                655,
+                96,
+                744,
+                129
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "China "
+                    }
+                ]
+            },
+            "bbox": [
+                655,
+                167,
+                702,
+                180
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "text_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "- Price-to-income ratio has reset to 10-year-ago levels, which should help strengthen resale liquidity "
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "- Home price corrections and lower mortgage rates are bringing “affordable” units back within reach for families "
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "◆ Key picks: Prefer CRL and C&D, both Buy-rated "
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                43,
+                216,
+                601,
+                326
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Improved affordability supporting mass market demand: We believe the recent sector rally can regain momentum as fundamentals improve (Still early in the rally, 7 May 2026). While the supply side is progressing well (Construction decline: Less built, less left, 18 May 2026), we think the demand side is also better supported by improved housing affordability. This improved affordability has revived mass market demand, evidenced by secondary transactions mainly driven by units valued below RMB3m, which we believe will help stabilise home price expectations (From 'exit' to 'upgrade': why resale liquidity matters, 24 March 2026). This more balanced demand structure also eases investors' concerns that high-end demand is insufficient to support the whole market, helping establish a new equilibrium across products. "
+                    }
+                ]
+            },
+            "bbox": [
+                42,
+                351,
+                615,
+                507
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Benefits from the double declines: While home price declines have been well received as the core driver of improved housing affordability, we think the impact of mortgage interest savings has been underestimated. We calculate that the monthly payment for a 70 sqm home now accounts for  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "50\\%"
+                    },
+                    {
+                        "type": "text",
+                        "content": " of a household's disposable income in Shanghai, vs  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "82\\%"
+                    },
+                    {
+                        "type": "text",
+                        "content": " in 2021. This corresponds to monthly interest savings of  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "42\\%"
+                    },
+                    {
+                        "type": "text",
+                        "content": " against an assumption that home prices corrected c15%. The significant and broad-based improvement in housing affordability should in turn enhance secondary market liquidity, which encourages home purchase decisions while rebuilding household confidence in home ownership. "
+                    }
+                ]
+            },
+            "bbox": [
+                42,
+                516,
+                618,
+                656
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Why does it matter for developers? We believe the next critical focus should be the primary market once the secondary market has recovered. A more liquid resale market can help unleash demand for upgrader projects, where the quick sell-through and price uplift will be more powerful drivers of market sentiment and a crucial gauge of developers' pricing power. We therefore suggest close monitoring of the ongoing sales of developers' signature projects (May holiday pulse check: Busy sites, better sales, 8 May 2026). Specifically, we expect a quicker playing out of such secondary-to-primary transmission effect in cities experiencing a supply squeeze (Construction decline: Less built, less left, 18 May 2026). "
+                    }
+                ]
+            },
+            "bbox": [
+                42,
+                665,
+                616,
+                806
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Key picks: We continue to prefer CRL and C&D (both Buy) among developers for their rich pipeline of premium projects. We also highlight that C&D still has room to catch up in terms of y-t-d share price performance (Catch-up in play with more upside potential, 12 May 2026). "
+                    }
+                ]
+            },
+            "bbox": [
+                42,
+                815,
+                621,
+                878
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Michelle Kwok* "
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                642,
+                226,
+                732,
+                236
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Head of Asia Real Estate and HK Equity Research  \nThe Hongkong and Shanghai Banking Corporation Limited  \nmichellekwok@hsbc.com.hk  \n+852 2996 6918 "
+                    }
+                ]
+            },
+            "bbox": [
+                642,
+                237,
+                952,
+                277
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Oliver Yu* "
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                643,
+                284,
+                702,
+                294
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Analyst, Asia Real Estate  \nThe Hongkong and Shanghai Banking Corporation Limited  \noliver.y.o.x.yu@hsbc.com.hk  \n+852 2288 2050 "
+                    }
+                ]
+            },
+            "bbox": [
+                642,
+                294,
+                952,
+                334
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Stephen Wang*, CFA "
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                643,
+                341,
+                764,
+                352
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Analyst, Asia Real Estate\nThe Hongkong and Shanghai Banking Corporation Limited\nstephen.wang@hsbc.com.hk\n+852 2284 1675 "
+                    }
+                ]
+            },
+            "bbox": [
+                642,
+                352,
+                952,
+                392
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Brian Yu* "
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                643,
+                400,
+                699,
+                408
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Associate, Asia Real Estate Research  \nThe Hongkong and Shanghai Banking Corporation Limited  \nbrian.d.yu@hsbc.com.hk  \n+852 28227281 "
+                    }
+                ]
+            },
+            "bbox": [
+                642,
+                409,
+                952,
+                449
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Charlotte Ye* "
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                643,
+                455,
+                719,
+                465
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Associate "
+                    }
+                ]
+            },
+            "bbox": [
+                643,
+                466,
+                707,
+                473
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Guangzhou "
+                    }
+                ]
+            },
+            "bbox": [
+                643,
+                476,
+                707,
+                484
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "* Employed by a non-US affiliate of HSBC Securities (USA) Inc, and is not registered/qualified pursuant to FINRA regulations "
+                    }
+                ]
+            },
+            "bbox": [
+                640,
+                506,
+                947,
+                528
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "HSBC Funding the Future Survey "
+                    }
+                ]
+            },
+            "bbox": [
+                650,
+                824,
+                946,
+                842
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Sentiment, AI and Private Credit "
+                    }
+                ]
+            },
+            "bbox": [
+                650,
+                847,
+                947,
+                864
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Click to view "
+                    }
+                ]
+            },
+            "bbox": [
+                754,
+                870,
+                845,
+                883
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Disclosures & Disclaimer "
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                43,
+                916,
+                250,
+                929
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "This report must be read with the disclosures and the analyst certifications in the Disclosure appendix, and with the Disclaimer, which forms part of it. "
+                    }
+                ]
+            },
+            "bbox": [
+                42,
+                930,
+                616,
+                960
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Issuer of report: The Hongkong and Shanghai Banking Corporation Limited "
+                    }
+                ]
+            },
+            "bbox": [
+                638,
+                913,
+                927,
+                938
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "View HSBC Global Investment Research at: "
+                    }
+                ]
+            },
+            "bbox": [
+                638,
+                949,
+                921,
+                961
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "https://www.research.hsbc.com "
+                    }
+                ]
+            },
+            "bbox": [
+                640,
+                964,
+                847,
+                976
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "[Non-Text] "
+                    }
+                ]
+            },
+            "bbox": [
+                45,
+                14,
+                122,
+                44
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "HSBC Global Investment Research "
+                    }
+                ]
+            },
+            "bbox": [
+                126,
+                21,
+                448,
+                37
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "26 May 2026 "
+                    }
+                ]
+            },
+            "bbox": [
+                865,
+                19,
+                957,
+                33
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Housing affordability has reset to 10-year-ago levels, and the impact of mortgage interest savings has been underestimated "
+                    }
+                ]
+            },
+            "bbox": [
+                67,
+                155,
+                250,
+                221
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Where are we now on affordability? "
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                284,
+                113,
+                626,
+                132
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "We assess housing affordability across 106 cities using two complementary metrics: (1) home price affordability and (2) monthly mortgage payment affordability. "
+                    }
+                ]
+            },
+            "bbox": [
+                282,
+                147,
+                915,
+                176
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Our findings suggest that affordability has improved materially across all city tiers, driven by both home-price corrections and lower mortgage rates. The channel of mortgage interest savings is particularly pronounced in tier-1 cities, where higher unit prices make monthly repayment more sensitive to interest-rate cuts. "
+                    }
+                ]
+            },
+            "bbox": [
+                282,
+                185,
+                900,
+                247
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "text_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "1. Home price affordability: We define home price affordability as the ratio of the average home price per unit to household disposable income, calculated as ASP × urban living space per capita / annual disposable income of urban residents. This metric captures improvements in affordability driven by home price corrections. "
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "2. Monthly mortgage payment affordability: We define monthly mortgage payment affordability as monthly mortgage payment / household disposable income, which helps quantify how lower mortgage rates have improved affordability. "
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                282,
+                256,
+                927,
+                373
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/65c75b0ca44e8fd8a3035b09f73daa47aaca9261f470c25c14c3ed5a9463f50b.jpg"
+                },
+                "content": "| Year | Tier-1 | Tier-2 | Tier-3 |\n|---|---|---|---|\n| 2015 | 17.2 | 8.1 | 7.6 |\n| 2016 | 20.1 | 8.4 | 7.3 |\n| 2017 | 19.9 | 8.9 | 7.5 |\n| 2018 | 21.0 | 9.5 | 7.7 |\n| 2019 | 20.3 | 9.5 | 7.6 |\n| 2020 | 21.2 | 9.8 | 7.6 |\n| 2021 | 21.5 | 9.3 | 7.3 |\n| 2022 | 20.5 | 8.8 | 7.0 |\n| 2023 | 19.1 | 8.6 | 6.7 |\n| 2024 | 17.2 | 7.7 | 6.4 |\n| 2025 | 16.3 | 7.2 | 6.1 |",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Figure 1: Broad-based improvement in home price affordability on par with the level a decade ago "
+                    }
+                ],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Note: (1) Home price affordability is calculated as home price per unit divided by household disposable income in each city (total 106 cities). (2) Average home price per unit in each city is calculated as city primary home ASP multiplied by an assumed average home size based on NBS and population census data. Source: CREIS, NBS, National Population Census 2020, HSBC estimates "
+                    }
+                ]
+            },
+            "sub_type": "line",
+            "bbox": [
+                300,
+                433,
+                915,
+                580
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/b09eff8b25641b5845483beb9e77a687d0995c37ea8946e1eb9a60094a1115eb.jpg"
+                },
+                "content": "| Year | Tier-1 | Tier-2 | Tier-3 |\n|---|---|---|---|\n| 2015 | 0.98 | 0.46 | 0.40 |\n| 2016 | 1.07 | 0.45 | 0.35 |\n| 2017 | 1.09 | 0.49 | 0.38 |\n| 2018 | 1.23 | 0.56 | 0.41 |\n| 2019 | 1.19 | 0.55 | 0.40 |\n| 2020 | 1.22 | 0.56 | 0.44 |\n| 2021 | 1.24 | 0.54 | 0.38 |\n| 2022 | 1.11 | 0.48 | 0.35 |\n| 2023 | 0.98 | 0.44 | 0.31 |\n| 2024 | 0.83 | 0.37 | 0.28 |\n| 2025 | 0.76 | 0.34 | 0.26 |",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Figure 2: Improved mortgage payment ability "
+                    }
+                ],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Note: (1) Mortgage payment ability is measured as mortgage payment versus household disposable income. (2) Monthly mortgage rate used in the calculation refers to the weighted average interest rate of household mortgage loans by financial institutions.\nSource: CREIS, NBS, PBoC, National Population Census 2020, Beike, Wind, Rong 360, HSBC estimates "
+                    }
+                ]
+            },
+            "sub_type": "line",
+            "bbox": [
+                294,
+                693,
+                914,
+                871
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "HSBC "
+                    }
+                ]
+            },
+            "bbox": [
+                72,
+                9,
+                189,
+                35
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Equities • REMD\n26 May 2026 "
+                    }
+                ]
+            },
+            "bbox": [
+                806,
+                8,
+                931,
+                33
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "2 "
+                    }
+                ]
+            },
+            "bbox": [
+                68,
+                964,
+                80,
+                973
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "In Shanghai, home ownership is back within reach for average-income families – no longer the preserve of high-income households "
+                    }
+                ]
+            },
+            "bbox": [
+                67,
+                307,
+                263,
+                374
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Limitations of the affordability framework "
+                    }
+                ]
+            },
+            "bbox": [
+                285,
+                117,
+                557,
+                132
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "1. Income proxy and HPF treatment: City-average disposable income likely understates the income of homebuyers (vs renters). In addition, disposable income excludes Housing Provident Fund (HPF) contributions, which can offset mortgage payments. "
+                    }
+                ]
+            },
+            "bbox": [
+                282,
+                140,
+                910,
+                184
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "2. Living space: Using a uniform per-capita living-space assumption (2020 National Population Census) across 2015-25 and all cities ignores variations over time and across city tiers (typically smaller in tier-1, larger in lower tiers). "
+                    }
+                ]
+            },
+            "bbox": [
+                280,
+                195,
+                910,
+                240
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Why does affordability become important again? "
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                285,
+                266,
+                752,
+                284
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Taking Shanghai as an example, housing affordability has improved to a level where home ownership is no longer limited to higher-income households. Lower home prices and mortgage rates have significantly reduced the monthly repayments, bringing home purchases back within reach for average-income families, and materially expanding the pool of eligible buyers. "
+                    }
+                ]
+            },
+            "bbox": [
+                285,
+                299,
+                921,
+                361
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "For a typical 70 sqm unit in Shanghai, we estimate monthly mortgage payments under either pure commercial mortgage or a blended commercial + HPF loan have fallen to below  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "50\\%"
+                    },
+                    {
+                        "type": "text",
+                        "content": " of average household income. Crossing this  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "50\\%"
+                    },
+                    {
+                        "type": "text",
+                        "content": " threshold is meaningful because banks typically won't approve loans if repayments exceed  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "50\\%"
+                    },
+                    {
+                        "type": "text",
+                        "content": " of monthly income. "
+                    }
+                ]
+            },
+            "bbox": [
+                285,
+                369,
+                922,
+                431
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "While our assumptions (a flat rate rather than an LPR-linked floating rate, plus a standard  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "30\\%"
+                    },
+                    {
+                        "type": "text",
+                        "content": " down payment and a 20-year tenor) may not capture borrower-level heterogeneity and complexity in practice, the scale and direction of the affordability improvement are clear. "
+                    }
+                ]
+            },
+            "bbox": [
+                285,
+                440,
+                919,
+                486
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "This matters because the secondary market accounts for  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "57\\%"
+                    },
+                    {
+                        "type": "text",
+                        "content": " of Shanghai's transactions, while units priced below RMB3m represent a sizeable  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "64\\%"
+                    },
+                    {
+                        "type": "text",
+                        "content": " of secondary volumes. Better affordability for older, lower-ticket units should therefore support resilient secondary-market activity as purchase restrictions ease (see Policy continuity to safeguard recovery, 30 April). Recent headlines also suggest Shanghai's daily secondary transactions have repeatedly hit new highs. "
+                    }
+                ]
+            },
+            "bbox": [
+                285,
+                494,
+                926,
+                572
+            ]
+        },
+        {
+            "type": "table",
+            "content": {
+                "image_source": {
+                    "path": "images/e69aec67bb72b22bf9a6bc4d34aa709f6c285864fd18c4e0c913a31065be6c77.jpg"
+                },
+                "table_caption": [
+                    {
+                        "type": "text",
+                        "content": "Figure 3: Monthly mortgage payment saving for a 70 sqm home – Shanghai as an example "
+                    }
+                ],
+                "table_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Note: (1) *Are our assumptions. (2) Household disposable = Average household size in Shanghai × Shanghai residents disposable income in 2021 and 2025, respectively. (3) Home price = 70 sqm × ASP per sqm (take the lower of the primary and secondary ASP). For 2021, we use the secondary ASP of RMB40,219 (statistical bureau), and for current, secondary ASP of RMB34,429 as of 26 March (CRIC). (4) Data is rounded to the nearest hundred for simplicity of showing.\nSource: Shanghai Statistical Yearbook, CRIC, Shanghai Statistical Bureau, HSBC estimates "
+                    }
+                ],
+                "html": "<table><tr><td></td><td>2021</td><td>Current</td></tr><tr><td>Commercial loan mortgage rate</td><td>5.00%</td><td>3.05%</td></tr><tr><td>HPF loan mortgage rate</td><td>3.25%</td><td>2.60%</td></tr><tr><td>Mortgage period*</td><td>20 years</td><td>20 years</td></tr><tr><td>Down payment ratio*</td><td>30%</td><td>30%</td></tr><tr><td>Home price (RMBm)</td><td>2.8</td><td>2.4</td></tr><tr><td>Average household disposable income (RMB)</td><td>15,900</td><td>18,700</td></tr><tr><td>Monthly payment (RMB) – commercial loans only</td><td>13,000</td><td>9,400</td></tr><tr><td>As % of disposable income</td><td>82%</td><td>50%</td></tr><tr><td>Monthly payment (RMB) – loan mix</td><td>12,100</td><td>9,000</td></tr><tr><td>As % of disposable income</td><td>76%</td><td>48%</td></tr></table>",
+                "table_type": "simple_table",
+                "table_nest_level": 1
+            },
+            "bbox": [
+                282,
+                647,
+                931,
+                783
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "HSBC "
+                    }
+                ]
+            },
+            "bbox": [
+                72,
+                9,
+                189,
+                33
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Equities • REMD\n26 May 2026 "
+                    }
+                ]
+            },
+            "bbox": [
+                806,
+                9,
+                929,
+                33
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "3 "
+                    }
+                ]
+            },
+            "bbox": [
+                921,
+                964,
+                929,
+                973
+            ]
+        }
+    ],
+    [
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/fdbc3d8456d62f36ad98e8fb0fdd605f4ddf3bba68912efe45ee8b2587489789.jpg"
+                },
+                "content": "| Year | Price per unit - Primary (RMBm) | Price per unit - Secondary (RMBm) |\n|---|---|---|\n| 2020 | 6.5 | 3.3 |\n| 2021 | 6.2 | 3.3 |\n| 2022 | 7.2 | 3.3 |\n| 2023 | 7.6 | 3.4 |\n| 2024 | 9.3 | 3.5 |\n| 2025 | 10.0 | 3.5 |",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Figure 4: Shanghai: Secondary homes feature much higher affordability than new homes "
+                    }
+                ],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: CREIS, CRIC, Anjuke, Lianjia, HSBC estimates "
+                    }
+                ]
+            },
+            "sub_type": "line",
+            "bbox": [
+                282,
+                160,
+                594,
+                349
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/b83a8a5dfbf49f526dd33f8695e73b3e5f50ca61287f9e81d0202626ce468f86.jpg"
+                },
+                "content": "| Year | <RMB5m (%) | <RMB3m (%) |\n|---|---|---|\n| 2020 | 84.6 | 59.1 |\n| 2021 | 85.6 | 61.3 |\n| 2022 | 86.1 | 63.6 |\n| 2023 | 84.7 | 61.1 |\n| 2024 | 82.7 | 61.1 |\n| 2025 | 83.1 | 63.9 |",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Figure 5: Shanghai: Units <RMB3m account for  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "64\\%"
+                    },
+                    {
+                        "type": "text",
+                        "content": " of secondary transactions "
+                    }
+                ],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: Wind, HSBC "
+                    }
+                ]
+            },
+            "sub_type": "bar",
+            "bbox": [
+                616,
+                161,
+                929,
+                344
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/d12629a6ce668fcb49cafc2617f2e325bce1f67aff22be4851947b0ffa290727.jpg"
+                },
+                "content": "| Date | Weekly secondary transactions |\n|---|---|\n| Jan-24 | 3800 |\n| Feb-24 | 3000 |\n| Mar-24 | 3500 |\n| Apr-24 | 4200 |\n| May-24 | 4500 |\n| Jun-24 | 5000 |\n| Jul-24 | 6500 |\n| Aug-24 | 6700 |\n| Sep-24 | 3800 |\n| Oct-24 | 3300 |\n| Nov-24 | 6500 |\n| Dec-24 | 6700 |\n| Jan-25 | 6800 |\n| Feb-25 | 6500 |\n| Mar-25 | 6700 |\n| Apr-25 | 6300 |\n| May-25 | 5500 |\n| Jun-25 | 5000 |\n| Jul-25 | 4800 |\n| Aug-25 | 4500 |\n| Sep-25 | 4800 |\n| Oct-25 | 4500 |\n| Nov-25 | 5200 |\n| Dec-25 | 5500 |\n| Jan-26 | 5300 |\n| Feb-26 | 5100 |\n| Mar-26 | 7800 |\n| Apr-26 | 28742 |\nA record high April transactions since 2016\nMay-26",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Figure 6: Shanghai April secondary transactions hit a new high since 2016 "
+                    }
+                ],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: Wind, HSBC "
+                    }
+                ]
+            },
+            "sub_type": "bar",
+            "bbox": [
+                284,
+                421,
+                910,
+                583
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/35d5247d54caef5c6f339d716c1833e69431e01c4380c617ab9be38794c7bb4d.jpg"
+                },
+                "content": "| Category | Correction(%) from peak - Primary (%) | Correction(%) from peak - Secondary (%) |\n| :--- | :--- | :--- |\n| Tier-1 | -11 | -19 |\n| Key tier-2 | -11 | -21 |\n| Other tier-2 | -13 | -24 |\n| Tier-3/4 | -17 | -25 |",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Figure 7: Home prices correct 11-25% from the peak as of March 2026 "
+                    }
+                ],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: NBS, HSBC "
+                    }
+                ]
+            },
+            "sub_type": "bar",
+            "bbox": [
+                282,
+                693,
+                598,
+                876
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/6018476d9e7ca9ec4e0fc5cd8d83b375bc195ae5f46a258fc3e52686c1dbc671.jpg"
+                },
+                "content": "| Date    | Weighted avg interest rate of mortgage loan |\n|---------|---------------------------------------------|\n| Mar-17  | 4.5                                         |\n| Aug-18  | 5.8                                         |\n| Jan-20  | 5.5                                         |\n| Jun-21  | 5.6                                         |\n| Nov-22  | 4.2                                         |\n| Apr-24  | 3.0                                         |",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Figure 8: Mortgage rate down 2.6ppt from the last peak "
+                    }
+                ],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: Wind, HSBC "
+                    }
+                ]
+            },
+            "sub_type": "line",
+            "bbox": [
+                616,
+                690,
+                927,
+                873
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "HSBC "
+                    }
+                ]
+            },
+            "bbox": [
+                72,
+                8,
+                191,
+                35
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Equities • REMD\n26 May 2026 "
+                    }
+                ]
+            },
+            "bbox": [
+                806,
+                8,
+                931,
+                35
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "4 "
+                    }
+                ]
+            },
+            "bbox": [
+                68,
+                964,
+                80,
+                973
+            ]
+        }
+    ],
+    [
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/225305f70cf45fee93a5d7d84199f659d9ae9793e8f4f21e37f3a276aa40ed73.jpg"
+                },
+                "content": "| Date    | Tier-1 | Tier-2 | Tier-3 | 50-city average |\n|---------|--------|--------|--------|-----------------|\n| Jun-22  | 1.5%   | 2.05%  | 2.0%   | 1.85%           |\n| Oct-22  | 1.5%   | 2.05%  | 2.0%   | 1.85%           |\n| Feb-23  | 1.5%   | 2.05%  | 2.0%   | 1.85%           |\n| Jun-23  | 1.5%   | 2.05%  | 2.0%   | 1.85%           |\n| Oct-23  | 1.5%   | 2.1%   | 2.0%   | 1.85%           |\n| Feb-24  | 1.5%   | 2.1%   | 2.0%   | 1.9%            |\n| Jun-24  | 1.6%   | 2.2%   | 2.1%   | 1.95%           |\n| Oct-24  | 1.6%   | 2.2%   | 2.1%   | 1.95%           |\n| Feb-25  | 1.6%   | 2.2%   | 2.1%   | 1.95%           |\n| Jun-25  | 1.6%   | 2.3%   | 2.1%   | 2.0%            |\n| Oct-25  | 1.6%   | 2.3%   | 2.1%   | 2.0%            |\n| Feb-26  | 1.7%   | 2.4%   | 2.2%   | 2.1%            |",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Figure 9: Increasing attractiveness of rent yields "
+                    }
+                ],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: CREIS, NBS, HSBC estimates "
+                    }
+                ]
+            },
+            "sub_type": "line",
+            "bbox": [
+                284,
+                141,
+                924,
+                313
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/f3dba8785dde4345aa7a1e9433ca663fd4843539d1a93ad638f1e45eb3586474.jpg"
+                },
+                "content": "| Region | Nov-25 | Dec-25 | Jan-Feb 2026 | Mar-26 | Apr-26 |\n| :--- | :--- | :--- | :--- | :--- | :--- |\n| Shanghai | 768 | 739 | 580 | 1014 | 958 |\n| Chengdu | 583 | 594 | 497 | 750 | 817 |\n| Beijing | 540 | 613 | 438 | 703 | 659 |\n| Nanjing | 218 | 213 | 203 | 284 | 353 |\n| Suzhou | 174 | 171 | 163 | 178 | 266 |\n| Foshan | 233 | 229 | 204 | 240 | 260 |\n| Guangzhou | 283 | 260 | 256 | 244 | 258 |\n| Shenzhen | 187 | 210 | 174 | 221 | 243 |\n| Hangzhou | 127 | 109 | 103 | 176 | 185 |\n| Xiamen | 87 | 90 | 90 | 96 | 129 |",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Figure 10: April daily secondary transactions hold up the March sales momentum "
+                    }
+                ],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: Wind, City Housing Bureau, HSBC "
+                    }
+                ]
+            },
+            "sub_type": "bar",
+            "bbox": [
+                284,
+                397,
+                905,
+                578
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/ead14f211a6a7ce46c44a08e25fa8e8c109d4d0034c3f4444ae307bc7cc8918c.jpg"
+                },
+                "content": "| Year | GFA sold in primary market (%) | GFA sold in secondary market (%) |\n| :--- | :--- | :--- |\n| 2021 | 61 | 39 |\n| 2022 | 59 | 41 |\n| 2023 | 51 | 49 |\n| 2024 | 41 | 59 |\n| 2025 | 36 | 64 |\n| 4M26 | 32 | 68 |\n| 2021 | 229 | 39 |\n| 2022 | 178 | 41 |\n| 2023 | 196 | 49 |\n| 2024 | 187 | 59 |\n| 2025 | 173 | 64 |\n| 4M26 | 55 | 68 |",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Figure 11: Secondary transactions are accounting for a growing share in 13 key cities "
+                    }
+                ],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Note: 13 cities include 4 tier-1 cities, and Hangzhou, Chengdu, Qingdao, Suzhou, Xiamen, Nanning, Dongguan, Yangzhou, and Foshan  \nSource: Wind, HSBC "
+                    }
+                ]
+            },
+            "sub_type": "bar_stacked",
+            "bbox": [
+                284,
+                682,
+                594,
+                873
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/6e94b626b4bd263470846237a23b11aafe44abdb313aac1ff14f2ae3572d68ed.jpg"
+                },
+                "content": "| Month | Value |\n|---|---|\n| Nov-24 | 10 |\n| Feb-25 | 9 |\n| Feb-25 | 7 |\n| Feb-25 | 3 |\n| May-25 | 10 |\n| May-25 | 5 |\n| May-25 | 3 |\n| Aug-25 | 1 |\n| Aug-25 | 1 |\n| Aug-25 | 1 |\n| Nov-25 | 0 |\n| Nov-25 | 0 |\n| Nov-25 | 0 |\n| Feb-26 | 2 |\n| Feb-26 | 2 |\n| Feb-26 | 13 |",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Figure 12: Number of cities seeing positive m-o-m trend of secondary ASP surges "
+                    }
+                ],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: NBS, HSBC "
+                    }
+                ]
+            },
+            "sub_type": "bar",
+            "bbox": [
+                618,
+                682,
+                924,
+                861
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "HSBC "
+                    }
+                ]
+            },
+            "bbox": [
+                72,
+                8,
+                191,
+                35
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Equities • REMD\n26 May 2026 "
+                    }
+                ]
+            },
+            "bbox": [
+                806,
+                8,
+                931,
+                35
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "5 "
+                    }
+                ]
+            },
+            "bbox": [
+                921,
+                964,
+                929,
+                973
+            ]
+        }
+    ],
+    [
+        {
+            "type": "table",
+            "content": {
+                "image_source": {
+                    "path": "images/aa70de8ef02061ce1307ac32199fa00ae72725eb2a6b0a9d677562e832d28d36.jpg"
+                },
+                "table_caption": [
+                    {
+                        "type": "text",
+                        "content": "Figure 13: Valuation summary "
+                    }
+                ],
+                "table_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Note: Priced as of 21 May 2026. NA – Not applicable/available. NM – Not meaningful.\nSource: Bloomberg, HSBC estimates "
+                    }
+                ],
+                "html": "<table><tr><td>Company</td><td>Ticker</td><td>Rating</td><td>Share price (HKD)</td><td>Target price (HKD)</td><td>Mkt cap (USDbn)</td><td>3M ADTV (USDm)</td><td>NAV (HKD/sh)</td><td>(Disc)/ Prem (%)</td><td>2025a</td><td>PE (x) 2026e</td><td>2027e</td><td>Yield (%) 2026e</td><td>PB (x) 2025a</td><td>Net gearing (%)</td></tr><tr><td colspan=\"15\">Property developers</td></tr><tr><td>C&amp;D Int&#x27;l</td><td>1908 HK</td><td>Buy</td><td>15.88</td><td>19.90</td><td>4.5</td><td>14.0</td><td>42.4</td><td>(63)</td><td>7.8</td><td>6.9</td><td>6.5</td><td>7.2</td><td>0.7</td><td>25</td></tr><tr><td>COLI</td><td>688 HK</td><td>Buy</td><td>15.60</td><td>16.50</td><td>21.8</td><td>51.5</td><td>25.7</td><td>(39)</td><td>11.4</td><td>12.4</td><td>11.6</td><td>3.1</td><td>0.4</td><td>33</td></tr><tr><td>CR Land</td><td>1109 HK</td><td>Buy</td><td>35.10</td><td>43.80</td><td>31.9</td><td>84.4</td><td>55.5</td><td>(37)</td><td>9.6</td><td>9.1</td><td>8.6</td><td>4.1</td><td>0.7</td><td>39</td></tr><tr><td>China Vanke</td><td>2202 HK</td><td>Reduce</td><td>2.70</td><td>2.50</td><td>5.7</td><td>10.7</td><td>5.9</td><td>(54)</td><td>n.m.</td><td>n.m.</td><td>n.m.</td><td>-</td><td>0.3</td><td>108</td></tr><tr><td>CIFI</td><td>884 HK</td><td>Hold</td><td>0.06</td><td>0.08</td><td>0.1</td><td>0.9</td><td>0.5</td><td>(87)</td><td>n.m.</td><td>n.m.</td><td>n.m.</td><td>-</td><td>0.0</td><td>81</td></tr><tr><td>Country Garden</td><td>2007 HK</td><td>Hold</td><td>0.23</td><td>0.30</td><td>1.4</td><td>13.0</td><td>1.9</td><td>(88)</td><td>1.7</td><td>n.m.</td><td>n.m.</td><td>-</td><td>n.m.</td><td>n.m.</td></tr><tr><td>China Jinmao</td><td>817 HK</td><td>Hold</td><td>1.70</td><td>1.50</td><td>2.9</td><td>9.7</td><td>3.5</td><td>(51)</td><td>28.3</td><td>29.4</td><td>27.6</td><td>1.2</td><td>0.5</td><td>76</td></tr><tr><td>Greentown China</td><td>3900 HK</td><td>Hold</td><td>9.43</td><td>9.50</td><td>3.1</td><td>13.6</td><td>17.9</td><td>(47)</td><td>n.m.</td><td>30.8</td><td>11.6</td><td>1.5</td><td>0.6</td><td>65</td></tr><tr><td>Longfor</td><td>960 HK</td><td>Hold</td><td>8.21</td><td>8.60</td><td>7.4</td><td>20.1</td><td>25.4</td><td>(68)</td><td>n.m.</td><td>38.5</td><td>14.2</td><td>0.8</td><td>0.3</td><td>48</td></tr><tr><td>Seazen</td><td>1030 HK</td><td>Buy</td><td>1.96</td><td>3.00</td><td>1.8</td><td>5.6</td><td>7.4</td><td>(74)</td><td>31.4</td><td>8.9</td><td>6.4</td><td>-</td><td>0.3</td><td>59</td></tr><tr><td>Shenzhen Inv</td><td>604 HK</td><td>Hold</td><td>0.79</td><td>0.70</td><td>0.9</td><td>1.1</td><td>2.2</td><td>(64)</td><td>14.0</td><td>23.6</td><td>15.4</td><td>-</td><td>0.2</td><td>91</td></tr><tr><td>Yanlord (SGD)</td><td>YLLG SP</td><td>Hold</td><td>0.69</td><td>0.53</td><td>1.0</td><td>2.5</td><td>1.6</td><td>(57)</td><td>n.m.</td><td>18.5</td><td>17.3</td><td>-</td><td>0.2</td><td>34</td></tr><tr><td>Yuexiu</td><td>123 HK</td><td>Buy</td><td>4.33</td><td>5.10</td><td>2.2</td><td>5.8</td><td>14.7</td><td>(71)</td><td>58.0</td><td>14.5</td><td>9.2</td><td>2.8</td><td>0.3</td><td>69</td></tr><tr><td>Average</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>(62)</td><td>20.3</td><td>19.3</td><td>12.8</td><td>1.6</td><td>0.4</td><td>61</td></tr><tr><td colspan=\"15\">Property brokerage service providers</td></tr><tr><td>KE Holdings (Beike) (USD)</td><td>BEKE US</td><td>Buy</td><td>16.89</td><td>23.30</td><td>21.1</td><td>74.6</td><td>n.a.</td><td>n.a.</td><td>25.2</td><td>17.1</td><td>14.1</td><td>2.2</td><td>2.0</td><td>net cash</td></tr><tr><td colspan=\"15\">Property managers</td></tr><tr><td>COPL</td><td>2669 HK</td><td>Hold</td><td>3.80</td><td>4.30</td><td>1.6</td><td>4.9</td><td>n.a.</td><td>n.a.</td><td>6.8</td><td>6.4</td><td>6.0</td><td>5.1</td><td>1.6</td><td>net cash</td></tr><tr><td>CR Mixc</td><td>1209 HK</td><td>Hold</td><td>44.74</td><td>48.00</td><td>13.0</td><td>17.0</td><td>n.a.</td><td>n.a.</td><td>22.4</td><td>20.3</td><td>18.7</td><td>4.9</td><td>4.9</td><td>net cash</td></tr><tr><td>CG Services</td><td>6098 HK</td><td>Hold</td><td>6.07</td><td>6.10</td><td>2.5</td><td>5.7</td><td>n.a.</td><td>n.a.</td><td>7.0</td><td>6.4</td><td>5.6</td><td>9.3</td><td>0.5</td><td>net cash</td></tr><tr><td>Greentown Serv</td><td>2869 HK</td><td>Buy</td><td>4.56</td><td>5.10</td><td>1.8</td><td>1.8</td><td>n.a.</td><td>n.a.</td><td>14.1</td><td>12.7</td><td>11.6</td><td>5.7</td><td>1.5</td><td>net cash</td></tr><tr><td>Sunac Services</td><td>1516 HK</td><td>Hold</td><td>0.98</td><td>0.90</td><td>0.4</td><td>1.8</td><td>n.a.</td><td>n.a.</td><td>7.3</td><td>4.5</td><td>4.4</td><td>1.3</td><td>0.5</td><td>net cash</td></tr><tr><td>Average</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>11.5</td><td>10.1</td><td>9.3</td><td>5.3</td><td>1.8</td><td></td></tr></table>",
+                "table_type": "complex_table",
+                "table_nest_level": 1
+            },
+            "bbox": [
+                58,
+                138,
+                931,
+                473
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Valuation charts "
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                282,
+                536,
+                443,
+                552
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/706ac2229bdd00f57908f6c2c29b0623d554b0b386a78d643cdc56c7090abb5c.jpg"
+                },
+                "content": "| Date    | 12M forward PE | Mean | -1 SD | +1 SD |\n|---------|----------------|------|-------|-------|\n| Apr-10  | 12.0           | 8.0  | 7.0   | 8.0   |\n| Apr-12  | 8.0            | 6.0  | 7.0   | 8.0   |\n| Apr-14  | 6.0            | 5.0  | 7.0   | 8.0   |\n| Apr-16  | 8.0            | 6.0  | 7.0   | 8.0   |\n| Apr-18  | 9.0            | 5.0  | 7.0   | 8.0   |\n| Apr-20  | 6.0            | 5.0  | 7.0   | 8.0   |\n| Apr-22  | 5.0            | 4.0  | 7.0   | 8.0   |\n| Apr-24  | 12.0           | 8.0  | 7.0   | 8.0   |",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Figure 14: SOE developers' forward PE (x) "
+                    }
+                ],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Note: The average forward PE multiples of COLI, CRL, Vanke, Greentown, Yuexiu, C&D Int'l, and Longfor are based on Bloomberg consensus.\nSource: Bloomberg, HSBC "
+                    }
+                ]
+            },
+            "sub_type": "line",
+            "bbox": [
+                284,
+                598,
+                591,
+                792
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/06c7070a51a47dd958ae79ff548c82e7623a5f22a58324dfcc95d246af5c4590.jpg"
+                },
+                "content": "| Year | % to NAV | Mean | +1 SD | -1 SD |\n|------|----------|------|-------|-------|\n| 2010 | -5%      | -40% | -30%  | -60%  |\n| 2011 | -15%     | -40% | -30%  | -60%  |\n| 2012 | -30%     | -40% | -30%  | -60%  |\n| 2013 | -20%     | -40% | -30%  | -60%  |\n| 2014 | -25%     | -40% | -30%  | -60%  |\n| 2015 | -10%     | -40% | -30%  | -60%  |\n| 2016 | -25%     | -40% | -30%  | -60%  |\n| 2017 | -30%     | -40% | -30%  | -60%  |\n| 2018 | -25%     | -40% | -30%  | -60%  |\n| 2019 | -35%     | -40% | -30%  | -60%  |\n| 2020 | -45%     | -40% | -30%  | -60%  |\n| 2021 | -55%     | -40% | -30%  | -60%  |\n| 2022 | -65%     | -40% | -30%  | -60%  |\n| 2023 | -75%     | -40% | -30%  | -60%  |\n| 2024 | -85%     | -40% | -30%  | -60%  |\n| 2025 | -75%     | -40% | -30%  | -60%  |\n| 2026 | -65%     | -40% | -30%  | -60%  |",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Figure 15: SOE developers' NAV discount (%) "
+                    }
+                ],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: Bloomberg, HSBC estimates "
+                    }
+                ]
+            },
+            "sub_type": "line",
+            "bbox": [
+                616,
+                595,
+                921,
+                776
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "HSBC "
+                    }
+                ]
+            },
+            "bbox": [
+                72,
+                9,
+                189,
+                35
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Equities • REMD\n26 May 2026 "
+                    }
+                ]
+            },
+            "bbox": [
+                806,
+                8,
+                929,
+                33
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "6 "
+                    }
+                ]
+            },
+            "bbox": [
+                70,
+                964,
+                78,
+                973
+            ]
+        }
+    ],
+    [
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/3711e5d4fac7352cb58afcdc5877c719908ba1f0c5e8216fc388b4db76c7380d.jpg"
+                },
+                "content": "| Entity | Value (%) |\n| :--- | :--- |\n| China Jinmao | 40 |\n| CR Land | 29 |\n| COLI | 27 |\n| Greentown | 11 |\n| Yuexiu | 9 |\n| Coverage average | 3 |\n| C&D | 1 |\n| SZ Investment | 0 |\n| HSI | -1 |\n| Yanlord | -1 |\n| Longfor | -4 |\n| Seazen | -4 |\n| Vanke | -18 |\n| CG | -45 |\n| CIFI | -61 |",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Figure 16: 2026 y-t-d share price performance "
+                    }
+                ],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Note: Priced as of 21 May 2026.\nSource: Bloomberg, HSBC "
+                    }
+                ]
+            },
+            "sub_type": "bar",
+            "bbox": [
+                287,
+                157,
+                579,
+                347
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/3e6b23268da6ad6e25193fb55fcf2d323fe8dca230e6deb25b056d4bd053fbac.jpg"
+                },
+                "content": "| Year | Trailing PB (x) |\n|------|-----------------|\n| 2010 | 3.2             |\n| 2011 | 2.8             |\n| 2012 | 2.0             |\n| 2013 | 2.7             |\n| 2014 | 1.5             |\n| 2015 | 1.4             |\n| 2016 | 1.3             |\n| 2017 | 1.4             |\n| 2018 | 1.7             |\n| 2019 | 1.3             |\n| 2020 | 1.2             |\n| 2021 | 1.0             |\n| 2022 | 0.8             |\n| 2023 | 0.6             |\n| 2024 | 0.5             |\n| 2025 | 0.4             |\n| 2026 | 0.3             |",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Figure 17: SOE developers' trailing PB (x) "
+                    }
+                ],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Note: The average trailing PB multiples of COLI, CRL, Vanke, Greentown, Yuexiu, and C&D International are based on monthly data.\nSource: Bloomberg, HSBC "
+                    }
+                ]
+            },
+            "sub_type": "line",
+            "bbox": [
+                618,
+                157,
+                921,
+                345
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "HSBC "
+                    }
+                ]
+            },
+            "bbox": [
+                72,
+                8,
+                189,
+                35
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Equities • REMD\n26 May 2026 "
+                    }
+                ]
+            },
+            "bbox": [
+                806,
+                8,
+                929,
+                33
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "7 "
+                    }
+                ]
+            },
+            "bbox": [
+                921,
+                964,
+                929,
+                973
+            ]
+        }
+    ],
+    [
+        {
+            "type": "table",
+            "content": {
+                "image_source": {
+                    "path": "images/d1ea104a6b829537718f797e9df99590d78d15b0dbd747de8fc5f4119ef82df5.jpg"
+                },
+                "table_caption": [
+                    {
+                        "type": "text",
+                        "content": "Valuation and risks "
+                    }
+                ],
+                "table_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Note: Priced as of 21 May 2026. *Employed by a non-US affiliate of HSBC Securities (USA) Inc. and not registered/qualified pursuant to FINRA regulations. Source: Bloomberg, HSBC estimates "
+                    }
+                ],
+                "html": "<table><tr><td colspan=\"2\"></td><td>Valuation</td><td>Risks to our view</td></tr><tr><td>CR Land 1109 HK</td><td>Current price:HKD35.10Target price:HKD43.80Upside:+24.8%</td><td>Methodology: The NAV is calculated by adding up the gross asset values (GAVs) of development projects (DPs) and investment projects (IPs), then subtracting net debt, based on company reports. Our assignment of a target discount is on a relative basis; companies that share similar operational/financial strengths and execution track records should be assigned the same target discount.Assumptions: A NAV discount of 21%, set at 1 SD above the historical mean, is applied to our NAV per share estimate of HKD55.50 (all unchanged). We use a discount that is 1 SD above the historical mean in the valuation to reflect CR Land&#x27;s increase in sales momentum, strong recurrent income, and solid execution track record.Our unchanged target price of HKD43.80 implies c25% upside from current levels. We maintain our Buy rating on the stock as it is supported by the potential to unlock the value of its IP portfolio and a promising margin recovery trajectory.Michelle Kwok* | michellekwok@hsbc.com.hk | +852 2996 6918</td><td>Key downside risks◆ Inability to maintain sales momentum.◆ Lower-than-expected margins.◆ Any material slowdown in the shopping mall segment.◆ Inability to maintain dividend stability.◆ Uncertainties related to macroeconomic and property-specific policies.</td></tr><tr><td>C&amp;D International 1908 HK</td><td>Current price:HKD15.88Target price:HKD19.90Upside:+25.3%</td><td>Methodology: The NAV is calculated by adding up the gross asset values (GAVs) of development projects (DPs) and investment projects (IPs), then subtracting net debt, based on company reports. Our assignment of a target discount is on a relative basis; companies that share similar operational/financial strengths and execution track records should be assigned the same target discount.Assumptions: A NAV discount of 53%, set at 0.25 SD above the historical mean, is applied to our NAV per share estimate of HKD42.40 (all unchanged). We use a discount that is 0.25 SD above the historical mean to reflect the encouraging margin recovery trend and unique competitive edge supported by a young landbank. Our unchanged target price of HKD19.90 implies c25% upside from current levels. We maintain our Buy rating on the stock due to its young land bank and relatively high earnings visibility.Stephen Wang*, CFA | stephen.wang@hsbc.com.hk | +852 2284 1675</td><td>Key downside risks◆ Land acquisition slowdown.◆ Sharp sales deterioration.◆ Steep margin compression.◆ Share placement at deep discounts.◆ JV project risks.◆ Policy uncertainties.</td></tr></table>",
+                "table_type": "complex_table",
+                "table_nest_level": 1
+            },
+            "bbox": [
+                67,
+                147,
+                929,
+                539
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "[Non-Text] "
+                    }
+                ]
+            },
+            "bbox": [
+                73,
+                10,
+                136,
+                36
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "HSBC "
+                    }
+                ]
+            },
+            "bbox": [
+                139,
+                16,
+                189,
+                30
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Equities • REMD "
+                    }
+                ]
+            },
+            "bbox": [
+                806,
+                10,
+                929,
+                21
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "26 May 2026 "
+                    }
+                ]
+            },
+            "bbox": [
+                840,
+                23,
+                929,
+                35
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "8 "
+                    }
+                ]
+            },
+            "bbox": [
+                68,
+                966,
+                78,
+                974
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Disclosure appendix "
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                72,
+                120,
+                515,
+                153
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Analyst Certification "
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                68,
+                191,
+                220,
+                204
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The following analyst(s), economist(s), or strategist(s) who is(are) primarily responsible for this report, including any analyst(s) whose name(s) appear(s) as author of an individual section or sections of the report and any analyst(s) named as the covering analyst(s) of a subsidiary company in a sum-of-the-parts valuation certifies(y) that the opinion(s) on the subject security(ies) or issuer(s), any views or forecasts expressed in the section(s) of which such individual(s) is(are) named as author(s), and any other views or forecasts expressed herein, including any views expressed on the back page of the research report, accurately reflect their personal view(s) and that no part of their compensation was, is or will be directly or indirectly related to the specific recommendation(s) or views contained in this research report: Michelle Kwok, Oliver Yu, Stephen Wang, CFA and Brian Yu "
+                    }
+                ]
+            },
+            "bbox": [
+                68,
+                206,
+                932,
+                316
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Important disclosures "
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                68,
+                324,
+                230,
+                338
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Equities: Stock ratings and basis for financial analysis "
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                68,
+                343,
+                463,
+                357
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "HSBC and its affiliates, including the issuer of this report (\"HSBC\") believes an investor's decision to buy or sell a stock should depend on individual circumstances such as the investor's existing holdings, risk tolerance and other considerations and that investors utilise various disciplines and investment horizons when making investment decisions. Ratings should not be used or relied on in isolation as investment advice. Different securities firms use a variety of ratings terms as well as different rating systems to describe their recommendations and therefore investors should carefully read the definitions of the ratings used in each research report. Further, investors should carefully read the entire research report and not infer its contents from the rating because research reports contain more complete information concerning the analysts' views and the basis for the rating. "
+                    }
+                ]
+            },
+            "bbox": [
+                68,
+                360,
+                932,
+                467
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "From 23rd March 2015 HSBC has assigned ratings on the following basis: "
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                68,
+                477,
+                601,
+                490
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The target price is based on the analyst's assessment of the stock's actual current value, although we expect it to take six to 12 months for the market price to reflect this. When the target price is more than  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "20\\%"
+                    },
+                    {
+                        "type": "text",
+                        "content": " above the current share price, the stock will be classified as a Buy; when it is between  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "5\\%"
+                    },
+                    {
+                        "type": "text",
+                        "content": " and  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "20\\%"
+                    },
+                    {
+                        "type": "text",
+                        "content": " above the current share price, the stock may be classified as a Buy or a Hold; when it is between  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "5\\%"
+                    },
+                    {
+                        "type": "text",
+                        "content": " below and  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "5\\%"
+                    },
+                    {
+                        "type": "text",
+                        "content": " above the current share price, the stock will be classified as a Hold; when it is between  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "5\\%"
+                    },
+                    {
+                        "type": "text",
+                        "content": " and  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "20\\%"
+                    },
+                    {
+                        "type": "text",
+                        "content": " below the current share price, the stock may be classified as a Hold or a Reduce; and when it is more than  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "20\\%"
+                    },
+                    {
+                        "type": "text",
+                        "content": " below the current share price, the stock will be classified as a Reduce. "
+                    }
+                ]
+            },
+            "bbox": [
+                68,
+                493,
+                932,
+                586
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Our ratings are re-calibrated against these bands at the time of any 'material change' (initiation or resumption of coverage, change in target price or estimates). "
+                    }
+                ]
+            },
+            "bbox": [
+                70,
+                593,
+                929,
+                625
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Upside/Downside is the percentage difference between the target price and the share price. "
+                    }
+                ]
+            },
+            "bbox": [
+                70,
+                633,
+                684,
+                647
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Prior to this date, HSBC's rating structure was applied on the following basis: "
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                68,
+                656,
+                630,
+                670
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "For each stock we set a required rate of return calculated from the cost of equity for that stock's domestic or, as appropriate, regional market established by our strategy team. The target price for a stock represented the value the analyst expected the stock to reach over our performance horizon. The performance horizon was 12 months. For a stock to be classified as Overweight, the potential return, which equals the percentage difference between the current share price and the target price, including the forecast dividend yield when indicated, had to exceed the required return by at least 5 percentage points over the succeeding 12 months (or 10 percentage points for a stock classified as Volatile*). For a stock to be classified as Underweight, the stock was expected to underperform its required return by at least 5 percentage points over the succeeding 12 months (or 10 percentage points for a stock classified as Volatile*). Stocks between these bands were classified as Neutral. "
+                    }
+                ]
+            },
+            "bbox": [
+                68,
+                672,
+                932,
+                797
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "*A stock was classified as volatile if its historical volatility had exceeded  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "40\\%"
+                    },
+                    {
+                        "type": "text",
+                        "content": ", if the stock had been listed for less than 12 months (unless it was in an industry or sector where volatility is low) or if the analyst expected significant volatility. However, stocks which we did not consider volatile may in fact also have behaved in such a way. Historical volatility was defined as the past month's average of the daily 365-day moving average volatilities. In order to avoid misleadingly frequent changes in rating, however, volatility had to move 2.5 percentage points past the  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "40\\%"
+                    },
+                    {
+                        "type": "text",
+                        "content": " benchmark in either direction for a stock's status to change. "
+                    }
+                ]
+            },
+            "bbox": [
+                70,
+                804,
+                932,
+                883
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "HSBC "
+                    }
+                ]
+            },
+            "bbox": [
+                72,
+                9,
+                193,
+                35
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Equities • REMD\n26 May 2026 "
+                    }
+                ]
+            },
+            "bbox": [
+                806,
+                8,
+                931,
+                33
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "9 "
+                    }
+                ]
+            },
+            "bbox": [
+                921,
+                964,
+                929,
+                973
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Rating distribution for long-term investment opportunities "
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                70,
+                117,
+                490,
+                132
+            ]
+        },
+        {
+            "type": "table",
+            "content": {
+                "image_source": {
+                    "path": "images/0bebc50e7001940e196d0b9b429a522cb1e475f89ce7b97c9fd1a8e57b025e4b.jpg"
+                },
+                "table_caption": [
+                    {
+                        "type": "text",
+                        "content": "As of 31 March 2026, the distribution of all independent ratings published by HSBC is as follows: "
+                    }
+                ],
+                "table_footnote": [],
+                "html": "<table><tr><td>Buy</td><td>59%</td><td>(12% of these provided with Investment Banking Services in the past 12 months)</td></tr><tr><td>Hold</td><td>36%</td><td>(12% of these provided with Investment Banking Services in the past 12 months)</td></tr><tr><td>Sell</td><td>6%</td><td>(6% of these provided with Investment Banking Services in the past 12 months)</td></tr></table>",
+                "table_type": "simple_table",
+                "table_nest_level": 1
+            },
+            "bbox": [
+                68,
+                152,
+                904,
+                206
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "For the purposes of the distribution above the following mapping structure is used during the transition from the previous to current rating models: under our previous model, Overweight = Buy, Neutral = Hold and Underweight = Sell; under our current model Buy = Buy, Hold = Hold and Reduce = Sell. For rating definitions under both models, please see “Stock ratings and basis for financial analysis” above. "
+                    }
+                ]
+            },
+            "bbox": [
+                70,
+                212,
+                932,
+                273
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "For the distribution of non-independent ratings published by HSBC, please see the disclosure page available at http://www.hsbcnet.com/gbm/financial-regulation/investment-recommendations-disclosures. "
+                    }
+                ]
+            },
+            "bbox": [
+                70,
+                282,
+                932,
+                312
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/ecd7ef5a74f7a1ad8238353fa319c6b6110063a05ca4522b54cfd20a276ebe47.jpg"
+                },
+                "content": "| Date   | Value |\n|--------|-------|\n| May-21 | 14    |\n| May-22 | 16    |\n| May-23 | 27    |\n| May-24 | 19    |\n| May-25 | 13    |\n| May-26 | 18    |",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Share price and rating changes for long-term investment opportunities "
+                    },
+                    {
+                        "type": "text",
+                        "content": "C&D International (1908.HK) share price performance\nHKD Vs HSBC rating history "
+                    }
+                ],
+                "chart_footnote": []
+            },
+            "sub_type": "line",
+            "bbox": [
+                78,
+                391,
+                489,
+                568
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/ba3a58661d8b07e176c55df0e13abeeb4c2160545ab96292f6a826e1e0a01fcb.jpg"
+                },
+                "content": "| Date   | Value |\n|--------|-------|\n| May-21 | 38    |\n| May-22 | 39    |\n| May-23 | 38    |\n| May-24 | 29    |\n| May-25 | 34    |\n| May-26 | 39    |",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "China Resources Land (1109.HK) share price performance HKD Vs HSBC rating history "
+                    }
+                ],
+                "chart_footnote": []
+            },
+            "sub_type": "line",
+            "bbox": [
+                78,
+                656,
+                489,
+                833
+            ]
+        },
+        {
+            "type": "table",
+            "content": {
+                "image_source": {
+                    "path": "images/1665570ea60caa3c09203c7cf0437592f03819409d1007ae39b0a73ddf9f4269.jpg"
+                },
+                "table_caption": [
+                    {
+                        "type": "text",
+                        "content": "Rating & target price history "
+                    }
+                ],
+                "table_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: HSBC "
+                    }
+                ],
+                "html": "<table><tr><td>From</td><td>To</td><td>Date</td><td>Analyst</td></tr><tr><td>N/A</td><td>Buy</td><td>03 Oct 2023</td><td>Stephen Wang, CFA</td></tr><tr><td>Buy</td><td>Hold</td><td>16 Jan 2025</td><td>Stephen Wang, CFA</td></tr><tr><td>Hold</td><td>Buy</td><td>27 Mar 2025</td><td>Stephen Wang, CFA</td></tr><tr><td>Target price</td><td>Value</td><td>Date</td><td>Analyst</td></tr><tr><td>Price 1</td><td>25.90</td><td>03 Oct 2023</td><td>Stephen Wang, CFA</td></tr><tr><td>Price 2</td><td>25.40</td><td>11 Jan 2024</td><td>Stephen Wang, CFA</td></tr><tr><td>Price 3</td><td>18.80</td><td>14 Mar 2024</td><td>Stephen Wang, CFA</td></tr><tr><td>Price 4</td><td>19.50</td><td>22 Mar 2024</td><td>Stephen Wang, CFA</td></tr><tr><td>Price 5</td><td>22.70</td><td>30 May 2024</td><td>Stephen Wang, CFA</td></tr><tr><td>Price 6</td><td>20.70</td><td>23 Aug 2024</td><td>Stephen Wang, CFA</td></tr><tr><td>Price 7</td><td>21.10</td><td>01 Oct 2024</td><td>Stephen Wang, CFA</td></tr><tr><td>Price 8</td><td>12.80</td><td>16 Jan 2025</td><td>Stephen Wang, CFA</td></tr><tr><td>Price 9</td><td>19.60</td><td>27 Mar 2025</td><td>Stephen Wang, CFA</td></tr><tr><td>Price 10</td><td>21.20</td><td>17 Apr 2025</td><td>Stephen Wang, CFA</td></tr><tr><td>Price 11</td><td>19.90</td><td>23 Jul 2025</td><td>Stephen Wang, CFA</td></tr><tr><td>Price 12</td><td>21.70</td><td>22 Aug 2025</td><td>Stephen Wang, CFA</td></tr><tr><td>Price 13</td><td>20.10</td><td>27 Jan 2026</td><td>Stephen Wang, CFA</td></tr><tr><td>Price 14</td><td>19.90</td><td>26 Mar 2026</td><td>Stephen Wang, CFA</td></tr></table>",
+                "table_type": "simple_table",
+                "table_nest_level": 1
+            },
+            "bbox": [
+                522,
+                363,
+                939,
+                590
+            ]
+        },
+        {
+            "type": "table",
+            "content": {
+                "image_source": {
+                    "path": "images/dbc906b8229a49ba592960bb931b8e535743f3937a4fdbf52ea6550b263fe2c3.jpg"
+                },
+                "table_caption": [
+                    {
+                        "type": "text",
+                        "content": "Rating & target price history "
+                    }
+                ],
+                "table_footnote": [],
+                "html": "<table><tr><td>From</td><td>To</td><td>Date</td><td>Analyst</td></tr><tr><td>Hold</td><td>Buy</td><td>12 Aug 2015</td><td>Michelle Kwok</td></tr><tr><td>Target price</td><td>Value</td><td>Date</td><td>Analyst</td></tr><tr><td>Price 1</td><td>47.90</td><td>09 Jan 2023</td><td>Michelle Kwok</td></tr><tr><td>Price 2</td><td>46.20</td><td>11 Jan 2024</td><td>Michelle Kwok</td></tr><tr><td>Price 3</td><td>44.20</td><td>26 Mar 2024</td><td>Michelle Kwok</td></tr><tr><td>Price 4</td><td>29.60</td><td>28 Aug 2024</td><td>Michelle Kwok</td></tr><tr><td>Price 5</td><td>35.60</td><td>01 Oct 2024</td><td>Michelle Kwok</td></tr><tr><td>Price 6</td><td>32.50</td><td>16 Jan 2025</td><td>Michelle Kwok</td></tr><tr><td>Price 7</td><td>36.30</td><td>23 Apr 2025</td><td>Michelle Kwok</td></tr><tr><td>Price 8</td><td>43.20</td><td>24 Jul 2025</td><td>Michelle Kwok</td></tr><tr><td>Price 9</td><td>43.00</td><td>27 Aug 2025</td><td>Michelle Kwok</td></tr><tr><td>Price 10</td><td>39.00</td><td>15 Jan 2026</td><td>Michelle Kwok</td></tr><tr><td>Price 11</td><td>37.70</td><td>30 Mar 2026</td><td>Michelle Kwok</td></tr><tr><td>Price 12</td><td>43.80</td><td>06 May 2026</td><td>Michelle Kwok</td></tr><tr><td colspan=\"4\">Source: HSBC</td></tr></table>",
+                "table_type": "complex_table",
+                "table_nest_level": 1
+            },
+            "bbox": [
+                522,
+                629,
+                939,
+                821
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "To view a list of all the independent fundamental ratings/recommendations disseminated by HSBC during the preceding 12-month period, and the location where we publish our quarterly distribution of non-fundamental recommendations (applicable to Fixed Income and Currencies research only), please use the following links to access the disclosure page: "
+                    }
+                ]
+            },
+            "bbox": [
+                70,
+                842,
+                932,
+                889
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Clients of HSBC Private Bank: www.research.privatebank.hsbc.com/Disclosures "
+                    }
+                ]
+            },
+            "bbox": [
+                70,
+                896,
+                611,
+                911
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "HSBC "
+                    }
+                ]
+            },
+            "bbox": [
+                72,
+                9,
+                191,
+                35
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Equities • REMD\n26 May 2026 "
+                    }
+                ]
+            },
+            "bbox": [
+                806,
+                8,
+                931,
+                35
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "10 "
+                    }
+                ]
+            },
+            "bbox": [
+                70,
+                964,
+                85,
+                973
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "All other clients: www.research.hsbc.com/A/Disclosures "
+                    }
+                ]
+            },
+            "bbox": [
+                67,
+                118,
+                445,
+                132
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "HSBC & Analyst disclosures "
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                67,
+                141,
+                277,
+                155
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Disclosure checklist "
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                67,
+                157,
+                220,
+                169
+            ]
+        },
+        {
+            "type": "table",
+            "content": {
+                "image_source": {
+                    "path": "images/d62a38de210da7d45fd74b0f533c9f5ea21604f7e92be88c68d2b913aac71d13.jpg"
+                },
+                "table_caption": [],
+                "table_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: HSBC "
+                    }
+                ],
+                "html": "<table><tr><td>Company</td><td>Ticker</td><td>Recent price</td><td>Price date</td><td>Disclosure</td></tr><tr><td>C&amp;D INTERNATIONAL</td><td>1908.HK</td><td>15.88</td><td>21 May 2026</td><td>4</td></tr><tr><td>CHINA RESOURCES LAND</td><td>1109.HK</td><td>35.10</td><td>21 May 2026</td><td>1, 4, 5, 6, 7, 11</td></tr></table>",
+                "table_type": "simple_table",
+                "table_nest_level": 1
+            },
+            "bbox": [
+                67,
+                178,
+                932,
+                219
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "text_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "1 HSBC has managed or co-managed a public offering of securities for this company within the past 12 months. "
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "2 HSBC expects to receive or intends to seek compensation for investment banking services from this company in the next 3 months. "
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "3 At the time of publication of this report, HSBC Securities (USA) Inc. is a Market Maker in securities issued by this company. "
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "4 As of 30 April 2026, HSBC beneficially owned  "
+                            },
+                            {
+                                "type": "equation_inline",
+                                "content": "1\\%"
+                            },
+                            {
+                                "type": "text",
+                                "content": " or more of a class of common equity securities of this company. "
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "5 This company was a client of HSBC or had during the preceding 12 month period been a client of and/or paid compensation to HSBC in respect of investment banking services. "
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "6 This company was a client of HSBC or had during the preceding 12 month period been a client of and/or paid compensation to HSBC in respect of non-investment banking securities-related services. "
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "7 This company was a client of HSBC or had during the preceding 12 month period been a client of and/or paid compensation to HSBC in respect of non-securities services. "
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "8 A covering analyst/s has received compensation from this company in the past 12 months. "
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "9 A covering analyst/s or a member of his/her household has a financial interest in the securities of this company, as detailed below. "
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "10 A covering analyst/s or a member of his/her household is an officer, director or supervisory board member of this company, as detailed below. "
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "11 At the time of publication of this report, HSBC is a non-US Market Maker in securities issued by this company and/or in securities in respect of this company. "
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "12 As of 15 May 2026, HSBC beneficially held a net long position of more than  "
+                            },
+                            {
+                                "type": "equation_inline",
+                                "content": "0.5\\%"
+                            },
+                            {
+                                "type": "text",
+                                "content": " of this company's total issued share capital, calculated according to the SSR methodology. "
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "13 As of 15 May 2026, HSBC beneficially held a net short position of more than  "
+                            },
+                            {
+                                "type": "equation_inline",
+                                "content": "0.5\\%"
+                            },
+                            {
+                                "type": "text",
+                                "content": " of this company's total issued share capital, calculated according to the SSR methodology. "
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "14 HSBC Qianhai Securities Limited holds 1% or more of a class of common equity securities of this company. "
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                240,
+                931,
+                636
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "HSBC and its affiliates will from time to time sell to and buy from customers the securities/instruments, both equity and debt (including derivatives) of companies covered in HSBC on a principal or agency basis or act as a market maker or liquidity provider in the securities/instruments mentioned in this report. "
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                640,
+                931,
+                682
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Analysts, economists, and strategists are paid in part by reference to the profitability of HSBC which includes investment banking, sales & trading, and principal trading revenues. "
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                689,
+                929,
+                720
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Whether, or in what time frame, an update of this analysis will be published is not determined in advance. "
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                726,
+                774,
+                740
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Non-U.S. analysts may not be associated persons of HSBC Securities (USA) Inc, and therefore may not be subject to FINRA Rule 2241 or FINRA Rule 2242 restrictions on communications with the subject company, public appearances and trading securities held by the analysts. "
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                747,
+                929,
+                792
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Economic sanctions laws imposed by certain jurisdictions such as the US, the EU, the UK, and others, may prohibit persons subject to those laws from making certain types of investments, including by transacting or dealing in securities of particular issuers, sectors, or regions. This report does not constitute advice in relation to any such laws and should not be construed as an inducement to transact in securities in breach of such laws. "
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                800,
+                931,
+                856
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "For disclosures in respect of any company mentioned in this report, please see the most recently published report on that company available at www.hsbcnet.com/research. HSBC Private Bank clients should contact their Relationship Manager for queries regarding other research reports. In order to find out more about the proprietary models used to produce this report, please contact the authoring analyst. "
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                864,
+                932,
+                923
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "HSBC "
+                    }
+                ]
+            },
+            "bbox": [
+                72,
+                9,
+                193,
+                35
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Equities • REMD\n26 May 2026 "
+                    }
+                ]
+            },
+            "bbox": [
+                806,
+                8,
+                931,
+                35
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "11 "
+                    }
+                ]
+            },
+            "bbox": [
+                915,
+                964,
+                929,
+                973
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Additional disclosures "
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                70,
+                118,
+                233,
+                130
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "text_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "1 This report is dated as at 26 May 2026. "
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "2 All market data included in this report are dated as at close 21 May 2026, unless a different date and/or a specific time of day is indicated in the report. "
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "3 HSBC has procedures in place to identify and manage any potential conflicts of interest that arise in connection with its Research business. HSBC's analysts and its other staff who are involved in the preparation and dissemination of Research operate and have a management reporting line independent of HSBC's Investment Banking business. Information Barrier procedures are in place between the Investment Banking, Principal Trading, and Research businesses to ensure that any confidential and/or price sensitive information is handled in an appropriate manner. "
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "4 You are not permitted to use, for reference, any data in this document for the purpose of (i) determining the interest payable, or other sums due, under loan agreements or under other financial contracts or instruments, (ii) determining the price at which a financial instrument may be bought or sold or traded or redeemed, or the value of a financial instrument, and/or (iii) measuring the performance of a financial instrument or of an investment fund. "
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "5 As of 15 May 2026 HSBC owned a significant interest in the debt securities of the following company(ies): CHINA RESOURCES LAND "
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                68,
+                134,
+                922,
+                350
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Production & distribution disclosures "
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                70,
+                360,
+                342,
+                372
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "text_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "1. This report was produced and signed off by the author on 22 May 2026 02:08 GMT. "
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "2. In order to see when this report was first disseminated please see the disclosure page available at https://www.research.hsbc.com/R/34/PTJQgcp "
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                67,
+                375,
+                757,
+                427
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "HSBC "
+                    }
+                ]
+            },
+            "bbox": [
+                72,
+                9,
+                193,
+                35
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Equities • REMD\n26 May 2026 "
+                    }
+                ]
+            },
+            "bbox": [
+                806,
+                9,
+                931,
+                33
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "12 "
+                    }
+                ]
+            },
+            "bbox": [
+                70,
+                964,
+                85,
+                973
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Disclaimer "
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                70,
+                120,
+                302,
+                149
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Legal entities as at 13 May 2026: "
+                    }
+                ]
+            },
+            "bbox": [
+                70,
+                155,
+                228,
+                164
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "HSBC Bank plc; HSBC Continental Europe; HSBC Continental Europe SA, Germany; HSBC Bank Middle East Limited, DIFC; HSBC Bank Middle East Limited, Dubai branch; HSBC Yatirim Menkul Degerler AS, Istanbul; The Hongkong and Shanghai Banking Corporation Limited, Hong Kong; The Hongkong and Shanghai Banking Corporation Limited, Singapore Branch; The Hongkong and Shanghai Banking Corporation Limited, Seoul Securities Branch; The Hongkong and Shanghai Banking Corporation Limited, Seoul Branch; HSBC Qianhai Securities Limited; HSBC Securities (Taiwan) Corporation Limited; HSBC Securities and Capital Markets (India) Private Limited, Mumbai; HSBC Bank Australia Limited; HSBC Securities (USA) Inc., New York; HSBC México, SA, Institución de Banca Múltiple, Grupo Financiero HSBC; Banco HSBC SA "
+                    }
+                ]
+            },
+            "bbox": [
+                70,
+                166,
+                663,
+                240
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Issuer of report "
+                    }
+                ]
+            },
+            "bbox": [
+                673,
+                155,
+                752,
+                164
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The Hongkong and Shanghai Banking Corporation Limited "
+                    }
+                ]
+            },
+            "bbox": [
+                673,
+                166,
+                937,
+                185
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Level 16, 1 Queen's Road Central "
+                    }
+                ]
+            },
+            "bbox": [
+                673,
+                187,
+                828,
+                196
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Hong Kong SAR "
+                    }
+                ]
+            },
+            "bbox": [
+                673,
+                200,
+                751,
+                207
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Telephone: +852 2843 9111 "
+                    }
+                ]
+            },
+            "bbox": [
+                673,
+                210,
+                803,
+                218
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Fax: +852 2596 0200 "
+                    }
+                ]
+            },
+            "bbox": [
+                673,
+                221,
+                771,
+                227
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Website: www.research.hsbc.com "
+                    }
+                ]
+            },
+            "bbox": [
+                673,
+                232,
+                828,
+                240
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "This document has been issued by The Hongkong and Shanghai Banking Corporation Limited (\"HSBC\") in the conduct of its Hong Kong regulated business for the information of its institutional and professional investor (as defined by Securities and Future Ordinance (Chapter 571)) customers; it is not intended for and should not be distributed to retail customers in Hong Kong, unless permitted otherwise. The Hongkong and Shanghai Banking Corporation Limited is regulated by the Hong Kong Monetary Authority. All enquires by recipients in Hong Kong must be directed to your HSBC contact in Hong Kong. If it is received by a customer of an affiliate of HSBC, its provision to the recipient is subject to the terms of business in place between the recipient and such affiliate. This document is not and should not be construed as an offer to sell or the solicitation of an offer to purchase or subscribe for any investment. HSBC has based this document on information obtained from sources it believes to be reliable but which it has not independently verified; HSBC makes no guarantee, representation or warranty and accepts no responsibility or liability as to its accuracy or completeness. Expressions of opinion are those of the Research Division of HSBC only and are subject to change without notice. From time to time research analysts conduct site visits of covered issuers. HSBC policies prohibit research analysts from accepting payment or reimbursement for travel expenses from the issuer for such visits. HSBC and its affiliates and/or their officers, directors and employees may have positions in any securities mentioned in this document (or in any related investment) and may from time to time add to or dispose of any such securities (or investment). HSBC and its affiliates may act as market maker or have assumed an underwriting commitment in the securities of companies discussed in this document (or in related investments), may sell them to or buy them from customers on a principal basis and may also perform or seek to perform investment banking or underwriting services for or relating to those companies. The document is intended to be distributed in its entirety. Unless governing law permits otherwise, you must contact a HSBC Group member in your home jurisdiction if you wish to use HSBC Group services in effecting a transaction in any investment mentioned in this document. "
+                    }
+                ]
+            },
+            "bbox": [
+                70,
+                244,
+                939,
+                385
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "In the UK, this publication is distributed by HSBC Bank plc for the information of its Clients (as defined in the Rules of FCA) and those of its affiliates only. Nothing herein excludes or restricts any duty or liability to a customer which HSBC Bank plc has under the Financial Services and Markets Act 2000 or under the Rules of FCA and PRA. A recipient who chooses to deal with any person who is not a representative of HSBC Bank plc in the UK will not enjoy the protections afforded by the UK regulatory regime. HSBC Bank plc is regulated by the Financial Conduct Authority and the Prudential Regulation Authority. "
+                    }
+                ]
+            },
+            "bbox": [
+                70,
+                386,
+                937,
+                429
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "In the European Economic Area, this publication has been distributed by HSBC Continental Europe or by such other HSBC affiliate from which the recipient receives relevant services. "
+                    }
+                ]
+            },
+            "bbox": [
+                70,
+                430,
+                889,
+                440
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "In Japan, this publication has been distributed by HSBC Securities (Japan) Co., Ltd.. It may not be further distributed in whole or in part for any purpose. In Korea, this publication is distributed by either The Hongkong and Shanghai Banking Corporation Limited, Seoul Securities Branch (\"HBAP SLS\") or The Hongkong and Shanghai Banking Corporation Limited, Seoul Branch (\"HBAP SEL\") for the general information of professional investors specified in Article 9 of the Financial Investment Services and Capital Markets Act (\"FSCMA\"). This publication is not a prospectus as defined in the FSCMA. It may not be further distributed in whole or in part for any purpose. Both HBAP SLS and HBAP SEL are regulated by the Financial Services Commission and the Financial Supervisory Service of Korea. In Singapore, this publication is distributed by The Hongkong and Shanghai Banking Corporation Limited, Singapore Branch for the general information of institutional investors or other persons specified in Sections 274 and 304 of the Securities and Futures Act 2001 of Singapore (\"SFA\") and accredited investors and other persons in accordance with the conditions specified in Sections 275 and 305 of the SFA. Only Economics or Currencies reports are intended for distribution to a person who is not an Accredited Investor, Expert Investor or Institutional Investor as defined in SFA. The Hongkong and Shanghai Banking Corporation Limited, Singapore Branch accepts legal responsibility for the contents of reports. This publication is not a prospectus as defined in the SFA. It may not be further distributed in whole or in part for any purpose. The Hongkong and Shanghai Banking Corporation Limited Singapore Branch is regulated by the Monetary Authority of Singapore. Recipients in Singapore should contact a \"Hongkong and Shanghai Banking Corporation Limited, Singapore Branch\" representative in respect of any matters arising from, or in connection with this report. Please refer to The Hongkong and Shanghai Banking Corporation Limited Singapore Branch's website at www.business.hsbc.com.sg for contact details. In Australia, this publication has been distributed by The Hongkong and Shanghai Banking Corporation Limited (ABN 65 117 925 970, AFSL 301737) for the general information of its \"wholesale\" customers (as defined in the Corporations Act 2001). Where distributed to retail customers, this research is distributed by HSBC Bank Australia Limited (ABN 48 006 434 162, AFSL No. 232595). These respective entities make no representations that the products or services mentioned in this document are available to persons in Australia or are necessarily suitable for any particular person or appropriate in accordance with local law. No consideration has been given to the particular investment objectives, financial situation or particular needs of any recipient. "
+                    }
+                ]
+            },
+            "bbox": [
+                68,
+                441,
+                937,
+                604
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "HSBC Securities (USA) Inc. accepts responsibility for the content of this research report prepared by its non-US foreign affiliate. The information contained herein is under no circumstances to be construed as investment advice and is not tailored to the needs of the recipient. All US persons receiving and/or accessing this report and wishing to effect transactions in any security discussed herein should do so with HSBC Securities (USA) Inc. in the United States and not with its non-US foreign affiliate, the issuer of this report. HSBC México, S.A., Institución de Banca Múltiple, Grupo Financiero HSBC is authorized and regulated by Secretaría de Hacienda y Crédito Público and Comisión Nacional Bancaria y de Valores (CNBV). In Brazil, this document has been distributed by Banco HSBC SA (\"HSBC Brazil\"), and/or its affiliates. As required by Resolution No. 20/2021 of the Securities and Exchange Commission of Brazil (Comissão de Valores Mobiliários), potential conflicts of interest concerning (i) HSBC Brazil and/or its affiliates; and (ii) the analyst(s) responsible for authoring this report are stated on the chart above labelled \"HSBC & Analyst Disclosures\". If you are a customer of HSBC International Wealth & Premier Banking (\"IWPB\"), including HSBC Private Bank, you are eligible to receive this publication only if: (i) you have been approved to receive relevant research publications by an applicable HSBC legal entity; (ii) you have agreed to the applicable HSBC entity's terms and conditions and/or customer declaration for accessing research; and (iii) you have agreed to the terms and conditions of any other internet banking, online banking, mobile banking and/or investment services offered by that HSBC entity, through which you will access research publications (collectively with (ii), the \"Terms\"). If you do not meet the above eligibility requirements, please disregard this publication and, if you are a IWPB customer, please notify your Relationship Manager or call the relevant customer hotline. Distribution of this publication is the sole responsibility of the HSBC entity with whom you have agreed the Terms. Receipt of research publications is strictly subject to the Terms and any other conditions or disclaimers applicable to the provision of the publications that may be advised by IWPB. "
+                    }
+                ]
+            },
+            "bbox": [
+                68,
+                604,
+                937,
+                735
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "© Copyright 2026, The Hongkong and Shanghai Banking Corporation Limited, ALL RIGHTS RESERVED. No part of this publication may be reproduced, stored in a retrieval system, or transmitted, on any form or by any means, electronic, mechanical, photocopying, recording, or otherwise, without the prior written permission of The Hongkong and Shanghai Banking Corporation Limited. "
+                    }
+                ]
+            },
+            "bbox": [
+                70,
+                736,
+                937,
+                757
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "[1279855] "
+                    }
+                ]
+            },
+            "bbox": [
+                860,
+                773,
+                929,
+                787
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "HSBC "
+                    }
+                ]
+            },
+            "bbox": [
+                72,
+                9,
+                189,
+                33
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Equities • REMD\n26 May 2026 "
+                    }
+                ]
+            },
+            "bbox": [
+                806,
+                9,
+                929,
+                33
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "13 "
+                    }
+                ]
+            },
+            "bbox": [
+                915,
+                964,
+                929,
+                973
+            ]
+        }
+    ]
+]
