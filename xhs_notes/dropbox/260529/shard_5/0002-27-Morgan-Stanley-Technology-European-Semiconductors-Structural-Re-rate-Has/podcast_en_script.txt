@@ -1,0 +1,23 @@
+EN_A: Today we are digging into a really interesting report on European semiconductors. It significantly raised the price targets for two major companies. So what is the big story here?
+EN_B: The report focuses on Infineon and STMicroelectronics. The main argument is that while a cyclical recovery is clearly underway, the real structural growth drivers for these companies are still not fully priced in by the market.
+EN_A: Structural drivers? What do you mean by that?
+EN_B: For Infineon, it is its power management chips in AI data centers. For STMicro, it is the optical networking and low-earth-orbit satellite markets.
+EN_A: That sounds very technical. Let us start with Infineon. The report raised its price target from 63 euros to 91 euros, almost a 50 percent jump. Why such a big move?
+EN_B: The core logic is that the value of Infineon's power chips inside an AI server rack is much higher than the market assumes. The report breaks down the entire power architecture inside the rack, specifically focusing on the intermediate bus conversion and the lateral voltage regulator module stages.
+EN_A: So what does that mean? Is their technology just that much better?
+EN_B: Exactly. The report highlights the use of gallium nitride technology in that intermediate bus conversion. They believe that with next-generation AI chips and the rise of agentic AI driving more CPU demand, Infineon's dollar content per kilowatt will increase significantly. They estimate that for one specific rack called Rubin Ultra, Infineon's power chips could be worth 170 dollars per kilowatt.
+EN_A: 170 dollars per kilowatt. How much of an increase is that from their previous estimate?
+EN_B: It is up from 159 dollars. So it is only about a 7 percent increase, but when you scale that across the entire data center market, the incremental revenue is huge.
+EN_A: Okay, and what about STMicro? The report raised its target from 46 euros to 74 euros, an even bigger jump.
+EN_B: The logic is similar but the story is different. For the first time, the report uses a sum-of-the-parts valuation for STMicro. It values its optical and LEO satellite business at a 36 times price-to-earnings multiple, while the core business only gets an 18 times multiple.
+EN_A: 18 times versus 36 times. That is a massive gap. What is the assumption behind that?
+EN_B: The report believes data center networking is moving from copper to photonics, or optical connections. STMicro is well positioned there. Also, LEO satellites, especially the user terminals, are becoming a huge growth vector. The report raised its 2027 LEO sales estimate for STMicro from 1.08 billion dollars to 1.25 billion dollars.
+EN_A: So the main conclusion is that the market sees these companies as cyclical plays, but is missing their exposure to these high-growth structural markets.
+EN_B: Exactly. The report even notes that Infineon's stock is up 94 percent since April, but they still think it is undervalued. That is why they are willing to give the data center business a 50 times multiple, while the core business only gets 24 times.
+EN_A: 50 times versus 24 times. That really shows how different the market is pricing these two parts of the business. Now, are there any open questions in this report? Things it does not fully answer?
+EN_B: Yes. For example, the report does a deep dive on Infineon's content in Nvidia racks, but it does not fully explain how much share it can capture in other AI chips, like Google's TPU racks. That is a key variable that still needs to be verified.
+EN_A: So the penetration rate in TPU racks could be a bigger swing factor than what is discussed here?
+EN_B: That is right. Also, the report mentions the opening of the Dresden fab on July 1 as a potential catalyst, where management might provide an update on data center revenue. But the report does not give a specific number for that.
+EN_A: That is interesting. So even though the report gives very specific price targets, there are still some cliffhangers that point you to the full report for more details.
+EN_B: Exactly. If you want to understand the full logic behind these structural growth opportunities, and those unanswered questions, the best thing is to go read the original report.
+EN_A: Great. Thanks for the insights. That is all we have time for today. For more depth, join our community and read the full report.

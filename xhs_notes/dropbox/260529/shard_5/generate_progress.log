@@ -1,0 +1,15 @@
+Found 32 total PDFs; shard 5/40 has 5 PDFs, skips 0 already converted, will process 5 PDFs with batch_size=5.
+Running batch 1: 5 PDFs
+Found 5 PDFs.
+Uploading PDF to MinerU: /tmp/pdf_batch_001_dyit7ifl/pdfs/0001-26-Morgan Stanley-Internet-Where Are We Trading Now- An -AI vs All Other- Tape-260527.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_dyit7ifl/pdfs/0002-27-Morgan Stanley-Technology-European Semiconductors-Structural Re-rate Has Further to Run-260528.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_dyit7ifl/pdfs/0003-28-Morgan Stanley-SPR Tracker- How Much Has Been Released- What-s Next--260528.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_dyit7ifl/pdfs/0004-29-Nomura-Strategy Trade update-Maintain long CHF JPY trade with a high conviction-260528.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_dyit7ifl/pdfs/0005-30-Nomura-USD CNY fix model-Projection- 6.7658-260529.pdf
+MinerU batch_id=4d05a798-4db5-4daa-8163-1a6ef608aef7
+MinerU states: running, running, pending, pending, pending
+MinerU states: running, running, running, running, running
+MinerU states: running, done, done, done, done
+MinerU states: done, done, done, done, done
+Done. Results written to /home/runner/work/rpt_edit/rpt_edit/xhs_notes/dropbox/260529/shard_5; successful_reports=5; mineru_timed_out=False
+All batches completed successfully. Generated 5 report directories.
