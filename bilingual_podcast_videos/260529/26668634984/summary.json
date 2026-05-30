@@ -1,0 +1,22 @@
+[
+  {
+    "source_pdf": "/tmp/pdf_batch_001__c45jmhn/pdfs/0001-0001-ubs-kioxia-holdings-corp-peak-is-not-here-yet-260528.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "cover_short_title": "NAND闪存的“巅峰",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png",
+      "assets/xhs_card_09.png"
+    ],
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  }
+]

@@ -1,0 +1,11 @@
+Found 1 total PDFs; shard 0/1 has 1 PDFs, skips 0 already converted, will process 1 PDFs with batch_size=1.
+Running batch 1: 1 PDFs
+Found 1 PDFs.
+Uploading PDF to MinerU: /tmp/pdf_batch_001__c45jmhn/pdfs/0001-0001-ubs-kioxia-holdings-corp-peak-is-not-here-yet-260528.pdf
+MinerU batch_id=d939ceb6-9404-4541-a40a-8ea57b18f18a
+MinerU states: waiting-file
+MinerU states: running
+MinerU states: running
+MinerU states: done
+Done. Results written to /home/runner/work/rpt_edit/rpt_edit/bilingual_podcast_videos/260529/26668634984; successful_reports=1; mineru_timed_out=False
+All batches completed successfully. Generated 1 report directories.
