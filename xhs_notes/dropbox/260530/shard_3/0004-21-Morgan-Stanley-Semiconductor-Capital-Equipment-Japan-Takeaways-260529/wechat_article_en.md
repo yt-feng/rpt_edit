@@ -1,0 +1,77 @@
+# The Semiconductor Equipment Cycle Is Entering a Divergent Phase: Demand Is Real, but the Recovery Is Not Uniform
+
+The global semiconductor capital equipment industry is preparing for a world of $180 billion-plus wafer fabrication equipment spending, yet the most important investment questions are not about the aggregate number. They are about which segments of the market will drive that spending, which companies will capture the pricing power, and which narratives remain more hope than reality. A recent trip to Japan and conversations with key equipment makers and chip manufacturers reveal a market that is simultaneously confident and cautious, enthusiastic about the future but measured about the near term. The controlling insight from these meetings is that the industry is building capacity for a demand wave that has not yet fully materialized in all its forms, and the divergence between segments—DRAM versus NAND, leading-edge logic versus mature nodes, process control versus etch and deposition—will define the winners and losers over the next 18 months.
+
+Why now matters: The semiconductor equipment cycle is at an inflection point where the macro narrative of AI-driven demand meets the micro reality of customer behavior. Equipment makers are reporting unprecedented pull-in requests and project expedites from DRAM customers, yet they remain guarded about 2027 visibility. NAND greenfield spending is showing initial signs of life outside China, but the scale remains well below historical peaks. Intel, a critical driver of leading-edge logic spending, has not yet translated its foundry ambitions into equipment orders outside of process control. And pricing power, a key driver of margin expansion, is being claimed by some players but remains elusive for others. The market is pricing in a recovery, but the recovery is not uniform, and the implications for portfolio construction are significant.
+
+
+![Report chart 1](assets/source_image_01.jpg)
+
+## The Industry Is Preparing for a $180 Billion WFE World, but the Path to That Number Is Not Linear
+
+Every equipment maker and supplier that participated in the Japan meetings expressed confidence in 2026 WFE growth. The language was striking in its consistency: repeated mentions of unprecedented pull-in requests, project expedites from DRAM customers, and continued momentum in leading-edge logic. The supply chain is preparing for a $180 billion-plus WFE environment, and every major equipment maker has made it clear they do not intend to be the bottleneck. This is not a cautious industry. It is an industry that is building capacity, hiring engineers, and placing long-term bets on a demand structure that it believes will persist.
+
+The so-what here is that the consensus WFE estimate of approximately $190 billion may already be priced into equipment maker valuations, but the composition of that spending is not. The market appears to be treating the WFE recovery as a uniform tide that lifts all boats, but the data from Japan suggests otherwise. DRAM is the clear leader, with customers accelerating their plans and asking for expedited deliveries. Leading-edge logic is strong but concentrated among a few customers. NAND is showing early signs of life, but the spending remains well below the peaks of 2018 and 2022. And mature-node logic is a story of tightness in specific nodes, not a broad-based recovery.
+
+The implication for investors is that the WFE number itself is less important than the distribution of that spending across end markets and the ability of individual equipment makers to capture share and pricing in those segments. A $190 billion WFE year that is heavily weighted toward DRAM and leading-edge logic will benefit a different set of companies than one that includes a NAND recovery and a mature-node capex cycle. The industry is preparing for the aggregate, but the aggregate masks meaningful divergence underneath.
+
+
+![Report chart 2](assets/source_image_02.jpg)
+
+## NAND Greenfield Spending Is Showing Initial Signs of Life, but the Thesis Will Not Be Realized in the Near Term
+
+The most debated topic from the Japan trip is the trajectory of NAND WFE. The report's thesis is that clean room availability, profitability, and bit demand will drive an acceleration in NAND WFE in 2027. The early evidence from Japan supports this thesis directionally, but not in magnitude. Kioxia's FY3/27 capex guide of ¥450 billion will be majority equipment, but total spending remains below the company's own historical peaks of 2018 and 2022. Tokyo Electron is starting to see NAND greenfield activity outside China, but the excitement is more measured than in DRAM, where the company is seeing unprecedented expedites.
+
+The so-what is that the NAND recovery is real but early, and the market may be underestimating the timing and magnitude of the inflection. The report's thesis is premised on three conditions: clean room availability, profitability, and bit demand. Kioxia has clean room availability, and its operating margins are strong. But manufacturers remain capital disciplined, and the industry is not yet at the point where capacity constraints are driving urgent spending decisions. The early signs are there, but the thesis will not be realized in the near term, and investors who are positioning for a near-term NAND recovery may be disappointed.
+
+The open question is whether the market is correctly discounting the probability of a 2027 NAND inflection or whether it is overly pessimistic. The report's view is that the early evidence supports the thesis, but the timing is uncertain. This creates a potential opportunity for patient investors who are willing to wait for the data to confirm the inflection, but it also creates risk for those who are positioned too early. The key variable to watch is bit demand growth and whether it accelerates to the point where manufacturers are forced to increase spending beyond their current plans.
+
+## Intel Has Not Yet Inflected, and the Lack of Order Activity Outside Process Control Is a Signal Worth Heeding
+
+The most surprising finding from the Japan meetings is the absence of any uptick in Intel orders outside of process control. The report's thesis is that higher Intel capex is inevitable, given the company's foundry ambitions and the need to build capacity for external customers. But the evidence from Japan does not support this view. Tokyo Electron has not received an uptick in orders from Intel, most likely because Intel still holds tool inventory from when it over-purchased in previous cycles. Other equipment makers confirmed that they have not seen an increase in orders from Intel, with the exception of process control tools.
+
+The so-what is that the Intel foundry narrative is real, but the spending will follow customer acquisition, not precede it. Intel has made clear that foundry spending will be driven by customer commitments, and those commitments have not yet materialized in a way that translates into equipment orders. The lack of order activity on the IDM side is also notable, suggesting that Intel's own product roadmap is not driving incremental spending at this point.
+
+The implication for investors is that the Intel capex recovery is likely to be back-end loaded and dependent on foundry customer wins that are not yet visible. The market may be pricing in a recovery that is further out than anticipated, and the risk is that Intel's spending trajectory disappoints in the near term. The report remains confident in the thesis over a multi-year horizon, but the early evidence has yet to emerge, and investors should be cautious about positioning for a near-term inflection.
+
+## Pricing Power Is Real but Idiosyncratic, and the Ability to Raise Prices Is Not Uniform Across the Industry
+
+The debate over pricing power in semiconductor capital equipment has been a central theme of the cycle, and the Japan meetings provided mixed signals. Tokyo Electron expressed confidence in its ability to raise pricing, with a target of increasing gross margins from the current mid-40s level to 50% in FY3/28. But the report views this confidence as somewhat idiosyncratic, driven by Tokyo Electron's specific position in the market and the tailwind from yen weakness.
+
+The so-what is that pricing power in this cycle is more about value creation than tool availability. Equipment companies continue to be rewarded for the value they provide to customers, not for the scarcity of their tools. Cost pass-through is usually the extent of price increases, and companies that are able to demonstrate superior performance or enable new capabilities are the ones that can command premium pricing.
+
+The divergence between Tokyo Electron and its US peers is instructive. Tokyo Electron's gross margins are in the mid-40s, compared to roughly 50% for Applied Materials and Lam Research. This means that Tokyo Electron has more room to improve, and its pricing confidence may reflect a catch-up dynamic rather than a broad-based shift in industry pricing power. The US equipment makers, by contrast, have already achieved higher margins, and their ability to raise prices further may be more limited.
+
+The implication for investors is that pricing power is a stock-specific factor, not a sector-wide theme. Companies that are gaining share, enabling new technologies, or operating in segments with favorable supply-demand dynamics will have more pricing leverage than those that are defending existing positions. The market may be overestimating the ability of the industry as a whole to raise prices, and the divergence between companies will be a key driver of relative performance.
+
+## The Report Does Not Fully Answer How the Mature-Node Recovery Will Play Out, and That Uncertainty Creates Both Risk and Opportunity
+
+One of the most intriguing findings from the Japan meetings is the emerging tightness in mature-node capacity, particularly at 28nm and 40nm. Renesas, a leading automotive and industrial chipmaker, indicated that demand for its outsourced products at these nodes is high and foundry supply is tight. The company is negotiating price hikes with customers, and discussions are in the final phase. This suggests that the mature-node market is tighter than many investors appreciate.
+
+But the report also notes hesitation across IDMs to immediately raise capex, given that utilization levels are still somewhat subdued. Renesas's own in-house capacity utilization is only 55%, but this capacity is focused on mature nodes where demand is not as high. The tightness is concentrated in specific nodes and specific foundries, not in the broader mature-node market.
+
+The so-what is that the mature-node WFE revision risk is skewed to the upside, but near-term revisions are likely to be marginal rather than substantial. The report does not fully answer how this tightness will translate into equipment spending, and the uncertainty creates both risk and opportunity. Investors who are positioned for a broad-based mature-node recovery may be disappointed, while those who are focused on the specific nodes and foundries that are experiencing tightness may find opportunities.
+
+The open question is whether the tightness at 28nm and 40nm is a temporary phenomenon driven by AI demand for memory interface products and power management chips, or whether it represents a structural shift that will drive sustained investment in mature-node capacity. The answer to this question will determine whether the mature-node recovery is a one-time event or a multi-year cycle, and it will have significant implications for equipment makers that are exposed to these segments.
+
+## A Decision Framework for Investors: Three Questions to Determine Positioning in the Equipment Cycle
+
+The insights from the Japan meetings can be distilled into a decision framework that helps investors determine their positioning in the semiconductor equipment cycle. The framework is based on three questions, each of which addresses a different dimension of the recovery.
+
+First, where is the demand coming from? The answer to this question determines which end markets will drive spending and which equipment makers will benefit. DRAM is the clear leader in the near term, with customers accelerating their plans and asking for expedited deliveries. Leading-edge logic is strong but concentrated. NAND is showing early signs of life but will not inflect until 2027 at the earliest. Mature-node logic is tight in specific nodes but not in the broader market. Investors should overweight companies that are exposed to DRAM and leading-edge logic, and underweight those that are dependent on a broad-based NAND or mature-node recovery.
+
+Second, who has pricing power? The answer to this question determines which companies will see margin expansion and which will see margin compression. Pricing power is idiosyncratic, driven by value creation, share gains, and cost structure. Companies that are enabling new technologies, gaining share, or operating in segments with favorable supply-demand dynamics will have more pricing leverage. Investors should favor companies that have demonstrated the ability to raise prices and improve margins, and avoid those that are competing primarily on availability.
+
+Third, what is the timing of the recovery? The answer to this question determines whether the market is pricing in a near-term inflection or a multi-year recovery. The Japan meetings suggest that the recovery is real but not uniform, and that the timing of inflections varies significantly by segment. DRAM is inflecting now. NAND will inflect in 2027. Intel is likely to inflect later, dependent on foundry customer wins. Mature nodes may inflect marginally in the near term but substantially over a multi-year horizon. Investors should align their positioning with the timing of the inflections in their chosen segments, and be patient with segments that are further out.
+
+## The Full Report Provides Detailed Company-Level Analysis and Original Charts That Are Essential for Navigating This Divergent Cycle
+
+The insights from the Japan meetings are only part of the story. The full report includes detailed write-ups on Tokyo Electron, Lasertec, Ebara, Kioxia, and Renesas, each of which provides a deeper understanding of the dynamics in specific segments. The report also includes original charts that illustrate the divergence between DRAM and NAND spending, the trajectory of Intel capex, and the evolution of pricing power across the industry. These charts are essential for investors who want to move beyond the aggregate narrative and understand the specific drivers of performance.
+
+The report raises several meaningful open questions that are not fully answered. How will the NAND recovery play out if bit demand growth does not accelerate? What happens to Intel's foundry ambitions if customer wins are slower than expected? Will the tightness at mature nodes translate into sustained equipment spending, or is it a temporary phenomenon? These questions are not answered in the report, and they will be the key debates that drive the market in the coming quarters.
+
+Join the community to read the full report and review the original charts.
+
+*This article is for learning and discussion only and does not constitute investment advice.*
+
+<p style="color:#999999;font-size:12px;">Personal reading notes and learning share only. Not investment advice.</p>
