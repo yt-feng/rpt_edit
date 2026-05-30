@@ -1,0 +1,1172 @@
+# Internet/e-Commerce
+
+# Agentic AI and the promise of a more capable Internet
+
+Industry Overview
+
+# The Agentic Era moving from concept to reality
+
+The emergence of ChatGPT, Gemini, and Google AI Mode is changing how consumers interact with the Internet, with conversational AI increasingly becoming a primary interface for discovery and decision-making. Agentic AI will build on this evolution, advancing Internet gateway (search) capabilities from information retrieval to evaluation and automated task execution. We think of agents as an embedded productivity software tool for consumers, with the potential to significantly enhance decision quality while reducing transaction friction. Given rapidly changing user behavior and expectations, we think transaction-based verticals, such as eCommerce, Online travel, and finance, will need to build their own front-end AI chat and downstream Agentic capabilities to maintain their relevance with consumers.
+
+# Marketplaces will still offer significant consumer value
+
+AI cannot secure differentiated supply, deliver products in one hour, or pass on network effect cost savings. As users become more accustomed to AI interactions (Google AI Mode now has 1bn users), Online travel and eCommerce marketplaces will need to focus on two areas: 1) Competitive front-end AI experiences to maintain direct traffic, and 2) Maximizing product differentiation, especially in the physical world. We think the best selection, prices, shipping speeds and customer service should be equally attractive to agents as they are to consumers. While producer pricing surpluses could be at risk long-term, vertical sites can leverage their competitive advantages in supply aggregation, fulfilment speed, customer service, and/or cost savings from network effects to drive direct agentic traffic.
+
+# New ad formats & tools to reshape digital advertising
+
+Recently, Google I/O and Marketing Live provided an early look at several AI-related digital advertising products that either leverage AI use cases, or are designed to enable Agentic transaction capabilities. Three notable initiatives included: 1) Conversational AI ads that integrate directly within AI-generated responses, allowing advertisers to engage users in context with tailored messaging, 2) AI powered shopping ads that surface relevant products alongside AI-generated explanations to guide evaluation and decision-making, and 3) Universal shopping cart that enables users to add and purchase products directly within Google sites. By integrating real-time product data, capturing richer intent, and enabling transactions, we believe agentic systems should improve user targeting, conversion and measurement, leading to incremental user activity and spend.
+
+# Google in the pole position for the agentic era
+
+We think Google is well positioned to lead in agentic adoption given leading foundation models, agentic time to market advantages, and deep merchant data. Google's early mover advantage could help establish ecosystem lock-in and guide behavioral defaults around agentic workflows. Moreover, Google's advertiser ecosystem could see upside from higher AI driven volumes, ad click rates and ad targeting (see page 17). Maintain Buy. OpenAI, Meta and Amazon also have large consumer audiences and deep AI capabilities to leverage, and we expect strong innovation and competition across agentic ecosystems over the next two years as these platforms focus on scaling monetization.
+
+# 28 May 2026
+
+Equity
+
+United States
+
+Justin Post
+
+Research Analyst
+
+BofAS
+
++1 415 676 3547
+
+justin.post@bofa.com
+
+Nitin Bansal, CFA
+
+Research Analyst
+
+BofAS
+
++1 415 676 3551
+
+nbansal7@bofa.com
+
+3P: Third Party
+
+AI: Artificial Intelligence
+
+Gen-AI: Generative AI
+
+MAU: Monthly Active Users
+
+UI: User Interface
+
+# AI reshaping consumer behavior
+
+The emergence of Generative AI sites and evolution of AI Search is driving a structural shift in consumer behavior, with AI-native interfaces emerging as the primary gateway for consumer traffic and reshaping how users discover, evaluate, and transact online. ChatGPT has scaled to \~900mn weekly active users and processes billions of queries daily, while Google has re-architected its core Search product around AI, with AI Overviews growing to \~2.5bn monthly users, AI Mode to 1bn monthly users and AI Mode query volumes more than doubling each quarter since launch.
+
+We believe the growing prevalence of AI-driven interactions has the potential to drive a fundamental shift at the consumer level, with users increasingly relying on AI surfaces to synthesize information, compare alternatives, and guide decisions in real time. The entire Internet ecosystem, from information to transaction sites, will need to evolve user interfaces as consumer decision making increasingly relies on AI driven results.
+
+# Agentic AI & the next era of Internet utility
+
+# What is Agentic AI?
+
+Agentic AI represents the next evolution of the Internet, capable of independently planning, decision-making, and executing multi-step workflows to complete user-defined goals. Unlike first-generation AI assistants that primarily generate answers, summarize information, or surface links in response to prompts, agentic systems focus on task completion. Effect Agentic AI assistants will be able to break high-level objectives into smaller steps, evaluate trade-offs based on user preferences or constraints, and interact with external tools or services to carry out actions such as purchasing products, booking travel, scheduling meetings, completing workflows, etc.
+
+Exhibit 1: Agentic AI assistants focus on task completion   
+AI Assistants vs Agentic Assistants 
+
+<table><tr><td>AI Assistants</td><td>Agentic Assistants</td></tr><tr><td>Primarily retrieve, rank, or summarize information</td><td>Interprets intent and translates it into executable workflows</td></tr><tr><td>User remains decision-maker and executor</td><td>Compares options, negotiates constraints, and completes transactions</td></tr><tr><td>Monetization centered on impressions, clicks, and feed engagement</td><td>Can browse, fill forms, book, purchase, schedule, or subscribe</td></tr><tr><td>Value tied to traffic referral and discovery</td><td>Shifts value from traffic generation to outcome</td></tr></table>
+
+Source: BofA Global Research   
+BofA GLOBAL RESEARCH
+
+# Potential consumer agentic adoption timelines
+
+The Internet is well into the adoption cycle of first-generation AI assistants, while simultaneously entering the experimentation stage for agentic systems. Over the past year, consumer AI usage growth has been driven by chat-based AI assistants that summarize information, answer questions, assist with coding, and augment search. The evolution toward fully agentic systems will be a multi-year process (we are close to year 30 of eCommerce and still only 20% US penetration) as technology improves and consumers gradually adopt to new AI capabilities.
+
+- First-generation AI assistants (Started in 2023): During this phase, AI assistants became widely adopted as productivity and knowledge tools. Most usage centers on chat-based interactions. Personalization and real-world execution is limited.   
+- Early agentic experimentation (started in late 2025): Assistants begin incorporating tool use and limited execution capabilities, but supervision
+
+remains essential. Systems can access external APIs, retrieve structured data, and complete bounded workflows such as booking reservations or drafting emails, etc.
+
+- Structured multi-step task execution (expected by late 2026 or early 2027): Agentic systems mature into goal-oriented planners capable of handling multi-step workflows with reduced supervision. Agents can handle complex tasks, evaluate trade-offs, coordinate across multiple services and make purchases on behalf of users. User trust will begin to build, but transactions will likely require user approval.   
+- Proactive and ambient agents (expected by 2030): Agents operate as persistent digital operators, embedded in daily life as a decision-making and execution layer. They proactively manage tasks and continuously monitor context, learn from behavior, and act autonomously within predefined boundaries.
+
+# Agents can significantly increase Internet utility
+
+We think of agents as an embedded productivity tool for consumers, with the promise to significantly increase Internet utility through automation and improving decision quality. While the traditional internet model requires users to search, compare, and manually complete transactions, agents will be designed to perform these functions autonomously. This transition could meaningfully improve efficiency, decision quality, and market participation across a wide range of digital activities.
+
+- Reduced friction and time: Many online activities involve a series of manual steps - searching for options, opening multiple websites, comparing features or prices, and completing transaction workflows. Agents can automate these processes by interpreting user intent and executing tasks end-to-end. By compressing these workflows, agents reduce both time and cognitive load, increasing the overall productivity of internet usage.   
+- Better decision quality: Human decision-making online is constrained by time, attention, and the limited number of options users can realistically evaluate. Agents, by contrast, can process significantly larger datasets, which allows them to optimize decisions across a broader set of variables.   
+- Higher level of personalization: Agents can continuously learn from a user's preferences, behavior, and constraints. Over time, they can build a detailed profile that incorporates factors such as spending patterns, brand preferences, scheduling constraints, or quality thresholds. This enables a higher degree of personalization and strong alignment with individual user objectives.   
+- Unlock participation in complex verticals: Certain categories, such as insurance, financial products, healthcare services, etc., require substantial effort to evaluate due to fragmented information and complex decision frameworks. Agents can aggregate relevant data, compare alternatives across providers, and guide users through multi-step transaction processes. By lowering the barriers associated with navigating these markets, agents may increase participation and improve matching between consumers and services.
+
+Considering these factors, Agentic AI penetration and potential disintermediation will vary by category.
+
+\- We think digital and services categories are structurally well suited for agentic workflows, as transactions are largely digital, product attributes are comparable, and/or decision frameworks are relatively standardized.
+
+\- We think categories such as eCommerce, ride sharing, and restaurant and grocery delivery, with significant network effects or economies of scale, will be more insulated from agentic disruption but are well suited for agentic partnerships. These verticals have entrenched network effects, and volume leaders have competitive advantages in cost and service levels. We think Generative-AI companies will need to partner with these scaled platforms to offer the most attractive options to consumers.
+
+\- We see Online travel as a “tweener” category, well suited for agentic usage given travel planning complexities, but potentially difficult to disintermediate due to supply complexities. Travel bookings can be a complex decision process, and are digital with limited fulfilment complications, which favors rapid adoption of Agentic AI usage. However, product sourcing can be difficult (long-tail inventory not commoditized), while vertical transaction sites (OTAs) have scale advantages for selection, price (supplier discounts) and customer service. We think Online Travel companies need to evolve front-end user interfaces with changing consumer preferences, partner with activity & restaurant reservation sites to offer more comprehensive itineraries, and incorporate Agentic booking and trip monitoring capabilities to maintain relevance with consumers.
+
+# Agentic AI building blocks
+
+We believe Agentic AI will represent a transformative shift, moving the Internet from an information-driven model to an execution-driven model. However, adoption will likely depend on several structural factors including:
+
+\- Standard protocols and integration – Agents require deep integration with platforms, services, and payment systems, alongside the widespread adoption of common protocols and standardized interfaces to enable reliable interaction across the digital ecosystem, which will likely take time to develop and scale.
+
+\- Reliability – Autonomous systems must consistently deliver accurate outcomes to gain user confidence. Even small error rates in decision-making or transaction execution could impact adoption, particularly for financial or mission-critical tasks.
+
+\- Trust – Users must be comfortable allowing agents to make decisions or complete transactions on their behalf. For higher-value or sensitive activities, trust in the agent's incentives, transparency, and alignment with user outcomes will be critical.
+
+\- Regulatory – Handling payments, personal data, and delegated decision-making authority introduces new regulatory and security considerations that may shape how agents are deployed across industries.
+
+# Expect significant agentic competition
+
+We think several types of agentic platforms could emerge, competing to become the default interface for digital tasks and decision-making:
+
+\- Operating system-level agents: Agents embedded directly within device operating systems such as iOS or Android that can execute tasks across apps and services within the device environment. As they could be pre-installed and set as the default on billions of installed device base, these agents could have competitive advantages.
+
+■ Model-layer agents: Agents built by companies developing frontier AI models that operate across multiple applications and services through APIs and integrations rather than direct operating system control. Examples include agents from companies such as OpenAI, Anthropic, Perplexity, Google, Meta, etc. that can coordinate tasks across different apps, websites, and services from a single interface.
+
+- Commerce-native agents: Agents developed by large commerce platforms such as Amazon, Walmart, eBay, etc. that focus specifically on shopping decisions and transaction execution. These agents could leverage proprietary product catalogs, merchant networks, logistics infrastructure, and payment systems to research, recommend and complete purchases within a single platform environment. These agents will likely try to expand their functionality and reach by incorporating data and products from smaller sellers that the agents can act upon.   
+- Vertical-specific agents: Agents designed for specific industries such as travel, finance, healthcare, or enterprise productivity. These systems focus on a narrower set of use cases but may offer deeper domain expertise and integration with adjacent categories, enabling more specialized recommendations and task execution within a particular sector. For example, Booking's travel-focused agent, Penny, that from that can plan an entire trip by recommending flights, booking hotels, reserving restaurants, and organizing local transportation within a single workflow.
+
+# Digital advertising in Agentic AI era
+
+As agentic capabilities scale, we expect a structural shift in both user search behavior and the monetization of high-intent commercial queries. Agentic systems could reshape the digital commerce journey by compressing research, evaluation, decision-making, and execution, and then either deliver summarized choices to consumers, or take action. What was previously a multi-stage user journey may increasingly occur within one coordinated agent interaction.
+
+This shift will likely have significant implications for the digital advertising ecosystem and traditional advertising funnel. In agentic interactions, the upper and mid funnel (awareness and consideration) could be consolidated into the agent's decision engine, enabling assessment of products and trade-offs, with the lower funnel (click, landing page, and checkout) completed natively within the platform through embedded checkout and transaction capabilities.
+
+Traditional flow: Search → Impression → Evaluation → Click → Browse → Compare → Refine Search → Impression → Evaluation → Click → Compare → Click to add to cart → Checkout
+
+Agentic flow: Communicate Intent → Agent evaluates → Agent recommends → User approves → Transaction executed
+
+In the traditional Web ecosystem, economic value has largely accrued to platforms that generate and distribute traffic, and to transaction sites that have highest conversion rates of that traffic. In an agentic model, however, agents may retrieve product data directly through APIs, structured databases, or merchant integrations, reducing the need for users to visit multiple traditional websites during the decision-making process. As a result, economic value could shift toward platforms that control the decision engine itself. Transaction based sites that have proprietary user information, inventory or customer service capabilities will need to carefully negotiate terms with agentic sites to ensure they maintain favorable economics and consumer brand position in agentic transactions.
+
+# Agentic transformation being driven by Google
+
+At Google I/O 2026 and Marketing Live, Google introduced a range of transformative features and new capabilities within Search to drive more agentic experiences and commerce. Key announcements included:
+
+# Agentic ads and Native checkout within AI Search
+
+Google introduced new agentic advertising capabilities and ad formats designed to make ads more interactive. The company launched Business Agent for Leads, which allows users to engage directly with advertiser agents through AI-driven prompts and pre-filled lead workflows. New ad formats built specifically for AI Mode included conversational AI answer ads, Direct Offers, AI-powered Shopping Ads, and retailer-connected commerce ads that link users directly to merchants with available inventory. Google also introduced native checkout inside AI search ads, allowing purchases through Google Pay without leaving the page. The company also plans to expand these features to YouTube with shoppable ads supporting embedded “Buy Now” flows powered by UCP and Google Pay.
+
+# New AI Search focused ad formats:
+
+\- Conversational Discovery ads: Conversational Discovery ads appear within AI-generated Search responses in AI Mode, directly embedded in the conversational answer flow, making the ad feel like part of the answer rather than a separate placement. They include an AI-generated explainer that synthesizes relevant product or service information alongside the advertiser's messaging, helping provide context and guide decision-making, making the ad feel like part of the answer rather than a separate placement.
+
+Exhibit 2: Conversational Discovery ads make the ad feel like part of the AI answer   
+Google Conversational Discovery ads   
+![](images/65f11fa7b441f6a3eff0e45f169262b8277cc9aa1f848b8f6011bae51bf7a336.jpg)
+
+<details>
+<summary>text_image</summary>
+
+I'm trying to make my house smell
+like those fancy spas or a rainy fore...
+20 sites
+The lowest maintenance way to achieve a "set and
+forget" fragrance in your home is through a reed
+diffuser. Unlike candles or electric diffusers, reed
+diffusers require no power, flames, or water refills
+and can provide continuous scent for 3-6 months
+with minimal intervention. A AromaTech +1
+Top Low-Maintenance Methods
+• Reed Diffusers (Lowest Maintenance): Best for
+small to medium spaces like bathrooms or
+bedrooms. You simply set the reeds in the oil and
+flip them occasionally (once a week or every few
+weeks) to refresh the scent. Escents Aromatherapy
+• Cold-Air Scent Diffusers: If you have a larger
+open-concept space, these are the professional
+"hotel style" choice. They use dry mist (no water
+needed) and can often be programmed via an
+app to run on a schedule, lasting weeks or
+months between oil refills. YouTube +2
+Ask anything
+</details>
+
+Source: Google Website
+
+![](images/f0970737fe2869739aa53d711d5ba6c9b8ef0193fcb9ebe375a730461ff16d6b.jpg)
+
+<details>
+<summary>text_image</summary>
+
+Sponsored
+Smart Home Fragrance Diffuser
+You can also consider a waterless plug-in that lets you manage and switch scents from an app.
+Pura Pura
+Transform your home into a sanctuary with spa- and nature-inspired scents like Eucalyptus and Frasier Fir. Create instant atmosphere with our effortless, set-and-forget smart fragrance.
+Pura is praised as a low-maintenance option that lets users automate scent schedule and intensity without daily manual handling. Users also enjoy its library of 250+ premium scents but note refills can be costly.
+AI responses are generated independently
+Ask anything
+</details>
+
+BofA GLOBAL RESEARCH
+
+\- AI-powered Shopping ads: These ads surface relevant products and automatically generate short explanations on why a product fits a user's needs.
+
+They are designed to simplify decision-making, especially for higher-consideration purchases, within the Search experience itself.
+
+- Direct Offers: These are AI-driven promotions that surface personalized deals, such as discounts or bundles, directly within Search. They also integrate features like native checkout to reduce friction and help users complete purchases more seamlessly.   
+■ Business Agent for Leads: This format embeds an AI-powered chat agent within an ad, allowing users to ask questions and interact directly with a brand. It replaces static lead forms with a more dynamic, conversational way to drive engagement and capture intent.
+
+Exhibit 3: Business Agent for Leads embeds an AI-powered chat agent within an ad, allowing users to ask questions and interact directly with a brand Business Agent for Leads   
+![](images/e8ff3d78102a2d0c67a75b8a4562c5a5b72cfbbca8416299f770706de28a9acc.jpg)
+
+<details>
+<summary>text_image</summary>
+
+Sponsored results
+Rainier Business School
+Summit Your Career | Rainier.
+Business School
+Ranked in the AI-integrated Montagnettent in the
+Pacific Northwest Master the intersections of
+Industrials and leaders, the author of
+Ask a question
+Curriculum, admissions, GPAs, and
+Oakmont Business School
+Oakmont MBA - Top 15 Online
+Business Program | Apply Now
+Elevate your career with the Oakmont MBA. $7.50
+my school skills available for qualifying students,
+experiences award winning curriculum taught by
+industry leaders. Such your journey in 2026.
+Pacifica College of Commerce
+How is Rainier Business School
+using AI in the classroom?
+Industry-Driven AI Curriculum: Co
+created with market leaders, our Artificial
+Intelligence in Business program moves
+past abstract theory. You will work directly
+with live case studies modeled on real-
+world AI deployments.
+Principled AI Innovation: We prioritize
+digital ethics as a core competency. In
+programs like AI, Analytics and Fintech
+Innovation, we train you to scale
+technologies responsibly using our unique
+framework for principled innovation.
+Are you interested in pursuing a degree in an
+AI-focused field?
+What are the financial aid options?
+Show me AI-related programs
+Discuss with admissions
+Ask a question
+9:30
+Rainier Business School
+How is Rainier Business School
+using AI in the classroom?
+Rainier Business School
+Discuss with admissions
+I can connect you with admissions! Since you're
+signed in, please confirm your info. I'll submit it
+to the team, and they'll reach out to you shortly.
+Full name
+Sylvanus Bent
+Email address
+sylvanus@xyz.com
+Phone number
+(212) 555-5555
+When are you planning to enroll?
+Fall 2026 Spring 2027 Fall 2027 Spring 2027
+Your data is securely handled and will only be used to
+connect you with Rainier Business School, never for AI
+model training.
+Submit
+Ask a question
+</details>
+
+Source: Google Website
+
+BofA GLOBAL RESEARCH
+
+# Universal Cart for purchases/bookings on Google
+
+Google launched Universal Cart, a persistent cross-merchant shopping cart that enables users to save, track, and manage products across participating retailers and Google surfaces. The cart will allow users to make purchases within the cart for participating retailers (including Target and Walmart, but not Amazon so far) or send users directly to retail sites to check out (which could be a potential option for Amazon). Google also hinted that food delivery and hotel booking capabilities were on the horizon.
+
+Universal Cart works as the front-end layer of Google's agentic commerce stack. As users add items across Google surfaces, UCP acts as the orchestration layer, enabling seamless interaction between Google and multiple merchants by standardizing product data, supporting real-time inventory and pricing checks, and facilitating a unified cart and checkout experience across retailers. When a user proceeds to purchase, AP2 serves as the payments layer, allowing AI agents to execute transactions securely on the user's behalf by verifying authorization, intent, and accountability. Together, UCP powers the commerce workflow, AP2 ensures trusted payment execution, and Universal Cart integrates both into a single, continuous shopping experience.
+
+Exhibit 4: Google's Universal Cart enables an agentic checkout experience across participating retailers and Google surfaces   
+Google Universal Cart   
+![](images/636e0bb40e89a98cb83115fef0becde017320e3fdb7b300490020716a9b3ca69.jpg)
+
+<details>
+<summary>text_image</summary>
+
+Before you checkout...
+The CPU and motherboard in your cart are not
+compatible. The Ryzen 7 CPU requires a
+motherboard with an AM5 socket.
+Get recommendations
+Best Buy
+ASUS TUF Gaming Z790-Plus WiFi
+Motherboard
+$249.99
+15-day returns
+in stock
+More options
+ASUS TUF Gaming 1000W Gold -
+3.3 V DC, 5 V DC, 12 V DC, -12 V DC...
+$183.99
+15-day returns
+in stock
+More options
+Subtotal
+$433.89
+Newegg
+</details>
+
+![](images/cbfd5ce218a65e48fbc44a449984a013de911c53111d80ac0aa80ef9fe336751.jpg)
+
+<details>
+<summary>text_image</summary>
+
+Before you checkout...
+5% off at Target with your Target Circle Card.
+Target
+Packable Straw Short Brim Floppy Hat
+- Shade & Shore™ Natural
+$11.40 $12.00 5% off
+365-day returns
+in stock
+More options
+Water Transfer Printing Gardening Tool
+Set - Threshold®
+$23.75 $26.00 5% off
+365-day returns
+in stock
+More options
+Subtotal
+$35.15 $37.00
+Buy now
+#
+Checkout on Target
+Google will add these items to Target's cart for you
+Ulta Beauty
+</details>
+
+![](images/aca661b910c84bd7a2a62e6c16bde371065df9b4f1f7baebd99223e38ae81f81.jpg)
+
+<details>
+<summary>text_image</summary>
+
+9:30
+Cart
+Cart (10)
+My orders
+Target
+Packable Straw Short Brim Floppy Hat
+- Shade & Shore® Natural
+$11.40-$12.00 5% off
+360-day returns
+In stock
+More options
+Water Transfer Printing Gardening Tool
+Set - Threshold®
+$23.75-$26.00 5% off
+360-day returns
+In stock
+More options
+Subtotal $35.15-$37.00
+Buy now
+Checkout on Target
+Google will add these items to Target's cart for you
+Ultra Beauty
+Sun Cover Mineral Sunscreen SPF 30
+$34.00
+30-day returns
+In stock
+Available nearby: 32 mi
+</details>
+
+Source: www.forbes.com   
+BofA GLOBAL RESEARCH
+
+# Persistent Search Agents
+
+Google introduced Search Agents, persistent background AI agents that continuously monitor information across categories including finance, shopping, travel, and sports on behalf of users. For shopping related use cases, these agents can continuously monitor the market on the user's behalf. They track product availability, price movements, and new product launches, and surface relevant purchase opportunities tailored to user-defined preferences without requiring repeated searches. Operating in the background, they synthesize information across sources and proactively deliver updates, eliminating the need for manual comparison and monitoring. Beyond discovery, search agents can also initiate and execute actions, including verifying inventory, facilitating checkout, or coordinating related services such as bookings.
+
+# Monetization in Agentic Era
+
+We think potential monetization models in agentic ecosystems could include:
+
+Product placement: Agents may only show a few recommended options. Brands will likely pay to be included as an option (sponsored prompts) or to appear higher in the ranking if multiple options are shown. Ad auction dynamics will shift to higher bids for limited, high-intent slots. For example: When a user asks the agent: "What's the best laptop for work under \$1,500?" PC brands will likely pay a high premium to be included as one of a small group of recommended products or have a sidebar ad that lists dynamic product features that are best suited for the query. Advertisers will bid (CPC) to be included as an option, but will not pay a revenue share when a agent completes a transaction.
+
+Sponsored actions (Outcome-based model): A hybrid model combining elements of advertising and commissions, where a brand appears as a sponsored option but only pays when the agent actually executes the task. In this structure, pricing is tied to the completion of the action, rather than simply to visibility or recommendation placement. Instead of paying solely to appear in a list of recommendations, brands bid for the “action slot”. Payment occurs only if the action is completed, aligning incentives between the platform and the brand by linking monetization directly to successful outcomes. For example, a user asks the agent: “Book me a 4-star hotel in Miami for under \$300.” The agent evaluates available hotels and presents a small number of options, such as:
+
+■ Book Hyatt Miami Beach (Sponsored)   
+■ Book Marriott Miami Downtown (Organic)   
+■ Book Hilton Miami Beach (Organic)
+
+In this model, brands that meet minimum qualification (say top-5) could bid to become a preferred booking option. If the user selects the sponsored option, the reservation is completed by the agent, and the advertiser pays only if the transaction is executed. This structure blends advertising with performance-based monetization, effectively turning the agent into a transactional decision layer, rather than just a discovery interface.
+
+Revenue share arrangements (Commission based): AI platforms present unbiased results and takes a percentage of transactions completed by the agent. For example: If user asks “Mexican restaurant for dinner in the financial district on Wednesday”, the agent provides a list of options which does not include any sponsored listings, and then completes the reservation based on the user’s choice. On the back end, the agent could get paid a percentage of the final restaurant bill through a commercial agreement.
+
+# Is a commission model best for the consumer?
+
+Consumers are a long way from trusting agents to make decisions for high-value purchases, and we expect referral models to remain the primary monetization model for Internet traffic for years to come. However, as users increasingly trust agent capabilities and merchant integrations mature, agentic subscriptions and commissions tied to completed outcomes may become a preferred model for Agentic traffic monetization. Outcome-based monetization could foster greater user trust by reducing perceived bias in recommendations.
+
+■ Potential higher value capture per interaction: Commission-based agentic monetization could drive higher value capture per interaction in high-value verticals such as travel, financial services, insurance, or large-ticket commerce. As agents increasingly complete transactions there will be certainty on ROIs, possibly increasing revenue take rates for AI platforms.   
+- Greater user trust and reduced bias: Advertising can introduce perceived or real conflicts of interest, where agents may prioritize sponsored results over the best options for users. Over time, users may prefer agents that optimize for outcomes rather than product placements.
+
+# Perplexity suspends advertising initiative
+
+In late 2024, Perplexity started testing advertising within its AI results by showing sponsored placements beneath chatbot responses. However, in Feb'26, Perplexity stopped testing advertising on its platform as Company Executives indicated that even clearly labeled ads could make users question whether answers are unbiased, which could undermine the credibility of an AI search engine. Instead, Perplexity is prioritizing revenue through paid subscriptions and enterprise services, positioning itself as an ad-free alternative to traditional search engines.
+
+Exhibit 5: Near-term, advertising likely a more feasible agentic monetization model
+
+Pros and Cons of Advertising vs Commission based Agentic monetization
+
+<table><tr><td>Factor</td><td>Advertising</td><td>Commissions</td></tr><tr><td>Implementation &amp; adoption</td><td>Faster implementation and likely near-term dominant model given existing ad infrastructure</td><td>Slower adoption requiring merchant integrations, checkout, and payment infrastructure</td></tr><tr><td>Operational complexity</td><td>Lower complexity as it extends existing ad platforms and auction systems</td><td>Higher complexity due to transaction and settlement infrastructure requirements</td></tr><tr><td>Monetizable interactions</td><td>Monetizes full user journey (discovery, research, comparison, purchase intent)</td><td>Monetizes completed transactions only</td></tr><tr><td>Value capture per interaction</td><td>Generally lower value per interaction tied to ads</td><td>Potentially higher value per interaction, particularly in high-value verticals (travel, financial services, large-ticket commerce)</td></tr><tr><td>User trust dynamics</td><td>May introduce perceived bias if recommendations are influenced by paid placemen</td><td>User trust will build over time based on successful outcomes</td></tr></table>
+
+Source: BofA Global Research
+
+BofA GLOBAL RESEARCH
+
+# Performance advantages for Agentic advertising
+
+We believe broader adoption of agentic systems could enhance advertising performance for Google and other major platforms by improving intent capture and traffic farther down the purchase funnel:
+
+- Better context and personalization: Agentic systems operate with deeper contextual understanding, including prior queries, constraints, preferences, and budget parameters. This enables more precise matching between user intent and advertiser offerings. Improved ad targeting will drive stronger downstream conversion performance.   
+- Higher intent density per query: Traditional search distributes across multiple discrete queries, often spanning awareness, consideration, and transaction stages. Agentic search consolidates these steps into one structured workflow. When a user asks an agent to “plan and book a 3-night hotel in Chicago under \$400 per night,” the query embeds budget, dates, location, constraints, and purchase readiness simultaneously. This concentrates commercial intent per query, increasing the likelihood that sponsored placements align with actionable demand, thereby improving conversion rates and effective cost per action.   
+- Decision-stage proximity: Traditional search primarily monetizes discovery and mid-funnel engagement. In contrast, agentic search frequently advances users closer to execution, such as booking, ordering, or subscribing. When ads are delivered nearer to the transaction point, purchase intent is more explicit, increasing conversion probability and could potentially support higher bids from advertisers.   
+- Improved measurement: Agentic workflows can more directly capture downstream actions such as add-to-cart events, bookings, or form completions compared with traditional click-based navigation, enabling clearer end-to-end attribution and more precise performance optimization. Improved attribution transparency can strengthen advertiser confidence and will help drive incremental budget allocation.
+
+# Monetization risk with Agentic transactions
+
+The structural compression of the user journey may reduce the breadth of monetizable touchpoints and concentrate economic value into a narrower set of highly competitive placements. Key monetization risks with broader adoption of agentic search capabilities include:
+
+- Reduced inventory volume: If agentic interfaces become the primary gateway for commercial intent, the number of monetizable touchpoints may compress relative to traditional search. Rather than distributing ads across numerous exploratory queries, demand would concentrate around fewer, high-intent, decision-stage placements embedded within execution workflows. Even if conversion rates improve, fewer monetizable touchpoints could limit overall impression volume and constrain revenue growth.   
+- Auction concentration risk: High-intent, transaction-proximate inventory may disproportionately favor large advertisers with stronger unit economics and higher bidding capacity. In such a scenario, SMBs risk being priced out, reducing auction diversity and increasing reliance on a concentrated set of advertisers. Over time, this concentration could lower auction density, weaken competitive bidding dynamics, and pressure long-term ad pricing power.   
+- Earnings volatility from revenue-share models: If agentic monetization shifts from advertising toward commission or revenue-share structures, platforms assume greater economic exposure to transaction outcomes. Revenue becomes more sensitive to conversion rates, consumer demand cycles, and sector-specific performance rather than purely auction pricing dynamics. This could reduce revenue predictability and contribute to higher earnings volatility.   
+- Margin impact: Agentic systems require significantly more computational resources than AI search queries. This can materially increase compute costs and platforms may face near-term margin pressure as agent adoption scales, particularly if monetization models do not initially offset the higher infrastructure and inference costs.   
+- User trust and transparency: If sponsored recommendations are not clearly distinguished from organic results, or if commercial content becomes overly intrusive, users may perceive bias in agent responses. Potential erosion of trust in the agentic platform's objectivity could dampen engagement and slow broader user adoption.
+
+# Marketplaces will need to build own AI interfaces and agentic capabilities
+
+Transaction-based companies in eCommerce (Amazon, Wayfair, eBay, etc.), travel (such as Bookings, Expedia) and gig economy sectors (DoorDash, Instacart) will likely need to build front end AI interfaces and back end agentic capabilities that can match Generative AI platforms. Developing integrated agentic capabilities, tailored to their platform, could help these companies maintain control over consumer journey and transaction flows, preserving key monetization channels such as commissions, advertising, and merchant fees. Key attributes that will help transaction-based companies maintain direct customer traffic include:
+
+\- Differentiated inventory and supply: Platforms with proprietary or differentiated inventory may be better positioned to maintain direct consumer engagement in an agentic driven discovery environment. Companies with broader selection, exclusive merchant relationships, or fragmented supply are harder for third-party agents to disintermediate. For example, DoorDash benefits from deep local restaurant coverage, Amazon from its vast third-party seller ecosystem and fulfillment network and Booking from relationships with independent hotels that are not widely distributed across channels. Consumers may still prefer to transact directly on these platforms, likely through these platforms' own proprietary AI agents.
+
+- Structural cost advantages: Scale can create structural pricing advantages that help marketplaces remain competitive even if AI agents intermediate discovery. In ecommerce and gig economy models, larger platforms benefit from logistics efficiencies, procurement leverage, and lower customer acquisition costs, enabling them to offer lower prices. In travel, platforms can use merchant-funded promotions, preferred partner rates, and loyalty incentives to maintain pricing advantages. These structural advantages may make it harder for third-party AI agents to disintermediate scaled platforms, as consumers are likely to continue gravitating toward platforms with pricing advantages.   
+- Superior fulfillment and support: Strong fulfillment and post-transaction service capabilities may also help limit disintermediation risk from third-party AI agents, as consumers are likely to continue favoring platforms that deliver more reliable and seamless experiences. Fast delivery times, easy returns, and strong post-transaction support remain important differentiators and reasons consumers prefer certain platforms. Companies such as Amazon and DoorDash benefit from integrated logistics networks that provide faster and more consistent fulfillment versus peers, reinforcing customer preference for these platforms over competing alternatives. In travel, companies like Booking and Airbnb have differentiated through superior customer support during booking disruptions, cancellations, or itinerary changes, helping create a more reliable and trusted experience.
+
+# Transaction sites evolving to compete - Penny AI assistant at Priceline
+
+Booking is actively building its own agentic AI capabilities, with the goal of providing a comparable (or even better) AI driven planning and transaction capabilities for its users. We think the evolution of Penny at Priceline and broader GenAI integration across Booking.com is a prime example of how transactional sites will provide new tools to help maintain direct traffic. Management noted on the 1Q'26 call that AI tools are increasingly enabling conversational search, trip planning, and even booking within the interface, with early signs of improved conversion and engagement. We see potential for broader agentic rollouts in 2H26, helping Booking preserve customer ownership and replicate full end to end experiences within its own ecosystem.
+
+# Exhibit 6: Booking is actively building its own agentic AI capabilities
+
+Snapshot of Penny AI assistant at Priceline
+
+![](images/1d347e6b2f1703116e02a0de7b09a2e2a9ecc999c9191b9bc361d35904008ec8.jpg)
+
+<details>
+<summary>text_image</summary>
+
+priceline® Hotels Cars Flights Packages Cruises Experiences
+May 27 at 9:19 am
+can you suggest some hotels in New York near Times Square
+May 27 at 9:20 am
+Here are some solid options near Times Square in New York for June 1-30, 2026:
+New York Marriott Marquis - Iconic, right on Times Square, great for Broadway and big-city energy.
+Tempo By Hilton New York Times Square - Modern 4-star just off the square, with a fitness center and terrace.
+Hotel 48LEX New York - Short walk to Times Square, quieter feel, many rooms with kitchenettes.
+INNSIDE New York Nomad - About a 10-15 minute walk or a quick subway ride to Times Square, good value in NoMad/Chelsea.
+If you tell me your approximate nightly budget (e.g., under $300, $300-$500, etc.) and bed type preference (king vs. two beds), I can narrow this to the 1-2 best matches and help you move toward booking for your June dates.
+May 27 at 9:20 am
+Ask Penny a question Voice
+North Bergen
+Union City
+Weehawken Township
+Lincoln Square
+MANHATTAN
+HELL'S KITCHEN
+$16331
+$14010
+$15160
+HOBoken
+WEST VILLAGE
+SOHO
+LOWER MANHATTAN
+CHINA TOWN
+$15606
+Hotel 50 Bowery, part of 3dV by Hyatt
+DUMBO
+BROOKLYN HEIGHTS
+Google
+CLINTOR HILL Terms Report a map error
+</details>
+
+Source: Company Website   
+BofA GLOBAL RESEARCH
+
+# Limited traffic from Gen-AI engines to transactional sites
+
+We note that traffic originating to transactional sites from Gen-AI engines, while growing rapidly, still remains very limited. According to Similarweb, Gen-AI sites contributed just 0.42% of Amazon's total web traffic in May'26, 0.36% for Booking, 0.37% for Expedia, 0.35% for Airbnb, 0.39% for Instacart and 0.18% for DoorDash.
+
+Exhibit 7: Gen-AI sites contributed just $0.42\%$ of Amazon's total web traffic in May '26   
+% of Total Traffic from Gen-AI sites   
+![](images/711c866fd8fe0b6ad979e8e3cef129359a99392d079d06ade4e5d59b51f04de1.jpg)
+
+<details>
+<summary>line</summary>
+
+| Date   | Amazon | Booking | Expedia | Airbnb | DoorDash | Instacart |
+|--------|--------|---------|---------|--------|----------|-----------|
+| Apr-23 | 0.05%  | 0.03%   | 0.04%   | 0.02%  | 0.01%    | 0.01%     |
+| Jul-23 | 0.06%  | 0.04%   | 0.05%   | 0.03%  | 0.02%    | 0.02%     |
+| Oct-23 | 0.07%  | 0.05%   | 0.06%   | 0.04%  | 0.03%    | 0.03%     |
+| Jan-24 | 0.08%  | 0.06%   | 0.07%   | 0.05%  | 0.04%    | 0.04%     |
+| Apr-24 | 0.09%  | 0.07%   | 0.08%   | 0.06%  | 0.05%    | 0.05%     |
+| Jul-24 | 0.10%  | 0.08%   | 0.09%   | 0.07%  | 0.06%    | 0.06%     |
+| Oct-24 | 0.11%  | 0.09%   | 0.10%   | 0.08%  | 0.07%    | 0.07%     |
+| Jan-25 | 0.12%  | 0.10%   | 0.11%   | 0.09%  | 0.08%    | 0.08%     |
+| Apr-25 | 0.13%  | 0.11%   | 0.12%   | 0.10%  | 0.09%    | 0.09%     |
+| Jul-25 | 0.14%  | 0.12%   | 0.13%   | 0.11%  | 0.10%    | 0.10%     |
+| Oct-25 | 0.15%  | 0.13%   | 0.14%   | 0.12%  | 0.11%    | 0.11%     |
+| Jan-26 | 0.16%  | 0.14%   | 0.15%   | 0.13%  | 0.12%    | 0.12%     |
+| Apr-26 | 0.17%  | 0.15%   | 0.16%   | 0.14%  | 0.13%    | 0.13%     |
+</details>
+
+Source: Similarweb   
+BofA GLOBAL RESEARCH
+
+This data suggests, despite rapidly growing use of Gen-AI sites for research, consumers still go direct to vertical sites/apps for purchases. The key question is whether vertical sites begin to see pressure on direct traffic as agentic capabilities scale across platform sites. In our view, today's consumers are quite decerning, their purchases are good indication of Internet sites that provide the best services levels (price, selection, customer follow up), and good agents are likely to favor these same sites for purchases. However, loss of direct traffic to front end agents remains a long-term risk.
+
+# Google in the Agentic era
+
+We think Google possesses all the core capabilities required to monetize AI-driven agentic transactions at scale and is well positioned to transition its search users to agentic users. Google's integrated advertising stack, deep advertiser demand, and extensive merchant and partner relationships that have contributed to the Universal Commerce Protocol development create a comprehensive structural advantage. These assets will enable Google to convert agent-driven actions into monetizable events by embedding sponsored recommendations & conversion-optimized outcomes directly at the point of user intent.
+
+Google has key capabilities required to deploy and monetize agentic AI at scale:
+
+- Consumer reach and distribution: The company controls a broad set of consumer-facing platforms, including Search, Maps, and Android, providing the scale and distribution needed to drive adoption of its agentic experiences.   
+- Advertiser and partner ecosystem: Google has scaled advertiser demand and deep relationships with merchants, retailers, airlines, hotels, and OTAs, giving its agents access to real-time pricing, availability, and booking data and supporting differentiated agentic capabilities.
+
+- Ad Monetization stack: Google’s integrated advertising platform allows sponsored recommendations and conversion-optimized actions to be embedded directly into agent-driven workflows, enabling monetization of agent-driven actions.   
+- Agentic tools: With established structured data sets such as product catalogs integrated within search, leading frontier models, and AI talent, Google is well positioned to develop and deploy agentic AI systems at scale.
+
+On a higher level, Alphabet also benefits from its multi-app reach of logged-in users, generating rich first-party signals across Search, Maps, and Gmail that enable more personalized, context-aware itineraries that could drive higher transaction conversion.
+
+# Building the plumbing for the Agentic Platform
+
+# Google Universal Commerce Protocol
+
+Google's Universal Commerce Protocol (UCP) is an open framework designed to help AI assistants and autonomous agents interact directly with merchants, retailers, and payment systems through a standardized commerce layer. Instead of retailers building separate integrations for every AI platform, UCP enables a single protocol that allows AI agents to search products, compare pricing, check inventory, manage carts, process payments, complete purchases across participating merchants. Strategically, UCP is intended to accelerate agentic commerce, where AI systems move beyond answering questions and begin executing transactions on behalf of users. If UCP becomes widely adopted, Google could become the foundational infrastructure layer powering AI-driven shopping and transaction ecosystems. Key merchants contributing to UCP include Shopify, Etsy, Wayfair, Target, and Walmart, alongside broader ecosystem partners such as Best Buy, The Home Depot, Macy's, and leading payment networks including Visa, Mastercard, Stripe, etc.
+
+Exhibit 8: Google's UCP is an open framework designed to help autonomous agents interact directly with merchants, retailers, and payment systems through a standardized commerce layer Key merchants contributing to UCP
+
+Universal Commerce Protocol   
+![](images/3f47f3b8e14ef736bbe7a826740c015cbc4aea962cff3307509938d745bd69f7.jpg)
+
+<details>
+<summary>bar</summary>
+
+| Company     | Brand      | Category       |
+|-------------|------------|----------------|
+| adyen       |          |                |
+| Commerce    |          |                |
+| P           |          |                |
+| Flipkart    |          |                |
+| GAP INC     |          |                |
+| SEPHORA     |          |                |
+| VISA        |          |                |
+| BEST BUY    |          |                |
+| Kroger      |          |                |
+| Shopee      |          |                |
+| worldpay    |          |                |
+| zalando     |          |                |
+| Chewy       |          |                |
+| Lowes       |          |                |
+| stripe      |          |                |
+|                  | ULTA       |                  |
+</details>
+
+Source: Google Website   
+BofA GLOBAL RESEARCH
+
+# How does UCP work?
+
+When a user submits a shopping request to an AI assistant, it interprets the user's intent and sends standardized commerce queries through the UCP framework to participating merchants and commerce platforms. Using UCP-compatible APIs, retailers return structured data including product availability, pricing, inventory, shipping, and
+
+promotions, allowing the AI agent to compare options, recommend products, build carts, and initiate checkout through a unified commerce infrastructure layer. Once approved, the AI assistant leverages the UCP's standardized merchant and payment infrastructure to complete payments, confirm fulfillment, and manage post-purchase functions such as tracking, returns, and customer support.
+
+Exhibit 9: Google UCP is an open framework designed to help AI agents interact directly with merchants, retailers, and payment systems through a standardized commerce layer   
+Google Universal Commerce Protocol   
+![](images/6dd2e972ed47bd5213b9a08a8ad3f5abe6c7de9d8b744353d2fac69d232ac5ba.jpg)
+
+<details>
+<summary>flowchart</summary>
+
+```mermaid
+graph LR
+    A["Consumer Surfaces<br>e.g. AI Mode on Search, Gemini, and others"] <--> B["Universal Commerce Protocol<br>UCP creates a common language for consumers, agents and businesses to ensure all types of commerce actions are standardized and secure"]
+    B --> C["Capabilities and extensions<br>Agents and businesses have flexibility to choose which capabilities and extensions to adopt"]
+    C --> D["Product Discovery"]
+    C --> E["Cart"]
+    C --> F["Identity linking"]
+    C --> G["Checkout"]
+    C --> H[" Order"]
+    C --> I["Other vertical capabilities"]
+    J["Underlying communication<br>Enables merchants and agents flexibility to communicate in the medium of their choice"] --> K["APIs"]
+    J --> L(Model Context Protocol (MCP)]
+    J --> M["Agent2Agent (A2A) Protocol"]
+    N["Business Backends<br>Process orders, manage inventory, and arrange delivery.<br>Businesses remain Merchant of Record."] <--> O["Capability launched"]
+    N --> P["Capability coming soon"]
+```
+</details>
+
+Source: Alphabet Website   
+BofA GLOBAL RESEARCH
+
+# Building the consumer interface
+
+Google has introduced several commerce related agentic capabilities, including Business Agents, Native Checkout, Search Agents, Gemini Spark, and AI-powered calling. In AI Mode, the company is adding native checkout, interactive agentic ads and commerce features that allows users to conversationally describe what they are looking for, with results displaying shoppable product listings, comparison tables, real-time pricing across the web, and merchant purchase links instead of text-only responses and allowing purchases directly within the surface through Google Pay without leaving the page.
+
+# Google Agentic Checkout
+
+Google has introduced an Agentic Checkout feature that builds on its existing price tracking functionality. Users can set a target price and preferred size or configuration, and when those conditions are met, Google sends a notification with a “Buy for me” option. Upon selection, the user confirms payment method, shipping address, and delivery preferences. Google’s AI agent then navigates to the merchant’s website, verifies pricing and availability, and completes the purchase on the user’s behalf.
+
+# Exhibit 10: Google has rolled out Agentic checkout in Search, including in AI Mode, from eligible merchants in the US
+
+Google Agentic Checkout
+
+![](images/16d84100d75489d708894c30eebf0c6b213517ccdd18612d4cb9a90c1855802b.jpg)
+
+<details>
+<summary>text_image</summary>
+
+Track price
+You are now signed up to receive price notifications for this product.
+Only notify me for specific options
+X Size: 8"W X 23.85" L
+Only notify me below a specific price
+$13 -$50 -$68
+Today's
+price
+Buy for me
+Buy for me may be available through Google Shopping's price tracking feature, and saves you time by placing an order on your behalf with your saved Google Pay info. If your desired price is met, you'll receive a notification you can click on to receive the option to use Buy for me. Learn more
+Unsubscribe Update
+</details>
+
+![](images/bab26059c62ee6fa5fcdf5aba92656d09f2bc02e28f901f82177cee19aafd125.jpg)
+
+<details>
+<summary>text_image</summary>
+
+Google Fi
+5G
+Wi-Fi > Bluetooth
+Flashlight Dark theme
+Google Shopping - 5m
+Price drop - 5m
+Now $45 - Birch Lane Ivar Cutting
+Board - From Wayfair
+View details Buy for me Turn off
+Megan Ono - 25m
+How was your stay?
+</details>
+
+![](images/f75aaffde73f58feef5fe7d144e67a5e4e528dc9b9c50abc1a0368f70b25d70f.jpg)
+
+<details>
+<summary>text_image</summary>
+
+Track price
+Price dropped to $45.00
+Buy for me will securely make a purchase for you
+from the merchant's website and save you time
+Wayfair
+Birch Lane Ivar Cutting Board
+$45.00 - $47.99-
+Size: 8"W X 23.75"L
+Chase Sapphire Reserve
+Visa -1234 >
+Elisa Beckett
+1600 Amphitheatre Pkwy
+Mountain View, CA 94043 >
+Standard Shipping
+Delivered in 6-9 business days >
+Pay wayfair.com - $49.11
+Buy for me with Pay
+</details>
+
+Source: 9to5google.com
+
+BofA GLOBAL RESEARCH
+
+# Google testing new ad formats in AI mode
+
+Alphabet has introduced new ad formats in AI Mode that allows retailers and advertisers to feature products natively within AI-generated search results and drive commerce actions. Google is introducing a new Direct Offers feature within AI Mode that enables brands to present tailored discounts to prospective shoppers. Google's VP of Ads and Commerce, Vidhya Srinivasan, said that Alphabet is "not just bringing ads to AI experiences in Search, but reinventing what an ad is." She added that this initiative is "laying the foundation for a future where commercial experiences can be seamless and agentic." We think with Agentic purchasing capabilities, the conversion and measurement of ads could see significant improvements, and better position Google to control the full commerce funnel, spanning discovery, recommendation, and transaction execution.
+
+# Agentic AI Calling
+
+Google has also launched an agentic calling feature within Search that enables the AI to contact local stores on a user's behalf to verify inventory availability, confirm pricing, and check for ongoing promotions. For select “near me” product categories, including electronics, toys, health, and beauty, users can select a “Let Google Call” option and specify product details, price range, and brand preferences. The AI then contacts nearby stores and summarizes availability, pricing, and promotional information via email or text. This agentic calling capability is now rolling out in the US, further extending Google’s role from discovery into workflow execution.
+
+# Google launches branded AI agent
+
+In mid-January, Google introduced Business Agent, a new branded AI experience that allows shoppers to chat directly with retailers within Search. Acting as a virtual sales associate, the agent answers product questions in a brand's voice, helping retailers engage consumers during online shopping and drive conversions. Business Agent began rolling out with partners including Lowe's, Michael's, Poshmark, and Reebok. Eligible US retailers can activate and customize the agent via Merchant Center, with future enhancements enabling agent training on first-party data, access to customer insights.
+
+# AI Search – Revenue sensitivity analysis
+
+We outline the key drivers underpinning our Search revenue estimates. Our assumptions focus on user scale and query growth, evolving click-through dynamics, and pricing trends, all which can be influenced by the shift toward AI-native search surfaces:
+
+We assume \~3.1bn daily users across the Google Search ecosystem in 2025 (Google.com, AI Overviews, AI Mode, Gemini, etc.), growing \~2% y/y in both 2026 and 2027,   
+- Avg. queries per daily user are estimated at \~1.73 in 2025, growing \~10% y/y in 2026 and \~6% in 2027. Our estimates are consistent with Google disclosure that the company was processing >5tn searches annually as of early March 2025. Strong search growth is driven by users searching more, with longer, more conversational, and multimodal queries,   
+We estimate \~37.5% of queries result in a click in 2025, declining marginally to \~37% in 2026 and \~36.5% in 2027, reflecting a gradual reduction in click-through rates as AI-generated results increasingly satisfy user intent directly,   
+We estimate paid ad clicks at 15.8% of total clicks, rising to 16.1% in 2026 and 16.3% in 2027, driven by a higher mix of commercial queries and improved ability of Search to identify commercial intent within informational searches and serve more relevant ads,   
+We assume \~\$0.71 CPC (revenue per click) in 2025, growing \~4% y/y in 2026 and 2027 (US likely less than 50% of clicks, but likely over 2x CPCs). For reference, Google reported Search CPCs grew \~7% y/y in 2025 (per 10-K).
+
+Exhibit 11: Google Search High Level Revenue Build   
+We estimate Google total query volume growing to \~6tr in 2026 (vs 5tr disclosed in early March'25) 
+
+<table><tr><td colspan="6">Base Case</td></tr><tr><td>Google AI Search Revenue Analysis</td><td>2024A</td><td>2025A</td><td>2026E</td><td>2027E</td><td>2028E</td></tr><tr><td>Total Google AI Search users including AI Overviews, AI Mode &amp; Gemini (bn)</td><td>3,000</td><td>3,060</td><td>3,121</td><td>3,184</td><td>3,247</td></tr><tr><td>Y/Y%</td><td></td><td>2%</td><td>2.0%</td><td>2.0%</td><td>2.0%</td></tr><tr><td>Average number of queries per day - Assumption</td><td>1.65</td><td>1.73</td><td>1.90</td><td>2.01</td><td>2.10</td></tr><tr><td>Y/Y %</td><td></td><td>5%</td><td>10%</td><td>6%</td><td>4%</td></tr><tr><td>Total Queries incl (bn)</td><td>4,950</td><td>5,301</td><td>5,922</td><td>6,409</td><td>6,804</td></tr><tr><td>Y/Y %</td><td></td><td>7%</td><td>12%</td><td>8%</td><td>6%</td></tr><tr><td>Click-through rate – (declining due to AI answers)</td><td>38.0%</td><td>37.5%</td><td>37.0%</td><td>36.5%</td><td>36.0%</td></tr><tr><td>Paid ad clicks as % of total clicks (Increased ad insertion in conversations)</td><td>15.8%</td><td>15.8%</td><td>16.1%</td><td>16.3%</td><td>16.6%</td></tr><tr><td>Estimated Ad clicks (bn)</td><td>297</td><td>315</td><td>353</td><td>381</td><td>407</td></tr><tr><td>Y/Y%</td><td></td><td>6%</td><td>12%</td><td>8%</td><td>7%</td></tr><tr><td>Estimated Revenue per &#x27;000 paid click (CPC)</td><td>$0.67</td><td>$0.71</td><td>$0.74</td><td>$0.77</td><td>$0.80</td></tr><tr><td>Y/Y%</td><td></td><td>7.0%</td><td>4.0%</td><td>4.0%</td><td>4.0%</td></tr><tr><td>Estimated Search Revenue (BofA Ests., $ mn)</td><td>$198,084</td><td>$224,532</td><td>$261,638</td><td>$294,098</td><td>$326,187</td></tr><tr><td>Y/Y%</td><td>13%</td><td>13%</td><td>17%</td><td>12%</td><td>11%</td></tr><tr><td>Reported &amp; Street Estimates ($ mn)</td><td>$198,084</td><td>$224,532</td><td>$258,863</td><td>$289,397</td><td>$320,868</td></tr><tr><td>Y/Y%</td><td>13%</td><td>13%</td><td>15%</td><td>12%</td><td>11%</td></tr><tr><td>BofA vs Street (Upside/Downside)</td><td></td><td></td><td>1%</td><td>2%</td><td>2%</td></tr></table>
+
+Source: BofA Global Research Estimates
+
+BofA GLOBAL RESEARCH
+
+We see several potential upside drivers for Google from the shift to AI driven interactions and the integration of agentic transaction flows:
+
+- Growing adoption of AI Overviews, AI Mode, Gemini expands use cases and increases engagement, driving incremental query volume,   
+- Longer queries (Google noted AI Mode queries are \~3x longer than traditional, and follow-up queries have risen meaningfully in the US), increase query understanding and drives better monetization of previously un-monetized informational queries, leading to more ad clicks per query,   
+- Shift towards longer, more conversational and multimodal queries and enables the introduction of new ad types (sponsored suggestions, sponsored prompts, and direct offers) driving more paid clicks,   
+- Larger and more advanced AI models improve ad targeting and personalization, driving higher conversion and ad prices,   
+- New agentic purchasing capabilities converts traffic at a higher rate and reduces advertiser surplus in Google's auctions (advertisers only pay once cent more than the next highest bidder) driving higher traffic monetization.
+
+While our high-level search model is built on many metrics, in the table below we highlight sensitivity analysis for projected 2027 Search revenue estimates assuming 20bps differences in Paid ad clicks as % of total clicks, and 2pts changes in Search pricing (Y/Y growth). If new AI features can drive a 20bps increase in ad click rates (as a percent of total clicks) and a 2pt lift in ad pricing, Google could generate over \$9bn in upside to 2027 search revenues.
+
+Exhibit 12: 2027 Search Revenue Estimates (\$ mn) – Sensitivity Analysis   
+Estimated 2027 Search revenue based on changed in Paid ad clicks as % of total clicks and Search Pricing (Y/Y Growth) 
+
+<table><tr><td rowspan="2" colspan="2"></td><td colspan="7">Paid ad clicks as % of total clicks</td></tr><tr><td>15.7%</td><td>15.9%</td><td>16.1%</td><td>16.3%</td><td>16.5%</td><td>16.7%</td><td>16.9%</td></tr><tr><td rowspan="7">Y/Y Growth in Search Pricing (CPC)</td><td>-2.0%</td><td>$266,930</td><td>$270,330</td><td>$273,731</td><td>$277,131</td><td>$280,531</td><td>$283,932</td><td>$287,332</td></tr><tr><td>0.0%</td><td>$272,377</td><td>$275,847</td><td>$279,317</td><td>$282,787</td><td>$286,256</td><td>$289,726</td><td>$293,196</td></tr><tr><td>2.0%</td><td>$277,825</td><td>$281,364</td><td>$284,903</td><td>$288,442</td><td>$291,982</td><td>$295,521</td><td>$299,060</td></tr><tr><td>4.0%</td><td>$283,272</td><td>$286,881</td><td>$290,490</td><td>$294,098</td><td>$297,707</td><td>$301,315</td><td>$304,924</td></tr><tr><td>6.0%</td><td>$288,720</td><td>$292,398</td><td>$296,076</td><td>$299,754</td><td>$303,432</td><td>$307,110</td><td>$310,788</td></tr><tr><td>8.0%</td><td>$294,168</td><td>$297,915</td><td>$301,662</td><td>$305,410</td><td>$309,157</td><td>$312,904</td><td>$316,652</td></tr><tr><td>10.0%</td><td>$299,615</td><td>$303,432</td><td>$307,249</td><td>$311,065</td><td>$314,882</td><td>$318,699</td><td>$322,516</td></tr></table>
+
+<table><tr><td rowspan="2" colspan="2"></td><td colspan="7">Paid ad clicks as % of total clicks</td></tr><tr><td>15.7%</td><td>15.9%</td><td>16.1%</td><td>16.3%</td><td>16.5%</td><td>16.7%</td><td>16.9%</td></tr><tr><td rowspan="7">Y/Y Growth in Search Pricing (CPC)</td><td>-2.0%</td><td>-9%</td><td>-8%</td><td>-7%</td><td>-6%</td><td>-5%</td><td>-3%</td><td>-2%</td></tr><tr><td>0.0%</td><td>-7%</td><td>-6%</td><td>-5%</td><td>-4%</td><td>-3%</td><td>-1%</td><td>0%</td></tr><tr><td>2.0%</td><td>-6%</td><td>-4%</td><td>-3%</td><td>-2%</td><td>-1%</td><td>0%</td><td>2%</td></tr><tr><td>4.0%</td><td>-4%</td><td>-2%</td><td>-1%</td><td>0%</td><td>1%</td><td>2%</td><td>4%</td></tr><tr><td>6.0%</td><td>-2%</td><td>-1%</td><td>1%</td><td>2%</td><td>3%</td><td>4%</td><td>6%</td></tr><tr><td>8.0%</td><td>0%</td><td>1%</td><td>3%</td><td>4%</td><td>5%</td><td>6%</td><td>8%</td></tr><tr><td>10.0%</td><td>2%</td><td>3%</td><td>4%</td><td>6%</td><td>7%</td><td>8%</td><td>10%</td></tr></table>
+
+Source: BofA Global Research Estimates   
+BofA GLOBAL RESEARCH
+
+# Risks: Potential downside drivers from AI and agentic integration:
+
+- Improving performance at AI-native platforms and transaction sites reduces incremental Search sessions on Google,   
+- Increasing share of queries answered directly within AI-generated responses reduces click volumes,   
+- Ad load could be structurally constrained within AI & agentic responses, reducing paid clicks per query,
+
+- Agents could concentrate user attention on fewer outcomes, reducing auction density and lowering ad yields,   
+- Agentic transaction monetization lags current ad monetization as agentic competition is less established and commissions could be at below market rates to drive merchant adoption. Booking has indicated that the cost of paid agentic traffic can be lower than current search traffic costs.
+
+# OpenAI & and consumer monetization
+
+# ChatGPT has built at large base of users
+
+Since late 2023, ChatGPT has grown its weekly active users from roughly 100mn to close to 1bn. The growing user base has contributed to strong traffic growth, with \~5.5bn web visits in Apr'26 (6% of Google, vs 2% in Jan 2024 and 1% in Jan 2023), On the mobile side, per Sensor Tower, ChatGPT had approx. 429mn DAUs in Apr'26 (vs 228mn in Apr'25).
+
+Exhibit 13: ChatGPT now has around 20% of Google app DAUs   
+Google, ChatGPT and Gemini Global Mobile DAUs (mn)   
+![](images/d186a531b85dca016e764b1666fdf211cbe0962f6b0b08511c8f5872176617ce.jpg)
+
+<details>
+<summary>line</summary>
+
+| Date    | Google | ChatGPT | Gemini |
+|---------|--------|---------|--------|
+| Jan-24  | 1700   | 0       | 0      |
+| Apr-24  | 1650   | 0       | 0      |
+| Jul-24  | 1700   | 0       | 0      |
+| Oct-24  | 1750   | 0       | 0      |
+| Jan-25  | 1850   | 0       | 0      |
+| Apr-25  | 1950   | 200     | 0      |
+| Jul-25  | 2000   | 300     | 0      |
+| Oct-25  | 2050   | 350     | 0      |
+| Jan-26  | 2100   | 400     | 0      |
+| Apr-26  | 2200   | 450     | 100    |
+</details>
+
+Source: Sensor Tower   
+BofA GLOBAL RESEARCH
+
+# Broader user monetization on the way
+
+While OpenAI has scaled rapidly on the consumer side, the vast majority of users are not paying for a subscription. As of early 2026, reports suggest ChatGPT had more than 50mn paying subscribers, representing \~5% of its estimated global user base. The large base of “free” users increases the strategic importance of developing incremental revenue streams, particularly advertising and agentic capabilities. As AI assistants become more integrated into discovery, recommendation, and transaction workflows, OpenAI could potentially monetize a much broader portion of its user base through sponsored placements, affiliate economics, transaction fees, and commercial integrations. Agentic capabilities may also improve monetization efficiency by increasing user engagement, purchase intent visibility, and the ability to facilitate end-to-end transactions directly within AI interfaces.
+
+# OpenAI targeting \$283bn revenues by 2030
+
+Per reports from late Feb, OpenAI estimated \$30bn revenue in 2026 (vs \$13bn in 2025), growing to \$62bn in 2027 and \$283bn by 2030 (up from \$200bn in Sep'25). By 2030, OpenAI projects \$150bn in ChatGPT B2C revenue, including subscriptions & ads. Press reports indicated that OpenAI's ad business is expected to become a meaningful driver of consumer revenue by 2030. With more than 900mn and growing WAUs, we think OpenAI is well positioned to capture engagement & commercial use cases.
+
+Exhibit 14: OpenAI now projects \$283bn revenue by 2030, up from \$200bn in Sept. '25   
+OpenAI Revenue Projections (\$ bn, 1Q'26   
+![](images/47aec80a7c86327a150eb5586df4d0fb27ab39baa1a4d07243caba117f16dc7f.jpg)
+
+<details>
+<summary>bar_stacked</summary>
+
+| Year | Red Segment ($B) | Purple Segment ($B) | Teal Segment ($B) | Green Segment ($B) |
+| :--- | :--- | :--- | :--- | :--- |
+| 2023 | 1 | 0 | 0 | 0 |
+| 2024 | 4.3 | 0.5 | 0.5 | 0 |
+| 2025 | 12.5 | 1.5 | 1.5 | 0.5 |
+| 2026* | 30.1 | 3.5 | 3.5 | 1.5 |
+| 2027* | 62 | 8.5 | 8.5 | 2.5 |
+| 2028* | 113 | 19.5 | 19.5 | 3.5 |
+| 2029* | 184 | 36.5 | 36.5 | 6.5 |
+| 2030* | 282.5 | 64.5 | 64.5 | 11.5 |
+</details>
+
+ChatGPT consumer (including ads) ChatGPT B2B (including agents, research partnerships)   
+Platform (including API sales on Microsoft Azure) New products (including hardware)   
+Source: The Information   
+BofA GLOBAL RESEARCH
+
+# Studies suggest OpenAI users have transactional intent
+
+According to a study by Profound that analyzed more than 50mn ChatGPT prompts, ChatGPT interactions follow a different intent distribution compared with search engines. The largest category of prompts on ChatGPT is generative intent (37.5%), where users ask the model to create something directly such as writing content, generating code, drafting emails, or producing plans. Beyond generative requests, about 32.7% of ChatGPT prompts are informational, meaning users are asking for explanations, facts, or guidance. This is significantly lower than traditional search, where informational queries account for more than 50% of searches.
+
+The study found that commercial intent (research and comparison) accounts for about 9.5% of prompts, which is lower than the 14.5% in traditional search. However, transactional intent (ready to purchase) represented roughly 6.1% of total prompts, much higher than in traditional search (around 0.6%). This data suggests: 1) Combined commercial and transaction intent could be similar to search at around 15%, and 2) AI chat interfaces may concentrate a higher share of purchase-ready intent compared with traditional search.
+
+Exhibit 15: On ChatGPT, Commercial intent (research & comparison) accounts for \~9.5% of prompts (vs 14.5% in traditional search) and transactional intent (ready to purchase) represents \~6.1%   
+Share of intent on ChatGPT vs traditional search   
+![](images/a9e26a05c090a1390a75cb78e57d098aada5ed536fdde3b5119999fccb9e6a0c.jpg)
+
+<details>
+<summary>bar_stacked</summary>
+
+| Category | Traditional Search* (%) | ChatGPT |
+|---|---|---|
+| Transactional | 0.6 | New Intent |
+| Commercial | 14.5 | New Intent |
+| Navigational | 32.2 | New Intent |
+| Informational | 52.7 | Existing Intent |
+| No Intent | 12.1 | New Intent |
+| Generative | 37.5 | New Intent |
+| Navigational | 2.1 | Existing Intent |
+| Transactional | 6.1 | Existing Intent |
+| Commercial | 9.5 | Existing Intent |
+| Informational | 32.7 | Existing Intent |
+</details>
+
+Source: Profound   
+BofA GLOBAL RESEARCH
+
+# OpenAI's Operator Agent
+
+Over the last 12 months, OpenAI has accelerated its push into agentic capabilities, with the launch of Operator agent, which can navigate websites, complete forms, and execute multi-step online tasks on behalf of users. The company is also aggressively expanding its partner and developer ecosystem to integrate agent-driven workflows directly into consumer applications. Currently monetization remains primarily subscription-driven, with advanced agentic features bundled into higher-priced tiers, alongside enterprise API licensing.
+
+Exhibit 16: OpenAI's Operator agent can do agentic shopping through integrations with platforms such as Instacart   
+OpenAI Operator agent shopping on Instacart   
+![](images/bcc45473b43795467e38514afceebbe4698a29b93ff58d5bde13b66966c17986.jpg)
+
+<details>
+<summary>text_image</summary>
+
+The organic red grapes have been added
+to your cart. Would you like me to open
+the basket to review your full order?
+That would be great
+Worked for 11 seconds
+Instacart
+Your basket is open, showing a total of
+$64.37 with various items from Sprouts
+Farmers Market. Delivery is set for today
+between 7:59 - 8:16 pm. Would you like
+to proceed to checkout or make any
+changes to your order?
+Message Operator
+Operator retains screenshots of its actions. Please monitor
+its work. It can make mistakes.
+Add grapes request
+Instacart
+Sprouts Farmers Market
+In-store prices
+100% satisfaction guaranteed >
+Add Your Sprouts Account to save >
+Shop
+Buy it again
+Flyers
+Recipes
+Lists
+Browse aisles
+Sprouts Brands
+Produce
+Meat & Seafood
+Prepared Foods
+Dairy & Eggs
+Frozen
+Sprouts & Candy
+Results for "organic red grapes"
+1 pkg +
+About 2.25 lb.
+Fruit cost by
+weight
+Great seller
+$11.23 (kg int.)
+Organic Red Seedless Grapes
+$4.99 / lb.
+About 2.25 lb / package
+Fresh fruit medley
+Because you added grapes
++ Add
++ Add
+Get $10 off for Produce Spend $20+
+Share Save task
+Personal Sprouts Farmers Market Cart
+Shopping in 8Q208
+Sprouts Farmers Market
+$64.37
+Delivery by 7:59-8:16pm
+SODA market sales revenue
+Earning $5 off your next restaurant order
+Strawberries 1ct $4.00
+16 oz $4.00
+Choose replacement Remove
+Blackberries 1ct $3.00
+5.8 oz container Remove
+Choose replacement Remove
+Medium Hass Avocado 1ct $1.67
+1 each
+Choose replacement Remove
+Organic Cucumber 1ct $1.50
+1 each
+Choose replacement Remove
+Roma Tomato 1ct $0.42
+About 0.25 lb each Remove
+Choose replacement Remove
+Red Mango 1ct $1.25
+1 each $1-50
+Choose replacement Remove
+Free delivery + saving $8.23 on this order
+Go to checkout $64.37
+</details>
+
+Source: Instacart Website
+
+BofA GLOBAL RESEARCH
+
+# OpenAI building Agentic Commerce Protocol
+
+After scaling back Instant Checkout in March'26, OpenAI's strategy appears to be shifting from fully embedded end-to-end checkout experiences inside ChatGPT toward a broader merchant-controlled and protocol-driven agentic commerce infrastructure. Similar to Google's UCP, OpenAI is building its own agentic commerce infrastructure layer called Agentic Commerce Protocol (ACP), an open standard designed to connect merchants directly with ChatGPT users. ACP enables ChatGPT to ingest structured product catalog data, understand merchant inventory, pricing, and availability, and surface relevant products contextually within conversations. ACP serves as the connective layer between merchants and ChatGPT, similar to how Google's UCP connects merchants into Gemini and AI Mode ecosystems. OpenAI key partners include Stripe, Shopify, Etsy, Instacart, DoorDash, Pine Labs, and Microsoft Copilot.
+
+# What is the difference between UCP and ACP?
+
+At a high level, the goal for both Google's UCP and OpenAI's ACP is to drive agentic commerce transactions by connecting merchants, products, payments, and AI interfaces into a unified ecosystem. However, the two architectures differ slightly in technical focus and workflow design. Google's UCP is built to extend agentic commerce capabilities across Google's broader ecosystem including Search, Shopping, Gemini, Maps, Android, and Google Pay, while OpenAI's ACP is built more natively around conversational AI agents operating inside ChatGPT. Another difference is payments architecture: ACP incorporates delegated payments through Shared Payment Tokens (SPTs), enabling AI agents to securely authorize purchases without exposing card credentials, whereas Google currently relies more heavily on existing Google Pay and merchant checkout integrations. Both companies are converging toward similar end goals, but Google's approach is rooted in extending its large-scale commerce and discovery ecosystem into agentic workflows, while OpenAI's approach appears to be centered on building conversational agents that act as the primary transaction interface.
+
+# Agentic Partnerships
+
+We note that several companies in our sector have announced partnerships to enable agentic commerce including:
+
+Exhibit 17: Google and OpenAI early agentic partners   
+Agentic partners list 
+
+<table><tr><td>Alphabet</td><td>OpenAI</td></tr><tr><td>Walmart</td><td>Walmart</td></tr><tr><td>Shopify</td><td>Shopify</td></tr><tr><td>Target</td><td>Target</td></tr><tr><td>Etsy</td><td>Etsy</td></tr><tr><td>Wayfair</td><td>Wayfair</td></tr><tr><td>PayPal</td><td>Instacart</td></tr><tr><td>Adyen</td><td>Stripe</td></tr><tr><td>Chewy</td><td>PayPal</td></tr><tr><td>Adyen</td><td>DoorDash</td></tr><tr><td>Kroger</td><td>Uber</td></tr><tr><td>Expedia</td><td>eBay</td></tr><tr><td>Marriott International</td><td>Salesforce</td></tr><tr><td>Booking.com</td><td>Booking.com</td></tr></table>
+
+Source: Google Search   
+Note: List not exhaustive, indicative of major partnerships   
+BofA GLOBAL RESEARCH
+
+Over 60 companies across payments and tech sectors also support Google's AI agent payments protocols (including Adobe, American Express, Coinbase, Etsy, Intuit, UnionPay, Worldpay, etc.
+
+# OpenAI actively building out its ads platform, new industry competition
+
+In May'26, OpenAI expanded access to its Ads Manager to all US advertisers and removed the prior \$50,000 minimum spend requirement. Press reports from April suggested that OpenAI's US ad pilot had already surpassed an estimated \$100mn annualized revenue run-rate shortly after launch. OpenAI said the broader rollout was aimed at making ChatGPT advertising accessible to businesses of all sizes, from startups to large global brands. The company also introduced cost-per-click (CPC) bidding alongside existing CPM pricing, allowing advertisers to pay based on user engagement rather than impressions alone. OpenAI noted that many ChatGPT interactions are “decision-oriented,” positioning clicks as a stronger indicator of ad relevance and purchase intent.
+
+OpenAI also expanded partnerships with major agency groups including Dentsu, Omnicom, Publicis, and WPP, along with ad-tech firms such as Adobe, Criteo, Kargo, Pacvue, and StackAdapt. Reports suggest OpenAI is developing additional advertising infrastructure, including third-party measurement tools, conversion tracking, and cost-per-action (CPA) bidding capabilities to make the platform more competitive. OpenAI's ad ramp could represent a competitive headwind for established Online ad platforms, including Google.
+
+Exhibit 18: Companies mentioned
+
+Companies mentioned in this report
+
+<table><tr><td>BofA Ticker</td><td>Bloomberg ticker</td><td>Company name</td><td>Price</td><td>Rating</td></tr><tr><td>ABNB</td><td>ABNB US</td><td>Airbnb</td><td>US$ 132.1</td><td>B-2-9</td></tr><tr><td>GOOGL</td><td>GOOGL US</td><td>Alphabet A</td><td>US$ 388.83</td><td>B-1-7</td></tr><tr><td>GOOG</td><td>GOOG US</td><td>Alphabet C</td><td>US$ 384.83</td><td>B-1-7</td></tr><tr><td>AMZN</td><td>AMZN US</td><td>Amazon.com</td><td>US$ 271.85</td><td>B-1-9</td></tr><tr><td>BKNG</td><td>BKNG US</td><td>Booking Holdings</td><td>US$ 168.37</td><td>B-1-7</td></tr><tr><td>DASH</td><td>DASH US</td><td>DoorDash</td><td>US$ 157.58</td><td>C-1-9</td></tr><tr><td>EXPE</td><td>EXPE US</td><td>Expedia</td><td>US$ 226.56</td><td>C-1-7</td></tr><tr><td>CART</td><td>CART US</td><td>Instacart</td><td>US$ 40.44</td><td>C-2-9</td></tr><tr><td>META</td><td>META US</td><td>Meta Platforms</td><td>US$ 635.255</td><td>B-1-7</td></tr><tr><td>PINS</td><td>PINS US</td><td>Pinterest</td><td>US$ 20.03</td><td>C-2-9</td></tr><tr><td>RDDT</td><td>RDDT US</td><td>Reddit</td><td>US$ 154.19</td><td>C-2-9</td></tr><tr><td>SNAP</td><td>SNAP US</td><td>Snap Inc</td><td>US$ 5.88</td><td>C-2-9</td></tr></table>
+
+Source: BofA Global Research   
+BofA GLOBAL RESEARCH
+
+# Price objective basis & risk
+
+# Airbnb (ABNB)
+
+Our \$150 price objective is based on 15x 2027E EBITDA (representing 14x 2027 FCF). This multiple is at the higher end of our Marketplace comp group range reflects strong direct traffic, alternative accommodation category leadership, new growth opportunities, and significantly higher margins and FCF generation than marketplace peers.
+
+Risks are: 1) multiple compression given high relative valuation, 2) potential for increased competition for incremental bookings driving up marketing spend, 3) decelerating room night growth from higher penetration, and 4) regulatory limitations on market growth.
+
+# Alphabet (GOOGL / GOOG)
+
+Our price objective of \$430/\$430 is based on 28x 2027E core Google GAAP EPS plus cash per share. Alphabet has traded at an average multiple of 22x GAAP P/E over the last ten years, and we think our target multiple is reasonable vs history given expectations for double-digit revenue growth, Cloud margin expansion, and opportunity to capitalize on strong AI assets.
+
+Downside risks are 1) loss of search traffic to AI tools from competitors, 2) LLM integration in search may take longer than expected or negatively impact search revenues, 3) revenue pressure from compliance with the EU Digital Markets Act (DMA), and 4) potential for increasing Capex and lower FCF-given AI investments.
+
+# Amazon.com (AMZN)
+
+Our \$310 PO is based on our SOTP analysis that values AWS at 9x 2027E sales, 1P Retail at 1.0x, 3P Retail at 2.5x, and Advertising at 5.0x. Our 2027 sales multiples compare to 5.4x for SaaS comps, 1.3x for Retail comps, 2.3x for Marketplace comps, and 4.4x for Online Media comps. Our PO implies 3.5x blended 2027E P/Sales, and 31x 2027E EPS.
+
+Downside risks to our estimates and price objective are increasing competition from offline and local retailers, share loss to Cloud competitors with advanced AI technology, elevated investment needs for AWS that could pressure margin.s and macro-economic pressures on consumer spend. The stock has been subject to heavy volatility in the past, and this volatility could increase due to economic uncertainty.
+
+# Booking Holdings Inc (BKNG)
+
+Our price objective is \$235, based on 19x our 2027E EPS, which compares to Booking's 10-year historical range of 10-24x. We think a forward P/E multiple premium to OTA peers is appropriate given higher quality of earnings, market share growth and strong FCF generation.
+
+Risks to our PO are: 1) a global economic downturn or Global conflicts that reduce travel activity, 2) competition for traffic from Google lowering growth or margins, 3) hotels favoring their own distribution channels, 4) FX volatility, and 5) increased direct traffic competition from Agentic booking channels. The stock has been subject to heavy volatility in the past based on travel disruptions and this volatility could increase given rapid rate of AI transformation in the industry.
+
+# DoorDash (DASH)
+
+Our PO of \$272 is based on our SOTP valuation analysis for: 1) Profitable US Restaurant EBITDA, and 2) still unprofitable combined new verticals and International asset GOV. We apply a 14x 2027E EBITDA multiple to our \$5.1bn in 2027E Restaurant EBITDA. Our 2027 Restaurant EBITDA multiple is above peers given our higher long-term EBITDA growth expectations for DASH's core restaurant business. With a much more nascent stage for New Verticals + Int'l, we apply a 0.8x GOV multiple to our \$52bn in 2027E New Verticals GOV. Long-term, we believe margins for New Verticals, especially the Intl restaurant business, can be solidly profitable with benefit of a large ad business.
+
+Downside risks are 1) slowing industry growth, which could put premium valuations at risk, 2) added platform, software and AV investments that pressure margins and earnings growth, 3) strong competitive from Uber, and entrenched incumbents in adjacent categories (including Amazon & Walmart), 4) Uncertainty on long term margins for non-US restaurant business.
+
+# Expedia (EXPE)
+
+Our \$310 PO is based on a 50-50 blend of P/E and sum-of-the-parts valuations based on 2027 estimates. Our EV/EBITDA valuation is based on a 8x EBITDA, and our P/E valuation is based on 15x GAAP EPS. Our P/E multiple is within Expedia's historical ranges of forward EPS and a discount compared to Booking valuation given market share trends.
+
+Downside risks to our PO are: 1) economic downturn or prolonged macro headwinds leading to fewer travel bookings, 2) competition for traffic lowering the company's growth or margin opportunity, 3) more aggressive direct booking initiatives by hotels, and 4) Google Agentic traffic disintermediation.
+
+# Instacart (CART)
+
+Our PO of \$46 is based on an 8x 2027E EV/EBITDA multiple, slightly below with our eCommerce and Gig Economy peer group average of 9x due to slower growth. Despite competitive concerns, Instacart seems well entrenched with grocer partners (growing technology platform) and large basket (\$75+) customers.
+
+Risks are: 1) Market share loss in the category given strong growth at Walmart and Amazon grocery, 2) loss of any grocery partners or changes in partner economics, 3) competition from Gig Economy leaders in the grocery category, 4) new investments needed in grocery technology to grow partnerships.
+
+# Meta Platforms Inc (META)
+
+Our \$835 price objective is based on 24x 2027E GAAP EPS, plus net cash. On a total company basis, including Metaverse investments, our valuation is at a slight premium to S&P 500 given Meta's higher growth rate and AI opportunity. Historically, Meta has traded at an average premium of 3pts to S&P 500.
+
+Downside risks include: 1) Significant dependence on digital advertising revenue, which remain highly sensitive to macroeconomic conditions, 2) Elevated spend on AI initiatives that could negatively impact margins, 3) Growing base of fixed assets could reduce cost flexibility in a macro downturn, 4) Slowing pace of share repurchases with significant AI investments, 5) Intensifying competition for user engagement and advertising budgets from AI-native platforms, and 6) Elevated regulatory overhang from new teen safety cases or unfavorable outcomes in ongoing litigation.
+
+# Pinterest (PINS)
+
+Our \$28 price objective is based on 9x 2027E EV/EBITDA, below historical averages and at the low end of Pinterest's historical range. Our valuation reflects a slight discount to the SMID peer group multiples given lower relative growth and more limited medium-term margin expansion potential.
+
+Risks to our PO are: 1) Continued revenue share loss to sector, 2) seemingly high ad loads, could limit 3rd party partner benefits, 3) incremental competition for both general usage and shopping activity from AI platforms, and 4) growing costs for AI infrastructure to drive results.
+
+# Reddit (RDDT)
+
+Our \$190 PO is based on 18x 2027e EV/EBITDA multiple. Our multiple represents a modest premium to our comp group median given Reddit's higher revenue growth, upside potential with AI data licensing business, and significant long-term opportunity to grow ARPU.
+
+Risks to our PO are high dependency on Google (40%-50% website traffic from Google search), slowing user growth, and macro driven slowdown in advertising sector growth.
+
+# Snap (SNAP)
+
+Our \$8.00 price objective is based on 7x 2027E EV/EBITDA. Our valuation reflects a modest discount to Online media peer group median at 13x given lower relative growth, high revenue volatility and lower FCF including SBC expense.
+
+Risks to our PO are 1) deceleration in user growth that would raise concerns on long-term revenue opportunity, 2) pressure on usage due to competing services, 3) valuation that has less earnings-based support than peers and 4) high share-based compensation (SBC) expense that could lower valuation multiples.
+
+# Analyst Certification
+
+I, Justin Post, hereby certify that the views expressed in this research report accurately reflect my personal views about the subject securities and issuers. I also certify that no part of my compensation was, is, or will be, directly or indirectly, related to the specific recommendations or view expressed in this research report.
+
+# Special Disclosures
+
+BofA is currently acting as Financial Advisor to Publicis Group SA in connection with its proposed acquisition of LiveRamp Holdings Inc, which was announced on May 17, 2026. The proposed transaction is subject to approval by shareholders of LiveRamp Holdings Inc. This research report is not intended to provide voting advice, serve as an endorsement of the proposed transaction, or result in the procurement, withholding or revocation of a proxy.
+
+US - Internet Coverage Cluster 
+
+<table><tr><td>Investment rating</td><td>Company</td><td>BofA Ticker</td><td>Bloomberg symbol</td><td>Analyst</td></tr><tr><td colspan="5">BUY</td></tr><tr><td></td><td>Alphabet</td><td>GOOGL</td><td>GOOGL US</td><td>Justin Post</td></tr><tr><td></td><td>Alphabet</td><td>GOOG</td><td>GOOG US</td><td>Justin Post</td></tr><tr><td></td><td>Amazon.com</td><td>AMZN</td><td>AMZN US</td><td>Justin Post</td></tr><tr><td></td><td>AppLovin</td><td>APP</td><td>APP US</td><td>Omar Dessouky, CFA</td></tr><tr><td></td><td>Booking Holdings Inc</td><td>BKNG</td><td>BKNG US</td><td>Justin Post</td></tr><tr><td></td><td>Chewy Inc</td><td>CHWY</td><td>CHWY US</td><td>Michael McGovern</td></tr><tr><td></td><td>Digital Turbine, Inc</td><td>APPS</td><td>APPS US</td><td>Omar Dessouky, CFA</td></tr><tr><td></td><td>DoorDash</td><td>DASH</td><td>DASH US</td><td>Justin Post</td></tr><tr><td></td><td>DoubleVerify Holdings, Inc.</td><td>DV</td><td>DV US</td><td>Omar Dessouky, CFA</td></tr><tr><td></td><td>Ethos</td><td>LIFE</td><td>LIFE US</td><td>Michael McGovern</td></tr><tr><td></td><td>Expedia</td><td>EXPE</td><td>EXPE US</td><td>Justin Post</td></tr><tr><td></td><td>LegalZoom</td><td>LZ</td><td>LZ US</td><td>Michael McGovern</td></tr><tr><td></td><td>Life360</td><td>LIF</td><td>LIF US</td><td>Nitin Bansal, CFA</td></tr><tr><td></td><td>Magnite, Inc.</td><td>MGNI</td><td>MGNI US</td><td>Omar Dessouky, CFA</td></tr><tr><td></td><td>Meta Platforms Inc</td><td>META</td><td>META US</td><td>Justin Post</td></tr><tr><td></td><td>Navan, Inc.</td><td>NAVN</td><td>NAVN US</td><td>Nafeesa Gupta</td></tr><tr><td></td><td>Peloton</td><td>PTON</td><td>PTON US</td><td>Nafeesa Gupta</td></tr><tr><td></td><td>Playtika</td><td>PLTK</td><td>PLTK US</td><td>Omar Dessouky, CFA</td></tr><tr><td></td><td>Take-Two Interactive</td><td>TTWO</td><td>TTWO US</td><td>Omar Dessouky, CFA</td></tr><tr><td></td><td>Tripadvisor</td><td>TRIP</td><td>TRIP US</td><td>Nafeesa Gupta</td></tr><tr><td></td><td>Uber</td><td>UBER</td><td>UBER US</td><td>Justin Post</td></tr><tr><td></td><td>Wayfair</td><td>W</td><td>W US</td><td>Michael McGovern</td></tr><tr><td></td><td>Wix.com</td><td>WIX</td><td>WIX US</td><td>Michael McGovern</td></tr><tr><td colspan="5">NEUTRAL</td></tr><tr><td></td><td>Airbnb</td><td>ABNB</td><td>ABNB US</td><td>Justin Post</td></tr><tr><td></td><td>Carvana</td><td>CVNA</td><td>CVNA US</td><td>Michael McGovern</td></tr><tr><td></td><td>Coursera Inc.</td><td>COUR</td><td>COUR US</td><td>Nafeesa Gupta</td></tr><tr><td></td><td>Duolingo</td><td>DUOL</td><td>DUOL US</td><td>Omar Dessouky, CFA</td></tr><tr><td></td><td>eBay</td><td>EBAY</td><td>EBAY US</td><td>Michael McGovern</td></tr><tr><td></td><td>Etsy, Inc.</td><td>ETSY</td><td>ETSY US</td><td>Michael McGovern</td></tr><tr><td></td><td>Instacart</td><td>CART</td><td>CART US</td><td>Justin Post</td></tr><tr><td></td><td>Match Group</td><td>MTCH</td><td>MTCH US</td><td>Omar Dessouky, CFA</td></tr><tr><td></td><td>Pinterest</td><td>PINS</td><td>PINS US</td><td>Justin Post</td></tr><tr><td></td><td>Reddit</td><td>RDDT</td><td>RDDT US</td><td>Justin Post</td></tr><tr><td></td><td>Roblox Corp. Class A</td><td>RBLX</td><td>RBLX US</td><td>Omar Dessouky, CFA</td></tr><tr><td></td><td>Snap</td><td>SNAP</td><td>SNAP US</td><td>Justin Post</td></tr><tr><td></td><td>StubHub Holdings</td><td>STUB</td><td>STUB US</td><td>Justin Post</td></tr><tr><td></td><td>Unity</td><td>U</td><td>U US</td><td>Omar Dessouky, CFA</td></tr><tr><td></td><td>Vivid Seats</td><td>SEAT</td><td>SEAT US</td><td>Steven McDermott</td></tr><tr><td></td><td>Zillow</td><td>Z</td><td>Z US</td><td>Omar Dessouky, CFA</td></tr><tr><td></td><td>Zillow Group</td><td>ZG</td><td>ZG US</td><td>Omar Dessouky, CFA</td></tr><tr><td colspan="5">UNDERPERFORM</td></tr><tr><td></td><td>ACV Auctions</td><td>ACVA</td><td>ACVA US</td><td>Michael McGovern</td></tr><tr><td></td><td>Bumble</td><td>BMBL</td><td>BMBL US</td><td>Omar Dessouky, CFA</td></tr><tr><td></td><td>Cardlytics, Inc</td><td>CDLX</td><td>CDLX US</td><td>Omar Dessouky, CFA</td></tr><tr><td></td><td>Ibotta</td><td>IBTA</td><td>IBTA US</td><td>Nitin Bansal, CFA</td></tr><tr><td></td><td>Lyft, Inc.</td><td>LYFT</td><td>LYFT US</td><td>Justin Post</td></tr><tr><td></td><td>Yelp</td><td>YELP</td><td>YELP US</td><td>Nitin Bansal, CFA</td></tr><tr><td colspan="5">RSTR</td></tr><tr><td></td><td>Global Business Travel Group, Inc.</td><td>GBTG</td><td>GBTG US</td><td>Nafeesa Gupta</td></tr></table>
+
+# Disclosures
+
+# Important Disclosures
+
+Equity Investment Rating Distribution: Media & Entertainment Group (as of 31 Mar 2026) 
+
+<table><tr><td>Coverage Universe</td><td>Count</td><td>Percent</td><td>Inv. Banking RelationshipsR1</td><td>Count</td><td>Percent</td></tr><tr><td>Buy</td><td>28</td><td>45.90%</td><td>Buy</td><td>15</td><td>53.57%</td></tr><tr><td>Hold</td><td>19</td><td>31.15%</td><td>Hold</td><td>8</td><td>42.11%</td></tr><tr><td>Sell</td><td>14</td><td>22.95%</td><td>Sell</td><td>7</td><td>50.00%</td></tr></table>
+
+Equity Investment Rating Distribution: Technology Group (as of 31 Mar 2026)
+
+<table><tr><td>Coverage Universe</td><td>Count</td><td>Percent</td><td>Inv. Banking Relationships $^{R1}$ </td><td>Count</td><td>Percent</td></tr><tr><td>Buy</td><td>234</td><td>58.50%</td><td>Buy</td><td>123</td><td>52.56%</td></tr><tr><td>Hold</td><td>90</td><td>22.50%</td><td>Hold</td><td>43</td><td>47.78%</td></tr><tr><td>Sell</td><td>76</td><td>19.00%</td><td>Sell</td><td>23</td><td>30.26%</td></tr></table>
+
+Equity Investment Rating Distribution: Global Group (as of 31 Mar 2026) 
+
+<table><tr><td>Coverage Universe</td><td>Count</td><td>Percent</td><td>Inv. Banking RelationshipsR1</td><td>Count</td><td>Percent</td></tr><tr><td>Buy</td><td>1993</td><td>55.76%</td><td>Buy</td><td>1186</td><td>59.51%</td></tr><tr><td>Hold</td><td>821</td><td>22.97%</td><td>Hold</td><td>509</td><td>62.00%</td></tr><tr><td>Sell</td><td>760</td><td>21.26%</td><td>Sell</td><td>400</td><td>52.63%</td></tr></table>
+
+$^{R1}$ Issuers that were investment banking clients of BofA or one of its affiliates within the past 12 months. For purposes of this Investment Rating Distribution, the coverage universe includes only stocks. A stock rated Neutral is included as a Hold, and a stock rated Underperform is included as a Sell.
+
+FUNDAMENTAL EQUITY OPINION KEY: Opinions include a Volatility Risk Rating, an Investment Rating and an Income Rating. VOLATILITY RISK RATINGS, indicators of potential price fluctuation, are: A - Low, B - Medium and C - High. INVESTMENT RATINGS reflect the analyst's assessment of both a stock's absolute total return potential as well as its attractiveness for investment relative to other stocks within its Coverage Cluster (defined below). Our investment ratings are: 1 - Buy stocks are expected to have a total return of at least 10% and are the most attractive stocks in the coverage cluster; 2 - Neutral stocks are expected to remain flat or increase in value and are less attractive than Buy rated stocks and 3 - Underperform stocks are the least attractive stocks in a coverage cluster. An investment rating of 6 (No Rating) indicates that a stock is no longer trading on the basis of fundamentals. Analysts assign investment ratings considering, among other things, the 0-12 month total return expectation for a stock and the firm's guidelines for ratings dispersions (shown in the table below). The current price objective for a stock should be referenced to better understand the total return expectation at any given time. The price objective reflects the analyst's view of the potential price appreciation (depreciation).
+
+Investment rating Total return expectation (within 12-month period of date of initial rating) Ratings dispersion guidelines for coverage cluster $^{R2}$ 
+
+<table><tr><td>Buy</td><td>≥ 10%</td><td>≤ 70%</td></tr><tr><td>Neutral</td><td>≥ 0%</td><td>≤ 30%</td></tr><tr><td>Underperform</td><td>N/A</td><td>≥ 20%</td></tr></table>
+
+$^{R2}$ Ratings dispersions may vary from time to time where BofA Global Research believes it better reflects the investment prospects of stocks in a Coverage Cluster.
+
+INCOME RATINGS, indicators of potential cash dividends, are: 7 - same/higher (dividend considered to be secure), 8 - same/lower (dividend not considered to be secure) and 9 - pays no cash dividend. Coverage Cluster is comprised of stocks covered by a single analyst or two or more analysts sharing a common industry, sector, region or other classification(s). A stock's coverage cluster is included in the most recent BofA Global Research report referencing the stock.
+
+Price Charts for the securities referenced in this research report are available on the Price Charts website, or call 1-800-MERRILL to have them mailed.
+
+BofAS or one of its affiliates acts as a market maker for the equity securities recommended in the report: Airbnb, Alphabet A, Alphabet C, Amazon.com, Booking Holdings, DoorDash, Expedia, Instacart, Meta Platforms, Pinterest, Reddit, Snap Inc.
+
+BofAS or an affiliate was a manager of a public offering of securities of this issuer within the last 12 months: Airbnb, Alphabet, Amazon.com, Booking Holdings, Expedia Inc, Snap Inc.
+
+The issuer is or was, within the last 12 months, an investment banking client of BofAS and/or one or more of its affiliates: Airbnb, Alphabet, Amazon.com, Booking Holdings, DoorDash, Expedia Inc, Instacart, Meta Platforms, Pinterest, Snap Inc.
+
+BofAS or an affiliate has received compensation from the issuer for non-investment banking services or products within the past 12 months: Airbnb, Alphabet, Amazon.com, Booking Holdings, DoorDash, Expedia Inc, Meta Platforms, Pinterest, Reddit, Snap Inc.
+
+The issuer is or was, within the last 12 months, a non-securities business client of BofAS and/or one or more of its affiliates: Airbnb, Alphabet, Amazon.com, Booking Holdings, DoorDash, Expedia Inc, Meta Platforms, Pinterest, Reddit, Snap Inc.
+
+BofAS or an affiliate has received compensation for investment banking services from this issuer within the past 12 months: Airbnb, Alphabet, Amazon.com, Booking Holdings, DoorDash, Expedia Inc, Meta Platforms, Snap Inc.
+
+BofAS or an affiliate expects to receive or intends to seek compensation for investment banking services from this issuer or an affiliate of the issuer within the next three months: Airbnb, Alphabet, Amazon.com, Booking Holdings, DoorDash, Expedia Inc, Instacart, Meta Platforms, Pinterest, Snap Inc.
+
+BofAS together with its affiliates beneficially owns one percent or more of the common stock of this issuer. If this report was issued on or after the 9th day of the month, it reflects the ownership position on the last day of the previous month. Reports issued before the 9th day of a month reflect the ownership position at the end of the second month preceding the date of the report: Alphabet, Amazon.com, Expedia Inc, Meta Platforms, Pinterest.
+
+BofAS or one of its affiliates is willing to sell to, or buy from, clients the common equity of the issuer on a principal basis: Airbnb, Alphabet A, Alphabet C, Amazon.com, Booking Holdings, DoorDash, Expedia, Instacart, Meta Platforms, Pinterest, Reddit, Snap Inc.
+
+The issuer is or was, within the last 12 months, a securities business client (non-investment banking) of BofAS and/or one or more of its affiliates: Airbnb, Alphabet, Amazon.com, Booking Holdings, DoorDash, Expedia Inc, Meta Platforms, Pinterest, Snap Inc.
+
+BofA Global Research personnel (including the analyst(s) responsible for this report) receive compensation based upon, among other factors, the overall profitability of BofA Corporation, including profits derived from investment banking. The analyst(s) responsible for this report may also receive compensation based upon, among other factors, the overall profitability of the Bank's sales and trading businesses relating to the class of securities or financial instruments for which such analyst is responsible.
+
+# Other Important Disclosures
+
+From time to time research analysts conduct site visits of covered issuers. BofA Global Research policies prohibit research analysts from accepting payment or reimbursement for travel expenses from the issuer for such visits.
+
+Prices are indicative and for information purposes only. Except as otherwise stated in the report, for any recommendation in relation to an equity security, the price referenced is the publicly traded price of the security as of close of business on the day prior to the date of the report or, if the report is published during intraday trading, the price referenced is indicative of the traded price as of the date and time of the report and in relation to a debt security (including equity preferred and CDS), prices are indicative as of the date and time of the report and are from various sources including BofA trading desks.
+
+The date and time of completion of the production of any recommendation in this report shall be the date and time of dissemination of this report as recorded in the report timestamp.
+
+Recipients who are not institutional investors or market professionals should seek the advice of their independent financial advisor before considering information in this report in connection with any investment decision, or for a necessary explanation of its contents.
+
+Officers of BofAS or one or more of its affiliates (other than research analysts) may have a financial interest in securities of the issuer(s) or in related investments. Refer to BofA Global Research policies relating to conflicts of interest.
+
+"BofA" includes BofA, Inc. ("BofAS") and its affiliates. Investors should contact their BofA representative or Merrill Global Wealth Management financial advisor if they have questions concerning this report or concerning the appropriateness of any investment idea described herein for such investor. "BofA" is a global brand for BofA Global Research.
+
+# Information relating to Non-US affiliates of BofA and Distribution of Affiliate Research Reports:
+
+BofAS and/or BofA, Pierce, Fenner & Smith Incorporated ("MLPF&S") may in the future distribute, information of the following non-US affiliates in the US (short name: legal name, regulator): BofA (South Africa): BofA South Africa (Pty) Ltd., regulated by the Financial Sector Conduct Authority; MLI (UK): BofA International, regulated by the Financial Conduct Authority (FCA) and the Prudential Regulation Authority (PRA); BofASE (France): BofA Europe SA is authorized by the Autorité de Contrôle Prudentiel et de Résolution (ACPR) and regulated by the ACPR and the Autorité des Marchés Financiers (AMF). BofA Europe SA ("BofASE") with registered address at 51, rue La Boétie, 75008 Paris is registered under no 842 602 690 RCS Paris. In accordance with the provisions of French Code Monétaire et Financier (Monetary and Financial Code), BofASE is an établissement de crédit et d'investissement (credit and investment institution) that is authorised and supervised by the European Central Bank and the Autorité de Contrôle Prudentiel et de Résolution (ACPR) and regulated by the ACPR and the Autorité des Marchés Financiers. BofASE's share capital can be found at www.bofaml.com/BofASEdisclaimer; BofA Europe (Milan): BofA Europe Designated Activity Company, Milan Branch, regulated by the Bank of Italy, the European Central Bank (ECB) and the Central Bank of Ireland (CBI); BofA Europe (Frankfurt): BofA Europe Designated Activity Company, Frankfurt Branch regulated by BaFin, the ECB and the CBI; BofA Europe (Zurich): BofA Europe Designated Activity Company, Zurich Branch, regulated by the Swiss Financial Market Supervisory Authority FINMA, the ECB and CBI; BofA Europe (Madrid): BofA Europe Designated Activity Company, Sucursal en España, regulated by the Bank of Spain, the ECB and the CBI; BofA (Australia): BofA Equities (Australia) Limited, regulated by the Australian Securities and Investments Commission; BofA (Hong Kong): BofA (Asia Pacific) Limited, regulated by the Hong Kong Securities and Futures Commission (HKSFC); BofA (Singapore): BofA (Singapore) Pte Ltd, regulated by the Monetary Authority of Singapore (MAS); BofA (Canada): BofA Canada Inc, regulated by the Canadian Investment Regulatory Organization; BofA (Mexico): BofA Mexico, SA de CV, Casa de Bolsa, regulated by the Comisión Nacional Bancaria y de Valores; BofAS Japan: BofA Japan Co., Ltd., regulated by the Financial Services Agency; BofA (Seoul): BofA International, LLC Seoul Branch, regulated by the Financial Supervisory Service; BofA (Taiwan): BofA (Taiwan) Ltd., regulated by the Securities and Futures Bureau; BofAS India: BofA India Limited, regulated by the Securities and Exchange Board of India (SEBI); BofA (Israel): BofA Israel Limited, regulated by Israel Securities Authority; BofA (DIFC): BofA International (DIFC Branch), regulated by the Dubai Financial Services Authority (DFSA); BofA (Brazil): BofA S.A. Corretora de Títulos e Valores Mobiliários, regulated by Comissão de Valores Mobiliários; BofA KSA Company: BofA Kingdom of Saudi Arabia Company, regulated by the Capital Market Authority. This information: has been approved for publication and is distributed in the United Kingdom (UK) to professional clients and eligible counterparties (as each is defined in the rules of the FCA and the PRA) by MLI (UK), which is authorized by the PRA and regulated by the FCA and the PRA - details about the extent of our regulation by the FCA and PRA are available from us on request; has been approved for publication and is distributed in the European Economic Area (EEA) by BofASE (France), which is authorized by the ACPR and regulated by the ACPR and the AMF; has been considered and distributed in Japan by BofAS Japan, a registered securities dealer under the Financial Instruments and Exchange Act in Japan, or its permitted affiliates; is issued and distributed in Hong Kong by BofA (Hong Kong) which is regulated by HKSFC; is issued and distributed in Taiwan by BofA (Taiwan); is issued and distributed in India by BofAS India; and is issued and distributed in Singapore to institutional investors and/or accredited investors (each as defined under the Financial Advisers Regulations) by BofA (Singapore) (Company Registration No 198602883D). BofA (Singapore) is regulated by MAS. BofA Equities (Australia) Limited (ABN 65 006 276 795), AFS License 235132 (MLEA) distributes this information in Australia only to 'Wholesale' clients as defined by s.761G of the Corporations Act 2001. With the exception of BofA N.A., Australia Branch, neither MLEA nor any of its affiliates involved in preparing this information is an Authorised Deposit-Taking Institution under the Banking Act 1959 nor regulated by the Australian Prudential Regulation Authority. No approval is required for publication or distribution of this information in Brazil and its local distribution is by BofA (Brazil) in accordance with applicable regulations. BofA (DIFC) is authorized and regulated by the DFSA. Information prepared and issued by BofA (DIFC) is done so in accordance with the requirements of the DFSA conduct of business rules. BofA Europe (Frankfurt) distributes this information in Germany and is regulated by BaFin, the ECB and the CBI. BofA entities, including BofA Europe and BofASE (France), may outsource/delegate the marketing and/or provision of certain research services or aspects of research services to other branches or members of the BofA group. You may be contacted by a different BofA entity acting for and on behalf of your service provider where permitted by applicable law. This does not change your service provider. Please refer to the Electronic Communications Disclaimers for further information.
+
+This information has been prepared and issued by BofAS and/or one or more of its non-US affiliates. The author(s) of this information may not be licensed to carry on regulated activities in your jurisdiction and, if not licensed, do not hold themselves out as being able to do so. BofAS and/or MLPF&S is the distributor of this information in the US and accepts full responsibility for information distributed to BofAS and/or MLPF&S clients in the US by its non-US affiliates. Any US person receiving this information and wishing to effect any transaction in any security discussed herein should do so through BofAS and/or MLPF&S and not such foreign affiliates. Hong Kong recipients of this information should contact BofA (Asia Pacific) Limited in respect of any matters relating to dealing in securities or provision of specific advice on securities or any other matters arising from, or in connection with, this information. Singapore recipients of this information should contact BofA (Singapore) Pte Ltd in respect of any matters arising from, or in connection with, this information. For clients that are not accredited investors, expert investors or institutional investors BofA (Singapore) Pte Ltd accepts full responsibility for the contents of this information distributed to such clients in Singapore.
+
+# General Investment Related Disclosures:
+
+Taiwan Readers: Neither the information nor any opinion expressed herein constitutes an offer or a solicitation of an offer to transact in any securities or other financial instrument. No part of this report may be used or reproduced or quoted in any manner whatsoever in Taiwan by the press or any other person without the express written consent of BofA. This document provides general information only, and has been prepared for, and is intended for general distribution to, BofA clients. Neither the information nor any opinion expressed constitutes an offer or an invitation to make an offer, to buy or sell any securities or other financial instrument or any derivative related to such securities or instruments (e.g., options, futures, warrants, and contracts for differences). This document is not intended to provide personal investment advice and it does not take into account the specific investment objectives, financial situation and the particular needs of, and is not directed to, any specific person(s). This document and its content do not constitute, and should not be considered to constitute, investment advice for purposes of ERISA, the US tax code, the Investment Advisers Act or otherwise. Investors should seek financial advice regarding the appropriateness of investing in financial instruments and implementing investment strategies discussed or recommended in this document and should understand that statements regarding future prospects may not be realized. Any decision to purchase or subscribe for securities in any offering must be based solely on existing public information on such security or the information in the prospectus or other offering document issued in connection with such offering, and not on this document.
+
+Securities and other financial instruments referred to herein, or recommended, offered or sold by BofA, are not insured by the Federal Deposit Insurance Corporation and are not deposits or other obligations of any insured depository institution (including, BofA, N.A.). Investments in general and, derivatives, in particular, involve numerous risks, including, among others, market risk, counterparty default risk and liquidity risk. No security, financial instrument or derivative is suitable for all investors. Digital assets are extremely speculative, volatile and are largely unregulated. In some cases, securities and other financial instruments may be difficult to value or sell and reliable information about the value or risks related to the security or financial instrument may be difficult to obtain. Investors should note that income from such securities and other financial instruments, if any, may fluctuate and that price or value of such securities and instruments may rise or fall and, in some cases, investors may lose their entire principal investment. Past performance is not necessarily a guide to future performance. Levels and basis for taxation may change.
+
+This report may contain a short-term trading idea or recommendation, which highlights a specific near-term catalyst or event impacting the issuer or the market that is anticipated to have a short-term price impact on the equity securities of the issuer. Short-term trading ideas and recommendations are different from and do not affect a stock's fundamental equity rating, which reflects both a longer term total return expectation and attractiveness for investment relative to other stocks within its Coverage Cluster. Short-term trading ideas and recommendations may be more or less positive than a stock's fundamental equity rating.
+
+BofA is aware that the implementation of the ideas expressed in this report may depend upon an investor's ability to "short" securities or other financial instruments and that such action may be limited by regulations prohibiting or restricting "shortselling" in many jurisdictions. Investors are urged to seek advice regarding the applicability of such regulations prior to executing any short idea contained in this report.
+
+Foreign currency rates of exchange may adversely affect the value, price or income of any security or financial instrument mentioned herein. Investors in such securities and instruments, including ADRs, effectively assume currency risk.
+
+BofAS or one of its affiliates is a regular issuer of traded financial instruments linked to securities that may have been recommended in this report. BofAS or one of its affiliates may, at any time, hold a trading position (long or short) in the securities and financial instruments discussed in this report.
+
+BofA, through business units other than BofA Global Research, may have issued and may in the future issue trading ideas or recommendations that are inconsistent with, and reach different conclusions from, the information presented herein. Such ideas or recommendations may reflect different time frames, assumptions, views and analytical methods of the persons who prepared them, and BofA is under no obligation to ensure that such other trading ideas or recommendations are brought to the attention of any recipient of this information. In the event that the recipient received this information pursuant to a contract between the recipient and BofAS for the provision of research services for a separate fee, and in connection therewith BofAS may be deemed to be acting as an investment adviser, such status relates, if at all, solely to the person with whom BofAS has contracted directly and does not extend beyond the delivery of this report (unless otherwise agreed specifically in writing by BofAS). If such recipient uses the services of BofAS in connection with the sale or purchase of a security referred to herein, BofAS may act as principal for its own account or as agent for another person. BofAS is and continues to act solely as a broker-dealer in connection with the execution of any transactions, including transactions in any securities referred to herein.
+
+# Copyright and General Information:
+
+Copyright 2026 BofA Corporation. All rights reserved. iQdatabase® is a registered service mark of BofA Corporation. This information is prepared for the use of BofA clients and may not be redistributed, retransmitted or disclosed, in whole or in part, or in any form or manner, without the express written consent of BofA. This document and its content is provided solely for informational purposes and cannot be used for training or developing artificial intelligence (AI) models or as an input in any AI application (collectively, an AI tool). Any attempt to utilize this document or any of its content in connection with an AI tool without explicit written permission from BofA Global Research is strictly prohibited. BofA Global Research utilizes AI, including machine learning and other technologies, to enhance the services we provide to our clients. These technologies assist our analysts in various aspects of their work, including but not limited to data analysis, content extraction, content creation, data aggregation and summarization and identifying relevant information from diverse sources. All AI-driven processes are subject to review by BofA Global Research employees. BofA Global Research information is distributed simultaneously to internal and client websites and other portals by BofA and is not publicly-available material. Any unauthorized use or disclosure is prohibited. Receipt and review of this information constitutes your agreement not to redistribute, retransmit, or disclose to others the contents, opinions, conclusion, or information contained herein (including any investment recommendations, estimates or price targets) without first obtaining express permission from an authorized officer of BofA.
+
+Materials prepared by BofA Global Research personnel are based on public information. Facts and views presented in this material have not been reviewed by, and may not reflect information known to, professionals in other business areas of BofA, including investment banking personnel. BofA has established information barriers between BofA Global Research and certain business groups. As a result, BofA does not disclose certain client relationships with, or compensation received from, such issuers. To the extent this material discusses any legal proceeding or issues, it has not been prepared as nor is it intended to express any legal conclusion, opinion or advice. Investors should consult their own legal advisers as to issues of law relating to the subject matter of this material. BofA Global Research personnel's knowledge of legal proceedings in which any BofA entity and/or its directors, officers and employees may be plaintiffs, defendants, co-defendants or co-plaintiffs with or involving issuers mentioned in this material is based on public information. Facts and views presented in this material that relate to any such proceedings have not been reviewed by, discussed with, and may not reflect information known to, professionals in other business areas of BofA in connection with the legal proceedings or matters relevant to such proceedings.
+
+This information has been prepared independently of any issuer of securities mentioned herein and not in connection with any proposed offering of securities or as agent of any issuer of any securities. None of BofAS any of its affiliates or their research analysts has any authority whatsoever to make any representation or warranty on behalf of the issuer(s). BofA Global Research policy prohibits research personnel from disclosing a recommendation, investment rating, or investment thesis for review by an issuer prior to the publication of a research report containing such rating, recommendation or investment thesis.
+
+Any information relating to sustainability in this material is limited as discussed herein and is not intended to provide a comprehensive view on any sustainability claim with respect to any issuer or security.
+
+Any information relating to the tax status of financial instruments discussed herein is not intended to provide tax advice or to be used by anyone to provide tax advice. Investors are urged to seek tax advice based on their particular circumstances from an independent tax professional.
+
+The information herein (other than disclosure information relating to BofA and its affiliates) was obtained from various sources and we do not guarantee its accuracy. This information may contain links to third-party websites. BofA is not responsible for the content of any third-party website or any linked content contained in a third-party website. Content contained on such third-party websites is not part of this information and is not incorporated by reference. The inclusion of a link does not imply any endorsement by or any affiliation with BofA. Access to any third-party website is at your own risk, and you should always review the terms and privacy policies at third-party websites before submitting any personal information to them. BofA is not responsible for such terms and privacy policies and expressly disclaims any liability for them.
+
+All opinions, projections and estimates constitute the judgment of the author as of the date of publication and are subject to change without notice. Prices also are subject to change without notice. BofA is under no obligation to update this information and BofA ability to publish information on the subject issuer(s) in the future is subject to applicable quiet periods. You should therefore assume that BofA will not update any fact, circumstance or opinion contained herein.
+
+Subject to the quiet period applicable under laws of the various jurisdictions in which we distribute research reports and other legal and BofA policy-related restrictions on the publication of research reports, fundamental equity reports are produced on a regular basis as necessary to keep the investment recommendation current.
+
+Certain outstanding reports or investment opinions relating to securities, financial instruments and/or issuers may no longer be current. Always refer to the most recent research report relating to an issuer prior to making an investment decision.
+
+In some cases, an issuer may be classified as Restricted or may be Under Review or Extended Review. In each case, investors should consider any investment opinion relating to such issuer (or its security and/or financial instruments) to be suspended or withdrawn and should not rely on the analyses and investment opinion(s) pertaining to such issuer (or its securities and/or financial instruments) nor should the analyses or opinion(s) be considered a solicitation of any kind. Sales persons and financial advisors affiliated with BofAS or any of its affiliates may not solicit purchases of securities or financial instruments that are Restricted or Under Review and may only solicit securities under Extended Review in accordance with firm policies.
+
+Neither BofA nor any officer or employee of BofA accepts any liability whatsoever for any direct, indirect or consequential damages or losses arising from any use of this information.

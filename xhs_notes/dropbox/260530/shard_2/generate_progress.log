@@ -1,0 +1,15 @@
+Found 19 total PDFs; shard 2/40 has 5 PDFs, skips 0 already converted, will process 5 PDFs with batch_size=5.
+Running batch 1: 5 PDFs
+Found 5 PDFs.
+Uploading PDF to MinerU: /tmp/pdf_batch_001_mr76yobb/pdfs/0001-13-BofA Securities-Internet e-Commerce-Agentic AI and the promise of a more capable Internet-260528.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_mr76yobb/pdfs/0002-14-Goldman Sachs-GLOBAL FX TRADER-Resolution Resolve-260529.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_mr76yobb/pdfs/0003-15-Goldman Sachs-JAPAN ELECTRONICS SEMICONDUCTORS TOPPAN DNP earnings update- Reaffirming our positive view on MTPs- current share prices look low at less than 1X P B-260528.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_mr76yobb/pdfs/0004-16-Goldman Sachs-Japan Industrial Electronics- April MOF data -optical fiber cable-- Notable rise in ASP- Furukawa Electric-s new Mie plant contributing-260528.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_mr76yobb/pdfs/0005-17-Goldman Sachs-US WEEKLY KICKSTART-Corporate equity demand should outweigh record IPO supply in 2026-260529.pdf
+MinerU batch_id=ef7b1352-f808-44d5-9a37-aed9d7165132
+MinerU states: running, running, running, pending, waiting-file
+MinerU states: running, done, running, done, running
+MinerU states: done, done, done, done, running
+MinerU states: done, done, done, done, done
+Done. Results written to /home/runner/work/rpt_edit/rpt_edit/xhs_notes/dropbox/260530/shard_2; successful_reports=5; mineru_timed_out=False
+All batches completed successfully. Generated 5 report directories.

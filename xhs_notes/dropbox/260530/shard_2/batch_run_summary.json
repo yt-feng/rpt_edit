@@ -1,0 +1,51 @@
+{
+  "input_dir": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs",
+  "total_pdf_count_before_shard": 19,
+  "pdf_count_before_skip": 5,
+  "pdf_count": 5,
+  "generated_report_count": 5,
+  "batch_size": 5,
+  "shard_index": 2,
+  "shard_count": 40,
+  "max_reports_per_shard": 5,
+  "max_total_reports": 0,
+  "skip_existing": true,
+  "skipped_existing_count": 0,
+  "skipped_existing": [],
+  "failures": 0,
+  "batches": [
+    {
+      "batch_index": 1,
+      "pdf_count": 5,
+      "files": [
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/13-BofA-Internet e~Commerce：Agentic AI and the promise of a more capable Internet-260528.pdf",
+          "batch_file": "/tmp/pdf_batch_001_mr76yobb/pdfs/0001-13-BofA-Internet e-Commerce-Agentic AI and the promise of a more capable Internet-260528.pdf",
+          "stable_index": "1"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/14-GS-GLOBAL FX TRADER：Resolution Resolve-260529.pdf",
+          "batch_file": "/tmp/pdf_batch_001_mr76yobb/pdfs/0002-14-GS-GLOBAL FX TRADER-Resolution Resolve-260529.pdf",
+          "stable_index": "2"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/15-GS-JAPAN ELECTRONICS SEMICONDUCTORS TOPPAN DNP earnings update： Reaffirming our positive view on MTPs； current share prices look low at less than 1X P B-260528.pdf",
+          "batch_file": "/tmp/pdf_batch_001_mr76yobb/pdfs/0003-15-GS-JAPAN ELECTRONICS SEMICONDUCTORS TOPPAN DNP earnings update- Reaffirming our positive view on MTPs- current share prices look low at less than 1X P B-260528.pdf",
+          "stable_index": "3"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/16-GS-Japan Industrial Electronics： April MOF data （optical fiber cable）： Notable rise in ASP； Furukawa Electric’s new Mie plant contributing-260528.pdf",
+          "batch_file": "/tmp/pdf_batch_001_mr76yobb/pdfs/0004-16-GS-Japan Industrial Electronics- April MOF data -optical fiber cable-- Notable rise in ASP- Furukawa Electric-s new Mie plant contributing-260528.pdf",
+          "stable_index": "4"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/17-GS-US WEEKLY KICKSTART：Corporate equity demand should outweigh record IPO supply in 2026-260529.pdf",
+          "batch_file": "/tmp/pdf_batch_001_mr76yobb/pdfs/0005-17-GS-US WEEKLY KICKSTART-Corporate equity demand should outweigh record IPO supply in 2026-260529.pdf",
+          "stable_index": "5"
+        }
+      ],
+      "returncode": 0,
+      "status": "ok"
+    }
+  ]
+}
