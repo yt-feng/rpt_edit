@@ -1,0 +1,125 @@
+{
+  "created_at_utc": "2026-05-30T22:28:09.795138+00:00",
+  "source_date_dir": "xhs_notes/dropbox/260530",
+  "output_dir": "publish_ready_zips/260530",
+  "max_zip_mb": 90,
+  "single_zip": false,
+  "exclude_source_mineru": true,
+  "markdown_files_renamed_to_txt": true,
+  "excluded_debug_files": true,
+  "included_shard_count": 4,
+  "skipped_shards": [
+    "shard_10",
+    "shard_11",
+    "shard_12",
+    "shard_13",
+    "shard_14",
+    "shard_15",
+    "shard_16",
+    "shard_17",
+    "shard_18",
+    "shard_19",
+    "shard_20",
+    "shard_21",
+    "shard_22",
+    "shard_23",
+    "shard_24",
+    "shard_25",
+    "shard_26",
+    "shard_27",
+    "shard_28",
+    "shard_29",
+    "shard_30",
+    "shard_31",
+    "shard_32",
+    "shard_33",
+    "shard_34",
+    "shard_35",
+    "shard_36",
+    "shard_37",
+    "shard_38",
+    "shard_39",
+    "shard_4",
+    "shard_5",
+    "shard_6",
+    "shard_7",
+    "shard_8",
+    "shard_9"
+  ],
+  "total_files": 417,
+  "total_renamed_markdown_count": 95,
+  "total_raw_file_bytes": 73835649,
+  "zip_count": 1,
+  "zips": [
+    {
+      "path": "publish_ready_zips/260530/publish_ready_260530.zip",
+      "size_bytes": 68895503,
+      "file_count": 417,
+      "renamed_markdown_count": 95,
+      "raw_file_bytes": 73835649,
+      "shards": [
+        "shard_0",
+        "shard_1",
+        "shard_2",
+        "shard_3"
+      ]
+    }
+  ],
+  "included_shards": [
+    {
+      "shard": "shard_0",
+      "report_count": 5,
+      "file_count": 115,
+      "renamed_markdown_count": 25,
+      "raw_file_bytes": 17398050,
+      "reports": [
+        "0001-01-CITI-Japan-Electronic-Components-April-MLCC-statistics--New-FY-starts-at",
+        "0002-03-Goldman-Sachs-China-Smartphones--Apr-shipments--12--YoY--25--MoM--2Q-mem",
+        "0003-05-Goldman-Sachs-WEEKLY-FUND-FLOWS-Continued-Inflows-from-South-Korea-26052",
+        "0004-06-J.P.-Morgan-China-Auto-Export-Tracker-April--NEV-for-the-first-time-exce",
+        "0005-07-J.P.-Morgan-Global-Memory-Market-CPU-adds-fuel-to-the--higher-and-longer"
+      ]
+    },
+    {
+      "shard": "shard_1",
+      "report_count": 5,
+      "file_count": 115,
+      "renamed_markdown_count": 25,
+      "raw_file_bytes": 21353361,
+      "reports": [
+        "0001-08-J.P.-Morgan-Hong-Kong-Residential-Property-Will-tightened-controls-on-ca",
+        "0002-09-J.P.-Morgan-Rare-Earths-Dashboard-China-still-sets-spot--but-the-West-is",
+        "0003-10-Morgan-Stanley-China-Biotechnology-Innovation-Dawn-2.0--From-Wholesale-t",
+        "0004-11-Nomura-China-Internet---New-Media-Monthly-App-Tracker---April-2026-26052",
+        "0005-12-Nomura-US-Economic-Weekly-Hints-of-hikes-260529"
+      ]
+    },
+    {
+      "shard": "shard_2",
+      "report_count": 5,
+      "file_count": 113,
+      "renamed_markdown_count": 25,
+      "raw_file_bytes": 19038434,
+      "reports": [
+        "0001-13-BofA-Securities-Internet-e-Commerce-Agentic-AI-and-the-promise-of-a-more",
+        "0002-14-Goldman-Sachs-GLOBAL-FX-TRADER-Resolution-Resolve-260529",
+        "0003-15-Goldman-Sachs-JAPAN-ELECTRONICS-SEMICONDUCTORS-TOPPAN-DNP-earnings-updat",
+        "0004-16-Goldman-Sachs-Japan-Industrial-Electronics--April-MOF-data--optical-fibe",
+        "0005-17-Goldman-Sachs-US-WEEKLY-KICKSTART-Corporate-equity-demand-should-outweig"
+      ]
+    },
+    {
+      "shard": "shard_3",
+      "report_count": 4,
+      "file_count": 74,
+      "renamed_markdown_count": 20,
+      "raw_file_bytes": 16045804,
+      "reports": [
+        "0001-18-MS-Humanoids-Humanoid-Horizons-Humanoids-Coming-to-Your-Bloomberg-Screen",
+        "0002-19-Morgan-Stanley-China-Beauty-6.18-Pre-sale-Rankings--Proya-No.1--Giant-Bi",
+        "0003-20-Morgan-Stanley-China-and-the-Miners-260529",
+        "0004-21-Morgan-Stanley-Semiconductor-Capital-Equipment-Japan-Takeaways-260529"
+      ]
+    }
+  ]
+}
