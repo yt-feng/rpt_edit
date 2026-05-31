@@ -1,0 +1,9 @@
+Found 21 total PDFs; shard 4/40 has 1 PDFs, skips 0 already converted, will process 1 PDFs with batch_size=5.
+Running batch 1: 1 PDFs
+Found 1 PDFs.
+Uploading PDF to MinerU: /tmp/pdf_batch_001_4b76_rw2/pdfs/0001-22-Jefferies-China Technology-Potential Adoption of COB in Apple Supply Chain- Not Only One Beneficiary-260529.pdf
+MinerU batch_id=eb266a6f-85ce-4358-9c3b-ad0db984ad07
+MinerU states: waiting-file
+MinerU states: done
+Done. Results written to /home/runner/work/rpt_edit/rpt_edit/xhs_notes/dropbox/260531/shard_4; successful_reports=1; mineru_timed_out=False
+All batches completed successfully. Generated 1 report directories.
