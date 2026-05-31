@@ -1,0 +1,1675 @@
+[
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.064,
+                0.023,
+                0.264,
+                0.051
+            ],
+            "angle": 0,
+            "content": "MS"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.296,
+                0.03,
+                0.364,
+                0.042
+            ],
+            "angle": 0,
+            "content": "RESEARCH"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.856,
+                0.026,
+                0.934,
+                0.046
+            ],
+            "angle": 0,
+            "content": "UPDATE"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.065,
+                0.055,
+                0.255,
+                0.069
+            ],
+            "angle": 0,
+            "content": "May 29, 2026 01:39 PM GMT",
+            "merge_prev": false
+        },
+        {
+            "type": "title",
+            "bbox": [
+                0.065,
+                0.076,
+                0.586,
+                0.146
+            ],
+            "angle": 0,
+            "content": "Semiconductor Capital Equipment | North America\nTaiwan Takeaways"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.064,
+                0.165,
+                0.592,
+                0.205
+            ],
+            "angle": 0,
+            "content": "We come away from Taiwan more positive on the broadening of foundry spend and on Teradyne's networking test demand.",
+            "merge_prev": false
+        },
+        {
+            "type": "title",
+            "bbox": [
+                0.07,
+                0.224,
+                0.202,
+                0.243
+            ],
+            "angle": 0,
+            "content": "Key Takeaways"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.065,
+                0.248,
+                0.36,
+                0.264
+            ],
+            "angle": 0,
+            "content": "■ Foundry: Intel TBC, Samsung alive and well.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.065,
+                0.272,
+                0.462,
+                0.288
+            ],
+            "angle": 0,
+            "content": "Teradyne: orders for Rubin chip proving, CPO situation fluid.",
+            "merge_prev": false
+        },
+        {
+            "type": "list",
+            "bbox": [
+                0.065,
+                0.248,
+                0.462,
+                0.288
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.064,
+                0.305,
+                0.591,
+                0.358
+            ],
+            "angle": 0,
+            "content": "Foundry competition is as dynamic as it has ever been. Our biggest takeaway was that the resurgence of Intel and Samsung, coupled with unprecedented demand, is creating ripples across the three leading foundries as well as OSATs.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.064,
+                0.369,
+                0.593,
+                0.547
+            ],
+            "angle": 0,
+            "content": "Intel EMIB traction vs. foundry TBD. The impression we received was that traction for EMIB is far outpacing Intel's foundry business. On the foundry side, Apple appears to be the only high-profile customer, with the company likely to commit A-series chips for HVM in 2029. Intel could possibly receive orders related to NVDA's gaming chips, and before TeraFab comes online, the company could receive AI6 orders from Tesla. 18A yield is hovering at approximately \\(50\\%\\), with work underway to drive further improvement. Our general impression was that customer interest is high, but customer acquisition remains a work in progress. By contrast, EMIB demand is extremely strong from MediaTek, Trainium, and other customers looking for an alternative to TSMC.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.064,
+                0.559,
+                0.591,
+                0.665
+            ],
+            "angle": 0,
+            "content": "Samsung foundry is alive and well. It was not only Intel seeing strong customer inquiries; we also came away with the impression that Samsung's foundry business is alive and well, with Google likely to use Samsung for CPUs in 2028 HVM (further details/GUC Downgrade). However, the challenge for Samsung appears to be that almost all U.S. customers want to shift toward Taylor, where capacity is still in development.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.064,
+                0.677,
+                0.592,
+                0.947
+            ],
+            "angle": 0,
+            "content": "Test continues to be a bottleneck. Overall, the test environment remains very strong, with demand continuing to outpace supply. Our understanding is that Teradyne's initial orders related to NVDA GPU test are for Rubin chip probing, with the company now testing a majority of NVDA applications outside of GPU FT, including Mellanox, RTX, Vera CPU, and LPU/Groq. We came away with the impression that, as Teradyne incrementally gains RTX, LPU, and chip probing work, its share at NVDA is unlikely to shift meaningfully with Rubin Ultra or Feynman. Furthermore, with GPU FT time likely to increase from roughly 850 seconds on Blackwell to 1,200 seconds on Rubin, the need for Teradyne at GPU FT does not appear critical. We would not view a lack of incremental share gain in NVDA AI GPU as a negative, as Mellanox-related testing demand alone is likely to keep Teradyne extremely busy. On CPO, our impression is that the situation remains more fluid than definitive. ATE share across the various test insertions has not been finalized, and test times remain uncertain, making clear 2027 demand signals more speculative than definitive. Our understanding is that Insertions 1 and 2 fall under",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.625,
+                0.076,
+                0.744,
+                0.086
+            ],
+            "angle": 0,
+            "content": "MS & CO. LLC",
+            "merge_prev": false
+        },
+        {
+            "type": "title",
+            "bbox": [
+                0.626,
+                0.09,
+                0.7,
+                0.102
+            ],
+            "angle": 0,
+            "content": "Shane Brett"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.626,
+                0.104,
+                0.684,
+                0.114
+            ],
+            "angle": 0,
+            "content": "Equity Analyst",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.626,
+                0.116,
+                0.933,
+                0.126
+            ],
+            "angle": 0,
+            "content": "Shane.Brett@morganstanley.com +1 212 761-1022",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.626,
+                0.138,
+                0.777,
+                0.148
+            ],
+            "angle": 0,
+            "content": "MS TAIWAN LIMITED+",
+            "merge_prev": false
+        },
+        {
+            "type": "title",
+            "bbox": [
+                0.626,
+                0.151,
+                0.704,
+                0.164
+            ],
+            "angle": 0,
+            "content": "Charlie Chan"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.626,
+                0.166,
+                0.683,
+                0.176
+            ],
+            "angle": 0,
+            "content": "Equity Analyst",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.626,
+                0.178,
+                0.933,
+                0.188
+            ],
+            "angle": 0,
+            "content": "Charlie.Chan@morganstanley.com +886 2 2730-1725",
+            "merge_prev": false
+        },
+        {
+            "type": "title",
+            "bbox": [
+                0.626,
+                0.193,
+                0.695,
+                0.206
+            ],
+            "angle": 0,
+            "content": "Tiffany Yeh"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.626,
+                0.208,
+                0.683,
+                0.218
+            ],
+            "angle": 0,
+            "content": "Equity Analyst",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.626,
+                0.22,
+                0.933,
+                0.23
+            ],
+            "angle": 0,
+            "content": "Tiffany.Yeh@morganstanley.com +886 2 7712-3032",
+            "merge_prev": false
+        },
+        {
+            "type": "title",
+            "bbox": [
+                0.626,
+                0.233,
+                0.7,
+                0.246
+            ],
+            "angle": 0,
+            "content": "Lucas Wang"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.626,
+                0.248,
+                0.704,
+                0.256
+            ],
+            "angle": 0,
+            "content": "Research Associate",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.626,
+                0.259,
+                0.933,
+                0.269
+            ],
+            "angle": 0,
+            "content": "Lucas.Wang@morganstanley.com +886 2 2730-2875",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.626,
+                0.278,
+                0.744,
+                0.288
+            ],
+            "angle": 0,
+            "content": "MS & CO. LLC",
+            "merge_prev": false
+        },
+        {
+            "type": "title",
+            "bbox": [
+                0.626,
+                0.292,
+                0.71,
+                0.304
+            ],
+            "angle": 0,
+            "content": "Joseph Moore"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.626,
+                0.306,
+                0.683,
+                0.315
+            ],
+            "angle": 0,
+            "content": "Equity Analyst",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.626,
+                0.318,
+                0.933,
+                0.328
+            ],
+            "angle": 0,
+            "content": "Joseph.Moore@morganstanley.com +1 212 761-7516",
+            "merge_prev": false
+        },
+        {
+            "type": "title",
+            "bbox": [
+                0.626,
+                0.334,
+                0.712,
+                0.347
+            ],
+            "angle": 0,
+            "content": "Mason Wayne"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.626,
+                0.349,
+                0.704,
+                0.357
+            ],
+            "angle": 0,
+            "content": "Research Associate",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.626,
+                0.36,
+                0.933,
+                0.369
+            ],
+            "angle": 0,
+            "content": "Mason.Wayne@morganstanley.com +1 212 761-6012",
+            "merge_prev": false
+        },
+        {
+            "type": "title",
+            "bbox": [
+                0.626,
+                0.372,
+                0.717,
+                0.386
+            ],
+            "angle": 0,
+            "content": "Ella Tulchinsky"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.626,
+                0.388,
+                0.704,
+                0.396
+            ],
+            "angle": 0,
+            "content": "Research Associate",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.626,
+                0.399,
+                0.933,
+                0.408
+            ],
+            "angle": 0,
+            "content": "Ella.Tulchinsky@morganstanley.com +1 212 761-2222",
+            "merge_prev": false
+        },
+        {
+            "type": "title",
+            "bbox": [
+                0.626,
+                0.411,
+                0.734,
+                0.423
+            ],
+            "angle": 0,
+            "content": "Nicole Kozhukhov"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.626,
+                0.425,
+                0.704,
+                0.434
+            ],
+            "angle": 0,
+            "content": "Research Associate",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.626,
+                0.437,
+                0.933,
+                0.447
+            ],
+            "angle": 0,
+            "content": "Nicole.Kozhukhov@morganstanley.com +1 212 761-1636",
+            "merge_prev": false
+        },
+        {
+            "type": "title",
+            "bbox": [
+                0.629,
+                0.459,
+                0.845,
+                0.471
+            ],
+            "angle": 0,
+            "content": "SEMICONDUCTOR CAPITAL EQUIPMENT"
+        },
+        {
+            "type": "title",
+            "bbox": [
+                0.626,
+                0.474,
+                0.704,
+                0.484
+            ],
+            "angle": 0,
+            "content": "North America"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.626,
+                0.486,
+                0.699,
+                0.497
+            ],
+            "angle": 0,
+            "content": "Industry View",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.848,
+                0.485,
+                0.889,
+                0.496
+            ],
+            "angle": 0,
+            "content": "In-Line",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.624,
+                0.762,
+                0.93,
+                0.844
+            ],
+            "angle": 0,
+            "content": "MS does and seeks to do business with companies covered in MS. As a result, investors should be aware that the firm may have a conflict of interest that could affect the objectivity of MS. Investors should consider MS as only a single factor in making their investment decision.",
+            "merge_prev": false
+        },
+        {
+            "type": "title",
+            "bbox": [
+                0.624,
+                0.846,
+                0.918,
+                0.882
+            ],
+            "angle": 0,
+            "content": "For analyst certification and other important disclosures, refer to the Disclosure Section, located at the end of this report."
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.624,
+                0.884,
+                0.931,
+                0.944
+            ],
+            "angle": 0,
+            "content": "+= Analysts employed by non-U.S. affiliates are not registered with FINRA, may not be associated persons of the member and may not be subject to FINRA restrictions on communications with a subject company, public appearances and trading securities held by a research analyst account.",
+            "merge_prev": false
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.065,
+                0.023,
+                0.25,
+                0.041
+            ],
+            "angle": 0,
+            "content": "MS | RESEARCH"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.887,
+                0.026,
+                0.933,
+                0.039
+            ],
+            "angle": 0,
+            "content": "UPDATE"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.065,
+                0.085,
+                0.593,
+                0.21
+            ],
+            "angle": 0,
+            "content": "TSMC's jurisdiction, with Insertion 1, EIC/PIC, led by Advantest, while Insertion 2 skews toward Teradyne. However, given the difficulty of Insertion 2, outcomes appear more open than settled. Insertion 4 for NVDA applications appears to sit with Teradyne, while Advantest is approaching AMD and Amazon. Outside of NVDA and CPO, China and Tesla stood out as two areas where demand remains quite strong. For more details on CPO test see: Hon Precision: CPO Insert Test Update; Key Takeaways from TWSE Investor Conference (30 Apr 2026)",
+            "merge_prev": false
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.067,
+                0.969,
+                0.076,
+                0.977
+            ],
+            "angle": 0,
+            "content": "2"
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.048,
+                0.022,
+                0.142,
+                0.044
+            ],
+            "angle": 0,
+            "content": "MS"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.156,
+                0.028,
+                0.19,
+                0.039
+            ],
+            "angle": 0,
+            "content": "RESEARCH"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.915,
+                0.027,
+                0.95,
+                0.041
+            ],
+            "angle": 0,
+            "content": "UPDATE"
+        },
+        {
+            "type": "table_caption",
+            "bbox": [
+                0.048,
+                0.198,
+                0.096,
+                0.215
+            ],
+            "angle": 0,
+            "content": "Exhibit 1:"
+        },
+        {
+            "type": "table",
+            "bbox": [
+                0.048,
+                0.222,
+                0.951,
+                0.673
+            ],
+            "angle": 0,
+            "content": "<table><tr><td rowspan=\"2\">Test Insertion</td><td rowspan=\"2\">Insertion 1</td><td rowspan=\"2\">Insertion 2</td><td rowspan=\"2\">Insertion 3</td><td colspan=\"2\">Insertion 4</td><td rowspan=\"2\">Insertion 5 (potential)</td></tr><tr><td>Insertion 4O</td><td>Insertion 4E</td></tr><tr><td>Test content</td><td>Electronic IC (EIC) &amp; Photonic IC (PIC)</td><td>EIC die to PIC wafer (after SoIC)</td><td>Optical engine (die-to-die)</td><td>CPO package (ASIC+OE) Optical Testing</td><td>CPO package (ASIC+OE) Electrical Testing (2025-2026) Optical+Electrical Testing (starting 2027e)</td><td>CPO package (ASIC+OE) SLT?</td></tr><tr><td rowspan=\"2\">Testing surface</td><td rowspan=\"2\"><img src=\"data:image/jpeg;base64,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\"/></td><td><img src=\"data:image/jpeg;base64,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\"/></td><td><img src=\"data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAgGBgcGBQgHBwcJCQgKDBQNDAsLDBkSEw8UHRofHh0aHBwgJC4nICIsIxwcKDcpLDAxNDQ0Hyc5PTgyPC4zNDL/2wBDAQkJCQwLDBgNDRgyIRwhMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjL/wAARCAA3AEsDASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwD1/wAT+K7HwtFBJettEzFV/DH+Nc3/AMLe0DP+srnv2gD/AMSzRsf89ZP5LXhaj3ph0Ppb/hbugf8APSj/AIW7oP8Az0NfNnTvTwue9JjS5tj6SHxa0I9JKd/wtfQ84314Bp2j3d9IEhiY574rv9G+HyjZLeE+6mo50aRoybPR4/iVpcsZkQMyjvioD8V9DBwWIIqGz0HT4rc2yQrgjGcV5z4y8FS6cz3dupMR5OB0oU03YqpQcD0o/FnQhyJK0YPiDpdxCsqP8rDIr5ldCgyetdtpCj+yrf6H+Zq7HPc7H4/c6Zo/H/LWT+S14Yi5+te6/HlN9hoy5xmaT+S15lpeiq7KxXd71E5WRrShzuxkWOj3V64EcZ5713Gh+B1Zg1x8x6kGtvS9PeGMYjAH0rftx5aZ+761wyrO+h6aw6grsfYadbWEAEUajHtVw3AOPaogo8vMZJB61Ey+Ww+bOaq7tdlUpKT0NiyYM4NbMtnb3tq0E6BkYY5rAspNozWgdUigQtJIoUdcmsedqRniINnkfjvwTJpErT26kwk54HSq+kLnSrf/AHT/ADNdV4s8faeYZLNdsu4Y9a5bTZQ+nxMq4ByR+Zr0acm1qebOKTOq/aAJGm6MR182T+S15/4T1qI/uJSNw6Zrv/2guNL0Y/8ATWT+S14XBO9tMsiHGPSicboujPklc9rj1BwmEqWK8kl+VmIrmPDmrR30CiRsOP1roInQMWPABrlVKzOuriOZWOhsbryx5Z5B9aZdOLckuwCnmua1XxHZ2EQIkBf0FcNrHjG+1D5EcrH7VvKBnCpyLQ73U/GlrpcbKkm9/QGuC1bxjfaixCyMiegNc1JI8rl2Ykn1pKmNDqTUxDZKztIxZslj3ru9FP8AxJ7bP90/zNcBnFd3orf8Se2/3T/M10KNkcjd2eifG7R73WNP0pLOISGORy2XC9QPWvGT4I17tbR/9/V/xoopgWrHwv4jsZ1dIEwO3nL/AI1tXln4mmUJHboox/z1X/GiilZDuYknhHxDOxaSBWPvMv8AjUX/AAhWud7ZM/8AXZf8aKKY22O/4QrXAP8Aj1j/AO/q/wCNJ/whmu/8+qf9/V/xoopoQf8ACF67j/j1T/v6v+NdlpHhjVY9Kt0aFAwU5HmD1NFFSB//2Q==\"/> <img src=\"data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAgGBgcGBQgHBwcJCQgKDBQNDAsLDBkSEw8UHRofHh0aHBwgJC4nICIsIxwcKDcpLDAxNDQ0Hyc5PTgyPC4zNDL/2wBDAQkJCQwLDBgNDRgyIRwhMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjL/wAARCAAtAEsDASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwD1/W/FmnaBcRw3rOrOuRtFZf8AwsrQf+esn/fNcn8XP+QnZ/7hrzy3jE1wkZOAx61x1a7hd9EefOvUdX2cD3D/AIWVoH/PWT/vmj/hZWgZ5lk/75ryT+xov+ej1Uv7a3sIkkkaRgzY4rlp5jGrNQjq2d9TBY6lB1JpWXmezf8ACytA/wCesn/fNH/Cy9A/56yf9814T9ssv7sv5ip5UjCRSRlirrkZrsnUqwdpRscEq1ZR5rppHt//AAsrQf8AnrJ/3zR/wsvQf+esn/fNfM9/qNzFeyokpChqrHVbz/nsa9SGArTipJgq9Vn1CvxJ0J3VRJJliAPlrqku4XRXDjBGRXynoNxJcIryMWYSgZr3mC4lFvGA5+6K43zQk4yNaFaU20+hznxaGdWsQehXH61z8OjWsbpIu7I5FdB8WTjVrE+i/wBayY7y2YKomUtgcV2YCnh5uXtrWPAzWdaNdOluP8hPeub8UqFtoh28z+hrp/MTpuFcz4qObeMj/np/Q1li6ODhXpPD2vc9TL8Rj6tCqsU3a3U5YccVttxZ2n/XOsTFbbf8edp/1zpZptExofw5nGan/wAhGb/eqpVzU/8AkIzf71U6+iw/8KJ0Q2R1Hhv/AFI/66iveYP9RH/uivBvDf8AqR/11Fe8wf6iP/dFfNYj+PI0w3xSOe+Lf/ITsv8AcNef2riO6jZjgA817v4r8LafrYS4ug++NSF2nFcK3gzTA5H7z864qtGU7pPcJ0Jqqqi6HO/2hbf89Rz7VUvzZahGiSTFQpzxXWf8IZpv/TT86T/hDNM/6afnXDTy5wmpxlqj16mY16kHCUFZnC/2Vpp/5eX/ACpboQosMcLlkRcZNd1/whmmf9NPzo/4Q3Tf+mn511ulVk7zlc82qpTg4QikeQ3ejTXF1JKrqAxzUH9gXA/5aLXsv/CGab/00/Oj/hDNN/6afnXpwxuJgkkzn9jWWh5no9o9mEjcgkyA5H1r3GD/AFEf+6K5seDtNVlYeZkEHrXW21uDbp8x6VzpycnKXU3w9KUbtn//2Q==\"/></td><td colspan=\"2\"><img src=\"data:image/jpeg;base64,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\"/></td><td rowspan=\"2\"></td></tr><tr><td><img src=\"data:image/jpeg;base64,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\"/>Double Sided</td><td><img src=\"data:image/jpeg;base64,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\"/></td><td><img src=\"data:image/jpeg;base64,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\"/></td><td><img src=\"data:image/jpeg;base64,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\"/></td></tr><tr><td rowspan=\"2\">Key Product timeline</td><td colspan=\"5\">2025-2026 Scale-out CPO switch (Spectrum+Quantum) products</td><td rowspan=\"2\"></td></tr><tr><td colspan=\"5\">2027e onward: Scale-out CPO switch (Spectrum+Quantum) + Scale-up CPO switch products</td></tr><tr><td>Testing details</td><td>El. &amp; opt. DC, (power, loss, dark current etc.)</td><td>E/O, O/E, O/O, high speed,S-parameters</td><td>Full calibration/DC,high-speed functional,optical loopback,alternatively:S-parameters</td><td>Optical Light Transmission Testing,optical loopback</td><td>BER testing, signal testing</td><td>Full system functional validation</td></tr><tr><td>Testing service provider</td><td>Foundry(Wafer-level)TSMC</td><td>Foundry(Wafer-level)TSMC</td><td>OSAT(Die/chip level)SPIL (ASE Group)</td><td>OSAT(Die/package level)SPIL (ASE Group)</td><td>OSAT(Die/package level)SPIL (ASE Group)</td><td>OSAT(Die/package level)SPIL (ASE Group)</td></tr><tr><td>Equipment and Consumable Vendor</td><td>PIC ATE tester:1) Advantest + TEL + Formfactor2) Chroma (underqualification)EIC tester:1) Teradyne + TELEIC Probe card: FormFactor</td><td>Wafer level testing:1)Ficontec +Formfactor +Teradyne2) Advantest+MPI</td><td>Die-to-die prober: 1. TEL2. MPIOptical engine E/O tester+laserreliability test+ELS source test head:ChromaOptical and Electrical Test Socket:Winway</td><td>CPO switch tester: ChromaCoaxial socket/Hypersocket: Winway</td><td>ATE tester: 1) Advantest (under qualification)2)TeradyneFT Handler+ELS source test head+optical alignmnet stage : Hon PrecisionCoaxial socket/Hypersocket: Winway</td><td>CPO SLT tester: Chroma (under qualification)Coaxial socket/Hypersocket: Winway</td></tr></table>"
+        },
+        {
+            "type": "table_footnote",
+            "bbox": [
+                0.049,
+                0.681,
+                0.154,
+                0.694
+            ],
+            "angle": 0,
+            "content": "Source: MS"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.049,
+                0.959,
+                0.184,
+                0.972
+            ],
+            "angle": 0,
+            "content": "MS"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.944,
+                0.96,
+                0.95,
+                0.971
+            ],
+            "angle": 0,
+            "content": "3"
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.066,
+                0.024,
+                0.25,
+                0.04
+            ],
+            "angle": 0,
+            "content": "MS | RESEARCH"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.887,
+                0.026,
+                0.934,
+                0.039
+            ],
+            "angle": 0,
+            "content": "UPDATE"
+        },
+        {
+            "type": "title",
+            "bbox": [
+                0.065,
+                0.076,
+                0.284,
+                0.096
+            ],
+            "angle": 0,
+            "content": "Disclosure Section"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.064,
+                0.098,
+                0.934,
+                0.139
+            ],
+            "angle": 0,
+            "content": "The information and opinions in MS were prepared by MS & Co. LLC, and/or MS C.T.V.M. S.A., and/or MS Mexico, Casa de Bolsa, S.A. de C.V., and/or MS Canada Limited. As used in this disclosure section, \"MS\" includes MS & Co. LLC, MS C.T.V.M. S.A., MS Mexico, Casa de Bolsa, S.A. de C.V., MS Canada Limited and their affiliates as necessary.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.064,
+                0.141,
+                0.934,
+                0.182
+            ],
+            "angle": 0,
+            "content": "For important disclosures, stock price charts and equity rating histories regarding companies that are the subject of this report, please see the MS Disclosure Website at www.morganstanley.com/eqr/disclosures/webapp/generalresearch, or contact your investment representative or MS at 1585 Broadway, (Attention: Research Management), New York, NY, 10036 USA.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.064,
+                0.184,
+                0.934,
+                0.225
+            ],
+            "angle": 0,
+            "content": "For valuation methodology and risks associated with any recommendation, rating or price target referenced in this research report, please contact the Client Support Team as follows: US/Canada +1 800 303-2495; Hong Kong +852 2848-5999; Latin America +1 718 754-5444 (U.S.); London +44 (0)20-7425-8169; Singapore +65 6834-6860; Sydney +61 (0)2-9770-1505; Tokyo +81 (0)3-6836-9000. Alternatively you may contact your investment representative or MS at 1585 Broadway, (Attention: Research Management), New York, NY 10036 USA.",
+            "merge_prev": false
+        },
+        {
+            "type": "title",
+            "bbox": [
+                0.065,
+                0.233,
+                0.216,
+                0.248
+            ],
+            "angle": 0,
+            "content": "Analyst Certification"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.064,
+                0.25,
+                0.934,
+                0.291
+            ],
+            "angle": 0,
+            "content": "The following analysts hereby certify that their views about the companies and their securities discussed in this report are accurately expressed and that they have not received and will not receive direct or indirect compensation in exchange for expressing specific recommendations or views in this report: Shane Brett; Charlie Chan; Nicole Kozhukhov; Joseph Moore; Ella Tulchinsky; Lucas Wang; Mason Wayne; Tiffany Yeh.",
+            "merge_prev": false
+        },
+        {
+            "type": "title",
+            "bbox": [
+                0.065,
+                0.313,
+                0.386,
+                0.329
+            ],
+            "angle": 0,
+            "content": "Global Research Conflict Management Policy"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.064,
+                0.33,
+                0.934,
+                0.357
+            ],
+            "angle": 0,
+            "content": "MS has been published in accordance with our conflict management policy, which is available at www.morganstanley.com/institutional/research/conflictpolicies. A Portuguese version of the policy can be found at www.morganstanley.com.br",
+            "merge_prev": false
+        },
+        {
+            "type": "title",
+            "bbox": [
+                0.065,
+                0.365,
+                0.469,
+                0.38
+            ],
+            "angle": 0,
+            "content": "Important Regulatory Disclosures on Subject Companies"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.064,
+                0.382,
+                0.934,
+                0.408
+            ],
+            "angle": 0,
+            "content": "As of April 30, 2026, MS beneficially owned 1% or more of a class of common equity securities of the following companies covered in MS: Applied Materials Inc., KLA Corp, Lam Research Corp, Teradyne Inc.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.064,
+                0.41,
+                0.75,
+                0.422
+            ],
+            "angle": 0,
+            "content": "Within the last 12 months, MS managed or co-managed a public offering (or 144A offering) of securities of Camtek, MKS Inc., Nova Ltd.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.064,
+                0.424,
+                0.805,
+                0.436
+            ],
+            "angle": 0,
+            "content": "Within the last 12 months, MS has received compensation for investment banking services from Applied Materials Inc., Camtek, MKS Inc., Nova Ltd.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.064,
+                0.439,
+                0.934,
+                0.465
+            ],
+            "angle": 0,
+            "content": "In the next 3 months, MS expects to receive or intends to seek compensation for investment banking services from Applied Materials Inc., Camtek, KLA Corp, Lam Research Corp, MKS Inc., Nova Ltd, Teradyne Inc.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.064,
+                0.467,
+                0.828,
+                0.479
+            ],
+            "angle": 0,
+            "content": "Within the last 12 months, MS has received compensation for products and services other than investment banking services from Applied Materials Inc..",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.064,
+                0.481,
+                0.934,
+                0.508
+            ],
+            "angle": 0,
+            "content": "Within the last 12 months, MS has provided or is providing investment banking services to, or has an investment banking client relationship with, the following company: Applied Materials Inc., Camtek, KLA Corp, Lam Research Corp, MKS Inc., Nova Ltd, Teradyne Inc.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.064,
+                0.51,
+                0.934,
+                0.536
+            ],
+            "angle": 0,
+            "content": "Within the last 12 months, MS has either provided or is providing non-investment banking, securities-related services to and/or in the past has entered into an agreement to provide services or has a client relationship with the following company: Applied Materials Inc., MKS Inc..",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.064,
+                0.538,
+                0.4,
+                0.55
+            ],
+            "angle": 0,
+            "content": "MS & Co. LLC makes a market in the securities of MKS Inc..",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.064,
+                0.552,
+                0.934,
+                0.593
+            ],
+            "angle": 0,
+            "content": "The equity research analysts or strategists principally responsible for the preparation of MS have received compensation based upon various factors, including quality of research, investor client feedback, stock picking, competitive factors, firm revenues and overall investment banking revenues. Equity Research analysts' or strategists' compensation is not linked to investment banking or capital markets transactions performed by MS or the profitability or revenues of particular trading desks.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.064,
+                0.595,
+                0.934,
+                0.65
+            ],
+            "angle": 0,
+            "content": "MS and its affiliates do business that relates to companies/instruments covered in MS, including market making, providing liquidity, fund management, commercial banking, extension of credit, investment services and investment banking. MS sells to and buys from customers the securities/instruments of companies covered in MS on a principal basis. MS may have a position in the debt of the Company or instruments discussed in this report. MS trades or may trade as principal in the debt securities (or in related derivatives) that are the subject of the debt research report.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.064,
+                0.652,
+                0.561,
+                0.664
+            ],
+            "angle": 0,
+            "content": "Certain disclosures listed above are also for compliance with applicable regulations in non-US jurisdictions.",
+            "merge_prev": false
+        },
+        {
+            "type": "title",
+            "bbox": [
+                0.065,
+                0.673,
+                0.188,
+                0.687
+            ],
+            "angle": 0,
+            "content": "STOCK RATINGS"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.064,
+                0.689,
+                0.934,
+                0.759
+            ],
+            "angle": 0,
+            "content": "MS uses a relative rating system using terms such as Overweight, Equal-weight, Not-Rated or Underweight (see definitions below). MS does not assign ratings of Buy, Hold or Sell to the stocks we cover. Overweight, Equal-weight, Not-Rated and Underweight are not the equivalent of buy, hold and sell. Investors should carefully read the definitions of all ratings used in MS. In addition, since MS contains more complete information concerning the analyst's views, investors should carefully read MS, in its entirety, and not infer the contents from the rating alone. In any case, ratings (or research) should not be used or relied upon as investment advice. An investor's decision to buy or sell a stock should depend on individual circumstances (such as the investor's existing holdings) and other considerations.",
+            "merge_prev": false
+        },
+        {
+            "type": "title",
+            "bbox": [
+                0.065,
+                0.767,
+                0.306,
+                0.782
+            ],
+            "angle": 0,
+            "content": "Global Stock Ratings Distribution"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.065,
+                0.784,
+                0.17,
+                0.796
+            ],
+            "angle": 0,
+            "content": "(as of April 30, 2026)",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.064,
+                0.798,
+                0.767,
+                0.81
+            ],
+            "angle": 0,
+            "content": "The Stock Ratings described below apply to MS's Fundamental Equity Research and do not apply to Debt Research produced by the Firm.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.064,
+                0.812,
+                0.934,
+                0.868
+            ],
+            "angle": 0,
+            "content": "For disclosure purposes only (in accordance with FINRA requirements), we include the category headings of Buy, Hold, and Sell alongside our ratings of Overweight, Equal-weight, Not-Rated and Underweight. MS does not assign ratings of Buy, Hold or Sell to the stocks we cover. Overweight, Equal-weight, Not-Rated and Underweight are not the equivalent of buy, hold, and sell but represent recommended relative weightings (see definitions below). To satisfy regulatory requirements, we correspond Overweight, our most positive stock rating, with a buy recommendation; we correspond Equal-weight and Not-Rated to hold and Underweight to sell recommendations, respectively.",
+            "merge_prev": false
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.068,
+                0.969,
+                0.076,
+                0.977
+            ],
+            "angle": 0,
+            "content": "4"
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.066,
+                0.024,
+                0.25,
+                0.04
+            ],
+            "angle": 0,
+            "content": "MS | RESEARCH"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.887,
+                0.026,
+                0.934,
+                0.039
+            ],
+            "angle": 0,
+            "content": "UPDATE"
+        },
+        {
+            "type": "table",
+            "bbox": [
+                0.116,
+                0.085,
+                0.877,
+                0.234
+            ],
+            "angle": 0,
+            "content": "<table><tr><td></td><td colspan=\"2\">Coverage Universe</td><td colspan=\"3\">Investment Banking Clients (IBC)</td><td colspan=\"2\">Other Material Investment Services Clients (MISC)</td></tr><tr><td>Stock Rating Category</td><td>Count</td><td>% of Total</td><td>Count</td><td>% of Total IBC</td><td>% of Rating Category</td><td>Count</td><td>% of Total Other MISC</td></tr><tr><td>Overweight/Buy</td><td>1546</td><td>42%</td><td>467</td><td>51%</td><td>30%</td><td>709</td><td>44%</td></tr><tr><td>Equal-weight/Hold</td><td>1568</td><td>43%</td><td>358</td><td>39%</td><td>23%</td><td>715</td><td>44%</td></tr><tr><td>Not-Rated/Hold</td><td>4</td><td>0%</td><td>0</td><td>0%</td><td>0%</td><td>1</td><td>0%</td></tr><tr><td>Underweight/Sell</td><td>555</td><td>15%</td><td>84</td><td>9%</td><td>15%</td><td>202</td><td>12%</td></tr><tr><td>Total</td><td>3,673</td><td></td><td>909</td><td></td><td></td><td>1627</td><td></td></tr></table>"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.067,
+                0.24,
+                0.933,
+                0.267
+            ],
+            "angle": 0,
+            "content": "Data include common stock and ADRs currently assigned ratings. Investment Banking Clients are companies from whom MS received investment banking compensation in the last 12 months. Due to rounding off of decimals, the percentages provided in the \"% of total\" column may not add up to exactly 100 percent.",
+            "merge_prev": false
+        },
+        {
+            "type": "title",
+            "bbox": [
+                0.067,
+                0.275,
+                0.225,
+                0.29
+            ],
+            "angle": 0,
+            "content": "Analyst Stock Ratings"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.067,
+                0.292,
+                0.933,
+                0.317
+            ],
+            "angle": 0,
+            "content": "Overweight (O). The stock's total return is expected to exceed the average total return of the analyst's industry (or industry team's) coverage universe, on a risk-adjusted basis, over the next 12-18 months.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.067,
+                0.32,
+                0.933,
+                0.345
+            ],
+            "angle": 0,
+            "content": "Equal-weight (E). The stock's total return is expected to be in line with the average total return of the analyst's industry (or industry team's) coverage universe, on a risk-adjusted basis, over the next 12-18 months.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.067,
+                0.348,
+                0.933,
+                0.374
+            ],
+            "angle": 0,
+            "content": "Not-Rated (NR). Currently the analyst does not have adequate conviction about the stock's total return relative to the average total return of the analyst's industry (or industry team's) coverage universe, on a risk-adjusted basis, over the next 12-18 months.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.067,
+                0.377,
+                0.933,
+                0.402
+            ],
+            "angle": 0,
+            "content": "Underweight (U). The stock's total return is expected to be below the average total return of the analyst's industry (or industry team's) coverage universe, on a risk-adjusted basis, over the next 12-18 months.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.067,
+                0.405,
+                0.605,
+                0.418
+            ],
+            "angle": 0,
+            "content": "Unless otherwise specified, the time frame for price targets included in MS is 12 to 18 months.",
+            "merge_prev": false
+        },
+        {
+            "type": "title",
+            "bbox": [
+                0.067,
+                0.426,
+                0.234,
+                0.441
+            ],
+            "angle": 0,
+            "content": "Analyst Industry Views"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.067,
+                0.443,
+                0.933,
+                0.468
+            ],
+            "angle": 0,
+            "content": "Attractive (A): The analyst expects the performance of his or her industry coverage universe over the next 12-18 months to be attractive vs. the relevant broad market benchmark, as indicated below.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.067,
+                0.471,
+                0.933,
+                0.526
+            ],
+            "angle": 0,
+            "content": "In-Line (I): The analyst expects the performance of his or her industry coverage universe over the next 12-18 months to be in line with the relevant broad market benchmark, as indicated below. Cautious (C): The analyst views the performance of his or her industry coverage universe over the next 12-18 months with caution vs. the relevant broad market benchmark, as indicated below. Benchmarks for each region are as follows: North America - S&P 500; Latin America - relevant MSCI country index or MSCI Latin America Index; Europe - MSCI Europe; Japan - TOPIX; Asia - relevant MSCI country index or MSCI sub-regional index or MSCI AC Asia Pacific ex Japan Index.",
+            "merge_prev": false
+        },
+        {
+            "type": "title",
+            "bbox": [
+                0.067,
+                0.535,
+                0.578,
+                0.55
+            ],
+            "angle": 0,
+            "content": "Important Disclosures for MS Smith Barney LLC Customers"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.067,
+                0.552,
+                0.933,
+                0.592
+            ],
+            "angle": 0,
+            "content": "Important disclosures regarding any material conflict of interest that can reasonably be expected to have influenced MS Smith Barney LLC's choice of a third-party research provider or the subject company of a third-party research report, are available on the MS Wealth Management disclosure website at www.morganstanley.com/online/researchdisclosures. For MS specific disclosures, you may refer to https://www.morganstanley.com/eqr/disclosures/webapp/generalresearch.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.067,
+                0.594,
+                0.933,
+                0.621
+            ],
+            "angle": 0,
+            "content": "Each MS report is reviewed and approved on behalf of MS Smith Barney LLC. This review and approval is conducted by the same person who reviews the research report on behalf of MS. This could create a conflict of interest.",
+            "merge_prev": false
+        },
+        {
+            "type": "title",
+            "bbox": [
+                0.067,
+                0.629,
+                0.273,
+                0.644
+            ],
+            "angle": 0,
+            "content": "Other Important Disclosures"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.067,
+                0.646,
+                0.933,
+                0.701
+            ],
+            "angle": 0,
+            "content": "MS policy is to update research reports as and when the Research Analyst and Research Management deem appropriate, based on developments with the issuer, the sector, or the market that may have a material impact on the research views or opinions stated therein. In addition, certain Research publications are intended to be updated on a regular periodic basis (weekly/monthly/quarterly/annual) and will ordinarily be updated with that frequency, unless the Research Analyst and Research Management determine that a different publication schedule is appropriate based on current conditions.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.067,
+                0.703,
+                0.933,
+                0.729
+            ],
+            "angle": 0,
+            "content": "MS is not acting as a municipal advisor and the opinions or views contained herein are not intended to be, and do not constitute, advice within the meaning of Section 975 of the Dodd-Frank Wall Street Reform and Consumer Protection Act.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.067,
+                0.731,
+                0.933,
+                0.772
+            ],
+            "angle": 0,
+            "content": "MS produces an equity research product called a \"Tactical Idea.\" Views contained in a \"Tactical Idea\" on a particular stock may be contrary to the recommendations or views expressed in research on the same stock. This may be the result of differing time horizons, methodologies, market events, or other factors. For all research available on a particular stock, please contact your sales representative or go to Matrix at http://www.morganstanley.com/matrix.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.067,
+                0.774,
+                0.933,
+                0.814
+            ],
+            "angle": 0,
+            "content": "MS is provided to our clients through our proprietary research portal on Matrix and also distributed electronically by MS to clients. Certain, but not all, MS products are also made available to clients through third-party vendors or redistributed to clients through alternate electronic means as a convenience. For access to all available MS, please contact your sales representative or go to Matrix at http://www.morganstanley.com/matrix.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.067,
+                0.816,
+                0.933,
+                0.928
+            ],
+            "angle": 0,
+            "content": "Any access and/or use of MS is subject to MS's Terms of Use (http://www.morganstanley.com/terms.html). By accessing and/or using MS, you are indicating that you have read and agree to be bound by our Terms of Use (http://www.morganstanley.com/terms.html). In addition you consent to MS processing your personal data and using cookies in accordance with our Privacy Policy and our Global Cookies Policy (http://www.morganstanley.com/privacy_pledge.html), including for the purposes of setting your preferences and to collect readership data so that we can deliver better and more personalized service and products to you. To find out more information about how MS processes personal data, how we use cookies and how to reject cookies see our Privacy Policy and our Global Cookies Policy (http://www.morganstanley.com/privacy_pledge.html). Please use the provided link to review the Terms and Conditions and Most Important Terms and Conditions for MS India Company Private Limited (https://www.morganstanley.com/assets/pdfs/about-us-global-offices/india/Terms_and_conditions.pdf) and the following link to review the audit report (https://ny.matrix.ms.com/eqr/research/webapp/researchdocs/MSICPL_Morgan_Stanley_Research_Audit_Report.pdf).",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.067,
+                0.93,
+                0.933,
+                0.943
+            ],
+            "angle": 0,
+            "content": "If you do not agree to our Terms of Use and/or if you do not wish to provide your consent to MS processing your personal data or using cookies please do not access our research.",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.067,
+                0.968,
+                0.241,
+                0.979
+            ],
+            "angle": 0,
+            "content": "MS"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.924,
+                0.969,
+                0.933,
+                0.978
+            ],
+            "angle": 0,
+            "content": "5"
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.066,
+                0.024,
+                0.249,
+                0.04
+            ],
+            "angle": 0,
+            "content": "MS | RESEARCH"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.887,
+                0.026,
+                0.933,
+                0.038
+            ],
+            "angle": 0,
+            "content": "UPDATE"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.064,
+                0.084,
+                0.934,
+                0.21
+            ],
+            "angle": 0,
+            "content": "MS does not provide individually tailored investment advice. MS has been prepared without regard to the circumstances and objectives of those who receive it. MS recommends that investors independently evaluate particular investments and strategies, and encourages investors to seek the advice of a financial adviser. The appropriateness of an investment or strategy will depend on an investor's circumstances and objectives. The securities, instruments, or strategies discussed in MS may not be suitable for all investors, and certain investors may not be eligible to purchase or participate in some or all of them. MS is not an offer to buy or sell or the solicitation of an offer to buy or sell any security/instrument or to participate in any particular trading strategy. The value of and income from your investments may vary because of changes in interest rates, foreign exchange rates, default rates, prepayment rates, securities/instruments prices, market indexes, operational or financial conditions of companies or other factors. There may be time limitations on the exercise of options or other rights in securities/instruments transactions. Past performance is not necessarily a guide to future performance. Estimates of future performance are based on assumptions that may not be realized. If provided, and unless otherwise stated, the closing price on the cover page is that of the primary exchange for the subject company's securities/instruments.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.065,
+                0.212,
+                0.934,
+                0.268
+            ],
+            "angle": 0,
+            "content": "The fixed income research analysts, strategists or economists principally responsible for the preparation of MS have received compensation based upon various factors, including quality, accuracy and value of research, firm profitability or revenues (which include fixed income trading and capital markets profitability or revenues), client feedback and competitive factors. Fixed Income Research analysts', strategists' or economists' compensation is not linked to investment banking or capital markets transactions performed by MS or the profitability or revenues of particular trading desks.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.065,
+                0.269,
+                0.934,
+                0.339
+            ],
+            "angle": 0,
+            "content": "The \"Important Regulatory Disclosures on Subject Companies\" section in MS lists all companies mentioned where MS owns 1% or more of a class of common equity securities of the companies. For all other companies mentioned in MS, MS may have an investment of less than 1% in securities/instruments or derivatives of securities/instruments of companies and may trade them in ways different from those discussed in MS. Employees of MS not involved in the preparation of MS may have investments in securities/instruments or derivatives of securities/instruments of companies mentioned and may trade them in ways different from those discussed in MS. Derivatives may be issued by MS or associated persons.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.065,
+                0.34,
+                0.934,
+                0.396
+            ],
+            "angle": 0,
+            "content": "With the exception of information regarding MS, MS is based on public information. MS makes every effort to use reliable, comprehensive information, but we make no representation that it is accurate or complete. We have no obligation to tell you when opinions or information in MS change apart from when we intend to discontinue equity research coverage of a subject company. Facts and views presented in MS have not been reviewed by, and may not reflect information known to, professionals in other MS business areas, including investment banking personnel.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.065,
+                0.397,
+                0.934,
+                0.424
+            ],
+            "angle": 0,
+            "content": "MS personnel may participate in company events such as site visits and are generally prohibited from accepting payment by the company of associated expenses unless pre-approved by authorized members of Research management.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.065,
+                0.426,
+                0.625,
+                0.438
+            ],
+            "angle": 0,
+            "content": "MS may make investment decisions that are inconsistent with the recommendations or views in this report.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.065,
+                0.44,
+                0.934,
+                0.537
+            ],
+            "angle": 0,
+            "content": "To our readers based in Taiwan or trading in Taiwan securities/instruments: Information on securities/instruments that trade in Taiwan is distributed by MS Taiwan Limited (\"MSTL\"). Such information is for your reference only. The reader should independently evaluate the investment risks and is solely responsible for their investment decisions. MS may not be distributed to the public media or quoted or used by the public media without the express written consent of MS. Any non-customer reader within the scope of Article 7-1 of the Taiwan Stock Exchange Recommendation Regulations accessing and/or receiving MS is not permitted to provide MS to any third party (including but not limited to related parties, affiliated companies and any other third parties) or engage in any activities regarding MS which may create or give the appearance of creating a conflict of interest. Information on securities/instruments that do not trade in Taiwan is for informational purposes only and is not to be construed as a recommendation or a solicitation to trade in such securities/instruments. MSTL may not execute transactions for clients in these securities/instruments.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.065,
+                0.539,
+                0.934,
+                0.595
+            ],
+            "angle": 0,
+            "content": "MS is not incorporated under PRC law and the research in relation to this report is conducted outside the PRC. MS does not constitute an offer to sell or the solicitation of an offer to buy any securities in the PRC. PRC investors shall have the relevant qualifications to invest in such securities and shall be responsible for obtaining all relevant approvals, licenses, verifications and/or registrations from the relevant governmental authorities themselves. Neither this report nor any part of it is intended as, or shall constitute, provision of any consultancy or advisory service of securities investment as defined under PRC law. Such information is provided for your reference only.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.065,
+                0.596,
+                0.934,
+                0.951
+            ],
+            "angle": 0,
+            "content": "MS is disseminated in Brazil by MS C.T.V.M. S.A. located at Av. Brigadeiro Faria Lima, 3600, 6th floor, São Paulo - SP, Brazil; and is regulated by the Comissão de Valores Mobiliários; in Mexico by MS México, Casa de Bolsa, S.A. de C.V which is regulated by Comision Nacional Bancaria y de Valores. Paseo de los Tamarindos 90, Torre 1, Col. Bosques de las Lomas Floor 29, 05120 Mexico City; in Japan by MS MUFG Securities Co., Ltd. and, for Commodities related research reports only, MS Capital Group Japan Co., Ltd; in Hong Kong by MS Asia Limited (which accepts responsibility for its contents) and by MS Bank Asia Limited; in Singapore by MS Asia (Singapore) Pte. (Registration number 199206298Z) and/or MS Asia (Singapore) Securities Pte Ltd (Registration number 200008434H), regulated by the Monetary Authority of Singapore (which accepts legal responsibility for its contents and should be contacted with respect to any matters arising from, or in connection with, MS) and by MS Bank Asia Limited, Singapore Branch (Registration number T14FC0118); in Australia to \"wholesale clients\" within the meaning of the Australian Corporations Act by MS Australia Limited A.B.N. 67 003 734 576, holder of Australian financial services license No. 233742, which accepts responsibility for its contents; in Australia to \"wholesale clients\" and \"retail clients\" within the meaning of the Australian Corporations Act by MS Wealth Management Australia Pty Ltd (A.B.N. 19 009 145 555, holder of Australian financial services license No. 240813, which accepts responsibility for its contents; in Korea by MS & Co International plc, Seoul Branch; in India by MS India Company Private Limited having Corporate Identification No (CIN) U22990MH1998PTC115305, regulated by the Securities and Exchange Board of India (\"SEBI\") and holder of licenses as a Research Analyst (SEBI Registration No. INH000001105); Stock Broker (SEBI Stock Broker Registration No. INZ000244438), Merchant Banker (SEBI Registration No. INM000011203), and depository participant with National Securities Depository Limited (SEBI Registration No. IN-DP-NSDL-567-2021) having registered office at Altimus, Level 39 & 40, Pandurang Budhkar Marg, Worli, Mumbai 400018, India; Telephone no. +91-22-61181000; Compliance Officer Details: Mr. Tejarshi Hardas, Tel. No.: +91-22-61181000 or Email: tejarshi.hardas@morganstanley.com; Grievance officer details: Mr. Tejarshi Hardas, Tel. No.: +91-22-61181000 or Email: msic-compliance@morganstanley.com. MS India Company Private Limited (MSICPL) may use AI tools in providing research services. All recommendations contained herein are made by the duly qualified research analysts; in Canada by MS Canada Limited; in Germany and the European Economic Area where required by MS Europe S.E., authorised and regulated by Bundesanstalt fuer Finanzdienstleistungsaufsicht (BaFin) under the reference number 149169; in the US by MS & Co. LLC, which accepts responsibility for its contents. MS & Co. International plc, authorized by the Prudential Regulation Authority and regulated by the Financial Conduct Authority and the Prudential Regulation Authority, disseminates in the UK research that it has prepared, and research which has been prepared by any of its affiliates, only to persons who (i) are investment professionals falling within Article 19(5) of the Financial Services and Markets Act 2000 (Financial Promotion) Order 2005 (as amended, the \"Order\"); (ii) are persons who are high net worth entities falling within Article 49(2)(a) to (d) of the Order; or (iii) are persons to whom an invitation or inducement to engage in investment activity (within the meaning of section 21 of the Financial Services and Markets Act 2000, as amended) may otherwise lawfully be communicated or caused to be communicated. RMB MS Proprietary Limited is a member of the JSE Limited and A2X (Pty) Ltd. RMB MS Proprietary Limited is a joint venture owned equally by MS International Holdings Inc. and RMB Investment Advisory (Proprietary) Limited, which is wholly owned by FirstRand Limited. The information in MS is being disseminated by MS Saudi Arabia, regulated by the Capital Market Authority in the Kingdom of Saudi Arabia, and is directed at Sophisticated investors only.",
+            "merge_prev": false
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.068,
+                0.969,
+                0.076,
+                0.977
+            ],
+            "angle": 0,
+            "content": "6"
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.066,
+                0.024,
+                0.249,
+                0.04
+            ],
+            "angle": 0,
+            "content": "MS | RESEARCH"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.887,
+                0.026,
+                0.933,
+                0.038
+            ],
+            "angle": 0,
+            "content": "UPDATE"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.067,
+                0.083,
+                0.934,
+                0.154
+            ],
+            "angle": 0,
+            "content": "The information in MS is being communicated by MS & Co. International plc (DIFC Branch), regulated by the Dubai Financial Services Authority (the DFSA) or by MS & Co. International plc (ADGM Branch), regulated by the Financial Services Regulatory Authority Abu Dhabi (the FSRA), and is directed at Professional Clients only, as defined by the DFSA or the FSRA, respectively. The financial products or financial services to which this research relates will only be made available to a customer who we are satisfied meets the regulatory criteria of a Professional Client. A distribution of the different MS Research ratings or recommendations, in percentage terms for Investments in each sector covered, is available upon request from your sales representative.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.067,
+                0.155,
+                0.934,
+                0.182
+            ],
+            "angle": 0,
+            "content": "The information in MS is being communicated by MS & Co. International plc (QFC Branch), regulated by the Qatar Financial Centre Regulatory Authority (the QFCRA), and is directed at business customers and market counterparties only and is not intended for Retail Customers as defined by the QFCRA.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.067,
+                0.184,
+                0.934,
+                0.239
+            ],
+            "angle": 0,
+            "content": "As required by the Capital Markets Board of Turkey, investment information, comments and recommendations stated here, are not within the scope of investment advisory activity. Investment advisory service is provided exclusively to persons based on their risk and income preferences by the authorized firms. Comments and recommendations stated here are general in nature. These opinions may not fit to your financial status, risk and return preferences. For this reason, to make an investment decision by relying solely to this information stated here may not bring about outcomes that fit your expectations.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.067,
+                0.24,
+                0.934,
+                0.281
+            ],
+            "angle": 0,
+            "content": "The trademarks and service marks contained in MS are the property of their respective owners. Third-party data providers make no warranties or representations relating to the accuracy, completeness, or timeliness of the data they provide and shall not have liability for any damages relating to such data. The Global Industry Classification Standard (GICS) was developed by and is the exclusive property of MSCI and S&P.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.067,
+                0.283,
+                0.72,
+                0.296
+            ],
+            "angle": 0,
+            "content": "MS, or any portion thereof may not be reprinted, sold or redistributed without the written consent of MS.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.067,
+                0.297,
+                0.874,
+                0.31
+            ],
+            "angle": 0,
+            "content": "Indicators and trackers referenced in MS may not be used as, or treated as, a benchmark under Regulation EU 2016/1011, or any other similar framework.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.067,
+                0.311,
+                0.934,
+                0.353
+            ],
+            "angle": 0,
+            "content": "The issuers and/or fixed income products recommended or discussed in certain fixed income research reports may not be continuously followed. Accordingly, investors should regard those fixed income research reports as providing stand-alone analysis and should not expect continuing analysis or additional reports relating to such issuers and/or individual fixed income products. MS may hold, from time to time, material financial and commercial interests regarding the company subject to the Research report.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.067,
+                0.355,
+                0.934,
+                0.408
+            ],
+            "angle": 0,
+            "content": "Registration granted by SEBI and certification from the National Institute of Securities Markets (NISM) in no way guarantee performance of the intermediary or provide any assurance of returns to investors. Investment in securities market are subject to market risks. Read all the related documents carefully before investing.",
+            "merge_prev": false
+        },
+        {
+            "type": "table_caption",
+            "bbox": [
+                0.119,
+                0.423,
+                0.541,
+                0.439
+            ],
+            "angle": 0,
+            "content": "INDUSTRY COVERAGE: Semiconductor Capital Equipment"
+        },
+        {
+            "type": "table",
+            "bbox": [
+                0.118,
+                0.442,
+                0.884,
+                0.597
+            ],
+            "angle": 0,
+            "content": "<table><tr><td>COMPANY (TICKER)</td><td>RATING (AS OF)</td><td>PRICE* (05/28/2026)</td></tr><tr><td>Shane Brett</td><td></td><td></td></tr><tr><td>Applied Materials Inc. (AMAT.O)</td><td>E (05/18/2026)</td><td>$449.68</td></tr><tr><td>Camtek (CAMT.O)</td><td>E (12/01/2025)</td><td>$174.78</td></tr><tr><td>KLA Corp (KLAC.O)</td><td>O (01/15/2026)</td><td>$1,927.63</td></tr><tr><td>Lam Research Corp (LRCX.O)</td><td>O (05/18/2026)</td><td>$318.00</td></tr><tr><td>MKS Inc. (MKSI.O)</td><td>O (08/04/2024)</td><td>$323.41</td></tr><tr><td>Nova Ltd (NVMI.O)</td><td>E (12/01/2025)</td><td>$505.97</td></tr><tr><td>Teradyne Inc (TER.O)</td><td>E (07/30/2025)</td><td>$382.65</td></tr></table>"
+        },
+        {
+            "type": "table_footnote",
+            "bbox": [
+                0.119,
+                0.6,
+                0.524,
+                0.613
+            ],
+            "angle": 0,
+            "content": "Stock Ratings are subject to change. Please see latest research for each company."
+        },
+        {
+            "type": "table_footnote",
+            "bbox": [
+                0.119,
+                0.613,
+                0.316,
+                0.625
+            ],
+            "angle": 0,
+            "content": "* Historical prices are not split adjusted."
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.067,
+                0.659,
+                0.235,
+                0.674
+            ],
+            "angle": 0,
+            "content": "© 2026 MS",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.067,
+                0.968,
+                0.241,
+                0.979
+            ],
+            "angle": 0,
+            "content": "MS"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.924,
+                0.969,
+                0.931,
+                0.977
+            ],
+            "angle": 0,
+            "content": "7"
+        }
+    ]
+]
