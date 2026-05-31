@@ -1,0 +1,17 @@
+{
+  "input_dir": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs",
+  "total_pdf_count_before_shard": 21,
+  "pdf_count": 0,
+  "generated_report_count": 0,
+  "batch_size": 5,
+  "shard_index": 14,
+  "shard_count": 40,
+  "max_reports_per_shard": 5,
+  "max_total_reports": 0,
+  "skip_existing": true,
+  "skipped_existing_count": 0,
+  "skipped_existing": [],
+  "failures": 0,
+  "batches": [],
+  "status": "empty_or_all_skipped"
+}
