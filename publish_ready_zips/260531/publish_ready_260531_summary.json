@@ -1,0 +1,135 @@
+{
+  "created_at_utc": "2026-05-31T22:45:19.490050+00:00",
+  "source_date_dir": "xhs_notes/dropbox/260531",
+  "output_dir": "publish_ready_zips/260531",
+  "max_zip_mb": 90,
+  "single_zip": false,
+  "exclude_source_mineru": true,
+  "markdown_files_renamed_to_txt": true,
+  "excluded_debug_files": true,
+  "included_shard_count": 5,
+  "skipped_shards": [
+    "shard_10",
+    "shard_11",
+    "shard_12",
+    "shard_13",
+    "shard_14",
+    "shard_15",
+    "shard_16",
+    "shard_17",
+    "shard_18",
+    "shard_19",
+    "shard_20",
+    "shard_21",
+    "shard_22",
+    "shard_23",
+    "shard_24",
+    "shard_25",
+    "shard_26",
+    "shard_27",
+    "shard_28",
+    "shard_29",
+    "shard_30",
+    "shard_31",
+    "shard_32",
+    "shard_33",
+    "shard_34",
+    "shard_35",
+    "shard_36",
+    "shard_37",
+    "shard_38",
+    "shard_39",
+    "shard_5",
+    "shard_6",
+    "shard_7",
+    "shard_8",
+    "shard_9"
+  ],
+  "total_files": 422,
+  "total_renamed_markdown_count": 100,
+  "total_raw_file_bytes": 67752229,
+  "zip_count": 1,
+  "zips": [
+    {
+      "path": "publish_ready_zips/260531/publish_ready_260531.zip",
+      "size_bytes": 62955823,
+      "file_count": 422,
+      "renamed_markdown_count": 100,
+      "raw_file_bytes": 67752229,
+      "shards": [
+        "shard_0",
+        "shard_1",
+        "shard_2",
+        "shard_3",
+        "shard_4"
+      ]
+    }
+  ],
+  "included_shards": [
+    {
+      "shard": "shard_0",
+      "report_count": 5,
+      "file_count": 107,
+      "renamed_markdown_count": 25,
+      "raw_file_bytes": 19573735,
+      "reports": [
+        "0001-01-CITI-China-Steel-Downstream-PMI---Downstream-Dynamics-Trending-Better-26",
+        "0002-02-CITI-Global-Economics-Global-Inflation-Monitor-Elevated-Oil-Prices-Stoke",
+        "0003-03-Goldman-Sachs-CHINA-PROPERTY-Urban-Renewal-Plan-for-15th-FYP-a-potential",
+        "0004-04-Goldman-Sachs-GLOBAL-CREDIT-TRADER-The-Quality-Cross-Over-260529",
+        "0005-05-Goldman-Sachs-GLOBAL-RATES-TRADER-Term-Premia-Take-a-Breather-260529"
+      ]
+    },
+    {
+      "shard": "shard_1",
+      "report_count": 4,
+      "file_count": 80,
+      "renamed_markdown_count": 20,
+      "raw_file_bytes": 11318784,
+      "reports": [
+        "0001-06-Goldman-Sachs-Global-Markets-Daily--Heated-Rivalry-USD-CAD-and-The-USMCA",
+        "0003-09-J.P.-Morgan-Oil-Flash-Note-Can-the-world-live-with-9--less-oil--260529",
+        "0004-10-Morgan-Stanley-AI--Financing-the-Next-10x-Tech-Cycle---Is-Capital-the-Co",
+        "0005-11-Morgan-Stanley-China-Financials--No-need-to-worry-about-broadbased-tight"
+      ]
+    },
+    {
+      "shard": "shard_2",
+      "report_count": 5,
+      "file_count": 105,
+      "renamed_markdown_count": 25,
+      "raw_file_bytes": 17159675,
+      "reports": [
+        "0001-12-Morgan-Stanley-Downward-Repricing-of-the-Inflation-Risk-Premium-260529",
+        "0002-13-Morgan-Stanley-Electronic-Components-Apr-HDD-SSD-Data--Continuing-Strong",
+        "0003-14-Morgan-Stanley-Semiconductor-Capital-Equipment-Taiwan-Takeaways-260529",
+        "0004-15-Morgan-Stanley-Semiconductor-Production-Equipment-Implications-from-Phot",
+        "0005-16-Nomura-Key-focus-and-themes-Strategy-trades-on-an-improving-global-backd"
+      ]
+    },
+    {
+      "shard": "shard_3",
+      "report_count": 5,
+      "file_count": 115,
+      "renamed_markdown_count": 25,
+      "raw_file_bytes": 17957390,
+      "reports": [
+        "0001-17-Deutsche-Bank-Precious-Blog-Gold-has-a-new-problem-260529",
+        "0002-18-Goldman-Sachs-EUROPE-WEEKLY-KICKSTART-Deal-Momentum-Builds--Europe-Stays",
+        "0003-19-Goldman-Sachs-GC-Telecom--Telcos--AI-token-plan-released--5G-BTS-deploym",
+        "0004-20-Goldman-Sachs-MORTGAGE---STRUCTURED-PRODUCTS-TRADER-Consumer-credit-hold",
+        "0005-21-Goldman-Sachs-THE-WORLD-CUP-AND-ECONOMICS-World-Cup-2026--Predictions--P"
+      ]
+    },
+    {
+      "shard": "shard_4",
+      "report_count": 1,
+      "file_count": 15,
+      "renamed_markdown_count": 5,
+      "raw_file_bytes": 1742645,
+      "reports": [
+        "0001-22-Jefferies-China-Technology-Potential-Adoption-of-COB-in-Apple-Supply-Cha"
+      ]
+    }
+  ]
+}
