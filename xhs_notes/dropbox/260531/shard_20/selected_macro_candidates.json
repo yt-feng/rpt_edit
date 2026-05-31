@@ -1,0 +1,222 @@
+[
+  {
+    "id": 0,
+    "name": "CITI-China Steel Downstream PMI ~ Downstream Dynamics Trending Better-260529.pdf",
+    "dropbox_path": "/zip_backup/260531/citi-china steel downstream pmi ~ downstream dynamics trending better-260529.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/citi-china steel downstream pmi ~ downstream dynamics trending better-260529.pdf",
+    "category": "macro_trend",
+    "score": 0.95,
+    "reason": "行业PMI数据，宏观趋势",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 3,
+    "name": "CITI-Global Economics：Global Inflation Monitor，Elevated Oil Prices Stoke Inflation Pressures-260529.pdf",
+    "dropbox_path": "/zip_backup/260531/citi-global economics：global inflation monitor，elevated oil prices stoke inflation pressures-260529.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/citi-global economics：global inflation monitor，elevated oil prices stoke inflation pressures-260529.pdf",
+    "category": "macro_trend",
+    "score": 0.95,
+    "reason": "全球通胀监测，宏观主题",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 10,
+    "name": "GS-CHINA PROPERTY：Urban Renewal Plan for 15th FYP a potential boost to housing demand-260529.pdf",
+    "dropbox_path": "/zip_backup/260531/GS-china property：urban renewal plan for 15th fyp a potential boost to housing demand-260529.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/GS-china property：urban renewal plan for 15th fyp a potential boost to housing demand-260529.pdf",
+    "category": "macro_trend",
+    "score": 0.95,
+    "reason": "中国房地产行业主题",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 12,
+    "name": "GS-GLOBAL CREDIT TRADER：The Quality Cross Over-260529.pdf",
+    "dropbox_path": "/zip_backup/260531/GS-global credit trader：the quality cross over-260529.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/GS-global credit trader：the quality cross over-260529.pdf",
+    "category": "macro_trend",
+    "score": 0.95,
+    "reason": "全球信用市场，宏观主题",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 13,
+    "name": "GS-GLOBAL RATES TRADER：Term Premia Take a Breather-260529.pdf",
+    "dropbox_path": "/zip_backup/260531/GS-global rates trader：term premia take a breather-260529.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/GS-global rates trader：term premia take a breather-260529.pdf",
+    "category": "macro_trend",
+    "score": 0.95,
+    "reason": "全球利率市场，宏观主题",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 14,
+    "name": "GS-Global Markets Daily： Heated Rivalry—USD CAD and The USMCA Review-260529.pdf",
+    "dropbox_path": "/zip_backup/260531/GS-global markets daily： heated rivalry—usd cad and the usmca review-260529.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/GS-global markets daily： heated rivalry—usd cad and the usmca review-260529.pdf",
+    "category": "macro_trend",
+    "score": 0.95,
+    "reason": "全球市场日报，宏观主题",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 16,
+    "name": "GS-JAPAN WEEKLY KICKSTART：Revising TOPIX target from 4200 to 4400-260529.pdf",
+    "dropbox_path": "/zip_backup/260531/GS-japan weekly kickstart：revising topix target from 4200 to 4400-260529.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/GS-japan weekly kickstart：revising topix target from 4200 to 4400-260529.pdf",
+    "category": "macro_trend",
+    "score": 0.95,
+    "reason": "日本市场周报，宏观策略",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 17,
+    "name": "GS-INDIA WEEKLY KICKSTART：NIFTY closed flat in a short trading week； IMD cut monsoon outlook to 90% of normal； Full year CY26 EPS cuts coming through despite strong 1Q results； Market pulse check-260529.pdf",
+    "dropbox_path": "/zip_backup/260531/GS-india weekly kickstart：nifty closed flat in a short trading week； imd cut monsoon outlook to 90% of normal； full year cy26 eps cuts coming through despite strong 1q results； market pulse check-260529.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/GS-india weekly kickstart：nifty closed flat in a short trading week； imd cut monsoon outlook to 90% of normal； full year cy26 eps cuts coming through despite strong 1q results； market pulse check-260529.pdf",
+    "category": "macro_trend",
+    "score": 0.95,
+    "reason": "印度市场周报，宏观策略",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 24,
+    "name": "JPM-Oil Flash Note：Can the world live with 9% less oil？-260529.pdf",
+    "dropbox_path": "/zip_backup/260531/JPM-oil flash note：can the world live with 9% less oil？-260529.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/JPM-oil flash note：can the world live with 9% less oil？-260529.pdf",
+    "category": "macro_trend",
+    "score": 0.95,
+    "reason": "原油市场快评，宏观主题",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 27,
+    "name": "MS-AI： Financing the Next 10x Tech Cycle — Is Capital the Constraint？-260529.pdf",
+    "dropbox_path": "/zip_backup/260531/MS-ai： financing the next 10x tech cycle — is capital the constraint？-260529.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/MS-ai： financing the next 10x tech cycle — is capital the constraint？-260529.pdf",
+    "category": "macro_trend",
+    "score": 0.95,
+    "reason": "AI行业融资主题，宏观趋势",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 30,
+    "name": "MS-China Financials： No need to worry about broadbased tightening on financial investment flow to Hong Kong-260529.pdf",
+    "dropbox_path": "/zip_backup/260531/MS-china financials： no need to worry about broadbased tightening on financial investment flow to hong kong-260529.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/MS-china financials： no need to worry about broadbased tightening on financial investment flow to hong kong-260529.pdf",
+    "category": "macro_trend",
+    "score": 0.95,
+    "reason": "中国金融行业主题",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 31,
+    "name": "MS-Downward Repricing of the Inflation Risk Premium-260529.pdf",
+    "dropbox_path": "/zip_backup/260531/MS-downward repricing of the inflation risk premium-260529.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/MS-downward repricing of the inflation risk premium-260529.pdf",
+    "category": "macro_trend",
+    "score": 0.95,
+    "reason": "通胀风险溢价，宏观主题",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 32,
+    "name": "MS-Electronic Components Apr HDD SSD Data： Continuing Strong Data Center Demand-260529.pdf",
+    "dropbox_path": "/zip_backup/260531/MS-electronic components apr hdd ssd data： continuing strong data center demand-260529.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/MS-electronic components apr hdd ssd data： continuing strong data center demand-260529.pdf",
+    "category": "macro_trend",
+    "score": 0.95,
+    "reason": "电子元器件行业数据，行业趋势",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 34,
+    "name": "MS-Semiconductor Capital Equipment：Taiwan Takeaways-260529.pdf",
+    "dropbox_path": "/zip_backup/260531/MS-semiconductor capital equipment：taiwan takeaways-260529.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/MS-semiconductor capital equipment：taiwan takeaways-260529.pdf",
+    "category": "macro_trend",
+    "score": 0.95,
+    "reason": "半导体设备行业，行业趋势",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 36,
+    "name": "MS-Semiconductor Production Equipment：Implications from Photronics' Feb~Apr Results-260529.pdf",
+    "dropbox_path": "/zip_backup/260531/MS-semiconductor production equipment：implications from photronics' feb~apr results-260529.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/MS-semiconductor production equipment：implications from photronics' feb~apr results-260529.pdf",
+    "category": "macro_trend",
+    "score": 0.95,
+    "reason": "半导体生产设备行业，行业趋势",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 37,
+    "name": "NOM-Key focus and themes：Strategy trades on an improving global backdrop， but watchful of local developments-260529.pdf",
+    "dropbox_path": "/zip_backup/260531/NOM-key focus and themes：strategy trades on an improving global backdrop， but watchful of local developments-260529.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/NOM-key focus and themes：strategy trades on an improving global backdrop， but watchful of local developments-260529.pdf",
+    "category": "macro_trend",
+    "score": 0.95,
+    "reason": "策略交易主题，宏观策略",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 7,
+    "name": "DB-Precious Blog：Gold has a new problem-260529.pdf",
+    "dropbox_path": "/zip_backup/260531/DB-precious blog：gold has a new problem-260529.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/DB-precious blog：gold has a new problem-260529.pdf",
+    "category": "macro_trend",
+    "score": 0.9,
+    "reason": "大宗商品黄金主题",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 9,
+    "name": "GS-EUROPE WEEKLY KICKSTART：Deal Momentum Builds， Europe Stays Cautious-260529.pdf",
+    "dropbox_path": "/zip_backup/260531/GS-europe weekly kickstart：deal momentum builds， europe stays cautious-260529.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/GS-europe weekly kickstart：deal momentum builds， europe stays cautious-260529.pdf",
+    "category": "macro_trend",
+    "score": 0.9,
+    "reason": "欧洲市场周报，宏观策略",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 11,
+    "name": "GS-GC Telecom： Telcos’ AI token plan released； 5G BTS deployment YoY  MoM increased in Apr-260530.pdf",
+    "dropbox_path": "/zip_backup/260531/GS-gc telecom： telcos’ ai token plan released； 5g bts deployment yoy  mom increased in apr-260530.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/GS-gc telecom： telcos’ ai token plan released； 5g bts deployment yoy  mom increased in apr-260530.pdf",
+    "category": "macro_trend",
+    "score": 0.9,
+    "reason": "电信行业趋势，非单一公司",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 15,
+    "name": "GS-MORTGAGE & STRUCTURED PRODUCTS TRADER：Consumer credit holds， sentiment splits-260529.pdf",
+    "dropbox_path": "/zip_backup/260531/GS-mortgage & structured products trader：consumer credit holds， sentiment splits-260529.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/GS-mortgage & structured products trader：consumer credit holds， sentiment splits-260529.pdf",
+    "category": "macro_trend",
+    "score": 0.9,
+    "reason": "抵押贷款与结构化产品，宏观主题",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 20,
+    "name": "GS-THE WORLD CUP AND ECONOMICS：World Cup 2026： Predictions， Probabilities， and Paths to Victory-260529.pdf",
+    "dropbox_path": "/zip_backup/260531/GS-the world cup and economics：world cup 2026： predictions， probabilities， and paths to victory-260529.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/GS-the world cup and economics：world cup 2026： predictions， probabilities， and paths to victory-260529.pdf",
+    "category": "macro_trend",
+    "score": 0.9,
+    "reason": "世界杯与经济，宏观主题",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 25,
+    "name": "JEF-China Technology：Potential Adoption of COB in Apple Supply Chain： Not Only One Beneficiary-260529.pdf",
+    "dropbox_path": "/zip_backup/260531/JEF-china technology：potential adoption of cob in apple supply chain： not only one beneficiary-260529.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/JEF-china technology：potential adoption of cob in apple supply chain： not only one beneficiary-260529.pdf",
+    "category": "macro_trend",
+    "score": 0.9,
+    "reason": "中国科技行业供应链主题",
+    "classifier": "deepseek"
+  }
+]
