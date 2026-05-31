@@ -1,0 +1,14 @@
+Found 21 total PDFs; shard 3/40 has 5 PDFs, skips 0 already converted, will process 5 PDFs with batch_size=5.
+Running batch 1: 5 PDFs
+Found 5 PDFs.
+Uploading PDF to MinerU: /tmp/pdf_batch_001_jthsxal8/pdfs/0001-17-Deutsche Bank-Precious Blog-Gold has a new problem-260529.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_jthsxal8/pdfs/0002-18-Goldman Sachs-EUROPE WEEKLY KICKSTART-Deal Momentum Builds- Europe Stays Cautious-260529.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_jthsxal8/pdfs/0003-19-Goldman Sachs-GC Telecom- Telcos- AI token plan released- 5G BTS deployment YoY MoM increased in Apr-260530.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_jthsxal8/pdfs/0004-20-Goldman Sachs-MORTGAGE - STRUCTURED PRODUCTS TRADER-Consumer credit holds- sentiment splits-260529.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_jthsxal8/pdfs/0005-21-Goldman Sachs-THE WORLD CUP AND ECONOMICS-World Cup 2026- Predictions- Probabilities- and Paths to Victory-260529.pdf
+MinerU batch_id=658c1a8e-c52a-4f62-865c-9318e643262a
+MinerU states: done, running, pending, running, pending
+MinerU states: done, done, done, running, done
+MinerU states: done, done, done, done, done
+Done. Results written to /home/runner/work/rpt_edit/rpt_edit/xhs_notes/dropbox/260531/shard_3; successful_reports=5; mineru_timed_out=False
+All batches completed successfully. Generated 5 report directories.
