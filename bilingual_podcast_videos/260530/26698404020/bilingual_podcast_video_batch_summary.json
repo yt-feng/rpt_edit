@@ -1,0 +1,53 @@
+{
+  "max_items": 1,
+  "processed_count": 1,
+  "output_mode": "bilingual_only",
+  "second_speaker_voice_id": "bdt3B5N3GXM2nOc0SUW7",
+  "outputs_per_item": [
+    "podcast_mixed_bilingual_explainer.mp4",
+    "podcast_mixed_bilingual_audio.m4a"
+  ],
+  "items": [
+    {
+      "item_dir": "bilingual_podcast_videos/260530/26698404020/0001-0001-nomura-xcmg-000425-industry-upcycle-meets-operational-improvement-2605",
+      "status": "ok",
+      "outputs": {
+        "podcast_video_watermark_zh": "KC桌面",
+        "podcast_video_watermark_en": "KC Desk Notes",
+        "podcast_tts_engine_actual": "elevenlabs",
+        "podcast_output_mode": "bilingual_only",
+        "subtitle_source": "same text as TTS; role tags normalized; rows split by punctuation before TTS; long visual subtitles are paged",
+        "highlight_source": "DeepSeek title and subtitle keyword analysis",
+        "sensitive_filter": "local xhs_notes-style replacements before TTS and rendering",
+        "batch_wrapper": "generate_test_podcast_video_eleven_batch.py",
+        "speaker_avatar_style": "fixed circular A/B avatars above subtitle panel",
+        "second_speaker_voice_id": "bdt3B5N3GXM2nOc0SUW7",
+        "podcast_en_script": "podcast_en_script.txt",
+        "podcast_en_subtitles": "podcast_en_subtitles.srt",
+        "podcast_en_timeline": "podcast_en_timeline.json",
+        "podcast_en_voice_a": "XZEfcFyBnzsNJrdvkWdI",
+        "podcast_en_voice_b": "bdt3B5N3GXM2nOc0SUW7",
+        "podcast_en_title_highlights": [
+          "machinery",
+          "second growth curve"
+        ],
+        "podcast_en_title": "Market underestimates machinery leader's second growth curve",
+        "podcast_en_video_rendered": false,
+        "podcast_zh_title": "工程机械龙头，反转逻辑够硬吗？",
+        "podcast_zh_title_source": "report metadata only; Chinese standalone TTS/video skipped",
+        "podcast_tts_passes": 1,
+        "podcast_mixed_video": "podcast_mixed_bilingual_explainer.mp4",
+        "podcast_mixed_audio_source": "podcast_mixed_bilingual_explainer.mp4",
+        "podcast_mixed_visual_timeline": "podcast_mixed_visual_timeline.json",
+        "podcast_mixed_watermark": "KC Desk Notes",
+        "podcast_mixed_sensitive_filter": "extra strict policy/person-name cleanup in mixed renderer",
+        "podcast_mixed_highlight": "English and Chinese subtitle phrase highlights enabled",
+        "podcast_mixed_audio": "podcast_mixed_bilingual_audio.m4a",
+        "podcast_mixed_render_audio_source": "podcast_en.wav",
+        "podcast_mixed_audio_extracted_from": "podcast_mixed_bilingual_explainer.mp4",
+        "podcast_mixed_audio_extraction": "ffmpeg -c:a copy from final mixed video",
+        "podcast_en_audio_intermediate_removed": "podcast_en.wav"
+      }
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+[1/1] Processing podcast/video for bilingual_podcast_videos/260530/26698404020/0001-0001-nomura-xcmg-000425-industry-upcycle-meets-operational-improvement-2605
+Generating EN podcast audio/timeline only for MIXED bilingual video for 0001-0001-nomura-xcmg-000425-industry-upcycle-meets-operational-improvement-2605
+$ ffmpeg -y -i /tmp/eleven_en_segments_que3monr/seg_001.mp3 -ar 44100 -ac 1 -c:a pcm_s16le /tmp/eleven_en_segments_que3monr/seg_001.wav
+$ ffmpeg -y -i /tmp/eleven_en_segments_que3monr/seg_002.mp3 -ar 44100 -ac 1 -c:a pcm_s16le /tmp/eleven_en_segments_que3monr/seg_002.wav
+$ ffmpeg -y -i /tmp/eleven_en_segments_que3monr/seg_003.mp3 -ar 44100 -ac 1 -c:a pcm_s16le /tmp/eleven_en_segments_que3monr/seg_003.wav
+$ ffmpeg -y -i /tmp/eleven_en_segments_que3monr/seg_004.mp3 -ar 44100 -ac 1 -c:a pcm_s16le /tmp/eleven_en_segments_que3monr/seg_004.wav
+$ ffmpeg -y -i /tmp/eleven_en_segments_que3monr/seg_005.mp3 -ar 44100 -ac 1 -c:a pcm_s16le /tmp/eleven_en_segments_que3monr/seg_005.wav
+$ ffmpeg -y -i /tmp/eleven_en_segments_que3monr/seg_006.mp3 -ar 44100 -ac 1 -c:a pcm_s16le /tmp/eleven_en_segments_que3monr/seg_006.wav
+$ ffmpeg -y -i /tmp/eleven_en_segments_que3monr/seg_007.mp3 -ar 44100 -ac 1 -c:a pcm_s16le /tmp/eleven_en_segments_que3monr/seg_007.wav
+$ ffmpeg -y -i /tmp/eleven_en_segments_que3monr/seg_008.mp3 -ar 44100 -ac 1 -c:a pcm_s16le /tmp/eleven_en_segments_que3monr/seg_008.wav
+$ ffmpeg -y -i /tmp/eleven_en_segments_que3monr/seg_009.mp3 -ar 44100 -ac 1 -c:a pcm_s16le /tmp/eleven_en_segments_que3monr/seg_009.wav
+$ ffmpeg -y -i /tmp/eleven_en_segments_que3monr/seg_010.mp3 -ar 44100 -ac 1 -c:a pcm_s16le /tmp/eleven_en_segments_que3monr/seg_010.wav
+$ ffmpeg -y -i /tmp/eleven_en_segments_que3monr/seg_011.mp3 -ar 44100 -ac 1 -c:a pcm_s16le /tmp/eleven_en_segments_que3monr/seg_011.wav
+$ ffmpeg -y -i /tmp/eleven_en_segments_que3monr/seg_012.mp3 -ar 44100 -ac 1 -c:a pcm_s16le /tmp/eleven_en_segments_que3monr/seg_012.wav
+$ ffmpeg -y -i /tmp/eleven_en_segments_que3monr/seg_013.mp3 -ar 44100 -ac 1 -c:a pcm_s16le /tmp/eleven_en_segments_que3monr/seg_013.wav
+$ ffmpeg -y -i /tmp/eleven_en_segments_que3monr/seg_014.mp3 -ar 44100 -ac 1 -c:a pcm_s16le /tmp/eleven_en_segments_que3monr/seg_014.wav
+$ ffmpeg -y -i /tmp/eleven_en_segments_que3monr/seg_015.mp3 -ar 44100 -ac 1 -c:a pcm_s16le /tmp/eleven_en_segments_que3monr/seg_015.wav
+$ ffmpeg -y -i /tmp/eleven_en_segments_que3monr/seg_016.mp3 -ar 44100 -ac 1 -c:a pcm_s16le /tmp/eleven_en_segments_que3monr/seg_016.wav
+$ ffmpeg -y -i /tmp/eleven_en_segments_que3monr/seg_017.mp3 -ar 44100 -ac 1 -c:a pcm_s16le /tmp/eleven_en_segments_que3monr/seg_017.wav
+$ ffmpeg -y -i /tmp/eleven_en_segments_que3monr/seg_018.mp3 -ar 44100 -ac 1 -c:a pcm_s16le /tmp/eleven_en_segments_que3monr/seg_018.wav
+$ ffmpeg -y -i /tmp/eleven_en_segments_que3monr/seg_019.mp3 -ar 44100 -ac 1 -c:a pcm_s16le /tmp/eleven_en_segments_que3monr/seg_019.wav
+$ ffmpeg -y -i /tmp/eleven_en_segments_que3monr/seg_020.mp3 -ar 44100 -ac 1 -c:a pcm_s16le /tmp/eleven_en_segments_que3monr/seg_020.wav
+$ ffmpeg -y -i /tmp/eleven_en_segments_que3monr/seg_021.mp3 -ar 44100 -ac 1 -c:a pcm_s16le /tmp/eleven_en_segments_que3monr/seg_021.wav
+$ ffmpeg -y -i /tmp/eleven_en_segments_que3monr/seg_022.mp3 -ar 44100 -ac 1 -c:a pcm_s16le /tmp/eleven_en_segments_que3monr/seg_022.wav
+$ ffmpeg -y -i /tmp/eleven_en_segments_que3monr/seg_023.mp3 -ar 44100 -ac 1 -c:a pcm_s16le /tmp/eleven_en_segments_que3monr/seg_023.wav
+$ ffmpeg -y -i /tmp/eleven_en_segments_que3monr/seg_024.mp3 -ar 44100 -ac 1 -c:a pcm_s16le /tmp/eleven_en_segments_que3monr/seg_024.wav
+$ ffmpeg -y -i /tmp/eleven_en_segments_que3monr/seg_025.mp3 -ar 44100 -ac 1 -c:a pcm_s16le /tmp/eleven_en_segments_que3monr/seg_025.wav
+$ ffmpeg -y -i /tmp/eleven_en_segments_que3monr/seg_026.mp3 -ar 44100 -ac 1 -c:a pcm_s16le /tmp/eleven_en_segments_que3monr/seg_026.wav
+$ ffmpeg -y -i /tmp/eleven_en_segments_que3monr/seg_027.mp3 -ar 44100 -ac 1 -c:a pcm_s16le /tmp/eleven_en_segments_que3monr/seg_027.wav
+$ ffmpeg -y -i /tmp/eleven_en_segments_que3monr/seg_028.mp3 -ar 44100 -ac 1 -c:a pcm_s16le /tmp/eleven_en_segments_que3monr/seg_028.wav
+$ ffmpeg -y -i /tmp/eleven_en_segments_que3monr/seg_029.mp3 -ar 44100 -ac 1 -c:a pcm_s16le /tmp/eleven_en_segments_que3monr/seg_029.wav
+$ ffmpeg -y -i /tmp/eleven_en_segments_que3monr/seg_030.mp3 -ar 44100 -ac 1 -c:a pcm_s16le /tmp/eleven_en_segments_que3monr/seg_030.wav
+$ ffmpeg -y -i /tmp/eleven_en_segments_que3monr/seg_031.mp3 -ar 44100 -ac 1 -c:a pcm_s16le /tmp/eleven_en_segments_que3monr/seg_031.wav
+$ ffmpeg -y -i /tmp/eleven_en_segments_que3monr/seg_032.mp3 -ar 44100 -ac 1 -c:a pcm_s16le /tmp/eleven_en_segments_que3monr/seg_032.wav
+EN ElevenLabs voices: A=XZEfcFyBnzsNJrdvkWdI, B=bdt3B5N3GXM2nOc0SUW7
+Generating MIXED bilingual video for 0001-0001-nomura-xcmg-000425-industry-upcycle-meets-operational-improvement-2605
+$ ffmpeg -y -f concat -safe 0 -i /tmp/kc_mixed_frames_66j23fii/concat.txt -vsync vfr -pix_fmt yuv420p /tmp/kc_mixed_frames_66j23fii/silent.mp4
+$ ffmpeg -y -i /tmp/kc_mixed_frames_66j23fii/silent.mp4 -i bilingual_podcast_videos/260530/26698404020/0001-0001-nomura-xcmg-000425-industry-upcycle-meets-operational-improvement-2605/podcast_en.wav -c:v libx264 -preset medium -crf 23 -c:a aac -b:a 160k -shortest bilingual_podcast_videos/260530/26698404020/0001-0001-nomura-xcmg-000425-industry-upcycle-meets-operational-improvement-2605/podcast_mixed_bilingual_explainer.mp4
+$ ffmpeg -y -i bilingual_podcast_videos/260530/26698404020/0001-0001-nomura-xcmg-000425-industry-upcycle-meets-operational-improvement-2605/podcast_mixed_bilingual_explainer.mp4 -map 0:a:0 -vn -c:a copy bilingual_podcast_videos/260530/26698404020/0001-0001-nomura-xcmg-000425-industry-upcycle-meets-operational-improvement-2605/podcast_mixed_bilingual_audio.m4a
+Generated bilingual podcast/video outputs for 1 report folders
