@@ -15,6 +15,7 @@ DEFAULT_ROOTS = [
     "bank_report_catalogs",
     "market_view_summaries",
     "bilingual_podcast_videos",
+    "kc_translated_reports",
 ]
 
 
