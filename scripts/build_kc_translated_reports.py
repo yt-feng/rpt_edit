@@ -65,6 +65,8 @@ EMAIL_RE = re.compile(r"[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}", re.I)
 PHONE_RE = re.compile(r"(?:\+?\d[\d\s().-]{7,}\d)")
 TABLE_LINE_RE = re.compile(r"^\s*\|.*\|\s*$")
 TABLE_SEP_RE = re.compile(r"^\s*\|?\s*:?-{3,}:?\s*(\|\s*:?-{3,}:?\s*)+\|?\s*$")
+AUTHOR_NAME_RE = re.compile(r"^[A-Z][A-Za-z.'-]+(?:\s+[A-Z][A-Za-z.'-]+){1,3}$")
+COPYRIGHT_RE = re.compile(r"(?:©|copyright|all rights reserved|no redistribution|without .*written permission)", re.I)
 DISCLOSURE_RE = re.compile(
     r"^\s*(?:#+\s*)?(?:"
     r"important disclosures?|disclosure appendix|disclosures?|disclaimer|"
@@ -211,6 +213,8 @@ def is_noise_line(line: str) -> bool:
         return False
     if EMAIL_RE.search(text) or PHONE_RE.search(text):
         return True
+    if COPYRIGHT_RE.search(text):
+        return True
     if NOISE_LINE_RE.search(text):
         return True
     if TABLE_LINE_RE.match(text) or TABLE_SEP_RE.match(text):
@@ -219,6 +223,8 @@ def is_noise_line(line: str) -> bool:
         return True
     # Drop obvious name/title-only author lines in the front matter.
     if len(text) < 45 and re.search(r"\b(?:Ph\.?D\.?|CFA|CPA|Analyst|Strategist)\b", text, re.I):
+        return True
+    if len(text) < 45 and AUTHOR_NAME_RE.match(text) and not re.search(r"\b(?:PMI|Source|Figure|Exhibit|Industry|Index)\b", text):
         return True
     return False
 
@@ -401,8 +407,9 @@ def translate_chunk(chunk: str, args: argparse.Namespace, chunk_index: int, chun
 2. 必须原样保留所有形如 [[KC_IMAGE_001]] 的图片占位符，不能改编号、不能删除。
 3. 不要摘要，不要扩写，不要增加原文没有的信息。
 4. 如果仍出现作者姓名、邮箱、电话、投行免责声明、评级分布、法律披露，请删除。
-5. 公司名、产品名、股票代码可保留英文；分析逻辑、结论、图表标题和注释翻译成自然中文。
-6. 只输出译文 Markdown，不要输出代码块，不要解释。
+5. 投行名不要作为标题或署名露出；例如 “CITI'S TAKE” 译为“核心观点”，不要译为“Citi观点”。
+6. 公司名、产品名、股票代码可保留英文；分析逻辑、结论、图表标题和注释翻译成自然中文。
+7. 只输出译文 Markdown，不要输出代码块，不要解释。
 
 片段：{chunk_index}/{chunk_total}
 
