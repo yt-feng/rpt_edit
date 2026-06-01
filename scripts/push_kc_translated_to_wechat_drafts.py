@@ -642,8 +642,6 @@ def main() -> int:
         articles = []
         for item in group:
             article = dict(item["article"])
-            if len(group) == 1:
-                article["digest"] = item["digest"]
             articles.append(article)
         payload_path = output_dir / f"draft_payload_{draft_index:02d}.json"
         write_json(payload_path, {"articles": articles})
