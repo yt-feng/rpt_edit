@@ -30,7 +30,10 @@ import requests
 BRAND = "KC桌面——外资精译"
 AUTHOR = "KC桌面"
 BOTTOM_DISCLAIMER = "For informational purposes only. Not investment advice."
-WECHAT_TITLE_MAX_BYTES = 64
+DISPLAY_TITLE_MAX_CHARS = 64
+WECHAT_AUTHOR_MAX_BYTES = 20
+WECHAT_DIGEST_MAX_BYTES = 120
+WECHAT_TITLE_MAX_BYTES = 32
 DATE_DIR_RE = re.compile(r"^\d{6,8}$")
 IMAGE_TOKEN_RE = re.compile(r"\[\[KC_IMAGE_(\d{3})\]\]")
 MD_IMAGE_RE = re.compile(r"!\[([^\]]*)\]\(([^\)]+)\)")
@@ -140,18 +143,18 @@ def title_from_markdown(markdown: str, fallback: str) -> str:
         if len(headings) >= 2:
             break
     if not headings:
-        return truncate_utf8_bytes(fallback, WECHAT_TITLE_MAX_BYTES)
+        return truncate_chars(fallback, DISPLAY_TITLE_MAX_CHARS)
     if len(headings) == 1:
-        return truncate_utf8_bytes(headings[0], WECHAT_TITLE_MAX_BYTES)
+        return truncate_chars(headings[0], DISPLAY_TITLE_MAX_CHARS)
     combined = f"{headings[0]}：{headings[1]}"
-    return truncate_utf8_bytes(combined, WECHAT_TITLE_MAX_BYTES)
+    return truncate_chars(combined, DISPLAY_TITLE_MAX_CHARS)
 
 
 def digest_from_markdown(markdown: str) -> str:
     for raw in markdown.splitlines():
         line = strip_markdown_markup(raw)
         if len(line) >= 40 and not TRAILING_DISCLOSURE_RE.search(line):
-            return truncate_chars(line, 96)
+            return truncate_utf8_bytes(line, WECHAT_DIGEST_MAX_BYTES)
     return ""
 
 
@@ -504,6 +507,7 @@ def build_article(
     if isinstance(status, dict):
         fallback_title = str(status.get("title") or fallback_title)
     title = title_from_markdown(markdown, fallback_title)
+    wechat_title = truncate_utf8_bytes(title, WECHAT_TITLE_MAX_BYTES)
     figure_paths = load_figure_paths(report_dir)
 
     tokens = []
@@ -545,8 +549,8 @@ def build_article(
 
     article: dict[str, Any] = {
         "article_type": "news",
-        "title": title,
-        "author": truncate_chars(args.author, 16),
+        "title": wechat_title,
+        "author": truncate_utf8_bytes(args.author, WECHAT_AUTHOR_MAX_BYTES),
         "digest": "",
         "content": content,
         "thumb_media_id": thumb_media_id,
@@ -560,6 +564,7 @@ def build_article(
         "report_dir": str(report_dir),
         "translated_markdown": str(translated_path),
         "title": title,
+        "wechat_title": wechat_title,
         "digest": digest_from_markdown(markdown),
         "article": article,
         "cover_image": str(cover_image),
@@ -657,6 +662,7 @@ def main() -> int:
                 "article_count": len(articles),
                 "payload": str(payload_path),
                 "titles": [item["title"] for item in group],
+                "wechat_titles": [item["wechat_title"] for item in group],
             }
         )
         log(f"Draft {draft_index}: articles={len(articles)} media_id={media_id}")
@@ -671,6 +677,7 @@ def main() -> int:
         "articles": [
             {
                 "title": item["title"],
+                "wechat_title": item["wechat_title"],
                 "report_dir": item["report_dir"],
                 "content_chars": item["content_chars"],
                 "inline_image_count": len(item["inline_images"]),
