@@ -30,6 +30,7 @@ import requests
 BRAND = "KC桌面——外资精译"
 AUTHOR = "KC桌面"
 BOTTOM_DISCLAIMER = "For informational purposes only. Not investment advice."
+WECHAT_TITLE_MAX_BYTES = 64
 DATE_DIR_RE = re.compile(r"^\d{6,8}$")
 IMAGE_TOKEN_RE = re.compile(r"\[\[KC_IMAGE_(\d{3})\]\]")
 MD_IMAGE_RE = re.compile(r"!\[([^\]]*)\]\(([^\)]+)\)")
@@ -71,6 +72,27 @@ def truncate_chars(text: str, max_chars: int) -> str:
     if len(text) <= max_chars:
         return text
     return text[: max(0, max_chars - 1)].rstrip() + "…"
+
+
+def truncate_utf8_bytes(text: str, max_bytes: int, suffix: str = "…") -> str:
+    text = normalize_space(text)
+    if len(text.encode("utf-8")) <= max_bytes:
+        return text
+
+    suffix_bytes = suffix.encode("utf-8")
+    budget = max_bytes - len(suffix_bytes)
+    if budget <= 0:
+        return text.encode("utf-8")[:max_bytes].decode("utf-8", errors="ignore")
+
+    kept: list[str] = []
+    used = 0
+    for char in text:
+        size = len(char.encode("utf-8"))
+        if used + size > budget:
+            break
+        kept.append(char)
+        used += size
+    return "".join(kept).rstrip() + suffix
 
 
 def latest_date_dir(root: Path) -> Path:
@@ -118,11 +140,11 @@ def title_from_markdown(markdown: str, fallback: str) -> str:
         if len(headings) >= 2:
             break
     if not headings:
-        return truncate_chars(fallback, 32)
+        return truncate_utf8_bytes(fallback, WECHAT_TITLE_MAX_BYTES)
     if len(headings) == 1:
-        return truncate_chars(headings[0], 32)
+        return truncate_utf8_bytes(headings[0], WECHAT_TITLE_MAX_BYTES)
     combined = f"{headings[0]}：{headings[1]}"
-    return truncate_chars(combined, 32)
+    return truncate_utf8_bytes(combined, WECHAT_TITLE_MAX_BYTES)
 
 
 def digest_from_markdown(markdown: str) -> str:
