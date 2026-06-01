@@ -59,6 +59,19 @@ on:
         description: "Number of KC translated Chinese PDF reports to render after shard generation. 0 disables it."
         required: true
         default: "10"
+      wechat_draft_upload:
+        description: "Upload KC translated reports into WeChat Official Account drafts. Requires WECHAT_MP_APPID/WECHAT_MP_APPSECRET."
+        required: true
+        type: boolean
+        default: false
+      wechat_draft_articles_per_draft:
+        description: "Number of articles in each WeChat draft item."
+        required: true
+        default: "9"
+      wechat_draft_max_inline_images:
+        description: "Max chart images uploaded into each WeChat draft article body."
+        required: true
+        default: "28"
       commit_results:
         description: "Commit each completed shard and final split ZIPs to the repo"
         required: true
@@ -96,6 +109,9 @@ jobs:
       community_cta: ${{ steps.vars.outputs.community_cta }}
       podcast_minutes: ${{ steps.vars.outputs.podcast_minutes }}
       translated_report_count: ${{ steps.vars.outputs.translated_report_count }}
+      wechat_draft_upload: ${{ steps.vars.outputs.wechat_draft_upload }}
+      wechat_draft_articles_per_draft: ${{ steps.vars.outputs.wechat_draft_articles_per_draft }}
+      wechat_draft_max_inline_images: ${{ steps.vars.outputs.wechat_draft_max_inline_images }}
       commit_results: ${{ steps.vars.outputs.commit_results }}
     steps:
       - name: Resolve workflow inputs
@@ -115,6 +131,9 @@ jobs:
           echo "community_cta=${{ github.event.inputs.community_cta || '欢迎来星球微信群里继续讨论' }}" >> "$GITHUB_OUTPUT"
           echo "podcast_minutes=${{ github.event.inputs.podcast_minutes || '5' }}" >> "$GITHUB_OUTPUT"
           echo "translated_report_count=${{ github.event.inputs.translated_report_count || '10' }}" >> "$GITHUB_OUTPUT"
+          echo "wechat_draft_upload=${{ github.event.inputs.wechat_draft_upload || 'false' }}" >> "$GITHUB_OUTPUT"
+          echo "wechat_draft_articles_per_draft=${{ github.event.inputs.wechat_draft_articles_per_draft || '9' }}" >> "$GITHUB_OUTPUT"
+          echo "wechat_draft_max_inline_images=${{ github.event.inputs.wechat_draft_max_inline_images || '28' }}" >> "$GITHUB_OUTPUT"
           echo "commit_results=${{ github.event.inputs.commit_results || 'true' }}" >> "$GITHUB_OUTPUT"
       - name: Print resolved plan
         run: |
@@ -441,3 +460,62 @@ jobs:
         if: ${{ needs.resolve-inputs.outputs.commit_results == 'true' }}
         run: |
           bash scripts/commit_output_dir.sh "$KC_TRANSLATED_DIR" "Generate KC translated report PDFs ${{ needs.select-macro-reports.outputs.latest_folder }}" 8
+
+  push-kc-translated-wechat-drafts:
+    needs: [resolve-inputs, select-macro-reports, build-kc-translated-reports]
+    if: ${{ success() && needs.resolve-inputs.outputs.translated_report_count != '0' && needs.resolve-inputs.outputs.wechat_draft_upload == 'true' }}
+    runs-on: [self-hosted, linux, x64, wechat-draft]
+    timeout-minutes: 45
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Download KC translated reports
+        uses: actions/download-artifact@v4
+        with:
+          name: kc-translated-reports-${{ needs.select-macro-reports.outputs.latest_folder }}-${{ github.run_id }}
+          path: .
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: "pip"
+
+      - name: Install Python dependencies
+        run: |
+          pip install -r requirements.txt
+
+      - name: Upload KC translated reports to WeChat drafts
+        env:
+          WECHAT_MP_APPID: ${{ secrets.WECHAT_MP_APPID }}
+          WECHAT_MP_APPSECRET: ${{ secrets.WECHAT_MP_APPSECRET }}
+        run: |
+          set -o pipefail
+          DATE_FOLDER="${{ needs.select-macro-reports.outputs.latest_folder }}"
+          MAX_ARTICLES="${{ needs.resolve-inputs.outputs.translated_report_count }}"
+          echo "::notice::Uploading $MAX_ARTICLES KC translated reports to WeChat drafts from kc_translated_reports/$DATE_FOLDER"
+          python scripts/push_kc_translated_to_wechat_drafts.py \
+            --translated-root "kc_translated_reports" \
+            --date-folder "$DATE_FOLDER" \
+            --output-root "wechat_drafts" \
+            --max-articles "$MAX_ARTICLES" \
+            --articles-per-draft "${{ needs.resolve-inputs.outputs.wechat_draft_articles_per_draft }}" \
+            --max-inline-images "${{ needs.resolve-inputs.outputs.wechat_draft_max_inline_images }}" 2>&1 | tee wechat_drafts_progress.log
+          echo "WECHAT_DRAFT_DIR=wechat_drafts/$DATE_FOLDER" >> "$GITHUB_ENV"
+
+      - name: Upload WeChat draft summary artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: kc-translated-wechat-drafts-${{ needs.select-macro-reports.outputs.latest_folder }}-${{ github.run_id }}
+          path: |
+            ${{ env.WECHAT_DRAFT_DIR }}
+            wechat_drafts_progress.log
+          if-no-files-found: error
+
+      - name: Commit WeChat draft summaries
+        if: ${{ needs.resolve-inputs.outputs.commit_results == 'true' }}
+        run: |
+          bash scripts/commit_output_dir.sh "$WECHAT_DRAFT_DIR" "Generate KC translated WeChat draft payloads ${{ needs.select-macro-reports.outputs.latest_folder }}" 8

@@ -10,8 +10,9 @@
 2. 使用 MinerU 解析 PDF 文本和图表。
 3. 使用 DeepSeek 生成小红书、微信、知乎、闲鱼等文案。
 4. 对所有公开文案做投行名称脱敏、敏感词检测和合规改写。
-5. 输出小红书卡片图、微信/知乎/闲鱼文案、市场观点 PDF、待发布 ZIP 包。
-6. 需要视频测试时，生成中文双男声 podcast 和竖屏讲解视频。
+5. 输出小红书卡片图、微信/知乎/闲鱼文案、市场观点 PDF、KC 中文精译 PDF、待发布 ZIP 包。
+6. 可选把 KC 中文精译稿转成微信公众号草稿箱图文，一组草稿默认 9 篇文章。
+7. 需要视频测试时，生成中文双男声 podcast 和竖屏讲解视频。
 
 当前默认只使用 DeepSeek：`DEEPSEEK_API_KEY`。不使用 `OPENAI_API_KEY` 或 `OPENAI_SB_API_KEY`。
 
@@ -24,6 +25,10 @@
 | `DROPBOX_APP_KEY` | Dropbox API |
 | `DROPBOX_APP_SECRET` | Dropbox API |
 | `DROPBOX_REFRESH_TOKEN` | Dropbox refresh token，用于读取 `/zip_backup` |
+| `WECHAT_MP_APPID` | 可选，微信公众号草稿上传用 AppID |
+| `WECHAT_MP_APPSECRET` | 可选，微信公众号草稿上传用 AppSecret |
+
+微信公众号草稿上传还依赖公众号后台 IP 白名单。GitHub-hosted runner 的出口 IP 可能变化，所以正式上传失败时优先检查微信返回的 `40164 invalid ip not in whitelist`。`dry_run` 模式不需要这两个 secret，也不会调用微信接口。
 
 KC Desk Notes / Cloudflare R2 额外需要：
 
@@ -260,7 +265,47 @@ https://<worker>/calc?id=<report_id>&key=<CALC_KEY>
 
 如果需要，也可以继续使用 `KC_DESK_DOWNLOAD_PASSWORD` 作为全局备用密码。
 
-### 3.6 Legacy repo-local PDF flow
+### 3.6 KC translated reports and WeChat drafts
+
+相关文件：
+
+```text
+.github/workflows/kc-translated-reports-test.yml
+.github/workflows/kc-translated-wechat-draft-test.yml
+scripts/build_kc_translated_reports.py
+scripts/push_kc_translated_to_wechat_drafts.py
+```
+
+用途：
+
+- 从 `xhs_notes/dropbox/<日期>/.../source_mineru.md` 选取报告，清理原报告 logo、作者、页脚免责声明和披露段落。
+- 用 DeepSeek 翻译成中文正文，保留正文图表，渲染为带 **KC桌面——外资精译** 品牌的 PDF。
+- 可选把 `kc_translated_reports/<日期>/<报告>/translated.md` 转成微信公众号图文 HTML，正文图片先走微信 `uploadimg`，封面走永久图片素材，再调用 `draft/add` 创建草稿。
+- 草稿分组默认 `articles_per_draft=9`。每天默认翻译 10 篇时，会形成 9+1 两个草稿素材。
+
+主流程入口：
+
+- `.github/workflows/dropbox-latest-pdf-to-xhs-sharded.yml` 的 `translated_report_count` 默认 `10`。
+- `wechat_draft_upload` 默认 `false`，开启后在翻译 PDF job 成功后上传公众号草稿。
+- `wechat_draft_articles_per_draft` 默认 `9`。
+- `wechat_draft_max_inline_images` 默认 `28`。
+
+测试方式：
+
+- 只测翻译 PDF：Actions → **KC translated reports PDF test**。
+- 只测公众号草稿 payload：Actions → **KC translated WeChat draft test**，默认 `dry_run=true`，只生成 `wechat_drafts/<日期>/draft_payload_*.json` 和 summary，不调用微信 API。
+- 确认 secret 和 IP 白名单可用后，把 `dry_run=false` 才会真正写入公众号草稿箱。
+
+输出目录：
+
+```text
+kc_translated_reports/<日期>/<报告>/translated.md
+kc_translated_reports/<日期>/<报告>/kc_translated_report_XX.pdf
+wechat_drafts/<日期>/draft_payload_01.json
+wechat_drafts/<日期>/wechat_draft_summary.json
+```
+
+### 3.7 Legacy repo-local PDF flow
 
 说明文档：`docs/pdf-to-xhs-workflow.md`
 
@@ -290,6 +335,8 @@ xhs_notes/<报告文件夹>/
 | `scripts/sensitive_content_guard.py` | 文案敏感词检测、本地替换、DeepSeek 改写 |
 | `scripts/package_publish_ready_outputs.py` | 打待发布 ZIP，过滤 raw/prompt/log/json/status，md 改 txt，分卷压缩 |
 | `scripts/prune_generated_date_dirs.py` | 清理重型生成目录，只保留最新日期文件夹 |
+| `scripts/build_kc_translated_reports.py` | 从 MinerU 结果生成 KC 中文精译 Markdown 和 PDF |
+| `scripts/push_kc_translated_to_wechat_drafts.py` | 把 KC 中文精译 Markdown 转成公众号草稿图文，支持 dry-run |
 | `scripts/build_market_views_pdf.py` | 生成市场观点汇总结构化 JSON 和 LaTeX 源文件 |
 | `scripts/render_market_views_reportlab_pdf.py` | 用 ReportLab 快速渲染市场观点 PDF |
 | `scripts/select_test_pdf.py` | 测试 podcast/video 时选择 5 页以上 PDF |
@@ -382,6 +429,8 @@ publish_ready_zips/
 bank_report_catalogs/
 market_view_summaries/
 bilingual_podcast_videos/
+kc_translated_reports/
+wechat_drafts/
 ```
 
 本地修代码时不要用旧的本地生成目录覆盖远端。合并或 rebase 时的默认策略：

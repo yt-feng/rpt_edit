@@ -16,6 +16,7 @@ DEFAULT_ROOTS = [
     "market_view_summaries",
     "bilingual_podcast_videos",
     "kc_translated_reports",
+    "wechat_drafts",
 ]
 
 

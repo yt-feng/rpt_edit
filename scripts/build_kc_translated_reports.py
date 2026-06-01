@@ -72,6 +72,7 @@ DISCLOSURE_RE = re.compile(
     r"^\s*(?:#+\s*)?(?:"
     r"important disclosures?|disclosure appendix|disclosures?|disclaimer|"
     r"analyst certification|regulatory disclosures?|required disclosures?|"
+    r"disclosure section|important disclosure information|"
     r"conflicts? of interest|ratings definitions?|legal entity disclosures?|"
     r"global research disclosures?|distribution of ratings"
     r")\b",
@@ -80,12 +81,18 @@ DISCLOSURE_RE = re.compile(
 DISCLOSURE_BODY_RE = re.compile(
     r"(?:analysts? are compensated|to our readers in|this publication is being distributed|"
     r"registered with the|authorised and regulated|registration granted by sebi|"
-    r"investments in securities market are subject to market risks)",
+    r"investments in securities market are subject to market risks|"
+    r"does and seeks to do business with companies covered|"
+    r"conflict of interest that could affect the objectivity|"
+    r"analyst certification and other important disclosures|"
+    r"MS Disclosure Website|investment representative)",
     re.I,
 )
 NOISE_LINE_RE = re.compile(
     r"(?:global investment research|equity research|research analyst|"
-    r"please see important disclosures|continued on (?:the )?next page)",
+    r"please see important disclosures|continued on (?:the )?next page|"
+    r"MS ASIA LIMITED|Industry View|^Attractive$|"
+    r"related report:)",
     re.I,
 )
 
@@ -180,7 +187,7 @@ def resolve_image_path(markdown_path: Path, image_ref: str) -> Path | None:
 def find_disclosure_start(lines: list[str]) -> int:
     if not lines:
         return 0
-    minimum_index = max(40, len(lines) // 3)
+    minimum_index = max(12, len(lines) // 3)
     for idx, raw in enumerate(lines):
         line = raw.strip()
         if idx < minimum_index:

@@ -1,0 +1,112 @@
+name: KC translated WeChat draft test
+
+on:
+  workflow_dispatch:
+    inputs:
+      date_folder:
+        description: "KC translated report date folder under kc_translated_reports, or latest"
+        required: true
+        default: "latest"
+      max_articles:
+        description: "Number of translated reports to convert into WeChat draft articles"
+        required: true
+        default: "1"
+      article_offset:
+        description: "Skip this many translated report folders before selecting articles"
+        required: true
+        default: "0"
+      articles_per_draft:
+        description: "Number of articles in each WeChat draft item"
+        required: true
+        default: "9"
+      max_inline_images:
+        description: "Max chart images uploaded into each article body"
+        required: true
+        default: "28"
+      dry_run:
+        description: "Build draft payloads without calling WeChat APIs"
+        required: true
+        type: boolean
+        default: true
+      commit_summary:
+        description: "Commit generated draft payload summaries back to repo"
+        required: true
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+
+env:
+  PYTHONUNBUFFERED: "1"
+
+concurrency:
+  group: kc-translated-wechat-draft-test
+  cancel-in-progress: false
+
+jobs:
+  build-wechat-drafts:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Pull latest generated translated reports
+        run: |
+          git fetch --depth=1 origin main
+          git reset --hard origin/main
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: "pip"
+
+      - name: Install Python dependencies
+        run: |
+          pip install -r requirements.txt
+
+      - name: Build or upload WeChat draft payloads
+        env:
+          WECHAT_MP_APPID: ${{ secrets.WECHAT_MP_APPID }}
+          WECHAT_MP_APPSECRET: ${{ secrets.WECHAT_MP_APPSECRET }}
+        run: |
+          DATE_FOLDER="${{ github.event.inputs.date_folder || 'latest' }}"
+          MAX_ARTICLES="${{ github.event.inputs.max_articles || '1' }}"
+          ARTICLE_OFFSET="${{ github.event.inputs.article_offset || '0' }}"
+          ARTICLES_PER_DRAFT="${{ github.event.inputs.articles_per_draft || '9' }}"
+          MAX_INLINE_IMAGES="${{ github.event.inputs.max_inline_images || '28' }}"
+          DRY_RUN="${{ github.event.inputs.dry_run || 'true' }}"
+
+          ARGS=()
+          if [ "$DRY_RUN" = "true" ]; then
+            ARGS+=(--dry-run)
+          fi
+
+          python scripts/push_kc_translated_to_wechat_drafts.py \
+            --translated-root "kc_translated_reports" \
+            --date-folder "$DATE_FOLDER" \
+            --output-root "wechat_drafts" \
+            --max-articles "$MAX_ARTICLES" \
+            --article-offset "$ARTICLE_OFFSET" \
+            --articles-per-draft "$ARTICLES_PER_DRAFT" \
+            --max-inline-images "$MAX_INLINE_IMAGES" \
+            "${ARGS[@]}" 2>&1 | tee wechat_drafts_progress.log
+
+      - name: Upload WeChat draft artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: kc-translated-wechat-drafts-${{ github.run_id }}
+          path: |
+            wechat_drafts
+            wechat_drafts_progress.log
+          if-no-files-found: error
+
+      - name: Commit WeChat draft summaries
+        if: ${{ github.event.inputs.commit_summary == 'true' }}
+        run: |
+          bash scripts/commit_output_dir.sh "wechat_drafts" "Generate KC translated WeChat draft payloads" 8
