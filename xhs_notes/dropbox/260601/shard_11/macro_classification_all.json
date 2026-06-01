@@ -1,0 +1,182 @@
+[
+  {
+    "id": 0,
+    "name": "Bernstein-Global Energy Storage：Battery Weekly 1 June-260601.pdf",
+    "dropbox_path": "/zip_backup/260601/bernstein-global energy storage：battery weekly 1 june-260601.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/bernstein-global energy storage：battery weekly 1 june-260601.pdf",
+    "category": "macro_trend",
+    "score": 0.95,
+    "reason": "全球能源存储行业周报，属于行业趋势",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 1,
+    "name": "Bernstein-MediaTek Inc（2454.TT）MediaTek event takeaway： Cloud now & Edge later-260601.pdf",
+    "dropbox_path": "/zip_backup/260601/bernstein-mediatek inc（2454.tt）mediatek event takeaway： cloud now & edge later-260601.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/bernstein-mediatek inc（2454.tt）mediatek event takeaway： cloud now & edge later-260601.pdf",
+    "category": "company_stock",
+    "score": 0.95,
+    "reason": "明确针对联发科单一公司事件点评",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 2,
+    "name": "GS-BASE METALS ANALYST Copper： Ex~US Tightness Supports Higher Prices-260601.pdf",
+    "dropbox_path": "/zip_backup/260601/GS-base metals analyst copper： ex~us tightness supports higher prices-260601.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/GS-base metals analyst copper： ex~us tightness supports higher prices-260601.pdf",
+    "category": "macro_trend",
+    "score": 0.9,
+    "reason": "铜金属市场分析，关注价格和供需，属于宏观商品趋势",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 3,
+    "name": "GS-BYD CO.（002594）Most affordable urban NOA model， in~house smart driving chip； Buy-260601.pdf",
+    "dropbox_path": "/zip_backup/260601/GS-byd co.（002594）most affordable urban noa model， in~house smart driving chip； buy-260601.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/GS-byd co.（002594）most affordable urban noa model， in~house smart driving chip； buy-260601.pdf",
+    "category": "company_stock",
+    "score": 0.95,
+    "reason": "明确针对比亚迪公司，含评级和目标价",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 4,
+    "name": "GS-Eastroc Beverage （605499）： Announces controlling shareholder’s 12~month plan to purchase HK$100~200mn of H~shares-260601.pdf",
+    "dropbox_path": "/zip_backup/260601/GS-eastroc beverage （605499）： announces controlling shareholder’s 12~month plan to purchase hk$100~200mn of h~shares-260601.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/GS-eastroc beverage （605499）： announces controlling shareholder’s 12~month plan to purchase hk$100~200mn of h~shares-260601.pdf",
+    "category": "company_stock",
+    "score": 0.95,
+    "reason": "明确针对东鹏饮料单一公司公告",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 5,
+    "name": "GS-China International Capital Corp. （3908.HK）： CEO meeting takeaways-260601.pdf",
+    "dropbox_path": "/zip_backup/260601/GS-china international capital corp. （3908.hk）： ceo meeting takeaways-260601.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/GS-china international capital corp. （3908.hk）： ceo meeting takeaways-260601.pdf",
+    "category": "company_stock",
+    "score": 0.95,
+    "reason": "明确针对CICC单一公司会议纪要",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 6,
+    "name": "GS-Ferrari NV （RACE.MI）： Maranello Fieldtrip takeaways-260601.pdf",
+    "dropbox_path": "/zip_backup/260601/GS-ferrari nv （race.mi）： maranello fieldtrip takeaways-260601.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/GS-ferrari nv （race.mi）： maranello fieldtrip takeaways-260601.pdf",
+    "category": "company_stock",
+    "score": 0.95,
+    "reason": "明确针对法拉利单一公司实地考察",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 7,
+    "name": "GS-G10 Consumer Dashboard： May 2026： Real Income Growth Slows in North America-260601.pdf",
+    "dropbox_path": "/zip_backup/260601/GS-g10 consumer dashboard： may 2026： real income growth slows in north america-260601.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/GS-g10 consumer dashboard： may 2026： real income growth slows in north america-260601.pdf",
+    "category": "macro_trend",
+    "score": 0.9,
+    "reason": "G10消费者仪表盘，宏观消费趋势分析",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 8,
+    "name": "GS-Global Metals and Mining： JL Mag Call Feedback； expect RE magnet demand to grow ~10% in 2026， NdPrO price outlook positive-260601.pdf",
+    "dropbox_path": "/zip_backup/260601/GS-global metals and mining： jl mag call feedback； expect re magnet demand to grow ~10% in 2026， ndpro price outlook positive-260601.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/GS-global metals and mining： jl mag call feedback； expect re magnet demand to grow ~10% in 2026， ndpro price outlook positive-260601.pdf",
+    "category": "macro_trend",
+    "score": 0.85,
+    "reason": "全球金属和矿业，涉及稀土磁材行业需求与价格展望",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 9,
+    "name": "GS-Kelun Biotech （6990.HK）：Detailing regimen~changing potential of sac~TMT across 1L wtNSCLC subgroups with detailed Lung05 data-260601.pdf",
+    "dropbox_path": "/zip_backup/260601/GS-kelun biotech （6990.hk）：detailing regimen~changing potential of sac~tmt across 1l wtnsclc subgroups with detailed lung05 data-260601.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/GS-kelun biotech （6990.hk）：detailing regimen~changing potential of sac~tmt across 1l wtnsclc subgroups with detailed lung05 data-260601.pdf",
+    "category": "company_stock",
+    "score": 0.95,
+    "reason": "明确针对科伦博泰单一公司药物数据",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 10,
+    "name": "GS-Lenovo （0992.HK）： Personal AI agent to drive growth ahead； TP up to HK$31； Buy-260601.pdf",
+    "dropbox_path": "/zip_backup/260601/GS-lenovo （0992.hk）： personal ai agent to drive growth ahead； tp up to hk$31； buy-260601.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/GS-lenovo （0992.hk）： personal ai agent to drive growth ahead； tp up to hk$31； buy-260601.pdf",
+    "category": "company_stock",
+    "score": 0.95,
+    "reason": "明确针对联想集团，含目标价和评级",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 11,
+    "name": "GS-Kuaishou Technology （1024.HK）： 1Q26 NDR takeaways： Kling AI strong ARR momentum； AI~led Capex ramp with disciplined ROI； Buy-260601.pdf",
+    "dropbox_path": "/zip_backup/260601/GS-kuaishou technology （1024.hk）： 1q26 ndr takeaways： kling ai strong arr momentum； ai~led capex ramp with disciplined roi； buy-260601.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/GS-kuaishou technology （1024.hk）： 1q26 ndr takeaways： kling ai strong arr momentum； ai~led capex ramp with disciplined roi； buy-260601.pdf",
+    "category": "company_stock",
+    "score": 0.95,
+    "reason": "明确针对快手科技单一公司NDR纪要",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 12,
+    "name": "GS-Summit Therapeutics Inc. （SMMT.US）： Ivo exceeds the overall survival bar in frontline lung cancer-260601.pdf",
+    "dropbox_path": "/zip_backup/260601/GS-summit therapeutics inc. （smmt.us）： ivo exceeds the overall survival bar in frontline lung cancer-260601.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/GS-summit therapeutics inc. （smmt.us）： ivo exceeds the overall survival bar in frontline lung cancer-260601.pdf",
+    "category": "company_stock",
+    "score": 0.95,
+    "reason": "明确针对Summit Therapeutics单一公司",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 13,
+    "name": "GS-Li Auto Inc. 2015.HK）Sequential margin improvement but still loss~making in 2Q26E；Neutral-260601.pdf",
+    "dropbox_path": "/zip_backup/260601/GS-li auto inc. 2015.hk）sequential margin improvement but still loss~making in 2q26e；neutral-260601.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/GS-li auto inc. 2015.hk）sequential margin improvement but still loss~making in 2q26e；neutral-260601.pdf",
+    "category": "company_stock",
+    "score": 0.95,
+    "reason": "明确针对理想汽车单一公司，含评级",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 14,
+    "name": "GS-Schneider Electric （C）： Announces collaboration with SoftBank for 5 GW AI data center buildout-260601.pdf",
+    "dropbox_path": "/zip_backup/260601/GS-schneider electric （c）： announces collaboration with softbank for 5 gw ai data center buildout-260601.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/GS-schneider electric （c）： announces collaboration with softbank for 5 gw ai data center buildout-260601.pdf",
+    "category": "company_stock",
+    "score": 0.9,
+    "reason": "明确针对施耐德电气单一公司合作公告",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 15,
+    "name": "MS-How to Position for Middle East De~Escalation？-260601.pdf",
+    "dropbox_path": "/zip_backup/260601/MS-how to position for middle east de~escalation？-260601.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/MS-how to position for middle east de~escalation？-260601.pdf",
+    "category": "macro_trend",
+    "score": 0.9,
+    "reason": "中东局势缓和下的投资策略，属于宏观主题策略",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 16,
+    "name": "NOM-USD CNY fix model Projection： 6.7661-260601.pdf",
+    "dropbox_path": "/zip_backup/260601/NOM-usd cny fix model projection： 6.7661-260601.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/NOM-usd cny fix model projection： 6.7661-260601.pdf",
+    "category": "macro_trend",
+    "score": 0.9,
+    "reason": "美元人民币汇率模型预测，属于宏观利率/汇率",
+    "classifier": "deepseek"
+  },
+  {
+    "id": 17,
+    "name": "JPM-China Battery & Materials：Two Battery Cycles： Lessons learned and investment strategy for 2H26~2027-260601.pdf",
+    "dropbox_path": "/zip_backup/260601/JPM-china battery & materials：two battery cycles： lessons learned and investment strategy for 2h26~2027-260601.pdf",
+    "local_path": "/home/runner/work/rpt_edit/rpt_edit/_dropbox_latest_pdfs/JPM-china battery & materials：two battery cycles： lessons learned and investment strategy for 2h26~2027-260601.pdf",
+    "category": "macro_trend",
+    "score": 0.95,
+    "reason": "中国电池及材料行业投资策略，属于行业趋势与主题策略",
+    "classifier": "deepseek"
+  }
+]
