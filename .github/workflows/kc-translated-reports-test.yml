@@ -48,10 +48,12 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
-          fetch-depth: 0
+          fetch-depth: 1
 
       - name: Pull latest generated shard outputs
-        run: git pull --rebase origin main
+        run: |
+          git fetch --depth=1 origin main
+          git reset --hard origin/main
 
       - name: Set up Python
         uses: actions/setup-python@v5
