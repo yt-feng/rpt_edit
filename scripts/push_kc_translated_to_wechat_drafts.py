@@ -33,7 +33,8 @@ BOTTOM_DISCLAIMER = "For informational purposes only. Not investment advice."
 DISPLAY_TITLE_MAX_CHARS = 64
 WECHAT_AUTHOR_MAX_BYTES = 20
 WECHAT_DIGEST_MAX_BYTES = 120
-WECHAT_TITLE_MAX_BYTES = 32
+WECHAT_TITLE_MAX_CHARS = 64
+DEFAULT_TRAILING_IMAGE = "prompts/zsxq_img.jpg"
 DATE_DIR_RE = re.compile(r"^\d{6,8}$")
 IMAGE_TOKEN_RE = re.compile(r"\[\[KC_IMAGE_(\d{3})\]\]")
 MD_IMAGE_RE = re.compile(r"!\[([^\]]*)\]\(([^\)]+)\)")
@@ -236,20 +237,21 @@ def footer_html(disclaimer: str) -> str:
     )
 
 
-def compose_limited_html(parts: list[str], footer: str, max_chars: int) -> str:
+def compose_limited_html(parts: list[str], tail_parts: list[str], max_chars: int) -> str:
+    tail = [part for part in tail_parts if part]
     if max_chars <= 0:
-        return "\n".join(part for part in [*parts, footer] if part)
-    full = "\n".join(part for part in [*parts, footer] if part)
+        return "\n".join(part for part in [*parts, *tail] if part)
+    full = "\n".join(part for part in [*parts, *tail] if part)
     if len(full) <= max_chars:
         return full
 
     limited: list[str] = []
     for part in parts:
-        candidate = "\n".join(item for item in [*limited, part, footer] if item)
+        candidate = "\n".join(item for item in [*limited, part, *tail] if item)
         if len(candidate) > max_chars:
             break
         limited.append(part)
-    return "\n".join(part for part in [*limited, footer] if part)
+    return "\n".join(part for part in [*limited, *tail] if part)
 
 
 def markdown_to_wechat_html(
@@ -258,6 +260,7 @@ def markdown_to_wechat_html(
     brand: str,
     image_urls: dict[str, str],
     disclaimer: str,
+    trailing_image_url: str,
     max_chars: int,
 ) -> str:
     parts: list[str] = [brand_header_html(brand, title)]
@@ -326,7 +329,10 @@ def markdown_to_wechat_html(
 
     flush_paragraph()
     flush_list()
-    return compose_limited_html(parts, footer_html(disclaimer), max_chars)
+    tail = [footer_html(disclaimer)]
+    if trailing_image_url:
+        tail.append(image_html(trailing_image_url, alt="KC Desk"))
+    return compose_limited_html(parts, tail, max_chars)
 
 
 def resolve_asset_path(report_dir: Path, raw_path: str) -> Path | None:
@@ -345,6 +351,20 @@ def resolve_asset_path(report_dir: Path, raw_path: str) -> Path | None:
                 Path.cwd() / raw,
             ]
         )
+    for candidate in candidates:
+        if candidate.exists() and candidate.is_file():
+            return candidate
+    return None
+
+
+def resolve_repo_asset_path(raw_path: str) -> Path | None:
+    raw = (raw_path or "").strip()
+    if not raw:
+        return None
+    if raw.startswith("https://github.com/") and "/blob/" in raw:
+        raw = raw.split("/blob/", 1)[1].split("/", 1)[1]
+    path = Path(raw)
+    candidates = [path] if path.is_absolute() else [Path.cwd() / path, path]
     for candidate in candidates:
         if candidate.exists() and candidate.is_file():
             return candidate
@@ -509,6 +529,11 @@ def fake_image_url(report_dir: Path, token: str) -> str:
     return f"https://example.com/wechat-dry-run/{safe}.jpg"
 
 
+def fake_static_image_url(path: str) -> str:
+    safe = quote(path or "trailing-image", safe="")
+    return f"https://example.com/wechat-dry-run/static/{safe}"
+
+
 def build_article(
     report_dir: Path,
     index: int,
@@ -516,6 +541,7 @@ def build_article(
     session: requests.Session | None,
     access_token: str | None,
     output_dir: Path,
+    trailing_image_url: str,
 ) -> dict[str, Any]:
     translated_path = report_dir / "translated.md"
     markdown = translated_path.read_text(encoding="utf-8", errors="ignore")
@@ -524,7 +550,7 @@ def build_article(
     if isinstance(status, dict):
         fallback_title = str(status.get("title") or fallback_title)
     title = title_from_markdown(markdown, fallback_title)
-    wechat_title = truncate_utf8_bytes(title, WECHAT_TITLE_MAX_BYTES)
+    wechat_title = truncate_chars(title, WECHAT_TITLE_MAX_CHARS)
     figure_paths = load_figure_paths(report_dir)
 
     tokens = []
@@ -557,7 +583,15 @@ def build_article(
             raise RuntimeError("session and access_token are required outside dry-run")
         thumb_media_id = upload_cover_material(session, access_token, cover_image, args.timeout)
 
-    content = markdown_to_wechat_html(markdown, title, args.brand, image_urls, args.disclaimer, args.max_content_chars)
+    content = markdown_to_wechat_html(
+        markdown,
+        title,
+        args.brand,
+        image_urls,
+        args.disclaimer,
+        trailing_image_url,
+        args.max_content_chars,
+    )
     if len(content) > args.max_content_chars:
         raise RuntimeError(
             f"WeChat HTML for {report_dir.name} is {len(content)} chars, "
@@ -612,6 +646,7 @@ def main() -> int:
     parser.add_argument("--brand", default=BRAND)
     parser.add_argument("--author", default=AUTHOR)
     parser.add_argument("--disclaimer", default=BOTTOM_DISCLAIMER)
+    parser.add_argument("--trailing-image", default=DEFAULT_TRAILING_IMAGE)
     parser.add_argument("--content-source-url", default="")
     parser.add_argument("--wechat-appid", default=os.getenv("WECHAT_MP_APPID", ""))
     parser.add_argument("--wechat-secret", default=os.getenv("WECHAT_MP_APPSECRET", ""))
@@ -649,8 +684,21 @@ def main() -> int:
         access_token = get_stable_access_token(session, args.wechat_appid, args.wechat_secret, args.timeout)
         log("Fetched WeChat access token")
 
+    trailing_image_url = ""
+    trailing_image_path = resolve_repo_asset_path(args.trailing_image)
+    if args.trailing_image and not trailing_image_path:
+        raise RuntimeError(f"Trailing image not found: {args.trailing_image}")
+    if trailing_image_path:
+        if args.dry_run:
+            trailing_image_url = fake_static_image_url(str(trailing_image_path))
+        else:
+            if session is None or access_token is None:
+                raise RuntimeError("session and access_token are required outside dry-run")
+            trailing_image_url = upload_article_image(session, access_token, trailing_image_path, args.timeout)
+            log(f"Uploaded trailing image: {trailing_image_path}")
+
     built_articles = [
-        build_article(report_dir, idx, args, session, access_token, output_dir)
+        build_article(report_dir, idx, args, session, access_token, output_dir, trailing_image_url)
         for idx, report_dir in enumerate(selected, 1)
     ]
 
@@ -688,6 +736,7 @@ def main() -> int:
         "selected_count": len(selected),
         "articles_per_draft": args.articles_per_draft,
         "draft_count": len(drafts),
+        "trailing_image": str(trailing_image_path) if trailing_image_path else "",
         "drafts": drafts,
         "articles": [
             {
