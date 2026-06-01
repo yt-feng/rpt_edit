@@ -58,6 +58,7 @@ except Exception:  # pragma: no cover
 
 
 BRAND = "KC桌面——外资精译"
+PDF_FOOTER_DISCLAIMER = "For informational purposes only. Not investment advice."
 DATE_DIR_RE = re.compile(r"^\d{6,8}$")
 IMAGE_RE = re.compile(r"!\[[^\]]*\]\(([^\)]+)\)")
 IMAGE_TOKEN_RE = re.compile(r"\[\[KC_IMAGE_(\d{3})\]\]")
@@ -529,7 +530,7 @@ def draw_page_brand(font: str):
         canvas.drawString(1.45 * cm, height - 0.43 * cm, BRAND)
         canvas.setFillColor(colors.HexColor("#777777"))
         canvas.setFont(font, 7)
-        canvas.drawCentredString(width / 2, 0.72 * cm, "仅供学习交流，不构成投资建议。原报告作者、机构 Logo 与免责声明已从译文版式中移除。")
+        canvas.drawCentredString(width / 2, 0.72 * cm, PDF_FOOTER_DISCLAIMER)
         canvas.drawRightString(width - 1.45 * cm, 0.72 * cm, str(doc.page))
         canvas.restoreState()
 
@@ -611,9 +612,6 @@ def render_pdf(translated_markdown: str, figures: list[dict[str, Any]], output_p
             continue
         paragraph_buffer.append(line)
     flush_paragraph(paragraph_buffer, story, styles)
-
-    story.append(Spacer(1, 0.35 * cm))
-    story.append(Paragraph("译文由 DeepSeek 基于 MinerU 解析内容生成，并经自动清洗版式。", styles["KCFootnote"]))
 
     output_pdf.parent.mkdir(parents=True, exist_ok=True)
     doc.build(story, onFirstPage=draw_page_brand(font), onLaterPages=draw_page_brand(font))
