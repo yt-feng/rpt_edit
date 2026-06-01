@@ -415,11 +415,27 @@ def choose_cover_image(report_dir: Path, figure_paths: dict[str, Path], fallback
     return fallback
 
 
-def get_stable_access_token(session: requests.Session, appid: str, secret: str, timeout: int) -> str:
-    response = session.post(
-        "https://api.weixin.qq.com/cgi-bin/stable_token",
-        json={"grant_type": "client_credential", "appid": appid, "secret": secret, "force_refresh": False},
+def post_wechat_json(
+    session: requests.Session,
+    url: str,
+    payload: dict[str, Any],
+    timeout: int,
+) -> requests.Response:
+    body = json.dumps(payload, ensure_ascii=False, separators=(",", ":")).encode("utf-8")
+    return session.post(
+        url,
+        data=body,
+        headers={"Content-Type": "application/json; charset=utf-8"},
         timeout=timeout,
+    )
+
+
+def get_stable_access_token(session: requests.Session, appid: str, secret: str, timeout: int) -> str:
+    response = post_wechat_json(
+        session,
+        "https://api.weixin.qq.com/cgi-bin/stable_token",
+        {"grant_type": "client_credential", "appid": appid, "secret": secret, "force_refresh": False},
+        timeout,
     )
     data = parse_wechat_json(response, "stable_token")
     token = data.get("access_token")
@@ -475,10 +491,11 @@ def upload_cover_material(session: requests.Session, access_token: str, path: Pa
 
 
 def add_draft(session: requests.Session, access_token: str, articles: list[dict[str, Any]], timeout: int) -> str:
-    response = session.post(
+    response = post_wechat_json(
+        session,
         f"https://api.weixin.qq.com/cgi-bin/draft/add?access_token={access_token}",
-        json={"articles": articles},
-        timeout=timeout,
+        {"articles": articles},
+        timeout,
     )
     data = parse_wechat_json(response, "draft/add")
     media_id = data.get("media_id")
