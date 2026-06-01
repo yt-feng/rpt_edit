@@ -55,6 +55,10 @@ on:
         description: "Target length for Chinese and English podcast scripts. Audio/video are disabled here."
         required: true
         default: "5"
+      translated_report_count:
+        description: "Number of KC translated Chinese PDF reports to render after shard generation. 0 disables it."
+        required: true
+        default: "10"
       commit_results:
         description: "Commit each completed shard and final split ZIPs to the repo"
         required: true
@@ -91,6 +95,7 @@ jobs:
       wechat_length: ${{ steps.vars.outputs.wechat_length }}
       community_cta: ${{ steps.vars.outputs.community_cta }}
       podcast_minutes: ${{ steps.vars.outputs.podcast_minutes }}
+      translated_report_count: ${{ steps.vars.outputs.translated_report_count }}
       commit_results: ${{ steps.vars.outputs.commit_results }}
     steps:
       - name: Resolve workflow inputs
@@ -109,6 +114,7 @@ jobs:
           echo "wechat_length=${{ github.event.inputs.wechat_length || '3000' }}" >> "$GITHUB_OUTPUT"
           echo "community_cta=${{ github.event.inputs.community_cta || '欢迎来星球微信群里继续讨论' }}" >> "$GITHUB_OUTPUT"
           echo "podcast_minutes=${{ github.event.inputs.podcast_minutes || '5' }}" >> "$GITHUB_OUTPUT"
+          echo "translated_report_count=${{ github.event.inputs.translated_report_count || '10' }}" >> "$GITHUB_OUTPUT"
           echo "commit_results=${{ github.event.inputs.commit_results || 'true' }}" >> "$GITHUB_OUTPUT"
       - name: Print resolved plan
         run: |
@@ -360,3 +366,78 @@ jobs:
         if: ${{ needs.resolve-inputs.outputs.commit_results == 'true' }}
         run: |
           bash scripts/commit_output_dir.sh "$PACKAGE_DIR" "Package split publish-ready outputs ${{ needs.select-macro-reports.outputs.latest_folder }}" 8
+
+  build-kc-translated-reports:
+    needs: [resolve-inputs, select-macro-reports, package-publish-ready]
+    if: ${{ success() && needs.resolve-inputs.outputs.translated_report_count != '0' }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Pull latest generated shard outputs
+        run: |
+          git fetch --depth=1 origin main
+          git reset --hard origin/main
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: "pip"
+
+      - name: Install Python dependencies
+        run: |
+          pip install -r requirements.txt
+          pip install reportlab
+
+      - name: Install Chinese fonts
+        timeout-minutes: 5
+        continue-on-error: true
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends fonts-noto-cjk
+
+      - name: Build KC translated report PDFs
+        env:
+          DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
+          DEEPSEEK_BASE_URL: ${{ needs.resolve-inputs.outputs.deepseek_base_url }}
+        run: |
+          set -o pipefail
+          DATE_FOLDER="${{ needs.select-macro-reports.outputs.latest_folder }}"
+          MAX_REPORTS="${{ needs.resolve-inputs.outputs.translated_report_count }}"
+          echo "::notice::Building $MAX_REPORTS KC translated report PDF(s) from xhs_notes/dropbox/$DATE_FOLDER"
+          python scripts/build_kc_translated_reports.py \
+            --dropbox-output-root "xhs_notes/dropbox" \
+            --date-folder "$DATE_FOLDER" \
+            --output-root "kc_translated_reports" \
+            --max-reports "$MAX_REPORTS" \
+            --model "${{ needs.resolve-inputs.outputs.model }}" \
+            --deepseek-base-url "${{ needs.resolve-inputs.outputs.deepseek_base_url }}" 2>&1 | tee kc_translated_reports_progress.log
+          echo "KC_TRANSLATED_DIR=kc_translated_reports/$DATE_FOLDER" >> "$GITHUB_ENV"
+
+      - name: Verify translated PDFs exist
+        run: |
+          if ! find "$KC_TRANSLATED_DIR" -name "kc_translated_report_*.pdf" -type f -size +1k | grep -q .; then
+            echo "No rendered kc_translated_report_*.pdf found. Failing the workflow so this is visible."
+            find "$KC_TRANSLATED_DIR" -maxdepth 4 -type f -print || true
+            exit 1
+          fi
+          find "$KC_TRANSLATED_DIR" -name "kc_translated_report_*.pdf" -type f -printf "%s bytes %p\n" | sort -n
+
+      - name: Upload KC translated report artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: kc-translated-reports-${{ needs.select-macro-reports.outputs.latest_folder }}-${{ github.run_id }}
+          path: |
+            ${{ env.KC_TRANSLATED_DIR }}
+            kc_translated_reports_progress.log
+          if-no-files-found: error
+
+      - name: Commit KC translated reports
+        if: ${{ needs.resolve-inputs.outputs.commit_results == 'true' }}
+        run: |
+          bash scripts/commit_output_dir.sh "$KC_TRANSLATED_DIR" "Generate KC translated report PDFs ${{ needs.select-macro-reports.outputs.latest_folder }}" 8
