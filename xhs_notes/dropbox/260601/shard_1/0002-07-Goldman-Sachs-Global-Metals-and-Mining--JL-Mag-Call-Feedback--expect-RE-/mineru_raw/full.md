@@ -1,0 +1,384 @@
+# Global Metals and Mining: JL Mag Call Feedback; expect RE magnet demand to grow $\sim 10\%$ in 2026, NdPrO price outlook positive
+
+We recently held a call with Chinese Rare Earth (RE) high-performance NdFeB magnet producer JL Mag (not covered), to discuss the company's 1Q26 results, Chinese and global RE market and magnet demand, and the company and industry's near-term growth and pricing outlook. The company is the #1 global producer of sintered NdFeB RE magnets, with current installed RE magnet capacity of 40ktpa (expanding to 60ktpa by 2027), and RE magnet product sales of \~26kt in 2025 with \~20% exported.
+
+JL Mag reported their 1Q26 results in April with total revenue increasing by \~16% YoY to \~RMB2bn, with overseas revenue up \~22%, and gross margin expanding by \~6% to \~22%.
+
+# Key takeaways from call
+
+Near-term demand recovery and 2026 outlook: EV demand (JL Mag has >30% global market share in EV drive motors) was soft in 1Q following the post-CNY lull, but management is seeing a pick-up in 2Q magnet orders (April/May) of almost 100% (vs. 1Q), supported by healthy orderbooks from both commercial and EV customers. 3Q and 4Q are expected to be stronger, with magnet capacity utilisation tracking above 90% so far for 2026. Management stated a target of \~10% growth in RE magnet sales in 2026 vs. 2025 (driven mainly by EVs, electric trucks and industrial robots), with a stable gross profit margin, and a high degree of confidence in delivering \~20% RE magnet capacity expansion. The average price of NdPr metals has risen \~50% YoY, and, all else equal, management expects further upward adjustment to RE magnet prices into year-end, with 2H broadly stronger than 1H. Note we visited Chinese rare earth (RE) companies in Ningbo China in Nov 25 and Chinese RE magnet facilities in Jiangxi province in March 25 which showed that global magnet (NdFeB) demand increased \~10% in 2025, implying global NdPrO demand grew by \~8-10ktpa.
+
+End-market demand growth: EV growth is expected to be sustained throughout the year. 1Q26 saw electric trucks and motor manufacturers post higher sales volumes, and the 2Q market has grown \~80% in China (where magnet intensity is higher). For air conditioning, stable growth is expected (after strong growth in 2025) despite a low single-digit decline in 1Q. Wind turbines installations are also increasing, with overseas demand picking up notably following the Iran War and higher oil prices.
+
+# Paul Young
+
++61(2)9321-8302
+
+paul.young1@gs.com
+
+GS Australia Pty Ltd
+
+# Chris Bulgin
+
++61(2)9321-8936 | chris.bulgin@gs.com
+
+GS Australia Pty Ltd
+
+# Kavya Balaji
+
++61(3)9679-1126 | kavya.balaji@gs.com
+
+GS Australia Pty Ltd
+
+☐ Industrial robots (i.e. robotic arms): 1Q sales volumes grew more than 80%, driven by downstream industrial demand in China (+25% QoQ) and orders from semiconductor plants. The segment is expected to grow further in 2Q on both volume and price, and could overtake wind turbines to become the third-largest revenue contributor given its growth trajectory.
+
+\- Pricing mechanism and pass-through: Raw materials account for \~70% of the cost base, and are passed through to end customers under a cost-plus model referencing the NdPr spot price, with a ‘plus’ component reflecting order- and market-specific dynamics. The adjustment mechanism is quarterly, generally with a one-quarter lag for EVs; wind turbine prices are locked in annually, while AC prices are reset monthly. These arrangements are contracted for several years and have been accepted by customers for some time. Wind turbine customers are more price-sensitive, while EVs and ACs are less exposed given the low absolute price of magnets in the bill of materials and the limited availability of substitutes. Management retains a bullish view on continued RE magnet price increases through 2Q.
+
+Upstream supply and NdPrO market backdrop: \~70% of NdPrO supply is sourced from the two major Chinese producers under existing agreements, with the remaining \~30% supplied internally from the company's own recycling plant. According to the company, supply of NdPrO was disrupted in 1Q due to Chinese authorities investigating RE refineries exceeding 2025 production quotas, which triggered a shortage, and a step-up in rare earth pricing during the quarter. JL Mag don't expect NdPrO prices to decline in 2026.
+
+# JL Mag key 1Q26 charts
+
+Exhibit 1: Total 1Q26 revenue increased by \~16% YoY to \~RMB2bn   
+![](images/e94045aae3713da961a056632dc7430353ad1a0a334400abd72e22984858b7db.jpg)
+
+<details>
+<summary>bar</summary>
+
+| Quarter | Value (RMB Million) |
+| :--- | :--- |
+| 25Q1 | 1,754 |
+| 26Q1 | 2,036 |
++16.05%
+</details>
+
+Source: Company data
+
+Exhibit 2: Overseas revenue increased $\sim 22\%$ YoY   
+![](images/269618d026ac8d8ac3dd47b861dce71a3b811668af266df10ed5ebb18ce996a7.jpg)
+
+<details>
+<summary>bar</summary>
+
+| Quarter | Revenue (RMB Million) | Growth (%) |
+|---|---|---|
+| 25Q1 | 312 | 17.76 |
+| 26Q1 | 381 | 18.70 |
+The chart includes a label 'RMB Million' above the bars and a percentage label above it.
+</details>
+
+Source: Company data
+
+Exhibit 3: Gross margins expanded by $\sim 6\%$ to $\sim 22\%$   
+![](images/e8022251e6ecb07dbe4cc027981b85f46d93ca4305ef9a02876b4f49b232bfe6.jpg)
+
+<details>
+<summary>bar</summary>
+
+| Quarter | Value (%) |
+|---|---|
+| 25Q1 | 15.70 |
+| 26Q1 | 21.83 |
++6.13ppts
+</details>
+
+Source: Company data
+
+# China RE trade flow data
+
+Exhibit 4: Chinese NdFeB Exports increased \~5% YoY in 1Q26   
+NdFeB products, annualised (ktpa)   
+![](images/38444eb666edf9d6c343a615f072bffa72ab961a71fbc0b455405ada1c05a46c.jpg)
+
+<details>
+<summary>line</summary>
+
+| Month | 2026 | 2025 | 2024 | 2023 |
+|-------|------|------|------|------|
+| Jan   | 75   | 78   | 63   | 58   |
+| Feb   | 58   | 43   | 40   | 40   |
+| Mar   | 65   | 65   | 50   | 60   |
+| Apr   | 58   | 35   | 58   | 60   |
+| May   | 58   | 15   | 60   | 55   |
+| Jun   | 60   | 40   | 62   | 58   |
+| Jul   | 65   | 70   | 63   | 58   |
+| Aug   | 70   | 75   | 63   | 55   |
+| Sep   | 68   | 72   | 60   | 52   |
+| Oct   | 65   | 70   | 58   | 48   |
+| Nov   | 70   | 75   | 60   | 50   |
+| Dec   | 72   | 73   | 68   | 52   |
+</details>
+
+Source: WIND, GS Global Investment Research
+
+# GS NdPrO supply/demand
+
+Exhibit 6: We forecast NdPrO deficits over the medium term to 2027 and perhaps beyond...   
+GS Rare Earth (NdPrO) SD model - net market balance   
+![](images/68306d19c7297cf506b927e5e072f98cf84b3627d74a315e06708d9edaa86f8e.jpg)
+
+<details>
+<summary>bar</summary>
+
+NdPrO (kt)
+| Year | Net balance - New GS forecast (Sep'25) (kt) |
+| :--- | :--- |
+| 2024 | 5.3 |
+| 2025E | 0.4 |
+| 2026E | (3.2) |
+| 2027E | (2.1) |
+| 2028E | 1.1 |
+| 2029E | 0.2 |
+| 2030E | (1.6) |
+| 2031E | (2.3) |
+| 2032E | (5.0) |
+| 2033E | (8.4) |
+| 2034E | (12.1) |
+| 2035E | (15.6) |
+</details>
+
+Source: Company data, GS Global Investment Research, Wood Mackenzie
+
+Exhibit 5: China's NdFeB alloy magnet export prices increased in 1Q26, reflecting higher RE oxide prices.   
+NdFeB Magnet Export Prices (US\$/kg)   
+![](images/c9f1787a54edb4ffd906954933c0fd0afcc6000a38006455d93460506c0abc64.jpg)
+
+<details>
+<summary>line</summary>
+
+| Month | 2023 (US$/kg) | 2024 (US$/kg) | 2025 (US$/kg) | 2026 (US$/kg) |
+|---|---|---|---|---|
+| Jan | 46 | 31 | 26 | 33 |
+| Feb | 49 | 29 | 25 | 34 |
+| Mar | 48 | 29 | 25 | 35 |
+| Apr | 41 | 27 | 26 | 34 |
+| May | 45 | 26 | 26 | 34 |
+| Jun | 40 | 26 | 26 | 34 |
+| Jul | 37 | 25 | 27 | 34 |
+| Aug | 34 | 25 | 27 | 34 |
+| Sep | 30 | 25 | 28 | 34 |
+| Oct | 28 | 26 | 30 | 34 |
+| Nov | 26 | 25 | 30 | 34 |
+| Dec | 26 | 25 | 31 | 34 |
+</details>
+
+Blank RE magnets   
+Source: WIND, GS Global Investment Research
+
+Exhibit 7: Growth in Electric Vehicles (EV), robotics, variable frequency air conditioning (VFAC), and mobile phones/consumer electronics should nearly double NdPrO demand by 2035   
+NdPrO demand by source (kt)   
+![](images/a22fdd255d02e5f6601608dd699eff7142ef17963b242295b4c8f4729ee54538.jpg)
+
+<details>
+<summary>bar_stacked</summary>
+
+| Year | Magnet - Other (kt NdPr) | Magnet - Consumer electronics (kt NdPr) | Magnet - Other automobile (kt NdPr) | Magnet - EV Drivetrain (kt NdPr) | Total others (kt NdPr) | Magnet - Renewable energy / WIND (kt NdPr) |
+|---|---|---|---|---|---|---|
+| 2018 | 24 | 10 | 7 | 3 | 4 | 1 |
+| 2019 | 24 | 10 | 7 | 3 | 4 | 1 |
+| 2020 | 22 | 10 | 8 | 4 | 5 | 1 |
+| 2021 | 23 | 10 | 9 | 6 | 6 | 1 |
+| 2022 | 23 | 10 | 10 | 8 | 7 | 1 |
+| 2023 | 23 | 10 | 11 | 10 | 8 | 1 |
+| 2024 | 24 | 10 | 12 | 15 | 9 | 1 |
+| 2025E | 25 | 10 | 13 | 25 | 10 | 1 |
+| 2026E | 26 | 10 | 14 | 35 | 11 | 1 |
+| 2027E | 27 | 10 | 15 | 40 | 12 | 1 |
+| 2028E | 28 | 10 | 16 | 45 | 13 | 1 |
+| 2029E | 29 | 10 | 17 | 50 | 14 | 1 |
+| 2030E | 30 | 10 | 18 | 55 | 15 | 1 |
+| 2031E | 31 | 10 | 19 | 60 | 16 | 1 |
+| 2032E | 32 | 10 | 20 | 65 | 17 | 1 |
+| 2033E | 33 | 10 | 21 | 70 | 18 | 1 |
+| 2034E | 34 | 10 | 22 | 75 | 19 | 1 |
+| 2035E | 35 | 10 | 23 | 80 | 20 | 1 |
+The chart displays a stacked area chart with the x-axis labeled 'Year' and y-axis labeled 'Production (kt NdPr)' in units of kt NdPr. The legend indicates six categories: 'Magnet - Other', 'Magnet - Other automobile', 'Total others', 'Magnet - EV Drivetrain', 'Magnet - Renewable energy / WIND', and an unlabeled top layer. The data is already in English. There are no trends or comparisons since only one series is present.
+</details>
+
+Magnets are NdFeB   
+Source: Company data, GS Global Investment Research, Wood Mackenzie
+
+Exhibit 8: LYC, MP Materials, ILU and emerging companies to drive supply growth over the next 5-years   
+NdPrO supply by source and total global demand (kt)   
+![](images/6782ed30140bff7813a29d6aef13cc4e73fae49d29d5522e96416ef3b7ba428d.jpg)  
+Supply volumes from mineral to oxide are recovery adjusted at $85 - 90\%$   
+Source: Company data, GS Global Investment Research, Bloomberg, Wood Mackenzie
+
+Exhibit 9: We expect global NdPrO demand to increase by \~8ktpa in 2026   
+Global NdPrO demand (kt) by end segment   
+![](images/e3b6dac3ff3ad5fb3af960ea03c6b6af0c7e94f127ad63b6a842913c0a7f5538.jpg)  
+NdPrO demand calculated using 30–35% NdPr content in NdFeB magnet and 87.4% oxide to metal conversion   
+Source: Data compiled by GS Global Investment Research, Wood Mackenzie
+
+Exhibit 10: GS Rare Earth (NdPrO) SD model 
+
+<table><tr><td>&#x27;000 tonnes</td><td>2018</td><td>2019</td><td>2020</td><td>2021</td><td>2022</td><td>2023</td><td>2024</td><td>2025E</td><td>2026E</td><td>2027E</td><td>2028E</td><td>2029E</td><td>2030E</td><td>2031E</td><td>2032E</td><td>2033E</td><td>2034E</td><td>2035E</td></tr><tr><td colspan="8"></td><td colspan="11"></td></tr><tr><td>Batteries, Alloys, Catalysts, Ceramics etc</td><td>2.0</td><td>2.0</td><td>1.8</td><td>1.9</td><td>1.7</td><td>1.7</td><td>1.7</td><td>1.7</td><td>1.6</td><td>1.5</td><td>1.5</td><td>1.5</td><td>1.5</td><td>1.5</td><td>1.5</td><td>1.5</td><td>1.5</td><td>1.5</td></tr><tr><td colspan="19">Magnets (demand from NdFeB)</td></tr><tr><td>Air conditioning (incl VFAC)</td><td>4.5</td><td>4.9</td><td>4.5</td><td>4.9</td><td>5.6</td><td>6.4</td><td>7.2</td><td>7.8</td><td>8.3</td><td>8.8</td><td>9.3</td><td>9.9</td><td>10.3</td><td>10.7</td><td>11.1</td><td>11.6</td><td>12.0</td><td>12.5</td></tr><tr><td>Automotive (EVs)</td><td>3.5</td><td>4.0</td><td>6.2</td><td>9.8</td><td>13.1</td><td>16.4</td><td>20.8</td><td>27.3</td><td>32.7</td><td>35.2</td><td>38.0</td><td>41.7</td><td>45.4</td><td>47.5</td><td>50.5</td><td>53.8</td><td>57.7</td><td>61.3</td></tr><tr><td>Automotive - Other</td><td>8.9</td><td>8.9</td><td>8.8</td><td>9.8</td><td>10.3</td><td>11.7</td><td>12.9</td><td>14.3</td><td>14.8</td><td>15.1</td><td>15.6</td><td>15.7</td><td>15.9</td><td>16.0</td><td>16.0</td><td>16.0</td><td>16.1</td><td>16.1</td></tr><tr><td>Other Electrical &amp; Mechanical (incl HDDs and Electric Pumps</td><td>15.2</td><td>14.3</td><td>13.5</td><td>14.5</td><td>14.8</td><td>14.7</td><td>14.8</td><td>15.0</td><td>15.4</td><td>16.2</td><td>16.7</td><td>17.2</td><td>17.7</td><td>18.1</td><td>18.5</td><td>18.9</td><td>19.2</td><td>19.6</td></tr><tr><td>Other transport</td><td>1.9</td><td>2.2</td><td>2.4</td><td>2.7</td><td>2.9</td><td>3.0</td><td>3.3</td><td>3.4</td><td>3.5</td><td>3.5</td><td>3.6</td><td>3.7</td><td>3.8</td><td>3.9</td><td>4.0</td><td>4.0</td><td>4.1</td><td>4.2</td></tr><tr><td>Portable Electronics</td><td>3.3</td><td>3.3</td><td>3.2</td><td>3.2</td><td>2.9</td><td>2.7</td><td>2.6</td><td>2.6</td><td>2.7</td><td>2.7</td><td>2.8</td><td>2.9</td><td>3.0</td><td>3.0</td><td>3.1</td><td>3.2</td><td>3.2</td><td>3.3</td></tr><tr><td>Speakers &amp; Audio</td><td>4.0</td><td>4.3</td><td>4.4</td><td>4.5</td><td>4.2</td><td>4.2</td><td>4.3</td><td>4.6</td><td>4.9</td><td>5.2</td><td>5.6</td><td>6.1</td><td>6.6</td><td>7.2</td><td>7.4</td><td>7.6</td><td>7.8</td><td>7.9</td></tr><tr><td>Robotics (automation and humanoids)</td><td>0.7</td><td>0.9</td><td>1.1</td><td>1.3</td><td>1.5</td><td>1.7</td><td>2.0</td><td>2.3</td><td>2.5</td><td>2.5</td><td>2.6</td><td>2.7</td><td>2.9</td><td>3.0</td><td>3.0</td><td>3.1</td><td>3.2</td><td>3.3</td></tr><tr><td>Wind Energy</td><td>2.4</td><td>2.8</td><td>6.7</td><td>6.1</td><td>3.9</td><td>4.0</td><td>4.3</td><td>4.7</td><td>5.0</td><td>5.4</td><td>5.9</td><td>6.3</td><td>6.7</td><td>7.0</td><td>7.3</td><td>7.7</td><td>8.1</td><td>8.5</td></tr><tr><td>Other</td><td>9.6</td><td>9.6</td><td>7.3</td><td>7.2</td><td>6.7</td><td>5.9</td><td>5.5</td><td>5.5</td><td>5.5</td><td>5.5</td><td>5.5</td><td>5.5</td><td>5.5</td><td>5.5</td><td>5.5</td><td>5.5</td><td>5.5</td><td>5.5</td></tr><tr><td>Total Magnets (demand from NdFeB)</td><td>54.2</td><td>55.2</td><td>57.9</td><td>63.9</td><td>65.9</td><td>70.7</td><td>77.7</td><td>87.4</td><td>95.2</td><td>100.3</td><td>105.7</td><td>111.8</td><td>117.7</td><td>121.8</td><td>126.5</td><td>131.3</td><td>136.9</td><td>142.2</td></tr><tr><td>Inventory movements and other</td><td>0.7</td><td>0.7</td><td>0.7</td><td>0.7</td><td>0.8</td><td>0.8</td><td>0.9</td><td>0.9</td><td>0.9</td><td>0.9</td><td>0.9</td><td>0.9</td><td>0.9</td><td>0.9</td><td>0.9</td><td>0.9</td><td>0.9</td><td>0.9</td></tr><tr><td>Total demand</td><td>56.9</td><td>57.9</td><td>60.4</td><td>66.6</td><td>68.5</td><td>73.3</td><td>80.2</td><td>90.0</td><td>97.7</td><td>102.7</td><td>108.1</td><td>114.2</td><td>120.0</td><td>124.2</td><td>128.8</td><td>133.7</td><td>139.3</td><td>144.6</td></tr><tr><td>% growth</td><td>1%</td><td>2%</td><td>4%</td><td>10%</td><td>3%</td><td>7%</td><td>9%</td><td>12%</td><td>9%</td><td>5%</td><td>5%</td><td>6%</td><td>5%</td><td>3%</td><td>4%</td><td>4%</td><td>4%</td><td>4%</td></tr><tr><td colspan="8">Production</td><td colspan="11"></td></tr><tr><td>Australia</td><td>5.6</td><td>5.6</td><td>4.9</td><td>5.4</td><td>5.8</td><td>6.0</td><td>6.2</td><td>7.5</td><td>8.9</td><td>11.9</td><td>15.3</td><td>15.9</td><td>15.5</td><td>15.6</td><td>15.8</td><td>15.3</td><td>15.3</td><td>15.1</td></tr><tr><td>China</td><td>31.0</td><td>30.2</td><td>29.8</td><td>33.6</td><td>40.5</td><td>44.1</td><td>45.2</td><td>46.9</td><td>47.4</td><td>47.6</td><td>47.9</td><td>48.1</td><td>48.3</td><td>48.6</td><td>48.8</td><td>49.1</td><td>49.3</td><td>49.6</td></tr><tr><td>SE Asia</td><td>0.4</td><td>0.7</td><td>1.2</td><td>1.5</td><td>1.8</td><td>1.6</td><td>2.2</td><td>1.8</td><td>2.1</td><td>2.3</td><td>2.6</td><td>2.6</td><td>2.6</td><td>2.6</td><td>2.6</td><td>2.6</td><td>2.6</td><td>2.6</td></tr><tr><td>North America</td><td>2.3</td><td>3.5</td><td>4.9</td><td>0.1</td><td>0.2</td><td>0.5</td><td>1.6</td><td>2.5</td><td>3.2</td><td>4.4</td><td>6.2</td><td>7.1</td><td>7.9</td><td>7.9</td><td>7.9</td><td>7.9</td><td>7.9</td><td>7.9</td></tr><tr><td>Africa</td><td>0.2</td><td>0.2</td><td>0.4</td><td>0.4</td><td>0.4</td><td>0.5</td><td>0.5</td><td>0.5</td><td>0.5</td><td>0.5</td><td>2.0</td><td>3.9</td><td>5.9</td><td>7.5</td><td>7.5</td><td>7.5</td><td>7.5</td><td>7.5</td></tr><tr><td>Rest-of-World</td><td>0.0</td><td>0.0</td><td>0.4</td><td>0.4</td><td>0.4</td><td>0.4</td><td>0.4</td><td>0.6</td><td>0.6</td><td>0.7</td><td>0.9</td><td>0.9</td><td>0.9</td><td>0.9</td><td>0.9</td><td>0.9</td><td>0.9</td><td>0.9</td></tr><tr><td>Recovered/refined supply</td><td>39.6</td><td>40.2</td><td>41.5</td><td>41.3</td><td>49.0</td><td>53.1</td><td>56.1</td><td>59.8</td><td>62.6</td><td>67.5</td><td>74.8</td><td>78.6</td><td>81.2</td><td>83.1</td><td>83.6</td><td>83.4</td><td>83.6</td><td>83.7</td></tr><tr><td>Recycled</td><td>17.8</td><td>18.6</td><td>21.4</td><td>23.8</td><td>25.0</td><td>25.7</td><td>29.4</td><td>30.6</td><td>31.9</td><td>33.1</td><td>34.5</td><td>35.8</td><td>37.3</td><td>38.8</td><td>40.3</td><td>41.9</td><td>43.6</td><td>45.3</td></tr><tr><td>Total supply</td><td>57.4</td><td>58.8</td><td>62.9</td><td>65.1</td><td>74.0</td><td>78.8</td><td>85.5</td><td>90.4</td><td>94.5</td><td>100.6</td><td>109.2</td><td>114.4</td><td>118.5</td><td>121.9</td><td>123.9</td><td>125.3</td><td>127.2</td><td>129.0</td></tr><tr><td>% growth</td><td>11.8%</td><td>2.4%</td><td>7%</td><td>3%</td><td>14%</td><td>6%</td><td>9%</td><td>6%</td><td>5%</td><td>6%</td><td>9%</td><td>5%</td><td>4%</td><td>3%</td><td>2%</td><td>1%</td><td>1%</td><td>1%</td></tr><tr><td>Net balance</td><td>0.5</td><td>0.9</td><td>2.5</td><td>-1.5</td><td>5.5</td><td>5.5</td><td>5.3</td><td>0.4</td><td>-3.2</td><td>-2.1</td><td>1.1</td><td>0.2</td><td>-1.6</td><td>-2.3</td><td>-5.0</td><td>-8.4</td><td>-12.1</td><td>-15.6</td></tr><tr><td colspan="8"></td><td colspan="11"></td></tr><tr><td colspan="8">Rare Earth prices (US$/kg) - Asian Metal Index (AMI)</td><td colspan="11"></td></tr><tr><td>Praseodymium-Neodymium (NdPrO)</td><td>50</td><td>44</td><td>45</td><td>92</td><td>124</td><td>75</td><td>54</td><td>68</td><td>117</td><td>120</td><td>123</td><td>125</td><td>128</td><td>132</td><td>136</td><td>140</td><td>144</td><td>148</td></tr><tr><td>Dysprosium (DyO)</td><td>177</td><td>234</td><td>261</td><td>410</td><td>382</td><td>329</td><td>256</td><td>232</td><td>512</td><td>734</td><td>746</td><td>757</td><td>769</td><td>792</td><td>816</td><td>840</td><td>866</td><td>891</td></tr><tr><td>Terbium (TbO)</td><td>455</td><td>502</td><td>671</td><td>1,339</td><td>2,046</td><td>1,303</td><td>813</td><td>995</td><td>1,776</td><td>2,627</td><td>2,667</td><td>2,706</td><td>2,746</td><td>2,828</td><td>2,913</td><td>3,001</td><td>3,091</td><td>3,183</td></tr></table>
+
+Source: Company data, GS Global Investment Research, Roskill/Wood Mackenzie, Bloomberg, Ruidow
+
+# Price Target Risks and Methodology - Iluka Resources
+
+Our NAV is A\$10.6/sh and our 12m PT is A\$8.8/sh. Our PT is based on a 50:50 NAV:EV/EBITDA with a 2027 EBITDA target multiple of 8x.
+
+Downside investment risks include: Project permitting/approvals, lower-than-expected mineral sands demand and prices, operational issues, project execution risks (Balranald & Rare Earth projects) and higher-than-expected capex due to industry cost inflation.
+
+# Price Target Risks and Methodology - Lynas Rare Earths Ltd
+
+Our NAV is A\$20.2/sh and our 12m PT is A\$23.5/sh. Our PT is based on a 50:50 NAV:EV/EBITDA with a target multiple of 20x.
+
+Downside risks: Lower RE/NdPrO prices and inability to sign additional higher fixed price contracts, macro risks and lower than expected RE magnet demand, inability to increase production from Kal C&L & LAMP beyond 12ktpa NdPrO, permitting/near-term production risks in Malaysia, project execution & capex risks on the expansion of LAMP, higher opex due to inflation.
+
+# Disclosure Appendix
+
+# Reg AC
+
+We, Paul Young, Chris Bulgin and Kavya Balaji, hereby certify that all of the views expressed in this report accurately reflect our personal views about the subject company or companies and its or their securities. We also certify that no part of our compensation was, is or will be, directly or indirectly, related to the specific recommendations or views expressed in this report.
+
+Unless otherwise stated, the individuals listed on the cover page of this report are analysts in GS' Global Investment Research division.
+
+Contributing Authors: Paul Young GS Australia Pty Ltd, Chris Bulgin GS Australia Pty Ltd, Kavya Balaji GS Australia Pty Ltd.
+
+Unless otherwise stated, the individuals listed in the Contributing Authors disclosure of this report are analysts in GS' Global Investment Research division.
+
+# GS Factor Profile
+
+The GS Factor Profile provides investment context for a stock by comparing key attributes to the market (i.e. our universe of rated stocks) and its sector peers. The four key attributes depicted are: Growth, Financial Returns, Multiple (e.g. valuation) and Integrated (a composite of Growth, Financial Returns and Multiple). Growth, Financial Returns and Multiple are calculated by using normalized ranks for specific metrics for each stock. The normalized ranks for the metrics are then averaged and converted into percentiles for the relevant attribute. The precise calculation of each metric may vary depending on the fiscal year, industry and region, but the standard approach is as follows:
+
+Growth is based on a stock's forward-looking sales growth, EBITDA growth and EPS growth (for financial stocks, only EPS and sales growth), with a higher percentile indicating a higher growth company. Financial Returns is based on a stock's forward-looking ROE, ROCE and CROCI (for financial stocks, only ROE), with a higher percentile indicating a company with higher financial returns. Multiple is based on a stock's forward-looking P/E, P/B, price/dividend (P/D), EV/EBITDA, EV/FCF and EV/Debt Adjusted Cash Flow (DACF) (for financial stocks, only P/E, P/B and P/D), with a higher percentile indicating a stock trading at a higher multiple. The Integrated percentile is calculated as the average of the Growth percentile, Financial Returns percentile and (100% - Multiple percentile).
+
+Financial Returns and Multiple use the GS analyst forecasts at the fiscal year-end at least three quarters in the future. Growth uses inputs for the fiscal year at least seven quarters in the future compared with the year at least three quarters in the future (on a per-share basis for all metrics).
+
+For a more detailed description of how we calculate the GS Factor Profile, please contact your GS representative.
+
+# M&A Rank
+
+Across our global coverage, we examine stocks using an M&A framework, considering both qualitative factors and quantitative factors (which may vary across sectors and regions) to incorporate the potential that certain companies could be acquired. We then assign a M&A rank as a means of scoring companies under our rated coverage from 1 to 3, with 1 representing high (30%-50%) probability of the company becoming an acquisition target, 2 representing medium (15%-30%) probability and 3 representing low (0%-15%) probability. For companies ranked 1 or 2, in line with our standard departmental guidelines we incorporate an M&A component into our target price. M&A rank of 3 is considered immaterial and therefore does not factor into our price target, and may or may not be discussed in research.
+
+# Quantum
+
+Quantum is GS' proprietary database providing access to detailed financial statement histories, forecasts and ratios. It can be used for in-depth analysis of a single company, or to make comparisons between companies in different sectors and markets.
+
+# Disclosures
+
+# Rating and pricing information
+
+Iluka Resources (Buy, A\$7.90) and Lynas Rare Earths Ltd. (Buy, A\$19.19)
+
+The rating(s) for Iluka Resources and Lynas Rare Earths Ltd. is/are relative to the other companies in its/their coverage universe: BHP Group Ltd., Champion Iron Ltd., Deterra Royalties Ltd., Fortescue Metals Group, Iluka Resources, Lynas Rare Earths Ltd., Mineral Resources, New Hope Corp., Rio Tinto Ltd., Sandfire Resources, Sims Ltd., South32 Ltd., WA1 Resources, Whitehaven Coal Ltd.
+
+# Company-specific regulatory disclosures
+
+The following disclosures relate to relationships between The GS Group, Inc. (with its affiliates, “GS”) and companies covered by GS Global Investment Research and referred to in this research.
+
+GS beneficially owned 1% or more of common equity (excluding positions managed by affiliates and business units not required to be aggregated under US securities law) as of the second most recent month end: Iluka Resources (A\$7.90) and JL Mag Rare-Earth Co
+
+GS has received compensation for investment banking services in the past 12 months: Iluka Resources (A\$7.90)
+
+GS expects to receive or intends to seek compensation for investment banking services in the next 3 months: Iluka Resources (A\$7.90)
+
+GS had an investment banking services client relationship during the past 12 months with: Iluka Resources (A\$7.90)
+
+GS had a non-investment banking securities-related services client relationship during the past 12 months with: Iluka Resources (A\$7.90)
+
+GS had a non-securities services client relationship during the past 12 months with: Iluka Resources (A\$7.90)
+
+There are no company-specific disclosures for: Lynas Rare Earths Ltd. (A\$19.19)
+
+# Distribution of ratings/investment banking relationships
+
+GS Investment Research global Equity coverage universe
+
+<table><tr><td rowspan="2"></td><td colspan="3">Rating Distribution</td></tr><tr><td>Buy</td><td>Hold</td><td>Sell</td></tr><tr><td>Global</td><td>50%</td><td>34%</td><td>16%</td></tr></table>
+
+<table><tr><td colspan="3">Investment Banking Relationships</td></tr><tr><td>Buy</td><td>Hold</td><td>Sell</td></tr><tr><td>65%</td><td>60%</td><td>45%</td></tr></table>
+
+As of April 1, 2026, GS Global Investment Research had investment ratings on 3,074 equity securities. GS assigns stocks as Buys and Sells on various regional Investment Lists; stocks not so assigned are deemed Neutral. Such assignments equate to Buy, Hold and Sell for the purposes of the above disclosure required by the FINRA Rules. See ‘Ratings, Coverage universe and related definitions’ below. The Investment Banking Relationships chart reflects the percentage of subject companies within each rating category for whom GS has provided investment banking services within the previous twelve months.
+
+Price target and rating history chart(s)   
+![](images/6d3cafe1a9530fcb47bff762adbf328c50d258cb2c1deff39009e34320d4a2fa.jpg)  
+The price targets shown should be considered in the context of all prior published GS, which may or may not have included price targets, as well as developments relating to the company, its industry and financial markets.
+
+![](images/1c637791b2c888813dcaccb8e992ba1a0c4ad3dea5dcb74c698306a7621c22b3.jpg)  
+The price targets shown should be considered in the context of all prior published GS, which may or may not have included price targets, as well as developments relating to the company, its industry and financial markets.
+
+Target price history table(s)   
+Iluka Resources (ILU.AX) 
+
+<table><tr><td>Date of report</td><td>Target price (A$)</td><td>Closing price (A$)</td><td>Date of report</td><td>Target price (A$)</td><td>Closing price (A$)</td></tr><tr><td>22-Apr-26</td><td>8.80</td><td>7.93</td><td>21-Apr-26</td><td>23.50</td><td>19.97</td></tr><tr><td>09-Apr-26</td><td>8.70</td><td>7.44</td><td>07-Apr-26</td><td>23.80</td><td>20.30</td></tr><tr><td>12-Mar-26</td><td>8.60</td><td>6.72</td><td>12-Mar-26</td><td>24.30</td><td>21.17</td></tr><tr><td>18-Feb-26</td><td>7.80</td><td>5.57</td><td>26-Feb-26</td><td>17.60</td><td>17.24</td></tr><tr><td>29-Jan-26</td><td>7.90</td><td>5.55</td><td>21-Jan-26</td><td>17.80</td><td>16.27</td></tr><tr><td>12-Jan-26</td><td>8.30</td><td>6.29</td><td>12-Jan-26</td><td>17.30</td><td>14.78</td></tr><tr><td>22-Oct-25</td><td>8.10</td><td>7.57</td><td>25-Nov-25</td><td>16.50</td><td>15.02</td></tr><tr><td>02-Oct-25</td><td>8.30</td><td>6.77</td><td>18-Nov-25</td><td>16.60</td><td>14.62</td></tr><tr><td>11-Sep-25</td><td>6.50</td><td>5.48</td><td>30-Oct-25</td><td>13.70</td><td>14.79</td></tr><tr><td>20-Aug-25</td><td>6.90</td><td>6.13</td><td>02-Oct-25</td><td>13.50</td><td>17.51</td></tr><tr><td>23-Jul-25</td><td>6.50</td><td>5.39</td><td>29-Aug-25</td><td>8.90</td><td>13.87</td></tr><tr><td>07-Jul-25</td><td>5.40</td><td>3.77</td><td>24-Jul-25</td><td>7.80</td><td>10.65</td></tr><tr><td>05-May-25</td><td>6.20</td><td>4.11</td><td>07-Jul-25</td><td>7.30</td><td>8.14</td></tr><tr><td>16-Apr-25</td><td>6.50</td><td>3.57</td><td>28-Apr-25</td><td>7.20</td><td>8.56</td></tr><tr><td>08-Apr-25</td><td>6.60</td><td>3.49</td><td>08-Apr-25</td><td>7.10</td><td>7.54</td></tr><tr><td>19-Feb-25</td><td>7.00</td><td>4.56</td><td>26-Feb-25</td><td>7.00</td><td>6.85</td></tr><tr><td>22-Jan-25</td><td>7.40</td><td>4.95</td><td>17-Jan-25</td><td>7.40</td><td>7.03</td></tr><tr><td>09-Jan-25</td><td>7.80</td><td>5.14</td><td>09-Jan-25</td><td>7.70</td><td>6.85</td></tr><tr><td>22-Oct-24</td><td>7.70</td><td>5.98</td><td>30-Oct-24</td><td>7.30</td><td>7.65</td></tr><tr><td>08-Oct-24</td><td>7.90</td><td>6.58</td><td>08-Oct-24</td><td>7.40</td><td>7.67</td></tr><tr><td>23-Jul-24</td><td>9.00</td><td>6.19</td><td>28-Aug-24</td><td>7.30</td><td>7.02</td></tr><tr><td>02-Jul-24</td><td>9.30</td><td>6.60</td><td>23-Jul-24</td><td>7.00</td><td>6.02</td></tr><tr><td>03-Apr-24</td><td>9.90</td><td>7.27</td><td>02-Jul-24</td><td>7.50</td><td>6.13</td></tr><tr><td>21-Feb-24</td><td>9.20</td><td>7.63</td><td>24-Apr-24</td><td>7.40</td><td>6.38</td></tr><tr><td>23-Jan-24</td><td>9.80</td><td>6.63</td><td>03-Apr-24</td><td>7.50</td><td>5.66</td></tr><tr><td>10-Jan-24</td><td>10.10</td><td>6.60</td><td>26-Feb-24</td><td>7.40</td><td>5.90</td></tr><tr><td>19-Oct-23</td><td>10.80</td><td>7.15</td><td>12-Feb-24</td><td>7.20</td><td>5.79</td></tr><tr><td>10-Oct-23</td><td>11.30</td><td>7.50</td><td>22-Jan-24</td><td>7.50</td><td>5.87</td></tr><tr><td>23-Aug-23</td><td>11.20</td><td>8.27</td><td>10-Jan-24</td><td>7.70</td><td>6.27</td></tr><tr><td>26-Jul-23</td><td>13.30</td><td>10.99</td><td>24-Oct-23</td><td>7.50</td><td>6.82</td></tr></table>
+
+Iluka Resources (ILU.AX) 
+
+<table><tr><td>Date of report</td><td>Target price (A$)</td><td>Closing price (A$)</td></tr><tr><td>19-Jun-23</td><td>13.70</td><td>11.43</td></tr><tr><td>13-Jun-23</td><td>12.90</td><td>11.72</td></tr></table>
+
+Lynas Rare Earths Ltd. (LYC.AX) 
+
+<table><tr><td>Date of report</td><td>Target price (A$)</td><td>Closing price (A$)</td></tr><tr><td>20-Oct-23</td><td>7.10</td><td>6.29</td></tr><tr><td>10-Oct-23</td><td>7.40</td><td>6.49</td></tr><tr><td>29-Aug-23</td><td>6.50</td><td>7.17</td></tr><tr><td>31-Jul-23</td><td>6.60</td><td>6.73</td></tr><tr><td>05-Jul-23</td><td>6.70</td><td>7.36</td></tr><tr><td>13-Jun-23</td><td>6.80</td><td>7.74</td></tr></table>
+
+Price targets shown in table(s) are unadjusted for corporate actions.
+
+# Regulatory disclosures
+
+# Disclosures required by United States laws and regulations
+
+See company-specific regulatory disclosures above for any of the following disclosures required as to companies referred to in this report: manager or co-manager in a pending transaction; $1\%$ or other ownership; compensation for certain services; types of client relationships; managed/co-managed public offerings in prior periods; directorships; for equity securities, market making and/or specialist role. GS trades or may trade as a principal in debt securities (or in related derivatives) of issuers discussed in this report.
+
+The following are additional required disclosures: Ownership and material conflicts of interest: GS policy prohibits its analysts, professionals reporting to analysts and members of their households from owning securities of any company in the analyst's area of coverage. Analyst compensation: Analysts are paid in part based on the profitability of GS, which includes investment banking revenues. Analyst as officer or director: GS policy generally prohibits its analysts, persons reporting to analysts or members of their households from serving as an officer, director or advisor of any company in the analyst's area of coverage. Non-U.S. Analysts: Non-U.S. analysts may not be associated persons of GS & Co. LLC and therefore may not be subject to FINRA Rule 2241 or FINRA Rule 2242 restrictions on communications with a subject company, public appearances and trading in securities covered by the analysts.
+
+Distribution of ratings: See the distribution of ratings disclosure above. Price chart: See the price chart, with changes of ratings and price targets in prior periods, above, or, if electronic format or if with respect to multiple companies which are the subject of this report, on the GS website at https://www.gs.com/research/hedge.html.
+
+# Additional disclosures required under the laws and regulations of jurisdictions other than the United States
+
+The following disclosures are those required by the jurisdiction indicated, except to the extent already made above pursuant to United States laws and regulations. Australia: GS Australia Pty Ltd and its affiliates are not authorised deposit-taking institutions (as that term is defined in the Banking Act 1959 (Cth)) in Australia and do not provide banking services, nor carry on a banking business, in Australia. This research, and any access to it, is intended only for “wholesale clients” within the meaning of the Australian Corporations Act, unless otherwise agreed by GS. In producing research reports, members of Global Investment Research of GS Australia may attend site visits and other meetings hosted by the companies and other entities which are the subject of its research reports. In some instances the costs of such site visits or meetings may be met in part or in whole by the issuers concerned if GS Australia considers it is appropriate and reasonable in the specific circumstances relating to the site visit or meeting. To the extent that the contents of this document contains any financial product advice, it is general advice only and has been prepared by GS without taking into account a client’s objectives, financial situation or needs. A client should, before acting on any such advice, consider the appropriateness of the advice having regard to the client’s own objectives, financial situation and needs. A copy of certain GS Australia and New Zealand disclosure of interests and a copy of GS’ Australian Sell-Side Research Independence Policy Statement are available at: https://www.goldmansachs.com/disclosures/australia-new-zealand/index.html. Brazil: Disclosure information in relation to CVM Resolution n. 20 is available at https://www.gs.com/worldwide/brazil/area/gir/index.html. Where applicable, the Brazil-registered analyst primarily responsible for the content of this research report, as defined in Article 20 of CVM Resolution n. 20, is the first author named at the beginning of this report, unless indicated otherwise at the end of the text. Canada: This information is being provided to you for information purposes only and is not, and under no circumstances should be construed as, an advertisement, offering or solicitation by GS & Co. LLC for purchasers of securities in Canada to trade in any Canadian security. GS & Co. LLC is not registered as a dealer in any jurisdiction in Canada under applicable Canadian securities laws and generally is not permitted to trade in Canadian securities and may be prohibited from selling certain securities and products in certain jurisdictions in Canada. If you wish to trade in any Canadian securities or other products in Canada please contact GS Canada Inc., an affiliate of The GS Group Inc., or another registered Canadian dealer. Hong Kong: Further information on the securities of covered companies referred to in this research may be obtained on request from GS (Asia) L.L.C. India: Further information on the subject company or companies referred to in this research may be obtained from GS (India) Securities Private Limited, Research Analyst - SEBI Registration Number INH000001493, 10th Floor, Ascent-Worli, Sudam Kalu Ahire Marg, Worli, Mumbai-400 025, India, Corporate Identity Number U74140MH2006FTC160634, Phone +91 22 6616 9000, Fax +91 22 6616 9001. GS may beneficially own 1% or more of the securities (as such term is defined in clause 2 (h) the Indian Securities Contracts (Regulation) Act, 1956) of the subject company or companies referred to in this research report. Investment in securities market are subject to market risks. Read all the related documents carefully before investing. Registration granted by SEBI and certification from NISM in no way guarantee performance of the intermediary or provide any assurance of returns to investors. GS (India) Securities Private Limited compliance officer and investor grievance contact details can be found at: https://www.goldmansachs.com/worldwide/india/documents/Grievance-Redressal-and-Escalation-Matrix.pdf, and a copy of the annual audit compliance report can be found at this link: https://publishing.gs.com/content/site/india-annual-compliance-report.html. Japan: See below. Korea: This research, and any access to it, is intended only for “professional investors” within the meaning of the Financial Services and Capital Markets Act, unless otherwise agreed by GS. Further information on the subject company or companies referred to in this research may be obtained from GS (Asia) L.L.C., Seoul Branch. New Zealand: GS New Zealand Limited and its affiliates are neither “registered banks” nor “deposit takers” (as defined in the Reserve Bank of New Zealand Act 1989) in New Zealand. This research, and any access to it, is intended for “wholesale clients” (as defined in the Financial Advisers Act 2008) unless otherwise agreed by GS. A copy of certain GS Australia and New Zealand disclosure of interests is available at: https://www.goldmansachs.com/disclosures/australia-new-zealand/index.html. Russia: Research reports distributed in the Russian Federation are not advertising as defined in the Russian legislation, but are information and analysis not having product promotion as their main purpose and do not provide appraisal within the meaning of the Russian legislation on appraisal activity. Research reports do not constitute a personalized investment recommendation as defined in Russian laws and regulations, are not addressed to a specific client, and are prepared without analyzing the financial circumstances, investment profiles or risk profiles of clients. GS assumes no responsibility for any investment decisions that may be taken by a client or any other person based on this research report. Singapore: GS (Singapore) Pte. (Company Number: 198602165W), which is regulated by the Monetary Authority of Singapore, accepts legal responsibility for this research, and should be contacted with respect to any matters arising from, or in connection with, this research. Taiwan: This material is for reference only and must not be reprinted without permission. Investors should carefully consider their own investment risk. Investment results are the responsibility of the individual investor. United Kingdom: Persons who would be categorized as retail clients in the United Kingdom, as such term is
+
+defined in the rules of the Financial Conduct Authority, should read this research in conjunction with prior GS on the covered companies referred to herein and should refer to the risk warnings that have been sent to them by GS International. A copy of these risks warnings, and a glossary of certain financial terms used in this report, are available from GS International on request.
+
+European Union and United Kingdom: Disclosure information in relation to Article 6 (2) of the European Commission Delegated Regulation (EU) (2016/958) supplementing Regulation (EU) No 596/2014 of the European Parliament and of the Council (including as that Delegated Regulation is implemented into United Kingdom domestic law and regulation following the United Kingdom's departure from the European Union and the European Economic Area) with regard to regulatory technical standards for the technical arrangements for objective presentation of investment recommendations or other information recommending or suggesting an investment strategy and for disclosure of particular interests or indications of conflicts of interest is available at https://www.gs.com/disclosures/europeanpolicy.html which states the European Policy for Managing Conflicts of Interest in Connection with Investment Research.
+
+Japan: GS Japan Co., Ltd. is a Financial Instrument Dealer registered with the Kanto Financial Bureau under registration number Kinsho 69, and a member of Japan Securities Dealers Association, Financial Futures Association of Japan Type II Financial Instruments Firms Association, and Investment Management Association of Japan. Sales and purchase of equities are subject to commission pre-determined with clients plus consumption tax. See company-specific disclosures as to any applicable disclosures required by Japanese stock exchanges, the Japanese Securities Dealers Association or the Japanese Securities Finance Company.
+
+# Ratings, coverage universe and related definitions
+
+Buy (B), Neutral (N), Sell (S) Analysts recommend stocks as Buys or Sells for inclusion on various regional Investment Lists. Being assigned a Buy or Sell on an Investment List is determined by a stock's total return potential relative to its coverage universe. Any stock not assigned as a Buy or a Sell on an Investment List with an active rating (i.e., a stock that is not Rating Suspended, Not Rated, Early-Stage Biotech, Coverage Suspended or Not Covered), is deemed Neutral. Each region manages Regional Conviction Lists, which are selected from Buy rated stocks on the respective region's Investment Lists and represent investment recommendations focused on the size of the total return potential and/or the likelihood of the realization of the return across their respective areas of coverage. The addition or removal of stocks from such Conviction Lists are managed by the Investment Review Committee or other designated committee in each respective region and do not represent a change in the analysts' investment rating for such stocks.
+
+Total return potential represents the upside or downside differential between the current share price and the price target, including all paid or anticipated dividends, expected during the time horizon associated with the price target. Price targets are required for all covered stocks. The total return potential, price target and associated time horizon are stated in each report adding or reiterating an Investment List membership.
+
+Coverage Universe: A list of all stocks in each coverage universe is available by primary analyst, stock and coverage universe at https://www.gs.com/research/hedge.html.
+
+Not Rated (NR). The investment rating, target price and earnings estimates (where relevant) are removed pursuant to GS policy when GS is acting in an advisory capacity in a merger or in a strategic transaction involving this company, when there are legal, regulatory or policy constraints due to GS' involvement in a transaction, and in certain other circumstances. Early-Stage Biotech (ES). An investment rating and a target price are not assigned pursuant to GS policy when this company has neither a drug, treatment or medical device that has passed a Phase II clinical trial nor a license to distribute a post-Phase II drug, treatment or medical device. Rating Suspended (RS). GS has suspended the investment rating and price target for this stock, because there is not a sufficient fundamental basis for determining an investment rating or target price. The previous investment rating and target price, if any, are no longer in effect for this stock and should not be relied upon. Coverage Suspended (CS). GS has suspended coverage of this company. Not Covered (NC). GS does not cover this company.
+
+# Global product; distributing entities
+
+GS Global Investment Research produces and distributes research products for clients of GS on a global basis. Analysts based in GS offices around the world produce research on industries and companies, and research on macroeconomics, currencies, commodities and portfolio strategy. This research is disseminated in Australia by GS Australia Pty Ltd (ABN 21 006 797 897); in Brazil by GS do Brasil Corretora de Títulos e Valores Mobiliários S.A.; Public Communication Channel GS Brazil: 0800 727 5764 and / or contatogoldmanbrasil@gs.com. Available Weekdays (except holidays), from 9am to 6pm. Canal de Comunicação com o Público GS Brasil: 0800 727 5764 e/ou contatogoldmanbrasil@gs.com. Horário de funcionamento: segunda-feira à sexta-feira (exceto feriados), das 9h às 18h; in Canada by GS & Co. LLC; in Hong Kong by GS (Asia) L.L.C.; in India by GS (India) Securities Private Ltd.; in Japan by GS Japan Co., Ltd.; in the Republic of Korea by GS (Asia) L.L.C., Seoul Branch; in New Zealand by GS New Zealand Limited; in Russia by OOO GS; in Singapore by GS (Singapore) Pte. (Company Number: 198602165W); and in the United States of America by GS & Co. LLC. GS International has approved this research in connection with its distribution in the United Kingdom.
+
+GS International (“GSI”), authorised by the Prudential Regulation Authority (“PRA”) and regulated by the Financial Conduct Authority (“FCA”) and the PRA, has approved this research in connection with its distribution in the United Kingdom.
+
+European Economic Area: GS Bank Europe SE (“GSBE”) is a credit institution incorporated in Germany and, within the Single Supervisory Mechanism, subject to direct prudential supervision by the European Central Bank and in other respects supervised by German Federal Financial Supervisory Authority (Bundesanstalt für Finanzdienstleistungsaufsicht, BaFin) and Deutsche Bundesbank and disseminates research within the European Economic Area.
+
+# General disclosures
+
+This research is for our clients only. Other than disclosures relating to GS, this research is based on current public information that we consider reliable, but we do not represent it is accurate or complete, and it should not be relied on as such. The information, opinions, estimates and forecasts contained herein are as of the date hereof and are subject to change without prior notification. We seek to update our research as appropriate, but various regulations may prevent us from doing so. Other than certain industry reports published on a periodic basis, the large majority of reports are published at irregular intervals as appropriate in the analyst's judgment.
+
+GS conducts a global full-service, integrated investment banking, investment management, and brokerage business. We have investment banking and other business relationships with a substantial percentage of the companies covered by Global Investment Research. GS & Co. LLC, the United States broker dealer, is a member of SIPC (https://www.sipc.org).
+
+Our salespeople, traders, and other professionals may provide oral or written market commentary or trading strategies to our clients and principal trading desks that reflect opinions that are contrary to the opinions expressed in this research. Our asset management area, principal trading desks and investing businesses may make investment decisions that are inconsistent with the recommendations or views expressed in this research.
+
+The analysts named in this report may have from time to time discussed with our clients, including GS salespersons and traders, or may discuss in this report, trading strategies that reference catalysts or events that may have a near-term impact on the market price of the equity securities discussed in this report, which impact may be directionally counter to the analyst's published price target expectations for such stocks. Any such trading strategies are distinct from and do not affect the analyst's fundamental equity rating for such stocks, which rating reflects a stock's return potential relative to its coverage universe as described herein.
+
+We and our affiliates, officers, directors, and employees will from time to time have long or short positions in, act as principal in, and buy or sell, the securities or derivatives, if any, referred to in this research, unless otherwise prohibited by regulation or GS policy.
+
+The views attributed to third party presenters at GS arranged conferences, including individuals from other parts of GS, do not necessarily reflect those of Global Investment Research and are not an official view of GS.
+
+Any third party referenced herein, including any salespeople, traders and other professionals or members of their household, may have positions in the products mentioned that are inconsistent with the views expressed by analysts named in this report.
+
+This research is not an offer to sell or the solicitation of an offer to buy any security in any jurisdiction where such an offer or solicitation would be illegal. It does not constitute a personal recommendation or take into account the particular investment objectives, financial situations, or needs of individual clients. Clients should consider whether any advice or recommendation in this research is suitable for their particular circumstances and, if appropriate, seek professional advice, including tax advice. The price and value of investments referred to in this research and the income from them may fluctuate. Past performance is not a guide to future performance, future returns are not guaranteed, and a loss of original capital may occur. Fluctuations in exchange rates could have adverse effects on the value or price of, or income derived from, certain investments.
+
+Certain transactions, including those involving futures, options, and other derivatives, give rise to substantial risk and are not suitable for all investors. Investors should review current options and futures disclosure documents which are available from GS sales representatives or at https://www.theocc.com/about/publications/character-risks.jsp and https://www.goldmansachs.com/disclosures/cftc\_fcm\_disclosures. Transaction costs may be significant in option strategies calling for multiple purchase and sales of options such as spreads. Supporting documentation will be supplied upon request.
+
+Differing Levels of Service provided by Global Investment Research: The level and types of services provided to you by GS Global Investment Research may vary as compared to that provided to internal and other external clients of GS, depending on various factors including your individual preferences as to the frequency and manner of receiving communication, your risk profile and investment focus and perspective (e.g., marketwide, sector specific, long term, short term), the size and scope of your overall client relationship with GS, and legal and regulatory constraints. As an example, certain clients may request to receive notifications when research on specific securities is published, and certain clients may request that specific data underlying analysts' fundamental analysis available on our internal client websites be delivered to them electronically through data feeds or otherwise. No change to an analyst's fundamental research views (e.g., ratings, price targets, or material changes to earnings estimates for equity securities), will be communicated to any client prior to inclusion of such information in a research report broadly disseminated through electronic publication to our internal client websites or through other means, as necessary, to all clients who are entitled to receive such reports.
+
+All research reports are disseminated and available to all clients simultaneously through electronic publication to our internal client websites. Not all research content is redistributed to our clients or available to third-party aggregators, nor is GS responsible for the redistribution of our research by third party aggregators. For research, models or other data related to one or more securities, markets or asset classes (including related services) that may be available to you, please contact your GS representative or go to https://research.gs.com.
+
+Disclosure information is also available at https://www.gs.com/research/hedge.html or from Research Compliance, 200 West Street, New York, NY 10282.
+
+# © 2026 GS.
+
+You are permitted to store, display, analyze, modify, reformat, and print the information made available to you via this service only for your own use. You may not resell or reverse engineer this information to calculate or develop any index for disclosure and/or marketing or create any other derivative works or commercial product(s), data or offering(s) without the express written consent of GS. You are not permitted to publish, transmit, or otherwise reproduce this information, in whole or in part, in any format to any third party without the express written consent of GS. This foregoing restriction includes, without limitation, using, extracting, downloading or retrieving this information, in whole or in part, to train or finetune a machine learning or artificial intelligence system, or to provide or reproduce this information, in whole or in part, as a prompt or input to any such system.
