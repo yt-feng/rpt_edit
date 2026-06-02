@@ -11,7 +11,7 @@
 3. 使用 DeepSeek 生成小红书、微信、知乎、闲鱼等文案。
 4. 对所有公开文案做投行名称脱敏、敏感词检测和合规改写。
 5. 输出小红书卡片图、微信/知乎/闲鱼文案、市场观点 PDF、KC 中文精译 PDF、待发布 ZIP 包。
-6. 默认把当天所有成功完成 MinerU 解析的 KC 中文精译稿转成微信公众号图文，一组素材默认 9 篇文章；先写入草稿箱，再自动提交发布。
+6. 默认把当天所有成功完成 MinerU 解析的 KC 中文精译稿转成微信公众号草稿箱图文，一组草稿默认 9 篇文章；发布接口权限开通后可打开自动提交发布。
 7. 需要视频测试时，生成中文双男声 podcast 和竖屏讲解视频。
 
 当前默认只使用 DeepSeek：`DEEPSEEK_API_KEY`。不使用 `OPENAI_API_KEY` 或 `OPENAI_SB_API_KEY`。
@@ -280,15 +280,15 @@ scripts/push_kc_translated_to_wechat_drafts.py
 
 - 从 `xhs_notes/dropbox/<日期>/.../source_mineru.md` 选取报告，清理原报告 logo、作者、页脚免责声明和披露段落。
 - 用 DeepSeek 翻译成中文正文，保留正文图表，渲染为带 **KC桌面——外资精译** 品牌的 PDF。
-- 默认把 `kc_translated_reports/<日期>/<报告>/translated.md` 转成微信公众号图文 HTML，正文图片先走微信 `uploadimg`，封面走永久图片素材，先调用 `draft/add` 创建草稿，再调用 `freepublish/submit` 提交发布。
+- 默认把 `kc_translated_reports/<日期>/<报告>/translated.md` 转成微信公众号图文 HTML，正文图片先走微信 `uploadimg`，封面走永久图片素材，并调用 `draft/add` 创建草稿；当 `wechat_freepublish=true` 时再调用 `freepublish/submit` 提交发布。
 - 每篇公众号草稿正文末尾固定追加 `prompts/zsxq_img.jpg`，上传时会先通过微信 `uploadimg` 转成公众号可用图片 URL。
-- 图文分组默认 `articles_per_draft=9`。如果当天成功翻译 35 篇，会形成 9+9+9+8 四个图文素材，并按组提交发布。
+- 图文分组默认 `articles_per_draft=9`。如果当天成功翻译 35 篇，会形成 9+9+9+8 四个图文素材；`wechat_freepublish=true` 时会按组提交发布。
 
 主流程入口：
 
 - `.github/workflows/dropbox-latest-pdf-to-xhs-sharded.yml` 的 `translated_report_count` 默认 `all`，表示当天所有成功完成 MinerU 解析并产出 `source_mineru.md` 的报告都会生成 KC 中文精译版。手动运行时设为正整数可限制数量，设为 `0` 可关闭翻译和草稿上传。
 - `wechat_draft_upload` 默认 `true`，在翻译 PDF job 成功后上传公众号草稿；手动运行时可改成 `false` 只生成翻译 PDF。
-- `wechat_freepublish` 默认 `true`，草稿创建成功后自动提交发布；如果要临时恢复“只进草稿箱”，手动运行时改成 `false`。
+- `wechat_freepublish` 默认 `false`，因为当前公众号测试 `freepublish/submit` 返回 `48001 api unauthorized`；等公众号后台开通发布接口权限后，手动运行时改成 `true` 或把 workflow 默认值改回 `true`。
 - `wechat_draft_articles_per_draft` 默认 `9`。
 - `wechat_draft_max_inline_images` 默认 `28`。
 

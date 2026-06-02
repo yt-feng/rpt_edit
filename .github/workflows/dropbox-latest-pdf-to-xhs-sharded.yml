@@ -65,10 +65,10 @@ on:
         type: boolean
         default: true
       wechat_freepublish:
-        description: "Submit created WeChat drafts for publishing after upload. Set false to keep draft-only."
+        description: "Submit created WeChat drafts for publishing after upload. Requires WeChat freepublish API permission."
         required: true
         type: boolean
-        default: true
+        default: false
       wechat_draft_articles_per_draft:
         description: "Number of articles in each WeChat draft item."
         required: true
@@ -138,7 +138,7 @@ jobs:
           echo "podcast_minutes=${{ github.event.inputs.podcast_minutes || '5' }}" >> "$GITHUB_OUTPUT"
           echo "translated_report_count=${{ github.event.inputs.translated_report_count || 'all' }}" >> "$GITHUB_OUTPUT"
           echo "wechat_draft_upload=${{ github.event.inputs.wechat_draft_upload || 'true' }}" >> "$GITHUB_OUTPUT"
-          echo "wechat_freepublish=${{ github.event.inputs.wechat_freepublish || 'true' }}" >> "$GITHUB_OUTPUT"
+          echo "wechat_freepublish=${{ github.event.inputs.wechat_freepublish || 'false' }}" >> "$GITHUB_OUTPUT"
           echo "wechat_draft_articles_per_draft=${{ github.event.inputs.wechat_draft_articles_per_draft || '9' }}" >> "$GITHUB_OUTPUT"
           echo "wechat_draft_max_inline_images=${{ github.event.inputs.wechat_draft_max_inline_images || '28' }}" >> "$GITHUB_OUTPUT"
           echo "commit_results=${{ github.event.inputs.commit_results || 'true' }}" >> "$GITHUB_OUTPUT"
@@ -147,7 +147,8 @@ jobs:
           echo "::notice::Daily schedule is 05:00 Asia/Shanghai. Audio/video are disabled."
           echo "::notice::DeepSeek filters macro/trend reports first; stock/company reports are skipped."
           echo "::notice::Default plan processes ALL macro candidates, sharded as 40 x 5 = up to 200 macro reports."
-          echo "::notice::KC translated WeChat publishing is enabled by default and includes every successful MinerU report."
+          echo "::notice::KC translated WeChat draft upload is enabled by default and includes every successful MinerU report."
+          echo "::notice::WeChat freepublish is opt-in because it requires separate Official Account API permission."
           echo "::notice::At the end, publish-ready split ZIPs will be created from generated report folders, excluding MinerU raw files."
 
   select-macro-reports:
