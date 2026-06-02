@@ -1,0 +1,14 @@
+Found 37 total PDFs; shard 6/40 has 5 PDFs, skips 0 already converted, will process 5 PDFs with batch_size=5.
+Running batch 1: 5 PDFs
+Found 5 PDFs.
+Uploading PDF to MinerU: /tmp/pdf_batch_001_hfazf6ay/pdfs/0001-31-Goldman Sachs-South Korea- Further Surprise Gains in Exports on Strong Chip Exports More Than Offsetting Weak Other Exports-260601.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_hfazf6ay/pdfs/0002-32-Goldman Sachs-South Korea Tech- May 2026 export tracker- Record-high DRAM exports with 370- yoy growth-260601.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_hfazf6ay/pdfs/0003-33-Morgan Stanley-DataDig- Lithium Restarts Reemerge-260601.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_hfazf6ay/pdfs/0004-34-Morgan Stanley-Steel- Old Playbook- New Framework-260601.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_hfazf6ay/pdfs/0005-35-Morgan Stanley-How Fast Can Middle East Production Return--260601.pdf
+MinerU batch_id=6a3efd3b-625a-471a-9aa7-299d4a97abc6
+MinerU states: running, running, running, running, waiting-file
+MinerU states: done, done, running, running, running
+MinerU states: done, done, done, done, done
+Done. Results written to /home/runner/work/rpt_edit/rpt_edit/xhs_notes/dropbox/260602/shard_6; successful_reports=5; mineru_timed_out=False
+All batches completed successfully. Generated 5 report directories.
