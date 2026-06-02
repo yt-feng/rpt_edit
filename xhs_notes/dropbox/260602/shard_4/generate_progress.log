@@ -1,0 +1,14 @@
+Found 37 total PDFs; shard 4/40 has 5 PDFs, skips 0 already converted, will process 5 PDFs with batch_size=5.
+Running batch 1: 5 PDFs
+Found 5 PDFs.
+Uploading PDF to MinerU: /tmp/pdf_batch_001_0uvrgeui/pdfs/0001-21-MS-IT Hardware Key Takeaways From Our Taiwan Trip-260601.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_0uvrgeui/pdfs/0002-22-MS-Semiconductors Takeaways from our meetings in Taiwan-260601.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_0uvrgeui/pdfs/0003-23-Morgan Stanley-Energy Services - Equipment-The Offshore Drilling Digest-260601.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_0uvrgeui/pdfs/0004-24-Morgan Stanley-US Consumer Pulse Survey- Summer Spending Kickoff-World Cup Buzz Meets Healthy Travel Demand-260601.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_0uvrgeui/pdfs/0005-25-Bernstein-U.S. Semiconductors and Semicap Equipment- Conversations with 5 CEOs at Bernstein-s 2026 Strategic Decisions Conference-260602.pdf
+MinerU batch_id=19b46c71-843b-4d72-90c2-d6c13370c573
+MinerU states: running, running, running, running, waiting-file
+MinerU states: done, done, running, running, done
+MinerU states: done, done, done, done, done
+Done. Results written to /home/runner/work/rpt_edit/rpt_edit/xhs_notes/dropbox/260602/shard_4; successful_reports=5; mineru_timed_out=False
+All batches completed successfully. Generated 5 report directories.
