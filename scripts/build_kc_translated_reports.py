@@ -58,6 +58,7 @@ except Exception:  # pragma: no cover
 
 
 BRAND = "KC桌面——外资精译"
+PDF_WATERMARK = "公众号：KC桌面"
 PDF_FOOTER_DISCLAIMER = "For informational purposes only. Not investment advice."
 DATE_DIR_RE = re.compile(r"^\d{6,8}$")
 IMAGE_RE = re.compile(r"!\[[^\]]*\]\(([^\)]+)\)")
@@ -543,15 +544,27 @@ def draw_page_brand(font: str):
     def _draw(canvas, doc) -> None:
         width, height = A4
         canvas.saveState()
+        canvas.translate(width / 2, height / 2)
+        canvas.rotate(45)
+        canvas.setFillColor(colors.HexColor("#DADFE8"))
+        canvas.setFont(font, 52)
+        canvas.drawCentredString(0, 0, PDF_WATERMARK)
+        canvas.restoreState()
+
+        canvas.saveState()
         canvas.setFillColor(colors.HexColor("#0B3B75"))
         canvas.rect(0, height - 0.68 * cm, width, 0.68 * cm, fill=1, stroke=0)
         canvas.setFillColor(colors.white)
         canvas.setFont(font, 9)
         canvas.drawString(1.45 * cm, height - 0.43 * cm, BRAND)
-        canvas.setFillColor(colors.HexColor("#777777"))
+        canvas.setFillColor(colors.HexColor("#0B3B75"))
+        canvas.setFont(font, 9)
+        canvas.drawCentredString(width / 2, 0.86 * cm, PDF_WATERMARK)
+        canvas.setFillColor(colors.HexColor("#8A8A8A"))
         canvas.setFont(font, 7)
-        canvas.drawCentredString(width / 2, 0.72 * cm, PDF_FOOTER_DISCLAIMER)
-        canvas.drawRightString(width - 1.45 * cm, 0.72 * cm, str(doc.page))
+        canvas.drawCentredString(width / 2, 0.48 * cm, PDF_FOOTER_DISCLAIMER)
+        canvas.setFillColor(colors.HexColor("#0B3B75"))
+        canvas.drawRightString(width - 1.45 * cm, 0.86 * cm, str(doc.page))
         canvas.restoreState()
 
     return _draw

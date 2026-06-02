@@ -283,6 +283,7 @@ scripts/push_kc_translated_to_wechat_drafts.py
 
 - 从 `xhs_notes/dropbox/<日期>/.../source_mineru.md` 选取报告，清理原报告 logo、作者、页脚免责声明和披露段落。
 - 用 DeepSeek 翻译成中文正文，保留正文图表，渲染为带 **KC桌面——外资精译** 品牌的 PDF。
+- 中文精译 PDF 每页带 45 度灰色底层水印 `公众号：KC桌面`，底部居中有蓝色公众号标识。
 - 默认把 `kc_translated_reports/<日期>/<报告>/translated.md` 转成微信公众号短版图文 HTML，可见正文约 2000 字；正文图片先走微信 `uploadimg`，封面走永久图片素材，并调用 `draft/add` 创建草稿；当 `wechat_freepublish=true` 时再调用 `freepublish/submit` 提交发布。
 - 微信短版正文图默认最多 3 张、至少 3 张。优先使用 MinerU 抽出的报告图表；如果报告图不足，会参考 `gen_rpt` 的方式用 Pollinations 生成主题相关 AI 配图，下载压缩后再上传微信。
 - 每篇公众号草稿正文末尾固定追加 `prompts/zsxq_img.jpg`，上传时会先通过微信 `uploadimg` 转成公众号可用图片 URL。
