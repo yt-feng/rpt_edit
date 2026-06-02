@@ -1,0 +1,14 @@
+Found 37 total PDFs; shard 2/40 has 5 PDFs, skips 0 already converted, will process 5 PDFs with batch_size=5.
+Running batch 1: 5 PDFs
+Found 5 PDFs.
+Uploading PDF to MinerU: /tmp/pdf_batch_001_05is5_8e/pdfs/0001-11-Goldman Sachs-China Software-Apr revenue growth slowed to 8.9- YoY- New products continue to focus on AI agents and industry AI platforms-260601.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_05is5_8e/pdfs/0002-12-J.P. Morgan-China Property-Developers- May sales remain mildly down Y Y- focus on alphas -COLI- CRL- Jinmao--260601.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_05is5_8e/pdfs/0003-13-Goldman Sachs-China Property Weekly Wrap-Week 22 Wrap-Primary sales advanced further- city-wide buyback launched in GZ-260602.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_05is5_8e/pdfs/0004-14-Morgan Stanley-China Consumer-Where is consumption trending now--260601.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_05is5_8e/pdfs/0005-15-Bernstein-Asian Industrial Technology Asian Industrial Tech- The Barometer -April May 2026--260601.pdf
+MinerU batch_id=f8d96ebe-8c0b-4479-b1a4-120db82f3fec
+MinerU states: running, running, running, running, waiting-file
+MinerU states: done, done, done, running, running
+MinerU states: done, done, done, done, done
+Done. Results written to /home/runner/work/rpt_edit/rpt_edit/xhs_notes/dropbox/260602/shard_2; successful_reports=5; mineru_timed_out=False
+All batches completed successfully. Generated 5 report directories.
