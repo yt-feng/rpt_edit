@@ -1,0 +1,31 @@
+{
+  "input_dir": "/home/runner/work/rpt_edit/rpt_edit/_daily_bilingual_selected_pdfs",
+  "total_pdf_count_before_shard": 1,
+  "pdf_count_before_skip": 1,
+  "pdf_count": 1,
+  "generated_report_count": 1,
+  "batch_size": 1,
+  "shard_index": 0,
+  "shard_count": 1,
+  "max_reports_per_shard": 1,
+  "max_total_reports": 0,
+  "skip_existing": false,
+  "skipped_existing_count": 0,
+  "skipped_existing": [],
+  "failures": 0,
+  "batches": [
+    {
+      "batch_index": 1,
+      "pdf_count": 1,
+      "files": [
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_daily_bilingual_selected_pdfs/0001-j.p.-morgan-china-battery-materials-two-battery-cycles-lessons-learned-and-investment-strategy-for-2h26-2027-260601.pdf",
+          "batch_file": "/tmp/pdf_batch_001__59kzptc/pdfs/0001-0001-j.p.-morgan-china-battery-materials-two-battery-cycles-lessons-learned-and-investment-strategy-for-2h26-2027-260601.pdf",
+          "stable_index": "1"
+        }
+      ],
+      "returncode": 0,
+      "status": "ok"
+    }
+  ]
+}
