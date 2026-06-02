@@ -1,0 +1,379 @@
+{
+  "date_folder": "260602",
+  "max_reports": "all",
+  "selected_count": 37,
+  "successful_count": 37,
+  "failures": [],
+  "reports": [
+    {
+      "source_report_dir": "xhs_notes/dropbox/260602/shard_0/0001-01-Goldman-Sachs-US-Inflation-Monitor--April-2026--Commodity-Prices-and-AI-",
+      "title": "通胀正在被三股力量重塑，市场低估了它们的持续性",
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_01.pdf",
+      "figure_count": 26,
+      "output_dir": "kc_translated_reports/260602/01-0001-01-Goldman-Sachs-US-Inflation-Monitor--April-2026--Commodity-Prices-and-AI",
+      "pdf_path": "kc_translated_reports/260602/01-0001-01-Goldman-Sachs-US-Inflation-Monitor--April-2026--Commodity-Prices-and-AI/kc_translated_report_01.pdf"
+    },
+    {
+      "source_report_dir": "xhs_notes/dropbox/260602/shard_0/0002-02-J.P.-Morgan-China-Logistics--Express-Parcel-and-Ecommerce-Global-China-S",
+      "title": "物流行业真正被低估的不是需求，而是定价权的结构性重塑",
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_02.pdf",
+      "figure_count": 10,
+      "output_dir": "kc_translated_reports/260602/02-0002-02-J.P",
+      "pdf_path": "kc_translated_reports/260602/02-0002-02-J.P/kc_translated_report_02.pdf"
+    },
+    {
+      "source_report_dir": "xhs_notes/dropbox/260602/shard_0/0003-03-Goldman-Sachs-US-Tariff-Impact-Tracker--Import-Outlook-Remains-Positive-",
+      "title": "市场真正低估的不是需求，而是供给侧的再定价",
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_03.pdf",
+      "figure_count": 23,
+      "output_dir": "kc_translated_reports/260602/03-0003-03-Goldman-Sachs-US-Tariff-Impact-Tracker--Import-Outlook-Remains-Positive",
+      "pdf_path": "kc_translated_reports/260602/03-0003-03-Goldman-Sachs-US-Tariff-Impact-Tracker--Import-Outlook-Remains-Positive/kc_translated_report_03.pdf"
+    },
+    {
+      "source_report_dir": "xhs_notes/dropbox/260602/shard_0/0004-04-Deutsche-Bank-FX-Blog-Has-US-exceptionalism-returned-already--260601",
+      "title": "市场真正低估的不是需求，而是美元定价的结构性断裂",
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_04.pdf",
+      "figure_count": 8,
+      "output_dir": "kc_translated_reports/260602/04-0004-04-Deutsche-Bank-FX-Blog-Has-US-exceptionalism-returned-already--260601",
+      "pdf_path": "kc_translated_reports/260602/04-0004-04-Deutsche-Bank-FX-Blog-Has-US-exceptionalism-returned-already--260601/kc_translated_report_04.pdf"
+    },
+    {
+      "source_report_dir": "xhs_notes/dropbox/260602/shard_0/0005-05-J.P.-Morgan-Global-Data-Watch-Asia-EMAX-resilience-drives-more-hawkishne",
+      "title": "亚洲能源冲击的真正赢家不是增长，而是央行的鹰派转向",
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_05.pdf",
+      "figure_count": 26,
+      "output_dir": "kc_translated_reports/260602/05-0005-05-J.P",
+      "pdf_path": "kc_translated_reports/260602/05-0005-05-J.P/kc_translated_report_05.pdf"
+    },
+    {
+      "source_report_dir": "xhs_notes/dropbox/260602/shard_1/0001-06-Nomura-FX-Insights-Inflows-to-US-equities-accelerated-with-the-AI-boom-i",
+      "title": "全球资金正在重新定价AI，但亚洲散户已经提前离场",
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_06.pdf",
+      "figure_count": 10,
+      "output_dir": "kc_translated_reports/260602/06-0001-06-Nomura-FX-Insights-Inflows-to-US-equities-accelerated-with-the-AI-boom-i",
+      "pdf_path": "kc_translated_reports/260602/06-0001-06-Nomura-FX-Insights-Inflows-to-US-equities-accelerated-with-the-AI-boom-i/kc_translated_report_06.pdf"
+    },
+    {
+      "source_report_dir": "xhs_notes/dropbox/260602/shard_1/0002-07-J.P.-Morgan-China-Metals-Activity-Tracker-Copper-consumption-slows--alum",
+      "title": "中国金属市场正在讲述一个“供给故事”，而非“需求故事”",
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_07.pdf",
+      "figure_count": 20,
+      "output_dir": "kc_translated_reports/260602/07-0002-07-J.P",
+      "pdf_path": "kc_translated_reports/260602/07-0002-07-J.P/kc_translated_report_07.pdf"
+    },
+    {
+      "source_report_dir": "xhs_notes/dropbox/260602/shard_1/0003-08-Goldman-Sachs-India--Domestic-demand-led-increase-in-Manufacturing-PMI-i",
+      "title": "印度制造业的真正信号：内需托底，但成本压力正在重塑利润分配格局",
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_08.pdf",
+      "figure_count": 2,
+      "output_dir": "kc_translated_reports/260602/08-0003-08-Goldman-Sachs-India--Domestic-demand-led-increase-in-Manufacturing-PMI-i",
+      "pdf_path": "kc_translated_reports/260602/08-0003-08-Goldman-Sachs-India--Domestic-demand-led-increase-in-Manufacturing-PMI-i/kc_translated_report_08.pdf"
+    },
+    {
+      "source_report_dir": "xhs_notes/dropbox/260602/shard_1/0004-09-Bernstein-Global-Luxury-Good--The-Triple-Whammy-Rule-260601",
+      "title": "全球奢侈品定价的核心矛盾：市场低估的不是需求，而是供给侧的再定价",
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_09.pdf",
+      "figure_count": 9,
+      "output_dir": "kc_translated_reports/260602/09-0004-09-Bernstein-Global-Luxury-Good--The-Triple-Whammy-Rule-260601",
+      "pdf_path": "kc_translated_reports/260602/09-0004-09-Bernstein-Global-Luxury-Good--The-Triple-Whammy-Rule-260601/kc_translated_report_09.pdf"
+    },
+    {
+      "source_report_dir": "xhs_notes/dropbox/260602/shard_1/0005-10-Goldman-Sachs-APAC-CONVICTION-LIST---DIRECTORS--CUT-June-update---Adding",
+      "title": "市场真正低估的不是油价，而是炼化结构壁垒的重新定价",
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_10.pdf",
+      "figure_count": 9,
+      "output_dir": "kc_translated_reports/260602/10-0005-10-Goldman-Sachs-APAC-CONVICTION-LIST---DIRECTORS--CUT-June-update---Adding",
+      "pdf_path": "kc_translated_reports/260602/10-0005-10-Goldman-Sachs-APAC-CONVICTION-LIST---DIRECTORS--CUT-June-update---Adding/kc_translated_report_10.pdf"
+    },
+    {
+      "source_report_dir": "xhs_notes/dropbox/260602/shard_2/0001-11-Goldman-Sachs-China-Software-Apr-revenue-growth-slowed-to-8.9--YoY--New-",
+      "title": "中国软件行业4月增速放缓至8.9%，但利润率改善揭示了一个被低估的结构性信号",
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_11.pdf",
+      "figure_count": 9,
+      "output_dir": "kc_translated_reports/260602/11-0001-11-Goldman-Sachs-China-Software-Apr-revenue-growth-slowed-to-8",
+      "pdf_path": "kc_translated_reports/260602/11-0001-11-Goldman-Sachs-China-Software-Apr-revenue-growth-slowed-to-8/kc_translated_report_11.pdf"
+    },
+    {
+      "source_report_dir": "xhs_notes/dropbox/260602/shard_2/0002-12-J.P.-Morgan-China-Property-Developers--May-sales-remain-mildly-down-Y-Y-",
+      "title": "市场真正低估的不是需求，而是供给侧的分化",
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_12.pdf",
+      "figure_count": 6,
+      "output_dir": "kc_translated_reports/260602/12-0002-12-J.P",
+      "pdf_path": "kc_translated_reports/260602/12-0002-12-J.P/kc_translated_report_12.pdf"
+    },
+    {
+      "source_report_dir": "xhs_notes/dropbox/260602/shard_2/0003-13-Goldman-Sachs-China-Property-Weekly-Wrap-Week-22-Wrap-Primary-sales-adva",
+      "title": "市场真正低估的不是需求，而是供给侧的再定价",
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_13.pdf",
+      "figure_count": 10,
+      "output_dir": "kc_translated_reports/260602/13-0003-13-Goldman-Sachs-China-Property-Weekly-Wrap-Week-22-Wrap-Primary-sales-adva",
+      "pdf_path": "kc_translated_reports/260602/13-0003-13-Goldman-Sachs-China-Property-Weekly-Wrap-Week-22-Wrap-Primary-sales-adva/kc_translated_report_13.pdf"
+    },
+    {
+      "source_report_dir": "xhs_notes/dropbox/260602/shard_2/0004-14-Morgan-Stanley-China-Consumer-Where-is-consumption-trending-now--260601",
+      "title": "中国消费的真正拐点，不在于收入增速，而在于储蓄率何时开始下降",
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_14.pdf",
+      "figure_count": 28,
+      "output_dir": "kc_translated_reports/260602/14-0004-14-Morgan-Stanley-China-Consumer-Where-is-consumption-trending-now--260601",
+      "pdf_path": "kc_translated_reports/260602/14-0004-14-Morgan-Stanley-China-Consumer-Where-is-consumption-trending-now--260601/kc_translated_report_14.pdf"
+    },
+    {
+      "source_report_dir": "xhs_notes/dropbox/260602/shard_2/0005-15-Bernstein-Asian-Industrial-Technology-Asian-Industrial-Tech--The-Baromet",
+      "title": "全球工业技术周期的“双顶”正在确认，但市场对“中国需求之外的结构性加速”定价不足",
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_15.pdf",
+      "figure_count": 28,
+      "output_dir": "kc_translated_reports/260602/15-0005-15-Bernstein-Asian-Industrial-Technology-Asian-Industrial-Tech--The-Baromet",
+      "pdf_path": "kc_translated_reports/260602/15-0005-15-Bernstein-Asian-Industrial-Technology-Asian-Industrial-Tech--The-Baromet/kc_translated_report_15.pdf"
+    },
+    {
+      "source_report_dir": "xhs_notes/dropbox/260602/shard_3/0001-16-Nomura-China-Auto-EV-EVs-outperform-ICE--overall-market-remains-muted-26",
+      "title": "中国车市真正的分化不在电动化，而在“谁的海外能扛”",
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_16.pdf",
+      "figure_count": 4,
+      "output_dir": "kc_translated_reports/260602/16-0001-16-Nomura-China-Auto-EV-EVs-outperform-ICE--overall-market-remains-muted-26",
+      "pdf_path": "kc_translated_reports/260602/16-0001-16-Nomura-China-Auto-EV-EVs-outperform-ICE--overall-market-remains-muted-26/kc_translated_report_16.pdf"
+    },
+    {
+      "source_report_dir": "xhs_notes/dropbox/260602/shard_3/0002-17-Nomura-USD-CNY-fix-model-Projection--6.7762-260602",
+      "title": "人民币中间价模型正在发出一个被忽视的定价信号",
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_17.pdf",
+      "figure_count": 3,
+      "output_dir": "kc_translated_reports/260602/17-0002-17-Nomura-USD-CNY-fix-model-Projection--6",
+      "pdf_path": "kc_translated_reports/260602/17-0002-17-Nomura-USD-CNY-fix-model-Projection--6/kc_translated_report_17.pdf"
+    },
+    {
+      "source_report_dir": "xhs_notes/dropbox/260602/shard_3/0003-18-Nomura-Asia-Insights-Korea--Strong-chip-prices-drive-exports-higher-2606",
+      "title": "韩国出口的真相：AI 推高了价格，但没有推宽复苏",
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_18.pdf",
+      "figure_count": 4,
+      "output_dir": "kc_translated_reports/260602/18-0003-18-Nomura-Asia-Insights-Korea--Strong-chip-prices-drive-exports-higher-2606",
+      "pdf_path": "kc_translated_reports/260602/18-0003-18-Nomura-Asia-Insights-Korea--Strong-chip-prices-drive-exports-higher-2606/kc_translated_report_18.pdf"
+    },
+    {
+      "source_report_dir": "xhs_notes/dropbox/260602/shard_3/0004-19-Goldman-Sachs-US-CONVICTION-LIST---DIRECTORS--CUT-June-2026-Update---Thr",
+      "title": "市场真正低估的不是AI，而是“非AI”资产的盈利韧性",
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_19.pdf",
+      "figure_count": 28,
+      "output_dir": "kc_translated_reports/260602/19-0004-19-Goldman-Sachs-US-CONVICTION-LIST---DIRECTORS--CUT-June-2026-Update---Thr",
+      "pdf_path": "kc_translated_reports/260602/19-0004-19-Goldman-Sachs-US-CONVICTION-LIST---DIRECTORS--CUT-June-2026-Update---Thr/kc_translated_report_19.pdf"
+    },
+    {
+      "source_report_dir": "xhs_notes/dropbox/260602/shard_3/0005-20-Goldman-Sachs-US-AVs--Robotaxi-Tracker-Deployments-update-and-key-safety",
+      "title": "自动驾驶的真正拐点，不在于技术，而在于运营的规模经济学",
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_20.pdf",
+      "figure_count": 5,
+      "output_dir": "kc_translated_reports/260602/20-0005-20-Goldman-Sachs-US-AVs--Robotaxi-Tracker-Deployments-update-and-key-safety",
+      "pdf_path": "kc_translated_reports/260602/20-0005-20-Goldman-Sachs-US-AVs--Robotaxi-Tracker-Deployments-update-and-key-safety/kc_translated_report_20.pdf"
+    },
+    {
+      "source_report_dir": "xhs_notes/dropbox/260602/shard_4/0001-21-MS-IT-Hardware-Key-Takeaways-From-Our-Taiwan-Trip-260601",
+      "title": "硬件市场真正稀缺的不是需求，而是被低估的供给议价权",
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_21.pdf",
+      "figure_count": 1,
+      "output_dir": "kc_translated_reports/260602/21-0001-21-MS-IT-Hardware-Key-Takeaways-From-Our-Taiwan-Trip-260601",
+      "pdf_path": "kc_translated_reports/260602/21-0001-21-MS-IT-Hardware-Key-Takeaways-From-Our-Taiwan-Trip-260601/kc_translated_report_21.pdf"
+    },
+    {
+      "source_report_dir": "xhs_notes/dropbox/260602/shard_4/0002-22-MS-Semiconductors-Takeaways-from-our-meetings-in-Taiwan-260601",
+      "title": "市场真正低估的不是需求，而是供给侧的再定价",
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_22.pdf",
+      "figure_count": 0,
+      "output_dir": "kc_translated_reports/260602/22-0002-22-MS-Semiconductors-Takeaways-from-our-meetings-in-Taiwan-260601",
+      "pdf_path": "kc_translated_reports/260602/22-0002-22-MS-Semiconductors-Takeaways-from-our-meetings-in-Taiwan-260601/kc_translated_report_22.pdf"
+    },
+    {
+      "source_report_dir": "xhs_notes/dropbox/260602/shard_4/0003-23-Morgan-Stanley-Energy-Services---Equipment-The-Offshore-Drilling-Digest-",
+      "title": "市场低估的不是需求，而是供给纪律的自我强化",
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_23.pdf",
+      "figure_count": 28,
+      "output_dir": "kc_translated_reports/260602/23-0003-23-Morgan-Stanley-Energy-Services---Equipment-The-Offshore-Drilling-Digest",
+      "pdf_path": "kc_translated_reports/260602/23-0003-23-Morgan-Stanley-Energy-Services---Equipment-The-Offshore-Drilling-Digest/kc_translated_report_23.pdf"
+    },
+    {
+      "source_report_dir": "xhs_notes/dropbox/260602/shard_4/0004-24-Morgan-Stanley-US-Consumer-Pulse-Survey--Summer-Spending-Kickoff-World-C",
+      "title": "世界杯与夏季旅行正成为消费分化的新分水岭，而非总量信号",
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_24.pdf",
+      "figure_count": 28,
+      "output_dir": "kc_translated_reports/260602/24-0004-24-Morgan-Stanley-US-Consumer-Pulse-Survey--Summer-Spending-Kickoff-World-C",
+      "pdf_path": "kc_translated_reports/260602/24-0004-24-Morgan-Stanley-US-Consumer-Pulse-Survey--Summer-Spending-Kickoff-World-C/kc_translated_report_24.pdf"
+    },
+    {
+      "source_report_dir": "xhs_notes/dropbox/260602/shard_4/0005-25-Bernstein-U.S.-Semiconductors-and-Semicap-Equipment--Conversations-with-",
+      "title": "半导体CEO们的共识：AI需求正在重塑WFE定价权，但真正的约束是物理空间",
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_25.pdf",
+      "figure_count": 0,
+      "output_dir": "kc_translated_reports/260602/25-0005-25-Bernstein-U.S",
+      "pdf_path": "kc_translated_reports/260602/25-0005-25-Bernstein-U.S/kc_translated_report_25.pdf"
+    },
+    {
+      "source_report_dir": "xhs_notes/dropbox/260602/shard_5/0001-26-Bernstein-US-Pharma---Biotech--Insights-from-a-physician-on-the-ground-a",
+      "title": "肺癌治疗正在经历一场“分子分型”驱动的定价重构",
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_26.pdf",
+      "figure_count": 0,
+      "output_dir": "kc_translated_reports/260602/26-0001-26-Bernstein-US-Pharma---Biotech--Insights-from-a-physician-on-the-ground-a",
+      "pdf_path": "kc_translated_reports/260602/26-0001-26-Bernstein-US-Pharma---Biotech--Insights-from-a-physician-on-the-ground-a/kc_translated_report_26.pdf"
+    },
+    {
+      "source_report_dir": "xhs_notes/dropbox/260602/shard_5/0002-27-MS-Semiconductors-Weekly-Earnings-Week-7-AVGO-Preview-260531",
+      "title": "市场低估的不是Broadcom的短期业绩，而是其2027年XPU份额的再定价空间",
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_27.pdf",
+      "figure_count": 12,
+      "output_dir": "kc_translated_reports/260602/27-0002-27-MS-Semiconductors-Weekly-Earnings-Week-7-AVGO-Preview-260531",
+      "pdf_path": "kc_translated_reports/260602/27-0002-27-MS-Semiconductors-Weekly-Earnings-Week-7-AVGO-Preview-260531/kc_translated_report_27.pdf"
+    },
+    {
+      "source_report_dir": "xhs_notes/dropbox/260602/shard_5/0003-28-Morgan-Stanley-Feedback-on-the-Outlook-260531",
+      "title": "市场真正低估的不是需求，而是供给侧的再定价",
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_28.pdf",
+      "figure_count": 19,
+      "output_dir": "kc_translated_reports/260602/28-0003-28-Morgan-Stanley-Feedback-on-the-Outlook-260531",
+      "pdf_path": "kc_translated_reports/260602/28-0003-28-Morgan-Stanley-Feedback-on-the-Outlook-260531/kc_translated_report_28.pdf"
+    },
+    {
+      "source_report_dir": "xhs_notes/dropbox/260602/shard_5/0004-29-Goldman-Sachs-CHINA-SNACKS-2Q-1H-early-color--Konjac-resilience-for-grow",
+      "title": "市场低估的不是零食需求，而是成本周期与渠道红利的共振",
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_29.pdf",
+      "figure_count": 2,
+      "output_dir": "kc_translated_reports/260602/29-0004-29-Goldman-Sachs-CHINA-SNACKS-2Q-1H-early-color--Konjac-resilience-for-grow",
+      "pdf_path": "kc_translated_reports/260602/29-0004-29-Goldman-Sachs-CHINA-SNACKS-2Q-1H-early-color--Konjac-resilience-for-grow/kc_translated_report_29.pdf"
+    },
+    {
+      "source_report_dir": "xhs_notes/dropbox/260602/shard_5/0005-30-Goldman-Sachs-China-Healthcare-Eyes-on-ADA-Innovent-joining-the-oral-GLP",
+      "title": "口服GLP-1的竞赛逻辑已经变了：中国资产正在定义下一轮竞争参数",
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_30.pdf",
+      "figure_count": 2,
+      "output_dir": "kc_translated_reports/260602/30-0005-30-Goldman-Sachs-China-Healthcare-Eyes-on-ADA-Innovent-joining-the-oral-GLP",
+      "pdf_path": "kc_translated_reports/260602/30-0005-30-Goldman-Sachs-China-Healthcare-Eyes-on-ADA-Innovent-joining-the-oral-GLP/kc_translated_report_30.pdf"
+    },
+    {
+      "source_report_dir": "xhs_notes/dropbox/260602/shard_6/0001-31-Goldman-Sachs-South-Korea--Further-Surprise-Gains-in-Exports-on-Strong-C",
+      "title": "韩国出口的“分裂式繁荣”：半导体孤军深入，而结构性风险正在积累",
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_31.pdf",
+      "figure_count": 2,
+      "output_dir": "kc_translated_reports/260602/31-0001-31-Goldman-Sachs-South-Korea--Further-Surprise-Gains-in-Exports-on-Strong-C",
+      "pdf_path": "kc_translated_reports/260602/31-0001-31-Goldman-Sachs-South-Korea--Further-Surprise-Gains-in-Exports-on-Strong-C/kc_translated_report_31.pdf"
+    },
+    {
+      "source_report_dir": "xhs_notes/dropbox/260602/shard_6/0002-32-Goldman-Sachs-South-Korea-Tech--May-2026-export-tracker--Record-high-DRA",
+      "title": "韩国半导体出口的真相：市场低估了供给约束的持久性",
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_32.pdf",
+      "figure_count": 2,
+      "output_dir": "kc_translated_reports/260602/32-0002-32-Goldman-Sachs-South-Korea-Tech--May-2026-export-tracker--Record-high-DRA",
+      "pdf_path": "kc_translated_reports/260602/32-0002-32-Goldman-Sachs-South-Korea-Tech--May-2026-export-tracker--Record-high-DRA/kc_translated_report_32.pdf"
+    },
+    {
+      "source_report_dir": "xhs_notes/dropbox/260602/shard_6/0003-33-Morgan-Stanley-DataDig--Lithium-Restarts-Reemerge-260601",
+      "title": "锂价反弹的真正考验：供给侧正在醒来，但市场低估了重启的节奏",
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_33.pdf",
+      "figure_count": 28,
+      "output_dir": "kc_translated_reports/260602/33-0003-33-Morgan-Stanley-DataDig--Lithium-Restarts-Reemerge-260601",
+      "pdf_path": "kc_translated_reports/260602/33-0003-33-Morgan-Stanley-DataDig--Lithium-Restarts-Reemerge-260601/kc_translated_report_33.pdf"
+    },
+    {
+      "source_report_dir": "xhs_notes/dropbox/260602/shard_6/0004-34-Morgan-Stanley-Steel--Old-Playbook--New-Framework-260601",
+      "title": "欧洲钢铁业正在经历一场被低估的供给侧重定价",
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_34.pdf",
+      "figure_count": 28,
+      "output_dir": "kc_translated_reports/260602/34-0004-34-Morgan-Stanley-Steel--Old-Playbook--New-Framework-260601",
+      "pdf_path": "kc_translated_reports/260602/34-0004-34-Morgan-Stanley-Steel--Old-Playbook--New-Framework-260601/kc_translated_report_34.pdf"
+    },
+    {
+      "source_report_dir": "xhs_notes/dropbox/260602/shard_6/0005-35-Morgan-Stanley-How-Fast-Can-Middle-East-Production-Return--260601",
+      "title": "市场真正低估的不是需求，而是供给恢复的速度",
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_35.pdf",
+      "figure_count": 28,
+      "output_dir": "kc_translated_reports/260602/35-0005-35-Morgan-Stanley-How-Fast-Can-Middle-East-Production-Return--260601",
+      "pdf_path": "kc_translated_reports/260602/35-0005-35-Morgan-Stanley-How-Fast-Can-Middle-East-Production-Return--260601/kc_translated_report_35.pdf"
+    },
+    {
+      "source_report_dir": "xhs_notes/dropbox/260602/shard_7/0001-36-Goldman-Sachs-Americas-Healthcare--ASCO-takeaways-from-the-weekend-26060",
+      "title": "ASCO 2026最值得关注的信号：双抗在肺癌领域首次击败PD-1标准疗法",
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_36.pdf",
+      "figure_count": 0,
+      "output_dir": "kc_translated_reports/260602/36-0001-36-Goldman-Sachs-Americas-Healthcare--ASCO-takeaways-from-the-weekend-26060",
+      "pdf_path": "kc_translated_reports/260602/36-0001-36-Goldman-Sachs-Americas-Healthcare--ASCO-takeaways-from-the-weekend-26060/kc_translated_report_36.pdf"
+    },
+    {
+      "source_report_dir": "xhs_notes/dropbox/260602/shard_7/0002-37-Goldman-Sachs-Japan-IT-Services--NC-company-results-read-across--1--mid-",
+      "title": "日本IT服务业的真正拐点，藏在两家非覆盖公司的财报细节里",
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_37.pdf",
+      "figure_count": 0,
+      "output_dir": "kc_translated_reports/260602/37-0002-37-Goldman-Sachs-Japan-IT-Services--NC-company-results-read-across--1--mid",
+      "pdf_path": "kc_translated_reports/260602/37-0002-37-Goldman-Sachs-Japan-IT-Services--NC-company-results-read-across--1--mid/kc_translated_report_37.pdf"
+    }
+  ]
+}
