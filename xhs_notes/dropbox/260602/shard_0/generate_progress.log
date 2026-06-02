@@ -1,0 +1,14 @@
+Found 37 total PDFs; shard 0/40 has 5 PDFs, skips 0 already converted, will process 5 PDFs with batch_size=5.
+Running batch 1: 5 PDFs
+Found 5 PDFs.
+Uploading PDF to MinerU: /tmp/pdf_batch_001_ywodh5ls/pdfs/0001-01-Goldman Sachs-US Inflation Monitor- April 2026- Commodity Prices and AI-Related Effects Continue to Boost Inflation-260601.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_ywodh5ls/pdfs/0002-02-J.P. Morgan-China Logistics- Express Parcel and Ecommerce-Global China Summit takeaways and April data-pricing power holds- ASP rises- e-commerce momentum decelerates-260601.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_ywodh5ls/pdfs/0003-03-Goldman Sachs-US Tariff Impact Tracker- Import Outlook Remains Positive to End May Lapping Liberation Day-260601.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_ywodh5ls/pdfs/0004-04-Deutsche Bank-FX Blog-Has US exceptionalism returned already--260601.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_ywodh5ls/pdfs/0005-05-J.P. Morgan-Global Data Watch-Asia-EMAX resilience drives more hawkishness-260601.pdf
+MinerU batch_id=9ca763ff-471a-422b-9c8c-766fc725200f
+MinerU states: running, running, running, pending, pending
+MinerU states: done, done, done, running, done
+MinerU states: done, done, done, done, done
+Done. Results written to /home/runner/work/rpt_edit/rpt_edit/xhs_notes/dropbox/260602/shard_0; successful_reports=5; mineru_timed_out=False
+All batches completed successfully. Generated 5 report directories.
