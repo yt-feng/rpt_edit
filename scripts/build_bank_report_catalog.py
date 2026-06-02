@@ -186,10 +186,6 @@ def collect_reports(token: str, root: str, folders: list[dict[str, Any]]) -> dic
 
 def render_bank_txt(code: str, cn_name: str, dates: dict[str, list[dict[str, str]]], date_order: list[str], root: str, generated_at: str) -> str:
     lines: list[str] = []
-    lines.append(f"{bank_display_name(code, cn_name)}最近 {len(date_order)} 天研究报告目录")
-    lines.append(f"Dropbox root: {root}")
-    lines.append(f"Generated at: {generated_at}")
-    lines.append("")
     lines.extend(render_sales_intro(code, cn_name))
     lines.append("")
     for date_name in date_order:
