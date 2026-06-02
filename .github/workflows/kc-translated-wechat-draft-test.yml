@@ -19,10 +19,18 @@ on:
         description: "Number of articles in each WeChat draft item"
         required: true
         default: "9"
-      max_inline_images:
-        description: "Max chart images uploaded into each article body"
+      max_body_chars:
+        description: "Approximate visible Chinese character budget for each article"
         required: true
-        default: "28"
+        default: "2000"
+      min_inline_images:
+        description: "Minimum body images per article; AI images fill missing slots"
+        required: true
+        default: "3"
+      max_inline_images:
+        description: "Max body images uploaded into each article body"
+        required: true
+        default: "3"
       source_run_id:
         description: "Optional run id of a KC translated reports artifact to download before building drafts"
         required: false
@@ -102,7 +110,9 @@ jobs:
           MAX_ARTICLES="${{ github.event.inputs.max_articles || '1' }}"
           ARTICLE_OFFSET="${{ github.event.inputs.article_offset || '0' }}"
           ARTICLES_PER_DRAFT="${{ github.event.inputs.articles_per_draft || '9' }}"
-          MAX_INLINE_IMAGES="${{ github.event.inputs.max_inline_images || '28' }}"
+          MAX_BODY_CHARS="${{ github.event.inputs.max_body_chars || '2000' }}"
+          MIN_INLINE_IMAGES="${{ github.event.inputs.min_inline_images || '3' }}"
+          MAX_INLINE_IMAGES="${{ github.event.inputs.max_inline_images || '3' }}"
           DRY_RUN="${{ github.event.inputs.dry_run || 'true' }}"
           PUBLISH="${{ github.event.inputs.publish || 'false' }}"
 
@@ -121,6 +131,8 @@ jobs:
             --max-articles "$MAX_ARTICLES" \
             --article-offset "$ARTICLE_OFFSET" \
             --articles-per-draft "$ARTICLES_PER_DRAFT" \
+            --max-body-chars "$MAX_BODY_CHARS" \
+            --min-inline-images "$MIN_INLINE_IMAGES" \
             --max-inline-images "$MAX_INLINE_IMAGES" \
             "${ARGS[@]}" 2>&1 | tee wechat_drafts_progress.log
 

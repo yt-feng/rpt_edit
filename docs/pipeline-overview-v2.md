@@ -280,8 +280,10 @@ scripts/push_kc_translated_to_wechat_drafts.py
 
 - 从 `xhs_notes/dropbox/<日期>/.../source_mineru.md` 选取报告，清理原报告 logo、作者、页脚免责声明和披露段落。
 - 用 DeepSeek 翻译成中文正文，保留正文图表，渲染为带 **KC桌面——外资精译** 品牌的 PDF。
-- 默认把 `kc_translated_reports/<日期>/<报告>/translated.md` 转成微信公众号图文 HTML，正文图片先走微信 `uploadimg`，封面走永久图片素材，并调用 `draft/add` 创建草稿；当 `wechat_freepublish=true` 时再调用 `freepublish/submit` 提交发布。
+- 默认把 `kc_translated_reports/<日期>/<报告>/translated.md` 转成微信公众号短版图文 HTML，可见正文约 2000 字；正文图片先走微信 `uploadimg`，封面走永久图片素材，并调用 `draft/add` 创建草稿；当 `wechat_freepublish=true` 时再调用 `freepublish/submit` 提交发布。
+- 微信短版正文图默认最多 3 张、至少 3 张。优先使用 MinerU 抽出的报告图表；如果报告图不足，会参考 `gen_rpt` 的方式用 Pollinations 生成主题相关 AI 配图，下载压缩后再上传微信。
 - 每篇公众号草稿正文末尾固定追加 `prompts/zsxq_img.jpg`，上传时会先通过微信 `uploadimg` 转成公众号可用图片 URL。
+- 每篇公众号草稿正文末尾、星球图之前固定加钩子：`更多完整报告和后续精译，扫文末图片进群交流。`
 - 图文分组默认 `articles_per_draft=9`。如果当天成功翻译 35 篇，会形成 9+9+9+8 四个图文素材；`wechat_freepublish=true` 时会按组提交发布。
 
 主流程入口：
@@ -290,7 +292,9 @@ scripts/push_kc_translated_to_wechat_drafts.py
 - `wechat_draft_upload` 默认 `true`，在翻译 PDF job 成功后上传公众号草稿；手动运行时可改成 `false` 只生成翻译 PDF。
 - `wechat_freepublish` 默认 `false`，因为当前公众号测试 `freepublish/submit` 返回 `48001 api unauthorized`；等公众号后台开通发布接口权限后，手动运行时改成 `true` 或把 workflow 默认值改回 `true`。
 - `wechat_draft_articles_per_draft` 默认 `9`。
-- `wechat_draft_max_inline_images` 默认 `28`。
+- `wechat_draft_max_body_chars` 默认 `2000`。
+- `wechat_draft_min_inline_images` 默认 `3`。
+- `wechat_draft_max_inline_images` 默认 `3`。
 
 测试方式：
 
@@ -338,7 +342,7 @@ xhs_notes/<报告文件夹>/
 | `scripts/package_publish_ready_outputs.py` | 打待发布 ZIP，过滤 raw/prompt/log/json/status，md 改 txt，分卷压缩 |
 | `scripts/prune_generated_date_dirs.py` | 清理重型生成目录，只保留最新日期文件夹 |
 | `scripts/build_kc_translated_reports.py` | 从 MinerU 结果生成 KC 中文精译 Markdown 和 PDF |
-| `scripts/push_kc_translated_to_wechat_drafts.py` | 把 KC 中文精译 Markdown 转成公众号草稿图文，可选提交发布，支持 dry-run |
+| `scripts/push_kc_translated_to_wechat_drafts.py` | 把 KC 中文精译 Markdown 转成 2000 字左右的公众号草稿图文，可选 Pollinations 补图和提交发布，支持 dry-run |
 | `scripts/build_market_views_pdf.py` | 生成市场观点汇总结构化 JSON 和 LaTeX 源文件 |
 | `scripts/render_market_views_reportlab_pdf.py` | 用 ReportLab 快速渲染市场观点 PDF |
 | `scripts/select_test_pdf.py` | 测试 podcast/video 时选择 5 页以上 PDF |

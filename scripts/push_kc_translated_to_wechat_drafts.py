@@ -20,22 +20,30 @@ import os
 import re
 import struct
 import sys
+import time
 import zlib
 from pathlib import Path
 from typing import Any
 from urllib.parse import quote
 
 import requests
+from PIL import Image, ImageDraw
 
 
 BRAND = "KC桌面——外资精译"
 AUTHOR = "KC桌面"
 BOTTOM_DISCLAIMER = "For informational purposes only. Not investment advice."
+DEFAULT_BODY_HOOK = "更多完整报告和后续精译，扫文末图片进群交流。"
+DEFAULT_BODY_VISIBLE_CHARS = 2000
+DEFAULT_MIN_INLINE_IMAGES = 3
 DISPLAY_TITLE_MAX_CHARS = 64
 WECHAT_AUTHOR_MAX_BYTES = 20
 WECHAT_DIGEST_MAX_BYTES = 120
 WECHAT_TITLE_MAX_CHARS = 64
+WECHAT_UPLOADIMG_MAX_BYTES = 1024 * 1024
+WECHAT_UPLOADIMG_TARGET_BYTES = 930 * 1024
 DEFAULT_TRAILING_IMAGE = "prompts/zsxq_img.jpg"
+POLLINATIONS_BASE_URL = "https://image.pollinations.ai/prompt/"
 DATE_DIR_RE = re.compile(r"^\d{6,8}$")
 IMAGE_TOKEN_RE = re.compile(r"\[\[KC_IMAGE_(\d{3})\]\]")
 MD_IMAGE_RE = re.compile(r"!\[([^\]]*)\]\(([^\)]+)\)")
@@ -98,6 +106,28 @@ def truncate_utf8_bytes(text: str, max_bytes: int, suffix: str = "…") -> str:
         kept.append(char)
         used += size
     return "".join(kept).rstrip() + suffix
+
+
+def visible_char_count(text: str) -> int:
+    return len(re.sub(r"\s+", "", strip_markdown_markup(text or "")))
+
+
+def truncate_visible_text(text: str, max_chars: int, suffix: str = "…") -> str:
+    text = normalize_space(strip_markdown_markup(text))
+    if max_chars <= 0 or visible_char_count(text) <= max_chars:
+        return text
+    budget = max(1, max_chars - visible_char_count(suffix))
+    kept: list[str] = []
+    used = 0
+    for char in text:
+        if char.isspace():
+            kept.append(char)
+            continue
+        if used >= budget:
+            break
+        kept.append(char)
+        used += 1
+    return normalize_space("".join(kept)).rstrip("，,。；;：:") + suffix
 
 
 def latest_date_dir(root: Path) -> Path:
@@ -211,6 +241,11 @@ def paragraph_html(text: str) -> str:
     return f'<p style="margin:10px 0;line-height:1.78;color:#202631;font-size:16px;">{content}</p>'
 
 
+def is_figure_meta_line(text: str) -> bool:
+    content = normalize_space(strip_markdown_markup(text))
+    return bool(re.match(r"^(?:图|表)\s*\d+[\.:：\s]", content)) or content.startswith("来源：") or content.lower().startswith("source:")
+
+
 def heading_html(level: int, text: str) -> str:
     content = inline_markdown(strip_markdown_markup(text))
     if not content:
@@ -251,6 +286,17 @@ def footer_html(disclaimer: str) -> str:
     )
 
 
+def hook_html(text: str) -> str:
+    if not text:
+        return ""
+    return (
+        '<p style="margin:24px 0 12px;padding:14px 16px;background:#F7F3E8;'
+        'border-left:4px solid #C9A227;color:#152033;font-size:16px;line-height:1.75;font-weight:600;">'
+        f"{html.escape(text)}"
+        "</p>"
+    )
+
+
 def compose_limited_html(parts: list[str], tail_parts: list[str], max_chars: int) -> str:
     tail = [part for part in tail_parts if part]
     if max_chars <= 0:
@@ -273,19 +319,51 @@ def markdown_to_wechat_html(
     title: str,
     brand: str,
     image_urls: dict[str, str],
+    body_images: list[dict[str, str]],
+    hook_text: str,
     disclaimer: str,
     trailing_image_url: str,
+    max_visible_chars: int,
     max_chars: int,
-) -> str:
+) -> tuple[str, int, int]:
     parts: list[str] = [brand_header_html(brand, title)]
     paragraph: list[str] = []
     list_items: list[str] = []
-    rendered_image_tokens: set[str] = set()
+    rendered_image_urls: set[str] = set()
+    selected_image_urls = [item["url"] for item in body_images if item.get("url")]
+    selected_image_set = set(selected_image_urls)
+    body_budget = max(0, max_visible_chars - visible_char_count(hook_text))
+    text_used = 0
+
+    def remaining_chars() -> int:
+        return max(0, body_budget - text_used)
+
+    def fit_text(text: str) -> str:
+        nonlocal text_used
+        if body_budget <= 0 or text_used >= body_budget:
+            return ""
+        count = visible_char_count(text)
+        if count <= remaining_chars():
+            text_used += count
+            return text
+        if remaining_chars() < 24:
+            text_used = body_budget
+            return ""
+        fitted = truncate_visible_text(text, remaining_chars())
+        text_used = body_budget
+        return fitted
+
+    def maybe_render_image(url: str, alt: str) -> None:
+        if not url or url not in selected_image_set or url in rendered_image_urls:
+            return
+        parts.append(image_html(url, alt=alt))
+        rendered_image_urls.add(url)
 
     def flush_paragraph() -> None:
         nonlocal paragraph
         if paragraph:
-            rendered = paragraph_html(" ".join(paragraph))
+            fitted = fit_text(" ".join(paragraph))
+            rendered = paragraph_html(fitted)
             if rendered:
                 parts.append(rendered)
             paragraph = []
@@ -293,8 +371,16 @@ def markdown_to_wechat_html(
     def flush_list() -> None:
         nonlocal list_items
         if list_items:
-            body = "".join(f"<li>{inline_markdown(item)}</li>" for item in list_items)
-            parts.append(f'<ul style="margin:10px 0 12px;padding-left:22px;line-height:1.7;color:#202631;font-size:16px;">{body}</ul>')
+            rendered_items = []
+            for item in list_items:
+                fitted = fit_text(item)
+                if fitted:
+                    rendered_items.append(fitted)
+                if text_used >= body_budget:
+                    break
+            if rendered_items:
+                body = "".join(f"<li>{inline_markdown(item)}</li>" for item in rendered_items)
+                parts.append(f'<ul style="margin:10px 0 12px;padding-left:22px;line-height:1.7;color:#202631;font-size:16px;">{body}</ul>')
             list_items = []
 
     for raw in clean_markdown(markdown).splitlines():
@@ -310,12 +396,8 @@ def markdown_to_wechat_html(
             flush_paragraph()
             flush_list()
             token = f"[[KC_IMAGE_{token_match.group(1)}]]"
-            if token in rendered_image_tokens:
-                continue
             url = image_urls.get(token)
-            if url:
-                parts.append(image_html(url, alt=token))
-                rendered_image_tokens.add(token)
+            maybe_render_image(url or "", token)
             continue
         if md_image_match:
             flush_paragraph()
@@ -323,14 +405,21 @@ def markdown_to_wechat_html(
             ref = md_image_match.group(2).strip()
             url = image_urls.get(ref) or ref
             if url.startswith("http://") or url.startswith("https://"):
-                parts.append(image_html(url, alt=md_image_match.group(1)))
+                maybe_render_image(url, md_image_match.group(1))
+            continue
+
+        if is_figure_meta_line(line):
+            flush_paragraph()
+            flush_list()
             continue
 
         heading = re.match(r"^(#{1,6})\s+(.+)$", line)
         if heading:
             flush_paragraph()
             flush_list()
-            parts.append(heading_html(len(heading.group(1)), heading.group(2)))
+            fitted = fit_text(heading.group(2))
+            if fitted:
+                parts.append(heading_html(len(heading.group(1)), fitted))
             continue
 
         bullet = re.match(r"^[-*]\s+(.+)$", line)
@@ -343,10 +432,17 @@ def markdown_to_wechat_html(
 
     flush_paragraph()
     flush_list()
-    tail = [footer_html(disclaimer)]
+    supplemental_images = [
+        image_html(item["url"], alt=item.get("alt") or "KC Desk")
+        for item in body_images
+        if item.get("url") and item["url"] not in rendered_image_urls
+    ]
+    tail = [*supplemental_images, hook_html(hook_text), footer_html(disclaimer)]
     if trailing_image_url:
         tail.append(image_html(trailing_image_url, alt="KC Desk"))
-    return compose_limited_html(parts, tail, max_chars)
+    content = compose_limited_html(parts, tail, max_chars)
+    total_visible = text_used + visible_char_count(hook_text)
+    return content, total_visible, len(body_images)
 
 
 def resolve_asset_path(report_dir: Path, raw_path: str) -> Path | None:
@@ -447,6 +543,105 @@ def choose_cover_image(report_dir: Path, figure_paths: dict[str, Path], fallback
     if not fallback.exists():
         write_fallback_cover(fallback)
     return fallback
+
+
+def pollinations_prompt(title: str, index: int) -> str:
+    topic = normalize_space(strip_markdown_markup(title)) or "global macro and industry research"
+    angle = [
+        "executive strategy briefing",
+        "financial research insight",
+        "market intelligence discussion",
+    ][(index - 1) % 3]
+    prompt = (
+        f"Premium editorial image for a Chinese financial research article about {topic}. "
+        f"Scene type: {angle}. Photorealistic business and market research visual, "
+        "human-scale context, clean composition, sophisticated lighting, white, ink and gold accents, "
+        "no readable text, no logos, no watermarks, no charts, no abstract filler."
+    )
+    return " ".join(prompt.split())[:1000]
+
+
+def pollinations_url(prompt: str) -> str:
+    query = "?width=960&height=640&enhance=true&private=true&nologo=true&safe=true&model=flux"
+    return POLLINATIONS_BASE_URL + quote(prompt, safe="") + query
+
+
+def write_editorial_fallback_image(path: Path, title: str = "") -> None:
+    path.parent.mkdir(parents=True, exist_ok=True)
+    width, height = 960, 640
+    bg = (247, 243, 232)
+    ink = (20, 32, 51)
+    gold = (201, 162, 39)
+    image = Image.new("RGB", (width, height), bg)
+    draw = ImageDraw.Draw(image, "RGBA")
+    for y in range(height):
+        shade = int(18 * y / height)
+        draw.line((0, y, width, y), fill=(max(0, bg[0] - shade), max(0, bg[1] - shade), max(0, bg[2] - shade)))
+    draw.rectangle((0, 0, width, 92), fill=(*ink, 245))
+    draw.rectangle((0, 92, width, 110), fill=(*gold, 230))
+    for idx in range(7):
+        x = 95 + idx * 122
+        top = 220 + (idx % 3) * 34
+        draw.rounded_rectangle((x, top, x + 54, 470), radius=12, outline=(*gold, 155), width=4)
+        draw.ellipse((x + 12, top - 58, x + 42, top - 28), fill=(*ink, 90))
+    for idx in range(5):
+        y = 535 + idx * 18
+        draw.line((110, y, 850, y), fill=(*ink, 48), width=4)
+    image.save(path, format="JPEG", quality=86, optimize=True)
+
+
+def save_optimized_jpeg(image: Image.Image, path: Path, max_bytes: int = WECHAT_UPLOADIMG_TARGET_BYTES) -> Path:
+    path.parent.mkdir(parents=True, exist_ok=True)
+    working = image.convert("RGB")
+    working.thumbnail((1280, 1280), Image.Resampling.LANCZOS)
+    quality = 88
+    while True:
+        working.save(path, format="JPEG", quality=quality, optimize=True, progressive=True)
+        if path.stat().st_size < max_bytes:
+            return path
+        if quality > 58:
+            quality -= 8
+            continue
+        width, height = working.size
+        if width <= 640 or height <= 420:
+            return path
+        working = working.resize((int(width * 0.86), int(height * 0.86)), Image.Resampling.LANCZOS)
+        quality = 82
+
+
+def prepare_article_upload_image(path: Path, output_dir: Path, stem: str) -> Path:
+    if path.suffix.lower() in {".jpg", ".jpeg", ".png"} and path.stat().st_size < WECHAT_UPLOADIMG_MAX_BYTES:
+        return path
+    target = output_dir / "_assets" / f"{stem}.jpg"
+    with Image.open(path) as image:
+        return save_optimized_jpeg(image, target)
+
+
+def download_pollinations_image(
+    session: requests.Session,
+    prompt: str,
+    target: Path,
+    timeout: int,
+    title: str,
+) -> tuple[Path, str, str, str]:
+    url = pollinations_url(prompt)
+    target.parent.mkdir(parents=True, exist_ok=True)
+    last_error = ""
+    for attempt in range(2):
+        try:
+            response = session.get(url, timeout=timeout, headers={"User-Agent": "KCDeskWeChat/1.0"})
+            response.raise_for_status()
+            raw_path = target.with_suffix(".raw")
+            raw_path.write_bytes(response.content)
+            with Image.open(raw_path) as image:
+                output = save_optimized_jpeg(image, target)
+            raw_path.unlink(missing_ok=True)
+            return output, url, "pollinations", ""
+        except Exception as exc:
+            last_error = str(exc)[:300]
+            time.sleep(1.5 * (attempt + 1))
+    write_editorial_fallback_image(target, title)
+    return target, url, "fallback", last_error
 
 
 def post_wechat_json(
@@ -596,14 +791,58 @@ def build_article(
             continue
         if args.dry_run:
             image_url = fake_image_url(report_dir, token)
+            upload_path = path
         else:
             if session is None or access_token is None:
                 raise RuntimeError("session and access_token are required outside dry-run")
-            image_url = upload_article_image(session, access_token, path, args.timeout)
+            upload_path = prepare_article_upload_image(path, output_dir, f"article_{index:02d}_{token.strip('[]').lower()}")
+            image_url = upload_article_image(session, access_token, upload_path, args.timeout)
         image_urls[token] = image_url
-        uploaded_images.append({"token": token, "path": str(path), "url": image_url})
+        uploaded_images.append({"token": token, "path": str(upload_path), "url": image_url, "source": "mineru"})
+
+    target_min_images = min(args.min_inline_images, args.max_inline_images)
+    ai_image_index = 1
+    while len(uploaded_images) < target_min_images:
+        ai_token = f"KC_AI_IMAGE_{ai_image_index:03d}"
+        prompt = pollinations_prompt(title, ai_image_index)
+        source_url = pollinations_url(prompt)
+        if args.dry_run:
+            image_url = fake_static_image_url(f"pollinations/{report_dir.name}/{ai_token}.jpg")
+            ai_path = ""
+            status_name = "dry_run"
+            reason = ""
+        else:
+            if session is None or access_token is None:
+                raise RuntimeError("session and access_token are required outside dry-run")
+            ai_path_obj, source_url, status_name, reason = download_pollinations_image(
+                session,
+                prompt,
+                output_dir / "_assets" / f"article_{index:02d}_{ai_token.lower()}.jpg",
+                min(args.timeout, 45),
+                title,
+            )
+            ai_path = str(ai_path_obj)
+            image_url = upload_article_image(session, access_token, ai_path_obj, args.timeout)
+        uploaded_images.append(
+            {
+                "token": ai_token,
+                "path": ai_path,
+                "url": image_url,
+                "source": status_name,
+                "prompt": prompt,
+                "pollinations_url": source_url,
+                "reason": reason,
+            }
+        )
+        ai_image_index += 1
 
     cover_image = choose_cover_image(report_dir, figure_paths, output_dir / "_assets")
+    if not figure_paths:
+        for item in uploaded_images:
+            candidate = Path(item.get("path") or "")
+            if candidate.exists() and candidate.is_file():
+                cover_image = candidate
+                break
     if args.dry_run:
         thumb_media_id = f"DRY_RUN_THUMB_{index:02d}"
     else:
@@ -611,13 +850,17 @@ def build_article(
             raise RuntimeError("session and access_token are required outside dry-run")
         thumb_media_id = upload_cover_material(session, access_token, cover_image, args.timeout)
 
-    content = markdown_to_wechat_html(
+    body_images = [{"url": item["url"], "alt": item.get("token") or "chart"} for item in uploaded_images]
+    content, visible_text_chars, body_image_count = markdown_to_wechat_html(
         markdown,
         title,
         args.brand,
         image_urls,
+        body_images,
+        args.body_hook,
         args.disclaimer,
         trailing_image_url,
+        args.max_body_chars,
         args.max_content_chars,
     )
     if len(content) > args.max_content_chars:
@@ -649,6 +892,9 @@ def build_article(
         "cover_image": str(cover_image),
         "inline_images": uploaded_images,
         "content_chars": len(content),
+        "visible_text_chars": visible_text_chars,
+        "body_image_count": body_image_count,
+        "ai_image_count": sum(1 for item in uploaded_images if item.get("source") != "mineru"),
     }
 
 
@@ -669,11 +915,14 @@ def main() -> int:
     parser.add_argument("--max-articles", default="10")
     parser.add_argument("--article-offset", type=int, default=0)
     parser.add_argument("--articles-per-draft", type=int, default=9)
-    parser.add_argument("--max-inline-images", type=int, default=28)
+    parser.add_argument("--max-inline-images", type=int, default=DEFAULT_MIN_INLINE_IMAGES)
+    parser.add_argument("--min-inline-images", type=int, default=DEFAULT_MIN_INLINE_IMAGES)
+    parser.add_argument("--max-body-chars", type=int, default=DEFAULT_BODY_VISIBLE_CHARS)
     parser.add_argument("--max-content-chars", type=int, default=19500)
     parser.add_argument("--brand", default=BRAND)
     parser.add_argument("--author", default=AUTHOR)
     parser.add_argument("--disclaimer", default=BOTTOM_DISCLAIMER)
+    parser.add_argument("--body-hook", default=DEFAULT_BODY_HOOK)
     parser.add_argument("--trailing-image", default=DEFAULT_TRAILING_IMAGE)
     parser.add_argument("--content-source-url", default="")
     parser.add_argument("--wechat-appid", default=os.getenv("WECHAT_MP_APPID", ""))
@@ -690,6 +939,10 @@ def main() -> int:
         raise ValueError("--articles-per-draft must be between 1 and 9")
     if args.max_inline_images < 0:
         raise ValueError("--max-inline-images must be non-negative")
+    if args.min_inline_images < 0:
+        raise ValueError("--min-inline-images must be non-negative")
+    if args.max_body_chars < 200:
+        raise ValueError("--max-body-chars must be at least 200")
     if not args.dry_run and (not args.wechat_appid or not args.wechat_secret):
         raise ValueError("WECHAT_MP_APPID and WECHAT_MP_APPSECRET are required unless --dry-run is set")
 
@@ -778,6 +1031,10 @@ def main() -> int:
         "selected_count": len(selected),
         "articles_per_draft": args.articles_per_draft,
         "draft_count": len(drafts),
+        "max_body_chars": args.max_body_chars,
+        "min_inline_images": args.min_inline_images,
+        "max_inline_images": args.max_inline_images,
+        "body_hook": args.body_hook,
         "trailing_image": str(trailing_image_path) if trailing_image_path else "",
         "drafts": drafts,
         "articles": [
@@ -786,7 +1043,10 @@ def main() -> int:
                 "wechat_title": item["wechat_title"],
                 "report_dir": item["report_dir"],
                 "content_chars": item["content_chars"],
+                "visible_text_chars": item["visible_text_chars"],
                 "inline_image_count": len(item["inline_images"]),
+                "body_image_count": item["body_image_count"],
+                "ai_image_count": item["ai_image_count"],
                 "cover_image": item["cover_image"],
             }
             for item in built_articles
