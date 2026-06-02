@@ -11,7 +11,7 @@
 3. 使用 DeepSeek 生成小红书、微信、知乎、闲鱼等文案。
 4. 对所有公开文案做投行名称脱敏、敏感词检测和合规改写。
 5. 输出小红书卡片图、微信/知乎/闲鱼文案、市场观点 PDF、KC 中文精译 PDF、待发布 ZIP 包。
-6. 默认把当天所有成功完成 MinerU 解析的 KC 中文精译稿转成微信公众号草稿箱图文，一组草稿默认 9 篇文章。
+6. 默认把当天所有成功完成 MinerU 解析的 KC 中文精译稿转成微信公众号图文，一组素材默认 9 篇文章；先写入草稿箱，再自动提交发布。
 7. 需要视频测试时，生成中文双男声 podcast 和竖屏讲解视频。
 
 当前默认只使用 DeepSeek：`DEEPSEEK_API_KEY`。不使用 `OPENAI_API_KEY` 或 `OPENAI_SB_API_KEY`。
@@ -25,10 +25,10 @@
 | `DROPBOX_APP_KEY` | Dropbox API |
 | `DROPBOX_APP_SECRET` | Dropbox API |
 | `DROPBOX_REFRESH_TOKEN` | Dropbox refresh token，用于读取 `/zip_backup` |
-| `WECHAT_MP_APPID` | 可选，微信公众号草稿上传用 AppID |
-| `WECHAT_MP_APPSECRET` | 可选，微信公众号草稿上传用 AppSecret |
+| `WECHAT_MP_APPID` | 可选，微信公众号草稿上传和发布用 AppID |
+| `WECHAT_MP_APPSECRET` | 可选，微信公众号草稿上传和发布用 AppSecret |
 
-微信公众号草稿上传还依赖公众号后台 IP 白名单。正式上传走带 `wechat-draft` label 的 self-hosted fixed-IP runner；如果上传失败，优先检查 runner 是否在线、公众号白名单是否包含该固定 IP，以及微信返回的 `40164 invalid ip not in whitelist`。`dry_run` 模式不需要这两个 secret，也不会调用微信接口。
+微信公众号草稿上传和发布还依赖公众号后台 IP 白名单。正式上传走带 `wechat-draft` label 的 self-hosted fixed-IP runner；如果上传失败，优先检查 runner 是否在线、公众号白名单是否包含该固定 IP，以及微信返回的 `40164 invalid ip not in whitelist`。`dry_run` 模式不需要这两个 secret，也不会调用微信接口。
 
 KC Desk Notes / Cloudflare R2 额外需要：
 
@@ -265,7 +265,7 @@ https://<worker>/calc?id=<report_id>&key=<CALC_KEY>
 
 如果需要，也可以继续使用 `KC_DESK_DOWNLOAD_PASSWORD` 作为全局备用密码。
 
-### 3.6 KC translated reports and WeChat drafts
+### 3.6 KC translated reports and WeChat publishing
 
 相关文件：
 
@@ -280,22 +280,23 @@ scripts/push_kc_translated_to_wechat_drafts.py
 
 - 从 `xhs_notes/dropbox/<日期>/.../source_mineru.md` 选取报告，清理原报告 logo、作者、页脚免责声明和披露段落。
 - 用 DeepSeek 翻译成中文正文，保留正文图表，渲染为带 **KC桌面——外资精译** 品牌的 PDF。
-- 默认把 `kc_translated_reports/<日期>/<报告>/translated.md` 转成微信公众号图文 HTML，正文图片先走微信 `uploadimg`，封面走永久图片素材，再调用 `draft/add` 创建草稿。
+- 默认把 `kc_translated_reports/<日期>/<报告>/translated.md` 转成微信公众号图文 HTML，正文图片先走微信 `uploadimg`，封面走永久图片素材，先调用 `draft/add` 创建草稿，再调用 `freepublish/submit` 提交发布。
 - 每篇公众号草稿正文末尾固定追加 `prompts/zsxq_img.jpg`，上传时会先通过微信 `uploadimg` 转成公众号可用图片 URL。
-- 草稿分组默认 `articles_per_draft=9`。如果当天成功翻译 35 篇，会形成 9+9+9+8 四个草稿素材。
+- 图文分组默认 `articles_per_draft=9`。如果当天成功翻译 35 篇，会形成 9+9+9+8 四个图文素材，并按组提交发布。
 
 主流程入口：
 
 - `.github/workflows/dropbox-latest-pdf-to-xhs-sharded.yml` 的 `translated_report_count` 默认 `all`，表示当天所有成功完成 MinerU 解析并产出 `source_mineru.md` 的报告都会生成 KC 中文精译版。手动运行时设为正整数可限制数量，设为 `0` 可关闭翻译和草稿上传。
 - `wechat_draft_upload` 默认 `true`，在翻译 PDF job 成功后上传公众号草稿；手动运行时可改成 `false` 只生成翻译 PDF。
+- `wechat_freepublish` 默认 `true`，草稿创建成功后自动提交发布；如果要临时恢复“只进草稿箱”，手动运行时改成 `false`。
 - `wechat_draft_articles_per_draft` 默认 `9`。
 - `wechat_draft_max_inline_images` 默认 `28`。
 
 测试方式：
 
 - 只测翻译 PDF：Actions → **KC translated reports PDF test**。
-- 只测公众号草稿 payload：Actions → **KC translated WeChat draft test**，默认 `dry_run=true`，只生成 `wechat_drafts/<日期>/draft_payload_*.json` 和 summary，不调用微信 API。
-- 确认 secret 和 IP 白名单可用后，把 `dry_run=false` 才会真正写入公众号草稿箱。
+- 只测公众号 payload：Actions → **KC translated WeChat draft test**，默认 `dry_run=true`，只生成 `wechat_drafts/<日期>/draft_payload_*.json` 和 summary，不调用微信 API。
+- 确认 secret 和 IP 白名单可用后，把 `dry_run=false` 才会真正写入公众号草稿箱；同时把 `publish=true` 才会提交发布。
 
 输出目录：
 
@@ -337,7 +338,7 @@ xhs_notes/<报告文件夹>/
 | `scripts/package_publish_ready_outputs.py` | 打待发布 ZIP，过滤 raw/prompt/log/json/status，md 改 txt，分卷压缩 |
 | `scripts/prune_generated_date_dirs.py` | 清理重型生成目录，只保留最新日期文件夹 |
 | `scripts/build_kc_translated_reports.py` | 从 MinerU 结果生成 KC 中文精译 Markdown 和 PDF |
-| `scripts/push_kc_translated_to_wechat_drafts.py` | 把 KC 中文精译 Markdown 转成公众号草稿图文，支持 dry-run |
+| `scripts/push_kc_translated_to_wechat_drafts.py` | 把 KC 中文精译 Markdown 转成公众号草稿图文，可选提交发布，支持 dry-run |
 | `scripts/build_market_views_pdf.py` | 生成市场观点汇总结构化 JSON 和 LaTeX 源文件 |
 | `scripts/render_market_views_reportlab_pdf.py` | 用 ReportLab 快速渲染市场观点 PDF |
 | `scripts/select_test_pdf.py` | 测试 podcast/video 时选择 5 页以上 PDF |

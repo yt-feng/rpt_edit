@@ -64,6 +64,11 @@ on:
         required: true
         type: boolean
         default: true
+      wechat_freepublish:
+        description: "Submit created WeChat drafts for publishing after upload. Set false to keep draft-only."
+        required: true
+        type: boolean
+        default: true
       wechat_draft_articles_per_draft:
         description: "Number of articles in each WeChat draft item."
         required: true
@@ -110,6 +115,7 @@ jobs:
       podcast_minutes: ${{ steps.vars.outputs.podcast_minutes }}
       translated_report_count: ${{ steps.vars.outputs.translated_report_count }}
       wechat_draft_upload: ${{ steps.vars.outputs.wechat_draft_upload }}
+      wechat_freepublish: ${{ steps.vars.outputs.wechat_freepublish }}
       wechat_draft_articles_per_draft: ${{ steps.vars.outputs.wechat_draft_articles_per_draft }}
       wechat_draft_max_inline_images: ${{ steps.vars.outputs.wechat_draft_max_inline_images }}
       commit_results: ${{ steps.vars.outputs.commit_results }}
@@ -132,6 +138,7 @@ jobs:
           echo "podcast_minutes=${{ github.event.inputs.podcast_minutes || '5' }}" >> "$GITHUB_OUTPUT"
           echo "translated_report_count=${{ github.event.inputs.translated_report_count || 'all' }}" >> "$GITHUB_OUTPUT"
           echo "wechat_draft_upload=${{ github.event.inputs.wechat_draft_upload || 'true' }}" >> "$GITHUB_OUTPUT"
+          echo "wechat_freepublish=${{ github.event.inputs.wechat_freepublish || 'true' }}" >> "$GITHUB_OUTPUT"
           echo "wechat_draft_articles_per_draft=${{ github.event.inputs.wechat_draft_articles_per_draft || '9' }}" >> "$GITHUB_OUTPUT"
           echo "wechat_draft_max_inline_images=${{ github.event.inputs.wechat_draft_max_inline_images || '28' }}" >> "$GITHUB_OUTPUT"
           echo "commit_results=${{ github.event.inputs.commit_results || 'true' }}" >> "$GITHUB_OUTPUT"
@@ -140,7 +147,7 @@ jobs:
           echo "::notice::Daily schedule is 05:00 Asia/Shanghai. Audio/video are disabled."
           echo "::notice::DeepSeek filters macro/trend reports first; stock/company reports are skipped."
           echo "::notice::Default plan processes ALL macro candidates, sharded as 40 x 5 = up to 200 macro reports."
-          echo "::notice::KC translated WeChat drafts are enabled by default and include every successful MinerU report."
+          echo "::notice::KC translated WeChat publishing is enabled by default and includes every successful MinerU report."
           echo "::notice::At the end, publish-ready split ZIPs will be created from generated report folders, excluding MinerU raw files."
 
   select-macro-reports:
@@ -497,14 +504,21 @@ jobs:
           set -o pipefail
           DATE_FOLDER="${{ needs.select-macro-reports.outputs.latest_folder }}"
           MAX_ARTICLES="${{ needs.resolve-inputs.outputs.translated_report_count }}"
-          echo "::notice::Uploading $MAX_ARTICLES KC translated reports to WeChat drafts from kc_translated_reports/$DATE_FOLDER"
+          PUBLISH_ARGS=()
+          if [ "${{ needs.resolve-inputs.outputs.wechat_freepublish }}" = "true" ]; then
+            PUBLISH_ARGS+=(--publish)
+            echo "::notice::Uploading and publishing $MAX_ARTICLES KC translated reports from kc_translated_reports/$DATE_FOLDER"
+          else
+            echo "::notice::Uploading $MAX_ARTICLES KC translated reports to WeChat drafts from kc_translated_reports/$DATE_FOLDER"
+          fi
           python scripts/push_kc_translated_to_wechat_drafts.py \
             --translated-root "kc_translated_reports" \
             --date-folder "$DATE_FOLDER" \
             --output-root "wechat_drafts" \
             --max-articles "$MAX_ARTICLES" \
             --articles-per-draft "${{ needs.resolve-inputs.outputs.wechat_draft_articles_per_draft }}" \
-            --max-inline-images "${{ needs.resolve-inputs.outputs.wechat_draft_max_inline_images }}" 2>&1 | tee wechat_drafts_progress.log
+            --max-inline-images "${{ needs.resolve-inputs.outputs.wechat_draft_max_inline_images }}" \
+            "${PUBLISH_ARGS[@]}" 2>&1 | tee wechat_drafts_progress.log
           echo "WECHAT_DRAFT_DIR=wechat_drafts/$DATE_FOLDER" >> "$GITHUB_ENV"
 
       - name: Upload WeChat draft summary artifact
@@ -519,4 +533,4 @@ jobs:
       - name: Commit WeChat draft summaries
         if: ${{ needs.resolve-inputs.outputs.commit_results == 'true' }}
         run: |
-          bash scripts/commit_output_dir.sh "$WECHAT_DRAFT_DIR" "Generate KC translated WeChat draft payloads ${{ needs.select-macro-reports.outputs.latest_folder }}" 8
+          bash scripts/commit_output_dir.sh "$WECHAT_DRAFT_DIR" "Generate KC translated WeChat publish payloads ${{ needs.select-macro-reports.outputs.latest_folder }}" 8

@@ -7,7 +7,8 @@ The translated report workflow writes one folder per report under:
 
 This script converts those Markdown files into WeChat-compatible HTML, uploads
 inline chart images through the article-image API, uploads one permanent image
-material per article for the cover, and creates draft items in chunks.
+material per article for the cover, creates draft items in chunks, and can
+optionally submit those drafts for publishing.
 """
 from __future__ import annotations
 
@@ -537,6 +538,20 @@ def add_draft(session: requests.Session, access_token: str, articles: list[dict[
     return str(media_id)
 
 
+def submit_publish(session: requests.Session, access_token: str, media_id: str, timeout: int) -> str:
+    response = post_wechat_json(
+        session,
+        f"https://api.weixin.qq.com/cgi-bin/freepublish/submit?access_token={access_token}",
+        {"media_id": media_id},
+        timeout,
+    )
+    data = parse_wechat_json(response, "freepublish/submit")
+    publish_id = data.get("publish_id")
+    if not publish_id:
+        raise WeChatError(f"freepublish/submit did not return publish_id: {data}")
+    return str(publish_id)
+
+
 def fake_image_url(report_dir: Path, token: str) -> str:
     safe = quote(f"{report_dir.name}-{token}", safe="")
     return f"https://example.com/wechat-dry-run/{safe}.jpg"
@@ -664,6 +679,7 @@ def main() -> int:
     parser.add_argument("--wechat-appid", default=os.getenv("WECHAT_MP_APPID", ""))
     parser.add_argument("--wechat-secret", default=os.getenv("WECHAT_MP_APPSECRET", ""))
     parser.add_argument("--timeout", type=int, default=120)
+    parser.add_argument("--publish", action="store_true", help="Submit each created draft for publishing.")
     parser.add_argument("--dry-run", action="store_true", help="Build payloads without calling WeChat APIs.")
     args = parser.parse_args()
 
@@ -730,26 +746,34 @@ def main() -> int:
 
         if args.dry_run:
             media_id = f"DRY_RUN_DRAFT_{draft_index:02d}"
+            publish_id = f"DRY_RUN_PUBLISH_{draft_index:02d}" if args.publish else ""
         else:
             if session is None or access_token is None:
                 raise RuntimeError("session and access_token are required outside dry-run")
             media_id = add_draft(session, access_token, articles, args.timeout)
+            publish_id = submit_publish(session, access_token, media_id, args.timeout) if args.publish else ""
 
         drafts.append(
             {
                 "draft_index": draft_index,
                 "media_id": media_id,
+                "publish_id": publish_id,
+                "published": bool(publish_id),
                 "article_count": len(articles),
                 "payload": str(payload_path),
                 "titles": [item["title"] for item in group],
                 "wechat_titles": [item["wechat_title"] for item in group],
             }
         )
-        log(f"Draft {draft_index}: articles={len(articles)} media_id={media_id}")
+        if publish_id:
+            log(f"Draft {draft_index}: articles={len(articles)} media_id={media_id} publish_id={publish_id}")
+        else:
+            log(f"Draft {draft_index}: articles={len(articles)} media_id={media_id}")
 
     summary = {
         "date_folder": date_dir.name,
         "dry_run": args.dry_run,
+        "publish": args.publish,
         "max_articles": "all" if max_articles is None else max_articles,
         "selected_count": len(selected),
         "articles_per_draft": args.articles_per_draft,
