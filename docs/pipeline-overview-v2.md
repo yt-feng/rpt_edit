@@ -341,6 +341,7 @@ xhs_notes/<报告文件夹>/
 | `scripts/sensitive_content_guard.py` | 文案敏感词检测、本地替换、DeepSeek 改写 |
 | `scripts/package_publish_ready_outputs.py` | 打待发布 ZIP，过滤 raw/prompt/log/json/status，md 改 txt，分卷压缩 |
 | `scripts/prune_generated_date_dirs.py` | 清理重型生成目录，只保留最新日期文件夹 |
+| `scripts/build_bank_report_catalog.py` | 生成 `bank_report_catalogs/<日期>/<投行>.txt`，每个投行目录开头会带单篇/周合集商品说明，并用实际投行显示名替换 |
 | `scripts/build_kc_translated_reports.py` | 从 MinerU 结果生成 KC 中文精译 Markdown 和 PDF |
 | `scripts/push_kc_translated_to_wechat_drafts.py` | 把 KC 中文精译 Markdown 转成 2000 字左右的公众号草稿图文，可选 Pollinations 补图和提交发布，支持 dry-run |
 | `scripts/build_market_views_pdf.py` | 生成市场观点汇总结构化 JSON 和 LaTeX 源文件 |

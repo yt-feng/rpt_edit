@@ -148,6 +148,21 @@ def safe_filename(code: str) -> str:
     return re.sub(r"[^A-Za-z0-9._-]+", "_", code).strip("_") or "Other_IB"
 
 
+def bank_display_name(code: str, cn_name: str) -> str:
+    return f"{code}（{cn_name or code}）"
+
+
+def render_sales_intro(code: str, cn_name: str) -> list[str]:
+    display_name = bank_display_name(code, cn_name)
+    return [
+        f"{display_name}研报：单篇6.66，周报告合集29。",
+        "需要单篇请发报告名，需要周报告合集的私聊咨询。",
+        "拍下留邮箱或者云盘链接发送。",
+        "",
+        "商品描述：",
+    ]
+
+
 def collect_reports(token: str, root: str, folders: list[dict[str, Any]]) -> dict[str, dict[str, Any]]:
     grouped: dict[str, dict[str, Any]] = defaultdict(lambda: {"cn_name": "", "dates": defaultdict(list)})
     for folder in folders:
@@ -171,9 +186,11 @@ def collect_reports(token: str, root: str, folders: list[dict[str, Any]]) -> dic
 
 def render_bank_txt(code: str, cn_name: str, dates: dict[str, list[dict[str, str]]], date_order: list[str], root: str, generated_at: str) -> str:
     lines: list[str] = []
-    lines.append(f"{code}（{cn_name}）最近 {len(date_order)} 天研究报告目录")
+    lines.append(f"{bank_display_name(code, cn_name)}最近 {len(date_order)} 天研究报告目录")
     lines.append(f"Dropbox root: {root}")
     lines.append(f"Generated at: {generated_at}")
+    lines.append("")
+    lines.extend(render_sales_intro(code, cn_name))
     lines.append("")
     for date_name in date_order:
         items = dates.get(date_name, [])
