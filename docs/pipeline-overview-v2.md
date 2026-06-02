@@ -145,7 +145,7 @@ publish_ready_zips/<日期>/
 
 文件：`.github/workflows/market-views-latex-pdf.yml`
 
-用途：基于每日已经生成的宏观报告内容，整理一份市场观点汇总 PDF。
+用途：基于每日已经生成的宏观报告内容，整理一份市场观点汇总 PDF。它覆盖的是 `xhs_notes/dropbox/<日期>` 下已经成功产出 `source_mineru.md` 的报告文件夹；如果当天主流程只有部分 shard 成功产出报告文件夹，本 PDF 也只会覆盖这些已完成报告。
 
 触发方式：
 
@@ -173,6 +173,8 @@ market_view_summaries/<日期>/figures/
 - 可选 `compile_latex=true` 时才尝试安装 XeLaTeX 并编译 `.tex`。
 - 图表会优先选择带 Exhibit / Figure / 图表编号的候选。
 - 已对邮箱、电话、HTML、表格残片等异常 caption 做过滤。
+- PDF 开头包含带页码目录，正文先按主题分门别类综合观点，再附“报告覆盖清单”和“逐篇报告摘录”，用于确认当天哪些报告被纳入。
+- 结尾使用灰色小字号长版 Disclaimer。
 
 ### 3.4 Daily bilingual podcast videos
 

@@ -96,6 +96,7 @@ jobs:
             --model "$MODEL" \
             --deepseek-base-url "$BASE_URL" \
             --max-reports 0 \
+            --per-report-extract-chars 2200 \
             --max-figures 0 \
             --max-selected-figures 0 \
             --max-figures-per-report 0 \
