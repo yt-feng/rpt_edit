@@ -120,6 +120,19 @@ def latest_date_dir(root: Path) -> Path:
     return max(candidates, key=lambda p: int(p.name))
 
 
+def parse_selection_limit(value: str, label: str) -> int | None:
+    normalized = str(value or "").strip().lower()
+    if normalized in {"all", "*"}:
+        return None
+    try:
+        limit = int(normalized)
+    except ValueError as exc:
+        raise ValueError(f"{label} must be a positive integer or 'all'") from exc
+    if limit < 1:
+        raise ValueError(f"{label} must be at least 1, or use 'all'")
+    return limit
+
+
 def find_report_dirs(date_dir: Path) -> list[Path]:
     report_dirs: list[Path] = []
     for shard in sorted(date_dir.glob("shard_*"), key=lambda p: p.name):
@@ -663,7 +676,7 @@ def main() -> int:
     parser.add_argument("--output-root", default="kc_translated_reports")
     parser.add_argument("--model", default=os.getenv("DEEPSEEK_MODEL", "deepseek-chat"))
     parser.add_argument("--deepseek-base-url", default=os.getenv("DEEPSEEK_BASE_URL", "https://api.deepseek.com"))
-    parser.add_argument("--max-reports", type=int, default=1)
+    parser.add_argument("--max-reports", default="1")
     parser.add_argument("--report-offset", type=int, default=0)
     parser.add_argument("--chunk-chars", type=int, default=7200)
     parser.add_argument("--max-images-per-report", type=int, default=28)
@@ -671,8 +684,9 @@ def main() -> int:
     parser.add_argument("--deepseek-retries", type=int, default=3)
     args = parser.parse_args()
 
-    if args.max_reports < 1:
-        raise ValueError("--max-reports must be at least 1")
+    max_reports = parse_selection_limit(args.max_reports, "--max-reports")
+    if args.report_offset < 0:
+        raise ValueError("--report-offset must be non-negative")
     root = Path(args.dropbox_output_root)
     date_dir = latest_date_dir(root) if args.date_folder == "latest" else root / args.date_folder
     if not date_dir.exists():
@@ -681,7 +695,10 @@ def main() -> int:
     all_reports = find_report_dirs(date_dir)
     if not all_reports:
         raise RuntimeError(f"No report outputs with source_mineru.md found under {date_dir}")
-    selected = all_reports[args.report_offset : args.report_offset + args.max_reports]
+    if max_reports is None:
+        selected = all_reports[args.report_offset :]
+    else:
+        selected = all_reports[args.report_offset : args.report_offset + max_reports]
     if not selected:
         raise RuntimeError(f"Report offset {args.report_offset} selected no reports from {len(all_reports)} available reports")
 
@@ -700,7 +717,14 @@ def main() -> int:
             if len(selected) == 1:
                 raise
 
-    payload = {"date_folder": date_dir.name, "selected_count": len(selected), "successful_count": len(summary), "failures": failures, "reports": summary}
+    payload = {
+        "date_folder": date_dir.name,
+        "max_reports": "all" if max_reports is None else max_reports,
+        "selected_count": len(selected),
+        "successful_count": len(summary),
+        "failures": failures,
+        "reports": summary,
+    }
     (out_dir / "translation_summary.json").write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8")
     if not summary:
         return 2

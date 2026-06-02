@@ -8,7 +8,7 @@ on:
         required: true
         default: "latest"
       max_articles:
-        description: "Number of translated reports to convert into WeChat draft articles"
+        description: "Number of translated reports to convert into WeChat draft articles. Use all for every translated report."
         required: true
         default: "1"
       article_offset:

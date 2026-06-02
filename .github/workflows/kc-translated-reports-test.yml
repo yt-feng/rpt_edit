@@ -8,7 +8,7 @@ on:
         required: true
         default: "latest"
       max_reports:
-        description: "Number of reports to translate. Keep 1 for testing; use 10 after validation."
+        description: "Number of reports to translate. Keep 1 for testing; use all for every successful MinerU report."
         required: true
         default: "1"
       report_offset:

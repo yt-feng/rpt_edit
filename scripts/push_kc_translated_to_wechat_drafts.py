@@ -108,6 +108,19 @@ def latest_date_dir(root: Path) -> Path:
     return max(candidates, key=lambda p: int(p.name))
 
 
+def parse_selection_limit(value: str, label: str) -> int | None:
+    normalized = str(value or "").strip().lower()
+    if normalized in {"all", "*"}:
+        return None
+    try:
+        limit = int(normalized)
+    except ValueError as exc:
+        raise ValueError(f"{label} must be a positive integer or 'all'") from exc
+    if limit < 1:
+        raise ValueError(f"{label} must be at least 1, or use 'all'")
+    return limit
+
+
 def find_report_dirs(date_dir: Path) -> list[Path]:
     return sorted(
         [p for p in date_dir.iterdir() if p.is_dir() and (p / "translated.md").exists()],
@@ -638,7 +651,7 @@ def main() -> int:
     parser.add_argument("--translated-root", default="kc_translated_reports")
     parser.add_argument("--date-folder", default="latest")
     parser.add_argument("--output-root", default="wechat_drafts")
-    parser.add_argument("--max-articles", type=int, default=10)
+    parser.add_argument("--max-articles", default="10")
     parser.add_argument("--article-offset", type=int, default=0)
     parser.add_argument("--articles-per-draft", type=int, default=9)
     parser.add_argument("--max-inline-images", type=int, default=28)
@@ -654,8 +667,9 @@ def main() -> int:
     parser.add_argument("--dry-run", action="store_true", help="Build payloads without calling WeChat APIs.")
     args = parser.parse_args()
 
-    if args.max_articles < 1:
-        raise ValueError("--max-articles must be at least 1")
+    max_articles = parse_selection_limit(args.max_articles, "--max-articles")
+    if args.article_offset < 0:
+        raise ValueError("--article-offset must be non-negative")
     if not 1 <= args.articles_per_draft <= 9:
         raise ValueError("--articles-per-draft must be between 1 and 9")
     if args.max_inline_images < 0:
@@ -669,7 +683,10 @@ def main() -> int:
         raise RuntimeError(f"Date folder not found: {date_dir}")
 
     report_dirs = find_report_dirs(date_dir)
-    selected = report_dirs[args.article_offset : args.article_offset + args.max_articles]
+    if max_articles is None:
+        selected = report_dirs[args.article_offset :]
+    else:
+        selected = report_dirs[args.article_offset : args.article_offset + max_articles]
     if not selected:
         raise RuntimeError(f"No translated reports selected from {date_dir}")
 
@@ -733,6 +750,7 @@ def main() -> int:
     summary = {
         "date_folder": date_dir.name,
         "dry_run": args.dry_run,
+        "max_articles": "all" if max_articles is None else max_articles,
         "selected_count": len(selected),
         "articles_per_draft": args.articles_per_draft,
         "draft_count": len(drafts),

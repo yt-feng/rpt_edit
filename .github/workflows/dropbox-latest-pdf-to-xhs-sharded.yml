@@ -56,14 +56,14 @@ on:
         required: true
         default: "5"
       translated_report_count:
-        description: "Number of KC translated Chinese PDF reports to render after shard generation. 0 disables it."
+        description: "Number of KC translated Chinese PDF reports to render after shard generation. Use all for every successful MinerU report; 0 disables it."
         required: true
-        default: "10"
+        default: "all"
       wechat_draft_upload:
         description: "Upload KC translated reports into WeChat Official Account drafts. Requires WECHAT_MP_APPID/WECHAT_MP_APPSECRET."
         required: true
         type: boolean
-        default: false
+        default: true
       wechat_draft_articles_per_draft:
         description: "Number of articles in each WeChat draft item."
         required: true
@@ -130,8 +130,8 @@ jobs:
           echo "wechat_length=${{ github.event.inputs.wechat_length || '3000' }}" >> "$GITHUB_OUTPUT"
           echo "community_cta=${{ github.event.inputs.community_cta || '欢迎来星球微信群里继续讨论' }}" >> "$GITHUB_OUTPUT"
           echo "podcast_minutes=${{ github.event.inputs.podcast_minutes || '5' }}" >> "$GITHUB_OUTPUT"
-          echo "translated_report_count=${{ github.event.inputs.translated_report_count || '10' }}" >> "$GITHUB_OUTPUT"
-          echo "wechat_draft_upload=${{ github.event.inputs.wechat_draft_upload || 'false' }}" >> "$GITHUB_OUTPUT"
+          echo "translated_report_count=${{ github.event.inputs.translated_report_count || 'all' }}" >> "$GITHUB_OUTPUT"
+          echo "wechat_draft_upload=${{ github.event.inputs.wechat_draft_upload || 'true' }}" >> "$GITHUB_OUTPUT"
           echo "wechat_draft_articles_per_draft=${{ github.event.inputs.wechat_draft_articles_per_draft || '9' }}" >> "$GITHUB_OUTPUT"
           echo "wechat_draft_max_inline_images=${{ github.event.inputs.wechat_draft_max_inline_images || '28' }}" >> "$GITHUB_OUTPUT"
           echo "commit_results=${{ github.event.inputs.commit_results || 'true' }}" >> "$GITHUB_OUTPUT"
@@ -140,6 +140,7 @@ jobs:
           echo "::notice::Daily schedule is 05:00 Asia/Shanghai. Audio/video are disabled."
           echo "::notice::DeepSeek filters macro/trend reports first; stock/company reports are skipped."
           echo "::notice::Default plan processes ALL macro candidates, sharded as 40 x 5 = up to 200 macro reports."
+          echo "::notice::KC translated WeChat drafts are enabled by default and include every successful MinerU report."
           echo "::notice::At the end, publish-ready split ZIPs will be created from generated report folders, excluding MinerU raw files."
 
   select-macro-reports:
@@ -390,7 +391,7 @@ jobs:
     needs: [resolve-inputs, select-macro-reports, package-publish-ready]
     if: ${{ success() && needs.resolve-inputs.outputs.translated_report_count != '0' }}
     runs-on: ubuntu-latest
-    timeout-minutes: 90
+    timeout-minutes: 360
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -465,7 +466,7 @@ jobs:
     needs: [resolve-inputs, select-macro-reports, build-kc-translated-reports]
     if: ${{ success() && needs.resolve-inputs.outputs.translated_report_count != '0' && needs.resolve-inputs.outputs.wechat_draft_upload == 'true' }}
     runs-on: [self-hosted, linux, x64, wechat-draft]
-    timeout-minutes: 45
+    timeout-minutes: 180
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
