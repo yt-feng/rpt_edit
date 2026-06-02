@@ -1,0 +1,53 @@
+[
+  {
+    "item": "0001-36-Goldman-Sachs-Americas-Healthcare--ASCO-takeaways-from-the-weekend-26060",
+    "source_pdf": "/tmp/pdf_batch_001_c2nvjwgd/pdfs/0001-36-GS-Americas Healthcare- ASCO takeaways from the weekend-260601.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "cover_short_title": "ASCO 周末重磅：",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png"
+    ],
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md",
+    "wechat_images": [
+      "assets/source_image_01.jpg",
+      "assets/source_image_02.jpg",
+      "assets/source_image_03.jpg"
+    ],
+    "wechat_article_en": "wechat_article_en.md",
+    "podcast_script": "podcast_script.txt"
+  },
+  {
+    "item": "0002-37-Goldman-Sachs-Japan-IT-Services--NC-company-results-read-across--1--mid-",
+    "source_pdf": "/tmp/pdf_batch_001_c2nvjwgd/pdfs/0002-37-GS-Japan IT Services- NC company results read-across -1- mid-tier SI NI- IIJ -NW infra services-- Dentsu Soken -SI financial manufacturing--260601.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "cover_short_title": "日本IT服务：两家腰",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png"
+    ],
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md",
+    "wechat_images": [
+      "assets/source_image_01.jpg",
+      "assets/source_image_02.jpg",
+      "assets/source_image_03.jpg"
+    ],
+    "wechat_article_en": "wechat_article_en.md",
+    "podcast_script": "podcast_script.txt"
+  }
+]
