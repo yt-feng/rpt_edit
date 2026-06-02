@@ -1,0 +1,13 @@
+Found 37 total PDFs; shard 5/40 has 5 PDFs, skips 0 already converted, will process 5 PDFs with batch_size=5.
+Running batch 1: 5 PDFs
+Found 5 PDFs.
+Uploading PDF to MinerU: /tmp/pdf_batch_001_njssxd7s/pdfs/0001-26-Bernstein-US Pharma - Biotech- Insights from a physician on the ground at ASCO-260601.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_njssxd7s/pdfs/0002-27-MS-Semiconductors Weekly Earnings Week 7 AVGO Preview-260531.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_njssxd7s/pdfs/0003-28-Morgan Stanley-Feedback on the Outlook-260531.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_njssxd7s/pdfs/0004-29-Goldman Sachs-CHINA SNACKS 2Q 1H early color- Konjac resilience for growth and cost benefits- though other products see short-term softness- Buy Yankershop and Weilong-260601.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_njssxd7s/pdfs/0005-30-Goldman Sachs-China Healthcare-Eyes on ADA-Innovent joining the oral GLP-1 race- Emerging portfolio synergies for Hengrui-260601.pdf
+MinerU batch_id=742fc395-3125-4c0b-8d8b-4cf559355db0
+MinerU states: done, running, running, pending, pending
+MinerU states: done, done, done, done, done
+Done. Results written to /home/runner/work/rpt_edit/rpt_edit/xhs_notes/dropbox/260602/shard_5; successful_reports=5; mineru_timed_out=False
+All batches completed successfully. Generated 5 report directories.

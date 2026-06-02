@@ -1,0 +1,1622 @@
+[
+    {
+        "type": "text",
+        "text": "China Healthcare: Eyes on ADA: Innovent joining the oral GLP-1 race; Emerging portfolio synergies for Hengrui ",
+        "text_level": 1,
+        "bbox": [
+            80,
+            74,
+            794,
+            127
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Ahead of the American Diabetes Association (ADA) conference (June 5-8, 2026), we highlight that China biotech/pharma companies are expected to share updates on their metabolic pipeline, with particular focus on the incremental updates of the oral GLP-1 drug candidates, led by Innovent's small-molecule GLP-1s (IBI3032 and IBI3042) and Hengrui's oral peptide HRS-9531 (GLP-1/GIP). ",
+        "bbox": [
+            80,
+            172,
+            696,
+            260
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "The oral transition is underway for GLP-1, expect bigger role of China assets: We expect the GLP-1 landscape to continue evolving, with increasing role for oral GLP-1 given: 1) the recent approval of Wegovy pills and Foundayo (orforglipron), and 2) the anticipated robust position against the disruption from generic injectable semaglutide (see our most recent GLP-1 piece on generic entrants). Projected to capture c.35% share of the 2030 AOM TAM, the oral obesity pill market is on its way towards US\\$35+bn by 2030 (see note from our US/EU team), led by Foundayo and Wegovy pills, with increasing investor focus on the prescription trends for both drugs (Wegovy pill tracking beat, Foundayo weekly TRx in focus) in the initial ramp-up phase. Beyond the leading duo, a batch of oral GLP-1 drug candidates have entered late-stage clinical trials, with meaningful contribution from China (Exhibit 1), and we expect China-originated assets to play a bigger role in oral GLP-1 with the pipeline progress. ",
+        "bbox": [
+            80,
+            273,
+            696,
+            505
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Ziyi Chen ",
+        "text_level": 1,
+        "bbox": [
+            722,
+            172,
+            785,
+            185
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "+852-2978-0526 | ziyi.chen@gs.com\nGS (Asia) L.L.C. ",
+        "bbox": [
+            722,
+            185,
+            897,
+            203
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Linhai Zhao, Ph.D. ",
+        "text_level": 1,
+        "bbox": [
+            722,
+            212,
+            844,
+            224
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "+852-3966-4059 | linhai.zhao@gs.com\nGS (Asia) L.L.C. ",
+        "bbox": [
+            722,
+            224,
+            906,
+            242
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Honglin Yan ",
+        "text_level": 1,
+        "bbox": [
+            722,
+            250,
+            803,
+            261
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "+852-2978-6666 | honglin.yan@gs.com\nGS (Asia) L.L.C. ",
+        "bbox": [
+            722,
+            261,
+            910,
+            280
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Eddie Song ",
+        "text_level": 1,
+        "bbox": [
+            722,
+            289,
+            797,
+            301
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "+852-2978-6426 | eddie.song@gs.com\nGS (Asia) L.L.C. ",
+        "bbox": [
+            722,
+            301,
+            908,
+            318
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "header",
+        "text": "Goldman Research Sachs ",
+        "bbox": [
+            78,
+            3,
+            297,
+            41
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "header",
+        "text": "Equity Research ",
+        "bbox": [
+            795,
+            6,
+            916,
+            21
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "header",
+        "text": "1 June 2026 | 8:34PM HKT ",
+        "bbox": [
+            722,
+            27,
+            916,
+            42
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "footer",
+        "text": "GS does and seeks to do business with companies covered in its research reports. As a result, investors should be aware that the firm may have a conflict of interest that could affect the objectivity of this report. Investors should consider this report as only a single factor in making their investment decision. For Reg AC certification and other important disclosures, see the Disclosure Appendix, or go to www.gs.com/research/hedge.html. Analysts employed by non-US affiliates are not registered/qualified as research analysts with FINRA in the U.S. ",
+        "bbox": [
+            80,
+            876,
+            915,
+            969
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "table",
+        "img_path": "images/0a02c2c60fdba4d4325aaf3cd770764a61970909d303d66ff656765c9939833c.jpg",
+        "table_caption": [
+            "Exhibit 1: We expect China assets to play a bigger role in oral GLP-1 with the pipeline progress Landscape of oral GLP-1 "
+        ],
+        "table_footnote": [
+            "China asset ",
+            "Highlighted assets with data sharing at ADA2026 "
+        ],
+        "table_body": "<table><tr><td>GLP-1RA</td><td>MoA</td><td>Company</td><td>China Stage</td><td>Ex-China Stage</td><td>Modality</td><td>Dosage</td><td>Titration</td></tr><tr><td colspan=\"8\">Oral</td></tr><tr><td>Wegovy pills (Oral Sema)</td><td>GLP-1</td><td>Novo Nordisk</td><td>Ph3</td><td>Approval</td><td>peptide</td><td>25mg, QD</td><td>4 steps, 12 wks, 3-25mg</td></tr><tr><td>orforglipron</td><td>GLP-1</td><td>Eli Lilly</td><td>NDA</td><td>Approval</td><td>small molecule</td><td>36mg, QD</td><td>6 steps, 20 wks, 2-36mg</td></tr><tr><td>VK2735</td><td>GLP-1/GIP</td><td>Viking Therapeutics</td><td>n.a.</td><td>Ph3</td><td>peptide</td><td>2.5-40mg, QD</td><td></td></tr><tr><td>aleniglipron (GSBR-1290)</td><td>GLP-1</td><td>Structure Therapeutics</td><td>IND</td><td>Ph2</td><td>small molecule</td><td>5-90mg, QD</td><td>6 steps, 6 wks, 5-120mg</td></tr><tr><td>ASC30</td><td>GLP-1</td><td>Ascletis</td><td>n.a.</td><td>Ph2</td><td>small molecule</td><td>20-60mg, QD</td><td>7 steps, 6 wks, 1-60mg</td></tr><tr><td>elecoglipron (ECC5004)</td><td>GLP-1</td><td>Eccogene/AstraZeneca</td><td>Ph1</td><td>Ph2</td><td>small molecule</td><td>10-150mg, QD</td><td></td></tr><tr><td>VCT220</td><td>GLP-1</td><td>Vincentage/Corxel</td><td>Ph3</td><td>Ph2</td><td>small molecule</td><td>20/40mg, QD</td><td></td></tr><tr><td>HRS-7535</td><td>GLP-1</td><td>Hengrui/Kailera</td><td>Ph3</td><td>Ph2</td><td>small molecule</td><td>15-120mg, QD</td><td>4 steps, 3 wks, 30-120mg</td></tr><tr><td>CT-996</td><td>GLP-1</td><td>Roche</td><td>Ph1</td><td>Ph2</td><td>small molecule</td><td>120mg, QD</td><td>5 steps, 3 wks, 10-120mg</td></tr><tr><td>RGT-075</td><td>GLP-1</td><td>Regor Therapeutics</td><td>n.a.</td><td>Ph2</td><td>small molecule</td><td>15-280mg, QD</td><td></td></tr><tr><td>PF-07976016</td><td>GIP</td><td>Pfizer</td><td>n.a.</td><td>Ph2</td><td>small molecule</td><td></td><td></td></tr><tr><td>BGM0504</td><td>GLP-1/GIP</td><td>BrightGene</td><td>Ph3</td><td>Ph1</td><td>peptide</td><td></td><td></td></tr><tr><td>XW004 (Oral ecnoglutide)</td><td>GLP-1</td><td>Sciwind</td><td>Ph1/2</td><td>Ph1</td><td>peptide</td><td>7-30mg, QD; 60mg QW</td><td></td></tr><tr><td>IBI3032</td><td>GLP-1</td><td>Innovent</td><td>Ph1</td><td>Ph1</td><td>small molecule</td><td>QD</td><td></td></tr><tr><td>zenagamtide (Oral amycretin)</td><td>GLP-1/amylin</td><td>Novo Nordisk</td><td>Ph1</td><td>Ph1</td><td>peptide</td><td>50mg, QD</td><td></td></tr><tr><td>YP05002</td><td>GLP-1</td><td>Pfizer/Fosun</td><td>n.a.</td><td>Ph1</td><td>small molecule</td><td></td><td></td></tr><tr><td>HS-10535</td><td>GLP-1</td><td>Hansoh/MSD</td><td>n.a.</td><td>Ph1</td><td>small molecule</td><td></td><td></td></tr><tr><td>conveglipron (HDM1002)</td><td>GLP-1</td><td>Huadong Medicine</td><td>Ph3</td><td>IND</td><td>small molecule</td><td>100-400mg, BID</td><td></td></tr><tr><td>MDR-001</td><td>GLP-1</td><td>MindRank</td><td>Ph3</td><td>IND</td><td>small molecule</td><td>30-360mg, BID</td><td></td></tr><tr><td>Ribupatide (HRS9531)</td><td>GLP-1/GIP</td><td>Hengrui/Kailera</td><td>Ph2</td><td>n.a.</td><td>peptide</td><td></td><td></td></tr><tr><td>DA-302168S</td><td>GLP-1</td><td>DIAO Pharma</td><td>Ph2</td><td>n.a.</td><td>small molecule</td><td>15mg, QD</td><td></td></tr><tr><td>HS-10501</td><td>GLP-1</td><td>Hansoh</td><td>Ph2</td><td>n.a.</td><td>small molecule</td><td>2.5-20mg, QD</td><td></td></tr><tr><td>MWN109</td><td>GLP-1/GIP/GCGR</td><td>Minwei Biotech</td><td>Ph2</td><td>n.a.</td><td>peptide</td><td></td><td></td></tr><tr><td>ZT006</td><td>GLP-1</td><td>QL Biopharm</td><td>Ph2</td><td>n.a.</td><td>peptide</td><td></td><td></td></tr><tr><td>SAL0112</td><td>GLP-1</td><td>SalubrisBio</td><td>Ph1</td><td>n.a.</td><td>small molecule</td><td></td><td></td></tr><tr><td>VRB-103</td><td>amylin</td><td>Sciwind</td><td>IND</td><td>n.a.</td><td>peptide</td><td>potential QW</td><td></td></tr><tr><td>XW014</td><td>GLP-1</td><td>Sciwind</td><td>IND</td><td>n.a.</td><td>small molecule</td><td>up to 120/140mg, QD</td><td></td></tr></table>",
+        "bbox": [
+            117,
+            86,
+            879,
+            402
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "As of May 2026 ",
+        "bbox": [
+            81,
+            433,
+            161,
+            443
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "Source: PharmCube ",
+        "bbox": [
+            81,
+            454,
+            184,
+            465
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "Wegovy pill / Foundayo ph3 data as the bar, eyes on tolerability with “lower and slower” strategy: We previously stated that (see our China GLP-1 update on oral/injectable debates) newer oral GLP-1 assets have not shown strong clinical evidence of clear competitive advantage over orforglipron, and with the approval of Wegovy pill / Foundayo, their ph3 data remain as competitive in both efficacy and tolerability: 1) weight loss, which is not the major focus for oral GLP-1, given the less severe target groups and the KOL opinions that 10+% weight loss is acceptable in primary care, and the 13.9% / 11.5% placebo-adjusted weight loss of Wegovy pill / Foundayo are already putting the bar to a relatively high position (Exhibit 2). To our knowledge, aleniglipron (GPCR-1290) is the first oral GLP-1 that showed meaningfully higher weight loss with higher dose (-14.7%/-16.3%/-16% at 120mg/180mg/240mg in the ph2 ACCESS II trial), and Innovent briefly shared that IBI3032 achieved 10% weight loss in 4 weeks, which could be a significant differentiation with eyes on the data details at ADA2026; 2) tolerability, which is the primary focus for oral GLP-1, though newer oral GLP-1 molecules are often designed with better PK profile that showed good control of GI toxicity in early-stage trials, we view the ph3 data of Wegovy pill / Foundayo as the ground that any new oral GLP-1 drug candidates are expected to beat, in particular, vomiting as the most severe AE is expected to have <20% occurrence rate (Exhibit 3). In addition, it is becoming clear that adopting a “lower and slower” dose titration strategy could effectively improve the tolerability (see our note), therefore putting more focus on the design of pivotal trials, while large variance of AE rates are typically accepted for early trials (e.g. SAD or MAD when the dose titration is still being explored). ",
+        "bbox": [
+            269,
+            473,
+            911,
+            887
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "Framing expectation for IBI3032 readout at ADA2026, pipeline value hinges on global clinical execution: Per Innovent, the ph1 SAD / MAD data of IBI3032 will be shared at the ADA conference, and we expect to see more details on the drug profile, including: 1) sample size, though we do not expect the company to share data of all dosed patients (100+ per mgmt), 20-30% (i.e. N=20-30, vs. 24 patients in the MAD data for ASC30) would serve a relatively meaningful sample size to reduce the random variations, 2) dose dependency, while mgmt previously shared that 10% weight loss was reached with 4 weeks of treatment, we would want to know more about the corresponding dose levels (DL) to gain insights on the efficacy window, and 3) tolerability delta between SAD and MAD, while large variation for AE rates is expected given the early stage, we would expect trend of improved tolerability with MAD (vs. SAD), and to gain early colors on the potential dose titration scheme for IBI3032. Given the current landscape of oral GLP-1, we believe the value of IBI3032 to hinge on 1) the potential differentiation vs. later-stage peers, and 2) global clinical execution, noting that IBI3032 is roughly 2.5 years / 1.5 years behind aleniglipron / ASC30 (both targeting to initiate global ph3 trials in 2H26). ",
+        "bbox": [
+            269,
+            899,
+            875,
+            917
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "header",
+        "text": "GS ",
+        "bbox": [
+            81,
+            6,
+            184,
+            18
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "header",
+        "text": "China Healthcare ",
+        "bbox": [
+            802,
+            7,
+            916,
+            21
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "footer",
+        "text": "1 June 2026 ",
+        "bbox": [
+            81,
+            954,
+            155,
+            965
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "page_number",
+        "text": "2 ",
+        "bbox": [
+            906,
+            954,
+            916,
+            965
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            274,
+            40,
+            916,
+            308
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "Emerging datasets from Hengrui to demonstrate portfolio breadth and potential synergies: At the upcoming ADA conference, Hengrui plans to present multiple datasets across its GLP-1 franchise, highlighting both oral and injectable solutions: 1) HRS9531 (oral GLP-1/GIP peptide) will disclose detailed phase 2 obesity data, following previously reported efficacy of -9.8% weight loss at week 26; we look for further details on titration scheme and dosing requirements to assess safety implications. Beyond obesity, HRS9531 will also present data in polycystic ovary syndrome, suggesting potential expansion into adjacent metabolic indications. 2) HR17031 (GLP-1/insulin fixed-dose combination) will report data versus insulin glargine in uncontrolled diabetes patients, indicating a push into combination therapy positioning. In addition, Hengrui's oral small-molecule GLP-1 (HRS7535) has met primary endpoints in phase 3 diabetes trial, with NDA filing planned for 2026. For next-generation multi-target agents, HRS-4729 (GLP-1/GIP/GCG) demonstrated -16% weight loss (-10.6% placebo-adjusted) at week 12 with tolerable safety. Based on non-head-to-head comparison, efficacy appears slightly lower than UBT251 (United Labs/Novo Nordisk), which achieved -16.6%/-17.7% placebo-adjusted weight loss at week 12/24, and it is expected to release further phase 2 data at ADA. Overall, the breadth of datasets across oral, combination and multi-target modalities underscores Hengrui's strategy to build a full-spectrum GLP-1 portfolio, with differentiation likely to hinge on safety, convenience and commercial execution. ",
+        "bbox": [
+            274,
+            321,
+            916,
+            680
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "header",
+        "text": "GS ",
+        "bbox": [
+            81,
+            6,
+            184,
+            18
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "header",
+        "text": "China Healthcare ",
+        "bbox": [
+            802,
+            7,
+            916,
+            21
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "footer",
+        "text": "1 June 2026 ",
+        "bbox": [
+            83,
+            954,
+            153,
+            963
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "page_number",
+        "text": "3 ",
+        "bbox": [
+            906,
+            954,
+            916,
+            963
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "chart",
+        "img_path": "images/0bf11b69ff680cee7819f1bf8ecc9952383402787ba3c2a9d64dc6f72031cfca.jpg",
+        "content": "| Medication | Weeks (Weeks) | Pbo-adj weight loss (%) | Notes |\n| :--- | :--- | :--- | :--- |\n| HRS9531 | 0 | -3.5 | TERN-601 (740mg, ph1), -4.9 |\n| HRS-7535 (120mg, ph1) | 0 | -5.5 | GSBR-1290 (120mg, ph2), -4.7 |\n| XWQ14 | 0 | -5.0 | Oral Ecnoglutide (30mg), -5.9 |\n| CT-996 (120mg, ph1) | 0 | -6.1 | GSBR-1290 (120mg, ph2), -6.9 |\n| ASC30 (40mg, ph1) | 0 | -6.2 | ASC30 (40mg, ph2), -7.0 |\n| ASC30 (60mg, ph2) | 0 | -7.7 | ASC30 (60mg, ph2), -7.7 |\n| ORforglipron (36mg, ph3, T2D) | 40 | -6.3 | Orforglipron (36mg, ph3, T2D), -6.3 |\n| VCT220 (160mg, ph3) | 50 | -11.1 | Orforglipron (36mg, ph3), -11.5 |\n| GSBR-1290 (120mg, ph2) | 50 | -9.8 | GSBR-1290 (120mg, ph2), -11.3 |\n| Orforglipron (36mg, ph2) | 50 | -11.2 | Orforglipron (36mg, ph2), -11.2 |\n| Orforglipron (45mg, ph2) | 50 | -12.4 | Orforglipron (45mg, ph2), -12.4 |\n| GSBR-1290 (120mg, ph2) | 50 | -15.3 | GSBR-1290 (120mg, ph2), -15.3 |\n| GSBR-1290 (240mg, ph2) | 50 | -16.3 | GSBR-1290 (240mg, ph2), -16.3 |\n| GSBR-1290 (180mg, ph2) | 50 | -16.3 | GSBR-1290 (180mg, ph2), -16.3 |\n| IBI3032 (ph1*), | 0 | -10.0 | IBI3032 (ph1*), -10.0 |\n| Danuglipron (terminated) | 0 | -13.1 | Danuglipron (terminated), -13.1 |\n| Orforglipron (36mg, ph3) | 70 | -11.5 | Orforglipron (36mg, ph3), -11.5 |\n| Oral Semaglutide (50mg, ph3) | 70 | -12.7 | Oral Semaglutide (50mg, ph3), -12.7 |\n| Oral Semaglutide (25mg, ph3) | 70 | -13.9 | Oral Semaglutide (25mg, ph3), -13.9 |\n| Tlrzepatide 15mg curve | 70 | -20.0 | Tirzepatide 15mg curve |\nThe chart includes a legend indicating 'GLP-1RA with China plan in obesity' and a dashed line representing the semaglutide curve.",
+        "chart_caption": [
+            "Exhibit 2: $15\\%$ weight loss is becoming the bar for newer oral GLP-1 after the approval of Wegovy pills and orforglipron... Weight loss data of oral GLP-1 with different treatment duration (placebo-adjusted) "
+        ],
+        "chart_footnote": [
+            "\\*treatment arm data (placebo unadjusted) ",
+            "Source: Company data, GS Global Investment Research "
+        ],
+        "sub_type": "scatter",
+        "bbox": [
+            81,
+            105,
+            903,
+            474
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "header",
+        "text": "GS ",
+        "bbox": [
+            81,
+            6,
+            184,
+            18
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "header",
+        "text": "China Healthcare ",
+        "bbox": [
+            802,
+            7,
+            916,
+            21
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "footer",
+        "text": "1 June 2026 ",
+        "bbox": [
+            81,
+            954,
+            155,
+            965
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "page_number",
+        "text": "4 ",
+        "bbox": [
+            906,
+            954,
+            916,
+            963
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "chart",
+        "img_path": "images/3b2902c3f00636df8c08635cd01d44c73b62b3e687f5ec35ae1838affeaec4ce.jpg",
+        "content": "| Group | Vomiting (%) | Nausea (%) | Diarrhea (%) | AE-led d/c (%) |\n|---|---|---|---|---|\n| 4-weekly 4-step 64 weeks (Wegovy pill) | 25 | 28 | 9 | 1 |\n| 4-weekly 6-step 72 weeks (orforglipron) | 21 | 23 | 14 | 10 |\n| Weekly 7-step 13 weeks (ASC30) | 25 | 63 | 13 | 8 |\n| 4-weekly 6-step 36 weeks (GSBR-1290) | 32 | 65 | 22 | 11 |\n| 4-weekly 8-step 20 weeks (GSBR-1290) | 24 | 51 | 32 | 3 |\n| Bi-weekly 4-step 13 weeks (VK2735) | 24 | 13 | 12 | 0 |",
+        "chart_caption": [
+            "Exhibit 3: ... though key focus remains on better tolerability with $< 20\\%$ vomiting rate Safety profile of key oral GLP-1 "
+        ],
+        "chart_footnote": [
+            "Rate of adverse events are placebo-adjusted ",
+            "Source: Company data "
+        ],
+        "sub_type": "bar",
+        "bbox": [
+            84,
+            100,
+            903,
+            410
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "Investment Thesis - Hengrui ",
+        "text_level": 1,
+        "bbox": [
+            272,
+            495,
+            483,
+            510
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "Hengrui is a leading pharma company in China that is in the process of transforming its business focus to innovative drugs from a “generics + innovation” model previously. Supported by an established strong sales team, Hengrui has launched 9 drugs with sales of Rmb1bn+ in the past few years, including 4 innovative drugs. With the majority of the impact from VBP price cuts largely reflected and reset to a lower base in 2022, we expect the future drivers for Hengrui to come from innovative drugs including PARP, CDK4/6, AR antagonist, PI3Ki and diabetes drugs. We are Buy rated as we believe the current valuation largely only reflects the company’s China prospects and overseas progress should present further upside. We expect growth in the current product cycle to slow down post the ramp-up of blockbuster PD-1, and that overseas progress will be the next key milestone for the company. Key risks: 1) a slower ramp-up of innovative drugs post the NRDL listing; 2) risk of failure in key late-stage R&D programs; 3) higher-than-expected R&D and admin expenses for global expansion; and 4) greater-than-expected price cuts for generics and innovative drugs. ",
+        "bbox": [
+            272,
+            513,
+            911,
+            765
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "Price Target Risks and Methodology - Hengrui Medicine ",
+        "text_level": 1,
+        "bbox": [
+            272,
+            789,
+            686,
+            806
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "We have a Buy rating on Hengrui. Our 12-m TP of Rmb79.20 is based on: 1) a long-term exit P/E valuation for the generics business of Rmb40.4bn (based on a 5-year exit P/E of 10x); and 2) a risk-adjusted DCF for innovative drugs, deriving a valuation of Rmb420.7bn (based on WACC of $9.0\\%$ , terminal growth rate of $3\\%$ ). Key risks: 1) a slower ramp-up of innovative drugs post the NRDL listing; 2) risk of failure in key late-stage R&D programs; 3) higher-than-expected R&D and admin expenses for global expansion; 4) greater-than-expected price cuts for generics and innovative drugs; 5) ",
+        "bbox": [
+            272,
+            807,
+            911,
+            932
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "header",
+        "text": "GS ",
+        "bbox": [
+            81,
+            6,
+            184,
+            18
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "header",
+        "text": "China Healthcare ",
+        "bbox": [
+            802,
+            7,
+            916,
+            21
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "footer",
+        "text": "1 June 2026 ",
+        "bbox": [
+            81,
+            954,
+            155,
+            965
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "page_number",
+        "text": "5 ",
+        "bbox": [
+            906,
+            954,
+            916,
+            963
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "below-expected license-out / go-global progress. ",
+        "bbox": [
+            274,
+            40,
+            633,
+            55
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "Investment Thesis - Innovent Biologics ",
+        "text_level": 1,
+        "bbox": [
+            274,
+            110,
+            560,
+            126
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "Innovent Biologics is a leading China-based biopharma company with a strong presence in immuno-oncology and growing assets in autoimmune/metabolic/ophthalmology. The company has a deep pipeline of 30+ assets built via in-house R&D and collaboration with global partners, including commercialized products led by sintilimab (the leading PD-1 inhibitor covering major indications in the NRDL). We believe Innovent will continue its leading position in China biotech with: 1) deep pipeline of novel molecules targeting next-generation I/O targets with encouraging preliminary data (e.g., IBI363 (PD-1/IL-2α-bias BsAb) with a differentiated drug profile in IO-treated / cold tumors, mazdutide (GLP-1/GCGR) with encouraging efficacy in obesity/diabetes); 2) strong commercialization capabilities as best demonstrated in the quick ramp-up of sintilimab; and 3) its deep collaboration with global partners, especially Eli Lilly. We consider Innovent as undervalued at current levels given the high value of market-implied WACC (12%) only reflecting the value of its de-risked indications and not fully pricing in its strong revenue and pipeline. We are Buy rated on the stock. Key risks include: 1) Intensifying competition in the PD-1/L1 market in China; 2) uncertain approval timeline for key candidates; 3) potential restrictions on off-label use arising from any safety issues; and 4) failure of R&D projects. ",
+        "bbox": [
+            274,
+            129,
+            911,
+            432
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "Price Target Risks and Methodology - Innovent Biologics ",
+        "text_level": 1,
+        "bbox": [
+            274,
+            459,
+            691,
+            474
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "Our risk-adjusted, DCF-based, 12-month TP of HK\\$107.04 is based on a: 1) 10% discount rate, and 2) 3% terminal growth rate. We have a Buy rating. Key risks include: 1) Intensifying competition in the PD-1/L1 market in China; 2) uncertain approval timeline for key candidates; 3) potential restrictions on off-label use arising from any safety issues; and 4) failure of R&D projects. ",
+        "bbox": [
+            274,
+            477,
+            911,
+            563
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "header",
+        "text": "GS ",
+        "bbox": [
+            81,
+            6,
+            184,
+            18
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "header",
+        "text": "China Healthcare ",
+        "bbox": [
+            802,
+            7,
+            916,
+            21
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "footer",
+        "text": "1 June 2026 ",
+        "bbox": [
+            83,
+            954,
+            153,
+            963
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "page_number",
+        "text": "6 ",
+        "bbox": [
+            906,
+            954,
+            916,
+            963
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "Disclosure Appendix ",
+        "text_level": 1,
+        "bbox": [
+            80,
+            40,
+            251,
+            61
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "Reg AC ",
+        "text_level": 1,
+        "bbox": [
+            81,
+            82,
+            135,
+            96
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "We, Ziyi Chen, Linhai Zhao, Ph.D., Honglin Yan and Eddie Song, hereby certify that all of the views expressed in this report accurately reflect our personal views about the subject company or companies and its or their securities. We also certify that no part of our compensation was, is or will be, directly or indirectly, related to the specific recommendations or views expressed in this report. ",
+        "bbox": [
+            81,
+            104,
+            903,
+            139
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "Unless otherwise stated, the individuals listed on the cover page of this report are analysts in GS' Global Investment Research division. ",
+        "bbox": [
+            81,
+            144,
+            885,
+            157
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "Contributing Authors: Ziyi Chen GS (Asia) L.L.C., Linhai Zhao, Ph.D. GS (Asia) L.L.C., Honglin Yan GS (Asia) L.L.C., Eddie Song GS (Asia) L.L.C.. ",
+        "bbox": [
+            81,
+            163,
+            906,
+            185
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "Unless otherwise stated, the individuals listed in the Contributing Authors disclosure of this report are analysts in GS' Global Investment Research division. ",
+        "bbox": [
+            81,
+            192,
+            893,
+            216
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "GS Factor Profile ",
+        "text_level": 1,
+        "bbox": [
+            81,
+            229,
+            207,
+            241
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "The GS Factor Profile provides investment context for a stock by comparing key attributes to the market (i.e. our universe of rated stocks) and its sector peers. The four key attributes depicted are: Growth, Financial Returns, Multiple (e.g. valuation) and Integrated (a composite of Growth, Financial Returns and Multiple). Growth, Financial Returns and Multiple are calculated by using normalized ranks for specific metrics for each stock. The normalized ranks for the metrics are then averaged and converted into percentiles for the relevant attribute. The precise calculation of each metric may vary depending on the fiscal year, industry and region, but the standard approach is as follows: ",
+        "bbox": [
+            81,
+            242,
+            915,
+            298
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "Growth is based on a stock's forward-looking sales growth, EBITDA growth and EPS growth (for financial stocks, only EPS and sales growth), with a higher percentile indicating a higher growth company. Financial Returns is based on a stock's forward-looking ROE, ROCE and CROCI (for financial stocks, only ROE), with a higher percentile indicating a company with higher financial returns. Multiple is based on a stock's forward-looking P/E, P/B, price/dividend (P/D), EV/EBITDA, EV/FCF and EV/Debt Adjusted Cash Flow (DACF) (for financial stocks, only P/E, P/B and P/D), with a higher percentile indicating a stock trading at a higher multiple. The Integrated percentile is calculated as the average of the Growth percentile, Financial Returns percentile and (100% - Multiple percentile). ",
+        "bbox": [
+            81,
+            304,
+            906,
+            372
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "Financial Returns and Multiple use the GS analyst forecasts at the fiscal year-end at least three quarters in the future. Growth uses inputs for the fiscal year at least seven quarters in the future compared with the year at least three quarters in the future (on a per-share basis for all metrics). ",
+        "bbox": [
+            81,
+            378,
+            910,
+            402
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "For a more detailed description of how we calculate the GS Factor Profile, please contact your GS representative. ",
+        "bbox": [
+            81,
+            407,
+            702,
+            420
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "M&A Rank ",
+        "text_level": 1,
+        "bbox": [
+            81,
+            433,
+            161,
+            445
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "Across our global coverage, we examine stocks using an M&A framework, considering both qualitative factors and quantitative factors (which may vary across sectors and regions) to incorporate the potential that certain companies could be acquired. We then assign a M&A rank as a means of scoring companies under our rated coverage from 1 to 3, with 1 representing high (30%-50%) probability of the company becoming an acquisition target, 2 representing medium (15%-30%) probability and 3 representing low (0%-15%) probability. For companies ranked 1 or 2, in line with our standard departmental guidelines we incorporate an M&A component into our target price. M&A rank of 3 is considered immaterial and therefore does not factor into our price target, and may or may not be discussed in research. ",
+        "bbox": [
+            81,
+            446,
+            910,
+            513
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "Quantum ",
+        "text_level": 1,
+        "bbox": [
+            81,
+            527,
+            153,
+            538
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "Quantum is GS' proprietary database providing access to detailed financial statement histories, forecasts and ratios. It can be used for in-depth analysis of a single company, or to make comparisons between companies in different sectors and markets. ",
+        "bbox": [
+            81,
+            539,
+            887,
+            562
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "Disclosures ",
+        "text_level": 1,
+        "bbox": [
+            81,
+            575,
+            166,
+            587
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "The rating(s) for Hengrui Medicine and Innovent Biologics is/are relative to the other companies in its/their coverage universe: 3SBio Inc., Abbisko Therapeutics, Antengene, Ascletis Pharma Inc., BeOne Medicines Ltd. (A), BeOne Medicines Ltd. (ADR), Betta Pharma, CARsgen Therapeutics, CSPC Pharma, CStone Pharma, China Medical System Holdings, Everest Medicines, Fosun Pharma (A), Fosun Pharma (H), Hansoh Pharma, Hengrui Medicine, Henlius Biotech, Hepalink, InnoCare Pharma (A), InnoCare Pharma (H), Innovent Biologics, Jacobio Pharma, Kelun Biotech, KeyMed, Legend Biotech Corp., Livzon Pharmaceutical Group (A), Livzon Pharmaceutical Group (H), Luye Pharma Group, Ocumension, Sino Biopharmaceutical, United Laboratories Intl, Zai Lab (ADR), Zai Lab (H) ",
+        "bbox": [
+            81,
+            588,
+            905,
+            656
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "Company-specific regulatory disclosures ",
+        "text_level": 1,
+        "bbox": [
+            81,
+            668,
+            383,
+            681
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "The following disclosures relate to relationships between The GS Group, Inc. (with its affiliates, “GS”) and companies covered by GS Global Investment Research and referred to in this research. ",
+        "bbox": [
+            81,
+            682,
+            901,
+            704
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "GS has received compensation for investment banking services in the past 12 months: Innovent Biologics (HK\\$80.90) ",
+        "bbox": [
+            81,
+            710,
+            792,
+            723
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "GS expects to receive or intends to seek compensation for investment banking services in the next 3 months: Hengrui Medicine (Rmb49.17), Hengrui Medicine (H) (HK\\$56.90) and Innovent Biologics (HK\\$80.90) ",
+        "bbox": [
+            81,
+            729,
+            848,
+            752
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "GS had an investment banking services client relationship during the past 12 months with: Hengrui Medicine (Rmb49.17), Hengrui Medicine (H) (HK\\$56.90) and Innovent Biologics (HK\\$80.90) ",
+        "bbox": [
+            81,
+            758,
+            916,
+            781
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "GS has managed or co-managed a public or Rule 144A offering in the past 12 months: Innovent Biologics (HK\\$80.90) ",
+        "bbox": [
+            81,
+            787,
+            792,
+            800
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "Distribution of ratings/investment banking relationships ",
+        "text_level": 1,
+        "bbox": [
+            81,
+            812,
+            501,
+            825
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "GS Investment Research global Equity coverage universe ",
+        "bbox": [
+            81,
+            827,
+            462,
+            838
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "table",
+        "img_path": "images/3341b1e323c94b681a0d2049bd5e2038076b099351350ab5f6700f6479d8a907.jpg",
+        "table_caption": [],
+        "table_footnote": [],
+        "table_body": "<table><tr><td rowspan=\"2\"></td><td colspan=\"3\">Rating Distribution</td><td colspan=\"3\">Investment Banking Relationships</td></tr><tr><td>Buy</td><td>Hold</td><td>Sell</td><td>Buy</td><td>Hold</td><td>Sell</td></tr><tr><td>Global</td><td>50%</td><td>34%</td><td>16%</td><td>65%</td><td>60%</td><td>45%</td></tr></table>",
+        "bbox": [
+            78,
+            845,
+            759,
+            895
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "As of April 1, 2026, GS Global Investment Research had investment ratings on 3,074 equity securities. GS assigns stocks as Buys and Sells on various regional Investment Lists; stocks not so assigned are deemed Neutral. Such assignments equate to Buy, Hold and Sell for the purposes of the above disclosure required by the FINRA Rules. See ‘Ratings, Coverage universe and related definitions’ below. The Investment Banking Relationships chart reflects the percentage of subject companies within each rating category for whom GS has provided investment banking services within the previous twelve months. ",
+        "bbox": [
+            81,
+            908,
+            900,
+            931
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "header",
+        "text": "GS ",
+        "bbox": [
+            81,
+            6,
+            184,
+            18
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "header",
+        "text": "China Healthcare ",
+        "bbox": [
+            802,
+            7,
+            916,
+            21
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "footer",
+        "text": "1 June 2026 ",
+        "bbox": [
+            81,
+            954,
+            155,
+            965
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "page_number",
+        "text": "7 ",
+        "bbox": [
+            906,
+            954,
+            916,
+            963
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            78,
+            40,
+            906,
+            76
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "chart",
+        "img_path": "images/f74f8441aef7474b50fbcd48fd9fbeea872bbf63a62568418bb68c74d535631f.jpg",
+        "content": "| Date       | Stock Price | Index Price | Rating | Price target | Price target at removal | Not covered by current analyst | Hang Seng China Ent. |\n|------------|-------------|-------------|--------|--------------|--------------------------|-------------------------------|----------------------|\n| 2023 M     | 52.84       | 53.47       |        |              |                          |                               |                      |\n| 2023 J     | 53.41       | 54.61       |        |              |                          |                               |                      |\n| 2023 A     | 55.76       | 56.9        |        |              |                          |                               |                      |\n| 2023 S     |             |             |        |              |                          |                               |                      |\n| 2023 O     |             |             |        |              |                          |                               |                      |\n| 2023 N     |             |             |        |              |                          |                               |                      |\n| 2023 D     |             |             |        |              |                          |                               |                      |\n| 2024 F     | 60.66       |             |        |              |                          |                               |                      |\n| 2024 M     | 61.29       |             |        |              |                          |                               |                      |\n| 2024 A     | 60.1        |             |        |              |                          |                               |                      |\n| 2024 M     | 61.57       |             |        |              |                          |                               |                      |\n| 2024 J     | 63.7        |             |        |              |                          |                               |                      |\n| 2024 A     | 65.81       |             |        |              |                          |                               |                      |\n| 2024 S     | 66.03       |             |        |              |                          |                               |                      |\n| 2024 O     | 65.98       |             |        |              |                          |                               |                      |\n| 2024 N     | 59.93       |             |        |              |                          |                               |                      |\n| 2024 D     | 58.53       |             |        |              |                          |                               |                      |\n| 2025 F     | 58.56       |             |        |              |                          |                               |                      |\n| 2025 M     | 59.26       |             |        |              |                          |                               |                      |\n| 2025 A     | 74.95       |             |        |              |                          |                               |                      |\n| 2025 M     | 98.23       |             |        |              |                          |                               |                      |\n| 2025 J     | 103.22      |             |        |              |                          |                               |                      |\n| 2025 A     | 107.96      |             |        |              |                          |                               |                      |\n| 2025 S     | 102.85      |             |        |              |                          |                               |                      |\n| 2025 O     | 102.85      |             |        |              |                          |                               |                      |\n| 2025 N     |               |               |        |              |                          |                               |                      |\n| 2025 D     |               |               |        |              |                          |                               |                      |\n| 2026 F     |               |               |        |              |                          |                               |                      |\n| 2026 M     |               |               |        |              |                          |                               |                      |\nSource: GS Investment Research for ratings and price targets; FactSet closing prices as of 3/31/2026.\nHang Seng China Ent.",
+        "chart_caption": [
+            "Price target and rating history chart(s) "
+        ],
+        "chart_footnote": [
+            "The price targets shown should be considered in the context of all prior published GS, which may or may not have included price targets, as well as developments relating to the company, its industry and financial markets. "
+        ],
+        "sub_type": "line",
+        "bbox": [
+            83,
+            114,
+            480,
+            303
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "chart",
+        "img_path": "images/0ba3906c39d60f02825c536b145fa3b1b20f8242ec0bd4f8d73189225a7beadd.jpg",
+        "content": "| Date       | Stock Price | Index Price | Rating | Price Target |\n|------------|-------------|-------------|--------|--------------|\n| Mar 2023   | 50.86       | 3,200       |        |              |\n| Jun 2023   | 49.34       | 3,400       |        |              |\n| Sep 2023   | 48.39       | 3,600       |        |              |\n| Dec 2023   |             |             |        |              |\n| Mar 2024   | 47.69       | 3,800       |        |              |\n| Jun 2024   | 51.63       | 4,000       |        |              |\n| Sep 2024   | 51.59       | 4,200       |        |              |\n| Dec 2024   | 55.31       | 4,400       |        |              |\n| Mar 2025   | 54.39       | 4,600       |        |              |\n| Jun 2025   | 55.9        | 4,800       |        |              |\n| Sep 2025   | 61.74       | 5,000       |        |              |\n| Dec 2025   | 70.26       | 5,200       |        |              |\n| Mar 2026   | 77.57       | 5,400       |        |              |\n| Jun 2026   | 76.11       | 5,600       |        |              |\n| Sep 2026   | 73.95       | 5,800       |        |              |\n| Dec 2026   | 78.85       | 6,000       |        |              |",
+        "chart_caption": [],
+        "chart_footnote": [
+            "The price targets shown should be considered in the context of all prior published GS, which may or may not have included price targets, as well as developments relating to the company, its industry and financial markets. "
+        ],
+        "sub_type": "line",
+        "bbox": [
+            514,
+            114,
+            906,
+            308
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "table",
+        "img_path": "images/2fe7afcbc678705384e2f0cc751c5c1b378d05e6e5d760ba08b4795a37ce2318.jpg",
+        "table_caption": [
+            "Target price history table(s) ",
+            "Innovent Biologics (1801.HK) "
+        ],
+        "table_footnote": [],
+        "table_body": "<table><tr><td>Date of report</td><td>Target price (HK$)</td><td>Closing price (HK$)</td></tr><tr><td>29-May-26</td><td>107.04</td><td>83.35</td></tr><tr><td>30-Apr-26</td><td>105.94</td><td>90.00</td></tr><tr><td>28-Apr-26</td><td>104.61</td><td>82.60</td></tr><tr><td>26-Mar-26</td><td>102.84</td><td>79.40</td></tr><tr><td>04-Feb-26</td><td>102.85</td><td>80.65</td></tr><tr><td>05-Dec-25</td><td>107.96</td><td>92.00</td></tr><tr><td>27-Aug-25</td><td>103.22</td><td>91.00</td></tr><tr><td>07-Aug-25</td><td>98.23</td><td>91.40</td></tr><tr><td>08-Jul-25</td><td>96.22</td><td>82.35</td></tr><tr><td>04-Jun-25</td><td>74.95</td><td>74.25</td></tr><tr><td>26-May-25</td><td>65.58</td><td>56.55</td></tr><tr><td>01-May-25</td><td>59.26</td><td>53.75</td></tr><tr><td>26-Mar-25</td><td>58.56</td><td>39.05</td></tr><tr><td>06-Feb-25</td><td>59.93</td><td>35.80</td></tr><tr><td>05-Feb-25</td><td>58.53</td><td>33.05</td></tr><tr><td>02-Jan-25</td><td>65.98</td><td>35.50</td></tr><tr><td>30-Oct-24</td><td>66.03</td><td>35.50</td></tr><tr><td>28-Aug-24</td><td>65.81</td><td>44.10</td></tr><tr><td>08-Aug-24</td><td>63.70</td><td>41.15</td></tr><tr><td>19-May-24</td><td>61.57</td><td>40.05</td></tr><tr><td>30-Apr-24</td><td>60.10</td><td>38.25</td></tr><tr><td>20-Mar-24</td><td>61.29</td><td>39.35</td></tr><tr><td>20-Feb-24</td><td>60.66</td><td>40.15</td></tr><tr><td>06-Feb-24</td><td>57.40</td><td>33.00</td></tr><tr><td>02-Nov-23</td><td>56.90</td><td>46.60</td></tr><tr><td>23-Aug-23</td><td>55.76</td><td>30.75</td></tr><tr><td>09-Aug-23</td><td>54.61</td><td>32.20</td></tr><tr><td>08-Aug-23</td><td>53.41</td><td>28.70</td></tr></table>",
+        "bbox": [
+            78,
+            389,
+            377,
+            812
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "table",
+        "img_path": "images/9fab1c9fba9a6694f21568aeda6338c55a7cf4971c496705182792678c307782.jpg",
+        "table_caption": [
+            "Hengrui Medicine (600276.SS) "
+        ],
+        "table_footnote": [
+            "Price targets shown in table(s) are unadjusted for corporate actions. "
+        ],
+        "table_body": "<table><tr><td>Date of report</td><td>Target price (Rmb)</td><td>Closing price (Rmb)</td></tr><tr><td>22-Apr-26</td><td>79.20</td><td>55.44</td></tr><tr><td>26-Mar-26</td><td>78.85</td><td>51.63</td></tr><tr><td>05-Feb-26</td><td>73.95</td><td>58.16</td></tr><tr><td>28-Oct-25</td><td>76.11</td><td>63.62</td></tr><tr><td>24-Aug-25</td><td>77.57</td><td>64.98</td></tr><tr><td>29-Jul-25</td><td>70.26</td><td>63.80</td></tr><tr><td>08-Jul-25</td><td>61.74</td><td>53.40</td></tr><tr><td>24-Apr-25</td><td>55.90</td><td>51.13</td></tr><tr><td>31-Mar-25</td><td>55.31</td><td>49.20</td></tr><tr><td>11-Mar-25</td><td>54.39</td><td>45.34</td></tr><tr><td>24-Oct-24</td><td>51.59</td><td>48.67</td></tr><tr><td>22-Aug-24</td><td>51.63</td><td>43.93</td></tr><tr><td>19-May-24</td><td>50.20</td><td>44.75</td></tr><tr><td>17-Apr-24</td><td>47.69</td><td>44.39</td></tr><tr><td>26-Oct-23</td><td>48.39</td><td>44.45</td></tr><tr><td>20-Aug-23</td><td>49.34</td><td>39.95</td></tr></table>",
+        "bbox": [
+            450,
+            389,
+            756,
+            636
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "Regulatory disclosures ",
+        "text_level": 1,
+        "bbox": [
+            78,
+            851,
+            251,
+            865
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "Disclosures required by United States laws and regulations ",
+        "text_level": 1,
+        "bbox": [
+            78,
+            870,
+            514,
+            883
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "See company-specific regulatory disclosures above for any of the following disclosures required as to companies referred to in this report: manager or co-manager in a pending transaction; $1\\%$ or other ownership; compensation for certain services; types of client relationships; managed/co-managed public offerings in prior periods; directorships; for equity securities, market making and/or specialist role. GS trades or may trade as a principal in debt securities (or in related derivatives) of issuers discussed in this report. ",
+        "bbox": [
+            78,
+            883,
+            906,
+            929
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "header",
+        "text": "GS ",
+        "bbox": [
+            81,
+            6,
+            184,
+            18
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "header",
+        "text": "China Healthcare ",
+        "bbox": [
+            802,
+            7,
+            916,
+            21
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "footer",
+        "text": "1 June 2026 ",
+        "bbox": [
+            81,
+            954,
+            155,
+            966
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "page_number",
+        "text": "8 ",
+        "bbox": [
+            906,
+            954,
+            916,
+            963
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "The following are additional required disclosures: Ownership and material conflicts of interest: GS policy prohibits its analysts, professionals reporting to analysts and members of their households from owning securities of any company in the analyst's area of coverage. Analyst compensation: Analysts are paid in part based on the profitability of GS, which includes investment banking revenues. Analyst as officer or director: GS policy generally prohibits its analysts, persons reporting to analysts or members of their households from serving as an officer, director or advisor of any company in the analyst's area of coverage. Non-U.S. Analysts: Non-U.S. analysts may not be associated persons of GS & Co. LLC and therefore may not be subject to FINRA Rule 2241 or FINRA Rule 2242 restrictions on communications with a subject company, public appearances and trading in securities covered by the analysts. ",
+        "bbox": [
+            81,
+            40,
+            913,
+            120
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "Distribution of ratings: See the distribution of ratings disclosure above. Price chart: See the price chart, with changes of ratings and price targets in prior periods, above, or, if electronic format or if with respect to multiple companies which are the subject of this report, on the GS website at https://www.gs.com/research/hedge.html. ",
+        "bbox": [
+            81,
+            125,
+            916,
+            161
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "Additional disclosures required under the laws and regulations of jurisdictions other than the United States ",
+        "text_level": 1,
+        "bbox": [
+            81,
+            172,
+            872,
+            185
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "The following disclosures are those required by the jurisdiction indicated, except to the extent already made above pursuant to United States laws and regulations. Australia: GS Australia Pty Ltd and its affiliates are not authorised deposit-taking institutions (as that term is defined in the Banking Act 1959 (Cth)) in Australia and do not provide banking services, nor carry on a banking business, in Australia. This research, and any access to it, is intended only for “wholesale clients” within the meaning of the Australian Corporations Act, unless otherwise agreed by GS. In producing research reports, members of Global Investment Research of GS Australia may attend site visits and other meetings hosted by the companies and other entities which are the subject of its research reports. In some instances the costs of such site visits or meetings may be met in part or in whole by the issuers concerned if GS Australia considers it is appropriate and reasonable in the specific circumstances relating to the site visit or meeting. To the extent that the contents of this document contains any financial product advice, it is general advice only and has been prepared by GS without taking into account a client’s objectives, financial situation or needs. A client should, before acting on any such advice, consider the appropriateness of the advice having regard to the client’s own objectives, financial situation and needs. A copy of certain GS Australia and New Zealand disclosure of interests and a copy of GS’ Australian Sell-Side Research Independence Policy Statement are available at: https://www.goldmansachs.com/disclosures/australia-new-zealand/index.html. Brazil: Disclosure information in relation to CVM Resolution n. 20 is available at https://www.gs.com/worldwide/brazil/area/gir/index.html. Where applicable, the Brazil-registered analyst primarily responsible for the content of this research report, as defined in Article 20 of CVM Resolution n. 20, is the first author named at the beginning of this report, unless indicated otherwise at the end of the text. Canada: This information is being provided to you for information purposes only and is not, and under no circumstances should be construed as, an advertisement, offering or solicitation by GS & Co. LLC for purchasers of securities in Canada to trade in any Canadian security. GS & Co. LLC is not registered as a dealer in any jurisdiction in Canada under applicable Canadian securities laws and generally is not permitted to trade in Canadian securities and may be prohibited from selling certain securities and products in certain jurisdictions in Canada. If you wish to trade in any Canadian securities or other products in Canada please contact GS Canada Inc., an affiliate of The GS Group Inc., or another registered Canadian dealer. Hong Kong: Further information on the securities of covered companies referred to in this research may be obtained on request from GS (Asia) L.L.C. India: Further information on the subject company or companies referred to in this research may be obtained from GS (India) Securities Private Limited, Research Analyst - SEBI Registration Number INH000001493, 10th Floor, Ascent-Worli, Sudam Kalu Ahire Marg, Worli, Mumbai-400 025, India, Corporate Identity Number U74140MH2006FTC160634, Phone +91 22 6616 9000, Fax +91 22 6616 9001. GS may beneficially own 1% or more of the securities (as such term is defined in clause 2 (h) the Indian Securities Contracts (Regulation) Act, 1956) of the subject company or companies referred to in this research report. Investment in securities market are subject to market risks. Read all the related documents carefully before investing. Registration granted by SEBI and certification from NISM in no way guarantee performance of the intermediary or provide any assurance of returns to investors. GS (India) Securities Private Limited compliance officer and investor grievance contact details can be found at: https://www.goldmansachs.com/worldwide/india/documents/Grievance-Redressal-and-Escalation-Matrix.pdf, and a copy of the annual audit compliance report can be found at this link: https://publishing.gs.com/content/site/india-annual-compliance-report.html. Japan: See below. Korea: This research, and any access to it, is intended only for “professional investors” within the meaning of the Financial Services and Capital Markets Act, unless otherwise agreed by GS. Further information on the subject company or companies referred to in this research may be obtained from GS (Asia) L.L.C., Seoul Branch. New Zealand: GS New Zealand Limited and its affiliates are neither “registered banks” nor “deposit takers” (as defined in the Reserve Bank of New Zealand Act 1989) in New Zealand. This research, and any access to it, is intended for “wholesale clients” (as defined in the Financial Advisers Act 2008) unless otherwise agreed by GS. A copy of certain GS Australia and New Zealand disclosure of interests is available at: https://www.goldmansachs.com/disclosures/australia-new-zealand/index.html. Russia: Research reports distributed in the Russian Federation are not advertising as defined in the Russian legislation, but are information and analysis not having product promotion as their main purpose and do not provide appraisal within the meaning of the Russian legislation on appraisal activity. Research reports do not constitute a personalized investment recommendation as defined in Russian laws and regulations, are not addressed to a specific client, and are prepared without analyzing the financial circumstances, investment profiles or risk profiles of clients. GS assumes no responsibility for any investment decisions that may be taken by a client or any other person based on this research report. Singapore: GS (Singapore) Pte. (Company Number: 198602165W), which is regulated by the Monetary Authority of Singapore, accepts legal responsibility for this research, and should be contacted with respect to any matters arising from, or in connection with, this research. Taiwan: This material is for reference only and must not be reprinted without permission. Investors should carefully consider their own investment risk. Investment results are the responsibility of the individual investor. United Kingdom: Persons who would be categorized as retail clients in the United Kingdom, as such term is defined in the rules of the Financial Conduct Authority, should read this research in conjunction with prior GS on the covered companies referred to herein and should refer to the risk warnings that have been sent to them by GS International. A copy of these risks warnings, and a glossary of certain financial terms used in this report, are available from GS International on request. ",
+        "bbox": [
+            81,
+            187,
+            916,
+            720
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "European Union and United Kingdom: Disclosure information in relation to Article 6 (2) of the European Commission Delegated Regulation (EU) (2016/958) supplementing Regulation (EU) No 596/2014 of the European Parliament and of the Council (including as that Delegated Regulation is implemented into United Kingdom domestic law and regulation following the United Kingdom's departure from the European Union and the European Economic Area) with regard to regulatory technical standards for the technical arrangements for objective presentation of investment recommendations or other information recommending or suggesting an investment strategy and for disclosure of particular interests or indications of conflicts of interest is available at https://www.gs.com/disclosures/europeanpolicy.html which states the European Policy for Managing Conflicts of Interest in Connection with Investment Research. ",
+        "bbox": [
+            81,
+            725,
+            906,
+            803
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "Japan: GS Japan Co., Ltd. is a Financial Instrument Dealer registered with the Kanto Financial Bureau under registration number Kinsho 69, and a member of Japan Securities Dealers Association, Financial Futures Association of Japan Type II Financial Instruments Firms Association, and Investment Management Association of Japan. Sales and purchase of equities are subject to commission pre-determined with clients plus consumption tax. See company-specific disclosures as to any applicable disclosures required by Japanese stock exchanges, the Japanese Securities Dealers Association or the Japanese Securities Finance Company. ",
+        "bbox": [
+            81,
+            810,
+            913,
+            867
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "Ratings, coverage universe and related definitions ",
+        "text_level": 1,
+        "bbox": [
+            81,
+            880,
+            450,
+            892
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "Buy (B), Neutral (N), Sell (S) Analysts recommend stocks as Buys or Sells for inclusion on various regional Investment Lists. Being assigned a Buy or Sell on an Investment List is determined by a stock's total return potential relative to its coverage universe. Any stock not assigned as a Buy or a Sell on an Investment List with an active rating (i.e., a stock that is not Rating Suspended, Not Rated, Early-Stage Biotech, Coverage Suspended or Not Covered), is deemed Neutral. Each region manages Regional Conviction Lists, which are selected from Buy rated stocks on the respective region's Investment Lists and represent investment recommendations focused on the size of the total return potential and/or the likelihood of the realization of the return across their respective areas of coverage. The addition or removal of stocks from such Conviction Lists are managed by the Investment Review Committee or other designated committee in each respective region and do not represent a change in the analysts' investment rating for such stocks. ",
+        "bbox": [
+            81,
+            892,
+            913,
+            927
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "header",
+        "text": "GS ",
+        "bbox": [
+            81,
+            6,
+            184,
+            18
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "header",
+        "text": "China Healthcare ",
+        "bbox": [
+            802,
+            7,
+            916,
+            21
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "footer",
+        "text": "1 June 2026 ",
+        "bbox": [
+            81,
+            954,
+            153,
+            965
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "page_number",
+        "text": "9 ",
+        "bbox": [
+            906,
+            954,
+            916,
+            963
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            81,
+            40,
+            916,
+            86
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "Total return potential represents the upside or downside differential between the current share price and the price target, including all paid or anticipated dividends, expected during the time horizon associated with the price target. Price targets are required for all covered stocks. The total return potential, price target and associated time horizon are stated in each report adding or reiterating an Investment List membership. ",
+        "bbox": [
+            81,
+            92,
+            890,
+            127
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "Coverage Universe: A list of all stocks in each coverage universe is available by primary analyst, stock and coverage universe at https://www.gs.com/research/hedge.html. ",
+        "bbox": [
+            81,
+            132,
+            779,
+            157
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "Not Rated (NR). The investment rating, target price and earnings estimates (where relevant) are removed pursuant to GS policy when GS is acting in an advisory capacity in a merger or in a strategic transaction involving this company, when there are legal, regulatory or policy constraints due to GS' involvement in a transaction, and in certain other circumstances. Early-Stage Biotech (ES). An investment rating and a target price are not assigned pursuant to GS policy when this company has neither a drug, treatment or medical device that has passed a Phase II clinical trial nor a license to distribute a post-Phase II drug, treatment or medical device. Rating Suspended (RS). GS has suspended the investment rating and price target for this stock, because there is not a sufficient fundamental basis for determining an investment rating or target price. The previous investment rating and target price, if any, are no longer in effect for this stock and should not be relied upon. Coverage Suspended (CS). GS has suspended coverage of this company. Not Covered (NC). GS does not cover this company. ",
+        "bbox": [
+            81,
+            162,
+            911,
+            264
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "Global product; distributing entities ",
+        "text_level": 1,
+        "bbox": [
+            81,
+            276,
+            349,
+            289
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "GS Global Investment Research produces and distributes research products for clients of GS on a global basis. Analysts based in GS offices around the world produce research on industries and companies, and research on macroeconomics, currencies, commodities and portfolio strategy. This research is disseminated in Australia by GS Australia Pty Ltd (ABN 21 006 797 897); in Brazil by GS do Brasil Corretora de Títulos e Valores Mobiliários S.A.; Public Communication Channel GS Brazil: 0800 727 5764 and / or contatogoldmanbrasil@gs.com. Available Weekdays (except holidays), from 9am to 6pm. Canal de Comunicação com o Público GS Brasil: 0800 727 5764 e/ou contatogoldmanbrasil@gs.com. Horário de funcionamento: segunda-feira à sexta-feira (exceto feriados), das 9h às 18h; in Canada by GS & Co. LLC; in Hong Kong by GS (Asia) L.L.C.; in India by GS (India) Securities Private Ltd.; in Japan by GS Japan Co., Ltd.; in the Republic of Korea by GS (Asia) L.L.C., Seoul Branch; in New Zealand by GS New Zealand Limited; in Russia by OOO GS; in Singapore by GS (Singapore) Pte. (Company Number: 198602165W); and in the United States of America by GS & Co. LLC. GS International has approved this research in connection with its distribution in the United Kingdom. ",
+        "bbox": [
+            81,
+            289,
+            916,
+            412
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "GS International (“GSI”), authorised by the Prudential Regulation Authority (“PRA”) and regulated by the Financial Conduct Authority (“FCA”) and the PRA, has approved this research in connection with its distribution in the United Kingdom. ",
+        "bbox": [
+            81,
+            418,
+            879,
+            442
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "European Economic Area: GS Bank Europe SE (\"GSBE\") is a credit institution incorporated in Germany and, within the Single Supervisory Mechanism, subject to direct prudential supervision by the European Central Bank and in other respects supervised by German Federal Financial Supervisory Authority (Bundesanstalt für Finanzdienstleistungsaufsicht, BaFin) and Deutsche Bundesbank and disseminates research within the European Economic Area. ",
+        "bbox": [
+            81,
+            447,
+            903,
+            492
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "General disclosures ",
+        "text_level": 1,
+        "bbox": [
+            81,
+            505,
+            227,
+            518
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "This research is for our clients only. Other than disclosures relating to GS, this research is based on current public information that we consider reliable, but we do not represent it is accurate or complete, and it should not be relied on as such. The information, opinions, estimates and forecasts contained herein are as of the date hereof and are subject to change without prior notification. We seek to update our research as appropriate, but various regulations may prevent us from doing so. Other than certain industry reports published on a periodic basis, the large majority of reports are published at irregular intervals as appropriate in the analyst's judgment. ",
+        "bbox": [
+            81,
+            520,
+            911,
+            575
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "GS conducts a global full-service, integrated investment banking, investment management, and brokerage business. We have investment banking and other business relationships with a substantial percentage of the companies covered by Global Investment Research. GS & Co. LLC, the United States broker dealer, is a member of SIPC (https://www.sipc.org). ",
+        "bbox": [
+            81,
+            581,
+            913,
+            616
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "Our salespeople, traders, and other professionals may provide oral or written market commentary or trading strategies to our clients and principal trading desks that reflect opinions that are contrary to the opinions expressed in this research. Our asset management area, principal trading desks and investing businesses may make investment decisions that are inconsistent with the recommendations or views expressed in this research. ",
+        "bbox": [
+            81,
+            621,
+            913,
+            656
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "The analysts named in this report may have from time to time discussed with our clients, including GS salespersons and traders, or may discuss in this report, trading strategies that reference catalysts or events that may have a near-term impact on the market price of the equity securities discussed in this report, which impact may be directionally counter to the analyst's published price target expectations for such stocks. Any such trading strategies are distinct from and do not affect the analyst's fundamental equity rating for such stocks, which rating reflects a stock's return potential relative to its coverage universe as described herein. ",
+        "bbox": [
+            81,
+            661,
+            916,
+            720
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "We and our affiliates, officers, directors, and employees will from time to time have long or short positions in, act as principal in, and buy or sell, the securities or derivatives, if any, referred to in this research, unless otherwise prohibited by regulation or GS policy. ",
+        "bbox": [
+            81,
+            725,
+            888,
+            749
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "The views attributed to third party presenters at GS arranged conferences, including individuals from other parts of GS, do not necessarily reflect those of Global Investment Research and are not an official view of GS. ",
+        "bbox": [
+            81,
+            754,
+            916,
+            778
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "Any third party referenced herein, including any salespeople, traders and other professionals or members of their household, may have positions in the products mentioned that are inconsistent with the views expressed by analysts named in this report. ",
+        "bbox": [
+            81,
+            784,
+            911,
+            807
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "This research is not an offer to sell or the solicitation of an offer to buy any security in any jurisdiction where such an offer or solicitation would be illegal. It does not constitute a personal recommendation or take into account the particular investment objectives, financial situations, or needs of individual clients. Clients should consider whether any advice or recommendation in this research is suitable for their particular circumstances and, if appropriate, seek professional advice, including tax advice. The price and value of investments referred to in this research and the income from them may fluctuate. Past performance is not a guide to future performance, future returns are not guaranteed, and a loss of original capital may occur. Fluctuations in exchange rates could have adverse effects on the value or price of, or income derived from, certain investments. ",
+        "bbox": [
+            81,
+            812,
+            916,
+            881
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "Certain transactions, including those involving futures, options, and other derivatives, give rise to substantial risk and are not suitable for all investors. Investors should review current options and futures disclosure documents which are available from GS sales representatives or at https://www.theocc.com/about/publications/character-risks.jsp and https://www.goldmansachs.com/disclosures/cftc\\_fcm\\_disclosures. Transaction costs may be significant in option strategies calling for multiple purchase and sales of options such as spreads. Supporting documentation will be supplied upon request. ",
+        "bbox": [
+            81,
+            887,
+            903,
+            922
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "header",
+        "text": "GS ",
+        "bbox": [
+            81,
+            6,
+            184,
+            18
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "header",
+        "text": "China Healthcare ",
+        "bbox": [
+            802,
+            7,
+            916,
+            21
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "footer",
+        "text": "1 June 2026 ",
+        "bbox": [
+            81,
+            954,
+            153,
+            965
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "page_number",
+        "text": "10 ",
+        "bbox": [
+            901,
+            954,
+            916,
+            963
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            81,
+            40,
+            875,
+            64
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "Differing Levels of Service provided by Global Investment Research: The level and types of services provided to you by GS Global Investment Research may vary as compared to that provided to internal and other external clients of GS, depending on various factors including your individual preferences as to the frequency and manner of receiving communication, your risk profile and investment focus and perspective (e.g., marketwide, sector specific, long term, short term), the size and scope of your overall client relationship with GS, and legal and regulatory constraints. As an example, certain clients may request to receive notifications when research on specific securities is published, and certain clients may request that specific data underlying analysts' fundamental analysis available on our internal client websites be delivered to them electronically through data feeds or otherwise. No change to an analyst's fundamental research views (e.g., ratings, price targets, or material changes to earnings estimates for equity securities), will be communicated to any client prior to inclusion of such information in a research report broadly disseminated through electronic publication to our internal client websites or through other means, as necessary, to all clients who are entitled to receive such reports. ",
+        "bbox": [
+            81,
+            70,
+            901,
+            170
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "All research reports are disseminated and available to all clients simultaneously through electronic publication to our internal client websites. Not all research content is redistributed to our clients or available to third-party aggregators, nor is GS responsible for the redistribution of our research by third party aggregators. For research, models or other data related to one or more securities, markets or asset classes (including related services) that may be available to you, please contact your GS representative or go to https://research.gs.com. ",
+        "bbox": [
+            81,
+            176,
+            895,
+            223
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "Disclosure information is also available at https://www.gs.com/research/hedge.html or from Research Compliance, 200 West Street, New York, NY 10282. ",
+        "bbox": [
+            81,
+            229,
+            885,
+            251
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "© 2026 GS. ",
+        "text_level": 1,
+        "bbox": [
+            81,
+            259,
+            218,
+            269
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "You are permitted to store, display, analyze, modify, reformat, and print the information made available to you via this service only for your own use. You may not resell or reverse engineer this information to calculate or develop any index for disclosure and/or marketing or create any other derivative works or commercial product(s), data or offering(s) without the express written consent of GS. You are not permitted to publish, transmit, or otherwise reproduce this information, in whole or in part, in any format to any third party without the express written consent of GS. This foregoing restriction includes, without limitation, using, extracting, downloading or retrieving this information, in whole or in part, to train or finetune a machine learning or artificial intelligence system, or to provide or reproduce this information, in whole or in part, as a prompt or input to any such system. ",
+        "bbox": [
+            81,
+            277,
+            910,
+            354
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "header",
+        "text": "GS ",
+        "bbox": [
+            81,
+            6,
+            184,
+            18
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "header",
+        "text": "China Healthcare ",
+        "bbox": [
+            802,
+            7,
+            916,
+            21
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "footer",
+        "text": "1 June 2026 ",
+        "bbox": [
+            83,
+            954,
+            153,
+            965
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "page_number",
+        "text": "11 ",
+        "bbox": [
+            901,
+            954,
+            915,
+            963
+        ],
+        "page_idx": 10
+    }
+]
