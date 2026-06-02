@@ -400,6 +400,39 @@ def safe_generate_text(prompt: str, args: argparse.Namespace, label: str) -> str
         return f"DeepSeek 生成 {label} 失败：{exc}\n\n请复制对应 prompt 文件手动生成。\n"
 
 
+def visible_char_count(text: str) -> int:
+    return len(re.sub(r"\s+", "", text or ""))
+
+
+def truncate_visible_text(text: str, max_chars: int, suffix: str = "…") -> str:
+    if max_chars <= 0 or visible_char_count(text) <= max_chars:
+        return text
+    budget = max(1, max_chars - visible_char_count(suffix))
+    kept: list[str] = []
+    used = 0
+    for char in text:
+        if char.isspace():
+            kept.append(char)
+            continue
+        if used >= budget:
+            break
+        kept.append(char)
+        used += 1
+    return "".join(kept).rstrip("，,。；;：:\n ") + suffix
+
+
+def limit_xhs_note_length(note: str, max_chars: int) -> str:
+    if max_chars <= 0 or visible_char_count(note) <= max_chars:
+        return note
+    text = note.strip()
+    tag = "#学习笔记"
+    body = re.sub(r"(?:^|\n)\s*#学习笔记\s*$", "", text).strip()
+    tag_budget = visible_char_count(tag)
+    body_budget = max(120, max_chars - tag_budget)
+    limited = truncate_visible_text(body, body_budget)
+    return limited.strip() + "\n\n#学习笔记\n"
+
+
 def clean_xhs_note(note: str) -> str:
     """Post-process note.md so it is directly publishable on XHS."""
     text = note.strip()
@@ -554,6 +587,7 @@ def process_pdf(pdf_path: Path, result_row: dict[str, Any], output_root: Path, a
     (item_dir / "prompt_for_xhs.md").write_text(xhs_prompt, encoding="utf-8")
     note = safe_generate_text(xhs_prompt, args, "Xiaohongshu note")
     note = clean_xhs_note(note)
+    note = limit_xhs_note_length(note, args.length)
     (item_dir / "note.md").write_text(note, encoding="utf-8")
     title, subtitle = extract_cover_titles(note, fallback_title)
     status["cover_short_title"] = title
@@ -586,7 +620,7 @@ def build_arg_parser() -> argparse.ArgumentParser:
     parser.add_argument("--language", default="en")
     parser.add_argument("--ocr", default="true")
     parser.add_argument("--style", default="投研博主风：信息密度高，但像给朋友讲逻辑")
-    parser.add_argument("--length", type=int, default=850)
+    parser.add_argument("--length", type=int, default=1000)
     parser.add_argument("--wechat-length", type=int, default=1200)
     parser.add_argument("--community-cta", default="加入社群，领取完整研报解读与原始图表。")
     parser.add_argument("--emoji", default="中")

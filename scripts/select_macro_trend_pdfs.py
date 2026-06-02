@@ -30,11 +30,29 @@ MACRO_HINTS = [
     "sector", "industry", "theme", "themes", "trend", "trends", "supply chain", "oil price", "energy",
     "semiconductor", "ai supply", "hardware", "housing", "property", "rates", "inflation", "policy",
     "china", "asia", "apac", "europe", "us", "tariff", "trade", "commodity", "commodities",
+    "fx", "credit", "fund flows", "pmi", "cpi", "gdp", "fed", "central bank", "asset allocation",
+    "cross asset", "weekly kickstart", "markets daily",
+]
+MACRO_PRIORITY_HINTS = [
+    "macro", "economy", "economic", "economics", "global", "regional", "strategy", "markets daily",
+    "weekly kickstart", "rates", "inflation", "policy", "fed", "central bank", "fx", "credit",
+    "commodity", "commodities", "oil", "copper", "pmi", "cpi", "gdp", "tariff", "trade",
+    "fund flows", "asset allocation", "cross asset",
 ]
 COMPANY_HINTS = [
-    " inc", " corp", " corporation", " ltd", " limited", " group", " co.", " plc", "adr", "nasdaq", "nyse",
-    ".us", ".hk", ".ss", ".sz", ".ks", ".t", "earnings", "initiate", "initiation", "rating", "target price",
+    " inc", " corp", " corporation", " ltd", " limited", " co.", " plc", "adr", "nasdaq", "nyse",
+    ".us", ".hk", ".ss", ".sz", ".ks", ".t", "initiate", "initiation", "target price",
+    "price target", "upgrade", "downgrade", "overweight", "underweight", "earnings review",
+    "conference call", "ndr", "roadshow", "results review", "estimate change", "valuation",
 ]
+TICKER_RE = re.compile(
+    r"(?:\([A-Z0-9]{1,8}(?:\.[A-Z]{1,4})\)|\b\d{4,6}\.(?:HK|SZ|SS|TW|T|KS)\b|\b[A-Z]{1,6}\.(?:US|HK|AS|MI)\b)",
+    re.I,
+)
+RATING_ACTION_RE = re.compile(
+    r"\b(?:overweight|underweight|upgrade|downgrade|initiat(?:e|ion)|target price|price target)\b",
+    re.I,
+)
 
 
 def log(message: str) -> None:
@@ -66,9 +84,11 @@ def load_manifest(input_dir: Path) -> list[dict[str, Any]]:
     files = data.get("files", [])
     pdfs = []
     for idx, row in enumerate(files):
-        local_path = Path(row.get("local_path", ""))
-        if not local_path.is_absolute():
-            local_path = input_dir / local_path
+        raw_local_path = Path(row.get("local_path", ""))
+        path_candidates = [raw_local_path] if raw_local_path.is_absolute() else [Path.cwd() / raw_local_path, input_dir / raw_local_path]
+        if not raw_local_path.is_absolute() and raw_local_path.parts and raw_local_path.parts[0] == input_dir.name:
+            path_candidates.append(input_dir / Path(*raw_local_path.parts[1:]))
+        local_path = next((path for path in path_candidates if path.exists()), path_candidates[0])
         if local_path.exists() and local_path.suffix.lower() == ".pdf":
             pdfs.append({
                 "id": idx,
@@ -126,14 +146,15 @@ def classify_with_deepseek(pdfs: list[dict[str, Any]], args: argparse.Namespace)
 请根据研报 PDF 文件名/路径判断它更像哪类报告，并选出宏观趋势类候选。
 
 分类口径：
-- macro_trend：宏观、行业趋势、产业链、主题策略、区域/国家市场、商品/利率/政策/周期/资产配置/行业供需趋势。
-- company_stock：单一上市公司、个股评级、目标价、单公司财报/估值/首次覆盖。
+- macro_trend：优先选择宏观、策略、区域/国家市场、利率/汇率/信用/商品、政策、周期、资产配置、行业供需趋势、产业链主题。
+- company_stock：单一上市公司、个股评级、目标价、单公司财报/估值/首次覆盖、公司路演/电话会/业绩点评。
 - other：不确定、资料说明、非研报。
 
 注意：
 - 只根据标题判断，不要编造。
-- 如果标题明显是单一公司，即使涉及行业，也归为 company_stock。
+- 严格规避个股：如果标题明显是单一公司、含股票代码、评级动作、目标价、财报/业绩点评，即使涉及行业，也归为 company_stock。
 - 如果标题是行业/产业链/市场整体，不针对单一公司，归为 macro_trend。
+- 宏观/跨资产/政策/利率/汇率/商品/区域市场报告优先给更高 score。
 - 返回 JSON 数组，不要解释。
 - 每项格式：{{"id": 0, "category": "macro_trend", "score": 0.95, "reason": "简短中文原因"}}
 - score 表示你对该分类的置信度，0-1。
@@ -161,31 +182,95 @@ PDF 列表：
     return rows
 
 
+def title_blob(row: dict[str, Any]) -> str:
+    return f"{row.get('name', '')} {row.get('dropbox_path', '')}".lower().replace("_", " ").replace("-", " ")
+
+
+def score_hints(text: str, hints: list[str]) -> int:
+    return sum(1 for hint in hints if hint in text)
+
+
+def company_guard_reasons(text: str) -> list[str]:
+    reasons: list[str] = []
+    if TICKER_RE.search(text):
+        reasons.append("contains_ticker")
+    if RATING_ACTION_RE.search(text):
+        reasons.append("contains_rating_or_target_price")
+    company_score = score_hints(text, COMPANY_HINTS)
+    macro_priority_score = score_hints(text, MACRO_PRIORITY_HINTS)
+    if company_score >= 2 or (company_score and not macro_priority_score):
+        reasons.append(f"company_hint_score={company_score}")
+    return reasons
+
+
+def apply_macro_preference_guard(rows: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    guarded = []
+    for row in rows:
+        text = title_blob(row)
+        company_reasons = company_guard_reasons(text)
+        macro_priority_score = score_hints(text, MACRO_PRIORITY_HINTS)
+        macro_score = score_hints(text, MACRO_HINTS)
+        updated = dict(row)
+        updated["macro_hint_score"] = macro_score
+        updated["macro_priority_score"] = macro_priority_score
+        updated["company_guard_reasons"] = company_reasons
+        if company_reasons:
+            updated["category"] = "company_stock"
+            updated["score"] = max(float(updated.get("score", 0) or 0), 0.9)
+            base_reason = str(updated.get("reason") or "").strip()
+            guard_reason = "本地规则排除个股/评级/目标价/财报信号：" + ",".join(company_reasons)
+            updated["reason"] = f"{base_reason}；{guard_reason}" if base_reason else guard_reason
+            updated["classifier"] = f"{updated.get('classifier', 'unknown')}+local_guard"
+        elif str(updated.get("category")) == "macro_trend" and macro_priority_score:
+            updated["score"] = min(0.99, float(updated.get("score", 0) or 0) + macro_priority_score * 0.03)
+            updated["reason"] = (str(updated.get("reason") or "").strip() + "；宏观优先信号加权").strip("；")
+            updated["classifier"] = f"{updated.get('classifier', 'unknown')}+macro_priority"
+        guarded.append(updated)
+    return guarded
+
+
 def classify_with_heuristic(pdfs: list[dict[str, Any]]) -> list[dict[str, Any]]:
     rows = []
     for p in pdfs:
-        title = str(p["name"]).lower()
-        macro_score = sum(1 for h in MACRO_HINTS if h in title)
-        company_score = sum(1 for h in COMPANY_HINTS if h in title)
-        if macro_score > company_score and macro_score > 0:
-            category = "macro_trend"
-            score = min(0.85, 0.45 + macro_score * 0.1)
-            reason = "文件名包含宏观/行业/趋势关键词"
-        elif company_score > 0:
+        title = title_blob(p)
+        macro_score = score_hints(title, MACRO_HINTS)
+        macro_priority_score = score_hints(title, MACRO_PRIORITY_HINTS)
+        company_reasons = company_guard_reasons(title)
+        if company_reasons:
             category = "company_stock"
-            score = min(0.85, 0.45 + company_score * 0.1)
-            reason = "文件名包含公司/个股关键词"
+            score = 0.9
+            reason = "文件名包含公司/个股/评级/目标价/财报信号：" + ",".join(company_reasons)
+        elif macro_score > 0:
+            category = "macro_trend"
+            score = min(0.9, 0.45 + macro_score * 0.08 + macro_priority_score * 0.05)
+            reason = "文件名包含宏观/行业/趋势关键词"
         else:
             category = "other"
             score = 0.3
             reason = "启发式规则无法确认"
-        rows.append({**p, "category": category, "score": score, "reason": reason, "classifier": "heuristic"})
+        rows.append({
+            **p,
+            "category": category,
+            "score": score,
+            "reason": reason,
+            "classifier": "heuristic",
+            "macro_hint_score": macro_score,
+            "macro_priority_score": macro_priority_score,
+            "company_guard_reasons": company_reasons,
+        })
     return rows
 
 
 def select_candidates(classified: list[dict[str, Any]], candidate_count: int) -> list[dict[str, Any]]:
     macro = [r for r in classified if str(r.get("category")) == "macro_trend"]
-    macro.sort(key=lambda r: float(r.get("score", 0)), reverse=True)
+    macro.sort(
+        key=lambda r: (
+            int(r.get("macro_priority_score", 0) or 0),
+            int(r.get("macro_hint_score", 0) or 0),
+            float(r.get("score", 0) or 0),
+        ),
+        reverse=True,
+    )
     return macro[:candidate_count]
 
 
@@ -218,6 +303,7 @@ def main() -> int:
         log(f"Loaded {len(pdfs)} PDFs for macro classification.")
         try:
             classified = classify_with_deepseek(pdfs, args)
+            classified = apply_macro_preference_guard(classified)
             log("DeepSeek classification completed.")
         except Exception as exc:
             log(f"DeepSeek classification failed, using heuristic fallback: {exc}")

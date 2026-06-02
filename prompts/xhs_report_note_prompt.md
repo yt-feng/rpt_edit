@@ -3,7 +3,7 @@
 【目标】
 - 把下面的研报解析内容，改写成一篇中文小红书笔记。
 - 风格：{style_preset}
-- 长度：约 {target_length} 字，允许上下浮动 15%。
+- 长度：不超过 {target_length} 字，信息密度高但不要写长文。
 - emoji 密度：{emoji_density}
 
 【必须输出的结构】

@@ -296,6 +296,7 @@ jobs:
             --language "${{ needs.resolve-inputs.outputs.language }}" \
             --ocr "${{ needs.resolve-inputs.outputs.ocr }}" \
             --poll-timeout 3600 \
+            --length 1000 \
             --wechat-length "${{ needs.resolve-inputs.outputs.wechat_length }}" \
             --community-cta "${{ needs.resolve-inputs.outputs.community_cta }}" 2>&1 | tee "$OUTPUT_DIR/generate_progress.log"
       - name: Post-process shard articles and podcast scripts

@@ -71,7 +71,7 @@ KC Desk Notes / Cloudflare R2 额外需要：
 主要步骤：
 
 1. `resolve-inputs`：解析 workflow 参数。
-2. `select-macro-reports`：下载 Dropbox 最新日期 PDF，并用 DeepSeek 判断个股 / 宏观趋势，只保留宏观趋势相关报告。
+2. `select-macro-reports`：下载 Dropbox 最新日期 PDF，并用 DeepSeek 判断个股 / 宏观趋势；本地规则会额外排除股票代码、评级、目标价、业绩点评等个股信号，只保留宏观趋势相关报告。
 3. `process-shard`：最多 40 个 shard 并行，每个 shard 默认处理 5 篇报告；每个 shard 内再按 batch 调 MinerU 和 DeepSeek。
 4. `Finalize shard outputs`：生成闲鱼、知乎补充文案，并执行敏感词检测和脱敏。
 5. `package-publish-ready`：把待发布内容打成分卷 ZIP，排除 raw、prompt、log、json、status 等调试文件。
@@ -178,7 +178,7 @@ market_view_summaries/<日期>/figures/
 
 文件：`.github/workflows/daily-bilingual-podcast-videos.yml`
 
-用途：每天从 Dropbox 最新日期文件夹中默认挑选 1 篇报告，生成 mixed bilingual podcast 讲解视频。当前默认模式只产出 mixed bilingual 版本，避免同时生成中文、英文 standalone 视频造成 ElevenLabs 额度浪费；手动运行时可以把 `output_mode` 切到 `all` 恢复三版输出。
+用途：每天从 Dropbox 最新日期文件夹中默认挑选 3 篇偏宏观 / 策略 / 行业趋势的报告，生成 mixed bilingual podcast 讲解视频。当前默认模式只产出 mixed bilingual 版本，避免同时生成中文、英文 standalone 视频造成 ElevenLabs 额度浪费；手动运行时可以把 `output_mode` 切到 `all` 恢复三版输出。
 
 触发方式：
 
@@ -187,19 +187,20 @@ market_view_summaries/<日期>/figures/
 
 主要参数：
 
-- `video_count`：默认 `1`。
+- `video_count`：默认 `3`。
 - `output_mode`：默认 `bilingual_only`，只生成 mixed bilingual 视频和从最终视频抽出的音频；可选 `all`，生成中文、英文、mixed 三版。
 - `podcast_minutes`：控制生成脚本和 TTS 的目标时长。
 
 流程：
 
 1. 从 Dropbox 最新日期文件夹下载 PDF。
-2. 用 MinerU 解析文本和图表。
-3. 默认选择 1 份至少 5 页的报告。
-4. 用 DeepSeek 生成 podcast 脚本。
-5. `bilingual_only` 模式只跑一次 ElevenLabs TTS，生成英文音频/timeline。
-6. 用这一次音频渲染 mixed bilingual 视频，并从最终 mp4 抽出音频文件。
-7. `all` 模式保留旧逻辑：生成中文、英文、mixed 三版讲解视频。
+2. 先用 `scripts/select_macro_trend_pdfs.py` 做宏观优先筛选，尽量排除个股、评级、目标价、财报点评类报告。
+3. 再从宏观候选中选择默认 3 份至少 5 页的报告。
+4. 用 MinerU 解析文本和图表。
+5. 用 DeepSeek 生成 podcast 脚本。
+6. `bilingual_only` 模式只跑一次 ElevenLabs TTS，生成英文音频/timeline。
+7. 用这一次音频渲染 mixed bilingual 视频，并从最终 mp4 抽出音频文件。
+8. `all` 模式保留旧逻辑：生成中文、英文、mixed 三版讲解视频。
 
 默认输出目录：
 
@@ -459,6 +460,7 @@ scripts/prune_generated_date_dirs.py --keep 3
 
 `note.md` 当前规则：
 
+- 正文最终限制为不超过 1000 个可见字符。
 - 不展示写作框架词，比如 `一句话结论`、`我最想提醒的一点`、`配图建议`。
 - 不输出包含 `投资` 的免责声明，例如 `非投资建议`。
 - 不输出 `#财经`、`#金融`、`#股票`、`#基金`、`#理财`、`#投资学习`。

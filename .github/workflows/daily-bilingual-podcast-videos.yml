@@ -32,9 +32,9 @@ on:
         required: true
         default: "5"
       video_count:
-        description: "How many latest Dropbox reports / bilingual videos to generate"
+        description: "How many macro-oriented bilingual videos to generate"
         required: true
-        default: "1"
+        default: "3"
       output_mode:
         description: "Video outputs to generate"
         required: true
@@ -105,14 +105,33 @@ jobs:
             --dropbox-root "${{ github.event.inputs.dropbox_root || '/zip_backup' }}" \
             --output-dir "_daily_bilingual_latest_pdfs"
 
-      - name: Select latest reports for video generation
+      - name: Select macro/trend reports for video generation
+        id: select_macro
+        env:
+          DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
+          DEEPSEEK_BASE_URL: ${{ github.event.inputs.deepseek_base_url || 'https://api.deepseek.com' }}
+        run: |
+          COUNT="${{ github.event.inputs.video_count || '3' }}"
+          CANDIDATE_COUNT=$((COUNT * 8))
+          if [ "$CANDIDATE_COUNT" -lt 12 ]; then
+            CANDIDATE_COUNT=12
+          fi
+          python scripts/select_macro_trend_pdfs.py \
+            --input-dir "_daily_bilingual_latest_pdfs" \
+            --output-dir "_daily_bilingual_macro_pdfs" \
+            --candidate-count "$CANDIDATE_COUNT" \
+            --process-count "$CANDIDATE_COUNT" \
+            --model "${{ github.event.inputs.model || 'deepseek-chat' }}" \
+            --deepseek-base-url "${{ github.event.inputs.deepseek_base_url || 'https://api.deepseek.com' }}"
+
+      - name: Select page-qualified macro reports for video generation
         id: select_pdf
         run: |
           python scripts/select_test_pdf.py \
-            --input-dir "_daily_bilingual_latest_pdfs" \
+            --input-dir "_daily_bilingual_macro_pdfs" \
             --output-dir "_daily_bilingual_selected_pdfs" \
             --min-pages "${{ github.event.inputs.min_pages || '5' }}" \
-            --max-pdfs "${{ github.event.inputs.video_count || '1' }}"
+            --max-pdfs "${{ github.event.inputs.video_count || '3' }}"
 
       - name: Convert selected PDFs to notes and chart assets
         env:
@@ -124,7 +143,7 @@ jobs:
           OUTPUT_DIR="bilingual_podcast_videos/${{ steps.dropbox.outputs.latest_folder }}/${{ github.run_id }}"
           mkdir -p "$OUTPUT_DIR"
           echo "OUTPUT_DIR=$OUTPUT_DIR" >> "$GITHUB_ENV"
-          COUNT="${{ github.event.inputs.video_count || '1' }}"
+          COUNT="${{ github.event.inputs.video_count || '3' }}"
           python scripts/run_pdf_to_xhs_in_batches.py \
             --input-dir "_daily_bilingual_selected_pdfs" \
             --output-dir "$OUTPUT_DIR" \
@@ -139,6 +158,7 @@ jobs:
             --mineru-model "${{ github.event.inputs.mineru_model || 'vlm' }}" \
             --language "${{ github.event.inputs.language || 'en' }}" \
             --ocr "${{ github.event.inputs.ocr || 'true' }}" \
+            --length 1000 \
             --wechat-length 1800 \
             --community-cta "欢迎来社群继续拆完整报告" \
             --max-images 8 \
@@ -154,7 +174,7 @@ jobs:
           mkdir -p "$OUTPUT_DIR"
           python scripts/generate_test_podcast_video_eleven_batch_v5.py \
             --output-dir "$OUTPUT_DIR" \
-            --max-items "${{ github.event.inputs.video_count || '1' }}" \
+            --max-items "${{ github.event.inputs.video_count || '3' }}" \
             --output-mode "${{ github.event.inputs.output_mode || 'bilingual_only' }}" \
             --model "${{ github.event.inputs.model || 'deepseek-chat' }}" \
             --deepseek-base-url "${{ github.event.inputs.deepseek_base_url || 'https://api.deepseek.com' }}" \

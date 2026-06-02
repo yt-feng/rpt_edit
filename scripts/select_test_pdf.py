@@ -50,6 +50,31 @@ def load_manifest(input_dir: Path) -> dict[str, Any]:
     return {}
 
 
+def ordered_input_pdfs(input_dir: Path) -> list[Path]:
+    selection_path = input_dir / "selected_to_process_manifest.json"
+    if selection_path.exists():
+        try:
+            rows = json.loads(selection_path.read_text(encoding="utf-8"))
+        except Exception:
+            rows = []
+        ordered: list[Path] = []
+        if isinstance(rows, list):
+            for row in rows:
+                if not isinstance(row, dict):
+                    continue
+                raw_path = row.get("process_local_path")
+                if not raw_path:
+                    continue
+                path = Path(str(raw_path))
+                if not path.is_absolute():
+                    path = input_dir / path
+                if path.exists() and path.suffix.lower() == ".pdf":
+                    ordered.append(path)
+        if ordered:
+            return ordered
+    return sorted((p for p in input_dir.rglob("*.pdf") if p.is_file()), key=lambda p: (p.stat().st_mtime, p.name), reverse=True)
+
+
 def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("--input-dir", required=True)
@@ -63,7 +88,7 @@ def main() -> int:
     output_dir.mkdir(parents=True, exist_ok=True)
     manifest = load_manifest(input_dir)
 
-    pdfs = sorted((p for p in input_dir.rglob("*.pdf") if p.is_file()), key=lambda p: (p.stat().st_mtime, p.name), reverse=True)
+    pdfs = ordered_input_pdfs(input_dir)
     candidates: list[dict[str, Any]] = []
     for pdf in pdfs:
         try:

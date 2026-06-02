@@ -134,6 +134,7 @@ def build_child_command(args: argparse.Namespace, tmp_input: Path) -> list[str]:
         "--mineru-model", args.mineru_model,
         "--language", args.language,
         "--ocr", args.ocr,
+        "--length", str(args.length),
         "--wechat-length", str(args.wechat_length),
         "--community-cta", args.community_cta,
         "--max-images", str(args.max_images),
@@ -204,6 +205,7 @@ def main() -> int:
     parser.add_argument("--mineru-model", default="vlm")
     parser.add_argument("--language", default="en")
     parser.add_argument("--ocr", default="true")
+    parser.add_argument("--length", type=int, default=1000)
     parser.add_argument("--wechat-length", type=int, default=3000)
     parser.add_argument("--community-cta", default="加入社群，领取完整研报解读与原始图表。")
     parser.add_argument("--max-images", type=int, default=8)
