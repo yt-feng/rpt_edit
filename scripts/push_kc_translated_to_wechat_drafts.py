@@ -36,6 +36,9 @@ BOTTOM_DISCLAIMER = "For informational purposes only. Not investment advice."
 DEFAULT_BODY_HOOK = "更多完整报告和后续精译，扫文末图片进群交流。"
 DEFAULT_BODY_VISIBLE_CHARS = 2000
 DEFAULT_MIN_INLINE_IMAGES = 3
+DEFAULT_ARTICLES_PER_DRAFT = 8
+DEFAULT_MAX_CONTENT_CHARS = 19500
+DEFAULT_MAX_CONTENT_BYTES = 18000
 DISPLAY_TITLE_MAX_CHARS = 64
 WECHAT_AUTHOR_MAX_BYTES = 20
 WECHAT_DIGEST_MAX_BYTES = 120
@@ -69,7 +72,10 @@ USER_NOISE_LINE_RE = re.compile(
 
 
 class WeChatError(RuntimeError):
-    pass
+    def __init__(self, message: str, errcode: int | None = None, errmsg: str = "") -> None:
+        super().__init__(message)
+        self.errcode = errcode
+        self.errmsg = errmsg
 
 
 def log(message: str) -> None:
@@ -110,6 +116,10 @@ def truncate_utf8_bytes(text: str, max_bytes: int, suffix: str = "…") -> str:
 
 def visible_char_count(text: str) -> int:
     return len(re.sub(r"\s+", "", strip_markdown_markup(text or "")))
+
+
+def utf8_byte_count(text: str) -> int:
+    return len((text or "").encode("utf-8"))
 
 
 def truncate_visible_text(text: str, max_chars: int, suffix: str = "…") -> str:
@@ -312,6 +322,79 @@ def compose_limited_html(parts: list[str], tail_parts: list[str], max_chars: int
             break
         limited.append(part)
     return "\n".join(part for part in [*limited, *tail] if part)
+
+
+def content_within_limits(content: str, max_chars: int, max_bytes: int) -> bool:
+    if max_chars > 0 and len(content) > max_chars:
+        return False
+    if max_bytes > 0 and utf8_byte_count(content) > max_bytes:
+        return False
+    return True
+
+
+def render_fitted_wechat_html(
+    markdown: str,
+    title: str,
+    brand: str,
+    image_urls: dict[str, str],
+    uploaded_images: list[dict[str, str]],
+    hook_text: str,
+    disclaimer: str,
+    trailing_image_url: str,
+    max_visible_chars: int,
+    max_content_chars: int,
+    max_content_bytes: int,
+) -> tuple[str, int, int, int]:
+    image_limits = [len(uploaded_images)]
+    for value in [2, 1, 0]:
+        value = min(value, len(uploaded_images))
+        if value not in image_limits:
+            image_limits.append(value)
+    visible_budgets = [
+        max_visible_chars,
+        min(max_visible_chars, 1600),
+        min(max_visible_chars, 1200),
+        min(max_visible_chars, 900),
+        min(max_visible_chars, 650),
+        min(max_visible_chars, 450),
+        min(max_visible_chars, 300),
+    ]
+    visible_budgets = [value for idx, value in enumerate(visible_budgets) if value >= 200 and value not in visible_budgets[:idx]]
+
+    last_content = ""
+    last_visible = 0
+    last_body_images = 0
+    for image_limit in image_limits:
+        body_images = [
+            {"url": item["url"], "alt": item.get("token") or "chart"}
+            for item in uploaded_images[:image_limit]
+            if item.get("url")
+        ]
+        for visible_budget in visible_budgets:
+            content, visible_text_chars, body_image_count = markdown_to_wechat_html(
+                markdown,
+                title,
+                brand,
+                image_urls,
+                body_images,
+                hook_text,
+                disclaimer,
+                trailing_image_url,
+                visible_budget,
+                max_content_chars,
+            )
+            last_content = content
+            last_visible = visible_text_chars
+            last_body_images = body_image_count
+            if content_within_limits(content, max_content_chars, max_content_bytes):
+                return content, visible_text_chars, body_image_count, image_limit
+
+    raise RuntimeError(
+        "WeChat HTML still exceeds limits after compression: "
+        f"chars={len(last_content)}, bytes={utf8_byte_count(last_content)}, "
+        f"visible={last_visible}, body_images={last_body_images}, "
+        f"max_chars={max_content_chars}, max_bytes={max_content_bytes}"
+    )
 
 
 def markdown_to_wechat_html(
@@ -680,7 +763,11 @@ def parse_wechat_json(response: requests.Response, label: str) -> dict[str, Any]
         raise WeChatError(f"{label} returned non-JSON response: HTTP {response.status_code}") from exc
     errcode = data.get("errcode")
     if errcode not in (None, 0):
-        raise WeChatError(f"{label} failed: errcode={errcode} errmsg={data.get('errmsg')}")
+        raise WeChatError(
+            f"{label} failed: errcode={errcode} errmsg={data.get('errmsg')}",
+            errcode=int(errcode) if isinstance(errcode, int) or str(errcode).isdigit() else None,
+            errmsg=str(data.get("errmsg") or ""),
+        )
     return data
 
 
@@ -850,23 +937,28 @@ def build_article(
             raise RuntimeError("session and access_token are required outside dry-run")
         thumb_media_id = upload_cover_material(session, access_token, cover_image, args.timeout)
 
-    body_images = [{"url": item["url"], "alt": item.get("token") or "chart"} for item in uploaded_images]
-    content, visible_text_chars, body_image_count = markdown_to_wechat_html(
+    content, visible_text_chars, body_image_count, fitted_image_count = render_fitted_wechat_html(
         markdown,
         title,
         args.brand,
         image_urls,
-        body_images,
+        uploaded_images,
         args.body_hook,
         args.disclaimer,
         trailing_image_url,
         args.max_body_chars,
         args.max_content_chars,
+        args.max_content_bytes,
     )
-    if len(content) > args.max_content_chars:
+    if not content_within_limits(content, args.max_content_chars, args.max_content_bytes):
         raise RuntimeError(
-            f"WeChat HTML for {report_dir.name} is {len(content)} chars, "
-            f"above --max-content-chars={args.max_content_chars}"
+            f"WeChat HTML for {report_dir.name} is {len(content)} chars / {utf8_byte_count(content)} bytes, "
+            f"above --max-content-chars={args.max_content_chars} or --max-content-bytes={args.max_content_bytes}"
+        )
+    if fitted_image_count < len(uploaded_images):
+        log(
+            f"Compressed article {index}: kept {fitted_image_count}/{len(uploaded_images)} body images "
+            f"to fit WeChat content limit."
         )
 
     article: dict[str, Any] = {
@@ -892,6 +984,7 @@ def build_article(
         "cover_image": str(cover_image),
         "inline_images": uploaded_images,
         "content_chars": len(content),
+        "content_bytes": utf8_byte_count(content),
         "visible_text_chars": visible_text_chars,
         "body_image_count": body_image_count,
         "ai_image_count": sum(1 for item in uploaded_images if item.get("source") != "mineru"),
@@ -907,6 +1000,14 @@ def write_json(path: Path, payload: Any) -> None:
     path.write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8")
 
 
+def is_article_size_error(exc: WeChatError) -> bool:
+    return exc.errcode == 45008 or "article size out of limit" in str(exc).lower()
+
+
+def article_payload(items: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    return [dict(item["article"]) for item in items]
+
+
 def main() -> int:
     parser = argparse.ArgumentParser(description="Create WeChat Official Account drafts from KC translated reports.")
     parser.add_argument("--translated-root", default="kc_translated_reports")
@@ -914,11 +1015,12 @@ def main() -> int:
     parser.add_argument("--output-root", default="wechat_drafts")
     parser.add_argument("--max-articles", default="10")
     parser.add_argument("--article-offset", type=int, default=0)
-    parser.add_argument("--articles-per-draft", type=int, default=9)
+    parser.add_argument("--articles-per-draft", type=int, default=DEFAULT_ARTICLES_PER_DRAFT)
     parser.add_argument("--max-inline-images", type=int, default=DEFAULT_MIN_INLINE_IMAGES)
     parser.add_argument("--min-inline-images", type=int, default=DEFAULT_MIN_INLINE_IMAGES)
     parser.add_argument("--max-body-chars", type=int, default=DEFAULT_BODY_VISIBLE_CHARS)
-    parser.add_argument("--max-content-chars", type=int, default=19500)
+    parser.add_argument("--max-content-chars", type=int, default=DEFAULT_MAX_CONTENT_CHARS)
+    parser.add_argument("--max-content-bytes", type=int, default=DEFAULT_MAX_CONTENT_BYTES)
     parser.add_argument("--brand", default=BRAND)
     parser.add_argument("--author", default=AUTHOR)
     parser.add_argument("--disclaimer", default=BOTTOM_DISCLAIMER)
@@ -989,23 +1091,34 @@ def main() -> int:
     ]
 
     drafts = []
-    for draft_index, group in enumerate(chunked(built_articles, args.articles_per_draft), 1):
-        articles = []
-        for item in group:
-            article = dict(item["article"])
-            articles.append(article)
-        payload_path = output_dir / f"draft_payload_{draft_index:02d}.json"
-        write_json(payload_path, {"articles": articles})
 
+    def create_draft(group: list[dict[str, Any]]) -> None:
+        articles = article_payload(group)
+        payload_bytes = utf8_byte_count(json.dumps({"articles": articles}, ensure_ascii=False, separators=(",", ":")))
         if args.dry_run:
-            media_id = f"DRY_RUN_DRAFT_{draft_index:02d}"
-            publish_id = f"DRY_RUN_PUBLISH_{draft_index:02d}" if args.publish else ""
+            media_id = f"DRY_RUN_DRAFT_{len(drafts) + 1:02d}"
+            publish_id = f"DRY_RUN_PUBLISH_{len(drafts) + 1:02d}" if args.publish else ""
         else:
             if session is None or access_token is None:
                 raise RuntimeError("session and access_token are required outside dry-run")
-            media_id = add_draft(session, access_token, articles, args.timeout)
+            try:
+                media_id = add_draft(session, access_token, articles, args.timeout)
+            except WeChatError as exc:
+                if is_article_size_error(exc) and len(group) > 1:
+                    split_at = max(1, len(group) // 2)
+                    log(
+                        "WeChat rejected draft group as too large; "
+                        f"splitting {len(group)} articles into {split_at}+{len(group) - split_at} and retrying."
+                    )
+                    create_draft(group[:split_at])
+                    create_draft(group[split_at:])
+                    return
+                raise
             publish_id = submit_publish(session, access_token, media_id, args.timeout) if args.publish else ""
 
+        draft_index = len(drafts) + 1
+        payload_path = output_dir / f"draft_payload_{draft_index:02d}.json"
+        write_json(payload_path, {"articles": articles})
         drafts.append(
             {
                 "draft_index": draft_index,
@@ -1013,6 +1126,7 @@ def main() -> int:
                 "publish_id": publish_id,
                 "published": bool(publish_id),
                 "article_count": len(articles),
+                "payload_bytes": payload_bytes,
                 "payload": str(payload_path),
                 "titles": [item["title"] for item in group],
                 "wechat_titles": [item["wechat_title"] for item in group],
@@ -1023,6 +1137,9 @@ def main() -> int:
         else:
             log(f"Draft {draft_index}: articles={len(articles)} media_id={media_id}")
 
+    for group in chunked(built_articles, args.articles_per_draft):
+        create_draft(group)
+
     summary = {
         "date_folder": date_dir.name,
         "dry_run": args.dry_run,
@@ -1032,6 +1149,8 @@ def main() -> int:
         "articles_per_draft": args.articles_per_draft,
         "draft_count": len(drafts),
         "max_body_chars": args.max_body_chars,
+        "max_content_chars": args.max_content_chars,
+        "max_content_bytes": args.max_content_bytes,
         "min_inline_images": args.min_inline_images,
         "max_inline_images": args.max_inline_images,
         "body_hook": args.body_hook,
@@ -1043,6 +1162,7 @@ def main() -> int:
                 "wechat_title": item["wechat_title"],
                 "report_dir": item["report_dir"],
                 "content_chars": item["content_chars"],
+                "content_bytes": item["content_bytes"],
                 "visible_text_chars": item["visible_text_chars"],
                 "inline_image_count": len(item["inline_images"]),
                 "body_image_count": item["body_image_count"],

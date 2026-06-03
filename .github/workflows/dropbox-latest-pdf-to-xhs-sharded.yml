@@ -72,7 +72,7 @@ on:
       wechat_draft_articles_per_draft:
         description: "Number of articles in each WeChat draft item."
         required: true
-        default: "9"
+        default: "8"
       wechat_draft_max_body_chars:
         description: "Approximate visible Chinese character budget for each KC translated WeChat article."
         required: true
@@ -149,7 +149,7 @@ jobs:
           echo "translated_report_count=${{ github.event.inputs.translated_report_count || 'all' }}" >> "$GITHUB_OUTPUT"
           echo "wechat_draft_upload=${{ github.event.inputs.wechat_draft_upload || 'true' }}" >> "$GITHUB_OUTPUT"
           echo "wechat_freepublish=${{ github.event.inputs.wechat_freepublish || 'false' }}" >> "$GITHUB_OUTPUT"
-          echo "wechat_draft_articles_per_draft=${{ github.event.inputs.wechat_draft_articles_per_draft || '9' }}" >> "$GITHUB_OUTPUT"
+          echo "wechat_draft_articles_per_draft=${{ github.event.inputs.wechat_draft_articles_per_draft || '8' }}" >> "$GITHUB_OUTPUT"
           echo "wechat_draft_max_body_chars=${{ github.event.inputs.wechat_draft_max_body_chars || '2000' }}" >> "$GITHUB_OUTPUT"
           echo "wechat_draft_min_inline_images=${{ github.event.inputs.wechat_draft_min_inline_images || '3' }}" >> "$GITHUB_OUTPUT"
           echo "wechat_draft_max_inline_images=${{ github.event.inputs.wechat_draft_max_inline_images || '3' }}" >> "$GITHUB_OUTPUT"

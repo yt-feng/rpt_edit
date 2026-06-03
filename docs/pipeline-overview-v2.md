@@ -288,14 +288,14 @@ scripts/push_kc_translated_to_wechat_drafts.py
 - 微信短版正文图默认最多 3 张、至少 3 张。优先使用 MinerU 抽出的报告图表；如果报告图不足，会参考 `gen_rpt` 的方式用 Pollinations 生成主题相关 AI 配图，下载压缩后再上传微信。
 - 每篇公众号草稿正文末尾固定追加 `prompts/zsxq_img.jpg`，上传时会先通过微信 `uploadimg` 转成公众号可用图片 URL。
 - 每篇公众号草稿正文末尾、星球图之前固定加钩子：`更多完整报告和后续精译，扫文末图片进群交流。`
-- 图文分组默认 `articles_per_draft=9`。如果当天成功翻译 35 篇，会形成 9+9+9+8 四个图文素材；`wechat_freepublish=true` 时会按组提交发布。
+- 图文分组默认 `articles_per_draft=8`。如果微信 `draft/add` 返回 `45008 article size out of limit`，脚本会自动把该组拆小重试，优先保证草稿能保存成功；`wechat_freepublish=true` 时会按实际成功草稿组提交发布。
 
 主流程入口：
 
 - `.github/workflows/dropbox-latest-pdf-to-xhs-sharded.yml` 的 `translated_report_count` 默认 `all`，表示当天所有成功完成 MinerU 解析并产出 `source_mineru.md` 的报告都会生成 KC 中文精译版。手动运行时设为正整数可限制数量，设为 `0` 可关闭翻译和草稿上传。
 - `wechat_draft_upload` 默认 `true`，在翻译 PDF job 成功后上传公众号草稿；手动运行时可改成 `false` 只生成翻译 PDF。
 - `wechat_freepublish` 默认 `false`，因为当前公众号测试 `freepublish/submit` 返回 `48001 api unauthorized`；等公众号后台开通发布接口权限后，手动运行时改成 `true` 或把 workflow 默认值改回 `true`。
-- `wechat_draft_articles_per_draft` 默认 `9`。
+- `wechat_draft_articles_per_draft` 默认 `8`。
 - `wechat_draft_max_body_chars` 默认 `2000`。
 - `wechat_draft_min_inline_images` 默认 `3`。
 - `wechat_draft_max_inline_images` 默认 `3`。
