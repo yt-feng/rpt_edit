@@ -1,9 +1,0 @@
-Found 1 total PDFs; shard 0/1 has 1 PDFs, skips 0 already converted, will process 1 PDFs with batch_size=1.
-Running batch 1: 1 PDFs
-Found 1 PDFs.
-Uploading PDF to MinerU: /tmp/pdf_batch_001_7ur_iwom/pdfs/0001-0001-nomura-shemar-electric-603530-composite-insulator-leader-rides-grid-upcycle-260527.pdf
-MinerU batch_id=3694d47b-1b57-4f3d-9162-41885daaf881
-MinerU states: pending
-MinerU states: done
-Done. Results written to /home/runner/work/rpt_edit/rpt_edit/bilingual_podcast_videos/260528/26623465889; successful_reports=1; mineru_timed_out=False
-All batches completed successfully. Generated 1 report directories.
