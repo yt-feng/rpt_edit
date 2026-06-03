@@ -1,0 +1,51 @@
+{
+  "input_dir": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs",
+  "total_pdf_count_before_shard": 33,
+  "pdf_count_before_skip": 5,
+  "pdf_count": 5,
+  "generated_report_count": 5,
+  "batch_size": 5,
+  "shard_index": 4,
+  "shard_count": 40,
+  "max_reports_per_shard": 5,
+  "max_total_reports": 0,
+  "skip_existing": true,
+  "skipped_existing_count": 0,
+  "skipped_existing": [],
+  "failures": 0,
+  "batches": [
+    {
+      "batch_index": 1,
+      "pdf_count": 5,
+      "files": [
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/22-GS-Japan Healthcare： Pharmaceuticals： ASCO 2026： Focus on Ono Takeda pipeline drugs， Daiichi Sankyo Astellas competitors-260602.pdf",
+          "batch_file": "/tmp/pdf_batch_001_szrraa7l/pdfs/0001-22-GS-Japan Healthcare- Pharmaceuticals- ASCO 2026- Focus on Ono Takeda pipeline drugs- Daiichi Sankyo Astellas competitors-260602.pdf",
+          "stable_index": "1"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/23-JPM-EM USD 10s30s Spread Curve Report：Muted Flattening Leaves EM Spread Curve Shape Intact-260602.pdf",
+          "batch_file": "/tmp/pdf_batch_001_szrraa7l/pdfs/0002-23-JPM-EM USD 10s30s Spread Curve Report-Muted Flattening Leaves EM Spread Curve Shape Intact-260602.pdf",
+          "stable_index": "2"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/24-MS-Semiconductors - North America Raising estimates-PTs for memory stocks as demand continues to outpace supply-260603.pdf",
+          "batch_file": "/tmp/pdf_batch_001_szrraa7l/pdfs/0003-24-MS-Semiconductors - North America Raising estimates-PTs for memory stocks as demand continues to outpace supply-260603.pdf",
+          "stable_index": "3"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/25-MS-China Financials：1Q26： healthy payment data； Some consumption payment returned to bank cards-260601.pdf",
+          "batch_file": "/tmp/pdf_batch_001_szrraa7l/pdfs/0004-25-MS-China Financials-1Q26- healthy payment data- Some consumption payment returned to bank cards-260601.pdf",
+          "stable_index": "4"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/26-NOM-China factory automation data： May 2026，Airtac sales up 26% y~y in May-260602.pdf",
+          "batch_file": "/tmp/pdf_batch_001_szrraa7l/pdfs/0005-26-NOM-China factory automation data- May 2026-Airtac sales up 26- y-y in May-260602.pdf",
+          "stable_index": "5"
+        }
+      ],
+      "returncode": 0,
+      "status": "ok"
+    }
+  ]
+}

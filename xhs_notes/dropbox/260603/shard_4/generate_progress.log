@@ -1,0 +1,15 @@
+Found 33 total PDFs; shard 4/40 has 5 PDFs, skips 0 already converted, will process 5 PDFs with batch_size=5.
+Running batch 1: 5 PDFs
+Found 5 PDFs.
+Uploading PDF to MinerU: /tmp/pdf_batch_001_szrraa7l/pdfs/0001-22-Goldman Sachs-Japan Healthcare- Pharmaceuticals- ASCO 2026- Focus on Ono Takeda pipeline drugs- Daiichi Sankyo Astellas competitors-260602.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_szrraa7l/pdfs/0002-23-J.P. Morgan-EM USD 10s30s Spread Curve Report-Muted Flattening Leaves EM Spread Curve Shape Intact-260602.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_szrraa7l/pdfs/0003-24-MS-Semiconductors - North America Raising estimates-PTs for memory stocks as demand continues to outpace supply-260603.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_szrraa7l/pdfs/0004-25-Morgan Stanley-China Financials-1Q26- healthy payment data- Some consumption payment returned to bank cards-260601.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_szrraa7l/pdfs/0005-26-Nomura-China factory automation data- May 2026-Airtac sales up 26- y-y in May-260602.pdf
+MinerU batch_id=1c0b534c-6bae-41a4-9890-9610467f3983
+MinerU states: running, running, running, pending, waiting-file
+MinerU states: running, running, running, done, running
+MinerU states: running, done, done, done, done
+MinerU states: done, done, done, done, done
+Done. Results written to /home/runner/work/rpt_edit/rpt_edit/xhs_notes/dropbox/260603/shard_4; successful_reports=5; mineru_timed_out=False
+All batches completed successfully. Generated 5 report directories.
