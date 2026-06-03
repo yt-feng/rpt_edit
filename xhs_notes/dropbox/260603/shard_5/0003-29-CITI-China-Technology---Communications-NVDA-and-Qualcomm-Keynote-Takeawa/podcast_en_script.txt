@@ -1,0 +1,27 @@
+EN_A: So we just got the key takeaways from Nvidia’s GTC keynote and Qualcomm’s Computex keynote. What’s the one big thing we should take away from both?
+EN_B: Both keynotes are pointing to the same fundamental shift: the AI industry is moving beyond the era of large language models and entering the age of agentic AI and physical AI. And this transition might happen faster than most people expect.
+EN_A: Agentic AI and physical AI. That sounds big, but what does it actually mean for investors?
+EN_B: It means the center of gravity is shifting. In the past, everyone was focused on training big models and buying GPUs. Now, Nvidia and Qualcomm are both saying the next step is to make AI actually do things — execute tasks, control robots, drive cars. That directly changes which companies will win.
+EN_A: Let’s start with Nvidia. Did Jensen Huang give any concrete product updates?
+EN_B: Yes. First, the next-generation supercomputing platform, Vera Rubin, has reached full commercial production. This likely confirms the supply chain ramp in the second half of 2026. That’s a direct positive for Nvidia’s supply chain partners like Foxconn Industrial Internet, Wistron, and Pegatron.
+EN_A: So the timeline for Vera Rubin is pretty much set. But Nvidia also emphasized another big change. It’s not just a GPU company anymore.
+EN_B: Exactly. That’s the second key insight. Nvidia now calls itself a full-stack AI infrastructure company. It wants to extend its control from a single accelerator card to the entire rack and even the whole cluster. That opens up new opportunities for the power and cooling supply chain, including some Chinese players.
+EN_A: Extending to the whole cluster. What does that mean for server makers and PC makers?
+EN_B: A lot. Nvidia also introduced its first host processor, the Vera CPU, designed specifically for autonomous AI workloads. And it partnered with MediaTek to launch the RTX Spark platform for workstations. That’s a multi-layered positive for Lenovo, which benefits from both the new GPU server platform and higher-ASP Windows laptops.
+EN_A: But if Nvidia is making its own CPU, does that threaten other chip companies?
+EN_B: That’s exactly the risk the report flags. The Vera CPU and Spark platform use SOCAMM and LPDDR5X memory, not traditional RDIMM. If Nvidia’s CPU gains a meaningful share of the server processor market, it could erode demand for memory interface chips from companies like Montage. The report doesn’t fully unpack this yet, but it’s definitely something to watch.
+EN_A: Let’s switch to Qualcomm. What did they announce at Computex?
+EN_B: Qualcomm launched a new data center product brand called Dragonfly. This marks Qualcomm’s formal entry into the data center market, beyond mobile chips. The goal is to create a seamless compute pipeline from consumer devices all the way to cloud infrastructure.
+EN_A: Does that have any special significance for the China market?
+EN_B: The report suggests Dragonfly could provide an additional source for China’s ASIC data center solutions. That’s an important alternative, especially given the current geopolitical environment.
+EN_A: Beyond the data center, what did Qualcomm say about AI on devices?
+EN_B: Qualcomm emphasized that its Snapdragon platform is evolving into a native execution layer for third-party AI agents. Applications like Claude Desktop can now run natively on Snapdragon PCs. Google and Microsoft are also deeply integrating their agentic features into Snapdragon hardware. This means AI agents no longer have to rely on constant cloud connectivity.
+EN_A: So the edge AI transition could be faster than we think?
+EN_B: Exactly. The report explicitly says both Nvidia and Qualcomm’s keynotes signal the industry has moved from the static prompt-and-response model into the agentic and physical AI era. That implies the pace of AI edge proliferation in China could be faster than expected.
+EN_A: Which sectors will see this shift first?
+EN_B: Qualcomm highlighted three specific areas: AI-defined vehicles, robotics platforms, and 6G wireless. For example, cars will split the digital cockpit and autonomous driving into two separate AI systems. Robotics will get dedicated compute architectures for AMRs, industrial arms, and humanoids. These are high-conviction growth areas.
+EN_A: It sounds like there are a lot of opportunities. But what about the risks? What questions does this report leave unanswered?
+EN_B: A few key ones. First, how much will Nvidia’s CPU strategy actually disrupt the traditional server CPU market? That needs time to play out. Second, the full details on Qualcomm’s Dragonfly data center products won’t be out until June 24. Third, while the edge AI trend is clear, the actual speed of adoption and business model validation still needs to be tested in the Chinese market.
+EN_A: So this report is really valuable for mapping out the technology roadmap for the next one to two years, but the actual investment decisions need deeper digging.
+EN_B: Absolutely. If you want to know which specific supply chain companies are most worth watching, and the detailed financial models behind these trends, I’d recommend reading the full report. It has a lot more quantitative analysis on the degree of benefit for individual companies.
+EN_A: Great. That’s all we have time for today. If you want the full report, you can find it in our community or by leaving a message. Thanks for listening, and we’ll see you next time.

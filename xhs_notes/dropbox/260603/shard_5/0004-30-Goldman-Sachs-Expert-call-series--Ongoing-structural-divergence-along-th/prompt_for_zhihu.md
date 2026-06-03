@@ -1,0 +1,165 @@
+你是知乎商业/行业研究作者，擅长把英文/中文研报改写成适合知乎发布的长文。
+
+【目标】
+- 基于下面研报解析内容，生成一篇中文知乎文章。
+- 风格接近微信公众号文章，但更适合知乎：论证更完整、语气更克制、有问题意识、有推理链条。
+- 文章不需要把研报所有内容讲完，要留下继续阅读完整报告或加入社群讨论的空间。
+- 目标长度：约 2200 字，允许上下浮动 20%。
+
+【结构要求】
+1. 第一行：知乎标题，直接讲观点，不要标题党，不要夸张极限词。
+2. 开头 2-3 段：用一个真实问题或市场分歧切入，说明为什么这份报告值得看。
+3. 正文按金字塔原则组织：先给核心判断，再展开 3-5 个支撑逻辑。
+4. 每个小标题都要像观点句，不要写“核心判断”“支撑逻辑一”“对读者的启发”这种模板名。
+5. 内容要比小红书更理性，比微信更像问答式分析，可以适度提出反问。
+6. 结尾自然留下讨论空间，可使用这类表达：`完整报告里还有不少细节，适合放在社群里继续拆。`
+
+【平台发布合规要求】
+- 不要出现“投资建议”“买入”“卖出”“强烈推荐”“稳赚”“保本”“必涨”“抄底”“上车”“内幕”“翻倍”等金融操作或收益承诺表达。
+- 不要写“非投资建议”“仅做学习交流”这种免责声明，也不要出现包含“投资”的免责声明。
+- “投资”相关词尽量改成“投研”“研究”“观察”“学习参考”。
+- 不要写“关注”“点赞”“求关注”“评论区留言”等直接互动诱导。
+- 不要使用“爆款”“震惊”“必看”“必读”“最强”“最全”“唯一”“全网首发”等极限词。
+
+【内容要求】
+- 只能基于研报原文和解析内容推导，不要编造数据、页数、作者、结论或引用。
+- 可以基于报告内容做适度发散，但必须明确哪些是报告内容，哪些是你的延展观察。
+- 默认避免具体投行品牌名，比如“GS”“GS”，统一写作“投行研报”或使用 GS/JPM/MS 等缩写。
+- 不要输出解释说明，只输出知乎文章正文。
+
+【研报解析内容】
+"""
+CHINA PROPERTY
+
+# Expert call series: Ongoing structural divergence along the recovery path
+
+On Jun 2, we hosted the founder of Trend Animals, Mr. Nie Cong (聂聪) to kick off our China Property Expert Call series in 2026. Trend Animals is a digital analysis platform that focuses on China's real estate market cycles and trend-trading strategies, leveraging proprietary indices compiled from high-frequency, city-level secondary property data (across $80+$ cities and classified with different styles based on unit sizes, prices, product positionings, locations, etc.).
+
+Overall, the expert observed that the nationwide secondary housing price decline moderated entering May-26 and highlighted two notable trends: 1) structural segment out-performance in Shanghai (led by small-size and low-total-price units, likely driven by government-led buybacks for the use of affordable rental housing) and Shenzhen (led by housing units catering to upgrade demand); 2) price bottoming-out for high-rental-yield assets (incl. residential projects in Urumqi, tourism/vacation/retirement homes in cities of Yunnan, certain low-price housing in Chengdu, etc.).
+
+Looking ahead, the expert sees two paths to recovery: Scenario 1 (the expert's base case) - prolonged structural divergence with price/volume recoveries from new-generation, superior-quality housing and high-yield, low-price assets gradually spilling over to mid-tier housing at different paces, depending on inventory scale (inventory month in leading T&2 cities ranged from 9\~32 mths as of Apr-26, vs. 14\~479 mths for rest of T2 cities and even higher for T3s); Scenario 2 - broad-based recovery similar to HK, under large-scale policy stimulus. For key market's recovery timeline (i.e. Shanghai), the expert expects another 6 months may be needed for price to stabilize under an optimistic case, or 6-12 months under a pessimistic case (vs. our prior discussion on SH/SZ potentially bottoming out in late 2026).
+
+In addition, the expert noted 1) housing consumption is shifting from location-centric toward more quality-focused (e.g. property management services, community facilities), and is already starting to manifest in secondary prices; and 2) strong demand trends by lifestyle-driven vacation hubs for diverse buyer cohorts. From an investment perspective, in a broader-based recovery scenario, the expert believes key opportunities lie in 1) high-quality new residential projects, 2) oversold mid-tier assets in major cities, and 3) prevailing high-rental-yield properties positioned for value accretion under rate cuts.
+
+## Yi Wang, CFA
+
++86(21)2401-8930
+
+yi.wang@goldmansachs.cn
+
+GS (China) Securities
+
+Company Limited
+
+## Shi Xu
+
++86(21)2401-8929
+
+shi.x.xu@goldmansachs.cn
+
+GS (China) Securities
+
+Company Limited
+
+## Kaiyan Jing
+
++86(21)2411-8092
+
+kaiyan.jing@goldmansachs.cn
+
+GS (China) Securities
+
+Company Limited
+
+## Related research
+
+China Property: Positioning ahead (No.2): Share rally - what's priced in
+
+China Property: Positioning ahead of Tier-1 cities turnaround
+
+China Property: 2026 Outlook: New uncertainties from continued weak housing market
+
+## Key takeaways
+
+1. Differentiated trends captured by Trend Animals: According to the expert, Trend Animals' proprietary housing indices have led mainstream public sentiment and official industry statistics by 1-3 months, utilizing noise-reduction algorithms to identify market inflection points. YTD on a nationwide scale, the expert sees positives in 1) nationwide price index has seen narrower monthly price declines capped at -0.5% mom after early-year pressure, and has marginally improved to a pace of -0.4% mom in recent weeks, halting the sharp downturn seen in 2H25 despite historically adverse post-Q1 seasonality; 2) National rental index for 80 cities bottomed in Jan-26, ending a prolonged decline since 2023 with Shenzhen at the forefront of the rental recovery. The expert also highlighted on a by-city level:
+
+Structural out-performance in SH/SZ, (aligning with our deep-dive analysis) whereby for Shanghai, micro-sized units (under 50 sqm) and small-sized units (50-70 sqm) have climbed $4\% / 11\%$ since bottoming in Nov-25/Jan-26, respectively, as supported by Shanghai government's accelerated existing home buyback initiatives. Meanwhile, Shanghai's commercial apartments (some priced at only $20\% - 25\%$ of adjacent residential property prices and featuring compelling rental yields) have secured four consecutive months of price appreciation; for Shenzhen, overall housing prices have stabilized over the past 3 months, with mid-to-high-end homes priced between Rmb10mn-20mn having bottomed and edging higher amid recovering upgrade demand. Core sub-markets including Nanshan and Futian have registered clear upward momentum benefiting from resilient upgrade demand.
+
+Price bottoming-out for high-yield non-core cities: Examples include 1) Urumqi: Select core areas are seeing price increases supported by a 3.6% average rental yield, halting price declines seen for six consecutive months; 2) Dali: Select Tourism- and retirement-oriented projects rose 8% over the past year, underpinned by \~3% rental yields and high transaction volume.
+
+Majority of key cities still sluggish: BJ's/GZ's home prices remain broadly pressured across segments, though Guangzhou's older small units are showing modest improvement on the back of recently announced local government buybacks. The expert also noted that high-end assets in core districts of Hangzhou and Chengdu have seen accelerated price corrections since Mar-26, though Chengdu's older small-size units outperformed supported by average rental yield of $2.7\%$ (with select units yielding above $3.5\%$ ) and increasing allocation from non-local investors.
+
+## 2. Looking ahead - paths to recovery and timeline
+
+Scenario 1 - the expert's base case, no large-scale property stimulus: Prolonged structural divergence with price/volume recoveries from new-generation, superior-quality housing and high-yield, low-price assets gradually spilling-over to mid-tier housing via replacement demand transmission. The expert sees this occurring at different paces, depending on inventory scale, e.g. inventory month in leading T1&2 cities ranged from 9\~32 mths as of Apr-26, vs. 14\~479 mths for rest of T2 cities and even higher for lower-tier cities. Scenario 2 - massive supportive
+
+policies (e.g. 50-100bp mortgage rate cuts, significantly accelerated government-led inventory buyback, etc.): the expert expects a recovery pattern to follow HK, with quick expansion in risk appetite and fast price rebound in mid-price-range housing in key cities.
+
+What could be Shanghai's recovery timeline? The expert expects another 6 months may be needed for price to stabilize under an optimistic case, or 6-12 months under a pessimistic case (vs. our prior discussion on SH/SZ potentially bottoming out in late 2026). In select districts (e.g. Putuo), the expert noted already observing meaningful transmission from active “Lao Po Xiao (old, dilapidated, and small)” home transactions to volume uptick for housing units above 100sqm. On the other hand, digestion for housing units sized between 50\~90 sqm could be more strenuous due to higher inventory under the prior “7090” rule (effective in 2006 to 2024).
+
+## 3. Housing demand trends from consumption/investment perspectives
+
+“New Consumption” trends: the expert noted that market’s core pricing rationale has been shifting from a traditional “location-centric” focus toward increasing weighting on property services and living qualities, as showcased by 1) 15%-20% unit price premium for projects offering superior property management services and enhanced facilities (clubhouse, pedestrian-vehicle separation, and elevator retrofitting etc.) relative to adjacent peer projects; 2) lifestyle-driven demand for high-quality vacation/retirement housing in key tourism hubs (e.g. Dali, Tengchong, Pu’er, and Beihai), underpinned by divergent buyer cohorts ranging from retirees seeking post-retirement living solutions, to remote-working young professionals prioritizing lifestyle flexibility.
+
+Investment - The expert views the following property categories as attractive investment targets amid a more broader-based recovery trajectory: 1) new-generation, high-quality residential projects with strong price appreciation potential once circulated in secondary markets; 2) oversold mid-tier assets in key cities such as Suzhou/Nanjing/Hangzhou/Wuhan since this downturn, which might stage sharp rebounds similar to HK's recent mid-tier-home rally; 3) high-rental-yield properties (prevailing $>3.5\%$ ) might see $20 - 30\%$ value accretion if mortgage rates are down by another 50-100 bps.
+
+## China Property coverage valuation comparison
+
+Exhibit 1: China developers' valuation comparisons
+
+<table><tr><td rowspan="2">Company</td><td rowspan="2">Ticker</td><td colspan="2">Daily liquidity (US$ mn)</td><td colspan="3">Price as of</td><td rowspan="2">12 mth Price target</td><td rowspan="2">Potential upside/ downside (%)</td><td rowspan="2">Target price disc. to NAV</td><td rowspan="2">End-26E NAV</td><td rowspan="2">Shr price (disc)/ prem to NAV</td><td colspan="4">FD Core P/E (x)</td><td colspan="4">P/B (x)(excl. revaluation gain)</td><td colspan="4">Dividend yield (%)</td></tr><tr><td>Mkt Cap (US$ bn)</td><td>1 mth trailing</td><td>Type</td><td>Rating</td><td>2/Jun/26</td><td>25</td><td>26E</td><td>27E</td><td>28E</td><td>25</td><td>26E</td><td>27E</td><td>28E</td><td>25</td><td>26E</td><td>27E</td><td>28E</td></tr><tr><td colspan="24">Developers</td></tr><tr><td colspan="24">Stronger SOE developers</td></tr><tr><td>CMSK</td><td>001979.SZ</td><td>11.9</td><td>100</td><td>Central SOE</td><td>Neutral</td><td>8.94 (Rmb)</td><td>10.10</td><td>13</td><td>-15%</td><td>11.93</td><td>(25)</td><td>n.m.</td><td>22.1</td><td>18.4</td><td>16.9</td><td>0.8</td><td>0.8</td><td>0.8</td><td>0.8</td><td>0.6</td><td>2.0</td><td>2.5</td><td>2.7</td></tr><tr><td>COLI</td><td>0688.HK</td><td>22.7</td><td>95</td><td>Central SOE</td><td>Buy</td><td>16.3 (HK$)</td><td>14.70</td><td>(40)</td><td>-10%</td><td>16.39</td><td>(1)</td><td>12.5</td><td>12.4</td><td>11.9</td><td>10.7</td><td>0.5</td><td>0.5</td><td>0.5</td><td>0.5</td><td>3.0</td><td>3.2</td><td>3.4</td><td>3.8</td></tr><tr><td>CR Land</td><td>1109.HK</td><td>32.9</td><td>154</td><td>Central SOE</td><td>Buy</td><td>36.2 (HK$)</td><td>36.60</td><td>1</td><td>-10%</td><td>40.70</td><td>(11)</td><td>10.5</td><td>9.6</td><td>9.5</td><td>9.2</td><td>1.1</td><td>1.0</td><td>1.0</td><td>0.9</td><td>3.5</td><td>4.0</td><td>4.2</td><td>4.2</td></tr><tr><td>Greentown</td><td>3900.HK</td><td>2.9</td><td>15</td><td>Mixed ownership</td><td>Buy</td><td>8.9 (HK$)</td><td>11.10</td><td>25</td><td>-15%</td><td>13.02</td><td>(32)</td><td>4.1</td><td>4.6</td><td>4.5</td><td>4.2</td><td>0.6</td><td>0.6</td><td>0.5</td><td>0.5</td><td>-</td><td>2.3</td><td>4.1</td><td>6.0</td></tr><tr><td>Jinmao</td><td>0817.HK</td><td>3.0</td><td>16</td><td>Central SOE</td><td>Buy</td><td>1.7 (HK$)</td><td>1.70</td><td>(1)</td><td>-10%</td><td>1.89</td><td>(8)</td><td>44.3</td><td>24.7</td><td>12.9</td><td>7.0</td><td>0.7</td><td>0.7</td><td>0.7</td><td>0.6</td><td>1.7</td><td>1.7</td><td>3.3</td><td>6.1</td></tr><tr><td>Poly</td><td>600048.SS</td><td>9.9</td><td>136</td><td>Central SOE</td><td>Neutral</td><td>5.60 (Rmb)</td><td>6.50</td><td>16</td><td>-10%</td><td>7.24</td><td>(23)</td><td>64.8</td><td>n.m.</td><td>n.m.</td><td>n.m.</td><td>0.3</td><td>0.4</td><td>0.4</td><td>0.4</td><td>0.6</td><td>-</td><td>-</td><td>-</td></tr><tr><td colspan="8">Average</td><td>7</td><td>-12%</td><td></td><td>(17)</td><td>12.5</td><td>12.4</td><td>11.9</td><td>9.2</td><td>0.7</td><td>0.7</td><td>0.6</td><td>0.6</td><td>1.6</td><td>2.2</td><td>2.9</td><td>3.8</td></tr><tr><td colspan="24">POE developers</td></tr><tr><td>Gemdale</td><td>600383.SS</td><td>1.8</td><td>38</td><td>Mixed ownership</td><td>Sell</td><td>2.70 (Rmb)</td><td>2.70</td><td>0</td><td>-20%</td><td>3.40</td><td>(21)</td><td>n.m.</td><td>n.m.</td><td>n.m.</td><td>n.m.</td><td>0.3</td><td>0.4</td><td>0.4</td><td>0.4</td><td>-</td><td>-</td><td>-</td><td>-</td></tr><tr><td>Longfor</td><td>0960.HK</td><td>7.2</td><td>23</td><td>POE</td><td>Neutral</td><td>8.0 (HK$)</td><td>8.70</td><td>9</td><td>-25%</td><td>11.55</td><td>(31)</td><td>n.m.</td><td>n.m.</td><td>23.8</td><td>15.6</td><td>0.4</td><td>0.4</td><td>0.4</td><td>0.4</td><td>1.0</td><td>-</td><td>1.3</td><td>2.1</td></tr><tr><td>Seazen</td><td>1030.HK</td><td>1.6</td><td>8</td><td>POE</td><td>Sell</td><td>1.8 (HK$)</td><td>1.80</td><td>1</td><td>-50%</td><td>3.64</td><td>(51)</td><td>30.2</td><td>44.9</td><td>20.9</td><td>11.8</td><td>0.3</td><td>0.3</td><td>0.3</td><td>0.3</td><td>-</td><td>-</td><td>-</td><td>-</td></tr><tr><td colspan="8">Average</td><td>3</td><td>-32%</td><td></td><td>(34)</td><td>30.2</td><td>44.9</td><td>22.3</td><td>13.7</td><td>0.4</td><td>0.4</td><td>0.4</td><td>0.4</td><td>0.3</td><td>-</td><td>0.4</td><td>0.7</td></tr><tr><td colspan="24">Other SOE developers</td></tr><tr><td>OCT</td><td>000069.SZ</td><td>2.4</td><td>18</td><td>Central SOE</td><td>Sell</td><td>2.00 (Rmb)</td><td>1.50</td><td>(25)</td><td>-20%</td><td>n.m.</td><td>n.m.</td><td>n.m.</td><td>n.m.</td><td>n.m.</td><td>n.m.</td><td>0.4</td><td>0.5</td><td>0.5</td><td>0.6</td><td>-</td><td>-</td><td>-</td><td>-</td></tr><tr><td>Vanke (A)</td><td>000002.SZ</td><td>4.9</td><td>86</td><td>Mixed ownership</td><td>Sell</td><td>3.39 (Rmb)</td><td>3.70</td><td>9</td><td>-10%</td><td>4.10</td><td>(17)</td><td>n.m.</td><td>n.m.</td><td>n.m.</td><td>n.m.</td><td>0.4</td><td>0.4</td><td>0.5</td><td>0.5</td><td>-</td><td>-</td><td>-</td><td>-</td></tr><tr><td>Vanke (H)</td><td>2202.HK</td><td>0.8</td><td>11</td><td>Mixed ownership</td><td>Sell</td><td>2.78 (HK$)</td><td>2.90</td><td>4</td><td>-35%</td><td>4.47</td><td>(38)</td><td>n.m.</td><td>n.m.</td><td>n.m.</td><td>n.m.</td><td>0.3</td><td>0.3</td><td>0.3</td><td>0.4</td><td>-</td><td>-</td><td>-</td><td>-</td></tr><tr><td colspan="8">Average</td><td>(4)</td><td>-22%</td><td></td><td>(28)</td><td>n.m.</td><td>n.m.</td><td>n.m.</td><td>n.m.</td><td>0.3</td><td>0.4</td><td>0.4</td><td>0.5</td><td>-</td><td>-</td><td>-</td><td>-</td></tr><tr><td colspan="8">Coverage average</td><td>3</td><td></td><td></td><td>(23)</td><td>27.8</td><td>19.7</td><td>14.5</td><td>10.8</td><td>0.5</td><td>0.5</td><td>0.5</td><td>0.5</td><td>0.9</td><td>1.1</td><td>1.6</td><td>2.1</td></tr><tr><td colspan="8">H-share average</td><td>4</td><td></td><td></td><td>(25)</td><td>20.4</td><td>19.2</td><td>13.9</td><td>9.8</td><td>0.6</td><td>0.5</td><td>0.5</td><td>0.5</td><td>1.3</td><td>1.6</td><td>2.3</td><td>3.2</td></tr><tr><td colspan="8">A-share average</td><td>3</td><td></td><td></td><td>(21)</td><td>64.8</td><td>22.1</td><td>18.4</td><td>16.9</td><td>0.5</td><td>0.5</td><td>0.5</td><td>0.5</td><td>0.2</td><td>0.4</td><td>0.5</td><td>0.5</td></tr></table>
+
+Note: Our 12-month target prices are based on end-2026E NAV for our coverage universe except for OCT  
+Our OCT TP is based on SOTP of its property development (valued by NAV) and its tourism business (valued by P/E).  
+Source: Datastream, GS Global Investment Research
+
+## Disclosure Appendix
+
+## Reg AC
+
+We, Yi Wang, CFA, Shi Xu and Kaiyan Jing, hereby certify that all of the views expressed in this report accurately reflect our personal views about the subject company or companies and its or their securities. We also certify that no part of our compensation was, is or will be, directly or indirectly, related to the specific recommendations or views expressed in this report.
+
+Contributing Authors: Yi Wang, CFA GS (China) Securities Company Limited, Shi Xu GS (China) Securities Company Limited, Kaiyan Jing GS (China) Securities Company Limited.
+
+Unless otherwise stated, the individuals listed in the Contributing Authors disclosure of this report are analysts in GS' Global Investment Research division.
+
+## GS Factor Profile
+
+The GS Factor Profile provides investment context for a stock by comparing key attributes to the market (i.e. our universe of rated stocks) and its sector peers. The four key attributes depicted are: Growth, Financial Returns, Multiple (e.g. valuation) and Integrated (a composite of Growth, Financial Returns and Multiple). Growth, Financial Returns and Multiple are calculated by using normalized ranks for specific metrics for each stock. The normalized ranks for the metrics are then averaged and converted into percentiles for the relevant attribute. The precise calculation of each metric may vary depending on the fiscal year, industry and region, but the standard approach is as follows:
+
+Growth is based on a stock's forward-looking sales growth, EBITDA growth and EPS growth (for financial stocks, only EPS and sales growth), with a higher percentile indicating a higher growth company. Financial Returns is based on a stock's forward-looking ROE, ROCE and CROCI (for financial stocks, only ROE), with a higher percentile indicating a company with higher financial returns. Multiple is based on a stock's forward-looking P/E, P/B, price/dividend (P/D), EV/EBITDA, EV/FCF and EV/Debt Adjusted Cash Flow (DACF) (for financial stocks, only P/E, P/B and P/D), with a higher percentile indicating a stock trading at a higher multiple. The Integrated percentile is calculated as the average of the Growth percentile, Financial Returns percentile and (100% - Multiple percentile).
+
+Financial Returns and Multiple use the GS analyst forecasts at the fiscal year-end at least three quarters in the future. Growth uses inputs for the fiscal year at least seven quarters in the future compared with the year at least three quarters in the future (on a per-share basis for all metrics).
+
+For a more detailed description of how we calculate the GS Factor Profile, please contact your GS representative.
+
+## M&A Rank
+
+Across our global coverage, we examine stocks using an M&A framework, considering both qualitative factors and quantitative factors (which may vary across sectors and regions) to incorporate the potential that certain companies could be acquired. We then assign a M&A rank as a means of scoring companies under our rated coverage from 1 to 3, with 1 representing high (30%-50%) probability of the company becoming an acquisition target, 2 representing medium (15%-30%) probability and 3 representing low (0%-15%) probability. For companies ranked 1 or 2, in line with our standard departmental guidelines we incorporate an M&A component into our target price. M&A rank of 3 is considered immaterial and therefore does not factor into ou
+
+[中间内容因长度限制已省略]
+
+or may discuss in this report, trading strategies that reference catalysts or events that may have a near-term impact on the market price of the equity securities discussed in this report, which impact may be directionally counter to the analyst's published price target expectations for such stocks. Any such trading strategies are distinct from and do not affect the analyst's fundamental equity rating for such stocks, which rating reflects a stock's return potential relative to its coverage universe as described herein.
+
+We and our affiliates, officers, directors, and employees will from time to time have long or short positions in, act as principal in, and buy or sell, the securities or derivatives, if any, referred to in this research, unless otherwise prohibited by regulation or GS policy.
+
+The views attributed to third party presenters at GS arranged conferences, including individuals from other parts of GS, do not necessarily reflect those of Global Investment Research and are not an official view of GS.
+
+Any third party referenced herein, including any salespeople, traders and other professionals or members of their household, may have positions in the products mentioned that are inconsistent with the views expressed by analysts named in this report.
+
+This research is not an offer to sell or the solicitation of an offer to buy any security in any jurisdiction where such an offer or solicitation would be illegal. It does not constitute a personal recommendation or take into account the particular investment objectives, financial situations, or needs of individual clients. Clients should consider whether any advice or recommendation in this research is suitable for their particular circumstances and, if appropriate, seek professional advice, including tax advice. The price and value of investments referred to in this research and the income from them may fluctuate. Past performance is not a guide to future performance, future returns are not guaranteed, and a loss of original capital may occur. Fluctuations in exchange rates could have adverse effects on the value or price of, or income derived from, certain investments.
+
+Certain transactions, including those involving futures, options, and other derivatives, give rise to substantial risk and are not suitable for all investors. Investors should review current options and futures disclosure documents which are available from GS sales representatives or at https://www.theocc.com/about/publications/character-risks.jsp and https://www.goldmansachs.com/disclosures/cftc\_fcm\_disclosures. Transaction costs may be significant in option strategies calling for multiple purchase and sales of options such as spreads. Supporting documentation will be supplied upon request.
+
+Differing Levels of Service provided by Global Investment Research: The level and types of services provided to you by GS Global Investment Research may vary as compared to that provided to internal and other external clients of GS, depending on various factors including your individual preferences as to the frequency and manner of receiving communication, your risk profile and investment focus and perspective (e.g., marketwide, sector specific, long term, short term), the size and scope of your overall client relationship with GS, and legal and regulatory constraints. As an example, certain clients may request to receive notifications when research on specific securities is published, and certain clients may request that specific data underlying analysts' fundamental analysis available on our internal client websites be delivered to them electronically through data feeds or otherwise. No change to an analyst's fundamental research views (e.g., ratings, price targets, or material changes to earnings estimates for
+
+equity securities), will be communicated to any client prior to inclusion of such information in a research report broadly disseminated through electronic publication to our internal client websites or through other means, as necessary, to all clients who are entitled to receive such reports.
+
+All research reports are disseminated and available to all clients simultaneously through electronic publication to our internal client websites. Not all research content is redistributed to our clients or available to third-party aggregators, nor is GS responsible for the redistribution of our research by third party aggregators. For research, models or other data related to one or more securities, markets or asset classes (including related services) that may be available to you, please contact your GS representative or go to https://research.gs.com.
+
+Disclosure information is also available at https://www.gs.com/research/hedge.html or from Research Compliance, 200 West Street, New York, NY 10282.
+
+## © 2026 GS.
+
+You are permitted to store, display, analyze, modify, reformat, and print the information made available to you via this service only for your own use. You may not resell or reverse engineer this information to calculate or develop any index for disclosure and/or marketing or create any other derivative works or commercial product(s), data or offering(s) without the express written consent of GS. You are not permitted to publish, transmit, or otherwise reproduce this information, in whole or in part, in any format to any third party without the express written consent of GS. This foregoing restriction includes, without limitation, using, extracting, downloading or retrieving this information, in whole or in part, to train or finetune a machine learning or artificial intelligence system, or to provide or reproduce this information, in whole or in part, as a prompt or input to any such system.
+"""

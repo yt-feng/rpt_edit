@@ -1,0 +1,51 @@
+{
+  "input_dir": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs",
+  "total_pdf_count_before_shard": 33,
+  "pdf_count_before_skip": 5,
+  "pdf_count": 5,
+  "generated_report_count": 5,
+  "batch_size": 5,
+  "shard_index": 5,
+  "shard_count": 40,
+  "max_reports_per_shard": 5,
+  "max_total_reports": 0,
+  "skip_existing": true,
+  "skipped_existing_count": 0,
+  "skipped_existing": [],
+  "failures": 0,
+  "batches": [
+    {
+      "batch_index": 1,
+      "pdf_count": 5,
+      "files": [
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/27-NOM-USD CNY fix model：Projection： 6.7705-260603.pdf",
+          "batch_file": "/tmp/pdf_batch_001_44_xta6t/pdfs/0001-27-NOM-USD CNY fix model-Projection- 6.7705-260603.pdf",
+          "stable_index": "1"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/28-CITI-China Auto Manufacturers：Prelim. May EV sales beat with +ve YoY； BYD export strong beat-260601.pdf",
+          "batch_file": "/tmp/pdf_batch_001_44_xta6t/pdfs/0002-28-CITI-China Auto Manufacturers-Prelim. May EV sales beat with -ve YoY- BYD export strong beat-260601.pdf",
+          "stable_index": "2"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/29-CITI-China Technology & Communications：NVDA and Qualcomm Keynote Takeaways-260601.pdf",
+          "batch_file": "/tmp/pdf_batch_001_44_xta6t/pdfs/0003-29-CITI-China Technology - Communications-NVDA and Qualcomm Keynote Takeaways-260601.pdf",
+          "stable_index": "3"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/30-GS-Expert call series： Ongoing structural divergence along the recovery path-260603.pdf",
+          "batch_file": "/tmp/pdf_batch_001_44_xta6t/pdfs/0004-30-GS-Expert call series- Ongoing structural divergence along the recovery path-260603.pdf",
+          "stable_index": "4"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/31-MS-ASCO 2026 Takeaways ~Day 2-260601.pdf",
+          "batch_file": "/tmp/pdf_batch_001_44_xta6t/pdfs/0005-31-MS-ASCO 2026 Takeaways -Day 2-260601.pdf",
+          "stable_index": "5"
+        }
+      ],
+      "returncode": 0,
+      "status": "ok"
+    }
+  ]
+}
