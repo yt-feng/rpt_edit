@@ -1,0 +1,41 @@
+{
+  "input_dir": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs",
+  "total_pdf_count_before_shard": 33,
+  "pdf_count_before_skip": 3,
+  "pdf_count": 3,
+  "generated_report_count": 3,
+  "batch_size": 5,
+  "shard_index": 6,
+  "shard_count": 40,
+  "max_reports_per_shard": 5,
+  "max_total_reports": 0,
+  "skip_existing": true,
+  "skipped_existing_count": 0,
+  "skipped_existing": [],
+  "failures": 0,
+  "batches": [
+    {
+      "batch_index": 1,
+      "pdf_count": 3,
+      "files": [
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/32-MS-Biopharma：Front~line lung cancer takeaways from ASCO-260601.pdf",
+          "batch_file": "/tmp/pdf_batch_001_n393_ovh/pdfs/0001-32-MS-Biopharma-Front-line lung cancer takeaways from ASCO-260601.pdf",
+          "stable_index": "1"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/33-CITI-Japan IT services：NVIDIA Computex keynote takeaways： AI ROI and physical AI initiatives-260601.pdf",
+          "batch_file": "/tmp/pdf_batch_001_n393_ovh/pdfs/0002-33-CITI-Japan IT services-NVIDIA Computex keynote takeaways- AI ROI and physical AI initiatives-260601.pdf",
+          "stable_index": "2"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/34-GS-Japan IT Services：NC company results read~across （2） Financial SI：Simplex，NSD，DTS-260602.pdf",
+          "batch_file": "/tmp/pdf_batch_001_n393_ovh/pdfs/0003-34-GS-Japan IT Services-NC company results read-across -2- Financial SI-Simplex-NSD-DTS-260602.pdf",
+          "stable_index": "3"
+        }
+      ],
+      "returncode": 0,
+      "status": "ok"
+    }
+  ]
+}
