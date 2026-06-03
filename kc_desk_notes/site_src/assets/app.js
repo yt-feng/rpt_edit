@@ -10,7 +10,19 @@
   }
 
   function normalize(value) {
-    return String(value || "").toLowerCase().replace(/\s+/g, " ").trim();
+    return String(value || "")
+      .normalize("NFKC")
+      .toLowerCase()
+      .replace(/[^\p{L}\p{N}]+/gu, " ")
+      .replace(/\s+/g, " ")
+      .trim();
+  }
+
+  function matchesQuery(haystack, query) {
+    if (!query) return true;
+    if (haystack.includes(query)) return true;
+    const tokens = query.split(" ").filter(Boolean);
+    return tokens.length > 1 && tokens.every((token) => haystack.includes(token));
   }
 
   async function loadJson(path) {
@@ -60,24 +72,35 @@
     const count = document.getElementById("resultCount");
     const meta = document.getElementById("catalogMeta");
     const items = Array.isArray(catalog.items) ? catalog.items : [];
+    const metadataById = new Map(items.map((item) => [
+      item.id,
+      normalize([
+        item.title,
+        item.filename,
+        item.bank_code,
+        item.bank_name,
+        item.date_folder,
+        (item.date_folders || []).join(" "),
+      ].join(" ")),
+    ]));
+    const searchTextById = new Map();
+    let searchIndexLabel = " | Full-text loading";
 
-    meta.textContent = `${items.length} reports`;
-    if (catalog.updated_at_bjt) {
-      meta.textContent += ` | Updated ${catalog.updated_at_bjt}`;
+    function updateMeta() {
+      meta.textContent = `${items.length} reports`;
+      if (catalog.updated_at_bjt) {
+        meta.textContent += ` | Updated ${catalog.updated_at_bjt}`;
+      }
+      meta.textContent += searchIndexLabel;
     }
 
     function render() {
       const query = normalize(input.value);
       const filtered = items.filter((item) => {
         if (!query) return true;
-        const haystack = normalize([
-          item.title,
-          item.bank_code,
-          item.bank_name,
-          item.date_folder,
-          (item.date_folders || []).join(" "),
-        ].join(" "));
-        return haystack.includes(query);
+        const metadata = metadataById.get(item.id) || "";
+        const fullText = searchTextById.get(item.id) || "";
+        return matchesQuery(metadata, query) || matchesQuery(fullText, query);
       });
 
       count.textContent = `${filtered.length} item${filtered.length === 1 ? "" : "s"}`;
@@ -95,6 +118,25 @@
       window.location.href = `report.html?id=${encodeURIComponent(row.dataset.id)}`;
     });
 
+    loadJson("data/search_index.json")
+      .then((searchIndex) => {
+        const searchItems = Array.isArray(searchIndex.items) ? searchIndex.items : [];
+        searchItems.forEach((entry) => {
+          if (entry.id && entry.text) {
+            searchTextById.set(entry.id, String(entry.text));
+          }
+        });
+        searchIndexLabel = ` | Full-text ${searchTextById.size} reports`;
+        updateMeta();
+        render();
+      })
+      .catch((error) => {
+        console.warn(error);
+        searchIndexLabel = " | Full-text unavailable";
+        updateMeta();
+      });
+
+    updateMeta();
     render();
   }
 

@@ -7,7 +7,9 @@ import argparse
 import hashlib
 import json
 import os
+import re
 import shutil
+import unicodedata
 from pathlib import Path
 from typing import Any
 
@@ -30,6 +32,32 @@ PUBLIC_ITEM_KEYS = [
     "present_in_latest_scan",
 ]
 
+BANK_ALIASES = [
+    "goldman sachs",
+    "j p morgan",
+    "jp morgan",
+    "jpmorgan",
+    "morgan stanley",
+    "deutsche bank",
+    "bank of america",
+    "bofa",
+    "barclays",
+    "bernstein",
+    "jefferies",
+    "nomura",
+    "citi",
+    "citigroup",
+    "ubs",
+    "hsbc",
+    "gs",
+    "jpm",
+    "ms",
+    "db",
+    "barc",
+    "jef",
+    "nom",
+]
+
 
 def load_json(path: Path) -> dict[str, Any]:
     return json.loads(path.read_text(encoding="utf-8"))
@@ -38,6 +66,213 @@ def load_json(path: Path) -> dict[str, Any]:
 def write_json(path: Path, data: dict[str, Any]) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(data, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+
+
+def normalize_search_text(value: str) -> str:
+    text = unicodedata.normalize("NFKC", str(value or "")).lower()
+    chars: list[str] = []
+    previous_space = True
+    for char in text:
+        category = unicodedata.category(char)
+        if category[0] in {"L", "N"}:
+            chars.append(char)
+            previous_space = False
+        elif not previous_space:
+            chars.append(" ")
+            previous_space = True
+    return "".join(chars).strip()
+
+
+def strip_leading_sequence(value: str) -> str:
+    text = str(value or "")
+    return re.sub(r"^(?:\d{1,4}[-_]){1,3}", "", text).strip()
+
+
+def strip_extension(value: str) -> str:
+    text = str(value or "").strip()
+    if text.lower().endswith(".pdf"):
+        return text[:-4]
+    return text
+
+
+def strip_trailing_date(value: str) -> str:
+    return re.sub(r"[-_\s~]+(?:20)?\d{6,8}$", "", value).strip()
+
+
+def strip_leading_bank_alias(value: str) -> str:
+    text = normalize_search_text(value)
+    for alias in sorted(BANK_ALIASES, key=len, reverse=True):
+        normalized_alias = normalize_search_text(alias)
+        if text == normalized_alias:
+            return ""
+        prefix = f"{normalized_alias} "
+        if text.startswith(prefix):
+            return text[len(prefix):].strip()
+    return text
+
+
+def title_keys(value: str) -> set[str]:
+    base = strip_extension(Path(str(value or "")).name)
+    variants = {
+        base,
+        strip_leading_sequence(base),
+    }
+    variants |= {strip_trailing_date(item) for item in list(variants)}
+
+    keys: set[str] = set()
+    for variant in variants:
+        normalized = normalize_search_text(variant)
+        if normalized:
+            keys.add(normalized)
+            without_bank = strip_leading_bank_alias(normalized)
+            if without_bank:
+                keys.add(without_bank)
+    return keys
+
+
+def append_unique_text(target: list[str], value: str) -> None:
+    text = normalize_search_text(value)
+    if text and text not in target:
+        target.append(text)
+
+
+def build_title_lookup(items: list[dict[str, Any]]) -> dict[str, str]:
+    lookup: dict[str, str] = {}
+    collisions: set[str] = set()
+    for item in items:
+        report_id = str(item.get("id") or "")
+        if not report_id:
+            continue
+        values = [
+            str(item.get("title") or ""),
+            str(item.get("filename") or ""),
+        ]
+        for value in values:
+            for key in title_keys(value):
+                existing = lookup.get(key)
+                if existing and existing != report_id:
+                    collisions.add(key)
+                    continue
+                lookup[key] = report_id
+    for key in collisions:
+        lookup.pop(key, None)
+    return lookup
+
+
+def match_report_id(value: str, lookup: dict[str, str]) -> str:
+    for key in title_keys(value):
+        report_id = lookup.get(key)
+        if report_id:
+            return report_id
+    return ""
+
+
+def iter_bank_catalog_titles(root: Path) -> list[tuple[str, str]]:
+    if not root.exists():
+        return []
+    titles: list[tuple[str, str]] = []
+    for path in sorted(root.glob("*/*.txt")):
+        try:
+            text = path.read_text(encoding="utf-8", errors="ignore")
+        except OSError:
+            continue
+        for line in text.splitlines():
+            stripped = line.strip()
+            match = re.fullmatch(r"【(.+)】", stripped)
+            if match:
+                titles.append((match.group(1).strip(), str(path)))
+    return titles
+
+
+def mineru_source_title(item_dir: Path) -> str:
+    status_path = item_dir / "status.json"
+    if status_path.exists():
+        try:
+            status = json.loads(status_path.read_text(encoding="utf-8"))
+            source_pdf = str(status.get("source_pdf") or "")
+            if source_pdf:
+                return strip_leading_sequence(strip_extension(Path(source_pdf).name))
+        except (OSError, json.JSONDecodeError):
+            pass
+
+    markdown_path = item_dir / "source_mineru.md"
+    try:
+        for line in markdown_path.read_text(encoding="utf-8", errors="ignore").splitlines():
+            stripped = line.strip()
+            if stripped.startswith("#"):
+                return stripped.lstrip("#").strip()
+            if stripped:
+                return stripped[:200]
+    except OSError:
+        return ""
+    return item_dir.name
+
+
+def iter_mineru_sources(root: Path) -> list[tuple[str, str, str]]:
+    if not root.exists():
+        return []
+    sources: list[tuple[str, str, str]] = []
+    for markdown_path in sorted(root.glob("*/shard_*/*/source_mineru.md")):
+        item_dir = markdown_path.parent
+        title = mineru_source_title(item_dir)
+        try:
+            text = markdown_path.read_text(encoding="utf-8", errors="ignore")
+        except OSError:
+            continue
+        if title and text:
+            sources.append((title, text, str(markdown_path)))
+    return sources
+
+
+def build_search_index(
+    catalog: dict[str, Any],
+    bank_catalog_root: Path,
+    mineru_root: Path,
+    text_limit: int,
+) -> dict[str, Any]:
+    items = [item for item in catalog.get("items", []) if item.get("id")]
+    lookup = build_title_lookup(items)
+    index_text: dict[str, list[str]] = {str(item["id"]): [] for item in items}
+    source_counts = {
+        "bank_catalog_titles": 0,
+        "bank_catalog_matched": 0,
+        "mineru_sources": 0,
+        "mineru_matched": 0,
+    }
+
+    for title, _source_path in iter_bank_catalog_titles(bank_catalog_root):
+        source_counts["bank_catalog_titles"] += 1
+        report_id = match_report_id(title, lookup)
+        if not report_id:
+            continue
+        source_counts["bank_catalog_matched"] += 1
+        append_unique_text(index_text[report_id], title)
+
+    for title, text, _source_path in iter_mineru_sources(mineru_root):
+        source_counts["mineru_sources"] += 1
+        report_id = match_report_id(title, lookup)
+        if not report_id:
+            continue
+        source_counts["mineru_matched"] += 1
+        append_unique_text(index_text[report_id], title)
+        append_unique_text(index_text[report_id], text)
+
+    public_items: list[dict[str, str]] = []
+    for report_id, chunks in sorted(index_text.items()):
+        text = " ".join(chunks).strip()
+        if not text:
+            continue
+        if text_limit > 0 and len(text) > text_limit:
+            text = text[:text_limit]
+        public_items.append({"id": report_id, "text": text})
+
+    return {
+        "schema_version": 1,
+        "updated_at_bjt": catalog.get("updated_at_bjt", ""),
+        "item_count": len(public_items),
+        "sources": source_counts,
+        "items": public_items,
+    }
 
 
 def public_catalog(catalog: dict[str, Any]) -> dict[str, Any]:
@@ -90,6 +325,9 @@ def main() -> int:
     parser.add_argument("--catalog-path", default="kc_desk_notes/data/catalog.json")
     parser.add_argument("--password-rules", default="kc_desk_notes/password_rules.json")
     parser.add_argument("--worker-base-url", default="")
+    parser.add_argument("--bank-catalog-root", default="bank_report_catalogs")
+    parser.add_argument("--mineru-root", default="xhs_notes/dropbox")
+    parser.add_argument("--search-text-limit", type=int, default=0, help="Per-report normalized search text cap. 0 keeps all matched text.")
     args = parser.parse_args()
 
     site_src = Path(args.site_src)
@@ -97,11 +335,21 @@ def main() -> int:
     copy_site(site_src, output_dir)
 
     catalog = public_catalog(load_json(Path(args.catalog_path)))
+    search_index = build_search_index(
+        catalog=catalog,
+        bank_catalog_root=Path(args.bank_catalog_root),
+        mineru_root=Path(args.mineru_root),
+        text_limit=args.search_text_limit,
+    )
     rules = public_password_rules(load_json(Path(args.password_rules)))
     write_json(output_dir / "data" / "catalog.json", catalog)
+    write_json(output_dir / "data" / "search_index.json", search_index)
     write_json(output_dir / "data" / "password_rules.json", rules)
     write_json(output_dir / "data" / "config.json", {"worker_base_url": args.worker_base_url.rstrip("/")})
-    print(f"Built {output_dir} with {catalog['item_count']} catalog items")
+    print(
+        f"Built {output_dir} with {catalog['item_count']} catalog items "
+        f"and {search_index['item_count']} full-text search entries"
+    )
     return 0
 
 

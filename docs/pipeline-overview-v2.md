@@ -229,7 +229,7 @@ bilingual_podcast_videos/<日期>/<run_id>/<报告文件夹>/
 
 文件：`.github/workflows/kc-desk-notes-pages.yml`
 
-用途：生成 GitHub Pages 搜索站点 **KC Desk Notes**。站点只展示脱敏后的 Dropbox PDF 标题；PDF 不进入 repo，也不在前端暴露 Dropbox token 或 R2 key。点击报告进入详情页后，必须输入密码，由 Cloudflare Worker 校验后从私有 R2 以 attachment 方式返回 PDF。
+用途：生成 GitHub Pages 搜索站点 **KC Desk Notes**。站点展示脱敏后的 Dropbox PDF 标题，并提供标题、投行目录 txt、已存在 MinerU 正文的全文搜索；PDF 不进入 repo，也不在前端暴露 Dropbox token 或 R2 key。点击报告进入详情页后，必须输入密码，由 Cloudflare Worker 校验后从私有 R2 以 attachment 方式返回 PDF。
 
 触发方式：
 
@@ -245,14 +245,23 @@ kc_desk_notes/site_src/              # GitHub Pages 静态站点源码
 workers/kc-desk-notes-worker/        # Cloudflare Worker 代码
 ```
 
+Pages artifact 会额外生成但不提交到 repo：
+
+```text
+_kc_desk_notes_pages/data/search_index.json
+```
+
+这个索引按 `report_id` 绑定搜索文本，来源包括 `bank_report_catalogs/<日期>/<投行>.txt` 里的报告条目，以及仓库中能按标题匹配到 catalog 的 `xhs_notes/dropbox/<日期>/shard_*/<报告>/source_mineru.md`。前端只用它过滤搜索结果，不在列表页展示正文片段；由于 GitHub Pages 是公开站点，进入索引的文本本身也会成为公开可下载数据。
+
 流程：
 
 1. 扫描 Dropbox `/zip_backup/<日期>/` 下当前仍存在的 PDF。
 2. 用既有投行脱敏规则生成页面标题。
 3. 合并到长期 `catalog.json`，历史条目保留。
 4. 将当前扫描到的 PDF 上传到私有 R2，object key 为 `reports/<report_id>.pdf`。
-5. 生成 Pages artifact 并部署。
-6. Cloudflare 配置齐全时，自动部署 Worker。
+5. 生成 Pages artifact，其中 `catalog.json` 供列表和详情页使用，`search_index.json` 供全文搜索使用。
+6. 部署 GitHub Pages。
+7. Cloudflare 配置齐全时，自动部署 Worker。
 
 下载密码优先使用按 report id 推导出的 HMAC 伪密码：
 
@@ -353,7 +362,7 @@ xhs_notes/<报告文件夹>/
 | `scripts/select_test_pdf.py` | 测试 podcast/video 时选择 5 页以上 PDF |
 | `scripts/generate_test_podcast_video_eleven_batch_v5.py` | 批量生成中英文和 mixed bilingual podcast 讲解视频 |
 | `scripts/kc_desk_notes_catalog.py` | 扫描 Dropbox PDF、合并长期 catalog、同步当前 PDF 到 R2 |
-| `scripts/build_kc_desk_notes_site.py` | 生成 KC Desk Notes GitHub Pages 静态站点 artifact |
+| `scripts/build_kc_desk_notes_site.py` | 生成 KC Desk Notes GitHub Pages 静态站点 artifact，并把投行目录 txt 与可匹配的 MinerU 正文并入前端全文搜索索引 |
 | `scripts/hash_kc_desk_notes_password.py` | 生成 `password_rules.json` 里的密码 hash |
 | `scripts/commit_output_dir.sh` | GitHub Action 里提交输出目录，带重试和强制 add PDF |
 
