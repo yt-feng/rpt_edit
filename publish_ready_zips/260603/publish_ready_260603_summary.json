@@ -1,0 +1,176 @@
+{
+  "created_at_utc": "2026-06-03T23:38:16.100307+00:00",
+  "source_date_dir": "xhs_notes/dropbox/260603",
+  "output_dir": "publish_ready_zips/260603",
+  "max_zip_mb": 90,
+  "single_zip": false,
+  "exclude_source_mineru": true,
+  "markdown_files_renamed_to_txt": true,
+  "excluded_debug_files": true,
+  "included_shard_count": 7,
+  "skipped_shards": [
+    "shard_10",
+    "shard_11",
+    "shard_12",
+    "shard_13",
+    "shard_14",
+    "shard_15",
+    "shard_16",
+    "shard_17",
+    "shard_18",
+    "shard_19",
+    "shard_20",
+    "shard_21",
+    "shard_22",
+    "shard_23",
+    "shard_24",
+    "shard_25",
+    "shard_26",
+    "shard_27",
+    "shard_28",
+    "shard_29",
+    "shard_30",
+    "shard_31",
+    "shard_32",
+    "shard_33",
+    "shard_34",
+    "shard_35",
+    "shard_36",
+    "shard_37",
+    "shard_38",
+    "shard_39",
+    "shard_7",
+    "shard_8",
+    "shard_9"
+  ],
+  "total_files": 647,
+  "total_renamed_markdown_count": 165,
+  "total_raw_file_bytes": 102678693,
+  "zip_count": 2,
+  "zips": [
+    {
+      "path": "publish_ready_zips/260603/publish_ready_260603_part001.zip",
+      "size_bytes": 88345194,
+      "file_count": 606,
+      "renamed_markdown_count": 150,
+      "raw_file_bytes": 94310556,
+      "shards": [
+        "shard_0",
+        "shard_1",
+        "shard_2",
+        "shard_3",
+        "shard_4",
+        "shard_5",
+        "shard_6"
+      ]
+    },
+    {
+      "path": "publish_ready_zips/260603/publish_ready_260603_part002.zip",
+      "size_bytes": 7742268,
+      "file_count": 41,
+      "renamed_markdown_count": 15,
+      "raw_file_bytes": 8368137,
+      "shards": [
+        "shard_6"
+      ]
+    }
+  ],
+  "included_shards": [
+    {
+      "shard": "shard_0",
+      "report_count": 5,
+      "file_count": 111,
+      "renamed_markdown_count": 25,
+      "raw_file_bytes": 16171184,
+      "reports": [
+        "0001-01-Bernstein-Global-Luxury-Goods--April-Swiss-watch-exports-Tariff-distorti",
+        "0002-02-Morgan-Stanley-US-Rates-Strategy-Skew--A-Robust-Signal-in-a-Changing-Mar",
+        "0003-03-Deutsche-Bank-China-Macro-May-PMI-rising-prices-affecting-demand-260601",
+        "0004-04-Goldman-Sachs-US-ECONOMICS-ANALYST-Earnings-Season-Takeaways--Resilient-",
+        "0005-05-Bernstein-Global-Aerospace---Defense-Aerospace---Defense--Twelve-CEOs-in"
+      ]
+    },
+    {
+      "shard": "shard_1",
+      "report_count": 5,
+      "file_count": 87,
+      "renamed_markdown_count": 25,
+      "raw_file_bytes": 14450643,
+      "reports": [
+        "0001-06-J.P.-Morgan-Commodity-Market-Positioning---Flows-Weaker-energy-prices-me",
+        "0002-07-J.P.-Morgan-China-RatingDog-PMI-eased-but-stayed-expansionary-260601",
+        "0003-08-Bernstein-Global-Semicap-Tracker--Apr-26---Japan-SPE--25--YoY-260603",
+        "0004-09-Goldman-Sachs-Global-Healthcare--Pharmaceuticals--Lung-Cancer-KOLs-Gener",
+        "0005-10-Goldman-Sachs-Japan-Machinery--Construction--Lower-Section-232-tariffs-o"
+      ]
+    },
+    {
+      "shard": "shard_2",
+      "report_count": 5,
+      "file_count": 115,
+      "renamed_markdown_count": 25,
+      "raw_file_bytes": 23571650,
+      "reports": [
+        "0001-11-MS-Global-Technology-Chipflation---Navigating-A-Memory-Crisis-260602",
+        "0002-12-Morgan-Stanley-Global-Auto-Monitor--Positioning-Through-an-Uncertain-Cyc",
+        "0003-13-CITI-Metal-Matters-Bullish-copper-to--14.5k-t-next-month-on-arb-tailwind",
+        "0004-15-Goldman-Sachs-CHINA-NEW-ENERGY-VEHICLE-WEEKLY-CHARTBOOK-2026-Week-22-Wee",
+        "0005-16-Goldman-Sachs-CHINA-NEW-ENERGY-VEHICLE-WEEKLY-CHARTBOOK-2026-Week-22-Wee"
+      ]
+    },
+    {
+      "shard": "shard_3",
+      "report_count": 5,
+      "file_count": 97,
+      "renamed_markdown_count": 25,
+      "raw_file_bytes": 12160737,
+      "reports": [
+        "0001-17-Goldman-Sachs-South-Korea-Automobiles-HMC-and-Kia-US-May-market-share-11",
+        "0002-18-Morgan-Stanley-China-Property-Weekly-Database-Tracker--22-260601",
+        "0003-19-Goldman-Sachs-CHINA-STAPLES-Value-Retailers--Busy-Ming-Wanchen-officiall",
+        "0004-20-CITI-China-Battery-Materials-High-conviction-call-for-lithium-carbonate-",
+        "0005-21-Goldman-Sachs-Americas-Technology--Hardware--AI-Project-Pulse--May-2026-"
+      ]
+    },
+    {
+      "shard": "shard_4",
+      "report_count": 5,
+      "file_count": 113,
+      "renamed_markdown_count": 25,
+      "raw_file_bytes": 18034865,
+      "reports": [
+        "0001-22-Goldman-Sachs-Japan-Healthcare--Pharmaceuticals--ASCO-2026--Focus-on-Ono",
+        "0002-23-J.P.-Morgan-EM-USD-10s30s-Spread-Curve-Report-Muted-Flattening-Leaves-EM",
+        "0003-24-MS-Semiconductors---North-America-Raising-estimates-PTs-for-memory-stock",
+        "0004-25-Morgan-Stanley-China-Financials-1Q26--healthy-payment-data--Some-consump",
+        "0005-26-Nomura-China-factory-automation-data--May-2026-Airtac-sales-up-26--y-y-i"
+      ]
+    },
+    {
+      "shard": "shard_5",
+      "report_count": 5,
+      "file_count": 75,
+      "renamed_markdown_count": 25,
+      "raw_file_bytes": 8757201,
+      "reports": [
+        "0001-27-Nomura-USD-CNY-fix-model-Projection--6.7705-260603",
+        "0002-28-CITI-China-Auto-Manufacturers-Prelim.-May-EV-sales-beat-with--ve-YoY--BY",
+        "0003-29-CITI-China-Technology---Communications-NVDA-and-Qualcomm-Keynote-Takeawa",
+        "0004-30-Goldman-Sachs-Expert-call-series--Ongoing-structural-divergence-along-th",
+        "0005-31-Morgan-Stanley-ASCO-2026-Takeaways--Day-2-260601"
+      ]
+    },
+    {
+      "shard": "shard_6",
+      "report_count": 3,
+      "file_count": 49,
+      "renamed_markdown_count": 15,
+      "raw_file_bytes": 9532413,
+      "reports": [
+        "0001-32-Morgan-Stanley-Biopharma-Front-line-lung-cancer-takeaways-from-ASCO-2606",
+        "0002-33-CITI-Japan-IT-services-NVIDIA-Computex-keynote-takeaways--AI-ROI-and-phy",
+        "0003-34-Goldman-Sachs-Japan-IT-Services-NC-company-results-read-across--2--Finan"
+      ]
+    }
+  ]
+}
