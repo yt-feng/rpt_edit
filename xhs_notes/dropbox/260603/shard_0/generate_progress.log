@@ -1,0 +1,14 @@
+Found 33 total PDFs; shard 0/40 has 5 PDFs, skips 0 already converted, will process 5 PDFs with batch_size=5.
+Running batch 1: 5 PDFs
+Found 5 PDFs.
+Uploading PDF to MinerU: /tmp/pdf_batch_001_ac6cl3i3/pdfs/0001-01-Bernstein-Global Luxury Goods- April Swiss watch exports-Tariff distortions keep YoY trends choppy as comps catch up-260602.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_ac6cl3i3/pdfs/0002-02-Morgan Stanley-US Rates Strategy-Skew- A Robust Signal in a Changing Market-260602.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_ac6cl3i3/pdfs/0003-03-Deutsche Bank-China Macro-May PMI-rising prices affecting demand-260601.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_ac6cl3i3/pdfs/0004-04-Goldman Sachs-US ECONOMICS ANALYST-Earnings Season Takeaways- Resilient- but for How Long--260602.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_ac6cl3i3/pdfs/0005-05-Bernstein-Global Aerospace - Defense-Aerospace - Defense- Twelve CEOs in three days-A-D themes from Bernstein-s Strategic Decisions Conference-260602.pdf
+MinerU batch_id=98ace72d-eb96-496d-801a-5c627eb91c6e
+MinerU states: done, running, running, pending, waiting-file
+MinerU states: done, running, done, running, done
+MinerU states: done, done, done, done, done
+Done. Results written to /home/runner/work/rpt_edit/rpt_edit/xhs_notes/dropbox/260603/shard_0; successful_reports=5; mineru_timed_out=False
+All batches completed successfully. Generated 5 report directories.

@@ -1,0 +1,3683 @@
+[
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "US ECONOMICS ANALYST "
+                    }
+                ]
+            },
+            "bbox": [
+                107,
+                76,
+                303,
+                93
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Earnings Season Takeaways: Resilient, but for How Long? "
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                107,
+                103,
+                704,
+                131
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "With nearly all the S&P 500 now reported, we analyze Q1 company results and management commentary in order to draw macroeconomic lessons from micro-level insights. "
+                    }
+                ]
+            },
+            "bbox": [
+                80,
+                210,
+                679,
+                264
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Companies reported strong and broad-based revenue growth, reaffirming that economic activity increased at a solid pace. Our preferred guidepost for economic activity among S&P 500 companies—real revenues excluding the volatile energy sector—rose  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "6.3\\%"
+                    },
+                    {
+                        "type": "text",
+                        "content": " year-over-year. "
+                    }
+                ]
+            },
+            "bbox": [
+                80,
+                273,
+                683,
+                348
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Companies reported limited evidence of any slowdown in spending growth so far despite the Iran war and jump in oil prices but voiced concern about the near-term outlook. We expect below-consensus real consumer spending growth of just  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "1.3\\%"
+                    },
+                    {
+                        "type": "text",
+                        "content": " in 2026H2, reflecting the poor starting point for consumer cashflow (the personal saving rate is low and real disposable income fell  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "1.1\\%"
+                    },
+                    {
+                        "type": "text",
+                        "content": " year over year in last week's April personal income report), the fading boost from strong tax refunds, and a continued headwind from elevated inflation. "
+                    }
+                ]
+            },
+            "bbox": [
+                80,
+                356,
+                696,
+                488
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The war put upward pressure on input costs and downward pressure on company margins. Our company price announcement tracker—which captures both prices paid and received—increased to its highest level since late 2023. When discussing higher prices, companies most frequently mentioned the impact of higher oil prices but also noted increases in the costs of shipping, resin-based materials, and computer memory. Companies expect higher input costs to put downward pressure on margins in Q2: analysts revised their margin expectations—a proxy for corporate guidance—down the most in the sectors for which our price announcement tracker increased the most. "
+                    }
+                ]
+            },
+            "bbox": [
+                80,
+                498,
+                697,
+                667
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "AI investment continues to support strong economywide capex growth. Hyperscaler capex plans once again surprised to the upside. Analysts revised their 2026 expectations—a proxy for corporate guidance—12% higher from the start of the earnings season to over $750bn, corresponding to 83% growth vs. 2025. We expect business fixed investment in the national accounts to grow nearly 8% this year, reflecting a 3pp boost from AI-related spending as well as a 3pp boost from the tax incentives in last year’s fiscal package. "
+                    }
+                ]
+            },
+            "bbox": [
+                80,
+                678,
+                691,
+                810
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Limited impact from AI on the labor market so far, but lessons from early movers. A very modest share of management teams mentioned AI when discussing layoffs and hiring freezes, and business surveys and our own analysis "
+                    }
+                ]
+            },
+            "bbox": [
+                80,
+                817,
+                683,
+                874
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Ronnie Walker  \n+1(917)343-4543 | ronnie.walker@gs.com GS & Co. LLC "
+                    }
+                ]
+            },
+            "bbox": [
+                720,
+                211,
+                843,
+                250
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Goldman Research Sachs "
+                    }
+                ]
+            },
+            "bbox": [
+                78,
+                2,
+                297,
+                41
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Economics Research 2 June 2026 | 8:15AM EDT "
+                    }
+                ]
+            },
+            "bbox": [
+                720,
+                3,
+                918,
+                41
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "Investors should consider this report as only a single factor in making their investment decision. For Reg AC certification and other important disclosures, see the Disclosure Appendix, or go to www.gs.com/research/hedge.html. "
+                    }
+                ]
+            },
+            "bbox": [
+                78,
+                923,
+                854,
+                972
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "suggest that the labor market impact has been limited so far. That said, in a narrow segment of the economy—tech companies and startups—the frequency of companies tying layoffs to AI increased sharply this month, with companies often attributing the recent reductions to advances in agentic models. Companies reporting AI-driven layoffs most frequently reported cuts to operations, data labeling, software development, and customer support roles. However, online job postings data from LinkUp suggest that those same companies have increased their demand for other roles, such as those focused on computer hardware and systems engineering and research. "
+                    }
+                ]
+            },
+            "bbox": [
+                299,
+                38,
+                908,
+                210
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "GS "
+                    }
+                ]
+            },
+            "bbox": [
+                81,
+                3,
+                184,
+                18
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "US Economics Analyst "
+                    }
+                ]
+            },
+            "bbox": [
+                771,
+                7,
+                916,
+                21
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "2 June 2026 "
+                    }
+                ]
+            },
+            "bbox": [
+                81,
+                954,
+                155,
+                965
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "2 "
+                    }
+                ]
+            },
+            "bbox": [
+                906,
+                954,
+                916,
+                963
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Earnings Season Takeaways: Resilient, but for How Long? "
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                80,
+                38,
+                542,
+                59
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "We review the Q1 corporate earnings season by analyzing company fundamentals, equity analyst forecasts, company-level alternative data, and management commentary. "
+                    }
+                ]
+            },
+            "bbox": [
+                274,
+                85,
+                916,
+                120
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Another Quarter of Strong Results "
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                274,
+                145,
+                529,
+                161
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "With nearly all the S&P 500 now reported, the Q1 earnings season was again characterized by strong fundamentals. Q1 earnings are on track to grow  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "26\\%"
+                    },
+                    {
+                        "type": "text",
+                        "content": " year-over-year "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "^{1}"
+                    },
+                    {
+                        "type": "text",
+                        "content": " (vs. an expectation of  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "12\\%"
+                    },
+                    {
+                        "type": "text",
+                        "content": " at the start of earnings season), earnings grew a robust  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "14\\%"
+                    },
+                    {
+                        "type": "text",
+                        "content": " for the median S&P 500 company (vs.  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "8\\%"
+                    },
+                    {
+                        "type": "text",
+                        "content": "), and analysts raised their earnings estimates for the remainder of the year. "
+                    }
+                ]
+            },
+            "bbox": [
+                274,
+                162,
+                901,
+                251
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "In Exhibit 1, we plot our preferred guidepost for economic activity for the S&P 500: revenues excluding the volatile and idiosyncratic energy sector, converted to real terms using the GDP price deflator (ex-energy). On this basis, real revenues rose  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "6.3\\%"
+                    },
+                    {
+                        "type": "text",
+                        "content": " year-over-year in Q1, the fastest pace since 2021 and near the top-end of the range seen last cycle. "
+                    }
+                ]
+            },
+            "bbox": [
+                274,
+                264,
+                905,
+                352
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The current pace of S&P 500 revenue growth is elevated relative to GDP growth, even after accounting for the fact that the S&P 500 is more cyclical than the broader economy—the historical relationship between the two suggests that the  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "2.6\\%"
+                    },
+                    {
+                        "type": "text",
+                        "content": " year-over-year increase in real GDP in Q1 is consistent with S&P 500 real revenue growth just below  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "4\\%"
+                    },
+                    {
+                        "type": "text",
+                        "content": ". The current outperformance reflects that there has been particularly strong revenue growth among the largest public companies—real revenues have increased by a more moderate  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "5\\%"
+                    },
+                    {
+                        "type": "text",
+                        "content": " over the last year for the median S&P 500 company—and especially the large tech companies—real revenues have increased by  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "2\\%"
+                    },
+                    {
+                        "type": "text",
+                        "content": " for the S&P 500 excluding the tech and energy sectors. "
+                    }
+                ]
+            },
+            "bbox": [
+                274,
+                365,
+                906,
+                525
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/c52137b775fec4381f5faef12ada35b2b2e2beaa5c93a03a3584c8707ebe613c.jpg"
+                },
+                "content": "| Year | Percent change, year ago |\n|------|--------------------------|\n| 1970 | +2.6%                    |\n| Avg. during Recessions | -2.7%                  |\n| Avg. during Expansions | +3.5%                  |",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Exhibit 1: Real Corporate Revenues Grew a Strong  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "6.3\\%"
+                    },
+                    {
+                        "type": "text",
+                        "content": " Year-over-Year in 2026Q1 "
+                    }
+                ],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: Standard and Poor's, GS Global Investment Research "
+                    }
+                ]
+            },
+            "sub_type": "line",
+            "bbox": [
+                279,
+                581,
+                908,
+                837
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "GS "
+                    }
+                ]
+            },
+            "bbox": [
+                81,
+                3,
+                184,
+                16
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "US Economics Analyst "
+                    }
+                ]
+            },
+            "bbox": [
+                771,
+                7,
+                916,
+                21
+            ]
+        },
+        {
+            "type": "page_footnote",
+            "content": {
+                "page_footnote_content": [
+                    {
+                        "type": "equation_inline",
+                        "content": "^{1}"
+                    },
+                    {
+                        "type": "text",
+                        "content": "  About 8pp of the surprise appears to reflect large tech companies marking to market the appreciation of equity stakes in private companies. "
+                    }
+                ]
+            },
+            "bbox": [
+                274,
+                906,
+                890,
+                932
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "2 June 2026 "
+                    }
+                ]
+            },
+            "bbox": [
+                81,
+                954,
+                155,
+                965
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "3 "
+                    }
+                ]
+            },
+            "bbox": [
+                906,
+                954,
+                916,
+                963
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Impacts of the War: A More Challenging Consumer Outlook "
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                274,
+                38,
+                712,
+                55
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Despite the sharp rise in oil prices, company commentary and results suggest that the consumer remained healthy in the first quarter. Sales growth among consumer-facing companies improved—sales increased  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "9\\%"
+                    },
+                    {
+                        "type": "text",
+                        "content": " year-over-year among the median S&P 500 consumer discretionary company and  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "5\\%"
+                    },
+                    {
+                        "type": "text",
+                        "content": " for the median consumer staples company. That message from company results is corroborated by the official statistics and alternative data: Exhibit 2 shows that monthly measures of nominal consumer spending—including those that exclude gasoline purchases—have continued to grow at roughly the same rate for the last few months. "
+                    }
+                ]
+            },
+            "bbox": [
+                274,
+                56,
+                908,
+                198
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/1b98df9430a7b8197496aabf92a2394faf3b244f0379314ab6c475074f3f6d6f.jpg"
+                },
+                "content": "| Year | Costco* | SpendTrend | Retail Control | Second Measure |\n|------|---------|------------|----------------|----------------|\n| 2022 | 13.0    | 21.0       | 9.0            | 3.0            |\n| 2023 | 8.0     | 9.0        | 7.0            | 4.0            |\n| 2024 | 7.0     | 7.0        | 5.0            | 2.0            |\n| 2025 | 9.0     | 8.0        | 6.0            | -3.0           |\n| 2026 | 7.0     | 7.0        | 6.0            | 3.0            |",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Exhibit 2: Alternative Measures of Nominal Consumer Spending Growth Remain Solid "
+                    }
+                ],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: Company data, Bloomberg, GS Global Investment Research "
+                    }
+                ]
+            },
+            "sub_type": "line",
+            "bbox": [
+                274,
+                255,
+                911,
+                521
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "However, companies voiced concerns that we share about the near-term consumer outlook, and Exhibit 3 shows that our quantitative measure of sentiment around the consumer on earnings calls declined sequentially.  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "^{2}"
+                    }
+                ]
+            },
+            "bbox": [
+                274,
+                565,
+                883,
+                618
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "GS "
+                    }
+                ]
+            },
+            "bbox": [
+                81,
+                3,
+                184,
+                16
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "US Economics Analyst "
+                    }
+                ]
+            },
+            "bbox": [
+                771,
+                7,
+                916,
+                21
+            ]
+        },
+        {
+            "type": "page_footnote",
+            "content": {
+                "page_footnote_content": [
+                    {
+                        "type": "equation_inline",
+                        "content": "^{2}"
+                    },
+                    {
+                        "type": "text",
+                        "content": "  To construct our index, we start with a database of earnings transcripts assembled by GS Data Works. We limit our sample to paragraphs that include terms and phrases related to consumers. We then use semantic analysis to classify the sentiment expressed in each paragraph as positive, negative, or neutral. Finally, we compute a quarterly diffusion index that takes the difference between the share of positive paragraphs and the share of negative paragraphs and is centered around 50. "
+                    }
+                ]
+            },
+            "bbox": [
+                274,
+                868,
+                906,
+                932
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "2 June 2026 "
+                    }
+                ]
+            },
+            "bbox": [
+                81,
+                954,
+                155,
+                965
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "4 "
+                    }
+                ]
+            },
+            "bbox": [
+                906,
+                954,
+                916,
+                963
+            ]
+        }
+    ],
+    [
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/19fb1774bfd38eb115283a369ea345e291e51c3f85ccc311ce973274d02470bd.jpg"
+                },
+                "content": "| Year | Index |\n|------|-------|\n| 2012 | 50    |\n| 2014 | 55    |\n| 2016 | 60    |\n| 2018 | 58    |\n| 2020 | 35    |\n| 2022 | 65    |\n| 2024 | 55    |\n| 2026 | 60    |",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Exhibit 3: Sentiment Around the Consumer Declined but Remained Around Its Historical Average "
+                    }
+                ],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: GS Global Investment Research "
+                    }
+                ]
+            },
+            "sub_type": "line",
+            "bbox": [
+                274,
+                95,
+                915,
+                365
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Discussed in more detail in our just-published note, we expect below-consensus real consumer spending growth of just  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "1.3\\%"
+                    },
+                    {
+                        "type": "text",
+                        "content": " in 2026H2, reflecting the poor starting point for consumer cashflow (the personal saving rate is low and real disposable income fell  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "1.1\\%"
+                    },
+                    {
+                        "type": "text",
+                        "content": " year over year in last week's April personal income report), the fading boost from strong tax refunds, and a continued headwind from elevated inflation and gasoline prices. "
+                    }
+                ]
+            },
+            "bbox": [
+                272,
+                399,
+                913,
+                488
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Differences in spending growth for low- and high-income households appeared to be normalizing on the eve of the rise in oil prices. The left panel of Exhibit 4 updates our analysis that compares nominal same-store sales growth for retailers that are generally located in lower-income zip codes to those that are in higher-income zip codes. Over the last year, the gap between their sales narrowed from 3.1pp in 2025Q1 to 1.1pp in 2026Q1. However, for the remainder of the year, consumption growth is likely to be weaker at the low end, where government spending cuts will hit hardest, lower immigration will weigh more on job and income growth, and higher gasoline prices will disproportionately burden households (Exhibit 4, right panel). "
+                    }
+                ]
+            },
+            "bbox": [
+                272,
+                500,
+                916,
+                662
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "GS "
+                    }
+                ]
+            },
+            "bbox": [
+                81,
+                3,
+                184,
+                16
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "US Economics Analyst "
+                    }
+                ]
+            },
+            "bbox": [
+                771,
+                7,
+                916,
+                21
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "2 June 2026 "
+                    }
+                ]
+            },
+            "bbox": [
+                81,
+                954,
+                155,
+                965
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "5 "
+                    }
+                ]
+            },
+            "bbox": [
+                906,
+                954,
+                916,
+                963
+            ]
+        }
+    ],
+    [
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/dba38352017f39ef4c35bcacff0680781264032339e52a0e1058a2f3bbd6a542.jpg"
+                },
+                "content": "| Year | Lower Income* | Mid-to-High Income** |\n|------|---------------|------------------------|\n| 2015 | ~3%           | ~2%                    |\n| 2016 | ~5%           | ~4%                    |\n| 2017 | ~3%           | ~2%                    |\n| 2018 | ~2%           | ~3%                    |\n| 2019 | ~3%           | ~4%                    |\n| 2020 | ~4%           | ~5%                    |\n| 2021 | ~12%          | ~-5%                   |\n| 2022 | ~22%          | ~25%                   |\n| 2023 | ~8%           | ~10%                   |\n| 2024 | ~1%           | ~2%                    |\n| 2025 | ~1%           | ~3%                    |\n| 2026 | ~1%           | ~2%                    |",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Exhibit 4: Sales Growth Between Companies Exposed to Households on Different Ends of the Income Spectrum Had Narrowed Over the Last Couple of Quarters, but the Rise in Gasoline Prices Will Weigh More on Consumption Growth at the Low End This Year "
+                    }
+                ],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "* 15 companies for which the median household income in the zip codes containing store locations is <80k/year on average. Includes DG, DLTR, TSCO, BIG, WMT, KR. "
+                    },
+                    {
+                        "type": "text",
+                        "content": "** 20 companies for which the median household income in the zip codes containing store locations is >=80k/year on average. Includes JWN, URBN, LULU, SFM, GAP, COST, TGT. "
+                    }
+                ]
+            },
+            "sub_type": "line",
+            "bbox": [
+                109,
+                99,
+                493,
+                356
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/670091605ab0c89a36a26f1cce3e504c340e6cc1ad304ffb6b6fd339ff0b7cc3.jpg"
+                },
+                "content": "Impact of Higher Gasoline Prices on 2026 Real Income Growth (Full-Year Basis), GS Forecast\n| Income Cohort | Percentage points |\n| :--- | :--- |\n| Bottom | -1.25 |\n| Second | -1.15 |\n| Third | -1.05 |\n| Fourth | -0.85 |\n| Fifth | -0.6 |\n| Overall | -0.75 |",
+                "chart_caption": [],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: Company data, GS Global Investment Research "
+                    }
+                ]
+            },
+            "sub_type": "bar",
+            "bbox": [
+                503,
+                99,
+                890,
+                356
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Impacts of the War: Upward Pressure on Input Costs and Downward Pressure on Margins "
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                269,
+                425,
+                866,
+                459
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Exhibit 5 shows that our company price announcement tracker—which captures both prices paid and received—increased to its highest level since late 2023 but remained well below its 2022 peak. When discussing higher prices, companies most frequently mentioned the impact of higher oil prices but also noted increases in other input costs, such as shipping, resin-based materials, and computer memory. "
+                    }
+                ]
+            },
+            "bbox": [
+                269,
+                462,
+                901,
+                551
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "GS "
+                    }
+                ]
+            },
+            "bbox": [
+                81,
+                3,
+                184,
+                16
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "US Economics Analyst "
+                    }
+                ]
+            },
+            "bbox": [
+                771,
+                7,
+                916,
+                21
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "2 June 2026 "
+                    }
+                ]
+            },
+            "bbox": [
+                81,
+                954,
+                155,
+                965
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "6 "
+                    }
+                ]
+            },
+            "bbox": [
+                906,
+                954,
+                916,
+                963
+            ]
+        }
+    ],
+    [
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/32a8aabf1cd346ff92a708e034a84532efa8f61e392412a70510c4a219754deb.jpg"
+                },
+                "content": "| Year | GS Company Price Announcement Index* (left) | PCE Inflation (right) |\n|------|---------------------------------------------|------------------------|\n| 2010 | ~4.0                                        | ~3.5                   |\n| 2011 | ~5.0                                        | ~5.5                   |\n| 2012 | ~4.5                                        | ~4.0                   |\n| 2013 | ~4.0                                        | ~3.5                   |\n| 2014 | ~3.5                                        | ~4.0                   |\n| 2015 | ~3.0                                        | ~1.5                   |\n| 2016 | ~3.5                                        | ~2.5                   |\n| 2017 | ~4.5                                        | ~4.0                   |\n| 2018 | ~5.5                                        | ~4.5                   |\n| 2019 | ~5.0                                        | ~3.5                   |\n| 2020 | ~4.0                                        | ~1.5                   |\n| 2021 | ~6.0                                        | ~7.0                   |\n| 2022 | ~8.0                                        | ~8.5                   |\n| 2023 | ~7.0                                        | ~6.0                   |\n| 2024 | ~5.0                                        | ~4.0                   |\n| 2025 | ~4.0                                        | ~3.0                   |\n| 2026 | ~5.0                                        | ~6.0                   |",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Exhibit 5: Our Company Price Announcement Tracker Increased to the Highest Level Since 2023 but Remained Well Below its 2022 Peak "
+                    }
+                ],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "* Share of sentences mentioning higher prices less share of sentences mentioning lower prices. "
+                    },
+                    {
+                        "type": "text",
+                        "content": "Source: Department of Commerce, GS Global Investment Research "
+                    }
+                ]
+            },
+            "sub_type": "line",
+            "bbox": [
+                274,
+                98,
+                915,
+                361
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Companies appear to expect these higher input costs to put downward pressure on margins in Q2. Exhibit 6 shows that analysts revised their margin expectations—a proxy for corporate guidance—down the most in the sectors for which our price announcement tracker increased the most. "
+                    }
+                ]
+            },
+            "bbox": [
+                269,
+                419,
+                910,
+                489
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/06a51c4f04c158227b424193400513e247b0b498440ec4c5b73c4e73226ca781.jpg"
+                },
+                "content": "| Sector              | Change in GS company price announcement tracker (percentage points) | Analyst revisions to 2026Q2 margin forecasts since the start of earnings season (basis points) |\n|---------------------|------------------------------------------------------------------------|----------------------------------------------------------------------------------|\n| Energy              | 1.5                                                                    | 2.0                                                                              |\n| Consumer Staples    | 1.2                                                                    | -10.0                                                                            |\n| Industrials Disc.   | 1.0                                                                    | -13.0                                                                            |\n| Materials           | 3.8                                                                    | -16.0                                                                            |\n| Energy (top)       | 0.0                                                                    | 1.0                                                                              |\n| Consumer Staples    | 0.3                                                                    | -5.0                                                                             |\n| Consumer Disc.      | 0.9                                                                    | -13.0                                                                            |",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Exhibit 6: Analysts Revised Their Margin Expectations—a Proxy for Corporate Guidance—Down the Most in the Sectors Facing the Greatest Input Cost Increases From the War "
+                    }
+                ],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: FactSet, GS Global Investment Research "
+                    }
+                ]
+            },
+            "sub_type": "scatter",
+            "bbox": [
+                277,
+                560,
+                910,
+                844
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "While the rise in energy prices will again delay progress on inflation, we believe that underlying price pressures remain benign. In particular, cost pressures from the labor market look quite restrained. Exhibit 7 shows that mentions of wages and labor costs on earnings calls fell to the bottom of the pre-pandemic range, and our tracker suggests that wages have increased  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "3.6\\%"
+                    },
+                    {
+                        "type": "text",
+                        "content": " over the last year and  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "3.1\\%"
+                    },
+                    {
+                        "type": "text",
+                        "content": " annualized in Q1, below the  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "4\\%"
+                    },
+                    {
+                        "type": "text",
+                        "content": " rate we estimate would be consistent with  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "2\\%"
+                    },
+                    {
+                        "type": "text",
+                        "content": " price inflation. "
+                    }
+                ]
+            },
+            "bbox": [
+                269,
+                879,
+                911,
+                932
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "GS "
+                    }
+                ]
+            },
+            "bbox": [
+                81,
+                3,
+                184,
+                16
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "US Economics Analyst "
+                    }
+                ]
+            },
+            "bbox": [
+                771,
+                7,
+                916,
+                21
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "2 June 2026 "
+                    }
+                ]
+            },
+            "bbox": [
+                81,
+                953,
+                155,
+                965
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "7 "
+                    }
+                ]
+            },
+            "bbox": [
+                906,
+                954,
+                916,
+                963
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": []
+            },
+            "bbox": [
+                274,
+                38,
+                911,
+                90
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/03390d0c7fde786ecf77f27f191f2569e9616a429bcff9d03540689683914459.jpg"
+                },
+                "content": "| Year | Share of Management Teams Discussing Labor Costs |\n| ---- | ----------------------------------------------- |\n| 2010 | ~18%                                            |\n| 2011 | ~20%                                            |\n| 2012 | ~19%                                            |\n| 2013 | ~17%                                            |\n| 2014 | ~16%                                            |\n| 2015 | ~17%                                            |\n| 2016 | ~19%                                            |\n| 2017 | ~18%                                            |\n| 2018 | ~24%                                            |\n| 2019 | ~20%                                            |\n| 2020 | ~33%                                            |\n| 2021 | ~18%                                            |\n| 2022 | ~35%                                            |\n| 2023 | ~30%                                            |\n| 2024 | ~25%                                            |\n| 2025 | ~20%                                            |\n| 2026 | ~15%                                            |",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Exhibit 7: Worries Over Labor Costs Have Fallen to the Lowest Levels in a Decade "
+                    }
+                ],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: GS Dataworks, GS Global Investment Research "
+                    }
+                ]
+            },
+            "sub_type": "line",
+            "bbox": [
+                274,
+                144,
+                915,
+                401
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Continued Focus on AI: Surging Investment, Limited Layoffs "
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                274,
+                458,
+                714,
+                474
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Discussions about AI continued to dominate earnings calls. Exhibit 8 shows that  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "66\\%"
+                    },
+                    {
+                        "type": "text",
+                        "content": " of S&P 500 management teams discussed AI. "
+                    }
+                ]
+            },
+            "bbox": [
+                274,
+                476,
+                903,
+                509
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/33132188978f7b8ed9c6b00160a8d77022d921fc5c21b39ae85411f2e665b403.jpg"
+                },
+                "content": "| Year | S&P 500 | Russell 3000 |\n|------|---------|--------------|\n| 2016 | ~2      | ~1           |\n| 2017 | ~8      | ~4           |\n| 2018 | ~12     | ~6           |\n| 2019 | ~15     | ~8           |\n| 2020 | ~13     | ~6           |\n| 2021 | ~17     | ~10          |\n| 2022 | ~15     | ~9           |\n| 2023 | ~38     | ~25          |\n| 2024 | ~45     | ~30          |\n| 2025 | ~50     | ~35          |\n| 2026 | ~68     | ~52          |",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Exhibit 8:  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "66\\%"
+                    },
+                    {
+                        "type": "text",
+                        "content": " of S&P 500 Management Teams Mentioned AI on Q1 Earnings Calls "
+                    }
+                ],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: GS Dataworks, GS Global Investment Research "
+                    }
+                ]
+            },
+            "sub_type": "line",
+            "bbox": [
+                274,
+                556,
+                915,
+                828
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Company discussions about AI centered on two macro-relevant contexts. The first context was capex. Hyperscaler capex plans once again surprised to the upside. Exhibit 9 shows that analysts revised their 2026 expectations  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "12\\%"
+                    },
+                    {
+                        "type": "text",
+                        "content": " higher from the start of the earnings season to over $750bn, corresponding to 83% growth vs. 2025. "
+                    }
+                ]
+            },
+            "bbox": [
+                274,
+                866,
+                906,
+                917
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "GS "
+                    }
+                ]
+            },
+            "bbox": [
+                81,
+                3,
+                184,
+                16
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "US Economics Analyst "
+                    }
+                ]
+            },
+            "bbox": [
+                771,
+                7,
+                916,
+                21
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "2 June 2026 "
+                    }
+                ]
+            },
+            "bbox": [
+                81,
+                954,
+                155,
+                965
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "8 "
+                    }
+                ]
+            },
+            "bbox": [
+                906,
+                954,
+                916,
+                963
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": []
+            },
+            "bbox": [
+                274,
+                38,
+                799,
+                55
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "In contrast to the slowdown we expect in consumer spending, we expect continued rapid growth in business fixed investment in the national accounts. Detailed in our mid-year capex update, we expect real business fixed investment to grow nearly  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "8\\%"
+                    },
+                    {
+                        "type": "text",
+                        "content": " this year, reflecting a 3pp boost from AI-related spending as well as a 3pp boost from the tax incentives in last year's fiscal package. "
+                    }
+                ]
+            },
+            "bbox": [
+                274,
+                67,
+                916,
+                156
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/60bb9970ddc428127112a46e27f47d100fbd4a5caa648075310d6367f2cdd442.jpg"
+                },
+                "content": "| Year | Realized (Billions of dollars) | Consensus forecast: latest (Billions of dollars) | Consensus forecast: start of earnings season (Billions of dollars) |\n|------|----------------------------------|--------------------------------------------------|------------------------------------------------------------------------|\n| 2023 | 150                              | -                                                | -                                                                      |\n| 2024 | 230                              | -                                                | -                                                                      |\n| 2025 | 410                              | -                                                | -                                                                      |\n| 2026 | -                                | 750                                              | 700                                                                    |\n| 2027 | -                                | 900                                              | 800                                                                    |\n| 2028 | -                                | 910                                              | 810                                                                    |",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Exhibit 9: The Hyperscalers Are Expected to Spend Roughly $750bn on Capex This Year, 12% Above Expectations at the Start of the Earnings Season "
+                    }
+                ],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: FactSet, GS Global Investment Research "
+                    }
+                ]
+            },
+            "sub_type": "bar",
+            "bbox": [
+                277,
+                218,
+                913,
+                487
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The second context was the labor market. The left panel of Exhibit 10 shows that a modest share of management teams mentioned AI when discussing layoffs or hiring freezes in Q1. "
+                    }
+                ]
+            },
+            "bbox": [
+                274,
+                523,
+                879,
+                574
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "While AI appears to be impacting some narrow slices of the labor market, our analysis and recent business surveys (Exhibit 10, right panel) suggest a limited impact on net employment so far. That said, our analysis also suggests that AI will reshape the labor market over time, and those same business surveys suggest that companies believe an AI-related impact is more a matter of “when” than “if.” Nearly half of respondents to a recent Dallas Fed survey expected AI to either change the type of workers they need or reduce their employment over the next few years. "
+                    }
+                ]
+            },
+            "bbox": [
+                274,
+                587,
+                903,
+                713
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "GS "
+                    }
+                ]
+            },
+            "bbox": [
+                81,
+                3,
+                184,
+                16
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "US Economics Analyst "
+                    }
+                ]
+            },
+            "bbox": [
+                771,
+                7,
+                916,
+                21
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "2 June 2026 "
+                    }
+                ]
+            },
+            "bbox": [
+                81,
+                954,
+                155,
+                965
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "9 "
+                    }
+                ]
+            },
+            "bbox": [
+                906,
+                954,
+                916,
+                963
+            ]
+        }
+    ],
+    [
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/cb43c11a8aed809b548ad507cd25f49047238623eb1c9635c95413b8c6b93f0b.jpg"
+                },
+                "content": "| Year | Hiring Freezes or Layoffs | Hiring Freezes or Layoffs and AI |\n|------|---------------------------|-----------------------------------|\n| 2010 | ~5%                       | ~0%                               |\n| 2012 | ~5%                       | ~0%                               |\n| 2014 | ~5%                       | ~0%                               |\n| 2016 | ~5%                       | ~0%                               |\n| 2018 | ~3%                       | ~0%                               |\n| 2020 | ~14%                      | ~0%                               |\n| 2022 | ~1%                       | ~0%                               |\n| 2024 | ~6%                       | ~1%                               |\n| 2026 | ~5%                       | ~1%                               |",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Exhibit 10: A Modest Share of Management Teams Mentioned AI When Discussing Hiring Freezes or Layoffs; Surveys of Businesses Suggest a Limited Impact on Net Employment "
+                    }
+                ],
+                "chart_footnote": []
+            },
+            "sub_type": "line",
+            "bbox": [
+                102,
+                86,
+                491,
+                343
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/e4d5671ef1ed82f04f966755ff7e5129311c6253d398f411b60e343c1fec9940.jpg"
+                },
+                "content": "Business Surveys: Net Impact of AI on Employment So Far\n| Survey | Increase (%) | No Change (%) | Decrease (%) |\n|---|---|---|---|\n| Census | 5 | 95 | 3 |\n| Dallas Fed | 1 | 98 | 10 |",
+                "chart_caption": [],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: GS Dataworks, Department of Commerce, Federal Reserve, GS Global Investment Research "
+                    }
+                ]
+            },
+            "sub_type": "bar_stacked",
+            "bbox": [
+                503,
+                86,
+                890,
+                342
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "To explore how AI might shape labor demand going forward, we reviewed roughly 200 layoff announcements from US tech companies and startups over the last year listed on Layoffs.fyi. Exhibit 11 shows that the frequency of these companies tying layoffs to AI increased sharply this month, with layoffs often attributed to advances in agentic models and/or shifting to an “AI-first” business approach. "
+                    }
+                ]
+            },
+            "bbox": [
+                269,
+                370,
+                916,
+                459
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/69f3d9d5df56a7fe709b3e947788f51530c03f8dc02e6a100d9ee02b994ffafd.jpg"
+                },
+                "content": "Layoffs.fyi: US Tech and Startup Companies Conducting Layoffs, by Reason Cited (Classified by GS)\n| Month | AI-related | Partly AI-related | Not AI-related |\n|---|---|---|---|\n| Jun 2025 | 0 | 2 | 7 |\n| Jul | 1 | 4 | 13 |\n| Aug | 4 | 3 | 13 |\n| Sep | 3 | 1 | 6 |\n| Oct | 6 | 5 | 8 |\n| Nov | 3 | 1 | 13 |\n| Dec | 1 | 0 | 13 |\n| Jan 2026 | 4 | 3 | 9 |\n| Feb | 1 | 2 | 14 |\n| Mar | 6 | 2 | 11 |\n| Apr | 7 | 3 | 10 |\n| May | 21 | 2 | 4 |",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Exhibit 11: Over the Last Month, Tech Companies Have Announced AI-Related Layoffs "
+                    }
+                ],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: Layoffs.fyi, GS Global Investment Research "
+                    }
+                ]
+            },
+            "sub_type": "bar_stacked",
+            "bbox": [
+                272,
+                507,
+                916,
+                785
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The companies reporting AI-driven layoffs most frequently reported cuts to operations, data labeling, software development, and customer support roles (Exhibit 12, left panel). The right panel of Exhibit 12 shows that those cuts are matched by reductions in online job postings by those companies for those kinds of roles. That same data suggests that those companies have increased their demand for other roles, such as those "
+                    }
+                ]
+            },
+            "bbox": [
+                269,
+                834,
+                916,
+                922
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "GS "
+                    }
+                ]
+            },
+            "bbox": [
+                81,
+                3,
+                184,
+                16
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "US Economics Analyst "
+                    }
+                ]
+            },
+            "bbox": [
+                771,
+                7,
+                916,
+                21
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "2 June 2026 "
+                    }
+                ]
+            },
+            "bbox": [
+                81,
+                953,
+                155,
+                965
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "10 "
+                    }
+                ]
+            },
+            "bbox": [
+                900,
+                954,
+                916,
+                965
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "focused on computer hardware and systems engineering, computer research, and business operations. "
+                    }
+                ]
+            },
+            "bbox": [
+                269,
+                38,
+                866,
+                73
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/e3d9c4190d0860821e61dc4d52f0f1bff501b58116f6c61e8d57c28156d2dafa.jpg"
+                },
+                "content": "Roles Cited as Impacted by Tech and Startup Company AI-related Layoffs\n| Role | Count |\n|---|---|\n| Operations | 10 |\n| Data annotator / labeler | 8 |\n| Software developer / engineer | 6 |\n| Customer support | 4 |\n| Content creation | 3 |\n| Sales | 2 |\n| Marketing | 1 |\n| Legal | 1 |\n| HR / recruiting | 1 |",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Exhibit 12: Companies Report Cutting Operations, Data Labeling, Software Development, and Customer Support Roles; Online Job Openings for Tech Companies and Startups That Announced AI-Related Layoffs Suggest an Increase in Demand for Computer Hardware Engineering and Research Roles "
+                    }
+                ],
+                "chart_footnote": []
+            },
+            "sub_type": "bar",
+            "bbox": [
+                109,
+                144,
+                485,
+                394
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/a4b9880963875338556b69bc1322da6501a54a7493d7003b4a392d94de0eb898.jpg"
+                },
+                "content": "LinkUp: Change in Share of Job Openings at Tech and Startup Companies Announcing AI-related Layoffs\n| Job Category | Percentage points |\n|---|---|\n| Engineering & architecture | 3.8 |\n| Bus. & fin. ops. | 1.9 |\n| Management | 0.9 |\n| Legal | 0.7 |\n| Arts, design, media | -0.2 |\n| Other | -0.3 |\n| Office & admin support | -0.5 |\n| Computer & math. | -2.7 |\n| Sales & related | -3.6 |",
+                "chart_caption": [],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: LinkUp, GS Global Investment Research "
+                    }
+                ]
+            },
+            "sub_type": "bar",
+            "bbox": [
+                516,
+                145,
+                880,
+                394
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Ronnie Walker "
+                    }
+                ]
+            },
+            "bbox": [
+                272,
+                439,
+                383,
+                454
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "GS "
+                    }
+                ]
+            },
+            "bbox": [
+                81,
+                3,
+                184,
+                16
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "US Economics Analyst "
+                    }
+                ]
+            },
+            "bbox": [
+                771,
+                7,
+                916,
+                21
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "2 June 2026 "
+                    }
+                ]
+            },
+            "bbox": [
+                81,
+                954,
+                155,
+                965
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "11 "
+                    }
+                ]
+            },
+            "bbox": [
+                900,
+                954,
+                916,
+                965
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "The US Economic and Financial Outlook "
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                80,
+                38,
+                406,
+                56
+            ]
+        },
+        {
+            "type": "table",
+            "content": {
+                "image_source": {
+                    "path": "images/b1eb000e0ddea2a1a088c6fcc296afbc91d9cb926ced711f16f7fb908495ed91.jpg"
+                },
+                "table_caption": [
+                    {
+                        "type": "text",
+                        "content": "THE US ECONOMIC AND FINANCIAL OUTLOOK "
+                    },
+                    {
+                        "type": "text",
+                        "content": "(% change on previous period, annualized, except where noted) "
+                    }
+                ],
+                "table_footnote": [
+                    {
+                        "type": "text",
+                        "content": "* Weighted average of metro-level HPIs for 381 metro cities where the weights are dollar values of housing stock reported in the American Community Survey. Annual numbers are Q4/Q4. "
+                    },
+                    {
+                        "type": "text",
+                        "content": "** Annual inflation numbers are December year-on-year values. Quarterly values are Q4/Q4. "
+                    },
+                    {
+                        "type": "text",
+                        "content": "† PCE = Personal consumption expenditures. ^ Denotes end of period. "
+                    },
+                    {
+                        "type": "text",
+                        "content": "Note: Published figures in bold. "
+                    }
+                ],
+                "html": "<table><tr><td rowspan=\"2\"></td><td rowspan=\"2\">2023</td><td rowspan=\"2\">2024</td><td rowspan=\"2\">2025</td><td rowspan=\"2\">2026</td><td rowspan=\"2\">2027</td><td rowspan=\"2\">2025 Q4</td><td colspan=\"4\">2026</td><td colspan=\"4\">2027</td></tr><tr><td>Q1</td><td>Q2</td><td>Q3</td><td>Q4</td><td>Q1</td><td>Q2</td><td>Q3</td><td>Q4</td></tr><tr><td colspan=\"15\">OUTPUT AND SPENDING</td></tr><tr><td>Real GDP</td><td>2.9</td><td>2.8</td><td>2.1</td><td>2.0</td><td>2.0</td><td>0.5</td><td>1.6</td><td>1.9</td><td>1.8</td><td>1.8</td><td>2.0</td><td>2.1</td><td>2.2</td><td>2.3</td></tr><tr><td>Real GDP (annual=Q4/Q4, quarterly=yoy)</td><td>3.4</td><td>2.4</td><td>2.0</td><td>1.8</td><td>2.1</td><td>2.0</td><td>2.6</td><td>2.1</td><td>1.5</td><td>1.8</td><td>1.9</td><td>1.9</td><td>2.0</td><td>2.1</td></tr><tr><td>Consumer Expenditures</td><td>2.6</td><td>2.9</td><td>2.6</td><td>1.8</td><td>1.7</td><td>1.9</td><td>1.4</td><td>1.4</td><td>1.3</td><td>1.3</td><td>1.9</td><td>2.0</td><td>2.1</td><td>2.2</td></tr><tr><td>Residential Fixed Investment</td><td>-7.8</td><td>3.2</td><td>-2.2</td><td>-4.2</td><td>1.4</td><td>-1.7</td><td>-6.3</td><td>-6.9</td><td>1.5</td><td>1.5</td><td>2.2</td><td>2.2</td><td>2.2</td><td>2.2</td></tr><tr><td>Business Fixed Investment</td><td>7.3</td><td>2.9</td><td>4.1</td><td>6.4</td><td>5.7</td><td>2.4</td><td>10.1</td><td>6.4</td><td>7.5</td><td>6.9</td><td>4.9</td><td>4.9</td><td>4.9</td><td>4.9</td></tr><tr><td>Structures</td><td>16.7</td><td>1.1</td><td>-5.3</td><td>-4.1</td><td>1.9</td><td>-6.6</td><td>-5.4</td><td>-1.2</td><td>-1.0</td><td>-0.2</td><td>3.5</td><td>3.5</td><td>3.5</td><td>3.5</td></tr><tr><td>Equipment</td><td>2.9</td><td>3.5</td><td>8.3</td><td>10.4</td><td>7.0</td><td>4.3</td><td>17.2</td><td>11.8</td><td>11.0</td><td>9.5</td><td>5.0</td><td>5.0</td><td>5.0</td><td>5.0</td></tr><tr><td>Intellectual Property Products</td><td>6.2</td><td>3.5</td><td>5.6</td><td>7.9</td><td>6.2</td><td>5.4</td><td>11.6</td><td>5.0</td><td>8.2</td><td>7.8</td><td>5.5</td><td>5.5</td><td>5.5</td><td>5.5</td></tr><tr><td>Federal Government</td><td>3.3</td><td>3.8</td><td>-1.2</td><td>-1.0</td><td>0.9</td><td>-16.7</td><td>9.5</td><td>0.0</td><td>1.0</td><td>1.0</td><td>1.0</td><td>1.0</td><td>1.0</td><td>1.0</td></tr><tr><td>State &amp; Local Government</td><td>3.6</td><td>3.8</td><td>2.5</td><td>1.3</td><td>0.9</td><td>1.5</td><td>1.5</td><td>0.5</td><td>0.5</td><td>1.0</td><td>1.0</td><td>1.0</td><td>1.0</td><td>1.0</td></tr><tr><td>Net Exports ($bn, &#x27;17)</td><td>-925</td><td>-1,033</td><td>-1,091</td><td>-1,136</td><td>-1,222</td><td>-969</td><td>-1,064</td><td>-1,140</td><td>-1,160</td><td>-1,182</td><td>-1,198</td><td>-1,214</td><td>-1,230</td><td>-1,246</td></tr><tr><td>Inventory Investment ($bn, &#x27;17)</td><td>47</td><td>44</td><td>29</td><td>43</td><td>66</td><td>-16</td><td>-26</td><td>66</td><td>66</td><td>66</td><td>66</td><td>66</td><td>66</td><td>66</td></tr><tr><td>Nominal GDP</td><td>6.7</td><td>5.3</td><td>5.0</td><td>5.8</td><td>4.6</td><td>4.2</td><td>5.2</td><td>7.8</td><td>4.5</td><td>4.3</td><td>4.5</td><td>4.4</td><td>4.4</td><td>4.4</td></tr><tr><td>Industrial Production, Mfg.</td><td>-1.0</td><td>-1.0</td><td>0.8</td><td>3.1</td><td>3.6</td><td>-3.4</td><td>5.3</td><td>6.2</td><td>4.4</td><td>3.7</td><td>3.2</td><td>3.2</td><td>3.2</td><td>3.3</td></tr><tr><td colspan=\"15\">HOUSING MARKET</td></tr><tr><td>Housing Starts (units, thous)</td><td>1,421</td><td>1,370</td><td>1,356</td><td>1,286</td><td>1,322</td><td>1,323</td><td>1,280</td><td>1,290</td><td>1,280</td><td>1,292</td><td>1,304</td><td>1,316</td><td>1,328</td><td>1,340</td></tr><tr><td>New Home Sales (units, thous)</td><td>666</td><td>684</td><td>671</td><td>670</td><td>644</td><td>680</td><td>690</td><td>690</td><td>662</td><td>638</td><td>626</td><td>632</td><td>649</td><td>670</td></tr><tr><td>Existing Home Sales (units, thous)</td><td>4,103</td><td>4,067</td><td>4,076</td><td>4,212</td><td>4,375</td><td>4,157</td><td>4,169</td><td>4,189</td><td>4,223</td><td>4,267</td><td>4,310</td><td>4,353</td><td>4,396</td><td>4,440</td></tr><tr><td>Case-Shiller Home Prices (%yoy)*</td><td>5.3</td><td>3.8</td><td>0.6</td><td>0.8</td><td>2.2</td><td>0.6</td><td>0.3</td><td>0.8</td><td>0.7</td><td>0.8</td><td>1.1</td><td>1.4</td><td>1.8</td><td>2.2</td></tr><tr><td colspan=\"15\">INFLATION (% ch, yr/yr)</td></tr><tr><td>Consumer Price Index (CPI)**</td><td>3.3</td><td>2.9</td><td>2.7</td><td>3.7</td><td>2.1</td><td>2.7</td><td>2.7</td><td>3.8</td><td>3.6</td><td>3.7</td><td>3.4</td><td>2.4</td><td>2.4</td><td>2.2</td></tr><tr><td>Core CPI **</td><td>3.9</td><td>3.2</td><td>2.6</td><td>2.5</td><td>2.1</td><td>2.7</td><td>2.5</td><td>2.8</td><td>2.5</td><td>2.5</td><td>2.3</td><td>2.1</td><td>2.1</td><td>2.1</td></tr><tr><td>Core PCE** †</td><td>3.1</td><td>3.0</td><td>3.0</td><td>2.8</td><td>2.1</td><td>2.9</td><td>3.1</td><td>3.3</td><td>3.1</td><td>2.9</td><td>2.4</td><td>2.1</td><td>2.0</td><td>2.1</td></tr><tr><td colspan=\"15\">LABOR MARKET</td></tr><tr><td>Unemployment Rate (%)^</td><td>3.8</td><td>4.1</td><td>4.4</td><td>4.6</td><td>4.4</td><td>4.4</td><td>4.3</td><td>4.4</td><td>4.6</td><td>4.6</td><td>4.6</td><td>4.5</td><td>4.5</td><td>4.4</td></tr><tr><td>U6 Underemployment Rate (%)^</td><td>7.2</td><td>7.6</td><td>8.4</td><td>8.7</td><td>8.3</td><td>8.4</td><td>8.0</td><td>8.4</td><td>8.6</td><td>8.7</td><td>8.7</td><td>8.6</td><td>8.4</td><td>8.3</td></tr><tr><td>Payrolls (thous, monthly rate)</td><td>210</td><td>122</td><td>10</td><td>51</td><td>92</td><td>-39</td><td>63</td><td>65</td><td>30</td><td>47</td><td>70</td><td>97</td><td>100</td><td>100</td></tr><tr><td>Employment-Population Ratio (%)^</td><td>60.1</td><td>59.9</td><td>59.7</td><td>58.9</td><td>58.8</td><td>59.7</td><td>59.2</td><td>59.1</td><td>59.0</td><td>58.9</td><td>58.9</td><td>58.8</td><td>58.8</td><td>58.8</td></tr><tr><td>Labor Force Participation Rate (%)^</td><td>62.5</td><td>62.5</td><td>62.4</td><td>61.8</td><td>61.5</td><td>62.4</td><td>61.9</td><td>61.8</td><td>61.8</td><td>61.8</td><td>61.7</td><td>61.6</td><td>61.6</td><td>61.5</td></tr><tr><td>Average Hourly Earnings (%yoy)</td><td>4.4</td><td>3.9</td><td>4.0</td><td>3.9</td><td>3.8</td><td>4.0</td><td>4.0</td><td>4.0</td><td>3.9</td><td>3.8</td><td>3.8</td><td>3.8</td><td>3.8</td><td>3.8</td></tr><tr><td colspan=\"15\">GOVERNMENT FINANCE</td></tr><tr><td>Federal Budget (FY, $bn)</td><td>-1,694</td><td>-1,833</td><td>-1,775</td><td>-1,950</td><td>-2,050</td><td>--</td><td>--</td><td>--</td><td>--</td><td>--</td><td>--</td><td>--</td><td>--</td><td>--</td></tr><tr><td colspan=\"15\">FINANCIAL INDICATORS</td></tr><tr><td>FF Target Range (Bottom-Top, %)^</td><td>5.25-5.5</td><td>4.25-4.5</td><td>3.5-3.75</td><td>3.25-3.5</td><td>3-3.25</td><td>3.5-3.75</td><td>3.5-3.75</td><td>3.5-3.75</td><td>3.5-3.75</td><td>3.25-3.5</td><td>3-3.25</td><td>3-3.25</td><td>3-3.25</td><td>3-3.25</td></tr><tr><td>10-Year Treasury Note^</td><td>3.88</td><td>4.58</td><td>4.18</td><td>4.10</td><td>4.15</td><td>4.18</td><td>4.30</td><td>4.30</td><td>4.20</td><td>4.10</td><td>4.10</td><td>4.10</td><td>4.15</td><td>4.15</td></tr><tr><td>Euro (€/$)^</td><td>1.11</td><td>1.04</td><td>1.17</td><td>1.18</td><td>1.20</td><td>1.17</td><td>1.15</td><td>1.16</td><td>1.19</td><td>1.18</td><td>1.19</td><td>1.20</td><td>1.20</td><td>1.20</td></tr><tr><td>Yen ($/¥)^</td><td>141</td><td>157</td><td>157</td><td>158</td><td>141</td><td>157</td><td>159</td><td>158</td><td>158</td><td>158</td><td>156</td><td>141</td><td>101</td><td>141</td></tr></table>",
+                "table_type": "complex_table",
+                "table_nest_level": 1
+            },
+            "bbox": [
+                91,
+                104,
+                903,
+                500
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Source: GS Global Investment Research "
+                    }
+                ]
+            },
+            "bbox": [
+                80,
+                547,
+                346,
+                559
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "GS "
+                    }
+                ]
+            },
+            "bbox": [
+                81,
+                3,
+                184,
+                16
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "US Economics Analyst "
+                    }
+                ]
+            },
+            "bbox": [
+                771,
+                7,
+                916,
+                21
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "2 June 2026 "
+                    }
+                ]
+            },
+            "bbox": [
+                81,
+                954,
+                155,
+                965
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "12 "
+                    }
+                ]
+            },
+            "bbox": [
+                900,
+                954,
+                916,
+                965
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "The US Economics Team "
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                282,
+                47,
+                483,
+                65
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Jan Hatzius "
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                285,
+                91,
+                364,
+                103
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "+1(212)902-0394 "
+                    }
+                ]
+            },
+            "bbox": [
+                285,
+                104,
+                372,
+                113
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "jan.hatzius@gs.com "
+                    }
+                ]
+            },
+            "bbox": [
+                285,
+                113,
+                379,
+                121
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "GS & Co. LLC "
+                    }
+                ]
+            },
+            "bbox": [
+                285,
+                122,
+                405,
+                130
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Alec Phillips "
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                496,
+                91,
+                578,
+                104
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "+1(202)637-3746 "
+                    }
+                ]
+            },
+            "bbox": [
+                496,
+                104,
+                583,
+                112
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "alec.phillips@gs.com "
+                    }
+                ]
+            },
+            "bbox": [
+                496,
+                113,
+                594,
+                121
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "GS & Co. LLC "
+                    }
+                ]
+            },
+            "bbox": [
+                496,
+                122,
+                616,
+                130
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "David Mericle "
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                707,
+                91,
+                800,
+                103
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "+1(212)357-2619 "
+                    }
+                ]
+            },
+            "bbox": [
+                707,
+                104,
+                794,
+                113
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "david.mericle@gs.com "
+                    }
+                ]
+            },
+            "bbox": [
+                707,
+                113,
+                813,
+                121
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "GS & Co. LLC "
+                    }
+                ]
+            },
+            "bbox": [
+                707,
+                122,
+                826,
+                130
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Ronnie Walker "
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                285,
+                147,
+                383,
+                158
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "+1(917)343-4543 "
+                    }
+                ]
+            },
+            "bbox": [
+                285,
+                158,
+                372,
+                167
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "ronnie.walker@gs.com "
+                    }
+                ]
+            },
+            "bbox": [
+                285,
+                169,
+                390,
+                177
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "GS & Co. LLC "
+                    }
+                ]
+            },
+            "bbox": [
+                285,
+                177,
+                405,
+                184
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Manuel Abecasis "
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                496,
+                147,
+                609,
+                158
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "+1(212)902-8357 "
+                    }
+                ]
+            },
+            "bbox": [
+                496,
+                158,
+                581,
+                167
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "manuel.abecasis@gs.com "
+                    }
+                ]
+            },
+            "bbox": [
+                496,
+                169,
+                617,
+                177
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "GS & Co. LLC "
+                    }
+                ]
+            },
+            "bbox": [
+                496,
+                177,
+                616,
+                184
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Elsie Peng "
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                707,
+                147,
+                774,
+                158
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "+1(212)357-3137 "
+                    }
+                ]
+            },
+            "bbox": [
+                707,
+                158,
+                792,
+                167
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "elsie.peng@gs.com "
+                    }
+                ]
+            },
+            "bbox": [
+                707,
+                169,
+                797,
+                177
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "GS & Co. LLC "
+                    }
+                ]
+            },
+            "bbox": [
+                707,
+                177,
+                826,
+                184
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Pierfrancesco Mei "
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                285,
+                202,
+                406,
+                213
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "+1(212)902-8809 "
+                    }
+                ]
+            },
+            "bbox": [
+                285,
+                214,
+                372,
+                223
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "pierfrancesco.mei@gs.com "
+                    }
+                ]
+            },
+            "bbox": [
+                285,
+                223,
+                413,
+                232
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "GS & Co. LLC "
+                    }
+                ]
+            },
+            "bbox": [
+                285,
+                232,
+                405,
+                240
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Jessica Rindels "
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                496,
+                202,
+                596,
+                213
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "+1(972)368-1516 "
+                    }
+                ]
+            },
+            "bbox": [
+                496,
+                214,
+                583,
+                223
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "jessica.rindels@gs.com "
+                    }
+                ]
+            },
+            "bbox": [
+                496,
+                223,
+                604,
+                232
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "GS & Co. LLC "
+                    }
+                ]
+            },
+            "bbox": [
+                496,
+                232,
+                616,
+                240
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "GS "
+                    }
+                ]
+            },
+            "bbox": [
+                81,
+                3,
+                184,
+                16
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "US Economics Analyst "
+                    }
+                ]
+            },
+            "bbox": [
+                771,
+                7,
+                916,
+                21
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "2 June 2026 "
+                    }
+                ]
+            },
+            "bbox": [
+                81,
+                954,
+                155,
+                965
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "13 "
+                    }
+                ]
+            },
+            "bbox": [
+                900,
+                954,
+                916,
+                965
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Disclosure Appendix "
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                80,
+                38,
+                251,
+                59
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Reg AC "
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                80,
+                80,
+                135,
+                95
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "I, Ronnie Walker, hereby certify that all of the views expressed in this report accurately reflect my personal views, which have not been influenced by considerations of the firm's business or client relationships. "
+                    }
+                ]
+            },
+            "bbox": [
+                81,
+                103,
+                893,
+                126
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Unless otherwise stated, the individuals listed on the cover page of this report are analysts in GS' Global Investment Research division. "
+                    }
+                ]
+            },
+            "bbox": [
+                81,
+                131,
+                885,
+                145
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Contributing Authors: Ronnie Walker GS & Co. LLC. "
+                    }
+                ]
+            },
+            "bbox": [
+                81,
+                151,
+                439,
+                162
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Unless otherwise stated, the individuals listed in the Contributing Authors disclosure of this report are analysts in GS' Global Investment Research division. "
+                    }
+                ]
+            },
+            "bbox": [
+                81,
+                169,
+                893,
+                192
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Disclosures "
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                81,
+                205,
+                168,
+                219
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Regulatory disclosures "
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                81,
+                224,
+                251,
+                239
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Disclosures required by United States laws and regulations "
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                81,
+                244,
+                514,
+                258
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "See company-specific regulatory disclosures above for any of the following disclosures required as to companies referred to in this report: manager or co-manager in a pending transaction;  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "1\\%"
+                    },
+                    {
+                        "type": "text",
+                        "content": " or other ownership; compensation for certain services; types of client relationships; managed/co-managed public offerings in prior periods; directorships; for equity securities, market making and/or specialist role. GS trades or may trade as a principal in debt securities (or in related derivatives) of issuers discussed in this report. "
+                    }
+                ]
+            },
+            "bbox": [
+                81,
+                259,
+                906,
+                302
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The following are additional required disclosures: Ownership and material conflicts of interest: GS policy prohibits its analysts, professionals reporting to analysts and members of their households from owning securities of any company in the analyst's area of coverage. Analyst compensation: Analysts are paid in part based on the profitability of GS, which includes investment banking revenues. Analyst as officer or director: GS policy generally prohibits its analysts, persons reporting to analysts or members of their households from serving as an officer, director or advisor of any company in the analyst's area of coverage. Non-U.S. Analysts: Non-U.S. analysts may not be associated persons of GS & Co. LLC and therefore may not be subject to FINRA Rule 2241 or FINRA Rule 2242 restrictions on communications with a subject company, public appearances and trading in securities covered by the analysts. "
+                    }
+                ]
+            },
+            "bbox": [
+                81,
+                308,
+                911,
+                387
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Additional disclosures required under the laws and regulations of jurisdictions other than the United States "
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                81,
+                400,
+                872,
+                414
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The following disclosures are those required by the jurisdiction indicated, except to the extent already made above pursuant to United States laws and regulations. Australia: GS Australia Pty Ltd and its affiliates are not authorised deposit-taking institutions (as that term is defined in the Banking Act 1959 (Cth)) in Australia and do not provide banking services, nor carry on a banking business, in Australia. This research, and any access to it, is intended only for “wholesale clients” within the meaning of the Australian Corporations Act, unless otherwise agreed by GS. In producing research reports, members of Global Investment Research of GS Australia may attend site visits and other meetings hosted by the companies and other entities which are the subject of its research reports. In some instances the costs of such site visits or meetings may be met in part or in whole by the issuers concerned if GS Australia considers it is appropriate and reasonable in the specific circumstances relating to the site visit or meeting. To the extent that the contents of this document contains any financial product advice, it is general advice only and has been prepared by GS without taking into account a client’s objectives, financial situation or needs. A client should, before acting on any such advice, consider the appropriateness of the advice having regard to the client’s own objectives, financial situation and needs. A copy of certain GS Australia and New Zealand disclosure of interests and a copy of GS’ Australian Sell-Side Research Independence Policy Statement are available at: https://www.goldmansachs.com/disclosures/australia-new-zealand/index.html. Brazil: Disclosure information in relation to CVM Resolution n. 20 is available at https://www.gs.com/worldwide/brazil/area/gir/index.html. Where applicable, the Brazil-registered analyst primarily responsible for the content of this research report, as defined in Article 20 of CVM Resolution n. 20, is the first author named at the beginning of this report, unless indicated otherwise at the end of the text. Canada: This information is being provided to you for information purposes only and is not, and under no circumstances should be construed as, an advertisement, offering or solicitation by GS & Co. LLC for purchasers of securities in Canada to trade in any Canadian security. GS & Co. LLC is not registered as a dealer in any jurisdiction in Canada under applicable Canadian securities laws and generally is not permitted to trade in Canadian securities and may be prohibited from selling certain securities and products in certain jurisdictions in Canada. If you wish to trade in any Canadian securities or other products in Canada please contact GS Canada Inc., an affiliate of The GS Group Inc., or another registered Canadian dealer. Hong Kong: Further information on the securities of covered companies referred to in this research may be obtained on request from GS (Asia) L.L.C. India: Further information on the subject company or companies referred to in this research may be obtained from GS (India) Securities Private Limited, Research Analyst - SEBI Registration Number INH000001493, 10th Floor, Ascent-Worli, Sudam Kalu Ahire Marg, Worli, Mumbai-400 025, India, Corporate Identity Number U74140MH2006FTC160634, Phone +91 22 6616 9000, Fax +91 22 6616 9001. GS may beneficially own 1% or more of the securities (as such term is defined in clause 2 (h) the Indian Securities Contracts (Regulation) Act, 1956) of the subject company or companies referred to in this research report. Investment in securities market are subject to market risks. Read all the related documents carefully before investing. Registration granted by SEBI and certification from NISM in no way guarantee performance of the intermediary or provide any assurance of returns to investors. GS (India) Securities Private Limited compliance officer and investor grievance contact details can be found at: https://www.goldmansachs.com/worldwide/india/documents/Grievance-Redressal-and-Escalation-Matrix.pdf, and a copy of the annual audit compliance report can be found at this link: https://publishing.gs.com/content/site/india-annual-compliance-report.html. Japan: See below. Korea: This research, and any access to it, is intended only for “professional investors” within the meaning of the Financial Services and Capital Markets Act, unless otherwise agreed by GS. Further information on the subject company or companies referred to in this research may be obtained from GS (Asia) L.L.C., Seoul Branch. New Zealand: GS New Zealand Limited and its affiliates are neither “registered banks” nor “deposit takers” (as defined in the Reserve Bank of New Zealand Act 1989) in New Zealand. This research, and any access to it, is intended for “wholesale clients” (as defined in the Financial Advisers Act 2008) unless otherwise agreed by GS. A copy of certain GS Australia and New Zealand disclosure of interests is available at: https://www.goldmansachs.com/disclosures/australia-new-zealand/index.html. Russia: Research reports distributed in the Russian Federation are not advertising as defined in the Russian legislation, but are information and analysis not having product promotion as their main purpose and do not provide appraisal within the meaning of the Russian legislation on appraisal activity. Research reports do not constitute a personalized investment recommendation as defined in Russian laws and regulations, are not addressed to a specific client, and are prepared without analyzing the financial circumstances, investment profiles or risk profiles of clients. GS assumes no responsibility for any investment decisions that may be taken by a client or any other person based on this research report. Singapore: GS (Singapore) Pte. (Company Number: 198602165W), which is regulated by the Monetary Authority of Singapore, accepts legal responsibility for this research, and should be contacted with respect to any matters arising from, or in connection with, this research. Taiwan: This material is for reference only and must not be reprinted without permission. Investors should carefully consider their own investment risk. Investment results are the responsibility of the individual investor. United Kingdom: Persons who would be categorized as retail clients in the United Kingdom, as such term is defined in the rules of the Financial Conduct Authority, should read this research in conjunction with prior GS on the covered "
+                    }
+                ]
+            },
+            "bbox": [
+                81,
+                414,
+                916,
+                925
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "GS "
+                    }
+                ]
+            },
+            "bbox": [
+                81,
+                3,
+                184,
+                16
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "US Economics Analyst "
+                    }
+                ]
+            },
+            "bbox": [
+                771,
+                7,
+                916,
+                21
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "2 June 2026 "
+                    }
+                ]
+            },
+            "bbox": [
+                81,
+                954,
+                153,
+                965
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "14 "
+                    }
+                ]
+            },
+            "bbox": [
+                901,
+                954,
+                916,
+                963
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "companies referred to herein and should refer to the risk warnings that have been sent to them by GS International. A copy of these risks warnings, and a glossary of certain financial terms used in this report, are available from GS International on request. "
+                    }
+                ]
+            },
+            "bbox": [
+                80,
+                38,
+                901,
+                63
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "European Union and United Kingdom: Disclosure information in relation to Article 6 (2) of the European Commission Delegated Regulation (EU) (2016/958) supplementing Regulation (EU) No 596/2014 of the European Parliament and of the Council (including as that Delegated Regulation is implemented into United Kingdom domestic law and regulation following the United Kingdom's departure from the European Union and the European Economic Area) with regard to regulatory technical standards for the technical arrangements for objective presentation of investment recommendations or other information recommending or suggesting an investment strategy and for disclosure of particular interests or indications of conflicts of interest is available at https://www.gs.com/disclosures/europeanpolicy.html which states the European Policy for Managing Conflicts of Interest in Connection with Investment Research. "
+                    }
+                ]
+            },
+            "bbox": [
+                80,
+                69,
+                906,
+                148
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Japan: GS Japan Co., Ltd. is a Financial Instrument Dealer registered with the Kanto Financial Bureau under registration number Kinsho 69, and a member of Japan Securities Dealers Association, Financial Futures Association of Japan Type II Financial Instruments Firms Association, and Investment Management Association of Japan. Sales and purchase of equities are subject to commission pre-determined with clients plus consumption tax. See company-specific disclosures as to any applicable disclosures required by Japanese stock exchanges, the Japanese Securities Dealers Association or the Japanese Securities Finance Company. "
+                    }
+                ]
+            },
+            "bbox": [
+                81,
+                153,
+                913,
+                211
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Global product; distributing entities "
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                81,
+                223,
+                349,
+                237
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "GS Global Investment Research produces and distributes research products for clients of GS on a global basis. Analysts based in GS offices around the world produce research on industries and companies, and research on macroeconomics, currencies, commodities and portfolio strategy. This research is disseminated in Australia by GS Australia Pty Ltd (ABN 21 006 797 897); in Brazil by GS do Brasil Corretora de Títulos e Valores Mobiliários S.A.; Public Communication Channel GS Brazil: 0800 727 5764 and / or contatogoldmanbrasil@gs.com. Available Weekdays (except holidays), from 9am to 6pm. Canal de Comunicação com o Público GS Brasil: 0800 727 5764 e/ou contatogoldmanbrasil@gs.com. Horário de funcionamento: segunda-feira à sexta-feira (exceto feriados), das 9h às 18h; in Canada by GS & Co. LLC; in Hong Kong by GS (Asia) L.L.C.; in India by GS (India) Securities Private Ltd.; in Japan by GS Japan Co., Ltd.; in the Republic of Korea by GS (Asia) L.L.C., Seoul Branch; in New Zealand by GS New Zealand Limited; in Russia by OOO GS; in Singapore by GS (Singapore) Pte. (Company Number: 198602165W); and in the United States of America by GS & Co. LLC. GS International has approved this research in connection with its distribution in the United Kingdom. "
+                    }
+                ]
+            },
+            "bbox": [
+                80,
+                237,
+                916,
+                359
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "GS International (“GSI”), authorised by the Prudential Regulation Authority (“PRA”) and regulated by the Financial Conduct Authority (“FCA”) and the PRA, has approved this research in connection with its distribution in the United Kingdom. "
+                    }
+                ]
+            },
+            "bbox": [
+                81,
+                365,
+                879,
+                388
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "European Economic Area: GS Bank Europe SE (\"GSBE\") is a credit institution incorporated in Germany and, within the Single Supervisory Mechanism, subject to direct prudential supervision by the European Central Bank and in other respects supervised by German Federal Financial Supervisory Authority (Bundesanstalt für Finanzdienstleistungsaufsicht, BaFin) and Deutsche Bundesbank and disseminates research within the European Economic Area. "
+                    }
+                ]
+            },
+            "bbox": [
+                81,
+                395,
+                903,
+                440
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "General disclosures "
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                81,
+                453,
+                228,
+                466
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "This research is for our clients only. Other than disclosures relating to GS, this research is based on current public information that we consider reliable, but we do not represent it is accurate or complete, and it should not be relied on as such. The information, opinions, estimates and forecasts contained herein are as of the date hereof and are subject to change without prior notification. We seek to update our research as appropriate, but various regulations may prevent us from doing so. Other than certain industry reports published on a periodic basis, the large majority of reports are published at irregular intervals as appropriate in the analyst's judgment. "
+                    }
+                ]
+            },
+            "bbox": [
+                81,
+                467,
+                913,
+                523
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "GS conducts a global full-service, integrated investment banking, investment management, and brokerage business. We have investment banking and other business relationships with a substantial percentage of the companies covered by Global Investment Research. GS & Co. LLC, the United States broker dealer, is a member of SIPC (https://www.sipc.org). "
+                    }
+                ]
+            },
+            "bbox": [
+                81,
+                529,
+                913,
+                564
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Our salespeople, traders, and other professionals may provide oral or written market commentary or trading strategies to our clients and principal trading desks that reflect opinions that are contrary to the opinions expressed in this research. Our asset management area, principal trading desks and investing businesses may make investment decisions that are inconsistent with the recommendations or views expressed in this research. "
+                    }
+                ]
+            },
+            "bbox": [
+                81,
+                569,
+                913,
+                604
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "We and our affiliates, officers, directors, and employees will from time to time have long or short positions in, act as principal in, and buy or sell, the securities or derivatives, if any, referred to in this research, unless otherwise prohibited by regulation or GS policy. "
+                    }
+                ]
+            },
+            "bbox": [
+                81,
+                609,
+                888,
+                634
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The views attributed to third party presenters at GS arranged conferences, including individuals from other parts of GS, do not necessarily reflect those of Global Investment Research and are not an official view of GS. "
+                    }
+                ]
+            },
+            "bbox": [
+                81,
+                639,
+                913,
+                662
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Any third party referenced herein, including any salespeople, traders and other professionals or members of their household, may have positions in the products mentioned that are inconsistent with the views expressed by analysts named in this report. "
+                    }
+                ]
+            },
+            "bbox": [
+                81,
+                669,
+                911,
+                693
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "This research is focused on investment themes across markets, industries and sectors. It does not attempt to distinguish between the prospects or performance of, or provide analysis of, individual companies within any industry or sector we describe. "
+                    }
+                ]
+            },
+            "bbox": [
+                81,
+                698,
+                883,
+                723
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Any trading recommendation in this research relating to an equity or credit security or securities within an industry or sector is reflective of the investment theme being discussed and is not a recommendation of any such security in isolation. "
+                    }
+                ]
+            },
+            "bbox": [
+                81,
+                728,
+                866,
+                751
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "This research is not an offer to sell or the solicitation of an offer to buy any security in any jurisdiction where such an offer or solicitation would be illegal. It does not constitute a personal recommendation or take into account the particular investment objectives, financial situations, or needs of individual clients. Clients should consider whether any advice or recommendation in this research is suitable for their particular circumstances and, if appropriate, seek professional advice, including tax advice. The price and value of investments referred to in this research and the income from them may fluctuate. Past performance is not a guide to future performance, future returns are not guaranteed, and a loss of original capital may occur. Fluctuations in exchange rates could have adverse effects on the value or price of, or income derived from, certain investments. "
+                    }
+                ]
+            },
+            "bbox": [
+                81,
+                758,
+                916,
+                826
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Certain transactions, including those involving futures, options, and other derivatives, give rise to substantial risk and are not suitable for all investors. Investors should review current options and futures disclosure documents which are available from GS sales representatives or at https://www.theocc.com/about/publications/character-risks.jsp and https://www.goldmansachs.com/disclosures/cftc_fcm_disclosures. Transaction costs may be significant in option strategies calling for multiple purchase and sales of options such as spreads. Supporting documentation will be supplied upon request. "
+                    }
+                ]
+            },
+            "bbox": [
+                81,
+                832,
+                903,
+                888
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Differing Levels of Service provided by Global Investment Research: The level and types of services provided to you by GS Global Investment Research may vary as compared to that provided to internal and other external clients of GS, depending on various factors including your individual preferences as to the frequency and manner of receiving communication, your risk profile and investment focus and perspective (e.g., "
+                    }
+                ]
+            },
+            "bbox": [
+                81,
+                895,
+                898,
+                928
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "GS "
+                    }
+                ]
+            },
+            "bbox": [
+                81,
+                3,
+                184,
+                16
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "US Economics Analyst "
+                    }
+                ]
+            },
+            "bbox": [
+                771,
+                7,
+                916,
+                21
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "2 June 2026 "
+                    }
+                ]
+            },
+            "bbox": [
+                81,
+                954,
+                153,
+                965
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "15 "
+                    }
+                ]
+            },
+            "bbox": [
+                901,
+                954,
+                916,
+                963
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "marketwide, sector specific, long term, short term), the size and scope of your overall client relationship with GS, and legal and regulatory constraints. As an example, certain clients may request to receive notifications when research on specific securities is published, and certain clients may request that specific data underlying analysts' fundamental analysis available on our internal client websites be delivered to them electronically through data feeds or otherwise. No change to an analyst's fundamental research views (e.g., ratings, price targets, or material changes to earnings estimates for equity securities), will be communicated to any client prior to inclusion of such information in a research report broadly disseminated through electronic publication to our internal client websites or through other means, as necessary, to all clients who are entitled to receive such reports. "
+                    }
+                ]
+            },
+            "bbox": [
+                80,
+                38,
+                903,
+                107
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "All research reports are disseminated and available to all clients simultaneously through electronic publication to our internal client websites. Not all research content is redistributed to our clients or available to third-party aggregators, nor is GS responsible for the redistribution of our research by third party aggregators. For research, models or other data related to one or more securities, markets or asset classes (including related services) that may be available to you, please contact your GS representative or go to https://research.gs.com. "
+                    }
+                ]
+            },
+            "bbox": [
+                81,
+                113,
+                897,
+                158
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Disclosure information is also available at https://www.gs.com/research/hedge.html or from Research Compliance, 200 West Street, New York, NY 10282. "
+                    }
+                ]
+            },
+            "bbox": [
+                81,
+                165,
+                887,
+                187
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "© 2026 GS. "
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                81,
+                195,
+                220,
+                206
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "You are permitted to store, display, analyze, modify, reformat, and print the information made available to you via this service only for your own use. You may not resell or reverse engineer this information to calculate or develop any index for disclosure and/or marketing or create any other derivative works or commercial product(s), data or offering(s) without the express written consent of GS. You are not permitted to publish, transmit, or otherwise reproduce this information, in whole or in part, in any format to any third party without the express written consent of GS. This foregoing restriction includes, without limitation, using, extracting, downloading or retrieving this information, in whole or in part, to train or finetune a machine learning or artificial intelligence system, or to provide or reproduce this information, in whole or in part, as a prompt or input to any such system. "
+                    }
+                ]
+            },
+            "bbox": [
+                81,
+                213,
+                911,
+                291
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "GS "
+                    }
+                ]
+            },
+            "bbox": [
+                81,
+                3,
+                184,
+                16
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "US Economics Analyst "
+                    }
+                ]
+            },
+            "bbox": [
+                771,
+                7,
+                916,
+                21
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "2 June 2026 "
+                    }
+                ]
+            },
+            "bbox": [
+                81,
+                954,
+                153,
+                965
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "16 "
+                    }
+                ]
+            },
+            "bbox": [
+                901,
+                954,
+                916,
+                963
+            ]
+        }
+    ]
+]

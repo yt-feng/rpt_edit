@@ -1,0 +1,4226 @@
+[
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "US Rates Strategy | North America "
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                63,
+                97,
+                426,
+                119
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Skew: A Robust Signal in a Changing Market "
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                63,
+                130,
+                496,
+                204
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "We show that the skew signal is robust across model parameter choices and has retained predictive power for rate moves over the past 17 years. Since 2019, more frequent shocks have favored faster signals. Predictive power has weakened in front-end rates but strengthened in longer-dated tails. "
+                    }
+                ]
+            },
+            "bbox": [
+                63,
+                220,
+                591,
+                320
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Key Takeaways "
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                68,
+                339,
+                200,
+                357
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "text_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "We extend the skew analysis across market regimes to understand when the signal works, when it fails, and what drives performance. "
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "■ Results are consistent across model parameter choices, whether duration is expressed through swaps or Treasury futures, and across short-dated expiries. "
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "The signal retains predictive power back to at least 2009. Since 2019, faster signals have outperformed amid more frequent shocks. "
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "Predictive power weakened in 2y tails as macro shocks dominated front-end rates, but improved in 30y tails where positioning remains important. "
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "The signal continues to point to short duration across the curve, with skew richening further despite already elevated starting levels. "
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                63,
+                362,
+                573,
+                559
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Please add me to your distribution list. "
+                    }
+                ]
+            },
+            "bbox": [
+                63,
+                574,
+                310,
+                590
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "MS & CO. LLC "
+                    }
+                ]
+            },
+            "bbox": [
+                624,
+                97,
+                743,
+                107
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Shaun Zhou "
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                624,
+                109,
+                699,
+                122
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Strategist "
+                    }
+                ]
+            },
+            "bbox": [
+                624,
+                125,
+                666,
+                133
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Shaun.Zhou@morganstanley.com +1 212 761-3348 "
+                    }
+                ]
+            },
+            "bbox": [
+                624,
+                135,
+                933,
+                145
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Matthew Hornbach "
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                624,
+                151,
+                741,
+                162
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Strategist "
+                    }
+                ]
+            },
+            "bbox": [
+                624,
+                165,
+                665,
+                175
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Matthew.Hornbach@morganstanley.com +1 212 761-1837 "
+                    }
+                ]
+            },
+            "bbox": [
+                624,
+                176,
+                933,
+                186
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Martin W Tobias, CFA "
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                624,
+                189,
+                756,
+                200
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Strategist "
+                    }
+                ]
+            },
+            "bbox": [
+                624,
+                203,
+                665,
+                213
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Martin.Tobias@morganstanley.com +1 212 761-6076 "
+                    }
+                ]
+            },
+            "bbox": [
+                624,
+                214,
+                933,
+                224
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Aryaman Singh "
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                624,
+                227,
+                717,
+                239
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Strategist "
+                    }
+                ]
+            },
+            "bbox": [
+                624,
+                241,
+                665,
+                250
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Aryaman@morganstanley.com +1 212 761-1993 "
+                    }
+                ]
+            },
+            "bbox": [
+                624,
+                252,
+                933,
+                262
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Eli P Carter "
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                624,
+                265,
+                694,
+                277
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Strategist "
+                    }
+                ]
+            },
+            "bbox": [
+                624,
+                279,
+                665,
+                287
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Eli.Carter@morganstanley.com +1 212 761-4703 "
+                    }
+                ]
+            },
+            "bbox": [
+                624,
+                290,
+                933,
+                300
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "2026 EXTEL "
+                    }
+                ]
+            },
+            "bbox": [
+                640,
+                315,
+                720,
+                325
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "ALL-AMERICA RESEARCH POLL "
+                    }
+                ]
+            },
+            "bbox": [
+                640,
+                327,
+                774,
+                354
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "May 26 – June, 12 2026 "
+                    }
+                ]
+            },
+            "bbox": [
+                640,
+                354,
+                761,
+                367
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "VIEW OUR ANALYSTS > "
+                    }
+                ]
+            },
+            "bbox": [
+                808,
+                325,
+                916,
+                356
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "MS does and seeks to do business with companies covered in MS. As a result, investors should be aware that the firm may have a conflict of interest that could affect the objectivity of MS. Investors should consider MS as only a single factor in making their investment decision. "
+                    }
+                ]
+            },
+            "bbox": [
+                622,
+                823,
+                929,
+                904
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "For analyst certification and other important disclosures, refer to the Disclosure Section, located at the end of this report. "
+                    }
+                ]
+            },
+            "bbox": [
+                622,
+                906,
+                916,
+                941
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "MS "
+                    }
+                ]
+            },
+            "bbox": [
+                63,
+                44,
+                263,
+                71
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "RESEARCH "
+                    }
+                ]
+            },
+            "bbox": [
+                295,
+                51,
+                364,
+                63
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "June 2, 2026 04:59 PM GMT "
+                    }
+                ]
+            },
+            "bbox": [
+                63,
+                75,
+                246,
+                90
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "IDEA "
+                    }
+                ]
+            },
+            "bbox": [
+                885,
+                49,
+                933,
+                66
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Interest Rate Derivative Strategy "
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                63,
+                113,
+                534,
+                143
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "United States | Skew: A robust signal in a changing market "
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                362,
+                159,
+                906,
+                180
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "MS & CO. LLC "
+                    }
+                ]
+            },
+            "bbox": [
+                68,
+                212,
+                246,
+                226
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Shaun Zhou +1 212 761-3348 "
+                    }
+                ]
+            },
+            "bbox": [
+                362,
+                205,
+                929,
+                226
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Matthew Hornbach, CMT\nMatthew.Hornbach@morganstanley.com +1 212 761-1863 "
+                    }
+                ]
+            },
+            "bbox": [
+                362,
+                239,
+                928,
+                271
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Martin Tobias, CFA, CMT\nMartin.Tobias@morganstanley.com +1 212 761-6076 "
+                    }
+                ]
+            },
+            "bbox": [
+                362,
+                273,
+                926,
+                304
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Aryaman Singh\nAryaman@morganstanley.com +1 212 761-1993 "
+                    }
+                ]
+            },
+            "bbox": [
+                362,
+                308,
+                928,
+                339
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Eli Carter\nEli.Carter@morganstanley.com +1 212 761-4703 "
+                    }
+                ]
+            },
+            "bbox": [
+                362,
+                342,
+                928,
+                373
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Follow-up on the skew signal analysis "
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                362,
+                387,
+                714,
+                407
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Executive summary "
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                362,
+                426,
+                519,
+                443
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "In our previous note, we showed that changes in short-expiry skew contain predictive information about subsequent rate moves. In this follow-up, we test the robustness of that result across different implementation choices, parameter specifications, and market regimes. We find that: "
+                    }
+                ]
+            },
+            "bbox": [
+                359,
+                458,
+                924,
+                526
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "text_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "- The signal remains robust. Performance is broadly unchanged when duration exposure is expressed using swaps rather than Treasury futures. Similarly, skew signals derived from 1m, 3m, and 6m expiries produce comparable results, suggesting that the information content is not tied to a specific instrument. "
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "- The signal also exhibits a meaningful information horizon. Predictive power remains observable for at least several days after a skew move, although its value declines over time. This suggests that changes in skew are incorporated into rates gradually rather than immediately. "
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "- Extending the sample back to 2009 confirms that the relationship is not unique to the post-COVID period. However, performance has become more sensitive to signal speed since 2019. Across lookback-window and trading delays, faster-moving signals have generally outperformed slower-moving alternatives. "
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "- Since 2019, signal performance deteriorated most in the 2y sector, where rate moves have increasingly been driven by macro and policy shocks. By contrast, the 30y tail experienced the largest improvement, suggesting that investor positioning remains an important driver of long-end rates. "
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                390,
+                537,
+                931,
+                819
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Overall, the evidence suggests that skew captures a genuine feature of market behavior rather than a sample-specific artifact. We think the key lesson from the post-2019 period is that markets began changing faster. "
+                    }
+                ]
+            },
+            "bbox": [
+                361,
+                838,
+                921,
+                888
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "MS | RESEARCH "
+                    }
+                ]
+            },
+            "bbox": [
+                63,
+                45,
+                250,
+                61
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "IDEA "
+                    }
+                ]
+            },
+            "bbox": [
+                901,
+                47,
+                933,
+                60
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "2 "
+                    }
+                ]
+            },
+            "bbox": [
+                66,
+                968,
+                75,
+                977
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Testing signal robustness "
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                362,
+                104,
+                565,
+                122
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The robustness analysis spans a large parameter space. We evaluate four lookback windows, three expiries, and 10 trading delays, resulting in 120 specifications. "
+                    }
+                ]
+            },
+            "bbox": [
+                361,
+                137,
+                882,
+                170
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The goal of is not to identify the best-performing combination – that would be data mining. Rather, we want to test whether the signal remains effective under reasonable specification changes and use-performance differences to understand when and why the signal works. "
+                    }
+                ]
+            },
+            "bbox": [
+                361,
+                181,
+                916,
+                250
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "One chart is worth a thousand words "
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                362,
+                287,
+                656,
+                304
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Exhibit 1 summarizes the results using a bubble chart. For each specification, we focus on three aspects of performance: risk-adjusted return (Sharpe ratio on y-axis), downside risk (maximum drawdown on x-axis), and consistency (the percentage of months with positive cumulative returns as bubble size). Opacity represents trading delay. The darkest bubble indicates 1-day trading delay, where the lightest indicates 10-day trading delay (i.e., trade based on signal observed 10 days ago). "
+                    }
+                ]
+            },
+            "bbox": [
+                361,
+                319,
+                928,
+                422
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "This visualization allows us to compare all 120 strategy specifications simultaneously. All else equal, the most attractive configurations are those that combine high Sharpe ratios, limited drawdowns, and strong consistency, appearing as large bubbles in the top-right portion of the chart. "
+                    }
+                ]
+            },
+            "bbox": [
+                361,
+                434,
+                921,
+                502
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Two conclusions stand out. First, the results are broadly consistent with those obtained using Treasury futures, and performance varies little across 1m, 3m, and 6m expiries. This suggests the signal reflects broad investor positioning rather than the pricing of a specific instrument or point on the skew surface. "
+                    }
+                ]
+            },
+            "bbox": [
+                361,
+                513,
+                924,
+                580
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Second, the 21-day lookback delivers the most consistent performance. Shorter lookbacks can achieve similar Sharpe ratios but are more sensitive to noise, while the 63-day lookback generally underperforms. "
+                    }
+                ]
+            },
+            "bbox": [
+                361,
+                593,
+                926,
+                643
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Overall, the signal appears robust to the choice of duration instrument and option expiry. Performance is more sensitive to the speed at which changes in skew are measured, with the 21-day lookback providing a reasonable balance between responsiveness and stability. "
+                    }
+                ]
+            },
+            "bbox": [
+                361,
+                655,
+                926,
+                705
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "MS | RESEARCH "
+                    }
+                ]
+            },
+            "bbox": [
+                63,
+                45,
+                250,
+                61
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "IDEA "
+                    }
+                ]
+            },
+            "bbox": [
+                901,
+                47,
+                933,
+                59
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "MS "
+                    }
+                ]
+            },
+            "bbox": [
+                66,
+                967,
+                241,
+                978
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "3 "
+                    }
+                ]
+            },
+            "bbox": [
+                921,
+                968,
+                931,
+                977
+            ]
+        }
+    ],
+    [
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/5ed37ab2f268c5a5c036de539e3c4941599362b7b320503ea5e1fe40c8b1f5d4.jpg"
+                },
+                "content": "",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Exhibit 1: 10y tail results for all combinations of lookback window, option expiry, and trading delay "
+                    }
+                ],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: Bloomberg, S&P, MS "
+                    }
+                ]
+            },
+            "sub_type": "scatter",
+            "bbox": [
+                212,
+                142,
+                898,
+                361
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Compare LIBOR and SOFR era "
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                362,
+                391,
+                602,
+                407
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The LIBOR-SOFR transition provides a convenient division of the sample into two distinct macro environments. The LIBOR era (2009 to mid-2019) was characterized by persistently low rates and subdued volatility, while the SOFR era (mid-2019 to today) encompassed the pandemic shock, inflation surge, subsequent policy tightening cycle, and the current Iran conflict. "
+                    }
+                ]
+            },
+            "bbox": [
+                359,
+                422,
+                931,
+                506
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The comparison shows that the deterioration of the 63-day lookback is largely a post-2019 phenomenon (Exhibit 2 and Exhibit 3). During the LIBOR era, it performed similarly to shorter lookbacks. During the SOFR era, performance weakened materially while shorter specifications remained more resilient. "
+                    }
+                ]
+            },
+            "bbox": [
+                359,
+                520,
+                931,
+                587
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/de60446ccac5385f53f17e0dc497725047e23e585c6e599d9fcc4bbff56b8738.jpg"
+                },
+                "content": "",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Exhibit 2: 10y tail results during 2009 - 2019 "
+                    }
+                ],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: Bloomberg, S&P, MS "
+                    }
+                ]
+            },
+            "sub_type": "scatter",
+            "bbox": [
+                212,
+                630,
+                529,
+                857
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/4d20f4a60d5e1eb9cd18d21d7797ea9a3d341f1ebb8b456da39ab21da236c28e.jpg"
+                },
+                "content": "| Max Drawdown | Sharpe Ratio (10Y SOFR) | Maturity |\n| ------------ | ------------------------ | -------- |\n| -30%         | -0.4                     | 6M       |\n| -25%         | 0.2                      | 1M       |\n| -20%         | 0.3                      | 3M       |\n| -15%         | 0.4                      | 6M       |\n| -10%         | 0.6                      | 1M       |\n| -5%          | 0.8                      | 3M       |\n| -30%         | -0.2                     | 10-day   |\n| -25%         | 0.1                      | 10-day   |\n| -20%         | 0.3                      | 10-day   |\n| -15%         | 0.5                      | 10-day   |\n| -10%         | 0.7                      | 10-day   |\n| -5%          | 0.9                      | 10-day   |\n| -30%         | -0.3                     | 21-day   |\n| -25%         | 0.2                      | 21-day   |\n| -20%         | 0.4                      | 21-day   |\n| -15%         | 0.6                      | 21-day   |\n| -10%         | 0.8                      | 21-day   |\n| -5%          | 1.0                      | 21-day   |\n| -30%         | -0.4                     | 63-day   |\n| -25%         | 0.1                      | 63-day   |\n| -20%         | 0.3                      | 63-day   |\n| -15%         | 0.5                      | 63-day   |\n| -10%         | 0.7                      | 63-day   |\n| -5%          | 0.9                      | 63-day   |\n| -30%         | -0.3                     | 1M       |\n| -25%         | 0.2                      | 1M       |\n| -20%         | 0.4                      | 1M       |\n| -15%         | 0.6                      | 1M       |\n| -10%         | 0.8                      | 1M       |\n| -5%          | 1.0                      | 1M       |\n| -30%         | -0.2                     | 3M       |\n| -25%         | 0.1                      | 3M       |\n| -20%         | 0.3                      | 3M       |\n| -15%         | 0.5                      | 3M       |\n| -10%         | 0.7                      | 3M       |\n| -5%          | 0.9                      | 3M       |\n| -30%         | -0.1                     | 6M       |\n| -25%         | 0.2                      | 6M       |\n| -20%         | 0.4                      | 6M       |\n| -15%         | 0.6                      | 6M       |\n| -10%         | 0.8                      | 6M       |\n| -5%          | 1.0                      | 6M       |\n| -30%         | 0.3                      | 1M       |\n| -25%         | 0.5                      | 1M       |\n| -20%         | 0.7                      | 1M       |\n| -15%         | 0.9                      | 1M       |\n| -10%         | 1.1                      | 1M       |\n| -5%          | 1.3                      | 1M       |\n| -30%         | 0.4                      | 3M       |\n| -25%         | 0.6                      | 3M       |\n| -20%         | 0.8                      | 3M       |\n| -15%         | 1.0                      | 3M       |\n| -10%         | 1.2                      | 3M       |\n| -5%          | 1.4                      | 3M       |\n| -30%         | 0.5                      | 6M       |\n| -25%         | 0.7                      | 6M       |\n| -20%         | 0.9                      | 6M       |\n| -15%         | 1.1                      | 6M       |\n| -10%         | 1.3                      | 6M       |\n| -5%          | 1.5                      | 6M       |\n| -30%         | 0.6                      | 1M       |\n| -25%         | 0.8                      | 1M       |\n| -20%         | 1.0                      | 1M       |\n| -15%         | 1.2                      | 1M       |\n| -10%         | 1.4                      | 1M       |\n| -5%          | 1.6                      | 1M       |\n| -30%         | 0.7                      | 3M       |\n| -25%         | 0.9                      | 3M       |\n| -20%         | 1.1                      | 3M       |\n| -15%         | 1.3                      | 3M       |\n| -10%         | 1.5                      | 3M       |\n| -5%          | 1.7                      | 3M       |\n| -30%         | 0.8                      | 6M       |\n| -25%         | 1.0                      | 6M       |\n| -20%         | 1.2                      | 6M       |\n| -15%         | 1.4                      | 6M       |\n| -10%         | 1.6                      | 6M       |\n| -5%          | 1.8                      | 6M       |\n| -30%         | 0.9                      | 1M       |\n| -25%         | 1.1                      | 1M       |\n| -20%         | 1.3                      | 1M       |\n| -15%         | 1.5                      | 1M       |\n| -10%         | 1.7                      | 1M       |\n| -5%          | 1.9                      | 1M       |\n| -30%         | 1.0                      | 3M       |\n| -25%         | 1.2                      | 3M       |\n| -20%         | 1.4                      | 3M       |\n| -15%         | 1.6                      | 3M       |\n| -10%         | 1.8                      | 3M       |\n| -5%          | 2.0                      | 3M       |\n| -30%         | 1.2                      | 6M       |\n| -25%         | 1.4                      | 6M       |\n| -20%         | 1.6                      | 6M       |\n| -15%         | 1.8                      | 6M       |\n| -10%         | 2.0                      | 6M       |\n| -5%          | 2.2                      | 6M       |\n| -30%         | 1.4                      | 1M       |\n| -25%         | 1.6                      | 1M       |\n| -20%         | 1.8                      | 1M       |\n| -15%         | 2.0                      | 1M       |\n| -10%         | 2.2                      | 1M       |\n| -5%          | 2.4                      | 1M       |\n| -30%         | 1.6                      | 3M       |\n| -25%         | 1.8                      | 3M       |\n| -20%         | 2.0                      | 3M       |\n| -15%         | 2.2                      | 3M       |\n| -10%         | 2.4                      | 3M       |\n| -5%          | 2.6                      | 3M       |\n| -30%         | 1.8                      | 6M       |\n| -25%         | 2.0                      | 6M       |\n| -20%         | 2.2                      | 6M       |\n| -15%         | 2.4                      | 6M       |\n| -10%         | 2.6                      | 6M       |\n| -5%          | 2.8                      | 6M       |\n| -30%         | 2.0                      | >6M      |\n| -25%         | <line>                   | >6M      |\n| -20%         | <line>                   | >6M      |\n| -15%         | <line>                   | >6M      |\n| -10%         | <line>                   | >6M      |\n| -5%          | <line>                   | >6M      |\n| +5           | <line>                   | >6M      |\nThe chart displays the Sharpe Ratio for each period (Max Drawdown) on the x-axis and the Sharpe Ratio for each period (Max Drawdown) on the y-axis.",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Exhibit 3: 10y tail results from 2019 - today "
+                    }
+                ],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: Bloomberg, S&P, MS "
+                    }
+                ]
+            },
+            "sub_type": "scatter",
+            "bbox": [
+                586,
+                630,
+                901,
+                857
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Signal decay "
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                362,
+                885,
+                464,
+                902
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The original note focused on strategies with a one-day trading delay, whereby positions are established on   "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "(t+1)"
+                    },
+                    {
+                        "type": "text",
+                        "content": "  and held through   "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "(t+2)"
+                    },
+                    {
+                        "type": "text",
+                        "content": "  based on signals observed at   "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "(t)"
+                    },
+                    {
+                        "type": "text",
+                        "content": " . "
+                    }
+                ]
+            },
+            "bbox": [
+                361,
+                917,
+                910,
+                950
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "MS | RESEARCH "
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                45,
+                250,
+                61
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "IDEA "
+                    }
+                ]
+            },
+            "bbox": [
+                901,
+                47,
+                933,
+                59
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "4 "
+                    }
+                ]
+            },
+            "bbox": [
+                66,
+                968,
+                75,
+                977
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Here, we extend the framework to consider longer trading delays. Strategies with longer holding periods can be replicated as linear combinations of portfolios formed using different trading delays, enabling us to characterize the evolution of signal alpha over time. "
+                    }
+                ]
+            },
+            "bbox": [
+                361,
+                106,
+                919,
+                174
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Examining performance across different trading delays provides insight into how quickly the information embedded in skew is incorporated into rates. Exhibit 4 and Exhibit 5 show the historical total return of strategies based on 3m10y skews. "
+                    }
+                ]
+            },
+            "bbox": [
+                361,
+                186,
+                916,
+                237
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "During 2009 - 2019, all trading delays from one to ten days generated positive returns, although performance declined as delays increased. The same pattern persists after 2019. This suggests that the information contained in skew was not immediately reflected in market prices and remained relevant for several days after the signal was observed. "
+                    }
+                ]
+            },
+            "bbox": [
+                361,
+                248,
+                924,
+                316
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Most strategy specifications experienced a drawdown between July 2021 and July 2023. Short-delay strategies eventually recovered from the drawdown, while longer-delay strategies did not. "
+                    }
+                ]
+            },
+            "bbox": [
+                361,
+                327,
+                911,
+                378
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/f007926772888f8bf6465717d9e8f2481af37e20a3639dc59285283be22727e9.jpg"
+                },
+                "content": "| Year | 1-day delay | 2-day | 3-day | 4-day | 5-day | 6-day | 7-day | 8-day | 9-day |\n|------|-------------|-------|-------|-------|-------|-------|-------|-------|-------|\n| '09  | ~0%         | ~0%   | ~0%   | ~0%   | ~0%   | ~0%   | ~0%   | ~0%   | ~0%   |\n| '10  | ~10%        | ~5%   | ~10%  | ~5%   | ~5%   | ~5%   | ~5%   | ~5%   | ~5%   |\n| '11  | ~20%        | ~10%  | ~20%  | ~10%  | ~10%  | ~10%  | ~10%  | ~10%  | ~10%  |\n| '12  | ~30%        | ~15%  | ~30%  | ~15%  | ~15%  | ~15%  | ~15%  | ~15%  | ~15%  |\n| '13  | ~40%        | ~20%  | ~40%  | ~20%  | ~20%  | ~20%  | ~20%  | ~20%  | ~20%  |\n| '14  | ~50%        | ~25%  | ~50%  | ~25%  | ~25%  | ~25%  | ~25%  | ~25%  | ~25%  |\n| '15  | ~60%        | ~30%  | ~60%  | ~30%  | ~30%  | ~30%  | ~30%  | ~30%  | ~30%  |\n| '16  | ~70%        | ~35%  | ~70%  | ~35%  | ~35%  | ~35%  | ~35%  | ~35%  | ~35%  |\n| '17  | ~75%        | ~40%  | ~75%  | ~40%  | ~40%  | ~40%  | ~40%  | ~40%  | ~40%  |\n| '18  | ~80%        | ~45%  | ~80%  | ~45%  | ~45%  | ~45%  | ~45%  | ~45%  | ~45%  |\n| '19  | ~85%        | ~50%  | ~85%  | ~50%  | ~50%  | ~50%  | ~50%  | ~50%  | ~50%  |\n| '20  | ~90%        | ~55%  | ~90%  | ~55%  | ~55%  | ~55%  | ~55%  | ~55%  | ~55%  |",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Exhibit 4: Historical return over the LIBOR era "
+                    }
+                ],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: Bloomberg, S&P, MS "
+                    }
+                ]
+            },
+            "sub_type": "line",
+            "bbox": [
+                218,
+                412,
+                534,
+                625
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/6984d2c530b3abd6ee7740050543033c223fd9d8189a3da34f3679cdf4c30a66.jpg"
+                },
+                "content": "| Year | 1-day delay | 2-day | 3-day | 4-day | 5-day | 6-day | 7-day | 8-day | 9-day |\n|------|-------------|-------|-------|-------|-------|-------|-------|-------|-------|\n| '19  | ~0%         | ~0%   | ~0%   | ~0%   | ~0%   | ~0%   | ~0%   | ~0%   | ~0%   |\n| '20  | ~5%         | ~5%   | ~5%   | ~5%   | ~5%   | ~5%   | ~5%   | ~5%   | ~5%   |\n| '21  | ~10%        | ~10%  | ~10%  | ~10%  | ~10%  | ~10%  | ~10%  | ~10%  | ~10%  |\n| '22  | ~15%        | ~15%  | ~15%  | ~15%  | ~15%  | ~15%  | ~15%  | ~15%  | ~15%  |\n| '23  | ~5%         | ~5%   | ~5%   | ~5%   | ~5%   | ~5%   | ~5%   | ~5%   | ~5%   |\n| '24  | ~10%        | ~10%  | ~10%  | ~10%  | ~10%  | ~10%  | ~10%  | ~10%  | ~10%  |\n| '25  | ~20%        | ~20%  | ~20%  | ~20%  | ~20%  | ~20%  | ~20%  | ~20%  | ~20%  |\n| '26  | ~15%        | ~15%  | ~15%  | ~15%  | ~15%  | ~15%  | ~15%  | ~15%  | ~15%  |",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Exhibit 5: Historical return over the SOFR era "
+                    }
+                ],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: Bloomberg, S&P, MS "
+                    }
+                ]
+            },
+            "sub_type": "line",
+            "bbox": [
+                591,
+                412,
+                903,
+                625
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "A closer look at 2021 to 2023 "
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                362,
+                652,
+                599,
+                667
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The period from 2021 to 2023 represents the most significant underperformance episode for the skew signal and provides useful insight into its limitations. "
+                    }
+                ]
+            },
+            "bbox": [
+                361,
+                684,
+                924,
+                717
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The first challenge was that skew repriced early in the selloff. As investors adjusted to higher inflation, payer skew richened sharply and reached historically elevated levels by early 2021. Rates then sold off by another 300bp over the next two years, but skew did not continue to richen at the same pace because much of the bearish outlook had already been priced in. As a result, the signal could no longer benefit from the broader directional move in rates and instead relied on correctly identifying shorter-term fluctuations. This made performance more sensitive to the choice of lookback window. "
+                    }
+                ]
+            },
+            "bbox": [
+                361,
+                728,
+                926,
+                849
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "A second challenge was the high level of implied volatility. By 2022, both implied volatility and payer skew were already elevated. This left little room for further skew richening, even as rates continued to sell off. Once 3m10y implied volatility rose above roughly 100bp/year, skew became less responsive to additional moves in rates. "
+                    }
+                ]
+            },
+            "bbox": [
+                361,
+                861,
+                931,
+                929
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "MS | RESEARCH "
+                    }
+                ]
+            },
+            "bbox": [
+                63,
+                45,
+                250,
+                61
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "IDEA "
+                    }
+                ]
+            },
+            "bbox": [
+                901,
+                47,
+                933,
+                59
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "MS "
+                    }
+                ]
+            },
+            "bbox": [
+                66,
+                967,
+                240,
+                978
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "5 "
+                    }
+                ]
+            },
+            "bbox": [
+                921,
+                968,
+                931,
+                977
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Taken together, these observations suggest that the signal was most effective during the initial repricing phase. Once skew and implied volatility reached elevated levels, further rate sell-offs generated little additional skew richening, reducing the signal's predictive power. "
+                    }
+                ]
+            },
+            "bbox": [
+                361,
+                106,
+                921,
+                174
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/0bb4cd2862a01e58a63b1518ac62f76617a33931f097c98e85f64c89aed41166.jpg"
+                },
+                "content": "| Year | 10y rate (%) | 3m10y rho (RHS) |\n|------|--------------|-----------------|\n| '19  | ~1.8%        | ~-0.7           |\n| '20  | ~1.5%        | ~-0.4           |\n| '21  | ~0.5%        | ~0.3            |\n| '22  | ~1.5%        | ~-0.6           |\n| '23  | ~3.5%        | ~-0.3           |\n| '24  | ~4.5%        | ~0.1            |\n| '25  | ~4.0%        | ~-0.2           |\n| '26  | ~4.5%        | ~-0.3           |",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Exhibit 6: 3m10y skew and 10y rates "
+                    }
+                ],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: Bloomberg. MS "
+                    }
+                ]
+            },
+            "sub_type": "line",
+            "bbox": [
+                218,
+                208,
+                553,
+                421
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/bd85f81c4cb67f1d244579c32a455b9205138154c1bfba87f1049cb3ee8e2083.jpg"
+                },
+                "content": "| Year | 3m10y vol (bp/year) | 3m10y rho (RHS) |\n|------|---------------------|-----------------|\n| '19  | ~50                 | ~0.0            |\n| '20  | ~70                 | ~0.1            |\n| '21  | ~80                 | ~0.2            |\n| '22  | ~100                | ~0.1            |\n| '23  | ~150                | ~0.0            |\n| '24  | ~130                | ~-0.1           |\n| '25  | ~110                | ~-0.2           |\n| '26  | ~70                 | ~-0.3           |",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Exhibit 7: 3m10y skew and 3m10y implied vol "
+                    }
+                ],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: Bloomberg. MS "
+                    }
+                ]
+            },
+            "sub_type": "line",
+            "bbox": [
+                589,
+                208,
+                928,
+                421
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Extending the analysis to all parts of the curve "
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                362,
+                449,
+                730,
+                465
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The performance deterioration since 2019 has been most pronounced in the 2y tail, while the 30y tail is the only part of the curve that saw an improvement. One interpretation is that front-end rates have become increasingly driven by macro and policy shocks, reducing the impact of positioning signals. Long-end rates, by contrast, appear to remain more influenced by investor flows, allowing skew to retain (or even improve) its predictive power. "
+                    }
+                ]
+            },
+            "bbox": [
+                359,
+                481,
+                931,
+                584
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The 63-day lookback underperformed across nearly all tails, while 21-day lookback delivered more consistent results. "
+                    }
+                ]
+            },
+            "bbox": [
+                361,
+                595,
+                880,
+                628
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Together, these findings suggest that the post-2019 environment has increased the value of speed. Signals that adapt quickly to changes in positioning continue to perform well, while those relying on older information have become less effective. "
+                    }
+                ]
+            },
+            "bbox": [
+                359,
+                640,
+                921,
+                691
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "MS "
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                45,
+                187,
+                61
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "RESEARCH "
+                    }
+                ]
+            },
+            "bbox": [
+                204,
+                47,
+                248,
+                58
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "IDEA "
+                    }
+                ]
+            },
+            "bbox": [
+                901,
+                47,
+                931,
+                59
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "6 "
+                    }
+                ]
+            },
+            "bbox": [
+                66,
+                969,
+                75,
+                977
+            ]
+        }
+    ],
+    [
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/9efe2aaba07a22fd7f47edff33e8eafdb8bd723e133dfde75c3899c9a95375fd.jpg"
+                },
+                "content": "| Max Drawdown | Sharpe Ratio (2Y IBOR) | Duration |\n| ------------ | ---------------------- | -------- |\n| -5%          | -0.6                   | 5-day    |\n| -5%          | -0.4                   | 5-day    |\n| -5%          | -0.2                   | 5-day    |\n| -5%          | 0.0                    | 5-day    |\n| -5%          | 0.2                    | 5-day    |\n| -5%          | 0.4                    | 5-day    |\n| -5%          | 0.6                    | 5-day    |\n| -5%          | 0.8                    | 5-day    |\n| -5%          | 1.0                    | 5-day    |\n| -4%          | -0.4                   | 10-day   |\n| -4%          | -0.2                   | 10-day   |\n| -4%          | 0.0                    | 10-day   |\n| -4%          | 0.2                    | 10-day   |\n| -4%          | 0.4                    | 10-day   |\n| -4%          | 0.6                    | 10-day   |\n| -4%          | 0.8                    | 10-day   |\n| -4%          | 1.0                    | 10-day   |\n| -3%          | -0.2                   | 21-day   |\n| -3%          | -0.1                   | 21-day   |\n| -3%          | 0.1                    | 21-day   |\n| -3%          | 0.3                    | 21-day   |\n| -3%          | 0.5                    | 21-day   |\n| -3%          | 0.7                    | 21-day   |\n| -3%          | 0.9                    | 21-day   |\n| -3%          | 1.1                    | 21-day   |\n| -2%          | -0.1                   | 63-day   |\n| -2%          | 0.1                    | 63-day   |\n| -2%          | 0.3                    | 63-day   |\n| -2%          | 0.5                    | 63-day   |\n| -2%          | 0.7                    | 63-day   |\n| -2%          | 0.9                    | 63-day   |\n| -2%          | 1.1                    | 63-day   |\n| -1%          | -0.1                   | 1M       |\n| -1%          | 0.1                    | 1M       |\n| -1%          | 0.3                    | 1M       |\n| -1%          | 0.5                    | 1M       |\n| -1%          | 0.7                    | 1M       |\n| -1%          | 0.9                    | 1M       |\n| -1%          | 1.1                    | 1M       |\n| -1%          | 1.3                    | 1M       |\n| -1%          | 1.5                    | 1M       |\n| -1%          | 1.7                    | 1M       |\n| -1%          | 1.9                    | 1M       |\n| -1%          | 2.1                    | 3M       |\n| -1%          | 2.3                    | 3M       |\n| -1%          | 2.5                    | 3M       |\n| -1%          | 2.7                    | 3M       |\n| -1%          | 2.9                    | 3M       |\n| -1%          | 3.1                    | 3M       |\n| -1%          | 3.3                    | 3M       |\n| -1%          | 3.5                    | 3M       |\n| -1%          | 3.7                    | 6M       |\n| -1%          | 3.9                    | 6M       |\n| -1%          | 4.1                    | 6M       |\n| -1%          | 4.3                    | 6M       |\n| -1%          | 4.5                    | 6M       |\n| -1%          | 4.7                    | 6M       |\n| -1%          | 4.9                    | 6M       |\n| -1%          | 5.1                    | 6M       |\n| -1%          | 5.3                    | 6M       |\n| -1%          | 5.5                    | 6M       |\n| -1%          | 5.7                    | 6M       |\n| -1%          | 5.9                    | 6M       |\n| -1%          | 6.1                    | 6M       |\n| -1%          | 6.3                    | 6M       |\n| -1%          | 6.5                    | 6M       |\n| -1%          | 6.7                    | 6M       |\n| -1%          | 6.9                    | 6M       |\n| -1%          | 7.1                    | 6M       |\n| -1%          | 7.3                    | 6M       |\n| -1%          | 7.5                    | 6M       |\n| -1%          | 7.7                    | 6M       |\n| -1%          | 7.9                    | 6M       |\n| -1%          | 8.1                    | 6M       |\n| -1%          | 8.3                    | 6M       |\n| -1%          | 8.5                    | 6M       |\n| -1%          | 8.7                    | 6M       |\n| -1%          | 8.9                    | 6M       |\n| -1%          | 9.1                    | 6M       |\n| -1%          | 9.3                    | 6M       |\n| -1%          | 9.5                    | 6M       |\n| -1%          | 9.7                    | 6M       |\n| -1%          | 9.9                    | 6M       |\n| -2%          | -0.2                   | Other     |\n| -2%          | -0.4                   | Other     |\n| -2%          | -0.2                   | Other     |\n| -2%          | +0.2                   | Other     |\n| -2%          | +0.4                   | Other     |\n| -2%          | +0.6                   | Other     |\n| -2%          | +0.8                   | Other     |\n| -2%          | +1.0                   | Other     |\n| -2%          | +1.2                   | Other     |\n| -2%          | +1.4                   | Other     |\n| -2%          | +1.6                   | Other     |\n| -2%          | +1.8                   | Other     |\n| -2%          | +2.0                   | Other     |\n| -2%          | +2.2                   | Other     |\n| -2%          | +2.4                   | Other     |\n| -2%          | +2.6                   | Other     |\n| -2%          | +2.8                   | Other     |\n| -2%          | +3.0                   | Other     |\n| -2%          | +3.2                   | Other     |\n| -2%          | +3.4                   | Other     |\n| -2%          | +3.6                   | Other     |\n| -2%          | +3.8                   | Other     |\n| -2%          | +4.0                   | Other     |\n| -2%          | +4.2                   | Other     |\n| -2%          | +4.4                   | Other     |\n| -2%          | +4.6                   | Other     |\n| -2%          | +4.8                   | Other     |\n| -2%          | +5.0                   | Other     |\n| -2%          | +5.2                   | Other     |\n| -2%          | +5.4                   | Other     |\n| -2%          | +5.6                   | Other     |\n| -2%          | +5.8                   | Other     |\n| -2%          | +6.0                   | Other     |\n| -2%          | +6.2                   | Other     |\n| -2%          | +6.4                   | Other     |\n| -2%          | +6.6                   | Other     |\n| -2%          | +6.8                   | Other     |\n| -2%          | +7.0                   | Other     |\n| -2%          | +7.2                   | Other     |\n| -2%          | +7.4                   | Other     |\n| -2%          | +7.6                   | Other     |\n| -2%          | +7.8                   | Other     |\n| -2%          | +8.0                   | Other     |\n| -2%          | +8.2                   | Other     |\n| -2%          | +8.4                   | Other     |\n| -2%          | +8.6                   | Other     |\n| -2%          | +8.8                   | Other     |\n| -2%          | +9.0                   | Other     |\n| -2%          | +9.2                   | Other     |\n| -2%          | +9.4                   | Other     |\n| -2%          | +9.6                   | Other     |\n| -2%          | +9.8                   | Other     |\n| -2%          | +10.0                  | Other     |\n| -2%          | +10.2                  | Other     |\n| -2%          | +10.4                  | Other     |\n| -2%          | +10.6                  | Other     |\n| -2%          | +10.8                  | Other     |\n| -2%          | +11.0                  | Other     |\n| -2%          | +11.2                  | Other     |\n| -2%          | +11.4                  | Other     |\n| -2%          | +11.6                  | Other     |\n| -2%          | +11.8                  | Other     |\n| -2%          | +12.0                  | Other     |\n| -2%          | +12.2                  | Other     |\n| -2%          | +12.4                  | Other     |\n| -2%          | +12.6                  | Other     |\n| -2%          | +12.8                  | Other     |\n| -2%          | +13.0                  | Other     |\n| -2%          | +13.2                  | Other     |\n| -2%          | +13.4                  | Other     |\n| -2%          | +13.6                  | Other     |\n| -2%          | +13.8                  | Other     |\n| -2%          | +14.0                  | Other     |\n| -2%          | +14.2                  | Other     |\n| -2%          | +14.4                  | Other     |\n| -2%          | +14.6                  | Other     |\n| -2%          | +14.8                  | Other     |\n| -2%          | +15.0                  | Other     |\n| -2%          | +15.2                  | Other     |\n| -2%          | +15.4                  | Other     |\n| -2%          | +15.6                  | Other     |\n| -2%          | +15.8                  | Other     |\n| -2%          | +16.0                  | Other     |\n| -2%          | +16.2                  | Other     |\n| -2%          | +16.4                  | Other     |\n| -2%          | +16.6                  | Other     |\n| -2%          | +16.8                  | Other     |\n| -2%          | +17.0                  | Other     |\n| -2%          | +17.2                  | Other     |\n| -2%          | +17.4                  | Other     |\n| -2%          | +17.6                  | Other     |\n| -2%          | +17.8                  | Other     |\n| -2%          | +18.0                  | Other     |\n| -2%          | +18.2                  | Other     |\n| -2%          | +18.4                  | Other     |\n| -2%          | +18.6                  | Other     |\n| -2%          | +18.8                  | Other     |\n| -2%          | +19.0                  | Other     |\n| -2%          | +19.2                  | Other     |\n| -2%          | +19.4                  | Other     |\n| -2%          | +19.6                  | Other     |\n| -2%          | +19.8                  | Other     |\n| -2%          | +20.0                  | Other     |\n| ... (Total)            )      / Difference (Sharpe Ratio) for each duration: The Sharpe Ratio for each duration is calculated based on the number of years (Max Drawdown). The Sharpe Ratio for each duration is calculated based on the number of years (Min Drawdown). The Sharpe Ratio for each duration is calculated based on the number of years (Max Drawdown). The Sharpe Ratio for each duration is calculated based on the number of years (Min Drawdown). The Sharpe Ratio for each duration is calculated based on the number of years (Max Drawdown). The Sharpe Ratio for each duration is calculated based on the number of years (Min Drawdown). The Sharpe Ratio for each duration is calculated based on the number of years (Max Drawdown) and the Sharpe Ratio for each duration is calculated based on the number of years (Min Drawdown). The Sharpe Ratio for each duration is calculated based on the number of years (Max Drawdown) and the Sharpe Ratio for each duration is calculated based on the number of years (Min Drawdown). The Sharpe Ratio for each duration is calculated based on the number of years (Max Drawdown) and the Sharpe Ratio for each duration is calculated based on the number of years (Min Drawup) and the Sharpe Ratio for each duration is calculated based on the number of years (Max Drawup). The Sharpe Ratio for each duration is calculated based on the number of years (Min Drawup) and the Sharpe Ratio for each duration is calculated based on the number of years (Max Drawup). The Sharpe Ratio for each duration is calculated based on the number of years (Min Drawup) and the Sharpe Ratio for each duration is calculated based on the number of years (Max Drawup). The Sharpe Ratio for each duration is calculated based on the number of years (Min DrawUp) and the Sharpe Ratio for each duration is calculated based on the number of years (MaxDrawUp). The Sharpe Ratio for each duration is calculated based on the number of years (MinDrawUp) and the Sharpe Ratio for each duration is calculated based on the number of years (MaxDrawUp). The Sharpe Ratio for each duration is calculated based on the number of years (MinDrawUp) and the Sharpe Ratio for each duration is calculated based on the number of years (MaxDrawUp). The Sharpe Ratio for each duration is calculated based on the number of years (MinDrawUp) and the Sharpe Ratio for each duration is calculated based on the number ofyears (MaxDrawUp) and the Sharpe Ratio for each duration is calculated based on the number of years (MinDrawUp). The Sharpe Ratio for each duration is calculated based on the number of years (MaxDrawUp) and the Sharpe Ratio for each duration is calculated based on the number of years (MinDrawUp). The Sharpe Ratio for each duration is calculated based on the number of years (MaxDrawUp) and the Sharpe Ratio for each duration is calculated based on the number of years (MinDrawUp). The Sharpe Ratio for each duration is calculated based on the number of years (MaxDrawUp) and the Sharpe Ratio for each duration is calculated based onthe number of years (MinDrawUp) and the Sharpe Ratio for each duration is calculated based on the number of years (MaxDrawUp). The Sharpe Ratio for each duration is calculated based on the number of years (MinDrawUp) and the Sharpe Ratio for each duration is calculated based on the number of years (MaxDrawUp). The Sharpe Ratio for each duration is calculated based on the number of years (MinDrawUp) and the Sharpe Ratio for each duration iscalculated as a cumulative sum of all bars in parentheses, but this represents a cumulative sum of all bars; all bars represent a cumulative sum of all bars; all bars represent a cumulative sum of all bars; all bars represent a cumulative sum of all bars; all bars represent a cumulative sum of all bars; all bars represent a cumulative sum of all bars; all bars represent a cumulative sum of all bars; all bars represent a cumulative sum of all bars; all bars represent a cumulative sum of all bars; all bars represent a cumulative sum of all bars; all bars represent a cumulative sum of all bars; all bars are calculated as a cumulative sum of all bars; all bars are calculated as a cumulative sum of all bars; all bars are calculated as a cumulative sum of all bars; all bars are calculated as a cumulative sum of all bars; all bars are calculated as a cumulative sum of all bars; all bars are calculated as a cumulative sum of all bars; all bars are calculated as a cumulative sum of all bars; all bars are calculated as a cumulative sum of all bars; all bars are calculated as a cumulative sum at all values; all bars are calculated as a cumulative sum at all values; all bars are calculated as a cumulative sum at all values; all bars are calculated as a cumulative sum at all values; all bars are calculated as a cumulative sum at all values; all bars are calculated as a cumulative sum at all values; all bars are calculated as a cumulative sum at all values; all bars are calculated as a cumulative sum at all values; all bars are calculated as a cumulative sum at all values; all bars include 'Other' category; all bars include 'Other' category with different numbers of shares or brackets; no bar exceeds one or more than one share or bracket; one bar includes 'Other' category with different numbers of shares or brackets; no bar exceeds one or more than one share or bracket; one bar includes 'Other' category with different numbers of shares or brackets; no bar exceeds one or more than one share or bracket; one bar includes 'Other' category with different numbers of shares or brackets; no bar exceeds one or more than one share or bracket; one bar includes 'Other' category with different numbers of shares or brackets; no bar exceeds one or more, except one bar has an unlabelled value that can be used in the chart.",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Exhibit 8: 2y tail results during 2009 - 2019 "
+                    }
+                ],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: Bloomberg. S&P. MS. "
+                    }
+                ]
+            },
+            "sub_type": "scatter",
+            "bbox": [
+                212,
+                143,
+                529,
+                369
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/da6c895538da1b1524f3ed052db878a8bfa5463d2dbbf27c71b2bcc61c466ab1.jpg"
+                },
+                "content": "| Max Drawdown | Sharpe Ratio (2Y SOFR) | Duration |\n| ------------ | ---------------------- | -------- |\n| -10%         | -0.4                   | 6M       |\n| -8%          | -0.6                   | 10-day   |\n| -6%          | -0.2                   | 21-day   |\n| -4%          | 0.4                    | 5-day    |\n| -2%          | 0.6                    | 1M       |\n| -4%          | 0.7                    | 3M       |\n| -6%          | 0.5                    | 6M       |\n| -8%          | -0.1                   | 63-day   |\n| -10%         | -0.3                   | 10-day   |\n| -10%         | -0.5                   | 5-day    |\n| -8%          | -0.7                   | 21-day   |\n| -6%          | -0.3                   | 1M       |\n| -4%          | 0.3                    | 3M       |\n| -2%          | 0.5                    | 6M       |",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Exhibit 9: 2y tail results from 2019 - today "
+                    }
+                ],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: Bloomberg. S&P. MS. "
+                    }
+                ]
+            },
+            "sub_type": "scatter",
+            "bbox": [
+                586,
+                143,
+                890,
+                369
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/420d58cd42396e94e3b4f7c3b9d48e3935d42fc939c133620af6e7498891f11e.jpg"
+                },
+                "content": "",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Exhibit 10: 5y tail results during 2009 - 2019 "
+                    }
+                ],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: Bloomberg. S&P. MS "
+                    }
+                ]
+            },
+            "sub_type": "bubble",
+            "bbox": [
+                212,
+                429,
+                516,
+                655
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/c6ea1144e8ef5c14bd2954b531b0f53eccce4de13cc9391b3bffd47a2c00467d.jpg"
+                },
+                "content": "| Max Drawdown | Sharpe Ratio (5Y SOFR) | Maturity |\n| ------------ | ---------------------- | -------- |\n| -25%         | -0.7                   | 5-day    |\n| -20%         | -0.4                   | 10-day   |\n| -15%         | 0.0                    | 21-day   |\n| -10%         | 0.5                    | 63-day   |\n| -5%          | 0.8                    | 1M       |\n| -10%         | 0.3                    | 3M       |\n| -5%          | 0.6                    | 6M       |",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Exhibit 11: 5y tail results from 2019 - today "
+                    }
+                ],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: Bloomberg. S&P. MS "
+                    }
+                ]
+            },
+            "sub_type": "scatter",
+            "bbox": [
+                586,
+                429,
+                890,
+                655
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "MS "
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                45,
+                187,
+                63
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "RESEARCH "
+                    }
+                ]
+            },
+            "bbox": [
+                204,
+                47,
+                250,
+                58
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "IDEA "
+                    }
+                ]
+            },
+            "bbox": [
+                901,
+                47,
+                933,
+                60
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "MS "
+                    }
+                ]
+            },
+            "bbox": [
+                66,
+                967,
+                240,
+                978
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "7 "
+                    }
+                ]
+            },
+            "bbox": [
+                921,
+                968,
+                931,
+                977
+            ]
+        }
+    ],
+    [
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/03f57dca4afdf83faeb98c0a5326172ae71a2d585e2854151d19b8ebc18667dd.jpg"
+                },
+                "content": "| Max Drawdown | Sharpe Ratio (30Y IBOR) | Timeframe |\n| ------------ | ------------------------ | --------- |\n| -60%         | -0.6                     | 5-day     |\n| -50%         | -0.4                     | 10-day    |\n| -40%         | 0.0                      | 21-day    |\n| -30%         | 0.4                      | 63-day    |\n| -20%         | 0.8                      | 1M        |\n| -20%         | 0.6                      | 3M        |\n| -20%         | 0.4                      | 6M        |",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Exhibit 12: 30y tail results during 2009 - 2019 "
+                    }
+                ],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: Bloomberg. S&P. MS "
+                    }
+                ]
+            },
+            "sub_type": "bubble",
+            "bbox": [
+                212,
+                143,
+                529,
+                369
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/5e2fffa3a5155394149856affcf22d00fb8ad47947d6873204a9c40261e30fbc.jpg"
+                },
+                "content": "| Max Drawdown | Sharpe Ratio (30Y SOFR) | Maturity |\n| ------------ | ------------------------ | -------- |\n| -40%         | -0.2                     | 5-day    |\n| -35%         | 0.1                      | 10-day   |\n| -30%         | 0.3                      | 21-day   |\n| -25%         | 0.4                      | 63-day   |\n| -20%         | 0.5                      | 1M       |\n| -15%         | 0.6                      | 3M       |\n| -10%         | 0.7                      | 6M       |\n| -5%          | 0.8                      | 5-day    |",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Exhibit 13: 30y tail results from 2019 - today "
+                    }
+                ],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: Bloomberg. S&P. MS "
+                    }
+                ]
+            },
+            "sub_type": "scatter",
+            "bbox": [
+                586,
+                143,
+                906,
+                369
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Conclusion "
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                362,
+                398,
+                452,
+                414
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The skew signal remains robust across a wide range of model parameter choices, suggesting it captures a genuine feature of market behavior rather than a sample-specific artifact. "
+                    }
+                ]
+            },
+            "bbox": [
+                361,
+                430,
+                924,
+                481
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Since 2019, markets have experienced more frequent shocks and regime shifts. As a result, signals with 63-day lookback have underperformed. The signal has also become less relevant at the front end, where macro shocks increasingly dominate rate moves, while retaining predictive power in longer-dated tails. "
+                    }
+                ]
+            },
+            "bbox": [
+                361,
+                492,
+                931,
+                560
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The 21-day change in 3m skew remains a reasonable baseline, but the appropriate implementation should depend on market regime rather than historical optimization. "
+                    }
+                ]
+            },
+            "bbox": [
+                361,
+                571,
+                897,
+                604
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Skew Signal Monitor "
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                362,
+                643,
+                558,
+                662
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Skew signals continue to indicate near 100% short duration exposure across the curve. Despite the recent retracement in rates, payer skew remains well supported. "
+                    }
+                ]
+            },
+            "bbox": [
+                361,
+                681,
+                906,
+                715
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "MS | RESEARCH "
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                45,
+                250,
+                61
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "IDEA "
+                    }
+                ]
+            },
+            "bbox": [
+                901,
+                47,
+                933,
+                59
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "8 "
+                    }
+                ]
+            },
+            "bbox": [
+                66,
+                968,
+                75,
+                977
+            ]
+        }
+    ],
+    [
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/8c6ba657479b41f6e17b078137d5727158f881566d065b34a2f024e858a0d3b6.jpg"
+                },
+                "content": "| Month   | signal on 2y | 5y    | 10y   | 30y   |\n|---------|--------------|-------|-------|-------|\n| May'25  | ~80%         | ~90%  | ~95%  | ~100% |\n| Aug'25  | ~-40%        | ~-20% | ~-30% | ~-80% |\n| Nov'25  | ~-20%        | ~-10% | ~-20% | ~-60% |\n| Feb'26  | ~-80%        | ~-60% | ~-40% | ~-100%|\n| May'26  | ~90%         | ~95%  | ~90%  | ~95%  |",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Exhibit 14: Exposure across the curve based on skew signal "
+                    }
+                ],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: Bloomberg, MS "
+                    }
+                ]
+            },
+            "sub_type": "line",
+            "bbox": [
+                218,
+                152,
+                540,
+                366
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/f5cfc048cb2b332358ff6a9d94046dd53f84e8ed0174f0f27d743b3bedc0d049.jpg"
+                },
+                "content": "| Month   | return on 2y | 5y    | 10y   | 30y   |\n|---------|--------------|-------|-------|-------|\n| May'25  | 1.00         | 1.00  | 1.00  | 1.02  |\n| Aug'25  | 0.99         | 0.98  | 0.97  | 0.96  |\n| Nov'25  | 0.99         | 0.98  | 0.98  | 0.97  |\n| Feb'26  | 0.99         | 0.98  | 0.98  | 0.95  |\n| May'26  | 1.00         | 1.00  | 0.99  | 0.96  |",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Exhibit 15: Total return of strategies based on skew signal over the past year "
+                    }
+                ],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: Bloomberg, MS "
+                    }
+                ]
+            },
+            "sub_type": "line",
+            "bbox": [
+                591,
+                152,
+                913,
+                364
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "SDR Monitor "
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                362,
+                393,
+                488,
+                411
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "While dealers' peak net gamma position has stabilized near \\$0.7mm in recent sessions, their gamma exposure at current spot levels has turned net short. Spot gamma exposure is now at its lowest level of the past year. In the long end, this pattern suggests customers have been net buyers of short-dated ATM options while continuing to sell lower-strike receivers. Together, these flows have left dealers increasingly short gamma around prevailing market levels. "
+                    }
+                ]
+            },
+            "bbox": [
+                359,
+                431,
+                931,
+                536
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/be5243f3bd9f86daccc07c54a2414dcf69010219efdca56ef2d7fc9be1565276.jpg"
+                },
+                "content": "| x    | front-end | belly | long-end |\n| ---- | --------- | ----- | -------- |\n| -100 | 0.1       | 0.18  | 0.6      |\n| -80  | 0.1       | 0.2   | 0.65     |\n| -60  | 0.1       | 0.2   | 0.65     |\n| -40  | 0.05      | 0.2   | 0.6      |\n| -20  | -0.05     | 0.2   | -0.3     |\n| 0    | -0.05     | 0.15  | -0.45    |\n| 20   | 0.0       | 0.1   | -0.2     |\n| 40   | 0.05      | 0.05  | 0.1      |\n| 60   | 0.1       | 0.05  | 0.15     |\n| 80   | 0.1       | 0.05  | 0.2      |\n| 100  | 0.1       | 0.05  | 0.2      |",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Exhibit 16: Dealers' gamma exposure profile "
+                    }
+                ],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: DTCC, MS "
+                    }
+                ]
+            },
+            "sub_type": "line",
+            "bbox": [
+                220,
+                569,
+                535,
+                787
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/a8bce361b49d760d05ec2787ecbfba7139101d6e0d2fae3341e2f11519fdc9de.jpg"
+                },
+                "content": "| Date    | front-end | belly | long-end |\n|---------|-----------|-------|----------|\n| Jun-25  | 0.1       | 0.1   | 0.8      |\n| Aug-25  | 0.1       | 0.1   | 0.9      |\n| Oct-25  | 0.1       | 0.1   | 1.7      |\n| Dec-25  | 0.1       | 0.1   | 2.7      |\n| Feb-26  | 0.1       | 0.1   | 2.3      |\n| Apr-26  | 0.1       | 0.1   | 1.9      |\n| Jun-26  | 0.1       | 0.1   | 0.7      |",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Exhibit 17: Historical peak gamma exposure "
+                    }
+                ],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: DTCC, MS "
+                    }
+                ]
+            },
+            "sub_type": "line",
+            "bbox": [
+                591,
+                569,
+                928,
+                781
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Callable Issuance Monitor "
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                362,
+                816,
+                606,
+                835
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Issuance in May was modestly higher than in April but remained below the elevated levels seen in 1Q. June is typically a seasonally slow month for callable issuance. If realized, lower issuance could provide support to the intermediate sector of the volatility surface. "
+                    }
+                ]
+            },
+            "bbox": [
+                359,
+                856,
+                931,
+                906
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "MS "
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                45,
+                187,
+                61
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "RESEARCH "
+                    }
+                ]
+            },
+            "bbox": [
+                204,
+                47,
+                250,
+                58
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "IDEA "
+                    }
+                ]
+            },
+            "bbox": [
+                901,
+                47,
+                933,
+                59
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "MS "
+                    }
+                ]
+            },
+            "bbox": [
+                66,
+                967,
+                240,
+                978
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "9 "
+                    }
+                ]
+            },
+            "bbox": [
+                921,
+                968,
+                931,
+                977
+            ]
+        }
+    ],
+    [
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/7ec313cb996c113874c3b8c30835d65a14600d463f1daf92e07a9b7f7ed81036.jpg"
+                },
+                "content": "| Date   | Formosa | Supranational | Financial | Non-financial |\n|--------|---------|---------------|-----------|---------------|\n| Jan-20 | 3.5     | 1.5           | 4.0       | 9.0           |\n| Jan-21 | 4.0     | 2.0           | 5.5       | 1.0           |\n| Jan-22 | 1.5     | 1.0           | 3.0       | 2.5           |\n| Jan-23 | 1.0     | 0.5           | 4.5       | 1.5           |\n| Jan-24 | 0.5     | 1.0           | 4.0       | 2.0           |\n| Jan-25 | 1.0     | 3.0           | 8.0       | 7.0           |\n| Jan-26 | 0.5     | 8.0           | 16.0      | 12.0          |",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Exhibit 18: Notional of callable bond issuance "
+                    }
+                ],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: Bloomberg, MS "
+                    }
+                ]
+            },
+            "sub_type": "bar",
+            "bbox": [
+                71,
+                135,
+                472,
+                393
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/8ce2cdc3ec3eb35d53a01d30299a496fe61d05b9d298d7f9408ba096c4e3b09d.jpg"
+                },
+                "content": "| Date | Formosa ($mm) | Supranational ($mm) | Financial ($mm) | Non-financial ($mm) | Agency ($mm) |\n|---|---|---|---|---|---|\n| Jan-20 | 1.5 | 0.5 | 3.0 | 14.0 | 5.0 |\n| Jan-21 | 4.0 | 0.5 | 1.0 | 9.5 | 7.0 |\n| Jan-22 | 1.0 | 0.5 | 0.5 | 2.5 | 3.0 |\n| Jan-23 | 0.5 | 0.5 | 0.5 | 1.0 | 1.0 |\n| Jan-24 | 0.5 | 0.5 | 0.5 | 1.0 | 1.5 |\n| Jan-25 | 0.5 | 0.5 | 0.5 | 1.0 | 3.0 |\n| Jan-26 | 0.5 | 0.5 | 1.0 | 1.0 | 4.5 |",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Exhibit 19: Vega supply from callable issuance "
+                    }
+                ],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: Bloomberg, MS "
+                    }
+                ]
+            },
+            "sub_type": "bar_stacked",
+            "bbox": [
+                519,
+                135,
+                929,
+                391
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "text_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "• Trade idea: Maintain long 2y10y straddle vs. short 6m10y straddle "
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "• Trade idea: Maintain long 1y1y F/F+25/F+50 payer ladder "
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                416,
+                494,
+                867,
+                532
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "MS | RESEARCH "
+                    }
+                ]
+            },
+            "bbox": [
+                63,
+                45,
+                250,
+                61
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "IDEA "
+                    }
+                ]
+            },
+            "bbox": [
+                901,
+                47,
+                933,
+                60
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "10 "
+                    }
+                ]
+            },
+            "bbox": [
+                66,
+                968,
+                83,
+                977
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Valuation Methodology and Risks "
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                63,
+                112,
+                547,
+                142
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Below you will find a list of our current trade ideas, entry levels, entry dates, rationales, and risks. "
+                    }
+                ]
+            },
+            "bbox": [
+                361,
+                159,
+                916,
+                191
+            ]
+        },
+        {
+            "type": "table",
+            "content": {
+                "image_source": {
+                    "path": "images/7b9069dfd671b4aee69271c43e55d19c301a95c85e377c4eb2c9339397b8eec7.jpg"
+                },
+                "table_caption": [
+                    {
+                        "type": "text",
+                        "content": "Interest Rate Derivatives "
+                    }
+                ],
+                "table_footnote": [],
+                "html": "<table><tr><td>TRADE</td><td>ENTRY LEVEL</td><td>ENTRY DATE</td><td>RATIONALE</td><td>RISKS</td></tr><tr><td>Buy 2y10y straddle vs. sell 6m10y straddle</td><td>350c</td><td>4/30/2026</td><td>2y10y expected to be supported by structural flow from mortgage hedgers, while 6m10y offers attractive rolldown as realized remain muted.</td><td>The risk is if vol surface flattens materially or if rates move materially away from current level.</td></tr><tr><td>Buy 1y1y F/F+25/F+50 payer ladder</td><td>0c</td><td>3/10/2026</td><td>Recent selloff in rates and pick-up in vol created an attractive window for 1y1y payer ladders. Breakeven level sits at levels that imply Fed hike over the next 2 years.</td><td>The risk is if energy-driven inflation becomes sustainable and forces the Fed to hike rates as a response.</td></tr></table>",
+                "table_type": "simple_table",
+                "table_nest_level": 1
+            },
+            "bbox": [
+                66,
+                227,
+                931,
+                392
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "MS "
+                    }
+                ]
+            },
+            "bbox": [
+                63,
+                45,
+                187,
+                61
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "RESEARCH "
+                    }
+                ]
+            },
+            "bbox": [
+                204,
+                47,
+                250,
+                59
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "IDEA "
+                    }
+                ]
+            },
+            "bbox": [
+                901,
+                47,
+                933,
+                59
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "MS "
+                    }
+                ]
+            },
+            "bbox": [
+                66,
+                967,
+                241,
+                978
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "11 "
+                    }
+                ]
+            },
+            "bbox": [
+                916,
+                968,
+                929,
+                977
+            ]
+        }
+    ],
+    [
+        {
+            "type": "table",
+            "content": {
+                "image_source": {
+                    "path": "images/42b2ba0a25ec255c6fc9c8c5e97e5b4d39350d32caabdb4ffc0afb8227800fe4.jpg"
+                },
+                "table_caption": [
+                    {
+                        "type": "text",
+                        "content": "Global Macro Strategy Team "
+                    }
+                ],
+                "table_footnote": [],
+                "html": "<table><tr><td>MS &amp; CO. LLC</td><td>Matthew Hornbach, CMTMatthew.Hornbach@morganstanley.com</td><td>Global Head of Macro Strategy</td><td>+1 212 761-1837</td></tr><tr><td></td><td>Martin Tobias, CFA, CMT</td><td>US Rates Strategist</td><td>+1 212 761-6076</td></tr><tr><td></td><td>Shaun Zhou</td><td>US Rates Strategist</td><td>+1 212 761-3348</td></tr><tr><td></td><td>Aryaman Singh</td><td>US Rates Strategist</td><td>+1 212 761-1993</td></tr><tr><td></td><td>Eli Carter</td><td>US Rates Strategist</td><td>+1 212 761-4703</td></tr><tr><td>MS &amp; CO. LLC</td><td>Andrew Watrous</td><td>G10 FX Strategist</td><td>+1 212 761-5287</td></tr><tr><td></td><td>Molly Nickolin</td><td>G10 FX Strategist</td><td>+1 212 761-3592</td></tr><tr><td></td><td>Simon WaeverSimon.Waever@morganstanley.com</td><td>Head of EM Sovereign Credit and Latin America Fixed Income Strategy</td><td>+1 212 296-8101</td></tr><tr><td></td><td>Ioana Zamfir</td><td>Head of Latin America Macro Strategy</td><td>+1 212 761-4012</td></tr><tr><td></td><td>Emma Cerda</td><td>Latin America Sovereign Credit</td><td>+1 212 761-2344</td></tr><tr><td></td><td>Sofia Palacios</td><td>Latin America Macro Strategist</td><td>+1 212 761-0428</td></tr><tr><td>MS &amp; CO.INTERNATIONAL PLC</td><td>James K. LordJames.Lord@morganstanley.com</td><td>Global Head of FXEM Strategy</td><td>+44 20 7677-3254</td></tr><tr><td></td><td>Gianluca SalfordLuca.Salford@morganstanley.com</td><td>Head of European Rates Strategy</td><td>+44 20 7677-1337</td></tr><tr><td></td><td>Maria Chiara Russo</td><td>Euro Area Rates Strategist</td><td>+44 20 7425-3499</td></tr><tr><td></td><td>Fabio Bassanin, CFA</td><td>UK Rates Strategist</td><td>+44 20 7425-1869</td></tr><tr><td></td><td>David S. Adams, CFADavid.S.Adams@morganstanley.com</td><td>Head of G10 FX Strategy</td><td>+44 20 7425-3518</td></tr><tr><td></td><td>Neville Mandimika</td><td>CEEMEA Sovereign Credit Strategist</td><td>+44 20 7425-2509</td></tr><tr><td></td><td>Arnav Gupta</td><td>CEEMEA Rates Strategist</td><td>+44 20 7677-0382</td></tr><tr><td>MS ASIALIMITED+</td><td>Gek Teng Khoo</td><td>AXJ Macro Strategist</td><td>+852 3963-0303</td></tr><tr><td>MS INDIACOMPANY PRIVATE LIMITED</td><td>Nimish Prabhune</td><td>AXJ Macro Strategist</td><td>+91 22 6996-1862</td></tr><tr><td>MS MUFGSECURITIES CO., LTD.</td><td>Koichi SugisakiKoichi.Sugisaki@morganstanleymufg.com</td><td>Head of Japan Macro Strategy</td><td>+81 3 6836-8428</td></tr><tr><td></td><td>Hiromu Uezato</td><td>Japan Macro Strategist</td><td>+81 3 6836-8431</td></tr></table>",
+                "table_type": "simple_table",
+                "table_nest_level": 1
+            },
+            "bbox": [
+                66,
+                160,
+                931,
+                797
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "MS "
+                    }
+                ]
+            },
+            "bbox": [
+                63,
+                45,
+                187,
+                63
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "RESEARCH "
+                    }
+                ]
+            },
+            "bbox": [
+                204,
+                47,
+                250,
+                59
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "IDEA "
+                    }
+                ]
+            },
+            "bbox": [
+                901,
+                47,
+                933,
+                59
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "12 "
+                    }
+                ]
+            },
+            "bbox": [
+                66,
+                968,
+                83,
+                978
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Disclosure Section "
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                63,
+                97,
+                282,
+                116
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The information and opinions in MS were prepared by MS & Co. LLC, and/or MS C.T.V.M. S.A., and/or MS Mexico, Casa de Bolsa, S.A. de C.V., and/or MS Canada Limited. As used in this disclosure section, \"MS\" includes MS & Co. LLC, MS C.T.V.M. S.A., MS Mexico, Casa de Bolsa, S.A. de C.V., MS Canada Limited and their affiliates as necessary. "
+                    }
+                ]
+            },
+            "bbox": [
+                62,
+                118,
+                933,
+                157
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "For important disclosures, stock price charts and equity rating histories regarding companies that are the subject of this report, please see the MS Disclosure Website at www.morganstanley.com/eqr/disclosures/webapp/generalresearch, or contact your investment representative or MS at 1585 Broadway, (Attention: Research Management), New York, NY, 10036 USA. "
+                    }
+                ]
+            },
+            "bbox": [
+                62,
+                160,
+                933,
+                200
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "For valuation methodology and risks associated with any recommendation, rating or price target referenced in this research report, please contact the Client Support Team as follows: US/Canada +1 800 303-2495; Hong Kong +852 2848-5999; Latin America +1 718 754-5444 (U.S.); London +44 (0)20-7425-8169; Singapore +65 6834-6860; Sydney +61 (0)2-9770-1505; Tokyo +81 (0)3-6836-9000. Alternatively you may contact your investment representative or MS at 1585 Broadway, (Attention: Research Management), New York, NY 10036 USA. "
+                    }
+                ]
+            },
+            "bbox": [
+                62,
+                202,
+                933,
+                242
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Analyst Certification "
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                63,
+                250,
+                215,
+                265
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The following analysts hereby certify that their views about the companies and their securities discussed in this report are accurately expressed and that they have not received and will not receive direct or indirect compensation in exchange for expressing specific recommendations or views in this report: Eli P Carter; Matthew Hornbach; Aryaman Singh; Martin W Tobias, CFA; Shaun Zhou. "
+                    }
+                ]
+            },
+            "bbox": [
+                62,
+                266,
+                933,
+                306
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Global Research Conflict Management Policy "
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                63,
+                328,
+                385,
+                343
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "MS has been published in accordance with our conflict management policy, which is available at www.morganstanley.com/institutional/research/conflictpolicies. A Portuguese version of the policy can be found at www.morganstanley.com.br "
+                    }
+                ]
+            },
+            "bbox": [
+                62,
+                345,
+                933,
+                371
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Important Regulatory Disclosures on Subject Companies "
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                63,
+                378,
+                468,
+                393
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "In the next 3 months, MS expects to receive or intends to seek compensation for investment banking services from United States of America. "
+                    }
+                ]
+            },
+            "bbox": [
+                63,
+                395,
+                777,
+                407
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Within the last 12 months, MS has provided or is providing investment banking services to, or has an investment banking client relationship with, the following company: United States of America. "
+                    }
+                ]
+            },
+            "bbox": [
+                63,
+                409,
+                933,
+                434
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The equity research analysts or strategists principally responsible for the preparation of MS have received compensation based upon various factors, including quality of research, investor client feedback, stock picking, competitive factors, firm revenues and overall investment banking revenues. Equity Research analysts' or strategists' compensation is not linked to investment banking or capital markets transactions performed by MS or the profitability or revenues of particular trading desks. "
+                    }
+                ]
+            },
+            "bbox": [
+                62,
+                436,
+                933,
+                477
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "MS and its affiliates do business that relates to companies/instruments covered in MS, including market making, providing liquidity, fund management, commercial banking, extension of credit, investment services and investment banking. MS sells to and buys from customers the securities/instruments of companies covered in MS on a principal basis. MS may have a position in the debt of the Company or instruments discussed in this report. MS trades or may trade as principal in the debt securities (or in related derivatives) that are the subject of the debt research report. "
+                    }
+                ]
+            },
+            "bbox": [
+                62,
+                478,
+                933,
+                532
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Certain disclosures listed above are also for compliance with applicable regulations in non-US jurisdictions. "
+                    }
+                ]
+            },
+            "bbox": [
+                63,
+                534,
+                560,
+                546
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "STOCK RATINGS"
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                63,
+                554,
+                187,
+                566
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "MS uses a relative rating system using terms such as Overweight, Equal-weight, Not-Rated or Underweight (see definitions below). MS does not assign ratings of Buy, Hold or Sell to the stocks we cover. Overweight, Equal-weight, Not-Rated and Underweight are not the equivalent of buy, hold and sell. Investors should carefully read the definitions of all ratings used in MS. In addition, since MS contains more complete information concerning the analyst's views, investors should carefully read MS, in its entirety, and not infer the contents from the rating alone. In any case, ratings (or research) should not be used or relied upon as investment advice. An investor's decision to buy or sell a stock should depend on individual circumstances (such as the investor's existing holdings) and other considerations. "
+                    }
+                ]
+            },
+            "bbox": [
+                62,
+                571,
+                933,
+                638
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Global Stock Ratings Distribution "
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                63,
+                646,
+                305,
+                661
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "(as of May 31, 2026) "
+                    }
+                ]
+            },
+            "bbox": [
+                63,
+                662,
+                161,
+                674
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The Stock Ratings described below apply to MS's Fundamental Equity Research and do not apply to Debt Research produced by the Firm. "
+                    }
+                ]
+            },
+            "bbox": [
+                63,
+                676,
+                763,
+                688
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "For disclosure purposes only (in accordance with FINRA requirements), we include the category headings of Buy, Hold, and Sell alongside our ratings of Overweight, Equal-weight, Not-Rated and Underweight. MS does not assign ratings of Buy, Hold or Sell to the stocks we cover. Overweight, Equal-weight, Not-Rated and Underweight are not the equivalent of buy, hold, and sell but represent recommended relative weightings (see definitions below). To satisfy regulatory requirements, we correspond Overweight, our most positive stock rating, with a buy recommendation; we correspond Equal-weight and Not-Rated to hold and Underweight to sell recommendations, respectively. "
+                    }
+                ]
+            },
+            "bbox": [
+                62,
+                690,
+                933,
+                744
+            ]
+        },
+        {
+            "type": "table",
+            "content": {
+                "image_source": {
+                    "path": "images/118f79d300c262fd82faaa400d5312d3e128809c0cdaab892b76d78e03036985.jpg"
+                },
+                "table_caption": [],
+                "table_footnote": [],
+                "html": "<table><tr><td></td><td colspan=\"2\">Coverage Universe</td><td colspan=\"3\">Investment Banking Clients (IBC)</td><td colspan=\"2\">Other Material Investment ServicesClients (MISC)</td></tr><tr><td>Stock RatingCategory</td><td>Count</td><td>% of Total</td><td>Count</td><td>% of Total IBC</td><td>% of RatingCategory</td><td>Count</td><td>% of Total OtherMISC</td></tr><tr><td>Overweight/Buy</td><td>1542</td><td>42%</td><td>465</td><td>51%</td><td>30%</td><td>707</td><td>43%</td></tr><tr><td>Equal-weight/Hold</td><td>1571</td><td>43%</td><td>369</td><td>40%</td><td>23%</td><td>723</td><td>44%</td></tr><tr><td>Not-Rated/Hold</td><td>3</td><td>0%</td><td>0</td><td>0%</td><td>0%</td><td>1</td><td>0%</td></tr><tr><td>Underweight/Sell</td><td>551</td><td>15%</td><td>86</td><td>9%</td><td>16%</td><td>201</td><td>12%</td></tr><tr><td>Total</td><td>3,667</td><td></td><td>920</td><td></td><td></td><td>1632</td><td></td></tr></table>",
+                "table_type": "complex_table",
+                "table_nest_level": 1
+            },
+            "bbox": [
+                112,
+                763,
+                875,
+                911
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Data include common stock and ADRs currently assigned ratings. Investment Banking Clients are companies from whom MS received investment banking compensation in the last 12 months. Due to rounding off of decimals, the percentages provided in the \"% of total\" column may not add up to exactly 100 percent. "
+                    }
+                ]
+            },
+            "bbox": [
+                62,
+                915,
+                933,
+                941
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "MS | RESEARCH "
+                    }
+                ]
+            },
+            "bbox": [
+                63,
+                45,
+                250,
+                61
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "IDEA "
+                    }
+                ]
+            },
+            "bbox": [
+                901,
+                47,
+                933,
+                59
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "MS "
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                967,
+                240,
+                978
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "13 "
+                    }
+                ]
+            },
+            "bbox": [
+                916,
+                968,
+                931,
+                977
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Analyst Stock Ratings "
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                63,
+                102,
+                223,
+                117
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Overweight (O). The stock's total return is expected to exceed the average total return of the analyst's industry (or industry team's) coverage universe, on a risk-adjusted basis, over the next 12-18 months. "
+                    }
+                ]
+            },
+            "bbox": [
+                63,
+                118,
+                933,
+                143
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Equal-weight (E). The stock's total return is expected to be in line with the average total return of the analyst's industry (or industry team's) coverage universe, on a risk-adjusted basis, over the next 12-18 months. "
+                    }
+                ]
+            },
+            "bbox": [
+                63,
+                146,
+                933,
+                172
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Not-Rated (NR). Currently the analyst does not have adequate conviction about the stock's total return relative to the average total return of the analyst's industry (or industry team's) coverage universe, on a risk-adjusted basis, over the next 12-18 months. "
+                    }
+                ]
+            },
+            "bbox": [
+                63,
+                174,
+                933,
+                200
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Underweight (U). The stock's total return is expected to be below the average total return of the analyst's industry (or industry team's) coverage universe, on a risk-adjusted basis, over the next 12-18 months. "
+                    }
+                ]
+            },
+            "bbox": [
+                63,
+                202,
+                933,
+                227
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Unless otherwise specified, the time frame for price targets included in MS is 12 to 18 months. "
+                    }
+                ]
+            },
+            "bbox": [
+                63,
+                229,
+                604,
+                242
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Analyst Industry Views "
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                63,
+                250,
+                233,
+                265
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Attractive (A): The analyst expects the performance of his or her industry coverage universe over the next 12-18 months to be attractive vs. the relevant broad market benchmark, as indicated below. "
+                    }
+                ]
+            },
+            "bbox": [
+                63,
+                266,
+                933,
+                292
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "In-Line (I): The analyst expects the performance of his or her industry coverage universe over the next 12-18 months to be in line with the relevant broad market benchmark, as indicated below. "
+                    }
+                ]
+            },
+            "bbox": [
+                63,
+                294,
+                933,
+                306
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Cautious (C): The analyst views the performance of his or her industry coverage universe over the next 12-18 months with caution vs. the relevant broad market benchmark, as indicated below. "
+                    }
+                ]
+            },
+            "bbox": [
+                63,
+                308,
+                933,
+                320
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Benchmarks for each region are as follows: North America - S&P 500; Latin America - relevant MSCI country index or MSCI Latin America Index; Europe - MSCI Europe; Japan - TOPIX; Asia - relevant MSCI country index or MSCI sub-regional index or MSCI AC Asia Pacific ex Japan Index. "
+                    }
+                ]
+            },
+            "bbox": [
+                63,
+                321,
+                933,
+                348
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Important Disclosures for MS Smith Barney LLC Customers "
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                63,
+                356,
+                576,
+                371
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Important disclosures regarding any material conflict of interest that can reasonably be expected to have influenced MS Smith Barney LLC's choice of a third-party research provider or the subject company of a third-party research report, are available on the MS Wealth Management disclosure website at www.morganstanley.com/online/researchdisclosures. For MS specific disclosures, you may refer to https://www.morganstanley.com/eqr/disclosures/webapp/generalresearch. "
+                    }
+                ]
+            },
+            "bbox": [
+                62,
+                372,
+                933,
+                412
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Each MS report is reviewed and approved on behalf of MS Smith Barney LLC. This review and approval is conducted by the same person who reviews the research report on behalf of MS. This could create a conflict of interest. "
+                    }
+                ]
+            },
+            "bbox": [
+                63,
+                414,
+                933,
+                440
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Other Important Disclosures "
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                63,
+                449,
+                272,
+                463
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "MS policy is to update research reports as and when the Research Analyst and Research Management deem appropriate, based on developments with the issuer, the sector, or the market that may have a material impact on the research views or opinions stated therein. In addition, certain Research publications are intended to be updated on a regular periodic basis (weekly/monthly/quarterly/annual) and will ordinarily be updated with that frequency, unless the Research Analyst and Research Management determine that a different publication schedule is appropriate based on current conditions. "
+                    }
+                ]
+            },
+            "bbox": [
+                62,
+                464,
+                933,
+                518
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "MS is not acting as a municipal advisor and the opinions or views contained herein are not intended to be, and do not constitute, advice within the meaning of Section 975 of the Dodd-Frank Wall Street Reform and Consumer Protection Act. "
+                    }
+                ]
+            },
+            "bbox": [
+                63,
+                520,
+                933,
+                545
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "MS produces an equity research product called a \"Tactical Idea.\" Views contained in a \"Tactical Idea\" on a particular stock may be contrary to the recommendations or views expressed in research on the same stock. This may be the result of differing time horizons, methodologies, market events, or other factors. For all research available on a particular stock, please contact your sales representative or go to Matrix at http://www.morganstanley.com/matrix. "
+                    }
+                ]
+            },
+            "bbox": [
+                63,
+                547,
+                933,
+                588
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "MS is provided to our clients through our proprietary research portal on Matrix and also distributed electronically by MS to clients. Certain, but not all, MS products are also made available to clients through third-party vendors or redistributed to clients through alternate electronic means as a convenience. For access to all available MS, please contact your sales representative or go to Matrix at http://www.morganstanley.com/matrix. "
+                    }
+                ]
+            },
+            "bbox": [
+                63,
+                589,
+                933,
+                630
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Any access and/or use of MS is subject to MS's Terms of Use (http://www.morganstanley.com/terms.html). By accessing and/or using MS, you are indicating that you have read and agree to be bound by our Terms of Use (http://www.morganstanley.com/terms.html). In addition you consent to MS processing your personal data and using cookies in accordance with our Privacy Policy and our Global Cookies Policy (http://www.morganstanley.com/privacy_pledge.html), including for the purposes of setting your preferences and to collect readership data so that we can deliver better and more personalized service and products to you. To find out more information about how MS processes personal data, how we use cookies and how to reject cookies see our Privacy Policy and our Global Cookies Policy (http://www.morganstanley.com/privacy_pledge.html). Please use the provided link to review the Terms and Conditions and Most Important Terms and Conditions for MS India Company Private Limited (https://www.morganstanley.com/assets/pdfs/about-us-global-offices/india/Terms_and_conditions.pdf) and the following link to review the audit report (https://ny.matrix.ms.com/eqr/research/webapp/researchdocs/MSICPL_Morgan_Stanley_Research_Audit_Report.pdf). "
+                    }
+                ]
+            },
+            "bbox": [
+                62,
+                631,
+                933,
+                739
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "If you do not agree to our Terms of Use and/or if you do not wish to provide your consent to MS processing your personal data or using cookies please do not access our research. MS does not provide individually tailored investment advice. MS has been prepared without regard to the circumstances and objectives of those who receive it. MS recommends that investors independently evaluate particular investments and strategies, and encourages investors to seek the advice of a financial adviser. The appropriateness of an investment or strategy will depend on an investor's circumstances and objectives. The securities, instruments, or strategies discussed in MS may not be suitable for all investors, and certain investors may not be eligible to purchase or participate in some or all of them. MS is not an offer to buy or sell or the solicitation of an offer to buy or sell any security/instrument or to participate in any particular trading strategy. The value of and income from your investments may vary because of changes in interest rates, foreign exchange rates, default rates, prepayment rates, securities/instruments prices, market indexes, operational or financial conditions of companies or other factors. There may be time limitations on the exercise of options or other rights in securities/instruments transactions. Past performance is not necessarily a guide to future performance. Estimates of future performance are based on assumptions that may not be realized. If provided, and unless otherwise stated, the closing price on the cover page is that of the primary exchange for the subject company's securities/instruments. "
+                    }
+                ]
+            },
+            "bbox": [
+                62,
+                742,
+                933,
+                878
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The fixed income research analysts, strategists or economists principally responsible for the preparation of MS have received compensation based upon various factors, including quality, accuracy and value of research, firm profitability or revenues (which include fixed income trading and capital markets profitability or revenues), client feedback and competitive factors. Fixed Income Research analysts', strategists' or economists' compensation is not linked to investment banking or capital markets transactions performed by MS or the profitability or revenues of particular trading desks. "
+                    }
+                ]
+            },
+            "bbox": [
+                63,
+                881,
+                933,
+                935
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The \"Important Regulatory Disclosures on Subject Companies\" section in MS lists all companies mentioned where MS owns 1% or more of a class of common equity securities of the companies. For all other companies mentioned in MS, MS may have an investment of less than 1% in securities/instruments or derivatives of securities/instruments of companies and may trade them in ways different from those discussed in MS. Employees of MS not involved in the preparation of MS may have investments in securities/instruments or derivatives of securities/instruments of companies mentioned and may trade them in ways different from those discussed in MS. Derivatives may be issued by MS or associated persons. "
+                    }
+                ]
+            },
+            "bbox": [
+                63,
+                936,
+                933,
+                949
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "MS | RESEARCH "
+                    }
+                ]
+            },
+            "bbox": [
+                63,
+                45,
+                250,
+                61
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "IDEA "
+                    }
+                ]
+            },
+            "bbox": [
+                901,
+                47,
+                933,
+                59
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "14 "
+                    }
+                ]
+            },
+            "bbox": [
+                66,
+                968,
+                83,
+                977
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": []
+            },
+            "bbox": [
+                62,
+                104,
+                933,
+                157
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "With the exception of information regarding MS, MS is based on public information. MS makes every effort to use reliable, comprehensive information, but we make no representation that it is accurate or complete. We have no obligation to tell you when opinions or information in MS change apart from when we intend to discontinue equity research coverage of a subject company. Facts and views presented in MS have not been reviewed by, and may not reflect information known to, professionals in other MS business areas, including investment banking personnel. "
+                    }
+                ]
+            },
+            "bbox": [
+                62,
+                160,
+                933,
+                214
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "MS personnel may participate in company events such as site visits and are generally prohibited from accepting payment by the company of associated expenses unless pre-approved by authorized members of Research management. "
+                    }
+                ]
+            },
+            "bbox": [
+                62,
+                215,
+                933,
+                242
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "MS may make investment decisions that are inconsistent with the recommendations or views in this report. "
+                    }
+                ]
+            },
+            "bbox": [
+                63,
+                243,
+                624,
+                255
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "To our readers based in Taiwan or trading in Taiwan securities/instruments: Information on securities/instruments that trade in Taiwan is distributed by MS Taiwan Limited (\"MSTL\"). Such information is for your reference only. The reader should independently evaluate the investment risks and is solely responsible for their investment decisions. MS may not be distributed to the public media or quoted or used by the public media without the express written consent of MS. Any non-customer reader within the scope of Article 7-1 of the Taiwan Stock Exchange Recommendation Regulations accessing and/or receiving MS is not permitted to provide MS to any third party (including but not limited to related parties, affiliated companies and any other third parties) or engage in any activities regarding MS which may create or give the appearance of creating a conflict of interest. Information on securities/instruments that do not trade in Taiwan is for informational purposes only and is not to be construed as a recommendation or a solicitation to trade in such securities/instruments. MSTL may not execute transactions for clients in these securities/instruments. "
+                    }
+                ]
+            },
+            "bbox": [
+                62,
+                257,
+                933,
+                352
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "MS is not incorporated under PRC law and the research in relation to this report is conducted outside the PRC. MS does not constitute an offer to sell or the solicitation of an offer to buy any securities in the PRC. PRC investors shall have the relevant qualifications to invest in such securities and shall be responsible for obtaining all relevant approvals, licenses, verifications and/or registrations from the relevant governmental authorities themselves. Neither this report nor any part of it is intended as, or shall constitute, provision of any consultancy or advisory service of securities investment as defined under PRC law. Such information is provided for your reference only. "
+                    }
+                ]
+            },
+            "bbox": [
+                62,
+                354,
+                933,
+                407
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "MS is disseminated in Brazil by MS C.T.V.M. S.A. located at Av. Brigadeiro Faria Lima, 3600, 6th floor, São Paulo - SP, Brazil; and is regulated by the Comissão de Valores Mobiliários; in Mexico by MS México, Casa de Bolsa, S.A. de C.V which is regulated by Comision Nacional Bancaria y de Valores. Paseo de los Tamarindos 90, Torre 1, Col. Bosques de las Lomas Floor 29, 05120 Mexico City; in Japan by MS MUFG Securities Co., Ltd. and, for Commodities related research reports only, MS Capital Group Japan Co., Ltd; in Hong Kong by MS Asia Limited (which accepts responsibility for its contents) and by MS Bank Asia Limited; in Singapore by MS Asia (Singapore) Pte. (Registration number 199206298Z) and/or MS Asia (Singapore) Securities Pte Ltd (Registration number 200008434H), regulated by the Monetary Authority of Singapore (which accepts legal responsibility for its contents and should be contacted with respect to any matters arising from, or in connection with, MS) and by MS Bank Asia Limited, Singapore Branch (Registration number T14FC0118); in Australia to \"wholesale clients\" within the meaning of the Australian Corporations Act by MS Australia Limited A.B.N. 67 003 734 576, holder of Australian financial services license No. 233742, which accepts responsibility for its contents; in Australia to \"wholesale clients\" and \"retail clients\" within the meaning of the Australian Corporations Act by MS Wealth Management Australia Pty Ltd (A.B.N. 19 009 145 555, holder of Australian financial services license No. 240813, which accepts responsibility for its contents; in Korea by MS & Co International plc, Seoul Branch; in India by MS India Company Private Limited having Corporate Identification No (CIN) U22990MH1998PTC115305, regulated by the Securities and Exchange Board of India (\"SEBI\") and holder of licenses as a Research Analyst (SEBI Registration No. INH000001105); Stock Broker (SEBI Stock Broker Registration No. INZ000244438), Merchant Banker (SEBI Registration No. INM000011203), and depository participant with National Securities Depository Limited (SEBI Registration No. IN-DP-NSDL-567-2021) having registered office at Altimus, Level 39 & 40, Pandurang Budhkar Marg, Worli, Mumbai 400018, India; Telephone no. +91-22-61181000; Compliance Officer Details: Mr. Tejarshi Hardas, Tel. No.: +91-22-61181000 or Email: tejarshi.hardas@morganstanley.com; Grievance officer details: Mr. Tejarshi Hardas, Tel. No.: +91-22-61181000 or Email: msic-compliance@morganstanley.com. MS India Company Private Limited (MSICPL) may use AI tools in providing research services. All recommendations contained herein are made by the duly qualified research analysts; in Canada by MS Canada Limited; in Germany and the European Economic Area where required by MS Europe S.E., authorised and regulated by Bundesanstalt fuer Finanzdienstleistungsaufsicht (BaFin) under the reference number 149169; in the US by MS & Co. LLC, which accepts responsibility for its contents. MS & Co. International plc, authorized by the Prudential Regulation Authority and regulated by the Financial Conduct Authority and the Prudential Regulation Authority, disseminates in the UK research that it has prepared, and research which has been prepared by any of its affiliates, only to persons who (i) are investment professionals falling within Article 19(5) of the Financial Services and Markets Act 2000 (Financial Promotion) Order 2005 (as amended, the \"Order\"); (ii) are persons who are high net worth entities falling within Article 49(2)(a) to (d) of the Order; or (iii) are persons to whom an invitation or inducement to engage in investment activity (within the meaning of section 21 of the Financial Services and Markets Act 2000, as amended) may otherwise lawfully be communicated or caused to be communicated. RMB MS Proprietary Limited is a member of the JSE Limited and A2X (Pty) Ltd. RMB MS Proprietary Limited is a joint venture owned equally by MS International Holdings Inc. and RMB Investment Advisory (Proprietary) Limited, which is wholly owned by FirstRand Limited. The information in MS is being disseminated by MS Saudi Arabia, regulated by the Capital Market Authority in the Kingdom of Saudi Arabia, and is directed at Sophisticated investors only. "
+                    }
+                ]
+            },
+            "bbox": [
+                62,
+                410,
+                933,
+                755
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The information in MS is being communicated by MS & Co. International plc (DIFC Branch), regulated by the Dubai Financial Services Authority (the DFSA) or by MS & Co. International plc (ADGM Branch), regulated by the Financial Services Regulatory Authority Abu Dhabi (the FSRA), and is directed at Professional Clients only, as defined by the DFSA or the FSRA, respectively. The financial products or financial services to which this research relates will only be made available to a customer who we are satisfied meets the regulatory criteria of a Professional Client. A distribution of the different MS Research ratings or recommendations, in percentage terms for Investments in each sector covered, is available upon request from your sales representative. "
+                    }
+                ]
+            },
+            "bbox": [
+                62,
+                757,
+                933,
+                825
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The information in MS is being communicated by MS & Co. International plc (QFC Branch), regulated by the Qatar Financial Centre Regulatory Authority (the QFCRA), and is directed at business customers and market counterparties only and is not intended for Retail Customers as defined by the QFCRA. "
+                    }
+                ]
+            },
+            "bbox": [
+                62,
+                827,
+                933,
+                853
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "As required by the Capital Markets Board of Turkey, investment information, comments and recommendations stated here, are not within the scope of investment advisory activity. Investment advisory service is provided exclusively to persons based on their risk and income preferences by the authorized firms. Comments and recommendations stated here are general in nature. These opinions may not fit to your financial status, risk and return preferences. For this reason, to make an investment decision by relying solely to this information stated here may not bring about outcomes that fit your expectations. "
+                    }
+                ]
+            },
+            "bbox": [
+                62,
+                854,
+                933,
+                907
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The trademarks and service marks contained in MS are the property of their respective owners. Third-party data providers make no warranties or representations relating to the accuracy, completeness, or timeliness of the data they provide and shall not have liability for any damages relating to such data. The Global Industry Classification Standard (GICS) was developed by and is the exclusive property of MSCI and S&P. "
+                    }
+                ]
+            },
+            "bbox": [
+                62,
+                910,
+                933,
+                950
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "MS | RESEARCH "
+                    }
+                ]
+            },
+            "bbox": [
+                63,
+                45,
+                250,
+                61
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "IDEA "
+                    }
+                ]
+            },
+            "bbox": [
+                901,
+                47,
+                933,
+                59
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "MS "
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                967,
+                241,
+                978
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "15 "
+                    }
+                ]
+            },
+            "bbox": [
+                916,
+                968,
+                931,
+                977
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "MS, or any portion thereof may not be reprinted, sold or redistributed without the written consent of MS. "
+                    }
+                ]
+            },
+            "bbox": [
+                62,
+                104,
+                718,
+                117
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Indicators and trackers referenced in MS may not be used as, or treated as, a benchmark under Regulation EU 2016/1011, or any other similar framework. "
+                    }
+                ]
+            },
+            "bbox": [
+                62,
+                118,
+                872,
+                130
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The issuers and/or fixed income products recommended or discussed in certain fixed income research reports may not be continuously followed. Accordingly, investors should regard those fixed income research reports as providing stand-alone analysis and should not expect continuing analysis or additional reports relating to such issuers and/or individual fixed income products. MS may hold, from time to time, material financial and commercial interests regarding the company subject to the Research report. "
+                    }
+                ]
+            },
+            "bbox": [
+                62,
+                132,
+                931,
+                172
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Registration granted by SEBI and certification from the National Institute of Securities Markets (NISM) in no way guarantee performance of the intermediary or provide any assurance of returns to investors. Investment in securities market are subject to market risks. Read all the related documents carefully before investing. "
+                    }
+                ]
+            },
+            "bbox": [
+                62,
+                175,
+                933,
+                226
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The following authors are Fixed Income Research Analysts/Strategists and are not opining on or expressing recommendations on equity securities: Aryaman Singh; Shaun Zhou; Eli P Carter; Matthew Hornbach; Martin W Tobias, CFA. "
+                    }
+                ]
+            },
+            "bbox": [
+                62,
+                227,
+                933,
+                253
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "© 2026 MS "
+                    }
+                ]
+            },
+            "bbox": [
+                63,
+                285,
+                233,
+                301
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "MS | RESEARCH "
+                    }
+                ]
+            },
+            "bbox": [
+                63,
+                45,
+                250,
+                61
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "IDEA "
+                    }
+                ]
+            },
+            "bbox": [
+                901,
+                47,
+                933,
+                59
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "16 "
+                    }
+                ]
+            },
+            "bbox": [
+                66,
+                968,
+                83,
+                977
+            ]
+        }
+    ]
+]
