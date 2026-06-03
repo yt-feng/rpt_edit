@@ -1,0 +1,14 @@
+Found 33 total PDFs; shard 1/40 has 5 PDFs, skips 0 already converted, will process 5 PDFs with batch_size=5.
+Running batch 1: 5 PDFs
+Found 5 PDFs.
+Uploading PDF to MinerU: /tmp/pdf_batch_001_qmux50pp/pdfs/0001-06-J.P. Morgan-Commodity Market Positioning - Flows-Weaker energy prices meet gold-led net outflows-260602.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_qmux50pp/pdfs/0002-07-J.P. Morgan-China RatingDog PMI eased but stayed expansionary-260601.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_qmux50pp/pdfs/0003-08-Bernstein-Global Semicap Tracker -Apr 26-- Japan SPE -25- YoY-260603.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_qmux50pp/pdfs/0004-09-Goldman Sachs-Global Healthcare- Pharmaceuticals- Lung Cancer KOLs Generally Positive on ASCO Developments-260602.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_qmux50pp/pdfs/0005-10-Goldman Sachs-Japan Machinery- Construction- Lower Section 232 tariffs on tractors construction machinery positive for Japanese manufacturers-260602.pdf
+MinerU batch_id=b4daa9a9-19c8-48af-8b16-ba2680b4523d
+MinerU states: running, running, running, running, waiting-file
+MinerU states: done, done, done, done, running
+MinerU states: done, done, done, done, done
+Done. Results written to /home/runner/work/rpt_edit/rpt_edit/xhs_notes/dropbox/260603/shard_1; successful_reports=5; mineru_timed_out=False
+All batches completed successfully. Generated 5 report directories.
