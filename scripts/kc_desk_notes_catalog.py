@@ -34,6 +34,8 @@ from finalize_outputs import sanitize_text
 
 DROPBOX_CONTENT = "https://content.dropboxapi.com/2"
 DEFAULT_R2_PREFIX = "reports"
+DEFAULT_STORAGE_LIMIT_GIB = 8.0
+BYTES_PER_GIB = 1024 ** 3
 
 
 def log(message: str) -> None:
@@ -198,6 +200,109 @@ def upload_pdf_to_r2(client: Any, bucket: str, key: str, local_path: Path) -> No
         )
 
 
+def delete_r2_objects(client: Any, bucket: str, keys: list[str]) -> int:
+    deleted = 0
+    unique_keys = sorted({key for key in keys if key})
+    for start in range(0, len(unique_keys), 1000):
+        chunk = unique_keys[start:start + 1000]
+        if not chunk:
+            continue
+        client.delete_objects(
+            Bucket=bucket,
+            Delete={
+                "Objects": [{"Key": key} for key in chunk],
+                "Quiet": True,
+            },
+        )
+        deleted += len(chunk)
+    return deleted
+
+
+def parse_date_sort_value(value: str) -> tuple[int, int, str]:
+    text = str(value or "")
+    try:
+        if text.isdigit() and len(text) == 6:
+            return 0, datetime.strptime(text, "%y%m%d").toordinal(), text
+        if text.isdigit() and len(text) == 8:
+            return 0, datetime.strptime(text, "%Y%m%d").toordinal(), text
+    except ValueError:
+        pass
+    return 1, 0, text
+
+
+def item_size_bytes(item: dict[str, Any]) -> int:
+    try:
+        return max(0, int(item.get("size_bytes") or 0))
+    except (TypeError, ValueError):
+        return 0
+
+
+def catalog_size_bytes(catalog: dict[str, Any]) -> int:
+    return sum(item_size_bytes(item) for item in catalog.get("items", []))
+
+
+def apply_storage_limit(
+    catalog: dict[str, Any],
+    limit_bytes: int,
+    now_bjt: str,
+) -> tuple[list[dict[str, Any]], int, int]:
+    items = list(catalog.get("items", []))
+    total_before = sum(item_size_bytes(item) for item in items)
+    removed: list[dict[str, Any]] = []
+    remove_ids: set[str] = set()
+
+    if limit_bytes > 0 and total_before > limit_bytes:
+        by_date: dict[str, list[dict[str, Any]]] = {}
+        for item in items:
+            by_date.setdefault(str(item.get("date_folder") or ""), []).append(item)
+
+        running_total = total_before
+        for date_folder in sorted(by_date, key=parse_date_sort_value):
+            if running_total <= limit_bytes:
+                break
+            date_items = by_date[date_folder]
+            removed.extend(date_items)
+            remove_ids.update(str(item.get("id")) for item in date_items if item.get("id"))
+            running_total -= sum(item_size_bytes(item) for item in date_items)
+
+    if remove_ids:
+        items = [item for item in items if str(item.get("id")) not in remove_ids]
+
+    total_after = sum(item_size_bytes(item) for item in items)
+    removed_size = total_before - total_after
+    removed_dates = sorted({str(item.get("date_folder") or "") for item in removed}, key=parse_date_sort_value)
+    storage = {
+        "limit_bytes": limit_bytes,
+        "total_size_bytes": total_after,
+        "pruned_this_run_count": len(removed),
+        "pruned_this_run_size_bytes": removed_size,
+        "pruned_this_run_dates": removed_dates,
+    }
+    previous_storage = catalog.get("storage") if isinstance(catalog.get("storage"), dict) else {}
+    if removed:
+        storage["last_pruned_at_bjt"] = now_bjt
+    elif previous_storage.get("last_pruned_at_bjt"):
+        storage["last_pruned_at_bjt"] = previous_storage["last_pruned_at_bjt"]
+
+    catalog["items"] = items
+    catalog["item_count"] = len(items)
+    catalog["total_size_bytes"] = total_after
+    catalog["storage_limit_bytes"] = limit_bytes
+    catalog["storage"] = storage
+    return removed, total_before, total_after
+
+
+def prune_r2_objects_for_items(items: list[dict[str, Any]]) -> int:
+    keys = [str(item.get("r2_key") or "") for item in items if item.get("r2_key")]
+    if not keys:
+        return 0
+    bucket = require_env("R2_BUCKET")
+    client = build_r2_client()
+    deleted = delete_r2_objects(client, bucket, keys)
+    log(f"Deleted {deleted} pruned PDFs from R2")
+    return deleted
+
+
 def collect_current_reports(
     token: str,
     root: str,
@@ -288,6 +393,8 @@ def merge_catalog(
         "updated_at_bjt": now_bjt,
         "dropbox_root": dropbox_root,
         "item_count": len(items),
+        "total_size_bytes": sum(item_size_bytes(item) for item in items),
+        "storage": old_catalog.get("storage", {}) if isinstance(old_catalog.get("storage"), dict) else {},
         "items": items,
     }
 
@@ -330,6 +437,10 @@ def sync_current_reports_to_r2(
         reverse=True,
     )
     catalog["item_count"] = len(catalog["items"])
+    catalog["total_size_bytes"] = catalog_size_bytes(catalog)
+    storage = catalog.get("storage")
+    if isinstance(storage, dict):
+        storage["total_size_bytes"] = catalog["total_size_bytes"]
     return uploaded
 
 
@@ -342,11 +453,19 @@ def main() -> int:
     parser.add_argument("--r2-prefix", default=os.getenv("R2_OBJECT_PREFIX", DEFAULT_R2_PREFIX))
     parser.add_argument("--sync-r2", action="store_true")
     parser.add_argument("--force-upload", action="store_true")
+    parser.add_argument(
+        "--storage-limit-gb",
+        type=float,
+        default=DEFAULT_STORAGE_LIMIT_GIB,
+        help="Prune oldest date folders from the catalog/R2 when total PDF size exceeds this many GiB. 0 disables.",
+    )
     args = parser.parse_args()
 
     try:
         if args.days < 0:
             raise ValueError("--days must be 0 or greater")
+        if args.storage_limit_gb < 0:
+            raise ValueError("--storage-limit-gb must be 0 or greater")
 
         root = args.dropbox_root.rstrip("/") or ""
         catalog_path = Path(args.catalog_path)
@@ -361,6 +480,19 @@ def main() -> int:
 
         current, download_paths = collect_current_reports(token, root, folders, password_rules, args.r2_prefix)
         catalog = merge_catalog(old_catalog, current, root, now)
+        storage_limit_bytes = int(args.storage_limit_gb * BYTES_PER_GIB)
+        pruned_items, size_before, size_after = apply_storage_limit(catalog, storage_limit_bytes, now)
+        log(
+            f"Catalog PDF size: {size_after} bytes after storage check "
+            f"(before {size_before}, limit {storage_limit_bytes})"
+        )
+        if pruned_items:
+            pruned_dates = ", ".join(sorted({str(item.get("date_folder") or "") for item in pruned_items}, key=parse_date_sort_value))
+            log(f"Pruned {len(pruned_items)} old reports from dates: {pruned_dates}")
+            if args.sync_r2:
+                prune_r2_objects_for_items(pruned_items)
+            else:
+                log("Skipping R2 deletion for pruned reports because --sync-r2 is not enabled")
 
         uploaded = 0
         if args.sync_r2:

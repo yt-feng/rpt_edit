@@ -36,6 +36,7 @@
   function formatSize(bytes) {
     const size = Number(bytes || 0);
     if (!size) return "";
+    if (size >= 1024 * 1024 * 1024) return `${(size / 1024 / 1024 / 1024).toFixed(1)} GB`;
     if (size >= 1024 * 1024) return `${(size / 1024 / 1024).toFixed(1)} MB`;
     if (size >= 1024) return `${Math.round(size / 1024)} KB`;
     return `${size} B`;
@@ -88,6 +89,13 @@
 
     function updateMeta() {
       meta.textContent = `${items.length} reports`;
+      const totalSize = formatSize(catalog.total_size_bytes);
+      const limitSize = formatSize(catalog.storage_limit_bytes || (catalog.storage && catalog.storage.limit_bytes));
+      if (totalSize && limitSize) {
+        meta.textContent += ` | ${totalSize} / ${limitSize}`;
+      } else if (totalSize) {
+        meta.textContent += ` | ${totalSize}`;
+      }
       if (catalog.updated_at_bjt) {
         meta.textContent += ` | Updated ${catalog.updated_at_bjt}`;
       }

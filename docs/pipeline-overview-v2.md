@@ -239,7 +239,7 @@ bilingual_podcast_videos/<日期>/<run_id>/<报告文件夹>/
 核心数据：
 
 ```text
-kc_desk_notes/data/catalog.json      # 长期保留历史文件名和 report id，不随 Dropbox 清理删除
+kc_desk_notes/data/catalog.json      # 长期 catalog，受 KC Desk Notes 8GiB PDF 总量上限约束
 kc_desk_notes/password_rules.json    # 全局密码组 hash 对照表和分配规则，作为备用
 kc_desk_notes/site_src/              # GitHub Pages 静态站点源码
 workers/kc-desk-notes-worker/        # Cloudflare Worker 代码
@@ -257,11 +257,12 @@ _kc_desk_notes_pages/data/search_index.json
 
 1. 扫描 Dropbox `/zip_backup/<日期>/` 下当前仍存在的 PDF。
 2. 用既有投行脱敏规则生成页面标题。
-3. 合并到长期 `catalog.json`，历史条目保留。
-4. 将当前扫描到的 PDF 上传到私有 R2，object key 为 `reports/<report_id>.pdf`。
-5. 生成 Pages artifact，其中 `catalog.json` 供列表和详情页使用，`search_index.json` 供全文搜索使用。
-6. 部署 GitHub Pages。
-7. Cloudflare 配置齐全时，自动部署 Worker。
+3. 合并到长期 `catalog.json`，并统计页面可见 PDF 总容量。
+4. 如果 catalog PDF 总容量超过 `storage_limit_gb`（默认 8GiB），按 `date_folder` 从旧到新删除整日旧报告，并删除对应 R2 object。
+5. 将仍保留且当前扫描到的 PDF 上传到私有 R2，object key 为 `reports/<report_id>.pdf`。
+6. 生成 Pages artifact，其中 `catalog.json` 供列表和详情页使用，`search_index.json` 供全文搜索使用。
+7. 部署 GitHub Pages。
+8. Cloudflare 配置齐全时，自动部署 Worker。
 
 下载密码优先使用按 report id 推导出的 HMAC 伪密码：
 
@@ -361,7 +362,7 @@ xhs_notes/<报告文件夹>/
 | `scripts/render_market_views_reportlab_pdf.py` | 用 ReportLab 快速渲染市场观点 PDF |
 | `scripts/select_test_pdf.py` | 测试 podcast/video 时选择 5 页以上 PDF |
 | `scripts/generate_test_podcast_video_eleven_batch_v5.py` | 批量生成中英文和 mixed bilingual podcast 讲解视频 |
-| `scripts/kc_desk_notes_catalog.py` | 扫描 Dropbox PDF、合并长期 catalog、同步当前 PDF 到 R2 |
+| `scripts/kc_desk_notes_catalog.py` | 扫描 Dropbox PDF、合并长期 catalog、按 8GiB 总量上限清理旧日期、同步当前 PDF 到 R2 |
 | `scripts/build_kc_desk_notes_site.py` | 生成 KC Desk Notes GitHub Pages 静态站点 artifact，并把投行目录 txt 与可匹配的 MinerU 正文并入前端全文搜索索引 |
 | `scripts/hash_kc_desk_notes_password.py` | 生成 `password_rules.json` 里的密码 hash |
 | `scripts/commit_output_dir.sh` | GitHub Action 里提交输出目录，带重试和强制 add PDF |
@@ -457,7 +458,7 @@ wechat_drafts/
 
 - 代码、workflow、prompt、文档：以本地明确修改为准。
 - 上面列出的日期型生成目录：以远端 Actions 产物为准。
-- KC Desk Notes 的 `kc_desk_notes/data/catalog.json` 是长期 catalog，不按最近 3 天清理。
+- KC Desk Notes 的 `kc_desk_notes/data/catalog.json` 不按最近 3 天清理；它按页面可见 PDF 总容量控制，默认超过 8GiB 后从最旧 `date_folder` 开始删除整日旧报告，并同步删除对应 R2 object。
 
 清理逻辑：
 

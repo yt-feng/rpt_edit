@@ -21,6 +21,10 @@ on:
         required: true
         type: boolean
         default: false
+      storage_limit_gb:
+        description: "Prune oldest report dates when catalog PDF total exceeds this many GiB. 0 disables."
+        required: true
+        default: "8"
       deploy_worker:
         description: "Deploy the Cloudflare Worker when Cloudflare config is available"
         required: true
@@ -95,6 +99,7 @@ jobs:
             --catalog-path "kc_desk_notes/data/catalog.json" \
             --password-rules "kc_desk_notes/password_rules.json" \
             --r2-prefix "${R2_OBJECT_PREFIX}" \
+            --storage-limit-gb "${{ github.event.inputs.storage_limit_gb || '8' }}" \
             "${EXTRA_ARGS[@]}"
 
       - name: Build static Pages artifact

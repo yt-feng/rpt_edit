@@ -280,13 +280,26 @@ def public_catalog(catalog: dict[str, Any]) -> dict[str, Any]:
     for item in catalog.get("items", []):
         public_item = {key: item.get(key) for key in PUBLIC_ITEM_KEYS if key in item}
         items.append(public_item)
-    return {
+    total_size_bytes = catalog.get("total_size_bytes")
+    if not total_size_bytes:
+        total_size_bytes = sum(int(item.get("size_bytes") or 0) for item in items)
+    public = {
         "schema_version": catalog.get("schema_version", 1),
         "updated_at_bjt": catalog.get("updated_at_bjt", ""),
         "dropbox_root": catalog.get("dropbox_root", ""),
         "item_count": len(items),
+        "total_size_bytes": total_size_bytes,
+        "storage_limit_bytes": catalog.get("storage_limit_bytes", 0),
         "items": items,
     }
+    storage = catalog.get("storage")
+    if isinstance(storage, dict):
+        public["storage"] = {
+            "limit_bytes": storage.get("limit_bytes", 0),
+            "total_size_bytes": storage.get("total_size_bytes", public["total_size_bytes"]),
+            "last_pruned_at_bjt": storage.get("last_pruned_at_bjt", ""),
+        }
+    return public
 
 
 def public_password_rules(rules: dict[str, Any]) -> dict[str, Any]:
