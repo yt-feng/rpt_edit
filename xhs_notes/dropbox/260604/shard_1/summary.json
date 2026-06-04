@@ -1,0 +1,88 @@
+[
+  {
+    "source_pdf": "/tmp/pdf_batch_001_qjaxxzc1/pdfs/0001-06-JPM-US Economic Outlook-260604.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "cover_short_title": "美国经济到底还行不行",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png",
+      "assets/xhs_card_09.png"
+    ],
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  },
+  {
+    "source_pdf": "/tmp/pdf_batch_001_qjaxxzc1/pdfs/0002-07-CITI-Europe Luxury Goods-April Swiss watch exports-17- YoY due to outsized US tariff comp. Underlying growth -5- ex-US- ex-Middle East --1- in March--260602.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "cover_short_title": "4月瑞士表出口大跌1",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png"
+    ],
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  },
+  {
+    "source_pdf": "/tmp/pdf_batch_001_qjaxxzc1/pdfs/0003-08-CITI-Hong Kong Property-Apr Retail -9-- luxury growth moderates- supermarket stabilizing-260602.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "cover_short_title": "香港零售4月增速放缓",
+    "cover_subtitle": "超市租金开始企稳",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png",
+      "assets/xhs_card_09.png"
+    ],
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  },
+  {
+    "source_pdf": "/tmp/pdf_batch_001_qjaxxzc1/pdfs/0004-09-CITI-Japan Equity Strategy Market Explorer-Indexes to top out soon but we see the Nikkei breaking above 70-000 by year-end-260602.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "cover_short_title": "日股还能不能追？外资",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png",
+      "assets/xhs_card_09.png"
+    ],
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  },
+  {
+    "source_pdf": "/tmp/pdf_batch_001_qjaxxzc1/pdfs/0005-10-GS-China- Unofficial services PMI rose in May-260603.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "cover_short_title": "5月服务业PMI踩了",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png"
+    ],
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  }
+]
