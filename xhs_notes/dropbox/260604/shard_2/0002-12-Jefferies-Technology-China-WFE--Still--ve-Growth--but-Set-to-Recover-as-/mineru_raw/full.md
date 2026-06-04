@@ -1,0 +1,653 @@
+## China WFE: Still -ve Growth, but Set to Recover as Semi Trade Deficit Expands
+
+China's Apr SPE imports fell 4% as 6% fall in WFE was offset by 21%/42% growth in testing/pkg tools. WFE's 6% drop was driven by 36%/20% growth in dep/ion implant offset by 60%/28% fall in litho/etch. YTD WFE imports fell 12%. But weakness is likely bottoming, as 1) Trump's visit has brought no change to US restrictions, and 2) AI-driven demand and upcoming IPOs should prompt faster capacity expansion, esp in memory. China's semi trade deficit grew 17% in 4M26.
+
+China's Apr WFE imports fell 6%, which is still a moderation relative to DD declines in Nov-Feb, but imports of packaging tools rose sharply. Apr SPE imports fell 4% YY, same as in Mar, a big moderation of double-digit declines in the prior three months. Interestingly, imports of testing/packaging tools jumped 21%/42% YoY. Although one month's data do not represent a trend yet, this coincided with Huawei's announcement last week of its "Tau" scaling law, which requires chip-to-chip hybrid bonding and TSV equipment to implement its "Logic Folding" technology (see here for a deep dive). WFE imports in Apr fell 6%, vs 4% decline in Mar, also a moderation from DD falls in the previous 4 months. Apr's moderate decline was driven by 36%/20% growth in deposition/ion implanting, offset by 60%/28% declines in lithography/etching.
+
+YTD (4M26), SPE imports down 13%, driven by 12% fall in WFE offset by 6% growth in packaging tools. Singapore is the fastest-growing source of both SPE and WFE imports into China YTD, at 19% and 43% YoY, respectively. YTD, Singapore accounted for 24% of China's total WFE imports, ranked as dual No. 1 with Japan, and trumping the Netherlands (19%). Singapore's import share was only 16% in 2025. Another country that has a rapidly rising share of China's WFE imports is Malaysia, which has 12% share YTD vs 10% in 2025. Imports from Malaysia grew 16% YTD, much slower than 113% growth in 2025. WFE imports in 4M26 totalled US\$8.9bn, with deposition being the biggest, accounting for 29% of imports, followed by 22% in etching and 21% in litho. SPE imports in 4M26 amounted to US\$13.5bn, dominated by WFE at 66% share and then parts at 13% and testing at 9%.
+
+China's semiconductor (semi) imports grew 58% in Apr, a new high since Jan 2018, as the widening of its semi trade deficit has accelerated. Sharply higher memory prices and price increases in other chips such as CPU, GPU, power and optics driven by AI are likely the key drivers. We estimate China's semi trade deficit expanded by 17% in 4M26 (Chart 4), reversing the trend of declining/flattish deficits since 2021. Since the beginning of this year, China's semi imports have been sharply higher YoY, and the growth has been accelerating. We believe 1) a widening semi trade deficit, 2) strong domestic AI demand, and 3) upcoming large memory IPOs will likely drive accelerating semi capex and thus WFE demand in the next 3 years. Even though China will probably try to increase its WFE localization rate, foreign WFEs should play an important role in helping China ramp up capacity and yield quickly. Our top pick in China WFE names remains AMEC, while we believe Japanese and certain US vendors will also benefit from China's recovery in semi capex.
+
+Chart 1 - China SPE Imports YoY  
+![](images/a2a4a63efbbaca9ddbdd2d3bf6fd992e6356391859fe1a9948233b153e3d6c09.jpg)
+
+<details>
+<summary>bar chart</summary>
+
+| Month | Value (%) |
+|---|---|
+| Jan-Feb-20 | 19 |
+| Feb-Mar-20 | -3.7 |
+| Mar-Apr-20 | -2.8 |
+| Apr-May-20 | -2.5 |
+| May-Jun-20 | -16.4 |
+| Jun-Jul-20 | -41.6 |
+| Jul-Aug-20 | -18.4 |
+| Aug-Sep-20 | -20.5 |
+| Sep-Oct-20 | 40 |
+| Oct-Nov-20 | 67.5 |
+| Nov-Dec-20 | 76.7 |
+| Dec-Jan-21 | 129 |
+| Jan-Feb-22 | 168 |
+| Feb-Mar-22 | 13 |
+| Mar-Apr-22 | 138 |
+| Apr-May-22 | 198 |
+| May-Jun-22 | -14 |
+| Jun-Jul-22 | -18 |
+| Jul-Aug-22 | -46.9 |
+| Aug-Sep-22 | -12.9 |
+| Sep-Oct-22 | -15.7 |
+| Oct-Nov-22 | -17.5 |
+| Nov-Dec-22 | -21.4 |
+The chart displays the monthly percentage change over time, with values ranging from approximately -31% to +13%. The data is presented in a single column format with exact percentages labeled on each bar.
+</details>
+
+Source: China Customs, JEF
+
+Chart 2 - China WFE Imports YoY  
+![](images/3027db98efe95fdc300aaacb11c36f3399b534ff62d200eb57f9c53601e187c7.jpg)
+
+<details>
+<summary>bar chart</summary>
+
+| Month    | Value  |
+| -------- | ------ |
+| Jan-Feb-22 | 8%     |
+| Apr-22   | -12%   |
+| Jun-22   | -19%   |
+| Aug-22   | -34%   |
+| Oct-22   | 14%    |
+| Dec-22   | 70%    |
+| Feb-23   | -37%   |
+| Apr-23   | -40%   |
+| Jun-23   | -26%   |
+| Aug-23   | -13%   |
+| Oct-23   | 61%    |
+| Dec-23   | 81%    |
+| Feb-24   | 14%    |
+| Apr-24   | 180%   |
+| Jun-24   | 132%   |
+| Aug-24   | 191%   |
+| Oct-24   | 103%   |
+| Dec-24   | 88%    |
+| Feb-25   | 10%    |
+| Apr-25   | -7%    |
+| Jun-25   | -9%    |
+| Aug-25   | -20%   |
+| Oct-25   | 35%    |
+| Dec-25   | 9%     |
+| Feb-26   | -18%   |
+| Apr-26   | -10%   |
+| Jun-26   | -2%    |
+| Aug-26   | 14%    |
+| Oct-26   | 13%    |
+| Dec-26   | -1%    |
+| Feb-27   | -19%   |
+| Apr-27   | -24%   |
+</details>
+
+Source: China Customs, JEF
+
+Chart 3 - China Semiconductor Imports YoY  
+![](images/48ab2b453b54f28a612ab511715455a3b98bcee9e54984adde330d2f33dd1f69.jpg)
+
+<details>
+<summary>bar chart</summary>
+
+| Date | Value (%) |
+|---|---|
+| Jan-Feb-22 | 18 |
+| Apr-22 | 16 |
+| Jun-22 | -1 |
+| Aug-22 | -3 |
+| Oct-22 | -4 |
+| Dec-22 | -11 |
+| Feb-23 | -25 |
+| Apr-23 | -29 |
+| Jun-23 | -14 |
+| Aug-23 | -15 |
+| Oct-23 | -19 |
+| Dec-23 | -11 |
+| Feb-24 | 7 |
+| Apr-24 | 11 |
+| Jun-24 | 14 |
+| Aug-24 | 13 |
+| Oct-24 | 11 |
+| Dec-24 | 13 |
+| Feb-25 | 6 |
+| Apr-25 | 11 |
+| Jun-25 | 12 |
+| Aug-25 | 15 |
+| Oct-25 | 17 |
+| Dec-25 | 17 |
+| Feb-26 | 42 |
+| Apr-26 | 66 |
+</details>
+
+Source: China Customs, JEF
+
+Chart 4 - China Semi Trade Deficit  
+![](images/c7d5d5308983efcf44844c6b22cb1ff0d9c06c8f04853cc694f0fdbe7210b52b.jpg)
+
+<details>
+<summary>bar chart</summary>
+
+| Year | Value ($/sd bn) |
+|---|---|
+| 2010 | 128 |
+| 2011 | 138 |
+| 2012 | 139 |
+| 2013 | 144 |
+| 2014 | 157 |
+| 2015 | 161 |
+| 2016 | 166 |
+| 2017 | 193 |
+| 2018 | 227 |
+| 2019 | 204 |
+| 2020 | 233 |
+| 2021 | 279 |
+| 2022 | 262 |
+| 2023 | 214 |
+| 2024 | 227 |
+| 4M25 | 223 |
+| 4M26 | 67 |
+YoY -17%
+</details>
+
+Source: China Customs, JEF
+
+Edison Lee, CFA \* | Equity Analyst
+
+852 3743 8009 | edison.lee@JEF.com
+
+Nick Cheng \* | Equity Analyst
+
++852 3743 8750 | nick.cheng@JEF.com
+
+Jacky He \* | Equity Analyst
+
++852 3743 8084 | jacky.he@JEF.com
+
+Matt Ma \* | Equity Analyst
+
+852 3767 1109 | matt.ma@JEF.com
+
+Annie Ping, CFA, FRM \* | Equity Associate
+
++852 3767 1273 | annie.ping@JEF.com
+
+Chart 5 - China Semiconductor Imports YoY  
+![](images/6d2888bbb86e3f1e5cbd9238d6b56377f3e49906fc8a7b8595cdd9dca4212b84.jpg)
+
+<details>
+<summary>line chart</summary>
+
+| Date       | Japan | Korea | Malaysia | Taiwan | US   |
+| ---------- | ----- | ----- | -------- | ------ | ---- |
+| Jan-Feb-23 | -20%  | -10%  | -15%     | 30%    | -30% |
+| Mar-Apr-23 | -10%  | -5%   | -10%     | 20%    | -20% |
+| May-Jun-23 | -5%   | 0%    | -5%      | 10%    | -10% |
+| Jul-Aug-23 | 0%    | 5%    | 0%       | 5%     | 0%   |
+| Sep-Oct-23 | 5%    | 10%   | 5%       | 10%    | 5%   |
+| Nov-Oct-23 | 10%   | 15%   | 10%      | 15%    | 10%  |
+| Jan-Feb-24 | 50%   | 20%   | 15%      | 20%    | 15%  |
+| Mar-Apr-24 | 100%  | 30%   | 20%      | 25%    | 20%  |
+| May-Jun-24 | 150%  | 40%   | 25%      | 30%    | 25%  |
+| Jul-Aug-24 | 200%  | 50%   | 30%      | 35%    | 30%  |
+| Sep-Oct-24 | 250%  | 60%   | 35%      | 40%    | 35%  |
+| Nov-Oct-24 | 300%  | 70%   | 40%      | 45%    | 40%  |
+| Jan-Feb-25 | 350%  | 80%   | 45%      | 50%    | 45%  |
+| Mar-Apr-25 | 400%  | 90%   | 50%      | 55%    | 50%  |
+| Apr-Feb-26 | 450%  | 100%  | 55%      | 60%    | 55%  |
+</details>
+
+Source: China Customs, JEF
+
+Chart 6 - China SPE Imports YoY  
+![](images/8cb06c8691092b14bc847cf1b13e15a634a4e2faeca8e9a20eb57d9b45b59666.jpg)
+
+Chart 7 - China Lithography Equipment Imports YoY  
+![](images/28742a39297b7052b06078045cec7d7cff4f3a44959c8ab62ce884599de7082a.jpg)
+
+<details>
+<summary>bar chart</summary>
+
+| Month       | Value  |
+| ----------- | ------ |
+| Jan-Feb-22  | -23%   |
+| Apr-22      | 96%    |
+| Jun-22      | -17%   |
+| Aug-22      | -29%   |
+| Oct-22      | -43%   |
+| Dec-22      | -55%   |
+| Mar-23      | -55%   |
+| May-23      | 55%    |
+| Jul-23      | 17%    |
+| Sep-23      | -36%   |
+| Nov-23      | -42%   |
+| Jan-Feb-24  | -67%   |
+| Apr-24      | -26%   |
+| Jun-24      | -27%   |
+| Aug-24      | 37%    |
+| Oct-24      | 58%    |
+| Dec-24      | 343%   |
+| Feb-25      | 492%   |
+| Apr-25      | 99%    |
+| Jun-25      | 397%   |
+| Aug-25      | 72%    |
+| Oct-25      | 231%   |
+| Dec-25      | 448%   |
+| Feb-26      | 51%    |
+| Apr-26      | 226%   |
+| Jun-26      | 13%    |
+| Aug-26      | 55%    |
+| Oct-26      | 36%    |
+| Dec-26      | -32%   |
+| Feb-27      | -41%   |
+| Apr-27      | -30%   |
+| Jun-27      | -4%    |
+| Aug-27      | 15%    |
+| Oct-27      | 11%    |
+| Dec-27      | -15%   |
+| Feb-28      | -23%   |
+| Apr-28      | -42%   |
+| Jun-28      | -60%   |
+| Aug-28      | -33%   |
+| Oct-28      | -33%   |
+| Dec-28      | -33%   |
+| Feb-29      | -33%   |
+| Apr-29      | -33%   |
+| Jun-29      | -33%   |
+| Aug-29      | -33%   |
+| Oct-29      | -33%   |
+| Dec-29      | -33%   |
+| Feb-30      | -33%   |
+| Apr-30      | -33%   |
+| Jun-30      | -33%   |
+| Aug-30      | -33%   |
+| Oct-30      | -33%   |
+| Dec-30      | -33%   |
+| Feb-31      | -33%   |
+| Apr-31      | -33%   |
+</details>
+
+Source: China Customs, JEF  
+Source: China Customs, JEF
+
+Chart 8 - China Deposition Equipment Imports YoY  
+![](images/840bf1f136a314c1f04df31e8ea0e61f2616566e9cc55ef2f115d74f32967ac3.jpg)
+
+<details>
+<summary>bar chart</summary>
+
+| Month | Value (%) |
+|---|---|
+| Jan-Feb-22 | 23 |
+| Apr-22 | -19 |
+| Jun-22 | -23 |
+| Aug-22 | -29 |
+| Oct-22 | 22 |
+| Dec-22 | -5 |
+| Mar-23 | 14 |
+| May-23 | 14 |
+| Jul-23 | -50 |
+| Sep-23 | 14 |
+| Nov-23 | -17 |
+| Jan-Feb-24 | 5 |
+| Apr-24 | -4 |
+| Jun-24 | -18 |
+| Aug-24 | 30 |
+| Oct-24 | -10 |
+| Dec-24 | 78 |
+| Feb-25 | 94 |
+| Apr-25 | 131 |
+| Jun-25 | 108 |
+| Aug-25 | 97 |
+| Oct-25 | 84 |
+| Dec-25 | 40 |
+| Feb-26 | 67 |
+| Apr-26 | -10 |
+| May-26 | 58 |
+| Jul-26 | -5 |
+| Sep-26 | 22 |
+| Nov-26 | -5 |
+| Dec-26 | -21 |
+| Feb-27 | -36 |
+| Apr-27 | -43 |
+| May-27 | 48 |
+| Jul-27 | 10 |
+| Sep-27 | 10 |
+| Nov-27 | 10 |
+| Dec-27 | -30 |
+| Feb-28 | -11 |
+| Apr-28 | -10 |
+| May-28 | 81 |
+| Jul-28 | 28 |
+| Sep-28 | 25 |
+| Nov-28 | -6 |
+| Dec-28 | 67 |
+| Feb-29 | 2 |
+| Apr-29 | 8 |
+| May-29 | -24 |
+| Jul-29 | 2 |
+| Sep-29 | -46 |
+| Nov-29 | -7 |
+| Dec-29 | 36 |
+</details>
+
+Source: China Customs, JEF
+
+Chart 9 - China Ion Implanting Equipment Imports YoY  
+![](images/8bd4b21a9584ccafe8e443180025cc7f26428763d08d99b41be6526208213a11.jpg)
+
+<details>
+<summary>bar chart</summary>
+
+| Month | Value (%) |
+|---|---|
+| Jan-Feb-22 | 123 |
+| Apr-22 | -16 |
+| Jun-22 | 190 |
+| Aug-22 | -37 |
+| Oct-22 | -6 |
+| Dec-22 | -10 |
+| Mar-23 | -17 |
+| May-23 | -17 |
+| Jul-23 | 7 |
+| Sep-23 | -29 |
+| Nov-23 | -8 |
+| Jan-Feb-24 | -9 |
+| Apr-24 | -14 |
+| Jun-24 | 70 |
+| Aug-24 | 64 |
+| Oct-24 | 17 |
+| Dec-24 | 47 |
+| Feb-25 | 148 |
+| Apr-25 | 36 |
+| Jun-25 | 113 |
+| Aug-25 | 94 |
+| Oct-25 | 109 |
+| Dec-25 | 53 |
+| Feb-26 | 50 |
+| Apr-26 | 6 |
+| May-26 | 66 |
+| Jun-26 | -31 |
+| Aug-26 | -48 |
+| Oct-26 | -36 |
+| Dec-26 | 46 |
+| Feb-27 | -40 |
+| Apr-27 | -24 |
+| Jun-27 | -31 |
+| Aug-27 | -28 |
+| Oct-27 | -34 |
+| Dec-27 | -47 |
+| Feb-28 | -33 |
+| Apr-28 | -34 |
+| Mar-29 | -27 |
+| May-29 | -23 |
+| Jun-29 | -5 |
+| Jul-29 | 20 |
+</details>
+
+Source: China Customs, JEF
+
+Chart 10 - China Etching Equipment Imports YoY  
+![](images/d86b8d7df4a03e2efb2d906a30663c68401705e74d33c9bc76bd1979d5c92d0e.jpg)
+
+<details>
+<summary>bar chart</summary>
+
+| Month | Value (%) |
+|---|---|
+| Jan+Feb 22 | 2 |
+| Apr-22 | -11 |
+| Jun-22 | -34 |
+| Aug-22 | 4 |
+| Oct-22 | -5 |
+| Dec-22 | -35 |
+| Mar-23 | -37 |
+| May-23 | -49 |
+| Jul-23 | -24 |
+| Sep-23 | 79 |
+| Nov-23 | 51 |
+| Jan+Feb 24 | 87 |
+| Apr-24 | 112 |
+| Jun-24 | 80 |
+| Aug-24 | 149 |
+| Oct-24 | 18 |
+| Dec-24 | 91 |
+| Feb-25 | 25 |
+| Apr-25 | -34 |
+| Jun-25 | 48 |
+| Aug-25 | -23 |
+| Oct-25 | 8 |
+| Dec-25 | 92 |
+| Feb-26 | 58 |
+| Apr-26 | 22 |
+| May-26 | 1 |
+1% |
+| Jun-26 | 66 |
+| Aug-26 | 52 |
+| Oct-26 | 65 |
+| Dec-26 | 162 |
+| Feb-27 | 2 |
+| Apr-27 | 78 |
+| May-27 | 6 |
+| Jun-27 | -33 |
+| Aug-27 | -63 |
+| Oct-27 | -4 |
+| Dec-27 | -27 |
+| Feb-28 | -3 |
+| Apr-28 | -28 |
+</details>
+
+Source: China Customs, JEF
+
+Table 1 - Quarterly SPE Imports by Key Countries (US\$m)
+
+<table><tr><td></td><td>1Q20</td><td>2Q20</td><td>3Q20</td><td>4Q20</td><td>1Q21</td><td>2Q21</td><td>3Q21</td><td>4Q21</td><td>1Q22</td><td>2Q22</td><td>3Q22</td><td>4Q22</td><td>1Q23</td><td>2Q23</td><td>3Q23</td><td>4Q23</td><td>1Q24</td><td>2Q24</td><td>3Q24</td><td>4Q24</td><td>1Q25</td><td>2Q25</td><td>3Q25</td><td>4Q25</td><td>1Q26</td><td>4M26</td></tr><tr><td>Germany</td><td>163</td><td>197</td><td>249</td><td>249</td><td>272</td><td>273</td><td>273</td><td>312</td><td>232</td><td>232</td><td>264</td><td>264</td><td>242</td><td>242</td><td>359</td><td>380</td><td>341</td><td>304</td><td>304</td><td>367</td><td>319</td><td>364</td><td>364</td><td>380</td><td>380</td><td>257</td></tr><tr><td>Israel</td><td>93</td><td>117</td><td>120</td><td>102</td><td>202</td><td>143</td><td>179</td><td>215</td><td>183</td><td>205</td><td>275</td><td>238</td><td>236</td><td>318</td><td>237</td><td>310</td><td>181</td><td>154</td><td>290</td><td>268</td><td>245</td><td>233</td><td>427</td><td>249</td><td>158</td><td>257</td></tr><tr><td>Japan</td><td>1,544</td><td>1,788</td><td>1,988</td><td>1,912</td><td>2,292</td><td>3,071</td><td>2,762</td><td>2,923</td><td>2,748</td><td>2,255</td><td>2,673</td><td>2,045</td><td>2,421</td><td>2,343</td><td>3,160</td><td>3,342</td><td>3,066</td><td>3,156</td><td>3,108</td><td>4,242</td><td>2,901</td><td>3,146</td><td>3,737</td><td>3,168</td><td>2,317</td><td>3,373</td></tr><tr><td>Korea</td><td>852</td><td>717</td><td>1,027</td><td>911</td><td>1,089</td><td>1,304</td><td>993</td><td>995</td><td>938</td><td>888</td><td>1,038</td><td>658</td><td>536</td><td>593</td><td>878</td><td>817</td><td>870</td><td>887</td><td>875</td><td>1,130</td><td>922</td><td>1,044</td><td>1,180</td><td>913</td><td>756</td><td>1,080</td></tr><tr><td>Greece</td><td>124</td><td>108</td><td>146</td><td>156</td><td>210</td><td>237</td><td>277</td><td>458</td><td>373</td><td>453</td><td>453</td><td>324</td><td>145</td><td>253</td><td>676</td><td>959</td><td>418</td><td>407</td><td>407</td><td>854</td><td>782</td><td>387</td><td>1,482</td><td>990</td><td>915</td><td>1,119</td></tr><tr><td>Netherlands</td><td>445</td><td>919</td><td>903</td><td>531</td><td>928</td><td>875</td><td>539</td><td>1,100</td><td>866</td><td>728</td><td>519</td><td>661</td><td>614</td><td>1,501</td><td>1,733</td><td>2,691</td><td>2,221</td><td>1,879</td><td>3,142</td><td>3,125</td><td>2,094</td><td>1,338</td><td>2,780</td><td>3,899</td><td>1,649</td><td>1,771</td></tr><tr><td>Sweden</td><td>669</td><td>831</td><td>766</td><td>766</td><td>1,105</td><td>1,440</td><td>1,669</td><td>1,579</td><td>1,515</td><td>1,515</td><td>1,571</td><td>951</td><td>1,135</td><td>1,391</td><td>1,041</td><td>2,375</td><td>2,165</td><td>1,888</td><td>2,000</td><td>1,670</td><td>2,775</td><td>2,147</td><td>2,612</td><td>2,919</td><td>2,748</td><td>2,874</td></tr><tr><td>Singapore</td><td>344</td><td>407</td><td>407</td><td>407</td><td>444</td><td>613</td><td>672</td><td>629</td><td>635</td><td>648</td><td>625</td><td>631</td><td>512</td><td>548</td><td>590</td><td>548</td><td>446</td><td>699</td><td>837</td><td>633</td><td>696</td><td>578</td><td>776</td><td>573</td><td>743</td><td>984</td></tr><tr><td>US</td><td>1,344</td><td>1,446</td><td>1,693</td><td>1,330</td><td>1,834</td><td>1,978</td><td>1,902</td><td>1,876</td><td>1,797</td><td>1,879</td><td>1,740</td><td>1,121</td><td>975</td><td>1,197</td><td>1,831</td><td>1,970</td><td>1,436</td><td>1,607</td><td>1,530</td><td>1,657</td><td>1,314</td><td>1,204</td><td>1,376</td><td>709</td><td>682</td><td>1,066</td></tr><tr><td>Others</td><td>280</td><td>288</td><td>285</td><td>285</td><td>346</td><td>426</td><td>412</td><td>473</td><td>409</td><td>409</td><td>432</td><td>434</td><td>338</td><td>390</td><td>463</td><td>623</td><td>504</td><td>504</td><td>491</td><td>457</td><td>457</td><td>630</td><td>539</td><td>526</td><td>608</td><td>688</td></tr><tr><td>Total (HK$)</td><td>5,778</td><td>6,784</td><td>7,756</td><td>6,758</td><td>8,736</td><td>10,355</td><td>9,483</td><td>10,453</td><td>9,693</td><td>9,143</td><td>9,926</td><td>7,256</td><td>7,159</td><td>7,898</td><td>13,076</td><td>13,906</td><td>11,558</td><td>11,485</td><td>13,029</td><td>13,938</td><td>11,477</td><td>11,635</td><td>15,296</td><td>13,337</td><td>9,775</td><td>13,448</td></tr></table>
+
+Source: China Customs, JEF
+
+Table 2 - Quarterly SPE Imports YoY by Key Countries
+
+<table><tr><td></td><td>1Q20</td><td>2Q20</td><td>3Q20</td><td>4Q20</td><td>1Q21</td><td>2Q21</td><td>3Q21</td><td>4Q21</td><td>1Q22</td><td>2Q22</td><td>3Q22</td><td>4Q22</td><td>1Q23</td><td>2Q23</td><td>3Q23</td><td>4Q23</td><td>1Q24</td><td>2Q24</td><td>3Q24</td><td>4Q24</td><td>1Q25</td><td>2Q25</td><td>3Q25</td><td>4Q25</td><td>1Q26</td><td>4M26E</td></tr><tr><td>Germany</td><td>-21%</td><td>-23%</td><td>-40%</td><td>50%</td><td>67%</td><td>41%</td><td>47%</td><td>25%</td><td>-14%</td><td>-8%</td><td>-3%</td><td>-38%</td><td>6%</td><td>-19%</td><td>36%</td><td>74%</td><td>38%</td><td>43%</td><td>-19%</td><td>5%</td><td>-6%</td><td>19%</td><td>3%</td><td>4%</td><td>-39%</td><td>-40%</td></tr><tr><td>Israel</td><td>166%</td><td>37%</td><td>55%</td><td>0%</td><td>116%</td><td>23%</td><td>49%</td><td>110%</td><td>-1%</td><td>-33%</td><td>-54%</td><td>10%</td><td>20%</td><td>-55%</td><td>-14%</td><td>31%</td><td>-23%</td><td>-52%</td><td>-23%</td><td>-13%</td><td>33%</td><td>52%</td><td>47%</td><td>-7%</td><td>-34%</td><td>-34%</td></tr><tr><td>Japan</td><td>30%</td><td>40%</td><td>27%</td><td>11%</td><td>48%</td><td>72%</td><td>39%</td><td>53%</td><td>20%</td><td>-27%</td><td>-3%</td><td>-30%</td><td>-12%</td><td>4%</td><td>18%</td><td>63%</td><td>27%</td><td>35%</td><td>-2%</td><td>25%</td><td>-5%</td><td>0%</td><td>20%</td><td>-25%</td><td>-20%</td><td>-20%</td></tr><tr><td>Korea</td><td>14%</td><td>-6%</td><td>-32%</td><td>-4%</td><td>28%</td><td>82%</td><td>-3%</td><td>5%</td><td>-14%</td><td>-32%</td><td>5%</td><td>-31%</td><td>-43%</td><td>-31%</td><td>-15%</td><td>24%</td><td>63%</td><td>50%</td><td>0%</td><td>38%</td><td>6%</td><td>18%</td><td>35%</td><td>-19%</td><td>-18%</td><td>-14%</td></tr><tr><td>Russia</td><td>246%</td><td>28%</td><td>7%</td><td>52%</td><td>70%</td><td>115%</td><td>49%</td><td>194%</td><td>77%</td><td>86%</td><td>64%</td><td>-29%</td><td>-61%</td><td>-35%</td><td>49%</td><td>196%</td><td>188%</td><td>61%</td><td>-41%</td><td>-11%</td><td>87%</td><td>142%</td><td>274%</td><td>-7%</td><td>27%</td><td>6%</td></tr><tr><td>Netherlands</td><td>75%</td><td>135%</td><td>167%</td><td>-24%</td><td>108%</td><td>-5%</td><td>40%</td><td>107%</td><td>7%</td><td>-17%</td><td>-4%</td><td>-40%</td><td>-29%</td><td>106%</td><td>426%</td><td>307%</td><td>162%</td><td>25%</td><td>-15%</td><td>-6%</td><td>-6%</td><td>-29%</td><td>-12%</td><td>54%</td><td>-21%</td><td>-26%</td></tr><tr><td>Singapore</td><td>200%</td><td>25%</td><td>54%</td><td>6%</td><td>65%</td><td>73%</td><td>48%</td><td>106%</td><td>37%</td><td>0%</td><td>-7%</td><td>-40%</td><td>-25%</td><td>-4%</td><td>49%</td><td>149%</td><td>91%</td><td>36%</td><td>2%</td><td>-30%</td><td>-18%</td><td>14%</td><td>26%</td><td>15%</td><td>-1%</td><td>19%</td></tr><tr><td>Taiwan</td><td>-40%</td><td>-2%</td><td>7%</td><td>26%</td><td>34%</td><td>-18%</td><td>46%</td><td>42%</td><td>-12%</td><td>-6%</td><td>-7%</td><td>0%</td><td>-15%</td><td>-15%</td><td>-6%</td><td>-12%</td><td>-13%</td><td>27%</td><td>-22%</td><td>15%</td><td>55%</td><td>-17%</td><td>-7%</td><td>-10%</td><td>8%</td><td>-10%</td></tr><tr><td>UK</td><td>90%</td><td>15%</td><td>27%</td><td>7%</td><td>36%</td><td>37%</td><td>12%</td><td>41%</td><td>-2%</td><td>-5%</td><td>-9%</td><td>-40%</td><td>-46%</td><td>36%</td><td>5%</td><td>76%</td><td>47%</td><td>34%</td><td>-16%</td><td>-18%</td><td>-8%</td><td>-25%</td><td>-10%</td><td>-57%</td><td>-48%</td><td>-39%</td></tr><tr><td>Others</td><td>15%</td><td>8%</td><td>33%</td><td>33%</td><td>73%</td><td>46%</td><td>46%</td><td>13%</td><td>17%</td><td>-9%</td><td>-4%</td><td>7%</td><td>-17%</td><td>-14%</td><td>32%</td><td>44%</td><td>22%</td><td>15%</td><td>-16%</td><td>27%</td><td>7%</td><td>18%</td><td>27%</td><td>25%</td><td>-17%</td><td>-17%</td></tr><tr><td>Total</td><td>1,000</td><td>1,000</td><td>1,000</td><td>1,000</td><td>1,000</td><td>1,000</td><td>1,000</td><td>1,000</td><td>1,000</td><td>1,000</td><td>1,000</td><td>1,000</td><td>1,000</td><td>1,000</td><td>1,000</td><td>1,000</td><td>1,000</td><td>1,500</td><td>1,000</td><td>1,000</td><td>1,000</td><td>1,000</td><td>1,000</td><td>1,000</td><td>1,000</td><td>1,000</td></tr></table>
+
+Source: China customs, JEF
+
+Table 3 - Quarterly SPE Imports by Key Product Categories (US\$m)
+
+<table><tr><td></td><td>1Q20</td><td>2Q20</td><td>3Q20</td><td>4Q20</td><td>1Q21</td><td>2Q21</td><td>3Q21</td><td>4Q21</td><td>1Q22</td><td>2Q22</td><td>3Q22</td><td>4Q22</td><td>1Q23</td><td>2Q23</td><td>3Q23</td><td>4Q23</td><td>1Q24</td><td>2Q24</td><td>3Q24</td><td>4Q24</td><td>1Q25</td><td>2Q25</td><td>3Q25</td><td>4Q25</td><td>1Q26</td><td>4Q26</td></tr><tr><td>Wafer Fabrication</td><td>2,906</td><td>3,488</td><td>3,839</td><td>3,902</td><td>4,928</td><td>6,027</td><td>4,723</td><td>5,458</td><td>5,173</td><td>4,702</td><td>4,876</td><td>4,915</td><td>4,060</td><td>5,152</td><td>8,801</td><td>9,353</td><td>7,764</td><td>7,527</td><td>8,826</td><td>8,378</td><td>7,377</td><td>7,629</td><td>10,175</td><td>9,240</td><td>6,504</td><td>8,854</td></tr><tr><td>Injection &amp; Testing</td><td>546</td><td>612</td><td>697</td><td>451</td><td>725</td><td>805</td><td>641</td><td>1,082</td><td>883</td><td>933</td><td>1,079</td><td>940</td><td>805</td><td>541</td><td>1,531</td><td>1,418</td><td>1,078</td><td>1,059</td><td>1,291</td><td>1,607</td><td>1,207</td><td>1,051</td><td>1,062</td><td>1,062</td><td>778</td><td>218</td></tr><tr><td>Packaging</td><td>277</td><td>324</td><td>318</td><td>493</td><td>573</td><td>723</td><td>845</td><td>795</td><td>634</td><td>551</td><td>501</td><td>519</td><td>329</td><td>313</td><td>355</td><td>372</td><td>294</td><td>350</td><td>399</td><td>340</td><td>315</td><td>320</td><td>398</td><td>381</td><td>296</td><td>411</td></tr><tr><td>Crystal Growing</td><td>189</td><td>226</td><td>212</td><td>231</td><td>249</td><td>389</td><td>444</td><td>468</td><td>533</td><td>380</td><td>415</td><td>397</td><td>449</td><td>426</td><td>445</td><td>443</td><td>472</td><td>265</td><td>426</td><td>321</td><td>420</td><td>325</td><td>439</td><td>426</td><td>271</td><td>395</td></tr><tr><td>Parts</td><td>1,406</td><td>1,648</td><td>2,106</td><td>1,748</td><td>1,798</td><td>1,897</td><td>2,079</td><td>2,137</td><td>1,907</td><td>1,682</td><td>1,798</td><td>1,291</td><td>1,105</td><td>1,265</td><td>3,360</td><td>1,557</td><td>1,267</td><td>1,572</td><td>1,371</td><td>1,461</td><td>1,477</td><td>1,527</td><td>1,992</td><td>1,493</td><td>1,416</td><td>1,894</td></tr><tr><td>Others</td><td>453</td><td>487</td><td>470</td><td>533</td><td>559</td><td>516</td><td>511</td><td>531</td><td>567</td><td>591</td><td>791</td><td>722</td><td>383</td><td>429</td><td>574</td><td>584</td><td>626</td><td>684</td><td>712</td><td>715</td><td>830</td><td>682</td><td>782</td><td>631</td><td>535</td><td>512</td></tr><tr><td>Total (NT$)</td><td>5,729</td><td>6,784</td><td>7,750</td><td>6,758</td><td>8,736</td><td>10,355</td><td>9,483</td><td>10,457</td><td>9,603</td><td>9,143</td><td>9,300</td><td>7,256</td><td>7,159</td><td>8,798</td><td>13,076</td><td>13,958</td><td>11,558</td><td>11,485</td><td>13,029</td><td>13,938</td><td>11,477</td><td>11,635</td><td>15,296</td><td>13,337</td><td>9,775</td><td>13,488</td></tr></table>
+
+Source: China Customs, JEF
+
+Table 4 - Quarterly SPE Imports YoY by Key Product Categories
+
+<table><tr><td></td><td>1Q20</td><td>2Q20</td><td>3Q20</td><td>4Q20</td><td>1Q21</td><td>2Q21</td><td>3Q21</td><td>4Q21</td><td>1Q22</td><td>2Q22</td><td>3Q22</td><td>4Q22</td><td>1Q23</td><td>2Q23</td><td>3Q23</td><td>4Q23</td><td>1Q24</td><td>2Q24</td><td>3Q24</td><td>4Q24</td><td>1Q25</td><td>2Q25</td><td>3Q25</td><td>4Q25</td><td>1Q26</td><td>4M26</td></tr><tr><td>Water Fabrication</td><td>59%</td><td>37%</td><td>31%</td><td>7%</td><td>70%</td><td>73%</td><td>23%</td><td>65%</td><td>5%</td><td>-22%</td><td>3%</td><td>-28%</td><td>-22%</td><td>10%</td><td>81%</td><td>139%</td><td>91%</td><td>46%</td><td>0%</td><td>0%</td><td>-5%</td><td>1%</td><td>15%</td><td>-1%</td><td>-14%</td><td>-12%</td></tr><tr><td>Projection &amp; Testing</td><td>76%</td><td>10%</td><td>14%</td><td>-6%</td><td>32%</td><td>30%</td><td>28%</td><td>127%</td><td>22%</td><td>29%</td><td>22%</td><td>-8%</td><td>-10%</td><td>10%</td><td>42%</td><td>50%</td><td>34%</td><td>-7%</td><td>-16%</td><td>13%</td><td>-12%</td><td>-1%</td><td>29%</td><td>-34%</td><td>-36%</td><td>-23%</td></tr><tr><td>Packaging</td><td>53%</td><td>41%</td><td>0%</td><td>56%</td><td>109%</td><td>124%</td><td>166%</td><td>61%</td><td>10%</td><td>-24%</td><td>41%</td><td>-59%</td><td>-51%</td><td>-39%</td><td>-29%</td><td>13%</td><td>-6%</td><td>5%</td><td>12%</td><td>-8%</td><td>7%</td><td>-9%</td><td>0%</td><td>12%</td><td>-4%</td><td>6%</td></tr><tr><td>Crystal Growing</td><td>-18%</td><td>-11%</td><td>-28%</td><td>-12%</td><td>32%</td><td>72%</td><td>110%</td><td>103%</td><td>114%</td><td>-2%</td><td>-6%</td><td>-15%</td><td>-16%</td><td>12%</td><td>7%</td><td>12%</td><td>5%</td><td>-38%</td><td>-4%</td><td>-27%</td><td>-11%</td><td>23%</td><td>3%</td><td>33%</td><td>-35%</td><td>-24%</td></tr><tr><td>Parts</td><td>65%</td><td>28%</td><td>58%</td><td>7%</td><td>28%</td><td>15%</td><td>-1%</td><td>22%</td><td>6%</td><td>-11%</td><td>-14%</td><td>-40%</td><td>-42%</td><td>-25%</td><td>-24%</td><td>21%</td><td>15%</td><td>24%</td><td>1%</td><td>-6%</td><td>17%</td><td>-3%</td><td>45%</td><td>2%</td><td>-4%</td><td>-5%</td></tr><tr><td>Other</td><td>-34%</td><td>-22%</td><td>-67%</td><td>-3%</td><td>1%</td><td>7%</td><td>-5%</td><td>7%</td><td>23%</td><td>-14%</td><td>41%</td><td>-33%</td><td>-24%</td><td>-39%</td><td>-19%</td><td>116%</td><td>60%</td><td>49%</td><td>23%</td><td>1%</td><td>0%</td><td>10%</td><td>-12%</td><td>-12%</td><td>-25%</td><td>-25%</td></tr><tr><td>Total (MTS)</td><td>42%</td><td>23%</td><td>33%</td><td>7%</td><td>51%</td><td>53%</td><td>22%</td><td>55%</td><td>11%</td><td>-12%</td><td>-1%</td><td>-31%</td><td>-26%</td><td>-4%</td><td>39%</td><td>92%</td><td>51%</td><td>31%</td><td>0%</td><td>-1%</td><td>1%</td><td>1%</td><td>17%</td><td>-4%</td><td>-16%</td><td>-13%</td></tr></table>
+
+Source: China Customs, JEF
+
+Table 5 - Quarterly Semiconductor Imports by Key Countries (US\$m)
+
+<table><tr><td>(US$m)</td><td>1Q20</td><td>2Q20</td><td>3Q20</td><td>4Q20</td><td>1Q21</td><td>2Q21</td><td>3Q21</td><td>4Q21</td><td>1Q22</td><td>2Q22</td><td>3Q22</td><td>4Q22</td><td>1Q23</td><td>2Q23</td><td>3Q23</td><td>4Q23</td><td>1Q24</td><td>2Q24</td><td>3Q24</td><td>4Q24</td><td>1Q25</td><td>2Q25</td><td>3Q25</td><td>4Q25</td><td>1Q26</td><td>4Q26</td></tr><tr><td>Germany</td><td>288</td><td>253</td><td>346</td><td>378</td><td>435</td><td>441</td><td>458</td><td>474</td><td>409</td><td>475</td><td>584</td><td>495</td><td>362</td><td>504</td><td>405</td><td>400</td><td>367</td><td>422</td><td>500</td><td>457</td><td>462</td><td>730</td><td>1,623</td><td>1,694</td><td>1,688</td><td>2,347</td></tr><tr><td>USA</td><td>759</td><td>724</td><td>692</td><td>708</td><td>586</td><td>724</td><td>805</td><td>1,025</td><td>1,169</td><td>1,075</td><td>1,075</td><td>828</td><td>828</td><td>545</td><td>1,104</td><td>1,104</td><td>974</td><td>1,207</td><td>1,097</td><td>1,087</td><td>1,234</td><td>3,602</td><td>3,602</td><td>3,519</td><td>3,212</td><td>3,602</td></tr><tr><td>Japan</td><td>3,938</td><td>4,602</td><td>4,706</td><td>5,054</td><td>4,773</td><td>5,634</td><td>5,986</td><td>5,936</td><td>4,971</td><td>5,459</td><td>5,267</td><td>5,299</td><td>5,604</td><td>4,660</td><td>5,075</td><td>5,438</td><td>4,333</td><td>4,484</td><td>4,899</td><td>5,777</td><td>6,270</td><td>5,721</td><td>8,855</td><td>8,917</td><td>11,064</td><td>15,487</td></tr><tr><td>Russia</td><td>14,859</td><td>16,228</td><td>19,046</td><td>18,619</td><td>18,460</td><td>20,927</td><td>23,853</td><td>25,059</td><td>22,500</td><td>20,937</td><td>22,405</td><td>18,637</td><td>14,634</td><td>15,987</td><td>17,084</td><td>18,468</td><td>19,285</td><td>21,343</td><td>20,546</td><td>22,876</td><td>18,993</td><td>22,550</td><td>24,176</td><td>27,827</td><td>34,050</td><td>49,971</td></tr><tr><td>UK</td><td>6,801</td><td>7,809</td><td>8,141</td><td>7,745</td><td>7,245</td><td>8,610</td><td>8,987</td><td>7,980</td><td>7,913</td><td>7,593</td><td>7,290</td><td>6,505</td><td>5,407</td><td>6,400</td><td>6,115</td><td>6,052</td><td>4,640</td><td>6,115</td><td>6,502</td><td>6,115</td><td>6,702</td><td>5,587</td><td>1,1,007</td><td>-</td><td>785</td><td>886</td></tr><tr><td>Netherlands</td><td>16</td><td>18</td><td>17</td><td>17</td><td>21</td><td>20</td><td>21</td><td>22</td><td>25</td><td>21</td><td>15</td><td>15</td><td>17</td><td>24</td><td>17</td><td>16</td><td>11</td><td>14</td><td>11</td><td>21</td><td>18</td><td>24</td><td>64</td><td>114</td><td>165</td><td>235</td></tr><tr><td>Singapore</td><td>1,451</td><td>1,489</td><td>1,761</td><td>1,869</td><td>1,747</td><td>1,650</td><td>1,907</td><td>1,888</td><td>1,833</td><td>1,593</td><td>1,894</td><td>1,673</td><td>1,385</td><td>1,275</td><td>1,464</td><td>1,057</td><td>1,383</td><td>1,681</td><td>2,002</td><td>1,964</td><td>1,712</td><td>2,049</td><td>3,169</td><td>3,354</td><td>3,937</td><td>5,558</td></tr><tr><td>Malaysia</td><td>23,080</td><td>27,565</td><td>36,063</td><td>37,882</td><td>38,811</td><td>34,112</td><td>41,332</td><td>43,837</td><td>39,119</td><td>38,873</td><td>38,873</td><td>38,873</td><td>36,599</td><td>31,976</td><td>30,882</td><td>32,220</td><td>30,124</td><td>31,956</td><td>30,656</td><td>37,867</td><td>38,800</td><td>36,063</td><td>36,063</td><td>36,063</td><td>43,947</td><td>51,575</td></tr><tr><td>US$</td><td>3,336</td><td>3,677</td><td>3,385</td><td>3,824</td><td>4,007</td><td>4,336</td><td>3,952</td><td>3,446</td><td>3,111</td><td>3,974</td><td>3,012</td><td>3,884</td><td>3,896</td><td>2,014</td><td>2,147</td><td>2,255</td><td>2,408</td><td>2,949</td><td>3,226</td><td>3,312</td><td>3,737</td><td>6,112</td><td>9,173</td><td>9,504</td><td>10,037</td><td>13,778</td></tr><tr><td>Yen</td><td>9,596</td><td>10,581</td><td>11,621</td><td>11,819</td><td>11,874</td><td>11,871</td><td>11,879</td><td>11,879</td><td>11,400</td><td>11,715</td><td>12,177</td><td>11,879</td><td>8,976</td><td>9,180</td><td>10,593</td><td>10,843</td><td>9,418</td><td>10,418</td><td>10,088</td><td>10,266</td><td>11,125</td><td>11,000</td><td>11,000</td><td>11,000</td><td>4,307</td><td>4,307</td></tr><tr><td>Total (MIL)</td><td>63,992</td><td>72,946</td><td>85,800</td><td>87,281</td><td>81,648</td><td>90,138</td><td>99,992</td><td>103,697</td><td>93,429</td><td>90,450</td><td>94,670</td><td>87,670</td><td>80,785</td><td>70,981</td><td>78,876</td><td>83,827</td><td>73,137</td><td>79,327</td><td>87,630</td><td>90,008</td><td>75,712</td><td>87,625</td><td>100,712</td><td>104,837</td><td>111,843</td><td>157,046</td></tr></table>
+
+Source: China Customs, JEF
+
+Table 6 - Quarterly Semiconductor Imports YoY by Key Countries
+
+<table><tr><td>(Yen)</td><td>1Q20</td><td>2Q20</td><td>3Q20</td><td>4Q20</td><td>1Q21</td><td>2Q21</td><td>3Q21</td><td>4Q21</td><td>1Q22</td><td>2Q22</td><td>3Q22</td><td>4Q22</td><td>1Q23</td><td>2Q23</td><td>3Q23</td><td>4Q23</td><td>1Q24</td><td>2Q24</td><td>3Q24</td><td>4Q24</td><td>1Q25</td><td>2Q25</td><td>3Q25</td><td>4Q25</td><td>1Q26</td><td>4M26</td></tr><tr><td>Germany</td><td>-14%</td><td>-24%</td><td>-13%</td><td>13%</td><td>51%</td><td>74%</td><td>32%</td><td>26%</td><td>-6%</td><td>8%</td><td>28%</td><td>4%</td><td>-11%</td><td>-6%</td><td>-31%</td><td>-19%</td><td>1%</td><td>-16%</td><td>23%</td><td>14%</td><td>26%</td><td>73%</td><td>214%</td><td>217%</td><td>261%</td><td>286%</td></tr><tr><td>Israel</td><td>1739%</td><td>316%</td><td>26%</td><td>-5%</td><td>-17%</td><td>-1%</td><td>23%</td><td>53%</td><td>34%</td><td>63%</td><td>23%</td><td>-13%</td><td>-23%</td><td>-28%</td><td>-6%</td><td>15%</td><td>10%</td><td>9%</td><td>21%</td><td>-59%</td><td>35%</td><td>290%</td><td>156%</td><td>157%</td><td>161%</td><td>177%</td></tr><tr><td>Japan</td><td>8%</td><td>14%</td><td>-2%</td><td>5%</td><td>21%</td><td>22%</td><td>27%</td><td>17%</td><td>4%</td><td>-19%</td><td>-12%</td><td>-11%</td><td>13%</td><td>2%</td><td>-4%</td><td>3%</td><td>-23%</td><td>-6%</td><td>-3%</td><td>6%</td><td>-1%</td><td>31%</td><td>81%</td><td>70%</td><td>159%</td><td>157%</td></tr><tr><td>Korea</td><td>3%</td><td>0%</td><td>14%</td><td>15%</td><td>24%</td><td>29%</td><td>25%</td><td>35%</td><td>22%</td><td>0%</td><td>-6%</td><td>-26%</td><td>-33%</td><td>-24%</td><td>-24%</td><td>-1%</td><td>32%</td><td>34%</td><td>20%</td><td>24%</td><td>-2%</td><td>6%</td><td>18%</td><td>22%</td><td>79%</td><td>86%</td></tr><tr><td>Malaysia</td><td>1%</td><td>0%</td><td>-5%</td><td>0%</td><td>7%</td><td>10%</td><td>-1%</td><td>29%</td><td>9%</td><td>-13%</td><td>-10%</td><td>-30%</td><td>-27%</td><td>-23%</td><td>-12%</td><td>-15%</td><td>-5%</td><td>16%</td><td>1%</td><td>22%</td><td>-31%</td><td>41%</td><td>-84%</td><td>-84%</td><td>-84%</td><td>-86%</td></tr><tr><td>Netherlands</td><td>18%</td><td>5%</td><td>-1%</td><td>-14%</td><td>19%</td><td>15%</td><td>57%</td><td>10%</td><td>29%</td><td>0%</td><td>-21%</td><td>-15%</td><td>-42%</td><td>-24%</td><td>12%</td><td>9%</td><td>6%</td><td>-26%</td><td>-40%</td><td>25%</td><td>16%</td><td>90%</td><td>353%</td><td>443%</td><td>817%</td><td>929%</td></tr><tr><td>Singapore</td><td>-3%</td><td>-9%</td><td>-10%</td><td>1%</td><td>20%</td><td>11%</td><td>8%</td><td>6%</td><td>5%</td><td>-4%</td><td>4%</td><td>-16%</td><td>-33%</td><td>-20%</td><td>-26%</td><td>-1%</td><td>17%</td><td>32%</td><td>37%</td><td>59%</td><td>24%</td><td>22%</td><td>158%</td><td>70%</td><td>130%</td><td>135%</td></tr><tr><td>Taiwan</td><td>11%</td><td>22%</td><td>32%</td><td>31%</td><td>43%</td><td>15%</td><td>17%</td><td>17%</td><td>22%</td><td>8%</td><td>-3%</td><td>-11%</td><td>-24%</td><td>-18%</td><td>-12%</td><td>-4%</td><td>0%</td><td>3%</td><td>8%</td><td>2%</td><td>2%</td><td>10%</td><td>69%</td><td>13%</td><td>37%</td><td>96%</td></tr><tr><td>US</td><td>-1%</td><td>10%</td><td>-2%</td><td>-12%</td><td>20%</td><td>18%</td><td>17%</td><td>-10%</td><td>-22%</td><td>-31%</td><td>-24%</td><td>-11%</td><td>-39%</td><td>-32%</td><td>-29%</td><td>-27%</td><td>-17%</td><td>46%</td><td>50%</td><td>47%</td><td>55%</td><td>107%</td><td>184%</td><td>187%</td><td>169%</td><td>176%</td></tr><tr><td>Others</td><td>50%</td><td>38%</td><td>18%</td><td>16%</td><td>20%</td><td>12%</td><td>3%</td><td>2%</td><td>0%</td><td>3%</td><td>2%</td><td>-7%</td><td>-29%</td><td>-24%</td><td>-16%</td><td>1%</td><td>17%</td><td>3%</td><td>-2%</td><td>-9%</td><td>-14%</td><td>-24%</td><td>-44%</td><td>-51%</td><td>-46%</td><td>-46%</td></tr></table>
+
+Source: China Customs, JEF
+
+## Company Valuation/Risks
+
+## Advanced Micro-Fabrication Eqp Inc China
+
+Our PT of Rmb415.00 is based on 80x/58x 2026E/27E P/E. Key risks include 1) further sanction from US Department of Commerce, 2) slower-than-expected customer capacity expansion, 3) slower-than-expected new customer acquisition outside China, and 4) slower-than-expected new tool development.
+
+## Analyst Certification:
+
+I, Edison Lee, CFA, certify that all of the views expressed in this research report accurately reflect my personal views about the subject security(ies) and subject company(ies). I also certify that no part of my compensation was, is, or will be, directly or indirectly, related to the specific recommendations or views expressed in this research report.
+
+I, Nick Cheng, certify that all of the views expressed in this research report accurately reflect my personal views about the subject security(ies) and subject company(ies). I also certify that no part of my compensation was, is, or will be, directly or indirectly, related to the specific recommendations or views expressed in this research report.
+
+I, Jacky He, certify that all of the views expressed in this research report accurately reflect my personal views about the subject security(ies) and subject company(ies). I also certify that no part of my compensation was, is, or will be, directly or indirectly, related to the specific recommendations or views expressed in this research report.
+
+I, Matt Ma, certify that all of the views expressed in this research report accurately reflect my personal views about the subject security(ies) and subject company(ies). I also certify that no part of my compensation was, is, or will be, directly or indirectly, related to the specific recommendations or views expressed in this research report.
+
+I, Annie Ping, CFA, FRM, certify that all of the views expressed in this research report accurately reflect my personal views about the subject security(ies) and subject company(ies). I also certify that no part of my compensation was, is, or will be, directly or indirectly, related to the specific recommendations or views expressed in this research report.
+
+Registration of non-US analysts: Edison Lee, CFA is employed by JEF Hong Kong Limited, a non-US affiliate of JEF LLC and is not registered/qualified as a research analyst with FINRA. This analyst(s) may not be an associated person of JEF LLC, a FINRA member firm, and therefore may not be subject to the FINRA Rule 2241 and restrictions on communications with a subject company, public appearances and trading securities held by a research analyst.
+
+Registration of non-US analysts: Nick Cheng is employed by JEF Hong Kong Limited, a non-US affiliate of JEF LLC and is not registered/qualified as a research analyst with FINRA. This analyst(s) may not be an associated person of JEF LLC, a FINRA member firm, and therefore may not be subject to the FINRA Rule 2241 and restrictions on communications with a subject company, public appearances and trading securities held by a research analyst.
+
+Registration of non-US analysts: Jacky He is employed by JEF Hong Kong Limited, a non-US affiliate of JEF LLC and is not registered/qualified as a research analyst with FINRA. This analyst(s) may not be an associated person of JEF LLC, a FINRA member firm, and therefore may not be subject to the FINRA Rule 2241 and restrictions on communications with a subject company, public appearances and trading securities held by a research analyst.
+
+Registration of non-US analysts: Matt Ma is employed by JEF Hong Kong Limited, a non-US affiliate of JEF LLC and is not registered/qualified as a research analyst with FINRA. This analyst(s) may not be an associated person of JEF LLC, a FINRA member firm, and therefore may not be subject to the FINRA Rule 2241 and restrictions on communications with a subject company, public appearances and trading securities held by a research analyst.
+
+Registration of non-US analysts: Annie Ping, CFA, FRM is employed by JEF Hong Kong Limited, a non-US affiliate of JEF LLC and is not registered/qualified as a research analyst with FINRA. This analyst(s) may not be an associated person of JEF LLC, a FINRA member firm, and therefore may not be subject to the FINRA Rule 2241 and restrictions on communications with a subject company, public appearances and trading securities held by a research analyst.
+
+As is the case with all JEF employees, the analyst(s) responsible for the coverage of the financial instruments discussed in this report receives compensation based in part on the overall performance of the firm, including investment banking income. We seek to update our research as appropriate, but various regulations may prevent us from doing so. Aside from certain industry reports published on a periodic basis, the large majority of reports are published at irregular intervals as appropriate in the analyst's judgement.
+
+## Investment Recommendation Record
+
+## (Article 3(1)e and Article 7 of MAR)
+
+Recommendation Published
+
+Recommendation Distributed
+
+June 2, 2026 13:41 P.M.
+
+June 2, 2026 13:41 P.M.
+
+## Explanation of JEF Ratings
+
+Buy - Describes securities that we expect to provide a total return (price appreciation plus yield) of 15% or more within a 12-month period.
+
+Hold - Describes securities that we expect to provide a total return (price appreciation plus yield) of plus 15% or minus 10% within a 12-month period.
+
+Underperform - Describes securities that we expect to provide a total return (price appreciation plus yield) of minus 10% or less within a 12-month period. The expected total return (price appreciation plus yield) for Buy rated securities with an average security price consistently below \$10 is 20% or more within a 12-month period as these companies are typically more volatile than the overall stock market. For Hold rated securities with an average security price consistently below \$10, the expected total return (price appreciation plus yield) is plus or minus 20% within a 12-month period. For Underperform rated securities with an average security price consistently below \$10, the expected total return (price appreciation plus yield) is minus 20% or less within a 12-month period.
+
+NR - The investment rating and price target have been temporarily suspended. Such suspensions are in compliance with applicable regulations and/or JEF policies.
+
+CS - Coverage Suspended. JEF has suspended coverage of this company.
+
+NC - Not covered. JEF does not cover this company.
+
+Restricted - Describes issuers where, in conjunction with JEF engagement in certain transactions, company policy or applicable securities regulations prohibit certain types of communications, including investment recommendations.
+
+Monitor - Describes securities whose company fundamentals and financials are being monitored, and for which no financial projections or opinions on the investment merits of the company are provided.
+
+## Valuation Methodology
+
+JEF' methodology for assigning ratings may include the following: market capitalization, maturity, growth/value, volatility and expected total return over the next 12 months. The price targets are based on several methodologies, which may include, but are not restricted to, analyses of market risk, growth rate, revenue stream, discounted cash flow (DCF), EBITDA, EPS, cash flow (CF), free cash flow (FCF), EV/EBITDA, P/E, PE/growth, P/CF, P/FCF, premium (discount)/average group EV/EBITDA, premium (discount)/average group P/E, sum of the parts, net asset value, dividend returns, and return on equity (ROE) over the next 12 months.
+
+## JEF Franchise Picks
+
+JEF Franchise Picks include stock selections from among the best stock ideas from our equity analysts over a 12 month period. Stock selection is based on fundamental analysis and may take into account other factors such as analyst conviction, differentiated analysis, a favorable risk/reward ratio and investment themes that JEF analysts are recommending. JEF Franchise Picks will include only Buy rated stocks and the number can vary depending on analyst recommendations for inclusion. Stocks will be added as new opportunities arise and removed when the reason for inclusion changes, the stock has met its desired return, if it is no longer rated Buy and/or if it triggers a stop loss. Stocks having 120 day volatility in the bottom quartile of S&P stocks will continue to have a 15% stop loss, and the remainder will have a 20% stop. Franchise Picks are not intended to represent a recommended portfolio of stocks and is not sector based, but we may note where we believe a Pick falls within an investment style such as growth or value.
+
+## Risks which may impede the achievement of our Price Target
+
+This report was prepared for general circulation and does not provide investment recommendations specific to individual investors. As such, the financial instruments discussed in this report may not be suitable for all investors and investors must make their own investment decisions based upon their specific investment objectives and financial situation utilizing their own financial advisors as they deem necessary. Past performance of the financial instruments recommended in this report should not be taken as an indication or guarantee of future results. The price, value of, and income from, any of the financial instruments mentioned in this report can rise as well as fall and may be affected by changes in economic, financial and political factors. If a financial instrument is denominated in a currency other than the investor's home currency, a change in exchange rates may adversely affect the price of, value of, or income derived from the financial instrument described in this report. To the extent prices are shown in non-US currency, please note that our local currency price targets are based on a currency conversion using an exchange rate as of the prior trading day (unless otherwise noted). Should there be fluctuations in the exchange rate after this date, that will affect the non-US target prices and should no longer be relied upon. In addition, investors in securities such as ADRs, whose values are affected by the currency of the underlying security, effectively assume currency risk.
+
+## Other Companies Mentioned in This Report
+
+• Advanced Micro-Fabrication Eqp Inc China (688012 CH: CNY273.00, BUY)
+
+Rating and Price Target History for: Advanced Micro-Fabrication Eqp Inc China (688012 CH) as of 05-29-2026  
+![](images/19fb3888d08948bd92721b9f0cdd8bf852cc9a2b6adfa79ae28d95be9cf01a51.jpg)
+
+<details>
+<summary>line chart</summary>
+
+| Date       | Buy Price (CNY) |
+|------------|-----------------|
+| 07/03/2023 | 255.45          |
+| 08/28/2023 | 230.13          |
+| 10/30/2023 | 214.00          |
+| 03/19/2024 | 215.00          |
+| 04/25/2024 | 200.00          |
+| 08/29/2024 | 190.00          |
+| 10/30/2024 | 210.00          |
+| 05/27/2025 | 200.00          |
+| 09/01/2025 | 248.00          |
+| 04/01/2026 | 368.00          |
+| 04/29/2026 | 415.00          |
+</details>
+
+Notes: Each box in the Rating and Price Target History chart above represents actions over the past three years in which an analyst initiated on a company, made a change to a rating or price target of a company or discontinued coverage of a company.
+
+Legend:
+
+I: Initiating Coverage
+
+D: Dropped Coverage
+
+B: Buy
+
+H: Hold
+
+UP: Underperform
+
+Distribution of Ratings  
+IB Serv./Past12 Mos.  
+JIL Mkt Serv./Past12 Mos.
+
+<table><tr><td></td><td>Count</td><td>Percent</td><td>Count</td><td>Percent</td><td>Count</td><td>Percent</td></tr><tr><td>BUY</td><td>2193</td><td>62.14%</td><td>383</td><td>17.46%</td><td>114</td><td>5.20%</td></tr><tr><td>HOLD</td><td>1175</td><td>33.30%</td><td>110</td><td>9.36%</td><td>20</td><td>1.70%</td></tr><tr><td>UNDERPERFORM</td><td>161</td><td>4.56%</td><td>1</td><td>0.62%</td><td>1</td><td>0.62%</td></tr></table>
+
+## Other Important Disclosure
+
+## Other Important Disclosures
+
+JEF does business and seeks to do business with companies covered in its research reports, and expects to receive or intends to seek compensation for investment banking services among other activities from such companies. As a result, investors should be aware that JEF may have a conflict of interest that could affect the objectivity of this report. Investors should consider this report as only a single factor in making their investment decision.
+
+JEF Equity Research refers to research reports produced by analysts employed by one of the following JEF Financial Group Inc. ("JEF") companies:
+
+United States: JEF LLC which is an SEC registered broker-dealer and a member of FINRA (and distributed by JEF Services, LLC, an SEC registered Investment Adviser, to clients paying separately for such research).
+
+Canada: JEF Securities Inc., which is an investment dealer registered in each of the thirteen Canadian jurisdictions and a dealer member of the Canadian Investment Regulatory Organization, including research reports produced jointly by JEF Securities Inc. and another JEF entity (and distributed by JEF Securities Inc.).
+
+Where JEF Securities Inc. distributes research reports produced by JEF LLC, JEF International Limited, JEF Japan Company Limited, or JEF India Private Limited, you are advised that each of JEF LLC, JEF International Limited, JEF Japan Company Limited, and JEF India Private Limited operates as a dealer in your jurisdiction under an exemption from the dealer registration requirements contained in National Instrument 31-103 Registration Requirements, Exemptions and Ongoing Registrant Obligations and, as such, each of JEF LLC, JEF International Limited, JEF Japan Company Limited, and JEF India Private Limited is not required to be and is not a registered dealer or adviser in your jurisdiction. You are advised that where JEF LLC or JEF International Limited prepared this research report, it was not prepared in accordance with Canadian disclosure requirements relating to research reports in Canada.
+
+United Kingdom: JEF International Limited, which is authorized and regulated by the Financial Conduct Authority; registered in England and Wales No. 1978621; registered office: 100 Bishopsgate, London EC2N 4JL; telephone +44 (0)20 7029 8000; facsimile +44 (0)20 7029 8010.
+
+Germany: JEF GmbH, which is authorized and regulated by the Bundesanstalt fuer Finanzdienstleistungsaufsicht, BaFin-ID: 10150151; registered office: Bockenheimer Landstr. 24, 60323 Frankfurt a.M., Germany; telephone: +49 (0) 69 719 1870
+
+Hong Kong: JEF Hong Kong Limited, which is licensed by the Securities and Futures Commission of Hong Kong with CE number ATS546; located at Level 26, Two International Finance Center, 8 Finance Street, Central, Hong Kong; telephone: +852 3743 8000.
+
+Singapore: JEF Singapore Limited, which is licensed by the Monetary Authority of Singapore; located at 10 Collyer Quay #41-01, Ocean Financial Centre, Singapore 049315, telephone: +65 6551 3950.
+
+Japan: JEF Japan Company Limited, which is a securities company registered by the Financial Services Agency of Japan and is a member of the Japan Securities Dealers Association; located at Tokyo Midtown Hibiya 30F Hibiya Mitsui Tower, 1-1-2 Yuraku-cho, Chiyoda-ku, Tokyo 100-0006; telephone +813 5251 6100; facsimile +813 5251 6101.
+
+India: JEF India Private Limited (CIN - U74140MH2007PTC200509), licensed by the Securities and Exchange Board of India for: Stock Broker (NSE & BSE) INZ000243033, Research Analyst INH000000701 and Merchant Banker INM000011443, located at Level 16, Express Towers, Nariman Point, Mumbai 400 021, India; Tel +91 22 4356 6000. Compliance Officer name: Sanjay Pai, Tel No: +91 22 42246150, Email: spai@JEF.com, Grievance officer name: Sanjay Pai, Tel no. +91 22 42246150, Email: compliance\_india@JEF.com. Registration granted by SEBI and certification from NISM in no way guarantee performance of the intermediary or provide any assurance of returns to investors.
+
+Australia: JEF (Australia) Pty Limited (ACN 623 059 898), which holds an Australian financial services license (AFSL 504712) and is located at Level 20, 60 Martin Place, Sydney NSW 2000; telephone +61 2 9364 2800.
+
+Dubai: JEF International Limited, Dubai branch, which is licensed by the Dubai Financial Services Authority (DFSA Reference Number F007325); registered office Unit L31-06, L31-07, Level 31, ICD Brookfield Pace, DIFC, PO Box 121208, Dubai, UAE.
+
+This report was prepared by personnel who are associated with JEF (JEF Securities Inc., JEF International Limited, JEF GmbH, JEF Hong Kong Limited, JEF Singapore Limited, JEF Japan Company Limited, JEF India Private Limited), and JEF (Australia) Pty Ltd; or by personnel who are associated with both JEF LLC and JEF Services LLC ("JRS"). JEF LLC is a US registered broker-dealer and is affiliated with JRS, which is a US registered investment adviser. JRS does not create tailored or personalized research and all research provided by JRS is impersonal. If you are paying separately for this research, it is being provided to you by JRS. Otherwise, it is being provided by JEF LLC. JEF LLC, JRS, and their affiliates are collectively referred to below as "JEF". JEF may seek to do business with companies covered in this research report. As a result, investors should be aware that JEF may have a conflict of interest that could affect the objectivity of this report. Investors should consider this report as only one of many factors in making their investment decisions. Specific conflict of interest and other disclosures that are required by FINRA, the Canadian Investment Regulatory Organization and other rules are set forth in this disclosure section.
+
+\*\*\*
+
+If you are receiving this report from a non-US JEF entity, please note the following: Unless prohibited by the provisions of Regulation S of the U.S. Securities Act of 1933, as amended, this material is distributed in the United States by JEF LLC, which accepts responsibility for its contents in accordance with the provisions of Rule 15a-6 under the US Securities Exchange Act of 1934, as amended. Transactions by or on behalf of any US person may only be effected through JEF LLC. In the United Kingdom and European Economic Area this report is issued and/or approved for distribution by JEF International Limited ("JIL") and/or JEF GmbH and is intended for use only by persons who have, or have been assessed as having, suitable professional experience and expertise, or by persons to whom it can be otherwise lawfully distributed. JEF LLC, JIL, JEF GmbH and their affiliates, may make a market or provide liquidity in the financial instruments referred to in this report; and where they do make a market, such activity is disclosed specifically in this report under "company specific disclosures".
+
+For Canadian investors, this material is intended for use only by professional or institutional investors. None of the investments or investment services mentioned or described herein is available to other persons or to anyone in Canada who is not a "permitted client" as defined by National Instrument 31-103 Registration Requirements, Exemptions and Ongoing Registrant Obligations, as applicable. This research report is a general discussion of the merits and risks of a security or securities only, and is not in any way meant to be tailored to the needs and circumstances of any recipient. The information contained herein is not, and under no circumstances is to be construed as, an offer to sell securities described herein, or solicitation of an offer to buy securities described herein, in Canada or any province or territory thereof. Any offer or sale of the securities described herein in Canada will be made only under an exemption from the requirements to file a prospectus with the relevant Canadian securities regulators, if applicable, and only by a dealer properly registered under applicable securities laws or, alternatively, pursuant to an exemption from the dealer registration requirement in the relevant province or territory of Canada in which such offer or sale is made. The information contained herein is under no circumstances to be construed as investment advice in any province or territory of Canada and is not tailored to the needs of the recipient. To the extent that the information contained herein references securities of an issuer incorporated, formed or created under the laws of Canada or a province or territory of Canada, any trades in such securities must be conducted through a dealer registered in Canada. No securities commission or similar regulatory authority in Canada has reviewed or in any way passed judgment upon this research report, the information contained herein or the merits of the securities described herein, and any representation to the contrary is an offence. In Singapore, JEF Singapore Limited ("JSL") is regulated by the Monetary Authority of Singapore. For investors in the Republic of Singapore, where this material is prepared and issued by a JEF affiliate outside of Singapore, it is distributed by JSL pursuant to Regulation 32C of the Financial Advisers Regulations. The material contained in this document is intended solely for accredited, expert or institutional investors, as defined under the Securities and Futures Act 2001 (Singapore). If there are any matters arising from, or in connection with this material, please contact JSL, located at 80 Raffles Place #15-20, UOB Plaza 2, Singapore 048624, telephone: +65 6551 3950. In Dubai, this material is issued and distributed by JEF International Limited, Dubai branch, and is intended solely for Professional Clients and should not be distributed to, or relied upon by, Retail Clients (as defined by DFSA). A distribution of ratings in percentage terms in each sector covered is available upon request from your sales representative. In Japan, this material is issued and distributed by JEF Japan Company Limited to institutional investors only. In Hong Kong, this report is issued and approved by JEF Hong Kong Limited and is intended for use only by professional investors as defined in the Hong Kong Securities and Futures Ordinance and its subsidiary legislation. In the Republic of China (Taiwan), this report should not be distributed. The research in relation to this report is conducted outside the People's Republic of China ("PRC"). This report does not constitute an offer to sell or the solicitation of an offer to buy any securities in the PRC. PRC investors shall have the relevant qualifications to invest in such securities and shall be responsible for obtaining all relevant approvals, licenses, verifications and/or registrations from the relevant governmental authorities themselves. In India, this report is made available by JEF India Private Limited. In Australia, this report is issued and/or approved for distribution by, or on behalf of, JEF (Australia) Securities Pty Ltd (ACN 610 977 074), which holds an Australian financial services license (AFSL 487263). It is directed solely at wholesale clients within the meaning of the Corporations Act 2001 (Cth) of Australia (the "Corporations Act"), in connection with their consideration of any investment or investment service that is the subject of this report. This report may contain general financial product advice. Where this report refers to a particular financial product, you should obtain a copy of the relevant product disclosure statement or offer document before making any decision in relation to the product. Recipients of this document in any other jurisdictions should inform themselves about and observe any applicable legal requirements in relation to the receipt of this document.
+
+This report is not an offer or solicitation of an offer to buy or sell any security or derivative instrument, or to make any investment. Any opinion or estimate constitutes the preparer's best judgment as of the date of preparation, and is subject to change without notice. JEF assumes no obligation to maintain or update this report based on subsequent information and events. JEF, and their respective officers, directors, and employees, may have long or short positions in, or may buy or sell any of the securities, derivative instruments or other investments mentioned or described herein, either as agent or as principal for their own account. This material is provided solely for informational purposes and is not tailored to any recipient, and is not based on, and does not take into account, the particular investment objectives, portfolio holdings, strategy, financial situation, or needs of any recipient. As such, any advice or recommendation in this report may not be suitable for a particular recipient. JEF assumes recipients of this report are capable of evaluating the information contained herein and of exercising independent judgment. A recipient of this report should not make any investment decision without first considering whether any advice or recommendation in this report is suitable for the recipient based on the recipient's particular circumstances and, if appropriate or otherwise needed, seeking professional advice, including tax advice. JEF does not perform any suitability or other analysis to check whether an investment decision made by the recipient based on this report is consistent with a recipient's investment objectives, portfolio holdings, strategy, financial situation, or needs.
+
+By providing this report, neither JRS nor any other JEF entity accepts any authority, discretion, or control over the management of the recipient's assets. Any action taken by the recipient of this report, based on the information in the report, is at the recipient's sole judgment and risk. The recipient must perform his or her own independent review of any prospective investment. If the recipient uses the services of JEF LLC (or other affiliated broker-dealers), in connection with a purchase or sale of a security that is a subject of these materials, such broker-dealer may act as principal for its own accounts or as agent for another person. Only JRS is registered with the SEC as an investment adviser; and therefore neither JEF LLC nor any other JEF affiliate has any fiduciary duty in connection with distribution of these reports.
+
+The price and value of the investments referred to herein and the income from them may fluctuate. Past performance is not a guide to future performance, future returns are not guaranteed, and a loss of original capital may occur. Fluctuations in exchange rates could have adverse effects on the value or price of, or income derived from, certain investments.
+
+This report may contain forward looking statements that may be affected by inaccurate assumptions or by known or unknown risks, uncertainties, and other important factors. As a result, the actual results, events, performance or achievements of the financial product may be materially different from those expressed or implied in such statements.
+
+This report has been prepared independently of any issuer of securities mentioned herein and not as agent of any issuer of securities. No Equity Research personnel have authority whatsoever to make any representations or warranty on behalf of the issuer(s). Any comments or statements made herein are those of the JEF entity producing this report and may differ from the views of other JEF entities.
+
+This report may contain information obtained from third parties, including ratings from credit ratings agencies such as Standard & Poor's, and information derived from third-party or proprietary generative artificial intelligence (Gen AI) models. JEF does not guarantee the accuracy, completeness, timeliness or availability of this information, and is not responsible for any errors or omissions (negligent or otherwise), regardless of the cause, or for the results obtained from the use of such content. Neither JEF nor any third-party content providers, including providers of Gen AI models, give any express or implied warranties, including, but not limited to, any warranties of merchantability or fitness for a particular purpose or use. Neither JEF nor any third-party content provider shall be liable for any direct, indirect, incidental, exemplary, compensatory, punitive, special or consequential damages, costs, expenses, legal fees, or losses (including lost income or profits and opportunity costs) in connection with any use of their content, including ratings. Credit ratings are statements of opinions and are not statements of fact or recommendations to purchase, hold or sell securities. They do not address the suitability of securities or the suitability of securities for investment purposes, and should not be relied on as investment advice. Reproduction and distribution of third party content in any form is prohibited except with the prior written permission of the related third party.
+
+JEF reports are disseminated and available electronically, and, in some cases, also in printed form. Electronic research is simultaneously made available to all clients. This report or any portion hereof may not be copied, reprinted, sold, or redistributed or disclosed by the recipient or any third party, by content scraping or extraction, automated processing, or any other form or means, without the prior written consent of JEF. Any unauthorized use is prohibited. Neither JEF nor any of its respective directors, officers or employees, is responsible for guaranteeing the financial success of any investment, or accepts any liability whatsoever for any direct, indirect or consequential damages or losses arising from any use of this report or its contents. Nothing herein shall be construed to waive any liability JEF has under applicable U.S. federal or state securities laws.
+
+For Important Disclosure information relating to JRS, please see https://adviserinfo.sec.gov/IAPD/Content/Common/crd\_iapd\_Brochure.aspx?BRCHR\_VRSN\_ID=483878 and https://adviserinfo.sec.gov/Firm/292142 or visit our website at https://javatar.bluematrix.com/sellside/Disclosures.action, or www.JEF.com, or call 1.888.JEF.
+
+© 2026 JEF

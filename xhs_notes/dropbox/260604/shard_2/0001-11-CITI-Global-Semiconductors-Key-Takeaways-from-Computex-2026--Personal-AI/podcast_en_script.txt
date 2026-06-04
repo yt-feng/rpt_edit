@@ -1,0 +1,22 @@
+EN_A: So Nvidia had a pretty big showing at Computex 2026 this year. What was the single biggest takeaway from the research report you just went through?
+EN_B: The biggest takeaway is that AI is moving from the cloud to personal devices. And that shift is going to create a massive, structural demand for memory, especially DRAM.
+EN_A: So the report is really trying to answer one question: what does the personalization of AI mean for hardware, and specifically for memory?
+EN_B: Exactly. The report focuses on three areas: personal AI, AI CPU, and physical AI. And each one of these areas is going to drive a significant increase in memory demand.
+EN_A: Let's start with personal AI. Nvidia launched the RTX Spark and the DGX Station. How are these different from a regular PC?
+EN_B: The difference is huge. The RTX Spark comes with 128GB of LPDDR5X memory. A typical laptop today has about 12GB. So we are talking about more than ten times the DRAM content.
+EN_A: Ten times? And what about the DGX Station?
+EN_B: That one is even more extreme. It has 748GB of total memory. That is actually more than the average server, which sits around 600GB. It can run AI models with up to a trillion parameters locally.
+EN_A: So what does that mean? Personal devices are starting to look like servers in terms of memory?
+EN_B: Exactly right. This is not just about doubling capacity. It is a fundamental shift in computing. Inference used to happen in the cloud. Now it can happen on your desk.
+EN_A: Okay, what about the second area, the AI CPU? How does Nvidia's Vera CPU change the memory picture?
+EN_B: Vera is already in full production. It uses a custom core called Olympus with 88 cores and memory bandwidth up to 1.2TB per second. As a host CPU, it will drive demand for server DDR5 and a new form factor called SoCAMM2.
+EN_A: So inference demand is moving from GPU to CPU, and that creates a new growth vector for memory suppliers?
+EN_B: That is the argument. The report says that as AI inference workloads shift to CPUs, the upgrade cycle for server memory will accelerate. That is why they highlight the potential upside for Korean memory makers like Samsung.
+EN_A: And the third area, physical AI. Nvidia launched Cosmos 3. How does that impact memory demand?
+EN_B: Cosmos 3 is an open-source foundation model for physical AI. It can understand and generate text, images, video, sound, and actions. It can shrink training cycles from months to days.
+EN_A: So that means faster training for robotics and autonomous vehicles, which in turn needs more storage and memory?
+EN_B: Exactly. The report believes physical AI will further support the structural growth of the memory industry. But this part is not fully detailed in this note. For example, how much additional storage capacity will be needed is still unclear.
+EN_A: So what questions does this report leave unanswered?
+EN_B: A few big ones. How fast will personal AI PCs actually penetrate the market? And will the demand from Vera CPUs be offset by inventory adjustments from cloud providers? Those are things we still need to track.
+EN_A: So if someone wants to dive deeper into those questions, they need to read the full report?
+EN_B: Yes. The full report includes detailed valuation, target prices, and risk analysis for both Nvidia and Samsung. If you want to understand the specific investment thesis for those companies, you should definitely read the complete report.
