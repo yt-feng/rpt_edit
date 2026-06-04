@@ -1,0 +1,230 @@
+{
+  "created_at_utc": "2026-06-04T23:03:46.674143+00:00",
+  "source_date_dir": "xhs_notes/dropbox/260604",
+  "output_dir": "publish_ready_zips/260604",
+  "max_zip_mb": 90,
+  "single_zip": false,
+  "exclude_source_mineru": true,
+  "markdown_files_renamed_to_txt": true,
+  "excluded_debug_files": true,
+  "included_shard_count": 11,
+  "skipped_shards": [
+    "shard_11",
+    "shard_12",
+    "shard_13",
+    "shard_14",
+    "shard_15",
+    "shard_16",
+    "shard_17",
+    "shard_18",
+    "shard_19",
+    "shard_20",
+    "shard_21",
+    "shard_22",
+    "shard_23",
+    "shard_24",
+    "shard_25",
+    "shard_26",
+    "shard_27",
+    "shard_28",
+    "shard_29",
+    "shard_30",
+    "shard_31",
+    "shard_32",
+    "shard_33",
+    "shard_34",
+    "shard_35",
+    "shard_36",
+    "shard_37",
+    "shard_38",
+    "shard_39"
+  ],
+  "total_files": 1025,
+  "total_renamed_markdown_count": 255,
+  "total_raw_file_bytes": 167682553,
+  "zip_count": 2,
+  "zips": [
+    {
+      "path": "publish_ready_zips/260604/publish_ready_260604_part001.zip",
+      "size_bytes": 88147237,
+      "file_count": 539,
+      "renamed_markdown_count": 135,
+      "raw_file_bytes": 94284052,
+      "shards": [
+        "shard_0",
+        "shard_1",
+        "shard_10",
+        "shard_2",
+        "shard_3",
+        "shard_4",
+        "shard_5"
+      ]
+    },
+    {
+      "path": "publish_ready_zips/260604/publish_ready_260604_part002.zip",
+      "size_bytes": 67813543,
+      "file_count": 486,
+      "renamed_markdown_count": 120,
+      "raw_file_bytes": 73398501,
+      "shards": [
+        "shard_5",
+        "shard_6",
+        "shard_7",
+        "shard_8",
+        "shard_9"
+      ]
+    }
+  ],
+  "included_shards": [
+    {
+      "shard": "shard_0",
+      "report_count": 5,
+      "file_count": 103,
+      "renamed_markdown_count": 25,
+      "raw_file_bytes": 18199050,
+      "reports": [
+        "0001-01-UBS-Global-Strategy-Deal-or-No-Deal--Trading-Oil---Rates-Scenarios-in-Gl",
+        "0002-02-CITI-Global-FX-Strategy-Our-risk-sentiment-goes-from--green-to-yellow--2",
+        "0003-03-Goldman-Sachs-THE-WORLD-CUP-AND-ECONOMICS-Big-Business--Small-Macro-2606",
+        "0004-04-J.P.-Morgan-US-High-Grade-Credit-Outlook-High-yields-strong-credit-funda",
+        "0005-05-Bernstein-Global-Semiconductors---Hardware-China-Smartphone-Tracker--Apr"
+      ]
+    },
+    {
+      "shard": "shard_1",
+      "report_count": 5,
+      "file_count": 87,
+      "renamed_markdown_count": 25,
+      "raw_file_bytes": 17996678,
+      "reports": [
+        "0001-06-J.P.-Morgan-US-Economic-Outlook-260604",
+        "0002-07-CITI-Europe-Luxury-Goods-April-Swiss-watch-exports-17--YoY-due-to-outsiz",
+        "0003-08-CITI-Hong-Kong-Property-Apr-Retail--9---luxury-growth-moderates--superma",
+        "0004-09-CITI-Japan-Equity-Strategy-Market-Explorer-Indexes-to-top-out-soon-but-w",
+        "0005-10-Goldman-Sachs-China--Unofficial-services-PMI-rose-in-May-260603"
+      ]
+    },
+    {
+      "shard": "shard_10",
+      "report_count": 1,
+      "file_count": 17,
+      "renamed_markdown_count": 5,
+      "raw_file_bytes": 2767619,
+      "reports": [
+        "0001-51-Jefferies-Software-Replay-for-Software-Internet-and-AI-Conference-Recap-"
+      ]
+    },
+    {
+      "shard": "shard_2",
+      "report_count": 5,
+      "file_count": 109,
+      "renamed_markdown_count": 25,
+      "raw_file_bytes": 17590088,
+      "reports": [
+        "0001-11-CITI-Global-Semiconductors-Key-Takeaways-from-Computex-2026--Personal-AI",
+        "0002-12-Jefferies-Technology-China-WFE--Still--ve-Growth--but-Set-to-Recover-as-",
+        "0003-13-J.P.-Morgan-Japan-Equity-Strategy--Monthly-Wrap-Widening-share-price-and",
+        "0004-14-Morgan-Stanley-China-Property-Diverging-Home-Price-Trends-Continued-in-M",
+        "0005-15-UBS-Hong-Kong-Property-More-Clarity-on-Cross-Border-Investment--A-Turnin"
+      ]
+    },
+    {
+      "shard": "shard_3",
+      "report_count": 5,
+      "file_count": 101,
+      "renamed_markdown_count": 25,
+      "raw_file_bytes": 17441758,
+      "reports": [
+        "0001-16-J.P.-Morgan-Electronic-Component-Sector-Component-Data-Deposition--Stora",
+        "0002-17-CITI-US-Semiconductors-and-Hardware-Silicon-Valley-Bus-Tour-Takeaways-26",
+        "0003-18-Morgan-Stanley-Greater-China-Technology-Semiconductors-Key-Computex-Take",
+        "0004-19-CITI-Hong-Kong-Property-Read-through-from-China-s-Tightened-Rules-on-Out",
+        "0005-20-Morgan-Stanley-A-sharper-housing-downturn-creates-earnings-risk-260602"
+      ]
+    },
+    {
+      "shard": "shard_4",
+      "report_count": 5,
+      "file_count": 109,
+      "renamed_markdown_count": 25,
+      "raw_file_bytes": 18593336,
+      "reports": [
+        "0001-21-UBS-China-Power-Semiconductor-Tighter-for-longer-supply--rising-SiC-pene",
+        "0002-22-Bernstein-India-Capital-Markets---Insurance-AI-vs.-Human-India-Insurance",
+        "0003-23-Bernstein-U.S.-IT-Hardware-APPLE-TRACKER--April---iPhone-revenue-up-6--Y",
+        "0004-24-HSBC-Korea-Technology-Korea-tech-tour---booming-agentic-AI-supply-chain-",
+        "0005-25-Morgan-Stanley-China-Autos---Shared-Mobility-Weekly-Orders---Robust-new-"
+      ]
+    },
+    {
+      "shard": "shard_5",
+      "report_count": 5,
+      "file_count": 91,
+      "renamed_markdown_count": 25,
+      "raw_file_bytes": 12518100,
+      "reports": [
+        "0001-26-J.P.-Morgan-Semiconductor-materials-AGC-semiconductor-business-briefing-",
+        "0002-27-Morgan-Stanley-Asia-Summer-School--China-Software-and-IT-Services-260602",
+        "0003-28-Morgan-Stanley-Greater-China-Semiconductors-Old-Memory--Readacross-from-",
+        "0004-29-UBS-Australian-Retail---Consumer-Sector-How-are-Companies-Using-AI-in-Ou",
+        "0005-30-Nomura-USD-CNY-fix-model-Projection--6.7773-260604"
+      ]
+    },
+    {
+      "shard": "shard_6",
+      "report_count": 5,
+      "file_count": 91,
+      "renamed_markdown_count": 25,
+      "raw_file_bytes": 13419782,
+      "reports": [
+        "0001-31-Bernstein-Japan-Autos---Auto-Parts-Japan-Autos-Monthly-Sales-Tracker--Ma",
+        "0002-32-Bernstein-India-Industrials-and-Infrastructure-Electric-India--Data-Cent",
+        "0003-33-CITI-China-HDT-May-HDT-Sales-Update--Strong-EV-Growth-Offset-by-Weak-LNG",
+        "0004-34-Goldman-Sachs-Powering-Up-Europe--Electrification-keeps-driving-power-de",
+        "0005-35-HSBC-China-Real-Estate-May-sales-firm--land-premium-driving-sentiment-26"
+      ]
+    },
+    {
+      "shard": "shard_7",
+      "report_count": 5,
+      "file_count": 109,
+      "renamed_markdown_count": 25,
+      "raw_file_bytes": 16245880,
+      "reports": [
+        "0001-36-J.P.-Morgan-Asia-Factory-Automation---Robotics-FA-cycle--Broader-recover",
+        "0002-37-J.P.-Morgan-Hong-Kong-Commercial-Property-Retail-sales-mildly-softened-i",
+        "0003-38-Morgan-Stanley-Hong-Kong-Property-April-Retail-Sales-Slowed-260602",
+        "0004-39-UBS-Hong-Kong-Property-Slowing-momentum-in-April-retail-sales-260602",
+        "0005-40-CITI-China-Consumer-Cosmetics-618-Stage-1-Color--Stable-Improved-Perform"
+      ]
+    },
+    {
+      "shard": "shard_8",
+      "report_count": 5,
+      "file_count": 99,
+      "renamed_markdown_count": 25,
+      "raw_file_bytes": 14317942,
+      "reports": [
+        "0001-41-J.P.-Morgan-Asian-Tech-2026-Computex-Takeaways-Part-1-260602",
+        "0002-42-UBS-US-Autos--Auto-Parts-and-Auto-tech-800V--From-EV-to-DC--and-BESS--26",
+        "0003-43-UBS-US-Beverages-World-cup--26-How-much-can-beer-actually-net--260602",
+        "0004-44-Bernstein-China-Semis--Huawei-s-LogicFolding--an-underestimated-breakthr",
+        "0005-45-Bernstein-China-Pharma---Biotech--ASCO-2026-Part-3-Summary--for-when-fun"
+      ]
+    },
+    {
+      "shard": "shard_9",
+      "report_count": 5,
+      "file_count": 109,
+      "renamed_markdown_count": 25,
+      "raw_file_bytes": 18592320,
+      "reports": [
+        "0001-46-Goldman-Sachs-Technology--Software--30th-European-Financials-Conference-",
+        "0002-47-Morgan-Stanley-China-Internet-and-Other-Services-Catalyst-Preview--What-",
+        "0003-48-J.P.-Morgan-AIDC-ESS-Reference-Architectures-and-Early-Orders-Point-to-E",
+        "0004-49-Bernstein-Japan-Video-Gaming--Acceptance-is-the-first-step-to-change--26",
+        "0005-50-Goldman-Sachs-Japan-Technology--IT-Services--NC-company-results-read-acr"
+      ]
+    }
+  ]
+}
