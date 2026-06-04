@@ -1,0 +1,75 @@
+ZH_A: 最近 Computex 和 GTC 大会刚结束，我看到一份非常有意思的研报，讲的是 AI 芯片的最新动向。你觉得这次大会最大的看点是什么？
+
+ZH_B: 最大的看点其实不是产品数量，而是方向。英伟达发布了第一款 Windows PC 处理器，叫 N1X，和联发科合作研发的。这标志着 AI 开始真正向终端设备迁移。
+
+ZH_A: 所以这份报告的核心问题，其实就是 AI 到底会怎么从云端走向你的电脑和手机，对吗？
+
+ZH_B: 对。报告想回答的是：当 AI 代理成为主流，计算到底会发生在哪里。英伟达和高通都在强调 Agentic AI，也就是 AI 代理的工作负载。这不再是简单的聊天机器人，而是能帮你写代码、做设计的智能体。
+
+ZH_A: 那英伟达这个 N1X 芯片，真的能改变 PC 市场吗？毕竟之前高通在 ARM PC 上一直没做起来。
+
+ZH_B: 报告指出，关键在于两个因素。一个是应用生态能不能重新适配 AI 代理，另一个是老的 x86 软件兼容性问题。这曾经是高通 ARM PC 增长的最大障碍。所以 N1X 的前景，还需要时间验证。
+
+ZH_A: 那对于联发科来说，这个合作意味着什么？
+
+ZH_B: 报告认为，这目前对联发科营收贡献很小，大概只有 1% 到 2%，主要是授权费。但战略意义很大，因为它帮助联发科在计算领域站稳了脚跟，尤其是在 Chromebook 成功后。
+
+ZH_A: 除了 PC，我们看到高通和英伟达都在大谈 AI 代理。你觉得这会对终端设备产生什么实际影响？
+
+ZH_B: 高通认为，到 2030 年，token 消耗量会增长 40 倍。更重要的是，他们预测 AI 工作负载会从现在的 100% 在云端，逐渐分布到设备和云端。这意味着，你的手机和电脑需要更强的本地算力，可能会触发一波换机潮。
+
+ZH_A: 那英伟达在云端这边呢？他们发布了 Vera Rubin 平台，有什么特别之处？
+
+ZH_B: Vera Rubin 已经全面投产了。最大的提升是生产效率，组装一个机架从之前的 2 小时缩短到了 5 分钟。而且他们强调全栈设计，从芯片到冷却到软件都一起优化，目标是让 token 吞吐量比上一代提升 10 倍。
+
+ZH_A: 听起来很厉害。但这份报告有没有提到哪些不确定因素？
+
+ZH_B: 有的。比如，Vera Rubin 的大规模出货可能要等到今年第四季度，而且会受到 HBM4 内存供应的限制。另外，英伟达还推出了 Vera CPU，专门为 AI 代理设计，性能比 x86 强很多。但报告也指出，这个市场未来竞争会很激烈，高通、联发科甚至云厂商自己的芯片都会进来。
+
+ZH_A: 所以 CPU 也成了 AI 的新战场？这很有意思。那报告里有没有提到，哪些问题其实还没有完全讲清楚？
+
+ZH_B: 有。比如，虽然高通认为 AI 工作负载会向终端迁移，但报告指出，短期内为了追求更快的模型推理，大部分计算还是会留在云端。这个转折点什么时候到来，仍然需要观察。另外，苹果在 WWDC 上的动向，可能会给边缘 AI 带来新的动力，但报告对此并没有展开。
+
+ZH_A: 也就是说，这份报告其实留下了两个很大的悬念：一是 AI 从云到端的迁移节奏，二是 CPU 在 AI 时代的竞争格局。这些都需要读者去读完整报告才能找到线索。
+
+ZH_B: 没错。如果你对 AI 芯片供应链的受益者，比如液冷厂商、电源供应商，或者对 Vera CPU 的详细出货预测感兴趣，完整报告里都做了深入拆解。
+
+ZH_A: 好的。如果你想获取这份报告的完整版本，或者加入我们的社群讨论更多细节，欢迎在节目简介中找到联系方式。我们下期再见。
+
+EN_A: So there was a lot of noise coming out of Computex and GTC this year. What was the single biggest takeaway from the report you just read?
+
+EN_B: The biggest takeaway isn't about a flashy new product launch. It's about a shift in direction. Nvidia announced its first processor for Windows PCs, the N1X, built with MediaTek. That signals that AI is starting to move from the cloud to your personal device.
+
+EN_A: So the core question the report is trying to answer is really about where AI computing will happen, right?
+
+EN_B: Exactly. The report focuses on the rise of Agentic AI. That's not just chatbots anymore. It's about AI agents that can write code, design chips, and manage your workflows. Both Nvidia and Qualcomm spent a lot of time on this. And they both see it as the key driver for the next wave of hardware.
+
+EN_A: Nvidia's N1X sounds like a big deal. But Qualcomm has been trying to crack the ARM PC market for a while without massive success. What does the report say about the chances here?
+
+EN_B: The report points to two critical factors. First, the software ecosystem needs to be reimagined for agentic AI. Second, legacy x86 application compatibility is still a hurdle. That's the same thing that held back Qualcomm's growth. So for N1X, the medium-term success is not guaranteed yet.
+
+EN_A: And what about MediaTek? Is this a big revenue driver for them?
+
+EN_B: Not really in terms of revenue. The report says it's only about 1 to 2 percent of their sales, mostly from licensing. But strategically, it's huge. It establishes MediaTek in the computing space, especially after their success with Chromebooks.
+
+EN_A: Let's talk about the bigger picture. Both Nvidia and Qualcomm are pushing the idea of AI agents. What does that mean for our phones and laptops?
+
+EN_B: Qualcomm's CEO predicted a 40x growth in token consumption by 2030. More importantly, they believe AI workloads will eventually split between the device and the cloud. Right now, almost all AI processing is in the cloud. If that shifts, it could trigger a massive replacement cycle for edge devices. Your phone might need a much more powerful chip just to run local AI agents.
+
+EN_A: And on the cloud side, Nvidia launched their Vera Rubin platform. What stood out from the report?
+
+EN_B: Vera Rubin is already in full production. The big leap is in manufacturing efficiency. A rack can now be assembled in about 5 minutes, compared to 2 hours for the previous generation. The focus is on co-designing everything from the GPU to the CPU to the networking to maximize token throughput, which they claim is 10x higher than before.
+
+EN_A: That sounds impressive. But are there any uncertainties the report highlights?
+
+EN_B: Definitely. Mass production at scale probably won't happen until the fourth quarter of this year. And it's likely constrained by HBM4 memory supply. Also, Nvidia introduced a new CPU, the Vera CPU, designed specifically for agentic AI. It's faster than x86 on many tasks. But the report warns that competition is coming. Qualcomm, MediaTek, and even the big cloud providers have their own CPU projects.
+
+EN_A: So the CPU is becoming a new battleground in AI. That's fascinating. Did the report leave any questions unanswered?
+
+EN_B: Yes, two big ones. First, the timing of the shift from cloud to edge. The report notes that in the near term, most AI compute will stay in the cloud because everyone wants faster models. When that tipping point comes is still unclear. Second, Apple's announcements at WWDC could give edge AI a big boost, but the report doesn't fully explore that.
+
+EN_A: So the report leaves us with two major open questions: the pace of AI moving to the edge, and the competitive landscape for AI CPUs. To get the full picture, you'd need to read the complete report.
+
+EN_B: Exactly. If you want the detailed shipment forecasts for Vera CPU, or the list of supply chain beneficiaries like liquid cooling and power supply companies, the full report has all that data.
+
+EN_A: Great. If you want to get your hands on the full report or join our community to discuss these topics further, check the show notes. Thanks for listening.
