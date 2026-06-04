@@ -1,0 +1,22 @@
+{
+  "source_pdf": "/tmp/pdf_batch_001_3_cz3_u6/pdfs/0002-17-CITI-US Semiconductors and Hardware-Silicon Valley Bus Tour Takeaways-260602.pdf",
+  "mineru_state": "done",
+  "mineru_error": "",
+  "cover_short_title": "Agentic AI",
+  "cover_subtitle": "研报重点一图看懂",
+  "images": [
+    "assets/xhs_card_01.png",
+    "assets/xhs_card_02.png"
+  ],
+  "cover": "assets/cover.png",
+  "wechat_article": "wechat_article.md",
+  "wechat_images": [
+    "assets/source_image_01.jpg"
+  ],
+  "wechat_article_en": "wechat_article_en.md",
+  "podcast_script": "podcast_script.txt",
+  "xianyu_note.md": "xianyu_note.md",
+  "prompt_for_xianyu.md": "prompt_for_xianyu.md",
+  "zhihu_article.md": "zhihu_article.md",
+  "prompt_for_zhihu.md": "prompt_for_zhihu.md"
+}
