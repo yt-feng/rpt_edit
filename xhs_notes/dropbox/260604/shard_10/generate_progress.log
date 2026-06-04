@@ -1,0 +1,10 @@
+Found 51 total PDFs; shard 10/40 has 1 PDFs, skips 0 already converted, will process 1 PDFs with batch_size=5.
+Running batch 1: 1 PDFs
+Found 1 PDFs.
+Uploading PDF to MinerU: /tmp/pdf_batch_001_f4rx08ou/pdfs/0001-51-Jefferies-Software-Replay for Software-Internet and AI Conference Recap Call-260602.pdf
+MinerU batch_id=469d864d-49b8-46c8-a827-8804d4831582
+MinerU states: waiting-file
+MinerU states: running
+MinerU states: done
+Done. Results written to /home/runner/work/rpt_edit/rpt_edit/xhs_notes/dropbox/260604/shard_10; successful_reports=1; mineru_timed_out=False
+All batches completed successfully. Generated 1 report directories.
