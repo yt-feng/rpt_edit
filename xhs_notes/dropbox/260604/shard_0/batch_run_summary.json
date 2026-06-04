@@ -1,0 +1,51 @@
+{
+  "input_dir": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs",
+  "total_pdf_count_before_shard": 51,
+  "pdf_count_before_skip": 5,
+  "pdf_count": 5,
+  "generated_report_count": 5,
+  "batch_size": 5,
+  "shard_index": 0,
+  "shard_count": 40,
+  "max_reports_per_shard": 5,
+  "max_total_reports": 0,
+  "skip_existing": true,
+  "skipped_existing_count": 0,
+  "skipped_existing": [],
+  "failures": 0,
+  "batches": [
+    {
+      "batch_index": 1,
+      "pdf_count": 5,
+      "files": [
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/01-UBS-Global Strategy：Deal or No Deal： Trading Oil & Rates Scenarios in Global Credit-260602.pdf",
+          "batch_file": "/tmp/pdf_batch_001_i9f4vwoq/pdfs/0001-01-UBS-Global Strategy-Deal or No Deal- Trading Oil - Rates Scenarios in Global Credit-260602.pdf",
+          "stable_index": "1"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/02-CITI-Global FX Strategy：Our risk sentiment goes from -green to yellow”-260602.pdf",
+          "batch_file": "/tmp/pdf_batch_001_i9f4vwoq/pdfs/0002-02-CITI-Global FX Strategy-Our risk sentiment goes from -green to yellow--260602.pdf",
+          "stable_index": "2"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/03-GS-THE WORLD CUP AND ECONOMICS：Big Business， Small Macro-260603.pdf",
+          "batch_file": "/tmp/pdf_batch_001_i9f4vwoq/pdfs/0003-03-GS-THE WORLD CUP AND ECONOMICS-Big Business- Small Macro-260603.pdf",
+          "stable_index": "3"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/04-JPM-US High Grade Credit Outlook：High yields，strong credit fundamentals can push spreads tighter amidst higher macro uncertainty-260604.pdf",
+          "batch_file": "/tmp/pdf_batch_001_i9f4vwoq/pdfs/0004-04-JPM-US High Grade Credit Outlook-High yields-strong credit fundamentals can push spreads tighter amidst higher macro uncertainty-260604.pdf",
+          "stable_index": "4"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/05-Bernstein-Global Semiconductors & Hardware：China Smartphone Tracker （April）： Pressure spreading to mid~end & price hikes facing resistance-260604.pdf",
+          "batch_file": "/tmp/pdf_batch_001_i9f4vwoq/pdfs/0005-05-Bernstein-Global Semiconductors - Hardware-China Smartphone Tracker -April-- Pressure spreading to mid-end - price hikes facing resistance-260604.pdf",
+          "stable_index": "5"
+        }
+      ],
+      "returncode": 0,
+      "status": "ok"
+    }
+  ]
+}
