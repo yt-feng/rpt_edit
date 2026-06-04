@@ -1,0 +1,15 @@
+Found 51 total PDFs; shard 6/40 has 5 PDFs, skips 0 already converted, will process 5 PDFs with batch_size=5.
+Running batch 1: 5 PDFs
+Found 5 PDFs.
+Uploading PDF to MinerU: /tmp/pdf_batch_001_acvcxerp/pdfs/0001-31-Bernstein-Japan Autos - Auto Parts Japan Autos Monthly Sales Tracker- May-2026 Japan - US sales-New models and HEVs remain key to sales in both regions-260603.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_acvcxerp/pdfs/0002-32-Bernstein-India Industrials and Infrastructure-Electric India- Data-Centers -The asset heavy play in the DC story shaping up in India...-260604.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_acvcxerp/pdfs/0003-33-CITI-China HDT-May HDT Sales Update- Strong EV Growth Offset by Weak LNG Demand-260602.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_acvcxerp/pdfs/0004-34-Goldman Sachs-Powering Up Europe- Electrification keeps driving power demand higher-260603.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_acvcxerp/pdfs/0005-35-HSBC-China Real Estate-May sales firm- land premium driving sentiment-260602.pdf
+MinerU batch_id=e4c691de-c7f0-40d3-abbc-e8da3a356fdf
+MinerU states: running, running, running, pending, pending
+MinerU states: running, running, done, done, running
+MinerU states: running, done, done, done, done
+MinerU states: done, done, done, done, done
+Done. Results written to /home/runner/work/rpt_edit/rpt_edit/xhs_notes/dropbox/260604/shard_6; successful_reports=5; mineru_timed_out=False
+All batches completed successfully. Generated 5 report directories.

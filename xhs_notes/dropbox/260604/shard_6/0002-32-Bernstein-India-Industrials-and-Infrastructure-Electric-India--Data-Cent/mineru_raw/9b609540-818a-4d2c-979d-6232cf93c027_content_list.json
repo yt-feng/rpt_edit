@@ -1,0 +1,3685 @@
+[
+    {
+        "type": "text",
+        "text": "India Industrials and Infrastructure ",
+        "text_level": 1,
+        "bbox": [
+            66,
+            130,
+            460,
+            150
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Electric India: Data-Centers - The asset heavy play in the DC story shaping up in India... ",
+        "text_level": 1,
+        "bbox": [
+            66,
+            161,
+            921,
+            217
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "image",
+        "img_path": "images/f0c6d4f8c11c51d9132baeaea0aba15ff09930c876f55a01babcaf15321399d3.jpg",
+        "image_caption": [
+            "Nikhil Nigania "
+        ],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            66,
+            270,
+            122,
+            314
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "+91 226 842 1414 ",
+        "bbox": [
+            140,
+            289,
+            238,
+            299
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "nikhil.nigania@bernsteinsg.com ",
+        "bbox": [
+            140,
+            301,
+            295,
+            311
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "image",
+        "img_path": "images/4b4efeba4d469d8a52f5a324951fa3d87fb491297c21f43667e886d41f3dcc6e.jpg",
+        "image_caption": [
+            "Madison Rezaei "
+        ],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            66,
+            321,
+            122,
+            363
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "+1 917 344 8622 ",
+        "bbox": [
+            140,
+            340,
+            232,
+            349
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "madison.rezaei@bernsteinsg.com ",
+        "bbox": [
+            140,
+            351,
+            305,
+            361
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "image",
+        "img_path": "images/17b96c77bc1866065c37210edc7cfd0f9fd42d62d10ae592447f8d1f420de8d2.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            66,
+            371,
+            122,
+            414
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Aman Jain ",
+        "bbox": [
+            138,
+            378,
+            199,
+            388
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "+91 226 842 1486 ",
+        "bbox": [
+            140,
+            388,
+            238,
+            398
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "aman.jain@bernsteinsg.com ",
+        "bbox": [
+            140,
+            400,
+            279,
+            411
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "When I was marketing in Singapore-Hong Kong in Feb, foreign investors were clear that one has to position for data-centers even within India and the wave is yet to hit (they have been right till now!). One can invest via i) Equipment plays (diesel genset, optic fiber, electrical equipment, transmission, etc., especially those with US exposure), or ii) Utilities, or iii) Companies building-owning the data-centers. In this note - we focus on the latter two asset heavy plays. We look at what happened in US and learnings for India. Eventually it all comes down to access to electricity! ",
+        "bbox": [
+            356,
+            268,
+            921,
+            373
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "a) Data Center traction: Our industry discussions highlight that given the M.East crisis DC capacity in India is likely to go to the higher end of the expected 5-8GW range by 2030 (from 1.5 GW today). There is a big fight for land in Navi-Mumbai (we hear even higher than last transactions - Exhibit 13) and substation access for DCs. On capex, ex of compute it is \\~Rs 50 Cr/MW (lower than the US). ",
+        "bbox": [
+            356,
+            387,
+            915,
+            460
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "b) Asset owners: Business models - 2 operating models on DC owners: i) Real estate landlords (don't own compute hardware)- colocation: Build and lease out DC infra to hyperscalers/ neocloud/ enterprises (who bring their own compute hardware) in long term contracts. E.g. DLR, Equinix- covered by Madison. ii) Cloud providers (compute hardware owners): Own GPUs and may or may not own the physical data center. Neoclouds provide rentals of fully developed GPU clusters (e.g. CRWV- covered by Madison, IREN which own infra as well- covered by Gautam Chhugani). Neoclouds can generate \\~8-10x higher revenue per IT MW than co-location, but require much higher capex (\\~\\$45Mn vs. \\$8-15Mn), have shorter contracts, and carry tech obsolescence risk when compared to co-location models. Payback period for the co-location model is \\~5 years (Exhibit 4). Right to win- With \\~ 6 yr avg. wait time in US for interconnect (Exhibit 9), access to power in the right region is the biggest right to win. Even crypto miners with power off-take agreements are pivoting to DC colocation model. Valuations - DC operators like Equinix and Digital Realty are trading at \\~22-23x 12m fwd EV/EBITDA, in line with recent DC transactions- Blackstone(covered by Patrick Davitt) acquisition of AirTrunk at \\~21x. DC in India (Exhibit 12): Given land x power is the differentiator - the dominance of Adani Group (largest renewable, private thermal, and transmission player in India) is unmatched, followed by Reliance industries (0.5 Mn acres in Gujarat and >5K acres in Navi Mumbai, not covered). ",
+        "bbox": [
+            356,
+            474,
+            921,
+            744
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "c) Utilities: In US, there is a big divergence in performance of utilities - Vistra, Constellation Energy, and NRG have become 4-8x in last 4 years, whereas others like NextEra, Dominion have remained muted-(none covered, Exhibit 16 Exhibit 17). Drivers- i) Dispatchable open capacity (Gas and Nuclear) in the right region: All 3 winners had significant capacity in PJM and ERCOT (biggest DC markets). PJM capacity prices rose from \\~\\$29/MW-day in 2024/25 to \\~\\$329/MW-day for 2026/27). ii) Access to land and behind-the-meter co-location (could this be game changer for Torrent's gas plant?). iii) Premium for clean dispatchable power - Big Nuclear deals. Even coal plants benefited indirectly with retirement of >4.4 GW of coal capacity pushed out. Indian Beneficiaries? Adani group completely dominates merchant power market and even future capacity addition - with their large land parcel, grid connectivity and locked thermal equipment (Exhibit 22). ",
+        "bbox": [
+            356,
+            757,
+            921,
+            922
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "header",
+        "text": "BERNSTEIN ",
+        "bbox": [
+            66,
+            34,
+            292,
+            63
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "header",
+        "text": "SG GROUP ",
+        "bbox": [
+            66,
+            66,
+            292,
+            79
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "header",
+        "text": "4 June 2026 ",
+        "bbox": [
+            723,
+            54,
+            823,
+            71
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "footer",
+        "text": "See the Disclosure Appendix of this report for required disclosures, analyst certifications and other important information. Alternatively, visit our Global Research Disclosure Website. ",
+        "bbox": [
+            65,
+            935,
+            699,
+            962
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "footer",
+        "text": "First Published: 03 Jun 2026 22:30 UTC Completion Date: 03 Jun 2026 12:03 UTC ",
+        "bbox": [
+            66,
+            963,
+            584,
+            976
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "footer",
+        "text": "www.bernsteinresearch.com ",
+        "bbox": [
+            777,
+            936,
+            918,
+            946
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "table",
+        "img_path": "images/e83d0f094293d7c7e5e0d12d61e32956d1c76384fca9273a0c1bd1f974da1237.jpg",
+        "table_caption": [
+            "BERNSTEIN TICKER TABLE "
+        ],
+        "table_footnote": [
+            "O - Outperform, M - Market-Perform, U - Underperform, NR - Not Rated, CS - Coverage Suspended ",
+            "DLR, EQIX, CRWV estimate is Adjusted EPS; LT.IN, ADANIGR.IN, CRWV valuation is EV/EBITDA (x); DLR, EQIX valuation is Adjusted P/E (x); ",
+            "Source: Bloomberg, Bernstein estimates and analysis. "
+        ],
+        "table_body": "<table><tr><td rowspan=\"2\">Ticker</td><td rowspan=\"2\">Rating</td><td colspan=\"3\">2 Jun 2026</td><td rowspan=\"2\">TTMRel.</td><td colspan=\"4\">Reported EPS</td><td colspan=\"3\">Reported P/E (x)</td></tr><tr><td>ClosingPrice</td><td>PriceTarget</td><td>PriceTarget</td><td>Cur</td><td>2025A</td><td>2026E</td><td>2027E</td><td>2025A</td><td>2026E</td><td>2027E</td></tr><tr><td>LT.IN (L&amp;T)</td><td>O</td><td>INR</td><td>4,000.90</td><td>4,637.00</td><td>(42.6)%</td><td>INR</td><td>109.00</td><td>123.00</td><td>155.00</td><td>23.0</td><td>20.3</td><td>16.8</td></tr><tr><td>ADANI.IN (Adani Power)</td><td>O</td><td>INR</td><td>235.93</td><td>177.00</td><td>63.7%</td><td>INR</td><td>6.71</td><td>6.11</td><td>6.90</td><td>35.2</td><td>38.6</td><td>34.2</td></tr><tr><td>ADANIGR.IN (Adani Green)</td><td>U</td><td>INR</td><td>1,449.40</td><td>864.00</td><td>(7.6)%</td><td>INR</td><td>8.77</td><td>12.29</td><td>24.78</td><td>38.4</td><td>29.3</td><td>22.4</td></tr><tr><td>JSW.IN (JSW Energy)</td><td>O</td><td>INR</td><td>588.55</td><td>575.00</td><td>(34.9)%</td><td>INR</td><td>11.10</td><td>12.60</td><td>15.81</td><td>53.0</td><td>46.7</td><td>37.2</td></tr><tr><td>TPWR.IN (Tata Power)</td><td>O</td><td>INR</td><td>414.90</td><td>443.00</td><td>(45.9)%</td><td>INR</td><td>12.43</td><td>12.78</td><td>17.08</td><td>33.4</td><td>32.5</td><td>24.3</td></tr><tr><td>NTPC.IN (NTPC Ltd)</td><td>O</td><td>INR</td><td>367.40</td><td>430.00</td><td>(38.9)%</td><td>INR</td><td>24.70</td><td>25.64</td><td>27.02</td><td>14.9</td><td>14.3</td><td>13.6</td></tr><tr><td>DLR (Digital Realty)</td><td>O</td><td>USD</td><td>187.26</td><td>232.00</td><td>(20.4)%</td><td>USD</td><td>3.87</td><td>2.74</td><td>2.37</td><td>48.4</td><td>68.4</td><td>78.9</td></tr><tr><td>EQIX (Equinix)</td><td>O</td><td>USD</td><td>1,071.80</td><td>1,222.00</td><td>(8.4)%</td><td>USD</td><td>14.96</td><td>17.88</td><td>21.36</td><td>71.6</td><td>59.9</td><td>50.2</td></tr><tr><td>CRWV (CoreWeave)</td><td>U</td><td>USD</td><td>119.27</td><td>67.00</td><td>(48.9)%</td><td>USD</td><td>(1.20)</td><td>(4.20)</td><td>(2.41)</td><td>40.2</td><td>15.8</td><td>8.4</td></tr><tr><td>ASIAX</td><td></td><td></td><td>2,056.69</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>SPX</td><td></td><td></td><td>7,609.78</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr></table>",
+        "bbox": [
+            107,
+            98,
+            890,
+            313
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "INVESTMENT IMPLICATIONS ",
+        "text_level": 1,
+        "bbox": [
+            104,
+            369,
+            328,
+            383
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "Within our coverage on the power generation front, the advantage of Adani Green and even Adani Power to power up data-centers is unmatched, given their large land parcel, transmission connectivity, merchant capacity, and thermal equipment availability. Beyond generators, L&T stands to gain via both play in building the DCs, power plants and even as DC owner operator. ",
+        "bbox": [
+            102,
+            401,
+            859,
+            459
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "We rate EQIX and DLR Outperform and CRWV Underperform. ",
+        "bbox": [
+            104,
+            473,
+            485,
+            487
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "OTHER REPORTS ",
+        "text_level": 1,
+        "bbox": [
+            104,
+            516,
+            228,
+            529
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "list",
+        "sub_type": "text",
+        "list_items": [
+            "27 Mar 2026 - Bernstein Energy & Power: The Frontier of Electricity, what has changed... ",
+            "19 Feb 2026 - AI vs. Human: India the next stop for data-centers... assessing the value chain... ",
+            "24 Sep 2025 - Electric India: Powering the potential AI data center boom... ",
+            "15 May 2026 - Data Centers: What a top-tier data center market looks like—including the DLR and EQIX footprints "
+        ],
+        "bbox": [
+            104,
+            535,
+            807,
+            632
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "header",
+        "text": "Nikhil Nigania +91 226 842 1414 nikhil.nigania@bernsteinsg.com ",
+        "bbox": [
+            104,
+            39,
+            439,
+            51
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "header",
+        "text": "4 June 2026 ",
+        "bbox": [
+            828,
+            39,
+            890,
+            49
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "footer",
+        "text": "INDIA INDUSTRIALS AND INFRASTRUCTURE ",
+        "bbox": [
+            104,
+            940,
+            279,
+            949
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "footer",
+        "text": "BERNSTEIN | SG GROUP ",
+        "bbox": [
+            679,
+            941,
+            861,
+            950
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "page_number",
+        "text": "2 ",
+        "bbox": [
+            882,
+            941,
+            890,
+            950
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "DETAILS ",
+        "text_level": 1,
+        "bbox": [
+            104,
+            70,
+            174,
+            84
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "A) DATA-CENTER - ASSET OWNERS ",
+        "text_level": 1,
+        "bbox": [
+            102,
+            114,
+            377,
+            130
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "WHERE ARE DATA-CENTERS BEING BUILT IN US...",
+        "text_level": 1,
+        "bbox": [
+            102,
+            151,
+            455,
+            165
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "PJM (the Eastern region of US) is the largest data center market in US, while ERCOT (Texas) builds have taken off relatively recently. Over 2015-25, power demand due to DCs has grown at a CAGR of 23% and 26% in PJM and ERCOT respectively vs 21% for the US (18% ex-PJM and ERCOT)- Exhibit 1. They became DC hubs due to business friendly regulatory environment, large de-regulated wholesale power markets, proximity to high density fiber infra, abundant and relatively cheap land, faster interconnection process, etc. Moreover, generation companies in these regions became natural beneficiaries (like Vitra, Constellation Energy, NRG Energy) as they held dispatchable generation assets critical for 24x7 power supply to the data centers. ",
+        "bbox": [
+            102,
+            170,
+            874,
+            273
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "chart",
+        "img_path": "images/043e772d1801758aa4a427e750cf9d5ae9767233dbbc77dc5e1cc94802f061db.jpg",
+        "content": "| Year | PJM | Ercot | Southeast | Southwest | Northwest | MISO | California | SPP | New York | New England | Florida |\n|------|-----|-------|-----------|-----------|-----------|------|------------|-----|----------|-------------|---------|\n| 2015 | 0.5 | 0.1   | 0.1       | 0.1       | 0.1       | 0.1  | 0.1        | 0.1 | 0.1      | 0.1         | 0.1     |\n| 2016 | 0.7 | 0.2   | 0.1       | 0.1       | 0.1       | 0.1  | 0.1        | 0.1 | 0.1      | 0.1         | 0.1     |\n| 2017 | 1.0 | 0.3   | 0.2       | 0.1       | 0.1       | 0.1  | 0.1        | 0.1 | 0.1      | 0.1         | 0.1     |\n| 2018 | 1.5 | 0.4   | 0.3       | 0.2       | 0.1       | 0.1  | 0.1        | 0.1 | 0.1      | 0.1         | 0.1     |\n| 2019 | 2.0 | 0.5   | 0.4       | 0.3       | 0.2       | 0.1  | 0.1        | 0.1 | 0.1      | 0.1         | 0.1     |\n| 2020 | 3.0 | 0.6   | 0.5       | 0.4       | 0.3       | 0.2  | 0.1        | 0.1 | 0.1      | 0.1         | 0.1     |\n| 2021 | 4.0 | 0.7   | 0.6       | 0.5       | 0.4       | 0.3  | 0.2        | 0.1 | 0.1      | 0.1         | 0.1     |\n| 2022 | 5.0 | 0.8   | 0.7       | 0.6       | 0.5       | 0.4  | 0.3        | 0.2 | 0.1      | 0.1         | 0.1     |\n| 2023 | 6.0 | 0.9   | 0.8       | 0.7       | 0.6       | 0.5  | 0.4        | 0.3 | 0.2      | 0.1         | 0.1     |\n| 2024 | 7.0 | 1.0   | 0.9       | 0.8       | 0.7       | 0.6  | 0.5        | 0.4 | 0.3      | 0.2         | 0.1     |\n| 2025 | 8.0 | 1.1   | 1.0       | 0.9       | 0.8       | 0.7  | 0.6        | 0.5 | 0.4      | 0.3         | 0.2     |",
+        "chart_caption": [
+            "EXHIBIT 1: US power demand driven by data centers "
+        ],
+        "chart_footnote": [
+            "Source: BNEF, Bernstein analysis "
+        ],
+        "sub_type": "bar_stacked",
+        "bbox": [
+            112,
+            311,
+            807,
+            566
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "US AI CO-LOCATION/GPU HOSTING SERVICES ",
+        "text_level": 1,
+        "bbox": [
+            102,
+            625,
+            423,
+            638
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "There are two primary operating models for AI infrastructure asset owners in the US: ",
+        "bbox": [
+            104,
+            643,
+            624,
+            657
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "list",
+        "sub_type": "text",
+        "list_items": [
+            "1. Real estate landlords (Infra owner, don't own compute hardware) - colocation: In this B2B model, companies lease data center infrastructure to hyperscalers, neocloud operators, or enterprises and earn fixed lease rentals. The customer brings their own GPUs (or, increasingly for inferencing, CPUs). 2 models that have seen here- a)DC REITs such as DLR and EQIX, b)Crypto miners pivoting to AI DC co-location such as Core Scientific, TeraWulf, etc. ",
+            "2. Cloud providers (Own Compute Hardware): Here, companies primarily own GPU hardware while either owning or leasing underlying infrastructure from colocation providers. There are 2 sub-categories to this model- a) Hyperscalers which offer services such as IaaS, PaaS, GPUaaS, and operate in hybrid models where they own some real estate and lease some, and b) Neoclouds which are focused on providing GPU services mostly without owning the real estate (e.g., CRWV). For this model, exceptions like IREN exist which own the underlying infrastructure as well. "
+        ],
+        "bbox": [
+            107,
+            671,
+            888,
+            819
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "How have stocks in these categories done: Most US-listed DC asset owners have rallied sharply over the last 2 years- Exhibit 2. ",
+        "bbox": [
+            102,
+            830,
+            892,
+            859
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "How do these models differ? Exhibit 3: Neocloud operators (including IREN) can generate 8-10x higher revenue per IT MW than co-location players, but at the cost of significantly higher capex, shorter contract duration, and greater technology obsolescence risk. Since capex is incurred upfront while revenues ramp over time, these models can drive a sharp rise in ",
+        "bbox": [
+            102,
+            875,
+            862,
+            917
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "header",
+        "text": "Nikhil Nigania +91 226 842 1414 nikhil.nigania@bernsteinsg.com ",
+        "bbox": [
+            104,
+            37,
+            439,
+            50
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "header",
+        "text": "4 June 2026 ",
+        "bbox": [
+            826,
+            37,
+            890,
+            49
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "footer",
+        "text": "INDIA INDUSTRIALS AND INFRASTRUCTURE ",
+        "bbox": [
+            104,
+            940,
+            279,
+            949
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "footer",
+        "text": "BERNSTEIN | SG GROUP ",
+        "bbox": [
+            679,
+            940,
+            861,
+            950
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "page_number",
+        "text": "3 ",
+        "bbox": [
+            882,
+            941,
+            890,
+            950
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "leverage. In contrast, colocation is more capital-efficient and shifts GPU ownership and technology risk to the customer. Exhibit 4 compares recent co-location deals on key metrics. We expect Indian players to predominantly adopt the colocation model, with hyperscalers supplying GPUs rather than operators taking balance-sheet risk. ",
+        "bbox": [
+            102,
+            71,
+            887,
+            116
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "chart",
+        "img_path": "images/8ada40e555deaaac9cbe5e6ee31b230c41c730b8529ae8a3ad40d39840ffaa90.jpg",
+        "content": "| Date    | Equinix(co-location REIT) | Coreweave(neocloud) | Core Scientific(AI co-location+BTC mining) | Applied Digital(AI co-location+BTC mining) | Digital Realty(co-location REIT) | IREN(integrated+BTC mining) | Terawulf(AI co-location+BTC mining) | Cipher Digital(AI co-location+BTC mining) |\n|---------|---------------------------|---------------------|------------------------------------------|------------------------------------------|----------------------------------|-----------------------------|------------------------------------|------------------------------------------|\n| Jan-24  | ~100                      | ~100                | ~100                                     | ~100                                     | ~100                             | ~100                        | ~100                               | ~100                                     |\n| Feb-24  | ~100                      | ~100                | ~100                                     | ~100                                     | ~100                             | ~100                        | ~100                               | ~100                                     |\n| Mar-24  | ~100                      | ~100                | ~100                                     | ~100                                     | ~100                             | ~100                        | ~100                               | ~100                                     |\n| Apr-24  | ~100                      | ~100                | ~100                                     | ~100                                     | ~100                             | ~100                        | ~100                               | ~100                                     |\n| May-24  | ~100                      | ~100                | ~100                                     | ~100                                     | ~100                             | ~100                        | ~100                               | ~100                                     |\n| Jun-24  | ~100                      | ~100                | ~300                                     | ~100                                     | ~100                             | ~200                        | ~250                               | ~150                                     |\n| Jul-24  | ~100                      | ~100                | ~350                                     | ~150                                     | ~150                             | ~250                        | ~350                               | ~250                                     |\n| Aug-24  | ~100                      | ~100                | ~350                                     | ~250                                     | ~250                             | ~350                        | ~450                               | ~350                                     |\n| Sep-24  | ~100                      | ~100                | ~350                                     | ~350                                     | ~350                             | ~450                        | ~550                               | ~450                                     |\n| Oct-24  | ~100                      | ~100                | ~350                                     | ~450                                     | ~450                             | ~550                        | ~650                               | ~550                                     |\n| Nov-24  | ~100                      | ~150                | ~450                                     | ~550                                     | ~550                             | ~650                        | ~750                               | ~650                                     |\n| Dec-24  | ~150                      | ~250                | ~550                                     | ~650                                     | ~650                             | ~750                        | ~850                               | ~750                                     |\n| Jan-25  | ~150                      | ~250                | ~450                                     | ~650                                     | ~650                             | ~750                        | ~850                               | ~750                                     |\n| Feb-25  | ~150                      | ~250                | ~450                                     | ~650                                     | ~650                             | ~750                        | ~850                               | ~750                                     |\n| Mar-25  | ~150                      | ~250                | ~450                                     | ~650                                     | ~650                             | ~750                        | ~850                               | ~750                                     |\n| Apr-25  | ~150                      | ~250                | ~450                                     | ~650                                     | ~650                             | ~750                        | ~850                               | ~750                                     |\n| May-25  | ~150                      | ~350                | ~450                                     | ~650                                     | ~650                             | ~750                        | ~850                               | ~750                                     |\n| Jun-25  | ~150                      | ~450                | ~450                                     | ~650                                     | ~650                             | ~750                        | ~850                               | ~750                                     |\n| Jul-25  | ~150                      | ~450                | ~450                                     | ~650                                     | ~650                             | ~750                        | ~850                               | ~750                                     |\n| Aug-25  | ~150                      | ~350                | ~450                                     | ~650                                     | ~650                             | ~750                        | ~850                               | ~750                                     |\n| Sep-25  | ~150                      | ~350                | ~450                                     | ~650                                     | ~650                             | ~750                        | ~850                               | ~750                                     |\n| Oct-25  | ~150                      | ~350                | ~450                                     | ~650                                     | ~650                             | ~750                        | ~850                               | ~750                                     |\n| Nov-25  | ~150                      | ~350                | ~450                                     | ~650                                     | ~650                             | ~750                        | ~850                               | ~750                                     |\n| Dec-25  | ~150                      | ~350                | ~450                                     | ~650                                     | ~650                             | ~750                        | ~850                               | ~750                                     |\nIndex Level: 1, Indexed to 1, Total: 99. Top values are indices above 99; Total: 99 is an index of 99. Series: IREN(integrated+BTC mining); Core Scientific(Al co-location+BTC mining); Applied Digital(Al co-location+BTC mining); Digital Realty(co-location REIT); Copper Digital(Al co-location+BTC mining); IREN(integrated+BTC mining); Terawulf(Al co-location+BTC mining); Equinix(co-location REIT); Digital Realty(co-location REIT). Values range from approximately 99 to over 99.",
+        "chart_caption": [
+            "EXHIBIT 2: Share price returns: Most Data-center asset heavy plays have rallied sharply over the last couple of years "
+        ],
+        "chart_footnote": [
+            "Equinix, Digital Realty, CoreWeave by Madison Rezaei. IREN, Core Scientific by Gautam Chhugani. Rest not covered. ",
+            "Source: Bloomberg, Bernstein analysis "
+        ],
+        "sub_type": "line",
+        "bbox": [
+            109,
+            162,
+            795,
+            448
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "table",
+        "img_path": "images/8b70c183eec48cc69da309e7750107504715aef1567d18e4651ceacb2fc072db.jpg",
+        "table_caption": [
+            "EXHIBIT 3: Business models for the asset owners involved in infrastructure renting and GPU hosting services "
+        ],
+        "table_footnote": [
+            "CoreWeave, Equinix, Digital Realty covered by Madison Rezaei, IREN covered by Gautam Chhugani. Rest not covered. ",
+            "Source: Company filings, Bernstein analysis "
+        ],
+        "table_body": "<table><tr><td>Layer</td><td>Neocloud (Hardware/GPU owners)</td><td>Co-location (DC infrastructure owners)</td></tr><tr><td>Examples</td><td>CRWV, IREN</td><td>DC REITs (DLR, EQIX), CIFR, WULF</td></tr><tr><td>Land</td><td>Largely Leased</td><td><img src=\"images/d4ebdd2f3c1ee06e1b21455937ec225e76ac3b03795f5f3d7141610e487f9060.jpg\"/></td></tr><tr><td>Building</td><td>Largely Leased</td><td><img src=\"images/49845c25c1a63b4f2fda2be0191eeafa492ccc127d141f7204bfc9e7020a3a14.jpg\"/></td></tr><tr><td>Power</td><td>Might have offtake agreements</td><td><img src=\"images/a4e201767c646d4605ca6e1a5029976ec5b3fbeeb1167b98ae9afd9b5d420dd2.jpg\"/></td></tr><tr><td>GPUs</td><td>√</td><td><img src=\"images/bf31898d6e2d1b063c4f414b787cf4c6483671225df34231a7240f2b47093634.jpg\"/></td></tr><tr><td>Tech Risk</td><td>Operator bears the tech obsolescence risk</td><td>Client bears the tech obsolescence risk</td></tr><tr><td>Revenue Economics</td><td>~$10 Mn/IT MW</td><td>~$1-2 Mn/ IT MW (for miners pivoting to AI co-location model)</td></tr><tr><td>Capex</td><td>GPU (~$30Mn/ IT MW) + Infra (if applicable, ~$15Mn/IT MW)</td><td>DC Capex (~$8-15 Mn/MW)</td></tr><tr><td>Deal duration</td><td>3-5 years (on-demand)</td><td>10-15 years + multiple extension options</td></tr><tr><td>End customers</td><td>Hyperscalers, Chip Makers</td><td>Neocloud, Hyperscalers, Chip makers</td></tr></table>",
+        "bbox": [
+            107,
+            517,
+            723,
+            859
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "header",
+        "text": "Nikhil Nigania +91 226 842 1414 nikhil.nigania@bernsteinsg.com ",
+        "bbox": [
+            104,
+            39,
+            439,
+            51
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "header",
+        "text": "4 June 2026 ",
+        "bbox": [
+            828,
+            39,
+            890,
+            49
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "footer",
+        "text": "INDIA INDUSTRIALS AND INFRASTRUCTURE ",
+        "bbox": [
+            104,
+            940,
+            279,
+            950
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "footer",
+        "text": "BERNSTEIN | SG GROUP ",
+        "bbox": [
+            681,
+            941,
+            861,
+            950
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "page_number",
+        "text": "4 ",
+        "bbox": [
+            880,
+            941,
+            890,
+            950
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "table",
+        "img_path": "images/8832afcc3453f2be40d92a78f0853c2343c8c494636749245586247fc684d953.jpg",
+        "table_caption": [
+            "EXHIBIT 4: Select AI co-location deals in US "
+        ],
+        "table_footnote": [
+            "Source: Company, Bernstein Global Digital Assets team (analyst- Gautam Chhugani) "
+        ],
+        "table_body": "<table><tr><td colspan=\"2\">Parameter</td><td>CORZ (Landlord) - CoreWeave (Tenant)</td><td>APLD (Landlord) - CoreWeave (Tenant)</td><td>CIFR (Landlord)- Fluidstack (Tenant)</td></tr><tr><td rowspan=\"2\">Scale</td><td>Critical IT Load (MW)</td><td>~590 MW</td><td>~400 MW</td><td>~168 MW</td></tr><tr><td>Contract Period</td><td>12 years (two 5-year renewal option)</td><td>15 years (extension option of 15 years)</td><td>10 years (two 5-year renewal option)</td></tr><tr><td rowspan=\"2\">Per MW Economics</td><td>Annual Revenue/MW</td><td>~$1.44 Mn</td><td>~$1.83 Mn</td><td>~$1.79 Mn</td></tr><tr><td>NOI Margin(%)</td><td>~75-80%</td><td>~85-91%</td><td>~80-85%</td></tr><tr><td>Capex</td><td>Per IT MW</td><td>~$6-8 Mn/IT MW (prepayments by CRWV)</td><td>~$11-13 Mn/IT MW (to be borne by APLD)</td><td>~$9-11 Mn/IT MW (to be borne by CIFR)</td></tr><tr><td colspan=\"2\">Avg. payback period for co-location deals</td><td colspan=\"3\">~5 years (on 10-15 years stable contract with minimal tech obsolescence risk)</td></tr></table>",
+        "bbox": [
+            107,
+            90,
+            879,
+            335
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "EXHIBIT 5: Top US Markets Data Center Price & Vacancy 2016-2025 ",
+        "text_level": 1,
+        "bbox": [
+            104,
+            375,
+            552,
+            388
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "credits- Bernstein US Communications Infrastructure team (analyst- Madison Rezaei) ",
+        "bbox": [
+            104,
+            393,
+            571,
+            406
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "chart",
+        "img_path": "images/2e827123b35f10e98de2055a2f9eb6273b677506a926897308c5ad8c1413e9f9.jpg",
+        "content": "| Year | Vacancy Pricing ($/kwh) | Price ($/kwh) |\n|------|--------------------------|---------------|\n| 2016 | 8.0%                     | 160           |\n| 2017 | 5.5%                     | 170           |\n| 2018 | 5.0%                     | 165           |\n| 2019 | 3.5%                     | 155           |\n| 2020 | 3.0%                     | 130           |\n| 2021 | 3.5%                     | 170           |\n| 2022 | 4.5%                     | 130           |\n| 2023 | 5.5%                     | 115           |\n| 2024 | 8.0%                     | 105           |\n| 2025 | 9.0%                     | 95            |",
+        "chart_caption": [],
+        "chart_footnote": [
+            "Source: Bernstein analysis "
+        ],
+        "sub_type": "line",
+        "bbox": [
+            107,
+            411,
+            826,
+            720
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "header",
+        "text": "Nikhil Nigania +91 226 842 1414 nikhil.nigania@bernsteinsg.com ",
+        "bbox": [
+            104,
+            39,
+            439,
+            51
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "header",
+        "text": "4 June 2026 ",
+        "bbox": [
+            828,
+            39,
+            890,
+            49
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "footer",
+        "text": "INDIA INDUSTRIALS AND INFRASTRUCTURE ",
+        "bbox": [
+            104,
+            940,
+            277,
+            949
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "footer",
+        "text": "BERNSTEIN | SG GROUP ",
+        "bbox": [
+            681,
+            941,
+            861,
+            950
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "page_number",
+        "text": "5 ",
+        "bbox": [
+            882,
+            941,
+            890,
+            950
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "image",
+        "img_path": "images/2413d95fe78609ae28efc79a795d547de9c97b6ea509d9590f5c4830d51730fc.jpg",
+        "image_caption": [
+            "EXHIBIT 6: \\~\\$98Bn worth of co-location deals (against 4GW IT load) have been signed for the AI co-location model (avg duration of 10-15 years) ",
+            "credits- Bernstein Global Digital Assets team (analyst- Gautam Chhugani) ",
+            "Bitcoin miners are now integral part of the AI value chain "
+        ],
+        "image_footnote": [
+            "Meta, Amazon covered by Mark Shmulik. Microsoft covered by Mark Moerdler. CoreWeave covered by Madison Rezaei. Core Scientific, Riot covered by Gautam Chhugani. Rest are not covered. ",
+            "Source: Bernstein analysis "
+        ],
+        "content": "```mermaid\ngraph LR\n    A[\"Colocation deals\"] --> B[\"HPC / Hyperscalers\"]\n    B --> C[\"Neocloud players / GPU operators\"]\n    C --> D[\"Co – location (BTC miners)\"]\n    \n    subgraph HPC / Hyperscalers\n        E[\"OpenAI\"] --> F[\"Meta\"]\n        G[\"ANTHROP\\C\"] --> H[\"Square\"]\n    end\n    \n    subgraph Neocloud players / GPU operators\n        I[\"CoreWeave\"] --> J[\"As of Q4'25-Revenue Backlog: ~$67 Bn\"]\n        K[\"FluidStack\"] --> L[\"Core42 AMD\"]\n        M[\"Core42 AMD\"] --> N[\"Core42 AMD\"]\n    end\n    \n    subgraph Co – location (BTC miners)\n        O[\"CORE SCIENTIFIC\"] --> P[\"Galaxy\"]\n        P --> Q[\"APPLIED DIGITAL\"]\n        Q --> R[\"HUT 8\"]\n        Q --> S[\"Cipher Digital\"]\n        Q --> T[\"TERAWULF\"]\n        Q --> U[\"R I O T.\"]\n        U --> V[\"Cipher Digital\"]\n        V --> W[\"HUT 8\"]\n        V --> X[\"APPLIED DIGITAL\"]\n    end\n    \n    subgraph Investment grade tenants\n        Y[\"aws\"] --> Z[\"Investment grade tenants\"]\n    end\n    \n    style HPC / Hyperscalers fill:#f9f9f9,stroke:#333\n    style Neocloud / Neocloud deal\n    style Neocloud deal fill:#e6f7ff,stroke:#333\n    style Neocloud deal fill:#e6f7ff,stroke:#333\n    style Neocloud deal fill:#e6f7ff,stroke:#333\n    style Neocloud deal fill:#e6f7ff,stroke:#333\n    style Neocloud deal fill:#e6f7ff,stroke:#333\n    style Neocloud deal fill:#e6f7ff,stroke:#330\n    style Neocloud deal fill:#e6f7ff,stroke:#330\n    style Neocloud deal fill:#e6f7ff,stroke:#330\n    style Neocloud deal fill:#e6f7ff,stroke:#330\n    style Neocloud deal fill:#e6f7ff,stroke:#330\n    style Neocloud deal fill:#e6f7ff,stroke:#331\n    style Neocloud deal fill:#e6f7ff,stroke:#331\n    style Neocloud deal fill:#e6f7ff,stroke:#331\n    style Neocloud deal fill:#e6f7ff,stroke:#331\n    style Neocloud deal fill:#e6f7ff,stroke:#331\n    style Neocloud deal fill:#e6f7ff,stroke:#332\n    style Neocloud deal fill:#e6f7ff,stroke:#332\n    style Neocloud deal fill:#e6f7ff,stroke:#332\n    style Neocloud deal fill:#e6f7ff,stroke:#332\n    style Neocloud deal fill:#e6f7ff,stroke:#332\n    style Neocloud deal fill:#e6f7ff,stroke:#333\n    style Neocloud deal fill:#e6f7ff,stroke:#333\n    style Neocloud deal fill:#e6f7ff,stroke:#333\n    style Neocloud deal fill:#e6f7ff,stroke:#334\n    style Neocloud deal fill:#e6f7ff,stroke:#334\n    style Neocloud deal fill:#e6f7ff,stroke:#335\n    style Neocloud deal fill:#e6f7ff,stroke:#335\n    style Neocloud deal fill:#e6f7ff,stroke:#336\n    style Neocloud deal fill:#e6f7ff,stroke:#336\n    style Neocloud deal fill:#e6f7ff,stroke:#337\n    style Neocloud deal fill:#e6f7ff,stroke:#338\n    style Neocloud deal fill:#e6f7ff,stroke:#339\n    style Neocloud deal fill:#e6f7ff,stroke:#340\n    style Neocloud deal fill:#e6f7ff,stroke:#341\n    style Neocloud deal fill:#e6f7ff,stroke:#342\n    style Neocloud deal fill:#e6f7ff,stroke:#343\n    style Neocloud deal fill:#e6f7ff,stroke:#344\n    style Neocloud deal fill:#e6f7ff,stroke:#345\n    style Neocloud deal fill:#e6f7ff,stroke:#346\n    style Neocloud deal fill:#e6f7ff,stroke:#347\n    style Neocloud deal fill:#e6f7ff,stroke:#348\n    style Neocloud deal fill:#e6f7ff,stroke:#349\n    style Neocloud deal fill:#e6f7ff,stroke:#350\n    style Neocloud deal fill:#e6f7ff,stroke:#351\n    style Neocloud deal fill:#e6f7ff,stroke:#352\n    style Neocloud deal fill:#e6f7ff,stroke:#353\n    style Neocloud deal fill:#e6f7ff,stroke:#354\n    style Neocloud deal fill:#e6f7ff,stroke:#355\n    style Neocloud deal fill:#e6f7ff,stroke:#356\n    style Neocloud deal fill:#e6f7ff,stroke:#357\n    style Neocloud deal fill:#e6f7ff,stroke:#358\n    style Neocloud deal fill:#e6f7ff,stroke:#359\n    style Neocloud deal fill:#e6f7ff,stroke:#360\n```",
+        "sub_type": "flowchart",
+        "bbox": [
+            106,
+            150,
+            890,
+            467
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "WHAT MADE DC ASSET OWNER SUCCESSFUL IN US? ",
+        "text_level": 1,
+        "bbox": [
+            104,
+            544,
+            473,
+            558
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "Access to Power in the right location is the right to win- Grid interconnection is the most vital factor for the data center site selection- Exhibit 7. ERCOT's large-load interconnection queue has swelled from 49 GW to 225 GW within a span of \\~2.5 years, dominated by data centers- Exhibit 8. Further, it now takes around \\~6 years in the US to get a connection to the grid- Exhibit 9. ",
+        "bbox": [
+            102,
+            564,
+            888,
+            609
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "BTC miners pivot to AI Data Centers: Bitcoin miners have emerged as attractive partners for AI cloud providers- offering pre-secured, scalable power capacity- Exhibit 10 and infrastructure already designed for high-density, compute-intensive operations at a conversion cost of \\$5-8 Mn/MW- Exhibit 11. This has also driven a sharp re-rating in their valuations, as investors increasingly view them as strategic beneficiaries of AI-led infrastructure demand. Examples include Core Scientific, Applied Digital, IREN, Cipher Digital, etc. ",
+        "bbox": [
+            102,
+            621,
+            874,
+            696
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "header",
+        "text": "Nikhil Nigania +91 226 842 1414 nikhil.nigania@bernsteinsg.com ",
+        "bbox": [
+            104,
+            39,
+            439,
+            51
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "header",
+        "text": "4 June 2026 ",
+        "bbox": [
+            828,
+            39,
+            890,
+            49
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "footer",
+        "text": "INDIA INDUSTRIALS AND INFRASTRUCTURE ",
+        "bbox": [
+            106,
+            940,
+            279,
+            949
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "footer",
+        "text": "BERNSTEIN | SG GROUP ",
+        "bbox": [
+            679,
+            941,
+            861,
+            950
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "page_number",
+        "text": "6 ",
+        "bbox": [
+            882,
+            941,
+            890,
+            950
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "chart",
+        "img_path": "images/d04414ba86f3f2a2177505f1c13bfd4255f5d25c42175043f09b057e15489310.jpg",
+        "content": "#the most important factor\n| Factor | Value (%) |\n|---|---|\n| Secure grid connection | 16 |\n| Cost of power | 13 |\n| RE Access | 12 |\n| Workforce availability | 11 |\n| Capital expenditure | 10 |\n| Network proximity | 10 |\n| Tax breaks | 8 |\n| Favorable regulation | 7 |\n| Proximity to population | 5 |\n| Community acceptance | 4 |\n| Water availability | 3 |",
+        "chart_caption": [
+            "EXHIBIT 7: Grid connection is the key for data center site selection ",
+            "Key factors for data center site selection "
+        ],
+        "chart_footnote": [
+            "Source: BNEF, Bernstein analysis "
+        ],
+        "sub_type": "bar",
+        "bbox": [
+            117,
+            140,
+            488,
+            376
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "chart",
+        "img_path": "images/a95cec5a6d4c6d39c8b23f0a050321e8adef05235dac8be5e595433636e4562a.jpg",
+        "content": "| Date | Crypto (GW) | Data Center (GW) | Hydrogen Production (GW) | Others (GW) |\n| :--- | :--- | :--- | :--- | :--- |\n| Feb'23 | 21 | 15 | 11 | 2 |\n| Nov'25 | 20 | 164 | 8 | 38 |\n*85% incremental new requests in the interconnection queue has come from data centers; Total: 225 GW",
+        "chart_caption": [
+            "EXHIBIT 8: ERCOT large load interconnection queue: most of the incremental requests have come from data centers ",
+            "ERCOT large load interconnection queue change (GW) "
+        ],
+        "chart_footnote": [
+            "Source: ERCOT, Bernstein analysis "
+        ],
+        "sub_type": "bar_stacked",
+        "bbox": [
+            501,
+            157,
+            888,
+            398
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "chart",
+        "img_path": "images/af56e1a41f852b7bebce3c4ebd64fbf7b489d34ad605fe40de509c08efb18a09.jpg",
+        "content": "| Category | Value |\n|---|---|\n| CAISO | 9.2 |\n| NYISO | 7.4 |\n| PJM | 6.3 |\n| MISO & SPP | 6 |\n| ERCOT | 4.5 |\n| ISO-NE | 3.8 |\nAverage",
+        "chart_caption": [
+            "EXHIBIT 9: Interconnection waiting time for different ISOs ",
+            "Average time for interconnection in US (years)- 2024 "
+        ],
+        "chart_footnote": [
+            "Source: PV magazine, Bernstein analysis "
+        ],
+        "sub_type": "bar",
+        "bbox": [
+            116,
+            521,
+            480,
+            753
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "chart",
+        "img_path": "images/a08823899971158336224407e1caa075b2c0a490f4d4d3a6278a3354f5d124d8.jpg",
+        "content": "",
+        "chart_caption": [
+            "EXHIBIT 10: IREN has the highest contracted power among the BTC miners with facilities concentrated in Texas ",
+            "Crypto Miners - Operating and additional contracted power capacity (GW) "
+        ],
+        "chart_footnote": [
+            "Only IREN, RIOT, CLSK, CORZ, MARA covered by Gautam Chhugani. ",
+            "Source: Company filings, Bernstein analysis "
+        ],
+        "sub_type": "bar_stacked",
+        "bbox": [
+            509,
+            532,
+            875,
+            785
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "header",
+        "text": "Nikhil Nigania +91 226 842 1414 nikhil.nigania@bernsteinsg.com ",
+        "bbox": [
+            104,
+            39,
+            439,
+            51
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "header",
+        "text": "4 June 2026 ",
+        "bbox": [
+            828,
+            39,
+            890,
+            49
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "footer",
+        "text": "INDIA INDUSTRIALS AND INFRASTRUCTURE ",
+        "bbox": [
+            104,
+            940,
+            279,
+            949
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "footer",
+        "text": "BERNSTEIN | SG GROUP ",
+        "bbox": [
+            679,
+            940,
+            861,
+            950
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "page_number",
+        "text": "7 ",
+        "bbox": [
+            882,
+            941,
+            890,
+            950
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "image",
+        "img_path": "images/9349a6200999367e96febf2066bc475a75d8003c4dba7bb0d5fb39a6f6374699.jpg",
+        "image_caption": [
+            "EXHIBIT 11: What it takes to convert BTC mining data centers to AI data centers "
+        ],
+        "image_footnote": [
+            "Source: Company presentation, Company filings, Bernstein analysis "
+        ],
+        "content": "```mermaid\ngraph LR\n    A[\"Bitcoin mining DC\"] --> B[\"Al data centers\"]\n    A --> C[\"Chip used\"]\n    A --> D[\"Power density\"]\n    A --> E[\"Cooling system\"]\n    A --> F[\"Physical infra\"]\n    A --> G[\"Design objective\"]\n    H[\"ASICs\"] --> I[\"High performance GPUs\"]\n    J[\"Bitcoin miners typically have high rack density servers (>70kW/ rack)\"] --> K[\"High rack density > 40kW/rack as per NVIDIA reference architecture\"]\n    L[\"Free air cooling and/or liquid cooling\"] --> M[\"At scale liquid cooling\"]\n    N[\"Large footprint infra 20MW-200MW\"] --> O[\"Large footprint infra 20MW-200MW\"]\n    P[\"Reliability at low cost, low latency is less critical; however, allows for intermittency\"] --> Q[\"Reliability at low cost, low latency is less critical; short bust intensity\"]\n    R[\"$5-$8mn /MW conversion cost\"] --> S\n```",
+        "sub_type": "flowchart",
+        "bbox": [
+            114,
+            97,
+            879,
+            303
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "COMPANIES LOOKING TO BUILD DATA-CENTERS IN INDIA ",
+        "text_level": 1,
+        "bbox": [
+            104,
+            364,
+            506,
+            378
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "Exhibit 12 gives details of the Indian companies with operations in the DC space. If we use the framework of land x power being the differentiator - the dominance of Adani Group (largest renewable, private thermal, and transmission player in India) is unmatched alongside 1,000+ acres of land bank in Panvel, followed by Reliance industries (both have 0.5 Mn acres of land parcel, Reliance has a big land parcel in Navi Mumbai as well of >5K acres). ",
+        "bbox": [
+            102,
+            383,
+            870,
+            444
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "table",
+        "img_path": "images/84f05c2ff9426a78c3574baf93cc95d2b81aa2cc26116487e19e0e656ca0b687.jpg",
+        "table_caption": [
+            "EXHIBIT 12: Different business models adopted by Indian companies in Data Centers space "
+        ],
+        "table_footnote": [
+            "Coverage: Amazon, Meta, Google by Mark Shmulik. Microsoft by Mark Moerdler. Nvidia is by Stacy Rasgon. L&T and NTPC by us. Rest are not covered. ",
+            "Source: Company filings, Press articles, Bernstein analysis "
+        ],
+        "table_body": "<table><tr><td rowspan=\"2\">Company</td><td colspan=\"3\">Scope</td><td rowspan=\"2\">Capacity Target</td><td rowspan=\"2\">Investments</td><td rowspan=\"2\">Partners / Hyperscaler</td><td rowspan=\"2\">Right to win</td></tr><tr><td>Access to power</td><td>DC infra</td><td>GPU/Inference services</td></tr><tr><td>Adani Group</td><td>Yes</td><td>Yes</td><td>Maybe</td><td>5 GW (existing 2 GW JV) by 2035</td><td>Announced to invest $100Bn by 2035</td><td>Google (Raiden Info Tech for Vizag), EdgeConneX (JV)</td><td>a) 5L acres land bank; b) Largest thermal and renewable generation capacities; c) 23GW RE grid access to be rolled out; d) 1,000+ acres land in Panvel</td></tr><tr><td>Reliance Industries / Jio</td><td>Yes</td><td>Yes</td><td>Yes</td><td>3 GW (Jamnagar) + 1 GW (AP); 120MW by H2&#x27;26</td><td>$20-30Bn (Jamnagar), $11Bn (AP); $100Bn by 2035</td><td>Brookfield, Digital Realty, Meta, Google</td><td>a) 5L acres land bank; b) Building one of the largest solar and battery mfg facility; c) large retail customer base; d) 5,286 acres land bank in Navi Mumbai</td></tr><tr><td>L&amp;T</td><td>No</td><td>Yes</td><td>Yes</td><td>200 MW by 2031 (existing 30 MW)</td><td>$1Bn+ capex over the next 5 years</td><td>E2E, Microsoft</td><td>a) 3rd party DC EPC+MEP services provider+DC owner operator; b) Significant owned land</td></tr><tr><td>Lodha (Macrotech Developers)</td><td>No</td><td>Yes</td><td>Likely No</td><td>2.5GW data center park; 1GW DC co-location facility</td><td>$14Bn for Data Center park and ~$1Bn for DC shell</td><td>AWS, STT</td><td>~4,500 acres of land bank in Palava</td></tr><tr><td>Yotta Infrastructure (subsidiary of Hiranandani group)</td><td>No</td><td>Yes</td><td>Yes</td><td>Data centers in Navi Mumbai, Chennai, Greater Noida</td><td>~$2Bn+ on 20,000 Nvidia Blackwell chips</td><td>Nvidia</td><td>600 acres land bank in Panvel (owned by Hiranandani group)</td></tr><tr><td>TCS / Tata Group</td><td>No</td><td>Yes</td><td>Likely No</td><td>1 GW in 5-7 years (1st phase to come online in 2028)</td><td>$6.5Bn over the next 5-7 years</td><td>TPG (PE partner)</td><td rowspan=\"4\"></td></tr><tr><td>Bharti Airtel (Nxtra)</td><td>No</td><td>Yes</td><td>Likely No</td><td>1 GW by 2030 (from 240 MW current)</td><td>-</td><td>Alpha Wave Global, Carlyle, Anchorage Capital</td></tr><tr><td>CtrlS Datacenters</td><td>No</td><td>Yes</td><td>Likely No</td><td>1 GW+ from the existing 250MW (by 2030)</td><td>$2Bn by 2030</td><td>NTPC (MoU for 2 GW renewable energy supply)</td></tr><tr><td>Anantraj</td><td>No</td><td>Yes</td><td>Likely No</td><td>307MW by 2032 (28MW currently)</td><td>$2Bn by 2032</td><td>Orange Business, Submer</td></tr></table>",
+        "bbox": [
+            109,
+            476,
+            890,
+            863
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "header",
+        "text": "Nikhil Nigania +91 226 842 1414 nikhil.nigania@bernsteinsg.com ",
+        "bbox": [
+            104,
+            39,
+            439,
+            51
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "header",
+        "text": "4 June 2026 ",
+        "bbox": [
+            828,
+            39,
+            890,
+            49
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "footer",
+        "text": "INDIA INDUSTRIALS AND INFRASTRUCTURE ",
+        "bbox": [
+            104,
+            940,
+            279,
+            950
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "footer",
+        "text": "BERNSTEIN | SG GROUP ",
+        "bbox": [
+            679,
+            941,
+            861,
+            950
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "page_number",
+        "text": "8 ",
+        "bbox": [
+            882,
+            941,
+            890,
+            950
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "table",
+        "img_path": "images/84e3f856475b5aea20b1e0f9f9bb64ad0be421ebf5440d84013dd7dbfc7b5747.jpg",
+        "table_caption": [
+            "EXHIBIT 13: Recent land acquisition deals in Navi Mumbai region "
+        ],
+        "table_footnote": [],
+        "table_body": "<table><tr><td>Buyer</td><td>Date</td><td>Seller</td><td>Location</td><td>Area (acres)</td><td>Value (Rs Cr)</td><td>Rate (Rs Cr/acre)</td></tr><tr><td>Amazon</td><td>Jun&#x27;26</td><td>Macrotech (Lodha)</td><td>Palava (near Navi Mumbai)</td><td>11</td><td>125</td><td>12</td></tr><tr><td>STT Global Data Centres</td><td>Sep&#x27;25</td><td>Macrotech (Lodha)</td><td>Palava (near Navi Mumbai)</td><td>24</td><td>500</td><td>21</td></tr><tr><td>Parth Life Spaces</td><td>Aug&#x27;25</td><td>CIDCO</td><td>Navi Mumbai</td><td>~4,500–5,100 sq.m. each</td><td>1500</td><td>40</td></tr><tr><td>L&amp;T Realty</td><td>May&#x27;25</td><td>Private landowners</td><td>Panvel</td><td>34</td><td>102</td><td>3</td></tr><tr><td>AWS</td><td>Dec&#x27;24</td><td>Macrotech (Lodha)</td><td>Palava (near Navi Mumbai)</td><td>38</td><td>450</td><td>12</td></tr><tr><td>Google</td><td>Mar&#x27;24</td><td>MIDC</td><td>Navi Mumbai</td><td>23</td><td>850</td><td>38</td></tr><tr><td colspan=\"7\">AirTrunk (acquired by Blackstone) has recently signed Lol for DC land in Mumbai outskirts for 3GW capacity; to invest ~$21Bn</td></tr></table>",
+        "bbox": [
+            107,
+            90,
+            890,
+            330
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "Amazon and Google covered by Mark Shmulik. L&T covered by us. Rest are not covered ",
+        "bbox": [
+            104,
+            345,
+            522,
+            357
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "Source: Company, Press articles, Bernstein analysis ",
+        "bbox": [
+            106,
+            358,
+            354,
+            369
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "VALUATION - THIS IS WHAT SHOCKED US... ",
+        "text_level": 1,
+        "bbox": [
+            104,
+            396,
+            408,
+            410
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "Mature, scaled data center operators like Equinix and Digital Realty currently trade at about 22-23x 12m fwd EV/EBITDA-Exhibit 14 (DC REITs in US are valued on NTM AFFO as they have recurring distributable cashflows, but for comparison purpose we have used EV/EBITDA), broadly in line with recent data center M&A, such as Blackstone and CPP's acquisition of AirTrunk at \\~21x. As shown in Exhibit 15, nearly all private-market DC deals have cleared in the \\~20-30x band. On the other hand, players with GPU ownership (like CoreWeave and IREN) are trading at much cheaper multiples (7-11x), likely reflecting heavy capex and tech obsolescence risk inherent in their business model. Additionally, AI co-location names are trading at highly elevated multiples likely due to the fact that they remain in early-stage growth with EBITDA yet to materialize at scale. ",
+        "bbox": [
+            102,
+            416,
+            890,
+            521
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "table",
+        "img_path": "images/c23d719abd01475aa9eceb765688a2d4a7c983b0623c74900f9cc01d0386d809.jpg",
+        "table_caption": [
+            "EXHIBIT 14: Comps table for select Data Center infrastructure players in US "
+        ],
+        "table_footnote": [],
+        "table_body": "<table><tr><td>Company</td><td>Market Cap ($Bn)</td><td>EV/EBITDA- 12m fwd</td></tr><tr><td colspan=\"3\">Neocloud (GPU as a Service)</td></tr><tr><td>CoreWeave</td><td>56</td><td>7x</td></tr><tr><td colspan=\"3\">Co-location (Infrastructure as a Service)</td></tr><tr><td>Terawulf</td><td>13</td><td>46x</td></tr><tr><td>Applied Digital</td><td>14</td><td>51x</td></tr><tr><td>Cipher Digital</td><td>10</td><td>71x</td></tr><tr><td>Equinix (DC REIT)</td><td>106</td><td>23x</td></tr><tr><td>Digital Realty (DC REIT)</td><td>69</td><td>22x</td></tr><tr><td colspan=\"3\">Integrated (GPU + Co-location)</td></tr><tr><td>IREN</td><td>24</td><td>13x</td></tr><tr><td>HIVE</td><td>1</td><td>11x</td></tr></table>",
+        "bbox": [
+            107,
+            569,
+            495,
+            752
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "Source: Bloomberg, Bernstein analysis ",
+        "bbox": [
+            104,
+            767,
+            294,
+            777
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "table",
+        "img_path": "images/5b9efe205b251ad6afbead254c2b0ad4be4e9b0f550ceff37dbb0fc9a0935975.jpg",
+        "table_caption": [
+            "EXHIBIT 15: Recent Data Center deals "
+        ],
+        "table_footnote": [],
+        "table_body": "<table><tr><td>Company</td><td>Acquirer</td><td>Year of Acquisiton</td><td>EV ($Bn)</td><td>Multiple</td><td>Post acq growth</td></tr><tr><td>Aligned Data Centers</td><td>Blackrock and MGX</td><td>2025</td><td>~$40 Bn</td><td>Likely around 26x</td><td>-</td></tr><tr><td>AirTrunk</td><td>Blackstone + CPP</td><td>2024</td><td>~$16 Bn</td><td>21x EBITDA</td><td>Expansion in Japan, India and Saudi Arabia</td></tr><tr><td>Vantage Data Centers</td><td>DigitalBridge + Silver Lake</td><td>2024</td><td>$9.2 Bn equity investment</td><td>-</td><td>To drive $30 billion in data center development</td></tr><tr><td>CyrusOne</td><td>KKR + GIP</td><td>2022</td><td>~$15 Bn</td><td>26x EV/EBITDA</td><td>-</td></tr><tr><td>Switch</td><td>DigitalBridge + IFM</td><td>2022</td><td>~$11 Bn</td><td>31x 2022E EBITDA</td><td>Plans to do IPO for an estimated value of ~$60 Bn</td></tr><tr><td>QTS</td><td>Blackstone</td><td>2021</td><td>~$10 Bn</td><td>30x 2021E EV/EBITDA</td><td>Revenue $0.7B → $4.2B; capacity: 400MW -&gt; 3GW</td></tr></table>",
+        "bbox": [
+            503,
+            553,
+            890,
+            827
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "Blackstone is covered by Patrick Davitt. Rest not covered ",
+        "bbox": [
+            500,
+            840,
+            777,
+            852
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "Source: Company filings, Press Articles, Bernstein analysis ",
+        "bbox": [
+            501,
+            854,
+            782,
+            864
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "header",
+        "text": "Nikhil Nigania +91 226 842 1414 nikhil.nigania@bernsteinsg.com ",
+        "bbox": [
+            104,
+            39,
+            439,
+            51
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "header",
+        "text": "4 June 2026 ",
+        "bbox": [
+            828,
+            39,
+            890,
+            49
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "footer",
+        "text": "INDIA INDUSTRIALS AND INFRASTRUCTURE ",
+        "bbox": [
+            104,
+            940,
+            277,
+            949
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "footer",
+        "text": "BERNSTEIN | SG GROUP ",
+        "bbox": [
+            681,
+            941,
+            861,
+            950
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "page_number",
+        "text": "9 ",
+        "bbox": [
+            882,
+            941,
+            890,
+            950
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "B) POWER UTILITY WINNERS ",
+        "text_level": 1,
+        "bbox": [
+            104,
+            85,
+            334,
+            101
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "If we look at the performance of power utility names in the US since the data-center boom started, we see a very divided front. Over Jan'22-Dec'25, Vistra and Constellation Energy have risen \\~8x and NRG \\~4x, while most other utilities have barely moved in comparison, Exhibit 16. ",
+        "bbox": [
+            102,
+            107,
+            883,
+            151
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "chart",
+        "img_path": "images/60d3db570d9f3815f05e914d9a0ff64cc317158ef3cb8c16aec61c8e6452d265.jpg",
+        "content": "",
+        "chart_caption": [
+            "EXHIBIT 16: Share price trend for US power generation companies "
+        ],
+        "chart_footnote": [
+            "None of them is covered by us ",
+            "Source: Bloomberg, Bernstein analysis "
+        ],
+        "sub_type": "line",
+        "bbox": [
+            117,
+            193,
+            879,
+            502
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "Two factors are driving this gap - dispatchable generation capacity and location of the plants. The biggest beneficiaries have been companies which were present in ERCOT (Texas) and PJM markets. Even within them the biggest beneficiaries were the ones-",
+        "bbox": [
+            102,
+            554,
+            874,
+            597
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "list",
+        "sub_type": "text",
+        "list_items": [
+            "1. Having dispatchable available capacity: Building new nuclear plants takes \\~10 years, and adding new gas units take \\~5 years due to tight supply of gas turbines, with long interconnection queues further adding to the timelines. That means companies that already own large nuclear and gas fleets are in a strong position as data-center demand soars and supply stays constrained. ",
+            "2. Access to land and behind-the-meter colocation: Another advantage is the ability to host data centers directly on land adjacent to large power plants, avoiding congested transmission and interconnection queues. Talen's sale of the 960 MW Cumulus campus next to its Susquehanna nuclear plant to AWS, alongside long-term PPAs, shows how such co-location lets hyperscalers secure firm, carbon-free power while generators unlock long term contracted revenue. ",
+            "3. Premium for nuclear - clean dispatchable power: Scarcity of firm, carbon-free baseload power attracted hyperscalers willing to sign long-term nuclear PPAs at significant premiums to spot and forward market prices. Exhibit 18 gives recent PPAs signed between hyperscalers and nuclear power producers (Vistra and Constellation Energy). "
+        ],
+        "bbox": [
+            107,
+            611,
+            890,
+            801
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "In-direct beneficiaries have been coal plants as well - Over May'25-Mar'26, the U.S. DOE had issued 43 emergency orders deferring the retirement of at least 4.4 GW of coal capacity, largely driven by rising power demand from data centers. Further, there have also been reports about Microsoft delaying its 2030 target of $100\\%$ RE due to energy-intensive build-out of data centers. ",
+        "bbox": [
+            102,
+            814,
+            883,
+            873
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "header",
+        "text": "Nikhil Nigania +91 226 842 1414 nikhil.nigania@bernsteinsg.com ",
+        "bbox": [
+            104,
+            39,
+            439,
+            51
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "header",
+        "text": "4 June 2026 ",
+        "bbox": [
+            828,
+            39,
+            890,
+            49
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "footer",
+        "text": "INDIA INDUSTRIALS AND INFRASTRUCTURE ",
+        "bbox": [
+            104,
+            940,
+            279,
+            949
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "footer",
+        "text": "BERNSTEIN | SG GROUP ",
+        "bbox": [
+            679,
+            941,
+            861,
+            950
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "page_number",
+        "text": "10 ",
+        "bbox": [
+            877,
+            941,
+            890,
+            950
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "table",
+        "img_path": "images/39464432b96e93fbfe8895666bb460be624b833d7afe675ea1c82fc58aa85e0a.jpg",
+        "table_caption": [
+            "EXHIBIT 17: US utilities financial performance comparison "
+        ],
+        "table_footnote": [
+            "None of them is covered by us ",
+            "Source: Bloomberg, Bernstein analysis "
+        ],
+        "table_body": "<table><tr><td>Company</td><td>Generation source</td><td>Location</td><td colspan=\"2\">ROE</td><td colspan=\"2\">ROCE</td><td>NI growth CAGR (2023-25)</td><td>Comments</td></tr><tr><td colspan=\"3\"></td><td>2021</td><td>2025</td><td>2021</td><td>2025</td><td colspan=\"2\">(2023-25)</td></tr><tr><td>Vistra</td><td>Primarily gas, coal and nuclear</td><td>Primarily ERCOT, PJM</td><td>-17%</td><td>26%</td><td>-5%</td><td>8%</td><td>24%</td><td>Only ~4 GW contracted out of 44 GW capacity</td></tr><tr><td>Constellation Energy</td><td>Primarily gas, coal and nuclear</td><td>Primarily ERCOT, PJM</td><td>-2%</td><td>17%</td><td>-1%</td><td>12%</td><td>31%</td><td>Nuclear PPAs with Hyperscalers</td></tr><tr><td>NRG Energy</td><td>Primarily gas and coal</td><td>Primarily ERCOT, PJM</td><td>83%</td><td>56%</td><td>23%</td><td>9%</td><td>19%</td><td>-</td></tr><tr><td>Dominion Energy</td><td>Primarily gas, coal and nuclear</td><td>Virginia, Carolina</td><td>13%</td><td>11%</td><td>7%</td><td>6%</td><td>7%</td><td>Regulated</td></tr><tr><td>Duke Energy</td><td>Primarily fossil + nuclear</td><td>Carolinas, Ohio, Florida, Indiana</td><td>8%</td><td>10%</td><td>5%</td><td>6%</td><td>6%</td><td>Regulated</td></tr><tr><td>NextEra Energy</td><td>Primarily renewables</td><td>Pan US (Florida heavy)</td><td>10%</td><td>13%</td><td>4%</td><td>6%</td><td>-2%</td><td>Significant portion is regulated+contracted</td></tr><tr><td>Clearway Energy</td><td>Primarily renewables</td><td>Multiple states</td><td>3%</td><td>8%</td><td>2%</td><td>1%</td><td>6%</td><td></td></tr><tr><td>Xcel Energy</td><td>Primarily renewables</td><td>Multiple states</td><td>11%</td><td>9%</td><td>6%</td><td>6%</td><td>6%</td><td>Regulated</td></tr></table>",
+        "bbox": [
+            109,
+            89,
+            890,
+            345
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "table",
+        "img_path": "images/0405d1cc788d3fcef0dc153307fce26128b85cc0a922dfb1d5060bc7e93fa0d0.jpg",
+        "table_caption": [
+            "EXHIBIT 18: Nuclear PPAs signed between US power utilities and hyperscalers "
+        ],
+        "table_footnote": [
+            "Source: Company filings, Press articles, Bernstein analysis "
+        ],
+        "table_body": "<table><tr><td>Counterparty pair</td><td>Date</td><td>Plant / asset</td><td>Location / market</td><td>Term</td><td>Contracted capacity</td></tr><tr><td>Vistra - Meta</td><td>Jan&#x27;26</td><td>Perry, Davis-Besse, Beaver Valley (nuclear fleet)</td><td>Ohio &amp; Pennsylvania, PJM</td><td>20 years</td><td>&gt;2,600 MW</td></tr><tr><td>Vistra - Amazon</td><td>Sep&#x27;25</td><td>Comanche Peak (nuclear)</td><td>Texas, ERCOT</td><td>20 years</td><td>Up to 1,200 MW</td></tr><tr><td>Constellation - Meta</td><td>Jun&#x27;25</td><td>Clinton nuclear plant</td><td>Illinois, MISO</td><td>20 years</td><td>~1,121 MW</td></tr><tr><td>Constellation - Microsoft</td><td>Sep&#x27;24</td><td>Three Mile Island (nuclear)</td><td>Pennsylvania, PJM</td><td>20 years</td><td>835 MW</td></tr></table>",
+        "bbox": [
+            106,
+            415,
+            892,
+            616
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "The gains for some of these generators is visible in power market and locked in prices: ",
+        "bbox": [
+            104,
+            655,
+            633,
+            669
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "a) Surge in capacity market and wholesale power prices in these regions: PJM runs a forward capacity market that pays generators “capacity revenues” simply for committing to be available during future peak-demand periods, on top of whatever they earn from selling energy. PJM capacity prices rose- from \\~\\$29/MW-day for 2024/25 to \\~\\$270/MW-day for 2025/26, and then to \\$329/MW-day for 2026/27. At the same time, they were also benefited due to their ability to sell a large share of their generation at higher wholesale prices in PJM and EROCT when power prices spiked- Exhibit 19 ",
+        "bbox": [
+            102,
+            681,
+            890,
+            756
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "b) Higher all-in realized prices locked by generators: Companies like Vistra have already locked-in their nuclear and gas capacities at higher realized prices for 2026 and 2027, at a premium to hub prices, which also helps them to protect the downside. ",
+        "bbox": [
+            102,
+            770,
+            866,
+            813
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "header",
+        "text": "Nikhil Nigania +91 226 842 1414 nikhil.nigania@bernsteinsg.com ",
+        "bbox": [
+            104,
+            39,
+            439,
+            51
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "header",
+        "text": "4 June 2026 ",
+        "bbox": [
+            828,
+            39,
+            890,
+            49
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "footer",
+        "text": "INDIA INDUSTRIALS AND INFRASTRUCTURE ",
+        "bbox": [
+            106,
+            940,
+            279,
+            949
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "footer",
+        "text": "BERNSTEIN | SG GROUP ",
+        "bbox": [
+            681,
+            941,
+            861,
+            950
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "page_number",
+        "text": "11 ",
+        "bbox": [
+            879,
+            941,
+            890,
+            950
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "chart",
+        "img_path": "images/a96799a5e89a09055be782208583591221421362ad6df63e3c299421140b0134.jpg",
+        "content": "",
+        "chart_caption": [
+            "EXHIBIT 19: Vistra Corp: increased revenues (in 2025 vs 2024) from wholesale generation and capacity market "
+        ],
+        "chart_footnote": [],
+        "sub_type": "bar_stacked",
+        "bbox": [
+            109,
+            138,
+            357,
+            321
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "chart",
+        "img_path": "images/f84c0c3c186946d77910e406d002398f4d4a38cc40326fc189b060441ac3d0c6.jpg",
+        "content": "| Year       | Price ($/MWh) |\n| ---------- | ------------- |\n| 2016/17    | 59            |\n| 2017/18    | 120           |\n| 2018/19    | 165           |\n| 2019/20    | 100           |\n| 2020/21    | 77            |\n| 2021/22    | 140           |\n| 2022/23    | 50            |\n| 2023/24    | 34            |\n| 2024/25    | 29            |\n| 2025/26    | 270           |\n| 2026/27    | 329           |\n| 2027/28    | 333           |",
+        "chart_caption": [
+            "EXHIBIT 20: PJM market capacity revenues "
+        ],
+        "chart_footnote": [
+            "Source: BNEF, Bernstein analysis "
+        ],
+        "sub_type": "bar",
+        "bbox": [
+            370,
+            108,
+            624,
+            289
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "chart",
+        "img_path": "images/8a07873b9944bfe038448681a6e3c22d8d111de214863889166c4445e4674525.jpg",
+        "content": "| Year | ATC Power Prices ($/MWh) |\n|------|--------------------------|\n| 2021 | 160                      |\n| 2022 | 60                       |\n| 2023 | 50                       |\n| 2024 | 30                       |\n| 2025 | 40                       |\n| 2026 | 50                       |\n| 2027 | 55                       |\n| 2028 | 60                       |\n| 2029 | 70                       |\n| 2030 | 80                       |\n| 2031 | 90                       |\n| 2032 | 100                      |\n| 2033 | 120                      |\n| 2034 | 150                      |\n| 2035 | 190                      |",
+        "chart_caption": [
+            "EXHIBIT 21: ERCOT ATC average power prices "
+        ],
+        "chart_footnote": [
+            "Source: BNEF, Bernstein analysis ",
+            "Source: Company filings, Bernstein analysis "
+        ],
+        "sub_type": "line",
+        "bbox": [
+            635,
+            109,
+            883,
+            287
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "WHO WILL BENEFIT AMONG INDIAN UTILITIES? ",
+        "text_level": 1,
+        "bbox": [
+            104,
+            378,
+            442,
+            391
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "If we look at learnings from US, having dispatchable open power capacity can be a huge advantage for power generators as Data-center capex picks up and speed to market becomes critical. In India, the Adani group (across power and green) completely dominates merchant power market and even future capacity addition - with their large land parcel, grid connectivity and locked thermal equipments. We expect DCs to be ambivalent to color of power, although they might not sign a direct contract with a thermal company, via an intermediary (either DISCOM or trader like Adani Energy Solutions - not covered), they are fine to source thermal as well to our understanding. ",
+        "bbox": [
+            102,
+            398,
+            883,
+            487
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "table",
+        "img_path": "images/a92d247635fa378557d7cb62285d67a8be53d7552bc5ce8ffe74474eb218fcc2.jpg",
+        "table_caption": [
+            "EXHIBIT 22: Indian utilities comparison on key operational metrics "
+        ],
+        "table_footnote": [
+            "Except Jaiprakash Power, all are covered by us ",
+            "Source: Company filings, CTU, Press articles, Bernstein analysis "
+        ],
+        "table_body": "<table><tr><td>Company</td><td>Operating Capacity (GW)</td><td>Type</td><td>Merchant Capacity (MW)</td><td>RE connectivity access to be rolled-out (GW)</td></tr><tr><td>Adani Green (largest land parcel)</td><td>19</td><td>Renewables</td><td>4,245</td><td>23</td></tr><tr><td>Adani Power</td><td>18</td><td>Thermal</td><td>2,599</td><td>-</td></tr><tr><td>Jaiprakash Power (To become part of Adani Power)</td><td>2</td><td>Thermal+Hydro</td><td>900</td><td></td></tr><tr><td>ReNew</td><td>13</td><td>Renewables</td><td>600</td><td>14</td></tr><tr><td>NTPC</td><td>89</td><td>Thermal+Renewables</td><td>390</td><td>-</td></tr><tr><td>JSW Energy</td><td>13</td><td>Thermal+Renewables</td><td>300</td><td>5</td></tr><tr><td>Tata Power</td><td>17</td><td>Thermal+Renewables</td><td>120</td><td>9</td></tr><tr><td>NTPC Green</td><td>10</td><td>Renewables</td><td>-</td><td>16</td></tr></table>",
+        "bbox": [
+            107,
+            520,
+            890,
+            787
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "header",
+        "text": "Nikhil Nigania +91 226 842 1414 nikhil.nigania@bernsteinsg.com ",
+        "bbox": [
+            104,
+            39,
+            439,
+            51
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "header",
+        "text": "4 June 2026 ",
+        "bbox": [
+            828,
+            39,
+            890,
+            49
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "footer",
+        "text": "INDIA INDUSTRIALS AND INFRASTRUCTURE ",
+        "bbox": [
+            104,
+            940,
+            277,
+            949
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "footer",
+        "text": "BERNSTEIN | SG GROUP ",
+        "bbox": [
+            681,
+            941,
+            861,
+            950
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "page_number",
+        "text": "12 ",
+        "bbox": [
+            877,
+            941,
+            890,
+            950
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "I. REQUIRED DISCLOSURES ",
+        "text_level": 1,
+        "bbox": [
+            104,
+            98,
+            297,
+            111
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "References to \"Bernstein\" or the \"Firm\" in these disclosures relate to the following entities: Bernstein Institutional Services LLC (April 1, 2024 onwards), Bernstein & Co., LLC (pre April 1, 2024), Bernstein Autonomous LLP, BSG France S.A. (April 1, 2024 onwards), Bernstein (Hong Kong) Limited 盛博香港有限公司, Bernstein (Canada) Limited, Bernstein (India) Private Limited (SEBI registration no. INH000006378), Bernstein (Singapore) Private Limited, Bernstein Japan KK (サンフォード・C・バーンスタイン株式会社) and analysts employed by SG Africa Technologies & Services to produce Bernstein under a Global Services Agreement in place between Bernstein and SG. ",
+        "bbox": [
+            102,
+            125,
+            893,
+            219
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "Bernstein is part of a joint venture between SG (SG) and AllianceBernstein, L.P. (AB). Unless specifically noted otherwise, for purposes of these disclosures, references to Bernstein's “affiliates” relate to both SG and AB and their respective affiliates. ",
+        "bbox": [
+            102,
+            232,
+            892,
+            273
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "VALUATION METHODOLOGY ",
+        "text_level": 1,
+        "bbox": [
+            104,
+            285,
+            300,
+            297
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "This research publication covers six or more companies. For valuation methodology and other company disclosures: ",
+        "bbox": [
+            102,
+            311,
+            815,
+            325
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "Please visit: https://bernstein-autonomous.bluematrix.com/sellside/Disclosures.action. ",
+        "bbox": [
+            104,
+            325,
+            648,
+            338
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "Or, you can also write to the Director of Compliance, Bernstein Institutional Services LLC, 245 Park Avenue, New York, NY 10167. ",
+        "bbox": [
+            102,
+            339,
+            890,
+            353
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "RISKS ",
+        "text_level": 1,
+        "bbox": [
+            104,
+            366,
+            151,
+            378
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "This research publication covers six or more companies. For risks and other company disclosures: ",
+        "bbox": [
+            102,
+            392,
+            705,
+            406
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "Please visit: https://bernstein-autonomous.bluematrix.com/sellside/Disclosures.action. ",
+        "bbox": [
+            104,
+            406,
+            648,
+            417
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "Or, you can also write to the Director of Compliance, Bernstein Institutional Services LLC, 245 Park Avenue, New York, NY 10167. ",
+        "bbox": [
+            102,
+            419,
+            890,
+            433
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "RATINGS DEFINITIONS, BENCHMARKS AND DISTRIBUTION ",
+        "text_level": 1,
+        "bbox": [
+            104,
+            445,
+            506,
+            459
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "EQUITY RATINGS DEFINITIONS ",
+        "text_level": 1,
+        "bbox": [
+            104,
+            470,
+            318,
+            484
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "Bernstein brand ",
+        "text_level": 1,
+        "bbox": [
+            104,
+            498,
+            217,
+            511
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "The Bernstein brand rates stocks based on forecasts of relative performance for the next 12 months versus the S&P 500 for stocks listed on the U.S. and Canadian exchanges, versus the Bloomberg Europe Developed Markets Large and Mid Cap Price Return Index EUR (EDME) for stocks listed on the European exchanges and emerging markets exchanges outside of the Asia Pacific region, versus the Bloomberg Japan Large and Mid Cap Price Return Index USD (JPL) for stocks listed on the Japanese exchanges, and versus the Bloomberg Asia ex-Japan Large and Mid Cap Price Return Index (ASIAX) for stocks listed on the Asian (ex-Japan) exchanges -unless otherwise specified. ",
+        "bbox": [
+            102,
+            523,
+            893,
+            606
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "The Bernstein brand has three categories of ratings: ",
+        "bbox": [
+            104,
+            619,
+            428,
+            633
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "list",
+        "sub_type": "text",
+        "list_items": [
+            "- Outperform: Stock will outpace the market index by more than 15 pp ",
+            "• Market-Perform: Stock will perform in line with the market index to within +/-15 pp ",
+            "• Underperform: Stock will trail the performance of the market index by more than 15 pp "
+        ],
+        "bbox": [
+            104,
+            646,
+            635,
+            715
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "Coverage Suspended: Coverage of a company under the Bernstein brand has been suspended. Ratings and price targets are suspended temporarily, are no longer current, and should therefore not be relied upon. ",
+        "bbox": [
+            102,
+            728,
+            892,
+            755
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "Not Rated: A rating assigned when the stock cannot be accurately valued, or the performance of the company accurately predicted, at the present time. The covering analyst may continue to publish research reports on the company to update investors on events and developments. ",
+        "bbox": [
+            102,
+            768,
+            892,
+            809
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "Not Covered (NC) denotes companies that are not under coverage. ",
+        "bbox": [
+            104,
+            821,
+            517,
+            835
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "Bernstein brand stock ratings are based on a 12-month time horizon. ",
+        "bbox": [
+            104,
+            847,
+            531,
+            861
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "Autonomous brand – common stocks ",
+        "text_level": 1,
+        "bbox": [
+            104,
+            875,
+            359,
+            887
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "header",
+        "text": "Nikhil Nigania +91 226 842 1414 nikhil.nigania@bernsteinsg.com ",
+        "bbox": [
+            104,
+            39,
+            439,
+            51
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "header",
+        "text": "4 June 2026 ",
+        "bbox": [
+            826,
+            39,
+            890,
+            49
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "header",
+        "text": "DISCLOSURE APPENDIX ",
+        "bbox": [
+            727,
+            69,
+            890,
+            83
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "footer",
+        "text": "INDIA INDUSTRIALS AND INFRASTRUCTURE ",
+        "bbox": [
+            104,
+            940,
+            279,
+            949
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "footer",
+        "text": "BERNSTEIN | SG GROUP ",
+        "bbox": [
+            679,
+            940,
+            861,
+            950
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "page_number",
+        "text": "13 ",
+        "bbox": [
+            877,
+            941,
+            890,
+            950
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "The Autonomous brand rates common stocks as indicated below. As our benchmarks we use the Bloomberg Europe 500 Banks And Financial Services Index (BEBANKS) and Bloomberg Europe Dev Mkt Financials Large and Mid Cap Price Ret Index EUR (EDMFI) index for developed European banks and Payments, the Bloomberg Europe 500 Insurance Index (BEINSUR) for European insurers, the S&P 500 and S&P Financials for US banks and Payments coverage, S5LIFE for US Insurance, the S&P Insurance Select Industry (SPSIINS) for US Non-Life Insurers coverage, and the Bloomberg Emerging Markets Financials Large, Mid and Small Cap Price Return Index (EMLSF) for emerging market banks and insurers and Payments. Ratings are stated relative to the sector (not the market). ",
+        "bbox": [
+            102,
+            70,
+            893,
+            165
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "The Autonomous brand has three categories of common stock ratings: ",
+        "bbox": [
+            104,
+            179,
+            542,
+            191
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "list",
+        "sub_type": "text",
+        "list_items": [
+            "- Outperform (OP): Stock will outpace the relevant index by more than 10 pp ",
+            "- Neutral (N): Stock will perform in line with the market index to within +/-10 pp ",
+            "• Underperform (UP): Stock will trail the performance of the relevant index by more than 10 pp "
+        ],
+        "bbox": [
+            104,
+            205,
+            692,
+            275
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "Coverage Suspended: Coverage of a company under the Autonomous research brand has been suspended. Ratings and price targets are suspended temporarily, are no longer current, and should therefore not be relied upon. ",
+        "bbox": [
+            102,
+            287,
+            892,
+            315
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "Not Rated: A rating assigned when the stock cannot be accurately valued, or the performance of the company accurately predicted, at the present time. The covering analyst may continue to publish research reports on the company to update investors on events and developments. ",
+        "bbox": [
+            102,
+            328,
+            892,
+            368
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "Those denoted as ‘Feature’ (e.g., Feature Outperform FOP, Feature Under Outperform FUP) are our core ideas. ",
+        "bbox": [
+            104,
+            380,
+            782,
+            393
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "Not Covered (NC) denotes companies that are not under coverage. ",
+        "bbox": [
+            104,
+            407,
+            517,
+            421
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "Autonomous brand common stock ratings are based on a 12-month time horizon. ",
+        "bbox": [
+            104,
+            434,
+            606,
+            446
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "Autonomous brand – preferred stocks ",
+        "text_level": 1,
+        "bbox": [
+            104,
+            460,
+            364,
+            473
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "The Autonomous brand has three categories of preferred stock ratings: ",
+        "bbox": [
+            104,
+            486,
+            545,
+            500
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "list",
+        "sub_type": "text",
+        "list_items": [
+            "- Outperform (OP): The total return of the preferred instrument is expected to outperform preferred securities of other issuers operating in similar sectors or rating categories over the next six months. ",
+            "- Neutral (N): The total return of the preferred instrument is expected to perform in line with preferred securities of other issuers operating in similar sectors or rating categories over the next six months. ",
+            "- Underperform (UP): The total return of the preferred instrument is expected to underperform preferred securities of other issuers operating in similar sectors or rating categories over the next six months. "
+        ],
+        "bbox": [
+            104,
+            513,
+            892,
+            627
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "Autonomous preferred stock ratings are based on a 6-month time horizon. ",
+        "bbox": [
+            104,
+            641,
+            563,
+            654
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "AUTONOMOUS CREDIT RESEARCH ",
+        "text_level": 1,
+        "bbox": [
+            104,
+            666,
+            346,
+            679
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "Where this report contains investment recommendations for credit instruments, as defined in article 3(1)(35) of the Market Abuse Regulation, the information below is presented to comply with its disclosure requirements. ",
+        "bbox": [
+            102,
+            693,
+            892,
+            720
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "The report may also include reference(s) to published opinions by other Autonomous or Bernstein analysts covering the equity securities of the issuer(s) referenced herein. Please note an investment recommendation for credit instruments published by the author(s) of this report may differ from the published view of the analyst covering equity securities for the issuer(s) contained in this report and vice versa. ",
+        "bbox": [
+            102,
+            733,
+            893,
+            787
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "CREDIT RATINGS DEFINITIONS ",
+        "text_level": 1,
+        "bbox": [
+            104,
+            800,
+            318,
+            811
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "The Autonomous brand has three categories of credit ratings: ",
+        "bbox": [
+            104,
+            825,
+            485,
+            840
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "\\- Credit Outperform (C-OP): The total return of the Reference Credit Instrument is expected to outperform the credit spread of bonds of other issuers operating in similar sectors or rating categories over the next six months. ",
+        "bbox": [
+            104,
+            853,
+            893,
+            882
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "header",
+        "text": "Nikhil Nigania +91 226 842 1414 nikhil.nigania@bernsteinsg.com ",
+        "bbox": [
+            104,
+            39,
+            439,
+            51
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "header",
+        "text": "4 June 2026 ",
+        "bbox": [
+            826,
+            39,
+            890,
+            49
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "footer",
+        "text": "INDIA INDUSTRIALS AND INFRASTRUCTURE ",
+        "bbox": [
+            104,
+            940,
+            279,
+            949
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "footer",
+        "text": "BERNSTEIN | SG GROUP ",
+        "bbox": [
+            679,
+            941,
+            861,
+            950
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "page_number",
+        "text": "14 ",
+        "bbox": [
+            877,
+            941,
+            890,
+            950
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "list",
+        "sub_type": "text",
+        "list_items": [
+            "- Credit Neutral (C-N): The total return of the Reference Credit Instrument is expected to perform in line with the credit spread of bonds of other issuers operating in similar sectors or rating categories over the next six months. ",
+            "- Credit Underperform (C-UP): The total return of the Reference Credit Instrument is expected to underperform the credit spread of bonds of other issuers operating in similar sectors or rating categories over the next six months. "
+        ],
+        "bbox": [
+            104,
+            71,
+            890,
+            143
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "Autonomous credit ratings are based on a 6-month time horizon. ",
+        "bbox": [
+            104,
+            156,
+            503,
+            169
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "A list of all investment recommendations produced by the author(s) of this report alongside credit ratings history are available upon request. ",
+        "bbox": [
+            102,
+            181,
+            892,
+            209
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "It is at the sole discretion of the Firm as to when to initiate, update and cease research coverage. The Firm has established, maintains and relies on information barriers to control the flow of information contained in one or more areas (i.e. the private side) within the Firm, and into other areas, units, groups or affiliates (i.e. public side) of the Firm ",
+        "bbox": [
+            102,
+            222,
+            893,
+            263
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "table",
+        "img_path": "images/20c617a36eee2cbae18200debc35a6214aecc23e245951e03803278926da9948.jpg",
+        "table_caption": [
+            "DISTRIBUTION OF EQUITY RATINGS/INVESTMENT BANKING SERVICES "
+        ],
+        "table_footnote": [
+            "\\* These figures represent the percentage of companies within each equity rating category for which affiliates of Bernstein have provided investment banking services within the previous 12 months.\nAs of March 31, 2026. All figures are updated quarterly. "
+        ],
+        "table_body": "<table><tr><td>Equity Rating</td><td>Market Abuse Regulation (MAR) and FINRA Rating Category</td><td>Global Rating Distribution</td><td>Investment Banking Relationships*</td></tr><tr><td>Outperform</td><td>BUY</td><td>51.1%</td><td>16.5%</td></tr><tr><td>Market-Perform (Bernstein Brand) Neutral (Autonomous Brand)</td><td>HOLD</td><td>36.3%</td><td>17.8%</td></tr><tr><td>Underperform</td><td>SELL</td><td>12.6%</td><td>14.9%</td></tr></table>",
+        "bbox": [
+            104,
+            325,
+            892,
+            450
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "PRICE CHARTS/ RATINGS AND PRICE TARGET HISTORY ",
+        "text_level": 1,
+        "bbox": [
+            104,
+            513,
+            485,
+            526
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "This research publication covers six or more companies. For price chart and other company disclosures, please visit https://bernstein-autonomous.bluematrix.com/sellside/Disclosures.action or you can write to the Director of Compliance, Bernstein Institutional Services LLC, 245 Park Avenue, New York, NY 10167. ",
+        "bbox": [
+            102,
+            540,
+            893,
+            580
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "CONFLICTS OF INTEREST ",
+        "text_level": 1,
+        "bbox": [
+            104,
+            593,
+            282,
+            606
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "Bernstein Autonomous LLP or BSG France SA, beneficially, has either a net long or short position of 0.5% or more of the total issued share capital of a class of common equity securities of the following MiFID eligible securities: Digital Realty Trust, Inc.. ",
+        "bbox": [
+            102,
+            619,
+            892,
+            648
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "Bernstein and/or affiliates have received compensation for investment banking services in the past twelve months from CoreWeave, Inc.. ",
+        "bbox": [
+            102,
+            672,
+            890,
+            699
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "Bernstein and/or affiliates have received compensation for non-investment banking securities-related products or services in the previous twelve months from the following clients: Adani Power, Adani Green Energy Ltd, JSW Energy, Tata Power, Equinix, Inc. and CoreWeave, Inc.. ",
+        "bbox": [
+            102,
+            712,
+            890,
+            753
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "Bernstein has received compensation for non-investment banking securities-related products or services in the previous twelve months from the following clients: Tata Power. ",
+        "bbox": [
+            102,
+            766,
+            890,
+            792
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "An affiliate of Bernstein has received compensation for non-investment banking securities-related products or services in the previous twelve months from the following clients: Equinix, Inc. and CoreWeave, Inc.. ",
+        "bbox": [
+            102,
+            818,
+            890,
+            845
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "Bernstein and/or affiliates expect to receive or intend to seek compensation for investment banking services in the next three months from CoreWeave, Inc.. ",
+        "bbox": [
+            102,
+            858,
+            890,
+            886
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "header",
+        "text": "Nikhil Nigania +91 226 842 1414 nikhil.nigania@bernsteinsg.com ",
+        "bbox": [
+            104,
+            39,
+            439,
+            51
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "header",
+        "text": "4 June 2026 ",
+        "bbox": [
+            826,
+            39,
+            890,
+            49
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "footer",
+        "text": "INDIA INDUSTRIALS AND INFRASTRUCTURE ",
+        "bbox": [
+            104,
+            940,
+            279,
+            949
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "footer",
+        "text": "BERNSTEIN | SG GROUP ",
+        "bbox": [
+            679,
+            941,
+            861,
+            950
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "page_number",
+        "text": "15 ",
+        "bbox": [
+            877,
+            941,
+            890,
+            950
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "Certain affiliates of Bernstein act as market maker or liquidity provider in the debt securities of: Tata Power and Equinix, Inc.. ",
+        "bbox": [
+            102,
+            70,
+            862,
+            84
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "Bernstein and/or affiliates had an investment banking client relationship during the past twelve months with CoreWeave, Inc.. ",
+        "bbox": [
+            102,
+            109,
+            870,
+            123
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "Affiliates of Bernstein managed or co-managed in the past twelve months a public offering of securities of CoreWeave, Inc.. ",
+        "bbox": [
+            102,
+            135,
+            859,
+            148
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "OTHER MATTERS ",
+        "text_level": 1,
+        "bbox": [
+            104,
+            161,
+            225,
+            174
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "The legal entity(ies) employing the analyst(s) listed in this report, and their location, can be determined by the country code of their phone number, as follows: ",
+        "bbox": [
+            102,
+            188,
+            892,
+            215
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "list",
+        "sub_type": "text",
+        "list_items": [
+            "+1 Bernstein Institutional Services LLC; New York, New York, USA ",
+            "+44 Bernstein Autonomous LLP; London UK ",
+            "+212 SG Africa Technologies & Services; Casablanca, Morocco ",
+            "+33 BSG France S.A.; Paris, France ",
+            "+34 BSG France S.A.; Madrid, Spain ",
+            "+41 Bernstein Autonomous LLP; Geneva, Switzerland ",
+            "+49 BSG France S.A.; Frankfurt, Germany ",
+            "+91 Bernstein (India) Private Limited; Mumbai, India ",
+            "+852 Bernstein (Hong Kong) Limited 盛博香港有限公司; Hong Kong, China ",
+            "+65 Bernstein (Singapore) Private Limited; Singapore ",
+            "+81 Bernstein Japan KK; Tokyo, Japan "
+        ],
+        "bbox": [
+            104,
+            228,
+            642,
+            503
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "Where this report has been prepared by research analyst(s) employed by a non-US affiliate, such analyst(s), is/are (unless otherwise expressly noted below) not registered as associated persons of Bernstein Institutional Services LLC or any other SEC-registered broker-dealer and are not licensed or qualified as research analysts with FINRA. Accordingly, such analyst(s) may not be subject to FINRA's restrictions regarding (among other things) communications by research analysts with a subject company, interactions between research analysts and investment banking personnel, participation by research analysts in solicitation and marketing activities relating to investment banking transactions, public appearances by research analysts, and trading securities held by a research analyst account. ",
+        "bbox": [
+            102,
+            516,
+            893,
+            612
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "Where this report has been prepared by research analyst(s) employed by SG Africa Technologies & Services (part of the SG group of companies), it has been prepared on behalf of a Bernstein company under a Global Services Agreement in place between Bernstein and SG. ",
+        "bbox": [
+            102,
+            625,
+            892,
+            666
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "CERTIFICATION ",
+        "text_level": 1,
+        "bbox": [
+            104,
+            678,
+            215,
+            691
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "Each research analyst listed in this report, who is primarily responsible for the preparation of the content of this report, certifies that all of the views expressed in this publication accurately reflect that analyst's personal views about any and all of the subject securities or issuers and that no part of that analyst's compensation was, is, or will be, directly or indirectly, related to the specific recommendations or views in this publication. ",
+        "bbox": [
+            102,
+            705,
+            892,
+            758
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "II. ADDITIONAL GLOBAL CONFLICT DISCLOSURES ",
+        "text_level": 1,
+        "bbox": [
+            104,
+            771,
+            444,
+            784
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "It is at the sole discretion of the Firm as to when to initiate, update and cease research coverage. The Firm has established, maintains and relies on information barriers to control the flow of information contained in one or more areas (i.e., the private side) within the Firm, and into other areas, units, groups or affiliates (i.e., public side) of the Firm. ",
+        "bbox": [
+            102,
+            797,
+            892,
+            839
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "III. OTHER IMPORTANT INFORMATION AND DISCLOSURES",
+        "text_level": 1,
+        "bbox": [
+            104,
+            851,
+            501,
+            864
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "Separate branding is maintained for “Bernstein” and “Autonomous” research products. ",
+        "bbox": [
+            102,
+            878,
+            635,
+            891
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "header",
+        "text": "Nikhil Nigania +91 226 842 1414 nikhil.nigania@bernsteinsg.com ",
+        "bbox": [
+            104,
+            39,
+            439,
+            51
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "header",
+        "text": "4 June 2026 ",
+        "bbox": [
+            826,
+            39,
+            890,
+            49
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "footer",
+        "text": "INDIA INDUSTRIALS AND INFRASTRUCTURE ",
+        "bbox": [
+            104,
+            940,
+            279,
+            949
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "footer",
+        "text": "BERNSTEIN | SG GROUP ",
+        "bbox": [
+            679,
+            940,
+            861,
+            950
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "page_number",
+        "text": "16 ",
+        "bbox": [
+            877,
+            941,
+            890,
+            950
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "list",
+        "sub_type": "text",
+        "list_items": [
+            "- Bernstein produces a number of different types of research products including, among others, fundamental analysis and quantitative analysis under both the “Autonomous” and “Bernstein” brands. Recommendations contained within one type of research product may differ from recommendations contained within other types of research products, whether as a result of differing time horizons, methodologies or otherwise. Furthermore, views or recommendations within a research product issued under one brand may differ from views or recommendations under the same type of research product issued under the other brand. The Research Ratings System for the two brands and other information related to those Rating Systems are included in the previous section. ",
+            "- Autonomous operates as a separate business unit within the following entities: Bernstein Institutional Services LLC, Bernstein Autonomous LLP, Bernstein (Hong Kong) Limited 盛博香港有限公司 and Bernstein (India) Private Limited. For information relating to “Autonomous” branded products (including certain Sales materials) please visit: www.autonomous.com. For information relating to Bernstein branded products please visit: www.bernsteinresearch.com. "
+        ],
+        "bbox": [
+            104,
+            71,
+            893,
+            248
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "Analysts are compensated based on aggregate contributions to the research franchise as measured by account penetration, productivity and proactivity of investment ideas. No analysts are compensated based on performance in, or contributions to, generating investment banking revenues. ",
+        "bbox": [
+            102,
+            261,
+            892,
+            301
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "This report has been produced by an independent analyst as defined in Article 3 (1)(34)(i) of EU 596/2014 Market Abuse Regulation (“MAR”) and the same article of MAR as it forms part of United Kingdom domestic law by virtue of the European Union (Withdrawal) Act 2018. ",
+        "bbox": [
+            102,
+            314,
+            892,
+            354
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "To our readers in the United States: Bernstein Institutional Services LLC, a broker-dealer registered with the U.S. Securities and Exchange Commission (“SEC”) and a member of the U.S. Financial Industry Regulatory Authority, Inc. (“FINRA”) is distributing this publication in the United States and accepts responsibility for its contents. Where this material contains an analysis of debt product(s), such material is intended only for institutional investors and is not subject to the US independence and disclosure standards applicable to debt research prepared for retail investors. ",
+        "bbox": [
+            102,
+            368,
+            893,
+            436
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "Bernstein Institutional Services LLC may act as principal for its own account or as agent for another person (including an affiliate) in sales or purchases of any security which is a subject of this report. This report does not purport to meet the objectives or needs of any specific individuals, entities or accounts. ",
+        "bbox": [
+            102,
+            449,
+            892,
+            489
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "To our readers in Canada: If this publication pertains to a Canadian domiciled company, it is being distributed in Canada by Bernstein (Canada) Limited, which is licensed and regulated by the Canadian Investment Regulatory Organization. If the publication pertains to a non-Canadian domiciled company, it is being distributed by Bernstein Institutional Services LLC, which is licensed and regulated by both the SEC and FINRA, into Canada under the International Dealers Exemption. ",
+        "bbox": [
+            102,
+            502,
+            892,
+            556
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "This document may not be passed onto any person in Canada unless that person qualifies as \"permitted client\" as defined in Section 1.1 of NI 31-103. ",
+        "bbox": [
+            102,
+            569,
+            890,
+            595
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "To our readers in Brazil: This report has been prepared by Bernstein Institutional Services LLC, and Banco BTG Pactual S.A. (\"BTG\") is responsible for the distribution of this report in Brazil. ",
+        "bbox": [
+            102,
+            609,
+            890,
+            636
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "To readers in the United Kingdom: This publication has been issued or approved for issue in the United Kingdom by Bernstein Autonomous LLP, authorised and regulated by the Financial Conduct Authority and located at 60 London Wall, London EC2M 5SH, +44 (0)20-7170-5000. Registered in England & Wales No OC343985. ",
+        "bbox": [
+            102,
+            648,
+            892,
+            690
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "This document is for distribution only to persons who (i) have professional experience in matters relating to investments falling within Article 19(5) of the Financial Services and Markets Act 2000 (Financial Promotion) Order 2005 (as amended, the “Financial Promotion Order”), (ii) are persons falling within Article 49(2)(a) to (d) (“high net worth companies, unincorporated associations, etc.”) of the Financial Promotion Order, (iii) are outside the United Kingdom, or (iv) are persons to whom an invitation or inducement to engage in investment activity (within the meaning of section 21 of the FSMA) in connection with the issue or sale of any securities may otherwise lawfully be communicated or caused to be communicated (all such persons together being referred to as “relevant persons”). This document is directed only at relevant persons and must not be acted on or relied on by persons who are not relevant persons. Any investment or investment activity to which this document relates is available only to relevant persons and will be engaged in only with relevant persons. ",
+        "bbox": [
+            102,
+            702,
+            893,
+            825
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "To our readers in the member states of the EEA: This publication is being distributed by BSG France SA, which is authorised and regulated by the Autorité de Contrôle Prudentiel et de Résolution (ACPR) and Autorité des Marchés Financiers (AMF). ",
+        "bbox": [
+            102,
+            838,
+            892,
+            866
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "To our readers in Hong Kong: This publication is being distributed in Hong Kong by Bernstein (Hong Kong) Limited 盛博香港有限公司, which is licensed and regulated by the Hong Kong Securities and Futures Commission (Central Entity No. AXC846) to carry out Type 4 (Advising on Securities) regulated activities and subject to the licensing conditions mentioned in the SFC Public Register (https://www.sfc.hk/publicregWeb/corp/AXC846/details)). This publication is solely for professional investors, as defined in the Securities and Futures Ordinance (Cap. 571). The purpose of this report is solely to provide an analysis of the issuers referred to in this report and is not intended for any purpose contrary to the laws of Hong Kong. ",
+        "bbox": [
+            102,
+            878,
+            892,
+            919
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "header",
+        "text": "Nikhil Nigania +91 226 842 1414 nikhil.nigania@bernsteinsg.com ",
+        "bbox": [
+            104,
+            39,
+            437,
+            50
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "header",
+        "text": "4 June 2026 ",
+        "bbox": [
+            826,
+            39,
+            890,
+            49
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "footer",
+        "text": "INDIA INDUSTRIALS AND INFRASTRUCTURE ",
+        "bbox": [
+            104,
+            940,
+            279,
+            949
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "footer",
+        "text": "BERNSTEIN | SG GROUP ",
+        "bbox": [
+            679,
+            941,
+            861,
+            950
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "page_number",
+        "text": "17 ",
+        "bbox": [
+            877,
+            941,
+            890,
+            950
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            102,
+            70,
+            892,
+            112
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "To our readers in Singapore: This publication is being distributed in Singapore by Bernstein (Singapore) Private Limited, only to accredited investors or institutional investors, as defined in the Securities and Futures Act 2001 of Singapore (\"SFA\"). Recipients in Singapore should contact Bernstein (Singapore) Private Limited in respect of matters arising from, or in connection with, this publication. Bernstein (Singapore) Private Limited is regulated by the Monetary Authority of Singapore and licensed under the SFA as a capital markets services licence holder for dealing in capital markets products that are securities and collective investment schemes and an exempt financial adviser for advising on, issuing and promulgating analyses and reports on securities. Bernstein (Singapore) Private Limited is registered in Singapore with Company Registration No. 20213710W and located at One Raffles Quay, #27-11 South Tower, Singapore 048583, +65-6230-4612. ",
+        "bbox": [
+            102,
+            125,
+            893,
+            233
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "To our readers in the People's Republic of China: The securities referred to in this document are not being offered or sold and may not be offered or sold, directly or indirectly, in the People's Republic of China (for such purposes, not including the Hong Kong and Macau Special Administrative Regions or Taiwan, the “PRC”) in contravention of any applicable laws of the PRC. ",
+        "bbox": [
+            102,
+            246,
+            892,
+            287
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "This document does not constitute an offer to sell or the solicitation of an offer to buy any securities in the PRC to any person to whom it is unlawful to make the offer or solicitation in the PRC. ",
+        "bbox": [
+            102,
+            299,
+            890,
+            325
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "We do not represent that this document may be lawfully distributed, or that any securities may be lawfully offered, in compliance with any applicable registration or other requirements in the PRC, or pursuant to an exemption available thereunder, or assume any responsibility for facilitating any such distribution or offering. In particular, no action has been taken by us which would permit a public offering of any securities or distribution of this document in the PRC. Accordingly, the securities are not being offered or sold within the PRC by means of this document or any other document. Neither this document nor any advertisement or other offering material may be distributed or published in the PRC, except under circumstances that will result in compliance with any applicable laws and regulations. ",
+        "bbox": [
+            102,
+            339,
+            893,
+            434
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "To our readers in Japan: This publication is being distributed in Japan by Bernstein Japan KK (サンフォード・C・バーンスタイン株式会社), which is registered in Japan as a Financial Instruments Business Operator with the Kanto Local Finance Bureau (registration number: The Director-General of Kanto Local Finance Bureau (FIBO) No.3387) and regulated by the Financial Services Agency. It is also a member of Japan Investment Advisers Association. This publication is solely for qualified institutional investors in Japan only, as defined in Article 2, paragraph (3), items (i) of the Financial Instruments and Exchange Act. ",
+        "bbox": [
+            102,
+            446,
+            892,
+            515
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "For the institutional client readers in Japan who have been granted access to the Bernstein website by Daiwa Group Inc. (\"Daiwa\"), your access to this document should not be construed as meaning that Bernstein is providing you with investment advice for any purposes. Whilst Bernstein has prepared this document, your relationship is, and will remain with, Daiwa, and Bernstein has neither any contractual relationship with you nor any obligations towards you. ",
+        "bbox": [
+            102,
+            527,
+            892,
+            583
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "To our readers in Australia: Bernstein (Hong Kong) Limited 盛博香港有限公司 is responsible for distributing research in Australia. It is regulated by the Securities and Exchange Commission under U.S. laws, by the Financial Conduct Authority under U.K. laws, which differs from Australian laws. Bernstein (Hong Kong) Limited 盛博香港有限公司 is exempt from the requirement to hold an Australian financial services license under the Corporations Act 2001 in respect of the provision of the following financial services to wholesale clients: ",
+        "bbox": [
+            102,
+            595,
+            892,
+            662
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "list",
+        "sub_type": "text",
+        "list_items": [
+            "• providing financial product advice; ",
+            "• dealing in a financial product; ",
+            "- making a market for a financial product; and ",
+            "• providing a custodial or depository service. "
+        ],
+        "bbox": [
+            104,
+            676,
+            395,
+            772
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "To our readers in India: This publication is being distributed in India by Bernstein (India) Private Limited (SCB India) which is licensed and regulated by Securities and Exchange Board of India (\"SEBI\") as a research analyst entity under the SEBI (Research Analyst) Regulations, 2014, having registration no. INH000006378 and as a stock broker having registration no. INZ000213537. SCB India is currently engaged in the business of providing research and stock broking services. Please refer to www.bernsteinresearch.in for more information. ",
+        "bbox": [
+            102,
+            786,
+            893,
+            854
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "\\- SCB India is a Private limited company incorporated under the Companies Act, 2013, on April 12, 2017 bearing corporate identification number U65999MH2017FTC293762, and registered office at Level 3A, 4th Floor, First International Financial Centre, Plot Nos C-54 and C-55, G Block, Near CBI Office, Bandra Kurla Complex, Bandra (East), Mumbai 400098, ",
+        "bbox": [
+            104,
+            868,
+            892,
+            912
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "header",
+        "text": "Nikhil Nigania +91 226 842 1414 nikhil.nigania@bernsteinsg.com ",
+        "bbox": [
+            104,
+            39,
+            437,
+            50
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "header",
+        "text": "4 June 2026 ",
+        "bbox": [
+            826,
+            39,
+            890,
+            49
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "footer",
+        "text": "INDIA INDUSTRIALS AND INFRASTRUCTURE ",
+        "bbox": [
+            104,
+            940,
+            279,
+            949
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "footer",
+        "text": "BERNSTEIN | SG GROUP ",
+        "bbox": [
+            679,
+            941,
+            861,
+            950
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "page_number",
+        "text": "18 ",
+        "bbox": [
+            877,
+            941,
+            890,
+            950
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "Maharashtra, India (Phone No: +91-22-68421401). ",
+        "bbox": [
+            122,
+            71,
+            446,
+            84
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "\\- For details of Associates (i.e., affiliates/group companies) of SCB India, kindly email MUM-BERNSTEIN-InCompliance@bernsteinsg.com. ",
+        "bbox": [
+            104,
+            98,
+            892,
+            128
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "• SCB India does not have any disciplinary history as on the date of this report. ",
+        "bbox": [
+            104,
+            141,
+            593,
+            155
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "\\- Except as noted above, SCB India and/or its Associates (i.e., affiliates/group companies), the Research Analysts authoring this report, and their relatives ",
+        "bbox": [
+            104,
+            169,
+            892,
+            196
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "list",
+        "sub_type": "text",
+        "list_items": [
+            "• do not have any financial interest in the subject company ",
+            "• do not have actual/beneficial ownership of one percent or more in securities of the subject company; ",
+            "• is not engaged in any investment banking activities for Indian companies, as such; ",
+            "• have not managed or co-managed a public offering in the past twelve months for any Indian companies; "
+        ],
+        "bbox": [
+            122,
+            212,
+            761,
+            308
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "\\- have not received any compensation for investment banking services or merchant banking services from the subject company in the past 12 months; ",
+        "bbox": [
+            122,
+            321,
+            892,
+            351
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "• have not received compensation for brokerage services from the subject company in the past twelve months; ",
+        "bbox": [
+            122,
+            364,
+            810,
+            378
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "\\- have not received any compensation or other benefits from the subject company or third party related to the specific recommendations or views in this report; and ",
+        "bbox": [
+            122,
+            392,
+            890,
+            421
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "\\- do not currently, but may in the future, act as a market maker in the financial instruments of the companies covered in the report. ",
+        "bbox": [
+            122,
+            435,
+            890,
+            463
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "• do not have any conflict of interest in the subject company as of the date of this report. ",
+        "bbox": [
+            122,
+            478,
+            671,
+            491
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "\\- Except as noted above, the subject company has not been a client of SCB India during twelve months preceding the date of distribution of this research report. Neither SCB India nor its Associates (i.e., affiliates/group companies) have received compensation for products or services other than investment banking, merchant banking or brokerage services from the subject company in the past twelve months. ",
+        "bbox": [
+            104,
+            505,
+            892,
+            563
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "\\- The principal research analyst(s) who prepared this report, members of the analysts' team, and members of their households are not an officer, director, employee or advisory board member of the companies covered in the report. ",
+        "bbox": [
+            104,
+            578,
+            890,
+            606
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "\\- Our Compliance officer / Grievance officer is Ms. Rupal Talati, who can be reached at +91-22-68421451, or MUM-BERNSTEIN-InCompliance@bernsteinsg.com / Scbin-investorgrievance@bernsteinsg.com ",
+        "bbox": [
+            104,
+            619,
+            890,
+            648
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "\\- The Research investor charter and Terms & Conditions of SCB India are available on its website and may be accessed at Bernstein (India) Private Limited (https://bernsteinresearch.in/) for your reference. ",
+        "bbox": [
+            104,
+            662,
+            890,
+            691
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "\\- Disclaimer: Registration granted by SEBI, and certification from NISM, is in no way a guarantee of performance of the intermediary or provide any assurance of returns to investors. Investments in securities market are subject to market risks. Read all the related documents carefully before investing. ",
+        "bbox": [
+            104,
+            705,
+            890,
+            750
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "To our readers in Switzerland: This document is provided in Switzerland by or through Bernstein Autonomous LLP, and is provided only to qualified investors as defined in article 10 of the Swiss Collective Investment Scheme Act (“CISA”) and related provisions of the Collective Investment Scheme Ordinance and in strict compliance with applicable Swiss law and regulations. The products mentioned in this document may not be suitable for all types of investors. This document is based on the Directives on the Independence of Financial Research issued by the Swiss Bankers Association (SBA) in January 2008. ",
+        "bbox": [
+            102,
+            763,
+            892,
+            830
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "To our readers in the Middle East: Bernstein Autonomous LLP, DIFC branch has its principal office at Gate Village 06, DIFC, Dubai, UAE. Bernstein Autonomous LLP, DIFC branch is regulated by the Dubai Financial Services Authority (DFSA) with the registration number CL10040 and is provisioned for Arranging Deals in Investments and Advising on Financial Products. All communications and services are directed at Professional Clients and Market Counterparties only (as defined in the DFSA rulebook). Persons other than Professional Clients and Market Counterparties, such as Retail Clients, are not the intended ",
+        "bbox": [
+            102,
+            844,
+            893,
+            912
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "header",
+        "text": "Nikhil Nigania +91 226 842 1414 nikhil.nigania@bernsteinsg.com ",
+        "bbox": [
+            104,
+            39,
+            439,
+            51
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "header",
+        "text": "4 June 2026 ",
+        "bbox": [
+            826,
+            39,
+            890,
+            49
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "footer",
+        "text": "INDIA INDUSTRIALS AND INFRASTRUCTURE ",
+        "bbox": [
+            104,
+            940,
+            279,
+            949
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "footer",
+        "text": "BERNSTEIN | SG GROUP ",
+        "bbox": [
+            679,
+            941,
+            861,
+            950
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "page_number",
+        "text": "19 ",
+        "bbox": [
+            877,
+            941,
+            890,
+            950
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "recipients of our communications or services. ",
+        "bbox": [
+            104,
+            71,
+            385,
+            83
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "LEGAL ",
+        "text_level": 1,
+        "bbox": [
+            104,
+            97,
+            153,
+            109
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "All research publications are disseminated to our clients through posting on the firm's password protected websites, bernsteinresearch.com and autonomous.com. Certain, but not all, research publications are also made available to clients through third-party vendors or redistributed to clients through alternate electronic means as a convenience. ",
+        "bbox": [
+            102,
+            123,
+            892,
+            164
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "This publication has been published and distributed in accordance with the Firm's policy for management of conflicts of interest in investment research, a copy of which is available from Bernstein Institutional Services LLC, Director of Compliance, 245 Park Avenue, New York, NY 10167. Additional disclosures and information regarding Bernstein's business are available on our website www.bernsteinresearch.com. ",
+        "bbox": [
+            102,
+            176,
+            893,
+            231
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "The securities described herein may not be eligible for sale in all jurisdictions or to certain categories of investors where that permission profile is not consistent with the licenses held by the entities noted herein. This document is for distribution only as may be permitted by law. This publication is not directed to, or intended for distribution to or use by, any person or entity who is a citizen or resident of, or located in any locality, state, country or other jurisdiction where such distribution, publication, availability or use would be contrary to law or regulation or which would subject any of the entities referenced herein or any of their subsidiaries or affiliates to any registration or licensing requirement within such jurisdiction. This publication is based upon public sources we believe to be reliable, but no representation is made by us that the publication is accurate or complete. We do not undertake to advise you of any change in the reported information or in the opinions herein. This publication was prepared and issued by entity referred to herein for distribution to eligible counterparties or professional clients. This publication is not an offer to buy or sell any security, and it does not constitute investment, legal or tax advice. The investments referred to herein may not be suitable for you. Investors must make their own investment decisions in consultation with their professional advisors in light of their specific circumstances. The value of investments may fluctuate, and investments that are denominated in foreign currencies may fluctuate in value as a result of exposure to exchange rate movements. Information about past performance of an investment is not necessarily a guide to, indicator of, or assurance of, future performance. ",
+        "bbox": [
+            102,
+            243,
+            893,
+            435
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "This report is directed to and intended only for our clients who are “eligible counterparties”, “professional clients”, “institutional investors” and/or “professional investors” as defined by the aforementioned regulators, and must not be redistributed to retail clients as defined by the aforementioned regulators. Retail clients who receive this report should note that the services of the entities noted herein are not available to them and should not rely on the material herein to make an investment decision. The result of such act will not hold the entities noted herein liable for any loss thus incurred as the entities noted herein are not registered/authorised/licensed to deal with retail clients and will not enter into any contractual agreement/arrangement with retail clients. This report is provided subject to the terms and conditions of any agreement that the clients may have entered into with the entities noted herein. All research reports are disseminated on a simultaneous basis to eligible clients through electronic publication to our client portal. ",
+        "bbox": [
+            102,
+            446,
+            893,
+            570
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "The information in this report was prepared by Bernstein solely for the internal business use of our clients. Clients may store, display, analyze, reformat and print the information in this report for this limited use only. Clients may not copy, alter, create derivative works, resell, reverse engineer, commercially exploit, share or distribute any part of the information contained herein for any purpose without Bernstein's express written consent. These restrictions include extracting data or using the content to develop indices or other products. Further, you may not use this report, or any portion of this report, to train or finetune any third-party machine learning or artificial intelligence system, or as a prompt or input into any such system. You also may not, without Bernstein's express written consent, do any of the foregoing in connection with your own internal machine learning or artificial intelligence system. ",
+        "bbox": [
+            102,
+            583,
+            893,
+            691
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "Bernstein may use artificial intelligence tools in the preparation of its materials. Any such materials are reviewed by Bernstein's research analysts prior to publication. ",
+        "bbox": [
+            102,
+            704,
+            892,
+            732
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "This report has been prepared for information purposes only and is based on current public information that we consider reliable, but the entities noted herein do not warrant or represent (express or implied) as to the sources of information or data contained herein are accurate, complete, not misleading or as to its fitness for the purpose intended even though the entities noted herein rely on reputable or trustworthy data providers, it should not be relied upon as such. Opinions expressed are the author(s)' current opinions as of the date appearing on the material only and we do not undertake to advise you of any change in the reported information or in the opinions herein. ",
+        "bbox": [
+            102,
+            744,
+            893,
+            827
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "This publication was prepared and issued by the entity referred to herein for distribution to eligible counterparties or professional clients. The information in this report is intended for general circulation and does not constitute an offer to buy or sell any security, investment, legal or tax advice nor a personal recommendation, as defined by any of the aforementioned regulators. It does not take into account the particular investment objectives, financial situations, or needs of individual investors. The report has not been reviewed by any of the aforementioned regulators and does not represent any official recommendation from the aforementioned regulators. The investments referred to herein may not be suitable for you. Investors must make their own investment decisions in consultation with advice sought from a financial adviser regarding the suitability of the investment product, taking into account the specific investment objectives, financial situation or particular needs of any recipient of the recommendation, before the recipient makes a commitment to purchase the investment product. ",
+        "bbox": [
+            102,
+            839,
+            893,
+            921
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "header",
+        "text": "Nikhil Nigania +91 226 842 1414 nikhil.nigania@bernsteinsg.com ",
+        "bbox": [
+            104,
+            39,
+            437,
+            50
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "header",
+        "text": "4 June 2026 ",
+        "bbox": [
+            828,
+            39,
+            890,
+            49
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "footer",
+        "text": "INDIA INDUSTRIALS AND INFRASTRUCTURE ",
+        "bbox": [
+            104,
+            940,
+            279,
+            949
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "footer",
+        "text": "BERNSTEIN | SG GROUP ",
+        "bbox": [
+            679,
+            941,
+            861,
+            950
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "page_number",
+        "text": "20 ",
+        "bbox": [
+            875,
+            941,
+            890,
+            950
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            102,
+            70,
+            892,
+            111
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "The analysis contained herein is based on numerous assumptions. Different assumptions could result in materially different results. The information in this report does not constitute, or form part of, any offer to sell or issue, or any offer to purchase or subscribe for shares, or to induce engage in any other investment activity. The value of any securities or financial instruments mentioned in this report may fluctuate subject to market conditions. Information about past performance of an investment is not necessarily a guide to, indicative of, or assurance of future performance. Estimates of future performance mentioned by the research analyst in this report are based on assumptions that may not be realized due to unforeseen factors like market volatility/fluctuation. In relation to securities or financial instruments denominated in a foreign currency other than the clients' home currency, movements in exchange rates will have an effect on the value, either favorable or unfavorable. Before acting on any recommendations in this report, recipients should consider the appropriateness of investing in the subject securities or financial instruments mentioned in this report and, if necessary, seek for independent professional advice. ",
+        "bbox": [
+            102,
+            125,
+            893,
+            260
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "The securities described herein may not be eligible for sale in all jurisdictions or to certain categories of investors where that permission profile is not consistent with the licenses held by the entities noted herein. This document is for distribution only as may be permitted by law. It is not directed to, or intended for distribution to or use by, any person or entity who is a citizen or resident of or located in any locality, state, country or other jurisdiction where such distribution, publication, availability or use would be contrary to law or regulation or would subject the entities noted herein to any regulation or licensing requirement within such jurisdiction. ",
+        "bbox": [
+            102,
+            273,
+            893,
+            340
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "Source: Bloomberg Index Services Limited. BLOOMBERG® is a trademark and service mark of Bloomberg Finance L.P. and its affiliates (collectively “Bloomberg”). Bloomberg or Bloomberg’s licensors own all proprietary rights in the Bloomberg Indices. Neither Bloomberg nor Bloomberg’s licensors approves or endorses this material, or guarantees the accuracy or completeness of any information herein, or makes any warranty, express or implied, as to the results to be obtained therefrom and, to the maximum extent allowed by law, neither shall have any liability or responsibility for injury or damages arising in connection therewith. ",
+        "bbox": [
+            102,
+            353,
+            893,
+            421
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "No part of this material may be reproduced, distributed or transmitted or otherwise made available without prior consent of the entities noted herein. Copyright Bernstein Institutional Services LLC Bernstein Autonomous LLP, BSG France S.A., Bernstein (Hong Kong) Limited 盛博香港有限公司, Bernstein (Canada) Limited, Bernstein (India) Private Limited (SEBI registration no. INH000006378), Bernstein (Singapore) Private Limited and Bernstein Japan KK (サンフォード・C・バーンスタイン株式会社). All rights reserved. The trademarks and service marks contained herein are the property of their respective owners. Any unauthorized use or disclosure is strictly prohibited. The entities noted herein may pursue legal action if the unauthorized use results in any defamation and/or reputational risk to the entities noted herein and research published under the Bernstein and Autonomous brands. ",
+        "bbox": [
+            102,
+            434,
+            893,
+            542
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "header",
+        "text": "Nikhil Nigania +91 226 842 1414 nikhil.nigania@bernsteinsg.com ",
+        "bbox": [
+            104,
+            39,
+            437,
+            50
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "header",
+        "text": "4 June 2026 ",
+        "bbox": [
+            828,
+            39,
+            890,
+            49
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "footer",
+        "text": "INDIA INDUSTRIALS AND INFRASTRUCTURE ",
+        "bbox": [
+            106,
+            940,
+            277,
+            949
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "footer",
+        "text": "BERNSTEIN | SG GROUP ",
+        "bbox": [
+            679,
+            940,
+            861,
+            950
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "page_number",
+        "text": "21 ",
+        "bbox": [
+            877,
+            941,
+            890,
+            950
+        ],
+        "page_idx": 20
+    }
+]
