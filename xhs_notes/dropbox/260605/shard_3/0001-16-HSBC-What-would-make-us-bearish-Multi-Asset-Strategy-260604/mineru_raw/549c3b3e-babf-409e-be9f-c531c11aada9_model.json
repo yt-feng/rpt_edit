@@ -1,0 +1,3448 @@
+[
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.046,
+                0.036,
+                0.125,
+                0.066
+            ],
+            "angle": 0,
+            "content": "[Non-Text]"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.127,
+                0.043,
+                0.45,
+                0.06
+            ],
+            "angle": 0,
+            "content": "HSBC Global Investment Research"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.87,
+                0.039,
+                0.958,
+                0.052
+            ],
+            "angle": 0,
+            "content": "4 June 2026"
+        },
+        {
+            "type": "title",
+            "bbox": [
+                0.059,
+                0.117,
+                0.596,
+                0.145
+            ],
+            "angle": 0,
+            "content": "What would make us bearish?"
+        },
+        {
+            "type": "title",
+            "bbox": [
+                0.061,
+                0.18,
+                0.294,
+                0.201
+            ],
+            "angle": 0,
+            "content": "Multi-Asset Strategy"
+        },
+        {
+            "type": "list",
+            "bbox": [
+                0.044,
+                0.232,
+                0.622,
+                0.352
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.044,
+                0.232,
+                0.575,
+                0.268
+            ],
+            "angle": 0,
+            "content": "It's the one consistent question we get right now: given our aggressive risk-on stance, what would make us bearish?",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.044,
+                0.274,
+                0.622,
+                0.31
+            ],
+            "angle": 0,
+            "content": "- Loftier earnings expectations, geopolitics, and higher UST yields all rank pretty low on the list",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.044,
+                0.315,
+                0.597,
+                0.352
+            ],
+            "angle": 0,
+            "content": "◆ Any signs of stretched sentiment and positioning, slowing AI spending, and increase in chip supply are our biggest worries",
+            "merge_prev": false
+        },
+        {
+            "type": "title",
+            "bbox": [
+                0.044,
+                0.37,
+                0.131,
+                0.383
+            ],
+            "angle": 0,
+            "content": "Max bullish"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.043,
+                0.389,
+                0.606,
+                0.418
+            ],
+            "angle": 0,
+            "content": "While we remain aggressively risk-on in our tactical asset allocation, we've had one consistent question in our recent conversations: what would make us bearish?",
+            "merge_prev": false
+        },
+        {
+            "type": "title",
+            "bbox": [
+                0.044,
+                0.427,
+                0.155,
+                0.439
+            ],
+            "angle": 0,
+            "content": "Low on the list"
+        },
+        {
+            "type": "list",
+            "bbox": [
+                0.044,
+                0.446,
+                0.618,
+                0.644
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.044,
+                0.446,
+                0.618,
+                0.506
+            ],
+            "angle": 0,
+            "content": "1. Lofty earnings expectations: the consensus expectation is for Q2 US EPS to drop slightly q/q. So, earnings expectations in the near term should actually be another upside catalyst given they should be easy to beat. There's a higher bar to beat in H2, but if Q2 sees similar surprises to Q1, such concerns may well vanish.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.043,
+                0.515,
+                0.593,
+                0.56
+            ],
+            "angle": 0,
+            "content": "2. Geopolitics: energy prices have stabilised of late, so for the conflict to start weighing on risk assets more broadly again, we'd have to see escalation to a level that that overrides optimism from tech/AI/potential Q2 EPS surprises.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.043,
+                0.568,
+                0.611,
+                0.644
+            ],
+            "angle": 0,
+            "content": "3. Higher rates: strong Q1 earnings, heavy index concentration masking weakness under the hood in equity and credit markets, lower levels of rates vol, and notably lower sensitivity to rates in the US are all reasons for the stability of risk assets. The US front-end has re-priced some 30bp (Dec26) since the last FOMC meeting. So out-hawking this may prove tricky.",
+            "merge_prev": false
+        },
+        {
+            "type": "title",
+            "bbox": [
+                0.044,
+                0.653,
+                0.158,
+                0.666
+            ],
+            "angle": 0,
+            "content": "High on the list"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.043,
+                0.671,
+                0.61,
+                0.763
+            ],
+            "angle": 0,
+            "content": "4. Sentiment and positioning: we're not overly worried about the upcoming mega-IPOs. Potential headwinds from higher equity supply might well be countered by wealth so far ‘trapped’ in private markets being ‘unlocked’. We're more worried about any supportive news flow from the Middle East prompting a genuinely broad-based rally in equities and credit alike – which in turn could easily prompt a proper sell signal in our positioning framework.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.043,
+                0.77,
+                0.617,
+                0.863
+            ],
+            "angle": 0,
+            "content": "5. Slowdown in tech/AI: tech/AI being the major driver for US equities now presents a risk to US household wealth. If tech/AI were to weaken, it would present a downside risk to overall growth. Slowing AI spending is certainly a risk. But significant backlogs make it unlikely to happen in the coming months. Lower memory prices from potential efficiency gains and China catching up in the DDR5 market is another risk, but unlikely to hit in the coming quarter.",
+            "merge_prev": false
+        },
+        {
+            "type": "title",
+            "bbox": [
+                0.657,
+                0.115,
+                0.871,
+                0.148
+            ],
+            "angle": 0,
+            "content": "Multi-Asset Strategy Global"
+        },
+        {
+            "type": "title",
+            "bbox": [
+                0.643,
+                0.242,
+                0.75,
+                0.253
+            ],
+            "angle": 0,
+            "content": "Max Kettner*, CFA"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.643,
+                0.253,
+                0.8,
+                0.263
+            ],
+            "angle": 0,
+            "content": "Chief Multi-Asset Strategist",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.643,
+                0.263,
+                0.728,
+                0.272
+            ],
+            "angle": 0,
+            "content": "HSBC Bank plc",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.643,
+                0.273,
+                0.809,
+                0.282
+            ],
+            "angle": 0,
+            "content": "maximilian.l.kettner@hsbc.com",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.643,
+                0.283,
+                0.742,
+                0.292
+            ],
+            "angle": 0,
+            "content": "+44 20 7991 5045",
+            "merge_prev": false
+        },
+        {
+            "type": "title",
+            "bbox": [
+                0.643,
+                0.299,
+                0.756,
+                0.309
+            ],
+            "angle": 0,
+            "content": "Harriet Smith*, CFA"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.643,
+                0.309,
+                0.808,
+                0.319
+            ],
+            "angle": 0,
+            "content": "Analyst, Multi-Asset Strategy",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.643,
+                0.319,
+                0.726,
+                0.328
+            ],
+            "angle": 0,
+            "content": "HSBC Bank plc",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.643,
+                0.329,
+                0.773,
+                0.338
+            ],
+            "angle": 0,
+            "content": "harriet.smith@hsbc.com",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.643,
+                0.339,
+                0.741,
+                0.348
+            ],
+            "angle": 0,
+            "content": "+44 20 7992 0164",
+            "merge_prev": false
+        },
+        {
+            "type": "title",
+            "bbox": [
+                0.643,
+                0.355,
+                0.771,
+                0.366
+            ],
+            "angle": 0,
+            "content": "Jayasankar Mallisetty*"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.643,
+                0.366,
+                0.767,
+                0.375
+            ],
+            "angle": 0,
+            "content": "Multi-Asset Strategist",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.643,
+                0.375,
+                0.917,
+                0.384
+            ],
+            "angle": 0,
+            "content": "HSBC Securities and Capital Markets (India) Private",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.643,
+                0.384,
+                0.685,
+                0.393
+            ],
+            "angle": 0,
+            "content": "Limited",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.643,
+                0.394,
+                0.82,
+                0.404
+            ],
+            "angle": 0,
+            "content": "jayasankar.mallisetty@hsbc.co.in",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.643,
+                0.404,
+                0.738,
+                0.413
+            ],
+            "angle": 0,
+            "content": "+91 80 30012660",
+            "merge_prev": false
+        },
+        {
+            "type": "title",
+            "bbox": [
+                0.643,
+                0.42,
+                0.761,
+                0.43
+            ],
+            "angle": 0,
+            "content": "Duncan Toms*, CFA"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.643,
+                0.43,
+                0.767,
+                0.44
+            ],
+            "angle": 0,
+            "content": "Multi-Asset Strategist",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.643,
+                0.44,
+                0.728,
+                0.45
+            ],
+            "angle": 0,
+            "content": "HSBC Bank plc",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.643,
+                0.451,
+                0.775,
+                0.459
+            ],
+            "angle": 0,
+            "content": "duncan.toms@hsbc.com",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.643,
+                0.46,
+                0.741,
+                0.469
+            ],
+            "angle": 0,
+            "content": "+44 20 7991 3025",
+            "merge_prev": false
+        },
+        {
+            "type": "title",
+            "bbox": [
+                0.643,
+                0.476,
+                0.74,
+                0.486
+            ],
+            "angle": 0,
+            "content": "Shiva Joon, CFA"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.643,
+                0.486,
+                0.725,
+                0.495
+            ],
+            "angle": 0,
+            "content": "Data Scientist",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.643,
+                0.495,
+                0.728,
+                0.505
+            ],
+            "angle": 0,
+            "content": "HSBC Bank plc",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.643,
+                0.506,
+                0.77,
+                0.515
+            ],
+            "angle": 0,
+            "content": "shiva.joon@hsbcib.com",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.643,
+                0.516,
+                0.741,
+                0.525
+            ],
+            "angle": 0,
+            "content": "+44 20 7991 1356",
+            "merge_prev": false
+        },
+        {
+            "type": "title",
+            "bbox": [
+                0.643,
+                0.532,
+                0.733,
+                0.542
+            ],
+            "angle": 0,
+            "content": "Mark McDonald"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.643,
+                0.542,
+                0.804,
+                0.551
+            ],
+            "angle": 0,
+            "content": "Head of AI and Data Science",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.643,
+                0.552,
+                0.728,
+                0.562
+            ],
+            "angle": 0,
+            "content": "HSBC Bank plc",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.643,
+                0.562,
+                0.798,
+                0.571
+            ],
+            "angle": 0,
+            "content": "mark.mcdonald@hsbcib.com",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.643,
+                0.572,
+                0.741,
+                0.581
+            ],
+            "angle": 0,
+            "content": "+44 20 7991 3119",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.641,
+                0.6,
+                0.947,
+                0.622
+            ],
+            "angle": 0,
+            "content": "* Employed by a non-US affiliate of HSBC Securities (USA) Inc, and is not registered/ qualified pursuant to FINRA regulations",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.65,
+                0.828,
+                0.946,
+                0.846
+            ],
+            "angle": 0,
+            "content": "HSBC Funding the Future Survey",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.651,
+                0.851,
+                0.947,
+                0.867
+            ],
+            "angle": 0,
+            "content": "Sentiment, AI and Private Credit",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.753,
+                0.873,
+                0.846,
+                0.886
+            ],
+            "angle": 0,
+            "content": "Click to view",
+            "merge_prev": false
+        },
+        {
+            "type": "title",
+            "bbox": [
+                0.044,
+                0.918,
+                0.251,
+                0.931
+            ],
+            "angle": 0,
+            "content": "Disclosures & Disclaimer"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.043,
+                0.932,
+                0.617,
+                0.961
+            ],
+            "angle": 0,
+            "content": "This report must be read with the disclosures and the analyst certifications in the Disclosure appendix, and with the Disclaimer, which forms part of it.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.64,
+                0.916,
+                0.844,
+                0.929
+            ],
+            "angle": 0,
+            "content": "Issuer of report: HSBC Bank plc",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.64,
+                0.939,
+                0.921,
+                0.951
+            ],
+            "angle": 0,
+            "content": "View HSBC Global Investment Research at:",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.64,
+                0.954,
+                0.831,
+                0.966
+            ],
+            "angle": 0,
+            "content": "https://www.research.hsbc.com",
+            "merge_prev": false
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.073,
+                0.029,
+                0.194,
+                0.056
+            ],
+            "angle": 0,
+            "content": "HSBC"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.719,
+                0.029,
+                0.93,
+                0.042
+            ],
+            "angle": 0,
+            "content": "Multi-Asset Strategy • Global"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.843,
+                0.042,
+                0.93,
+                0.054
+            ],
+            "angle": 0,
+            "content": "4 June 2026"
+        },
+        {
+            "type": "title",
+            "bbox": [
+                0.282,
+                0.133,
+                0.577,
+                0.149
+            ],
+            "angle": 0,
+            "content": "What would make us bearish?"
+        },
+        {
+            "type": "title",
+            "bbox": [
+                0.283,
+                0.165,
+                0.53,
+                0.179
+            ],
+            "angle": 0,
+            "content": "1. Earnings expectations too lofty"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.281,
+                0.181,
+                0.916,
+                0.225
+            ],
+            "angle": 0,
+            "content": "One of the things we've been wary of in the last few months has been sequentially higher earnings expectations, particularly in the US. After continued above-average positive earnings surprises, any disappointment risks putting current US equity valuations into question.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.282,
+                0.227,
+                0.844,
+                0.241
+            ],
+            "angle": 0,
+            "content": "But certainly, for Q2, earnings expectations look very manageable to beat (chart 1).",
+            "merge_prev": false
+        },
+        {
+            "type": "table_caption",
+            "bbox": [
+                0.283,
+                0.251,
+                0.58,
+                0.264
+            ],
+            "angle": 0,
+            "content": "1. Earnings expectations in H2 too high?"
+        },
+        {
+            "type": "table",
+            "bbox": [
+                0.288,
+                0.265,
+                0.922,
+                0.556
+            ],
+            "angle": 0,
+            "content": "<table><tr><td>S&amp;P 500</td><td>Q1 25</td><td>Q2 25</td><td>Q3 25</td><td>Q4 25</td><td>Q1 26</td><td>Q2 26f</td><td>Q3 26f</td><td>Q4 26f</td></tr><tr><td>EPS y/y in %</td><td>12.7%</td><td>11.5%</td><td>12.5%</td><td>13.3%</td><td>27.9%</td><td>20.8%</td><td>25.0%</td><td>22.1%</td></tr><tr><td>EPS in USD</td><td>62.78</td><td>66.36</td><td>69.47</td><td>73.44</td><td>80.31</td><td>80.16</td><td>86.87</td><td>89.68</td></tr><tr><td>% change, q-o-q</td><td></td><td></td><td></td><td></td><td>9.4%</td><td>(0.2%)</td><td>8.4%</td><td>3.2%</td></tr><tr><td>Consumer Discretionary</td><td>12.57</td><td>15.12</td><td>16.91</td><td>14.59</td><td>16.99</td><td>15.30</td><td>17.15</td><td>16.95</td></tr><tr><td>% change, q-o-q</td><td></td><td></td><td></td><td></td><td>16.4%</td><td>(9.9%)</td><td>12.1%</td><td>(1.2%)</td></tr><tr><td>Consumer Staples</td><td>8.50</td><td>9.46</td><td>9.75</td><td>9.39</td><td>8.97</td><td>9.77</td><td>10.42</td><td>10.12</td></tr><tr><td>% change, q-o-q</td><td></td><td></td><td></td><td></td><td>(4.4%)</td><td>8.9%</td><td>6.6%</td><td>(2.9%)</td></tr><tr><td>Energy</td><td>10.14</td><td>9.73</td><td>10.71</td><td>10.03</td><td>10.28</td><td>21.25</td><td>19.46</td><td>17.38</td></tr><tr><td>% change, q-o-q</td><td></td><td></td><td></td><td></td><td>2.5%</td><td>106.7%</td><td>(8.4%)</td><td>(10.7%)</td></tr><tr><td>Financials</td><td>11.83</td><td>12.82</td><td>13.77</td><td>13.45</td><td>14.40</td><td>13.60</td><td>14.14</td><td>14.72</td></tr><tr><td>% change, q-o-q</td><td></td><td></td><td></td><td></td><td>7.1%</td><td>(5.6%)</td><td>4.0%</td><td>4.1%</td></tr><tr><td>Health Care</td><td>22.96</td><td>22.59</td><td>22.81</td><td>20.94</td><td>22.36</td><td>20.66</td><td>25.08</td><td>24.23</td></tr><tr><td>% change, q-o-q</td><td></td><td></td><td></td><td></td><td>6.8%</td><td>(7.6%)</td><td>21.4%</td><td>(3.4%)</td></tr><tr><td>Industrials</td><td>11.10</td><td>12.33</td><td>12.45</td><td>14.83</td><td>13.41</td><td>13.39</td><td>14.27</td><td>14.75</td></tr><tr><td>% change, q-o-q</td><td></td><td></td><td></td><td></td><td>(9.6%)</td><td>(0.1%)</td><td>6.6%</td><td>3.3%</td></tr><tr><td>Materials</td><td>5.08</td><td>7.07</td><td>6.93</td><td>6.08</td><td>7.08</td><td>9.57</td><td>9.63</td><td>8.70</td></tr><tr><td>% change, q-o-q</td><td></td><td></td><td></td><td></td><td>16.3%</td><td>35.2%</td><td>0.6%</td><td>(9.6%)</td></tr><tr><td>Real Estate</td><td>3.45</td><td>3.54</td><td>3.59</td><td>3.56</td><td>3.57</td><td>3.67</td><td>3.71</td><td>3.85</td></tr><tr><td>% change, q-o-q</td><td></td><td></td><td></td><td></td><td>0.2%</td><td>2.9%</td><td>1.0%</td><td>3.8%</td></tr><tr><td>Information Technology</td><td>35.54</td><td>37.71</td><td>43.19</td><td>52.75</td><td>54.62</td><td>59.06</td><td>65.17</td><td>73.98</td></tr><tr><td>% change, q-o-q</td><td></td><td></td><td></td><td></td><td>3.5%</td><td>8.1%</td><td>10.4%</td><td>13.5%</td></tr><tr><td>Communication Services</td><td>4.72</td><td>4.72</td><td>3.50</td><td>5.01</td><td>7.05</td><td>5.04</td><td>5.27</td><td>5.53</td></tr><tr><td>% change, q-o-q</td><td></td><td></td><td></td><td></td><td>40.6%</td><td>(28.6%)</td><td>4.6%</td><td>5.1%</td></tr><tr><td>Utilities</td><td>5.90</td><td>4.57</td><td>6.99</td><td>4.53</td><td>6.68</td><td>5.12</td><td>7.41</td><td>5.23</td></tr><tr><td>% change, q-o-q</td><td></td><td></td><td></td><td></td><td>47.3%</td><td>(23.3%)</td><td>44.7%</td><td>(29.5%)</td></tr></table>"
+        },
+        {
+            "type": "table_footnote",
+            "bbox": [
+                0.283,
+                0.558,
+                0.374,
+                0.567
+            ],
+            "angle": 0,
+            "content": "Source: FactSet, HSBC"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.281,
+                0.585,
+                0.911,
+                0.661
+            ],
+            "angle": 0,
+            "content": "So potential earnings disappointment is more a story for H2 – and even here when we look at consensus Q3 EPS expectations, there’s a lot of dispersion across sectors. With continued support from tech earnings and perhaps a further re-acceleration of top-down US growth dynamics (given y/y comparisons may look better in the next few weeks), we’d put potential earnings disappointment low on our bearish list (charts 2 & 3).",
+            "merge_prev": false
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.283,
+                0.679,
+                0.699,
+                0.694
+            ],
+            "angle": 0,
+            "content": "2. US activity has reaccelerated since the end of last year"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.284,
+                0.696,
+                0.93,
+                0.879
+            ],
+            "angle": 0,
+            "content": "| Year | US GDP y/y (%) | Dallas Fed weekly activity index |\n|------|----------------|----------------------------------|\n| 2010 | ~3.5           | ~5.0                             |\n| 2012 | ~1.0           | ~3.0                             |\n| 2014 | ~2.5           | ~4.0                             |\n| 2016 | ~1.5           | ~1.0                             |\n| 2018 | ~3.0           | ~3.5                             |\n| 2020 | ~1.5           | ~5.0                             |\n| 2022 | ~3.5           | ~4.0                             |\n| 2024 | ~2.5           | ~3.0                             |\n| 2026 | ~2.0           | ~3.5                             |",
+            "sub_type": "line"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.283,
+                0.88,
+                0.386,
+                0.891
+            ],
+            "angle": 0,
+            "content": "Source: Bloomberg, HSBC"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.069,
+                0.965,
+                0.08,
+                0.974
+            ],
+            "angle": 0,
+            "content": "2"
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.073,
+                0.029,
+                0.194,
+                0.056
+            ],
+            "angle": 0,
+            "content": "HSBC"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.719,
+                0.029,
+                0.93,
+                0.042
+            ],
+            "angle": 0,
+            "content": "Multi-Asset Strategy • Global"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.843,
+                0.042,
+                0.93,
+                0.054
+            ],
+            "angle": 0,
+            "content": "4 June 2026"
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.282,
+                0.137,
+                0.646,
+                0.151
+            ],
+            "angle": 0,
+            "content": "3. Tax refunds much higher compared to last year"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.283,
+                0.152,
+                0.915,
+                0.337
+            ],
+            "angle": 0,
+            "content": "| Year | Value (USD Billions) |\n|------|----------------------|\n| 2026 | +18%                 |",
+            "sub_type": "line"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.283,
+                0.34,
+                0.484,
+                0.352
+            ],
+            "angle": 0,
+            "content": "Source: HSBC, Bloomberg, Daily Treasury Statement"
+        },
+        {
+            "type": "title",
+            "bbox": [
+                0.281,
+                0.372,
+                0.386,
+                0.385
+            ],
+            "angle": 0,
+            "content": "2. Geopolitics"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.28,
+                0.387,
+                0.927,
+                0.464
+            ],
+            "angle": 0,
+            "content": "Geopolitics is perhaps the most obvious risk – not just the Middle East conflict but also renewed US tariff announcements (see US-Iran talks, 25 May; and US tariff announcements, 3 Jun). But once again, that's not high on our list of bearish concerns. The US administration has frequently backtracked on tariffs in the last 13 months such that it looks unlikely for risk assets to price a significant risk premium.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.28,
+                0.472,
+                0.928,
+                0.534
+            ],
+            "angle": 0,
+            "content": "The conflict in the Middle East continues to be a major force for oil, rates, and some parts of the FX markets (charts 4 & 5). But for the conflict to start weighing on risk assets more broadly again, we'd likely have to see escalation to a level that overrides any optimism around AI, chips, and memory, where sentiment is high after a bumper Q1 reporting season globally.",
+            "merge_prev": false
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.283,
+                0.559,
+                0.408,
+                0.571
+            ],
+            "angle": 0,
+            "content": "4. Oil has been..."
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.288,
+                0.582,
+                0.592,
+                0.76
+            ],
+            "angle": 0,
+            "content": "| Date       | 10Y Gilt yield - 10Y UST yield (bps) (LHS) | Oil (USD/bbl, RHS) |\n| ---------- | ------------------------------------------ | ------------------ |\n| 27-Feb-26  | 30                                         | 70                 |\n| 27-Mar-26  | 60                                         | 110                |\n| 27-Apr-26  | 65                                         | 115                |\n| 27-May-26  | 45                                         | 95                 |",
+            "sub_type": "line"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.283,
+                0.763,
+                0.386,
+                0.773
+            ],
+            "angle": 0,
+            "content": "Source: HSBC, Bloomberg"
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.616,
+                0.559,
+                0.867,
+                0.572
+            ],
+            "angle": 0,
+            "content": "5. ... the main driver of rates lately"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.617,
+                0.582,
+                0.925,
+                0.76
+            ],
+            "angle": 0,
+            "content": "| Date       | 3m SOFR Dec 26-3m SONIA Dec 26 (LHS) | Oil (USD/bbl, RHS) |\n| ---------- | ----------------------------------- | ------------------ |\n| 27-Feb-26  | 10                                  | 70                 |\n| 27-Mar-26  | 85                                  | 115                |\n| 27-Apr-26  | 70                                  | 105                |\n| 27-May-26  | 30                                  | 95                 |",
+            "sub_type": "line"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.617,
+                0.763,
+                0.719,
+                0.773
+            ],
+            "angle": 0,
+            "content": "Source: HSBC, Bloomberg"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.28,
+                0.79,
+                0.925,
+                0.836
+            ],
+            "angle": 0,
+            "content": "Another angle is energy: at current levels of global inventory drawdowns (charts 6 & 7), we may hit critically low levels by August – but that is assuming current inventory drawdowns continue and no other ways of bypassing lost output are found by then.",
+            "merge_prev": false
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.921,
+                0.965,
+                0.931,
+                0.974
+            ],
+            "angle": 0,
+            "content": "3"
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.073,
+                0.029,
+                0.194,
+                0.056
+            ],
+            "angle": 0,
+            "content": "HSBC"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.719,
+                0.029,
+                0.93,
+                0.042
+            ],
+            "angle": 0,
+            "content": "Multi-Asset Strategy • Global"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.843,
+                0.042,
+                0.93,
+                0.054
+            ],
+            "angle": 0,
+            "content": "4 June 2026"
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.282,
+                0.137,
+                0.553,
+                0.164
+            ],
+            "angle": 0,
+            "content": "6. US total commercial (crude oil and products) inventories (mb)"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.283,
+                0.17,
+                0.596,
+                0.317
+            ],
+            "angle": 0,
+            "content": "| Month | 2025  | 2026  | 5yr Avg | 5yr Range |\n|-------|-------|-------|---------|-----------|\n| Jan   | 1,250 | 1,300 | 1,250   | 1,300     |\n| Feb   | 1,240 | 1,290 | 1,240   | 1,290     |\n| Mar   | 1,230 | 1,280 | 1,230   | 1,280     |\n| Apr   | 1,220 | 1,270 | 1,220   | 1,270     |\n| May   | 1,210 | 1,260 | 1,210   | 1,260     |\n| Jun   | 1,200 | 1,250 | 1,200   | 1,250     |\n| Jul   | 1,210 | 1,260 | 1,210   | 1,260     |\n| Aug   | 1,230 | 1,270 | 1,230   | 1,270     |\n| Sep   | 1,250 | 1,280 | 1,250   | 1,280     |\n| Oct   | 1,260 | 1,290 | 1,260   | 1,290     |\n| Nov   | 1,250 | 1,280 | 1,250   | 1,280     |\n| Dec   | 1,240 | 1,270 | 1,240   | 1,270     |",
+            "sub_type": "line"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.283,
+                0.321,
+                0.332,
+                0.331
+            ],
+            "angle": 0,
+            "content": "Source: EIA"
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.616,
+                0.138,
+                0.847,
+                0.153
+            ],
+            "angle": 0,
+            "content": "7. US gasoline inventories (mb)"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.617,
+                0.164,
+                0.925,
+                0.316
+            ],
+            "angle": 0,
+            "content": "| Month | 5yr Avg | 2025 | 2026 |\n|-------|---------|------|------|\n| Jan   | 240     | 240  | 240  |\n| Feb   | 250     | 255  | 260  |\n| Mar   | 245     | 250  | 255  |\n| Apr   | 235     | 240  | 245  |\n| May   | 230     | 235  | 240  |\n| Jun   | 225     | 230  | 235  |\n| Jul   | 230     | 235  | 240  |\n| Aug   | 225     | 230  | 235  |\n| Sep   | 220     | 225  | 230  |\n| Oct   | 215     | 220  | 225  |\n| Nov   | 210     | 215  | 220  |\n| Dec   | 230     | 235  | 240  |",
+            "sub_type": "line"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.617,
+                0.321,
+                0.666,
+                0.331
+            ],
+            "angle": 0,
+            "content": "Source: EIA"
+        },
+        {
+            "type": "title",
+            "bbox": [
+                0.282,
+                0.351,
+                0.441,
+                0.365
+            ],
+            "angle": 0,
+            "content": "3. Higher bond yields"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.281,
+                0.366,
+                0.891,
+                0.427
+            ],
+            "angle": 0,
+            "content": "Another potential bearish catalyst is rates. The long end of the US Treasury yield curve is already in the ‘Danger Zone’ (the level of 10Y UST that puts pressure on virtually all asset classes (charts 8 & 9) and our new US-Treasury cycle model shows them in a max sell-off regime (see TYCCLES, 3 Jun).",
+            "merge_prev": false
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.283,
+                0.449,
+                0.496,
+                0.464
+            ],
+            "angle": 0,
+            "content": "8. Long-end UST yields are..."
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.285,
+                0.469,
+                0.592,
+                0.632
+            ],
+            "angle": 0,
+            "content": "| Date   | USD OIS 3Y1M |\n|--------|--------------|\n| Jul-23 | 3.5          |\n| Jan-24 | 4.0          |\n| Jul-24 | 3.8          |\n| Jan-25 | 4.2          |\n| Jul-25 | 3.9          |\n| Jan-26 | 3.7          |\n| Jul-26 | 3.8          |",
+            "sub_type": "line"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.283,
+                0.638,
+                0.386,
+                0.648
+            ],
+            "angle": 0,
+            "content": "Source: HSBC, Bloomberg"
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.616,
+                0.449,
+                0.86,
+                0.464
+            ],
+            "angle": 0,
+            "content": "9. ... already in the 'Danger Zone'"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.617,
+                0.469,
+                0.925,
+                0.633
+            ],
+            "angle": 0,
+            "content": "| USD OIS 3y1m (%) | US 10Y (%) |\n| ---------------- | ---------- |\n| 1.5              | 1.8        |\n| 2.0              | 2.5        |\n| 2.5              | 3.0        |\n| 3.0              | 3.5        |\n| 3.5              | 4.0        |\n| 4.0              | 4.5        |",
+            "sub_type": "scatter"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.617,
+                0.638,
+                0.719,
+                0.648
+            ],
+            "angle": 0,
+            "content": "Source: HSBC, Bloomberg"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.281,
+                0.667,
+                0.925,
+                0.728
+            ],
+            "angle": 0,
+            "content": "So far, however, equities, credit, and even EMD and EM FX have been undeterred by that – which to us makes sense (see Why are higher yields not biting?, 21 May). Strong Q1 earnings, with heavy index concentration masking weakness under the hood in equity and credit markets, and lower levels of rates vol are all reasons for the stability of risk assets (charts 10 and 11).",
+            "merge_prev": false
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.07,
+                0.965,
+                0.08,
+                0.974
+            ],
+            "angle": 0,
+            "content": "4"
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.073,
+                0.029,
+                0.194,
+                0.056
+            ],
+            "angle": 0,
+            "content": "HSBC"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.719,
+                0.029,
+                0.93,
+                0.042
+            ],
+            "angle": 0,
+            "content": "Multi-Asset Strategy • Global"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.843,
+                0.042,
+                0.93,
+                0.054
+            ],
+            "angle": 0,
+            "content": "4 June 2026"
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.284,
+                0.137,
+                0.482,
+                0.151
+            ],
+            "angle": 0,
+            "content": "10. US rates vol vs equities"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.284,
+                0.154,
+                0.594,
+                0.317
+            ],
+            "angle": 0,
+            "content": "| Year | SPX 12m fwd. PE (x) | MOVE Index (RHS, inv.) |\n|------|---------------------|------------------------|\n| 2021 | ~23                 | ~40                    |\n| 2022 | ~19                 | ~160                   |\n| 2023 | ~17                 | ~160                   |\n| 2024 | ~19                 | ~140                   |\n| 2025 | ~21                 | ~180                   |\n| 2026 | ~23                 | ~160                   |",
+            "sub_type": "line"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.283,
+                0.32,
+                0.386,
+                0.331
+            ],
+            "angle": 0,
+            "content": "Source: Bloomberg, HSBC"
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.617,
+                0.137,
+                0.92,
+                0.151
+            ],
+            "angle": 0,
+            "content": "11. CCCs still significantly weaker vs BBs"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.616,
+                0.154,
+                0.929,
+                0.317
+            ],
+            "angle": 0,
+            "content": "| Date   | USD HY CCC vs BB OAS (in bp) |\n|--------|------------------------------|\n| Jan-26 | 440                          |\n| Feb-26 | 430                          |\n| Mar-26 | 450                          |\n| Apr-26 | 520                          |\n| May-26 | 510                          |\n| Jun-26 | 560                          |",
+            "sub_type": "line"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.617,
+                0.32,
+                0.72,
+                0.331
+            ],
+            "angle": 0,
+            "content": "Source: Bloomberg, HSBC"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.281,
+                0.343,
+                0.927,
+                0.419
+            ],
+            "angle": 0,
+            "content": "Especially after the hawkish repricing of the US front end since the last FOMC meeting, it would be hard for the Fed to out hawk this pricing next week. Even if the FOMC did, we'd also note that corporates and household, especially in the US, have simply become less rates sensitive since COVID-19 anyway (charts 12 and 13). This makes any ‘Danger Zone’ related sell-off a buy-on-dip opportunity for risk assets, in our view.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.281,
+                0.427,
+                0.928,
+                0.473
+            ],
+            "angle": 0,
+            "content": "For rates to become a longer-term bearish factor for risk assets, we'd likely need things like Fed independence concerns to resurface. This could then lead to structurally higher rates volatility, in turn pressuring valuations across equities, credit, and the broader risk asset spectrum.",
+            "merge_prev": false
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.283,
+                0.482,
+                0.419,
+                0.496
+            ],
+            "angle": 0,
+            "content": "12. US economy..."
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.285,
+                0.499,
+                0.596,
+                0.671
+            ],
+            "angle": 0,
+            "content": "| Year | US non-fin corporates net interest payments % of profits |\n| ---- | -------------------------------------------------------- |\n| 1970 | ~50%                                                     |\n| 1980 | ~30%                                                     |\n| 1990 | ~120%                                                    |\n| 2000 | ~180%                                                    |\n| 2010 | ~60%                                                     |\n| 2020 | ~20%                                                     |",
+            "sub_type": "line"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.283,
+                0.675,
+                0.393,
+                0.685
+            ],
+            "angle": 0,
+            "content": "Source: HSBC, St Louis Fed"
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.617,
+                0.482,
+                0.9,
+                0.496
+            ],
+            "angle": 0,
+            "content": "13. ... less sensitive to rates nowadays"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.616,
+                0.499,
+                0.92,
+                0.671
+            ],
+            "angle": 0,
+            "content": "| Year | US MBA % of mortgages with a floating rate |\n| ---- | ------------------------------------------ |\n| 1990 | ~5                                         |\n| 1995 | ~35                                        |\n| 2000 | ~30                                        |\n| 2005 | ~36                                        |\n| 2010 | ~5                                         |\n| 2015 | ~7                                         |\n| 2020 | ~3                                         |\n| 2025 | ~10                                        |",
+            "sub_type": "line"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.617,
+                0.675,
+                0.743,
+                0.685
+            ],
+            "angle": 0,
+            "content": "Source: HSBC, Macrobond, MBA"
+        },
+        {
+            "type": "title",
+            "bbox": [
+                0.281,
+                0.707,
+                0.651,
+                0.72
+            ],
+            "angle": 0,
+            "content": "4. The bigger worries: sentiment and positioning..."
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.281,
+                0.722,
+                0.917,
+                0.752
+            ],
+            "angle": 0,
+            "content": "The two things that we are most worried about are: i) stretched sentiment and positioning; and ii) slowdowns in AI spending, AI rollout, or a drop in chip prices.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.28,
+                0.759,
+                0.928,
+                0.836
+            ],
+            "angle": 0,
+            "content": "In terms of sentiment and positioning, our short-term framework isn't suggesting a sell signal for risk assets (chart 14). It is also not when it comes to positioning of systematic strategies – though there are signs of positioning finally being more neutral (CTAs, risk parity, vol target, chart 15). Moreover, the upcoming mega-IPOs don't really worry us as higher equity supply should be outweighed by the ‘unlocking’ of liquidity that has so far been ‘locked’ in private markets.",
+            "merge_prev": false
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.921,
+                0.964,
+                0.931,
+                0.974
+            ],
+            "angle": 0,
+            "content": "5"
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.073,
+                0.029,
+                0.194,
+                0.056
+            ],
+            "angle": 0,
+            "content": "HSBC"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.719,
+                0.029,
+                0.93,
+                0.042
+            ],
+            "angle": 0,
+            "content": "Multi-Asset Strategy • Global"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.843,
+                0.042,
+                0.93,
+                0.054
+            ],
+            "angle": 0,
+            "content": "4 June 2026"
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.283,
+                0.137,
+                0.828,
+                0.152
+            ],
+            "angle": 0,
+            "content": "14. Our sentiment and positioning framework isn't flashing a sell signal yet"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.288,
+                0.155,
+                0.925,
+                0.499
+            ],
+            "angle": 0,
+            "content": "| Year | Aggregate contrarian sell signal (Daily) (%) | Aggregate contrarian sell signal (Current) (%) | Aggregate contrarian buy signal (Daily) (%) | Aggregate contrarian buy signal (Current) (%) |\n|------|-----------------------------------------------|------------------------------------------------|---------------------------------------------|-----------------------------------------------|\n| 2014 | ~15                                           | ~10                                            | ~30                                         | ~15                                           |\n| 2015 | ~25                                           | ~15                                            | ~40                                         | ~20                                           |\n| 2016 | ~30                                           | ~20                                            | ~50                                         | ~25                                           |\n| 2017 | ~45                                           | ~30                                            | ~60                                         | ~30                                           |\n| 2018 | ~20                                           | ~10                                            | ~30                                         | ~15                                           |\n| 2019 | ~35                                           | ~25                                            | ~40                                         | ~20                                           |\n| 2020 | ~70                                           | ~50                                            | ~70                                         | ~50                                           |\n| 2021 | ~30                                           | ~20                                            | ~40                                         | ~25                                           |\n| 2022 | ~25                                           | ~15                                            | ~35                                         | ~20                                           |\n| 2023 | ~45                                           | ~35                                            | ~50                                         | ~35                                           |\n| 2024 | ~35                                           | ~25                                            | ~45                                         | ~30                                           |\n| 2025 | ~40                                           | ~30                                            | ~55                                         | ~35                                           |\n| 2026 | ~20                                           | ~15                                            | ~40                                         | ~25                                           |",
+            "sub_type": "bar_line"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.283,
+                0.505,
+                0.911,
+                0.516
+            ],
+            "angle": 0,
+            "content": "Source: HSBC, Bloomberg, LSEG Datastream, FactSet, NAAIM. Note: The percentage represents the proportion of inputs sending a signal rounded to the nearest integer."
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.283,
+                0.537,
+                0.791,
+                0.551
+            ],
+            "angle": 0,
+            "content": "15. Aggregate systematic sentiment indicator – shooting up to neutral"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.286,
+                0.556,
+                0.917,
+                0.726
+            ],
+            "angle": 0,
+            "content": "| Date   | Aggregate of HSBC's systematic sentiment & positioning indicators |\n|--------|------------------------------------------------------------------|\n| Jan-26 | 50th percentile                                                                 |",
+            "sub_type": "line"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.283,
+                0.731,
+                0.524,
+                0.742
+            ],
+            "angle": 0,
+            "content": "Source: HSBC, Bloomberg, LSEG Datastream, FactSet, NAAIM"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.07,
+                0.965,
+                0.08,
+                0.974
+            ],
+            "angle": 0,
+            "content": "6"
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.073,
+                0.029,
+                0.194,
+                0.056
+            ],
+            "angle": 0,
+            "content": "HSBC"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.719,
+                0.029,
+                0.93,
+                0.042
+            ],
+            "angle": 0,
+            "content": "Multi-Asset Strategy • Global"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.843,
+                0.042,
+                0.93,
+                0.054
+            ],
+            "angle": 0,
+            "content": "4 June 2026"
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.283,
+                0.137,
+                0.591,
+                0.152
+            ],
+            "angle": 0,
+            "content": "16. Global equities real money positioning"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.284,
+                0.155,
+                0.578,
+                0.297
+            ],
+            "angle": 0,
+            "content": "| Date   | Aggregate real money investor sentiment - equities |\n|--------|--------------------------------------------------|\n| May 20 | 2.1                                              |\n| May 21 | 2.6                                              |\n| May 22 | 1.7                                              |\n| May 23 | 1.6                                              |\n| May 24 | 2.3                                              |\n| May 25 | 2.1                                              |\n| May 26 | 2.4                                              |",
+            "sub_type": "line"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.283,
+                0.304,
+                0.479,
+                0.315
+            ],
+            "angle": 0,
+            "content": "Source: HSBC, Company websites, Fund factsheets"
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.617,
+                0.137,
+                0.882,
+                0.152
+            ],
+            "angle": 0,
+            "content": "17. HY credit real money positioning"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.617,
+                0.157,
+                0.911,
+                0.302
+            ],
+            "angle": 0,
+            "content": "| Date   | Aggregate real money investor sentiment - HY credit |\n|--------|----------------------------------------------------|\n| May 20 | 2.3                                                |\n| May 22 | 1.9                                                |\n| May 24 | 2.1                                                |\n| May 26 | 1.9                                                |",
+            "sub_type": "line"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.616,
+                0.304,
+                0.812,
+                0.315
+            ],
+            "angle": 0,
+            "content": "Source: HSBC, Company websites, Fund factsheets"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.281,
+                0.333,
+                0.892,
+                0.378
+            ],
+            "angle": 0,
+            "content": "One thing that is different to Liberation Day is the positioning of long-only investors (charts 16 and 17). They've clearly not de-risked to the same degree as last year and have been quick to snap up the dip in equities in particular (less so in credit).",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.281,
+                0.386,
+                0.907,
+                0.447
+            ],
+            "angle": 0,
+            "content": "What's been unusual is that so far, the equity and credit rallies have been pretty narrow. Any sustained positive Middle East news flow should result in breadth improving and laggards catching up. Such a more broad-based rally could then easily prompt a sell signal, especially with long-only investors already having a higher equity exposure than post Liberation Day.",
+            "merge_prev": false
+        },
+        {
+            "type": "title",
+            "bbox": [
+                0.281,
+                0.455,
+                0.615,
+                0.469
+            ],
+            "angle": 0,
+            "content": "5. .... and the really big one: a slowdown in AI"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.281,
+                0.472,
+                0.91,
+                0.502
+            ],
+            "angle": 0,
+            "content": "The biggest concern we have is any slowdown in AI spending, AI adoption, or a decline in memory prices. Tech and AI are now the main components of US and EM equities (chart 18).",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.28,
+                0.51,
+                0.922,
+                0.571
+            ],
+            "angle": 0,
+            "content": "As controversial as that may sound, the outlook for things like consumption or the labour market therefore don't really matter as much any longer for risk assets. In other words, any combination of strong labour markets, consumption, and overall growth would likely be taken as very bearish if they coincided with a slowdown of the AI and memory theme.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.28,
+                0.578,
+                0.922,
+                0.67
+            ],
+            "angle": 0,
+            "content": "The wealth effect nowadays arguably matters more, especially in the US. This wealth effect is even more a function of equities compared to pre-GFC (chart 19). This means any sustained drop in tech and AI stock prices would also drag down overall equity prices. Such a drop would then probably result in a negative wealth effect. Given that higher-income households now account for an even larger share of spending, this also risks having a negative effect on consumption – a classic doom loop.",
+            "merge_prev": false
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.283,
+                0.696,
+                0.591,
+                0.71
+            ],
+            "angle": 0,
+            "content": "18. AI and tech share of equity market cap"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.284,
+                0.713,
+                0.583,
+                0.879
+            ],
+            "angle": 0,
+            "content": "| Date     | US equities | EM equities | European equities |\n| -------- | ----------- | ----------- | ----------------- |\n| Dec 2022 | 30          | 24          | 8                 |\n| Dec 2023 | 41          | 25          | 9                 |\n| Dec 2024 | 47          | 30          | 10                |\n| Dec 2025 | 50          | 34          | 9                 |\n| Jun 2026 | 55          | 48          | 11                |",
+            "sub_type": "bar"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.283,
+                0.899,
+                0.417,
+                0.911
+            ],
+            "angle": 0,
+            "content": "Source: Bloomberg, Factset, HSBC"
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.617,
+                0.696,
+                0.774,
+                0.709
+            ],
+            "angle": 0,
+            "content": "19. US wealth vs SPX"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.617,
+                0.712,
+                0.93,
+                0.896
+            ],
+            "angle": 0,
+            "content": "| Year | Change in HH wealth q/q in % | S&P 500 q/q in % |\n|------|-------------------------------|------------------|\n| 1990 | ~2%                           | ~4%              |\n| 1995 | ~3%                           | ~5%              |\n| 2000 | ~6%                           | ~4%              |\n| 2005 | ~4%                           | ~3%              |\n| 2010 | ~-5%                          | ~-3%             |\n| 2015 | ~3%                           | ~2%              |\n| 2020 | ~7%                           | ~5%              |\n| 2025 | ~4%                           | ~3%              |",
+            "sub_type": "line"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.616,
+                0.899,
+                0.719,
+                0.911
+            ],
+            "angle": 0,
+            "content": "Source: Bloomberg, HSBC"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.921,
+                0.965,
+                0.93,
+                0.973
+            ],
+            "angle": 0,
+            "content": "7"
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.073,
+                0.029,
+                0.194,
+                0.055
+            ],
+            "angle": 0,
+            "content": "HSBC"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.719,
+                0.029,
+                0.93,
+                0.042
+            ],
+            "angle": 0,
+            "content": "Multi-Asset Strategy • Global"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.843,
+                0.042,
+                0.93,
+                0.054
+            ],
+            "angle": 0,
+            "content": "4 June 2026"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.281,
+                0.136,
+                0.923,
+                0.196
+            ],
+            "angle": 0,
+            "content": "Where might such a slowdown in the AI/tech theme come from? One angle is a slowdown in AI spending/capex: however, demand remains so strong, capacity constrained, and – even more notably – backlogs so significant that it's hard to see spending on AI slowing down significantly in the coming months.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.28,
+                0.205,
+                0.925,
+                0.251
+            ],
+            "angle": 0,
+            "content": "Another angle is a drop in memory prices: our tech colleagues expect the higher memory price trend should continue until yearend and potentially extend into H1 27 (see Global Tech, 22 May and SK Hynix (000660 KP) (12 May) – charts 20 and 21).",
+            "merge_prev": false
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.283,
+                0.277,
+                0.591,
+                0.29
+            ],
+            "angle": 0,
+            "content": "20. Server DRAM pricing: HSBC estimates"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.284,
+                0.292,
+                0.596,
+                0.472
+            ],
+            "angle": 0,
+            "content": "| Quarter | Server DRAM contract price forecast (DDR5 32GB) | Previous forecast (USD) |\n|---------|--------------------------------------------------|--------------------------|\n| 3Q25    | 143                                              | -                        |\n| 4Q25    | 225                                              | -                        |\n| 1Q26    | 439                                              | -                        |\n| 2Q26e   | 681                                              | -                        |\n| 3Q26e   | 786                                              | -                        |\n| 4Q26e   | 849                                              | -                        |\n| 1Q27e   | 891                                              | -                        |\n| 2Q27e   | 918                                              | -                        |",
+            "sub_type": "line"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.283,
+                0.477,
+                0.445,
+                0.487
+            ],
+            "angle": 0,
+            "content": "Source: DRAMeXchange, HSBC estimates"
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.616,
+                0.277,
+                0.891,
+                0.289
+            ],
+            "angle": 0,
+            "content": "21. PC DRAM prices: HSBC estimates"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.616,
+                0.291,
+                0.93,
+                0.467
+            ],
+            "angle": 0,
+            "content": "| Quarter | PC DRAM contract price forecast (DDR5 8GB) | Previous forecast |\n| ------- | ------------------------------------------ | ----------------- |\n| 3Q25    | 26                                         | -                 |\n| 4Q25    | 37                                         | -                 |\n| 1Q26    | 75                                         | +39% qoq          |\n| 2Q26e   | 115                                        | +105% qoq         |\n| 3Q26e   | 138                                        | +21% qoq          |\n| 4Q26e   | 152                                        | +10% qoq          |\n| 1Q27e   | 160                                        | +5% qoq           |\n| 2Q27e   | 164                                        | +3% qoq           |",
+            "sub_type": "line"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.617,
+                0.477,
+                0.778,
+                0.487
+            ],
+            "angle": 0,
+            "content": "Source: DRAMeXchange, HSBC estimates"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.28,
+                0.505,
+                0.927,
+                0.581
+            ],
+            "angle": 0,
+            "content": "Risks come from: 1) efficiency gains from new models that could dampen demand – e.g. Google's recent TurboQuant paper highlights new methods to potential reduce the amount of memory usage (TurboQuant notes compression potential of LLM KV-cache of up to 6x without quality loss, freeing GPU memory and boosting inference speed, and possibly leading to as much as 8x faster processing speed with no need for re-training, for example).",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.28,
+                0.59,
+                0.923,
+                0.651
+            ],
+            "angle": 0,
+            "content": "2) Memory prices could also be set to fall amid an increased presence of mainland China as it catches up in the DDR5 market, though relief may well only come through in the second half of next year. Markets will likely anticipate such a change and start pricing in any potential rollover of the supply deficit before that – which may be the case towards Q4 of this year or early-2027.",
+            "merge_prev": false
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.07,
+                0.965,
+                0.08,
+                0.974
+            ],
+            "angle": 0,
+            "content": "8"
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.073,
+                0.03,
+                0.194,
+                0.055
+            ],
+            "angle": 0,
+            "content": "HSBC"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.719,
+                0.029,
+                0.93,
+                0.053
+            ],
+            "angle": 0,
+            "content": "Multi-Asset Strategy • Global\n4 June 2026"
+        },
+        {
+            "type": "title",
+            "bbox": [
+                0.07,
+                0.138,
+                0.517,
+                0.172
+            ],
+            "angle": 0,
+            "content": "Disclosure appendix"
+        },
+        {
+            "type": "title",
+            "bbox": [
+                0.067,
+                0.208,
+                0.221,
+                0.221
+            ],
+            "angle": 0,
+            "content": "Analyst Certification"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.065,
+                0.223,
+                0.932,
+                0.346
+            ],
+            "angle": 0,
+            "content": "The following analyst(s), economist(s), or strategist(s) who is(are) primarily responsible for this report, including any analyst(s) whose name(s) appear(s) as author of an individual section or sections of the report and any analyst(s) named as the covering analyst(s) of a subsidiary company in a sum-of-the-parts valuation certifies(y) that the opinion(s) on the subject security(ies) or issuer(s), any views or forecasts expressed in the section(s) of which such individual(s) is(are) named as author(s), and any other views or forecasts expressed herein, including any views expressed on the back page of the research report, accurately reflect their personal view(s) and that no part of their compensation was, is or will be directly or indirectly related to the specific recommendation(s) or views contained in this research report: Max Kettner, CFA, Duncan Toms, CFA, Harriet Smith, CFA, Jayasankar Mallisetty, Mark McDonald and Shiva Joon, CFA",
+            "merge_prev": false
+        },
+        {
+            "type": "title",
+            "bbox": [
+                0.067,
+                0.354,
+                0.232,
+                0.367
+            ],
+            "angle": 0,
+            "content": "Important disclosures"
+        },
+        {
+            "type": "title",
+            "bbox": [
+                0.067,
+                0.373,
+                0.406,
+                0.386
+            ],
+            "angle": 0,
+            "content": "Foreign exchange: Basis for financial analysis"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.066,
+                0.388,
+                0.929,
+                0.418
+            ],
+            "angle": 0,
+            "content": "This document has been prepared and is being distributed by the Research Department of HSBC and is intended solely for the clients of HSBC and is not for publication to other persons, whether through the press or by other means.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.065,
+                0.426,
+                0.932,
+                0.517
+            ],
+            "angle": 0,
+            "content": "This document is for information purposes only and it should not be regarded as an offer to sell or as a solicitation of an offer to buy the securities or other investment products mentioned in it and/or to participate in any trading strategy. Advice in this document is general and should not be construed as personal advice, given it has been prepared without taking account of the objectives, financial situation or needs of any particular investor. Accordingly, investors should, before acting on the advice, consider the appropriateness of the advice, having regard to their objectives, financial situation and needs. If necessary, seek professional investment and tax advice.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.065,
+                0.526,
+                0.931,
+                0.587
+            ],
+            "angle": 0,
+            "content": "Certain investment products mentioned in this document may not be eligible for sale in some states or countries, and they may not be suitable for all types of investors. Investors should consult with their HSBC representative regarding the suitability of the investment products mentioned in this document and take into account their specific investment objectives, financial situation or particular needs before making a commitment to purchase investment products.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.065,
+                0.595,
+                0.931,
+                0.67
+            ],
+            "angle": 0,
+            "content": "The value of and the income produced by the investment products mentioned in this document may fluctuate, so that an investor may get back less than originally invested. Certain high-volatility investments can be subject to sudden and large falls in value that could equal or exceed the amount invested. Value and income from investment products may be adversely affected by exchange rates, interest rates, or other factors. Past performance of a particular investment product is not indicative of future results.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.065,
+                0.679,
+                0.931,
+                0.755
+            ],
+            "angle": 0,
+            "content": "HSBC believes that investors utilise various disciplines and investment horizons when making investment decisions, which depend largely on individual circumstances such as the investor's existing holdings, risk tolerance and other considerations. HSBC's currency trade ideas on deliverable FX forwards (DF) or non-deliverable FX forwards (NDF) are usually identified on a time horizon of up to three months, although HSBC reserves the right to extend this time horizon on a discretionary, trade-by-trade basis.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.065,
+                0.763,
+                0.931,
+                0.855
+            ],
+            "angle": 0,
+            "content": "HSBC believes an investor's decision to buy or sell an instrument should depend on individual circumstances such as the investor's existing holdings and other considerations. Different securities firms use a variety of terms as well as different systems to describe their recommendations. Investors should carefully read the definitions of the recommendations used in each research report. In addition, because research reports contain more complete information concerning the analysts' views, investors should carefully read the entire research report and should not infer its contents from the recommendation. In any case, recommendations should not be used or relied on in isolation as investment advice.",
+            "merge_prev": false
+        },
+        {
+            "type": "title",
+            "bbox": [
+                0.067,
+                0.863,
+                0.424,
+                0.877
+            ],
+            "angle": 0,
+            "content": "Definitions for currency trades on DFs and NDFs"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.067,
+                0.879,
+                0.824,
+                0.894
+            ],
+            "angle": 0,
+            "content": "Buy: refers to buying the first currency in the named pair in exchange for the second currency in the named pair.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.067,
+                0.901,
+                0.821,
+                0.915
+            ],
+            "angle": 0,
+            "content": "Sell: refers to selling the first currency in the named pair in exchange for the second currency in the named pair.",
+            "merge_prev": false
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.92,
+                0.964,
+                0.931,
+                0.974
+            ],
+            "angle": 0,
+            "content": "9"
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.073,
+                0.03,
+                0.194,
+                0.055
+            ],
+            "angle": 0,
+            "content": "HSBC"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.719,
+                0.029,
+                0.93,
+                0.041
+            ],
+            "angle": 0,
+            "content": "Multi-Asset Strategy • Global"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.843,
+                0.042,
+                0.93,
+                0.053
+            ],
+            "angle": 0,
+            "content": "4 June 2026"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.066,
+                0.136,
+                0.932,
+                0.181
+            ],
+            "angle": 0,
+            "content": "The tenor of the instrument will be denoted and will refer to a settlement date relative to the opening date of the trade idea e.g. 1m refers to a settlement date 1 month forward from the open date of the trade idea. NDF trades normally fix two working days prior to the settlement date.",
+            "merge_prev": false
+        },
+        {
+            "type": "title",
+            "bbox": [
+                0.067,
+                0.19,
+                0.294,
+                0.203
+            ],
+            "angle": 0,
+            "content": "Distribution of currency trades"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.066,
+                0.205,
+                0.929,
+                0.234
+            ],
+            "angle": 0,
+            "content": "The nature of foreign exchange forward trade ideas is such that there will always be an equal number of buy and sell trades (buying one currency in exchange for selling another), both outstanding and historically.",
+            "merge_prev": false
+        },
+        {
+            "type": "title",
+            "bbox": [
+                0.067,
+                0.243,
+                0.465,
+                0.257
+            ],
+            "angle": 0,
+            "content": "Equities: Stock ratings and basis for financial analysis"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.065,
+                0.258,
+                0.932,
+                0.366
+            ],
+            "angle": 0,
+            "content": "HSBC and its affiliates, including the issuer of this report (\"HSBC\") believes an investor's decision to buy or sell a stock should depend on individual circumstances such as the investor's existing holdings, risk tolerance and other considerations and that investors utilise various disciplines and investment horizons when making investment decisions. Ratings should not be used or relied on in isolation as investment advice. Different securities firms use a variety of ratings terms as well as different rating systems to describe their recommendations and therefore investors should carefully read the definitions of the ratings used in each research report. Further, investors should carefully read the entire research report and not infer its contents from the rating because research reports contain more complete information concerning the analysts' views and the basis for the rating.",
+            "merge_prev": false
+        },
+        {
+            "type": "title",
+            "bbox": [
+                0.067,
+                0.374,
+                0.603,
+                0.387
+            ],
+            "angle": 0,
+            "content": "From 23rd March 2015 HSBC has assigned ratings on the following basis:"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.065,
+                0.389,
+                0.932,
+                0.48
+            ],
+            "angle": 0,
+            "content": "The target price is based on the analyst's assessment of the stock's actual current value, although we expect it to take six to 12 months for the market price to reflect this. When the target price is more than \\(20\\%\\) above the current share price, the stock will be classified as a Buy; when it is between \\(5\\%\\) and \\(20\\%\\) above the current share price, the stock may be classified as a Buy or a Hold; when it is between \\(5\\%\\) below and \\(5\\%\\) above the current share price, the stock will be classified as a Hold; when it is between \\(5\\%\\) and \\(20\\%\\) below the current share price, the stock may be classified as a Hold or a Reduce; and when it is more than \\(20\\%\\) below the current share price, the stock will be classified as a Reduce.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.066,
+                0.489,
+                0.931,
+                0.518
+            ],
+            "angle": 0,
+            "content": "Our ratings are re-calibrated against these bands at the time of any 'material change' (initiation or resumption of coverage, change in target price or estimates).",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.067,
+                0.527,
+                0.684,
+                0.541
+            ],
+            "angle": 0,
+            "content": "Upside/Downside is the percentage difference between the target price and the share price.",
+            "merge_prev": false
+        },
+        {
+            "type": "title",
+            "bbox": [
+                0.067,
+                0.55,
+                0.631,
+                0.563
+            ],
+            "angle": 0,
+            "content": "Prior to this date, HSBC's rating structure was applied on the following basis:"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.065,
+                0.565,
+                0.932,
+                0.687
+            ],
+            "angle": 0,
+            "content": "For each stock we set a required rate of return calculated from the cost of equity for that stock's domestic or, as appropriate, regional market established by our strategy team. The target price for a stock represented the value the analyst expected the stock to reach over our performance horizon. The performance horizon was 12 months. For a stock to be classified as Overweight, the potential return, which equals the percentage difference between the current share price and the target price, including the forecast dividend yield when indicated, had to exceed the required return by at least 5 percentage points over the succeeding 12 months (or 10 percentage points for a stock classified as Volatile*). For a stock to be classified as Underweight, the stock was expected to underperform its required return by at least 5 percentage points over the succeeding 12 months (or 10 percentage points for a stock classified as Volatile*). Stocks between these bands were classified as Neutral.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.065,
+                0.696,
+                0.932,
+                0.773
+            ],
+            "angle": 0,
+            "content": "*A stock was classified as volatile if its historical volatility had exceeded 40%, if the stock had been listed for less than 12 months (unless it was in an industry or sector where volatility is low) or if the analyst expected significant volatility. However, stocks which we did not consider volatile may in fact also have behaved in such a way. Historical volatility was defined as the past month's average of the daily 365-day moving average volatilities. In order to avoid misleadingly frequent changes in rating, however, volatility had to move 2.5 percentage points past the 40% benchmark in either direction for a stock's status to change.",
+            "merge_prev": false
+        },
+        {
+            "type": "title",
+            "bbox": [
+                0.067,
+                0.78,
+                0.49,
+                0.794
+            ],
+            "angle": 0,
+            "content": "Rating distribution for long-term investment opportunities"
+        },
+        {
+            "type": "table_caption",
+            "bbox": [
+                0.067,
+                0.799,
+                0.768,
+                0.812
+            ],
+            "angle": 0,
+            "content": "As of 31 March 2026, the distribution of all independent ratings published by HSBC is as follows:"
+        },
+        {
+            "type": "table",
+            "bbox": [
+                0.068,
+                0.813,
+                0.905,
+                0.867
+            ],
+            "angle": 0,
+            "content": "<table><tr><td>Buy</td><td>59%</td><td>(12% of these provided with Investment Banking Services in the past 12 months)</td></tr><tr><td>Hold</td><td>36%</td><td>(12% of these provided with Investment Banking Services in the past 12 months)</td></tr><tr><td>Sell</td><td>6%</td><td>(6% of these provided with Investment Banking Services in the past 12 months)</td></tr></table>"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.066,
+                0.873,
+                0.932,
+                0.902
+            ],
+            "angle": 0,
+            "content": "For the purposes of the distribution above the following mapping structure is used during the transition from the previous to current rating models: under our previous model, Overweight = Buy, Neutral = Hold and Underweight = Sell; under our current model Buy",
+            "merge_prev": false
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.07,
+                0.965,
+                0.086,
+                0.974
+            ],
+            "angle": 0,
+            "content": "10"
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.073,
+                0.03,
+                0.194,
+                0.055
+            ],
+            "angle": 0,
+            "content": "HSBC"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.719,
+                0.029,
+                0.93,
+                0.042
+            ],
+            "angle": 0,
+            "content": "Multi-Asset Strategy • Global"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.843,
+                0.042,
+                0.93,
+                0.054
+            ],
+            "angle": 0,
+            "content": "4 June 2026"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.066,
+                0.136,
+                0.93,
+                0.166
+            ],
+            "angle": 0,
+            "content": "= Buy, Hold = Hold and Reduce = Sell. For rating definitions under both models, please see “Stock ratings and basis for financial analysis” above.",
+            "merge_prev": false
+        },
+        {
+            "type": "title",
+            "bbox": [
+                0.067,
+                0.174,
+                0.373,
+                0.188
+            ],
+            "angle": 0,
+            "content": "Fixed income: Basis for financial analysis"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.066,
+                0.189,
+                0.931,
+                0.234
+            ],
+            "angle": 0,
+            "content": "This report is designed for, and should only be utilised by, institutional investors. Furthermore, HSBC believes an investor's decision to make an investment should depend on individual circumstances such as the investor's existing holdings and other considerations.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.066,
+                0.243,
+                0.932,
+                0.382
+            ],
+            "angle": 0,
+            "content": "HSBC believes that investors utilise various disciplines and investment horizons when making investment decisions, which depend largely on individual circumstances such as the investor's existing holdings, risk tolerance and other considerations. Given these differences, HSBC has two principal aims in its fixed income research: 1) to identify long-term investment opportunities based on particular themes or ideas that may affect the future earnings or cash flows of companies in corporate credit and based on country-specific ideas or themes that may affect the performance of these bonds in the case of covered bonds, in both cases on a six-month time horizon; 2) to identify trade ideas on a time horizon of up to four months, relating to specific instruments, which are predominantly derived from relative value considerations or driven by events and which, in the case of credit research, may differ from our long-term opinion on an issuer. Buy or Sell refer to a trade call to buy or sell that given instrument; HSBC has assigned a fundamental recommendation structure, as described below, only for its longer-term investment opportunities.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.066,
+                0.389,
+                0.932,
+                0.48
+            ],
+            "angle": 0,
+            "content": "HSBC believes an investor's decision to buy or sell a bond should depend on individual circumstances such as the investor's existing holdings and other considerations. Different securities firms use a variety of terms as well as different systems to describe their recommendations. Investors should carefully read the definitions of the recommendations used in each research report. In addition, because research reports contain more complete information concerning the analysts' views, investors should carefully read the entire research report and should not infer its contents from the recommendation. In any case, recommendations should not be used or relied on in isolation as investment advice.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.066,
+                0.489,
+                0.931,
+                0.518
+            ],
+            "angle": 0,
+            "content": "HSBC is not and does not hold itself out to be a Credit Rating Agency as defined under the Hong Kong Securities and Futures Ordinance.",
+            "merge_prev": false
+        },
+        {
+            "type": "title",
+            "bbox": [
+                0.067,
+                0.527,
+                0.585,
+                0.54
+            ],
+            "angle": 0,
+            "content": "Definitions for fundamental credit and covered bond recommendations"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.066,
+                0.542,
+                0.931,
+                0.587
+            ],
+            "angle": 0,
+            "content": "Overweight: For corporate credit, the issuer's fundamental credit profile is expected to improve within the next six months. For covered bonds, the bonds issued in this country are expected to outperform those of the other countries in our coverage over the next six months.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.066,
+                0.595,
+                0.931,
+                0.64
+            ],
+            "angle": 0,
+            "content": "Neutral: For corporate credit, the issuer's fundamental credit profile is expected to remain stable for up to six months. For covered bonds, the bonds issued in this country are expected to perform in line with those of the other countries in our coverage over the next six months.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.066,
+                0.649,
+                0.931,
+                0.694
+            ],
+            "angle": 0,
+            "content": "Underweight: For corporate credit, the issuer's fundamental credit profile is expected to deteriorate within the next six months. For covered bonds, the bonds issued in this country are expected to underperform those of other countries in our coverage over the next six months.",
+            "merge_prev": false
+        },
+        {
+            "type": "title",
+            "bbox": [
+                0.067,
+                0.703,
+                0.345,
+                0.716
+            ],
+            "angle": 0,
+            "content": "Definitions for trades (Rates & Credit)"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.066,
+                0.718,
+                0.931,
+                0.764
+            ],
+            "angle": 0,
+            "content": "Buy and Sell refer to a trade call to buy or sell a bond, option on an interest rate swap (\"swaption\"), interest rate cap or floor, inflation cap or floor, or Total Return Swap (\"TRS\"). The buyer/seller of a TRS receives/pays the total return of the underlying instrument or index at the end of the period and pays/receives the funding leg.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.066,
+                0.771,
+                0.931,
+                0.802
+            ],
+            "angle": 0,
+            "content": "Buy protection and Sell protection refer to a credit default swap (CDS) or a credit default swap index (CDS index): the protection buyer/seller is effectively selling/buying the credit risk of a single reference entity (CDS) or multiple reference entities (CDS Index).",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.066,
+                0.809,
+                0.931,
+                0.855
+            ],
+            "angle": 0,
+            "content": "Pay and receive refer to a trade call to pay or receive the fixed leg of an interest rate swap (IRS), a non-deliverable IRS, the first-named leg of a basis swap, the realised inflation leg of an inflation swap, or a forward rate agreement (FRA). An investor that executes a pay or receive trade is said to be \"paid\" or \"received.\"",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.066,
+                0.863,
+                0.931,
+                0.908
+            ],
+            "angle": 0,
+            "content": "Payer and receiver refer to inflation caps or floors and to swaptions: a payer is an option giving the right but not the obligation to enter a paid position in an interest rate or inflation swap, and a receiver is an option giving the right but not the obligation to enter a received position in an interest rate or inflation swap.",
+            "merge_prev": false
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.915,
+                0.965,
+                0.929,
+                0.974
+            ],
+            "angle": 0,
+            "content": "11"
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.073,
+                0.03,
+                0.137,
+                0.055
+            ],
+            "angle": 0,
+            "content": "[Non-Text]"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.139,
+                0.036,
+                0.191,
+                0.049
+            ],
+            "angle": 0,
+            "content": "HSBC"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.719,
+                0.029,
+                0.93,
+                0.041
+            ],
+            "angle": 0,
+            "content": "Multi-Asset Strategy • Global"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.843,
+                0.042,
+                0.93,
+                0.053
+            ],
+            "angle": 0,
+            "content": "4 June 2026"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.065,
+                0.136,
+                0.932,
+                0.181
+            ],
+            "angle": 0,
+            "content": "ASW (also asset-swap, Buy on asset swap, Buy on an asset-swapped basis): Buy a bond packaged with a swap that is tailored to eliminate the bond's interest rate risk, effectively transforming the bond to a floating rate instrument whilst preserving the credit exposure to the bond issuer.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.065,
+                0.189,
+                0.932,
+                0.234
+            ],
+            "angle": 0,
+            "content": "RASW (also reverse asset-swap, Sell on asset swap, Sell on an asset swapped basis): Sell a bond packaged with a swap that is tailored to eliminate the bond's interest rate risk, effectively transforming the bond to a floating rate instrument whilst preserving the credit exposure to the bond issuer.",
+            "merge_prev": false
+        },
+        {
+            "type": "title",
+            "bbox": [
+                0.067,
+                0.243,
+                0.585,
+                0.257
+            ],
+            "angle": 0,
+            "content": "Distribution of fundamental credit and covered bond recommendations"
+        },
+        {
+            "type": "title",
+            "bbox": [
+                0.066,
+                0.262,
+                0.926,
+                0.289
+            ],
+            "angle": 0,
+            "content": "As of 31 March 2026, the distribution of all independent fundamental credit recommendations published by HSBC is as follows:"
+        },
+        {
+            "type": "table",
+            "bbox": [
+                0.07,
+                0.291,
+                0.895,
+                0.345
+            ],
+            "angle": 0,
+            "content": "<table><tr><td>Overweight</td><td>32%</td><td>(0% of these provided with Investment Banking Services in the past 12 months)</td></tr><tr><td>Neutral</td><td>41%</td><td>(0% of these provided with Investment Banking Services in the past 12 months)</td></tr><tr><td>Underweight</td><td>27%</td><td>(0% of these provided with Investment Banking Services in the past 12 months)</td></tr></table>"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.066,
+                0.351,
+                0.931,
+                0.396
+            ],
+            "angle": 0,
+            "content": "For the purposes of the distribution above the following mapping structure is used: Overweight = Buy, Neutral = Hold and Underweight = Sell. For rating definitions under both models, please see \"Definitions for fundamental credit and covered bond recommendations\" above.",
+            "merge_prev": false
+        },
+        {
+            "type": "title",
+            "bbox": [
+                0.067,
+                0.404,
+                0.226,
+                0.417
+            ],
+            "angle": 0,
+            "content": "Distribution of trades"
+        },
+        {
+            "type": "title",
+            "bbox": [
+                0.067,
+                0.423,
+                0.669,
+                0.437
+            ],
+            "angle": 0,
+            "content": "As of 31 March 2026, the distribution of all trades published by HSBC is as follows:"
+        },
+        {
+            "type": "table",
+            "bbox": [
+                0.068,
+                0.438,
+                0.905,
+                0.472
+            ],
+            "angle": 0,
+            "content": "<table><tr><td>Buy</td><td>50%</td><td>(62% of these provided with Investment Banking Services in the past 12 months)</td></tr><tr><td>Sell</td><td>50%</td><td>(46% of these provided with Investment Banking Services in the past 12 months)</td></tr></table>"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.066,
+                0.478,
+                0.932,
+                0.539
+            ],
+            "angle": 0,
+            "content": "For the purposes of the distribution above the following mapping structure is used: Buy/Sell protection/Receive/Buy Receiver/Sell Payer = Buy; and Sell/Buy protection/Pay/Buy Payer/Sell Receiver = Sell. ASW is counted as a buy of the bond and a paid swap, and RASW as a sell of the bond and a received swap. For rating definitions under both models, please see \"Definitions for trades (Rates and Credit)\" above.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.066,
+                0.547,
+                0.931,
+                0.577
+            ],
+            "angle": 0,
+            "content": "For the distribution of non-independent ratings published by HSBC, please see the disclosure page available at http://www.hsbcnet.com/gbm/financial-regulation/investment-recommendations-disclosures.",
+            "merge_prev": false
+        },
+        {
+            "type": "title",
+            "bbox": [
+                0.067,
+                0.586,
+                0.548,
+                0.599
+            ],
+            "angle": 0,
+            "content": "Recommendation changes for long-term investment opportunities"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.066,
+                0.601,
+                0.931,
+                0.646
+            ],
+            "angle": 0,
+            "content": "To view a list of all the independent fundamental ratings/recommendations disseminated by HSBC during the preceding 12-month period, and the location where we publish our quarterly distribution of non-fundamental recommendations (applicable to Fixed Income and Currencies research only), please use the following links to access the disclosure page:",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.067,
+                0.654,
+                0.61,
+                0.668
+            ],
+            "angle": 0,
+            "content": "Clients of HSBC Private Bank: www.research.privatebank.hsbc.com/Disclosures",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.067,
+                0.676,
+                0.446,
+                0.69
+            ],
+            "angle": 0,
+            "content": "All other clients: www.research.hsbc.com/A/Disclosures",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.066,
+                0.699,
+                0.932,
+                0.744
+            ],
+            "angle": 0,
+            "content": "HSBC and its affiliates will from time to time sell to and buy from customers the securities/instruments, both equity and debt (including derivatives) of companies covered in HSBC on a principal or agency basis or act as a market maker or liquidity provider in the securities/instruments mentioned in this report.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.066,
+                0.752,
+                0.931,
+                0.782
+            ],
+            "angle": 0,
+            "content": "Analysts, economists, and strategists are paid in part by reference to the profitability of HSBC which includes investment banking, sales & trading, and principal trading revenues.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.067,
+                0.79,
+                0.774,
+                0.805
+            ],
+            "angle": 0,
+            "content": "Whether, or in what time frame, an update of this analysis will be published is not determined in advance.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.066,
+                0.813,
+                0.931,
+                0.859
+            ],
+            "angle": 0,
+            "content": "Non-U.S. analysts may not be associated persons of HSBC Securities (USA) Inc, and therefore may not be subject to FINRA Rule 2241 or FINRA Rule 2242 restrictions on communications with the subject company, public appearances and trading securities held by the analysts.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.066,
+                0.866,
+                0.932,
+                0.927
+            ],
+            "angle": 0,
+            "content": "Economic sanctions laws imposed by certain jurisdictions such as the US, the EU, the UK, and others, may prohibit persons subject to those laws from making certain types of investments, including by transacting or dealing in securities of particular issuers, sectors, or regions. This report does not constitute advice in relation to any such laws and should not be construed as an inducement to transact in securities in breach of such laws.",
+            "merge_prev": false
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.07,
+                0.965,
+                0.086,
+                0.974
+            ],
+            "angle": 0,
+            "content": "12"
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.073,
+                0.03,
+                0.137,
+                0.055
+            ],
+            "angle": 0,
+            "content": "[Non-Text]"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.139,
+                0.036,
+                0.191,
+                0.049
+            ],
+            "angle": 0,
+            "content": "HSBC"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.719,
+                0.029,
+                0.93,
+                0.042
+            ],
+            "angle": 0,
+            "content": "Multi-Asset Strategy • Global"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.843,
+                0.042,
+                0.93,
+                0.054
+            ],
+            "angle": 0,
+            "content": "4 June 2026"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.066,
+                0.136,
+                0.932,
+                0.198
+            ],
+            "angle": 0,
+            "content": "For disclosures in respect of any company mentioned in this report, please see the most recently published report on that company available at www.hsbcnet.com/research. HSBC Private Bank clients should contact their Relationship Manager for queries regarding other research reports. In order to find out more about the proprietary models used to produce this report, please contact the authoring analyst.",
+            "merge_prev": false
+        },
+        {
+            "type": "title",
+            "bbox": [
+                0.067,
+                0.205,
+                0.236,
+                0.217
+            ],
+            "angle": 0,
+            "content": "Additional disclosures"
+        },
+        {
+            "type": "list",
+            "bbox": [
+                0.068,
+                0.221,
+                0.926,
+                0.402
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.07,
+                0.222,
+                0.375,
+                0.235
+            ],
+            "angle": 0,
+            "content": "1 This report is dated as at 04 June 2026.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.069,
+                0.239,
+                0.92,
+                0.266
+            ],
+            "angle": 0,
+            "content": "2 All market data included in this report are dated as at close 02 June 2026, unless a different date and/or a specific time of day is indicated in the report.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.069,
+                0.27,
+                0.924,
+                0.342
+            ],
+            "angle": 0,
+            "content": "3 HSBC has procedures in place to identify and manage any potential conflicts of interest that arise in connection with its Research business. HSBC's analysts and its other staff who are involved in the preparation and dissemination of Research operate and have a management reporting line independent of HSBC's Investment Banking business. Information Barrier procedures are in place between the Investment Banking, Principal Trading, and Research businesses to ensure that any confidential and/or price sensitive information is handled in an appropriate manner.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.069,
+                0.345,
+                0.915,
+                0.402
+            ],
+            "angle": 0,
+            "content": "4 You are not permitted to use, for reference, any data in this document for the purpose of (i) determining the interest payable, or other sums due, under loan agreements or under other financial contracts or instruments, (ii) determining the price at which a financial instrument may be bought or sold or traded or redeemed, or the value of a financial instrument, and/or (iii) measuring the performance of a financial instrument or of an investment fund.",
+            "merge_prev": false
+        },
+        {
+            "type": "title",
+            "bbox": [
+                0.067,
+                0.41,
+                0.343,
+                0.423
+            ],
+            "angle": 0,
+            "content": "Production & distribution disclosures"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.067,
+                0.425,
+                0.658,
+                0.439
+            ],
+            "angle": 0,
+            "content": "6. This report was produced and signed off by the author on 03 Jun 2026 19:33 GMT.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.067,
+                0.448,
+                0.758,
+                0.477
+            ],
+            "angle": 0,
+            "content": "7. In order to see when this report was first disseminated please see the disclosure page available at https://www.research.hsbc.com/R/34/6vKd9Rf",
+            "merge_prev": false
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.915,
+                0.964,
+                0.93,
+                0.974
+            ],
+            "angle": 0,
+            "content": "13"
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.073,
+                0.03,
+                0.194,
+                0.055
+            ],
+            "angle": 0,
+            "content": "HSBC"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.719,
+                0.029,
+                0.93,
+                0.042
+            ],
+            "angle": 0,
+            "content": "Multi-Asset Strategy • Global"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.843,
+                0.042,
+                0.93,
+                0.054
+            ],
+            "angle": 0,
+            "content": "4 June 2026"
+        },
+        {
+            "type": "title",
+            "bbox": [
+                0.07,
+                0.139,
+                0.305,
+                0.167
+            ],
+            "angle": 0,
+            "content": "Disclaimer"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.07,
+                0.171,
+                0.231,
+                0.182
+            ],
+            "angle": 0,
+            "content": "Legal entities as at 13 May 2026:",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.069,
+                0.183,
+                0.674,
+                0.257
+            ],
+            "angle": 0,
+            "content": "HSBC Bank plc; HSBC Continental Europe; HSBC Continental Europe SA, Germany; HSBC Bank Middle East Limited, DIFC; HSBC Bank Middle East Limited, Dubai branch; HSBC Yatirim Menkul Degerler AS, Istanbul; The Hongkong and Shanghai Banking Corporation Limited, Hong Kong; The Hongkong and Shanghai Banking Corporation Limited, Singapore Branch; The Hongkong and Shanghai Banking Corporation Limited, Seoul Securities Branch; The Hongkong and Shanghai Banking Corporation Limited, Seoul Branch; HSBC Qianhai Securities Limited; HSBC Securities (Taiwan) Corporation Limited; HSBC Securities and Capital Markets (India) Private Limited, Mumbai; HSBC Bank Australia Limited; HSBC Securities (USA) Inc., New York; HSBC México, SA, Institución de Banca Múltiple, Grupo Financiero HSBC; Banco HSBC SA",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.683,
+                0.173,
+                0.762,
+                0.183
+            ],
+            "angle": 0,
+            "content": "Issuer of report",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.684,
+                0.183,
+                0.762,
+                0.193
+            ],
+            "angle": 0,
+            "content": "HSBC Bank plc",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.684,
+                0.194,
+                0.806,
+                0.203
+            ],
+            "angle": 0,
+            "content": "8 Canada Square, London",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.684,
+                0.204,
+                0.806,
+                0.214
+            ],
+            "angle": 0,
+            "content": "E14 5HQ, United Kingdom",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.684,
+                0.215,
+                0.822,
+                0.224
+            ],
+            "angle": 0,
+            "content": "Telephone: +44 20 7991 8888",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.684,
+                0.226,
+                0.791,
+                0.235
+            ],
+            "angle": 0,
+            "content": "Fax: +44 20 7992 4880",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.684,
+                0.236,
+                0.838,
+                0.245
+            ],
+            "angle": 0,
+            "content": "Website: www.research.hsbc.com",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.068,
+                0.26,
+                0.93,
+                0.356
+            ],
+            "angle": 0,
+            "content": "In the UK, this publication is distributed by HSBC Bank plc for the information of its Clients (as defined in the Rules of FCA) and those of its affiliates only. Nothing herein excludes or restricts any duty or liability to a customer which HSBC Bank plc has under the Financial Services and Markets Act 2000 or under the Rules of FCA and PRA. A recipient who chooses to deal with any person who is not a representative of HSBC Bank plc in the UK will not enjoy the protections afforded by the UK regulatory regime. HSBC Bank plc is regulated by the Financial Conduct Authority and the Prudential Regulation Authority. If this research is received by a customer of an affiliate of HSBC, its provision to the recipient is subject to the terms of business in place between the recipient and such affiliate. In Australia, this publication has been distributed by The Hongkong and Shanghai Banking Corporation Limited (ABN 65 117 925 970, AFSL 301737) for the general information of its \"wholesale\" customers (as defined in the Corporations Act 2001). Where distributed to retail customers, this research is distributed by HSBC Bank Australia Limited (ABN 48 006 434 162, AFSL No. 232595). These respective entities make no representations that the products or services mentioned in this document are available to persons in Australia or are necessarily suitable for any particular person or appropriate in accordance with local law. No consideration has been given to the particular investment objectives, financial situation or particular needs of any recipient.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.069,
+                0.356,
+                0.888,
+                0.366
+            ],
+            "angle": 0,
+            "content": "In the European Economic Area, this publication has been distributed by HSBC Continental Europe or by such other HSBC affiliate from which the recipient receives relevant services.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.068,
+                0.367,
+                0.929,
+                0.474
+            ],
+            "angle": 0,
+            "content": "In Japan, this publication has been distributed by HSBC Securities (Japan) Co., Ltd.. It may not be further distributed in whole or in part for any purpose. In Hong Kong, this document has been distributed by The Hongkong and Shanghai Banking Corporation Limited in the conduct of its Hong Kong regulated business for the information of its institutional and professional customers; it is not intended for and should not be distributed to retail customers in Hong Kong, unless permitted otherwise. Each of the companies listed above (the \"Participating Companies\") is a member of the HSBC Group of Companies, any member of which may trade for its own account as Principal, may have underwritten an issue within the last 36 months or, together with its Directors, officers and employees, may have a long or short position in securities or instruments or in any related instrument mentioned in the document. Brokerage or fees may be earned by the Participating Companies or persons associated with them in respect of any business transacted by them in all or any of the securities or instruments referred to in this document. In Korea, this publication is distributed by either The Hongkong and Shanghai Banking Corporation Limited, Seoul Securities Branch (\"HBAP SLS\") or The Hongkong and Shanghai Banking Corporation Limited, Seoul Branch (\"HBAP SEL\") for the general information of professional investors specified in Article 9 of the Financial Investment Services and Capital Markets Act (\"FSCMA\"). This publication is not a prospectus as defined in the FSCMA. It may not be further distributed in whole or in part for any purpose. Both HBAP SLS and HBAP SEL are regulated by the Financial Services Commission and the Financial Supervisory Service of Korea.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.068,
+                0.474,
+                0.929,
+                0.537
+            ],
+            "angle": 0,
+            "content": "The information in this document is derived from sources the Participating Companies believe to be reliable but which have not been independently verified. The Participating Companies make no guarantee of its accuracy and completeness and are not responsible for errors of transmission of factual or analytical data, nor shall the Participating Companies be liable for damages arising out of any person's reliance upon this information. All charts and graphs are from publicly available sources or proprietary data. The opinions in this document constitute the present judgement of the Participating Companies, which is subject to change without notice. From time to time research analysts conduct site visits of covered issuers. HSBC policies prohibit research analysts from accepting payment or reimbursement for travel expenses from the issuer for such visits. This document is neither an offer to sell, purchase or subscribe for any investment nor a solicitation of such an offer.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.068,
+                0.538,
+                0.93,
+                0.687
+            ],
+            "angle": 0,
+            "content": "HSBC Securities (USA) Inc. accepts responsibility for the content of this research report prepared by its non-US foreign affiliate. The information contained herein is under no circumstances to be construed as investment advice and is not tailored to the needs of the recipient. All US persons receiving and/or accessing this report and intending to effect transactions in any security discussed herein should do so with HSBC Securities (USA) Inc. in the United States and not with its non-US foreign affiliate, the issuer of this report. In Singapore, this publication is distributed by The Hongkong and Shanghai Banking Corporation Limited, Singapore Branch for the general information of institutional investors or other persons specified in Sections 274 and 304 of the Securities and Futures Act 2001 of Singapore (\"SFA\") and accredited investors and other persons in accordance with the conditions specified in Sections 275 and 305 of the SFA. Only Economics or Currencies reports are intended for distribution to a person who is not an Accredited Investor, Expert Investor or Institutional Investor as defined in SFA. The Hongkong and Shanghai Banking Corporation Limited, Singapore Branch accepts legal responsibility for the contents of reports. This publication is not a prospectus as defined in the SFA. It may not be further distributed in whole or in part for any purpose. The Hongkong and Shanghai Banking Corporation Limited Singapore Branch is regulated by the Monetary Authority of Singapore. Recipients in Singapore should contact a \"Hongkong and Shanghai Banking Corporation Limited, Singapore Branch\" representative in respect of any matters arising from, or in connection with this report. Please refer to The Hongkong and Shanghai Banking Corporation Limited Singapore Branch's website at www.business.hsbc.com.sg for contact details. HSBC México, SA, Institución de Banca Múltiple, Grupo Financiero HSBC is authorized and regulated by Secretaría de Hacienda y Crédito Público and Comisión Nacional Bancaria y de Valores (CNBV). In Brazil, this document has been distributed by Banco HSBC SA (\"HSBC Brazil\"), and/or its affiliates. As required by Resolution No. 20/2021 of the Securities and Exchange Commission of Brazil (Comissão de Valores Mobiliários), potential conflicts of interest concerning (i) HSBC Brazil and/or its affiliates; and (ii) the analyst(s) responsible for authoring this report are stated on the chart above labelled \"HSBC & Analyst Disclosures\".",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.068,
+                0.687,
+                0.928,
+                0.72
+            ],
+            "angle": 0,
+            "content": "The document is intended to be distributed in its entirety. Unless governing law permits otherwise, you must contact a HSBC Group member in your home jurisdiction if you wish to use HSBC Group services in effecting a transaction in any investment mentioned in this document. HSBC Bank plc is registered in England No 14259, is authorised by the Prudential Regulation Authority and regulated by the Financial Conduct Authority and the Prudential Regulation Authority and is a member of the London Stock Exchange.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.068,
+                0.72,
+                0.929,
+                0.784
+            ],
+            "angle": 0,
+            "content": "If you are a customer of HSBC International Wealth & Premier Banking (\"IWPB\"), including HSBC Private Bank, you are eligible to receive this publication only if: (i) you have been approved to receive relevant research publications by an applicable HSBC legal entity; (ii) you have agreed to the applicable HSBC entity's terms and conditions and/or customer declaration for accessing research; and (iii) you have agreed to the terms and conditions of any other internet banking, online banking, mobile banking and/or investment services offered by that HSBC entity, through which you will access research publications (collectively with (ii), the \"Terms\"). If you do not meet the above eligibility requirements, please disregard this publication and, if you are a IWPB customer, please notify your Relationship Manager or call the relevant customer hotline. Distribution of this publication is the sole responsibility of the HSBC entity with whom you have agreed the Terms. Receipt of research publications is strictly subject to the Terms and any other conditions or disclaimers applicable to the provision of the publications that may be advised by IWPB.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.068,
+                0.784,
+                0.928,
+                0.805
+            ],
+            "angle": 0,
+            "content": "© Copyright 2026, HSBC Bank plc, ALL RIGHTS RESERVED. No part of this publication may be reproduced, stored in a retrieval system, or transmitted, on any form or by any means, electronic, mechanical, photocopying, recording, or otherwise, without the prior written permission of HSBC Bank plc.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.858,
+                0.821,
+                0.93,
+                0.834
+            ],
+            "angle": 0,
+            "content": "[1280588]",
+            "merge_prev": false
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.07,
+                0.965,
+                0.086,
+                0.974
+            ],
+            "angle": 0,
+            "content": "14"
+        }
+    ]
+]
