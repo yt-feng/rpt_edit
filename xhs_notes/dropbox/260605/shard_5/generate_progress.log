@@ -1,0 +1,15 @@
+Found 43 total PDFs; shard 5/40 has 5 PDFs, skips 0 already converted, will process 5 PDFs with batch_size=5.
+Running batch 1: 5 PDFs
+Found 5 PDFs.
+Uploading PDF to MinerU: /tmp/pdf_batch_001_z_01vffl/pdfs/0001-26-Nomura-USD CNY fix model-Projection- 6.7698-260605.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_z_01vffl/pdfs/0002-27-HSBC-The Flying Dutchman-Asia-s AI 3 vs Mag 7-260603.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_z_01vffl/pdfs/0003-28-Bernstein-Bernstein Energy - Power- Heat pumps-an underappreciated lever of power demand growth--260605.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_z_01vffl/pdfs/0004-29-CITI-PRC Solar Sector-PRC Solar Product Prices Staying at Low Level amid Ample Supply and Soft Demand- Prefer Sungrow - Deye-260603.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_z_01vffl/pdfs/0005-30-Goldman Sachs-Americas Clean Energy- Nuclear- Read-across from SOLS nuclear webinar-260605.pdf
+MinerU batch_id=62b07a81-0502-4ae3-8557-a7ca452b435a
+MinerU states: done, running, running, running, pending
+MinerU states: done, done, running, running, done
+MinerU states: done, done, done, running, done
+MinerU states: done, done, done, done, done
+Done. Results written to /home/runner/work/rpt_edit/rpt_edit/xhs_notes/dropbox/260605/shard_5; successful_reports=5; mineru_timed_out=False
+All batches completed successfully. Generated 5 report directories.
