@@ -1,0 +1,4560 @@
+[
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Hidden worries "
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                60,
+                112,
+                391,
+                144
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "What does the May global PMI data tell us? "
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                58,
+                179,
+                512,
+                199
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "text_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "- The global composite PMI remained unchanged in May, with both manufacturing and service sector expansion... "
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "- ...but longer delivery times and frontloading continue to inflate the headline manufacturing index... "
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "- ...as businesses expect increased price pressures and supply chain problems to persist for now "
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                43,
+                232,
+                608,
+                358
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The global composite PMI in May recorded another month of expansion, at 51.8 – the same as in April. Both manufacturing and services stayed in expansionary territory. Still, the underlying picture isn't especially encouraging. "
+                    }
+                ]
+            },
+            "bbox": [
+                42,
+                376,
+                620,
+                422
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The global manufacturing PMI came in at 52.6 in May, unchanged from April. The headline is still propped up by longer suppliers' delivery times and frontloading. Firms expect Middle East tensions to disrupt supply chains, pushing prices higher. In the US, both the S&P and ISM manufacturing PMIs showed solid gains in production and rising new orders, largely tied to inventory buildups to hedge against potential shipment delays and cost spikes in coming months. The eurozone, by contrast, is already showing signs of slowing as cost pressures weigh on demand. "
+                    }
+                ]
+            },
+            "bbox": [
+                42,
+                429,
+                608,
+                536
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The services sector tells a similar story. Higher costs appear to be dampening demand, particularly in the eurozone and the UK. In the US, new orders rose, but firms reduced employment on both measures. Mainland China and India saw activity accelerate on stronger new orders, though price pressures are still a concern. "
+                    }
+                ]
+            },
+            "bbox": [
+                42,
+                545,
+                613,
+                606
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "We don't think the current PMI strength is likely to last, given the challenges of higher inflation. If cost pressures worsen further, demand destruction could follow. In this environment, it's worth leaning more on components like employment, output, and new orders rather than the headline indices. "
+                    }
+                ]
+            },
+            "bbox": [
+                42,
+                614,
+                616,
+                674
+            ]
+        },
+        {
+            "type": "table",
+            "content": {
+                "image_source": {
+                    "path": "images/15d7e0c2e493ff357ba5cd785672b1429a5a673e98f9715f7323a9bd5a8ad425.jpg"
+                },
+                "table_caption": [
+                    {
+                        "type": "text",
+                        "content": "1. Snapshot of manufacturing and services PMIs "
+                    }
+                ],
+                "table_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: S&P Global, HSBC. *Refers to RatingDog Mainland China PMI. Due to a later-than-usual release date, May readings for Greece, Indonesia, Ireland, Malaysia, Pakistan, Romania, and Thailand were not available to include in the global calculations. "
+                    }
+                ],
+                "html": "<table><tr><td rowspan=\"2\"></td><td colspan=\"3\">Manufacturing PMIs</td><td colspan=\"3\">Services PMIs</td></tr><tr><td>Mar 26</td><td>Apr 26</td><td>May 26</td><td>Mar 26</td><td>Apr 26</td><td>May 26</td></tr><tr><td>World</td><td>51.3</td><td>52.6</td><td>52.6</td><td>50.8</td><td>51.2</td><td>51.3</td></tr><tr><td>US</td><td>52.3</td><td>54.5</td><td>55.1</td><td>49.8</td><td>51.0</td><td>50.7</td></tr><tr><td>US ISM</td><td>52.7</td><td>52.7</td><td>54.0</td><td>54.0</td><td>53.6</td><td>54.5</td></tr><tr><td>Mainland China*</td><td>50.8</td><td>52.2</td><td>51.8</td><td>52.1</td><td>52.6</td><td>54.4</td></tr><tr><td>Mainland China NBS</td><td>50.4</td><td>50.3</td><td>50.0</td><td>50.1</td><td>49.4</td><td>50.1</td></tr><tr><td>Eurozone</td><td>51.6</td><td>52.2</td><td>51.6</td><td>50.2</td><td>47.6</td><td>47.7</td></tr><tr><td>Japan</td><td>51.6</td><td>55.1</td><td>54.5</td><td>53.4</td><td>51.0</td><td>50.0</td></tr><tr><td>UK</td><td>51.0</td><td>53.7</td><td>53.9</td><td>50.5</td><td>52.7</td><td>49.3</td></tr><tr><td>India</td><td>53.9</td><td>54.7</td><td>55.0</td><td>57.5</td><td>58.8</td><td>59.8</td></tr><tr><td>Brazil</td><td>49.0</td><td>52.6</td><td>49.1</td><td>50.1</td><td>52.3</td><td>50.4</td></tr><tr><td rowspan=\"2\">Heatmap Key</td><td colspan=\"3\">Below 50 and rising</td><td colspan=\"3\">Above 50 and rising</td></tr><tr><td colspan=\"3\">Below 50 and falling</td><td colspan=\"3\">Above 50 and falling</td></tr></table>",
+                "table_type": "complex_table",
+                "table_nest_level": 1
+            },
+            "bbox": [
+                53,
+                704,
+                616,
+                878
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Economics Global "
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                655,
+                114,
+                776,
+                147
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Maitreyi Das "
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                642,
+                242,
+                715,
+                252
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Global Economist "
+                    }
+                ]
+            },
+            "bbox": [
+                642,
+                252,
+                746,
+                261
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "HSBC Securities and Capital Markets (India) Private Limited "
+                    }
+                ]
+            },
+            "bbox": [
+                642,
+                262,
+                917,
+                280
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "maitreyi.das@hsbc.co.in "
+                    }
+                ]
+            },
+            "bbox": [
+                642,
+                281,
+                773,
+                290
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "+91 80 6737 3155 "
+                    }
+                ]
+            },
+            "bbox": [
+                643,
+                290,
+                741,
+                300
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Bethan Ellis "
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                642,
+                307,
+                712,
+                317
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Global Economist "
+                    }
+                ]
+            },
+            "bbox": [
+                642,
+                318,
+                746,
+                326
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "HSBC Bank plc "
+                    }
+                ]
+            },
+            "bbox": [
+                642,
+                327,
+                727,
+                336
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "bethan.ellis@hsbc.com "
+                    }
+                ]
+            },
+            "bbox": [
+                642,
+                337,
+                766,
+                346
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "+44 20 7991 6714 "
+                    }
+                ]
+            },
+            "bbox": [
+                643,
+                347,
+                741,
+                356
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Disclosures & Disclaimer "
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                43,
+                916,
+                250,
+                929
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "This report must be read with the disclosures and the analyst certifications in the Disclosure appendix, and with the Disclaimer, which forms part of it. "
+                    }
+                ]
+            },
+            "bbox": [
+                42,
+                931,
+                616,
+                960
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Issuer of report: HSBC Securities and Capital Markets (India) Private Limited "
+                    }
+                ]
+            },
+            "bbox": [
+                638,
+                915,
+                922,
+                938
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "View HSBC Global Investment Research at: "
+                    }
+                ]
+            },
+            "bbox": [
+                638,
+                948,
+                919,
+                961
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "https://www.research.hsbc.com "
+                    }
+                ]
+            },
+            "bbox": [
+                638,
+                964,
+                845,
+                976
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "[Non-Text] "
+                    }
+                ]
+            },
+            "bbox": [
+                45,
+                30,
+                122,
+                60
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "HSBC Global Investment Research "
+                    }
+                ]
+            },
+            "bbox": [
+                126,
+                36,
+                448,
+                54
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "4 June 2026 "
+                    }
+                ]
+            },
+            "bbox": [
+                868,
+                38,
+                957,
+                51
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Three key takeaways from this month's data "
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                280,
+                131,
+                709,
+                148
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "1. Intensifying supply shocks and price pressures are a global theme now "
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                280,
+                157,
+                793,
+                169
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The May PMI releases point to another month of “distorted” growth – headline resilience masking longer delivery times. Quantities of purchases accelerated for a second consecutive month, consistent with firms frontloading inputs amid heightened supply risks linked to the Middle East conflict. "
+                    }
+                ]
+            },
+            "bbox": [
+                280,
+                174,
+                905,
+                231
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Input costs intensified further in May, with global manufacturing input costs rising at the fastest pace since June 2022. The US recorded the sharpest increase in nearly four years, with respondents pointing to higher costs for petroleum products, steel, and freight. France, Germany, Japan, the UK, and the Philippines also saw faster input price inflation. Yet pass through remains incomplete in many economies, implying renewed margin squeeze rather than a clean shift higher in final-goods pricing. Consequently, orders are being placed to get ahead of increases in output prices. Beyond the Middle East conflict, US tariffs could be another factor in this frontloading. There has been some evidence of US importers bringing forward orders to get ahead of expected increases in tariffs later this year, particularly from Asia. "
+                    }
+                ]
+            },
+            "bbox": [
+                278,
+                239,
+                924,
+                371
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "In the US, both the S&P Global and ISM surveys noted comments pointing to accelerated stockpiling, helping to lift new orders and production to multiyear highs. Japan, India, Korea, and Vietnam also recorded sharp increases in purchasing volumes, reflecting concerns over both supply bottlenecks and rising prices. "
+                    }
+                ]
+            },
+            "bbox": [
+                280,
+                378,
+                902,
+                435
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "2. Regional divergence: US strength vs a fragile eurozone "
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                280,
+                444,
+                680,
+                457
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The US manufacturing upswing looks increasingly entrenched, with production rising to its highest level since April 2022. By contrast, the eurozone is losing momentum. The region's two largest economies – Germany and France – both slowed, with respondents noting that Middle East-related disruptions are weighing on demand via higher costs, and new orders remain muted. "
+                    }
+                ]
+            },
+            "bbox": [
+                280,
+                460,
+                924,
+                519
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The eurozone headline PMI remained above 50, but the composition warrants caution. Part of the support comes from longer delivery times, which can mechanically lift the index (the logic is that, in a normal situation, longer delivery times indicate higher demand). Removing delivery times from the index would place eurozone manufacturing in contraction. A similar distortion can be seen in the world index, but to a lesser extent. "
+                    }
+                ]
+            },
+            "bbox": [
+                280,
+                524,
+                917,
+                597
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Elsewhere, in Asia, manufacturing activity improved in economies including India, Korea, and Japan, while they expanded at a slower pace in mainland China. However, the positive impulse appears more risk- than demand-led: a meaningful share of the pickup is consistent with precautionary buying ahead of potential supply chain disruption. "
+                    }
+                ]
+            },
+            "bbox": [
+                280,
+                605,
+                927,
+                663
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "3. Services PMI: Higher costs have started to impact demand "
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                280,
+                669,
+                705,
+                682
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The global services sector continued to expand in May, with the global services PMI at 51.3. New orders expanded, with panellists citing clients frontloading purchases. But employment declined, signalling subdued underlying demand and higher cost pressures. Ultimately, higher price pressures in many economies will weigh on service activity. "
+                    }
+                ]
+            },
+            "bbox": [
+                280,
+                687,
+                917,
+                745
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The sector is also showing a familiar split. Asia and the US are holding up better than the eurozone and the UK. Stronger new orders – especially in India and mainland China – have driven a faster pace of activity. In the US, the ISM services accelerated, while the S&P index ticked down but stayed in expansionary territory, both supported by new orders. However, employment fell sharply, reflecting some pessimism in the data. In Europe, meanwhile, higher cost pressures have started to curb demand. In the UK, respondents pointed to subdued consumer spending in travel, tourism, and leisure. "
+                    }
+                ]
+            },
+            "bbox": [
+                280,
+                752,
+                910,
+                855
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "A swift de-escalation in the Middle East would ease supply chain constraints and take some heat out of prices, which would help demand. Nonetheless, the conflict has already run for more than three months, and even if the Strait of Hormuz were to reopen, normalisation in PMIs would take time. "
+                    }
+                ]
+            },
+            "bbox": [
+                280,
+                862,
+                924,
+                904
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "See over the page for all the key PMI charts from the latest releases. "
+                    }
+                ]
+            },
+            "bbox": [
+                282,
+                906,
+                721,
+                919
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "HSBC "
+                    }
+                ]
+            },
+            "bbox": [
+                72,
+                28,
+                193,
+                54
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Economics • Global "
+                    }
+                ]
+            },
+            "bbox": [
+                783,
+                27,
+                929,
+                39
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "4 June 2026 "
+                    }
+                ]
+            },
+            "bbox": [
+                842,
+                41,
+                929,
+                52
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "2 "
+                    }
+                ]
+            },
+            "bbox": [
+                68,
+                964,
+                78,
+                973
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Manufacturing PMIs "
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                210,
+                131,
+                406,
+                149
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/7e2da4805c6545fbe4c795061606381abff604db6ecb3128937e6046411a11d4.jpg"
+                },
+                "content": "| Year | New Orders | Employment | New Export Orders | Headline |\n|------|------------|------------|-------------------|----------|\n| 2022 | 51         | 50         | 50                | 54       |\n| 2023 | 48         | 50         | 47                | 49       |\n| 2024 | 51         | 50         | 50                | 51       |\n| 2025 | 50         | 50         | 49                | 51       |\n| 2026 | 53         | 50         | 50                | 53       |",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "2. The global manufacturing PMI came in at 52.6 in May, unchanged from April... "
+                    }
+                ],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: S&P Global, Macrobond. Note: due to a later-than-usual release date, May readings for Greece, Indonesia, Ireland, Malaysia, Pakistan, Romania, and Thailand were not available to include in the global calculations. "
+                    }
+                ]
+            },
+            "sub_type": "line",
+            "bbox": [
+                228,
+                187,
+                552,
+                375
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/fb757cb2f87a5f9fa1ce089e2b53daa8ddd85359580f494554b9d56415fb0998.jpg"
+                },
+                "content": "| Year | ISM Manufacturing | S&P Manufacturing |\n|------|-------------------|-------------------|\n| 2022 | 57.5              | 59.0              |\n| 2023 | 47.5              | 47.0              |\n| 2024 | 50.0              | 52.5              |\n| 2025 | 48.0              | 53.0              |\n| 2026 | 54.0              | 55.0              |",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "4. Manufacturing activity in the US expanded on both measures... "
+                    }
+                ],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: S&P Global, Macrobond. "
+                    }
+                ]
+            },
+            "sub_type": "line",
+            "bbox": [
+                228,
+                442,
+                552,
+                631
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/898f648fbd5296746872431fb83ffc44e5c866b4de19c73492a337c0a3a17f00.jpg"
+                },
+                "content": "| Year | Value (pts) |\n|------|-------------|\n| 2022 | -13         |\n| 2023 | -14         |\n| 2024 | -9          |\n| 2025 | -7          |\n| 2026 | -7          |",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "6. Some of the strength in new orders could reflect frontloading... "
+                    }
+                ],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: S&P Global, Macrobond. Note: The vertical line reflects the Liberation Day tariff disruption "
+                    }
+                ]
+            },
+            "sub_type": "line",
+            "bbox": [
+                213,
+                687,
+                568,
+                895
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/a3c365c9ba2c0d8abd8d43785b194bd96a5e6b6494225a9d6b9bf7ca81644674.jpg"
+                },
+                "content": "| Year | Suppliers' Delivery Times Index | Stocks of Purchases Index | Quantity of Purchases Index |\n|------|----------------------------------|---------------------------|-----------------------------|\n| 2022 | 38.0                             | 51.0                      | 53.0                        |\n| 2023 | 49.0                             | 50.0                      | 47.0                        |\n| 2024 | 49.5                             | 50.5                      | 49.0                        |\n| 2025 | 49.0                             | 50.0                      | 51.0                        |\n| 2026 | 45.0                             | 51.0                      | 53.0                        |",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "3. ...although partly due to stockpiling and longer delivery times "
+                    }
+                ],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: S&P Global, Macrobond. Note: due to a later-than-usual release date, May readings for Greece, Indonesia, Ireland, Malaysia, Pakistan, Romania, and Thailand were not available to include in the global calculations. "
+                    }
+                ]
+            },
+            "sub_type": "line",
+            "bbox": [
+                605,
+                185,
+                929,
+                377
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/4217adac767ac1f63be5af70ca60b18ecfefa4dbf268cfbea46984b8c152a215.jpg"
+                },
+                "content": "| Year | ISM prices | S&P input prices | S&P output prices |\n|------|------------|------------------|-------------------|\n| 2022 | 85         | 80               | 75                |\n| 2023 | 40         | 55               | 50                |\n| 2024 | 60         | 65               | 60                |\n| 2025 | 70         | 75               | 65                |\n| 2026 | 85         | 80               | 70                |",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "5. ...but price pressure remains elevated "
+                    }
+                ],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: S&P Global, Macrobond "
+                    }
+                ]
+            },
+            "sub_type": "line",
+            "bbox": [
+                605,
+                440,
+                929,
+                633
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/e022e9c0e17b85199aeb036e59c001a6c4786de631c4359ca471bbd325e15053.jpg"
+                },
+                "content": "| Year | India | UK  | US  | Mainland China |\n|------|-------|-----|-----|----------------|\n| 2022 | 57.5  | 55.0| 57.5| 50.0           |\n| 2023 | 62.5  | 45.0| 47.5| 50.0           |\n| 2024 | 60.0  | 47.5| 50.0| 50.0           |\n| 2025 | 62.5  | 45.0| 57.5| 50.0           |\n| 2026 | 57.5  | 52.5| 50.0| 50.0           |",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "7. ...as stocks of purchases increased, indicating inventory buildup "
+                    }
+                ],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: Rating Dog, S&P, Macrobond "
+                    }
+                ]
+            },
+            "sub_type": "line",
+            "bbox": [
+                605,
+                695,
+                929,
+                888
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "HSBC "
+                    }
+                ]
+            },
+            "bbox": [
+                72,
+                28,
+                193,
+                55
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Economics • Global "
+                    }
+                ]
+            },
+            "bbox": [
+                784,
+                28,
+                929,
+                40
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "4 June 2026 "
+                    }
+                ]
+            },
+            "bbox": [
+                842,
+                41,
+                929,
+                53
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "3 "
+                    }
+                ]
+            },
+            "bbox": [
+                919,
+                958,
+                929,
+                967
+            ]
+        }
+    ],
+    [
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/749dd1d4e9073c0d0fcecbcf61218b43c1eae6435f20e2f2e01552f9db02f4ad.jpg"
+                },
+                "content": "| Year | France | Germany |\n|------|--------|---------|\n| 2022 | 55.0   | 55.0    |\n| 2023 | 48.0   | 40.0    |\n| 2024 | 45.0   | 45.0    |\n| 2025 | 50.0   | 50.0    |\n| 2026 | 52.5   | 52.5    |",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "8. Manufacturing activity slowed in France and Germany "
+                    }
+                ],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: S&P Global, Macrobond. "
+                    }
+                ]
+            },
+            "sub_type": "line",
+            "bbox": [
+                211,
+                165,
+                559,
+                371
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/b27607be34e3b909771e2d936a3919a00b59ef783378b87e3d47c6dd6c07044e.jpg"
+                },
+                "content": "| Year | Egypt | Kuwait | United Arab Emirates | Saudi Arabia | Qatar |\n|------|-------|--------|----------------------|--------------|-------|\n| 2022 | 46    | 54     | 58                   | 58           | 66    |\n| 2023 | 49    | 56     | 58                   | 58           | 54    |\n| 2024 | 50    | 54     | 58                   | 58           | 54    |\n| 2025 | 50    | 54     | 58                   | 58           | 54    |\n| 2026 | 46    | 54     | 58                   | 58           | 38    |",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "9. PMIs in the Middle East recovered to some extent in May "
+                    }
+                ],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: S&P Global, Macrobond. Note: Whole economy PMI "
+                    }
+                ]
+            },
+            "sub_type": "line",
+            "bbox": [
+                578,
+                165,
+                929,
+                371
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/d64f92e9fae2aad12ec1f01e26651341367eaaa3ff5b88635a36a441e7c13932.jpg"
+                },
+                "content": "| Country/Region       | 1m ago | Latest |\n|----------------------|--------|--------|\n| South Korea          |        | 53.5   |\n| Japan                |        | 53.0   |\n| India                |        | 53.0   |\n| UK                   |        | 51.5   |\n| US                   |        | 51.0   |\n| Brazil               |        | 53.5   |\n| Canada               |        | 51.0   |\n| Italy                |        | 52.0   |\n| Australia            |        | 49.0   |\n| Thailand             |        | 50.0   |\n| Switzerland          |        | 49.0   |\n| Malaysia             |        | 51.5   |\n| Taiwan               |        | 50.0   |\n| Mainland China       |        | 50.0   |\n| Vietnam              |        | 49.5   |\n| Spain                |        | 49.0   |\n| Indonesia            |        | 49.5   |\n| Philippines          |        | 49.0   |\n| France               |        | 48.5   |\n| Türkiye              |        | 48.0   |\n| Euro Area            |        | 47.5   |\n| Poland               |        | 46.0   |\n| Russia               |        | 46.5   |\n| Mexico               |        | 47.0   |\n| Germany              |        | 44.5   |",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "10. Employment data suggest a cautious outlook for the manufacturing sector "
+                    }
+                ],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: S&P Global, Macrobond "
+                    }
+                ]
+            },
+            "sub_type": "bar",
+            "bbox": [
+                211,
+                427,
+                929,
+                628
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/7fc42745598b988331bde7085925beee5a892103aa6ec3fa73d8e8cf9c420e6f.jpg"
+                },
+                "content": "| Country/Region       | Headline excluding delivery times component | Change |\n|----------------------|---------------------------------------------|--------|\n| South Korea          | 3.0                                         | 4.0    |\n| US                   | 3.5                                         | 4.0    |\n| Mexico               | 2.8                                         | 3.0    |\n| Poland               | 2.0                                         | 2.5    |\n| Italy                | 0.5                                         | 2.5    |\n| UK                   | 1.2                                         | 2.5    |\n| Brazil               | 1.0                                         | 2.0    |\n| Canada               | 1.8                                         | 2.0    |\n| Japan                | 1.5                                         | 1.5    |\n| Spain                | 0.0                                         | 1.0    |\n| Taiwan               | -0.5                                        | 0.5    |\n| Eurozone             | -1.0                                        | 0.5    |\n| Malaysia             | 0.5                                         | 0.5    |\n| Türkiye              | 0.0                                         | 0.5    |\n| Colombia             | -0.5                                        | 0.0    |\n| Mainland China       | -1.0                                        | -0.5   |\n| Australia            | -1.5                                        | -1.0   |\n| France               | -2.0                                        | -1.5   |\n| Germany              | -3.0                                        | -2.0   |\n| Thailand             | -1.5                                        | -1.0   |\n| Vietnam              | -2.0                                        | -1.5   |\n| India                | -2.5                                        | -2.0   |\n| Indonesia            | -4.5                                        | -3.5   |\n| Philippines          | -4.5                                        | -4.0   |",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "11. Longer supplier delivery times boost the headline data due to methodological quirks "
+                    }
+                ],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: S&P Global, Macrobond, HSBC calculations "
+                    }
+                ]
+            },
+            "sub_type": "bar",
+            "bbox": [
+                211,
+                684,
+                929,
+                887
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "HSBC "
+                    }
+                ]
+            },
+            "bbox": [
+                72,
+                28,
+                193,
+                55
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Economics • Global "
+                    }
+                ]
+            },
+            "bbox": [
+                783,
+                28,
+                929,
+                40
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "4 June 2026 "
+                    }
+                ]
+            },
+            "bbox": [
+                842,
+                41,
+                929,
+                53
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "4 "
+                    }
+                ]
+            },
+            "bbox": [
+                68,
+                964,
+                78,
+                973
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Other key trends in the manufacturing sector "
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                208,
+                131,
+                648,
+                149
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/f6bb49d233fc969b9a104013b75032df4e5fdbc7a600ca93c875fefc5c82aaab.jpg"
+                },
+                "content": "| Country       | Index |\n| ------------- | ----- |\n| Taiwan        | 37    |\n| UK            | 34    |\n| Spain         | 39    |\n| Japan         | 37    |\n| Germany       | 38    |\n| Eurozone      | 38    |\n| Australia     | 34    |\n| France        | 39    |\n| Italy         | 39    |\n| US            | 42    |\n| South Korea   | 42    |\n| Mexico        | 46    |\n| Brazil        | 42    |\n| Canada        | 46    |\n| Colombia      | 46    |\n| Poland        | 46    |\n| Philippines   | 47    |\n| Türkiye       | 45    |\n| Indonesia     | 47    |\n| Malaysia      | 46    |\n| Russia        | 49    |\n| Thailand      | 49    |\n| Mainland China| 50    |\n| India         | 54    |",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "12. Delivery times suggest that supply chain issues may become more challenging in upcoming months "
+                    }
+                ],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: S&P Global, Macrobond "
+                    }
+                ]
+            },
+            "sub_type": "bar",
+            "bbox": [
+                240,
+                194,
+                899,
+                404
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/aea36a4395bc89c267960318a40c1ee4197726b87e41e467bef092115acc46d0.jpg"
+                },
+                "content": "| Country       | Value |\n| ------------- | ----- |\n| Brazil        | 70.5  |\n| Australia     | 68.5  |\n| UK            | 68.0  |\n| Taiwan        | 65.0  |\n| US            | 63.0  |\n| Italy         | 62.0  |\n| Japan         | 62.0  |\n| Eurozone      | 62.0  |\n| Canada        | 62.0  |\n| Germany       | 62.0  |\n| South Korea   | 62.0  |\n| Indonesia     | 62.0  |\n| Vietnam       | 62.0  |\n| Czechia       | 62.0  |\n| Poland        | 62.0  |\n| France        | 62.0  |\n| Spain         | 62.0  |\n| Türkiye       | 62.0  |\n| Philippines   | 62.0  |\n| Russia        | 62.0  |\n| Colombia      | 62.0  |\n| India         | 62.0  |\n| Malaysia      | 62.0  |\n| Mainland China| 62.0  |\n| Thailand      | 62.0  |\n| Mexico        | 62.0  |",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "13. Manufacturing input costs remain elevated in most economies, led by higher energy and other commodity prices "
+                    }
+                ],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: S&P Global, Macrobond. "
+                    }
+                ]
+            },
+            "sub_type": "bar",
+            "bbox": [
+                211,
+                463,
+                858,
+                644
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/b7bc9f0802b285ea9ecb9fff3c7174613d14b0d2d228517320fc3ba8e2ff4ec6.jpg"
+                },
+                "content": "| Year | Output Prices | Input Prices |\n|------|---------------|--------------|\n| 2022 | 73            | 81           |\n| 2023 | 50            | 48           |\n| 2024 | 53            | 57           |\n| 2025 | 55            | 60           |\n| 2026 | 63            | 77           |",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "14. Input and output costs rose in developed markets... "
+                    }
+                ],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: S&P Global, Macrobond "
+                    }
+                ]
+            },
+            "sub_type": "line",
+            "bbox": [
+                233,
+                698,
+                529,
+                868
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/bda20bb3e5604d5ed5a02100c4db0620da7627013ca63492ec9ce5818d5d18a1.jpg"
+                },
+                "content": "| Year | Output Prices | Input Prices |\n|------|---------------|--------------|\n| 2022 | 56            | 62           |\n| 2023 | 48            | 50           |\n| 2024 | 52            | 54           |\n| 2025 | 50            | 52           |\n| 2026 | 55            | 60           |",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "15. ...but increases slowed slightly in emerging markets "
+                    }
+                ],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: S&P Global, Macrobond "
+                    }
+                ]
+            },
+            "sub_type": "line",
+            "bbox": [
+                611,
+                698,
+                907,
+                869
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "HSBC "
+                    }
+                ]
+            },
+            "bbox": [
+                72,
+                28,
+                193,
+                54
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Economics • Global "
+                    }
+                ]
+            },
+            "bbox": [
+                783,
+                27,
+                929,
+                39
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "4 June 2026 "
+                    }
+                ]
+            },
+            "bbox": [
+                842,
+                41,
+                929,
+                53
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "5 "
+                    }
+                ]
+            },
+            "bbox": [
+                919,
+                958,
+                929,
+                966
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Services PMIs "
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                210,
+                131,
+                349,
+                147
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/052fced89fc1a979da41fa950db0cd9ffa01eabc099030f66c952b8376b8a910.jpg"
+                },
+                "content": "| Year | New orders | Employment | Headline |\n|------|------------|------------|----------|\n| 2022 | 54.5       | 54.0       | 51.0     |\n| 2023 | 55.0       | 53.0       | 55.5     |\n| 2024 | 53.0       | 51.5       | 54.0     |\n| 2025 | 52.0       | 51.0       | 53.5     |\n| 2026 | 51.0       | 49.0       | 51.5     |",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "16. The global services PMI expanded marginally in May... "
+                    }
+                ],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: S&P Global, Macrobond "
+                    }
+                ]
+            },
+            "sub_type": "line",
+            "bbox": [
+                225,
+                194,
+                549,
+                383
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/77c65aad0ea3c9afca2ae3afb3d1ba379d2783411f984dcb6d27fc4a9c0bffd3.jpg"
+                },
+                "content": "| Year | New orders | Employment | Headline |\n|------|------------|------------|----------|\n| 2022 | 48         | 50         | 58       |\n| 2023 | 54         | 52         | 62       |\n| 2024 | 58         | 54         | 60       |\n| 2025 | 54         | 50         | 64       |\n| 2026 | 54         | 54         | 58       |",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "17. ...with India still strong "
+                    }
+                ],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: S&P Global, Macrobond. Note: Latest data point is flash estimate "
+                    }
+                ]
+            },
+            "sub_type": "line",
+            "bbox": [
+                594,
+                197,
+                910,
+                378
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/f0fb7d9b782f19f4fd2bbbb5e52c0db72fde0acc45b4303807e7cfd624a08080.jpg"
+                },
+                "content": "| Year | ISM  | S&P Global |\n|------|------|------------|\n| 2022 | 58   | 58         |\n| 2023 | 54   | 54         |\n| 2024 | 56   | 56         |\n| 2025 | 54   | 54         |\n| 2026 | 54   | 54         |",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "18. The US services PMIs diverged in May, with ISM rising, a payback from April "
+                    }
+                ],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: S&P Global, Macrobond "
+                    }
+                ]
+            },
+            "sub_type": "line",
+            "bbox": [
+                228,
+                437,
+                542,
+                623
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/90c7e8f13bf7964fec921dae5b74f626e3bcda31bd50c02ddbc8aaed44220dff.jpg"
+                },
+                "content": "| Year | New Orders | Employment | Headline |\n|------|------------|------------|----------|\n| 2022 | 57         | 56         | 58       |\n| 2023 | 48         | 55         | 56       |\n| 2024 | 53         | 54         | 53       |\n| 2025 | 51         | 51         | 51       |\n| 2026 | 47         | 50         | 49       |",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "19. The eurozone services PMI slowed, led by Germany and France "
+                    }
+                ],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: S&P Global, Macrobond "
+                    }
+                ]
+            },
+            "sub_type": "line",
+            "bbox": [
+                596,
+                437,
+                910,
+                623
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/8a173720686bfc94b623476f49534ae7e3cbf7bfeb2136f32e11d1fc95f538a3.jpg"
+                },
+                "content": "| Year | New Orders | Employment | Headline |\n|------|------------|------------|----------|\n| 2022 | 58         | 58         | 62       |\n| 2023 | 50         | 50         | 54       |\n| 2024 | 54         | 52         | 54       |\n| 2025 | 46         | 46         | 54       |\n| 2026 | 46         | 46         | 54       |",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "20. The UK services sector also deteriorated in May, as price pressures remain intense... "
+                    }
+                ],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: S&P Global, Macrobond "
+                    }
+                ]
+            },
+            "sub_type": "line",
+            "bbox": [
+                225,
+                678,
+                547,
+                865
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/dfe0bf777825ce1c0abe57071132d3864a45db49c0a4eef41fb205453c6a0619.jpg"
+                },
+                "content": "| Year | New Orders | Employment | Headline |\n|------|------------|------------|----------|\n| 2022 | 50         | 50         | 50       |\n| 2023 | 54         | 54         | 58       |\n| 2024 | 54         | 50         | 54       |\n| 2025 | 54         | 50         | 54       |\n| 2026 | 54         | 50         | 54       |",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "21. ...and mainland China saw steady growth, but still subdued employment "
+                    }
+                ],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: RatingDog, Macrobond "
+                    }
+                ]
+            },
+            "sub_type": "line",
+            "bbox": [
+                591,
+                678,
+                914,
+                865
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "HSBC "
+                    }
+                ]
+            },
+            "bbox": [
+                72,
+                28,
+                193,
+                55
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Economics • Global "
+                    }
+                ]
+            },
+            "bbox": [
+                783,
+                27,
+                929,
+                39
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "4 June 2026 "
+                    }
+                ]
+            },
+            "bbox": [
+                842,
+                41,
+                929,
+                53
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "6 "
+                    }
+                ]
+            },
+            "bbox": [
+                68,
+                964,
+                78,
+                973
+            ]
+        }
+    ],
+    [
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/db8f3bd31dede88c3505e77d7eee8f5d0650d34a789525478bd992f2ffc1fd23.jpg"
+                },
+                "content": "| Year | Input prices | Output prices |\n|------|--------------|---------------|\n| 2022 | 71           | 63            |\n| 2023 | 59           | 55            |\n| 2024 | 58           | 54            |\n| 2025 | 58           | 54            |\n| 2026 | 61           | 56            |",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "22. Both services input costs and output costs rose further in May... "
+                    }
+                ],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: S&P Global, Macrobond "
+                    }
+                ]
+            },
+            "sub_type": "line",
+            "bbox": [
+                218,
+                169,
+                552,
+                366
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/836f5f78f95b0b73b4e9ab75803c28caf48b2cb50bbe2137f9e3bf954786f631.jpg"
+                },
+                "content": "| Year | UK: Output prices | US: Output prices | UK: Input prices | US: Input prices |\n|------|-------------------|-------------------|------------------|------------------|\n| 2022 | 65                | 75                | 85               | 80               |\n| 2023 | 58                | 55                | 70               | 65               |\n| 2024 | 55                | 50                | 60               | 60               |\n| 2025 | 58                | 55                | 65               | 60               |\n| 2026 | 60                | 58                | 75               | 60               |",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "23. ...with input costs notably elevated in the UK... "
+                    }
+                ],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: S&P Global, Macrobond "
+                    }
+                ]
+            },
+            "sub_type": "line",
+            "bbox": [
+                579,
+                165,
+                932,
+                372
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/2da1e183e17ebb107a3ce9b5cfbf03ba5146a2d96f2ea2960a297a25ab4de6f8.jpg"
+                },
+                "content": "| Country/Region | Value (pts) |\n| -------------- | ----------- |\n| UK             | 74          |\n| Brazil         | 71          |\n| Ireland        | 69          |\n| Australia      | 69          |\n| Spain          | 69          |\n| Germany        | 66          |\n| Italy          | 66          |\n| Eurozone       | 66          |\n| France         | 62          |\n| Japan          | 62          |\n| World          | 61          |\n| US             | 61          |\n| Russia         | 58          |\n| India          | 55          |\n| Mainland China | 52          |",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "24. ...and are high across most global economies... "
+                    }
+                ],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: S&P Global, Macrobond "
+                    }
+                ]
+            },
+            "sub_type": "bar",
+            "bbox": [
+                210,
+                438,
+                929,
+                638
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/5654daa9ea8887093a597c3eabeb080a094a499b8f97e272f42858df49786a3d.jpg"
+                },
+                "content": "| Country       | Index |\n| ------------- | ----- |\n| Spain         | 53    |\n| India         | 53    |\n| Japan         | 52    |\n| Brazil        | 52    |\n| Italy         | 52    |\n| Mainland China| 50    |\n| Russia        | 49    |\n| Eurozone      | 50    |\n| Australia     | 54    |\n| Canada        | 51    |\n| Germany       | 48    |\n| Switzerland   | 49    |\n| US            | 50    |\n| France        | 51    |\n| UK            | 47    |",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "25. ...with firms in the US, the UK, France, and Germany reporting cuts to employment "
+                    }
+                ],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: S&P Global, Macrobond "
+                    }
+                ]
+            },
+            "sub_type": "bar",
+            "bbox": [
+                211,
+                707,
+                929,
+                909
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "HSBC "
+                    }
+                ]
+            },
+            "bbox": [
+                72,
+                28,
+                193,
+                55
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Economics • Global "
+                    }
+                ]
+            },
+            "bbox": [
+                783,
+                28,
+                929,
+                40
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "4 June 2026 "
+                    }
+                ]
+            },
+            "bbox": [
+                842,
+                41,
+                929,
+                53
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "7 "
+                    }
+                ]
+            },
+            "bbox": [
+                919,
+                957,
+                927,
+                965
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "26. Detailed breakdown of manufacturing and services PMIs "
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                64,
+                75,
+                372,
+                95
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/59ab8bc651e7dd44aa5dae6d66f41a7957569a0e4948d970e7ff5675d6defee4.jpg"
+                },
+                "content": "Manufacturing PMIs\n| Country | Mar 26<fcel>Headline Apr 26<fcel>May 26<fcel>Manufacturing PMIs New Orders Mar 26<fcel>Apr 26<fcel>May 26<fcel>Mar 26<fcel>Employment Apr 26<fcel>May 26<fcel>Services PMIs Business Activity Mar 26<fcel>Apr 26<fcel>May 26<nl>\n<fcel>US<fcel>52.3<fcel>54.5<fcel>55.1<ecel><ecel><ecel><ecel><ecel><ecel><fcel>49.8<fcel>51.0<fcel>50.7<nl>\n<fcel>US ISM<fcel>52.7<fcel>52.7<fcel>54.0<ecel><ecel><ecel><ecel><ecel><ecel><fcel>53.9<fcel>55.9<fcel>57.7<nl>\n<fcel>Canada<fcel>50.0<fcel>53.3<fcel>52.9<ecel><ecel><ecel><ecel><ecel><ecel><fcel>47.2<fcel>49.2<fcel>50.6<nl>\n<fcel>Mainland China*<fcel>50.8<fcel>52.2<fcel>51.8<ecel><ecel><ecel><ecel><ecel><ecel><fcel>52.1<fcel>52.6<fcel>54.4<nl>\n<fcel>Mainland China NBS<fcel>50.4<fcel>50.3<fcel>50.0<ecel><ecel><ecel><ecel><ecel><ecel><fcel>50.1<fcel>49.4<fcel>50.1<nl>\n<fcel>Japan<fcel>51.6<fcel>55.1<fcel>54.5<ecel><ecel><ecel><ecel><ecel><ecel><fcel>53.4<fcel>51.0<fcel>50.0<nl>\n<fcel>India<fcel>53.9<fcel>54.7<fcel>55.0<ecel><ecel><ecel><ecel><ecel><ecel><fcel>57.5<fcel>58.8<fcel>59.8<nl>\n<fcel>Korea<fcel>52.6<fcel>53.6<fcel>54.8<ecel><ecel><ecel><ecel><ecel><ecel><fcel>-<fcel>-<fcel>-<nl>\n<fcel>Indonesia<fcel>50.1<fcel>49.1<fcel>50.0<ecel><ecel><ecel><ecel><ecel><ecel><fcel>-<fcel>-<fcel>-<nl>\n<fcel>Malaysia<fcel>50.7<fcel>51.6<fcel>49.9<ecel><ecel><ecel><ecel><ecel><ecel><fcel>-<fcel>-<fcel>-<nl>\n<fcel>Thailand<fcel>54.1<fcel>52.7<fcel>52.6<ecel><ecel><ecel><ecel><ecel><ecel><fcel>-<fcel>-<fcel>-<nl>\n<fcel>Philippines<fcel>51.3<fcel>48.3<fcel>50.8<ecel><ecel><ecel><ecel><ecel><ecel><fcel>-<fcel>-<fcel>-<nl>\n<fcel>Vietnam<fcel>51.2<fcel>50.5<fcel>52.8<ecel><ecel><ecel><ecel><ecel><ecel><fcel>-<fcel>-<fcel>-<nl>\n<fcel>Eurozone<fcel>51.6<fcel>52.2<fcel>51.6<ecel><ecel><ecel><ecel><ecel><ecel><fcel>50.2<fcel>47.6<fcel>47.7<nl>\n<fcel>Germany<fcel>52.2<fcel>51.4<fcel>50.1<ecel><ecel><ecel><ecel><ecel><ecel><fcel>50.9<fcel>46.9<fcel>48.1<nl>\n<fcel>France<fcel>50.0<fcel>52.8<fcel>49.7<ecel><ecel><ecel><ecel><ecel><ecel><fcel>48.8<fcel>46.5<fcel>44.3<nl>\n<fcel>Italy<fcel>51.3<fcel>52.1<fcel>52.9<ecel><ecel><ecel><ecel><ecel><ecel><fcel>48.8<fcel>49.8<fcel>49.4<nl>\n<fcel>Spain<fcel>48.7<fcel>51.7<fcel>51.2<ecel><ecel><ecel><ecel><ecel><ecel><fcel>53.3<fcel>47.9<fcel>50.1<nl>\n<fcel>UK<fcel>51.0<fcel>53.7<fcel>53.9<ecel><ecel><ecel><ecel><ecel><ecel><fcel>50.5<fcel>52.7<fcel>49.3<nl>\n<fcel>Poland<fcel>48.7<fcel>48.8<fcel>49.4<ecel><ecel><ecel><ecel><ecel><ecel><fcel>-<fcel>-<fcel>-<nl>\n<fcel>Russia<fcel>48.3<fcel>48.1<fcel>48.8<ecel><ecel><ecel><ecel><ecel><ecel><fcel>49.5<fcel>49.7<fcel>48.7<nl>\n<fcel>South Africa<fcel>50.8<fcel>51.6<fcel>49.6<ecel><ecel><ecel><ecel><ecel><ecel><fcel>-<fcel>-<fcel>-<nl>\n<fcel>Brazil<fcel>49.0<fcel>52.6<fcel>49.1<ecel><ecel><ecel><ecel><ecel><ecel><fcel>50.1<fcel>52.3<fcel>50.4<nl>\n<fcel>Mexico<fcel>48.9<fcel>47.7<fcel>49.6<ecel><ecel><ecel><ecel><ecel><ecel><fcel>-<fcel>-<fcel>-<nl>",
+                "chart_caption": [],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: S&P Global, HSBC. *Refers to RatingDog Mainland China PMI Note: Due to a later-than-usual release date, May readings for Greece, Indonesia, Ireland, Malaysia, Pakistan, Romania, and Thailand were not available to include in the global calculations. "
+                    }
+                ]
+            },
+            "sub_type": "heatmap",
+            "bbox": [
+                70,
+                127,
+                906,
+                826
+            ]
+        },
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/d4d5c2a670c9541cabe6101c8c5ca4837001f5c95429226b5a22945886b00afe.jpg"
+                },
+                "content": "",
+                "image_caption": [],
+                "image_footnote": []
+            },
+            "bbox": [
+                942,
+                67,
+                967,
+                186
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "∞ "
+                    }
+                ]
+            },
+            "bbox": [
+                24,
+                68,
+                33,
+                78
+            ]
+        },
+        {
+            "type": "page_aside_text",
+            "content": {
+                "page_aside_text_content": [
+                    {
+                        "type": "text",
+                        "content": "Economics • Global\n4 June 2026 "
+                    }
+                ]
+            },
+            "bbox": [
+                942,
+                779,
+                967,
+                929
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Disclosure appendix "
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                68,
+                137,
+                515,
+                171
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Analyst Certification "
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                65,
+                207,
+                220,
+                220
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The following analyst(s), economist(s), or strategist(s) who is(are) primarily responsible for this report, including any analyst(s) whose name(s) appear(s) as author of an individual section or sections of the report and any analyst(s) named as the covering analyst(s) of a subsidiary company in a sum-of-the-parts valuation certifies(y) that the opinion(s) on the subject security(ies) or issuer(s), any views or forecasts expressed in the section(s) of which such individual(s) is(are) named as author(s), and any other views or forecasts expressed herein, including any views expressed on the back page of the research report, accurately reflect their personal view(s) and that no part of their compensation was, is or will be directly or indirectly related to the specific recommendation(s) or views contained in this research report: Maitreyi Das and Bethan Ellis "
+                    }
+                ]
+            },
+            "bbox": [
+                63,
+                222,
+                931,
+                328
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Important disclosures "
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                65,
+                338,
+                231,
+                351
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "This document has been prepared and is being distributed by the Research Department of HSBC and is intended solely for the clients of HSBC and is not for publication to other persons, whether through the press or by other means. "
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                353,
+                927,
+                384
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "This document is for information purposes only and it should not be regarded as an offer to sell or as a solicitation of an offer to buy the securities or other investment products mentioned in it and/or to participate in any trading strategy. Advice in this document is general and should not be construed as personal advice, given it has been prepared without taking account of the objectives, financial situation or needs of any particular investor. Accordingly, investors should, before acting on the advice, consider the appropriateness of the advice, having regard to their objectives, financial situation and needs. If necessary, seek professional investment and tax advice. "
+                    }
+                ]
+            },
+            "bbox": [
+                63,
+                391,
+                931,
+                482
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Certain investment products mentioned in this document may not be eligible for sale in some states or countries, and they may not be suitable for all types of investors. Investors should consult with their HSBC representative regarding the suitability of the investment products mentioned in this document and take into account their specific investment objectives, financial situation or particular needs before making a commitment to purchase investment products. "
+                    }
+                ]
+            },
+            "bbox": [
+                63,
+                491,
+                929,
+                552
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The value of and the income produced by the investment products mentioned in this document may fluctuate, so that an investor may get back less than originally invested. Certain high-volatility investments can be subject to sudden and large falls in value that could equal or exceed the amount invested. Value and income from investment products may be adversely affected by exchange rates, interest rates, or other factors. Past performance of a particular investment product is not indicative of future results. "
+                    }
+                ]
+            },
+            "bbox": [
+                63,
+                560,
+                929,
+                634
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "HSBC and its affiliates will from time to time sell to and buy from customers the securities/instruments, both equity and debt (including derivatives) of companies covered in HSBC on a principal or agency basis or act as a market maker or liquidity provider in the securities/instruments mentioned in this report. "
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                644,
+                929,
+                688
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Analysts, economists, and strategists are paid in part by reference to the profitability of HSBC which includes investment banking, sales & trading, and principal trading revenues. "
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                698,
+                929,
+                728
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Whether, or in what time frame, an update of this analysis will be published is not determined in advance. "
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                736,
+                773,
+                750
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "For disclosures in respect of any company mentioned in this report, please see the most recently published report on that company available at www.hsbcnet.com/research. HSBC Private Bank clients should contact their Relationship Manager for queries regarding other research reports. In order to find out more about the proprietary models used to produce this report, please contact the authoring analyst. "
+                    }
+                ]
+            },
+            "bbox": [
+                63,
+                758,
+                931,
+                819
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "HSBC "
+                    }
+                ]
+            },
+            "bbox": [
+                72,
+                29,
+                193,
+                54
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Economics • Global\n4 June 2026 "
+                    }
+                ]
+            },
+            "bbox": [
+                783,
+                28,
+                929,
+                52
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "9 "
+                    }
+                ]
+            },
+            "bbox": [
+                919,
+                963,
+                929,
+                973
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Additional disclosures "
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                67,
+                135,
+                235,
+                148
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "text_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "1 This report is dated as at 04 June 2026. "
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "2 All market data included in this report are dated as at close 03 June 2026, unless a different date and/or a specific time of day is indicated in the report. "
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "3 HSBC has procedures in place to identify and manage any potential conflicts of interest that arise in connection with its Research business. HSBC's analysts and its other staff who are involved in the preparation and dissemination of Research operate and have a management reporting line independent of HSBC's Investment Banking business. Information Barrier procedures are in place between the Investment Banking, Principal Trading, and Research businesses to ensure that any confidential and/or price sensitive information is handled in an appropriate manner. "
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "4 You are not permitted to use, for reference, any data in this document for the purpose of (i) determining the interest payable, or other sums due, under loan agreements or under other financial contracts or instruments, (ii) determining the price at which a financial instrument may be bought or sold or traded or redeemed, or the value of a financial instrument, and/or (iii) measuring the performance of a financial instrument or of an investment fund. "
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                68,
+                150,
+                922,
+                333
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "[Non-Text] "
+                    }
+                ]
+            },
+            "bbox": [
+                72,
+                29,
+                136,
+                54
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "HSBC "
+                    }
+                ]
+            },
+            "bbox": [
+                137,
+                35,
+                189,
+                48
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Economics • Global "
+                    }
+                ]
+            },
+            "bbox": [
+                783,
+                28,
+                929,
+                40
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "4 June 2026 "
+                    }
+                ]
+            },
+            "bbox": [
+                842,
+                41,
+                929,
+                52
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "10 "
+                    }
+                ]
+            },
+            "bbox": [
+                68,
+                964,
+                85,
+                973
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Disclaimer "
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                68,
+                138,
+                304,
+                166
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Legal entities as at 13 May 2026: "
+                    }
+                ]
+            },
+            "bbox": [
+                68,
+                169,
+                228,
+                181
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "HSBC Bank plc; HSBC Continental Europe; HSBC Continental Europe SA, Germany; HSBC Bank Middle East Limited, DIFC; HSBC Bank Middle East Limited, Dubai branch; HSBC Yatirim Menkul Degerler AS, Istanbul; The Hongkong and Shanghai Banking Corporation Limited, Hong Kong; The Hongkong and Shanghai Banking Corporation Limited, Singapore Branch; The Hongkong and Shanghai Banking Corporation Limited, Seoul Securities Branch; The Hongkong and Shanghai Banking Corporation Limited, Seoul Branch; HSBC Qianhai Securities Limited; HSBC Securities (Taiwan) Corporation Limited; HSBC Securities and Capital Markets (India) Private Limited, Mumbai; HSBC Bank Australia Limited; HSBC Securities (USA) Inc., New York; HSBC México, SA, Institución de Banca Múltiple, Grupo Financiero HSBC; Banco HSBC SA "
+                    }
+                ]
+            },
+            "bbox": [
+                68,
+                181,
+                673,
+                257
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Issuer of report "
+                    }
+                ]
+            },
+            "bbox": [
+                680,
+                171,
+                761,
+                181
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "HSBC Securities and Capital Markets (India)\nPrivate Limited "
+                    }
+                ]
+            },
+            "bbox": [
+                680,
+                181,
+                926,
+                201
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Registered Office "
+                    }
+                ]
+            },
+            "bbox": [
+                682,
+                203,
+                764,
+                213
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "52/60 Mahatma Gandhi Road "
+                    }
+                ]
+            },
+            "bbox": [
+                682,
+                214,
+                818,
+                223
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Fort, Mumbai 400 001, India "
+                    }
+                ]
+            },
+            "bbox": [
+                682,
+                225,
+                811,
+                233
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Telephone: +91 22 2267 4921 "
+                    }
+                ]
+            },
+            "bbox": [
+                682,
+                235,
+                820,
+                244
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Fax: +91 22 2263 1983 "
+                    }
+                ]
+            },
+            "bbox": [
+                682,
+                245,
+                789,
+                255
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Website: www.research.hsbc.com "
+                    }
+                ]
+            },
+            "bbox": [
+                682,
+                257,
+                836,
+                264
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "SEBI Reg. No. INH000001287 "
+                    }
+                ]
+            },
+            "bbox": [
+                682,
+                267,
+                821,
+                277
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "CIN: U67120MH1994PTC081575 "
+                    }
+                ]
+            },
+            "bbox": [
+                682,
+                277,
+                836,
+                287
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "This document has been issued by HSBC Securities and Capital Markets (India) Private Limited (\"HSBC\") for the information of its customers only. HSBC Securities and Capital Markets (India) Private Limited is registered as \"Research Analyst\" (Reg. No. INH000001287), Merchant Banker (Reg. No. INM000010353) and Stock Broker (Uniform Reg. No. INZ000234533) and regulated by the Securities and Exchange Board of India. If it is received by a customer of an affiliate of HSBC, its provision to the recipient is subject to the terms of business in place between the recipient and such affiliate. This document is not and should not be construed as an offer to sell or the solicitation of an offer to purchase or subscribe for any investment. HSBC has based this document on information obtained from sources it believes to be reliable but which it has not independently verified; HSBC makes no guarantee, representation or warranty and accepts no responsibility or liability as to its accuracy or completeness. Expressions of opinion are those of the Research Division of HSBC only and are subject to change without notice. From time to time research analysts conduct site visits of covered issuers. HSBC policies prohibit research analysts from accepting payment or reimbursement for travel expenses from the issuer for such visits. HSBC and its affiliates and/or their officers, directors and employees may have positions in any securities mentioned in this document (or in any related investment) and may from time to time add to or dispose of any such securities (or investment). HSBC and its affiliates may act as market maker or have assumed an underwriting commitment in the securities of companies discussed in this document (or in related investments), may sell them to or buy them from customers on a principal basis and may also perform or seek to perform investment banking or underwriting services for or relating to those companies and may also be represented in the supervisory board or any other committee of those companies. Details of Associates may be obtained from or for any Grievances on the report published by HSBC Securities and Capital Markets (India) Private Limited may be reported to Compliance Officer: Neha Malviya, Email: neha.malviya@hsbc.co.in, Contact: +91 22 4089 1536. The information and opinions contained within the research reports are based upon publicly available information and rates of taxation applicable at the time of publication which are subject to change from time to time. Past performance is not necessarily a guide to future performance. The value of any investment or income may go down as well as up and you may not get back the full amount invested. Where an investment is denominated in a currency other than the local currency of the recipient of the research report, changes in the exchange rates may have an adverse effect on the value, price or income of that investment. In case of investments for which there is no recognised market it may be difficult for investors to sell their investments or to obtain reliable information about its value or the extent of the risk to which it is exposed. Registration granted by SEBI and certification from NISM in no way guarantee performance of the intermediary or provide any assurance of returns to investors. Investments in securities markets are subject to market risks. Read all the related documents carefully before investing. The document is intended to be distributed in its entirety. Unless governing law permits otherwise, you must contact a HSBC Group member in your home jurisdiction if you wish to use HSBC Group services in effecting a transaction in any investment mentioned in this document. "
+                    }
+                ]
+            },
+            "bbox": [
+                67,
+                290,
+                929,
+                494
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "In the UK, this publication is distributed by HSBC Bank plc for the information of its Clients (as defined in the Rules of FCA) and those of its affiliates only. Nothing herein excludes or restricts any duty or liability to a customer which HSBC Bank plc has under the Financial Services and Markets Act 2000 or under the Rules of FCA and PRA. A recipient who chooses to deal with any person who is not a representative of HSBC Bank plc in the UK will not enjoy the protections afforded by the UK regulatory regime. HSBC Bank plc is regulated by the Financial Conduct Authority and the Prudential Regulation Authority. In the European Economic Area, this publication has been distributed by HSBC Continental Europe or by such other HSBC affiliate from which the recipient receives relevant services. "
+                    }
+                ]
+            },
+            "bbox": [
+                67,
+                495,
+                929,
+                536
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "In Japan, this publication has been distributed by HSBC Securities (Japan) Co., Ltd.. In Hong Kong, this document has been distributed by The Hongkong and Shanghai Banking Corporation Limited in the conduct of its Hong Kong regulated business for the information of its institutional and professional customers; it is not intended for and should not be distributed to retail customers in Hong Kong, unless permitted otherwise. The Hongkong and Shanghai Banking Corporation Limited makes no representations that the products or services mentioned in this document are available to persons in Hong Kong or are necessarily suitable for any particular person or appropriate in accordance with local law. All inquiries by such recipients must be directed to The Hongkong and Shanghai Banking Corporation Limited. In Korea, this publication is distributed by either The Hongkong and Shanghai Banking Corporation Limited, Seoul Securities Branch (\"HBAP SLS\") or The Hongkong and Shanghai Banking Corporation Limited, Seoul Branch (\"HBAP SEL\") for the general information of professional investors specified in Article 9 of the Financial Investment Services and Capital Markets Act (\"FSCMA\"). This publication is not a prospectus as defined in the FSCMA. It may not be further distributed in whole or in part for any purpose. Both HBAP SLS and HBAP SEL are regulated by the Financial Services Commission and the Financial Supervisory Service of Korea. In Singapore, this publication is distributed by The Hongkong and Shanghai Banking Corporation Limited, Singapore Branch for the general information of institutional investors or other persons specified in Sections 274 and 304 of the Securities and Futures Act 2001 of Singapore (\"SFA\") and accredited investors and other persons in accordance with the conditions specified in Sections 275 and 305 of the SFA. Only Economics or Currencies reports are intended for distribution to a person who is not an Accredited Investor, Expert Investor or Institutional Investor as defined in SFA. The Hongkong and Shanghai Banking Corporation Limited, Singapore Branch accepts legal responsibility for the contents of reports. This publication is not a prospectus as defined in the SFA. It may not be further distributed in whole or in part for any purpose. The Hongkong and Shanghai Banking Corporation Limited Singapore Branch is regulated by the Monetary Authority of Singapore. Recipients in Singapore should contact a \"Hongkong and Shanghai Banking Corporation Limited, Singapore Branch\" representative in respect of any matters arising from, or in connection with this report. Please refer to The Hongkong and Shanghai Banking Corporation Limited Singapore Branch's website at www.business.hsbc.com.sg for contact details. In Australia, this publication has been distributed by The Hongkong and Shanghai Banking Corporation Limited (ABN 65 117 925 970, AFSL 301737) for the general information of its \"wholesale\" customers (as defined in the Corporations Act 2001). Where distributed to retail customers, this research is distributed by HSBC Bank Australia Limited (ABN 48 006 434 162, AFSL No. 232595). These respective entities make no representations that the products or services mentioned in this document are available to persons in Australia or are necessarily suitable for any particular person or appropriate in accordance with local law. No consideration has been given to the particular investment objectives, financial situation or particular needs of any recipient. "
+                    }
+                ]
+            },
+            "bbox": [
+                67,
+                536,
+                929,
+                729
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "HSBC Securities (USA) Inc. accepts responsibility for the content of this research report prepared by its non-US foreign affiliate. The information contained herein is under no circumstances to be construed as investment advice and is not tailored to the needs of the recipient. All US persons receiving and/or accessing this report and wishing to effect transactions in any security discussed herein should do so with HSBC Securities (USA) Inc. in the United States and not with its non-US foreign affiliate, the issuer of this report. HSBC México, S.A., Institución de Banca Múltiple, Grupo Financiero HSBC is authorized and regulated by Secretaría de Hacienda y Crédito Público and Comisión Nacional Bancaria y de Valores (CNBV). In Brazil, this document has been distributed by Banco HSBC SA (\"HSBC Brazil\"), and/or its affiliates. As required by Resolution No. 20/2021 of the Securities and Exchange Commission of Brazil (Comissão de Valores Mobiliários), potential conflicts of interest concerning (i) HSBC Brazil and/or its affiliates; and (ii) the analyst(s) responsible for authoring this report are stated on the chart above labelled \"HSBC & Analyst Disclosures\". "
+                    }
+                ]
+            },
+            "bbox": [
+                67,
+                730,
+                929,
+                804
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "If you are a customer of HSBC International Wealth & Premier Banking (\"IWPB\"), including HSBC Private Bank, you are eligible to receive this publication only if: (i) you have been approved to receive relevant research publications by an applicable HSBC legal entity; (ii) you have agreed to the applicable HSBC entity's terms and conditions and/or customer declaration for accessing research; and (iii) you have agreed to the terms and conditions of any other internet banking, online banking, mobile banking and/or investment services offered by that HSBC entity, through which you will access research publications (collectively with (ii), the \"Terms\"). If you do not meet the above eligibility requirements, please disregard this publication and, if you are a IWPB customer, please notify your Relationship Manager or call the relevant customer hotline. Distribution of this publication is the sole responsibility of the HSBC entity with whom you have agreed the Terms. Receipt of research publications is strictly subject to the Terms and any other conditions or disclaimers applicable to the provision of the publications that may be advised by IWPB. © Copyright 2026, HSBC Securities and Capital Markets (India) Private Limited, ALL RIGHTS RESERVED. No part of this publication may be reproduced, stored in a retrieval system, or transmitted, on any form or by any means, electronic, mechanical, photocopying, recording, or otherwise, without the prior written permission of HSBC Securities and Capital Markets (India) Private Limited. "
+                    }
+                ]
+            },
+            "bbox": [
+                67,
+                805,
+                929,
+                901
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "HSBC "
+                    }
+                ]
+            },
+            "bbox": [
+                72,
+                29,
+                193,
+                54
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Economics • Global "
+                    }
+                ]
+            },
+            "bbox": [
+                784,
+                28,
+                929,
+                40
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "4 June 2026 "
+                    }
+                ]
+            },
+            "bbox": [
+                842,
+                41,
+                929,
+                53
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "[1280589] "
+                    }
+                ]
+            },
+            "bbox": [
+                858,
+                916,
+                929,
+                929
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "11 "
+                    }
+                ]
+            },
+            "bbox": [
+                914,
+                964,
+                927,
+                973
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Global Economics Research Team "
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                68,
+                103,
+                815,
+                133
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Global "
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                68,
+                174,
+                107,
+                184
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Global Chief Economist "
+                    }
+                ]
+            },
+            "bbox": [
+                68,
+                188,
+                203,
+                198
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Janet Henry +44 20 7991 6711 "
+                    }
+                ]
+            },
+            "bbox": [
+                68,
+                199,
+                315,
+                209
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "janet.henry@hsbcib.com "
+                    }
+                ]
+            },
+            "bbox": [
+                68,
+                209,
+                200,
+                219
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Global Economist "
+                    }
+                ]
+            },
+            "bbox": [
+                68,
+                226,
+                171,
+                236
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "James Pomeroy +44 20 7991 6714 "
+                    }
+                ]
+            },
+            "bbox": [
+                68,
+                237,
+                315,
+                247
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "james.pomeroy@hsbc.com "
+                    }
+                ]
+            },
+            "bbox": [
+                68,
+                247,
+                213,
+                256
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Global Economist "
+                    }
+                ]
+            },
+            "bbox": [
+                68,
+                264,
+                171,
+                274
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Bethan Ellis +44 20 7991 6714 "
+                    }
+                ]
+            },
+            "bbox": [
+                68,
+                275,
+                315,
+                283
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "bethan.ellis@hsbc.com "
+                    }
+                ]
+            },
+            "bbox": [
+                68,
+                283,
+                191,
+                293
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Trade Economist "
+                    }
+                ]
+            },
+            "bbox": [
+                68,
+                302,
+                166,
+                311
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Shanella Rajanayagam +44 20 3268 4118 "
+                    }
+                ]
+            },
+            "bbox": [
+                68,
+                312,
+                315,
+                321
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "shanella.l.rajanayagam@hsbc.com "
+                    }
+                ]
+            },
+            "bbox": [
+                68,
+                321,
+                253,
+                331
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Europe "
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                68,
+                343,
+                110,
+                353
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Chief European Economist "
+                    }
+                ]
+            },
+            "bbox": [
+                68,
+                357,
+                221,
+                366
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Simon Wells +44 20 7991 6718 "
+                    }
+                ]
+            },
+            "bbox": [
+                68,
+                366,
+                315,
+                376
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "simon.wells@hsbcib.com "
+                    }
+                ]
+            },
+            "bbox": [
+                68,
+                377,
+                201,
+                385
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Senior Economist "
+                    }
+                ]
+            },
+            "bbox": [
+                68,
+                395,
+                171,
+                404
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Chris Hare +44 20 7991 2995 "
+                    }
+                ]
+            },
+            "bbox": [
+                68,
+                404,
+                315,
+                414
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "chris.hare@hsbc.com "
+                    }
+                ]
+            },
+            "bbox": [
+                68,
+                415,
+                184,
+                423
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "United Kingdom "
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                68,
+                437,
+                161,
+                447
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Senior Economist, UK "
+                    }
+                ]
+            },
+            "bbox": [
+                68,
+                451,
+                194,
+                460
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Elizabeth Martins +44 20 7991 2170 "
+                    }
+                ]
+            },
+            "bbox": [
+                68,
+                461,
+                315,
+                470
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "liz.martins@hsbc.com "
+                    }
+                ]
+            },
+            "bbox": [
+                68,
+                471,
+                184,
+                480
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "UK Economist "
+                    }
+                ]
+            },
+            "bbox": [
+                68,
+                489,
+                151,
+                498
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Emma Wilks + 44 20 3268 5948 "
+                    }
+                ]
+            },
+            "bbox": [
+                68,
+                500,
+                315,
+                508
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "emma.wilks@hsbc.com "
+                    }
+                ]
+            },
+            "bbox": [
+                68,
+                509,
+                194,
+                517
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Germany "
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                68,
+                530,
+                122,
+                541
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Stefan Schilbe +49 211 910 3137 "
+                    }
+                ]
+            },
+            "bbox": [
+                68,
+                545,
+                315,
+                554
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "stefan.schilbe@hsbc.de "
+                    }
+                ]
+            },
+            "bbox": [
+                68,
+                555,
+                194,
+                564
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Anja Sabine Heimann +44 738 724 7457 "
+                    }
+                ]
+            },
+            "bbox": [
+                68,
+                574,
+                315,
+                583
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "anja.sabine.heimann@hsbc.com "
+                    }
+                ]
+            },
+            "bbox": [
+                68,
+                584,
+                240,
+                593
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "France "
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                68,
+                606,
+                109,
+                615
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Chantana Sam +33 1 4070 7795 "
+                    }
+                ]
+            },
+            "bbox": [
+                68,
+                619,
+                315,
+                629
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "chantana.sam@hsbc.fr "
+                    }
+                ]
+            },
+            "bbox": [
+                68,
+                630,
+                191,
+                638
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "North America "
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                374,
+                173,
+                458,
+                182
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "US "
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                374,
+                191,
+                393,
+                200
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Ryan Wang +1 212 525 3181 "
+                    }
+                ]
+            },
+            "bbox": [
+                374,
+                205,
+                621,
+                214
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "ryan.wang@us.hsbc.com "
+                    }
+                ]
+            },
+            "bbox": [
+                374,
+                216,
+                509,
+                225
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Asia Pacific "
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                374,
+                238,
+                443,
+                247
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Co-Head of Global Research, Asia-Pacific "
+                    }
+                ]
+            },
+            "bbox": [
+                374,
+                252,
+                608,
+                261
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "and Co-Head of Asian Economics Research "
+                    }
+                ]
+            },
+            "bbox": [
+                374,
+                262,
+                621,
+                271
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Frederic Neumann +852 2822 4556 "
+                    }
+                ]
+            },
+            "bbox": [
+                374,
+                271,
+                621,
+                280
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "fredericneumann@hsbc.com.hk "
+                    }
+                ]
+            },
+            "bbox": [
+                374,
+                281,
+                542,
+                290
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Chief Economist, Australia, New Zealand and "
+                    }
+                ]
+            },
+            "bbox": [
+                374,
+                299,
+                615,
+                309
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Global Commodities "
+                    }
+                ]
+            },
+            "bbox": [
+                374,
+                309,
+                485,
+                318
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Paul Bloxham +612 9255 2635 "
+                    }
+                ]
+            },
+            "bbox": [
+                374,
+                319,
+                621,
+                328
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "paulbloxham@hsbc.com.au "
+                    }
+                ]
+            },
+            "bbox": [
+                374,
+                328,
+                522,
+                337
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Chief Economist, India and Indonesia "
+                    }
+                ]
+            },
+            "bbox": [
+                374,
+                347,
+                586,
+                356
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Pranjul Bhandari +65 6658 4976 "
+                    }
+                ]
+            },
+            "bbox": [
+                374,
+                357,
+                621,
+                366
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "pranjul.bhandari@hsbc.com.sg "
+                    }
+                ]
+            },
+            "bbox": [
+                374,
+                366,
+                539,
+                376
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Jamie Culling +612 9006 5042 "
+                    }
+                ]
+            },
+            "bbox": [
+                374,
+                385,
+                621,
+                394
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "jamie.culling@hsbc.com.au "
+                    }
+                ]
+            },
+            "bbox": [
+                374,
+                395,
+                519,
+                404
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Jing Liu +852 3941 0063 "
+                    }
+                ]
+            },
+            "bbox": [
+                374,
+                414,
+                621,
+                423
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "jing.econ.liu@hsbc.com.hk "
+                    }
+                ]
+            },
+            "bbox": [
+                374,
+                423,
+                517,
+                433
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Ines Lam +852 2288 7131 "
+                    }
+                ]
+            },
+            "bbox": [
+                374,
+                442,
+                621,
+                451
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "ines.y.k.lam@hsbc.com.hk "
+                    }
+                ]
+            },
+            "bbox": [
+                374,
+                452,
+                517,
+                461
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Yun Liu + 852 2822 4297 "
+                    }
+                ]
+            },
+            "bbox": [
+                374,
+                470,
+                621,
+                480
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "yun.liu@hsbc.com.hk "
+                    }
+                ]
+            },
+            "bbox": [
+                374,
+                480,
+                489,
+                490
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Aayushi Chaudhary +91 22 2268 5543 "
+                    }
+                ]
+            },
+            "bbox": [
+                374,
+                500,
+                621,
+                509
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "aayushi.b.chaudhary@hsbc.co.in "
+                    }
+                ]
+            },
+            "bbox": [
+                374,
+                510,
+                549,
+                519
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Maitreyi Das +91 80 6737 3155 "
+                    }
+                ]
+            },
+            "bbox": [
+                374,
+                528,
+                621,
+                538
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "maitreyi.das@hsbc.co.in "
+                    }
+                ]
+            },
+            "bbox": [
+                374,
+                539,
+                505,
+                547
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Erin Xin +852 2996 6975 "
+                    }
+                ]
+            },
+            "bbox": [
+                374,
+                555,
+                621,
+                565
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "erin.y.xin@hsbc.com.hk "
+                    }
+                ]
+            },
+            "bbox": [
+                374,
+                566,
+                502,
+                574
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Aris Dacanay +852 3945 1247 "
+                    }
+                ]
+            },
+            "bbox": [
+                374,
+                585,
+                621,
+                593
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "aris.dacanay@hsbc.com.hk "
+                    }
+                ]
+            },
+            "bbox": [
+                374,
+                595,
+                521,
+                604
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Jin Choi +852 2996 6597 "
+                    }
+                ]
+            },
+            "bbox": [
+                374,
+                612,
+                621,
+                623
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "jin.h.j.choi@hsbc.com.hk "
+                    }
+                ]
+            },
+            "bbox": [
+                374,
+                624,
+                507,
+                633
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Akiko Kitamura +852 2996 6676 "
+                    }
+                ]
+            },
+            "bbox": [
+                374,
+                642,
+                621,
+                650
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "akiko.kitamura@hsbc.com.hk "
+                    }
+                ]
+            },
+            "bbox": [
+                374,
+                652,
+                531,
+                661
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Justin Feng +852 2288 7108 "
+                    }
+                ]
+            },
+            "bbox": [
+                374,
+                669,
+                621,
+                680
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "justin.feng@hsbc.com.hk "
+                    }
+                ]
+            },
+            "bbox": [
+                374,
+                681,
+                507,
+                690
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Taylor Wang +852 2288 8650 "
+                    }
+                ]
+            },
+            "bbox": [
+                374,
+                699,
+                621,
+                709
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "taylor.t.l.wang@hsbc.com.hk "
+                    }
+                ]
+            },
+            "bbox": [
+                374,
+                710,
+                527,
+                719
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Priya Mehrishi +91 97 3916 9567 "
+                    }
+                ]
+            },
+            "bbox": [
+                374,
+                726,
+                621,
+                737
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "priya.mehrishi@hsbc.co.in "
+                    }
+                ]
+            },
+            "bbox": [
+                374,
+                738,
+                515,
+                747
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "CEEMEA "
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                680,
+                169,
+                732,
+                179
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Chief Economist, CEEMEA "
+                    }
+                ]
+            },
+            "bbox": [
+                680,
+                188,
+                831,
+                198
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Simon Williams +971 50 9143382 "
+                    }
+                ]
+            },
+            "bbox": [
+                680,
+                199,
+                927,
+                207
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "simon.williams@hsbc.com "
+                    }
+                ]
+            },
+            "bbox": [
+                680,
+                209,
+                820,
+                218
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Senior Economist, Central & Eastern "
+                    }
+                ]
+            },
+            "bbox": [
+                680,
+                226,
+                887,
+                236
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Europe "
+                    }
+                ]
+            },
+            "bbox": [
+                680,
+                237,
+                719,
+                245
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Agata Urbanska-Giner +44 20 7992 2774 "
+                    }
+                ]
+            },
+            "bbox": [
+                680,
+                247,
+                927,
+                256
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "agata.urbanska@hsbcib.com "
+                    }
+                ]
+            },
+            "bbox": [
+                680,
+                257,
+                833,
+                264
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Senior Economist, CEEMEA "
+                    }
+                ]
+            },
+            "bbox": [
+                680,
+                275,
+                838,
+                283
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Melis Metiner +44 20 3359 2636 "
+                    }
+                ]
+            },
+            "bbox": [
+                680,
+                285,
+                927,
+                294
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "melismetiner@hsbcib.com "
+                    }
+                ]
+            },
+            "bbox": [
+                680,
+                294,
+                820,
+                304
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Senior Economist, South Africa "
+                    }
+                ]
+            },
+            "bbox": [
+                680,
+                312,
+                858,
+                321
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Hugo Pienaar +44 20 7718 9563 "
+                    }
+                ]
+            },
+            "bbox": [
+                680,
+                321,
+                927,
+                332
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "hugo.pienaar@hsbc.com "
+                    }
+                ]
+            },
+            "bbox": [
+                680,
+                333,
+                813,
+                342
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Latin America "
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                680,
+                353,
+                759,
+                363
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Chief Economist, Mexico "
+                    }
+                ]
+            },
+            "bbox": [
+                680,
+                369,
+                821,
+                378
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Jose Carlos Sanchez +52 55 5721 5623 "
+                    }
+                ]
+            },
+            "bbox": [
+                680,
+                378,
+                927,
+                387
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "jose.c.sanchez@hsbc.com.mx "
+                    }
+                ]
+            },
+            "bbox": [
+                680,
+                388,
+                840,
+                397
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Allison Buck +1 212 525 4119 "
+                    }
+                ]
+            },
+            "bbox": [
+                680,
+                406,
+                927,
+                416
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "allison.buck@us.hsbc.com "
+                    }
+                ]
+            },
+            "bbox": [
+                680,
+                416,
+                821,
+                426
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Head of Brazil Economics Research "
+                    }
+                ]
+            },
+            "bbox": [
+                680,
+                435,
+                882,
+                444
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Daniel Lavarda +55 11 2802 2640 "
+                    }
+                ]
+            },
+            "bbox": [
+                680,
+                445,
+                927,
+                454
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "daniel.lavarda@hsbc.com "
+                    }
+                ]
+            },
+            "bbox": [
+                680,
+                454,
+                818,
+                464
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "[Non-Text] "
+                    }
+                ]
+            },
+            "bbox": [
+                72,
+                29,
+                136,
+                54
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "HSBC "
+                    }
+                ]
+            },
+            "bbox": [
+                137,
+                35,
+                189,
+                48
+            ]
+        }
+    ]
+]

@@ -1,0 +1,2712 @@
+[
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Global FX Strategy "
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                75,
+                115,
+                315,
+                141
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "FX Compass: Waiting for kick-off "
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                73,
+                146,
+                450,
+                169
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/e7ce0204ed614868885b4f308f0ddf2a0b23cea702e5641edbd010d3a90f8fe1.jpg"
+                },
+                "content": "| Days from start | 1m implied | 3m implied | 1m realized |\n| --------------- | --------- | --------- | ----------- |\n| -30             | ~3        | ~4        | ~-5         |\n| -25             | ~5        | ~6        | ~-3         |\n| -20             | ~10       | ~8        | ~-2         |\n| -15             | ~8        | ~7        | ~-1         |\n| -10             | ~5        | ~5        | ~0          |\n| -5              | ~3        | ~3        | ~-1         |\n| 0               | ~0        | ~0        | ~-2         |\n| 5               | ~-2       | ~-2       | ~-3         |\n| 10              | ~-3       | ~-3       | ~-4         |\n| 15              | ~-4       | ~-4       | ~-5         |\n| 20              | ~-5       | ~-5       | ~-6         |\n| 25              | ~-6       | ~-6       | ~-7         |\n| 30              | ~-7       | ~-7       | ~-8         |\n| 35              | ~-8       | ~-8       | ~-9         |\n| 40              | ~-9       | ~-9       | ~-10        |\n| 45              | ~-10      | ~-10      | ~-11        |\n| 50              | ~-11      | ~-11      | ~-12        |\n| 55              | ~-12      | ~-12      | ~-13        |\n| 60              | ~-13      | ~-13      | ~-14        |\n| 65              | ~-14      | ~-14      | ~-15        |\n| 70              | ~-15      | ~-15      | ~-16        |\n| 75              | ~-16      | ~-16      | ~-17        |\n| 80              | ~-17      | ~-17      | ~-18        |\n| 85              | ~-18      | ~-18      | ~-19        |\n| 90              | ~-19      | ~-19      | ~-20        |",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Figure 1: Previous recent world cups have seen FX vol come under pressure "
+                    }
+                ],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: Bloomberg, UBS "
+                    }
+                ]
+            },
+            "sub_type": "line",
+            "bbox": [
+                75,
+                225,
+                630,
+                412
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "FX markets remain in thrall to the US-Iran negotiations. Most of last week's G10 FX gains vs the USD were reversed at the start of this week when Iran's threat to break off talks over Israeli operations in Lebanon sent oil prices sharply higher. This geopolitics-driven back and forth is by now well understood and has therefore failed to rekindle implied FX vols, which continue to grind lower. With the USD near the top of the G10 carry rankings, we have argued that this low-vol environment is likely to keep the greenback supported, especially with the intact tailwinds of the AI narrative and high real rates. We do not see clear reasons to change that view, particularly with the football world cup starting next week, an event that has historically coincided with lower realized FX vol (Figure 1). With this in mind, this week we focus on potential challenges to our views. "
+                    }
+                ]
+            },
+            "bbox": [
+                73,
+                450,
+                633,
+                583
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The first point of focus is today's speech by BoJ Governor Ueda, which marks the last scheduled BoJ communication before the 16 June rate decision. From an FX strategy standpoint, ambiguity about the BoJ's tightening plans is a key reason why we continue to view USDJPY as a buy-on-dips story. A forceful reaffirmation and even an extension of BoJ hiking intentions would be needed to break this yen-negative dynamic, in our view. In absence of that, a USDJPY test above 160 is likely, and if that triggers renewed FX intervention, a rapid return of dip buyers. "
+                    }
+                ]
+            },
+            "bbox": [
+                73,
+                598,
+                633,
+                690
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Regarding US-Iran negotiations, markets seem focused on the fact that President Trump's rhetoric and actions continue to support expectations of a market-friendly resolution. These expectations suggest the risk asymmetry now lies towards a break in negotiations, which is a scenario that would likely feature renewed USD strength. It is not our baseline scenario, but important to consider given depressed vol levels. "
+                    }
+                ]
+            },
+            "bbox": [
+                73,
+                707,
+                633,
+                773
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "As for US data, markets are positioned for a May employment report that supports the current pricing for a modicum of Fed hikes. With the first FOMC meeting chaired by Chair Warsh two weeks out, we think a very large and clear data surprise in either direction is needed for this priced-in outlook to be meaningfully challenged. "
+                    }
+                ]
+            },
+            "bbox": [
+                73,
+                789,
+                633,
+                843
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "This week we also look into the fundamental flow backdrop underpinning GBP's resilience, highlighting the strength of inbound M&A activity YTD. "
+                    }
+                ]
+            },
+            "bbox": [
+                73,
+                858,
+                633,
+                886
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "FX "
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                663,
+                123,
+                687,
+                136
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Global "
+                    }
+                ]
+            },
+            "bbox": [
+                663,
+                150,
+                705,
+                162
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Alvise Marino "
+                    }
+                ]
+            },
+            "bbox": [
+                831,
+                174,
+                924,
+                185
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Strategist "
+                    }
+                ]
+            },
+            "bbox": [
+                868,
+                186,
+                924,
+                197
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "alvise.marino@ubs.com "
+                    }
+                ]
+            },
+            "bbox": [
+                789,
+                198,
+                924,
+                208
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "+41-44-237 8440 "
+                    }
+                ]
+            },
+            "bbox": [
+                820,
+                210,
+                924,
+                220
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Shahab Jalinoos "
+                    }
+                ]
+            },
+            "bbox": [
+                815,
+                226,
+                924,
+                237
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Strategist "
+                    }
+                ]
+            },
+            "bbox": [
+                868,
+                238,
+                924,
+                249
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "shahab.jalinoos@ubs.com "
+                    }
+                ]
+            },
+            "bbox": [
+                774,
+                250,
+                924,
+                260
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "+1-212-882-5532 "
+                    }
+                ]
+            },
+            "bbox": [
+                818,
+                261,
+                924,
+                272
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Benjamin Jarrett "
+                    }
+                ]
+            },
+            "bbox": [
+                813,
+                280,
+                924,
+                290
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Strategist "
+                    }
+                ]
+            },
+            "bbox": [
+                868,
+                290,
+                924,
+                301
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "benjamin.jarrett@ubs.com "
+                    }
+                ]
+            },
+            "bbox": [
+                773,
+                303,
+                924,
+                313
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "+44-20-7567 5430 "
+                    }
+                ]
+            },
+            "bbox": [
+                813,
+                313,
+                924,
+                324
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "UBS "
+                    }
+                ]
+            },
+            "bbox": [
+                73,
+                4,
+                205,
+                41
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Global Research 3 June 2026 "
+                    }
+                ]
+            },
+            "bbox": [
+                816,
+                12,
+                924,
+                36
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "This report has been prepared by UBS AG. ANALYST CERTIFICATION AND REQUIRED DISCLOSURES, INCLUDING INFORMATION ON THE QUANTITATIVE RESEARCH REVIEW PUBLISHED BY UBS, BEGIN ON PAGE 9. "
+                    }
+                ]
+            },
+            "bbox": [
+                73,
+                947,
+                924,
+                972
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Macro overview: Waiting for kick-off "
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                75,
+                48,
+                480,
+                67
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "FX markets remain in thrall to the US-Iran negotiations. Most of last week's G10 FX gains vs the USD, driven by expectations of a deal, were reversed at the start of this week when Iran's threat to break off talks over Israeli operations in Lebanon sent oil prices sharply higher. While this geopolitics-driven back and forth supports realized volatility, it is by now well understood by market participants and has therefore failed to rekindle implied FX vols, which continue to grind lower. With the USD near the top of the G10 carry rankings, we have argued that this low-vol environment is likely to keep the greenback supported against lower yielding G10 peers (EUR, JPY and CHF), especially with the intact tailwinds of the AI narrative and high real rates attracting inflows. We do not see clear reasons to change that view, particularly with the football world cup starting next week on 11 Jun, an event that has historically coincided with lower implied and realized FX volatility (Figure 1). With this in mind, this week we focus on upcoming event outcomes that could challenge our views and on potential near-term catalysts. "
+                    }
+                ]
+            },
+            "bbox": [
+                73,
+                70,
+                633,
+                240
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Risk #1: Ueda's speech "
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                73,
+                256,
+                231,
+                270
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The first point of focus is today's speech by BoJ Governor Ueda. It marks the last scheduled BoJ communication before the 16 June rate decision, for which 19bp of hikes are currently implied; markets will be alert to any attempt to influence expectations ahead of the meeting (our economists expect a hike). Recent data and market developments point to simmering risks of a dovish lean: oil prices remain below $100, both national and Tokyo CPI surprised lower in April and in May, with \"core core\" CPI printing 1.9% y/y and 1.6% y/y respectively from 2.4% and 1.9% in April, and the selloff at the long end of the JGB curve has eased sharply since mid-May. That undermines the case of those who argue the BoJ needs to reassert its anti-inflation credentials to keep the long end under control. "
+                    }
+                ]
+            },
+            "bbox": [
+                73,
+                286,
+                633,
+                416
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Alvise Marino "
+                    }
+                ]
+            },
+            "bbox": [
+                806,
+                80,
+                919,
+                92
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Strategist "
+                    }
+                ]
+            },
+            "bbox": [
+                857,
+                96,
+                921,
+                109
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "With USD near the top of G10 FX carry rankings, low vol conditions can be USD-positive "
+                    }
+                ]
+            },
+            "bbox": [
+                655,
+                143,
+                919,
+                181
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Ahead of Ueda's speech, the data-based case for the BoJ to hike rates has become less clear "
+                    }
+                ]
+            },
+            "bbox": [
+                655,
+                286,
+                907,
+                324
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/b0b43bba930a02dc98ee581ae7fc597cfe75f0732ae78cfc366835c557aa3c02.jpg"
+                },
+                "content": "| Date    | Japan median underlying inflation (%, y/y) |\n|---------|------------------------------------------|\n| Jan-21  | ~0.00                                    |\n| Apr-22  | ~0.40                                    |\n| Jul-23  | ~2.20                                    |\n| Oct-24  | ~1.40                                    |\n| Jan-26  | ~0.60                                    |",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Figure 2: Japan's underlying inflation keeps trending lower "
+                    }
+                ],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: Macrobond, UBS "
+                    }
+                ]
+            },
+            "sub_type": "line",
+            "bbox": [
+                77,
+                456,
+                477,
+                700
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/24bb77bd55cb42d3d5bbf13e0bdad59bbde45b9b89d7a9a312a5dcf0056bc3cf.jpg"
+                },
+                "content": "1y1y swap rates (%)\n| Currency | Change since 27 feb (bp, rhs) | Latest (%) |\n| :--- | :--- | :--- |\n| JPY | 0.85 | 40 |\n| AUD | 1.48 | 108 |\n| CHF | 1.49 | 6 |\n| CAD | 2.28 | 69 |\n| SEK | 2.32 | 58 |\n| NZD | 2.41 | 88 |\n| NOK | 2.45 | 103 |\n| EUR | 2.58 | 63 |\n| GBP | 3.75 | 102 |\n| USD | 3.90 | 95 |",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Figure 3: CB pricing changed the least for the BoJ in G10 "
+                    }
+                ],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: Bloomberg, UBS "
+                    }
+                ]
+            },
+            "sub_type": "bar_line",
+            "bbox": [
+                515,
+                456,
+                915,
+                729
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Moreover, earlier concerns around the Takaichi administration's fiscal expansion plans were eased by a supplementary budget announcement with mostly benign details, including an upward revision to FY2025 tax revenues. Our economists note that these improvements should allow the government to extend gasoline subsidies beyond this year; as things stand, they expect subsidies to depress core CPI by ~0.5-0.6pp from August to October. While the BoJ has historically looked through such temporary effects, and our economists think inflation is likely to rebound from current levels, the deceleration in underlying inflation measures to well below 1.0% y/y (Figure 2) remains notable. It is also likely one reason why BoJ policy expectations have risen only modestly "
+                    }
+                ]
+            },
+            "bbox": [
+                73,
+                786,
+                633,
+                905
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "A more benign fiscal easing outlook could also undermine the urge for BoJ tightening "
+                    }
+                ]
+            },
+            "bbox": [
+                655,
+                786,
+                912,
+                827
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Global FX Strategy "
+                    }
+                ]
+            },
+            "bbox": [
+                73,
+                18,
+                181,
+                30
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "UBS "
+                    }
+                ]
+            },
+            "bbox": [
+                845,
+                18,
+                924,
+                29
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "Global FX Strategy 3 June 2026 "
+                    }
+                ]
+            },
+            "bbox": [
+                73,
+                957,
+                284,
+                969
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "UBS 2 "
+                    }
+                ]
+            },
+            "bbox": [
+                863,
+                956,
+                924,
+                969
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "since the start of the US-Iran conflict, in contrast with the more hawkish repricing seen elsewhere in G10 (Figure 3). "
+                    }
+                ]
+            },
+            "bbox": [
+                73,
+                38,
+                633,
+                63
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "From an FX strategy standpoint, this stability in BoJ pricing and the resulting loss of rate support vs G10 peers is a key reason why we continue to view USDJPY as a buy-on-dips story and remain open to the pair breaking above 160, especially if energy prices resume their ascent. While 10-year JGB yields are trading slightly above inflation breakevens, the BoJ policy rate remains well below realized inflation and the BoJ's willingness to close that gap through rate hikes is still clouded by ambiguity. Any signals from Governor Ueda that extend this lack of clarity are therefore likely to reinforce the case for JPY weakness. In that scenario, we still think moves north of 160 could prompt renewed MoF FX intervention, but any resulting dips in USDJPY are likely to attract carry-focused buyers looking to take advantage of low-vol market conditions. "
+                    }
+                ]
+            },
+            "bbox": [
+                73,
+                80,
+                633,
+                210
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "As long as the BoJ's tightening intentions are ambiguous, JPY weakness can extend further "
+                    }
+                ]
+            },
+            "bbox": [
+                655,
+                81,
+                875,
+                120
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "A forceful reaffirmation and even an extension of BoJ hiking intentions would be needed to break this yen-negative dynamic, in our view. We do not rule it out, but front-end USDJPY risk reversal skews remain bid for puts well within this year's range. So, while the premium for USDJPY puts over calls is fading at the long end of the risk reversal skew curve, in the near-term JPY bulls seem much less outnumbered, implying that FX risks around this event are likely balanced and not excessively biased towards expecting a weaker JPY. "
+                    }
+                ]
+            },
+            "bbox": [
+                73,
+                227,
+                633,
+                320
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "A forceful reaffirmation of priced-in hikes is needed to break yen-negative dynamics "
+                    }
+                ]
+            },
+            "bbox": [
+                655,
+                227,
+                910,
+                267
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/9c5a669a9de2542ad856b6cb0e08ae18965aae5b862c8508b8dffd3b7584e9ef.jpg"
+                },
+                "content": "| Date   | 1m     | 1y     |\n|--------|--------|--------|\n| Jan-25 | -1.00  | -0.50  |\n| Apr-25 | -3.50  | -2.00  |\n| Jul-25 | -1.50  | -1.00  |\n| Oct-25 | -0.50  | -0.50  |\n| Jan-26 | -2.50  | -0.50  |\n| Apr-26 | -1.00  | -0.50  |",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Figure 4: USDJPY lower optionality still in demand in 1m "
+                    }
+                ],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: Bloomberg, UBS "
+                    }
+                ]
+            },
+            "sub_type": "line",
+            "bbox": [
+                80,
+                358,
+                473,
+                600
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/5639268c626efdedf406cb314da945fba0bda2eab09c82769c0042d1570dab55.jpg"
+                },
+                "content": "| Date   | Brent crude vs BBDXY |\n|--------|----------------------|\n| Jun-25 | ~70%                 |\n| Sep-25 | ~80%                 |\n| Dec-25 | ~-40%                |\n| Mar-26 | ~80%                 |\n| Jun-26 | ~90%                 |",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Figure 5: US-Iran conflict still dominates FX trading "
+                    }
+                ],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: Bloomberg, UBS "
+                    }
+                ]
+            },
+            "sub_type": "line",
+            "bbox": [
+                519,
+                358,
+                919,
+                601
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Risk #2: US-Iran negotiations "
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                73,
+                654,
+                278,
+                667
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Turning to the US-Iran negotiations, markets seem focused on the fact that President Trump's rhetoric and actions continue to support expectations of a market-friendly resolution. That is helping keep implied volatility subdued despite the still unresolved state of negotiations and occasional local military skirmishes. Our longstanding view has been that a resolution announcement would initially weaken the USD in a knee-jerk move before the currency regains momentum on strong US fundamentals; the seesaw price action of recent days gives us confidence in that view. However, given how one-sided market expectations around a resolution are, the bigger risk asymmetry now is for a lasting breakdown in talks that leads potentially to renewed military activity. While seemingly a less likely scenario, this outcome is worth considering simply because it would represent a large shock to the relaxed volatility outlook markets are pricing in. In that scenario, renewed upside in energy prices would see the USD test the upper end of our Q2 ranges (EURUSD 1.1450, AUDUSD 0.70, USDJPY 162). To be clear, we see this as a tail risk rather than our baseline, but it again highlights the asymmetric risk profile towards further USD appreciation. "
+                    }
+                ]
+            },
+            "bbox": [
+                73,
+                683,
+                633,
+                880
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "With markets anticipating a conflict resolution, the risk asymmetry is likely towards escalation "
+                    }
+                ]
+            },
+            "bbox": [
+                655,
+                683,
+                910,
+                723
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "Global FX Strategy 3 June 2026 "
+                    }
+                ]
+            },
+            "bbox": [
+                73,
+                958,
+                284,
+                969
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "UBS 3 "
+                    }
+                ]
+            },
+            "bbox": [
+                863,
+                956,
+                924,
+                969
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Risk #3: US May employment report "
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                73,
+                38,
+                329,
+                50
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "To close the week, markets are looking for an +85K NFP print in May on Friday, with 0.3%mom average earnings growth and a 4.3% unemployment rate (vs +115k / 0.2% mom / 4.3% in Apr) – a touch below our economists' call for a 90K headline and 0.37%mom earnings growth. The run-up to this release has seen mixed US data, with improved reading in May ISM manufacturing (54.0 vs 52.7 in Apr) and Apr JOLTS (7618K vs 6887K in March), but also softer surprises including Apr personal income and spending (0.0%mom and 0.5% mom vs 0.5% and 1.0% in March) and Apr durable goods (0.4%mom non-defence ex air shipments vs 1.3%mom in March). This suggests that numbers in line with expectations, or stronger, could tilt the balance of opinions further in a positive direction and do little to undermine current pricing for possible Fed rate hikes (+18bp by year-end, +25bp by the 17 Mar 2027 meeting). "
+                    }
+                ]
+            },
+            "bbox": [
+                73,
+                67,
+                633,
+                210
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "We suspect a clear negative surprise is likely needed for markets to question current Fed pricing, especially given the hawkish lean of recent comments from officials including Cleveland Fed President Hammack and Kansas City Fed President Schmid. At the same time, with the first FOMC led by Chair Warsh two weeks away, markets may be reluctant to push pricing to hawkish extremes absent a crystal clear case for it from the data, mindful that key elements of the current Fed framework, such as forward guidance, could change under the new leadership. All told, we believe it would take a large surprise in either direction to challenge the current narrative; absent that, the bar for vol to rebound on US data alone seems high. "
+                    }
+                ]
+            },
+            "bbox": [
+                73,
+                227,
+                633,
+                346
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "A US employment report in line with consensus would reaffirm rate support for the USD "
+                    }
+                ]
+            },
+            "bbox": [
+                655,
+                67,
+                917,
+                106
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "A large NFP surprise in either direction is likely needed to challenge the low vol market outlook "
+                    }
+                ]
+            },
+            "bbox": [
+                655,
+                227,
+                924,
+                267
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "Global FX Strategy 3 June 2026 "
+                    }
+                ]
+            },
+            "bbox": [
+                73,
+                958,
+                282,
+                969
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "UBS 4 "
+                    }
+                ]
+            },
+            "bbox": [
+                865,
+                957,
+                924,
+                968
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "GBP: Supported by fundamental flows "
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                73,
+                48,
+                499,
+                67
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "GBP has continued to show resilience in the face of ongoing political developments surrounding the future of Prime Minister Sir Keir Starmer's premiership. Ahead of the local elections last month, we wrote about how the key source of concern for GBP is ultimately the fiscal outlook, and that a lack of reaction in GBP to the political news flow could arguably be justified so long as the perceived risk of the existing fiscal rules being broken/loosened is sufficiently low. This has largely held true since. As we have covered it in detail in recent weeks (link, link, link), we leave the politics to one side in this article and instead look into the fundamental flow backdrop for GBP, arguing that it continues to provide fundamental support for sterling behind the noise. We target EURGBP 0.8750 for end-Q2, the upper end of the YTD range, followed by gradual GBP appreciation to 0.8500 by year-end. "
+                    }
+                ]
+            },
+            "bbox": [
+                73,
+                70,
+                633,
+                214
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Benjamin Jarrett "
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                783,
+                78,
+                922,
+                94
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Strategist "
+                    }
+                ]
+            },
+            "bbox": [
+                857,
+                96,
+                922,
+                110
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "GBP has continued to show resilience despite ongoing political noise "
+                    }
+                ]
+            },
+            "bbox": [
+                655,
+                141,
+                922,
+                170
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/ce925f9c41df279e6a51385530c256e9ff1a47bd0f23ce0a66eea20a4f2af4bb.jpg"
+                },
+                "content": "UK Broad Basic Balance, Quarterly Data, %GDP (Positive = net inflow)\n| Year | Current account (%) | FDI (%) | Portfolio investment (%) | Broad basic balance (curr acc + FDI + port inv) (%) |\n|---|---|---|---|---|\n| 2016 | -3.5 | 11.5 | 18.5 | 5.0 |\n| 2017 | -4.0 | 13.0 | 17.0 | 10.0 |\n| 2018 | -3.0 | 10.0 | 11.0 | 8.0 |\n| 2019 | -3.5 | 4.0 | -18.0 | -25.0 |\n| 2020 | -3.0 | 8.0 | 14.0 | 17.0 |\n| 2021 | -3.5 | 7.0 | -12.0 | -5.0 |\n| 2022 | -3.0 | -3.0 | 9.0 | 12.0 |\n| 2023 | -3.5 | 3.0 | -18.0 | -10.0 |\n| 2024 | -3.0 | 1.0 | -12.0 | -10.0 |\n| 2025 | -3.5 | 3.0 | 18.0 | 14.0 |\n| 2026 | -3.0 | -2.0 | 8.0 | 6.0 |",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Figure 6: UK broad basic balance supported by portfolio inflows "
+                    }
+                ],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: Macrobond, UBS "
+                    }
+                ]
+            },
+            "sub_type": "bar_line",
+            "bbox": [
+                82,
+                243,
+                633,
+                454
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "We came into the year constructive on GBP, with the benign balance of payments backdrop being a key part of our rationale. Data for Q4 (released end-Q1) showed continued strength in portfolio investment (Figure 6), marking the third consecutive quarter of net portfolio inflows. In Q4 on aggregate, domestic investors repatriated into domestic equities and reduced purchases of overseas debt, while overseas investors continued to buy both domestic equities and debt (Figure 7, Figure 8). These flows were clearly supportive for GBP last year and, given relatively rangebound and resilient price action in sterling so far in 2026, we would not be surprised if BoP data for Q1 and Q2 show a similar backdrop when released. "
+                    }
+                ]
+            },
+            "bbox": [
+                73,
+                490,
+                633,
+                609
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The UK's broad basic balance has been improving, supported by portfolio inflows "
+                    }
+                ]
+            },
+            "bbox": [
+                655,
+                490,
+                890,
+                530
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/8620de1240711fa4a54ddfdb68ce99f58b23e5999c0e2c5f3bb8ed203b64b135.jpg"
+                },
+                "content": "UK Portfolio Investment, Equity (Quarterly Data, %GDP) (Positive = net inflow)\n| Year | Portfolio investment, equity, liabilities (overseas investors) (%) | Portfolio investment, equity, assets (domestic investors) (%) | Portfolio investment, equity, net (%) |\n|---|---|---|---|\n| 2016 | 3.5 | 4.8 | 9.2 |\n| 2017 | -1.2 | -1.8 | -14.5 |\n| 2018 | 4.2 | 14.5 | 8.9 |\n| 2019 | -0.8 | 6.2 | -1.5 |\n| 2020 | 1.5 | 18.0 | -7.0 |\n| 2021 | -0.5 | -5.0 | -3.0 |\n| 2022 | 3.8 | 15.5 | 8.5 |\n| 2023 | -0.3 | -1.0 | -10.5 |\n| 2024 | -0.7 | 5.0 | -6.0 |\n| 2025 | 0.5 | 9.0 | -1.5 |\n| 2026 | 1.2 | 5.5 | 6.0 |",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Figure 7: UK equity portfolio investment "
+                    }
+                ],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: Macrobond, UBS "
+                    }
+                ]
+            },
+            "sub_type": "bar_line",
+            "bbox": [
+                84,
+                644,
+                485,
+                858
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/530624e9944482d9cadc59582cbc4fd3b27f074360e336e662016c3916e57872.jpg"
+                },
+                "content": "UK Portfolio Investment, Debt (Quarterly Data, %GDP) (Positive = net inflow)\n| Year | Portfolio investment, debt, liabilities (overseas investors) (%) | Portfolio investment, debt, assets (domestic investors) (%) | Portfolio investment, debt, net (%) |\n|---|---|---|---|\n| 2016 | 1.5 | -3.0 | 14.0 |\n| 2017 | 3.0 | -8.0 | 15.0 |\n| 2018 | 4.0 | -5.0 | 12.0 |\n| 2019 | -12.0 | -10.0 | -13.0 |\n| 2020 | 8.0 | -5.0 | 10.0 |\n| 2021 | 5.0 | -3.0 | 8.0 |\n| 2022 | 3.0 | -1.0 | 10.0 |\n| 2023 | 5.0 | -8.0 | -8.0 |\n| 2024 | 4.0 | -5.0 | -3.0 |\n| 2025 | 3.0 | -4.0 | 7.0 |\n| 2026 | 3.0 | -3.0 | 1.0 |",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Figure 8: UK debt portfolio investment "
+                    }
+                ],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: Macrobond, UBS "
+                    }
+                ]
+            },
+            "sub_type": "bar_line",
+            "bbox": [
+                519,
+                644,
+                922,
+                858
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Global FX Strategy "
+                    }
+                ]
+            },
+            "bbox": [
+                73,
+                16,
+                181,
+                30
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "UBS "
+                    }
+                ]
+            },
+            "bbox": [
+                845,
+                16,
+                924,
+                29
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "Global FX Strategy 3 June 2026 "
+                    }
+                ]
+            },
+            "bbox": [
+                73,
+                957,
+                284,
+                970
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "UBS 5 "
+                    }
+                ]
+            },
+            "bbox": [
+                863,
+                956,
+                924,
+                969
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "In addition to official BoP data, which are released with a one quarter delay (Q1 data will be released on 30 June), we also track more timely M&A activity. We take M&A announcements from Bloomberg's M&A database (MA <GO>) for closed and pending cross-border deals, applying a minimum deal threshold of USD50mn and only including transactions with a cash component. As shown in Figure 9, announcements of inbound M&A activity, i.e., overseas firms investing in or taking over British firms, has been very strong recently (the last data point is May 2026). Recent Bloomberg reporting suggests that 2026 has been the strongest year (at this point in the year) for inbound M&A in the UK since 2015, with overseas firms attracted by UK businesses with high-quality earnings, international exposures and discounted valuations. "
+                    }
+                ]
+            },
+            "bbox": [
+                73,
+                67,
+                633,
+                198
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/b7618415c5511e384ddece0b3b5be5a7a7f792a9f0e164f5284ebc56b34694ce.jpg"
+                },
+                "content": "UK M&A announced deals, GBPbn, 3m sums\n| Year | Outbound (GBPbn) | Inbound (GBPbn) | Net (GBPbn) |\n|---|---|---|---|\n| 19 | -10 | 15 | 5 |\n| 19-19 | -5 | 10 | 8 |\n| 19-20 | -15 | 15 | 10 |\n| 20 | -30 | 10 | -20 |\n| 20-20 | -40 | 5 | -10 |\n| 20-21 | -45 | 50 | 30 |\n| 21 | -30 | 45 | 25 |\n| 21-22 | -35 | 25 | -5 |\n| 22 | -20 | 20 | 15 |\n| 23 | -10 | 15 | 10 |\n| 24 | -5 | 10 | 5 |\n| 24-25 | -10 | 20 | 10 |\n| 25 | -5 | 15 | 15 |\n| 25-26 | -10 | 45 | 30 |\n| 26 | -20 | 85 | 80 |\n| 26-27 | -5 | 80 | 75 |",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Figure 9: Inbound M&A announcements have been very strong recently "
+                    }
+                ],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: Bloomberg, UBS "
+                    }
+                ]
+            },
+            "sub_type": "bar_line",
+            "bbox": [
+                82,
+                232,
+                613,
+                426
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "M&A announcements should show up in official BoP data as direct investment (FDI) in the financial account down the line, though we note that FDI also includes other components such as reinvested earnings and inter-company lending. The lead time between announcement and completion can also be highly variable. As such, rather than treating M&A announcements as a leading indicator of FDI flows, we see it as an indicator that signals the relative attractiveness of an economy's business environment. Strong inbound M&A announcements YTD combined with robust portfolio inflows through 2025 support our view that GBP is fundamentally supported by a benign flow backdrop, adding to the reasons behind GBP's resilience of late despite volatile news flow around political risks. "
+                    }
+                ]
+            },
+            "bbox": [
+                73,
+                460,
+                633,
+                592
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "We target EURGBP 0.8750 for end-Q2, the upper end of the YTD range, capturing the risk of the fiscal narrative changing as we make our way through the run-up and aftermath of the Makerfield by-election on 18 Jun in which Manchester Mayor Andy Burnham is seeking a return to Westminster to challenge Prime Minister Starmer's leadership. Beyond that, we continue to target EURGBP 0.8500 for year-end as political noise fades later in the year and the positive flow backdrop that we highlight above can drive gradual GBP appreciation. We note that this constructive view on sterling is conditional on the broad risk environment remaining supportive; a shift to a risk-off/high-vol environment would likely put GBP on the backfoot. "
+                    }
+                ]
+            },
+            "bbox": [
+                73,
+                608,
+                633,
+                727
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "As an extension of this final point, a key factor behind sterling's high beta to risk was flagged in BoE MPC member Catherine Mann's recent speech on 13 May – Old exposures, new actors: Implications for monetary policy of the UK's External Imbalances. For detailed analysis on trends in the UK's balance of payments, we strongly recommend giving it a read. From an FX perspective, our key takeaway is Mann's observation that the UK's net international investment position (NIIP) has benefitted significantly from valuation effects as the UK's holdings of overseas assets have appreciated by more than the value of the UK's liabilities over time. As a result, the UK's NIIP is unchanged since the late 1990s at ~6.5% of GDP despite persistent current account deficits. We see this as an important driver of GBP's high risk-beta, as the UK's external position deteriorates in times of risk-off as overseas assets lose value, and improves in time of risk-on as these assets gain value. "
+                    }
+                ]
+            },
+            "bbox": [
+                73,
+                741,
+                633,
+                901
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "We also track M&A announcements, which have been very strong for the UK recently "
+                    }
+                ]
+            },
+            "bbox": [
+                655,
+                67,
+                915,
+                107
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "We see M&A announcements as a signal of the attractiveness of an economy's business environment "
+                    }
+                ]
+            },
+            "bbox": [
+                655,
+                460,
+                897,
+                500
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "We target EURGBP 0.8750 for end-Q2, followed by gradual GBP strength to EURGBP 0.8500 by year-end "
+                    }
+                ]
+            },
+            "bbox": [
+                655,
+                608,
+                902,
+                661
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The constructive GBP view is conditional on the broad risk environment remaining supportive "
+                    }
+                ]
+            },
+            "bbox": [
+                655,
+                741,
+                905,
+                783
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "Global FX Strategy 3 June 2026 "
+                    }
+                ]
+            },
+            "bbox": [
+                73,
+                957,
+                284,
+                969
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "UBS 6 "
+                    }
+                ]
+            },
+            "bbox": [
+                863,
+                956,
+                924,
+                969
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "FX trade recommendations & forecasts "
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                75,
+                49,
+                500,
+                66
+            ]
+        },
+        {
+            "type": "table",
+            "content": {
+                "image_source": {
+                    "path": "images/4c2d2e5d2afeb84ca6d0fb05ed0c2c43074f1ded6cc11453c369540cc4ae5831.jpg"
+                },
+                "table_caption": [
+                    {
+                        "type": "text",
+                        "content": "Figure 10: Open and closed trade recommendations (trades executed once weekly, the day before publication) "
+                    }
+                ],
+                "table_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: Bloomberg, UBS. This table is a record of current trade recommendations from the most recently published research reports available on NEO. "
+                    }
+                ],
+                "html": "<table><tr><td colspan=\"8\">FX Trade Monitor</td></tr><tr><td colspan=\"8\">Trade Ideas</td></tr><tr><td></td><td>P&amp;L Units</td><td>Entry Date</td><td>Entry level</td><td>Current level</td><td>Expiry date / Stop loss</td><td>P&amp;L (incl. carry)</td><td>Link to Publication</td></tr><tr><td>Long 6m GBPUSD 1.40 digital call</td><td>% notional</td><td>08-Jan-26</td><td>0.19%</td><td>0.02%</td><td>08-Jul-26</td><td>-0.17%-0.17%</td><td>Thematic trades to start 2026</td></tr><tr><td>Long 6m AUDNZD 1.12 digital put</td><td>% notional</td><td>08-Jan-26</td><td>0.17%</td><td>0.00%</td><td>08-Jul-26</td><td>-0.17%-0.17%</td><td>Thematic trades to start 2026</td></tr><tr><td>Long 9m USDJPY 175 one touch</td><td>% notional</td><td>01-Apr-26</td><td>0.19%</td><td>0.11%</td><td>29-Dec-26</td><td>-0.08%-0.08%</td><td>FX Compass: Mideast conflict scenarios</td></tr><tr><td>Sell EURNOK rallies to 11.95</td><td>% notional</td><td>n/a</td><td>n/a</td><td>n/a</td><td>n/a</td><td>0.00%0.00%</td><td>Thematic trades to start 2026</td></tr><tr><td colspan=\"8\">Closed trades</td></tr><tr><td></td><td>P&amp;L Units</td><td>Entry Date</td><td>Entry level</td><td>Exit level</td><td>Close Date</td><td>P&amp;L (incl. carry)</td><td>Link to Publication</td></tr><tr><td>Long 6m USDCAD volatility swap</td><td>% notional</td><td>04-Nov-25</td><td>4.92%</td><td>4.76%</td><td>04-May-26</td><td>-0.16%-0.16%</td><td>FX Compass: Going corporate</td></tr><tr><td>Long 6m USDJPY 154.30 call 162.10 RKO</td><td>% notional</td><td>08-Jan-26</td><td>0.24%</td><td>0.70%</td><td>28-Apr-26</td><td>0.46%0.46%</td><td>Thematic trades to start 2026</td></tr><tr><td>Long 6m dual digital GBPUSD ≥ 1.32, EURUSD ≤ 1.17</td><td>% notional</td><td>08-Jan-26</td><td>0.19%</td><td>0.21%</td><td>31-Mar-26</td><td>0.02%0.02%</td><td>Thematic trades to start 2026</td></tr><tr><td>Short EURSEK</td><td>% notional</td><td>03-Mar-26</td><td>10.75</td><td>10.75</td><td>12-Mar-26</td><td>0.00%0.00%</td><td>FX Compass: Volatility roars back</td></tr><tr><td>Long 6m EURAUD 1.74 put EKO 1.65</td><td>% notional</td><td>10-Nov-25</td><td>0.50%</td><td>1.50%</td><td>04-Mar-26</td><td>1.00%1.00%</td><td>Global Economics &amp; Markets Outlook 2026-27</td></tr></table>",
+                "table_type": "complex_table",
+                "table_nest_level": 1
+            },
+            "bbox": [
+                73,
+                101,
+                924,
+                329
+            ]
+        },
+        {
+            "type": "table",
+            "content": {
+                "image_source": {
+                    "path": "images/00e7780162e6e6ad152c1e96528faab87f47fb813284343b8bf3a37ea1a22b9d.jpg"
+                },
+                "table_caption": [
+                    {
+                        "type": "text",
+                        "content": "Figure 11: UBS FX Forecasts "
+                    },
+                    {
+                        "type": "text",
+                        "content": "Last forecast update: 12 May 2026 "
+                    }
+                ],
+                "table_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: Bloomberg, UBS estimates "
+                    }
+                ],
+                "html": "<table><tr><td></td><td>Spot</td><td>Q2-2026</td><td>Q3-2026</td><td>Q4-2026</td><td>End-2027</td></tr><tr><td>DXY</td><td>99.2</td><td>99.7</td><td>99.4</td><td>100.5</td><td>100.5</td></tr><tr><td>EURUSD</td><td>1.164</td><td>1.16</td><td>1.16</td><td>1.14</td><td>1.14</td></tr><tr><td>USDJPY</td><td>159.9</td><td>162</td><td>160</td><td>160</td><td>160</td></tr><tr><td>EURJPY</td><td>186.1</td><td>188</td><td>186</td><td>182</td><td>182</td></tr><tr><td>EURCHF</td><td>0.916</td><td>0.91</td><td>0.91</td><td>0.90</td><td>0.88</td></tr><tr><td>USDCHF</td><td>0.787</td><td>0.78</td><td>0.78</td><td>0.79</td><td>0.77</td></tr><tr><td>EURGBP</td><td>0.864</td><td>0.875</td><td>0.860</td><td>0.850</td><td>0.850</td></tr><tr><td>GBPUSD</td><td>1.347</td><td>1.33</td><td>1.35</td><td>1.34</td><td>1.34</td></tr><tr><td>USDCAD</td><td>1.384</td><td>1.38</td><td>1.39</td><td>1.40</td><td>1.40</td></tr><tr><td>AUDUSD</td><td>0.718</td><td>0.72</td><td>0.73</td><td>0.74</td><td>0.74</td></tr><tr><td>NZDUSD</td><td>0.593</td><td>0.59</td><td>0.60</td><td>0.62</td><td>0.62</td></tr><tr><td>AUDNZD</td><td>1.211</td><td>1.22</td><td>1.21</td><td>1.20</td><td>1.19</td></tr><tr><td>EURSEK</td><td>10.83</td><td>10.85</td><td>10.70</td><td>10.50</td><td>10.50</td></tr><tr><td>EURNOK</td><td>10.80</td><td>10.75</td><td>10.95</td><td>11.20</td><td>11.20</td></tr><tr><td>EURAUD</td><td>1.62</td><td>1.61</td><td>1.59</td><td>1.54</td><td>1.54</td></tr></table>",
+                "table_type": "simple_table",
+                "table_nest_level": 1
+            },
+            "bbox": [
+                72,
+                418,
+                633,
+                741
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "We would like to thank Chetna Malik, our research support service professional, for her help in the preparation of this research report. "
+                    }
+                ]
+            },
+            "bbox": [
+                75,
+                802,
+                633,
+                827
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Global FX Strategy "
+                    }
+                ]
+            },
+            "bbox": [
+                73,
+                18,
+                181,
+                30
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "UBS "
+                    }
+                ]
+            },
+            "bbox": [
+                845,
+                18,
+                924,
+                29
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "Global FX Strategy 3 June 2026 "
+                    }
+                ]
+            },
+            "bbox": [
+                75,
+                958,
+                282,
+                969
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "UBS 7 "
+                    }
+                ]
+            },
+            "bbox": [
+                863,
+                956,
+                924,
+                968
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Valuation Method and Risk Statement "
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                73,
+                75,
+                346,
+                88
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Risks of multi-asset investing include but are not limited to market risk, credit risk, interest rate risk, and foreign exchange risk. Correlations of returns among different asset classes may deviate from historical patterns. Geopolitical events and policy shocks pose risks that can reduce asset returns. Valuations may be adversely affected during times of high market volatility, thin liquidity, and economic dislocation. All options discussions are 'over-the-counter'. Losses on some options trades are potentially unlimited unless hedged/neutralized. "
+                    }
+                ]
+            },
+            "bbox": [
+                73,
+                95,
+                633,
+                168
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "Global FX Strategy 3 June 2026 "
+                    }
+                ]
+            },
+            "bbox": [
+                73,
+                958,
+                282,
+                969
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "UBS 8 "
+                    }
+                ]
+            },
+            "bbox": [
+                865,
+                958,
+                924,
+                968
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Required Disclosures "
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                73,
+                37,
+                270,
+                52
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "This document has been prepared by UBS AG. UBS AG, its subsidiaries, branches and affiliates, including former CS AG and its subsidiaries, branches and affiliates are referred to herein as \"UBS\". "
+                    }
+                ]
+            },
+            "bbox": [
+                73,
+                61,
+                924,
+                88
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "For information on the ways in which UBS manages conflicts and maintains independence of its UBS Global Research product; historical performance information; certain additional disclosures concerning UBS Global Research recommendations; and terms and conditions for certain third party data used in research report, please visit https://www.ubs.com/disclosures. Unless otherwise indicated, information and data in this report are based on company disclosures including but not limited to annual, interim, quarterly reports and other company announcements. The figures contained in performance charts refer to the past; past performance is not a reliable indicator of future results. Additional information will be made available upon request. UBS Co. Limited is licensed to conduct securities investment consultancy businesses by the China Securities Regulatory Commission. UBS acts or may act as principal in the debt securities (or in related derivatives) that may be the subject of this report. This recommendation was finalized on: 02 June 2026 10:42 PM GMT. UBS has designated certain UBS Global Research department members as Derivatives Research Analysts where those department members publish research principally on the analysis of the price or market for a derivative, and provide information reasonably sufficient upon which to base a decision to enter into a derivatives transaction. Where Derivatives Research Analysts co-author research reports with Equity Research Analysts or Economists, the Derivatives Research Analyst is responsible for the derivatives investment views, forecasts, and/or recommendations. Quantitative Research Review: UBS Global Research publishes a quantitative assessment of its analysts' responses to certain questions about the likelihood of an occurrence of a number of short term factors in a product known as the 'Quantitative Research Review'. Views contained in this assessment on a particular stock reflect only the views on those short term factors which are a different timeframe to the 12-month timeframe reflected in any equity rating set out in this note. For the latest responses, please see the Quantitative Research Review Addendum at the back of this report, where applicable. For previous responses please make reference to (i) previous UBS Global Research reports; and (ii) where no applicable research report was published that month, the Quantitative Research Review which can be found at https://neo.ubs.com/quantitative, or contact your UBS sales representative for access to the report or the Quantitative Research Team on ubs-quant-answers@ubs.com. A consolidated report which contains all responses is also available and again you should contact your UBS sales representative for details and pricing or the Quantitative Research team on the email above. "
+                    }
+                ]
+            },
+            "bbox": [
+                73,
+                93,
+                926,
+                412
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Analyst Certification: "
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                73,
+                418,
+                226,
+                430
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Each research analyst primarily responsible for the content of this research report, in whole or in part, certifies that with respect to each security or issuer that the analyst covered in this report: (1) all of the views expressed accurately reflect his or her personal views about those securities or issuers and were prepared in an independent manner, including with respect to UBS, and (2) no part of his or her compensation was, is, or will be, directly or indirectly, related to the specific recommendations or views expressed by that research analyst in the research report. "
+                    }
+                ]
+            },
+            "bbox": [
+                73,
+                432,
+                924,
+                503
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Research analysts contributing to this report who are employed by any non-US affiliate of UBS LLC are not registered/qualified as research analysts with FINRA. Such analysts may not be associated persons of UBS LLC and therefore are not subject to the FINRA restrictions on communications with a subject company, public appearances, and trading securities held by a research analyst account. The name of each affiliate and analyst employed by that affiliate contributing to this report, if any, follows. "
+                    }
+                ]
+            },
+            "bbox": [
+                73,
+                512,
+                924,
+                568
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "UBS AG: Alvise Marino. UBS AG London Branch: Benjamin Jarrett. UBS LLC: Shahab Jalinoos. "
+                    }
+                ]
+            },
+            "bbox": [
+                73,
+                574,
+                749,
+                586
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Unless otherwise indicated, please refer to the Valuation and Risk sections within the body of this report. For a complete set of disclosure statements associated with the companies discussed in this report, including information on valuation and risk, please contact UBS LLC, 11 Madison Avenue, New York, NY 10010, USA, Attention: Investment Research. "
+                    }
+                ]
+            },
+            "bbox": [
+                73,
+                625,
+                924,
+                666
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "Global FX Strategy 3 June 2026 "
+                    }
+                ]
+            },
+            "bbox": [
+                73,
+                958,
+                282,
+                969
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "UBS 9 "
+                    }
+                ]
+            },
+            "bbox": [
+                865,
+                958,
+                924,
+                968
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "UBS Global Research Disclaimer "
+                    }
+                ],
+                "level": 1
+            },
+            "bbox": [
+                72,
+                36,
+                371,
+                50
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "This document has been prepared by UBS AG. UBS AG, its subsidiaries, branches and affiliates, including former CS AG and its subsidiaries, branches and affiliates are referred to herein as \"UBS\". "
+                    }
+                ]
+            },
+            "bbox": [
+                70,
+                56,
+                926,
+                76
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Any opinions expressed in this document may change without notice and are only current as of the date of publication. Different areas, groups, and personnel within UBS may produce and distribute separate research products independently of each other. For example, research publications from UBS CIO are produced by UBS Global Wealth Management. UBS Global Research is produced by UBS Investment Bank. Research methodologies and rating systems of each separate research organization may differ, for example, in terms of investment recommendations, investment horizon, model assumptions, and valuation methods. As a consequence, except for certain economic forecasts (for which UBS CIO and UBS Global Research may collaborate), investment recommendations, ratings, price targets, and valuations provided by each of the separate research organizations may be different, or inconsistent. You should refer to each relevant research product for the details as to their methodologies and rating system. Not all clients may have access to all products from every organization. Each research product is subject to the policies and procedures of the organization that produces it. "
+                    }
+                ]
+            },
+            "bbox": [
+                70,
+                78,
+                926,
+                153
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "This document is provided solely to recipients who are expressly authorized by UBS to receive it. If you are not so authorized you must immediately destroy the document. "
+                    }
+                ]
+            },
+            "bbox": [
+                70,
+                155,
+                926,
+                174
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "UBS Global Research is provided to our clients through UBS Neo, and in certain instances, UBS.com and any other system or distribution method specifically identified in one or more communications distributed through UBS Neo or UBS.com (each a system) as an approved means for distributing UBS Global Research. It may also be made available through third party vendors and distributed by UBS and/or third parties via e-mail or alternative electronic means. "
+                    }
+                ]
+            },
+            "bbox": [
+                70,
+                176,
+                926,
+                206
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "All UBS Global Research is available on UBS Neo. Please contact your UBS sales representative if you wish to discuss your access to UBS Neo. Where UBS Global Research refers to \"UBS Evidence Lab Inside\" or has made use of data provided by UBS Evidence Lab and you would like to access that data please contact your UBS sales representative. UBS Evidence Lab data is available on UBS Neo. The level and types of services provided by UBS Global Research and UBS Evidence Lab to a client may vary depending upon various factors such as a client's individual preferences as to the frequency and manner of receiving communications, a client's risk profile and investment focus and perspective (e.g., market wide, sector specific, long-term, short-term, etc.), the size and scope of the overall client relationship with UBS Global Research and UBS Evidence Lab and legal and regulatory constraints. UBS HOLT and UBS Pharma Values are offerings of UBS Global Research. HOLT Lens is a corporate performance platform offering that provides an objective accounting-led framework for comparing and valuing companies and is available to clients of UBS Global Research; for further details and pricing please contact your UBS Sales representative. In particular, HOLT has a variety of warranted prices based on the scenario chosen; please mail UBS LLC, 11 Madison Avenue, New York, NY 10010, USA, Attention: Investment Research, if you are interested in the warranted price on a particular company, again subject to commercial considerations. UBS Pharma Values is an analytical tool that involves the creation of a number of individual product net present value calculations, based on published forecasts of sales for pharmaceuticals, and is available to clients of UBS Global Research; for further details and pricing please contact your UBS Sales representative. For all other specific disclaimers, please see https://www.ubs.com/disclosures. "
+                    }
+                ]
+            },
+            "bbox": [
+                70,
+                207,
+                926,
+                328
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "When you receive UBS Global Research through a system, your access and/or use of such UBS Global Research is subject to this UBS Global Research Disclaimer and to the UBS Neo Platform Use Agreement (the \"Neo Terms\") together with any other relevant terms of use governing the applicable System. "
+                    }
+                ]
+            },
+            "bbox": [
+                70,
+                329,
+                926,
+                349
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "When you receive UBS Global Research via a third party vendor, e-mail or other electronic means, you agree that use shall be subject to this UBS Global Research Disclaimer, the Neo Terms and where applicable the UBS Investment Bank terms of business (https://www.ubs.com/global/en/investment-bank/regulatory.html) and to UBS's Terms of Use/Disclaimer (https://www.ubs.com/global/en/legalinfo2/disclaimer.html). In addition, you consent to UBS processing your personal data and using cookies in accordance with our Privacy Statement (https://www.ubs.com/global/en/legalinfo2/privacy.html) and cookie notice (https://www.ubs.com/global/en/legal/privacy/users.html). "
+                    }
+                ]
+            },
+            "bbox": [
+                70,
+                351,
+                926,
+                400
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "If you receive UBS Global Research, whether through a System or by any other means, you agree that you shall not copy, revise, amend, create a derivative work, provide to any third party, or in any way commercially exploit any UBS provided via UBS Global Research or otherwise, and that you shall not extract data from any research or estimates provided to you via UBS Global Research or otherwise, without the prior written consent of UBS. You agree not to use UBS Global Research in any artificial intelligence system, without the prior written consent of UBS. "
+                    }
+                ]
+            },
+            "bbox": [
+                70,
+                400,
+                926,
+                440
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "In certain circumstances you may receive UBS Global Research otherwise than in the capacity of a client of UBS and you understand and agree that under these circumstances (i) the UBS Global Research is provided to you for information purposes only; (ii) for the purposes of receiving it you are not intended to be and will not be treated as a “client” of UBS for any legal or regulatory purpose; (iii) the UBS Global Research must not be relied on or acted upon for any purpose; and (iv) such content is subject to the relevant disclaimers that follow. "
+                    }
+                ]
+            },
+            "bbox": [
+                70,
+                441,
+                926,
+                478
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "This document is for distribution only as may be permitted by law. It is not directed to, or intended for distribution to or use by, any person or entity who is a citizen or resident of or located in any locality, state, country or other jurisdiction where such distribution, publication, availability or use would be contrary to law or regulation or would subject UBS to any registration or licensing requirement within such jurisdiction. "
+                    }
+                ]
+            },
+            "bbox": [
+                70,
+                480,
+                926,
+                509
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "This document is a general communication and is educational in nature; it is not an advertisement nor is it a solicitation or an offer to buy or sell any financial instruments or to participate in any particular trading strategy. Nothing in this document constitutes a representation that any investment strategy or recommendation is suitable or appropriate to an investor's individual circumstances or otherwise constitutes a personal recommendation. By providing this document, none of UBS or its representatives has any responsibility or authority to provide or have provided investment advice in a fiduciary capacity or otherwise. Investments involve risks, and investors should exercise prudence and their own judgment in making their investment decisions. None of UBS or its representatives is suggesting that the recipient or any other person take a specific course of action or any action at all. The recipient should carefully read this document in its entirety and not draw inferences or conclusions from the rating alone. By receiving this document, the recipient acknowledges and agrees with the intended purpose described above and further disclaims any expectation or belief that the information constitutes investment advice to the recipient or otherwise purports to meet the investment objectives of the recipient. The financial instruments described in the document may not be eligible for sale in all jurisdictions or to certain categories of investors. "
+                    }
+                ]
+            },
+            "bbox": [
+                70,
+                511,
+                926,
+                604
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Options, structured derivative products and futures (including OTC derivatives) are not suitable for all investors. Trading in these instruments is considered risky and may be appropriate only for sophisticated investors. Prior to buying or selling an option, and for the complete risks relating to options, you must receive a copy of \"The Characteristics and Risks of Standardized Options.\" You may read the document at https://www.theocc.com/publications/risks/riskchap1.jsp or ask your salesperson for a copy. Various theoretical explanations of the risks associated with these instruments have been published. Supporting documentation for any claims, comparisons, recommendations, statistics or other technical data will be supplied upon request. Past performance is not necessarily indicative of future results. Transaction costs may be significant in option strategies calling for multiple purchases and sales of options, such as spreads and straddles. Because of the importance of tax considerations to many options transactions, the investor considering options should consult with his/her tax advisor as to how taxes affect the outcome of contemplated options transactions. "
+                    }
+                ]
+            },
+            "bbox": [
+                70,
+                606,
+                926,
+                680
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Mortgage and asset-backed securities may involve a high degree of risk and may be highly volatile in response to fluctuations in interest rates or other market conditions. Foreign currency rates of exchange may adversely affect the value, price or income of any security or related instrument referred to in the document. For investment advice, trade execution or other enquiries, clients should contact their local sales representative. "
+                    }
+                ]
+            },
+            "bbox": [
+                70,
+                682,
+                926,
+                711
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "UBS notes that no globally accepted framework or definition (legal, regulatory or otherwise) currently exists, nor is there a market consensus as to what constitutes an \"ESG\" (Environmental, Social or Governance) or an equivalent-label, or as to what precise attributes are required for the Information (as defined below) to be defined as ESG or equivalently-labelled. Any information, data or other content including from a third party source contained, referred to herein or used for whatsoever purpose by UBS or a third party (\"Information\"), in relation to any actual or potential ESG objective, issue or consideration is not intended to be relied upon for ESG classification, regulatory regime or industry initiative purposes (\"ESG Regimes\"). Nothing in these materials is intended to convey, suggest or indicate that UBS considers or represents any product, service, person or body mentioned in these materials as meeting or qualifying for any ESG classification, labelling or similar standards that may exist under the ESG Regimes. UBS has not conducted any assessment of compliance with ESG Regimes. Parties are reminded to make their own assessments for these purposes. "
+                    }
+                ]
+            },
+            "bbox": [
+                70,
+                713,
+                926,
+                787
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The value of any investment or income may go down as well as up, and investors may not get back the full (or any) amount invested. Past performance is not necessarily a guide to future performance. Neither UBS nor any of its directors, employees or agents accepts any liability for any loss (including investment loss) or damage arising out of the use of all or any of the Information. "
+                    }
+                ]
+            },
+            "bbox": [
+                70,
+                789,
+                926,
+                819
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Prior to making any investment or financial decisions, any recipient of this document or the information should take steps to understand the risk and return of the investment and seek individualized advice from his or her personal financial, legal, tax and other professional advisors that takes into account all the particular facts and circumstances of his or her investment objectives. "
+                    }
+                ]
+            },
+            "bbox": [
+                70,
+                820,
+                926,
+                850
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Any prices stated in this document are for information purposes only and do not represent valuations for individual securities or other financial instruments. There is no representation that any transaction can or could have been effected at those prices, and any prices do not necessarily reflect UBS's internal books and records or theoretical model-based valuations and may be based on certain assumptions. Different assumptions by UBS or any other source may yield substantially different results. "
+                    }
+                ]
+            },
+            "bbox": [
+                70,
+                850,
+                926,
+                889
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "No representation or warranty, either expressed or implied, is provided in relation to the accuracy, completeness or reliability of the information contained in any materials to which this document relates (the \"Information\"), except with respect to Information concerning UBS. The Information is not intended to be a complete statement or summary of the securities, markets or developments referred to in the document. UBS does not undertake to update or keep current the "
+                    }
+                ]
+            },
+            "bbox": [
+                70,
+                890,
+                926,
+                921
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "Global FX Strategy 3 June 2026 "
+                    }
+                ]
+            },
+            "bbox": [
+                72,
+                957,
+                284,
+                969
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "UBS 10 "
+                    }
+                ]
+            },
+            "bbox": [
+                855,
+                956,
+                926,
+                969
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Information. Any statements contained in this report attributed to a third party represent UBS's interpretation of the data, information and/or opinions provided by that third party either publicly or through a subscription service, and such use and interpretation have not been reviewed by the third party. In no circumstances may this document or any of the Information (including any forecast, value, index or other calculated amount (\"Values\")) be used for any of the following purposes: "
+                    }
+                ]
+            },
+            "bbox": [
+                70,
+                33,
+                926,
+                73
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "(i) valuation or accounting purposes; "
+                    }
+                ]
+            },
+            "bbox": [
+                70,
+                75,
+                270,
+                86
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "(ii) to determine the amounts due or payable, the price or the value of any financial instrument or financial contract; or "
+                    }
+                ]
+            },
+            "bbox": [
+                70,
+                87,
+                707,
+                99
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "(iii) to measure the performance of any financial instrument including, without limitation, for the purpose of tracking the return or performance of any Value or of defining the asset allocation of portfolio or of computing performance fees. "
+                    }
+                ]
+            },
+            "bbox": [
+                70,
+                100,
+                924,
+                121
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "By receiving this document and the Information you will be deemed to represent and warrant to UBS that you will not use this document or any of the Information for any of the above purposes or otherwise rely upon this document or any of the Information. "
+                    }
+                ]
+            },
+            "bbox": [
+                70,
+                122,
+                924,
+                141
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "UBS has policies and procedures, which include, without limitation, independence policies and permanent information barriers, that are intended, and upon which UBS relies, to manage potential conflicts of interest and control the flow of information within divisions of UBS and among its subsidiaries, branches and affiliates. UBS does and seeks to do business with companies covered in its research reports. As a result, investors should be aware that the firm may have a conflict of interest that could affect the objectivity of this report. Investors should consider this report as only a single factor in making their investment decision. For further information on the ways in which UBS Global Research manages conflicts and maintains independence of its research products, historical performance information and certain additional disclosures concerning UBS Global Research recommendations, please visit https://www.ubs.com/disclosures. "
+                    }
+                ]
+            },
+            "bbox": [
+                70,
+                144,
+                926,
+                201
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "UBS Global Research will initiate, update and cease coverage solely at the discretion of UBS Global Research Management, which will also have sole discretion on the timing and frequency of any published research product. The analysis contained in this document is based on numerous assumptions. All material information in relation to published research reports, such as valuation methodology, risk statements, underlying assumptions (including sensitivity analysis of those assumptions), ratings history etc. as required by the Market Abuse Regulation, can be found on UBS Neo. Different assumptions could result in materially different results. "
+                    }
+                ]
+            },
+            "bbox": [
+                70,
+                202,
+                926,
+                249
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "UBS Global Research may utilise artificial intelligence tools (\"AI Tools\") in the preparation of this document. Notwithstanding any such use of AI Tools, this document has undergone human review. "
+                    }
+                ]
+            },
+            "bbox": [
+                70,
+                250,
+                926,
+                271
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The analyst(s) responsible for the preparation of this document may interact with trading desk personnel, sales personnel and other parties for the purpose of gathering, applying and interpreting market information. UBS relies on information barriers to control the flow of information contained in one or more areas within UBS into other areas, units, groups or affiliates of UBS. The compensation of the analyst who prepared this document is determined exclusively by UBS Global Research management and senior management (not including investment banking). Analyst compensation is not based on investment banking revenues; however, compensation may relate to the revenues of UBS and/or its divisions as a whole, of which investment banking, sales and trading are a part, and UBS as a whole. "
+                    }
+                ]
+            },
+            "bbox": [
+                70,
+                273,
+                926,
+                329
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "For financial instruments admitted to trading on an EU regulated market: UBS (excluding UBS LLC) acts as a market maker or liquidity provider (in accordance with the interpretation of these terms under English law or, if not carried out by UBS in the UK the law of the relevant jurisdiction in which UBS determines it carries out the activity) in the financial instruments of the issuer save that where the activity of liquidity provider is carried out in accordance with the definition given to it by the laws and regulations of any other EU jurisdictions, such information is separately disclosed in this document. For financial instruments admitted to trading on a non-EU regulated market: UBS may act as a market maker save that where this activity is carried out in the US in accordance with the definition given to it by the relevant laws and regulations, such activity will be specifically disclosed in this document. UBS may have issued a warrant the value of which is based on one or more of the financial instruments referred to in the document. UBS and its affiliates and employees may have long or short positions, trade as principal and buy and sell in instruments or derivatives identified herein; such transactions or positions may be inconsistent with the opinions expressed in this document. "
+                    }
+                ]
+            },
+            "bbox": [
+                70,
+                330,
+                926,
+                415
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Within the past 12 months UBS may have received or provided investment services and activities or ancillary services as per MiFID II which may have given rise to a payment or promise of a payment in relation to these services from or to this company. "
+                    }
+                ]
+            },
+            "bbox": [
+                70,
+                416,
+                924,
+                437
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Please note that all transactions conducted by UBS are consistent with sanctions regulations imposed by Switzerland, the European Union, the United Nations, the United Kingdom and the United States, per UBS' global sanctions policy. UBS opinion as to future investment worthiness assumes no new sanctions are imposed. "
+                    }
+                ]
+            },
+            "bbox": [
+                70,
+                440,
+                924,
+                458
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "US persons are prohibited from purchasing or selling securities of certain companies designated as being associated with the Chinese Military in accordance with the amended US Presidential Executive Order 13959. "
+                    }
+                ]
+            },
+            "bbox": [
+                70,
+                460,
+                924,
+                480
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "United Kingdom: This material is distributed by UBS AG, London Branch to persons who are eligible counterparties or professional clients. UBS AG, London Branch is authorised by the Prudential Regulation Authority and subject to regulation by the Financial Conduct Authority and limited regulation by the Prudential Regulation Authority. Europe: Except as otherwise specified herein, these materials are distributed by UBS Europe SE, a subsidiary of UBS AG, to persons who are eligible counterparties or professional clients (as detailed in the Bundesanstalt für Finanzdienstleistungsaufsicht (BaFin) Rules and according to MIFID) and are only available to such persons. The information does not apply to, and should not be relied upon by, retail clients. UBS Europe SE is authorised by the European Central Bank (ECB) and regulated by the BaFin and the ECB. Germany, Luxembourg, the Netherlands, Belgium and Ireland: Where an analyst of UBS Europe SE has contributed to this document, the document is also deemed to have been prepared by UBS Europe SE. In all cases it is distributed by UBS Europe SE and UBS AG, London Branch. Turkey: Distributed by UBS AG, London Branch. No information in this document is provided for the purpose of offering, marketing and sale by any means of any capital market instruments and services in the Republic of Turkey. Therefore, this document may not be considered as an offer made or to be made to residents of the Republic of Turkey. UBS AG, London Branch is not licensed by the Turkish Capital Market Board under the provisions of the Capital Market Law (Law No. 6362). Accordingly, neither this document nor any other offering material related to the instruments/services may be utilized in connection with providing any capital market services to persons within the Republic of Turkey without the prior approval of the Capital Market Board. However, according to article 15 (d) (ii) of the Decree No. 32, there is no restriction on the purchase or sale of the securities abroad by residents of the Republic of Turkey. Poland: Distributed by UBS Europe SE (spolka z ograniczona odpowiedzialnoscia) Oddzial w Polsce. Where an analyst of UBS Europe SE (spolka z ograniczona odpowiedzialnoscia) Oddzial w Polsce has contributed to this document, the document is also deemed to have been prepared by UBS Europe SE (spolka z ograniczona odpowiedzialnoscia) Oddzial w Polsce. Russia: Prepared and distributed by UBS Bank (OOO). Should not be construed as an individual Investment Recommendation for the purpose of the Russian Law - Federal Law #39-FZ ON THE SECURITIES MARKET Articles 6.1-6.2. Switzerland: Distributed by UBS AG to persons who are institutional investors only. UBS AG is regulated by the Swiss Financial Market Supervisory Authority (FINMA). Italy: Prepared by UBS Europe SE and distributed by UBS Europe SE and UBS Europe SE, Italy Branch. Where an analyst of UBS Europe SE, Italy Branch has contributed to this document, the document is also deemed to have been prepared by UBS Europe SE, Italy Branch. France: Prepared by UBS Europe SE and distributed by UBS Europe SE and UBS Europe SE, France Branch. Where an analyst of UBS Europe SE, France Branch has contributed to this document, the document is also deemed to have been prepared by UBS Europe SE, France Branch. Spain: Prepared by UBS Europe SE and distributed by UBS Europe SE and UBS Europe SE, Spain Branch. Where an analyst of UBS Europe SE, Spain Branch has contributed to this document, the document is also deemed to have been prepared by UBS Europe SE, Spain Branch. Sweden: Prepared by UBS Europe SE and distributed by UBS Europe SE and UBS Europe SE, Sweden Branch. Where an analyst of UBS Europe SE, Sweden Branch has contributed to this document, the document is also deemed to have been prepared by UBS Europe SE, Sweden Branch. South Africa: Distributed by UBS South Africa (Pty) Limited (Registration No. 1995/011140/07), an authorised user of the JSE and an authorised Financial Services Provider (FSP 7328). Saudi Arabia: This document has been issued by UBS AG (and/or any of its subsidiaries, branches or affiliates), a public company limited by shares, incorporated in Switzerland with its registered offices at Aeschenvorstadt 1, CH-4051 Basel and Bahnhofstrasse 45, CH-8001 Zurich. This publication has been approved by UBS Saudi Arabia (a subsidiary of UBS AG), a Saudi closed joint stock company incorporated in the Kingdom of Saudi Arabia under commercial register number 1010257812 having its registered office at Tatweer Towers, P.O. Box 75724, Riyadh 11588, Kingdom of Saudi Arabia. UBS Saudi Arabia is authorized and regulated by the Capital Market Authority to conduct securities business under license number 08113-37. UAE / Dubai: The information distributed by UBS AG Dubai Branch is only intended for Professional Clients and/or Market Counterparties, as classified under the DFSA rulebook. No other person should act upon this material/communication. The information is not for further distribution within the United Arab Emirates. UBS AG Dubai Branch is regulated by the DFSA in the DIFC. UBS is not licensed to provide banking services in the UAE by the Central Bank of the UAE, nor is it licensed by the UAE Securities and Commodities Authority. Israel: This Material is distributed by UBS AG, London Branch. UBS Israel Ltd is a licensed Investment Marketer that is supervised by the Israel Securities Authority (ISA). UBS AG, London Branch and its affiliates incorporated outside Israel are not licensed under the Israeli Advisory Law. UBS may engage among others in issuance of Financial Assets or in distribution of Financial Assets of other issuers for fees or other benefits. UBS AG, London Branch and its affiliates may prefer various Financial Assets to which they have or may have an Affiliation (as such term is defined under the Israeli Advisory Law). Nothing in this Material should be considered as investment advice under the Israeli Advisory Law. This Material is being issued only to and/or is directed only at persons who are Eligible Clients within the meaning of the Israeli Advisory Law, and this Material must not be furnished to, relied on or acted upon by any other persons. United States: Distributed to US persons by either UBS LLC or by UBS Financial Services Inc., subsidiaries of UBS AG; or by a group, subsidiary or affiliate of UBS AG that is not registered as a US broker-dealer (a 'non-US affiliate') to major US institutional investors only. UBS LLC or UBS Financial Services Inc. accepts responsibility for the content of a report prepared by another non-US affiliate when distributed to US persons by UBS LLC or UBS Financial Services Inc. All transactions by a US person in the securities mentioned in this report must be effected through UBS LLC or UBS Financial Services Inc., and not through a non-US affiliate. UBS LLC is not acting as a municipal advisor to any municipal entity or obligated person within the meaning of Section 15B of the Securities Exchange Act (the \"Municipal Advisor Rule\"), and the opinions or views contained herein are not intended to be, and do not constitute, advice within the meaning of the Municipal Advisor Rule. Canada: Distributed by UBS Canada Inc., a registered investment dealer in Canada and a Member-Canadian Investor Protection Fund, or by another affiliate of UBS AG that is registered to conduct business in Canada or is otherwise exempt from registration. Brazil: Except as otherwise specified herein, this Material is prepared by UBS BB Corretora de Câmbio, Títulos e Valores Mobiliários S.A. (UBS BB CCTVVM) to persons who are eligible investors residing in Brazil, which are considered to be Professional Investors (Investidores Profissionais), as designated by the applicable regulation, mainly the CVM Resolution No. 30 from the 11th of May 2021 (determines the duty to verify the suitability of products, services and transactions with regards to the client's profile). UBS BB CCTVVM is a subsidiary of UBS BB Servicos de Assessoria Financeira e Participacoes S.A. (\"UBS BB\"). UBS BB is an association between UBS AG and Banco do Brasil (through its subsidiary BB – Banco de Investimentos S.A.), of which UBS AG is the majority owner and which provides investment banking services and coverage in Brazil, Argentina, Chile, Paraguay, Peru and Uruguay. UBS BB CCTVVM is regulated by the Comissao de Valores Mobiliarios (CVM) and by the Central Bank of Brazil. Ombudsman: 0800-940-0266/ https://www.ubs.com/br/pt/ubsbb-investment-bank/ombudsman.html. UBS may hold relevant financial and commercial interest in relation to the company subject to this Research report. Hong Kong: Distributed by UBS Asia Limited. Please contact local licensed persons of UBS Asia Limited in respect of any matters arising from, or in connection with, the analysis or document Singapore: Distributed by UBS Pte. Ltd. [Co. Reg. No.: 198500648C] or UBS AG, Singapore Branch. Please contact UBS Pte. Ltd., an exempt financial adviser under the Singapore Financial Advisers Act (Cap. 110); or UBS AG, Singapore Branch, an exempt financial adviser under the Singapore Financial Advisers Act (Cap. 110) and a wholesale bank licensed under the Singapore Banking Act (Cap. 19) regulated by the Monetary Authority of Singapore, in respect of any matters arising from, or in connection with, the analysis or document. The recipients of this document represent and warrant that they are accredited and institutional investors as defined in the Securities and Futures Act (Cap. 289). Japan: Distributed by UBS Japan Co., Ltd. to professional investors (except as otherwise permitted). Where this report has been prepared by UBS Japan Co., Ltd., UBS Japan Co., Ltd. is the author, publisher and distributor of the report. Distributed by UBS AG, Tokyo Branch to Professional Investors (except as otherwise permitted) in relation to foreign exchange and other banking businesses when relevant. Australia: Clients of UBS AG: Distributed by UBS AG (ABN 47 088 129 613 and holder of Australian Financial Services License No. 231087). For all other recipients: Distributed by UBS Australia Ltd (ABN 62 008 586 481 and holder of Australian Financial Services License No. 231098). This document contains general information and/or general advice only and does not constitute personal financial product advice. As such, the Information in this document has been prepared without taking into account any investor's objectives, financial situation or needs, and investors should, before acting on the Information, consider the appropriateness of the Information, having regard to their objectives, financial situation and needs. If the Information contained in this document relates to the acquisition, or potential acquisition of a particular financial product by a 'Retail' client as defined by section 761G of the Corporations Act 2001 where a Product Disclosure Statement would be required, the retail client should obtain and consider the Product Disclosure Statement relating to the product before making any decision about whether to acquire the product. New Zealand: Distributed by UBS New Zealand Ltd. UBS New Zealand Ltd is not a registered bank in New Zealand. You are being provided with this publication or material because you have indicated to UBS that you are a \"wholesale client\" within the meaning of clause 4 of schedule 5 of the Financial Markets Conduct Act 2013 of New Zealand (Permitted Client). This publication or material is not intended for clients who are not Permitted Clients (non-permitted Clients). If you are a non-permitted Client you must not rely on this publication or material. If despite this warning you nevertheless rely on this publication or material, you hereby (i) acknowledge that you may not rely on the content of this publication or material and that any recommendations or opinions in such this publication or material are not made or provided to you, and (ii) to the maximum extent permitted by law (a) indemnify UBS and its associates or related entities (and their respective Directors, officers, agents and Advisors) (each a 'Relevant Person') for any loss, damage, liability or claim any of them may incur or suffer as a result of, or in connection with, your unauthorised reliance on this publication or material and (b) waive any rights or remedies you may have against any Relevant Person for (or in respect of) any loss, damage, liability or claim you may incur or suffer as a result of, or in connection with, your unauthorised reliance on this publication or material. Korea: Distributed in Korea by UBS Pte. Ltd., Seoul Branch. This report may have been edited or contributed to from time to time by affiliates of UBS Pte. Ltd., Seoul Branch. This material is intended for professional/institutional clients only and not for distribution to any retail clients. Malaysia: This material is authorized to be distributed in Malaysia by UBS Malaysia Sdn. Bhd (Capital Markets Services License No.: CMSL/A0063/2007). This material is intended for professional/institutional clients only and not for distribution to any retail clients. India: Distributed by UBS India Private Ltd. (Corporate Identity Number U67120MH1996PTC097299) 2/F, 3 North Avenue, Maker Maxity, Bandra Kurla Complex, Bandra (East), Mumbai (India) 400051. Phone: +912261556000. It provides brokerage services bearing SEBI Registration Number: INZ000259830; Merchant Banking services bearing SEBI Registration Number: INM000013101; and Research Analyst services bearing SEBI Registration Number: INH000001204. Name of Compliance Officer Mr. Parameshwaran Shivaramakrishnan, Phone: +912261556151, Email: ol-ubs-sec-compliance@ubs.com Registration granted by SEBI, and certification from NISM in no way guarantee performance of the intermediary or provide any assurance of returns to investors. UBS may have debt holdings or positions in the subject Indian company/companies. UBS may have financial interests (e.g. loan/derivative products, rights to or interests in investments, etc.) in the subject Indian company/companies from time to time. Within the past 12 months, UBS may have received compensation for non-investment banking securities-related services and/or non-securities services from the subject Indian company/companies. The subject company/companies may have been a client/clients of UBS during the 12 months preceding the date of distribution of the research report with respect to investment banking and/or non-investment banking securities-related services and/or non-securities services. With regard to information on associates, please refer to the Annual Report at: https://www.ubs.com/global/en/about_ubs/investor_relations/annualreporting.html The Research Annual Compliance Report for UBS India Private Limited is available on www.ubs.com/ubssi under Research tab. Taiwan: Except as otherwise specified herein, this material may not be distributed in Taiwan. Information and material on securities/instruments that are traded in a Taiwan organized exchange is deemed to be issued and distributed by UBS Pte. LTD., Taipei Branch, which is licensed and regulated by Taiwan Financial Supervisory Commission. Save for securities/instruments that are traded in a Taiwan organized exchange, this material should not constitute \"recommendation\" to clients or recipients in Taiwan for the covered companies or any companies mentioned in this document. No portion of the document may be reproduced or quoted by the press or any other person without authorisation from UBS. Indonesia: This report is being distributed by PT UBS Sekuritas Indonesia and is delivered by its licensed employee(s), including marketing/sales person, to its client. PT UBS Sekuritas Indonesia, having its registered office at Sequis Tower Level 22 unit 22-1,Jl.Jend. Sudirman, kav.71, SCBD lot 11B, Jakarta 12190. Indonesia, is a subsidiary company of UBS AG and licensed under Capital Market Law no. 8 year 1995, a holder of broker-dealer and underwriter licenses issued by the Capital Market and Financial Institution Supervisory Agency (now Otoritas Jasa Keuangan/OJK). PT UBS Sekuritas Indonesia is also a member of Indonesia Stock Exchange and supervised by Otoritas Jasa Keuangan (OJK). Neither this report nor any copy hereof may be distributed in Indonesia or to any Indonesian citizens except in compliance with applicable Indonesian capital market laws and regulations. This report is not an offer of securities in Indonesia and may not be distributed within the territory of the Republic of Indonesia or to Indonesian citizens in circumstance which constitutes an offering within the meaning of Indonesian capital market laws and regulations. "
+                    }
+                ]
+            },
+            "bbox": [
+                70,
+                482,
+                926,
+                921
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "Global FX Strategy 3 June 2026 "
+                    }
+                ]
+            },
+            "bbox": [
+                72,
+                957,
+                284,
+                969
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "UBS 11 "
+                    }
+                ]
+            },
+            "bbox": [
+                855,
+                956,
+                922,
+                969
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": []
+            },
+            "bbox": [
+                70,
+                33,
+                926,
+                592
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The disclosures contained in research documents produced by UBS AG, London Branch or UBS Europe SE shall be governed by and construed in accordance with English law. "
+                    }
+                ]
+            },
+            "bbox": [
+                70,
+                593,
+                926,
+                613
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "UBS specifically prohibits the redistribution of this document in whole or in part without the written permission of UBS and in any event UBS accepts no liability whatsoever for any redistribution of this document or its contents or the actions of third parties in this respect. Images may depict objects or elements that are protected by third party copyright, trademarks and other intellectual property rights. © UBS 2026. The key symbol and UBS are among the registered and unregistered trademarks of UBS. All rights reserved. "
+                    }
+                ]
+            },
+            "bbox": [
+                70,
+                614,
+                927,
+                654
+            ]
+        },
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/d7aaec685ee796e96c7ecaf5325843e41b27d2edcd78127970a3bc7bad373dac.jpg"
+                },
+                "content": "",
+                "image_caption": [],
+                "image_footnote": []
+            },
+            "bbox": [
+                72,
+                678,
+                205,
+                713
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "Global FX Strategy 3 June 2026 "
+                    }
+                ]
+            },
+            "bbox": [
+                72,
+                956,
+                285,
+                969
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "UBS 12 "
+                    }
+                ]
+            },
+            "bbox": [
+                855,
+                956,
+                924,
+                969
+            ]
+        }
+    ]
+]
