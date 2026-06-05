@@ -1,0 +1,3278 @@
+[
+  {
+    "report_id": "R001",
+    "report_title": "信用市场真正低估的不是地缘风险，而是利率从“调整”到“体制切换”的跳跃",
+    "source_path": "xhs_notes/dropbox/260604/shard_0/0001-01-UBS-Global-Strategy-Deal-or-No-Deal--Trading-Oil---Rates-Scenarios-in-Gl/mineru_raw/images/8fe6a28ee5ae080f5f372510e6d008ea04f04d95a90a14b25b9d51994d545e81.jpg",
+    "label": "Figure 1",
+    "context": "Figure 1: Our supply chain stress indicator is surging again. The index rose 1.2 standard deviations in March–April; the second largest two-month increase since the pandemic induced increase in July 2020",
+    "figure_id": "F001",
+    "latex_path": "figures/fig_001.jpg"
+  },
+  {
+    "report_id": "R001",
+    "report_title": "信用市场真正低估的不是地缘风险，而是利率从“调整”到“体制切换”的跳跃",
+    "source_path": "xhs_notes/dropbox/260604/shard_0/0001-01-UBS-Global-Strategy-Deal-or-No-Deal--Trading-Oil---Rates-Scenarios-in-Gl/mineru_raw/images/a18f423ab0615a631ce3b6d7a34c3870fa700ffdd0fa913b3acf552fb72e3751.jpg",
+    "label": "Figure 2",
+    "context": "Figure 2: Initially\\*, the rise in US 10yr yields was driven predominantly by higher real rates rather than a more destabilising shift in inflation expectations or the policy outlook, which limited the transmission to spreads",
+    "figure_id": "F002",
+    "latex_path": "figures/fig_002.jpg"
+  },
+  {
+    "report_id": "R001",
+    "report_title": "信用市场真正低估的不是地缘风险，而是利率从“调整”到“体制切换”的跳跃",
+    "source_path": "xhs_notes/dropbox/260604/shard_0/0001-01-UBS-Global-Strategy-Deal-or-No-Deal--Trading-Oil---Rates-Scenarios-in-Gl/mineru_raw/images/acf816058e4dd7bd09df99c96eeba625dd36c85c61dce22ffec61c8af6d4c095.jpg",
+    "label": "Figure 3",
+    "context": "Figure 3: Oil & gas tankers passing through the Strait of Hormuz, in number of ships entering and exiting the Gulf. We saw some optimism in early April but negotiations are stalling",
+    "figure_id": "F003",
+    "latex_path": "figures/fig_003.jpg"
+  },
+  {
+    "report_id": "R001",
+    "report_title": "信用市场真正低估的不是地缘风险，而是利率从“调整”到“体制切换”的跳跃",
+    "source_path": "xhs_notes/dropbox/260604/shard_0/0001-01-UBS-Global-Strategy-Deal-or-No-Deal--Trading-Oil---Rates-Scenarios-in-Gl/mineru_raw/images/69adc7360df097612e41b5e04b38d648392a7263f0fed4f2a0ca31c17327fbe6.jpg",
+    "label": "Figure 4",
+    "context": "Figure 4: Weak May PMIs suggest clear downside risk to Eurozone GDP growth in Q2. We see signs of inventory build up as companies try and anticipate further supply chain disruption",
+    "figure_id": "F004",
+    "latex_path": "figures/fig_004.jpg"
+  },
+  {
+    "report_id": "R001",
+    "report_title": "信用市场真正低估的不是地缘风险，而是利率从“调整”到“体制切换”的跳跃",
+    "source_path": "xhs_notes/dropbox/260604/shard_0/0001-01-UBS-Global-Strategy-Deal-or-No-Deal--Trading-Oil---Rates-Scenarios-in-Gl/mineru_raw/images/2387f9c3e985473e06ccba874cbe5106a485492da494ae27371da829e3f3d128.jpg",
+    "label": "Figure 5",
+    "context": "Figure 5: From a monetary policy perspective, we see materially higher risks of multiple ECB hikes (UBSe +50bp in 2026) relative to the Fed (UBSe -25bp in 2026), which has effectively never reached neutral",
+    "figure_id": "F005",
+    "latex_path": "figures/fig_005.jpg"
+  },
+  {
+    "report_id": "R001",
+    "report_title": "信用市场真正低估的不是地缘风险，而是利率从“调整”到“体制切换”的跳跃",
+    "source_path": "xhs_notes/dropbox/260604/shard_0/0001-01-UBS-Global-Strategy-Deal-or-No-Deal--Trading-Oil---Rates-Scenarios-in-Gl/mineru_raw/images/15d73ce56073ffcf086dad621423cc11ccaa4e3706f5f36744822a1e6b82569c.jpg",
+    "label": "Figure 7",
+    "context": "Figure 7: Asset manager S&P 500 futures positioning, which we use as a proxy for broader risk positioning, currently sits near 10-year highs. We therefore see limited room for additional institutional buying in credit from here, e",
+    "figure_id": "F006",
+    "latex_path": "figures/fig_006.jpg"
+  },
+  {
+    "report_id": "R001",
+    "report_title": "信用市场真正低估的不是地缘风险，而是利率从“调整”到“体制切换”的跳跃",
+    "source_path": "xhs_notes/dropbox/260604/shard_0/0001-01-UBS-Global-Strategy-Deal-or-No-Deal--Trading-Oil---Rates-Scenarios-in-Gl/mineru_raw/images/0f038fdffde0e8bdbb980e4f5c910764c5c03405e6030ad526c988a437ec74c4.jpg",
+    "label": "Figure 8",
+    "context": "Figure 8: Historically, the largest spread tightening following geopolitical resolutions has occurred when CTAs had previously been short credit. Current CTA longs in credit suggest limited tightening ahead, even if we see a resol",
+    "figure_id": "F007",
+    "latex_path": "figures/fig_007.jpg"
+  },
+  {
+    "report_id": "R002",
+    "report_title": "市场真正低估的不是风险，而是风险定价的切换时机",
+    "source_path": "xhs_notes/dropbox/260604/shard_0/0002-02-CITI-Global-FX-Strategy-Our-risk-sentiment-goes-from--green-to-yellow--2/mineru_raw/images/74856915450f1dcc6da190234ff2cb52febc2838ad07eb4ca289dd6641d7dd12.jpg",
+    "label": "Figure 1",
+    "context": "\\- Equity Strategy is cautious: Citi's US Equity Strategy team has flagged that the Q1 earnings blowout has led to an equity rally that now appears to have priced euphoric expectations. Thematically, they prefer taking profit on price momentum – a factor that ",
+    "figure_id": "F008",
+    "latex_path": "figures/fig_008.jpg"
+  },
+  {
+    "report_id": "R002",
+    "report_title": "市场真正低估的不是风险，而是风险定价的切换时机",
+    "source_path": "xhs_notes/dropbox/260604/shard_0/0002-02-CITI-Global-FX-Strategy-Our-risk-sentiment-goes-from--green-to-yellow--2/mineru_raw/images/fa8755a96bf8b2661e68ba6fa977b5f2a772be98aa8a9049159c2ccc1fb3efda.jpg",
+    "label": "Figure 2",
+    "context": "© 2026 Citi Inc. No redistribution without Citi's written permission. We define “earnings season” from the 10 $^{th}$ (or closest trading day) of the month following quarter-end to NVDA earnings +3 days. Figure 2. The equally-weighted S&P 500 is more sensitive",
+    "figure_id": "F009",
+    "latex_path": "figures/fig_009.jpg"
+  },
+  {
+    "report_id": "R002",
+    "report_title": "市场真正低估的不是风险，而是风险定价的切换时机",
+    "source_path": "xhs_notes/dropbox/260604/shard_0/0002-02-CITI-Global-FX-Strategy-Our-risk-sentiment-goes-from--green-to-yellow--2/mineru_raw/images/724bf598cb7feb0e657b79af7bfe884d920c4566f0e6d79833408ec515a6d909.jpg",
+    "label": "Figure 3",
+    "context": "© 2026 Citi Inc. No redistribution without Citi's written permission. We define “earnings season” from the 10 $^{th}$ (or closest trading day) of the month following quarter-end to NVDA earnings +3 days. Figure 3. Constituent vol vs index vol is at extreme lev",
+    "figure_id": "F010",
+    "latex_path": "figures/fig_010.jpg"
+  },
+  {
+    "report_id": "R002",
+    "report_title": "市场真正低估的不是风险，而是风险定价的切换时机",
+    "source_path": "xhs_notes/dropbox/260604/shard_0/0002-02-CITI-Global-FX-Strategy-Our-risk-sentiment-goes-from--green-to-yellow--2/mineru_raw/images/9e457f51ece5a649b5c56d2324f8ff34880cfef2266eb586898d65a9476ea23b.jpg",
+    "label": "Figure 4",
+    "context": "© 2026 Citi Inc. No redistribution without Citi's written permission. Figure 4. This generally sees equities sideways/lower",
+    "figure_id": "F011",
+    "latex_path": "figures/fig_011.jpg"
+  },
+  {
+    "report_id": "R002",
+    "report_title": "市场真正低估的不是风险，而是风险定价的切换时机",
+    "source_path": "xhs_notes/dropbox/260604/shard_0/0002-02-CITI-Global-FX-Strategy-Our-risk-sentiment-goes-from--green-to-yellow--2/mineru_raw/images/af5f4b6a7ae24205491bfb65842cf0ae4d889a5cc54f0fe6ac716872f24f157a.jpg",
+    "label": "Figure 6",
+    "context": "- Low put ownership could see chasing of put buying in risk-off, which is positive for vol. Vol squeezes fuel VAR-driven unwinds. ☐ Dealers may be long equities to hedge skewed positioning (they are the net call sellers to the market). Should equities start to",
+    "figure_id": "F012",
+    "latex_path": "figures/fig_012.jpg"
+  },
+  {
+    "report_id": "R002",
+    "report_title": "市场真正低估的不是风险，而是风险定价的切换时机",
+    "source_path": "xhs_notes/dropbox/260604/shard_0/0002-02-CITI-Global-FX-Strategy-Our-risk-sentiment-goes-from--green-to-yellow--2/mineru_raw/images/d4c3e7a2031e14a4a05b742083287f6412295267882f15160188b9fbe20a40a2.jpg",
+    "label": "Figure 6",
+    "context": "© 2026 Citi Inc. No redistribution without Citi's written permission. Figure 6. Equities underperform in midterm years",
+    "figure_id": "F013",
+    "latex_path": "figures/fig_013.jpg"
+  },
+  {
+    "report_id": "R002",
+    "report_title": "市场真正低估的不是风险，而是风险定价的切换时机",
+    "source_path": "xhs_notes/dropbox/260604/shard_0/0002-02-CITI-Global-FX-Strategy-Our-risk-sentiment-goes-from--green-to-yellow--2/mineru_raw/images/3171bbe48ade2ee17f5920917dd996c956b159c1abeaef0ee0d894f511aa0819.jpg",
+    "label": "Figure 7",
+    "context": "We reiterate the above factors suggest the distribution of outcomes for risk assets over the short-term has shifted to balanced/slightly bearish (compared to skewed positive over earnings). However, we still do not see an immediate trigger to suggest positioni",
+    "figure_id": "F014",
+    "latex_path": "figures/fig_014.jpg"
+  },
+  {
+    "report_id": "R002",
+    "report_title": "市场真正低估的不是风险，而是风险定价的切换时机",
+    "source_path": "xhs_notes/dropbox/260604/shard_0/0002-02-CITI-Global-FX-Strategy-Our-risk-sentiment-goes-from--green-to-yellow--2/mineru_raw/images/343fd5cea8fc86c36d1256fa69e973539f14034043b4dbaae1b434dbb8dd6afe.jpg",
+    "label": "Figure 8",
+    "context": "© 2026 Citi Inc. No redistribution without Citi's written permission. Figure 8. Front-end risk curves remain steep; flattening into inversion is risk-negative",
+    "figure_id": "F015",
+    "latex_path": "figures/fig_015.jpg"
+  },
+  {
+    "report_id": "R002",
+    "report_title": "市场真正低估的不是风险，而是风险定价的切换时机",
+    "source_path": "xhs_notes/dropbox/260604/shard_0/0002-02-CITI-Global-FX-Strategy-Our-risk-sentiment-goes-from--green-to-yellow--2/mineru_raw/images/e6608091b332e7b0bffbd6ba7a38a3b33ff8a52330924e89cae77bf698aa40bc.jpg",
+    "label": "Figure 8",
+    "context": "© 2026 Citi Inc. No redistribution without Citi's written permission. - Vol curve flattening/vol of vol outperforming: We look at the shape of the front-end of the VIX curve, with quick flattening into inversion as an early/ coincidental signal (Figure 8). We ",
+    "figure_id": "F016",
+    "latex_path": "figures/fig_016.jpg"
+  },
+  {
+    "report_id": "R002",
+    "report_title": "市场真正低估的不是风险，而是风险定价的切换时机",
+    "source_path": "xhs_notes/dropbox/260604/shard_0/0002-02-CITI-Global-FX-Strategy-Our-risk-sentiment-goes-from--green-to-yellow--2/mineru_raw/images/c81d78366ed15a0eae169b062c7c3b62c1751917fc7999dc4a543a2b77cc6a3f.jpg",
+    "label": "Figure 10",
+    "context": "© 2026 Citi Inc. No redistribution without Citi's written permission. Figure 10. S&P 500 trend higher remains intact; mild momentum divergence hints at correction risk",
+    "figure_id": "F017",
+    "latex_path": "figures/fig_017.jpg"
+  },
+  {
+    "report_id": "R002",
+    "report_title": "市场真正低估的不是风险，而是风险定价的切换时机",
+    "source_path": "xhs_notes/dropbox/260604/shard_0/0002-02-CITI-Global-FX-Strategy-Our-risk-sentiment-goes-from--green-to-yellow--2/mineru_raw/images/ff946b9012105aabfbf9ac5633c9260f12398a662f7584ce1fb61bffd7edf9e9.jpg",
+    "label": "Figure 11",
+    "context": "- Strait closure exacerbates/yields surge: Markets are optimistic on the prospects of a deal that re-opens the Strait of Hormuz, with progress seemingly being made towards a deal. Should market expectations shift to a long closure, commodity prices could spike",
+    "figure_id": "F018",
+    "latex_path": "figures/fig_018.jpg"
+  },
+  {
+    "report_id": "R002",
+    "report_title": "市场真正低估的不是风险，而是风险定价的切换时机",
+    "source_path": "xhs_notes/dropbox/260604/shard_0/0002-02-CITI-Global-FX-Strategy-Our-risk-sentiment-goes-from--green-to-yellow--2/mineru_raw/images/6738ffb6a782da43f9ea7fc7c9caefe892318b8f310fe56c38e22da88629efe9.jpg",
+    "label": "Figure 12",
+    "context": "This is not necessarily a comprehensive checklist, simply some items we are closely watching. Narratives can often be applied retroactively to price action, though, so we watch for both the market reaction to events as well as the events themselves # Implicati",
+    "figure_id": "F019",
+    "latex_path": "figures/fig_019.jpg"
+  },
+  {
+    "report_id": "R002",
+    "report_title": "市场真正低估的不是风险，而是风险定价的切换时机",
+    "source_path": "xhs_notes/dropbox/260604/shard_0/0002-02-CITI-Global-FX-Strategy-Our-risk-sentiment-goes-from--green-to-yellow--2/mineru_raw/images/eee0b2fcd8f03de2c0804745d8e1539a3b96a4a1d2c45510c276307645f3fdb6.jpg",
+    "label": "Figure 13",
+    "context": "© 2026 Citi Inc. No redistribution without Citi's written permission. Figure 13. G10 FX performance – equities down, yields up (2021–present, based on US 10y and S&P 500)",
+    "figure_id": "F020",
+    "latex_path": "figures/fig_020.jpg"
+  },
+  {
+    "report_id": "R002",
+    "report_title": "市场真正低估的不是风险，而是风险定价的切换时机",
+    "source_path": "xhs_notes/dropbox/260604/shard_0/0002-02-CITI-Global-FX-Strategy-Our-risk-sentiment-goes-from--green-to-yellow--2/mineru_raw/images/a552c242528c6cd1c5a2a5ac69cd22d92f9c56150014fc883b3c72052a124e62.jpg",
+    "label": "Figure 15",
+    "context": "As we’ve been noting, we are not necessarily outright bearish risk. Rather, we see increased potential for a correction – though timing and catalyst are uncertain. Pre-COVID, it was easier to think about FX hedges as the equities down/yields down regime was mo",
+    "figure_id": "F021",
+    "latex_path": "figures/fig_021.jpg"
+  },
+  {
+    "report_id": "R002",
+    "report_title": "市场真正低估的不是风险，而是风险定价的切换时机",
+    "source_path": "xhs_notes/dropbox/260604/shard_0/0002-02-CITI-Global-FX-Strategy-Our-risk-sentiment-goes-from--green-to-yellow--2/mineru_raw/images/d4d95ac56b9b4331bacf0f619a7b41b036dd76d0c60b15b425db17e443cdb703.jpg",
+    "label": "Figure 15",
+    "context": "© 2026 Citi Inc. No redistribution without Citi's written permission. Figure 15. USDJPY implied vol is historically low and also below realized vol",
+    "figure_id": "F022",
+    "latex_path": "figures/fig_022.jpg"
+  },
+  {
+    "report_id": "R002",
+    "report_title": "市场真正低估的不是风险，而是风险定价的切换时机",
+    "source_path": "xhs_notes/dropbox/260604/shard_0/0002-02-CITI-Global-FX-Strategy-Our-risk-sentiment-goes-from--green-to-yellow--2/mineru_raw/images/88580ba3e0356e96ae805d2a492d1cabe6368de54926be84879037b851faf0f4.jpg",
+    "label": "Figure 16",
+    "context": "© 2026 Citi Inc. No redistribution without Citi's written permission. The other common theme when equities head lower is consistent underperformance by high beta/risk currencies. In light of the current backdrop (Figure 16), we would be hesitant to hedge risk-",
+    "figure_id": "F023",
+    "latex_path": "figures/fig_023.jpg"
+  },
+  {
+    "report_id": "R002",
+    "report_title": "市场真正低估的不是风险，而是风险定价的切换时机",
+    "source_path": "xhs_notes/dropbox/260604/shard_0/0002-02-CITI-Global-FX-Strategy-Our-risk-sentiment-goes-from--green-to-yellow--2/mineru_raw/images/9f45f798d90d613107d492c8140b4b37319fda058613f6b1d152698b5e686db5.jpg",
+    "label": "Figure 17",
+    "context": "© 2026 Citi Inc. No redistribution without Citi's written permission. Figure 17. FX vol tends to drop into the World Cup",
+    "figure_id": "F024",
+    "latex_path": "figures/fig_024.jpg"
+  },
+  {
+    "report_id": "R003",
+    "report_title": "世界杯的真正经济账：情绪溢价远超GDP脉冲",
+    "source_path": "xhs_notes/dropbox/260604/shard_0/0003-03-Goldman-Sachs-THE-WORLD-CUP-AND-ECONOMICS-Big-Business--Small-Macro-2606/mineru_raw/images/110c416e1f6113b6a6e354053f248aeddbbb6e26fa8deaf2ec45d32fb404f5fa.jpg",
+    "label": "Exhibit 2",
+    "context": "Exhibit 2: We Find Slightly Stronger Evidence of a Short-term Increase in GDP for the Winning Nation Relative to Hosts, But Results are not Statistically Significant",
+    "figure_id": "F025",
+    "latex_path": "figures/fig_025.jpg"
+  },
+  {
+    "report_id": "R005",
+    "report_title": "中国智能手机市场真正超预期的不是需求下滑，而是涨价传导的断裂",
+    "source_path": "xhs_notes/dropbox/260604/shard_0/0005-05-Bernstein-Global-Semiconductors---Hardware-China-Smartphone-Tracker--Apr/mineru_raw/images/f387e9b05c43040e689a1fb58803e4c88c8c48e1392e00bf3b04b29a0e75018d.jpg",
+    "label": "Exhibit 1",
+    "context": "EXHIBIT 1: China smartphone sell-through shipment in April was down 15% MoM and 10% YoY. EXHIBIT 2: Low-tier smartphone shipment declined by 22% YoY in April, followed by mid-tier segment (-16% YoY). In comparison, high-tier segm",
+    "figure_id": "F026",
+    "latex_path": "figures/fig_026.jpg"
+  },
+  {
+    "report_id": "R005",
+    "report_title": "中国智能手机市场真正超预期的不是需求下滑，而是涨价传导的断裂",
+    "source_path": "xhs_notes/dropbox/260604/shard_0/0005-05-Bernstein-Global-Semiconductors---Hardware-China-Smartphone-Tracker--Apr/mineru_raw/images/ce95b45282fa79d28c8e2349d546cf83220f61182565c1cff4c55d962c716896.jpg",
+    "label": "Exhibit 4",
+    "context": "EXHIBIT 1: China smartphone sell-through shipment in April was down 15% MoM and 10% YoY. EXHIBIT 2: Low-tier smartphone shipment declined by 22% YoY in April, followed by mid-tier segment (-16% YoY). In comparison, high-tier segm",
+    "figure_id": "F027",
+    "latex_path": "figures/fig_027.jpg"
+  },
+  {
+    "report_id": "R005",
+    "report_title": "中国智能手机市场真正超预期的不是需求下滑，而是涨价传导的断裂",
+    "source_path": "xhs_notes/dropbox/260604/shard_0/0005-05-Bernstein-Global-Semiconductors---Hardware-China-Smartphone-Tracker--Apr/mineru_raw/images/6d33815e25b31e689aa13ddf176fea6623464addf13257f7a11e282e982c364f.jpg",
+    "label": "EXHIBIT 4",
+    "context": "EXHIBIT 4: ...likely due to the launch of Huawei Enjoy 90 series, which led to a spike in Huawei's low-tier shipment.",
+    "figure_id": "F028",
+    "latex_path": "figures/fig_028.jpg"
+  },
+  {
+    "report_id": "R005",
+    "report_title": "中国智能手机市场真正超预期的不是需求下滑，而是涨价传导的断裂",
+    "source_path": "xhs_notes/dropbox/260604/shard_0/0005-05-Bernstein-Global-Semiconductors---Hardware-China-Smartphone-Tracker--Apr/mineru_raw/images/7a2e38a80f474137e414d4104fd16c91c5d0df621384c2a73c7cbd0f3f075512.jpg",
+    "label": "EXHIBIT 3",
+    "context": "EXHIBIT 3: The contribution from low-end segment in the overall sales mix inched up slightly in April...",
+    "figure_id": "F029",
+    "latex_path": "figures/fig_029.jpg"
+  },
+  {
+    "report_id": "R005",
+    "report_title": "中国智能手机市场真正超预期的不是需求下滑，而是涨价传导的断裂",
+    "source_path": "xhs_notes/dropbox/260604/shard_0/0005-05-Bernstein-Global-Semiconductors---Hardware-China-Smartphone-Tracker--Apr/mineru_raw/images/b9db9b2c59a12003da58352b3978750159510500a340ba93c945154c799e85dc.jpg",
+    "label": "EXHIBIT 5",
+    "context": "EXHIBIT 5: Apple has no exposure to low-end market, and thus best positioned among all brands.",
+    "figure_id": "F030",
+    "latex_path": "figures/fig_030.jpg"
+  },
+  {
+    "report_id": "R005",
+    "report_title": "中国智能手机市场真正超预期的不是需求下滑，而是涨价传导的断裂",
+    "source_path": "xhs_notes/dropbox/260604/shard_0/0005-05-Bernstein-Global-Semiconductors---Hardware-China-Smartphone-Tracker--Apr/mineru_raw/images/62576157150130b4c17ef814341226aab2a078b83795ba632e8fb426f88248ca.jpg",
+    "label": "EXHIBIT 6",
+    "context": "EXHIBIT 6: Other OEMs collectively shipped 22% less smartphones in April 2026 vs. April 2025 ... Non-Apple/Huawei Shipment in China & YoY Growth",
+    "figure_id": "F031",
+    "latex_path": "figures/fig_031.jpg"
+  },
+  {
+    "report_id": "R005",
+    "report_title": "中国智能手机市场真正超预期的不是需求下滑，而是涨价传导的断裂",
+    "source_path": "xhs_notes/dropbox/260604/shard_0/0005-05-Bernstein-Global-Semiconductors---Hardware-China-Smartphone-Tracker--Apr/mineru_raw/images/33ffe103d07262e86d521dd204fd76e8291f6c08f615a7a90cb31a74f2d30637.jpg",
+    "label": "EXHIBIT 7",
+    "context": "EXHIBIT 7: ...and they collectively lost 9.8pts unit share YoY, mostly burdened by the drop of low-end segment shipment. Non-Apple/Huawei Market Share in China",
+    "figure_id": "F032",
+    "latex_path": "figures/fig_032.jpg"
+  },
+  {
+    "report_id": "R005",
+    "report_title": "中国智能手机市场真正超预期的不是需求下滑，而是涨价传导的断裂",
+    "source_path": "xhs_notes/dropbox/260604/shard_0/0005-05-Bernstein-Global-Semiconductors---Hardware-China-Smartphone-Tracker--Apr/mineru_raw/images/7237d15d1ffc1360a46b857d5c108ee347f355fba5fcaea34d821ae4e18a9791.jpg",
+    "label": "EXHIBIT 8",
+    "context": "Exhibit 9 - Exhibit 11). - Apple then has responded with more flexible pricing. At the iPhone 17 launch in September 2025, Apple priced the devices below RMB 6,000 & made them eligible for subsidies. The prices of the iPhone 16 seri",
+    "figure_id": "F033",
+    "latex_path": "figures/fig_033.jpg"
+  },
+  {
+    "report_id": "R005",
+    "report_title": "中国智能手机市场真正超预期的不是需求下滑，而是涨价传导的断裂",
+    "source_path": "xhs_notes/dropbox/260604/shard_0/0005-05-Bernstein-Global-Semiconductors---Hardware-China-Smartphone-Tracker--Apr/mineru_raw/images/c29292f58f2e6ffb81edd05eaff7b11cab26efdc93dd9fd87abd4eaac542c28d.jpg",
+    "label": "Exhibit 9",
+    "context": "EXHIBIT 9: Apple focuses on flagship segment but the size of this segment hardly expanded.",
+    "figure_id": "F034",
+    "latex_path": "figures/fig_034.jpg"
+  },
+  {
+    "report_id": "R005",
+    "report_title": "中国智能手机市场真正超预期的不是需求下滑，而是涨价传导的断裂",
+    "source_path": "xhs_notes/dropbox/260604/shard_0/0005-05-Bernstein-Global-Semiconductors---Hardware-China-Smartphone-Tracker--Apr/mineru_raw/images/8733a754b6b0cad5ff4e8152c202efb55d76c1003a36d35c9487cbd537d1b911.jpg",
+    "label": "EXHIBIT 10",
+    "context": "EXHIBIT 10: In comparison, sub-flagship segment has been growing gradually. China Sub-Flagship Smartphones (RMB4,000 - 5,999) Shipment by OEM",
+    "figure_id": "F035",
+    "latex_path": "figures/fig_035.jpg"
+  },
+  {
+    "report_id": "R005",
+    "report_title": "中国智能手机市场真正超预期的不是需求下滑，而是涨价传导的断裂",
+    "source_path": "xhs_notes/dropbox/260604/shard_0/0005-05-Bernstein-Global-Semiconductors---Hardware-China-Smartphone-Tracker--Apr/mineru_raw/images/d4b92d73efb594ec8fcf52b9bc26bb7188afdb690c9778a19b52326a78a3add5.jpg",
+    "label": "EXHIBIT 11",
+    "context": "EXHIBIT 11: Apple was challenged by Huawei in the flagship segment & by other Chinese OEMs in the sub-flagship segment. Smartphone Shipment in China by Brand",
+    "figure_id": "F036",
+    "latex_path": "figures/fig_036.jpg"
+  },
+  {
+    "report_id": "R005",
+    "report_title": "中国智能手机市场真正超预期的不是需求下滑，而是涨价传导的断裂",
+    "source_path": "xhs_notes/dropbox/260604/shard_0/0005-05-Bernstein-Global-Semiconductors---Hardware-China-Smartphone-Tracker--Apr/mineru_raw/images/29acfce8673cf5a3363011c7ac3e7dc8956cc80da8edaadda8da349677b6a71d.jpg",
+    "label": "EXHIBIT 13",
+    "context": "EXHIBIT 13: ...but that was primarily driven by the strong shipment in RMB2,000 and below segment, thanks to recent launch of Enjoy 90 series. Huawei Shipment by RMB Price Band (M units)",
+    "figure_id": "F037",
+    "latex_path": "figures/fig_037.jpg"
+  },
+  {
+    "report_id": "R005",
+    "report_title": "中国智能手机市场真正超预期的不是需求下滑，而是涨价传导的断裂",
+    "source_path": "xhs_notes/dropbox/260604/shard_0/0005-05-Bernstein-Global-Semiconductors---Hardware-China-Smartphone-Tracker--Apr/mineru_raw/images/636ea360f4cc88b16e3776c27418f3b6eac37f43ccd8e9d1acd7218158aaffa7.jpg",
+    "label": "EXHIBIT 12",
+    "context": "EXHIBIT 12: Huawei's unit share jumped to c. $25\\%$ in April and the lead over Apple's share widened to almost 10pts... Apple & Huawei Market Share in China",
+    "figure_id": "F038",
+    "latex_path": "figures/fig_038.jpg"
+  },
+  {
+    "report_id": "R005",
+    "report_title": "中国智能手机市场真正超预期的不是需求下滑，而是涨价传导的断裂",
+    "source_path": "xhs_notes/dropbox/260604/shard_0/0005-05-Bernstein-Global-Semiconductors---Hardware-China-Smartphone-Tracker--Apr/mineru_raw/images/ae3e11deeed7b40d8aa82e746e527d7362286f0f58119fe073048e463deb8f42.jpg",
+    "label": "EXHIBIT 14",
+    "context": "EXHIBIT 14: Though the wait time for the Pro Max model has become shorter, Huawei's premium segment volume however didn't improve.",
+    "figure_id": "F039",
+    "latex_path": "figures/fig_039.jpg"
+  },
+  {
+    "report_id": "R005",
+    "report_title": "中国智能手机市场真正超预期的不是需求下滑，而是涨价传导的断裂",
+    "source_path": "xhs_notes/dropbox/260604/shard_0/0005-05-Bernstein-Global-Semiconductors---Hardware-China-Smartphone-Tracker--Apr/mineru_raw/images/97954c3e8e727ad3dd1967655bd72cace82a34ec089901f15e394bf094e61875.jpg",
+    "label": "EXHIBIT 15",
+    "context": "EXHIBIT 15: Huawei's shipment increased by $28\\%$ YoY in April... EXHIBIT 16: ... while Apple's shipment grew 9% YoY. Apple Shipment in China & YoY Growth",
+    "figure_id": "F040",
+    "latex_path": "figures/fig_040.jpg"
+  },
+  {
+    "report_id": "R005",
+    "report_title": "中国智能手机市场真正超预期的不是需求下滑，而是涨价传导的断裂",
+    "source_path": "xhs_notes/dropbox/260604/shard_0/0005-05-Bernstein-Global-Semiconductors---Hardware-China-Smartphone-Tracker--Apr/mineru_raw/images/09a24a9068c00d023de210168d9fd975846adaeea3734d0470ee53a8633b47d5.jpg",
+    "label": "EXHIBIT 15",
+    "context": "EXHIBIT 15: Huawei's shipment increased by $28\\%$ YoY in April... EXHIBIT 16: ... while Apple's shipment grew 9% YoY. Apple Shipment in China & YoY Growth",
+    "figure_id": "F041",
+    "latex_path": "figures/fig_041.jpg"
+  },
+  {
+    "report_id": "R005",
+    "report_title": "中国智能手机市场真正超预期的不是需求下滑，而是涨价传导的断裂",
+    "source_path": "xhs_notes/dropbox/260604/shard_0/0005-05-Bernstein-Global-Semiconductors---Hardware-China-Smartphone-Tracker--Apr/mineru_raw/images/2cfa4a5cffa7492a7e0ccd9db6fb834c9c3f429c38f7649536c133ce79f3d4a4.jpg",
+    "label": "Exhibit 17",
+    "context": "EXHIBIT 17: Adjusting the sell-in data from CATR for possible obsolescence, we find sell-in was notably higher than sell-through in April...",
+    "figure_id": "F042",
+    "latex_path": "figures/fig_042.jpg"
+  },
+  {
+    "report_id": "R005",
+    "report_title": "中国智能手机市场真正超预期的不是需求下滑，而是涨价传导的断裂",
+    "source_path": "xhs_notes/dropbox/260604/shard_0/0005-05-Bernstein-Global-Semiconductors---Hardware-China-Smartphone-Tracker--Apr/mineru_raw/images/0c6a3b0f9b26e31f83f2b0ed7c6d40c1115f08a0da52f4554f88579d96b47df4.jpg",
+    "label": "EXHIBIT 18",
+    "context": "EXHIBIT 18: ...especially for non-Apple brands likely due to their recent price adjustments.",
+    "figure_id": "F043",
+    "latex_path": "figures/fig_043.jpg"
+  },
+  {
+    "report_id": "R005",
+    "report_title": "中国智能手机市场真正超预期的不是需求下滑，而是涨价传导的断裂",
+    "source_path": "xhs_notes/dropbox/260604/shard_0/0005-05-Bernstein-Global-Semiconductors---Hardware-China-Smartphone-Tracker--Apr/mineru_raw/images/2c24640a61a9f34f02f021a8de14be8e58ed12134540a4aab1acae9f98075e22.jpg",
+    "label": "EXHIBIT 19",
+    "context": "EXHIBIT 19: iPhone also saw some inventory restocking, but at a relatively healthy level.",
+    "figure_id": "F044",
+    "latex_path": "figures/fig_044.jpg"
+  },
+  {
+    "report_id": "R005",
+    "report_title": "中国智能手机市场真正超预期的不是需求下滑，而是涨价传导的断裂",
+    "source_path": "xhs_notes/dropbox/260604/shard_0/0005-05-Bernstein-Global-Semiconductors---Hardware-China-Smartphone-Tracker--Apr/mineru_raw/images/b704edb40ce0dfbe64907fa77bffe31193e5e1d0e3e5ecd513021715c3f6ddaf.jpg",
+    "label": "Exhibit 20",
+    "context": "EXHIBIT 20: 5G penetration has reached almost 100% in new smartphone sales in China. Smartphone Shipment & 5G Penetration",
+    "figure_id": "F045",
+    "latex_path": "figures/fig_045.jpg"
+  },
+  {
+    "report_id": "R005",
+    "report_title": "中国智能手机市场真正超预期的不是需求下滑，而是涨价传导的断裂",
+    "source_path": "xhs_notes/dropbox/260604/shard_0/0005-05-Bernstein-Global-Semiconductors---Hardware-China-Smartphone-Tracker--Apr/mineru_raw/images/18b854bbd6e7282f37ab1d523491528baed9b237b525c6504ffc4c126db00fa1.jpg",
+    "label": "EXHIBIT 21",
+    "context": "EXHIBIT 21: Smartphone ASP increased by 16% YoY even without including subsidies. Smartphone Blended ASP in China (RMB)",
+    "figure_id": "F046",
+    "latex_path": "figures/fig_046.jpg"
+  },
+  {
+    "report_id": "R005",
+    "report_title": "中国智能手机市场真正超预期的不是需求下滑，而是涨价传导的断裂",
+    "source_path": "xhs_notes/dropbox/260604/shard_0/0005-05-Bernstein-Global-Semiconductors---Hardware-China-Smartphone-Tracker--Apr/mineru_raw/images/c351c9c188fc70ad8cb0ac4d8e6779a8c5fc272c03b63d781e18d774783f5e2e.jpg",
+    "label": "EXHIBIT 22",
+    "context": "EXHIBIT 22: Non-Apple/Huawei sub-flagship shipment was down 20% YoY in April. Shipment of Non-Apple/Huawei Sub-Flagship Smartphones (RMB4,000-5,999) in China",
+    "figure_id": "F047",
+    "latex_path": "figures/fig_047.jpg"
+  },
+  {
+    "report_id": "R005",
+    "report_title": "中国智能手机市场真正超预期的不是需求下滑，而是涨价传导的断裂",
+    "source_path": "xhs_notes/dropbox/260604/shard_0/0005-05-Bernstein-Global-Semiconductors---Hardware-China-Smartphone-Tracker--Apr/mineru_raw/images/7f46888156cc9daa6a4e19438ffd7e72605fbfbedbc4648d9c6e214384d31771.jpg",
+    "label": "EXHIBIT 23",
+    "context": "EXHIBIT 23: Sub-flagship segment took up 16% of non-Apple/Huawei shipment, flat YoY.",
+    "figure_id": "F048",
+    "latex_path": "figures/fig_048.jpg"
+  },
+  {
+    "report_id": "R005",
+    "report_title": "中国智能手机市场真正超预期的不是需求下滑，而是涨价传导的断裂",
+    "source_path": "xhs_notes/dropbox/260604/shard_0/0005-05-Bernstein-Global-Semiconductors---Hardware-China-Smartphone-Tracker--Apr/mineru_raw/images/07c12e906ab5f3d0da686b0e540e78ffd2b04d38017875d2573ed28a07ac3e5d.jpg",
+    "label": "EXHIBIT 24",
+    "context": "EXHIBIT 24: Non-Apple/Huawei flagship shipment was up 14% YoY. Shipment of Non-Apple/Huawei Flagship Smartphones (≥RMB6,000) in China",
+    "figure_id": "F049",
+    "latex_path": "figures/fig_049.jpg"
+  },
+  {
+    "report_id": "R005",
+    "report_title": "中国智能手机市场真正超预期的不是需求下滑，而是涨价传导的断裂",
+    "source_path": "xhs_notes/dropbox/260604/shard_0/0005-05-Bernstein-Global-Semiconductors---Hardware-China-Smartphone-Tracker--Apr/mineru_raw/images/6b3fe281100aceb16a4a7a55a9264b766f2e81f02b2040518ccb12324c65db53.jpg",
+    "label": "EXHIBIT 25",
+    "context": "EXHIBIT 25: Flagship segment accounted for 7% of total non-Apple/Huawei shipment, vs. c. 5% one year ago.",
+    "figure_id": "F050",
+    "latex_path": "figures/fig_050.jpg"
+  },
+  {
+    "report_id": "R005",
+    "report_title": "中国智能手机市场真正超预期的不是需求下滑，而是涨价传导的断裂",
+    "source_path": "xhs_notes/dropbox/260604/shard_0/0005-05-Bernstein-Global-Semiconductors---Hardware-China-Smartphone-Tracker--Apr/mineru_raw/images/8a49de41794bf383eaa58529199d0456e257be5508b14c85bbcce99c3f6a2f19.jpg",
+    "label": "EXHIBIT 26",
+    "context": "EXHIBIT 26: The share of Xiaomi's shipments priced above RMB 4k increased MoM to 21%, though modestly below the 22% in Apr 2025; Shipments in the RMB 2k-4k range reached 28%, vs. 37% in Mar 2026 and 25% in Apr 2025. Xiaomi Smartph",
+    "figure_id": "F051",
+    "latex_path": "figures/fig_051.jpg"
+  },
+  {
+    "report_id": "R005",
+    "report_title": "中国智能手机市场真正超预期的不是需求下滑，而是涨价传导的断裂",
+    "source_path": "xhs_notes/dropbox/260604/shard_0/0005-05-Bernstein-Global-Semiconductors---Hardware-China-Smartphone-Tracker--Apr/mineru_raw/images/0139db61d34915b65fdccec14b9ed5077d57be067e9744362c5251357846856c.jpg",
+    "label": "EXHIBIT 27",
+    "context": "EXHIBIT 27: In Apr 2026, Xiaomi's market share declined to $14.6\\%$ from $15.6\\%$ in Mar 2026 and $17.0\\%$ in Apr 2025.",
+    "figure_id": "F052",
+    "latex_path": "figures/fig_052.jpg"
+  },
+  {
+    "report_id": "R005",
+    "report_title": "中国智能手机市场真正超预期的不是需求下滑，而是涨价传导的断裂",
+    "source_path": "xhs_notes/dropbox/260604/shard_0/0005-05-Bernstein-Global-Semiconductors---Hardware-China-Smartphone-Tracker--Apr/mineru_raw/images/08bd19edae0a691521c06cb2a0f29df3b892b047a7cd31e4cc542c54f9010346.jpg",
+    "label": "EXHIBIT 28",
+    "context": "EXHIBIT 28: Xiaomi's yoy growth fell -23% YoY. Xiaomi: China smartphone shipment & growth",
+    "figure_id": "F053",
+    "latex_path": "figures/fig_053.jpg"
+  },
+  {
+    "report_id": "R005",
+    "report_title": "中国智能手机市场真正超预期的不是需求下滑，而是涨价传导的断裂",
+    "source_path": "xhs_notes/dropbox/260604/shard_0/0005-05-Bernstein-Global-Semiconductors---Hardware-China-Smartphone-Tracker--Apr/mineru_raw/images/021edd759da55080e0c6942aa29bd913815049b41dac14bf5e2a112ee5f6fefc.jpg",
+    "label": "Exhibit 29",
+    "context": "EXHIBIT 29: In April, unit share of Qualcomm and MediaTek decreased by 2.8pts and 2.9pts QoQ, respectively... MediaTek & Qualcomm Unit Share in China",
+    "figure_id": "F054",
+    "latex_path": "figures/fig_054.jpg"
+  },
+  {
+    "report_id": "R005",
+    "report_title": "中国智能手机市场真正超预期的不是需求下滑，而是涨价传导的断裂",
+    "source_path": "xhs_notes/dropbox/260604/shard_0/0005-05-Bernstein-Global-Semiconductors---Hardware-China-Smartphone-Tracker--Apr/mineru_raw/images/bf60bc39ae67290ea7ce826e05d34b303356d319058c7fd93622e74eda951c71.jpg",
+    "label": "EXHIBIT 30",
+    "context": "EXHIBIT 30: ...primarily due to weaker share among non-Apple/Huawei OEMs. China Smartphone Shipment by Brand",
+    "figure_id": "F055",
+    "latex_path": "figures/fig_055.jpg"
+  },
+  {
+    "report_id": "R005",
+    "report_title": "中国智能手机市场真正超预期的不是需求下滑，而是涨价传导的断裂",
+    "source_path": "xhs_notes/dropbox/260604/shard_0/0005-05-Bernstein-Global-Semiconductors---Hardware-China-Smartphone-Tracker--Apr/mineru_raw/images/c53727b464c6abc73c32ffc5fdac05159683dc11f5207dab34b1dfdb05f90dd2.jpg",
+    "label": "EXHIBIT 31",
+    "context": "EXHIBIT 31: MediaTek's shipment mix continued to improve after plateauing for a while. MediaTek SoC Shipment Breakdown by Price Band (in RMB)",
+    "figure_id": "F056",
+    "latex_path": "figures/fig_056.jpg"
+  },
+  {
+    "report_id": "R005",
+    "report_title": "中国智能手机市场真正超预期的不是需求下滑，而是涨价传导的断裂",
+    "source_path": "xhs_notes/dropbox/260604/shard_0/0005-05-Bernstein-Global-Semiconductors---Hardware-China-Smartphone-Tracker--Apr/mineru_raw/images/affdb15ab320b220d64db41f5c582a36383a7b0e641a8d4588e3de57990d18a0.jpg",
+    "label": "EXHIBIT 32",
+    "context": "EXHIBIT 32: UNISOC's share remained very small in China, indicating UNISOC is not competitive in 5G.",
+    "figure_id": "F057",
+    "latex_path": "figures/fig_057.jpg"
+  },
+  {
+    "report_id": "R005",
+    "report_title": "中国智能手机市场真正超预期的不是需求下滑，而是涨价传导的断裂",
+    "source_path": "xhs_notes/dropbox/260604/shard_0/0005-05-Bernstein-Global-Semiconductors---Hardware-China-Smartphone-Tracker--Apr/mineru_raw/images/06aa4c5a64032a7cef5259a79205c3063090f484a9c2d88426d03fa137cfcc52.jpg",
+    "label": "Exhibit 33",
+    "context": "EXHIBIT 33: The OLED penetration stood at c. 90% in April. China Smartphone Shipment Breakdown by Display Technology",
+    "figure_id": "F058",
+    "latex_path": "figures/fig_058.jpg"
+  },
+  {
+    "report_id": "R005",
+    "report_title": "中国智能手机市场真正超预期的不是需求下滑，而是涨价传导的断裂",
+    "source_path": "xhs_notes/dropbox/260604/shard_0/0005-05-Bernstein-Global-Semiconductors---Hardware-China-Smartphone-Tracker--Apr/mineru_raw/images/1e1d97e50bd06ee714725bf89c855a6f5a2735d9cd179b4f99eef97c0b41578f.jpg",
+    "label": "EXHIBIT 34",
+    "context": "EXHIBIT 34: OLED penetration in non-Apple/Huawei smartphones remained at 88%. OLED Penetration in Non-Apple/Huawei Smartphones Shipment in China",
+    "figure_id": "F059",
+    "latex_path": "figures/fig_059.jpg"
+  },
+  {
+    "report_id": "R005",
+    "report_title": "中国智能手机市场真正超预期的不是需求下滑，而是涨价传导的断裂",
+    "source_path": "xhs_notes/dropbox/260604/shard_0/0005-05-Bernstein-Global-Semiconductors---Hardware-China-Smartphone-Tracker--Apr/mineru_raw/images/8069b689fc4d1c9f97075a03350a9252a169d1bfb1bfffc2880233fbb7007e58.jpg",
+    "label": "EXHIBIT 35",
+    "context": "EXHIBIT 35: All OEMs shipped less OLED YoY in April except for Huawei and Apple. EXHIBIT 36: The adoption rate of foldable panel dropped to below 5% in April.",
+    "figure_id": "F060",
+    "latex_path": "figures/fig_060.jpg"
+  },
+  {
+    "report_id": "R005",
+    "report_title": "中国智能手机市场真正超预期的不是需求下滑，而是涨价传导的断裂",
+    "source_path": "xhs_notes/dropbox/260604/shard_0/0005-05-Bernstein-Global-Semiconductors---Hardware-China-Smartphone-Tracker--Apr/mineru_raw/images/46adb972585404cf027507ca34d4f435430d3799cf383298d994b4bd10acd01e.jpg",
+    "label": "EXHIBIT 35",
+    "context": "EXHIBIT 35: All OEMs shipped less OLED YoY in April except for Huawei and Apple. EXHIBIT 36: The adoption rate of foldable panel dropped to below 5% in April.",
+    "figure_id": "F061",
+    "latex_path": "figures/fig_061.jpg"
+  },
+  {
+    "report_id": "R008",
+    "report_title": "香港零售复苏的真正信号：不是奢侈品反弹，而是超市租金企稳",
+    "source_path": "xhs_notes/dropbox/260604/shard_1/0003-08-CITI-Hong-Kong-Property-Apr-Retail--9---luxury-growth-moderates--superma/mineru_raw/images/42d80a578788b1606f62273bc39aac34d2a1a2bb78ca32b89c9d252148c494bb.jpg",
+    "label": "Figure 1",
+    "context": "Cindy Li $^{AC}$ Figure 1. HK Retail Sales Value: +8.6% in Apr'26 YoY Change in Retail Sales Value",
+    "figure_id": "F062",
+    "latex_path": "figures/fig_062.jpg"
+  },
+  {
+    "report_id": "R008",
+    "report_title": "香港零售复苏的真正信号：不是奢侈品反弹，而是超市租金企稳",
+    "source_path": "xhs_notes/dropbox/260604/shard_1/0003-08-CITI-Hong-Kong-Property-Apr-Retail--9---luxury-growth-moderates--superma/mineru_raw/images/9994863ce61c75072ee826b65aa2f14d4fe9ed95d25fd511572afef04f89bcee.jpg",
+    "label": "Figure 2",
+    "context": "Figure 2. HK Retail Sales Value YoY Change by Category Retail Sales YoY Change by Category (%)",
+    "figure_id": "F063",
+    "latex_path": "figures/fig_063.jpg"
+  },
+  {
+    "report_id": "R008",
+    "report_title": "香港零售复苏的真正信号：不是奢侈品反弹，而是超市租金企稳",
+    "source_path": "xhs_notes/dropbox/260604/shard_1/0003-08-CITI-Hong-Kong-Property-Apr-Retail--9---luxury-growth-moderates--superma/mineru_raw/images/eb2942fe7ac4949986879a0db3797f0b4fb547494ffa25888f5fc2c25acf7ffd.jpg",
+    "label": "Figure 3",
+    "context": "Figure 3. HKD Depreciated 4% vs. Rmb in 5M26 HKD/RMB Exchange Rate",
+    "figure_id": "F064",
+    "latex_path": "figures/fig_064.jpg"
+  },
+  {
+    "report_id": "R008",
+    "report_title": "香港零售复苏的真正信号：不是奢侈品反弹，而是超市租金企稳",
+    "source_path": "xhs_notes/dropbox/260604/shard_1/0003-08-CITI-Hong-Kong-Property-Apr-Retail--9---luxury-growth-moderates--superma/mineru_raw/images/3f488e962ce36c3248cac836327e7f7e5a49ef15b2cc17f79ccf3684d4ac31c6.jpg",
+    "label": "Figure 4",
+    "context": "Figure 4. HK Retail Sales Correlates with HKD/Rmb Forex CNY/HKD YoY and Retail Sales Value YoY Since 2006",
+    "figure_id": "F065",
+    "latex_path": "figures/fig_065.jpg"
+  },
+  {
+    "report_id": "R008",
+    "report_title": "香港零售复苏的真正信号：不是奢侈品反弹，而是超市租金企稳",
+    "source_path": "xhs_notes/dropbox/260604/shard_1/0003-08-CITI-Hong-Kong-Property-Apr-Retail--9---luxury-growth-moderates--superma/mineru_raw/images/a3274a09d602720c7d753755a991b86cc86db5f167f7c47e341c269f4c831269.jpg",
+    "label": "Figure 5",
+    "context": "Figure 5. HK Luxury Goods: accelerate in Apr'26 YoY Change in Retail Sales Value - Luxury Goods",
+    "figure_id": "F066",
+    "latex_path": "figures/fig_066.jpg"
+  },
+  {
+    "report_id": "R008",
+    "report_title": "香港零售复苏的真正信号：不是奢侈品反弹，而是超市租金企稳",
+    "source_path": "xhs_notes/dropbox/260604/shard_1/0003-08-CITI-Hong-Kong-Property-Apr-Retail--9---luxury-growth-moderates--superma/mineru_raw/images/0ece656eb899ec3da53eb13f1b4ab2d571be97a145f9625aa027effe300a2981.jpg",
+    "label": "Figure 6",
+    "context": "© 2026 Citi Inc. No redistribution without Citi's written permission. Note: Luxury goods refer to retail sales under the category of “Jewelry, Watches, Clocks & Valuable Gifts Figure 6. HK Supermarket Retail: stabilizing YoY Change in Retail Sales Value - Supe",
+    "figure_id": "F067",
+    "latex_path": "figures/fig_067.jpg"
+  },
+  {
+    "report_id": "R008",
+    "report_title": "香港零售复苏的真正信号：不是奢侈品反弹，而是超市租金企稳",
+    "source_path": "xhs_notes/dropbox/260604/shard_1/0003-08-CITI-Hong-Kong-Property-Apr-Retail--9---luxury-growth-moderates--superma/mineru_raw/images/ccab3793c4e1f1278ee49fea4e5af726d8405fed77bc8699b64e395684cc7eaf.jpg",
+    "label": "Figure 7",
+    "context": "© 2026 Citi Inc. No redistribution without Citi's written permission. Figure 7. HK Online Retail Sales Value: strong yoy surge YoY Change in Online Retail Sales Value",
+    "figure_id": "F068",
+    "latex_path": "figures/fig_068.jpg"
+  },
+  {
+    "report_id": "R008",
+    "report_title": "香港零售复苏的真正信号：不是奢侈品反弹，而是超市租金企稳",
+    "source_path": "xhs_notes/dropbox/260604/shard_1/0003-08-CITI-Hong-Kong-Property-Apr-Retail--9---luxury-growth-moderates--superma/mineru_raw/images/c99f80ac586afb84b8b83c97b386878fda2a2671e209323dc31528b1f8410fd0.jpg",
+    "label": "Figure 8",
+    "context": "© 2026 Citi Inc. No redistribution without Citi's written permission. Figure 8. HK Online Retail Sales Value: 10% mix % of Online Retail Sales",
+    "figure_id": "F069",
+    "latex_path": "figures/fig_069.jpg"
+  },
+  {
+    "report_id": "R009",
+    "report_title": "日经年底突破70000点：市场低估的不是需求，而是日本企业定价权的结构性转折",
+    "source_path": "xhs_notes/dropbox/260604/shard_1/0004-09-CITI-Japan-Equity-Strategy-Market-Explorer-Indexes-to-top-out-soon-but-w/mineru_raw/images/19214c65a8e19d405d7c721f6c671e5e10cc270d71ff39566400c211de3d5590.jpg",
+    "label": "Figure 2",
+    "context": "© 2026 Citi Inc. No redistribution without Citi's written permission. Note: Universe is TOPIX companies with February or March FY year-ends. Figure 2. Corporate guidance vs results / prior consensus (OP basis)",
+    "figure_id": "F070",
+    "latex_path": "figures/fig_070.jpg"
+  },
+  {
+    "report_id": "R009",
+    "report_title": "日经年底突破70000点：市场低估的不是需求，而是日本企业定价权的结构性转折",
+    "source_path": "xhs_notes/dropbox/260604/shard_1/0004-09-CITI-Japan-Equity-Strategy-Market-Explorer-Indexes-to-top-out-soon-but-w/mineru_raw/images/147f4df8ec9fd3d757cfb203ba9a04b6da81b7b322aa0e197a8b56dc799df251.jpg",
+    "label": "Figure 3",
+    "context": "© 2026 Citi Inc. No redistribution without Citi's written permission. Note: Universe is TOPIX companies with February or March FY year-ends. Figure 3. MSCI Japan IT 12mf EPS and world semiconductor sales",
+    "figure_id": "F071",
+    "latex_path": "figures/fig_071.jpg"
+  },
+  {
+    "report_id": "R009",
+    "report_title": "日经年底突破70000点：市场低估的不是需求，而是日本企业定价权的结构性转折",
+    "source_path": "xhs_notes/dropbox/260604/shard_1/0004-09-CITI-Japan-Equity-Strategy-Market-Explorer-Indexes-to-top-out-soon-but-w/mineru_raw/images/a43e711ab544253a7d54e3cc3242d967dc52e7edfeef338dda4c315887bf4c3a.jpg",
+    "label": "Figure 4",
+    "context": "© 2026 Citi Inc. No redistribution without Citi's written permission. Figure 4. FY3/26 and FY3/27 breakdown of net income growth by sector (¥trn)",
+    "figure_id": "F072",
+    "latex_path": "figures/fig_072.jpg"
+  },
+  {
+    "report_id": "R009",
+    "report_title": "日经年底突破70000点：市场低估的不是需求，而是日本企业定价权的结构性转折",
+    "source_path": "xhs_notes/dropbox/260604/shard_1/0004-09-CITI-Japan-Equity-Strategy-Market-Explorer-Indexes-to-top-out-soon-but-w/mineru_raw/images/4d6355f464603ebcf08cdb2f38a20a6b9dc934761b2b92eb305d9077edb2eb98.jpg",
+    "label": "Figure 8",
+    "context": "Note: Universe is TOPIX companies with February or March FY year-ends. # Near-term risk of revision deterioration exists but is not enough to change the Japanese equity trend Downside to profit plans may lead to deterioration in earnings forecast revisions in ",
+    "figure_id": "F073",
+    "latex_path": "figures/fig_073.jpg"
+  },
+  {
+    "report_id": "R009",
+    "report_title": "日经年底突破70000点：市场低估的不是需求，而是日本企业定价权的结构性转折",
+    "source_path": "xhs_notes/dropbox/260604/shard_1/0004-09-CITI-Japan-Equity-Strategy-Market-Explorer-Indexes-to-top-out-soon-but-w/mineru_raw/images/09a810220e8e16e4b1e6c032855af2450f414882d305964989e47bb60a200b8e.jpg",
+    "label": "Figure 7",
+    "context": "© 2026 Citi Inc. No redistribution without Citi's written permission. Note: Universe is TOPIX companies with February or March FY year-ends. Figure 7. TOPIX revision index and TOPIX returns vs 2y average",
+    "figure_id": "F074",
+    "latex_path": "figures/fig_074.jpg"
+  },
+  {
+    "report_id": "R009",
+    "report_title": "日经年底突破70000点：市场低估的不是需求，而是日本企业定价权的结构性转折",
+    "source_path": "xhs_notes/dropbox/260604/shard_1/0004-09-CITI-Japan-Equity-Strategy-Market-Explorer-Indexes-to-top-out-soon-but-w/mineru_raw/images/c0685970441a381bc5a0fcf1c5d80e48fa8533681afeee3a68107ba5c5949f45.jpg",
+    "label": "Figure 8",
+    "context": "© 2026 Citi Inc. No redistribution without Citi's written permission. Figure 8. MSCI Japan and MSCI Japan IT earnings revision indexes",
+    "figure_id": "F075",
+    "latex_path": "figures/fig_075.jpg"
+  },
+  {
+    "report_id": "R009",
+    "report_title": "日经年底突破70000点：市场低估的不是需求，而是日本企业定价权的结构性转折",
+    "source_path": "xhs_notes/dropbox/260604/shard_1/0004-09-CITI-Japan-Equity-Strategy-Market-Explorer-Indexes-to-top-out-soon-but-w/mineru_raw/images/b486f6f000312d2a912714d3a3e4328eace515c990237bf22ae1c2a7d3f455eb.jpg",
+    "label": "Figure 9",
+    "context": "© 2026 Citi Inc. No redistribution without Citi's written permission. Figure 9. TOPIX earnings revision index and the positive earnings surprise ratio (OP basis)",
+    "figure_id": "F076",
+    "latex_path": "figures/fig_076.jpg"
+  },
+  {
+    "report_id": "R009",
+    "report_title": "日经年底突破70000点：市场低估的不是需求，而是日本企业定价权的结构性转折",
+    "source_path": "xhs_notes/dropbox/260604/shard_1/0004-09-CITI-Japan-Equity-Strategy-Market-Explorer-Indexes-to-top-out-soon-but-w/mineru_raw/images/c356c4a1c0b938c1626043609e4672049ce61d79bede46d487358e9dd2cf7848.jpg",
+    "label": "Figure 10",
+    "context": "© 2026 Citi Inc. No redistribution without Citi's written permission. # Japanese firms strengthening their ability to smoothly implement price pass-throughs The company plans presented at full-year results saw a relatively high frequency of sales plan beats an",
+    "figure_id": "F077",
+    "latex_path": "figures/fig_077.jpg"
+  },
+  {
+    "report_id": "R009",
+    "report_title": "日经年底突破70000点：市场低估的不是需求，而是日本企业定价权的结构性转折",
+    "source_path": "xhs_notes/dropbox/260604/shard_1/0004-09-CITI-Japan-Equity-Strategy-Market-Explorer-Indexes-to-top-out-soon-but-w/mineru_raw/images/a2b00f6ea501c704e3144c84036d6071f6d462a26f229cd761a64bb77f707f7e.jpg",
+    "label": "Figure 11",
+    "context": "© 2026 Citi Inc. No redistribution without Citi's written permission. Note: Universe is TOPIX companies with February or March year-ends. Beat is defined as when revenue guidance vs prior consensus is over 0%, while a miss is seen if OP guidance vs prior conse",
+    "figure_id": "F078",
+    "latex_path": "figures/fig_078.jpg"
+  },
+  {
+    "report_id": "R009",
+    "report_title": "日经年底突破70000点：市场低估的不是需求，而是日本企业定价权的结构性转折",
+    "source_path": "xhs_notes/dropbox/260604/shard_1/0004-09-CITI-Japan-Equity-Strategy-Market-Explorer-Indexes-to-top-out-soon-but-w/mineru_raw/images/ecc388780d2375f80325eb91402cc53a5c97a0d3160ab16b6d50496d94854b97.jpg",
+    "label": "Figure 12",
+    "context": "© 2026 Citi Inc. No redistribution without Citi's written permission. Figure 12. Large enterprises: OPM and output prices",
+    "figure_id": "F079",
+    "latex_path": "figures/fig_079.jpg"
+  },
+  {
+    "report_id": "R009",
+    "report_title": "日经年底突破70000点：市场低估的不是需求，而是日本企业定价权的结构性转折",
+    "source_path": "xhs_notes/dropbox/260604/shard_1/0004-09-CITI-Japan-Equity-Strategy-Market-Explorer-Indexes-to-top-out-soon-but-w/mineru_raw/images/93c8f9533dc2ee3867a7617a75e199a8af3935a27b37fee09b58ce8f355fed7c.jpg",
+    "label": "Figure 13",
+    "context": "© 2026 Citi Inc. No redistribution without Citi's written permission. Figure 13. TOPIX margin revision index and import prices",
+    "figure_id": "F080",
+    "latex_path": "figures/fig_080.jpg"
+  },
+  {
+    "report_id": "R009",
+    "report_title": "日经年底突破70000点：市场低估的不是需求，而是日本企业定价权的结构性转折",
+    "source_path": "xhs_notes/dropbox/260604/shard_1/0004-09-CITI-Japan-Equity-Strategy-Market-Explorer-Indexes-to-top-out-soon-but-w/mineru_raw/images/17eb926c7c4572b4b559417f316f6ea02d199201ed48f9ad2b8c2febe6250a40.jpg",
+    "label": "Figure 15",
+    "context": "© 2026 Citi Inc. No redistribution without Citi's written permission. # Japanese stocks still have upside valuation potential Figure 15. TOPIX 12m and 24m forward PERs",
+    "figure_id": "F081",
+    "latex_path": "figures/fig_081.jpg"
+  },
+  {
+    "report_id": "R009",
+    "report_title": "日经年底突破70000点：市场低估的不是需求，而是日本企业定价权的结构性转折",
+    "source_path": "xhs_notes/dropbox/260604/shard_1/0004-09-CITI-Japan-Equity-Strategy-Market-Explorer-Indexes-to-top-out-soon-but-w/mineru_raw/images/2cdd446cbe1cc594ee7a328660e1f74e400364c7a3ca24b5b68dc099a6cbbee6.jpg",
+    "label": "Figure 16",
+    "context": "© 2026 Citi Inc. No redistribution without Citi's written permission. Figure 16. TOPIX PBR and RoE distribution",
+    "figure_id": "F082",
+    "latex_path": "figures/fig_082.jpg"
+  },
+  {
+    "report_id": "R009",
+    "report_title": "日经年底突破70000点：市场低估的不是需求，而是日本企业定价权的结构性转折",
+    "source_path": "xhs_notes/dropbox/260604/shard_1/0004-09-CITI-Japan-Equity-Strategy-Market-Explorer-Indexes-to-top-out-soon-but-w/mineru_raw/images/0040fe42ab0fa540f8fd38af6dcc2eb37be932f7d7cd11b97cb1676f665b3f68.jpg",
+    "label": "Figure 17",
+    "context": "© 2026 Citi Inc. No redistribution without Citi's written permission. Figure 17. Trend in global money supply",
+    "figure_id": "F083",
+    "latex_path": "figures/fig_083.jpg"
+  },
+  {
+    "report_id": "R009",
+    "report_title": "日经年底突破70000点：市场低估的不是需求，而是日本企业定价权的结构性转折",
+    "source_path": "xhs_notes/dropbox/260604/shard_1/0004-09-CITI-Japan-Equity-Strategy-Market-Explorer-Indexes-to-top-out-soon-but-w/mineru_raw/images/1c09af58abf2031a766919b9fa4a04153b2f6a65ae792f988f876c67fa70abed.jpg",
+    "label": "Figure 18",
+    "context": "The chart displays a stacked area chart with the x-axis labeled 'Year' and y-axis labeled 'Money Supply (tn USD)'. The legend indicates six categories: US, Japan, Eurozone, UK, China, and M2 money supply. The data is extracted from the image and presented in C",
+    "figure_id": "F084",
+    "latex_path": "figures/fig_084.jpg"
+  },
+  {
+    "report_id": "R009",
+    "report_title": "日经年底突破70000点：市场低估的不是需求，而是日本企业定价权的结构性转折",
+    "source_path": "xhs_notes/dropbox/260604/shard_1/0004-09-CITI-Japan-Equity-Strategy-Market-Explorer-Indexes-to-top-out-soon-but-w/mineru_raw/images/c390d6379d502604bbb2b67df5411a9b6004de17b2c8ef639c8203e8bc97ab67.jpg",
+    "label": "Figure 19",
+    "context": "© 2026 Citi Inc. No redistribution without Citi's written permission. Note: FY3/26 numbers are based on actual results + consensus estimates; numbers for FY3/27 on are consensus estimates. Figure 19. Yield spread in major markets",
+    "figure_id": "F085",
+    "latex_path": "figures/fig_085.jpg"
+  },
+  {
+    "report_id": "R009",
+    "report_title": "日经年底突破70000点：市场低估的不是需求，而是日本企业定价权的结构性转折",
+    "source_path": "xhs_notes/dropbox/260604/shard_1/0004-09-CITI-Japan-Equity-Strategy-Market-Explorer-Indexes-to-top-out-soon-but-w/mineru_raw/images/9cf9f4e32a760dcd8a4e20c0178ab326f1b3c72228d36af76c89b240162b1f07.jpg",
+    "label": "Figure 20",
+    "context": "© 2026 Citi Inc. No redistribution without Citi's written permission. Figure 20. Global money supply and 12mf PER",
+    "figure_id": "F086",
+    "latex_path": "figures/fig_086.jpg"
+  },
+  {
+    "report_id": "R009",
+    "report_title": "日经年底突破70000点：市场低估的不是需求，而是日本企业定价权的结构性转折",
+    "source_path": "xhs_notes/dropbox/260604/shard_1/0004-09-CITI-Japan-Equity-Strategy-Market-Explorer-Indexes-to-top-out-soon-but-w/mineru_raw/images/e673799b20515dd3235762565a5ef214d447b608f4914b2d53e334978934636c.jpg",
+    "label": "Figure 21",
+    "context": "© 2026 Citi Inc. No redistribution without Citi's written permission. # We expect the N/T ratio to remain high The N/T ratio (Nikkei 225 to TOPIX ratio) is marking record highs due to substantial gains by Al/semiconductor-related sectors and stocks (Figures 21",
+    "figure_id": "F087",
+    "latex_path": "figures/fig_087.jpg"
+  },
+  {
+    "report_id": "R009",
+    "report_title": "日经年底突破70000点：市场低估的不是需求，而是日本企业定价权的结构性转折",
+    "source_path": "xhs_notes/dropbox/260604/shard_1/0004-09-CITI-Japan-Equity-Strategy-Market-Explorer-Indexes-to-top-out-soon-but-w/mineru_raw/images/3cff7b3d8f32ddc585234507624b226263167df37be3669b3e4c1f20989625fd.jpg",
+    "label": "Figure 22",
+    "context": "© 2026 Citi Inc. No redistribution without Citi's written permission. Figure 22. N/T ratio and electric appliance TOPIX relative share price",
+    "figure_id": "F088",
+    "latex_path": "figures/fig_088.jpg"
+  },
+  {
+    "report_id": "R009",
+    "report_title": "日经年底突破70000点：市场低估的不是需求，而是日本企业定价权的结构性转折",
+    "source_path": "xhs_notes/dropbox/260604/shard_1/0004-09-CITI-Japan-Equity-Strategy-Market-Explorer-Indexes-to-top-out-soon-but-w/mineru_raw/images/925f9a6728b744a797261a52f2ac0b57246649cd26f72a23f591956429fba7b4.jpg",
+    "label": "Figure 23",
+    "context": "© 2026 Citi Inc. No redistribution without Citi's written permission. Figure 23. Trend in PEG ratio for major markets and indexes",
+    "figure_id": "F089",
+    "latex_path": "figures/fig_089.jpg"
+  },
+  {
+    "report_id": "R009",
+    "report_title": "日经年底突破70000点：市场低估的不是需求，而是日本企业定价权的结构性转折",
+    "source_path": "xhs_notes/dropbox/260604/shard_1/0004-09-CITI-Japan-Equity-Strategy-Market-Explorer-Indexes-to-top-out-soon-but-w/mineru_raw/images/bab40af823e9d0bc5b60ddfc179f31e93e500aabdf3ac815d68d8a15f19d3169.jpg",
+    "label": "Figure 25",
+    "context": "© 2026 Citi Inc. No redistribution without Citi's written permission. # \"Bad rate rises\" are less likely to materialize in Japan Figure 25. US 10y yield and S&P500 12mf P/E",
+    "figure_id": "F090",
+    "latex_path": "figures/fig_090.jpg"
+  },
+  {
+    "report_id": "R009",
+    "report_title": "日经年底突破70000点：市场低估的不是需求，而是日本企业定价权的结构性转折",
+    "source_path": "xhs_notes/dropbox/260604/shard_1/0004-09-CITI-Japan-Equity-Strategy-Market-Explorer-Indexes-to-top-out-soon-but-w/mineru_raw/images/4d428f56aa5e1ebaadc76234b3f773a665c41298dca53c7852f2ad77ea925d54.jpg",
+    "label": "Figure 26",
+    "context": "© 2026 Citi Inc. No redistribution without Citi's written permission. Figure 26. Japan 10y yield and TOPIX 12mf P/E",
+    "figure_id": "F091",
+    "latex_path": "figures/fig_091.jpg"
+  },
+  {
+    "report_id": "R009",
+    "report_title": "日经年底突破70000点：市场低估的不是需求，而是日本企业定价权的结构性转折",
+    "source_path": "xhs_notes/dropbox/260604/shard_1/0004-09-CITI-Japan-Equity-Strategy-Market-Explorer-Indexes-to-top-out-soon-but-w/mineru_raw/images/7d10500a9acd6ee772471767f6e20ef655fef87c6cb844b9c2087d2f734ae07b.jpg",
+    "label": "Figure 27",
+    "context": "© 2026 Citi Inc. No redistribution without Citi's written permission. Figure 27. Distribution of PBRs in Japan/US/Europe major equity indexes (left: number of companies; right: market cap weight) (# of company)",
+    "figure_id": "F092",
+    "latex_path": "figures/fig_092.jpg"
+  },
+  {
+    "report_id": "R009",
+    "report_title": "日经年底突破70000点：市场低估的不是需求，而是日本企业定价权的结构性转折",
+    "source_path": "xhs_notes/dropbox/260604/shard_1/0004-09-CITI-Japan-Equity-Strategy-Market-Explorer-Indexes-to-top-out-soon-but-w/mineru_raw/images/fab978b9f62e0c6ae45ef4360caa78c40b76f72099cb87202e1c87c3b4e5176d.jpg",
+    "label": "Figure 28",
+    "context": "© 2026 Citi Inc. No redistribution without Citi's written permission. Figure 28. Japan 10y BEI and CPI",
+    "figure_id": "F093",
+    "latex_path": "figures/fig_093.jpg"
+  },
+  {
+    "report_id": "R009",
+    "report_title": "日经年底突破70000点：市场低估的不是需求，而是日本企业定价权的结构性转折",
+    "source_path": "xhs_notes/dropbox/260604/shard_1/0004-09-CITI-Japan-Equity-Strategy-Market-Explorer-Indexes-to-top-out-soon-but-w/mineru_raw/images/1af187df4ac112d01d1b1fc5de2b3c915f3ba2e025f838d73d636b3c27b4f204.jpg",
+    "label": "Figure 29",
+    "context": "© 2026 Citi Inc. No redistribution without Citi's written permission. Figure 29. US 10y BEI and CPI",
+    "figure_id": "F094",
+    "latex_path": "figures/fig_094.jpg"
+  },
+  {
+    "report_id": "R009",
+    "report_title": "日经年底突破70000点：市场低估的不是需求，而是日本企业定价权的结构性转折",
+    "source_path": "xhs_notes/dropbox/260604/shard_1/0004-09-CITI-Japan-Equity-Strategy-Market-Explorer-Indexes-to-top-out-soon-but-w/mineru_raw/images/e25e407b29b8d8820fdaf2f0e44b6741ee484349737ab5b0c19754724ab4d83f.jpg",
+    "label": "Figure 30",
+    "context": "© 2026 Citi Inc. No redistribution without Citi's written permission. Figure 30. Japan 10y yield, BEI and real yield",
+    "figure_id": "F095",
+    "latex_path": "figures/fig_095.jpg"
+  },
+  {
+    "report_id": "R009",
+    "report_title": "日经年底突破70000点：市场低估的不是需求，而是日本企业定价权的结构性转折",
+    "source_path": "xhs_notes/dropbox/260604/shard_1/0004-09-CITI-Japan-Equity-Strategy-Market-Explorer-Indexes-to-top-out-soon-but-w/mineru_raw/images/d0a288a1b3a87c63c90639f0a391574d0b7e4ee4eae613d80c4dc1783406776d.jpg",
+    "label": "Figure 31",
+    "context": "© 2026 Citi Inc. No redistribution without Citi's written permission. Figure 31. US 10y yield, BEI and real yield",
+    "figure_id": "F096",
+    "latex_path": "figures/fig_096.jpg"
+  },
+  {
+    "report_id": "R009",
+    "report_title": "日经年底突破70000点：市场低估的不是需求，而是日本企业定价权的结构性转折",
+    "source_path": "xhs_notes/dropbox/260604/shard_1/0004-09-CITI-Japan-Equity-Strategy-Market-Explorer-Indexes-to-top-out-soon-but-w/mineru_raw/images/c8f16381f70901145f688a185497f6fe3a34e01613cc7dba1aba707fb5aad024.jpg",
+    "label": "Figure 32",
+    "context": "© 2026 Citi Inc. No redistribution without Citi's written permission. Figure 32. Japan potential growth rate and real yield",
+    "figure_id": "F097",
+    "latex_path": "figures/fig_097.jpg"
+  },
+  {
+    "report_id": "R009",
+    "report_title": "日经年底突破70000点：市场低估的不是需求，而是日本企业定价权的结构性转折",
+    "source_path": "xhs_notes/dropbox/260604/shard_1/0004-09-CITI-Japan-Equity-Strategy-Market-Explorer-Indexes-to-top-out-soon-but-w/mineru_raw/images/3a98b6ad221d7e5903d78cefe95358ee7acf6bc276e12d0e24cdb0e52055bee9.jpg",
+    "label": "Figure 33",
+    "context": "© 2026 Citi Inc. No redistribution without Citi's written permission. Figure 33. US potential growth rate and real yield",
+    "figure_id": "F098",
+    "latex_path": "figures/fig_098.jpg"
+  },
+  {
+    "report_id": "R009",
+    "report_title": "日经年底突破70000点：市场低估的不是需求，而是日本企业定价权的结构性转折",
+    "source_path": "xhs_notes/dropbox/260604/shard_1/0004-09-CITI-Japan-Equity-Strategy-Market-Explorer-Indexes-to-top-out-soon-but-w/mineru_raw/images/7209313d05bc1d85a3120cfd01cc0621fb83bca67cde14c53f78dde3ae2eb72c.jpg",
+    "label": "Figure 36",
+    "context": "involve the 10y Japanese government bond yield rising above 3% due to an increase in real interest rates. However, the government is currently taking a cautious fiscal approach, for example, by limiting the supplementary budget to the amount available in conti",
+    "figure_id": "F099",
+    "latex_path": "figures/fig_099.jpg"
+  },
+  {
+    "report_id": "R009",
+    "report_title": "日经年底突破70000点：市场低估的不是需求，而是日本企业定价权的结构性转折",
+    "source_path": "xhs_notes/dropbox/260604/shard_1/0004-09-CITI-Japan-Equity-Strategy-Market-Explorer-Indexes-to-top-out-soon-but-w/mineru_raw/images/53716fc053f68522c66731b754346771b97e2e71760731b614cff642025f99dc.jpg",
+    "label": "Figure 35",
+    "context": "© 2026 Citi Inc. No redistribution without Citi's written permission. Figure 35. Japan composite leading index (CLI) and BEI",
+    "figure_id": "F100",
+    "latex_path": "figures/fig_100.jpg"
+  },
+  {
+    "report_id": "R009",
+    "report_title": "日经年底突破70000点：市场低估的不是需求，而是日本企业定价权的结构性转折",
+    "source_path": "xhs_notes/dropbox/260604/shard_1/0004-09-CITI-Japan-Equity-Strategy-Market-Explorer-Indexes-to-top-out-soon-but-w/mineru_raw/images/971a85effbc9c8283e052c42069660d29e94a1eb95bd5099de66fd4c5bf06d6d.jpg",
+    "label": "Figure 37",
+    "context": "Note: Universe is TOPIX constituents with 1) market caps over ¥100bn, 2) that are in the top 20% based on 3y momentum, 3) have current vs February-end returns below -5%. # Focus on companies with sales plan beats and profit plan misses versus consensus While m",
+    "figure_id": "F101",
+    "latex_path": "figures/fig_101.jpg"
+  },
+  {
+    "report_id": "R009",
+    "report_title": "日经年底突破70000点：市场低估的不是需求，而是日本企业定价权的结构性转折",
+    "source_path": "xhs_notes/dropbox/260604/shard_1/0004-09-CITI-Japan-Equity-Strategy-Market-Explorer-Indexes-to-top-out-soon-but-w/mineru_raw/images/5fb81d9c0f29891b1ec6224c0b9ccaff5c0d3336423241f2ff7f92760523d208.jpg",
+    "label": "Figure 38",
+    "context": "Figure 38. Time-lag correlations of Brent crude, import, corporate and consumer prices © 2026 Citi Inc. No redistribution without Citi's written permission. Figure 39. Correlation and lag (by quarter) of industry level output price DI vs all industry output pr",
+    "figure_id": "F102",
+    "latex_path": "figures/fig_102.jpg"
+  },
+  {
+    "report_id": "R014",
+    "report_title": "日本股市的真正分歧不在AI与非AI，而在利率能否容忍估值分化",
+    "source_path": "xhs_notes/dropbox/260604/shard_2/0003-13-J.P.-Morgan-Japan-Equity-Strategy--Monthly-Wrap-Widening-share-price-and/mineru_raw/images/6c13300fee09c8445387ee06e1de8eafdc861f2a9de69d9ae29129eeaaaee80b.jpg",
+    "label": "Figure 1",
+    "context": "Figure 1: Equities, rates, and FX movement Note: Flow is in tril JPY Figure 2: Global equity performance (since 2025)",
+    "figure_id": "F103",
+    "latex_path": "figures/fig_103.jpg"
+  },
+  {
+    "report_id": "R014",
+    "report_title": "日本股市的真正分歧不在AI与非AI，而在利率能否容忍估值分化",
+    "source_path": "xhs_notes/dropbox/260604/shard_2/0003-13-J.P.-Morgan-Japan-Equity-Strategy--Monthly-Wrap-Widening-share-price-and/mineru_raw/images/4284a7050aec8909c436fc55875ce53347499456433620f5680f3ee5ee7385a8.jpg",
+    "label": "Figure 3",
+    "context": "Figure 3: Japan, US rates, and USDJPY movement",
+    "figure_id": "F104",
+    "latex_path": "figures/fig_104.jpg"
+  },
+  {
+    "report_id": "R014",
+    "report_title": "日本股市的真正分歧不在AI与非AI，而在利率能否容忍估值分化",
+    "source_path": "xhs_notes/dropbox/260604/shard_2/0003-13-J.P.-Morgan-Japan-Equity-Strategy--Monthly-Wrap-Widening-share-price-and/mineru_raw/images/746b1bab40656e1752b3c8ceff4d1bc5d36757be058030a1b54b2864d55dcf51.jpg",
+    "label": "Figure 4",
+    "context": "Figure 4: Nikkei vs. TOPIX share price ratio (NT ratio)",
+    "figure_id": "F105",
+    "latex_path": "figures/fig_105.jpg"
+  },
+  {
+    "report_id": "R014",
+    "report_title": "日本股市的真正分歧不在AI与非AI，而在利率能否容忍估值分化",
+    "source_path": "xhs_notes/dropbox/260604/shard_2/0003-13-J.P.-Morgan-Japan-Equity-Strategy--Monthly-Wrap-Widening-share-price-and/mineru_raw/images/1fff33e36aaf53067e8c95f98abae8680d060ef323fad77858be3004fb898447.jpg",
+    "label": "Figure 5",
+    "context": "Figure 5: Trend of share price volatility index",
+    "figure_id": "F106",
+    "latex_path": "figures/fig_106.jpg"
+  },
+  {
+    "report_id": "R014",
+    "report_title": "日本股市的真正分歧不在AI与非AI，而在利率能否容忍估值分化",
+    "source_path": "xhs_notes/dropbox/260604/shard_2/0003-13-J.P.-Morgan-Japan-Equity-Strategy--Monthly-Wrap-Widening-share-price-and/mineru_raw/images/9e4fc557b608e5b4f19ed598bba59d6d115cd2f2cb999432eec062c0ea5d800e.jpg",
+    "label": "Figure 7",
+    "context": "Figure 7: Share price performance by region and sector Note: By sector is MSCI sector index basis. Figure 8: Breakdown of TOPIX sector returns",
+    "figure_id": "F107",
+    "latex_path": "figures/fig_107.jpg"
+  },
+  {
+    "report_id": "R014",
+    "report_title": "日本股市的真正分歧不在AI与非AI，而在利率能否容忍估值分化",
+    "source_path": "xhs_notes/dropbox/260604/shard_2/0003-13-J.P.-Morgan-Japan-Equity-Strategy--Monthly-Wrap-Widening-share-price-and/mineru_raw/images/2f436c3c313b43857e00b71c667eafeb3cee2167d7637ce5a7637afed840f52d.jpg",
+    "label": "Figure 9",
+    "context": "Figure 9: Cyclical versus defensive sectors",
+    "figure_id": "F108",
+    "latex_path": "figures/fig_108.jpg"
+  },
+  {
+    "report_id": "R014",
+    "report_title": "日本股市的真正分歧不在AI与非AI，而在利率能否容忍估值分化",
+    "source_path": "xhs_notes/dropbox/260604/shard_2/0003-13-J.P.-Morgan-Japan-Equity-Strategy--Monthly-Wrap-Widening-share-price-and/mineru_raw/images/33bf5deb379b704656c70493e55956a8f712b07da03eff039ef0300f66fb6daa.jpg",
+    "label": "Figure 11",
+    "context": "Figure 11: 1M return and valuation by TOPIX 17 sectors",
+    "figure_id": "F109",
+    "latex_path": "figures/fig_109.jpg"
+  },
+  {
+    "report_id": "R014",
+    "report_title": "日本股市的真正分歧不在AI与非AI，而在利率能否容忍估值分化",
+    "source_path": "xhs_notes/dropbox/260604/shard_2/0003-13-J.P.-Morgan-Japan-Equity-Strategy--Monthly-Wrap-Widening-share-price-and/mineru_raw/images/f91a69718525d8f05af8e164b0a15fbc74ddefd41afab85080dccd1891ef7b34.jpg",
+    "label": "Figure 10",
+    "context": "Figure 10: Overseas versus domestic demand-related sectors",
+    "figure_id": "F110",
+    "latex_path": "figures/fig_110.jpg"
+  },
+  {
+    "report_id": "R014",
+    "report_title": "日本股市的真正分歧不在AI与非AI，而在利率能否容忍估值分化",
+    "source_path": "xhs_notes/dropbox/260604/shard_2/0003-13-J.P.-Morgan-Japan-Equity-Strategy--Monthly-Wrap-Widening-share-price-and/mineru_raw/images/a530e6541de1d4ce643f0df5a3abc2a7566851edfff831064d960ad5b3ebf905.jpg",
+    "label": "Figure 12",
+    "context": "Figure 12: Japan versus US performance for major sectors",
+    "figure_id": "F111",
+    "latex_path": "figures/fig_111.jpg"
+  },
+  {
+    "report_id": "R014",
+    "report_title": "日本股市的真正分歧不在AI与非AI，而在利率能否容忍估值分化",
+    "source_path": "xhs_notes/dropbox/260604/shard_2/0003-13-J.P.-Morgan-Japan-Equity-Strategy--Monthly-Wrap-Widening-share-price-and/mineru_raw/images/8ded419121ace2aa5cf9a742042a70b22681ae17cbb0b34f054992399a54f947.jpg",
+    "label": "Figure 13",
+    "context": "Figure 13: Major factor performance in Japan and the US Figure 15: MSCI value/growth index EPS and performance gap",
+    "figure_id": "F112",
+    "latex_path": "figures/fig_112.jpg"
+  },
+  {
+    "report_id": "R014",
+    "report_title": "日本股市的真正分歧不在AI与非AI，而在利率能否容忍估值分化",
+    "source_path": "xhs_notes/dropbox/260604/shard_2/0003-13-J.P.-Morgan-Japan-Equity-Strategy--Monthly-Wrap-Widening-share-price-and/mineru_raw/images/dc700c1239ba1f21920f5f6fe63c5a0b8a7d2f062f5f2e391d5b9d00a12ce00f.jpg",
+    "label": "Figure 14",
+    "context": "Figure 14: MSCI Japan style index",
+    "figure_id": "F113",
+    "latex_path": "figures/fig_113.jpg"
+  },
+  {
+    "report_id": "R014",
+    "report_title": "日本股市的真正分歧不在AI与非AI，而在利率能否容忍估值分化",
+    "source_path": "xhs_notes/dropbox/260604/shard_2/0003-13-J.P.-Morgan-Japan-Equity-Strategy--Monthly-Wrap-Widening-share-price-and/mineru_raw/images/e0a8dc722c0be76fc201f156850a1a9a2c9e00a6238ae61ac2aa918f231f2f99.jpg",
+    "label": "Figure 16",
+    "context": "Figure 16: Growth vs. value P/B gap",
+    "figure_id": "F114",
+    "latex_path": "figures/fig_114.jpg"
+  },
+  {
+    "report_id": "R014",
+    "report_title": "日本股市的真正分歧不在AI与非AI，而在利率能否容忍估值分化",
+    "source_path": "xhs_notes/dropbox/260604/shard_2/0003-13-J.P.-Morgan-Japan-Equity-Strategy--Monthly-Wrap-Widening-share-price-and/mineru_raw/images/3ec45c4fc507bb485744384054dc5ae5615a3119f6af074c6a2f36fc643d9cc8.jpg",
+    "label": "Figure 19",
+    "context": "Figure 19: EPS consensus estimates and JPM price targets vs. consensus Figure 20: TOPIX EPS revisions vs. PMI",
+    "figure_id": "F115",
+    "latex_path": "figures/fig_115.jpg"
+  },
+  {
+    "report_id": "R014",
+    "report_title": "日本股市的真正分歧不在AI与非AI，而在利率能否容忍估值分化",
+    "source_path": "xhs_notes/dropbox/260604/shard_2/0003-13-J.P.-Morgan-Japan-Equity-Strategy--Monthly-Wrap-Widening-share-price-and/mineru_raw/images/1510c343a5f7593b8f622bc6a4f6cac923b732927df16386a84db1ebe02172ad.jpg",
+    "label": "Figure 22",
+    "context": "Figure 22: TOPIX FY2025 and FY2026 estimated EPS",
+    "figure_id": "F116",
+    "latex_path": "figures/fig_116.jpg"
+  },
+  {
+    "report_id": "R014",
+    "report_title": "日本股市的真正分歧不在AI与非AI，而在利率能否容忍估值分化",
+    "source_path": "xhs_notes/dropbox/260604/shard_2/0003-13-J.P.-Morgan-Japan-Equity-Strategy--Monthly-Wrap-Widening-share-price-and/mineru_raw/images/4e32545936a9f90422ad781a88d8713330a63afd2f7f4ac48cce7b6a575d592e.jpg",
+    "label": "Figure 24",
+    "context": "Figure 24: Overseas and domestic demand-related names' actual net profit and USDJPY rate",
+    "figure_id": "F117",
+    "latex_path": "figures/fig_117.jpg"
+  },
+  {
+    "report_id": "R014",
+    "report_title": "日本股市的真正分歧不在AI与非AI，而在利率能否容忍估值分化",
+    "source_path": "xhs_notes/dropbox/260604/shard_2/0003-13-J.P.-Morgan-Japan-Equity-Strategy--Monthly-Wrap-Widening-share-price-and/mineru_raw/images/c92bdce1e88f3408065adedd21eab1676423f1a47f59a5ed415236ebbbf24517.jpg",
+    "label": "Figure 21",
+    "context": "Figure 21: EPS revision index",
+    "figure_id": "F118",
+    "latex_path": "figures/fig_118.jpg"
+  },
+  {
+    "report_id": "R014",
+    "report_title": "日本股市的真正分歧不在AI与非AI，而在利率能否容忍估值分化",
+    "source_path": "xhs_notes/dropbox/260604/shard_2/0003-13-J.P.-Morgan-Japan-Equity-Strategy--Monthly-Wrap-Widening-share-price-and/mineru_raw/images/b846c9b4bda3e79b6024422b3360e5e0295da039602bb3bdbbcebf3436f983e6.jpg",
+    "label": "Figure 23",
+    "context": "Figure 23: TOPIX 12M forward EPS and USD/JPY sensitivity",
+    "figure_id": "F119",
+    "latex_path": "figures/fig_119.jpg"
+  },
+  {
+    "report_id": "R014",
+    "report_title": "日本股市的真正分歧不在AI与非AI，而在利率能否容忍估值分化",
+    "source_path": "xhs_notes/dropbox/260604/shard_2/0003-13-J.P.-Morgan-Japan-Equity-Strategy--Monthly-Wrap-Widening-share-price-and/mineru_raw/images/43bef9f7ef0d8e982b77d3e8000ed42e714c406cd3eed11df06acbcabf4b8369.jpg",
+    "label": "Figure 25",
+    "context": "Figure 25: Amount of share buyback announcements for TOPIX stocks",
+    "figure_id": "F120",
+    "latex_path": "figures/fig_120.jpg"
+  },
+  {
+    "report_id": "R014",
+    "report_title": "日本股市的真正分歧不在AI与非AI，而在利率能否容忍估值分化",
+    "source_path": "xhs_notes/dropbox/260604/shard_2/0003-13-J.P.-Morgan-Japan-Equity-Strategy--Monthly-Wrap-Widening-share-price-and/mineru_raw/images/2372136af881136cdb8d8e7d858c126effb2f0b4b7b2edd6936c67bd5961faa8.jpg",
+    "label": "Figure 28",
+    "context": "Figure 28: TOPIX 33 sector EPS and valuation Note: Estimates are IBES consensus estimates. Figure 29: TOPIX 12-month forward PER",
+    "figure_id": "F121",
+    "latex_path": "figures/fig_121.jpg"
+  },
+  {
+    "report_id": "R014",
+    "report_title": "日本股市的真正分歧不在AI与非AI，而在利率能否容忍估值分化",
+    "source_path": "xhs_notes/dropbox/260604/shard_2/0003-13-J.P.-Morgan-Japan-Equity-Strategy--Monthly-Wrap-Widening-share-price-and/mineru_raw/images/b4bfbf6f0067030c1fa5235179e203bdcc478a5417381e859938818b28aff616.jpg",
+    "label": "Figure 30",
+    "context": "Figure 30: TOPIX 12-month forward PER versus S&P 500, MSCI World",
+    "figure_id": "F122",
+    "latex_path": "figures/fig_122.jpg"
+  },
+  {
+    "report_id": "R014",
+    "report_title": "日本股市的真正分歧不在AI与非AI，而在利率能否容忍估值分化",
+    "source_path": "xhs_notes/dropbox/260604/shard_2/0003-13-J.P.-Morgan-Japan-Equity-Strategy--Monthly-Wrap-Widening-share-price-and/mineru_raw/images/3801ed879f54b8fa01c9e501c63f648ee353bd37c125ddb03484e71fae44b6c9.jpg",
+    "label": "Figure 31",
+    "context": "Figure 31: TOPIX 12-month forward PER and revision index",
+    "figure_id": "F123",
+    "latex_path": "figures/fig_123.jpg"
+  },
+  {
+    "report_id": "R014",
+    "report_title": "日本股市的真正分歧不在AI与非AI，而在利率能否容忍估值分化",
+    "source_path": "xhs_notes/dropbox/260604/shard_2/0003-13-J.P.-Morgan-Japan-Equity-Strategy--Monthly-Wrap-Widening-share-price-and/mineru_raw/images/ede90d957c50eaab6f131b69dde4ef3348b638483c75fce8b3dd9e67867acb33.jpg",
+    "label": "Figure 33",
+    "context": "Figure 33: TOPIX 12-month forward P/B",
+    "figure_id": "F124",
+    "latex_path": "figures/fig_124.jpg"
+  },
+  {
+    "report_id": "R014",
+    "report_title": "日本股市的真正分歧不在AI与非AI，而在利率能否容忍估值分化",
+    "source_path": "xhs_notes/dropbox/260604/shard_2/0003-13-J.P.-Morgan-Japan-Equity-Strategy--Monthly-Wrap-Widening-share-price-and/mineru_raw/images/59cf8164c6994e21ec3f6abe9d9c519df145186484355c581135e59c0b3ae263.jpg",
+    "label": "Figure 35",
+    "context": "Figure 35: Ratio of companies with P/B above 1x in Japan, US, Europe",
+    "figure_id": "F125",
+    "latex_path": "figures/fig_125.jpg"
+  },
+  {
+    "report_id": "R014",
+    "report_title": "日本股市的真正分歧不在AI与非AI，而在利率能否容忍估值分化",
+    "source_path": "xhs_notes/dropbox/260604/shard_2/0003-13-J.P.-Morgan-Japan-Equity-Strategy--Monthly-Wrap-Widening-share-price-and/mineru_raw/images/3bf77e0d09ae9746aaad6d17a97b1ea79eccf55642f5c2a209846fa4f8134894.jpg",
+    "label": "Figure 32",
+    "context": "Figure 32: Correlation between TOPIX PER and JGB 10Y nominal yield",
+    "figure_id": "F126",
+    "latex_path": "figures/fig_126.jpg"
+  },
+  {
+    "report_id": "R014",
+    "report_title": "日本股市的真正分歧不在AI与非AI，而在利率能否容忍估值分化",
+    "source_path": "xhs_notes/dropbox/260604/shard_2/0003-13-J.P.-Morgan-Japan-Equity-Strategy--Monthly-Wrap-Widening-share-price-and/mineru_raw/images/bd61d4fe18a46e2de1649568033b47bef6ddb6344035291fe131cccc509b010a.jpg",
+    "label": "Figure 34",
+    "context": "Figure 34: Distribution of TOPIX P/B and ROE (Since 2005)",
+    "figure_id": "F127",
+    "latex_path": "figures/fig_127.jpg"
+  },
+  {
+    "report_id": "R014",
+    "report_title": "日本股市的真正分歧不在AI与非AI，而在利率能否容忍估值分化",
+    "source_path": "xhs_notes/dropbox/260604/shard_2/0003-13-J.P.-Morgan-Japan-Equity-Strategy--Monthly-Wrap-Widening-share-price-and/mineru_raw/images/179f4cfbe229ed24792fd4d95397cc55923f5809fca61d4c59d7c6a2b928901e.jpg",
+    "label": "Figure 36",
+    "context": "Figure 36: Japan/US stock yield gaps and TOPIX vs. S&P performance",
+    "figure_id": "F128",
+    "latex_path": "figures/fig_128.jpg"
+  },
+  {
+    "report_id": "R014",
+    "report_title": "日本股市的真正分歧不在AI与非AI，而在利率能否容忍估值分化",
+    "source_path": "xhs_notes/dropbox/260604/shard_2/0003-13-J.P.-Morgan-Japan-Equity-Strategy--Monthly-Wrap-Widening-share-price-and/mineru_raw/images/ac7e4764e2efc41ecd85f6caee46bc2e631f4719e74596e05b1ada6fe780736b.jpg",
+    "label": "Figure 37",
+    "context": "Figure 37: Stock trading flow by entity (weekly) Figure 39: Cumulative stock trading flow from foreigners YTD",
+    "figure_id": "F129",
+    "latex_path": "figures/fig_129.jpg"
+  },
+  {
+    "report_id": "R014",
+    "report_title": "日本股市的真正分歧不在AI与非AI，而在利率能否容忍估值分化",
+    "source_path": "xhs_notes/dropbox/260604/shard_2/0003-13-J.P.-Morgan-Japan-Equity-Strategy--Monthly-Wrap-Widening-share-price-and/mineru_raw/images/3e2d4666cedb4c162adbef1d439dfa950e57fd89d5fccd0b8420d3d4179baeb6.jpg",
+    "label": "Figure 37",
+    "context": "Figure 37: Stock trading flow by entity (weekly) Figure 39: Cumulative stock trading flow from foreigners YTD",
+    "figure_id": "F130",
+    "latex_path": "figures/fig_130.jpg"
+  },
+  {
+    "report_id": "R014",
+    "report_title": "日本股市的真正分歧不在AI与非AI，而在利率能否容忍估值分化",
+    "source_path": "xhs_notes/dropbox/260604/shard_2/0003-13-J.P.-Morgan-Japan-Equity-Strategy--Monthly-Wrap-Widening-share-price-and/mineru_raw/images/0b0aa8ac30c672efd7605dfe5c57c24230236811e7f1b9a4f11293e3a82c7123.jpg",
+    "label": "Figure 41",
+    "context": "Figure 41: Major stock ETF cumulative flow by region",
+    "figure_id": "F131",
+    "latex_path": "figures/fig_131.jpg"
+  },
+  {
+    "report_id": "R014",
+    "report_title": "日本股市的真正分歧不在AI与非AI，而在利率能否容忍估值分化",
+    "source_path": "xhs_notes/dropbox/260604/shard_2/0003-13-J.P.-Morgan-Japan-Equity-Strategy--Monthly-Wrap-Widening-share-price-and/mineru_raw/images/d949ca3edbfcdfc98cd2b99713d077814038ff0ff3a663e4aded863be094049f.jpg",
+    "label": "Figure 38",
+    "context": "Figure 38: Stock trading flow by entity (monthly)",
+    "figure_id": "F132",
+    "latex_path": "figures/fig_132.jpg"
+  },
+  {
+    "report_id": "R014",
+    "report_title": "日本股市的真正分歧不在AI与非AI，而在利率能否容忍估值分化",
+    "source_path": "xhs_notes/dropbox/260604/shard_2/0003-13-J.P.-Morgan-Japan-Equity-Strategy--Monthly-Wrap-Widening-share-price-and/mineru_raw/images/082f33ce9f142870dffdeff7fc4e64c2d1dd4e61898c143128f87a867559550e.jpg",
+    "label": "Figure 40",
+    "context": "Figure 40: Monthly NISA flow from individuals",
+    "figure_id": "F133",
+    "latex_path": "figures/fig_133.jpg"
+  },
+  {
+    "report_id": "R014",
+    "report_title": "日本股市的真正分歧不在AI与非AI，而在利率能否容忍估值分化",
+    "source_path": "xhs_notes/dropbox/260604/shard_2/0003-13-J.P.-Morgan-Japan-Equity-Strategy--Monthly-Wrap-Widening-share-price-and/mineru_raw/images/a6485b586fb3c2035906cf09ce6ea5f501a6a88ed9586ceee38d60ded926f522.jpg",
+    "label": "Figure 42",
+    "context": "Figure 42: Foreign investor flows to equity investment trusts",
+    "figure_id": "F134",
+    "latex_path": "figures/fig_134.jpg"
+  },
+  {
+    "report_id": "R014",
+    "report_title": "日本股市的真正分歧不在AI与非AI，而在利率能否容忍估值分化",
+    "source_path": "xhs_notes/dropbox/260604/shard_2/0003-13-J.P.-Morgan-Japan-Equity-Strategy--Monthly-Wrap-Widening-share-price-and/mineru_raw/images/c8dd393dbca994871e0a4bd24b4d00af8b002535002d4abc8314be80e393269c.jpg",
+    "label": "Figure 43",
+    "context": "Figure 43: Investor flows into global developed market equity funds",
+    "figure_id": "F135",
+    "latex_path": "figures/fig_135.jpg"
+  },
+  {
+    "report_id": "R014",
+    "report_title": "日本股市的真正分歧不在AI与非AI，而在利率能否容忍估值分化",
+    "source_path": "xhs_notes/dropbox/260604/shard_2/0003-13-J.P.-Morgan-Japan-Equity-Strategy--Monthly-Wrap-Widening-share-price-and/mineru_raw/images/537f74b6d78746c41be4d42c23e300be67f0e90b34d7449a4a97a4b912217176.jpg",
+    "label": "Figure 45",
+    "context": "Figure 45: Allocation to Japan equities by global active equity funds",
+    "figure_id": "F136",
+    "latex_path": "figures/fig_136.jpg"
+  },
+  {
+    "report_id": "R014",
+    "report_title": "日本股市的真正分歧不在AI与非AI，而在利率能否容忍估值分化",
+    "source_path": "xhs_notes/dropbox/260604/shard_2/0003-13-J.P.-Morgan-Japan-Equity-Strategy--Monthly-Wrap-Widening-share-price-and/mineru_raw/images/3e4a6d14516b557253c41d209bb5f0c540626dd66dc388016e09066d2af6af7d.jpg",
+    "label": "Figure 47",
+    "context": "Figure 47: Investors' sentiment by sector (QUICK survey: overseas demand/financials)",
+    "figure_id": "F137",
+    "latex_path": "figures/fig_137.jpg"
+  },
+  {
+    "report_id": "R014",
+    "report_title": "日本股市的真正分歧不在AI与非AI，而在利率能否容忍估值分化",
+    "source_path": "xhs_notes/dropbox/260604/shard_2/0003-13-J.P.-Morgan-Japan-Equity-Strategy--Monthly-Wrap-Widening-share-price-and/mineru_raw/images/8478f7303f6da7d2b5fdd8b85b94c0ba052af3c5b93f47f409dfa61a6940f3f8.jpg",
+    "label": "Figure 44",
+    "context": "Figure 44: Investor flows into global emerging market equity funds",
+    "figure_id": "F138",
+    "latex_path": "figures/fig_138.jpg"
+  },
+  {
+    "report_id": "R014",
+    "report_title": "日本股市的真正分歧不在AI与非AI，而在利率能否容忍估值分化",
+    "source_path": "xhs_notes/dropbox/260604/shard_2/0003-13-J.P.-Morgan-Japan-Equity-Strategy--Monthly-Wrap-Widening-share-price-and/mineru_raw/images/ded0c75be150585086d6a4f88d649cf84ff4dba1c1d3f6b3d3fafbd72117c4d7.jpg",
+    "label": "Figure 46",
+    "context": "Figure 46: Stock performance and domestic institutional investors' Japanese stock weight",
+    "figure_id": "F139",
+    "latex_path": "figures/fig_139.jpg"
+  },
+  {
+    "report_id": "R014",
+    "report_title": "日本股市的真正分歧不在AI与非AI，而在利率能否容忍估值分化",
+    "source_path": "xhs_notes/dropbox/260604/shard_2/0003-13-J.P.-Morgan-Japan-Equity-Strategy--Monthly-Wrap-Widening-share-price-and/mineru_raw/images/dd2d1268766ffc80af114ed0259a95f49d1fd4015223dc747d388549ee2bb9e7.jpg",
+    "label": "Figure 48",
+    "context": "Figure 48: Investors' sentiment by sector (QUICK survey: domestic demand/other)",
+    "figure_id": "F140",
+    "latex_path": "figures/fig_140.jpg"
+  },
+  {
+    "report_id": "R015",
+    "report_title": "市场真正低估的不是房价，而是K型分化正在重塑估值逻辑",
+    "source_path": "xhs_notes/dropbox/260604/shard_2/0004-14-Morgan-Stanley-China-Property-Diverging-Home-Price-Trends-Continued-in-M/mineru_raw/images/23f52345cfc6115e0924f845dcf06603492da3c1bba674e58687700f3b96f7ea.jpg",
+    "label": "Exhibit 1",
+    "context": "Exhibit 1: Secondary listing home prices trended down 0.5% m-m in May (vs. -0.4% in April)...",
+    "figure_id": "F141",
+    "latex_path": "figures/fig_141.jpg"
+  },
+  {
+    "report_id": "R015",
+    "report_title": "市场真正低估的不是房价，而是K型分化正在重塑估值逻辑",
+    "source_path": "xhs_notes/dropbox/260604/shard_2/0004-14-Morgan-Stanley-China-Property-Diverging-Home-Price-Trends-Continued-in-M/mineru_raw/images/28d3f3def098515eab2556194c0fa3a5a3815444f11629eedc02f3eb52a69f9c.jpg",
+    "label": "Exhibit 2",
+    "context": "Exhibit 2: ...with 93% of sample cities recording m-m decreases (vs. 91% in April)",
+    "figure_id": "F142",
+    "latex_path": "figures/fig_142.jpg"
+  },
+  {
+    "report_id": "R015",
+    "report_title": "市场真正低估的不是房价，而是K型分化正在重塑估值逻辑",
+    "source_path": "xhs_notes/dropbox/260604/shard_2/0004-14-Morgan-Stanley-China-Property-Diverging-Home-Price-Trends-Continued-in-M/mineru_raw/images/12d2e9e495e570a1ad4aba4d5e146bc4f78f9c02c75090c56dbc993da789fd69.jpg",
+    "label": "Exhibit 3",
+    "context": "Exhibit 3: New secondary listings continued to decrease m-m in May",
+    "figure_id": "F143",
+    "latex_path": "figures/fig_143.jpg"
+  },
+  {
+    "report_id": "R015",
+    "report_title": "市场真正低估的不是房价，而是K型分化正在重塑估值逻辑",
+    "source_path": "xhs_notes/dropbox/260604/shard_2/0004-14-Morgan-Stanley-China-Property-Diverging-Home-Price-Trends-Continued-in-M/mineru_raw/images/184d6db76adcdbb96e668beab8e69a8de8d39938a3a21dda4a67b4a9cbe8f432.jpg",
+    "label": "Exhibit 4",
+    "context": "Exhibit 4: Visits to agents decreased m-m in May post-strong sales in March-April",
+    "figure_id": "F144",
+    "latex_path": "figures/fig_144.jpg"
+  },
+  {
+    "report_id": "R016",
+    "report_title": "香港楼市的真正拐点，不是利率，是跨境资金监管的落地",
+    "source_path": "xhs_notes/dropbox/260604/shard_2/0005-15-UBS-Hong-Kong-Property-More-Clarity-on-Cross-Border-Investment--A-Turnin/mineru_raw/images/94ee545de17b3f2975d8a873a1365dce067b9569c71cd1a50e1ef880f7b03c6b.jpg",
+    "label": "Figure 1",
+    "context": "Figure 1: Mainland homebuyers now accounted \\~50% of primary market transaction value Chinese buyers (include new HKPR) as % of overall HK property transaction value",
+    "figure_id": "F145",
+    "latex_path": "figures/fig_145.jpg"
+  },
+  {
+    "report_id": "R016",
+    "report_title": "香港楼市的真正拐点，不是利率，是跨境资金监管的落地",
+    "source_path": "xhs_notes/dropbox/260604/shard_2/0005-15-UBS-Hong-Kong-Property-More-Clarity-on-Cross-Border-Investment--A-Turnin/mineru_raw/images/2992895196839058094b415144df442aaf4a883fc979e6499d897d6756f81390.jpg",
+    "label": "Figure 2",
+    "context": "Figure 2: ..., or 36% in terms of primary market transaction (in units) # Valuation Method and Risk Statement We believe the key risks related to the Hong Kong property sector include: 1) weakening macroeconomic conditions; 2) a",
+    "figure_id": "F146",
+    "latex_path": "figures/fig_146.jpg"
+  },
+  {
+    "report_id": "R017",
+    "report_title": "存储市场真正被低估的不是需求，而是供给侧的再定价能力",
+    "source_path": "xhs_notes/dropbox/260604/shard_3/0001-16-J.P.-Morgan-Electronic-Component-Sector-Component-Data-Deposition--Stora/mineru_raw/images/b383d8bd79681540c021a48035af98b97086902ca56b9442f90bb99d963e3299.jpg",
+    "label": "Figure 3",
+    "context": "Figure 3: HDD production volume",
+    "figure_id": "F147",
+    "latex_path": "figures/fig_147.jpg"
+  },
+  {
+    "report_id": "R017",
+    "report_title": "存储市场真正被低估的不是需求，而是供给侧的再定价能力",
+    "source_path": "xhs_notes/dropbox/260604/shard_3/0001-16-J.P.-Morgan-Electronic-Component-Sector-Component-Data-Deposition--Stora/mineru_raw/images/9fdbf36f8f9ad6e8f5c85d9538455c78dd00d49fd139a0c016db7e6439bc1195.jpg",
+    "label": "Figure 4",
+    "context": "Figure 4: HDD capacity output",
+    "figure_id": "F148",
+    "latex_path": "figures/fig_148.jpg"
+  },
+  {
+    "report_id": "R017",
+    "report_title": "存储市场真正被低估的不是需求，而是供给侧的再定价能力",
+    "source_path": "xhs_notes/dropbox/260604/shard_3/0001-16-J.P.-Morgan-Electronic-Component-Sector-Component-Data-Deposition--Stora/mineru_raw/images/74653a409e9c2634eff8ba7858e63021faa840b1d73ac71bfe8a654886ebb1b8.jpg",
+    "label": "Figure 5",
+    "context": "Figure 5: Nearline HDD production volume",
+    "figure_id": "F149",
+    "latex_path": "figures/fig_149.jpg"
+  },
+  {
+    "report_id": "R017",
+    "report_title": "存储市场真正被低估的不是需求，而是供给侧的再定价能力",
+    "source_path": "xhs_notes/dropbox/260604/shard_3/0001-16-J.P.-Morgan-Electronic-Component-Sector-Component-Data-Deposition--Stora/mineru_raw/images/aca7cbc549a4f00e8cca879fefc5a9bb68c9590a458061e31e5a3e1fc1bd8423.jpg",
+    "label": "Figure 6",
+    "context": "Figure 6: Nearline HDD capacity output",
+    "figure_id": "F150",
+    "latex_path": "figures/fig_150.jpg"
+  },
+  {
+    "report_id": "R017",
+    "report_title": "存储市场真正被低估的不是需求，而是供给侧的再定价能力",
+    "source_path": "xhs_notes/dropbox/260604/shard_3/0001-16-J.P.-Morgan-Electronic-Component-Sector-Component-Data-Deposition--Stora/mineru_raw/images/940b20e68f25aff9febc60c883e87cbc9dfb2f96d8d64e26049980d20849b1ae.jpg",
+    "label": "Figure 7",
+    "context": "Figure 7: SSD production volume",
+    "figure_id": "F151",
+    "latex_path": "figures/fig_151.jpg"
+  },
+  {
+    "report_id": "R017",
+    "report_title": "存储市场真正被低估的不是需求，而是供给侧的再定价能力",
+    "source_path": "xhs_notes/dropbox/260604/shard_3/0001-16-J.P.-Morgan-Electronic-Component-Sector-Component-Data-Deposition--Stora/mineru_raw/images/116ae7e41e7bb9f8252b73e29cb7d242fab0fe3be9fba89f5c59a9168ced6b70.jpg",
+    "label": "Figure 8",
+    "context": "Figure 8: SSD capacity output",
+    "figure_id": "F152",
+    "latex_path": "figures/fig_152.jpg"
+  },
+  {
+    "report_id": "R017",
+    "report_title": "存储市场真正被低估的不是需求，而是供给侧的再定价能力",
+    "source_path": "xhs_notes/dropbox/260604/shard_3/0001-16-J.P.-Morgan-Electronic-Component-Sector-Component-Data-Deposition--Stora/mineru_raw/images/8ffb2b8039ef13c9ba7aa7976f9831e590cf93cdad5f15a735f48c5a6ea3d7d1.jpg",
+    "label": "Figure 9",
+    "context": "Figure 9: Enterprise/Datacenter-Storage production volume",
+    "figure_id": "F153",
+    "latex_path": "figures/fig_153.jpg"
+  },
+  {
+    "report_id": "R017",
+    "report_title": "存储市场真正被低估的不是需求，而是供给侧的再定价能力",
+    "source_path": "xhs_notes/dropbox/260604/shard_3/0001-16-J.P.-Morgan-Electronic-Component-Sector-Component-Data-Deposition--Stora/mineru_raw/images/b2bf3368bac5d5c204447628d743ec022b8c3260f0b4f3eb63666ca1aa9b164f.jpg",
+    "label": "Figure 10",
+    "context": "Figure 10: Enterprise/Datacenter-Storage capacity output",
+    "figure_id": "F154",
+    "latex_path": "figures/fig_154.jpg"
+  },
+  {
+    "report_id": "R017",
+    "report_title": "存储市场真正被低估的不是需求，而是供给侧的再定价能力",
+    "source_path": "xhs_notes/dropbox/260604/shard_3/0001-16-J.P.-Morgan-Electronic-Component-Sector-Component-Data-Deposition--Stora/mineru_raw/images/22e0f0b47d08b483ad9a2f37b794ed459201e1da17a30c5502b2713be47ca243.jpg",
+    "label": "Figure 11",
+    "context": "Figure 11: Enterprise/Datacenter-Storage production volume",
+    "figure_id": "F155",
+    "latex_path": "figures/fig_155.jpg"
+  },
+  {
+    "report_id": "R017",
+    "report_title": "存储市场真正被低估的不是需求，而是供给侧的再定价能力",
+    "source_path": "xhs_notes/dropbox/260604/shard_3/0001-16-J.P.-Morgan-Electronic-Component-Sector-Component-Data-Deposition--Stora/mineru_raw/images/858d8701795f86b98cddd4fee7671698614f130d5a67fffe4207584da77c81ad.jpg",
+    "label": "Figure 12",
+    "context": "Figure 12: Enterprise/Datacenter-Storage capacity output",
+    "figure_id": "F156",
+    "latex_path": "figures/fig_156.jpg"
+  },
+  {
+    "report_id": "R017",
+    "report_title": "存储市场真正被低估的不是需求，而是供给侧的再定价能力",
+    "source_path": "xhs_notes/dropbox/260604/shard_3/0001-16-J.P.-Morgan-Electronic-Component-Sector-Component-Data-Deposition--Stora/mineru_raw/images/ed305d778c96a92fb3f951102537ce8c3483b2a837f4206ee911beefd2d3d897.jpg",
+    "label": "Figure 13",
+    "context": "Figure 13: Enterprise/Datacenter-production volume (SSD/HDD ratio)",
+    "figure_id": "F157",
+    "latex_path": "figures/fig_157.jpg"
+  },
+  {
+    "report_id": "R017",
+    "report_title": "存储市场真正被低估的不是需求，而是供给侧的再定价能力",
+    "source_path": "xhs_notes/dropbox/260604/shard_3/0001-16-J.P.-Morgan-Electronic-Component-Sector-Component-Data-Deposition--Stora/mineru_raw/images/eb92da08ed8047b0e2298b246de5e6236bbfca88b59a55a51e2abcf675a29155.jpg",
+    "label": "Figure 14",
+    "context": "Figure 14: Enterprise/Datacenter-production capacity (SSD/HDD ratio)",
+    "figure_id": "F158",
+    "latex_path": "figures/fig_158.jpg"
+  },
+  {
+    "report_id": "R019",
+    "report_title": "Computex 2026 最核心的信号：Agentic AI 正在重构半导体价值链，而台积电产能不再是瓶颈",
+    "source_path": "xhs_notes/dropbox/260604/shard_3/0003-18-Morgan-Stanley-Greater-China-Technology-Semiconductors-Key-Computex-Take/mineru_raw/images/ec42aced4b85d5bb348021df6aca464f79661b075765ce8b9529daae6fac0354.jpg",
+    "label": "Exhibit 1",
+    "context": "Exhibit 1: New AI PC announced by Nvidia (N1X) Announcing NVIDIA and Microsoft Reinvent PC Powered by RTX Spark",
+    "figure_id": "F159",
+    "latex_path": "figures/fig_159.jpg"
+  },
+  {
+    "report_id": "R019",
+    "report_title": "Computex 2026 最核心的信号：Agentic AI 正在重构半导体价值链，而台积电产能不再是瓶颈",
+    "source_path": "xhs_notes/dropbox/260604/shard_3/0003-18-Morgan-Stanley-Greater-China-Technology-Semiconductors-Key-Computex-Take/mineru_raw/images/c9c785d64f9fb88e8f18255a21f14fc0802783166567a76db2f2ab44cf065fac.jpg",
+    "label": "Exhibit 2",
+    "context": "Exhibit 2: MediaTek provides 20-core customized Grace CPU for N1X 20-Core Grace CPU Custom Built With MediaTek",
+    "figure_id": "F160",
+    "latex_path": "figures/fig_160.jpg"
+  },
+  {
+    "report_id": "R019",
+    "report_title": "Computex 2026 最核心的信号：Agentic AI 正在重构半导体价值链，而台积电产能不再是瓶颈",
+    "source_path": "xhs_notes/dropbox/260604/shard_3/0003-18-Morgan-Stanley-Greater-China-Technology-Semiconductors-Key-Computex-Take/mineru_raw/images/90c021950c268223864f2a30ea5d9fd52f018857fdc4fb7bafb37f9470865707.jpg",
+    "label": "Exhibit 3",
+    "context": "Exhibit 3: RTX Spark (N1X) provided by MSI (available in 3Q26) MSI MSI Prestige N16 Flip AI NVIDIA RTX Spark",
+    "figure_id": "F161",
+    "latex_path": "figures/fig_161.jpg"
+  },
+  {
+    "report_id": "R019",
+    "report_title": "Computex 2026 最核心的信号：Agentic AI 正在重构半导体价值链，而台积电产能不再是瓶颈",
+    "source_path": "xhs_notes/dropbox/260604/shard_3/0003-18-Morgan-Stanley-Greater-China-Technology-Semiconductors-Key-Computex-Take/mineru_raw/images/e5195b8771c09d05beb11a0adae452bbf727ca2b73796c1b78c5878a498b7f08.jpg",
+    "label": "Exhibit 4",
+    "context": "Exhibit 4: RTX Spark (N1X) provided by ASUS (available in 3Q26) ProArt ASUS RIGHT P14 December 19th December 20th",
+    "figure_id": "F162",
+    "latex_path": "figures/fig_162.jpg"
+  },
+  {
+    "report_id": "R019",
+    "report_title": "Computex 2026 最核心的信号：Agentic AI 正在重构半导体价值链，而台积电产能不再是瓶颈",
+    "source_path": "xhs_notes/dropbox/260604/shard_3/0003-18-Morgan-Stanley-Greater-China-Technology-Semiconductors-Key-Computex-Take/mineru_raw/images/f446e52b891760afdab7dc339f2d54e40d8044942a6aff9d423ba01ab09dd47e.jpg",
+    "label": "Exhibit 5",
+    "context": "Exhibit 5: Vera performance could be 1.8x that of highest-performance x86 CPU",
+    "figure_id": "F163",
+    "latex_path": "figures/fig_163.jpg"
+  },
+  {
+    "report_id": "R019",
+    "report_title": "Computex 2026 最核心的信号：Agentic AI 正在重构半导体价值链，而台积电产能不再是瓶颈",
+    "source_path": "xhs_notes/dropbox/260604/shard_3/0003-18-Morgan-Stanley-Greater-China-Technology-Semiconductors-Key-Computex-Take/mineru_raw/images/a2db5fd9292693835f1786d579501bec94f1c483c7bbcad651bebaf62b25669f.jpg",
+    "label": "Exhibit 6",
+    "context": "Exhibit 6: Vera CPU cores are not split across chiplets, enabling faster core-to-core connection 88 NVIDIA Custom Olympus Core With Spatial Multithreading PCIe Gen 6 CXL 3.1 164 MB L3 Cache",
+    "figure_id": "F164",
+    "latex_path": "figures/fig_164.jpg"
+  },
+  {
+    "report_id": "R020",
+    "report_title": "市场低估了资本管制对香港楼市的真正影响范围",
+    "source_path": "xhs_notes/dropbox/260604/shard_3/0004-19-CITI-Hong-Kong-Property-Read-through-from-China-s-Tightened-Rules-on-Out/mineru_raw/images/dd54a9aab4ed65047d3b1b095d8935c83e1a131f1e72009ef2981fd6ec107f3d.jpg",
+    "label": "Figure 1",
+    "context": "The bottom line: (1) unwavering Central govt support to HK; (2) global demand meets local supply — We believe national support for HK will remain intact amid global geopolitical uncertainties, underpinning HK's status as a premier international financial cente",
+    "figure_id": "F165",
+    "latex_path": "figures/fig_165.jpg"
+  },
+  {
+    "report_id": "R020",
+    "report_title": "市场低估了资本管制对香港楼市的真正影响范围",
+    "source_path": "xhs_notes/dropbox/260604/shard_3/0004-19-CITI-Hong-Kong-Property-Read-through-from-China-s-Tightened-Rules-on-Out/mineru_raw/images/bdd648cdce863414d38b8a16e5802c7bc70e1d7e203b3d11be824e74b8abba5c.jpg",
+    "label": "Figure 2",
+    "context": "© 2026 Citi Inc. No redistribution without Citi's written permission. Figure 2. Residential Purchases by Non-HKID Holders Individual Buyers Not Holding HK Identity Card",
+    "figure_id": "F166",
+    "latex_path": "figures/fig_166.jpg"
+  },
+  {
+    "report_id": "R020",
+    "report_title": "市场低估了资本管制对香港楼市的真正影响范围",
+    "source_path": "xhs_notes/dropbox/260604/shard_3/0004-19-CITI-Hong-Kong-Property-Read-through-from-China-s-Tightened-Rules-on-Out/mineru_raw/images/4c239dd013ec9a9734faab8bdd2b483f02e55fdb5bde355bc3caa7f684cdfb43.jpg",
+    "label": "Figure 4",
+    "context": "Figure 4. HK Property Sector — Valuations (1-Jun-2026 close) Citi Rating: 1 – Buy; 2 – Neutral; 3 – Sell; H – High Risk © 2026 Citi Inc. No redistribution without Citi's written permission. Figure 5. HK Property Sector — Quant Screen on Investor Position (1-we",
+    "figure_id": "F167",
+    "latex_path": "figures/fig_167.jpg"
+  },
+  {
+    "report_id": "R020",
+    "report_title": "市场低估了资本管制对香港楼市的真正影响范围",
+    "source_path": "xhs_notes/dropbox/260604/shard_3/0004-19-CITI-Hong-Kong-Property-Read-through-from-China-s-Tightened-Rules-on-Out/mineru_raw/images/305c5545d5b0ad8a4a1d63b9c4102374cc51fcce89955ba70b326f009dd7b74b.jpg",
+    "label": "Figure 6",
+    "context": "© 2026 Citi Inc. No redistribution without Citi's written permission. Note: week on week change, latest week in green dots, previous week in red dots Figure 6. HK Property Sector — Quant Screen on Investor Position (1-month change by 22-May-2026)",
+    "figure_id": "F168",
+    "latex_path": "figures/fig_168.jpg"
+  },
+  {
+    "report_id": "R021",
+    "report_title": "市场真正低估的不是房价下跌，而是成交量萎缩对消费的连锁反应",
+    "source_path": "xhs_notes/dropbox/260604/shard_3/0005-20-Morgan-Stanley-A-sharper-housing-downturn-creates-earnings-risk-260602/mineru_raw/images/ecd697bed8d87d722f6aee177bfd2796606e6fc8b123d4f259b4afabb184f752.jpg",
+    "label": "Exhibit 2",
+    "context": "Exhibit 2: Driven by recent tax changes we expect national house prices to come under pressures largest national house price declines (peak-to-trough %)",
+    "figure_id": "F169",
+    "latex_path": "figures/fig_169.jpg"
+  },
+  {
+    "report_id": "R021",
+    "report_title": "市场真正低估的不是房价下跌，而是成交量萎缩对消费的连锁反应",
+    "source_path": "xhs_notes/dropbox/260604/shard_3/0005-20-Morgan-Stanley-A-sharper-housing-downturn-creates-earnings-risk-260602/mineru_raw/images/5a0118455c4d57f1186757b68f8cb458ff489d898996e1e51b43a38708bee39e.jpg",
+    "label": "Exhibit 4",
+    "context": "Exhibit 4: Adjustment will take time - housing sales and building approvals typically lead changes in price growth, while credit growth is a laggard",
+    "figure_id": "F170",
+    "latex_path": "figures/fig_170.jpg"
+  },
+  {
+    "report_id": "R021",
+    "report_title": "市场真正低估的不是房价下跌，而是成交量萎缩对消费的连锁反应",
+    "source_path": "xhs_notes/dropbox/260604/shard_3/0005-20-Morgan-Stanley-A-sharper-housing-downturn-creates-earnings-risk-260602/mineru_raw/images/c93eb409bde609c732a80054caba6891608079bdf8ca616549523385efa5cde3.jpg",
+    "label": "Exhibit 6",
+    "context": "Exhibit 6: Falling house prices will have significant wealth effects on households – an important channel to slow demand Household assets (% of Income)",
+    "figure_id": "F171",
+    "latex_path": "figures/fig_171.jpg"
+  },
+  {
+    "report_id": "R021",
+    "report_title": "市场真正低估的不是房价下跌，而是成交量萎缩对消费的连锁反应",
+    "source_path": "xhs_notes/dropbox/260604/shard_3/0005-20-Morgan-Stanley-A-sharper-housing-downturn-creates-earnings-risk-260602/mineru_raw/images/278e187faffec10ccaa2bfd9dd082133989f86a8a37a8c945641d70601626e40.jpg",
+    "label": "Exhibit 3",
+    "context": "Exhibit 3: Our expectation of a decline in housing prices suggests that a sharp near-term slowing in turnover is likely, even before direct policy impacts",
+    "figure_id": "F172",
+    "latex_path": "figures/fig_172.jpg"
+  },
+  {
+    "report_id": "R021",
+    "report_title": "市场真正低估的不是房价下跌，而是成交量萎缩对消费的连锁反应",
+    "source_path": "xhs_notes/dropbox/260604/shard_3/0005-20-Morgan-Stanley-A-sharper-housing-downturn-creates-earnings-risk-260602/mineru_raw/images/8f2af7f74f9c606ddb2d5f4c16b8ee7f623f3525e3b327fa48fbb716851635cf.jpg",
+    "label": "Exhibit 5",
+    "context": "Exhibit 5: Even before these tax changes, forward housing indicators were pointing to price declines in response to rate hikes",
+    "figure_id": "F173",
+    "latex_path": "figures/fig_173.jpg"
+  },
+  {
+    "report_id": "R021",
+    "report_title": "市场真正低估的不是房价下跌，而是成交量萎缩对消费的连锁反应",
+    "source_path": "xhs_notes/dropbox/260604/shard_3/0005-20-Morgan-Stanley-A-sharper-housing-downturn-creates-earnings-risk-260602/mineru_raw/images/ae6508f8b55d6ef85e62600e0db3cf9b92ec56808fb7b91e636836fe30b62da2.jpg",
+    "label": "Exhibit 7",
+    "context": "Exhibit 7: Lower asset prices will put upward pressure on savings rates and thus spending",
+    "figure_id": "F174",
+    "latex_path": "figures/fig_174.jpg"
+  },
+  {
+    "report_id": "R021",
+    "report_title": "市场真正低估的不是房价下跌，而是成交量萎缩对消费的连锁反应",
+    "source_path": "xhs_notes/dropbox/260604/shard_3/0005-20-Morgan-Stanley-A-sharper-housing-downturn-creates-earnings-risk-260602/mineru_raw/images/1ed86b8dbe27e562ad7dc48598d1ec00ebd564a67eb5c33de32bd85299b3694b.jpg",
+    "label": "Exhibit 8",
+    "context": "Exhibit 8: Bunning SSSg (FY17-27e)",
+    "figure_id": "F175",
+    "latex_path": "figures/fig_175.jpg"
+  },
+  {
+    "report_id": "R021",
+    "report_title": "市场真正低估的不是房价下跌，而是成交量萎缩对消费的连锁反应",
+    "source_path": "xhs_notes/dropbox/260604/shard_3/0005-20-Morgan-Stanley-A-sharper-housing-downturn-creates-earnings-risk-260602/mineru_raw/images/309c04efc371d9e72992a574b4454c312f3b02c6690d589e704ef54ffd738517.jpg",
+    "label": "Exhibit 9",
+    "context": "Exhibit 9: Hardware Category Spending vs. National House Value Growth (Fiscal Half YoY %) # WES: EW rated; PT A\\$78.70/shr Earnings changes: Given our expectation for house prices and housing-related activity (i.e. turnover, appr",
+    "figure_id": "F176",
+    "latex_path": "figures/fig_176.jpg"
+  },
+  {
+    "report_id": "R021",
+    "report_title": "市场真正低估的不是房价下跌，而是成交量萎缩对消费的连锁反应",
+    "source_path": "xhs_notes/dropbox/260604/shard_3/0005-20-Morgan-Stanley-A-sharper-housing-downturn-creates-earnings-risk-260602/mineru_raw/images/11ebbad60d3e345417a8240e87326b40943ca1e6cdac55371c668127725bf139.jpg",
+    "label": "Exhibit 11",
+    "context": "Exhibit 11: WES 10 year DCF valuation Exhibit 12: WES 12M Fwd Cons P/E of 29x, is +1Std above mid-cycle",
+    "figure_id": "F177",
+    "latex_path": "figures/fig_177.jpg"
+  },
+  {
+    "report_id": "R021",
+    "report_title": "市场真正低估的不是房价下跌，而是成交量萎缩对消费的连锁反应",
+    "source_path": "xhs_notes/dropbox/260604/shard_3/0005-20-Morgan-Stanley-A-sharper-housing-downturn-creates-earnings-risk-260602/mineru_raw/images/5b75dec138d5a100a18b4d7c390b390e6a31c20d55652825f712856d32478ccc.jpg",
+    "label": "Exhibit 13",
+    "context": "Exhibit 13: WES 12M Fwd Cons ASX200 Index Financial relative P/E is 143%, greater than +1 Std above mid-cycle",
+    "figure_id": "F178",
+    "latex_path": "figures/fig_178.jpg"
+  },
+  {
+    "report_id": "R021",
+    "report_title": "市场真正低估的不是房价下跌，而是成交量萎缩对消费的连锁反应",
+    "source_path": "xhs_notes/dropbox/260604/shard_3/0005-20-Morgan-Stanley-A-sharper-housing-downturn-creates-earnings-risk-260602/mineru_raw/images/23ef2bb19b847a15f8dc994e66a0dfa6985bd8f252913f5a27bc59a76b2aebd5.jpg",
+    "label": "Exhibit 15",
+    "context": "Exhibit 15: MTS 10 year DCF valuation Exhibit 16: MTS 12M Fwd Cons P/E of 11.8x, is -1Std above mid-cycle",
+    "figure_id": "F179",
+    "latex_path": "figures/fig_179.jpg"
+  },
+  {
+    "report_id": "R021",
+    "report_title": "市场真正低估的不是房价下跌，而是成交量萎缩对消费的连锁反应",
+    "source_path": "xhs_notes/dropbox/260604/shard_3/0005-20-Morgan-Stanley-A-sharper-housing-downturn-creates-earnings-risk-260602/mineru_raw/images/48ed75b3403eaf567ae6ad253518ad222c7b09fd745f2fbeb2619f4f23e50b7f.jpg",
+    "label": "Exhibit 17",
+    "context": "Exhibit 17: MTS 12M Fwd Cons ASX200 Ind ex Financial relative P/E is 58%, in-line with mid-cycle",
+    "figure_id": "F180",
+    "latex_path": "figures/fig_180.jpg"
+  },
+  {
+    "report_id": "R021",
+    "report_title": "市场真正低估的不是房价下跌，而是成交量萎缩对消费的连锁反应",
+    "source_path": "xhs_notes/dropbox/260604/shard_3/0005-20-Morgan-Stanley-A-sharper-housing-downturn-creates-earnings-risk-260602/mineru_raw/images/1c472d66cdb6dd79028e66cc432502ac2882475d53669543a0051117e87aace2.jpg",
+    "label": "Exhibit 18",
+    "context": "Exhibit 18: JBH Australia; TGG and HVN SSS growth",
+    "figure_id": "F181",
+    "latex_path": "figures/fig_181.jpg"
+  },
+  {
+    "report_id": "R021",
+    "report_title": "市场真正低估的不是房价下跌，而是成交量萎缩对消费的连锁反应",
+    "source_path": "xhs_notes/dropbox/260604/shard_3/0005-20-Morgan-Stanley-A-sharper-housing-downturn-creates-earnings-risk-260602/mineru_raw/images/1fc6a2f9468a9b26882b5738aa93d7f63fd07d28059ff2b27a740cbc2ed6455e.jpg",
+    "label": "Exhibit 19",
+    "context": "Exhibit 19: Discretionary Category Spending vs. National House Value Growth (Fiscal Half YoY %)",
+    "figure_id": "F182",
+    "latex_path": "figures/fig_182.jpg"
+  },
+  {
+    "report_id": "R021",
+    "report_title": "市场真正低估的不是房价下跌，而是成交量萎缩对消费的连锁反应",
+    "source_path": "xhs_notes/dropbox/260604/shard_3/0005-20-Morgan-Stanley-A-sharper-housing-downturn-creates-earnings-risk-260602/mineru_raw/images/2b9ee02dd1a42bbb22000e6106455d4313e7691a9fbe422edfaf38533e2b30c8.jpg",
+    "label": "Exhibit 21",
+    "context": "Exhibit 21: JBH 10 year DCF valuation Exhibit 22: JBH 12M Fwd Cons P/E of 16.1x, is +1Std above mid-cycle",
+    "figure_id": "F183",
+    "latex_path": "figures/fig_183.jpg"
+  },
+  {
+    "report_id": "R021",
+    "report_title": "市场真正低估的不是房价下跌，而是成交量萎缩对消费的连锁反应",
+    "source_path": "xhs_notes/dropbox/260604/shard_3/0005-20-Morgan-Stanley-A-sharper-housing-downturn-creates-earnings-risk-260602/mineru_raw/images/36f3cb9ad94e85682554c43d7f41e9ccfc581650fc09f20929076b63bd2a67b4.jpg",
+    "label": "Exhibit 23",
+    "context": "Exhibit 23: JBH 12M Fwd Cons ASX200 Ind ex Financial relative P/E is 79%, +1Std above mid-cycle",
+    "figure_id": "F184",
+    "latex_path": "figures/fig_184.jpg"
+  },
+  {
+    "report_id": "R021",
+    "report_title": "市场真正低估的不是房价下跌，而是成交量萎缩对消费的连锁反应",
+    "source_path": "xhs_notes/dropbox/260604/shard_3/0005-20-Morgan-Stanley-A-sharper-housing-downturn-creates-earnings-risk-260602/mineru_raw/images/f8d473cfda1dbd951ffa6219921f08da923d22a445bc996d9ef321b5a593cce8.jpg",
+    "label": "Exhibit 25",
+    "context": "Exhibit 25: HVN 10 year DCF valuation Exhibit 26: HVN 12M Fwd Cons P/E of 12.1x, is -1Std above mid-cycle",
+    "figure_id": "F185",
+    "latex_path": "figures/fig_185.jpg"
+  },
+  {
+    "report_id": "R021",
+    "report_title": "市场真正低估的不是房价下跌，而是成交量萎缩对消费的连锁反应",
+    "source_path": "xhs_notes/dropbox/260604/shard_3/0005-20-Morgan-Stanley-A-sharper-housing-downturn-creates-earnings-risk-260602/mineru_raw/images/220fcc9616fc9ef04f9baca41123362cadab0b53cc40fdc7a513622a22a58f5b.jpg",
+    "label": "Exhibit 27",
+    "context": "Exhibit 27: HVN 12M Fwd Cons ASX200 Ind ex Financial relative P/E is 60%, between +1Std and mid-cycle",
+    "figure_id": "F186",
+    "latex_path": "figures/fig_186.jpg"
+  },
+  {
+    "report_id": "R022",
+    "report_title": "市场真正低估的不是需求，而是供给侧的再定价",
+    "source_path": "xhs_notes/dropbox/260604/shard_4/0001-21-UBS-China-Power-Semiconductor-Tighter-for-longer-supply--rising-SiC-pene/mineru_raw/images/cf5cb1a6c0e3778d90a89fc0d5082400b8fe330e7277cd050caca3e4ff714223.jpg",
+    "label": "Figure 6",
+    "context": "Figure 6: Cost of SiC substrates, the main production input, has fallen significantly since 2020",
+    "figure_id": "F187",
+    "latex_path": "figures/fig_187.jpg"
+  },
+  {
+    "report_id": "R022",
+    "report_title": "市场真正低估的不是需求，而是供给侧的再定价",
+    "source_path": "xhs_notes/dropbox/260604/shard_4/0001-21-UBS-China-Power-Semiconductor-Tighter-for-longer-supply--rising-SiC-pene/mineru_raw/images/ea9651e872903c2654df54966737dcbcf7b61a5cf26c4527ae9f28fde83f9bf2.jpg",
+    "label": "Figure 8",
+    "context": "Figure 8: Benefits of 800V transition in xEVs Battery Power=Voltage x Current At given power, at higher voltage the current is significantly reduced 800V",
+    "figure_id": "F188",
+    "latex_path": "figures/fig_188.jpg"
+  },
+  {
+    "report_id": "R022",
+    "report_title": "市场真正低估的不是需求，而是供给侧的再定价",
+    "source_path": "xhs_notes/dropbox/260604/shard_4/0001-21-UBS-China-Power-Semiconductor-Tighter-for-longer-supply--rising-SiC-pene/mineru_raw/images/db3584e07ca5112eb0487a466d0d133eee1989944548c51120b2963c0324307a.jpg",
+    "label": "Figure 9",
+    "context": "Figure 9: SiC penetration in low-price EV models",
+    "figure_id": "F189",
+    "latex_path": "figures/fig_189.jpg"
+  },
+  {
+    "report_id": "R022",
+    "report_title": "市场真正低估的不是需求，而是供给侧的再定价",
+    "source_path": "xhs_notes/dropbox/260604/shard_4/0001-21-UBS-China-Power-Semiconductor-Tighter-for-longer-supply--rising-SiC-pene/mineru_raw/images/6e3f77352ed5187632a0959097fb2534d7e33c596c6af358e7d5d015e864242d.jpg",
+    "label": "Figure 15",
+    "context": "Figure 15: Silan Micro – NTM PB band",
+    "figure_id": "F190",
+    "latex_path": "figures/fig_190.jpg"
+  },
+  {
+    "report_id": "R022",
+    "report_title": "市场真正低估的不是需求，而是供给侧的再定价",
+    "source_path": "xhs_notes/dropbox/260604/shard_4/0001-21-UBS-China-Power-Semiconductor-Tighter-for-longer-supply--rising-SiC-pene/mineru_raw/images/deb7ac6f30d7c1beabe8d2e4d15086be72cbd5858d8ebbbee35eadf803cefeb3.jpg",
+    "label": "Figure 16",
+    "context": "Figure 16: CR Micro – NTM PB band",
+    "figure_id": "F191",
+    "latex_path": "figures/fig_191.jpg"
+  },
+  {
+    "report_id": "R022",
+    "report_title": "市场真正低估的不是需求，而是供给侧的再定价",
+    "source_path": "xhs_notes/dropbox/260604/shard_4/0001-21-UBS-China-Power-Semiconductor-Tighter-for-longer-supply--rising-SiC-pene/mineru_raw/images/1a8b1c485be9119c329998d8808e1fed82a558fb0c6970e910db47f87abf8580.jpg",
+    "label": "Figure 17",
+    "context": "Figure 17: NCE Power – NTM PE band",
+    "figure_id": "F192",
+    "latex_path": "figures/fig_192.jpg"
+  },
+  {
+    "report_id": "R022",
+    "report_title": "市场真正低估的不是需求，而是供给侧的再定价",
+    "source_path": "xhs_notes/dropbox/260604/shard_4/0001-21-UBS-China-Power-Semiconductor-Tighter-for-longer-supply--rising-SiC-pene/mineru_raw/images/4c42f25fd190e2f9d1efb47137d9ad620c9bb87bae8b14058515113ff05fa99c.jpg",
+    "label": "Figure 18",
+    "context": "Figure 18: StarPower – NTM PE band",
+    "figure_id": "F193",
+    "latex_path": "figures/fig_193.jpg"
+  },
+  {
+    "report_id": "R023",
+    "report_title": "AI冲击保险分销：市场低估的不是需求，而是分销成本的重新定价",
+    "source_path": "xhs_notes/dropbox/260604/shard_4/0002-22-Bernstein-India-Capital-Markets---Insurance-AI-vs.-Human-India-Insurance/mineru_raw/images/0e3b706cb8d3da6449a115ed3f9be78ace90ddd708aa219b296b8eb33798c039.jpg",
+    "label": "EXHIBIT 1",
+    "context": "EXHIBIT 1: PB Fin: AI implementation aims to drive tele-advisor productivity from \\~40% to \\~90% AI IN SALES A UNIFIED AI-POWERED SALES STACK ACROSS THE LIFECYCLE Smarter conversations, higher conversions 01",
+    "figure_id": "F194",
+    "latex_path": "figures/fig_194.jpg"
+  },
+  {
+    "report_id": "R023",
+    "report_title": "AI冲击保险分销：市场低估的不是需求，而是分销成本的重新定价",
+    "source_path": "xhs_notes/dropbox/260604/shard_4/0002-22-Bernstein-India-Capital-Markets---Insurance-AI-vs.-Human-India-Insurance/mineru_raw/images/ad11b68fcc96f756de809f13f8301791213529d8c2c325761f72a517fc0a5553.jpg",
+    "label": "EXHIBIT 3",
+    "context": "EXHIBIT 3: Salary costs for PB Fin's call-center operations can be much lower from AI productivity boost (higher customer talk-time per advisor) Salary cost/ minute of customer talk-time (est.)",
+    "figure_id": "F195",
+    "latex_path": "figures/fig_195.jpg"
+  },
+  {
+    "report_id": "R024",
+    "report_title": "全球智能手机市场正在经历一场非对称收缩，苹果的韧性比表面数据更值得深挖",
+    "source_path": "xhs_notes/dropbox/260604/shard_4/0003-23-Bernstein-U.S.-IT-Hardware-APPLE-TRACKER--April---iPhone-revenue-up-6--Y/mineru_raw/images/fe02ce5f815b97bfecc80e4db7ec15387fb7aa83deae33db76c081f60e9db578.jpg",
+    "label": "EXHIBIT 1",
+    "context": "EXHIBIT 1: Sell-thru Units (mn) in the first 8 months of launch - iPhone 17 vs. Past Cycles",
+    "figure_id": "F196",
+    "latex_path": "figures/fig_196.jpg"
+  },
+  {
+    "report_id": "R024",
+    "report_title": "全球智能手机市场正在经历一场非对称收缩，苹果的韧性比表面数据更值得深挖",
+    "source_path": "xhs_notes/dropbox/260604/shard_4/0003-23-Bernstein-U.S.-IT-Hardware-APPLE-TRACKER--April---iPhone-revenue-up-6--Y/mineru_raw/images/630c9b455fbe4a3c46dd4561197b7cfd91127aea47ffa26316e7e8d97eaf086b.jpg",
+    "label": "EXHIBIT 2",
+    "context": "EXHIBIT 2: Global iPhone revenue, units, ASP Revenue ($mn)",
+    "figure_id": "F197",
+    "latex_path": "figures/fig_197.jpg"
+  },
+  {
+    "report_id": "R024",
+    "report_title": "全球智能手机市场正在经历一场非对称收缩，苹果的韧性比表面数据更值得深挖",
+    "source_path": "xhs_notes/dropbox/260604/shard_4/0003-23-Bernstein-U.S.-IT-Hardware-APPLE-TRACKER--April---iPhone-revenue-up-6--Y/mineru_raw/images/78769cc98901f9e54f7e11963273f967d62836cf2f3fc32a99caf830ddc589dd.jpg",
+    "label": "EXHIBIT 3",
+    "context": "EXHIBIT 3: Global ASP % Change YoY",
+    "figure_id": "F198",
+    "latex_path": "figures/fig_198.jpg"
+  },
+  {
+    "report_id": "R024",
+    "report_title": "全球智能手机市场正在经历一场非对称收缩，苹果的韧性比表面数据更值得深挖",
+    "source_path": "xhs_notes/dropbox/260604/shard_4/0003-23-Bernstein-U.S.-IT-Hardware-APPLE-TRACKER--April---iPhone-revenue-up-6--Y/mineru_raw/images/57348938629f2533bd3feda090719022defe0dd0de16fbcdc213c12cf5d78254.jpg",
+    "label": "EXHIBIT 4",
+    "context": "EXHIBIT 4: ASP % Change YoY By Region",
+    "figure_id": "F199",
+    "latex_path": "figures/fig_199.jpg"
+  },
+  {
+    "report_id": "R024",
+    "report_title": "全球智能手机市场正在经历一场非对称收缩，苹果的韧性比表面数据更值得深挖",
+    "source_path": "xhs_notes/dropbox/260604/shard_4/0003-23-Bernstein-U.S.-IT-Hardware-APPLE-TRACKER--April---iPhone-revenue-up-6--Y/mineru_raw/images/3823f916029800128d057d384e977a09ae33b8f6203c66583c2ae12c02d322c2.jpg",
+    "label": "EXHIBIT 5",
+    "context": "EXHIBIT 5: Sell-thru units % chg by region",
+    "figure_id": "F200",
+    "latex_path": "figures/fig_200.jpg"
+  },
+  {
+    "report_id": "R024",
+    "report_title": "全球智能手机市场正在经历一场非对称收缩，苹果的韧性比表面数据更值得深挖",
+    "source_path": "xhs_notes/dropbox/260604/shard_4/0003-23-Bernstein-U.S.-IT-Hardware-APPLE-TRACKER--April---iPhone-revenue-up-6--Y/mineru_raw/images/b2540beb9594f4e486e204a113942bc0c0d3f6bfd706eb7c03c8161fe3b68472.jpg",
+    "label": "EXHIBIT 6",
+    "context": "EXHIBIT 6: iPhone 17e vs iPhone 16e Sell-Through in M iPhone 17e vs iPhone 16e Sell-Through in M",
+    "figure_id": "F201",
+    "latex_path": "figures/fig_201.jpg"
+  },
+  {
+    "report_id": "R024",
+    "report_title": "全球智能手机市场正在经历一场非对称收缩，苹果的韧性比表面数据更值得深挖",
+    "source_path": "xhs_notes/dropbox/260604/shard_4/0003-23-Bernstein-U.S.-IT-Hardware-APPLE-TRACKER--April---iPhone-revenue-up-6--Y/mineru_raw/images/7bc82f2209f3445c309c8cdc9b29b1b333579c8d4e14b230c7a9f32054a5596b.jpg",
+    "label": "EXHIBIT 7",
+    "context": "EXHIBIT 7: iPhone 17e vs iPhone 16e Daily units in K iPhone 17e vs iPhone 16e Daily units in K",
+    "figure_id": "F202",
+    "latex_path": "figures/fig_202.jpg"
+  },
+  {
+    "report_id": "R024",
+    "report_title": "全球智能手机市场正在经历一场非对称收缩，苹果的韧性比表面数据更值得深挖",
+    "source_path": "xhs_notes/dropbox/260604/shard_4/0003-23-Bernstein-U.S.-IT-Hardware-APPLE-TRACKER--April---iPhone-revenue-up-6--Y/mineru_raw/images/24acbbc53b3ca805406b4375f691c0dc97905803d6c83b924032f45e531f458a.jpg",
+    "label": "EXHIBIT 8",
+    "context": "EXHIBIT 8: Across March and April, the iPhone e-series had a total of 4.2m units in 2026 and 3.7m units in 2025, with 2026 outperforming Mar-Apr 2026 vs 2025 Units for iPhone e-series",
+    "figure_id": "F203",
+    "latex_path": "figures/fig_203.jpg"
+  },
+  {
+    "report_id": "R024",
+    "report_title": "全球智能手机市场正在经历一场非对称收缩，苹果的韧性比表面数据更值得深挖",
+    "source_path": "xhs_notes/dropbox/260604/shard_4/0003-23-Bernstein-U.S.-IT-Hardware-APPLE-TRACKER--April---iPhone-revenue-up-6--Y/mineru_raw/images/04a4016d6844f75c5e475907af50665a2ba052b29d17489aa2368c7bc4e2b3a9.jpg",
+    "label": "Exhibit 9",
+    "context": "EXHIBIT 9: Channel Inventory mn Units Channel Inventory (mn Units)",
+    "figure_id": "F204",
+    "latex_path": "figures/fig_204.jpg"
+  },
+  {
+    "report_id": "R024",
+    "report_title": "全球智能手机市场正在经历一场非对称收缩，苹果的韧性比表面数据更值得深挖",
+    "source_path": "xhs_notes/dropbox/260604/shard_4/0003-23-Bernstein-U.S.-IT-Hardware-APPLE-TRACKER--April---iPhone-revenue-up-6--Y/mineru_raw/images/b4799ff834b1393e3cbedb388bde83947b9b3940cd8283bb0e96709919e894c4.jpg",
+    "label": "EXHIBIT 10",
+    "context": "EXHIBIT 10: Global Sell-in vs Sell-thru (mn Units)",
+    "figure_id": "F205",
+    "latex_path": "figures/fig_205.jpg"
+  },
+  {
+    "report_id": "R024",
+    "report_title": "全球智能手机市场正在经历一场非对称收缩，苹果的韧性比表面数据更值得深挖",
+    "source_path": "xhs_notes/dropbox/260604/shard_4/0003-23-Bernstein-U.S.-IT-Hardware-APPLE-TRACKER--April---iPhone-revenue-up-6--Y/mineru_raw/images/f5c0425f66b8ec1e645b065c077d53869b29badf6fb6f1f3b8f997f8ee519bc0.jpg",
+    "label": "EXHIBIT 11",
+    "context": "EXHIBIT 11: Global Sell-in vs. Sell-thru (mn Units)",
+    "figure_id": "F206",
+    "latex_path": "figures/fig_206.jpg"
+  },
+  {
+    "report_id": "R024",
+    "report_title": "全球智能手机市场正在经历一场非对称收缩，苹果的韧性比表面数据更值得深挖",
+    "source_path": "xhs_notes/dropbox/260604/shard_4/0003-23-Bernstein-U.S.-IT-Hardware-APPLE-TRACKER--April---iPhone-revenue-up-6--Y/mineru_raw/images/5ed5cc643462912c12e6ab36977200842795d26290f820a9e9da3f818aa48e2b.jpg",
+    "label": "EXHIBIT 12",
+    "context": "EXHIBIT 12: Inventory Weeks",
+    "figure_id": "F207",
+    "latex_path": "figures/fig_207.jpg"
+  },
+  {
+    "report_id": "R024",
+    "report_title": "全球智能手机市场正在经历一场非对称收缩，苹果的韧性比表面数据更值得深挖",
+    "source_path": "xhs_notes/dropbox/260604/shard_4/0003-23-Bernstein-U.S.-IT-Hardware-APPLE-TRACKER--April---iPhone-revenue-up-6--Y/mineru_raw/images/00779bd4bb5172390dbe0f224dfbaa6529ca1c20e542abdcc70dc17c3b8a6f87.jpg",
+    "label": "Exhibit 18",
+    "context": "EXHIBIT 13: Weak sales performance of iPhone 17e dragged the shipment of N3P.",
+    "figure_id": "F208",
+    "latex_path": "figures/fig_208.jpg"
+  },
+  {
+    "report_id": "R024",
+    "report_title": "全球智能手机市场正在经历一场非对称收缩，苹果的韧性比表面数据更值得深挖",
+    "source_path": "xhs_notes/dropbox/260604/shard_4/0003-23-Bernstein-U.S.-IT-Hardware-APPLE-TRACKER--April---iPhone-revenue-up-6--Y/mineru_raw/images/034de2dec517271bf82772819d9d7342bba334eb1ca5de61cf4a6815563e4a02.jpg",
+    "label": "EXHIBIT 14",
+    "context": "EXHIBIT 14: A similar comparison on iPhone mobile processors shows that the weakness mainly came from A19, while A19 Pro for Pro SKU remained resilient.",
+    "figure_id": "F209",
+    "latex_path": "figures/fig_209.jpg"
+  },
+  {
+    "report_id": "R024",
+    "report_title": "全球智能手机市场正在经历一场非对称收缩，苹果的韧性比表面数据更值得深挖",
+    "source_path": "xhs_notes/dropbox/260604/shard_4/0003-23-Bernstein-U.S.-IT-Hardware-APPLE-TRACKER--April---iPhone-revenue-up-6--Y/mineru_raw/images/22c3085f46b017bb92949c4604751fd781a3670423a25dd76e8630d239bbbab7.jpg",
+    "label": "EXHIBIT 15",
+    "context": "EXHIBIT 16: Most of iPhone 17 models feature 12GB DRAM vs. 8GB for iPhone 16 series, likely to better support on-device AI. iPhone DRAM Size (GB)",
+    "figure_id": "F210",
+    "latex_path": "figures/fig_210.jpg"
+  },
+  {
+    "report_id": "R024",
+    "report_title": "全球智能手机市场正在经历一场非对称收缩，苹果的韧性比表面数据更值得深挖",
+    "source_path": "xhs_notes/dropbox/260604/shard_4/0003-23-Bernstein-U.S.-IT-Hardware-APPLE-TRACKER--April---iPhone-revenue-up-6--Y/mineru_raw/images/69a86cc7f892afc40bc7ccc149c22d6fb499e7afc52a84101be15553f729f18b.jpg",
+    "label": "EXHIBIT 17",
+    "context": "EXHIBIT 17: iPhone models with 12GB DRAM improved slightly MoM to 42% of the overall shipment. iPhone Shipment Mix by DRAM Size EXHIBIT 18: The average DRAM content per phone still remained largely steady MoM at 9.5GB in Apr, stil",
+    "figure_id": "F211",
+    "latex_path": "figures/fig_211.jpg"
+  },
+  {
+    "report_id": "R024",
+    "report_title": "全球智能手机市场正在经历一场非对称收缩，苹果的韧性比表面数据更值得深挖",
+    "source_path": "xhs_notes/dropbox/260604/shard_4/0003-23-Bernstein-U.S.-IT-Hardware-APPLE-TRACKER--April---iPhone-revenue-up-6--Y/mineru_raw/images/d3865d1c44b49bd347eeaa01be58caa6a586a042b64141ff9649ed6e7d3afa99.jpg",
+    "label": "EXHIBIT 17",
+    "context": "EXHIBIT 17: iPhone models with 12GB DRAM improved slightly MoM to 42% of the overall shipment. iPhone Shipment Mix by DRAM Size EXHIBIT 18: The average DRAM content per phone still remained largely steady MoM at 9.5GB in Apr, stil",
+    "figure_id": "F212",
+    "latex_path": "figures/fig_212.jpg"
+  },
+  {
+    "report_id": "R024",
+    "report_title": "全球智能手机市场正在经历一场非对称收缩，苹果的韧性比表面数据更值得深挖",
+    "source_path": "xhs_notes/dropbox/260604/shard_4/0003-23-Bernstein-U.S.-IT-Hardware-APPLE-TRACKER--April---iPhone-revenue-up-6--Y/mineru_raw/images/18cddf6cfccdfa9da6d7df17ea8320899ea85e7e864602d1afe852402b693166.jpg",
+    "label": "EXHIBIT 19",
+    "context": "EXHIBIT 19: Americas iPhone total revenue, units and ASP Revenue ($mn)",
+    "figure_id": "F213",
+    "latex_path": "figures/fig_213.jpg"
+  },
+  {
+    "report_id": "R024",
+    "report_title": "全球智能手机市场正在经历一场非对称收缩，苹果的韧性比表面数据更值得深挖",
+    "source_path": "xhs_notes/dropbox/260604/shard_4/0003-23-Bernstein-U.S.-IT-Hardware-APPLE-TRACKER--April---iPhone-revenue-up-6--Y/mineru_raw/images/b9fe3e6c2033b1a53b6cd8d9404f0e284440a8b92ee3b9d0a674ffa348be12c8.jpg",
+    "label": "EXHIBIT 20",
+    "context": "EXHIBIT 20: Europe iPhone revenue, units and ASP Revenue ($mn)",
+    "figure_id": "F214",
+    "latex_path": "figures/fig_214.jpg"
+  },
+  {
+    "report_id": "R024",
+    "report_title": "全球智能手机市场正在经历一场非对称收缩，苹果的韧性比表面数据更值得深挖",
+    "source_path": "xhs_notes/dropbox/260604/shard_4/0003-23-Bernstein-U.S.-IT-Hardware-APPLE-TRACKER--April---iPhone-revenue-up-6--Y/mineru_raw/images/365f56fcb00402079e44beaea8e76a777cd8d3df9ddc210062db00962aa47583.jpg",
+    "label": "EXHIBIT 21",
+    "context": "EXHIBIT 21: China iPhone revenue, units and ASP Revenue ($mn)",
+    "figure_id": "F215",
+    "latex_path": "figures/fig_215.jpg"
+  },
+  {
+    "report_id": "R024",
+    "report_title": "全球智能手机市场正在经历一场非对称收缩，苹果的韧性比表面数据更值得深挖",
+    "source_path": "xhs_notes/dropbox/260604/shard_4/0003-23-Bernstein-U.S.-IT-Hardware-APPLE-TRACKER--April---iPhone-revenue-up-6--Y/mineru_raw/images/2f58656fe0b1c7925e4dc801f2ee7b653eaf6526fc41b280179748a61891ed75.jpg",
+    "label": "EXHIBIT 22",
+    "context": "EXHIBIT 22: Rest of Apac iPhone revenue, units, ASP Revenue ($mn)",
+    "figure_id": "F216",
+    "latex_path": "figures/fig_216.jpg"
+  },
+  {
+    "report_id": "R024",
+    "report_title": "全球智能手机市场正在经历一场非对称收缩，苹果的韧性比表面数据更值得深挖",
+    "source_path": "xhs_notes/dropbox/260604/shard_4/0003-23-Bernstein-U.S.-IT-Hardware-APPLE-TRACKER--April---iPhone-revenue-up-6--Y/mineru_raw/images/e58e414ebf2fbe40c8ae9a781bd55a069636c2331f07441d9c69ba388f7dad3a.jpg",
+    "label": "EXHIBIT 23",
+    "context": "EXHIBIT 23: Japan iPhone revenue, units, ASP Revenue ($mn)",
+    "figure_id": "F217",
+    "latex_path": "figures/fig_217.jpg"
+  },
+  {
+    "report_id": "R025",
+    "report_title": "韩国科技供应链的真正拐点：从GPU算力竞赛转向Agentic AI的全面落地",
+    "source_path": "xhs_notes/dropbox/260604/shard_4/0004-24-HSBC-Korea-Technology-Korea-tech-tour---booming-agentic-AI-supply-chain-/mineru_raw/images/e2e23bebde68057048e039259054f08c55ef2602f940b057734b621026b2e6d5.jpg",
+    "label": "Exhibit 1",
+    "context": "Exhibit 1. Key ratings, target prices and data points Exhibit 2. Daily token consumption from AI services is growing rapidly",
+    "figure_id": "F218",
+    "latex_path": "figures/fig_218.jpg"
+  },
+  {
+    "report_id": "R025",
+    "report_title": "韩国科技供应链的真正拐点：从GPU算力竞赛转向Agentic AI的全面落地",
+    "source_path": "xhs_notes/dropbox/260604/shard_4/0004-24-HSBC-Korea-Technology-Korea-tech-tour---booming-agentic-AI-supply-chain-/mineru_raw/images/d385cf36f3d3ef66ce5dc30250806a26d71df5bc3e96735b5eb9e9238b907ae0.jpg",
+    "label": "Exhibit 3",
+    "context": "Red arrows indicate growth rates: 30x (from 2023 to 2025e), 80x (from 2025e to 2030e). Exhibit 3. While frontier LLM API blended pricing continues to fall",
+    "figure_id": "F219",
+    "latex_path": "figures/fig_219.jpg"
+  },
+  {
+    "report_id": "R025",
+    "report_title": "韩国科技供应链的真正拐点：从GPU算力竞赛转向Agentic AI的全面落地",
+    "source_path": "xhs_notes/dropbox/260604/shard_4/0004-24-HSBC-Korea-Technology-Korea-tech-tour---booming-agentic-AI-supply-chain-/mineru_raw/images/838fca2dfe3f1128be3cfcf145cc37c94f4e6a214295167eb22d6039915057bb.jpg",
+    "label": "Exhibit 4",
+    "context": "Exhibit 4. The cost per GPU has risen 2x in the latest NVIDIA GB300...",
+    "figure_id": "F220",
+    "latex_path": "figures/fig_220.jpg"
+  },
+  {
+    "report_id": "R025",
+    "report_title": "韩国科技供应链的真正拐点：从GPU算力竞赛转向Agentic AI的全面落地",
+    "source_path": "xhs_notes/dropbox/260604/shard_4/0004-24-HSBC-Korea-Technology-Korea-tech-tour---booming-agentic-AI-supply-chain-/mineru_raw/images/bdb953cefe2b11be3353d2dbd4ff62ccee7d80cadcc457294809c5964aaad8a9.jpg",
+    "label": "Exhibit 5",
+    "context": "2x Higher Exhibit 5. Cost per million tokens has fallen by 35x, boosting profitability at AI service providers",
+    "figure_id": "F221",
+    "latex_path": "figures/fig_221.jpg"
+  },
+  {
+    "report_id": "R025",
+    "report_title": "韩国科技供应链的真正拐点：从GPU算力竞赛转向Agentic AI的全面落地",
+    "source_path": "xhs_notes/dropbox/260604/shard_4/0004-24-HSBC-Korea-Technology-Korea-tech-tour---booming-agentic-AI-supply-chain-/mineru_raw/images/2bf98ba842b39f38fe9d65e1e09dc22d498c24d02fa117819362189f637845ab.jpg",
+    "label": "Exhibit 6",
+    "context": "35x Lower Exhibit 6. Gross profit margin estimates of AI service providers",
+    "figure_id": "F222",
+    "latex_path": "figures/fig_222.jpg"
+  },
+  {
+    "report_id": "R025",
+    "report_title": "韩国科技供应链的真正拐点：从GPU算力竞赛转向Agentic AI的全面落地",
+    "source_path": "xhs_notes/dropbox/260604/shard_4/0004-24-HSBC-Korea-Technology-Korea-tech-tour---booming-agentic-AI-supply-chain-/mineru_raw/images/e9e760fbfe4932cca082fc84d77a535e43b9f94392f269a32f370131ecc724a9.jpg",
+    "label": "Exhibit 7",
+    "context": "Exhibit 7. Forecast penetration rate of ARM based CPUs in the total CPU market Penetration rate of ARM CPUs in the overall CPU market",
+    "figure_id": "F223",
+    "latex_path": "figures/fig_223.jpg"
+  },
+  {
+    "report_id": "R025",
+    "report_title": "韩国科技供应链的真正拐点：从GPU算力竞赛转向Agentic AI的全面落地",
+    "source_path": "xhs_notes/dropbox/260604/shard_4/0004-24-HSBC-Korea-Technology-Korea-tech-tour---booming-agentic-AI-supply-chain-/mineru_raw/images/3f0734defb2fa3bccd9d63e20a83951471197c1719c20a6df21b612667f8f608.jpg",
+    "label": "Exhibit 8",
+    "context": "Exhibit 8. SO-CAMM2 demand estimates from the Vera Rubin platform; $6 - 10\\%$ of total DRAM demand",
+    "figure_id": "F224",
+    "latex_path": "figures/fig_224.jpg"
+  },
+  {
+    "report_id": "R025",
+    "report_title": "韩国科技供应链的真正拐点：从GPU算力竞赛转向Agentic AI的全面落地",
+    "source_path": "xhs_notes/dropbox/260604/shard_4/0004-24-HSBC-Korea-Technology-Korea-tech-tour---booming-agentic-AI-supply-chain-/mineru_raw/images/7b0a79d0830c64d0622f89d94675193b5392a708264179838bf6ea1bad820349.jpg",
+    "label": "Exhibit 9",
+    "context": "Exhibit 9. NAND demand estimates from the Vera Rubin platform; $4 - 7\\%$ of total NAND, opportunities from ICMS",
+    "figure_id": "F225",
+    "latex_path": "figures/fig_225.jpg"
+  },
+  {
+    "report_id": "R025",
+    "report_title": "韩国科技供应链的真正拐点：从GPU算力竞赛转向Agentic AI的全面落地",
+    "source_path": "xhs_notes/dropbox/260604/shard_4/0004-24-HSBC-Korea-Technology-Korea-tech-tour---booming-agentic-AI-supply-chain-/mineru_raw/images/e64ae4c5d9ef5bade3b70145b40fd47c78fa4b7593fb7c27d9c877753c09660d.jpg",
+    "label": "Exhibit 10",
+    "context": "Exhibit 10. HSBC global tech team recently revised up server shipments, expecting $20\\% / 21\\%$ y-o-y growth in 2026/27e",
+    "figure_id": "F226",
+    "latex_path": "figures/fig_226.jpg"
+  },
+  {
+    "report_id": "R025",
+    "report_title": "韩国科技供应链的真正拐点：从GPU算力竞赛转向Agentic AI的全面落地",
+    "source_path": "xhs_notes/dropbox/260604/shard_4/0004-24-HSBC-Korea-Technology-Korea-tech-tour---booming-agentic-AI-supply-chain-/mineru_raw/images/be843eb4e57a46f27ab7fa3d9363bb87850773093dcecfbfd731242b8a50c299.jpg",
+    "label": "Exhibit 11",
+    "context": "The chart includes a dashed line at y-o-y (%) = 0% for reference. The bar series represents HSBCe Server shipments in million units, while the line series represents the y-o-y (%) for the same years. The data points are labeled as 'e'. The chart is titled 'Pre",
+    "figure_id": "F227",
+    "latex_path": "figures/fig_227.jpg"
+  },
+  {
+    "report_id": "R025",
+    "report_title": "韩国科技供应链的真正拐点：从GPU算力竞赛转向Agentic AI的全面落地",
+    "source_path": "xhs_notes/dropbox/260604/shard_4/0004-24-HSBC-Korea-Technology-Korea-tech-tour---booming-agentic-AI-supply-chain-/mineru_raw/images/5e60dff9fa183eacea54a870f28e946950a6cc968a8a9675ba0c2d1b0802a88e.jpg",
+    "label": "Exhibit 12",
+    "context": "+170% Exhibit 12. AI server shipments to grow $28\\%$ y-o-y in 2026e",
+    "figure_id": "F228",
+    "latex_path": "figures/fig_228.jpg"
+  },
+  {
+    "report_id": "R025",
+    "report_title": "韩国科技供应链的真正拐点：从GPU算力竞赛转向Agentic AI的全面落地",
+    "source_path": "xhs_notes/dropbox/260604/shard_4/0004-24-HSBC-Korea-Technology-Korea-tech-tour---booming-agentic-AI-supply-chain-/mineru_raw/images/c4922c77772a221d3eb3a963b1a7d4c727a80f9f63f044412f059590992ee7e4.jpg",
+    "label": "Exhibit 13",
+    "context": "Exhibit 13. HBM content to increase significantly in the Rubin Ultra Exhibit 14. Average server DRAM content per unit; strong growth of $17\\%$ in 2026-27e",
+    "figure_id": "F229",
+    "latex_path": "figures/fig_229.jpg"
+  },
+  {
+    "report_id": "R025",
+    "report_title": "韩国科技供应链的真正拐点：从GPU算力竞赛转向Agentic AI的全面落地",
+    "source_path": "xhs_notes/dropbox/260604/shard_4/0004-24-HSBC-Korea-Technology-Korea-tech-tour---booming-agentic-AI-supply-chain-/mineru_raw/images/c64d042c869a98555f8e164d6f7c82b1427f2d60e96eb68d8d0455f59ed6553e.jpg",
+    "label": "Exhibit 13",
+    "context": "Exhibit 13. HBM content to increase significantly in the Rubin Ultra Exhibit 14. Average server DRAM content per unit; strong growth of $17\\%$ in 2026-27e",
+    "figure_id": "F230",
+    "latex_path": "figures/fig_230.jpg"
+  },
+  {
+    "report_id": "R025",
+    "report_title": "韩国科技供应链的真正拐点：从GPU算力竞赛转向Agentic AI的全面落地",
+    "source_path": "xhs_notes/dropbox/260604/shard_4/0004-24-HSBC-Korea-Technology-Korea-tech-tour---booming-agentic-AI-supply-chain-/mineru_raw/images/531eb6ee09a197b591280e5ca2c504da8d19c563c59d95d6168f5adaf2ccc4f7.jpg",
+    "label": "Exhibit 15",
+    "context": "Exhibit 15. Bill of materials cost estimates for the GB300 NVL72 server system GB300 NVL72 BOM cost: USD2.9m",
+    "figure_id": "F231",
+    "latex_path": "figures/fig_231.jpg"
+  },
+  {
+    "report_id": "R025",
+    "report_title": "韩国科技供应链的真正拐点：从GPU算力竞赛转向Agentic AI的全面落地",
+    "source_path": "xhs_notes/dropbox/260604/shard_4/0004-24-HSBC-Korea-Technology-Korea-tech-tour---booming-agentic-AI-supply-chain-/mineru_raw/images/eba9ba00491cae01f76e28da88810d2f0f8e9ebd47d41970bdb0f33009550ac2.jpg",
+    "label": "Exhibit 16",
+    "context": "Exhibit 16. Server DRAM vs HBM blended ASP trend (calendar year base)",
+    "figure_id": "F232",
+    "latex_path": "figures/fig_232.jpg"
+  },
+  {
+    "report_id": "R025",
+    "report_title": "韩国科技供应链的真正拐点：从GPU算力竞赛转向Agentic AI的全面落地",
+    "source_path": "xhs_notes/dropbox/260604/shard_4/0004-24-HSBC-Korea-Technology-Korea-tech-tour---booming-agentic-AI-supply-chain-/mineru_raw/images/dbe9e4e5ce6de85f22998850b61f5244fc9965636827a7dc815e5146cba21da5.jpg",
+    "label": "Exhibit 17",
+    "context": "Exhibit 17. HBM market growth set to reach USD163bn by 2027e",
+    "figure_id": "F233",
+    "latex_path": "figures/fig_233.jpg"
+  },
+  {
+    "report_id": "R025",
+    "report_title": "韩国科技供应链的真正拐点：从GPU算力竞赛转向Agentic AI的全面落地",
+    "source_path": "xhs_notes/dropbox/260604/shard_4/0004-24-HSBC-Korea-Technology-Korea-tech-tour---booming-agentic-AI-supply-chain-/mineru_raw/images/76d33d3e7e195eaf19b45e29854ee7275c5aed2ed36a50f8a0ffff676bc6c039.jpg",
+    "label": "Exhibit 18",
+    "context": "117% CAGR (2024-27e) Exhibit 18. HBM bit demand growth: CAGR of $67\\%$ in 2024-27e",
+    "figure_id": "F234",
+    "latex_path": "figures/fig_234.jpg"
+  },
+  {
+    "report_id": "R025",
+    "report_title": "韩国科技供应链的真正拐点：从GPU算力竞赛转向Agentic AI的全面落地",
+    "source_path": "xhs_notes/dropbox/260604/shard_4/0004-24-HSBC-Korea-Technology-Korea-tech-tour---booming-agentic-AI-supply-chain-/mineru_raw/images/b5905ea1c9e008379073825627c34894c05739b5ae972249ce9d2c014354a7b2.jpg",
+    "label": "Exhibit 19",
+    "context": "Exhibit 19. One-year contract price trend of AI GPUs (H100) for AI service providers",
+    "figure_id": "F235",
+    "latex_path": "figures/fig_235.jpg"
+  },
+  {
+    "report_id": "R025",
+    "report_title": "韩国科技供应链的真正拐点：从GPU算力竞赛转向Agentic AI的全面落地",
+    "source_path": "xhs_notes/dropbox/260604/shard_4/0004-24-HSBC-Korea-Technology-Korea-tech-tour---booming-agentic-AI-supply-chain-/mineru_raw/images/1d00886f5bb87dbdc3bdfc67374002bb77b22950a036483656bde81ce93d81c3.jpg",
+    "label": "Exhibit 20",
+    "context": "Exhibit 20. US cloud service provider (CSP) capex; robust growth to continue at key US CSPs, up $70\\%$ in 2026e",
+    "figure_id": "F236",
+    "latex_path": "figures/fig_236.jpg"
+  },
+  {
+    "report_id": "R025",
+    "report_title": "韩国科技供应链的真正拐点：从GPU算力竞赛转向Agentic AI的全面落地",
+    "source_path": "xhs_notes/dropbox/260604/shard_4/0004-24-HSBC-Korea-Technology-Korea-tech-tour---booming-agentic-AI-supply-chain-/mineru_raw/images/dbee51b693f968b7a248527c9bc139bbdb646c266da6d3edc4ee842bf59f7cbb.jpg",
+    "label": "Exhibit 21",
+    "context": "Stronger US CSP capex seen after CY4Q earnings CY26 growth up to 70% y-o-y (from 60% before 1Q) Exhibit 21. Capex consensus of key global CSPs (US & Chinese) for 2026; continued upside revisions; expected at USD738bn (+80% y-o-y)",
+    "figure_id": "F237",
+    "latex_path": "figures/fig_237.jpg"
+  },
+  {
+    "report_id": "R025",
+    "report_title": "韩国科技供应链的真正拐点：从GPU算力竞赛转向Agentic AI的全面落地",
+    "source_path": "xhs_notes/dropbox/260604/shard_4/0004-24-HSBC-Korea-Technology-Korea-tech-tour---booming-agentic-AI-supply-chain-/mineru_raw/images/15ce7e932e25675e3d393f557e25ecd9346fc0cd58e136856862b543c0842695.jpg",
+    "label": "Exhibit 22",
+    "context": "Exhibit 22. Open AI's cloud infra costs continue to grow",
+    "figure_id": "F238",
+    "latex_path": "figures/fig_238.jpg"
+  },
+  {
+    "report_id": "R025",
+    "report_title": "韩国科技供应链的真正拐点：从GPU算力竞赛转向Agentic AI的全面落地",
+    "source_path": "xhs_notes/dropbox/260604/shard_4/0004-24-HSBC-Korea-Technology-Korea-tech-tour---booming-agentic-AI-supply-chain-/mineru_raw/images/5806ca2caa7eec84a0b308b5a2d2d6f1c6b28104f641c748e9de095d32ed2304.jpg",
+    "label": "Exhibit 23",
+    "context": "Exhibit 23. Capex estimates of key neo-CSPs; strong growth in 2026e (Neo-CSP capex, USDbn)",
+    "figure_id": "F239",
+    "latex_path": "figures/fig_239.jpg"
+  },
+  {
+    "report_id": "R025",
+    "report_title": "韩国科技供应链的真正拐点：从GPU算力竞赛转向Agentic AI的全面落地",
+    "source_path": "xhs_notes/dropbox/260604/shard_4/0004-24-HSBC-Korea-Technology-Korea-tech-tour---booming-agentic-AI-supply-chain-/mineru_raw/images/d3a64005861f4540cec580bdf4af49ee70c76d6950c23b411c9196bae8f1559e.jpg",
+    "label": "Exhibit 24",
+    "context": "Exhibit 24. Global ABF substrate supply vs demand gap",
+    "figure_id": "F240",
+    "latex_path": "figures/fig_240.jpg"
+  },
+  {
+    "report_id": "R025",
+    "report_title": "韩国科技供应链的真正拐点：从GPU算力竞赛转向Agentic AI的全面落地",
+    "source_path": "xhs_notes/dropbox/260604/shard_4/0004-24-HSBC-Korea-Technology-Korea-tech-tour---booming-agentic-AI-supply-chain-/mineru_raw/images/2c6748c1b9d4816a7176280250ae27dc00f47c6c9df7376edc41987b370a9be6.jpg",
+    "label": "Exhibit 25",
+    "context": "Exhibit 25. Global ABF substrate demand growth trend (k sqft/year)",
+    "figure_id": "F241",
+    "latex_path": "figures/fig_241.jpg"
+  },
+  {
+    "report_id": "R025",
+    "report_title": "韩国科技供应链的真正拐点：从GPU算力竞赛转向Agentic AI的全面落地",
+    "source_path": "xhs_notes/dropbox/260604/shard_4/0004-24-HSBC-Korea-Technology-Korea-tech-tour---booming-agentic-AI-supply-chain-/mineru_raw/images/d6c938e063b3380a08fcf1c3218ec9001b4adc087b5f8d3714055eaf422bd51e.jpg",
+    "label": "Exhibit 26",
+    "context": "Exhibit 26. Global DRAM capex trend",
+    "figure_id": "F242",
+    "latex_path": "figures/fig_242.jpg"
+  },
+  {
+    "report_id": "R025",
+    "report_title": "韩国科技供应链的真正拐点：从GPU算力竞赛转向Agentic AI的全面落地",
+    "source_path": "xhs_notes/dropbox/260604/shard_4/0004-24-HSBC-Korea-Technology-Korea-tech-tour---booming-agentic-AI-supply-chain-/mineru_raw/images/e374ead99d7b4199a3466a49855d4d77f0874ba486ec5f1a3db678c32acc9958.jpg",
+    "label": "Exhibit 27",
+    "context": "The chart includes a percentage label (+67%, +23%, +10%) indicating year-over-year growth trends for the top three segments. The total stacked bars represent cumulative revenue in USD billions. Exhibit 27. Global NAND capex trend",
+    "figure_id": "F243",
+    "latex_path": "figures/fig_243.jpg"
+  },
+  {
+    "report_id": "R025",
+    "report_title": "韩国科技供应链的真正拐点：从GPU算力竞赛转向Agentic AI的全面落地",
+    "source_path": "xhs_notes/dropbox/260604/shard_4/0004-24-HSBC-Korea-Technology-Korea-tech-tour---booming-agentic-AI-supply-chain-/mineru_raw/images/cfb11b9c9ebba260990c150b8a849312f1d42b3cde0918a0c83033115345d6be.jpg",
+    "label": "Exhibit 28",
+    "context": "The chart includes a percentage label (+38%, +27%, +13%) indicating year-over-year growth trends for the top three companies. The total stacked bars represent cumulative revenue in USD billions. Exhibit 28. Samsung: Advanced DRAM capacity trend (1b and above)",
+    "figure_id": "F244",
+    "latex_path": "figures/fig_244.jpg"
+  },
+  {
+    "report_id": "R025",
+    "report_title": "韩国科技供应链的真正拐点：从GPU算力竞赛转向Agentic AI的全面落地",
+    "source_path": "xhs_notes/dropbox/260604/shard_4/0004-24-HSBC-Korea-Technology-Korea-tech-tour---booming-agentic-AI-supply-chain-/mineru_raw/images/eb7b4f60e1d1aefe25f94039e263e9d7e6396472273a7767248c197c267d6c1b.jpg",
+    "label": "Exhibit 29",
+    "context": "The chart includes a dotted line indicating year-over-year growth: +60k in 2024, +180k in 2025, +155k in 2026e, and +140k in 2027e. The values for 1bnm and 1cmn are labeled above each bar. The y-axis represents production volume in kilowatts per million (kwpm)",
+    "figure_id": "F245",
+    "latex_path": "figures/fig_245.jpg"
+  },
+  {
+    "report_id": "R025",
+    "report_title": "韩国科技供应链的真正拐点：从GPU算力竞赛转向Agentic AI的全面落地",
+    "source_path": "xhs_notes/dropbox/260604/shard_4/0004-24-HSBC-Korea-Technology-Korea-tech-tour---booming-agentic-AI-supply-chain-/mineru_raw/images/f68b4ef7944090f1a73650f9bf1fecd83762370cc2b00e9b198f4d820026e512.jpg",
+    "label": "Exhibit 29",
+    "context": "Exhibit 29. Industry total 1cnm capacity growth estimates, reaching 42% of total DRAM by 2027e Exhibit 30. Global foundry capex of top 4 suppliers set to grow $28\\% / 20\\%$ in 2026/27e",
+    "figure_id": "F246",
+    "latex_path": "figures/fig_246.jpg"
+  },
+  {
+    "report_id": "R025",
+    "report_title": "韩国科技供应链的真正拐点：从GPU算力竞赛转向Agentic AI的全面落地",
+    "source_path": "xhs_notes/dropbox/260604/shard_4/0004-24-HSBC-Korea-Technology-Korea-tech-tour---booming-agentic-AI-supply-chain-/mineru_raw/images/6d35f06a4d6cfd0479f764526f04459cd75863a5bdd42212e93d2462d5d6df86.jpg",
+    "label": "Exhibit 31",
+    "context": "The chart includes a percentage label (+28%, +20%, +17%) above the bars, likely indicating year-over-year growth or market share changes. Exhibit 31. Samsung foundry capex should rise $100\\%$ y-o-y in 2026e from investments in leading edge node capacity",
+    "figure_id": "F247",
+    "latex_path": "figures/fig_247.jpg"
+  },
+  {
+    "report_id": "R032",
+    "report_title": "日本汽车股的分化才刚刚开始：HEV能力正在重新定义竞争壁垒",
+    "source_path": "xhs_notes/dropbox/260604/shard_6/0001-31-Bernstein-Japan-Autos---Auto-Parts-Japan-Autos-Monthly-Sales-Tracker--Ma/mineru_raw/images/d870484a32d575cf7ef02e7f182d9f04049120a2fced8d3df76fc49e1e6c8ce0.jpg",
+    "label": "EXHIBIT 1",
+    "context": "EXHIBIT 1: May-26 Japan sales totaled 333 thousand units, up 2.8% YoY Japan: Monthly Sales Volume",
+    "figure_id": "F248",
+    "latex_path": "figures/fig_248.jpg"
+  },
+  {
+    "report_id": "R032",
+    "report_title": "日本汽车股的分化才刚刚开始：HEV能力正在重新定义竞争壁垒",
+    "source_path": "xhs_notes/dropbox/260604/shard_6/0001-31-Bernstein-Japan-Autos---Auto-Parts-Japan-Autos-Monthly-Sales-Tracker--Ma/mineru_raw/images/9c1d4becdd2c1020af6ddb4bbb3919bf818e66fd8a9ee6d8bb4a38cef8270bf7.jpg",
+    "label": "EXHIBIT 2",
+    "context": "EXHIBIT 3: May-26 US sales totaled 1,480 thousand units, up 0.4% YoY US Monthly Sales Volume",
+    "figure_id": "F249",
+    "latex_path": "figures/fig_249.jpg"
+  },
+  {
+    "report_id": "R032",
+    "report_title": "日本汽车股的分化才刚刚开始：HEV能力正在重新定义竞争壁垒",
+    "source_path": "xhs_notes/dropbox/260604/shard_6/0001-31-Bernstein-Japan-Autos---Auto-Parts-Japan-Autos-Monthly-Sales-Tracker--Ma/mineru_raw/images/dbcbcbcd9f6834f261206330366ce70f9ea7d338a02dde11ad41a81ecae67b2e.jpg",
+    "label": "EXHIBIT 4",
+    "context": "EXHIBIT 5: US incentive trend; Toyota kept incentives low at USD 1,843 (-1% QoQ) while the industry at USD 3,450 (+2% QoQ) Note: MMC not covered; 2Q26 representing average of Apr-26 and May-26 EXHIBIT 6: US days supply; Toyota st",
+    "figure_id": "F250",
+    "latex_path": "figures/fig_250.jpg"
+  },
+  {
+    "report_id": "R032",
+    "report_title": "日本汽车股的分化才刚刚开始：HEV能力正在重新定义竞争壁垒",
+    "source_path": "xhs_notes/dropbox/260604/shard_6/0001-31-Bernstein-Japan-Autos---Auto-Parts-Japan-Autos-Monthly-Sales-Tracker--Ma/mineru_raw/images/2eb8b8d4eb58d7667c2a84ee1fc225fe233db34066f815f2b7ce5b67f9f64847.jpg",
+    "label": "EXHIBIT 5",
+    "context": "EXHIBIT 7: Honda: Income Statement Honda: Income Statement",
+    "figure_id": "F251",
+    "latex_path": "figures/fig_251.jpg"
+  },
+  {
+    "report_id": "R033",
+    "report_title": "印度数据中心：市场真正低估的不是需求，而是电力基础设施的再定价",
+    "source_path": "xhs_notes/dropbox/260604/shard_6/0002-32-Bernstein-India-Industrials-and-Infrastructure-Electric-India--Data-Cent/mineru_raw/images/043e772d1801758aa4a427e750cf9d5ae9767233dbbc77dc5e1cc94802f061db.jpg",
+    "label": "Exhibit 1",
+    "context": "EXHIBIT 1: US power demand driven by data centers",
+    "figure_id": "F252",
+    "latex_path": "figures/fig_252.jpg"
+  },
+  {
+    "report_id": "R033",
+    "report_title": "印度数据中心：市场真正低估的不是需求，而是电力基础设施的再定价",
+    "source_path": "xhs_notes/dropbox/260604/shard_6/0002-32-Bernstein-India-Industrials-and-Infrastructure-Electric-India--Data-Cent/mineru_raw/images/8ada40e555deaaac9cbe5e6ee31b230c41c730b8529ae8a3ad40d39840ffaa90.jpg",
+    "label": "Exhibit 2",
+    "context": "EXHIBIT 2: Share price returns: Most Data-center asset heavy plays have rallied sharply over the last couple of years",
+    "figure_id": "F253",
+    "latex_path": "figures/fig_253.jpg"
+  },
+  {
+    "report_id": "R033",
+    "report_title": "印度数据中心：市场真正低估的不是需求，而是电力基础设施的再定价",
+    "source_path": "xhs_notes/dropbox/260604/shard_6/0002-32-Bernstein-India-Industrials-and-Infrastructure-Electric-India--Data-Cent/mineru_raw/images/2413d95fe78609ae28efc79a795d547de9c97b6ea509d9590f5c4830d51730fc.jpg",
+    "label": "EXHIBIT 6",
+    "context": "EXHIBIT 6: \\~\\$98Bn worth of co-location deals (against 4GW IT load) have been signed for the AI co-location model (avg duration of 10-15 years) Bitcoin miners are now integral part of the AI value chain ```mermaid graph LR",
+    "figure_id": "F254",
+    "latex_path": "figures/fig_254.jpg"
+  },
+  {
+    "report_id": "R033",
+    "report_title": "印度数据中心：市场真正低估的不是需求，而是电力基础设施的再定价",
+    "source_path": "xhs_notes/dropbox/260604/shard_6/0002-32-Bernstein-India-Industrials-and-Infrastructure-Electric-India--Data-Cent/mineru_raw/images/d04414ba86f3f2a2177505f1c13bfd4255f5d25c42175043f09b057e15489310.jpg",
+    "label": "Exhibit 7",
+    "context": "EXHIBIT 7: Grid connection is the key for data center site selection Key factors for data center site selection #the most important factor",
+    "figure_id": "F255",
+    "latex_path": "figures/fig_255.jpg"
+  },
+  {
+    "report_id": "R033",
+    "report_title": "印度数据中心：市场真正低估的不是需求，而是电力基础设施的再定价",
+    "source_path": "xhs_notes/dropbox/260604/shard_6/0002-32-Bernstein-India-Industrials-and-Infrastructure-Electric-India--Data-Cent/mineru_raw/images/a95cec5a6d4c6d39c8b23f0a050321e8adef05235dac8be5e595433636e4562a.jpg",
+    "label": "EXHIBIT 8",
+    "context": "EXHIBIT 8: ERCOT large load interconnection queue: most of the incremental requests have come from data centers ERCOT large load interconnection queue change (GW)",
+    "figure_id": "F256",
+    "latex_path": "figures/fig_256.jpg"
+  },
+  {
+    "report_id": "R033",
+    "report_title": "印度数据中心：市场真正低估的不是需求，而是电力基础设施的再定价",
+    "source_path": "xhs_notes/dropbox/260604/shard_6/0002-32-Bernstein-India-Industrials-and-Infrastructure-Electric-India--Data-Cent/mineru_raw/images/af56e1a41f852b7bebce3c4ebd64fbf7b489d34ad605fe40de509c08efb18a09.jpg",
+    "label": "EXHIBIT 9",
+    "context": "EXHIBIT 9: Interconnection waiting time for different ISOs Average time for interconnection in US (years)- 2024",
+    "figure_id": "F257",
+    "latex_path": "figures/fig_257.jpg"
+  },
+  {
+    "report_id": "R033",
+    "report_title": "印度数据中心：市场真正低估的不是需求，而是电力基础设施的再定价",
+    "source_path": "xhs_notes/dropbox/260604/shard_6/0002-32-Bernstein-India-Industrials-and-Infrastructure-Electric-India--Data-Cent/mineru_raw/images/a08823899971158336224407e1caa075b2c0a490f4d4d3a6278a3354f5d124d8.jpg",
+    "label": "EXHIBIT 10",
+    "context": "EXHIBIT 11: What it takes to convert BTC mining data centers to AI data centers",
+    "figure_id": "F258",
+    "latex_path": "figures/fig_258.jpg"
+  },
+  {
+    "report_id": "R033",
+    "report_title": "印度数据中心：市场真正低估的不是需求，而是电力基础设施的再定价",
+    "source_path": "xhs_notes/dropbox/260604/shard_6/0002-32-Bernstein-India-Industrials-and-Infrastructure-Electric-India--Data-Cent/mineru_raw/images/9349a6200999367e96febf2066bc475a75d8003c4dba7bb0d5fb39a6f6374699.jpg",
+    "label": "EXHIBIT 10",
+    "context": "EXHIBIT 11: What it takes to convert BTC mining data centers to AI data centers ```mermaid graph LR",
+    "figure_id": "F259",
+    "latex_path": "figures/fig_259.jpg"
+  },
+  {
+    "report_id": "R033",
+    "report_title": "印度数据中心：市场真正低估的不是需求，而是电力基础设施的再定价",
+    "source_path": "xhs_notes/dropbox/260604/shard_6/0002-32-Bernstein-India-Industrials-and-Infrastructure-Electric-India--Data-Cent/mineru_raw/images/60d3db570d9f3815f05e914d9a0ff64cc317158ef3cb8c16aec61c8e6452d265.jpg",
+    "label": "Exhibit 16",
+    "context": "EXHIBIT 16: Share price trend for US power generation companies None of them is covered by us Two factors are driving this gap - dispatchable generation capacity and location of the plants. The biggest beneficiaries have been comp",
+    "figure_id": "F260",
+    "latex_path": "figures/fig_260.jpg"
+  },
+  {
+    "report_id": "R033",
+    "report_title": "印度数据中心：市场真正低估的不是需求，而是电力基础设施的再定价",
+    "source_path": "xhs_notes/dropbox/260604/shard_6/0002-32-Bernstein-India-Industrials-and-Infrastructure-Electric-India--Data-Cent/mineru_raw/images/a96799a5e89a09055be782208583591221421362ad6df63e3c299421140b0134.jpg",
+    "label": "Exhibit 19",
+    "context": "EXHIBIT 19: Vistra Corp: increased revenues (in 2025 vs 2024) from wholesale generation and capacity market EXHIBIT 20: PJM market capacity revenues",
+    "figure_id": "F261",
+    "latex_path": "figures/fig_261.jpg"
+  },
+  {
+    "report_id": "R033",
+    "report_title": "印度数据中心：市场真正低估的不是需求，而是电力基础设施的再定价",
+    "source_path": "xhs_notes/dropbox/260604/shard_6/0002-32-Bernstein-India-Industrials-and-Infrastructure-Electric-India--Data-Cent/mineru_raw/images/f84c0c3c186946d77910e406d002398f4d4a38cc40326fc189b060441ac3d0c6.jpg",
+    "label": "Exhibit 19",
+    "context": "EXHIBIT 19: Vistra Corp: increased revenues (in 2025 vs 2024) from wholesale generation and capacity market EXHIBIT 20: PJM market capacity revenues",
+    "figure_id": "F262",
+    "latex_path": "figures/fig_262.jpg"
+  },
+  {
+    "report_id": "R033",
+    "report_title": "印度数据中心：市场真正低估的不是需求，而是电力基础设施的再定价",
+    "source_path": "xhs_notes/dropbox/260604/shard_6/0002-32-Bernstein-India-Industrials-and-Infrastructure-Electric-India--Data-Cent/mineru_raw/images/8a07873b9944bfe038448681a6e3c22d8d111de214863889166c4445e4674525.jpg",
+    "label": "EXHIBIT 21",
+    "context": "EXHIBIT 21: ERCOT ATC average power prices",
+    "figure_id": "F263",
+    "latex_path": "figures/fig_263.jpg"
+  },
+  {
+    "report_id": "R034",
+    "report_title": "重卡市场的真正拐点不在总量，而在动力系统的加速切换",
+    "source_path": "xhs_notes/dropbox/260604/shard_6/0003-33-CITI-China-HDT-May-HDT-Sales-Update--Strong-EV-Growth-Offset-by-Weak-LNG/mineru_raw/images/06cabe82429c5c120653aa37775ae64e858b326e650cdffae448d8e2738339fc.jpg",
+    "label": "Figure 1",
+    "context": "Figure 1",
+    "figure_id": "F264",
+    "latex_path": "figures/fig_264.jpg"
+  },
+  {
+    "report_id": "R035",
+    "report_title": "欧洲电力需求的结构性拐点：市场低估的不是复苏，而是电气化的二阶效应",
+    "source_path": "xhs_notes/dropbox/260604/shard_6/0004-34-Goldman-Sachs-Powering-Up-Europe--Electrification-keeps-driving-power-de/mineru_raw/images/eabcfa8d57a003bea5929b842852c3ddc7cf95db001db3df9c5670ebdce3839a.jpg",
+    "label": "Exhibit 1",
+    "context": "Exhibit 1: Power demand across Europe is growing faster YTD than in 2025 Power demand growth by geography, 2025-26 (percentage)",
+    "figure_id": "F265",
+    "latex_path": "figures/fig_265.jpg"
+  },
+  {
+    "report_id": "R036",
+    "report_title": "市场真正低估的不是需求，而是供给侧信心的重建",
+    "source_path": "xhs_notes/dropbox/260604/shard_6/0005-35-HSBC-China-Real-Estate-May-sales-firm--land-premium-driving-sentiment-26/mineru_raw/images/72612820b3fe7273f90df81d852651423295294c0326ae177b056f4f398016c9.jpg",
+    "label": "Figure 2",
+    "context": "Figure 2: Developers' May contracted sales Figure 3: National residential land sales y-o-y decline narrowed to $36\\%$ in 5M26",
+    "figure_id": "F266",
+    "latex_path": "figures/fig_266.jpg"
+  },
+  {
+    "report_id": "R036",
+    "report_title": "市场真正低估的不是需求，而是供给侧信心的重建",
+    "source_path": "xhs_notes/dropbox/260604/shard_6/0005-35-HSBC-China-Real-Estate-May-sales-firm--land-premium-driving-sentiment-26/mineru_raw/images/b5bcb9ba2f290edca054f6d20364d612a7cc6302f4617a1ddfff1d7effc3ac9a.jpg",
+    "label": "Figure 4",
+    "context": "Figure 4: May average secondary units sold in 10 cities +18% y-o-y",
+    "figure_id": "F267",
+    "latex_path": "figures/fig_267.jpg"
+  },
+  {
+    "report_id": "R036",
+    "report_title": "市场真正低估的不是需求，而是供给侧信心的重建",
+    "source_path": "xhs_notes/dropbox/260604/shard_6/0005-35-HSBC-China-Real-Estate-May-sales-firm--land-premium-driving-sentiment-26/mineru_raw/images/1b0142c5c4c9116a365f6caf814125864203454375a370674896ed81ee4f8a0c.jpg",
+    "label": "Figure 5",
+    "context": "Figure 5: Shanghai May secondary transactions (28,023 units) hit a five-year high",
+    "figure_id": "F268",
+    "latex_path": "figures/fig_268.jpg"
+  },
+  {
+    "report_id": "R036",
+    "report_title": "市场真正低估的不是需求，而是供给侧信心的重建",
+    "source_path": "xhs_notes/dropbox/260604/shard_6/0005-35-HSBC-China-Real-Estate-May-sales-firm--land-premium-driving-sentiment-26/mineru_raw/images/abea3fef99d9e5cd8d577fd42c878ce0ef361911a0cb399b189f9944a5ed2b56.jpg",
+    "label": "Figure 7",
+    "context": "Figure 7: SOE developers' forward PE (x)",
+    "figure_id": "F269",
+    "latex_path": "figures/fig_269.jpg"
+  },
+  {
+    "report_id": "R036",
+    "report_title": "市场真正低估的不是需求，而是供给侧信心的重建",
+    "source_path": "xhs_notes/dropbox/260604/shard_6/0005-35-HSBC-China-Real-Estate-May-sales-firm--land-premium-driving-sentiment-26/mineru_raw/images/e8bc7aea45e896e47a220089496b12127cf1f45d2bf0586ea1322a6d1a5ba9b0.jpg",
+    "label": "Figure 8",
+    "context": "Figure 8: SOE developers' NAV discount (%)",
+    "figure_id": "F270",
+    "latex_path": "figures/fig_270.jpg"
+  },
+  {
+    "report_id": "R036",
+    "report_title": "市场真正低估的不是需求，而是供给侧信心的重建",
+    "source_path": "xhs_notes/dropbox/260604/shard_6/0005-35-HSBC-China-Real-Estate-May-sales-firm--land-premium-driving-sentiment-26/mineru_raw/images/b3ba75f99c28762ed3479f3bd5a0ac1aa6a36d9a1d65535b0878297113ea55b9.jpg",
+    "label": "Figure 9",
+    "context": "Figure 9: 2026 YTD share price performance",
+    "figure_id": "F271",
+    "latex_path": "figures/fig_271.jpg"
+  },
+  {
+    "report_id": "R036",
+    "report_title": "市场真正低估的不是需求，而是供给侧信心的重建",
+    "source_path": "xhs_notes/dropbox/260604/shard_6/0005-35-HSBC-China-Real-Estate-May-sales-firm--land-premium-driving-sentiment-26/mineru_raw/images/0f850b227764f1968bd0fed923905876b3a71cb1028abaaffcfa5488b2ecd57d.jpg",
+    "label": "Figure 10",
+    "context": "Figure 10: SOE developers' trailing PB (x)",
+    "figure_id": "F272",
+    "latex_path": "figures/fig_272.jpg"
+  },
+  {
+    "report_id": "R037",
+    "report_title": "市场真正低估的不是需求，而是供给侧的再定价",
+    "source_path": "xhs_notes/dropbox/260604/shard_7/0001-36-J.P.-Morgan-Asia-Factory-Automation---Robotics-FA-cycle--Broader-recover/mineru_raw/images/82eda9ad24a2e7cf90dc65040703ab28aecff3be3176f9c61a8645f22d90a3f5.jpg",
+    "label": "Figure 1",
+    "context": "Figure 1: Asia Factory Automation & Robotics share price over the past month",
+    "figure_id": "F273",
+    "latex_path": "figures/fig_273.jpg"
+  },
+  {
+    "report_id": "R037",
+    "report_title": "市场真正低估的不是需求，而是供给侧的再定价",
+    "source_path": "xhs_notes/dropbox/260604/shard_7/0001-36-J.P.-Morgan-Asia-Factory-Automation---Robotics-FA-cycle--Broader-recover/mineru_raw/images/5979cddc0b1091ace3bf8347d830ec08c5b07d2b38db622aabe69ea7f41c2cae.jpg",
+    "label": "Figure 2",
+    "context": "Figure 2: Asia Factory Automation & Robotics share price YTD",
+    "figure_id": "F274",
+    "latex_path": "figures/fig_274.jpg"
+  },
+  {
+    "report_id": "R037",
+    "report_title": "市场真正低估的不是需求，而是供给侧的再定价",
+    "source_path": "xhs_notes/dropbox/260604/shard_7/0001-36-J.P.-Morgan-Asia-Factory-Automation---Robotics-FA-cycle--Broader-recover/mineru_raw/images/c951343d6e1d6666d6084ac1dfe2b39109a9ae300368b6d8bd1b764d036b8dff.jpg",
+    "label": "Figure 3",
+    "context": "Figure 3: China IA market – market size",
+    "figure_id": "F275",
+    "latex_path": "figures/fig_275.jpg"
+  },
+  {
+    "report_id": "R037",
+    "report_title": "市场真正低估的不是需求，而是供给侧的再定价",
+    "source_path": "xhs_notes/dropbox/260604/shard_7/0001-36-J.P.-Morgan-Asia-Factory-Automation---Robotics-FA-cycle--Broader-recover/mineru_raw/images/6b7b3a7f1fdc0e10ad62728a4374f636c6719eb8348d586d67b78033a2c47be4.jpg",
+    "label": "Figure 4",
+    "context": "Figure 4: China IA market – quarterly growth Y/Y",
+    "figure_id": "F276",
+    "latex_path": "figures/fig_276.jpg"
+  },
+  {
+    "report_id": "R037",
+    "report_title": "市场真正低估的不是需求，而是供给侧的再定价",
+    "source_path": "xhs_notes/dropbox/260604/shard_7/0001-36-J.P.-Morgan-Asia-Factory-Automation---Robotics-FA-cycle--Broader-recover/mineru_raw/images/df24d181be02e4b5450edb49799775fa36f93a75aacf54b0618e81467c102224.jpg",
+    "label": "Figure 5",
+    "context": "Figure 5: China industrial robot market – industry sales",
+    "figure_id": "F277",
+    "latex_path": "figures/fig_277.jpg"
+  },
+  {
+    "report_id": "R037",
+    "report_title": "市场真正低估的不是需求，而是供给侧的再定价",
+    "source_path": "xhs_notes/dropbox/260604/shard_7/0001-36-J.P.-Morgan-Asia-Factory-Automation---Robotics-FA-cycle--Broader-recover/mineru_raw/images/31463d7ee4c96371b6fe1cbe87f2fdf4b416d82d75cf2012d877a278d5dfe875.jpg",
+    "label": "Figure 6",
+    "context": "Figure 6: China industrial robot market – quarterly market share",
+    "figure_id": "F278",
+    "latex_path": "figures/fig_278.jpg"
+  },
+  {
+    "report_id": "R037",
+    "report_title": "市场真正低估的不是需求，而是供给侧的再定价",
+    "source_path": "xhs_notes/dropbox/260604/shard_7/0001-36-J.P.-Morgan-Asia-Factory-Automation---Robotics-FA-cycle--Broader-recover/mineru_raw/images/ef9456a3498386bf590f34a693ef54d67cc092bdad4c43c18071bd013ea9c6c9.jpg",
+    "label": "Figure 7",
+    "context": "Figure 7: Low voltage inverter market – quarterly market share Figure 8: Small PLC market – quarterly market share",
+    "figure_id": "F279",
+    "latex_path": "figures/fig_279.jpg"
+  },
+  {
+    "report_id": "R037",
+    "report_title": "市场真正低估的不是需求，而是供给侧的再定价",
+    "source_path": "xhs_notes/dropbox/260604/shard_7/0001-36-J.P.-Morgan-Asia-Factory-Automation---Robotics-FA-cycle--Broader-recover/mineru_raw/images/9c7a3edd2fee73d68e976e7ca4e4742c3c29db120db11fac181f8d14ea79f988.jpg",
+    "label": "Figure 7",
+    "context": "Figure 7: Low voltage inverter market – quarterly market share Figure 8: Small PLC market – quarterly market share",
+    "figure_id": "F280",
+    "latex_path": "figures/fig_280.jpg"
+  },
+  {
+    "report_id": "R037",
+    "report_title": "市场真正低估的不是需求，而是供给侧的再定价",
+    "source_path": "xhs_notes/dropbox/260604/shard_7/0001-36-J.P.-Morgan-Asia-Factory-Automation---Robotics-FA-cycle--Broader-recover/mineru_raw/images/7980ba9d48fe4f312ce7e957bc08423d5a87a41361b0169a0881be0a509150eb.jpg",
+    "label": "Figure 9",
+    "context": "Figure 9: AC servo market – quarterly market share Figure 10: Mid-to-large PLC market – quarterly market share Figure 11: Fanuc quarterly order trend in China",
+    "figure_id": "F281",
+    "latex_path": "figures/fig_281.jpg"
+  },
+  {
+    "report_id": "R037",
+    "report_title": "市场真正低估的不是需求，而是供给侧的再定价",
+    "source_path": "xhs_notes/dropbox/260604/shard_7/0001-36-J.P.-Morgan-Asia-Factory-Automation---Robotics-FA-cycle--Broader-recover/mineru_raw/images/85e1792395e2f131d3e331a4266145035ef40875f2fc92e73df5dbd68ad97873.jpg",
+    "label": "Figure 9",
+    "context": "Figure 9: AC servo market – quarterly market share Figure 10: Mid-to-large PLC market – quarterly market share Figure 11: Fanuc quarterly order trend in China",
+    "figure_id": "F282",
+    "latex_path": "figures/fig_282.jpg"
+  },
+  {
+    "report_id": "R037",
+    "report_title": "市场真正低估的不是需求，而是供给侧的再定价",
+    "source_path": "xhs_notes/dropbox/260604/shard_7/0001-36-J.P.-Morgan-Asia-Factory-Automation---Robotics-FA-cycle--Broader-recover/mineru_raw/images/a2fae8bcc036b60e230e864c1a1b8657d5d6ab27c15f062756476a7e0a4c9fe3.jpg",
+    "label": "Figure 10",
+    "context": "Figure 10: Mid-to-large PLC market – quarterly market share Figure 11: Fanuc quarterly order trend in China",
+    "figure_id": "F283",
+    "latex_path": "figures/fig_283.jpg"
+  },
+  {
+    "report_id": "R037",
+    "report_title": "市场真正低估的不是需求，而是供给侧的再定价",
+    "source_path": "xhs_notes/dropbox/260604/shard_7/0001-36-J.P.-Morgan-Asia-Factory-Automation---Robotics-FA-cycle--Broader-recover/mineru_raw/images/8afe8bffdc6a964e6432ab5e08adea925daf688a1125440bdfa8934b5940a80d.jpg",
+    "label": "Figure 12",
+    "context": "Figure 12: Yaskawa quarterly order trend in China",
+    "figure_id": "F284",
+    "latex_path": "figures/fig_284.jpg"
+  },
+  {
+    "report_id": "R038",
+    "report_title": "香港零售复苏的真正瓶颈不在游客，而在拼多多",
+    "source_path": "xhs_notes/dropbox/260604/shard_7/0002-37-J.P.-Morgan-Hong-Kong-Commercial-Property-Retail-sales-mildly-softened-i/mineru_raw/images/51ed79ecbd625d5a7efd60c7396d3a5e9020054952ae1de8c671b44ee07e3547.jpg",
+    "label": "Figure 1",
+    "context": "Figure 1: Hong Kong monthly retail sales – overall",
+    "figure_id": "F285",
+    "latex_path": "figures/fig_285.jpg"
+  },
+  {
+    "report_id": "R038",
+    "report_title": "香港零售复苏的真正瓶颈不在游客，而在拼多多",
+    "source_path": "xhs_notes/dropbox/260604/shard_7/0002-37-J.P.-Morgan-Hong-Kong-Commercial-Property-Retail-sales-mildly-softened-i/mineru_raw/images/5207984a298a0d9497ace64a0ddadefb74b480469834abe9c59f9872a2b56d8d.jpg",
+    "label": "Figure 2",
+    "context": "Figure 2: Hong Kong monthly retail sales – overall; excluding electrical goods & motor vehicles",
+    "figure_id": "F286",
+    "latex_path": "figures/fig_286.jpg"
+  },
+  {
+    "report_id": "R038",
+    "report_title": "香港零售复苏的真正瓶颈不在游客，而在拼多多",
+    "source_path": "xhs_notes/dropbox/260604/shard_7/0002-37-J.P.-Morgan-Hong-Kong-Commercial-Property-Retail-sales-mildly-softened-i/mineru_raw/images/a6dd3202f7a4e853159928ae9f45fb0df809da17e027436f44ef5ebf8a408bbc.jpg",
+    "label": "Figure 3",
+    "context": "Figure 3: Hong Kong monthly retail sales – staples",
+    "figure_id": "F287",
+    "latex_path": "figures/fig_287.jpg"
+  },
+  {
+    "report_id": "R038",
+    "report_title": "香港零售复苏的真正瓶颈不在游客，而在拼多多",
+    "source_path": "xhs_notes/dropbox/260604/shard_7/0002-37-J.P.-Morgan-Hong-Kong-Commercial-Property-Retail-sales-mildly-softened-i/mineru_raw/images/b56027d5a64ece0e7e0f64c365c4e3f7e259c8a41788ce8e2abc416e4ab11ac1.jpg",
+    "label": "Figure 4",
+    "context": "Figure 4: Hong Kong monthly retail sales – discretionary",
+    "figure_id": "F288",
+    "latex_path": "figures/fig_288.jpg"
+  },
+  {
+    "report_id": "R038",
+    "report_title": "香港零售复苏的真正瓶颈不在游客，而在拼多多",
+    "source_path": "xhs_notes/dropbox/260604/shard_7/0002-37-J.P.-Morgan-Hong-Kong-Commercial-Property-Retail-sales-mildly-softened-i/mineru_raw/images/63d10199293e0e09386463276b6c220f34ae5e8274b79c3947d5fd7898ed4403.jpg",
+    "label": "Figure 5",
+    "context": "Figure 5: Retail sales performance by type of retail outlet – April 2026",
+    "figure_id": "F289",
+    "latex_path": "figures/fig_289.jpg"
+  },
+  {
+    "report_id": "R038",
+    "report_title": "香港零售复苏的真正瓶颈不在游客，而在拼多多",
+    "source_path": "xhs_notes/dropbox/260604/shard_7/0002-37-J.P.-Morgan-Hong-Kong-Commercial-Property-Retail-sales-mildly-softened-i/mineru_raw/images/9b73ceeb9b797b752a08f1afa9e5386fe3c217dc6dd929e73d0ed691aff8afc4.jpg",
+    "label": "Figure 6",
+    "context": "Figure 6: Retail sales performance by type of retail outlet - 4M26",
+    "figure_id": "F290",
+    "latex_path": "figures/fig_290.jpg"
+  },
+  {
+    "report_id": "R038",
+    "report_title": "香港零售复苏的真正瓶颈不在游客，而在拼多多",
+    "source_path": "xhs_notes/dropbox/260604/shard_7/0002-37-J.P.-Morgan-Hong-Kong-Commercial-Property-Retail-sales-mildly-softened-i/mineru_raw/images/a13bb03f72aca47b0f300739d7d6ef78612925f1344b738915f300c3b73da53e.jpg",
+    "label": "Figure 7",
+    "context": "Figure 7: Pinduoduo (拼多多) - Monthly active users (MAU) in Hong Kong Pinduoduo MAU",
+    "figure_id": "F291",
+    "latex_path": "figures/fig_291.jpg"
+  },
+  {
+    "report_id": "R038",
+    "report_title": "香港零售复苏的真正瓶颈不在游客，而在拼多多",
+    "source_path": "xhs_notes/dropbox/260604/shard_7/0002-37-J.P.-Morgan-Hong-Kong-Commercial-Property-Retail-sales-mildly-softened-i/mineru_raw/images/2cadde935bbefc1f87afcab242665db35f104ab6592634ef0fc658c7b8c02d59.jpg",
+    "label": "Figure 8",
+    "context": "Figure 8: Major non-local e-commerce players – monthly active users (MAU) in Hong Kong MAU # Hong Kong Tourist Arrivals Figure 9: Hong Kong monthly tourist arrivals",
+    "figure_id": "F292",
+    "latex_path": "figures/fig_292.jpg"
+  },
+  {
+    "report_id": "R038",
+    "report_title": "香港零售复苏的真正瓶颈不在游客，而在拼多多",
+    "source_path": "xhs_notes/dropbox/260604/shard_7/0002-37-J.P.-Morgan-Hong-Kong-Commercial-Property-Retail-sales-mildly-softened-i/mineru_raw/images/1384d34cb42e15d8b6b6ab5da9ac1a87f135d20f2ba1f968874b67232afb313b.jpg",
+    "label": "Figure 8",
+    "context": "Figure 8: Major non-local e-commerce players – monthly active users (MAU) in Hong Kong MAU # Hong Kong Tourist Arrivals Figure 9: Hong Kong monthly tourist arrivals",
+    "figure_id": "F293",
+    "latex_path": "figures/fig_293.jpg"
+  },
+  {
+    "report_id": "R039",
+    "report_title": "香港零售增速放缓背后：市场真正低估的不是消费降级，而是供给侧的再定价",
+    "source_path": "xhs_notes/dropbox/260604/shard_7/0003-38-Morgan-Stanley-Hong-Kong-Property-April-Retail-Sales-Slowed-260602/mineru_raw/images/0140ee8bf89b076bef54fcd92ffe4243dbae03d538663f994429c29c0263d861.jpg",
+    "label": "Exhibit 1",
+    "context": "Exhibit 1: Retail Sales Trend",
+    "figure_id": "F294",
+    "latex_path": "figures/fig_294.jpg"
+  },
+  {
+    "report_id": "R039",
+    "report_title": "香港零售增速放缓背后：市场真正低估的不是消费降级，而是供给侧的再定价",
+    "source_path": "xhs_notes/dropbox/260604/shard_7/0003-38-Morgan-Stanley-Hong-Kong-Property-April-Retail-Sales-Slowed-260602/mineru_raw/images/5e39097087180943084e9a00f500ecf4d9c12b2852bb18749b757347151d2235.jpg",
+    "label": "Exhibit 2",
+    "context": "Exhibit 2: Strengthening RMB Is Helping",
+    "figure_id": "F295",
+    "latex_path": "figures/fig_295.jpg"
+  },
+  {
+    "report_id": "R040",
+    "report_title": "香港零售增速放缓背后，真正值得关注的不是需求，而是结构分化",
+    "source_path": "xhs_notes/dropbox/260604/shard_7/0004-39-UBS-Hong-Kong-Property-Slowing-momentum-in-April-retail-sales-260602/mineru_raw/images/fe78c62e3cd274015160f2cd6ae3f9bd10ba129ba253fcbe86aa8c67afd12b97.jpg",
+    "label": "Figure 1",
+    "context": "Figure 1: Hong Kong's retail sales rose by 9% YoY in Apr, in-line with our forecast of high single digit increase HK retail sales value (HK$m)",
+    "figure_id": "F296",
+    "latex_path": "figures/fig_296.jpg"
+  },
+  {
+    "report_id": "R040",
+    "report_title": "香港零售增速放缓背后，真正值得关注的不是需求，而是结构分化",
+    "source_path": "xhs_notes/dropbox/260604/shard_7/0004-39-UBS-Hong-Kong-Property-Slowing-momentum-in-April-retail-sales-260602/mineru_raw/images/4ba0a417d9339a293aeea838c0b8bc480ed06e26b6bac4ebe16616b02fbd1f18.jpg",
+    "label": "Figure 2",
+    "context": "Figure 2: The April retail sales recovery rate reached 79% (vs 2018) HK retail sales vs mainland visitation recovery rate vs 2018",
+    "figure_id": "F297",
+    "latex_path": "figures/fig_297.jpg"
+  },
+  {
+    "report_id": "R040",
+    "report_title": "香港零售增速放缓背后，真正值得关注的不是需求，而是结构分化",
+    "source_path": "xhs_notes/dropbox/260604/shard_7/0004-39-UBS-Hong-Kong-Property-Slowing-momentum-in-April-retail-sales-260602/mineru_raw/images/badd0b0dd59a31d3ae58a71d6b96602f2b19622ac40f917f8d7b5fc7d7a1b14b.jpg",
+    "label": "Figure 3",
+    "context": "Figure 3: Electrical goods, luxury goods and EV sales continued to drive the retail sales growth in Apr",
+    "figure_id": "F298",
+    "latex_path": "figures/fig_298.jpg"
+  },
+  {
+    "report_id": "R040",
+    "report_title": "香港零售增速放缓背后，真正值得关注的不是需求，而是结构分化",
+    "source_path": "xhs_notes/dropbox/260604/shard_7/0004-39-UBS-Hong-Kong-Property-Slowing-momentum-in-April-retail-sales-260602/mineru_raw/images/87df289ba3f81526e325e35b8a7a00a49cc33c9b5af9437eda1a7722ea862063.jpg",
+    "label": "Figure 4",
+    "context": "Figure 4: Online penetration remained at 10% in Apr 2026 HK online retail sales growth vs online penetration",
+    "figure_id": "F299",
+    "latex_path": "figures/fig_299.jpg"
+  },
+  {
+    "report_id": "R040",
+    "report_title": "香港零售增速放缓背后，真正值得关注的不是需求，而是结构分化",
+    "source_path": "xhs_notes/dropbox/260604/shard_7/0004-39-UBS-Hong-Kong-Property-Slowing-momentum-in-April-retail-sales-260602/mineru_raw/images/1b463034e3ea229bb6d4311655f02b52633db91fc8f5dca195d343629ff64709.jpg",
+    "label": "Figure 5",
+    "context": "Figure 5: Monthly HK residents' northbound departures have recently stabilized at +10% in May",
+    "figure_id": "F300",
+    "latex_path": "figures/fig_300.jpg"
+  },
+  {
+    "report_id": "R040",
+    "report_title": "香港零售增速放缓背后，真正值得关注的不是需求，而是结构分化",
+    "source_path": "xhs_notes/dropbox/260604/shard_7/0004-39-UBS-Hong-Kong-Property-Slowing-momentum-in-April-retail-sales-260602/mineru_raw/images/1768e53bb745cfa3a2cc545254f6938eac9727918e1f204938d93d7b04954532.jpg",
+    "label": "Figure 6",
+    "context": "Figure 6: Overseas departure volumes by HK residents was slightly down 1% in May",
+    "figure_id": "F301",
+    "latex_path": "figures/fig_301.jpg"
+  },
+  {
+    "report_id": "R043",
+    "report_title": "市场真正低估的不是电动车需求，而是汽车供应商的800V技术迁移能力",
+    "source_path": "xhs_notes/dropbox/260604/shard_8/0002-42-UBS-US-Autos--Auto-Parts-and-Auto-tech-800V--From-EV-to-DC--and-BESS--26/mineru_raw/images/1b85170f545e58db83018f5232ea14d823831403d372929bb13cea994837e4d2.jpg",
+    "label": "Figure 2",
+    "context": "Figure 2: UBS Evidence Lab's monitor of Global Data Centers shows 181 GW of capacity that is planned or under construction Global Data Center Capacity (GW)",
+    "figure_id": "F302",
+    "latex_path": "figures/fig_302.jpg"
+  },
+  {
+    "report_id": "R043",
+    "report_title": "市场真正低估的不是电动车需求，而是汽车供应商的800V技术迁移能力",
+    "source_path": "xhs_notes/dropbox/260604/shard_8/0002-42-UBS-US-Autos--Auto-Parts-and-Auto-tech-800V--From-EV-to-DC--and-BESS--26/mineru_raw/images/946ee94319cc4ca34ffc73bf36710846dc543bebd9e17c536a0a77a5783b7da9.jpg",
+    "label": "Figure 3",
+    "context": "Figure 3: Excluding China, the data shows 172 GW of capacity planned or under construction Global (ex-China) Data Center Capacity (GW)",
+    "figure_id": "F303",
+    "latex_path": "figures/fig_303.jpg"
+  },
+  {
+    "report_id": "R043",
+    "report_title": "市场真正低估的不是电动车需求，而是汽车供应商的800V技术迁移能力",
+    "source_path": "xhs_notes/dropbox/260604/shard_8/0002-42-UBS-US-Autos--Auto-Parts-and-Auto-tech-800V--From-EV-to-DC--and-BESS--26/mineru_raw/images/15d0c4ff59367d138e7fcec48fe034f349df7442b0bb33512678b72dcaae2ff7.jpg",
+    "label": "Figure 4",
+    "context": "Figure 4: Global BESS forecast",
+    "figure_id": "F304",
+    "latex_path": "figures/fig_304.jpg"
+  },
+  {
+    "report_id": "R043",
+    "report_title": "市场真正低估的不是电动车需求，而是汽车供应商的800V技术迁移能力",
+    "source_path": "xhs_notes/dropbox/260604/shard_8/0002-42-UBS-US-Autos--Auto-Parts-and-Auto-tech-800V--From-EV-to-DC--and-BESS--26/mineru_raw/images/ad29e2e552a762393e8abda7eed114b7c03c8aa09b5d17135751d5760f1a22cf.jpg",
+    "label": "Figure 5",
+    "context": "Figure 5: Global BESS forecast (ex-China)",
+    "figure_id": "F305",
+    "latex_path": "figures/fig_305.jpg"
+  },
+  {
+    "report_id": "R044",
+    "report_title": "世界杯对啤酒销量的拉动，被市场高估了",
+    "source_path": "xhs_notes/dropbox/260604/shard_8/0003-43-UBS-US-Beverages-World-cup--26-How-much-can-beer-actually-net--260602/mineru_raw/images/b8664604a2aac373565bc70c29a81a56f03960dcd9e3284eda2660cd7845880d.jpg",
+    "label": "Figure 1",
+    "context": "Figure 1: On-Trade Beer Volumes Spiked YoY During Previous World Cup Events...",
+    "figure_id": "F306",
+    "latex_path": "figures/fig_306.jpg"
+  },
+  {
+    "report_id": "R044",
+    "report_title": "世界杯对啤酒销量的拉动，被市场高估了",
+    "source_path": "xhs_notes/dropbox/260604/shard_8/0003-43-UBS-US-Beverages-World-cup--26-How-much-can-beer-actually-net--260602/mineru_raw/images/4021e667482498297293f10b34bfb9f4865194953333189c033a28b06e6ae8c8.jpg",
+    "label": "Figure 2",
+    "context": "Figure 2: ...As Did Off-Trade Volumes YoY",
+    "figure_id": "F307",
+    "latex_path": "figures/fig_307.jpg"
+  },
+  {
+    "report_id": "R044",
+    "report_title": "世界杯对啤酒销量的拉动，被市场高估了",
+    "source_path": "xhs_notes/dropbox/260604/shard_8/0003-43-UBS-US-Beverages-World-cup--26-How-much-can-beer-actually-net--260602/mineru_raw/images/0b180b558fb74c465286e45d0e0ccfc47729a1f37b6f81ef97842565a23159d2.jpg",
+    "label": "Figure 3",
+    "context": "Figure 3: Beer Volumes Have Been Declining at \\~1% Per Year, But 2006 Likely Provided a \\~9% Uplift to Monthly Volumes",
+    "figure_id": "F308",
+    "latex_path": "figures/fig_308.jpg"
+  },
+  {
+    "report_id": "R044",
+    "report_title": "世界杯对啤酒销量的拉动，被市场高估了",
+    "source_path": "xhs_notes/dropbox/260604/shard_8/0003-43-UBS-US-Beverages-World-cup--26-How-much-can-beer-actually-net--260602/mineru_raw/images/7ed58da21f4fc7fd094b9883baf226810cd7a7c674d872c10a1a3a37abb6d416.jpg",
+    "label": "Figure 4",
+    "context": "Figure 4: Figure 5: On-Trade Spirit Volumes Spiked YoY During Previous World Cups Events...",
+    "figure_id": "F309",
+    "latex_path": "figures/fig_309.jpg"
+  },
+  {
+    "report_id": "R044",
+    "report_title": "世界杯对啤酒销量的拉动，被市场高估了",
+    "source_path": "xhs_notes/dropbox/260604/shard_8/0003-43-UBS-US-Beverages-World-cup--26-How-much-can-beer-actually-net--260602/mineru_raw/images/e5ce9350226769363f94a758eedc5c7d64e50696bae5d3f7b1165554f2187690.jpg",
+    "label": "Figure 6",
+    "context": "Figure 6: ..As Did Off-Trade Volumes YoY",
+    "figure_id": "F310",
+    "latex_path": "figures/fig_310.jpg"
+  },
+  {
+    "report_id": "R044",
+    "report_title": "世界杯对啤酒销量的拉动，被市场高估了",
+    "source_path": "xhs_notes/dropbox/260604/shard_8/0003-43-UBS-US-Beverages-World-cup--26-How-much-can-beer-actually-net--260602/mineru_raw/images/0fdd1ce09ff5b1acea25b5ecf5825abce08fe2301dfadebe1a7446a9185f2160.jpg",
+    "label": "Figure 7",
+    "context": "Figure 7: Mix of Alcohol Off-Trade During World Cup Years Mix of Alcohol Sold During World Cup (Off-Trade)",
+    "figure_id": "F311",
+    "latex_path": "figures/fig_311.jpg"
+  },
+  {
+    "report_id": "R044",
+    "report_title": "世界杯对啤酒销量的拉动，被市场高估了",
+    "source_path": "xhs_notes/dropbox/260604/shard_8/0003-43-UBS-US-Beverages-World-cup--26-How-much-can-beer-actually-net--260602/mineru_raw/images/c5cda1b9dca77d5e2ee74954b48b8886a1fa6f56279421bcae8f3045aada5170.jpg",
+    "label": "Figure 8",
+    "context": "Figure 8: Mix of Alcohol On-Trade During World Cup Years",
+    "figure_id": "F312",
+    "latex_path": "figures/fig_312.jpg"
+  },
+  {
+    "report_id": "R044",
+    "report_title": "世界杯对啤酒销量的拉动，被市场高估了",
+    "source_path": "xhs_notes/dropbox/260604/shard_8/0003-43-UBS-US-Beverages-World-cup--26-How-much-can-beer-actually-net--260602/mineru_raw/images/ee2951712583f03fe1db1171447d8855aa8f981930c38f67b959041e4eb30dee.jpg",
+    "label": "Figure 9",
+    "context": "Figure 9: South Africa Alcohol Mix by Total Volumes",
+    "figure_id": "F313",
+    "latex_path": "figures/fig_313.jpg"
+  },
+  {
+    "report_id": "R044",
+    "report_title": "世界杯对啤酒销量的拉动，被市场高估了",
+    "source_path": "xhs_notes/dropbox/260604/shard_8/0003-43-UBS-US-Beverages-World-cup--26-How-much-can-beer-actually-net--260602/mineru_raw/images/3056d6803aca97cd950da626bbc46438135b90d1b782529953c3c4a423c83c14.jpg",
+    "label": "Figure 10",
+    "context": "Figure 10: Brazil Alcohol Mix by Total Volumes Brazil Total Alcohol Sales Mix by Volume",
+    "figure_id": "F314",
+    "latex_path": "figures/fig_314.jpg"
+  },
+  {
+    "report_id": "R044",
+    "report_title": "世界杯对啤酒销量的拉动，被市场高估了",
+    "source_path": "xhs_notes/dropbox/260604/shard_8/0003-43-UBS-US-Beverages-World-cup--26-How-much-can-beer-actually-net--260602/mineru_raw/images/a94883f5da3972c7e779bbf1c78672939a2ca130ba9ed8cea33f4372a2c2c6a8.jpg",
+    "label": "Figure 11",
+    "context": "Figure 11: Russia Alcohol Mix by Total Volumes",
+    "figure_id": "F315",
+    "latex_path": "figures/fig_315.jpg"
+  },
+  {
+    "report_id": "R044",
+    "report_title": "世界杯对啤酒销量的拉动，被市场高估了",
+    "source_path": "xhs_notes/dropbox/260604/shard_8/0003-43-UBS-US-Beverages-World-cup--26-How-much-can-beer-actually-net--260602/mineru_raw/images/596b50d717b2c1fd2a1c674b498298b183c85337fd04cf2d460b7a1844954424.jpg",
+    "label": "Figure 12",
+    "context": "Figure 12: Qatar Alcohol Mix by Total Volumes",
+    "figure_id": "F316",
+    "latex_path": "figures/fig_316.jpg"
+  },
+  {
+    "report_id": "R044",
+    "report_title": "世界杯对啤酒销量的拉动，被市场高估了",
+    "source_path": "xhs_notes/dropbox/260604/shard_8/0003-43-UBS-US-Beverages-World-cup--26-How-much-can-beer-actually-net--260602/mineru_raw/images/0744e62aef6060f07892a80d768fae71afad1e16b433534a79d7633ab99f567c.jpg",
+    "label": "Figure 13",
+    "context": "Figure 13: USA Favors Beer and Spirits...",
+    "figure_id": "F317",
+    "latex_path": "figures/fig_317.jpg"
+  },
+  {
+    "report_id": "R044",
+    "report_title": "世界杯对啤酒销量的拉动，被市场高估了",
+    "source_path": "xhs_notes/dropbox/260604/shard_8/0003-43-UBS-US-Beverages-World-cup--26-How-much-can-beer-actually-net--260602/mineru_raw/images/df4dbabcdd01adf437e54b5d828518989a5cf1beaf4b1ef0b1a6f512274b0724.jpg",
+    "label": "Figure 14",
+    "context": "Figure 14: ...While Mexico Overwhelmingly Consumes Beer...",
+    "figure_id": "F318",
+    "latex_path": "figures/fig_318.jpg"
+  },
+  {
+    "report_id": "R044",
+    "report_title": "世界杯对啤酒销量的拉动，被市场高估了",
+    "source_path": "xhs_notes/dropbox/260604/shard_8/0003-43-UBS-US-Beverages-World-cup--26-How-much-can-beer-actually-net--260602/mineru_raw/images/f23922152a0cf12e3add53a6351ae306347903a07f12aa8e6790ece481f57628.jpg",
+    "label": "Figure 15",
+    "context": "Figure 15: ...and Canada Prefers Beer and Wine",
+    "figure_id": "F319",
+    "latex_path": "figures/fig_319.jpg"
+  },
+  {
+    "report_id": "R044",
+    "report_title": "世界杯对啤酒销量的拉动，被市场高估了",
+    "source_path": "xhs_notes/dropbox/260604/shard_8/0003-43-UBS-US-Beverages-World-cup--26-How-much-can-beer-actually-net--260602/mineru_raw/images/0e019d18126aaaa7c90148e7d9efa2600b02973c516960e7dec69117ef035657.jpg",
+    "label": "Figure 16",
+    "context": "Figure 16: Absolute Beer EQ Units (T-4W)",
+    "figure_id": "F320",
+    "latex_path": "figures/fig_320.jpg"
+  },
+  {
+    "report_id": "R044",
+    "report_title": "世界杯对啤酒销量的拉动，被市场高估了",
+    "source_path": "xhs_notes/dropbox/260604/shard_8/0003-43-UBS-US-Beverages-World-cup--26-How-much-can-beer-actually-net--260602/mineru_raw/images/03e7fe7a5b9f09a59eb60c2626fbaa8795676f3250b32de0be94fffe9c01e993.jpg",
+    "label": "Figure 17",
+    "context": "Figure 17: Absolute Beer Takeaway (T-4W)",
+    "figure_id": "F321",
+    "latex_path": "figures/fig_321.jpg"
+  },
+  {
+    "report_id": "R044",
+    "report_title": "世界杯对啤酒销量的拉动，被市场高估了",
+    "source_path": "xhs_notes/dropbox/260604/shard_8/0003-43-UBS-US-Beverages-World-cup--26-How-much-can-beer-actually-net--260602/mineru_raw/images/c8d18cd336999019ea18356d81e298753427d5e302f67ba2377f8c89604126a9.jpg",
+    "label": "Figure 18",
+    "context": "Figure 18: The Super Bowl Adds an Estimated +6.6% Uplift to Weekly Volumes Annually",
+    "figure_id": "F322",
+    "latex_path": "figures/fig_322.jpg"
+  },
+  {
+    "report_id": "R045",
+    "report_title": "市场真正低估的不是需求，而是华为LogicFolding的供给端突破",
+    "source_path": "xhs_notes/dropbox/260604/shard_8/0004-44-Bernstein-China-Semis--Huawei-s-LogicFolding--an-underestimated-breakthr/mineru_raw/images/a2be5bbbcfebb6a471eaf8f1dd2fd2c9434fe6c45371b26f36e65f8cf8cd7a01.jpg",
+    "label": "EXHIBIT 1",
+    "context": "EXHIBIT 1: Huawei's tau scaling roadmap τ-Scaling Roadmap: Sustainable PPDC Evolution",
+    "figure_id": "F323",
+    "latex_path": "figures/fig_323.jpg"
+  },
+  {
+    "report_id": "R045",
+    "report_title": "市场真正低估的不是需求，而是华为LogicFolding的供给端突破",
+    "source_path": "xhs_notes/dropbox/260604/shard_8/0004-44-Bernstein-China-Semis--Huawei-s-LogicFolding--an-underestimated-breakthr/mineru_raw/images/9e2e74098e8d72eff778caa1d3fa44f4e475f8f16e65920c28cc03ea5bf6c457.jpg",
+    "label": "EXHIBIT 3",
+    "context": "EXHIBIT 3: Illustration of the LogicFolding principle # LogicFolding ```mermaid graph TD",
+    "figure_id": "F324",
+    "latex_path": "figures/fig_324.jpg"
+  },
+  {
+    "report_id": "R046",
+    "report_title": "市场低估的不是中国创新药的短期回调，而是结构性定价重置的起点",
+    "source_path": "xhs_notes/dropbox/260604/shard_8/0005-45-Bernstein-China-Pharma---Biotech--ASCO-2026-Part-3-Summary--for-when-fun/mineru_raw/images/5123ae9e733ad5674be4de32a3f721353668e76ee0aee8d8868b9cfe69d4dd32.jpg",
+    "label": "EXHIBIT 1",
+    "context": "EXHIBIT 1: Sector performance has been fluctuating and declining since 2026",
+    "figure_id": "F325",
+    "latex_path": "figures/fig_325.jpg"
+  },
+  {
+    "report_id": "R046",
+    "report_title": "市场低估的不是中国创新药的短期回调，而是结构性定价重置的起点",
+    "source_path": "xhs_notes/dropbox/260604/shard_8/0005-45-Bernstein-China-Pharma---Biotech--ASCO-2026-Part-3-Summary--for-when-fun/mineru_raw/images/c64fdad841c475826ecf61ff8211c4a91f3bfcd321ba119e47b3d38476ab1d8f.jpg",
+    "label": "EXHIBIT 2",
+    "context": "EXHIBIT 2: In terms of 1-yr forward P/E. pharma valuation has nearly reached all-time low",
+    "figure_id": "F326",
+    "latex_path": "figures/fig_326.jpg"
+  },
+  {
+    "report_id": "R046",
+    "report_title": "市场低估的不是中国创新药的短期回调，而是结构性定价重置的起点",
+    "source_path": "xhs_notes/dropbox/260604/shard_8/0005-45-Bernstein-China-Pharma---Biotech--ASCO-2026-Part-3-Summary--for-when-fun/mineru_raw/images/ac71cce22fca54ead9f7095cc5d4f77772d243dd35a2e4c4b8847ed19e979e45.jpg",
+    "label": "EXHIBIT 3",
+    "context": "EXHIBIT 3: In terms of 1-yr forward P/S, China biotech companies have seen a decline since sector peak in 2025 P/S change - Peak & Low vs. Current",
+    "figure_id": "F327",
+    "latex_path": "figures/fig_327.jpg"
+  },
+  {
+    "report_id": "R046",
+    "report_title": "市场低估的不是中国创新药的短期回调，而是结构性定价重置的起点",
+    "source_path": "xhs_notes/dropbox/260604/shard_8/0005-45-Bernstein-China-Pharma---Biotech--ASCO-2026-Part-3-Summary--for-when-fun/mineru_raw/images/fb1aecc4cb70a4b9382fc09d6894cb03154110ff3f3303514d9824d4398f2fdc.jpg",
+    "label": "EXHIBIT 11",
+    "context": "EXHIBIT 11: In PD-L1+ NSCLC (1L), sac-TMT combined with pembro solicits higher ORR, deep response rate, and duration of response compared to pembro monotherapy # ORR, Deep Response, and DOR (BICR) Sac-TMT + pembro improved ORR, deep",
+    "figure_id": "F328",
+    "latex_path": "figures/fig_328.jpg"
+  },
+  {
+    "report_id": "R046",
+    "report_title": "市场低估的不是中国创新药的短期回调，而是结构性定价重置的起点",
+    "source_path": "xhs_notes/dropbox/260604/shard_8/0005-45-Bernstein-China-Pharma---Biotech--ASCO-2026-Part-3-Summary--for-when-fun/mineru_raw/images/0904857a6ab5cbb6e520b4746a150d24a7661fe1e17fc45d073d9d6804042c5e.jpg",
+    "label": "EXHIBIT 17",
+    "context": "EXHIBIT 17: In 1L HR+/HER2- BC, BGB-43395 reports tolerable hematologic toxicities with G3 and above TEAE for neutropenia at 0% Leading CDKi drugs safety profile comps (1L HER2- BC)",
+    "figure_id": "F329",
+    "latex_path": "figures/fig_329.jpg"
+  },
+  {
+    "report_id": "R049",
+    "report_title": "市场低估的不是AI数据中心是否需要储能，而是储能订单正在从“是否”转向“何时”",
+    "source_path": "xhs_notes/dropbox/260604/shard_9/0003-48-J.P.-Morgan-AIDC-ESS-Reference-Architectures-and-Early-Orders-Point-to-E/mineru_raw/images/a579a0f4a12d1ce422d735597de4bc4db2def2937dd3300ea9a95a65e64e53d3.jpg",
+    "label": "Figure 1",
+    "context": "Figure 1: Levels of energy storage in a data center ```mermaid graph TD",
+    "figure_id": "F330",
+    "latex_path": "figures/fig_330.jpg"
+  },
+  {
+    "report_id": "R050",
+    "report_title": "日本游戏股被低估的不是业绩，而是AI带来的供给侧重塑",
+    "source_path": "xhs_notes/dropbox/260604/shard_9/0004-49-Bernstein-Japan-Video-Gaming--Acceptance-is-the-first-step-to-change--26/mineru_raw/images/98726206424b16a0781877b80cfbe9babae7534d2c41cafd6c4154eadb6447ac.jpg",
+    "label": "Exhibit 4",
+    "context": "EXHIBIT 2: The Japan Video Gaming sector has had a difficult start to : Japan Video Gaming share price performance",
+    "figure_id": "F331",
+    "latex_path": "figures/fig_331.jpg"
+  },
+  {
+    "report_id": "R050",
+    "report_title": "日本游戏股被低估的不是业绩，而是AI带来的供给侧重塑",
+    "source_path": "xhs_notes/dropbox/260604/shard_9/0004-49-Bernstein-Japan-Video-Gaming--Acceptance-is-the-first-step-to-change--26/mineru_raw/images/aafe27d9915e33389260b4cd4e07e05cbe90d3f4a156658cb55e98b265b88a8e.jpg",
+    "label": "EXHIBIT 3",
+    "context": "EXHIBIT 3: ...with valuation de-rating representing a headwind more or less across the board",
+    "figure_id": "F332",
+    "latex_path": "figures/fig_332.jpg"
+  },
+  {
+    "report_id": "R050",
+    "report_title": "日本游戏股被低估的不是业绩，而是AI带来的供给侧重塑",
+    "source_path": "xhs_notes/dropbox/260604/shard_9/0004-49-Bernstein-Japan-Video-Gaming--Acceptance-is-the-first-step-to-change--26/mineru_raw/images/8aa86477bc5bdfd20502ae18f0bbfda468649add1ff64e9395a461ee606458fd.jpg",
+    "label": "EXHIBIT 4",
+    "context": "EXHIBIT 4: Our tracker of the top global video gaming companies showed c. 11.3% industry revenue growth in the March quarter",
+    "figure_id": "F333",
+    "latex_path": "figures/fig_333.jpg"
+  },
+  {
+    "report_id": "R050",
+    "report_title": "日本游戏股被低估的不是业绩，而是AI带来的供给侧重塑",
+    "source_path": "xhs_notes/dropbox/260604/shard_9/0004-49-Bernstein-Japan-Video-Gaming--Acceptance-is-the-first-step-to-change--26/mineru_raw/images/814bf292c9df87f0d07df041e33b983118d102f7ed430f4d45765f6c1a9842ac.jpg",
+    "label": "Exhibit 7",
+    "context": "EXHIBIT 7: The Japan Video Gaming stocks we cover (ex. Sony) now trade on 19.7x FY3/27E PE... FY3/27E: Japan Video Gaming PE multiples",
+    "figure_id": "F334",
+    "latex_path": "figures/fig_334.jpg"
+  },
+  {
+    "report_id": "R050",
+    "report_title": "日本游戏股被低估的不是业绩，而是AI带来的供给侧重塑",
+    "source_path": "xhs_notes/dropbox/260604/shard_9/0004-49-Bernstein-Japan-Video-Gaming--Acceptance-is-the-first-step-to-change--26/mineru_raw/images/945a068575dcc9fabcf75279369801922d55d5ea9d595a18e3d85c05bef9f180.jpg",
+    "label": "EXHIBIT 8",
+    "context": "EXHIBIT 8: ... and 17.7x FY3/28 P/E on our estimates, which we'd expect investors to focus more on over time FY3/28E: Japan Video Gaming PE multiples",
+    "figure_id": "F335",
+    "latex_path": "figures/fig_335.jpg"
+  },
+  {
+    "report_id": "R050",
+    "report_title": "日本游戏股被低估的不是业绩，而是AI带来的供给侧重塑",
+    "source_path": "xhs_notes/dropbox/260604/shard_9/0004-49-Bernstein-Japan-Video-Gaming--Acceptance-is-the-first-step-to-change--26/mineru_raw/images/0ddaf2a6a88ce8261ad3f5d73282409ca56745d41fb4fb8df0ac902c054d92b1.jpg",
+    "label": "EXHIBIT 9",
+    "context": "EXHIBIT 9: Japan Video Gaming sector 1-year forward PE now stands below average levels since 2020",
+    "figure_id": "F336",
+    "latex_path": "figures/fig_336.jpg"
+  },
+  {
+    "report_id": "R050",
+    "report_title": "日本游戏股被低估的不是业绩，而是AI带来的供给侧重塑",
+    "source_path": "xhs_notes/dropbox/260604/shard_9/0004-49-Bernstein-Japan-Video-Gaming--Acceptance-is-the-first-step-to-change--26/mineru_raw/images/e4baeb4e9cc26d502efc669817588195940effbaa7717789daf3225e9bac3625.jpg",
+    "label": "EXHIBIT 10",
+    "context": "EXHIBIT 10: Most Japan Video Gaming stocks now sit toward the lower half of their 10–90th percentile forward PE ranges",
+    "figure_id": "F337",
+    "latex_path": "figures/fig_337.jpg"
+  },
+  {
+    "report_id": "R050",
+    "report_title": "日本游戏股被低估的不是业绩，而是AI带来的供给侧重塑",
+    "source_path": "xhs_notes/dropbox/260604/shard_9/0004-49-Bernstein-Japan-Video-Gaming--Acceptance-is-the-first-step-to-change--26/mineru_raw/images/cfd080779779c7dbf1dec9444455fccbd7c1924ffbbe623733b212861e86510f.jpg",
+    "label": "EXHIBIT 11",
+    "context": "EXHIBIT 11: Our coverage stocks now average 11.9x FY3/27 EV/EBIT...",
+    "figure_id": "F338",
+    "latex_path": "figures/fig_338.jpg"
+  },
+  {
+    "report_id": "R050",
+    "report_title": "日本游戏股被低估的不是业绩，而是AI带来的供给侧重塑",
+    "source_path": "xhs_notes/dropbox/260604/shard_9/0004-49-Bernstein-Japan-Video-Gaming--Acceptance-is-the-first-step-to-change--26/mineru_raw/images/313a875d2d33e8c9e13ebc8faa35b1c524a0e610b0747474b899661253f91e08.jpg",
+    "label": "EXHIBIT 12",
+    "context": "EXHIBIT 12: ... and 10.11x FY3/28 EV/EBIT, similarly cheap compared with history FY3/28E: Japan Video Gaming EV/EBIT multiples",
+    "figure_id": "F339",
+    "latex_path": "figures/fig_339.jpg"
+  },
+  {
+    "report_id": "R050",
+    "report_title": "日本游戏股被低估的不是业绩，而是AI带来的供给侧重塑",
+    "source_path": "xhs_notes/dropbox/260604/shard_9/0004-49-Bernstein-Japan-Video-Gaming--Acceptance-is-the-first-step-to-change--26/mineru_raw/images/3bc98de431f292f55200c57f5e940d748c8af742d30d0aedee909022facedd41.jpg",
+    "label": "Exhibit 18",
+    "context": "EXHIBIT 13: RE Requiem has continued to sell well, and drive Resident Evil catalog sales",
+    "figure_id": "F340",
+    "latex_path": "figures/fig_340.jpg"
+  },
+  {
+    "report_id": "R050",
+    "report_title": "日本游戏股被低估的不是业绩，而是AI带来的供给侧重塑",
+    "source_path": "xhs_notes/dropbox/260604/shard_9/0004-49-Bernstein-Japan-Video-Gaming--Acceptance-is-the-first-step-to-change--26/mineru_raw/images/1e9f40440898c24445e13204613f8c3a40cf86e5203384e3d01d37ed887b0e05.jpg",
+    "label": "EXHIBIT 14",
+    "context": "EXHIBIT 14: Pragmata was confirmed to have exceed sales targets baked into this year's new units guide",
+    "figure_id": "F341",
+    "latex_path": "figures/fig_341.jpg"
+  },
+  {
+    "report_id": "R050",
+    "report_title": "日本游戏股被低估的不是业绩，而是AI带来的供给侧重塑",
+    "source_path": "xhs_notes/dropbox/260604/shard_9/0004-49-Bernstein-Japan-Video-Gaming--Acceptance-is-the-first-step-to-change--26/mineru_raw/images/5b25ede3ea324747c51d63a5368e594b64f611cdab2dc54b4b91ee8d6111235e.jpg",
+    "label": "EXHIBIT 15",
+    "context": "EXHIBIT 15: With MH Wilds now fixed, and Capcom releasing several hits in a row, we expect the company's catalog growth to look strong in the coming quarters FY3/21- FY3/26: Capcom catalogue sales volume by IP",
+    "figure_id": "F342",
+    "latex_path": "figures/fig_342.jpg"
+  },
+  {
+    "report_id": "R050",
+    "report_title": "日本游戏股被低估的不是业绩，而是AI带来的供给侧重塑",
+    "source_path": "xhs_notes/dropbox/260604/shard_9/0004-49-Bernstein-Japan-Video-Gaming--Acceptance-is-the-first-step-to-change--26/mineru_raw/images/41a8d73b0ef6867b26ad79af985cf8dcca0ba4ea3ad431f71d4135fcc6cb796a.jpg",
+    "label": "EXHIBIT 16",
+    "context": "EXHIBIT 16: We expect the MH Wilds expansion to be announced during summer showcase season EXHIBIT 17: Capcom's forward PE multiple now stands close to one standard deviation below long-term mean",
+    "figure_id": "F343",
+    "latex_path": "figures/fig_343.jpg"
+  },
+  {
+    "report_id": "R050",
+    "report_title": "日本游戏股被低估的不是业绩，而是AI带来的供给侧重塑",
+    "source_path": "xhs_notes/dropbox/260604/shard_9/0004-49-Bernstein-Japan-Video-Gaming--Acceptance-is-the-first-step-to-change--26/mineru_raw/images/d126eefd1bd2afcd6a37fbdfb507773d5bcef855ecdae812314fdbf1398bb8c6.jpg",
+    "label": "Exhibit 21",
+    "context": "EXHIBIT 19: Konami's Q1 is setting up to look far stronger than Street expectations, with eFootball monthly revenues growing sharply even before World Cup excitement really takes off",
+    "figure_id": "F344",
+    "latex_path": "figures/fig_344.jpg"
+  },
+  {
+    "report_id": "R050",
+    "report_title": "日本游戏股被低估的不是业绩，而是AI带来的供给侧重塑",
+    "source_path": "xhs_notes/dropbox/260604/shard_9/0004-49-Bernstein-Japan-Video-Gaming--Acceptance-is-the-first-step-to-change--26/mineru_raw/images/817835c601e3bd4fd0b298cb21e39832f564ed72ef2f0ef665cf3741b92ecf4a.jpg",
+    "label": "EXHIBIT 20",
+    "context": "EXHIBIT 20: eFootball is now a much larger game than in 2022, but even assuming a similar absolute World Cup (e.g. much smaller in percentage terms) implies significant beats to Q1 and potentially Q2 expectations",
+    "figure_id": "F345",
+    "latex_path": "figures/fig_345.jpg"
+  },
+  {
+    "report_id": "R050",
+    "report_title": "日本游戏股被低估的不是业绩，而是AI带来的供给侧重塑",
+    "source_path": "xhs_notes/dropbox/260604/shard_9/0004-49-Bernstein-Japan-Video-Gaming--Acceptance-is-the-first-step-to-change--26/mineru_raw/images/9154532ca508e3de2bc51f2a524765644bf0421e40384c9858c1c8ab89f27bdf.jpg",
+    "label": "EXHIBIT 21",
+    "context": "EXHIBIT 21: Sensor Tower data likely understates eFootball mobile MAUs...",
+    "figure_id": "F346",
+    "latex_path": "figures/fig_346.jpg"
+  },
+  {
+    "report_id": "R050",
+    "report_title": "日本游戏股被低估的不是业绩，而是AI带来的供给侧重塑",
+    "source_path": "xhs_notes/dropbox/260604/shard_9/0004-49-Bernstein-Japan-Video-Gaming--Acceptance-is-the-first-step-to-change--26/mineru_raw/images/0a4b6d747f555a9fda2026a327dc6edabd8f81037119911d3bc76dfe1df46edd.jpg",
+    "label": "EXHIBIT 22",
+    "context": "EXHIBIT 22: ...while PC/console billings growth was said to have matched mobile in recent months",
+    "figure_id": "F347",
+    "latex_path": "figures/fig_347.jpg"
+  },
+  {
+    "report_id": "R050",
+    "report_title": "日本游戏股被低估的不是业绩，而是AI带来的供给侧重塑",
+    "source_path": "xhs_notes/dropbox/260604/shard_9/0004-49-Bernstein-Japan-Video-Gaming--Acceptance-is-the-first-step-to-change--26/mineru_raw/images/dbb52afe0df1b095d05559fa6ed8d822ab70120b0ac407449b70290cc6eb4bdd.jpg",
+    "label": "EXHIBIT 23",
+    "context": "EXHIBIT 23: Konami's forward PE multiple has fallen a long way from last summer's highs, and risk-reward looks favourable in our view",
+    "figure_id": "F348",
+    "latex_path": "figures/fig_348.jpg"
+  },
+  {
+    "report_id": "R050",
+    "report_title": "日本游戏股被低估的不是业绩，而是AI带来的供给侧重塑",
+    "source_path": "xhs_notes/dropbox/260604/shard_9/0004-49-Bernstein-Japan-Video-Gaming--Acceptance-is-the-first-step-to-change--26/mineru_raw/images/470c7792c842ef98b249f40719276fed2b26b01e28840e122446e01e675c6f64.jpg",
+    "label": "Exhibit 27",
+    "context": "EXHIBIT 24: We expect assembler output to pick up in the next few months, as Nintendo produces ahead of sell-in EXHIBIT 25: We've assumed an incremental memory cost headwind for Nintendo in FY3/28, but...",
+    "figure_id": "F349",
+    "latex_path": "figures/fig_349.jpg"
+  },
+  {
+    "report_id": "R050",
+    "report_title": "日本游戏股被低估的不是业绩，而是AI带来的供给侧重塑",
+    "source_path": "xhs_notes/dropbox/260604/shard_9/0004-49-Bernstein-Japan-Video-Gaming--Acceptance-is-the-first-step-to-change--26/mineru_raw/images/6d673046b46a8e4564fcf609d2d77973728590f1744e914991763b62e219d106.jpg",
+    "label": "EXHIBIT 26",
+    "context": "EXHIBIT 26: ...a stronger 2027 line-up, with Pokemon Wind & Waves confirmed, should help the company to better manage the impact year on year; the company's openness to remake titles was interesting to note Nintendo Switch 1P title",
+    "figure_id": "F350",
+    "latex_path": "figures/fig_350.jpg"
+  },
+  {
+    "report_id": "R050",
+    "report_title": "日本游戏股被低估的不是业绩，而是AI带来的供给侧重塑",
+    "source_path": "xhs_notes/dropbox/260604/shard_9/0004-49-Bernstein-Japan-Video-Gaming--Acceptance-is-the-first-step-to-change--26/mineru_raw/images/2ab1573f8398ce420c155b967a1c00d340f497e1faa8a02855c1f66fcdb095e4.jpg",
+    "label": "EXHIBIT 27",
+    "context": "EXHIBIT 27: Nintendo's forward PE multiples are now back near long-term averages, while earnings estimates have fallen to reflect the rise in memory prices",
+    "figure_id": "F351",
+    "latex_path": "figures/fig_351.jpg"
+  },
+  {
+    "report_id": "R050",
+    "report_title": "日本游戏股被低估的不是业绩，而是AI带来的供给侧重塑",
+    "source_path": "xhs_notes/dropbox/260604/shard_9/0004-49-Bernstein-Japan-Video-Gaming--Acceptance-is-the-first-step-to-change--26/mineru_raw/images/b59765892905d198f1a1f635c28c18af65525c62d8c4d116c6473c6bf57bc436.jpg",
+    "label": "Exhibit 35",
+    "context": "EXHIBIT 29: Arc Raiders concurrent users have trended down steadily since launch peak",
+    "figure_id": "F352",
+    "latex_path": "figures/fig_352.jpg"
+  },
+  {
+    "report_id": "R050",
+    "report_title": "日本游戏股被低估的不是业绩，而是AI带来的供给侧重塑",
+    "source_path": "xhs_notes/dropbox/260604/shard_9/0004-49-Bernstein-Japan-Video-Gaming--Acceptance-is-the-first-step-to-change--26/mineru_raw/images/1d7e29612fd89abb3538b430b03aa8a69a99342042d63be26d6d343967520130.jpg",
+    "label": "EXHIBIT 30",
+    "context": "EXHIBIT 30: China operating profit steps down as ex-China contribution becomes larger gradually",
+    "figure_id": "F353",
+    "latex_path": "figures/fig_353.jpg"
+  },
+  {
+    "report_id": "R050",
+    "report_title": "日本游戏股被低估的不是业绩，而是AI带来的供给侧重塑",
+    "source_path": "xhs_notes/dropbox/260604/shard_9/0004-49-Bernstein-Japan-Video-Gaming--Acceptance-is-the-first-step-to-change--26/mineru_raw/images/e8522b38aca531a4eca08c851b25325d70e9cc9d55c10e72ceeceefa8bbffbf7.jpg",
+    "label": "EXHIBIT 31",
+    "context": "EXHIBIT 31: DNF mobile DAUs have fallen sharply from launch and continue to drift lower",
+    "figure_id": "F354",
+    "latex_path": "figures/fig_354.jpg"
+  },
+  {
+    "report_id": "R050",
+    "report_title": "日本游戏股被低估的不是业绩，而是AI带来的供给侧重塑",
+    "source_path": "xhs_notes/dropbox/260604/shard_9/0004-49-Bernstein-Japan-Video-Gaming--Acceptance-is-the-first-step-to-change--26/mineru_raw/images/9ffd97a0e1788482a8d0537435ce12f636f95e4b57cceb79e29af35ebd9eea15.jpg",
+    "label": "EXHIBIT 32",
+    "context": "EXHIBIT 32: DNF mobile total time spent mirrors DAU declines, settling at much lower levels",
+    "figure_id": "F355",
+    "latex_path": "figures/fig_355.jpg"
+  },
+  {
+    "report_id": "R050",
+    "report_title": "日本游戏股被低估的不是业绩，而是AI带来的供给侧重塑",
+    "source_path": "xhs_notes/dropbox/260604/shard_9/0004-49-Bernstein-Japan-Video-Gaming--Acceptance-is-the-first-step-to-change--26/mineru_raw/images/ec391e55fb6f539d10dbfd88795d3e96166ae8f66e733e334503dd6cc02aa266.jpg",
+    "label": "EXHIBIT 33",
+    "context": "EXHIBIT 33: Similarweb visits to dnf.qq.com are volatile but broadly flat after the mid-2025 spike",
+    "figure_id": "F356",
+    "latex_path": "figures/fig_356.jpg"
+  },
+  {
+    "report_id": "R050",
+    "report_title": "日本游戏股被低估的不是业绩，而是AI带来的供给侧重塑",
+    "source_path": "xhs_notes/dropbox/260604/shard_9/0004-49-Bernstein-Japan-Video-Gaming--Acceptance-is-the-first-step-to-change--26/mineru_raw/images/68857ee5fc629f752ce2e432735afeee1701bf1ed76bf0343bd5d8804cc86504.jpg",
+    "label": "EXHIBIT 34",
+    "context": "EXHIBIT 34: Nexon's surprise accounting change in Q4 drove a large reset of the company's go-forward PE multiple",
+    "figure_id": "F357",
+    "latex_path": "figures/fig_357.jpg"
+  },
+  {
+    "report_id": "R050",
+    "report_title": "日本游戏股被低估的不是业绩，而是AI带来的供给侧重塑",
+    "source_path": "xhs_notes/dropbox/260604/shard_9/0004-49-Bernstein-Japan-Video-Gaming--Acceptance-is-the-first-step-to-change--26/mineru_raw/images/b2538b7bbc98e3af24ac2be1016b94f599979f62ac9d08ccc36cbea4ceac48cf.jpg",
+    "label": "Exhibit 36",
+    "context": "EXHIBIT 36: Higher repeat sales and cost savings continue to support a higher floor for Square Enix profits... continued growth in FY3/27E feels likely given the company's release of various Switch 2 edition games FY3/22-FY3/26: S",
+    "figure_id": "F358",
+    "latex_path": "figures/fig_358.jpg"
+  },
+  {
+    "report_id": "R050",
+    "report_title": "日本游戏股被低估的不是业绩，而是AI带来的供给侧重塑",
+    "source_path": "xhs_notes/dropbox/260604/shard_9/0004-49-Bernstein-Japan-Video-Gaming--Acceptance-is-the-first-step-to-change--26/mineru_raw/images/e4dc21df6351d78eb832c010dd7861c646452d6917c793598de7582e9fd04695.jpg",
+    "label": "EXHIBIT 37",
+    "context": "EXHIBIT 37: MMO revenue was guided to grow in FY3/27E, helped by the Evercold expansion for Final Fantasy XIV",
+    "figure_id": "F359",
+    "latex_path": "figures/fig_359.jpg"
+  },
+  {
+    "report_id": "R050",
+    "report_title": "日本游戏股被低估的不是业绩，而是AI带来的供给侧重塑",
+    "source_path": "xhs_notes/dropbox/260604/shard_9/0004-49-Bernstein-Japan-Video-Gaming--Acceptance-is-the-first-step-to-change--26/mineru_raw/images/90a8f4fa78ff586aff19cb4a9d41704de78f3ee203138a8a3379278dba81aac8.jpg",
+    "label": "EXHIBIT 38",
+    "context": "EXHIBIT 38: Square Enix's upcoming mobile launches will be interesting to watch",
+    "figure_id": "F360",
+    "latex_path": "figures/fig_360.jpg"
+  },
+  {
+    "report_id": "R050",
+    "report_title": "日本游戏股被低估的不是业绩，而是AI带来的供给侧重塑",
+    "source_path": "xhs_notes/dropbox/260604/shard_9/0004-49-Bernstein-Japan-Video-Gaming--Acceptance-is-the-first-step-to-change--26/mineru_raw/images/ff0ab75c60587238dda4f52951a2bba71e25088476107852163edd6dc08dfc3e.jpg",
+    "label": "EXHIBIT 39",
+    "context": "EXHIBIT 39: In a sector full of cheap stocks, it's still hard for us to call Square Enix's shares especially attractive, but the sense of stability at the company was encouraging",
+    "figure_id": "F361",
+    "latex_path": "figures/fig_361.jpg"
+  },
+  {
+    "report_id": "R050",
+    "report_title": "日本游戏股被低估的不是业绩，而是AI带来的供给侧重塑",
+    "source_path": "xhs_notes/dropbox/260604/shard_9/0004-49-Bernstein-Japan-Video-Gaming--Acceptance-is-the-first-step-to-change--26/mineru_raw/images/41cb8fb26c73d8f2c8f7d13b91541f990d64c04e2ef43d9e085743b341e44801.jpg",
+    "label": "Exhibit 43",
+    "context": "EXHIBIT 41: Our base case remains that growth in Bandai Namco's Toy & Hobby business tracks broader anime growth... around the $10\\%$ per annum range FY3/23-FY3/26: Group Toy & Hobby revenue by IP",
+    "figure_id": "F362",
+    "latex_path": "figures/fig_362.jpg"
+  },
+  {
+    "report_id": "R050",
+    "report_title": "日本游戏股被低估的不是业绩，而是AI带来的供给侧重塑",
+    "source_path": "xhs_notes/dropbox/260604/shard_9/0004-49-Bernstein-Japan-Video-Gaming--Acceptance-is-the-first-step-to-change--26/mineru_raw/images/9e0bafe58ac177704f537003d5daf0c4a3088c29f9b9c3d4eb493230fda0107a.jpg",
+    "label": "EXHIBIT 42",
+    "context": "EXHIBIT 42: The lack of FromSoftware games in 2026 and 2027 represents a headwind for Bandai Namco... can SD Gundam, repeat sales, Ace Combat 8, and Blood of Dawnwalker get us there? FY3/24-FY3/27E: Bandai Namco Digital segment oper",
+    "figure_id": "F363",
+    "latex_path": "figures/fig_363.jpg"
+  },
+  {
+    "report_id": "R050",
+    "report_title": "日本游戏股被低估的不是业绩，而是AI带来的供给侧重塑",
+    "source_path": "xhs_notes/dropbox/260604/shard_9/0004-49-Bernstein-Japan-Video-Gaming--Acceptance-is-the-first-step-to-change--26/mineru_raw/images/9ec9b39b653eedcd3c97c51a69e3de75366e2b863e0da552b68f66c051bf95d0.jpg",
+    "label": "EXHIBIT 43",
+    "context": "EXHIBIT 43: Bandai Namco's forward PE multiple now stands almost one standard deviation below the mean since 2019, but the lack of an obvious catalyst remains an issue in our view",
+    "figure_id": "F364",
+    "latex_path": "figures/fig_364.jpg"
+  }
+]
