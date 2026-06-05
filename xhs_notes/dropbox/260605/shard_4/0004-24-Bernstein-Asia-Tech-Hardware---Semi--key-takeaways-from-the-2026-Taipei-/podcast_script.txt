@@ -1,0 +1,59 @@
+ZH_A: 最近台北国际电脑展刚结束，我们拿到了一份非常详尽的研报。
+ZH_B: 是的，这次我们团队亲自去了现场，看了很多展品，也和多家公司做了交流。
+ZH_A: 那这份报告最核心的结论是什么？用一句话概括的话。
+ZH_B: 一句话就是：AI基础设施的硬件升级，正在从“能不能做”进入到“怎么做才更优”的阶段。
+ZH_A: 这个“怎么做才更优”具体指什么？是技术路线有分歧了吗？
+ZH_B: 对，比如供电、散热、互联，这三个关键环节都出现了不同的技术方向。
+ZH_A: 听起来很有意思。我们先从供电说起吧。在展会上看到了什么特别的东西？
+ZH_B: 800伏高压直流电源机柜成了绝对的主角。好几家供应商都展示了符合英伟达参考设计的产品。
+ZH_A: 800伏高压直流，比现在主流的高很多吧？这意味着什么？
+ZH_B: 意味着更高的能效和更低的损耗，特别适合超大规模数据中心。我们预计台达电会在这个领域保持领先。
+ZH_A: 那什么时候能看到实际出货？
+ZH_B: 预计2026年下半年开始首批出货。但更前沿的技术，比如固态变压器和燃料电池，要到2028年之后才会更关键。
+ZH_A: 所以短期看供电，中期看散热。这次展会上散热方面有什么新动向？
+ZH_B: 液冷是绝对热点。具体来说，液对气方案明年还会是主流，但液对液的方案样品已经大量出现了。
+ZH_A: 液对液，就是冷却液直接接触芯片，散热效率更高？
+ZH_B: 没错。多家厂商展示了超过1兆瓦的液对液冷分配单元，预计2027年下半年会商用化。
+ZH_A: 那英伟达一直强调的“铜连接”呢？这次展会上有没有新的信号？
+ZH_B: 英伟达的老黄在电脑展上说，“能用铜的时候就尽量用铜，我们把铜又变性感了。”
+ZH_A: 哈哈，这个说法很形象。但光互联也是趋势吧？
+ZH_B: 是的。我们看到CPO和NPO技术正在加速。明年3.2T的NPO会是主流，而6.4T的CPO预计要到2028年。
+ZH_A: 所以铜和光会在不同场景共存？
+ZH_B: 对。在机柜内部，铜还有很长的生命周期。但机柜之间和更远距离的互联，光互联是必然方向。
+ZH_A: 还有个有趣的点，联发科也展示了他们的CPO方案？
+ZH_B: 是的，联发科展示的光引擎和电芯片设计很惊艳。他们还在和微软合作MicroLED，可能把光源也封装进CPO里。
+ZH_A: 但报告里也提到，联发科没有更新ASIC业务的具体进展？
+ZH_B: 对，这是报告里一个明确的悬念。他们的ASIC业务到底进展如何，需要看完整报告。
+ZH_A: 那对于投资者来说，这份报告里还有哪些关键信息没有完全展开？
+ZH_B: 比如超级电容的采用虽然在加速，但原材料供应瓶颈有多大，报告没有完全量化。还有固态变压器何时能真正落地。
+ZH_A: 好的，这些悬念确实值得去读完整报告。最后给我们听众一个建议吧。
+ZH_B: 如果你想深入理解AI硬件投资的下一波机会，这份报告值得仔细读。我们也会在社群中继续讨论这些话题。
+ZH_A: 感谢今天的分享。我们下期再见。
+
+EN_A: So we just got back from Computex in Taipei. What was the single biggest takeaway from the show floor?
+EN_B: The biggest takeaway is that AI hardware is moving from a proof-of-concept phase into an optimization phase.
+EN_A: Optimization of what exactly? Power, cooling, or connectivity?
+EN_B: All three. And the key is that there are now competing technical paths in each of those areas.
+EN_A: Let's start with power. What stood out most?
+EN_B: The 800-volt DC power rack was everywhere. Multiple suppliers showed products that align with Nvidia's reference design.
+EN_A: That's a big jump from current voltage levels. What does that mean for the industry?
+EN_B: It means much higher efficiency for hyperscale data centers. We expect Delta Electronics to lead this transition, with first shipments starting in the second half of 2026.
+EN_A: And what about longer-term power solutions?
+EN_B: Solid-state transformers and fuel cells are coming into play, but those are really a 2028 story.
+EN_A: So power is near-term. What about cooling? Liquid cooling has been a hot topic for a while.
+EN_B: It's still hot. Liquid-to-air will dominate next year, but we saw a lot more samples of liquid-to-liquid cooling distribution units.
+EN_A: Liquid-to-liquid is the more advanced approach, right?
+EN_B: Exactly. Vendors are sampling units over one megawatt, with commercialization likely in the second half of 2027.
+EN_A: And what about Nvidia's push for copper? Jensen Huang made that famous comment about making copper sexy again.
+EN_B: He did. And the reality is that copper still has a long runway inside the rack. But for rack-to-rack and beyond, optical is the future.
+EN_A: So we saw both CPO and NPO solutions at the show?
+EN_B: Yes. The 3.2T NPO will be mainstream next year, but the industry is already developing 6.4T CPO for 2028.
+EN_A: MediaTek also showed a CPO solution. That was a surprise.
+EN_B: It was impressive. They designed both the electrical and photonic integrated circuits. They're also working with Microsoft on MicroLED, which could be used as a light source inside the CPO.
+EN_A: But the report mentions that MediaTek didn't update on its ASIC business. That seems like a big missing piece.
+EN_B: It is. That's one of the key questions the report raises but doesn't fully answer. You'd have to read the full report for more context.
+EN_A: What other open questions does the report leave?
+EN_B: Supercapacitor adoption is gaining traction, but the raw material supply constraints are not fully quantified. And the timeline for solid-state transformers is still uncertain.
+EN_A: So there's a lot to dig into. For our listeners, what's the one thing they should take away?
+EN_B: If you want to understand where the next wave of AI hardware investment is going, this report is a great starting point. And we'll keep discussing these topics in our community.
+EN_A: Thanks for the insights. See you next time.

@@ -1,0 +1,27 @@
+EN_A: So we just got back from Computex in Taipei. What was the single biggest takeaway from the show floor?
+EN_B: The biggest takeaway is that AI hardware is moving from a proof-of-concept phase into an optimization phase.
+EN_A: Optimization of what exactly? Power, cooling, or connectivity?
+EN_B: All three. And the key is that there are now competing technical paths in each of those areas.
+EN_A: Let's start with power. What stood out most?
+EN_B: The 800-volt DC power rack was everywhere. Multiple suppliers showed products that align with Nvidia's reference design.
+EN_A: That's a big jump from current voltage levels. What does that mean for the industry?
+EN_B: It means much higher efficiency for hyperscale data centers. We expect Delta Electronics to lead this transition, with first shipments starting in the second half of 2026.
+EN_A: And what about longer-term power solutions?
+EN_B: Solid-state transformers and fuel cells are coming into play, but those are really a 2028 story.
+EN_A: So power is near-term. What about cooling? Liquid cooling has been a hot topic for a while.
+EN_B: It's still hot. Liquid-to-air will dominate next year, but we saw a lot more samples of liquid-to-liquid cooling distribution units.
+EN_A: Liquid-to-liquid is the more advanced approach, right?
+EN_B: Exactly. Vendors are sampling units over one megawatt, with commercialization likely in the second half of 2027.
+EN_A: And what about Nvidia's push for copper? Jensen Huang made that famous comment about making copper sexy again.
+EN_B: He did. And the reality is that copper still has a long runway inside the rack. But for rack-to-rack and beyond, optical is the future.
+EN_A: So we saw both CPO and NPO solutions at the show?
+EN_B: Yes. The 3.2T NPO will be mainstream next year, but the industry is already developing 6.4T CPO for 2028.
+EN_A: MediaTek also showed a CPO solution. That was a surprise.
+EN_B: It was impressive. They designed both the electrical and photonic integrated circuits. They're also working with Microsoft on MicroLED, which could be used as a light source inside the CPO.
+EN_A: But the report mentions that MediaTek didn't update on its ASIC business. That seems like a big missing piece.
+EN_B: It is. That's one of the key questions the report raises but doesn't fully answer. You'd have to read the full report for more context.
+EN_A: What other open questions does the report leave?
+EN_B: Supercapacitor adoption is gaining traction, but the raw material supply constraints are not fully quantified. And the timeline for solid-state transformers is still uncertain.
+EN_A: So there's a lot to dig into. For our listeners, what's the one thing they should take away?
+EN_B: If you want to understand where the next wave of AI hardware investment is going, this report is a great starting point. And we'll keep discussing these topics in our community.
+EN_A: Thanks for the insights. See you next time.
