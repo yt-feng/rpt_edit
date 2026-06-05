@@ -1,0 +1,24 @@
+EN_A: So there is a new research note making the rounds about AWS. It flags a potential slowdown signal. Is this something we should be worried about?
+EN_B: Yeah, the report is based on a pretty unique data point. They track traffic to AWS’s single sign-on page, and they’ve found a strong historical correlation with AWS’s revenue, with about a one-quarter lead.
+EN_A: Wait, how does page visits translate to revenue? That seems like a stretch.
+EN_B: Actually it makes sense. The SSO page is where people log in to start their projects. The number of visits is a proxy for how many people are actively working on AWS. And since each person’s workload is fairly stable, more visits means more projects, which turns into more consumption and revenue a quarter later.
+EN_A: Okay, so what did the latest data show? I heard something about a flattening trend.
+EN_B: Exactly. The data was really strong in early Q2, but starting in May, the growth just flatlined. For the last four weeks, it has been underperforming the seasonal patterns we saw in 2023 and 2024. The report calls this a mid-Q2 caution signal.
+EN_A: So that means AWS’s Q2 earnings are going to be bad?
+EN_B: Not necessarily. Because the data leads by a quarter, Q2 revenue should still reflect the strong Q1 signal. The report even thinks Q2 could show another 100 basis points of acceleration. The real risk is for Q4.
+EN_A: Q4? That’s far out. Why Q4?
+EN_B: Here is the timeline. Q2 started strong, so if this flattening reverses in June, Q3 will still be fine. But if this weak trend continues into Q3’s data, then Q4 will face a significant year-over-year headwind for non-AI cloud consumption.
+EN_A: Got it. So what is driving this softness? Is demand falling off?
+EN_B: That is the interesting part. The report interviewed top software execs and enterprise buyers. The main theory is not a demand drop, but a supply constraint. The hyperscalers are allocating most of their new compute capacity to frontier AI labs, leaving less for traditional enterprise customers and software vendors.
+EN_A: So it is a capacity issue, not a demand issue. That is a very different story.
+EN_B: Right. And there are two other more specific theories. One is a cybersecurity event, called Mythos, which created a huge backlog of security issues that companies are sprinting to fix, diverting resources from new projects. The other is a so-called tokenmaxxing hangover, where teams that rushed to adopt AI coding agents are now trying to moderate their spending.
+EN_A: That is fascinating. So what does this mean for companies like Datadog or Cloudflare that are tied to AWS?
+EN_B: The report says a softer consumption backdrop in Q3+ would impact traditional enterprise buyers and cloud software vendors more. But the born-in-AI cohort, companies that are deeply linked to AI workloads, might be less affected.
+EN_A: And what about AWS itself? Could this supply constraint actually be a good thing for them?
+EN_B: That is a key insight in the report. If supply is tight, AWS could gain pricing leverage. And if they are shifting capacity to higher-margin AI workloads, their financials could actually look better. So the signal is complex.
+EN_A: So the report is not sounding a full alarm, but it is a warning flag worth watching.
+EN_B: Exactly. They are not changing any ratings or price targets yet. But they are saying this trend needs to be monitored closely.
+EN_A: Let me try to summarize. One, Q2 earnings should still be fine, but Q4 is the risk. Two, the flattening might be about supply constraints, not demand destruction. Three, traditional and AI-native companies face different impacts. And four, supply tightness could be a positive for AWS’s margins.
+EN_B: That is a perfect summary. And the report leaves a couple of open questions. For example, will the supply constraint theory be confirmed by future earnings calls or industry data? And how deep and lasting are the effects of the cybersecurity event and the AI spending slowdown?
+EN_A: Those are the questions the full report explores further. If you want to read the original note or join our discussion community, check the show notes. Thanks for listening.
+EN_B: Thanks everyone.
