@@ -1,0 +1,16 @@
+Found 43 total PDFs; shard 6/40 has 5 PDFs, skips 0 already converted, will process 5 PDFs with batch_size=5.
+Running batch 1: 5 PDFs
+Found 5 PDFs.
+Uploading PDF to MinerU: /tmp/pdf_batch_001_lo7vqsdl/pdfs/0001-31-Goldman Sachs-Australian Lithium - Gold Coverage-260605.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_lo7vqsdl/pdfs/0002-33-Goldman Sachs-Energy- Utilities - Mining Pulse-Investors Asking-What Are Key Debates in Natural Resources from Here--260604.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_lo7vqsdl/pdfs/0003-34-Goldman Sachs-HONG KONG REAL ESTATE-Assessing China-s tighter capital controls. Analyze demand drivers- exposure and earnings sensitivity-260605.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_lo7vqsdl/pdfs/0004-35-HSBC-Hong Kong Real Estate-High base effect about to kick in for retail business-260603.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_lo7vqsdl/pdfs/0005-36-J.P. Morgan-Clean Energy-Takeaways from the CleanPower 2026 Conference-260604.pdf
+MinerU batch_id=4de7e38d-df58-4d35-8765-54d36a0346da
+MinerU states: running, running, running, pending, pending
+MinerU states: running, done, running, done, done
+MinerU states: running, done, done, done, done
+MinerU states: running, done, done, done, done
+MinerU states: done, done, done, done, done
+Done. Results written to /home/runner/work/rpt_edit/rpt_edit/xhs_notes/dropbox/260605/shard_6; successful_reports=5; mineru_timed_out=False
+All batches completed successfully. Generated 5 report directories.

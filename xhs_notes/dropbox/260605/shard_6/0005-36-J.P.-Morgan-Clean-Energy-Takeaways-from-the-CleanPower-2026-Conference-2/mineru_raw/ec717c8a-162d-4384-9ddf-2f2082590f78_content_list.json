@@ -1,0 +1,1758 @@
+[
+    {
+        "type": "text",
+        "text": "Clean Energy",
+        "text_level": 1,
+        "bbox": [
+            135,
+            90,
+            346,
+            120
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Takeaways from the CleanPower 2026 Conference",
+        "bbox": [
+            135,
+            126,
+            617,
+            147
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "2026 Extel",
+        "bbox": [
+            143,
+            183,
+            212,
+            196
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "All-America Equity Research Survey",
+        "bbox": [
+            143,
+            197,
+            367,
+            210
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "CLICK TO VOTE",
+        "bbox": [
+            147,
+            212,
+            243,
+            225
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Voting Open May 26 $^{th}$ - June 12 $^{th}$",
+        "bbox": [
+            143,
+            227,
+            313,
+            238
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Please vote for JPM (5 stars)",
+        "bbox": [
+            143,
+            240,
+            321,
+            250
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "image",
+        "img_path": "images/f9646753173d20dd3c79ea5c15544109b6d3cd7ce03be19de9eb52ac579f63b8.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            565,
+            181,
+            661,
+            254
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "We attended the CleanPower 2026 Conference in Houston, Texas this week and spoke with several renewable developers, EPCs, and equipment manufacturers. Key themes from the conference included: 1) generational levels of power demand driven by AI, industrialization and electrification, 2) continued momentum in battery energy storage, 3) the increasing role of robotics in EPC and O&M, and 4) continued industry consolidation towards the best in class companies. We came away from the conference positive on the outlook for utility scale solar & storage growth in 2H 2026 and beyond. The outlook for wind remains relatively murky given what some view to be market saturation of the technology as well as federal permitting and political challenges. Against this backdrop, we believe top picks NXT and MTZ remain well positioned, and view Overweight-rated PWR and MWH as additional beneficiaries of the same demand and consolidation dynamics.",
+        "bbox": [
+            135,
+            265,
+            663,
+            446
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "\\- Demand backdrop remains profoundly robust. Practically every conversation at the conference began with talk about the unbelievable amount of power demand in the market, with most expressing conviction that solar and wind will be just as impactful as fossil fuels in meeting new generation needs. However, the economic and practical feasibility of pairing solar + storage with dispatchable resources to directly meet behind-the-meter needs of a hyperscaler data center remains a point of debate amongst the industry, with many pointing to the need for continued advancements in energy storage technology before renewables can fully meet the reliability requirements of data centers. Nevertheless, multiple industry participants pointed to insatiable demand for renewable generation from hyperscalers, even if the mega projects in question are not directly powering data centers. Developers we spoke with noted that interconnection queues — while still congested — are increasingly populated by high-quality, creditworthy offtakers with long-dated power purchase agreements, a meaningful shift from the speculative queue composition of prior project development cycles. Texas, California, and Arizona remain the hottest markets for solar & storage projects of scale.",
+        "bbox": [
+            135,
+            456,
+            663,
+            710
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "\\- Momentum in battery energy storage is real. Storage is increasingly being co-developed and co-located with solar as a default configuration rather than an optional add-on. Conference participants noted that standalone storage projects are currently being underwritten very favorably on a merchant basis in key markets including ERCOT, CAISO, and PJM, driven by widening energy arbitrage spreads and capacity market revenues. BESS for data center backup and load management was a hot topic, particularly in light of the recently announced FLNC partnership with Nvidia and Siemens. However, the overall size of the data center driven BESS market remains a key question for many conference participants, including storage-focused developers who described the current levels of data center BESS demand as “off the charts”. Participants noted that lithium iron phosphate (LFP) battery pricing has continued its downward trajectory, with several citing system-level costs that",
+        "bbox": [
+            135,
+            716,
+            663,
+            910
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Clean Energy, Power Infrastructure, and Sustainable Investing",
+        "bbox": [
+            691,
+            189,
+            942,
+            216
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Mark Strouse, CFA AC",
+        "bbox": [
+            691,
+            221,
+            833,
+            233
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "(1-212) 622-8244",
+        "bbox": [
+            691,
+            234,
+            782,
+            247
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "mark.w.strouse@JPM.com",
+        "bbox": [
+            691,
+            247,
+            854,
+            259
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Michael G Fairbanks",
+        "bbox": [
+            691,
+            263,
+            828,
+            274
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "(1-212) 622-4908",
+        "bbox": [
+            691,
+            277,
+            782,
+            287
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "michael.fairbanks@jpmchase.com",
+        "bbox": [
+            691,
+            290,
+            869,
+            301
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Anna Zhu",
+        "bbox": [
+            691,
+            305,
+            758,
+            317
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "(1-212) 622-0012",
+        "bbox": [
+            691,
+            320,
+            782,
+            330
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "anna.zhu@JPM.com",
+        "bbox": [
+            691,
+            332,
+            825,
+            343
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "JPM Securities LLC",
+        "bbox": [
+            691,
+            344,
+            831,
+            354
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "aside_text",
+        "text": "John McIl",
+        "bbox": [
+            0,
+            557,
+            99,
+            877
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "header",
+        "text": "JPM",
+        "bbox": [
+            135,
+            2,
+            346,
+            41
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "header",
+        "text": "North America Equity Research 04 June 2026",
+        "bbox": [
+            691,
+            5,
+            913,
+            32
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "footer",
+        "text": "See page 3 for analyst certification and important disclosures.",
+        "bbox": [
+            135,
+            934,
+            578,
+            950
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "are tracking below prior industry expectations for 2026.",
+        "bbox": [
+            91,
+            131,
+            464,
+            145
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "\\- Robotics is becoming increasingly important for EPC & O&M. Skilled labor shortages for both EPC and O&M are pushing developers and contractors to adopt robotic solutions to fill the gap. We spoke with several robotics companies at the conference, which specialize in automated panel cleaning, aerial drone inspection, vegetation management, cable management and solar panel installation. Many of the technologies seem to now have reached levels of significant maturity and industry adoption, with many solutions citing double-digit GWs deployed or under management through their solutions. Robotic panel cleaning and drone-based thermal inspection now seem to be fairly standard practice on utility-scale projects above a certain size threshold. Additionally, case studies from the conference show AI-enabled monitoring platforms combined with autonomous inspection robotics can significantly compress O&M cost per megawatt-hour in ways that are beginning to show up meaningfully in project-level returns.",
+        "bbox": [
+            68,
+            150,
+            665,
+            345
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "\\- Scale and balance sheet matter more than ever. The combination of interconnection complexity, equipment procurement scale, and the capital intensity of co-located solar-plus-storage is creating a natural selection dynamic that favors larger, better-capitalized operators. Smaller developers without established utility relationships, permitted pipelines, or access to low-cost capital are finding it increasingly difficult to compete on project economics. This dynamic is being further reinforced by hyperscalers, who are increasingly directing their procurement toward large, creditworthy counterparties capable of delivering gigawatt-scale pipelines with execution certainty. Project sizes are also trending materially larger across the board, which compounds this advantage. Utility-scale projects that were once underwritten at 100-200 MW are increasingly being developed at 500 MW to 1+ GW, a scale that demands sophisticated EPC capabilities, deep equipment manufacturer relationships, and the procurement leverage to secure favorable pricing and delivery commitments.",
+        "bbox": [
+            68,
+            350,
+            665,
+            545
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "header",
+        "text": "Mark Strouse, CFA AC (1-212) 622-8244 mark.w.strouse@JPM.com",
+        "bbox": [
+            68,
+            34,
+            235,
+            68
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "header",
+        "text": "North America Equity Research 04 June 2026",
+        "bbox": [
+            343,
+            36,
+            517,
+            56
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "header",
+        "text": "JPM",
+        "bbox": [
+            797,
+            32,
+            924,
+            56
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "page_number",
+        "text": "2",
+        "bbox": [
+            71,
+            952,
+            80,
+            961
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "Companies Discussed in This Report (all prices in this report as of market close on 03 June 2026, unless otherwise indicated) MasTec(MTZ/\\$369.66/OW), Nextpower(NXT/\\$146.47/OW), Quanta Services(PWR/\\$715.67/OW), SOLV Energy(MWH/\\$34.87/OW)",
+        "bbox": [
+            70,
+            129,
+            926,
+            171
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "Analyst Certification: The Research Analyst(s) denoted by an “AC” on the cover of this report certifies (or, where multiple Research Analysts are primarily responsible for this report, the Research Analyst denoted by an “AC” on the cover or within the document individually certifies, with respect to each security or issuer that the Research Analyst covers in this research) that: (1) all of the views expressed in this report accurately reflect the Research Analyst’s personal views about any and all of the subject securities or issuers; and (2) no part of any of the Research Analyst's compensation was, is, or will be directly or indirectly related to the specific recommendations or views expressed by the Research Analyst(s) in this report. For all Korea-based Research Analysts listed on the front cover, if applicable, they also certify, as per KOFIA requirements, that the Research Analyst’s analysis was made in good faith and that the views reflect the Research Analyst’s own opinion, without undue influence or intervention.",
+        "bbox": [
+            70,
+            198,
+            924,
+            301
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "All authors named within this report are Research Analysts who produce independent research unless otherwise specified. In Europe, Sector Specialists (Sales and Trading) may be shown on this report as contacts but are not authors of the report or part of the Research Department.",
+        "bbox": [
+            70,
+            309,
+            898,
+            336
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "Important Disclosures",
+        "text_level": 2,
+        "bbox": [
+            70,
+            343,
+            228,
+            357
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "list",
+        "sub_type": "text",
+        "list_items": [
+            "• Market Maker: JPM Securities LLC makes a market in the securities of Nextpower, SOLV Energy or related entities.",
+            "- Market Maker/ Liquidity Provider: JPM is a market maker and/or liquidity provider in the financial instruments of/related to MasTec, Nextpower, Quanta Services, SOLV Energy or related entities.",
+            "- Manager or Co-manager: JPM acted as manager or co-manager in a public offering of securities or financial instruments (as such term is defined in Directive 2014/65/EU) of/for Quanta Services, SOLV Energy or related entities within the past 12 months.",
+            "- Beneficial Ownership (1% or more): JPM beneficially owns 1% or more of a class of common equity securities of Quanta Services or related entities.",
+            "- Client: JPM currently has, or had within the past 12 months, the following entity(ies) as clients: MasTec, Nextpower, Quanta Services, SOLV Energy or related entities.",
+            "- Client/Investment Banking: JPM currently has, or had within the past 12 months, the following entity(ies) as investment banking clients: MasTec, Nextpower, Quanta Services, SOLV Energy or related entities.",
+            "- Client/Non-Investment Banking, Securities-Related: JPM currently has, or had within the past 12 months, the following entity(ies) as clients, and the services provided were non-investment-banking, securities-related: MasTec, Nextpower, Quanta Services or related entities.",
+            "- Client/Non-Securities-Related: JPM currently has, or had within the past 12 months, the following entity(ies) as clients, and the services provided were non-securities-related: MasTec, Nextpower, Quanta Services or related entities.",
+            "- Investment Banking Compensation Received: JPM has received in the past 12 months compensation for investment banking services from MasTec, Nextpower, Quanta Services, SOLV Energy or related entities.",
+            "- Potential Investment Banking Compensation: JPM expects to receive, or intends to seek, compensation for investment banking services in the next three months from MasTec, Nextpower, Quanta Services, SOLV Energy or related entities.",
+            "- Non-Investment Banking Compensation Received: JPM has received compensation in the past 12 months for products or services other than investment banking from MasTec, Nextpower, Quanta Services or related entities.",
+            "- Debt Position: JPM may hold a position in the debt securities of MasTec, Nextpower, Quanta Services, SOLV Energy or related entities, if any."
+        ],
+        "bbox": [
+            66,
+            381,
+            926,
+            730
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "Company-Specific Disclosures: JPM does and seeks to do business with companies covered in its research reports. As a result, investors should be aware that the firm may have a conflict of interest that could affect the objectivity of this report. Investors should consider this report as only a single factor in making their investment decision. Important disclosures, including price charts and credit opinion history tables (if applicable), are available for compendium reports and all JPM-covered companies, and certain non-covered companies, by visiting https://www.jpmm.com/research/disclosures, calling 1-800-477-0406, or e-mailing research.disclosure.inquiries@JPM.com with your request.",
+        "bbox": [
+            70,
+            740,
+            924,
+            819
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "header",
+        "text": "Mark Strouse, CFA AC (1-212) 622-8244 mark.w.strouse@JPM.com",
+        "bbox": [
+            68,
+            34,
+            235,
+            68
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "header",
+        "text": "North America Equity Research 04 June 2026",
+        "bbox": [
+            343,
+            34,
+            517,
+            56
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "header",
+        "text": "JPM",
+        "bbox": [
+            797,
+            32,
+            924,
+            56
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "page_number",
+        "text": "3",
+        "bbox": [
+            918,
+            952,
+            926,
+            961
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "chart",
+        "img_path": "images/d1d9637cac587ea3399f208c7cb70e0ea7cb38938a1536969264cc7a8f7dc352.jpg",
+        "content": "| Date       | Price($) |\n| ---------- | -------- |\n| Sep 23     | 100      |\n| Jan 24     | 50       |\n| May 24     | 100      |\n| Sep 24     | 153      |\n| Jan 25     | 178      |\n| May 25     | 180      |\n| Sep 25     | 214      |\n| Jan 26     | 235      |\n| May 26     | 491      |",
+        "chart_caption": [
+            "MasTec (MTZ, MTZ US) Price Chart"
+        ],
+        "chart_footnote": [],
+        "sub_type": "line chart",
+        "bbox": [
+            73,
+            150,
+            604,
+            365
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "table",
+        "img_path": "images/cb893e101f8fc2e47fd79569ab8d1efe0e54d1f7f46be26b2c2509de7eafe9be.jpg",
+        "table_caption": [],
+        "table_footnote": [
+            "Source: Bloomberg Finance L.P. and JPM; price data adjusted for stock splits and dividends. Initiated coverage Oct 07, 2024. All share prices are as of market close on the previous business day."
+        ],
+        "table_body": "<table><tr><td>Date</td><td>Rating</td><td>Price ($)</td><td>Price Target ($)</td></tr><tr><td>07-Oct-24</td><td>OW</td><td>127.13</td><td>153</td></tr><tr><td>01-Nov-24</td><td>OW</td><td>122.89</td><td>154</td></tr><tr><td>28-Jan-25</td><td>OW</td><td>130.84</td><td>172</td></tr><tr><td>28-Feb-25</td><td>OW</td><td>126.83</td><td>178</td></tr><tr><td>02-May-25</td><td>OW</td><td>134.01</td><td>180</td></tr><tr><td>22-Jul-25</td><td>OW</td><td>175.33</td><td>214</td></tr><tr><td>16-Oct-25</td><td>OW</td><td>204.56</td><td>235</td></tr><tr><td>31-Oct-25</td><td>OW</td><td>213.95</td><td>236</td></tr><tr><td>22-Jan-26</td><td>OW</td><td>243.80</td><td>267</td></tr><tr><td>27-Feb-26</td><td>OW</td><td>289.96</td><td>346</td></tr><tr><td>16-Apr-26</td><td>OW</td><td>365.07</td><td>386</td></tr><tr><td>01-May-26</td><td>OW</td><td>394.05</td><td>471</td></tr><tr><td>13-May-26</td><td>OW</td><td>420.30</td><td>491</td></tr></table>",
+        "bbox": [
+            607,
+            126,
+            928,
+            345
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "chart",
+        "img_path": "images/4f5f90a2cabda38b50dcac5734701c9819dd94ea0e2aa924ac3e4d6b312b7222.jpg",
+        "content": "| Date  | Price($) |\n|-------|----------|\n| Sep 23 | 50       |\n| Jan 24 | 57       |\n| May 24 | 67       |\n| Sep 24 | 62       |\n| Jan 25 | 61       |\n| May 25 | 65       |\n| Sep 25 | 77       |\n| Jan 26 | 92       |\n| May 26 | 155      |",
+        "chart_caption": [
+            "Nextpower (NXT, NXT US) Price Chart"
+        ],
+        "chart_footnote": [],
+        "sub_type": "line chart",
+        "bbox": [
+            73,
+            418,
+            604,
+            633
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "table",
+        "img_path": "images/e932beda24fb420da737c6e85e1de3097cae422c88fcbce4f89c127d38081b4d.jpg",
+        "table_caption": [],
+        "table_footnote": [
+            "Source: Bloomberg Finance L.P. and JPM; price data adjusted for stock splits and dividends. Initiated coverage Mar 06, 2023. All share prices are as of market close on the previous business day."
+        ],
+        "table_body": "<table><tr><td>Date</td><td>Rating</td><td>Price ($)</td><td>Price Target ($)</td></tr><tr><td>19-Jul-23</td><td>OW</td><td>39.44</td><td>50</td></tr><tr><td>27-Jul-23</td><td>OW</td><td>39.31</td><td>55</td></tr><tr><td>19-Oct-23</td><td>OW</td><td>34.42</td><td>52</td></tr><tr><td>26-Oct-23</td><td>OW</td><td>37.06</td><td>57</td></tr><tr><td>15-Dec-23</td><td>OW</td><td>46.70</td><td>61</td></tr><tr><td>01-Feb-24</td><td>OW</td><td>45.27</td><td>73</td></tr><tr><td>29-Feb-24</td><td>OW</td><td>58.71</td><td>67</td></tr><tr><td>15-May-24</td><td>OW</td><td>43.01</td><td>63</td></tr><tr><td>16-Jul-24</td><td>OW</td><td>47.77</td><td>65</td></tr><tr><td>02-Aug-24</td><td>OW</td><td>46.83</td><td>62</td></tr><tr><td>17-Oct-24</td><td>OW</td><td>35.04</td><td>58</td></tr><tr><td>29-Jan-25</td><td>OW</td><td>39.62</td><td>61</td></tr><tr><td>15-May-25</td><td>OW</td><td>55.04</td><td>65</td></tr><tr><td>30-Jul-25</td><td>OW</td><td>64.90</td><td>69</td></tr><tr><td>19-Sep-25</td><td>OW</td><td>70.48</td><td>77</td></tr><tr><td>16-Oct-25</td><td>OW</td><td>93.12</td><td>92</td></tr><tr><td>24-Oct-25</td><td>OW</td><td>90.38</td><td>110</td></tr><tr><td>28-Jan-26</td><td>OW</td><td>105.91</td><td>125</td></tr><tr><td>13-May-26</td><td>OW</td><td>125.37</td><td>155</td></tr><tr><td>29-May-26</td><td>OW</td><td>137.17</td><td>174</td></tr></table>",
+        "bbox": [
+            607,
+            393,
+            928,
+            714
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "header",
+        "text": "Mark Strouse, CFA AC",
+        "bbox": [
+            68,
+            34,
+            183,
+            45
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "header",
+        "text": "(1-212) 622-8244",
+        "bbox": [
+            71,
+            46,
+            161,
+            56
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "header",
+        "text": "mark.w.strouse@JPM.com",
+        "bbox": [
+            71,
+            56,
+            233,
+            69
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "header",
+        "text": "North America Equity Research",
+        "bbox": [
+            343,
+            36,
+            517,
+            47
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "header",
+        "text": "04 June 2026",
+        "bbox": [
+            344,
+            47,
+            415,
+            56
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "header",
+        "text": "JPM",
+        "bbox": [
+            797,
+            32,
+            926,
+            56
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "page_number",
+        "text": "4",
+        "bbox": [
+            71,
+            952,
+            80,
+            961
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "chart",
+        "img_path": "images/4fba136e14bc63d10ab38139aa07240a03680da32769fcfe1301faa5c5fc3118.jpg",
+        "content": "| Date       | Price Label |\n| ---------- | ----------- |\n| Sep 24     | N $297      |\n| Jan 25     | N $332      |\n| Jan 25     | N $323      |\n| May 25     | N $345      |\n| Sep 25     | N $395      |\n| Sep 25     | N $392      |\n| Sep 25     | N $457      |\n| Jan 26     | OW $515     |\n| Jan 26     | N $436      |\n| Jan 26     | OW $627     |\n| May 26     | OW $805     |",
+        "chart_caption": [
+            "Quanta Services (PWR, PWR US) Price Chart"
+        ],
+        "chart_footnote": [],
+        "sub_type": "line chart",
+        "bbox": [
+            73,
+            150,
+            604,
+            363
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "table",
+        "img_path": "images/5dd977d24f4e4bc1817898968c4cd9d59ca2211122ae2184592fc5c632671910.jpg",
+        "table_caption": [],
+        "table_footnote": [
+            "Source: Bloomberg Finance L.P. and JPM; price data adjusted for stock splits and dividends. Initiated coverage Jan 30, 2008. All share prices are as of market close on the previous business day. Break in coverage Jun 06, 2016 - Oct 07, 2024."
+        ],
+        "table_body": "<table><tr><td>Date</td><td>Rating</td><td>Price ($)</td><td>Price Target ($)</td></tr><tr><td>07-Oct-24</td><td>N</td><td>305.72</td><td>297</td></tr><tr><td>28-Jan-25</td><td>N</td><td>292.43</td><td>323</td></tr><tr><td>21-Feb-25</td><td>N</td><td>281.16</td><td>332</td></tr><tr><td>01-May-25</td><td>N</td><td>292.69</td><td>345</td></tr><tr><td>22-Jul-25</td><td>N</td><td>398.66</td><td>392</td></tr><tr><td>01-Aug-25</td><td>N</td><td>406.13</td><td>395</td></tr><tr><td>16-Oct-25</td><td>N</td><td>436.93</td><td>436</td></tr><tr><td>31-Oct-25</td><td>N</td><td>453.83</td><td>457</td></tr><tr><td>08-Dec-25</td><td>OW</td><td>460.64</td><td>515</td></tr><tr><td>19-Feb-26</td><td>OW</td><td>519.31</td><td>627</td></tr><tr><td>01-May-26</td><td>OW</td><td>727.77</td><td>805</td></tr></table>",
+        "bbox": [
+            607,
+            126,
+            928,
+            318
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "chart",
+        "img_path": "images/a459332590626b93d697fabb3f504c046542372a26f0de0dc2e286279a4ff4e5.jpg",
+        "content": "| Date  | Price($) |\n|-------|----------|\n| Mar 26 | 34       |\n| Apr 26 | 35       |\n| May 26 | 51       |",
+        "chart_caption": [
+            "SOLV Energy (MWH, MWH US) Price Chart"
+        ],
+        "chart_footnote": [],
+        "sub_type": "line chart",
+        "bbox": [
+            73,
+            419,
+            604,
+            633
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "table",
+        "img_path": "images/b31448c5cd223e2f14d8f896c6e9cf2050ee9b937e76777fa0db893d0c2a5af7.jpg",
+        "table_caption": [],
+        "table_footnote": [
+            "Source: Bloomberg Finance L.P. and JPM; price data adjusted for stock splits and dividends. Initiated coverage Mar 09, 2026. All share prices are as of market close on the previous business day.",
+            "The chart(s) show JPM's continuing coverage of the stocks; the current analysts may or may not have covered it over the entire period. JPM ratings or designations: OW = Overweight, N = Neutral, UW = Underweight, NR = Not Rated"
+        ],
+        "table_body": "<table><tr><td>Date</td><td>Rating</td><td>Price ($)</td><td>Price Target ($)</td></tr><tr><td>09-Mar-26</td><td>OW</td><td>27.04</td><td>34</td></tr><tr><td>19-Mar-26</td><td>OW</td><td>30.27</td><td>35</td></tr><tr><td>12-May-26</td><td>OW</td><td>44.83</td><td>51</td></tr></table>",
+        "bbox": [
+            607,
+            394,
+            928,
+            472
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "Explanation of Equity Research Ratings, Designations and Analyst(s) Coverage Universe:",
+        "text_level": 2,
+        "bbox": [
+            68,
+            699,
+            635,
+            712
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "JPM uses the following rating system: Overweight (over the duration of the price target indicated in this report, we expect this stock will outperform the average total return of the stocks in the Research Analyst's, or the Research Analyst's team's, coverage universe); Neutral (over the duration of the price target indicated in this report, we expect this stock will perform in line with the average total return of the stocks in the Research Analyst's, or the Research Analyst's team's, coverage universe); and Underweight (over the duration of the price target indicated in this report, we expect this stock will underperform the average total return of the stocks in the Research Analyst's, or the Research Analyst's team's, coverage universe. NR is Not Rated. In this case, JPM has removed the rating and, if applicable, the price target, for this stock because of either a lack of a sufficient fundamental basis or for legal, regulatory or policy reasons. The previous rating and, if applicable, the price target, no longer should be relied upon. An NR designation is not a recommendation or a rating. Some stocks under coverage have a rating but no price target; in these cases, we expect the stock will outperform/perform in line/underperform the average total return of the stocks in the Research Analyst's, or the Research Analyst's team's, coverage universe of the relevant duration of the region. In our Asia (ex-Australia and ex-India) and U.K. small- and mid-cap Equity Research, each stock's expected total return is compared to the expected total return of a benchmark country market index, not to those Research Analysts' coverage universe. If it does not appear in the Important Disclosures section of this report, the certifying Research Analyst's coverage universe can be found on JPM's Research website, https://www.JPMmarkets.com.",
+        "bbox": [
+            66,
+            712,
+            926,
+            881
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "Coverage Universe: Strouse, Mark W: Array Technologies (ARRY), Bloom Energy (BE), Brookfield Renewable Corp (BEPC), Brookfield Renewable Partners (BEP), Canadian Solar (CSIQ), Centuri (CTRI), EVgo (EVGO), Enlight Renewable Energy (ENLT), Enphase Energy (ENPH), Eos Energy (EOSE), First Solar, Inc (FSLR), Fluence Energy (FLNC), FuelCell Energy (FCEL), GE Vernova (GEV), Generac",
+        "bbox": [
+            66,
+            887,
+            910,
+            927
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "header",
+        "text": "Mark Strouse, CFA AC",
+        "bbox": [
+            68,
+            34,
+            183,
+            45
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "header",
+        "text": "(1-212) 622-8244",
+        "bbox": [
+            68,
+            45,
+            161,
+            56
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "header",
+        "text": "mark.w.strouse@JPM.com",
+        "bbox": [
+            68,
+            56,
+            233,
+            69
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "header",
+        "text": "North America Equity Research",
+        "bbox": [
+            343,
+            34,
+            517,
+            47
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "header",
+        "text": "04 June 2026",
+        "bbox": [
+            343,
+            47,
+            415,
+            56
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "header",
+        "text": "JPM",
+        "bbox": [
+            797,
+            32,
+            926,
+            56
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "page_number",
+        "text": "5",
+        "bbox": [
+            916,
+            950,
+            928,
+            962
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "(GNRC), HA Sustainable Infrastructure Capital Inc (HASI), Itron (ITRI), MasTec (MTZ), Nextpower (NXT), Ormat Technologies (ORA), Primoris (PRIM), Quanta Services (PWR), SOLV Energy (MWH), Shoals (SHLS), SolarEdge Technologies (SEDG), Sunrun Inc. (RUN)",
+        "bbox": [
+            66,
+            129,
+            890,
+            157
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "table",
+        "img_path": "images/70675cfad05f480b681573a70219a79ecb9b1e0bbdcb6d209acf5aced47d756b.jpg",
+        "table_caption": [
+            "JPM Equity Research Ratings Distribution, as of April 04, 2026"
+        ],
+        "table_footnote": [],
+        "table_body": "<table><tr><td></td><td>Overweight (buy)</td><td>Neutral (hold)</td><td>Underweight (sell)</td></tr><tr><td>JPM Global Equity Research Coverage*</td><td>51%</td><td>37%</td><td>12%</td></tr><tr><td>IB clients**</td><td>83%</td><td>79%</td><td>74%</td></tr><tr><td>JPMS Equity Research Coverage*</td><td>49%</td><td>39%</td><td>13%</td></tr><tr><td>IB clients**</td><td>94%</td><td>93%</td><td>85%</td></tr></table>",
+        "bbox": [
+            68,
+            185,
+            645,
+            265
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "\\*Please note that the percentages may not add to 100% because of rounding.",
+        "bbox": [
+            71,
+            273,
+            553,
+            285
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "\\*\\*Percentage of subject companies within each of the \"buy,\" \"hold\" and \"sell\" categories for which JPM has provided investment banking services within the previous 12 months.",
+        "bbox": [
+            71,
+            285,
+            864,
+            308
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "For purposes of FINRA ratings distribution rules only, our Overweight rating falls into a buy rating category; our Neutral rating falls into a hold rating category; and our Underweight rating falls into a sell rating category. Please note that stocks with an NR designation are not included in the table above. This information is current as of the end of the most recent calendar quarter.",
+        "bbox": [
+            71,
+            308,
+            916,
+            344
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "Equity Valuation and Risks: For valuation methodology and risks associated with covered companies or price targets for covered companies, please see the most recent company-specific research report at http://www.JPMmarkets.com, contact the primary analyst or your JPM representative, or email research.disclosure.inquiries@JPM.com. For material information about the proprietary models used, please see the Summary of Financials in company-specific research reports and the Company Tearsheets, which are available to download on the company pages of our client website, http://www.JPMmarkets.com. This report also sets out within it the material underlying assumptions used.",
+        "bbox": [
+            71,
+            361,
+            913,
+            440
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "History of Investment Recommendations:",
+        "text_level": 2,
+        "bbox": [
+            71,
+            447,
+            334,
+            459
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "A history of JPM investment recommendations disseminated during the preceding 12 months can be accessed on the Research & Commentary page of http://www.JPMmarkets.com where you can also search by analyst name, sector or financial instrument.",
+        "bbox": [
+            71,
+            460,
+            874,
+            485
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "Analysts' Compensation:The research analysts responsible for the preparation of this report receive compensation based upon various factors, including the quality and accuracy of research, client feedback, competitive factors, and overall firm revenues.",
+        "bbox": [
+            71,
+            492,
+            916,
+            520
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "Other Disclosures",
+        "text_level": 2,
+        "bbox": [
+            71,
+            526,
+            197,
+            539
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "JPM is a marketing name for investment banking businesses of JPM Chase & Co. and its subsidiaries and affiliates worldwide.",
+        "bbox": [
+            71,
+            572,
+            895,
+            587
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "UK MIFID FICC research unbundling exemption: UK clients should refer to UK MIFID Research Unbundling exemption for details of JPM's implementation of the FICC research exemption and guidance on relevant FICC research categorisation.",
+        "bbox": [
+            71,
+            594,
+            919,
+            620
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "All research material made available to clients are simultaneously available on our client website, JPM Markets, unless specifically permitted by relevant laws. Not all research content is redistributed, e-mailed or made available to third-party aggregators. For all research material available on a particular stock, please contact your sales representative.",
+        "bbox": [
+            71,
+            628,
+            888,
+            667
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "Any long form nomenclature for references to China; Hong Kong; Taiwan; and Macau within this research material are Mainland China; Hong Kong SAR (China); Taiwan (China); and Macau SAR (China).",
+        "bbox": [
+            71,
+            674,
+            916,
+            700
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "JPM may, from time to time, write on issuers or securities targeted by economic or financial sanctions imposed or administered by the governmental authorities of the U.S., EU, UK or other relevant jurisdictions (Sanctioned Securities). Nothing in this report is intended to be read or construed as encouraging, facilitating, promoting or otherwise approving investment or dealing in such Sanctioned Securities. Clients should be aware of their own legal and compliance obligations when making investment decisions.",
+        "bbox": [
+            71,
+            708,
+            921,
+            760
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "Any digital or crypto assets discussed in this research report are subject to a rapidly changing regulatory landscape. For relevant regulatory advisories on crypto assets, including bitcoin and ether, please see https://www.JPM.com/disclosures/cryptoasset-disclosure.",
+        "bbox": [
+            71,
+            767,
+            888,
+            793
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "The author(s) of this research report may not be licensed to carry on regulated activities in your jurisdiction and, if not licensed, do not hold themselves out as being able to do so.",
+        "bbox": [
+            71,
+            800,
+            895,
+            825
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "Exchange-Traded Funds (ETFs): JPM Securities LLC (“JPMS”) acts as authorized participant for substantially all U.S.-listed ETFs. To the extent that any ETFs are mentioned in this report, JPMS may earn commissions and transaction-based compensation in connection with the distribution of those ETF shares and may earn fees for performing other trade-related services, such as securities lending to short sellers of the ETF shares. JPMS may also perform services for the ETFs themselves, including acting as a broker or dealer to the ETFs. In addition, affiliates of JPMS may perform services for the ETFs, including trust, custodial, administration, lending, index calculation and/or maintenance and other services.",
+        "bbox": [
+            71,
+            834,
+            924,
+            910
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "Options and Futures related research: If the information contained herein regards options- or futures-related research, such information is available only to persons who have received the proper options or futures risk disclosure documents. Please contact your JPM Representative or visit https://www.theocc.com/components/docs/riskstoc.pdf for a copy of the Option Clearing Corporation's Characteristics and Risks of Standardized Options or https://www.finra.org/sites/default/files/2020-08/Security\\_Futures\\_Risk\\_Disclosure\\_Statement\\_2020.pdf for a copy of the Security Futures Risk Disclosure Statement.",
+        "bbox": [
+            71,
+            920,
+            900,
+            932
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "header",
+        "text": "Mark Strouse, CFA AC",
+        "bbox": [
+            68,
+            34,
+            183,
+            45
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "header",
+        "text": "(1-212) 622-8244",
+        "bbox": [
+            68,
+            46,
+            161,
+            56
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "header",
+        "text": "mark.w.strouse@JPM.com",
+        "bbox": [
+            68,
+            56,
+            233,
+            68
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "header",
+        "text": "North America Equity Research",
+        "bbox": [
+            343,
+            36,
+            517,
+            47
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "header",
+        "text": "04 June 2026",
+        "bbox": [
+            343,
+            47,
+            415,
+            56
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "header",
+        "text": "JPM",
+        "bbox": [
+            797,
+            32,
+            924,
+            56
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "page_number",
+        "text": "6",
+        "bbox": [
+            71,
+            952,
+            80,
+            961
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            70,
+            129,
+            913,
+            194
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "Changes to Interbank Offered Rates (IBORs) and other benchmark rates: Certain interest rate benchmarks are, or may in the future become, subject to ongoing international, national and other regulatory guidance, reform and proposals for reform. For more information, please consult: https://www.JPM.com/global/disclosures/interbank\\_offered\\_rates",
+        "bbox": [
+            70,
+            201,
+            924,
+            242
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "Private Bank Clients: Where you are receiving research as a client of the private banking businesses offered by JPM Chase & Co. and its subsidiaries (“JPM Private Bank”), research is provided to you by JPM Private Bank and not by any other division of JPM, including, but not limited to, the JPM Corporate and Investment Bank and its Global Research division.",
+        "bbox": [
+            70,
+            247,
+            924,
+            287
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "Legal entity responsible for the production and distribution of research: The legal entity identified below the name of the Reg AC Research Analyst who authored this material is the legal entity responsible for the production of this research. Where multiple Reg AC Research Analysts authored this material with different legal entities identified below their names, these legal entities are jointly responsible for the production of this research. Where more than one legal entity is listed under an analyst's name, the first legal entity is responsible for the production unless stated otherwise. Research Analysts from various JPM affiliates may have contributed to the production of this material but may not be licensed to carry out regulated activities in your jurisdiction (and do not hold themselves out as being able to do so). Unless otherwise stated below in the legal entity disclosures, this material has been distributed by the legal entity responsible for production, or where more than one legal entity is listed under the analyst's name, the first legal entity will be responsible for distribution. If you have any queries, please contact the relevant Research Analyst in your jurisdiction or the entity in your jurisdiction that has distributed this research material.",
+        "bbox": [
+            70,
+            294,
+            924,
+            412
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "Legal Entities Disclosures and Country-/Region-Specific Disclosures:",
+        "text_level": 2,
+        "bbox": [
+            70,
+            418,
+            504,
+            432
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "Argentina: JPM Chase Bank N.A Sucursal Buenos Aires is regulated by Banco Central de la República Argentina (\"BCRA\"- Central Bank of Argentina) and Comisión Nacional de Valores (\"CNV\"- Argentinian Securities Commission - ALYC y AN Integral N°51).",
+        "bbox": [
+            70,
+            432,
+            895,
+            458
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "Australia: JPM Securities Australia Limited (\"JPMSAL\") (ABN 61 003 245 234/AFS Licence No: 238066) is regulated by the Australian Securities and Investments Commission and is a Market Participant of ASX Limited, a Clearing and Settlement Participant of ASX Clear Pty Limited and a Clearing Participant of ASX Clear (Futures) Pty Limited. This material is issued and distributed in Australia by or on behalf of JPMSAL only to \"wholesale clients\" (as defined in section 761G of the Corporations Act 2001). A list of all financial products covered can be found by visiting https://www.jpmm.com/research/disclosures. JPM seeks to cover companies of relevance to the domestic and international investor base across all Global Industry Classification Standard (GICS) sectors, as well as across a range of market capitalisation sizes. If applicable, in the course of conducting public side due diligence on the subject company(ies), the Research Analyst team may at times perform such diligence through corporate engagements such as site visits, discussions with company representatives, management presentations, etc. Research issued by JPMSAL has been prepared in accordance with JPM Australia's Research Independence Policy which can be found at the following link: JPM Australia - Research Independence Policy.",
+        "bbox": [
+            70,
+            464,
+            924,
+            594
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "Brazil: Banco JPM S.A. is regulated by the Comissao de Valores Mobiliarios (CVM) and by the Central Bank of Brazil. Ombudsman JPM: 0800-7700847 / 0800-7700810 (For Hearing Impaired) / ouvidoria.jp.morgan@jpmchase.com.",
+        "bbox": [
+            70,
+            601,
+            903,
+            629
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "Canada: JPM Securities Canada Inc. is a registered investment dealer, regulated by the Canadian Investment Regulatory Organization and the Ontario Securities Commission and is the participating member on Canadian exchanges. This material is distributed in Canada by or on behalf of JPM Securities Canada Inc.",
+        "bbox": [
+            70,
+            634,
+            919,
+            674
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "Chile: Inversiones JPM Limitada is an unregulated entity incorporated in Chile.",
+        "bbox": [
+            70,
+            681,
+            586,
+            695
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "China: JPM Securities (China) Company Limited has been approved by CSRC to conduct the securities investment consultancy business.",
+        "bbox": [
+            70,
+            701,
+            872,
+            727
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "Colombia: Banco JPM Colombia S.A. is supervised by the Superintendencia Financiera de Colombia (SFC). Any reference in this material to products or services offered abroad by entities other than the Bank in Colombia is included exclusively for descriptive purposes. Such references do not constitute, and should not be construed as, promotional activity or the provision of financial products or services within Colombian territory, as defined under applicable Colombian regulation.",
+        "bbox": [
+            70,
+            735,
+            913,
+            788
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "Dubai International Financial Centre (DIFC): JPM Chase Bank, N.A., Dubai Branch is regulated by the Dubai Financial Services Authority (DFSA) and its registered address is Dubai International Financial Centre - The Gate, West Wing, Level 3 and 9 PO Box 506551, Dubai, UAE. This material has been distributed by JPM Chase Bank, N.A., Dubai Branch to persons regarded as professional clients or market counterparties as defined under the DFSA rules.",
+        "bbox": [
+            70,
+            794,
+            906,
+            847
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "European Economic Area (EEA): Unless specified to the contrary, research is distributed in the EEA by JPM SE (“JPM SE”), which is authorised as a credit institution by the Federal Financial Supervisory Authority (Bundesanstalt für Finanzdienstleistungsaufsicht, BaFin) and jointly supervised by the BaFin, the German Central Bank (Deutsche Bundesbank) and the European Central Bank (ECB). JPM SE is a company headquartered in Frankfurt with registered address at TaunusTurm, Taunustor 1, Frankfurt am Main, 60310, Germany. The material has been distributed in the EEA to persons regarded as professional investors (or equivalent) pursuant to Art. 4 para. 1 no. 10 and Annex II of MiFID II and its respective implementation in their home jurisdictions (“EEA professional investors”). This material must not be acted on or",
+        "bbox": [
+            70,
+            854,
+            921,
+            932
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "header",
+        "text": "Mark Strouse, CFA AC (1-212) 622-8244 mark.w.strouse@JPM.com",
+        "bbox": [
+            68,
+            34,
+            235,
+            68
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "header",
+        "text": "North America Equity Research 04 June 2026",
+        "bbox": [
+            343,
+            36,
+            517,
+            56
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "header",
+        "text": "JPM",
+        "bbox": [
+            797,
+            32,
+            924,
+            56
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "page_number",
+        "text": "7",
+        "bbox": [
+            916,
+            952,
+            926,
+            961
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "relied on by persons who are not EEA professional investors. Any investment or investment activity to which this material relates is only available to EEA relevant persons and will be engaged in only with EEA relevant persons.",
+        "bbox": [
+            70,
+            129,
+            879,
+            156
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "Hong Kong: JPM Securities (Asia Pacific) Limited (CE number AAJ321) is regulated by the Hong Kong Monetary Authority and the Securities and Futures Commission in Hong Kong, and JPM Broking (Hong Kong) Limited (CE number AAB027) is regulated by the Securities and Futures Commission in Hong Kong. JPM Chase Bank, N.A., Hong Kong Branch (CE Number AAL996) is regulated by the Hong Kong Monetary Authority and the Securities and Futures Commission, is organized under the laws of the United States with limited liability. Where the distribution of this material is a regulated activity in Hong Kong, the material is distributed in Hong Kong by or through JPM Securities (Asia Pacific) Limited and/or JPM Broking (Hong Kong) Limited.",
+        "bbox": [
+            70,
+            163,
+            926,
+            241
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "India: JPM India Private Limited (Corporate Identity Number - U67120MH1992FTC068724), having its registered office at JPM Tower, Off. C.S.T. Road, Kalina, Santacruz - East, Mumbai – 400098, is registered with the Securities and Exchange Board of India (SEBI) as a ‘Research Analyst’ having registration number INH000001873. JPM India Private Limited is also registered with SEBI as a member of the National Stock Exchange of India Limited and the Bombay Stock Exchange Limited (SEBI Registration Number – INZ000239730) and as a Merchant Banker (SEBI Registration Number - MB/INM000002970). Telephone: 91-22-6157 3000, Facsimile: 91-22-6157 3990 and Website: http://www.jpmipl.com. JPM Chase Bank, N.A. - Mumbai Branch is licensed by the Reserve Bank of India (RBI) (Licence No. 53/Licence No. BY.4/94; SEBI - IN/CUS/014/ CDSL : IN-DP-CDSL-444-2008/ IN-DP-NSDL-285-2008/ INBI00000984/ INE231311239) as a Scheduled Commercial Bank in India, which is its primary license allowing it to carry on Banking business in India and other activities, which a Bank branch in India are permitted to undertake. For non-local research material, this material is not distributed in India by JPM India Private Limited. Compliance Officer: Ashutosh Sharma; ashutosh.j.sharma@jpmchase.com; +912261575002. Grievance Officer: Ramprasadh K, jpmipl.research.feedback@JPM.com; +912261573000. Registration granted by SEBI and certification from NISM in no way guarantee performance of the intermediary or provide any assurance of returns to investors. Please visit Terms and Conditions and Most Important Terms and Conditions (MITC). The annual Compliance audit report is available at http://www.jpmipl.com/#research.",
+        "bbox": [
+            70,
+            247,
+            926,
+            416
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "Indonesia: PT JPM Sekuritas Indonesia is a member of the Indonesia Stock Exchange and is registered and supervised by the Otoritas Jasa Keuangan (OJK).",
+        "bbox": [
+            70,
+            423,
+            908,
+            450
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "Korea: JPM Securities (Far East) Limited, Seoul Branch, is a member of the Korea Exchange (KRX). JPM Chase Bank, N.A., Seoul Branch, is licensed as a branch office of foreign bank (JPM Chase Bank, N.A.) in Korea. Both entities are regulated by the Financial Services Commission (FSC) and the Financial Supervisory Service (FSS). For non-macro research material, the material is distributed in Korea by or through JPM Securities (Far East) Limited, Seoul Branch.",
+        "bbox": [
+            70,
+            456,
+            924,
+            509
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "Japan: JPM Securities Japan Co., Ltd. and JPM Chase Bank, N.A., Tokyo Branch are regulated by the Financial Services Agency in Japan.",
+        "bbox": [
+            70,
+            516,
+            921,
+            543
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "Malaysia: This material is issued and distributed in Malaysia by JPM Securities (Malaysia) Sdn Bhd (18146-X), which is a Participating Organization of Bursa Malaysia Berhad and holds a Capital Markets Services License issued by the Securities Commission in Malaysia.",
+        "bbox": [
+            70,
+            549,
+            913,
+            576
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "Mexico: JPM Casa de Bolsa, S.A. de C.V., JPM Grupo Financiero is member of the Mexican Stock Exchange (“Bolsa Mexicana de Valores”) and the Institutional Stock Exchange (“Bolsa Institucional de Valores”), and it is authorized to act as a broker dealer by the National Banking and Securities Exchange Commission (“Comisión Nacional Bancaria y de Valores”).",
+        "bbox": [
+            70,
+            583,
+            916,
+            623
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "New Zealand: This material is issued and distributed by JPMSAL in New Zealand only to \"wholesale clients\" (as defined in the Financial Markets Conduct Act 2013). JPMSAL is registered as a Financial Service Provider under the Financial Service providers (Registration and Dispute Resolution) Act of 2008.",
+        "bbox": [
+            70,
+            629,
+            890,
+            669
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "Philippines: JPM Securities Philippines Inc. is a Trading Participant of the Philippine Stock Exchange and a member of the Securities Clearing Corporation of the Philippines and the Securities Investor Protection Fund. It is regulated by the Securities and Exchange Commission.",
+        "bbox": [
+            70,
+            676,
+            921,
+            703
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "Singapore: This material is issued and distributed in Singapore by or through JPM Securities Singapore Private Limited (JPMSS) [MDDI (P) 057/08/2025 and Co. Reg. No.: 199405335R], which is a member of the Singapore Exchange Securities Trading Limited, and/or JPM Chase Bank, N.A., Singapore branch (JPMCB Singapore), both of which are regulated by the Monetary Authority of Singapore. This material is issued and distributed in Singapore only to accredited investors, expert investors and institutional investors, as defined in Section 4A of the Securities and Futures Act, Cap. 289 (SFA). This material is not intended to be issued or distributed to any retail investors or any other investors that do not fall into the classes of “accredited investors,” “expert investors” or “institutional investors,” as defined under Section 4A of the SFA. Recipients of this material in Singapore are to contact JPMSS or JPMCB Singapore in respect of any matters arising from, or in connection with, the material.",
+        "bbox": [
+            70,
+            709,
+            924,
+            812
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "South Africa: JPM Equities South Africa Proprietary Limited and JPM Chase Bank, N.A., Johannesburg Branch are members of the Johannesburg Securities Exchange and are regulated by the Financial Services Conduct Authority (FSCA).",
+        "bbox": [
+            70,
+            820,
+            913,
+            847
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "Taiwan: JPM Securities (Taiwan) Limited is a participant of the Taiwan Stock Exchange (company-type) and regulated by the Taiwan Securities and Futures Bureau. Material relating to equity securities is issued and distributed in Taiwan by JPM Securities (Taiwan) Limited, subject to the license scope and the applicable laws and the regulations in Taiwan. To the extent that JPM Securities (Taiwan) Limited produces research materials on securities not listed on the Taiwan Stock Exchange or Taipei Exchange (“Non-Taiwan Listed Securities”), these materials shall not constitute securities recommendations for the purpose of applicable Taiwan regulations, and, for the avoidance of doubt, JPM Securities (Taiwan) Limited does not act as broker for Non-Taiwan Listed Securities.",
+        "bbox": [
+            70,
+            854,
+            919,
+            932
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "header",
+        "text": "Mark Strouse, CFA AC (1-212) 622-8244 mark.w.strouse@JPM.com",
+        "bbox": [
+            68,
+            34,
+            235,
+            68
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "header",
+        "text": "North America Equity Research 04 June 2026",
+        "bbox": [
+            343,
+            36,
+            517,
+            56
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "header",
+        "text": "JPM",
+        "bbox": [
+            797,
+            32,
+            924,
+            56
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "page_number",
+        "text": "8",
+        "bbox": [
+            71,
+            952,
+            80,
+            961
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "According to Paragraph 2, Article 7-1 of Operational Regulations Governing Securities Firms Recommending Trades in Securities to Customers (as amended or supplemented) and/or other applicable laws or regulations, please note that the recipient of this material is not permitted to engage in any activities in connection with the material that may give rise to conflicts of interests, unless otherwise disclosed in the “Important Disclosures” in this material.",
+        "bbox": [
+            71,
+            129,
+            924,
+            181
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "Thailand: This material is issued and distributed in Thailand by JPM Securities (Thailand) Ltd., which is a member of the Stock Exchange of Thailand and is regulated by the Ministry of Finance and the Securities and Exchange Commission. The registered address is 548 One City Center Building, 50th Floor, Ploenchit Road, Lymphini, Pathum Wan, Bangkok 10330.",
+        "bbox": [
+            71,
+            188,
+            926,
+            228
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "UK: Research is produced in the UK by JPM Securities plc (“JPMS plc”) which is a member of the London Stock Exchange and is authorised by the Prudential Regulation Authority and regulated by the Financial Conduct Authority and the Prudential Regulation Authority or JPM Markets Limited (“JPMML Ltd”) which is authorised and regulated by the Financial Conduct Authority. Unless specified to the contrary, this material is distributed in the UK by JPMS plc and is directed in the UK only to: (a) persons having professional experience in matters relating to investments falling within article 19(5) of the Financial Services and Markets Act 2000 (Financial Promotion) (Order) 2005 (“the FPO”); (b) persons outlined in article 49 of the FPO (high net worth companies, unincorporated associations or partnerships, the trustees of high value trusts, etc.); or (c) any persons to whom this communication may otherwise lawfully be made; all such persons being referred to as \"UK relevant persons\". This material must not be acted on or relied on by persons who are not UK relevant persons. Any investment or investment activity to which this material relates is only available to UK relevant persons and will be engaged in only with UK relevant persons. A description of JPM EMEA’s policy for prevention and avoidance of conflicts of interest related to the production of Research can be found at the following link: JPM EMEA - Research Independence Policy.",
+        "bbox": [
+            71,
+            234,
+            928,
+            378
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "U.S.: JPM Securities LLC (“JPMS”) is a member of the NYSE, FINRA, SIPC, and the NFA. JPM Chase Bank, N.A. is a member of the FDIC. Material published by non-U.S. affiliates is distributed in the U.S. by JPMS who accepts responsibility for its content.",
+        "bbox": [
+            71,
+            384,
+            913,
+            411
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "General: Additional information is available upon request. The information in this material has been obtained from sources believed to be reliable. While all reasonable care has been taken to ensure that the facts stated in this material are accurate and that the forecasts, opinions and expectations contained herein are fair and reasonable, JPM Chase & Co. or its affiliates and/or subsidiaries (collectively JPM) make no representations or warranties whatsoever to the completeness or accuracy of the material provided, except with respect to any disclosures relative to JPM and the Research Analyst's involvement with the issuer that is the subject of the material. Accordingly, no reliance should be placed on the accuracy, fairness or completeness of the information contained in this material. There may be certain discrepancies with data and/or limited content in this material as a result of calculations, adjustments, translations to different languages, and/or local regulatory restrictions, as applicable. These discrepancies should not impact the overall investment analysis, views and/or recommendations of the subject company(ies) that may be discussed in the material. Artificial intelligence tools may have been used in the preparation of this material, including assisting in data analysis, pattern recognition, and content drafting for research material. JPM accepts no liability whatsoever for any loss arising from any use of this material or its contents, and neither JPM nor any of its respective directors, officers or employees, shall be in any way responsible for the contents hereof, apart from the liabilities and responsibilities that may be imposed on them by the relevant regulatory authority in the jurisdiction in question, or the regulatory regime thereunder. Opinions, forecasts or projections contained in this material represent JPM's current opinions or judgment as of the date of the material only and are therefore subject to change without notice. Periodic updates may be provided on companies/industries based on company-specific developments or announcements, market conditions or any other publicly available information. There can be no assurance that future results or events will be consistent with any such opinions, forecasts or projections, which represent only one possible outcome. Furthermore, such opinions, forecasts or projections are subject to certain risks, uncertainties and assumptions that have not been verified, and future actual results or events could differ materially. The value of, or income from, any investments referred to in this material may fluctuate and/or be affected by changes in exchange rates. All pricing is indicative as of the close of market for the securities discussed, unless otherwise stated. Past performance is not indicative of future results. Accordingly, investors may receive back less than originally invested. This material is not intended as an offer or solicitation for the purchase or sale of any financial instrument. The opinions and recommendations herein do not take into account individual client circumstances, objectives, or needs and are not intended as recommendations of particular securities, financial instruments or strategies to particular clients. This material may include views on structured securities, options, futures and other derivatives. These are complex instruments, may involve a high degree of risk and may be appropriate investments only for sophisticated investors who are capable of understanding and assuming the risks involved. The recipients of this material must make their own independent decisions regarding any securities or financial instruments mentioned herein and should seek advice from such independent financial, legal, tax or other adviser as they deem necessary. JPM may trade as a principal on the basis of the Research Analysts' views and research, and it may also engage in transactions for its own account or for its clients' accounts in a manner inconsistent with the views taken in this material, and JPM is under no obligation to ensure that such other communication is brought to the attention of any recipient of this material. Others within JPM, including Strategists, Sales staff and other Research Analysts, may take views that are inconsistent with those taken in this material. Employees of JPM not involved in the preparation of this material may have investments in the securities (or derivatives of such securities) mentioned in this material and may trade them in ways different from those discussed in this material. This material is not an advertisement for or marketing of any issuer, its products or services, or its securities in any jurisdiction.",
+        "bbox": [
+            71,
+            418,
+            928,
+            858
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "Confidentiality and Security Notice: This transmission may contain information that is privileged, confidential, legally privileged, and/or exempt from disclosure under applicable law. If you are not the intended recipient, you are hereby notified that any disclosure, copying, distribution, or use of the information contained herein (including any reliance thereon) is STRICTLY PROHIBITED. Although this transmission and any attachments are believed to be free of any virus or other defect that might affect any computer system into which it is received and opened, it is the responsibility of the recipient to ensure that it is virus free and no responsibility is accepted by JPM Chase &",
+        "bbox": [
+            71,
+            864,
+            923,
+            929
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "header",
+        "text": "Mark Strouse, CFA AC (1-212) 622-8244 mark.w.strouse@JPM.com",
+        "bbox": [
+            68,
+            34,
+            235,
+            68
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "header",
+        "text": "North America Equity Research 04 June 2026",
+        "bbox": [
+            343,
+            36,
+            517,
+            56
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "header",
+        "text": "JPM",
+        "bbox": [
+            797,
+            33,
+            924,
+            56
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "page_number",
+        "text": "9",
+        "bbox": [
+            918,
+            952,
+            926,
+            961
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "Co., its subsidiaries and affiliates, as applicable, for any loss or damage arising in any way from its use. If you received this transmission in error, please immediately contact the sender and destroy the material in its entirety, whether in electronic or hard copy format. This message is subject to electronic monitoring: https://www.JPM.com/disclosures/email",
+        "bbox": [
+            66,
+            129,
+            913,
+            170
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "MSCI: Certain information herein (“Information”) is reproduced by permission of MSCI Inc., its affiliates and information providers (“MSCI”) ©2026. No reproduction or dissemination of the Information is permitted without an appropriate license. MSCI MAKES NO EXPRESS OR IMPLIED WARRANTIES (INCLUDING MERCHANTABILITY OR FITNESS) AS TO THE INFORMATION AND DISCLAIMS ALL LIABILITY TO THE EXTENT PERMITTED BY LAW. No Information constitutes investment advice, except for any applicable Information from MSCI ESG Research. Subject also to msci.com/disclaimer",
+        "bbox": [
+            68,
+            175,
+            921,
+            242
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "Sustainalytics: Certain information, data, analyses and opinions contained herein are reproduced by permission of Sustainalytics and: (1) includes the proprietary information of Sustainalytics; (2) may not be copied or redistributed except as specifically authorized; (3) do not constitute investment advice nor an endorsement of any product or project; (4) are provided solely for informational purposes; and (5) are not warranted to be complete, accurate or timely. Sustainalytics is not responsible for any trading decisions, damages or other losses related to it or its use. The use of the data is subject to conditions available at https://www.sustainalytics.com/legal-disclaimers. ©2026 Sustainalytics. All Rights Reserved.",
+        "bbox": [
+            66,
+            247,
+            916,
+            326
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "\"Other Disclosures\" last revised May 16, 2026.",
+        "bbox": [
+            68,
+            332,
+            351,
+            347
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "Copyright 2026 JPM Chase & Co. All rights reserved. This material or any portion hereof may not be reprinted, sold or redistributed without the written consent of JPM. It is strictly prohibited to use or share without prior written consent from JPM any research material received from JPM or an authorized third-party (“JPM Data”) in any third-party artificial intelligence (“AI”) systems or models when such JPM Data is accessible by a third-party.",
+        "bbox": [
+            66,
+            360,
+            921,
+            412
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "Completed 04 Jun 2026 01:20 AM EDT",
+        "bbox": [
+            68,
+            418,
+            312,
+            432
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "Disseminated 04 Jun 2026 01:56 AM EDT",
+        "bbox": [
+            669,
+            418,
+            926,
+            432
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "header",
+        "text": "Mark Strouse, CFA AC",
+        "bbox": [
+            68,
+            34,
+            183,
+            46
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "header",
+        "text": "(1-212) 622-8244",
+        "bbox": [
+            68,
+            46,
+            161,
+            56
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "header",
+        "text": "mark.w.strouse@JPM.com",
+        "bbox": [
+            68,
+            56,
+            233,
+            69
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "header",
+        "text": "North America Equity Research",
+        "bbox": [
+            343,
+            36,
+            517,
+            47
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "header",
+        "text": "04 June 2026",
+        "bbox": [
+            343,
+            47,
+            415,
+            56
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "header",
+        "text": "JPM",
+        "bbox": [
+            797,
+            32,
+            924,
+            56
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "page_number",
+        "text": "10",
+        "bbox": [
+            71,
+            950,
+            86,
+            962
+        ],
+        "page_idx": 9
+    }
+]

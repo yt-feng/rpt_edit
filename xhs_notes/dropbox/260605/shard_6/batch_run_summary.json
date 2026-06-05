@@ -1,0 +1,51 @@
+{
+  "input_dir": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs",
+  "total_pdf_count_before_shard": 43,
+  "pdf_count_before_skip": 5,
+  "pdf_count": 5,
+  "generated_report_count": 5,
+  "batch_size": 5,
+  "shard_index": 6,
+  "shard_count": 40,
+  "max_reports_per_shard": 5,
+  "max_total_reports": 0,
+  "skip_existing": true,
+  "skipped_existing_count": 0,
+  "skipped_existing": [],
+  "failures": 0,
+  "batches": [
+    {
+      "batch_index": 1,
+      "pdf_count": 5,
+      "files": [
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/31-GS-Australian Lithium & Gold Coverage-260605.pdf",
+          "batch_file": "/tmp/pdf_batch_001_lo7vqsdl/pdfs/0001-31-GS-Australian Lithium - Gold Coverage-260605.pdf",
+          "stable_index": "1"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/33-GS-Energy， Utilities & Mining Pulse：Investors Asking：What Are Key Debates in Natural Resources from Here？-260604.pdf",
+          "batch_file": "/tmp/pdf_batch_001_lo7vqsdl/pdfs/0002-33-GS-Energy- Utilities - Mining Pulse-Investors Asking-What Are Key Debates in Natural Resources from Here--260604.pdf",
+          "stable_index": "2"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/34-GS-HONG KONG REAL ESTATE：Assessing China’s tighter capital controls. Analyze demand drivers， exposure and earnings sensitivity-260605.pdf",
+          "batch_file": "/tmp/pdf_batch_001_lo7vqsdl/pdfs/0003-34-GS-HONG KONG REAL ESTATE-Assessing China-s tighter capital controls. Analyze demand drivers- exposure and earnings sensitivity-260605.pdf",
+          "stable_index": "3"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/35-HSBC-Hong Kong Real Estate：High base effect about to kick in for retail business-260603.pdf",
+          "batch_file": "/tmp/pdf_batch_001_lo7vqsdl/pdfs/0004-35-HSBC-Hong Kong Real Estate-High base effect about to kick in for retail business-260603.pdf",
+          "stable_index": "4"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/36-JPM-Clean Energy：Takeaways from the CleanPower 2026 Conference-260604.pdf",
+          "batch_file": "/tmp/pdf_batch_001_lo7vqsdl/pdfs/0005-36-JPM-Clean Energy-Takeaways from the CleanPower 2026 Conference-260604.pdf",
+          "stable_index": "5"
+        }
+      ],
+      "returncode": 0,
+      "status": "ok"
+    }
+  ]
+}
