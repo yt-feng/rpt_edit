@@ -1,0 +1,51 @@
+{
+  "input_dir": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs",
+  "total_pdf_count_before_shard": 43,
+  "pdf_count_before_skip": 5,
+  "pdf_count": 5,
+  "generated_report_count": 5,
+  "batch_size": 5,
+  "shard_index": 7,
+  "shard_count": 40,
+  "max_reports_per_shard": 5,
+  "max_total_reports": 0,
+  "skip_existing": true,
+  "skipped_existing_count": 0,
+  "skipped_existing": [],
+  "failures": 0,
+  "batches": [
+    {
+      "batch_index": 1,
+      "pdf_count": 5,
+      "files": [
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/37-MS-China Healthcare：China Biotech Funding and Licensing Monthly-260603.pdf",
+          "batch_file": "/tmp/pdf_batch_001_o9s9cdi2/pdfs/0001-37-MS-China Healthcare-China Biotech Funding and Licensing Monthly-260603.pdf",
+          "stable_index": "1"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/38-Bofa-The Flow Show The Wealth Up Biz & a World Cup Quiz-260605.pdf",
+          "batch_file": "/tmp/pdf_batch_001_o9s9cdi2/pdfs/0002-38-Bofa-The Flow Show The Wealth Up Biz - a World Cup Quiz-260605.pdf",
+          "stable_index": "2"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/39-GS-HK Banks & Insurance：Addressing frequently asked questions on the latest regulatory announcements-260605.pdf",
+          "batch_file": "/tmp/pdf_batch_001_o9s9cdi2/pdfs/0003-39-GS-HK Banks - Insurance-Addressing frequently asked questions on the latest regulatory announcements-260605.pdf",
+          "stable_index": "3"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/40-HSBC-Korea EV ESS Battery：ESS pull and EV bottoming； brace for upside catalysts-260604.pdf",
+          "batch_file": "/tmp/pdf_batch_001_o9s9cdi2/pdfs/0004-40-HSBC-Korea EV ESS Battery-ESS pull and EV bottoming- brace for upside catalysts-260604.pdf",
+          "stable_index": "4"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/41-MS-Internet：Where Are We Trading Now： Into the Summer of AI-260603.pdf",
+          "batch_file": "/tmp/pdf_batch_001_o9s9cdi2/pdfs/0005-41-MS-Internet-Where Are We Trading Now- Into the Summer of AI-260603.pdf",
+          "stable_index": "5"
+        }
+      ],
+      "returncode": 0,
+      "status": "ok"
+    }
+  ]
+}

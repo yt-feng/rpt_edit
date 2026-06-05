@@ -1,0 +1,267 @@
+June 3, 2026 05:51 AM GMT
+
+## China Healthcare | Asia Pacific
+
+# China Biotech Funding and Licensing Monthly
+
+## Key Takeaways
+
+China Biotech funding rebounded in May (+28% MoM), with public +138% to US \$675m offsetting private's drop to US\$90m (-72%), largely driven by placements.  
+China out-licensing surged to \~US\$27bn (15x MoM; +181% YoY), led by mega deals: Hengrui/BMS (US\$15.2bn) and Innovent/Pfizer (US\$10.5bn).
+
+Funding momentum: China Biotech funding increased 28% in May: private funding declined to US\$90m (-72% MoM), while public funding increased 138% MoM, to US \$675m driven in a large part by the Amoytop (688278.SH, not covered) and Weiguang (002880.SZ, not covered) private placements.
+
+Licensing momentum: China's out-licensing activity rebounded sharply to c.US \$27bn in April by disclosed deal value (15x MoM; +181% YoY), mainly driven by two major deals between Hengrui/BMS and Innovent/Pfizer. Hengrui's US\$15.2bn deal with BMS on 13 early-stage oncology and hematology pipelines (4 out-license + 4 in-license + 5 co-dev) led the headline (link), followed by Innovent's US\$10.5bn package deal with Pfizer on 12 assets (4 co-dev + 8 out-license) in the oncology space (link).
+
+Exhibit 1: China Biotech Funding - May 2026  
+![](images/a0974e39d36aa07e0e320eb454bd0a878a8259de4ee6baa9abb6e37b7a6e0de6.jpg)
+
+<details>
+<summary>bar chart</summary>
+
+| Month | Private (US$ mn) | Public (US$ mn) |
+|---|---|---|
+| Jan-24 | 350 | 100 |
+| Feb-24 | 380 | 120 |
+| Mar-24 | 320 | 150 |
+| Apr-24 | 300 | 180 |
+| May-24 | 360 | 200 |
+| Jun-24 | 390 | 220 |
+| Jul-24 | 370 | 210 |
+| Aug-24 | 340 | 190 |
+| Sep-24 | 280 | 160 |
+| Oct-24 | 310 | 230 |
+| Nov-24 | 450 | 350 |
+| Dec-24 | 650 | 550 |
+| Jan-25 | 750 | 1550 |
+| Feb-25 | 150 | 850 |
+| Mar-25 | 180 | 950 |
+| Apr-25 | 160 | 1750 |
+| May-25 | 190 | 1950 |
+| Jun-25 | 170 | 1650 |
+| Jul-25 | 350 | 650 |
+| Aug-25 | 400 | 750 |
+| Sep-25 | 380 | 850 |
+| Oct-25 | 360 | 750 |
+| Nov-25 | 390 | 850 |
+| Dec-25 | 480 | 1650 |
+| Jan-26 | 380 | 180 |
+| Feb-26 | 180 | 160 |
+| Mar-26 | 380 | 650 |
+| Apr-26 | 370 | 750 |
+| May-26 | 420 | 850 |
+</details>
+
+Source: GBI database
+
+Exhibit 22: China Biotech Licensing - May 2026  
+![](images/473ed74fed73e054642ed9a1116ee04b2c12c1c11ab345c66ca55fea56fed4c8.jpg)
+
+<details>
+<summary>bar-line hybrid</summary>
+
+| Month | Total Value ($mn) | Average Upfront % |
+|---|---|---|
+| Jan-25 | 24000 | 1.5 |
+| Feb-25 | 1500 | 3.0 |
+| Mar-25 | 8000 | 7.5 |
+| Apr-25 | 2000 | 19.5 |
+| May-25 | 9000 | 11.5 |
+| Jun-25 | 14000 | 4.5 |
+| Jul-25 | 17000 | 3.5 |
+| Aug-25 | 4000 | 32.5 |
+| Sep-25 | 9000 | 6.5 |
+| Oct-25 | 19000 | 4.5 |
+| Nov-25 | 4000 | 2.5 |
+| Dec-25 | 14000 | 6.5 |
+| Jan-26 | 32000 | 8.5 |
+| Feb-26 | 20000 | 6.5 |
+| Mar-26 | 5000 | 3.5 |
+| Apr-26 | 1000 | 1.5 |
+| May-26 | 27000 | 4.5 |
+</details>
+
+Source: GBI database
+
+MS ASIA LIMITED+
+
+## Jack Lin
+
+Equity Analyst
+
+Jack.Lin@morganstanley.com +852 3963-3746
+
+## Laurence Tam
+
+Equity Analyst
+
+Laurence.Tam@morganstanley.com +852 2239-1753
+
+## Alexis Yan, CFA
+
+Equity Analyst
+
+Alexis.Yan@morganstanley.com +852 2239-7953
+
+## Vanessa Liao
+
+Research Associate
+
+Vanessa.Liao@morganstanley.com +852 3963-0115
+
+![](images/941b3665f868aee79e0c942bfed8a826936c1f04c87d28bd35a1ba7c3e39d3eb.jpg)
+
+<details>
+<summary>text_image</summary>
+
+Asia Summer School 2026
+</details>
+
+## CHINA HEALTHCARE
+
+Asia Pacific
+
+Industry View
+
+Attractive
+
+MS does and seeks to do business with companies covered in MS. As a result, investors should be aware that the firm may have a conflict of interest that could affect the objectivity of MS. Investors should consider MS as only a single factor in making their investment decision.
+
+## For analyst certification and other important disclosures, refer to the Disclosure Section, located at the end of this report.
+
++= Analysts employed by non-U.S. affiliates are not registered with FINRA, may not be associated persons of the member and may not be subject to FINRA restrictions on communications with a subject company, public appearances and trading securities held by a research analyst account.
+
+## Disclosure Section
+
+The information and opinions in MS were prepared or are disseminated by MS Asia Limited (which accepts the responsibility for its contents) and/or MS Asia (Singapore) Pte. (Registration number 199206298Z) and/or MS Asia (Singapore) Securities Pte Ltd (Registration number 200008434H), regulated by the Monetary Authority of Singapore (which accepts legal responsibility for its contents and should be contacted with respect to any matters arising from, or in connection with, MS), and/or MS Taiwan Limited and/or MS & Co International plc, Seoul Branch, and/or MS Australia Limited (A.B.N. 67 003 734 576, holder of Australian financial services license No. 233742, which accepts responsibility for its contents), and/or MS Wealth Management Australia Pty Ltd (A.B.N. 19 009 145 555, holder of Australian financial services license No. 240813, which accepts responsibility for its contents), and/or MS India Company Private Limited having Corporate Identification No (CIN) U22990MH1998PTC115305, regulated by the Securities and Exchange Board of India ("SEBI") and holder of licenses as a Research Analyst (SEBI Registration No. INH000001105); Stock Broker (SEBI Stock Broker Registration No. INZ000244438), Merchant Banker (SEBI Registration No. INM000011203), and depository participant with National Securities Depository Limited (SEBI Registration No. IN-DP-NSDL-567-2021) having registered office at Altimus, Level 39 & 40, Pandurang Budhkar Marg, Worli, Mumbai 400018, India; Telephone no. +91-22-61181000; Compliance Officer Details: Mr. Tejarshi Hardas, Tel. No.: +91-22-61181000 or Email: tejarshi.hardas@morganstanley.com; Grievance officer details: Mr. Tejarshi Hardas, Tel. No.: +91-22-61181000 or Email: msic-compliance@morganstanley.com which accepts the responsibility for its contents and should be contacted with respect to any matters arising from, or in connection with, MS, and their affiliates (collectively, "MS"). MS India Company Private Limited (MSICPL) may use AI tools in providing research services. All recommendations contained herein are made by the duly qualified research analysts.
+
+For important disclosures, stock price charts and equity rating histories regarding companies that are the subject of this report, please see the MS Disclosure Website at www.morganstanley.com/eqr/disclosures/webapp/generalresearch, or contact your investment representative or MS at 1585 Broadway, (Attention: Research Management), New York, NY, 10036 USA.
+
+For valuation methodology and risks associated with any recommendation, rating or price target referenced in this research report, please contact the Client Support Team as follows: US/Canada +1 800 303-2495; Hong Kong +852 2848-5999; Latin America +1 718 754-5444 (U.S.); London +44 (0)20-7425-8169; Singapore +65 6834-6860; Sydney +61 (0)2-9770-1505; Tokyo +81 (0)3-6836-9000. Alternatively you may contact your investment representative or MS at 1585 Broadway, (Attention: Research Management), New York, NY 10036 USA.
+
+## Analyst Certification
+
+The following analysts hereby certify that their views about the companies and their securities discussed in this report are accurately expressed and that they have not received and will not receive direct or indirect compensation in exchange for expressing specific recommendations or views in this report: Jack Lin; Laurence Tam; Alexis Yan, CFA.
+
+## Global Research Conflict Management Policy
+
+MS has been published in accordance with our conflict management policy, which is available at www.morganstanley.com/institutional/research/conflictpolicies. A Portuguese version of the policy can be found at www.morganstanley.com.br
+
+## Important Regulatory Disclosures on Subject Companies
+
+As of April 30, 2026, MS beneficially owned $1\%$ or more of a class of common equity securities of the following companies covered in MS: Abbisko Cayman Ltd, APT Medical Inc, Asymchem Laboratories. Inc, DaShenLin Pharmaceutical, Dian Diagnostics Group Co Ltd, InnoCare Pharma Ltd, Jiangsu Hengrui, Keymed Biosciences Inc., Pharmaron, WuXi AppTec Co Ltd, WuXi Biologics Cayman Inc, Yifeng Pharmacy Chain Co Ltd, Yixintang Pharmaceutical.
+
+Within the last 12 months, MS managed or co-managed a public offering (or 144A offering) of securities of 3SBio, Akeso, Inc., Duality Biotherapeutics Inc, Everest Medicines Ltd, Hansoh Pharmaceutical Group Co Ltd, Innovent Biologics Inc, Insilico Medicine, Jiangsu Hengrui, Keymed Biosciences Inc., Medtide, Nanjing Leads Biolabs Co Ltd, Shenzhen Edge Medical, Simcere Pharmaceutical Group, WuXi AppTec Co Ltd, WuXi Biologics Cayman Inc, WuXi XDC Cayman Inc..
+
+Within the last 12 months, MS has received compensation for investment banking services from 3SBio, Akeso, Inc., Everest Medicines Ltd, Hansoh Pharmaceutical Group Co Ltd, Innovent Biologics Inc, Insilico Medicine, Jiangsu Hengrui, Keymed Biosciences Inc., Medtide, Shenzhen Edge Medical, Simcere Pharmaceutical Group, WuXi AppTec Co Ltd, WuXi Biologics Cayman Inc, WuXi XDC Cayman Inc..
+
+In the next 3 months, MS expects to receive or intends to seek compensation for investment banking services from 3SBio, Abbisko Cayman Ltd, Adicon Holdings Ltd, Aier Eye Hospital Group, Akeso, Inc., Alibaba Health Information Technology, Angelalign Technology Inc, Beauty Farm Medical and Health Industry, China Medical System, CSPC Pharmaceutical Group, Duality Biotherapeutics Inc, Everest Medicines Ltd, Fosun Pharmaceutical, Fu Shou Yuan International Group Ltd, Genscript Biotech Corporation, Hansoh Pharmaceutical Group Co Ltd, HUTCHMED (China) Ltd, Hygeia Healthcare Holdings Co., Ltd., InnoCare Pharma Ltd, Innovent Biologics Inc, Insilico Medicine, Jiangsu Hengrui, Jinxin Fertility Group Ltd, Keymed Biosciences Inc., Medtide, MicroPort Scientific Corp., Mindray Bio-Medical, Nanjing Leads Biolabs Co Ltd, Peijia Medical Ltd, Ping An Healthcare and Technology, Shenzhen Edge Medical, Simcere Pharmaceutical Group, Sino Biopharmaceutical, Sinopharm Group, VISEN Pharmaceuticals, WuXi AppTec Co Ltd, WuXi Biologics Cayman Inc, WuXi XDC Cayman Inc., Yifeng Pharmacy Chain Co Ltd, Yunnan Baiyao Group, Zhejiang Huahai Pharmaceutical Co. Ltd., Zylox-Tonbridge Medical Technology Co..
+
+Within the last 12 months, MS has received compensation for products and services other than investment banking services from 3SBio, Adicon Holdings Ltd, Angelalign Technology Inc, Hygeia Healthcare Holdings Co., Ltd., Simcere Pharmaceutical Group, Sino Biopharmaceutical, The United Laboratories, WuXi AppTec Co Ltd, WuXi Biologics Cayman Inc, WuXi XDC Cayman Inc..
+
+Within the last 12 months, MS has provided or is providing investment banking services to, or has an investment banking client relationship with, the following company: 3SBio, Abbisko Cayman Ltd, Adicon Holdings Ltd, Aier Eye Hospital Group, Akeso, Inc., Alibaba Health Information Technology, Angelalign Technology Inc, Beauty Farm Medical and Health Industry, China Medical System, CSPC Pharmaceutical Group, Duality Biotherapeutics Inc, Everest Medicines Ltd, Fosun Pharmaceutical, Fu Shou Yuan International Group Ltd, Genscript Biotech Corporation, Hansoh Pharmaceutical Group Co Ltd, HUTCHMED (China) Ltd, Hygeia Healthcare Holdings Co., Ltd., InnoCare Pharma Ltd, Innovent Biologics Inc, Insilico Medicine, Jiangsu Hengrui, Jinxin Fertility Group Ltd, Keymed Biosciences Inc., Medtide, MicroPort Scientific Corp., Mindray Bio-Medical, Nanjing Leads Biolabs Co Ltd, Peijia Medical Ltd, Ping An Healthcare and Technology, Shenzhen Edge Medical, Simcere Pharmaceutical Group, Sino Biopharmaceutical, Sinopharm Group, VISEN Pharmaceuticals, WuXi AppTec Co Ltd, WuXi Biologics Cayman Inc, WuXi XDC Cayman Inc., Yifeng Pharmacy Chain Co Ltd, Yunnan Baiyao Group, Zhejiang Huahai Pharmaceutical Co. Ltd., Zylox-Tonbridge Medical Technology Co..
+
+Within the last 12 months, MS has either provided or is providing non-investment banking, securities-related services to and/or in the past has entered into an agreement to provide services or has a client relationship with the following company: 3SBio, Abbisko Cayman Ltd, Adicon Holdings Ltd, Akeso, Inc., Angelalign Technology Inc, Duality Biotherapeutics Inc, HUTCHMED (China) Ltd, Hygeia Healthcare Holdings Co., Ltd., Innovent Biologics Inc, Insilico Medicine, Jinxin Fertility Group Ltd, Keymed Biosciences Inc., Medtide, Nanjing Leads Biolabs Co Ltd, Peijia Medical Ltd, RemeGen Co., Ltd., Simcere Pharmaceutical Group, Sino Biopharmaceutical, The United Laboratories, VISEN Pharmaceuticals, WuXi AppTec Co Ltd, WuXi Biologics Cayman Inc, WuXi XDC Cayman Inc., Zylox-Tonbridge Medical Technology Co..
+
+MS & Co. LLC makes a market in the securities of Zai Lab Ltd.
+
+The equity research analysts or strategists principally responsible for the preparation of MS have received compensation based upon various factors, including quality of research, investor client feedback, stock picking, competitive factors, firm revenues and overall investment banking revenues. Equity Research analysts' or strategists' compensation is not linked to investment banking or capital markets transactions performed by MS or the profitability or revenues of particular trading desks.
+
+MS and its affiliates do business that relates to companies/instruments covered in MS, including market making, providing liquidity, fund management, commercial banking, extension of credit, investment services and investment banking. MS sells to and buys from customers the securities/instruments of companies covered in MS on a principal basis. MS may have a position in the debt of the Company or instruments discussed in this report. MS trades or may trade as principal in the debt securities (or in related derivatives) that are the subject of the debt research report.
+
+Certain disclosures listed above are also for compliance with applicable regulations in non-US jurisdictions.
+
+## STOCK RATINGS
+
+MS uses a relative rating system using terms such as Overweight, Equal-weight, Not-Rated or Underweight (see definitions below). MS does not assign ratings of Buy, Hold or Sell to the stocks we cover. Overweight, Equal-weight, Not-Rated and Underweight are not the equivalent of buy, hold and sell. Investors should carefully read the definitions of all ratings used in MS. In addition, since MS contains more complete information concerning the analyst's views, investors should carefully read MS, in its entirety, and not infer the contents from the rating alone. In any case, ratings (or research) should not be used or relied upon as investment advice. An investor's decision to buy or sell a stock should depend on individual circumstances (such as the investor's existing holdings) and other considerations.
+
+## Global Stock Ratings Distribution
+
+(as of May 31, 2026)
+
+The Stock Ratings described below apply to MS's Fundamental Equity Research and do not apply to Debt Research produced by the Firm.
+
+For disclosure purposes only (in accordance with FINRA requirements), we include the category headings of Buy, Hold, and Sell alongside our ratings of Overweight, Equal-weight, Not-Rated and Underweight. MS does not assign ratings of Buy, Hold or Sell to the stocks we cover. Overweight, Equal-weight, Not-Rated and Underweight are not the equivalent of buy, hold, and sell but represent recommended relative weightings (see definitions below). To satisfy regulatory requirements, we correspond Overweight, our most positive stock rating, with a buy recommendation; we correspond Equal-weight and Not-Rated to hold and Underweight to sell recommendations, respectively.
+
+<table><tr><td></td><td colspan="2">Coverage Universe</td><td colspan="3">Investment Banking Clients (IBC)</td><td colspan="2">Other Material Investment Services Clients (MISC)</td></tr><tr><td>Stock Rating Category</td><td>Count</td><td>% of Total</td><td>Count</td><td>% of Total IBC</td><td>% of Rating Category</td><td>Count</td><td>% of Total Other MISC</td></tr><tr><td>Overweight/Buy</td><td>1542</td><td>42%</td><td>465</td><td>51%</td><td>30%</td><td>707</td><td>43%</td></tr><tr><td>Equal-weight/Hold</td><td>1571</td><td>43%</td><td>369</td><td>40%</td><td>23%</td><td>723</td><td>44%</td></tr><tr><td>Not-Rated/Hold</td><td>3</td><td>0%</td><td>0</td><td>0%</td><td>0%</td><td>1</td><td>0%</td></tr><tr><td>Underweight/Sell</td><td>551</td><td>15%</td><td>86</td><td>9%</td><td>16%</td><td>201</td><td>12%</td></tr><tr><td>Total</td><td>3,667</td><td></td><td>920</td><td></td><td></td><td>1632</td><td></td></tr></table>
+
+Data include common stock and ADRs currently assigned ratings. Investment Banking Clients are companies from whom MS received investment banking compensation in the last 12 months. Due to rounding off of decimals, the percentages provided in the "% of total" column may not add up to exactly 100 percent.
+
+## Analyst Stock Ratings
+
+Overweight (O). The stock's total return is expected to exceed the average total return of the analyst's industry (or industry team's) coverage universe, on a risk-adjusted basis, over the next 12-18 months.
+
+Equal-weight (E). The stock's total return is expected to be in line with the average total return of the analyst's industry (or industry team's) coverage universe, on a risk-adjusted basis, over the next 12-18 months.
+
+Not-Rated (NR). Currently the analyst does not have adequate conviction about the stock's total return relative to the average total return of the analyst's industry (or industry team's) coverage universe, on a risk-adjusted basis, over the next 12-18 months.
+
+Underweight (U). The stock's total return is expected to be below the average total return of the analyst's industry (or industry team's) coverage universe, on a risk-adjusted basis, over the next 12-18 months.
+
+Unless otherwise specified, the time frame for price targets included in MS is 12 to 18 months.
+
+## Analyst Industry Views
+
+Attractive (A): The analyst expects the performance of his or her industry coverage universe over the next 12-18 months to be attractive vs. the relevant broad market benchmark, as indicated below.
+
+In-Line (I): The analyst expects the performance of his or her industry coverage universe over the next 12-18 months to be in line with the relevant broad market benchmark, as indicated below. Cautious (C): The analyst views the performance of his or her industry coverage universe over the next 12-18 months with caution vs. the relevant broad market benchmark, as indicated below. Benchmarks for each region are as follows: North America - S&P 500; Latin America - relevant MSCI country index or MSCI Latin America Index; Europe - MSCI Europe; Japan - TOPIX; Asia - relevant MSCI country index or MSCI sub-regional index or MSCI AC Asia Pacific ex Japan Index.
+
+## Important Disclosures for MS Smith Barney LLC Customers
+
+Important disclosures regarding any material conflict of interest that can reasonably be expected to have influenced MS Smith Barney LLC's choice of a third-party research provider or the subject company of a third-party research report, are available on the MS Wealth Management disclosure website at www.morganstanley.com/online/researchdisclosures. For MS specific disclosures, you may refer to https://www.morganstanley.com/eqr/disclosures/webapp/generalresearch.
+
+Each MS report is reviewed and approved on behalf of MS Smith Barney LLC. This review and approval is conducted by the same person who reviews the research report on behalf of MS. This could create a conflict of interest.
+
+## Other Important Disclosures
+
+MS policy is to update research reports as and when the Research Analyst and Research Management deem appropriate, based on developments with the issuer, the sector, or the market that may have a material impact on the research views or opinions stated therein. In addition, certain Research publications are intended to be updated on a regular periodic basis (weekly/monthly/quarterly/annual) and will ordinarily be updated with that frequency, unless the Research Analyst and Research Management determine that a different publication schedule is appropriate based on current conditions.
+
+MS is not acting as a municipal advisor and the opinions or views contained herein are not intended to be, and do not constitute, advice within the meaning of Section 975 of the Dodd-Frank Wall Street Reform and Consumer Protection Act.
+
+MS produces an equity research product called a "Tactical Idea." Views contained in a "Tactical Idea" on a particular stock may be contrary to the recommendations or views expressed in research on the same stock. This may be the result of differing time horizons, methodologies, market events, or other factors. For all research available on a particular stock, please contact your sales representative or go to Matrix at http://www.morganstanley.com/matrix.
+
+MS is provided to our clients through our proprietary research portal on Matrix and also distributed electronically by MS to clients. Certain, but not all, MS products are also made available to clients through third-party vendors or redistributed to clients through alternate electronic means as a convenience. For access to all available MS, please contact your sales representative or go to Matrix at http://www.morganstanley.com/matrix.
+
+Any access and/or use of MS is subject to MS's Terms of Use (http://www.morganstanley.com/terms.html). By accessing and/or using MS, you are indicating that you have read and agree to be bound by our Terms of Use (http://www.morganstanley.com/terms.html). In addition you consent to MS processing your personal data and using cookies in accordance with our Privacy Policy and our Global Cookies Policy (http://www.morganstanley.com/privacy\_pledge.html), including for the purposes of setting your preferences and to collect readership data so that we can deliver better and more personalized service and products to you. To find out more information about how MS processes personal data, how we use cookies and how to reject cookies see our Privacy Policy and our Global Cookies Policy (http://www.morganstanley.com/privacy\_pledge.html). Please use the provided link to review the Terms and Conditions and Most Important Terms and Conditions for MS India Company Private Limited (https://www.morganstanley.com/assets/pdfs/about-us-global-offices/india/Terms\_and\_conditions.pdf) and the following link to review the audit report (https://ny.matrix.ms.com/eqr/research/webapp/researchdocs/MSICPL\_Morgan\_Stanley\_Research\_Audit\_Report.pdf).
+
+If you do not agree to our Terms of Use and/or if you do not wish to provide your consent to MS processing your personal data or using cookies please do not access our research. MS does not provide individually tailored investment advice. MS has been prepared without regard to the circumstances and objectives of those who receive it. MS recommends that investors independently evaluate particular investments and strategies, and encourages investors to seek the advice of a financial adviser. The appropriateness of an investment or strategy will depend on an investor's circumstances and objectives. The securities, instruments, or strategies discussed in MS may not be suitable for all investors, and certain investors may not be eligible to purchase or participate in some or all of them. MS is not an offer to buy or sell or the solicitation of an offer to buy or sell any security/instrument or to participate in any particular trading strategy. The value of and income from your investments may vary because of changes in interest rates, foreign exchange rates, default rates, prepayment rates, securities/instruments prices, market indexes, operational or financial conditions of companies or other factors. There may be time limitations on the exercise of options or other rights in securities/instruments transactions. Past performance is not necessarily a guide to future performance. Estimates of future performance are based on assumptions that may not be realized. If provided, and unless otherwise stated, the closing price on the cover page is that of the primary exchange for the subject company's securities/instruments.
+
+The fixed income research analysts, strategists or economists principally responsible for the preparation of MS have received compensation based upon various factors, including quality, accuracy and value of research, firm profitability or revenues (which include fixed income trading and capital markets profitability or revenues), client feedback and competitive factors. Fixed Income Research analysts', strategists' or economists' compensation is not linked to investment banking or capital markets transactions performed by MS or the profitability or revenues of particular trading desks.
+
+The "Important Regulatory Disclosures on Subject Companies" section in MS lists all companies mentioned where MS owns 1% or more of a class of common equity securities of the companies. For all other companies mentioned in MS, MS may have an investment of less than 1% in securities/instruments or derivatives of securities/instruments of companies and may trade them in ways different from those discussed in MS. Employees of MS not involved in the preparation of MS may have investments in securities/instruments or derivatives of securities/instruments of companies mentioned and may trade them in ways different from those discussed in MS. Derivatives may be issued by MS or associated persons.
+
+With the exception of information regarding MS, MS is based on public information. MS makes every effort to use reliable, comprehensive information, but we make no representation that it is accurate or complete. We have no obligation to tell you when opinions or information in MS change apart from when we intend to discontinue equity research coverage of a subject company. Facts and views presented in MS have not been reviewed by, and may not reflect information known to, professionals in other MS business areas, including investment banking personnel.
+
+MS personnel may participate in company events such as site visits and are generally prohibited from accepting payment by the company of associated expenses unless pre-approved by authorized members of Research management.
+
+MS may make investment decisions that are inconsistent with the recommendations or views in this report.
+
+To our readers based in Taiwan or trading in Taiwan securities/instruments: Information on securities/instruments that trade in Taiwan is distributed by MS Taiwan Limited ("MSTL"). Such information is for your reference only. The reader should independently evaluate the investment risks and is solely responsible for their investment decisions. MS may not be distributed to the public media or quoted or used by the public media without the express written consent of MS. Any non-customer reader within the scope of Article 7-1 of the Taiwan Stock Exchange Recommendation Regulations accessing and/or receiving MS is not permitted to provide MS to any third party (including but not limited to related parties, affiliated companies and any other third parties) or engage in any activities regarding MS which may create or give the appearance of creating a conflict of interest. Information on securities/instruments that do not trade in Taiwan is for informational purposes only and is not to be construed as a recommendation or a solicitation to trade in such securities/instruments. MSTL may not execute transactions for clients in these securities/instruments.
+
+Certain information in MS was sourced by employees of the Shanghai Representative Office of MS Asia Limited for the use of MS Asia Limited. MS is not incorporated under PRC law and the research in relation to this report is conducted outside the PRC. MS does not constitute an offer to sell or the solicitation of an offer to buy any securities in the PRC. PRC investors shall have the relevant qualifications to invest in such securities and shall be responsible for obtaining all relevant approvals, licenses, verifications and/or registrations from the relevant governmental authorities themselves. Neither this report nor any part of it is intended as, or shall constitute, provision of any consultancy or advisory service of securities investment as defined under PRC law. Such information is provided for your reference only.
+
+MS is disseminated in Brazil by MS C.T.V.M. S.A. located at Av. Brigadeiro Faria Lima, 3600, 6th floor, São Paulo - SP, Brazil; and is regulated by the Comissão de Valores Mobiliários; in Mexico by MS México, Casa de Bolsa, S.A. de C.V which is regulated by Comision Nacional Bancaria y de Valores. Paseo de los Tamarindos 90, Torre 1, Col. Bosques de las Lomas Floor 29, 05120 Mexico City; in Japan by MS MUFG Securities Co., Ltd. and, for Commodities related research reports only, MS Capital Group Japan Co., Ltd; in Hong Kong by MS Asia Limited (which accepts responsibility for its contents) and by MS Bank Asia Limited; in Singapore by MS Asia (Singapore) Pte. (Registration number 199206298Z) and/or MS Asia (Singapore) Securities Pte Ltd (Registration number 200008434H), regulated by the Monetary Authority of Singapore (which accepts legal responsibility for its contents and should be contacted with respect to any matters arising from, or in connection with, MS) and by MS Bank Asia Limited, Singapore Branch (Registration number T14FC0118); in Australia to "wholesale clients" within the meaning of the Australian Corporations Act by MS Australia Limited A.B.N. 67 003 734 576, holder of Australian financial services license No. 233742, which accepts responsibility for its contents; in Australia to "wholesale clients" and "retail clients" within the meaning of the Australian Corporations Act by MS Wealth Management Australia Pty Ltd (A.B.N. 19 009 145 555, holder of Australian financial services license No. 240813, which accepts responsibility for its contents; in Korea by MS & Co International plc, Seoul Branch; in India by MS India Company Private Limited having Corporate Identification No (CIN) U22990MH1998PTC115305, regulated by the Securities and Exchange Board of India ("SEBI") and holder of licenses as a Research Analyst (SEBI Registration No. INH000001105); Stock Broker (SEBI Stock Broker Registration No. INZ000244438), Merchant Banker (SEBI Registration No. INM000011203), and depository participant with National Securities Depository Limited (SEBI Registration No. IN-DP-NSDL-567-2021) having registered office at Altimus, Level 39 & 40, Pandurang Budhkar Marg, Worli, Mumbai 400018, India; Telephone no. +91-22-61181000; Compliance Officer Details: Mr. Tejarshi Hardas, Tel. No.: +91-22-61181000 or Email: tejarshi.hardas@morganstanley.com; Grievance officer details: Mr. Tejarshi Hardas, Tel. No.: +91-22-61181000 or Email: msic-compliance@morganstanley.com. MS India Company Private Limited (MSICPL) may use AI tools in providing research services. All recommendations contained herein are made by the duly qualified research analysts; in Canada by MS Canada Limited; in Germany and the European Economic Area where required by MS Europe S.E., authorised and regulated by Bundesanstalt fuer Finanzdienstleistungsaufsicht (BaFin) under the reference number 149169; in the US by MS & Co. LLC, which accepts responsibility for its contents. MS & Co. International plc, authorized by the Prudential Regulation Authority and regulated by the Financial Conduct Authority and the Prudential Regulation Authority, disseminates in the UK research that it has prepared, and research which has been prepared by any of its affiliates, only to persons who (i) are investment professionals falling within Article 19(5) of the Financial Services and Markets Act 2000 (Financial Promotion) Order 2005 (as amended, the "Order"); (ii) are persons who are high net worth entities falling within Article 49(2)(a) to (d) of the Order; or (iii) are persons to whom an invitation or inducement to engage in investment activity (within the meaning of section 21 of the Financial Services and Markets Act 2000, as amended) may otherwise lawfully be communicated or caused to be communicated. RMB MS Proprietary Limited is a member of the JSE Limited and A2X (Pty) Ltd. RMB MS Proprietary Limited is a joint venture owned equally by MS International Holdings Inc. and RMB Investment Advisory (Proprietary) Limited, which is wholly owned by FirstRand Limited. The information in MS is being disseminated by MS Saudi Arabia, regulated by the Capital Market Authority in the Kingdom of Saudi Arabia, and is directed at Sophisticated investors only.
+
+MS Hong Kong Securities Limited is the liquidity provider/market maker for securities of 3SBio, Akeso, Inc., Alibaba Health Information Technology, CSPC Pharmaceutical Group, Fosun Pharmaceutical, Innovent Biologics Inc, JD Health International Inc., MicroPort Scientific Corp., Ping An Healthcare and Technology, RemeGen Co., Ltd., Sino Biopharmaceutical, WuXi AppTec Co Ltd, WuXi Biologics Cayman Inc, WuXi XDC Cayman Inc. listed on the Stock Exchange of Hong Kong Limited. An updated list can be found on HKEx website: http://www.hkex.com.hk. The information in MS is being communicated by MS & Co. International plc (DIFC Branch), regulated by the Dubai Financial Services Authority (the DFSA) or by MS & Co. International plc (ADGM Branch), regulated by the Financial Services Regulatory Authority Abu Dhabi (the FSRA), and is directed at Professional Clients only, as defined by the DFSA or the FSRA, respectively. The financial products or financial services to which this research relates will only be made available to a customer who we are satisfied meets the regulatory criteria of a Professional Client. A distribution of the different MS Research ratings or recommendations, in percentage terms for Investments in each sector covered, is available upon request from your sales representative.
+
+The information in MS is being communicated by MS & Co. International plc (QFC Branch), regulated by the Qatar Financial Centre Regulatory Authority (the QFCRA), and is directed at business customers and market counterparties only and is not intended for Retail Customers as defined by the QFCRA.
+
+As required by the Capital Markets Board of Turkey, investment information, comments and recommendations stated here, are not within the scope of investment advisory activity. Investment advisory service is provided exclusively to persons based on their risk and income preferences by the authorized firms. Comments and recommendations stated here are general in nature. These opinions may not fit to your financial status, risk and return preferences. For this reason, to make an investment decision by relying solely to this information stated here may not bring about outcomes that fit your expectations.
+
+The trademarks and service marks contained in MS are the property of their respective owners. Third-party data providers make no warranties or representations relating to the accuracy, completeness, or timeliness of the data they provide and shall not have liability for any damages relating to such data. The Global Industry Classification Standard (GICS) was developed by and is the exclusive property of MSCI and S&P.
+
+MS, or any portion thereof may not be reprinted, sold or redistributed without the written consent of MS.
+
+Indicators and trackers referenced in MS may not be used as, or treated as, a benchmark under Regulation EU 2016/1011, or any other similar framework.
+
+The issuers and/or fixed income products recommended or discussed in certain fixed income research reports may not be continuously followed. Accordingly, investors should regard those fixed income research reports as providing stand-alone analysis and should not expect continuing analysis or additional reports relating to such issuers and/or individual fixed income products. MS may hold, from time to time, material financial and commercial interests regarding the company subject to the Research report.
+
+Registration granted by SEBI and certification from the National Institute of Securities Markets (NISM) in no way guarantee performance of the intermediary or provide any assurance of returns to investors. Investment in securities market are subject to market risks. Read all the related documents carefully before investing.
+
+INDUSTRY COVERAGE: China Healthcare
+
+<table><tr><td>COMPANY (TICKER)</td><td>RATING (AS OF)</td><td>PRICE* (06/02/2026)</td></tr><tr><td>Alexis Yan, CFA</td><td></td><td></td></tr><tr><td>3SBio (1530.HK)</td><td>O (08/01/2025)</td><td>HK$16.87</td></tr><tr><td>Adicon Holdings Ltd (9860.HK)</td><td>O (08/03/2023)</td><td>HK$4.12</td></tr><tr><td>Aier Eye Hospital Group (300015.SZ)</td><td>U (07/08/2024)</td><td>Rmb9.08</td></tr><tr><td>Alibaba Health Information Technology (0241.HK)</td><td>U (05/28/2025)</td><td>HK$3.82</td></tr><tr><td>Angelalign Technology Inc (6699.HK)</td><td>E (03/17/2023)</td><td>HK$71.65</td></tr><tr><td>Beauty Farm Medical and Health Industry (2373.HK)</td><td>O (01/21/2026)</td><td>HK$18.45</td></tr><tr><td>Beijing Tiantan Biological Products Corp (600161.SS)</td><td>O (05/27/2024)</td><td>Rmb13.25</td></tr><tr><td>China Resources Boya Bio-pharmaceutical (300294.SZ)</td><td>E (05/27/2024)</td><td>Rmb16.79</td></tr><tr><td>CSPC Pharmaceutical Group (1093.HK)</td><td>O (08/15/2012)</td><td>HK$7.57</td></tr><tr><td>Dian Diagnostics Group Co Ltd (300244.SZ)</td><td>E (07/12/2022)</td><td>Rmb17.67</td></tr><tr><td>Fosun Pharmaceutical (2196.HK)</td><td>O (09/08/2025)</td><td>HK$17.10</td></tr><tr><td>Fosun Pharmaceutical (600196.SS)</td><td>O (09/08/2025)</td><td>Rmb22.72</td></tr><tr><td>Guangzhou Kingmed Diagnostics (603882.SS)</td><td>U (07/08/2024)</td><td>Rmb25.74</td></tr><tr><td>Gushengtang Holdings Ltd (2273.HK)</td><td>O (07/08/2024)</td><td>HK$27.04</td></tr><tr><td>Hansoh Pharmaceutical Group Co Ltd (3692.HK)</td><td>O (07/16/2019)</td><td>HK$31.02</td></tr><tr><td>Huadong Medicine Co Ltd (000963.SZ)</td><td>U (05/06/2024)</td><td>Rmb29.00</td></tr><tr><td>Hygeia Healthcare Holdings Co., Ltd. (6078.HK)</td><td>O (07/30/2020)</td><td>HK$9.96</td></tr><tr><td>Imeik Technology Development Co Ltd (300896.SZ)</td><td>U (01/21/2026)</td><td>Rmb101.31</td></tr><tr><td>JD Health International Inc. (6618.HK)</td><td>E (05/28/2025)</td><td>HK$39.80</td></tr><tr><td>Jiangsu Hengrui (600276.SS)</td><td>O (07/01/2025)</td><td>Rmb48.40</td></tr><tr><td>Jiangsu Hengrui (1276.HK)</td><td>O (07/01/2025)</td><td>HK$58.85</td></tr><tr><td>Jinxin Fertility Group Ltd (1951.HK)</td><td>U (07/14/2025)</td><td>HK$2.34</td></tr><tr><td>Mindray Bio-Medical (300760.SZ)</td><td>O (07/15/2020)</td><td>Rmb146.99</td></tr><tr><td>Ping An Healthcare and Technology (1833.HK)</td><td>E (05/28/2025)</td><td>HK$9.40</td></tr><tr><td>Shandong Weigao (1066.HK)</td><td>E (07/10/2020)</td><td>HK$3.41</td></tr><tr><td>Shanghai United Imaging Healthcare Co (688271.SS)</td><td>E (02/21/2025)</td><td>Rmb118.22</td></tr><tr><td>Shenzhen Edge Medical (2675.HK)</td><td>O (02/16/2026)</td><td>HK$51.10</td></tr><tr><td>Shenzhen New Industries (300832.SZ)</td><td>O (05/28/2024)</td><td>Rmb45.17</td></tr><tr><td>Sichuan Kelun Pharmaceutical Co Ltd (002422.SZ)</td><td>U (05/16/2025)</td><td>Rmb35.25</td></tr><tr><td>Simcere Pharmaceutical Group (2096.HK)</td><td>E (05/16/2025)</td><td>HK$9.99</td></tr><tr><td>Sino Biopharmaceutical (1177.HK)</td><td>O (04/09/2019)</td><td>HK$4.88</td></tr><tr><td colspan="3">linton Ng</td></tr><tr><td>APT Medical Inc (688617.SS)</td><td>O (10/21/2025)</td><td>Rmb208.69</td></tr><tr><td>China Medical System (0867.HK)</td><td>E (05/16/2025)</td><td>HK$11.05</td></tr><tr><td>MicroPort Scientific Corp. (0853.HK)</td><td>E (09/25/2023)</td><td>HK$7.60</td></tr><tr><td>Peijia Medical Ltd (9996.HK)</td><td>O (06/18/2020)</td><td>HK$4.72</td></tr><tr><td>Zylox-Tonbridge Medical Technology Co. (2190.HK)</td><td>O (08/05/2021)</td><td>HK$20.38</td></tr><tr><td colspan="3">ack Lin</td></tr><tr><td>Abbisko Cayman Ltd (2256.HK)</td><td>O (11/17/2021)</td><td>HK$9.52</td></tr><tr><td>Akeso, Inc. (9926.HK)</td><td>O (05/28/2020)</td><td>HK$106.50</td></tr><tr><td>Duality Biotherapeutics Inc (9606.HK)</td><td>O (05/22/2025)</td><td>HK$207.60</td></tr><tr><td>Everest Medicines Ltd (1952.HK)</td><td>E (03/15/2024)</td><td>HK$29.72</td></tr><tr><td>HUTCHMED (China) Ltd (0013.HK)</td><td>E (05/29/2026)</td><td>HK$18.61</td></tr><tr><td>HUTCHMED (China) Ltd (HCM.O)</td><td>E (05/29/2026)</td><td>US$11.52</td></tr><tr><td>InnoCare Pharma Ltd (9969.HK)</td><td>O (05/29/2026)</td><td>HK$11.26</td></tr><tr><td>Innovent Biologics Inc (1801.HK)</td><td>O (03/03/2026)</td><td>HK$78.85</td></tr><tr><td>Insilico Medicine (3696.HK)</td><td>O (02/03/2026)</td><td>HK$40.24</td></tr><tr><td>Keymed Biosciences Inc. (2162.HK)</td><td>O (08/10/2021)</td><td>HK$59.65</td></tr><tr><td>Nanjing Leads Biolabs Co Ltd (9887.HK)</td><td>E (09/02/2025)</td><td>HK$59.55</td></tr><tr><td>RemeGen Co., Ltd. (9995.HK)</td><td>E (05/08/2024)</td><td>HK$76.70</td></tr><tr><td>VISEN Pharmaceuticals (2561.HK)</td><td>O (04/29/2025)</td><td>HK$22.00</td></tr><tr><td>Zai Lab Ltd (ZLAB.O)</td><td>O (12/14/2023)</td><td>US$17.15</td></tr><tr><td>Zai Lab Ltd (9688.HK)</td><td>O (12/14/2023)</td><td>HK$13.60</td></tr><tr><td colspan="3">aurence Tam</td></tr><tr><td>Acrobiosystems Co Ltd (301080.SZ)</td><td>O (09/11/2025)</td><td>Rmb39.67</td></tr><tr><td>Apeloa Pharmaceutical Co Ltd (000739.SZ)</td><td>O (02/28/2025)</td><td>Rmb16.45</td></tr><tr><td>Asymchem Laboratories. Inc (002821.SZ)</td><td>E (08/01/2025)</td><td>Rmb113.91</td></tr><tr><td>Asymchem Laboratories. Inc (6821.HK)</td><td>E (06/06/2023)</td><td>HK$90.00</td></tr><tr><td>Beijing Tongrentang (600085.SS)</td><td>U (11/03/2014)</td><td>Rmb25.66</td></tr><tr><td>Beijing Tongrentang Chinese Medicine (3613.HK)</td><td>O (01/14/2015)</td><td>HK$7.02</td></tr><tr><td>China National Accord Medicines Corp Ltd (000028.SZ)</td><td>U (07/25/2022)</td><td>Rmb23.39</td></tr><tr><td>China Resources Pharmaceutical Group Ltd (3320.HK)</td><td>O (06/16/2022)</td><td>HK$4.80</td></tr><tr><td>China Resources Sanjiu Medical &amp; Pharma (000999.SZ)</td><td>O (08/30/2019)</td><td>Rmb24.58</td></tr><tr><td>China Traditional Chinese Medicine (0570.HK)</td><td>U (01/17/2025)</td><td>HK$1.60</td></tr><tr><td>DaShenLin Pharmaceutical (603233.SS)</td><td>O (07/25/2022)</td><td>Rmb16.67</td></tr><tr><td>Dong E E Jiao Co. (000423.SZ)</td><td>O (05/16/2024)</td><td>Rmb50.37</td></tr><tr><td>Fu Shou Yuan International Group Ltd (1448.HK)</td><td>E (03/19/2025)</td><td>HK$2.64</td></tr><tr><td>Genscript Biotech Corporation (1548.HK)</td><td>O (08/14/2024)</td><td>HK$12.14</td></tr><tr><td>Hangzhou Tigermed Consulting (300347.SZ)</td><td>O (08/01/2025)</td><td>Rmb39.19</td></tr><tr><td>Jiangzhong Pharmaceutical Co. Ltd. (600750.SS)</td><td>O (02/08/2024)</td><td>Rmb26.02</td></tr><tr><td>Joinn Laboratories China Co Ltd (603127.SS)</td><td>E (06/06/2023)</td><td>Rmb32.97</td></tr><tr><td>Joinn Laboratories China Co Ltd (6127.HK)</td><td>E (02/26/2024)</td><td>HK$17.63</td></tr><tr><td>Jointown Pharmaceutical Group (600998.SS)</td><td>U (07/26/2021)</td><td>Rmb4.89</td></tr><tr><td>LBX Pharmacy Chain (603883.SS)</td><td>O (03/14/2022)</td><td>Rmb12.34</td></tr><tr><td>Medtide (3880.HK)</td><td>E (08/06/2025)</td><td>HK$19.63</td></tr><tr><td>Nanjing King-friend Biochemical (603707.SS)</td><td>O (02/28/2025)</td><td>Rmb8.15</td></tr><tr><td>Pharmaron (3759.HK)</td><td>O (09/25/2024)</td><td>HK$17.16</td></tr><tr><td>Pharmaron (300759.SZ)</td><td>E (09/25/2024)</td><td>Rmb24.04</td></tr><tr><td>Shandong Xinhua Pharmaceutical Co Ltd (000756.SZ)</td><td>U (02/28/2025)</td><td>Rmb13.45</td></tr><tr><td>Shanghai Pharmaceutical (601607.SS)</td><td>E (08/17/2021)</td><td>Rmb16.50</td></tr><tr><td>Shanghai Pharmaceutical (2607.HK)</td><td>O (08/17/2021)</td><td>HK$11.68</td></tr><tr><td>Shenzhen Hepalink Pharmaceutical (002399.SZ)</td><td>U (06/16/2023)</td><td>Rmb9.78</td></tr><tr><td>Sinopharm Group (1099.HK)</td><td>O (02/10/2023)</td><td>HK$17.06</td></tr><tr><td>Tasly Pharmaceutical Group Co. Ltd (600535.SS)</td><td>E (07/19/2024)</td><td>Rmb14.34</td></tr><tr><td>The United Laboratories (3933.HK)</td><td>E (06/13/2017)</td><td>HK$9.07</td></tr><tr><td>Tofflon Science &amp; Technology Group (300171.SZ)</td><td>E (09/11/2025)</td><td>Rmb11.67</td></tr><tr><td>WuXi AppTec Co Ltd (603259.SS)</td><td>O (01/17/2019)</td><td>Rmb99.75</td></tr><tr><td>WuXi AppTec Co Ltd (2359.HK)</td><td>O (01/17/2019)</td><td>HK$129.70</td></tr><tr><td>WuXi Biologics Cayman Inc (2269.HK)</td><td>O (07/17/2017)</td><td>HK$35.14</td></tr><tr><td>WuXi XDC Cayman Inc. (2268.HK)</td><td>O (12/22/2023)</td><td>HK$54.75</td></tr><tr><td>Yantai Dongcheng Biochemicals Co Ltd (002675.SZ)</td><td>E (02/28/2025)</td><td>Rmb12.73</td></tr><tr><td>Yifeng Pharmacy Chain Co Ltd (603939.SS)</td><td>O (07/25/2022)</td><td>Rmb20.52</td></tr><tr><td>Yixintang Pharmaceutical (002727.SZ)</td><td>E (07/25/2022)</td><td>Rmb11.70</td></tr><tr><td>Yunnan Baiyao Group (000538.SZ)</td><td>O (10/11/2021)</td><td>Rmb49.46</td></tr><tr><td>Zhangzhou Pientzehuang Pharmaceutical (600436.SS)</td><td>U (01/21/2022)</td><td>Rmb124.50</td></tr><tr><td>Zhejiang Hisun Pharmaceutical Co. Ltd. (600267.SS)</td><td>U (06/01/2023)</td><td>Rmb9.98</td></tr><tr><td>Zhejiang Huahai Pharmaceutical Co. Ltd. (600521.SS)</td><td>O (06/01/2023)</td><td>Rmb15.71</td></tr><tr><td>Zhejiang Jiuzhou Pharmaceutical Co Ltd (603456.SS)</td><td>E (02/28/2025)</td><td>Rmb12.78</td></tr><tr><td>Zhejiang Medicine Co. Ltd. (600216.SS)</td><td>E (02/28/2025)</td><td>Rmb12.70</td></tr></table>
+
+Stock Ratings are subject to change. Please see latest research for each company.  
+\* Historical prices are not split adjusted.
+
+© 2026 MS
