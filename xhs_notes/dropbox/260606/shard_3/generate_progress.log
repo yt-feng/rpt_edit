@@ -1,0 +1,14 @@
+Found 23 total PDFs; shard 3/40 has 5 PDFs, skips 0 already converted, will process 5 PDFs with batch_size=5.
+Running batch 1: 5 PDFs
+Found 5 PDFs.
+Uploading PDF to MinerU: /tmp/pdf_batch_001_7y1klimb/pdfs/0001-17-J.P. Morgan-China Technology-Cherry-picking season- Upstream favored- be selective downstream-260604.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_7y1klimb/pdfs/0002-18-Bernstein-US Biopharmaceuticals GLP-1 tracker-Long weekend impacts weekly scripts -W E May 29th--260605.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_7y1klimb/pdfs/0003-19-Goldman Sachs-China Insurance-Financials trip takeaways-260605.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_7y1klimb/pdfs/0004-20-J.P. Morgan-Asian Tech-Key takeaways from Broadcom-s Apr-Q results-260604.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_7y1klimb/pdfs/0005-21-Morgan Stanley-China Biotechnology-ASCO 2026 Takeaways-Day 3-260605.pdf
+MinerU batch_id=1fdcb38b-7038-4134-91a1-e2bf526b747c
+MinerU states: running, running, running, pending, waiting-file
+MinerU states: done, running, done, done, done
+MinerU states: done, done, done, done, done
+Done. Results written to /home/runner/work/rpt_edit/rpt_edit/xhs_notes/dropbox/260606/shard_3; successful_reports=5; mineru_timed_out=False
+All batches completed successfully. Generated 5 report directories.

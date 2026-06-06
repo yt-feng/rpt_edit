@@ -1,0 +1,51 @@
+{
+  "input_dir": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs",
+  "total_pdf_count_before_shard": 23,
+  "pdf_count_before_skip": 5,
+  "pdf_count": 5,
+  "generated_report_count": 5,
+  "batch_size": 5,
+  "shard_index": 3,
+  "shard_count": 40,
+  "max_reports_per_shard": 5,
+  "max_total_reports": 0,
+  "skip_existing": true,
+  "skipped_existing_count": 0,
+  "skipped_existing": [],
+  "failures": 0,
+  "batches": [
+    {
+      "batch_index": 1,
+      "pdf_count": 5,
+      "files": [
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/17-JPM-China Technology：Cherry~picking season： Upstream favored， be selective downstream-260604.pdf",
+          "batch_file": "/tmp/pdf_batch_001_7y1klimb/pdfs/0001-17-JPM-China Technology-Cherry-picking season- Upstream favored- be selective downstream-260604.pdf",
+          "stable_index": "1"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/18-Bernstein-US Biopharmaceuticals GLP~1 tracker：Long weekend impacts weekly scripts （W E May 29th）-260605.pdf",
+          "batch_file": "/tmp/pdf_batch_001_7y1klimb/pdfs/0002-18-Bernstein-US Biopharmaceuticals GLP-1 tracker-Long weekend impacts weekly scripts -W E May 29th--260605.pdf",
+          "stable_index": "2"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/19-GS-China Insurance：Financials trip takeaways-260605.pdf",
+          "batch_file": "/tmp/pdf_batch_001_7y1klimb/pdfs/0003-19-GS-China Insurance-Financials trip takeaways-260605.pdf",
+          "stable_index": "3"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/20-JPM-Asian Tech：Key takeaways from Broadcom’s Apr~Q results-260604.pdf",
+          "batch_file": "/tmp/pdf_batch_001_7y1klimb/pdfs/0004-20-JPM-Asian Tech-Key takeaways from Broadcom-s Apr-Q results-260604.pdf",
+          "stable_index": "4"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/21-MS-China Biotechnology：ASCO 2026 Takeaways~Day 3-260605.pdf",
+          "batch_file": "/tmp/pdf_batch_001_7y1klimb/pdfs/0005-21-MS-China Biotechnology-ASCO 2026 Takeaways-Day 3-260605.pdf",
+          "stable_index": "5"
+        }
+      ],
+      "returncode": 0,
+      "status": "ok"
+    }
+  ]
+}
