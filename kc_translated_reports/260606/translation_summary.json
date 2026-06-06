@@ -1,0 +1,239 @@
+{
+  "date_folder": "260606",
+  "max_reports": "all",
+  "selected_count": 23,
+  "successful_count": 23,
+  "failures": [],
+  "reports": [
+    {
+      "source_report_dir": "xhs_notes/dropbox/260606/shard_0/0001-01-Goldman-Sachs-GLOBAL-FX-TRADER-Heating-Up-260605",
+      "title": "美元真正的分裂不在指数里，而在“谁在涨、谁在跌”的背离中",
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_01.pdf",
+      "figure_count": 3,
+      "output_dir": "kc_translated_reports/260606/01-0001-01-Goldman-Sachs-GLOBAL-FX-TRADER-Heating-Up-260605",
+      "pdf_path": "kc_translated_reports/260606/01-0001-01-Goldman-Sachs-GLOBAL-FX-TRADER-Heating-Up-260605/kc_translated_report_01.pdf"
+    },
+    {
+      "source_report_dir": "xhs_notes/dropbox/260606/shard_0/0002-02-Goldman-Sachs-GLOBAL-RATES-TRADER-A-Higher-Floor-260605",
+      "title": "美国利率的真正拐点，取决于一个被忽视的变量",
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_02.pdf",
+      "figure_count": 28,
+      "output_dir": "kc_translated_reports/260606/02-0002-02-Goldman-Sachs-GLOBAL-RATES-TRADER-A-Higher-Floor-260605",
+      "pdf_path": "kc_translated_reports/260606/02-0002-02-Goldman-Sachs-GLOBAL-RATES-TRADER-A-Higher-Floor-260605/kc_translated_report_02.pdf"
+    },
+    {
+      "source_report_dir": "xhs_notes/dropbox/260606/shard_0/0003-03-Goldman-Sachs-Global-Markets-Daily--Japanese-Repatriation-Flows-What-Mat",
+      "title": "日元回流叙事被高估了：真正驱动汇率的不是日本邮政银行，而是GPIF的未对冲仓位",
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_03.pdf",
+      "figure_count": 6,
+      "output_dir": "kc_translated_reports/260606/03-0003-03-Goldman-Sachs-Global-Markets-Daily--Japanese-Repatriation-Flows-What-Mat",
+      "pdf_path": "kc_translated_reports/260606/03-0003-03-Goldman-Sachs-Global-Markets-Daily--Japanese-Repatriation-Flows-What-Mat/kc_translated_report_03.pdf"
+    },
+    {
+      "source_report_dir": "xhs_notes/dropbox/260606/shard_0/0004-04-Goldman-Sachs-China-Economic-Activity-and-Policy-Tracker--June-5-260605",
+      "title": "中国经济的真实温度：需求在修复，但供给侧的再定价才是关键",
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_04.pdf",
+      "figure_count": 21,
+      "output_dir": "kc_translated_reports/260606/04-0004-04-Goldman-Sachs-China-Economic-Activity-and-Policy-Tracker--June-5-260605",
+      "pdf_path": "kc_translated_reports/260606/04-0004-04-Goldman-Sachs-China-Economic-Activity-and-Policy-Tracker--June-5-260605/kc_translated_report_04.pdf"
+    },
+    {
+      "source_report_dir": "xhs_notes/dropbox/260606/shard_0/0005-05-Goldman-Sachs-WEEKLY-FUND-FLOWS-US-Drives-Global-Equity-Inflows-260605",
+      "title": "资金流向正在告诉你一个被忽视的结构性切换",
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_05.pdf",
+      "figure_count": 22,
+      "output_dir": "kc_translated_reports/260606/05-0005-05-Goldman-Sachs-WEEKLY-FUND-FLOWS-US-Drives-Global-Equity-Inflows-260605",
+      "pdf_path": "kc_translated_reports/260606/05-0005-05-Goldman-Sachs-WEEKLY-FUND-FLOWS-US-Drives-Global-Equity-Inflows-260605/kc_translated_report_05.pdf"
+    },
+    {
+      "source_report_dir": "xhs_notes/dropbox/260606/shard_1/0001-06-Morgan-Stanley-China-Equity-Strategy-A-share-Sentiment-Weakened-as-K-Sha",
+      "title": "A股情绪降温背后，真正的结构性信号尚未被定价",
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_06.pdf",
+      "figure_count": 28,
+      "output_dir": "kc_translated_reports/260606/06-0001-06-Morgan-Stanley-China-Equity-Strategy-A-share-Sentiment-Weakened-as-K-Sha",
+      "pdf_path": "kc_translated_reports/260606/06-0001-06-Morgan-Stanley-China-Equity-Strategy-A-share-Sentiment-Weakened-as-K-Sha/kc_translated_report_06.pdf"
+    },
+    {
+      "source_report_dir": "xhs_notes/dropbox/260606/shard_1/0002-07-J.P.-Morgan-Container-Shipping---Supply-Chain-Insights-Industry-outlook-",
+      "title": "市场真正低估的不是需求，而是供给侧的再定价",
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_07.pdf",
+      "figure_count": 21,
+      "output_dir": "kc_translated_reports/260606/07-0002-07-J.P",
+      "pdf_path": "kc_translated_reports/260606/07-0002-07-J.P/kc_translated_report_07.pdf"
+    },
+    {
+      "source_report_dir": "xhs_notes/dropbox/260606/shard_1/0003-08-Bernstein-India-Strategy-AI-vs-Human-II--The-Gen-AI-Disruption-Playbook-",
+      "title": "市场真正低估的不是AI需求，而是它如何重塑全球收入分配",
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_08.pdf",
+      "figure_count": 9,
+      "output_dir": "kc_translated_reports/260606/08-0003-08-Bernstein-India-Strategy-AI-vs-Human-II--The-Gen-AI-Disruption-Playbook",
+      "pdf_path": "kc_translated_reports/260606/08-0003-08-Bernstein-India-Strategy-AI-vs-Human-II--The-Gen-AI-Disruption-Playbook/kc_translated_report_08.pdf"
+    },
+    {
+      "source_report_dir": "xhs_notes/dropbox/260606/shard_1/0004-09-Nomura-US-Economic-Weekly-Hire-for-longer-260605",
+      "title": "就业市场比通胀更值得关注的信号：美联储的降息叙事正在被重新定价",
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_09.pdf",
+      "figure_count": 9,
+      "output_dir": "kc_translated_reports/260606/09-0004-09-Nomura-US-Economic-Weekly-Hire-for-longer-260605",
+      "pdf_path": "kc_translated_reports/260606/09-0004-09-Nomura-US-Economic-Weekly-Hire-for-longer-260605/kc_translated_report_09.pdf"
+    },
+    {
+      "source_report_dir": "xhs_notes/dropbox/260606/shard_1/0005-10-HSBC-Global-Autos-Chinese-OEMs-in-Europe--varied-motivations-260604",
+      "title": "欧洲汽车市场真正被低估的风险，不是中国份额，而是欧洲的利润优先策略",
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_10.pdf",
+      "figure_count": 15,
+      "output_dir": "kc_translated_reports/260606/10-0005-10-HSBC-Global-Autos-Chinese-OEMs-in-Europe--varied-motivations-260604",
+      "pdf_path": "kc_translated_reports/260606/10-0005-10-HSBC-Global-Autos-Chinese-OEMs-in-Europe--varied-motivations-260604/kc_translated_report_10.pdf"
+    },
+    {
+      "source_report_dir": "xhs_notes/dropbox/260606/shard_2/0001-12-Goldman-Sachs-ASIA-IN-FOCUS-Cost-of-China-s-Retail-Fuel-Price-Management",
+      "title": "中国油价调控的真正成本，比市场担心的低得多",
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_11.pdf",
+      "figure_count": 11,
+      "output_dir": "kc_translated_reports/260606/11-0001-12-Goldman-Sachs-ASIA-IN-FOCUS-Cost-of-China-s-Retail-Fuel-Price-Management",
+      "pdf_path": "kc_translated_reports/260606/11-0001-12-Goldman-Sachs-ASIA-IN-FOCUS-Cost-of-China-s-Retail-Fuel-Price-Management/kc_translated_report_11.pdf"
+    },
+    {
+      "source_report_dir": "xhs_notes/dropbox/260606/shard_2/0002-13-CITI-China-Battery-Materials-Lithium-into-1st-week-of-June---Sentiment-t",
+      "title": "锂价短期回调不是反转，真正被低估的是CATL产能释放带来的需求硬缺口",
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_12.pdf",
+      "figure_count": 6,
+      "output_dir": "kc_translated_reports/260606/12-0002-13-CITI-China-Battery-Materials-Lithium-into-1st-week-of-June---Sentiment-t",
+      "pdf_path": "kc_translated_reports/260606/12-0002-13-CITI-China-Battery-Materials-Lithium-into-1st-week-of-June---Sentiment-t/kc_translated_report_12.pdf"
+    },
+    {
+      "source_report_dir": "xhs_notes/dropbox/260606/shard_2/0003-14-Nomura-Asia-Insights-China--The-emerging-impact-of-raw-materials-supply-",
+      "title": "市场真正低估的不是需求，而是供给侧的再定价",
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_13.pdf",
+      "figure_count": 12,
+      "output_dir": "kc_translated_reports/260606/13-0003-14-Nomura-Asia-Insights-China--The-emerging-impact-of-raw-materials-supply",
+      "pdf_path": "kc_translated_reports/260606/13-0003-14-Nomura-Asia-Insights-China--The-emerging-impact-of-raw-materials-supply/kc_translated_report_13.pdf"
+    },
+    {
+      "source_report_dir": "xhs_notes/dropbox/260606/shard_2/0004-15-Deutsche-Bank-China-Healthcare-Market-likely-overreacted-on-geopolitical",
+      "title": "市场真正低估的不是地缘风险，而是中国药企已不可替代的全球研发节点地位",
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_14.pdf",
+      "figure_count": 7,
+      "output_dir": "kc_translated_reports/260606/14-0004-15-Deutsche-Bank-China-Healthcare-Market-likely-overreacted-on-geopolitical",
+      "pdf_path": "kc_translated_reports/260606/14-0004-15-Deutsche-Bank-China-Healthcare-Market-likely-overreacted-on-geopolitical/kc_translated_report_14.pdf"
+    },
+    {
+      "source_report_dir": "xhs_notes/dropbox/260606/shard_2/0005-16-Goldman-Sachs-CONNECTING-THE-DOTS-Conviction-List--bringing-a-different-",
+      "title": "市场真正低估的不是AI需求，而是数据护城河的再定价",
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_15.pdf",
+      "figure_count": 1,
+      "output_dir": "kc_translated_reports/260606/15-0005-16-Goldman-Sachs-CONNECTING-THE-DOTS-Conviction-List--bringing-a-different",
+      "pdf_path": "kc_translated_reports/260606/15-0005-16-Goldman-Sachs-CONNECTING-THE-DOTS-Conviction-List--bringing-a-different/kc_translated_report_15.pdf"
+    },
+    {
+      "source_report_dir": "xhs_notes/dropbox/260606/shard_3/0001-17-J.P.-Morgan-China-Technology-Cherry-picking-season--Upstream-favored--be",
+      "title": "中国科技股的核心机会不在下游，而在上游的设备与封测",
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_16.pdf",
+      "figure_count": 5,
+      "output_dir": "kc_translated_reports/260606/16-0001-17-J.P",
+      "pdf_path": "kc_translated_reports/260606/16-0001-17-J.P/kc_translated_report_16.pdf"
+    },
+    {
+      "source_report_dir": "xhs_notes/dropbox/260606/shard_3/0002-18-Bernstein-US-Biopharmaceuticals-GLP-1-tracker-Long-weekend-impacts-weekl",
+      "title": "GLP-1口服药的战场，IQVIA数据正在低估真实竞争烈度",
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_17.pdf",
+      "figure_count": 27,
+      "output_dir": "kc_translated_reports/260606/17-0002-18-Bernstein-US-Biopharmaceuticals-GLP-1-tracker-Long-weekend-impacts-weekl",
+      "pdf_path": "kc_translated_reports/260606/17-0002-18-Bernstein-US-Biopharmaceuticals-GLP-1-tracker-Long-weekend-impacts-weekl/kc_translated_report_17.pdf"
+    },
+    {
+      "source_report_dir": "xhs_notes/dropbox/260606/shard_3/0003-19-Goldman-Sachs-China-Insurance-Financials-trip-takeaways-260605",
+      "title": "保险股反弹背后，市场真正低估的是渠道结构重塑的定价权",
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_18.pdf",
+      "figure_count": 0,
+      "output_dir": "kc_translated_reports/260606/18-0003-19-Goldman-Sachs-China-Insurance-Financials-trip-takeaways-260605",
+      "pdf_path": "kc_translated_reports/260606/18-0003-19-Goldman-Sachs-China-Insurance-Financials-trip-takeaways-260605/kc_translated_report_18.pdf"
+    },
+    {
+      "source_report_dir": "xhs_notes/dropbox/260606/shard_3/0004-20-J.P.-Morgan-Asian-Tech-Key-takeaways-from-Broadcom-s-Apr-Q-results-26060",
+      "title": "AI基础设施的供给瓶颈，正在从芯片设计延伸至整个物理供应链",
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_19.pdf",
+      "figure_count": 0,
+      "output_dir": "kc_translated_reports/260606/19-0004-20-J.P",
+      "pdf_path": "kc_translated_reports/260606/19-0004-20-J.P/kc_translated_report_19.pdf"
+    },
+    {
+      "source_report_dir": "xhs_notes/dropbox/260606/shard_3/0005-21-Morgan-Stanley-China-Biotechnology-ASCO-2026-Takeaways-Day-3-260605",
+      "title": "ASCO 2026第三天：市场低估的不是PD-1/VEGF组合的竞争，而是IL-2赛道“可成药性基准”的转移",
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_20.pdf",
+      "figure_count": 1,
+      "output_dir": "kc_translated_reports/260606/20-0005-21-Morgan-Stanley-China-Biotechnology-ASCO-2026-Takeaways-Day-3-260605",
+      "pdf_path": "kc_translated_reports/260606/20-0005-21-Morgan-Stanley-China-Biotechnology-ASCO-2026-Takeaways-Day-3-260605/kc_translated_report_20.pdf"
+    },
+    {
+      "source_report_dir": "xhs_notes/dropbox/260606/shard_4/0001-22-Bernstein-Weekend-Healthcare-Pulse--The-heavy-side-of-weight-loss-peptid",
+      "title": "减肥药热潮的真正瓶颈不在需求，而在多肽制造的绿色化能力",
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_21.pdf",
+      "figure_count": 7,
+      "output_dir": "kc_translated_reports/260606/21-0001-22-Bernstein-Weekend-Healthcare-Pulse--The-heavy-side-of-weight-loss-peptid",
+      "pdf_path": "kc_translated_reports/260606/21-0001-22-Bernstein-Weekend-Healthcare-Pulse--The-heavy-side-of-weight-loss-peptid/kc_translated_report_21.pdf"
+    },
+    {
+      "source_report_dir": "xhs_notes/dropbox/260606/shard_4/0002-23-Bernstein-Weekend-Tech-Byte--The--cost--of-cards---the-often-misleading-",
+      "title": "市场真正低估的不是卡组织费率，而是“信任即服务”的定价权",
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_22.pdf",
+      "figure_count": 10,
+      "output_dir": "kc_translated_reports/260606/22-0002-23-Bernstein-Weekend-Tech-Byte--The--cost--of-cards---the-often-misleading",
+      "pdf_path": "kc_translated_reports/260606/22-0002-23-Bernstein-Weekend-Tech-Byte--The--cost--of-cards---the-often-misleading/kc_translated_report_22.pdf"
+    },
+    {
+      "source_report_dir": "xhs_notes/dropbox/260606/shard_4/0003-24-Goldman-Sachs-Japan-Technology--IT-Services--NC-company-results-read-acr",
+      "title": "日本汽车业IT投资正在踩刹车，但这恰恰暴露了另一条增长主线",
+      "source_clean": "source_clean.md",
+      "translated_markdown": "translated.md",
+      "pdf": "kc_translated_report_23.pdf",
+      "figure_count": 0,
+      "output_dir": "kc_translated_reports/260606/23-0003-24-Goldman-Sachs-Japan-Technology--IT-Services--NC-company-results-read-acr",
+      "pdf_path": "kc_translated_reports/260606/23-0003-24-Goldman-Sachs-Japan-Technology--IT-Services--NC-company-results-read-acr/kc_translated_report_23.pdf"
+    }
+  ]
+}
