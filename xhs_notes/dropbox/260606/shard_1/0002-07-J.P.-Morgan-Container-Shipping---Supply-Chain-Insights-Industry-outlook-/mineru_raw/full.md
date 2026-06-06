@@ -1,0 +1,970 @@
+This material is neither intended to be distributed to Mainland China investors nor to provide securities investment consultancy services within the territory of Mainland China. This material or any portion hereof may not be reprinted, sold or redistributed without the written consent of JPM.
+
+# Container Shipping & Supply Chain Insights
+
+Industry outlook fast improving: Surging freight rates & pent-up demand drive positive peak season outlook
+
+The global container shipping sector continues to demonstrate resilience in the face of persistent geopolitical uncertainty, supply chain disruptions and elevated bunker costs. 1Q26 operational updates from leading liners underscore robust demand, particularly in intra-Asia and regional trades, with SITC and TS Lines reporting year-on-year volume growth despite normalization in freight rates. Global majors such as COSCO Shipping also posted strong throughput gains, while Evergreen reported a turnaround in revenue supported by tight effective supply, elevated freight rates and the ability to pass through higher costs. European carrier Maersk beat profit forecasts and maintained full-year guidance, highlighting the sector's adaptability and the constructive demand outlook, while Hapag-Lloyd maintained its full-year guidance. Freight rates remain elevated, with the SCFI up $73\%$ since March and surcharges widely implemented as carriers respond to Middle East-driven cost pressures. The recent week saw double-digit gains W/W, especially on Transpacific and Asia-Europe lanes, as peak season/emergency surcharges were implemented, and capacity management remains disciplined. Port congestion remains a structural feature, absorbing effective capacity and supporting rates, while US end-market indicators—LMI remains elevated and registered the second-fastest expansion since early 2022—signaling resilient demand despite intensifying cost pressures. The ongoing political developments between the US and China, with the Chinese commerce ministry stating that both sides reached a positive consensus on promoting resolution of non-tariff barriers, is likely to further strengthen the outlook for global trade. Share price performance YTD reflects these dynamics, with Asian and intra-Asia liners broadly outperforming/at par with the MSCI World Transportation Index, and Asia liners' valuations still trading below sector averages, suggesting further upside potential as supply-demand fundamentals remain supportive.
+
+Stock views: We remain constructive on the sector as we enter peak season, with surging freight rates, persistent port congestion and resilient end-market demand reinforcing a favorable outlook. Asia's leading shippers, including TS Lines, COSCO Shipping, OOIL, Evergreen Marine and Mitsui OSK, remain our preferred names, offering compelling near-term risk/reward, attractive dividend yields and balance sheet strength. Further, while we note the recent downgrade to Neutral for Westports reflecting a clouded outlook amidst moderating volume growth, less favorable risk asymmetry and rising cost pressures, we remain bullish on ICTSI and CMPH underpinned by their diversified portfolio and presence in high-growth and emerging markets offering defensiveness amidst geopolitical uncertainties.
+
+# Infrastructure, Industrials & Transport
+
+Karen Li, CFA AC
+
+(852) 2800-8589
+
+karen.yy.li@JPM.com
+
+JPM Securities (Asia Pacific) Limited/
+
+JPM Broking (Hong Kong) Limited
+
+Yen Voo, CFA, CA
+
+(60-3) 2718 0914
+
+yen.voo@JPM.com
+
+JPM Securities (Malaysia) Sdn. Bhd.
+
+(18146-X)
+
+# Ryota Himeno
+
+(81-3) 6736-8639
+
+ryota.himeno@JPM.com
+
+JPM Securities Japan Co., Ltd.
+
+# Arjun Joshi
+
+(91-22) 6157-3745
+
+arjun.joshi@JPM.com
+
+JPM India Private Limited
+
+# Jenny Qiu, CFA
+
+(852) 2800 8503
+
+jenny.qiu@JPM.com
+
+JPM Securities (Asia Pacific) Limited/
+
+JPM Broking (Hong Kong) Limited
+
+# Beatrice Lam
+
+(852) 2800-8738
+
+beatrice.lam@JPM.com
+
+JPM Securities (Asia Pacific) Limited/
+
+JPM Broking (Hong Kong) Limited
+
+# 1Q26 operational update by liners indicates continued resilient demand outlook amidst geopolitical uncertainty
+
+- Despite ongoing geopolitical tensions and supply chain disruptions, intra-Asia container shipping operators continue to demonstrate robust demand and operational resilience in 1Q26. SITC reported a $+7.6\%$ Y/Y increase in shipping volumes to 855,795 TEU and a $1.5\%$ rise in revenue, even as average freight rates normalized from elevated levels, reflecting sustained cargo flows and supply chain diversification across Asia. Note the average freight rate softness aligns with normalization from last year's front-loaded base, rather than a deterioration in underlying demand. T.S. Lines similarly demonstrated volume strength, with a $+3.3\%$ Y/Y increase to 396,935 TEUs, underscoring the durability of intra-regional trade and the company's network agility in capturing pockets of demand amidst shifting routing and deployment schedules. Both operators benefitted from tighter effective capacity and persistent port congestion, which provided a structural floor for freight rates and favored agile regional players, as the underlying strength of intra-Asian cargo flows remains intact and diversification of supply chains continues across the region. Drewry's intra-Asia container index continues to rise and is up $5\%$ W/W, the seventh consecutive week of rise and is now up $83\%$ of pre-conflict levels on the back of higher bunker costs, reduced capacity and strong demand.   
+- Building on the intra-Asia resilience, global container shipping leaders Evergreen Marine and COSCO Shipping offer further evidence that industry demand fundamentals remain robust and freight rate dynamics are evolving constructively. COSCO in 1Q26 reported robust volume growth with COSCO's sector-wide throughput up $7\%$ year-on-year—driven by strong Asia-Europe and intra-Asia flows—while Evergreen's sequential revenue improvement and expectations for further recovery reflect underlying cargo demand normalization into the peak season. Notably, industry commentary highlights that effective supply remains far tighter than headline capacity figures suggest, as ongoing bottlenecks, port congestion, and conflict-related diversions absorb a significant share of global fleet. This structural tightness, combined with the ability to pass through fuel surcharges and renegotiate contract terms, is supporting a firmer freight rate environment even as average rates have normalized from elevated prior-year levels. As supply chain fragmentation and trade diversification continue to reshape global cargo flows, operators with network scale, cost leadership, and digital integration are well positioned to capture incremental demand and defend profitability, reinforcing the industry's constructive outlook heading into the main-lane peak season.   
+- Taiwanese liners April Operating Revenue update reinforces a rebound. April 2026 operating revenue rose to NT\$31.36bn (+5% Y/Y, +14% M/M), reversing the declines seen in 1Q and showing first positive Y/Y improvement since March last year. Accumulated 4M26 revenue was NT\$117.9bn (-16% Y/Y). Similarly, monthly operating revenue improved for Wan Hai and Yan Ming, rising +13%/14%Y/Y and showing positive Y/Y improvements for the first time since Mar/Feb last year, respectively. The improvement reflects stronger demand post-CNY and the initial impact of higher freight rates, with management noting a more normalized peak season and resilient cargo flows.   
+- European carriers outlook remains unchanged as A.P. Moller Maersk (covered by Alexia Dogani) delivered a constructive sector readthrough in
+
+1Q26, beating profit forecasts and maintaining full-year guidance, with strong volume growth of 9.3% year-on-year—particularly from Asian exports—and high vessel utilization offsetting a 14% decline in average freight rates. Hapag-Lloyd (covered by Alexia Dogani), while missing consensus on earnings due to a slight volume decline from Persian Gulf disruptions and adverse European weather, also reiterated its full-year guidance, with unit freight rates rising 2% quarter-on-quarter and management emphasizing ongoing uncertainty from Middle East conflict. Similarly, CMA CGM (Credit Analyst: Danielle Ward) reported continued volume growth in Q1, with management highlighting that industry-wide momentum has supported a sharp rebound in spot freight rates as the peak season approaches. The Shanghai Containerized Freight Index (SCFI) has surged over 75% since mid-February, reflecting both disruption premiums and shippers' efforts to front-load cargo in anticipation of further supply chain risks or tariff changes. Across the board, European carriers are actively managing higher costs through surcharges, hedging, and operational adjustments, maintaining stable outlooks despite persistent macroeconomic and geopolitical uncertainties, and underscoring the sector's ability to adapt as it heads into the main-lane peak season.
+
+# Freight rates on the rise amid supply chain disruptions and bunker fuel price hikes
+
+\- Freight rates have surged 73% since the start of the Middle East conflict (as of May 29), with a c16% week-on-week increase in the latest update, driven by double-digit gains on the Transpacific and Asia-Europe routes. This rise is supported by emergency fuel surcharges, peak season surcharges, general rate increases, capacity cuts, blank sailings, and firmer spot pricing as carriers actively manage vessel space amid higher bunker costs and geopolitical tensions. Early peak season demand and disruptions linked to the Middle East conflict are prompting shippers to move cargo ahead of schedule, keeping the market firm. The Shanghai Containerized Freight Index (SCFI) is up 73% since March and 62% Y/Y as of May 29, reflecting supply chain disruptions and higher bunker costs. Main-lane trades such as Shanghai-Europe and Mediterranean have risen 70%/59% since the end of February and are up 88%/61% Y/Y, while Shanghai-US West Coast and East Coast have risen 114%/96% since the end of February and are up 27%/25% Y/Y, respectively—remarkable given 2025’s front loading effects and likely showing liner discipline amid negotiations on 2026 Transpacific contract rates. The cascading effects are also elevating freight rates in emerging and regional markets, providing performance visibility into 2Q26. Although the latest weekly freight rates have eased slightly, channel checks with liners forecast a return to growth trajectory as major carriers adjust deployment for the peak season ahead.
+
+\- Time charter market tightness and elevated charter rates further differentiate carries by fleet ownership structure, with owned fleet heavy operators better insulated from rising costs. With containership timecharter rates at their highest levels outside of the Covid period (Clarksons Timecharter Rate Index at 206 points, up $4\%$ since late February) and vessel availability remaining tight amid persistent operational bottlenecks—including record port congestion (Clarksons congestion index at an all-time high in Jan-May 2026) and conflict-driven diversions absorbing effective capacity—carriers with a higher proportion of owned fleet are structurally better positioned to insulate earnings from rising charter costs. As Figure 10 illustrates, Evergreen maintains a relatively low chartered fleet ratio ( $\sim$ 30% vs. Top 10 carrier average at $\sim$ 43%, per Alphaliner May 2026 Monthly monitor), are significantly more exposed to elevated charter rates. In this environment, carriers like Evergreen and T.S. Lines (17% chartered), which operate predominantly owned fleets, benefit from a natural cost hedge—avoiding the margin compression that charter-dependent operators face as timecharter rates remain elevated and fixture periods extend to 1–2 years. This owned-fleet advantage is further amplified by the current supply tightness, where port congestion and longer dwell times effectively reduce available capacity, making it difficult for charter-reliant operators to secure tonnage at favorable terms. As peak season approaches and capacity management remains disciplined, the cost differential between owned and chartered capacity is likely to widen further, reinforcing the structural earnings advantage for operators with greater fleet ownership.
+
+\- The industry is passing through bunker surcharges, and Asian liners could benefit from the relatively higher scrubber-installed rate. Emergency fuel surcharges and higher Bunker Adjustment Factors (BAFs) are being widely implemented (Drewry), with the Iran conflict driving bunker prices up by about 75%, with these increases reflected in April freight rates. Meanwhile, high/low Sulphur fuel price spreads are at >US\$135 per ton on average since the end of February (vs as low as US\$30-50 in prior year during the same period, Clarksons). Notably, Asian liners are structurally advantaged in this environment: while the industry average for SOx scrubber-fitted capacity stands at 47%, leading Asian carriers such as Evergreen (95%), TS Lines (94%), COSCO/OOIL (58%), and Yang Ming (73%) have a significantly higher proportion of their fleets equipped with scrubbers. This positions them to benefit more from the widening fuel price spread, helping to offset cost pressures and maintain stronger cost discipline relative to global peers.
+
+\- Regulatory Watch: IMO MEPC 84 meeting update. Since the adjournment of the IMO’s Net Zero Framework vote at the extraordinary session in October 2025, the regulatory landscape has remained in flux. At the recent MEPC 84 (April-May 2026), member states reiterated their commitment to the Net Zero target and agreed to continue technical work on the framework, but no final decision was reached. The committee scheduled further intersessional meetings and set the next extraordinary session for late 2026, leaving the timeline for adoption and implementation subject to ongoing negotiation. In the interim, shipowners, fuel producers, and investors are monitoring developments closely, as the evolving regulatory process will play a key role in shaping future investment and compliance strategies for the sector. Progress continues on alternative fuel adoption, with 12% of fleet capacity now capable of using alternative fuels (mainly LNG and methanol), per Clarksons. 75% of capacity on order is alternative fuel capable, reflecting the sector’s focus on emissions compliance. Energy Saving Technologies (ESTs) are increasingly prevalent, fitted to 62% of fleet capacity, up from 35% in early 2019 with Asian carriers poised to benefit given the higher than industry average scrubber fitted fleet.
+
+\- Liners are actively managing capacity through blank sailings to navigate ongoing disruptions and maintain network stability. Drewry World Container Index (WCI) rose 3% week-over-week to US\$2,800 per 40ft container as of 28 May, reflecting strengthening freight markets across major East–West trade lanes. Spot rates increased on both Asia–Europe and
+
+Transpacific routes, with Shanghai–Rotterdam up 3% to \$2,861, Shanghai–Genoa up 4% to \$4,253, Shanghai–New York up 6% to \$4,597, and Shanghai–Los Angeles up 3% to \$3,473 per 40ft container. Early peak season demand, frontloading ahead of July bunker adjustments, and ongoing geopolitical tensions—including Middle East disruptions and elevated fuel costs—are driving carriers to raise FAK and PSS rates while actively managing capacity through blank sailings. Since the end of April, rates have increased 38% on Asia-Europe/Med routes and 26% on Transpacific. Capacity discipline supports rate momentum as over the next five weeks (weeks 23–27), 47 blank sailings are expected over the next five weeks, from week 23 (1-7 June) to week 27 (29 June–5 July), out of 707 scheduled departures, reflecting a 7% cancellation rate, with 93% of services still expected to sail as planned. Disruptions are concentrated on the Transpacific eastbound trade (49%), followed by Asia–Europe/Med (34%), while the Transatlantic (17%) remains comparatively less affected. Gemini Cooperation continues to maintain strong schedule adherence. As capacity discipline persists and demand is pulled forward, Drewry expects further upward pressure on rates, making early planning and flexible booking strategies essential for shippers amid continued volatility and operational uncertainty.
+
+# US end market shows signs of resiliency and could rebound in 2Q26 against last year's impact of ‘Liberation Day’ tariffs
+
+\- US LMI May update – expansion remained robust, though moderating as cost pressures intensify. The Logistics Managers' Index (LMI) continued to expand in May 2026, registering a strong 69.5—slightly slower than April's 69.9, but still marking the second-fastest expansion since early 2022. This persistent but moderating growth reflects a deceleration in Inventory Levels, which fell 1.5 points to 54.8; the deceleration was especially pronounced in the latter half of May as Inventory Levels dropped from 60.5 to 50.9. While smaller firms nearly stalled at 51.0, larger firms maintained higher momentum at 59.5, highlighting the resilience that scale offers in a high-cost environment. Despite this moderation in inventory growth, logistics costs surged sharply: Inventory Costs jumped 9.4 points to 84.1, the highest in four years, and Warehousing Prices stayed elevated at 70.7. Transportation Prices soared to a new all-time high of 96.0, while Transportation Capacity contracted further to 31.7 and aggregate logistics costs reached 250.9, largely due to ongoing disruptions from the Strait of Hormuz and rising global fuel costs. Downstream Inventory growth has now outpaced Upstream by 3.6 points, suggesting manufacturers' previous inventory pull-forwards are working down the supply chain. Looking ahead, expectations for the next 12 months are somewhat tempered, with respondents projecting a future LMI of 69.4, slower inventory growth, and continued elevated costs, even as some capacity constraints may ease. Overall, supply chains have remained resilient in the face of persistent disruption and high costs, but prolonged cost pressure and a tightening freight environment could present ongoing inflationary risks and weigh on demand in the coming months.
+
+\- April 2026 US containerized imports pulled back modestly post March rebound, as trade policy uncertainty weighed on near-term momentum. Monthly container import volume declined $3.2\%$ M/M and $5.5\%$ Y/Y, totaling 2,277,965 TEUs (Descartes). Despite the sequential pullback—breaking from the typical seasonal pattern of M/M increases observed in 8 of the previous 10 years—volumes remained 18.7% above April 2019 levels, reflecting continued underlying demand resilience. The moderation follows March's rebound (container import volumes up 12.4% M/M and down 1.1%Y/Y) and coincides with unresolved trade relations with key partners including the EU, India, and China, as well as ongoing Section 122 tariffs and uncertainty around tariff refund timelines. Imports from Southeast Asian markets such as Thailand (+36.3%) and Indonesia (+13.3%) continued to gain share in April, partially offsetting the 15.3% decline in volumes from China. This ongoing sourcing diversification underscores importers' efforts to mitigate concentration risk amid persistent trade policy uncertainty. US NRF expects May-June volume to grow year-over-year against the Liberation Day import shock in 2025. This trend will bode well for traditional peak-season planning, which benefits carriers to smoothen schedules and raise profitability, in our view.
+
+\- US inventory restocking has moderated in recent months, with the Logistics Managers' Index (LMI) showing a slight decline in inventory levels but continued expansion overall. While April and May data indicate that firms are becoming more cautious—reflected in a narrowing gap between current and future inventory expectations—inventory costs remain elevated, suggesting that per-unit cost pressures persist even as physical restocking slows. Notably, larger firms have been more active in rebuilding inventories, leveraging their scale to absorb higher fuel and logistics costs, while smaller firms have largely held inventory levels steady. Despite the recent pullback in containerized imports and softer booking trends from Asia, underlying demand remains resilient, and restocking activity is expected to pick up as the peak shipping season approaches. Overall, the US supply chain continues to demonstrate adaptability, with inventory strategies evolving in response to cost pressures, shifting consumer demand, and ongoing supply chain disruptions.
+
+# Middle East conflict has exacerbated port congestion amid operational bottlenecks
+
+\- Clarksons' port congestion index is up at an all-time high in 2026. Jan-May average congestion index is up c5%Y/Y (Clarksons), which is likely to further rise amid the upcoming main-lane peak season, in our view. T.S. Lines' NDR and COSCO's NDR noted that major Chinese ports, which are among the most efficient ones globally, see congestions on the rise. Southeast Asian ports, including those in the Philippines, Thailand, and Vietnam, face similar bottlenecks as regional infrastructure investment continues to lag demand. This widespread congestion effectively absorbs vessel capacity and provides a structural floor for freight rates although offset by some operational overhang for containerships.
+
+\- European ports see persistent issues while the most efficient APAC ports are also seeing delays. The latest Kuehne + Nagel port operational update (19 May) indicates European ports remain disrupted, with yard utilization at several key terminals running near or above 85% and operations strained by convergence of labor actions, holiday schedules, and limited buffer capacity. In APAC, Shanghai is now seeing waiting times of more than 2 days, while Ningbo holds at \~1.9 days — reinforcing that even the world's most operationally efficient ports are unable to clear backlogs cleanly. Beyond China, congestion is acute in Manila (\~4.6 days) and Tanjung Pelepas (\~1.8 days with congestion expected to fluctuate as berthing conditions remain fluid due to operational unavailability due to dredging works). The breadth of delays across both regions underscores that the global container network continues to operate at/above stress thresholds, where even modest disruptions risk cascading into broader service delays.
+
+- Drewry's Global Container Port Throughput Index fell $1.3\%$ month-on-month in March, mainly due to disruptions in the Middle East following the Strait of Hormuz closure but remained up $1.1\%$ year-on-year. In the latest Drewry throughput data (released on 27 May), despite regional volatility, global throughput increased $4\%$ year-to-date by the end of 1Q26, driven by strong growth in Greater China, Oceania, and North/Southeast Asia. Greater China saw a $2.3\%$ MoM and $4.5\%$ YoY increase, with Shanghai up $8\%$ MoM and Tianjin surging $40\%$ MoM. North America rebounded $3.8\%$ MoM, led by New York's $42\%$ recovery after February blizzards, though several ports remain below last year's levels. Europe stabilized, with Antwerp-Bruges up $12.9\%$ MoM, and Port Said East in the Mediterranean continuing to outperform, rising $12\%$ MoM and $43\%$ YoY. These trends highlight the resilience and divergence across global ports amid ongoing geopolitical and operational challenges.   
+- Readthroughs from Westports 1Q26 results. Westports Holdings' (covered by Yen Voo) 1Q26 results reinforce the sector's resiliency and ability to leverage operational levers such as price hikes to mitigate demand and cost pressures, as Westports recorded resilient earnings driven by tariff hikes and higher value-added services, despite flattish throughput (-1% YoY) and elevated geopolitical uncertainty. Management guided April volumes up \~3% YoY, reflecting ongoing supply chain disruptions and longer dwell times that continue to absorb effective capacity. The outlook remains cautious, with FY26 volume growth expected at 0–5% and visibility tied to Middle East developments. Overall, Westports' performance highlights the sector's ability to defend profitability through pricing and operational levers, even as volume recovery depends on normalization of trade flows.   
+- China Merchant April 2026 throughput accelerated to $4.8\%$ Y/Y (vs $2.4\%$ in March), signaling a broadening recovery across its portfolio. The improvement was led by Yangtze River Delta $(+7.8\%$ YoY) and Bohai Rim $(+5.8\%$ YoY), while Pearl River Delta remained marginally soft $(-1.8\%$ YoY). Notably, overseas volumes swung to positive territory $(+4.1\%$ YoY vs. $-1.1\%$ in March), and the drag from Other Domestic (incl. Taiwan) narrowed significantly $(-0.8\%$ vs. $-12.2\%$ in March). The sequential improvement across nearly all clusters is consistent with the broader post-CNY demand recovery and aligns with industry-wide signals of resilient Chinese port throughput.
+
+# Container shipping share price performance review
+
+\- In 2026 year-to-date, container liner share prices have shown notable resilience, with Asian carriers broadly at par/outperforming the MSCI World Transportation Index, which is up $9\%$ YTD (as of 2 June). Before the recent Middle East conflict, share price gains were led by Asian—particularly intra-Asia and Japanese—liners, which consistently outpaced the Transportation Index, while European carriers generally lagged. ZIM and Hapag-Lloyd were exceptions, posting strong gains on acquisition-related developments. The onset of the Middle East conflict introduced new phases in performance: as geopolitical tensions escalated and freight rates surged in early March, long-haul exposed liners saw a sharper rise in share prices compared to their regional and intra-Asia peers – which saw eventual easing as the market began to factor in the crisis. Recent trade talks between China and the US further enforce a positive outlook for global shipping if trade tensions ease between the two nations. Despite these fluctuations, Asian liners continue to trade below the sector's average price-to-book value (FY26-27E \~1.1x), suggesting further upside potential. This is underpinned by resilient supply-demand fundamentals, superior cost management among Asian operators, and attractive dividend yields, positioning the group favorably for the remainder of the year.
+
+Table 1: Global Container Shipping Comps 
+
+<table><tr><td rowspan="2"></td><td rowspan="2">BBG Ticker</td><td rowspan="2">JPM Rating</td><td rowspan="2">Last Price LC</td><td rowspan="2">JPM PT LC</td><td rowspan="2">Upside/Downside</td><td rowspan="2">Mkt Cap US$Mn</td><td rowspan="2">YTD stock price chg</td><td colspan="2">P/E (x)</td><td colspan="2">EV/EBITDA</td><td colspan="2">Dividend yield</td><td colspan="2">ROE (%)</td><td colspan="2">P/B (x)</td></tr><tr><td>FY26E</td><td>FY27E</td><td>FY26E</td><td>FY27E</td><td>FY26E</td><td>FY27E</td><td>FY26E</td><td>FY27E</td><td>FY26E</td><td>FY27E</td></tr><tr><td colspan="18">Container Shipping</td></tr><tr><td>COSCO Shipping - H</td><td>1919 HK</td><td>OW</td><td>14.08</td><td>21.00</td><td>49%</td><td>31,780</td><td>2%</td><td>7.4</td><td>8.3</td><td>6.8</td><td>8.2</td><td>6.7</td><td>6.0</td><td>10.7</td><td>9.1</td><td>0.8</td><td>0.7</td></tr><tr><td>COSCO Shipping - A</td><td>601919 CH</td><td>OW</td><td>14.47</td><td>22.00</td><td>52%</td><td>31,779</td><td>-5%</td><td>8.8</td><td>9.8</td><td>6.8</td><td>8.2</td><td>5.7</td><td>5.0</td><td>10.7</td><td>9.1</td><td>0.9</td><td>0.9</td></tr><tr><td>OOIL</td><td>316 HK</td><td>OW</td><td>135.10</td><td>176.00</td><td>30%</td><td>11,388</td><td>8%</td><td>7.7</td><td>9.9</td><td>0.4</td><td>0.0</td><td>6.4</td><td>5.0</td><td>10.7</td><td>8.0</td><td>0.8</td><td>0.8</td></tr><tr><td>Evergreen Marine</td><td>2603 TT</td><td>OW</td><td>236.00</td><td>312.00</td><td>32%</td><td>16,238</td><td>24%</td><td>7.5</td><td>8.8</td><td>6.3</td><td>6.2</td><td>6.8</td><td>5.4</td><td>11.1</td><td>9.1</td><td>0.8</td><td>0.8</td></tr><tr><td>Yang Ming Marine</td><td>2609 TT</td><td>NC</td><td>53.20</td><td>NA</td><td>NA</td><td>5,904</td><td>-4%</td><td>14.9</td><td>17.4</td><td>0.6</td><td>0.6</td><td>2.8</td><td>3.8</td><td>3.8</td><td>4.3</td><td>0.6</td><td>0.5</td></tr><tr><td>Wan Hai</td><td>2615 TT</td><td>NC</td><td>83.70</td><td>NA</td><td>NA</td><td>7,464</td><td>6%</td><td>8.4</td><td>10.3</td><td>3.1</td><td>3.5</td><td>NA</td><td>NA</td><td>10.1</td><td>7.1</td><td>0.8</td><td>NA</td></tr><tr><td>SITC International</td><td>1308 HK</td><td>NC</td><td>34.50</td><td>NA</td><td>NA</td><td>11,941</td><td>27%</td><td>11.0</td><td>11.5</td><td>9.5</td><td>9.9</td><td>7.0</td><td>6.6</td><td>40.7</td><td>36.4</td><td>4.3</td><td>4.0</td></tr><tr><td>TS Lines</td><td>2510 HK</td><td>OW</td><td>8.47</td><td>13.50</td><td>59%</td><td>1,800</td><td>2%</td><td>5.4</td><td>5.0</td><td>2.6</td><td>2.4</td><td>10.2</td><td>10.2</td><td>16.1</td><td>15.9</td><td>0.8</td><td>0.7</td></tr><tr><td>AP Moller-Maersk</td><td>MAERSKB DC</td><td>UW</td><td>17,565</td><td>8,100</td><td>-54%</td><td>42,541</td><td>20%</td><td>-19.3</td><td>-8.5</td><td>17.1</td><td>62.4</td><td>0.0</td><td>0.0</td><td>-3.9</td><td>-9.5</td><td>0.8</td><td>0.8</td></tr><tr><td>Hapag Lloyd</td><td>HLAG GR</td><td>UW</td><td>115.40</td><td>65.00</td><td>-44%</td><td>23,595</td><td>-2%</td><td>-21.1</td><td>-15.9</td><td>13.7</td><td>15.7</td><td>0.0</td><td>0.0</td><td>-5.6</td><td>-8.1</td><td>1.2</td><td>1.3</td></tr><tr><td>HMM</td><td>011200 KS</td><td>NC</td><td>19,500</td><td>NA</td><td>NA</td><td>11,999</td><td>-5%</td><td>14.4</td><td>16.6</td><td>4.9</td><td>5.3</td><td>3.2</td><td>2.9</td><td>4.8</td><td>4.0</td><td>0.7</td><td>0.7</td></tr><tr><td>Kawasaki Kisen</td><td>9107 JP</td><td>OW</td><td>2,586</td><td>2,800</td><td>8%</td><td>10,336</td><td>19%</td><td>13.6</td><td>17.6</td><td>11.9</td><td>11.3</td><td>4.6</td><td>4.6</td><td>6.7</td><td>5.2</td><td>0.9</td><td>0.9</td></tr><tr><td>Mitsui OSK</td><td>9104 JP</td><td>OW</td><td>5,534</td><td>6,900</td><td>25%</td><td>12,562</td><td>17%</td><td>10.4</td><td>11.5</td><td>41.3</td><td>12.6</td><td>3.7</td><td>3.8</td><td>6.2</td><td>5.5</td><td>0.6</td><td>0.6</td></tr><tr><td>NYK-Line</td><td>9101 JP</td><td>N</td><td>5,438</td><td>5,900</td><td>8%</td><td>13,783</td><td>8%</td><td>10.8</td><td>14.3</td><td>10.0</td><td>8.3</td><td>3.7</td><td>3.8</td><td>6.5</td><td>4.8</td><td>0.7</td><td>0.7</td></tr><tr><td>Zim</td><td>ZIM US</td><td>UW</td><td>25.07</td><td>9.00</td><td>-64%</td><td>3,019</td><td>18%</td><td>-3.5</td><td>-2.5</td><td>12.7</td><td>73.9</td><td>0.0</td><td>0.0</td><td>-25.2</td><td>-54.1</td><td>1.0</td><td>1.8</td></tr><tr><td>Average</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>5.1</td><td>7.6</td><td>9.8</td><td>15.2</td><td>4.3</td><td>4.1</td><td>6.9</td><td>3.1</td><td>1.0</td><td>1.1</td></tr></table>
+
+Source: Bloomberg Finance L.P., JPM estimates. Consensus estimates for not covered (NC) companies, JPM estimates for all others. Note: For Kawasaki Kisen, Mitsui OSK, NYK-Line, Mercator Lines, next FY figures taken because FY ends in March. All share prices are as of Jun 4, 2026 (intra-day for non-Asia names). Daily turnover shows 3M average daily trading value in USD terms. Past results are not an indicator of future performance.
+
+Table 2: Global Ports Comps 
+
+<table><tr><td rowspan="2"></td><td rowspan="2">BBG Ticker</td><td rowspan="2">JPM Rating</td><td rowspan="2">Last Price LC</td><td rowspan="2">JPM PT LC</td><td rowspan="2">Upside/Downside</td><td rowspan="2">Mkt Cap US$Mn</td><td rowspan="2">YTD Stock perf.</td><td colspan="2">P/E (x)</td><td colspan="2">EV/EBITDA</td><td colspan="2">Dividend yield</td><td colspan="2">ROE (%)</td><td colspan="2">P/B (x)</td></tr><tr><td>FY26E</td><td>FY27E</td><td>FY26E</td><td>FY27E</td><td>FY26E</td><td>FY27E</td><td>FY26E</td><td>FY27E</td><td>FY26E</td><td>FY27E</td></tr><tr><td>ICTSI</td><td>ICT PM</td><td>OW</td><td>849.50</td><td>925.00</td><td>9%</td><td>27,891</td><td>50%</td><td>24.6</td><td>21.9</td><td>14.0</td><td>13.0</td><td>2.2</td><td>2.2</td><td>47.6</td><td>42.6</td><td>10.5</td><td>8.5</td></tr><tr><td>Adani Ports</td><td>ADSEZ IN</td><td>OW</td><td>1790.90</td><td>2000.00</td><td>12%</td><td>43,092</td><td>22%</td><td>27.4</td><td>22.8</td><td>18.1</td><td>15.7</td><td>0.5</td><td>0.6</td><td>15.1</td><td>15.9</td><td>3.9</td><td>3.4</td></tr><tr><td>JSW Infrastructure</td><td>JSWINFRA IN</td><td>OW</td><td>272.80</td><td>333.00</td><td>22%</td><td>5,989</td><td>-4%</td><td>35.7</td><td>24.0</td><td>21.0</td><td>13.3</td><td>0.3</td><td>0.4</td><td>13.0</td><td>16.4</td><td>4.4</td><td>3.7</td></tr><tr><td>Aegis Vopak Terminals</td><td>AEGISVOP IN</td><td>NC</td><td>191.54</td><td>NA</td><td>NA</td><td>2,216</td><td>-23%</td><td>40.2</td><td>25.5</td><td>NA</td><td>15.8</td><td>NA</td><td>0.0</td><td>NA</td><td>14.3</td><td>4.0</td><td>3.1</td></tr><tr><td>Abu Dhabi Ports</td><td>ADPORTS UH</td><td>N</td><td>4.40</td><td>6</td><td>36%</td><td>6,097</td><td>-8%</td><td>22.0</td><td>12.2</td><td>9.6</td><td>7.6</td><td>NA</td><td>NA</td><td>4.1</td><td>6.9</td><td>0.7</td><td>0.7</td></tr><tr><td>Westports</td><td>WPRTS MK</td><td>N</td><td>6.02</td><td>6</td><td>3%</td><td>5,156</td><td>6%</td><td>18.8</td><td>17.2</td><td>11.8</td><td>10.5</td><td>3.2</td><td>3.5</td><td>23.5</td><td>23.7</td><td>4.5</td><td>4.0</td></tr><tr><td rowspan="2">Marsa Maroc Terminal China Merchants Port Holding</td><td>MSA MC</td><td>NC</td><td>828.10</td><td>NA</td><td>NA</td><td>6,610</td><td>-13%</td><td>27.8</td><td>22.7</td><td>15.3</td><td>12.0</td><td>1.7</td><td>2.1</td><td>46.1</td><td>42.8</td><td>11.2</td><td>8.6</td></tr><tr><td>144 HK</td><td>OW</td><td>14.53</td><td>18</td><td>24%</td><td>7,786</td><td>-4%</td><td>8.3</td><td>8.2</td><td>11.8</td><td>11.4</td><td>5.8</td><td>5.9</td><td>6.6</td><td>6.4</td><td>0.5</td><td>0.5</td></tr><tr><td rowspan="2">COSCO SHIPPING Ports Shanghai International Port Group</td><td>1199 HK</td><td>NC</td><td>5.07</td><td>NA</td><td>NA</td><td>2,563</td><td>-9%</td><td>7.7</td><td>7.2</td><td>14.0</td><td>12.9</td><td>4.9</td><td>5.4</td><td>5.1</td><td>5.5</td><td>0.4</td><td>0.4</td></tr><tr><td>600018 CH</td><td>NC</td><td>5.00</td><td>NA</td><td>NA</td><td>17,185</td><td>-8%</td><td>8.5</td><td>8.2</td><td>8.3</td><td>7.9</td><td>3.9</td><td>4.0</td><td>9.3</td><td>9.1</td><td>0.8</td><td>0.7</td></tr><tr><td>Average</td><td></td><td></td><td></td><td></td><td></td><td></td><td>1%</td><td>22.1</td><td>17.0</td><td>13.8</td><td>12.0</td><td>2.8</td><td>2.7</td><td>18.9</td><td>18.4</td><td>4.1</td><td>3.4</td></tr></table>
+
+Source: Bloomberg Finance L.P., JPM estimates. Consensus estimates for not covered (NC) companies, JPM estimates for all others. Note: All share prices are as of 4 June 2026 (intra-day for non-Asia names). Daily turnover shows 3M average daily trading value in USD terms. Past results are not an indicator of future performance.
+
+Figure 1: Global Liners' YTD Share Price performance (2026)   
+![](images/62c3cfacc962ec44f019fc438b41f83980aa5832d4fb0fb3524cf7c7dae03051.jpg)
+
+<details>
+<summary>bar</summary>
+
+| Index | Value (%) |
+|---|---|
+| KOSPI Index | 109 |
+| TW SE Index | 57 |
+| NKY Index | 33 |
+| SITC International | 31 |
+| Evergreen Marine | 22 |
+| Kawasaki Kisen | 18 |
+| Zim | 18 |
+| Mitsui OSK | 17 |
+| OOIL | 13 |
+| AP Moller-Maersk | 11 |
+| STI Index | 10 |
+| MSCI World Transportation Index | 9 |
+| COSCO Shipping - H | 8 |
+| TS Lines | 8 |
+| Wan Hai | 7 |
+| SHSZ300 Index | 6 |
+| NYK-Line | 5 |
+| HSI Index | 2 |
+| COSCO Shipping - A | -2 |
+| Yang Ming Marine | -4 |
+| Hapag Lloyd | -4 |
+| HMM | -5 |
+</details>
+
+Source: Bloomberg Finance L.P. Last price as of 2 Jun 2026.
+
+Figure 2: Global Liners' share price performance during the first 3 weeks of the conflict (28 $^{th}$ Feb – 18 $^{th}$ March)   
+![](images/f38f2c257663f94afe5198c48115625733252dbfdf5528371c7fa58d73153562.jpg)
+
+<details>
+<summary>bar</summary>
+
+| Entity | Value (%) |
+| :--- | :--- |
+| Hapag Lloyd | 12 |
+| Evergreen Marine | 11 |
+| AP Moller-Maersk | 11 |
+| COSCO Shipping - A | 7 |
+| Kawasaki Kisen | 5 |
+| COSCO Shipping - H | 5 |
+| NYK-Line | 5 |
+| Mitsui OSK | 4 |
+| Yang Ming Marine | 3 |
+| Wan Hai | 3 |
+| O OIL | 0 |
+| SITC International | -1 |
+| SHSZ300 Index | -1 |
+| HMM | -2 |
+| STI Index | -3 |
+| HSI Index | -3 |
+| TWSE Index | -6 |
+| TS Lines | -6 |
+| MSCI World Transportation Index | -7 |
+| Zim | -7 |
+| NKY Index | -9 |
+| KOSPI Index | -11 |
+</details>
+
+Source: Bloomberg Finance L.P. Share price performance between 28 $^{th}$ Feb – 18 $^{th}$ March 2026.
+
+Figure 3: Global Liners' share price performance pre-conflict in 2026 (2 Jan - 28 Feb)   
+![](images/6caad7c6b701a4a2ad856d7c51fe22567dbb714ab84f8297effb5b6d161b5a92.jpg)
+
+<details>
+<summary>bar</summary>
+
+| Company | Value (%) |
+| :--- | :--- |
+| Zim | 32 |
+| Mitsui OSK | 23 |
+| SITC International | 19 |
+| OOIL | 18 |
+| TS Lines | 15 |
+| Kawasaki Kisen | 15 |
+| Hapag Lloyd | 11 |
+| COSCO Shipping - H | 9 |
+| MSCI World Transportation Index | 9 |
+| AP Moller-Maersk | 7 |
+| HMM | 6 |
+| NYK-Line | 6 |
+| Yang Ming Marine | 3 |
+| Evergreen Marine | 2 |
+| COSCO Shipping - A | -1 |
+| Wan Hai | -4 |
+</details>
+
+Source: Bloomberg Finance L.P. Share price performance between 2 Jan - 28 Feb 2026.
+
+Figure 4: % of Capacity Scrubber-fitted Across Industry (Based on Clarksons' Vessel Ownership Tracking)   
+![](images/0690c9b2b6226a9092f8163b6197c19bea030ffc61339888b56b557fcf8af5f2.jpg)
+
+<details>
+<summary>bar_stacked</summary>
+
+| Company | Non-Fitted (%) | Fitted (%) | Pending (%) |
+| :--- | :--- | :--- | :--- |
+| Industry | 50 | 47 | 2 |
+| MSC | 33 | 60 | 5 |
+| Maersk | 54 | 40 | 4 |
+| CMA CGM | 75 | 24 | 0 |
+| COSCO (incl. OOIL) | 34 | 58 | 5 |
+| Hapag-Lloyd | 72 | 28 | 0 |
+| Evergreen | 5 | 95 | 0 |
+| ONE (incl. K-Line, NYK, Mitsui OSK) | 63 | 35 | 1 |
+| Yang Ming | 27 | 73 | 0 |
+| HMM | 4 | 96 | 0 |
+| Wan Hai | 83 | 9 | 3 |
+| SITC | 89 | 10 | 0 |
+| TS Lines | 5 | 94 | 0 |
+</details>
+
+Source: Clarksons as of the beginning of 2026. Note: the data is based on TEU-capacity, grouped by the ownership of vessels (i.e. self-owned capacity). Also note that the condition of total operating fleet of a company may be different from self-owned figures.
+
+Figure 5: HFSO vs VLSFO Bunker Fuel Price (USD/ton)   
+![](images/2aa6d9b9d5ab51921750798b01a9a7d891f517b8e275f6fb77a625eec5362f38.jpg)
+
+<details>
+<summary>line</summary>
+
+| Date       | HSFO 380cst Bunker Prices (3.5% Sulphur), Singapore | VLSFO Bunker Prices (0.5% Sulphur), Singapore | HSFO, VLSFO gap (RHS) |
+| ---------- | -------------------------------------------------- | --------------------------------------------- | --------------------- |
+| 06-Sep-2019 | ~450.00                                            | ~550.00                                       | ~150.00               |
+| 06-Sep-2020 | ~300.00                                            | ~350.00                                       | ~100.00               |
+| 06-Sep-2021 | ~450.00                                            | ~600.00                                       | ~250.00               |
+| 06-Sep-2022 | ~750.00                                            | ~1,150.00                                     | ~1,150.00              |
+| 06-Sep-2023 | ~550.00                                            | ~650.00                                       | ~450.00               |
+| 06-Sep-2024 | ~500.00                                            | ~600.00                                       | ~350.00               |
+| 06-Sep-2025 | ~450.00                                            | ~850.00                                       | ~150.00               |
+</details>
+
+Source: Clarksons, as of 29 May 2026. Note: referencing the tracker of Singapore fuel prices.
+
+Figure 6: Shanghai Containerized Freight Index by route   
+![](images/2e25d02d6786ca19517e62daa206d0cbd0ce721e153a5c8cbc5abb28ad30a67f.jpg)
+
+<details>
+<summary>line</summary>
+
+| Date    | CCFI  | SCFI  | SCFI US-WC $/FEU (RHS) | SCFI US EC $/FEU (RHS) | SCFI Shanghai-Med $/TEU | SCFI Shanghai-Europe $/TEU |
+|---------|-------|-------|------------------------|------------------------|--------------------------|-----------------------------|
+| Jan-19  | ~1,500 | ~1,200 | ~1,000                 | ~800                   | ~700                     | ~600                        |
+| Apr-19  | ~1,600 | ~1,300 | ~1,100                 | ~900                   | ~800                     | ~700                        |
+| Jul-19  | ~1,700 | ~1,400 | ~1,200                 | ~1000                  | ~900                     | ~800                        |
+| Oct-19  | ~1,800 | ~1,500 | ~1,300                 | ~1100                  | ~1000                    | ~900                        |
+| Jan-20  | ~1,900 | ~1,600 | ~1,400                 | ~1200                  | ~1100                    | ~1000                       |
+| Apr-20  | ~2,000 | ~1,700 | ~1,500                 | ~1300                  | ~1200                    | ~1100                       |
+| Jul-20  | ~2,200 | ~1,800 | ~1,600                 | ~1400                  | ~1300                    | ~1200                       |
+| Oct-20  | ~2,500 | ~2,000 | ~1,800                 | ~1500                  | ~1400                    | ~1300                       |
+| Jan-21  | ~2,800 | ~2,300 | ~2,100                 | ~1600                  | ~1500                    | ~1400                       |
+| Apr-21  | ~3,200 | ~2,700 | ~2,500                 | ~1700                  | ~1600                    | ~1500                       |
+| Jul-21  | ~3,800 | ~3,200 | ~3,000                 | ~1800                  | ~1700                    | ~1600                       |
+| Oct-21  | ~4,500 | ~3,800 | ~3,500                 | ~1900                  | ~1800                    | ~1700                       |
+| Jan-22  | ~5,500 | ~4,800 | ~4,500                 | ~2500                  | ~2400                    | ~2300                       |
+| Apr-22  | ~6,500 | ~5,800 | ~5,500                 | ~3500                  | ~3400                    | ~3300                       |
+| Jul-22  | ~7,500 | ~6,800 | ~6,500                 | ~4500                  | ~4400                    | ~4300                       |
+| Oct-22  | ~6,800 | ~6,200 | ~6,100                 | ~4800                  | ~4700                    | ~4600                       |
+| Jan-23  | ~5,800 | ~5,500 | ~5,300                 | ~4500                  | ~4450                    | ~445%                       |
+| Apr-23  | ~5,200 | ~5,156| ~5,156                 | ~4366                  | ~4366                    | ~4366                       |
+| Jul-23  | ~4,867| ~4,999| ~4,999                 | ~4257                  | ~4257                    | ~4257                       |
+| Oct-23  | ~4,367| ~4,777| ~4,777                 | ~4138                  | ~4138                    | ~4138                       |
+| Jan-24  | ~4,367| ~4,777| ~4,777                 | ~4138                  | ~4138                    | ~4138                       |
+| Apr-24  | ~4,367| ~4,777| ~4,777                 | ~4138                  | ~4138                    | ~4138                       |
+| Jul-24  | ~6,567| ~5,899| ~5,899                 | ~5567                  | ~5567                    | ~5567                       |
+| Oct-24  | ~5,899| ~5,899| ~5,899                 | ~5567                  | ~5567                    | ~5567                       |
+| Jan-25  | ~5,899| ~5,899| ~5,899                 | ~5567                  | ~5567                    | ~5567                       |
+| Apr-25  | ~4,867| ~4,867| ~4,867                 | ~4366                  | ~4366                    | ~4366                       |
+| Jul-25  | ~4,367| ~4,867| ~4,867                 | ~4257                  | ~4257                    | ~4257                       |
+| Oct-25  | ~3,867| ~3,867| ~3,867                 | ~3999                  | ~3999                    | ~3999                       |
+| Jan-26  | ~3,867| ~3,867| ~3,867                 | ~3999                  | ~3999                    | ~3999                       |
+| Apr-26  | ~3,867| ~3,867| ~3,867                 | ~3999                  | ~3999                    | ~3999                       |
+</details>
+
+Source: Shanghai Shipping Exchange, Clarksons, as of 14 May 2026.
+
+Figure 7: Drewry World Container Index   
+![](images/aa6f137bf179a315b0b7b0e2a4a7d8f7e3d21e53f9af29e774410c4c8d337a59.jpg)
+
+<details>
+<summary>line</summary>
+
+| Date       | WCI Value |
+| ---------- | --------- |
+| Nov-2011   | ~1,500    |
+| Nov-2012   | ~2,500    |
+| Nov-2013   | ~2,000    |
+| Nov-2014   | ~2,200    |
+| Nov-2015   | ~1,800    |
+| Nov-2016   | ~1,700    |
+| Nov-2017   | ~1,600    |
+| Nov-2018   | ~1,800    |
+| Nov-2019   | ~1,700    |
+| Nov-2020   | ~5,000    |
+| Nov-2021   | ~10,500   |
+| Nov-2022   | ~3,000    |
+| Nov-2023   | ~1,500    |
+| Nov-2024   | ~6,000    |
+| Nov-2025   | ~2,500    |
+</details>
+
+Source: Drewry WCI as of 29 May 2026.
+
+Figure 8: Drewry Intra-Asia Container Index (IACI)   
+![](images/11836bf77f4dce5cdbce633fcb660d0fb69fe856b6277edd82f49dedd7b85f76.jpg)
+
+<details>
+<summary>line</summary>
+
+| Date       | IACI |
+| ---------- | ---- |
+| 11/14/2023 | 430  |
+| 12/14/2023 | 400  |
+| 1/14/2024  | 530  |
+| 2/14/2024  | 500  |
+| 3/14/2024  | 430  |
+| 4/14/2024  | 530  |
+| 5/14/2024  | 580  |
+| 6/14/2024  | 970  |
+| 7/14/2024  | 1030 |
+| 8/14/2024  | 900  |
+| 9/14/2024  | 650  |
+| 10/14/2024 | 500  |
+| 11/14/2024 | 850  |
+| 12/14/2024 | 930  |
+| 1/14/2025  | 850  |
+| 2/14/2025  | 750  |
+| 3/14/2025  | 650  |
+| 4/14/2025  | 600  |
+| 5/14/2025  | 700  |
+| 6/14/2025  | 650  |
+| 7/14/2025  | 800  |
+| 8/14/2025  | 700  |
+| 9/14/2025  | 600  |
+| 10/14/2025 | 500  |
+| 11/14/2025 | 650  |
+| 12/14/2025 | 720  |
+| 1/14/2026  | 650  |
+| 2/14/2026  | 550  |
+| 3/14/2026  | 650  |
+| 4/14/2026  | 850  |
+| 5/14/2026  | 950  |
+</details>
+
+Source: Drewry WCI as of 29 May 2026.
+
+Figure 9: Clarksons - Containership Time Charter Rate by size   
+![](images/f1663cc3bd483ddcfe9b3c6e7db0618de4b28d781ed41424a0c462105be72227.jpg)  
+Source: Clarksons. Latest data as of 29 May 2026.
+
+Figure 10: Top 10 Carriers Owned vs. Chartered Fleet Ratio   
+![](images/84af7c1f1fd40e79c19531aa3200bd689649da3a8b11f788511876f6f20f67e5.jpg)
+
+<details>
+<summary>bar_line</summary>
+
+| Company | Owned TEU | Chartered TEU | % Chart (%) |
+| :--- | :--- | :--- | :--- |
+| MSC | 4600000 | 3200000 | 37.0 |
+| APM-Maersk | 2800000 | 1900000 | 39.0 |
+| CMA CGM | 2700000 | 1500000 | 36.0 |
+| COSCO Group | 2100000 | 1400000 | 40.0 |
+| Hapag-Lloyd | 1500000 | 800000 | 40.0 |
+| ONE | 1000000 | 1100000 | 54.0 |
+| Evergreen Line | 1400000 | 500000 | 30.0 |
+| HMM | 900000 | 350000 | 18.0 |
+| Yang Ming | 450000 | 450000 | 51.0 |
+| Zim | 250000 | 550000 | 87.0 |
+</details>
+
+Source: Alphaliner May 2026 Monthly Monitor Report, JPM estimates.
+
+Figure 11: Descartes - U.S. Containerized Import Volume   
+![](images/c558bf49047b439e4e7cc81f6082d8678309f8de4d45f6f1c17e0c6b01f36ae3.jpg)
+
+<details>
+<summary>line</summary>
+
+| Month | 2019 | 2020 | 2021 | 2022 | 2023 | 2024 | 2025 | 2026 |
+|-------|------|------|------|------|------|------|------|------|
+| Jan   | 2.05 | 2.05 | 2.50 | 2.30 | 2.10 | 2.30 | 2.50 | 2.35 |
+| Feb   | 1.80 | 1.70 | 2.10 | 2.30 | 1.75 | 2.15 | 2.25 | 2.15 |
+| Mar   | 1.78 | 1.60 | 2.55 | 1.85 | 1.80 | 2.15 | 2.40 | 2.35 |
+| Apr   | 1.90 | 1.85 | 2.35 | 2.00 | 2.05 | 2.30 | 2.40 | 2.30 |
+| May   | 2.10 | 1.70 | 2.55 | 2.65 | 2.10 | 2.35 | 2.18 | -    |
+| Jun   | 1.95 | 1.85 | 2.45 | 2.45 | 2.10 | 2.30 | 2.20 | -    |
+| Jul   | 2.20 | 2.15 | 2.45 | 2.55 | 2.15 | 2.60 | 2.65 | -    |
+| Aug   | 2.15 | 2.35 | 2.60 | 2.45 | 2.15 | 2.50 | 2.55 | -    |
+| Sep   | 2.05 | 2.30 | 2.35 | 2.45 | 2.15 | 2.50 | 2.30 | -    |
+| Oct   | 2.10 | 2.45 | 2.55 | 2.45 | 2.30 | 2.50 | 2.30 | -    |
+| Nov   | 1.90 | 1.95 | 2.40 | 2.35 | 2.10 | 2.40 | 2.18 | -    |
+| Dec   | 1.90 | 1.95 | 2.40 | 2.35 | 2.10 | 2.40 | 2.20 | -    |
+</details>
+
+Source: Descartes, as of April 2026 edition (released in May).
+
+Figure 12: U.S. NRF - Monthly Imports (MM TEU)   
+![](images/807e2719cb03f23247bbcb38794d8cad8028966bb4df75b6e1f019f87d212e6e.jpg)
+
+<details>
+<summary>bar</summary>
+
+| Month | 2023 | 2024 | 2025 | 2026 |
+|---|---|---|---|---|
+| Jan | 1.81 | 1.96 | 2.22 | 2.11 |
+| Feb | 1.55 | 1.95 | 2.03 | 1.9 |
+| Mar | 1.62 | 1.93 | 2.15 | 2.16 |
+| Apr | 1.78 | 2.02 | 2.21 | 2.13 |
+| May | 1.93 | 2.08 | 2.08 | 2.17 |
+| Jun | 1.83 | 2.16 | 1.97 | 2.13 |
+| Jul | 1.91 | 2.32 | 2.39 | 2.2 |
+| Aug | 1.96 | 2.34 | 2.32 | 2.19 |
+| Sep | 2.03 | 2.29 | 2.18 | 2.08 |
+| Oct | 2.06 | 2.25 | 2.07 | |
+| Nov | 1.89 | 2.17 | 2.02 | |
+| Dec | 1.87 | 2.24 | 1.99 | |
+</details>
+
+Source: U.S. National Retail Federation (NRF), as of May 2026.
+
+Figure 13: U.S. Logistics Managers' Index (LMI) - LMI Index vs Future Expectations   
+![](images/05b60dd8dda568c035788fc4a5d5c6cd05ee719c44fa3809f19906f29f8eac84.jpg)
+
+<details>
+<summary>line</summary>
+
+| Date   | LMI  | LMI future expectation |
+|--------|------|------------------------|
+| Jan-19 | 64   | 64                     |
+| May-19 | 57   | 57                     |
+| Sep-19 | 55   | 55                     |
+| Jan-20 | 53   | 53                     |
+| May-20 | 51   | 51                     |
+| Sep-20 | 62   | 62                     |
+| Jan-21 | 70   | 70                     |
+| May-21 | 75   | 75                     |
+| Sep-21 | 73   | 73                     |
+| Jan-22 | 76   | 76                     |
+| May-22 | 70   | 70                     |
+| Sep-22 | 60   | 60                     |
+| Jan-23 | 55   | 55                     |
+| May-23 | 45   | 45                     |
+| Sep-23 | 50   | 50                     |
+| Jan-24 | 58   | 58                     |
+| May-24 | 60   | 60                     |
+| Sep-24 | 62   | 62                     |
+| Jan-25 | 60   | 60                     |
+| May-25 | 58   | 58                     |
+| Sep-25 | 60   | 60                     |
+| Jan-26 | 55   | 55                     |
+| May-26 | 70   | 70                     |
+</details>
+
+Source: U.S. Logistics Manager Index (LMI), as of May 2026.
+
+Figure 14: U.S. Logistics Managers' Index (LMI) - Inventory Levels vs Future Levels   
+![](images/e0c38efdd08de13a1f21462617ecfb0f7db42155b99c961b9691053349c7dd39.jpg)
+
+<details>
+<summary>line</summary>
+
+| Date   | Inventory Levels | Inventory Levels future expectation |
+|--------|------------------|-------------------------------------|
+| Jan-19 | 67               | 67                                  |
+| May-19 | 65               | 65                                  |
+| Sep-19 | 67               | 67                                  |
+| Jan-20 | 43               | 43                                  |
+| May-20 | 55               | 55                                  |
+| Sep-20 | 60               | 60                                  |
+| Jan-21 | 58               | 58                                  |
+| May-21 | 65               | 65                                  |
+| Sep-21 | 60               | 60                                  |
+| Jan-22 | 80               | 75                                  |
+| May-22 | 70               | 70                                  |
+| Sep-22 | 65               | 60                                  |
+| Jan-23 | 55               | 55                                  |
+| May-23 | 45               | 45                                  |
+| Sep-23 | 50               | 50                                  |
+| Jan-24 | 45               | 45                                  |
+| May-24 | 60               | 60                                  |
+| Sep-24 | 55               | 55                                  |
+| Jan-25 | 70               | 70                                  |
+| May-25 | 60               | 60                                  |
+| Sep-25 | 55               | 55                                  |
+| Jan-26 | 40               | 40                                  |
+| May-26 | 55               | 55                                  |
+</details>
+
+Source: U.S. Logistics Manager Index (LMI), as of May 2026.
+
+Figure 15: Clarksons - Weekly Total No. of Strait of Hormuz Vessel Transits   
+![](images/a3f2ea3f1f24ead364cd47d7f8514e1bde1d15930a1c72c7dfca6fa9e1a64b48.jpg)
+
+<details>
+<summary>line</summary>
+
+| Date       | Total Strait of Hormuz Transits | Total Containership Strait of Hormuz Transits | Total Deep Sea Cargo Strait of Hormuz Transits |
+|------------|----------------------------------|-----------------------------------------------|------------------------------------------------|
+| 02-Jan-2026 | 850                              | 150                                           | 470                                            |
+| 09-Jan-2026 | 840                              | 150                                           | 480                                            |
+| 16-Jan-2026 | 860                              | 150                                           | 490                                            |
+| 23-Jan-2026 | 810                              | 150                                           | 450                                            |
+| 30-Jan-2026 | 880                              | 160                                           | 480                                            |
+| 06-Feb-2026 | 890                              | 160                                           | 490                                            |
+| 13-Feb-2026 | 900                              | 150                                           | 490                                            |
+| 20-Feb-2026 | 910                              | 160                                           | 480                                            |
+| 27-Feb-2026 | 920                              | 150                                           | 470                                            |
+| 06-Mar-2026 | 930                              | 140                                           | 460                                            |
+| 13-Mar-2026 | 150                              | 10                                            | 10                                             |
+| 20-Mar-2026 | 10                               | 5                                             | 5                                              |
+| 27-Mar-2026 | 5                                | 5                                             | 5                                              |
+| 03-Apr-2026 | 10                               | 5                                             | 5                                              |
+| 10-Apr-2026 | 15                               | 5                                             | 5                                              |
+| 17-Apr-2026 | 18                               | 5                                             | 5                                              |
+| 24-Apr-2026 | 15                               | 5                                             | 5                                              |
+| 01-May-2026 | 12                               | 5                                             | 5                                              |
+| 08-May-2026 | 8                                | 5                                             | 5                                              |
+| 15-May-2026 | 10                               | 5                                             | 5                                              |
+| 22-May-2026 | 8                                | 5                                             | 5                                              |
+| 29-May-2026 | 5                                | 5                                             | 5                                              |
+</details>
+
+Source: Clarksons. Latest updated for 29 May 2026.
+
+Figure 16: Clarksons Port Congestion Index - Containerships in Port, m.TEU, 7dma   
+![](images/c0588b081626ad9593c208af9478e85fff40eaedbde7cdb94c69b00140ed8d6d.jpg)  
+Source: Clarksons, as of 29 May 2026.
+
+Figure 17: Port Congestion Index - Containerships in Port, China P.R., m.TEU, 7dma   
+![](images/7da7a183fa66ce4ecc14007cdc551957ab5c9d2ba4738e84729c57d22b62b1d8.jpg)  
+Source: Clarksons. As of 29 May 2026.
+
+Figure 18: Port Congestion Index - Containerships in Port, South East Asia, m.TEU, 7dma   
+![](images/d3e91d3ec9a419938ded0d3ee751e03d01aef9202a9d173309a59b1b58d8068f.jpg)
+
+<details>
+<summary>line</summary>
+
+| Date       | CY2016 | CY2017 | CY2018 | CY2019 | CY2020 | CY2021 | CY2022 | CY2023 | CY2024 | CY2025 | CY2026 |
+|------------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|
+| 01-Jan     | 0.75   | 0.80   | 0.85   | 0.90   | 0.95   | 1.00   | 1.05   | 1.10   | 1.15   | 1.20   | 1.25   |
+| 08-Jan     | 0.78   | 0.82   | 0.88   | 0.92   | 0.98   | 1.02   | 1.08   | 1.12   | 1.18   | 1.22   | 1.28   |
+| 15-Jan     | 0.80   | 0.84   | 0.90   | 0.94   | 1.00   | 1.04   | 1.10   | 1.14   | 1.20   | 1.24   | 1.30   |
+| 22-Jan     | 0.82   | 0.86   | 0.92   | 0.96   | 1.02   | 1.06   | 1.12   | 1.16   | 1.22   | 1.26   | 1.32   |
+| 29-Jan     | 0.84   | 0.88   | 0.94   | 0.98   | 1.04   | 1.08   | 1.14   | 1.18   | 1.24   | 1.28   | 1.34   |
+| 05-Feb     | 0.86   | 0.90   | 0.96   | 1.00   | 1.06   | 1.10   | 1.16   | 1.20   | 1.26   | 1.30   | 1.36   |
+| 12-Feb     | 0.88   | 0.92   | 0.98   | 1.02   | 1.08   | 1.12   | 1.18   | 1.22   | 1.30   | 1.34   | 1.38   |
+| 19-Feb     | 0.90   | 0.94   | 1.00   | 1.04   | 1.10   | 1.14   | 1.20   | 1.24   | 1.32   | 1.36   | 1.40   |
+| 26-Feb     | 0.92   | 0.96   | 1.02   | 1.06   | 1.12   | 1.16   | 1.22   | 1.26   | 1.34   | 1.38   | 1.42   |
+| 04-Mar     | 0.94   | 0.98   | 1.04   | 1.08   | 1.14   | 1.18   | 1.24   | 1.28   | 1.36   | 1.40   | 1.44   |
+| 11-Mar     | 0.96   | 1.00   | 1.06   | 1.10   | 1.16   | 1.20   | 1.26   | 1.30   | 1.38   | 1.42   | 1.46   |
+| 18-Mar     | 0.98   | 1.02   | 1.08   | 1.12   | 1.18   | 1.22   | 1.28   | 1.32   | 1.40   | 1.44   | 1.48   |
+| 25-Mar     | 1.00   | 1.04   | 1.10   | 1.14   | 1.20   | 1.24   | 1.30   | 1.34   | 1.42   | 1.46   | 1.50   |
+| 01-Apr     | 0.98   | 1.06   | 1.08   | 1.16   | 1.22   | 1.26   | 1.32   | 1.36   | 1.44   | 1.48   | 1.52   |
+| 08-Apr     | 0.96   | 1.08   | 1.06   | 1.18   | 1.24   | 1.28   | 1.34   | 1.38   | 1.46   | 1.50   | 1.54   |
+| 15-Apr     | 0.98   | 1.10   | 1.08   | 1.20   | 1.26   | 1.30   | 1.36   | 1.40   | 1.48   | 1.52   | 1.56   |
+| 22-Apr     | 1.00   | 1.12   | 1.10   | 1.22   | 1.28   | 1.32   | 1.38   | 1.42   | 1.50   | 1.54   | 1.58   |
+| 29-Apr     | 1.02   | 1.14   | 1.12   | 1.24   | 1.30   | 1.34   | 1.40   | 1.44   | 1.52   | 1.56   | 1.60   |
+| 06-May     | 1.04   | 1.16   | 1.14   | 1.26   | 1.32   | 1.36   | 1.42   | 1.46   | 1.54   | 1.58   | 1.62   |
+| 13-May     | 1.06   | 1.18   | 1.16   | 1.28   | 1.34   | 1.38   | 1.44   | 1.48   | 1.56   | 1.60   | 1.64   |
+| 20-May     | 1.08   | 1.20   | 1.18   | 1.30   | 1.36   | 1.40   | 1.46    | 1.50   | 1.58   | 1.62   | 1.66   |
+| 27-May     | 1.10   | 1.22   | 1.20   | 1.32   | 1.38   | 1.42   | 1.48    | 1.52   | 1.60   | 1.64    | 1.68   |
+| 03-Jun     | nan    | nan    | nan    | nan    | nan    | nan    | nan    | nan    | nan    | nan    | nan    |
+| 9-Jun       | nan    | nan    | nan    | nan    | nan    | nan    | nan    | nan    | nan    | nan    | nan    |
+| ...        ... \n (Continued)<lcel><lcel><lcel><lcel><lcel><lcel><lcel><lcel><lcel><lcel><lcel><lcel><lcel><nl>
+</details>
+
+Source: Clarksons. As of 29 May 2026.
+
+Figure 19: Clarksons Port Congestion Index - Containerships in Port, ME & Indian Subcontinent, m.TEU, 7dma   
+![](images/755b3ffa34e6255b951dc66bcb9e5333c5de6b0d45b5a05c2a8c1b0635705f43.jpg)
+
+<details>
+<summary>line</summary>
+
+| Date       | CY2016 | CY2017 | CY2018 | CY2019 | CY2020 | CY2021 | CY2022 | CY2023 | CY2024 | CY2025 | CY2026 |
+|------------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|
+| 01-Jan     | 0.45   | 0.55   | 0.60   | 0.58   | 0.62   | 0.57   | 0.65   | 0.68   | 0.70   | 0.85   | 0.83   |
+| 08-Jan     | 0.43   | 0.53   | 0.58   | 0.56   | 0.60   | 0.55   | 0.63   | 0.66   | 0.68   | 0.83   | 0.81   |
+| 15-Jan     | 0.44   | 0.54   | 0.59   | 0.57   | 0.61   | 0.56   | 0.64   | 0.67   | 0.69   | 0.84   | 0.82   |
+| 22-Jan     | 0.45   | 0.55   | 0.60   | 0.58   | 0.62   | 0.57   | 0.65   | 0.68   | 0.70   | 0.85   | 0.83   |
+| 29-Jan     | 0.46   | 0.56   | 0.61   | 0.59   | 0.63   | 0.58   | 0.66   | 0.69   | 0.71   | 0.86   | 0.84   |
+| 05-Feb     | 0.47   | 0.57   | 0.62   | 0.60   | 0.64   | 0.59   | 0.67   | 0.70   | 0.72   | 0.87   | 0.85   |
+| 12-Feb     | 0.48   | 0.58   | 0.63   | 0.61   | 0.65   | 0.60   | 0.68   | 0.71   | 0.73   | 0.88   | 0.86   |
+| 19-Feb     | 0.49   | 0.59   | 0.64   | 0.62   | 0.66   | 0.61   | 0.69   | 0.72   | 0.74   | 0.89   | 0.87   |
+| 26-Feb     | 0.50   | 0.60   | 0.65   | 0.63   | 0.67   | 0.62   | 0.70   | 0.73   | 0.75   | 0.90   | 0.88   |
+| 04-Mar     | 0.51   | 0.61   | 0.66   | 0.64   | 0.68   | 0.63   | 0.71   | 0.74   | 0.76   | 0.91   | 0.89   |
+| 11-Mar     | 0.52   | 0.62   | 0.67   | 0.65   | 0.69   | 0.64   | 0.72   | 0.75   | 0.77   | 0.92   | 0.90   |
+| 18-Mar     | 0.53   | 0.63   | 0.68   | 0.66   | 0.70   | 0.65   | 0.73   | 0.76   | 0.78   | 0.93   | 0.91   |
+| 25-Mar     | 0.54   | 0.64   | 0.69   | 0.67   | 0.71   | 0.66   | 0.74   | 0.77   | 0.79   | 0.94   | 0.92   |
+| 01-Apr     | 0.55   | 0.65   | 0.70   | 0.68   | 0.72   | 0.67   | 0.75   | 0.78   | 0.80   | 0.95   | 0.93   |
+| 08-Apr     | 0.56   | 0.66   | 0.71   | 0.69   | 0.73   | 0.68   | 0.76   | 0.79   | 0.81   | 0.96   | 0.94   |
+| 15-Apr     | 0.57   | 0.67   | 0.72   | 0.70   | 0.74   | 0.69   | 0.77   | 0.80   | 0.82   | 0.97   | 0.95   |
+| 22-Apr     | 0.58   | 0.68   | 0.73   | 0.71   | 0.75   | 0.70   | 0.78   | 0.81   | 0.83   | 0.98   | 0.96   |
+| 29-Apr     | 0.59   | 0.69   | 0.74   | 0.72   | 0.76   | 0.71   | 0.79   | 0.82   | 0.84   | 1         |          |
+| 13-May     |          |        |        |        |        |        |        |        |        |        |        |
+|           |        |        |        |        |        |        |        |        |        |        |        |
+|           (Apr)    (May)      (Jun)      (Jul)      (Aug)      (Sep)      (Oct)      (Nov)      (Dec)      (Jan)      (Feb)      (Mar)      (Apr)      (May)      (Jun)      (Jul)      (Aug)      (Sep)      (Oct)      (Nov)      (Dec)      (Jan)      (Mar)      (Apr)      (May)      (Jun)      (Jul)      (Aug)      (Sep)      (Oct)      (Nov)      (Jan)      (Mar)      (Apr)      (May)      (Jun)      (Jul)      (Aug)      (Sep)      (Oct)      (Nov)      (Jan)      (Mar)      (Apr)      (May)      (Jun)      (Jul)      (Aug)      (Sep)      (Oct)      (Nov)      (Jan)      (Mar)      (Apr)      (May)      (June)    |
+|           (Jun)    (Jul)                (Aug)            (Sep)             (Oct)            (Nov)            (Dec)            (Jan)            (Feb)            (Feb)            (Feb)            (Feb)            (Feb)            (Feb)            (Feb)            (Feb)            (Feb)            (Feb)            (Feb)            (Feb)            (Feb)            (Feb)            (Feb)            (Feb)            (Feb)            (Feb)            (Feb)            (Feb)            (Feb)            (Feb)            (Feb)            (Feb)            (Feb)            (Mar)     |
+|           (Jul)     (Aug)                               (Sep)             (Oct)             (Nov)             (Dec)             (Jan)             (Feb)             (Feb)             (Feb)             (Feb)             (Feb)             (Feb)             (Feb)             (Feb)             (Feb)             (Feb)             (Feb)             (Feb)             (Feb)            (Mar)           |
+|           (Oct)     (Aug)                                 (Sep)             (Oct)             (Nov)             (Dec)             (Jan)             (Feb)             (Feb)             (Feb)             (Feb)             (Feb)             (Feb)             (Feb)             (Feb)             (Feb)             (Feb)            (Mar)           |
+|           (Nov)     (-Aug)|          |        |        |        |        |        |        |        |        |        |        |
+|           (-Sep)|          |        |        |        |        |        |        |        |        |        |        |
+|           (-Oct)|          |        |        |        |        |        |        |        |        |        |        |
+|           (-Nov)|          |        |        |        |        |        |        |        |        |        |        |
+|           (-Dec)|          |        |        |        |        |        |        |        |        |        |        |
+|           (-Jan)|          |        |        |        |        |        |        |        |        |
+|           (-Feb)|          |        |        |        |        |        |        |        |
+|           (-Mar)|          |        |        |        |        |        |        |        |
+|           (-Apr)|          |        |        |        |        |        |        |
+|           (-May)|          |        |        |        |        |        |
+|           (-Jun)|          |        |        |        |
+|           (-Jul)|          |        |        |        |
+|           (-Aug)|          |        |        |
+|           (-Sep)|          |        |        |
+|           (-Oct)|          |
+|           (-Nov)|          |
+|           (-Dec)|          |
+|           (-Jan)|          |
+|           (-Feb)|          |
+|           (-Mar)|          |
+|           (-Apr)|          |
+|           (-May)|          |
+|           (-Jun)|          |
+|           (-Jul)|          |
+|           (-Aug)|          |
+|           (-Sep)|          |
+|           (-Oct)|          |
+|           (-Nov)|          |
+|           (-Dec)|          |
+|           (-Jan)|          |
+|           (-Feb)|          |
+|           (-Mar)|          |
+|           (-Apr)|          |
+|           (-May)|          |
+|           (-Jun)|          |
+|           (-Jul)|          |
+|           (-Aug)|          |
+|           (-Sep)|          |
+|           (-Oct)|          |
+|           (-Nov)|          |
+|
+|           (-Dec)|          |
+|           (-Jan)|          |
+|           (-Feb)|          |
+|           (-Mar)|          |
+|           (-Apr)|          |
+|           (-May)|          |
+|           (-Jun)|          |
+|           (-Jul)|          |
+|           (-Aug)|          |
+|           (-Sep)|          |
+|           (-Oct)|          |
+|           (-Nov)|          |
+|           (-Dec)|          |
+|           (-Jan)|          |
+|                   -(-Dec)|         |
+|                  -(-Jan)|         |
+|                  -(-Feb)|         |
+|                  -(-Mar)|         |
+|                  -(-Apr)|         |
+|                  -(-May)|         |
+|                  -(-Jun)|         |
+|                  -(-Jul)|         |
+|                  -(-Aug)|         |
+|                  -(-Sep)|         |
+|                  -(-Oct)|         |
+|                  -(-Nov)|         |
+|                  -(-Dec)|         |
+|                  -(-Jan)|         |
+|                  -(-Feb)|         |
+|                  -(-Mar)|         |
+|                  -(-Apr)|         |
+|                  -(-May)|         |
+|                  -(-Jun)|         |
+|                  -(-Jul)|         |
+|                  -(-Aug)|         |
+|                  -(-Sep)|         |
+|                  -(-Oct)|         |
+|                  -(-Nov)|         |
+|                  -(-Dec)+(-Jan)+(-Feb)+(-Mar)+(-Apr)+(-May)+(-Jun)+(-Jul)+(-Aug)+(-Sep)+(-Oct)+(-Nov)+(-Dec)+(-Jan)+(-Mar)+(-Apr)+(-Feb)+(-Mar)+(-Apr)+(-May)+(-Jun)+(-Jul)+(-Aug)+(-Sep)+(-Oct)+(-Nov)+(-Dec)
+</details>
+
+Source: Clarksons. As of 29 May 2026.
+
+Figure 20: Drewry Global Container Port Throughput Index (PTI)   
+![](images/387112ce6ff07460a8529728c949b42b40eac10cf6fc4ab2e04e20fd7c6c1db2.jpg)
+
+<details>
+<summary>line</summary>
+
+| Date   | Drewry Global PT Index | Greater China PT Index | North America PT Index | European PT Index |
+|--------|------------------------|------------------------|------------------------|-------------------|
+| Oct-22 | 107                    | 111                    | 110                    | 100               |
+| Jan-23 | 100                    | 98                     | 95                     | 97                |
+| Apr-23 | 108                    | 112                    | 91                     | 104               |
+| Jul-23 | 111                    | 118                    | 102                    | 103               |
+| Oct-23 | 112                    | 117                    | 109                    | 101               |
+| Jan-24 | 109                    | 118                    | 100                    | 94                |
+| Apr-24 | 115                    | 125                    | 107                    | 108               |
+| Jul-24 | 119                    | 123                    | 115                    | 107               |
+| Oct-24 | 117                    | 120                    | 113                    | 106               |
+| Jan-25 | 118                    | 125                    | 115                    | 102               |
+| Apr-25 | 122                    | 128                    | 118                    | 110               |
+| Jul-25 | 124                    | 130                    | 120                    | 115               |
+| Oct-25 | 123                    | 128                    | 110                    | 107               |
+| Jan-26 | 122                    | 133                    | 105                    | 103               |
+| Apr-26 | 124                    | 127                    | 108                    | 106               |
+| Jul-26 | 123                    | 129                    | 107                    | 105               |
+| Oct-26 | 122                    | 128                    | 106                    | 104               |
+| Jan-27 | 123                    | 130                    | 108                    | 106               |
+| Apr-27 | 124                    | 132                    | 109                    | 107               |
+| Jul-27 | 125                    | 134                    | 110                    | 108               |
+| Oct-27 | 124                    | 133                    | 109                    | 107               |
+| Jan-28 | 123                    | 135                    | 110                    | 108               |
+| Apr-28 | 124                    | 136                    | 111                    | 109               |
+| Jul-28 | 125                    | 137                    | 112                    | 110               |
+| Oct-28 | 124                    | 136                    | 111                    | 109               |
+| Jan-29 | 123                    | 138                    | 112                    | 110               |
+| Apr-29 | 124                    | 139                    | 113                    | 111               |
+| Jul-29 | 125                    | 140                    | 114                    | 112               |
+| Oct-29 | 124                    | 139                    | 113                    | 111               |
+| Jan-30 | 123                    | 138                    | 112                    | 110               |
+| Apr-30 | 124                    | 139                    | 113                    | 111               |
+| Jul-30 | 125                    | 140                    | 114                    | 112               |
+| Oct-30 | 124                    | 139                    | 113                    | 111               |
+| Jan-31 | 123                    | 138                    | 112                    | 110               |
+| Apr-31 | 124                    | 139                    | 113                    | 111               |
+| Jul-31 | 125                    | 140                    | 114                    | 112               |
+| Oct-31 | 124                    | 139                    | 113                    | 111               |
+| Jan-32 | 123                    | 138                    | 112                    | 110               |
+| Apr-32 | 124                    | 139                    | 113                    | 111               |
+| Jul-32 | 125                    | 140                    | 114                    | 112               |
+| Oct-32 | 124                    | 139                    | 113                    | 111               |
+| Jan-33 | 123                    | 138                    | 112                    | 110               |
+| Apr-33 | 124                    | 139                    | 113                    | 111               |
+| Jul-33 | 125                    | 140                    | 114                    | 112               |
+| Oct-33 | 124                    | 139                    | 113                    | 111               |
+| Jan-34 | 123                    | 138                    | 112                    | 110               |
+| Apr-34 | 124                    | 139                    | 113                    | 111               |
+| Jul-34 | 125                    | 140                    | 114                    | 112               |
+| Oct-34 | 124                    | 139                    | 113                    | 111               |
+| Jan-35 | 123                    | 138                    | 112                    | 110               |
+| Apr-35 | 124                    | 139                    | 113                    | 111               |
+| Jul-35 | 125                    | 140                    | 114                    | 112               |
+| Oct-35 | 124                    | 139                    | 113                    | 111               |
+| Jan-36 | 123                    | 138                    | 112                    | 110               |
+| Apr-36 | 124                    | 139                    | 113                    | 111               |
+| Jul-36 | 125                    | 140                    | 114                    | 1<lcel>
+</details>
+
+Source: Drewry World, data for March 2026 (released in May 2026)
+
+Figure 21: CMPH Monthly Throughput Tracker by Region   
+![](images/591d6e3b8cee2d012ad594b0d4390a668caec17d3133055e441d199f5b78e879.jpg)
+
+<details>
+<summary>line</summary>
+
+| Date   | PRD  | YRD  | Bohai Rim | Other overseas |
+|--------|------|------|-----------|----------------|
+| Jan-10 | 1800 | 2200 | -         | -              |
+| Jan-11 | 2000 | 2500 | -         | -              |
+| Jan-12 | 1900 | 2700 | -         | -              |
+| Jan-13 | 1500 | 2400 | 600       | -              |
+| Jan-14 | 1600 | 2600 | 700       | 100            |
+| Jan-15 | 1500 | 2700 | 800       | 120            |
+| Jan-16 | 1400 | 2800 | 900       | 130            |
+| Jan-17 | 1500 | 3000 | 1500      | 140            |
+| Jan-18 | 1600 | 3200 | 1600      | 150            |
+| Jan-19 | 1700 | 3400 | 1700      | 160            |
+| Jan-20 | 1400 | 2500 | 2200      | 250            |
+| Jan-21 | 1500 | 3500 | 2400      | 280            |
+| Jan-22 | 1600 | 3700 | 2500      | 290            |
+| Jan-23 | 1500 | 3800 | 2600      | 300            |
+| Jan-24 | 1600 | 4500 | 2700      | 310            |
+| Jan-25 | 1700 | 4800 | 2800      | 320            |
+| Jan-26 | 1800 | 5000 | 2900      | 330            |
+</details>
+
+Source: Company data. Latest data is for the month of April 2026.
+
+Analyst Certification: The Research Analyst(s) denoted by an “AC” on the cover of this report certifies (or, where multiple Research Analysts are primarily responsible for this report, the Research Analyst denoted by an “AC” on the cover or within the document individually certifies, with respect to each security or issuer that the Research Analyst covers in this research) that: (1) all of the views expressed in this report accurately reflect the Research Analyst’s personal views about any and all of the subject securities or issuers; and (2) no part of any of the Research Analyst's compensation was, is, or will be directly or indirectly related to the specific recommendations or views expressed by the Research Analyst(s) in this report. For all Korea-based Research Analysts listed on the front cover, if applicable, they also certify, as per KOFIA requirements, that the Research Analyst’s analysis was made in good faith and that the views reflect the Research Analyst’s own opinion, without undue influence or intervention.
+
+All authors named within this report are Research Analysts who produce independent research unless otherwise specified. In Europe, Sector Specialists (Sales and Trading) may be shown on this report as contacts but are not authors of the report or part of the Research Department.
+
+# Important Disclosures
+
+- Market Maker/ Liquidity Provider: JPM is a market maker and/or liquidity provider in the financial instruments of/related to Mitsui O.S.K. Lines (9104) or related entities.   
+- Client: JPM currently has, or had within the past 12 months, the following entity(ies) as clients: Mitsui O.S.K. Lines (9104) or related entities.   
+- Client/Non-Investment Banking, Securities-Related: JPM currently has, or had within the past 12 months, the following entity(ies) as clients, and the services provided were non-investment-banking, securities-related: Mitsui O.S.K. Lines (9104) or related entities.   
+- Client/Non-Securities-Related: JPM currently has, or had within the past 12 months, the following entity(ies) as clients, and the services provided were non-securities-related: Mitsui O.S.K. Lines (9104) or related entities.   
+- Potential Investment Banking Compensation: JPM expects to receive, or intends to seek, compensation for investment banking services in the next three months from Mitsui O.S.K. Lines (9104) or related entities.   
+- Non-Investment Banking Compensation Received: JPM has received compensation in the past 12 months for products or services other than investment banking from Mitsui O.S.K. Lines (9104) or related entities.   
+- Debt Position: JPM may hold a position in the debt securities of Mitsui O.S.K. Lines (9104) or related entities, if any.
+
+Company-Specific Disclosures: JPM does and seeks to do business with companies covered in its research reports. As a result, investors should be aware that the firm may have a conflict of interest that could affect the objectivity of this report. Investors should consider this report as only a single factor in making their investment decision. Important disclosures, including price charts and credit opinion history tables (if applicable), are available for compendium reports and all JPM-covered companies, and certain non-covered companies, by visiting https://www.jpmm.com/research/disclosures, calling 1-800-477-0406, or e-mailing research.disclosure.inquiries@JPM.com with your request.
+
+Mitsui O.S.K. Lines (9104) (9104.T, 9104 JP) Price Chart   
+![](images/aacdce58809c77c480dcdee35bc9e72fa915f984518a0c77c692b650c42b5353.jpg)
+
+<details>
+<summary>line</summary>
+
+| Date  | Price(Y) |
+|-------|----------|
+| Sep 23 | 4,700    |
+| Jan 24 | 4,500    |
+| May 24 | 6,100    |
+| Sep 24 | 5,800    |
+| Jan 25 | 6,000    |
+| May 25 | 6,200    |
+| Sep 25 | 5,700    |
+| Jan 26 | 5,400    |
+| May 26 | 6,900    |
+</details>
+
+<table><tr><td>Date</td><td>Rating</td><td>Price (Y)</td><td>Price Target (Y)</td></tr><tr><td>24-Aug-23</td><td>OW</td><td>3976</td><td>4,700</td></tr><tr><td>28-Nov-23</td><td>OW</td><td>4158</td><td>4,500</td></tr><tr><td>28-Feb-24</td><td>OW</td><td>5165</td><td>6,100</td></tr><tr><td>26-Aug-24</td><td>OW</td><td>5045</td><td>5,800</td></tr><tr><td>02-Dec-24</td><td>OW</td><td>5129</td><td>6,000</td></tr><tr><td>18-Feb-25</td><td>OW</td><td>5510</td><td>6,200</td></tr><tr><td>22-May-25</td><td>OW</td><td>5007</td><td>6,000</td></tr><tr><td>18-Aug-25</td><td>OW</td><td>4935</td><td>5,700</td></tr><tr><td>20-Nov-25</td><td>OW</td><td>4373</td><td>5,400</td></tr><tr><td>18-Feb-26</td><td>OW</td><td>5152</td><td>5,800</td></tr><tr><td>26-Mar-26</td><td>OW</td><td>6532</td><td>7,200</td></tr><tr><td>25-May-26</td><td>OW</td><td>5650</td><td>6,900</td></tr></table>
+
+Source: Bloomberg Finance L.P. and JPM; price data adjusted for stock splits and dividends.   
+Initiated coverage Aug 26, 2014. All share prices are as of market close on the previous business day.
+
+The chart(s) show JPM's continuing coverage of the stocks; the current analysts may or may not have covered it over the entire period.
+
+JPM ratings or designations: OW = Overweight, N = Neutral, UW = Underweight, NR = Not Rated
+
+# Explanation of Equity Research Ratings, Designations and Analyst(s) Coverage Universe:
+
+JPM uses the following rating system: Overweight (over the duration of the price target indicated in this report, we expect this stock will outperform the average total return of the stocks in the Research Analyst's, or the Research Analyst's team's, coverage universe); Neutral (over the duration of the price target indicated in this report, we expect this stock will perform in line with the average total return of the stocks in the Research Analyst's, or the Research Analyst's team's, coverage universe); and Underweight (over the duration of the price target indicated in this report, we expect this stock will underperform the average total return of the stocks in the Research Analyst's, or the Research Analyst's team's, coverage universe. NR is Not Rated. In this case, JPM has removed the rating and, if applicable, the price target, for this stock because of either a lack of a sufficient fundamental basis or for legal, regulatory or policy reasons. The previous rating and, if applicable, the price target, no longer should be relied upon. An NR designation is not a recommendation or a rating. Some stocks under coverage have a rating but no price target; in these cases, we expect the stock will outperform/perform in line/underperform the average total return of the stocks in the Research Analyst's, or the Research Analyst's team's, coverage universe of the relevant duration of the region. In our Asia (ex-Australia and ex-India) and U.K. small- and mid-cap Equity Research, each stock's expected total return is compared to the expected total return of a benchmark country market index, not to those Research Analysts' coverage universe. If it does not appear in the Important Disclosures section of this report, the certifying Research Analyst's coverage universe can be found on JPM's Research website, https://www.JPMmarkets.com.
+
+Coverage Universe: Li, Karen : COSCO SHIPPING Holdings Co Ltd - A (601919.SS), COSCO SHIPPING Holdings Co Ltd - H (1919.HK), CRRC Corp - A (601766.SS), CRRC Corp - H (1766.HK), Cathay Pacific Airways (0293.HK), China Merchants Port Holdings (0144.HK), Estun Automation - A (002747.SZ), Evergreen Marine (2603.TW), Full Truck Alliance (YMM), Hongfa Technology - A (600885.SS), International Container Terminal Services Inc (ICT.PS), JD Logistics (2618.HK), Jiangsu Hengli Hydraulic - A (601100.SS), Leader Harmonious Drive System Co. (688017.SS), MTR Corp (0066.HK), Orient Overseas International Limited (OOIL) (0316.HK), S.F. Holding - A (002352.SZ), S.F. Holding - H (6936.HK), ST Engineering (STEG.SI), Sany Heavy Industry - A (600031.SS), Sany Heavy Industry - H (6031.HK), Shenzhen Inovance Technology Co. Ltd - A (300124.SZ), Singapore Airlines (SIAL.SI), T.S. Lines (2510.HK), Techtronic Industries (0669) (0669.HK), UBTECH Robotics - H (9880.HK), Weichai Power - A (000338.SZ), Weichai Power - H (2338.HK), XCMG - A (000425.SZ), Yiheda Automation - A (301029.SZ), ZTO Express (ZTO), ZTO Express - H (2057.HK), Zhejiang Dingli Machinery - A (603338.SS), Zhejiang Sanhua Intelligent Controls - A (002050.SZ), Zhejiang Sanhua Intelligent Controls - H (2050.HK), Zhuzhou CRRC Times Electric Co (3898) (3898.HK), Zhuzhou CRRC Times Electric Co - A (688187.SS)
+
+JPM Equity Research Ratings Distribution, as of April 04, 2026 
+
+<table><tr><td></td><td>Overweight (buy)</td><td>Neutral (hold)</td><td>Underweight (sell)</td></tr><tr><td>JPM Global Equity Research Coverage*</td><td>51%</td><td>37%</td><td>12%</td></tr><tr><td>IB clients**</td><td>83%</td><td>79%</td><td>74%</td></tr><tr><td>JPMS Equity Research Coverage*</td><td>49%</td><td>39%</td><td>13%</td></tr><tr><td>IB clients**</td><td>94%</td><td>93%</td><td>85%</td></tr></table>
+
+\*Please note that the percentages may not add to 100% because of rounding.   
+\*\*Percentage of subject companies within each of the "buy," "hold" and "sell" categories for which JPM has provided investment banking services within the previous 12 months.   
+For purposes of FINRA ratings distribution rules only, our Overweight rating falls into a buy rating category; our Neutral rating falls into a hold rating category; and our Underweight rating falls into a sell rating category. Please note that stocks with an NR designation are not included in the table above. This information is current as of the end of the most recent calendar quarter.
+
+Equity Valuation and Risks: For valuation methodology and risks associated with covered companies or price targets for covered companies, please see the most recent company-specific research report at http://www.JPMmarkets.com, contact the primary analyst or your JPM representative, or email research.disclosure.inquiries@JPM.com. For material information about the proprietary models used, please see the Summary of Financials in company-specific research reports and the Company Tearsheets, which are available to download on the company pages of our client website, http://www.JPMmarkets.com. This report also sets out within it the material underlying assumptions used.
+
+# History of Investment Recommendations:
+
+A history of JPM investment recommendations disseminated during the preceding 12 months can be accessed on the Research & Commentary page of http://www.JPMmarkets.com where you can also search by analyst name, sector or financial instrument.
+
+Analysts' Compensation: The research analysts responsible for the preparation of this report receive compensation based upon various factors, including the quality and accuracy of research, client feedback, competitive factors, and overall firm revenues.
+
+Registration of non-US Analysts: Unless otherwise noted, the non-US analysts listed on the front of this report are employees of non-US affiliates of JPM Securities LLC, may not be registered as research analysts under FINRA rules, may not be associated persons of JPM Securities LLC, and may not be subject to FINRA Rule 2241 or 2242 restrictions on communications with covered companies, public appearances, and trading securities held by a research analyst account.
+
+# Other Disclosures
+
+JPM is a marketing name for investment banking businesses of JPM Chase & Co. and its subsidiaries and affiliates worldwide.
+
+UK MIFID FICC research unbundling exemption: UK clients should refer to UK MIFID Research Unbundling exemption for details of JPM's implementation of the FICC research exemption and guidance on relevant FICC research categorisation.
+
+All research material made available to clients are simultaneously available on our client website, JPM Markets, unless specifically permitted by relevant laws. Not all research content is redistributed, e-mailed or made available to third-party aggregators. For all research material available on a particular stock, please contact your sales representative.
+
+Any long form nomenclature for references to China; Hong Kong; Taiwan; and Macau within this research material are Mainland China; Hong Kong SAR (China); Taiwan (China); and Macau SAR (China).
+
+JPM may, from time to time, write on issuers or securities targeted by economic or financial sanctions imposed or administered by the governmental authorities of the U.S., EU, UK or other relevant jurisdictions (Sanctioned Securities). Nothing in this report is intended to be read or construed as encouraging, facilitating, promoting or otherwise approving investment or dealing in such Sanctioned Securities. Clients should be aware of their own legal and compliance obligations when making investment decisions.
+
+Any digital or crypto assets discussed in this research report are subject to a rapidly changing regulatory landscape. For relevant regulatory advisories on crypto assets, including bitcoin and ether, please see https://www.JPM.com/disclosures/cryptoasset-disclosure.
+
+The author(s) of this research report may not be licensed to carry on regulated activities in your jurisdiction and, if not licensed, do not hold themselves out as being able to do so.
+
+Exchange-Traded Funds (ETFs): JPM Securities LLC (“JPMS”) acts as authorized participant for substantially all U.S.-listed ETFs. To the extent that any ETFs are mentioned in this report, JPMS may earn commissions and transaction-based compensation in connection with the distribution of those ETF shares and may earn fees for performing other trade-related services, such as securities lending to short sellers of the ETF shares. JPMS may also perform services for the ETFs themselves, including acting as a broker or dealer to the ETFs. In addition, affiliates of JPMS may perform services for the ETFs, including trust, custodial, administration, lending, index calculation and/or maintenance and other services.
+
+Options and Futures related research: If the information contained herein regards options- or futures-related research, such information is available only to persons who have received the proper options or futures risk disclosure documents. Please contact your JPM Representative or visit https://www.theocc.com/components/docs/riskstoc.pdf for a copy of the Option Clearing Corporation's Characteristics and Risks of Standardized Options or https://www.finra.org/sites/default/files/2020-08/Security\_Futures\_Risk\_Disclosure\_Statement\_2020.pdf for a copy of the Security Futures Risk Disclosure Statement.
+
+Changes to Interbank Offered Rates (IBORs) and other benchmark rates: Certain interest rate benchmarks are, or may in the future become, subject to ongoing international, national and other regulatory guidance, reform and proposals for reform. For more information, please consult: https://www.JPM.com/global/disclosures/interbank\_offered\_rates
+
+Notification for Credit Ratings: If this material includes credit ratings, such credit ratings provided by Japan Credit Rating Agency, Ltd. (JCR) and Rating and Investment Information, Inc. (R&I), are credit ratings provided by Registered Credit Rating Agencies (credit rating agencies registered under the Financial Instruments and Exchange Law of Japan (FIEL)). With respect to credit ratings that are provided by credit rating agencies other than JCR and R&I and have no stipulation that such credit ratings are provided by Registered Credit Rating Agencies, this means that such credit ratings are Non Registered Ratings (credit ratings provided by credit rating agencies not registered under the FIEL). Among the Non Registered Ratings, with respect to those credit ratings provided by S&P Global Ratings (S&P), Moody's Investors Service (Moody's), or Fitch Ratings (Fitch), prior to making investment decision based on such Non Registered Ratings, please carefully read the “Explanation Letter regarding Non Registered Ratings” for the corresponding credit rating agency, which we separately have sent or will send.
+
+Private Bank Clients: Where you are receiving research as a client of the private banking businesses offered by JPM Chase & Co. and its subsidiaries (“JPM Private Bank”), research is provided to you by JPM Private Bank and not by any other division of JPM, including, but not limited to, the JPM Corporate and Investment Bank and its Global Research division.
+
+Legal entity responsible for the production and distribution of research: The legal entity identified below the name of the Reg AC Research Analyst who authored this material is the legal entity responsible for the production of this research. Where multiple Reg AC Research Analysts authored this material with different legal entities identified below their names, these legal entities are jointly responsible for the production of this research. Where more than one legal entity is listed under an analyst's name, the first legal entity is responsible for the production unless stated otherwise. Research Analysts from various JPM affiliates may have contributed to the production of this material but may not be licensed to carry out regulated activities in your jurisdiction (and do not hold themselves out as being able to do so). Unless otherwise stated below in the legal entity disclosures, this material has been distributed by the legal entity responsible for production, or where more than one legal entity is listed under the analyst's name, the first legal entity will be responsible for distribution. If you have any queries, please contact the relevant Research Analyst in your jurisdiction or the entity in your jurisdiction that has distributed this research material.
+
+# Legal Entities Disclosures and Country-/Region-Specific Disclosures:
+
+Argentina: JPM Chase Bank N.A Sucursal Buenos Aires is regulated by Banco Central de la República Argentina (“BCRA”- Central Bank of Argentina) and Comisión Nacional de Valores (“CNV”- Argentinian Securities Commission - ALYC y AN Integral N°51).
+
+Australia: JPM Securities Australia Limited (“JPMSAL”) (ABN 61 003 245 234/AFS Licence No: 238066) is regulated by the Australian Securities and Investments Commission and is a Market Participant of ASX Limited, a Clearing and Settlement Participant of ASX Clear Pty Limited and a Clearing Participant of ASX Clear (Futures) Pty Limited. This material is issued and distributed in Australia by or on behalf of JPMSAL only to "wholesale clients" (as defined in section 761G of the Corporations Act 2001). A list of all financial products covered can be found by visiting https://www.jpmm.com/research/disclosures. JPM seeks to cover companies of relevance to the domestic and international investor base across all Global Industry Classification Standard (GICS) sectors, as well as across a range of market capitalisation sizes. If applicable, in the course of conducting public side due diligence on the subject company(ies), the Research Analyst team may at times perform such diligence through corporate engagements such as site visits, discussions with company representatives, management presentations, etc. Research issued by JPMSAL has been prepared in accordance with JPM Australia’s Research Independence Policy which can be found at the following link: JPM Australia - Research Independence Policy.
+
+Brazil: Banco JPM S.A. is regulated by the Comissao de Valores Mobiliarios (CVM) and by the Central Bank of Brazil. Ombudsman JPM: 0800-7700847 / 0800-7700810 (For Hearing Impaired) / ouvidoria.jp.morgan@jpmchase.com.
+
+Canada: JPM Securities Canada Inc. is a registered investment dealer, regulated by the Canadian Investment Regulatory Organization and the Ontario Securities Commission and is the participating member on Canadian exchanges. This material is distributed in Canada by or on behalf of JPM Securities Canada Inc.
+
+Chile: Inversiones JPM Limitada is an unregulated entity incorporated in Chile.
+
+China: JPM Securities (China) Company Limited has been approved by CSRC to conduct the securities investment consultancy business.
+
+Colombia: Banco JPM Colombia S.A. is supervised by the Superintendencia Financiera de Colombia (SFC). Any reference in this material to products or services offered abroad by entities other than the Bank in Colombia is included exclusively for descriptive purposes. Such references do not constitute, and should not be construed as, promotional activity or the provision of financial products or services within Colombian territory, as defined under applicable Colombian regulation.
+
+Dubai International Financial Centre (DIFC): JPM Chase Bank, N.A., Dubai Branch is regulated by the Dubai Financial Services Authority (DFSA) and its registered address is Dubai International Financial Centre - The Gate, West Wing, Level 3 and 9 PO Box 506551, Dubai, UAE. This material has been distributed by JPM Chase Bank, N.A., Dubai Branch to persons regarded as professional clients or market counterparties as defined under the DFSA rules.
+
+European Economic Area (EEA): Unless specified to the contrary, research is distributed in the EEA by JPM SE (“JPM SE”), which is authorised as a credit institution by the Federal Financial Supervisory Authority (Bundesanstalt für Finanzdienstleistungsaufsicht, BaFin) and jointly supervised by the BaFin, the German Central Bank (Deutsche Bundesbank) and the European Central Bank (ECB). JPM SE is a company headquartered in Frankfurt with registered address at TaunusTurm, Taunustor 1, Frankfurt am Main, 60310, Germany. The material has been distributed in the EEA to persons regarded as professional investors (or equivalent) pursuant to Art. 4 para. 1 no. 10 and Annex II of MiFID II and its respective implementation in their home jurisdictions (“EEA professional investors”). This material must not be acted on or relied on by persons who are not EEA professional investors. Any investment or investment activity to which this material relates is only available to EEA relevant persons and will be engaged in only with EEA relevant persons.
+
+Hong Kong: JPM Securities (Asia Pacific) Limited (CE number AAJ321) is regulated by the Hong Kong Monetary Authority and the Securities and Futures Commission in Hong Kong, and JPM Broking (Hong Kong) Limited (CE number AAB027) is regulated by the Securities and Futures Commission in Hong Kong. JPM Chase Bank, N.A., Hong Kong Branch (CE Number AAL996) is regulated by the Hong Kong Monetary Authority and the Securities and Futures Commission, is organized under the laws of the United States with limited liability. Where the distribution of this material is a regulated activity in Hong Kong, the material is distributed in Hong Kong by or through JPM Securities (Asia Pacific) Limited and/or JPM Broking (Hong Kong) Limited.
+
+India: JPM India Private Limited (Corporate Identity Number - U67120MH1992FTC068724), having its registered office at JPM Tower, Off. C.S.T. Road, Kalina, Santacruz - East, Mumbai – 400098, is registered with the Securities and Exchange Board of India (SEBI) as a ‘Research Analyst’ having registration number INH000001873. JPM India Private Limited is also registered with SEBI as a member of the National Stock Exchange of India Limited and the Bombay Stock Exchange Limited (SEBI Registration Number – INZ000239730) and as a Merchant Banker (SEBI Registration Number - MB/INM000002970). Telephone: 91-22-6157 3000, Facsimile: 91-22-6157 3990 and Website: http://www.jpmipl.com. JPM Chase Bank, N.A. - Mumbai Branch is licensed by the Reserve Bank of India (RBI) (Licence No. 53/ Licence No. BY.4/94; SEBI - IN/CUS/014/ CDSL : IN-DP-CDSL-444-2008/ IN-DP-NSDL-285-2008/ INBI00000984/ INE231311239) as a Scheduled Commercial Bank in India, which is its primary license allowing it to carry on Banking business in India and other activities, which a Bank branch in India are permitted to undertake. For non-local research material, this material is not distributed in India by JPM India Private Limited. Compliance Officer: Ashutosh Sharma; ashutosh.j.sharma@jpmchase.com; +912261575002. Grievance Officer: Ramprasadh K, jpmipl.research.feedback@JPM.com; +912261573000. Registration granted by SEBI and certification from NISM in no way guarantee performance of the intermediary or provide any assurance of returns to investors. Please visit Terms and Conditions and Most Important Terms and Conditions (MITC). The annual Compliance audit report is available at http://www.jpmipl.com/#research.
+
+Indonesia: PT JPM Sekuritas Indonesia is a member of the Indonesia Stock Exchange and is registered and supervised by the Otoritas Jasa Keuangan (OJK).
+
+Korea: JPM Securities (Far East) Limited, Seoul Branch, is a member of the Korea Exchange (KRX). JPM Chase Bank, N.A., Seoul Branch, is licensed as a branch office of foreign bank (JPM Chase Bank, N.A.) in Korea. Both entities are regulated by the Financial Services Commission (FSC) and the Financial Supervisory Service (FSS). For non-macro research material, the material is distributed in Korea by or through JPM Securities (Far East) Limited, Seoul Branch.
+
+Japan: JPM Securities Japan Co., Ltd. and JPM Chase Bank, N.A., Tokyo Branch are regulated by the Financial Services Agency in Japan.
+
+Malaysia: This material is issued and distributed in Malaysia by JPM Securities (Malaysia) Sdn Bhd (18146-X), which is a Participating Organization of Bursa Malaysia Berhad and holds a Capital Markets Services License issued by the Securities Commission in Malaysia.
+
+Mexico: JPM Casa de Bolsa, S.A. de C.V., JPM Grupo Financiero is member of the Mexican Stock Exchange (“Bolsa Mexicana de Valores”) and the Institutional Stock Exchange (“Bolsa Institucional de Valores”), and it is authorized to act as a broker dealer by the National Banking and Securities Exchange Commission (“Comisión Nacional Bancaria y de Valores”).
+
+New Zealand: This material is issued and distributed by JPMSAL in New Zealand only to "wholesale clients" (as defined in the Financial Markets Conduct Act 2013). JPMSAL is registered as a Financial Service Provider under the Financial Service providers (Registration and Dispute Resolution) Act of 2008.
+
+Philippines: JPM Securities Philippines Inc. is a Trading Participant of the Philippine Stock Exchange and a member of the Securities Clearing Corporation of the Philippines and the Securities Investor Protection Fund. It is regulated by the Securities and Exchange Commission.
+
+Singapore: This material is issued and distributed in Singapore by or through JPM Securities Singapore Private Limited (JPMSS) [MDDI (P) 057/08/2025 and Co. Reg. No.: 199405335R], which is a member of the Singapore Exchange Securities Trading Limited, and/or JPM Chase Bank, N.A., Singapore branch (JPMCB Singapore), both of which are regulated by the Monetary Authority of Singapore. This material is issued and distributed in Singapore only to accredited investors, expert investors and institutional investors, as defined in Section 4A of the Securities and Futures Act, Cap. 289 (SFA). This material is not intended to be issued or distributed to any retail investors or any other investors that do not fall into the classes of “accredited investors,” “expert investors” or “institutional investors,” as defined under Section 4A of the SFA. Recipients of this material in Singapore are to contact JPMSS or JPMCB Singapore in respect of any matters arising from, or in connection with, the material.
+
+South Africa: JPM Equities South Africa Proprietary Limited and JPM Chase Bank, N.A., Johannesburg Branch are members of the Johannesburg Securities Exchange and are regulated by the Financial Services Conduct Authority (FSCA).
+
+Taiwan: JPM Securities (Taiwan) Limited is a participant of the Taiwan Stock Exchange (company-type) and regulated by the Taiwan Securities and Futures Bureau. Material relating to equity securities is issued and distributed in Taiwan by JPM Securities (Taiwan) Limited, subject to the license scope and the applicable laws and the regulations in Taiwan. To the extent that JPM Securities (Taiwan) Limited produces research materials on securities not listed on the Taiwan Stock Exchange or Taipei Exchange (“Non-Taiwan Listed Securities”), these materials shall not constitute securities recommendations for the purpose of applicable Taiwan regulations, and, for the avoidance of doubt, JPM Securities (Taiwan) Limited does not act as broker for Non-Taiwan Listed Securities. According to Paragraph 2, Article 7-1 of Operational Regulations Governing Securities Firms Recommending Trades in Securities to Customers (as amended or supplemented) and/or other applicable laws or regulations, please note that the recipient of this material is not permitted to engage in any activities in connection with the material that may give rise to conflicts of interests, unless otherwise disclosed in the “Important Disclosures” in this material.
+
+Thailand: This material is issued and distributed in Thailand by JPM Securities (Thailand) Ltd., which is a member of the Stock Exchange of Thailand and is regulated by the Ministry of Finance and the Securities and Exchange Commission. The registered address is 548 One City Center Building, 50th Floor, Ploenchit Road, Lymphini, Pathum Wan, Bangkok 10330.
+
+UK: Research is produced in the UK by JPM Securities plc (“JPMS plc”) which is a member of the London Stock Exchange and is authorised by the Prudential Regulation Authority and regulated by the Financial Conduct Authority and the Prudential Regulation Authority or JPM Markets Limited (“JPMML Ltd”) which is authorised and regulated by the Financial Conduct Authority. Unless specified to the contrary, this material is distributed in the UK by JPMS plc and is directed in the UK only to: (a) persons having professional experience in matters relating to investments falling within article 19(5) of the Financial Services and Markets Act 2000 (Financial Promotion) (Order) 2005 (“the FPO”); (b) persons outlined in article 49 of the FPO (high net worth companies, unincorporated associations or partnerships, the trustees of high value trusts, etc.); or (c) any persons to whom this communication may otherwise lawfully be made; all such persons being referred to as "UK relevant persons". This material must not be acted on or relied on by persons who are not UK relevant persons. Any investment or investment activity to which this material relates is only available to UK relevant persons and will be engaged in only with UK relevant persons. A description of JPM EMEA’s policy for prevention and avoidance of conflicts of interest related to the production of Research can be found at the following link: JPM EMEA - Research Independence Policy.
+
+U.S.: JPM Securities LLC (“JPMS”) is a member of the NYSE, FINRA, SIPC, and the NFA. JPM Chase Bank, N.A. is a member of the FDIC. Material published by non-U.S. affiliates is distributed in the U.S. by JPMS who accepts responsibility for its content.
+
+General: Additional information is available upon request. The information in this material has been obtained from sources believed to be reliable. While all reasonable care has been taken to ensure that the facts stated in this material are accurate and that the forecasts, opinions and expectations contained herein are fair and reasonable, JPM Chase & Co. or its affiliates and/or subsidiaries (collectively JPM) make no representations or warranties whatsoever to the completeness or accuracy of the material provided, except with respect to any disclosures relative to JPM and the Research Analyst's involvement with the issuer that is the subject of the material. Accordingly, no reliance should be placed on the accuracy, fairness or completeness of the information contained in this material. There may be certain discrepancies with data and/or limited content in this material as a result of calculations, adjustments, translations to different languages, and/or local regulatory restrictions, as applicable. These discrepancies should not impact the overall investment analysis, views and/or recommendations of the subject company(ies) that may be discussed in the material. Artificial intelligence tools may have been used in the preparation of this material, including assisting in data analysis, pattern recognition, and content drafting for research material. JPM accepts no liability whatsoever for any loss arising from any use of this material or its contents, and neither JPM nor any of its respective directors, officers or employees, shall be in any way responsible for the contents hereof, apart from the liabilities and responsibilities that may be imposed on them by the relevant regulatory authority in the jurisdiction in question, or the regulatory regime thereunder. Opinions, forecasts or projections contained in this material represent JPM's current opinions or judgment as of the date of the material only and are therefore subject to change without notice. Periodic updates may be provided on companies/industries based on company-specific developments or announcements, market conditions or any other publicly available information. There can be no assurance that future results or events will be consistent with any such opinions, forecasts or projections, which represent only one possible outcome. Furthermore, such opinions, forecasts or projections are subject to certain risks, uncertainties and assumptions that have not been verified, and future actual results or events could differ materially. The value of, or income from, any investments referred to in this material may fluctuate and/or be affected by changes in exchange rates. All pricing is indicative as of the close of market for the securities discussed, unless otherwise stated. Past performance is not indicative of future results. Accordingly, investors may receive back less than originally invested. This material is not intended as an offer or solicitation for the purchase or sale of any financial instrument. The opinions and recommendations herein do not take into account individual client circumstances, objectives, or needs and are not intended as recommendations of particular securities, financial instruments or strategies to particular clients. This material may include views on structured securities, options, futures and other derivatives. These are complex instruments, may involve a high degree of risk and may be appropriate investments only for sophisticated investors who are capable of understanding and assuming the risks involved. The recipients of this material must make their own independent decisions regarding any securities or financial instruments mentioned herein and should seek advice from such independent financial, legal, tax or other adviser as they deem necessary. JPM may trade as a principal on the basis of the Research Analysts' views and research, and it may also engage in transactions for its own account or for its clients' accounts in a manner inconsistent with the views taken in this material, and JPM is under no obligation to ensure that such other communication is brought to the attention of any recipient of this material. Others within JPM, including Strategists, Sales staff and other Research Analysts, may take views that are inconsistent with those taken in this material. Employees of JPM not involved in the preparation of this material may have investments in the securities (or derivatives of such securities) mentioned in this material and may trade them in ways different from those discussed in this material. This material is not an advertisement for or marketing of any issuer, its products or services, or its securities in any jurisdiction.
+
+Confidentiality and Security Notice: This transmission may contain information that is privileged, confidential, legally privileged, and/or exempt from disclosure under applicable law. If you are not the intended recipient, you are hereby notified that any disclosure, copying, distribution, or use of the information contained herein (including any reliance thereon) is STRICTLY PROHIBITED. Although this transmission and any attachments are believed to be free of any virus or other defect that might affect any computer system into which it is received and opened, it is the responsibility of the recipient to ensure that it is virus free and no responsibility is accepted by JPM Chase & Co., its subsidiaries and affiliates, as applicable, for any loss or damage arising in any way from its use. If you received this transmission in error, please immediately contact the sender and destroy the material in its entirety, whether in electronic or hard copy format. This message is subject to electronic monitoring: https://www.JPM.com/disclosures/email
+
+MSCI: Certain information herein (“Information”) is reproduced by permission of MSCI Inc., its affiliates and information providers (“MSCI”) ©2026. No reproduction or dissemination of the Information is permitted without an appropriate license. MSCI MAKES NO EXPRESS OR IMPLIED WARRANTIES (INCLUDING MERCHANTABILITY OR FITNESS) AS TO THE INFORMATION AND DISCLAIMS ALL LIABILITY TO THE EXTENT PERMITTED BY LAW. No Information constitutes investment advice, except for any applicable Information from MSCI ESG Research. Subject also to msci.com/disclaimer
+
+Sustainalytics: Certain information, data, analyses and opinions contained herein are reproduced by permission of Sustainalytics and: (1) includes the proprietary information of Sustainalytics; (2) may not be copied or redistributed except as specifically authorized; (3) do not constitute investment advice nor an endorsement of any product or project; (4) are provided solely for informational purposes; and (5) are not warranted to be complete, accurate or timely. Sustainalytics is not responsible for any trading decisions, damages or other losses related to it or its use. The use of the data is subject to conditions available at https://www.sustainalytics.com/legal-disclaimers. ©2026 Sustainalytics. All Rights Reserved.
+
+"Other Disclosures" last revised May 16, 2026.
+
+Copyright 2026 JPM Chase & Co. All rights reserved. This material or any portion hereof may not be reprinted, sold or redistributed without the written consent of JPM. It is strictly prohibited to use or share without prior written consent from JPM any research material received from JPM or an authorized third-party (“JPM Data”) in any third-party artificial intelligence (“AI”) systems or models when such JPM Data is accessible by a third-party.
