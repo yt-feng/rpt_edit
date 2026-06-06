@@ -1,0 +1,13 @@
+Found 23 total PDFs; shard 2/40 has 5 PDFs, skips 0 already converted, will process 5 PDFs with batch_size=5.
+Running batch 1: 5 PDFs
+Found 5 PDFs.
+Uploading PDF to MinerU: /tmp/pdf_batch_001_rd1hnvfa/pdfs/0001-12-Goldman Sachs-ASIA IN FOCUS-Cost of China-s Retail Fuel Price Management Modest and Sustainable-260605.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_rd1hnvfa/pdfs/0002-13-CITI-China Battery Materials Lithium into 1st week of June - Sentiment trends weaker- albeit fundamental remains intact-260604.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_rd1hnvfa/pdfs/0003-14-Nomura-Asia Insights-China- The emerging impact of raw materials supply disruptions-260605.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_rd1hnvfa/pdfs/0004-15-Deutsche Bank-China Healthcare-Market likely overreacted on geopolitical tensions- we think-260605.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_rd1hnvfa/pdfs/0005-16-Goldman Sachs-CONNECTING THE DOTS-Conviction List- bringing a different lens to AI and TGS plus key research-260605.pdf
+MinerU batch_id=be11f238-010a-4018-81e1-340ebb951233
+MinerU states: running, running, pending, running, pending
+MinerU states: done, done, done, done, done
+Done. Results written to /home/runner/work/rpt_edit/rpt_edit/xhs_notes/dropbox/260606/shard_2; successful_reports=5; mineru_timed_out=False
+All batches completed successfully. Generated 5 report directories.
