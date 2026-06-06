@@ -1,0 +1,15 @@
+Found 23 total PDFs; shard 0/40 has 5 PDFs, skips 0 already converted, will process 5 PDFs with batch_size=5.
+Running batch 1: 5 PDFs
+Found 5 PDFs.
+Uploading PDF to MinerU: /tmp/pdf_batch_001_sxwouvcb/pdfs/0001-01-Goldman Sachs-GLOBAL FX TRADER-Heating Up-260605.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_sxwouvcb/pdfs/0002-02-Goldman Sachs-GLOBAL RATES TRADER-A Higher Floor-260605.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_sxwouvcb/pdfs/0003-03-Goldman Sachs-Global Markets Daily- Japanese Repatriation Flows-What Matters Most for the Yen-260604.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_sxwouvcb/pdfs/0004-04-Goldman Sachs-China Economic Activity and Policy Tracker- June 5-260605.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_sxwouvcb/pdfs/0005-05-Goldman Sachs-WEEKLY FUND FLOWS-US Drives Global Equity Inflows-260605.pdf
+MinerU batch_id=791a2a81-d8d0-4d79-9121-d4823140f93c
+MinerU states: running, running, running, running, pending
+MinerU states: running, running, done, running, running
+MinerU states: done, running, done, done, done
+MinerU states: done, done, done, done, done
+Done. Results written to /home/runner/work/rpt_edit/rpt_edit/xhs_notes/dropbox/260606/shard_0; successful_reports=5; mineru_timed_out=False
+All batches completed successfully. Generated 5 report directories.
