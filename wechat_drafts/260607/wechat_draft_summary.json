@@ -1,0 +1,297 @@
+{
+  "date_folder": "260607",
+  "dry_run": false,
+  "publish": false,
+  "max_articles": "all",
+  "selected_count": 17,
+  "articles_per_draft": 8,
+  "draft_count": 3,
+  "max_body_chars": 2000,
+  "max_content_chars": 19500,
+  "max_content_bytes": 18000,
+  "min_inline_images": 3,
+  "max_inline_images": 3,
+  "body_hook": "更多完整报告和后续精译，扫文末图片进群交流。",
+  "trailing_image": "/opt/actions-runner-rpt-edit/_work/rpt_edit/rpt_edit/prompts/zsxq_img.jpg",
+  "drafts": [
+    {
+      "draft_index": 1,
+      "media_id": "avPwUQVH0p7DPpCFFkit838mXPm2mM9bk86I-jqIk5SAWYOVDXYiG4yqAHg4LzKZ",
+      "publish_id": "",
+      "published": false,
+      "article_count": 8,
+      "payload_bytes": 76833,
+      "payload": "wechat_drafts/260607/draft_payload_01.json",
+      "titles": [
+        "全球股票策略：核心观点",
+        "日本利率策略 | 日本：10年期日本国债能反弹多少？",
+        "投资者演示 | 亚太地区：亚太股票策略与主题研究：主题碰撞中的机遇",
+        "印度：审慎管理汇率的政策“火箭筒”未触及政策利率：未用利率捍卫汇率，宣布了非货币措施",
+        "富时台湾指数系列季度审核及资金流向影响（2026年6月）：图表2：银行、化工、电信和资本品预计将获得最大的被动资金流入，而科技…",
+        "标普/澳交所指数调整回顾及资金流影响（2026年6月）",
+        "投资者演示 | 日本：日本股票策略：为伟大的增长时刻做好准备",
+        "第一时间解读：中国铝业板块"
+      ],
+      "wechat_titles": [
+        "全球股票策略：核心观点",
+        "日本利率策略 | 日本：10年期日本国债能反弹多少？",
+        "投资者演示 | 亚太地区：亚太股票策略与主题研究：主题碰撞中的机遇",
+        "印度：审慎管理汇率的政策“火箭筒”未触及政策利率：未用利率捍卫汇率，宣布了非货币措施",
+        "富时台湾指数系列季度审核及资金流向影响（2026年6月）：图表2：银行、化工、电信和资本品预计将获得最大的被动资金流入，而科技…",
+        "标普/澳交所指数调整回顾及资金流影响（2026年6月）",
+        "投资者演示 | 日本：日本股票策略：为伟大的增长时刻做好准备",
+        "第一时间解读：中国铝业板块"
+      ]
+    },
+    {
+      "draft_index": 2,
+      "media_id": "avPwUQVH0p7DPpCFFkit8-JCb_arBB9UqrEIMWNSUj_b3ogYbu-arEf0iBzzI0nW",
+      "publish_id": "",
+      "published": false,
+      "article_count": 8,
+      "payload_bytes": 86928,
+      "payload": "wechat_drafts/260607/draft_payload_02.json",
+      "titles": [
+        "低波动率环境下转向做多美元：全球外汇策略",
+        "中国基础材料调研核心要点",
+        "全球数据中心需求尽数在此，供应依然不足：目录",
+        "投资者演示 | 亚太地区：亚洲暑期学校：香港/东盟银行",
+        "投资者演示 | 亚太地区：中国汽车与共享出行：汽车行业概览",
+        "新兴市场资金流向：新兴市场资金外流：广度与深度同步加剧",
+        "美国股票洞察：为资本支出超级周期定价",
+        "大中华区科技硬件：核心观点"
+      ],
+      "wechat_titles": [
+        "低波动率环境下转向做多美元：全球外汇策略",
+        "中国基础材料调研核心要点",
+        "全球数据中心需求尽数在此，供应依然不足：目录",
+        "投资者演示 | 亚太地区：亚洲暑期学校：香港/东盟银行",
+        "投资者演示 | 亚太地区：中国汽车与共享出行：汽车行业概览",
+        "新兴市场资金流向：新兴市场资金外流：广度与深度同步加剧",
+        "美国股票洞察：为资本支出超级周期定价",
+        "大中华区科技硬件：核心观点"
+      ]
+    },
+    {
+      "draft_index": 3,
+      "media_id": "avPwUQVH0p7DPpCFFkit8yOwqXeWbwo5O77IYXR8JkXb4lXkHusV0-parDwuZq8p",
+      "publish_id": "",
+      "published": false,
+      "article_count": 1,
+      "payload_bytes": 12493,
+      "payload": "wechat_drafts/260607/draft_payload_03.json",
+      "titles": [
+        "投资者演示 | 日本：汽车：考虑中东局势的选股策略"
+      ],
+      "wechat_titles": [
+        "投资者演示 | 日本：汽车：考虑中东局势的选股策略"
+      ]
+    }
+  ],
+  "articles": [
+    {
+      "title": "全球股票策略：核心观点",
+      "wechat_title": "全球股票策略：核心观点",
+      "report_dir": "kc_translated_reports/260607/01-0001-01-CITI-Global-Equity-Strategy-Bear-Market-Checklist--Exuberance-Building-2",
+      "content_chars": 5686,
+      "content_bytes": 9396,
+      "visible_text_chars": 2000,
+      "inline_image_count": 3,
+      "body_image_count": 3,
+      "ai_image_count": 0,
+      "cover_image": "kc_translated_reports/260607/01-0001-01-CITI-Global-Equity-Strategy-Bear-Market-Checklist--Exuberance-Building-2/assets/fig_001.jpg"
+    },
+    {
+      "title": "日本利率策略 | 日本：10年期日本国债能反弹多少？",
+      "wechat_title": "日本利率策略 | 日本：10年期日本国债能反弹多少？",
+      "report_dir": "kc_translated_reports/260607/02-0002-02-Morgan-Stanley-Japan-Rates-Strategy-How-much-can-10y-JGB-rally--260605",
+      "content_chars": 7000,
+      "content_bytes": 10714,
+      "visible_text_chars": 2000,
+      "inline_image_count": 3,
+      "body_image_count": 3,
+      "ai_image_count": 0,
+      "cover_image": "kc_translated_reports/260607/02-0002-02-Morgan-Stanley-Japan-Rates-Strategy-How-much-can-10y-JGB-rally--260605/assets/fig_001.jpg"
+    },
+    {
+      "title": "投资者演示 | 亚太地区：亚太股票策略与主题研究：主题碰撞中的机遇",
+      "wechat_title": "投资者演示 | 亚太地区：亚太股票策略与主题研究：主题碰撞中的机遇",
+      "report_dir": "kc_translated_reports/260607/03-0003-03-Morgan-Stanley-Investor-Presentation-Asia-Equity-Strategy-and-Thematic-R",
+      "content_chars": 7401,
+      "content_bytes": 11043,
+      "visible_text_chars": 2000,
+      "inline_image_count": 3,
+      "body_image_count": 3,
+      "ai_image_count": 0,
+      "cover_image": "kc_translated_reports/260607/03-0003-03-Morgan-Stanley-Investor-Presentation-Asia-Equity-Strategy-and-Thematic-R/assets/fig_001.jpg"
+    },
+    {
+      "title": "印度：审慎管理汇率的政策“火箭筒”未触及政策利率：未用利率捍卫汇率，宣布了非货币措施",
+      "wechat_title": "印度：审慎管理汇率的政策“火箭筒”未触及政策利率：未用利率捍卫汇率，宣布了非货币措施",
+      "report_dir": "kc_translated_reports/260607/04-0004-04-Nomura-Asia-Insights-India--Policy-bazooka-for-managing-currency-prudent",
+      "content_chars": 6154,
+      "content_bytes": 9574,
+      "visible_text_chars": 2000,
+      "inline_image_count": 3,
+      "body_image_count": 3,
+      "ai_image_count": 3,
+      "cover_image": "wechat_drafts/260607/_assets/article_04_kc_ai_image_001.jpg"
+    },
+    {
+      "title": "富时台湾指数系列季度审核及资金流向影响（2026年6月）：图表2：银行、化工、电信和资本品预计将获得最大的被动资金流入，而科技…",
+      "wechat_title": "富时台湾指数系列季度审核及资金流向影响（2026年6月）：图表2：银行、化工、电信和资本品预计将获得最大的被动资金流入，而科技…",
+      "report_dir": "kc_translated_reports/260607/05-0005-05-Goldman-Sachs-Asia-Index-Strategy-FTSE-Taiwan-Index-Series-Review-and-Fl",
+      "content_chars": 4559,
+      "content_bytes": 6923,
+      "visible_text_chars": 1385,
+      "inline_image_count": 3,
+      "body_image_count": 3,
+      "ai_image_count": 1,
+      "cover_image": "kc_translated_reports/260607/05-0005-05-Goldman-Sachs-Asia-Index-Strategy-FTSE-Taiwan-Index-Series-Review-and-Fl/assets/fig_001.jpg"
+    },
+    {
+      "title": "标普/澳交所指数调整回顾及资金流影响（2026年6月）",
+      "wechat_title": "标普/澳交所指数调整回顾及资金流影响（2026年6月）",
+      "report_dir": "kc_translated_reports/260607/06-0001-06-Goldman-Sachs-ASIA-INDEX-STRATEGY-S-P-ASX-Indices-Rebalancing-Review-and",
+      "content_chars": 3978,
+      "content_bytes": 5704,
+      "visible_text_chars": 1023,
+      "inline_image_count": 3,
+      "body_image_count": 3,
+      "ai_image_count": 2,
+      "cover_image": "kc_translated_reports/260607/06-0001-06-Goldman-Sachs-ASIA-INDEX-STRATEGY-S-P-ASX-Indices-Rebalancing-Review-and/assets/fig_001.jpg"
+    },
+    {
+      "title": "投资者演示 | 日本：日本股票策略：为伟大的增长时刻做好准备",
+      "wechat_title": "投资者演示 | 日本：日本股票策略：为伟大的增长时刻做好准备",
+      "report_dir": "kc_translated_reports/260607/07-0002-07-Morgan-Stanley-Japan-Equity-Strategy--Prepare-for-the-Great-Growth-Momen",
+      "content_chars": 7523,
+      "content_bytes": 10979,
+      "visible_text_chars": 2000,
+      "inline_image_count": 3,
+      "body_image_count": 3,
+      "ai_image_count": 0,
+      "cover_image": "kc_translated_reports/260607/07-0002-07-Morgan-Stanley-Japan-Equity-Strategy--Prepare-for-the-Great-Growth-Momen/assets/fig_001.jpg"
+    },
+    {
+      "title": "第一时间解读：中国铝业板块",
+      "wechat_title": "第一时间解读：中国铝业板块",
+      "report_dir": "kc_translated_reports/260607/08-0003-08-UBS-China-Aluminum-Sector-Takeaways-on-China--Indonesia--and-Middle-East",
+      "content_chars": 5617,
+      "content_bytes": 9039,
+      "visible_text_chars": 2000,
+      "inline_image_count": 3,
+      "body_image_count": 3,
+      "ai_image_count": 3,
+      "cover_image": "wechat_drafts/260607/_assets/article_08_kc_ai_image_001.jpg"
+    },
+    {
+      "title": "低波动率环境下转向做多美元：全球外汇策略",
+      "wechat_title": "低波动率环境下转向做多美元：全球外汇策略",
+      "report_dir": "kc_translated_reports/260607/09-0004-09-J.P",
+      "content_chars": 7630,
+      "content_bytes": 11376,
+      "visible_text_chars": 2000,
+      "inline_image_count": 3,
+      "body_image_count": 3,
+      "ai_image_count": 0,
+      "cover_image": "kc_translated_reports/260607/09-0004-09-J.P/assets/fig_001.jpg"
+    },
+    {
+      "title": "中国基础材料调研核心要点",
+      "wechat_title": "中国基础材料调研核心要点",
+      "report_dir": "kc_translated_reports/260607/10-0005-10-Jefferies-China---Metals---Mining-China-basic-materials-trip-key-takeawa",
+      "content_chars": 4792,
+      "content_bytes": 8544,
+      "visible_text_chars": 2000,
+      "inline_image_count": 3,
+      "body_image_count": 3,
+      "ai_image_count": 3,
+      "cover_image": "wechat_drafts/260607/_assets/article_10_kc_ai_image_001.jpg"
+    },
+    {
+      "title": "全球数据中心需求尽数在此，供应依然不足：目录",
+      "wechat_title": "全球数据中心需求尽数在此，供应依然不足：目录",
+      "report_dir": "kc_translated_reports/260607/11-0001-11-Jefferies-USA---Digital-Infrastructure-All-the-Data-Center-Demand-in-the",
+      "content_chars": 5490,
+      "content_bytes": 8624,
+      "visible_text_chars": 2000,
+      "inline_image_count": 3,
+      "body_image_count": 3,
+      "ai_image_count": 0,
+      "cover_image": "kc_translated_reports/260607/11-0001-11-Jefferies-USA---Digital-Infrastructure-All-the-Data-Center-Demand-in-the/assets/fig_001.jpg"
+    },
+    {
+      "title": "投资者演示 | 亚太地区：亚洲暑期学校：香港/东盟银行",
+      "wechat_title": "投资者演示 | 亚太地区：亚洲暑期学校：香港/东盟银行",
+      "report_dir": "kc_translated_reports/260607/12-0002-12-Morgan-Stanley-Asia-Summer-School--HK-ASEAN-Banks-260605",
+      "content_chars": 6881,
+      "content_bytes": 10455,
+      "visible_text_chars": 2000,
+      "inline_image_count": 3,
+      "body_image_count": 3,
+      "ai_image_count": 0,
+      "cover_image": "kc_translated_reports/260607/12-0002-12-Morgan-Stanley-Asia-Summer-School--HK-ASEAN-Banks-260605/assets/fig_001.jpg"
+    },
+    {
+      "title": "投资者演示 | 亚太地区：中国汽车与共享出行：汽车行业概览",
+      "wechat_title": "投资者演示 | 亚太地区：中国汽车与共享出行：汽车行业概览",
+      "report_dir": "kc_translated_reports/260607/13-0003-13-Morgan-Stanley-China-Autos---Shared-Mobility--Autos-Overview-260605",
+      "content_chars": 12060,
+      "content_bytes": 15362,
+      "visible_text_chars": 1902,
+      "inline_image_count": 3,
+      "body_image_count": 3,
+      "ai_image_count": 0,
+      "cover_image": "kc_translated_reports/260607/13-0003-13-Morgan-Stanley-China-Autos---Shared-Mobility--Autos-Overview-260605/assets/fig_001.jpg"
+    },
+    {
+      "title": "新兴市场资金流向：新兴市场资金外流：广度与深度同步加剧",
+      "wechat_title": "新兴市场资金流向：新兴市场资金外流：广度与深度同步加剧",
+      "report_dir": "kc_translated_reports/260607/14-0005-15-J.P",
+      "content_chars": 8304,
+      "content_bytes": 11760,
+      "visible_text_chars": 2000,
+      "inline_image_count": 3,
+      "body_image_count": 3,
+      "ai_image_count": 0,
+      "cover_image": "kc_translated_reports/260607/14-0005-15-J.P/assets/fig_001.jpg"
+    },
+    {
+      "title": "美国股票洞察：为资本支出超级周期定价",
+      "wechat_title": "美国股票洞察：为资本支出超级周期定价",
+      "report_dir": "kc_translated_reports/260607/15-0001-16-Barclays-U.S",
+      "content_chars": 3306,
+      "content_bytes": 4388,
+      "visible_text_chars": 625,
+      "inline_image_count": 3,
+      "body_image_count": 3,
+      "ai_image_count": 0,
+      "cover_image": "kc_translated_reports/260607/15-0001-16-Barclays-U.S/assets/fig_001.jpg"
+    },
+    {
+      "title": "大中华区科技硬件：核心观点",
+      "wechat_title": "大中华区科技硬件：核心观点",
+      "report_dir": "kc_translated_reports/260607/16-0002-17-Morgan-Stanley-Investor-Presentation-AI-Still-Taking-Center-Stage-260605",
+      "content_chars": 9834,
+      "content_bytes": 12802,
+      "visible_text_chars": 2000,
+      "inline_image_count": 3,
+      "body_image_count": 3,
+      "ai_image_count": 0,
+      "cover_image": "kc_translated_reports/260607/16-0002-17-Morgan-Stanley-Investor-Presentation-AI-Still-Taking-Center-Stage-260605/assets/fig_001.jpg"
+    },
+    {
+      "title": "投资者演示 | 日本：汽车：考虑中东局势的选股策略",
+      "wechat_title": "投资者演示 | 日本：汽车：考虑中东局势的选股策略",
+      "report_dir": "kc_translated_reports/260607/17-0003-18-Morgan-Stanley-Investor-Presentation-Autos--Stock-Selection-Considering",
+      "content_chars": 8871,
+      "content_bytes": 11967,
+      "visible_text_chars": 2000,
+      "inline_image_count": 3,
+      "body_image_count": 3,
+      "ai_image_count": 0,
+      "cover_image": "kc_translated_reports/260607/17-0003-18-Morgan-Stanley-Investor-Presentation-Autos--Stock-Selection-Considering/assets/fig_001.jpg"
+    }
+  ]
+}
