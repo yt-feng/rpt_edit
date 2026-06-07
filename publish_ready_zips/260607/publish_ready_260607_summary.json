@@ -1,0 +1,123 @@
+{
+  "created_at_utc": "2026-06-07T22:53:36.988528+00:00",
+  "source_date_dir": "xhs_notes/dropbox/260607",
+  "output_dir": "publish_ready_zips/260607",
+  "max_zip_mb": 90,
+  "single_zip": false,
+  "exclude_source_mineru": true,
+  "markdown_files_renamed_to_txt": true,
+  "excluded_debug_files": true,
+  "included_shard_count": 4,
+  "skipped_shards": [
+    "shard_10",
+    "shard_11",
+    "shard_12",
+    "shard_13",
+    "shard_14",
+    "shard_15",
+    "shard_16",
+    "shard_17",
+    "shard_18",
+    "shard_19",
+    "shard_20",
+    "shard_21",
+    "shard_22",
+    "shard_23",
+    "shard_24",
+    "shard_25",
+    "shard_26",
+    "shard_27",
+    "shard_28",
+    "shard_29",
+    "shard_30",
+    "shard_31",
+    "shard_32",
+    "shard_33",
+    "shard_34",
+    "shard_35",
+    "shard_36",
+    "shard_37",
+    "shard_38",
+    "shard_39",
+    "shard_4",
+    "shard_5",
+    "shard_6",
+    "shard_7",
+    "shard_8",
+    "shard_9"
+  ],
+  "total_files": 343,
+  "total_renamed_markdown_count": 85,
+  "total_raw_file_bytes": 62379326,
+  "zip_count": 1,
+  "zips": [
+    {
+      "path": "publish_ready_zips/260607/publish_ready_260607.zip",
+      "size_bytes": 57762579,
+      "file_count": 343,
+      "renamed_markdown_count": 85,
+      "raw_file_bytes": 62379326,
+      "shards": [
+        "shard_0",
+        "shard_1",
+        "shard_2",
+        "shard_3"
+      ]
+    }
+  ],
+  "included_shards": [
+    {
+      "shard": "shard_0",
+      "report_count": 5,
+      "file_count": 97,
+      "renamed_markdown_count": 25,
+      "raw_file_bytes": 19956879,
+      "reports": [
+        "0001-01-CITI-Global-Equity-Strategy-Bear-Market-Checklist--Exuberance-Building-2",
+        "0002-02-Morgan-Stanley-Japan-Rates-Strategy-How-much-can-10y-JGB-rally--260605",
+        "0003-03-Morgan-Stanley-Investor-Presentation-Asia-Equity-Strategy-and-Thematic-R",
+        "0004-04-Nomura-Asia-Insights-India--Policy-bazooka-for-managing-currency-prudent",
+        "0005-05-Goldman-Sachs-Asia-Index-Strategy-FTSE-Taiwan-Index-Series-Review-and-Fl"
+      ]
+    },
+    {
+      "shard": "shard_1",
+      "report_count": 5,
+      "file_count": 85,
+      "renamed_markdown_count": 25,
+      "raw_file_bytes": 14711776,
+      "reports": [
+        "0001-06-Goldman-Sachs-ASIA-INDEX-STRATEGY-S-P-ASX-Indices-Rebalancing-Review-and",
+        "0002-07-Morgan-Stanley-Japan-Equity-Strategy--Prepare-for-the-Great-Growth-Momen",
+        "0003-08-UBS-China-Aluminum-Sector-Takeaways-on-China--Indonesia--and-Middle-East",
+        "0004-09-J.P.-Morgan-Turning-long-USD-in-a-low-vol-regime-260605",
+        "0005-10-Jefferies-China---Metals---Mining-China-basic-materials-trip-key-takeawa"
+      ]
+    },
+    {
+      "shard": "shard_2",
+      "report_count": 4,
+      "file_count": 92,
+      "renamed_markdown_count": 20,
+      "raw_file_bytes": 15691078,
+      "reports": [
+        "0001-11-Jefferies-USA---Digital-Infrastructure-All-the-Data-Center-Demand-in-the",
+        "0002-12-Morgan-Stanley-Asia-Summer-School--HK-ASEAN-Banks-260605",
+        "0003-13-Morgan-Stanley-China-Autos---Shared-Mobility--Autos-Overview-260605",
+        "0005-15-J.P.-Morgan-EM-Money-Trail-EM-outflows-broadening-as-well-as-deepening-2"
+      ]
+    },
+    {
+      "shard": "shard_3",
+      "report_count": 3,
+      "file_count": 69,
+      "renamed_markdown_count": 15,
+      "raw_file_bytes": 12019593,
+      "reports": [
+        "0001-16-Barclays-U.S.-Equity-Insights-Pricing-a-capex-supercycle-260605",
+        "0002-17-Morgan-Stanley-Investor-Presentation-AI-Still-Taking-Center-Stage-260605",
+        "0003-18-Morgan-Stanley-Investor-Presentation-Autos--Stock-Selection-Considering-"
+      ]
+    }
+  ]
+}
