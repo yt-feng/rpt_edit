@@ -1,0 +1,51 @@
+{
+  "input_dir": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs",
+  "total_pdf_count_before_shard": 18,
+  "pdf_count_before_skip": 5,
+  "pdf_count": 5,
+  "generated_report_count": 5,
+  "batch_size": 5,
+  "shard_index": 1,
+  "shard_count": 40,
+  "max_reports_per_shard": 5,
+  "max_total_reports": 0,
+  "skip_existing": true,
+  "skipped_existing_count": 0,
+  "skipped_existing": [],
+  "failures": 0,
+  "batches": [
+    {
+      "batch_index": 1,
+      "pdf_count": 5,
+      "files": [
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/06-GS-ASIA INDEX STRATEGY：S&P ASX Indices Rebalancing Review and Flow Implications （June 2026）-260606.pdf",
+          "batch_file": "/tmp/pdf_batch_001_gm9dpbcm/pdfs/0001-06-GS-ASIA INDEX STRATEGY-S-P ASX Indices Rebalancing Review and Flow Implications -June 2026--260606.pdf",
+          "stable_index": "1"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/07-MS-Japan Equity Strategy： Prepare for the Great Growth Moment-260605.pdf",
+          "batch_file": "/tmp/pdf_batch_001_gm9dpbcm/pdfs/0002-07-MS-Japan Equity Strategy- Prepare for the Great Growth Moment-260605.pdf",
+          "stable_index": "2"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/08-UBS-China Aluminum Sector：Takeaways on China， Indonesia， and Middle East-260605.pdf",
+          "batch_file": "/tmp/pdf_batch_001_gm9dpbcm/pdfs/0003-08-UBS-China Aluminum Sector-Takeaways on China- Indonesia- and Middle East-260605.pdf",
+          "stable_index": "3"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/09-JPM-Turning long~USD in a low~vol regime-260605.pdf",
+          "batch_file": "/tmp/pdf_batch_001_gm9dpbcm/pdfs/0004-09-JPM-Turning long-USD in a low-vol regime-260605.pdf",
+          "stable_index": "4"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/10-JEF-China - Metals & Mining：China basic materials trip key takeaways-260605.pdf",
+          "batch_file": "/tmp/pdf_batch_001_gm9dpbcm/pdfs/0005-10-JEF-China - Metals - Mining-China basic materials trip key takeaways-260605.pdf",
+          "stable_index": "5"
+        }
+      ],
+      "returncode": 0,
+      "status": "ok"
+    }
+  ]
+}

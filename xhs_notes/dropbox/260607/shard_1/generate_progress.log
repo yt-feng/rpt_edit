@@ -1,0 +1,14 @@
+Found 18 total PDFs; shard 1/40 has 5 PDFs, skips 0 already converted, will process 5 PDFs with batch_size=5.
+Running batch 1: 5 PDFs
+Found 5 PDFs.
+Uploading PDF to MinerU: /tmp/pdf_batch_001_gm9dpbcm/pdfs/0001-06-Goldman Sachs-ASIA INDEX STRATEGY-S-P ASX Indices Rebalancing Review and Flow Implications -June 2026--260606.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_gm9dpbcm/pdfs/0002-07-Morgan Stanley-Japan Equity Strategy- Prepare for the Great Growth Moment-260605.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_gm9dpbcm/pdfs/0003-08-UBS-China Aluminum Sector-Takeaways on China- Indonesia- and Middle East-260605.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_gm9dpbcm/pdfs/0004-09-J.P. Morgan-Turning long-USD in a low-vol regime-260605.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_gm9dpbcm/pdfs/0005-10-Jefferies-China - Metals - Mining-China basic materials trip key takeaways-260605.pdf
+MinerU batch_id=bd5857b5-615f-49c4-a4a6-93b728cf5431
+MinerU states: running, running, running, running, pending
+MinerU states: done, running, running, done, done
+MinerU states: done, done, done, done, done
+Done. Results written to /home/runner/work/rpt_edit/rpt_edit/xhs_notes/dropbox/260607/shard_1; successful_reports=5; mineru_timed_out=False
+All batches completed successfully. Generated 5 report directories.
