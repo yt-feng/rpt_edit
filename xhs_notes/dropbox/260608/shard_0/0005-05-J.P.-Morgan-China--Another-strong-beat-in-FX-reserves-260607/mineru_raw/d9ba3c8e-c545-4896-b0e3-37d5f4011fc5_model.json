@@ -1,0 +1,6266 @@
+[
+    [
+        {
+            "type": "aside_text",
+            "bbox": [
+                0.0,
+                0.568,
+                0.102,
+                0.88
+            ],
+            "angle": 270,
+            "content": "Washon N.19"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.135,
+                0.024,
+                0.348,
+                0.062
+            ],
+            "angle": 0,
+            "content": "JPM"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.691,
+                0.027,
+                0.922,
+                0.04
+            ],
+            "angle": 0,
+            "content": "Asia Pacific Economic Research"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.691,
+                0.042,
+                0.774,
+                0.054
+            ],
+            "angle": 0,
+            "content": "07 June 2026"
+        },
+        {
+            "type": "doc_title",
+            "bbox": [
+                0.135,
+                0.109,
+                0.64,
+                0.166
+            ],
+            "angle": 0,
+            "content": "China: Another strong beat in FX reserves"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.134,
+                0.175,
+                0.605,
+                0.215
+            ],
+            "angle": 0,
+            "content": "Cross-border tightening and outbound investment regulation",
+            "merge_prev": false
+        },
+        {
+            "type": "list",
+            "bbox": [
+                0.132,
+                0.233,
+                0.667,
+                0.407
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.135,
+                0.236,
+                0.665,
+                0.267
+            ],
+            "angle": 0,
+            "content": "- May FX reserves surprised to the upside again, likely on firmer-than-expected exports as price effects turned supportive and/or softer imports.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.135,
+                0.271,
+                0.664,
+                0.301
+            ],
+            "angle": 0,
+            "content": "- Implied outflows likely remained muted at US\\$20bn. PBOC accelerated gold purchases, while UST holdings declined.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.135,
+                0.305,
+                0.664,
+                0.336
+            ],
+            "angle": 0,
+            "content": "- CFETS strengthened (+1.5%) and REER +1%, while customer FX behavior softened (net settlement narrowed as both settlement and sales ratios fell).",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.135,
+                0.34,
+                0.663,
+                0.37
+            ],
+            "angle": 0,
+            "content": "- Cross-border measures are channel cleanup, cracking down on illegal/grey-zone activity and steering flows to compliant routes.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.135,
+                0.374,
+                0.664,
+                0.405
+            ],
+            "angle": 0,
+            "content": "- State Council outbound-investment rules codify a comprehensive governance framework rather than signaling a broad clampdown on capital outflows.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.134,
+                0.413,
+                0.665,
+                0.62
+            ],
+            "angle": 0,
+            "content": "May FX reserves beat expectations again, rising US$31.7bn to $3442.2bn (vs JPM: US$3405bn; consensus: US$3400bn). The upside surprise likely reflects firmer-than-expected exports and/or a larger-than-expected pullback in imports after five consecutive months of expansion. Port tracking shows some moderation in departing container-ship deadweight tonnage, while bulk shipping was lifted by a month-end jump. Price effects may also have turned supportive as AI memory chip/module prices surged, “three-new” (EVs/solar/batteries) prices picked up, and rising PPI pressures passed through to other manufactured products. Another explanation is another month of muted implied capital outflows. Next week’s May trade report should provide more color. We pencil in a wider current-account surplus of US $64.0bn, a valuation loss of US$12.3bn (the USD index rose from 98.1 to 98.9), and implied capital outflows remaining muted at US$20bn. The PBOC further accelerated gold purchases in May (+0.32 mn oz vs 0.03 mn oz average in 2H2025), while China’s US Treasury holdings dropped US$41bn to US$652.3bn in March.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.134,
+                0.625,
+                0.664,
+                0.759
+            ],
+            "angle": 0,
+            "content": "CFETS CNY has strengthened lately, though USD/CNY gains were partly capped by renewed USD strength. The CFETS basket has more than fully retraced the 2025 depreciation: it was broadly stable through April before jumping higher. Last year's CNY TWI weakness drew pushback from non-US trading partners amid China's record trade surplus, reviving accusations of “intended” depreciation alongside a pronounced decline in the REER. In our view, China's export outperformance is better explained by manufacturing efficiency gains and domestic deflation than by FX undervaluation. A firmer CNY basket could also help ease geopolitical frictions and support RMB internationalization objectives under the 15th Five-Year Plan.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.134,
+                0.765,
+                0.664,
+                0.884
+            ],
+            "angle": 0,
+            "content": "In May, CFETS rose about 1.5% and the REER increased around 1%, bringing the REER back to early-2025 levels (after a brief move toward those levels in mid-March). Meanwhile, banks' FX settlement ratio, a proxy for customers' willingness to convert foreign currency into RMB, fell from 58.2% in March to 50.2% in April, weaker than typical seasonality and reversing the prior months' pattern. The FX sales ratio (customers' willingness to buy foreign currency) also declined, from 55.0% to 49.8%. Consequently, the net FX settlement ratio (settlement minus sales) narrowed to 0.4%pt from 3.1%pts in March.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.135,
+                0.89,
+                0.664,
+                0.909
+            ],
+            "angle": 0,
+            "content": "Cross-border tightening/outbound investment regulation",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.691,
+                0.236,
+                0.936,
+                0.264
+            ],
+            "angle": 0,
+            "content": "Emerging Markets Asia, Economic and Policy Research"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.691,
+                0.268,
+                0.773,
+                0.281
+            ],
+            "angle": 0,
+            "content": "Tingting Ge",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.692,
+                0.282,
+                0.78,
+                0.294
+            ],
+            "angle": 0,
+            "content": "(852) 2800-0143",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.692,
+                0.295,
+                0.832,
+                0.307
+            ],
+            "angle": 0,
+            "content": "tingting.ge@JPM.com",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.692,
+                0.309,
+                0.758,
+                0.322
+            ],
+            "angle": 0,
+            "content": "Feng Zhu",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.692,
+                0.323,
+                0.779,
+                0.335
+            ],
+            "angle": 0,
+            "content": "(852) 2800 1745",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.692,
+                0.336,
+                0.822,
+                0.348
+            ],
+            "angle": 0,
+            "content": "feng.zhu@JPM.com",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.692,
+                0.35,
+                0.743,
+                0.363
+            ],
+            "angle": 0,
+            "content": "Jiayi Li",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.692,
+                0.364,
+                0.78,
+                0.376
+            ],
+            "angle": 0,
+            "content": "(852) 2800-5229",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.692,
+                0.377,
+                0.816,
+                0.389
+            ],
+            "angle": 0,
+            "content": "jiayi.c.li@JPM.com",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.692,
+                0.391,
+                0.794,
+                0.405
+            ],
+            "angle": 0,
+            "content": "Tongfang Yuan",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.692,
+                0.406,
+                0.78,
+                0.417
+            ],
+            "angle": 0,
+            "content": "(852) 2800-0085",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.692,
+                0.418,
+                0.852,
+                0.43
+            ],
+            "angle": 0,
+            "content": "tongfang.yuan@JPM.com",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.692,
+                0.43,
+                0.943,
+                0.442
+            ],
+            "angle": 0,
+            "content": "JPM Chase Bank, N.A., Hong Kong Branch",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.134,
+                0.935,
+                0.58,
+                0.953
+            ],
+            "angle": 0,
+            "content": "See page 4 for analyst certification and important disclosures."
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.135,
+                0.02,
+                0.349,
+                0.063
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.694,
+                0.029,
+                0.92,
+                0.04
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.693,
+                0.042,
+                0.774,
+                0.054
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.694,
+                0.283,
+                0.779,
+                0.294
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.693,
+                0.324,
+                0.778,
+                0.334
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.693,
+                0.365,
+                0.779,
+                0.375
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.692,
+                0.405,
+                0.78,
+                0.417
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.138,
+                0.109,
+                0.638,
+                0.135
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.138,
+                0.144,
+                0.272,
+                0.165
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.138,
+                0.175,
+                0.605,
+                0.195
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.136,
+                0.196,
+                0.234,
+                0.215
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.139,
+                0.243,
+                0.145,
+                0.247
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.162,
+                0.238,
+                0.664,
+                0.251
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.162,
+                0.253,
+                0.58,
+                0.266
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.139,
+                0.277,
+                0.145,
+                0.281
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.161,
+                0.271,
+                0.664,
+                0.286
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.161,
+                0.287,
+                0.429,
+                0.3
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.139,
+                0.311,
+                0.145,
+                0.316
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.163,
+                0.306,
+                0.663,
+                0.32
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.162,
+                0.321,
+                0.648,
+                0.335
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.139,
+                0.345,
+                0.145,
+                0.35
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.162,
+                0.339,
+                0.662,
+                0.356
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.161,
+                0.355,
+                0.504,
+                0.369
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.139,
+                0.38,
+                0.145,
+                0.384
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.161,
+                0.374,
+                0.662,
+                0.389
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.159,
+                0.39,
+                0.644,
+                0.404
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.138,
+                0.89,
+                0.662,
+                0.91
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.138,
+                0.415,
+                0.661,
+                0.428
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.138,
+                0.429,
+                0.662,
+                0.442
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.138,
+                0.443,
+                0.662,
+                0.457
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.138,
+                0.458,
+                0.662,
+                0.471
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.139,
+                0.474,
+                0.662,
+                0.486
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.139,
+                0.489,
+                0.661,
+                0.5
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.136,
+                0.502,
+                0.662,
+                0.516
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.138,
+                0.518,
+                0.662,
+                0.53
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.138,
+                0.533,
+                0.662,
+                0.545
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.136,
+                0.545,
+                0.663,
+                0.56
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.139,
+                0.561,
+                0.662,
+                0.573
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.138,
+                0.575,
+                0.663,
+                0.588
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.138,
+                0.591,
+                0.661,
+                0.603
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.138,
+                0.605,
+                0.652,
+                0.618
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.138,
+                0.626,
+                0.661,
+                0.641
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.138,
+                0.642,
+                0.661,
+                0.654
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.138,
+                0.656,
+                0.662,
+                0.67
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.138,
+                0.67,
+                0.662,
+                0.684
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.138,
+                0.687,
+                0.662,
+                0.699
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.136,
+                0.7,
+                0.662,
+                0.713
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.138,
+                0.716,
+                0.662,
+                0.727
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.138,
+                0.73,
+                0.662,
+                0.742
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.138,
+                0.745,
+                0.616,
+                0.757
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.139,
+                0.767,
+                0.661,
+                0.779
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.138,
+                0.782,
+                0.662,
+                0.793
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.139,
+                0.796,
+                0.662,
+                0.808
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.138,
+                0.81,
+                0.662,
+                0.823
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.138,
+                0.825,
+                0.661,
+                0.837
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.136,
+                0.84,
+                0.662,
+                0.853
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.138,
+                0.854,
+                0.662,
+                0.868
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.136,
+                0.869,
+                0.418,
+                0.882
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.693,
+                0.237,
+                0.935,
+                0.25
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.693,
+                0.25,
+                0.839,
+                0.262
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.693,
+                0.268,
+                0.772,
+                0.282
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.691,
+                0.307,
+                0.759,
+                0.324
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.694,
+                0.295,
+                0.831,
+                0.306
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.692,
+                0.336,
+                0.823,
+                0.348
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.694,
+                0.418,
+                0.851,
+                0.43
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.691,
+                0.349,
+                0.745,
+                0.367
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.691,
+                0.377,
+                0.816,
+                0.388
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.692,
+                0.39,
+                0.795,
+                0.405
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.694,
+                0.43,
+                0.941,
+                0.441
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.138,
+                0.935,
+                0.579,
+                0.952
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.07,
+                0.056,
+                0.135,
+                0.067
+            ],
+            "angle": 0,
+            "content": "Tingting Ge"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.07,
+                0.067,
+                0.16,
+                0.078
+            ],
+            "angle": 0,
+            "content": "(852) 2800-0143"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.07,
+                0.078,
+                0.211,
+                0.089
+            ],
+            "angle": 0,
+            "content": "tingting.ge@JPM.com"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.343,
+                0.056,
+                0.524,
+                0.067
+            ],
+            "angle": 0,
+            "content": "Asia Pacific Economic Research"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.343,
+                0.067,
+                0.416,
+                0.078
+            ],
+            "angle": 0,
+            "content": "07 June 2026"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.798,
+                0.053,
+                0.928,
+                0.078
+            ],
+            "angle": 0,
+            "content": "JPM"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.068,
+                0.149,
+                0.665,
+                0.207
+            ],
+            "angle": 0,
+            "content": "Against the backdrop of renewed debate on RMB internationalization, a flurry of policy announcements on cross-border securities, futures, fund activities, and outbound investment has left investors questioning whether China is meaningfully tightening outbound capital flows. We don't think so.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.068,
+                0.215,
+                0.665,
+                0.349
+            ],
+            "angle": 0,
+            "content": "The CSRC-led campaign targets illegal cross-border marketing, account opening, trade execution, and fund-transfer facilitation, while steering investors toward compliant channels, signaling a preference to redirect activity rather than suppress it. This is less about new rulemaking and more about tighter enforcement against grey-area practices. In Hong Kong SAR, enforcement is translating into tighter KYC (Know Your Customer)/source-of-funds and documentation checks, particularly for new Mainland Chinese Visitor accounts. We think the joint policy efforts aim to shut down illicit solicitation/servicing (notably via online/offshore channels) and re-route flows into supervised pathways (e.g., Stock Connect, QDII, Wealth Management Connect), i.e., channel cleanup, not a blanket ban on offshore investing.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.068,
+                0.355,
+                0.665,
+                0.56
+            ],
+            "angle": 0,
+            "content": "On June 1, the State Council issued Regulations on Outbound Investment, establishing a more comprehensive legal framework to support high-standard opening-up while safeguarding national security and investors' lawful rights. They apply broadly to China-domiciled enterprises, organizations, and resident individuals, covering direct or indirect overseas investments that confer ownership, control, management rights, or other interests (including via funding and guarantees). On oversight, the regulations codify classified and end-to-end supervision, including approval/filing and reporting where required, and reinforce key compliance constraints such as export controls (including technology/services/data), FX and cross-border regulatory requirements, and an enhanced national-security review regime. They tighten conduct standards and risk management, provide mechanisms to respond to foreign discriminatory barriers (including possible countermeasures), and set confidentiality duties and penalties (fines, remedial orders, restrictions/bans, and civil/criminal liability). The framework also applies by reference to Hong Kong SAR, Macau SAR, and Taiwan and takes effect 1 July 2026, though detailed implementation measures have yet to be released.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.068,
+                0.568,
+                0.665,
+                0.714
+            ],
+            "angle": 0,
+            "content": "In our view, the objective is not to curb outbound investment per se, but to standardize governance and tighten enforcement around activities that already sit within existing rules. It should be read as part of a broader effort to build a comprehensive regime for the prudent management of cross-border flows, including talent, technology, data, capital, etc. Near-term capital outflow pressure has eased materially, alongside solid CNY gains both against the USD and on a trade-weighted basis. If anything, the near-term policy focus is more on avoiding an overly rapid CNY appreciation. The regulations also underscore state support for overseas expansion and include a protection clause. If Chinese firms face discriminatory restrictions abroad, authorities may take corresponding measures to safeguard Chinese investors' lawful rights and interests.",
+            "merge_prev": false
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.082,
+                0.722,
+                0.473,
+                0.877
+            ],
+            "angle": 0,
+            "content": "| Date   | Value |\n|--------|-------|\n| Jul 18 | 0     |\n| Jul 19 | 0     |\n| Jul 20 | 0     |\n| Jul 21 | 0     |\n| Jul 22 | -10   |\n| Jul 23 | -15   |\n| Jul 24 | -10   |\n| Jul 25 | 5     |",
+            "sub_type": "line chart"
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.082,
+                0.878,
+                0.452,
+                0.888
+            ],
+            "angle": 0,
+            "content": "Source: Bloomberg Finance L.P., JPM.  \\( *= \\) official CNY fixing - BBG consensus estimate"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.508,
+                0.722,
+                0.9,
+                0.88
+            ],
+            "angle": 0,
+            "content": "| Date   | USD/CNY | CFETS | REER |\n|--------|---------|-------|------|\n| Jan 25 | 100     | 100   | 100  |\n| Mar 25 | 100     | 99    | 99   |\n| May 25 | 100     | 96    | 94   |\n| Jul 25 | 101     | 97    | 93   |\n| Sep 25 | 102     | 98    | 94   |\n| Nov 25 | 103     | 99    | 95   |\n| Jan 26 | 104     | 100   | 96   |\n| Mar 26 | 106     | 101   | 98   |\n| May 26 | 108     | 102   | 100  |",
+            "sub_type": "line chart"
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.511,
+                0.88,
+                0.698,
+                0.891
+            ],
+            "angle": 0,
+            "content": "Source: Bloomberg Finance L.P., JPM"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.071,
+                0.953,
+                0.081,
+                0.963
+            ],
+            "angle": 0,
+            "content": "2"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.056,
+                0.133,
+                0.068
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.066,
+                0.159,
+                0.077
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.345,
+                0.067,
+                0.415,
+                0.077
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.076,
+                0.211,
+                0.09
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.346,
+                0.058,
+                0.522,
+                0.066
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.512,
+                0.879,
+                0.696,
+                0.891
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.799,
+                0.051,
+                0.928,
+                0.076
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.149,
+                0.663,
+                0.165
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.166,
+                0.662,
+                0.177
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.179,
+                0.663,
+                0.194
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.193,
+                0.165,
+                0.208
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.073,
+                0.217,
+                0.662,
+                0.23
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.232,
+                0.662,
+                0.244
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.073,
+                0.247,
+                0.663,
+                0.259
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.26,
+                0.662,
+                0.275
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.073,
+                0.276,
+                0.662,
+                0.288
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.29,
+                0.662,
+                0.303
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.069,
+                0.305,
+                0.663,
+                0.318
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.32,
+                0.662,
+                0.332
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.333,
+                0.611,
+                0.348
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.57,
+                0.662,
+                0.581
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.585,
+                0.662,
+                0.596
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.073,
+                0.6,
+                0.662,
+                0.61
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.614,
+                0.662,
+                0.625
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.628,
+                0.662,
+                0.64
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.643,
+                0.662,
+                0.655
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.658,
+                0.662,
+                0.67
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.672,
+                0.662,
+                0.684
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.685,
+                0.663,
+                0.7
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.073,
+                0.702,
+                0.196,
+                0.713
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.356,
+                0.662,
+                0.37
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.37,
+                0.662,
+                0.385
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.386,
+                0.662,
+                0.398
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.401,
+                0.662,
+                0.413
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.416,
+                0.662,
+                0.428
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.43,
+                0.662,
+                0.443
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.444,
+                0.663,
+                0.458
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.46,
+                0.663,
+                0.472
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.474,
+                0.662,
+                0.487
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.488,
+                0.662,
+                0.501
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.503,
+                0.662,
+                0.515
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.518,
+                0.662,
+                0.53
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.532,
+                0.662,
+                0.545
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.547,
+                0.526,
+                0.56
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.084,
+                0.878,
+                0.45,
+                0.888
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.954,
+                0.081,
+                0.964
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.07,
+                0.056,
+                0.132,
+                0.068
+            ],
+            "angle": 0,
+            "content": "Tingting Ge"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.07,
+                0.068,
+                0.159,
+                0.078
+            ],
+            "angle": 0,
+            "content": "(852) 2800-0143"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.07,
+                0.078,
+                0.211,
+                0.089
+            ],
+            "angle": 0,
+            "content": "tingting.ge@JPM.com"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.344,
+                0.056,
+                0.523,
+                0.067
+            ],
+            "angle": 0,
+            "content": "Asia Pacific Economic Research"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.344,
+                0.067,
+                0.416,
+                0.077
+            ],
+            "angle": 0,
+            "content": "07 June 2026"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.798,
+                0.053,
+                0.928,
+                0.078
+            ],
+            "angle": 0,
+            "content": "JPM"
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.082,
+                0.15,
+                0.317,
+                0.164
+            ],
+            "angle": 0,
+            "content": "China's official reserve asset components"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.082,
+                0.166,
+                0.481,
+                0.313
+            ],
+            "angle": 0,
+            "content": "| Year | Gold value (oz, mn) | UST (USD bn) |\n|------|---------------------|--------------|\n| 05   | 0                   | 300          |\n| 06   | 0                   | 350          |\n| 07   | 0                   | 400          |\n| 08   | 0                   | 500          |\n| 09   | 0                   | 600          |\n| 10   | 0                   | 800          |\n| 11   | 0                   | 1000         |\n| 12   | 0                   | 1200         |\n| 13   | 0                   | 1300         |\n| 14   | 0                   | 1250         |\n| 15   | 0                   | 1200         |\n| 16   | 0                   | 1100         |\n| 17   | 0                   | 1050         |\n| 18   | 0                   | 1050         |\n| 19   | 0                   | 1050         |\n| 20   | 0                   | 1050         |\n| 21   | 0                   | 1050         |\n| 22   | 0                   | 1050         |\n| 23   | 0                   | 1050         |\n| 24   | 0                   | 1100         |\n| 25   | 0                   | 1200         |\n| 26   | 20                  | 650          |",
+            "sub_type": "line chart"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.083,
+                0.314,
+                0.333,
+                0.325
+            ],
+            "angle": 0,
+            "content": "Source: PBOC, U.S. Department of the Treasury, JPM"
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.51,
+                0.15,
+                0.757,
+                0.164
+            ],
+            "angle": 0,
+            "content": "China's capital outflow and 10-year UST yield"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.509,
+                0.164,
+                0.911,
+                0.314
+            ],
+            "angle": 0,
+            "content": "| Year | Implied capital outflow (USD bn) | 10y UST yield (%) |\n|------|----------------------------------|-------------------|\n| 15   | ~0                               | ~2                |\n| 16   | ~-150                            | ~1                |\n| 17   | ~0                               | ~1                |\n| 18   | ~0                               | ~1                |\n| 19   | ~0                               | ~1                |\n| 20   | ~50                              | ~1                |\n| 21   | ~0                               | ~1                |\n| 22   | ~-50                             | ~1                |\n| 23   | ~-100                            | ~1                |\n| 24   | ~-150                            | ~1                |\n| 25   | ~-100                            | ~1                |\n| 26   | ~-150                            | ~1                |",
+            "sub_type": "bar-line hybrid chart"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.51,
+                0.315,
+                0.692,
+                0.327
+            ],
+            "angle": 0,
+            "content": "Source: SAFE, Federal Reserve, JPM"
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.082,
+                0.34,
+                0.341,
+                0.353
+            ],
+            "angle": 0,
+            "content": "Banks' net FX settlement vs. CNY exchange rate"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.077,
+                0.353,
+                0.489,
+                0.485
+            ],
+            "angle": 0,
+            "content": "| Year | Net FX settlement | USD/CNY (RHS) |\n|------|-------------------|---------------|\n| 14   | 10                | 6.0           |\n| 15   | -10               | 6.2           |\n| 16   | -30               | 6.0           |\n| 17   | -10               | 6.4           |\n| 18   | 0                 | 6.6           |\n| 19   | 10                | 6.4           |\n| 20   | -10               | 6.2           |\n| 21   | 0                 | 6.4           |\n| 22   | 10                | 6.6           |\n| 23   | -10               | 6.4           |\n| 24   | -30               | 6.2           |\n| 25   | -10               | 6.0           |\n| 26   | 0                 | 6.4           |",
+            "sub_type": "line chart"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.082,
+                0.487,
+                0.192,
+                0.498
+            ],
+            "angle": 0,
+            "content": "Source: SAFE, JPM"
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.51,
+                0.34,
+                0.758,
+                0.352
+            ],
+            "angle": 0,
+            "content": "Banks' FX settlement ratio on behalf of clients"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.509,
+                0.353,
+                0.916,
+                0.483
+            ],
+            "angle": 0,
+            "content": "| Month | 2015  | 19-24avg | 2025  | 2026  |\n|-------|-------|----------|-------|-------|\n| Jan   | 57.5  | 56.0     | 52.0  | 58.0  |\n| Feb   | 57.0  | 51.5     | 48.0  | 56.0  |\n| Mar   | 57.0  | 54.0     | 51.0  | 58.0  |\n| Apr   | 60.0  | 56.0     | 57.0  | 51.0  |\n| May   | 63.0  | 57.0     | 53.0  | -     |\n| Jun   | 64.0  | 53.0     | 52.0  | -     |\n| Jul   | 63.0  | 55.0     | 54.0  | -     |\n| Aug   | 61.0  | 57.0     | 52.0  | -     |\n| Sep   | 57.0  | 56.0     | 63.0  | -     |\n| Oct   | 53.0  | 52.0     | 53.0  | -     |\n| Nov   | 54.0  | 53.0     | 52.0  | -     |\n| Dec   | 53.0  | 55.0     | 61.0  | -     |",
+            "sub_type": "line chart"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.51,
+                0.483,
+                0.62,
+                0.493
+            ],
+            "angle": 0,
+            "content": "Source: SAFE, JPM"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.918,
+                0.953,
+                0.928,
+                0.963
+            ],
+            "angle": 0,
+            "content": "3"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.084,
+                0.151,
+                0.315,
+                0.163
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.055,
+                0.134,
+                0.07
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.073,
+                0.067,
+                0.158,
+                0.078
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.345,
+                0.067,
+                0.415,
+                0.077
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.513,
+                0.151,
+                0.756,
+                0.164
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.076,
+                0.211,
+                0.09
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.082,
+                0.486,
+                0.192,
+                0.498
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.511,
+                0.481,
+                0.619,
+                0.493
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.084,
+                0.314,
+                0.331,
+                0.325
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.083,
+                0.34,
+                0.34,
+                0.353
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.512,
+                0.341,
+                0.756,
+                0.352
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.346,
+                0.058,
+                0.521,
+                0.066
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.512,
+                0.316,
+                0.689,
+                0.326
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.799,
+                0.051,
+                0.928,
+                0.076
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.918,
+                0.954,
+                0.928,
+                0.964
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.069,
+                0.044,
+                0.223,
+                0.056
+            ],
+            "angle": 0,
+            "content": "Tingting Ge (852) 2800-0143"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.07,
+                0.057,
+                0.21,
+                0.068
+            ],
+            "angle": 0,
+            "content": "tingting.ge@JPM.com"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.07,
+                0.068,
+                0.288,
+                0.079
+            ],
+            "angle": 0,
+            "content": "JPM Chase Bank, N.A., Hong Kong Branch"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.07,
+                0.081,
+                0.212,
+                0.093
+            ],
+            "angle": 0,
+            "content": "Feng Zhu (852) 2800 1745"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.07,
+                0.093,
+                0.202,
+                0.105
+            ],
+            "angle": 0,
+            "content": "feng.zhu@JPM.com"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.29,
+                0.044,
+                0.419,
+                0.056
+            ],
+            "angle": 0,
+            "content": "Jiayi Li (852) 2800-5229"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.29,
+                0.057,
+                0.414,
+                0.068
+            ],
+            "angle": 0,
+            "content": "jiayi.c.li@JPM.com"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.29,
+                0.081,
+                0.46,
+                0.093
+            ],
+            "angle": 0,
+            "content": "Tongfang Yuan (852) 2800-0085"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.29,
+                0.093,
+                0.45,
+                0.105
+            ],
+            "angle": 0,
+            "content": "tongfang.yuan@JPM.com"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.516,
+                0.044,
+                0.71,
+                0.056
+            ],
+            "angle": 0,
+            "content": "Asia Pacific Economic Research"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.517,
+                0.058,
+                0.712,
+                0.08
+            ],
+            "angle": 0,
+            "content": "China: Another strong beat in FX reserves"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.517,
+                0.081,
+                0.594,
+                0.092
+            ],
+            "angle": 0,
+            "content": "07 June 2026"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.798,
+                0.04,
+                0.928,
+                0.065
+            ],
+            "angle": 0,
+            "content": "JPM"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.068,
+                0.148,
+                0.919,
+                0.175
+            ],
+            "angle": 0,
+            "content": "Analysts' Compensation: The research analysts responsible for the preparation of this report receive compensation based upon various factors, including the quality and accuracy of research, client feedback, competitive factors, and overall firm revenues.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.07,
+                0.181,
+                0.2,
+                0.195
+            ],
+            "angle": 0,
+            "content": "Other Disclosures"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.068,
+                0.227,
+                0.897,
+                0.241
+            ],
+            "angle": 0,
+            "content": "JPM is a marketing name for investment banking businesses of JPM Chase & Co. and its subsidiaries and affiliates worldwide.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.068,
+                0.247,
+                0.921,
+                0.274
+            ],
+            "angle": 0,
+            "content": "UK MIFID FICC research unbundling exemption: UK clients should refer to UK MIFID Research Unbundling exemption for details of JPM's implementation of the FICC research exemption and guidance on relevant FICC research categorisation.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.068,
+                0.28,
+                0.918,
+                0.307
+            ],
+            "angle": 0,
+            "content": "Any long form nomenclature for references to China; Hong Kong; Taiwan; and Macau within this research material are Mainland China; Hong Kong SAR (China); Taiwan (China); and Macau SAR (China).",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.068,
+                0.313,
+                0.925,
+                0.365
+            ],
+            "angle": 0,
+            "content": "JPM may, from time to time, write on issuers or securities targeted by economic or financial sanctions imposed or administered by the governmental authorities of the U.S., EU, UK or other relevant jurisdictions (Sanctioned Securities). Nothing in this report is intended to be read or construed as encouraging, facilitating, promoting or otherwise approving investment or dealing in such Sanctioned Securities. Clients should be aware of their own legal and compliance obligations when making investment decisions.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.068,
+                0.371,
+                0.892,
+                0.399
+            ],
+            "angle": 0,
+            "content": "Any digital or crypto assets discussed in this research report are subject to a rapidly changing regulatory landscape. For relevant regulatory advisories on crypto assets, including bitcoin and ether, please see https://www.JPM.com/disclosures/cryptoasset-disclosure.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.068,
+                0.404,
+                0.898,
+                0.431
+            ],
+            "angle": 0,
+            "content": "The author(s) of this research report may not be licensed to carry on regulated activities in your jurisdiction and, if not licensed, do not hold themselves out as being able to do so.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.068,
+                0.436,
+                0.927,
+                0.513
+            ],
+            "angle": 0,
+            "content": "Exchange-Traded Funds (ETFs): JPM Securities LLC (“JPMS”) acts as authorized participant for substantially all U.S.-listed ETFs. To the extent that any ETFs are mentioned in this report, JPMS may earn commissions and transaction-based compensation in connection with the distribution of those ETF shares and may earn fees for performing other trade-related services, such as securities lending to short sellers of the ETF shares. JPMS may also perform services for the ETFs themselves, including acting as a broker or dealer to the ETFs. In addition, affiliates of JPMS may perform services for the ETFs, including trust, custodial, administration, lending, index calculation and/or maintenance and other services.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.068,
+                0.52,
+                0.926,
+                0.56
+            ],
+            "angle": 0,
+            "content": "Changes to Interbank Offered Rates (IBORs) and other benchmark rates: Certain interest rate benchmarks are, or may in the future become, subject to ongoing international, national and other regulatory guidance, reform and proposals for reform. For more information, please consult: https://www.JPM.com/global/disclosures/interbank_offered_rates",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.068,
+                0.565,
+                0.927,
+                0.605
+            ],
+            "angle": 0,
+            "content": "Private Bank Clients: Where you are receiving research as a client of the private banking businesses offered by JPM Chase & Co. and its subsidiaries (“JPM Private Bank”), research is provided to you by JPM Private Bank and not by any other division of JPM, including, but not limited to, the JPM Corporate and Investment Bank and its Global Research division.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.068,
+                0.611,
+                0.927,
+                0.727
+            ],
+            "angle": 0,
+            "content": "Legal entity responsible for the production and distribution of research: The legal entity identified below the name of the Reg AC Research Analyst who authored this material is the legal entity responsible for the production of this research. Where multiple Reg AC Research Analysts authored this material with different legal entities identified below their names, these legal entities are jointly responsible for the production of this research. Where more than one legal entity is listed under an analyst's name, the first legal entity is responsible for the production unless stated otherwise. Research Analysts from various JPM affiliates may have contributed to the production of this material but may not be licensed to carry out regulated activities in your jurisdiction (and do not hold themselves out as being able to do so). Unless otherwise stated below in the legal entity disclosures, this material has been distributed by the legal entity responsible for production, or where more than one legal entity is listed under the analyst's name, the first legal entity will be responsible for distribution. If you have any queries, please contact the relevant Research Analyst in your jurisdiction or the entity in your jurisdiction that has distributed this research material.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.068,
+                0.733,
+                0.506,
+                0.746
+            ],
+            "angle": 0,
+            "content": "Legal Entities Disclosures and Country-/Region-Specific Disclosures:"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.068,
+                0.746,
+                0.897,
+                0.772
+            ],
+            "angle": 0,
+            "content": "Argentina: JPM Chase Bank N.A Sucursal Buenos Aires is regulated by Banco Central de la República Argentina (“BCRA”- Central Bank of Argentina) and Comisión Nacional de Valores (“CNV”- Argentinian Securities Commission - ALYC y AN Integral N°51).",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.068,
+                0.777,
+                0.927,
+                0.906
+            ],
+            "angle": 0,
+            "content": "Australia: JPM Securities Australia Limited (“JPMSAL”) (ABN 61 003 245 234/AFS Licence No: 238066) is regulated by the Australian Securities and Investments Commission and is a Market Participant of ASX Limited, a Clearing and Settlement Participant of ASX Clear Pty Limited and a Clearing Participant of ASX Clear (Futures) Pty Limited. This material is issued and distributed in Australia by or on behalf of JPMSAL only to \"wholesale clients\" (as defined in section 761G of the Corporations Act 2001). A list of all financial products covered can be found by visiting https://www.jpmm.com/research/disclosures. JPM seeks to cover companies of relevance to the domestic and international investor base across all Global Industry Classification Standard (GICS) sectors, as well as across a range of market capitalisation sizes. If applicable, in the course of conducting public side due diligence on the subject company(ies), the Research Analyst team may at times perform such diligence through corporate engagements such as site visits, discussions with company representatives, management presentations, etc. Research issued by JPMSAL has been prepared in accordance with JPM Australia’s Research Independence Policy which can be found at the following link: JPM Australia - Research Independence Policy.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.069,
+                0.911,
+                0.905,
+                0.926
+            ],
+            "angle": 0,
+            "content": "Brazil: Banco JPM S.A. is regulated by the Comissao de Valores Mobiliarios (CVM) and by the Central Bank of Brazil. Ombudsman",
+            "merge_prev": false
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.07,
+                0.953,
+                0.081,
+                0.963
+            ],
+            "angle": 0,
+            "content": "4"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.519,
+                0.082,
+                0.594,
+                0.093
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.074,
+                0.045,
+                0.221,
+                0.056
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.056,
+                0.209,
+                0.069
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.082,
+                0.211,
+                0.093
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.093,
+                0.201,
+                0.105
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.292,
+                0.093,
+                0.449,
+                0.106
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.292,
+                0.045,
+                0.417,
+                0.056
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.29,
+                0.057,
+                0.413,
+                0.068
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.732,
+                0.506,
+                0.747
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.293,
+                0.082,
+                0.459,
+                0.093
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.519,
+                0.045,
+                0.707,
+                0.056
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.799,
+                0.039,
+                0.928,
+                0.063
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.181,
+                0.199,
+                0.195
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.954,
+                0.081,
+                0.963
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.073,
+                0.068,
+                0.287,
+                0.079
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.519,
+                0.06,
+                0.709,
+                0.07
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.519,
+                0.073,
+                0.57,
+                0.081
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.148,
+                0.918,
+                0.163
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.162,
+                0.724,
+                0.174
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.247,
+                0.921,
+                0.261
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.074,
+                0.262,
+                0.747,
+                0.272
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.28,
+                0.916,
+                0.294
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.294,
+                0.444,
+                0.305
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.52,
+                0.879,
+                0.533
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.534,
+                0.924,
+                0.545
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.547,
+                0.541,
+                0.559
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.567,
+                0.922,
+                0.579
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.58,
+                0.925,
+                0.592
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.592,
+                0.725,
+                0.603
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.227,
+                0.896,
+                0.24
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.37,
+                0.891,
+                0.385
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.384,
+                0.836,
+                0.397
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.404,
+                0.896,
+                0.418
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.418,
+                0.296,
+                0.429
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.073,
+                0.746,
+                0.894,
+                0.757
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.758,
+                0.846,
+                0.771
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.911,
+                0.905,
+                0.925
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.315,
+                0.922,
+                0.325
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.327,
+                0.919,
+                0.34
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.34,
+                0.922,
+                0.352
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.352,
+                0.656,
+                0.365
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.439,
+                0.925,
+                0.45
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.452,
+                0.916,
+                0.462
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.464,
+                0.911,
+                0.475
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.069,
+                0.475,
+                0.918,
+                0.488
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.069,
+                0.487,
+                0.918,
+                0.501
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.503,
+                0.124,
+                0.512
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.612,
+                0.922,
+                0.623
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.625,
+                0.922,
+                0.637
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.639,
+                0.913,
+                0.65
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.65,
+                0.901,
+                0.661
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.664,
+                0.913,
+                0.675
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.675,
+                0.9,
+                0.689
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.69,
+                0.902,
+                0.7
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.701,
+                0.924,
+                0.712
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.715,
+                0.782,
+                0.725
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.777,
+                0.869,
+                0.791
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.792,
+                0.911,
+                0.802
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.805,
+                0.909,
+                0.815
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.817,
+                0.925,
+                0.828
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.83,
+                0.908,
+                0.841
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.843,
+                0.91,
+                0.854
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.855,
+                0.915,
+                0.868
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.869,
+                0.925,
+                0.88
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.88,
+                0.9,
+                0.893
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.891,
+                0.566,
+                0.906
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.07,
+                0.044,
+                0.223,
+                0.056
+            ],
+            "angle": 0,
+            "content": "Tingting Ge (852) 2800-0143"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.07,
+                0.057,
+                0.21,
+                0.068
+            ],
+            "angle": 0,
+            "content": "tingting.ge@JPM.com"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.07,
+                0.068,
+                0.288,
+                0.08
+            ],
+            "angle": 0,
+            "content": "JPM Chase Bank, N.A., Hong Kong Branch"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.07,
+                0.081,
+                0.212,
+                0.093
+            ],
+            "angle": 0,
+            "content": "Feng Zhu (852) 2800 1745"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.07,
+                0.093,
+                0.202,
+                0.105
+            ],
+            "angle": 0,
+            "content": "feng.zhu@JPM.com"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.29,
+                0.044,
+                0.419,
+                0.056
+            ],
+            "angle": 0,
+            "content": "Jiayi Li (852) 2800-5229"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.29,
+                0.057,
+                0.414,
+                0.068
+            ],
+            "angle": 0,
+            "content": "jiayi.c.li@JPM.com"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.29,
+                0.081,
+                0.46,
+                0.093
+            ],
+            "angle": 0,
+            "content": "Tongfang Yuan (852) 2800-0085"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.29,
+                0.093,
+                0.45,
+                0.105
+            ],
+            "angle": 0,
+            "content": "tongfang.yuan@JPM.com"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.517,
+                0.044,
+                0.71,
+                0.056
+            ],
+            "angle": 0,
+            "content": "Asia Pacific Economic Research"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.517,
+                0.07,
+                0.594,
+                0.081
+            ],
+            "angle": 0,
+            "content": "07 June 2026"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.798,
+                0.04,
+                0.928,
+                0.065
+            ],
+            "angle": 0,
+            "content": "JPM"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.068,
+                0.148,
+                0.714,
+                0.163
+            ],
+            "angle": 0,
+            "content": "JPM: 0800-7700847 / 0800-7700810 (For Hearing Impaired) / ouvidoria.jp.morgan@jpmchase.com.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.068,
+                0.168,
+                0.921,
+                0.207
+            ],
+            "angle": 0,
+            "content": "Canada: JPM Securities Canada Inc. is a registered investment dealer, regulated by the Canadian Investment Regulatory Organization and the Ontario Securities Commission and is the participating member on Canadian exchanges. This material is distributed in Canada by or on behalf of JPM Securities Canada Inc.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.068,
+                0.213,
+                0.588,
+                0.228
+            ],
+            "angle": 0,
+            "content": "Chile: Inversiones JPM Limitada is an unregulated entity incorporated in Chile.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.068,
+                0.234,
+                0.875,
+                0.26
+            ],
+            "angle": 0,
+            "content": "China: JPM Securities (China) Company Limited has been approved by CSRC to conduct the securities investment consultancy business.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.068,
+                0.267,
+                0.916,
+                0.319
+            ],
+            "angle": 0,
+            "content": "Colombia: Banco JPM Colombia S.A. is supervised by the Superintendencia Financiera de Colombia (SFC). Any reference in this material to products or services offered abroad by entities other than the Bank in Colombia is included exclusively for descriptive purposes. Such references do not constitute, and should not be construed as, promotional activity or the provision of financial products or services within Colombian territory, as defined under applicable Colombian regulation.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.068,
+                0.325,
+                0.91,
+                0.377
+            ],
+            "angle": 0,
+            "content": "Dubai International Financial Centre (DIFC): JPM Chase Bank, N.A., Dubai Branch is regulated by the Dubai Financial Services Authority (DFSA) and its registered address is Dubai International Financial Centre - The Gate, West Wing, Level 3 and 9 PO Box 506551, Dubai, UAE. This material has been distributed by JPM Chase Bank, N.A., Dubai Branch to persons regarded as professional clients or market counterparties as defined under the DFSA rules.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.068,
+                0.383,
+                0.924,
+                0.485
+            ],
+            "angle": 0,
+            "content": "European Economic Area (EEA): Unless specified to the contrary, research is distributed in the EEA by JPM SE (“JPM SE”), which is authorised as a credit institution by the Federal Financial Supervisory Authority (Bundesanstalt für Finanzdienstleistungsaufsicht, BaFin) and jointly supervised by the BaFin, the German Central Bank (Deutsche Bundesbank) and the European Central Bank (ECB). JPM SE is a company headquartered in Frankfurt with registered address at TaunusTurm, Taunustor 1, Frankfurt am Main, 60310, Germany. The material has been distributed in the EEA to persons regarded as professional investors (or equivalent) pursuant to Art. 4 para. 1 no. 10 and Annex II of MiFID II and its respective implementation in their home jurisdictions (“EEA professional investors”). This material must not be acted on or relied on by persons who are not EEA professional investors. Any investment or investment activity to which this material relates is only available to EEA relevant persons and will be engaged in only with EEA relevant persons.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.068,
+                0.492,
+                0.928,
+                0.569
+            ],
+            "angle": 0,
+            "content": "Hong Kong: JPM Securities (Asia Pacific) Limited (CE number AAJ321) is regulated by the Hong Kong Monetary Authority and the Securities and Futures Commission in Hong Kong, and JPM Broking (Hong Kong) Limited (CE number AAB027) is regulated by the Securities and Futures Commission in Hong Kong. JPM Chase Bank, N.A., Hong Kong Branch (CE Number AAL996) is regulated by the Hong Kong Monetary Authority and the Securities and Futures Commission, is organized under the laws of the United States with limited liability. Where the distribution of this material is a regulated activity in Hong Kong, the material is distributed in Hong Kong by or through JPM Securities (Asia Pacific) Limited and/or JPM Broking (Hong Kong) Limited.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.068,
+                0.575,
+                0.927,
+                0.741
+            ],
+            "angle": 0,
+            "content": "India: JPM India Private Limited (Corporate Identity Number - U67120MH1992FTC068724), having its registered office at JPM Tower, Off. C.S.T. Road, Kalina, Santacruz - East, Mumbai – 400098, is registered with the Securities and Exchange Board of India (SEBI) as a 'Research Analyst' having registration number INH000001873. JPM India Private Limited is also registered with SEBI as a member of the National Stock Exchange of India Limited and the Bombay Stock Exchange Limited (SEBI Registration Number – INZ000239730) and as a Merchant Banker (SEBI Registration Number - MB/INM000002970). Telephone: 91-22-6157 3000, Facsimile: 91-22-6157 3990 and Website: http://www.jpmipl.com. JPM Chase Bank, N.A. - Mumbai Branch is licensed by the Reserve Bank of India (RBI) (Licence No. 53/Licence No. BY.4/94; SEBI - IN/CUS/014/ CDSL : IN-DP-CDSL-444-2008/ IN-DP-NSDL-285-2008/ INBI00000984/ INE231311239) as a Scheduled Commercial Bank in India, which is its primary license allowing it to carry on Banking business in India and other activities, which a Bank branch in India are permitted to undertake. For non-local research material, this material is not distributed in India by JPM India Private Limited. Compliance Officer: Ashutosh Sharma; ashutosh.j.sharma@jpmchase.com; +912261575002. Grievance Officer: Ramprasadh K, jpmipl.research.feedback@JPM.com; +912261573000. Registration granted by SEBI and certification from NISM in no way guarantee performance of the intermediary or provide any assurance of returns to investors. Please visit Terms and Conditions and Most Important Terms and Conditions (MITC). The annual Compliance audit report is available at http://www.jpmipl.com/#research.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.068,
+                0.747,
+                0.91,
+                0.773
+            ],
+            "angle": 0,
+            "content": "Indonesia: PT JPM Sekuritas Indonesia is a member of the Indonesia Stock Exchange and is registered and supervised by the Otoritas Jasa Keuangan (OJK).",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.068,
+                0.78,
+                0.925,
+                0.831
+            ],
+            "angle": 0,
+            "content": "Korea: JPM Securities (Far East) Limited, Seoul Branch, is a member of the Korea Exchange (KRX). JPM Chase Bank, N.A., Seoul Branch, is licensed as a branch office of foreign bank (JPM Chase Bank, N.A.) in Korea. Both entities are regulated by the Financial Services Commission (FSC) and the Financial Supervisory Service (FSS). For non-macro research material, the material is distributed in Korea by or through JPM Securities (Far East) Limited, Seoul Branch.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.068,
+                0.838,
+                0.922,
+                0.864
+            ],
+            "angle": 0,
+            "content": "Japan: JPM Securities Japan Co., Ltd. and JPM Chase Bank, N.A., Tokyo Branch are regulated by the Financial Services Agency in Japan.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.068,
+                0.87,
+                0.915,
+                0.898
+            ],
+            "angle": 0,
+            "content": "Malaysia: This material is issued and distributed in Malaysia by JPM Securities (Malaysia) Sdn Bhd (18146-X), which is a Participating Organization of Bursa Malaysia Berhad and holds a Capital Markets Services License issued by the Securities Commission in Malaysia.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.068,
+                0.903,
+                0.918,
+                0.93
+            ],
+            "angle": 0,
+            "content": "Mexico: JPM Casa de Bolsa, S.A. de C.V., JPM Grupo Financiero is member of the Mexican Stock Exchange (“Bolsa Mexicana de Valores”) and the Institutional Stock Exchange (“Bolsa Institucional de Valores”), and it is authorized to act as a broker dealer by the",
+            "merge_prev": false
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.918,
+                0.954,
+                0.928,
+                0.963
+            ],
+            "angle": 0,
+            "content": "5"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.519,
+                0.07,
+                0.593,
+                0.081
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.073,
+                0.215,
+                0.586,
+                0.227
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.074,
+                0.045,
+                0.221,
+                0.056
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.056,
+                0.209,
+                0.069
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.082,
+                0.211,
+                0.093
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.093,
+                0.201,
+                0.105
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.292,
+                0.093,
+                0.449,
+                0.106
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.292,
+                0.045,
+                0.417,
+                0.056
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.29,
+                0.057,
+                0.413,
+                0.068
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.293,
+                0.082,
+                0.459,
+                0.093
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.519,
+                0.045,
+                0.708,
+                0.056
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.799,
+                0.039,
+                0.928,
+                0.063
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.918,
+                0.954,
+                0.928,
+                0.965
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.073,
+                0.068,
+                0.287,
+                0.079
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.17,
+                0.909,
+                0.181
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.182,
+                0.919,
+                0.194
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.196,
+                0.331,
+                0.206
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.069,
+                0.837,
+                0.922,
+                0.852
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.851,
+                0.113,
+                0.864
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.87,
+                0.914,
+                0.885
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.883,
+                0.875,
+                0.898
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.904,
+                0.918,
+                0.916
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.917,
+                0.874,
+                0.929
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.746,
+                0.908,
+                0.761
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.76,
+                0.206,
+                0.773
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.268,
+                0.888,
+                0.28
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.28,
+                0.895,
+                0.294
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.295,
+                0.915,
+                0.305
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.305,
+                0.495,
+                0.318
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.78,
+                0.895,
+                0.792
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.795,
+                0.922,
+                0.805
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.807,
+                0.919,
+                0.817
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.82,
+                0.491,
+                0.83
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.494,
+                0.906,
+                0.505
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.505,
+                0.907,
+                0.518
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.517,
+                0.926,
+                0.53
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.53,
+                0.888,
+                0.543
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.543,
+                0.919,
+                0.556
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.069,
+                0.555,
+                0.619,
+                0.568
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.385,
+                0.922,
+                0.396
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.398,
+                0.906,
+                0.408
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.41,
+                0.869,
+                0.421
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.422,
+                0.905,
+                0.433
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.436,
+                0.907,
+                0.447
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.449,
+                0.902,
+                0.46
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.46,
+                0.876,
+                0.471
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.474,
+                0.604,
+                0.485
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.147,
+                0.711,
+                0.163
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.233,
+                0.874,
+                0.249
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.247,
+                0.129,
+                0.261
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.327,
+                0.889,
+                0.337
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.34,
+                0.895,
+                0.35
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.35,
+                0.908,
+                0.364
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.364,
+                0.402,
+                0.376
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.069,
+                0.574,
+                0.925,
+                0.59
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.589,
+                0.922,
+                0.601
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.601,
+                0.916,
+                0.613
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.613,
+                0.925,
+                0.626
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.626,
+                0.915,
+                0.639
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.639,
+                0.881,
+                0.65
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.074,
+                0.652,
+                0.9,
+                0.662
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.664,
+                0.925,
+                0.677
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.676,
+                0.906,
+                0.689
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.69,
+                0.916,
+                0.702
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.702,
+                0.922,
+                0.715
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.715,
+                0.918,
+                0.728
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.728,
+                0.726,
+                0.74
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.069,
+                0.044,
+                0.223,
+                0.056
+            ],
+            "angle": 0,
+            "content": "Tingting Ge (852) 2800-0143"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.07,
+                0.057,
+                0.21,
+                0.068
+            ],
+            "angle": 0,
+            "content": "tingting.ge@JPM.com"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.07,
+                0.068,
+                0.288,
+                0.08
+            ],
+            "angle": 0,
+            "content": "JPM Chase Bank, N.A., Hong Kong Branch"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.07,
+                0.081,
+                0.212,
+                0.093
+            ],
+            "angle": 0,
+            "content": "Feng Zhu (852) 2800 1745"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.07,
+                0.093,
+                0.202,
+                0.105
+            ],
+            "angle": 0,
+            "content": "feng.zhu@JPM.com"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.29,
+                0.044,
+                0.419,
+                0.056
+            ],
+            "angle": 0,
+            "content": "Jiayi Li (852) 2800-5229"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.29,
+                0.057,
+                0.414,
+                0.068
+            ],
+            "angle": 0,
+            "content": "jiayi.c.li@JPM.com"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.29,
+                0.081,
+                0.46,
+                0.093
+            ],
+            "angle": 0,
+            "content": "Tongfang Yuan (852) 2800-0085"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.29,
+                0.093,
+                0.45,
+                0.105
+            ],
+            "angle": 0,
+            "content": "tongfang.yuan@JPM.com"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.516,
+                0.044,
+                0.71,
+                0.056
+            ],
+            "angle": 0,
+            "content": "Asia Pacific Economic Research"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.517,
+                0.058,
+                0.712,
+                0.08
+            ],
+            "angle": 0,
+            "content": "China: Another strong beat in FX reserves"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.517,
+                0.081,
+                0.594,
+                0.092
+            ],
+            "angle": 0,
+            "content": "07 June 2026"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.798,
+                0.04,
+                0.928,
+                0.065
+            ],
+            "angle": 0,
+            "content": "JPM"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.068,
+                0.148,
+                0.682,
+                0.162
+            ],
+            "angle": 0,
+            "content": "National Banking and Securities Exchange Commission (\"Comisión Nacional Bancaria y de Valores\").",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.068,
+                0.168,
+                0.893,
+                0.207
+            ],
+            "angle": 0,
+            "content": "New Zealand: This material is issued and distributed by JPMSAL in New Zealand only to \"wholesale clients\" (as defined in the Financial Markets Conduct Act 2013). JPMSAL is registered as a Financial Service Provider under the Financial Service providers (Registration and Dispute Resolution) Act of 2008.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.068,
+                0.213,
+                0.923,
+                0.24
+            ],
+            "angle": 0,
+            "content": "Philippines: JPM Securities Philippines Inc. is a Trading Participant of the Philippine Stock Exchange and a member of the Securities Clearing Corporation of the Philippines and the Securities Investor Protection Fund. It is regulated by the Securities and Exchange Commission.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.068,
+                0.246,
+                0.925,
+                0.349
+            ],
+            "angle": 0,
+            "content": "Singapore: This material is issued and distributed in Singapore by or through JPM Securities Singapore Private Limited (JPMSS) [MDDI (P) 057/08/2025 and Co. Reg. No.: 199405335R], which is a member of the Singapore Exchange Securities Trading Limited, and/or JPM Chase Bank, N.A., Singapore branch (JPMCB Singapore), both of which are regulated by the Monetary Authority of Singapore. This material is issued and distributed in Singapore only to accredited investors, expert investors and institutional investors, as defined in Section 4A of the Securities and Futures Act, Cap. 289 (SFA). This material is not intended to be issued or distributed to any retail investors or any other investors that do not fall into the classes of “accredited investors,” “expert investors” or “institutional investors,” as defined under Section 4A of the SFA. Recipients of this material in Singapore are to contact JPMSS or JPMCB Singapore in respect of any matters arising from, or in connection with, the material.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.068,
+                0.355,
+                0.915,
+                0.382
+            ],
+            "angle": 0,
+            "content": "South Africa: JPM Equities South Africa Proprietary Limited and JPM Chase Bank, N.A., Johannesburg Branch are members of the Johannesburg Securities Exchange and are regulated by the Financial Services Conduct Authority (FSCA).",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.068,
+                0.388,
+                0.925,
+                0.515
+            ],
+            "angle": 0,
+            "content": "Taiwan: JPM Securities (Taiwan) Limited is a participant of the Taiwan Stock Exchange (company-type) and regulated by the Taiwan Securities and Futures Bureau. Material relating to equity securities is issued and distributed in Taiwan by JPM Securities (Taiwan) Limited, subject to the license scope and the applicable laws and the regulations in Taiwan. To the extent that JPM Securities (Taiwan) Limited produces research materials on securities not listed on the Taiwan Stock Exchange or Taipei Exchange (“Non-Taiwan Listed Securities”), these materials shall not constitute securities recommendations for the purpose of applicable Taiwan regulations, and, for the avoidance of doubt, JPM Securities (Taiwan) Limited does not act as broker for Non-Taiwan Listed Securities. According to Paragraph 2, Article 7-1 of Operational Regulations Governing Securities Firms Recommending Trades in Securities to Customers (as amended or supplemented) and/or other applicable laws or regulations, please note that the recipient of this material is not permitted to engage in any activities in connection with the material that may give rise to conflicts of interests, unless otherwise disclosed in the “Important Disclosures” in this material.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.068,
+                0.522,
+                0.928,
+                0.561
+            ],
+            "angle": 0,
+            "content": "Thailand: This material is issued and distributed in Thailand by JPM Securities (Thailand) Ltd., which is a member of the Stock Exchange of Thailand and is regulated by the Ministry of Finance and the Securities and Exchange Commission. The registered address is 548 One City Center Building, 50th Floor, Ploenchit Road, Lymphini, Pathum Wan, Bangkok 10330.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.068,
+                0.567,
+                0.93,
+                0.708
+            ],
+            "angle": 0,
+            "content": "UK: Research is produced in the UK by JPM Securities plc (“JPMS plc”) which is a member of the London Stock Exchange and is authorised by the Prudential Regulation Authority and regulated by the Financial Conduct Authority and the Prudential Regulation Authority or JPM Markets Limited (“JPMML Ltd”) which is authorised and regulated by the Financial Conduct Authority. Unless specified to the contrary, this material is distributed in the UK by JPMS plc and is directed in the UK only to: (a) persons having professional experience in matters relating to investments falling within article 19(5) of the Financial Services and Markets Act 2000 (Financial Promotion) (Order) 2005 (“the FPO”); (b) persons outlined in article 49 of the FPO (high net worth companies, unincorporated associations or partnerships, the trustees of high value trusts, etc.); or (c) any persons to whom this communication may otherwise lawfully be made; all such persons being referred to as \"UK relevant persons\". This material must not be acted on or relied on by persons who are not UK relevant persons. Any investment or investment activity to which this material relates is only available to UK relevant persons and will be engaged in only with UK relevant persons. A description of JPM EMEA’s policy for prevention and avoidance of conflicts of interest related to the production of Research can be found at the following link: JPM EMEA - Research Independence Policy.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.068,
+                0.713,
+                0.915,
+                0.74
+            ],
+            "angle": 0,
+            "content": "U.S.: JPM Securities LLC (“JPMS”) is a member of the NYSE, FINRA, SIPC, and the NFA. JPM Chase Bank, N.A. is a member of the FDIC. Material published by non-U.S. affiliates is distributed in the U.S. by JPMS who accepts responsibility for its content.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.068,
+                0.747,
+                0.928,
+                0.938
+            ],
+            "angle": 0,
+            "content": "General: Additional information is available upon request. The information in this material has been obtained from sources believed to be reliable. While all reasonable care has been taken to ensure that the facts stated in this material are accurate and that the forecasts, opinions and expectations contained herein are fair and reasonable, JPM Chase & Co. or its affiliates and/or subsidiaries (collectively JPM) make no representations or warranties whatsoever to the completeness or accuracy of the material provided, except with respect to any disclosures relative to JPM and the Research Analyst's involvement with the issuer that is the subject of the material. Accordingly, no reliance should be placed on the accuracy, fairness or completeness of the information contained in this material. There may be certain discrepancies with data and/or limited content in this material as a result of calculations, adjustments, translations to different languages, and/or local regulatory restrictions, as applicable. These discrepancies should not impact the overall investment analysis, views and/or recommendations of the subject company(ies) that may be discussed in the material. Artificial intelligence tools may have been used in the preparation of this material, including assisting in data analysis, pattern recognition, and content drafting for research material. JPM accepts no liability whatsoever for any loss arising from any use of this material or its contents, and neither JPM nor any of its respective directors, officers or employees, shall be in any way responsible for the contents hereof, apart from the liabilities and responsibilities that may be imposed on them by the relevant regulatory authority in the jurisdiction in question, or the regulatory regime thereunder. Opinions, forecasts or projections contained in this material represent JPM's current opinions or judgment as of the date of the material only and are therefore subject to change without notice. Periodic updates may be provided on companies/industries based on company-specific developments or announcements, market",
+            "merge_prev": false
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.071,
+                0.953,
+                0.081,
+                0.963
+            ],
+            "angle": 0,
+            "content": "6"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.519,
+                0.082,
+                0.594,
+                0.093
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.074,
+                0.045,
+                0.221,
+                0.056
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.056,
+                0.209,
+                0.069
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.082,
+                0.211,
+                0.093
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.093,
+                0.201,
+                0.105
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.292,
+                0.093,
+                0.449,
+                0.106
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.292,
+                0.045,
+                0.417,
+                0.056
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.29,
+                0.057,
+                0.413,
+                0.068
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.293,
+                0.082,
+                0.459,
+                0.093
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.519,
+                0.045,
+                0.707,
+                0.056
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.799,
+                0.039,
+                0.928,
+                0.063
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.954,
+                0.081,
+                0.964
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.073,
+                0.068,
+                0.287,
+                0.079
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.519,
+                0.06,
+                0.709,
+                0.07
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.519,
+                0.073,
+                0.57,
+                0.081
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.074,
+                0.215,
+                0.906,
+                0.227
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.074,
+                0.228,
+                0.922,
+                0.24
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.356,
+                0.911,
+                0.368
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.369,
+                0.724,
+                0.38
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.521,
+                0.926,
+                0.537
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.535,
+                0.907,
+                0.548
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.549,
+                0.586,
+                0.56
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.714,
+                0.914,
+                0.728
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.727,
+                0.846,
+                0.741
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.169,
+                0.886,
+                0.181
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.182,
+                0.891,
+                0.194
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.073,
+                0.196,
+                0.268,
+                0.206
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.249,
+                0.881,
+                0.26
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.26,
+                0.901,
+                0.274
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.272,
+                0.922,
+                0.286
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.287,
+                0.919,
+                0.298
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.299,
+                0.903,
+                0.31
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.312,
+                0.924,
+                0.323
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.324,
+                0.878,
+                0.335
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.337,
+                0.248,
+                0.348
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.074,
+                0.391,
+                0.907,
+                0.402
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.403,
+                0.887,
+                0.414
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.415,
+                0.868,
+                0.426
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.429,
+                0.919,
+                0.44
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.441,
+                0.902,
+                0.452
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.454,
+                0.886,
+                0.465
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.466,
+                0.925,
+                0.477
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.479,
+                0.887,
+                0.49
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.069,
+                0.49,
+                0.915,
+                0.503
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.503,
+                0.243,
+                0.514
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.149,
+                0.68,
+                0.162
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.57,
+                0.889,
+                0.58
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.582,
+                0.921,
+                0.593
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.595,
+                0.898,
+                0.606
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.607,
+                0.895,
+                0.62
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.62,
+                0.913,
+                0.631
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.632,
+                0.928,
+                0.644
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.644,
+                0.909,
+                0.658
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.655,
+                0.871,
+                0.67
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.67,
+                0.922,
+                0.682
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.682,
+                0.908,
+                0.695
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.694,
+                0.551,
+                0.708
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.75,
+                0.889,
+                0.76
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.76,
+                0.916,
+                0.773
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.069,
+                0.772,
+                0.928,
+                0.786
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.786,
+                0.901,
+                0.799
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.8,
+                0.925,
+                0.81
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.813,
+                0.913,
+                0.823
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.824,
+                0.874,
+                0.836
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.838,
+                0.916,
+                0.848
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.85,
+                0.926,
+                0.862
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.863,
+                0.924,
+                0.874
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.875,
+                0.922,
+                0.887
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.889,
+                0.866,
+                0.899
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.9,
+                0.89,
+                0.913
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.914,
+                0.895,
+                0.924
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.925,
+                0.872,
+                0.938
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.069,
+                0.044,
+                0.223,
+                0.056
+            ],
+            "angle": 0,
+            "content": "Tingting Ge (852) 2800-0143"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.07,
+                0.057,
+                0.21,
+                0.068
+            ],
+            "angle": 0,
+            "content": "tingting.ge@JPM.com"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.07,
+                0.068,
+                0.288,
+                0.08
+            ],
+            "angle": 0,
+            "content": "JPM Chase Bank, N.A., Hong Kong Branch"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.07,
+                0.081,
+                0.212,
+                0.093
+            ],
+            "angle": 0,
+            "content": "Feng Zhu (852) 2800 1745"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.07,
+                0.093,
+                0.202,
+                0.105
+            ],
+            "angle": 0,
+            "content": "feng.zhu@JPM.com"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.29,
+                0.044,
+                0.419,
+                0.056
+            ],
+            "angle": 0,
+            "content": "Jiayi Li (852) 2800-5229"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.29,
+                0.057,
+                0.414,
+                0.068
+            ],
+            "angle": 0,
+            "content": "jiayi.c.li@JPM.com"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.29,
+                0.081,
+                0.46,
+                0.093
+            ],
+            "angle": 0,
+            "content": "Tongfang Yuan (852) 2800-0085"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.29,
+                0.093,
+                0.45,
+                0.105
+            ],
+            "angle": 0,
+            "content": "tongfang.yuan@JPM.com"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.516,
+                0.044,
+                0.71,
+                0.056
+            ],
+            "angle": 0,
+            "content": "Asia Pacific Economic Research"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.517,
+                0.07,
+                0.594,
+                0.081
+            ],
+            "angle": 0,
+            "content": "07 June 2026"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.798,
+                0.04,
+                0.928,
+                0.065
+            ],
+            "angle": 0,
+            "content": "JPM"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.068,
+                0.148,
+                0.927,
+                0.39
+            ],
+            "angle": 0,
+            "content": "conditions or any other publicly available information. There can be no assurance that future results or events will be consistent with any such opinions, forecasts or projections, which represent only one possible outcome. Furthermore, such opinions, forecasts or projections are subject to certain risks, uncertainties and assumptions that have not been verified, and future actual results or events could differ materially. The value of, or income from, any investments referred to in this material may fluctuate and/or be affected by changes in exchange rates. All pricing is indicative as of the close of market for the securities discussed, unless otherwise stated. Past performance is not indicative of future results. Accordingly, investors may receive back less than originally invested. This material is not intended as an offer or solicitation for the purchase or sale of any financial instrument. The opinions and recommendations herein do not take into account individual client circumstances, objectives, or needs and are not intended as recommendations of particular securities, financial instruments or strategies to particular clients. This material may include views on structured securities, options, futures and other derivatives. These are complex instruments, may involve a high degree of risk and may be appropriate investments only for sophisticated investors who are capable of understanding and assuming the risks involved. The recipients of this material must make their own independent decisions regarding any securities or financial instruments mentioned herein and should seek advice from such independent financial, legal, tax or other adviser as they deem necessary. JPM may trade as a principal on the basis of the Research Analysts' views and research, and it may also engage in transactions for its own account or for its clients' accounts in a manner inconsistent with the views taken in this material, and JPM is under no obligation to ensure that such other communication is brought to the attention of any recipient of this material. Others within JPM, including Strategists, Sales staff and other Research Analysts, may take views that are inconsistent with those taken in this material. Employees of JPM not involved in the preparation of this material may have investments in the securities (or derivatives of such securities) mentioned in this material and may trade them in ways different from those discussed in this material. This material is not an advertisement for or marketing of any issuer, its products or services, or its securities in any jurisdiction.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.068,
+                0.395,
+                0.924,
+                0.5
+            ],
+            "angle": 0,
+            "content": "Confidentiality and Security Notice: This transmission may contain information that is privileged, confidential, legally privileged, and/or exempt from disclosure under applicable law. If you are not the intended recipient, you are hereby notified that any disclosure, copying, distribution, or use of the information contained herein (including any reliance thereon) is STRICTLY PROHIBITED. Although this transmission and any attachments are believed to be free of any virus or other defect that might affect any computer system into which it is received and opened, it is the responsibility of the recipient to ensure that it is virus free and no responsibility is accepted by JPM Chase & Co., its subsidiaries and affiliates, as applicable, for any loss or damage arising in any way from its use. If you received this transmission in error, please immediately contact the sender and destroy the material in its entirety, whether in electronic or hard copy format. This message is subject to electronic monitoring: https://www.JPM.com/disclosures/email",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.068,
+                0.504,
+                0.925,
+                0.569
+            ],
+            "angle": 0,
+            "content": "MSCI: Certain information herein (“Information”) is reproduced by permission of MSCI Inc., its affiliates and information providers (“MSCI”) ©2026. No reproduction or dissemination of the Information is permitted without an appropriate license. MSCI MAKES NO EXPRESS OR IMPLIED WARRANTIES (INCLUDING MERCHANTABILITY OR FITNESS) AS TO THE INFORMATION AND DISCLAIMS ALL LIABILITY TO THE EXTENT PERMITTED BY LAW. No Information constitutes investment advice, except for any applicable Information from MSCI ESG Research. Subject also to msci.com/disclaimer",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.068,
+                0.575,
+                0.918,
+                0.653
+            ],
+            "angle": 0,
+            "content": "Sustainalytics: Certain information, data, analyses and opinions contained herein are reproduced by permission of Sustainalytics and: (1) includes the proprietary information of Sustainalytics; (2) may not be copied or redistributed except as specifically authorized; (3) do not constitute investment advice nor an endorsement of any product or project; (4) are provided solely for informational purposes; and (5) are not warranted to be complete, accurate or timely. Sustainalytics is not responsible for any trading decisions, damages or other losses related to it or its use. The use of the data is subject to conditions available at https://www.sustainalytics.com/legal-disclaimers. ©2026 Sustainalytics. All Rights Reserved.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.07,
+                0.658,
+                0.352,
+                0.672
+            ],
+            "angle": 0,
+            "content": "\"Other Disclosures\" last revised May 16, 2026.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.068,
+                0.683,
+                0.922,
+                0.737
+            ],
+            "angle": 0,
+            "content": "Copyright 2026 JPM Chase & Co. All rights reserved. This material or any portion hereof may not be reprinted, sold or redistributed without the written consent of JPM. It is strictly prohibited to use or share without prior written consent from JPM any research material received from JPM or an authorized third-party (“JPM Data”) in any third-party artificial intelligence (“AI”) systems or models when such JPM Data is accessible by a third-party.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.07,
+                0.742,
+                0.312,
+                0.756
+            ],
+            "angle": 0,
+            "content": "Completed 07 Jun 2026 04:04 PM HKT",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.672,
+                0.742,
+                0.928,
+                0.756
+            ],
+            "angle": 0,
+            "content": "Disseminated 07 Jun 2026 04:04 PM HKT",
+            "merge_prev": false
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.918,
+                0.953,
+                0.928,
+                0.963
+            ],
+            "angle": 0,
+            "content": "7"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.074,
+                0.744,
+                0.309,
+                0.755
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.519,
+                0.07,
+                0.593,
+                0.081
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.674,
+                0.743,
+                0.926,
+                0.754
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.074,
+                0.045,
+                0.221,
+                0.056
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.056,
+                0.209,
+                0.069
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.082,
+                0.211,
+                0.093
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.093,
+                0.201,
+                0.105
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.292,
+                0.093,
+                0.449,
+                0.106
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.292,
+                0.045,
+                0.417,
+                0.056
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.29,
+                0.057,
+                0.413,
+                0.068
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.293,
+                0.082,
+                0.459,
+                0.093
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.519,
+                0.045,
+                0.707,
+                0.056
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.799,
+                0.039,
+                0.928,
+                0.063
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.918,
+                0.954,
+                0.928,
+                0.964
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.073,
+                0.068,
+                0.287,
+                0.079
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.506,
+                0.922,
+                0.516
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.518,
+                0.9,
+                0.53
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.531,
+                0.888,
+                0.541
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.544,
+                0.912,
+                0.556
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.555,
+                0.454,
+                0.569
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.686,
+                0.861,
+                0.696
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.697,
+                0.919,
+                0.71
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.71,
+                0.875,
+                0.723
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.723,
+                0.734,
+                0.735
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.577,
+                0.878,
+                0.588
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.069,
+                0.588,
+                0.881,
+                0.601
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.602,
+                0.908,
+                0.613
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.613,
+                0.915,
+                0.626
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.627,
+                0.894,
+                0.638
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.64,
+                0.174,
+                0.651
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.397,
+                0.892,
+                0.408
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.069,
+                0.406,
+                0.874,
+                0.425
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.423,
+                0.853,
+                0.434
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.069,
+                0.435,
+                0.891,
+                0.447
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.069,
+                0.447,
+                0.922,
+                0.46
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.459,
+                0.894,
+                0.473
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.474,
+                0.912,
+                0.485
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.486,
+                0.537,
+                0.497
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.069,
+                0.149,
+                0.911,
+                0.161
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.069,
+                0.163,
+                0.914,
+                0.175
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.176,
+                0.911,
+                0.186
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.188,
+                0.898,
+                0.199
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.201,
+                0.89,
+                0.212
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.213,
+                0.922,
+                0.226
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.226,
+                0.919,
+                0.237
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.24,
+                0.915,
+                0.25
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.251,
+                0.921,
+                0.262
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.069,
+                0.263,
+                0.926,
+                0.278
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.276,
+                0.905,
+                0.29
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.29,
+                0.916,
+                0.301
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.301,
+                0.925,
+                0.315
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.315,
+                0.899,
+                0.326
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.328,
+                0.874,
+                0.339
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.34,
+                0.925,
+                0.352
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.353,
+                0.878,
+                0.364
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.365,
+                0.926,
+                0.377
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.378,
+                0.242,
+                0.389
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.658,
+                0.351,
+                0.671
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ]
+]

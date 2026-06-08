@@ -1,0 +1,51 @@
+{
+  "input_dir": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs",
+  "total_pdf_count_before_shard": 24,
+  "pdf_count_before_skip": 5,
+  "pdf_count": 5,
+  "generated_report_count": 1,
+  "batch_size": 5,
+  "shard_index": 0,
+  "shard_count": 40,
+  "max_reports_per_shard": 5,
+  "max_total_reports": 0,
+  "skip_existing": true,
+  "skipped_existing_count": 0,
+  "skipped_existing": [],
+  "failures": 0,
+  "batches": [
+    {
+      "batch_index": 1,
+      "pdf_count": 5,
+      "files": [
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/01-GS-China FX Rates Monitor： The Policy Anchor Behind a Stronger CNY and Lower Rates-260607.pdf",
+          "batch_file": "/tmp/pdf_batch_001_mzeo1pwl/pdfs/0001-01-GS-China FX Rates Monitor- The Policy Anchor Behind a Stronger CNY and Lower Rates-260607.pdf",
+          "stable_index": "1"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/02-MS-China's 3D Journey：The Hefei Paradox： Why Smart Industrial Policy Can’t Fix Macro Imbalances-260607.pdf",
+          "batch_file": "/tmp/pdf_batch_001_mzeo1pwl/pdfs/0002-02-MS-China-s 3D Journey-The Hefei Paradox- Why Smart Industrial Policy Can-t Fix Macro Imbalances-260607.pdf",
+          "stable_index": "2"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/03-NOM-Economic Insights：NOM Investment Forum Asia 2026： A recap of our macro views and what investors think-260608.pdf",
+          "batch_file": "/tmp/pdf_batch_001_mzeo1pwl/pdfs/0003-03-NOM-Economic Insights-NOM Investment Forum Asia 2026- A recap of our macro views and what investors think-260608.pdf",
+          "stable_index": "3"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/04-JPM-Equity Strategy：What would it take for Europe to trade relatively better？-260608.pdf",
+          "batch_file": "/tmp/pdf_batch_001_mzeo1pwl/pdfs/0004-04-JPM-Equity Strategy-What would it take for Europe to trade relatively better--260608.pdf",
+          "stable_index": "4"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/05-JPM-China： Another strong beat in FX reserves-260607.pdf",
+          "batch_file": "/tmp/pdf_batch_001_mzeo1pwl/pdfs/0005-05-JPM-China- Another strong beat in FX reserves-260607.pdf",
+          "stable_index": "5"
+        }
+      ],
+      "returncode": 0,
+      "status": "ok"
+    }
+  ]
+}
