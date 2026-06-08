@@ -1,0 +1,25 @@
+[
+  {
+    "item": "0005-20-Morgan-Stanley-IT-Hardware-More-Takeaways-From-Taiwan---COMPUTEX-Edition",
+    "source_pdf": "/tmp/pdf_batch_001_sqo752al/pdfs/0005-20-MS-IT Hardware-More Takeaways From Taiwan - COMPUTEX Edition-260608.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "cover_short_title": "硬件市场正在加速分化",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png"
+    ],
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md",
+    "wechat_images": [
+      "assets/source_image_01.jpg",
+      "assets/source_image_02.jpg",
+      "assets/source_image_03.jpg"
+    ],
+    "wechat_article_en": "wechat_article_en.md",
+    "podcast_script": "podcast_script.txt"
+  }
+]
