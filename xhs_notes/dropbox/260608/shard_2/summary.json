@@ -1,0 +1,60 @@
+[
+  {
+    "source_pdf": "/tmp/pdf_batch_001_xiuieyze/pdfs/0001-11-MS-Global Technology-Computex 2026 Takeaways-260607.pdf",
+    "mineru_state": "pending",
+    "mineru_error": "",
+    "error": "MinerU did not return a successful full_zip_url for this PDF."
+  },
+  {
+    "source_pdf": "/tmp/pdf_batch_001_xiuieyze/pdfs/0002-12-GS-Americas Technology- Semiconductors- SIA data shows broadly above-seasonal trends in April-260607.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "cover_short_title": "4月芯片出货量，比想",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png",
+      "assets/xhs_card_09.png"
+    ],
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  },
+  {
+    "source_pdf": "/tmp/pdf_batch_001_xiuieyze/pdfs/0003-13-GS-China-Three things in China-260607.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "cover_short_title": "中国跨境投资新规，在",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png"
+    ],
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  },
+  {
+    "source_pdf": "/tmp/pdf_batch_001_xiuieyze/pdfs/0004-14-Bernstein-AI Value Chain-How much does a GW of Vera Rubin data center capacity actually cost--260608.pdf",
+    "mineru_state": "pending",
+    "mineru_error": "",
+    "error": "MinerU did not return a successful full_zip_url for this PDF."
+  },
+  {
+    "source_pdf": "/tmp/pdf_batch_001_xiuieyze/pdfs/0005-15-GS-China Solar-2026 SNEC Takeaways- DESS emerges as bright spot against subdued Solar sentiment-260608.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "cover_short_title": "光伏展上，储能成了主",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png"
+    ],
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  }
+]
