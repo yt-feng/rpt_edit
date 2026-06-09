@@ -1,0 +1,990 @@
+# China FX/Rates Monitor: The Policy Anchor Behind a Stronger CNY and Lower Rates
+
+Our monitor tracks the latest developments and identifies key indicators for China FX and rates, including valuations/policy stance, technicals, flows, and fundamentals. Below we summarize our key takeaways on the China FX and rates markets.
+
+Broad easing requires clearer evidence of growth weakness. The April data miss raised questions about whether policymakers would step up easing, but we think the threshold for broad easing is high. Growth has become more uneven, with exports still supporting headline growth while domestic demand, proxied by retail sales and fixed asset investment, softened notably. The April weakness may bring Q2 yoy GDP growth closer to the lower end of the 4.5-5% target range, but we do not think it marks an abrupt deterioration in the underlying growth trend. Part of the weakness reflected technical or policy-related factors, including residual seasonality and slower fiscal spending after a strong start to the year. Retail sales were also weighed down by the fading boost from consumer goods trade-in subsidies and the increase in EV purchase taxes. Some of these drags could fade, while fiscal support may catch up later this year as government bond issuance re-accelerates and policy financial instruments start to provide additional support. Oil-led reflation complicates the case for broad monetary easing. If oil prices stabilize, PPI inflation could peak around late Q2, but uncertainty around the reopening of the Strait of Hormuz keeps imported inflation risks elevated. Policy rate cuts therefore look difficult under elevated imported inflation. Instead, monetary policy is more likely to accommodate fiscal implementation through low-profile easing, such as keeping interbank liquidity ample, with interbank repo rates below the OMO target, and targeted credit easing, including more relending at lower rates. A sharper export slowdown or a more persistent deterioration in domestic demand would be the necessary triggers for a broader policy response.
+
+Policy anchor behind CNY appreciation. CNY appreciation has remained resilient even through periods of renewed Dollar strength. In March, when the Middle East energy shock initially triggered broad Dollar strength, USD/CNY only partially retraced its earlier decline and stabilized around 6.90, from around 6.82 before the shock. The appreciation trend resumed later, with USD/CNY spot breaking below 6.80 in late May despite renewed Dollar strength since mid-May. Policy signals from the PBOC remain key to interpreting the move. In our view, the central bank appears comfortable with orderly and gradual CNY appreciation against the USD, with a pace around 4% annualized likely fast enough to offset carry costs for foreign investors but slow enough to keep the drag on export
+
+Xinquan Chen
+
++852-2978-2418
+
+xinquan.chen@gs.com
+
+GS (Asia) L.L.C.
+
+Danny Suwanapruti
+
++65-6889-1987
+
+danny.suwanapruti@gs.com
+
+GS (Singapore) Pte
+
+competitiveness and inflation limited. However, appreciation expectations have become more one-sided and have triggered stronger exporters' FX conversion. We estimate exporters have converted around US\$150bn more FX proceeds than normal since last December, against our earlier estimate that excess corporate USD hoarding reached around US\$500bn by mid-2025, the peak of this USD-hoarding cycle. This makes CNY appreciation more choppy and event-driven, with fixing changes easily read as policy signals. We expect CNY appreciation to continue (USD/CNY spot reaching 6.50 in 12 months), with some near-term overshooting risk; periods of Dollar strength may reduce near-term downside pressure on USD/CNY spot.
+
+Liquidity anchor behind lower rates. The recent rally in CGBs and decline in IRS rates have puzzled many investors, especially as oil-shock reflation has pushed inflation expectations higher. Our model-implied fair value for 10y CGB yields has risen to above 2%, mostly reflecting higher one-year-ahead CPI inflation expectations, while the 10y CGB yield has fallen to around 1.70%. The front end rates also look difficult to square with a no-cut baseline: 1y IRS is trading only around 3bp above the 1.4% OMO policy rate, while the 1y CGB yield is much lower at around 1.15%. Meanwhile, expectations for high-profile monetary policy easing, such as policy rate cuts, are low. Overnight repo rates (DR001) have also traded close to the lower bound of the interest rate corridor in April and even risen somewhat in May. Taken together, these developments would normally suggest limited downside to bond yields and IRS rates. The missing factor, in our view, is the asset-allocation pressure created by weak credit demand and limited alternative investable assets onshore. Soft loan demand leaves banks with more balance-sheet capacity for bond investment. In previous episodes of very low CGB yields and strong bank demand for bonds, the PBOC tended to warn against idle funds circulating within the financial system. This time, however, the PBOC's Q1 monetary policy report explicitly stated that banks' bond investment, like credit extension, is an important channel of financing the real economy and money creation. At the same time, limited room for domestic institutions to increase overseas investment keeps demand concentrated in onshore fixed-income assets. These flows can push CGB yields below model-implied fair value, even without policy rate cuts. For swaps, although the room for repo fixing to decline further is increasingly limited, wider swap spreads may attract receivers when spreads approach historical highs.
+
+A sustained selloff requires higher repo rates. We still expect China rates to remain low and see room for yields to move lower in the medium term if growth weakness becomes clearer or the liquidity anchor stays in place. That said, correction risks could rise into late June, given quarter-end liquidity demand and the market sensitivity to recent OMO operations. The PBOC's zero 7-day reverse repo operation earlier this week was read by markets as a warning of potential liquidity tightening. However, OMO injections resumed shortly after and demand for OMO funding may be low given its relatively high cost compared with interbank repos. In our view, the room for a sustained rates selloff should also be limited unless the PBOC is willing to repeat the 2020/2022 episodes of pushing repo rates above the OMO target. This looks like a high bar: repo rates are currently not far below the OMO rate (which was not the case in 2020/2022), domestic demand and credit demand remain soft, and uncertainty around the Middle East energy shock is still elevated.
+
+## 1. Valuations and policy stance
+
+Exhibit 1: CNY appreciated against USD by more than 3% year-to-date as of the end of May  
+![](images/027b39b173c2a4c6499da8f6433cfb302b768bae4d2eee3603295fc7685ec6ce.jpg)
+
+<details>
+<summary>line chart</summary>
+
+| Year | CNY vs. CFETS basket | USD/CNY (right axis, reverse scale) |
+|------|----------------------|-------------------------------------|
+| 2016 | ~100                 | ~6.4                                |
+| 2017 | ~94                  | ~6.6                                |
+| 2018 | ~104                 | ~6.8                                |
+| 2019 | ~98                  | ~7.0                                |
+| 2020 | ~92                  | ~7.2                                |
+| 2021 | ~102                 | ~7.4                                |
+| 2022 | ~108                 | ~7.6                                |
+| 2023 | ~100                 | ~7.4                                |
+| 2024 | ~102                 | ~7.2                                |
+| 2025 | ~100                 | ~7.0                                |
+| 2026 | ~101                 | ~7.4                                |
+</details>
+
+Source: Bloomberg, Wind
+
+Exhibit 2: USD/CNH spot broke below 6.8 by mid-May despite a stronger Dollar  
+![](images/1703fb92f828f0cf07cce5f84c52a4d1f66a61202c832b37866a9ed23771e173.jpg)
+
+<details>
+<summary>line chart</summary>
+
+| Date   | USDCNH | DXY (right axis) |
+|--------|--------|------------------|
+| Jan-24 | 7.2    | 104              |
+| May-24 | 7.3    | 106              |
+| Sep-24 | 7.1    | 102              |
+| Jan-25 | 7.4    | 110              |
+| May-25 | 7.3    | 108              |
+| Sep-25 | 7.1    | 104              |
+| Jan-26 | 6.9    | 100              |
+| May-26 | 6.8    | 98               |
+</details>
+
+DXY: US Dollar Index, which measures the value of the US Dollar vs. a basket of currencies.  
+Source: Bloomberg
+
+Exhibit 3: Countercyclical factor remained elevated at above +400pips in May, signaling PBOC's tendency to slow RMB appreciation against the Dollar  
+![](images/bcaba48c98e333c11c257a2eb6d5153cc0deef9a89da4a4d3f1cb9c667a5c148.jpg)
+
+<details>
+<summary>line chart</summary>
+
+| Date    | Single day | 10 days moving average |
+|---------|------------|------------------------|
+| Apr 9th |            |                        |
+</details>
+
+We measure the countercyclical factor by calculating the difference between the official daily CNY fixing and our estimation of the fixing based on official documents of CNY fixing mechanism.
+
+Exhibit 4: USD/CNH Tom/Next points moved sideways over the past few months  
+![](images/1f8b7b586cbdb5da81e1a00c65a7041e176d55a92c15e868a298d7068cafe664.jpg)
+
+<details>
+<summary>line chart</summary>
+
+| Date    | Single day | 5dma |
+|---------|------------|------|
+| Jan-23  | ~0         | ~0   |
+| Jul-23  | ~-10       | ~-10 |
+| Jan-24  | ~10        | ~10  |
+| Jul-24  | ~-10       | ~-10 |
+| Jan-25  | ~10        | ~10  |
+| Jul-25  | ~-10       | ~-10 |
+| Jan-26  | ~-10       | ~-10 |
+</details>
+
+Tom/Next (Tomorrow next) is a short-term FX swap allowing investors to roll over their spot position. Positive (negative) Tom/Next points mean negative (positive) carry returns of long USD short CNH. Red circles indicate the timing of front-end CNH liquidity shortage (potential CNH liquidity management by the authorities).  
+Source: Bloomberg, Data compiled by GS Global Investment Research  
+Source: Bloomberg, Data compiled by GS Global Investment Research
+
+## 2. Technicals
+
+Exhibit 5: Carry-to-vol ratio for EUR/CNH picked up in Apr-May 2026  
+![](images/9204184144a5e6eb8430fc208b698c0a7e6702f51907bff555772dcc163194d1.jpg)
+
+<details>
+<summary>line chart</summary>
+
+| Year | Carry-to-vol ratio (USD/CNH) | Carry-to-vol ratio (EUR/CNH) |
+|------|------------------------------|------------------------------|
+| 19   | 0.0                          | -0.6                         |
+| 20   | -0.3                         | -0.9                         |
+| 21   | -0.6                         | -0.7                         |
+| 22   | -1.2                         | -0.9                         |
+| 23   | 0.6                          | -0.3                         |
+| 24   | 1.2                          | 0.3                          |
+| 25   | 0.8                          | 0.6                          |
+| 26   | 1.2                          | 0.3                          |
+</details>
+
+Carry is defined as annualized carry returns of 3m USD/CNH / EUR/CNH forward, and volatility refers to 3-month rolling realized volatility of FX total returns.  
+Source: Bloomberg, GS Global Investment Research
+
+Exhibit 6: Momentum to buy CNH and sell EUR picked up over the past two months  
+![](images/0e3c1fe923a79311923005fba3cc5a878c223940558cd084a9fb32bc794108b9.jpg)
+
+<details>
+<summary>line chart</summary>
+
+| Year | Short CNH | Momentum-to-vol ratio (USD/CNH) | Short CNH |
+|------|-----------|----------------------------------|-----------|
+| 2021 | -         | 9.5                              | -         |
+| 2022 | -         | -                                | -         |
+| 2023 | -         | -                                | -         |
+| 2024 | -         | -                                | -         |
+| 2025 | -         | -                                | -         |
+| 2026 | -         | -                                | -         |
+</details>
+
+Momentum is defined as 3-month cumulative FX total returns, and volatility refers to 3-month rolling realized volatility of FX total returns.  
+Source: Bloomberg, GS Global Investment Research
+
+Exhibit 7: CNH/CNY basis remained at around -300pips in Apr-May 2026  
+![](images/e3c5b82560c798533c77247a2878c008cd531c593638c2810778e508a55cf04b.jpg)
+
+<details>
+<summary>line chart</summary>
+
+| Year | CNH/CNY basis: 1m | CNH/CNY basis: 3m |
+|------|-------------------|-------------------|
+| 22   | ~0                | ~0                |
+| 23   | ~600              | ~300              |
+| 24   | ~1500             | ~1000             |
+| 25   | ~1200             | ~800              |
+| 26   | ~-300             | ~-300             |
+</details>
+
+CNH/CNY basis is defined as the difference between deliverable forward of USD/CNH and non-deliverable forward of USD/CNY.  
+Source: Bloomberg, GS Global Investment Research
+
+Exhibit 8: Cross-currency swap rate fell below NDIRS rate as CNH funding conditions eased  
+![](images/58c51dab10b55932b86777fd186f20dac22e13bfbf7dd2e2a26e49e2f975e114.jpg)
+
+<details>
+<summary>line chart</summary>
+
+| Date   | CNH FX implied yield | NDIRS/CCS spread |
+|--------|----------------------|------------------|
+| Jan-22 | ~3.5                 | ~1.8             |
+| Jul-22 | ~3.7                 | ~2.0             |
+| Jan-23 | ~2.8                 | ~1.5             |
+| Jul-23 | ~4.1                 | ~2.8             |
+| Jan-24 | ~3.0                 | ~1.5             |
+| Jul-24 | ~4.3                 | ~2.5             |
+| Jan-25 | ~3.5                 | ~1.0             |
+| Jul-25 | ~1.5                 | ~0.0             |
+| Jan-26 | ~1.0                 | ~-0.5            |
+</details>
+
+NDIRS/CCS spread: CNH cross-currency swap rate minus CNY non-deliverable interest rate swap rate.  
+Source: Bloomberg, GS Global Investment Research
+
+Exhibit 9: USD/CNY fixing descent accelerated somewhat in late May  
+![](images/6ec0d0b616846e5ca3a37a723f26ba1fa54068f7aa39099a7c7f147ef0c6f612.jpg)
+
+<details>
+<summary>line chart</summary>
+
+| Date       | USD/CNY Fixing |
+| ---------- | -------------- |
+| 5/12/25    | 7.24           |
+| 7/7/25     | 7.16           |
+| 9/1/25     | 7.12           |
+| 10/27/25   | 7.08           |
+| 12/22/25   | 7.04           |
+| 2/16/26    | 6.96           |
+| 4/13/26    | 6.88           |
+| 6/8/26     | 6.80           |
+</details>
+
+Source: PBOC
+
+## 3. Fundamentals
+
+Exhibit 10: China's trade balance fell from Jan-Feb to Mar-Apr on lower goods trade surplus  
+![](images/0feda56002f9a702101439ec38454d17ce6d97ec552c2b73de418555251c5764.jpg)
+
+<details>
+<summary>bar-line hybrid chart</summary>
+
+Trade balance
+| Year | Goods trade balance (USD bn, sa) | Services trade balance: travel (USD bn, sa) | Services trade balance: non-travel (USD bn, sa) | Total (USD bn, sa) |
+|---|---|---|---|---|
+| 19 | 30 | -5 | -20 | 20 |
+| 20 | 40 | -5 | -15 | -25 |
+| 21 | 60 | -5 | -10 | 40 |
+| 22 | 65 | -5 | -10 | 50 |
+| 23 | 60 | -5 | -15 | 45 |
+| 24 | 55 | -5 | -15 | 35 |
+| 25 | 80 | -5 | -15 | 70 |
+| 26 | 120 | -5 | -15 | 90 |
+</details>
+
+Source: Haver Analytics, GS Global Investment Research
+
+Exhibit 11: China's travel exports stood at about $198\%$ of 2019 levels in April 2026, and travel imports were around $96\%$ of 2019 levels  
+![](images/e5d48ab081e4a1976ec6ae5ffcb228812e274353444c60234b2da76417301a78.jpg)
+
+<details>
+<summary>line chart</summary>
+
+| Year | Exports | Imports |
+|------|---------|---------|
+| 16   | 140     | 100     |
+| 17   | 130     | 110     |
+| 18   | 120     | 130     |
+| 19   | 110     | 120     |
+| 20   | 40      | 50      |
+| 21   | 30      | 40      |
+| 22   | 35      | 45      |
+| 23   | 40      | 50      |
+| 24   | 80      | 90      |
+| 25   | 130     | 110     |
+| 26   | 220     | 180     |
+</details>
+
+Travel imports are defined as the overseas spending of China's residents for tourism, education and medical services; travel exports are defined as non-residents' spending in China. Both include tourism spending.  
+Source: Haver Analytics, GS Global Investment Research
+
+Exhibit 12: Both banks' net external assets and official FX reserves rose from March to April  
+![](images/163afd9136f3b0968ae3404ea24c90c842743780134df1eb8f4b7dd324d92498.jpg)
+
+<details>
+<summary>bar-line hybrid chart</summary>
+
+| Date | Commercial banks' net external asset changes (Billion USD) | Official FX reserve changes (adjusted for FX valuation effect*) (Billion USD) | Sum (Billion USD) |
+|---|---|---|---|
+| Jan-22 | 30 | -15 | 10 |
+| Jul-22 | 10 | 50 | -20 |
+| Jan-23 | -10 | 40 | 70 |
+| Jul-23 | -15 | -20 | -40 |
+| Jan-24 | 70 | 45 | 80 |
+| Jul-24 | 35 | 25 | 30 |
+| Jan-25 | 70 | -40 | 30 |
+| Jul-25 | -10 | 30 | 50 |
+| Jan-26 | 60 | 40 | 100 |
+| Jul-26 | -60 | -60 | -80 |
+</details>
+
+\* GS estimates based on IMF global reserve composition data. We do not adjust for asset price valuation effect due to data limitation  
+Source: PBOC, CEIC, Data compiled by GS Global Investment Research
+
+Exhibit 13: As of April 2026, China's official FX reserves stood at USD 3411bn, while commercial banks held USD 1491bn net external assets  
+![](images/9f319124d60586d6b8aec14c7f7e6c80db876bde54a14945019eff5cae8989cb.jpg)
+
+<details>
+<summary>area chart</summary>
+
+| Year | FX reserves (Billion USD) | Banks' net assets overseas (Billion USD) |
+|------|---------------------------|------------------------------------------|
+| 11   | ~3,000                    | ~3,500                                   |
+| 12   | ~3,200                    | ~3,700                                   |
+| 13   | ~3,400                    | ~3,800                                   |
+| 14   | ~3,600                    | ~3,900                                   |
+| 15   | ~3,800                    | ~4,000                                   |
+| 16   | ~3,500                    | ~3,800                                   |
+| 17   | ~3,200                    | ~3,600                                   |
+| 18   | ~3,100                    | ~3,700                                   |
+| 19   | ~3,150                    | ~3,800                                   |
+| 20   | ~3,200                    | ~3,900                                   |
+| 21   | ~3,250                    | ~4,000                                   |
+| 22   | ~3,300                    | ~4,100                                   |
+| 23   | ~3,250                    | ~4,200                                   |
+| 24   | ~3,300                    | ~4,300                                   |
+| 25   | ~3,400                    | ~4,500                                   |
+| 26   | ~3,500                    | ~4,800                                   |
+</details>
+
+Source: PBOC, CEIC, Data compiled by GS Global Investment Research
+
+## Rates
+
+## 1. Levels and term structure
+
+Exhibit 14: Long-term rates moved lower over the past two months  
+![](images/1177e7b07153c3bd945f974fa557516ad0983039c5baab77a7bf991f0f7c3b74.jpg)
+
+<details>
+<summary>line chart</summary>
+
+| Date   | CGB: 30y | IRS: 5y | CGB: 10y | OMO: 7d | CDB: 10y |
+|--------|----------|---------|----------|---------|----------|
+| Jul-23 | 3.0      | 2.5     | 2.6      | 1.9     | 2.8      |
+| Nov-23 | 2.9      | 2.4     | 2.5      | 1.9     | 2.7      |
+| Mar-24 | 2.7      | 2.2     | 2.3      | 1.9     | 2.5      |
+| Jul-24 | 2.5      | 2.0     | 2.1      | 1.9     | 2.3      |
+| Nov-24 | 2.3      | 1.8     | 1.9      | 1.9     | 2.1      |
+| Mar-25 | 2.1      | 1.6     | 1.7      | 1.9     | 1.9      |
+| Jul-25 | 2.2      | 1.7     | 1.8      | 1.9     | 2.0      |
+| Nov-25 | 2.3      | 1.8     | 1.9      | 1.9     | 2.1      |
+| Mar-26 | 2.4      | 1.9     | 2.0      | 1.9     | 2.2      |
+</details>
+
+Source: CEIC, GS Global Investment Research
+
+Exhibit 15: 1y CGB yields fell below 1.2% from mid-April and front-end yields trended lower over the past two months  
+![](images/46d98cfef616eb2ec3bb784437b2b66bb402904ac58e5a78b448d6e4994a5272.jpg)
+
+<details>
+<summary>line chart</summary>
+
+| Date   | NCD: AAA: 1y | IRS: 1y | CGB: 1y | OMO: 7d |
+|--------|--------------|---------|---------|---------|
+| Jul-23 | 2.4          | 2.0     | 1.9     | 1.9     |
+| Nov-23 | 2.8          | 2.2     | 2.4     | 1.9     |
+| Mar-24 | 2.6          | 2.0     | 1.9     | 1.9     |
+| Jul-24 | 2.4          | 1.9     | 1.8     | 1.9     |
+| Nov-24 | 2.0          | 1.7     | 1.6     | 1.9     |
+| Mar-25 | 2.0          | 1.6     | 1.5     | 1.9     |
+| Jul-25 | 1.8          | 1.5     | 1.4     | 1.9     |
+| Nov-25 | 1.7          | 1.4     | 1.3     | 1.9     |
+| Mar-26 | 1.6          | 1.3     | 1.2     | 1.9     |
+</details>
+
+Source: Wind
+
+Exhibit 16: The slopes of cash bond and IRS curves were roughly stable in Apr-May 2026  
+![](images/7b60cc1c711cfb04f4a3a4f4d0cd7ededfa54410a5fbdc4e17f46fcc376825ec.jpg)
+
+<details>
+<summary>line chart</summary>
+
+| Date   | IRS: 1s5s | CGB: 2s10s | CGB: 10s30s | CDB: 2s10s |
+|--------|-----------|------------|-------------|------------|
+| Jul-23 | ~45       | ~50        | ~40         | ~45        |
+| Nov-23 | ~35       | ~45        | ~35         | ~40        |
+| Mar-24 | ~20       | ~50        | ~30         | ~45        |
+| Jul-24 | ~10       | ~60        | ~25         | ~50        |
+| Nov-24 | ~-10      | ~75        | ~20         | ~55        |
+| Mar-25 | ~-15      | ~40        | ~15         | ~30        |
+| Jul-25 | ~-10      | ~30        | ~10         | ~25        |
+| Nov-25 | ~10       | ~45        | ~20         | ~35        |
+| Mar-26 | ~15       | ~50        | ~30         | ~40        |
+</details>
+
+Source: Wind, GS Global Investment Research
+
+Exhibit 17: FX hedged yields of short-term bonds rose relative to UST yields over the past few months, primarily reflecting the declines in FX forward points  
+![](images/1dc49fca53edb02afde0320e4545642cced49c42fb1879cac7231721d7e6d34d.jpg)
+
+<details>
+<summary>line chart</summary>
+
+| Year | CGB: 1y | CDB: 1y | NCD: 12m AAA |
+|------|---------|---------|--------------|
+| 19   | ~0.5    | ~0.5    | ~1.0         |
+| 20   | ~0.8    | ~0.7    | ~1.8         |
+| 21   | ~0.3    | ~0.4    | ~0.8         |
+| 22   | ~-0.8   | ~-0.6   | ~-0.5        |
+| 23   | ~0.5    | ~0.6    | ~1.2         |
+| 24   | ~0.7    | ~0.8    | ~1.3         |
+| 25   | ~0.3    | ~0.4    | ~1.0         |
+| 26   | ~-0.2   | ~-0.1   | ~-0.3        |
+</details>
+
+CGB: Central government bonds, CDB bond: bonds issued by China Development Bank, NCD: Negotiable certificates of deposit.  
+Source: Bloomberg, Wind, GS Global Investment Research
+
+## 2. Technicals
+
+Exhibit 18: Momentum to receive CNY rates fluctuates around zero in 2026 so far, suggesting a lack of clear direction  
+![](images/6fccca8e08ad3aa56cd1d5c80d6c0b84a3fe8b8bd954db54683e74ec9946c1d6.jpg)
+
+<details>
+<summary>line chart</summary>
+
+| Year | 3m Ratio | 1y Ratio |
+|------|----------|----------|
+| 16   | ~2       | ~1       |
+| 17   | ~-5      | ~-2      |
+| 18   | ~4       | ~0       |
+| 19   | ~3       | ~1       |
+| 20   | ~5       | ~2       |
+| 21   | ~-4      | ~-1      |
+| 22   | ~4       | ~0       |
+| 23   | ~5       | ~1       |
+| 24   | ~4       | ~2       |
+| 25   | ~5       | ~1       |
+| 26   | ~2       | ~0       |
+</details>
+
+Momentum is defined as annualized rolling spot returns for a period, and volatility refers to realized volatility of spot returns for a period.  
+Source: Bloomberg, GS Global Investment Research
+
+Exhibit 19: Equities moved sideways recently while IRS rates declined around the month end  
+![](images/9df2d9de582e6b404c343fe3042fded773b4f437146f1c6649c7857fd0cbac9d.jpg)
+
+<details>
+<summary>line chart</summary>
+
+| Date   | CSI300 | NDIRS 5y (RHS) |
+|--------|--------|----------------|
+| Jan-25 | 95     | 1.4            |
+| Apr-25 | 98     | 1.6            |
+| Jul-25 | 105    | 1.7            |
+| Oct-25 | 120    | 1.6            |
+| Jan-26 | 122    | 1.6            |
+| Apr-26 | 128    | 1.5            |
+</details>
+
+The Central Commission for Financial and Economic Affairs (CCFEA) meeting chaired by President Xi on 1 July called for regulating disorderly price-cutting and excessive competition among producers.  
+Source: Bloomberg, Wind
+
+Exhibit 20: Front-end swap spreads widened towards previous highs over the past few months  
+![](images/3b183daff8b7b3b86d553be5dde63a20e0e6f1cb217ad600a7eb3bd19888d89d.jpg)
+
+<details>
+<summary>line chart</summary>
+
+| Year | Swap spread: 1y | Swap spread: 2y | Swap spread: 5y |
+|------|-----------------|-----------------|-----------------|
+| 19   | ~10             | ~5              | ~-5             |
+| 20   | ~40             | ~20             | ~10             |
+| 21   | ~-30            | ~-20            | ~-10            |
+| 22   | ~10             | ~5              | ~0              |
+| 23   | ~20             | ~10             | ~5              |
+| 24   | ~-20            | ~-10            | ~-5             |
+| 25   | ~40             | ~20             | ~10             |
+| 26   | ~30             | ~20             | ~15             |
+</details>
+
+Swap spread: onshore IRS rates minus CGB yields.  
+Source: Wind, GS Global Investment Research
+
+## 3. Fundamentals
+
+Exhibit 21: 1-year ahead consensus forecast of CPI inflation rose to 1% over the past two months  
+![](images/5432f026672c03253076f54b59da0215b62585cfe849042fbeed926a9c5e9a4c.jpg)
+
+<details>
+<summary>line chart</summary>
+
+| Year | Real GDP growth | CPI inflation (right axis) |
+|------|-----------------|----------------------------|
+| 19   | 6.0             | 2.5                        |
+| 20   | 5.5             | 3.0                        |
+| 21   | 8.0             | 1.5                        |
+| 22   | 5.0             | 2.0                        |
+| 23   | 4.5             | 2.5                        |
+| 24   | 4.5             | 1.0                        |
+| 25   | 4.5             | 0.5                        |
+| 26   | 4.5             | 1.0                        |
+</details>
+
+Source: Consensus Economics, GS Global Investment Research
+
+Exhibit 22: Bill discount rate has been declining since March 2026, signaling soft loan demand  
+![](images/d361e0ab4c5857c6a72fde13ddea6365cb9203e35ae41585118bb8a9500bdc2c.jpg)
+
+<details>
+<summary>line chart</summary>
+
+| Year | Bill interbank discount rate: 6m | Bill direct discount rate: 6m |
+|------|----------------------------------|-------------------------------|
+| 19   | ~3.3                             | ~3.3                          |
+| 20   | ~2.8                             | ~2.8                          |
+| 21   | ~3.7                             | ~3.7                          |
+| 22   | ~0.8                             | ~2.8                          |
+| 23   | ~1.0                             | ~2.5                          |
+| 24   | ~1.5                             | ~2.0                          |
+| 25   | ~1.0                             | ~1.5                          |
+| 26   | ~0.7                             | ~1.0                          |
+</details>
+
+Bill interbank discount rates discontinued since June 2022. As interbank discount rates co-move with direct discount rates closely, we use direct discount rate as a proxy thereafter.  
+Source: Wind, GS Global Investment Research
+
+Exhibit 23: Both 1y and 10y CGB yields fell below model implied “fair value” since March 2026  
+![](images/57120a2ca3998df48b1c4054a2aec162f686cd7327b72ad0ec1f6bb39c1c9bd4.jpg)
+
+<details>
+<summary>line chart</summary>
+
+| Year | Actual Yield (%) | Model Yield (%) |
+|------|------------------|-----------------|
+| 18   | ~3.7             | ~3.5            |
+| 19   | ~3.0             | ~3.2            |
+| 20   | ~1.3             | ~1.4            |
+| 21   | ~2.8             | ~2.6            |
+| 22   | ~2.0             | ~1.9            |
+| 23   | ~2.3             | ~2.5            |
+| 24   | ~1.8             | ~1.7            |
+| 25   | ~1.4             | ~1.3            |
+| 26   | ~1.2             | ~1.1            |
+</details>
+
+We calibrate a simple OLS model to examine the drivers of CGB yields, including 1-year ahead growth/inflation forecast, 1y/10y UST yields, and the spread between OMO target and 7d repo fixing. We adjust the model output from August 2025 to reflect the removal of the VAT exemption on interest income.  
+Source: Wind, GS Global Investment Research
+
+## 4. Liquidity and leverage
+
+Exhibit 24: The PBOC conducted liquidity withdrawals mainly through outright repos in May  
+![](images/73a52962d7dec8e7194c98caa17699b5bd441d02297788a343d70e3096c0f292.jpg)
+
+<details>
+<summary>bar chart</summary>
+
+| Year | RRR cut | PSL | OMO | Outright repo | CGB purchase | Treasury cash auction |
+|------|---------|-----|-----|---------------|--------------|------------------------|
+| 19   | 1.8     | -0.5| -0.8| -0.7          | -0.6         | -0.4                   |
+| 20   | 0.2     | 0.8 | 0.9 | 0.7           | 0.6          | 0.5                    |
+| 21   | 0.1     | 0.3 | 0.4 | 0.2           | 0.1          | 0.0                    |
+| 22   | 1.0     | -0.2| 1.5 | 0.8           | 0.7          | 0.6                    |
+| 23   | 0.5     | 0.1 | 2.0 | 0.6           | 0.5          | 0.4                    |
+| 24   | 1.2     | 0.3 | 1.8 | 0.9           | 0.8          | 0.7                    |
+| 25   | 3.8     | -2.5| -2.8| 3.5           | 3.2          | 3.0                    |
+| 26   | -1.5    | -1.2| -1.8| -1.0          | -0.8         | -0.6                   |
+</details>
+
+OMO: open market operation (7/14 day pledged reverse repos); MLF: medium term lending facilities; PSL: pledged supplementary lending.  
+Source: CEIC, GS Global Investment Research
+
+Exhibit 26: 7-day interbank repo rates remained below the OMO target in April and May  
+![](images/92e7fe75229c600d5a162f7064d3a9d8dfb74defcb225acfaea7e0baf909f9b7.jpg)
+
+<details>
+<summary>line chart</summary>
+
+| Year | R007 - repo rate for all financial institutions | DR007 - repo rate for banks |
+|------|-----------------------------------------------|-----------------------------|
+| 19   | ~3.8                                          | ~2.6                        |
+| 20   | ~2.8                                          | ~2.4                        |
+| 21   | ~3.4                                          | ~2.2                        |
+| 22   | ~2.9                                          | ~2.1                        |
+| 23   | ~2.8                                          | ~2.0                        |
+| 24   | ~2.7                                          | ~1.9                        |
+| 25   | ~2.6                                          | ~1.8                        |
+| 26   | ~1.5                                          | ~1.4                        |
+</details>
+
+Source: Wind, GS Global Investment Research
+
+Exhibit 25: The overnight repo rate for banks picked up somewhat amid the month end liquidity demand  
+![](images/07e1809b85953f72ee70f1ac464a893272707a7f5394383bf3f7a1b15e3e247b.jpg)
+
+<details>
+<summary>line chart</summary>
+
+| Date   | DR001 | DR007 | Interest rate for 7-day reverse repurchase OMO | Interest rate corridor defined by temporary overnight OMO |
+|--------|-------|-------|-----------------------------------------------|------------------------------------------------------|
+| Jul-24 | 1.8   | 1.8   | 1.8                                           | 2.3                                                  |
+| Oct-24 | 1.5   | 1.5   | 1.5                                           | 2.0                                                  |
+| Jan-25 | 1.6   | 2.3   | 1.5                                           | 2.0                                                  |
+| Apr-25 | 1.4   | 1.9   | 1.5                                           | 2.0                                                  |
+| Jul-25 | 1.3   | 1.5   | 1.5                                           | 2.0                                                  |
+| Oct-25 | 1.3   | 1.4   | 1.5                                           | 2.0                                                  |
+| Jan-26 | 1.3   | 2.0   | 1.5                                           | 2.0                                                  |
+| Apr-26 | 1.2   | 1.3   | 1.5                                           | 2.0                                                  |
+</details>
+
+Source: CEIC, GS Global Investment Research
+
+Exhibit 27: Financial leveraging in the bond market remained elevated while repo rates reached historic lows  
+![](images/8e2e9231fe8d60680091fcb1af6e0d1e028ca0d5b21f62655a88ce70208432d3.jpg)
+
+<details>
+<summary>line chart</summary>
+
+| Date   | Total repo transaction volume | Overnight repo transaction volume | R007 (RHS) |
+|--------|-------------------------------|-----------------------------------|------------|
+| Jan-19 | ~3.5                          | ~3.0                              | ~7.5       |
+| Jan-20 | ~4.0                          | ~3.5                              | ~6.0       |
+| Jan-21 | ~5.0                          | ~4.5                              | ~6.5       |
+| Jan-22 | ~6.0                          | ~5.0                              | ~5.5       |
+| Jan-23 | ~7.0                          | ~6.0                              | ~5.0       |
+| Jan-24 | ~8.0                          | ~7.0                              | ~4.5       |
+| Jan-25 | ~7.5                          | ~6.5                              | ~3.0       |
+| Jan-26 | ~8.5                          | ~7.5                              | ~1.5       |
+</details>
+
+Source: Wind, GS Global Investment Research
+
+## 5. Bond supply and demand
+
+Exhibit 28: Net issuance of central government bonds was around RMB 708bn in May, slower than the pace in 2025  
+![](images/f7030ab8c4653c22a90f27e7ddb4b7b1b36b71700923098b3d2aca8b18743bc7.jpg)
+
+<details>
+<summary>line chart</summary>
+
+| Month | 2017-2019 avg | 2023 | 2024 | 2025 | 2026 |
+|-------|---------------|------|------|------|------|
+| Jan   | ~0            | ~0   | ~0   | ~0   | ~0   |
+| Feb   | ~0            | ~0   | ~0   | ~0   | ~0   |
+| Mar   | ~0            | ~0   | ~0   | ~0   | ~0   |
+| Apr   | ~0            | ~0   | ~0   | ~0   | ~0   |
+| May   | ~0            | ~0   | ~0   | ~0   | ~0   |
+| Jun   | ~0            | ~0   | ~0   | ~0   | ~0   |
+| Jul   | ~0            | ~0   | ~0   | ~0   | ~0   |
+| Aug   | ~0            | ~0   | ~0   | ~0   | ~0   |
+| Sep   | ~0            | ~0   | ~0   | ~0   | ~0   |
+| Oct   | ~0            | ~0   | ~0   | ~0   | ~0   |
+| Nov   | ~0            | ~0   | ~0   | ~0   | ~0   |
+| Dec   | ~0            | ~0   | ~0   | ~0   | ~0   |
+</details>
+
+As of May 2026, the central government has utilized 36% of the annual CGB issuance quota. Central government bonds include both central government general bonds and central government special bonds.  
+Source: Wind, GS Global Investment Research
+
+Exhibit 30: Net issuance of local government general bonds was around RMB26bn in May  
+![](images/f8c4048663b702da53ec74d13033f8bef0fabcbef6b831d30f491f97405e4e15.jpg)
+
+<details>
+<summary>line chart</summary>
+
+| Month | 2017-2019 avg | 2023 | 2024 | 2025 | 2026 |
+|-------|---------------|------|------|------|------|
+| Jan   | ~100          | ~150 | ~100 | ~100 | ~50  |
+| Feb   | ~150          | ~250 | ~150 | ~150 | ~150 |
+| Mar   | ~200          | ~300 | ~200 | ~200 | ~200 |
+| Apr   | ~250          | ~350 | ~250 | ~250 | ~300 |
+| May   | ~350          | ~400 | ~300 | ~350 | ~350 |
+| Jun   | ~450          | ~450 | ~350 | ~450 | -    |
+| Jul   | ~750          | ~500 | ~400 | ~550 | -    |
+| Aug   | ~800          | ~600 | ~500 | ~650 | -    |
+| Sep   | ~850          | ~650 | ~600 | ~700 | -    |
+| Oct   | ~850          | ~700 | ~650 | ~750 | -    |
+| Nov   | ~850          | ~750 | ~700 | ~800 | -    |
+| Dec   | ~850          | ~800 | ~750 | ~850 | -    |
+</details>
+
+As of May 2026, local governments have utilized 43% of their general bond issuance quota. Here we refer to local government general purpose new bonds. We do not include those for refinancing and debt swaps.  
+Source: Wind, GS Global Investment Research
+
+Exhibit 29: The average CGB auction size in April-May was lower than levels seen in 2025  
+![](images/30099cecf98e30c66cf7273a2544483906dd8e56bf90ffa334653c1cc1a5a7a1.jpg)
+
+<details>
+<summary>line chart</summary>
+
+| Month | 2022 | 2023 | 2024 | 2025 | 2026 |
+|-------|------|------|------|------|------|
+| Jan   | 60   | 75   | 90   | 100  | 145  |
+| Feb   | 55   | 70   | 85   | 90   | 115  |
+| Mar   | 65   | 75   | 90   | 135  | 130  |
+| Apr   | 70   | 80   | 100  | 145  | 125  |
+| May   | 55   | 75   | 110  | 155  | 135  |
+| Jun   | 55   | 75   | 140  | 160  | -    |
+| Jul   | 65   | 85   | 90   | 120  | -    |
+| Aug   | 70   | 85   | 120  | 135  | -    |
+| Sep   | 65   | 90   | 135  | 155  | -    |
+| Oct   | 60   | 95   | 110  | 130  | -    |
+| Nov   | 55   | 95   | 65   | 85   | -    |
+| Dec   | 50   | 90   | 60   | 90   | -    |
+</details>
+
+Source: Wind, GS Global Investment Research
+
+Exhibit 31: Issuance of local government special bonds was around RMB 161bn in May, much slower than the pace in 2025  
+![](images/6730c993232cc23a337f51c3867a714a0ae6f0dad38fef6d0dd45868da6d5ac1.jpg)
+
+<details>
+<summary>line chart</summary>
+
+| Month | 2017-2019 avg | 2023 | 2024 | 2025 | 2026 |
+|-------|---------------|------|------|------|------|
+| Jan   | ~0            | ~400 | ~0   | ~200 | ~400 |
+| Feb   | ~100          | ~800 | ~300 | ~600 | ~800 |
+| Mar   | ~200          | ~1200| ~600 | ~1000| ~1100|
+| Apr   | ~300          | ~1600| ~800 | ~1300| ~1400|
+| May   | ~400          | ~2000| ~1200| ~1800| ~1500|
+| Jun   | ~600          | ~2400| ~1600| ~2500| -    |
+| Jul   | ~800          | ~2800| ~2000| ~3000| -    |
+| Aug   | ~1000         | ~3200| ~2500| ~3500| -    |
+| Sep   | ~1300         | ~3600| ~3500| ~4000| -    |
+| Oct   | ~1400         | ~3800| ~3800| ~4200| -    |
+| Nov   | ~1450         | ~4000| ~4000| ~4500| -    |
+| Dec   | ~1500         | ~4100| ~4100| ~4700| -    |
+</details>
+
+As of May 2026, local governments have utilized 34% of their special bond issuance quota. The central government approved additional RMB500bn quota for LGB issuance in Q4 2025, with RMB200bn earmarked for LGSB issuance. Here we refer to local government special purpose new bonds. We do not include those for refinancing and debt swaps. In 2022, the government approved around RMB500bn additional quota for LGSB issuance.  
+Source: Wind, GS Global Investment Research
+
+Exhibit 32: The outstanding policy bank bonds rose by RMB 104bn in May  
+![](images/e601bf847c46a3c49be843ab16e892ffadda214fdfaf7b7612942273077d4055.jpg)
+
+<details>
+<summary>line chart</summary>
+
+| Month | 2017-2019 avg | 2023 | 2024 | 2025 | 2026 |
+|-------|---------------|------|------|------|------|
+| Jan   | ~100          | ~100 | ~100 | ~100 | ~100 |
+| Feb   | ~200          | ~300 | ~-300| ~300 | ~100 |
+| Mar   | ~300          | ~600 | ~-100| ~400 | ~100 |
+| Apr   | ~400          | ~700 | ~-50 | ~500 | ~-300|
+| May   | ~500          | ~1000| ~500 | ~800 | ~-100|
+| Jun   | ~600          | ~1200| ~700 | ~1100| -    |
+| Jul   | ~700          | ~1300| ~900 | ~1400| -    |
+| Aug   | ~800          | ~1400| ~1000| ~1700| -    |
+| Sep   | ~900          | ~1500| ~1100| ~1800| -    |
+| Oct   | ~1000         | ~1600| ~1300| ~1900| -    |
+| Nov   | ~1100         | ~1800| ~1600| ~2100| -    |
+| Dec   | ~1200         | ~1900| ~1650| ~2150| -    |
+</details>
+
+Source: Wind, GS Global Investment Research
+
+Exhibit 33: The outstanding amount of NCD increased by RMB 163bn in May  
+![](images/a9fab034e69e4117fe0ae036276fa4a40a6247ddda076afec19b3c88bad089b4.jpg)
+
+<details>
+<summary>line chart</summary>
+
+| Month | 2017-2019 avg | 2023 | 2024 | 2025 | 2026 |
+|-------|---------------|------|------|------|------|
+| Jan   | ~1000         | ~0   | ~1000 | ~0   | ~-500 |
+| Feb   | ~800          | ~200 | ~1200 | ~500 | ~-700 |
+| Mar   | ~700          | ~100 | ~1300 | ~1500 | ~-900 |
+| Apr   | ~800          | ~150 | ~1800 | ~2200 | ~-1300 |
+| May   | ~900          | ~200 | ~2300 | ~2400 | ~-1200 |
+| Jun   | ~950          | ~250 | ~2600 | ~1800 | —    |
+| Jul   | ~1100         | ~300 | ~3000 | ~1500 | —    |
+| Aug   | ~1150         | ~350 | ~2500 | ~1200 | —    |
+| Sep   | ~1150         | ~400 | ~3100 | ~500  | —    |
+| Oct   | ~1200         | ~450 | ~3100 | ~1300 | —    |
+| Nov   | ~1300         | ~500 | ~3300 | ~800  | —    |
+| Dec   | ~1400         | ~600 | ~4800 | ~200  | —    |
+</details>
+
+Source: Wind, GS Global Investment Research
+
+Exhibit 34: Year-to-date LGFV bond net issuance was RMB177bn as of May  
+![](images/32e153c4ba4e8abef455b19f9fc3e16d8f5b5b618186bcec9099e34037b7f21d.jpg)
+
+<details>
+<summary>line chart</summary>
+
+| Month | 2022 | 2023 | 2024 | 2025 | 2026 |
+|-------|------|------|------|------|------|
+| Jan   | 300  | 100  | 50   | 50   | 100  |
+| Feb   | 400  | 300  | 100  | 100  | 150  |
+| Mar   | 600  | 600  | 150  | 150  | 200  |
+| Apr   | 800  | 800  | 100  | 100  | 250  |
+| May   | 900  | 800  | 150  | -50  | 200  |
+| Jun   | 1000 | 1000 | 150  | -50  | -    |
+| Jul   | 1100 | 1100 | 150  | -50  | -    |
+| Aug   | 1200 | 1300 | 150  | -50  | -    |
+| Sep   | 1300 | 1400 | 150  | -50  | -    |
+| Oct   | 1350 | 1500 | 150  | -50  | -    |
+| Nov   | 1350 | 1450 | 150  | -50  | -    |
+| Dec   | 1250 | 1350 | 150  | -50  | -    |
+</details>
+
+We revamp our LGFV bond issuance tracker based on the list of LGFVs from YY rating.
+
+Exhibit 35: LGFV bond issuance yields declined over the past few months  
+![](images/3429942a791ff112871183b9ebd86c4ab27bfb1bc0667ca7f25431e4806581e2.jpg)
+
+<details>
+<summary>line chart</summary>
+
+| Year | High-risk region | Others |
+|------|------------------|--------|
+| 18   | ~6.5%            | ~6.0%  |
+| 19   | ~6.0%            | ~5.5%  |
+| 20   | ~5.5%            | ~4.5%  |
+| 21   | ~6.0%            | ~4.8%  |
+| 22   | ~5.0%            | ~4.0%  |
+| 23   | ~6.0%            | ~4.5%  |
+| 24   | ~3.0%            | ~2.5%  |
+| 25   | ~2.5%            | ~2.0%  |
+| 26   | ~2.0%            | ~1.8%  |
+</details>
+
+We calculate size-weighted average of issuance yields. High-risk region includes Tianjin, Inner Mongolia, Liaoning, Jilin, Heilongjiang, Guangxi, Chongqing, Guizhou, Yunnan, Gansu, Qinghai, and Ningxia.  
+Source: Wind, GS Global Investment Research  
+Source: Wind, GS Global Investment Research
+
+Exhibit 36: Government bond net issuance under Total Social Financing (TSF) rose from April to May (around RMB 1188bn), while corporate bond net issuance fell  
+![](images/3c709a727529bd0ddcfe545d6a1a51128112dcfb55956d80bbf13d98bbda24de.jpg)
+
+<details>
+<summary>line chart</summary>
+
+| Year | Corporate bonds (RMB bn) | Government bonds (RMB bn) |
+|------|---------------------------|----------------------------|
+| 2017 | ~0                        | ~0                         |
+| 2018 | ~400                      | ~600                       |
+| 2019 | ~300                      | ~800                       |
+| 2020 | ~1000                     | ~1400                      |
+| 2021 | ~400                      | ~1000                      |
+| 2022 | ~500                      | ~1600                      |
+| 2023 | ~-500                     | ~-200                      |
+| 2024 | ~300                      | ~1600                      |
+| 2025 | ~400                      | ~1800                      |
+| 2026 | ~500                      | ~1200                      |
+</details>
+
+Here we adjust government bond issuance data for the statistical discrepancies between Wind and TSF.  
+Source: Wind, GS Global Investment Research
+
+Exhibit 37: Special-purpose refinancing bond issuance was around RMB 1.4 trillion in Jan-May 2026 (around 70% of the 2026 quota), while LGSB special-purpose new bond issuance was around RMB 200bn (25% of the 2026 quota)  
+![](images/76ef4f46382f5eb294cc571babaeb9a2e7311e5a8f03293d79906b9b9c06642a.jpg)
+
+<details>
+<summary>bar chart</summary>
+
+| Year | LGSB: special-purpose new bond (Special New Bond) | LGSB: special-purpose refinancing bond (Special New Bond) | LGGB: special-purpose refinancing bond (Special New Bond) | LGSB: debt swap (Special Bond) | LGGB: debt swap (Special Bond) |
+|------|--------------------------------------------------|----------------------------------------------------------|----------------------------------------------------------|-----------------------------|------------------------------|
+| 2015-18 | - | - | - | 12 trillion | - |
+| 2019 pilot program | - | - | 158 | - | - |
+| 2020-22 | - | - | 1.1 trillion | - | - |
+| 2023-24 | 1.8 trillion | - | - | - | - |
+| 2024-28 | 10 trillion | - | - | - | - |
+</details>
+
+LGGB stands for local government general bond, and LGSB stands for local government special bond. General bonds finance non-revenue public works (e.g., fire stations) and are repaid by general public budget revenues, such as taxes. Special bonds fund revenue-generating projects (e.g., toll highways) and are repaid via designated project income. The latest debt swap program includes 1) RMB 800bn of special-purpose new bond annually in 2024-28, and 2) RMB 2 trillion of refinancing bond per year in 2024-26. Unused local government bond quota was deployed for debt resolution in both Q4 2024 and Q4 2025, amounting to RMB 400bn and RMB 300bn, respectively.  
+Source: Wind, GS Global Investment Research
+
+Exhibit 38: Banks bought government bonds and NCDs in April, while funds sold NCDs  
+Single month flow of bond demand by investors in April 2026
+
+<table><tr><td rowspan="2">RMB bn</td><td colspan="3">Rates bonds</td><td colspan="5">Non-financial credit bonds</td><td rowspan="2">NCD</td><td rowspan="2">Commercial bank bond</td></tr><tr><td>CGB</td><td>LGB</td><td>PBB</td><td>Enterprise bond</td><td>SCP</td><td>CP</td><td>MTN</td><td>PPN</td></tr><tr><td>Commercial banks</td><td>144.8</td><td>659.5</td><td>-75.2</td><td>-11.4</td><td>19.8</td><td>-0.3</td><td>50.1</td><td>-5.4</td><td>201.9</td><td>-86.4</td></tr><tr><td>Funds</td><td>123.4</td><td>192.1</td><td>-150.4</td><td>-11.8</td><td>48.8</td><td>-1.1</td><td>184.7</td><td>0.4</td><td>-625.0</td><td>-110.3</td></tr><tr><td>Foreign investors</td><td>-9.8</td><td>6.4</td><td>-20.9</td><td>0.0</td><td>0.3</td><td>-0.2</td><td>0.7</td><td>0.3</td><td>-40.1</td><td>-0.2</td></tr><tr><td>Securities</td><td>58.9</td><td>60.6</td><td>-4.2</td><td>-2.3</td><td>2.1</td><td>-0.1</td><td>-7.7</td><td>-2.7</td><td>-24.0</td><td>-8.7</td></tr><tr><td>Insurance</td><td>-38.3</td><td>33.1</td><td>-23.8</td><td>-0.5</td><td>-0.9</td><td>0.1</td><td>-0.8</td><td>0.0</td><td>-1.5</td><td>-2.5</td></tr></table>
+
+CGB: Central government bonds, LGB: Local government bonds, PBB: Policy bank bonds, NCD: Negotiable certificate of deposits, SCP: Super & short-term commercial paper, CP: Commercial paper, MTN: Medium term note, PPN: Private placement note.  
+Source: Wind, GS Global Investment Research
+
+## Appendix: Summary of FX policy announcements and market color
+
+In this appendix, we summarize the major FX policy announcements since 2020 as well as notable FX-related news in China. Following the classification in a previous note, each announcement is labeled as one of four groups: price, liquidity, capital flow and verbal guidance. In the event of a sharp exchange rate move, such as a 1% depreciation in 10 days, the PBOC may step in to stabilize the USDCNY spot rate with various tools. The impacts tend to be short-lived on a daily basis, but they do slow the pace of exchange rate moves (please see our previous note for additional details).
+
+Exhibit 39: A summary of major FX policy (and related news) to stabilize exchange rates
+
+<table><tr><td>Date</td><td>Category</td><td>FX policy and market color</td></tr><tr><td>Mar-20</td><td>Capital flow</td><td>PBOC and SAFE announced that the macro-prudential adjustment parameter for cross-border financing of financial institutions would be increased from 1 to 1.25</td></tr><tr><td>Oct-20</td><td>Liquidity</td><td>PBOC lowered the risk reserve requirement ratio for FX forward sales from 20% to 0%</td></tr><tr><td>Oct-20</td><td>Price</td><td>Media reported that CNY countercyclical factor was phased out</td></tr><tr><td>Dec-20</td><td>Capital flow</td><td>PBOC and SAFE reduced macro-prudential adjustment parameter for cross-border financing of financial institutions from 1.25 to 1</td></tr><tr><td>Dec-20</td><td>Price</td><td>Media reported that China&#x27;s major state-owned banks were seen buying U.S. dollars to ease sharp yuan rally</td></tr><tr><td>Jan-21</td><td>Capital flow</td><td>PBOC adjusted the currency conversion factor of foreign currency overseas loan balance to 0.5 from 0</td></tr><tr><td>Jan-21</td><td>Capital flow</td><td>PBOC and SAFE raised macro-prudential adjustment parameter for overseas lending by domestic enterprises from 0.3 to 0.5</td></tr><tr><td>Jan-21</td><td>Capital flow</td><td>PBOC and SAFE lowered macro-prudential adjustment parameter for cross-border financing of enterprises from 1.25 to 1</td></tr><tr><td>Jun-21</td><td>Liquidity</td><td>PBOC raised the foreign exchange deposit reverse ratio from 5% to 7%</td></tr><tr><td>Dec-21</td><td>Liquidity</td><td>PBOC further increased the foreign exchange deposit reverse ratio from 7% to 9%</td></tr><tr><td>May-22</td><td>Liquidity</td><td>PBOC announced to lower the foreign exchange deposit reverse ratio from 9% to 8%, the first downward revision since 2017</td></tr><tr><td>Sep-22</td><td>Liquidity</td><td>PBOC lowered the foreign exchange deposit reverse ratio from 8% to 6%</td></tr><tr><td>Sep-22</td><td>Price</td><td>Media reported that the Chinese monetary authorities revived CNY countercyclical factor</td></tr><tr><td>Sep-22</td><td>Liquidity</td><td>PBOC raised the risk reserve requirement ratio for FX forward sales from 0% to 20%</td></tr><tr><td>Sep-22</td><td>Price</td><td>Media reported that PBOC has asked major state-owned banks to sell dollars for yuan in offshore markets</td></tr><tr><td>Oct-22</td><td>Capital flow</td><td>PBOC and SAFE decided to increase macro-prudential adjustment parameter for cross-border financing of both financial institutions and enterprises from 1 to 1.25</td></tr><tr><td>Oct-22</td><td>Price</td><td>Media reported that China&#x27;s key state-owned banks sold U.S. dollars to prop up the weakening yuan in both onshore and offshore spot markets</td></tr><tr><td>Jun-23</td><td>Price</td><td>Media reported that PBOC set a stronger-than-expected trading band for the yuan and state banks sold dollars</td></tr><tr><td>Jul-23</td><td>Capital flow</td><td>PBOC and SAFE further raised macro-prudential adjustment parameter for cross-border financing of both financial institutions and enterprises from 1.25 to 1.5</td></tr><tr><td>Jul-23</td><td>Price</td><td>Media reported that China&#x27;s key state-owned banks were seen selling U.S. dollars to support yuan in both onshore and offshore spot markets</td></tr><tr><td>Aug-23</td><td>Price</td><td>Media reported that China&#x27;s commercial banks were asked to reduce or postpone their purchases of U.S. dollars to slow the yuan&#x27;s depreciation</td></tr><tr><td>Aug-23</td><td>Price</td><td>Media reported that China&#x27;s major state-owned banks were seen a few times selling U.S. dollars to buy yuan in both onshore and offshore spot foreign exchange markets to slow the yuan&#x27;s depreciation</td></tr><tr><td>Aug-23</td><td>Price</td><td>Media reported that PBOC was seen squeezing the CNH funding</td></tr><tr><td>Aug-23</td><td>Price</td><td>Media reported that PBOC has asked some domestic banks to limit some Bond Connect outflows to ensure less supply of yuan in offshore markets</td></tr><tr><td>Sep-23</td><td>Liquidity</td><td>PBOC announced to lower the foreign exchange deposit reverse ratio from 6% to 4%, starting from 15th Sep</td></tr><tr><td>Sep-23</td><td>Price</td><td>Media reported that PBOC has asked some big banks to stagger and adjust dollar purchases to alleviate downward pressure on the yuan</td></tr><tr><td>Sep-23</td><td>Capital flow</td><td>Media reported PBOC approval required for bulk USD purchases of more than USD50mn</td></tr><tr><td>Sep-23</td><td>Liquidity</td><td>CNH funding remained tight in September on additional RMB10bn issuance of PBOC CNH bills and window guidance to state banks</td></tr><tr><td>Oct-23</td><td>Capital flow</td><td>Media reported that CSRC has banned new offshore brokerage investments by existing mainland clients to prevent investors from bypassing China&#x27;s foreign exchange controls</td></tr><tr><td>Nov-23</td><td>Price</td><td>Media reported that China&#x27;s major state-owned banks are actively buying yuan to speed up its recovery against weaker dollar</td></tr><tr><td>Nov-23</td><td>Capital flow</td><td>SAFE is working on simplifying forex procedures by rolling back requirements on the outflow of funds for the dollar-denominated qualified foreign institutional investor scheme (QFII) and its yuan-denominated sibling, RQFII, among other optimized procedures</td></tr><tr><td>Dec-23</td><td>Price</td><td>Media reported that China&#x27;s major state-owned banks actively sold dollars to support yuan</td></tr><tr><td>Jan-24</td><td>Liquidity &amp; Price</td><td>Media reported that China&#x27;s major state-owned banks tightened offshore CNH liquidity and actively sold dollars onshore to support yuan as stock markets tumbled</td></tr><tr><td>Mar-24</td><td>Price</td><td>Media reported that China&#x27;s major state-owned banks actively sold dollars for yuan</td></tr><tr><td>Apr-24</td><td>Price</td><td>Media reported that China&#x27;s major state-owned banks actively sold dollars for yuan</td></tr><tr><td>Jun-24</td><td>Price</td><td>Media reported that China&#x27;s major state-owned banks actively sold dollars for yuan</td></tr><tr><td>Aug-24</td><td>Price</td><td>Media reported that China&#x27;s major state-owned banks bought dollars amid rapid yuan gains</td></tr><tr><td>Jan-25</td><td>Verbal</td><td>PBOC pledged to enhance the &quot;resilience&quot; (韧性) of FX market rather than the &quot;flexibility&quot; (弹性), suggesting a shift toward controlling the speed of depreciation upon US tariff announcements</td></tr><tr><td>Jan-25</td><td>Capital flow</td><td>PBOC and SAFE further raised macro-prudential adjustment parameter for cross-border financing of both financial institutions and enterprises from 1.5 to 1.75</td></tr><tr><td>Apr-25</td><td>Price</td><td>Media reported that China&#x27;s major state-owned banks actively sold dollars to stabilize USDCNY spot</td></tr><tr><td>May-25</td><td>Price</td><td>Media reported that China&#x27;s major state-owned banks bought dollars amid rapid yuan gains</td></tr><tr><td>Jul-25</td><td></td><td>Reuters reported that PBOC surveyed banks on USD weakness, signaling concerns over sharp CNY appreciation</td></tr><tr><td>Aug-25</td><td></td><td>Reuters reported that China&#x27;s exporters bet on a steady Yuan with record high sales of USD/CNY option, avoiding FX conversions</td></tr><tr><td>Sep-25</td><td>Price</td><td>Bloomberg reported that China&#x27;s major state-owned banks actively bought dollars to slow CNY appreciation</td></tr><tr><td>Dec-25</td><td>Price</td><td>Reuters reported that China&#x27;s major state-owned banks actively bought dollars to slow CNY appreciation</td></tr><tr><td>Mar-26</td><td>Liquidity</td><td>PBOC lowered the risk reserve requirement ratio for FX forward sales from 20% to 0%</td></tr><tr><td>Mar-26</td><td>Capital flow</td><td>PBOC and SAFE raised macro-prudential adjustment parameter for overseas lending by domestic enterprises from 0.5 to 0.6</td></tr></table>
+
+Note: There were very likely more capital control measures during this period that were not formally announced/confirmed. Please refer to examples in Asia Economics Analyst: Positive structural developments could help offset capital outflow pressures in China, August 2019.
+
+## The China Economics Team
+
+## Andrew Tilton
+
++852-2978-1802
+
+andrew.tilton@gs.com
+
+GS (Asia) L.L.C.
+
+## Hui Shan
+
++852-2978-6634
+
+hui.shan@gs.com
+
+GS (Asia) L.L.C.
+
+## Lisheng Wang
+
++852-3966-4004
+
+lisheng.wang@gs.com
+
+GS (Asia) L.L.C.
+
+## Xinquan Chen
+
++852-2978-2418
+
+xinquan.chen@gs.com
+
+GS (Asia) L.L.C.
+
+## Yuting Yang
+
++852-2978-7283
+
+yuting.y.yang@gs.com
+
+GS (Asia) L.L.C.
+
+## Chelsea Song
+
++852-2978-0106
+
+chelsea.song@gs.com
+
+GS (Asia) L.L.C.
+
+## Disclosure Appendix
+
+## Reg AC
+
+We, Xinquan Chen and Danny Suwanapruti, hereby certify that all of the views expressed in this report accurately reflect our personal views, which have not been influenced by considerations of the firm's business or client relationships.
+
+Unless otherwise stated, the individuals listed on the cover page of this report are analysts in GS' Global Investment Research division.
+
+Contributing Authors: Xinquan Chen GS (Asia) L.L.C., Danny Suwanapruti GS (Singapore) Pte.
+
+Unless otherwise stated, the individuals listed in the Contributing Authors disclosure of this report are analysts in GS' Global Investment Research division.
+
+## Disclosures
+
+## Regulatory disclosures
+
+## Disclosures required by United States laws and regulations
+
+See company-specific regulatory disclosures above for any of the following disclosures required as to companies referred to in this report: manager or co-manager in a pending transaction; 1% or other ownership; compensation for certain services; types of client relationships; managed/co-managed public offerings in prior periods; directorships; for equity securities, market making and/or specialist role. GS trades or may trade as a principal in debt securities (or in related derivatives) of issuers discussed in this report.
+
+The following are additional required disclosures: Ownership and material conflicts of interest: GS policy prohibits its analysts, professionals reporting to analysts and members of their households from owning securities of any company in the analyst's area of coverage. Analyst compensation: Analysts are paid in part based on the profitability of GS, which includes investment banking revenues. Analyst as officer or director: GS policy generally prohibits its analysts, persons reporting to analysts or members of their households from serving as an officer, director or advisor of any company in the analyst's area of coverage. Non-U.S. Analysts: Non-U.S. analysts may not be associated persons of GS & Co. LLC and therefore may not be subject to FINRA Rule 2241 or FINRA Rule 2242 restrictions on communications with a subject company, public appearances and trading in securities covered by the analysts.
+
+## Additional disclosures required under the laws and regulations of jurisdictions other than the United States
+
+The following disclosures are those required by the jurisdiction indicated, except to the extent already made above pursuant to United States laws and regulations. Australia: GS Australia Pty Ltd and its affiliates are not authorised deposit-taking institutions (as that term is defined in the Banking Act 1959 (Cth)) in Australia and do not provide banking services, nor carry on a banking business, in Australia. This research, and any access to it, is intended only for “wholesale clients” within the meaning of the Australian Corporations Act, unless otherwise agreed by GS. In producing research reports, members of Global Investment Research of GS Australia may attend site visits and other meetings hosted by the companies and other entities which are the subject of its research reports. In some instances the costs of such site visits or meetings may be met in part or in whole by the issuers concerned if GS Australia considers it is appropriate and reasonable in the specific circumstances relating to the site visit or meeting. To the extent that the contents of this document contains any financial product advice, it is general advice only and has been prepared by GS without taking into account a client’s objectives, financial situation or needs. A client should, before acting on any such advice, consider the appropriateness of the advice having regard to the client’s own objectives, financial situation and needs. A copy of certain GS Australia and New Zealand disclosure of interests and a copy of GS’ Australian Sell-Side Research Independence Policy Statement are available at: https://www.goldmansachs.com/disclosures/australia-new-zealand/index.html. Brazil: Disclosure information in relation to CVM Resolution n. 20 is available at https://www.gs.com/worldwide/brazil/area/gir/index.html. Where applicable, the Brazil-registered analyst primarily responsible for the content of this research report, as defined in Article 20 of CVM Resolution n. 20, is the first author named at the beginning of this report, unless indicated otherwise at the end of the text. Canada: This information is being provided to you for information purposes only and is not, and under no circumstances should be construed as, an advertisement, offering or solicitation by GS & Co. LLC for purchasers of securities in Canada to trade in any Canadian security. GS & Co. LLC is not registered as a dealer in any jurisdiction in Canada under applicable Canadian securities laws and generally is not permitted to trade in Canadian securities and may be prohibited from selling certain securities and products in certain jurisdictions in Canada. If you wish to trade in any Canadian securities or other products in Canada please contact GS Canada Inc., an affiliate of The GS Group Inc., or another registered Canadian dealer. Hong Kong: Further information on the securities of covered companies referred to in this research may be obtained on request from GS (Asia) L.L.C. India: Further information on the subject company or companies referred to in this research may be obtained from GS (India) Securities Private Limited, Research Analyst - SEBI Registration Number INH000001493, 10th Floor, Ascent-Worli, Sudam Kalu Ahire Marg, Worli, Mumbai-400 025, India, Corporate Identity Number U74140MH2006FTC160634, Phone +91 22 6616 9000, Fax +91 22 6616 9001. GS may beneficially own 1% or more of the securities (as such term is defined in clause 2 (h) the Indian Securities Contracts (Regulation) Act, 1956) of the subject company or companies referred to in this research report. Investment in securities market are subject to market risks. Read all the related documents carefully before investing. Registration granted by SEBI and certification from NISM in no way guarantee performance of the intermediary or provide any assurance of returns to investors. GS (India) Securities Private Limited compliance officer and investor grievance contact details can be found at: https://www.goldmansachs.com/worldwide/india/documents/Grievance-Redressal-and-Escalation-Matrix.pdf, and a copy of the annual audit compliance report can be found at this link: https://publishing.gs.com/content/site/india-annual-compliance-report.html. Japan: See below. Korea: This research, and any access to it, is intended only for “professional investors” within the meaning of the Financial Services and Capital Markets Act, unless otherwise agreed by GS. Further information on the subject company or companies referred to in this research may be obtained from GS (Asia) L.L.C., Seoul Branch. New Zealand: GS New Zealand Limited and its affiliates are neither “registered banks” nor “deposit takers” (as defined in the Reserve Bank of New Zealand Act 1989) in New Zealand. This research, and any access to it, is intended for “wholesale clients” (as defined in the Financial Advisers Act 2008) unless otherwise agreed by GS. A copy of certain GS Australia and New Zealand disclosure of interests is available at: https://www.goldmansachs.com/disclosures/australia-new-zealand/index.html. Russia: Research reports distributed in the Russian Federation are not advertising as defined in the Russian legislation, but are information and analysis not having product promotion as their main purpose and do not provide appraisal within the meaning of the Russian legislation on appraisal activity. Research reports do not constitute a personalized investment recommendation as defined in Russian laws and regulations, are not addressed to a specific client, and are prepared without analyzing the financial circumstances, investment profiles or risk profiles of clients. GS assumes no responsibility for any investment decisions that may be taken by a client or any other person based on this research report. Singapore: GS (Singapore) Pte. (Company Number: 198602165W), which is regulated by the Monetary Authority of Singapore, accepts legal responsibility for this research, and should be contacted with respect to any matters arising from, or in connection with, this research. Taiwan: This material is for reference only and must not be reprinted without permission. Investors should carefully consider their own investment risk. Investment results are the responsibility of the individual investor. United Kingdom: Persons who would be categorized as retail clients in the United Kingdom, as such term is defined in the rules of the Financial Conduct Authority, should read this research in conjunction with prior GS on the covered
+
+companies referred to herein and should refer to the risk warnings that have been sent to them by GS International. A copy of these risks warnings, and a glossary of certain financial terms used in this report, are available from GS International on request.
+
+European Union and United Kingdom: Disclosure information in relation to Article 6 (2) of the European Commission Delegated Regulation (EU) (2016/958) supplementing Regulation (EU) No 596/2014 of the European Parliament and of the Council (including as that Delegated Regulation is implemented into United Kingdom domestic law and regulation following the United Kingdom's departure from the European Union and the European Economic Area) with regard to regulatory technical standards for the technical arrangements for objective presentation of investment recommendations or other information recommending or suggesting an investment strategy and for disclosure of particular interests or indications of conflicts of interest is available at https://www.gs.com/disclosures/europeanpolicy.html which states the European Policy for Managing Conflicts of Interest in Connection with Investment Research.
+
+Japan: GS Japan Co., Ltd. is a Financial Instrument Dealer registered with the Kanto Financial Bureau under registration number Kinsho 69, and a member of Japan Securities Dealers Association, Financial Futures Association of Japan Type II Financial Instruments Firms Association, and Investment Management Association of Japan. Sales and purchase of equities are subject to commission pre-determined with clients plus consumption tax. See company-specific disclosures as to any applicable disclosures required by Japanese stock exchanges, the Japanese Securities Dealers Association or the Japanese Securities Finance Company.
+
+## Global product; distributing entities
+
+GS Global Investment Research produces and distributes research products for clients of GS on a global basis. Analysts based in GS offices around the world produce research on industries and companies, and research on macroeconomics, currencies, commodities and portfolio strategy. This research is disseminated in Australia by GS Australia Pty Ltd (ABN 21 006 797 897); in Brazil by GS do Brasil Corretora de Títulos e Valores Mobiliários S.A.; Public Communication Channel GS Brazil: 0800 727 5764 and / or contatogoldmanbrasil@gs.com. Available Weekdays (except holidays), from 9am to 6pm. Canal de Comunicação com o Público GS Brasil: 0800 727 5764 e/ou contatogoldmanbrasil@gs.com. Horário de funcionamento: segunda-feira à sexta-feira (exceto feriados), das 9h às 18h; in Canada by GS & Co. LLC; in Hong Kong by GS (Asia) L.L.C.; in India by GS (India) Securities Private Ltd.; in Japan by GS Japan Co., Ltd.; in the Republic of Korea by GS (Asia) L.L.C., Seoul Branch; in New Zealand by GS New Zealand Limited; in Russia by OOO GS; in Singapore by GS (Singapore) Pte. (Company Number: 198602165W); and in the United States of America by GS & Co. LLC. GS International has approved this research in connection with its distribution in the United Kingdom.
+
+GS International (“GSI”), authorised by the Prudential Regulation Authority (“PRA”) and regulated by the Financial Conduct Authority (“FCA”) and the PRA, has approved this research in connection with its distribution in the United Kingdom.
+
+European Economic Area: GS Bank Europe SE (“GSBE”) is a credit institution incorporated in Germany and, within the Single Supervisory Mechanism, subject to direct prudential supervision by the European Central Bank and in other respects supervised by German Federal Financial Supervisory Authority (Bundesanstalt für Finanzdienstleistungsaufsicht, BaFin) and Deutsche Bundesbank and disseminates research within the European Economic Area.
+
+## General disclosures
+
+This research is for our clients only. Other than disclosures relating to GS, this research is based on current public information that we consider reliable, but we do not represent it is accurate or complete, and it should not be relied on as such. The information, opinions, estimates and forecasts contained herein are as of the date hereof and are subject to change without prior notification. We seek to update our research as appropriate, but various regulations may prevent us from doing so. Other than certain industry reports published on a periodic basis, the large majority of reports are published at irregular intervals as appropriate in the analyst's judgment.
+
+GS conducts a global full-service, integrated investment banking, investment management, and brokerage business. We have investment banking and other business relationships with a substantial percentage of the companies covered by Global Investment Research. GS & Co. LLC, the United States broker dealer, is a member of SIPC (https://www.sipc.org).
+
+Our salespeople, traders, and other professionals may provide oral or written market commentary or trading strategies to our clients and principal trading desks that reflect opinions that are contrary to the opinions expressed in this research. Our asset management area, principal trading desks and investing businesses may make investment decisions that are inconsistent with the recommendations or views expressed in this research.
+
+We and our affiliates, officers, directors, and employees will from time to time have long or short positions in, act as principal in, and buy or sell, the securities or derivatives, if any, referred to in this research, unless otherwise prohibited by regulation or GS policy.
+
+The views attributed to third party presenters at GS arranged conferences, including individuals from other parts of GS, do not necessarily reflect those of Global Investment Research and are not an official view of GS.
+
+Any third party referenced herein, including any salespeople, traders and other professionals or members of their household, may have positions in the products mentioned that are inconsistent with the views expressed by analysts named in this report.
+
+This research is focused on investment themes across markets, industries and sectors. It does not attempt to distinguish between the prospects or performance of, or provide analysis of, individual companies within any industry or sector we describe.
+
+Any trading recommendation in this research relating to an equity or credit security or securities within an industry or sector is reflective of the investment theme being discussed and is not a recommendation of any such security in isolation.
+
+This research is not an offer to sell or the solicitation of an offer to buy any security in any jurisdiction where such an offer or solicitation would be illegal. It does not constitute a personal recommendation or take into account the particular investment objectives, financial situations, or needs of individual clients. Clients should consider whether any advice or recommendation in this research is suitable for their particular circumstances and, if appropriate, seek professional advice, including tax advice. The price and value of investments referred to in this research and the income from them may fluctuate. Past performance is not a guide to future performance, future returns are not guaranteed, and a loss of original capital may occur. Fluctuations in exchange rates could have adverse effects on the value or price of, or income derived from, certain investments.
+
+Certain transactions, including those involving futures, options, and other derivatives, give rise to substantial risk and are not suitable for all investors. Investors should review current options and futures disclosure documents which are available from GS sales representatives or at https://www.theocc.com/about/publications/character-risks.jsp and https://www.goldmansachs.com/disclosures/cftc\_fcm\_disclosures. Transaction costs may be significant in option strategies calling for multiple purchase and sales of options such as spreads. Supporting documentation will be supplied upon request.
+
+Differing Levels of Service provided by Global Investment Research: The level and types of services provided to you by GS Global Investment Research may vary as compared to that provided to internal and other external clients of GS, depending on various factors including your individual preferences as to the frequency and manner of receiving communication, your risk profile and investment focus and perspective (e.g.,
+
+marketwide, sector specific, long term, short term), the size and scope of your overall client relationship with GS, and legal and regulatory constraints. As an example, certain clients may request to receive notifications when research on specific securities is published, and certain clients may request that specific data underlying analysts' fundamental analysis available on our internal client websites be delivered to them electronically through data feeds or otherwise. No change to an analyst's fundamental research views (e.g., ratings, price targets, or material changes to earnings estimates for equity securities), will be communicated to any client prior to inclusion of such information in a research report broadly disseminated through electronic publication to our internal client websites or through other means, as necessary, to all clients who are entitled to receive such reports.
+
+All research reports are disseminated and available to all clients simultaneously through electronic publication to our internal client websites. Not all research content is redistributed to our clients or available to third-party aggregators, nor is GS responsible for the redistribution of our research by third party aggregators. For research, models or other data related to one or more securities, markets or asset classes (including related services) that may be available to you, please contact your GS representative or go to https://research.gs.com.
+
+Disclosure information is also available at https://www.gs.com/research/hedge.html or from Research Compliance, 200 West Street, New York, NY 10282.
+
+## © 2026 GS.
+
+You are permitted to store, display, analyze, modify, reformat, and print the information made available to you via this service only for your own use. You may not resell or reverse engineer this information to calculate or develop any index for disclosure and/or marketing or create any other derivative works or commercial product(s), data or offering(s) without the express written consent of GS. You are not permitted to publish, transmit, or otherwise reproduce this information, in whole or in part, in any format to any third party without the express written consent of GS. This foregoing restriction includes, without limitation, using, extracting, downloading or retrieving this information, in whole or in part, to train or finetune a machine learning or artificial intelligence system, or to provide or reproduce this information, in whole or in part, as a prompt or input to any such system.

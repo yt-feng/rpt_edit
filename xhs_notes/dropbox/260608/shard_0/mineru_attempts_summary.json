@@ -1,0 +1,34 @@
+[
+  {
+    "attempt": 1,
+    "round": 1,
+    "token_label": "MINER_U_2",
+    "submitted_pdf_count": 4,
+    "successful_pdf_count": 4,
+    "retry_pdf_count": 0,
+    "timed_out": false,
+    "error": "",
+    "states": [
+      {
+        "pdf": "/tmp/pdf_batch_001_jpn5wzhv/pdfs/0001-01-GS-China FX Rates Monitor- The Policy Anchor Behind a Stronger CNY and Lower Rates-260607.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_jpn5wzhv/pdfs/0002-02-MS-China-s 3D Journey-The Hefei Paradox- Why Smart Industrial Policy Can-t Fix Macro Imbalances-260607.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_jpn5wzhv/pdfs/0003-03-JPM-Equity Strategy-What would it take for Europe to trade relatively better--260608.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_jpn5wzhv/pdfs/0004-04-NOM-Economic Insights-NOM Investment Forum Asia 2026- A recap of our macro views and what investors think-260608.pdf",
+        "state": "done",
+        "error": ""
+      }
+    ]
+  }
+]
