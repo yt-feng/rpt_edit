@@ -10,5 +10,5 @@
 - Batch size: 5
 - Report directories generated: 0
 - Audio/video generation: disabled
-- Duration seconds: 172
+- Duration seconds: 165
 - Output directory: xhs_notes/dropbox/260608/shard_33
