@@ -1,0 +1,19 @@
+Found 34 total PDFs; shard 3/40 has 5 PDFs, skips 0 already converted, will process 5 PDFs with batch_size=5.
+Running batch 1: 5 PDFs
+Found 5 PDFs. MinerU token slots available=2.
+MinerU attempt 1/4 using MINER_U_2: submitting 5 PDF(s).
+Uploading PDF to MinerU: /tmp/pdf_batch_001_p0c4pz25/pdfs/0001-16-Morgan Stanley-China Financials-New Consultation Paper on RMB Deposit and Loan Interest Rate Management Rules to Support Fair and Marketoriented Pricing-260607.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_p0c4pz25/pdfs/0002-17-Goldman Sachs-CHINA NEW ENERGY VEHICLE WEEKLY CHARTBOOK-2026 Week 23 - Weekly NEV orders -7- -15- yoy wow- retail NEV penetration 63--260609.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_p0c4pz25/pdfs/0003-18-Goldman Sachs-CHINA PROPERTY WEEKLY WRAP Week 23 Wrap-Transaction pace retreated sequentially but sentiment stable- HPF optimization broader than initial expectations-260609.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_p0c4pz25/pdfs/0004-19-Morgan Stanley-China Industrials-May Excavator Sales- Growth Much Stronger than Feared-260607.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_p0c4pz25/pdfs/0005-20-Morgan Stanley-China Industrials-Trip Takeaways- Stronger- Broader Capex Boom-260608.pdf
+MinerU attempt 1 using MINER_U_2 batch_id=431eaf3c-e0fb-4107-aefb-8200873f1808
+MinerU states: running, pending, pending, pending, pending
+MinerU states: done, running, running, running, running
+MinerU states: done, running, running, done, running
+MinerU states: done, done, running, done, done
+MinerU states: done, done, running, done, done
+MinerU states: done, done, running, done, done
+MinerU states: done, done, done, done, done
+Done. Results written to /home/runner/work/rpt_edit/rpt_edit/xhs_notes/dropbox/260609/shard_3; successful_reports=5; mineru_timed_out=False; mineru_attempts=1
+All batches completed successfully. Generated 5 report directories.
