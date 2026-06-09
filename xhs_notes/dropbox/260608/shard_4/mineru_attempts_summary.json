@@ -1,0 +1,34 @@
+[
+  {
+    "attempt": 1,
+    "round": 1,
+    "token_label": "MINER_U_2",
+    "submitted_pdf_count": 4,
+    "successful_pdf_count": 4,
+    "retry_pdf_count": 0,
+    "timed_out": false,
+    "error": "",
+    "states": [
+      {
+        "pdf": "/tmp/pdf_batch_001_h6nraogb/pdfs/0001-21-GS-Japan SMID Monitor-How do yuutai SMIDs perform during corrections--260608.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_h6nraogb/pdfs/0002-22-MS-Pharmaceuticals-The Ozempic cliff- generic risks- opportunities and bottlenecks-260607.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_h6nraogb/pdfs/0003-23-MS-Biopharma-Takeaways from ADA Conference and KOL meeting-260608.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_h6nraogb/pdfs/0004-24-MS-Software Snippets-Increasing Signs of Token Budgeting--260607.pdf",
+        "state": "done",
+        "error": ""
+      }
+    ]
+  }
+]

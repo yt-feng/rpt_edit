@@ -1,0 +1,13 @@
+Found 24 total PDFs; shard 4/40 has 4 PDFs, skips 0 already converted, will process 4 PDFs with batch_size=5.
+Running batch 1: 4 PDFs
+Found 4 PDFs. MinerU token slots available=2.
+MinerU attempt 1/4 using MINER_U_2: submitting 4 PDF(s).
+Uploading PDF to MinerU: /tmp/pdf_batch_001_h6nraogb/pdfs/0001-21-Goldman Sachs-Japan SMID Monitor-How do yuutai SMIDs perform during corrections--260608.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_h6nraogb/pdfs/0002-22-Morgan Stanley-Pharmaceuticals-The Ozempic cliff- generic risks- opportunities and bottlenecks-260607.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_h6nraogb/pdfs/0003-23-Morgan Stanley-Biopharma-Takeaways from ADA Conference and KOL meeting-260608.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_h6nraogb/pdfs/0004-24-Morgan Stanley-Software Snippets-Increasing Signs of Token Budgeting--260607.pdf
+MinerU attempt 1 using MINER_U_2 batch_id=a99717c2-9446-4adf-aabb-779e1be220d0
+MinerU states: done, done, done, waiting-file
+MinerU states: done, done, done, done
+Done. Results written to /home/runner/work/rpt_edit/rpt_edit/xhs_notes/dropbox/260608/shard_4; successful_reports=4; mineru_timed_out=False; mineru_attempts=1
+All batches completed successfully. Generated 4 report directories.
