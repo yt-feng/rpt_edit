@@ -1,0 +1,4361 @@
+[
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "June 8, 2026 03:23 AM GMT"
+                    }
+                ]
+            },
+            "bbox": [
+                63,
+                75,
+                246,
+                90
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Investor Presentation: Global Technology | Asia Pacific"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                63,
+                97,
+                553,
+                135
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Chipflation"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                66,
+                148,
+                246,
+                181
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "MS & CO. INTERNATIONAL PLC+"
+                    }
+                ]
+            },
+            "bbox": [
+                624,
+                97,
+                815,
+                107
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Shawn Kim"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                625,
+                109,
+                694,
+                122
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Equity Analyst"
+                    }
+                ]
+            },
+            "bbox": [
+                625,
+                125,
+                681,
+                133
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Shawn.Kim@morganstanley.com"
+                    }
+                ]
+            },
+            "bbox": [
+                625,
+                135,
+                754,
+                145
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "+44 20 7677-1018"
+                    }
+                ]
+            },
+            "bbox": [
+                859,
+                135,
+                931,
+                143
+            ]
+        },
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/25b3d3c7d39a83bbe2bf1bc5a5329b6c0331881a468a56eb1abe4fd7e608f914.jpg"
+                },
+                "content": "Asia Summer School 2026",
+                "image_caption": [],
+                "image_footnote": []
+            },
+            "sub_type": "text_image",
+            "bbox": [
+                627,
+                159,
+                929,
+                220
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "MS does and seeks to do business with companies covered in MS. As a result, investors should be aware that the firm may have a conflict of interest that could affect the objectivity of MS. Investors should consider MS as only a single factor in making their investment decision."
+                    }
+                ]
+            },
+            "bbox": [
+                624,
+                766,
+                929,
+                845
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "For analyst certification and other important disclosures, refer to the Disclosure Section, located at the end of this report."
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                624,
+                849,
+                916,
+                883
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "+= Analysts employed by non-U.S. affiliates are not registered with FINRA, may not be associated persons of the member and may not be subject to FINRA restrictions on communications with a subject company, public appearances and trading securities held by a research analyst account."
+                    }
+                ]
+            },
+            "bbox": [
+                624,
+                886,
+                929,
+                944
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "MS"
+                    }
+                ]
+            },
+            "bbox": [
+                63,
+                44,
+                264,
+                71
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "RESEARCH"
+                    }
+                ]
+            },
+            "bbox": [
+                295,
+                51,
+                364,
+                63
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "FOUNDATION"
+                    }
+                ]
+            },
+            "bbox": [
+                805,
+                50,
+                933,
+                66
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Chipflation – The Story in Numbers"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                77,
+                240,
+                353,
+                266
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "SURGING MEMORY TAM"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                333,
+                297,
+                417,
+                310
+            ]
+        },
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/99c632705f6a01b782de36d7066275c7bb5a93b7b33db957f58c0783f91c312a.jpg"
+                },
+                "content": "",
+                "image_caption": [],
+                "image_footnote": []
+            },
+            "bbox": [
+                325,
+                334,
+                426,
+                380
+            ]
+        },
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/53e95d421656b490551bfb5035a452da3c762d3f26edb136c29a473cc2a31d89.jpg"
+                },
+                "content": "",
+                "image_caption": [],
+                "image_footnote": []
+            },
+            "bbox": [
+                353,
+                380,
+                391,
+                429
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "DRAM DEMAND SHIFTS TO SERVERS"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                462,
+                292,
+                534,
+                316
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Server share of DRAM demand rises"
+                    }
+                ]
+            },
+            "bbox": [
+                441,
+                330,
+                561,
+                341
+            ]
+        },
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/ea15d19853190c336737a2a0cdd804c94da029242df46be965505c42c33de4d1.jpg"
+                },
+                "content": "",
+                "image_caption": [],
+                "image_footnote": []
+            },
+            "bbox": [
+                452,
+                352,
+                545,
+                379
+            ]
+        },
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/710afd2c62533f235a9040527f4e8912137afbf4a135e1cfe1ebb94c00814ac0.jpg"
+                },
+                "content": "",
+                "image_caption": [],
+                "image_footnote": []
+            },
+            "bbox": [
+                474,
+                380,
+                526,
+                429
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "ENTERPRISE SSDS RAPIDLY GAIN SHARE"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                585,
+                292,
+                661,
+                316
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Enterprise SSDs Jump from"
+                    }
+                ]
+            },
+            "bbox": [
+                575,
+                330,
+                666,
+                341
+            ]
+        },
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/84fb84e28bbe8a7d75f83d2de6cde1374385bde63c31a715a156b40223338e85.jpg"
+                },
+                "content": "",
+                "image_caption": [],
+                "image_footnote": []
+            },
+            "bbox": [
+                578,
+                352,
+                671,
+                379
+            ]
+        },
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/8080c2e31b6f6e1a120ec518587351864f02abe45b7b85d6ce87200762d402f6.jpg"
+                },
+                "content": "",
+                "image_caption": [],
+                "image_footnote": []
+            },
+            "bbox": [
+                599,
+                385,
+                652,
+                433
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "SUPPLY IS CONCENTRATED AND SHIFTING"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                422,
+                442,
+                571,
+                454
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "3 firms control ~90% of DRAM output worldwide"
+                    }
+                ]
+            },
+            "bbox": [
+                328,
+                465,
+                492,
+                478
+            ]
+        },
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/06eb0911ec1ea9df6cbfe232ce89f297d8cabd8f100eaa8f183b41222a379a2b.jpg"
+                },
+                "content": "",
+                "image_caption": [
+                    {
+                        "type": "text",
+                        "content": "SAMSUNG"
+                    },
+                    {
+                        "type": "text",
+                        "content": "micron"
+                    }
+                ],
+                "image_footnote": []
+            },
+            "bbox": [
+                340,
+                503,
+                431,
+                566
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "25%"
+                    }
+                ]
+            },
+            "bbox": [
+                444,
+                535,
+                470,
+                550
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "China's share of industry capacity rises from 18% to >23% by 2028E, representing ~30% of net wafer additions – second only to South Korea"
+                    }
+                ]
+            },
+            "bbox": [
+                510,
+                465,
+                672,
+                506
+            ]
+        },
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/72f3bfa7bbdf19ca6912d1fdf7e908c3b0ce0e3f4e697a704111fec3c40831a9.jpg"
+                },
+                "content": "",
+                "image_caption": [],
+                "image_footnote": []
+            },
+            "bbox": [
+                532,
+                519,
+                558,
+                553
+            ]
+        },
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/0778343c9e91854ace324f2d39434da6d3198dcbe6d12275f018248b0d132367.jpg"
+                },
+                "content": "",
+                "image_caption": [],
+                "image_footnote": []
+            },
+            "bbox": [
+                565,
+                514,
+                651,
+                563
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "HBM USAGE SURGES ACROSS HIERARCHY LEVELS"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                409,
+                576,
+                584,
+                588
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "AI Chip"
+                    }
+                ]
+            },
+            "bbox": [
+                345,
+                604,
+                375,
+                614
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "7x Surge in HBM usage"
+                    }
+                ]
+            },
+            "bbox": [
+                340,
+                617,
+                385,
+                640
+            ]
+        },
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/38ff2cb9ee7414917cae497732a5f3b066f21979f31b03e28f92dc9863b10a0f.jpg"
+                },
+                "content": "",
+                "image_caption": [
+                    {
+                        "type": "text",
+                        "content": "AI System"
+                    }
+                ],
+                "image_footnote": []
+            },
+            "bbox": [
+                388,
+                598,
+                422,
+                645
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "65x Surge in HBM usage"
+                    }
+                ]
+            },
+            "bbox": [
+                465,
+                617,
+                508,
+                640
+            ]
+        },
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/4b68b3d2543c3140c527db7e809c5ca32bf946ab3e78b43d3f256e0f64c7c73e.jpg"
+                },
+                "content": "",
+                "image_caption": [
+                    {
+                        "type": "text",
+                        "content": "AI Cluster"
+                    }
+                ],
+                "image_footnote": []
+            },
+            "bbox": [
+                516,
+                599,
+                547,
+                640
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "1800x Surge in HBM usage"
+                    }
+                ]
+            },
+            "bbox": [
+                583,
+                616,
+                631,
+                640
+            ]
+        },
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/35b444ddfcb5fea26e65406b13d62fc7216cb0726112cb3ff633dae5d8dddabc.jpg"
+                },
+                "content": "",
+                "image_caption": [],
+                "image_footnote": []
+            },
+            "bbox": [
+                637,
+                598,
+                664,
+                642
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "HBM & AI CROWD OUT CONVENTIONAL MEMORY"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                411,
+                661,
+                582,
+                673
+            ]
+        },
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/b306342d4d99f152dd7151c0234fa4bdc561af9ea3dc27c58ae20ab32bdccfad.jpg"
+                },
+                "content": "",
+                "image_caption": [],
+                "image_footnote": []
+            },
+            "bbox": [
+                325,
+                687,
+                368,
+                745
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "HBM SHARE OF LEADING-EDGE WAFERS"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                385,
+                686,
+                470,
+                707
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "HBM rises from  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "\\sim 6\\%"
+                    },
+                    {
+                        "type": "text",
+                        "content": " of leading-edge memory wafers in 2023 to  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "\\sim 34\\%"
+                    },
+                    {
+                        "type": "text",
+                        "content": " by 2028E"
+                    }
+                ]
+            },
+            "bbox": [
+                380,
+                712,
+                476,
+                754
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "INCREASING AI PRIORITIZATION"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                516,
+                686,
+                628,
+                697
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "leads to ~15% PC DRAM shortfall and ~12% smartphone DRAM shortfall in 2027, equivalent to ~58mn PCs and ~134mn smartphones"
+                    }
+                ]
+            },
+            "bbox": [
+                508,
+                699,
+                636,
+                753
+            ]
+        },
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/91ac8778c25a47304488eee7d4192c53f6121679d35c14e1ec3fbb00820031e4.jpg"
+                },
+                "content": "",
+                "image_caption": [],
+                "image_footnote": []
+            },
+            "bbox": [
+                641,
+                687,
+                679,
+                746
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "PRICING IMPACT"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                467,
+                766,
+                527,
+                777
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Electronics"
+                    }
+                ]
+            },
+            "bbox": [
+                344,
+                787,
+                387,
+                799
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "component PPI +30% y/y"
+                    }
+                ]
+            },
+            "bbox": [
+                340,
+                802,
+                390,
+                826
+            ]
+        },
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/1279ba376a27dff13928cc92f7127c6bc3c7d6c06c2275e40151c3f26425b4be.jpg"
+                },
+                "content": "",
+                "image_caption": [
+                    {
+                        "type": "text",
+                        "content": "Direct"
+                    }
+                ],
+                "image_footnote": []
+            },
+            "bbox": [
+                396,
+                789,
+                428,
+                823
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "US CPI exposure  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "< 1\\%"
+                    }
+                ]
+            },
+            "bbox": [
+                446,
+                800,
+                497,
+                825
+            ]
+        },
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/0b60f82e8d40ef1a9c450cc7d172db343ab83f33486f902042e4d24568a79838.jpg"
+                },
+                "content": "",
+                "image_caption": [
+                    {
+                        "type": "text",
+                        "content": "Incremental global memory"
+                    }
+                ],
+                "image_footnote": []
+            },
+            "bbox": [
+                500,
+                787,
+                531,
+                828
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "market equivalent to ~45% of traditional hardware revenue"
+                    }
+                ]
+            },
+            "bbox": [
+                542,
+                800,
+                643,
+                825
+            ]
+        },
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/2d75ab4c4ca0b6dbddb5a4e3906ffe6098bc9bcf56eb2aa9b12136aa4a4dd5f1.jpg"
+                },
+                "content": "",
+                "image_caption": [],
+                "image_footnote": []
+            },
+            "bbox": [
+                648,
+                787,
+                676,
+                826
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "MS"
+                    }
+                ]
+            },
+            "bbox": [
+                46,
+                47,
+                141,
+                68
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "RESEARCH"
+                    }
+                ]
+            },
+            "bbox": [
+                155,
+                53,
+                189,
+                63
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "FOUNDATION"
+                    }
+                ]
+            },
+            "bbox": [
+                891,
+                53,
+                949,
+                66
+            ]
+        },
+        {
+            "type": "page_footnote",
+            "content": {
+                "page_footnote_content": [
+                    {
+                        "type": "text",
+                        "content": "Source: MS."
+                    }
+                ]
+            },
+            "bbox": [
+                79,
+                826,
+                220,
+                841
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "2"
+                    }
+                ]
+            },
+            "bbox": [
+                47,
+                960,
+                55,
+                970
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "AI is turning memory into a structural bottleneck"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                75,
+                240,
+                457,
+                266
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/2be534acf7659d29ca59f10475afadf1b10b06e75ea5f8f4a7490a6669d749e6.jpg"
+                },
+                "content": "| Component | Capacity per Rack (TB per rack) |\n| --------- | ------------------------------- |\n| HBM       | 20.7                            |\n| DRAM      | 54                              |\n| NAND      | 100+                            |",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "• AI servers are becoming memory systems"
+                    }
+                ],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: WSTS, TrendForce, MS."
+                    }
+                ]
+            },
+            "sub_type": "pyramid chart",
+            "bbox": [
+                77,
+                366,
+                497,
+                769
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/45e3cfed1c158e5a5a05f06a7f9e4fb2701371f417089a6cc593dfa364b21275.jpg"
+                },
+                "content": "| Date    | DRAM Contract YoY (RHS) |\n|---------|--------------------------|\n| Jan-16  | -50%                     |\n| May-16  | -50%                     |\n| Sep-16  | 0%                       |\n| Jan-17  | 100%                     |\n| May-17  | 150%                     |\n| Sep-17  | 100%                     |\n| Jan-18  | 50%                      |\n| May-18  | 0%                       |\n| Sep-18  | -50%                     |\n| Jan-19  | -100%                    |\n| May-19  | -100%                    |\n| Sep-19  | -100%                    |\n| Jan-20  | -50%                     |\n| May-20  | 0%                       |\n| Sep-20  | 0%                       |\n| Jan-21  | 0%                       |\n| May-21  | 0%                       |\n| Sep-21  | 0%                       |\n| Jan-22  | 0%                       |\n| May-22  | -50%                     |\n| Sep-22  | -50%                     |\n| Jan-23  | -50%                     |\n| May-23  | -50%                     |\n| Sep-23  | -50%                     |\n| Jan-24  | 0%                       |\n| May-24  | 50%                      |\n| Sep-24  | 0%                       |\n| Jan-25  | -50%                     |\n| May-25  | -50%                     |\n| Sep-25  | 0%                       |\n| Jan-26  | 400%                     |\n| May-26  | 650%                     |\n| Sep-26  | 700%                     |",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "- Prices for memory have risen more than 6-fold over the last year"
+                    }
+                ],
+                "chart_footnote": []
+            },
+            "sub_type": "line chart",
+            "bbox": [
+                527,
+                341,
+                878,
+                539
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/2f0944f319ada1005b308f9c92c2a3e18edf57dea7e6a095e11d7307714542d9.jpg"
+                },
+                "content": "| Year | Blended DRAM ASP (US$) |\n|------|------------------------|\n| 01   | ~100.0                 |\n| 02   | ~50.0                  |\n| 03   | ~30.0                  |\n| 04   | ~25.0                  |\n| 05   | ~20.0                  |\n| 06   | ~15.0                  |\n| 07   | ~10.0                  |\n| 08   | ~5.0                   |\n| 09   | ~3.0                   |\n| 10   | ~2.5                   |\n| 11   | ~2.0                   |\n| 12   | ~1.5                   |\n| 13   | ~1.2                   |\n| 14   | ~1.0                   |\n| 15   | ~0.8                   |\n| 16   | ~0.7                   |\n| 17   | ~0.6                   |\n| 18   | ~0.5                   |\n| 19   | ~0.4                   |\n| 20   | ~0.3                   |\n| 21   | ~0.2                   |\n| 22   | ~0.15                  |\n| 23   | ~0.1                   |\n| 24   | ~0.15                  |\n| 25   | ~0.2                   |\n| 26   | ~0.3                   |",
+                "chart_caption": [],
+                "chart_footnote": []
+            },
+            "sub_type": "line chart",
+            "bbox": [
+                556,
+                553,
+                876,
+                800
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "MS"
+                    }
+                ]
+            },
+            "bbox": [
+                46,
+                47,
+                141,
+                68
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "RESEARCH"
+                    }
+                ]
+            },
+            "bbox": [
+                155,
+                53,
+                189,
+                63
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "FOUNDATION"
+                    }
+                ]
+            },
+            "bbox": [
+                891,
+                53,
+                949,
+                66
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "MS"
+                    }
+                ]
+            },
+            "bbox": [
+                47,
+                957,
+                183,
+                972
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "3"
+                    }
+                ]
+            },
+            "bbox": [
+                941,
+                959,
+                949,
+                970
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Demand is shifting from consumer electronics to AI/server infrastructure"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                75,
+                238,
+                643,
+                266
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "- Memory demand is overwhelmingly shifting towards data center technologies and away from more consumer-facing Smartphone and PC markets"
+                    }
+                ]
+            },
+            "bbox": [
+                84,
+                294,
+                887,
+                338
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/07de030144c0886ab0414af5c18add24d1fb14f54cb8796f73f93a3c40544436.jpg"
+                },
+                "content": "| Year | Enterprise SSD (%) | Smartphones (%) | PC SSD (%) | Other (%) |\n|---|---|---|---|---|\n| 2021 | 20 | 35 | 29 | 17 |\n| 2025 | 29 | 32 | 21 | 18 |\n| 2028E | 65 | 17 | 7 | 10 |",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "NAND Bit Demand Mix"
+                    }
+                ],
+                "chart_footnote": []
+            },
+            "sub_type": "stacked bar chart",
+            "bbox": [
+                70,
+                419,
+                491,
+                696
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/56cbf7229bd798bcc0dc40d8d84495643b6850e6f597c045c4fab121844571d4.jpg"
+                },
+                "content": "| Year | Servers (%) | Smartphones (%) | PCs (%) | Other (%) |\n|---|---|---|---|---|\n| 2021 | 34 | 39 | 13 | 14 |\n| 2025 | 38 | 36 | 10 | 17 |\n| 2028E | 59 | 19 | 5 | 17 |",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "DRAM Bit Demand Mix"
+                    }
+                ],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: TrendForce, MS."
+                    }
+                ]
+            },
+            "sub_type": "stacked bar chart",
+            "bbox": [
+                494,
+                419,
+                922,
+                696
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "MS | RESEARCH"
+                    }
+                ]
+            },
+            "bbox": [
+                46,
+                47,
+                190,
+                70
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "FOUNDATION"
+                    }
+                ]
+            },
+            "bbox": [
+                891,
+                52,
+                949,
+                66
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "4"
+                    }
+                ]
+            },
+            "bbox": [
+                47,
+                959,
+                56,
+                970
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "There is a clear divide between memory suppliers and customers"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                77,
+                240,
+                585,
+                266
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "- Buyer Hierarchy: Large cloud buyers can secure supply and capitalize higher costs, while non-AI buyers face higher COGS and weaker allocation, price increases, spec cuts and delayed launches"
+                    }
+                ]
+            },
+            "bbox": [
+                85,
+                290,
+                880,
+                334
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Allocation stack"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                450,
+                372,
+                569,
+                397
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Tier 1 | Hyperscalers / AI accelerator ecosystem | HBM, server DRAM, eSSD | LTAs / prepay"
+                    }
+                ]
+            },
+            "bbox": [
+                250,
+                421,
+                753,
+                446
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Tier 2 | Server OEMs / cloud infrastructure | server DRAM, eSSD | strategic contracts"
+                    }
+                ]
+            },
+            "bbox": [
+                277,
+                478,
+                742,
+                504
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Tier 3 | Premium PC / smartphone OEMs | DDR, LPDDR, NAND | annual contracts"
+                    }
+                ]
+            },
+            "bbox": [
+                289,
+                535,
+                729,
+                560
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Tier 4 | Autos / networking / industrial / medical | DDR, NAND, specialty | qualified supply"
+                    }
+                ]
+            },
+            "bbox": [
+                263,
+                594,
+                755,
+                619
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Tier 5 | Small OEMs / startups / low-end devices | commodity DRAM/NAND | spot/distribution"
+                    }
+                ]
+            },
+            "bbox": [
+                253,
+                651,
+                766,
+                676
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Higher allocation priority ↑ | Higher spot-price exposure ↓"
+                    }
+                ]
+            },
+            "bbox": [
+                297,
+                712,
+                758,
+                738
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Source: MS."
+                    }
+                ]
+            },
+            "bbox": [
+                77,
+                826,
+                220,
+                843
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "MS"
+                    }
+                ]
+            },
+            "bbox": [
+                46,
+                47,
+                141,
+                68
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "RESEARCH"
+                    }
+                ]
+            },
+            "bbox": [
+                154,
+                53,
+                189,
+                63
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "FOUNDATION"
+                    }
+                ]
+            },
+            "bbox": [
+                891,
+                52,
+                949,
+                66
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "MS"
+                    }
+                ]
+            },
+            "bbox": [
+                47,
+                957,
+                183,
+                972
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "5"
+                    }
+                ]
+            },
+            "bbox": [
+                941,
+                959,
+                949,
+                970
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "AI prioritization turns 2027 supply growth into a consumer memory shortfall"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                75,
+                238,
+                669,
+                266
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "• Our memory sufficiency framework suggests PC and smartphone in aggregate could see 13% memory shortfall"
+                    }
+                ]
+            },
+            "bbox": [
+                84,
+                290,
+                782,
+                313
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/bf56dfb4c4de907afa39323308cc1119308b716e5abeb27362877ffe6fdae7fb.jpg"
+                },
+                "content": "| Category | Value (bn Gb) |\n| :--- | :--- |\n| 2026 DRAM+HBM supply | 418 |\n| 2027 supply additions | 573 |\n| 2027 total supply | 576 |\n| Less HBM allocation | 529 |\n| Less Server/AI ex-HBM DRAM allocation | 518 |\n| Residual non-server supply | 174 |\n| Less other non-server | 166 |\n| PC & Smartphone allocation | 130 |\n| PC & Smartphone demand | 140 |\nShortfall: 19bn Gb (13% of demand)",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "PC: AI priority creates residual DRAM shortfall"
+                    }
+                ],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: MS."
+                    }
+                ]
+            },
+            "sub_type": "bar chart",
+            "bbox": [
+                119,
+                370,
+                887,
+                795
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "MS | RESEARCH"
+                    }
+                ]
+            },
+            "bbox": [
+                46,
+                47,
+                190,
+                70
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "FOUNDATION"
+                    }
+                ]
+            },
+            "bbox": [
+                891,
+                52,
+                949,
+                66
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "6"
+                    }
+                ]
+            },
+            "bbox": [
+                47,
+                959,
+                55,
+                970
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Low-end smartphones and PCs are more exposed to demand destruction"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                75,
+                238,
+                648,
+                264
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/879af313e4ac17381d46552ab6e5eb2176525660ebdcfc179e1954832917d8b2.jpg"
+                },
+                "content": "| Category | Value |\n|---|---|\n| Traditional Servers | 0.3 |\n| High-End PCs | 0.5 |\n| High-End Smartphones | 0.5 |\n| Storage | 0.6 |\n| Mid-Range PCs | 1.2 |\n| Mid-Range Smartphones | 1.4 |\n| Total PCs | 1.4 |\n| Low-End Smartphones | 1.6 |\n| Low-End PCs | 1.7 |\nLeast at Risk; Most at Risk",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Demand Elasticity by Hardware Product"
+                    }
+                ],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: IDC, Company data, AlphaWise, MS. Demand elasticity takes the absolute value. PC data goes back to 1995, for storage it starts in 2008, servers in 2003 and smartphones in 2007."
+                    }
+                ]
+            },
+            "sub_type": "bar chart",
+            "bbox": [
+                128,
+                341,
+                888,
+                795
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "MS | RESEARCH"
+                    }
+                ]
+            },
+            "bbox": [
+                46,
+                47,
+                190,
+                70
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "FOUNDATION"
+                    }
+                ]
+            },
+            "bbox": [
+                891,
+                52,
+                949,
+                66
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "MS"
+                    }
+                ]
+            },
+            "bbox": [
+                47,
+                957,
+                183,
+                973
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "7"
+                    }
+                ]
+            },
+            "bbox": [
+                941,
+                959,
+                949,
+                970
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Chipflation is translating into higher producer price inflation"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                75,
+                238,
+                547,
+                266
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/ed64e2092f4eacd7628be8ef9c587a245958b8f57f9f844289b19389b9ebf890.jpg"
+                },
+                "content": "| Date    | Value |\n|---------|-------|\n| Apr-26  | 27.6  |",
+                "chart_caption": [],
+                "chart_footnote": []
+            },
+            "sub_type": "line chart",
+            "bbox": [
+                297,
+                292,
+                705,
+                557
+            ]
+        },
+        {
+            "type": "table",
+            "content": {
+                "image_source": {
+                    "path": "images/af002c702c330aba906927cda17ed451063473a931bb0aa8445d101bf5741435.jpg"
+                },
+                "table_caption": [],
+                "table_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: BLS, MS forecasts. Note: Smartphones and game consoles weights are estimates."
+                    }
+                ],
+                "html": "<table><tr><td>CPI component</td><td>Memory costs effect on CPI in 2026 (pp)</td><td>CPI weight</td></tr><tr><td>PCs</td><td>15</td><td>0.30%</td></tr><tr><td>Smartphones</td><td>15</td><td>0.20%</td></tr><tr><td>TVs</td><td>10</td><td>0.10%</td></tr><tr><td>Cars</td><td>0</td><td>3.80%</td></tr><tr><td>Major household appliances</td><td>5</td><td>0.06%</td></tr><tr><td>Game consoles</td><td>125</td><td>0.01%</td></tr><tr><td>Impact on headline CPI: PCs and smartphones only</td><td>0.08</td><td></td></tr><tr><td>Total impact on headline CPI</td><td>0.10</td><td></td></tr></table>",
+                "table_type": "simple_table",
+                "table_nest_level": 1
+            },
+            "bbox": [
+                246,
+                576,
+                751,
+                799
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "MS | RESEARCH"
+                    }
+                ]
+            },
+            "bbox": [
+                46,
+                47,
+                190,
+                70
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "FOUNDATION"
+                    }
+                ]
+            },
+            "bbox": [
+                891,
+                52,
+                949,
+                66
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "8"
+                    }
+                ]
+            },
+            "bbox": [
+                47,
+                959,
+                56,
+                970
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Policy could ease pressure, but would take years"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                75,
+                240,
+                460,
+                266
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "• Federal support is possible ..."
+                    }
+                ]
+            },
+            "bbox": [
+                84,
+                285,
+                286,
+                308
+            ]
+        },
+        {
+            "type": "table",
+            "content": {
+                "image_source": {
+                    "path": "images/a355767443dc048379cf69e521103bfd483ee8fdf289d7db812723cc79ab5ff2.jpg"
+                },
+                "table_caption": [],
+                "table_footnote": [],
+                "html": "<table><tr><td>Memory Category</td><td>Policy Objective</td><td>Policy Tools</td></tr><tr><td>HBM/Advanced DRAM</td><td>Protect strategic AI inputs &amp; frontier capabilities; delay adversary access</td><td>Maintain de-risking (export controls) strategy; expand supply-side efforts to expand trusted capacity</td></tr><tr><td>Commodity/legacy memory</td><td>Avoid overly restrictive policy; facilitate trusted supply &amp; alleviate cost pressures</td><td>Differentiated licensing regimes; targeted domestic/allied capacity support vis-à-vis supply-side initiatives; procurement for critical sectors</td></tr></table>",
+                "table_type": "simple_table",
+                "table_nest_level": 1
+            },
+            "bbox": [
+                104,
+                313,
+                895,
+                473
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "• ... but key constraints exist: procedure, timing & public perception"
+                    }
+                ]
+            },
+            "bbox": [
+                84,
+                490,
+                505,
+                511
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "From Tool Capacity to Qualified Memory Output"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                347,
+                529,
+                681,
+                557
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "ASML capacity is expanding; memory relief depends on install, qualification, yield ramp and product allocation"
+                    }
+                ]
+            },
+            "bbox": [
+                305,
+                557,
+                723,
+                573
+            ]
+        },
+        {
+            "type": "image",
+            "content": {
+                "image_source": {
+                    "path": "images/988d68d8af04f422813d957412790f70fd7a01fb9e19a7afd02ac5b93e81a54b.jpg"
+                },
+                "content": "```mermaid\ngraph LR\n  A[\"AI demand inflects\"] --> B[\"Big Tech LTAs accelerate\"]\n  B --> C[\"EUV/fab orders placed\"]\n  C --> D[\"Tools ship; customers install, qualify and ramp\"]\n  D --> E[\"Qualified HBM / DRAM output available\"]\n```",
+                "image_caption": [],
+                "image_footnote": []
+            },
+            "sub_type": "flowchart",
+            "bbox": [
+                119,
+                581,
+                890,
+                699
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Orders placed → tools delivered → qualified → production: 1–2-year lag"
+                    }
+                ]
+            },
+            "bbox": [
+                364,
+                714,
+                657,
+                733
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Source: MS."
+                    }
+                ]
+            },
+            "bbox": [
+                78,
+                826,
+                220,
+                843
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "MS"
+                    }
+                ]
+            },
+            "bbox": [
+                46,
+                47,
+                141,
+                68
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "RESEARCH"
+                    }
+                ]
+            },
+            "bbox": [
+                154,
+                53,
+                189,
+                63
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "FOUNDATION"
+                    }
+                ]
+            },
+            "bbox": [
+                891,
+                52,
+                949,
+                66
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "MS"
+                    }
+                ]
+            },
+            "bbox": [
+                47,
+                957,
+                183,
+                972
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "9"
+                    }
+                ]
+            },
+            "bbox": [
+                941,
+                959,
+                949,
+                970
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Could China be the swing factor?"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                77,
+                240,
+                339,
+                266
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "text_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "- Mainland China accounts for ~30% of net wafer additions over 2023-28E, second only to South Korea"
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "- However, not all capacity is equally advanced, accessible, or trusted."
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "- On NAND, the potential uplift is considerable: combining YMTC capacity and yield expansion with node migration at Samsung's Xi'an and Solidigm's Dalian facilities, China-based incremental output could reach 17-33% of 2028E global NAND supply."
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "- This acceleration scenario assumes a meaningful relaxation of US export controls and is not our base case, as we do not assume the EUV ban on exports to China is lifted."
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "- The key gating factor is not Chinese ambition or investment appetite, but access to leading-edge equipment."
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                85,
+                300,
+                435,
+                728
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/8e99694ebb90b2d8d3e5fae6166f7a1a880b816325c8ce1af3274d5d4a9d27cf.jpg"
+                },
+                "content": "| Country | Total NAND output (8Gb mn) |\n| :--- | :--- |\n| Korea | 710 |\n| China | 405 |\n| U.S. | 120 |\n| Taiwan | 70 |\n| Japan | -10 |\nThe chart displays a single bar for each year's total NAND output, with a note stating that 17% of global supply is projected to be up to 33%. Below it, a green segment labeled 'Upside from YMTC' appears in the final bar for 2028, while a beige segment labeled 'Upside from Samsung Xi'an fab & Solidigm Dalian fab' appears in the same year.",
+                "chart_caption": [],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: MS."
+                    }
+                ]
+            },
+            "sub_type": "bar chart",
+            "bbox": [
+                464,
+                295,
+                931,
+                807
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "MS | RESEARCH"
+                    }
+                ]
+            },
+            "bbox": [
+                46,
+                47,
+                190,
+                68
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "FOUNDATION"
+                    }
+                ]
+            },
+            "bbox": [
+                891,
+                52,
+                949,
+                66
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "10"
+                    }
+                ]
+            },
+            "bbox": [
+                49,
+                959,
+                60,
+                970
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "How to play the theme?"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                75,
+                238,
+                263,
+                266
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Global Exposure Across the Stack ? Names by exposure"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                252,
+                312,
+                744,
+                341
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "CPU"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                136,
+                380,
+                178,
+                405
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "text_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "• NVDA • Intel"
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "- AMD - Arm"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                133,
+                423,
+                247,
+                483
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "DRAM"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                279,
+                380,
+                335,
+                405
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "text_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "• Samsung"
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "• Hynix"
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "- Micron"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                276,
+                423,
+                368,
+                514
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "NAND"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                404,
+                380,
+                460,
+                405
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "text_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "• Kioxia"
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "- SanDisk"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                396,
+                423,
+                478,
+                480
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "HDD"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                508,
+                380,
+                551,
+                405
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "text_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "- Seagate"
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "• WDC"
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "• TDK"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                505,
+                423,
+                585,
+                519
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "FOUNDRY"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                645,
+                380,
+                737,
+                405
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "• TSMC"
+                    }
+                ]
+            },
+            "bbox": [
+                645,
+                423,
+                705,
+                447
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "IC-design"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                763,
+                380,
+                849,
+                406
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "• GUC\n• Egis"
+                    }
+                ]
+            },
+            "bbox": [
+                763,
+                423,
+                815,
+                483
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "PCB/Substrate/CCL & Materials"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                135,
+                545,
+                417,
+                571
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "text_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "- SEMCO · Unimicron · NYPCB"
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "• Ibiden • Nittobo • MEC"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                133,
+                588,
+                390,
+                651
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "BMC, CPU & Memory interface"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                500,
+                544,
+                768,
+                571
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "text_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "• Aspeed • Renesas • Montage"
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "- WPG · AP Memory"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                500,
+                588,
+                756,
+                656
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "MLCC & CPU socket"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                143,
+                684,
+                324,
+                709
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "text_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "• Murata • TDK • Yageo"
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "• FIT Hon Teng • Lotes"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                133,
+                727,
+                316,
+                792
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "ODM"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                380,
+                687,
+                426,
+                712
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "text_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "• Wiwynn"
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "• Hon Hai"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                385,
+                727,
+                465,
+                784
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "SPE"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                500,
+                684,
+                537,
+                709
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "text_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "• ASML • ASMi • AMAT • Besi • KLAC"
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "• Tokyo Electron • Ulvac • Wonik"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                500,
+                727,
+                784,
+                792
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "MS | RESEARCH"
+                    }
+                ]
+            },
+            "bbox": [
+                46,
+                47,
+                190,
+                68
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "FOUNDATION"
+                    }
+                ]
+            },
+            "bbox": [
+                891,
+                52,
+                949,
+                66
+            ]
+        },
+        {
+            "type": "page_footnote",
+            "content": {
+                "page_footnote_content": [
+                    {
+                        "type": "text",
+                        "content": "Source: MS."
+                    }
+                ]
+            },
+            "bbox": [
+                77,
+                826,
+                220,
+                843
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "MS"
+                    }
+                ]
+            },
+            "bbox": [
+                47,
+                957,
+                183,
+                972
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "11"
+                    }
+                ]
+            },
+            "bbox": [
+                936,
+                959,
+                949,
+                970
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Disclosure Section"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                63,
+                97,
+                282,
+                116
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The information and opinions in MS were prepared or are disseminated by MS Asia Limited (which accepts the responsibility for its contents) and/or MS Asia (Singapore) Pte. (Registration number 199206298Z) and/or MS Asia (Singapore) Securities Pte Ltd (Registration number 200008434H), regulated by the Monetary Authority of Singapore (which accepts legal responsibility for its contents and should be contacted with respect to any matters arising from, or in connection with, MS), and/or MS Taiwan Limited and/or MS & Co International plc, Seoul Branch, and/or MS Australia Limited (A.B.N. 67 003 734 576, holder of Australian financial services license No. 233742, which accepts responsibility for its contents), and/or MS Wealth Management Australia Pty Ltd (A.B.N. 19 009 145 555, holder of Australian financial services license No. 240813, which accepts responsibility for its contents), and/or MS India Company Private Limited having Corporate Identification No (CIN) U22990MH1998PTC115305, regulated by the Securities and Exchange Board of India (\"SEBI\") and holder of licenses as a Research Analyst (SEBI Registration No. INH000001105); Stock Broker (SEBI Stock Broker Registration No. INZ000244438), Merchant Banker (SEBI Registration No. INM000011203), and depository participant with National Securities Depository Limited (SEBI Registration No. IN-DP-NSDL-567-2021) having registered office at Altimus, Level 39 & 40, Pandurang Budhkar Marg, Worli, Mumbai 400018, India; Telephone no. +91-22-61181000; Compliance Officer Details: Mr. Tejarshi Hardas, Tel. No.: +91-22-61181000 or Email: tejarshi.hardas@morganstanley.com; Grievance officer details: Mr. Tejarshi Hardas, Tel. No.: +91-22-61181000 or Email: msic-compliance@morganstanley.com which accepts the responsibility for its contents and should be contacted with respect to any matters arising from, or in connection with, MS, and their affiliates (collectively, \"MS\"). MS India Company Private Limited (MSICPL) may use AI tools in providing research services. All recommendations contained herein are made by the duly qualified research analysts."
+                    }
+                ]
+            },
+            "bbox": [
+                62,
+                118,
+                933,
+                297
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "For important disclosures, stock price charts and equity rating histories regarding companies that are the subject of this report, please see the MS Disclosure Website at www.morganstanley.com/eqr/disclosures/webapp/generalresearch, or contact your investment representative or MS at 1585 Broadway, (Attention: Research Management), New York, NY, 10036 USA."
+                    }
+                ]
+            },
+            "bbox": [
+                62,
+                299,
+                933,
+                339
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "For valuation methodology and risks associated with any recommendation, rating or price target referenced in this research report, please contact the Client Support Team as follows: US/Canada +1 800 303-2495; Hong Kong +852 2848-5999; Latin America +1 718 754-5444 (U.S.); London +44 (0)20-7425-8169; Singapore +65 6834-6860; Sydney +61 (0)2-9770-1505; Tokyo +81 (0)3-6836-9000. Alternatively you may contact your investment representative or MS at 1585 Broadway, (Attention: Research Management), New York, NY 10036 USA."
+                    }
+                ]
+            },
+            "bbox": [
+                62,
+                340,
+                933,
+                381
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Analyst Certification"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                63,
+                388,
+                215,
+                402
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The following analysts hereby certify that their views about the companies and their securities discussed in this report are accurately expressed and that they have not received and will not receive direct or indirect compensation in exchange for expressing specific recommendations or views in this report: Shawn Kim."
+                    }
+                ]
+            },
+            "bbox": [
+                63,
+                405,
+                933,
+                431
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Global Research Conflict Management Policy"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                63,
+                453,
+                383,
+                468
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "MS has been published in accordance with our conflict management policy, which is available at www.morganstanley.com/institutional/research/conflictpolicies. A Portuguese version of the policy can be found at www.morganstanley.com.br"
+                    }
+                ]
+            },
+            "bbox": [
+                62,
+                469,
+                933,
+                496
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Important Regulatory Disclosures on Subject Companies"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                63,
+                503,
+                468,
+                518
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The equity research analysts or strategists principally responsible for the preparation of MS have received compensation based upon various factors, including quality of research, investor client feedback, stock picking, competitive factors, firm revenues and overall investment banking revenues. Equity Research analysts' or strategists' compensation is not linked to investment banking or capital markets transactions performed by MS or the profitability or revenues of particular trading desks."
+                    }
+                ]
+            },
+            "bbox": [
+                62,
+                520,
+                933,
+                560
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "MS and its affiliates do business that relates to companies/instruments covered in MS, including market making, providing liquidity, fund management, commercial banking, extension of credit, investment services and investment banking. MS sells to and buys from customers the securities/instruments of companies covered in MS on a principal basis. MS may have a position in the debt of the Company or instruments discussed in this report. MS trades or may trade as principal in the debt securities (or in related derivatives) that are the subject of the debt research report."
+                    }
+                ]
+            },
+            "bbox": [
+                62,
+                561,
+                933,
+                616
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Certain disclosures listed above are also for compliance with applicable regulations in non-US jurisdictions."
+                    }
+                ]
+            },
+            "bbox": [
+                63,
+                618,
+                560,
+                630
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "STOCK RATINGS"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                63,
+                638,
+                187,
+                651
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "MS uses a relative rating system using terms such as Overweight, Equal-weight, Not-Rated or Underweight (see definitions below). MS does not assign ratings of Buy, Hold or Sell to the stocks we cover. Overweight, Equal-weight, Not-Rated and Underweight are not the equivalent of buy, hold and sell. Investors should carefully read the definitions of all ratings used in MS. In addition, since MS contains more complete information concerning the analyst's views, investors should carefully read MS, in its entirety, and not infer the contents from the rating alone. In any case, ratings (or research) should not be used or relied upon as investment advice. An investor's decision to buy or sell a stock should depend on individual circumstances (such as the investor's existing holdings) and other considerations."
+                    }
+                ]
+            },
+            "bbox": [
+                62,
+                654,
+                933,
+                722
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Global Stock Ratings Distribution"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                63,
+                729,
+                305,
+                744
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "(as of May 31, 2026)"
+                    }
+                ]
+            },
+            "bbox": [
+                63,
+                746,
+                161,
+                758
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The Stock Ratings described below apply to MS's Fundamental Equity Research and do not apply to Debt Research produced by the Firm."
+                    }
+                ]
+            },
+            "bbox": [
+                63,
+                760,
+                763,
+                772
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "For disclosure purposes only (in accordance with FINRA requirements), we include the category headings of Buy, Hold, and Sell alongside our ratings of Overweight, Equal-weight, Not-Rated and Underweight. MS does not assign ratings of Buy, Hold or Sell to the stocks we cover. Overweight, Equal-weight, Not-Rated and Underweight are not the equivalent of buy, hold, and sell but represent recommended relative weightings (see definitions below). To satisfy regulatory requirements, we correspond Overweight, our most positive stock rating, with a buy recommendation; we correspond Equal-weight and Not-Rated to hold and Underweight to sell recommendations, respectively."
+                    }
+                ]
+            },
+            "bbox": [
+                62,
+                773,
+                933,
+                828
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "MS | RESEARCH"
+                    }
+                ]
+            },
+            "bbox": [
+                63,
+                45,
+                250,
+                61
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "FOUNDATION"
+                    }
+                ]
+            },
+            "bbox": [
+                857,
+                47,
+                933,
+                60
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "12"
+                    }
+                ]
+            },
+            "bbox": [
+                66,
+                968,
+                83,
+                977
+            ]
+        }
+    ],
+    [
+        {
+            "type": "table",
+            "content": {
+                "image_source": {
+                    "path": "images/732bfec86afaef8195997cb725c7f61ed1432f4435df653918db6f0ec0987ae8.jpg"
+                },
+                "table_caption": [],
+                "table_footnote": [],
+                "html": "<table><tr><td></td><td colspan=\"2\">Coverage Universe</td><td colspan=\"3\">Investment Banking Clients (IBC)</td><td colspan=\"2\">Other Material Investment ServicesClients (MISC)</td></tr><tr><td>Stock RatingCategory</td><td>Count</td><td>% of Total</td><td>Count</td><td>% of Total IBC</td><td>% of RatingCategory</td><td>Count</td><td>% of Total OtherMISC</td></tr><tr><td>Overweight/Buy</td><td>1542</td><td>42%</td><td>465</td><td>51%</td><td>30%</td><td>707</td><td>43%</td></tr><tr><td>Equal-weight/Hold</td><td>1571</td><td>43%</td><td>369</td><td>40%</td><td>23%</td><td>723</td><td>44%</td></tr><tr><td>Not-Rated/Hold</td><td>3</td><td>0%</td><td>0</td><td>0%</td><td>0%</td><td>1</td><td>0%</td></tr><tr><td>Underweight/Sell</td><td>551</td><td>15%</td><td>86</td><td>9%</td><td>16%</td><td>201</td><td>12%</td></tr><tr><td>Total</td><td>3,667</td><td></td><td>920</td><td></td><td></td><td>1632</td><td></td></tr></table>",
+                "table_type": "complex_table",
+                "table_nest_level": 1
+            },
+            "bbox": [
+                114,
+                104,
+                875,
+                251
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Data include common stock and ADRs currently assigned ratings. Investment Banking Clients are companies from whom MS received investment banking compensation in the last 12 months. Due to rounding off of decimals, the percentages provided in the \"% of total\" column may not add up to exactly 100 percent."
+                    }
+                ]
+            },
+            "bbox": [
+                62,
+                256,
+                933,
+                284
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Analyst Stock Ratings"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                63,
+                290,
+                225,
+                306
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Overweight (O). The stock's total return is expected to exceed the average total return of the analyst's industry (or industry team's) coverage universe, on a risk-adjusted basis, over the next 12-18 months."
+                    }
+                ]
+            },
+            "bbox": [
+                63,
+                306,
+                933,
+                332
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Equal-weight (E). The stock's total return is expected to be in line with the average total return of the analyst's industry (or industry team's) coverage universe, on a risk-adjusted basis, over the next 12-18 months."
+                    }
+                ]
+            },
+            "bbox": [
+                63,
+                334,
+                933,
+                359
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Not-Rated (NR). Currently the analyst does not have adequate conviction about the stock's total return relative to the average total return of the analyst's industry (or industry team's) coverage universe, on a risk-adjusted basis, over the next 12-18 months."
+                    }
+                ]
+            },
+            "bbox": [
+                63,
+                362,
+                933,
+                388
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Underweight (U). The stock's total return is expected to be below the average total return of the analyst's industry (or industry team's) coverage universe, on a risk-adjusted basis, over the next 12-18 months."
+                    }
+                ]
+            },
+            "bbox": [
+                63,
+                390,
+                933,
+                415
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Unless otherwise specified, the time frame for price targets included in MS is 12 to 18 months."
+                    }
+                ]
+            },
+            "bbox": [
+                63,
+                417,
+                604,
+                431
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Analyst Industry Views"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                63,
+                438,
+                233,
+                454
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Attractive (A): The analyst expects the performance of his or her industry coverage universe over the next 12-18 months to be attractive vs. the relevant broad market benchmark, as indicated below."
+                    }
+                ]
+            },
+            "bbox": [
+                63,
+                454,
+                933,
+                479
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "In-Line (I): The analyst expects the performance of his or her industry coverage universe over the next 12-18 months to be in line with the relevant broad market benchmark, as indicated below. Cautious (C): The analyst views the performance of his or her industry coverage universe over the next 12-18 months with caution vs. the relevant broad market benchmark, as indicated below. Benchmarks for each region are as follows: North America - S&P 500; Latin America - relevant MSCI country index or MSCI Latin America Index; Europe - MSCI Europe; Japan - TOPIX; Asia - relevant MSCI country index or MSCI sub-regional index or MSCI AC Asia Pacific ex Japan Index."
+                    }
+                ]
+            },
+            "bbox": [
+                63,
+                482,
+                933,
+                536
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Important Disclosures for MS Smith Barney LLC Customers"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                63,
+                544,
+                578,
+                559
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Important disclosures regarding any material conflict of interest that can reasonably be expected to have influenced MS Smith Barney LLC's choice of a third-party research provider or the subject company of a third-party research report, are available on the MS Wealth Management disclosure website at www.morganstanley.com/online/researchdisclosures. For MS specific disclosures, you may refer to https://www.morganstanley.com/eqr/disclosures/webapp/generalresearch."
+                    }
+                ]
+            },
+            "bbox": [
+                62,
+                561,
+                933,
+                601
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Each MS report is reviewed and approved on behalf of MS Smith Barney LLC. This review and approval is conducted by the same person who reviews the research report on behalf of MS. This could create a conflict of interest."
+                    }
+                ]
+            },
+            "bbox": [
+                63,
+                602,
+                933,
+                628
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Other Important Disclosures"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                63,
+                637,
+                272,
+                651
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "MS policy is to update research reports as and when the Research Analyst and Research Management deem appropriate, based on developments with the issuer, the sector, or the market that may have a material impact on the research views or opinions stated therein. In addition, certain Research publications are intended to be updated on a regular periodic basis (weekly/monthly/quarterly/annual) and will ordinarily be updated with that frequency, unless the Research Analyst and Research Management determine that a different publication schedule is appropriate based on current conditions."
+                    }
+                ]
+            },
+            "bbox": [
+                62,
+                652,
+                933,
+                705
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "MS is not acting as a municipal advisor and the opinions or views contained herein are not intended to be, and do not constitute, advice within the meaning of Section 975 of the Dodd-Frank Wall Street Reform and Consumer Protection Act."
+                    }
+                ]
+            },
+            "bbox": [
+                63,
+                708,
+                933,
+                734
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "MS produces an equity research product called a \"Tactical Idea.\" Views contained in a \"Tactical Idea\" on a particular stock may be contrary to the recommendations or views expressed in research on the same stock. This may be the result of differing time horizons, methodologies, market events, or other factors. For all research available on a particular stock, please contact your sales representative or go to Matrix at http://www.morganstanley.com/matrix."
+                    }
+                ]
+            },
+            "bbox": [
+                62,
+                736,
+                933,
+                776
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "MS is provided to our clients through our proprietary research portal on Matrix and also distributed electronically by MS to clients. Certain, but not all, MS products are also made available to clients through third-party vendors or redistributed to clients through alternate electronic means as a convenience. For access to all available MS, please contact your sales representative or go to Matrix at http://www.morganstanley.com/matrix."
+                    }
+                ]
+            },
+            "bbox": [
+                63,
+                777,
+                933,
+                818
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Any access and/or use of MS is subject to MS's Terms of Use (http://www.morganstanley.com/terms.html). By accessing and/or using MS, you are indicating that you have read and agree to be bound by our Terms of Use (http://www.morganstanley.com/terms.html). In addition you consent to MS processing your personal data and using cookies in accordance with our Privacy Policy and our Global Cookies Policy (http://www.morganstanley.com/privacy_pledge.html), including for the purposes of setting your preferences and to collect readership data so that we can deliver better and more personalized service and products to you. To find out more information about how MS processes personal data, how we use cookies and how to reject cookies see our Privacy Policy and our Global Cookies Policy (http://www.morganstanley.com/privacy_pledge.html). Please use the provided link to review the Terms and Conditions and Most Important Terms and Conditions for MS India Company Private Limited (https://www.morganstanley.com/assets/pdfs/about-us-global-offices/india/Terms_and_conditions.pdf) and the following link to review the audit report (https://ny.matrix.ms.com/eqr/research/webapp/researchdocs/MSICPL_Morgan_Stanley_Research_Audit_Report.pdf)."
+                    }
+                ]
+            },
+            "bbox": [
+                62,
+                819,
+                933,
+                929
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "If you do not agree to our Terms of Use and/or if you do not wish to provide your consent to MS processing your personal data or using cookies please do not access our research."
+                    }
+                ]
+            },
+            "bbox": [
+                63,
+                930,
+                933,
+                943
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "MS"
+                    }
+                ]
+            },
+            "bbox": [
+                63,
+                45,
+                187,
+                63
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "RESEARCH"
+                    }
+                ]
+            },
+            "bbox": [
+                204,
+                47,
+                250,
+                58
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "FOUNDATION"
+                    }
+                ]
+            },
+            "bbox": [
+                857,
+                49,
+                931,
+                60
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "MS"
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                967,
+                241,
+                978
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "13"
+                    }
+                ]
+            },
+            "bbox": [
+                916,
+                968,
+                931,
+                978
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "MS does not provide individually tailored investment advice. MS has been prepared without regard to the circumstances and objectives of those who receive it. MS recommends that investors independently evaluate particular investments and strategies, and encourages investors to seek the advice of a financial adviser. The appropriateness of an investment or strategy will depend on an investor's circumstances and objectives. The securities, instruments, or strategies discussed in MS may not be suitable for all investors, and certain investors may not be eligible to purchase or participate in some or all of them. MS is not an offer to buy or sell or the solicitation of an offer to buy or sell any security/instrument or to participate in any particular trading strategy. The value of and income from your investments may vary because of changes in interest rates, foreign exchange rates, default rates, prepayment rates, securities/instruments prices, market indexes, operational or financial conditions of companies or other factors. There may be time limitations on the exercise of options or other rights in securities/instruments transactions. Past performance is not necessarily a guide to future performance. Estimates of future performance are based on assumptions that may not be realized. If provided, and unless otherwise stated, the closing price on the cover page is that of the primary exchange for the subject company's securities/instruments."
+                    }
+                ]
+            },
+            "bbox": [
+                62,
+                104,
+                933,
+                227
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The fixed income research analysts, strategists or economists principally responsible for the preparation of MS have received compensation based upon various factors, including quality, accuracy and value of research, firm profitability or revenues (which include fixed income trading and capital markets profitability or revenues), client feedback and competitive factors. Fixed Income Research analysts', strategists' or economists' compensation is not linked to investment banking or capital markets transactions performed by MS or the profitability or revenues of particular trading desks."
+                    }
+                ]
+            },
+            "bbox": [
+                62,
+                229,
+                933,
+                282
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The \"Important Regulatory Disclosures on Subject Companies\" section in MS lists all companies mentioned where MS owns 1% or more of a class of common equity securities of the companies. For all other companies mentioned in MS, MS may have an investment of less than 1% in securities/instruments or derivatives of securities/instruments of companies and may trade them in ways different from those discussed in MS. Employees of MS not involved in the preparation of MS may have investments in securities/instruments or derivatives of securities/instruments of companies mentioned and may trade them in ways different from those discussed in MS. Derivatives may be issued by MS or associated persons."
+                    }
+                ]
+            },
+            "bbox": [
+                62,
+                285,
+                933,
+                353
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "With the exception of information regarding MS, MS is based on public information. MS makes every effort to use reliable, comprehensive information, but we make no representation that it is accurate or complete. We have no obligation to tell you when opinions or information in MS change apart from when we intend to discontinue equity research coverage of a subject company. Facts and views presented in MS have not been reviewed by, and may not reflect information known to, professionals in other MS business areas, including investment banking personnel."
+                    }
+                ]
+            },
+            "bbox": [
+                62,
+                354,
+                933,
+                407
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "MS personnel may participate in company events such as site visits and are generally prohibited from accepting payment by the company of associated expenses unless pre-approved by authorized members of Research management."
+                    }
+                ]
+            },
+            "bbox": [
+                62,
+                410,
+                933,
+                436
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "MS may make investment decisions that are inconsistent with the recommendations or views in this report."
+                    }
+                ]
+            },
+            "bbox": [
+                63,
+                438,
+                622,
+                450
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "To our readers based in Taiwan or trading in Taiwan securities/instruments: Information on securities/instruments that trade in Taiwan is distributed by MS Taiwan Limited (\"MSTL\"). Such information is for your reference only. The reader should independently evaluate the investment risks and is solely responsible for their investment decisions. MS may not be distributed to the public media or quoted or used by the public media without the express written consent of MS. Any non-customer reader within the scope of Article 7-1 of the Taiwan Stock Exchange Recommendation Regulations accessing and/or receiving MS is not permitted to provide MS to any third party (including but not limited to related parties, affiliated companies and any other third parties) or engage in any activities regarding MS which may create or give the appearance of creating a conflict of interest. Information on securities/instruments that do not trade in Taiwan is for informational purposes only and is not to be construed as a recommendation or a solicitation to trade in such securities/instruments. MSTL may not execute transactions for clients in these securities/instruments."
+                    }
+                ]
+            },
+            "bbox": [
+                62,
+                450,
+                933,
+                547
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Certain information in MS was sourced by employees of the Shanghai Representative Office of MS Asia Limited for the use of MS Asia Limited. MS is not incorporated under PRC law and the research in relation to this report is conducted outside the PRC. MS does not constitute an offer to sell or the solicitation of an offer to buy any securities in the PRC. PRC investors shall have the relevant qualifications to invest in such securities and shall be responsible for obtaining all relevant approvals, licenses, verifications and/or registrations from the relevant governmental authorities themselves. Neither this report nor any part of it is intended as, or shall constitute, provision of any consultancy or advisory service of securities investment as defined under PRC law. Such information is provided for your reference only."
+                    }
+                ]
+            },
+            "bbox": [
+                62,
+                549,
+                933,
+                617
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "MS is disseminated in Brazil by MS C.T.V.M. S.A. located at Av. Brigadeiro Faria Lima, 3600, 6th floor, São Paulo - SP, Brazil; and is regulated by the Comissão de Valores Mobiliários; in Mexico by MS México, Casa de Bolsa, S.A. de C.V which is regulated by Comision Nacional Bancaria y de Valores. Paseo de los Tamarindos 90, Torre 1, Col. Bosques de las Lomas Floor 29, 05120 Mexico City; in Japan by MS MUFG Securities Co., Ltd. and, for Commodities related research reports only, MS Capital Group Japan Co., Ltd; in Hong Kong by MS Asia Limited (which accepts responsibility for its contents) and by MS Bank Asia Limited; in Singapore by MS Asia (Singapore) Pte. (Registration number 199206298Z) and/or MS Asia (Singapore) Securities Pte Ltd (Registration number 200008434H), regulated by the Monetary Authority of Singapore (which accepts legal responsibility for its contents and should be contacted with respect to any matters arising from, or in connection with, MS) and by MS Bank Asia Limited, Singapore Branch (Registration number T14FC0118J); in Australia to \"wholesale clients\" within the meaning of the Australian Corporations Act by MS Australia Limited A.B.N. 67 003 734 576, holder of Australian financial services license No. 233742, which accepts responsibility for its contents; in Australia to \"wholesale clients\" and \"retail clients\" within the meaning of the Australian Corporations Act by MS Wealth Management Australia Pty Ltd (A.B.N. 19 009 145 555, holder of Australian financial services license No. 240813, which accepts responsibility for its contents; in Korea by MS & Co International plc, Seoul Branch; in India by MS India Company Private Limited having Corporate Identification No (CIN) U22990MH1998PTC115305, regulated by the Securities and Exchange Board of India (\"SEBI\") and holder of licenses as a Research Analyst (SEBI Registration No. INH000001105); Stock Broker (SEBI Stock Broker Registration No. INZ000244438), Merchant Banker (SEBI Registration No. INM000011203), and depository participant with National Securities Depository Limited (SEBI Registration No. IN-DP-NSDL-567-2021) having registered office at Altimus, Level 39 & 40, Pandurang Budhkar Marg, Worli, Mumbai 400018, India; Telephone no. +91-22-61181000; Compliance Officer Details: Mr. Tejarshi Hardas, Tel. No.: +91-22-61181000 or Email: tejarshi.hardas@morganstanley.com; Grievance officer details: Mr. Tejarshi Hardas, Tel. No.: +91-22-61181000 or Email: msic-compliance@morganstanley.com. MS India Company Private Limited (MSICPL) may use AI tools in providing research services. All recommendations contained herein are made by the duly qualified research analysts; in Canada by MS Canada Limited; in Germany and the European Economic Area where required by MS Europe S.E., authorised and regulated by Bundesanstalt fuer Finanzdienstleistungsaufsicht (BaFin) under the reference number 149169; in the US by MS & Co. LLC, which accepts responsibility for its contents. MS & Co. International plc, authorized by the Prudential Regulation Authority and regulated by the Financial Conduct Authority and the Prudential Regulation Authority, disseminates in the UK research that it has prepared, and research which has been prepared by any of its affiliates, only to persons who (i) are investment professionals falling within Article 19(5) of the Financial Services and Markets Act 2000 (Financial Promotion) Order 2005 (as amended, the \"Order\"); (ii) are persons who are high net worth entities falling within Article 49(2)(a) to (d) of the Order; or (iii) are persons to whom an invitation or inducement to engage in investment activity (within the meaning of section 21 of the Financial Services and Markets Act 2000, as amended) may otherwise lawfully be communicated or caused to be communicated. RMB MS Proprietary Limited is a member of the JSE Limited and A2X (Pty) Ltd. RMB MS Proprietary Limited is a joint venture owned equally by MS International Holdings Inc. and RMB Investment Advisory (Proprietary) Limited, which is wholly owned by FirstRand Limited. The information in MS is being disseminated by MS Saudi Arabia, regulated by the Capital"
+                    }
+                ]
+            },
+            "bbox": [
+                62,
+                618,
+                934,
+                950
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "MS | RESEARCH"
+                    }
+                ]
+            },
+            "bbox": [
+                63,
+                45,
+                250,
+                61
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "FOUNDATION"
+                    }
+                ]
+            },
+            "bbox": [
+                857,
+                49,
+                931,
+                60
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "14"
+                    }
+                ]
+            },
+            "bbox": [
+                66,
+                968,
+                83,
+                977
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Market Authority in the Kingdom of Saudi Arabia, and is directed at Sophisticated investors only."
+                    }
+                ]
+            },
+            "bbox": [
+                63,
+                104,
+                514,
+                117
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The information in MS is being communicated by MS & Co. International plc (DIFC Branch), regulated by the Dubai Financial Services Authority (the DFSA) or by MS & Co. International plc (ADGM Branch), regulated by the Financial Services Regulatory Authority Abu Dhabi (the FSRA), and is directed at Professional Clients only, as defined by the DFSA or the FSRA, respectively. The financial products or financial services to which this research relates will only be made available to a customer who we are satisfied meets the regulatory criteria of a Professional Client. A distribution of the different MS Research ratings or recommendations, in percentage terms for Investments in each sector covered, is available upon request from your sales representative."
+                    }
+                ]
+            },
+            "bbox": [
+                62,
+                118,
+                933,
+                186
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The information in MS is being communicated by MS & Co. International plc (QFC Branch), regulated by the Qatar Financial Centre Regulatory Authority (the QFCRA), and is directed at business customers and market counterparties only and is not intended for Retail Customers as defined by the QFCRA."
+                    }
+                ]
+            },
+            "bbox": [
+                63,
+                186,
+                933,
+                214
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "As required by the Capital Markets Board of Turkey, investment information, comments and recommendations stated here, are not within the scope of investment advisory activity. Investment advisory service is provided exclusively to persons based on their risk and income preferences by the authorized firms. Comments and recommendations stated here are general in nature. These opinions may not fit to your financial status, risk and return preferences. For this reason, to make an investment decision by relying solely to this information stated here may not bring about outcomes that fit your expectations."
+                    }
+                ]
+            },
+            "bbox": [
+                63,
+                215,
+                933,
+                270
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The trademarks and service marks contained in MS are the property of their respective owners. Third-party data providers make no warranties or representations relating to the accuracy, completeness, or timeliness of the data they provide and shall not have liability for any damages relating to such data. The Global Industry Classification Standard (GICS) was developed by and is the exclusive property of MSCI and S&P."
+                    }
+                ]
+            },
+            "bbox": [
+                63,
+                271,
+                933,
+                311
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "MS, or any portion thereof may not be reprinted, sold or redistributed without the written consent of MS."
+                    }
+                ]
+            },
+            "bbox": [
+                63,
+                313,
+                720,
+                325
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Indicators and trackers referenced in MS may not be used as, or treated as, a benchmark under Regulation EU 2016/1011, or any other similar framework."
+                    }
+                ]
+            },
+            "bbox": [
+                63,
+                327,
+                874,
+                339
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The issuers and/or fixed income products recommended or discussed in certain fixed income research reports may not be continuously followed. Accordingly, investors should regard those fixed income research reports as providing stand-alone analysis and should not expect continuing analysis or additional reports relating to such issuers and/or individual fixed income products. MS may hold, from time to time, material financial and commercial interests regarding the company subject to the Research report."
+                    }
+                ]
+            },
+            "bbox": [
+                63,
+                340,
+                931,
+                381
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Registration granted by SEBI and certification from the National Institute of Securities Markets (NISM) in no way guarantee performance of the intermediary or provide any assurance of returns to investors. Investment in securities market are subject to market risks. Read all the related documents carefully before investing."
+                    }
+                ]
+            },
+            "bbox": [
+                62,
+                383,
+                933,
+                434
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "© 2026 MS"
+                    }
+                ]
+            },
+            "bbox": [
+                63,
+                465,
+                235,
+                481
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "MS | RESEARCH"
+                    }
+                ]
+            },
+            "bbox": [
+                63,
+                45,
+                250,
+                61
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "FOUNDATION"
+                    }
+                ]
+            },
+            "bbox": [
+                857,
+                49,
+                931,
+                60
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "MS"
+                    }
+                ]
+            },
+            "bbox": [
+                65,
+                967,
+                241,
+                978
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "15"
+                    }
+                ]
+            },
+            "bbox": [
+                916,
+                968,
+                931,
+                977
+            ]
+        }
+    ]
+]

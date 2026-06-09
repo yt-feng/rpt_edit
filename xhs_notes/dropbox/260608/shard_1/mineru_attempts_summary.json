@@ -1,0 +1,39 @@
+[
+  {
+    "attempt": 1,
+    "round": 1,
+    "token_label": "MINER_U_2",
+    "submitted_pdf_count": 5,
+    "successful_pdf_count": 5,
+    "retry_pdf_count": 0,
+    "timed_out": false,
+    "error": "",
+    "states": [
+      {
+        "pdf": "/tmp/pdf_batch_001_6duk8_6l/pdfs/0001-06-JPM-China Quant Strategy-Calm Surface- Violent Undercurrents-260607.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_6duk8_6l/pdfs/0002-07-JPM-Global Data Watch- Asia-EMAX resilience has a trifecta of underpinnings-260608.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_6duk8_6l/pdfs/0003-08-JPM-Global Banks-China investment regulations triggering WM revenue uncertainty for HSBC STAN as well as UBS BAER-260608.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_6duk8_6l/pdfs/0004-09-Bernstein-Global Energy Storage-260608.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_6duk8_6l/pdfs/0005-10-MS-Investor Presentation- Global Technology-Chipflation-260608.pdf",
+        "state": "done",
+        "error": ""
+      }
+    ]
+  }
+]
