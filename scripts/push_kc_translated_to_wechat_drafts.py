@@ -29,6 +29,8 @@ from urllib.parse import quote
 import requests
 from PIL import Image, ImageDraw
 
+from institution_names import ensure_title_has_institution, infer_institution_name
+
 
 BRAND = "KC桌面——外资精译"
 AUTHOR = "KC桌面"
@@ -859,7 +861,8 @@ def build_article(
     fallback_title = report_dir.name
     if isinstance(status, dict):
         fallback_title = str(status.get("title") or fallback_title)
-    title = title_from_markdown(markdown, fallback_title)
+    institution_name = infer_institution_name(report_dir.name, status, markdown[:1200])
+    title = ensure_title_has_institution(title_from_markdown(markdown, fallback_title), institution_name)
     wechat_title = truncate_chars(title, WECHAT_TITLE_MAX_CHARS)
     figure_paths = load_figure_paths(report_dir)
 
@@ -980,6 +983,7 @@ def build_article(
         "title": title,
         "wechat_title": wechat_title,
         "digest": digest_from_markdown(markdown),
+        "institution_name": institution_name,
         "article": article,
         "cover_image": str(cover_image),
         "inline_images": uploaded_images,
@@ -1160,6 +1164,7 @@ def main() -> int:
             {
                 "title": item["title"],
                 "wechat_title": item["wechat_title"],
+                "institution_name": item["institution_name"],
                 "report_dir": item["report_dir"],
                 "content_chars": item["content_chars"],
                 "content_bytes": item["content_bytes"],

@@ -18,6 +18,19 @@ import fitz
 import requests
 from PIL import Image, ImageDraw, ImageFilter, ImageFont, ImageOps
 
+SCRIPT_DIR = Path(__file__).resolve().parent
+if str(SCRIPT_DIR) not in sys.path:
+    sys.path.insert(0, str(SCRIPT_DIR))
+
+try:
+    from institution_names import ensure_title_has_institution, infer_institution_name
+except Exception:  # pragma: no cover
+    def infer_institution_name(*_values: Any) -> str:
+        return ""
+
+    def ensure_title_has_institution(title: str, _institution: str) -> str:
+        return title
+
 MINERU_BASE_URL = "https://mineru.net"
 IMAGE_SUFFIXES = {".png", ".jpg", ".jpeg", ".webp", ".bmp"}
 DONE_STATES = {"done", "success", "completed"}
@@ -449,13 +462,29 @@ def build_xhs_prompt(template_path: Path, source_text: str, args: argparse.Names
     )
 
 
-def build_wechat_prompt(template_path: Path, source_text: str, args: argparse.Namespace) -> str:
+def build_wechat_prompt(template_path: Path, source_text: str, args: argparse.Namespace, institution_name: str = "") -> str:
     source_text = trim_source_text(source_text, args.wechat_prompt_chars)
     return template_path.read_text(encoding="utf-8").format(
         target_length=args.wechat_length,
         community_cta=args.community_cta,
+        institution_name=institution_name or "可从报告标题识别的机构中文名",
         source_text=source_text,
     )
+
+
+def ensure_markdown_h1_institution(markdown: str, institution_name: str) -> str:
+    if not institution_name:
+        return markdown
+    lines = markdown.splitlines()
+    for index, raw in enumerate(lines):
+        stripped = raw.strip()
+        if stripped.startswith("# "):
+            title = re.sub(r"^#\s*", "", stripped).strip()
+            updated = ensure_title_has_institution(title, institution_name)
+            if updated != title:
+                lines[index] = f"# {updated}"
+            return "\n".join(lines)
+    return markdown
 
 
 def call_deepseek(prompt: str, args: argparse.Namespace, label: str) -> str:
@@ -670,6 +699,9 @@ def process_pdf(pdf_path: Path, result_row: dict[str, Any], output_root: Path, a
         return status
     source_text = markdown_path.read_text(encoding="utf-8", errors="ignore")
     (item_dir / "source_mineru.md").write_text(source_text, encoding="utf-8")
+    institution_name = infer_institution_name(pdf_path.name, status.get("source_pdf"), source_text[:2000])
+    if institution_name:
+        status["institution_name"] = institution_name
     xhs_prompt = build_xhs_prompt(Path(args.prompt_template), source_text, args)
     (item_dir / "prompt_for_xhs.md").write_text(xhs_prompt, encoding="utf-8")
     note = safe_generate_text(xhs_prompt, args, "Xiaohongshu note")
@@ -680,9 +712,10 @@ def process_pdf(pdf_path: Path, result_row: dict[str, Any], output_root: Path, a
     status["cover_short_title"] = title
     status["cover_subtitle"] = subtitle
     status["images"] = create_visual_assets(raw_dir, pdf_path, assets_dir, args.max_images, title=title)
-    wechat_prompt = build_wechat_prompt(Path(args.wechat_prompt_template), source_text, args)
+    wechat_prompt = build_wechat_prompt(Path(args.wechat_prompt_template), source_text, args, institution_name)
     (item_dir / "prompt_for_wechat.md").write_text(wechat_prompt, encoding="utf-8")
     wechat_article = safe_generate_text(wechat_prompt, args, "WeChat article")
+    wechat_article = ensure_markdown_h1_institution(wechat_article, institution_name)
     wechat_article = embed_images_in_wechat_article(wechat_article, status.get("images", []), max_images=3)
     (item_dir / "wechat_article.md").write_text(wechat_article, encoding="utf-8")
     try:

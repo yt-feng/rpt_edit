@@ -54,6 +54,7 @@ from push_kc_translated_to_wechat_drafts import (  # noqa: E402
     write_json,
 )
 
+from institution_names import ensure_title_has_institution, infer_institution_name  # noqa: E402
 
 DATE_DIR_RE = re.compile(r"^\d{6,8}$")
 IMAGE_SUFFIXES = {".jpg", ".jpeg", ".png", ".webp"}
@@ -112,14 +113,24 @@ def clean_xhs_markdown(markdown: str) -> str:
     return "\n".join(cleaned).strip()
 
 
-def xhs_article_title(markdown: str, fallback: str) -> str:
+def read_json(path: Path) -> dict[str, Any]:
+    if not path.exists():
+        return {}
+    try:
+        data = json.loads(path.read_text(encoding="utf-8", errors="ignore"))
+    except Exception:
+        return {}
+    return data if isinstance(data, dict) else {}
+
+
+def xhs_article_title(markdown: str, fallback: str, institution_name: str) -> str:
     for raw in markdown.splitlines():
         line = raw.strip()
         if line.startswith("#"):
             title = re.sub(r"^#{1,6}\s*", "", line).strip()
             if title:
-                return truncate_chars(title, WECHAT_TITLE_MAX_CHARS)
-    return truncate_chars(fallback, WECHAT_TITLE_MAX_CHARS)
+                return truncate_chars(ensure_title_has_institution(title, institution_name), WECHAT_TITLE_MAX_CHARS)
+    return truncate_chars(ensure_title_has_institution(fallback, institution_name), WECHAT_TITLE_MAX_CHARS)
 
 
 def markdown_local_image_refs(markdown: str) -> list[str]:
@@ -202,7 +213,13 @@ def build_article(
 ) -> dict[str, Any]:
     markdown_path = report_dir / "wechat_article.md"
     markdown = clean_xhs_markdown(markdown_path.read_text(encoding="utf-8", errors="ignore"))
-    title = xhs_article_title(markdown, report_dir.name)
+    status = read_json(report_dir / "status.json")
+    institution_name = infer_institution_name(
+        report_dir.name,
+        status.get("source_pdf"),
+        markdown[:1200],
+    )
+    title = xhs_article_title(markdown, report_dir.name, institution_name)
     wechat_title = title
 
     image_urls: dict[str, str] = {}
@@ -289,6 +306,7 @@ def build_article(
         "title": truncate_chars(title, DISPLAY_TITLE_MAX_CHARS),
         "wechat_title": wechat_title,
         "digest": digest_from_markdown(markdown),
+        "institution_name": institution_name,
         "article": article,
         "cover_image": str(cover_image),
         "inline_images": uploaded_images,
@@ -468,6 +486,7 @@ def main() -> int:
             {
                 "title": item["title"],
                 "wechat_title": item["wechat_title"],
+                "institution_name": item["institution_name"],
                 "report_dir": item["report_dir"],
                 "content_chars": item["content_chars"],
                 "content_bytes": item["content_bytes"],
