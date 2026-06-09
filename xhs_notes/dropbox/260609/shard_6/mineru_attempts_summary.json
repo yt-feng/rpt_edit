@@ -1,0 +1,34 @@
+[
+  {
+    "attempt": 1,
+    "round": 1,
+    "token_label": "MINER_U_2",
+    "submitted_pdf_count": 4,
+    "successful_pdf_count": 4,
+    "retry_pdf_count": 0,
+    "timed_out": false,
+    "error": "",
+    "states": [
+      {
+        "pdf": "/tmp/pdf_batch_001_c9_kz3lg/pdfs/0001-31-Bernstein-Payments- Processors - IT Services The Long View- Payments-Does Cash Digitization Runway Still Exist--260609.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_c9_kz3lg/pdfs/0002-32-MS-Three Actionable Ideas-260607.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_c9_kz3lg/pdfs/0003-33-NOM-4QFY26 Staples review-on an improving track-260609.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_c9_kz3lg/pdfs/0004-34-NOM-Korea batteries-NIFA takeaways - Korea cathode companies Quick Note-260608.pdf",
+        "state": "done",
+        "error": ""
+      }
+    ]
+  }
+]
