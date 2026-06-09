@@ -141,6 +141,7 @@ def build_child_command(args: argparse.Namespace, tmp_input: Path) -> list[str]:
         "--poll-timeout", str(args.poll_timeout),
         "--poll-interval", str(args.poll_interval),
         "--mineru-retries", str(args.mineru_retries),
+        "--mineru-no-progress-timeout", str(args.mineru_no_progress_timeout),
         "--watermark", args.watermark,
     ]
     return cmd
@@ -213,6 +214,7 @@ def main() -> int:
     parser.add_argument("--poll-timeout", type=int, default=3600)
     parser.add_argument("--poll-interval", type=int, default=15)
     parser.add_argument("--mineru-retries", type=int, default=1)
+    parser.add_argument("--mineru-no-progress-timeout", type=int, default=600)
     parser.add_argument("--watermark", default="KC桌面")
     args = parser.parse_args()
 

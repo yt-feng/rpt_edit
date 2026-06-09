@@ -172,6 +172,8 @@ jobs:
       pdf_count: ${{ steps.dropbox.outputs.pdf_count }}
       macro_candidate_count: ${{ steps.select_macro.outputs.candidate_count }}
       selected_count: ${{ steps.select_macro.outputs.process_count }}
+      shard_indices: ${{ steps.shard_matrix.outputs.shard_indices }}
+      effective_shard_count: ${{ steps.shard_matrix.outputs.effective_shard_count }}
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -209,6 +211,30 @@ jobs:
             --deepseek-base-url "${{ needs.resolve-inputs.outputs.deepseek_base_url }}" 2>&1 | tee "macro_selection_progress.log"
           cp "macro_selection_progress.log" "_selected_macro_pdfs/macro_selection_progress.log"
           echo "::notice::Macro candidates=${{ steps.select_macro.outputs.candidate_count }}, selected=${{ steps.select_macro.outputs.process_count }}. Company/stock reports are skipped."
+      - name: Compute shard matrix
+        id: shard_matrix
+        env:
+          SELECTED_COUNT: ${{ steps.select_macro.outputs.process_count }}
+          SHARD_COUNT: ${{ needs.resolve-inputs.outputs.shard_count }}
+          REPORTS_PER_SHARD: ${{ needs.resolve-inputs.outputs.reports_per_shard }}
+        run: |
+          python - <<'PY'
+          import json
+          import math
+          import os
+
+          selected = max(0, int(os.getenv("SELECTED_COUNT") or "0"))
+          shard_count = max(1, int(os.getenv("SHARD_COUNT") or "1"))
+          reports_per_shard = max(1, int(os.getenv("REPORTS_PER_SHARD") or "1"))
+          needed = max(1, math.ceil(selected / reports_per_shard))
+          effective = min(shard_count, needed)
+          indices = list(range(effective))
+          output = os.environ["GITHUB_OUTPUT"]
+          with open(output, "a", encoding="utf-8") as f:
+              f.write(f"shard_indices={json.dumps(indices)}\n")
+              f.write(f"effective_shard_count={effective}\n")
+          print(f"Selected {selected} PDF(s); running shard indices {indices}.")
+          PY
       - name: Upload selected macro PDFs artifact
         uses: actions/upload-artifact@v4
         with:
@@ -222,9 +248,9 @@ jobs:
     timeout-minutes: 90
     strategy:
       fail-fast: false
-      max-parallel: 6
+      max-parallel: 4
       matrix:
-        shard_index: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39]
+        shard_index: ${{ fromJson(needs.select-macro-reports.outputs.shard_indices) }}
     steps:
       - name: Gate shard
         id: gate
@@ -232,6 +258,9 @@ jobs:
           if [ "${{ matrix.shard_index }}" -ge "${{ needs.resolve-inputs.outputs.shard_count }}" ]; then
             echo "run=false" >> "$GITHUB_OUTPUT"
             echo "::notice::Shard ${{ matrix.shard_index }} skipped because shard_count=${{ needs.resolve-inputs.outputs.shard_count }}."
+          elif [ $(( ${{ matrix.shard_index }} * ${{ needs.resolve-inputs.outputs.reports_per_shard }} )) -ge "${{ needs.select-macro-reports.outputs.selected_count }}" ]; then
+            echo "run=false" >> "$GITHUB_OUTPUT"
+            echo "::notice::Shard ${{ matrix.shard_index }} skipped because selected_count=${{ needs.select-macro-reports.outputs.selected_count }}."
           else
             echo "run=true" >> "$GITHUB_OUTPUT"
             echo "SHARD_STARTED_AT=$(date +%s)" >> "$GITHUB_ENV"
@@ -241,7 +270,7 @@ jobs:
         if: ${{ steps.gate.outputs.run == 'true' }}
         uses: actions/checkout@v4
         with:
-          fetch-depth: 0
+          fetch-depth: 1
       - name: Set up Python
         if: ${{ steps.gate.outputs.run == 'true' }}
         uses: actions/setup-python@v5
@@ -268,6 +297,7 @@ jobs:
         if: ${{ steps.gate.outputs.run == 'true' }}
         env:
           MINER_U: ${{ secrets.MINER_U }}
+          MINER_U_2: ${{ secrets.MINER_U_2 }}
           DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
           DEEPSEEK_BASE_URL: ${{ needs.resolve-inputs.outputs.deepseek_base_url }}
         run: |
@@ -295,8 +325,9 @@ jobs:
             --mineru-model "${{ needs.resolve-inputs.outputs.mineru_model }}" \
             --language "${{ needs.resolve-inputs.outputs.language }}" \
             --ocr "${{ needs.resolve-inputs.outputs.ocr }}" \
-            --poll-timeout 3600 \
+            --poll-timeout 1800 \
             --mineru-retries 1 \
+            --mineru-no-progress-timeout 300 \
             --length 1000 \
             --wechat-length "${{ needs.resolve-inputs.outputs.wechat_length }}" \
             --community-cta "${{ needs.resolve-inputs.outputs.community_cta }}" 2>&1 | tee "$OUTPUT_DIR/generate_progress.log"
@@ -411,7 +442,7 @@ jobs:
 
   build-kc-translated-reports:
     needs: [resolve-inputs, select-macro-reports, package-publish-ready]
-    if: ${{ success() && needs.resolve-inputs.outputs.translated_report_count != '0' }}
+    if: ${{ !cancelled() && needs.package-publish-ready.result == 'success' && needs.resolve-inputs.outputs.translated_report_count != '0' }}
     runs-on: ubuntu-latest
     timeout-minutes: 360
     steps:
@@ -486,7 +517,7 @@ jobs:
 
   push-kc-translated-wechat-drafts:
     needs: [resolve-inputs, select-macro-reports, build-kc-translated-reports]
-    if: ${{ success() && needs.resolve-inputs.outputs.translated_report_count != '0' && needs.resolve-inputs.outputs.wechat_draft_upload == 'true' }}
+    if: ${{ !cancelled() && needs.build-kc-translated-reports.result == 'success' && needs.resolve-inputs.outputs.translated_report_count != '0' && needs.resolve-inputs.outputs.wechat_draft_upload == 'true' }}
     runs-on: [self-hosted, linux, x64, wechat-draft]
     timeout-minutes: 180
     steps:

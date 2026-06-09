@@ -33,6 +33,7 @@ class MinerUAttemptResult(NamedTuple):
     data_id_to_pdf: dict[str, Path]
     timed_out: bool
     error: str
+    token_label: str
 
 
 def log(message: str) -> None:
@@ -48,6 +49,26 @@ def slug(value: str) -> str:
 
 def mineru_headers(token: str) -> dict[str, str]:
     return {"Content-Type": "application/json", "Authorization": f"Bearer {token}"}
+
+
+def split_secret_tokens(value: str | None) -> list[str]:
+    if not value:
+        return []
+    return [part.strip() for part in re.split(r"[\n,;]+", value) if part.strip()]
+
+
+def mineru_tokens_from_env() -> list[tuple[str, str]]:
+    tokens: list[tuple[str, str]] = []
+    seen: set[str] = set()
+    for env_name in ["MINER_U_KEYS", "MINER_U_2", "MINER_U", "MINERU_API_KEY"]:
+        parts = split_secret_tokens(os.getenv(env_name))
+        for index, token in enumerate(parts, 1):
+            if token in seen:
+                continue
+            seen.add(token)
+            label = env_name if len(parts) == 1 else f"{env_name}_{index}"
+            tokens.append((label, token))
+    return tokens
 
 
 def parse_json_response(response: requests.Response, label: str) -> dict[str, Any]:
@@ -100,7 +121,13 @@ def submit_to_mineru(pdfs: list[Path], input_dir: Path, token: str, args: argpar
     return str(batch_id), data_id_to_pdf
 
 
-def poll_mineru(batch_id: str, token: str, timeout_seconds: int, interval_seconds: int) -> tuple[list[dict[str, Any]], bool]:
+def mineru_row_has_progress(row: dict[str, Any]) -> bool:
+    state = str(row.get("state", "")).lower()
+    return state in DONE_STATES or state in FAILED_STATES or state == "running" or bool(row.get("full_zip_url") or row.get("extract_progress"))
+
+
+def poll_mineru(batch_id: str, token: str, timeout_seconds: int, interval_seconds: int, no_progress_timeout_seconds: int) -> tuple[list[dict[str, Any]], bool]:
+    started_at = time.time()
     deadline = time.time() + timeout_seconds
     url = f"{MINERU_BASE_URL}/api/v4/extract-results/batch/{batch_id}"
     last_response: dict[str, Any] | None = None
@@ -114,6 +141,17 @@ def poll_mineru(batch_id: str, token: str, timeout_seconds: int, interval_second
             log("MinerU states: " + ", ".join(states))
         if rows and all(state in DONE_STATES or state in FAILED_STATES for state in states):
             return rows, False
+        if (
+            no_progress_timeout_seconds > 0
+            and rows
+            and not any(mineru_row_has_progress(row) for row in rows)
+            and time.time() - started_at >= no_progress_timeout_seconds
+        ):
+            log(
+                f"MinerU batch {batch_id} had no parsing progress after "
+                f"{no_progress_timeout_seconds}s; switching token/retry path."
+            )
+            return rows, True
         time.sleep(interval_seconds)
 
     rows = (last_response or {}).get("data", {}).get("extract_result") or []
@@ -135,15 +173,15 @@ def is_successful_mineru_row(row: dict[str, Any]) -> bool:
     return str(row.get("state", "")).lower() in DONE_STATES and bool(row.get("full_zip_url"))
 
 
-def run_mineru_attempt(pdfs: list[Path], input_dir: Path, token: str, args: argparse.Namespace, attempt: int) -> MinerUAttemptResult:
+def run_mineru_attempt(pdfs: list[Path], input_dir: Path, token: str, token_label: str, args: argparse.Namespace, attempt: int) -> MinerUAttemptResult:
     try:
         batch_id, data_id_to_pdf = submit_to_mineru(pdfs, input_dir, token, args)
-        log(f"MinerU attempt {attempt} batch_id={batch_id}")
-        rows, timed_out = poll_mineru(batch_id, token, args.poll_timeout, args.poll_interval)
-        return MinerUAttemptResult(rows=rows, data_id_to_pdf=data_id_to_pdf, timed_out=timed_out, error="")
+        log(f"MinerU attempt {attempt} using {token_label} batch_id={batch_id}")
+        rows, timed_out = poll_mineru(batch_id, token, args.poll_timeout, args.poll_interval, args.mineru_no_progress_timeout)
+        return MinerUAttemptResult(rows=rows, data_id_to_pdf=data_id_to_pdf, timed_out=timed_out, error="", token_label=token_label)
     except Exception as exc:
-        log(f"MinerU attempt {attempt} failed before usable results: {exc}")
-        return MinerUAttemptResult(rows=[], data_id_to_pdf={}, timed_out=False, error=str(exc))
+        log(f"MinerU attempt {attempt} using {token_label} failed before usable results: {exc}")
+        return MinerUAttemptResult(rows=[], data_id_to_pdf={}, timed_out=False, error=str(exc), token_label=token_label)
 
 
 def map_mineru_row_to_pdf(row: dict[str, Any], data_id_to_pdf: dict[str, Path], pdfs: list[Path]) -> Path | None:
@@ -681,6 +719,7 @@ def build_arg_parser() -> argparse.ArgumentParser:
     parser.add_argument("--poll-timeout", type=int, default=3600)
     parser.add_argument("--poll-interval", type=int, default=15)
     parser.add_argument("--mineru-retries", type=int, default=1, help="Retry incomplete/failed MinerU PDFs this many times.")
+    parser.add_argument("--mineru-no-progress-timeout", type=int, default=600, help="Switch token/retry path if MinerU rows stay pending with no progress this long.")
     parser.add_argument("--watermark", default=XHS_WATERMARK)
     return parser
 
@@ -688,8 +727,8 @@ def build_arg_parser() -> argparse.ArgumentParser:
 def main() -> int:
     args = build_arg_parser().parse_args()
     try:
-        token = os.getenv("MINER_U") or os.getenv("MINERU_API_KEY")
-        if not token:
+        mineru_tokens = mineru_tokens_from_env()
+        if not mineru_tokens:
             raise RuntimeError("Missing MinerU token. Please add repo secret MINER_U.")
         input_dir = Path(args.input_dir).resolve()
         output_dir = Path(args.output_dir).resolve()
@@ -697,47 +736,52 @@ def main() -> int:
         pdfs = find_pdfs(input_dir, output_dir)
         if not pdfs:
             raise RuntimeError(f"No PDF files found under {input_dir}")
-        log(f"Found {len(pdfs)} PDFs.")
-        max_attempts = max(1, int(args.mineru_retries) + 1)
+        log(f"Found {len(pdfs)} PDFs. MinerU token slots available={len(mineru_tokens)}.")
+        max_rounds = max(1, int(args.mineru_retries) + 1)
         remaining_pdfs = list(pdfs)
         successful_rows: dict[Path, dict[str, Any]] = {}
         latest_rows: dict[Path, dict[str, Any]] = {}
         attempt_summaries: list[dict[str, Any]] = []
         mineru_timed_out = False
-        for attempt in range(1, max_attempts + 1):
+        attempt = 0
+        for round_index in range(1, max_rounds + 1):
+            for token_label, token in mineru_tokens:
+                if not remaining_pdfs:
+                    break
+                attempt += 1
+                max_attempts = max_rounds * len(mineru_tokens)
+                log(
+                    f"MinerU attempt {attempt}/{max_attempts} using {token_label}: "
+                    f"submitting {len(remaining_pdfs)} PDF(s)."
+                )
+                attempt_result = run_mineru_attempt(remaining_pdfs, input_dir, token, token_label, args, attempt)
+                mineru_timed_out = mineru_timed_out or attempt_result.timed_out
+                collect_successful_rows(attempt_result, remaining_pdfs, successful_rows, latest_rows)
+                success_count = sum(1 for pdf in remaining_pdfs if pdf in successful_rows)
+                retry_pdfs = [pdf for pdf in remaining_pdfs if pdf not in successful_rows]
+                attempt_summaries.append({
+                    "attempt": attempt,
+                    "round": round_index,
+                    "token_label": attempt_result.token_label,
+                    "submitted_pdf_count": len(remaining_pdfs),
+                    "successful_pdf_count": success_count,
+                    "retry_pdf_count": len(retry_pdfs),
+                    "timed_out": attempt_result.timed_out,
+                    "error": attempt_result.error,
+                    "states": [
+                        {
+                            "pdf": str(map_mineru_row_to_pdf(row, attempt_result.data_id_to_pdf, remaining_pdfs) or ""),
+                            "state": row.get("state"),
+                            "error": row.get("err_msg") or row.get("error") or "",
+                        }
+                        for row in attempt_result.rows
+                    ],
+                })
+                if retry_pdfs:
+                    log(f"{len(retry_pdfs)} PDF(s) remain incomplete after attempt {attempt}.")
+                remaining_pdfs = retry_pdfs
             if not remaining_pdfs:
                 break
-            log(
-                f"MinerU attempt {attempt}/{max_attempts}: "
-                f"submitting {len(remaining_pdfs)} PDF(s)."
-            )
-            attempt_result = run_mineru_attempt(remaining_pdfs, input_dir, token, args, attempt)
-            mineru_timed_out = mineru_timed_out or attempt_result.timed_out
-            collect_successful_rows(attempt_result, remaining_pdfs, successful_rows, latest_rows)
-            success_count = sum(1 for pdf in remaining_pdfs if pdf in successful_rows)
-            retry_pdfs = [pdf for pdf in remaining_pdfs if pdf not in successful_rows]
-            attempt_summaries.append({
-                "attempt": attempt,
-                "submitted_pdf_count": len(remaining_pdfs),
-                "successful_pdf_count": success_count,
-                "retry_pdf_count": len(retry_pdfs),
-                "timed_out": attempt_result.timed_out,
-                "error": attempt_result.error,
-                "states": [
-                    {
-                        "pdf": str(map_mineru_row_to_pdf(row, attempt_result.data_id_to_pdf, remaining_pdfs) or ""),
-                        "state": row.get("state"),
-                        "error": row.get("err_msg") or row.get("error") or "",
-                    }
-                    for row in attempt_result.rows
-                ],
-            })
-            if retry_pdfs and attempt < max_attempts:
-                log(
-                    f"Retrying {len(retry_pdfs)} incomplete/failed MinerU PDF(s) "
-                    f"after attempt {attempt}."
-                )
-            remaining_pdfs = retry_pdfs
 
         summary: list[dict[str, Any]] = []
         successful_reports = 0
@@ -749,7 +793,7 @@ def main() -> int:
                     "source_pdf": str(pdf_path),
                     "mineru_state": last_row.get("state") or "not_returned",
                     "mineru_error": last_row.get("err_msg") or last_row.get("error") or "",
-                    "error": f"MinerU did not finish successfully after {max_attempts} attempt(s).",
+                    "error": f"MinerU did not finish successfully after {attempt} attempt(s).",
                 }
                 log(f"Skipping PDF after MinerU retry exhaustion: {pdf_path.name}")
                 summary.append(status)
