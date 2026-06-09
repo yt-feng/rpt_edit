@@ -45,6 +45,7 @@ from push_kc_translated_to_wechat_drafts import (  # noqa: E402
     render_fitted_wechat_html,
     resolve_asset_path,
     resolve_repo_asset_path,
+    source_report_name_from_xhs_dir,
     submit_publish,
     truncate_chars,
     truncate_utf8_bytes,
@@ -219,6 +220,7 @@ def build_article(
         status.get("source_pdf"),
         markdown[:1200],
     )
+    source_report_name = source_report_name_from_xhs_dir(report_dir)
     title = xhs_article_title(markdown, report_dir.name, institution_name)
     wechat_title = title
 
@@ -272,6 +274,7 @@ def build_article(
         args.body_hook,
         args.disclaimer,
         trailing_image_url,
+        source_report_name,
         args.max_body_chars,
         args.max_content_chars,
         args.max_content_bytes,
@@ -307,6 +310,7 @@ def build_article(
         "wechat_title": wechat_title,
         "digest": digest_from_markdown(markdown),
         "institution_name": institution_name,
+        "source_report_name": source_report_name,
         "article": article,
         "cover_image": str(cover_image),
         "inline_images": uploaded_images,
@@ -487,6 +491,7 @@ def main() -> int:
                 "title": item["title"],
                 "wechat_title": item["wechat_title"],
                 "institution_name": item["institution_name"],
+                "source_report_name": item["source_report_name"],
                 "report_dir": item["report_dir"],
                 "content_chars": item["content_chars"],
                 "content_bytes": item["content_bytes"],

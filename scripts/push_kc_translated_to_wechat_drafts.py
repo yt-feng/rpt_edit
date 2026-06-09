@@ -180,6 +180,40 @@ def read_json(path: Path) -> dict[str, Any] | list[Any] | None:
         return None
 
 
+def clean_source_report_name(value: Any) -> str:
+    raw = str(value or "").strip()
+    if not raw:
+        return ""
+    name = Path(raw).name
+    name = re.sub(r"\.pdf$", "", name, flags=re.I)
+    name = re.sub(r"^\d{4}-", "", name)
+    name = re.sub(r"\s+", " ", name.replace("_", " ")).strip(" -._")
+    return name[:240]
+
+
+def source_report_name_from_xhs_dir(report_dir: Path) -> str:
+    status = read_json(report_dir / "status.json")
+    if isinstance(status, dict):
+        cleaned = clean_source_report_name(status.get("source_pdf"))
+        if cleaned:
+            return cleaned
+    return clean_source_report_name(report_dir.name)
+
+
+def source_report_name_from_translated_dir(report_dir: Path, status: dict[str, Any] | list[Any] | None) -> str:
+    if isinstance(status, dict):
+        for key in ["source_report_original_name", "source_pdf", "original_report_name"]:
+            cleaned = clean_source_report_name(status.get(key))
+            if cleaned:
+                return cleaned
+        source_report_dir = status.get("source_report_dir")
+        if source_report_dir:
+            cleaned = source_report_name_from_xhs_dir(Path(str(source_report_dir)))
+            if cleaned:
+                return cleaned
+    return clean_source_report_name(report_dir.name)
+
+
 def strip_markdown_markup(text: str) -> str:
     text = re.sub(r"^\s*#{1,6}\s*", "", text)
     text = re.sub(r"\*\*([^*]+)\*\*", r"\1", text)
@@ -298,6 +332,17 @@ def footer_html(disclaimer: str) -> str:
     )
 
 
+def source_report_footer_html(source_report_name: str) -> str:
+    if not source_report_name:
+        return ""
+    return (
+        '<p style="margin:16px 0 0;color:#A3ABB8;font-size:12px;line-height:1.55;'
+        'text-align:left;">'
+        f"Original report: {html.escape(source_report_name)}"
+        "</p>"
+    )
+
+
 def hook_html(text: str) -> str:
     if not text:
         return ""
@@ -343,6 +388,7 @@ def render_fitted_wechat_html(
     hook_text: str,
     disclaimer: str,
     trailing_image_url: str,
+    source_report_name: str,
     max_visible_chars: int,
     max_content_chars: int,
     max_content_bytes: int,
@@ -382,6 +428,7 @@ def render_fitted_wechat_html(
                 hook_text,
                 disclaimer,
                 trailing_image_url,
+                source_report_name,
                 visible_budget,
                 max_content_chars,
             )
@@ -408,6 +455,7 @@ def markdown_to_wechat_html(
     hook_text: str,
     disclaimer: str,
     trailing_image_url: str,
+    source_report_name: str,
     max_visible_chars: int,
     max_chars: int,
 ) -> tuple[str, int, int]:
@@ -525,6 +573,8 @@ def markdown_to_wechat_html(
     tail = [*supplemental_images, hook_html(hook_text), footer_html(disclaimer)]
     if trailing_image_url:
         tail.append(image_html(trailing_image_url, alt="KC Desk"))
+    if source_report_name:
+        tail.append(source_report_footer_html(source_report_name))
     content = compose_limited_html(parts, tail, max_chars)
     total_visible = text_used + visible_char_count(hook_text)
     return content, total_visible, len(body_images)
@@ -862,6 +912,7 @@ def build_article(
     if isinstance(status, dict):
         fallback_title = str(status.get("title") or fallback_title)
     institution_name = infer_institution_name(report_dir.name, status, markdown[:1200])
+    source_report_name = source_report_name_from_translated_dir(report_dir, status)
     title = ensure_title_has_institution(title_from_markdown(markdown, fallback_title), institution_name)
     wechat_title = truncate_chars(title, WECHAT_TITLE_MAX_CHARS)
     figure_paths = load_figure_paths(report_dir)
@@ -949,6 +1000,7 @@ def build_article(
         args.body_hook,
         args.disclaimer,
         trailing_image_url,
+        source_report_name,
         args.max_body_chars,
         args.max_content_chars,
         args.max_content_bytes,
@@ -984,6 +1036,7 @@ def build_article(
         "wechat_title": wechat_title,
         "digest": digest_from_markdown(markdown),
         "institution_name": institution_name,
+        "source_report_name": source_report_name,
         "article": article,
         "cover_image": str(cover_image),
         "inline_images": uploaded_images,
@@ -1165,6 +1218,7 @@ def main() -> int:
                 "title": item["title"],
                 "wechat_title": item["wechat_title"],
                 "institution_name": item["institution_name"],
+                "source_report_name": item["source_report_name"],
                 "report_dir": item["report_dir"],
                 "content_chars": item["content_chars"],
                 "content_bytes": item["content_bytes"],
