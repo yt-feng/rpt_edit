@@ -28,6 +28,19 @@ except Exception:
 TEXT_SUFFIXES = {".md", ".txt", ".json", ".srt", ".vtt"}
 ZSXQ_IMAGE_MD = "![](https://github.com/yt-feng/rpt_edit/blob/main/prompts/zsxq_img.jpg)"
 GRAY_DISCLAIMER = '<p style="color:#999999;font-size:12px;">Personal reading notes and learning share only. Not investment advice.</p>'
+XIANYU_MAX_CHARS = 1499
+EMOJI_RE = re.compile(
+    "["
+    "\U0001F000-\U0001FAFF"
+    "\U00002700-\U000027BF"
+    "\U00002600-\U000026FF"
+    "\U0001F1E6-\U0001F1FF"
+    "\U0001F3FB-\U0001F3FF"
+    "\U0000FE0F"
+    "\U0000200D"
+    "]+",
+    flags=re.UNICODE,
+)
 
 BRAND_PATTERNS: list[tuple[str, str]] = [
     (r"Goldman\s+Sachs\s+Research", "GS"), (r"Goldman\s+Sachs", "GS"), (r"高盛研究", "GS"), (r"高盛", "GS"),
@@ -88,6 +101,56 @@ def sanitize_text(text: str) -> str:
     text = re.sub(r"MS\s*\((?:Morgan\s+Stanley|摩根士丹利|大摩)\)", "MS", text, flags=re.IGNORECASE)
     text = re.sub(r"BofA\s*\((?:Bank\s+of\s+America|美银|美银证券)\)", "BofA", text, flags=re.IGNORECASE)
     return text
+
+
+def remove_emoji(text: str) -> str:
+    return EMOJI_RE.sub("", text or "")
+
+
+def split_xianyu_hashtag_line(text: str) -> tuple[str, str]:
+    lines = text.rstrip().splitlines()
+    for index in range(len(lines) - 1, -1, -1):
+        if re.match(r"\s*(?:Hashtag|hashtag|标签)\s*[:：]", lines[index].strip()):
+            body = "\n".join(lines[:index]).rstrip()
+            hashtag = lines[index].strip()
+            return body, hashtag
+    return text.rstrip(), ""
+
+
+def truncate_xianyu_note(text: str, max_chars: int = XIANYU_MAX_CHARS) -> str:
+    text = re.sub(r"\n{3,}", "\n\n", text.strip())
+    if len(text) <= max_chars:
+        return text
+
+    body, hashtag = split_xianyu_hashtag_line(text)
+    suffix = f"\n\n{hashtag}" if hashtag else ""
+    budget = max_chars - len(suffix)
+    if budget <= 80:
+        return text[:max_chars].rstrip()
+
+    truncated = body[:budget].rstrip()
+    cut = max(truncated.rfind("\n"), truncated.rfind("。"), truncated.rfind("；"), truncated.rfind(";"))
+    if cut >= int(budget * 0.72):
+        truncated = truncated[: cut + 1].rstrip()
+    return (truncated + suffix).strip()
+
+
+def enforce_xianyu_constraints(text: str) -> str:
+    text = remove_emoji(text)
+    text = re.sub(r"[ \t]+\n", "\n", text)
+    text = re.sub(r"\n{3,}", "\n\n", text).strip()
+    return truncate_xianyu_note(text, XIANYU_MAX_CHARS)
+
+
+def enforce_xianyu_constraints_in_dir(output_dir: Path) -> int:
+    changed = 0
+    for path in output_dir.rglob("xianyu_note.md"):
+        original = path.read_text(encoding="utf-8", errors="ignore")
+        constrained = enforce_xianyu_constraints(original)
+        if constrained != original:
+            path.write_text(sanitize_text(constrained), encoding="utf-8")
+            changed += 1
+    return changed
 
 
 def normalize_wechat_ending(text: str, include_zsxq: bool) -> str:
@@ -212,7 +275,7 @@ def generate_from_template(item_dir: Path, args: argparse.Namespace, source_path
 
 
 def generate_xianyu_for_item(item_dir: Path, args: argparse.Namespace) -> dict[str, str]:
-    return generate_from_template(
+    status = generate_from_template(
         item_dir=item_dir,
         args=args,
         source_path=item_dir / "source_mineru.md",
@@ -222,6 +285,15 @@ def generate_xianyu_for_item(item_dir: Path, args: argparse.Namespace) -> dict[s
         label="Xianyu listing note",
         prompt_chars=args.xianyu_prompt_chars,
     )
+    note_path = item_dir / "xianyu_note.md"
+    if note_path.exists():
+        original = note_path.read_text(encoding="utf-8", errors="ignore")
+        constrained = enforce_xianyu_constraints(original)
+        note_path.write_text(sanitize_text(constrained), encoding="utf-8")
+        status["xianyu_note_chars"] = str(len(constrained))
+        status["xianyu_note_no_emoji"] = str(not EMOJI_RE.search(constrained)).lower()
+        status["xianyu_note_max_chars"] = str(XIANYU_MAX_CHARS)
+    return status
 
 
 def generate_zhihu_for_item(item_dir: Path, args: argparse.Namespace) -> dict[str, str]:
@@ -308,6 +380,8 @@ def main() -> int:
     normalized = normalize_wechat_articles(output_dir)
     log(f"Normalized {normalized} WeChat article endings.")
     run_guard_if_enabled(output_dir, args)
+    constrained_xianyu = enforce_xianyu_constraints_in_dir(output_dir)
+    log(f"Enforced Xianyu hard constraints on {constrained_xianyu} files.")
     sanitized_after = sanitize_output_dir(output_dir)
     log(f"Sanitized {sanitized_after} generated text files after finalization.")
     (output_dir / "finalize_summary.json").write_text(sanitize_text(json.dumps(summary, ensure_ascii=False, indent=2)), encoding="utf-8")
