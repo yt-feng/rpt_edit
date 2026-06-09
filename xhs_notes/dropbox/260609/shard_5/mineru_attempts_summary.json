@@ -1,0 +1,39 @@
+[
+  {
+    "attempt": 1,
+    "round": 1,
+    "token_label": "MINER_U_2",
+    "submitted_pdf_count": 5,
+    "successful_pdf_count": 5,
+    "retry_pdf_count": 0,
+    "timed_out": false,
+    "error": "",
+    "states": [
+      {
+        "pdf": "/tmp/pdf_batch_001_il2ozb4u/pdfs/0001-26-GS-Tracking U.S. Supply Chain Congestion-GS Supply Chain Congestion Scale-June 8th- Bottleneck Scale Remains at -2--260608.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_il2ozb4u/pdfs/0002-27-JPM-Hong Kong Property-After one overhang- here comes another one-260608.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_il2ozb4u/pdfs/0003-28-Bernstein-US Healthcare Services- A summary of our teach in on Medicare Advantage-260609.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_il2ozb4u/pdfs/0004-29-MS-China Biotechnology-ASCO 2026 Takeaways-Days 4-5-260607.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_il2ozb4u/pdfs/0005-30-CITI-Taiwan PCB - Laminates-What-s New at Citi Taiwan Tech Conference 2026 - strong demand and shortage-260607.pdf",
+        "state": "done",
+        "error": ""
+      }
+    ]
+  }
+]
