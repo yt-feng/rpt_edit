@@ -1,5 +1,5 @@
 {
-  "created_at_utc": "2026-06-09T02:33:27.113996+00:00",
+  "created_at_utc": "2026-06-09T03:48:12.691130+00:00",
   "source_date_dir": "xhs_notes/dropbox/260608",
   "output_dir": "publish_ready_zips/260608",
   "max_zip_mb": 90,
@@ -7,7 +7,7 @@
   "exclude_source_mineru": true,
   "markdown_files_renamed_to_txt": true,
   "excluded_debug_files": true,
-  "included_shard_count": 3,
+  "included_shard_count": 5,
   "skipped_shards": [
     "shard_10",
     "shard_11",
@@ -45,55 +45,94 @@
     "shard_8",
     "shard_9"
   ],
-  "total_files": 73,
-  "total_renamed_markdown_count": 25,
-  "total_raw_file_bytes": 8187453,
+  "total_files": 498,
+  "total_renamed_markdown_count": 120,
+  "total_raw_file_bytes": 90846905,
   "zip_count": 1,
   "zips": [
     {
       "path": "publish_ready_zips/260608/publish_ready_260608.zip",
-      "size_bytes": 7717647,
-      "file_count": 73,
-      "renamed_markdown_count": 25,
-      "raw_file_bytes": 8187453,
+      "size_bytes": 85186542,
+      "file_count": 498,
+      "renamed_markdown_count": 120,
+      "raw_file_bytes": 90846905,
       "shards": [
         "shard_0",
+        "shard_1",
         "shard_2",
-        "shard_3"
+        "shard_3",
+        "shard_4"
       ]
     }
   ],
   "included_shards": [
     {
       "shard": "shard_0",
-      "report_count": 1,
-      "file_count": 19,
-      "renamed_markdown_count": 5,
-      "raw_file_bytes": 2330101,
+      "report_count": 5,
+      "file_count": 111,
+      "renamed_markdown_count": 25,
+      "raw_file_bytes": 15260253,
       "reports": [
+        "0001-01-Goldman-Sachs-China-FX-Rates-Monitor--The-Policy-Anchor-Behind-a-Stronge",
+        "0002-02-Morgan-Stanley-China-s-3D-Journey-The-Hefei-Paradox--Why-Smart-Industria",
+        "0003-03-J.P.-Morgan-Equity-Strategy-What-would-it-take-for-Europe-to-trade-relat",
+        "0004-04-Nomura-Economic-Insights-Nomura-Investment-Forum-Asia-2026--A-recap-of-o",
         "0005-05-J.P.-Morgan-China--Another-strong-beat-in-FX-reserves-260607"
       ]
     },
     {
-      "shard": "shard_2",
-      "report_count": 3,
-      "file_count": 41,
-      "renamed_markdown_count": 15,
-      "raw_file_bytes": 4472451,
+      "shard": "shard_1",
+      "report_count": 5,
+      "file_count": 107,
+      "renamed_markdown_count": 25,
+      "raw_file_bytes": 15951704,
       "reports": [
+        "0001-06-J.P.-Morgan-China-Quant-Strategy-Calm-Surface--Violent-Undercurrents-260",
+        "0002-07-J.P.-Morgan-Global-Data-Watch--Asia-EMAX-resilience-has-a-trifecta-of-un",
+        "0003-08-J.P.-Morgan-Global-Banks-China-investment-regulations-triggering-WM-reve",
+        "0004-09-Bernstein-Global-Energy-Storage-260608",
+        "0005-10-Morgan-Stanley-Investor-Presentation--Global-Technology-Chipflation-2606"
+      ]
+    },
+    {
+      "shard": "shard_2",
+      "report_count": 5,
+      "file_count": 87,
+      "renamed_markdown_count": 25,
+      "raw_file_bytes": 17359073,
+      "reports": [
+        "0001-11-Morgan-Stanley-Global-Technology-Computex-2026-Takeaways-260607",
         "0002-12-Goldman-Sachs-Americas-Technology--Semiconductors--SIA-data-shows-broadl",
         "0003-13-Goldman-Sachs-China-Three-things-in-China-260607",
+        "0004-14-Bernstein-AI-Value-Chain-How-much-does-a-GW-of-Vera-Rubin-data-center-ca",
         "0005-15-Goldman-Sachs-China-Solar-2026-SNEC-Takeaways--DESS-emerges-as-bright-sp"
       ]
     },
     {
       "shard": "shard_3",
-      "report_count": 1,
-      "file_count": 13,
-      "renamed_markdown_count": 5,
-      "raw_file_bytes": 1384901,
+      "report_count": 5,
+      "file_count": 101,
+      "renamed_markdown_count": 25,
+      "raw_file_bytes": 18916121,
       "reports": [
+        "0001-16-J.P.-Morgan-The-Long-View-Q-A-on-AI--Energy-and-Climate-260608",
+        "0002-17-Morgan-Stanley-Semiconductors-Weekly--NVDA-memory-cuts--And-Apr-SIA-2606",
+        "0003-18-Bernstein-U.S.-IT-Hardware-and-EU-Semi-The-Quantum-Leap-Winners---Losers",
+        "0004-19-J.P.-Morgan-Asian-Tech-2026-Computex-Takeaways-Part-2-260607",
         "0005-20-Morgan-Stanley-IT-Hardware-More-Takeaways-From-Taiwan---COMPUTEX-Edition"
+      ]
+    },
+    {
+      "shard": "shard_4",
+      "report_count": 4,
+      "file_count": 92,
+      "renamed_markdown_count": 20,
+      "raw_file_bytes": 23359754,
+      "reports": [
+        "0001-21-Goldman-Sachs-Japan-SMID-Monitor-How-do-yuutai-SMIDs-perform-during-corr",
+        "0002-22-Morgan-Stanley-Pharmaceuticals-The-Ozempic-cliff--generic-risks--opportu",
+        "0003-23-Morgan-Stanley-Biopharma-Takeaways-from-ADA-Conference-and-KOL-meeting-2",
+        "0004-24-Morgan-Stanley-Software-Snippets-Increasing-Signs-of-Token-Budgeting--26"
       ]
     }
   ]
