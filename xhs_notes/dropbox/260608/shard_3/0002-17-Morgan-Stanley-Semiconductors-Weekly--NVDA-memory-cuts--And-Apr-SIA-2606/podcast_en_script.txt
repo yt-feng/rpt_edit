@@ -1,0 +1,20 @@
+EN_A: So there’s this rumor that NVIDIA is cutting the memory in its Vera Rubin racks from 55TB down to 28TB. What’s really going on here?
+EN_B: That rumor actually points to a much bigger issue. It’s a clear signal of just how tight the memory supply is right now. NVIDIA isn’t doing this by choice. They simply can’t get enough DRAM.
+EN_A: So you’re saying this is a supply constraint, not a design decision?
+EN_B: Exactly. The report calculates that if 53 to 70 thousand racks are built next year at 55TB each, that alone would eat up nearly 5% of global DRAM demand. Cutting it in half reduces that impact by about 2 percentage points. But here’s the thing — every cloud hyperscaler is fighting for the same SOCAMM memory. NVIDIA will buy every GB they can get, and if supply catches up, they’ll go back to the higher configuration.
+EN_A: So how bad is this memory shortage? Is it the main bottleneck for AI?
+EN_B: That’s the core thesis of this report. DRAM has become the principal bottleneck for the AI buildout. And the April SIA data backs that up. Both DRAM and NAND performed way above expectations and historical seasonal patterns.
+EN_A: What did the April SIA data actually show?
+EN_B: Overall semiconductor sales were down only 2.2% month over month. The market expected a 12.1% drop, and the 10-year average is a 10.6% decline. So April was surprisingly strong. The Americas led the growth with a 158.5% year over year increase.
+EN_A: What about other chips, like analog or MCUs?
+EN_B: Those also beat expectations. Analog, MCU, and MPU all came in stronger than forecasts. The key takeaway is that industrial chips are re-accelerating from cyclical lows, and demand is broadening beyond AI. This is not just an AI-driven cycle anymore. It’s a broader supply-constrained upcycle.
+EN_A: So how long can this cycle last?
+EN_B: The report argues for a “higher for longer” pricing environment in memory. The reasons include HBM wafer intensity, cleanroom and EUV tool constraints, and limited NAND capacity expansion. But there’s one big question the report doesn’t fully answer.
+EN_A: What’s that?
+EN_B: The durability debate. Investors are focused on whether this cycle can sustain itself. The report views long-term agreements as a symptom of tight supply and hyperscaler urgency, not the cause. But that thesis still needs more data to be confirmed. The full report dives deeper into this question.
+EN_A: Did the report change its forecast for this year and next?
+EN_B: Yes. They raised their 2026 growth estimate from 91% to 103%, mostly driven by memory. For 2027, they expect 22% growth to 1.96 trillion dollars. But whether that’s too optimistic remains to be seen.
+EN_A: Sounds like there’s a lot more in the full report. How can listeners get access?
+EN_B: If you want to read the full analysis, including the detailed impact on specific companies and the risk discussion, you can join our community. We share these kinds of deep-dive research reports regularly.
+EN_A: Great. Thanks for the insights today.
+EN_B: Thanks for having me. Talk to you next time.

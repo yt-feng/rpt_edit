@@ -1,0 +1,16 @@
+EN_A: A major investment bank just released a deep-dive report on Computex 2026. What stood out to you?
+EN_B: The big takeaway is that AI infrastructure is entering a new phase of full modularization. Almost every component, from GPUs to power supplies, from cooling to connectivity, is being redesigned. That brings both technical risks and investment opportunities.
+EN_A: So what’s the core question this report is trying to answer?
+EN_B: It’s trying to map out what the next-gen AI server architecture will look like and which parts of the supply chain will win or lose. For example, the Kyber rack might face a delay, but the VR200 power supply story actually looks better than expected. It’s not just a bullish or bearish call; it’s a deep dive into specific technology choices.
+EN_A: Let’s break it down. What’s the first key insight?
+EN_B: First, the Kyber rack timing risk. The report suggests that due to backplane signal integrity challenges, the mass production target for Kyber in the second half of 2027 might be uncertain. What does that mean? It means NVIDIA is evaluating two alternative designs for the Rubin Ultra NVL144: either two NVL72 racks connected back-to-back with cable cartridges, or an NVLink CPO switch. The decision is still open, but that opens a window for CPO and cable vendors.
+EN_A: Second insight?
+EN_B: The power supply surprise. The VR200 chip TDP might drop from 2.3kW to 1.8kW, but the report says the rack-level AC/DC power configuration stays the same: four 110kW power shelves per rack. More importantly, HVDC adoption is now expected at 20%, up from 15% before. What does that mean? It means power supply revenue estimates could go higher. But the big variable is whether a configuration change in VR Ultra will affect HVDC adoption.
+EN_A: Third insight?
+EN_B: BMC demand is exploding. ASPEED’s order visibility has extended into 2027, four times the normal level. That’s driven by agentic AI server buildouts. And NVIDIA’s Rubin platform, with its extreme co-design approach, will pack more BMCs per rack. For example, a Vera CPU rack has 99 BMCs. What does that mean? It means structural upside for BMC penetration, and ASPEED’s revenue estimates could be revised up significantly.
+EN_A: Sounds pretty bullish. But the report also left some questions open, right?
+EN_B: Exactly. For instance, the final design choice for Kyber won’t be made for another 1.5 years, because it depends on M10 CCL qualification and CPO switch maturity. And HVDC adoption probably won’t hit 100% because SiC component costs are rising. These are exactly the kind of questions the full report explores in more detail.
+EN_A: So to get the full picture, we need to read the original report?
+EN_B: Absolutely. We’ve only scratched the surface. The report also covers Vera CPU early traction, AMD Helio system delays, and growth in capacitors and BBU markets. Those details are critical for making specific investment decisions.
+EN_A: How can our listeners get access to the full report or join our community?
+EN_B: Simple. Follow our WeChat official account and reply with “Computex 2026” to get the download link. Also, our community has real-time discussions on AI supply chain trends. You’re welcome to join.
