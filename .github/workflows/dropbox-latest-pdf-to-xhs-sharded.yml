@@ -60,10 +60,14 @@ on:
         required: true
         default: "all"
       wechat_draft_upload:
-        description: "Upload KC translated reports into WeChat Official Account drafts. Requires WECHAT_MP_APPID/WECHAT_MP_APPSECRET."
+        description: "Upload generated report articles into WeChat Official Account drafts. Requires WECHAT_MP_APPID/WECHAT_MP_APPSECRET."
         required: true
         type: boolean
         default: true
+      wechat_draft_source:
+        description: "xhs_notes uploads generated wechat_article.md immediately; kc_translated waits for rendered KC translated reports."
+        required: true
+        default: "xhs_notes"
       wechat_freepublish:
         description: "Submit created WeChat drafts for publishing after upload. Requires WeChat freepublish API permission."
         required: true
@@ -74,15 +78,15 @@ on:
         required: true
         default: "8"
       wechat_draft_max_body_chars:
-        description: "Approximate visible Chinese character budget for each KC translated WeChat article."
+        description: "Approximate visible Chinese character budget for each WeChat draft article."
         required: true
         default: "2000"
       wechat_draft_min_inline_images:
-        description: "Minimum body images per KC translated WeChat article; AI images fill missing slots."
+        description: "Minimum body images per WeChat draft article; xhs_notes uses report images, kc_translated can fill missing slots."
         required: true
         default: "3"
       wechat_draft_max_inline_images:
-        description: "Max body images uploaded into each KC translated WeChat article."
+        description: "Max body images uploaded into each WeChat draft article."
         required: true
         default: "3"
       commit_results:
@@ -123,6 +127,7 @@ jobs:
       podcast_minutes: ${{ steps.vars.outputs.podcast_minutes }}
       translated_report_count: ${{ steps.vars.outputs.translated_report_count }}
       wechat_draft_upload: ${{ steps.vars.outputs.wechat_draft_upload }}
+      wechat_draft_source: ${{ steps.vars.outputs.wechat_draft_source }}
       wechat_freepublish: ${{ steps.vars.outputs.wechat_freepublish }}
       wechat_draft_articles_per_draft: ${{ steps.vars.outputs.wechat_draft_articles_per_draft }}
       wechat_draft_max_body_chars: ${{ steps.vars.outputs.wechat_draft_max_body_chars }}
@@ -148,6 +153,7 @@ jobs:
           echo "podcast_minutes=${{ github.event.inputs.podcast_minutes || '5' }}" >> "$GITHUB_OUTPUT"
           echo "translated_report_count=${{ github.event.inputs.translated_report_count || 'all' }}" >> "$GITHUB_OUTPUT"
           echo "wechat_draft_upload=${{ github.event.inputs.wechat_draft_upload || 'true' }}" >> "$GITHUB_OUTPUT"
+          echo "wechat_draft_source=${{ github.event.inputs.wechat_draft_source || 'xhs_notes' }}" >> "$GITHUB_OUTPUT"
           echo "wechat_freepublish=${{ github.event.inputs.wechat_freepublish || 'false' }}" >> "$GITHUB_OUTPUT"
           echo "wechat_draft_articles_per_draft=${{ github.event.inputs.wechat_draft_articles_per_draft || '8' }}" >> "$GITHUB_OUTPUT"
           echo "wechat_draft_max_body_chars=${{ github.event.inputs.wechat_draft_max_body_chars || '2000' }}" >> "$GITHUB_OUTPUT"
@@ -159,7 +165,7 @@ jobs:
           echo "::notice::Daily schedule is 05:00 Asia/Shanghai. Audio/video are disabled."
           echo "::notice::DeepSeek filters macro/trend reports first; stock/company reports are skipped."
           echo "::notice::Default plan processes ALL macro candidates, sharded as 40 x 5 = up to 200 macro reports."
-          echo "::notice::KC translated WeChat draft upload is enabled by default and includes every successful MinerU report."
+          echo "::notice::WeChat draft upload defaults to xhs_notes, so successful MinerU report articles can enter drafts without waiting for KC translated PDFs."
           echo "::notice::WeChat freepublish is opt-in because it requires separate Official Account API permission."
           echo "::notice::At the end, publish-ready split ZIPs will be created from generated report folders, excluding MinerU raw files."
 
@@ -440,6 +446,74 @@ jobs:
         run: |
           bash scripts/commit_output_dir.sh "$PACKAGE_DIR" "Package split publish-ready outputs ${{ needs.select-macro-reports.outputs.latest_folder }}" 8
 
+  push-xhs-notes-wechat-drafts:
+    needs: [resolve-inputs, select-macro-reports, package-publish-ready]
+    if: ${{ !cancelled() && needs.package-publish-ready.result == 'success' && needs.resolve-inputs.outputs.wechat_draft_upload == 'true' && needs.resolve-inputs.outputs.wechat_draft_source == 'xhs_notes' }}
+    runs-on: [self-hosted, linux, x64, wechat-draft]
+    timeout-minutes: 180
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Pull latest generated shard outputs
+        run: |
+          git fetch --depth=1 origin main
+          git reset --hard origin/main
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: "pip"
+
+      - name: Install Python dependencies
+        run: |
+          pip install -r requirements.txt
+
+      - name: Upload generated xhs notes to WeChat drafts
+        env:
+          WECHAT_MP_APPID: ${{ secrets.WECHAT_MP_APPID }}
+          WECHAT_MP_APPSECRET: ${{ secrets.WECHAT_MP_APPSECRET }}
+        run: |
+          set -o pipefail
+          DATE_FOLDER="${{ needs.select-macro-reports.outputs.latest_folder }}"
+          MAX_ARTICLES="${{ needs.resolve-inputs.outputs.translated_report_count }}"
+          if [ "$MAX_ARTICLES" = "0" ]; then MAX_ARTICLES="all"; fi
+          PUBLISH_ARGS=()
+          if [ "${{ needs.resolve-inputs.outputs.wechat_freepublish }}" = "true" ]; then
+            PUBLISH_ARGS+=(--publish)
+            echo "::notice::Uploading and publishing generated xhs_notes articles from xhs_notes/dropbox/$DATE_FOLDER"
+          else
+            echo "::notice::Uploading generated xhs_notes articles to WeChat drafts from xhs_notes/dropbox/$DATE_FOLDER"
+          fi
+          python scripts/push_xhs_notes_to_wechat_drafts.py \
+            --dropbox-output-root "xhs_notes/dropbox" \
+            --date-folder "$DATE_FOLDER" \
+            --output-root "wechat_drafts/xhs_notes" \
+            --max-articles "$MAX_ARTICLES" \
+            --articles-per-draft "${{ needs.resolve-inputs.outputs.wechat_draft_articles_per_draft }}" \
+            --max-body-chars "${{ needs.resolve-inputs.outputs.wechat_draft_max_body_chars }}" \
+            --min-inline-images "${{ needs.resolve-inputs.outputs.wechat_draft_min_inline_images }}" \
+            --max-inline-images "${{ needs.resolve-inputs.outputs.wechat_draft_max_inline_images }}" \
+            "${PUBLISH_ARGS[@]}" 2>&1 | tee wechat_drafts_progress.log
+          echo "WECHAT_DRAFT_DIR=wechat_drafts/xhs_notes/$DATE_FOLDER" >> "$GITHUB_ENV"
+
+      - name: Upload WeChat draft summary artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: xhs-notes-wechat-drafts-${{ needs.select-macro-reports.outputs.latest_folder }}-${{ github.run_id }}
+          path: |
+            ${{ env.WECHAT_DRAFT_DIR }}
+            wechat_drafts_progress.log
+          if-no-files-found: error
+
+      - name: Commit WeChat draft summaries
+        if: ${{ needs.resolve-inputs.outputs.commit_results == 'true' }}
+        run: |
+          bash scripts/commit_output_dir.sh "$WECHAT_DRAFT_DIR" "Generate xhs notes WeChat draft payloads ${{ needs.select-macro-reports.outputs.latest_folder }}" 8
+
   build-kc-translated-reports:
     needs: [resolve-inputs, select-macro-reports, package-publish-ready]
     if: ${{ !cancelled() && needs.package-publish-ready.result == 'success' && needs.resolve-inputs.outputs.translated_report_count != '0' }}
@@ -517,7 +591,7 @@ jobs:
 
   push-kc-translated-wechat-drafts:
     needs: [resolve-inputs, select-macro-reports, build-kc-translated-reports]
-    if: ${{ !cancelled() && needs.build-kc-translated-reports.result == 'success' && needs.resolve-inputs.outputs.translated_report_count != '0' && needs.resolve-inputs.outputs.wechat_draft_upload == 'true' }}
+    if: ${{ !cancelled() && needs.build-kc-translated-reports.result == 'success' && needs.resolve-inputs.outputs.translated_report_count != '0' && needs.resolve-inputs.outputs.wechat_draft_upload == 'true' && needs.resolve-inputs.outputs.wechat_draft_source == 'kc_translated' }}
     runs-on: [self-hosted, linux, x64, wechat-draft]
     timeout-minutes: 180
     steps:
