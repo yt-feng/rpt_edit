@@ -140,6 +140,7 @@ def build_child_command(args: argparse.Namespace, tmp_input: Path) -> list[str]:
         "--max-images", str(args.max_images),
         "--poll-timeout", str(args.poll_timeout),
         "--poll-interval", str(args.poll_interval),
+        "--mineru-retries", str(args.mineru_retries),
         "--watermark", args.watermark,
     ]
     return cmd
@@ -211,6 +212,7 @@ def main() -> int:
     parser.add_argument("--max-images", type=int, default=8)
     parser.add_argument("--poll-timeout", type=int, default=3600)
     parser.add_argument("--poll-interval", type=int, default=15)
+    parser.add_argument("--mineru-retries", type=int, default=1)
     parser.add_argument("--watermark", default="KC桌面")
     args = parser.parse_args()
 
@@ -288,6 +290,9 @@ def main() -> int:
     if failures:
         log(f"Completed with {failures} failed batch(es). See {output_dir / 'batch_run_summary.json'}")
         if generated_report_count == 0:
+            if continue_on_error:
+                log("No publish-ready report directories were generated; keeping shard green because continue-on-batch-error=true.")
+                return 0
             log("No publish-ready report directories were generated; treating this shard as failed.")
             return 2
         return 0 if continue_on_error else 2
