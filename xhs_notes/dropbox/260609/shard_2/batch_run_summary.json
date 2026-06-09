@@ -1,0 +1,51 @@
+{
+  "input_dir": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs",
+  "total_pdf_count_before_shard": 34,
+  "pdf_count_before_skip": 5,
+  "pdf_count": 5,
+  "generated_report_count": 5,
+  "batch_size": 5,
+  "shard_index": 2,
+  "shard_count": 40,
+  "max_reports_per_shard": 5,
+  "max_total_reports": 0,
+  "skip_existing": true,
+  "skipped_existing_count": 0,
+  "skipped_existing": [],
+  "failures": 0,
+  "batches": [
+    {
+      "batch_index": 1,
+      "pdf_count": 5,
+      "files": [
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/11-Bernstein-Global Software~European Technology Software European Software and Services： The AI tide won't lift all boats-260609.pdf",
+          "batch_file": "/tmp/pdf_batch_001_wur4lc20/pdfs/0001-11-Bernstein-Global Software-European Technology Software European Software and Services- The AI tide won-t lift all boats-260609.pdf",
+          "stable_index": "1"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/12-Bernstein-Global Media： A beginner's guide to investing in Advertising-260609.pdf",
+          "batch_file": "/tmp/pdf_batch_001_wur4lc20/pdfs/0002-12-Bernstein-Global Media- A beginner-s guide to investing in Advertising-260609.pdf",
+          "stable_index": "2"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/13-JPM-China Metals Activity Tracker：Copper consumption continues to slow， aluminum picks up-260608.pdf",
+          "batch_file": "/tmp/pdf_batch_001_wur4lc20/pdfs/0003-13-JPM-China Metals Activity Tracker-Copper consumption continues to slow- aluminum picks up-260608.pdf",
+          "stable_index": "3"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/14-GS-Americas Technology： Hardware： Server 1Q26 market share and outlook update-260608.pdf",
+          "batch_file": "/tmp/pdf_batch_001_wur4lc20/pdfs/0004-14-GS-Americas Technology- Hardware- Server 1Q26 market share and outlook update-260608.pdf",
+          "stable_index": "4"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/15-MS-Greater China Technology Hardware TFT~LCD Panel Price Outlook for June 2026： TVs Flat， Monitors +0.2%， NBs Flat MoM-260607.pdf",
+          "batch_file": "/tmp/pdf_batch_001_wur4lc20/pdfs/0005-15-MS-Greater China Technology Hardware TFT-LCD Panel Price Outlook for June 2026- TVs Flat- Monitors -0.2-- NBs Flat MoM-260607.pdf",
+          "stable_index": "5"
+        }
+      ],
+      "returncode": 0,
+      "status": "ok"
+    }
+  ]
+}

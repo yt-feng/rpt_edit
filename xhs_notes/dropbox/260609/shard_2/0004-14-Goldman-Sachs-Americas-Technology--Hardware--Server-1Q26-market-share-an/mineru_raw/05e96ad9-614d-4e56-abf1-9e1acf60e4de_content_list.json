@@ -1,0 +1,2060 @@
+[
+    {
+        "type": "text",
+        "text": "Americas Technology: Hardware: Server 1Q26 market share and outlook update",
+        "text_level": 1,
+        "bbox": [
+            78,
+            74,
+            834,
+            127
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "BOTTOM LINE: We update our industry server model to reflect the latest available 1Q26 data from 650 Group. Key takeaways:",
+        "bbox": [
+            78,
+            171,
+            676,
+            206
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "list",
+        "sub_type": "text",
+        "list_items": [
+            "AI server forecasts for 2026-2030 raised by \\~18% on average, now expected to reach \\~\\$1.24 tr by 2030 (v. \\$961 bn prior per 4Q25 forecasts), with +3% increased outlook across units and +15% increased outlook across ASPs.",
+            "Traditional server forecasts for 2026-2030 raised by \\~31% on average, now forecast to reach \\~\\$164 bn by 2030 (v. \\$105 bn prior per 4Q25 forecasts), with +19% increased outlook across units and +10% increased outlook across ASPs.",
+            "DELL's C1Q26 traditional server revenue was up +85% year-over-year, driven by a +24% year-over-year increase in units and a +49% year-over-year increase in ASPs (v. +92% yoy reported growth for F1Q27, three months ending April 30, 2026). By vertical, 650 Group estimates that Dell's C1Q26 traditional server revenue growth was balanced across neoclouds +102% yoy (+34% yoy units, +50% yoy ASPs) and enterprise +91% yoy (+29% units yoy, +48% ASPs yoy). DELL gained market share in traditional server revenue (30% in 1Q26 v. 20% in 1Q25), including share gains in neocloud (35% in 1Q26 v. 26% in 1Q25) and enterprise (38% in 1Q26 v. 25% in 1Q25).",
+            "HPE's C1Q26 traditional server revenue was up $+20\\%$ year-over-year driven by flat unit shipments and $+20\\%$ increase in ASPs. HPE maintained $11\\%$ market share in traditional server revenue (unchanged v. 1Q25), with $17\\%$ enterprise traditional server market share (flat yoy) and $7\\%$ neocloud market share (v. $8\\%$ in 1Q25)."
+        ],
+        "bbox": [
+            78,
+            220,
+            684,
+            620
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Server forecast updates",
+        "text_level": 2,
+        "bbox": [
+            78,
+            653,
+            277,
+            674
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "650 Group upgraded its outlook for the server market, now expecting the overall server market to reach \\$1.4 tr by 2030 at 38% 2025-2030 CAGR (v. \\$1.1 tr on prior 4Q25 forecast). Estimates for the overall server market were raised by 20% on average, with unit shipment expectations revised up \\~+13% and ASPs up \\~+6% on average.",
+        "bbox": [
+            76,
+            700,
+            697,
+            789
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "650 Group raised its annual AI server forecasts for 2026-2030 by \\~18% on average, now expecting the AI server market to achieve \\~\\$1.24 tr by 2030 (v.",
+        "bbox": [
+            78,
+            803,
+            666,
+            839
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Katherine Murphy",
+        "bbox": [
+            718,
+            171,
+            844,
+            184
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "+1(212)902-1151",
+        "bbox": [
+            720,
+            184,
+            813,
+            193
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "katherine.a.murphy@gs.com",
+        "bbox": [
+            720,
+            193,
+            857,
+            202
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "GS & Co. LLC",
+        "bbox": [
+            720,
+            202,
+            841,
+            211
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Michael Ng, CFA",
+        "bbox": [
+            720,
+            220,
+            831,
+            233
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "+1(212)902-8618 | michael.ng@gs.com",
+        "bbox": [
+            720,
+            233,
+            910,
+            242
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "GS & Co. LLC",
+        "bbox": [
+            720,
+            242,
+            841,
+            250
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Zorayda Montemayor",
+        "bbox": [
+            720,
+            258,
+            867,
+            271
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "+1(212)357-6403",
+        "bbox": [
+            720,
+            271,
+            813,
+            280
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "zorayda.montemayor@gs.com",
+        "bbox": [
+            720,
+            280,
+            864,
+            289
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "GS & Co. LLC",
+        "bbox": [
+            720,
+            289,
+            841,
+            297
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "header",
+        "text": "Goldman Research Sachs",
+        "bbox": [
+            78,
+            2,
+            297,
+            41
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "header",
+        "text": "Equity Research",
+        "bbox": [
+            795,
+            5,
+            916,
+            21
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "header",
+        "text": "8 June 2026 | 4:53PM EDT",
+        "bbox": [
+            723,
+            27,
+            916,
+            42
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "page_footnote",
+        "text": "GS does and seeks to do business with companies covered in its research reports. As a result, investors should be aware that the firm may have a conflict of interest that could affect the objectivity of this report. Investors should consider this report as only a single factor in making their investment decision. For Reg AC certification and other important disclosures, see the Disclosure Appendix, or go to www.gs.com/research/hedge.html. Analysts employed by non-US affiliates are not registered/qualified as research analysts with FINRA in the U.S.",
+        "bbox": [
+            78,
+            875,
+            916,
+            968
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "\\$961 bn prior per 4Q25 forecasts), with +3% increased outlook across units and +15% increased outlook across ASPs. By vertical, 650 Group raised its outlook for (1) neocloud AI server revenue growth for 2026-2030 by \\~22% on average (+4% units, +17% ASPs), (2) hyperscale AI server revenue growth for 2026-2030 by \\~17% on average (+3% units, +13% ASPs), and (3) enterprise AI server revenue growth for 2026-30 by \\~16% (+1% units, +16% ASPs). 650 Group is forecasting the AI server revenue market to grow at a +45% 5-yr CAGR with +29% growth in units and +12% growth in ASPs.",
+        "bbox": [
+            299,
+            38,
+            908,
+            189
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "650 Group raised its annual traditional server forecasts for 2026-2030 by \\~31% on average, now expecting the traditional server market to achieve \\~\\$164 bn by 2030 (v. \\$105 bn prior per 4Q25 forecasts), with +19% increased outlook across units and +10% increased outlook across ASPs. By vertical, 650 Group raised its outlook for (1) enterprise traditional server revenue growth for 2026-2030 by \\~48% on average (+30% units, +13% ASPs) and (2) hyperscale traditional server revenue growth for 2026-2030 by \\~47% on average (+32% units, +10% ASPs). 650 Group is forecasting the traditional server revenue market to grow at a +13% 5-yr CAGR with +5% growth in units and +8% growth in ASPs.",
+        "bbox": [
+            272,
+            200,
+            915,
+            370
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "table",
+        "img_path": "images/03cdf94261b644252c93e1fa7d5c01c1bc0f52bc949f2148d3c9e0db154d0a57.jpg",
+        "table_caption": [
+            "Exhibit 1: 650 Group expects the overall server market to grow to \\$1.4 tr by 2030 on growth across both AI (+45% 5-yr CAGR) and traditional servers (+13% 5-yr CAGR)\nGlobal data center server by vertical and AI/traditional (\\$, mn)"
+        ],
+        "table_footnote": [
+            "Source: 650 Group"
+        ],
+        "table_body": "<table><tr><td rowspan=\"2\">($, mn)</td><td colspan=\"3\">AI Servers</td></tr><tr><td>2025</td><td>2030</td><td>5-yr CAGR</td></tr><tr><td>Hyperscalers</td><td>$135,444</td><td>$611,663</td><td>35%</td></tr><tr><td>Tier 2 Cloud + SP</td><td>$45,209</td><td>$540,481</td><td>64%</td></tr><tr><td>Enterprise</td><td>$14,430</td><td>$91,472</td><td>45%</td></tr><tr><td>Total AI Data Center</td><td>$195,083</td><td>$1,243,616</td><td>45%</td></tr><tr><td rowspan=\"2\"></td><td colspan=\"3\">Traditional Servers</td></tr><tr><td>2025</td><td>2030</td><td>5-yr CAGR</td></tr><tr><td>Hyperscalers</td><td>$20,881</td><td>$35,164</td><td>11%</td></tr><tr><td>Tier 2 Cloud + SP</td><td>$29,539</td><td>$53,548</td><td>13%</td></tr><tr><td>Enterprise</td><td>$38,570</td><td>$74,844</td><td>14%</td></tr><tr><td>Total Traditional Data Center</td><td>$88,990</td><td>$163,556</td><td>13%</td></tr><tr><td rowspan=\"2\"></td><td colspan=\"3\">Total Servers</td></tr><tr><td>2025</td><td>2030</td><td>5-yr CAGR</td></tr><tr><td>Hyperscalers</td><td>$156,325</td><td>$646,827</td><td>33%</td></tr><tr><td>Tier 2 Cloud + SP</td><td>$74,748</td><td>$594,029</td><td>51%</td></tr><tr><td>Enterprise</td><td>$53,000</td><td>$166,315</td><td>26%</td></tr><tr><td>Total Data Center</td><td>$284,073</td><td>$1,407,171</td><td>38%</td></tr></table>",
+        "bbox": [
+            89,
+            468,
+            477,
+            680
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "chart",
+        "img_path": "images/d892071fb86a7baaf012472ff7a27dbd710d38921202b80dc8fb00d23fb5ffba.jpg",
+        "content": "| Year | Previous (As of 2Q25) ($ mn) | Previous (As of 3Q25) ($ mn) | Previous (As of 4Q25) ($ mn) | Current (As of 1Q26) ($ mn) |\n|---|---|---|---|---|\n| 2024 | 100,000 | 100,000 | 100,000 | 100,000 |\n| 2025 | 200,000 | 200,000 | 200,000 | 200,000 |\n| 2026 | 300,000 | 320,000 | 330,000 | 360,000 |\n| 2027 | 420,000 | 450,000 | 480,000 | 540,000 |\n| 2028 | 520,000 | 580,000 | 640,000 | 760,000 |\n| 2029 | 580,000 | 680,000 | 790,000 | 990,000 |\n| 2030 | - | 830,000 | 950,000 | 1250,000 |",
+        "chart_caption": [
+            "Exhibit 2: 650 Group raised its annual AI server forecasts for 2026-2030 by \\~18% on average, now expecting the AI server market to achieve \\~\\$1.24 tr by 2030 (v. \\$961 bn prior per 4Q25 forecasts)",
+            "Industry AI server estimate revisions (\\$, mn)"
+        ],
+        "chart_footnote": [
+            "Source: 650 Group"
+        ],
+        "sub_type": "bar chart",
+        "bbox": [
+            511,
+            474,
+            913,
+            658
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "header",
+        "text": "GS",
+        "bbox": [
+            81,
+            3,
+            184,
+            16
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "header",
+        "text": "Americas Technology: Hardware",
+        "bbox": [
+            702,
+            7,
+            916,
+            21
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "footer",
+        "text": "8 June 2026",
+        "bbox": [
+            81,
+            954,
+            155,
+            965
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "page_number",
+        "text": "2",
+        "bbox": [
+            906,
+            954,
+            916,
+            963
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "chart",
+        "img_path": "images/303a17b014b1c0989b405a2ba567fd9fa4748bcfde94dc4606fde68b8e791620.jpg",
+        "content": "| Year | Previous (As of 2Q25) ($ mn) | Previous (As of 3Q25) ($ mn) | Previous (As of 4Q25) ($ mn) | Current (As of 1Q26) ($ mn) |\n|---|---|---|---|---|\n| 2024 | 80,000 | 80,000 | 80,000 | 80,000 |\n| 2025 | 82,000 | 83,000 | 107,000 | 107,000 |\n| 2026 | 80,000 | 82,000 | 108,000 | 118,000 |\n| 2027 | 78,000 | 81,000 | 114,000 | 128,000 |\n| 2028 | 75,000 | 80,000 | 102,000 | 139,000 |\n| 2029 | 73,000 | 79,000 | 103,000 | 151,000 |\n| 2030 | - | 79,000 | 105,000 | 164,000 |",
+        "chart_caption": [
+            "Exhibit 3: Traditional server forecasts for 2026-2030 were revised upwards by \\~31% on average annually\nIndustry traditional server estimate revisions (\\$, mn)"
+        ],
+        "chart_footnote": [
+            "Source: 650 Group"
+        ],
+        "sub_type": "bar chart",
+        "bbox": [
+            84,
+            104,
+            496,
+            293
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "C1Q26 vendor market share",
+        "text_level": 2,
+        "bbox": [
+            80,
+            346,
+            312,
+            366
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "DELL gained share in the traditional & AI server markets, with broad-based growth across enterprise and neocloud verticals driven by both unit growth and ASP uplift. Per 650 Group estimates:",
+        "bbox": [
+            272,
+            392,
+            906,
+            445
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "list",
+        "sub_type": "text",
+        "list_items": [
+            "DELL's C1Q26 traditional server revenue was up +85% year-over-year (v. +92% reported), driven by a +24% increase in units and a +49% increase in ASPs. By vertical, 650 Group estimates that Dell's C1Q26 traditional server revenue growth was balanced across neoclouds +102% yoy (+34% yoy units, +50% yoy ASPs) and enterprise +91% yoy (+29% units yoy, +48% ASPs yoy). DELL's C1Q26 traditional server hardware revenue of \\~\\$8.0 bn was \\~54% enterprise, \\~40% neocloud, \\~6% hyperscalers/service provider (v. 52%/36%/12% in C1Q25). DELL gained market share in traditional server revenue (30% in 1Q26 v. 20% in 1Q25), including share gains in neocloud (35% in 1Q26 v. 26% in 1Q25) and enterprise (38% in 1Q26 v. 25% in 1Q25).",
+            "- DELL's C1Q26 AI server revenue was up +\\$11.3 bn year-over-year (+622% year-over-year), driven by a +300% increase in units and a +81% increase in ASPs. By vertical, 650 Group estimates that Dell's C1Q26 AI server revenue growth was broadbased across neoclouds (+\\$9 bn) and enterprise (+\\$2 bn). DELL gained market share in AI server revenue (17% in 1Q26 v. 5% in 1Q25), including share gains in neocloud (48% in 1Q26 v. 24% in 1Q25) and enterprise (47% in 1Q26 v. 17% in 1Q25)."
+        ],
+        "bbox": [
+            272,
+            459,
+            913,
+            791
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "HPE maintained its share in the traditional server market but ceded some share in AI servers. Per 650 Group estimates:",
+        "bbox": [
+            272,
+            804,
+            901,
+            839
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "HPE's C1Q26 traditional server revenue was up $+20\\%$ year-over-year driven by flat unit shipments and $+20\\%$ increase in ASPs. By vertical, 650 Group estimates that HPE's C1Q26 traditional server revenue balanced growth across enterprise $+22\\%$ $(+1\\%$ units, $+21\\%$ ASPs) and neoclouds $+18\\%$ $(-1\\%$ units, $+19\\%$ ASPs). HPE",
+        "bbox": [
+            272,
+            854,
+            913,
+            928
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "header",
+        "text": "GS",
+        "bbox": [
+            81,
+            3,
+            184,
+            18
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "header",
+        "text": "Americas Technology: Hardware",
+        "bbox": [
+            702,
+            7,
+            916,
+            21
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "footer",
+        "text": "8 June 2026",
+        "bbox": [
+            81,
+            953,
+            155,
+            965
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "page_number",
+        "text": "3",
+        "bbox": [
+            906,
+            954,
+            916,
+            963
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "maintained 11% market share in traditional server revenue (unchanged v. 1Q25), with 17% enterprise traditional server market share (flat YoY) and 7% neocloud market share (v. 8% in 1Q25).",
+        "bbox": [
+            299,
+            38,
+            888,
+            94
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "HPE's C1Q26 AI server revenue was up +11% year-over-year (\\~flat sequentially), with units -6% year-over-year and ASPs +18%. By vertical, 650 Group estimates that HPE's C1Q26 AI server revenue growth was balanced across neoclouds (+11%) and enterprise (+10%). HPE lost market share in the overall AI server revenue market in enterprise, with 17% share in 1Q26 v. 30% share in 1Q25.",
+        "bbox": [
+            272,
+            103,
+            916,
+            197
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "SMCI lost AI server market share, but gained +1 pt of traditional server market share. Per 650 Group estimates:",
+        "text_level": 2,
+        "bbox": [
+            269,
+            211,
+            875,
+            245
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "list",
+        "sub_type": "text",
+        "list_items": [
+            "SMCI's C1Q26 traditional server revenue was up $+58\\%$ year-over-year, with a $-23\\%$ decrease in units offset by a $+104\\%$ increase in ASPs. Per 650 Group, SMCI primarily sold traditional servers to neoclouds, where it had $10\\%$ market share in the quarter (v. $2\\%$ market share in 1Q25).",
+            "SMCI's C1Q26 AI server revenue was up +\\$5.3 bn year-over-year (+173%), driven by a +164% increase in units and a +4% increase in ASPs. By vertical, 650 Group estimates that SMCI's C1Q26 AI server revenue growth was driven by neoclouds (+260% year-over-year). SMCI gained market share in AI server revenue (11% in 1Q26 v. 8% in 1Q25), with share gains in enterprise (4% share in 1Q26 v. 2% in 1Q25) and service provider (42% v. 9% in 1Q25) more than offsetting weaker market share in neocloud (33% v. 37% in 1Q25)"
+        ],
+        "bbox": [
+            272,
+            259,
+            916,
+            474
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "chart",
+        "img_path": "images/946442ae1274319da5434ea0460d47127da13dc7506ffd832c1ab52cf2adc207.jpg",
+        "content": "| Quarter | Dell  | HPE   | Super Micro | Nvidia | Others - White Box |\n|---------|-------|-------|-------------|--------|--------------------|\n| 1Q23    | 10%   | 10%   | 10%         | 15%    | 50%                |\n| 2Q23    | 5%    | 5%    | 15%         | 40%    | 20%                |\n| 3Q23    | 5%    | 5%    | 15%         | 65%    | 15%                |\n| 4Q23    | 5%    | 5%    | 15%         | 60%    | 10%                |\n| 1Q24    | 5%    | 5%    | 15%         | 60%    | 10%                |\n| 2Q24    | 5%    | 5%    | 15%         | 60%    | 10%                |\n| 3Q24    | 5%    | 5%    | 15%         | 55%    | 10%                |\n| 4Q24    | 5%    | 5%    | 15%         | 55%    | 15%                |\n| 1Q25    | 5%    | 5%    | 10%         | 50%    | 20%                |\n| 2Q25    | 10%   | 5%    | 10%         | 45%    | 20%                |\n| 3Q25    | 10%   | 5%    | 10%         | 45%    | 20%                |\n| 4Q25    | 10%   | 5%    | 10%         | 40%    | 20%                |\n| 1Q26    | 15%   | 5%    | 10%         | 40%    | 20%                |",
+        "chart_caption": [
+            "Exhibit 4: Nvidia leads the AI server market with 44% share as of 1Q26, followed by whitebox players (22%), Dell (17%), and Super Micro (11%)",
+            "AI server revenue market share (%)"
+        ],
+        "chart_footnote": [
+            "Source: 650 Group"
+        ],
+        "sub_type": "line chart",
+        "bbox": [
+            84,
+            564,
+            483,
+            750
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "chart",
+        "img_path": "images/be0b62804bfdd1c7b51f4d0b91079f97f95754a99bd655e80b5e11014466ad12.jpg",
+        "content": "| Quarter | Dell  | Nvidia | Super Micro |\n|---------|-------|--------|-------------|\n| 1Q23    | 10%   | 20%    | 30%         |\n| 2Q23    | 15%   | 10%    | 70%         |\n| 3Q23    | 20%   | 15%    | 45%         |\n| 4Q23    | 25%   | 10%    | 55%         |\n| 1Q24    | 30%   | 10%    | 40%         |\n| 2Q24    | 40%   | 10%    | 35%         |\n| 3Q24    | 35%   | 10%    | 40%         |\n| 4Q24    | 30%   | 10%    | 45%         |\n| 1Q25    | 25%   | 10%    | 35%         |\n| 2Q25    | 45%   | 5%     | 30%         |\n| 3Q25    | 40%   | 5%     | 25%         |\n| 4Q25    | 35%   | 5%     | 50%         |\n| 1Q26    | 45%   | 5%     | 30%         |",
+        "chart_caption": [
+            "Exhibit 5: Neocloud AI server market share leadership oscillates between DELL and SMCI",
+            "Neocloud AI server revenue market share (%)"
+        ],
+        "chart_footnote": [
+            "Source: 650 Group"
+        ],
+        "sub_type": "line chart",
+        "bbox": [
+            514,
+            564,
+            913,
+            750
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "header",
+        "text": "GS",
+        "bbox": [
+            81,
+            3,
+            184,
+            18
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "header",
+        "text": "Americas Technology: Hardware",
+        "bbox": [
+            702,
+            7,
+            916,
+            21
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "footer",
+        "text": "8 June 2026",
+        "bbox": [
+            81,
+            954,
+            155,
+            965
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "page_number",
+        "text": "4",
+        "bbox": [
+            906,
+            954,
+            916,
+            963
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "chart",
+        "img_path": "images/d5206e8604fe73a50d16e070a0a1830b61eb8a4c54e656b7e45ec6d41e85022a.jpg",
+        "content": "| Quarter | Dell | HPE | Nvidia | Super Micro | Others - White Box |\n|---------|------|-----|--------|-------------|---------------------|\n| 1Q21    | 10%  | 65% | 10%    | 0%          | 0%                  |\n| 2Q21    | 10%  | 65% | 10%    | 0%          | 0%                  |\n| 3Q21    | 10%  | 70% | 10%    | 0%          | 0%                  |\n| 4Q21    | 10%  | 55% | 10%    | 0%          | 0%                  |\n| 1Q22    | 10%  | 55% | 10%    | 0%          | 0%                  |\n| 2Q22    | 10%  | 55% | 10%    | 0%          | 0%                  |\n| 3Q22    | 10%  | 55% | 10%    | 0%          | 0%                  |\n| 4Q22    | 10%  | 60% | 10%    | 0%          | 0%                  |\n| 1Q23    | 30%  | 30% | 20%    | 0%          | 0%                  |\n| 2Q23    | 30%  | 30% | 20%    | 0%          | 0%                  |\n| 3Q23    | 30%  | 30% | 20%    | 0%          | 0%                  |\n| 4Q23    | 30%  | 30% | 20%    | 0%          | 0%                  |\n| 1Q24    | 30%  | 35% | 20%    | 0%          | 0%                  |\n| 2Q24    | 30%  | 45% | 20%    | 0%          | 0%                  |\n| 3Q24    | 30%  | 45% | 20%    | 0%          | 0%                  |\n| 4Q24    | 30%  | 45% | 20%    | 0%          | 0%                  |\n| 1Q25    | 30%  | 35% | 20%    | 0%          | 0%                  |\n| 2Q25    | 30%  | 35% | 20%    | 0%          | 0%                  |\n| 3Q25    | 30%  | 35% | 20%    | 5%          | 0%                  |\n| 4Q25    | 35%  | 35% | 15%    | 10%         | 0%                  |\n| 1Q26    | 45%  | 15% | 10%    | 5%          | 0%                  |",
+        "chart_caption": [
+            "Exhibit 6: Dell gained significant share in enterprise AI servers in 1Q26 (47%)",
+            "Enterprise AI server revenue market share"
+        ],
+        "chart_footnote": [
+            "Source: 650 Group"
+        ],
+        "sub_type": "line chart",
+        "bbox": [
+            84,
+            117,
+            480,
+            303
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "chart",
+        "img_path": "images/91aa922ddd44078929a86c3d2e139ce8dc6bbf62fb83d2beef36cb6cdc2e5e4b.jpg",
+        "content": "| Quarter | Dell  | HPE   | IBM   | Lenovo | Others - White Box |\n|---------|-------|-------|-------|--------|---------------------|\n| 1Q23    | 17.5% | 17.0% | 6.0%  | 7.0%   | 31.0%               |\n| 2Q23    | 17.5% | 17.0% | 6.0%  | 7.0%   | 30.0%               |\n| 3Q23    | 17.5% | 17.0% | 6.0%  | 7.0%   | 30.0%               |\n| 4Q23    | 17.5% | 17.0% | 6.0%  | 7.0%   | 30.0%               |\n| 1Q24    | 15.0% | 14.0% | 6.0%  | 8.0%   | 35.0%               |\n| 2Q24    | 15.0% | 13.0% | 6.0%  | 9.0%   | 34.0%               |\n| 3Q24    | 20.0% | 12.0% | 6.0%  | 9.0%   | 32.0%               |\n| 4Q24    | 20.0% | 12.0% | 6.0%  | 10.0%  | 27.0%               |\n| 1Q25    | 20.0% | 12.0% | 6.0%  | 11.0%  | 28.0%               |\n| 2Q25    | 15.0% | 13.0% | 6.0%  | 12.0%  | 28.0%               |\n| 3Q25    | 22.0% | 12.0% | 6.0%  | 11.0%  | 26.0%               |\n| 4Q25    | 19.0% | 12.0% | 8.0%  | 12.0%  | 27.0%               |\n| 1Q26    | 30.0% | 11.0% | 6.0%  | 7.0%   | 24.0%               |",
+        "chart_caption": [
+            "Exhibit 7: Dell lead the traditional server market in 1Q26 (30% share), followed by white-box (24%), HPE (11%), Lenovo (7%), and IBM (6%).",
+            "Traditional server revenue market share (%)"
+        ],
+        "chart_footnote": [
+            "Source: 650 Group"
+        ],
+        "sub_type": "line chart",
+        "bbox": [
+            514,
+            117,
+            913,
+            302
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "chart",
+        "img_path": "images/3e24fcd5372590a775fcda4c26323e839b17191041f7a21c7a5cfd788f4165b6.jpg",
+        "content": "| Quarter | Dell  | HPE   | IBM   | Lenovo | Super Micro | Others - White Box |\n|---------|-------|-------|-------|--------|-------------|--------------------|\n| 1Q23    | 12%   | 23%   | 4%    | 10%    | 4%          | 25%                |\n| 2Q23    | 15%   | 22%   | 4%    | 10%    | 6%          | 24%                |\n| 3Q23    | 18%   | 21%   | 4%    | 10%    | 7%          | 24%                |\n| 4Q23    | 20%   | 20%   | 4%    | 10%    | 8%          | 24%                |\n| 1Q24    | 18%   | 19%   | 4%    | 10%    | 9%          | 27%                |\n| 2Q24    | 15%   | 18%   | 4%    | 10%    | 8%          | 26%                |\n| 3Q24    | 17%   | 17%   | 4%    | 10%    | 8%          | 25%                |\n| 4Q24    | 20%   | 16%   | 4%    | 10%    | 8%          | 25%                |\n| 1Q25    | 23%   | 15%   | 4%    | 10%    | 8%          | 25%                |\n| 2Q25    | 25%   | 14%   | 4%    | 10%    | 8%          | 29%                |\n| 3Q25    | 15%   | 13%   | 4%    | 10%    | 8%          | 28%                |\n| 4Q25    | 28%   | 12%   | 4%    | 8%     | 38%         | 18%                |\n| 1Q26    | 43%   | 4%    | 4%    | 8%     | 25%         | 12%                |",
+        "chart_caption": [
+            "Exhibit 8: Neocloud traditional server market share is more mixed, with DELL and SMCI leading in 1Q26",
+            "Neocloud traditional server market share"
+        ],
+        "chart_footnote": [
+            "Source: 650 Group"
+        ],
+        "sub_type": "line chart",
+        "bbox": [
+            84,
+            400,
+            480,
+            583
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "chart",
+        "img_path": "images/c6e651f2c4d79287ea4fad95298c98f9755b01a179b526a7870eec5bed7ac54c.jpg",
+        "content": "| Quarter | Dell  | HPE   | IBM   | Lenovo | Super Micro |\n|---------|-------|-------|-------|--------|-------------|\n| 1Q23    | 28%   | 25%   | 10%   | 9%     | 2%          |\n| 2Q23    | 27%   | 26%   | 11%   | 9%     | 2%          |\n| 3Q23    | 26%   | 27%   | 11%   | 9%     | 2%          |\n| 4Q23    | 25%   | 26%   | 11%   | 9%     | 2%          |\n| 1Q24    | 24%   | 25%   | 11%   | 10%    | 2%          |\n| 2Q24    | 23%   | 24%   | 11%   | 11%    | 2%          |\n| 3Q24    | 24%   | 23%   | 11%   | 12%    | 2%          |\n| 4Q24    | 25%   | 22%   | 10%   | 13%    | 2%          |\n| 1Q25    | 26%   | 21%   | 9%    | 14%    | 3%          |\n| 2Q25    | 25%   | 20%   | 8%    | 15%    | 4%          |\n| 3Q25    | 24%   | 19%   | 7%    | 16%    | 5%          |\n| 4Q25    | 23%   | 18%   | 6%    | 17%    | 3%          |\n| 1Q26    | 38%   | 17%   | 13%   | 9%     | 2%          |",
+        "chart_caption": [
+            "Exhibit 9: DELL leads the enterprise traditional server market with $38\\%$ share in 1Q26",
+            "Enterprise traditional server revenue market share"
+        ],
+        "chart_footnote": [
+            "Source: 650 Group"
+        ],
+        "sub_type": "line chart",
+        "bbox": [
+            514,
+            400,
+            913,
+            583
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "Dell Technologies (DELL, Buy)",
+        "text_level": 2,
+        "bbox": [
+            272,
+            618,
+            501,
+            634
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "We are Buy rated on DELL with a 12-month target price of \\$500 (unchanged) based on 22.0x (unchanged) our NTM+1Y EPS.",
+        "bbox": [
+            269,
+            647,
+            906,
+            680
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "Key risks: (-) Weaker than expected consumer and commercial PC market demand; (-) Worse-than-expected enterprise IT spending; (-) headwinds from hybrid work could result in reduced spending in enterprise IT; (-) Macroeconomic weakness could result in lowered consumer demand; (-) Pricing pressure could occur as competitors discount due to excess channel inventory and reduced demand, particularly in PCs; (-) Margin pressure from higher input costs; (-) Competition from white box manufacturers could occur, particularly in servers and storage; (-) Structurally lower AI server demand from neocloud cohort.",
+        "bbox": [
+            269,
+            693,
+            916,
+            835
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "Super Micro Computer Inc (SMCI, Sell)",
+        "text_level": 2,
+        "bbox": [
+            269,
+            850,
+            563,
+            866
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "We are Sell-rated on SMCI with a 12-month target price of \\$30 (unchanged) reflecting 9X NTM+1 EPS (unchanged).",
+        "bbox": [
+            269,
+            879,
+            903,
+            913
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "header",
+        "text": "GS",
+        "bbox": [
+            81,
+            3,
+            184,
+            18
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "header",
+        "text": "Americas Technology: Hardware",
+        "bbox": [
+            702,
+            7,
+            916,
+            21
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "footer",
+        "text": "8 June 2026",
+        "bbox": [
+            81,
+            954,
+            155,
+            965
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "page_number",
+        "text": "5",
+        "bbox": [
+            906,
+            954,
+            916,
+            963
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "Key risks: (+) Stronger than expected demand for AI servers; (+) Market share gains; (+) Core operating margin improvement; (+) Customer diversification.",
+        "bbox": [
+            274,
+            38,
+            906,
+            73
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "Hewlett Packard Enterprise Co. (HPE, Buy)",
+        "text_level": 2,
+        "bbox": [
+            274,
+            86,
+            598,
+            102
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "We are Buy rated on HPE with a 12-month target price of \\$79 (unchanged) based on 18x (unchanged) our NTM+1Y EPS.",
+        "bbox": [
+            274,
+            114,
+            890,
+            149
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "Key risks: (-) Lower-than-expected corporate IT spending and data center capex could result in worse-than-expected hardware sales; (-) Competition from white box manufacturers could result in cannibalization in HPE's server market share; (-) Market share loss from customer churn during Juniper integration; (-) Component costs could be higher than expected, resulting in worse gross margins; (-) Corporate actions from strategic investors; (-) Failure to deliver market share gains in storage driven by a strategy shift towards selling more owned-IP storage products that carry higher gross margins; (-) Worse-than-expected demand for enterprise and sovereign AI data center infrastructure.",
+        "bbox": [
+            274,
+            162,
+            916,
+            322
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "header",
+        "text": "GS",
+        "bbox": [
+            81,
+            3,
+            184,
+            18
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "header",
+        "text": "Americas Technology: Hardware",
+        "bbox": [
+            704,
+            7,
+            916,
+            21
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "footer",
+        "text": "8 June 2026",
+        "bbox": [
+            81,
+            954,
+            155,
+            965
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "page_number",
+        "text": "6",
+        "bbox": [
+            906,
+            954,
+            916,
+            963
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "Disclosure Appendix",
+        "text_level": 2,
+        "bbox": [
+            80,
+            38,
+            251,
+            59
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "Reg AC",
+        "text_level": 2,
+        "bbox": [
+            80,
+            81,
+            135,
+            95
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "I, Katherine Murphy, hereby certify that all of the views expressed in this report accurately reflect my personal views about the subject company or companies and its or their securities. I also certify that no part of my compensation was, is or will be, directly or indirectly, related to the specific recommendations or views expressed in this report.",
+        "bbox": [
+            81,
+            103,
+            888,
+            138
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "Unless otherwise stated, the individuals listed on the cover page of this report are analysts in GS' Global Investment Research division.",
+        "bbox": [
+            81,
+            144,
+            885,
+            156
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "Contributing Authors: Katherine Murphy GS & Co. LLC, Michael Ng, CFA GS & Co. LLC, Zorayda Montemayor GS & Co. LLC.",
+        "bbox": [
+            81,
+            162,
+            905,
+            184
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "Unless otherwise stated, the individuals listed in the Contributing Authors disclosure of this report are analysts in GS' Global Investment Research division.",
+        "bbox": [
+            81,
+            192,
+            893,
+            215
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "GS Factor Profile",
+        "text_level": 2,
+        "bbox": [
+            81,
+            228,
+            207,
+            241
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "The GS Factor Profile provides investment context for a stock by comparing key attributes to the market (i.e. our universe of rated stocks) and its sector peers. The four key attributes depicted are: Growth, Financial Returns, Multiple (e.g. valuation) and Integrated (a composite of Growth, Financial Returns and Multiple). Growth, Financial Returns and Multiple are calculated by using normalized ranks for specific metrics for each stock. The normalized ranks for the metrics are then averaged and converted into percentiles for the relevant attribute. The precise calculation of each metric may vary depending on the fiscal year, industry and region, but the standard approach is as follows:",
+        "bbox": [
+            81,
+            241,
+            915,
+            298
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "Growth is based on a stock's forward-looking sales growth, EBITDA growth and EPS growth (for financial stocks, only EPS and sales growth), with a higher percentile indicating a higher growth company. Financial Returns is based on a stock's forward-looking ROE, ROCE and CROCI (for financial stocks, only ROE), with a higher percentile indicating a company with higher financial returns. Multiple is based on a stock's forward-looking P/E, P/B, price/dividend (P/D), EV/EBITDA, EV/FCF and EV/Debt Adjusted Cash Flow (DACF) (for financial stocks, only P/E, P/B and P/D), with a higher percentile indicating a stock trading at a higher multiple. The Integrated percentile is calculated as the average of the Growth percentile, Financial Returns percentile and (100% - Multiple percentile).",
+        "bbox": [
+            81,
+            303,
+            906,
+            370
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "Financial Returns and Multiple use the GS analyst forecasts at the fiscal year-end at least three quarters in the future. Growth uses inputs for the fiscal year at least seven quarters in the future compared with the year at least three quarters in the future (on a per-share basis for all metrics).",
+        "bbox": [
+            81,
+            378,
+            910,
+            401
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "For a more detailed description of how we calculate the GS Factor Profile, please contact your GS representative.",
+        "bbox": [
+            81,
+            406,
+            702,
+            419
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "M&A Rank",
+        "text_level": 2,
+        "bbox": [
+            81,
+            432,
+            161,
+            445
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "Across our global coverage, we examine stocks using an M&A framework, considering both qualitative factors and quantitative factors (which may vary across sectors and regions) to incorporate the potential that certain companies could be acquired. We then assign a M&A rank as a means of scoring companies under our rated coverage from 1 to 3, with 1 representing high (30%-50%) probability of the company becoming an acquisition target, 2 representing medium (15%-30%) probability and 3 representing low (0%-15%) probability. For companies ranked 1 or 2, in line with our standard departmental guidelines we incorporate an M&A component into our target price. M&A rank of 3 is considered immaterial and therefore does not factor into our price target, and may or may not be discussed in research.",
+        "bbox": [
+            81,
+            445,
+            910,
+            512
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "Quantum",
+        "text_level": 2,
+        "bbox": [
+            81,
+            525,
+            153,
+            538
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "Quantum is GS' proprietary database providing access to detailed financial statement histories, forecasts and ratios. It can be used for in-depth analysis of a single company, or to make comparisons between companies in different sectors and markets.",
+        "bbox": [
+            81,
+            538,
+            887,
+            560
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "Disclosures",
+        "text_level": 2,
+        "bbox": [
+            81,
+            574,
+            166,
+            587
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "Rating and pricing information",
+        "text_level": 2,
+        "bbox": [
+            81,
+            594,
+            308,
+            607
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "Dell Technologies Inc. (Buy, \\$394.39), Hewlett Packard Enterprise Co. (Buy, \\$49.20) and Super Micro Computer Inc. (Sell, \\$41.64)",
+        "bbox": [
+            81,
+            607,
+            785,
+            618
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "The rating(s) for Dell Technologies Inc., Hewlett Packard Enterprise Co. and Super Micro Computer Inc. is/are relative to the other companies in its/their coverage universe: AT&T Inc., Apple Inc., Arista Networks Inc., Axon Enterprise Inc., Blend Labs, Celestica Inc., Charter Communications Inc., Cisco Systems Inc., Cogent Communications Holdings, Comcast Corp., Compass Inc., Dell Technologies Inc., Digital Realty Trust Inc., Equinix Inc., F5 Inc., Fox Corp., HP Inc., Hewlett Packard Enterprise Co., IREN Ltd., Ingram Micro, Lumen Technologies Inc., NetApp Inc., Opendoor Technologies Inc., Optimum Communications Inc., Penguin Solutions Inc., Stagwell Inc., Super Micro Computer Inc., T-Mobile US Inc., TD SYNNEX Corp., Verizon Communications, Versant Media Group, Walt Disney Co., Zillow Group",
+        "bbox": [
+            81,
+            625,
+            910,
+            692
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "Company-specific regulatory disclosures",
+        "text_level": 2,
+        "bbox": [
+            81,
+            706,
+            383,
+            719
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "The following disclosures relate to relationships between The GS Group, Inc. (with its affiliates, “GS”) and companies covered by GS Global Investment Research and referred to in this research.",
+        "bbox": [
+            81,
+            719,
+            901,
+            741
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "GS beneficially owned 1% or more of common equity (excluding positions managed by affiliates and business units not required to be aggregated under US securities law) as of the second most recent month end: Dell Technologies Inc. (\\$394.39) and Super Micro Computer Inc. (\\$41.64)",
+        "bbox": [
+            81,
+            746,
+            910,
+            771
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "GS has received compensation for investment banking services in the past 12 months: Dell Technologies Inc. (\\$394.39), Hewlett Packard Enterprise Co. (\\$49.20) and Super Micro Computer Inc. (\\$41.64)",
+        "bbox": [
+            81,
+            777,
+            898,
+            799
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "GS expects to receive or intends to seek compensation for investment banking services in the next 3 months: Dell Technologies Inc. (\\$394.39), Hewlett Packard Enterprise Co. (\\$49.20) and Super Micro Computer Inc. (\\$41.64)",
+        "bbox": [
+            81,
+            807,
+            869,
+            830
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "GS has received compensation for non-investment banking services during the past 12 months: Dell Technologies Inc. (\\$394.39) and Hewlett Packard Enterprise Co. (\\$49.20)",
+        "bbox": [
+            81,
+            835,
+            877,
+            859
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "GS had an investment banking services client relationship during the past 12 months with: Dell Technologies Inc. (\\$394.39), Hewlett Packard Enterprise Co. (\\$49.20) and Super Micro Computer Inc. (\\$41.64)",
+        "bbox": [
+            81,
+            866,
+            874,
+            888
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "GS had a non-investment banking securities-related services client relationship during the past 12 months with: Dell Technologies Inc. (\\$394.39), Hewlett Packard Enterprise Co. (\\$49.20) and Super Micro Computer Inc. (\\$41.64)",
+        "bbox": [
+            81,
+            895,
+            887,
+            919
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "header",
+        "text": "GS",
+        "bbox": [
+            81,
+            5,
+            184,
+            16
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "header",
+        "text": "Americas Technology: Hardware",
+        "bbox": [
+            702,
+            7,
+            916,
+            21
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "footer",
+        "text": "8 June 2026",
+        "bbox": [
+            81,
+            954,
+            153,
+            965
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "page_number",
+        "text": "7",
+        "bbox": [
+            906,
+            954,
+            915,
+            963
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "GS had a non-securities services client relationship during the past 12 months with: Dell Technologies Inc. (\\$394.39) and Hewlett Packard Enterprise Co. (\\$49.20)",
+        "bbox": [
+            78,
+            38,
+            906,
+            63
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "GS has managed or co-managed a public or Rule 144A offering in the past 12 months: Hewlett Packard Enterprise Co. (\\$49.20)",
+        "bbox": [
+            78,
+            69,
+            846,
+            82
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "A director and/or employee of GS is a director: Dell Technologies Inc. (\\$394.39)",
+        "bbox": [
+            78,
+            87,
+            589,
+            100
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "GS makes a market in the securities or derivatives thereof: Dell Technologies Inc. (\\$394.39), Hewlett Packard Enterprise Co. (\\$49.20) and Super Micro Computer Inc. (\\$41.64)",
+        "bbox": [
+            78,
+            105,
+            900,
+            129
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "Distribution of ratings/investment banking relationships",
+        "text_level": 2,
+        "bbox": [
+            78,
+            140,
+            501,
+            157
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "GS Investment Research global Equity coverage universe",
+        "bbox": [
+            78,
+            156,
+            462,
+            167
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "table",
+        "img_path": "images/29cf8e1a0c93e6de7437e3d57271bcde3a81733c5133291b6a7ed8104a87fd1c.jpg",
+        "table_caption": [],
+        "table_footnote": [],
+        "table_body": "<table><tr><td rowspan=\"2\"></td><td colspan=\"3\">Rating Distribution</td><td colspan=\"3\">Investment Banking Relationships</td></tr><tr><td>Buy</td><td>Hold</td><td>Sell</td><td>Buy</td><td>Hold</td><td>Sell</td></tr><tr><td>Global</td><td>50%</td><td>34%</td><td>16%</td><td>65%</td><td>60%</td><td>45%</td></tr></table>",
+        "bbox": [
+            78,
+            174,
+            759,
+            224
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "As of April 1, 2026, GS Global Investment Research had investment ratings on 3,074 equity securities. GS assigns stocks as Buys and Sells on various regional Investment Lists; stocks not so assigned are deemed Neutral. Such assignments equate to Buy, Hold and Sell for the purposes of the above disclosure required by the FINRA Rules. See ‘Ratings, Coverage universe and related definitions’ below. The Investment Banking Relationships chart reflects the percentage of subject companies within each rating category for whom GS has provided investment banking services within the previous twelve months.",
+        "bbox": [
+            78,
+            237,
+            903,
+            294
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "chart",
+        "img_path": "images/09d4b2771c4e72ed7c3a92e49ecbe81744bff72456f77cecaae240221e26e9ee.jpg",
+        "content": "| Date | Stock Price | Index Price | Rating | Price Target | Not Covered by Current Analyst |\n| --- | --- | --- | --- | --- | --- |\n| Mar 2023 | 49 | 4,500 |  |  |  |\n| Jun 2023 | 61 | 4,700 |  |  |  |\n| Sep 2023 | 68 | 4,900 |  |  |  |\n| Dec 2023 | 78 | 5,100 |  |  |  |\n| Mar 2024 | 86 | 5,300 |  |  |  |\n| Jun 2024 | 87 | 5,500 |  |  |  |\n| Sep 2024 | 129 | 5,700 |  |  |  |\n| Dec 2024 | 140 | 5,900 |  |  |  |\n| Mar 2025 | 155 | 6,100 |  |  |  |\n| Jun 2025 | 165 | 6,300 |  |  |  |\n| Sep 2025 | 145 | 6,500 |  |  |  |\n| Dec 2025 | 95 | 6,700 |  |  |  |\n| Mar 2026 | 130 | 6,900 |  |  |  |\n| Jun 2026 | 140 | 7,100 |  |  |  |\n| Sep 2026 | 150 | 7,300 |  |  |  |\n| Dec 2026 | 175 | 7,500 |  |  |  |\n| Mar 2027 | 185 | 7,700 |  |  |  |\n| Jun 2027 | 165 | 7,900 |  |  |  |\n| Sep 2027 | 180 | 8,100 |  |  |  |\n| Dec 2027 | 195 | 8,300 |  |  |  |\n| Mar 2028 |  |  |  |  |  |\n| Jun 2028 |  |  |  |  |  |\n| Sep 2028 |  |  |  |  |  |\n| Dec 2028 |  |  |  |  |  |\n| Mar 2029 |  |  |  |  |  |\n| Jun 2029 |  |  |  |  |  |\n| Sep 2029 |  |  |  |  |  |\n| Dec 2029 |  |  |  |  |  |\n| Mar 2030 |  |  |  |  |  |\n| Jun 2030 |  |  |  |  |  |\n| Sep 2030 |  |  |  |  |  |\n| Dec 2030 |  |  |  |  |  |\n| Mar 2031 |  |  |  |  |  |\n| Jun 2031 |  |  |  |  |  |\n| Sep 2031 |  |  |  |  |  |\n| Dec 2031 |  |  |  |  |  |\n| Mar 2032 |  |  |  |  |  |\n| Jun 2032 |  |  |  |  |  |\n| Sep 2032 |  |  |  |  |  |\n| Dec 2032 |  |  |  |  |  |\n| Mar 2033 |  |  |  |  |  |\n| Jun 2033 |  |  |  |  |  |\n| Sep 2033 |  |  |  |  |  |\n| Dec 2033 |  |  |  |  |  |\n| Mar 2034 |  |  |  |  |  |\n| Jun 2034 |  |  |  |  |  |\n| Sep 2034 |  |  |  |  |  |\n| Dec 2034 |  |  |  |  |  |\n| Mar 2035 |  |  |  |  |  |\n| Jun 2035 |  |  |  |  |  |\n| Sep 2035 |  |  |  |  |  |\n| Dec 2035 |  |  |  |  |  |\n| Mar 2036 |  |  |  |  |  |\n| Jun 2036 |  |  |  |  |  |\n| Sep 2036 |  |  |  |  |  |\n| Dec 2036 |  |  |  |  |  |\n| Mar 2037 |  |  |  |  |  |\n| Jun 2037 |  |  |  |  |  |\n| Sep 2037 |  |  |  |  |  |\n| Dec 2037 |  |  |  |  |  |\n| Mar 2038 |  |  |  |  |  |\n| Jun 2038 |  |  |  |  |  |\n| Sep 2038 |  |  |  |  |  |\n| Dec 2038 |  |  |  |  |  |\n| Mar 2039 |  |  |  |  |  |\n| Jun 2039 |  |  |  |  |  |\n| Sep 2039 |  |  |  |  |  |\n| Dec 2039 |  |  |  |  |  |\n| Mar 2040 |  |  |  |  |  |\n| Jun 2040 |  |  |  |  |  |",
+        "chart_caption": [
+            "Price target and rating history chart(s)"
+        ],
+        "chart_footnote": [
+            "The price targets shown should be considered in the context of all prior published GS, which may or may not have included price targets, as well as developments relating to the company, its industry and financial markets."
+        ],
+        "sub_type": "line chart",
+        "bbox": [
+            84,
+            335,
+            478,
+            520
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "chart",
+        "img_path": "images/74d1235edbd048992b7b190ede6489b5be866ea8484eaa289437a02c14001827.jpg",
+        "content": "| Date       | Stock Price | Index Price | Rating | Price Target | Not Covered by Current Analyst |\n|------------|-------------|-------------|--------|--------------|-------------------------------|\n| Jan 10     | ~15         | ~4,500      | N      | 16           | -                             |\n| Jul 23     | ~31         | ~6,500      | N      | 27           | -                             |\n| Feb 26     | ~31         | ~6,500      | N      | 31           | -                             |",
+        "chart_caption": [],
+        "chart_footnote": [
+            "The price targets shown should be considered in the context of all prior published GS, which may or may not have included price targets, as well as developments relating to the company, its industry and financial markets."
+        ],
+        "sub_type": "line chart",
+        "bbox": [
+            514,
+            335,
+            906,
+            520
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "chart",
+        "img_path": "images/0ed130923b459df97c9043b2f1d5b7162cf826796095ff58f9cc2ce04c2bafcc.jpg",
+        "content": "| Mar 4 | 93.7 |  |  |  |  |  |\n| --- | --- | --- | --- | --- | --- | --- |\n| Mar 4 | 93.7 |  |  |  |  |  |\n| Mar 4 | 93.7 |  |  |  |  |  |\n| Mar 4 | 93.7 |  |  |  |  |  |\n| Mar 4 | N |  |  |  |  |  |\n| Mar 4 | N |  |  |  |  |  |\n| Mar 4 | N |  |  |  |  |  |\n| Mar 4 | N |  |  |  |  |  |\n| Mar 4 | N |  |  |  |  |  |\n| Mar 4 | N |  | - |  |  |  |\n| Mar 4 | N |  | - |  |  |  |\n| Mar 4 | N |  | - |  |  |  |\n| Mar 4 | N |  | - |  |  |  |\n| Mar 4 | N |  | - |  |  |  |\n| Mar 4 | N - |  | - - |  |  |  |\n| Mar 4 | N - |  | - - |  |  |  |\n| Mar 4 | N - |  | - - |  |  |  |\n| Mar 4 | N - |  | - - |  |  |  |\n| Mar 4 | N - |  | - - |  |  |  |\n| Mar 4 | N - |  | - - |  |  |  |",
+        "chart_caption": [],
+        "chart_footnote": [
+            "The price targets shown should be considered in the context of all prior published GS, which may or may not have included price targets, as well as developments relating to the company, its industry and financial markets."
+        ],
+        "sub_type": "line chart",
+        "bbox": [
+            84,
+            578,
+            488,
+            768
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "Target price history table(s)",
+        "text_level": 2,
+        "bbox": [
+            78,
+            826,
+            289,
+            842
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "table",
+        "img_path": "images/6296fb2fea6a3eb7724544795c279493e208659cfc09865b41d85e841c87f1d1.jpg",
+        "table_caption": [
+            "Hewlett Packard Enterprise Co. (HPE)"
+        ],
+        "table_footnote": [],
+        "table_body": "<table><tr><td>Date of report</td><td>Target price ($)</td><td>Closing price ($)</td></tr><tr><td>02-Jun-26</td><td>79.00</td><td>56.15</td></tr><tr><td>29-Apr-26</td><td>32.00</td><td>28.30</td></tr><tr><td>15-Apr-26</td><td>30.00</td><td>24.62</td></tr><tr><td>10-Mar-26</td><td>29.00</td><td>21.10</td></tr></table>",
+        "bbox": [
+            78,
+            857,
+            380,
+            927
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "table",
+        "img_path": "images/b7747473962a8be79568648f717846b1288c45ea51960975b35e24b014d61142.jpg",
+        "table_caption": [
+            "Super Micro Computer Inc. (SMCI)"
+        ],
+        "table_footnote": [],
+        "table_body": "<table><tr><td>Date of report</td><td>Target price ($)</td><td>Closing price ($)</td></tr><tr><td>06-May-26</td><td>30.00</td><td>34.66</td></tr><tr><td>04-Feb-26</td><td>27.00</td><td>33.76</td></tr><tr><td>13-Jan-26</td><td>26.00</td><td>28.60</td></tr><tr><td>05-Nov-25</td><td>34.00</td><td>42.03</td></tr></table>",
+        "bbox": [
+            462,
+            857,
+            730,
+            926
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "header",
+        "text": "GS",
+        "bbox": [
+            81,
+            5,
+            184,
+            16
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "header",
+        "text": "Americas Technology: Hardware",
+        "bbox": [
+            702,
+            7,
+            916,
+            21
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "footer",
+        "text": "8 June 2026",
+        "bbox": [
+            81,
+            954,
+            155,
+            965
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "page_number",
+        "text": "8",
+        "bbox": [
+            906,
+            954,
+            916,
+            963
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "table",
+        "img_path": "images/e22d4f88544cb1ffa1b28f53b2e1c813b8e9c0a45c3a295dddd6b4d6ec83478e.jpg",
+        "table_caption": [
+            "Hewlett Packard Enterprise Co. (HPE)"
+        ],
+        "table_footnote": [],
+        "table_body": "<table><tr><td>Date of report</td><td>Target price ($)</td><td>Closing price ($)</td></tr><tr><td>13-Jan-26</td><td>31.00</td><td>22.29</td></tr><tr><td>05-Dec-25</td><td>28.00</td><td>23.33</td></tr><tr><td>16-Oct-25</td><td>31.00</td><td>22.50</td></tr><tr><td>01-Oct-25</td><td>27.00</td><td>24.93</td></tr><tr><td>04-Sep-25</td><td>25.00</td><td>23.16</td></tr><tr><td>23-Jul-25</td><td>22.00</td><td>20.76</td></tr><tr><td>30-Aug-23</td><td>16.00</td><td>17.36</td></tr></table>",
+        "bbox": [
+            81,
+            56,
+            380,
+            171
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "table",
+        "img_path": "images/c443c9e637652cde62788ac58c079c2c5b2b253664a25df31b7bf85e04d46439.jpg",
+        "table_caption": [
+            "Super Micro Computer Inc. (SMCI)"
+        ],
+        "table_footnote": [],
+        "table_body": "<table><tr><td>Date of report</td><td>Target price ($)</td><td>Closing price ($)</td></tr><tr><td>23-Oct-25</td><td>30.00</td><td>47.92</td></tr><tr><td>06-Aug-25</td><td>27.00</td><td>46.79</td></tr><tr><td>07-May-25</td><td>24.00</td><td>32.48</td></tr><tr><td>07-Apr-25</td><td>28.00</td><td>33.00</td></tr><tr><td>24-Mar-25</td><td>32.00</td><td>41.72</td></tr><tr><td>26-Feb-25</td><td>40.00</td><td>51.11</td></tr><tr><td>21-Feb-25</td><td>36.00</td><td>56.07</td></tr><tr><td>17-Dec-24</td><td>32.00</td><td>33.80</td></tr><tr><td>06-Nov-24</td><td>28.00</td><td>22.70</td></tr><tr><td>07-Aug-24</td><td>675.00</td><td>49.27</td></tr><tr><td>24-Jul-24</td><td>775.00</td><td>71.16</td></tr><tr><td>01-May-24</td><td>800.00</td><td>73.83</td></tr><tr><td>03-Apr-24</td><td>937.00</td><td>101.56</td></tr><tr><td>04-Mar-24</td><td>941.00</td><td>107.43</td></tr></table>",
+        "bbox": [
+            462,
+            56,
+            730,
+            273
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "table",
+        "img_path": "images/10b42c7176cef8d142c26fee87786d69e385e12b7638de66c490417eaa4db675.jpg",
+        "table_caption": [
+            "Dell Technologies Inc. (DELL)"
+        ],
+        "table_footnote": [
+            "Price targets shown in table(s) are unadjusted for corporate actions."
+        ],
+        "table_body": "<table><tr><td>Date of report</td><td>Target price ($)</td><td>Closing price ($)</td></tr><tr><td>01-Jun-26</td><td>500.00</td><td>465.96</td></tr><tr><td>29-Apr-26</td><td>230.00</td><td>205.66</td></tr><tr><td>15-Apr-26</td><td>215.00</td><td>177.28</td></tr><tr><td>20-Mar-26</td><td>195.00</td><td>157.67</td></tr><tr><td>27-Feb-26</td><td>180.00</td><td>148.08</td></tr><tr><td>13-Jan-26</td><td>165.00</td><td>119.66</td></tr><tr><td>26-Nov-25</td><td>185.00</td><td>133.26</td></tr><tr><td>07-Oct-25</td><td>175.00</td><td>150.87</td></tr><tr><td>29-Sep-25</td><td>155.00</td><td>133.90</td></tr><tr><td>29-Aug-25</td><td>150.00</td><td>122.15</td></tr><tr><td>17-Jul-25</td><td>140.00</td><td>123.88</td></tr><tr><td>30-May-25</td><td>130.00</td><td>111.27</td></tr><tr><td>07-Apr-25</td><td>95.00</td><td>75.00</td></tr><tr><td>28-Feb-25</td><td>145.00</td><td>102.76</td></tr><tr><td>27-Nov-24</td><td>165.00</td><td>124.38</td></tr><tr><td>30-Aug-24</td><td>155.00</td><td>115.54</td></tr><tr><td>31-May-24</td><td>160.00</td><td>139.56</td></tr><tr><td>03-Apr-24</td><td>140.00</td><td>128.58</td></tr><tr><td>01-Mar-24</td><td>129.00</td><td>124.59</td></tr><tr><td>02-Jan-24</td><td>87.00</td><td>74.79</td></tr><tr><td>01-Dec-23</td><td>86.00</td><td>71.93</td></tr><tr><td>05-Oct-23</td><td>78.00</td><td>66.19</td></tr><tr><td>01-Sep-23</td><td>68.00</td><td>68.19</td></tr><tr><td>17-Jul-23</td><td>61.00</td><td>54.70</td></tr><tr><td>11-Jul-23</td><td>55.00</td><td>55.74</td></tr></table>",
+        "bbox": [
+            80,
+            308,
+            344,
+            686
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "Regulatory disclosures",
+        "text_level": 2,
+        "bbox": [
+            81,
+            726,
+            250,
+            740
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "Disclosures required by United States laws and regulations",
+        "text_level": 2,
+        "bbox": [
+            81,
+            746,
+            514,
+            760
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "See company-specific regulatory disclosures above for any of the following disclosures required as to companies referred to in this report: manager or co-manager in a pending transaction; $1\\%$ or other ownership; compensation for certain services; types of client relationships; managed/co-managed public offerings in prior periods; directorships; for equity securities, market making and/or specialist role. GS trades or may trade as a principal in debt securities (or in related derivatives) of issuers discussed in this report.",
+        "bbox": [
+            81,
+            760,
+            906,
+            804
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "The following are additional required disclosures: Ownership and material conflicts of interest: GS policy prohibits its analysts, professionals reporting to analysts and members of their households from owning securities of any company in the analyst's area of coverage. Analyst compensation: Analysts are paid in part based on the profitability of GS, which includes investment banking revenues. Analyst as officer or director: GS policy generally prohibits its analysts, persons reporting to analysts or members of their households from serving as an officer, director or advisor of any company in the analyst's area of coverage. Non-U.S. Analysts: Non-U.S. analysts may not be associated persons of GS & Co. LLC and therefore may not be subject to FINRA Rule 2241 or FINRA Rule 2242 restrictions on communications with a subject company, public appearances and trading in securities covered by the analysts.",
+        "bbox": [
+            81,
+            810,
+            911,
+            888
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "Distribution of ratings: See the distribution of ratings disclosure above. Price chart: See the price chart, with changes of ratings and price targets in prior periods, above, or, if electronic format or if with respect to multiple companies which are the subject of this report, on the GS website at https://www.gs.com/research/hedge.html.",
+        "bbox": [
+            81,
+            895,
+            915,
+            928
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "header",
+        "text": "GS",
+        "bbox": [
+            81,
+            5,
+            184,
+            16
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "header",
+        "text": "Americas Technology: Hardware",
+        "bbox": [
+            702,
+            7,
+            916,
+            21
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "footer",
+        "text": "8 June 2026",
+        "bbox": [
+            81,
+            954,
+            153,
+            965
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "page_number",
+        "text": "9",
+        "bbox": [
+            906,
+            954,
+            916,
+            963
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "Additional disclosures required under the laws and regulations of jurisdictions other than the United States",
+        "text_level": 2,
+        "bbox": [
+            81,
+            40,
+            872,
+            54
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "The following disclosures are those required by the jurisdiction indicated, except to the extent already made above pursuant to United States laws and regulations. Australia: GS Australia Pty Ltd and its affiliates are not authorised deposit-taking institutions (as that term is defined in the Banking Act 1959 (Cth)) in Australia and do not provide banking services, nor carry on a banking business, in Australia. This research, and any access to it, is intended only for “wholesale clients” within the meaning of the Australian Corporations Act, unless otherwise agreed by GS. In producing research reports, members of Global Investment Research of GS Australia may attend site visits and other meetings hosted by the companies and other entities which are the subject of its research reports. In some instances the costs of such site visits or meetings may be met in part or in whole by the issuers concerned if GS Australia considers it is appropriate and reasonable in the specific circumstances relating to the site visit or meeting. To the extent that the contents of this document contains any financial product advice, it is general advice only and has been prepared by GS without taking into account a client’s objectives, financial situation or needs. A client should, before acting on any such advice, consider the appropriateness of the advice having regard to the client’s own objectives, financial situation and needs. A copy of certain GS Australia and New Zealand disclosure of interests and a copy of GS’ Australian Sell-Side Research Independence Policy Statement are available at: https://www.goldmansachs.com/disclosures/australia-new-zealand/index.html. Brazil: Disclosure information in relation to CVM Resolution n. 20 is available at https://www.gs.com/worldwide/brazil/area/gir/index.html. Where applicable, the Brazil-registered analyst primarily responsible for the content of this research report, as defined in Article 20 of CVM Resolution n. 20, is the first author named at the beginning of this report, unless indicated otherwise at the end of the text. Canada: This information is being provided to you for information purposes only and is not, and under no circumstances should be construed as, an advertisement, offering or solicitation by GS & Co. LLC for purchasers of securities in Canada to trade in any Canadian security. GS & Co. LLC is not registered as a dealer in any jurisdiction in Canada under applicable Canadian securities laws and generally is not permitted to trade in Canadian securities and may be prohibited from selling certain securities and products in certain jurisdictions in Canada. If you wish to trade in any Canadian securities or other products in Canada please contact GS Canada Inc., an affiliate of The GS Group Inc., or another registered Canadian dealer. Hong Kong: Further information on the securities of covered companies referred to in this research may be obtained on request from GS (Asia) L.L.C. India: Further information on the subject company or companies referred to in this research may be obtained from GS (India) Securities Private Limited, Research Analyst - SEBI Registration Number INH000001493, 10th Floor, Ascent-Worli, Sudam Kalu Ahire Marg, Worli, Mumbai-400 025, India, Corporate Identity Number U74140MH2006FTC160634, Phone +91 22 6616 9000, Fax +91 22 6616 9001. GS may beneficially own 1% or more of the securities (as such term is defined in clause 2 (h) the Indian Securities Contracts (Regulation) Act, 1956) of the subject company or companies referred to in this research report. Investment in securities market are subject to market risks. Read all the related documents carefully before investing. Registration granted by SEBI and certification from NISM in no way guarantee performance of the intermediary or provide any assurance of returns to investors. GS (India) Securities Private Limited compliance officer and investor grievance contact details can be found at: https://www.goldmansachs.com/worldwide/india/documents/Grievance-Redressal-and-Escalation-Matrix.pdf, and a copy of the annual audit compliance report can be found at this link: https://publishing.gs.com/content/site/india-annual-compliance-report.html. Japan: See below. Korea: This research, and any access to it, is intended only for “professional investors” within the meaning of the Financial Services and Capital Markets Act, unless otherwise agreed by GS. Further information on the subject company or companies referred to in this research may be obtained from GS (Asia) L.L.C., Seoul Branch. New Zealand: GS New Zealand Limited and its affiliates are neither “registered banks” nor “deposit takers” (as defined in the Reserve Bank of New Zealand Act 1989) in New Zealand. This research, and any access to it, is intended for “wholesale clients” (as defined in the Financial Advisers Act 2008) unless otherwise agreed by GS. A copy of certain GS Australia and New Zealand disclosure of interests is available at: https://www.goldmansachs.com/disclosures/australia-new-zealand/index.html. Russia: Research reports distributed in the Russian Federation are not advertising as defined in the Russian legislation, but are information and analysis not having product promotion as their main purpose and do not provide appraisal within the meaning of the Russian legislation on appraisal activity. Research reports do not constitute a personalized investment recommendation as defined in Russian laws and regulations, are not addressed to a specific client, and are prepared without analyzing the financial circumstances, investment profiles or risk profiles of clients. GS assumes no responsibility for any investment decisions that may be taken by a client or any other person based on this research report. Singapore: GS (Singapore) Pte. (Company Number: 198602165W), which is regulated by the Monetary Authority of Singapore, accepts legal responsibility for this research, and should be contacted with respect to any matters arising from, or in connection with, this research. Taiwan: This material is for reference only and must not be reprinted without permission. Investors should carefully consider their own investment risk. Investment results are the responsibility of the individual investor. United Kingdom: Persons who would be categorized as retail clients in the United Kingdom, as such term is defined in the rules of the Financial Conduct Authority, should read this research in conjunction with prior GS on the covered companies referred to herein and should refer to the risk warnings that have been sent to them by GS International. A copy of these risks warnings, and a glossary of certain financial terms used in this report, are available from GS International on request.",
+        "bbox": [
+            80,
+            55,
+            916,
+            587
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "European Union and United Kingdom: Disclosure information in relation to Article 6 (2) of the European Commission Delegated Regulation (EU) (2016/958) supplementing Regulation (EU) No 596/2014 of the European Parliament and of the Council (including as that Delegated Regulation is implemented into United Kingdom domestic law and regulation following the United Kingdom's departure from the European Union and the European Economic Area) with regard to regulatory technical standards for the technical arrangements for objective presentation of investment recommendations or other information recommending or suggesting an investment strategy and for disclosure of particular interests or indications of conflicts of interest is available at https://www.gs.com/disclosures/europeanpolicy.html which states the European Policy for Managing Conflicts of Interest in Connection with Investment Research.",
+        "bbox": [
+            81,
+            593,
+            908,
+            671
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "Japan: GS Japan Co., Ltd. is a Financial Instrument Dealer registered with the Kanto Financial Bureau under registration number Kinsho 69, and a member of Japan Securities Dealers Association, Financial Futures Association of Japan Type II Financial Instruments Firms Association, and Investment Management Association of Japan. Sales and purchase of equities are subject to commission pre-determined with clients plus consumption tax. See company-specific disclosures as to any applicable disclosures required by Japanese stock exchanges, the Japanese Securities Dealers Association or the Japanese Securities Finance Company.",
+        "bbox": [
+            81,
+            678,
+            913,
+            735
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "Ratings, coverage universe and related definitions",
+        "text_level": 2,
+        "bbox": [
+            81,
+            746,
+            450,
+            760
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "Buy (B), Neutral (N), Sell (S) Analysts recommend stocks as Buys or Sells for inclusion on various regional Investment Lists. Being assigned a Buy or Sell on an Investment List is determined by a stock's total return potential relative to its coverage universe. Any stock not assigned as a Buy or a Sell on an Investment List with an active rating (i.e., a stock that is not Rating Suspended, Not Rated, Early-Stage Biotech, Coverage Suspended or Not Covered), is deemed Neutral. Each region manages Regional Conviction Lists, which are selected from Buy rated stocks on the respective region's Investment Lists and represent investment recommendations focused on the size of the total return potential and/or the likelihood of the realization of the return across their respective areas of coverage. The addition or removal of stocks from such Conviction Lists are managed by the Investment Review Committee or other designated committee in each respective region and do not represent a change in the analysts' investment rating for such stocks.",
+        "bbox": [
+            81,
+            760,
+            916,
+            839
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "Total return potential represents the upside or downside differential between the current share price and the price target, including all paid or anticipated dividends, expected during the time horizon associated with the price target. Price targets are required for all covered stocks. The total return potential, price target and associated time horizon are stated in each report adding or reiterating an Investment List membership.",
+        "bbox": [
+            81,
+            844,
+            888,
+            879
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "Coverage Universe: A list of all stocks in each coverage universe is available by primary analyst, stock and coverage universe at https://www.gs.com/research/hedge.html.",
+        "bbox": [
+            81,
+            886,
+            777,
+            910
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "Not Rated (NR). The investment rating, target price and earnings estimates (where relevant) are removed pursuant to GS policy when",
+        "bbox": [
+            81,
+            914,
+            883,
+            928
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "header",
+        "text": "GS",
+        "bbox": [
+            81,
+            5,
+            184,
+            16
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "header",
+        "text": "Americas Technology: Hardware",
+        "bbox": [
+            702,
+            7,
+            916,
+            21
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "footer",
+        "text": "8 June 2026",
+        "bbox": [
+            81,
+            954,
+            153,
+            965
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "page_number",
+        "text": "10",
+        "bbox": [
+            901,
+            954,
+            916,
+            963
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "GS is acting in an advisory capacity in a merger or in a strategic transaction involving this company, when there are legal, regulatory or policy constraints due to GS' involvement in a transaction, and in certain other circumstances. Early-Stage Biotech (ES). An investment rating and a target price are not assigned pursuant to GS policy when this company has neither a drug, treatment or medical device that has passed a Phase II clinical trial nor a license to distribute a post-Phase II drug, treatment or medical device. Rating Suspended (RS). GS has suspended the investment rating and price target for this stock, because there is not a sufficient fundamental basis for determining an investment rating or target price. The previous investment rating and target price, if any, are no longer in effect for this stock and should not be relied upon. Coverage Suspended (CS). GS has suspended coverage of this company. Not Covered (NC). GS does not cover this company.",
+        "bbox": [
+            80,
+            38,
+            911,
+            130
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "Global product; distributing entities",
+        "text_level": 2,
+        "bbox": [
+            81,
+            142,
+            349,
+            156
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "GS Global Investment Research produces and distributes research products for clients of GS on a global basis. Analysts based in GS offices around the world produce research on industries and companies, and research on macroeconomics, currencies, commodities and portfolio strategy. This research is disseminated in Australia by GS Australia Pty Ltd (ABN 21 006 797 897); in Brazil by GS do Brasil Corretora de Títulos e Valores Mobiliários S.A.; Public Communication Channel GS Brazil: 0800 727 5764 and / or contatogoldmanbrasil@gs.com. Available Weekdays (except holidays), from 9am to 6pm. Canal de Comunicação com o Público GS Brasil: 0800 727 5764 e/ou contatogoldmanbrasil@gs.com. Horário de funcionamento: segunda-feira à sexta-feira (exceto feriados), das 9h às 18h; in Canada by GS & Co. LLC; in Hong Kong by GS (Asia) L.L.C.; in India by GS (India) Securities Private Ltd.; in Japan by GS Japan Co., Ltd.; in the Republic of Korea by GS (Asia) L.L.C., Seoul Branch; in New Zealand by GS New Zealand Limited; in Russia by OOO GS; in Singapore by GS (Singapore) Pte. (Company Number: 198602165W); and in the United States of America by GS & Co. LLC. GS International has approved this research in connection with its distribution in the United Kingdom.",
+        "bbox": [
+            80,
+            156,
+            916,
+            279
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "GS International (“GSI”), authorised by the Prudential Regulation Authority (“PRA”) and regulated by the Financial Conduct Authority (“FCA”) and the PRA, has approved this research in connection with its distribution in the United Kingdom.",
+        "bbox": [
+            81,
+            284,
+            879,
+            308
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "European Economic Area: GS Bank Europe SE (“GSBE”) is a credit institution incorporated in Germany and, within the Single Supervisory Mechanism, subject to direct prudential supervision by the European Central Bank and in other respects supervised by German Federal Financial Supervisory Authority (Bundesanstalt für Finanzdienstleistungsaufsicht, BaFin) and Deutsche Bundesbank and disseminates research within the European Economic Area.",
+        "bbox": [
+            81,
+            313,
+            903,
+            359
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "General disclosures",
+        "text_level": 2,
+        "bbox": [
+            81,
+            372,
+            228,
+            385
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "This research is for our clients only. Other than disclosures relating to GS, this research is based on current public information that we consider reliable, but we do not represent it is accurate or complete, and it should not be relied on as such. The information, opinions, estimates and forecasts contained herein are as of the date hereof and are subject to change without prior notification. We seek to update our research as appropriate, but various regulations may prevent us from doing so. Other than certain industry reports published on a periodic basis, the large majority of reports are published at irregular intervals as appropriate in the analyst's judgment.",
+        "bbox": [
+            81,
+            386,
+            913,
+            441
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "GS conducts a global full-service, integrated investment banking, investment management, and brokerage business. We have investment banking and other business relationships with a substantial percentage of the companies covered by Global Investment Research. GS & Co. LLC, the United States broker dealer, is a member of SIPC (https://www.sipc.org).",
+        "bbox": [
+            81,
+            448,
+            913,
+            483
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "Our salespeople, traders, and other professionals may provide oral or written market commentary or trading strategies to our clients and principal trading desks that reflect opinions that are contrary to the opinions expressed in this research. Our asset management area, principal trading desks and investing businesses may make investment decisions that are inconsistent with the recommendations or views expressed in this research.",
+        "bbox": [
+            81,
+            488,
+            913,
+            523
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "The analysts named in this report may have from time to time discussed with our clients, including GS salespersons and traders, or may discuss in this report, trading strategies that reference catalysts or events that may have a near-term impact on the market price of the equity securities discussed in this report, which impact may be directionally counter to the analyst's published price target expectations for such stocks. Any such trading strategies are distinct from and do not affect the analyst's fundamental equity rating for such stocks, which rating reflects a stock's return potential relative to its coverage universe as described herein.",
+        "bbox": [
+            81,
+            529,
+            913,
+            586
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "We and our affiliates, officers, directors, and employees will from time to time have long or short positions in, act as principal in, and buy or sell, the securities or derivatives, if any, referred to in this research, unless otherwise prohibited by regulation or GS policy.",
+        "bbox": [
+            81,
+            591,
+            888,
+            616
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "The views attributed to third party presenters at GS arranged conferences, including individuals from other parts of GS, do not necessarily reflect those of Global Investment Research and are not an official view of GS.",
+        "bbox": [
+            81,
+            621,
+            913,
+            645
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "Any third party referenced herein, including any salespeople, traders and other professionals or members of their household, may have positions in the products mentioned that are inconsistent with the views expressed by analysts named in this report.",
+        "bbox": [
+            81,
+            651,
+            911,
+            675
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "This research is not an offer to sell or the solicitation of an offer to buy any security in any jurisdiction where such an offer or solicitation would be illegal. It does not constitute a personal recommendation or take into account the particular investment objectives, financial situations, or needs of individual clients. Clients should consider whether any advice or recommendation in this research is suitable for their particular circumstances and, if appropriate, seek professional advice, including tax advice. The price and value of investments referred to in this research and the income from them may fluctuate. Past performance is not a guide to future performance, future returns are not guaranteed, and a loss of original capital may occur. Fluctuations in exchange rates could have adverse effects on the value or price of, or income derived from, certain investments.",
+        "bbox": [
+            81,
+            680,
+            913,
+            749
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "Certain transactions, including those involving futures, options, and other derivatives, give rise to substantial risk and are not suitable for all investors. Investors should review current options and futures disclosure documents which are available from GS sales representatives or at https://www.theocc.com/about/publications/character-risks.jsp and https://www.goldmansachs.com/disclosures/cftc\\_fcm\\_disclosures. Transaction costs may be significant in option strategies calling for multiple purchase and sales of options such as spreads. Supporting documentation will be supplied upon request.",
+        "bbox": [
+            81,
+            754,
+            903,
+            812
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "Differing Levels of Service provided by Global Investment Research: The level and types of services provided to you by GS Global Investment Research may vary as compared to that provided to internal and other external clients of GS, depending on various factors including your individual preferences as to the frequency and manner of receiving communication, your risk profile and investment focus and perspective (e.g., marketwide, sector specific, long term, short term), the size and scope of your overall client relationship with GS, and legal and regulatory constraints. As an example, certain clients may request to receive notifications when research on specific securities is published, and certain clients may request that specific data underlying analysts' fundamental analysis available on our internal client websites be delivered to them electronically through data feeds or otherwise. No change to an analyst's fundamental research views (e.g., ratings, price targets, or material changes to earnings estimates for equity securities), will be communicated to any client prior to inclusion of such information in a research report broadly disseminated through electronic publication to our internal client websites or through other means, as necessary, to all clients who are entitled to receive such reports.",
+        "bbox": [
+            81,
+            817,
+            903,
+            919
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "header",
+        "text": "GS",
+        "bbox": [
+            81,
+            5,
+            184,
+            16
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "header",
+        "text": "Americas Technology: Hardware",
+        "bbox": [
+            702,
+            7,
+            916,
+            21
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "footer",
+        "text": "8 June 2026",
+        "bbox": [
+            81,
+            954,
+            153,
+            965
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "page_number",
+        "text": "11",
+        "bbox": [
+            900,
+            954,
+            915,
+            963
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "All research reports are disseminated and available to all clients simultaneously through electronic publication to our internal client websites. Not all research content is redistributed to our clients or available to third-party aggregators, nor is GS responsible for the redistribution of our research by third party aggregators. For research, models or other data related to one or more securities, markets or asset classes (including related services) that may be available to you, please contact your GS representative or go to https://research.gs.com.",
+        "bbox": [
+            81,
+            38,
+            898,
+            86
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "Disclosure information is also available at https://www.gs.com/research/hedge.html or from Research Compliance, 200 West Street, New York, NY 10282.",
+        "bbox": [
+            81,
+            91,
+            888,
+            114
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "© 2026 GS.",
+        "text_level": 2,
+        "bbox": [
+            81,
+            121,
+            220,
+            133
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "You are permitted to store, display, analyze, modify, reformat, and print the information made available to you via this service only for your own use. You may not resell or reverse engineer this information to calculate or develop any index for disclosure and/or marketing or create any other derivative works or commercial product(s), data or offering(s) without the express written consent of GS. You are not permitted to publish, transmit, or otherwise reproduce this information, in whole or in part, in any format to any third party without the express written consent of GS. This foregoing restriction includes, without limitation, using, extracting, downloading or retrieving this information, in whole or in part, to train or finetune a machine learning or artificial intelligence system, or to provide or reproduce this information, in whole or in part, as a prompt or input to any such system.",
+        "bbox": [
+            81,
+            139,
+            911,
+            219
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "header",
+        "text": "GS",
+        "bbox": [
+            81,
+            5,
+            184,
+            16
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "header",
+        "text": "Americas Technology: Hardware",
+        "bbox": [
+            702,
+            7,
+            916,
+            21
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "footer",
+        "text": "8 June 2026",
+        "bbox": [
+            81,
+            954,
+            155,
+            965
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "page_number",
+        "text": "12",
+        "bbox": [
+            900,
+            954,
+            916,
+            965
+        ],
+        "page_idx": 11
+    }
+]
