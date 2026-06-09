@@ -1,0 +1,41 @@
+ZH_A: 最近有一份关于AI数据中心成本的报告，据说一个Vera Rubin机架就要900多万美元，这个数字靠谱吗？
+ZH_B: 确实，我们估算下来大约是910万美元一个机架，比媒体之前说的800万要高不少。
+ZH_A: 那这个差异主要来自哪里？是GPU涨价了吗？
+ZH_B: 其实GPU部分还好，大概400万美元，真正的大头是内存。我们预计到2027年HBM4的价格会涨到每GB 53美元，比现在高很多。
+ZH_A: 所以这意味着整个机架的成本被内存价格推高了？
+ZH_B: 对，内存和存储加起来差不多320万美元，占了35%左右。而且我们认为英伟达会把成本转嫁给客户，而不是自己消化。
+ZH_A: 那除了GPU和内存，还有哪些成本比较突出？
+ZH_B: 网络设备大概120万美元，包括NVLink交换机和SpectrumX。冷却和供电各约15万，虽然占比不大，但也在涨。
+ZH_A: 那如果按GW来算，整个数据中心要花多少钱？
+ZH_B: 我们估计每GW大概470亿美元，其中机架成本320亿，基础设施150亿。这个数字比上一代Blackwell要高不少。
+ZH_A: 这意味着AI数据中心的投资门槛越来越高？
+ZH_B: 没错，而且未来还会继续涨。报告里还提到，电力成本其实相对低，真正的大头是折旧。
+ZH_A: 折旧？能具体说说吗？
+ZH_B: 服务器和网络设备折旧年限短，每年折旧费大概72亿美元，而电费只要13亿。所以经济成本更偏向硬件。
+ZH_A: 那这些成本上涨会不会影响AI的普及？
+ZH_B: 报告认为计算性能也在快速提升，比如Vera Rubin的算力是Blackwell的3.5倍。所以每美元能买到的算力还是在加速的。
+ZH_A: 听起来挺乐观，但有没有什么不确定因素？
+ZH_B: 当然有。比如内存价格波动很大，NAND从2023年低点涨了11倍多，未来还会变。报告里没有完全展开的一个点是，LPDDR可能短缺，会影响Vera Rubin的出货。
+ZH_A: 这个很有意思，完整报告里应该会有更多细节吧？
+ZH_B: 对，还有比如冷却技术的选择、网络架构的差异，这些都会影响实际成本。建议有兴趣的朋友去读完整报告。
+
+EN_A: So we’ve got this report on AI data center costs, and it says a Vera Rubin rack could be over 9 million dollars. Is that for real?
+EN_B: Yes, we estimate about 9.1 million per rack, which is notably higher than the 8 million figure that’s been floating around in the media.
+EN_A: What’s driving that gap? Is it the GPU price?
+EN_B: Actually, the GPU is still the biggest single component at around 4 million. But the main surprise is memory. We expect HBM4 prices to jump to 53 dollars per gigabyte by 2027, when Vera Rubin ships in volume.
+EN_A: So memory costs are inflating the whole rack?
+EN_B: Exactly. Memory and storage together come to about 3.2 million, or 35 percent of the rack cost. And we think Nvidia will pass that increase on to customers.
+EN_A: What about other components? Networking, cooling?
+EN_B: Networking adds about 1.2 million, with NVLink switches and SpectrumX. Cooling and power delivery are each around 150,000. They’re smaller, but still significant.
+EN_A: And if you scale that up to a gigawatt of data center capacity?
+EN_B: We estimate total capex at about 47 billion per gigawatt. That includes 32 billion for racks and 15 billion for physical infrastructure. It’s a big jump from the Blackwell generation.
+EN_A: So the bar for building AI data centers is getting higher?
+EN_B: Yes, and it’s likely to keep rising. One thing the report highlights is that the real economic cost is dominated by depreciation, not electricity.
+EN_A: Depreciation? Can you explain that?
+EN_B: Sure. Servers and networking gear depreciate faster than buildings. So the annual depreciation is about 7.2 billion, while electricity is only 1.3 billion, even at a high rate of 15 cents per kilowatt-hour.
+EN_A: Does that mean AI adoption could slow down?
+EN_B: Not necessarily. The report points out that compute performance is accelerating fast. Vera Rubin delivers 2.5 times the FP8 performance of Blackwell. So performance per dollar is still improving.
+EN_A: That sounds promising. But are there any uncertainties?
+EN_B: Definitely. Memory prices are very volatile. NAND prices have gone up 11 times from the 2023 trough. And the report doesn’t fully address whether LPDDR shortages could limit Vera Rubin shipments.
+EN_A: That’s a key question. I guess we’d need to read the full report for more?
+EN_B: Yes, and also for details on cooling choices and network architecture variations. These can all affect the final cost. So if you’re serious about this space, the full report is worth a look.
