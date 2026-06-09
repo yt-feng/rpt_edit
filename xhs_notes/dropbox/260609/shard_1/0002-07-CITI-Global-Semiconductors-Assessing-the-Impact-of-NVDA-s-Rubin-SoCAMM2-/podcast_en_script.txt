@@ -1,0 +1,15 @@
+EN_A: So, there is a report going around that Nvidia is cutting the memory capacity on its next-generation Vera Rubin platform by about half. Is that true?
+EN_B: Yes, a global investment bank just put out a note confirming that. Nvidia is reportedly switching from 192GB SoCAMM2 modules to 96GB modules. That brings the total memory per rack down from 55TB to 28TB. It is a significant cut.
+EN_A: That sounds like bad news. Is demand falling off, or is Nvidia just trying to save costs?
+EN_B: Here is the interesting part. The report argues this is not a demand issue at all. The real driver is a global DRAM supply shortage. Right now, suppliers can only cover about 60 percent of the SoCAMM2 demand. Nvidia is basically being forced to adapt.
+EN_A: So, it is not that they cannot sell it, it is that they cannot buy enough chips to build it?
+EN_B: Exactly. And the report makes a crucial point: Nvidia is not reducing its total memory appetite. They are just shifting how they meet it. They expect Nvidia to adopt a technology called Context Memory eXtension, or CMX, to fill the gap.
+EN_A: What is CMX exactly? Is it like a new type of memory layer?
+EN_B: You can think of it as a G3.5 memory tier, sitting between DRAM and NAND. It is specifically designed to handle the exploding demand for KV Cache in large language model inference. CMX can manage that workload more efficiently, reducing the need for ultra-fast DRAM.
+EN_A: So, Nvidia cuts DRAM, but that might actually boost NAND demand? That would be a big deal for storage chip makers.
+EN_B: That is exactly the key insight from this report. They project that CMX adoption will eventually increase NAND demand. So, while this might be a near-term headwind for DRAM suppliers, it could open up a new growth driver for NAND players.
+EN_A: But how certain is this? Is CMX a proven technology yet?
+EN_B: Great question. The report itself says this still needs to be validated. CMX is currently discussed as an expected solution. Whether it fully lands in the G3.5 architecture, and whether Nvidia’s final design might change again, are questions the full report does not completely answer yet.
+EN_A: So, we know the cut is about supply constraints, not weak demand, and a new tech like CMX could be a positive for NAND. What are the big open questions for investors?
+EN_B: I see two. First, when will DRAM supply ease up? And if it does, will Nvidia switch back to the higher capacity modules? Second, how big is the actual NAND demand boost from CMX? The full report has specific estimates on that, and we will leave that as a cliffhanger for now.
+EN_A: Sounds good. For those numbers and the deeper analysis, check out the full report. Thanks for joining us.
