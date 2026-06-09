@@ -1,0 +1,2918 @@
+[
+    {
+        "type": "text",
+        "text": "Global: GS Economic Indicators Update: Financial Conditions Tighten Back to Pre-War Levels in the US",
+        "text_level": 1,
+        "bbox": [
+            78,
+            73,
+            802,
+            126
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Please find an update of our proprietary global economic indicators below. The data behind these exhibits can be downloaded here. Interactive charts can be found on our living page here.",
+        "bbox": [
+            78,
+            171,
+            697,
+            223
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Chart of the Week",
+        "text_level": 2,
+        "bbox": [
+            78,
+            237,
+            215,
+            251
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "chart",
+        "img_path": "images/4d378d6f081a81aa7ea3c0ded8f4563832ed0e3e7dffe686bf9d771a905365a8.jpg",
+        "content": "| Month   | Index |\n| ------- | ----- |\n| Jun     | 98.5  |",
+        "chart_caption": [
+            "Exhibit 1: Our US FCI Tightened Back to Its Pre-War Level Following Better Than Expected Employment Data Last Friday"
+        ],
+        "chart_footnote": [
+            "Source: GS Global Investment Research"
+        ],
+        "sub_type": "line chart",
+        "bbox": [
+            84,
+            307,
+            689,
+            574
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Jan Hatzius",
+        "text_level": 2,
+        "bbox": [
+            720,
+            173,
+            802,
+            184
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "+1(212)902-0394 | jan.hatzius@gs.com\nGS & Co. LLC",
+        "bbox": [
+            720,
+            184,
+            910,
+            202
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Joseph Briggs",
+        "text_level": 2,
+        "bbox": [
+            720,
+            211,
+            816,
+            224
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "+1(212)902-2163 | joseph.briggs@gs.com GS & Co. LLC",
+        "bbox": [
+            720,
+            224,
+            843,
+            250
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Sarah Dong",
+        "text_level": 2,
+        "bbox": [
+            720,
+            259,
+            802,
+            271
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "+1(212)357-9741 | sarah.dong@gs.com\nGS & Co. LLC",
+        "bbox": [
+            720,
+            271,
+            911,
+            289
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Megan Peters",
+        "text_level": 2,
+        "bbox": [
+            720,
+            297,
+            815,
+            308
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "+44(20)7051-2058 |  \nmegan.l.peters@gs.com  \nGS International",
+        "bbox": [
+            720,
+            308,
+            857,
+            335
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "header",
+        "text": "Goldman Research Sachs",
+        "bbox": [
+            78,
+            2,
+            297,
+            41
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "header",
+        "text": "Economics Research 8 June 2026 | 4:28PM EDT",
+        "bbox": [
+            722,
+            3,
+            918,
+            41
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "footer",
+        "text": "Investors should consider this report as only a single factor in making their investment decision. For Reg AC certification and other important disclosures, see the Disclosure Appendix, or go to www.gs.com/research/hedge.html.",
+        "bbox": [
+            78,
+            922,
+            857,
+            968
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Key FCI and Growth Charts",
+        "text_level": 2,
+        "bbox": [
+            271,
+            38,
+            470,
+            55
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "chart",
+        "img_path": "images/66e26d4ec4903a0a4040a7d0b6ced0391d487b1b8a15694214105bc5f8559661.jpg",
+        "content": "| Year | Index |\n|------|-------|\n| 2014 | 100.0 |\n| 2016 | 99.5 |\n| 2018 | 98.5 |\n| 2020 | 98.0 |\n| 2022 | 97.5 |\n| 2024 | 99.5 |\n| 2026 | 99.0 |",
+        "chart_caption": [
+            "Exhibit 2: The Global ex Russia FCI Tightened by +3.3bps Last Week Primarily on Equities"
+        ],
+        "chart_footnote": [],
+        "sub_type": "line chart",
+        "bbox": [
+            88,
+            96,
+            493,
+            324
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "chart",
+        "img_path": "images/be8153ba04116c719f78292986cec5444eb779695d0fe161f0ef9a978eb63da7.jpg",
+        "content": "| Category | Basis points |\n|---|---|\n| Global ex Russia FCI | 3.3 |\n| Long Rate | 2.5 |\n| Short Rate | -5.4 |\n| Credit Spread | -0.2 |\n| Equities | 4.7 |\n| Exchange Rate | 1.8 |\n| Sovereign Spread | 0.1 |",
+        "chart_caption": [],
+        "chart_footnote": [
+            "Source: GS Global Investment Research"
+        ],
+        "sub_type": "bar chart",
+        "bbox": [
+            500,
+            96,
+            910,
+            374
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "chart",
+        "img_path": "images/244f51c137340137ea106ad8a520c2ed044a408d52a90c59adb9db32a3a30669.jpg",
+        "content": "Change in GS GDP Forecast in 2026\n| Region | Change in GS GDP (pp) |\n| :--- | :--- |\n| Global | -0.15 |\n| India | 0.30 |\n| US | 0.10 |\n| Argentina | -0.05 |\n| Poland | -0.05 |\n| Mexico | -0.05 |\n| Malaysia | -0.05 |\n| Philippines | -0.05 |\n| Russia | -0.05 |\n| Thailand | -0.05 |\n| Türkiye | -0.05 |\n| Taiwan | 1.00 |\n| South Korea | 0.60 |\n| India | 0.60 |\n| Brazil | 0.30 |\n| Poland | 0.30 |\n| Indonesia | 0.20 |\n| Germany | 0.15 |\n| Philippines | 0.10 |\n| Thailand | 0.10 |\n| Italy | 0.10 |\n| Japan | -0.15 |\n| Malaysia | -0.25 |\n| Russia | -0.25 |\n| Türkiye | -0.25 |\n| Vietnam | -0.25 |\n| Argentina | -0.25 |\n| Spain | -0.25 |\n| Mainland China | -0.25 |\n| Euro Area | -0.25 |\n| Australia | -0.30 |\n| US | -0.35 |\n| Mexico | -0.40 |\n| France | -0.45 |\n| Canada | -0.50 |\n\n| Time Since a Week Ago: \n| Region/Year | Change in GS GDP (pp) |\n| :--- | :--- |\n| Global | 1.00 |\n| Taiwan | +4.2pp |\n| UK | 0.75 |\n| South Korea | 0.65 |\n| India | 0.65 |\n| Brazil | 0.35 |\n| Poland | 0.35 |\n| Indonesia | 0.25 |\n| Germany | 0.20 |\n| Philippines | 0.15 |\n| Thailand | 0.15 |\n| Italy | 0.15 |\n| Japan | -0.15 |\n| Malaysia | -0.25 |\n| Russia | -0.25 |\n| Türkiye | -0.25 |\n| Vietnam | -0.25 |\n| Argentina | -0.25 |\n| Spain | -0.25 |\n| Mainland China | -0.25 |\n| Euro Area | -0.25 |\n| Australia | -0.35 |\n| US | -0.35 |\n| Mexico | -0.45 |\n| France | -0.55 |\n| Canada | -0.65 |",
+        "chart_caption": [
+            "Exhibit 3: Higher 2026 Growth in India"
+        ],
+        "chart_footnote": [
+            "Source: GS Global Investment Research"
+        ],
+        "sub_type": "bar chart",
+        "bbox": [
+            89,
+            441,
+            906,
+            724
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "header",
+        "text": "GS",
+        "bbox": [
+            81,
+            3,
+            184,
+            16
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "header",
+        "text": "Global: GS Economic Indicators Update",
+        "bbox": [
+            658,
+            7,
+            916,
+            21
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "footer",
+        "text": "8 June 2026",
+        "bbox": [
+            81,
+            954,
+            155,
+            965
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "page_number",
+        "text": "2",
+        "bbox": [
+            906,
+            954,
+            916,
+            965
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "table",
+        "img_path": "images/02edb834c96259c26e05c0bf973f1eeac89a66c5cd667070ebb14036e91f79bb.jpg",
+        "table_caption": [
+            "Exhibit 4: Our Preliminary May CAI Fell by -0.8pp in Japan and Rose by +0.4pp in Canada"
+        ],
+        "table_footnote": [
+            "CAI in countries with $0\\%$ of data released is forecasted. CAI aggregates for Global, Developed Markets, and Emerging Markets are GDP-weighted using market FX country weights.",
+            "Source: GS Global Investment Research"
+        ],
+        "table_body": "<table><tr><td rowspan=\"2\">Country(% of Data Released)</td><td rowspan=\"2\">Month</td><td colspan=\"2\">Spot CAI(% mom annualized)</td><td rowspan=\"2\">3 Month AverageCAI (% momannualized)</td></tr><tr><td>Value</td><td>Weekly Change</td></tr><tr><td>Global</td><td>May</td><td>+3.0</td><td>+0.1</td><td>+3.0</td></tr><tr><td>Developed Markets</td><td>May</td><td>+2.1</td><td>0.0</td><td>+2.1</td></tr><tr><td>US (66%)</td><td>May</td><td>+3.1</td><td>+0.1</td><td>+2.9</td></tr><tr><td>Euro Area (39%)</td><td>May</td><td>+0.8</td><td>-0.1</td><td>+1.3</td></tr><tr><td>Germany (50%)</td><td>May</td><td>-0.9</td><td>-0.5</td><td>-0.2</td></tr><tr><td>France (38%)</td><td>May</td><td>+0.7</td><td>+0.2</td><td>+1.1</td></tr><tr><td>Italy (34%)</td><td>May</td><td>+1.3</td><td>+0.1</td><td>+1.9</td></tr><tr><td>Spain (43%)</td><td>May</td><td>+2.7</td><td>0.0</td><td>+3.7</td></tr><tr><td>Japan (35%)</td><td>May</td><td>+1.0</td><td>-0.8</td><td>+1.1</td></tr><tr><td>UK (56%)</td><td>May</td><td>-0.2</td><td>-0.3</td><td>0.0</td></tr><tr><td>Canada (28%)</td><td>May</td><td>+1.9</td><td>+0.4</td><td>+1.8</td></tr><tr><td>Australia (21%)</td><td>May</td><td>+1.2</td><td>+0.1</td><td>+1.3</td></tr><tr><td>New Zealand (54%)</td><td>May</td><td>+2.2</td><td>+0.1</td><td>+2.3</td></tr><tr><td>Norway (0%)</td><td>May</td><td>+1.8</td><td>0.0</td><td>+2.5</td></tr><tr><td>Sweden (77%)</td><td>May</td><td>+2.4</td><td>0.0</td><td>+2.3</td></tr><tr><td>Emerging Markets</td><td>May</td><td>+4.3</td><td>+0.1</td><td>+4.4</td></tr><tr><td>China (31%)</td><td>May</td><td>+5.4</td><td>+0.3</td><td>+5.0</td></tr><tr><td>India (30%)</td><td>May</td><td>+7.4</td><td>0.0</td><td>+7.3</td></tr><tr><td>Brazil (60%)</td><td>May</td><td>+1.5</td><td>-1.2</td><td>+3.2</td></tr><tr><td>Russia (37%)</td><td>May</td><td>-0.6</td><td>-0.3</td><td>+1.2</td></tr></table>",
+        "bbox": [
+            279,
+            72,
+            908,
+            454
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "chart",
+        "img_path": "images/7c9840548f6047af6679fed1e3125fa3d147c03691b0a1b6c7bf431e9ec8eec6.jpg",
+        "content": "| Date    | Percent change, annual rate |\n|---------|------------------------------|\n| Jul-21  | 5.0                          |\n| Mar-22  | -1.0                         |\n| Nov-22  | 4.0                          |\n| Jul-23  | 2.5                          |\n| Mar-24  | 3.0                          |\n| Nov-24  | 3.5                          |\n| Jul-25  | 2.0                          |\n| Mar-26  | 3.0                          |",
+        "chart_caption": [
+            "Exhibit 5: Our Global CAI Remains Above Potential"
+        ],
+        "chart_footnote": [],
+        "sub_type": "line chart",
+        "bbox": [
+            89,
+            546,
+            500,
+            813
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "chart",
+        "img_path": "images/df27c3cc2a000439c0a77bdf797b2cc8aa3b3f4c6b3ac71dabb33b9375810eac.jpg",
+        "content": "| Date    | Developed Markets | Emerging Markets |\n|---------|-------------------|------------------|\n| Jul-21  | ~5.5%             | ~4.5%            |\n| Mar-22  | ~3.0%             | ~-7.0%           |\n| Nov-22  | ~1.5%             | ~9.0%            |\n| Jul-23  | ~1.0%             | ~4.5%            |\n| Mar-24  | ~1.5%             | ~3.0%            |\n| Nov-24  | ~2.0%             | ~5.0%            |\n| Jul-25  | ~1.5%             | ~4.0%            |\n| Mar-26  | ~2.0%             | ~4.5%            |",
+        "chart_caption": [],
+        "chart_footnote": [
+            "GS DM CAI is a market FX-weighted average of the US, Germany, France, Italy, Spain, Japan, the UK, and Canada and EM is of Brazil, Russia, India, and China. Global GS CAI is an average of all aforementioned countries.",
+            "Source: GS Global Investment Research"
+        ],
+        "sub_type": "line chart",
+        "bbox": [
+            506,
+            547,
+            906,
+            812
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "header",
+        "text": "GS",
+        "bbox": [
+            81,
+            3,
+            184,
+            16
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "header",
+        "text": "Global: GS Economic Indicators Update",
+        "bbox": [
+            658,
+            7,
+            916,
+            21
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "footer",
+        "text": "8 June 2026",
+        "bbox": [
+            81,
+            954,
+            155,
+            965
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "page_number",
+        "text": "3",
+        "bbox": [
+            906,
+            954,
+            916,
+            963
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "Key Wage and Price Inflation Charts",
+        "text_level": 2,
+        "bbox": [
+            271,
+            38,
+            535,
+            55
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "chart",
+        "img_path": "images/d9586742c127f81e6acead7bb5ce3d214e19de877de182e8f47980b66a8fd52d.jpg",
+        "content": "| Year | US   | Euro Area | UK   |\n|------|------|-----------|------|\n| 2008 | 3.5  | 3.0       | 6.0  |\n| 2012 | 1.5  | 1.8       | 1.0  |\n| 2016 | 2.5  | 2.0       | 2.5  |\n| 2020 | 3.5  | 3.0       | 4.0  |\n| 2024 | 4.5  | 5.0       | 7.0  |",
+        "chart_caption": [
+            "Exhibit 6: GS Wage Trackers and Inflation Measures"
+        ],
+        "chart_footnote": [],
+        "sub_type": "line chart",
+        "bbox": [
+            89,
+            96,
+            493,
+            383
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "chart",
+        "img_path": "images/da6235e0fa9080101cb26c397061c1433e4a4c470ec781bc4f1c78a76dee7ce2.jpg",
+        "content": "| Year | US   | UK   |\n|------|------|------|\n| 2008 | 3.5  | 4.0  |\n| 2010 | 1.5  | 0.5  |\n| 2012 | 2.5  | 2.0  |\n| 2014 | 3.0  | 3.5  |\n| 2016 | 3.5  | 4.0  |\n| 2018 | 4.0  | 4.5  |\n| 2020 | -1.0 | -0.5 |\n| 2022 | 5.0  | 6.0  |\n| 2024 | 3.5  | 5.0  |",
+        "chart_caption": [],
+        "chart_footnote": [],
+        "sub_type": "line chart",
+        "bbox": [
+            503,
+            96,
+            908,
+            382
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "chart",
+        "img_path": "images/baddd1b36336160710661f02c1546291080afe39c8869869df2d1ce1b4dab244.jpg",
+        "content": "| Year | US (PCE) | Euro area | UK |\n|------|----------|-----------|----|\n| 2008 | ~2.1     | ~1.8      | ~1.7 |\n| 2012 | ~1.9     | ~1.5      | ~2.8 |\n| 2016 | ~1.5     | ~1.0      | ~1.2 |\n| 2020 | ~1.8     | ~1.2      | ~2.0 |\n| 2024 | ~4.5     | ~5.0      | ~6.0 |",
+        "chart_caption": [],
+        "chart_footnote": [],
+        "sub_type": "line chart",
+        "bbox": [
+            89,
+            386,
+            488,
+            671
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "chart",
+        "img_path": "images/b2a917ce3e9404d3b4855b123fe14a7519d41bfe45297c5de678a5801abf9d7e.jpg",
+        "content": "| Year | US (PCE) | Euro area | UK |\n|------|----------|-----------|----|\n| 2022 | ~3.5     | ~3.0      | ~6.5 |\n| 2023 | ~5.5     | ~6.5      | ~9.0 |\n| 2024 | ~2.5     | ~2.0      | ~3.0 |\n| 2025 | ~3.0     | ~2.5      | ~4.0 |\n| 2026 | ~2.5     | ~1.0      | ~3.5 |",
+        "chart_caption": [],
+        "chart_footnote": [
+            "US wage tracker is composition-adjusted in 2020 and 2021.",
+            "Source: GS Global Investment Research"
+        ],
+        "sub_type": "line chart",
+        "bbox": [
+            501,
+            386,
+            910,
+            671
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "header",
+        "text": "GS",
+        "bbox": [
+            81,
+            3,
+            184,
+            16
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "header",
+        "text": "Global: GS Economic Indicators Update",
+        "bbox": [
+            658,
+            7,
+            916,
+            21
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "footer",
+        "text": "8 June 2026",
+        "bbox": [
+            81,
+            954,
+            155,
+            965
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "page_number",
+        "text": "4",
+        "bbox": [
+            906,
+            954,
+            916,
+            963
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "image",
+        "img_path": "images/d724f6835dea9071e66cd4e3b54eb6a31990f58bbe61bfa03a0bdf00220b8091.jpg",
+        "image_caption": [
+            "Exhibit 7: GS Jobs-Workers Gaps"
+        ],
+        "image_footnote": [
+            "Source: GS Global Investment Research"
+        ],
+        "content": "",
+        "bbox": [
+            89,
+            71,
+            906,
+            344
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "Detailed Indicators Update",
+        "text_level": 2,
+        "bbox": [
+            78,
+            394,
+            303,
+            414
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "Financial Conditions Index (FCI)",
+        "text_level": 2,
+        "bbox": [
+            271,
+            441,
+            503,
+            456
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "image",
+        "img_path": "images/30493a459a6a141319b7853a0d9078fc0f195da276fab6dc08a048f1bbd8c692.jpg",
+        "image_caption": [
+            "Exhibit 8: GS Global ex Russia FCI Level (Left) and Weekly Change With Contributions (Right)"
+        ],
+        "image_footnote": [
+            "Source: GS Global Investment Research"
+        ],
+        "content": "",
+        "bbox": [
+            86,
+            494,
+            910,
+            777
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "header",
+        "text": "GS",
+        "bbox": [
+            81,
+            3,
+            184,
+            16
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "header",
+        "text": "Global: GS Economic Indicators Update",
+        "bbox": [
+            658,
+            7,
+            916,
+            21
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "footer",
+        "text": "8 June 2026",
+        "bbox": [
+            81,
+            954,
+            155,
+            965
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "page_number",
+        "text": "5",
+        "bbox": [
+            906,
+            954,
+            916,
+            963
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "chart",
+        "img_path": "images/9c9f1e6c3285a59655963d7725a07342b7d9286b87fe11c13169ce59731ba9c9.jpg",
+        "content": "| Year | Index |\n|------|-------|\n| 2014 | 100.0 |\n| 2015 | 100.5 |\n| 2016 | 100.8 |\n| 2017 | 100.3 |\n| 2018 | 99.8 |\n| 2019 | 100.2 |\n| 2020 | 99.5 |\n| 2021 | 98.8 |\n| 2022 | 101.6 |\n| 2023 | 101.8 |\n| 2024 | 101.4 |\n| 2025 | 101.0 |\n| 2026 | 99.7 |",
+        "chart_caption": [
+            "Exhibit 9: GS Global FCI Level (Left) and Weekly Change With Contributions (Right)"
+        ],
+        "chart_footnote": [],
+        "sub_type": "line chart",
+        "bbox": [
+            84,
+            73,
+            509,
+            350
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "chart",
+        "img_path": "images/7084f59bc8b3db18ea3cb1f4141f36dabc326ca40c02a5f3db97253db1af5f7a.jpg",
+        "content": "Weekly Change in Global FCI and Contributions\n| Category | Basis points |\n|---|---|\n| Global FCI | 3.6 |\n| Long Rate | 2.3 |\n| Short Rate | -3.4 |\n| Credit Spread | -0.2 |\n| Equities | 4.5 |\n| Exchange Rate | 0.3 |\n| Sovereign Spread | 0.1 |",
+        "chart_caption": [],
+        "chart_footnote": [
+            "Source: GS Global Investment Research"
+        ],
+        "sub_type": "bar chart",
+        "bbox": [
+            516,
+            73,
+            910,
+            355
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "chart",
+        "img_path": "images/f614be36cbc6582fc6c8384a91c89c838f9ffabc383156660378107f3193c464.jpg",
+        "content": "| Year | Index |\n|------|-------|\n| 2014 | 100   |\n| 2015 | 99    |\n| 2016 | 101   |\n| 2017 | 100   |\n| 2018 | 99    |\n| 2019 | 100   |\n| 2020 | 102   |\n| 2021 | 97    |\n| 2022 | 97    |\n| 2023 | 101   |\n| 2024 | 100   |\n| 2025 | 99    |\n| 2026 | 98    |",
+        "chart_caption": [
+            "Exhibit 10: GS US FCI Level (Left) and Weekly Change With Contributions (Right)"
+        ],
+        "chart_footnote": [],
+        "sub_type": "line chart",
+        "bbox": [
+            84,
+            419,
+            500,
+            696
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "chart",
+        "img_path": "images/78ba911c8458a4dbb01115b5139556cfc10a55aefd78a020bf6d776809430ecd.jpg",
+        "content": "Weekly Change in US FCI and Contributions\n| Category | Basis points |\n|---|---|\n| US FCI | 22.9 |\n| Long Rate | 4.5 |\n| Short Rate | 0.0 |\n| Credit Spread | -1.7 |\n| Equities | 13.7 |\n| Exchange Rate | 6.4 |",
+        "chart_caption": [],
+        "chart_footnote": [
+            "Source: GS Global Investment Research"
+        ],
+        "sub_type": "bar chart",
+        "bbox": [
+            506,
+            419,
+            910,
+            701
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "header",
+        "text": "GS",
+        "bbox": [
+            81,
+            3,
+            184,
+            16
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "header",
+        "text": "Global: GS Economic Indicators Update",
+        "bbox": [
+            658,
+            7,
+            916,
+            21
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "footer",
+        "text": "8 June 2026",
+        "bbox": [
+            81,
+            954,
+            155,
+            965
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "page_number",
+        "text": "6",
+        "bbox": [
+            906,
+            954,
+            916,
+            963
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "chart",
+        "img_path": "images/20612ff01959fa068b319417ea1b999a27186374b9f884a5f9185f7c1d7b3036.jpg",
+        "content": "| Year | Index |\n|------|-------|\n| 2014 | 100.5 |\n| 2015 | 98.5 |\n| 2016 | 100.0 |\n| 2017 | 99.5 |\n| 2018 | 100.0 |\n| 2019 | 100.5 |\n| 2020 | 99.5 |\n| 2021 | 100.0 |\n| 2022 | 99.5 |\n| 2023 | 101.5 |\n| 2024 | 102.0 |\n| 2025 | 101.5 |\n| 2026 | 101.0 |",
+        "chart_caption": [
+            "Exhibit 11: GS Euro Area FCI Level (Left) and Weekly Change With Contributions (Right)"
+        ],
+        "chart_footnote": [],
+        "sub_type": "line chart",
+        "bbox": [
+            84,
+            73,
+            509,
+            350
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "chart",
+        "img_path": "images/aabab57cfef3dfdbcfe602b3f5fd3fcbe680746337f04e530202ff2f4d66ad2b.jpg",
+        "content": "Weekly Change in Euro Area FCI and Contributions\n| Metric | Value |\n| :--- | :--- |\n| Euro Area FCI | 3.1 |\n| Long Rate | 2.1 |\n| Short Rate | 0.8 |\n| Credit Spread | -0.1 |\n| Equities | 1.0 |\n| Exchange Rate | -1.8 |\n| Sovereign Spread | 1.0 |",
+        "chart_caption": [],
+        "chart_footnote": [
+            "Source: GS Global Investment Research"
+        ],
+        "sub_type": "bar chart",
+        "bbox": [
+            516,
+            73,
+            910,
+            355
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "chart",
+        "img_path": "images/cb57f18835b8071351cf4d0e1b9f57c4c42379f57c0ea1d563651b31538c2425.jpg",
+        "content": "Weekly Change in GS FCI Basis points\n| Country/Region | Basis points |\n|---|---|\n| Türkiye | -45 |\n| India | -19 |\n| South Korea | -10 |\n| Canada | -3 |\n| Australia | -2 |\n| EMs | -2 |\n| China | 0 |\n| Malaysia | 1 |\n| Euro Area | 3 |\n| Global | 4 |\n| Japan | 4 |\n| UK | 5 |\n| Russia | 8 |\n| Mexico | 9 |\n| Thailand | 9 |\n| DMs | 11 |\n| Philippines | 14 |\n| Indonesia | 17 |\n| US | 23 |\n| Brazil | 30 |\nTightening",
+        "chart_caption": [
+            "Exhibit 12: Weekly Change in FCI Across Countries"
+        ],
+        "chart_footnote": [
+            "Source: GS Global Investment Research"
+        ],
+        "sub_type": "bar chart",
+        "bbox": [
+            282,
+            419,
+            906,
+            696
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "header",
+        "text": "GS",
+        "bbox": [
+            81,
+            3,
+            184,
+            16
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "header",
+        "text": "Global: GS Economic Indicators Update",
+        "bbox": [
+            658,
+            7,
+            916,
+            21
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "footer",
+        "text": "8 June 2026",
+        "bbox": [
+            81,
+            954,
+            155,
+            965
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "page_number",
+        "text": "7",
+        "bbox": [
+            906,
+            954,
+            916,
+            963
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "chart",
+        "img_path": "images/e8ea3fbe2fc40dacbc59307f0275c88c2f8476cddff81ad7b3fc2c19d1932c5b.jpg",
+        "content": "Yearly Change in GS FCI Basis points\n| Country/Region | Basis points |\n|---|---|\n| South Korea | -247 |\n| Türkiye | -152 |\n| Canada | -87 |\n| Japan | -68 |\n| UK | -66 |\n| US | -65 |\n| EMs | -43 |\n| Global | -41 |\n| DMs | -40 |\n| India | -35 |\n| China | -21 |\n| Thailand | -17 |\n| Euro Area | -7 |\n| Indonesia | -2 |\n| Brazil | 2 |\n| Philippines | 18 |\n| Mexico | 74 |\n| Malaysia | 126 |\n| Australia | 136 |\nTightening",
+        "chart_caption": [
+            "Exhibit 13: Year-Over-Year Change in FCI Across Countries"
+        ],
+        "chart_footnote": [
+            "Source: GS Global Investment Research"
+        ],
+        "sub_type": "bar chart",
+        "bbox": [
+            282,
+            74,
+            908,
+            350
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "header",
+        "text": "GS",
+        "bbox": [
+            81,
+            3,
+            184,
+            16
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "header",
+        "text": "Global: GS Economic Indicators Update",
+        "bbox": [
+            658,
+            7,
+            916,
+            21
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "footer",
+        "text": "8 June 2026",
+        "bbox": [
+            81,
+            954,
+            155,
+            965
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "page_number",
+        "text": "8",
+        "bbox": [
+            906,
+            954,
+            916,
+            963
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "FCI Impulses",
+        "text_level": 2,
+        "bbox": [
+            272,
+            38,
+            370,
+            55
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "chart",
+        "img_path": "images/876d415f0745d1d827cebc2a99fb458d6ec733fe159fb26314b81e42bb946f8f.jpg",
+        "content": "| Next 4 Quarters | Percentage points, annual rate | Percentage points, annual rate | Percentage points, annual rate | Percentage points, annual rate | Percentage points, annual rate | Percentage points, annual rate | Percentage points, annual rate | Percentage points, annual rate | Percentage points, annual rate | Percentage points, annual rate |\n| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |\n| 2025 | 0.45 | -0.35 | 0.15 | 0.10 | 0.25 | 0.25 | 0.25 | 0.25 | 0.25 | 0.45 |\n| 2026 | 0.25 | -0.25 | 0.40 | 0.35 | 0.20 | 0.25 | 0.25 | 0.25 | 0.25 | 0.25 |\n| 2027 | 0.10 | -0.10 | 0.05 | 0.05 | 0.10 | 0.10 | 0.10 | 0.10 | 0.10 | 0.10 |",
+        "chart_caption": [
+            "Exhibit 14: FCI Impulses Over the Next 4 Quarters (Left) and in the Euro Area, UK, and US (Right)"
+        ],
+        "chart_footnote": [
+            "Source: GS Global Investment Research"
+        ],
+        "sub_type": "bar-line hybrid",
+        "bbox": [
+            89,
+            95,
+            906,
+            365
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "chart",
+        "img_path": "images/53ce76868331b0bb9390d04475603ea9bf91940889f648ad7a15834ce0585542.jpg",
+        "content": "| Region | Quarter | Percentage points, annual rate |\n| --- | --- | --- |\n| US | 2025 | 0.15 |\n| US | 2026 | 0.40 |\n| US | 2027 | 0.30 |\n| Euro Area | 2025 | 0.25 |\n| Euro Area | 2026 | -0.10 |\n| Euro Area | 2027 | -0.30 |\n| Japan | 2025 | -0.40 |\n| Japan | 2026 | 0.50 |\n| Japan | 2027 | 0.30 |\n| UK | 2025 | -0.40 |\n| UK | 2026 | 0.25 |\n| UK | 2027 | 0.25 |",
+        "chart_caption": [
+            "Exhibit 15: FCI Impulses in the US, Euro Area, Japan, and UK"
+        ],
+        "chart_footnote": [
+            "Source: GS Global Investment Research"
+        ],
+        "sub_type": "bar chart",
+        "bbox": [
+            81,
+            427,
+            913,
+            806
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "header",
+        "text": "GS",
+        "bbox": [
+            81,
+            3,
+            184,
+            16
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "header",
+        "text": "Global: GS Economic Indicators Update",
+        "bbox": [
+            658,
+            7,
+            916,
+            21
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "footer",
+        "text": "8 June 2026",
+        "bbox": [
+            81,
+            954,
+            155,
+            965
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "page_number",
+        "text": "9",
+        "bbox": [
+            906,
+            954,
+            916,
+            963
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "Current Activity Indicator (CAI)",
+        "text_level": 2,
+        "bbox": [
+            272,
+            38,
+            504,
+            55
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "chart",
+        "img_path": "images/337baf0c92e8f3640fe4f8ab407926eebb3b6451a1aa1fdd3e9dad20ef6d24ec.jpg",
+        "content": "| Date    | Percent change, annual rate |\n|---------|-----------------------------|\n| Jul-21  | 5.0                         |\n| Mar-22  | 6.0                         |\n| Nov-22  | 0.5                         |\n| Jul-23  | 2.5                         |\n| Mar-24  | 3.0                         |\n| Nov-24  | 3.5                         |\n| Jul-25  | 2.0                         |\n| Mar-26  | 3.0                         |",
+        "chart_caption": [
+            "Exhibit 16: CAI Aggregates"
+        ],
+        "chart_footnote": [],
+        "sub_type": "line chart",
+        "bbox": [
+            93,
+            94,
+            500,
+            359
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "chart",
+        "img_path": "images/716fbf186ea74f4d409311b3b840213c30e2862eb1a1155ec222d3435d31a0b0.jpg",
+        "content": "| Date    | Developed Markets | Emerging Markets |\n|---------|-------------------|------------------|\n| Jul-21  | ~5.0%             | ~5.0%            |\n| Mar-22  | ~3.0%             | ~7.0%            |\n| Nov-22  | ~1.0%             | ~9.0%            |\n| Jul-23  | ~1.0%             | ~5.0%            |\n| Mar-24  | ~1.0%             | ~3.0%            |\n| Nov-24  | ~2.0%             | ~5.0%            |\n| Jul-25  | ~1.0%             | ~4.0%            |\n| Mar-26  | ~2.0%             | ~4.0%            |",
+        "chart_caption": [],
+        "chart_footnote": [
+            "GS DM CAI is a market FX-weighted average of the US, Germany, France, Italy, Spain, Japan, the UK, and Canada and EM is of Brazil, Russia, India, and China. Global GS CAI is an average of all aforementioned countries.",
+            "Source: GS Global Investment Research"
+        ],
+        "sub_type": "line chart",
+        "bbox": [
+            506,
+            94,
+            903,
+            357
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "table",
+        "img_path": "images/6383f6f40aa8a075aded528b6a865bd926c029ce9c7c8fa9b15f34d9eae5ceed.jpg",
+        "table_caption": [
+            "Exhibit 17: CAI Heatmap"
+        ],
+        "table_footnote": [
+            "CAI in countries with 0% of data released is forecasted. CAI aggregates for Global, Developed Markets, and Emerging Markets are GDP-weighted using market FX country weights.",
+            "Source: GS Global Investment Research"
+        ],
+        "table_body": "<table><tr><td rowspan=\"2\">Country (% of Data Released)</td><td rowspan=\"2\">Month</td><td colspan=\"2\">Spot CAI (% mom annualized)</td><td rowspan=\"2\">3 Month Average CAI (% mom annualized)</td></tr><tr><td>Value</td><td>Weekly Change</td></tr><tr><td>Global</td><td>May</td><td>+3.0</td><td>+0.1</td><td>+3.0</td></tr><tr><td>Developed Markets</td><td>May</td><td>+2.1</td><td>0.0</td><td>+2.1</td></tr><tr><td>US (66%)</td><td>May</td><td>+3.1</td><td>+0.1</td><td>+2.9</td></tr><tr><td>Euro Area (39%)</td><td>May</td><td>+0.8</td><td>-0.1</td><td>+1.3</td></tr><tr><td>Germany (50%)</td><td>May</td><td>-0.9</td><td>-0.5</td><td>-0.2</td></tr><tr><td>France (38%)</td><td>May</td><td>+0.7</td><td>+0.2</td><td>+1.1</td></tr><tr><td>Italy (34%)</td><td>May</td><td>+1.3</td><td>+0.1</td><td>+1.9</td></tr><tr><td>Spain (43%)</td><td>May</td><td>+2.7</td><td>0.0</td><td>+3.7</td></tr><tr><td>Japan (35%)</td><td>May</td><td>+1.0</td><td>-0.8</td><td>+1.1</td></tr><tr><td>UK (56%)</td><td>May</td><td>-0.2</td><td>-0.3</td><td>0.0</td></tr><tr><td>Canada (28%)</td><td>May</td><td>+1.9</td><td>+0.4</td><td>+1.8</td></tr><tr><td>Australia (21%)</td><td>May</td><td>+1.2</td><td>+0.1</td><td>+1.3</td></tr><tr><td>New Zealand (54%)</td><td>May</td><td>+2.2</td><td>+0.1</td><td>+2.3</td></tr><tr><td>Norway (0%)</td><td>May</td><td>+1.8</td><td>0.0</td><td>+2.5</td></tr><tr><td>Sweden (77%)</td><td>May</td><td>+2.4</td><td>0.0</td><td>+2.3</td></tr><tr><td>Emerging Markets</td><td>May</td><td>+4.3</td><td>+0.1</td><td>+4.4</td></tr><tr><td>China (31%)</td><td>May</td><td>+5.4</td><td>+0.3</td><td>+5.0</td></tr><tr><td>India (30%)</td><td>May</td><td>+7.4</td><td>0.0</td><td>+7.3</td></tr><tr><td>Brazil (60%)</td><td>May</td><td>+1.5</td><td>-1.2</td><td>+3.2</td></tr><tr><td>Russia (37%)</td><td>May</td><td>-0.6</td><td>-0.3</td><td>+1.2</td></tr></table>",
+        "bbox": [
+            279,
+            453,
+            908,
+            835
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "header",
+        "text": "GS",
+        "bbox": [
+            81,
+            3,
+            184,
+            16
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "header",
+        "text": "Global: GS Economic Indicators Update",
+        "bbox": [
+            658,
+            7,
+            916,
+            21
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "footer",
+        "text": "8 June 2026",
+        "bbox": [
+            81,
+            953,
+            155,
+            965
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "page_number",
+        "text": "10",
+        "bbox": [
+            900,
+            954,
+            916,
+            965
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "chart",
+        "img_path": "images/4056265142a9cbc81a1f50f1a572c37b87419a91a3e9f74189a83333f6d48c82.jpg",
+        "content": "| Date   | US    | Euro Area | Japan | UK    | Canada |\n|--------|-------|-----------|-------|-------|--------|\n| Jan-22 | 6.5   | 4.0       | -1.5  | 4.5   | 9.0    |\n| Jan-23 | 2.0   | 1.0       | 0.5   | 1.5   | 4.0    |\n| Jan-24 | 1.5   | 0.5       | -3.0  | 1.0   | 3.0    |\n| Jan-25 | 2.5   | 1.5       | 0.0   | 2.0   | 3.5    |\n| Jan-26 | 3.0   | 1.0       | 1.0   | 0.5   | 2.0    |",
+        "chart_caption": [
+            "Exhibit 18: CAIs for Large DMs and EMs"
+        ],
+        "chart_footnote": [],
+        "sub_type": "line chart",
+        "bbox": [
+            84,
+            71,
+            498,
+            357
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "chart",
+        "img_path": "images/5dcbbab953bf4c4ee839fb8bb260317187d023404fff80660fbc12e6d7b0823f.jpg",
+        "content": "| Date   | Brazil | Russia | India | China | South Africa |\n|--------|--------|--------|-------|-------|--------------|\n| Jan-22 | 3.0    | 4.0    | 10.0  | -15.0 | 2.0          |\n| Jan-23 | 5.0    | 6.0    | 7.0   | 15.0  | 1.0          |\n| Jan-24 | 7.0    | 8.0    | 9.0   | 6.0   | 2.0          |\n| Jan-25 | 4.0    | 5.0    | 8.0   | 5.0   | 1.0          |\n| Jan-26 | 3.0    | 2.0    | 7.0   | 5.0   | 2.0          |",
+        "chart_caption": [],
+        "chart_footnote": [
+            "Source: GS Global Investment Research"
+        ],
+        "sub_type": "line chart",
+        "bbox": [
+            504,
+            71,
+            910,
+            355
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "header",
+        "text": "GS",
+        "bbox": [
+            81,
+            3,
+            184,
+            16
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "header",
+        "text": "Global: GS Economic Indicators Update",
+        "bbox": [
+            658,
+            7,
+            916,
+            21
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "footer",
+        "text": "8 June 2026",
+        "bbox": [
+            81,
+            954,
+            155,
+            965
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "page_number",
+        "text": "11",
+        "bbox": [
+            900,
+            954,
+            915,
+            965
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "chart",
+        "img_path": "images/3b03345c825b72018e6754a73608bdb713fa45cfb33028c824bd3438cc548c27.jpg",
+        "content": "| Date    | US   | Euro Area | China |\n|---------|------|-----------|-------|\n| Aug-24  | -1.0 | -1.2      | -0.8  |\n| Dec-24  | 3.0  | 3.5       | 1.0   |\n| Apr-25  | -0.5 | -0.8      | -0.3  |\n| Aug-25  | 1.5  | 2.0       | 0.5   |\n| Dec-25  | -1.0 | -1.5      | -0.5  |\n| Apr-26  | 0.5  | -3.0      | -1.0  |",
+        "chart_caption": [
+            "Exhibit 19: GS MAP Surprise Index"
+        ],
+        "chart_footnote": [
+            "We present the 21-day moving average of daily MAP scores.",
+            "Source: GS Global Investment Research"
+        ],
+        "sub_type": "line chart",
+        "bbox": [
+            91,
+            96,
+            906,
+            374
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "chart",
+        "img_path": "images/6af1ccbac7d2feaaeb9a29e10797332a226a41ffe17e267b44e1cf4ddc0a01d0.jpg",
+        "content": "GS MAP Surprise Index\n| Region | Index |\n|---|---|\n| Euro Area | -3.8 |\n| China | -1.4 |\n| Australia | -1.3 |\n| Canada | -0.7 |\n| Global | -0.6 |\n| UK | -0.5 |\n| South Korea | 0.2 |\n| US | 0.5 |\n| Russia | 0.7 |\n| Brazil | 0.8 |\n| India | 2.2 |\n| Japan | 2.5 |",
+        "chart_caption": [
+            "Exhibit 20: Latest GS MAP Surprise Index"
+        ],
+        "chart_footnote": [
+            "We present the 21 day moving average of daily MAP scores.",
+            "Source: GS Global Investment Research"
+        ],
+        "sub_type": "bar chart",
+        "bbox": [
+            276,
+            454,
+            906,
+            708
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "header",
+        "text": "GS",
+        "bbox": [
+            81,
+            3,
+            184,
+            16
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "header",
+        "text": "Global: GS Economic Indicators Update",
+        "bbox": [
+            658,
+            7,
+            916,
+            21
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "header",
+        "text": "MAP",
+        "bbox": [
+            272,
+            38,
+            312,
+            54
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "footer",
+        "text": "8 June 2026",
+        "bbox": [
+            81,
+            954,
+            155,
+            965
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "page_number",
+        "text": "12",
+        "bbox": [
+            900,
+            954,
+            916,
+            965
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "Trimmed Core Inflation",
+        "text_level": 2,
+        "bbox": [
+            272,
+            38,
+            447,
+            55
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "image",
+        "img_path": "images/6f8e1292063ba0e1a50c06655b9991acc4f76fb4364aee0bc1d0e05dd975b654.jpg",
+        "image_caption": [
+            "Exhibit 21: GS Trimmed Core Inflation"
+        ],
+        "image_footnote": [
+            "Source: GS Global Investment Research"
+        ],
+        "content": "",
+        "bbox": [
+            84,
+            96,
+            910,
+            649
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "header",
+        "text": "GS",
+        "bbox": [
+            81,
+            5,
+            184,
+            16
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "header",
+        "text": "Global: GS Economic Indicators Update",
+        "bbox": [
+            658,
+            7,
+            916,
+            21
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "footer",
+        "text": "8 June 2026",
+        "bbox": [
+            81,
+            954,
+            155,
+            965
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "page_number",
+        "text": "13",
+        "bbox": [
+            900,
+            954,
+            916,
+            965
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "Wage Trackers",
+        "text_level": 2,
+        "bbox": [
+            271,
+            38,
+            385,
+            55
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "image",
+        "img_path": "images/befed1555065f6fa303bd0e834482dfa65b0cef4e9c8518388302b7a879b910b.jpg",
+        "image_caption": [
+            "Exhibit 22: GS Wage Trackers"
+        ],
+        "image_footnote": [
+            "\\*Australian recession shading.",
+            "\\*Sweden recession shading.",
+            "Source: GS Global Investment Research"
+        ],
+        "content": "",
+        "bbox": [
+            84,
+            94,
+            805,
+            875
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "header",
+        "text": "GS",
+        "bbox": [
+            81,
+            3,
+            184,
+            18
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "header",
+        "text": "Global: GS Economic Indicators Update",
+        "bbox": [
+            658,
+            7,
+            916,
+            21
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "footer",
+        "text": "8 June 2026",
+        "bbox": [
+            81,
+            954,
+            155,
+            965
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "page_number",
+        "text": "14",
+        "bbox": [
+            900,
+            954,
+            916,
+            965
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "chart",
+        "img_path": "images/b5e922f9c68001c77ca4294b63577772dccfdb3f44b64154d686d76995e4d994.jpg",
+        "content": "| Year | US (Percent change, qoq annual rate) | Canada (Percent change, qoq annual rate) |\n|---|---|---|\n| 2021 | 3.5 | 3.7 |\n| 2022 | 5.8 | 0.5 |\n| 2022 | 6.2 | 9.0 |\n| 2023 | 4.8 | 4.2 |\n| 2023 | 4.5 | 5.0 |\n| 2024 | 4.3 | 2.4 |\n| 2024 | 4.5 | 4.5 |\n| 2025 | 3.8 | 3.5 |\n| 2025 | 4.0 | 1.0 |\n| 2026 | 3.3 | 4.8 |",
+        "chart_caption": [
+            "Exhibit 23: GS Sequential Wage Trackers",
+            "GS Sequential Wage Trackers"
+        ],
+        "chart_footnote": [],
+        "sub_type": "line chart",
+        "bbox": [
+            89,
+            89,
+            500,
+            268
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "chart",
+        "img_path": "images/7ebc63b15eee7308ca62b6c3fad38d839214f619d149cc4e686c2de496b1ba73.jpg",
+        "content": "| Year | Euro Area (%) | UK (%) |\n|---|---|---|\n| 2021 | 2.1 | 3.5 |\n| 2022 | 2.0 | 4.5 |\n| 2023 | 6.8 | 9.3 |\n| 2024 | 5.1 | 3.4 |\n| 2025 | 3.8 | 8.7 |\n| 2026 | 3.3 | 2.5 |",
+        "chart_caption": [],
+        "chart_footnote": [],
+        "sub_type": "line chart",
+        "bbox": [
+            509,
+            93,
+            900,
+            268
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "chart",
+        "img_path": "images/4e2a1c8208405c72bf8561b2b6e4eb40101c46741c88483a12872abed40c51f3.jpg",
+        "content": "| Year | Germany (Percent change, qoq annual rate) | France (Percent change, qoq annual rate) |\n|---|---|---|\n| 2021 | -1.5 | -0.5 |\n| 2022 | 12.5 | 5.5 |\n| 2023 | 11.0 | 5.8 |\n| 2024 | 6.5 | 4.0 |\n| 2025 | 4.0 | 2.5 |\n| 2026 | 2.0 | 2.5 |",
+        "chart_caption": [],
+        "chart_footnote": [],
+        "sub_type": "line chart",
+        "bbox": [
+            96,
+            271,
+            501,
+            445
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "chart",
+        "img_path": "images/1e8415c36a6d6dad91b4ffe4cf0f36ef835da45d828b831d1f62966914eeb3f4.jpg",
+        "content": "| Year | Italy (%) | Spain (%) |\n|---|---|---|\n| 2021 | 2.3 | 3.3 |\n| 2022 | 0.5 | 2.8 |\n| 2023 | 3.2 | 4.5 |\n| 2024 | 4.1 | 4.7 |\n| 2025 | 2.6 | 3.7 |\n| 2026 | 1.9 | 4.6 |",
+        "chart_caption": [],
+        "chart_footnote": [],
+        "sub_type": "line chart",
+        "bbox": [
+            509,
+            271,
+            898,
+            445
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "chart",
+        "img_path": "images/06a73e18aa4c56296d28033d27c288d4d7c9633cf29f06f212f6663a0d8352b1.jpg",
+        "content": "| Year | Japan (%) | Australia (%) | New Zealand (%) |\n|---|---|---|---|\n| 2021 | 0.5 | 3.0 | 3.0 |\n| 2022 | -1.0 | 1.5 | 4.0 |\n| 2023 | 4.0 | 3.5 | 6.0 |\n| 2024 | 3.5 | 8.5 | 5.0 |\n| 2025 | 2.5 | 5.5 | 3.5 |\n| 2026 | 5.5 | 2.5 | 2.5 |",
+        "chart_caption": [],
+        "chart_footnote": [],
+        "sub_type": "line chart",
+        "bbox": [
+            98,
+            448,
+            498,
+            622
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "chart",
+        "img_path": "images/1b833403c7985f1753868a393943bfaeefac58d592634f6e5b750cc092895eb4.jpg",
+        "content": "| Year | Norway (%) | Sweden (%) |\n|---|---|---|\n| 2021 | 3.0 | 2.5 |\n| 2022 | 4.0 | 8.0 |\n| 2023 | 3.0 | 2.0 |\n| 2024 | 7.8 | 3.5 |\n| 2025 | 6.2 | 3.0 |\n| 2026 | 1.0 | 3.0 |",
+        "chart_caption": [],
+        "chart_footnote": [
+            "Source: GS Global Investment Research"
+        ],
+        "sub_type": "line chart",
+        "bbox": [
+            509,
+            448,
+            900,
+            622
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "header",
+        "text": "GS",
+        "bbox": [
+            81,
+            5,
+            184,
+            16
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "header",
+        "text": "Global: GS Economic Indicators Update",
+        "bbox": [
+            658,
+            7,
+            916,
+            21
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "footer",
+        "text": "8 June 2026",
+        "bbox": [
+            81,
+            954,
+            155,
+            965
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "page_number",
+        "text": "15",
+        "bbox": [
+            900,
+            954,
+            916,
+            965
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "image",
+        "img_path": "images/441f69cd2a17d142e823600a3c355a9deee9049bfee9600d78dcae64dba7c627.jpg",
+        "image_caption": [
+            "Exhibit 24: GS Jobs-Workers Gaps"
+        ],
+        "image_footnote": [
+            "Source: GS Global Investment Research"
+        ],
+        "content": "",
+        "bbox": [
+            89,
+            71,
+            906,
+            344
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "chart",
+        "img_path": "images/62e79b89d4b0c429249280bce7d05073d7c78b24f72bfc6d40e6d92fa345599e.jpg",
+        "content": "| Year | US   | Canada | UK   | Australia |\n|------|------|--------|------|-----------|\n| 2000 | 3.5  | 4.0    | 4.5  | 4.0       |\n| 2005 | 3.0  | 3.5    | 3.8  | 3.7       |\n| 2010 | 2.5  | 2.0    | 1.0  | 2.8       |\n| 2015 | 3.0  | 2.5    | 3.5  | 3.0       |\n| 2020 | 4.0  | 4.5    | -1.0 | -0.5      |\n| 2025 | 3.5  | 5.0    | 5.5  | 5.0       |",
+        "chart_caption": [
+            "Exhibit 25: Wage Survey Leading Indicators"
+        ],
+        "chart_footnote": [],
+        "sub_type": "line chart",
+        "bbox": [
+            107,
+            408,
+            496,
+            664
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "chart",
+        "img_path": "images/dd717bf92ecb40f0f92787688979f0b3660adcbe795c22357b4c744c0d27f4c4.jpg",
+        "content": "| Year | Canada | UK | Australia | US |\n|------|--------|----|-----------|----|\n| 2019 | 2.5    | 4.0 | 3.5       | 4.0 |\n| 2020 | 0.5    | -0.5 | 0.0       | 0.5 |\n| 2021 | 1.5    | 3.0 | 3.5       | 4.5 |\n| 2022 | 4.0    | 6.0 | 5.0       | 5.5 |\n| 2023 | 5.5    | 5.5 | 5.0       | 4.5 |\n| 2024 | 5.0    | 4.5 | 4.5       | 3.5 |\n| 2025 | 4.0    | 5.0 | 4.5       | 3.0 |\n| 2026 | 5.0    | 4.5 | 5.0       | 3.5 |\n| 2027 | 4.5    | 4.5 | 4.5       | 3.5 |",
+        "chart_caption": [],
+        "chart_footnote": [
+            "Source: GS Global Investment Research"
+        ],
+        "sub_type": "line chart",
+        "bbox": [
+            504,
+            408,
+            900,
+            667
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "header",
+        "text": "GS",
+        "bbox": [
+            81,
+            3,
+            184,
+            16
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "header",
+        "text": "Global: GS Economic Indicators Update",
+        "bbox": [
+            658,
+            7,
+            916,
+            21
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "footer",
+        "text": "8 June 2026",
+        "bbox": [
+            81,
+            954,
+            155,
+            965
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "page_number",
+        "text": "16",
+        "bbox": [
+            900,
+            954,
+            916,
+            965
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "Top-Down Fiscal Impulses",
+        "text_level": 2,
+        "bbox": [
+            271,
+            38,
+            470,
+            55
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "chart",
+        "img_path": "images/e5655e6971b24b3406bd14af7d011a92386a7e33882ae9087db2ec6dae0b4612.jpg",
+        "content": "| Quarter | US (Percentage points, annual) | Euro Area (Percentage points, annual rate) | UK (Percentage points, annual rate) | China (Percentage points, annual rate) |\n|---|---|---|---|---|\n| Q1 2025 | -0.75 | -0.75 | -0.65 | 0.10 |\n| Q2 2025 | -0.45 | -0.85 | -0.55 | 0.15 |\n| Q3 2025 | -0.40 | -0.60 | -0.50 | 0.20 |\n| Q4 2025 | -0.35 | -0.30 | -0.45 | 0.25 |\n| Q1 2026 | 0.15 | 0.00 | -0.75 | 0.45 |\n| Q2 2026 | 0.15 | 0.00 | -0.70 | 0.45 |\n| Q3 2026 | 0.10 | 0.00 | -0.75 | 0.35 |\n| Q4 2026 | -0.10 | -0.05 | -0.75 | 0.25 |\n| Q1 2027 | -0.15 | -0.10 | -0.65 | 0.15 |\n| Q2 2027 | 0.15 | -0.10 | -0.65 | -0.25 |\n| Q3 2027 | 0.25 | -0.10 | -0.65 | -0.35 |\n| Q4 2027 | 0.35 | -0.10 | -0.65 | -0.45 |\nNext 4 Quarters: UK, Spain, Italy, Australia, France, US, India, World, Euro Area, Brazil, Canada, China, Japan, Germany; Percentage points, annual rate; Next 4 Quarters: US, Euro Area, UK, China; Percentage points, annual rate; Percentage points, annual rate; Percentage points, annual rate; Percentage points, annual rate.",
+        "chart_caption": [
+            "Exhibit 26: Top-Down Fiscal Impulses Over the Next 4 Quarters (Left) and in the Euro Area, UK, and US (Right)",
+            "Effect of Fiscal Policy on Real GDP Growth (3 Quarter Centered Moving Average)"
+        ],
+        "chart_footnote": [
+            "We compute the 4-quarter measure using average fiscal growth impulses from 2026Q1 to 2026Q4. The US impulse captures both expansionary fiscal discretionary policy and the tax-like effects of tariffs.",
+            "Source: GS Global Investment Research"
+        ],
+        "sub_type": "bar-line hybrid",
+        "bbox": [
+            89,
+            109,
+            908,
+            365
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "chart",
+        "img_path": "images/bd8ab8b5ca63cbf97418b01b66394ae75ba0e2d860306e39916746a294a147de.jpg",
+        "content": "| Region | Quarter | Percentage points, annual rate |\n|---|---|---|\n| US | Q1 | -0.4 |\n| US | Q2 | -0.3 |\n| US | Q3 | -0.05 |\n| US | Q4 | 0.15 |\n| US | Q1 | 0.18 |\n| US | Q2 | 0.12 |\n| US | Q3 | -0.05 |\n| US | Q4 | -0.1 |\n| Euro Area | Q1 | -0.65 |\n| Euro Area | Q2 | -0.75 |\n| Euro Area | Q3 | -0.55 |\n| Euro Area | Q4 | -0.25 |\n| Euro Area | Q1 | -0.05 |\n| Euro Area | Q2 | 0.02 |\n| Euro Area | Q3 | 0.01 |\n| Euro Area | Q4 | -0.02 |\n| China | Q1 | 0.09 |\n| China | Q2 | 0.11 |\n| China | Q3 | 0.13 |\n| China | Q4 | 0.15 |\n| China | Q1 | 0.45 |\n| China | Q2 | 0.42 |\n| China | Q3 | 0.14 |\n| China | Q4 | 0.08 |\n| UK | Q1 | -0.6 |\n| UK | Q2 | -0.55 |\n| UK | Q3 | -0.75 |\n| UK | Q4 | -0.78 |\n| UK | Q1 | -0.7 |\n| UK | Q2 | -0.65 |\n| UK | Q3 | -0.6 |\n| UK | Q4 | -0.62 |\nPercentage points, annual rate",
+        "chart_caption": [
+            "Exhibit 27: Top-Down Fiscal Impulses in the US, Euro Area, China, and UK",
+            "Effect of Fiscal Policy on Real GDP Growth (3 Quarter Centered Moving Average)"
+        ],
+        "chart_footnote": [
+            "The US impulse captures both expansionary fiscal discretionary policy and the tax-like effects of tariffs.",
+            "Source: GS Global Investment Research"
+        ],
+        "sub_type": "bar chart",
+        "bbox": [
+            81,
+            474,
+            916,
+            875
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "header",
+        "text": "GS",
+        "bbox": [
+            81,
+            3,
+            184,
+            16
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "header",
+        "text": "Global: GS Economic Indicators Update",
+        "bbox": [
+            658,
+            7,
+            916,
+            21
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "footer",
+        "text": "8 June 2026",
+        "bbox": [
+            80,
+            954,
+            155,
+            965
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "page_number",
+        "text": "17",
+        "bbox": [
+            900,
+            954,
+            916,
+            963
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "Output Gaps",
+        "text_level": 2,
+        "bbox": [
+            272,
+            38,
+            372,
+            55
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "table",
+        "img_path": "images/e64cbba31868be5ab12d5e3a355e134fd345f3bb1e66ee29373b6a89bf82fa06.jpg",
+        "table_caption": [
+            "Exhibit 28: Latest Short-Run Utilization Scores"
+        ],
+        "table_footnote": [
+            "Source: GS Global Investment Research"
+        ],
+        "table_body": "<table><tr><td rowspan=\"2\">Country</td><td rowspan=\"2\">Month</td><td colspan=\"2\">Spot Short-Run Utilization Scores (% of Potential)</td><td rowspan=\"2\">3 Month Average (% of Potential)</td></tr><tr><td>Value</td><td>Weekly Change</td></tr><tr><td>US</td><td>May</td><td>-2.0</td><td>+0.1</td><td>-2.1</td></tr><tr><td>Germany</td><td>May</td><td>+0.1</td><td>0.0</td><td>+0.1</td></tr><tr><td>France</td><td>May</td><td>+0.7</td><td>0.0</td><td>+0.7</td></tr><tr><td>Italy</td><td>May</td><td>+4.8</td><td>0.0</td><td>+4.9</td></tr><tr><td>Spain</td><td>May</td><td>+4.8</td><td>-0.2</td><td>+4.6</td></tr><tr><td>Japan</td><td>April</td><td>-0.9</td><td>0.0</td><td>-1.0</td></tr><tr><td>UK</td><td>May</td><td>-2.1</td><td>0.0</td><td>-1.9</td></tr><tr><td>Canada</td><td>March</td><td>-1.3</td><td>0.0</td><td>-1.3</td></tr><tr><td>Australia</td><td>April</td><td>-0.4</td><td>0.0</td><td>-0.3</td></tr><tr><td>China</td><td>May</td><td>+0.1</td><td>+0.1</td><td>0.0</td></tr><tr><td>India</td><td>May</td><td>+0.6</td><td>0.0</td><td>+0.6</td></tr><tr><td>Brazil</td><td>April</td><td>+0.7</td><td>0.0</td><td>+0.6</td></tr><tr><td>Russia</td><td>May</td><td>+1.3</td><td>-0.3</td><td>+1.3</td></tr></table>",
+        "bbox": [
+            279,
+            93,
+            908,
+            379
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "header",
+        "text": "GS",
+        "bbox": [
+            81,
+            3,
+            184,
+            16
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "header",
+        "text": "Global: GS Economic Indicators Update",
+        "bbox": [
+            658,
+            7,
+            916,
+            21
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "footer",
+        "text": "8 June 2026",
+        "bbox": [
+            81,
+            954,
+            155,
+            965
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "page_number",
+        "text": "18",
+        "bbox": [
+            900,
+            954,
+            916,
+            965
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "image",
+        "img_path": "images/c4161074d46f9a99131c2c6aa792d96abc702b1b1ae4f47eb2e768b24d6feb9d.jpg",
+        "image_caption": [
+            "Exhibit 29: Short-Run Utilization Scores"
+        ],
+        "image_footnote": [
+            "Source: GS Global Investment Research"
+        ],
+        "content": "",
+        "bbox": [
+            83,
+            69,
+            915,
+            877
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "header",
+        "text": "GS",
+        "bbox": [
+            81,
+            3,
+            184,
+            18
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "header",
+        "text": "Global: GS Economic Indicators Update",
+        "bbox": [
+            658,
+            7,
+            916,
+            21
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "footer",
+        "text": "8 June 2026",
+        "bbox": [
+            81,
+            953,
+            155,
+            965
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "page_number",
+        "text": "19",
+        "bbox": [
+            900,
+            954,
+            916,
+            965
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "chart",
+        "img_path": "images/3f4836c857a9242e1ca0aed93b6f3e0680a3e1958113dca9ccf82965f2b95825.jpg",
+        "content": "| Region | North America (%) | Western Europe (%) | Asia Pacific (%) | Latam (%) | CEEMEA (%) |\n| --- | --- | --- | --- | --- | --- |\n| Global | 0.15 | 0.00 | 0.15 | 0.00 | 1.48 |\n| Türkiye | 0.00 | 0.48 | 0.39 | 0.00 | 1.47 |\n| UK | 0.22 | 0.15 | 0.10 | 0.00 | 0.23 |\n| South Korea | 0.22 | 0.15 | 0.10 | 0.00 | 0.00 |\n| US | 0.22 | 0.15 | 0.10 | 0.00 | 0.00 |\n| Euro Area | 0.22 | 0.15 | 0.10 | 0.00 | 0.00 |\n| India | 0.22 | 0.15 | 0.10 | 0.00 | 0.00 |\n| Russia | 0.22 | 0.15 | 0.10 | 0.00 | 0.00 |\n| Australia | 0.22 | 0.15 | 0.10 | 0.00 | 0.00 |\n| Thailand | 0.22 | 0.15 | 0.10 | 0.00 | 0.00 |\n| Vietnam | 0.22 | 0.15 | 0.10 | 0.00 | 0.00 |\n| Malaysia | 0.22 | 0.15 | 0.10 | 0.00 | 0.00 |\n| Japan | 0.22 | 0.15 | 0.10 | 0.00 | 0.00 |\n| Mainland China | 0.22 | 0.15 | 0.10 | 0.00 | 0.00 |\n| Taiwan | 0.22 | 0.15 | 0.10 | 0.00 | 0.00 |\n| Philippines | 0.22 | 0.15 | 0.10 | 0.00 | 0.00 |\n| Indonesia | 0.22 | 0.15 | 0.10 | 0.00 | 0.00 |\n| Argentina | 0.22 | 0.15 | 0.10 | 0.00 | 0.00 |\n| Mexico | 0.22 | 0.15 | 0.10 | 0.00 | 0.00 |\n| Brazil | -0.15 | -0.15 | -0.15 | -0.15 | - |",
+        "chart_caption": [
+            "Exhibit 30: Change in GS 2026 Inflation Forecasts"
+        ],
+        "chart_footnote": [
+            "Source: GS Global Investment Research"
+        ],
+        "sub_type": "bar chart",
+        "bbox": [
+            89,
+            104,
+            906,
+            378
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "chart",
+        "img_path": "images/734e4b76c2582088f455332e9351f5c30cba19f1b2f8b6fea4fd5c9a2f520a76.jpg",
+        "content": "Change in GS Inflation Forecast (Q4/Q4) in 2027 (Since 60 Days Ago)\n| Category | Region | Percentage points |\n| :--- | :--- | :--- |\n| Headline Inflation - Global | North America | 0.15 |\n| Headline Inflation - Turkey | Western Europe | 0.20 |\n| Headline Inflation - Euro Area | Asia Pacific | 0.15 |\n| Headline Inflation - South Korea | Latam | 0.08 |\n| Headline Inflation - US | North America | 0.12 |\n| Headline Inflation - Brazil | Latam | 0.06 |\n| Headline Inflation - Canada | Latam | 0.00 |\n| Headline Inflation - Vietnam | Latam | 0.00 |\n| Headline Inflation - Thailand | Latam | 0.00 |\n| Headline Inflation - Taiwan | Latam | 0.00 |\n| Headline Inflation - Indonesia | Latam | 0.00 |\n| Headline Inflation - Japan | Latam | 0.00 |\n| Headline Inflation - Mainland China | Latam | 0.00 |\n| Headline Inflation - Malaysia | Latam | 0.00 |\n| Headline Inflation - Mexico | Latam | 0.00 |\n| Headline Inflation - Russia | Latam | 0.00 |\n| Headline Inflation - Australia | Latam | 0.00 |\n| Headline Inflation - Argentina | Latam | 0.00 |\n| Headline Inflation - Philippines | Latam | 0.00 |\n| Headline Inflation - Poland | Latam | 0.00 |\n| Headline Inflation - India | Latam | 0.00 |\n| Headline Inflation - UK | Western Europe | -0.15 |\n| Core Inflation - Global | North America | 0.25 |\n| Core Inflation - Turkey | North America | 1.25 |\nPercentage points: Global, Turkey; Euro Area, US; Core Inflation: North America, Euro Area, US; Core Inflation: North America, Euro Area, US; Core Inflation: North America, Euro Area, US; Core Inflation: North America, Euro Area, US; Core Inflation: North America, Euro Area, US; Core Inflation: North America, Euro Area, US; Core Inflation: North America, Euro Area, US; Core Inflation: North America, Euro Area, US; Core Inflation: North America, Euro Area, USA; Core Inflation: North America, Euro Area, USA; Core Inflation: North America, Euro Area, USA; Core Inflation: North America, Euro Area, USA; Core Inflation: North America, Euro Area, USA; Core Inflation: North America, Euro Area, USA; Core Inflation: North America, Euro Area, USA; Core Inflation: North America, Euro Area, USA; Core Inflation: North America, Euro Area, USA; Core Inflations: North America, Euro Area, US; Core Inflations: North America, Euro Area, US; Core Inflations: North America, Euro Area, USA; Core Inflations: North America, Euro Area, USA; Core Inflations: North America, Euro Area, USA; Core Inflations: North America, Euro Area, USA; Core Inflations: North America, Euro Area, USA; Core Inflations: North America, Euro Area, USA; Core Inflations: North America, Euro Area, USA; Core Inflations: North America, Euro Area, USA; Core Inflations: North America (Europe), Euro Area (USA), Latin America (Brazil), Latin America (Russia), Latin America (Mexico), Latin America (Poland), Latin America (Philippines), Latin America (Brazil), Latin America (South Korea), Latin America (Canada), Latin America (Japan), Latin America (Mainland China), Latin America (Indonesia), Latin America (Malaysia), Latin America (Australia), Latin America (Thailand), Latin America (Argentina), Latin America (India), Latin America (India).",
+        "chart_caption": [
+            "Exhibit 31: Change in GS 2027 Inflation Forecasts"
+        ],
+        "chart_footnote": [
+            "Source: GS Global Investment Research"
+        ],
+        "sub_type": "bar chart",
+        "bbox": [
+            89,
+            437,
+            906,
+            706
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "header",
+        "text": "GS",
+        "bbox": [
+            81,
+            3,
+            184,
+            16
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "header",
+        "text": "Global: GS Economic Indicators Update",
+        "bbox": [
+            658,
+            7,
+            916,
+            21
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "header",
+        "text": "GS Forecasts vs. Consensus",
+        "bbox": [
+            80,
+            38,
+            303,
+            56
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "footer",
+        "text": "8 June 2026",
+        "bbox": [
+            81,
+            954,
+            155,
+            965
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "page_number",
+        "text": "20",
+        "bbox": [
+            898,
+            954,
+            916,
+            965
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "chart",
+        "img_path": "images/89d0ca0821a4e0e4c4b851a8c7b00ed663fabc66aac9a6178d9a9590015bfab0.jpg",
+        "content": "Change in GS GDP Forecast in 2026\n| Region | Change in GS GDP (Percentage points) |\n| :--- | :--- |\n| Global | -0.15 |\n| India | 0.30 |\n| US | 0.10 |\n| Argentina | 0.00 |\n| Poland | 0.00 |\n| Mexico | 0.00 |\n| Malaysia | 0.00 |\n| Philippines | 0.00 |\n| Russia | 0.00 |\n| Thailand | 0.00 |\n| Türkiye | 0.00 |\n| Taiwan | 0.00 |\n| Vietnam | 0.00 |\n| South Korea | 0.00 |\n| Japan | 0.00 |\n| Australia | 0.00 |\n| Italy | 0.00 |\n| Brazil | 0.00 |\n| Mainland China | 0.00 |\n| Germany | 0.00 |\n| Euro Area | 0.00 |\n| Spain | 0.00 |\n| France | 0.00 |\n| UK | 0.00 |\n| Indonesia | -0.45 |\n| Canada | -0.55 |\n\n| Time Since a Week Ago: Percentage points vs. Percentage points: Taiwan: +4.2pp; Since 60 Days Ago: Percentage points: North America, Western Europe, Asia Pacific, Latam, CEEMEA; USA: -0.35, Mexico: -0.45, France: -0.55, Canada: -0.65.",
+        "chart_caption": [
+            "Exhibit 32: Change in GS 2026 GDP Forecasts"
+        ],
+        "chart_footnote": [
+            "Source: GS Global Investment Research"
+        ],
+        "sub_type": "bar chart",
+        "bbox": [
+            88,
+            72,
+            906,
+            357
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "chart",
+        "img_path": "images/e5093e0a2f2141f840df3c0920ff073f6174c87d68b3ab3b17226a3a4c2007ce.jpg",
+        "content": "Change in GS GDP Forecast in 2027\n| Region | Percentage Points Change (Percentage points) |\n| :--- | :--- |\n| Global | 0.1 |\n| Argentina | 0.0 |\n| Mexico | 0.0 |\n| Malaysia | 0.0 |\n| Philippines | 0.0 |\n| Poland | 0.0 |\n| Russia | 0.0 |\n| Thailand | 0.0 |\n| Türkiye | 0.0 |\n| Taiwan | 0.0 |\n| US | 0.0 |\n| Vietnam | 0.0 |\n| South Korea | 0.0 |\n| Japan | 0.0 |\n| Australia | 0.0 |\n| Italy | 0.0 |\n| Brazil | 0.0 |\n| Canada | 0.0 |\n| Mainland China | 0.0 |\n| Germany | 0.0 |\n| Euro Area | 0.0 |\n| Spain | 0.0 |\n| France | 0.0 |\n| UK | 0.0 |\n| Indonesia | 0.0 |\n| India | 0.0 |\n| Global | 0.1 |\n| Philippines | 0.8 |\n| India | 0.5 |\n| Poland | 0.1 |\n| Argentina | 0.0 |\n| Malaysia | 0.0 |\n| Russia | 0.0 |\n| Australia | 0.0 |\n| Türkiye | 0.0 |\n| Taiwan | 0.0 |\n| US | 0.0 |\n| Vietnam | 0.0 |\n| Japan | 0.0 |\n| Brazil | 0.0 |\n| Canada | 0.0 |\n| Indonesia | 0.0 |\n| Mainland China | 0.0 |\n| UK | -0.1 |\n| Euro Area | -0.1 |\n| Italy | -0.1 |\n| France | -0.1 |\n| Germany | -0.1 |\n| Thailand | -0.1 |\n| Spain | -0.1 |\n| Mexico | -0.2 |\n| South Korea | -0.3 |",
+        "chart_caption": [
+            "Exhibit 33: Change in GS 2027 GDP Forecasts"
+        ],
+        "chart_footnote": [
+            "Source: GS Global Investment Research"
+        ],
+        "sub_type": "bar chart",
+        "bbox": [
+            89,
+            418,
+            906,
+            702
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "header",
+        "text": "GS",
+        "bbox": [
+            81,
+            3,
+            184,
+            16
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "header",
+        "text": "Global: GS Economic Indicators Update",
+        "bbox": [
+            658,
+            7,
+            916,
+            21
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "footer",
+        "text": "8 June 2026",
+        "bbox": [
+            81,
+            954,
+            155,
+            965
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "page_number",
+        "text": "21",
+        "bbox": [
+            898,
+            954,
+            916,
+            965
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "chart",
+        "img_path": "images/ba952cf99038d1f6f7fb4691e2b2eaa4da88a3d72ca7026f0328e0325e35357c.jpg",
+        "content": "| Mainland China - Percent, year ago; US | 2024 Apr | 3.0 |\n| --- | --- | --- |\n| Mainland China - Percent, year ago; US | 2025 Jul | 3.0 |\n| Mainland China - Percent, year ago; US | 2025 Oct | 3.0 |\n| Mainland China - Percent, year ago; US | 2026 Apr | 3.0 |\n| Mainland China - Percent, year ago; US | 2026 Jul | 3.0 |\n| Mainland China - Percent, year ago; US | 2026 Oct | 3.0 |\n| Mainland China - Percent, year ago; US | 2027 Apr | 3.0 |\n| Mainland China - Percent, year ago; US | 2027 Jul | 3.0 |\n| Mainland China - Percent, year ago; US | 2027 Oct | 3.0 |\n| Mainland China - Percent, year ago; US | 2028 Apr | 3.0 |\n| Mainland China - Percent, year ago; US | 2028 Jul | 3.0 |\n| Mainland China - Percent, year ago; US | 2028 Oct | 3.0 |\n| Mainland China - Percent, year ago; US | 2029 Apr | 3.0 |\n| Mainland China - Percent, year ago; US | 2029 Jul | 3.0 |\n| Mainland China - Percent, year ago; US | 2030 Oct | 3.0 |\n| Mainland China - Percent, year ago; US | 2030 Apr | 3.0 |\n| Mainland China - Percent, year ago; US | 2030 Jul | 3.0 |\n| Mainland China - Percent, year ago; US | 2030 Oct | 3.0 |\n| Mainland China - Percent, year ago; US | 2031 Apr | 3.0 |\n| Mainland China - Percent, year ago; US | 2031 Jul | 3.0 |\n| Mainland China - Percent, year ago; US | 2031 Oct | 3.0 |\n| Mainland China - Percent, year ago; US | 20315 Apr | 3.0 |\n| Mainland China - Percent, year ago; US | 20317 Jul | 3.0 |\n| Mainland China - Percent, year ago; US | 2031 Oct | 3.0 |\n| Mainland China - Percent, year ago; US | 20315 Apr | 3.0 |\n| Mainland China - Percent, year ago; US | 20317 Jul | 3.0 |\n| Mainland China - Percent, year ago; US | 20318 Oct | 3.0 |\n| Mainland China - Percent, year ago; US | 20319 Apr | 3.0 |\n| Mainland China - Percent, year ago; US | 203197 Jul | 3.0 |\n| Mainland China - Percent, year ago; US | 203198 Oct | 3.0 |\n| Mainland China - Percent, year ago; US | 203199 Apr | 3.0 |\n| Mainland China - Percent, year ago; US | 2031997 Jul | 3.0 |\n| Mainland China - Percent, year ago; US | 2031998 Oct | 3.0 |\n| Mainland China - Percent, year ago; US | 2031999 Apr | 3.0 |\n| Mainland China - Percent, year ago; US | 20319997 Jul | 3.0 |\n| Mainland China - Percent, year ago; US | 20319998 Oct | 3.0 |\n| Mainland China - Percent, year ago; US | 20319999 Apr | 3.0 |\n| Mainland China - Percent, year ago; US | 203199997 Jul | 3.0 |\n| Mainland China - Percent, year ago; US | 203199998 Oct | 3.0 |\n| Mainland China - Percent, year ago; US | 203199999 Apr | 3.0 |\n| Mainland China - Percent, year ago; US | 2031999997 Jul | 3.0 |\n| Mainland China - Percent, year ago; US | 2031999998 Oct | 3.0 |\n| Mainland China - Percent, year ago; US | 2031999999 Apr | 3.0 |\n| Mainland China - Percent, year ago; US | 20319999997 Jul | 3.0 |\n| Mainland China - Percent, year ago; US | 20319999998 Oct | 3.0 |\n| Mainland China - Percent, year ago; US | 20319999999 Apr | 3.0 |\n| Mainland China - Percent, year ago; US | 203199999997 Jul | 3.0 |\n| Mainland China - Percent, year ago; US | 203199999998 Oct | 3.0 |\n| Mainland China - Percent, year ago; US | 203199999999 Apr | 3.0 |\n| Mainland China - Percent, year ago; US | 2031999999997 Jul | 3.0 |\n| Mainland China - Percent, year ago; US | 2031999999998 Oct | 3.0 |\n| Mainland China - Percent, year ago; US | 2031999999999 Apr | 3.0 |\n| Mainland China - Percent, year ago; US | 20319999999997 Jul | 3.0 |\n| Mainland China - Percent, year ago; US | 20319999999998 Oct | 3.0 |",
+        "chart_caption": [
+            "Exhibit 34: GS 2026 Global GDP Forecasts vs. Other Forecasters"
+        ],
+        "chart_footnote": [
+            "Source: Bloomberg, GS Global Investment Research"
+        ],
+        "sub_type": "line chart",
+        "bbox": [
+            84,
+            72,
+            455,
+            237
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "chart",
+        "img_path": "images/0ea23e22a9887f734b4a4717ecbc1975a20c39d3e5a96937fc52c20060c44f97.jpg",
+        "content": "| Region | Period | GS (Percent, year ago) | Bloomberg Consensus (Percent, year ago) |\n| --- | --- | --- | --- |\n| US | 2025 | 2.00 | 2.00 |\n| US | 2026 | 2.00 | 2.00 |\n| Mainland China | 2025 | 4.75 | 4.75 |\n| Mainland China | 2026 | 4.75 | 4.75 |\n| Global | 2025 | 3.00 | 3.00 |\n| Global | 2026 | 3.00 | 3.00 |\n| Euro Area | 2025 | 1.8 | 1.8 |\n| Euro Area | 2026 | 1.8 | 1.8 |\n| Percent, year ago | 2025 | 1.2 | 1.2 |\n| Percent, year ago | 2026 | 1.4 | 1.4 |\n| Percent, year ago | Jul | 0.8 | 0.8 |\n| Percent, year ago | Jul | 0.8 | 0.8 |\n| Europe Area | 2025 | 1.4 | 1.4 |\n| Europe Area | 2026 | 1.4 | 1.4 |\n| Europe Area | Jul | 1.4 | 1.4 |\n| Europe Area (Global) | 2025 | 2.6 | 2.6 |\n| Europe Area (Global) | 2026 | 2.6 | 2.6 |\n| Europe Area (Euro Area) | 2025 | 3.00 | 3.00 |\n| Europe Area (Euro Area) | 2026 | 3.00 | 3.00 |\n| Europe Area (Global) | 2025 | 2.8 | 2.8 |\n| Europe Area (Global) | 2026 | 2.8 | 2.8 |\n| Europe Area (Euro Area) | 2025 | 2.6 | 2.6 |\n| Europe Area (Euro Area) | 2026 | 2.6 | 2.6 |\n| Europe Area (Total) | 2025 | 3.00 | 3.00 |\n| Europe Area (Total) | 2026 | 3.00 | 3.00 |\n| Total (Total) | — | — | — |",
+        "chart_caption": [
+            "Exhibit 35: GS 2027 Global GDP Forecasts vs. Other Forecasters"
+        ],
+        "chart_footnote": [
+            "Source: Bloomberg, GS Global Investment Research"
+        ],
+        "sub_type": "line chart",
+        "bbox": [
+            84,
+            297,
+            455,
+            463
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "text",
+        "text": "Thank you to Jamal Lawal, intern on the Global Economics team, for his contributions to this report.",
+        "bbox": [
+            269,
+            490,
+            890,
+            525
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "header",
+        "text": "GS",
+        "bbox": [
+            81,
+            3,
+            184,
+            16
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "header",
+        "text": "Global: GS Economic Indicators Update",
+        "bbox": [
+            658,
+            7,
+            916,
+            21
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "footer",
+        "text": "8 June 2026",
+        "bbox": [
+            81,
+            954,
+            155,
+            965
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "page_number",
+        "text": "22",
+        "bbox": [
+            898,
+            954,
+            916,
+            965
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "text",
+        "text": "Methodology Notes for GS Proprietary Economic Indicators",
+        "text_level": 2,
+        "bbox": [
+            80,
+            38,
+            566,
+            60
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "text",
+        "text": "1. Financial Conditions: Our Financial Conditions Indexes are designed to gauge the overall looseness or tightness of financial conditions across the world's major economies. The GSFCIs can provide valuable information about the GDP growth outlook, the transmission of monetary policy to the real economy, and the importance of financial shocks hitting the economy. (Latest methodology notes here and here.)",
+        "bbox": [
+            269,
+            87,
+            913,
+            200
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "text",
+        "text": "2. FCI Impulses: Our FCI impulses measure the effect of financial conditions on real GDP growth. For details on the methodology please see here.",
+        "bbox": [
+            269,
+            209,
+            887,
+            244
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "text",
+        "text": "3. Current Activity Indicator: In statistical jargon, the CAIs are the “first principal component” of several real activity indicators, expressed in GDP-equivalent units. The CAIs can be interpreted as the growth signal in the main high-frequency indicators for each economy. At any given point, data for certain indicators may not be available. The CAIs therefore incorporate forecasted values for missing indicators, which are then replaced with actual values when they are released. (Latest methodology note here.)",
+        "bbox": [
+            269,
+            253,
+            913,
+            385
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "text",
+        "text": "4. MAP Surprise Index: Our daily MAP surprise indices summarize the importance and strength (relative to consensus expectations) of economic indicators worldwide. Across numerous countries, our surprise index's methodology standardizes the criteria for indicator selection and importance, thresholds for “surprise” scores, and schemes for aggregation, while allowing for occasional judgmental input from local economists. (Latest methodology here.)",
+        "bbox": [
+            269,
+            394,
+            911,
+            507
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "text",
+        "text": "5. Trimmed Core Inflation. Our trimmed core inflation measure trims the one third most extreme price changes from the individual core inflation components. (Latest methodology note here.)",
+        "bbox": [
+            269,
+            516,
+            903,
+            571
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "text",
+        "text": "6. Jobs-Workers Gaps: Our jobs-workers gaps capture the difference between total labor demand (i.e. job openings plus employment) and labor supply (i.e. the labor force). We forecast the jobs-workers gap by forecasting official job openings with country-specific models reliant on high-frequency job posting data, and by forecasting the unemployment rate using jobless claims and other leading unemployment indicators. Our latest note can be found here.",
+        "bbox": [
+            269,
+            578,
+            895,
+            692
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "text",
+        "text": "7. Wage Survey Leading Indicator: Our wage survey leading indicators summarize survey questions about current and expected wage growth from business and consumer surveys. Our latest note can be found here.",
+        "bbox": [
+            269,
+            701,
+            883,
+            755
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "text",
+        "text": "8. Wage Trackers: Our wage trackers measure the underlying pace of wage growth across the G10 economies. Our latest notes can be found here and here.",
+        "bbox": [
+            269,
+            764,
+            883,
+            799
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "text",
+        "text": "9. Fiscal Impulses: Our fiscal impulses measure the effect of fiscal policy on real GDP growth. For details on the methodology please see here.",
+        "bbox": [
+            269,
+            808,
+            898,
+            844
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "text",
+        "text": "10. Short-Run Utilization Scores: Our short-run utilization scores are based on scores for both the labor market and the industrial sector, each based on a number of hard indicators and surveys, such as, for instance, the unemployment rate or supplier delivery times. We then define the short-run utilization score as a weighted average of these scores, converted into GDP-equivalent units. Our latest note can be found here. (We previously called our short-run utilization scores short-run output gaps.)",
+        "bbox": [
+            263,
+            852,
+            908,
+            928
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "header",
+        "text": "GS",
+        "bbox": [
+            81,
+            3,
+            184,
+            18
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "header",
+        "text": "Global: GS Economic Indicators Update",
+        "bbox": [
+            658,
+            7,
+            916,
+            21
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "footer",
+        "text": "8 June 2026",
+        "bbox": [
+            81,
+            953,
+            155,
+            965
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "page_number",
+        "text": "23",
+        "bbox": [
+            898,
+            954,
+            916,
+            965
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            299,
+            38,
+            898,
+            76
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "header",
+        "text": "GS",
+        "bbox": [
+            81,
+            3,
+            184,
+            18
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "header",
+        "text": "Global: GS Economic Indicators Update",
+        "bbox": [
+            658,
+            7,
+            916,
+            21
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "footer",
+        "text": "8 June 2026",
+        "bbox": [
+            81,
+            954,
+            155,
+            965
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "page_number",
+        "text": "24",
+        "bbox": [
+            898,
+            954,
+            916,
+            963
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "text",
+        "text": "Disclosure Appendix",
+        "text_level": 2,
+        "bbox": [
+            80,
+            38,
+            251,
+            59
+        ],
+        "page_idx": 24
+    },
+    {
+        "type": "text",
+        "text": "Reg AC",
+        "text_level": 2,
+        "bbox": [
+            80,
+            81,
+            135,
+            95
+        ],
+        "page_idx": 24
+    },
+    {
+        "type": "text",
+        "text": "We, Jan Hatzius, Joseph Briggs, Sarah Dong and Megan Peters, hereby certify that all of the views expressed in this report accurately reflect our personal views, which have not been influenced by considerations of the firm's business or client relationships.",
+        "bbox": [
+            81,
+            103,
+            869,
+            127
+        ],
+        "page_idx": 24
+    },
+    {
+        "type": "text",
+        "text": "Unless otherwise stated, the individuals listed on the cover page of this report are analysts in GS' Global Investment Research division.",
+        "bbox": [
+            81,
+            131,
+            885,
+            145
+        ],
+        "page_idx": 24
+    },
+    {
+        "type": "text",
+        "text": "Contributing Authors: Jan Hatzius GS & Co. LLC, Joseph Briggs GS & Co. LLC, Sarah Dong GS & Co. LLC, Megan Peters GS International.",
+        "bbox": [
+            81,
+            151,
+            898,
+            174
+        ],
+        "page_idx": 24
+    },
+    {
+        "type": "text",
+        "text": "Unless otherwise stated, the individuals listed in the Contributing Authors disclosure of this report are analysts in GS' Global Investment Research division.",
+        "bbox": [
+            81,
+            180,
+            893,
+            204
+        ],
+        "page_idx": 24
+    },
+    {
+        "type": "text",
+        "text": "Disclosures",
+        "text_level": 2,
+        "bbox": [
+            81,
+            215,
+            166,
+            229
+        ],
+        "page_idx": 24
+    },
+    {
+        "type": "text",
+        "text": "Regulatory disclosures",
+        "text_level": 2,
+        "bbox": [
+            81,
+            236,
+            250,
+            251
+        ],
+        "page_idx": 24
+    },
+    {
+        "type": "text",
+        "text": "Disclosures required by United States laws and regulations",
+        "text_level": 2,
+        "bbox": [
+            81,
+            255,
+            514,
+            270
+        ],
+        "page_idx": 24
+    },
+    {
+        "type": "text",
+        "text": "See company-specific regulatory disclosures above for any of the following disclosures required as to companies referred to in this report: manager or co-manager in a pending transaction; $1\\%$ or other ownership; compensation for certain services; types of client relationships; managed/co-managed public offerings in prior periods; directorships; for equity securities, market making and/or specialist role. GS trades or may trade as a principal in debt securities (or in related derivatives) of issuers discussed in this report.",
+        "bbox": [
+            81,
+            270,
+            906,
+            313
+        ],
+        "page_idx": 24
+    },
+    {
+        "type": "text",
+        "text": "The following are additional required disclosures: Ownership and material conflicts of interest: GS policy prohibits its analysts, professionals reporting to analysts and members of their households from owning securities of any company in the analyst's area of coverage. Analyst compensation: Analysts are paid in part based on the profitability of GS, which includes investment banking revenues. Analyst as officer or director: GS policy generally prohibits its analysts, persons reporting to analysts or members of their households from serving as an officer, director or advisor of any company in the analyst's area of coverage. Non-U.S. Analysts: Non-U.S. analysts may not be associated persons of GS & Co. LLC and therefore may not be subject to FINRA Rule 2241 or FINRA Rule 2242 restrictions on communications with a subject company, public appearances and trading in securities covered by the analysts.",
+        "bbox": [
+            81,
+            320,
+            911,
+            399
+        ],
+        "page_idx": 24
+    },
+    {
+        "type": "text",
+        "text": "Additional disclosures required under the laws and regulations of jurisdictions other than the United States",
+        "text_level": 2,
+        "bbox": [
+            81,
+            410,
+            872,
+            425
+        ],
+        "page_idx": 24
+    },
+    {
+        "type": "text",
+        "text": "The following disclosures are those required by the jurisdiction indicated, except to the extent already made above pursuant to United States laws and regulations. Australia: GS Australia Pty Ltd and its affiliates are not authorised deposit-taking institutions (as that term is defined in the Banking Act 1959 (Cth)) in Australia and do not provide banking services, nor carry on a banking business, in Australia. This research, and any access to it, is intended only for “wholesale clients” within the meaning of the Australian Corporations Act, unless otherwise agreed by GS. In producing research reports, members of Global Investment Research of GS Australia may attend site visits and other meetings hosted by the companies and other entities which are the subject of its research reports. In some instances the costs of such site visits or meetings may be met in part or in whole by the issuers concerned if GS Australia considers it is appropriate and reasonable in the specific circumstances relating to the site visit or meeting. To the extent that the contents of this document contains any financial product advice, it is general advice only and has been prepared by GS without taking into account a client’s objectives, financial situation or needs. A client should, before acting on any such advice, consider the appropriateness of the advice having regard to the client’s own objectives, financial situation and needs. A copy of certain GS Australia and New Zealand disclosure of interests and a copy of GS’ Australian Sell-Side Research Independence Policy Statement are available at: https://www.goldmansachs.com/disclosures/australia-new-zealand/index.html. Brazil: Disclosure information in relation to CVM Resolution n. 20 is available at https://www.gs.com/worldwide/brazil/area/gir/index.html. Where applicable, the Brazil-registered analyst primarily responsible for the content of this research report, as defined in Article 20 of CVM Resolution n. 20, is the first author named at the beginning of this report, unless indicated otherwise at the end of the text. Canada: This information is being provided to you for information purposes only and is not, and under no circumstances should be construed as, an advertisement, offering or solicitation by GS & Co. LLC for purchasers of securities in Canada to trade in any Canadian security. GS & Co. LLC is not registered as a dealer in any jurisdiction in Canada under applicable Canadian securities laws and generally is not permitted to trade in Canadian securities and may be prohibited from selling certain securities and products in certain jurisdictions in Canada. If you wish to trade in any Canadian securities or other products in Canada please contact GS Canada Inc., an affiliate of The GS Group Inc., or another registered Canadian dealer. Hong Kong: Further information on the securities of covered companies referred to in this research may be obtained on request from GS (Asia) L.L.C. India: Further information on the subject company or companies referred to in this research may be obtained from GS (India) Securities Private Limited, Research Analyst - SEBI Registration Number INH000001493, 10th Floor, Ascent-Worli, Sudam Kalu Ahire Marg, Worli, Mumbai-400 025, India, Corporate Identity Number U74140MH2006FTC160634, Phone +91 22 6616 9000, Fax +91 22 6616 9001. GS may beneficially own 1% or more of the securities (as such term is defined in clause 2 (h) the Indian Securities Contracts (Regulation) Act, 1956) of the subject company or companies referred to in this research report. Investment in securities market are subject to market risks. Read all the related documents carefully before investing. Registration granted by SEBI and certification from NISM in no way guarantee performance of the intermediary or provide any assurance of returns to investors. GS (India) Securities Private Limited compliance officer and investor grievance contact details can be found at: https://www.goldmansachs.com/worldwide/india/documents/Grievance-Redressal-and-Escalation-Matrix.pdf, and a copy of the annual audit compliance report can be found at this link: https://publishing.gs.com/content/site/india-annual-compliance-report.html. Japan: See below. Korea: This research, and any access to it, is intended only for “professional investors” within the meaning of the Financial Services and Capital Markets Act, unless otherwise agreed by GS. Further information on the subject company or companies referred to in this research may be obtained from GS (Asia) L.L.C., Seoul Branch. New Zealand: GS New Zealand Limited and its affiliates are neither “registered banks” nor “deposit takers” (as defined in the Reserve Bank of New Zealand Act 1989) in New Zealand. This research, and any access to it, is intended for “wholesale clients” (as defined in the Financial Advisers Act 2008) unless otherwise agreed by GS. A copy of certain GS Australia and New Zealand disclosure of interests is available at: https://www.goldmansachs.com/disclosures/australia-new-zealand/index.html. Russia: Research reports distributed in the Russian Federation are not advertising as defined in the Russian legislation, but are information and analysis not having product promotion as their main purpose and do not provide appraisal within the meaning of the Russian legislation on appraisal activity. Research reports do not constitute a personalized investment recommendation as defined in Russian laws and regulations, are not addressed to a specific client, and are prepared without analyzing the financial circumstances, investment profiles or risk profiles of clients. GS assumes no responsibility for any investment decisions that may be taken by a client or any other person based on this research report. Singapore: GS (Singapore) Pte. (Company Number: 198602165W), which is regulated by the Monetary Authority of Singapore, accepts legal responsibility for this research, and should be contacted with respect to any matters arising from, or in connection with, this research. Taiwan: This material is for reference only and must not be reprinted without permission. Investors should carefully consider their own investment risk. Investment results are the responsibility of the individual investor. United Kingdom: Persons who would be categorized as retail clients in the United Kingdom, as such term is",
+        "bbox": [
+            81,
+            425,
+            916,
+            925
+        ],
+        "page_idx": 24
+    },
+    {
+        "type": "header",
+        "text": "GS",
+        "bbox": [
+            81,
+            5,
+            184,
+            16
+        ],
+        "page_idx": 24
+    },
+    {
+        "type": "header",
+        "text": "Global: GS Economic Indicators Update",
+        "bbox": [
+            658,
+            7,
+            916,
+            21
+        ],
+        "page_idx": 24
+    },
+    {
+        "type": "footer",
+        "text": "8 June 2026",
+        "bbox": [
+            81,
+            954,
+            153,
+            965
+        ],
+        "page_idx": 24
+    },
+    {
+        "type": "page_number",
+        "text": "25",
+        "bbox": [
+            898,
+            954,
+            915,
+            963
+        ],
+        "page_idx": 24
+    },
+    {
+        "type": "text",
+        "text": "defined in the rules of the Financial Conduct Authority, should read this research in conjunction with prior GS on the covered companies referred to herein and should refer to the risk warnings that have been sent to them by GS International. A copy of these risks warnings, and a glossary of certain financial terms used in this report, are available from GS International on request.",
+        "bbox": [
+            81,
+            38,
+            901,
+            74
+        ],
+        "page_idx": 25
+    },
+    {
+        "type": "text",
+        "text": "European Union and United Kingdom: Disclosure information in relation to Article 6 (2) of the European Commission Delegated Regulation (EU) (2016/958) supplementing Regulation (EU) No 596/2014 of the European Parliament and of the Council (including as that Delegated Regulation is implemented into United Kingdom domestic law and regulation following the United Kingdom's departure from the European Union and the European Economic Area) with regard to regulatory technical standards for the technical arrangements for objective presentation of investment recommendations or other information recommending or suggesting an investment strategy and for disclosure of particular interests or indications of conflicts of interest is available at https://www.gs.com/disclosures/europeanpolicy.html which states the European Policy for Managing Conflicts of Interest in Connection with Investment Research.",
+        "bbox": [
+            81,
+            80,
+            906,
+            158
+        ],
+        "page_idx": 25
+    },
+    {
+        "type": "text",
+        "text": "Japan: GS Japan Co., Ltd. is a Financial Instrument Dealer registered with the Kanto Financial Bureau under registration number Kinsho 69, and a member of Japan Securities Dealers Association, Financial Futures Association of Japan Type II Financial Instruments Firms Association, and Investment Management Association of Japan. Sales and purchase of equities are subject to commission pre-determined with clients plus consumption tax. See company-specific disclosures as to any applicable disclosures required by Japanese stock exchanges, the Japanese Securities Dealers Association or the Japanese Securities Finance Company.",
+        "bbox": [
+            81,
+            165,
+            913,
+            222
+        ],
+        "page_idx": 25
+    },
+    {
+        "type": "text",
+        "text": "Global product; distributing entities",
+        "text_level": 2,
+        "bbox": [
+            81,
+            233,
+            349,
+            248
+        ],
+        "page_idx": 25
+    },
+    {
+        "type": "text",
+        "text": "GS Global Investment Research produces and distributes research products for clients of GS on a global basis. Analysts based in GS offices around the world produce research on industries and companies, and research on macroeconomics, currencies, commodities and portfolio strategy. This research is disseminated in Australia by GS Australia Pty Ltd (ABN 21 006 797 897); in Brazil by GS do Brasil Corretora de Títulos e Valores Mobiliários S.A.; Public Communication Channel GS Brazil: 0800 727 5764 and / or contatogoldmanbrasil@gs.com. Available Weekdays (except holidays), from 9am to 6pm. Canal de Comunicação com o Público GS Brasil: 0800 727 5764 e/ou contatogoldmanbrasil@gs.com. Horário de funcionamento: segunda-feira à sexta-feira (exceto feriados), das 9h às 18h; in Canada by GS & Co. LLC; in Hong Kong by GS (Asia) L.L.C.; in India by GS (India) Securities Private Ltd.; in Japan by GS Japan Co., Ltd.; in the Republic of Korea by GS (Asia) L.L.C., Seoul Branch; in New Zealand by GS New Zealand Limited; in Russia by OOO GS; in Singapore by GS (Singapore) Pte. (Company Number: 198602165W); and in the United States of America by GS & Co. LLC. GS International has approved this research in connection with its distribution in the United Kingdom.",
+        "bbox": [
+            81,
+            248,
+            916,
+            370
+        ],
+        "page_idx": 25
+    },
+    {
+        "type": "text",
+        "text": "GS International (\"GSI\"), authorised by the Prudential Regulation Authority (\"PRA\") and regulated by the Financial Conduct Authority (\"FCA\") and the PRA, has approved this research in connection with its distribution in the United Kingdom.",
+        "bbox": [
+            81,
+            375,
+            879,
+            401
+        ],
+        "page_idx": 25
+    },
+    {
+        "type": "text",
+        "text": "European Economic Area: GS Bank Europe SE (“GSBE”) is a credit institution incorporated in Germany and, within the Single Supervisory Mechanism, subject to direct prudential supervision by the European Central Bank and in other respects supervised by German Federal Financial Supervisory Authority (Bundesanstalt für Finanzdienstleistungsaufsicht, BaFin) and Deutsche Bundesbank and disseminates research within the European Economic Area.",
+        "bbox": [
+            81,
+            406,
+            903,
+            452
+        ],
+        "page_idx": 25
+    },
+    {
+        "type": "text",
+        "text": "General disclosures",
+        "text_level": 2,
+        "bbox": [
+            81,
+            465,
+            227,
+            478
+        ],
+        "page_idx": 25
+    },
+    {
+        "type": "text",
+        "text": "This research is for our clients only. Other than disclosures relating to GS, this research is based on current public information that we consider reliable, but we do not represent it is accurate or complete, and it should not be relied on as such. The information, opinions, estimates and forecasts contained herein are as of the date hereof and are subject to change without prior notification. We seek to update our research as appropriate, but various regulations may prevent us from doing so. Other than certain industry reports published on a periodic basis, the large majority of reports are published at irregular intervals as appropriate in the analyst's judgment.",
+        "bbox": [
+            81,
+            478,
+            913,
+            534
+        ],
+        "page_idx": 25
+    },
+    {
+        "type": "text",
+        "text": "GS conducts a global full-service, integrated investment banking, investment management, and brokerage business. We have investment banking and other business relationships with a substantial percentage of the companies covered by Global Investment Research. GS & Co. LLC, the United States broker dealer, is a member of SIPC (https://www.sipc.org).",
+        "bbox": [
+            81,
+            540,
+            913,
+            574
+        ],
+        "page_idx": 25
+    },
+    {
+        "type": "text",
+        "text": "Our salespeople, traders, and other professionals may provide oral or written market commentary or trading strategies to our clients and principal trading desks that reflect opinions that are contrary to the opinions expressed in this research. Our asset management area, principal trading desks and investing businesses may make investment decisions that are inconsistent with the recommendations or views expressed in this research.",
+        "bbox": [
+            81,
+            580,
+            913,
+            614
+        ],
+        "page_idx": 25
+    },
+    {
+        "type": "text",
+        "text": "We and our affiliates, officers, directors, and employees will from time to time have long or short positions in, act as principal in, and buy or sell, the securities or derivatives, if any, referred to in this research, unless otherwise prohibited by regulation or GS policy.",
+        "bbox": [
+            81,
+            621,
+            888,
+            645
+        ],
+        "page_idx": 25
+    },
+    {
+        "type": "text",
+        "text": "The views attributed to third party presenters at GS arranged conferences, including individuals from other parts of GS, do not necessarily reflect those of Global Investment Research and are not an official view of GS.",
+        "bbox": [
+            81,
+            649,
+            913,
+            674
+        ],
+        "page_idx": 25
+    },
+    {
+        "type": "text",
+        "text": "Any third party referenced herein, including any salespeople, traders and other professionals or members of their household, may have positions in the products mentioned that are inconsistent with the views expressed by analysts named in this report.",
+        "bbox": [
+            81,
+            680,
+            911,
+            704
+        ],
+        "page_idx": 25
+    },
+    {
+        "type": "text",
+        "text": "This research is focused on investment themes across markets, industries and sectors. It does not attempt to distinguish between the prospects or performance of, or provide analysis of, individual companies within any industry or sector we describe.",
+        "bbox": [
+            81,
+            709,
+            883,
+            733
+        ],
+        "page_idx": 25
+    },
+    {
+        "type": "text",
+        "text": "Any trading recommendation in this research relating to an equity or credit security or securities within an industry or sector is reflective of the investment theme being discussed and is not a recommendation of any such security in isolation.",
+        "bbox": [
+            81,
+            739,
+            866,
+            763
+        ],
+        "page_idx": 25
+    },
+    {
+        "type": "text",
+        "text": "This research is not an offer to sell or the solicitation of an offer to buy any security in any jurisdiction where such an offer or solicitation would be illegal. It does not constitute a personal recommendation or take into account the particular investment objectives, financial situations, or needs of individual clients. Clients should consider whether any advice or recommendation in this research is suitable for their particular circumstances and, if appropriate, seek professional advice, including tax advice. The price and value of investments referred to in this research and the income from them may fluctuate. Past performance is not a guide to future performance, future returns are not guaranteed, and a loss of original capital may occur. Fluctuations in exchange rates could have adverse effects on the value or price of, or income derived from, certain investments.",
+        "bbox": [
+            81,
+            768,
+            916,
+            835
+        ],
+        "page_idx": 25
+    },
+    {
+        "type": "text",
+        "text": "Certain transactions, including those involving futures, options, and other derivatives, give rise to substantial risk and are not suitable for all investors. Investors should review current options and futures disclosure documents which are available from GS sales representatives or at https://www.theocc.com/about/publications/character-risks.jsp and https://www.goldmansachs.com/disclosures/cftc\\_fcm\\_disclosures. Transaction costs may be significant in option strategies calling for multiple purchase and sales of options such as spreads. Supporting documentation will be supplied upon request.",
+        "bbox": [
+            81,
+            843,
+            903,
+            900
+        ],
+        "page_idx": 25
+    },
+    {
+        "type": "text",
+        "text": "Differing Levels of Service provided by Global Investment Research: The level and types of services provided to you by GS Global Investment Research may vary as compared to that provided to internal and other external clients of GS, depending on various factors including your individual preferences as to the frequency and manner of receiving communication, your risk profile and investment focus and perspective (e.g., marketwide, sector specific, long term, short term), the size and scope of your overall client relationship with GS, and legal and regulatory constraints. As an example, certain clients may request to receive notifications when research on specific securities is published, and certain clients may request that specific data underlying analysts' fundamental analysis available on our internal client websites be delivered to them electronically through data feeds or otherwise. No change to an analyst's fundamental research views (e.g., ratings, price targets, or material changes to earnings estimates for equity securities), will be communicated to any client prior to inclusion of such information in a research report broadly disseminated through electronic publication to our internal client websites or through other means, as necessary, to all clients who are entitled to receive such reports.",
+        "bbox": [
+            81,
+            905,
+            898,
+            928
+        ],
+        "page_idx": 25
+    },
+    {
+        "type": "header",
+        "text": "GS",
+        "bbox": [
+            81,
+            5,
+            184,
+            16
+        ],
+        "page_idx": 25
+    },
+    {
+        "type": "header",
+        "text": "Global: GS Economic Indicators Update",
+        "bbox": [
+            658,
+            7,
+            916,
+            21
+        ],
+        "page_idx": 25
+    },
+    {
+        "type": "footer",
+        "text": "8 June 2026",
+        "bbox": [
+            81,
+            954,
+            153,
+            965
+        ],
+        "page_idx": 25
+    },
+    {
+        "type": "page_number",
+        "text": "26",
+        "bbox": [
+            900,
+            954,
+            916,
+            963
+        ],
+        "page_idx": 25
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            80,
+            38,
+            903,
+            118
+        ],
+        "page_idx": 26
+    },
+    {
+        "type": "text",
+        "text": "All research reports are disseminated and available to all clients simultaneously through electronic publication to our internal client websites. Not all research content is redistributed to our clients or available to third-party aggregators, nor is GS responsible for the redistribution of our research by third party aggregators. For research, models or other data related to one or more securities, markets or asset classes (including related services) that may be available to you, please contact your GS representative or go to https://research.gs.com.",
+        "bbox": [
+            81,
+            124,
+            897,
+            171
+        ],
+        "page_idx": 26
+    },
+    {
+        "type": "text",
+        "text": "Disclosure information is also available at https://www.gs.com/research/hedge.html or from Research Compliance, 200 West Street, New York, NY 10282.",
+        "bbox": [
+            81,
+            175,
+            887,
+            198
+        ],
+        "page_idx": 26
+    },
+    {
+        "type": "text",
+        "text": "© 2026 GS.",
+        "text_level": 2,
+        "bbox": [
+            81,
+            206,
+            220,
+            218
+        ],
+        "page_idx": 26
+    },
+    {
+        "type": "text",
+        "text": "You are permitted to store, display, analyze, modify, reformat, and print the information made available to you via this service only for your own use. You may not resell or reverse engineer this information to calculate or develop any index for disclosure and/or marketing or create any other derivative works or commercial product(s), data or offering(s) without the express written consent of GS. You are not permitted to publish, transmit, or otherwise reproduce this information, in whole or in part, in any format to any third party without the express written consent of GS. This foregoing restriction includes, without limitation, using, extracting, downloading or retrieving this information, in whole or in part, to train or finetune a machine learning or artificial intelligence system, or to provide or reproduce this information, in whole or in part, as a prompt or input to any such system.",
+        "bbox": [
+            81,
+            224,
+            911,
+            303
+        ],
+        "page_idx": 26
+    },
+    {
+        "type": "header",
+        "text": "GS",
+        "bbox": [
+            81,
+            5,
+            184,
+            16
+        ],
+        "page_idx": 26
+    },
+    {
+        "type": "header",
+        "text": "Global: GS Economic Indicators Update",
+        "bbox": [
+            658,
+            7,
+            916,
+            21
+        ],
+        "page_idx": 26
+    },
+    {
+        "type": "footer",
+        "text": "8 June 2026",
+        "bbox": [
+            81,
+            954,
+            155,
+            965
+        ],
+        "page_idx": 26
+    },
+    {
+        "type": "page_number",
+        "text": "27",
+        "bbox": [
+            898,
+            954,
+            916,
+            963
+        ],
+        "page_idx": 26
+    }
+]

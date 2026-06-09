@@ -1,0 +1,39 @@
+[
+  {
+    "attempt": 1,
+    "round": 1,
+    "token_label": "MINER_U_2",
+    "submitted_pdf_count": 5,
+    "successful_pdf_count": 5,
+    "retry_pdf_count": 0,
+    "timed_out": false,
+    "error": "",
+    "states": [
+      {
+        "pdf": "/tmp/pdf_batch_001_w3k55_2r/pdfs/0001-01-CITI-China Economics-Macro Take on Recent Outbound Investment Tightening-260608.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_w3k55_2r/pdfs/0002-02-GS-GLOBAL WEEKLY KICKSTART-Equities Digest Higher Rates and Rising Supply-260608.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_w3k55_2r/pdfs/0003-03-GS-Global- GS Economic Indicators Update- Financial Conditions Tighten Back to Pre-War Levels in the US-260608.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_w3k55_2r/pdfs/0004-04-CITI-Global Luxury Goods-Card Insights-US Luxury Credit Card data - Resilient in May- 2Y spend turns positive-260608.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_w3k55_2r/pdfs/0005-05-MS-Global Credit- What We-re Watching-260608.pdf",
+        "state": "done",
+        "error": ""
+      }
+    ]
+  }
+]
