@@ -1,0 +1,17 @@
+Found 34 total PDFs; shard 4/40 has 5 PDFs, skips 0 already converted, will process 5 PDFs with batch_size=5.
+Running batch 1: 5 PDFs
+Found 5 PDFs. MinerU token slots available=2.
+MinerU attempt 1/4 using MINER_U_2: submitting 5 PDF(s).
+Uploading PDF to MinerU: /tmp/pdf_batch_001_01oo5asv/pdfs/0001-21-Morgan Stanley-Greater China Technology Semiconductors-Computex takeaways- Cloud- PC and old memory-260607.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_01oo5asv/pdfs/0002-22-Nomura-Asia Insights-Shipbuilding one year on- China-s lead endures as Washington turns to allies-260608.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_01oo5asv/pdfs/0003-23-Nomura-China factory automation -A 2-3 year transition before industrial AI scales up-260607.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_01oo5asv/pdfs/0004-24-Nomura-USD CNY fix model-Projection- 6.7921-260608.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_01oo5asv/pdfs/0005-25-Nomura-USD CNY fix model-Projection- 6.7812-260609.pdf
+MinerU attempt 1 using MINER_U_2 batch_id=e37b5571-fe57-4bf2-aaf4-937c6999b59a
+MinerU states: pending, pending, pending, pending, pending
+MinerU states: running, done, done, running, running
+MinerU states: running, done, done, done, done
+MinerU states: running, done, done, done, done
+MinerU states: done, done, done, done, done
+Done. Results written to /home/runner/work/rpt_edit/rpt_edit/xhs_notes/dropbox/260609/shard_4; successful_reports=5; mineru_timed_out=False; mineru_attempts=1
+All batches completed successfully. Generated 5 report directories.
