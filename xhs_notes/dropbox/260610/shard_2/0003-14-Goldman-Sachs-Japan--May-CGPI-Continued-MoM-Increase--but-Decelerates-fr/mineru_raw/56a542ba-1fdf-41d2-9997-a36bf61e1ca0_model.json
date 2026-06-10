@@ -1,0 +1,3939 @@
+[
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.079,
+                0.003,
+                0.298,
+                0.042
+            ],
+            "angle": 0,
+            "content": "Goldman Research Sachs"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.763,
+                0.005,
+                0.919,
+                0.021
+            ],
+            "angle": 0,
+            "content": "Economics Research"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.708,
+                0.028,
+                0.918,
+                0.043
+            ],
+            "angle": 0,
+            "content": "10 June 2026 | 10:28AM JST"
+        },
+        {
+            "type": "doc_title",
+            "bbox": [
+                0.08,
+                0.074,
+                0.838,
+                0.128
+            ],
+            "angle": 0,
+            "content": "Japan: May CGPI: Continued MoM Increase, but Decelerates from April's Surge"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.079,
+                0.172,
+                0.697,
+                0.28
+            ],
+            "angle": 0,
+            "content": "BOTTOM LINE: The domestic corporate goods price index (CGPI) decelerated from a +2.8% mom increase in April—which was the sharpest rise since April 1980 (+3.1%), excluding the effects of consumption tax hikes—but still rose +0.9% mom in May. In yoy terms, the index accelerated to +6.3% (April: +5.3%), the largest increase since March 2023 (+7.4%). Import prices also continued to rise, but the mom rate of increase decelerated compared to April.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.08,
+                0.292,
+                0.201,
+                0.307
+            ],
+            "angle": 0,
+            "content": "KEY NUMBERS:"
+        },
+        {
+            "type": "list",
+            "bbox": [
+                0.08,
+                0.322,
+                0.543,
+                0.414
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.081,
+                0.322,
+                0.474,
+                0.339
+            ],
+            "angle": 0,
+            "content": "■ Domestic CGPI, mom, May: +0.9%, April: +2.8%",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.081,
+                0.347,
+                0.463,
+                0.364
+            ],
+            "angle": 0,
+            "content": "Domestic CGPI, yoy, May: +6.3%, April: +5.3%",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.081,
+                0.372,
+                0.543,
+                0.389
+            ],
+            "angle": 0,
+            "content": "■ Export price (yen basis), mom, May: +0.4%, April: +4.1%",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.081,
+                0.397,
+                0.543,
+                0.414
+            ],
+            "angle": 0,
+            "content": "■ Import price (yen basis), mom, May: +2.7%, April: +8.7%",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.08,
+                0.428,
+                0.194,
+                0.442
+            ],
+            "angle": 0,
+            "content": "MAIN POINTS:"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.079,
+                0.456,
+                0.692,
+                0.599
+            ],
+            "angle": 0,
+            "content": "Domestic CGPI rises further, but increase rate decelerates from April for most categories: The domestic corporate goods price index (CGPI) decelerated from a +2.8% mom increase in April—which was the sharpest rise since April 1980 (+3.1%), excluding the effects of consumption tax hikes—but still rose +0.9% mom in May. This is because the sharp price increases seen across many items in April due to the impact of price revisions temporarily settled down in May. However, reflecting the price revisions in April, the index accelerated in yoy terms to +6.3% (April: +5.3%), the largest increase since March 2023 (+7.4%).",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.079,
+                0.612,
+                0.697,
+                0.845
+            ],
+            "angle": 0,
+            "content": "A breakdown shows a continued impact from the situation in the Middle East, but the mom rate of increase decelerated from April for most categories. Petroleum & coal products rose +3.0% mom, pushing up the overall index by 0.21 pp, but this marked a deceleration from +11.8% mom and a contribution of 0.75 pp in April. However, in yoy terms, prices accelerated sharply to +13.8% (April: +5.3%). Of these, gasoline rose +2.4% mom, and heavy oil rose +3.7%. Naphtha was flat in May, after surging +83.2% in April. As naphtha prices tend to be reviewed every three months, the next price revision would normally be in July. Large price increases were also seen for chemical products (+2.3% mom; contribution: +0.19 pp) and electric power, gas & water (+3.5% mom; contribution: +0.19 pp), but both decelerated from April. Meanwhile, among the 23 major categories, prices declined mom for four categories (production machinery, business-oriented machinery, electrical machinery, and agricultural, forestry & fishery products).",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.08,
+                0.858,
+                0.673,
+                0.875
+            ],
+            "angle": 0,
+            "content": "Yen-based import prices continue to rise on petroleum-related products, but",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.72,
+                0.173,
+                0.819,
+                0.185
+            ],
+            "angle": 0,
+            "content": "Yuriko Tanaka",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.72,
+                0.185,
+                0.813,
+                0.195
+            ],
+            "angle": 0,
+            "content": "+81(3)4587-9964",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.72,
+                0.195,
+                0.83,
+                0.204
+            ],
+            "angle": 0,
+            "content": "yuriko.tanaka@gs.com",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.72,
+                0.204,
+                0.865,
+                0.214
+            ],
+            "angle": 0,
+            "content": "GS Japan Co., Ltd.",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.08,
+                0.923,
+                0.858,
+                0.97
+            ],
+            "angle": 0,
+            "content": "Investors should consider this report as only a single factor in making their investment decision. For Reg AC certification and other important disclosures, see the Disclosure Appendix, or go to www.gs.com/research/hedge.html."
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.081,
+                0.004,
+                0.298,
+                0.025
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.081,
+                0.021,
+                0.154,
+                0.043
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.71,
+                0.029,
+                0.917,
+                0.043
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.766,
+                0.007,
+                0.916,
+                0.021
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.082,
+                0.078,
+                0.836,
+                0.1
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.079,
+                0.101,
+                0.148,
+                0.132
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.082,
+                0.173,
+                0.696,
+                0.189
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.081,
+                0.191,
+                0.691,
+                0.207
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.084,
+                0.211,
+                0.686,
+                0.224
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.081,
+                0.228,
+                0.681,
+                0.243
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.082,
+                0.247,
+                0.649,
+                0.26
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.082,
+                0.265,
+                0.374,
+                0.278
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.084,
+                0.294,
+                0.2,
+                0.307
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.083,
+                0.43,
+                0.194,
+                0.442
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.323,
+                0.474,
+                0.338
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.109,
+                0.348,
+                0.46,
+                0.362
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.109,
+                0.373,
+                0.541,
+                0.388
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.109,
+                0.398,
+                0.542,
+                0.413
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.082,
+                0.457,
+                0.674,
+                0.472
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.084,
+                0.476,
+                0.668,
+                0.489
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.082,
+                0.494,
+                0.689,
+                0.508
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.082,
+                0.511,
+                0.67,
+                0.527
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.082,
+                0.529,
+                0.682,
+                0.545
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.084,
+                0.549,
+                0.674,
+                0.562
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.084,
+                0.567,
+                0.673,
+                0.58
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.082,
+                0.584,
+                0.423,
+                0.599
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.082,
+                0.614,
+                0.672,
+                0.627
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.082,
+                0.632,
+                0.674,
+                0.645
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.084,
+                0.65,
+                0.662,
+                0.663
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.084,
+                0.668,
+                0.661,
+                0.681
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.082,
+                0.685,
+                0.695,
+                0.7
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.081,
+                0.704,
+                0.682,
+                0.718
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.082,
+                0.722,
+                0.685,
+                0.735
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.084,
+                0.74,
+                0.661,
+                0.753
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.081,
+                0.757,
+                0.696,
+                0.772
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.081,
+                0.776,
+                0.685,
+                0.79
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.084,
+                0.795,
+                0.691,
+                0.808
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.082,
+                0.812,
+                0.658,
+                0.826
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.082,
+                0.83,
+                0.379,
+                0.845
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.083,
+                0.857,
+                0.671,
+                0.874
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.722,
+                0.172,
+                0.819,
+                0.187
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.724,
+                0.185,
+                0.811,
+                0.195
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.724,
+                0.195,
+                0.83,
+                0.204
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.724,
+                0.203,
+                0.864,
+                0.213
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.083,
+                0.923,
+                0.855,
+                0.94
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.085,
+                0.941,
+                0.688,
+                0.954
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.082,
+                0.955,
+                0.341,
+                0.969
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.082,
+                0.005,
+                0.185,
+                0.019
+            ],
+            "angle": 0,
+            "content": "GS"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.876,
+                0.009,
+                0.917,
+                0.022
+            ],
+            "angle": 0,
+            "content": "Japan"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.275,
+                0.04,
+                0.915,
+                0.2
+            ],
+            "angle": 0,
+            "content": "mom pace decelerates from April's surge: Import prices (yen basis) continued to rise, increasing +2.7% mom, but the pace decelerated compared to +8.7% in April. In yoy terms, the index accelerated to +25.5% (April: +21.0%). Petroleum, coal & natural gas rose +8.0% mom, pushing up the overall index by 1.7 pp, but this marked a sharp deceleration from +27.3% in April. Import prices also rose for categories such as chemical products (+1.7%) and metals & metal products (+1.2%), but the rate of increase remained small. Ethylene, which is included in chemical products, fell -4.1% mom in May after rising +69.0% in April. In addition, import prices for foods & beverages and machinery-related categories turned negative mom.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.275,
+                0.214,
+                0.877,
+                0.284
+            ],
+            "angle": 0,
+            "content": "Meanwhile, yen-based export prices also rose, albeit slightly, by \\(+0.4\\%\\) mom (April: \\(+4.1\\%\\)), and posted double-digit growth in yoy terms at \\(+20.6\\%\\) (April: \\(+19.1\\%\\)). In particular, export prices for electrical & electronic equipment showed high growth, rising \\(+3.7\\%\\) mom and \\(+35.6\\%\\) yoy.",
+            "merge_prev": false
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.274,
+                0.303,
+                0.584,
+                0.318
+            ],
+            "angle": 0,
+            "content": "Exhibit 1: Inflation Indices and USD/JPY Rate"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.276,
+                0.328,
+                0.911,
+                0.6
+            ],
+            "angle": 0,
+            "content": "| Year | Import Price (Yen Basis; LHS) | USD/JPY (LHS) | National Core CPI (Incl VAT; RHS) | Domestic CGPI (Incl VAT; RHS) |\n|---|---|---|---|---|\n| 2012 | ~5 | ~-5 | ~0 | ~0 |\n| 2013 | ~15 | ~25 | ~0 | ~-10 |\n| 2014 | ~18 | ~20 | ~15 | ~22 |\n| 2015 | ~5 | ~10 | ~10 | ~-15 |\n| 2016 | ~-15 | ~-20 | ~-5 | ~-25 |\n| 2017 | ~12 | ~5 | ~5 | ~-10 |\n| 2018 | ~15 | ~5 | ~5 | ~18 |\n| 2019 | ~10 | ~0 | ~5 | ~-5 |\n| 2020 | ~-10 | ~-5 | ~0 | ~-10 |\n| 2021 | ~-20 | ~0 | ~-5 | ~-15 |\n| 2022 | ~45 | ~30 | ~30 | ~50 |\n| 2023 | ~48 | ~35 | ~40 | ~55 |\n| 2024 | ~-15 | ~10 | ~20 | ~-5 |\n| 2025 | ~-10 | ~5 | ~25 | ~20 |\n| 2026/5 | ~25 | ~10 | ~10 | ~6 |\nPercent change yoy\nPercent change yoy",
+            "sub_type": "line chart"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.274,
+                0.616,
+                0.584,
+                0.628
+            ],
+            "angle": 0,
+            "content": "Source: Ministry of Internal Affairs and Communications, BoJ"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.084,
+                0.955,
+                0.163,
+                0.965
+            ],
+            "angle": 0,
+            "content": "10 June 2026"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.908,
+                0.956,
+                0.917,
+                0.965
+            ],
+            "angle": 0,
+            "content": "2"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.082,
+                0.005,
+                0.185,
+                0.018
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.874,
+                0.007,
+                0.92,
+                0.025
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.274,
+                0.041,
+                0.903,
+                0.056
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.274,
+                0.059,
+                0.882,
+                0.074
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.274,
+                0.078,
+                0.891,
+                0.091
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.274,
+                0.095,
+                0.858,
+                0.11
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.275,
+                0.114,
+                0.855,
+                0.128
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.275,
+                0.132,
+                0.857,
+                0.145
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.274,
+                0.15,
+                0.885,
+                0.164
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.274,
+                0.168,
+                0.914,
+                0.183
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.274,
+                0.186,
+                0.685,
+                0.201
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.275,
+                0.215,
+                0.875,
+                0.229
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.274,
+                0.233,
+                0.87,
+                0.247
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.274,
+                0.251,
+                0.876,
+                0.265
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.274,
+                0.268,
+                0.53,
+                0.284
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.275,
+                0.304,
+                0.582,
+                0.317
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.275,
+                0.616,
+                0.582,
+                0.627
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.084,
+                0.954,
+                0.164,
+                0.967
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.907,
+                0.956,
+                0.918,
+                0.967
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.082,
+                0.005,
+                0.186,
+                0.019
+            ],
+            "angle": 0,
+            "content": "GS"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.875,
+                0.009,
+                0.917,
+                0.022
+            ],
+            "angle": 0,
+            "content": "Japan"
+        },
+        {
+            "type": "image_caption",
+            "bbox": [
+                0.273,
+                0.051,
+                0.653,
+                0.067
+            ],
+            "angle": 0,
+            "content": "Exhibit 2: Domestic CGPI: Gasoline and Naphtha Prices"
+        },
+        {
+            "type": "chart",
+            "bbox": [
+                0.274,
+                0.076,
+                0.918,
+                0.351
+            ],
+            "angle": 0,
+            "content": "| Year | Domestic CGPI: Gasoline | Domestic CGPI : Naphtha | Domestic CGPI: Ethylene |\n|---|---|---|---|\n| 2020 | 115 | 135 | 125 |\n| 2021 | 105 | 115 | 95 |\n| 2022 | 125 | 185 | 165 |\n| 2023 | 125 | 205 | 185 |\n| 2024 | 135 | 230 | 205 |\n| 2025 | 140 | 225 | 200 |\n| 2026/5 | 125 | 370 | 310 |\n2020=100; 2020=100; 2026/5",
+            "sub_type": "line chart"
+        },
+        {
+            "type": "image_footnote",
+            "bbox": [
+                0.273,
+                0.362,
+                0.336,
+                0.373
+            ],
+            "angle": 0,
+            "content": "Source: BoJ"
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.285,
+                0.393,
+                0.513,
+                0.414
+            ],
+            "angle": 0,
+            "content": "The Japan Economics Team"
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.286,
+                0.437,
+                0.365,
+                0.448
+            ],
+            "angle": 0,
+            "content": "Akira Otani"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.286,
+                0.449,
+                0.373,
+                0.457
+            ],
+            "angle": 0,
+            "content": "+81(3)4587-9960",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.286,
+                0.459,
+                0.379,
+                0.467
+            ],
+            "angle": 0,
+            "content": "akira.otani@gs.com",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.286,
+                0.468,
+                0.428,
+                0.476
+            ],
+            "angle": 0,
+            "content": "GS Japan Co., Ltd.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.497,
+                0.437,
+                0.592,
+                0.448
+            ],
+            "angle": 0,
+            "content": "Tomohiro Ota"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.497,
+                0.449,
+                0.584,
+                0.457
+            ],
+            "angle": 0,
+            "content": "+81(3)4587-9984",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.497,
+                0.459,
+                0.602,
+                0.467
+            ],
+            "angle": 0,
+            "content": "tomohiro.ota@gs.com",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.497,
+                0.468,
+                0.639,
+                0.476
+            ],
+            "angle": 0,
+            "content": "GS Japan Co., Ltd.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.707,
+                0.437,
+                0.804,
+                0.448
+            ],
+            "angle": 0,
+            "content": "Yuriko Tanaka"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.708,
+                0.449,
+                0.794,
+                0.457
+            ],
+            "angle": 0,
+            "content": "+81(3)4587-9964",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.708,
+                0.459,
+                0.814,
+                0.467
+            ],
+            "angle": 0,
+            "content": "yuriko.tanaka@gs.com",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.708,
+                0.468,
+                0.849,
+                0.476
+            ],
+            "angle": 0,
+            "content": "GS Japan Co., Ltd.",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.084,
+                0.955,
+                0.163,
+                0.966
+            ],
+            "angle": 0,
+            "content": "10 June 2026"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.908,
+                0.956,
+                0.917,
+                0.966
+            ],
+            "angle": 0,
+            "content": "3"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.285,
+                0.393,
+                0.512,
+                0.412
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.082,
+                0.005,
+                0.185,
+                0.018
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.275,
+                0.052,
+                0.651,
+                0.067
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.285,
+                0.458,
+                0.379,
+                0.466
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.496,
+                0.436,
+                0.592,
+                0.447
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.496,
+                0.458,
+                0.602,
+                0.466
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.706,
+                0.436,
+                0.804,
+                0.447
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.707,
+                0.458,
+                0.814,
+                0.466
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.286,
+                0.467,
+                0.428,
+                0.475
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.496,
+                0.467,
+                0.639,
+                0.475
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.707,
+                0.467,
+                0.849,
+                0.475
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.874,
+                0.007,
+                0.92,
+                0.024
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.275,
+                0.363,
+                0.335,
+                0.373
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.285,
+                0.436,
+                0.365,
+                0.448
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.285,
+                0.448,
+                0.373,
+                0.456
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.496,
+                0.448,
+                0.584,
+                0.456
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.707,
+                0.448,
+                0.794,
+                0.456
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.084,
+                0.954,
+                0.163,
+                0.967
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.908,
+                0.956,
+                0.918,
+                0.967
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.082,
+                0.006,
+                0.185,
+                0.018
+            ],
+            "angle": 0,
+            "content": "GS"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.876,
+                0.009,
+                0.917,
+                0.022
+            ],
+            "angle": 0,
+            "content": "Japan"
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.081,
+                0.04,
+                0.253,
+                0.06
+            ],
+            "angle": 0,
+            "content": "Disclosure Appendix"
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.081,
+                0.082,
+                0.137,
+                0.096
+            ],
+            "angle": 0,
+            "content": "Reg AC"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.082,
+                0.104,
+                0.895,
+                0.128
+            ],
+            "angle": 0,
+            "content": "I, Yuriko Tanaka, hereby certify that all of the views expressed in this report accurately reflect my personal views, which have not been influenced by considerations of the firm's business or client relationships.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.082,
+                0.133,
+                0.887,
+                0.147
+            ],
+            "angle": 0,
+            "content": "Unless otherwise stated, the individuals listed on the cover page of this report are analysts in GS' Global Investment Research division.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.082,
+                0.152,
+                0.466,
+                0.164
+            ],
+            "angle": 0,
+            "content": "Contributing Authors: Yuriko Tanaka GS Japan Co., Ltd..",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.082,
+                0.17,
+                0.895,
+                0.193
+            ],
+            "angle": 0,
+            "content": "Unless otherwise stated, the individuals listed in the Contributing Authors disclosure of this report are analysts in GS' Global Investment Research division.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.082,
+                0.206,
+                0.169,
+                0.22
+            ],
+            "angle": 0,
+            "content": "Disclosures"
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.082,
+                0.226,
+                0.252,
+                0.24
+            ],
+            "angle": 0,
+            "content": "Regulatory disclosures"
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.082,
+                0.245,
+                0.515,
+                0.26
+            ],
+            "angle": 0,
+            "content": "Disclosures required by United States laws and regulations"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.082,
+                0.26,
+                0.907,
+                0.304
+            ],
+            "angle": 0,
+            "content": "See company-specific regulatory disclosures above for any of the following disclosures required as to companies referred to in this report: manager or co-manager in a pending transaction; \\(1\\%\\) or other ownership; compensation for certain services; types of client relationships; managed/co-managed public offerings in prior periods; directorships; for equity securities, market making and/or specialist role. GS trades or may trade as a principal in debt securities (or in related derivatives) of issuers discussed in this report.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.082,
+                0.31,
+                0.913,
+                0.389
+            ],
+            "angle": 0,
+            "content": "The following are additional required disclosures: Ownership and material conflicts of interest: GS policy prohibits its analysts, professionals reporting to analysts and members of their households from owning securities of any company in the analyst's area of coverage. Analyst compensation: Analysts are paid in part based on the profitability of GS, which includes investment banking revenues. Analyst as officer or director: GS policy generally prohibits its analysts, persons reporting to analysts or members of their households from serving as an officer, director or advisor of any company in the analyst's area of coverage. Non-U.S. Analysts: Non-U.S. analysts may not be associated persons of GS & Co. LLC and therefore may not be subject to FINRA Rule 2241 or FINRA Rule 2242 restrictions on communications with a subject company, public appearances and trading in securities covered by the analysts.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.082,
+                0.401,
+                0.874,
+                0.415
+            ],
+            "angle": 0,
+            "content": "Additional disclosures required under the laws and regulations of jurisdictions other than the United States"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.082,
+                0.416,
+                0.917,
+                0.926
+            ],
+            "angle": 0,
+            "content": "The following disclosures are those required by the jurisdiction indicated, except to the extent already made above pursuant to United States laws and regulations. Australia: GS Australia Pty Ltd and its affiliates are not authorised deposit-taking institutions (as that term is defined in the Banking Act 1959 (Cth)) in Australia and do not provide banking services, nor carry on a banking business, in Australia. This research, and any access to it, is intended only for “wholesale clients” within the meaning of the Australian Corporations Act, unless otherwise agreed by GS. In producing research reports, members of Global Investment Research of GS Australia may attend site visits and other meetings hosted by the companies and other entities which are the subject of its research reports. In some instances the costs of such site visits or meetings may be met in part or in whole by the issuers concerned if GS Australia considers it is appropriate and reasonable in the specific circumstances relating to the site visit or meeting. To the extent that the contents of this document contains any financial product advice, it is general advice only and has been prepared by GS without taking into account a client’s objectives, financial situation or needs. A client should, before acting on any such advice, consider the appropriateness of the advice having regard to the client’s own objectives, financial situation and needs. A copy of certain GS Australia and New Zealand disclosure of interests and a copy of GS’ Australian Sell-Side Research Independence Policy Statement are available at: https://www.goldmansachs.com/disclosures/australia-new-zealand/index.html. Brazil: Disclosure information in relation to CVM Resolution n. 20 is available at https://www.gs.com/worldwide/brazil/area/gir/index.html. Where applicable, the Brazil-registered analyst primarily responsible for the content of this research report, as defined in Article 20 of CVM Resolution n. 20, is the first author named at the beginning of this report, unless indicated otherwise at the end of the text. Canada: This information is being provided to you for information purposes only and is not, and under no circumstances should be construed as, an advertisement, offering or solicitation by GS & Co. LLC for purchasers of securities in Canada to trade in any Canadian security. GS & Co. LLC is not registered as a dealer in any jurisdiction in Canada under applicable Canadian securities laws and generally is not permitted to trade in Canadian securities and may be prohibited from selling certain securities and products in certain jurisdictions in Canada. If you wish to trade in any Canadian securities or other products in Canada please contact GS Canada Inc., an affiliate of The GS Group Inc., or another registered Canadian dealer. Hong Kong: Further information on the securities of covered companies referred to in this research may be obtained on request from GS (Asia) L.L.C. India: Further information on the subject company or companies referred to in this research may be obtained from GS (India) Securities Private Limited, Research Analyst - SEBI Registration Number INH000001493, 10th Floor, Ascent-Worli, Sudam Kalu Ahire Marg, Worli, Mumbai-400 025, India, Corporate Identity Number U74140MH2006FTC160634, Phone +91 22 6616 9000, Fax +91 22 6616 9001. GS may beneficially own 1% or more of the securities (as such term is defined in clause 2 (h) the Indian Securities Contracts (Regulation) Act, 1956) of the subject company or companies referred to in this research report. Investment in securities market are subject to market risks. Read all the related documents carefully before investing. Registration granted by SEBI and certification from NISM in no way guarantee performance of the intermediary or provide any assurance of returns to investors. GS (India) Securities Private Limited compliance officer and investor grievance contact details can be found at: https://www.goldmansachs.com/worldwide/india/documents/Grievance-Redressal-and-Escalation-Matrix.pdf, and a copy of the annual audit compliance report can be found at this link: https://publishing.gs.com/content/site/india-annual-compliance-report.html. Japan: See below. Korea: This research, and any access to it, is intended only for “professional investors” within the meaning of the Financial Services and Capital Markets Act, unless otherwise agreed by GS. Further information on the subject company or companies referred to in this research may be obtained from GS (Asia) L.L.C., Seoul Branch. New Zealand: GS New Zealand Limited and its affiliates are neither “registered banks” nor “deposit takers” (as defined in the Reserve Bank of New Zealand Act 1989) in New Zealand. This research, and any access to it, is intended for “wholesale clients” (as defined in the Financial Advisers Act 2008) unless otherwise agreed by GS. A copy of certain GS Australia and New Zealand disclosure of interests is available at: https://www.goldmansachs.com/disclosures/australia-new-zealand/index.html. Russia: Research reports distributed in the Russian Federation are not advertising as defined in the Russian legislation, but are information and analysis not having product promotion as their main purpose and do not provide appraisal within the meaning of the Russian legislation on appraisal activity. Research reports do not constitute a personalized investment recommendation as defined in Russian laws and regulations, are not addressed to a specific client, and are prepared without analyzing the financial circumstances, investment profiles or risk profiles of clients. GS assumes no responsibility for any investment decisions that may be taken by a client or any other person based on this research report. Singapore: GS (Singapore) Pte. (Company Number: 198602165W), which is regulated by the Monetary Authority of Singapore, accepts legal responsibility for this research, and should be contacted with respect to any matters arising from, or in connection with, this research. Taiwan: This material is for reference only and must not be reprinted without permission. Investors should carefully consider their own investment risk. Investment results are the responsibility of the individual investor. United Kingdom: Persons who would be categorized as retail clients in the United Kingdom, as such term is defined in the rules of the Financial Conduct Authority, should read this research in conjunction with prior GS on the covered",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.084,
+                0.955,
+                0.163,
+                0.966
+            ],
+            "angle": 0,
+            "content": "10 June 2026"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.908,
+                0.956,
+                0.917,
+                0.965
+            ],
+            "angle": 0,
+            "content": "4"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.083,
+                0.246,
+                0.515,
+                0.261
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.083,
+                0.006,
+                0.185,
+                0.018
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.874,
+                0.007,
+                0.92,
+                0.025
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.084,
+                0.955,
+                0.163,
+                0.966
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.908,
+                0.956,
+                0.918,
+                0.966
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.082,
+                0.039,
+                0.252,
+                0.06
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.082,
+                0.226,
+                0.251,
+                0.241
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.08,
+                0.079,
+                0.139,
+                0.098
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.082,
+                0.206,
+                0.169,
+                0.222
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.081,
+                0.104,
+                0.893,
+                0.117
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.084,
+                0.118,
+                0.407,
+                0.127
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.082,
+                0.17,
+                0.896,
+                0.182
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.082,
+                0.183,
+                0.183,
+                0.193
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.083,
+                0.134,
+                0.886,
+                0.146
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.082,
+                0.4,
+                0.875,
+                0.417
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.084,
+                0.152,
+                0.466,
+                0.165
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.082,
+                0.26,
+                0.907,
+                0.27
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.082,
+                0.271,
+                0.901,
+                0.281
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.082,
+                0.282,
+                0.884,
+                0.292
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.081,
+                0.292,
+                0.559,
+                0.304
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.082,
+                0.31,
+                0.857,
+                0.322
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.082,
+                0.323,
+                0.911,
+                0.333
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.082,
+                0.333,
+                0.912,
+                0.343
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.082,
+                0.345,
+                0.89,
+                0.355
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.084,
+                0.356,
+                0.902,
+                0.366
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.084,
+                0.367,
+                0.886,
+                0.377
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.082,
+                0.379,
+                0.516,
+                0.389
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.084,
+                0.416,
+                0.907,
+                0.426
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.082,
+                0.427,
+                0.896,
+                0.438
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.082,
+                0.438,
+                0.909,
+                0.448
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.082,
+                0.45,
+                0.868,
+                0.46
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.082,
+                0.461,
+                0.902,
+                0.471
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.082,
+                0.472,
+                0.91,
+                0.482
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.082,
+                0.483,
+                0.912,
+                0.493
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.082,
+                0.494,
+                0.903,
+                0.504
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.082,
+                0.504,
+                0.891,
+                0.515
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.081,
+                0.515,
+                0.866,
+                0.528
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.082,
+                0.527,
+                0.889,
+                0.537
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.082,
+                0.537,
+                0.903,
+                0.549
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.081,
+                0.549,
+                0.885,
+                0.56
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.081,
+                0.559,
+                0.914,
+                0.572
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.081,
+                0.57,
+                0.915,
+                0.583
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.082,
+                0.583,
+                0.879,
+                0.593
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.082,
+                0.594,
+                0.868,
+                0.604
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.082,
+                0.605,
+                0.907,
+                0.615
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.082,
+                0.616,
+                0.89,
+                0.626
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.082,
+                0.627,
+                0.871,
+                0.637
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.082,
+                0.638,
+                0.901,
+                0.648
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.082,
+                0.649,
+                0.89,
+                0.66
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.081,
+                0.66,
+                0.873,
+                0.671
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.082,
+                0.671,
+                0.899,
+                0.681
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.082,
+                0.683,
+                0.879,
+                0.693
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.081,
+                0.692,
+                0.915,
+                0.706
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.082,
+                0.705,
+                0.902,
+                0.715
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.082,
+                0.716,
+                0.812,
+                0.726
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.082,
+                0.727,
+                0.871,
+                0.738
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.082,
+                0.738,
+                0.907,
+                0.75
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.082,
+                0.749,
+                0.895,
+                0.759
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.082,
+                0.76,
+                0.893,
+                0.771
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.082,
+                0.771,
+                0.914,
+                0.782
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.082,
+                0.782,
+                0.858,
+                0.792
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.082,
+                0.792,
+                0.872,
+                0.805
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.082,
+                0.805,
+                0.877,
+                0.815
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.082,
+                0.815,
+                0.912,
+                0.826
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.082,
+                0.827,
+                0.896,
+                0.837
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.082,
+                0.838,
+                0.882,
+                0.849
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.082,
+                0.849,
+                0.916,
+                0.859
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.081,
+                0.859,
+                0.914,
+                0.872
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.081,
+                0.87,
+                0.888,
+                0.883
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.081,
+                0.882,
+                0.908,
+                0.893
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.082,
+                0.893,
+                0.846,
+                0.903
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.081,
+                0.903,
+                0.893,
+                0.915
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.081,
+                0.914,
+                0.886,
+                0.927
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.082,
+                0.006,
+                0.185,
+                0.018
+            ],
+            "angle": 0,
+            "content": "GS"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.876,
+                0.009,
+                0.917,
+                0.022
+            ],
+            "angle": 0,
+            "content": "Japan"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.082,
+                0.04,
+                0.902,
+                0.064
+            ],
+            "angle": 0,
+            "content": "companies referred to herein and should refer to the risk warnings that have been sent to them by GS International. A copy of these risks warnings, and a glossary of certain financial terms used in this report, are available from GS International on request.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.082,
+                0.07,
+                0.908,
+                0.149
+            ],
+            "angle": 0,
+            "content": "European Union and United Kingdom: Disclosure information in relation to Article 6 (2) of the European Commission Delegated Regulation (EU) (2016/958) supplementing Regulation (EU) No 596/2014 of the European Parliament and of the Council (including as that Delegated Regulation is implemented into United Kingdom domestic law and regulation following the United Kingdom's departure from the European Union and the European Economic Area) with regard to regulatory technical standards for the technical arrangements for objective presentation of investment recommendations or other information recommending or suggesting an investment strategy and for disclosure of particular interests or indications of conflicts of interest is available at https://www.gs.com/disclosures/europeanpolicy.html which states the European Policy for Managing Conflicts of Interest in Connection with Investment Research.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.082,
+                0.155,
+                0.915,
+                0.212
+            ],
+            "angle": 0,
+            "content": "Japan: GS Japan Co., Ltd. is a Financial Instrument Dealer registered with the Kanto Financial Bureau under registration number Kinsho 69, and a member of Japan Securities Dealers Association, Financial Futures Association of Japan Type II Financial Instruments Firms Association, and Investment Management Association of Japan. Sales and purchase of equities are subject to commission pre-determined with clients plus consumption tax. See company-specific disclosures as to any applicable disclosures required by Japanese stock exchanges, the Japanese Securities Dealers Association or the Japanese Securities Finance Company.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.082,
+                0.224,
+                0.351,
+                0.239
+            ],
+            "angle": 0,
+            "content": "Global product; distributing entities"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.082,
+                0.239,
+                0.917,
+                0.361
+            ],
+            "angle": 0,
+            "content": "GS Global Investment Research produces and distributes research products for clients of GS on a global basis. Analysts based in GS offices around the world produce research on industries and companies, and research on macroeconomics, currencies, commodities and portfolio strategy. This research is disseminated in Australia by GS Australia Pty Ltd (ABN 21 006 797 897); in Brazil by GS do Brasil Corretora de Títulos e Valores Mobiliários S.A.; Public Communication Channel GS Brazil: 0800 727 5764 and / or contatogoldmanbrasil@gs.com. Available Weekdays (except holidays), from 9am to 6pm. Canal de Comunicação com o Público GS Brasil: 0800 727 5764 e/ou contatogoldmanbrasil@gs.com. Horário de funcionamento: segunda-feira à sexta-feira (exceto feriados), das 9h às 18h; in Canada by GS & Co. LLC; in Hong Kong by GS (Asia) L.L.C.; in India by GS (India) Securities Private Ltd.; in Japan by GS Japan Co., Ltd.; in the Republic of Korea by GS (Asia) L.L.C., Seoul Branch; in New Zealand by GS New Zealand Limited; in Russia by OOO GS; in Singapore by GS (Singapore) Pte. (Company Number: 198602165W); and in the United States of America by GS & Co. LLC. GS International has approved this research in connection with its distribution in the United Kingdom.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.082,
+                0.366,
+                0.88,
+                0.391
+            ],
+            "angle": 0,
+            "content": "GS International (“GSI”), authorised by the Prudential Regulation Authority (“PRA”) and regulated by the Financial Conduct Authority (“FCA”) and the PRA, has approved this research in connection with its distribution in the United Kingdom.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.082,
+                0.396,
+                0.905,
+                0.442
+            ],
+            "angle": 0,
+            "content": "European Economic Area: GS Bank Europe SE (“GSBE”) is a credit institution incorporated in Germany and, within the Single Supervisory Mechanism, subject to direct prudential supervision by the European Central Bank and in other respects supervised by German Federal Financial Supervisory Authority (Bundesanstalt für Finanzdienstleistungsaufsicht, BaFin) and Deutsche Bundesbank and disseminates research within the European Economic Area.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.082,
+                0.454,
+                0.229,
+                0.468
+            ],
+            "angle": 0,
+            "content": "General disclosures"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.082,
+                0.468,
+                0.915,
+                0.524
+            ],
+            "angle": 0,
+            "content": "This research is for our clients only. Other than disclosures relating to GS, this research is based on current public information that we consider reliable, but we do not represent it is accurate or complete, and it should not be relied on as such. The information, opinions, estimates and forecasts contained herein are as of the date hereof and are subject to change without prior notification. We seek to update our research as appropriate, but various regulations may prevent us from doing so. Other than certain industry reports published on a periodic basis, the large majority of reports are published at irregular intervals as appropriate in the analyst's judgment.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.082,
+                0.53,
+                0.915,
+                0.565
+            ],
+            "angle": 0,
+            "content": "GS conducts a global full-service, integrated investment banking, investment management, and brokerage business. We have investment banking and other business relationships with a substantial percentage of the companies covered by Global Investment Research. GS & Co. LLC, the United States broker dealer, is a member of SIPC (https://www.sipc.org).",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.082,
+                0.57,
+                0.915,
+                0.605
+            ],
+            "angle": 0,
+            "content": "Our salespeople, traders, and other professionals may provide oral or written market commentary or trading strategies to our clients and principal trading desks that reflect opinions that are contrary to the opinions expressed in this research. Our asset management area, principal trading desks and investing businesses may make investment decisions that are inconsistent with the recommendations or views expressed in this research.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.082,
+                0.611,
+                0.89,
+                0.635
+            ],
+            "angle": 0,
+            "content": "We and our affiliates, officers, directors, and employees will from time to time have long or short positions in, act as principal in, and buy or sell, the securities or derivatives, if any, referred to in this research, unless otherwise prohibited by regulation or GS policy.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.082,
+                0.64,
+                0.915,
+                0.664
+            ],
+            "angle": 0,
+            "content": "The views attributed to third party presenters at GS arranged conferences, including individuals from other parts of GS, do not necessarily reflect those of Global Investment Research and are not an official view of GS.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.082,
+                0.67,
+                0.912,
+                0.694
+            ],
+            "angle": 0,
+            "content": "Any third party referenced herein, including any salespeople, traders and other professionals or members of their household, may have positions in the products mentioned that are inconsistent with the views expressed by analysts named in this report.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.082,
+                0.7,
+                0.885,
+                0.724
+            ],
+            "angle": 0,
+            "content": "This research is focused on investment themes across markets, industries and sectors. It does not attempt to distinguish between the prospects or performance of, or provide analysis of, individual companies within any industry or sector we describe.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.082,
+                0.729,
+                0.867,
+                0.753
+            ],
+            "angle": 0,
+            "content": "Any trading recommendation in this research relating to an equity or credit security or securities within an industry or sector is reflective of the investment theme being discussed and is not a recommendation of any such security in isolation.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.082,
+                0.758,
+                0.917,
+                0.827
+            ],
+            "angle": 0,
+            "content": "This research is not an offer to sell or the solicitation of an offer to buy any security in any jurisdiction where such an offer or solicitation would be illegal. It does not constitute a personal recommendation or take into account the particular investment objectives, financial situations, or needs of individual clients. Clients should consider whether any advice or recommendation in this research is suitable for their particular circumstances and, if appropriate, seek professional advice, including tax advice. The price and value of investments referred to in this research and the income from them may fluctuate. Past performance is not a guide to future performance, future returns are not guaranteed, and a loss of original capital may occur. Fluctuations in exchange rates could have adverse effects on the value or price of, or income derived from, certain investments.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.082,
+                0.833,
+                0.905,
+                0.89
+            ],
+            "angle": 0,
+            "content": "Certain transactions, including those involving futures, options, and other derivatives, give rise to substantial risk and are not suitable for all investors. Investors should review current options and futures disclosure documents which are available from GS sales representatives or at https://www.theocc.com/about/publications/character-risks.jsp and https://www.goldmansachs.com/disclosures/cftc_fcm_disclosures. Transaction costs may be significant in option strategies calling for multiple purchase and sales of options such as spreads. Supporting documentation will be supplied upon request.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.082,
+                0.895,
+                0.9,
+                0.93
+            ],
+            "angle": 0,
+            "content": "Differing Levels of Service provided by Global Investment Research: The level and types of services provided to you by GS Global Investment Research may vary as compared to that provided to internal and other external clients of GS, depending on various factors including your individual preferences as to the frequency and manner of receiving communication, your risk profile and investment focus and perspective (e.g.,",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.084,
+                0.955,
+                0.163,
+                0.966
+            ],
+            "angle": 0,
+            "content": "10 June 2026"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.908,
+                0.956,
+                0.916,
+                0.965
+            ],
+            "angle": 0,
+            "content": "5"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.084,
+                0.455,
+                0.228,
+                0.469
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.083,
+                0.006,
+                0.185,
+                0.018
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.874,
+                0.007,
+                0.92,
+                0.025
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.084,
+                0.955,
+                0.163,
+                0.966
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.908,
+                0.956,
+                0.918,
+                0.967
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.082,
+                0.04,
+                0.899,
+                0.052
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.084,
+                0.054,
+                0.792,
+                0.063
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.084,
+                0.532,
+                0.903,
+                0.542
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.082,
+                0.543,
+                0.914,
+                0.553
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.081,
+                0.552,
+                0.528,
+                0.565
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.084,
+                0.573,
+                0.885,
+                0.582
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.084,
+                0.584,
+                0.915,
+                0.593
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.082,
+                0.595,
+                0.832,
+                0.604
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.082,
+                0.611,
+                0.889,
+                0.624
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.081,
+                0.622,
+                0.775,
+                0.636
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.082,
+                0.641,
+                0.916,
+                0.654
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.081,
+                0.653,
+                0.644,
+                0.664
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.082,
+                0.671,
+                0.912,
+                0.683
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.084,
+                0.684,
+                0.634,
+                0.693
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.082,
+                0.895,
+                0.878,
+                0.908
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.082,
+                0.909,
+                0.899,
+                0.919
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.081,
+                0.918,
+                0.874,
+                0.931
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.082,
+                0.366,
+                0.878,
+                0.379
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.082,
+                0.378,
+                0.665,
+                0.391
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.082,
+                0.699,
+                0.885,
+                0.712
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.081,
+                0.712,
+                0.646,
+                0.723
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.082,
+                0.729,
+                0.865,
+                0.741
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.083,
+                0.743,
+                0.614,
+                0.752
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.082,
+                0.156,
+                0.91,
+                0.167
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.082,
+                0.168,
+                0.882,
+                0.178
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.082,
+                0.178,
+                0.914,
+                0.189
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.082,
+                0.19,
+                0.861,
+                0.201
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.082,
+                0.201,
+                0.397,
+                0.212
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.082,
+                0.397,
+                0.903,
+                0.408
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.082,
+                0.409,
+                0.876,
+                0.418
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.082,
+                0.42,
+                0.869,
+                0.43
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.082,
+                0.43,
+                0.226,
+                0.442
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.084,
+                0.469,
+                0.882,
+                0.479
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.082,
+                0.48,
+                0.895,
+                0.49
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.082,
+                0.491,
+                0.851,
+                0.502
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.082,
+                0.503,
+                0.912,
+                0.513
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.082,
+                0.514,
+                0.556,
+                0.524
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.082,
+                0.76,
+                0.915,
+                0.771
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.082,
+                0.772,
+                0.908,
+                0.782
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.082,
+                0.784,
+                0.912,
+                0.793
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.082,
+                0.795,
+                0.908,
+                0.804
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.082,
+                0.804,
+                0.879,
+                0.815
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.082,
+                0.816,
+                0.696,
+                0.826
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.082,
+                0.835,
+                0.902,
+                0.844
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.082,
+                0.846,
+                0.861,
+                0.856
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.081,
+                0.856,
+                0.905,
+                0.868
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.082,
+                0.868,
+                0.877,
+                0.878
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.082,
+                0.879,
+                0.209,
+                0.889
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.082,
+                0.071,
+                0.878,
+                0.082
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.082,
+                0.083,
+                0.884,
+                0.094
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.082,
+                0.093,
+                0.907,
+                0.105
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.082,
+                0.105,
+                0.818,
+                0.115
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.082,
+                0.116,
+                0.905,
+                0.127
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.082,
+                0.128,
+                0.893,
+                0.138
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.082,
+                0.138,
+                0.352,
+                0.149
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.083,
+                0.224,
+                0.35,
+                0.239
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.084,
+                0.239,
+                0.909,
+                0.249
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.082,
+                0.25,
+                0.909,
+                0.26
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.082,
+                0.261,
+                0.909,
+                0.271
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.082,
+                0.272,
+                0.821,
+                0.282
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.082,
+                0.284,
+                0.904,
+                0.294
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.082,
+                0.295,
+                0.916,
+                0.305
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.082,
+                0.306,
+                0.865,
+                0.316
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.082,
+                0.317,
+                0.905,
+                0.327
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.082,
+                0.328,
+                0.912,
+                0.338
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.082,
+                0.34,
+                0.879,
+                0.349
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.082,
+                0.349,
+                0.139,
+                0.361
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.082,
+                0.006,
+                0.185,
+                0.018
+            ],
+            "angle": 0,
+            "content": "GS"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.876,
+                0.009,
+                0.917,
+                0.022
+            ],
+            "angle": 0,
+            "content": "Japan"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.082,
+                0.04,
+                0.905,
+                0.108
+            ],
+            "angle": 0,
+            "content": "marketwide, sector specific, long term, short term), the size and scope of your overall client relationship with GS, and legal and regulatory constraints. As an example, certain clients may request to receive notifications when research on specific securities is published, and certain clients may request that specific data underlying analysts' fundamental analysis available on our internal client websites be delivered to them electronically through data feeds or otherwise. No change to an analyst's fundamental research views (e.g., ratings, price targets, or material changes to earnings estimates for equity securities), will be communicated to any client prior to inclusion of such information in a research report broadly disseminated through electronic publication to our internal client websites or through other means, as necessary, to all clients who are entitled to receive such reports.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.082,
+                0.114,
+                0.899,
+                0.16
+            ],
+            "angle": 0,
+            "content": "All research reports are disseminated and available to all clients simultaneously through electronic publication to our internal client websites. Not all research content is redistributed to our clients or available to third-party aggregators, nor is GS responsible for the redistribution of our research by third party aggregators. For research, models or other data related to one or more securities, markets or asset classes (including related services) that may be available to you, please contact your GS representative or go to https://research.gs.com.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.082,
+                0.166,
+                0.888,
+                0.189
+            ],
+            "angle": 0,
+            "content": "Disclosure information is also available at https://www.gs.com/research/hedge.html or from Research Compliance, 200 West Street, New York, NY 10282.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.082,
+                0.196,
+                0.221,
+                0.208
+            ],
+            "angle": 0,
+            "content": "© 2026 GS."
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.082,
+                0.214,
+                0.912,
+                0.293
+            ],
+            "angle": 0,
+            "content": "You are permitted to store, display, analyze, modify, reformat, and print the information made available to you via this service only for your own use. You may not resell or reverse engineer this information to calculate or develop any index for disclosure and/or marketing or create any other derivative works or commercial product(s), data or offering(s) without the express written consent of GS. You are not permitted to publish, transmit, or otherwise reproduce this information, in whole or in part, in any format to any third party without the express written consent of GS. This foregoing restriction includes, without limitation, using, extracting, downloading or retrieving this information, in whole or in part, to train or finetune a machine learning or artificial intelligence system, or to provide or reproduce this information, in whole or in part, as a prompt or input to any such system.",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.084,
+                0.955,
+                0.163,
+                0.966
+            ],
+            "angle": 0,
+            "content": "10 June 2026"
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.908,
+                0.956,
+                0.917,
+                0.965
+            ],
+            "angle": 0,
+            "content": "6"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.083,
+                0.006,
+                0.185,
+                0.018
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.082,
+                0.196,
+                0.22,
+                0.208
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.874,
+                0.007,
+                0.92,
+                0.025
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.084,
+                0.955,
+                0.163,
+                0.966
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.908,
+                0.956,
+                0.918,
+                0.967
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.082,
+                0.166,
+                0.886,
+                0.178
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.082,
+                0.176,
+                0.125,
+                0.19
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.082,
+                0.043,
+                0.902,
+                0.052
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.082,
+                0.053,
+                0.894,
+                0.064
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.082,
+                0.065,
+                0.898,
+                0.075
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.081,
+                0.074,
+                0.888,
+                0.087
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.082,
+                0.086,
+                0.859,
+                0.097
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.082,
+                0.098,
+                0.874,
+                0.108
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.082,
+                0.116,
+                0.896,
+                0.126
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.082,
+                0.127,
+                0.896,
+                0.137
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.082,
+                0.138,
+                0.894,
+                0.148
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.082,
+                0.149,
+                0.689,
+                0.16
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.082,
+                0.215,
+                0.894,
+                0.225
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.082,
+                0.227,
+                0.909,
+                0.238
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.082,
+                0.238,
+                0.907,
+                0.248
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.082,
+                0.248,
+                0.893,
+                0.26
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.082,
+                0.26,
+                0.877,
+                0.271
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.082,
+                0.27,
+                0.91,
+                0.282
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.084,
+                0.283,
+                0.153,
+                0.292
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ]
+]

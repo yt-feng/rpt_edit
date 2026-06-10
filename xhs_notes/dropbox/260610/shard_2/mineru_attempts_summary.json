@@ -1,0 +1,39 @@
+[
+  {
+    "attempt": 1,
+    "round": 1,
+    "token_label": "MINER_U_2",
+    "submitted_pdf_count": 5,
+    "successful_pdf_count": 5,
+    "retry_pdf_count": 0,
+    "timed_out": false,
+    "error": "",
+    "states": [
+      {
+        "pdf": "/tmp/pdf_batch_001_a3hotfjr/pdfs/0001-12-NOM-FX Insights-Inflows into US equities remained robust amid AI optimism-260609.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_a3hotfjr/pdfs/0002-13-JPM-Global Banks-Discussion with legal expert more negative than expected- Uncertainty on WM likely to persist-260609.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_a3hotfjr/pdfs/0003-14-GS-Japan- May CGPI-Continued MoM Increase- but Decelerates from April-s Surge-260610.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_a3hotfjr/pdfs/0004-15-JPM-Global LNG Supply - Shipping Tracker-First LNG tanker enters the Strait-260608.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_a3hotfjr/pdfs/0005-16-MS-Global EM Strategist-Finding Your Funder-260608.pdf",
+        "state": "done",
+        "error": ""
+      }
+    ]
+  }
+]
