@@ -1,0 +1,51 @@
+{
+  "input_dir": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs",
+  "total_pdf_count_before_shard": 49,
+  "pdf_count_before_skip": 5,
+  "pdf_count": 5,
+  "generated_report_count": 5,
+  "batch_size": 5,
+  "shard_index": 1,
+  "shard_count": 40,
+  "max_reports_per_shard": 5,
+  "max_total_reports": 0,
+  "skip_existing": true,
+  "skipped_existing_count": 0,
+  "skipped_existing": [],
+  "failures": 0,
+  "batches": [
+    {
+      "batch_index": 1,
+      "pdf_count": 5,
+      "files": [
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/06-Bofa-IT Hardware Industry IT Hardware Takeaways from the BofA 2026 Global Technology Conference-260608.pdf",
+          "batch_file": "/tmp/pdf_batch_001_znz7bu6r/pdfs/0001-06-Bofa-IT Hardware Industry IT Hardware Takeaways from the BofA 2026 Global Technology Conference-260608.pdf",
+          "stable_index": "1"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/07-GS-China： Energy~led PPI increased further in May， while core CPI softened-260610.pdf",
+          "batch_file": "/tmp/pdf_batch_001_znz7bu6r/pdfs/0002-07-GS-China- Energy-led PPI increased further in May- while core CPI softened-260610.pdf",
+          "stable_index": "2"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/08-Bernstein-Global Energy Storage：Global ESS TRACKER~June 2026： ESS momentum continues in China-260610.pdf",
+          "batch_file": "/tmp/pdf_batch_001_znz7bu6r/pdfs/0003-08-Bernstein-Global Energy Storage-Global ESS TRACKER-June 2026- ESS momentum continues in China-260610.pdf",
+          "stable_index": "3"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/09-JPM-Focus： Tariffs back in focus as Section 122 expiry nears-260609.pdf",
+          "batch_file": "/tmp/pdf_batch_001_znz7bu6r/pdfs/0004-09-JPM-Focus- Tariffs back in focus as Section 122 expiry nears-260609.pdf",
+          "stable_index": "4"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/10-CITI-Global Gold：Marking~to~market gold exposure， steady FCF offsets near~term headwinds-260608.pdf",
+          "batch_file": "/tmp/pdf_batch_001_znz7bu6r/pdfs/0005-10-CITI-Global Gold-Marking-to-market gold exposure- steady FCF offsets near-term headwinds-260608.pdf",
+          "stable_index": "5"
+        }
+      ],
+      "returncode": 0,
+      "status": "ok"
+    }
+  ]
+}

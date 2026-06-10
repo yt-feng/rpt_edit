@@ -1,0 +1,15 @@
+Found 49 total PDFs; shard 1/40 has 5 PDFs, skips 0 already converted, will process 5 PDFs with batch_size=5.
+Running batch 1: 5 PDFs
+Found 5 PDFs. MinerU token slots available=2.
+MinerU attempt 1/4 using MINER_U_2: submitting 5 PDF(s).
+Uploading PDF to MinerU: /tmp/pdf_batch_001_znz7bu6r/pdfs/0001-06-Bofa-IT Hardware Industry IT Hardware Takeaways from the BofA 2026 Global Technology Conference-260608.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_znz7bu6r/pdfs/0002-07-Goldman Sachs-China- Energy-led PPI increased further in May- while core CPI softened-260610.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_znz7bu6r/pdfs/0003-08-Bernstein-Global Energy Storage-Global ESS TRACKER-June 2026- ESS momentum continues in China-260610.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_znz7bu6r/pdfs/0004-09-J.P. Morgan-Focus- Tariffs back in focus as Section 122 expiry nears-260609.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_znz7bu6r/pdfs/0005-10-CITI-Global Gold-Marking-to-market gold exposure- steady FCF offsets near-term headwinds-260608.pdf
+MinerU attempt 1 using MINER_U_2 batch_id=c362cb6c-1584-4eea-86e2-fe2f4f496e81
+MinerU states: running, pending, running, pending, pending
+MinerU states: done, done, running, running, running
+MinerU states: done, done, done, done, done
+Done. Results written to /home/runner/work/rpt_edit/rpt_edit/xhs_notes/dropbox/260610/shard_1; successful_reports=5; mineru_timed_out=False; mineru_attempts=1
+All batches completed successfully. Generated 5 report directories.
