@@ -1,0 +1,188 @@
+{
+  "created_at_utc": "2026-06-10T23:34:28.769105+00:00",
+  "source_date_dir": "xhs_notes/dropbox/260610",
+  "output_dir": "publish_ready_zips/260610",
+  "max_zip_mb": 90,
+  "single_zip": false,
+  "exclude_source_mineru": true,
+  "markdown_files_renamed_to_txt": true,
+  "excluded_debug_files": true,
+  "included_shard_count": 10,
+  "skipped_shards": [],
+  "total_files": 959,
+  "total_renamed_markdown_count": 245,
+  "total_raw_file_bytes": 158342505,
+  "zip_count": 2,
+  "zips": [
+    {
+      "path": "publish_ready_zips/260610/publish_ready_260610_part001.zip",
+      "size_bytes": 87167760,
+      "file_count": 564,
+      "renamed_markdown_count": 140,
+      "raw_file_bytes": 93796011,
+      "shards": [
+        "shard_0",
+        "shard_1",
+        "shard_2",
+        "shard_3",
+        "shard_4",
+        "shard_5"
+      ]
+    },
+    {
+      "path": "publish_ready_zips/260610/publish_ready_260610_part002.zip",
+      "size_bytes": 59587260,
+      "file_count": 395,
+      "renamed_markdown_count": 105,
+      "raw_file_bytes": 64546494,
+      "shards": [
+        "shard_5",
+        "shard_6",
+        "shard_7",
+        "shard_8",
+        "shard_9"
+      ]
+    }
+  ],
+  "included_shards": [
+    {
+      "shard": "shard_0",
+      "report_count": 5,
+      "file_count": 115,
+      "renamed_markdown_count": 25,
+      "raw_file_bytes": 19017552,
+      "reports": [
+        "0001-01-Morgan-Stanley-Morgan-Stanley-Global-Macro-Forum-Thoughts-on-Policy-and-",
+        "0002-02-J.P.-Morgan-Commodity-Market-Positioning---Flows-Agri-and-precious-metal",
+        "0003-03-Morgan-Stanley-Fed-Policy-Stance--Implications-for-China-260610",
+        "0004-04-Nomura-Economic-Insights-Nomura-Investment-Forum-Asia-2026-A-recap-of-ou",
+        "0005-05-Morgan-Stanley-Scenarios-for-US-Copper-Tariffs-260608"
+      ]
+    },
+    {
+      "shard": "shard_1",
+      "report_count": 5,
+      "file_count": 97,
+      "renamed_markdown_count": 25,
+      "raw_file_bytes": 11518659,
+      "reports": [
+        "0001-06-Bofa-IT-Hardware-Industry-IT-Hardware-Takeaways-from-the-BofA-2026-Globa",
+        "0002-07-Goldman-Sachs-China--Energy-led-PPI-increased-further-in-May--while-core",
+        "0003-08-Bernstein-Global-Energy-Storage-Global-ESS-TRACKER-June-2026--ESS-moment",
+        "0004-09-J.P.-Morgan-Focus--Tariffs-back-in-focus-as-Section-122-expiry-nears-260",
+        "0005-10-CITI-Global-Gold-Marking-to-market-gold-exposure--steady-FCF-offsets-nea"
+      ]
+    },
+    {
+      "shard": "shard_2",
+      "report_count": 5,
+      "file_count": 91,
+      "renamed_markdown_count": 25,
+      "raw_file_bytes": 18032569,
+      "reports": [
+        "0001-12-Nomura-FX-Insights-Inflows-into-US-equities-remained-robust-amid-AI-opti",
+        "0002-13-J.P.-Morgan-Global-Banks-Discussion-with-legal-expert-more-negative-than",
+        "0003-14-Goldman-Sachs-Japan--May-CGPI-Continued-MoM-Increase--but-Decelerates-fr",
+        "0004-15-J.P.-Morgan-Global-LNG-Supply---Shipping-Tracker-First-LNG-tanker-enters",
+        "0005-16-Morgan-Stanley-Global-EM-Strategist-Finding-Your-Funder-260608"
+      ]
+    },
+    {
+      "shard": "shard_3",
+      "report_count": 5,
+      "file_count": 93,
+      "renamed_markdown_count": 25,
+      "raw_file_bytes": 18365208,
+      "reports": [
+        "0001-17-HSBC-Global-Tech-Platforms-B2B-up--B2C-down--our-new-AI-TAM-forecasts-to",
+        "0002-18-J.P.-Morgan-China-Auto-Industry-We-turn-more-positive-after-visiting-Lon",
+        "0003-19-J.P.-Morgan-Property-Data-Monitor-Mainland-China--secondary-listings-fur",
+        "0004-20-Morgan-Stanley-China-Property-Weekly-Database-Tracker--23-260608",
+        "0005-21-Goldman-Sachs-China-Data-Centers--Bloomberg-reports-Rmb2tn-investments-i"
+      ]
+    },
+    {
+      "shard": "shard_4",
+      "report_count": 5,
+      "file_count": 103,
+      "renamed_markdown_count": 25,
+      "raw_file_bytes": 15356874,
+      "reports": [
+        "0001-22-Jefferies-China---Alternative-Energy-SNEC-2026-Day-1-Conference-Feedback",
+        "0002-23-Jefferies-China---Internet-AI-Series--48--Agent-to-Agent-Partnerships--M",
+        "0003-24-Morgan-Stanley-AI-Ecosystem--Charting-Recent-Trends-260609",
+        "0004-25-Morgan-Stanley-Greater-China-Technology-Hardware-GB200-and-GB300-NVL72-R",
+        "0005-26-Nomura-USD-CNY-fix-model-Projection--6.7775-260610"
+      ]
+    },
+    {
+      "shard": "shard_5",
+      "report_count": 5,
+      "file_count": 91,
+      "renamed_markdown_count": 25,
+      "raw_file_bytes": 18922494,
+      "reports": [
+        "0001-27-Barclays-Energy-Sigma-Staying-put-on--100-b-for-2026-and-initiating-2027",
+        "0002-28-Goldman-Sachs-Australia--Consumer-Sentiment--Sentiment-Very-Weak-for-Thi",
+        "0003-29-J.P.-Morgan-Base-Metals-Supply---Demand-Tracker-Chinese-exports-are-the-",
+        "0004-30-J.P.-Morgan-One-battle-after-another-Revamping-the-U.S.-defense-industri",
+        "0005-31-Morgan-Stanley-Chemicals-China-Reinstates-Urea-Export-Price-Floors-26060"
+      ]
+    },
+    {
+      "shard": "shard_6",
+      "report_count": 5,
+      "file_count": 93,
+      "renamed_markdown_count": 25,
+      "raw_file_bytes": 13490922,
+      "reports": [
+        "0001-32-Morgan-Stanley-Chemicals-China-Removes-Urea-Export-Price-Floors-260608",
+        "0002-33-Barclays-IT-Hardware-and-Communications-Equipment-Server-Model-Update--E",
+        "0003-34-CITI-China-Auto-Manufacturers-CPCA-May-Update--Export-Strong--NEV-Wholes",
+        "0004-35-J.P.-Morgan-Memory-Market-Update-SOCAMM-content-noise-offers-a-buying-op",
+        "0005-36-Jefferies-China---Technology-China-AI-Monthly-Excess-Fear-of-AI-Disrupti"
+      ]
+    },
+    {
+      "shard": "shard_7",
+      "report_count": 5,
+      "file_count": 97,
+      "renamed_markdown_count": 25,
+      "raw_file_bytes": 16560017,
+      "reports": [
+        "0001-37-Morgan-Stanley-Internet-Where-Are-We-Trading-Now--As-AI-Hardware-vs-AI-S",
+        "0002-38-Nomura-Reports-on-China-ramping-up-AI-investment...-...Likely-a-short-te",
+        "0003-39-Bernstein-U.S.-IT-Hardware-Memory---Storage-Is-the-New-Memory-Paradigm-b",
+        "0004-40-CITI-China-Electrical-Equipment-Pinggao-Winning-the-Most-Orders-from-Sta",
+        "0005-41-Barclays-U.S.-Equity-Linked-Strategies-AI-Capex-Funding--Why-Equity--Why"
+      ]
+    },
+    {
+      "shard": "shard_8",
+      "report_count": 5,
+      "file_count": 101,
+      "renamed_markdown_count": 25,
+      "raw_file_bytes": 15626813,
+      "reports": [
+        "0001-42-Morgan-Stanley-CLO-Tracker-June-2026---What-We-Are-Hearing-From-Investor",
+        "0002-43-Morgan-Stanley-DataDig--Sovereign-Supply-to-Counter-Sovereign-Demand--26",
+        "0003-44-J.P.-Morgan-Korea-Chemicals-May-NBL-SBR-margins-surge-to-five-year-highs",
+        "0004-45-Morgan-Stanley-AI-Debt-Financing-Tracker--Warming-Up-for-a-Hot-Summer-26",
+        "0005-46-J.P.-Morgan-Electronics--AI-infrastructure-Panasonic-Investor-Day-takeaw"
+      ]
+    },
+    {
+      "shard": "shard_9",
+      "report_count": 4,
+      "file_count": 78,
+      "renamed_markdown_count": 20,
+      "raw_file_bytes": 11451397,
+      "reports": [
+        "0001-47-J.P.-Morgan-Tech-Snippets-Nvidia-building-chips-tailored-for-radio-units",
+        "0002-48-Morgan-Stanley-Intro-to-Mobile-Ad-Tech--Who-Are-the-Players--What-Do-The",
+        "0003-49-Morgan-Stanley-Taiwan-Visit-Takeaways-260608",
+        "0004-50-Morgan-Stanley-Uncertain-environment-leaves-downside-risk-to-permanent-r"
+      ]
+    }
+  ]
+}
