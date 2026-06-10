@@ -1,0 +1,119 @@
+ZH_A: 最近AI圈有个新词特别火，叫Agent-to-Agent，也就是A2A。这到底意味着什么？今天我们来聊一份某外资投行的最新报告。
+
+ZH_B: 对，这份报告的核心洞察就是，AI正在从“人机对话”转向“代理与代理之间的协作”。这不仅仅是技术升级，而是整个AI生态的范式转变。
+
+ZH_A: 范式转变？听起来很重。那这份报告真正要回答的问题是什么？
+
+ZH_B: 报告想回答一个关键问题：当AI代理开始互相“聊天”和“干活”时，哪些公司会受益，哪些场景会最先爆发。它不是泛泛而谈，而是基于大量数据，比如Token消耗量、模型排名、API价格等。
+
+ZH_A: 那第一个关键洞察是什么？
+
+ZH_B: 第一个是，中国科技巨头正在积极构建A2A生态。比如腾讯，它和美团、手机厂商合作，让用户对手机语音助手说一句话，就能直接发微信或打电话，而不需要打开微信App。
+
+ZH_A: 所以这意味着，微信不再只是一个App，而是变成了一个AI代理的中心节点？
+
+ZH_B: 没错。报告里提到，腾讯认为“产品”是AI的关键领域之一。通过A2A，他们可以把不同场景的服务串联起来。
+
+ZH_A: 那第二个洞察呢？
+
+ZH_B: 第二个是，阿里巴巴的通义千问App也开始向第三方代理开放。第一批合作方包括肯德基、瑞幸、蜜雪冰城和东航。
+
+ZH_A: 这意味着用户可以在一个App里完成点餐、买咖啡、订机票？
+
+ZH_B: 对，这就是一站式个性化服务。报告认为，阿里巴巴正在构建一个代理生态系统，而不仅仅是卖模型。
+
+ZH_A: 第三个洞察是什么？
+
+ZH_B: 第三个是关于中美AI模型的竞争态势。报告数据显示，中国模型在Token消耗量上已经反超美国模型。
+
+ZH_A: 真的吗？我记得以前都是美国模型领先。
+
+ZH_B: 是的。根据OpenRouter的数据，中国模型一周的Token消耗量是14.2万亿，而美国模型是3.2万亿。而且，在智能水平上，差距也在缩小。斯坦福的一份报告显示，美国顶级模型只领先中国模型2.7%。
+
+ZH_A: 那成本方面呢？
+
+ZH_B: 成本优势更明显。中国模型的API价格只有美国模型的几分之一。这得益于混合专家模型架构、线性注意力机制等技术。
+
+ZH_A: 这听起来对应用落地非常有利。那报告里有没有提到一些具体的应用场景？
+
+ZH_B: 提到了。比如美图秀秀和WPS的合作，用户可以直接在WPS里用美图的AI功能做海报和短视频。还有Kimi推出了桌面AI助手，能24小时自动运行，还能同时调用多个专业代理解决复杂问题。
+
+ZH_A: 那OpenAI和Anthropic那边呢？
+
+ZH_B: OpenAI也在跟进，推出了针对金融和法律领域的Codex插件。Anthropic在五月份就推出了10个金融服务代理模板。
+
+ZH_A: 所以竞争已经进入垂直行业了？
+
+ZH_B: 对，但这部分报告并没有完全展开。比如，这些垂直代理的实际效果如何？企业客户的付费意愿怎么样？这些还需要继续验证。
+
+ZH_A: 那这份报告里还有哪些悬念是值得我们去读完整版的？
+
+ZH_B: 报告里提到超过50个数据点，但我们只聊了其中一部分。比如，Token消耗量排名前20的模型里，有9个是中国模型。报告还详细分析了不同子行业的用户趋势。
+
+ZH_A: 这些数据对投资者来说意味着什么？
+
+ZH_B: 意味着你可以看到资金和算力正在流向哪里。但具体哪些公司能最终胜出，报告并没有给出定论。这需要结合更多细节来判断。
+
+ZH_A: 好的，那今天的讨论就到这里。如果你想获取完整报告，了解这50多个数据点的具体分析，欢迎加入我们的社群。我们下期见。
+
+ZH_B: 下期见。
+
+EN_A: Hey everyone, welcome back. Today we are diving into a fascinating topic that is starting to buzz in the AI world. It is called Agent-to-Agent, or A2A for short. So what exactly is it and why should we care?
+
+EN_B: Great question. A recent report from a global investment bank really breaks this down. The core idea is that AI is moving from just chatting with humans to agents talking and working with each other. This is a big shift in how the whole AI ecosystem works.
+
+EN_A: A shift in the ecosystem. That sounds significant. So what is the main question this report is trying to answer?
+
+EN_B: The report wants to figure out which companies will benefit and which use cases will explode when AI agents start collaborating. It is not just theory. It is based on hard data like token consumption, model rankings, and API pricing.
+
+EN_A: Okay, let us get into the key insights. What is the first one?
+
+EN_B: The first big insight is that Chinese tech giants are aggressively building A2A ecosystems. Take Tencent for example. They are partnering with Meituan and smartphone brands. So you can just talk to your phone's voice assistant, and it will send a WeChat message or make a call without you ever opening the app.
+
+EN_A: So WeChat is becoming a central hub for AI agents, not just an app?
+
+EN_B: Exactly. The report highlights that Tencent sees "product" as a key area. By using A2A, they can connect services from different sectors seamlessly.
+
+EN_A: What is the second insight?
+
+EN_B: The second one is about Alibaba. Their Qwen app is opening up to third-party agents. The first partners include KFC, Luckin Coffee, and China Eastern Airlines.
+
+EN_A: So you can order food, buy coffee, and book a flight all from one AI app?
+
+EN_B: That is the idea. The report sees this as Alibaba building an agent ecosystem, not just selling a model. It is about providing comprehensive, personalized services.
+
+EN_A: And the third insight?
+
+EN_B: This one is about the competitive landscape between China and the US. The data shows that Chinese models have actually surpassed US models in terms of weekly token consumption.
+
+EN_A: Really? I thought US models were still dominating.
+
+EN_B: According to OpenRouter data, Chinese models consumed 14.2 trillion tokens in a week, compared to 3.2 trillion for US models. And the intelligence gap is closing too. One report says the top US model leads by only 2.7 percent.
+
+EN_A: What about cost?
+
+EN_B: That is where Chinese models really shine. Their API prices are just a fraction of US models. This is thanks to efficient architectures like Mixture of Experts and linear attention.
+
+EN_A: That sounds great for real-world adoption. Are there any specific use cases mentioned?
+
+EN_B: Yes. Meitu and WPS are partnering, so you can use Meitu's AI to make posters and short videos directly inside WPS. Also, Kimi launched a desktop AI agent that runs 24/7 and can use multiple specialized agents to solve complex problems.
+
+EN_A: What about the US players like OpenAI and Anthropic?
+
+EN_B: OpenAI is also moving fast. They launched new plugins for Codex focused on finance and legal sectors. Anthropic released 10 financial services agent templates back in May.
+
+EN_A: So the competition is moving into vertical industries?
+
+EN_B: Exactly. But the report does not fully answer how effective these vertical agents will be or if enterprise customers are willing to pay. That is something we still need to verify.
+
+EN_A: Are there any other mysteries in the report that make you want to read the full version?
+
+EN_B: Definitely. The report has over 50 data points. We only touched on a few. For example, 9 out of the top 20 models by token consumption are Chinese. The report also breaks down user trends by sub-sector.
+
+EN_A: So for investors, this data shows where the money and computing power are flowing?
+
+EN_B: Yes, but it does not give a final answer on which companies will win. You need the full details to make that judgment.
+
+EN_A: Alright, that is all we have for today. If you want the full report with all 50 plus data points, join our community. See you next time.
+
+EN_B: See you.
