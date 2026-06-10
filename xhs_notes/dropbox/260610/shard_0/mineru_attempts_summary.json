@@ -1,0 +1,39 @@
+[
+  {
+    "attempt": 1,
+    "round": 1,
+    "token_label": "MINER_U_2",
+    "submitted_pdf_count": 5,
+    "successful_pdf_count": 5,
+    "retry_pdf_count": 0,
+    "timed_out": false,
+    "error": "",
+    "states": [
+      {
+        "pdf": "/tmp/pdf_batch_001_6nv3fj6h/pdfs/0001-01-MS-MS Global Macro Forum-Thoughts on Policy and Markets- Post-NFP-260608.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_6nv3fj6h/pdfs/0002-02-JPM-Commodity Market Positioning - Flows-Agri and precious metals drive global commodity open interest decline-260609.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_6nv3fj6h/pdfs/0003-03-MS-Fed Policy Stance- Implications for China-260610.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_6nv3fj6h/pdfs/0004-04-NOM-Economic Insights-NOM Investment Forum Asia 2026-A recap of our macro views and what investors think-260608.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_6nv3fj6h/pdfs/0005-05-MS-Scenarios for US Copper Tariffs-260608.pdf",
+        "state": "done",
+        "error": ""
+      }
+    ]
+  }
+]

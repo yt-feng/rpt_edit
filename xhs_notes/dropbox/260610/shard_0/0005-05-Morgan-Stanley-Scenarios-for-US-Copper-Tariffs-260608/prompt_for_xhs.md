@@ -1,0 +1,330 @@
+你是资深小红书内容策划 + 投研翻译官，擅长把英文/中文研报改写成高互动、可收藏、可转发的中文小红书笔记。
+
+【目标】
+- 把下面的研报解析内容，改写成一篇中文小红书笔记。
+- 风格：投研博主风：信息密度高，但像给朋友讲逻辑
+- 长度：不超过 1000 字，信息密度高但不要写长文。
+- emoji 密度：中
+
+【必须输出的结构】
+1. 第一行：标题，20 字以内，不要像论文标题，也不要用夸张极限词。
+2. 第二行：封面短标题，10 字以内，适合放在图中间。
+3. 第三行：封面副标题，10-18 字，短句。
+4. 正文分段清晰，每段不超过 3 行，可以用编号、小标题或加粗。
+5. 正文要自然呈现观点，但不要暴露写作框架或思考过程。
+6. 末尾可以保留 2-4 个相关标签，只允许从这些标签里选择：`#学习笔记`、`#研究笔记`、`#学习研究`、`#研报解读`。
+
+【严禁输出】
+- 不要出现这些栏目名或类似栏目名：`一句话结论`、`我最想提醒的一点`、`配图建议`、`免责声明`、`非投资建议`、`仅做学习交流`、`仅作学习交流`。
+- 不要在正文最后追加配图建议，不要告诉我第 2/3/4 张图怎么配文。
+- 不要输出任何包含“投资”的免责声明，也不要输出“非投资建议”这种表述。
+- 不要输出财经敏感标签：`#投资学习`、`#财经`、`#金融`、`#股票`、`#基金`、`#理财`。
+- 不要输出无关标签：`#小红书笔记`、`#笔记分享`、`#干货分享`。
+- 不要写“关注”“点赞”“求关注”“评论区见”“评论区留言”等直接互动诱导；可以写“欢迎一起讨论”“可以继续交流”。
+
+【平台发布合规要求】
+- 不要写“爆款”“震惊”“必看”“必读”“最强”“最全”“唯一”“全网首发”等极限词或夸张词。
+- 不要写“投资建议”“买入”“卖出”“强烈推荐”“稳赚”“保本”“必涨”“抄底”“上车”“内幕”“翻倍”等金融操作或收益承诺表达。
+- “投资”相关词尽量改成“投研”“研究”“观察”“学习参考”；如果必须保留，也要放在中性语境里。
+- 不要承诺收益，不要引导交易，不要暗示确定性结果。
+
+【内容要求】
+- 只能基于研报原文和解析结果推导，不要编造数据、公司动作、引用。
+- 可以把专业表达翻成人话，但不能扭曲意思。
+- 遇到不确定或缺失信息：用“研报未给出”或“这里是推测”明确标注。
+- 默认避免出现具体投行品牌名，比如“GS”“GS”，统一写作“投行研报”。
+- 不要解释你的思考过程，不要输出多余说明。
+
+【推荐写法】
+- 开头直接给一个自然判断，不要加“结论：”标签。
+- 中间用 1/2/3 拆逻辑，但小标题要像正常内容标题，不要像写作模板。
+- 结尾可以留下一个自然讨论问题，但不要引导关注、点赞或评论。
+- 最后一行输出 2-4 个标签，优先：`#学习笔记 #研究笔记 #学习研究 #研报解读`。
+
+【研报解析内容】
+"""
+## metal&ROCK | Europe
+
+# Scenarios for US Copper Tariffs
+
+A decision on US refined copper import tariffs is due sometime in 2H26. Advanced notice of tariff implementation would be the most bullish scenario for 2H26, while ruling out tariffs would be the most bearish, removing the \~2.5% of global copper going to the US for stockpiling.
+
+## Key Takeaways
+
+We expect a decision sometime after 30th June, once President Trump has received an update on domestic markets from the Secretary of Commerce.  
+Most bullish = Advanced notice of a 15% tariff from Jan 2027, driving COMEX and LME copper higher and tightening LME spreads. Less notice would be less bullish.  
+Most bearish = Refined copper tariffs are ruled out completely, putting the 2.5% of copper supply currently going to the US for stockpiling at risk.  
+Status quo = Decision is delayed, with not enough evidence to make a decision for now.
+
+What is the upcoming decision? The US is due to decide whether to put in place a 15% refined copper import tariff from 1 Jan 2027, potentially escalating to 30% in 2028. A 50% import tariff is already in place for aluminium, steel and most imports of semi-finished copper products and copper derivative products. The 1 June White House fact sheet highlighted recent developments in steel, aluminium and copper output in the US, noting "this buildout [...] is only possible through the continued implementation and strengthening of the President's Section 232 tariff programs."
+
+Why does it matter? The COMEX copper price is a US-delivered benchmark and therefore should reflect any customs duties, meaning it could trade \~15% higher than the LME benchmark if tariffs are announced. It is already trading \~6% higher than the LME benchmark, incentivising market participants to ship copper to the US ahead of potential implementation. We estimate YTD over-importing at 260 kt, or 2.6% of global demand when annualised. The US now holds over a year of "normal" refined copper imports in inventory, we estimate. Whether or not this overimporting continues will be meaningful for copper prices and the supply demand balance.
+
+When will the tariff decision be announced? A report is due to President Trump from the Secretary of Commerce by 30th June (based on this proclamation) or 1st July (90 days from this proclamation), providing "an update on domestic copper markets [...] so that the President may determine whether imposing a phased universal import duty on refined copper [...] is warranted to ensure that copper imports do not continue to threaten to impair the national security." In our view, this means an update from the Trump administration should come sometime in 2H26, but is unlikely to come on 30th June/1st July directly.
+
+For discussion of outcomes, see inside...
+
+MS & CO. INTERNATIONAL PLC+
+
+## Amy Gower (Amy Sergeant), CFA
+
+Commodities Strategist
+
+Amy.Gower1@morganstanley.com +44 20 7677-6937
+
+MS & CO. LLC
+
+## Carlos De Alba
+
+Equity Analyst
+
+Carlos.De.Alba@morganstanley.com +1 212 761-4927
+
+MS & CO. INTERNATIONAL PLC+
+
+## Ben Kelson
+
+Research Associate
+
+Ben.Kelson@morganstanley.com +44 20 7677-1392
+
+## Martijn Rats, CFA
+
+Equity Analyst and Commodities Strategist
+
+Martijn.Rats@morganstanley.com +44 20 7425-6618
+
+Exhibit 1: Using forward curve differentials, the copper market is pricing 43% chance of a 15% tariff in place by Jan 2027 and 73% by Dec 2027  
+![](images/ce6bdd88d23fe38f33e9f5a71a060c283217ccbc0548867896b89105fc680fac.jpg)
+
+<details>
+<summary>line chart</summary>
+
+| Date   | Spot arb | 3m Arb | Jan-27 | Dec-27 |
+|--------|----------|--------|--------|--------|
+| Jan-25 | ~0%      | ~0%    | ~0%    | ~0%    |
+| Apr-25 | ~10%     | ~8%    | ~10%   | ~15%   |
+| Jul-25 | ~35%     | ~20%   | ~25%   | ~30%   |
+| Oct-25 | ~5%      | ~3%    | ~5%    | ~10%   |
+| Jan-26 | ~0%      | ~0%    | ~0%    | ~0%    |
+| Apr-26 | ~5%      | ~3%    | ~5%    | ~10%   |
+</details>
+
+Source: Bloomberg
+
+MS does and seeks to do business with companies covered in MS. As a result, investors should be aware that the firm may have a conflict of interest that could affect the objectivity of MS. Investors should consider MS as only a single factor in making their investment decision.
+
+## For analyst certification and other important disclosures, refer to the Disclosure Section, located at the end of this report.
+
++= Analysts employed by non-U.S. affiliates are not registered with FINRA, may not be associated persons of the member and may not be subject to FINRA restrictions on communications with a subject company, public appearances and trading securities held by a research analyst account.
+
+## Continued.
+
+## What could the outcomes be and what do they mean for copper prices?
+
+1) Tariffs are announced: Bullish: We assume the decision is purely on whether or not to implement a 15% tariff from 1 Jan 2027, and will not consider another tariff level or a different implementation date. If advanced notice is given, e.g. a July announcement for January implementation, this would accelerate copper flows into the US, tightening ex-US markets and driving both COMEX and LME copper prices higher (all else equal). We would expect LME time spreads to tighten and the forward curve to move into backwardation at the front of the market, and COMEX to move towards a 15% premium to LME. If the tariff is only announced closer to the implementation date, or the implementation date is brought forward, there would be less time to front-load shipments which would be a less bullish outcome.
+
+2) Tariffs are ruled out: Bearish: If the US rules out introducing refined copper tariffs, this extra US importing ( $\sim$ 2.6% of demand) would likely cease, weighing on both benchmarks. COMEX copper would fall to parity with, or even slightly below, LME copper and the LME forward curve would loosen as more metal is available. Both benchmarks would likely fall in absolute terms as this US stockpiling demand ceases. However, we view US copper exports as unlikely given metal could just be moved from COMEX to LME warehouses within the US if COMEX traded below LME. Further, we see support around the 12,000 level given the sector ongoing structural supply issues and expected deficits.
+
+3) Decision is rolled forward: Neutral? The decision could also be rolled over to a future date, keeping the option of tariffs on the table but not necessarily for 1 Jan 2027. This would be more of a continuation of the status quo but could be modestly negative for copper prices if market participants see it as a signal that tariffs are less likely.
+
+What happens in 2027 if a tariff is in place? If a 15% tariff is implemented, we would expect the COMEX-LME copper spread to reflect that tariff level, implying room for some COMEX outperformance versus LME. However, we would expect a drop in the over-importing from the US given the financial incentive to ship excess metal will be removed once tariffs need to be paid. If the tariff is expected to escalate to 30% in 2028, import volumes could stay slightly higher than normal but the US already has >1 year of import cover on our estimates. We would also then expect the COMEX-LME spread to rise to somewhere between 15% and 30%.
+
+MS outlook: We noted in Copper: Fundamentals Improving? that the outlook for copper is supported by tightening supply, strong demand from China and US import demand for stockpiling. The upcoming US tariff decision is therefore key risk event, with the potential to accelerate, or halt, the excess US copper imports. At the moment, the market is pricing around a 43% chance of a 15% tariff being in place by Jan 2027. It is difficult to take a strong call on the decision timing and outcome but it remains a key risk to be aware of. Macro factors matter too, as shown by the negative reaction in copper prices to increased expectations for a Fed rate hike in 2026, with COMEX copper tending to outperform on risk-on days, but underperform on risk-off days. COMEX net long positioning is already at an all-time high.
+
+Exhibit 2: The COMEX-LME spread has been rising  
+![](images/88cbea9a6fad031e48a3f2229df1b6f50ba35cbde5278811ba7e80a999382cbc.jpg)
+
+<details>
+<summary>line chart</summary>
+
+| Date   | Spot arb | 3m Arb | Jan-27 | Dec-27 |
+|--------|----------|--------|--------|--------|
+| Jan-25 | ~0%      | ~0%    | ~0%    | ~0%    |
+| Apr-25 | ~15%     | ~18%   | ~20%   | ~22%   |
+| Jul-25 | ~10%     | ~15%   | ~25%   | ~35%   |
+| Oct-25 | ~5%      | ~8%    | ~10%   | ~12%   |
+| Jan-26 | ~0%      | ~2%    | ~5%    | ~15%   |
+| Apr-26 | ~5%      | ~8%    | ~10%   | ~12%   |
+</details>
+
+Source: Bloomberg
+
+Exhibit 3: Seaborne copper imports remain above the estimate 15-20kt/week that the US needs  
+![](images/6142b1c45816d5b204eba79cb9b6bb269ebe1f711f85fae75004884ddb9b5053.jpg)
+
+<details>
+<summary>line chart</summary>
+
+| Date   | US Seaborne Copper Imports (t/week) | COMEX-LME Spread (3m, $/t, RH Axis) |
+|--------|-------------------------------------|--------------------------------------|
+| Jan-25 | ~30,000                             | ~500                                 |
+| Apr-25 | ~55,000                             | ~1,500                               |
+| Jul-25 | ~60,000                             | ~3,000                               |
+| Oct-25 | ~35,000                             | ~1,000                               |
+| Jan-26 | ~70,000                             | ~500                                 |
+| Apr-26 | ~45,000                             | ~1,000                               |
+</details>
+
+Source: Bloomberg
+
+Exhibit 4: US inventories are now covering >1 year of refined imports  
+![](images/1b639bef2ab9e51f6b5955dd1934656c6fdf24260fd364d3451f722c5391bbfc.jpg)
+
+<details>
+<summary>stacked bar chart</summary>
+
+US Implied Copper Stockpiling (kt)
+| Date | COMEX Inventory (kt) | LME Inventory (kt) | Non Exchange Stockpiling (kt) |
+|---|---|---|---|
+| Mar-25 | 80 | 0 | 100 |
+| May-25 | 120 | 0 | 150 |
+| Jul-25 | 180 | 0 | 250 |
+| Sep-25 | 240 | 0 | 350 |
+| Nov-25 | 300 | 0 | 300 |
+| Jan-26 | 400 | 0 | 250 |
+| Mar-26 | 550 | 100 | 200 |
+| May-26 | 580 | 150 | 180 |
+</details>
+
+Source: Bloomberg, MS
+
+Exhibit 5: Ex-US LME inventories have been tightening in China and on the LME  
+![](images/770fca9feb1e3cac7d2959be37a672c44353388eaae9c251acb7d4146d9e6bce.jpg)
+
+<details>
+<summary>line chart</summary>
+
+| Month | 2022 | 2023 | 2024 | 2025 | 2026 |
+|-------|------|------|------|------|------|
+| Jan   | ~300 | ~200 | ~150 | ~350 | ~350 |
+| Feb   | ~350 | ~250 | ~200 | ~400 | ~400 |
+| Mar   | ~500 | ~300 | ~350 | ~500 | ~700 |
+| Apr   | ~450 | ~350 | ~400 | ~450 | ~500 |
+| May   | ~400 | ~300 | ~450 | ~400 | ~450 |
+| Jun   | ~350 | ~250 | ~500 | ~350 | ~400 |
+| Jul   | ~300 | ~200 | ~550 | ~300 | ~350 |
+| Aug   | ~250 | ~150 | ~650 | ~250 | ~300 |
+| Sep   | ~200 | ~150 | ~600 | ~250 | ~250 |
+| Oct   | ~150 | ~150 | ~550 | ~250 | ~250 |
+| Nov   | ~100 | ~150 | ~500 | ~250 | ~250 |
+| Dec   | ~150 | ~150 | ~450 | ~350 | ~350 |
+</details>
+
+Source: Bloomberg
+
+## Week in Review
+
+Base Metals: Base metals are on track to end the week lower with the exception of zinc. Macro factors weighed on the complex with the DXY up 0.9% and the market now pricing in 1 US rate hike by year end after stronger non-farm payrolls data. The biggest drop comes in nickel with Platts reporting that HPAL producers are sourcing sulphur elsewhere. Copper is down 0.4% but LME and COMEX are down 3.3% and 5.3% from their Tuesday highs on growing demand worries. Aluminium fell 1.8%, likely dragged lower by other metals.
+
+Precious Metals: Precious metals weakened sharply this week, with most of the drop on Friday after US employment data boosted rate hike expectations. Gold was trading below its 200 day moving average at the time of writing. India said reports that the RBI was selling gold was incorrect. Silver saw the largest drop, down 8.3% to below \$70/oz for the first time since March but remains below its 200dma for now.
+
+Bulks: Iron ore dropped 3.6% WoW this week to \$101.5/t as hot weather in Asia weighs on construction activity earlier than normal. Met coal was up 1.7% WoW but with stronger price action in China as mine accidents have prompted mine inspections and closures. Thermal coal rose 7.5%, also supported by mine inspections as well as strong demand for cooling in Asia. Indonesia has also issued regulation that palm oil, coal, and ferroalloys can only be exported by a state-owned enterprise.
+
+Exhibit 6: Base metals price indices (12-month rolling)  
+![](images/a3534dd5af342c52e53f52835d7cbf05467b25f7152b7d123ab5e1b1edc31cfe.jpg)
+
+<details>
+<summary>line chart</summary>
+
+| Date   | zinc | lead | aluminium | nickel | copper |
+|--------|------|------|-----------|--------|--------|
+| Jun-25 | 100  | 100  | 100       | 100    | 100    |
+| Jul-25 | 105  | 102  | 103       | 98     | 101    |
+| Aug-25 | 108  | 104  | 105       | 99     | 103    |
+| Sep-25 | 110  | 106  | 107       | 100    | 105    |
+| Oct-25 | 115  | 108  | 110       | 102    | 108    |
+| Nov-25 | 120  | 110  | 115       | 105    | 112    |
+| Dec-25 | 125  | 112  | 120       | 108    | 115    |
+| Jan-26 | 130  | 115  | 125       | 110    | 120    |
+| Feb-26 | 135  | 118  | 130       | 115    | 125    |
+| Mar-26 | 140  | 120  | 135       | 120    | 130    |
+| Apr-26 | 145  | 122  | 140       | 125    | 135    |
+| May-26 | 150  | 125  | 145       | 130    | 140    |
+| Jun-26 | 155  | 128  | 150       | 135    | 145    |
+</details>
+
+Source: Bloomberg, MS
+
+Exhibit 7: Precious metals indices (12-month rolling)  
+![](images/29239d464d779bd0d25e85ffe839394f2c0b70c18cd81e53d9a2471cdfcacb47.jpg)
+
+<details>
+<summary>line chart</summary>
+
+| Date   | gold | silver | platinum | palladium |
+|--------|------|--------|----------|-----------|
+| Jan-25 | 90   | 90     | 90       | 90        |
+| Feb-25 | 90   | 90     | 90       | 90        |
+| Mar-25 | 90   | 90     | 90       | 90        |
+| Apr-25 | 90   | 90     | 90       | 90        |
+| May-25 | 90   | 90     | 90       | 90        |
+| Jun-25 | 90   | 90     | 90       | 90        |
+| Jul-25 | 90   | 90     | 90       | 90        |
+| Aug-25 | 90   | 90     | 90       | 90        |
+| Sep-25 | 90   | 90     | 90       | 90        |
+| Oct-25 | 90   | 90     | 90       | 90        |
+| Nov-25 | 90   | 90     | 90       | 90        |
+| Dec-25 | 90   | 90     | 90       | 90        |
+| Jan-26 | 180  | 380    | 300      | 180       |
+| Feb-26 | 180  | 380    | 300      | 180       |
+| Mar-26 | 180  | 380    | 300      | 180       |
+| Apr-26 | 180  | 380    | 300      | 180       |
+| May-26 | 180  | 380    | 300      | 180       |
+</details>
+
+Source: Bloomberg, MS
+
+Exhibit 8: Bulk commodity price indices (12-month rolling)  
+![](images/055a181c49dbbe612d843cab747c635077eb09afdd8bc90750a4a4de6bac3b85.jpg)
+
+<details>
+<summary>line chart</summary>
+
+| Month   | iron ore | met-coal | thermal coal | all traded coals (wtg avg) |
+|---------|----------|----------|--------------|-----------------------------|
+| Jun-25  | 100      | 95       | 100          | 100                         |
+| Jul-25  | 105      | 98       | 102          | 103                         |
+| Aug-25  | 108      | 100      | 105          | 106                         |
+| Sep-25  | 110      | 102      | 108          | 109                         |
+| Oct-25  | 112      | 104      | 110          | 111                         |
+| Nov-25  | 115      | 106      | 115          | 116                         |
+| Dec-25  | 118      | 108      | 120          | 122                         |
+| Jan-26  | 120      | 110      | 125          | 127                         |
+| Feb-26  | 125      | 130      | 135          | 132                         |
+| Mar-26  | 130      | 125      | 138          | 136                         |
+| Apr-26  | 135      | 128      | 140          | 138                         |
+| May-26  | 140      | 130      | 145          | 142                         |
+| Jun-26  | 145      | 132      | 155          | 150                         |
+</details>
+
+Source: Platts, Bloomberg, MS
+
+## MS Price Forecasts
+
+Exhibit 9: Summary of MS's commodity price forecasts (set on 8 April 2026)
+
+<table><tr><td>commodity group</td><td>unit</td><td>1Q 26a</td><td>2Q 26e</td><td>3Q 26e</td><td>4Q 26e</td><td>1Q 27e</td><td>2Q 27e</td><td>3Q 27e</td><td>4Q 27e</td><td>2025e</td><td>2026e</td><td>2027e</td><td>2028e</td><td>2029e</td><td>2030e</td><td>2031e</td><td>LT real</td><td>LT nom.</td></tr><tr><td colspan="19">Base Metals</td></tr><tr><td rowspan="2">LME Aluminium</td><td>US$/lb</td><td>1.45</td><td>1.54</td><td>1.56</td><td>1.59</td><td>1.54</td><td>1.47</td><td>1.45</td><td>1.45</td><td>1.20</td><td>1.54</td><td>1.48</td><td>1.43</td><td>1.45</td><td>1.45</td><td>1.36</td><td>1.13</td><td>1.30</td></tr><tr><td>US$/t</td><td>3,195</td><td>3,400</td><td>3,450</td><td>3,500</td><td>3,400</td><td>3,250</td><td>3,200</td><td>3,200</td><td>2,638</td><td>3,386</td><td>3,263</td><td>3,150</td><td>3,200</td><td>3,200</td><td>3,000</td><td>2,500</td><td>2,871</
+
+[中间内容因长度限制已省略]
+
+rganstanley.com. MS India Company Private Limited (MSICPL) may use AI tools in providing research services. All recommendations contained herein are made by the duly qualified research analysts; in Canada by MS Canada Limited; in Germany and the European Economic Area where required by MS Europe S.E., authorised and regulated by Bundesanstalt fuer Finanzdienstleistungsaufsicht (BaFin) under the reference number 149169; in the US by MS & Co. LLC, which accepts responsibility for its contents. MS & Co. International plc, authorized by the Prudential Regulation Authority and regulated by the Financial Conduct Authority and the Prudential Regulation Authority, disseminates in the UK research that it has prepared, and research which has been prepared by any of its affiliates, only to persons who (i) are investment professionals falling within Article 19(5) of the Financial Services and Markets Act 2000 (Financial Promotion) Order 2005 (as amended, the "Order"); (ii) are persons who are high net worth entities falling within Article 49(2)(a) to (d) of the Order; or (iii) are persons to whom an invitation or inducement to engage in investment activity (within the meaning of section 21 of the Financial Services and Markets Act 2000, as amended) may otherwise lawfully be communicated or caused to be communicated. RMB MS Proprietary Limited is a member of the JSE Limited and A2X (Pty) Ltd. RMB MS Proprietary Limited is a joint venture owned equally by MS International Holdings Inc. and RMB Investment Advisory (Proprietary) Limited, which is wholly owned by FirstRand Limited. The information in MS is being disseminated by MS Saudi Arabia, regulated by the Capital Market Authority in the Kingdom of Saudi Arabia, and is directed at Sophisticated investors only.
+
+The information in MS is being communicated by MS & Co. International plc (DIFC Branch), regulated by the Dubai Financial Services Authority (the DFSA) or by MS & Co. International plc (ADGM Branch), regulated by the Financial Services Regulatory Authority Abu Dhabi (the FSRA), and is directed at Professional Clients only, as defined by the DFSA or the FSRA, respectively. The financial products or financial services to which this research relates will only be made available to a customer who we are satisfied meets the regulatory criteria of a Professional Client. A distribution of the different MS Research ratings or recommendations, in percentage terms for Investments in each sector covered, is available upon request from your sales representative.
+
+The information in MS is being communicated by MS & Co. International plc (QFC Branch), regulated by the Qatar Financial Centre Regulatory Authority (the QFCRA), and is directed at business customers and market counterparties only and is not intended for Retail Customers as defined by the QFCRA.
+
+As required by the Capital Markets Board of Turkey, investment information, comments and recommendations stated here, are not within the scope of investment advisory activity. Investment advisory service is provided exclusively to persons based on their risk and income preferences by the authorized firms. Comments and recommendations stated here are general in nature. These opinions may not fit to your financial status, risk and return preferences. For this reason, to make an investment decision by relying solely to this information stated here may not bring about outcomes that fit your expectations.
+
+The trademarks and service marks contained in MS are the property of their respective owners. Third-party data providers make no warranties or representations relating to the accuracy, completeness, or timeliness of the data they provide and shall not have liability for any damages relating to such data. The Global Industry Classification Standard (GICS) was developed by and is the exclusive property of MSCI and S&P.
+
+MS, or any portion thereof may not be reprinted, sold or redistributed without the written consent of MS.
+
+Indicators and trackers referenced in MS may not be used as, or treated as, a benchmark under Regulation EU 2016/1011, or any other similar framework.
+
+The issuers and/or fixed income products recommended or discussed in certain fixed income research reports may not be continuously followed. Accordingly, investors should regard those fixed income research reports as providing stand-alone analysis and should not expect continuing analysis or additional reports relating to such issuers and/or individual fixed income products. MS may hold, from time to time, material financial and commercial interests regarding the company subject to the Research report.
+
+Registration granted by SEBI and certification from the National Institute of Securities Markets (NISM) in no way guarantee performance of the intermediary or provide any assurance of returns to investors. Investment in securities market are subject to market risks. Read all the related documents carefully before investing.
+
+© 2026 MS
+"""
