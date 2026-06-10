@@ -1,0 +1,4940 @@
+[
+    {
+        "type": "text",
+        "text": "U.S. IT Hardware",
+        "text_level": 2,
+        "bbox": [
+            33,
+            115,
+            231,
+            136
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Memory & Storage: Is the New Memory Paradigm back? Best Idea Presentation from Bernstein's Strategic Decisions Conference",
+        "text_level": 1,
+        "bbox": [
+            33,
+            146,
+            922,
+            204
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "image",
+        "img_path": "images/cc4fe35d31e3168e153d66977708dcf1d25a52278a151fd80af6d9ee47bf3635.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            35,
+            258,
+            94,
+            302
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Mark C. Newman",
+        "bbox": [
+            109,
+            264,
+            226,
+            276
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "+1 212 845 7822",
+        "bbox": [
+            111,
+            277,
+            206,
+            287
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "mark.newman@bernsteinsg.com",
+        "bbox": [
+            111,
+            289,
+            277,
+            299
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "image",
+        "img_path": "images/91bb0919bc0b41c7bc6daabc93b569a63a47a2a7d43a4b81d0b29196312c8623.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            35,
+            309,
+            94,
+            353
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "April Li",
+        "bbox": [
+            109,
+            316,
+            153,
+            327
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "+1 917 344 8339",
+        "bbox": [
+            111,
+            327,
+            206,
+            338
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "april.li@bernsteinsg.com",
+        "bbox": [
+            111,
+            339,
+            236,
+            350
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "image",
+        "img_path": "images/46e424a77a20473bdc85be0b941ac1093c22f5c9e650faf4ccefa4e0c80381e7.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            35,
+            362,
+            94,
+            404
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Phoebe Sun",
+        "bbox": [
+            109,
+            367,
+            182,
+            377
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "+1 917 344 8481",
+        "bbox": [
+            111,
+            379,
+            204,
+            389
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "phoebe.sun@bernsteinsg.com",
+        "bbox": [
+            111,
+            390,
+            265,
+            401
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "At Bernstein's $42^{nd}$ Strategic Decisions Conference, we pitched Memory and Storage as our best idea, where we brushed off our New Memory Paradigm thesis from a decade ago and addressed where we got things right and wrong and further upside from here. Enclosed are the presentation slides with key points from the speech.",
+        "bbox": [
+            333,
+            259,
+            915,
+            321
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "AI is driving a large and unprecedented demand surge across all forms of memory and storage. As workloads evolve from training and basic chatbot inference to advanced inference and agentic AI, memory and storage requirements change. HBM & DRAM were early beneficiaries, but NAND & HDD also benefit as AI workloads become more advanced.",
+        "bbox": [
+            333,
+            334,
+            913,
+            394
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Data center customers now dominate demand in DRAM, NAND and HDD and are less price sensitive, which is supporting much stronger pricing than in prior cycles.",
+        "bbox": [
+            335,
+            408,
+            920,
+            438
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Is the New Memory Paradigm is back? We first wrote about the New Memory Paradigm in our 2013 Blackbook and 2014 Blackbook as a structural improvement thesis for the memory industry. Much of that thesis has played out as slower tech-driven supply growth and greater industry consolidation are creating stronger upcycles and less severe downcycles, which in turn creates higher highs and higher lows.",
+        "bbox": [
+            333,
+            451,
+            910,
+            526
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "This has largely played out as expected in DRAM. Supply growth from technology migration has continued to decline and has remained well below demand growth. That has made it more difficult and more time-consuming for supply to catch up in upcycles, while also reducing the severity of downcycles.",
+        "bbox": [
+            333,
+            539,
+            912,
+            601
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "In NAND, the structural supply constraint thesis was delayed by the 3D NAND supply expansion. Planar NAND had followed a pattern similar to DRAM, with GB per fab growth falling sharply as planar NAND approached its technical limits. The transition to 3D NAND created a one-time step-up in GB per wafer and GB per fab. However, 3D NAND is now also beginning to face diminishing returns. NAND is also earlier in the cycle than DRAM, which suggests greater upside potential from current levels.",
+        "bbox": [
+            333,
+            614,
+            920,
+            705
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "HDD is also seeing a meaningful structural change, as this is the first time in history that the industry is both consolidated and growing. Since consolidation in 2012, the HDD industry had been shrinking because of aggressive NAND cannibalization. Those headwinds are now largely exhausted. What remains is the business-critical, or nearline, segment, which is fundamentally a capacity market where NAND cannot compete.",
+        "bbox": [
+            333,
+            719,
+            913,
+            795
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Long-term agreements are becoming more favorable for suppliers, with pricing, prepayments, and take-or-pay terms helping reduce cyclicality.",
+        "bbox": [
+            335,
+            808,
+            879,
+            838
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Overall, we continue to like the sector and see further upside. SNDK is our preferred short-term idea, given the significant earnings upside that remains as NAND is earlier in the cycle than DRAM. Seagate is our preferred long-term idea, supported by steadier earnings growth from both volume and pricing, as well as HAMR-driven cost declines.",
+        "bbox": [
+            333,
+            850,
+            915,
+            912
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "header",
+        "text": "BERNSTEIN",
+        "bbox": [
+            33,
+            17,
+            269,
+            48
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "header",
+        "text": "SG GROUP",
+        "bbox": [
+            35,
+            51,
+            267,
+            64
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "header",
+        "text": "9 June 2026",
+        "bbox": [
+            715,
+            38,
+            815,
+            55
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "footer",
+        "text": "See the Disclosure Appendix of this report for required disclosures, analyst certifications and other important information. Alternatively, visit our Global Research Disclosure Website.",
+        "bbox": [
+            33,
+            934,
+            690,
+            962
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "footer",
+        "text": "First Published: 09 Jun 2026 11:18 UTC Completion Date: 09 Jun 2026 11:18 UTC",
+        "bbox": [
+            33,
+            962,
+            570,
+            976
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "footer",
+        "text": "www.bernsteinresearch.com",
+        "bbox": [
+            769,
+            934,
+            915,
+            944
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "table",
+        "img_path": "images/b4aa5e632d7163ba4398f6b21b680f6a3b430faa763242b624f7045745072f25.jpg",
+        "table_caption": [
+            "BERNSTEIN TICKER TABLE"
+        ],
+        "table_footnote": [
+            "O - Outperform, M - Market-Perform, U - Underperform, NR - Not Rated, CS - Coverage Suspended",
+            "Source: Bloomberg, Bernstein estimates and analysis."
+        ],
+        "table_body": "<table><tr><td rowspan=\"2\">Ticker</td><td colspan=\"5\">8 Jun 2026</td><td colspan=\"4\">Adjusted EPS</td><td colspan=\"3\">Adjusted P/E (x)</td></tr><tr><td>Rating</td><td>Cur</td><td>Closing Price</td><td>Price Target</td><td>TTM Rel. Perf.</td><td>Cur</td><td>2025A</td><td>2026E</td><td>2027E</td><td>2025A</td><td>2026E</td><td>2027E</td></tr><tr><td>SNDK (SanDisk)</td><td>O</td><td>USD</td><td>1,642.00</td><td>1,700.00</td><td>3802.9%</td><td>USD</td><td>2.99</td><td>64.73</td><td>200.47</td><td>549.2</td><td>25.4</td><td>8.2</td></tr><tr><td>STX (Seagate)</td><td>O</td><td>USD</td><td>876.77</td><td>1,000.00</td><td>550.1%</td><td>USD</td><td>8.10</td><td>14.89</td><td>32.49</td><td>108.2</td><td>58.9</td><td>27.0</td></tr><tr><td>WDC (Western Digital)</td><td>O</td><td>USD</td><td>526.93</td><td>590.00</td><td>800.7%</td><td>USD</td><td>4.80</td><td>9.81</td><td>20.19</td><td>109.8</td><td>53.7</td><td>26.1</td></tr><tr><td>SPX</td><td></td><td></td><td>7,405.73</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr></table>",
+        "bbox": [
+            74,
+            80,
+            890,
+            192
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "INVESTMENT IMPLICATIONS",
+        "text_level": 2,
+        "bbox": [
+            74,
+            236,
+            306,
+            251
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "We are positive on Memory and Storage, with top Short-term pick SNDK and top Long-term pick STX. We also rate WDC Outperform.",
+        "bbox": [
+            72,
+            267,
+            837,
+            298
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "header",
+        "text": "Mark C. Newman +1 212 845 7822 mark.newman@bernsteinsg.com",
+        "bbox": [
+            74,
+            21,
+            436,
+            34
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "header",
+        "text": "9 June 2026",
+        "bbox": [
+            820,
+            21,
+            888,
+            33
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "footer",
+        "text": "U.S. IT HARDWARE",
+        "bbox": [
+            74,
+            939,
+            155,
+            948
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "footer",
+        "text": "BERNSTEIN | SG GROUP",
+        "bbox": [
+            668,
+            940,
+            857,
+            949
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "page_number",
+        "text": "2",
+        "bbox": [
+            878,
+            940,
+            888,
+            949
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "DETAILS",
+        "text_level": 2,
+        "bbox": [
+            74,
+            55,
+            147,
+            68
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "We are seeing an unprecedented demand surge in memory and hard disk drives, with important implications for memory and HDD stocks.",
+        "bbox": [
+            72,
+            84,
+            847,
+            114
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "We will first discuss why AI is driving substantial demand for memory and storage. We will then revisit the New Memory Paradigm thesis from 2013 and assess whether it remains in place across DRAM, NAND, and hard disk drives. We will conclude with valuation and our top picks, STX as the long-term pick and SNDK as the short-term pick, both initiated Outperform last September.",
+        "bbox": [
+            72,
+            128,
+            883,
+            188
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "At first glance, recommending stocks that are up roughly 4,000% and 700% over the past 12 months may seem aggressive. However, we continue to see meaningful upside in both names.",
+        "bbox": [
+            72,
+            201,
+            864,
+            232
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "EXHIBIT 1: Agenda",
+        "bbox": [
+            74,
+            244,
+            199,
+            259
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "Agenda",
+        "text_level": 2,
+        "bbox": [
+            106,
+            295,
+            196,
+            314
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "list",
+        "sub_type": "text",
+        "list_items": [
+            "■ AI driving unprecedented demand surge in Memory & Storage",
+            "Is the New Memory Paradigm back?"
+        ],
+        "bbox": [
+            109,
+            343,
+            729,
+            407
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "list",
+        "sub_type": "text",
+        "list_items": [
+            "- DRAM: Technology driven supply constraint playing out",
+            "- NAND: Earlier cycle than DRAM",
+            "- HDD: Consolidated and growing for the first time"
+        ],
+        "bbox": [
+            131,
+            429,
+            595,
+            525
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "Valuation and top picks",
+        "bbox": [
+            109,
+            550,
+            360,
+            569
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "list",
+        "sub_type": "text",
+        "list_items": [
+            "- Top ST pick: SNDK – still significant earnings upside (initiated Outperform 15 $^{th}$ Sep '25)",
+            "- Top LT pick: STX – technology leader in HAMR (initiated Outperform 15 $^{th}$ Sep '25)"
+        ],
+        "bbox": [
+            131,
+            591,
+            847,
+            649
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "BERNSTEIN | SG GROUP",
+        "bbox": [
+            101,
+            706,
+            272,
+            715
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "| 2",
+        "bbox": [
+            827,
+            710,
+            857,
+            719
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "Source: Bernstein analysis",
+        "bbox": [
+            74,
+            742,
+            211,
+            754
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "header",
+        "text": "Mark C. Newman +1 212 845 7822 mark.newman@bernsteinsg.com",
+        "bbox": [
+            74,
+            21,
+            434,
+            34
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "header",
+        "text": "9 June 2026",
+        "bbox": [
+            820,
+            21,
+            886,
+            33
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "footer",
+        "text": "U.S. IT HARDWARE",
+        "bbox": [
+            74,
+            939,
+            155,
+            948
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "footer",
+        "text": "BERNSTEIN | SG GROUP",
+        "bbox": [
+            668,
+            939,
+            857,
+            949
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "page_number",
+        "text": "3",
+        "bbox": [
+            878,
+            940,
+            888,
+            949
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "chart",
+        "img_path": "images/8cb9de6b4441bb8b35c27a62012535551c7c2016dda792594a7f6a8a528b3391.jpg",
+        "content": "| Date       | Price | Bern. target price |\n| ---------- | ----- | ----------------- |\n| 5/22/2025  | 0     | 0                 |\n| 6/22/2025  | 0     | 0                 |\n| 7/22/2025  | 0     | 0                 |\n| 8/22/2025  | 0     | 0                 |\n| 9/22/2025  | 0     | 0                 |\n| 10/22/2025 | 0     | 0                 |\n| 11/22/2025 | 100   | 100               |\n| 12/22/2025 | 150   | 150               |\n| 1/22/2026  | 300   | 300               |\n| 2/22/2026  | 600   | 1000              |\n| 3/22/2026  | 500   | 1000              |\n| 4/22/2026  | 800   | 1200              |\n| 5/22/2026  | 1500  | 1800              |",
+        "chart_caption": [
+            "SNDK up 3,866% in 12 months, 437% YTD"
+        ],
+        "chart_footnote": [],
+        "sub_type": "line chart",
+        "bbox": [
+            177,
+            129,
+            807,
+            287
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "chart",
+        "img_path": "images/d11bd7392cd81bda947f22dfcfead98ad410ddf8d021c84539d7dd7e15737e1f.jpg",
+        "content": "| Date       | Price | Bern. target price |\n| ---------- | ----- | ------------------ |\n| 5/22/2025  | 100   | -                  |\n| 6/22/2025  | 120   | -                  |\n| 7/22/2025  | 130   | -                  |\n| 8/22/2025  | 140   | -                  |\n| 9/22/2025  | 150   | 250                |\n| 10/22/2025 | 160   | 260                |\n| 11/22/2025 | 170   | 380                |\n| 12/22/2025 | 180   | 380                |\n| 1/22/2026  | 190   | 500                |\n| 2/22/2026  | 200   | 500                |\n| 3/22/2026  | 210   | 600                |\n| 4/22/2026  | 220   | 600                |\n| 5/22/2026  | 800   | 1000               |",
+        "chart_caption": [
+            "STX up 621% in 12 months, 183% YTD"
+        ],
+        "chart_footnote": [
+            "BERNSTEIN | SG GROUP Source: Bloomberg, Bernstein"
+        ],
+        "sub_type": "line chart",
+        "bbox": [
+            177,
+            330,
+            807,
+            494
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "| 3",
+        "bbox": [
+            827,
+            520,
+            857,
+            530
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "Source: Bloomberg, Bernstein",
+        "bbox": [
+            74,
+            552,
+            228,
+            564
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "header",
+        "text": "Mark C. Newman +1 212 845 7822 mark.newman@bernsteinsg.com",
+        "bbox": [
+            74,
+            21,
+            436,
+            34
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "header",
+        "text": "9 June 2026",
+        "bbox": [
+            820,
+            21,
+            888,
+            33
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "header",
+        "text": "EXHIBIT 2: Stock Performance",
+        "bbox": [
+            74,
+            53,
+            282,
+            68
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "footer",
+        "text": "U.S. IT HARDWARE",
+        "bbox": [
+            74,
+            939,
+            155,
+            948
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "footer",
+        "text": "BERNSTEIN | SG GROUP",
+        "bbox": [
+            668,
+            940,
+            857,
+            949
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "page_number",
+        "text": "4",
+        "bbox": [
+            876,
+            940,
+            888,
+            949
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "At the heart of AI is data, and that data resides in memory and storage. The hierarchy runs from SRAM at the top, which resides on GPUs and CPUs, down through HBM, DRAM, NAND, HDD, and tape at the bottom. As you move up the stack, performance increases but cost rises. As you move down the stack, performance declines but cost falls.",
+        "bbox": [
+            72,
+            55,
+            866,
+            100
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "EXHIBIT 3: Memory/Storage Hierarchy for AI",
+        "text_level": 2,
+        "bbox": [
+            74,
+            111,
+            385,
+            128
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "chart",
+        "img_path": "images/1889fc9ce294edf934102cb3657cee1041179fb69979fcbece6c630d11b4f3bd.jpg",
+        "content": "| Technology | Value     |\n| ---------- | --------- |\n| SRAM       | $3,000/GB |\n| HBM        | ($20/GB)  |\n| DRAM       | ($20/GB)  |\n| NAND (enterprise SSD) | ($0.29/GB) |\n| HDD        | ($0.014/GB) |\n| TAPE       | ($0.005/GB) |",
+        "chart_caption": [
+            "At the heart of AI is data, which resides in Memory and Storage"
+        ],
+        "chart_footnote": [
+            "Source: Company reports, DRAMeXchange, Trendforce, Bernstein estimates & analysis"
+        ],
+        "sub_type": "pyramid chart",
+        "bbox": [
+            160,
+            217,
+            817,
+            510
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "BERNSTEIN | SG GROUP",
+        "bbox": [
+            101,
+            574,
+            272,
+            584
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "| 4",
+        "bbox": [
+            827,
+            579,
+            857,
+            589
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "Source: Company reports, DRAMeXchange, Trendforce, Bernstein estimates & analysis",
+        "bbox": [
+            74,
+            611,
+            507,
+            623
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "header",
+        "text": "Mark C. Newman +1 212 845 7822 mark.newman@bernsteinsg.com",
+        "bbox": [
+            74,
+            21,
+            436,
+            34
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "header",
+        "text": "9 June 2026",
+        "bbox": [
+            820,
+            21,
+            888,
+            33
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "footer",
+        "text": "U.S. IT HARDWARE",
+        "bbox": [
+            74,
+            939,
+            155,
+            948
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "footer",
+        "text": "BERNSTEIN | SG GROUP",
+        "bbox": [
+            668,
+            940,
+            857,
+            949
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "page_number",
+        "text": "5",
+        "bbox": [
+            878,
+            940,
+            888,
+            949
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "AI is driving a large and unprecedented demand surge across all forms of memory and storage. As workloads evolve from training and basic chatbot inference to advanced inference and agentic AI, memory and storage requirements change as well. High Bandwidth Memory (HBM) and Conventional DRAM were the early beneficiaries, but NAND and HDD also benefit more as AI workloads become more advanced.",
+        "bbox": [
+            72,
+            55,
+            874,
+            115
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "chart",
+        "img_path": "images/aee35756808aa4323e18557592c8ef91964aabd96a6f30a17c23880d6658b939.jpg",
+        "content": "| Category | Stage 1: Training Pre-training | Stage 2: Basic chatbot inference | Stage 3: Advanced inference Long-context, RAG, reasoning | Stage 4: Agentic AI Tool use, memory, workflows |\n|---|---|---|---|---|\n| HBM (DRAM) | Extreme | High | Extreme | High |\n| Conventional DRAM (DDR5) | High | Moderate | High | Extreme |\n| NAND Flash / Enterprise SSD | High | Moderate | Extreme | Extreme |\n| HDD (Nearline) | High | Low/Indirect | Moderate | High |\n| Tape (LTO / archive) | Moderate | Low | Low | Moderate |\nLegend: Extreme, High, Moderate, Low/Indirect",
+        "chart_caption": [
+            "EXHIBIT 4: AI Demand for Memory & Storage",
+            "AI is driving unprecedented demand surge in Memory & Storage"
+        ],
+        "chart_footnote": [
+            "Source: Trendforce, Company reports, Bernstein estimates and analysis"
+        ],
+        "sub_type": "heatmap",
+        "bbox": [
+            106,
+            233,
+            851,
+            517
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "BERNSTEIN | SG GROUP",
+        "bbox": [
+            101,
+            589,
+            272,
+            600
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "| 5",
+        "bbox": [
+            827,
+            593,
+            857,
+            604
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "Source: Trendforce, Company reports, Bernstein estimates and analysis",
+        "bbox": [
+            74,
+            625,
+            431,
+            638
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "header",
+        "text": "Mark C. Newman +1 212 845 7822 mark.newman@bernsteinsg.com",
+        "bbox": [
+            74,
+            21,
+            436,
+            34
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "header",
+        "text": "9 June 2026",
+        "bbox": [
+            820,
+            21,
+            888,
+            33
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "footer",
+        "text": "U.S. IT HARDWARE",
+        "bbox": [
+            74,
+            939,
+            155,
+            948
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "footer",
+        "text": "BERNSTEIN | SG GROUP",
+        "bbox": [
+            670,
+            940,
+            856,
+            949
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "page_number",
+        "text": "6",
+        "bbox": [
+            878,
+            940,
+            888,
+            949
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "This demand surge is leading data center customers to dominate demand across the major memory and storage categories. What is different this time is that hyperscalers building AI data centers are far less price sensitive than historical end customers. That dynamic has helped drive pricing up 3x to 4x over roughly the past six months.",
+        "bbox": [
+            72,
+            55,
+            862,
+            100
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "EXHIBIT 5: Data Center Mix for NAND, DRAM, and HDD",
+        "bbox": [
+            74,
+            111,
+            456,
+            127
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "Less price sensitive Data Center customers now dominate demand",
+        "text_level": 2,
+        "bbox": [
+            106,
+            163,
+            829,
+            183
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "chart",
+        "img_path": "images/7056c1d30d09c3d1ab8a318427838a48b74a811a721cff6aa0dc417b93143a15.jpg",
+        "content": "| Year | Data Center (%) | Non-Data Center (%) |\n|---|---|---|\n| 2016 | 14 | 87 |\n| 2026E | 52 | 48 |",
+        "chart_caption": [
+            "NAND"
+        ],
+        "chart_footnote": [],
+        "sub_type": "stacked bar chart",
+        "bbox": [
+            116,
+            266,
+            340,
+            498
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "chart",
+        "img_path": "images/5feb1e8ae9bfa56f46ca42cffc7238568ac89caf03de832c97b2ecd0c93b3ffe.jpg",
+        "content": "| Year | Data Center (%) | Non-Data Center (%) |\n|---|---|---|\n| 2016 | 18 | 75 |\n| 2026E | 50 | 45 |",
+        "chart_caption": [
+            "DRAM"
+        ],
+        "chart_footnote": [],
+        "sub_type": "stacked bar chart",
+        "bbox": [
+            367,
+            267,
+            592,
+            496
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "chart",
+        "img_path": "images/34df6c1598dd42decc281c0401934d1edb0a157294aac45661c9e8de20a83a8a.jpg",
+        "content": "| Year | Data Center (%) | Non-Data Center (%) |\n|---|---|---|\n| 2016 | 35 | 64 |\n| 2026E | 89 | 17 |",
+        "chart_caption": [
+            "HDD"
+        ],
+        "chart_footnote": [
+            "Source: Company reports, IDC, DRAMeXchange, Trendforce, Bernstein estimates & analysis"
+        ],
+        "sub_type": "stacked bar chart",
+        "bbox": [
+            617,
+            267,
+            844,
+            496
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "BERNSTEIN | SG GROUP",
+        "bbox": [
+            101,
+            574,
+            272,
+            584
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "| 6",
+        "bbox": [
+            827,
+            579,
+            857,
+            588
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "Source: Company reports, IDC, DRAMeXchange, Trendforce, Bernstein estimates & analysis",
+        "bbox": [
+            74,
+            610,
+            529,
+            623
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "header",
+        "text": "Mark C. Newman +1 212 845 7822 mark.newman@bernsteinsg.com",
+        "bbox": [
+            74,
+            21,
+            436,
+            34
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "header",
+        "text": "9 June 2026",
+        "bbox": [
+            820,
+            21,
+            888,
+            33
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "footer",
+        "text": "U.S. IT HARDWARE",
+        "bbox": [
+            74,
+            939,
+            155,
+            948
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "footer",
+        "text": "BERNSTEIN | SG GROUP",
+        "bbox": [
+            668,
+            940,
+            854,
+            949
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "page_number",
+        "text": "7",
+        "bbox": [
+            878,
+            940,
+            888,
+            949
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "Is the New Memory Paradigm back? We first wrote about the New Memory Paradigm in our 2013 Blackbook and 2014 Blackbook as a structural improvement thesis for the memory industry. Much of that thesis has played out, although not without exceptions.",
+        "bbox": [
+            72,
+            55,
+            883,
+            100
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "The New Memory Paradigm was based on diminishing returns from technology migration slowing supply growth and creating structural undersupply. In that setup, upcycles last longer and downcycles become less severe. As supply becomes harder, slower, and more expensive to add, and as industries consolidate, behavior improves and cycles show higher highs and higher lows.",
+        "bbox": [
+            72,
+            113,
+            874,
+            174
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "EXHIBIT 6: 2013/2014 Black Book on the New Memory Paradigm",
+        "bbox": [
+            72,
+            186,
+            524,
+            201
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "Is the New Memory Paradigm back?",
+        "text_level": 2,
+        "bbox": [
+            106,
+            237,
+            497,
+            258
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "Bernstein's 2013/2014 Black Book on the New Memory Paradigm",
+        "bbox": [
+            106,
+            298,
+            497,
+            312
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "image",
+        "img_path": "images/5916efcc3442dc13d4444051ddd1a4e5c9bf655825f00a8765abceb3461bf22f.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "Bernstein\nBERNSTEIN GLOBAL VIEW\nGlobal Memory: A New Paradigm\nMAY 2013\nThe days of high but growth and volatility are over; a new memory paradigm emerges...\nMemory is in the midst of unprecedented structural changes: consolidation and increasing barriers to entry, combined with escalating technological uncertainty and reduced demand elasticity, pave the way to a new memory paradigm that no longer rewards aggressive investment\nBit growth, the industry's long-term benefit and curse, is slowing permanently; as scaling becomes more complex, bit growth per wafer is slowing in both NAND and DRAM, leading to undersupply, robust pricing and improved margins\nComplexity is increasing as we approach scaling limits; 3D memory and new memory technologies are being explored to continue bit growth and cost declines; none of these technologies will be revolutionary enough to alter this positive supply side dynamic\nIn this new memory paradigm, all memory suppliers will benefit, but in particular Samsung (outperform), SanDisk (outperform), Micron (outperform) and Inotera (outperform) have the most to gain; SK Hynix (market-perform) and Toshiba (not covered) also stand to benefit",
+        "sub_type": "text_image",
+        "bbox": [
+            164,
+            336,
+            421,
+            575
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "image",
+        "img_path": "images/c86787443f295ee64bb82eaafec9267060d9888dde216c99b65c514bc2cab992.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "BERNSTEIN GLOBAL VIEW\nGlobal Memory: The Next Leg of the New Memory Paradigm\nMAY 2014\nWith stable profits and cash flow the new norm, multiple expansion and cash returns will follow\nFollowing unprecedented structural changes, memory margins have rented higher but multiples do not yet reflect the new stability of earnings in the new memory paradigm; furthermore, with improving balance sheets and stable cash flows, significant cash returns are on the cards\nIn NAND, bifurcation is accelerating as quality becomes more important thus proving that NAND is not a commodity; datacenters' thirst for storage and need for speed are lending to interesting opportunities for memory, particularly NAND, filling the huge performance gap\nDespite worries of a crash in prices, mainstream memory prices stay stable as the long-term supply constraint remains due to technical hurdles and rational behavior; 3D NAND allows NAND cost declines to continue plus further product differentiation, but little impact on supply\nIn the next leg of the new memory paradigm, all memory suppliers will benefit from multiple renting and increased cash returns, in particular, we like SmfDisk as the NAND solutions leader and SK Hynix as the most undervalued, but also like Samsung, Micron, Toshiba and Inotera",
+        "sub_type": "text_image",
+        "bbox": [
+            543,
+            336,
+            798,
+            575
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "Source: Bernstein",
+        "bbox": [
+            128,
+            620,
+            216,
+            631
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "BERNSTEIN | SG GROUP",
+        "bbox": [
+            101,
+            649,
+            272,
+            658
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "| 7",
+        "bbox": [
+            827,
+            652,
+            857,
+            663
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "Source: Bernstein",
+        "bbox": [
+            74,
+            685,
+            167,
+            695
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "header",
+        "text": "Mark C. Newman +1 212 845 7822 mark.newman@bernsteinsg.com",
+        "bbox": [
+            74,
+            21,
+            436,
+            34
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "header",
+        "text": "9 June 2026",
+        "bbox": [
+            820,
+            21,
+            888,
+            33
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "footer",
+        "text": "U.S. IT HARDWARE",
+        "bbox": [
+            74,
+            939,
+            155,
+            948
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "footer",
+        "text": "BERNSTEIN | SG GROUP",
+        "bbox": [
+            668,
+            940,
+            857,
+            949
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "page_number",
+        "text": "8",
+        "bbox": [
+            878,
+            940,
+            888,
+            949
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "The New Memory Paradigm: Diminishing returns from tech migration driving structural undersupply",
+        "text_level": 2,
+        "bbox": [
+            106,
+            104,
+            849,
+            147
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "chart",
+        "img_path": "images/0ac8d73d921dfa577a7c17c54ae59ee1e13dfee7722c8d707229cf83d84063c2.jpg",
+        "content": "| Year | Gb/wafer Growth (%) | Gb Demand Growth (%) |\n|---|---|---|\n| 2012 | 43.5 | 32.5 |\n| 2013E | 31.8 | 30.5 |\n| 2014E | 27.5 | 31.0 |\n| 2015E | 25.5 | 30.0 |\n| 2016E | 24.5 | 26.5 |\n| 2017E | 21.5 | 23.0 |",
+        "chart_caption": [
+            "DRAM Structural Supply Growth vs. Demand Growth in the 2013 New Memory Paradigm Blackbook"
+        ],
+        "chart_footnote": [],
+        "sub_type": "line chart",
+        "bbox": [
+            120,
+            206,
+            463,
+            440
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "chart",
+        "img_path": "images/403f03108089c645e75a462d9704e657022e6a5e5e046313b1d4738310ea343e.jpg",
+        "content": "| Year   | GB/wafer Growth | MB Demand Growth |\n| ------ | --------------- | ---------------- |\n| 2010   | 57.0%           | 74.0%            |\n| 2011   | 52.0%           | 77.0%            |\n| 2012   | 53.0%           | 64.0%            |\n| 2013E  | 41.0%           | 52.0%            |\n| 2014E  | 35.0%           | 51.0%            |\n| 2015E  | 32.0%           | 44.0%            |\n| 2016E  | 29.0%           | 34.0%            |\n| 2017E  | 26.0%           | 34.0%            |",
+        "chart_caption": [
+            "NAND Structural Supply Growth vs. Demand Growth in the 2013 New Memory Paradigm Blackbook"
+        ],
+        "chart_footnote": [
+            "Source: Company reports, DRAMeXchange, Trendforce, Bernstein estimates & analysis"
+        ],
+        "sub_type": "line chart",
+        "bbox": [
+            483,
+            206,
+            837,
+            440
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "BERNSTEIN | SG GROUP",
+        "bbox": [
+            101,
+            516,
+            274,
+            526
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "| 8",
+        "bbox": [
+            827,
+            520,
+            857,
+            530
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "Source: Company reports, DRAMeXchange, Trendforce, Bernstein estimates & analysis",
+        "bbox": [
+            74,
+            552,
+            507,
+            564
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "header",
+        "text": "Mark C. Newman +1 212 845 7822 mark.newman@bernsteinsg.com",
+        "bbox": [
+            74,
+            21,
+            436,
+            34
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "header",
+        "text": "9 June 2026",
+        "bbox": [
+            820,
+            21,
+            888,
+            33
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "header",
+        "text": "EXHIBIT 7: DRAM, NAND Structural Supply Growth vs Demand Growth in the 2013 Blackbook",
+        "bbox": [
+            74,
+            53,
+            722,
+            70
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "footer",
+        "text": "U.S. IT HARDWARE",
+        "bbox": [
+            74,
+            939,
+            155,
+            948
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "footer",
+        "text": "BERNSTEIN | SG GROUP",
+        "bbox": [
+            668,
+            939,
+            857,
+            949
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "page_number",
+        "text": "9",
+        "bbox": [
+            878,
+            940,
+            888,
+            949
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "This has largely played out as expected in DRAM. Supply growth from technology migration, measured here by GB per fab growth, has continued to decline and has remained well below demand growth. That has made it more difficult and more time-consuming for supply to catch up in upcycles, while also reducing the severity of downcycles.",
+        "bbox": [
+            72,
+            55,
+            876,
+            102
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "EXHIBIT 8: DRAM Structural Supply Growth vs. Demand Growth today",
+        "text_level": 2,
+        "bbox": [
+            72,
+            111,
+            565,
+            128
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "Technology driven supply constraint has played out in DRAM",
+        "text_level": 2,
+        "bbox": [
+            108,
+            163,
+            769,
+            185
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "DRAM Structural Supply Growth vs. Demand Growth today",
+        "bbox": [
+            106,
+            224,
+            461,
+            237
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "chart",
+        "img_path": "images/859f7504d78b61b7ceea291e60634dd2ab230fc4624344ecfc094a6cf6e1e01f.jpg",
+        "content": "| Year | GB/Fab Growth (%) | Demand Growth (%) |\n| --- | --- | --- |\n| 2012 | 43.5 | 33.5 |\n| 2013 | 36.8 | 27.5 |\n| 2014 | 29.8 | 32.2 |\n| 2015 | 29.8 | 24.7 |\n| 2016 | 25.5 | 28.9 |\n| 2017 | 20.5 | 21.4 |\n| 2018 | 14.0 | 20.5 |\n| 2019 | 10.0 | 18.6 |\n| 2020 | 13.0 | 17.8 |\n| 2021 | 13.0 | 21.6 |\n| 2022 | 8.5 | 7.8 |\n| 2023 | 6.5 | 10.0 |\n| 2024 | 6.8 | 19.3 |\n| 2025 | 6.8 | 21.7 |\n| 2026E | 6.5 | 19.5 |\n| 2027E | 7.5 | 20.7 |",
+        "chart_caption": [],
+        "chart_footnote": [
+            "Source: Company reports, DRAMeXchange, Bernstein estimates & analysis"
+        ],
+        "sub_type": "line chart",
+        "bbox": [
+            111,
+            268,
+            847,
+            500
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "BERNSTEIN | SG GROUP",
+        "bbox": [
+            101,
+            574,
+            272,
+            584
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "| 9",
+        "bbox": [
+            827,
+            579,
+            857,
+            589
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "Source: Company reports, DRAMeXchange, Bernstein estimates & analysis",
+        "bbox": [
+            72,
+            611,
+            448,
+            623
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "header",
+        "text": "Mark C. Newman +1 212 845 7822 mark.newman@bernsteinsg.com",
+        "bbox": [
+            74,
+            21,
+            436,
+            34
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "header",
+        "text": "9 June 2026",
+        "bbox": [
+            820,
+            21,
+            888,
+            33
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "footer",
+        "text": "U.S. IT HARDWARE",
+        "bbox": [
+            74,
+            939,
+            155,
+            948
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "footer",
+        "text": "BERNSTEIN | SG GROUP",
+        "bbox": [
+            668,
+            939,
+            857,
+            949
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "page_number",
+        "text": "10",
+        "bbox": [
+            873,
+            940,
+            888,
+            949
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "DRAM and HDD have also become highly concentrated industries, which has supported better behavior overall. NAND is a younger industry and has not consolidated to the same extent, but it is still relatively concentrated.",
+        "bbox": [
+            72,
+            55,
+            886,
+            86
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "EXHIBIT 9: Industry Concentration Across Memory/Storage Segments",
+        "bbox": [
+            72,
+            97,
+            561,
+            113
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "Memory/Storage segments have consolidated: HDD is the highest concentration, followed by DRAM and NAND",
+        "text_level": 2,
+        "bbox": [
+            106,
+            147,
+            818,
+            188
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "chart",
+        "img_path": "images/de0b998113347bc36fc64309ce8cd1161497cf5745d0faecf25b66e35dc41444.jpg",
+        "content": "| Year | HDD | DRAM | NAND |\n|---|---|---|---|\n| 2001 | 1800 | 1500 | 2500 |\n| 2002 | 1900 | 1700 | 3100 |\n| 2003 | 2200 | 1700 | 4000 |\n| 2004 | 1950 | 1750 | 3900 |\n| 2005 | 1950 | 1800 | 3150 |\n| 2006 | 2200 | 1650 | 2550 |\n| 2007 | 2550 | 1650 | 2300 |\n| 2008 | 2450 | 1700 | 2250 |\n| 2009 | 2600 | 2000 | 2350 |\n| 2010 | 2700 | 2300 | 2250 |\n| 2011 | 2750 | 2650 | 2250 |\n| 2012 | 3550 | 2700 | 2200 |\n| 2013 | 3950 | 3050 | 2300 |\n| 2014 | 3950 | 3200 | 2250 |\n| 2015 | 3950 | 3350 | 2250 |\n| 2016 | 3750 | 3480 | 2450 |\n| 2017 | 3700 | 3350 | 2350 |\n| 2018 | 3750 | 3300 | 2250 |\n| 2019 | 3700 | 3350 | 2150 |\n| 2020 | 3900 | 3280 | 2100 |\n| 2021 | 3850 | 3300 | 2050 |\n| 2022 | 3900 | 3320 | 2150 |\n| 2023 | 3920 | 3250 | 2125 |\n| 2024 | 3950 | 3150 | 2175 |\n| 2025 | 4000 | 2850 | 1950 |\nThe chart includes annotations: '150-250: concentrated' and 'highly concentrated', and a dashed red line at ~2550.",
+        "chart_caption": [
+            "HHI Index – measurement of industry concentration"
+        ],
+        "chart_footnote": [
+            "Source: Company reports, IDC, DRAMeXchange, Trendforce, Bernstein estimates & analysis"
+        ],
+        "sub_type": "line chart",
+        "bbox": [
+            106,
+            255,
+            851,
+            488
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "BERNSTEIN | SG GROUP",
+        "bbox": [
+            101,
+            559,
+            272,
+            569
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "| 10",
+        "bbox": [
+            827,
+            564,
+            859,
+            573
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "Source: Source: Company reports, IDC, DRAMeXchange, Trendforce, Bernstein estimates & analysis",
+        "bbox": [
+            72,
+            595,
+            570,
+            607
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "header",
+        "text": "Mark C. Newman +1 212 845 7822 mark.newman@bernsteinsg.com",
+        "bbox": [
+            74,
+            21,
+            436,
+            34
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "header",
+        "text": "9 June 2026",
+        "bbox": [
+            820,
+            21,
+            888,
+            33
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "footer",
+        "text": "U.S. IT HARDWARE",
+        "bbox": [
+            74,
+            939,
+            155,
+            948
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "footer",
+        "text": "BERNSTEIN | SG GROUP",
+        "bbox": [
+            668,
+            939,
+            857,
+            949
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "page_number",
+        "text": "11",
+        "bbox": [
+            874,
+            940,
+            888,
+            949
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "This has led to higher highs and higher lows in DRAM profitability. The COVID cycle was an exception and should be viewed as a highly unusual period.",
+        "bbox": [
+            72,
+            55,
+            844,
+            86
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "EXHIBIT 10: DRAM Gross Margin",
+        "bbox": [
+            74,
+            97,
+            294,
+            113
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "chart",
+        "img_path": "images/5cb7639efeaabba0b8086a5416c0b8270fcb6d6d442947af1ce073f6f9d352e6.jpg",
+        "content": "| Quarter | Gross Margin |\n| ------- | ------------ |\n| 1Q08    | 0%           |\n| 3Q08    | 18%          |\n| 1Q09    | -29%         |\n| 3Q09    | -29%         |\n| 1Q10    | 47%          |\n| 3Q10    | 47%          |\n| 1Q11    | 8%           |\n| 3Q11    | 8%           |\n| 1Q12    | 8%           |\n| 3Q12    | 8%           |\n| 1Q13    | 8%           |\n| 3Q13    | 8%           |\n| 1Q14    | 8%           |\n| 3Q14    | 8%           |\n| 1Q15    | 8%           |\n| 3Q15    | 8%           |\n| 1Q16    | 8%           |\n| 3Q16    | 8%           |\n| 1Q17    | 8%           |\n| 3Q17    | 8%           |\n| 1Q18    | 8%           |\n| 3Q18    | 8%           |\n| 1Q19    | 8%           |\n| 3Q19    | 8%           |\n| 1Q20    | 8%           |\n| 3Q20    | 8%           |\n| 1Q21    | 8%           |\n| 3Q21    | 8%           |\n| 1Q22    | 8%           |\n| 3Q22    | 8%           |\n| 1Q23    | 8%           |\n| 3Q23    | 8%           |\n| 1Q24    | 8%           |\n| 3Q24    | 8%           |\n| 1Q25    | 8%           |\n| 3Q25    | 8%           |\n| 1Q26    | 8%           |\n| 3Q26E   | 87%          |\n| 1Q27E   | 87%          |",
+        "chart_caption": [
+            "DRAM: Higher highs and Higher lows should continue"
+        ],
+        "chart_footnote": [
+            "Source: Company reports, DRAMeXchange, Trendforce, Bernstein estimates & analysis"
+        ],
+        "sub_type": "line chart",
+        "bbox": [
+            115,
+            210,
+            851,
+            487
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "BERNSTEIN | SG GROUP",
+        "bbox": [
+            101,
+            559,
+            272,
+            569
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "| 11",
+        "bbox": [
+            827,
+            564,
+            859,
+            574
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "Source: Company reports, DRAMeXchange, Trendforce, Bernstein estimates & analysis",
+        "bbox": [
+            74,
+            595,
+            507,
+            607
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "header",
+        "text": "Mark C. Newman +1 212 845 7822 mark.newman@bernsteinsg.com",
+        "bbox": [
+            74,
+            21,
+            436,
+            34
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "header",
+        "text": "9 June 2026",
+        "bbox": [
+            820,
+            21,
+            888,
+            33
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "footer",
+        "text": "U.S. IT HARDWARE",
+        "bbox": [
+            74,
+            939,
+            155,
+            948
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "footer",
+        "text": "BERNSTEIN | SG GROUP",
+        "bbox": [
+            668,
+            940,
+            857,
+            949
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "page_number",
+        "text": "12",
+        "bbox": [
+            874,
+            940,
+            888,
+            949
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "In NAND, the structural supply constraint thesis was delayed by the 3D NAND supply expansion. Planar NAND had followed a pattern similar to DRAM, with GB per fab growth falling sharply as planar NAND approached its technical limits. The transition to 3D NAND created a one-time step-up in GB per wafer and GB per fab. However, 3D NAND is now also beginning to face diminishing returns.",
+        "bbox": [
+            72,
+            55,
+            884,
+            116
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "EXHIBIT 11: NAND Structural Supply Growth vs. Demand Growth today",
+        "bbox": [
+            72,
+            128,
+            565,
+            143
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "3D NAND adoption led to an explosion of NAND supply – this is now finally reaching diminishing returns",
+        "text_level": 1,
+        "bbox": [
+            106,
+            178,
+            844,
+            219
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "NAND Structural Supply Growth vs. Demand Growth today",
+        "bbox": [
+            106,
+            239,
+            460,
+            253
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "chart",
+        "img_path": "images/95d967551854b46f5e1c930683c476e320d503f432b510d602664588f4b40472.jpg",
+        "content": "NAND GB/Fab Growth vs. Demand Growth\n| Year | 3D NAND GB/Fab Growth (%) | 2D NAND GB/Fab Growth (%) | Demand Growth (%) |\n|---|---|---|---|\n| 2013 | 45.0 | 46.0 | 45.0 |\n| 2014 | 38.0 | 29.0 | 38.0 |\n| 2015 | 38.0 | 29.0 | 38.0 |\n| 2016 | 45.0 | 27.0 | 46.0 |\n| 2017 | 29.0 | 17.0 | 34.0 |\n| 2018 | 17.0 | 8.0 | 38.0 |\n| 2019 | 34.0 | 4.0 | 38.0 |\n| 2020 | 34.0 | 3.0 | 34.0 |\n| 2021 | 18.0 | 3.0 | 36.0 |\n| 2022 | 18.0 | 3.0 | 15.0 |\n| 2023 | 15.0 | -3.0 | 7.0 |\n| 2024 | 16.0 | -4.0 | 17.0 |\n| 2025 | 15.0 | -4.0 | 17.0 |\n| 2026E | 15.0 | -4.0 | 16.0 |\n| 2027E | 16.0 | -4.0 | 17.0 |\nStructural Undersupply",
+        "chart_caption": [],
+        "chart_footnote": [
+            "Source: Company reports, DRAMeXchange, Trendforce, Bernstein estimates & analysis"
+        ],
+        "sub_type": "line chart",
+        "bbox": [
+            113,
+            284,
+            847,
+            512
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "BERNSTEIN | SG GROUP",
+        "bbox": [
+            101,
+            589,
+            272,
+            600
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "| 12",
+        "bbox": [
+            827,
+            595,
+            859,
+            604
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "Source: Company reports, DRAMeXchange, Trendforce, Bernstein estimates & analysis",
+        "bbox": [
+            72,
+            625,
+            507,
+            638
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "header",
+        "text": "Mark C. Newman +1 212 845 7822 mark.newman@bernsteinsg.com",
+        "bbox": [
+            74,
+            21,
+            436,
+            34
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "header",
+        "text": "9 June 2026",
+        "bbox": [
+            820,
+            21,
+            888,
+            33
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "footer",
+        "text": "U.S. IT HARDWARE",
+        "bbox": [
+            74,
+            939,
+            155,
+            948
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "footer",
+        "text": "BERNSTEIN | SG GROUP",
+        "bbox": [
+            668,
+            940,
+            857,
+            949
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "page_number",
+        "text": "13",
+        "bbox": [
+            874,
+            940,
+            886,
+            949
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "That should lead to structurally higher profitability in NAND, similar to DRAM, with higher highs and higher lows over time. We still expect cyclicality, but as seen in DRAM, upcycles should be stronger and downcycles less severe because adding meaningful supply is increasingly difficult and time-consuming.",
+        "bbox": [
+            72,
+            55,
+            881,
+            100
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "EXHIBIT 12: NAND Industry Gross Margin",
+        "text_level": 2,
+        "bbox": [
+            74,
+            111,
+            357,
+            128
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "NAND: Return of the New Memory Paradigm should signal higher highs and higher lows going forward",
+        "text_level": 2,
+        "bbox": [
+            106,
+            161,
+            812,
+            204
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "chart",
+        "img_path": "images/175442c68961ad0d8476e661bc590a3b874979069184a23fb0b4dead481e049d.jpg",
+        "content": "| Quarter | Value (%) |\n|---|---|\n| 1Q08 | -2 |\n| 3Q08 | -34 |\n| 1Q09 | -34 |\n| 3Q09 | 15 |\n| 1Q10 | 42 |\n| 3Q10 | 47 |\n| 1Q11 | 32 |\n| 3Q11 | 30 |\n| 1Q12 | 28 |\n| 3Q12 | 18 |\n| 1Q13 | 25 |\n| 3Q13 | 38 |\n| 1Q14 | 35 |\n| 3Q14 | 30 |\n| 1Q15 | 26 |\n| 3Q15 | 25 |\n| 1Q16 | 26 |\n| 3Q16 | 30 |\n| 1Q17 | 45 |\n| 3Q17 | 58 |\n| 1Q18 | 55 |\n| 3Q18 | 50 |\n| 1Q19 | 6 |\n| 3Q19 | 6 |\n| 1Q20 | 28 |\n| 3Q20 | 20 |\n| 1Q21 | 35 |\n| 3Q21 | 39 |\n| 1Q22 | 35 |\n| 3Q22 | -44 |\n| 1Q23 | -44 |\n| 3Q23 | -20 |\n| 1Q24 | 35 |\n| 3Q24 | 13 |\n| 1Q25 | 13 |\n| 3Q25 | 35 |\n| 1Q26 | 68 |\n| 3Q26E | 86 |\n| 1Q27E | 86 |",
+        "chart_caption": [
+            "NAND Industry Gross Margin"
+        ],
+        "chart_footnote": [
+            "Source: Company reports, DRAMeXchange, Trendforce, Bernstein estimates & analysis"
+        ],
+        "sub_type": "line chart",
+        "bbox": [
+            135,
+            253,
+            844,
+            482
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "BERNSTEIN | SG GROUP",
+        "bbox": [
+            101,
+            574,
+            272,
+            584
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "| 13",
+        "bbox": [
+            827,
+            579,
+            859,
+            588
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "Source: Company reports, DRAMeXchange, Trendforce, Bernstein estimates & analysis",
+        "bbox": [
+            74,
+            611,
+            507,
+            623
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "header",
+        "text": "Mark C. Newman +1 212 845 7822 mark.newman@bernsteinsg.com",
+        "bbox": [
+            74,
+            21,
+            436,
+            34
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "header",
+        "text": "9 June 2026",
+        "bbox": [
+            820,
+            21,
+            888,
+            33
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "footer",
+        "text": "U.S. IT HARDWARE",
+        "bbox": [
+            74,
+            939,
+            155,
+            948
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "footer",
+        "text": "BERNSTEIN | SG GROUP",
+        "bbox": [
+            668,
+            939,
+            857,
+            949
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "page_number",
+        "text": "14",
+        "bbox": [
+            873,
+            940,
+            888,
+            949
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "NAND is also earlier in the cycle than DRAM, which suggests greater upside potential from current levels. DRAM recovery began in 2023-24, while NAND remained loss-making for many companies until the recovery that began in September 2025. As a result, DRAM capex has already increased significantly to all-time highs. NAND capex, by contrast, remains well below the previous peak reached during the 3D NAND expansion.",
+        "bbox": [
+            72,
+            55,
+            888,
+            116
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "EXHIBIT 13: DRAM, NAND Flash Capex Spending",
+        "bbox": [
+            74,
+            128,
+            409,
+            143
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "NAND is earlier cycle vs. DRAM, with minimal capex response so far",
+        "text_level": 2,
+        "bbox": [
+            106,
+            178,
+            844,
+            200
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "chart",
+        "img_path": "images/41b470a2133c8d3ab42e6877ffcd7ebf706e8e697c2cedf6d863115979df9f3e.jpg",
+        "content": "| Year | DRAM | NAND Flash |\n|---|---|---|\n| 2010 | 13500 | 7800 |\n| 2011 | 8500 | 10800 |\n| 2012 | 5200 | 8100 |\n| 2013 | 6000 | 9400 |\n| 2014 | 10500 | 10600 |\n| 2015 | 11800 | 13200 |\n| 2016 | 9700 | 19400 |\n| 2017 | 16500 | 26500 |\n| 2018 | 18500 | 32500 |\n| 2019 | 18200 | 24200 |\n| 2020 | 18700 | 24200 |\n| 2021 | 24800 | 32700 |\n| 2022 | 27300 | 32300 |\n| 2023 | 22800 | 17400 |\n| 2024 | 37500 | 21100 |\n| 2025 | 51800 | 21900 |\n| 2026E | 56300 | 25400 |",
+        "chart_caption": [
+            "Capex Spending (\\$mn)"
+        ],
+        "chart_footnote": [
+            "Source: Gartner, Bernstein estimates & analysis"
+        ],
+        "sub_type": "line chart",
+        "bbox": [
+            115,
+            303,
+            844,
+            514
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "BERNSTEIN | SG GROUP",
+        "bbox": [
+            101,
+            589,
+            272,
+            600
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "| 14",
+        "bbox": [
+            827,
+            595,
+            859,
+            604
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "Source: Gartner, Bernstein estimates & analysis",
+        "bbox": [
+            74,
+            625,
+            313,
+            637
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "header",
+        "text": "Mark C. Newman +1 212 845 7822 mark.newman@bernsteinsg.com",
+        "bbox": [
+            74,
+            21,
+            436,
+            34
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "header",
+        "text": "9 June 2026",
+        "bbox": [
+            820,
+            21,
+            888,
+            33
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "footer",
+        "text": "U.S. IT HARDWARE",
+        "bbox": [
+            74,
+            939,
+            155,
+            948
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "footer",
+        "text": "BERNSTEIN | SG GROUP",
+        "bbox": [
+            668,
+            940,
+            857,
+            949
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "page_number",
+        "text": "15",
+        "bbox": [
+            874,
+            940,
+            888,
+            949
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "HDD is also seeing a meaningful structural change, as this is the first time in history that the industry is both consolidated and growing. Since consolidation in 2012, the HDD industry had been shrinking because of aggressive NAND cannibalization. Those headwinds are now largely exhausted, as NAND has already taken most of the PC drive and mission-critical drive markets. What remains is the business-critical, or nearline, segment, which is fundamentally a capacity market where NAND cannot compete effectively. With AI adding demand support in that segment, the HDD market is now both growing and consolidated.",
+        "bbox": [
+            72,
+            55,
+            886,
+            145
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "EXHIBIT 14: HDD Industry Total Revenue",
+        "bbox": [
+            74,
+            158,
+            355,
+            173
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "HDD: Both consolidated and growing for the first time in history",
+        "text_level": 2,
+        "bbox": [
+            106,
+            209,
+            796,
+            230
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "chart",
+        "img_path": "images/25ce59058b46774d2ab98298e32337bb4b7ec73e70e4c94279d421d65ac13be9.jpg",
+        "content": "| Year   | Business critical HDD | Others (2.5\", 3.5\", Mission-critical) |\n|--------|------------------------|------------------------------------------|\n| 2014   | ~5,000                 | ~33,000                                  |\n| 2015   | ~5,500                 | ~28,000                                  |\n| 2016   | ~6,000                 | ~25,000                                  |\n| 2017   | ~6,500                 | ~24,500                                  |\n| 2018   | ~7,500                 | ~24,500                                  |\n| 2019   | ~8,000                 | ~23,000                                  |\n| 2020   | ~9,000                 | ~21,000                                  |\n| 2021   | ~12,000                | ~24,000                                  |\n| 2022   | ~11,500                | ~18,000                                  |\n| 2023   | ~7,500                 | ~12,500                                  |\n| 2024E  | ~14,000                | ~18,500                                  |\n| 2025E  | ~17,500                | ~23,500                                  |\n| 2026E  | ~21,500                | ~28,500                                  |\n| 2027E  | ~26,500                | ~34,500                                  |\n| 2028E  | ~31,500                | ~41,500                                  |\n| 2029E  | ~37,500                | ~49,500                                  |\n| 2030E  | ~44,500                | ~58,500                                  |",
+        "chart_caption": [],
+        "chart_footnote": [
+            "Source: Company reports, IDC, Gartner, Bernstein analysis and estimates"
+        ],
+        "sub_type": "area chart",
+        "bbox": [
+            113,
+            295,
+            840,
+            547
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "BERNSTEIN | SG GROUP",
+        "bbox": [
+            101,
+            620,
+            272,
+            629
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "| 15",
+        "bbox": [
+            827,
+            625,
+            859,
+            634
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "Source: Company reports, IDC, Gartner, Bernstein analysis and estimates",
+        "bbox": [
+            72,
+            656,
+            436,
+            668
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "header",
+        "text": "Mark C. Newman +1 212 845 7822 mark.newman@bernsteinsg.com",
+        "bbox": [
+            74,
+            21,
+            434,
+            34
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "header",
+        "text": "9 June 2026",
+        "bbox": [
+            820,
+            21,
+            888,
+            33
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "footer",
+        "text": "U.S. IT HARDWARE",
+        "bbox": [
+            74,
+            939,
+            155,
+            948
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "footer",
+        "text": "BERNSTEIN | SG GROUP",
+        "bbox": [
+            668,
+            940,
+            854,
+            949
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "page_number",
+        "text": "16",
+        "bbox": [
+            874,
+            940,
+            886,
+            949
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "As a result, HDD margins should remain sustainably higher than in recent history.",
+        "bbox": [
+            72,
+            55,
+            634,
+            70
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "EXHIBIT 15: HDD Industry Gross Margin",
+        "bbox": [
+            74,
+            82,
+            345,
+            98
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "chart",
+        "img_path": "images/2ee037e536eb33807ecdaeb2429b5b00c85b20ce84df8deef744d79d7e81d353.jpg",
+        "content": "HDD Industry Gross Margin\n| Quarter | Gross Margin (%) |\n|---|---|\n| 2Q14 | 29.5 |\n| 3Q14 | 30.0 |\n| 4Q14 | 30.5 |\n| 1Q15 | 31.0 |\n| 2Q15 | 30.0 |\n| 3Q15 | 28.5 |\n| 4Q15 | 29.0 |\n| 1Q16 | 27.5 |\n| 2Q16 | 28.5 |\n| 3Q16 | 30.0 |\n| 4Q16 | 32.0 |\n| 1Q17 | 32.5 |\n| 2Q17 | 31.0 |\n| 3Q17 | 31.5 |\n| 4Q17 | 31.0 |\n| 1Q18 | 33.0 |\n| 2Q18 | 33.5 |\n| 3Q18 | 32.5 |\n| 4Q18 | 30.0 |\n| 1Q19 | 29.0 |\n| 2Q19 | 28.5 |\n| 3Q19 | 29.0 |\n| 4Q19 | 30.5 |\n| 1Q20 | 29.5 |\n| 2Q20 | 28.5 |\n| 3Q20 | 27.5 |\n| 4Q20 | 27.5 |\n| 1Q21 | 28.0 |\n| 2Q21 | 31.0 |\n| 3Q21 | 32.5 |\n| 4Q21 | 32.0 |\n| 1Q22 | 30.0 |\n| 2Q22 | 30.0 |\n| 3Q22 | 28.0 |\n| 4Q22 | 22.5 |\n| 1Q23 | 22.0 |\n| 2Q23 | 21.5 |\n| 3Q23 | 23.0 |\n| 4Q23 | 25.0 |\n| 1Q24 | 30.0 |\n| 2Q24 | 35.0 |\n| 3Q24 | 37.0 |\n| 4Q24 | 38.5 |\n| 1Q25 | 40.0 |\n| 2Q25 | 41.5 |\n| 3Q25 | 43.0 |\n| 4Q25 | 44.5 |\n| 1Q26 | 49.0 |\n| 2Q26E | 52.0 |\n| 3Q26E | 55.0 |\n| 4Q26E | 58.0 |\n| 1Q27E | 60.0 |\n| 2Q27E | 61.0 |",
+        "chart_caption": [
+            "HDD: As a result we should also see sustainably higher margins"
+        ],
+        "chart_footnote": [
+            "Source: Company reports, IDC, Bernstein estimates & analysis"
+        ],
+        "sub_type": "line chart",
+        "bbox": [
+            109,
+            195,
+            857,
+            470
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "BERNSTEIN | SG GROUP",
+        "bbox": [
+            101,
+            544,
+            272,
+            553
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "| 16",
+        "bbox": [
+            827,
+            548,
+            859,
+            557
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "Source: Company reports, IDC, Bernstein estimates & analysis",
+        "bbox": [
+            74,
+            580,
+            384,
+            592
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "header",
+        "text": "Mark C. Newman +1 212 845 7822 mark.newman@bernsteinsg.com",
+        "bbox": [
+            74,
+            21,
+            436,
+            34
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "header",
+        "text": "9 June 2026",
+        "bbox": [
+            820,
+            21,
+            888,
+            33
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "footer",
+        "text": "U.S. IT HARDWARE",
+        "bbox": [
+            74,
+            939,
+            155,
+            948
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "footer",
+        "text": "BERNSTEIN | SG GROUP",
+        "bbox": [
+            668,
+            940,
+            857,
+            949
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "page_number",
+        "text": "17",
+        "bbox": [
+            874,
+            940,
+            888,
+            949
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "Another positive development in memory and HDD is the increasing importance of long-term agreements. Historically, LTAs were often one-sided commitments by suppliers to guarantee volume to large customers such as Apple and Dell. Given the current shortage in memory and HDD, negotiating leverage has shifted materially back toward suppliers. New LTAs now include pricing as well as financial commitments such as prepayments and take-or-pay arrangements. Based on recent Sandisk LTAs, floor pricing in three- to five-year agreements appears to be only about 10% below recent March quarter pricing, which is constructive given that costs typically decline by around 10% per year.",
+        "bbox": [
+            72,
+            55,
+            884,
+            147
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "EXHIBIT 16: Average Selling Price per GB",
+        "bbox": [
+            74,
+            158,
+            351,
+            174
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "Cyclicality should be dampened by LTA",
+        "text_level": 2,
+        "bbox": [
+            106,
+            209,
+            534,
+            230
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "Our calc. on LTA floor pricing suggests only $10\\%$ discount to projected Jun'26 ASP",
+        "bbox": [
+            106,
+            269,
+            605,
+            284
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "table",
+        "img_path": "images/3ccd7069015b81ea59030da1111ea4982f0d59935475b0d2c037ee14d6c41961.jpg",
+        "table_caption": [],
+        "table_footnote": [],
+        "table_body": "<table><tr><td>Total bits shipment ((M GB, FY 27-29)</td><td>458,849</td></tr><tr><td>% of Bits under LTA</td><td>35%</td></tr><tr><td>Bits under LTA (M GB)</td><td>160,597</td></tr><tr><td>Total LTA ($mn)</td><td>41,600</td></tr><tr><td>ASP for bits under LTA ($/GB)</td><td>$0.26</td></tr><tr><td>ASP for Jun-26 Quarter ($/GB)</td><td>$0.29</td></tr><tr><td>Delta (LTA ASP vs. Curr ASP)</td><td>-10%</td></tr></table>",
+        "bbox": [
+            104,
+            327,
+            461,
+            512
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "chart",
+        "img_path": "images/da57fc663af38f3f1c43bec55de6bf148867fd89b084ab1c10ea412e4eec50f1.jpg",
+        "content": "| Quarter | ASP ($/GB) |\n| ------- | ---------- |\n| 1Q25    | 0.08       |\n| 2Q25    | 0.07       |\n| 3Q25    | 0.07       |\n| 4Q25    | 0.07       |\n| 1Q26    | 0.08       |\n| 2Q26    | 0.10       |\n| 3Q26    | 0.24       |\n| 4Q26E   | 0.29       |\n| 2027E   | 0.26       |\n| 2028E   | 0.26       |\n| 2029E   | 0.26       |",
+        "chart_caption": [],
+        "chart_footnote": [
+            "Source: Company reports, Bernstein estimates and analysis"
+        ],
+        "sub_type": "line chart",
+        "bbox": [
+            492,
+            327,
+            839,
+            520
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "BERNSTEIN | SG GROUP",
+        "bbox": [
+            101,
+            620,
+            272,
+            629
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "| 17",
+        "bbox": [
+            827,
+            625,
+            859,
+            634
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "Source: Company reports, Bernstein estimates and analysis",
+        "bbox": [
+            74,
+            656,
+            372,
+            668
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "header",
+        "text": "Mark C. Newman +1 212 845 7822 mark.newman@bernsteinsg.com",
+        "bbox": [
+            74,
+            21,
+            434,
+            34
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "header",
+        "text": "9 June 2026",
+        "bbox": [
+            820,
+            21,
+            886,
+            33
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "footer",
+        "text": "U.S. IT HARDWARE",
+        "bbox": [
+            74,
+            939,
+            155,
+            948
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "footer",
+        "text": "BERNSTEIN | SG GROUP",
+        "bbox": [
+            668,
+            940,
+            854,
+            949
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "page_number",
+        "text": "18",
+        "bbox": [
+            874,
+            940,
+            886,
+            949
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "On valuation, memory multiples remain low despite the sharp increase in memory pricing. Current multiples appear to discount an imminent collapse in profits and imply that those profits will not return. We agree that memory stocks should trade at lower multiples on close-to-peak earnings, but we also believe through-cycle earnings are expanding and that this cycle is likely to last longer and reach a higher level than previously expected. In HDD, pricing has moved only modestly so far, roughly 6% to 7% last quarter, and with more than 60% five-year EPS CAGR, there is still considerable upside from earnings growth even if multiples do not expand.",
+        "bbox": [
+            72,
+            55,
+            876,
+            147
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "EXHIBIT 17: Memory/Storage P/FE",
+        "bbox": [
+            74,
+            158,
+            311,
+            174
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "chart",
+        "img_path": "images/c60583df63438942a2fa9699a26158fb2136f72457cee87e2bff3a6efa22c6c9.jpg",
+        "content": "Memory/Storage P/FE\n| Company | P/ Cons.EPS (x) | P/Bern. EPS (x) |\n| :--- | :--- | :--- |\n| SNDK | 8.3 | 7.4 |\n| MU | 7.2 | 6.2 |\n| Samsung | 5.3 | 6.0 |\n| SK Hynix | 4.9 | 4.9 |\n| Seagate | 30.2 | 24.4 |\n| Western Digital | 27.8 | 23.6 |",
+        "chart_caption": [
+            "Memory stocks valuation suggest market priced in boom-bust"
+        ],
+        "chart_footnote": [
+            "Source: Bloomberg (updated as of May 21), Bernstein estimates and analysis"
+        ],
+        "sub_type": "bar chart",
+        "bbox": [
+            113,
+            271,
+            847,
+            544
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "BERNSTEIN | SG GROUP",
+        "bbox": [
+            101,
+            620,
+            272,
+            631
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "| 18",
+        "bbox": [
+            827,
+            625,
+            859,
+            634
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "Source: Bloomberg (updated as of May 21), Bernstein estimates and analysis",
+        "bbox": [
+            72,
+            656,
+            456,
+            669
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "header",
+        "text": "Mark C. Newman +1 212 845 7822 mark.newman@bernsteinsg.com",
+        "bbox": [
+            74,
+            21,
+            434,
+            34
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "header",
+        "text": "9 June 2026",
+        "bbox": [
+            820,
+            21,
+            888,
+            33
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "footer",
+        "text": "U.S. IT HARDWARE",
+        "bbox": [
+            74,
+            939,
+            155,
+            948
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "footer",
+        "text": "BERNSTEIN | SG GROUP",
+        "bbox": [
+            668,
+            940,
+            857,
+            949
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "page_number",
+        "text": "19",
+        "bbox": [
+            874,
+            940,
+            888,
+            949
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "Overall, we continue to like the sector and see further upside. SNDK is our preferred short-term idea, given the significant earnings upside that remains as NAND is earlier in the cycle than DRAM. Seagate is our preferred long-term idea, supported by steadier earnings growth from both volume and pricing, as well as HAMR-driven cost declines.",
+        "bbox": [
+            72,
+            55,
+            879,
+            100
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "EXHIBIT 18: Global Memory & HDD Stocks",
+        "text_level": 2,
+        "bbox": [
+            74,
+            111,
+            362,
+            128
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "table",
+        "img_path": "images/5b99abea93e36e347c41b58c4fc097c76cfcfd63e4f366cd1b76ec5963d29962.jpg",
+        "table_caption": [
+            "Global Memory & HDD Stocks"
+        ],
+        "table_footnote": [
+            "Source: Bernstein",
+            "BERNSTEIN | SG GROUP",
+            "Source: Bernstein"
+        ],
+        "table_body": "<table><tr><td>Company</td><td>Product</td><td>Rating</td><td>Coverage Analyst</td><td></td></tr><tr><td>Sandisk</td><td>NAND</td><td>Outperform</td><td>Mark Newman</td><td>ST top pick</td></tr><tr><td>Seagate</td><td>HDD</td><td>Outperform</td><td>Mark Newman</td><td>LT top pick</td></tr><tr><td>Western Digital</td><td>HDD</td><td>Outperform</td><td>Mark Newman</td><td></td></tr><tr><td>MU</td><td>DRAM &amp; NAND</td><td>Outperform</td><td>Mark Li</td><td></td></tr><tr><td>Samsung</td><td>DRAM &amp; NAND</td><td>Outperform</td><td>Mark Li</td><td></td></tr><tr><td>SK Hynix</td><td>DRAM &amp; NAND</td><td>Outperform</td><td>Mark Li</td><td></td></tr></table>",
+        "bbox": [
+            99,
+            224,
+            849,
+            500
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "header",
+        "text": "Mark C. Newman +1 212 845 7822 mark.newman@bernsteinsg.com",
+        "bbox": [
+            74,
+            21,
+            436,
+            34
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "header",
+        "text": "9 June 2026",
+        "bbox": [
+            820,
+            21,
+            888,
+            33
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "footer",
+        "text": "U.S. IT HARDWARE",
+        "bbox": [
+            74,
+            939,
+            155,
+            948
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "footer",
+        "text": "BERNSTEIN | SG GROUP",
+        "bbox": [
+            668,
+            939,
+            857,
+            949
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "page_number",
+        "text": "20",
+        "bbox": [
+            871,
+            940,
+            888,
+            949
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "I. REQUIRED DISCLOSURES",
+        "text_level": 2,
+        "bbox": [
+            74,
+            82,
+            272,
+            95
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "References to \"Bernstein\" or the \"Firm\" in these disclosures relate to the following entities: Bernstein Institutional Services LLC (April 1, 2024 onwards), Bernstein & Co., LLC (pre April 1, 2024), Bernstein Autonomous LLP, BSG France S.A. (April 1, 2024 onwards), Bernstein (Hong Kong) Limited 盛博香港有限公司, Bernstein (Canada) Limited, Bernstein (India) Private Limited (SEBI registration no. INH000006378), Bernstein (Singapore) Private Limited, Bernstein Japan KK (サンフォード・C・バーンスタイン株式会社) and analysts employed by SG Africa Technologies & Services to produce Bernstein under a Global Services Agreement in place between Bernstein and SG.",
+        "bbox": [
+            72,
+            109,
+            890,
+            206
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "Bernstein is part of a joint venture between SG (SG) and AllianceBernstein, L.P. (AB). Unless specifically noted otherwise, for purposes of these disclosures, references to Bernstein's “affiliates” relate to both SG and AB and their respective affiliates.",
+        "bbox": [
+            72,
+            219,
+            888,
+            260
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "VALUATION METHODOLOGY",
+        "text_level": 2,
+        "bbox": [
+            72,
+            273,
+            275,
+            286
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "SanDisk Corp",
+        "text_level": 2,
+        "bbox": [
+            72,
+            303,
+            174,
+            316
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "We value Sandisk at \\$1700 on 11x our 4-year through cycle (FY26-29) EPS. This implies 8.5x our FY27 EPS.",
+        "bbox": [
+            72,
+            330,
+            766,
+            345
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "Seagate Technology PLC",
+        "text_level": 2,
+        "bbox": [
+            72,
+            359,
+            250,
+            372
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "We value Seagate at 21x our FY28 EPS of \\$47.19, implying \\$1,000 per share. We believe Seagate's improving fundamentals, >60% 5year EPS CAGR, and HAMR leadership easily justifies a 21x P/E, and arguably much higher.",
+        "bbox": [
+            72,
+            386,
+            888,
+            417
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "Western Digital Corp",
+        "text_level": 2,
+        "bbox": [
+            72,
+            430,
+            223,
+            444
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "We reiterate WDC Outperform, TP \\$590, on 21x our FY28 EPS. PE of 21x is inline with recent market multiple and arguably conservative given its 5 year EPS CAGR of 60% (FY25-30E).",
+        "bbox": [
+            72,
+            458,
+            888,
+            488
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "RISKS",
+        "text_level": 2,
+        "bbox": [
+            72,
+            501,
+            123,
+            514
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "SanDisk Corp",
+        "text_level": 2,
+        "bbox": [
+            72,
+            530,
+            172,
+            543
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "The biggest risks to the downside on Sandisk and to our price target are that: 1) Near-term numbers look high and face cyclical downside from NAND; 2) SNDK's disclosures and broader investor communications have been confusing, potentially dissuading more quality-focused investors; and 3) NAND weakness could extend beyond the current cycle and be more structural, in which case Sandisk's DCF value could be structurally lower and the impaired value of its assets may be materially below replacement cost.",
+        "bbox": [
+            72,
+            557,
+            888,
+            632
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "Seagate Technology PLC",
+        "text_level": 2,
+        "bbox": [
+            72,
+            647,
+            250,
+            660
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "The biggest risks to the downside on Seagate and to our price target are that: The HDD market is heavily exposed to hyperscale cloud, and could be impacted by a cloud capex digestion or else incremental pressure from changes in hyperscaler buying patterns. 2) WDC could close the gap in HAMR more quickly than expected, shrinking the scope for market share gain and margin improvement. 3) NAND could see better than expected technology improvement and take share from HDDs.",
+        "bbox": [
+            72,
+            674,
+            888,
+            736
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "Western Digital Corp",
+        "text_level": 2,
+        "bbox": [
+            72,
+            749,
+            223,
+            762
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "The biggest risks to the downside on WDC and to our price target are that: 1) The HDD market is heavily exposed to hyperscale cloud, and could be impacted by a cloud capex digestion or else incremental pressure from changes in hyperscaler buying patterns; 2) NAND could see better than expected technology improvement and take share from HDDs; and 3) WDC could face significant risks ahead with its HAMR technology transition which could provide a drag on gross margin and EPS.",
+        "bbox": [
+            72,
+            777,
+            888,
+            838
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "RATINGS DEFINITIONS, BENCHMARKS AND DISTRIBUTION",
+        "text_level": 2,
+        "bbox": [
+            72,
+            850,
+            490,
+            863
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "EQUITY RATINGS DEFINITIONS",
+        "text_level": 2,
+        "bbox": [
+            72,
+            877,
+            294,
+            890
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "header",
+        "text": "Mark C. Newman +1 212 845 7822 mark.newman@bernsteinsg.com",
+        "bbox": [
+            74,
+            21,
+            434,
+            34
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "header",
+        "text": "9 June 2026",
+        "bbox": [
+            820,
+            21,
+            886,
+            33
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "header",
+        "text": "DISCLOSURE APPENDIX",
+        "bbox": [
+            717,
+            53,
+            886,
+            66
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "footer",
+        "text": "U.S. IT HARDWARE",
+        "bbox": [
+            74,
+            939,
+            155,
+            948
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "footer",
+        "text": "BERNSTEIN | SG GROUP",
+        "bbox": [
+            668,
+            940,
+            857,
+            949
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "page_number",
+        "text": "21",
+        "bbox": [
+            874,
+            940,
+            886,
+            949
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "Bernstein brand",
+        "text_level": 2,
+        "bbox": [
+            74,
+            55,
+            191,
+            68
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "text",
+        "text": "The Bernstein brand rates stocks based on forecasts of relative performance for the next 12 months versus the S&P 500 for stocks listed on the U.S. and Canadian exchanges, versus the Bloomberg Europe Developed Markets Large and Mid Cap Price Return Index EUR (EDME) for stocks listed on the European exchanges and emerging markets exchanges outside of the Asia Pacific region, versus the Bloomberg Japan Large and Mid Cap Price Return Index USD (JPL) for stocks listed on the Japanese exchanges, and versus the Bloomberg Asia ex-Japan Large and Mid Cap Price Return Index (ASIAX) for stocks listed on the Asian (ex-Japan) exchanges -unless otherwise specified.",
+        "bbox": [
+            72,
+            80,
+            891,
+            165
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "text",
+        "text": "The Bernstein brand has three categories of ratings:",
+        "bbox": [
+            72,
+            177,
+            409,
+            191
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "list",
+        "sub_type": "text",
+        "list_items": [
+            "- Outperform: Stock will outpace the market index by more than 15 pp",
+            "• Market-Perform: Stock will perform in line with the market index to within +/-15 pp",
+            "• Underperform: Stock will trail the performance of the market index by more than 15 pp"
+        ],
+        "bbox": [
+            72,
+            205,
+            646,
+            276
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "text",
+        "text": "Coverage Suspended: Coverage of a company under the Bernstein brand has been suspended. Ratings and price targets are suspended temporarily, are no longer current, and should therefore not be relied upon.",
+        "bbox": [
+            72,
+            287,
+            888,
+            317
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "text",
+        "text": "Not Rated: A rating assigned when the stock cannot be accurately valued, or the performance of the company accurately predicted, at the present time. The covering analyst may continue to publish research reports on the company to update investors on events and developments.",
+        "bbox": [
+            72,
+            329,
+            888,
+            371
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "text",
+        "text": "Not Covered (NC) denotes companies that are not under coverage.",
+        "bbox": [
+            72,
+            384,
+            500,
+            398
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "text",
+        "text": "Bernstein brand stock ratings are based on a 12-month time horizon.",
+        "bbox": [
+            72,
+            410,
+            514,
+            422
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "text",
+        "text": "Autonomous brand – common stocks",
+        "text_level": 2,
+        "bbox": [
+            72,
+            437,
+            336,
+            449
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "text",
+        "text": "The Autonomous brand rates common stocks as indicated below. As our benchmarks we use the Bloomberg Europe 500 Banks And Financial Services Index (BEBANKS) and Bloomberg Europe Dev Mkt Financials Large and Mid Cap Price Ret Index EUR (EDMFI) index for developed European banks and Payments, the Bloomberg Europe 500 Insurance Index (BEINSUR) for European insurers, the S&P 500 and S&P Financials for US banks and Payments coverage, S5LIFE for US Insurance, the S&P Insurance Select Industry (SPSIINS) for US Non-Life Insurers coverage, and the Bloomberg Emerging Markets Financials Large, Mid and Small Cap Price Return Index (EMLSF) for emerging market banks and insurers and Payments. Ratings are stated relative to the sector (not the market).",
+        "bbox": [
+            72,
+            462,
+            891,
+            561
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "text",
+        "text": "The Autonomous brand has three categories of common stock ratings:",
+        "bbox": [
+            72,
+            574,
+            527,
+            588
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "list",
+        "sub_type": "text",
+        "list_items": [
+            "- Outperform (OP): Stock will outpace the relevant index by more than 10 pp",
+            "- Neutral (N): Stock will perform in line with the market index to within +/-10 pp",
+            "• Underperform (UP): Stock will trail the performance of the relevant index by more than 10 pp"
+        ],
+        "bbox": [
+            72,
+            601,
+            681,
+            670
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "text",
+        "text": "Coverage Suspended: Coverage of a company under the Autonomous research brand has been suspended. Ratings and price targets are suspended temporarily, are no longer current, and should therefore not be relied upon.",
+        "bbox": [
+            72,
+            683,
+            888,
+            713
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "text",
+        "text": "Not Rated: A rating assigned when the stock cannot be accurately valued, or the performance of the company accurately predicted, at the present time. The covering analyst may continue to publish research reports on the company to update investors on events and developments.",
+        "bbox": [
+            72,
+            724,
+            888,
+            767
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "text",
+        "text": "Those denoted as ‘Feature’ (e.g., Feature Outperform FOP, Feature Under Outperform FUP) are our core ideas.",
+        "bbox": [
+            72,
+            778,
+            778,
+            793
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "text",
+        "text": "Not Covered (NC) denotes companies that are not under coverage.",
+        "bbox": [
+            72,
+            805,
+            502,
+            821
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "text",
+        "text": "Autonomous brand common stock ratings are based on a 12-month time horizon.",
+        "bbox": [
+            72,
+            832,
+            593,
+            847
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "text",
+        "text": "Autonomous brand – preferred stocks",
+        "text_level": 2,
+        "bbox": [
+            72,
+            859,
+            343,
+            872
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "text",
+        "text": "The Autonomous brand has three categories of preferred stock ratings:",
+        "bbox": [
+            72,
+            886,
+            529,
+            901
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "header",
+        "text": "Mark C. Newman +1 212 845 7822 mark.newman@bernsteinsg.com",
+        "bbox": [
+            74,
+            21,
+            434,
+            34
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "header",
+        "text": "9 June 2026",
+        "bbox": [
+            820,
+            21,
+            888,
+            33
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "footer",
+        "text": "U.S. IT HARDWARE",
+        "bbox": [
+            74,
+            939,
+            155,
+            948
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "footer",
+        "text": "BERNSTEIN | SG GROUP",
+        "bbox": [
+            668,
+            940,
+            857,
+            949
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "page_number",
+        "text": "22",
+        "bbox": [
+            871,
+            940,
+            888,
+            949
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "list",
+        "sub_type": "text",
+        "list_items": [
+            "- Outperform (OP): The total return of the preferred instrument is expected to outperform preferred securities of other issuers operating in similar sectors or rating categories over the next six months.",
+            "- Neutral (N): The total return of the preferred instrument is expected to perform in line with preferred securities of other issuers operating in similar sectors or rating categories over the next six months.",
+            "- Underperform (UP): The total return of the preferred instrument is expected to underperform preferred securities of other issuers operating in similar sectors or rating categories over the next six months."
+        ],
+        "bbox": [
+            72,
+            55,
+            886,
+            170
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "text",
+        "text": "Autonomous preferred stock ratings are based on a 6-month time horizon.",
+        "bbox": [
+            72,
+            185,
+            548,
+            197
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "text",
+        "text": "AUTONOMOUS CREDIT RESEARCH",
+        "text_level": 2,
+        "bbox": [
+            72,
+            210,
+            324,
+            224
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "text",
+        "text": "Where this report contains investment recommendations for credit instruments, as defined in article 3(1)(35) of the Market Abuse Regulation, the information below is presented to comply with its disclosure requirements.",
+        "bbox": [
+            72,
+            237,
+            886,
+            266
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "text",
+        "text": "The report may also include reference(s) to published opinions by other Autonomous or Bernstein analysts covering the equity securities of the issuer(s) referenced herein. Please note an investment recommendation for credit instruments published by the author(s) of this report may differ from the published view of the analyst covering equity securities for the issuer(s) contained in this report and vice versa.",
+        "bbox": [
+            72,
+            278,
+            888,
+            334
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "text",
+        "text": "CREDIT RATINGS DEFINITIONS",
+        "text_level": 2,
+        "bbox": [
+            72,
+            347,
+            294,
+            359
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "text",
+        "text": "The Autonomous brand has three categories of credit ratings:",
+        "bbox": [
+            72,
+            374,
+            468,
+            386
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "list",
+        "sub_type": "text",
+        "list_items": [
+            "- Credit Outperform (C-OP): The total return of the Reference Credit Instrument is expected to outperform the credit spread of bonds of other issuers operating in similar sectors or rating categories over the next six months.",
+            "- Credit Neutral (C-N): The total return of the Reference Credit Instrument is expected to perform in line with the credit spread of bonds of other issuers operating in similar sectors or rating categories over the next six months.",
+            "- Credit Underperform (C-UP): The total return of the Reference Credit Instrument is expected to underperform the credit spread of bonds of other issuers operating in similar sectors or rating categories over the next six months."
+        ],
+        "bbox": [
+            72,
+            401,
+            888,
+            517
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "text",
+        "text": "Autonomous credit ratings are based on a 6-month time horizon.",
+        "bbox": [
+            72,
+            530,
+            485,
+            544
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "text",
+        "text": "A list of all investment recommendations produced by the author(s) of this report alongside credit ratings history are available upon request.",
+        "bbox": [
+            72,
+            557,
+            886,
+            584
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "text",
+        "text": "It is at the sole discretion of the Firm as to when to initiate, update and cease research coverage. The Firm has established, maintains and relies on information barriers to control the flow of information contained in one or more areas (i.e. the private side) within the Firm, and into other areas, units, groups or affiliates (i.e. public side) of the Firm",
+        "bbox": [
+            72,
+            598,
+            888,
+            640
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "table",
+        "img_path": "images/e1566a9b345ad2112944ab968b1ceb68531219fcee9119526f9cd094e5c9289d.jpg",
+        "table_caption": [
+            "DISTRIBUTION OF EQUITY RATINGS/INVESTMENT BANKING SERVICES"
+        ],
+        "table_footnote": [
+            "\\* These figures represent the percentage of companies within each equity rating category for which affiliates of Bernstein have provided investment banking services within the previous 12 months.",
+            "As of March 31, 2026. All figures are updated quarterly."
+        ],
+        "table_body": "<table><tr><td>Equity Rating</td><td>Market Abuse Regulation (MAR) and FINRA Rating Category</td><td>Global Rating Distribution</td><td>Investment Banking Relationships*</td></tr><tr><td>Outperform</td><td>BUY</td><td>51.1%</td><td>16.5%</td></tr><tr><td>Market-Perform (Bernstein Brand) Neutral (Autonomous Brand)</td><td>HOLD</td><td>36.3%</td><td>17.8%</td></tr><tr><td>Underperform</td><td>SELL</td><td>12.6%</td><td>14.9%</td></tr></table>",
+        "bbox": [
+            74,
+            703,
+            888,
+            829
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "header",
+        "text": "Mark C. Newman +1 212 845 7822 mark.newman@bernsteinsg.com",
+        "bbox": [
+            74,
+            21,
+            434,
+            34
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "header",
+        "text": "9 June 2026",
+        "bbox": [
+            820,
+            21,
+            888,
+            33
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "footer",
+        "text": "U.S. IT HARDWARE",
+        "bbox": [
+            74,
+            939,
+            153,
+            948
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "footer",
+        "text": "BERNSTEIN | SG GROUP",
+        "bbox": [
+            668,
+            940,
+            854,
+            949
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "page_number",
+        "text": "23",
+        "bbox": [
+            871,
+            940,
+            886,
+            949
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "text",
+        "text": "PRICE CHARTS / RATINGS AND PRICE TARGET HISTORY",
+        "text_level": 2,
+        "bbox": [
+            74,
+            53,
+            472,
+            66
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "chart",
+        "img_path": "images/bb191e43c06eb72257744b6786c2d1c87be761ae3c5156155fc59605dc5f8c63.jpg",
+        "content": "| Date       | Closing Price | Price Target |\n| ---------- | ------------- | ------------ |\n| 09/15/2025 | $120.00       | -            |\n| 11/07/2025 | $300.00       | -            |\n| 01/14/2026 | $580.00       | -            |\n| 01/30/2026 | $1,000.00     | -            |\n| 04/09/2026 | $1,250.00     | -            |\n| 04/09/2026 | $1,000.00     | -            |\n| 04/09/2026 | $1,250.00     | -            |\n| 05/01/2026 | $1,700.00     | -            |",
+        "chart_caption": [
+            "SanDisk Corp (SNDK) Rating History for Bernstein as of 06/08/2026"
+        ],
+        "chart_footnote": [],
+        "sub_type": "line chart",
+        "bbox": [
+            91,
+            100,
+            866,
+            293
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "chart",
+        "img_path": "images/9845fb3a56864f3aa622e592e47e24e1b4c7816d98886ee242c024ba1bb7161c.jpg",
+        "content": "| Date       | Closing Price | Price Target |\n| ---------- | ------------- | ------------ |\n| 09/15/2025 | $250.00       | $250.00      |\n| 10/23/2025 | $275.00       | $275.00      |\n| 11/06/2025 | $370.00       | $370.00      |\n| 01/28/2026 | $500.00       | $500.00      |\n| 03/31/2026 | $620.00       | $620.00      |\n| 04/29/2026 | $1,000.00     | $1,000.00    |",
+        "chart_caption": [
+            "Seagate Technology PLC (STX) Rating History for Bernstein as of 06/08/2026"
+        ],
+        "chart_footnote": [],
+        "sub_type": "line chart",
+        "bbox": [
+            91,
+            329,
+            866,
+            521
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "chart",
+        "img_path": "images/348ebe650edb10905cb390b86c07fd9fd1c2d5009c35012a33ee02e5b3a9e3ae.jpg",
+        "content": "| Date       | Closing Price | Price Target |\n| ---------- | ------------- | ------------ |\n| 09/15/2025 | $96.00        | $96.00       |\n| 10/23/2025 | $120.00       | $120.00      |\n| 11/06/2025 | $170.00       | $170.00      |\n| 03/31/2026 | $340.00       | $340.00      |\n| 05/01/2026 | $590.00       | $590.00      |",
+        "chart_caption": [
+            "Western Digital Corp (WDC) Rating History for Bernstein as of 06/08/2026"
+        ],
+        "chart_footnote": [],
+        "sub_type": "line chart",
+        "bbox": [
+            91,
+            557,
+            866,
+            750
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "text",
+        "text": "All price target and closing price data in the chart(s) above are denominated in the currency noted in the Ticker Table of this report.",
+        "bbox": [
+            72,
+            768,
+            888,
+            782
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "text",
+        "text": "CONFLICTS OF INTEREST",
+        "text_level": 2,
+        "bbox": [
+            72,
+            805,
+            257,
+            818
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "text",
+        "text": "An affiliate of Bernstein has received compensation for non-investment banking securities-related products or services in the previous twelve months from the following clients: Western Digital Corp.",
+        "bbox": [
+            72,
+            834,
+            888,
+            862
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "text",
+        "text": "OTHER MATTERS",
+        "text_level": 2,
+        "bbox": [
+            72,
+            874,
+            201,
+            886
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "header",
+        "text": "Mark C. Newman +1 212 845 7822 mark.newman@bernsteinsg.com",
+        "bbox": [
+            74,
+            21,
+            436,
+            34
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "header",
+        "text": "9 June 2026",
+        "bbox": [
+            820,
+            21,
+            888,
+            33
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "footer",
+        "text": "U.S. IT HARDWARE",
+        "bbox": [
+            74,
+            939,
+            155,
+            948
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "footer",
+        "text": "BERNSTEIN | SG GROUP",
+        "bbox": [
+            668,
+            940,
+            857,
+            949
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "page_number",
+        "text": "24",
+        "bbox": [
+            871,
+            940,
+            888,
+            949
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "text",
+        "text": "The legal entity(ies) employing the analyst(s) listed in this report, and their location, can be determined by the country code of their phone number, as follows:",
+        "bbox": [
+            72,
+            53,
+            888,
+            82
+        ],
+        "page_idx": 24
+    },
+    {
+        "type": "list",
+        "sub_type": "text",
+        "list_items": [
+            "+1 Bernstein Institutional Services LLC; New York, New York, USA",
+            "+44 Bernstein Autonomous LLP; London UK",
+            "+212 SG Africa Technologies & Services; Casablanca, Morocco",
+            "+33 BSG France S.A.; Paris, France",
+            "+34 BSG France S.A.; Madrid, Spain",
+            "+41 Bernstein Autonomous LLP; Geneva, Switzerland",
+            "+49 BSG France S.A.; Frankfurt, Germany",
+            "+91 Bernstein (India) Private Limited; Mumbai, India",
+            "+852 Bernstein (Hong Kong) Limited 盛博香港有限公司; Hong Kong, China",
+            "+65 Bernstein (Singapore) Private Limited; Singapore",
+            "+81 Bernstein Japan KK; Tokyo, Japan"
+        ],
+        "bbox": [
+            72,
+            95,
+            571,
+            376
+        ],
+        "page_idx": 24
+    },
+    {
+        "type": "text",
+        "text": "Where this report has been prepared by research analyst(s) employed by a non-US affiliate, such analyst(s), is/are (unless otherwise expressly noted below) not registered as associated persons of Bernstein Institutional Services LLC or any other SEC-registered broker-dealer and are not licensed or qualified as research analysts with FINRA. Accordingly, such analyst(s) may not be subject to FINRA's restrictions regarding (among other things) communications by research analysts with a subject company, interactions between research analysts and investment banking personnel, participation by research analysts in solicitation and marketing activities relating to investment banking transactions, public appearances by research analysts, and trading securities held by a research analyst account.",
+        "bbox": [
+            72,
+            389,
+            888,
+            485
+        ],
+        "page_idx": 24
+    },
+    {
+        "type": "text",
+        "text": "Where this report has been prepared by research analyst(s) employed by SG Africa Technologies & Services (part of the SG group of companies), it has been prepared on behalf of a Bernstein company under a Global Services Agreement in place between Bernstein and SG.",
+        "bbox": [
+            72,
+            500,
+            888,
+            541
+        ],
+        "page_idx": 24
+    },
+    {
+        "type": "text",
+        "text": "CERTIFICATION",
+        "text_level": 2,
+        "bbox": [
+            72,
+            553,
+            189,
+            566
+        ],
+        "page_idx": 24
+    },
+    {
+        "type": "text",
+        "text": "Each research analyst listed in this report, who is primarily responsible for the preparation of the content of this report, certifies that all of the views expressed in this publication accurately reflect that analyst's personal views about any and all of the subject securities or issuers and that no part of that analyst's compensation was, is, or will be, directly or indirectly, related to the specific recommendations or views in this publication.",
+        "bbox": [
+            72,
+            580,
+            888,
+            636
+        ],
+        "page_idx": 24
+    },
+    {
+        "type": "text",
+        "text": "II. ADDITIONAL GLOBAL CONFLICT DISCLOSURES",
+        "text_level": 2,
+        "bbox": [
+            72,
+            647,
+            424,
+            661
+        ],
+        "page_idx": 24
+    },
+    {
+        "type": "text",
+        "text": "It is at the sole discretion of the Firm as to when to initiate, update and cease research coverage. The Firm has established, maintains and relies on information barriers to control the flow of information contained in one or more areas (i.e., the private side) within the Firm, and into other areas, units, groups or affiliates (i.e., public side) of the Firm.",
+        "bbox": [
+            72,
+            674,
+            888,
+            717
+        ],
+        "page_idx": 24
+    },
+    {
+        "type": "text",
+        "text": "III. OTHER IMPORTANT INFORMATION AND DISCLOSURES",
+        "text_level": 2,
+        "bbox": [
+            72,
+            728,
+            483,
+            742
+        ],
+        "page_idx": 24
+    },
+    {
+        "type": "text",
+        "text": "Separate branding is maintained for “Bernstein” and “Autonomous” research products.",
+        "bbox": [
+            72,
+            755,
+            624,
+            771
+        ],
+        "page_idx": 24
+    },
+    {
+        "type": "text",
+        "text": "\\- Bernstein produces a number of different types of research products including, among others, fundamental analysis and quantitative analysis under both the “Autonomous” and “Bernstein” brands. Recommendations contained within one type of research product may differ from recommendations contained within other types of research products, whether as a result of differing time horizons, methodologies or otherwise. Furthermore, views or recommendations within a research product issued under one brand may differ from views or recommendations under the same type of research product issued under the other brand. The Research Ratings System for the two brands and other information related to those Rating Systems are included in the previous section.",
+        "bbox": [
+            72,
+            782,
+            891,
+            889
+        ],
+        "page_idx": 24
+    },
+    {
+        "type": "header",
+        "text": "Mark C. Newman +1 212 845 7822 mark.newman@bernsteinsg.com",
+        "bbox": [
+            74,
+            21,
+            434,
+            34
+        ],
+        "page_idx": 24
+    },
+    {
+        "type": "header",
+        "text": "9 June 2026",
+        "bbox": [
+            820,
+            21,
+            886,
+            33
+        ],
+        "page_idx": 24
+    },
+    {
+        "type": "footer",
+        "text": "U.S. IT HARDWARE",
+        "bbox": [
+            74,
+            939,
+            155,
+            948
+        ],
+        "page_idx": 24
+    },
+    {
+        "type": "footer",
+        "text": "BERNSTEIN | SG GROUP",
+        "bbox": [
+            668,
+            939,
+            857,
+            949
+        ],
+        "page_idx": 24
+    },
+    {
+        "type": "page_number",
+        "text": "25",
+        "bbox": [
+            871,
+            940,
+            888,
+            949
+        ],
+        "page_idx": 24
+    },
+    {
+        "type": "text",
+        "text": "\\- Autonomous operates as a separate business unit within the following entities: Bernstein Institutional Services LLC, Bernstein Autonomous LLP, Bernstein (Hong Kong) Limited 盛博香港有限公司 and Bernstein (India) Private Limited. For information relating to “Autonomous” branded products (including certain Sales materials) please visit: www.autonomous.com. For information relating to Bernstein branded products please visit: www.bernsteinresearch.com.",
+        "bbox": [
+            72,
+            55,
+            886,
+            115
+        ],
+        "page_idx": 25
+    },
+    {
+        "type": "text",
+        "text": "Analysts are compensated based on aggregate contributions to the research franchise as measured by account penetration, productivity and proactivity of investment ideas. No analysts are compensated based on performance in, or contributions to, generating investment banking revenues.",
+        "bbox": [
+            72,
+            128,
+            888,
+            170
+        ],
+        "page_idx": 25
+    },
+    {
+        "type": "text",
+        "text": "This report has been produced by an independent analyst as defined in Article 3 (1)(34)(i) of EU 596/2014 Market Abuse Regulation (“MAR”) and the same article of MAR as it forms part of United Kingdom domestic law by virtue of the European Union (Withdrawal) Act 2018.",
+        "bbox": [
+            72,
+            182,
+            888,
+            224
+        ],
+        "page_idx": 25
+    },
+    {
+        "type": "text",
+        "text": "To our readers in the United States: Bernstein Institutional Services LLC, a broker-dealer registered with the U.S. Securities and Exchange Commission (“SEC”) and a member of the U.S. Financial Industry Regulatory Authority, Inc. (“FINRA”) is distributing this publication in the United States and accepts responsibility for its contents. Where this material contains an analysis of debt product(s), such material is intended only for institutional investors and is not subject to the US independence and disclosure standards applicable to debt research prepared for retail investors.",
+        "bbox": [
+            72,
+            237,
+            888,
+            307
+        ],
+        "page_idx": 25
+    },
+    {
+        "type": "text",
+        "text": "Bernstein Institutional Services LLC may act as principal for its own account or as agent for another person (including an affiliate) in sales or purchases of any security which is a subject of this report. This report does not purport to meet the objectives or needs of any specific individuals, entities or accounts.",
+        "bbox": [
+            72,
+            318,
+            888,
+            361
+        ],
+        "page_idx": 25
+    },
+    {
+        "type": "text",
+        "text": "To our readers in Canada: If this publication pertains to a Canadian domiciled company, it is being distributed in Canada by Bernstein (Canada) Limited, which is licensed and regulated by the Canadian Investment Regulatory Organization. If the publication pertains to a non-Canadian domiciled company, it is being distributed by Bernstein Institutional Services LLC, which is licensed and regulated by both the SEC and FINRA, into Canada under the International Dealers Exemption.",
+        "bbox": [
+            72,
+            372,
+            888,
+            429
+        ],
+        "page_idx": 25
+    },
+    {
+        "type": "text",
+        "text": "This document may not be passed onto any person in Canada unless that person qualifies as \"permitted client\" as defined in Section 1.1 of NI 31-103.",
+        "bbox": [
+            72,
+            442,
+            888,
+            469
+        ],
+        "page_idx": 25
+    },
+    {
+        "type": "text",
+        "text": "To our readers in Brazil: This report has been prepared by Bernstein Institutional Services LLC, and Banco BTG Pactual S.A. (\"BTG\") is responsible for the distribution of this report in Brazil.",
+        "bbox": [
+            72,
+            482,
+            888,
+            511
+        ],
+        "page_idx": 25
+    },
+    {
+        "type": "text",
+        "text": "To readers in the United Kingdom: This publication has been issued or approved for issue in the United Kingdom by Bernstein Autonomous LLP, authorised and regulated by the Financial Conduct Authority and located at 60 London Wall, London EC2M 5SH, +44 (0)20-7170-5000. Registered in England & Wales No OC343985.",
+        "bbox": [
+            72,
+            523,
+            888,
+            565
+        ],
+        "page_idx": 25
+    },
+    {
+        "type": "text",
+        "text": "This document is for distribution only to persons who (i) have professional experience in matters relating to investments falling within Article 19(5) of the Financial Services and Markets Act 2000 (Financial Promotion) Order 2005 (as amended, the “Financial Promotion Order”), (ii) are persons falling within Article 49(2)(a) to (d) (“high net worth companies, unincorporated associations, etc.”) of the Financial Promotion Order, (iii) are outside the United Kingdom, or (iv) are persons to whom an invitation or inducement to engage in investment activity (within the meaning of section 2.1 of the FSMA) in connection with the issue or sale of any securities may otherwise lawfully be communicated or caused to be communicated (all such persons together being referred to as “relevant persons”). This document is directed only at relevant persons and must not be acted on or relied on by persons who are not relevant persons. Any investment or investment activity to which this document relates is available only to relevant persons and will be engaged in only with relevant persons.",
+        "bbox": [
+            72,
+            577,
+            888,
+            703
+        ],
+        "page_idx": 25
+    },
+    {
+        "type": "text",
+        "text": "To our readers in the member states of the EEA: This publication is being distributed by BSG France SA, which is authorised and regulated by the Autorité de Contrôle Prudentiel et de Résolution (ACPR) and Autorité des Marchés Financiers (AMF).",
+        "bbox": [
+            72,
+            715,
+            888,
+            742
+        ],
+        "page_idx": 25
+    },
+    {
+        "type": "text",
+        "text": "To our readers in Hong Kong: This publication is being distributed in Hong Kong by Bernstein (Hong Kong) Limited 盛博香港有限公司, which is licensed and regulated by the Hong Kong Securities and Futures Commission (Central Entity No. AXC846) to carry out Type 4 (Advising on Securities) regulated activities and subject to the licensing conditions mentioned in the SFC Public Register (https://www.sfc.hk/publicregWeb/corp/AXC846/details)). This publication is solely for professional investors, as defined in the Securities and Futures Ordinance (Cap. 571). The purpose of this report is solely to provide an analysis of the issuers referred to in this report and is not intended for any purpose contrary to the laws of Hong Kong.",
+        "bbox": [
+            72,
+            755,
+            888,
+            839
+        ],
+        "page_idx": 25
+    },
+    {
+        "type": "text",
+        "text": "To our readers in Singapore: This publication is being distributed in Singapore by Bernstein (Singapore) Private Limited, only to accredited investors or institutional investors, as defined in the Securities and Futures Act 2001 of Singapore (\"SFA\"). Recipients in Singapore should contact Bernstein (Singapore) Private Limited in respect of matters arising from, or in connection with, this publication. Bernstein (Singapore) Private Limited is regulated by the Monetary Authority of Singapore and licensed under the SFA as a capital markets services licence holder for dealing in capital markets products that are securities and collective investment schemes and an exempt financial adviser for advising on, issuing and promulgating analyses and reports on securities. Bernstein (Singapore) Private Limited is registered in Singapore with Company Registration No. 20213710W and located at One Raffles Quay, #27-11 South Tower, Singapore 048583, +65-6230-4612.",
+        "bbox": [
+            72,
+            852,
+            888,
+            921
+        ],
+        "page_idx": 25
+    },
+    {
+        "type": "header",
+        "text": "Mark C. Newman +1 212 845 7822 mark.newman@bernsteinsg.com",
+        "bbox": [
+            74,
+            21,
+            434,
+            34
+        ],
+        "page_idx": 25
+    },
+    {
+        "type": "header",
+        "text": "9 June 2026",
+        "bbox": [
+            820,
+            21,
+            886,
+            33
+        ],
+        "page_idx": 25
+    },
+    {
+        "type": "footer",
+        "text": "U.S. IT HARDWARE",
+        "bbox": [
+            74,
+            939,
+            153,
+            948
+        ],
+        "page_idx": 25
+    },
+    {
+        "type": "footer",
+        "text": "BERNSTEIN | SG GROUP",
+        "bbox": [
+            668,
+            939,
+            854,
+            949
+        ],
+        "page_idx": 25
+    },
+    {
+        "type": "page_number",
+        "text": "26",
+        "bbox": [
+            871,
+            940,
+            886,
+            949
+        ],
+        "page_idx": 25
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            72,
+            55,
+            886,
+            97
+        ],
+        "page_idx": 26
+    },
+    {
+        "type": "text",
+        "text": "To our readers in the People's Republic of China: The securities referred to in this document are not being offered or sold and may not be offered or sold, directly or indirectly, in the People's Republic of China (for such purposes, not including the Hong Kong and Macau Special Administrative Regions or Taiwan, the \"PRC\") in contravention of any applicable laws of the PRC.",
+        "bbox": [
+            72,
+            109,
+            888,
+            151
+        ],
+        "page_idx": 26
+    },
+    {
+        "type": "text",
+        "text": "This document does not constitute an offer to sell or the solicitation of an offer to buy any securities in the PRC to any person to whom it is unlawful to make the offer or solicitation in the PRC.",
+        "bbox": [
+            72,
+            163,
+            886,
+            191
+        ],
+        "page_idx": 26
+    },
+    {
+        "type": "text",
+        "text": "We do not represent that this document may be lawfully distributed, or that any securities may be lawfully offered, in compliance with any applicable registration or other requirements in the PRC, or pursuant to an exemption available thereunder, or assume any responsibility for facilitating any such distribution or offering. In particular, no action has been taken by us which would permit a public offering of any securities or distribution of this document in the PRC. Accordingly, the securities are not being offered or sold within the PRC by means of this document or any other document. Neither this document nor any advertisement or other offering material may be distributed or published in the PRC, except under circumstances that will result in compliance with any applicable laws and regulations.",
+        "bbox": [
+            71,
+            204,
+            888,
+            300
+        ],
+        "page_idx": 26
+    },
+    {
+        "type": "text",
+        "text": "To our readers in Japan: This publication is being distributed in Japan by Bernstein Japan KK (サンフォード・C・バーンスタイン株式会社), which is registered in Japan as a Financial Instruments Business Operator with the Kanto Local Finance Bureau (registration number: The Director-General of Kanto Local Finance Bureau (FIBO) No.3387) and regulated by the Financial Services Agency. It is also a member of Japan Investment Advisers Association. This publication is solely for qualified institutional investors in Japan only, as defined in Article 2, paragraph (3), items (i) of the Financial Instruments and Exchange Act.",
+        "bbox": [
+            72,
+            314,
+            888,
+            384
+        ],
+        "page_idx": 26
+    },
+    {
+        "type": "text",
+        "text": "For the institutional client readers in Japan who have been granted access to the Bernstein website by Daiwa Group Inc. (\"Daiwa\"), your access to this document should not be construed as meaning that Bernstein is providing you with investment advice for any purposes. Whilst Bernstein has prepared this document, your relationship is, and will remain with, Daiwa, and Bernstein has neither any contractual relationship with you nor any obligations towards you.",
+        "bbox": [
+            72,
+            395,
+            888,
+            452
+        ],
+        "page_idx": 26
+    },
+    {
+        "type": "text",
+        "text": "To our readers in Australia: Bernstein (Hong Kong) Limited 盛博香港有限公司 is responsible for distributing research in Australia. It is regulated by the Securities and Exchange Commission under U.S. laws, by the Financial Conduct Authority under U.K. laws, which differs from Australian laws. Bernstein (Hong Kong) Limited 盛博香港有限公司 is exempt from the requirement to hold an Australian financial services license under the Corporations Act 2001 in respect of the provision of the following financial services to wholesale clients:",
+        "bbox": [
+            72,
+            464,
+            888,
+            534
+        ],
+        "page_idx": 26
+    },
+    {
+        "type": "list",
+        "sub_type": "text",
+        "list_items": [
+            "• providing financial product advice;",
+            "• dealing in a financial product;",
+            "• making a market for a financial product; and",
+            "• providing a custodial or depository service."
+        ],
+        "bbox": [
+            74,
+            547,
+            373,
+            645
+        ],
+        "page_idx": 26
+    },
+    {
+        "type": "text",
+        "text": "To our readers in India: This publication is being distributed in India by Bernstein (India) Private Limited (SCB India) which is licensed and regulated by Securities and Exchange Board of India (\"SEBI\") as a research analyst entity under the SEBI (Research Analyst) Regulations, 2014, having registration no. INH000006378 and as a stock broker having registration no. INZ000213537. SCB India is currently engaged in the business of providing research and stock broking services. Please refer to www.bernsteinresearch.in for more information.",
+        "bbox": [
+            72,
+            659,
+            888,
+            728
+        ],
+        "page_idx": 26
+    },
+    {
+        "type": "list",
+        "sub_type": "text",
+        "list_items": [
+            "- SCB India is a Private limited company incorporated under the Companies Act, 2013, on April 12, 2017 bearing corporate identification number U65999MH2017FTC293762, and registered office at Level 3A, 4th Floor, First International Financial Centre, Plot Nos C-54 and C-55, G Block, Near CBI Office, Bandra Kurla Complex, Bandra (East), Mumbai 400098, Maharashtra, India (Phone No: +91-22-68421401).",
+            "- For details of Associates (i.e., affiliates/group companies) of SCB India, kindly email MUM-BERNSTEIN-InCompliance@bernsteinsg.com.",
+            "• SCB India does not have any disciplinary history as on the date of this report.",
+            "- Except as noted above, SCB India and/or its Associates (i.e., affiliates/group companies), the Research Analysts authoring this report, and their relatives"
+        ],
+        "bbox": [
+            72,
+            741,
+            886,
+            916
+        ],
+        "page_idx": 26
+    },
+    {
+        "type": "header",
+        "text": "Mark C. Newman +1 212 845 7822 mark.newman@bernsteinsg.com",
+        "bbox": [
+            74,
+            21,
+            434,
+            34
+        ],
+        "page_idx": 26
+    },
+    {
+        "type": "header",
+        "text": "9 June 2026",
+        "bbox": [
+            820,
+            21,
+            886,
+            33
+        ],
+        "page_idx": 26
+    },
+    {
+        "type": "footer",
+        "text": "U.S. IT HARDWARE",
+        "bbox": [
+            74,
+            939,
+            153,
+            948
+        ],
+        "page_idx": 26
+    },
+    {
+        "type": "footer",
+        "text": "BERNSTEIN | SG GROUP",
+        "bbox": [
+            668,
+            940,
+            854,
+            949
+        ],
+        "page_idx": 26
+    },
+    {
+        "type": "page_number",
+        "text": "27",
+        "bbox": [
+            873,
+            940,
+            886,
+            948
+        ],
+        "page_idx": 26
+    },
+    {
+        "type": "list",
+        "sub_type": "text",
+        "list_items": [
+            "• do not have any financial interest in the subject company",
+            "• do not have actual/beneficial ownership of one percent or more in securities of the subject company;",
+            "• is not engaged in any investment banking activities for Indian companies, as such;",
+            "• have not managed or co-managed a public offering in the past twelve months for any Indian companies;",
+            "- have not received any compensation for investment banking services or merchant banking services from the subject company in the past 12 months;",
+            "• have not received compensation for brokerage services from the subject company in the past twelve months;",
+            "- have not received any compensation or other benefits from the subject company or third party related to the specific recommendations or views in this report; and",
+            "- do not currently, but may in the future, act as a market maker in the financial instruments of the companies covered in the report.",
+            "- do not have any conflict of interest in the subject company as of the date of this report."
+        ],
+        "bbox": [
+            93,
+            68,
+            886,
+            352
+        ],
+        "page_idx": 27
+    },
+    {
+        "type": "list",
+        "sub_type": "text",
+        "list_items": [
+            "- Except as noted above, the subject company has not been a client of SCB India during twelve months preceding the date of distribution of this research report. Neither SCB India nor its Associates (i.e., affiliates/group companies) have received compensation for products or services other than investment banking, merchant banking or brokerage services from the subject company in the past twelve months.",
+            "- The principal research analyst(s) who prepared this report, members of the analysts' team, and members of their households are not an officer, director, employee or advisory board member of the companies covered in the report.",
+            "- Our Compliance officer / Grievance officer is Ms. Rupal Talati, who can be reached at +91-22-68421451, or MUM-BERNSTEIN-InCompliance@bernsteinsg.com / Scbin-investorgrievance@bernsteinsg.com",
+            "- The Research investor charter and Terms & Conditions of SCB India are available on its website and may be accessed at Bernstein (India) Private Limited (https://bernsteinresearch.in/) for your reference.",
+            "- Disclaimer: Registration granted by SEBI, and certification from NISM, is in no way a guarantee of performance of the intermediary or provide any assurance of returns to investors. Investments in securities market are subject to market risks. Read all the related documents carefully before investing."
+        ],
+        "bbox": [
+            72,
+            367,
+            886,
+            615
+        ],
+        "page_idx": 27
+    },
+    {
+        "type": "text",
+        "text": "To our readers in Switzerland: This document is provided in Switzerland by or through Bernstein Autonomous LLP, and is provided only to qualified investors as defined in article 10 of the Swiss Collective Investment Scheme Act (“CISA”) and related provisions of the Collective Investment Scheme Ordinance and in strict compliance with applicable Swiss law and regulations. The products mentioned in this document may not be suitable for all types of investors. This document is based on the Directives on the Independence of Financial Research issued by the Swiss Bankers Association (SBA) in January 2008.",
+        "bbox": [
+            72,
+            628,
+            886,
+            697
+        ],
+        "page_idx": 27
+    },
+    {
+        "type": "text",
+        "text": "To our readers in the Middle East: Bernstein Autonomous LLP, DIFC branch has its principal office at Gate Village 06, DIFC, Dubai, UAE. Bernstein Autonomous LLP, DIFC branch is regulated by the Dubai Financial Services Authority (DFSA) with the registration number CL10040 and is provisioned for Arranging Deals in Investments and Advising on Financial Products. All communications and services are directed at Professional Clients and Market Counterparties only (as defined in the DFSA rulebook). Persons other than Professional Clients and Market Counterparties, such as Retail Clients, are not the intended recipients of our communications or services.",
+        "bbox": [
+            72,
+            710,
+            886,
+            794
+        ],
+        "page_idx": 27
+    },
+    {
+        "type": "text",
+        "text": "LEGAL",
+        "text_level": 2,
+        "bbox": [
+            72,
+            807,
+            123,
+            818
+        ],
+        "page_idx": 27
+    },
+    {
+        "type": "text",
+        "text": "All research publications are disseminated to our clients through posting on the firm's password protected websites, bernsteinresearch.com and autonomous.com. Certain, but not all, research publications are also made available to clients through third-party vendors or redistributed to clients through alternate electronic means as a convenience.",
+        "bbox": [
+            72,
+            834,
+            886,
+            875
+        ],
+        "page_idx": 27
+    },
+    {
+        "type": "text",
+        "text": "This publication has been published and distributed in accordance with the Firm's policy for management of conflicts of interest in investment research, a copy of which is available from Bernstein Institutional Services LLC, Director of Compliance, 245 Park",
+        "bbox": [
+            72,
+            888,
+            886,
+            916
+        ],
+        "page_idx": 27
+    },
+    {
+        "type": "header",
+        "text": "Mark C. Newman +1 212 845 7822 mark.newman@bernsteinsg.com",
+        "bbox": [
+            74,
+            21,
+            434,
+            34
+        ],
+        "page_idx": 27
+    },
+    {
+        "type": "header",
+        "text": "9 June 2026",
+        "bbox": [
+            820,
+            21,
+            886,
+            33
+        ],
+        "page_idx": 27
+    },
+    {
+        "type": "footer",
+        "text": "U.S. IT HARDWARE",
+        "bbox": [
+            74,
+            939,
+            153,
+            948
+        ],
+        "page_idx": 27
+    },
+    {
+        "type": "footer",
+        "text": "BERNSTEIN | SG GROUP",
+        "bbox": [
+            668,
+            940,
+            854,
+            949
+        ],
+        "page_idx": 27
+    },
+    {
+        "type": "page_number",
+        "text": "28",
+        "bbox": [
+            871,
+            940,
+            886,
+            949
+        ],
+        "page_idx": 27
+    },
+    {
+        "type": "text",
+        "text": "Avenue, New York, NY 10167. Additional disclosures and information regarding Bernstein's business are available on our website www.bernsteinresearch.com.",
+        "bbox": [
+            72,
+            53,
+            888,
+            82
+        ],
+        "page_idx": 28
+    },
+    {
+        "type": "text",
+        "text": "The securities described herein may not be eligible for sale in all jurisdictions or to certain categories of investors where that permission profile is not consistent with the licenses held by the entities noted herein. This document is for distribution only as may be permitted by law. This publication is not directed to, or intended for distribution to or use by, any person or entity who is a citizen or resident of, or located in any locality, state, country or other jurisdiction where such distribution, publication, availability or use would be contrary to law or regulation or which would subject any of the entities referenced herein or any of their subsidiaries or affiliates to any registration or licensing requirement within such jurisdiction. This publication is based upon public sources we believe to be reliable, but no representation is made by us that the publication is accurate or complete. We do not undertake to advise you of any change in the reported information or in the opinions herein. This publication was prepared and issued by entity referred to herein for distribution to eligible counterparties or professional clients. This publication is not an offer to buy or sell any security, and it does not constitute investment, legal or tax advice. The investments referred to herein may not be suitable for you. Investors must make their own investment decisions in consultation with their professional advisors in light of their specific circumstances. The value of investments may fluctuate, and investments that are denominated in foreign currencies may fluctuate in value as a result of exposure to exchange rate movements. Information about past performance of an investment is not necessarily a guide to, indicator of, or assurance of, future performance.",
+        "bbox": [
+            71,
+            95,
+            888,
+            289
+        ],
+        "page_idx": 28
+    },
+    {
+        "type": "text",
+        "text": "This report is directed to and intended only for our clients who are “eligible counterparties”, “professional clients”, “institutional investors” and/or “professional investors” as defined by the aforementioned regulators, and must not be redistributed to retail clients as defined by the aforementioned regulators. Retail clients who receive this report should note that the services of the entities noted herein are not available to them and should not rely on the material herein to make an investment decision. The result of such act will not hold the entities noted herein liable for any loss thus incurred as the entities noted herein are not registered/ authorised/ licensed to deal with retail clients and will not enter into any contractual agreement/arrangement with retail clients. This report is provided subject to the terms and conditions of any agreement that the clients may have entered into with the entities noted herein. All research reports are disseminated on a simultaneous basis to eligible clients through electronic publication to our client portal.",
+        "bbox": [
+            71,
+            302,
+            888,
+            428
+        ],
+        "page_idx": 28
+    },
+    {
+        "type": "text",
+        "text": "The information in this report was prepared by Bernstein solely for the internal business use of our clients. Clients may store, display, analyze, reformat and print the information in this report for this limited use only. Clients may not copy, alter, create derivative works, resell, reverse engineer, commercially exploit, share or distribute any part of the information contained herein for any purpose without Bernstein's express written consent. These restrictions include extracting data or using the content to develop indices or other products. Further, you may not use this report, or any portion of this report, to train or finetune any third-party machine learning or artificial intelligence system, or as a prompt or input into any such system. You also may not, without Bernstein's express written consent, do any of the foregoing in connection with your own internal machine learning or artificial intelligence system.",
+        "bbox": [
+            71,
+            440,
+            888,
+            551
+        ],
+        "page_idx": 28
+    },
+    {
+        "type": "text",
+        "text": "Bernstein may use artificial intelligence tools in the preparation of its materials. Any such materials are reviewed by Bernstein's research analysts prior to publication.",
+        "bbox": [
+            72,
+            564,
+            888,
+            592
+        ],
+        "page_idx": 28
+    },
+    {
+        "type": "text",
+        "text": "This report has been prepared for information purposes only and is based on current public information that we consider reliable, but the entities noted herein do not warrant or represent (express or implied) as to the sources of information or data contained herein are accurate, complete, not misleading or as to its fitness for the purpose intended even though the entities noted herein rely on reputable or trustworthy data providers, it should not be relied upon as such. Opinions expressed are the author(s)' current opinions as of the date appearing on the material only and we do not undertake to advise you of any change in the reported information or in the opinions herein.",
+        "bbox": [
+            71,
+            604,
+            888,
+            688
+        ],
+        "page_idx": 28
+    },
+    {
+        "type": "text",
+        "text": "Any references to SG herein are purely factual, based upon publicly available information, and included for comparative purposes only. They do not constitute an opinion or recommendation with respect to the securities of SG.",
+        "bbox": [
+            71,
+            700,
+            888,
+            742
+        ],
+        "page_idx": 28
+    },
+    {
+        "type": "text",
+        "text": "This publication was prepared and issued by the entity referred to herein for distribution to eligible counterparties or professional clients. The information in this report is intended for general circulation and does not constitute an offer to buy or sell any security, investment, legal or tax advice nor a personal recommendation, as defined by any of the aforementioned regulators. It does not take into account the particular investment objectives, financial situations, or needs of individual investors. The report has not been reviewed by any of the aforementioned regulators and does not represent any official recommendation from the aforementioned regulators. The investments referred to herein may not be suitable for you. Investors must make their own investment decisions in consultation with advice sought from a financial adviser regarding the suitability of the investment product, taking into account the specific investment objectives, financial situation or particular needs of any recipient of the recommendation, before the recipient makes a commitment to purchase the investment product.",
+        "bbox": [
+            71,
+            754,
+            888,
+            880
+        ],
+        "page_idx": 28
+    },
+    {
+        "type": "text",
+        "text": "The analysis contained herein is based on numerous assumptions. Different assumptions could result in materially different results. The information in this report does not constitute, or form part of, any offer to sell or issue, or any offer to purchase or subscribe for shares, or to induce engage in any other investment activity. The value of any securities or financial instruments mentioned in this report may fluctuate subject to market conditions. Information about past performance of an investment is not necessarily a guide to, indicative of, or assurance of future performance. Estimates of future performance mentioned by the research analyst in this report are based on assumptions that may not be realized due to unforeseen factors like market volatility/fluctuation. In relation to securities or financial instruments denominated in a foreign currency other than the clients' home currency, movements in exchange rates will have an effect on the value, either favorable or unfavorable. Before acting on any recommendations in this report, recipients should consider the appropriateness of investing in the subject securities or financial instruments mentioned in this report and, if necessary, seek for independent professional advice.",
+        "bbox": [
+            72,
+            892,
+            888,
+            921
+        ],
+        "page_idx": 28
+    },
+    {
+        "type": "header",
+        "text": "Mark C. Newman +1 212 845 7822 mark.newman@bernsteinsg.com",
+        "bbox": [
+            74,
+            21,
+            434,
+            34
+        ],
+        "page_idx": 28
+    },
+    {
+        "type": "header",
+        "text": "9 June 2026",
+        "bbox": [
+            820,
+            21,
+            888,
+            33
+        ],
+        "page_idx": 28
+    },
+    {
+        "type": "footer",
+        "text": "U.S. IT HARDWARE",
+        "bbox": [
+            74,
+            939,
+            153,
+            948
+        ],
+        "page_idx": 28
+    },
+    {
+        "type": "footer",
+        "text": "BERNSTEIN | SG GROUP",
+        "bbox": [
+            668,
+            940,
+            857,
+            949
+        ],
+        "page_idx": 28
+    },
+    {
+        "type": "page_number",
+        "text": "29",
+        "bbox": [
+            871,
+            940,
+            886,
+            949
+        ],
+        "page_idx": 28
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            72,
+            55,
+            891,
+            167
+        ],
+        "page_idx": 29
+    },
+    {
+        "type": "text",
+        "text": "The securities described herein may not be eligible for sale in all jurisdictions or to certain categories of investors where that permission profile is not consistent with the licenses held by the entities noted herein. This document is for distribution only as may be permitted by law. It is not directed to, or intended for distribution to or use by, any person or entity who is a citizen or resident of or located in any locality, state, country or other jurisdiction where such distribution, publication, availability or use would be contrary to law or regulation or would subject the entities noted herein to any regulation or licensing requirement within such jurisdiction.",
+        "bbox": [
+            72,
+            178,
+            888,
+            250
+        ],
+        "page_idx": 29
+    },
+    {
+        "type": "text",
+        "text": "Source: Bloomberg Index Services Limited. BLOOMBERG® is a trademark and service mark of Bloomberg Finance L.P. and its affiliates (collectively “Bloomberg”). Bloomberg or Bloomberg’s licensors own all proprietary rights in the Bloomberg Indices. Neither Bloomberg nor Bloomberg’s licensors approves or endorses this material, or guarantees the accuracy or completeness of any information herein, or makes any warranty, express or implied, as to the results to be obtained therefrom and, to the maximum extent allowed by law, neither shall have any liability or responsibility for injury or damages arising in connection therewith.",
+        "bbox": [
+            72,
+            260,
+            888,
+            331
+        ],
+        "page_idx": 29
+    },
+    {
+        "type": "text",
+        "text": "No part of this material may be reproduced, distributed or transmitted or otherwise made available without prior consent of the entities noted herein. Copyright Bernstein Institutional Services LLC Bernstein Autonomous LLP, BSG France S.A., Bernstein (Hong Kong) Limited 盛博香港有限公司, Bernstein (Canada) Limited, Bernstein (India) Private Limited (SEBI registration no. INH000006378), Bernstein (Singapore) Private Limited and Bernstein Japan KK (サンフォード・C・バーンスタイン株式会社). All rights reserved. The trademarks and service marks contained herein are the property of their respective owners. Any unauthorized use or disclosure is strictly prohibited. The entities noted herein may pursue legal action if the unauthorized use results in any defamation and/or reputational risk to the entities noted herein and research published under the Bernstein and Autonomous brands.",
+        "bbox": [
+            72,
+            343,
+            891,
+            455
+        ],
+        "page_idx": 29
+    },
+    {
+        "type": "header",
+        "text": "Mark C. Newman +1 212 845 7822 mark.newman@bernsteinsg.com",
+        "bbox": [
+            74,
+            21,
+            434,
+            34
+        ],
+        "page_idx": 29
+    },
+    {
+        "type": "header",
+        "text": "9 June 2026",
+        "bbox": [
+            820,
+            21,
+            888,
+            33
+        ],
+        "page_idx": 29
+    },
+    {
+        "type": "footer",
+        "text": "U.S. IT HARDWARE",
+        "bbox": [
+            74,
+            939,
+            155,
+            948
+        ],
+        "page_idx": 29
+    },
+    {
+        "type": "footer",
+        "text": "BERNSTEIN | SG GROUP",
+        "bbox": [
+            668,
+            940,
+            857,
+            949
+        ],
+        "page_idx": 29
+    },
+    {
+        "type": "page_number",
+        "text": "30",
+        "bbox": [
+            871,
+            940,
+            888,
+            949
+        ],
+        "page_idx": 29
+    }
+]

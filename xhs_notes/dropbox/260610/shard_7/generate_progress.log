@@ -1,0 +1,16 @@
+Found 49 total PDFs; shard 7/40 has 5 PDFs, skips 0 already converted, will process 5 PDFs with batch_size=5.
+Running batch 1: 5 PDFs
+Found 5 PDFs. MinerU token slots available=2.
+MinerU attempt 1/4 using MINER_U_2: submitting 5 PDF(s).
+Uploading PDF to MinerU: /tmp/pdf_batch_001_rsqc3slh/pdfs/0001-37-Morgan Stanley-Internet-Where Are We Trading Now- As AI Hardware vs AI Software Flow Debates Continue-260609.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_rsqc3slh/pdfs/0002-38-Nomura-Reports on China ramping up AI investment...-...Likely a short-term catalyst for domestic AI value chain-260609.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_rsqc3slh/pdfs/0003-39-Bernstein-U.S. IT Hardware Memory - Storage Is the New Memory Paradigm back Best Idea Presentation from Bernstein-s Strategic Decisions Conference-250609.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_rsqc3slh/pdfs/0004-40-CITI-China Electrical Equipment-Pinggao Winning the Most Orders from State Grid 2nd Batch of Equipment Purchase for Building UHV Lines in 2026-260608.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_rsqc3slh/pdfs/0005-41-Barclays-U.S. Equity-Linked Strategies AI Capex Funding- Why Equity- Why Converts--260609.pdf
+MinerU attempt 1 using MINER_U_2 batch_id=b6803eb6-d77a-4e0b-85ba-bc1fadc0d54a
+MinerU states: running, running, running, running, waiting-file
+MinerU states: done, done, done, done, done
+MinerU result contained no standalone images; rendering PDF page fallback cards.
+DeepSeek generation failed for WeChat article: Response ended prematurely
+Done. Results written to /home/runner/work/rpt_edit/rpt_edit/xhs_notes/dropbox/260610/shard_7; successful_reports=5; mineru_timed_out=False; mineru_attempts=1
+All batches completed successfully. Generated 5 report directories.

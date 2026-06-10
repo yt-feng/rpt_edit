@@ -1,0 +1,51 @@
+{
+  "input_dir": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs",
+  "total_pdf_count_before_shard": 49,
+  "pdf_count_before_skip": 5,
+  "pdf_count": 5,
+  "generated_report_count": 5,
+  "batch_size": 5,
+  "shard_index": 7,
+  "shard_count": 40,
+  "max_reports_per_shard": 5,
+  "max_total_reports": 0,
+  "skip_existing": true,
+  "skipped_existing_count": 0,
+  "skipped_existing": [],
+  "failures": 0,
+  "batches": [
+    {
+      "batch_index": 1,
+      "pdf_count": 5,
+      "files": [
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/37-MS-Internet：Where Are We Trading Now： As AI Hardware vs AI Software Flow Debates Continue-260609.pdf",
+          "batch_file": "/tmp/pdf_batch_001_rsqc3slh/pdfs/0001-37-MS-Internet-Where Are We Trading Now- As AI Hardware vs AI Software Flow Debates Continue-260609.pdf",
+          "stable_index": "1"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/38-NOM-Reports on China ramping up AI investment...：...Likely a short~term catalyst for domestic AI value chain-260609.pdf",
+          "batch_file": "/tmp/pdf_batch_001_rsqc3slh/pdfs/0002-38-NOM-Reports on China ramping up AI investment...-...Likely a short-term catalyst for domestic AI value chain-260609.pdf",
+          "stable_index": "2"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/39-Bernstein-U.S. IT Hardware Memory & Storage Is the New Memory Paradigm back Best Idea Presentation from Bernstein's Strategic Decisions Conference-250609.pdf",
+          "batch_file": "/tmp/pdf_batch_001_rsqc3slh/pdfs/0003-39-Bernstein-U.S. IT Hardware Memory - Storage Is the New Memory Paradigm back Best Idea Presentation from Bernstein-s Strategic Decisions Conference-250609.pdf",
+          "stable_index": "3"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/40-CITI-China Electrical Equipment：Pinggao Winning the Most Orders from State Grid 2nd Batch of Equipment Purchase for Building UHV Lines in 2026-260608.pdf",
+          "batch_file": "/tmp/pdf_batch_001_rsqc3slh/pdfs/0004-40-CITI-China Electrical Equipment-Pinggao Winning the Most Orders from State Grid 2nd Batch of Equipment Purchase for Building UHV Lines in 2026-260608.pdf",
+          "stable_index": "4"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/41-BARC-U.S. Equity~Linked Strategies AI Capex Funding： Why Equity？ Why Converts？-260609.pdf",
+          "batch_file": "/tmp/pdf_batch_001_rsqc3slh/pdfs/0005-41-BARC-U.S. Equity-Linked Strategies AI Capex Funding- Why Equity- Why Converts--260609.pdf",
+          "stable_index": "5"
+        }
+      ],
+      "returncode": 0,
+      "status": "ok"
+    }
+  ]
+}
