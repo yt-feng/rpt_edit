@@ -1,0 +1,15 @@
+Found 49 total PDFs; shard 3/40 has 5 PDFs, skips 0 already converted, will process 5 PDFs with batch_size=5.
+Running batch 1: 5 PDFs
+Found 5 PDFs. MinerU token slots available=2.
+MinerU attempt 1/4 using MINER_U_2: submitting 5 PDF(s).
+Uploading PDF to MinerU: /tmp/pdf_batch_001_6zfl2gsm/pdfs/0001-17-HSBC-Global Tech Platforms-B2B up- B2C down- our new AI TAM forecasts to 2030-260609.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_6zfl2gsm/pdfs/0002-18-J.P. Morgan-China Auto Industry-We turn more positive after visiting London and Paris-260609.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_6zfl2gsm/pdfs/0003-19-J.P. Morgan-Property Data Monitor Mainland China- secondary listings further dropped in May- HK-home prices have risen 9.6- YTD-260608.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_6zfl2gsm/pdfs/0004-20-Morgan Stanley-China Property-Weekly Database Tracker -23-260608.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_6zfl2gsm/pdfs/0005-21-Goldman Sachs-China Data Centers- Bloomberg reports Rmb2tn investments in data centers- NEA-s data center demand outlook stronger than GSe-260609.pdf
+MinerU attempt 1 using MINER_U_2 batch_id=96eebe0b-0b46-4d9d-bb85-7b6a59856618
+MinerU states: running, running, running, pending, waiting-file
+MinerU states: done, running, running, done, running
+MinerU states: done, done, done, done, done
+Done. Results written to /home/runner/work/rpt_edit/rpt_edit/xhs_notes/dropbox/260610/shard_3; successful_reports=5; mineru_timed_out=False; mineru_attempts=1
+All batches completed successfully. Generated 5 report directories.
