@@ -1,0 +1,2314 @@
+## Staffers | Europe
+
+# Uncertain environment leaves downside risk to permanent recruitment
+
+Uncertain backdrop and labour market data point to risk of further deterioration of perm, a drag on top-line growth, gross margin and operating leverage across the space. Prefer Randstad (EW) vs Adecco (UW) in this context for its lower leverage and limited dilution risk, and Hays (EW) vs Page Group (UW).
+
+Why are we writing now? Despite the recent improvement in organic growth across the staffing space, mainly driven by better temporary staffing, we reiterate our cautious stance on the sub-sector. The macroeconomic and geopolitical environment has become more uncertain and could take a toll on the recruitment/ staffing market, something we think has not yet been fully reflected in consensus expectations. Concerns over the AI risk in the mid term also remain and could continue to weigh on valuation, together with short-term macro headwinds.
+
+Risk to perm limits the upside. The lack of positive share-price reaction to recent organic growth beats across the space suggests investors are looking for gross margin recovery and better operating leverage to turn more positive. However, we believe the macro/geopolitical backdrop and recent labour market data point to a risk of further deterioration of perm recruitment, which would in turn continue to put pressure on staffers' gross margin and operating profit. We therefore see limited positive catalysts for staffing names to re-rate over the coming earnings season.
+
+Re-shuffling ratings. We update our order of preference within our staffing coverage. Within generalist staffing, we shift our preference to Randstad (EW) over Adecco (UW) on larger downside risk to expectations for the latter, combined with elevated leverage and risk of potential shareholder dilution from scrip dividend. We also neutralise our rating on Hays to EW and reiterate our UW on Page Group, which has the largest exposure to perm recruitment and higher risk of additional dividend cuts, in our view.
+
+MS & CO. INTERNATIONAL PLC+
+
+## Remi Grenu
+
+Equity Analyst
+
+Remi.Grenu@morganstanley.com +44 20 7425-0552
+
+## Annelies Vermeulen
+
+Equity Analyst
+
+Annelies.Vermeulen@morganstanley.com +44 20 7425-4367
+
+## Zachariah Al-Qaryooti
+
+Research Associate
+
+Zach.Al-Qaryooti@morganstanley.com +44 20 7425-2400
+
+BUSINESS SERVICES
+
+<table><tr><td colspan="2">Europe</td></tr><tr><td>Industry View</td><td>Attractive</td></tr></table>
+
+WHAT'S CHANGED
+
+<table><tr><td>Adecco Group (ADEN.S) Rating</td><td>From Equal-weight</td><td>To Underweight</td></tr><tr><td>Price Target</td><td>SFr 20.50</td><td>SFr 15.00</td></tr><tr><td>Randstad NV (RAND.AS) Rating</td><td>From Underweight</td><td>To Equal-weight</td></tr><tr><td>Price Target</td><td>€26.00</td><td>€25.50</td></tr><tr><td>Page Group PLC (PAGE.L) Price Target</td><td>From 195p</td><td>To 110p</td></tr><tr><td>Hays PLC (HAYS.L) Rating</td><td>From Underweight</td><td>To Equal-weight</td></tr><tr><td>Price Target</td><td>44p</td><td>35p</td></tr></table>
+
+MS does and seeks to do business with companies covered in MS. As a result, investors should be aware that the firm may have a conflict of interest that could affect the objectivity of MS. Investors should consider MS as only a single factor in making their investment decision.
+
+## For analyst certification and other important disclosures, refer to the Disclosure Section, located at the end of this report.
+
++= Analysts employed by non-U.S. affiliates are not registered with FINRA, may not be associated persons of the member and may not be subject to FINRA restrictions on communications with a subject company, public appearances and trading securities held by a research analyst account.
+
+## Investment case in charts
+
+Exhibit 1: Staffers' organic growth has recovered, mainly driven by temp...  
+![](images/e32ca2c9ac9e9292def76b8b0ab4ea64c3327d354196dde9509c0ec242d8cfe0.jpg)
+
+<details>
+<summary>line chart</summary>
+
+| Quarter | Adecco | Randstad | Manpower* |
+|---------|--------|----------|-----------|
+| 1Q22    | 5.0%   | 15.0%    | 6.0%      |
+| 2Q22    | 4.0%   | 10.0%    | 5.0%      |
+| 3Q22    | 6.0%   | 8.0%     | 4.0%      |
+| 4Q22    | 5.0%   | 5.0%     | 3.0%      |
+| 1Q23    | 3.0%   | -5.0%    | -2.0%     |
+| 2Q23    | 4.0%   | -7.0%    | -3.0%     |
+| 3Q23    | 3.0%   | -8.0%    | -4.0%     |
+| 4Q23    | 2.0%   | -9.0%    | -5.0%     |
+| 1Q24    | 1.0%   | -8.0%    | -6.0%     |
+| 2Q24    | -1.0%  | -7.0%    | -5.0%     |
+| 3Q24    | -3.0%  | -6.0%    | -4.0%     |
+| 4Q24    | -5.0%  | -5.0%    | -3.0%     |
+| 1Q25    | -4.0%  | -4.0%    | -2.0%     |
+| 2Q25    | -2.0%  | -3.0%    | -1.0%     |
+| 3Q25    | 1.0%   | -2.0%    | 0.0%      |
+| 4Q25    | 3.0%   | -1.0%    | 1.0%      |
+| 1Q26    | 4.0%   | 0.0%     | 2.0%      |
+| 2Q26e   | 5.0%   | 1.0%     | 3.0%      |
+| 3Q26e   | 4.0%   | 2.0%     | 4.0%      |
+| 4Q26e   | 3.0%   | 3.0%     | 5.0%      |
+</details>
+
+Source: Company data, MS estimates
+
+Exhibit 3: Indeed job postings have continued to deteriorate...
+
+<table><tr><td>Indeed Job Postings data</td><td>May-25</td><td>Jun-25</td><td>Jul-25</td><td>Aug-25</td><td>Sep-25</td><td>Oct-25</td><td>Nov-25</td><td>Dec-25</td><td>Jan-26</td><td>Feb-26</td><td>Mar-26</td><td>Apr-26</td><td>May-26</td></tr><tr><td>France</td><td>120.7</td><td>117.6</td><td>114.1</td><td>111.7</td><td>110.5</td><td>106.8</td><td>105.6</td><td>104.2</td><td>104.4</td><td>108.8</td><td>104.7</td><td>97.0</td><td>96.7</td></tr><tr><td>Germany</td><td>122.4</td><td>120.2</td><td>115.9</td><td>114.6</td><td>116.1</td><td>116.1</td><td>115.6</td><td>114.7</td><td>114.3</td><td>113.5</td><td>111.8</td><td>109.3</td><td>110.4</td></tr><tr><td>UK</td><td>78.0</td><td>77.5</td><td>77.1</td><td>75.8</td><td>75.1</td><td>75.3</td><td>76.3</td><td>77.1</td><td>75.2</td><td>76.6</td><td>76.3</td><td>71.2</td><td>70.3</td></tr><tr><td>US</td><td>105.9</td><td>105.2</td><td>104.3</td><td>104.8</td><td>102.8</td><td>101.0</td><td>101.3</td><td>102.9</td><td>103.3</td><td>104.6</td><td>104.1</td><td>102.7</td><td>102.0</td></tr><tr><td>Australia</td><td>148.5</td><td>150.6</td><td>151.0</td><td>148.6</td><td>148.9</td><td>149.7</td><td>148.8</td><td>146.9</td><td>153.1</td><td>163.0</td><td>161.9</td><td>151.4</td><td>152.7</td></tr></table>
+
+Source: Indeed, MS
+
+Exhibit 5: Staffing exposure to permanent recruitment (% of gross profit)  
+![](images/ff4c7767ce13173b83bfdbc63217baad851fa7fa138968a2501a07de8a7e8327.jpg)
+
+<details>
+<summary>bar chart</summary>
+
+| Category | Value (%) |
+|---|---|
+| Adecco | 15-17 |
+| Randstad | 16 |
+| Hays | 38 |
+| Page Group | 72 |
+</details>
+
+Source: Company data, MS
+
+Exhibit 2: ... but gross margins remain under pressure  
+![](images/30cbf866dbc6a9c6e4f08dc8dc8b0e6a1811debfabf7ccf71ff981fddcbff2a2.jpg)
+
+<details>
+<summary>bar chart</summary>
+
+| Quarter | Adecco (%) | Randstad (%) |
+| :--- | :--- | :--- |
+| 1Q22 | 21.1 | 20.5 |
+| 2Q22 | 21.1 | 21.1 |
+| 3Q22 | 20.9 | 20.9 |
+| 4Q22 | 20.9 | 20.8 |
+| 1Q23 | 21.3 | 20.9 |
+| 2Q23 | 20.7 | 20.7 |
+| 3Q23 | 20.8 | 20.6 |
+| 4Q23 | 20.2 | 20.7 |
+| 1Q24 | 19.8 | 20.2 |
+| 2Q24 | 19.4 | 19.8 |
+| 3Q24 | 19.4 | 19.5 |
+| 4Q24 | 19.3 | 18.8 |
+| 1Q25 | 19.5 | 19.4 |
+| 2Q25 | 18.9 | 18.9 |
+| 3Q25 | 19.2 | 18.4 |
+| 4Q25 | 19.2 | 18.4 |
+| 1Q26 | 18.8 | 18.5 |
+| 2Q26e | 18.6 | 18.3 |
+| 3Q26e | 18.9 | 18.4 |
+| 4Q26e | 19.0 | 18.3 |
+</details>
+
+Source: Company data, MS estimates
+
+Exhibit 4: .... and so have job vacancies in key recruitment markets  
+![](images/c1d0693347e75799c00dc2a073cd207f0907c5f5d624485e81819d346ce7ae9e.jpg)
+
+<details>
+<summary>line chart</summary>
+
+| Date     | France | Germany | UK   | US   |
+|----------|--------|---------|------|------|
+| 12/2018  | 100    | 100     | 100  | 100  |
+| 04/2019  | 105    | 95      | 98   | 97   |
+| 08/2019  | 102    | 92      | 95   | 94   |
+| 12/2019  | 98     | 88      | 92   | 90   |
+| 04/2020  | 60     | 75      | 65   | 70   |
+| 08/2020  | 75     | 78      | 70   | 85   |
+| 12/2020  | 85     | 80      | 75   | 95   |
+| 04/2021  | 105    | 85      | 95   | 135  |
+| 08/2021  | 120    | 95      | 115  | 140  |
+| 12/2021  | 125    | 100     | 125  | 135  |
+| 04/2022  | 128    | 105     | 130  | 130  |
+| 08/2022  | 130    | 108     | 135  | 135  |
+| 12/2022  | 125    | 105     | 130  | 130  |
+| 04/2023  | 120    | 100     | 125  | 125  |
+| 08/2023  | 115    | 95      | 120  | 120  |
+| 12/2023  | 110    | 90      | 115  | 115  |
+| 04/2024  | 105    | 85      | 110  | 110  |
+| 08/2024  | 100    | 80      | 105  | 105  |
+| 12/2024  | 95     | 75      | 100  | 100  |
+| 04/2025  | 90     | 78      | 95   | 95   |
+| 08/2025  | 85     | 75      | 90   | 90   |
+| 12/2025  | 88     | 78      | 88   | 88   |
+| 04/2026  | 90     | 80      | 85   | 90   |
+</details>
+
+Source: ONS, BLS, INSEE, Bundesbank
+
+Exhibit 6: Adecco's financial leverage compared to Randstad's  
+![](images/f07dbc8183a976e255c89fe77c98d6afa9eab84a657af54969a767d0793231f0.jpg)
+
+<details>
+<summary>line chart</summary>
+
+| Fiscal Year | Adecco | Randstad |
+|-------------|--------|----------|
+| FY15        | 0.8x   | 0.2x     |
+| FY16        | 0.7x   | 0.8x     |
+| FY17        | 0.8x   | 1.4x     |
+| FY18        | 1.0x   | 1.2x     |
+| FY19        | 0.3x   | 0.6x     |
+| FY20        | 0.4x   | -0.5x    |
+| FY21        | 0.1x   | -0.2x    |
+| FY22        | 2.5x   | 0.2x     |
+| FY23        | 2.5x   | 0.3x     |
+| FY24        | 2.8x   | 1.5x     |
+| FY25        | 2.7x   | 1.3x     |
+| FY26e       | 2.5x   | 1.5x     |
+| FY27e       | 2.3x   | 1.3x     |
+| FY28e       | 2.0x   | 1.0x     |
+| FY29e       | 1.5x   | 0.6x     |
+</details>
+
+Source: Company data, MS estimates
+
+Exhibit 7: Adecco EV/EBIT valuation relative to Randstad  
+![](images/10d8f376d6ea52681e13143653632792d4db9a2d9604f36f278a60385b17e34c.jpg)
+
+<details>
+<summary>line chart</summary>
+
+| Date     | Adecco/Randstad | Average | + 1σ  | 1σ   |
+|----------|-----------------|---------|-------|------|
+| 06/2006  | ~0%             | ~-10%   | ~0%   | ~-20%|
+| 06/2007  | ~35%            | ~-10%   | ~0%   | ~-20%|
+| 06/2008  | ~-30%           | ~-10%   | ~0%   | ~-20%|
+| 06/2009  | ~25%            | ~-10%   | ~0%   | ~-20%|
+| 06/2010  | ~-45%           | ~-10%   | ~0%   | ~-20%|
+| 06/2011  | ~-20%           | ~-10%   | ~0%   | ~-20%|
+| 06/2012  | ~-15%           | ~-10%   | ~0%   | ~-20%|
+| 06/2013  | ~5%             | ~-10%   | ~0%   | ~-20%|
+| 06/2014  | ~15%            | ~-10%   | ~0%   | ~-20%|
+| 06/2015  | ~25%            | ~-10%   | ~0%   | ~-20%|
+| 06/2016  | ~-15%           | ~-10%   | ~0%   | ~-20%|
+| 06/2017  | ~5%             | ~-10%   | ~0%   | ~-20%|
+| 06/2018  | ~-15%           | ~-10%   | ~0%   | ~-20%|
+| 06/2019  | ~-15%           | ~-10%   | ~0%   | ~-20%|
+| 06/2020  | ~15%            | ~-10%   | ~0%   | ~-20%|
+| 06/2021  | ~-35%           | ~-10%   | ~0%   | ~-20%|
+| 06/2022  | ~5%             | ~-10%   | ~0%   | ~-20%|
+| 06/2023  | ~25%            | ~-10%   | ~0%   | ~-20%|
+| 06/2024  | ~-25%           | ~-10%   | ~0%   | ~-20%|
+| 06/2025  | ~-15%           | ~-10%   | ~0%   | ~-20%|
+</details>
+
+Source: Datastream
+
+Exhibit 8: Staffing coverage FCF yield valuation  
+![](images/45f2a160766a6484b569f6f3aef6ad2823f79c9b80e79231ebb31b552b4030df.jpg)
+
+<details>
+<summary>bar chart</summary>
+
+| Category | Value (%) |
+|---|---|
+| Page Group | 1.8 |
+| Hays | 3.9 |
+| Randstad | 9.1 |
+| Adecco | 9.5 |
+</details>
+
+Source: MS estimates
+
+## Business services order of preference
+
+Exhibit 9: Business services: order of preference
+
+<table><tr><td rowspan="2"></td><td rowspan="2">Company</td><td rowspan="2">Market cap (bn)</td><td rowspan="2">Share Price</td><td rowspan="2">MS PT</td><td rowspan="2">Upside to Price Target</td><td colspan="5">Valuation (CY 2026)</td><td colspan="4">Share price performance</td></tr><tr><td>P/E</td><td>EV / EBITDA</td><td>Div. Yield</td><td>Net Debt / EBITDA</td><td>FCF Yield</td><td>-1M</td><td>-3M</td><td>-6M</td><td>-12M</td></tr><tr><td rowspan="11">Overweight</td><td><img src="images/ec7e5c19f63c50cf20d41cdb205231514a973268653888ea11648841e80dd588.jpg"/></td><td>£24.1</td><td>2,620p</td><td>4,100p</td><td>56.5%</td><td>17.8x</td><td>11.4x</td><td>2.2%</td><td>1.7x</td><td>4.5%</td><td>-2.2%</td><td>-4.9%</td><td>-21.2%</td><td>-31.2%</td></tr><tr><td><img src="images/7a085daf2f87f92d0d5225ba4bc940c7f398bb7496d4723806199b0b48a7f857.jpg"/></td><td>€11.3</td><td>€25.6</td><td>€35.0</td><td>36.6%</td><td>16.4x</td><td>9.9x</td><td>4.0%</td><td>1.6x</td><td>6.6%</td><td>-3.3%</td><td>-11.4%</td><td>-4.0%</td><td>-14.6%</td></tr><tr><td><img src="images/f60e723d372df3ac38dc140e9cd2db1305ac67a0094a382695ab343074c3547d.jpg"/></td><td>€11.4</td><td>€11.0</td><td>€18.5</td><td>68.5%</td><td>19.4x</td><td>8.6x</td><td>0.6%</td><td>2.7x</td><td>1.9%</td><td>0.8%</td><td>20.9%</td><td>-25.1%</td><td>-</td></tr><tr><td>[4XD1]</td><td>£9.5</td><td>7,020p</td><td>8,250p</td><td>17.5%</td><td>29.2x</td><td>19.9x</td><td>0.9%</td><td>0.8x</td><td>3.3%</td><td>0.6%</td><td>31.0%</td><td>28.0%</td><td>51.0%</td></tr><tr><td>Rentokil Initial</td><td>£11.2</td><td>442p</td><td>570p</td><td>28.8%</td><td>20.4x</td><td>9.7x</td><td>2.1%</td><td>1.8x</td><td>6.3%</td><td>-10.4%</td><td>-6.1%</td><td>4.0%</td><td>26.4%</td></tr><tr><td>[S|Z6ZZ]</td><td>€8.2</td><td>€48.3</td><td>€53.0</td><td>9.6%</td><td>14.8x</td><td>9.5x</td><td>2.7%</td><td>1.8x</td><td>7.7%</td><td>-3.1%</td><td>-4.2%</td><td>2.4%</td><td>7.8%</td></tr><tr><td><img src="images/5118595ea0415c204ebf66bd5c7933941da13a28ce1d27a511478b0aa2daa29e.jpg"/></td><td>£3.0</td><td>649p</td><td>790p</td><td>21.7%</td><td>15.7x</td><td>9.4x</td><td>3.8%</td><td>1.0x</td><td>5.5%</td><td>6.9%</td><td>-1.7%</td><td>4.1%</td><td>13.9%</td></tr><tr><td><img src="images/7536ef9f8a455f1a2a06ec49b16f2b42335a7202cac32e82340a59649d30734f.jpg"/></td><td>$33.9</td><td>$79.4</td><td>$85.0</td><td>7.1%</td><td>19.1x</td><td>8.4x</td><td>1.4%</td><td>1.6x</td><td>12.4%</td><td>5.9%</td><td>5.8%</td><td>-</td><td>-</td></tr><tr><td><img src="images/714a6e40f6375d8431852b8d32f0d9110c7702bd183dac0c26a7c6e0fc923e2a.jpg"/></td><td>€6.7</td><td>€25.8</td><td>€31.5</td><td>21.9%</td><td>12.8x</td><td>5.2x</td><td>2.0%</td><td>1.7x</td><td>6.3%</td><td>-3.9%</td><td>4.6%</td><td>8.4%</td><td>10.0%</td></tr><tr><td><img src="images/9796070055e065758512d7ce0f5225d1957af84d0b185c6a01988e8e26e69a04.jpg"/></td><td>DKK42.6</td><td>DKK252</td><td>DKK300</td><td>18.9%</td><td>12.3x</td><td>8.6x</td><td>1.6%</td><td>2.4x</td><td>7.7%</td><td>0.4%</td><td>16.6%</td><td>21.7%</td><td>44.8%</td></tr><tr><td>FERGUSON</td><td>$45.3</td><td>$230</td><td>$290</td><td>26.3%</td><td>20.8x</td><td>13.6x</td><td>1.6%</td><td>0.7x</td><td>5.2%</td><td>-9.2%</td><td>-5.5%</td><td>-8.8%</td><td>8.7%</td></tr><tr><td rowspan="9">Equal-weight</td><td><img src="images/1613c122f36d0ea29acf209594d2a8613994754acf77f4920e99e734348e9f7b.jpg"/></td><td>SFr 16.7</td><td>SFr 89.5</td><td>SFr 102</td><td>14.0%</td><td>22.0x</td><td>10.8x</td><td>3.6%</td><td>1.9x</td><td>5.5%</td><td>4.7%</td><td>-4.0%</td><td>-1.2%</td><td>5.5%</td></tr><tr><td><img src="images/200e957829556c05ce3ec5e61ed647cca40351fd229dda786f4b864cd6ecb174.jpg"/></td><td>€12.0</td><td>€64.9</td><td>€67.5</td><td>4.0%</td><td>15.1x</td><td>8.8x</td><td>1.3%</td><td>1.9x</td><td>7.0%</td><td>10.5%</td><td>-1.1%</td><td>10.4%</td><td>14.0%</td></tr><tr><td><img src="images/7c702c49a87bc557f27264aaffdd468c29909bcd9f33a0555cde1324f307b520.jpg"/></td><td>€3.5</td><td>€59.2</td><td>€56.0</td><td>-5.5%</td><td>4.3x</td><td>3.5x</td><td>7.7%</td><td>1.7x</td><td>23.3%</td><td>-6.8%</td><td>1.9%</td><td>-1.4%</td><td>-34.6%</td></tr><tr><td><img src="images/ddf0a25699486402b3ff0f904889f86349ed8bd3a920c0ec42e633a50f8c4599.jpg"/> IMCD</td><td>€5.3</td><td>€88.9</td><td>€105</td><td>18.1%</td><td>15.5x</td><td>11.7x</td><td>2.1%</td><td>2.5x</td><td>7.4%</td><td>-11.2%</td><td>21.5%</td><td>16.1%</td><td>-23.9%</td></tr><tr><td><img src="images/ad4842cc334f90564da68f1f204cf873a8a95dd997de4cbf4903331a1de2cb0d.jpg"/></td><td>€2.5</td><td>€10.4</td><td>€12.0</td><td>15.4%</td><td>17.5x</td><td>8.7x</td><td>1.7%</td><td>3.2x</td><td>10.7%</td><td>-7.6%</td><td>33.8%</td><td>10.4%</td><td>-25.2%</td></tr><tr><td>Travis Perkins</td><td>£1.2</td><td>543p</td><td>685p</td><td>26.2%</td><td>19.4x</td><td>6.0x</td><td>1.9%</td><td>2.3x</td><td>-0.6%</td><td>2.6%</td><td>-13.0%</td><td>-13.1%</td><td>-11.7%</td></tr><tr><td><img src="images/796f2b1f72594af0ea29957ce6212a19a4c5343ce3f1f3b4eda3c8f490d21066.jpg"/></td><td>£8.0</td><td>2,470p</td><td>2,550p</td><td>3.2%</td><td>14.0x</td><td>8.7x</td><td>3.1%</td><td>1.8x</td><td>5.2%</td><td>1.0%</td><td>10.6%</td><td>14.8%</td><td>8.0%</td></tr><tr><td>randstad</td><td>€4.7</td><td>€27.4</td><td>€25.5</td><td>-6.8%</td><td>10.8x</td><td>6.2x</td><td>5.9%</td><td>1.6x</td><td>8.2%</td><td>8.8%</td><td>1.5%</td><td>-15.6%</td><td>-24.7%</td></tr><tr><td><img src="images/d7c9e8e0ddfebb7082ceceeec5631726945a123299c50f68d470196c4486ad82.jpg"/></td><td>£0.6</td><td>35p</td><td>35p</td><td>0.8%</td><td>24.4x</td><td>4.7x</td><td>1.6%</td><td>NM</td><td>1.5%</td><td>3.8%</td><td>-10.6%</td><td>-35.9%</td><td>-50.5%</td></tr><tr><td rowspan="4">Underweight</td><td>[BRENTAG]</td><td>€8.6</td><td>€56.8</td><td>€52.0</td><td>-8.5%</td><td>17.1x</td><td>8.9x</td><td>3.5%</td><td>2.3x</td><td>2.8%</td><td>-9.6%</td><td>20.1%</td><td>15.5%</td><td>-6.5%</td></tr><tr><td>THE ADECCO GROUP</td><td>SFr 2.7</td><td>SFr 16.6</td><td>SFr 15.0</td><td>-9.4%</td><td>8.3x</td><td>5.9x</td><td>5.9%</td><td>2.5x</td><td>9.5%</td><td>-6.7%</td><td>-21.4%</td><td>-24.6%</td><td>-26.1%</td></tr><tr><td>[SHC]</td><td>£0.4</td><td>123p</td><td>110p</td><td>-10.4%</td><td>31.5x</td><td>5.1x</td><td>4.2%</td><td>NM</td><td>2.2%</td><td>-7.3%</td><td>-19.2%</td><td>-48.0%</td><td>-54.6%</td></tr><tr><td>[SHC]</td><td>SEK89.4</td><td>SEK156</td><td>SEK125</td><td>-19.9%</td><td>12.5x</td><td>9.1x</td><td>4.4%</td><td>2.1x</td><td>6.9%</td><td>0.3%</td><td>-1.5%</td><td>8.1%</td><td>9.8%</td></tr></table>
+
+Source: Thomson Reuters, MS estimates, Priced as at 5th June 2026
+
+# Temporary staffing better, but not enough to drive upside to expectations
+
+## Market focus on operating leverage rather than organic growth
+
+While organic growth remains negative or relatively soft across the board (except at Adecco), it has gradually improved over the last few quarters (see Exhibit 10 and Exhibit 11). This was driven in part by the easier comparison base, but also by a recovery in the temp staffing market, while permanent recruitment has remained subdued. Despite this stabilisation in volume and organic growth, staffing stocks have remained under pressure and have de-rated significantly ytd. While the timing for an inflection in staffing volumes was the main debate a few quarters ago, the debate has now refocused on continued gross margin decline and lack of operating leverage as revenues have started to grow again.
+
+Exhibit 10: Organic growth of generalist staffers (Adecco, Manpower, Randstad)  
+![](images/b5e4591ada6cb2fb21e641ee1819896b2f7a9a104e2c3b941ff33341f9240804.jpg)
+
+<details>
+<summary>line chart</summary>
+
+| Quarter | Adecco | Randstad | Manpower* |
+|---------|--------|----------|-----------|
+| 1Q22    | 5.0%   | 15.0%    | 6.0%      |
+| 2Q22    | 4.0%   | 10.0%    | 4.0%      |
+| 3Q22    | 6.0%   | 8.0%     | 3.0%      |
+| 4Q22    | 5.0%   | 5.0%     | 2.0%      |
+| 1Q23    | 4.0%   | 3.0%     | 1.0%      |
+| 2Q23    | 3.0%   | 1.0%     | 0.0%      |
+| 3Q23    | 2.0%   | -1.0%    | -1.0%     |
+| 4Q23    | 1.0%   | -3.0%    | -2.0%     |
+| 1Q24    | 0.0%   | -4.0%    | -3.0%     |
+| 2Q24    | -1.0%  | -5.0%    | -4.0%     |
+| 3Q24    | -2.0%  | -6.0%    | -5.0%     |
+| 4Q24    | -3.0%  | -7.0%    | -6.0%     |
+| 1Q25    | -4.0%  | -8.0%    | -7.0%     |
+| 2Q25    | -5.0%  | -9.0%    | -8.0%     |
+| 3Q25    | -6.0%  | -10.0%   | -9.0%     |
+| 4Q25    | -7.0%  | -11.0%   | -10.0%    |
+| 1Q26    | -8.0%  | -12.0%   | -11.0%    |
+| 2Q26e   | -9.0%  | -13.0%   | -12.0%    |
+| 3Q26e   | -10.0% | -14.0%   | -13.0%    |
+| 4Q26e   | -11.0% | -15.0%   | -14.0%    |
+</details>
+
+Source: Company data, MS estimates, \*Visible Alpha consensus for Manpower 2Q/3Q/4Q26
+
+Exhibit 11: Organic growth of specialist staffers (Hays, Page Group)  
+![](images/57bd2b6bec0647d6efe7c755e4d30ce6a6a915bd25fe6f60d107ceaa5ed7879f.jpg)
+
+<details>
+<summary>line chart</summary>
+
+| Quarter | Hays   | Page Group |
+|---------|--------|----------|
+| 1Q22    | 32.0%  | 42.0%    |
+| 2Q22    | 28.0%  | 30.0%    |
+| 3Q22    | 20.0%  | 18.0%    |
+| 4Q22    | 10.0%  | 5.0%     |
+| 1Q23    | 5.0%   | 0.0%     |
+| 2Q23    | -5.0%  | -5.0%    |
+| 3Q23    | -10.0% | -10.0%   |
+| 4Q23    | -15.0% | -15.0%   |
+| 1Q24    | -18.0% | -18.0%   |
+| 2Q24    | -17.0% | -17.0%   |
+| 3Q24    | -16.0% | -16.0%   |
+| 4Q24    | -15.0% | -15.0%   |
+| 1Q25    | -14.0% | -14.0%   |
+| 2Q25    | -13.0% | -13.0%   |
+| 3Q25    | -12.0% | -12.0%   |
+| 4Q25    | -11.0% | -11.0%   |
+| 1Q26    | -10.0% | -10.0%   |
+| 2Q26e   | -8.0%  | -8.0%    |
+| 3Q26e   | -6.0%  | -6.0%    |
+| 4Q26e   | -4.0%  | -4.0%    |
+</details>
+
+Source: Company data, MS estimates
+
+In that sense, we think Adecco's recent results were a wake-up call for the market (hence the magnitude of share price reaction on the day, -17%), with the 2Q26 outlook combining (1) a pause to the organic growth improvement, with guidance pointing to 4-5% vs 5% in 1Q26 in our view, (2) continued significant pressure on gross margin, which management expects to be down -20bps sequentially and -40bps yoy, and (3) an increase in operating costs. We think this was negative on three counts and made the market realise that:
+
+- There is a risk that Adecco's organic growth recovery is short-lived and that it deteriorates again as the comparison base gets tougher through the rest of the year, especially as the outlook for perm recruitment and Akkodis has become more uncertain following a slightly disappointing 1Q26.  
+- Gross margin deterioration has been ongoing for 2 years, with management of all staffing companies claiming activity, geographic and client mix, as the reasons for the decline. Each additional quarter of weakness is likely to reinforce investors' view that pricing competition could also be one of the drivers. Given Adecco's
+
+gross margin outlook for 2Q26, we think the next earnings season is unlikely to represent the positive catalyst required to reassure investors on the pricing/gross margin debate.
+
+\- When we published our note on the AI risk for staffers, we highlighted that one of the potential upside risks was the ability of staffing companies to harness the AI-led efficiency gains – in other words reduce their operating cost base and become structurally more profitable. This potential positive was also flagged by Adecco and Randstad management teams, who previously said they thought they had a leaner cost structure thanks to recent efforts and would be able to deliver higher volume of activity with a limited increase in resources. We think Adecco's 2Q26 outlook for higher SG&A reflects the necessity to add resources as volumes grow, as expected through the rest of the year vs FY25, and that this may mean consensus/investors have previously been too optimistic on the group operating leverage.
+
+Exhibit 12: yoy changes in operating margin for generalist staffers (Adecco, Manpower, Randstad)  
+![](images/3991ea543ecdf4e338790c04f243a93e94a3819fb92fbde554946948be5431f4.jpg)
+
+<details>
+<summary>bar chart</summary>
+
+| Quarter | Adecco | Randstad | Manpower* |
+| :--- | :--- | :--- | :--- |
+| 1Q22 | -75 | 65 | 105 |
+| 2Q22 | -100 | 0 | 50 |
+| 3Q22 | -130 | 0 | 35 |
+| 4Q22 | -95 | 20 | -10 |
+| 1Q23 | -25 | -15 | -30 |
+| 2Q23 | -40 | 50 | -110 |
+| 3Q23 | 40 | -40 | -115 |
+| 4Q23 | 65 | -85 | -95 |
+| 1Q24 | -35 | -95 | -95 |
+| 2Q24 | -100 | -125 | -15 |
+| 3Q24 | -65 | -95 | 5 |
+| 4Q24 | -110 | -95 | -40 |
+| 1Q25 | -30 | 0 | -50 |
+| 2Q25 | -55 | 0 | -45 |
+| 3Q25 | 5 | 0 | -45 |
+| 4Q25 | 55 | 0 | 0 |
+| 1Q26e | 25 | -30 | 10 |
+| 2Q26e | 25 | 0 | 10 |
+| 3Q26e | -35 | 0 | 25 |
+| 4Q26e | -20 | 10 | 30 |
+</details>
+
+Source: Company data, MS, \*Visible Alpha consensus for Manpower 2Q/3Q/4Q26
+
+Exhibit 13: Gross margin evolution at generalist staffers  
+![](images/fe636022a32c13f988c4c43dfb79812c17796e0536cdd7cac9aa51993a6b6bed.jpg)
+
+<details>
+<summary>bar chart</summary>
+
+| Quarter | Adecco (%) | Randstad (%) |
+| :--- | :--- | :--- |
+| 1Q22 | 21.1 | 20.5 |
+| 2Q22 | 21.1 | 21.1 |
+| 3Q22 | 20.9 | 21.0 |
+| 4Q22 | 20.9 | 20.8 |
+| 1Q23 | 21.3 | 21.0 |
+| 2Q23 | 20.7 | 20.7 |
+| 3Q23 | 20.8 | 20.6 |
+| 4Q23 | 20.2 | 20.7 |
+| 1Q24 | 19.8 | 19.3 |
+| 2Q24 | 19.4 | 18.8 |
+| 3Q24 | 19.4 | 18.4 |
+| 4Q24 | 19.2 | 18.4 |
+| 1Q25 | 19.5 | 19.3 |
+| 2Q25 | 18.8 | 18.8 |
+| 3Q25 | 19.2 | 18.4 |
+| 4Q25 | 19.2 | 18.4 |
+| 1Q26e | 18.7 | 18.4 |
+| 2Q26e | 18.5 | 18.3 |
+| 3Q26e | 18.9 | 18.4 |
+| 4Q26e | 19.0 | 18.3 |
+</details>
+
+Source: Company data, MS
+
+While Adecco and Randstad management teams have continued to explain that the negative impact on gross margin is driven entirely by an adverse mix effect, a concern among investors is that it also reflects pressure on pricing. If this is the case, it would have a negative impact on the staffers' ability to deliver sustainable operating leverage and would be a concern for those business models delivering very thin operating margins.
+
+## Risk of organic growth recovery stalling
+
+We see multiple risks to the recent – and fragile – improvement in organic growth across staffing companies. While consensus continues to expect better organic growth through the coming quarters – reflecting a gradual recovery coming out of a 3-year period of volume pressure – we think there is a risk of this recovery stalling for several reasons.
+
+First, the macro and geopolitical backdrop has become more uncertain due to the Middle East conflict and associated higher energy prices. While we believe this could support temp staffing in the short term (as corporates continue to refrain from recruiting on a permanent basis and favour the flexibility of temp), should the conflict drag for longer and energy prices remain higher for longer, our economists expect it could have a negative impact on GDP growth (see the most recent outlook here). Staffing is highly
+
+cyclical, suggesting a risk of volume deterioration in such a scenario. We note that leading/confidence indicators have deteriorated in several key staffing markets over the last two months, including France, Germany, the US, the UK and Spain (see Exhibit 14).
+
+Exhibit 14: PMI indicators for key staffing markets
+
+<table><tr><td>PMI DATA</td><td>Apr-24</td><td>May-24</td><td>Jun-24</td><td>Jul-24</td><td>Aug-24</td><td>Sep-24</td><td>Oct-24</td><td>Nov-24</td><td>Dec-24</td><td>Jan-25</td><td>Feb-25</td><td>Mar-25</td><td>Apr-25</td><td>May-25</td><td>Jun-25</td><td>Jul-25</td><td>Aug-25</td><td>Sep-25</td><td>Oct-25</td><td>Nov-25</td><td>Dec-25</td><td>Jan-26</td><td>Feb-26</td><td>Mar-26</td><td>Apr-26</td><td>May-26</td></tr><tr><td>France</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>French Composite PMI</td><td>50.5</td><td>48.9</td><td>48.8</td><td>49.1</td><td>53.1</td><td>48.6</td><td>48.1</td><td>45.9</td><td>47.5</td><td>47.6</td><td>45.1</td><td>48.0</td><td>47.8</td><td>49.3</td><td>49.2</td><td>48.6</td><td>49.8</td><td>48.1</td><td>47.7</td><td>50.4</td><td>50.0</td><td>49.1</td><td>49.9</td><td>48.8</td><td>47.6</td><td>44.9</td></tr><tr><td>French Composite Employment PMI</td><td>52.2</td><td>51.2</td><td>50.6</td><td>50.2</td><td>49.8</td><td>50.3</td><td>49.8</td><td>50.4</td><td>48.0</td><td>47.4</td><td>46.5</td><td>48.6</td><td>48.4</td><td>49.2</td><td>49.1</td><td>48.8</td><td>52.3</td><td>50.5</td><td>51.2</td><td>49.5</td><td>50.2</td><td>50.7</td><td>50.6</td><td>49.6</td><td>50.2</td><td>47.0</td></tr><tr><td>French Manufacturing PMI</td><td>45.3</td><td>46.4</td><td>45.4</td><td>44.0</td><td>43.9</td><td>44.6</td><td>44.5</td><td>43.1</td><td>41.9</td><td>45.0</td><td>45.8</td><td>48.5</td><td>48.7</td><td>49.8</td><td>48.1</td><td>48.2</td><td>50.4</td><td>48.2</td><td>48.8</td><td>47.8</td><td>50.7</td><td>51.2</td><td>50.1</td><td>50.0</td><td>52.8</td><td>49.7</td></tr><tr><td>French Service PMI</td><td>51.3</td><td>49.3</td><td>49.6</td><td>50.1</td><td>55.0</td><td>49.6</td><td>49.2</td><td>46.9</td><td>49.3</td><td>48.2</td><td>45.3</td><td>47.9</td><td>47.3</td><td>48.9</td><td>49.6</td><td>48.5</td><td>49.8</td><td>48.5</td><td>48.0</td><td>51.4</td><td>50.1</td><td>48.4</td><td>49.6</td><td>48.8</td><td>46.5</td><td>44.3</td></tr><tr><td>Germany</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>German Composite PMI</td><td>50.6</td><td>52.4</td><td>50.4</td><td>49.1</td><td>48.4</td><td>47.5</td><td>48.6</td><td>47.2</td><td>48.0</td><td>50.5</td><td>50.4</td><td>51.3</td><td>50.1</td><td>48.5</td><td>50.4</td><td>50.6</td><td>50.5</td><td>52.0</td><td>53.9</td><td>52.4</td><td>51.3</td><td>52.1</td><td>53.2</td><td>51.9</td><td>48.4</td><td>48.8</td></tr><tr><td>German Composite Employment PMI</td><td>50.1</td><td>50.9</td><td>49.0</td><td>47.7</td><td>47.5</td><td>46.3</td><td>46.0</td><td>46.5</td><td>47.3</td><td>49.0</td><td>47.9</td><td>49.3</td><td>49.9</td><td>48.9</td><td>48.9</td><td>49.5</td><td>48.6</td><td>46.9</td><td>49.8</td><td>48.9</td><td>49.1</td><td>46.7</td><td>47.4</td><td>47.6</td><td>47.2</td><td>47.4</td></tr><tr><td>German Manufacturing PMI</td><td>42.5</td><td>45.4</td><td>43.5</td><td>43.2</td><td>42.4</td><td>40.6</td><td>43.0</td><td>43.0</td><td>42.5</td><td>45.0</td><td>46.5</td><td>48.3</td><td>48.4</td><td>48.3</td><td>49.0</td><td>49.1</td><td>49.8</td><td>49.5</td><td>49.6</td><td>48.2</td><td>47.0</td><td>49.1</td><td>50.9</td><td>52.2</td><td>51.4</td><td>50.1</td></tr><tr><td>German Service PMI</td><td>53.2</td><td>54.2</td><td>53.1</td><td>52.5</td><td>51.2</td><td>50.6</td><td>51.6</td><td>49.3</td><td>51.2</td><td>52.5</td><td>51.1</td><td>50.9</td><td>49.0</td><td>47.1</td><td>49.7</td><td>50.6</td><td>49.3</td><td>51.5</td><td>54.6</td><td>53.1</td><td>52.7</td><td>52.4</td><td>53.5</td><td>50.9</td><td>46.9</td><td>48.1</td></tr><tr><td>UK</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>UK Composite PMI</td><td>54.1</td><td>53.0</td><td>52.3</td><td>52.8</td><td>53.8</td><td>52.6</td><td>51.8</td><td>50.5</td><td>50.4</td><td>50.6</td><td>50.5</td><td>51.5</td><td>48.5</td><td>50.3</td><td>52.0</td><td>51.5</td><td>53.5</td><td>50.1</td><td>52.2</td><td>51.2</td><td>51.4</td><td>53.7</td><td>53.7</td><td>50.3</td><td>52.6</td><td>49.7</td></tr><tr><td>UK Composite Employment PMI</td><td>50.1</td><td>50.6</td><td>50.3</td><td>52.4</td><td>52.1</td><td>50.5</td><td>48.4</td><td>48.9</td><td>45.6</td><td>45.3</td><td>43.5</td><td>47.1</td><td>45.8</td><td>47.2</td><td>46.6</td><td>45.3</td><td>46.5</td><td>46.3</td><td>49.3</td><td>44.9</td><td>46.7</td><td>45.8</td><td>46.4</td><td>46.9</td><td>47.7</td><td>47.1</td></tr><tr><td>UK Manufacturing PMI</td><td>49.1</td><td>51.2</td><td>50.9</td><td>52.1</td><td>52.5</td><td>51.5</td><td>49.9</td><td>48.0</td><td>47.0</td><td>48.3</td><td>46.9</td><td>44.9</td><td>45.4</td><td>46.4</td><td>47.7</td><td>48.0</td><td>47.0</td><td>46.2</td><td>49.7</td><td>50.2</td><td>50.6</td><td>51.8</td><td>51.7</td><td>51.0</td><td>53.7</td><td>53.9</td></tr><tr><td>UK Service PMI</td><td>55.0</td><td>52.9</td><td>52.1</td><td>52.5</td><td>53.7</td><td>52.4</td><td>52.0</td><td>50.8</td><td>51.1</td><td>50.8</td><td>51.0</td><td>52.5</td><td>49.0</td><td>50.9</td><td>52.8</td><td>51.8</td><td>54.2</td><td>50.8</td><td>52.3</td><td>51.3</td><td>51.4</td><td>54.0</td><td>53.9</td><td>50.5</td><td>52.7</td><td>49.3</td></tr><tr><td>US</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>US Composite PMI</td><td>51.3</td><td>54.5</td><td>54.8</td><td>54.3</td><td>54.6</td><td>54.0</td><td>54.1</td><td>54.9</td><td>55.4</td><td>52.7</td><td>51.6</td><td>53.5</td><td>50.6</td><td>53.0</td><td>52.9</td><td>55.1</td><td>54.6</td><td>53.9</td><td>54.6</td><td>54.2</td><td>52.7</td><td>53.0</td><td>51.9</td><td>50.3</td><td>51.7</td><td>51.5</td></tr><tr><td>US Composite Employment PMI</td><td>48.4</td><td>49.9</td><td>52.5</td><td>51.6</td><td>48.6</td><td>49.5</td><td>49.5</td><td>49.4</td><td>51.4</td><td>54.0</td><td>49.4</td><td>51.5</td><td>50.2</td><td>51.6</td><td>52.5</td><td>51.5</td><td>52.1</td><td>50.6</td><td>51.3</td><td>52.0</td><td>50.3</td><td>50.7</td><td>50.4</td><td>49.7</td><td>50.2</td><td>47.9</td></tr><tr><td>US Manufacturing PMI</td><td>51.1</td><td>53.0</td><td>52.1</td><td>50.5</td><td>48.2</td><td>47.9</td><td>49.2</td><td>47.9</td><td>47.7</td><td>51.8</td><td>54.5</td><td>48.6</td><td>49.6</td><td>49.4</td><td>53.1</td><td>51.3</td><td>55.2</td><td>52.4</td><td>53.7</td><td>54.4</td><td>53.6</td><td>55.2</td><td>52.7</td><td>53.2</td><td>56.0</td><td>56.6</td></tr><tr><td>US Service PMI</td><td>51.3</td><td>54.8</td><td>55.3</td><td>55.0</td><td>55.7</td><td>55.2</td><td>55.0</td><td>56.1</td><td>56.8</td><td>52.9</td><td>51.0</td><td>54.4</td><td>50.8</td><td>53.7</td><td>52.9</td><td>55.7</td><td>54.5</td><td>54.2</td><td>54.8</td><td>54.1</td><td>52.5</td><td>52.7</td><td>51.7</td><td>49.8</td><td>51.0</td><td>50.7</td></tr><tr><td>Netherlands</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>Netherlands Manufacturing PMI</td><td>51.3</td><td>52.5</td><td>50.7</td><td>49.2</td><td>47.7</td><td>48.2</td><td>47.0</td><td>46.6</td><td>48.6</td><td>48.4</td><td>50.0</td><td>49.6</td><td>49.2</td><td>49.0</td><td>51.2</td><td>51.9</td><td>51.9</td><td>53.7</td><td>51.8</td><td>51.8</td><td>51.1</td><td>50.1</td><td>50.8</td><td>52.0</td><td>54.4</td><td>55.9</td></tr><tr><td>Netherlands Manufacturing Employment PMI</td><td>51.6</td><td>51.2</td><td>51.1</td><td>50.5</td><td>49.0</td><td>49.4</td><td>47.8</td><td>47.5</td><td>49.0</td><td>48.6</td><td>48.2</td><td>47.9</td><td>47.3</td><td>46.9</td><td>50.9</td><td>51.9</td><td>52.9</td><td>53.1</td><td>48.9</td><td>49.2</td><td>50.6</td><td>50.5</td><td>50.3</td><td>49.3</td><td>49.1</td><td>50.4</td></tr><tr><td>Spain</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>Spain Composite PMI</td><td>55.7</td><td>56.6</td><td>55.8</td><td>53.4</td><td>53.5</td><td>56.3</td><td>55.2</td><td>53.2</td><td>56.8</td><td>54.0</td><td>55.1</td><td>54.0</td><td>52.5</td><td>51.4</td><td>52.1</td><td>54.7</td><td>53.7</td><td>53.8</td><td>56.0</td><td>55.1</td><td>55.6</td><td>52.9</td><td>51.5</td><td>52.4</td><td>48.7</td><td>50.2</td></tr><tr><td>Spain Composite Employment PMI</td><td>55.0</td><td>54.9</td><td>54.9</td><td>53.3</td><td>53.2</td><td>55.3</td><td>55.9</td><td>55.5</td><td>54.0</td><td>56.5</td><td>54.2</td><td>55.4</td><td>53.4</td><td>53.1</td><td>52.4</td><td>54.7</td><td>53.0</td><td>51.7</td><td>54.0</td><td>53.7</td><td>53.5</td><td>54.1</td><td>52.0</td><td>52.8</td><td>51.9</td><td>52.6</td></tr><tr><td>Spain Manufacturing PMI</td><td>52.2</td><td>54.0</td><td>52.3</td><td>51.0</td><td>50.5</td><td>53.0</td><td>54.5</td><td>53.1</td><td>53.3</td><td>50.9</td><td>49.7</td><td>49.5</td><td>48.1</td><td>50.5</td><td>51.4</td><td>51.9</td><td>54.3</td><td>51.5</td><td>52.1</td><td>51.5</td><td>49.6</td><td>49.2</td><td>50.0</td><td>48.7</td><td>51.7</td><td>51.2</td></tr><tr><td>Spain Service PMI</td><td>56.2</td><td>56.9</td><td>56.8</td><td>53.9</td><td>54.6</td><td>57.0</td><td>54.9</td><td>53.1</td><td>57.3</td><td>54.9</td><td>56.2</td><td>54.7</td><td>53.4</td><td>51.3</td><td>51.9</td><td>55.1</td><td>53.2</td><td>54.3</td><td>56.6</td><td>55.6</td><td>57.1</td><td>53.5</td><td>51.9</td><td>53.3</td><td>47.9</td><td>50.1</td></tr><tr><td>Italy</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>Italy Composite PMI</td><td>52.6</td><td>52.3</td><td>51.3</td><td>50.3</td><td>50.8</td><td>49.7</td><td>51.0</td><td>47.7</td><td>49.7</td><td>49.7</td><td>51.9</td><td>50.5</td><td>52.1</td><td>52.5</td><td>51.1</td><td>51.5</td><td>51.7</td><td>51.7</td><td>53.1</td><td>53.8</td><td>50.3</td><td>51.4</td><td>52.1</td><td>49.2</td><td>50.5</td><td>50.4</td></tr><tr><td>Italy Composite Employment PMI</td><td>53.2</td><td>52.7</td><td>52.2</td><td>51.8</td><td>51.4</td><td>51.4</td><td>49.6</td><td>49.4</td><td>50.2</td><td>48.7</td><td>50.5</td><td>50.4</td><td>50.4</td><td>51.2</td><td>52.0</td><td>51.3</td><td>51.2</td><td>51.2</td><td>50.2</td><td>50.2</td><td>50.0</td><td>50.6</td><td>51.5</td><td>50.2</td><td>50.8</td><td>50.6</td></tr><tr><td>Italy Manufacturing PMI</td><td>47.3</td><td>45.6</td><td>45.7</td><td>47.4</td><td>49.4</td><td>48.3</td><td>46.9</td><td>44.5</td><td>46.2</td><td>46.3</td><td>47.4</td><td>46.6</td><td>49.3</td><td>49.2</td><td>48.4</td><td>49.8</td><td>50.4</td><td>49.0</td><td>49.9</td><td>50.6</td><td>47.9</td><td>48.1</td><td>50.6</td><td>51.3</td><td>52.1</td><td>52.9</td></tr><tr><td>Italy Service PMI</td><td>54.3</td><td>54.2</td><td>53.7</td><td>51.7</td><td>51.4</td><td>50.5</td><td>52.4</td><td>49.2</td><td>50.7</td><td>50.4</td><td>53.0</td><td>52.0</td><td>52.9</td><td>53.2</td><td>52.1</td><td>52.3</td><td>51.5</td><td>52.5</td><td>54.0</td><td>55.0</td><td>51.5</td><td>52.9</td><td>52.3</td><td>48.8</td><td>49.8</td><td>49.4</td></tr></table>
+
+Source: Haver
+
+Second, we think demand for workers remains subdued in many markets and points to a potential for further deterioration of permanent recruitment. As illustrated in Exhibit 15, job vacancies – which we think are the best proxy for labour demand – remain below pre-pandemic levels and have failed to show any meaningful inflection in key staffing markets. We think the situation is particularly difficult in the UK (see the latest labour market update from our UK economist here flagging downside risk), in France, where weaker GDP growth and political uncertainty could be negative, and in Germany, where vacancies have been the weakest since the pandemic and remain below other countries.
+
+We see several other elements that confirm this view of permanent recruitment deterioration. The Indeed job posting data by country shown in Exhibit 16 confirms the weakness of demand for workers, in our view, with a new phase of deterioration over the last two months. Also, we note an increased divergence in trend between improving temp and deteriorating perm in the UK (see here). We think this is consistent with the most recent comments from Page Group management, who flagged in the company's 1Q26 update that the outlook for the rest of the year has become increasingly uncertain (see here). We therefore believe there is a significant risk of further deterioration in perm volume and that the decline seen in the last 14 quarters, shown in Exhibit 18, could continue at least through the rest of 2026. We show in the next section the exposure of each staffing company, with Page Group most exposed, followed by Hays.
+
+Exhibit 15: Job vacancies in France, Germany, the UK and the US (re-based December 2018)  
+![](images/6a4e0d00d54a6057a20393c2ff7b6b7fcc8dcc4a1819c241a5b1eab06155cc16.jpg)
+
+<details>
+<summary>line chart</summary>
+
+| Date       | France | Germany | UK   | US   |
+| ---------- | ------ | ------- | ---- | ---- |
+| 12/2018    | 100    | 100     | 100  | 100  |
+| 03/2019    | 101    | 99      | 99   | 97   |
+| 06/2019    | 104    | 98      | 98   | 95   |
+| 09/2019    | 99     | 95      | 96   | 94   |
+| 12/2019    | 100    | 93      | 95   | 93   |
+| 03/2020    | 95     | 88      | 60   | 93   |
+| 06/2020    | 65     | 70      | 60   | 87   |
+| 09/2020    | 78     | 75      | 70   | 91   |
+| 12/2020    | 81     | 76      | 75   | 90   |
+| 03/2021    | 85     | 78      | 80   | 110  |
+| 06/2021    | 107    | 85      | 135  | 138  |
+| 09/2021    | 119    | 95      | 140  | 135  |
+| 12/2021    | 122    | 105     | 135  | 138  |
+| 03/2022    | 127    | 108     | 138  | 135  |
+| 06/2022    | 123    | 107     | 135  | 138  |
+| 09/2022    | 121    | 105     | 130  | 135  |
+| 12/2022    | 125    | 103     | 125  | 133  |
+| 03/2023    | 128    | 101     | 120  | 130  |
+| 06/2023    | 125    | 98      | 115  | 125  |
+| 09/2023    | 123    | 95      | 110  | 123  |
+| 12/2023    | 125    | 93      | 105  | 125  |
+| 03/2024    | 122    | 90      | 100  | 120  |
+| 06/2024    | 115    | 88      | 95   | 115  |
+| 09/2024    | 118    | 85      | 90   | 118  |
+| 12/2024    | 115    | 83      | 85   | 115  |
+| 03/2025    | 110    | 80      | 80   | 110  |
+| 06/2025    | 95     | 78      | 75   | 95   |
+| 09/2025    | 88     | 76      | 73   | 93   |
+| 12/2025    | 95     | 78      | 75   | 95   |
+| 03/2026    | 93     | 80      | 78   | 93   |
+</details>
+
+Source: ONS, BLS, INSEE, Bundesbank
+
+Exhibit 16: Indeed job posting (re-based to 100 in February 2020)
+
+<table><tr><td>Indeed Job Postings data</td><td>Apr-24</td><td>May-24</td><td>Jun-24</td><td>Jul-24</td><td>Aug-24</td><td>Sep-24</td><td>Oct-24</td><td>Nov-24</td><td>Dec-24</td><td>Jan-25</td><td>Feb-25</td><td>Mar-25</td><td>Apr-25</td><td>May-25</td><td>Jun-25</td><td>Jul-25</td><td>Aug-25</td><td>Sep-25</td><td>Oct-25</td><td>Nov-25</td><td>Dec-25</td><td>Jan-26</td><td>Feb-26</td><td>Mar-26</td><td>Apr-26</td><td>May-26</td></tr><tr><td>France</td><td>155.0</td><td>152.8</td><td>149.1</td><td>145.1</td><td>141.6</td><td>138.6</td><td>132.4</td><td>130.1</td><td>130.1</td><td>128.5</td><td>125.3</td><td>122.8</td><td>120.2</td><td>120.7</td><td>117.6</td><td>114.1</td><td>111.7</td><td>110.5</td><td>106.8</td><td>105.6</td><td>104.2</td><td>104.4</td><td>108.8</td><td>104.7</td><td>97.0</td><td>96.7</td></tr><tr><td>Germany</td><td>148.7</td><td>147.1</td><td>143.2</td><td>138.0</td><td>135.3</td><td>133.1</td><td>131.1</td><td>129.4</td><td>129.6</td><td>129.0</td><td>126.2</td><td>123.8</td><td>123.3</td><td>122.4</td><td>120.2</td><td>115.9</td><td>114.6</td><td>116.1</td><td>116.1</td><td>115.6</td><td>114.7</td><td>114.3</td><td>113.5</td><td>111.8</td><td>109.3</td><td>110.4</td></tr><tr><td>UK</td><td>102.5</td><td>100.1</td><td>97.7</td><td>94.4</td><td>91.0</td><td>89.3</td><td>86.8</td><td>85.8</td><td>87.1</td><td>86.7</td><td>84.2</td><td>82.5</td><td>79.2</td><td>78.0</td><td>77.5</td><td>77.1</td><td>75.8</td><td>75.1</td><td>75.3</td><td>76.3</td><td>77.1</td><td>75.2</td><td>76.6</td><td>76.3</td><td>71.2</td><td>70.3</td></tr><tr><td>US</td><td>118.5</td><td>115.9</td><td>114.2</td><td>113.7</td><td>113.4</td><td>112.4</td><td>110.1</td><td>109.5</td><td>110.3</td><td>110.2</td><td>109.3</td><td>107.8</td><td>106.8</td><td>105.9</td><td>105.2</td><td>104.3</td><td>104.8</td><td>102.8</td><td>101.0</td><td>101.3</td><td>102.9</td><td>103.3</td><td>104.6</td><td>104.1</td><td>102.7</td><td>102.0</td></tr><tr><td>Australia</td><td>162.0</td><td>161.3</td><td>160.5</td><td>158.3</td><td>157.1</td><td>157.5</td><td>157.4</td><td>157.4</td><td>156.1</td><td>158.4</td><td>155.6</td><td>149.0</td><td>150.2</td><td>148.5</td><td>150.6</td><td>151.0</td><td>148.6</td><td>148.9</td><td>149.7</td><td>148.8</td><td>146.9</td><td>153.1</td><td>163.0</td><td>161.9</td><td>151.4</td><td>152.7</td></tr></table>
+
+Source: Indeed, MS
+
+Exhibit 17: Indeed quarterly job posting yoy growth  
+![](images/57f7f430d9a9049ad2cae2148f83db71dab5728681060427ab9ac291536f4f07.jpg)
+
+<details>
+<summary>bar chart</summary>
+
+| Country | 1Q23 | 2Q23 | 3Q23 | 4Q23 | 1Q24 | 2Q24 | 3Q24 | 4Q24 | 1Q25 | 2Q25 | 3Q25 | 4Q25 | 1Q26 | 2Q26 |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| Australia |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
+| Canada |  |  |  |  |  |  |  |  |  |  |  |  |  | -0.9% |
+| France |  |  |  |  |  |  |  |  |  |  |  |  |  | -19.0% |
+| Germany |  |  |  |  |  |  |  |  |  |  |  |  |  | -9.9% |
+| UK |  |  |  |  |  |  |  |  |  |  |  |  |  | -9.5% |
+| US |  |  |  |  |  |  |  |  |  |  |  |  |  | -3.4% |
+|  | 5% | -15% | -20% | -25% | -10% | -15% | -20% | -25% | -30% | -35% | -40% | -45% | -50% | -55% |
+|  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
+|  |  | 1.5% |  |  |  |  |  |  |  |  |  |  |  |  |
+|  | -5% |  | -10% | -15% | -20% | -25% | -30% | -35% | -40% | -45% | -50% | -55% | -60% | -65% |
+|  | -10% |  | -15% | -20% | -25% | -30% | -35% | -40% | -45% | -50% | -55% | -60% | -65% | -70% |
+|  | -15% |  | -20% | -25% | -30% | -35% | -40% | -45% | -50% | -55% | -60% | -65% | -70% | -75% |
+|  | -20% |  | -25% | -30% | -35% | -40% | -45% | -50% | -55% | -60% | -65% | -70% | -75% | -80% |
+|  | -25% |  | -30% | -35% | -40% | -45% | -50% | -55% | -60% | -65% | -70% | -75% | -80% | -85% |
+|  | -30% |  | -35% | -40% | -45% | -50% | -55% | -60% | -65% | -70% | -75% | -80% | -85% | -90% |
+</details>
+
+Source: Indeed, MS
+
+Exhibit 18: Perm recruitment yoy growth  
+![](images/8aa56ee6de822420fb7ee04b2d0ca9017209954f4334e21e2220bfe5cdf64fe7.jpg)
+
+<details>
+<summary>line chart</summary>
+
+| Quarter | Adecco | Randstad | Hays | Page Group |
+|---------|--------|----------|------|------------|
+| 1Q20    | 95     | 85       | 80   | 85         |
+| 2Q20    | 55     | 55       | 55   | 45         |
+| 3Q20    | 60     | 60       | 60   | 60         |
+| 4Q20    | 75     | 75       | 75   | 75         |
+| 1Q21    | 80     | 80       | 80   | 80         |
+| 2Q21    | 90     | 90       | 90   | 90         |
+| 3Q21    | 100    | 100      | 100  | 100        |
+| 4Q21    | 110    | 110      | 110  | 110        |
+| 1Q22    | 120    | 120      | 120  | 120        |
+| 2Q22    | 130    | 130      | 130  | 130        |
+| 3Q22    | 140    | 140      | 140  | 140        |
+| 4Q22    | 135    | 135      | 135  | 135        |
+| 1Q23    | 130    | 130      | 130  | 130        |
+| 2Q23    | 120    | 120      | 120  | 120        |
+| 3Q23    | 105    | 105      | 105  | 105        |
+| 4Q23    | 110    | 110      | 110  | 110        |
+| 1Q24    | 115    | 115      | 115  | 115        |
+| 2Q24    | 105    | 105      | 105  | 105        |
+| 3Q24    | 95     | 95       | 95   | 95         |
+| 4Q24    | 90     | 90       | 90   | 90         |
+| 1Q25    | 85     | 85       | 85   | 85         |
+| 2Q25    | 80     | 80       | 80   | 80         |
+| 3Q25    | 75     | 75       | 75   | 75         |
+| 4Q25    | 70     | 70       | 70   | 70         |
+| 1Q26    | 65     | 65       | 65   | 65         |
+</details>
+
+Source: Company data, MS
+
+Third, and as described in our note mapping the exposure of staffing companies to the AI risk, we think AI-led automation and productivity gains could be amongst the drivers of the recent decline in volume of perm placement. We previously defined two risks: net job destruction, which would reduce the total staffing addressable market, and disintermediation risk, which would see corporates use AI-powered solutions internally or platforms to find the right candidates. In Exhibit 19 to Exhibit 21, we update the analysis we did at the end of 2025 on diverging demand for labour in jobs considered as AI-
+
+protected and AI-exposed. We conclude that AI-exposed occupations growth has continued to underperform AI protected jobs, for the third year in a row, and after 7 years of uninterrupted outperformance (2016-2022). We also note that the decline in employment in AI-exposed occupations has accelerated; while it grew 2.4% in 2023, it then declined -0.1%/-0.5% in 2024/25 respectively.
+
+Exhibit 19: Number of people employed in AI disrupted vs AI protected jobs, yoy growth  
+![](images/00eeb80da688023da04eea2699af6285606584852c0a12b945afbdd151bd8141.jpg)
+
+<details>
+<summary>line chart</summary>
+
+| Year | All jobs | AI-disrupted jobs | AI-protected jobs |
+|------|----------|-------------------|-------------------|
+| 2016 | 1.5%     | 3.5%              | 0.5%              |
+| 2017 | 1.8%     | 2.0%              | 0.5%              |
+| 2018 | 1.8%     | 1.8%              | 0.5%              |
+| 2019 | 1.5%     | 1.5%              | -0.5%             |
+| 2020 | -4.0%    | -4.5%             | -8.0%             |
+| 2021 | 0.5%     | 0.0%              | -2.0%             |
+| 2022 | 5.5%     | 5.5%              | 3.0%              |
+| 2023 | 3.0%     | 2.5%              | 3.0%              |
+| 2024 | 1.5%     | 0.0%              | 2.5%              |
+| 2025 | 1.0%     | -1.0%             | 1.0%              |
+</details>
+
+Source: US Bureau of Labor Statistics, US Department of Labor, Occupational Employment and Wage Statistics (2015-2025), MS
+
+Exhibit 20: Employment by job type yoy growth in 2023/24/25  
+![](images/1b4ef179333acbce1db7fb79d5b682c13189537fb1b4d804ee110510eeacccc5.jpg)
+
+<details>
+<summary>bar chart</summary>
+
+| Year | All jobs (%) | AI-protected jobs (%) | AI-disrupted jobs (%) |
+| :--- | :--- | :--- | :--- |
+| 2023 | 2.7 | 3.2 | 2.4 |
+| 2024 | 1.5 | 2.4 | -0.1 |
+| 2025 | 0.8 | 0.8 | -0.5 |
+</details>
+
+Source: US Bureau of Labor Statistics, US Department of Labor, Occupational Employment and Wage Statistics (2023-2025), MS
+
+## Exhibit 21:
+
+Employment growth in the AI-disrupted basket consistently outperformed employment growth in the AI-protected basket until the launch of ChatGPT
+
+AI-disrupted employment growth minus AI-protected employment growth  
+![](images/fee59cc8f69816236861eddc0d0ef217a02bae9eebfc2f631c959d92b1e93d41.jpg)
+
+<details>
+<summary>line chart</summary>
+
+| Year | Value     |
+|------|-----------|
+| 2016 | 300bps    |
+| 2017 | 160bps    |
+| 2018 | 140bps    |
+| 2019 | 155bps    |
+| 2020 | 330bps    |
+| 2021 | 180bps    |
+| 2022 | 280bps    |
+| 2023 | -80bps    |
+| 2024 | -280bps   |
+| 2025 | -120bps   |
+</details>
+
+Source: US Bureau of Labor Statistics, U.S. Department of Labor, Occupational Employment and Wage Statistics (2015-2025), MS
+
+# Moving our preference to RAND within generalists, neutralising Hays to EW
+
+## We shift our preference to Randstad vs Adecco, but remain cautious on the space
+
+We remain cautious on the entire staffing space due to a combination of the: 1) risk of organic growth deterioration in the short term; 2) debate on gross margin, pricing and operating leverage; and 3) the structural threat to staffers' business model from AI, which we think could weigh on both consensus expectations and valuation multiple. However, we shift our preference to Randstad (moved from Underweight to Equal-weight) over Adecco (downgraded from Equal-weight to Underweight). We explain in this section of the note why we decide to reverse our order of preference between the two names, which we first established back in September 2025 (see the note here).
+
+Risk of organic growth deterioration more acute with Adecco. Adecco has outperformed closest peer Randstad on organic growth and won market share over the last few quarters, as illustrated in Exhibit 22. However, we believe the risk of seeing deterioration at Adecco through the rest of the year is higher, given: (1) a larger exposure to France (24% vs 15% for Randstad), a country where we see potential for a weak labour market given the macro and political uncertainty; (2) while the Adecco GBU has been the driver of organic growth recovery, both LHH (mainly perm recruitment) and Akkodis (Germany) have shown signs of organic growth recovery stalling; and (3) the company will face a tougher comparison base through the rest of FY26.
+
+Exhibit 22: Adecco vs Randstad quarterly organic growth  
+![](images/a4b73d1ba6a801a8f8c4a73763005d6ab7f46c86cb74968ac4fb84941553d245.jpg)
+
+<details>
+<summary>bar-line hybrid chart</summary>
+
+| Quarter | Adecco vs. Randstad (RHS) | Adecco | Randstad |
+|---------|---------------------------|--------|----------|
+| 1Q22    | -5%                       | 5%     | 1500     |
+| 2Q22    | 5%                        | 5%     | 1000     |
+| 3Q22    | 5%                        | 5%     | 750      |
+| 4Q22    | 7.5%                      | 5%     | 500      |
+| 1Q23    | 12.5%                     | 3.5%   | -500     |
+| 2Q23    | 14.5%                     | 4.5%   | -750     |
+| 3Q23    | 15%                       | 3.5%   | -1000    |
+| 4Q23    | 14.5%                     | 2.5%   | -1250    |
+| 1Q24    | 13%                       | 1.5%   | -1000    |
+| 2Q24    | 10.5%                     | -1.5%  | -750     |
+| 3Q24    | 6%                        | -5%    | -500     |
+| 4Q24    | 5%                        | -5%    | -500     |
+| 1Q25    | 7%                        | -2.5%  | -500     |
+| 2Q25    | 8%                        | -1.5%  | -500     |
+| 3Q25    | 9.5%                      | -1%    | -500     |
+| 4Q25    | 11%                       | 1%     | -500     |
+| 1Q26    | 9.5%                      | 3.5%   | -500     |
+| 2Q26e   | 8%                        | 4.5%   | -500     |
+| 3Q26e   | 6%                        | 3.5%   | -500     |
+| 4Q26e   | 5%                        | 3%     | -500     |
+</details>
+
+Source: Company data, MS estimates
+
+Exhibit 23: Adecco quarterly organic growth by GBU  
+![](images/18f712980d410b4222f6f55f589b519ad8445d4a4f6a9ffdad0ec0289ed03310.jpg)
+
+<details>
+<summary>line chart</summary>
+
+| Quarter | Adecco | Akkodis | LHH |
+|---------|--------|---------|-----|
+| 1Q22    | 4.0%   | 14.0%   | 1.0% |
+| 2Q22    | 5.0%   | 14.0%   | 3.0% |
+| 3Q22    | 6.0%   | 8.0%    | 0.0% |
+| 4Q22    | 5.0%   | 6.0%    | 1.0% |
+| 1Q23    | 4.0%   | 4.0%    | 0.0% |
+| 2Q23    | 5.0%   | 2.0%    | -1.0% |
+| 3Q23    | 4.0%   | -2.0%   | 2.0% |
+| 4Q23    | 3.0%   | -5.0%   | -3.0% |
+| 1Q24    | 2.0%   | -3.0%   | -10.0% |
+| 2Q24    | 1.0%   | -5.0%   | -11.0% |
+| 3Q24    | -1.0%  | -6.0%   | -11.0% |
+| 4Q24    | -3.0%  | -7.0%   | -8.0% |
+| 1Q25    | -5.0%  | -8.0%   | -6.0% |
+| 2Q25    | -3.0%  | -6.0%   | -4.0% |
+| 3Q25    | -1.0%  | -4.0%   | -2.0% |
+| 4Q25    | 1.0%   | -2.0%   | 1.0% |
+| 1Q26    | 3.0%   | -1.0%   | 3.0% |
+| 2Q26e   | 7.0%   | -1.0%   | -1.0% |
+| 3Q26e   | 6.0%   | -1.0%   | -3.0% |
+| 4Q26e   | 3.0%   | -1.0%   | -5.0% |
+</details>
+
+Source: Company data, MS estimates
+
+Exhibit 24: Adecco geographic exposure (FY24)  
+![](images/b98b410225a817b1ae4c218509d5880a52e64a44fd929ad7eb2cfb05b1264e84.jpg)
+
+<details>
+<summary>pie chart</summary>
+
+| Country | Percentage (%) |
+| :--- | :--- |
+| France | 24 |
+| US | 12 |
+| Italy | 11 |
+| Germany | 8 |
+| Japan | 7 |
+| UK | 7 |
+| Spain | 6 |
+| Australia & NZ | 3 |
+| Belgium & Lux | 2 |
+| Switzerland | 1 |
+| Netherlands | 1 |
+</details>
+
+Source: Company data
+
+Exhibit 25: Randstad geographic exposure (FY23)  
+![](images/73ec31e86acb001a024ae50c179b2fc470e7ae8162a4684c3b12a7149fa84388.jpg)
+
+<details>
+<summary>pie chart</summary>
+
+| Country/Region | Percentage (%) |
+| :--- | :--- |
+| France | 15 |
+| US | 19 |
+| Italy | 8 |
+| Germany | 7 |
+| Japan | 3 |
+| UK | 4 |
+| Spain | 5 |
+| Australia & NZ | 5 |
+| Belgium & Lux | 6 |
+| Switzerland | 2 |
+| Netherlands | 13 |
+| Other | 10 |
+</details>
+
+Source: Company data
+
+Consensus expectations more ambitious for Adecco vs. Randstad. We note that consensus expectations are more demanding for Adecco vs Randstad (see Exhibit 33 and Exhibit 34) and imply a slightly higher level of mid-term organic growth, at 3% on average over FY27-28 (vs 2.3% for Randstad) and 20bps improvement in gross margin between FY26 and F28 (vs flat at Randstad). While we acknowledge that Adecco's organic growth has been better since the beginning of 2025, we think the sustainability of these market share gains is at risk and think organic growth at the two companies should gradually converge over time.
+
+Leverage still a challenge, further shareholder dilution possible. We continue to think that Adecco's higher financial leverage (2.7x at the end of FY25 vs 1.3x for Randstad) needs to be addressed as soon as possible – management has committed to bring it back to 1.5x by FY27. While a staffing market stabilisation combined with Adecco's cash-generative business model should allow the group to gradually reduce leverage, we argue any deterioration in the space within the next 18 months (whether macro or AI-driven driven) would put pressure on the balance sheet.
+
+We welcome management's guidance of a reduction in leverage to 1.5x by FY27 but we think it will prove challenging. Adecco management has flagged that it can reach this leverage whatever the scenario: from cost savings in the event of weaker-than-expected top line or from operating leverage should volume improve. In our base case – which assumes 3% average organic growth, stable gross margin, 50% operating leverage and dividend paid in cash – Adecco's leverage would land at 2.2x in FY27, significantly above target. We therefore see the dividend payment as the main lever Adecco management could adjust to accelerate the de-leveraging of its balance sheet. We believe another dividend cut, following the one in FY25, is unlikely following the dividend policy re-set last year. However, we think Adecco management could conceivably decide to offer another scrip dividend option to investors in coming years to accelerate the deleveraging, following the option offered to shareholders at FY25 of either receiving cash or new shares (with >50% opting for shares). For illustration, we show a scrip dividend scenario analysis in Exhibit 28 to Exhibit 31 and conclude the following:
+
+\- Our theoretical scrip dividend analysis suggests no scenarios where Adecco's leverage would be at or below the 1.5x target by FY27. This would require a combination of continued acceleration of organic growth, improvement in gross margin and better operating leverage, which we think would be extremely difficult to achieve over the coming 18 months.
+
+- Assuming Adecco's dividend is fully paid in cash, we estimate the group's target leverage would be reached by FY29, two years after management's envisaged timing.  
+- To reach 1.5x leverage by FY28 (1 year after the initial objective), we think Adecco could theoretically either: 1) cut its ordinary dividend – which seems less plausible after last year's policy reset; (2) pay 100% of its dividend in shares – but which would imply significant shareholder dilution and likely be perceived negatively by investors; or 3) give shareholders the option, as it did in FY25, to choose between scrip or cash dividend – and reach at least 80% take rate on the scrip vs cash, which seems the most plausible of the options.  
+- Were Adecco management to reach the target leverage as soon as FY28 by renewing the scrip dividend option in FY26 and FY27, we estimate the shareholder dilution could be between 10-12% (resulting from a scrip take rate of 80-100%). This would be in addition to the c3% dilution from the FY25 scrip dividend.
+
+Exhibit 26: Randstad financial leverage  
+![](images/3057719663b829bcfc7930b73409e3c082aadf32a121f5020dd6b56843012e88.jpg)
+
+<details>
+<summary>bar-line hybrid chart</summary>
+
+| Year | Net debt | Net debt/EBITDA |
+| :--- | :--- | :--- |
+| FY15 | 150 | 0.2x |
+| FY16 | 750 | 0.8x |
+| FY17 | 1650 | 1.5x |
+| FY18 | 1350 | 1.2x |
+| FY19 | 700 | 0.6x |
+| FY20 | -400 | -0.4x |
+| FY21 | -100 | -0.1x |
+| FY22 | 250 | 0.2x |
+| FY23 | 300 | 0.3x |
+| FY24 | 1300 | 1.5x |
+| FY25 | 1000 | 1.3x |
+| FY26e | 1150 | 1.5x |
+| FY27e | 950 | 1.1x |
+| FY28e | 650 | 0.8x |
+| FY29e | 600 | 0.6x |
+</details>
+
+Source: Company data, MS estimates
+
+Exhibit 28: Hypothetical illustration of Adecco's FY27 financial leverage, assuming different scrip dividend take rates in FY26e\*  
+![](images/e0b98524a19ed801f424858f40b5c5f48755fd89fae5f16c5e13c326c283589a.jpg)
+
+<details>
+<summary>bar chart</summary>
+
+| Percentage | Adecco FY27 leverage | Target leverage |
+| :--- | :--- | :--- |
+| 0% | 2.2x | 1.5x |
+| 20% | 2.1x | 1.5x |
+| 40% | 2.1x | 1.5x |
+| 60% | 2.0x | 1.5x |
+| 80% | 2.0x | 1.5x |
+| 100% | 2.0x | 1.5x |
+</details>
+
+Source: Company data, MS estimates, \*Assuming Adecco share price of €18.5 or CHF 17
+
+Exhibit 27: Adecco financial leverage  
+![](images/222aa9091795919af2d8dba3e9284800b5a9839fa75b0959fdbd19fa8b6496a5.jpg)
+
+<details>
+<summary>bar-line hybrid chart</summary>
+
+| Year | Net debt | Net debt/EBITDA |
+| :--- | :--- | :--- |
+| FY15 | 1000 | 0.8x |
+| FY16 | 800 | 0.7x |
+| FY17 | 900 | 0.8x |
+| FY18 | 1100 | 1.0x |
+| FY19 | 300 | 0.3x |
+| FY20 | 350 | 0.5x |
+| FY21 | 50 | 0.1x |
+| FY22 | 2500 | 2.5x |
+| FY23 | 2500 | 2.5x |
+| FY24 | 2450 | 2.9x |
+| FY25 | 2300 | 2.7x |
+| FY26e | 2150 | 2.5x |
+| FY27e | 2000 | 2.2x |
+| FY28e | 1750 | 1.8x |
+| FY29e | 1550 | 1.5x |
+</details>
+
+Source: Company data, MS estimates
+
+Exhibit 29: Hypothetical illustration of Adecco's FY28 financial leverage, assuming different scrip dividend take rates in FY26/27e\*  
+![](images/0865b5c1392682bd77579feb5169e8f3451e60ef724f0fca5d32bbb3aaa5c1de.jpg)
+
+<details>
+<summary>bar chart</summary>
+
+| Percentage | Adecco FY28 leverage | Target leverage |
+| :--- | :--- | :--- |
+| 0% | 1.8x | 1.5x |
+| 20% | 1.7x | 1.5x |
+| 40% | 1.6x | 1.5x |
+| 60% | 1.6x | 1.5x |
+| 80% | 1.5x | 1.5x |
+| 100% | 1.4x | 1.5x |
+</details>
+
+Source: Company data, MS estimates, \*Assuming Adecco share price of €18.5 or CHF 17
+
+Exhibit 30: Potential shareholder dilution depending on script take rate in FY26e\*  
+![](images/8d372c66ef5a5694f47fa67e1a884875a925a6bf7b685a54432bf12a86236c29.jpg)
+
+<details>
+<summary>bar chart</summary>
+
+| Percentage | Value (%) |
+| :--- | :--- |
+| 0% | 0.0 |
+| 20% | 1.2 |
+| 40% | 2.4 |
+| 60% | 3.6 |
+| 80% | 4.7 |
+| 100% | 5.9 |
+</details>
+
+Source: MS estimates, \*Assuming Adecco share price of €18.5 or CHF 17
+
+Exhibit 31: Potential shareholder dilution depending on script take rate in FY26/27e\*  
+![](images/cc1f33736350dc1bf1e21b838724c944e950870e72b82858d51efff312607a9e.jpg)
+
+<details>
+<summary>bar chart</summary>
+
+| Category | Value (%) |
+|---|---|
+| 0% | 0.0 |
+| 20% | 2.5 |
+| 40% | 5.1 |
+| 60% | 7.6 |
+| 80% | 10.1 |
+| 100% | 12.7 |
+</details>
+
+Source: MS estimates, \*Assuming Adecco share price of €18.5 or CHF 17
+
+Relative valuation. We provide more detail on the staffers' valuation later in this note, and flag that Adecco trades at a slight discount to Randstad. However, we believe this is justified as we see more downside risk to consensus expectations for Adecco, given group leverage is higher, implying more downside risk to equity in a worst-case scenario of full-blown macroeconomic recession. We also see a potential risk of shareholder dilution in a scenario where management prioritises deleveraging and pays part or all its FY26/27e dividend in shares. Adecco trades at a \~15% discount to Randstad on an EV/EBITA basis but in line on dividend and FCF yield, which we do not consider attractive on a relative basis.
+
+Where could we be wrong on Adecco? The group could continue to outperform peers and win market share, leading to better organic growth. It could also turn the corner on perm recruitment, which could support better gross margin and higher operating leverage. In this scenario, leverage would reduce faster and most likely trigger a valuation multiple re-rating.
+
+## Neutralising Hays after de-rating, keeping the Underweight on Page due to large exposure to perm
+
+We upgrade our rating on Hays and move to Equal-weight (from Underweight). While we acknowledge the downside risk to consensus expectations (see Exhibit 35), we prefer to neutralise the rating as: (1) Hays has a larger exposure to temp staffing compared to Page Group (72% of gross profit vs 28% for Page Group), an activity that we see as less at risk of experiencing another volume slowdown; (2) we see less risk of further cuts to the ordinary dividend on top of what consensus already reflects; and (3) valuation multiples have de-rated and are now closer to the historical average.
+
+We keep our Underweight recommendation for Page Group despite the recent de-rating for the following reasons (see Exhibit 36):
+
+\- We see downside to consensus expectations in our base case of delayed recovery to permanent recruitment volumes. We think the large exposure of Page Group to perm recruitment (72% of gross profit) makes it more vulnerable to the current environment of continued geopolitical, macro and energy price
+
+uncertainty.
+
+\- Management has engaged in a re-positioning of the business. 20% of gross profit is still generated from Page Personnel, a brand Page Group plans to gradually wind down as it is more exposed to the disintermediation/AI risk. While human resources will be re-directed toward other brands (Michael Page, Page Outsourcing, Page Executive), we think it could create short-term disruption and put additional pressure on gross profit.
+
+\- We see a risk of a further dividend cut as: (1) we see downside to consensus P&L expectations and do not expect the trough in EPS to materialise before FY27; (2) coverage of consensus dividend payment expectations by FCFE generation is the lowest at Page Group (see Exhibit 55), on our estimates; and (3) the balance sheet does not allow for payment of uncovered dividend anymore as, according to management, the group needs to keep a £25m net cash position buffer at the end of any fiscal year to operate the business.
+
+# Organic growth expectations re-based, consensus less demanding for Randstad
+
+We note that consensus expectations across the staffing space have been re-based over the last few months. Indeed, back in December 2025 when we published our note on the AI risk for the sector (see here), we flagged sell-side was expecting generalist staffers to return to MSD organic growth and specialist to a HSD level in the mid term – which felt ambitious at the time. As illustrated in Exhibit 32, consensus now expects a more modest organic growth over the mid term at \~3%/2.5% on average for generalists Adecco and Randstad. This is similar for specialists with \~5% organic growth expected from next year onwards at Hays and Page Group. We look in more detail at consensus expectations per company below and conclude that (1) Randstad consensus feels less demanding than Adecco, and (2) we see significant downside to expectations for both Hays and Page Group.
+
+Exhibit 32: Organic growth of Adecco, Randstad and Manpower since 2004 vs consensus expectations  
+![](images/7d53c3ab495cc4948c213b3bfddf58b88622c5d6b999abb92118f545513a3cbd.jpg)
+
+<details>
+<summary>line chart</summary>
+
+| Year | Adecco | Randstad | Manpower |
+|------|--------|----------|----------|
+| 2004 | 8%     | 13%      | 10%      |
+| 2005 | 7%     | 14%      | 9%       |
+| 2006 | 8%     | 18%      | 10%      |
+| 2007 | 6%     | 13%      | 9%       |
+| 2008 | -12%   | -12%     | -12%     |
+| 2009 | -12%   | -12%     | -12%     |
+| 2010 | 13%    | 13%      | 15%      |
+| 2011 | 10%    | 9%       | 13%      |
+| 2012 | -6%    | -6%      | -6%      |
+| 2013 | -2%    | -2%      | -2%      |
+| 2014 | 3%     | 3%       | 3%       |
+| 2015 | 3%     | 7%       | 3%       |
+| 2016 | 3%     | 4%       | -2%      |
+| 2017 | 5%     | 8%       | 5%       |
+| 2018 | 3%     | 3%       | 3%       |
+| 2019 | -6%    | -6%      | -6%      |
+| 2020 | -12%   | -12%     | -12%     |
+| 2021 | 8%     | 18%      | 13%      |
+| 2022 | 5%     | 5%       | 3%       |
+| 2023 | -7%    | -7%      | -6%      |
+| 2024 | -2%    | -2%      | -2%      |
+| 2025e| 3%     | 3%       | 3%       |
+| 2026e| 3%     | 3%       | 3%       |
+| 2027e| 3%     | 3%       | 3%       |
+| 2028e| 3%     | 3%       | 3%       |
+</details>
+
+Source: Company data, Visible Alpha consensus
+
+We believe that consensus expectations for Randstad are less demanding compared to Adecco, which we think stems from: 1) an assumption of slightly better average organic growth at Adecco vs Randstad over the coming 3 years (\~3% vs \~2% respectively); combined with 2) Adecco gross margin at 19% by FY28, only 20bps below FY25 compared to -40bps at 18.3% for Randstad. As a result, we stand marginally below Adecco consensus EPS over FY26-28e vs. \~4% above on average for Randstad. In addition to Adecco's company-specific risks, as mentioned in the previous section (deterioration of organic growth, exposure to France, missing de-leveraging target, dilution from potential scrip dividend), we also believe the risk to consensus expectations is skewed to the downside.
+
+Exhibit 33: Adecco MS estimates vs VA consensus
+
+<table><tr><td rowspan="2">Adecco€mn</td><td colspan="3">New</td><td colspan="3">VA consensus</td><td colspan="3">MS vs. consensus</td></tr><tr><td>FY26e</td><td>FY27e</td><td>FY28e</td><td>FY26e</td><td>FY27e</td><td>FY28e</td><td>FY26e</td><td>FY27e</td><td>FY28e</td></tr><tr><td>Revenue</td><td>23,528</td><td>24,163</td><td>24,836</td><td>23,450</td><td>24,061</td><td>24,702</td><td>0.3%</td><td>0.4%</td><td>0.5%</td></tr><tr><td>Organic growth</td><td>3.6%</td><td>2.6%</td><td>2.8%</td><td>4.0%</td><td>2.8%</td><td>3.0%</td><td>-40bps</td><td>-16bps</td><td>-21bps</td></tr><tr><td>Gross Profit</td><td>4,429</td><td>4,554</td><td>4,668</td><td>4,414</td><td>4,532</td><td>4,689</td><td>0.3%</td><td>0.5%</td><td>-0.4%</td></tr><tr><td>Gross Margin</td><td>18.8%</td><td>18.8%</td><td>18.8%</td><td>18.8%</td><td>18.8%</td><td>19.0%</td><td>0bps</td><td>1bps</td><td>-19bps</td></tr><tr><td>EBITA</td><td>701</td><td>757</td><td>809</td><td>708</td><td>754</td><td>821</td><td>-1.0%</td><td>0.4%</td><td>-1.5%</td></tr><tr><td>EBITA margin</td><td>3.0%</td><td>3.1%</td><td>3.3%</td><td>3.0%</td><td>3.1%</td><td>3.3%</td><td>-4bps</td><td>0bps</td><td>-7bps</td></tr><tr><td>EPS</td><td>2.17</td><td>2.47</td><td>2.68</td><td>2.31</td><td>2.44</td><td>2.67</td><td>-6.1%</td><td>1.4%</td><td>0.3%</td></tr></table>
+
+Source: Visible Alpha, MS estimates
+
+Exhibit 34: Randstad MS estimates vs VA consensus
+
+<table><tr><td rowspan="2">Year end: Dec (EUR m)</td><td colspan="3">MS estimates</td><td colspan="3">VA Consensus</td><td colspan="3">MS vs. consensus</td></tr><tr><td>FY26e</td><td>FY27e</td><td>FY28e</td><td>FY26e</td><td>FY27e</td><td>FY28e</td><td>FY26e</td><td>FY27e</td><td>FY28e</td></tr><tr><td>Revenues</td><td>23,062</td><td>23,677</td><td>24,377</td><td>23,025</td><td>23,555</td><td>24,160</td><td>0.2%</td><td>0.5%</td><td>0.9%</td></tr><tr><td>Organic revenue growth</td><td>1.1%</td><td>2.7%</td><td>3.0%</td><td>0.8%</td><td>2.1%</td><td>2.4%</td><td>32bps</td><td>58bps</td><td>55bps</td></tr><tr><td>Gross Profit</td><td>4,239</td><td>4,356</td><td>4,485</td><td>4,215</td><td>4,314</td><td>4,426</td><td>0.6%</td><td>1.0%</td><td>1.3%</td></tr><tr><td>Gross Margin</td><td>18.4%</td><td>18.4%</td><td>18.4%</td><td>18.3%</td><td>18.3%</td><td>18.3%</td><td>7bps</td><td>8bps</td><td>8bps</td></tr><tr><td>EBITA</td><td>717</td><td>775</td><td>839</td><td>708</td><td>762</td><td>811</td><td>1.2%</td><td>1.6%</td><td>3.4%</td></tr><tr><td>EBITA Margin</td><td>3.1%</td><td>3.3%</td><td>3.4%</td><td>3.1%</td><td>3.2%</td><td>3.4%</td><td>3bps</td><td>4bps</td><td>8bps</td></tr><tr><td>EPS - FD</td><td>2.54</td><td>2.85</td><td>3.19</td><td>2.51</td><td>2.74</td><td>2.97</td><td>1.2%</td><td>4.1%</td><td>7.3%</td></tr></table>
+
+Source: Visible Alpha, MS estimates
+
+We see more downside to consensus expectations for specialist staffing companies, as illustrated in Exhibit 35 and Exhibit 36. For Hays, we are aligned with VA consensus for FY26 – limited uncertainty as only one quarter remains given the June FY-end – but believe that consensus EPS expectations for FY27/28 are c10% too high on average. While we agree on net fees expectations, we think the drop-through to operating profit implied by consensus forecasts is too high at 100%+/60% for the next two years, respectively. We stand c20% below consensus expectations for Page Group operating profit over FY26/28 on average – although the magnitude is now distorted by the law of small numbers. Similarly to Hays, we believe the operating leverage implied by consensus forecasts is too high and assumes the group can turn c70% of the extra gross profit generated in FY27e into operating profit, an elevated level by historical standards and one which would require the company to continue to cut costs while returning to positive organic growth. In the short term, we think the risk of a deterioration of permanent recruitment – due to the uncertain geopolitical/macro context – could be a downside risk to Page Group consensus/guidance.
+
+Exhibit 35: Hays MS estimates vs VA consensus
+
+<table><tr><td rowspan="2">HaysYear end: Jun (GBP mn)</td><td colspan="4">MS</td><td colspan="3">VA Consensus</td><td colspan="3">MS vs. Consensus</td></tr><tr><td>FY25</td><td>FY26e</td><td>FY27e</td><td>FY28e</td><td>FY26e</td><td>FY27e</td><td>FY28e</td><td>FY26e</td><td>FY27e</td><td>FY28e</td></tr><tr><td>Net Fees</td><td>972</td><td>911</td><td>914</td><td>958</td><td>902</td><td>905</td><td>960</td><td>1.0%</td><td>1.0%</td><td>-0.2%</td></tr><tr><td>LfL net fees growth</td><td>-11.0%</td><td>-7.7%</td><td>0.3%</td><td>4.8%</td><td>-8.4%</td><td>0.2%</td><td>5.6%</td><td>66bps</td><td>12bps</td><td>-79bps</td></tr><tr><td>EBITA</td><td>46</td><td>45</td><td>51</td><td>81</td><td>44</td><td>57</td><td>90</td><td>2.7%</td><td>-11.0%</td><td>-10.1%</td></tr><tr><td>% conversion</td><td>4.7%</td><td>4.9%</td><td>5.6%</td><td>8.5%</td><td>4.8%</td><td>6.3%</td><td>9.4%</td><td>8bps</td><td>-75bps</td><td>-93bps</td></tr></table>
+
+Source: Visible Alpha, MS estimates
+
+Exhibit 36: Page Group MS estimates vs VA consensus
+
+<table><tr><td rowspan="2">Page GroupYear end: Dec (GBp)</td><td colspan="3">New</td><td colspan="3">VA consensus</td><td colspan="3">Change</td></tr><tr><td>FY26e</td><td>FY27e</td><td>FY27e</td><td>FY26e</td><td>FY27e</td><td>FY28e</td><td>FY26e</td><td>FY27e</td><td>FY28e</td></tr><tr><td>Gross profit</td><td>751</td><td>756</td><td>783</td><td>741</td><td>762</td><td>805</td><td>1.4%</td><td>-0.8%</td><td>-2.7%</td></tr><tr><td>adj. EBITA</td><td>22.5</td><td>29.8</td><td>50.7</td><td>28</td><td>41</td><td>62</td><td>-20.9%</td><td>-27.6%</td><td>-18.3%</td></tr><tr><td>% conversion</td><td>3.0%</td><td>3.9%</td><td>6.5%</td><td>3.8%</td><td>5.4%</td><td>7.7%</td><td>-84bps</td><td>-146bps</td><td>-123bps</td></tr></table>
+
+Source: Visible Alpha, MS estimates
+
+## Changes to MS estimates
+
+We update our Adecco estimates following the publication of the group's 1Q26 trading update to reflect management's 2Q26 outlook and update our view on 2H26. While our top-line forecast rises by c1% on average over the coming 3 years (due to slightly better organic growth and lower FX headwinds), our adjusted EBITA forecast comes down by -6% on average driven by: 1) a re-set of our gross margin trajectory, now reflecting flat development between FY26-28; and 2) slightly higher operating costs (+0.5-1%). We also integrate the dilution impact resulting from management's decision to offer the option of scrip dividend (\~60% take up rate), magnifying the impact on EPS, which we estimate comes down \~12% on average over FY26-28 (see Exhibit 37).
+
+We update our valuation model, which yields a new price target of CHF 15 (from CHF 20.50 previously), leaving \~10% downside to the current share price. We therefore move our rating from Equal-weight to Underweight, underpinned by the factors highlighted earlier in this note (including larger downside risk to consensus expectations and elevated leverage). The change in PT reflects: 1) the above-mentioned downward revision of estimates; 2) our slightly lower LT margin assumption at 3.8% (vs 4% previously) as concerns on pricing build; 3) a higher WACC at 10.5% (vs 10% previously); and 4) a lower target EV/EBITA multiple of 7x, in line with Randstad and at a discount to its historical average to reflect risks of structural headwinds. We also adjust our bear/bull valuations, which now stand at CHF 7 and CHF 37 respectively.
+
+Exhibit 37: New vs old estimates for Adecco
+
+<table><tr><td rowspan="2">Adecco€mn</td><td colspan="3">New</td><td colspan="3">Old</td><td colspan="3">% change</td></tr><tr><td>FY26e</td><td>FY27e</td><td>FY28e</td><td>FY26e</td><td>FY27e</td><td>FY28e</td><td>FY26e</td><td>FY27e</td><td>FY28e</td></tr><tr><td>Revenue</td><td>23,528</td><td>24,163</td><td>24,836</td><td>23,350</td><td>23,968</td><td>24,638</td><td>0.8%</td><td>0.8%</td><td>0.8%</td></tr><tr><td>Gross Profit</td><td>4,429</td><td>4,554</td><td>4,668</td><td>4,433</td><td>4,574</td><td>4,724</td><td>-0.1%</td><td>-0.4%</td><td>-1.2%</td></tr><tr><td>Gross Margin</td><td>18.8%</td><td>18.8%</td><td>18.8%</td><td>19.0%</td><td>19.1%</td><td>19.2%</td><td>-16bps</td><td>-23bps</td><td>-38bps</td></tr><tr><td>SG&amp;A</td><td>-3,764</td><td>-3,833</td><td>-3,894</td><td>-3,742</td><td>-3,808</td><td>-3,881</td><td>0.6%</td><td>0.6%</td><td>0.3%</td></tr><tr><td>EBITA</td><td>701</td><td>757</td><td>809</td><td>726</td><td>801</td><td>878</td><td>-3.5%</td><td>-5.5%</td><td>-7.9%</td></tr><tr><td>EBITA margin</td><td>3.0%</td><td>3.1%</td><td>3.3%</td><td>3.1%</td><td>3.3%</td><td>3.6%</td><td>-13bps</td><td>-21bps</td><td>-31bps</td></tr><tr><td>Interest</td><td>-80</td><td>-73</td><td>-70</td><td>-80</td><td>-73</td><td>-70</td><td>0.0%</td><td>0.0%</td><td>0.0%</td></tr><tr><td>PBT</td><td>601</td><td>663</td><td>718</td><td>626</td><td>707</td><td>788</td><td>-4.0%</td><td>-6.2%</td><td>-8.8%</td></tr><tr><td>Tax</td><td>-223</td><td>-232</td><td>-251</td><td>-219</td><td>-233</td><td>-260</td><td>1.6%</td><td>-0.5%</td><td>-3.2%</td></tr><tr><td>% rate</td><td>37.1%</td><td>35.0%</td><td>35.0%</td><td>35.0%</td><td>33.0%</td><td>33.0%</td><td>207bps</td><td>200bps</td><td>200bps</td></tr><tr><td>EPS</td><td>2.17</td><td>2.47</td><td>2.68</td><td>2.41</td><td>2.81</td><td>3.13</td><td>-10.1%</td><td>-12.0%</td><td>-14.4%</td></tr></table>
+
+Source: MS estimates
+
+We already updated our numbers post Randstad's 1Q26 results (see here) and the changes we make today are therefore limited. We keep our organic growth and gross margin forecast unchanged but marginally increase our SG&A assumption, which leads to a -1/-2% reduction of our FY26-28e adjusted EBITA/EPS forecasts on average, respectively, as illustrated in Exhibit 38.
+
+We reduce our PT to €25.5 (from €26 previously), which leaves limited downside to the current share price and leads us to upgrade our rating from Underweight to Equal-weight. Our PT change reflects the limited changes to our estimates combined with same valuation modelling adjustments we make for Adecco (lower LT margin at 3.8%, higher WACC at 10.5%, EV/EBITA multiple target at 7x). We also adjust our bear/bull valuations, which now stand at €12 and €48, respectively.
+
+Exhibit 38: New vs old estimates for Randstad
+
+<table><tr><td rowspan="2">Year end: Dec (EUR m)</td><td colspan="3">New</td><td colspan="3">Old</td><td colspan="3">Change</td></tr><tr><td>FY26e</td><td>FY27e</td><td>FY28e</td><td>FY26e</td><td>FY27e</td><td>FY28e</td><td>FY26e</td><td>FY27e</td><td>FY28e</td></tr><tr><td>Revenues</td><td>23,062</td><td>23,677</td><td>24,377</td><td>23,081</td><td>23,697</td><td>24,397</td><td>-0.1%</td><td>-0.1%</td><td>-0.1%</td></tr><tr><td>Gross Profit</td><td>4,239</td><td>4,356</td><td>4,485</td><td>4,241</td><td>4,359</td><td>4,488</td><td>-0.1%</td><td>-0.1%</td><td>-0.1%</td></tr><tr><td>Gross Margin</td><td>18.4%</td><td>18.4%</td><td>18.4%</td><td>18.4%</td><td>18.4%</td><td>18.4%</td><td>0bps</td><td>0bps</td><td>0bps</td></tr><tr><td>SG&amp;A</td><td>-3,522</td><td>-3,582</td><td>-3,646</td><td>-3,517</td><td>-3,577</td><td>-3,641</td><td>0.1%</td><td>0.1%</td><td>0.1%</td></tr><tr><td>EBITA</td><td>717</td><td>775</td><td>839</td><td>724</td><td>782</td><td>847</td><td>-1.1%</td><td>-1.0%</td><td>-1.0%</td></tr><tr><td>EBITA Margin</td><td>3.1%</td><td>3.3%</td><td>3.4%</td><td>3.1%</td><td>3.3%</td><td>3.5%</td><td>-3bps</td><td>-3bps</td><td>-3bps</td></tr><tr><td>Interest</td><td>-64.2</td><td>-58.3</td><td>-51.1</td><td>-64.2</td><td>-58.3</td><td>-51.1</td><td>0.0%</td><td>0.0%</td><td>0.0%</td></tr><tr><td>PBT</td><td>652</td><td>716</td><td>788</td><td>660</td><td>724</td><td>796</td><td>-1.2%</td><td>-1.1%</td><td>-1.0%</td></tr><tr><td>Tax rate</td><td>30.4%</td><td>29.0%</td><td>28.0%</td><td>30.4%</td><td>28.0%</td><td>27.0%</td><td>0bps</td><td>100bps</td><td>100bps</td></tr><tr><td>Net income</td><td>454</td><td>508</td><td>567</td><td>459</td><td>521</td><td>581</td><td>-1.2%</td><td>-2.5%</td><td>-2.4%</td></tr><tr><td>EPS - FD</td><td>2.54</td><td>2.85</td><td>3.19</td><td>2.57</td><td>2.93</td><td>3.26</td><td>-1.2%</td><td>-2.5%</td><td>-2.4%</td></tr></table>
+
+Source: MS estimates
+
+We update our Hays model following the group 3Q26 trading update. This leaves our FY26 (ends in June) estimates roughly unchanged, but we make more meaningful adjustments to our FY27-28 assumptions as we reflect a slower recovery in net fees and lower drop-through to operating profit. We now forecast flat net fee lfl growth in FY27 – which feels better calibrated given we think the FY26 exit growth rate is likely to be at least down MSD – and slight improvement in conversion rate to 5.6% on the back of the continued focus on cost discipline. Our FY27-28 EPS are coming down by \~20% as a result.
+
+We reflect these new estimates in our valuation model but also: 1) review our LT DCF assumption with a new growth rate of 1.5% (vs 2% previously) and 15% conversion rate (vs 17%); and 2) apply a new target EV/EBITA multiple of 7x (vs 9x) as we think the historical valuation multiple premium of specialist staffing companies like Hays and Page compared to generalist staffers Adecco and Randstad is no longer warranted as they face the same structural risks. This leads to a new price target of GBp35 (vs. GBp44 previously), which leaves no downside and underpins our rating upgrade from Underweight to Equal-weight. We reflect similar assumption changes in our bull/bear valuation framework, which yields new valuations of GBp75/GBp21, respectively.
+
+Exhibit 39: New vs old estimates for Hays
+
+<table><tr><td>HaysYear end: Jun (GBP mn)</td><td>FY25</td><td>FY26e</td><td>NewFY27e</td><td>FY28e</td><td>FY26e</td><td>OldFY27e</td><td>FY28e</td><td>FY26e</td><td>ChangeFY27e</td><td>FY28e</td></tr><tr><td>Net Fees</td><td>972</td><td>911</td><td>914</td><td>958</td><td>920</td><td>939</td><td>984</td><td>-1.0%</td><td>-2.7%</td><td>-2.7%</td></tr><tr><td>EBITA</td><td>46</td><td>45</td><td>51</td><td>81</td><td>46</td><td>64</td><td>100</td><td>-3.2%</td><td>-19.7%</td><td>-18.8%</td></tr><tr><td>% margin</td><td>0.7%</td><td>0.8%</td><td>0.9%</td><td>1.4%</td><td>0.8%</td><td>1.1%</td><td>1.7%</td><td>-3bps</td><td>-19bps</td><td>-28bps</td></tr><tr><td>% conversion</td><td>4.7%</td><td>4.9%</td><td>5.6%</td><td>8.5%</td><td>5.0%</td><td>6.8%</td><td>10.1%</td><td>-11bps</td><td>-118bps</td><td>-168bps</td></tr><tr><td>Interest</td><td>-13</td><td>-12</td><td>-12</td><td>-9</td><td>-12</td><td>-12</td><td>-9</td><td>0.0%</td><td>0.0%</td><td>0.0%</td></tr><tr><td>PBT</td><td>32</td><td>32</td><td>39</td><td>72</td><td>34</td><td>52</td><td>91</td><td>-4.4%</td><td>-24.2%</td><td>-20.6%</td></tr><tr><td>Tax Rate</td><td>35.1%</td><td>38.0%</td><td>35.0%</td><td>33.0%</td><td>38.0%</td><td>35.0%</td><td>33.0%</td><td>0bps</td><td>0bps</td><td>0bps</td></tr><tr><td>Adjusted EPS</td><td>1.31</td><td>1.26</td><td>1.59</td><td>3.02</td><td>1.32</td><td>2.10</td><td>3.80</td><td>-4.4%</td><td>-24.2%</td><td>-20.6%</td></tr><tr><td>Reported EPS</td><td>-0.49</td><td>0.01</td><td>1.59</td><td>3.02</td><td>0.07</td><td>2.10</td><td>3.80</td><td>-87.1%</td><td>-24.2%</td><td>-20.6%</td></tr></table>
+
+Source: MS estimates
+
+## We also make significant reductions to our estimates for Page Group following the group 1Q26 trading update, weak Indeed job posting data in key geographies, and comments from other staffers that permanent recruitment remains subdued. We
+
+therefore believe that Page Group Gross profit organic growth could be weaker for longer and expect -3% this year, flat in FY27 and 5% on average thereafter. We also reflect a slower ramp-up in conversion rate over the next 3 years, which leads to a \~50% decline in our operating profit and EPS forecasts on average – although partly driven by the law of small numbers.
+
+We update our valuation framework to reflect these new estimates, but also a lower LT growth and conversion rate assumption at a respective 1.5% and 15%, in line with Hays as explained above. We also increase our WACC to 12% given Page Group's larger exposure to perm recruitment, a more cyclical business that could further deteriorate. We change our target EV/EBITA multiple to 7x, in line with the rest of the staffing coverage. Overall, this leads to a reduction of our price target to GBp110 (from GBp195 previously). We reflect similar changes to our bull and bear scenarios, which yield new valuations of GBp270/GBp55, respectively.
+
+Exhibit 40: New vs old estimates for Page Group
+
+<table><tr><td rowspan="2">Page GroupYear end: Dec (GBp)</td><td colspan="3">New</td><td colspan="3">Old</td><td colspan="3">Change</td></tr><tr><td>FY26e</td><td>FY27e</td><td>FY28e</td><td>FY26e</td><td>FY27e</td><td>FY28e</td><td>FY26e</td><td>FY27e</td><td>FY28e</td></tr><tr><td>Gross profit</td><td>751</td><td>756</td><td>783</td><td>768</td><td>798</td><td>837</td><td>-2.1%</td><td>-5.4%</td><td>-6.5%</td></tr><tr><td>EBITA</td><td>22.5</td><td>29.8</td><td>50.7</td><td>40.3</td><td>61.0</td><td>89.1</td><td>-44.2%</td><td>-51.1%</td><td>-43.1%</td></tr><tr><td>% conversion</td><td>3.0%</td><td>3.9%</td><td>6.5%</td><td>5.2%</td><td>7.6%</td><td>10.6%</td><td>-226bps</td><td>-369bps</td><td>-417bps</td></tr><tr><td>PBT</td><td>19</td><td>25</td><td>46</td><td>37</td><td>57</td><td>85</td><td>-49.4%</td><td>-56.1%</td><td>-46.5%</td></tr><tr><td>Tax rate</td><td>34.0%</td><td>32.0%</td><td>32.0%</td><td>34.0%</td><td>32.0%</td><td>32.0%</td><td>0bps</td><td>0bps</td><td>0bps</td></tr><tr><td>Net Income</td><td>12</td><td>17</td><td>31</td><td>24</td><td>39</td><td>58</td><td>-49.4%</td><td>-56.1%</td><td>-46.5%</td></tr><tr><td>Adjusted EPS</td><td>3.90</td><td>5.40</td><td>9.88</td><td>7.67</td><td>12.24</td><td>18.34</td><td>-49.1%</td><td>-55.9%</td><td>-46.1%</td></tr><tr><td>Reported EPS</td><td>1.80</td><td>5.40</td><td>9.88</td><td>7.67</td><td>12.24</td><td>18.34</td><td>-76.6%</td><td>-55.9%</td><td>-46.1%</td></tr></table>
+
+Source: MS estimates
+
+## Sector under pressure, valuation de-rating has accelerated
+
+Staffing stocks have remained under pressure this year, with our coverage down -40% on average over the last 12 months. As explained previously in this note, the gradual stabilisation/improvement in organic growth has not been enough to reassure investors, who are still concerned by potential pricing headwinds, gross margin deterioration and the lack of more meaningful operating leverage. Generalist staffers Adecco and Randstad have suffered from a relatively similar share price pull-back and are down \~-25%, while Hays is down \~-50% and Page Group is the worst performer at \~-55% over the past year.
+
+Exhibit 41: Share price performance of our staffing coverage ytd  
+![](images/db1bf127ae57f372c8df47660c5f4c3010c72b81a24114d467eaa9decc5af0db.jpg)
+
+<details>
+<summary>line chart</summary>
+
+| Date     | Randstad | Adecco | Hays | Page |
+| -------- | -------- | ------ | ---- | ---- |
+| 06/2025  | 100      | 100    | 100  | 100  |
+| 07/2025  | 110      | 110    | 100  | 100  |
+| 08/2025  | 115      | 115    | 95   | 105  |
+| 09/2025  | 110      | 110    | 90   | 95   |
+| 10/2025  | 105      | 105    | 85   | 90   |
+| 11/2025  | 100      | 115    | 80   | 85   |
+| 12/2025  | 95       | 105    | 75   | 80   |
+| 01/2026  | 90       | 100    | 70   | 75   |
+| 02/2026  | 85       | 95     | 65   | 70   |
+| 03/2026  | 80       | 90     | 60   | 65   |
+| 04/2026  | 75       | 85     | 55   | 60   |
+| 05/2026  | 70       | 80     | 50   | 55   |
+| Final    | 75       | 75     | 48   | 45   |
+</details>
+
+Source: Datastream
+
+Investors' concerns on the structural level of staffers' profitability going forward is reflected in how the stock have been trading, in our view. Indeed, Adecco and Randstad valuations are still at all-time lows on an EV/sales basis and at a \~10-20% discount to historical average on EV/EBIT (see Exhibit 42 to Exhibit 45). Both stocks were trading on higher-than-average EV/EBIT multiple in 2H25 – with the market giving them the benefit of the doubt on at least part of the upcoming recovery – but the de-rating ytd has corrected this valuation anomaly. Valuation now better reflects the current environment, but we remain cautious on the entire space nonetheless on the risk of organic growth deterioration, continued gross margin weakness, potentially driving additional downward revision of consensus expectations – as explained earlier in this note.
+
+Adecco EV/sales discount to Randstad is currently roughly in line with the historical average (-10%) but we note it also trades at a c\~-20% discount on EV/EBIT. We think this is justified given the higher financial leverage and risk of potential shareholder dilution from scrip dividend. On our estimates Adecco trades on \~7.5x EV/EBITA, which compares to \~8.5x for Randstad and implies a limited \~15% discount.
+
+Exhibit 42: Adecco EV/sales over the last 10y  
+![](images/6e20232b3936b2d94312ecd585b04c7c9c35f6cc9ec797babfe5ae23cf6eb526.jpg)
+
+<details>
+<summary>line chart</summary>
+
+| Date     | Adecco |
+| -------- | ------ |
+| 05/2016  | 0.45x  |
+| 05/2017  | 0.55x  |
+| 05/2018  | 0.45x  |
+| 05/2019  | 0.35x  |
+| 05/2020  | 0.25x  |
+| 05/2021  | 0.45x  |
+| 05/2022  | 0.35x  |
+| 05/2023  | 0.35x  |
+| 05/2024  | 0.40x  |
+| 05/2025  | 0.30x  |
+| 05/2026  | 0.25x  |
+</details>
+
+Source: Datastream
+
+Exhibit 43: Randstad EV/sales over the last 10y  
+![](images/59c1b3c36ec42f8a3c6e9615726971e54fefe079e470aae3931240bf0e5355b4.jpg)
+
+<details>
+<summary>line chart</summary>
+
+| Date     | Randstad | Average | +1σ   | 1σ    |
+| -------- | -------- | ------- | ----- | ----- |
+| 05/2016  | 0.45x    | 0.40x   | 0.47x | 0.35x |
+| 05/2017  | 0.50x    | 0.40x   | 0.47x | 0.35x |
+| 05/2018  | 0.48x    | 0.40x   | 0.47x | 0.35x |
+| 05/2019  | 0.35x    | 0.40x   | 0.47x | 0.35x |
+| 05/2020  | 0.25x    | 0.40x   | 0.47x | 0.35x |
+| 05/2021  | 0.52x    | 0.40x   | 0.47x | 0.35x |
+| 05/2022  | 0.50x    | 0.40x   | 0.47x | 0.35x |
+| 05/2023  | 0.35x    | 0.40x   | 0.47x | 0.35x |
+| 05/2024  | 0.45x    | 0.40x   | 0.47x | 0.35x |
+| 05/2025  | 0.38x    | 0.40x   | 0.47x | 0.35x |
+| 05/2026  | 0.25x    | 0.40x   | 0.47x | 0.35x |
+</details>
+
+Source: Datastream
+
+Exhibit 44: Adecco EV/EBIT over the last 10y  
+![](images/41ede7ae8f3782d70d43cb6a69fbb04a537e771a3981d9c9c126dd1a9e5abd01.jpg)
+
+<details>
+<summary>line chart</summary>
+
+| Date     | Adecco | Average | +1σ  | -1σ  |
+|----------|--------|---------|------|------|
+| 05/2016  | 8.5x   | 9.0x    | 10.5x| 8.0x |
+| 05/2017  | 10.5x  | 9.0x    | 10.5x| 8.0x |
+| 05/2018  | 9.0x   | 9.0x    | 10.5x| 8.0x |
+| 05/2019  | 7.5x   | 9.0x    | 10.5x| 8.0x |
+| 05/2020  | 5.0x   | 9.0x    | 10.5x| 8.0x |
+| 05/2021  | 12.5x  | 9.0x    | 10.5x| 8.0x |
+| 05/2022  | 7.5x   | 9.0x    | 10.5x| 8.0x |
+| 05/2023  | 11.5x  | 9.0x    | 10.5x| 8.0x |
+| 05/2024  | 12.5x  | 9.0x    | 10.5x| 8.0x |
+| 05/2025  | 9.5x   | 9.0x    | 10.5x| 8.0x |
+| 05/2026  | 7.5x   | 9.0x    | 10.5x| 8.0x |
+</details>
+
+Source: Datastream
+
+Exhibit 45: Randstad EV/EBIT over the last 10y  
+![](images/2fc1b9cce24f10a523cd55d774cd991f93458e34af610cf90c9b02290fbfb8ff.jpg)
+
+<details>
+<summary>line chart</summary>
+
+| Date     | Randstad | Average | +1σ   | 1σ    |
+| -------- | -------- | ------- | ----- | ----- |
+| 05/2016  | 10x      | 10x     | 11.5x | 9x    |
+| 05/2017  | 12x      | 10x     | 11.5x | 9x    |
+| 05/2018  | 10x      | 10x     | 11.5x | 9x    |
+| 05/2019  | 7x       | 10x     | 11.5x | 9x    |
+| 05/2020  | 6x       | 10x     | 11.5x | 9x    |
+| 05/2021  | 14x      | 10x     | 11.5x | 9x    |
+| 05/2022  | 8x       | 10x     | 11.5x | 9x    |
+| 05/2023  | 12x      | 10x     | 11.5x | 9x    |
+| 05/2024  | 10x      | 10x     | 11.5x | 9x    |
+| 05/2025  | 12x      | 10x     | 11.5x | 9x    |
+| 05/2026  | 7x       | 10x     | 11.5x | 9x    |
+</details>
+
+Source: Datastream
+
+Exhibit 46: Adecco EV/sales valuation relative to Randstad over the last 10y  
+![](images/bd1d1dcfbb4438a15c7c82e7c93ec30ba6b62d75fdd865de02d4a5e197effdf4.jpg)
+
+<details>
+<summary>line chart</summary>
+
+| Date     | Adecco/Randstad | Average | +1σ    | 1σ     |
+|----------|-----------------|---------|--------|--------|
+| 05/2016  | ~10%            | -10%    | ~0%    | ~-20%  |
+| 05/2017  | ~20%            | -10%    | ~0%    | ~-20%  |
+| 05/2018  | ~-10%           | -10%    | ~0%    | ~-20%  |
+| 05/2019  | ~-20%           | -10%    | ~0%    | ~-20%  |
+| 05/2020  | ~10%            | -10%    | ~0%    | ~-20%  |
+| 05/2021  | ~-30%           | -10%    | ~0%    | ~-20%  |
+| 05/2022  | ~-10%           | -10%    | ~0%    | ~-20%  |
+| 05/2023  | ~-20%           | -10%    | ~0%    | ~-20%  |
+| 05/2024  | ~-10%           | -10%    | ~0%    | ~-20%  |
+| 05/2025  | ~-30%           | -10%    | ~0%    | ~-20%  |
+| 05/2026  | ~5%             | -10%    | ~0%    | ~-20%  |
+</details>
+
+Source: Datastream
+
+Exhibit 47: Adecco EV/EBIT valuation relative to Randstad over the last 10y  
+![](images/535333fca6a553a349d14fcfadb757404d47c57a2c44c3cd10ec715da26401c2.jpg)
+
+<details>
+<summary>line chart</summary>
+
+| Date     | Adecco/Randstad | Average | + 1σ  | 1σ   |
+|----------|-----------------|---------|-------|------|
+| 05/2016  | -10%            | -5%     | 0%    | -15% |
+| 05/2017  | -5%             | -5%     | 0%    | -15% |
+| 05/2018  | 0%              | -5%     | 0%    | -15% |
+| 05/2019  | -5%             | -5%     | 0%    | -15% |
+| 05/2020  | 15%             | -5%     | 0%    | -15% |
+| 05/2021  | -10%            | -5%     | 0%    | -15% |
+| 05/2022  | -30%            | -5%     | 0%    | -15% |
+| 05/2023  | 20%             | -5%     | 0%    | -15% |
+| 05/2024  | -10%            | -5%     | 0%    | -15% |
+| 05/2025  | -20%            | -5%     | 0%    | -15% |
+| 05/2026  | -5%             | -5%     | 0%    | -15% |
+</details>
+
+Source: Datastream
+
+The valuation de-rating is the same for specialists Hays and Page Group, which trade on record low EV/GP multiples but close to historical average on EV/EBIT (see Exhibit 48 to Exhibit 51). On EV/EBIT, both stocks were trading at a significant premium to historical average a few months ago (before the recent de-rating) as investors were willing to look through the short-term pain and value the company on "normalised" earnings level. We believe the continued volume and margin weakness, margins, concerns over pricing
+
+pressure and cut to ordinary dividend has driven this de-rating. As we expect the downward revision of estimates and re-set of dividend policy could continue to materialise through the rest of this year, we see the valuation/share price decline continuing.
+
+Exhibit 48: Hays EV/GP  
+![](images/6e807eb58b7236ad976d7bf22752cb50301da80c4a76a6bf0dd94248dd68b1c5.jpg)
+
+<details>
+<summary>line chart</summary>
+
+| Date   | N12m EV/GP |
+|--------|------------|
+| Oct-07 | 2.8x       |
+| Oct-08 | 1.6x       |
+| Oct-09 | 2.5x       |
+| Oct-10 | 2.9x       |
+| Oct-11 | 1.5x       |
+| Oct-12 | 1.9x       |
+| Oct-13 | 2.8x       |
+| Oct-14 | 2.9x       |
+| Oct-15 | 2.8x       |
+| Oct-16 | 1.5x       |
+| Oct-17 | 2.2x       |
+| Oct-18 | 2.6x       |
+| Oct-19 | 2.7x       |
+| Oct-20 | 1.8x       |
+| Oct-21 | 2.2x       |
+| Oct-22 | 1.3x       |
+| Oct-23 | 1.5x       |
+| Oct-24 | 1.4x       |
+| Oct-25 | 0.8x       |
+</details>
+
+Source: MS estimates
+
+Exhibit 49: Page Group EV/GP  
+![](images/abc04cc393101951f0da64389fc1aa1cfe57d176eaea45970253ef8cd6f6a2c7.jpg)
+
+<details>
+<summary>line chart</summary>
+
+| Date   | N12m EV/GP |
+|--------|------------|
+| Jan-04 | 3.0x       |
+| Jan-05 | 2.5x       |
+| Jan-06 | 3.0x       |
+| Jan-07 | 3.8x       |
+| Jan-08 | 1.5x       |
+| Jan-09 | 2.0x       |
+| Jan-10 | 2.5x       |
+| Jan-11 | 3.0x       |
+| Jan-12 | 2.0x       |
+| Jan-13 | 2.5x       |
+| Jan-14 | 2.8x       |
+| Jan-15 | 2.5x       |
+| Jan-16 | 2.8x       |
+| Jan-17 | 1.5x       |
+| Jan-18 | 2.0x       |
+| Jan-19 | 2.5x       |
+| Jan-20 | 2.0x       |
+| Jan-21 | 1.5x       |
+| Jan-22 | 2.0x       |
+| Jan-23 | 1.5x       |
+| Jan-24 | 1.8x       |
+| Jan-25 | 1.5x       |
+| Jan-26 | 0.5x       |
+</details>
+
+Source: MS estimates
+
+Exhibit 50: Hays EV/EBIT since  
+![](images/fea9981c5ad23adc0245c8d2337bdaf25da95428dbae48251ecee8528c8293f8.jpg)
+
+<details>
+<summary>line chart</summary>
+
+| Date     | Hays |
+| -------- | ---- |
+| 01/2011  | 13.5x |
+| 01/2012  | 7.5x  |
+| 01/2013  | 11.5x |
+| 01/2014  | 12.5x |
+| 01/2015  | 12.0x |
+| 01/2016  | 11.5x |
+| 01/2017  | 7.0x  |
+| 01/2018  | 11.5x |
+| 01/2019  | 7.5x  |
+| 01/2020  | 6.5x  |
+| 01/2021  | 23.0x |
+| 01/2022  | 13.5x |
+| 01/2023  | 7.5x  |
+| 01/2024  | 11.5x |
+| 01/2025  | 13.5x |
+| 01/2026  | 12.0x |
+</details>
+
+Source: Datastream
+
+Exhibit 51: Page Group EV/EBIT over the last 10y  
+![](images/3b48cee08b27303a6481d47f8ba2a92ae29f513331fa43e3f487f14de20227de.jpg)
+
+<details>
+<summary>line chart</summary>
+
+| Date     | Page Group | Average | + 1σ | - 1σ |
+|----------|------------|---------|------|------|
+| 01/2011  | 17x        | 12x     | 17x  | 12x  |
+| 01/2012  | 7x         | 12x     | 17x  | 12x  |
+| 01/2013  | 17x        | 12x     | 17x  | 12x  |
+| 01/2014  | 17x        | 12x     | 17x  | 12x  |
+| 01/2015  | 17x        | 12x     | 17x  | 12x  |
+| 01/2016  | 7x         | 12x     | 17x  | 12x  |
+| 01/2017  | 17x        | 12x     | 17x  | 12x  |
+| 01/2018  | 17x        | 12x     | 17x  | 12x  |
+| 01/2019  | 17x        | 12x     | 17x  | 12x  |
+| 01/2020  | 7x         | 12x     | 17x  | 12x  |
+| 01/2021  | 17x        | 12x     | 17x  | 12x  |
+| 01/2022  | 7x         | 12x     | 17x  | 12x  |
+| 01/2023  | 7x         | 12x     | 17x  | 12x  |
+| 01/2024  | 17x        | 12x     | 17x  | 12x  |
+| 01/2025  | 23x        | 12x     | 17x  | 12x  |
+| 01/2026  | 17x        | 12x     | 17x  | 12x  |
+</details>
+
+Source: Datastream
+
+Exhibit 52: Page Group EV/GP valuation relative to Hays over the last 10y  
+![](images/5b0ec6d564e2de8e893ebe2fecc54fb73b91b441c53394df07a276096d464e55.jpg)
+
+<details>
+<summary>line chart</summary>
+
+| Date     | Page Group/Hays | Average | + 1σ  | 1σ    |
+|----------|-----------------|---------|-------|-------|
+| 10/2007  | -30.0%          | 0.0%    | 15.0% | -20.0%|
+| 07/2008  | 25.0%           | 0.0%    | 15.0% | -20.0%|
+| 04/2009  | -25.0%          | 0.0%    | 15.0% | -20.0%|
+| 01/2010  | -10.0%          | 0.0%    | 15.0% | -20.0%|
+| 10/2010  | 10.0%           | 0.0%    | 15.0% | -20.0%|
+| 07/2011  | 35.0%           | 0.0%    | 15.0% | -20.0%|
+| 04/2012  | 50.0%           | 0.0%    | 15.0% | -20.0%|
+| 01/2013  | 35.0%           | 0.0%    | 15.0% | -20.0%|
+| 10/2013  | 20.0%           | 0.0%    | 15.0% | -20.0%|
+| 07/2014  | -5.0%           | 0.0%    | 15.0% | -20.0%|
+| 04/2015  | -15.0%          | 0.0%    | 15.0% | -20.0%|
+| 01/2016  | -15.0%          | 0.0%    | 15.0% | -20.0%|
+| 10/2016  | -25.0%          | 0.0%    | 15.0% | -20.0%|
+| 07/2017  | -25.0%          | 0.0%    | 15.0% | -20.0%|
+| 04/2018  | -25.0%          | 0.0%    | 15.0% | -20.0%|
+| 01/2019  | -5.0%           | 0.0%    | 15.0% | -20.0%|
+| 10/2019  | -15.0%          | 0.0%    | 15.0% | -20.0%|
+| 07/2020  | -35.0%          | 0.0%    | 15.0% | -20.0%|
+| 04/2021  | -25.0%          | 0.0%    | 15.0% | -20.0%|
+| 01/2022  | -5.0%           | 0.0%    | 15.0% | -20.0%|
+| 10/2022  | -15.0%          | 0.0%    | 15.0% | -20.0%|
+| 07/2023  | -5.0%           | 0.0%    | 15.0% | -20.0%|
+| 04/2024  | 35.0%           | 0.0%    | 15.0% | -20.0%|
+| 01/2025  | -5.0%           | 0.0%    | 15.0% | -20.0%|
+| 10/2025  | -25.0%          | 0.0%    | 15.0% | -20.0%|
+</details>
+
+Source: Datastream
+
+Exhibit 53: Page Group EV/EBIT valuation relative to Hays over the last 10y  
+![](images/e7d8fe36ccd4ca550259b8f244c42d34bb3e1d9e9b7038b7d1b642fca9256c35.jpg)
+
+<details>
+<summary>line chart</summary>
+
+| Date     | Page Group/Hays | Average | + 1σ  | 1σ   |
+|----------|-----------------|---------|-------|------|
+| 01/2011  | ~10%            | ~15%    | ~35%  | ~0%  |
+| 01/2012  | ~70%            | ~15%    | ~35%  | ~0%  |
+| 01/2013  | ~50%            | ~15%    | ~35%  | ~0%  |
+| 01/2014  | ~45%            | ~15%    | ~35%  | ~0%  |
+| 01/2015  | ~30%            | ~15%    | ~35%  | ~0%  |
+| 01/2016  | ~35%            | ~15%    | ~35%  | ~0%  |
+| 01/2017  | ~30%            | ~15%    | ~35%  | ~0%  |
+| 01/2018  | ~25%            | ~15%    | ~35%  | ~0%  |
+| 01/2019  | ~35%            | ~15%    | ~35%  | ~0%  |
+| 01/2020  | ~40%            | ~15%    | ~35%  | ~0%  |
+| 01/2021  | ~-45%           | ~15%    | ~35%  | ~0%  |
+| 01/2022  | ~-20%           | ~15%    | ~35%  | ~0%  |
+| 01/2023  | ~-10%           | ~15%    | ~35%  | ~0%  |
+| 01/2024  | ~-5%            | ~15%    | ~35%  | ~0%  |
+| 01/2025  | ~55%            | ~15%    | ~35%  | ~0%  |
+| 01/2026  | ~20%            | ~15%    | ~35%  | ~0%  |
+</details>
+
+Source: Datastream
+
+We think it is also interesting to look at the valuation in the context of FCF generation, return of cash to shareholders and likelihood of further dividend cuts (all companies in our staffing coverage have now cut their ordinary dividend over the last 12 months). We forecast a roughly stable ordinary dividend at Adecco and Randstad over the coming 12 months but see a scenario where Adecco once again offers a scrip dividend FY26 (as explained earlier in the note). We forecast a dividend cut for both Hays and Page Group in FY26 but believe consensus is better calibrated on the former, as explained below.
+
+Adecco and Randstad are trading on relatively similar dividend yield and FCF yield, as illustrated in Exhibit 54 and Exhibit 56 and therefore have a similar dividend coverage profiles. However, the higher net financial debt at Adecco means the group has less room for manoeuvre from a capital allocation perspective and needs to prioritise deleveraging, as discussed earlier. As a result, we would favour Randstad given the lower risk profile but similar valuation. Due to the financial leverage difference, we also note that Randstad trades at a significant discount to Adecco on an EV/FCF basis as shown in Exhibit 57, which illustrates our point.
+
+Within specialist staffers, we think Page Group is more likely to miss consensus dividend expectations compared to Hays. Indeed, VA consensus already reflects another significant cut to Hays' ordinary dividend this year (from 1.24 in FY25 to 0.59 in FY26), leaving the company trading on a mere 2% dividend yield, well below the rest of our staffing coverage (6.5% average). However, we note that this consensus dividend is covered by FCFE generation (1x coverage), implying a lower risk of downside vs Page Group where dividend coverage is well below 1x (0.4x). We therefore believe consensus is too optimistic on the ability of the latter to return cash to shareholder and forecast another -40% cut in FY26 vs VA consensus implying only \~-20%. This also supports our preference for Hays within the specialist staffing.
+
+Exhibit 54: Staffing coverage dividend yield over the next 12 months  
+![](images/cbc65a3eb34a91a26f5ed9dc84c11dcb2a5e631c62016fc10636388adc03c098.jpg)
+
+<details>
+<summary>bar chart</summary>
+
+| Category | Value (%) |
+|---|---|
+| Hays | 1.9 |
+| Page Group | 4.2 |
+| Randstad | 6.0 |
+| Adecco | 6.2 |
+</details>
+
+Source: MS estimates
+
+Exhibit 55: Consensus dividend coverage for next 12 months\*  
+![](images/31d4a355868973726321ac602d15ed753c3d938ccecdd9aac8366633e0b5153e.jpg)
+
+<details>
+<summary>bar chart</summary>
+
+| Entity | Value (x) |
+| :--- | :--- |
+| Page Group | 0.4 |
+| Hays | 1.0 |
+| Randstad | 1.4 |
+| Adecco | 1.6 |
+</details>
+
+Source: Visible Alpha, MS estimates, \*calculated as FCFE/dividend N+1
+
+Exhibit 56: Staffing coverage FCF yield over the next 12 months  
+![](images/bf03faec74867a497fd06f7b50f48c5430342f284c794a3576820ca480cb6c99.jpg)
+
+<details>
+<summary>bar chart</summary>
+
+| Category | Value (%) |
+|---|---|
+| Page Group | 1.8 |
+| Hays | 3.9 |
+| Randstad | 9.2 |
+| Adecco | 9.6 |
+</details>
+
+Source: MS estimates
+
+Exhibit 57: Staffing coverage EV/FCF over the next 12 months  
+![](images/778830e35a1e4df66dd2923529941f3a48a05fcba49d2422f8117c9fb3188489.jpg)
+
+<details>
+<summary>bar chart</summary>
+
+| Company | Value (x) |
+| :--- | :--- |
+| Hays | 52.3 |
+| Page Group | 47.1 |
+| Adecco | 17.4 |
+| Randstad | 13.5 |
+</details>
+
+Source: MS estimates
+
+## Staffing Heatmap by Country
+
+In this section, we present staffing, labour market and confidence data for all the key markets of the staffing companies under our coverage. We believe these indicators are the most relevant to track to assess the short-term outlook for staffing companies, given these countries combined represent the vast majority of revenues/net fees for Adecco (c80-85%), Randstad (c80-85%), Hays (c75-80%) and Page Group (c70-80%, MS estimate). Please get in touch if you would like access to the entire staffing database.
+
+Exhibit 58: Staffing database: France heatmap
+
+<table><tr><td>FRANCE</td><td>Apr-24</td><td>May-24</td><td>Jun-24</td><td>Jul-24</td><td>Aug-24</td><td>Sep-24</td><td>Oct-24</td><td>Nov-24</td><td>Dec-24</td><td>Jan-25</td><td>Feb-25</td><td>Mar-25</td><td>Apr-25</td><td>May-25</td><td>Jun-25</td><td>Jul-25</td><td>Aug-25</td><td>Sep-25</td><td>Oct-25</td><td>Nov-25</td><td>Dec-25</td><td>Jan-26</td><td>Feb-26</td><td>Mar-26</td><td>Apr-26</td><td>May-26</td></tr><tr><td colspan="27">Key labour indicators</td></tr><tr><td>French Temps chg YoY%</td><td>-7.6%</td><td>-10.3%</td><td>-9.0%</td><td>-7.9%</td><td>-6.7%</td><td>-8.4%</td><td>-8.0%</td><td>-8.3%</td><td>-9.2%</td><td>-13.0%</td><td>-9.4%</td><td>-8.9%</td><td>-8.1%</td><td>-5.7%</td><td>-6.5%</td><td>-4.2%</td><td>-4.9%</td><td>-3.9%</td><td>-3.1%</td><td>-4.0%</td><td>-1.0%</td><td>-2.9%</td><td>-1.3%</td><td>-0.8%</td><td>-1.2%</td><td></td></tr><tr><td>French Temp hours chg YoY%</td><td>-7.6%</td><td>-8.6%</td><td>-5.4%</td><td>-8.6%</td><td>-2.0%</td><td>-7.4%</td><td>-7.2%</td><td>-8.9%</td><td>-13.4%</td><td>-9.7%</td><td>-10.0%</td><td>-7.7%</td><td>-4.3%</td><td>1.9%</td><td>-2.7%</td><td>0.5%</td><td>-0.6%</td><td>-3.3%</td><td>-2.1%</td><td>-0.6%</td><td>2.8%</td><td>0.6%</td><td>-0.5%</td><td>-2.0%</td><td></td><td></td></tr><tr><td>French Temp turnover chg YoY%</td><td>-5.5%</td><td>-6.9%</td><td>-5.3%</td><td>-8.0%</td><td>-4.8%</td><td>-7.1%</td><td>-5.9%</td><td>-5.7%</td><td>-9.7%</td><td>-7.8%</td><td>-6.0%</td><td>-4.6%</td><td>-1.1%</td><td>3.4%</td><td>-0.8%</td><td>1.3%</td><td>3.6%</td><td>-0.9%</td><td>0.3%</td><td>2.4%</td><td>2.4%</td><td>0.7%</td><td>-0.1%</td><td>-1.4%</td><td></td><td></td></tr><tr><td>Indeed Job Posting</td><td>155.0</td><td>152.8</td><td>149.1</td><td>145.1</td><td>141.6</td><td>138.6</td><td>132.4</td><td>130.1</td><td>130.1</td><td>128.5</td><td>125.3</td><td>122.8</td><td>120.2</td><td>120.7</td><td>117.6</td><td>114.1</td><td>111.7</td><td>110.5</td><td>106.8</td><td>105.6</td><td>104.2</td><td>104.4</td><td>108.8</td><td>104.7</td><td>97.0</td><td>96.7</td></tr><tr><td colspan="27">Other labour market indicators</td></tr><tr><td>French temp employment (in 000&#x27;)</td><td>762.5</td><td>748.0</td><td>733.1</td><td>735.8</td><td>733.3</td><td>728.4</td><td>720.0</td><td>717.6</td><td>712.6</td><td>707.6</td><td>703.7</td><td>708.5</td><td>703.8</td><td>706.7</td><td>708.3</td><td>719.2</td><td>713.2</td><td>708.0</td><td>697.2</td><td>706.0</td><td>707.6</td><td>705.2</td><td>702.7</td><td>704.5</td><td>702.7</td><td></td></tr><tr><td>French temp employment chg YoY%</td><td>-3.3%</td><td>-4.9%</td><td>-6.5%</td><td>-4.6%</td><td>-1.6%</td><td>-5.1%</td><td>-5.5%</td><td>-5.0%</td><td>-6.0%</td><td>-6.7%</td><td>-6.6%</td><td>-5.9%</td><td>-7.7%</td><td>-5.5%</td><td>-3.4%</td><td>-2.3%</td><td>-2.7%</td><td>-2.8%</td><td>-3.2%</td><td>-1.6%</td><td>-0.7%</td><td>-0.3%</td><td>-0.1%</td><td>-0.6%</td><td>-0.2%</td><td></td></tr><tr><td>French job vacancies (in 000&#x27;)</td><td>311.3</td><td>306.9</td><td>291.6</td><td>307.9</td><td>311.8</td><td>299.6</td><td>301.9</td><td>289.0</td><td>281.6</td><td>276.2</td><td>274.3</td><td>267.6</td><td>266.4</td><td>251.7</td><td>256.9</td><td>248.8</td><td>246.9</td><td>239.2</td><td>247.4</td><td>251.7</td><td>257.7</td><td>258.1</td><td>255.1</td><td>262.5</td><td>258.4</td><td></td></tr><tr><td>French job vacancies chg YoY%</td><td>-2.9%</td><td>-12.9%</td><td>-14.1%</td><td>-9.2%</td><td>-6.7%</td><td>-13.2%</td><td>-8.1%</td><td>-6.6%</td><td>-14.2%</td><td>-12.7%</td><td>-18.9%</td><td>-12.5%</td><td>-14.4%</td><td>-18.0%</td><td>-11.9%</td><td>-19.2%</td><td>-20.8%</td><td>-20.2%</td><td>-18.1%</td><td>-12.9%</td><td>-8.5%</td><td>-6.6%</td><td>-7.0%</td><td>-1.9%</td><td>-3.0%</td><td></td></tr><tr><td>New hires in permanent contracts (in 000&#x27;)</td><td>403.8</td><td>398.8</td><td>395.5</td><td>394.9</td><td>388.7</td><td>393.9</td><td>384.3</td><td>392.9</td><td>387.1</td><td>394.3</td><td>388.7</td><td>396.6</td><td>413.0</td><td>394.7</td><td>415.8</td><td>422.3</td><td>413.4</td><td>401.5</td><td>395.5</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>New hires in permanent contracts chg YoY%</td><td>-2.8%</td><td>-7.7%</td><td>-4.3%</td><td>-3.4%</td><td>-6.0%</td><td>-6.2%</td><td>-8.8%</td><td>-4.0%</td><td>-8.2%</td><td>-2.7%</td><td>-6.5%</td><td>-2.5%</td><td>2.3%</td><td>-1.0%</td><td>5.1%</td><td>6.9%</td><td>6.4%</td><td>1.9%</td><td>2.9%</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>Active job seekers (in 000&#x27;)</td><td>5,820</td><td>5,850</td><td>5,862</td><td>5,858</td><td>5,849</td><td>5,908</td><td>5,915</td><td>5,930</td><td>5,965</td><td>6,137</td><td>6,177</td><td>6,156</td><td>6,053</td><td>6,044</td><td>6,055</td><td>6,119</td><td>6,142</td><td>6,149</td><td>6,165</td><td>6,165</td><td>6,162</td><td>6,140</td><td>6,121</td><td>6,191</td><td>6,197</td><td></td></tr><tr><td>Active job seekers chg YoY%</td><td>0.3%</td><td>0.7%</td><td>1.4%</td><td>0.7%</td><td>0.5%</td><td>1.5%</td><td>1.5%</td><td>1.5%</td><td>1.7%</td><td>5.1%</td><td>5.9%</td><td>5.7%</td><td>4.0%</td><td>3.3%</td><td>3.3%</td><td>4.4%</td><td>5.0%</td><td>4.1%</td><td>4.2%</td><td>4.0%</td><td>3.3%</td><td>0.0%</td><td>-0.9%</td><td>0.6%</td><td>2.4%</td><td></td></tr><tr><td>Unemployment rate (%)</td><td>7.4%</td><td>7.4%</td><td>7.5%</td><td>7.5%</td><td>7.5%</td><td>7.5%</td><td>7.4%</td><td>7.4%</td><td>7.3%</td><td>7.3%</td><td>7.5%</td><td>7.6%</td><td>7.5%</td><td>7.6%</td><td>7.7%</td><td>7.7%</td><td>7.8%</td><td>7.9%</td><td>8.0%</td><td>8.0%</td><td>8.0%</td><td>8.1%</td><td>8.2%</td><td>8.2%</td><td>8.2%</td><td></td></tr><tr><td>Number of bankruptcies</td><td>5,298</td><td>5,794</td><td>5,726</td><td>5,487</td><td>4,456</td><td>5,755</td><td>5,764</td><td>5,910</td><td>5,961</td><td>5,337</td><td>5,744</td><td>5,792</td><td>5,856</td><td>5,854</td><td>6,001</td><td>5,871</td><td>4,612</td><td>6,042</td><td>5,755</td><td>6,062</td><td>5,880</td><td>6,047</td><td>6,194</td><td>6,021</td><td>6,119</td><td></td></tr><tr><td colspan="27">Confidence indicators</td></tr><tr><td>French Composite PMI</td><td>50.5</td><td>48.9</td><td>48.8</td><td>49.1</td><td>53.1</td><td>48.6</td><td>48.1</td><td>45.9</td><td>47.5</td><td>47.6</td><td>45.1</td><td>48.0</td><td>47.8</td><td>49.3</td><td>49.2</td><td>48.6</td><td>49.8</td><td>48.1</td><td>47.7</td><td>50.4</td><td>50.0</td><td>49.1</td><td>49.9</td><td>48.8</td><td>47.6</td><td>44.9</td></tr><tr><td>French Composite Employment PMI</td><td>52.2</td><td>51.2</td><td>50.6</td><td>50.2</td><td>49.8</td><td>50.3</td><td>49.8</td><td>50.4</td><td>48.0</td><td>47.4</td><td>46.5</td><td>48.6</td><td>48.4</td><td>49.2</td><td>49.1</td><td>48.8</td><td>52.3</td><td>50.5</td><td>51.2</td><td>49.5</td><td>50.2</td><td>50.7</td><td>50.6</td><td>49.6</td><td>50.2</td><td>47.0</td></tr><tr><td>French Manufacturing PMI</td><td>45.3</td><td>46.4</td><td>45.4</td><td>44.0</td><td>43.9</td><td>44.6</td><td>44.5</td><td>43.1</td><td>41.9</td><td>45.0</td><td>45.8</td><td>48.5</td><td>48.7</td><td>49.8</td><td>48.1</td><td>48.2</td><td>50.4</td><td>48.2</td><td>48.8</td><td>47.8</td><td>50.7</td><td>51.2</td><td>50.1</td><td>50.0</td><td>52.8</td><td>49.7</td></tr><tr><td>French Service PMI</td><td>51.3</td><td>49.3</td><td>49.6</td><td>50.1</td><td>55.0</td><td>49.6</td><td>49.2</td><td>46.9</td><td>49.3</td><td>48.2</td><td>45.3</td><td>47.9</td><td>47.3</td><td>48.9</td><td>49.6</td><td>48.5</td><td>49.8</td><td>48.5</td><td>48.0</td><td>51.4</td><td>50.1</td><td>48.4</td><td>49.6</td><td>48.8</td><td>46.5</td><td>44.3</td></tr><tr><td>Economic Sentiment Indicator</td><td>95.9</td><td>99.2</td><td>98.3</td><td>95.4</td><td>99.1</td><td>98.1</td><td>93.8</td><td>96.4</td><td>92.8</td><td>95.8</td><td>98.6</td><td>96.6</td><td>97.2</td><td>93.6</td><td>90.3</td><td>92.6</td><td>92.6</td><td>93.1</td><td>94.9</td><td>95.3</td><td>94.4</td><td>100.5</td><td>97.5</td><td>94.4</td><td>91.5</td><td>92.4</td></tr><tr><td>Employment Expectations Indicator</td><td>101.9</td><td>98.8</td><td>97.9</td><td>91.7</td><td>95.6</td><td>97.5</td><td>95.6</td><td>95.9</td><td>93.9</td><td>94.4</td><td>93.7</td><td>92.9</td><td>93.7</td><td>91.2</td><td>93.2</td><td>93.2</td><td>94.0</td><td>92.8</td><td>93.8</td><td>96.9</td><td>94.6</td><td>96.0</td><td>93.7</td><td>96.2</td><td>92.1</td><td>93.9</td></tr><tr><td>Household Confidence Indicator</td><td>90.0</td><td>91.1</td><td>90.7</td><td>91.7</td><td>93.1</td><td>95.8</td><td>93.1</td><td>89.9</td><td>88.2</td><td>90.8</td><td>92.4</td><td>90.5</td><td>91.6</td><td>88.9</td><td>89.1</td><td>89.1</td><td>87.7</td><td>88.2</td><td>90.0</td><td>89.1</td><td>89.5</td><td>88.8</td><td>91.1</td><td>88.8</td><td>84.0</td><td>82.0</td></tr></table>
+
+Source: Prisme, Haver Analytics, MS
+
+Exhibit 59: Staffing database: Germany heatmap
+
+<table><tr><td>GERMANY</td><td>Apr-24</td><td>May-24</td><td>Jun-24</td><td>Jul-24</td><td>Aug-24</td><td>Sep-24</td><td>Oct-24</td><td>Nov-24</td><td>Dec-24</td><td>Jan-25</td><td>Feb-25</td><td>Mar-25</td><td>Apr-25</td><td>May-25</td><td>Jun-25</td><td>Jul-25</td><td>Aug-25</td><td>Sep-25</td><td>Oct-25</td><td>Nov-25</td><td>Dec-25</td><td>Jan-26</td><td>Feb-26</td><td>Mar-26</td><td>Apr-26</td><td>May-26</td></tr><tr><td colspan="27">Key labour indicators</td></tr><tr><td>Job Vacancies (&#x27;000)</td><td>709</td><td>704</td><td>692</td><td>685</td><td>675</td><td>675</td><td>675</td><td>667</td><td>671</td><td>662</td><td>654</td><td>650</td><td>648</td><td>634</td><td>626</td><td>616</td><td>615</td><td>615</td><td>615</td><td>623</td><td>628</td><td>621</td><td>650</td><td>644</td><td>642</td><td></td></tr><tr><td>Job Vacancies chg YoY%</td><td>-9.5%</td><td>-8.7%</td><td>-8.9%</td><td>-8.7%</td><td>-8.8%</td><td>-8.0%</td><td>-7.8%</td><td>-8.6%</td><td>-8.7%</td><td>-9.8%</td><td>-9.9%</td><td>-9.5%</td><td>-8.6%</td><td>-9.9%</td><td>-9.5%</td><td>-10.1%</td><td>-8.9%</td><td>-8.9%</td><td>-8.9%</td><td>-6.6%</td><td>-6.4%</td><td>-6.2%</td><td>-0.6%</td><td>-0.9%</td><td>-0.9%</td><td></td></tr><tr><td>BA X index</td><td>111</td><td>111</td><td>109</td><td>108</td><td>107</td><td>107</td><td>108</td><td>105</td><td>105</td><td>105</td><td>103</td><td>103</td><td>106</td><td>100</td><td>100</td><td>98</td><td>99</td><td>98</td><td>98</td><td>100</td><td>101</td><td>100</td><td>106</td><td>103</td><td>102</td><td></td></tr><tr><td>Indeed Job Posting</td><td>148.7</td><td>147.1</td><td>143.2</td><td>138.0</td><td>135.3</td><td>133.1</td><td>131.1</td><td>129.4</td><td>129.6</td><td>129.0</td><td>126.2</td><td>123.8</td><td>123.3</td><td>122.4</td><td>120.2</td><td>115.9</td><td>114.6</td><td>116.1</td><td>116.1</td><td>115.6</td><td>114.7</td><td>114.3</td><td>113.5</td><td>111.8</td><td>109.3</td><td>110.4</td></tr><tr><td colspan="27">Other labour market indicators</td></tr><tr><td>Unemployment rate</td><td>5.9%</td><td>5.9%</td><td>5.9%</td><td>6.0%</td><td>6.0%</td><td>6.0%</td><td>6.1%</td><td>6.1%</td><td>6.1%</td><td>6.2%</td><td>6.2%</td><td>6.3%</td><td>6.3%</td><td>6.3%</td><td>6.3%</td><td>6.3%</td><td>6.3%</td><td>6.3%</td><td>6.3%</td><td>6.3%</td><td>6.3%</td><td>6.3%</td><td>6.3%</td><td>6.3%</td><td>6.4%</td><td>6.3%</td></tr><tr><td>Negotiated wages chg YoY%</td><td>4.1%</td><td>4.9%</td><td>4.2%</td><td>5.2%</td><td>6.0%</td><td>6.0%</td><td>6.2%</td><td>6.9%</td><td>6.9%</td><td>6.8%</td><td>7.5%</td><td>6.0%</td><td>7.2%</td><td>6.6%</td><td>6.6%</td><td>5.4%</td><td>4.9%</td><td>4.9%</td><td>4.7%</td><td>3.8%</td><td>3.7%</td><td>3.7%</td><td>3.0%</td><td>2.7%</td><td></td><td></td></tr><tr><td>Business Insolvencies (LTM)</td><td>1,615</td><td>1,653</td><td>1,662</td><td>1,691</td><td>1,709</td><td>1,731</td><td>1,775</td><td>1,798</td><td>1,818</td><td>1,835</td><td>1,859</td><td>1,875</td><td>1,893</td><td>1,901</td><td>1,927</td><td>1,948</td><td>1,966</td><td>1,976</td><td>1,984</td><td>1,985</td><td>2,005</td><td>2,013</td><td></td><td></td><td></td><td></td></tr><tr><td>Industrial output per working hours</td><td>94.2</td><td>95.7</td><td>93.5</td><td>93.4</td><td>94.5</td><td>93.4</td><td>94.8</td><td>93.9</td><td>92.8</td><td>94.9</td><td>94.9</td><td>95.8</td><td>95.6</td><td>95.4</td><td>95.8</td><td>96.3</td><td>93.2</td><td>95.4</td><td>95.7</td><td>97.8</td><td>95.4</td><td>94.4</td><td>95.2</td><td>94.9</td><td></td><td></td></tr><tr><td colspan="27">Confidence indicators</td></tr><tr><td>German Composite PMI</td><td>50.6</td><td>52.4</td><td>50.4</td><td>49.1</td><td>48.4</td><td>47.5</td><td>48.6</td><td>47.2</td><td>48.0</td><td>50.5</td><td>50.4</td><td>51.3</td><td>50.1</td><td>48.5</td><td>50.4</td><td>50.6</td><td>50.5</td><td>52.0</td><td>53.9</td><td>52.4</td><td>51.3</td><td>52.1</td><td>53.2</td><td>51.9</td><td>48.4</td><td>48.8</td></tr><tr><td>German Composite Employment PMI</td><td>50.1</td><td>50.9</td><td>49.0</td><td>47.7</td><td>47.5</td><td>46.3</td><td>46.0</td><td>46.5</td><td>47.3</td><td>49.0</td><td>47.9</td><td>49.3</td><td>49.9</td><td>48.9</td><td>48.9</td><td>49.5</td><td>48.6</td><td>46.9</td><td>49.8</td><td>48.9</td><td>49.1</td><td>46.7</td><td>47.4</td><td>47.6</td><td>47.2</td><td>47.4</td></tr><tr><td>German Manufacturing PMI</td><td>42.5</td><td>45.4</td><td>43.5</td><td>43.2</td><td>42.4</td><td>40.6</td><td>43.0</td><td>43.0</td><td>42.5</td><td>45.0</td><td>46.5</td><td>48.3</td><td>48.4</td><td>48.3</td><td>49.0</td><td>49.1</td><td>49.8</td><td>49.5</td><td>49.6</td><td>48.2</td><td>47.0</td><td>49.1</td><td>50.9</td><td>52.2</td><td>51.4</td><td>50.1</td></tr><tr><td>German Service PMI</td><td>53.2</td><td>54.2</td><td>53.1</td><td>52.5</td><td>51.2</td><td>50.6</td><td>51.6</td><td>49.3</td><td>51.2</td><td>52.5</td><td>51.1</td><td>50.9</td><td>49.0</td><td>47.1</td><td>49.7</td><td>50.6</td><td>49.3</td><td>51.5</td><td>54.6</td><td>53.1</td><td>52.7</td><td>52.4</td><td>53.5</td><td>50.9</td><td>46.9</td><td>48.1</td></tr><tr><td>Ifo Business Expectations</td><td>89.4</td><td>89.4</td><td>88.1</td><td>86.9</td><td>86.7</td><td>86.6</td><td>87.1</td><td>87.0</td><td>84.9</td><td>85.0</td><td>85.6</td><td>87.9</td><td>87.4</td><td>88.7</td><td>90.4</td><td>90.7</td><td>91.4</td><td>89.5</td><td>91.5</td><td>90.4</td><td>89.7</td><td>89.8</td><td>90.3</td><td>85.9</td><td>83.5</td><td>83.8</td></tr><tr><td>Ifo Employment Barometer</td><td>96.0</td><td>96.1</td><td>95.8</td><td>95.2</td><td>94.6</td><td>94.0</td><td>93.7</td><td>93.5</td><td>92.6</td><td>93.5</td><td>93.1</td><td>92.8</td><td>94.0</td><td>95.0</td><td>93.6</td><td>94.0</td><td>93.7</td><td>92.5</td><td>93.5</td><td>92.5</td><td>91.9</td><td>93.4</td><td>93.1</td><td>93.4</td><td>91.4</td><td>93.9</td></tr><tr><td>Economic Sentiment Indicator</td><td>92.6</td><td>93.1</td><td>93.0</td><td>93.0</td><td>91.5</td><td>90.5</td><td>90.9</td><td>89.4</td><td>86.8</td><td>88.3</td><td>89.7</td><td>89.7</td><td>91.0</td><td>92.2</td><td>91.4</td><td>92.5</td><td>91.6</td><td>90.9</td><td>91.7</td><td>91.3</td><td>89.9</td><td>92.9</td><td>92.6</td><td>92.5</td><td>88.7</td><td>89.7</td></tr><tr><td>Employment Expectations Indicator</td><td>97.5</td><td>97.0</td><td>97.6</td><td>96.3</td><td>94.7</td><td>93.3</td><td>93.0</td><td>92.6</td><td>90.2</td><td>92.5</td><td>91.3</td><td>89.9</td><td>92.1</td><td>94.3</td><td>91.6</td><td>92.5</td><td>93.2</td><td>89.5</td><td>91.4</td><td>89.4</td><td>88.5</td><td>91.5</td><td>90.7</td><td>90.4</td><td>84.8</td><td>90.5</td></tr><tr><td>Consumer Climate Index</td><td>102.1</td><td>101.9</td><td>102.0</td><td>103.0</td><td>102.2</td><td>101.8</td><td>102.8</td><td>101.8</td><td>102.1</td><td>101.5</td><td>101.6</td><td>102.1</td><td>101.9</td><td>102.7</td><td>102.3</td><td>102.8</td><td>101.9</td><td>102.6</td><td>101.8</td><td>101.4</td><td>101.1</td><td>102.3</td><td>101.6</td><td>100.3</td><td>98.1</td><td>98.9</td></tr></table>
+
+Source: Haver Analytics, MS
+
+Exhibit 60: Staffing database: UK heatmap
+
+<table><tr><td>UNITED KINGDOM</td><td>Apr-24</td><td>May-24</td><td>Jun-24</td><td>Jul-24</td><td>Aug-24</td><td>Sep-24</td><td>Oct-24</td><td>Nov-24</td><td>Dec-24</td><td>Jan-25</td><td>Feb-25</td><td>Mar-25</td><td>Apr-25</td><td>May-25</td><td>Jun-25</td><td>Jul-25</td><td>Aug-25</td><td>Sep-25</td><td>Oct-25</td><td>Nov-25</td><td>Dec-25</td><td>Jan-26</td><td>Feb-26</td><td>Mar-26</td><td>Apr-26</td><td>May-26</td></tr><tr><td colspan="27">Key labour indicators</td></tr><tr><td>Temp placement index (s adj)</td><td>46.9</td><td>47.2</td><td>50.3</td><td>49.8</td><td>49.5</td><td>46.9</td><td>46.3</td><td>47.7</td><td>46.5</td><td>41.5</td><td>45.0</td><td>46.0</td><td>46.3</td><td>47.1</td><td>45.5</td><td>44.6</td><td>46.8</td><td>46.0</td><td>50.2</td><td>48.8</td><td>47.6</td><td>50.3</td><td>48.0</td><td>48.4</td><td>50.4</td><td>52.2</td></tr><tr><td>Perm placement index (s adj)</td><td>46.4</td><td>48.2</td><td>45.5</td><td>47.7</td><td>44.6</td><td>44.9</td><td>44.1</td><td>40.7</td><td>39.5</td><td>39.8</td><td>43.6</td><td>43.4</td><td>44.7</td><td>44.2</td><td>39.1</td><td>40.0</td><td>44.2</td><td>44.8</td><td>45.2</td><td>45.5</td><td>44.3</td><td>46.9</td><td>49.2</td><td>49.2</td><td>47.5</td><td>44.1</td></tr><tr><td>UK Job Vacancies (&#x27;000)</td><td>885</td><td>872</td><td>867</td><td>853</td><td>840</td><td>828</td><td>810</td><td>805</td><td>798</td><td>793</td><td>775</td><td>759</td><td>735</td><td>727</td><td>724</td><td>737</td><td>729</td><td>728</td><td>730</td><td>739</td><td>734</td><td>724</td><td>712</td><td>705</td><td></td><td></td></tr><tr><td>UK Job Vacancies chg YoY%</td><td>-14.9%</td><td>-15.3%</td><td>-14.8%</td><td>-14.6%</td><td>-14.6%</td><td>-13.6%</td><td>-14.8%</td><td>-12.8%</td><td>-12.3%</td><td>-11.4%</td><td>-13.2%</td><td>-14.2%</td><td>-16.9%</td><td>-16.6%</td><td>-16.5%</td><td>-13.6%</td><td>-13.2%</td><td>-12.1%</td><td>-9.9%</td><td>-8.2%</td><td>-8.0%</td><td>-8.7%</td><td>-8.1%</td><td>-7.1%</td><td></td><td></td></tr><tr><td>Indeed Job Posting</td><td>102.5</td><td>100.1</td><td>97.7</td><td>94.4</td><td>91.0</td><td>89.3</td><td>86.8</td><td>85.8</td><td>87.1</td><td>86.7</td><td>84.2</td><td>82.5</td><td>79.2</td><td>78.0</td><td>77.5</td><td>77.1</td><td>75.8</td><td>75.1</td><td>75.3</td><td>76.3</td><td>77.1</td><td>75.2</td><td>76.6</td><td>76.3</td><td>71.2</td><td>70.3</td></tr><tr><td colspan="27">Other labour market indicators</td></tr><tr><td>Unemployment rate (3-months)</td><td>4.4%</td><td>4.5%</td><td>4.3%</td><td>4.3%</td><td>4.2%</td><td>4.4%</td><td>4.4%</td><td>4.5%</td><td>4.5%</td><td>4.5%</td><td>4.5%</td><td>4.6%</td><td>4.7%</td><td>4.7%</td><td>4.8%</td><td>4.8%</td><td>4.9%</td><td>5.1%</td><td>5.2%</td><td>5.2%</td><td>5.3%</td><td>5.3%</td><td>5.0%</td><td>5.1%</td><td></td><td></td></tr><tr><td>Regular pay 3-months average chg YoY%</td><td>5.9%</td><td>5.7%</td><td>5.5%</td><td>5.3%</td><td>5.2%</td><td>5.1%</td><td>5.4%</td><td>5.6%</td><td>5.9%</td><td>5.8%</td><td>5.9%</td><td>5.5%</td><td>5.3%</td><td>5.0%</td><td>5.0%</td><td>4.8%</td><td>4.7%</td><td>4.7%</td><td>4.6%</td><td>4.4%</td><td>4.1%</td><td>3.8%</td><td>3.6%</td><td>3.4%</td><td></td><td></td></tr><tr><td>Redundancies (&#x27;000)</td><td>99</td><td>111</td><td>86</td><td>83</td><td>92</td><td>99</td><td>112</td><td>114</td><td>124</td><td>117</td><td>110</td><td>102</td><td>114</td><td>107</td><td>104</td><td>113</td><td>134</td><td>156</td><td>145</td><td>145</td><td>133</td><td>136</td><td>126</td><td></td><td></td><td></td></tr><tr><td>Redundancy Rate</td><td>0.3%</td><td>0.4%</td><td>0.3%</td><td>0.3%</td><td>0.3%</td><td>0.3%</td><td>0.4%</td><td>0.4%</td><td>0.4%</td><td>0.4%</td><td>0.4%</td><td>0.4%</td><td>0.4%</td><td>0.4%</td><td>0.4%</td><td>0.4%</td><td>0.5%</td><td>0.5%</td><td>0.5%</td><td>0.5%</td><td>0.5%</td><td>0.5%</td><td>0.4%</td><td></td><td></td><td></td></tr><tr><td colspan="27">Confidence indicators</td></tr><tr><td>UK Composite PMI</td><td>54.1</td><td>53.0</td><td>52.3</td><td>52.8</td><td>53.8</td><td>52.6</td><td>51.8</td><td>50.5</td><td>50.4</td><td>50.6</td><td>50.5</td><td>51.5</td><td>48.5</td><td>50.3</td><td>52.0</td><td>51.5</td><td>53.5</td><td>50.1</td><td>52.2</td><td>51.2</td><td>51.4</td><td>53.7</td><td>53.7</td><td>50.3</td><td>52.6</td><td>49.7</td></tr><tr><td>UK Composite Employment PMI</td><td>50.1</td><td>50.6</td><td>50.3</td><td>52.4</td><td>52.1</td><td>50.5</td><td>48.4</td><td>48.9</td><td>45.6</td><td>45.3</td><td>43.5</td><td>47.1</td><td>45.8</td><td>47.2</td><td>46.6</td><td>45.3</td><td>46.5</td><td>46.3</td><td>49.3</td><td>44.9</td><td>46.7</td><td>45.8</td><td>46.4</td><td>46.9</td><td>47.7</td><td>47.1</td></tr><tr><td>UK Manufacturing PMI</td><td>49.1</td><td>51.2</td><td>50.9</td><td>52.1</td><td>52.5</td><td>51.5</td><td>49.9</td><td>48.0</td><td>47.0</td><td>48.3</td><td>46.9</td><td>44.9</td><td>45.4</td><td>46.4</td><td>47.7</td><td>48.0</td><td>47.0</td><td>46.2</td><td>49.7</td><td>50.2</td><td>50.6</td><td>51.8</td><td>51.7</td><td>51.0</td><td>53.7</td><td>53.9</td></tr><tr><td>UK Service PMI</td><td>55.0</td><td>52.9</td><td>52.1</td><td>52.5</td><td>53.7</td><td>52.4</td><td>52.0</td><td>50.8</td><td>51.1</td><td>50.8</td><td>51.0</td><td>52.5</td><td>49.0</td><td>50.9</td><td>52.8</td><td>51.8</td><td>54.2</td><td>50.8</td><td>52.3</td><td>51.3</td><td>51.4</td><td>54.0</td><td>53.9</td><td>50.5</td><td>52.7</td><td>49.3</td></tr></table>
+
+Source: Markit, Haver Analytics, MS
+
+Exhibit 61: Staffing database: US heatmap
+
+<table><tr><td>UNITED STATES</td><td>Apr-24</td><td>May-24</td><td>Jun-24</td><td>Jul-24</td><td>Aug-24</td><td>Sep-24</td><td>Oct-24</td><td>Nov-24</td><td>Dec-24</td><td>Jan-25</td><td>Feb-25</td><td>Mar-25</td><td>Apr-25</td><td>May-25</td><td>Jun-25</td><td>Jul-25</td><td>Aug-25</td><td>Sep-25</td><td>Oct-25</td><td>Nov-25</td><td>Dec-25</td><td>Jan-26</td><td>Feb-26</td><td>Mar-26</td><td>Apr-26</td><td>May-26</td></tr><tr><td colspan="27">Key labour indicators</td></tr><tr><td>Temps at work (&#x27;000&#x27;)</td><td>2,655</td><td>2,642</td><td>2,616</td><td>2,598</td><td>2,583</td><td>2,564</td><td>2,548</td><td>2,550</td><td>2,542</td><td>2,539</td><td>2,533</td><td>2,528</td><td>2,528</td><td>2,513</td><td>2,505</td><td>2,494</td><td>2,483</td><td>2,472</td><td>2,452</td><td>2,466</td><td>2,451</td><td>2,470</td><td>2,472</td><td>2,480</td><td>2,489</td><td>2,490</td></tr><tr><td>Temps at work chg YoY%</td><td>-8.7%</td><td>-8.9%</td><td>-8.8%</td><td>-8.3%</td><td>-8.1%</td><td>-8.0%</td><td>-8.1%</td><td>-6.8%</td><td>-5.4%</td><td>-5.8%</td><td>-5.4%</td><td>-5.3%</td><td>-4.8%</td><td>-4.9%</td><td>-4.2%</td><td>-4.0%</td><td>-3.8%</td><td>-3.6%</td><td>-3.8%</td><td>-3.3%</td><td>-3.6%</td><td>-2.7%</td><td>-2.4%</td><td>-1.9%</td><td>-1.5%</td><td>-0.9%</td></tr><tr><td>JOLTS Job Openings (in 000&#x27;)</td><td>7,529</td><td>7,782</td><td>7,416</td><td>7,426</td><td>7,520</td><td>6,943</td><td>7,379</td><td>7,566</td><td>7,295</td><td>7,431</td><td>7,242</td><td>6,952</td><td>7,098</td><td>7,310</td><td>7,204</td><td>7,089</td><td>6,919</td><td>7,169</td><td>7,170</td><td>6,846</td><td>6,550</td><td>7,240</td><td>6,922</td><td>6,887</td><td>7,618</td><td></td></tr><tr><td>JOLTS Job Openings chg YoY%</td><td>-24.5%</td><td>-16.9%</td><td>-19.2%</td><td>-14.2%</td><td>-18.7%</td><td>-25.0%</td><td>-14.0%</td><td>-12.0%</td><td>-14.4%</td><td>-11.3%</td><td>-14.2%</td><td>-15.3%</td><td>-5.7%</td><td>-6.1%</td><td>-2.9%</td><td>-4.5%</td><td>-8.0%</td><td>3.3%</td><td>-2.8%</td><td>-9.5%</td><td>-10.2%</td><td>-2.6%</td><td>-4.4%</td><td>-0.9%</td><td>7.3%</td><td></td></tr><tr><td>American Staffing Association Staffing Index</td><td>89.3</td><td>89.0</td><td>89.3</td><td>87.1</td><td>89.4</td><td>89.7</td><td>90.0</td><td>88.4</td><td>83.9</td><td>80.4</td><td>82.6</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>Indeed Job Posting</td><td>118.5</td><td>115.9</td><td>114.2</td><td>113.7</td><td>113.4</td><td>112.4</td><td>110.1</td><td>109.5</td><td>110.3</td><td>110.2</td><td>109.3</td><td>107.8</td><td>106.8</td><td>105.9</td><td>105.2</td><td>104.3</td><td>104.8</td><td>102.8</td><td>101.0</td><td>101.3</td><td>102.9</td><td>103.3</td><td>104.6</td><td>104.1</td><td>102.7</td><td>102.0</td></tr><tr><td colspan="27">Other labour market indicators</td></tr><tr><td>Unemployment rate</td><td>3.9%</td><td>3.9%</td><td>4.1%</td><td>4.2%</td><td>4.2%</td><td>4.1%</td><td>4.1%</td><td>4.2%</td><td>4.1%</td><td>4.0%</td><td>4.2%</td><td>4.2%</td><td>4.2%</td><td>4.3%</td><td>4.1%</td><td>4.3%</td><td>4.3%</td><td>4.4%</td><td></td><td>4.5%</td><td>4.4%</td><td>4.3%</td><td>4.4%</td><td>4.3%</td><td>4.3%</td><td>4.3%</td></tr><tr><td>ADP Nonfarm Private Payroll Employment (in 000&#x27;)</td><td>131,164</td><td>131,365</td><td>131,469</td><td>131,589</td><td>131,635</td><td>131,614</td><td>131,602</td><td>131,704</td><td>131,861</td><td>132,001</td><td>132,015</td><td>131,962</td><td>131,939</td><td>131,915</td><td>131,914</td><td>131,991</td><td>132,040</td><td>132,128</td><td>132,148</td><td>132,222</td><td>132,259</td><td>132,270</td><td>132,336</td><td>132,397</td><td>132,502</td><td>132,624</td></tr><tr><td>ADP Nonfarm Private Payroll chg YoY%</td><td>-24.5%</td><td>-16.9%</td><td>-19.2%</td><td>-14.2%</td><td>-18.7%</td><td>-25.0%</td><td>-14.0%</td><td>-12.0%</td><td>-14.4%</td><td>-11.3%</td><td>-14.2%</td><td>-15.3%</td><td>-5.7%</td><td>-6.6%</td><td>-2.9%</td><td>-4.5%</td><td>-8.0%</td><td>3.3%</td><td>-2.8%</td><td>-9.5%</td><td>-10.2%</td><td>-2.6%</td><td>-4.4%</td><td>-0.9%</td><td>7.3%</td><td></td></tr><tr><td>JOLTS Hires (in 000&#x27;)</td><td>5,469</td><td>5,492</td><td>5,137</td><td>5,430</td><td>5,204</td><td>5,427</td><td>5,228</td><td>5,155</td><td>5,292</td><td>5,238</td><td>5,236</td><td>5,333</td><td>5,391</td><td>5,328</td><td>5,327</td><td>5,225</td><td>5,145</td><td>5,244</td><td>5,180</td><td>5,019</td><td>5,272</td><td>5,347</td><td>4,899</td><td>5,535</td><td>5,116</td><td></td></tr><tr><td>JOLTS Hiring Rate</td><td>3.5%</td><td>3.5%</td><td>3.3%</td><td>3.4%</td><td>3.3%</td><td>3.4%</td><td>3.3%</td><td>3.3%</td><td>3.3%</td><td>3.3%</td><td>3.3%</td><td>3.4%</td><td>3.4%</td><td>3.4%</td><td>3.4%</td><td>3.3%</td><td>3.2%</td><td>3.3%</td><td>3.3%</td><td>3.2%</td><td>3.3%</td><td>3.4%</td><td>3.1%</td><td>3.5%</td><td>3.2%</td><td></td></tr><tr><td>JOLTS Quits (in 000&#x27;)</td><td>3,438</td><td>3,386</td><td>3,280</td><td>3,359</td><td>3,240</td><td>3,123</td><td>3,215</td><td>3,050</td><td>3,085</td><td>3,203</td><td>3,153</td><td>3,456</td><td>3,144</td><td>3,287</td><td>3,254</td><td>3,132</td><td>3,095</td><td>2,990</td><td>2,980</td><td>3,119</td><td>3,225</td><td>3,131</td><td>3,046</td><td>3,160</td><td>2,977</td><td></td></tr><tr><td>JOLTS Quitting Rate</td><td>2.2%</td><td>2.1%</td><td>2.1%</td><td>2.1%</td><td>2.1%</td><td>2.0%</td><td>2.0%</td><td>1.9%</td><td>1.9%</td><td>2.0%</td><td>2.0%</td><td>2.2%</td><td>2.0%</td><td>2.1%</td><td>2.1%</td><td>2.0%</td><td>2.0%</td><td>1.9%</td><td>1.9%</td><td>2.0%</td><td>2.0%</td><td>2.0%</td><td>1.9%</td><td>2.0%</td><td>1.9%</td><td></td></tr><tr><td>JOLTS Layoffs (in 000&#x27;)</td><td>1,548</td><td>1,747</td><td>1,497</td><td>1,711</td><td>1,683</td><td>1,780</td><td>1,650</td><td>1,831</td><td>1,689</td><td>1,738</td><td>1,867</td><td>1,595</td><td>1,818</td><td>1,671</td><td>1,843</td><td>1,772</td><td>1,832</td><td>1,816</td><td>1,891</td><td>1,660</td><td>1,666</td><td>1,660</td><td>1,714</td><td>1,884</td><td>1,692</td><td></td></tr><tr><td>JOLTS Layoff Rate</td><td>2.2%</td><td>2.1%</td><td>2.1%</td><td>2.1%</td><td>2.1%</td><td>2.0%</td><td>2.0%</td><td>1.9%</td><td>1.9%</td><td>2.0%</td><td>2.0%</td><td>2.2%</td><td>2.0%</td><td>2.1%</td><td>2.1%</td><td>2.0%</td><td>2.0%</td><td>1.9%</td><td>1.9%</td><td>2.1%</td><td>2.0%</td><td>2.0%</td><td>1.9%</td><td>2.0%</td><td>1.9%</td><td></td></tr><tr><td>Average hourly earnings chg YoY%</td><td>1.3%</td><td>1.2%</td><td>0.9%</td><td>0.8%</td><td>0.7%</td><td>0.7%</td><td>0.7%</td><td>0.7%</td><td>0.6%</td><td>0.5%</td><td>0.6%</td><td>0.6%</td><td>0.6%</td><td>0.4%</td><td>0.3%</td><td>0.3%</td><td>0.3%</td><td>0.4%</td><td>0.4%</td><td>0.4%</td><td>0.3%</td><td>0.2%</td><td>0.2%</td><td>0.3%</td><td>0.4%</td><td></td></tr><tr><td>Participation rate</td><td>62.6%</td><td>62.6%</td><td>62.6%</td><td>62.7%</td><td>62.7%</td><td>62.7%</td><td>62.5%</td><td>62.4%</td><td>62.5%</td><td>62.6%</td><td>62.5%</td><td>62.5%</td><td>62.6%</td><td>62.4%</td><td>62.3%</td><td>62.2%</td><td>62.3%</td><td>62.5%</td><td></td><td>62.5%</td><td>62.4%</td><td>62.1%</td><td>62.0%</td><td>61.9%</td><td>61.8%</td><td>61.8%</td></tr><tr><td colspan="27">Confidence indicators</td></tr><tr><td>US Composite PMI</td><td>51.3</td><td>54.5</td><td>54.8</td><td>54.3</td><td>54.6</td><td>54.0</td><td>54.1</td><td>54.9</td><td>55.4</td><td>52.7</td><td>51.6</td><td>53.5</td><td>50.6</td><td>53.0</td><td>52.9</td><td>55.1</td><td>54.6</td><td>53.9</td><td>54.6</td><td>54.2</td><td>52.7</td><td>53.0</td><td>51.9</td><td>50.3</td><td>51.7</td><td>51.5</td></tr><tr><td>US Composite Employment PMI</td><td>48.4</td><td>49.9</td><td>52.5</td><td>51.6</td><td>48.6</td><td>49.5</td><td>49.5</td><td>49.4</td><td>51.4</td><td>54.0</td><td>49.4</td><td>51.5</td><td>50.2</td><td>51.6</td><td>52.5</td><td>51.5</td><td>52.1</td><td>50.6</td><td>51.3</td><td>52.0</td><td>50.3</td><td>50.7</td><td>50.4</td><td>49.7</td><td>50.2</td><td>47.9</td></tr><tr><td>US Manufacturing PMI</td><td>51.1</td><td>53.0</td><td>52.1</td><td>50.5</td><td>48.2</td><td>47.9</td><td>49.2</td><td>47.9</td><td>47.7</td><td>51.8</td><td>54.5</td><td>48.6</td><td>49.6</td><td>49.4</td><td>53.1</td><td>51.3</td><td>55.2</td><td>52.4</td><td>53.7</td><td>54.4</td><td>53.6</td><td>55.2</td><td>52.7</td><td>53.2</td><td>56.0</td><td>56.6</td></tr><tr><td>US Service PMI</td><td>51.3</td><td>54.8</td><td>55.3</td><td>55.0</td><td>55.7</td><td>55.2</td><td>55.0</td><td>56.1</td><td>56.8</td><td>52.9</td><td>51.0</td><td>54.4</td><td>50.8</td><td>53.7</td><td>52.9</td><td>55.7</td><td>54.5</td><td>54.2</td><td>54.8</td><td>54.1</td><td>52.5</td><td>52.7</td><td>51.7</td><td>49.8</td><td>51.0</td><td>50.7</td></tr><tr><td>Consumer Sentiment</td><td>77.2</td><td>69.1</td><td>68.2</td><td>66.4</td><td>67.9</td><td>70.1</td><td>70.5</td><td>71.8</td><td>74.0</td><td>71.7</td><td>64.7</td><td>57.0</td><td>52.2</td><td>52.2</td><td>60.7</td><td>61.7</td><td>58.2</td><td>55.1</td><td>53.6</td><td>51.0</td><td>52.9</td><td>56.4</td><td>56.6</td><td>53.3</td><td>49.8</td><td>44.8</td></tr></table>
+
+Source: Haver Analytics, MS
+
+Exhibit 62: Staffing database: Netherlands heatmap
+
+<table><tr><td>NETHERLANDS</td><td>Apr-24</td><td>May-24</td><td>Jun-24</td><td>Jul-24</td><td>Aug-24</td><td>Sep-24</td><td>Oct-24</td><td>Nov-24</td><td>Dec-24</td><td>Jan-25</td><td>Feb-25</td><td>Mar-25</td><td>Apr-25</td><td>May-25</td><td>Jun-25</td><td>Jul-25</td><td>Aug-25</td><td>Sep-25</td><td>Oct-25</td><td>Nov-25</td><td>Dec-25</td><td>Jan-26</td><td>Feb-26</td><td>Mar-26</td><td>Apr-26</td><td>May-26</td></tr><tr><td colspan="27">Key labour indicators</td></tr><tr><td>Temporary Hours chg YoY%</td><td>-8.0%</td><td>-10.0%</td><td>-8.0%</td><td>-9.0%</td><td>-7.0%</td><td>-7.0%</td><td>-7.0%</td><td>-7.0%</td><td>-5.0%</td><td>-9.0%</td><td>-6.0%</td><td>-6.0%</td><td>-6.0%</td><td>-1.0%</td><td>-3.0%</td><td>-5.0%</td><td>-4.0%</td><td>-4.0%</td><td>-5.0%</td><td>-5.0%</td><td>-3.0%</td><td>-6.0%</td><td>-6.0%</td><td>-5.0%</td><td>-5.0%</td><td></td></tr><tr><td>Temporary Turnover chg YoY%</td><td>-1.0%</td><td>-4.0%</td><td>-2.0%</td><td>-3.0%</td><td>0.0%</td><td>-1.0%</td><td>-1.0%</td><td>-1.0%</td><td>-1.0%</td><td>-5.0%</td><td>-2.0%</td><td>-1.0%</td><td>-2.0%</td><td>5.0%</td><td>2.0%</td><td>0.0%</td><td>2.0%</td><td>1.0%</td><td>0.0%</td><td>0.0%</td><td>3.0%</td><td>1.0%</td><td>3.0%</td><td>4.0%</td><td>5.0%</td><td></td></tr><tr><td colspan="27">Other labour market indicators</td></tr><tr><td>Unemployment</td><td>3.7%</td><td>3.6%</td><td>3.6%</td><td>3.6%</td><td>3.7%</td><td>3.7%</td><td>3.7%</td><td>3.7%</td><td>3.7%</td><td>3.8%</td><td>3.8%</td><td>3.9%</td><td>3.8%</td><td>3.8%</td><td>3.8%</td><td>3.8%</td><td>3.9%</td><td>4.0%</td><td>4.0%</td><td>4.0%</td><td>4.0%</td><td>4.0%</td><td>4.1%</td><td>4.0%</td><td>3.9%</td><td></td></tr><tr><td>Labour force participation</td><td>76.2%</td><td>76.2%</td><td>76.1%</td><td>76.0%</td><td>75.8%</td><td>75.8%</td><td>75.6%</td><td>75.8%</td><td>75.9%</td><td>76.0%</td><td>76.0%</td><td>76.0%</td><td>76.1%</td><td>76.1%</td><td>76.1%</td><td>76.2%</td><td>76.3%</td><td>76.4%</td><td>76.4%</td><td>76.2%</td><td>76.2%</td><td>76.3%</td><td>76.3%</td><td>76.2%</td><td>76.2%</td><td></td></tr><tr><td>Contractual wage increase</td><td>4.8%</td><td>4.6%</td><td>4.6%</td><td>4.8%</td><td>5.6%</td><td>4.0%</td><td>4.0%</td><td>4.4%</td><td></td><td>4.2%</td><td>4.4%</td><td>4.2%</td><td>3.7%</td><td>4.0%</td><td>3.9%</td><td>3.5%</td><td>3.9%</td><td>3.4%</td><td>3.1%</td><td>3.3%</td><td>3.3%</td><td>3.4%</td><td>2.9%</td><td>3.1%</td><td>3.1%</td><td>3.5%</td></tr><tr><td>Bankruptcies (LTM)</td><td>64.6</td><td>64.9</td><td>64.2</td><td>67.5</td><td>67.7</td><td>68.6</td><td>70.2</td><td>69.4</td><td>70.2</td><td>72.2</td><td>68.5</td><td>69.4</td><td>70.7</td><td>68.5</td><td>69.0</td><td>70.6</td><td>70.1</td><td>71.1</td><td>70.1</td><td>69.2</td><td>70.2</td><td>70.2</td><td>68.4</td><td>70.2</td><td>68.5</td><td></td></tr><tr><td colspan="27">Confidence indicators</td></tr><tr><td>Netherlands Manufacturing PMI</td><td>51.3</td><td>52.5</td><td>50.7</td><td>49.2</td><td>47.7</td><td>48.2</td><td>47.0</td><td>46.6</td><td>48.6</td><td>48.4</td><td>50.0</td><td>49.6</td><td>49.2</td><td>49.0</td><td>51.2</td><td>51.9</td><td>51.9</td><td>53.7</td><td>51.8</td><td>51.8</td><td>51.1</td><td>50.1</td><td>50.8</td><td>52.0</td><td>54.4</td><td>55.9</td></tr><tr><td>Netherlands Manufacturing Employment PMI</td><td>51.6</td><td>51.2</td><td>51.1</td><td>50.5</td><td>49.0</td><td>49.4</td><td>47.8</td><td>47.5</td><td>49.0</td><td>48.6</td><td>48.2</td><td>47.9</td><td>47.3</td><td>46.9</td><td>50.9</td><td>51.9</td><td>52.9</td><td>53.1</td><td>48.9</td><td>49.2</td><td>50.6</td><td>50.5</td><td>50.3</td><td>49.3</td><td>49.1</td><td>50.4</td></tr><tr><td>Economic Sentiment Indicator</td><td>98.3</td><td>99.4</td><td>100.1</td><td>99.9</td><td>100.8</td><td>101.3</td><td>98.9</td><td>100.3</td><td>100.1</td><td>99.1</td><td>100.3</td><td>100.1</td><td>98.1</td><td>96.9</td><td>97.3</td><td>97.2</td><td>100.8</td><td>100.1</td><td>100.1</td><td>99.9</td><td>100.2</td><td>102.5</td><td>102.3</td><td>100.8</td><td>98.3</td><td>97.4</td></tr><tr><td>Employment Expectation Indicator</td><td>102.6</td><td>101.5</td><td>100.7</td><td>101.3</td><td>101.6</td><td>103.0</td><td>102.2</td><td>100.1</td><td>103.0</td><td>104.9</td><td>103.2</td><td>102.8</td><td>101.7</td><td>101.8</td><td>104.9</td><td>102.1</td><td>102.3</td><td>102.6</td><td>103.5</td><td>104.5</td><td>102.5</td><td>102.8</td><td>103.6</td><td>103.4</td><td>102.8</td><td>102.5</td></tr><tr><td>Consumer Confidence</td><td>-11.4</td><td>-10.8</td><td>-11.4</td><td>-10.6</td><td>-10.0</td><td>-7.7</td><td>-12.4</td><td>-14.2</td><td>-13.3</td><td>-14.1</td><td>-16.8</td><td>-17.5</td><td>-19.1</td><td>-17.0</td><td>-15.5</td><td>-13.7</td><td>-14.0</td><td>-13.9</td><td>-12.9</td><td>-9.3</td><td>-10.4</td><td>-12.0</td><td>-12.2</td><td>-18.1</td><td>-23.9</td><td>-22.0</td></tr></table>
+
+Source: ABU, Haver Analytics, MS
+
+Exhibit 63: Staffing database: Belgium heatmap
+
+<table><tr><td>BELGIUM</td><td>Apr-24</td><td>May-24</td><td>Jun-24</td><td>Jul-24</td><td>Aug-24</td><td>Sep-24</td><td>Oct-24</td><td>Nov-24</td><td>Dec-24</td><td>Jan-25</td><td>Feb-25</td><td>Mar-25</td><td>Apr-25</td><td>May-25</td><td>Jun-25</td><td>Jul-25</td><td>Aug-25</td><td>Sep-25</td><td>Oct-25</td><td>Nov-25</td><td>Dec-25</td><td>Jan-26</td><td>Feb-26</td><td>Mar-26</td><td>Apr-26</td><td>May-26</td></tr><tr><td colspan="27">Key labour indicators</td></tr><tr><td>Federgon Index</td><td>90.3</td><td>91.2</td><td>89.5</td><td>87.9</td><td>88.2</td><td>88.6</td><td>88.7</td><td>87.8</td><td>89.3</td><td>88.6</td><td>87.3</td><td>87.2</td><td>85.8</td><td>86.7</td><td>87.7</td><td>85.9</td><td>87.2</td><td>85.9</td><td>85.9</td><td>84.8</td><td>85.9</td><td>84.4</td><td>84.2</td><td>83.3</td><td>83.4</td><td></td></tr><tr><td>Federgon Index chg YoY%</td><td>-4.8%</td><td>-4.1%</td><td>-3.3%</td><td>-7.5%</td><td>-3.6%</td><td>-4.1%</td><td>-4.0%</td><td>-4.1%</td><td>-3.8%</td><td>-2.1%</td><td>-3.0%</td><td>-3.6%</td><td>-5.0%</td><td>-4.8%</td><td>-2.0%</td><td>-2.2%</td><td>-1.2%</td><td>-3.1%</td><td>-3.1%</td><td>-3.4%</td><td>-3.8%</td><td>-4.7%</td><td>-3.6%</td><td>-4.5%</td><td>-2.7%</td><td></td></tr><tr><td>Hours Worked chg YoY%</td><td>-8.7%</td><td>-4.2%</td><td>0.2%</td><td>-12.3%</td><td>-1.9%</td><td>-4.5%</td><td>-4.1%</td><td>0.7%</td><td>-5.5%</td><td>-3.0%</td><td>-3.0%</td><td>-4.2%</td><td>-4.5%</td><td>-5.9%</td><td>-1.9%</td><td>0.1%</td><td>0.8%</td><td>-4.7%</td><td>-4.4%</td><td>-5.8%</td><td>-5.2%</td><td>-3.3%</td><td>-3.6%</td><td>-6.6%</td><td>-5.4%</td><td></td></tr><tr><td colspan="27">Other labour market indicators</td></tr><tr><td>Unemployment rate</td><td>5.6%</td><td>5.6%</td><td>5.6%</td><td>5.6%</td><td>5.7%</td><td>5.8%</td><td>5.8%</td><td>5.9%</td><td>6.0%</td><td>6.1%</td><td>6.2%</td><td>6.2%</td><td>6.1%</td><td>6.0%</td><td>6.1%</td><td>6.1%</td><td>6.1%</td><td>6.3%</td><td>6.4%</td><td>6.4%</td><td>6.4%</td><td>6.3%</td><td>6.3%</td><td>6.2%</td><td>6.2%</td><td></td></tr><tr><td>Bankruptcies LTM</td><td>891</td><td>893</td><td>910</td><td>882</td><td>864</td><td>923</td><td>929</td><td>914</td><td>922</td><td>924</td><td>928</td><td>932</td><td>930</td><td>927</td><td>954</td><td>925</td><td>908</td><td>969</td><td>962</td><td>953</td><td>976</td><td>974</td><td>976</td><td>993</td><td>992</td><td></td></tr><tr><td colspan="27">Confidence indicators</td></tr><tr><td>Economic Sentiment Indicator</td><td>94.0</td><td>93.9</td><td>96.0</td><td>91.6</td><td>93.4</td><td>90.7</td><td>92.7</td><td>94.2</td><td>89.4</td><td>93.8</td><td>94.5</td><td>92.1</td><td>88.2</td><td>96.0</td><td>97.7</td><td>95.0</td><td>95.0</td><td>95.8</td><td>95.6</td><td>95.6</td><td>90.2</td><td>92.5</td><td>92.0</td><td>89.4</td><td>88.1</td><td>89.5</td></tr><tr><td>Employment Expectations Indicator</td><td>98.9</td><td>98.2</td><td>94.3</td><td>96.5</td><td>94.8</td><td>96.9</td><td>100.1</td><td>98.7</td><td>97.6</td><td>95.6</td><td>96.1</td><td>92.8</td><td>89.6</td><td>92.1</td><td>95.0</td><td>95.0</td><td>92.1</td><td>92.2</td><td>86.5</td><td>91.5</td><td>87.8</td><td>88.0</td><td>88.1</td><td>84.5</td><td>82.6</td><td>78.4</td></tr><tr><td>Consumer Confidence</td><td>-10.2</td><td>-11.0</td><td>-8.1</td><td>-9.9</td><td>-8.3</td><td>-9.8</td><td>-8.3</td><td>-11.3</td><td>-12.3</td><td>-13.7</td><td>-12.5</td><td>-15.8</td><td>-19.1</td><td>-14.2</td><td>-12.7</td><td>-12.0</td><td>-12.7</td><td>-9.7</td><td>-13.1</td><td>-11.4</td><td>-13.9</td><td>-14.0</td><td>-14.1</td><td>-18.3</td><td>-19.8</td><td>-20.0</td></tr></table>
+
+Source: Federgon, Haver Analytics, MS
+
+Exhibit 64: Staffing database: Spain heatmap
+
+<table><tr><td>SPAIN</td><td>Apr-24</td><td>May-24</td><td>Jun-24</td><td>Jul-24</td><td>Aug-24</td><td>Sep-24</td><td>Oct-24</td><td>Nov-24</td><td>Dec-24</td><td>Jan-25</td><td>Feb-25</td><td>Mar-25</td><td>Apr-25</td><td>May-25</td><td>Jun-25</td><td>Jul-25</td><td>Aug-25</td><td>Sep-25</td><td>Oct-25</td><td>Nov-25</td><td>Dec-25</td><td>Jan-26</td><td>Feb-26</td><td>Mar-26</td><td>Apr-26</td><td>May-26</td></tr><tr><td colspan="27">Key labour indicators</td></tr><tr><td>Spain Vacancies (in 000&#x27;)</td><td>48,740</td><td>48,314</td><td>47,744</td><td>47,777</td><td>47,564</td><td>47,683</td><td>47,661</td><td>47,229</td><td>47,553</td><td>47,467</td><td>46,573</td><td>47,301</td><td>46,869</td><td>47,300</td><td>47,811</td><td>48,654</td><td>48,808</td><td>49,231</td><td>49,435</td><td>49,663</td><td>49,647</td><td>49,617</td><td>49,445</td><td>49,837</td><td>50,121</td><td>50,217</td></tr><tr><td>Spain Vacancies chg YoY%</td><td>-7.1%</td><td>-6.2%</td><td>-6.2%</td><td>-5.4%</td><td>-5.5%</td><td>-4.2%</td><td>-4.1%</td><td>-4.4%</td><td>-1.6%</td><td>-1.2%</td><td>-5.3%</td><td>-1.0%</td><td>-3.8%</td><td>-2.1%</td><td>0.1%</td><td>1.8%</td><td>2.6%</td><td>3.2%</td><td>3.7%</td><td>5.2%</td><td>4.4%</td><td>4.5%</td><td>6.2%</td><td>5.4%</td><td>6.9%</td><td>6.2%</td></tr><tr><td>Spain Placements (in 000&#x27;)</td><td>1,571</td><td>1,570</td><td>1,565</td><td>1,578</td><td>1,575</td><td>1,583</td><td>1,601</td><td>1,600</td><td>1,611</td><td>1,618</td><td>1,619</td><td>1,626</td><td>1,614</td><td>1,619</td><td>1,640</td><td>1,648</td><td>1,650</td><td>1,665</td><td>1,666</td><td>1,669</td><td>1,676</td><td>1,672</td><td>1,675</td><td>1,693</td><td>1,709</td><td>1,710</td></tr><tr><td>Spain Placement chg YoY%</td><td>0.9%</td><td>0.7%</td><td>0.6%</td><td>1.5%</td><td>1.7%</td><td>2.4%</td><td>3.1%</td><td>2.8%</td><td>3.5%</td><td>3.7%</td><td>3.1%</td><td>4.5%</td><td>2.8%</td><td>3.1%</td><td>4.8%</td><td>4.4%</td><td>4.8%</td><td>5.2%</td><td>4.1%</td><td>4.3%</td><td>4.0%</td><td>3.3%</td><td>3.4%</td><td>4.1%</td><td>5.9%</td><td>5.6%</td></tr><tr><td colspan="27">Other labour market indicators</td></tr><tr><td>Registered Unemployed (in 000&#x27;)</td><td>2,667</td><td>2,608</td><td>2,561</td><td>2,550</td><td>2,572</td><td>2,575</td><td>2,602</td><td>2,586</td><td>2,561</td><td>2,599</td><td>2,593</td><td>2,580</td><td>2,513</td><td>2,455</td><td>2,406</td><td>2,405</td><td>2,427</td><td>2,422</td><td>2,444</td><td>2,425</td><td>2,409</td><td>2,439</td><td>2,443</td><td>2,420</td><td>2,357</td><td>2,321</td></tr><tr><td>Registered Unemployed chg YoY%</td><td>-4.4%</td><td>-4.8%</td><td>-4.8%</td><td>-4.8%</td><td>-4.8%</td><td>-5.4%</td><td>-5.7%</td><td>-5.4%</td><td>-5.4%</td><td>-6.1%</td><td>-6.0%</td><td>-5.4%</td><td>-5.8%</td><td>-5.9%</td><td>-6.1%</td><td>-5.7%</td><td>-5.7%</td><td>-6.0%</td><td>-6.1%</td><td>-6.2%</td><td>-5.9%</td><td>-6.2%</td><td>-5.8%</td><td>-6.2%</td><td>-6.2%</td><td>-5.5%</td></tr><tr><td>Layoffs LTM</td><td>13,059</td><td>13,108</td><td>13,681</td><td>13,728</td><td>13,563</td><td>13,625</td><td>13,163</td><td>15,284</td><td>15,798</td><td>15,771</td><td>15,360</td><td>15,377</td><td>14,899</td><td>14,877</td><td>14,221</td><td>14,088</td><td>14,126</td><td>13,408</td><td>13,278</td><td>11,565</td><td>10,275</td><td>10,039</td><td>9,553</td><td>9,666</td><td></td><td></td></tr><tr><td>Layoffs LTM chg YoY%</td><td>-27.8%</td><td>-25.8%</td><td>-21.2%</td><td>-22.1%</td><td>-22.2%</td><td>-22.7%</td><td>-19.1%</td><td>-3.2%</td><td>4.7%</td><td>23.5%</td><td>14.8%</td><td>17.0%</td><td>14.1%</td><td>13.5%</td><td>4.0%</td><td>2.6%</td><td>4.1%</td><td>-1.6%</td><td>0.9%</td><td>-24.3%</td><td>-35.0%</td><td>-36.3%</td><td>-37.8%</td><td>-37.1%</td><td></td><td></td></tr><tr><td>Collective bargaining wage increase chg YoY%</td><td>2.9%</td><td>3.0%</td><td>3.0%</td><td>3.0%</td><td>3.0%</td><td>3.0%</td><td>3.1%</td><td>3.1%</td><td>3.1%</td><td>3.0%</td><td>3.0%</td><td>3.3%</td><td>3.4%</td><td>3.4%</td><td>3.4%</td><td>3.5%</td><td>3.5%</td><td>3.5%</td><td>3.5%</td><td>3.5%</td><td>3.5%</td><td>2.9%</td><td>2.9%</td><td>2.9%</td><td>2.9%</td><td></td></tr><tr><td colspan="27">Confidence indicators</td></tr><tr><td>Spain Composite PMI</td><td>55.7</td><td>56.6</td><td>55.8</td><td>53.4</td><td>53.5</td><td>56.3</td><td>55.2</td><td>53.2</td><td>56.8</td><td>54.0</td><td>55.1</td><td>54.0</td><td>52.5</td><td>51.4</td><td>52.1</td><td>54.7</td><td>53.7</td><td>53.8</td><td>56.0</td><td>55.1</td><td>55.6</td><td>52.9</td><td>51.5</td><td>52.4</td><td>48.7</td><td>50.2</td></tr><tr><td>Spain Composite Employment PMI</td><td>55.0</td><td>54.9</td><td>54.9</td><td>53.3</td><td>53.2</td><td>55.3</td><td>55.9</td><td>55.5</td><td>54.0</td><td>56.5</td><td>54.2</td><td>55.4</td><td>53.4</td><td>53.1</td><td>52.4</td><td>54.7</td><td>53.0</td><td>51.7</td><td>54.0</td><td>53.7</td><td>53.5</td><td>54.1</td><td>52.0</td><td>52.8</td><td>51.9</td><td>52.6</td></tr><tr><td>Spain Manufacturing PMI</td><td>52.2</td><td>54.0</td><td>52.3</td><td>51.0</td><td>50.5</td><td>53.0</td><td>54.5</td><td>53.1</td><td>53.3</td><td>50.9</td><td>49.7</td><td>49.5</td><td>48.1</td><td>50.5</td><td>51.4</td><td>51.9</td><td>54.3</td><td>51.5</td><td>52.1</td><td>51.5</td><td>49.6</td><td>49.2</td><td>50.0</td><td>48.7</td><td>51.7</td><td>51.2</td></tr><tr><td>Spain Service PMI</td><td>56.2</td><td>56.9</td><td>56.8</td><td>53.9</td><td>54.6</td><td>57.0</td><td>54.9</td><td>53.1</td><td>57.3</td><td>54.9</td><td>56.2</td><td>54.7</td><td>53.4</td><td>51.3</td><td>51.9</td><td>55.1</td><td>53.2</td><td>54.3</td><td>56.6</td><td>55.6</td><td>57.1</td><td>53.5</td><td>51.9</td><td>53.3</td><td>47.9</td><td>50.1</td></tr><tr><td>Consumer Confidence Index</td><td>84.5</td><td>83.8</td><td>88.4</td><td>89.4</td><td></td><td>84.8</td><td>79.6</td><td>80.6</td><td>85.0</td><td>84.9</td><td>81.4</td><td>79.6</td><td>76.5</td><td>82.5</td><td>76.1</td><td>82.9</td><td></td><td>81.5</td><td>78.7</td><td>76.0</td><td>75.9</td><td>80.5</td><td>83.9</td><td>66.9</td><td>77.7</td><td></td></tr><tr><td>Industrial Employment Trend</td><td>0.9</td><td>-2.5</td><td>0.5</td><td>2.4</td><td>6.1</td><td>3.5</td><td>1.6</td><td>4.4</td><td>4.5</td><td>4.6</td><td>4.4</td><td>2.6</td><td>1.5</td><td>0.5</td><td>0.4</td><td>0.9</td><td>-3.3</td><td>2.9</td><td>6.4</td><td>0.5</td><td>4.1</td><td>2.5</td><td>3.8</td><td>-1.3</td><td>-3.2</td><td>-4.2</td></tr></table>
+
+Source: Haver Analytics, MS
+
+Exhibit 65: Staffing database: Italy heatmap
+
+<table><tr><td>ITALY</td><td>Apr-24</td><td>May-24</td><td>Jun-24</td><td>Jul-24</td><td>Aug-24</td><td>Sep-24</td><td>Oct-24</td><td>Nov-24</td><td>Dec-24</td><td>Jan-25</td><td>Feb-25</td><td>Mar-25</td><td>Apr-25</td><td>May-25</td><td>Jun-25</td><td>Jul-25</td><td>Aug-25</td><td>Sep-25</td><td>Oct-25</td><td>Nov-25</td><td>Dec-25</td><td>Jan-26</td><td>Feb-26</td><td>Mar-26</td><td>Apr-26</td><td>May-26</td></tr><tr><td colspan="27">Key labour indicators</td></tr><tr><td>Unemployment Rate</td><td>6.8%</td><td>6.5%</td><td>6.7%</td><td>6.4%</td><td>6.3%</td><td>6.1%</td><td>6.1%</td><td>6.1%</td><td>6.4%</td><td>6.5%</td><td>6.1%</td><td>6.3%</td><td>6.1%</td><td>6.5%</td><td>6.2%</td><td>6.0%</td><td>5.9%</td><td>6.0%</td><td>5.8%</td><td>5.6%</td><td>5.6%</td><td>5.2%</td><td>5.4%</td><td>5.2%</td><td>5.1%</td><td></td></tr><tr><td colspan="27">Other labour market indicators</td></tr><tr><td>Unemployed</td><td>1,736</td><td>1,667</td><td>1,713</td><td>1,639</td><td>1,610</td><td>1,549</td><td>1,548</td><td>1,564</td><td>1,649</td><td>1,684</td><td>1,576</td><td>1,625</td><td>1,570</td><td>1,683</td><td>1,589</td><td>1,536</td><td>1,505</td><td>1,536</td><td>1,483</td><td>1,437</td><td>1,426</td><td>1,332</td><td>1,368</td><td>1,328</td><td>1,310</td><td></td></tr><tr><td>Unemployed chg YoY%</td><td>-12.9%</td><td>-15.7%</td><td>-9.4%</td><td>-17.2%</td><td>-16.5%</td><td>-21.7%</td><td>-22.5%</td><td>-18.5%</td><td>-8.8%</td><td>-7.6%</td><td>-15.9%</td><td>-7.8%</td><td>-9.6%</td><td>1.0%</td><td>-7.2%</td><td>-6.3%</td><td>-6.5%</td><td>-0.8%</td><td>-4.2%</td><td>-8.1%</td><td>-13.5%</td><td>-20.9%</td><td>-13.2%</td><td>-18.3%</td><td>-16.6%</td><td></td></tr><tr><td>Labour Participation Rate</td><td>66.8%</td><td>66.6%</td><td>66.8%</td><td>66.8%</td><td>66.7%</td><td>66.6%</td><td>66.5%</td><td>66.5%</td><td>66.8%</td><td>67.0%</td><td>66.8%</td><td>67.0%</td><td>66.6%</td><td>67.0%</td><td>66.8%</td><td>66.5%</td><td>66.4%</td><td>66.6%</td><td>66.6%</td><td>66.3%</td><td>66.4%</td><td>66.3%</td><td>66.4%</td><td>66.3%</td><td>66.6%</td><td></td></tr><tr><td colspan="27">Confidence indicators</td></tr><tr><td>Italy Composite PMI</td><td>52.6</td><td>52.3</td><td>51.3</td><td>50.3</td><td>50.8</td><td>49.7</td><td>51.0</td><td>47.7</td><td>49.7</td><td>49.7</td><td>51.9</td><td>50.5</td><td>52.1</td><td>52.5</td><td>51.1</td><td>51.5</td><td>51.7</td><td>51.7</td><td>53.1</td><td>53.8</td><td>50.3</td><td>51.4</td><td>52.1</td><td>49.2</td><td>50.5</td><td>50.4</td></tr><tr><td>Italy Composite Employment PMI</td><td>53.2</td><td>52.7</td><td>52.2</td><td>51.8</td><td>51.4</td><td>51.4</td><td>49.6</td><td>49.4</td><td>50.2</td><td>48.7</td><td>50.5</td><td>50.4</td><td>50.4</td><td>51.2</td><td>52.0</td><td>51.3</td><td>51.2</td><td>51.2</td><td>50.2</td><td>50.2</td><td>50.0</td><td>50.6</td><td>51.5</td><td>50.2</td><td>50.8</td><td>50.6</td></tr><tr><td>Italy Manufacturing PMI</td><td>47.3</td><td>45.6</td><td>45.7</td><td>47.4</td><td>49.4</td><td>48.3</td><td>46.9</td><td>44.5</td><td>46.2</td><td>46.3</td><td>47.4</td><td>46.6</td><td>49.3</td><td>49.2</td><td>48.4</td><td>49.8</td><td>50.4</td><td>49.0</td><td>49.9</td><td>50.6</td><td>47.9</td><td>48.1</td><td>50.6</td><td>51.3</td><td>52.1</td><td>52.9</td></tr><tr><td>Italy Service PMI</td><td>54.3</td><td>54.2</td><td>53.7</td><td>51.7</td><td>51.4</td><td>50.5</td><td>52.4</td><td>49.2</td><td>50.7</td><td>50.4</td><td>53.0</td><td>52.0</td><td>52.9</td><td>53.2</td><td>52.1</td><td>52.3</td><td>51.5</td><td>52.5</td><td>54.0</td><td>55.0</td><td>51.5</td><td>52.9</td><td>52.3</td><td>48.8</td><td>49.8</td><td>49.4</td></tr><tr><td>Business Confidence Indicator</td><td>96.1</td><td>95.3</td><td>94.6</td><td>94.3</td><td>94.8</td><td>95.7</td><td>93.4</td><td>93.0</td><td>95.0</td><td>95.2</td><td>94.5</td><td>93.1</td><td>91.8</td><td>93.3</td><td>94.1</td><td>93.8</td><td>93.7</td><td>93.8</td><td>94.4</td><td>96.1</td><td>96.4</td><td>97.5</td><td>97.3</td><td>97.2</td><td>95.1</td><td>94.1</td></tr></table>
+
+Source: Haver Analytics, MS
+
+Exhibit 66: Staffing database: Australia heatmap
+
+<table><tr><td>AUSTRALIA</td><td>Apr-24</td><td>May-24</td><td>Jun-24</td><td>Jul-24</td><td>Aug-24</td><td>Sep-24</td><td>Oct-24</td><td>Nov-24</td><td>Dec-24</td><td>Jan-25</td><td>Feb-25</td><td>Mar-25</td><td>Apr-25</td><td>May-25</td><td>Jun-25</td><td>Jul-25</td><td>Aug-25</td><td>Sep-25</td><td>Oct-25</td><td>Nov-25</td><td>Dec-25</td><td>Jan-26</td><td>Feb-26</td><td>Mar-26</td><td>Apr-26</td><td>May-26</td></tr><tr><td colspan="27">Key labour indicators</td></tr><tr><td>SEEK new job ads index</td><td>123.3</td><td>123.8</td><td>121.7</td><td>124.6</td><td>124.1</td><td>122.5</td><td>118.6</td><td>117.5</td><td>116.6</td><td>119.4</td><td>118.5</td><td>118.2</td><td>118.4</td><td>118.3</td><td>117.3</td><td>118.2</td><td>119.2</td><td>118.2</td><td>116.2</td><td>116.3</td><td>115.0</td><td>118.5</td><td>115.9</td><td>115.1</td><td>115.0</td><td></td></tr><tr><td>SEEK new job ads chg YoY%</td><td>-16.0%</td><td>-12.4%</td><td>-14.2%</td><td>-9.9%</td><td>-6.6%</td><td>-10.2%</td><td>-10.4%</td><td>-8.9%</td><td>-11.0%</td><td>-6.4%</td><td>-6.1%</td><td>-10.4%</td><td>-4.0%</td><td>-4.5%</td><td>-3.6%</td><td>-5.1%</td><td>-3.9%</td><td>-3.5%</td><td>-2.1%</td><td>-1.0%</td><td>-1.4%</td><td>-0.8%</td><td>-2.2%</td><td>-2.6%</td><td>-2.8%</td><td></td></tr><tr><td>Indeed Job Posting</td><td>162.0</td><td>161.3</td><td>160.5</td><td>158.3</td><td>157.1</td><td>157.5</td><td>157.4</td><td>157.4</td><td>156.1</td><td>158.4</td><td>155.6</td><td>149.0</td><td>150.2</td><td>148.5</td><td>150.6</td><td>151.0</td><td>148.6</td><td>148.9</td><td>149.7</td><td>148.8</td><td>146.9</td><td>153.1</td><td>163.0</td><td>161.9</td><td>151.4</td><td>152.7</td></tr><tr><td colspan="27">Other labour market indicators</td></tr><tr><td>Unemployment Rate</td><td>4.1%</td><td>4.0%</td><td>4.0%</td><td>4.2%</td><td>4.1%</td><td>4.0%</td><td>4.1%</td><td>3.9%</td><td>4.0%</td><td>4.1%</td><td>4.1%</td><td>4.1%</td><td>4.1%</td><td>4.1%</td><td>4.3%</td><td>4.3%</td><td>4.3%</td><td>4.4%</td><td>4.3%</td><td>4.3%</td><td>4.1%</td><td>4.1%</td><td>4.3%</td><td>4.3%</td><td>4.5%</td><td></td></tr><tr><td>Labour Participation Rate</td><td>66.8%</td><td>66.7%</td><td>66.8%</td><td>67.1%</td><td>67.1%</td><td>67.1%</td><td>67.0%</td><td>66.9%</td><td>67.1%</td><td>67.2%</td><td>66.7%</td><td>66.7%</td><td>67.1%</td><td>66.9%</td><td>67.0%</td><td>67.0%</td><td>66.8%</td><td>66.9%</td><td>66.9%</td><td>66.6%</td><td>66.7%</td><td>66.7%</td><td>66.8%</td><td>66.8%</td><td>66.7%</td><td></td></tr><tr><td>Internet Vacancy Index</td><td>112.1</td><td>112.7</td><td>107.6</td><td>101.6</td><td>108.5</td><td>109.4</td><td>106.2</td><td>104.7</td><td>101.3</td><td>104.4</td><td>99.9</td><td>96.4</td><td>101.4</td><td>98.4</td><td>100.3</td><td>100.0</td><td>95.5</td><td>98.4</td><td>98.4</td><td>97.3</td><td>100.5</td><td>103.2</td><td>100.0</td><td>100.9</td><td>100.0</td><td></td></tr><tr><td>Application per Ad Index</td><td>187.3</td><td>191.3</td><td>197.4</td><td>198.2</td><td>199.6</td><td>200.3</td><td>206.2</td><td>207.2</td><td>207.9</td><td>209.2</td><td>211.1</td><td>215.2</td><td>217.0</td><td>222.4</td><td>215.2</td><td>221.4</td><td>221.7</td><td>226.7</td><td>217.7</td><td>211.9</td><td>207.6</td><td>203.4</td><td>209.4</td><td>214.8</td><td></td><td></td></tr><tr><td>Advertised Salary Index chg YoY%</td><td>4.3%</td><td>4.3%</td><td>4.3%</td><td>4.2%</td><td>4.0%</td><td>3.8%</td><td>3.6%</td><td>3.6%</td><td>3.6%</td><td>3.6%</td><td>3.6%</td><td>3.7%</td><td>3.7%</td><td>3.6%</td><td>3.5%</td><td>3.4%</td><td>3.4%</td><td>3.5%</td><td>3.7%</td><td>3.7%</td><td>3.8%</td><td>3.9%</td><td>3.9%</td><td>4.0%</td><td>4.1%</td><td></td></tr><tr><td colspan="27">Confidence indicators</td></tr><tr><td>Australia Composite PMI</td><td>53.0</td><td>52.1</td><td>50.7</td><td>49.9</td><td>51.7</td><td>49.6</td><td>50.2</td><td>50.2</td><td>50.2</td><td>51.1</td><td>50.6</td><td>51.6</td><td>51.0</td><td>50.5</td><td>51.6</td><td>53.8</td><td>55.5</td><td>52.4</td><td>52.1</td><td>52.6</td><td>51.0</td><td>55.7</td><td>52.4</td><td>46.6</td><td>50.4</td><td>48.7</td></tr><tr><td>Australia Manufacturing PMI</td><td>49.6</td><td>49.7</td><td>47.2</td><td>47.5</td><td>48.5</td><td>46.7</td><td>47.3</td><td>49.4</td><td>47.8</td><td>50.2</td><td>50.4</td><td>52.1</td><td>51.7</td><td>51.0</td><td>50.6</td><td>51.3</td><td>53.0</td><td>51.4</td><td>49.7</td><td>51.6</td><td>51.6</td><td>52.3</td><td>51.0</td><td>49.8</td><td>51.3</td><td>50.7</td></tr><tr><td>Australia Service PMI</td><td>53.6</td><td>52.5</td><td>51.2</td><td>50.4</td><td>52.5</td><td>50.5</td><td>51.0</td><td>50.5</td><td>50.8</td><td>51.2</td><td>50.8</td><td>51.6</td><td>51.0</td><td>50.6</td><td>51.8</td><td>54.1</td><td>55.8</td><td>52.4</td><td>52.5</td><td>52.8</td><td>51.1</td><td>56.3</td><td>52.8</td><td>46.3</td><td>50.7</td><td>48.7</td></tr><tr><td>Consumer Sentiment Index</td><td>82.4</td><td>82.2</td><td>83.6</td><td>82.7</td><td>85.0</td><td>84.6</td><td>89.8</td><td>94.6</td><td>92.8</td><td>92.1</td><td>92.2</td><td>95.9</td><td>90.1</td><td>92.1</td><td>92.6</td><td>93.1</td><td>98.5</td><td>95.4</td><td>92.1</td><td>103.8</td><td>94.5</td><td>92.9</td><td>90.5</td><td>91.6</td><td>80.1</td><td>83.0</td></tr><tr><td>Unemployment Expectations Index</td><td>124.6</td><td>129.8</td><td>133.1</td><td>128.6</td><td>133.5</td><td>138.4</td><td>129.8</td><td>120.5</td><td>123.7</td><td>127.2</td><td>125.8</td><td>117.9</td><td>123.9</td><td>121.3</td><td>127.4</td><td>128.7</td><td>125.6</td><td>131.4</td><td>127.6</td><td>139.5</td><td>126.8</td><td>129.4</td><td>129.8</td><td>134.7</td><td>147.8</td><td>140.0</td></tr></table>
+
+Source: SEEK, Haver Analytics, MS
+
+Exhibit 67: Staffing database: Japan heatmap
+
+<table><tr><td>JAPAN</td><td>Apr-24</td><td>May-24</td><td>Jun-24</td><td>Jul-24</td><td>Aug-24</td><td>Sep-24</td><td>Oct-24</td><td>Nov-24</td><td>Dec-24</td><td>Jan-25</td><td>Feb-25</td><td>Mar-25</td><td>Apr-25</td><td>May-25</td><td>Jun-25</td><td>Jul-25</td><td>Aug-25</td><td>Sep-25</td><td>Oct-25</td><td>Nov-25</td><td>Dec-25</td><td>Jan-26</td><td>Feb-26</td><td>Mar-26</td><td>Apr-26</td><td>May-26</td></tr><tr><td colspan="27">Labour market indicators</td></tr><tr><td>Active Job Openings (in 000&#x27;)</td><td>2,172</td><td>2,156</td><td>2,132</td><td>2,158</td><td>2,136</td><td>2,159</td><td>2,223</td><td>2,204</td><td>2,160</td><td>2,154</td><td>2,177</td><td>2,185</td><td>2,141</td><td>2,111</td><td>2,091</td><td>2,102</td><td>2,061</td><td>2,087</td><td>2,112</td><td>2,057</td><td>2,037</td><td>2,045</td><td>2,073</td><td>2,073</td><td>2,030</td><td></td></tr><tr><td>Active Job Openings chg YoY%</td><td>-2.8%</td><td>-2.3%</td><td>-3.8%</td><td>-2.0%</td><td>-3.7%</td><td>-3.1%</td><td>-2.0%</td><td>-1.5%</td><td>-1.0%</td><td>-1.1%</td><td>-2.9%</td><td>-2.4%</td><td>-1.5%</td><td>-2.1%</td><td>-1.9%</td><td>-2.6%</td><td>-3.5%</td><td>-3.3%</td><td>-5.0%</td><td>-6.7%</td><td>-5.7%</td><td>-5.1%</td><td>-4.8%</td><td>-5.1%</td><td>-5.1%</td><td></td></tr><tr><td>New Job Openings</td><td>748.7</td><td>754.7</td><td>719.8</td><td>765.2</td><td>725.4</td><td>736.5</td><td>828.5</td><td>720.8</td><td>691.7</td><td>794.3</td><td>751.8</td><td>729.9</td><td>764.0</td><td>717.9</td><td>700.2</td><td>757.7</td><td>680.3</td><td>715.5</td><td>777.5</td><td>646.3</td><td>681.7</td><td>760.9</td><td>692.9</td><td>708.6</td><td>735.1</td><td></td></tr><tr><td>New Job Openings chg YoY%</td><td>-1.7%</td><td>0.0%</td><td>-8.8%</td><td>1.7%</td><td>-4.9%</td><td>-5.6%</td><td>1.8%</td><td>-1.8%</td><td>-3.1%</td><td>0.0%</td><td>-5.4%</td><td>-3.2%</td><td>2.0%</td><td>-4.9%</td><td>-2.7%</td><td>-1.0%</td><td>-6.2%</td><td>-2.8%</td><td>-6.2%</td><td>-10.3%</td><td>-1.4%</td><td>-4.2%</td><td>-7.8%</td><td>-2.9%</td><td>-3.8%</td><td></td></tr><tr><td>Labour Participation Rate</td><td>63.1%</td><td>63.3%</td><td>63.7%</td><td>63.5%</td><td>63.6%</td><td>63.5%</td><td>63.5%</td><td>63.5%</td><td>63.4%</td><td>63.2%</td><td>63.2%</td><td>63.3%</td><td>63.7%</td><td>64.0%</td><td>64.2%</td><td>63.9%</td><td>64.0%</td><td>64.2%</td><td>64.2%</td><td>64.1%</td><td>63.9%</td><td>63.5%</td><td>63.5%</td><td>63.6%</td><td>64.4%</td><td></td></tr><tr><td colspan="27">Confidence indicators</td></tr><tr><td>Japan Composite PMI</td><td>52.3</td><td>52.6</td><td>49.7</td><td>52.5</td><td>52.9</td><td>52.0</td><td>49.6</td><td>50.1</td><td>50.5</td><td>51.1</td><td>52.0</td><td>48.9</td><td>51.2</td><td>50.2</td><td>51.5</td><td>51.6</td><td>52.0</td><td>51.3</td><td>51.5</td><td>52.0</td><td>51.1</td><td>53.1</td><td>53.9</td><td>53.0</td><td>52.2</td><td>51.1</td></tr><tr><td>Japan Composite Employment PMI</td><td>53.0</td><td>52.9</td><td>52.3</td><td>52.6</td><td>51.4</td><td>51.1</td><td>51.1</td><td>51.7</td><td>51.6</td><td>52.0</td><td>51.2</td><td>51.6</td><td>51.7</td><td>51.5</td><td>52.2</td><td>50.4</td><td>50.5</td><td>50.9</td><td>50.8</td><td>51.8</td><td>53.1</td><td>53.2</td><td>52.7</td><td>51.8</td><td>52.1</td><td>51.4</td></tr><tr><td>Japan Manufacturing PMI</td><td>49.6</td><td>50.4</td><td>50.0</td><td>49.1</td><td>49.8</td><td>49.7</td><td>49.2</td><td>49.0</td><td>49.6</td><td>48.7</td><td>49.0</td><td>48.4</td><td>48.7</td><td>49.4</td><td>50.1</td><td>48.9</td><td>49.7</td><td>48.5</td><td>48.2</td><td>48.7</td><td>50.0</td><td>51.5</td><td>53.0</td><td>51.6</td><td>55.1</td><td>54.5</td></tr><tr><td>Japan Service PMI</td><td>54.3</td><td>53.8</td><td>49.4</td><td>53.7</td><td>53.7</td><td>53.1</td><td>49.7</td><td>50.5</td><td>50.9</td><td>53.0</td><td>53.7</td><td>50.0</td><td>52.4</td><td>51.0</td><td>51.7</td><td>53.6</td><td>53.1</td><td>53.3</td><td>53.1</td><td>53.2</td><td>51.6</td><td>53.7</td><td>53.8</td><td>53.4</td><td>51.0</td><td>50.0</td></tr><tr><td>Consumer Confidence Index</td><td>38.5</td><td>37.1</td><td>36.9</td><td>37.2</td><td>36.9</td><td>37.0</td><td>36.1</td><td>36.0</td><td>35.6</td><td>34.8</td><td>34.4</td><td>33.8</td><td>31.5</td><td>33.3</td><td>34.7</td><td>34.0</td><td>34.9</td><td>35.4</td><td>35.9</td><td>37.2</td><td>36.9</td><td>37.6</td><td>39.7</td><td>33.3</td><td>32.2</td><td>33.6</td></tr></table>
+
+Source: Haver Analytics, MS
+
+## Business Services Comps
+
+Exhibit 68: MS Business Services comps (1)
+
+<table><tr><td rowspan="2">Stock</td><td rowspan="2">Price</td><td colspan="2">P/E</td><td colspan="2">EV/NOPAT</td><td colspan="2">EV/EBIT</td><td colspan="2">EV/EBITDA</td><td colspan="2">EV/Sales</td></tr><tr><td>2026e</td><td>2027e</td><td>2026e</td><td>2027e</td><td>2026e</td><td>2027e</td><td>2026e</td><td>2027e</td><td>2026e</td><td>2027e</td></tr><tr><td colspan="12">Cleaning / Pest Control/ Catering</td></tr><tr><td>Rentokil</td><td>GBp 442</td><td>20.4x</td><td>18.3x</td><td>20.8x</td><td>18.3x</td><td>15.6x</td><td>13.7x</td><td>9.7x</td><td>8.8x</td><td>2.5x</td><td>2.3x</td></tr><tr><td>ISS</td><td>DKK 252</td><td>12.3x</td><td>11.3x</td><td>14.7x</td><td>13.2x</td><td>11.6x</td><td>10.3x</td><td>8.6x</td><td>7.7x</td><td>0.6x</td><td>0.5x</td></tr><tr><td>Elis</td><td>EUR 26</td><td>12.8x</td><td>11.3x</td><td>15.5x</td><td>14.5x</td><td>11.4x</td><td>10.5x</td><td>5.2x</td><td>4.8x</td><td>1.9x</td><td>1.7x</td></tr><tr><td colspan="12">Data &amp; Analytics</td></tr><tr><td>Experian (Mar, yr end)</td><td>GBp 2620</td><td>17.9x</td><td>15.9x</td><td>18.9x</td><td>16.7x</td><td>14.0x</td><td>12.3x</td><td>11.4x</td><td>10.2x</td><td>4.1x</td><td>3.6x</td></tr><tr><td colspan="12">Distributors</td></tr><tr><td>Bunzl</td><td>GBp 2470</td><td>14.0x</td><td>13.5x</td><td>16.1x</td><td>15.1x</td><td>11.3x</td><td>10.6x</td><td>8.7x</td><td>8.2x</td><td>0.8x</td><td>0.8x</td></tr><tr><td>Ferguson</td><td>GBp 17160</td><td>20.8x</td><td>18.4x</td><td>20.5x</td><td>18.2x</td><td>15.2x</td><td>13.6x</td><td>13.6x</td><td>12.2x</td><td>1.4x</td><td>1.3x</td></tr><tr><td>Travis Perkins</td><td>GBp 543</td><td>19.4x</td><td>13.8x</td><td>21.1x</td><td>16.7x</td><td>14.6x</td><td>11.7x</td><td>6.0x</td><td>5.4x</td><td>0.4x</td><td>0.4x</td></tr><tr><td>RS Group (Mar, yr end)</td><td>GBp 649</td><td>15.7x</td><td>13.9x</td><td>15.7x</td><td>14.2x</td><td>11.5x</td><td>10.4x</td><td>9.4x</td><td>8.6x</td><td>1.1x</td><td>1.0x</td></tr><tr><td>Diploma (Sept, yr end)</td><td>GBp 7020</td><td>29.2x</td><td>27.4x</td><td>29.9x</td><td>27.6x</td><td>21.5x</td><td>19.8x</td><td>19.9x</td><td>18.3x</td><td>5.4x</td><td>4.8x</td></tr><tr><td colspan="12">Chemical Distributors</td></tr><tr><td>Azelis</td><td>EUR 10</td><td>17.5x</td><td>15.3x</td><td>13.5x</td><td>12.1x</td><td>9.6x</td><td>8.9x</td><td>8.7x</td><td>8.0x</td><td>1.0x</td><td>0.9x</td></tr><tr><td>Brenntag</td><td>EUR 57</td><td>17.0x</td><td>15.1x</td><td>19.5x</td><td>17.5x</td><td>12.5x</td><td>11.5x</td><td>8.9x</td><td>8.3x</td><td>0.8x</td><td>0.7x</td></tr><tr><td>IMCD</td><td>EUR 89</td><td>15.5x</td><td>14.1x</td><td>17.1x</td><td>15.5x</td><td>12.6x</td><td>11.5x</td><td>11.7x</td><td>10.7x</td><td>1.3x</td><td>1.2x</td></tr><tr><td colspan="12">Outsourcing</td></tr><tr><td>TP</td><td>EUR 59</td><td>4.3x</td><td>4.0x</td><td>7.1x</td><td>5.7x</td><td>5.0x</td><td>4.0x</td><td>3.5x</td><td>2.9x</td><td>0.7x</td><td>0.6x</td></tr><tr><td colspan="12">Power Rental</td></tr><tr><td>Sunbelt Rentals (Apr, yr end)</td><td>GBp 5958</td><td>19.2x</td><td>16.5x</td><td>22.3x</td><td>20.0x</td><td>15.8x</td><td>14.2x</td><td>8.4x</td><td>7.7x</td><td>3.6x</td><td>3.3x</td></tr><tr><td colspan="12">Security</td></tr><tr><td>Securitas</td><td>SEK 156</td><td>12.5x</td><td>11.7x</td><td>13.9x</td><td>13.1x</td><td>10.2x</td><td>9.6x</td><td>9.1x</td><td>8.6x</td><td>0.8x</td><td>0.7x</td></tr><tr><td>Verisure</td><td>EUR 11</td><td>19.4x</td><td>16.0x</td><td>17.9x</td><td>15.7x</td><td>15.2x</td><td>13.3x</td><td>8.6x</td><td>7.7x</td><td>4.0x</td><td>3.6x</td></tr><tr><td colspan="12">Multi-technical Services</td></tr><tr><td>SPIE</td><td>EUR 48</td><td>14.8x</td><td>13.4x</td><td>26.0x</td><td>22.0x</td><td>12.3x</td><td>10.8x</td><td>9.5x</td><td>8.3x</td><td>1.0x</td><td>0.9x</td></tr><tr><td colspan="12">Staffing</td></tr><tr><td>Adecco</td><td>CHF 17</td><td>7.5x</td><td>6.4x</td><td>10.7x</td><td>9.3x</td><td>7.0x</td><td>6.0x</td><td>5.7x</td><td>5.0x</td><td>0.2x</td><td>0.2x</td></tr><tr><td>Hays (June, yr end)</td><td>GBp 35</td><td>20.3x</td><td>11.8x</td><td>13.5x</td><td>8.7x</td><td>9.5x</td><td>6.1x</td><td>4.4x</td><td>3.4x</td><td>0.1x</td><td>0.1x</td></tr><tr><td>Pagegroup</td><td>GBp 123</td><td>16.0x</td><td>10.0x</td><td>13.4x</td><td>8.6x</td><td>8.8x</td><td>5.8x</td><td>3.7x</td><td>3.0x</td><td>0.2x</td><td>0.2x</td></tr><tr><td>Randstad</td><td>EUR 27</td><td>10.6x</td><td>9.4x</td><td>12.6x</td><td>10.9x</td><td>8.8x</td><td>7.8x</td><td>6.2x</td><td>5.5x</td><td>0.3x</td><td>0.3x</td></tr><tr><td colspan="12">TIC</td></tr><tr><td>Bureau Veritas</td><td>EUR 26</td><td>16.4x</td><td>14.8x</td><td>17.6x</td><td>16.0x</td><td>12.3x</td><td>11.2x</td><td>9.9x</td><td>9.1x</td><td>2.0x</td><td>1.9x</td></tr><tr><td>SGS</td><td>CHF 89</td><td>22.0x</td><td>20.2x</td><td>21.5x</td><td>19.5x</td><td>16.6x</td><td>15.1x</td><td>10.8x</td><td>9.9x</td><td>2.7x</td><td>2.5x</td></tr><tr><td>Eurofins</td><td>EUR 64.9</td><td>15.1x</td><td>13.3x</td><td>18.1x</td><td>15.7x</td><td>13.1x</td><td>11.5x</td><td>8.8x</td><td>7.9x</td><td>2.0x</td><td>1.8x</td></tr><tr><td>Sector Mean</td><td></td><td>16.3x</td><td>14.0x</td><td>17.4x</td><td>15.2x</td><td>12.3x</td><td>10.9x</td><td>8.8x</td><td>7.9x</td><td>1.6x</td><td>1.5x</td></tr><tr><td>Sector Median</td><td></td><td>16.2x</td><td>13.8x</td><td>17.3x</td><td>15.6x</td><td>12.3x</td><td>11.0x</td><td>8.8x</td><td>8.1x</td><td>1.0x</td><td>1.0x</td></tr></table>
+
+Source: MS estimates, Priced as at 5th of June 2026
+
+Exhibit 69: MS Business Services comps (2)
+
+<table><tr><td rowspan="2">Stock</td><td colspan="2">Dividend Yield (%)</td><td colspan="2">FCFE Yield (%)</td><td colspan="2">ROIC (%)</td><td colspan="2">Net Debt/EBITDA</td><td colspan="3">Share Performance (%)</td></tr><tr><td>2026e</td><td>2027e</td><td>2026e</td><td>2027e</td><td>2026e</td><td>2027e</td><td>2026e</td><td>2027e</td><td>1M</td><td>3M</td><td>12M</td></tr><tr><td colspan="12">Cleaning / Pest Control/ Catering</td></tr><tr><td>Rentokil</td><td>2.1%</td><td>2.3%</td><td>6.3%</td><td>7.4%</td><td>9.8%</td><td>11.0%</td><td>1.8x</td><td>1.4x</td><td>-10.4%</td><td>-6.1%</td><td>26.4%</td></tr><tr><td>ISS</td><td>1.6%</td><td>1.8%</td><td>7.7%</td><td>7.8%</td><td>15.2%</td><td>16.5%</td><td>2.4x</td><td>1.9x</td><td>0.4%</td><td>16.6%</td><td>44.8%</td></tr><tr><td>Elis</td><td>2.0%</td><td>2.3%</td><td>6.3%</td><td>7.3%</td><td>7.6%</td><td>8.0%</td><td>1.7x</td><td>1.4x</td><td>-3.9%</td><td>4.6%</td><td>10.0%</td></tr><tr><td colspan="12">Data &amp; Analytics</td></tr><tr><td>Experian (Mar, yr end)</td><td>2.2%</td><td>2.4%</td><td>4.5%</td><td>6.0%</td><td>17.8%</td><td>19.7%</td><td>1.7x</td><td>1.4x</td><td>-2.2%</td><td>-4.9%</td><td>-31.2%</td></tr><tr><td colspan="12">Distributors</td></tr><tr><td>Bunzl</td><td>3.1%</td><td>3.2%</td><td>5.2%</td><td>5.0%</td><td>11.1%</td><td>11.7%</td><td>1.8x</td><td>1.4x</td><td>1.0%</td><td>10.6%</td><td>8.0%</td></tr><tr><td>Ferguson</td><td>1.6%</td><td>1.6%</td><td>5.2%</td><td>4.7%</td><td>20.7%</td><td>22.2%</td><td>0.7x</td><td>0.6x</td><td>-9.2%</td><td>-5.5%</td><td>8.7%</td></tr><tr><td>Travis Perkins</td><td>1.9%</td><td>2.7%</td><td>-0.6%</td><td>10.2%</td><td>3.7%</td><td>4.6%</td><td>2.3x</td><td>2.1x</td><td>2.6%</td><td>-13.0%</td><td>-11.7%</td></tr><tr><td>RS Group (Mar, yr end)</td><td>3.8%</td><td>4.3%</td><td>5.5%</td><td>6.0%</td><td>11.6%</td><td>12.8%</td><td>1.0x</td><td>0.8x</td><td>6.9%</td><td>-1.7%</td><td>13.9%</td></tr><tr><td>Diploma (Sept, yr end)</td><td>0.9%</td><td>1.0%</td><td>3.3%</td><td>3.7%</td><td>20.3%</td><td>22.1%</td><td>0.8x</td><td>0.3x</td><td>0.6%</td><td>31.0%</td><td>51.0%</td></tr><tr><td colspan="12">Chemical Distributors</td></tr><tr><td>Azelis</td><td>1.7%</td><td>2.0%</td><td>10.7%</td><td>11.8%</td><td>6.9%</td><td>7.5%</td><td>3.2x</td><td>2.7x</td><td>-7.6%</td><td>33.8%</td><td>-25.2%</td></tr><tr><td>Brenntag</td><td>3.5%</td><td>3.7%</td><td>2.8%</td><td>8.9%</td><td>8.0%</td><td>8.8%</td><td>2.3x</td><td>2.0x</td><td>-9.6%</td><td>20.1%</td><td>-6.5%</td></tr><tr><td>IMCD</td><td>2.1%</td><td>2.4%</td><td>7.4%</td><td>7.6%</td><td>10.8%</td><td>11.6%</td><td>2.5x</td><td>2.1x</td><td>-11.2%</td><td>21.5%</td><td>-23.9%</td></tr><tr><td colspan="12">Outsourcing</td></tr><tr><td>TP</td><td>7.7%</td><td>8.8%</td><td>23.3%</td><td>29.8%</td><td>12.3%</td><td>13.6%</td><td>1.7x</td><td>1.2x</td><td>-6.8%</td><td>1.9%</td><td>-34.6%</td></tr><tr><td colspan="12">Power Rental</td></tr><tr><td>Sunbelt Rentals (Apr, yr end)</td><td>1.4%</td><td>1.6%</td><td>12.4%</td><td>13.7%</td><td>10.8%</td><td>12.0%</td><td>1.6x</td><td>1.4x</td><td>0.0%</td><td>0.0%</td><td>23.8%</td></tr><tr><td colspan="12">Security</td></tr><tr><td>Securitas</td><td>4.4%</td><td>4.7%</td><td>6.9%</td><td>7.3%</td><td>11.7%</td><td>12.0%</td><td>2.1x</td><td>1.8x</td><td>0.3%</td><td>-1.5%</td><td>9.8%</td></tr><tr><td>Verisure</td><td>0.6%</td><td>1.8%</td><td>1.9%</td><td>3.1%</td><td>6.6%</td><td>7.5%</td><td>2.7x</td><td>2.3x</td><td>0.8%</td><td>20.9%</td><td>-</td></tr><tr><td colspan="12">Multi-technical Services</td></tr><tr><td>SPIE</td><td>2.7%</td><td>3.0%</td><td>7.7%</td><td>8.2%</td><td>7.9%</td><td>9.4%</td><td>1.8x</td><td>1.3x</td><td>-3.1%</td><td>-4.2%</td><td>7.8%</td></tr><tr><td colspan="12">Staffing</td></tr><tr><td>Adecco</td><td>6.6%</td><td>7.7%</td><td>11.2%</td><td>14.1%</td><td>8.7%</td><td>9.6%</td><td>2.4x</td><td>2.0x</td><td>-6.7%</td><td>-21.4%</td><td>-26.1%</td></tr><tr><td>Hays (June, yr end)</td><td>2.0%</td><td>3.4%</td><td>1.8%</td><td>6.0%</td><td>9.0%</td><td>12.8%</td><td>-0.3x</td><td>-0.4x</td><td>3.8%</td><td>-10.6%</td><td>-50.5%</td></tr><tr><td>Pagegroup</td><td>9.1%</td><td>9.5%</td><td>8.1%</td><td>9.4%</td><td>8.1%</td><td>12.4%</td><td>-0.2x</td><td>-0.2x</td><td>-7.3%</td><td>-19.2%</td><td>-54.6%</td></tr><tr><td>Randstad</td><td>5.9%</td><td>5.9%</td><td>8.2%</td><td>10.9%</td><td>9.2%</td><td>10.3%</td><td>1.6x</td><td>1.3x</td><td>8.8%</td><td>1.5%</td><td>-24.7%</td></tr><tr><td colspan="12">TIC</td></tr><tr><td>Bureau Veritas</td><td>4.0%</td><td>4.4%</td><td>6.6%</td><td>8.3%</td><td>19.7%</td><td>22.2%</td><td>1.6x</td><td>1.4x</td><td>-3.3%</td><td>-11.4%</td><td>-14.6%</td></tr><tr><td>SGS</td><td>3.6%</td><td>3.8%</td><td>5.5%</td><td>6.9%</td><td>19.1%</td><td>22.3%</td><td>1.9x</td><td>1.5x</td><td>4.7%</td><td>-4.0%</td><td>5.5%</td></tr><tr><td>Eurofins</td><td>1.3%</td><td>1.6%</td><td>7.0%</td><td>7.8%</td><td>10.1%</td><td>11.1%</td><td>1.9x</td><td>1.5x</td><td>10.5%</td><td>-1.1%</td><td>14.0%</td></tr><tr><td>Sector Mean</td><td>3.2%</td><td>3.6%</td><td>6.9%</td><td>8.8%</td><td>11.5%</td><td>13.0%</td><td>1.7x</td><td>1.4x</td><td>-1.7%</td><td>2.4%</td><td>-3.5%</td></tr><tr><td>Sector Median</td><td>2.2%</td><td>2.8%</td><td>6.5%</td><td>7.7%</td><td>10.5%</td><td>11.8%</td><td>1.8x</td><td>1.4x</td><td>-1.1%</td><td>-1.3%</td><td>5.5%</td></tr></table>
+
+Source: MS estimates, Priced as at 5th of June 2026
+
+Exhibit 70: MS Business Services comps (3)
+
+<table><tr><td rowspan="2">Stock</td><td colspan="2">Organic Growth</td><td colspan="2">EBIT Margin (%)</td><td colspan="2">EPS</td><td colspan="2">EPS Growth (%)</td><td>Net Debt</td></tr><tr><td>2026e</td><td>2027e</td><td>2026e</td><td>2027e</td><td>2026e</td><td>2027e</td><td>2026e</td><td>2027e</td><td>2026e</td></tr><tr><td colspan="10">Cleaning / Pest Control/ Catering</td></tr><tr><td>Rentokil</td><td>4.2%</td><td>4.5%</td><td>16.1%</td><td>16.9%</td><td>0.29</td><td>0.32</td><td>12.2%</td><td>11.7%</td><td>3,435</td></tr><tr><td>ISS</td><td>6.0%</td><td>5.1%</td><td>5.2%</td><td>5.3%</td><td>20.5</td><td>22.4</td><td>23.9%</td><td>9.0%</td><td>15,202</td></tr><tr><td>Elis</td><td>3.7%</td><td>4.0%</td><td>16.3%</td><td>16.5%</td><td>2.0</td><td>2.3</td><td>12.0%</td><td>13.1%</td><td>3,017</td></tr><tr><td colspan="10">Data &amp; Analytics</td></tr><tr><td>Experian (Mar, yr end)</td><td>8.0%</td><td>7.6%</td><td>28.4%</td><td>29.1%</td><td>1.8</td><td>2.0</td><td>14.9%</td><td>13.2%</td><td>5,237</td></tr><tr><td colspan="10">Distributors</td></tr><tr><td>Bunzl</td><td>1.1%</td><td>2.0%</td><td>7.5%</td><td>7.5%</td><td>176.1</td><td>183.2</td><td>-1.3%</td><td>4.0%</td><td>2,041</td></tr><tr><td>Ferguson</td><td>3.5%</td><td>5.4%</td><td>9.4%</td><td>9.6%</td><td>11.0</td><td>12.5</td><td>8.5%</td><td>13.3%</td><td>2,533</td></tr><tr><td>Travis Perkins</td><td>1.1%</td><td>3.2%</td><td>2.8%</td><td>3.4%</td><td>28.0</td><td>39.4</td><td>-7.6%</td><td>40.9%</td><td>737</td></tr><tr><td>RS Group (Mar, yr end)</td><td>2.6%</td><td>4.4%</td><td>9.2%</td><td>9.5%</td><td>41.2</td><td>46.8</td><td>-1.1%</td><td>9.0%</td><td>329</td></tr><tr><td>Diploma (Sept, yr end)</td><td>12.2%</td><td>6.2%</td><td>25.3%</td><td>24.1%</td><td>240.5</td><td>256.0</td><td>34.9%</td><td>6.9%</td><td>401</td></tr><tr><td colspan="10">Chemical Distributors</td></tr><tr><td>Azelis</td><td>1.8%</td><td>3.6%</td><td>10.0%</td><td>10.1%</td><td>0.6</td><td>0.7</td><td>27.9%</td><td>14.5%</td><td>1,470</td></tr><tr><td>Brenntag</td><td>0.4%</td><td>2.6%</td><td>6.0%</td><td>6.3%</td><td>3.3</td><td>3.8</td><td>51.9%</td><td>12.8%</td><td>2,916</td></tr><tr><td>IMCD</td><td>0.4%</td><td>5.1%</td><td>10.4%</td><td>10.6%</td><td>5.7</td><td>6.3</td><td>5.0%</td><td>9.9%</td><td>1,455</td></tr><tr><td colspan="10">Outsourcing</td></tr><tr><td>TP</td><td>0.5%</td><td>2.6%</td><td>13.7%</td><td>14.7%</td><td>13.6</td><td>14.9</td><td>5.0%</td><td>9.4%</td><td>3,415</td></tr><tr><td colspan="10">Power Rental</td></tr><tr><td>Sunbelt Rentals (Apr, yr end)</td><td>3.3%</td><td>6.7%</td><td>22.3%</td><td>22.8%</td><td>3.6</td><td>4.4</td><td>-3.4%</td><td>20.6%</td><td>8,067</td></tr><tr><td colspan="10">Security</td></tr><tr><td>Securitas</td><td>-0.8%</td><td>3.6%</td><td>7.7%</td><td>7.7%</td><td>12.4</td><td>13.3</td><td>7.0%</td><td>6.8%</td><td>26,267</td></tr><tr><td>Verisure</td><td>9.8%</td><td>9.6%</td><td>26.0%</td><td>26.9%</td><td>0.6</td><td>0.7</td><td>62.2%</td><td>21.2%</td><td>5,134</td></tr><tr><td colspan="10">Multi-technical Services</td></tr><tr><td>SPIE</td><td>2.8%</td><td>3.8%</td><td>7.8%</td><td>7.9%</td><td>3.3</td><td>3.6</td><td>21.2%</td><td>10.2%</td><td>2,107</td></tr><tr><td colspan="10">Staffing</td></tr><tr><td>Adecco</td><td>3.1%</td><td>2.6%</td><td>3.1%</td><td>3.3%</td><td>2.4</td><td>2.8</td><td>2.2%</td><td>16.4%</td><td>2,128</td></tr><tr><td>Hays (June, yr end)</td><td>-7.0%</td><td>2.0%</td><td>1.0%</td><td>1.4%</td><td>1.3</td><td>2.1</td><td>0.8%</td><td>59.7%</td><td>-27</td></tr><tr><td>Pagegroup</td><td>0.2%</td><td>4.0%</td><td>2.6%</td><td>3.9%</td><td>7.7</td><td>12.2</td><td>15.3%</td><td>59.5%</td><td>-23</td></tr><tr><td>Randstad</td><td>1.5%</td><td>2.7%</td><td>3.1%</td><td>3.3%</td><td>2.6</td><td>2.9</td><td>2.1%</td><td>13.7%</td><td>1,666</td></tr><tr><td colspan="10">TIC</td></tr><tr><td>Bureau Veritas</td><td>5.0%</td><td>6.4%</td><td>16.5%</td><td>16.7%</td><td>1.56</td><td>1.73</td><td>10.0%</td><td>10.9%</td><td>2,182</td></tr><tr><td>SGS</td><td>5.5%</td><td>6.2%</td><td>16.1%</td><td>16.3%</td><td>4.1</td><td>4.4</td><td>6.8%</td><td>9.0%</td><td>3,485</td></tr><tr><td>Eurofins</td><td>4.8%</td><td>6.5%</td><td>15.4%</td><td>15.9%</td><td>4.31</td><td>4.88</td><td>11.1%</td><td>13.4%</td><td>3,259</td></tr></table>
+
+Source: MS estimates, Priced as at 5th of June 2026
+
+## Risk Reward – Adecco Group (ADEN.S)
+
+Leverage remains too elevated
+
+## PRICE TARGET SFr 15.00
+
+Our price target is based on the rounded average of: 1) DCF – SFr 18.5 based on a WACC of 10.5%, terminal growth rate of +1% and terminal EBITA margin of 3.8%; and 2) EV/EBITA target multiple – SFr 11 based on 7x NTM EBITA. This is a discount to Adecco's mid-cycle average to reflect the uncertain environment and structural risks.
+
+Consensus Price Target Distribution
+
+Source: Refinitiv, MS
+
+![](images/94365017d37de47f11454ba6644e909c4e1695402b4a790bed48781a1f71756a.jpg)
+
+<details>
+<summary>bar-line hybrid chart</summary>
+
+| Metric | Value |
+|--------|-------|
+| SFr 13.02 | 22.93 |
+| SFr 33.93 | 22.93 |
+| MS PT | 22.93 |
+</details>
+
+RISK REWARD CHART  
+![](images/d3e027eea0201fd1adcf18d3835b1a44fa53a2dbfe0c3ea07465965ca097245a.jpg)
+
+<details>
+<summary>line chart</summary>
+
+| Date    | Historical Stock Performance | Current Stock Price | Price Target |
+|---------|-------------------------------|---------------------|--------------|
+| JUN '25 | ~24                           | -                   | -            |
+| DEC '25 | ~24                           | -                   | -            |
+| JUN '26 | 16.58                         | 16.58               | -            |
+| JUN '27 | -                             | 15.00               | -9.53%       |
+</details>
+
+Source: Refinitiv, MS
+
+## UNDERWEIGHT THESIS
+
+Organic growth converging: We think Adecco's organic growth could deteriorate and gradually converge toward staffing peers.
+
+Company-specific risks: These include the risk of lower organic growth at Akkodis, large exposure to France, elevated leverage and potential shareholder dilution. We think this justifies the discount at which the stock is trading to peers.
+
+Valuation less demanding: Adecco trades on 7.5x EV/EBITA NTM, on our estimates, 5% below the historical average and slightly below peer Randstad.
+
+Consensus Rating Distribution  
+![](images/358f2841f85c6e0425d0bda702623e0a81864afb221d89782529b5336f5a79f0.jpg)
+
+<details>
+<summary>bar chart</summary>
+
+| Category     | Value |
+| ------------ | ----- |
+| Overweight   | 35%   |
+| Equal-weight | 29%   |
+| Underweight  | 35%   |
+| MS Rating    | 35%   |
+</details>
+
+Source: Refinitiv, MS
+
+## BULL CASE
+
+## SFr 37.00
+
+## Broad staffing recovery, no AI impact
+
+Assumes organic growth of c5% in FY26, driven by improving macro sentiment, and similar level in FY27/29e as well. We assume margins improve to 3.4% this year and go back to 5-6% over the midterm. This scenario is consistent with a usual cycle combined with no volume/pricing headwinds from AI.
+
+## BASE CASE
+
+## SFr 15.00
+
+## LSD organic growth, lack of gross margin recovery
+
+We forecast c3.6% organic growth in FY26 as positive momentum remains unchanged, especially in flex placement. EBIT margin flat at 3% reflecting continued pressure on gross margin, partially offset by slight operating leverage. We assume subdued organic growth over the midterm (2.7% FY27-29 average) due to AI disruption and limited 20bps improvement in margin per year.
+
+## BEAR CASE
+
+## SFr 7.00
+
+## Stronger AI impact combined with de-rating
+
+We reflect the impact of (1) continued challenging staffing backdrop and (2) stronger headwinds from AI. We assume organic growth of 0% in FY26 and -5% next year. As a result, EBIT margin declines to 2.6% this year and 2.5% in 2027. We assume -2% organic growth per year over the midterm and no change in margin as volume/pricing pressures are offset by SG&A reduction thanks to AI-led efficiency gains. We also apply a lower fair value multiple, in line with other AI disrupted stocks.
+
+## Risk Reward – Adecco Group (ADEN.S)
+
+KEY EARNINGS INPUTS
+
+<table><tr><td>Drivers</td><td>2025</td><td>2026e</td><td>2027e</td><td>2028e</td></tr><tr><td>Organic growth (%)</td><td>0.8</td><td>3.6</td><td>2.6</td><td>2.8</td></tr><tr><td>Gross Margin (%)</td><td>19.2</td><td>18.8</td><td>18.8</td><td>18.8</td></tr><tr><td>EBITA margin (%)</td><td>3.0</td><td>3.0</td><td>3.1</td><td>3.3</td></tr><tr><td>Net Debt/EBITDA</td><td>2.7</td><td>2.5</td><td>2.2</td><td>1.8</td></tr></table>
+
+## INVESTMENT DRIVERS
+
+• GDP, inflection in PMIs, monthly staffing data  
+• Confidence of employers/candidates  
+• Evolution of leverage  
+• 2Q26 results on August 6th
+
+## GLOBAL REVENUE EXPOSURE
+
+![](images/94e6138e1ef6f6c5b0ea0dc0be76f1967dd3431305e09ec91e6d2d5ac056983c.jpg)
+
+<details>
+<summary>pie chart</summary>
+
+| Region | Percentage (%) |
+| :--- | :--- |
+| APAC, ex Japan, Mainland China and India | 0-10 |
+| India | 0-10 |
+| Japan | 0-10 |
+| Latin America | 0-10 |
+| MEA | 0-10 |
+| Mainland China | 0-10 |
+| UK | 0-10 |
+| North America | 10-20 |
+| Europe ex UK | 50-60 |
+</details>
+
+Source: MS Estimate View explanation of regional hierarchies here
+
+## MS ALPHA MODELS
+
+![](images/e8f3c456de054bfcad349c3ba43d7f0391a09576083bf9f3a894c2d31310087a.jpg)  
+3 Month Horizon  
+Source: Refinitiv, FactSet, MS; 1 is the highest favored Quintile and 5 is the least favored Quintile
+
+## RISKS TO PT/RATING
+
+## RISKS TO UPSIDE
+
+• Economic soft landing leading to sudden improvement in employer/candidate confidence and associated recovery in staffing market  
+- Pricing sticking close to all-time high due to talent scarcity  
+- Quick turnaround of Akkodis and European staffing
+
+## RISKS TO DOWNSIDE
+
+• Macro data decelerating  
+- Trade tensions  
+- Elevated leverage  
+• Competitive pressure from online rivals  
+- AI job destruction leading to volume/pricing pressure
+
+## OWNERSHIP POSITIONING
+
+![](images/24310acf140b7865390deec8cad4d7ae0ee652de2a51dc94bac2f9a3fa9447d5.jpg)
+
+<details>
+<summary>heatmap</summary>
+
+| Category                  | Value  |
+| ------------------------- | ------ |
+| Inst. Owners, % Active    | 52.6%  |
+| HF Sector Long/Short Ratio | 3.1x   |
+| HF Sector Net Exposure    | 34.7%  |
+</details>
+
+Refinitiv; MSPB Content. Includes certain hedge fund exposures held with MSPB. Information may be inconsistent with or may not reflect broader market trends. Long/Short Ratio = Long Exposure / Short exposure. Sector % of Total Net Exposure = (For a particular sector: Long Exposure - Short Exposure) / (Across all sectors: Long Exposure – Short Exposure).
+
+## MS ESTIMATES VS. CONSENSUS
+
+FY Dec 2026e
+
+![](images/12a5ceba5e0290cc2df4b1c41cf6492b1317f6337a8f20f572fea7a5e83373ff.jpg)
+
+![](images/442b737c760577457f1c06c1ebbaaa21c886dcc18d1ca06e255f7cc70a2a1842.jpg)
+
+![](images/f50fcf0368cd280d14060b720ade57ba101a628001843e5d8168d11e859ea3d0.jpg)
+
+![](images/2b231c36473354e7dc08feaebcf0e1a5b1063cea772b489ac7124935a23347a3.jpg)  
+◆ Mean ◆ MS Estimates  
+Source: Refinitiv, MS
+
+## Risk Reward – Randstad NV (RAND.AS)
+
+Better margin momentum, lower leverage
+
+## PRICE TARGET €25.50
+
+Our price target of €25.5 is based on the rounded average of: 1) DCF €31 based on WACC of 10.5%, terminal growth of +1% and terminal EBITA margin of 3.8%; 2) EV/EBITA target multiple: €19.5 on 7x NTM EBITA, below the historical average of 10x to reflect the uncertain staffing environment and structural risks.
+
+![](images/128a35809d905622443335744df72e97b37fc22a28e4cd3f35b51a6e08a69a58.jpg)
+
+<details>
+<summary>bar-line hybrid chart</summary>
+
+| Scenario | Value     |
+| -------- | --------- |
+| Mean     | €18.00    |
+| MS Estimates | €30.90   |
+| MS PT    | €60.00    |
+</details>
+
+RISK REWARD CHART AND OPTIONS IMPLIED PROBABILITIES (12M)  
+![](images/347ba8c6021566c5b3afa2b05a08b9c13ffd934c6ab94abea9489b399e364255.jpg)
+
+<details>
+<summary>line chart</summary>
+
+| Date    | Value     |
+|---------|-----------|
+| JUN '25 | €26.84    |
+| JUN '26 | €25.50    |
+| JUN '27 | €48.00    |
+| Prob (>48.00) | ~+78.84% |
+| Prob (>25.50) | ~49.5%   |
+| Prob (<12.00) | ~-55.29% |
+| Prob (<12.00) | ~-6.0%   |
+</details>
+
+Key: — Historical Stock Performance ● Current Stock Price ◆ Price Target  
+Source: Refinitiv, MS, MS Institutional Equities Division. The probabilities of our Bull, Base, and Bear case scenarios playing out were estimated with implied volatility data from the options market as of 8 Jun 2026. All figures are approximate risk-neutral probabilities of the stock reaching beyond the scenario price in either three-months' or one-years' time. View explanation of Options Probabilities methodology here
+
+## EQUAL-WEIGHT THESIS
+
+■ Better momentum: While Randstad has underperformed Adecco, we think it should catch up and benefit from better operating leverage as the group continues to be cost disciplined and deploy its marketplace model.  
+■ Structural risk: We think staffing companies are at risk of being disrupted by AI, including job destruction, higher competition from marketplaces and risk of valuation de-rating.  
+■ Valuation: Randstad trades on 8x EV/EBITA NTM, on our estimates, slightly above key peers Adecco, a premium justified by the lower leverage.
+
+Consensus Rating Distribution  
+![](images/3441c1cc674a6c46be5400a9e920d605029042d5826c9fbfb9b5d72f6a37f1d5.jpg)
+
+<details>
+<summary>bar chart</summary>
+
+| Rating       | Percentage |
+| ------------ | ---------- |
+| Overweight   | 30%        |
+| Equal-weight | 45%        |
+| Underweight  | 25%        |
+</details>
+
+Source: Refinitiv, MS
+
+## BULL CASE
+
+## €48.00
+
+## Confidence rebuilding quickly, no AI impact
+
+We assume 4% organic growth in FY26, which would imply ramp-up in activity from 1Q26 onwards. This is driven by better macroeconomic sentiment and upside from continuous pricing strength due to talent scarcity. This results in improved operational leverage and margins at 3.5% vs. 3.2% in base case for this year. We assume MSD organic growth over the midterm and margin returning to the midpoint of management 5-6% guidance.
+
+## BASE CASE
+
+## €25.50
+
+## Stable environment, AI headwinds to growth
+
+We expect organic growth of 1.1% in FY26e, led by a trough in activity in H1 2026 before a stabilization from 2H26 onwards. We forecast stable operating margin in FY26e at 3.1%, mainly driven by opex savings while gross margin remains under pressure. We forecast 2.5% organic growth and 20bps margin improvement per year over FY27-29, reflecting stable market backdrop combined with mounting AI headwinds.
+
+## BEAR CASE
+
+## €12.00
+
+## AI pressure combined with de-rating
+
+We reflect the impact of (1) continued challenging staffing backdrop and (2) stronger headwinds from AI. We assume organic growth of -3% in FY26 and -5% next year. As a result, EBIT margin declines to 3% this year and 2.5% in 2027. We assume -2% organic growth per year over the midterm and no change in margin as volume/pricing pressures are offset by SG&A reduction thanks to AI-led efficiency gains. We also apply a lower fair value multiple, in line with other AI disrupted stocks.
+
+## Risk Reward – Randstad NV (RAND.AS)
+
+KEY EARNINGS INPUTS
+
+<table><tr><td>Drivers</td><td>2025</td><td>2026e</td><td>2027e</td><td>2028e</td></tr><tr><td>Organic growth (%)</td><td>(3.3)</td><td>1.4</td><td>2.7</td><td>3.0</td></tr><tr><td>Gross Margin (%)</td><td>18.7</td><td>18.4</td><td>18.4</td><td>18.4</td></tr><tr><td>EBITA margin (%)</td><td>3.1</td><td>3.1</td><td>3.3</td><td>3.4</td></tr><tr><td>Net Debt/EBITDA</td><td>1.6</td><td>1.7</td><td>1.4</td><td>1.1</td></tr></table>
+
+## INVESTMENT DRIVERS
+
+• GDP, inflection in PMIs, monthly staffing data  
+• Confidence of employers/candidates  
+• 2Q26 results on July 22
+
+## GLOBAL REVENUE EXPOSURE
+
+![](images/df4aa87b0f8e721c3571bbf03b747a4807fc3dbe59de42b84d36a75eb023e1dc.jpg)  
+0-10% APAC, ex Japan, Mainland China and India  
+0-10% India  
+0-10% Japan  
+0-10% Latin America  
+0-10% Mainland China  
+0-10% UK  
+20-30% North America  
+60-70% Europe ex UK
+
+Source: MS Estimate View explanation of regional hierarchies here
+
+## MS ALPHA MODELS
+
+![](images/3eefec046e32378001f7823c7b466f905065aa5de758959db4b8ddb4a8aa03cc.jpg)
+
+![](images/e7ceada6bac964917b8415906039d1a9dbff75b4f1e4b7d9de8b62489014b496.jpg)
+
+Source: Refinitiv, FactSet, MS; 1 is the highest favored Quintile and 5 is the least favored Quintile
+
+## RISKS TO PT/RATING
+
+## RISKS TO UPSIDE
+
+• Economic soft landing leads to sudden improvement in employer/candidate confidence and associated recovery in staffing market  
+- Prices sticking close to all-time high  
+- Pricing and operating leverage drive an operating margin uplift toward the 5-6% target
+
+## RISKS TO DOWNSIDE
+
+• Macro data decelerates  
+- Trade tensions  
+- AI job destruction leads to volume/pricing pressure
+
+## OWNERSHIP POSITIONING
+
+Inst. Owners, % Active
+
+HF Sector Long/Short Ratio
+
+HF Sector Net Exposure
+
+![](images/30e6faba5410455ea85d625dda0bad91243387aaed18bd407811dbe01204261c.jpg)
+
+Refinitiv; MSPB Content. Includes certain hedge fund exposures held with MSPB. Information may be inconsistent with or may not reflect broader market trends. Long/Short Ratio = Long Exposure / Short exposure. Sector % of Total Net Exposure = (For a particular sector: Long Exposure - Short Exposure) / (Across all sectors: Long Exposure – Short Exposure).
+
+## MS ESTIMATES VS. CONSENSUS
+
+FY Dec 2026e
+
+<table><tr><td rowspan="2">Sales / Revenue(€, mn)</td><td rowspan="2">22,271</td><td>23,062</td><td rowspan="2">26,768</td></tr><tr><td>23,329</td></tr></table>
+
+<table><tr><td rowspan="2">EBIT(€, mn)</td><td>521</td><td>717</td><td>1,075</td></tr><tr><td></td><td>676</td><td></td></tr></table>
+
+<table><tr><td rowspan="2">Net income(€, mn)</td><td>363</td><td>446</td><td>774</td></tr><tr><td></td><td>467</td><td></td></tr></table>
+
+<table><tr><td rowspan="2">EPS (€)</td><td>2.06</td><td>2.54</td><td>4.40</td></tr><tr><td></td><td>2.65</td><td></td></tr></table>
+
+◆ Mean ◆ MS Estimates  
+Source: Refinitiv, MS
+
+## Risk Reward – Hays PLC (HAYS.L)
+
+Recent de-rating reflects ST headwinds
+
+## PRICE TARGET 35p
+
+Our price target of 35p is based on an average of: 1) DCF – 48p on a WACC of 11%, terminal growth rate of 1.5% and terminal conversion margin of 15%; and 2) EV/EBITA target multiple – 21p based on 7x NTM EBITA, below the through-cycle average multiple, reflecting short-term uncertainty and structural headwinds.
+
+Consensus Price Target Distribution
+
+Source: Refinitiv, MS
+
+![](images/7b36518c1087191233a3ed7479c5517d65e46b856ce3652aa9d24302f553206e.jpg)
+
+<details>
+<summary>bar-line hybrid chart</summary>
+
+| Category       | Value  |
+| -------------- | ------ |
+| MS PT          | 28.00p |
+| 42p            | 60.00p |
+</details>
+
+RISK REWARD CHART  
+![](images/c76388cd43ce65fdbd4ce5891e0a892f118422be0418b1182e619937759d3877.jpg)
+
+<details>
+<summary>line chart</summary>
+
+| Date    | Historical Stock Performance | Current Stock Price | Price Target |
+|---------|-------------------------------|---------------------|--------------|
+| JUN '25 | ~75p                          | -                   | -            |
+| JUN '26 | 36p                           | 36p                 | -            |
+| JUN '27 | -                             | 35p                 | -4.80%       |
+| JUN '27 | -                             | 21p                 | -42.05%      |
+</details>
+
+Source: Refinitiv, MS
+
+## EQUAL-WEIGHT THESIS
+
+■ Poor data in Germany/UK: Weak staffing data in Germany/UK relative to other countries pose a risk for Hays, we believe, but reflected within consensus expectations.  
+Cyclical vs. structural: The debate on the impact of AI on staffers is likely to emerge sooner or later. In our view, Hays is exposed to the junior-entry white-collar segment, making it subject to potential AI disruptions.  
+■ Valuation: The shares trade on 10x NTM EBITA, on our estimates, below the historical average of 12.5x and 50% below peers Page Group.
+
+Consensus Rating Distribution  
+![](images/3bf8875dc594678c6aa0aad14946e49200ac6fdfd35c564b39ace9b2d14a576c.jpg)
+
+<details>
+<summary>bar chart</summary>
+
+| Category      | Value  |
+| ------------- | ------ |
+| Overweight    | 36%    |
+| Equal-weight  | 45%    |
+| Underweight   | 18%    |
+| MS Rating     |        |
+</details>
+
+Source: Refinitiv, MS
+
+## BULL CASE
+
+## 75p
+
+## Macro recovery and AI-led efficiency gains
+
+Assumes net fee growth of -5% in FY26 above our base case (-7.7%) and conversion margin hits 4% vs 2.7% in our base case. This is driven by a swift recovery in all geographies in 2H26, supported by a better macroeconomic environment. We model a steeper improvement in organic growth and profitability, assuming no AI-led job destruction. We also apply a higher fair value multiple, aligned with the average through the last cycle.
+
+## BASE CASE
+
+## 35p
+
+## Challenging 2026, lower mid-term growth outlook
+
+We forecast organic growth to decline by -7.7% in FY26, led by an uncertain macro/political environment and reflecting continued challenges in 2H26. Conversion margins slightly improve, with cost-saving initiatives offsetting operating deleverage. We expect mid-single-digit organic net fee growth, lower than during the previous cycle to reflect structural headwinds. We expect conversion margin to return to 11% by FY29.
+
+## BEAR CASE
+
+## 21p
+
+## Unsupportive macro & AI disruption
+
+Assumes organic net fee decline of -9% in FY26 and a conversion margin of 1.5%. This reflects the impact of another reduction in staffing volume across EMEA and lack of recovery elsewhere. We factor in LSD negative net fee growth over FY27-29 and no growth thereafter due to AI-led job destruction. We still assume a profitability improvement, but at a slower pace due to limited operating leverage and lack of pricing power. We also apply a fair value multiple aligned with AI-disrupted stocks.
+
+## Risk Reward – Hays PLC (HAYS.L)
+
+KEY EARNINGS INPUTS
+
+<table><tr><td>Drivers</td><td>2025</td><td>2026e</td><td>2027e</td><td>2028e</td></tr><tr><td>Organic growth (%)</td><td>(11.0)</td><td>(7.7)</td><td>0.3</td><td>4.8</td></tr><tr><td>Conversion Margin (%)</td><td>4.7</td><td>4.9</td><td>5.6</td><td>8.5</td></tr><tr><td>Excess Cash (£m)</td><td>(63.0)</td><td>(71.7)</td><td>(58.8)</td><td>(32.4)</td></tr></table>
+
+## INVESTMENT DRIVERS
+
+• GDP, inflection in PMIs, monthly staffing data  
+• Confidence of employers/candidates  
+• German macroeconomic backdrop  
+• 3Q26 trading update on July 10
+
+## GLOBAL REVENUE EXPOSURE
+
+![](images/6e2b16d833aef33ed1f32423cf043601f7f9c27d19e01426876d248e0b01583a.jpg)
+
+0-10% Japan  
+0-10% Mainland China  
+0-10% North America  
+10-20% APAC, ex Japan, Mainland China and India  
+10-20% UK  
+- 50-60% Europe ex UK
+
+Source: MS Estimate
+
+View explanation of regional hierarchies here
+
+## RISKS TO PT/RATING
+
+## RISKS TO UPSIDE
+
+- Improved visibility around growth inflection  
+- More resilient German market than anticipated / turnaround in Australia  
+• Fee rates remaining elevated  
+- Management delivering on promised profitability improvement
+
+## RISKS TO DOWNSIDE
+
+• European recession and lack of recovery elsewhere  
+• Significant deterioration in Hays' contracting business in Germany  
+• Normalisation of fee rates  
+- AI disruption
+
+## OWNERSHIP POSITIONING
+
+![](images/e6956cc7a03e6c37c407c2885241e9765ef7b87e0c6813074ac1aa2b27d5a34e.jpg)
+
+<details>
+<summary>heatmap</summary>
+
+| Category                  | Value  |
+| ------------------------- | ------ |
+| Inst. Owners, % Active    | 84.7%  |
+| HF Sector Long/Short Ratio | 3.1x   |
+| HF Sector Net Exposure    | 34.7%  |
+</details>
+
+Refinitiv; MSPB Content. Includes certain hedge fund exposures held with MSPB. Information may be inconsistent with or may not reflect broader market trends. Long/Short Ratio = Long Exposure / Short exposure. Sector % of Total Net Exposure = (For a particular sector: Long Exposure - Short Exposure) / (Across all sectors: Long Exposure – Short Exposure).
+
+## MS ESTIMATES VS. CONSENSUS
+
+![](images/62dc097c4a264326e273ffc3c6c85ccd06176dd35ef7949856cb41a2500b8b28.jpg)
+
+<details>
+<summary>bar-line hybrid chart</summary>
+
+FY Jun 2026e
+| Metric | Mean (£ mn) | MS Estimates (£ mn) | Mean (£ mn) | MS Estimates (£ mn) |
+| :--- | :--- | :--- | :--- | :--- |
+| Sales / Revenue | 5,118 | 6,008 | 5,627 | 6,455 |
+| EBIT | 21 | 42 | 45 | 48 |
+| Net income | 15 | 18 | 20 | 21 |
+| EPS (p) | 0.8 | 1.1 | 1.3 | 1.3 |
+</details>
+
+Source: Refinitiv, MS
+
+## Risk Reward – Page Group PLC (PAGE.L)
+
+Consensus too ambitious; Underweight
+
+## PRICE TARGET 110p
+
+Our price target of 110p is based on an average of: 1) DCF – 175p based on a WACC of 12%, terminal growth rate of +1.5% and terminal conversion margin of 15%; and 2) EV/EBITA target multiple – 45p based on 7x NTM EBITA, below the through-cycle average multiple, reflecting short-term uncertainty and structural risks.
+
+![](images/113421b803ded2f72e7a17ab0c6fcc7efa6dde0ee600d214c3d1dca25797999b.jpg)
+
+<details>
+<summary>bar-line hybrid chart</summary>
+
+| Scenario         | Value   |
+| ---------------- | ------- |
+| MS PT            | 110p    |
+| MS   | 163p    |
+| Mean             | 260.00p |
+</details>
+
+RISK REWARD CHART  
+![](images/160406b6dc53179248552c3d6ecae31f7fc85096f86846dade60b81cd34a388c.jpg)
+
+<details>
+<summary>line chart</summary>
+
+| Date    | Historical Stock Performance | Current Stock Price | Price Target |
+|---------|-------------------------------|---------------------|--------------|
+| JUN '25 | ~300p                         | -                   | -            |
+| DEC '25 | ~240p                         | -                   | -            |
+| JUN '26 | 124p                          | 124p                | -            |
+| JUN '27 | -                             | 110p                | -11.36%      |
+|       | -                             | 55p                 | -55.68%      |
+|       | -                             | 270p                | +117.57%     |
+</details>
+
+Source: Refinitiv, MS
+
+## UNDERWEIGHT THESIS
+
+■ Europe still a drag: While North America is now experiencing better momentum, we do not see an immediate path for improvement in Europe (c55% of Page gross profit); we believe 2026 consensus is too ambitious.  
+■ AI risk: While Page Group is less exposed to lower-salary white-collar recruitment, its large perm activity creates risk of AI disintermediation, in our view.  
+■ Valuation: The shares trade on 15x NTM EBITA, on our estimates, above the historical average of 14x.
+
+Consensus Rating Distribution  
+![](images/a4c3eec96b7d9db6f17827846f86f08071afc15281d51c851600b18bffa7c688.jpg)
+
+<details>
+<summary>bar chart</summary>
+
+| Category       | Value |
+| -------------- | ----- |
+| Overweight     | 20%   |
+| Equal-weight   | 60%   |
+| Underweight    | 20%   |
+| MS Rating      | 20%   |
+</details>
+
+Source: Refinitiv, MS
+
+## BULL CASE
+
+## 270p
+
+## BASE CASE
+
+## 110p
+
+## BEAR CASE
+
+## 55p
+
+## Macro improves, no negative AI impact
+
+Assumes gross profit organic growth of 3% in FY26 above our base case (flat) and conversion margin hits 6% vs 3% in our base case. This is driven by a swift recovery in all geographies in the short term, supported by a better macroeconomic environment. We model a steeper improvement in organic growth and profitability, assuming no AI-led job destruction. We also apply a higher fair value multiple, aligned with the average through the last cycle.
+
+## Perm remains weak, AI headwinds
+
+In our base case, we incorporate the impact of a challenging but stable macro backdrop through the first half of 2026 before a gradual stabilization materializes in the second half. However, this implies perm recruitment remains subdued through the rest of 2026. We -2.8% organic growth and conversion rate at 3% in FY26. We see a gradual recovery from 2H26 onwards for both organic growth and margin, although at a slow pace due to weak perm and AI-related headwinds.
+
+## Challenging macro, AI headwinds mounting
+
+Assumes organic gross profit decline of -5% in FY26 and a conversion margin of 2%. We factor in low-single-digit negative net fee growth over FY26-29 on average and no growth thereafter due to AI-led job destruction. We still expect a profitability improvement, but at a slower pace than in our base case due to limited operating leverage and lack of pricing power. We also apply a fair value multiple aligned with AI-disrupted stocks.
+
+## Risk Reward – Page Group PLC (PAGE.L)
+
+KEY EARNINGS INPUTS
+
+<table><tr><td>Drivers</td><td>2025</td><td>2026e</td><td>2027e</td><td>2028e</td></tr><tr><td>Organic growth (%)</td><td>(7.8)</td><td>(2.8)</td><td>0.4</td><td>3.6</td></tr><tr><td>Conversion Margin (%)</td><td>4.7</td><td>3.0</td><td>3.9</td><td>6.5</td></tr><tr><td>Excess Cash (£m)</td><td>(48.6)</td><td>(71.7)</td><td>(79.4)</td><td>(75.4)</td></tr></table>
+
+## INVESTMENT DRIVERS
+
+• GDP, inflection in PMIs, monthly staffing data  
+• Confidence of employers/candidates  
+- Improvement in the overall economic outlook in Europe  
+• 2Q26 trading update on July 13
+
+## GLOBAL REVENUE EXPOSURE
+
+![](images/b6cb911a11a200e427099ccb3ce52adbbc6b321f2e00e83542f919f30f7277a0.jpg)
+
+<details>
+<summary>pie chart</summary>
+
+| Region | Percentage (%) |
+| :--- | :--- |
+| APAC, ex Japan, Mainland China and India | 0-10 |
+| Japan | 0-10 |
+| Latin America | 0-10 |
+| MEA | 0-10 |
+| Mainland China | 0-10 |
+| North America | 10-20 |
+| UK | 10-20 |
+| Europe ex UK | 40-50 |
+</details>
+
+Source: MS Estimate View explanation of regional hierarchies here
+
+## RISKS TO PT/RATING
+
+## RISKS TO UPSIDE
+
+- Improved visibility around growth inflection  
+- More resilient European economic environment, leading to a swift recovery  
+• Fee rates remaining elevated due to lasting talent scarcity  
+• Economic slowdown driven by European recession  
+- Sudden normalisation in fee rates adding to the volume headwinds  
+- Compression of conversion margin as growth unwinds  
+• Job destruction and disintermediation risk due to AI
+
+## RISKS TO DOWNSIDE
+
+## OWNERSHIP POSITIONING
+
+![](images/e0047c9cae44d929e5ed52a4ede94a2f2ef1dc24e5c312f75066454efa142528.jpg)
+
+<details>
+<summary>bar chart</summary>
+
+| Category                  | Value  |
+| ------------------------- | ------ |
+| Inst. Owners, % Active    | 88.9%  |
+| HF Sector Long/Short Ratio | 3.1x   |
+| HF Sector Net Exposure    | 34.7%  |
+</details>
+
+Refinitiv; MSPB Content. Includes certain hedge fund exposures held with MSPB. Information may be inconsistent with or may not reflect broader market trends. Long/Short Ratio = Long Exposure / Short exposure. Sector % of Total Net Exposure = (For a particular sector: Long Exposure - Short Exposure) / (Across all sectors: Long Exposure – Short Exposure).
+
+## MS ESTIMATES VS. CONSENSUS
+
+![](images/ba0e14593a8093a559635abef10144f64eb1b630e9f2730c7728c10fcf8e4da1.jpg)
+
+<details>
+<summary>bar-line hybrid chart</summary>
+
+FY Dec 2026e
+| Metric | Mean (p) | MS Estimates |
+| :--- | :--- | :--- |
+| Sales / Revenue (£, mn) | 1,398 | 1,448 |
+| EBITDA (£, mn) | 88 | 74 |
+| Net income (£, mn) | 18 | 12 |
+| EPS (p) | 5.2 | 3.9 |
+| FY Dec 2026e | 1,567 | 1,509 |
+| FY Dec 2026e | 98 | 1,448 |
+| FY Dec 2026e | 25 | 1,448 |
+| FY Dec 2026e | 7.7 | 1,448 |
+Source: Refinitiv, MS
+</details>
+
+## Risk Reward Reference links
+
+1. View explanation of Options Probabilities methodology -  
+Options\_Probabilities\_Exhibit\_Link.pdf  
+2. View descriptions of Risk Rewards Themes - RR\_Themes\_Exhibit\_Link.pdf  
+3. View explanation of regional hierarchies - GEG\_Exhibit\_Link.pdf  
+4. View explanation of Theme/Exposure methodology -  
+ESG\_Sustainable\_Solutions\_External\_Link.pdf  
+5. View explanation of HERS methodology - ESG\_HERS\_External\_Link.pdf
+
+## Disclosure Section
+
+The information and opinions in MS were prepared or are disseminated by MS Europe S.E., regulated by Bundesanstalt fuer Finanzdienstleistungsaufsicht (BaFin) and/or MS & Co. International plc, authorized by the Prudential Regulation Authority and regulated by the Financial Conduct Authority and the Prudential Regulation Authority. MS & Co. International plc disseminates in the UK research that it has prepared, and which has been prepared by any of its affiliates, only to persons who (i) are investment professionals falling within Article 19(5) of the Financial Services and Markets Act 2000 (Financial Promotion) Order 2005 (as amended, the "Order"); (ii) are persons who are high net worth entities falling within Article 49(2)(a) to (d) of the Order; or (iii) are persons to whom an invitation or inducement to engage in investment activity (within the meaning of section 21 of the Financial Services and Markets Act 2000, as amended) may otherwise lawfully be communicated or caused to be communicated. As used in this disclosure section, MS includes RMB MS Proprietary Limited, MS Europe S.E., MS & Co International plc and its affiliates.
+
+For important disclosures, stock price charts and equity rating histories regarding companies that are the subject of this report, please see the MS Disclosure Website at www.morganstanley.com/eqr/disclosures/webapp/generalresearch, or contact your investment representative or MS at 1585 Broadway, (Attention: Research Management), New York, NY, 10036 USA.
+
+For valuation methodology and risks associated with any recommendation, rating or price target referenced in this research report, please contact the Client Support Team as follows: US/Canada +1 800 303-2495; Hong Kong +852 2848-5999; Latin America +1 718 754-5444 (U.S.); London +44 (0)20-7425-8169; Singapore +65 6834-6860; Sydney +61 (0)2-9770-1505; Tokyo +81 (0)3-6836-9000. Alternatively you may contact your investment representative or MS at 1585 Broadway, (Attention: Research Management), New York, NY 10036 USA.
+
+## Analyst Certification
+
+The following analysts hereby certify that their views about the companies and their securities discussed in this report are accurately expressed and that they have not received and will not receive direct or indirect compensation in exchange for expressing specific recommendations or views in this report: Remi Grenu; Annelies Vermeulen.
+
+## Global Research Conflict Management Policy
+
+MS has been published in accordance with our conflict management policy, which is available at www.morganstanley.com/institutional/research/conflictpolicies. A Portuguese version of the policy can be found at www.morganstanley.com.br
+
+## Important Regulatory Disclosures on Subject Companies
+
+As of April 30, 2026, MS beneficially owned 1% or more of a class of common equity securities of the following companies covered in MS: Azelis, Brenntag SE, Bunzl PLC, Bureau Veritas SA, DCC Plc, Diploma PLC, Experian PLC, Hays PLC, IMCD NV, Intertek Group PLC, ISS A/S, Page Group PLC, Randstad NV, Rentokil Initial PLC, RS Group PLC, SPIE, Sunbelt Rentals Inc., TP, Travis Perkins PLC.
+
+Within the last 12 months, MS managed or co-managed a public offering (or 144A offering) of securities of Elis SA, ISS A/S, Verisure PLC.
+
+Within the last 12 months, MS has received compensation for investment banking services from Verisure PLC.
+
+In the next 3 months, MS expects to receive or intends to seek compensation for investment banking services from Adecco Group, Azelis, Brenntag SE, Bunzl PLC, Bureau Veritas SA, DCC Plc, Diploma PLC, Elis SA, Eurofins Scientific SE, Experian PLC, Hays PLC, IMCD NV, Intertek Group PLC, ISS A/S, Randstad NV, Rentokil Initial PLC, RS Group PLC, Securitas AB, SPIE, Sunbelt Rentals Inc., TP, Travis Perkins PLC, Verisure PLC.
+
+Within the last 12 months, MS has received compensation for products and services other than investment banking services from Brenntag SE, DCC Plc, Elis SA, Experian PLC, ISS A/S, Randstad NV, Rentokil Initial PLC, SPIE, Verisure PLC.
+
+Within the last 12 months, MS has provided or is providing investment banking services to, or has an investment banking client relationship with, the following company: Adecco Group, Azelis, Brenntag SE, Bunzl PLC, Bureau Veritas SA, DCC Plc, Diploma PLC, Elis SA, Eurofins Scientific SE, Experian PLC, Hays PLC, IMCD NV, Intertek Group PLC, ISS A/S, Randstad NV, Rentokil Initial PLC, RS Group PLC, Securitas AB, SPIE, Sunbelt Rentals Inc., TP, Travis Perkins PLC, Verisure PLC.
+
+Within the last 12 months, MS has either provided or is providing non-investment banking, securities-related services to and/or in the past has entered into an agreement to provide services or has a client relationship with the following company: Adecco Group, Brenntag SE, DCC Plc, Elis SA, Experian PLC, ISS A/S, Randstad NV, Rentokil Initial PLC, SPIE, TP, Verisure PLC. MS & Co. LLC makes a market in the securities of Ferguson Enterprises Inc.
+
+MS & Co. International plc is a corporate broker to Diploma PLC.
+
+The equity research analysts or strategists principally responsible for the preparation of MS have received compensation based upon various factors, including quality of research, investor client feedback, stock picking, competitive factors, firm revenues and overall investment banking revenues. Equity Research analysts' or strategists' compensation is not linked to investment banking or capital markets transactions performed by MS or the profitability or revenues of particular trading desks.
+
+MS and its affiliates do business that relates to companies/instruments covered in MS, including market making, providing liquidity, fund management, commercial banking, extension of credit, investment services and investment banking. MS sells to and buys from customers the securities/instruments of companies covered in MS on a principal basis. MS may have a position in the debt of the Company or instruments discussed in this report. MS trades or may trade as principal in the debt securities (or in related derivatives) that are the subject of the debt research report.
+
+Certain disclosures listed above are also for compliance with applicable regulations in non-US jurisdictions.
+
+## STOCK RATINGS
+
+MS uses a relative rating system using terms such as Overweight, Equal-weight, Not-Rated or Underweight (see definitions below). MS does not assign ratings of Buy, Hold or Sell to the stocks we cover. Overweight, Equal-weight, Not-Rated and Underweight are not the equivalent of buy, hold and sell. Investors should carefully read the definitions of all ratings used in MS. In addition, since MS contains more complete information concerning the analyst's views, investors should carefully read MS, in its entirety, and not infer the contents from the rating alone. In any case, ratings (or research) should not be used or relied upon as investment advice. An investor's decision to buy or sell a stock should depend on individual circumstances (such as the investor's existing holdings) and other considerations.
+
+## Global Stock Ratings Distribution
+
+(as of May 31, 2026)
+
+The Stock Ratings described below apply to MS's Fundamental Equity Research and do not apply to Debt Research produced by the Firm.
+
+For disclosure purposes only (in accordance with FINRA requirements), we include the category headings of Buy, Hold, and Sell alongside our ratings of Overweight, Equal-weight, Not-Rated and Underweight. MS does not assign ratings of Buy, Hold or Sell to the stocks we cover. Overweight, Equal-weight, Not-Rated and Underweight are not the equivalent of buy, hold, and sell but represent recommended relative weightings (see definitions below). To satisfy regulatory requirements, we correspond Overweight, our most positive stock rating, with a buy recommendation; we correspond Equal-weight and Not-Rated to hold and Underweight to sell recommendations, respectively.
+
+<table><tr><td></td><td colspan="2">Coverage Universe</td><td colspan="3">Investment Banking Clients (IBC)</td><td colspan="2">Other Material Investment ServicesClients (MISC)</td></tr><tr><td>Stock RatingCategory</td><td>Count</td><td>% of Total</td><td>Count</td><td>% of Total IBC</td><td>% of RatingCategory</td><td>Count</td><td>% of Total OtherMISC</td></tr><tr><td>Overweight/Buy</td><td>1542</td><td>42%</td><td>465</td><td>51%</td><td>30%</td><td>707</td><td>43%</td></tr><tr><td>Equal-weight/Hold</td><td>1571</td><td>43%</td><td>369</td><td>40%</td><td>23%</td><td>723</td><td>44%</td></tr><tr><td>Not-Rated/Hold</td><td>3</td><td>0%</td><td>0</td><td>0%</td><td>0%</td><td>1</td><td>0%</td></tr><tr><td>Underweight/Sell</td><td>551</td><td>15%</td><td>86</td><td>9%</td><td>16%</td><td>201</td><td>12%</td></tr><tr><td>Total</td><td>3,667</td><td></td><td>920</td><td></td><td></td><td>1632</td><td></td></tr></table>
+
+Data include common stock and ADRs currently assigned ratings. Investment Banking Clients are companies from whom MS received investment banking compensation in the last 12 months. Due to rounding off of decimals, the percentages provided in the "% of total" column may not add up to exactly 100 percent.
+
+## Analyst Stock Ratings
+
+Overweight (O). The stock's total return is expected to exceed the average total return of the analyst's industry (or industry team's) coverage universe, on a risk-adjusted basis, over the next 12-18 months.
+
+Equal-weight (E). The stock's total return is expected to be in line with the average total return of the analyst's industry (or industry team's) coverage universe, on a risk-adjusted basis, over the next 12-18 months.
+
+Not-Rated (NR). Currently the analyst does not have adequate conviction about the stock's total return relative to the average total return of the analyst's industry (or industry team's) coverage universe, on a risk-adjusted basis, over the next 12-18 months.
+
+Underweight (U). The stock's total return is expected to be below the average total return of the analyst's industry (or industry team's) coverage universe, on a risk-adjusted basis, over the next 12-18 months.
+
+Unless otherwise specified, the time frame for price targets included in MS is 12 to 18 months.
+
+## Analyst Industry Views
+
+Attractive (A): The analyst expects the performance of his or her industry coverage universe over the next 12-18 months to be attractive vs. the relevant broad market benchmark, as indicated below.
+
+In-Line (I): The analyst expects the performance of his or her industry coverage universe over the next 12-18 months to be in line with the relevant broad market benchmark, as indicated below. Cautious (C): The analyst views the performance of his or her industry coverage universe over the next 12-18 months with caution vs. the relevant broad market benchmark, as indicated below. Benchmarks for each region are as follows: North America - S&P 500; Latin America - relevant MSCI country index or MSCI Latin America Index; Europe - MSCI Europe; Japan - TOPIX; Asia - relevant MSCI country index or MSCI sub-regional index or MSCI AC Asia Pacific ex Japan Index.
+
+## Important Disclosures for MS Smith Barney LLC Customers
+
+Important disclosures regarding any material conflict of interest that can reasonably be expected to have influenced MS Smith Barney LLC's choice of a third-party research provider or the subject company of a third-party research report, are available on the MS Wealth Management disclosure website at www.morganstanley.com/online/researchdisclosures. For MS specific disclosures, you may refer to https://www.morganstanley.com/eqr/disclosures/webapp/generalresearch.
+
+Each MS report is reviewed and approved on behalf of MS Smith Barney LLC. This review and approval is conducted by the same person who reviews the research report on behalf of MS. This could create a conflict of interest.
+
+## Other Important Disclosures
+
+MS policy is to update research reports as and when the Research Analyst and Research Management deem appropriate, based on developments with the issuer, the sector, or the market that may have a material impact on the research views or opinions stated therein. In addition, certain Research publications are intended to be updated on a regular periodic basis (weekly/monthly/quarterly/annual) and will ordinarily be updated with that frequency, unless the Research Analyst and Research Management determine that a different publication schedule is appropriate based on current conditions.
+
+MS is not acting as a municipal advisor and the opinions or views contained herein are not intended to be, and do not constitute, advice within the meaning of Section 975 of the Dodd-Frank Wall Street Reform and Consumer Protection Act.
+
+MS produces an equity research product called a "Tactical Idea." Views contained in a "Tactical Idea" on a particular stock may be contrary to the recommendations or views expressed in research on the same stock. This may be the result of differing time horizons, methodologies, market events, or other factors. For all research available on a particular stock, please contact your sales representative or go to Matrix at http://www.morganstanley.com/matrix.
+
+MS is provided to our clients through our proprietary research portal on Matrix and also distributed electronically by MS to clients. Certain, but not all, MS products are also made available to clients through third-party vendors or redistributed to clients through alternate electronic means as a convenience. For access to all available MS, please contact your sales representative or go to Matrix at http://www.morganstanley.com/matrix.
+
+Any access and/or use of MS is subject to MS's Terms of Use (http://www.morganstanley.com/terms.html). By accessing and/or using MS, you are indicating that you have read and agree to be bound by our Terms of Use (http://www.morganstanley.com/terms.html). In addition you consent to MS processing your personal data and using cookies in accordance with our Privacy Policy and our Global Cookies Policy (http://www.morganstanley.com/privacy\_pledge.html), including for the purposes of setting your preferences and to collect readership data so that we can deliver better and more personalized service and products to you. To find out more information about how MS processes personal data, how we use cookies and how to reject cookies see our Privacy Policy and our Global Cookies Policy (http://www.morganstanley.com/privacy\_pledge.html). Please use the provided link to review the Terms and Conditions and Most Important Terms and Conditions for MS India Company Private Limited (https://www.morganstanley.com/assets/pdfs/about-us-global-offices/india/Terms\_and\_conditions.pdf) and the following link to review the audit report (https://ny.matrix.ms.com/eqr/research/webapp/researchdocs/MSICPL\_Morgan\_Stanley\_Research\_Audit\_Report.pdf).
+
+If you do not agree to our Terms of Use and/or if you do not wish to provide your consent to MS processing your personal data or using cookies please do not access our research. MS does not provide individually tailored investment advice. MS has been prepared without regard to the circumstances and objectives of those who receive it. MS recommends that investors independently evaluate particular investments and strategies, and encourages investors to seek the advice of a financial adviser. The appropriateness of an investment or strategy will depend on an investor's circumstances and objectives. The securities, instruments, or strategies discussed in MS may not be suitable for all investors, and certain investors may not be eligible to purchase or participate in some or all of them. MS is not an offer to buy or sell or the solicitation of an offer to buy or sell any security/instrument or to participate in any particular trading strategy. The value of and income from your investments may vary because of changes in interest rates, foreign exchange rates, default rates, prepayment rates, securities/instruments prices, market indexes, operational or financial conditions of companies or other factors. There may be time limitations on the exercise of options or other rights in securities/instruments transactions. Past performance is not necessarily a guide to future performance. Estimates of future performance are based on assumptions that may not be realized. If provided, and unless otherwise stated, the closing price on the cover page is that of the primary exchange for the subject company's securities/instruments.
+
+The fixed income research analysts, strategists or economists principally responsible for the preparation of MS have received compensation based upon various factors, including quality, accuracy and value of research, firm profitability or revenues (which include fixed income trading and capital markets profitability or revenues), client feedback and competitive factors. Fixed Income Research analysts', strategists' or economists' compensation is not linked to investment banking or capital markets transactions performed by MS or the profitability or revenues of particular trading desks.
+
+The "Important Regulatory Disclosures on Subject Companies" section in MS lists all companies mentioned where MS owns 1% or more of a class of common equity securities of the companies. For all other companies mentioned in MS, MS may have an investment of less than 1% in securities/instruments or derivatives of securities/instruments of companies and may trade them in ways different from those discussed in MS. Employees of MS not involved in the preparation of MS may have investments in securities/instruments or derivatives of securities/instruments of companies mentioned and may trade them in ways different from those discussed in MS. Derivatives may be issued by MS or associated persons.
+
+With the exception of information regarding MS, MS is based on public information. MS makes every effort to use reliable, comprehensive information, but we make no representation that it is accurate or complete. We have no obligation to tell you when opinions or information in MS change apart from when we intend to discontinue equity research coverage of a subject company. Facts and views presented in MS have not been reviewed by, and may not reflect information known to, professionals in other MS business areas, including investment banking personnel.
+
+MS personnel may participate in company events such as site visits and are generally prohibited from accepting payment by the company of associated expenses unless pre-approved by authorized members of Research management.
+
+MS may make investment decisions that are inconsistent with the recommendations or views in this report.
+
+To our readers based in Taiwan or trading in Taiwan securities/instruments: Information on securities/instruments that trade in Taiwan is distributed by MS Taiwan Limited ("MSTL"). Such information is for your reference only. The reader should independently evaluate the investment risks and is solely responsible for their investment decisions. MS may not be distributed to the public media or quoted or used by the public media without the express written consent of MS. Any non-customer reader within the scope of Article 7-1 of the Taiwan Stock Exchange Recommendation Regulations accessing and/or receiving MS is not permitted to provide MS to any third party (including but not limited to related parties, affiliated companies and any other third parties) or engage in any activities regarding MS which may create or give the appearance of creating a conflict of interest. Information on securities/instruments that do not trade in Taiwan is for informational purposes only and is not to be construed as a recommendation or a solicitation to trade in such securities/instruments. MSTL may not execute transactions for clients in these securities/instruments.
+
+MS is not incorporated under PRC law and the research in relation to this report is conducted outside the PRC. MS does not constitute an offer to sell or the solicitation of an offer to buy any securities in the PRC. PRC investors shall have the relevant qualifications to invest in such securities and shall be responsible for obtaining all relevant approvals, licenses, verifications and/or registrations from the relevant governmental authorities themselves. Neither this report nor any part of it is intended as, or shall constitute, provision of any consultancy or advisory service of securities investment as defined under PRC law. Such information is provided for your reference only.
+
+MS is disseminated in Brazil by MS C.T.V.M. S.A. located at Av. Brigadeiro Faria Lima, 3600, 6th floor, São Paulo - SP, Brazil; and is regulated by the Comissão de Valores Mobiliários; in Mexico by MS México, Casa de Bolsa, S.A. de C.V which is regulated by Comision Nacional Bancaria y de Valores. Paseo de los Tamarindos 90, Torre 1, Col. Bosques de las Lomas Floor 29, 05120 Mexico City; in Japan by MS MUFG Securities Co., Ltd. and, for Commodities related research reports only, MS Capital Group Japan Co., Ltd; in Hong Kong by MS Asia Limited (which accepts responsibility for its contents) and by MS Bank Asia Limited; in Singapore by MS Asia (Singapore) Pte. (Registration number 199206298Z) and/or MS Asia (Singapore) Securities Pte Ltd (Registration number 200008434H), regulated by the Monetary Authority of Singapore (which accepts legal responsibility for its contents and should be contacted with respect to any matters arising from, or in connection with, MS) and by MS Bank Asia Limited, Singapore Branch (Registration number T14FC0118J); in Australia to "wholesale clients" within the meaning of the Australian Corporations Act by MS Australia Limited A.B.N. 67 003 734 576, holder of Australian financial services license No. 233742, which accepts responsibility for its contents; in Australia to "wholesale clients" and "retail clients" within the meaning of the Australian Corporations Act by MS Wealth Management Australia Pty Ltd (A.B.N. 19 009 145 555, holder of Australian financial services license No. 240813, which accepts responsibility for its contents; in Korea by MS & Co International plc, Seoul Branch; in India by MS India Company Private Limited having Corporate Identification No (CIN) U22990MH1998PTC115305, regulated by the Securities and Exchange Board of India ("SEBI") and holder of licenses as a Research Analyst (SEBI Registration No. INH000001105); Stock Broker (SEBI Stock Broker Registration No. INZ000244438), Merchant Banker (SEBI Registration No. INM000011203), and depository participant with National Securities Depository Limited (SEBI Registration No. IN-DP-NSDL-567-2021) having registered office at Altimus, Level 39 & 40, Pandurang Budhkar Marg, Worli, Mumbai 400018, India; Telephone no. +91-22-61181000; Compliance Officer Details: Mr. Tejarshi Hardas, Tel. No.: +91-22-61181000 or Email: tejarshi.hardas@morganstanley.com; Grievance officer details: Mr. Tejarshi Hardas, Tel. No.: +91-22-61181000 or Email: msic-compliance@morganstanley.com. MS India Company Private Limited (MSICPL) may use AI tools in providing research services. All recommendations contained herein are made by the duly qualified research analysts; in Canada by MS Canada Limited; in Germany and the European Economic Area where required by MS Europe S.E., authorised and regulated by Bundesanstalt fuer Finanzdienstleistungsaufsicht (BaFin) under the reference number 149169; in the US by MS & Co. LLC, which accepts responsibility for its contents. MS & Co. International plc, authorized by the Prudential Regulation Authority and regulated by the Financial Conduct Authority and the Prudential Regulation Authority, disseminates in the UK research that it has prepared, and research which has been prepared by any of its affiliates, only to persons who (i) are investment professionals falling within Article 19(5) of the Financial Services and Markets Act 2000 (Financial Promotion) Order 2005 (as amended, the "Order"); (ii) are persons who are high net worth entities falling within Article 49(2)(a) to (d) of the Order; or (iii) are persons to whom an invitation or inducement to engage in investment activity (within the meaning of section
+
+21 of the Financial Services and Markets Act 2000, as amended) may otherwise lawfully be communicated or caused to be communicated. RMB MS Proprietary Limited is a member of the JSE Limited and A2X (Pty) Ltd. RMB MS Proprietary Limited is a joint venture owned equally by MS International Holdings Inc. and RMB Investment Advisory (Proprietary) Limited, which is wholly owned by FirstRand Limited. The information in MS is being disseminated by MS Saudi Arabia, regulated by the Capital Market Authority in the Kingdom of Saudi Arabia, and is directed at Sophisticated investors only.
+
+The information in MS is being communicated by MS & Co. International plc (DIFC Branch), regulated by the Dubai Financial Services Authority (the DFSA) or by MS & Co. International plc (ADGM Branch), regulated by the Financial Services Regulatory Authority Abu Dhabi (the FSRA), and is directed at Professional Clients only, as defined by the DFSA or the FSRA, respectively. The financial products or financial services to which this research relates will only be made available to a customer who we are satisfied meets the regulatory criteria of a Professional Client. A distribution of the different MS Research ratings or recommendations, in percentage terms for Investments in each sector covered, is available upon request from your sales representative.
+
+The information in MS is being communicated by MS & Co. International plc (QFC Branch), regulated by the Qatar Financial Centre Regulatory Authority (the QFCRA), and is directed at business customers and market counterparties only and is not intended for Retail Customers as defined by the QFCRA.
+
+As required by the Capital Markets Board of Turkey, investment information, comments and recommendations stated here, are not within the scope of investment advisory activity. Investment advisory service is provided exclusively to persons based on their risk and income preferences by the authorized firms. Comments and recommendations stated here are general in nature. These opinions may not fit to your financial status, risk and return preferences. For this reason, to make an investment decision by relying solely to this information stated here may not bring about outcomes that fit your expectations.
+
+The trademarks and service marks contained in MS are the property of their respective owners. Third-party data providers make no warranties or representations relating to the accuracy, completeness, or timeliness of the data they provide and shall not have liability for any damages relating to such data. The Global Industry Classification Standard (GICS) was developed by and is the exclusive property of MSCI and S&P.
+
+MS, or any portion thereof may not be reprinted, sold or redistributed without the written consent of MS.
+
+Indicators and trackers referenced in MS may not be used as, or treated as, a benchmark under Regulation EU 2016/1011, or any other similar framework.
+
+The issuers and/or fixed income products recommended or discussed in certain fixed income research reports may not be continuously followed. Accordingly, investors should regard those fixed income research reports as providing stand-alone analysis and should not expect continuing analysis or additional reports relating to such issuers and/or individual fixed income products. MS may hold, from time to time, material financial and commercial interests regarding the company subject to the Research report.
+
+Registration granted by SEBI and certification from the National Institute of Securities Markets (NISM) in no way guarantee performance of the intermediary or provide any assurance of returns to investors. Investment in securities market are subject to market risks. Read all the related documents carefully before investing.
+
+INDUSTRY COVERAGE: Business Services
+
+<table><tr><td>COMPANY (TICKER)</td><td>RATING (AS OF)</td><td>PRICE* (06/08/2026)</td></tr><tr><td colspan="3">Annelies Vermeulen</td></tr><tr><td>Azelis (AZE.BR)</td><td>E (09/10/2025)</td><td>€10.22</td></tr><tr><td>Brenntag SE (BNRGn.DE)</td><td>U (01/06/2026)</td><td>€54.84</td></tr><tr><td>Bunzl PLC (BNZL.L)</td><td>E (01/12/2024)</td><td>2,494p</td></tr><tr><td>Bureau Veritas SA (BVI.PA)</td><td>O (01/27/2025)</td><td>€25.32</td></tr><tr><td>DCC Plc (DCC.L)</td><td>++</td><td>5,975p</td></tr><tr><td>Diploma PLC (DPLM.L)</td><td>O (09/06/2023)</td><td>7,060p</td></tr><tr><td>Elis SA (ELIS.PA)</td><td>O (06/09/2020)</td><td>€25.80</td></tr><tr><td>Experian PLC (EXPN.L)</td><td>O (07/08/2022)</td><td>2,639p</td></tr><tr><td>Ferguson Enterprises Inc (FERG.L)</td><td>O (01/09/2025)</td><td>16,950p</td></tr><tr><td>Ferguson Enterprises Inc (FERG.N)</td><td>O (02/03/2025)</td><td>US$229.58</td></tr><tr><td>IMCD NV (IMCD.AS)</td><td>E (01/06/2026)</td><td>€87.20</td></tr><tr><td>Intertek Group PLC (ITRK.L)</td><td>++</td><td>5,570p</td></tr><tr><td>Rentokil Initial PLC (RTO.L)</td><td>O (01/06/2026)</td><td>445p</td></tr><tr><td>RS Group PLC (RS1R.L)</td><td>O (01/06/2026)</td><td>641p</td></tr><tr><td>SGS SA (SGSN.S)</td><td>E (01/06/2026)</td><td>SFr 89.60</td></tr><tr><td>Sunbelt Rentals Inc. (SUNB.L)</td><td>O (07/08/2022)</td><td>6,046p</td></tr><tr><td>Sunbelt Rentals Inc. (SUNB.N)</td><td>O (03/13/2026)</td><td>US$79.36</td></tr><tr><td>Travis Perkins PLC (TPK.L)</td><td>E (07/08/2022)</td><td>537p</td></tr><tr><td>Verisure PLC (VSURE.ST)</td><td>O (11/18/2025)</td><td>€10.87</td></tr><tr><td colspan="3">Remi Grenu</td></tr><tr><td>Adecco Group (ADEN.S)</td><td>U (06/09/2026)</td><td>SFr 16.58</td></tr><tr><td>Eurofins Scientific SE (EUFI.PA)</td><td>E (04/30/2025)</td><td>€64.88</td></tr><tr><td>Hays PLC (HAYS.L)</td><td>E (06/09/2026)</td><td>36p</td></tr><tr><td>ISS A/S (ISS.CO)</td><td>O (01/06/2026)</td><td>DKr 253.00</td></tr><tr><td>Page Group PLC (PAGE.L)</td><td>U (12/03/2025)</td><td>124p</td></tr><tr><td>Randstad NV (RAND.AS)</td><td>E (06/09/2026)</td><td>€26.84</td></tr><tr><td>Securitas AB (SECUb.ST)</td><td>U (10/25/2024)</td><td>SKr 155.40</td></tr><tr><td>SPIE (SPIE.PA)</td><td>O (04/08/2026)</td><td>€47.82</td></tr><tr><td>TP (TEPRF.PA)</td><td>E (03/24/2026)</td><td>€58.66</td></tr></table>
+
+Stock Ratings are subject to change. Please see latest research for each company.  
+\* Historical prices are not split adjusted.
+
+© 2026 MS
