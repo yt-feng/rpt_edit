@@ -1,0 +1,6260 @@
+[
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.046,
+                0.032,
+                0.123,
+                0.061
+            ],
+            "angle": 0,
+            "content": ""
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.127,
+                0.038,
+                0.45,
+                0.055
+            ],
+            "angle": 0,
+            "content": "HSBC Global Investment Research"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.87,
+                0.039,
+                0.958,
+                0.052
+            ],
+            "angle": 0,
+            "content": "9 June 2026"
+        },
+        {
+            "type": "doc_title",
+            "bbox": [
+                0.061,
+                0.114,
+                0.319,
+                0.145
+            ],
+            "angle": 0,
+            "content": "China Solar"
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.062,
+                0.18,
+                0.358,
+                0.199
+            ],
+            "angle": 0,
+            "content": "Takeaways from SNEC 2026"
+        },
+        {
+            "type": "doc_title",
+            "bbox": [
+                0.657,
+                0.115,
+                0.745,
+                0.133
+            ],
+            "angle": 0,
+            "content": "Equities"
+        },
+        {
+            "type": "doc_title",
+            "bbox": [
+                0.657,
+                0.133,
+                0.86,
+                0.149
+            ],
+            "angle": 0,
+            "content": "Energy Equipment &"
+        },
+        {
+            "type": "doc_title",
+            "bbox": [
+                0.657,
+                0.15,
+                0.743,
+                0.164
+            ],
+            "angle": 0,
+            "content": "Services"
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.657,
+                0.185,
+                0.702,
+                0.198
+            ],
+            "angle": 0,
+            "content": "China"
+        },
+        {
+            "type": "list",
+            "bbox": [
+                0.044,
+                0.233,
+                0.614,
+                0.359
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.044,
+                0.233,
+                0.614,
+                0.27
+            ],
+            "angle": 0,
+            "content": "- Space-based solar products still a niche segment, residential ESS drew the most attention; solar supply chain was quiet",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.044,
+                0.278,
+                0.578,
+                0.314
+            ],
+            "angle": 0,
+            "content": "- Solar equipment exports are still restricted as most companies wait rather than seek an SE Asia workaround",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.044,
+                0.322,
+                0.542,
+                0.358
+            ],
+            "angle": 0,
+            "content": "- SST products for AIDC are emerging as the next key battleground",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.042,
+                0.377,
+                0.611,
+                0.438
+            ],
+            "angle": 0,
+            "content": "Key takeaways: We attended SNEC in Shanghai on 3–4 June, meeting with investors and engaging with leading solar companies across space solar, residential energy storage systems (ESS), inverters and related segments. Below are our key takeaways:",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.044,
+                0.445,
+                0.593,
+                0.516
+            ],
+            "angle": 0,
+            "content": "\\(\\diamond\\) Space solar: Still niche at SNEC, but positioned as 'flagship' by exhibitors. Solar-cell technology is shifting beyond GaAs towards silicon and tandem. Lightweight covers, such as space colourless polymide film (SCPI), are a key differentiator. Commercial orders more likely around 2027 after multi-round validation.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.044,
+                0.523,
+                0.583,
+                0.58
+            ],
+            "angle": 0,
+            "content": "Solar equipment: Near-term outlook is driven more by policy clarity or enforcement than end-demand. Most companies downplayed US export exposure and rejected exporting via Southeast Asia as a workaround. They claimed to adhere strictly to domestic guidance in China.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.044,
+                0.587,
+                0.591,
+                0.644
+            ],
+            "angle": 0,
+            "content": "Residential solar + ESS: One of the highest-traffic segments. Hardware is commoditising, shifting differentiation to channels and software/service. AI-enabled energy management is becoming baseline, and all-in-one integrated systems are proliferating to simplify installation and user experience.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.044,
+                0.65,
+                0.619,
+                0.708
+            ],
+            "angle": 0,
+            "content": "AIDC & compute/power integration: ‘Green power for AIDC’ was a major theme, with ecosystem focus on DC coupling and system-level integration. Solid-state transformers (SST) are emerging as a key battleground, but deployment is expected to be gradual, pending proof of lifecycle economics and efficiency.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.044,
+                0.714,
+                0.61,
+                0.771
+            ],
+            "angle": 0,
+            "content": "Solar supply chain: Noticeably quieter versus storage/AIDC. Pricing remains under pressure and segmented. Cost pass-through is uneven (tax rebate changes partly passed, silver inflation harder), reinforcing ‘optimise/retrofit’ over new builds. Cost-down levers include reduced-silver/copper metallisation.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.044,
+                0.778,
+                0.615,
+                0.85
+            ],
+            "angle": 0,
+            "content": "Energy storage: Remains the highest-attention growth narrative of some companies. C&I storage is gaining share with improving pipeline stability, while utility-scale is more crowded and price-competitive, pushing some to overseas/niche structures. Margin protection hinges on pricing discipline and the ability to pass through volatile battery input costs.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.643,
+                0.243,
+                0.719,
+                0.254
+            ],
+            "angle": 0,
+            "content": "Daniel Yang*"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.643,
+                0.254,
+                0.824,
+                0.263
+            ],
+            "angle": 0,
+            "content": "Analyst, Asia Energy Transition",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.643,
+                0.263,
+                0.951,
+                0.282
+            ],
+            "angle": 0,
+            "content": "The Hongkong and Shanghai Banking Corporation Limited\ndaniel.h.yang@hsbc.com.hk",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.644,
+                0.283,
+                0.732,
+                0.292
+            ],
+            "angle": 0,
+            "content": "+852 299 66976",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.643,
+                0.299,
+                0.693,
+                0.309
+            ],
+            "angle": 0,
+            "content": "Evan Li*"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.643,
+                0.309,
+                0.866,
+                0.319
+            ],
+            "angle": 0,
+            "content": "Head, Asia Energy Transition Research",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.643,
+                0.319,
+                0.951,
+                0.338
+            ],
+            "angle": 0,
+            "content": "The Hongkong and Shanghai Banking Corporation Limited\nevan.m.h.li@hsbc.com.hk",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.644,
+                0.339,
+                0.732,
+                0.348
+            ],
+            "angle": 0,
+            "content": "+852 2996 6619",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.643,
+                0.355,
+                0.872,
+                0.366
+            ],
+            "angle": 0,
+            "content": "Corey Chan* (Reg. No. S1700518100001)"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.643,
+                0.366,
+                0.928,
+                0.374
+            ],
+            "angle": 0,
+            "content": "Head, A-share Industrials & Renewables Research",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.643,
+                0.375,
+                0.819,
+                0.384
+            ],
+            "angle": 0,
+            "content": "HSBC Qianhai Securities Limited",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.644,
+                0.385,
+                0.795,
+                0.394
+            ],
+            "angle": 0,
+            "content": "corey.chan@hsbcqh.com.cn",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.644,
+                0.395,
+                0.741,
+                0.404
+            ],
+            "angle": 0,
+            "content": "+86 21 5066 2001",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.643,
+                0.411,
+                0.72,
+                0.422
+            ],
+            "angle": 0,
+            "content": "Lucille Tang*"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.643,
+                0.422,
+                0.703,
+                0.43
+            ],
+            "angle": 0,
+            "content": "Associate",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.644,
+                0.431,
+                0.707,
+                0.441
+            ],
+            "angle": 0,
+            "content": "Guangzhou",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.641,
+                0.46,
+                0.948,
+                0.482
+            ],
+            "angle": 0,
+            "content": "* Employed by a non-US affiliate of HSBC Securities (USA) Inc, and is not registered/ qualified pursuant to FINRA regulations",
+            "merge_prev": false
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.044,
+                0.918,
+                0.251,
+                0.931
+            ],
+            "angle": 0,
+            "content": "Disclosures & Disclaimer"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.042,
+                0.932,
+                0.617,
+                0.961
+            ],
+            "angle": 0,
+            "content": "This report must be read with the disclosures and the analyst certifications in the Disclosure appendix, and with the Disclaimer, which forms part of it."
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.64,
+                0.916,
+                0.927,
+                0.939
+            ],
+            "angle": 0,
+            "content": "Issuer of report: The Hongkong and Shanghai Banking Corporation Limited"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.64,
+                0.95,
+                0.921,
+                0.962
+            ],
+            "angle": 0,
+            "content": "View HSBC Global Investment Research at:"
+        },
+        {
+            "type": "footer",
+            "bbox": [
+                0.64,
+                0.965,
+                0.847,
+                0.977
+            ],
+            "angle": 0,
+            "content": "https://www.research.hsbc.com"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.055,
+                0.035,
+                0.12,
+                0.059
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.871,
+                0.04,
+                0.958,
+                0.052
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.655,
+                0.112,
+                0.747,
+                0.135
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.655,
+                0.147,
+                0.744,
+                0.165
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.127,
+                0.038,
+                0.447,
+                0.055
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.062,
+                0.18,
+                0.359,
+                0.199
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.646,
+                0.264,
+                0.95,
+                0.272
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.646,
+                0.274,
+                0.794,
+                0.282
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.645,
+                0.319,
+                0.949,
+                0.329
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.645,
+                0.33,
+                0.782,
+                0.338
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.645,
+                0.461,
+                0.946,
+                0.472
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.645,
+                0.472,
+                0.879,
+                0.481
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.059,
+                0.112,
+                0.32,
+                0.147
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.641,
+                0.917,
+                0.926,
+                0.929
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.642,
+                0.928,
+                0.813,
+                0.938
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.658,
+                0.133,
+                0.859,
+                0.149
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.919,
+                0.25,
+                0.933
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.656,
+                0.183,
+                0.703,
+                0.198
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.051,
+                0.239,
+                0.057,
+                0.244
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.235,
+                0.611,
+                0.251
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.254,
+                0.589,
+                0.268
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.933,
+                0.615,
+                0.946
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.948,
+                0.577,
+                0.96
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.051,
+                0.284,
+                0.06,
+                0.289
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.065,
+                0.28,
+                0.524,
+                0.294
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.3,
+                0.576,
+                0.313
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.064,
+                0.321,
+                0.541,
+                0.341
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.342,
+                0.183,
+                0.359
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.053,
+                0.327,
+                0.056,
+                0.334
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.379,
+                0.561,
+                0.39
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.047,
+                0.395,
+                0.609,
+                0.406
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.41,
+                0.598,
+                0.423
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.425,
+                0.124,
+                0.439
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.049,
+                0.653,
+                0.059,
+                0.66
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.076,
+                0.653,
+                0.578,
+                0.665
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.076,
+                0.667,
+                0.619,
+                0.678
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.075,
+                0.681,
+                0.611,
+                0.693
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.076,
+                0.696,
+                0.583,
+                0.708
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.076,
+                0.717,
+                0.597,
+                0.728
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.075,
+                0.731,
+                0.563,
+                0.742
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.076,
+                0.745,
+                0.608,
+                0.757
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.075,
+                0.76,
+                0.567,
+                0.771
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.048,
+                0.717,
+                0.059,
+                0.723
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.05,
+                0.448,
+                0.059,
+                0.454
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.074,
+                0.446,
+                0.577,
+                0.459
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.076,
+                0.462,
+                0.571,
+                0.473
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.076,
+                0.476,
+                0.591,
+                0.487
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.074,
+                0.488,
+                0.577,
+                0.501
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.075,
+                0.504,
+                0.144,
+                0.514
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.073,
+                0.524,
+                0.55,
+                0.538
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.075,
+                0.54,
+                0.558,
+                0.551
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.075,
+                0.554,
+                0.58,
+                0.566
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.074,
+                0.568,
+                0.455,
+                0.58
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.046,
+                0.526,
+                0.061,
+                0.532
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.049,
+                0.589,
+                0.06,
+                0.596
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.074,
+                0.589,
+                0.578,
+                0.601
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.074,
+                0.603,
+                0.577,
+                0.615
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.075,
+                0.618,
+                0.59,
+                0.629
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.075,
+                0.632,
+                0.534,
+                0.645
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.049,
+                0.781,
+                0.059,
+                0.787
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.076,
+                0.781,
+                0.567,
+                0.792
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.076,
+                0.794,
+                0.562,
+                0.806
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.076,
+                0.808,
+                0.572,
+                0.82
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.076,
+                0.823,
+                0.614,
+                0.835
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.076,
+                0.838,
+                0.405,
+                0.849
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.644,
+                0.242,
+                0.719,
+                0.255
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.645,
+                0.283,
+                0.732,
+                0.292
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.645,
+                0.339,
+                0.732,
+                0.348
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.644,
+                0.412,
+                0.72,
+                0.423
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.644,
+                0.42,
+                0.703,
+                0.431
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.644,
+                0.429,
+                0.708,
+                0.442
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.646,
+                0.253,
+                0.823,
+                0.263
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.646,
+                0.375,
+                0.817,
+                0.385
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.643,
+                0.965,
+                0.846,
+                0.977
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.644,
+                0.299,
+                0.693,
+                0.31
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.645,
+                0.309,
+                0.865,
+                0.319
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.646,
+                0.356,
+                0.871,
+                0.366
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.645,
+                0.365,
+                0.927,
+                0.375
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.642,
+                0.951,
+                0.92,
+                0.963
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.646,
+                0.386,
+                0.794,
+                0.395
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.645,
+                0.395,
+                0.739,
+                0.404
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.073,
+                0.029,
+                0.194,
+                0.055
+            ],
+            "angle": 0,
+            "content": "HSBC"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.649,
+                0.029,
+                0.93,
+                0.042
+            ],
+            "angle": 0,
+            "content": "Equities • Energy Equipment & Services"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.843,
+                0.042,
+                0.93,
+                0.054
+            ],
+            "angle": 0,
+            "content": "9 June 2026"
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.282,
+                0.133,
+                0.557,
+                0.151
+            ],
+            "angle": 0,
+            "content": "Takeaways from SNEC 2026"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.281,
+                0.165,
+                0.925,
+                0.211
+            ],
+            "angle": 0,
+            "content": "We participated in SNEC in Shanghai on 3-4 June to visit some of the leading solar companies. Below is a summary of the discussions with company management, experts and investors we met during the tour.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.282,
+                0.22,
+                0.373,
+                0.233
+            ],
+            "angle": 0,
+            "content": "Space solar"
+        },
+        {
+            "type": "list",
+            "bbox": [
+                0.283,
+                0.235,
+                0.928,
+                0.57
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.283,
+                0.235,
+                0.928,
+                0.281
+            ],
+            "angle": 0,
+            "content": "Space-based solar product demonstration: The number of exhibitors explicitly focused on space solar was relatively limited, but those that did show space-related products tended to place them at the centre of the booth narrative (a ‘flagship storyline’ rather than as a side topic).",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.283,
+                0.287,
+                0.905,
+                0.333
+            ],
+            "angle": 0,
+            "content": "- Technology direction: Industry discussion is moving beyond GaAs-only dependence towards silicon-based flexible solutions and tandem concepts (e.g., silicon + perovskite), with >30% efficiency targets cited versus c20% for current silicon space cells.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.283,
+                0.34,
+                0.91,
+                0.417
+            ],
+            "angle": 0,
+            "content": "Lightweight materials as a differentiator: A recurring theme was replacing traditional glass cover layers (often cited around c110  \\( \\mu \\) m) with ultra-thin polymer/film-based covers (<c25  \\( \\mu \\) m), such as SCPI, to reduce mass while improving flexibility and durability. Moreover, SCPI can bend 360° and withstand c10,000 bends without damage while the ultra-thin glass (UTG) cracks after c20 bends.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.283,
+                0.425,
+                0.922,
+                0.485
+            ],
+            "angle": 0,
+            "content": "Commercialisation timeline: Industry expectations implied multi-year validation cycles (ground + in-orbit testing). A typical validation cycles of 3–6 months per round with multiple in-orbit trial opportunities (e.g., 20+ launch windows) were referenced to accelerate iteration. Meaningful order conversion is more likely around 2027.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.283,
+                0.493,
+                0.915,
+                0.569
+            ],
+            "angle": 0,
+            "content": "Conservative around SpaceX's 100GW per year of solar capacity goal: Following our earlier report on space solar (Space-based Solar, 1 June 2026), we found that messaging from the SNEC tour implied conservative attitudes from both companies and investors regarding SpaceX and Tesla's 100GW per year of solar manufacturing capacity goal in three years in the US.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.282,
+                0.577,
+                0.407,
+                0.591
+            ],
+            "angle": 0,
+            "content": "Solar equipment"
+        },
+        {
+            "type": "list",
+            "bbox": [
+                0.283,
+                0.593,
+                0.928,
+                0.888
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.283,
+                0.593,
+                0.928,
+                0.623
+            ],
+            "angle": 0,
+            "content": "US export sensitivity: Many equipment companies downplayed or denied direct exports to the US, with a ‘wait-and-see’ stance tied to evolving policy interpretation and enforcement.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.283,
+                0.63,
+                0.917,
+                0.66
+            ],
+            "angle": 0,
+            "content": "Southeast Asia not an alternative route: Companies denied the alternative export route from Southeast Asia to circumvent the domestic restrictions.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.283,
+                0.668,
+                0.928,
+                0.713
+            ],
+            "angle": 0,
+            "content": "Policy uncertainty is the key variable: Conversations suggested that the near-term swing factor is regulatory clarity and enforcement, not end-demand. Companies emphasised strict adherence to domestic guidance while awaiting official announcements.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.283,
+                0.721,
+                0.9,
+                0.766
+            ],
+            "angle": 0,
+            "content": "Demand shifting by region: Export opportunities were described as rebalancing away from parts of Southeast Asia (affected by trade measures) towards Middle East / North Africa / Türkiye and other markets.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.283,
+                0.773,
+                0.898,
+                0.835
+            ],
+            "angle": 0,
+            "content": "Retrofit cycle is the anchor: With cumulative TOPCon capacity cited at 800GW+, the equipment cycle is increasingly upgrade-led rather than greenfield-led. Typical retrofit packages for upgrading old TOPCon to new TOPCon were cited at cRMB30m per GW, lifting module efficiency from 620W to 650W+.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.283,
+                0.842,
+                0.925,
+                0.888
+            ],
+            "angle": 0,
+            "content": "- Capex reference points: New TOPCon line equipment investment was cited at cRMB120-140m per GW. BC line equipment was cited as <RMB200m per GW, with equipment value share in high-power BC lines often described as c40-50% of total line value.",
+            "merge_prev": false
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.069,
+                0.965,
+                0.08,
+                0.974
+            ],
+            "angle": 0,
+            "content": "2"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.284,
+                0.22,
+                0.373,
+                0.233
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.652,
+                0.03,
+                0.929,
+                0.043
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.284,
+                0.134,
+                0.556,
+                0.15
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.843,
+                0.042,
+                0.929,
+                0.054
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.137,
+                0.034,
+                0.193,
+                0.051
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.285,
+                0.578,
+                0.406,
+                0.592
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.287,
+                0.168,
+                0.922,
+                0.179
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.285,
+                0.183,
+                0.911,
+                0.195
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.285,
+                0.199,
+                0.417,
+                0.21
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.285,
+                0.237,
+                0.295,
+                0.244
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.313,
+                0.237,
+                0.912,
+                0.249
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.312,
+                0.252,
+                0.902,
+                0.265
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.313,
+                0.268,
+                0.927,
+                0.28
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.287,
+                0.426,
+                0.297,
+                0.434
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.313,
+                0.427,
+                0.9,
+                0.438
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.313,
+                0.442,
+                0.921,
+                0.455
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.313,
+                0.458,
+                0.868,
+                0.47
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.313,
+                0.472,
+                0.753,
+                0.486
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.287,
+                0.67,
+                0.297,
+                0.678
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.312,
+                0.67,
+                0.927,
+                0.683
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.314,
+                0.686,
+                0.926,
+                0.697
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.314,
+                0.702,
+                0.794,
+                0.713
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.287,
+                0.844,
+                0.297,
+                0.853
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.312,
+                0.843,
+                0.924,
+                0.857
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.314,
+                0.859,
+                0.919,
+                0.872
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.314,
+                0.876,
+                0.82,
+                0.887
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.288,
+                0.29,
+                0.297,
+                0.297
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.313,
+                0.289,
+                0.889,
+                0.301
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.314,
+                0.306,
+                0.903,
+                0.317
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.313,
+                0.321,
+                0.833,
+                0.332
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.288,
+                0.723,
+                0.297,
+                0.73
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.312,
+                0.722,
+                0.898,
+                0.736
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.314,
+                0.738,
+                0.892,
+                0.75
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.314,
+                0.754,
+                0.546,
+                0.765
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.288,
+                0.776,
+                0.297,
+                0.783
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.312,
+                0.775,
+                0.895,
+                0.788
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.312,
+                0.791,
+                0.885,
+                0.804
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.312,
+                0.806,
+                0.898,
+                0.819
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.314,
+                0.823,
+                0.623,
+                0.834
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.287,
+                0.343,
+                0.297,
+                0.351
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.312,
+                0.342,
+                0.898,
+                0.355
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.312,
+                0.359,
+                0.909,
+                0.371
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.313,
+                0.373,
+                0.862,
+                0.386
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.313,
+                0.389,
+                0.899,
+                0.401
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.314,
+                0.405,
+                0.619,
+                0.416
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.313,
+                0.494,
+                0.914,
+                0.508
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.311,
+                0.509,
+                0.915,
+                0.525
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.312,
+                0.525,
+                0.89,
+                0.538
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.312,
+                0.542,
+                0.894,
+                0.553
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.314,
+                0.558,
+                0.461,
+                0.569
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.285,
+                0.496,
+                0.299,
+                0.501
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.287,
+                0.594,
+                0.296,
+                0.602
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.313,
+                0.595,
+                0.927,
+                0.607
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.313,
+                0.61,
+                0.915,
+                0.622
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.287,
+                0.632,
+                0.297,
+                0.64
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.312,
+                0.631,
+                0.914,
+                0.644
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.312,
+                0.647,
+                0.717,
+                0.66
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.965,
+                0.079,
+                0.975
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.073,
+                0.029,
+                0.194,
+                0.055
+            ],
+            "angle": 0,
+            "content": "HSBC"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.649,
+                0.029,
+                0.93,
+                0.042
+            ],
+            "angle": 0,
+            "content": "Equities • Energy Equipment & Services"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.843,
+                0.042,
+                0.93,
+                0.054
+            ],
+            "angle": 0,
+            "content": "9 June 2026"
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.282,
+                0.136,
+                0.635,
+                0.15
+            ],
+            "angle": 0,
+            "content": "Residential solar + energy storage system (ESS)"
+        },
+        {
+            "type": "list",
+            "bbox": [
+                0.283,
+                0.152,
+                0.925,
+                0.325
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.283,
+                0.152,
+                0.903,
+                0.181
+            ],
+            "angle": 0,
+            "content": "Exhibition heat: Residential storage was one of the busiest segments at the show, with consistently high booth traffic.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.283,
+                0.189,
+                0.911,
+                0.234
+            ],
+            "angle": 0,
+            "content": "Low perceived entry barriers: The segment looked easy to enter from a product standpoint as hardware differentiation is narrowing, accelerating competition and pushing differentiation towards channels, certification, delivery, and software service.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.283,
+                0.242,
+                0.923,
+                0.287
+            ],
+            "angle": 0,
+            "content": "AI as a standard feature: Many vendors positioned AI-enabled energy management (tariff arbitrage, smart scheduling, predictive control, VPP participation) as a baseline capability rather than a premium add-on.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.283,
+                0.295,
+                0.923,
+                0.325
+            ],
+            "angle": 0,
+            "content": "All-in-one products proliferating: Integrated ‘all-in-one’ systems were widely launched or previewed, signaling a shift towards simplified installation and packaged user experience.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.282,
+                0.333,
+                0.538,
+                0.347
+            ],
+            "angle": 0,
+            "content": "AIDC & compute/power integration"
+        },
+        {
+            "type": "list",
+            "bbox": [
+                0.283,
+                0.348,
+                0.911,
+                0.521
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.283,
+                0.348,
+                0.9,
+                0.378
+            ],
+            "angle": 0,
+            "content": "A show highlight: ‘Green power for AIDC’ was heavily promoted via renderings, demo boards, and reference architectures, indicating strong ecosystem attention.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.283,
+                0.386,
+                0.912,
+                0.431
+            ],
+            "angle": 0,
+            "content": "Solid-state transformer (SST) momentum: SST solutions for data-centre power are emerging as a focal point. Multiple players are developing SST-based power solutions for AIDC, and competitive intensity appears real and rising.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.283,
+                0.439,
+                0.89,
+                0.468
+            ],
+            "angle": 0,
+            "content": "- Architecture focus: Discussions frequently centred on DC coupling and system-level integration, aligning with data-centre power distribution trends.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.283,
+                0.476,
+                0.894,
+                0.521
+            ],
+            "angle": 0,
+            "content": "Longer adoption cycle: Despite strong interest, deployment is expected to be slower, driven by the need to prove lifecycle economics, efficiency, PUE impact, reliability, and standardisation.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.282,
+                0.53,
+                0.421,
+                0.543
+            ],
+            "angle": 0,
+            "content": "Solar supply chain"
+        },
+        {
+            "type": "list",
+            "bbox": [
+                0.283,
+                0.545,
+                0.927,
+                0.856
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.283,
+                0.545,
+                0.905,
+                0.574
+            ],
+            "angle": 0,
+            "content": "Relatively quiet: Compared with storage and AIDC themes, the traditional solar supply-chain narrative felt noticeably cooler at the exhibition.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.283,
+                0.582,
+                0.927,
+                0.643
+            ],
+            "angle": 0,
+            "content": "Pricing remains pressured and segmented: Mainstream utility-scale pricing was discussed around RMB0.69-0.75/W, while distributed/overseas mixes could clear at RMB0.85-1.00/W. Very low-priced orders were described as more concentrated earlier in the year.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.283,
+                0.651,
+                0.925,
+                0.696
+            ],
+            "angle": 0,
+            "content": "Cost pass-through is imperfect: Export tax rebate changes were partially passed through in new contracts, while silver cost inflation was harder to fully transfer, keeping margin management tight.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.283,
+                0.704,
+                0.911,
+                0.749
+            ],
+            "angle": 0,
+            "content": "‘Optimise and retrofit’ over ‘build new’: The focus is on process optimisation and cost-down, including reduced-silver/copper-based metallisation. Cost-down impact was cited at RMB0.03-0.05/W under silver prices around RMB18k-19k/kg.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.283,
+                0.757,
+                0.907,
+                0.817
+            ],
+            "angle": 0,
+            "content": "Copper-based metallisation is a key cost-down lever, but ramp takes time: Industry commentary highlighted copper paste / reduced-silver approaches as a major next step. Initial deployment targets were discussed at the single-digit GW level, implying a gradual scale-up rather than an overnight switch.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.283,
+                0.825,
+                0.913,
+                0.856
+            ],
+            "angle": 0,
+            "content": "Ongoing shakeout: Industry commentary continued to point to low utilisation rates (often cited at ≤50%), implying a prolonged capacity-clearing process.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.282,
+                0.864,
+                0.397,
+                0.877
+            ],
+            "angle": 0,
+            "content": "Energy storage"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.283,
+                0.879,
+                0.89,
+                0.908
+            ],
+            "angle": 0,
+            "content": "Attention remains elevated: Storage drew more traffic and mindshare than modules, reinforcing its role as the current “growth and storytelling” engine.",
+            "merge_prev": false
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.92,
+                0.965,
+                0.93,
+                0.974
+            ],
+            "angle": 0,
+            "content": "3"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.652,
+                0.03,
+                0.929,
+                0.043
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.285,
+                0.334,
+                0.536,
+                0.347
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.843,
+                0.042,
+                0.929,
+                0.054
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.137,
+                0.034,
+                0.193,
+                0.051
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.284,
+                0.864,
+                0.397,
+                0.878
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.312,
+                0.243,
+                0.923,
+                0.256
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.313,
+                0.258,
+                0.908,
+                0.272
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.313,
+                0.275,
+                0.518,
+                0.286
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.285,
+                0.243,
+                0.299,
+                0.251
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.287,
+                0.584,
+                0.297,
+                0.592
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.312,
+                0.583,
+                0.868,
+                0.598
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.314,
+                0.6,
+                0.856,
+                0.611
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.313,
+                0.616,
+                0.926,
+                0.627
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.311,
+                0.629,
+                0.375,
+                0.645
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.313,
+                0.652,
+                0.924,
+                0.665
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.313,
+                0.668,
+                0.888,
+                0.681
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.313,
+                0.684,
+                0.439,
+                0.696
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.285,
+                0.652,
+                0.299,
+                0.66
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.288,
+                0.192,
+                0.297,
+                0.198
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.313,
+                0.191,
+                0.862,
+                0.203
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.313,
+                0.206,
+                0.91,
+                0.218
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.313,
+                0.221,
+                0.823,
+                0.233
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.287,
+                0.388,
+                0.297,
+                0.395
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.311,
+                0.386,
+                0.888,
+                0.401
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.312,
+                0.402,
+                0.912,
+                0.415
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.313,
+                0.418,
+                0.687,
+                0.431
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.288,
+                0.479,
+                0.297,
+                0.485
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.312,
+                0.478,
+                0.894,
+                0.491
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.314,
+                0.493,
+                0.892,
+                0.505
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.314,
+                0.51,
+                0.42,
+                0.52
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.288,
+                0.706,
+                0.297,
+                0.713
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.315,
+                0.706,
+                0.911,
+                0.718
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.314,
+                0.721,
+                0.9,
+                0.733
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.311,
+                0.735,
+                0.741,
+                0.75
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.288,
+                0.759,
+                0.297,
+                0.766
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.313,
+                0.758,
+                0.906,
+                0.772
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.314,
+                0.774,
+                0.901,
+                0.786
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.314,
+                0.79,
+                0.906,
+                0.802
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.314,
+                0.805,
+                0.587,
+                0.817
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.287,
+                0.297,
+                0.297,
+                0.304
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.313,
+                0.297,
+                0.923,
+                0.309
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.313,
+                0.312,
+                0.911,
+                0.325
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.288,
+                0.153,
+                0.297,
+                0.161
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.313,
+                0.153,
+                0.902,
+                0.165
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.314,
+                0.168,
+                0.513,
+                0.18
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.288,
+                0.35,
+                0.297,
+                0.357
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.312,
+                0.35,
+                0.897,
+                0.362
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.313,
+                0.364,
+                0.814,
+                0.378
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.288,
+                0.441,
+                0.297,
+                0.448
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.312,
+                0.44,
+                0.889,
+                0.454
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.313,
+                0.455,
+                0.731,
+                0.469
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.288,
+                0.547,
+                0.297,
+                0.554
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.312,
+                0.546,
+                0.903,
+                0.559
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.313,
+                0.562,
+                0.67,
+                0.574
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.287,
+                0.827,
+                0.297,
+                0.835
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.314,
+                0.827,
+                0.913,
+                0.84
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.312,
+                0.842,
+                0.739,
+                0.856
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.313,
+                0.88,
+                0.89,
+                0.892
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.313,
+                0.895,
+                0.749,
+                0.909
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.284,
+                0.88,
+                0.299,
+                0.888
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.92,
+                0.965,
+                0.93,
+                0.974
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.284,
+                0.137,
+                0.634,
+                0.15
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.284,
+                0.53,
+                0.42,
+                0.543
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.073,
+                0.029,
+                0.194,
+                0.055
+            ],
+            "angle": 0,
+            "content": "HSBC"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.649,
+                0.029,
+                0.93,
+                0.042
+            ],
+            "angle": 0,
+            "content": "Equities • Energy Equipment & Services"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.843,
+                0.042,
+                0.93,
+                0.054
+            ],
+            "angle": 0,
+            "content": "9 June 2026"
+        },
+        {
+            "type": "list",
+            "bbox": [
+                0.283,
+                0.136,
+                0.925,
+                0.257
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.283,
+                0.136,
+                0.917,
+                0.166
+            ],
+            "angle": 0,
+            "content": "C&I storage gaining share: Commercial & industrial storage was repeatedly framed as a fast-growing segment, with improving shipment stability and project pipelines.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.283,
+                0.173,
+                0.9,
+                0.218
+            ],
+            "angle": 0,
+            "content": "Utility-scale is competitive: Large-scale storage was described as more crowded and price-competitive, pushing some participants to prioritise overseas or niche project structures.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.283,
+                0.226,
+                0.928,
+                0.257
+            ],
+            "angle": 0,
+            "content": "Pricing discipline and cost pass-through: With battery input costs fluctuating, the ability to adjust pricing while protecting margins was highlighted as a key operational differentiator.",
+            "merge_prev": false
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.069,
+                0.965,
+                0.08,
+                0.974
+            ],
+            "angle": 0,
+            "content": "4"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.652,
+                0.03,
+                0.929,
+                0.043
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.843,
+                0.042,
+                0.929,
+                0.054
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.137,
+                0.034,
+                0.193,
+                0.051
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.288,
+                0.176,
+                0.297,
+                0.183
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.314,
+                0.175,
+                0.897,
+                0.187
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.313,
+                0.19,
+                0.866,
+                0.203
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.313,
+                0.206,
+                0.386,
+                0.218
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.289,
+                0.23,
+                0.296,
+                0.235
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.312,
+                0.227,
+                0.918,
+                0.241
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.313,
+                0.244,
+                0.927,
+                0.256
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.288,
+                0.138,
+                0.297,
+                0.145
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.314,
+                0.138,
+                0.916,
+                0.15
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.311,
+                0.152,
+                0.831,
+                0.166
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.966,
+                0.079,
+                0.974
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.073,
+                0.03,
+                0.194,
+                0.055
+            ],
+            "angle": 0,
+            "content": "HSBC"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.649,
+                0.029,
+                0.93,
+                0.042
+            ],
+            "angle": 0,
+            "content": "Equities • Energy Equipment & Services"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.843,
+                0.042,
+                0.93,
+                0.054
+            ],
+            "angle": 0,
+            "content": "9 June 2026"
+        },
+        {
+            "type": "doc_title",
+            "bbox": [
+                0.07,
+                0.138,
+                0.517,
+                0.172
+            ],
+            "angle": 0,
+            "content": "Disclosure appendix"
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.067,
+                0.208,
+                0.221,
+                0.221
+            ],
+            "angle": 0,
+            "content": "Analyst Certification"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.065,
+                0.223,
+                0.932,
+                0.33
+            ],
+            "angle": 0,
+            "content": "The following analyst(s), economist(s), or strategist(s) who is(are) primarily responsible for this report, including any analyst(s) whose name(s) appear(s) as author of an individual section or sections of the report and any analyst(s) named as the covering analyst(s) of a subsidiary company in a sum-of-the-parts valuation certifies(y) that the opinion(s) on the subject security(ies) or issuer(s), any views or forecasts expressed in the section(s) of which such individual(s) is(are) named as author(s), and any other views or forecasts expressed herein, including any views expressed on the back page of the research report, accurately reflect their personal view(s) and that no part of their compensation was, is or will be directly or indirectly related to the specific recommendation(s) or views contained in this research report: Daniel Yang, Evan Li and Corey Chan",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.067,
+                0.339,
+                0.232,
+                0.352
+            ],
+            "angle": 0,
+            "content": "Important disclosures"
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.067,
+                0.357,
+                0.465,
+                0.371
+            ],
+            "angle": 0,
+            "content": "Equities: Stock ratings and basis for financial analysis"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.065,
+                0.372,
+                0.932,
+                0.48
+            ],
+            "angle": 0,
+            "content": "HSBC and its affiliates, including the issuer of this report (\"HSBC\") believes an investor's decision to buy or sell a stock should depend on individual circumstances such as the investor's existing holdings, risk tolerance and other considerations and that investors utilise various disciplines and investment horizons when making investment decisions. Ratings should not be used or relied on in isolation as investment advice. Different securities firms use a variety of ratings terms as well as different rating systems to describe their recommendations and therefore investors should carefully read the definitions of the ratings used in each research report. Further, investors should carefully read the entire research report and not infer its contents from the rating because research reports contain more complete information concerning the analysts' views and the basis for the rating.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.067,
+                0.488,
+                0.603,
+                0.502
+            ],
+            "angle": 0,
+            "content": "From 23rd March 2015 HSBC has assigned ratings on the following basis:"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.065,
+                0.503,
+                0.931,
+                0.594
+            ],
+            "angle": 0,
+            "content": "The target price is based on the analyst's assessment of the stock's actual current value, although we expect it to take six to 12 months for the market price to reflect this. When the target price is more than \\(20\\%\\) above the current share price, the stock will be classified as a Buy; when it is between \\(5\\%\\) and \\(20\\%\\) above the current share price, the stock may be classified as a Buy or a Hold; when it is between \\(5\\%\\) below and \\(5\\%\\) above the current share price, the stock will be classified as a Hold; when it is between \\(5\\%\\) and \\(20\\%\\) below the current share price, the stock may be classified as a Hold or a Reduce; and when it is more than \\(20\\%\\) below the current share price, the stock will be classified as a Reduce.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.066,
+                0.603,
+                0.931,
+                0.633
+            ],
+            "angle": 0,
+            "content": "Our ratings are re-calibrated against these bands at the time of any 'material change' (initiation or resumption of coverage, change in target price or estimates).",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.067,
+                0.641,
+                0.685,
+                0.655
+            ],
+            "angle": 0,
+            "content": "Upside/Downside is the percentage difference between the target price and the share price.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.067,
+                0.664,
+                0.631,
+                0.678
+            ],
+            "angle": 0,
+            "content": "Prior to this date, HSBC's rating structure was applied on the following basis:"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.065,
+                0.679,
+                0.931,
+                0.801
+            ],
+            "angle": 0,
+            "content": "For each stock we set a required rate of return calculated from the cost of equity for that stock's domestic or, as appropriate, regional market established by our strategy team. The target price for a stock represented the value the analyst expected the stock to reach over our performance horizon. The performance horizon was 12 months. For a stock to be classified as Overweight, the potential return, which equals the percentage difference between the current share price and the target price, including the forecast dividend yield when indicated, had to exceed the required return by at least 5 percentage points over the succeeding 12 months (or 10 percentage points for a stock classified as Volatile*). For a stock to be classified as Underweight, the stock was expected to underperform its required return by at least 5 percentage points over the succeeding 12 months (or 10 percentage points for a stock classified as Volatile*). Stocks between these bands were classified as Neutral.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.065,
+                0.81,
+                0.931,
+                0.886
+            ],
+            "angle": 0,
+            "content": "*A stock was classified as volatile if its historical volatility had exceeded 40%, if the stock had been listed for less than 12 months (unless it was in an industry or sector where volatility is low) or if the analyst expected significant volatility. However, stocks which we did not consider volatile may in fact also have behaved in such a way. Historical volatility was defined as the past month's average of the daily 365-day moving average volatilities. In order to avoid misleadingly frequent changes in rating, however, volatility had to move 2.5 percentage points past the 40% benchmark in either direction for a stock's status to change.",
+            "merge_prev": false
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.92,
+                0.964,
+                0.931,
+                0.974
+            ],
+            "angle": 0,
+            "content": "5"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.652,
+                0.03,
+                0.929,
+                0.043
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.664,
+                0.629,
+                0.678
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.069,
+                0.489,
+                0.601,
+                0.502
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.843,
+                0.042,
+                0.929,
+                0.054
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.137,
+                0.034,
+                0.192,
+                0.051
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.641,
+                0.683,
+                0.655
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.92,
+                0.965,
+                0.93,
+                0.974
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.207,
+                0.219,
+                0.221
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.339,
+                0.23,
+                0.352
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.136,
+                0.519,
+                0.173
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.224,
+                0.928,
+                0.238
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.24,
+                0.928,
+                0.254
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.256,
+                0.928,
+                0.267
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.27,
+                0.93,
+                0.283
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.287,
+                0.929,
+                0.3
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.302,
+                0.928,
+                0.313
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.318,
+                0.744,
+                0.328
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.374,
+                0.928,
+                0.384
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.39,
+                0.93,
+                0.401
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.405,
+                0.929,
+                0.417
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.419,
+                0.93,
+                0.434
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.437,
+                0.93,
+                0.447
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.451,
+                0.93,
+                0.465
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.466,
+                0.873,
+                0.48
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.358,
+                0.463,
+                0.371
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.072,
+                0.506,
+                0.928,
+                0.516
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.521,
+                0.93,
+                0.533
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.535,
+                0.93,
+                0.548
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.551,
+                0.93,
+                0.563
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.566,
+                0.928,
+                0.578
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.583,
+                0.539,
+                0.593
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.812,
+                0.927,
+                0.822
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.828,
+                0.928,
+                0.838
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.843,
+                0.929,
+                0.855
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.858,
+                0.929,
+                0.87
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.871,
+                0.857,
+                0.887
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.601,
+                0.929,
+                0.619
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.619,
+                0.259,
+                0.632
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.679,
+                0.928,
+                0.693
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.696,
+                0.929,
+                0.708
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.711,
+                0.929,
+                0.724
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.727,
+                0.928,
+                0.739
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.741,
+                0.93,
+                0.755
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.758,
+                0.928,
+                0.769
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.773,
+                0.928,
+                0.787
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.788,
+                0.723,
+                0.801
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.073,
+                0.03,
+                0.137,
+                0.055
+            ],
+            "angle": 0,
+            "content": ""
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.139,
+                0.036,
+                0.191,
+                0.049
+            ],
+            "angle": 0,
+            "content": "HSBC"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.649,
+                0.029,
+                0.93,
+                0.042
+            ],
+            "angle": 0,
+            "content": "Equities • Energy Equipment & Services"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.843,
+                0.042,
+                0.93,
+                0.054
+            ],
+            "angle": 0,
+            "content": "9 June 2026"
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.067,
+                0.136,
+                0.49,
+                0.15
+            ],
+            "angle": 0,
+            "content": "Rating distribution for long-term investment opportunities"
+        },
+        {
+            "type": "table_caption",
+            "bbox": [
+                0.067,
+                0.155,
+                0.768,
+                0.168
+            ],
+            "angle": 0,
+            "content": "As of 31 March 2026, the distribution of all independent ratings published by HSBC is as follows:"
+        },
+        {
+            "type": "table",
+            "bbox": [
+                0.068,
+                0.169,
+                0.905,
+                0.222
+            ],
+            "angle": 0,
+            "content": "<table><tr><td>Buy</td><td>59%</td><td>(12% of these provided with Investment Banking Services in the past 12 months)</td></tr><tr><td>Hold</td><td>36%</td><td>(12% of these provided with Investment Banking Services in the past 12 months)</td></tr><tr><td>Sell</td><td>6%</td><td>(6% of these provided with Investment Banking Services in the past 12 months)</td></tr></table>"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.066,
+                0.229,
+                0.932,
+                0.289
+            ],
+            "angle": 0,
+            "content": "For the purposes of the distribution above the following mapping structure is used during the transition from the previous to current rating models: under our previous model, Overweight = Buy, Neutral = Hold and Underweight = Sell; under our current model Buy = Buy, Hold = Hold and Reduce = Sell. For rating definitions under both models, please see “Stock ratings and basis for financial analysis” above.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.066,
+                0.297,
+                0.931,
+                0.327
+            ],
+            "angle": 0,
+            "content": "For the distribution of non-independent ratings published by HSBC, please see the disclosure page available at http://www.hsbcnet.com/gbm/financial-regulation/investment-recommendations-disclosures.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.066,
+                0.333,
+                0.931,
+                0.379
+            ],
+            "angle": 0,
+            "content": "To view a list of all the independent fundamental ratings/recommendations disseminated by HSBC during the preceding 12-month period, and the location where we publish our quarterly distribution of non-fundamental recommendations (applicable to Fixed Income and Currencies research only), please use the following links to access the disclosure page:",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.067,
+                0.386,
+                0.611,
+                0.4
+            ],
+            "angle": 0,
+            "content": "Clients of HSBC Private Bank: www.research.privatebank.hsbc.com/Disclosures",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.067,
+                0.407,
+                0.446,
+                0.421
+            ],
+            "angle": 0,
+            "content": "All other clients: www.research.hsbc.com/A/Disclosures",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.066,
+                0.428,
+                0.931,
+                0.473
+            ],
+            "angle": 0,
+            "content": "HSBC and its affiliates will from time to time sell to and buy from customers the securities/instruments, both equity and debt (including derivatives) of companies covered in HSBC on a principal or agency basis or act as a market maker or liquidity provider in the securities/instruments mentioned in this report.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.066,
+                0.48,
+                0.931,
+                0.511
+            ],
+            "angle": 0,
+            "content": "Analysts, economists, and strategists are paid in part by reference to the profitability of HSBC which includes investment banking, sales & trading, and principal trading revenues.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.067,
+                0.518,
+                0.774,
+                0.532
+            ],
+            "angle": 0,
+            "content": "Whether, or in what time frame, an update of this analysis will be published is not determined in advance.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.066,
+                0.539,
+                0.931,
+                0.584
+            ],
+            "angle": 0,
+            "content": "Non-U.S. analysts may not be associated persons of HSBC Securities (USA) Inc, and therefore may not be subject to FINRA Rule 2241 or FINRA Rule 2242 restrictions on communications with the subject company, public appearances and trading securities held by the analysts.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.066,
+                0.591,
+                0.931,
+                0.651
+            ],
+            "angle": 0,
+            "content": "Economic sanctions laws imposed by certain jurisdictions such as the US, the EU, the UK, and others, may prohibit persons subject to those laws from making certain types of investments, including by transacting or dealing in securities of particular issuers, sectors, or regions. This report does not constitute advice in relation to any such laws and should not be construed as an inducement to transact in securities in breach of such laws.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.066,
+                0.659,
+                0.931,
+                0.719
+            ],
+            "angle": 0,
+            "content": "For disclosures in respect of any company mentioned in this report, please see the most recently published report on that company available at www.hsbcnet.com/research. HSBC Private Bank clients should contact their Relationship Manager for queries regarding other research reports. In order to find out more about the proprietary models used to produce this report, please contact the authoring analyst.",
+            "merge_prev": false
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.067,
+                0.726,
+                0.235,
+                0.739
+            ],
+            "angle": 0,
+            "content": "Additional disclosures"
+        },
+        {
+            "type": "list",
+            "bbox": [
+                0.068,
+                0.742,
+                0.925,
+                0.924
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.069,
+                0.742,
+                0.375,
+                0.756
+            ],
+            "angle": 0,
+            "content": "1 This report is dated as at 09 June 2026.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.068,
+                0.76,
+                0.921,
+                0.789
+            ],
+            "angle": 0,
+            "content": "2 All market data included in this report are dated as at close 05 June 2026, unless a different date and/or a specific time of day is indicated in the report.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.068,
+                0.792,
+                0.924,
+                0.863
+            ],
+            "angle": 0,
+            "content": "3 HSBC has procedures in place to identify and manage any potential conflicts of interest that arise in connection with its Research business. HSBC's analysts and its other staff who are involved in the preparation and dissemination of Research operate and have a management reporting line independent of HSBC's Investment Banking business. Information Barrier procedures are in place between the Investment Banking, Principal Trading, and Research businesses to ensure that any confidential and/or price sensitive information is handled in an appropriate manner.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.068,
+                0.866,
+                0.915,
+                0.924
+            ],
+            "angle": 0,
+            "content": "4 You are not permitted to use, for reference, any data in this document for the purpose of (i) determining the interest payable, or other sums due, under loan agreements or under other financial contracts or instruments, (ii) determining the price at which a financial instrument may be bought or sold or traded or redeemed, or the value of a financial instrument, and/or (iii) measuring the performance of a financial instrument or of an investment fund.",
+            "merge_prev": false
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.069,
+                0.965,
+                0.079,
+                0.974
+            ],
+            "angle": 0,
+            "content": "6"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.743,
+                0.374,
+                0.755
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.652,
+                0.03,
+                0.929,
+                0.043
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.137,
+                0.035,
+                0.192,
+                0.051
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.386,
+                0.609,
+                0.398
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.843,
+                0.042,
+                0.929,
+                0.054
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.966,
+                0.079,
+                0.974
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.727,
+                0.234,
+                0.74
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.407,
+                0.446,
+                0.42
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.793,
+                0.084,
+                0.805
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.108,
+                0.795,
+                0.9,
+                0.805
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.107,
+                0.808,
+                0.86,
+                0.82
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.107,
+                0.822,
+                0.855,
+                0.834
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.106,
+                0.836,
+                0.924,
+                0.849
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.107,
+                0.852,
+                0.785,
+                0.861
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.297,
+                0.93,
+                0.31
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.312,
+                0.683,
+                0.326
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.48,
+                0.929,
+                0.494
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.497,
+                0.387,
+                0.51
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.761,
+                0.088,
+                0.773
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.102,
+                0.76,
+                0.92,
+                0.773
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.106,
+                0.776,
+                0.3,
+                0.787
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.138,
+                0.489,
+                0.15
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.155,
+                0.768,
+                0.169
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.517,
+                0.774,
+                0.531
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.229,
+                0.929,
+                0.242
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.244,
+                0.929,
+                0.259
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.26,
+                0.929,
+                0.274
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.069,
+                0.275,
+                0.182,
+                0.29
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.334,
+                0.929,
+                0.348
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.35,
+                0.929,
+                0.362
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.364,
+                0.74,
+                0.379
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.428,
+                0.93,
+                0.442
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.444,
+                0.929,
+                0.457
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.46,
+                0.537,
+                0.472
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.539,
+                0.929,
+                0.553
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.554,
+                0.929,
+                0.569
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.571,
+                0.276,
+                0.583
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.591,
+                0.929,
+                0.606
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.608,
+                0.929,
+                0.62
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.622,
+                0.929,
+                0.637
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.639,
+                0.466,
+                0.651
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.657,
+                0.93,
+                0.674
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.675,
+                0.927,
+                0.687
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.69,
+                0.93,
+                0.703
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.068,
+                0.704,
+                0.216,
+                0.72
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.868,
+                0.084,
+                0.878
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.106,
+                0.867,
+                0.877,
+                0.879
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.105,
+                0.882,
+                0.912,
+                0.894
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.106,
+                0.897,
+                0.91,
+                0.909
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.106,
+                0.911,
+                0.697,
+                0.922
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.073,
+                0.03,
+                0.137,
+                0.055
+            ],
+            "angle": 0,
+            "content": ""
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.139,
+                0.036,
+                0.191,
+                0.049
+            ],
+            "angle": 0,
+            "content": "HSBC"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.649,
+                0.029,
+                0.93,
+                0.042
+            ],
+            "angle": 0,
+            "content": "Equities • Energy Equipment & Services"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.844,
+                0.042,
+                0.93,
+                0.054
+            ],
+            "angle": 0,
+            "content": "9 June 2026"
+        },
+        {
+            "type": "paragraph_title",
+            "bbox": [
+                0.068,
+                0.136,
+                0.342,
+                0.149
+            ],
+            "angle": 0,
+            "content": "Production & distribution disclosures"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.068,
+                0.152,
+                0.658,
+                0.165
+            ],
+            "angle": 0,
+            "content": "1. This report was produced and signed off by the author on 09 Jun 2026 07:34 GMT.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.068,
+                0.174,
+                0.759,
+                0.203
+            ],
+            "angle": 0,
+            "content": "2. In order to see when this report was first disseminated please see the disclosure page available at https://www.research.hsbc.com/R/34/XrGmcJr",
+            "merge_prev": false
+        },
+        {
+            "type": "list",
+            "bbox": [
+                0.068,
+                0.152,
+                0.759,
+                0.203
+            ],
+            "angle": 0,
+            "content": null
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.921,
+                0.965,
+                0.93,
+                0.974
+            ],
+            "angle": 0,
+            "content": "7"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.652,
+                0.03,
+                0.929,
+                0.043
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.137,
+                0.342,
+                0.15
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.137,
+                0.035,
+                0.192,
+                0.051
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.152,
+                0.657,
+                0.166
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.844,
+                0.042,
+                0.929,
+                0.054
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.919,
+                0.965,
+                0.931,
+                0.976
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.067,
+                0.174,
+                0.759,
+                0.189
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.101,
+                0.192,
+                0.411,
+                0.202
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ],
+    [
+        {
+            "type": "header",
+            "bbox": [
+                0.073,
+                0.03,
+                0.194,
+                0.055
+            ],
+            "angle": 0,
+            "content": "HSBC"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.649,
+                0.029,
+                0.93,
+                0.042
+            ],
+            "angle": 0,
+            "content": "Equities • Energy Equipment & Services"
+        },
+        {
+            "type": "header",
+            "bbox": [
+                0.843,
+                0.042,
+                0.93,
+                0.054
+            ],
+            "angle": 0,
+            "content": "9 June 2026"
+        },
+        {
+            "type": "doc_title",
+            "bbox": [
+                0.07,
+                0.139,
+                0.303,
+                0.166
+            ],
+            "angle": 0,
+            "content": "Disclaimer"
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.07,
+                0.171,
+                0.23,
+                0.182
+            ],
+            "angle": 0,
+            "content": "Legal entities as at 13 May 2026:",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.069,
+                0.183,
+                0.657,
+                0.257
+            ],
+            "angle": 0,
+            "content": "HSBC Bank plc; HSBC Continental Europe; HSBC Continental Europe SA, Germany; HSBC Bank Middle East Limited, DIFC; HSBC Bank Middle East Limited, Dubai branch; HSBC Yatirim Menkul Degerler AS, Istanbul; The Hongkong and Shanghai Banking Corporation Limited, Hong Kong; The Hongkong and Shanghai Banking Corporation Limited, Singapore Branch; The Hongkong and Shanghai Banking Corporation Limited, Seoul Securities Branch; The Hongkong and Shanghai Banking Corporation Limited, Seoul Branch; HSBC Qianhai Securities Limited; HSBC Securities (Taiwan) Corporation Limited; HSBC Securities and Capital Markets (India) Private Limited, Mumbai; HSBC Bank Australia Limited; HSBC Securities (USA) Inc., New York; HSBC México, SA, Institución de Banca Múltiple, Grupo Financiero HSBC; Banco HSBC SA",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.666,
+                0.172,
+                0.744,
+                0.182
+            ],
+            "angle": 0,
+            "content": "Issuer of report",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.666,
+                0.183,
+                0.927,
+                0.203
+            ],
+            "angle": 0,
+            "content": "The Hongkong and Shanghai Banking Corporation Limited",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.667,
+                0.204,
+                0.822,
+                0.214
+            ],
+            "angle": 0,
+            "content": "Level 16, 1 Queen's Road Central",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.667,
+                0.215,
+                0.745,
+                0.225
+            ],
+            "angle": 0,
+            "content": "Hong Kong SAR",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.667,
+                0.226,
+                0.795,
+                0.235
+            ],
+            "angle": 0,
+            "content": "Telephone: +852 2843 9111",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.667,
+                0.236,
+                0.766,
+                0.246
+            ],
+            "angle": 0,
+            "content": "Fax: +852 2596 0200",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.667,
+                0.247,
+                0.822,
+                0.256
+            ],
+            "angle": 0,
+            "content": "Website: www.research.hsbc.com",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.068,
+                0.26,
+                0.929,
+                0.399
+            ],
+            "angle": 0,
+            "content": "This document has been issued by The Hongkong and Shanghai Banking Corporation Limited (\"HSBC\") in the conduct of its Hong Kong regulated business for the information of its institutional and professional investor (as defined by Securities and Future Ordinance (Chapter 571)) customers; it is not intended for and should not be distributed to retail customers in Hong Kong, unless permitted otherwise. The Hongkong and Shanghai Banking Corporation Limited is regulated by the Hong Kong Monetary Authority. All enquires by recipients in Hong Kong must be directed to your HSBC contact in Hong Kong. If it is received by a customer of an affiliate of HSBC, its provision to the recipient is subject to the terms of business in place between the recipient and such affiliate. This document is not and should not be construed as an offer to sell or the solicitation of an offer to purchase or subscribe for any investment. HSBC has based this document on information obtained from sources it believes to be reliable but which it has not independently verified; HSBC makes no guarantee, representation or warranty and accepts no responsibility or liability as to its accuracy or completeness. Expressions of opinion are those of the Research Division of HSBC only and are subject to change without notice. From time to time research analysts conduct site visits of covered issuers. HSBC policies prohibit research analysts from accepting payment or reimbursement for travel expenses from the issuer for such visits. HSBC and its affiliates and/or their officers, directors and employees may have positions in any securities mentioned in this document (or in any related investment) and may from time to time add to or dispose of any such securities (or investment). HSBC and its affiliates may act as market maker or have assumed an underwriting commitment in the securities of companies discussed in this document (or in related investments), may sell them to or buy them from customers on a principal basis and may also perform or seek to perform investment banking or underwriting services for or relating to those companies. The document is intended to be distributed in its entirety. Unless governing law permits otherwise, you must contact a HSBC Group member in your home jurisdiction if you wish to use HSBC Group services in effecting a transaction in any investment mentioned in this document.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.068,
+                0.399,
+                0.928,
+                0.442
+            ],
+            "angle": 0,
+            "content": "In the UK, this publication is distributed by HSBC Bank plc for the information of its Clients (as defined in the Rules of FCA) and those of its affiliates only. Nothing herein excludes or restricts any duty or liability to a customer which HSBC Bank plc has under the Financial Services and Markets Act 2000 or under the Rules of FCA and PRA. A recipient who chooses to deal with any person who is not a representative of HSBC Bank plc in the UK will not enjoy the protections afforded by the UK regulatory regime. HSBC Bank plc is regulated by the Financial Conduct Authority and the Prudential Regulation Authority.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.068,
+                0.442,
+                0.889,
+                0.452
+            ],
+            "angle": 0,
+            "content": "In the European Economic Area, this publication has been distributed by HSBC Continental Europe or by such other HSBC affiliate from which the recipient receives relevant services.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.068,
+                0.452,
+                0.929,
+                0.613
+            ],
+            "angle": 0,
+            "content": "In Japan, this publication has been distributed by HSBC Securities (Japan) Co., Ltd.. It may not be further distributed in whole or in part for any purpose. In Korea, this publication is distributed by either The Hongkong and Shanghai Banking Corporation Limited, Seoul Securities Branch (\"HBAP SLS\") or The Hongkong and Shanghai Banking Corporation Limited, Seoul Branch (\"HBAP SEL\") for the general information of professional investors specified in Article 9 of the Financial Investment Services and Capital Markets Act (\"FSCMA\"). This publication is not a prospectus as defined in the FSCMA. It may not be further distributed in whole or in part for any purpose. Both HBAP SLS and HBAP SEL are regulated by the Financial Services Commission and the Financial Supervisory Service of Korea. In Singapore, this publication is distributed by The Hongkong and Shanghai Banking Corporation Limited, Singapore Branch for the general information of institutional investors or other persons specified in Sections 274 and 304 of the Securities and Futures Act 2001 of Singapore (\"SFA\") and accredited investors and other persons in accordance with the conditions specified in Sections 275 and 305 of the SFA. Only Economics or Currencies reports are intended for distribution to a person who is not an Accredited Investor, Expert Investor or Institutional Investor as defined in SFA. The Hongkong and Shanghai Banking Corporation Limited, Singapore Branch accepts legal responsibility for the contents of reports. This publication is not a prospectus as defined in the SFA. It may not be further distributed in whole or in part for any purpose. The Hongkong and Shanghai Banking Corporation Limited Singapore Branch is regulated by the Monetary Authority of Singapore. Recipients in Singapore should contact a \"Hongkong and Shanghai Banking Corporation Limited, Singapore Branch\" representative in respect of any matters arising from, or in connection with this report. Please refer to The Hongkong and Shanghai Banking Corporation Limited Singapore Branch's website at www.business.hsbc.com.sg for contact details. In Australia, this publication has been distributed by The Hongkong and Shanghai Banking Corporation Limited (ABN 65 117 925 970, AFSL 301737) for the general information of its \"wholesale\" customers (as defined in the Corporations Act 2001). Where distributed to retail customers, this research is distributed by HSBC Bank Australia Limited (ABN 48 006 434 162, AFSL No. 232595). These respective entities make no representations that the products or services mentioned in this document are available to persons in Australia or are necessarily suitable for any particular person or appropriate in accordance with local law. No consideration has been given to the particular investment objectives, financial situation or particular needs of any recipient.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.068,
+                0.613,
+                0.929,
+                0.687
+            ],
+            "angle": 0,
+            "content": "HSBC Securities (USA) Inc. accepts responsibility for the content of this research report prepared by its non-US foreign affiliate. The information contained herein is under no circumstances to be construed as investment advice and is not tailored to the needs of the recipient. All US persons receiving and/or accessing this report and wishing to effect transactions in any security discussed herein should do so with HSBC Securities (USA) Inc. in the United States and not with its non-US foreign affiliate, the issuer of this report. HSBC México, S.A., Institución de Banca Múltiple, Grupo Financiero HSBC is authorized and regulated by Secretaría de Hacienda y Crédito Público and Comisión Nacional Bancaria y de Valores (CNBV). In Brazil, this document has been distributed by Banco HSBC SA (\"HSBC Brazil\"), and/or its affiliates. As required by Resolution No. 20/2021 of the Securities and Exchange Commission of Brazil (Comissão de Valores Mobiliários), potential conflicts of interest concerning (i) HSBC Brazil and/or its affiliates; and (ii) the analyst(s) responsible for authoring this report are stated on the chart above labelled \"HSBC & Analyst Disclosures\".",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.068,
+                0.688,
+                0.929,
+                0.774
+            ],
+            "angle": 0,
+            "content": "If you are a customer of HSBC International Wealth & Premier Banking (\"IWPB\"), including HSBC Private Bank, you are eligible to receive this publication only if: (i) you have been approved to receive relevant research publications by an applicable HSBC legal entity; (ii) you have agreed to the applicable HSBC entity's terms and conditions and/or customer declaration for accessing research; and (iii) you have agreed to the terms and conditions of any other internet banking, online banking, mobile banking and/or investment services offered by that HSBC entity, through which you will access research publications (collectively with (ii), the \"Terms\"). If you do not meet the above eligibility requirements, please disregard this publication and, if you are a IWPB customer, please notify your Relationship Manager or call the relevant customer hotline. Distribution of this publication is the sole responsibility of the HSBC entity with whom you have agreed the Terms. Receipt of research publications is strictly subject to the Terms and any other conditions or disclaimers applicable to the provision of the publications that may be advised by IWPB. © Copyright 2026, The Hongkong and Shanghai Banking Corporation Limited, ALL RIGHTS RESERVED. No part of this publication may be reproduced, stored in a retrieval system, or transmitted, on any form or by any means, electronic, mechanical, photocopying, recording, or otherwise, without the prior written permission of The Hongkong and Shanghai Banking Corporation Limited.",
+            "merge_prev": false
+        },
+        {
+            "type": "text",
+            "bbox": [
+                0.859,
+                0.789,
+                0.93,
+                0.802
+            ],
+            "angle": 0,
+            "content": "[1280815]",
+            "merge_prev": false
+        },
+        {
+            "type": "page_number",
+            "bbox": [
+                0.07,
+                0.965,
+                0.079,
+                0.974
+            ],
+            "angle": 0,
+            "content": "8"
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.858,
+                0.788,
+                0.932,
+                0.803
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.652,
+                0.03,
+                0.929,
+                0.043
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.667,
+                0.183,
+                0.926,
+                0.193
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.668,
+                0.195,
+                0.706,
+                0.202
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.073,
+                0.184,
+                0.654,
+                0.192
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.073,
+                0.195,
+                0.655,
+                0.204
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.073,
+                0.205,
+                0.655,
+                0.214
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.215,
+                0.655,
+                0.226
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.073,
+                0.227,
+                0.655,
+                0.235
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.237,
+                0.655,
+                0.247
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.074,
+                0.249,
+                0.554,
+                0.256
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.843,
+                0.042,
+                0.929,
+                0.054
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.668,
+                0.173,
+                0.744,
+                0.182
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.667,
+                0.215,
+                0.744,
+                0.225
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.073,
+                0.173,
+                0.229,
+                0.182
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.669,
+                0.206,
+                0.821,
+                0.213
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.669,
+                0.248,
+                0.821,
+                0.256
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.669,
+                0.227,
+                0.794,
+                0.234
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.669,
+                0.238,
+                0.765,
+                0.245
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.137,
+                0.034,
+                0.192,
+                0.051
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.965,
+                0.079,
+                0.975
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.614,
+                0.926,
+                0.622
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.625,
+                0.927,
+                0.634
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.635,
+                0.927,
+                0.645
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.646,
+                0.927,
+                0.655
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.656,
+                0.926,
+                0.665
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.667,
+                0.926,
+                0.677
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.073,
+                0.679,
+                0.178,
+                0.686
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.073,
+                0.689,
+                0.927,
+                0.698
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.7,
+                0.927,
+                0.709
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.073,
+                0.711,
+                0.926,
+                0.72
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.72,
+                0.926,
+                0.731
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.073,
+                0.732,
+                0.927,
+                0.741
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.743,
+                0.921,
+                0.752
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.753,
+                0.926,
+                0.763
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.764,
+                0.906,
+                0.773
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.073,
+                0.263,
+                0.926,
+                0.269
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.272,
+                0.927,
+                0.281
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.283,
+                0.927,
+                0.292
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.294,
+                0.927,
+                0.302
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.304,
+                0.927,
+                0.313
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.315,
+                0.926,
+                0.324
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.326,
+                0.927,
+                0.334
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.336,
+                0.927,
+                0.345
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.347,
+                0.927,
+                0.356
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.357,
+                0.927,
+                0.366
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.073,
+                0.369,
+                0.927,
+                0.378
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.379,
+                0.927,
+                0.388
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.389,
+                0.547,
+                0.398
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.4,
+                0.927,
+                0.409
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.411,
+                0.926,
+                0.42
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.421,
+                0.926,
+                0.43
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.432,
+                0.252,
+                0.441
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.073,
+                0.138,
+                0.302,
+                0.169
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.073,
+                0.443,
+                0.887,
+                0.451
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.454,
+                0.927,
+                0.463
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.465,
+                0.926,
+                0.474
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.476,
+                0.927,
+                0.484
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.487,
+                0.927,
+                0.496
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.07,
+                0.496,
+                0.929,
+                0.506
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.508,
+                0.929,
+                0.517
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.518,
+                0.929,
+                0.527
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.529,
+                0.929,
+                0.538
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.54,
+                0.927,
+                0.549
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.55,
+                0.929,
+                0.559
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.561,
+                0.926,
+                0.57
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.572,
+                0.926,
+                0.581
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.073,
+                0.582,
+                0.927,
+                0.591
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.593,
+                0.926,
+                0.602
+            ],
+            "text": "",
+            "score": 1.0
+        },
+        {
+            "type": "ocr_text",
+            "bbox": [
+                0.071,
+                0.604,
+                0.742,
+                0.613
+            ],
+            "text": "",
+            "score": 1.0
+        }
+    ]
+]

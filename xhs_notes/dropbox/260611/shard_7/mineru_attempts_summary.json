@@ -1,0 +1,39 @@
+[
+  {
+    "attempt": 1,
+    "round": 1,
+    "token_label": "MINER_U_2",
+    "submitted_pdf_count": 5,
+    "successful_pdf_count": 5,
+    "retry_pdf_count": 0,
+    "timed_out": false,
+    "error": "",
+    "states": [
+      {
+        "pdf": "/tmp/pdf_batch_001_l7db06gj/pdfs/0001-37-GS-China Healthcare- May 2026 China hospital equipment bidding- Single-month bidding value marginally turned positive yoy-260610.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_l7db06gj/pdfs/0002-39-HSBC-China Renewables-SNEC takeaways- ESS strong- solar weak-260609.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_l7db06gj/pdfs/0003-40-HSBC-China Solar-Takeaways from SNEC 2026-260609.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_l7db06gj/pdfs/0004-41-JPM-China Home Appliance-White goods- or white space--260609.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_l7db06gj/pdfs/0005-42-JPM-Retail Radar Jun 10 - Tech Selling amidst Drawdown- World Cup Theme Yet to Kick In-260611.pdf",
+        "state": "done",
+        "error": ""
+      }
+    ]
+  }
+]

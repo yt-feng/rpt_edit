@@ -1,0 +1,51 @@
+{
+  "input_dir": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs",
+  "total_pdf_count_before_shard": 50,
+  "pdf_count_before_skip": 5,
+  "pdf_count": 5,
+  "generated_report_count": 5,
+  "batch_size": 5,
+  "shard_index": 7,
+  "shard_count": 40,
+  "max_reports_per_shard": 5,
+  "max_total_reports": 0,
+  "skip_existing": true,
+  "skipped_existing_count": 0,
+  "skipped_existing": [],
+  "failures": 0,
+  "batches": [
+    {
+      "batch_index": 1,
+      "pdf_count": 5,
+      "files": [
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/37-GS-China Healthcare： May 2026 China hospital equipment bidding： Single~month bidding value marginally turned positive yoy-260610.pdf",
+          "batch_file": "/tmp/pdf_batch_001_l7db06gj/pdfs/0001-37-GS-China Healthcare- May 2026 China hospital equipment bidding- Single-month bidding value marginally turned positive yoy-260610.pdf",
+          "stable_index": "1"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/39-HSBC-China Renewables：SNEC takeaways： ESS strong， solar weak-260609.pdf",
+          "batch_file": "/tmp/pdf_batch_001_l7db06gj/pdfs/0002-39-HSBC-China Renewables-SNEC takeaways- ESS strong- solar weak-260609.pdf",
+          "stable_index": "2"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/40-HSBC-China Solar：Takeaways from SNEC 2026-260609.pdf",
+          "batch_file": "/tmp/pdf_batch_001_l7db06gj/pdfs/0003-40-HSBC-China Solar-Takeaways from SNEC 2026-260609.pdf",
+          "stable_index": "3"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/41-JPM-China Home Appliance：White goods， or white space？-260609.pdf",
+          "batch_file": "/tmp/pdf_batch_001_l7db06gj/pdfs/0004-41-JPM-China Home Appliance-White goods- or white space--260609.pdf",
+          "stable_index": "4"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/42-JPM-Retail Radar Jun 10 - Tech Selling amidst Drawdown, World Cup Theme Yet to Kick In-260611.pdf",
+          "batch_file": "/tmp/pdf_batch_001_l7db06gj/pdfs/0005-42-JPM-Retail Radar Jun 10 - Tech Selling amidst Drawdown- World Cup Theme Yet to Kick In-260611.pdf",
+          "stable_index": "5"
+        }
+      ],
+      "returncode": 0,
+      "status": "ok"
+    }
+  ]
+}
