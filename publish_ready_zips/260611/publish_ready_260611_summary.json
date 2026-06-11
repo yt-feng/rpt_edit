@@ -1,0 +1,191 @@
+{
+  "created_at_utc": "2026-06-11T23:38:06.242541+00:00",
+  "source_date_dir": "xhs_notes/dropbox/260611",
+  "output_dir": "publish_ready_zips/260611",
+  "max_zip_mb": 90,
+  "single_zip": false,
+  "exclude_source_mineru": true,
+  "markdown_files_renamed_to_txt": true,
+  "excluded_debug_files": true,
+  "included_shard_count": 10,
+  "skipped_shards": [
+    "shard_10"
+  ],
+  "total_files": 1034,
+  "total_renamed_markdown_count": 250,
+  "total_raw_file_bytes": 168792589,
+  "zip_count": 2,
+  "zips": [
+    {
+      "path": "publish_ready_zips/260611/publish_ready_260611_part001.zip",
+      "size_bytes": 88543718,
+      "file_count": 579,
+      "renamed_markdown_count": 140,
+      "raw_file_bytes": 94301419,
+      "shards": [
+        "shard_0",
+        "shard_1",
+        "shard_2",
+        "shard_3",
+        "shard_4",
+        "shard_5"
+      ]
+    },
+    {
+      "path": "publish_ready_zips/260611/publish_ready_260611_part002.zip",
+      "size_bytes": 69657455,
+      "file_count": 455,
+      "renamed_markdown_count": 110,
+      "raw_file_bytes": 74491170,
+      "shards": [
+        "shard_5",
+        "shard_6",
+        "shard_7",
+        "shard_8",
+        "shard_9"
+      ]
+    }
+  ],
+  "included_shards": [
+    {
+      "shard": "shard_0",
+      "report_count": 5,
+      "file_count": 111,
+      "renamed_markdown_count": 25,
+      "raw_file_bytes": 14803546,
+      "reports": [
+        "0001-01-Nomura-Asia-Insights-China-CPI-inflation-stabilized-in-May-while-PPI-inf",
+        "0002-02-Deutsche-Bank-China-Macro-Trade-momentum-accelerated-further-260609",
+        "0003-04-Morgan-Stanley-Asia-Economics-The-Viewpoint-Why-boosting-India-s-manufac",
+        "0004-05-Bernstein-Global-Music--The-Industry-s-superfan-transition-is-imminent.-",
+        "0005-06-Goldman-Sachs-Europe-Technology-Semiconductors-Updating-estimates-and-PT"
+      ]
+    },
+    {
+      "shard": "shard_1",
+      "report_count": 5,
+      "file_count": 107,
+      "renamed_markdown_count": 25,
+      "raw_file_bytes": 20011678,
+      "reports": [
+        "0001-07-Bernstein-Asia-Quant-Strategy--Trim-TW-KR-momentum-exposure-Risk-of-unwi",
+        "0002-08-CITI-Japan-FX-An-analysis-of-the-USD-JPY-price-formation-mechanism-26060",
+        "0003-09-Deutsche-Bank-Asia-Macro-Insight-Further-rate-hikes-ahead-260609",
+        "0004-10-Nomura-Asia-Insights-KRW--Rising-Korean-equities-could-create-a--paradox",
+        "0005-11-Morgan-Stanley-China-Materials-May-Trade-Data--Aluminium-Exports-Increas"
+      ]
+    },
+    {
+      "shard": "shard_2",
+      "report_count": 5,
+      "file_count": 79,
+      "renamed_markdown_count": 25,
+      "raw_file_bytes": 11470457,
+      "reports": [
+        "0001-12-Goldman-Sachs-Japan-Economic-Flash--BOJ-June-MPM-Review--We-Expect-a-Rat",
+        "0002-13-Goldman-Sachs-Americas-Healthcare--Pharmaceuticals--Notes-from-the-CMS-P",
+        "0003-14-Goldman-Sachs-Global-Healthcare--47th-Annual-Global-Healthcare-Conferenc",
+        "0004-15-CITI-Greater-China-Semiconductors-China-s-New-Rmb2tn-AI-Investment-Plan-",
+        "0005-16-Bernstein-U.S.-IT-Hardware-The-Quantum-Leap--Winners-and-Losers-in-the-Q"
+      ]
+    },
+    {
+      "shard": "shard_3",
+      "report_count": 5,
+      "file_count": 115,
+      "renamed_markdown_count": 25,
+      "raw_file_bytes": 21580618,
+      "reports": [
+        "0001-17-Deutsche-Bank-China-Autos---Auto-Technology-Chinese-Automakers-Monthly-E",
+        "0002-18-Goldman-Sachs-China-Restaurants--Monthly-Tracker--May-update--Trends-tur",
+        "0003-19-MS-Greater-China-Technology-Hardware---Asia-Pacific-Power-Solutions---Ou",
+        "0004-20-Bofa-BofA-Securities-Equity-Client-Flow-Trends-Record-Tech-outflows-2606",
+        "0005-21-Nomura-Asia-Insights-China--Growth-of-both-exports-and-imports-quickened"
+      ]
+    },
+    {
+      "shard": "shard_4",
+      "report_count": 5,
+      "file_count": 103,
+      "renamed_markdown_count": 25,
+      "raw_file_bytes": 16757209,
+      "reports": [
+        "0001-22-Bernstein-US-Industrials---Tech--The-Data-Center-Project-Pipeline-Capaci",
+        "0002-23-Morgan-Stanley-China-Financials--High-quality-development-more-sustainab",
+        "0003-24-Bernstein-Airfreight---Surface-Transportation-Transports--An-empirical-l",
+        "0004-25-CITI-China-Healthcare-Expert-Call-Takeaways---COINS---BINSA-Act--confirm",
+        "0005-26-Goldman-Sachs-Europe-Technology-Hardware-Updating-estimates-and-PTs-to-r"
+      ]
+    },
+    {
+      "shard": "shard_5",
+      "report_count": 5,
+      "file_count": 109,
+      "renamed_markdown_count": 25,
+      "raw_file_bytes": 15945686,
+      "reports": [
+        "0001-27-MS-Greater-China-Technology-Semiconductors-Thoughts-on-Investor-Concerns",
+        "0002-28-Morgan-Stanley-2026-Industry-Observation-Driven-by-Leading-Players-26060",
+        "0003-29-Barclays-China-AI-and-green-tech-keep-exports-strong-260609",
+        "0004-30-GS-US-Equity-Views_-More-AI-capex--more-volatility-260610",
+        "0005-31-J.P.-Morgan-China--AI-related-high-tech-boosted-May-exports-260609"
+      ]
+    },
+    {
+      "shard": "shard_6",
+      "report_count": 5,
+      "file_count": 103,
+      "renamed_markdown_count": 25,
+      "raw_file_bytes": 16093650,
+      "reports": [
+        "0001-32-Bernstein-Japan-and-EU-Semiconductors-Japan-EU-Semi-Taiwan-Import-Tracke",
+        "0002-33-CITI-China-Communication-Infrastructure-China-s-Rmb2trn-AI-Buildout--Maj",
+        "0003-34-Goldman-Sachs-Hong-Kong-Banks-Addressing-FAQs-on-Hong-Kong-deposits-and-",
+        "0004-35-Deutsche-Bank-Autos---Auto-Technology-China-passenger-vehicle-monthly-wh",
+        "0005-36-Deutsche-Bank-Autos---AutoTechnology-China-NEV-demand-leading-indicator-"
+      ]
+    },
+    {
+      "shard": "shard_7",
+      "report_count": 5,
+      "file_count": 101,
+      "renamed_markdown_count": 25,
+      "raw_file_bytes": 19963628,
+      "reports": [
+        "0001-37-Goldman-Sachs-China-Healthcare--May-2026-China-hospital-equipment-biddin",
+        "0002-39-HSBC-China-Renewables-SNEC-takeaways--ESS-strong--solar-weak-260609",
+        "0003-40-HSBC-China-Solar-Takeaways-from-SNEC-2026-260609",
+        "0004-41-J.P.-Morgan-China-Home-Appliance-White-goods--or-white-space--260609",
+        "0005-42-JPM-Retail-Radar-Jun-10---Tech-Selling-amidst-Drawdown--World-Cup-Theme-"
+      ]
+    },
+    {
+      "shard": "shard_8",
+      "report_count": 5,
+      "file_count": 107,
+      "renamed_markdown_count": 25,
+      "raw_file_bytes": 15070089,
+      "reports": [
+        "0001-43-Jefferies-China---China-Consumer-IP-Toys-Monthly-Tracker-May-260609",
+        "0002-44-MS-Tech-Bytes---Asia-Pacific-Memory---A-Healthy-Reset-260610",
+        "0003-45-Morgan-Stanley-China-Autos---Shared-Mobility--China-EV-Weekly-Orders-Hal",
+        "0004-46-Morgan-Stanley-China-Steel-Exports--May-MoM-Uptick--But-Still-Lower-YoY-",
+        "0005-47-Nomura-China-Auto-EV-Unexciting-May-26--as-expected-260611"
+      ]
+    },
+    {
+      "shard": "shard_9",
+      "report_count": 5,
+      "file_count": 99,
+      "renamed_markdown_count": 25,
+      "raw_file_bytes": 17096028,
+      "reports": [
+        "0001-48-J.P.-Morgan-Japan-Equity-Style-Investing-Stay-with-AI-Momentum--Hedge-a-",
+        "0002-49-Bernstein-Indian-Autos--Bajaj-vs-Eicher-The-350cc-battle-redrawn--260611",
+        "0003-50-Bernstein-Payments--Processors---IT-Services-Visa-OpenAI-Partnership--Ma",
+        "0004-51-Goldman-Sachs-Japan-Games-and-Internet-Our-views-following-new-title-ann",
+        "0005-52-J.P.-Morgan-MLCC-Powder-Growth-empowered-by-high-end-MLCC-demand--10-key"
+      ]
+    }
+  ]
+}
