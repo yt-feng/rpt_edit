@@ -1,0 +1,3673 @@
+[
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "09 Jun 2026 04:41:47 ET | 15 pages"
+                    }
+                ]
+            },
+            "bbox": [
+                78,
+                99,
+                320,
+                114
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Japan FX"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                78,
+                162,
+                210,
+                188
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "An analysis of the USD/JPY price formation mechanism"
+                    }
+                ]
+            },
+            "bbox": [
+                76,
+                196,
+                503,
+                215
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "CITI'S TAKE"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                78,
+                229,
+                161,
+                243
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The US-Japan long-term interest rate spread has narrowed to an extent that clearly favors JPY appreciation against the USD. At the same time the significance of narrowing of the short-term interest rate spread should also not be ignored. The ongoing strength of the USDJPY despite this appears to be strongly affected by JPY-sell hedging demand that results from the historically high levels for Japanese equities. As a result, the estimate yielded by our multiple regression model also justifies the current level of the USDJPY. We see no need to change our bearish medium- to long-term view on the USDJPY. In our view, around ¥160/$ will be the ceiling for the pair and it will correct lower to below ¥155/$ by year-end. However, controlling occasional JPY weakness in the short run would require the normalization of monetary policy by the BoJ as well as JPY-selling intervention by the Japanese authorities."
+                    }
+                ]
+            },
+            "bbox": [
+                76,
+                252,
+                632,
+                419
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Osamu Takashima  "
+                    },
+                    {
+                        "type": "equation_inline",
+                        "content": "^{AC}"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                653,
+                241,
+                769,
+                253
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "+81-3-6776-3251"
+                    }
+                ]
+            },
+            "bbox": [
+                656,
+                257,
+                750,
+                268
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "osamu.takashima@citi.com"
+                    }
+                ]
+            },
+            "bbox": [
+                656,
+                272,
+                790,
+                282
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Daniel Tobon"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                655,
+                291,
+                728,
+                303
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "+1-212-816-8340"
+                    }
+                ]
+            },
+            "bbox": [
+                656,
+                306,
+                746,
+                318
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "daniel.tobon@citi.com"
+                    }
+                ]
+            },
+            "bbox": [
+                656,
+                321,
+                766,
+                332
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Brian Levine"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                655,
+                340,
+                725,
+                353
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "+1-212-816-6896"
+                    }
+                ]
+            },
+            "bbox": [
+                656,
+                356,
+                746,
+                367
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "brian.levine@citi.com"
+                    }
+                ]
+            },
+            "bbox": [
+                656,
+                369,
+                761,
+                382
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "citi®"
+                    }
+                ]
+            },
+            "bbox": [
+                68,
+                23,
+                181,
+                75
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Viewpoint | Citi"
+                    }
+                ]
+            },
+            "bbox": [
+                601,
+                54,
+                929,
+                77
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "See Appendix A-1 for Analyst Certification, Important Disclosures and Research Analyst Affiliations."
+                    }
+                ]
+            },
+            "bbox": [
+                78,
+                868,
+                800,
+                883
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Our fundamental view on USDJPY"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                366,
+                109,
+                678,
+                125
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Our fundamental view is that the USDJPY is strongly affected by 1) the monetary policy gap between the US and Japan, 2) overall market risk preferences, and 3) Japan's balance of payments (BoP), while price formation takes place within the overarching framework provided by the overall direction of the USD, for example against the EUR in particular."
+                    }
+                ]
+            },
+            "bbox": [
+                364,
+                137,
+                897,
+                212
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "If a fair value estimate is possible based on these four elements, then the fifth factor would be the daily deviation of the actual price from this estimate. This residual is normally seen as mispricing due to short-term speculative activities in the market, but forecasting this mispricing is in fact the most difficult task at the same time as being very important for market participants."
+                    }
+                ]
+            },
+            "bbox": [
+                364,
+                224,
+                900,
+                301
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Limits to market model"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                366,
+                314,
+                581,
+                330
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "To analyze these five factors in real time requires the market data that makes available immediate prices rather than the monthly data that make up many economic statistics."
+                    }
+                ]
+            },
+            "bbox": [
+                364,
+                342,
+                872,
+                386
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "However, price formation for the USDJPY, Japanese equities, and JPY interest rates occurs as each of these market prices mutually affects the others. In other words, the independent variables in a market model analysis have significant characteristics of endogeneity and coinstantaneity, making it more difficult to identify relationships that are statistically significant in the strict sense."
+                    }
+                ]
+            },
+            "bbox": [
+                364,
+                400,
+                911,
+                474
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "It is possible to partly address this problem using a methodology such as vector autoregression (VAR), but there are internal limitations when applied to the analysis of market prices given that they are subject to the mutual influence of a large number of factors. In a market model that uses market prices, it will be practically impossible to make omitted variables equal zero, while it is only natural to assume that the problem of multicollinearity cannot ultimately be solved."
+                    }
+                ]
+            },
+            "bbox": [
+                364,
+                488,
+                910,
+                579
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Even so, we find practical utility in the analysis to identify what factors do in reality affect changes in the USDJPY while recognizing these difficulties."
+                    }
+                ]
+            },
+            "bbox": [
+                364,
+                592,
+                911,
+                622
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Basic policy of practical model analysis"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                366,
+                633,
+                723,
+                652
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Normally the analysis of financial and economic time-series data requires breaking it down into 1) the trend component, 2) the cyclical component, and 3) the irregular component. When analyzing market data, if there is no notable seasonality successful detrending will enable the identification of stochastic variation."
+                    }
+                ]
+            },
+            "bbox": [
+                364,
+                662,
+                916,
+                722
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "However, in actual market operation identifying the trend is one of the most important tasks. If it cannot be identified accurately, what in terms of stochastic variation appears to be irregular change in market pricing simply becomes noise. At the same time, eliminating this noise should make identifying the long-term trend somewhat easier."
+                    }
+                ]
+            },
+            "bbox": [
+                364,
+                736,
+                916,
+                810
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Two-tiered (double decker) model for USDJPY"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                366,
+                823,
+                785,
+                840
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "While keeping the above in mind, Figure 1 shows the multiple regression of a range of independent variables for the deviation of the USDJPY from its 200-day moving average. The purpose of finding the deviation from the 200-day moving average is to detrend the data, while it is only a very simple way."
+                    }
+                ]
+            },
+            "bbox": [
+                364,
+                852,
+                911,
+                912
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Japan FX"
+                    }
+                ]
+            },
+            "bbox": [
+                78,
+                23,
+                137,
+                36
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "09 June 2026"
+                    }
+                ]
+            },
+            "bbox": [
+                78,
+                37,
+                161,
+                47
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Citi"
+                    }
+                ]
+            },
+            "bbox": [
+                803,
+                32,
+                918,
+                47
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "2"
+                    }
+                ]
+            },
+            "bbox": [
+                913,
+                970,
+                926,
+                982
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The USDJPY and other exchange rates are generally seen as a random walk process (first-order integrated process or I(1) process), so it cannot be converted into a stationary process by detrending. Even so, understanding what type of variables accurately explain the deviation from the moving average is practically beneficial, and cyclical movement can be identified to some degree."
+                    }
+                ]
+            },
+            "bbox": [
+                364,
+                109,
+                915,
+                186
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "On the other hand, there is also the benefit that eliminating noise helps in the analysis of the medium- to long-term trend as typified by the 200-day moving average."
+                    }
+                ]
+            },
+            "bbox": [
+                364,
+                198,
+                888,
+                244
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Our two-tiered model (double decker model) analyzes the data from 2017 through 2025, and we add dummy variables for 2022 while also adding the cross terms (interaction terms) to the analysis (we estimated both the intercept dummy and the slope dummy for 2022). During 2022 there was a great deal of change in market prices that was not normal due to the turmoil in global markets caused by the start of the Ukraine war and the resulting dramatic monetary tightening by the Fed and other central banks around the world."
+                    }
+                ]
+            },
+            "bbox": [
+                364,
+                256,
+                916,
+                362
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The current estimate of this two-tiered model is around ¥161/$, so the actual USDJPY looks slightly undervalued, perhaps because of intervention to buy the JPY by Japanese authorities. Even so, the extent of this undervaluation is currently very small, and there is no major distortion in the USDJPY relative to the model estimate (Figure 2)."
+                    }
+                ]
+            },
+            "bbox": [
+                364,
+                375,
+                916,
+                450
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "As we discuss below, the USDJPY estimate has remained high despite the contraction in the US-Japan interest rate spread due in large part to the historically high levels for Japanese equities."
+                    }
+                ]
+            },
+            "bbox": [
+                364,
+                463,
+                916,
+                508
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/745dfe0a652a109d8a583c9f9f9feabd5723104783052fb395230cec95e4e23e.jpg"
+                },
+                "content": "| Date       | Actual USD/JPY (USD/JPY) | Single Deck Model (USD/JPY) | Double Deck Model (USD/JPY) |\n|------------|--------------------------|-----------------------------|-----------------------------|\n| Jan-14     | ~105                     | ~103                        | ~104                        |\n| Jan-16     | ~120                     | ~118                        | ~119                        |\n| Jan-18     | ~115                     | ~113                        | ~114                        |\n| Jan-20     | ~108                     | ~106                        | ~107                        |\n| Jan-22     | ~130                     | ~128                        | ~129                        |\n| Jan-24     | ~155                     | ~153                        | ~154                        |\n| Jan-26     | ~160                     | ~158                        | ~159                        |",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Figure 1. USD/JPY: Double decker model (estimate)"
+                    }
+                ],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "© 2026 Citi Inc. No redistribution without Citi's written permission."
+                    },
+                    {
+                        "type": "text",
+                        "content": "Note: The deviation from the 200-day MA is based on the actual 200-day MA in the single deck model and on our 200-day MA estimate in the double decker model."
+                    },
+                    {
+                        "type": "text",
+                        "content": "Source: Bloomberg, CitiFX, Citi"
+                    }
+                ]
+            },
+            "sub_type": "line chart",
+            "bbox": [
+                84,
+                545,
+                491,
+                750
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/dd816dd4181ac7cb7f8c5ec74b8449e1a3eab27319076a8fa64e6fc8eacc0a9e.jpg"
+                },
+                "content": "| Date       | Deviation from Single deck model | Deviation from Double deck model | USD/JPY (actual) [Rhs] |\n|------------|----------------------------------|----------------------------------|------------------------|\n| Jan-14     | ~3                               | ~5                               | ~-10                   |\n| Jan-16     | ~-2                              | ~7                               | ~-10                   |\n| Jan-18     | ~-1                              | ~5                               | ~-10                   |\n| Jan-20     | ~0                               | ~7                               | ~-10                   |\n| Jan-22     | ~-5                              | ~10                              | ~-10                   |\n| Jan-24     | ~5                               | ~7                               | ~10                    |\n| Jan-26     | ~10                              | ~5                               | ~10                    |",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Figure 2. USD/JPY: Double decker model (deviation)"
+                    }
+                ],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "© 2026 Citi Inc. No redistribution without Citi's written permission."
+                    },
+                    {
+                        "type": "text",
+                        "content": "Note: The deviation from the 200-day MA is based on the actual 200-day MA in the single deck model and on our 200-day MA estimate in the double decker model."
+                    },
+                    {
+                        "type": "text",
+                        "content": "Source: Bloomberg, CitiFX, Citi"
+                    }
+                ]
+            },
+            "sub_type": "line chart",
+            "bbox": [
+                503,
+                545,
+                913,
+                752
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Observation of the upper tier (superstructure)"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                364,
+                840,
+                785,
+                859
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Figure 3 shows the upper structure (superstructure) of the two-tier model, or in other words the percentage deviation of the USDJPY from its 200-day moving average and our estimate. Currently the estimate is some +4%, compared with the actual deviation of around +3%, so there is no particular disparity to the estimate."
+                    }
+                ]
+            },
+            "bbox": [
+                364,
+                869,
+                911,
+                930
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Japan FX"
+                    }
+                ]
+            },
+            "bbox": [
+                78,
+                23,
+                138,
+                36
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "09 June 2026"
+                    }
+                ]
+            },
+            "bbox": [
+                78,
+                36,
+                161,
+                47
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Citi"
+                    }
+                ]
+            },
+            "bbox": [
+                803,
+                32,
+                918,
+                47
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "3"
+                    }
+                ]
+            },
+            "bbox": [
+                913,
+                970,
+                926,
+                982
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Figure 4 outlines the structure of the upper tier. The independent variables are the deviation of 1) the US-Japan 10y government bond yield differential (nominal long-term interest rate spread), 2) Japanese equities (TOPIX), 3) the CitiFX commodity terms of trade (ToT) indices (spread between US and Japan), and 4) the USD index (DXY) from its 200-day moving average."
+                    }
+                ]
+            },
+            "bbox": [
+                364,
+                109,
+                911,
+                186
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The two variables with by far the greatest explanatory power are 2) Japanese equities and 4) the USD index, while 1) the long-term interest rate spread and 3) the ToT index spread appear to have little explanatory power. However, simply accepting this interpretation is risky."
+                    }
+                ]
+            },
+            "bbox": [
+                364,
+                198,
+                893,
+                258
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "One reason is that for the USDJPY and Japanese equities, the former also has a strong influence on the latter (they have strong coinstantaneity). On the other hand, regarding the rate spread, change in USD interest rates is much larger than that in JPY interest rates, while normally the effect of the USDJPY on US interest rates is small. It is also possible that the direction of US interest rates has a strong impact on the model estimate even if only indirectly via change in the USD index."
+                    }
+                ]
+            },
+            "bbox": [
+                364,
+                271,
+                906,
+                362
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Our daily analysis also indicates that the direction of the US-Japan interest rate spread, to which the USDJPY is highly sensitive, is a very important factor. While we do not incorporate it into this model, the short-term interest rate spread can on occasion have a greater impact than the long-term interest rate spread via hedging activity and carry trades by market participants."
+                    }
+                ]
+            },
+            "bbox": [
+                364,
+                375,
+                916,
+                450
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Ultimately, this model analysis is not aimed at accurately identifying causal relationships, but rather to best explain actual movements in the USDJPY using a limited number of variables, so it is no more than a simplified market model."
+                    }
+                ]
+            },
+            "bbox": [
+                364,
+                463,
+                903,
+                508
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/ec962f78291bdbb9528c1d707e148ebc02d30be67c66cc37d7ff84ddb76b4997.jpg"
+                },
+                "content": "| Date       | Actual (% deviation from 200d MA) | Estimate (% deviation from 200d MA) | USD/JPY (Actual) [Rhs] |\n|------------|-----------------------------------|-------------------------------------|------------------------|\n| Jan-14     | ~0                                | ~0                                  | ~100                   |\n| Jan-16     | ~15                               | ~15                                 | ~100                   |\n| Jan-18     | ~0                                | ~0                                  | ~100                   |\n| Jan-20     | ~0                                | ~0                                  | ~100                   |\n| Jan-22     | ~15                               | ~15                                 | ~100                   |\n| Jan-24     | ~10                               | ~10                                 | ~150                   |\n| Jan-26     | ~5                                | ~5                                  | ~160                   |",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Figure 3. USD/JPY: Double decker model (superstructure)"
+                    }
+                ],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "© 2026 Citi Inc. No redistribution without Citi's written permission."
+                    },
+                    {
+                        "type": "text",
+                        "content": "Note: Deviation from 200-day MA."
+                    },
+                    {
+                        "type": "text",
+                        "content": "Source: Bloomberg, CitiFX, Citi"
+                    }
+                ]
+            },
+            "sub_type": "line chart",
+            "bbox": [
+                84,
+                556,
+                493,
+                767
+            ]
+        },
+        {
+            "type": "table",
+            "content": {
+                "image_source": {
+                    "path": "images/995b171d287d0761478b245e4aef14d281edca423467b4e611b16e7c88e0635b.jpg"
+                },
+                "table_caption": [
+                    {
+                        "type": "text",
+                        "content": "Figure 4. USD/JPY: Double decker model (outline for the superstructure)"
+                    }
+                ],
+                "table_footnote": [
+                    {
+                        "type": "text",
+                        "content": "© 2026 Citi Inc. No redistribution without Citi's written permission."
+                    },
+                    {
+                        "type": "text",
+                        "content": "Note: Deviation from 200-day MA."
+                    },
+                    {
+                        "type": "text",
+                        "content": "Source: Bloomberg, CitiFX, Citi"
+                    }
+                ],
+                "html": "<table><tr><td colspan=\"8\">Regression Statistics</td></tr><tr><td>Multiple R</td><td>R Square</td><td>Adjusted R Square</td><td>Standard Error</td><td>Observations</td><td colspan=\"2\">Estimate period</td><td>Dummy year</td></tr><tr><td>0.921</td><td>0.848</td><td>0.848</td><td>1.615</td><td>2,348</td><td colspan=\"2\">Jan 2017 - Dec 2025</td><td>2022</td></tr><tr><td>Independent variables</td><td>Coefficients</td><td>Standard Error</td><td>t Stat</td><td>P-value</td><td>Lower 95%</td><td>Upper 95%</td><td>Coefficients (Standardized)</td></tr><tr><td>Intercept</td><td>-0.29</td><td>0.07</td><td>-4.27</td><td>0.00</td><td>-0.42</td><td>-0.16</td><td>1.64</td></tr><tr><td>Nominal 10y yield spread</td><td>0.32</td><td>0.12</td><td>2.69</td><td>0.01</td><td>0.09</td><td>0.56</td><td>0.13</td></tr><tr><td>TOPIX</td><td>0.28</td><td>0.01</td><td>45.89</td><td>0.00</td><td>0.27</td><td>0.29</td><td>2.06</td></tr><tr><td>CitiFX Commodity ToT Index spread</td><td>0.02</td><td>0.01</td><td>4.54</td><td>0.00</td><td>0.01</td><td>0.03</td><td>0.33</td></tr><tr><td>DXY</td><td>0.80</td><td>0.01</td><td>57.98</td><td>0.00</td><td>0.77</td><td>0.82</td><td>2.95</td></tr><tr><td>2022 Dummy</td><td>-0.67</td><td>0.54</td><td>-1.26</td><td>0.21</td><td>-1.72</td><td>0.38</td><td>-0.19</td></tr><tr><td>Interaction term (Nominal yield spread)</td><td>5.10</td><td>0.43</td><td>11.93</td><td>0.00</td><td>4.26</td><td>5.94</td><td>1.15</td></tr><tr><td>Interaction term (TOPIX)</td><td>-0.12</td><td>0.04</td><td>-3.09</td><td>0.00</td><td>-0.19</td><td>-0.04</td><td>-0.11</td></tr><tr><td>Interaction term (ToT Index spread)</td><td>-0.02</td><td>0.01</td><td>-1.34</td><td>0.18</td><td>-0.04</td><td>0.01</td><td>-0.25</td></tr><tr><td>Interaction term (DXY)</td><td>0.26</td><td>0.06</td><td>4.47</td><td>0.00</td><td>0.14</td><td>0.37</td><td>0.46</td></tr></table>",
+                "table_type": "complex_table",
+                "table_nest_level": 1
+            },
+            "bbox": [
+                503,
+                560,
+                913,
+                763
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Observation of lower tier (base structure)"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                364,
+                829,
+                745,
+                845
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Figure 5 shows the lower structure (base) of the two-tier model, or the 200-day average of the USDJPY and our estimate. Currently, the estimate is around ¥154/$ and the actual 200-day moving average is about ¥155/$, so the two are largely in line."
+                    }
+                ]
+            },
+            "bbox": [
+                364,
+                857,
+                906,
+                917
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Japan FX"
+                    }
+                ]
+            },
+            "bbox": [
+                78,
+                23,
+                138,
+                36
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "09 June 2026"
+                    }
+                ]
+            },
+            "bbox": [
+                78,
+                36,
+                161,
+                47
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Citi"
+                    }
+                ]
+            },
+            "bbox": [
+                803,
+                32,
+                918,
+                47
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "4"
+                    }
+                ]
+            },
+            "bbox": [
+                913,
+                970,
+                926,
+                981
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Figure 6 summarizes the lower structure of the model, and the independent variables are the 200-day moving averages of 1) the US-Japan 10-year inflation-linked bond yield differential (real long-term interest rate spread), 2) Japanese equities (log), 3) the Bloomberg Commodity Index (log), and 4) the USD index. The variables with by far the most explanatory power are again 2) Japanese equities and 4) the USD index, and we think the reasons are the same as those we note above for the upper structure."
+                    }
+                ]
+            },
+            "bbox": [
+                364,
+                109,
+                908,
+                214
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The lower structure has a much higher coefficient of determination and t-value (the p-value is very low) so we suspect some type of spurious correlation. In other words, during this period the fundamental environment could have generated confounding factors that are simultaneously affecting all of forex rates, interest rates, equities, and resource prices."
+                    }
+                ]
+            },
+            "bbox": [
+                364,
+                228,
+                916,
+                303
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "One future task will be to identify economic indicators that have external explanatory power such as equity prices, real interest rates, and resource prices, and to use them as instrumental variables to increase the reliability of the analysis based on the lower structure of the USDJPY model."
+                    }
+                ]
+            },
+            "bbox": [
+                364,
+                316,
+                908,
+                376
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/1a55293b41767267491ef1f979cb9d31c6b913ba21fa626a36e08d30447d32bc.jpg"
+                },
+                "content": "| Date Range           | Actual USD/JPY (USD/JPY) | 200d MA USD/JPY (USD/JPY) | 200d MA Estimate USD/JPY (USD/JPY) |\n|----------------------|--------------------------|---------------------------|------------------------------------|\n| Jan 2017- Dec 2025   | ~115                     | ~118                      | ~115                               |\n| Jan 2022- Dec 2022   | ~150                     | ~145                      | ~148                               |\n| Jan 2026- Dec 2026   | ~160                     | ~155                      | ~158                               |",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Figure 5. USD/JPY: Double decker model (base)"
+                    }
+                ],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "© 2026 Citi Inc. No redistribution without Citi's written permission."
+                    },
+                    {
+                        "type": "text",
+                        "content": "Note: 200-day moving average (MA)."
+                    },
+                    {
+                        "type": "text",
+                        "content": "Source: Bloomberg, Citi"
+                    }
+                ]
+            },
+            "sub_type": "line chart",
+            "bbox": [
+                84,
+                428,
+                488,
+                633
+            ]
+        },
+        {
+            "type": "table",
+            "content": {
+                "image_source": {
+                    "path": "images/c714322dbda5e69ef275bba5f43b4ffca9d7598d20feb0584d4cbab6f58a2292.jpg"
+                },
+                "table_caption": [
+                    {
+                        "type": "text",
+                        "content": "Figure 6. USD/JPY: Double decker model (outline for the base)"
+                    }
+                ],
+                "table_footnote": [
+                    {
+                        "type": "text",
+                        "content": "© 2026 Citi Inc. No redistribution without Citi's written permission."
+                    },
+                    {
+                        "type": "text",
+                        "content": "Note: 200-day moving average (MA)."
+                    },
+                    {
+                        "type": "text",
+                        "content": "Source: Bloomberg, Citi"
+                    }
+                ],
+                "html": "<table><tr><td colspan=\"8\">Regression Statistics</td></tr><tr><td>Multiple R</td><td>R Square</td><td>Adjusted R Square</td><td>Standard Error</td><td>Observations</td><td colspan=\"2\">Estimate period</td><td>Dummy year</td></tr><tr><td>0.997</td><td>0.994</td><td>0.994</td><td>1.294</td><td>2,348</td><td colspan=\"2\">Jan 2017 - Dec 2025</td><td>2022</td></tr><tr><td>Independent variables</td><td>Coefficients</td><td>Standard Error</td><td>t Stat</td><td>P-value</td><td>Lower 95%</td><td>Upper 95%</td><td>Coefficients (Standardized)</td></tr><tr><td>Intercept</td><td>-411.49</td><td>1.72</td><td>-238.83</td><td>0.00</td><td>-414.87</td><td>-408.11</td><td>122.76</td></tr><tr><td>Real 10y yield spread</td><td>2.24</td><td>0.05</td><td>45.67</td><td>0.00</td><td>2.15</td><td>2.34</td><td>2.44</td></tr><tr><td>TOPIX (log)</td><td>48.87</td><td>0.20</td><td>242.04</td><td>0.00</td><td>48.48</td><td>49.27</td><td>9.90</td></tr><tr><td>Bloomberg Com-modity Index (log)</td><td>4.83</td><td>0.37</td><td>13.06</td><td>0.00</td><td>4.11</td><td>5.56</td><td>0.72</td></tr><tr><td>DXY</td><td>1.43</td><td>0.01</td><td>146.74</td><td>0.00</td><td>1.41</td><td>1.45</td><td>6.64</td></tr><tr><td>2022 Dummy</td><td>555.52</td><td>243.61</td><td>2.28</td><td>0.02</td><td>77.82</td><td>1,033.23</td><td>174.36</td></tr><tr><td>Interaction term (Real yield spread)</td><td>5.42</td><td>2.61</td><td>2.08</td><td>0.04</td><td>0.30</td><td>10.53</td><td>1.23</td></tr><tr><td>Interaction term (TOPIX)</td><td>-59.34</td><td>29.55</td><td>-2.01</td><td>0.04</td><td>-117.29</td><td>-1.40</td><td>-141.01</td></tr><tr><td>Interaction term (Commodity Index)</td><td>-8.22</td><td>5.58</td><td>-1.47</td><td>0.14</td><td>-19.16</td><td>2.72</td><td>-12.15</td></tr><tr><td>Interaction term (DXY)</td><td>-0.71</td><td>0.50</td><td>-1.41</td><td>0.16</td><td>-1.69</td><td>0.28</td><td>-21.97</td></tr></table>",
+                "table_type": "complex_table",
+                "table_nest_level": 1
+            },
+            "bbox": [
+                503,
+                429,
+                911,
+                633
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Internal risks for USDJPY"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                366,
+                698,
+                596,
+                714
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The independent variables that we use in both the upper structure (superstructure) and the lower structure (base) of our model are, as we explain above, those we think are relevant to a fundamental understanding of a USDJPY price formation. We recognize the limitations of this simple market model, but we believe it has achieved some extent of significance in gauging fundamentals and international flows."
+                    }
+                ]
+            },
+            "bbox": [
+                364,
+                726,
+                913,
+                816
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "For example, 1) the interest rate spread reflects differences in growth between Japan and overseas, as well as being a variable that is affected by bond flows within portfolio investment (Figures 7, 8). 2) Equity prices are a variable that mainly functions to reflect a range of hedge transactions related to equities (Figures 9, 10). 3) The terms of trade (ToT) and resource prices gauge external shocks on the real economy resulting as well as the impact on the trade surplus (Figures 11, 12)."
+                    }
+                ]
+            },
+            "bbox": [
+                364,
+                830,
+                913,
+                921
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Japan FX"
+                    }
+                ]
+            },
+            "bbox": [
+                78,
+                23,
+                138,
+                36
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "09 June 2026"
+                    }
+                ]
+            },
+            "bbox": [
+                78,
+                36,
+                161,
+                47
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Citi"
+                    }
+                ]
+            },
+            "bbox": [
+                803,
+                32,
+                918,
+                47
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "5"
+                    }
+                ]
+            },
+            "bbox": [
+                913,
+                970,
+                926,
+                981
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "4) The DXY index is the variable via which the USDJPY is most autocorrelated, but in our view it is realistically the most important factor in defining the overall framework for movement in this currency pair (Figures 13, 14)."
+                    }
+                ]
+            },
+            "bbox": [
+                364,
+                109,
+                906,
+                156
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "As we note above, the two-tier model based on such variables does not indicate that there is no large price distortion for the USDJPY currently. Even so, if there is a medium- to long-term risk present, it will be in the lower structure."
+                    }
+                ]
+            },
+            "bbox": [
+                364,
+                167,
+                908,
+                212
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The deviation of the USDJPY from its 200-day moving average as measured by the upper structure had a mean of 1.5% and a standard deviation of just about 2% for the period from 2017 through 2025. On the other hand, the 200-day moving average in the lower structure has since 2021 risen from around ¥103/$ to around ¥160/$, and, as we discuss above, we suspect there may be a range of spurious correlations and internal mutual effects."
+                    }
+                ]
+            },
+            "bbox": [
+                364,
+                224,
+                911,
+                316
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/ece77fe98566868ace42a522d1c1d8fe486d15f242e0b7bfba4dcc650aa27950.jpg"
+                },
+                "content": "| Date    | USD/JPY (% deviation from 200d MA) | 10y yield spread (deviation from 200d MA) [Rhs] |\n|---------|-------------------------------------|--------------------------------------------------|\n| Jan-23  | -10.0                               | 1.5                                              |",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Figure 7. USD/JPY and US-Japan 10y bond yield differential (nominal interest rate spread)"
+                    }
+                ],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "© 2026 Citi Inc. No redistribution without Citi's written permission."
+                    },
+                    {
+                        "type": "text",
+                        "content": "Note: Deviation from 200-day MA."
+                    },
+                    {
+                        "type": "text",
+                        "content": "Source: Bloomberg, Citi"
+                    }
+                ]
+            },
+            "sub_type": "line chart",
+            "bbox": [
+                84,
+                368,
+                491,
+                575
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/2d8b4f0f84ff0161a6a97cdde991b7b0de3ad75ab2f5b1ae47a8d18f643c5f25.jpg"
+                },
+                "content": "| Date   | USD/JPY | 10y yield spread (Real) [Rhs] |\n|--------|---------|-------------------------------|\n| Jan-21 | 105.0   | -0.8                          |\n| Jan-23 | 135.0   | 1.5                           |\n| Jan-25 | 145.0   | 2.5                           |\n| Jan-27 | 155.0   | 1.5                           |",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Figure 8. USD/JPY and US-Japan 10y inflation-linked bond yield differential (real interest rate spread)"
+                    }
+                ],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "© 2026 Citi Inc. No redistribution without Citi's written permission."
+                    },
+                    {
+                        "type": "text",
+                        "content": "Note: 200-day moving average (MA)."
+                    },
+                    {
+                        "type": "text",
+                        "content": "Source: Bloomberg, Citi"
+                    }
+                ]
+            },
+            "sub_type": "line chart",
+            "bbox": [
+                503,
+                368,
+                910,
+                575
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/9d79142cc2e85b209a314a28b373665bf41501f0004b287dedf14b5ea70f5371.jpg"
+                },
+                "content": "| Date    | USD/JPY (% deviation from 200d MA) | TOPIX (% deviation from 200d MA) [Rhs] |\n|---------|------------------------------------|----------------------------------------|\n| Jan-21  | -10.0                              | -10.0                                  |\n| Jan-23  | 15.0                               | 40.0                                   |\n| Jan-27  | 10.0                               | 10.0                                   |",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Figure 9. USD/JPY and Japanese stock index (TOPIX)"
+                    }
+                ],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "© 2026 Citi Inc. No redistribution without Citi's written permission."
+                    },
+                    {
+                        "type": "text",
+                        "content": "Note: Deviation from 200-day MA."
+                    },
+                    {
+                        "type": "text",
+                        "content": "Source: Bloomberg, Citi"
+                    }
+                ]
+            },
+            "sub_type": "line chart",
+            "bbox": [
+                84,
+                646,
+                490,
+                852
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/d48cc5db49c2230a276c79663fd5e4577a8d99309e6cc7aacce4431822495d0e.jpg"
+                },
+                "content": "| Date   | USD/JPY | TOPIX (log) |\n|--------|---------|-------------|\n| Jan-27 | 150     | 8.3         |",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Figure 10. USD/JPY and Japanese stock index (TOPIX)"
+                    }
+                ],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "© 2026 Citi Inc. No redistribution without Citi's written permission."
+                    },
+                    {
+                        "type": "text",
+                        "content": "Note: 200-day moving average (MA)."
+                    },
+                    {
+                        "type": "text",
+                        "content": "Source: Bloomberg, Citi"
+                    }
+                ]
+            },
+            "sub_type": "line chart",
+            "bbox": [
+                503,
+                646,
+                910,
+                852
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Japan FX"
+                    }
+                ]
+            },
+            "bbox": [
+                78,
+                23,
+                138,
+                36
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "09 June 2026"
+                    }
+                ]
+            },
+            "bbox": [
+                78,
+                36,
+                161,
+                47
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Citi"
+                    }
+                ]
+            },
+            "bbox": [
+                803,
+                32,
+                918,
+                47
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "6"
+                    }
+                ]
+            },
+            "bbox": [
+                913,
+                970,
+                926,
+                982
+            ]
+        }
+    ],
+    [
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/86451432cf849e741f37f052991dd7f6942a3f390f54695d95b1791d02275d0c.jpg"
+                },
+                "content": "| Date    | USD/JPY (% deviation from 200d MA) | CitiFX Commodity ToT Index (US-Japan) (Deviation from 200d MA) [Rhs] |\n|---------|------------------------------------|------------------------------------------------------------------|\n| Jan-11  | ~-5.0                              | ~4.0                                                             |\n| Jan-13  | ~18.0                              | ~3.0                                                             |\n| Jan-15  | ~15.0                              | ~2.0                                                             |\n| Jan-17  | ~-10.0                             | ~3.0                                                             |\n| Jan-19  | ~5.0                               | ~4.0                                                             |\n| Jan-21  | ~15.0                              | ~6.0                                                             |\n| Jan-23  | ~15.0                              | ~-30.0                                                           |\n| Jan-25  | ~8.0                               | ~4.0                                                             |\n| Jan-27  | ~6.0                               | ~8.0                                                             |",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Figure 11. USD/JPY and CitiFX Commodity ToT Index spread (US-Japan spread)"
+                    }
+                ],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "© 2026 Citi Inc. No redistribution without Citi's written permission."
+                    },
+                    {
+                        "type": "text",
+                        "content": "Note: Deviation from 200-day MA."
+                    },
+                    {
+                        "type": "text",
+                        "content": "Source: Bloomberg, CitiFX, Citi"
+                    }
+                ]
+            },
+            "sub_type": "line chart",
+            "bbox": [
+                84,
+                148,
+                491,
+                353
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/f493d50b378981ade12c8ad6453db9e84736d19d356f519e02c9e41e028a0316.jpg"
+                },
+                "content": "| Date   | USD/JPY | Bloomberg Commodity Index [Rhs] |\n|--------|---------|----------------------------------|\n| Jan-11 | 85.0    | 155.0                            |\n| Jan-13 | 78.0    | 138.0                            |\n| Jan-15 | 105.0   | 130.0                            |\n| Jan-17 | 115.0   | 95.0                             |\n| Jan-19 | 110.0   | 98.0                             |\n| Jan-21 | 108.0   | 85.0                             |\n| Jan-23 | 135.0   | 125.0                            |\n| Jan-25 | 155.0   | 110.0                            |\n| Jan-27 | 160.0   | 120.0                            |",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Figure 12. USD/JPY and Bloomberg Commodity Index"
+                    }
+                ],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "© 2026 Citi Inc. No redistribution without Citi's written permission."
+                    },
+                    {
+                        "type": "text",
+                        "content": "Note: 200-day moving average (MA)."
+                    },
+                    {
+                        "type": "text",
+                        "content": "Source: Bloomberg, Citi"
+                    }
+                ]
+            },
+            "sub_type": "line chart",
+            "bbox": [
+                503,
+                147,
+                910,
+                354
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/e0bc0bb0456105ab71d7dd3fa74f02180aee1d1ee985a8d8694896d6c3c64e1c.jpg"
+                },
+                "content": "| Date    | USD/JPY (% deviation from 200d MA) | DXY (% deviation from 200d MA) [Rhs] |\n|---------|-------------------------------------|--------------------------------------|\n| Jan-21  | ~0.0                                | ~-5.0                                |\n| Jan-23  | ~15.0                               | ~15.0                                |\n| Jan-27  | ~5.0                                | ~-5.0                                |",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Figure 13. USD/JPY and DXY"
+                    }
+                ],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "© 2026 Citi Inc. No redistribution without Citi's written permission."
+                    },
+                    {
+                        "type": "text",
+                        "content": "Note: Deviation from 200-day MA."
+                    },
+                    {
+                        "type": "text",
+                        "content": "Source: Bloomberg, Citi"
+                    }
+                ]
+            },
+            "sub_type": "line chart",
+            "bbox": [
+                84,
+                426,
+                490,
+                633
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/6118be26532fb8827812e72d8df4124ce15efc90ac90c080a0945d1c041f3bd2.jpg"
+                },
+                "content": "| Date   | USD/JPY | DXY [Rhs] |\n|--------|---------|-----------|\n| Jan-27 | ~155    | ~105      |",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Figure 14. USD/JPY and DXY"
+                    }
+                ],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "© 2026 Citi Inc. No redistribution without Citi's written permission."
+                    },
+                    {
+                        "type": "text",
+                        "content": "Note: 200-day moving average (MA)."
+                    },
+                    {
+                        "type": "text",
+                        "content": "Source: Bloomberg, Citi"
+                    }
+                ]
+            },
+            "sub_type": "line chart",
+            "bbox": [
+                503,
+                426,
+                910,
+                632
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Tug-of-war between contraction in interest rate spread and strength of equities"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                364,
+                696,
+                913,
+                732
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "There are bidirectional causal relationships that require particular care between a spiral of JPY weakness and gains by Japanese equities (Figure 9), a rise in Japanese inflationary expectations and subsequent expansion in the real interest rate spread due to yen weakness as well as high resource prices."
+                    }
+                ]
+            },
+            "bbox": [
+                364,
+                742,
+                916,
+                801
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "In term of the USD index, we expect it to remain firm overall this year, including against the EUR, but the USDJPY tends to follow the EURUSD after a lag of two or three years (Figure 15)."
+                    }
+                ]
+            },
+            "bbox": [
+                364,
+                815,
+                906,
+                859
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "In addition, the nominal long-term interest rate spread has already contracted to an extent clearly favorable to JPY strength against the USD (Figure 16). In this environment it would be unwise to ignore the significant contraction also in the short-term interest rate spread more recently."
+                    }
+                ]
+            },
+            "bbox": [
+                364,
+                873,
+                900,
+                934
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Japan FX"
+                    }
+                ]
+            },
+            "bbox": [
+                78,
+                23,
+                138,
+                36
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "09 June 2026"
+                    }
+                ]
+            },
+            "bbox": [
+                78,
+                36,
+                161,
+                47
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Citi"
+                    }
+                ]
+            },
+            "bbox": [
+                803,
+                32,
+                918,
+                47
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "7"
+                    }
+                ]
+            },
+            "bbox": [
+                913,
+                970,
+                924,
+                981
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "This two-tier model more accurately gauges movement in the USDJPY over the past few years than did the USDJPY model we had previously updated on a regular basis. Nevertheless, we do not see this model estimate as absolute, but rather consider it no more than one of many factors to be considered when gauging exchange rates."
+                    }
+                ]
+            },
+            "bbox": [
+                364,
+                109,
+                911,
+                184
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/6ba296cea3f5625b13fa09801fea8a4b8dd93670e1b6eeb6303eaaaa4f8ce8eb.jpg"
+                },
+                "content": "| Date   | EUR/USD (EUR/USD) | USD/JPY (USD/JPY) |\n|--------|-------------------|-------------------|\n| Jan-87 | 0.90              | 160               |\n| Jan-92 | 1.50              | 80                |\n| Jan-97 | 1.00              | 140               |\n| Jan-02 | 0.80              | 120               |\n| Jan-07 | 1.60              | 80                |\n| Jan-12 | 1.20              | 100               |\n| Jan-17 | 1.10              | 120               |\n| Jan-22 | 1.00              | 160               |\n| Jan-27 | 1.20              | 140               |",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Figure 15. EUR/USD and USD/JPY (three-year lagged)"
+                    }
+                ],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "© 2026 Citi Inc. No redistribution without Citi's written permission."
+                    },
+                    {
+                        "type": "text",
+                        "content": "Source: Bloomberg, Citi"
+                    }
+                ]
+            },
+            "sub_type": "line chart",
+            "bbox": [
+                83,
+                234,
+                491,
+                443
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/61fd9a52ec8d043bd7923758c90048962eeccdd7ff16189d9b3f7cc284aee2a6.jpg"
+                },
+                "content": "| Date   | USDJPY (USD/JPY) | US$/JGB 10yr rate spread [Rhs] |\n|--------|------------------|-------------------------------|\n| Jan-00 | ~160             | ~3.0                          |\n| Jan-08 | ~100             | ~1.0                          |\n| Jan-16 | ~120             | ~2.0                          |\n| Jan-24 | ~160             | ~5.0                          |",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Figure 16. USD/JPY and US-Japan 10-year bond yield differential"
+                    }
+                ],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "© 2026 Citi Inc. No redistribution without Citi's written permission."
+                    },
+                    {
+                        "type": "text",
+                        "content": "Source: Bloomberg, Citi"
+                    }
+                ]
+            },
+            "sub_type": "line chart",
+            "bbox": [
+                503,
+                236,
+                913,
+                443
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Japan FX"
+                    }
+                ]
+            },
+            "bbox": [
+                78,
+                23,
+                138,
+                36
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "09 June 2026"
+                    }
+                ]
+            },
+            "bbox": [
+                78,
+                36,
+                161,
+                47
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Citi"
+                    }
+                ]
+            },
+            "bbox": [
+                803,
+                32,
+                918,
+                47
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "8"
+                    }
+                ]
+            },
+            "bbox": [
+                913,
+                970,
+                926,
+                982
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "If you are visually impaired and would like to speak to a Citi representative regarding the details of the graphics in this document, please call USA 1-888-500-5008 (TTY: 711), from outside the US +1-210-677-3788"
+                    }
+                ]
+            },
+            "bbox": [
+                76,
+                108,
+                916,
+                161
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Appendix A-1"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                76,
+                181,
+                287,
+                208
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "ANALYST CERTIFICATION"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                76,
+                226,
+                318,
+                243
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The research analysts primarily responsible for the preparation and content of this research report are either (i) designated by “AC” in the author block or (ii) listed in bold alongside content which is attributable to that analyst. If multiple AC analysts are designated in the author block, each analyst is certifying with respect to the entire research report other than (a) content attributable to another AC certifying analyst listed in bold alongside the content and (b) views expressed solely with respect to a specific issuer which are attributable to another AC certifying analyst identified in the price charts or rating history tables for that issuer shown below. Each of these analysts certify, with respect to the sections of the report for which they are responsible: (1) that the views expressed therein accurately reflect their personal views about each issuer and security referenced and were prepared in an independent manner, including with respect to Citi Global Markets Inc. and its affiliates; and (2) no part of the research analyst's compensation was, is, or will be, directly or indirectly, related to the specific recommendations or views expressed by that research analyst in this report."
+                    }
+                ]
+            },
+            "bbox": [
+                75,
+                244,
+                913,
+                381
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "IMPORTANT DISCLOSURES"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                76,
+                383,
+                334,
+                398
+            ]
+        },
+        {
+            "type": "table",
+            "content": {
+                "image_source": {
+                    "path": "images/cd8c8727cc075515acf506d654281b35356eeb1d8d5edd55bfaac65055774f2c.jpg"
+                },
+                "table_caption": [],
+                "table_footnote": [],
+                "html": "<table><tr><td>Within the past 12 months, Citi Global Markets Inc. or its affiliates has acted as manager or co-manager of an offering of securities of EUROPEAN UNION.</td></tr><tr><td>Citi Global Markets Inc. or its affiliates has received compensation for investment banking services provided within the past 12 months from EUROPEAN UNION,Japan,United States.</td></tr><tr><td>Citi Global Markets Inc. or its affiliates received compensation for products and services other than investment banking services from EUROPEAN UNION,Japan,United States in the past 12 months.</td></tr><tr><td>Citi Global Markets Inc. or its affiliates currently has, or had within the past 12 months, the following as investment banking client(s): EUROPEAN UNION,Japan,United States.</td></tr><tr><td>Citi Global Markets Inc. or its affiliates currently has, or had within the past 12 months, the following as clients, and the services provided were non-investment-banking, securities-related: EUROPEAN UNION,Japan,United States.</td></tr><tr><td>Citi Global Markets Inc. or its affiliates currently has, or had within the past 12 months, the following as clients, and the services provided were non-investment-banking, non-securities-related: EUROPEAN UNION,Japan,United States.</td></tr><tr><td>Citi Global Markets Inc. and/or its affiliates has a significant financial interest in relation to EUROPEAN UNION,Japan,United States. (For an explanation of the determination of significant financial interest, please refer to the policy for managing conflicts of interest which can be found at www.citiVelocity.com.)</td></tr><tr><td>Analysts&#x27; compensation is determined by Citi management and Citi&#x27;s senior management and is based upon activities and services intended to benefit the investor clients of Citi Global Markets Inc. and its affiliates (the &quot;Firm&quot;). Compensation is not linked to specific transactions or recommendations. Like all Firm employees, analysts receive compensation that is impacted by overall Firm profitability which includes investment banking, sales and trading, and principal trading revenues. One factor in equity research analyst compensation is arranging corporate access events between institutional clients and the management teams of covered companies. Typically, company management is more likely to participate when the analyst has a positive view of the company.</td></tr><tr><td>For financial instruments recommended in the Product in which the Firm is not a market maker, the Firm is a liquidity provider in such financial instruments (and any underlying instruments) and may act as principal in connection with transactions in such instruments. The Firm is a regular issuer of traded financial instruments linked to securities that may have been recommended in the Product. The Firm regularly trades in the securities of the issuer(s) discussed in the Product. The Firm may engage in securities transactions in a manner inconsistent with the Product and, with respect to securities covered by the Product, will buy or sell from customers on a principal basis.</td></tr><tr><td>Unless stated otherwise neither the Research Analyst nor any member of their team has viewed the material operations of the Companies for which an investment view has been provided within the past 12 months.</td></tr><tr><td>For important disclosures (including copies of historical disclosures) regarding the companies that are the subject of this Citi product (&quot;the Product&quot;), please contact Citi, 388 Greenwich Street, 6th Floor, New York, NY, 10013, Attention: Legal/Compliance [E6WYB6412478]. In addition, the same important disclosures, with the exception of the Valuation and Risk assessments and historical disclosures, are contained on the Firm&#x27;s disclosure website at https://www.citivelocity.com/cvr/eppublic/citi_research_disclosures. Valuation and Risk assessments can be found in the text of the most recent research note/report regarding the subject company. Pursuant to the Market Abuse Regulation a history of all Citi recommendations published during the preceding 12-month period can be accessed via Citi Velocity (https://www.citivelocity.com/cv2) or your standard distribution portal. Historical disclosures (for up to the past three years) will be provided upon request.</td></tr></table>",
+                "table_type": "simple_table",
+                "table_nest_level": 1
+            },
+            "bbox": [
+                75,
+                401,
+                919,
+                931
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Japan FX"
+                    }
+                ]
+            },
+            "bbox": [
+                78,
+                23,
+                137,
+                36
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "09 June 2026"
+                    }
+                ]
+            },
+            "bbox": [
+                78,
+                37,
+                161,
+                47
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Citi"
+                    }
+                ]
+            },
+            "bbox": [
+                803,
+                32,
+                918,
+                47
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "9"
+                    }
+                ]
+            },
+            "bbox": [
+                913,
+                955,
+                926,
+                965
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "RESEARCH ANALYST AFFILIATIONS / NON-US RESEARCH ANALYST DISCLOSURES"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                76,
+                108,
+                653,
+                119
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The legal entities employing the authors of this report are listed below (and their regulators are listed further herein). Non-US research analysts who have prepared this report (i.e., all research analysts listed below other than those identified as employed by Citi Global Markets Inc.) are not registered/qualified as research analysts with FINRA. Such research analysts may not be associated persons of the member organization (but are employed by an affiliate of the member organization) and therefore may not be subject to the FINRA Rule 2241 restrictions on communications with a subject company, public appearances and trading securities held by a research analyst account."
+                    }
+                ]
+            },
+            "bbox": [
+                76,
+                122,
+                916,
+                202
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Citi Global Markets Inc."
+                    }
+                ]
+            },
+            "bbox": [
+                76,
+                203,
+                264,
+                215
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Daniel Tobon; Brian Levine"
+                    }
+                ]
+            },
+            "bbox": [
+                496,
+                203,
+                663,
+                215
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Citi Global Markets Japan Inc."
+                    }
+                ]
+            },
+            "bbox": [
+                78,
+                217,
+                303,
+                229
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Osamu Takashima"
+                    }
+                ]
+            },
+            "bbox": [
+                496,
+                217,
+                614,
+                229
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "OTHER DISCLOSURES"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                78,
+                232,
+                285,
+                246
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Statements to be presented in relation to the Article 37 of the Financial Instruments and Exchange Laws (the \"FIEL\")"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                76,
+                250,
+                867,
+                263
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "With respect to the purchase or sale of financial instruments, we may charge you a commission (in case of stock, a commission equal to the transaction price multiplied by a commission rate agreed between you and us in advance and consumption tax, and in case of investment trust, sales commission, trust fees and other fees prescribed for each fund). Each financial instrument is subject to relevant inherent risk and a substantial amount of loss or liability may occur due to a change in domestic/overseas political, economic or financial environment, market environment such as exchange rates, stock market, commodity market and interest rates, credibility of issuers, and change in underlying assets. For trading in derivatives, you may be required to pay margin, deposit or collateral (“collateral amount”) based on agreement of each transaction. In addition, you may be required to pay additional collateral amount. For such transaction, nominal amount of transaction may exceed collateral amount, etc. Collateral amount to be paid by you will vary with the contents of collateral agreement. Therefore, we cannot calculate the maximum ratio of nominal amount against the collateral amount at this moment. There is a risk that a loss or liability exceeding the collateral amount may occur due to change in underlying asset. In addition, depending on the type of transaction, the rate we show you for sell and purchase as set out in Article 16.1.6 of the Enforcement Order of the FIEL may differ. In the case that there is an exercise period, please note that there is a limit in period when you can exercise relevant right. If there is early termination clause such as early cancellation clause or automatic lapse clause, the transaction may be completed prior to the expected completion date. Before executing any transaction, please carefully read the documents provided prior to the execution of the contracts, prospectus and other materials for customers, etc. Trade Name, Etc.:Citi Global Markets Japan Inc. (Financial Instruments Firm, Director-General of Kanto Local Finance Bureau (Kin-Sho) No. 130). Association Membership:Japan Securities Dealers Association, The Financial Futures Association of Japan, Type II Financial Instruments Firms Association."
+                    }
+                ]
+            },
+            "bbox": [
+                76,
+                263,
+                916,
+                517
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Any price(s) of instruments mentioned in recommendations are as of the prior day's market close on the primary market for the instrument, unless otherwise stated."
+                    }
+                ]
+            },
+            "bbox": [
+                76,
+                518,
+                913,
+                545
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The completion and first dissemination of any recommendations made within this research report are as of the Eastern date-time displayed at the top of the Product. If the Product references views of other analysts then please refer to the price chart or rating history table for the date/time of completion and first dissemination with respect to that view."
+                    }
+                ]
+            },
+            "bbox": [
+                76,
+                546,
+                913,
+                585
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "European regulations require that where a recommendation differs from any of the author's previous recommendations concerning the same financial instrument or issuer that has been published during the preceding 12-month period that the change(s) and the date of that previous recommendation are indicated. Please refer to the trade history in the published research or contact the research analyst."
+                    }
+                ]
+            },
+            "bbox": [
+                76,
+                587,
+                888,
+                640
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Citi has implemented policies for identifying, considering and managing potential conflicts of interest arising as a result of publication or distribution of investment research. A description of these policies can be found at https://www.citivelocity.com/cvr/eppublic/citi_research_disclosures."
+                    }
+                ]
+            },
+            "bbox": [
+                76,
+                641,
+                888,
+                681
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The proportion of all Citi recommendations that were the equivalent to \"Buy\", \"Hold\", \"Sell\" at the end of each quarter over the prior 12 months (with the % of these that had received investment firm services from Citi in the prior 12 months shown in brackets) is as follows; Q1 2026 Buy 33%(63%), Hold 44% (52%), Sell 23% (46%), RV 0.5% (89%): Q4 2025 Buy 33% (63%), Hold 44% (50%), Sell 23% (46%), RV 0.4% (91%); Q3 2025 Buy 33% (61%), Hold 44% (52%), Sell 23% (50%), RV 0.4% (80%); Q2 2025 Buy 33%(63%), Hold 44% (51%), Sell 23% (49%), RV 0.4% (86%). For the purposes of disclosing recommendations other than for equity (whose definitions can be found in the corresponding disclosure sections), \"Buy\" means a positive directional trade idea; \"Sell\" means a negative directional trade idea; and \"Relative Value\" means any trade idea which does not have a clear direction to the investment strategy."
+                    }
+                ]
+            },
+            "bbox": [
+                76,
+                681,
+                916,
+                789
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "European regulations require a 5 year price history when past performance of a security is referenced. CitiVelocity's Charting Tool (https://www.citivelocity.com/cv2/#go/CHARTING_3_Equities) provides the facility to create customisable price charts including a five year option. This tool can be found in the Data & Analytics section under any of the asset class menus in CitiVelocity (https://www.citivelocity.com/). For further information contact CitiVelocity support (https://www.citivelocity.com/cv2/go/CLIENT_SUPPORT). The source for all referenced prices, unless otherwise stated, is DataCentral, which sources price information from LSEG Data & Analytics. Past performance is not a guarantee or reliable indicator of future results. Forecasts are not a guarantee or reliable indicator of future performance."
+                    }
+                ]
+            },
+            "bbox": [
+                76,
+                790,
+                906,
+                883
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Investors should always consider the investment objectives, risks, and charges and expenses of an ETF carefully before investing. The applicable prospectus and key investor information document (as applicable) for an ETF should contain this and other information about such ETF. It is important to read carefully any such prospectus before investing. Clients may obtain prospectuses and key investor information documents for ETFs from the applicable distributor or authorized participant, the exchange upon which an ETF is listed and/or from the applicable website of the applicable ETF issuer. The value of the investments and any accruing income may fall or rise. Any past performance, prediction or forecast is not indicative of future or likely performance. Any information on ETFs contained herein is provided strictly for illustrative purposes and should not be deemed an offer to sell or a solicitation of an offer to purchase units of any ETF either explicitly or implicitly. The opinions expressed are those of the authors and do not necessarily reflect the views of ETF issuers, any of their agents or their affiliates."
+                    }
+                ]
+            },
+            "bbox": [
+                76,
+                885,
+                913,
+                939
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Japan FX"
+                    }
+                ]
+            },
+            "bbox": [
+                78,
+                25,
+                137,
+                36
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "09 June 2026"
+                    }
+                ]
+            },
+            "bbox": [
+                78,
+                37,
+                161,
+                47
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Citi"
+                    }
+                ]
+            },
+            "bbox": [
+                803,
+                32,
+                918,
+                47
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "10"
+                    }
+                ]
+            },
+            "bbox": [
+                913,
+                955,
+                933,
+                965
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": []
+            },
+            "bbox": [
+                76,
+                108,
+                915,
+                175
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Citi Global Markets India Private Limited and/or its affiliates may have, from time to time, actual or beneficial ownership of 1% or more in the debt securities of the subject issuer."
+                    }
+                ]
+            },
+            "bbox": [
+                76,
+                176,
+                908,
+                202
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Please be advised that pursuant to Executive Order 13959 as amended (the “Order”), U.S. persons are prohibited from investing in securities of any company determined by the United States Government to be the subject of the Order. This research is not intended to be used or relied upon in any way that could result in a violation of the Order. Investors are encouraged to rely upon their own legal counsel for advice on compliance with the Order and other economic sanctions programs administered and enforced by the Office of Foreign Assets Control of the U.S. Treasury Department."
+                    }
+                ]
+            },
+            "bbox": [
+                76,
+                203,
+                867,
+                270
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "This communication is directed at persons who are \"Eligible Clients\" as such term is defined in the Israeli Regulation of Investment Advice, Investment Marketing and Investment Portfolio Management law, 1995 (the \"Advisory Law\"). Within Israel, this communication is not intended for retail clients and Citi will not make such products or transactions available to retail clients or to non-Eligible Clients. The presenter is not licensed as investment advisor or investment marketer by the Israeli Securities Authority (\"ISA\") and this communication does not constitute investment or marketing advice. The information contained herein may relate to matters that are not regulated by the ISA. Any securities which are the subject of this communication may not be offered or sold to any Israeli person except pursuant to a security offering exemption according to the Israeli Securities Law, 1968 and the public offering rules provided thereunder."
+                    }
+                ]
+            },
+            "bbox": [
+                76,
+                271,
+                911,
+                378
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Citi broadly and simultaneously disseminates its research content to the Firm’s institutional and retail clients via the Firm’s proprietary electronic distribution platforms (e.g., Citi Velocity and various Global Wealth platforms). As a convenience, certain, but not all, research content may be distributed through third party aggregators. Clients may receive published research reports by email, on a discretionary basis, and only after such research content has been broadly disseminated. Certain research is made available only to institutional investors to satisfy regulatory requirements. The level and types of services provided by Citi analysts to clients may vary depending on various factors such as the client’s individual preferences as to the frequency and manner of receiving communications from analysts, the client’s risk profile and investment focus and perspective (e.g. market-wide, sector specific, long term, short-term etc.), the size and scope of the overall client relationship with the Firm and legal and regulatory constraints."
+                    }
+                ]
+            },
+            "bbox": [
+                76,
+                378,
+                918,
+                500
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Pursuant to Comissão de Valores Mobiliários Resolução 20 and ASIC Regulatory Guide 264, Citi is required to disclose whether a Citi related company or business has a commercial relationship with the subject company. Considering that Citi operates multiple businesses in more than 100 countries around the world, it is likely that Citi has a commercial relationship with the subject company."
+                    }
+                ]
+            },
+            "bbox": [
+                76,
+                500,
+                919,
+                554
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Securities recommended, offered, or sold by the Firm: (i) are not insured by the Federal Deposit Insurance Corporation; (ii) are not deposits or other obligations of any insured depository institution (including Citibank); and (iii) are subject to investment risks, including the possible loss of the principal amount invested. The Product is for informational purposes only and is not intended as an offer or solicitation for the purchase or sale of a security. Any decision to purchase securities mentioned in the Product must take into account existing public information on such security or any registered prospectus. Although information has been obtained from and is based upon sources that the Firm believes to be reliable, we do not guarantee its accuracy and it may be incomplete and condensed. Note, however, that the Firm has taken all reasonable steps to determine the accuracy and completeness of the disclosures made in the Important Disclosures section of the Product. The Firm's research department has received assistance from the subject company(ies) referred to in this Product including, but not limited to, discussions with management of the subject company(ies). Firm policy prohibits research analysts from sending draft research to subject companies. However, it should be presumed that the author of the Product has had discussions with the subject company to ensure factual accuracy prior to publication. Statements and views concerning ESG (environmental, social, governance) factors are typically based upon public statements made by the affected company or other public news, which the author may not have independently verified. ESG factors are one consideration that investors may choose to examine when making investment decisions. All opinions, projections and estimates constitute the judgment of the author as of the date of the Product and these, plus any other information contained in the Product, are subject to change without notice. Prices and availability of financial instruments also are subject to change without notice. Notwithstanding other departments within the Firm advising the companies discussed in this Product, information obtained in such role is not used in the preparation of the Product. Although Citi does not set a predetermined frequency for publication, if the Product is a fundamental equity or credit research report, it is the intention of Citi to provide research coverage of the covered issuers, including in response to news affecting the issuer. For non-fundamental research reports, Citi may not provide regular updates to the views, recommendations and facts included in the reports. Notwithstanding that Citi maintains coverage on, makes recommendations concerning or discusses issuers, Citi may be periodically restricted from referencing certain issuers due to legal or policy reasons. Where a component of a published trade idea is subject to a restriction, the trade idea will be removed from any list of open trade ideas included in the Product. Upon the lifting of the restriction, the trade idea will either be re-instated in the open trade ideas list if the analyst continues to support it or it will be officially closed. Citi may provide different research products and services to different classes of customers (for example, based upon long-term or short-term investment horizons) that may lead to differing conclusions or"
+                    }
+                ]
+            },
+            "bbox": [
+                76,
+                555,
+                919,
+                930
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Japan FX"
+                    }
+                ]
+            },
+            "bbox": [
+                78,
+                23,
+                137,
+                36
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "09 June 2026"
+                    }
+                ]
+            },
+            "bbox": [
+                78,
+                37,
+                161,
+                47
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Citi"
+                    }
+                ]
+            },
+            "bbox": [
+                803,
+                32,
+                916,
+                47
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "11"
+                    }
+                ]
+            },
+            "bbox": [
+                913,
+                955,
+                928,
+                965
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "recommendations that could impact the price of a security contrary to the recommendations in the alternative research product, provided that each is consistent with the rating system for each respective product."
+                    }
+                ]
+            },
+            "bbox": [
+                76,
+                108,
+                869,
+                135
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Investing in non-U.S. securities, including ADRs, may entail certain risks. The securities of non-U.S. issuers may not be registered with, nor be subject to the reporting requirements of the U.S. Securities and Exchange Commission. There may be limited information available on foreign securities. Foreign companies are generally not subject to uniform audit and reporting standards, practices and requirements comparable to those in the U.S. Securities of some foreign companies may be less liquid and their prices more volatile than securities of comparable U.S. companies. In addition, exchange rate movements may have an adverse effect on the value of an investment in a foreign stock and its corresponding dividend payment for U.S. investors. Net dividends to ADR investors are estimated, using withholding tax rates conventions, deemed accurate, but investors are urged to consult their tax advisor for exact dividend computations. Investors who have received the Product from the Firm may be prohibited in certain states or other jurisdictions from purchasing securities mentioned in the Product from the Firm. Please ask your Financial Consultant for additional details. Citi Global Markets Inc. takes responsibility for the Product in the United States. Any orders by US investors resulting from the information contained in the Product may be placed only through Citi Global Markets Inc."
+                    }
+                ]
+            },
+            "bbox": [
+                76,
+                136,
+                913,
+                296
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "The Citi legal entity that takes responsibility for the production of the Product is the legal entity which the first named author is employed by."
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                78,
+                297,
+                870,
+                324
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The Product is made available in Australia through Citi Global Markets Australia Pty Limited. (ABN 64 003 114 832 and AFSL No. 240992), participant of the ASX Group and regulated by the Australian Securities & Investments Commission. Citi Centre, 2 Park Street, Sydney, NSW 2000. Citi Global Markets Australia Pty Limited is not an Authorised Deposit-Taking Institution under the Banking Act 1959, nor is it regulated by the Australian Prudential Regulation Authority."
+                    }
+                ]
+            },
+            "bbox": [
+                76,
+                325,
+                901,
+                378
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The Product is made available in Brazil by Citi Global Markets Brasil - CCTVM SA, which is regulated by CVM - Comissão de Valores Mobiliários (\"CVM\"), BACEN - Brazilian Central Bank, APIMEC - Associação dos Analistas e Profissionais de Investimento do Mercado de Capitais and ANBIMA – Associação Brasileira das Entidades dos Mercados Financeiro e de Capitais. Av. Paulista, 1111 - 14º andar(parte) - CEP: 01311920 - São Paulo - SP."
+                    }
+                ]
+            },
+            "bbox": [
+                76,
+                378,
+                911,
+                431
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "This Product is available in Chile through Banchile Corredores de Bolsa S.A., an indirect subsidiary of Citi Inc., which is regulated by the Comisión Para El Mercado Financiero. Enrique Foster Sur, 20, piso 6, Las Condes, Santiago, Chile."
+                    }
+                ]
+            },
+            "bbox": [
+                76,
+                434,
+                895,
+                460
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Disclosure for investors in the Republic of Colombia :This communication or message does not constitute a professional recommendation to make investment in the terms of article 2.40.1.1.2 of Decree 2555 de 2010 or the regulations that modify, substitute or complement it. Para la elaboración y distribución de informes de investigación y de comunicaciones generales de que trata este artículo no se requiere ser una entidad vigilada por la Superintendencia Financiera de Colombia."
+                    }
+                ]
+            },
+            "bbox": [
+                76,
+                462,
+                911,
+                513
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The Product is made available in Germany by Citi Global Markets Europe AG (\"CGME\"), which is regulated by the European Central Bank and the German Federal Financial Supervisory Authority (Bundesanstalt für Finanzdienstleistungsaufsicht BaFin). Börsenplatz 9, 60313 Frankfurt am Main, Germany."
+                    }
+                ]
+            },
+            "bbox": [
+                76,
+                516,
+                857,
+                555
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Unless otherwise specified, if the analyst who prepared this report is based in Hong Kong and it relates to “securities” (as defined in the Securities and Futures Ordinance (Cap.571 of the Laws of Hong Kong)), the report is issued in Hong Kong by Citi Global Markets Asia Limited. Citi Global Markets Asia Limited is regulated by Hong Kong Securities and Futures Commission. If the report is prepared by a non-Hong Kong based analyst, please note that such analyst (and the legal entity that the analyst is employed by or accredited to) is not licensed/registered in Hong Kong and they do not hold themselves out as such. Please refer to the section “Research Analyst Affiliations / Non-US Research Analyst Disclosures” for the details of the employment entity of the analysts."
+                    }
+                ]
+            },
+            "bbox": [
+                76,
+                556,
+                916,
+                650
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The Product is made available in India by Citi Global Markets India Private Limited (CGM), which is regulated by the Securities and Exchange Board of India (SEBI), as a Research Analyst (SEBI Registration No. INH000000438). CGM is also actively involved in the business of merchant banking (SEBI Registration No. INM000010718) and stock brokerage ((SEBI Registration No. INZ000263033) in India, and is registered with SEBI in this regard. Registration granted by SEBI, enlistment with Bombay Stock Exchange (BSE) and certification from National Institute of Securities Markets (NISM) in no way guarantee performance of the intermediary or provide any assurance of returns to investors. CGM's registered office is at 1202, 12th Floor, First International Financial Centre (FIFC), G Block, Bandra Kurla Complex, Bandra East, Mumbai – 400098 & registered Tel: +91 22 61759999. Citi maintains robust policies, procedures, controls, and training to ensure continued compliance with all applicable rules and regulations. All recommendations contained herein are made by duly qualified research analysts. CGM's Corporate Identity Number is U99999MH2000PTC126657, and its Compliance Officer [Vishal Bohra] contact details are: Tel: +91-022-61759994, Fax: +91-022-61759851, Email: cgmcompliance@citi.com. The Investor Charter in respect of Research Analysts, the Compliance Audit Report and Complaints information can be found at https://www.citivelocity.com/cvr/eppublic/citi_research_disclosures. The grievance officer [Niraj Mody] contact details are Tel: +91-22-42775002, Email: EMEA.CR.Complaints@citi.com. Investment in securities market are subject to market risks. Read all the related documents carefully before investing. SEBI prescribed Client Terms & Conditions can be found at https://www.citivelocity.com/rendition/authfilelinksvcs/eppublic/V1/file?paramData=ZmlsZU5hbWU9L1MzL0dETVMvcHViRGlzY2xvc3VyZUhObWxzL2dkbV9kaXNfc2ViaV9UZXJtc29mVXNILmhObWw"
+                    }
+                ]
+            },
+            "bbox": [
+                76,
+                651,
+                915,
+                878
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The Product is made available in Indonesia through PT Citi Sekuritas Indonesia. Citibank Tower 10/F, Pacific Century Place, SCBD lot 10, Jl. Jend Sudirman Kav 52-53, Jakarta 12190, Indonesia. Neither this Product nor any copy hereof may be distributed in Indonesia or to any Indonesian citizens wherever they are domiciled or to Indonesian residents except in compliance with applicable capital market laws and regulations. This Product is not an offer of securities in Indonesia. The securities referred to in this Product have not been registered with the Capital Market and Financial Services Authority (OJK) pursuant to relevant capital market laws and regulations, and may not be offered or sold within the territory of the Republic of Indonesia or to Indonesian citizens through a public offering or in circumstances which constitute an offer within the meaning of the Indonesian capital market laws and regulations."
+                    }
+                ]
+            },
+            "bbox": [
+                76,
+                880,
+                893,
+                933
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Japan FX"
+                    }
+                ]
+            },
+            "bbox": [
+                78,
+                23,
+                137,
+                36
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "09 June 2026"
+                    }
+                ]
+            },
+            "bbox": [
+                78,
+                37,
+                161,
+                47
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Citi"
+                    }
+                ]
+            },
+            "bbox": [
+                803,
+                32,
+                918,
+                47
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "12"
+                    }
+                ]
+            },
+            "bbox": [
+                913,
+                955,
+                931,
+                965
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": []
+            },
+            "bbox": [
+                76,
+                107,
+                913,
+                162
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The Product is made available in Japan by Citi Global Markets Japan Inc. (\"CGMJ\"), which is regulated by Financial Services Agency, Securities and Exchange Surveillance Commission, Japan Securities Dealers Association, Tokyo Stock Exchange and Osaka Securities Exchange. Otemachi Park Building, 1-1-1 Otemachi, Chiyoda-ku, Tokyo 100-8132 Japan. In the event that an error is found in an CGMJ research report, a revised version will be posted on the Firm's Citi Velocity website. If you have questions regarding Citi Velocity, please call (81 3) 6270-3019 for help."
+                    }
+                ]
+            },
+            "bbox": [
+                76,
+                162,
+                918,
+                229
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The product is made available in the Kingdom of Saudi Arabia in accordance with Saudi laws through Citi Saudi Arabia, which is regulated by the Capital Market Authority (CMA) under CMA license (17184-31). 2239 Al Urubah Rd – Al Olaya Dist. Unit No. 18, Riyadh 12214 – 9597, Kingdom Of Saudi Arabia."
+                    }
+                ]
+            },
+            "bbox": [
+                76,
+                229,
+                906,
+                270
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The Product is made available in Korea by Citi Global Markets Korea Securities Ltd. (CGMK), which is regulated by the Financial Services Commission, the Financial Supervisory Service and the Korea Financial Investment Association (KOFIA). The address of CGMK is Citibank Center, 50 Saemunan-ro, Jongno-gu, Seoul 03184, Korea. KOFIA makes available registration information of research analysts on its website. Please visit the following website if you wish to find KOFIA registration information on research analysts of"
+                    }
+                ]
+            },
+            "bbox": [
+                76,
+                271,
+                916,
+                338
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "CGMK. http://dis.kofia.or.kr/websquare/index.jsp?w2xPath=/wq/fundMgr/DISFundMgrAnalystList.xml&divisionId=MDISO3002002000000&serviceId=SDISO3002002000. The Product is made available in Korea by Citibank Korea Inc., which is regulated by the Financial Services Commission and the Financial Supervisory Service. Address is Citibank Center, 50 Saemunan-ro, Jongno-gu, Seoul 03184, Korea. This research report is intended to be provided only to Professional Investors as defined in the Financial Investment Services and Capital Market Act and its Enforcement Decree in Korea."
+                    }
+                ]
+            },
+            "bbox": [
+                76,
+                338,
+                910,
+                405
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The Product is made available in Malaysia by Citi Global Markets Malaysia Sdn Bhd (Registration No. 199801004692 (460819-D)) (“CGMM”) to its clients and CGMM takes responsibility for its contents as regards CGMM’s clients. CGMM is regulated by the Securities Commission Malaysia. Please contact CGMM at Level 43 Menara Citibank, 165 Jalan Ampang, 50450 Kuala Lumpur, Malaysia in respect of any matters arising from, or in connection with, the Product."
+                    }
+                ]
+            },
+            "bbox": [
+                76,
+                406,
+                888,
+                459
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The Product is made available in Mexico by Citi México Casa de Bolsa, S.A. de C.V., Grupo Financiero Citi México which is a wholly owned subsidiary of Citi Inc. and is regulated by Comision Nacional Bancaria y de Valores. Prolongación Reforma 1196, 24 floor, Colonia Santa Fe, Alcaldía Cuajimalpa de Morelos, C.P. 05348, Ciudad de México."
+                    }
+                ]
+            },
+            "bbox": [
+                76,
+                460,
+                906,
+                500
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The Product is made available in Poland by Biuro Maklerskie Banku Handlowego (DMBH), separate department of Bank Handlowy w Warszawie S.A. a subsidiary of Citi Inc., which is regulated by Komisja Nadzoru Finansowego. Biuro Maklerskie Banku Handlowego (DMBH), ul.Senatorska 16, 00-923 Warszawa."
+                    }
+                ]
+            },
+            "bbox": [
+                76,
+                501,
+                867,
+                541
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The Product is made available in Singapore through Citi Global Markets Singapore Pte. Ltd. (“CGMSPL”), a capital markets services and Exempt Financial Advisor license holder, and regulated by Monetary Authority of Singapore. Please contact CGMSPL at 8 Marina View, 21st Floor Asia Square Tower 1, Singapore 018960, in respect of any matters arising from, or in connection with, the analysis of this document. This Product is intended for recipients who are accredited, expert and institutional investors as defined under the Securities and Futures Act 2001. For Citi Private Bank, the Product is made available in Singapore by Citi Private Bank through Citibank, N.A., Singapore Branch. Citibank N.A., Singapore Branch is a licensed bank in Singapore that is regulated by the Monetary Authority of Singapore. Please contact your Private Banker in Citibank N.A., Singapore Branch if you have any queries on or any matters arising from or in connection with this document. The Product is intended for recipients who are accredited, expert and institutional investors as defined under the Securities and Futures Act 2001. For Citibank Singapore Limited (“CSL”), the Product is distributed in Singapore by CSL to selected Citigold/Citigold Private Clients. CSL provides no independent research or analysis of the substance or in preparation of the Product. Please contact your Citigold//Citigold Private Client Relationship Manager in CSL if you have any queries on or any matters arising from or in connection with this document. The Product is intended for recipients who are accredited investors as defined under the Securities and Futures Act (Cap. 289)."
+                    }
+                ]
+            },
+            "bbox": [
+                76,
+                542,
+                906,
+                729
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Citi Global Markets (Pty) Ltd. is incorporated in the Republic of South Africa (company registration number 2000/025866/07) and its registered office is at 145 West Street, Sandton, 2196, Saxonwold. Citi Global Markets (Pty) Ltd. is regulated by JSE Securities Exchange South Africa, South African Reserve Bank and the Financial Services Board. The investments and services contained herein are not available to private customers in South Africa."
+                    }
+                ]
+            },
+            "bbox": [
+                76,
+                729,
+                897,
+                784
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The Product is made available in the Republic of China (Taiwan) through Citi Global Markets Taiwan Securities Company Ltd. (\"CGMTS\"), 14F, 15F and 16F, No. 1, Songzhi Road, Taipei 110, Taiwan, subject to the license scope and the applicable laws and regulations in the Republic of China (Taiwan). CGMTS is regulated by the Securities and Futures Bureau of the Financial Supervisory Commission of Taiwan, the Republic of China (Taiwan). No portion of the Product may be reproduced or quoted in the Republic of China (Taiwan) by the press or any third parties [without the written authorization of CGMTS]. Pursuant to the applicable laws and regulations in the Republic of China (Taiwan), the recipient of the Product shall not take advantage of such Product to involve in any matters in which the recipient may have conflicts of interest. If the Product covers securities which are not allowed to be offered or traded in the Republic of China (Taiwan), neither the Product nor any information contained in the Product shall be considered as advertising the securities or making recommendation of the securities in the Republic of China (Taiwan). The Product is for informational purposes only and is not intended as an offer or solicitation for the purchase or sale of a security or financial products. Any decision to purchase securities or financial products mentioned in the Product must take into account existing public information on such security or the financial products or any registered prospectus."
+                    }
+                ]
+            },
+            "bbox": [
+                76,
+                785,
+                916,
+                933
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Japan FX"
+                    }
+                ]
+            },
+            "bbox": [
+                78,
+                23,
+                137,
+                36
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "09 June 2026"
+                    }
+                ]
+            },
+            "bbox": [
+                78,
+                37,
+                161,
+                47
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Citi"
+                    }
+                ]
+            },
+            "bbox": [
+                803,
+                32,
+                918,
+                47
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "13"
+                    }
+                ]
+            },
+            "bbox": [
+                913,
+                955,
+                931,
+                965
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": []
+            },
+            "bbox": [
+                76,
+                108,
+                906,
+                135
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The Product is made available in Thailand through Citicorp Securities (Thailand) Ltd., which is regulated by the Securities and Exchange Commission of Thailand. 399 Interchange 21 Building, 18th Floor, Sukhumvit Road, Klongtoey Nua, Wattana, Bangkok 10110, Thailand."
+                    }
+                ]
+            },
+            "bbox": [
+                76,
+                135,
+                906,
+                175
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Disclosure for investors in the Republic of Turkey: The Product is made available in Turkey through Citibank AS which is regulated by Capital Markets Board. Tekfen Tower, Eski Buyukdere Caddesi # 209 Kat 2B, 23294 Levent, Istanbul, Turkey. Under Capital Markets Law of Turkey (Law No: 6362), the investment information, comments and recommendations stated here, are not within the scope of investment advisory activity. Comments and recommendations stated here rely on the individual opinions of the ones providing these comments and recommendations. These opinions may not fit to your financial status, risk and return preferences. For this reason, to make an investment decision by relying solely to this information stated here may not bring about outcomes that fit your expectations. Furthermore, Citi is a division of Citi Global Markets Inc. (the “Firm”), which does and seeks to do business with companies and/or trades on securities covered in this research reports. As a result, investors should be aware that the Firm may have a conflict of interest that could affect the objectivity of this report, however investors should also note that the Firm has in place organisational and administrative arrangements to manage potential conflicts of interest of this nature."
+                    }
+                ]
+            },
+            "bbox": [
+                76,
+                176,
+                911,
+                323
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "In the U.A.E, these materials (the \"Materials\") are communicated by Citi Global Markets Limited, DIFC branch (\"CGML\"), an entity registered in the Dubai International Financial Center (\"DIFC\") and licensed and regulated by the Dubai Financial Services Authority (\"DFSA\", license #CL0221) to Professional Clients and Market Counterparties, as defined in DFSA regulations, only and should not be relied upon or distributed to Retail Clients. Financial products and/or services to which the Materials relate will only be made available to Professional Clients and Market Counterparties. Citi Global Markets Limited DIFC Branch registered address is Level 3, Gate District Building O2, Dubai International Financial Centre and can be contacted on +971 4 509 97 90."
+                    }
+                ]
+            },
+            "bbox": [
+                76,
+                324,
+                913,
+                417
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The Product is made available in United Kingdom by Citi Global Markets Limited, which is authorised by the Prudential Regulation Authority (“PRA”) and regulated by the Financial Conduct Authority (“FCA”) and the PRA. This material may relate to investments or services of a person outside of the UK or to other matters which are not authorised by the PRA nor regulated by the FCA and the PRA and further details as to where this may be the case are available upon request in respect of this material. Citi Centre, Canada Square, Canary Wharf, London, E14 5LB."
+                    }
+                ]
+            },
+            "bbox": [
+                76,
+                419,
+                910,
+                486
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The Product is made available in United States and Canada by Citi Global Markets Inc., which is a member of FINRA and registered with the US Securities and Exchange Commission. 388 Greenwich Street, New York, NY 10013."
+                    }
+                ]
+            },
+            "bbox": [
+                76,
+                487,
+                911,
+                513
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Unless specified to the contrary, within EU Member States, the Product is made available by Citi Global Markets Europe AG (\"CGME\"), which is regulated by the European Central Bank and the German Federal Financial Supervisory Authority (Bundesanstalt für Finanzdienstleistungsaufsicht-BaFin)."
+                    }
+                ]
+            },
+            "bbox": [
+                76,
+                513,
+                906,
+                554
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The Product is not to be construed as providing investment services in any jurisdiction where the provision of such services would not be permitted."
+                    }
+                ]
+            },
+            "bbox": [
+                76,
+                555,
+                888,
+                582
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Subject to the nature and contents of the Product, the investments described therein are subject to fluctuations in price and/or value and investors may get back less than originally invested. Certain high-volatility investments can be subject to sudden and large falls in value that could equal or exceed the amount invested. The yield and average life of CMOs (collateralized mortgage obligations) referenced in this Product will fluctuate depending on the actual rate at which mortgage holders prepay the mortgages underlying the CMO and changes in current interest rates. Any government agency backing of the CMO applies only to the face value of the CMO and not to any premium paid. Certain investments contained in the Product may have tax implications for private customers whereby levels and basis of taxation may be subject to change. If in doubt, investors should seek advice from a tax adviser. The Product does not purport to identify the nature of the specific market or other risks associated with a particular transaction. Advice in the Product is general and should not be construed as personal advice given it has been prepared without taking account of the objectives, financial situation or needs of any particular investor. Accordingly, investors should, before acting on the advice, consider the appropriateness of the advice, having regard to their objectives, financial situation and needs. Prior to acquiring any financial product, it is the client's responsibility to obtain the relevant offer document for the product and consider it before making a decision as to whether to purchase the product."
+                    }
+                ]
+            },
+            "bbox": [
+                76,
+                582,
+                913,
+                768
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Card Insights. Where this report references Card Insights data, Card Insights consists of selected data from a subset of Citi's proprietary credit card transactions. Such data has undergone rigorous security protocols to keep all customer information confidential and secure; the data is highly aggregated and anonymized so that all unique customer identifiable information is removed from the data prior to receipt by the report's author or distribution to external parties. This data should be considered in the context of other economic indicators and publicly available information. Further, the selected data represents only a subset of Citi's proprietary credit card transactions due to the selection methodology or other limitations and should not be considered as indicative or predictive of the past or future financial performance of Citi or its credit card business."
+                    }
+                ]
+            },
+            "bbox": [
+                76,
+                770,
+                913,
+                864
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Citi product may source data from dataCentral. dataCentral is a Citi proprietary database, which includes the Firm's estimates, data from company reports and feeds from LSEG Data & Analytics. The source for all referenced prices, unless otherwise stated, is DataCentral. Past performance is not a guarantee or reliable indicator of future results. Forecasts are not a guarantee or reliable indicator of future performance. The printed and printable version of the research report may not include all the information <(e.g. certain financial summary information and comparable company data) that is linked to the online version available on the Firm's proprietary electronic distribution platforms."
+                    }
+                ]
+            },
+            "bbox": [
+                76,
+                864,
+                916,
+                946
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Japan FX"
+                    }
+                ]
+            },
+            "bbox": [
+                78,
+                23,
+                137,
+                36
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "09 June 2026"
+                    }
+                ]
+            },
+            "bbox": [
+                78,
+                37,
+                161,
+                47
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Citi"
+                    }
+                ]
+            },
+            "bbox": [
+                803,
+                32,
+                918,
+                47
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "14"
+                    }
+                ]
+            },
+            "bbox": [
+                913,
+                955,
+                931,
+                965
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Where included in this report, MSCI sourced information is the exclusive property of MS Capital International Inc. (MSCI). Without prior written permission of MSCI, this information and any other MSCI intellectual property may not be reproduced, redisseminated or used to create any financial products, including any indices. This information is provided on an \"as is\" basis. The user assumes the entire risk of any use made of this information. MSCI, its affiliates and any third party involved in, or related to, computing or compiling the information hereby expressly disclaim all warranties of originality, accuracy, completeness, merchantability or fitness for a particular purpose with respect to any of this information. Without limiting any of the foregoing, in no event shall MSCI, any of its affiliates or any third party involved in, or related to, computing or compiling the information have any liability for any damages of any kind. MSCI, MS Capital International and the MSCI indexes are services marks of MSCI and its affiliates. Where data is attributed to Morningstar that data is © 2026 Morningstar, Inc. All Rights Reserved. That information: (1) is proprietary to Morningstar and/or its content providers; (2) may not be copied or distributed; and (3) is not warranted to be accurate, complete or timely. Neither Morningstar nor its content providers are responsible for any damages or losses arising from any use of this information."
+                    }
+                ]
+            },
+            "bbox": [
+                76,
+                108,
+                908,
+                268
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The Firm accepts no liability whatsoever for the actions of third parties. The Product may provide the addresses of, or contain hyperlinks to, websites. Except to the extent to which the Product refers to website material of the Firm, the Firm has not reviewed the linked site. Equally, except to the extent to which the Product refers to website material of the Firm, the Firm takes no responsibility for, and makes no representations or warranties whatsoever as to, the data and information contained therein. Such address or hyperlink (including addresses or hyperlinks to website material of the Firm) is provided solely for your convenience and information and the content of the linked site does not in any way form part of this document. Accessing such website or following such link through the Product or the website of the Firm shall be at your own risk and the Firm shall have no liability arising out of, or in connection with, any such referenced website."
+                    }
+                ]
+            },
+            "bbox": [
+                76,
+                270,
+                913,
+                377
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "© 2026 Citi Global Markets Inc. Citi is a division of Citi Global Markets Inc. Citi and Citi and Arc Design are trademarks and service marks of Citi Inc. and its affiliates and are used and registered throughout the world. All rights reserved. The research data in this report are not intended to be used for the purpose of (a) determining the price of or amounts due in respect of (or to value) one or more financial products or instruments and/or (b) measuring or comparing the performance of, or defining the asset allocation of a financial product, a portfolio of financial instruments, or a collective investment undertaking, and any such use is strictly prohibited without the prior written consent of Citi. Any unauthorized use, duplication, redistribution or disclosure of this report (the “Product”), including, but not limited to, redistribution of the Product by electronic mail, posting of the Product on a website or page, and/or providing to a third party a link to the Product, is prohibited by law and will result in prosecution. The information contained in the Product is intended solely for the recipient and may not be further distributed by the recipient to any third party."
+                    }
+                ]
+            },
+            "bbox": [
+                76,
+                378,
+                916,
+                512
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "ADDITIONAL INFORMATION IS AVAILABLE UPON REQUEST"
+                    }
+                ]
+            },
+            "bbox": [
+                76,
+                512,
+                480,
+                526
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Japan FX"
+                    }
+                ]
+            },
+            "bbox": [
+                78,
+                23,
+                137,
+                36
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "09 June 2026"
+                    }
+                ]
+            },
+            "bbox": [
+                78,
+                37,
+                161,
+                47
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Citi"
+                    }
+                ]
+            },
+            "bbox": [
+                803,
+                32,
+                916,
+                47
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "15"
+                    }
+                ]
+            },
+            "bbox": [
+                913,
+                954,
+                931,
+                965
+            ]
+        }
+    ]
+]
