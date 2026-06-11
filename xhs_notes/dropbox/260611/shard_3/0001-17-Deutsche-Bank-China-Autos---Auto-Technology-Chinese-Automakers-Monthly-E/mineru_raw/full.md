@@ -1,0 +1,1887 @@
+Asia
+Emerging Europe
+Europe
+
+Consumer
+Autos & Auto Technology
+
+# Industry China Autos & Auto Technology
+
+Date
+9 June 2026
+
+Industry Update
+
+# Chinese Automakers Monthly European Market Volume Monitor: Apr. 2026
+
+This monthly chartbook product - "Chinese Automakers Monthly European Market Volume Monitor" - tracks the European sales of leading Chinese automakers.
+
+We anticipate overseas volumes to become the key growth driver, with the European market representing a significant growth market for Chinese automakers.
+
+Bin Wang
+Research Analyst
++852-220-35496
+
+Wei Huang
+Research Associate
++852-2203-7057
+
+Figure 1: Chinese OEMs European market volume by country
+
+<table><tr><td colspan="6">Chinese OEM European Volume by Country</td></tr><tr><td>(unit)</td><td>Apr-26</td><td>YoY</td><td>MoM</td><td>4M 2026</td><td>YoY</td></tr><tr><td>CN OEMs Sales</td><td>163,288</td><td>41.7%</td><td>-13.9%</td><td>573,291</td><td>40.4%</td></tr><tr><td>Russia</td><td>53,337</td><td>-9.7%</td><td>13.6%</td><td>170,640</td><td>-13.8%</td></tr><tr><td>UK</td><td>24,656</td><td>192.8%</td><td>-57.2%</td><td>111,830</td><td>127.7%</td></tr><tr><td>Italy</td><td>19,952</td><td>130.4%</td><td>-6.4%</td><td>71,837</td><td>129.5%</td></tr><tr><td>Spain</td><td>15,400</td><td>91.4%</td><td>-8.2%</td><td>54,073</td><td>72.2%</td></tr><tr><td>Germany</td><td>9,819</td><td>144.3%</td><td>20.8%</td><td>29,906</td><td>139.0%</td></tr><tr><td>France</td><td>7,744</td><td>71.4%</td><td>40.7%</td><td>20,089</td><td>46.5%</td></tr><tr><td>Poland</td><td>6,602</td><td>107.7%</td><td>-11.5%</td><td>23,566</td><td>129.8%</td></tr><tr><td>Turkiye</td><td>4,321</td><td>-54.3%</td><td>1.7%</td><td>19,546</td><td>-26.5%</td></tr><tr><td>Austria</td><td>2,381</td><td>133.2%</td><td>-7.4%</td><td>7,544</td><td>101.8%</td></tr><tr><td>Belgium</td><td>2,256</td><td>122.0%</td><td>-11.1%</td><td>7,956</td><td>118.9%</td></tr><tr><td>Portugal</td><td>1,764</td><td>126.7%</td><td>-23.7%</td><td>7,318</td><td>131.9%</td></tr><tr><td>Netherlands</td><td>1,662</td><td>56.9%</td><td>-22.8%</td><td>7,042</td><td>101.9%</td></tr><tr><td>Denmark</td><td>1,605</td><td>57.5%</td><td>13.2%</td><td>5,124</td><td>77.6%</td></tr><tr><td>Norway</td><td>1,591</td><td>27.0%</td><td>-22.7%</td><td>5,110</td><td>26.2%</td></tr><tr><td>Romania</td><td>1,294</td><td>372.3%</td><td>23.8%</td><td>3,955</td><td>218.7%</td></tr><tr><td>Czech Republic</td><td>1,255</td><td>127.8%</td><td>14.2%</td><td>3,730</td><td>92.1%</td></tr><tr><td>Switzerland</td><td>1,220</td><td>260.9%</td><td>-5.6%</td><td>3,813</td><td>240.8%</td></tr><tr><td>Greece</td><td>1,212</td><td>53.6%</td><td>-11.6%</td><td>4,482</td><td>64.2%</td></tr><tr><td>Sweden</td><td>1,100</td><td>142.8%</td><td>61.5%</td><td>2,490</td><td>59.9%</td></tr><tr><td>Hungary</td><td>1,010</td><td>260.7%</td><td>129.5%</td><td>1,930</td><td>71.4%</td></tr></table>
+
+Figure 2: Chinese OEMs European market volume by automaker
+
+<table><tr><td colspan="6">Chinese OEM European Market Volume by OEM</td></tr><tr><td>(unit)</td><td>Apr-26</td><td>YoY</td><td>MoM</td><td>4M 2026</td><td>YoY</td></tr><tr><td>CN OEMs Sales</td><td>163,288</td><td>41.7%</td><td>-13.9%</td><td>573,291</td><td>40.4%</td></tr><tr><td>Chery</td><td>40,841</td><td>29.0%</td><td>-18.7%</td><td>146,687</td><td>40.6%</td></tr><tr><td>SAIC</td><td>29,839</td><td>35.7%</td><td>-25.1%</td><td>110,875</td><td>9.8%</td></tr><tr><td>BYD</td><td>28,358</td><td>57.0%</td><td>-26.1%</td><td>107,637</td><td>94.3%</td></tr><tr><td>Geely</td><td>18,234</td><td>46.8%</td><td>5.9%</td><td>59,345</td><td>49.3%</td></tr><tr><td>Great Wall Motor</td><td>18,148</td><td>21.9%</td><td>10.5%</td><td>58,007</td><td>11.9%</td></tr><tr><td>Leapmotor</td><td>8,758</td><td>415.8%</td><td>-22.0%</td><td>32,747</td><td>590.0%</td></tr><tr><td>Chang&#x27;an</td><td>5,491</td><td>19.8%</td><td>24.3%</td><td>15,065</td><td>-14.7%</td></tr><tr><td>XPeng</td><td>3,344</td><td>102.7%</td><td>8.1%</td><td>10,433</td><td>107.3%</td></tr><tr><td>Dongfeng Motor</td><td>2,793</td><td>120.8%</td><td>18.1%</td><td>8,512</td><td>61.7%</td></tr><tr><td>FAW</td><td>2,148</td><td>208.2%</td><td>6.5%</td><td>7,039</td><td>187.1%</td></tr><tr><td>GAC</td><td>2,139</td><td>62.3%</td><td>18.8%</td><td>6,272</td><td>34.3%</td></tr><tr><td>Chinese Brands</td><td>1,010</td><td></td><td>129.5%</td><td>1,930</td><td></td></tr><tr><td>BAIC</td><td>597</td><td>-52.5%</td><td>-30.7%</td><td>2,535</td><td>-34.2%</td></tr><tr><td>Li Auto</td><td>348</td><td>-64.7%</td><td>-5.2%</td><td>1,757</td><td>-46.9%</td></tr><tr><td>Seres</td><td>288</td><td>-50.8%</td><td>17.6%</td><td>994</td><td>-49.6%</td></tr><tr><td>Fujian Motor (FJMG)</td><td>263</td><td>17.4%</td><td>338.3%</td><td>399</td><td>-47.4%</td></tr><tr><td>JAC</td><td>259</td><td>-47.3%</td><td>-19.6%</td><td>1,174</td><td>-25.8%</td></tr><tr><td>Shineray</td><td>189</td><td>-71.0%</td><td>-23.2%</td><td>945</td><td>-64.8%</td></tr><tr><td>NIO</td><td>46</td><td>-14.8%</td><td>-14.8%</td><td>210</td><td>-23.9%</td></tr><tr><td>212</td><td>38</td><td></td><td>153.3%</td><td>53</td><td></td></tr></table>
+
+## By Country
+
+Figure 3: European market total volume trend  
+![](images/48e9bdad4a5d5b2f82e24f70c193e6ca4286da38624ed24d6a8813c3b99e9049.jpg)
+
+<details>
+<summary>bar-line hybrid chart</summary>
+
+| Month   | European Auto Sales | YoY    |
+|---------|---------------------|--------|
+| Jan-25  | 1150                | 6%     |
+| Feb-25  | 1100                | -4%    |
+| Mar-25  | 1600                | 0%     |
+| Apr-25  | 1250                | 0%     |
+| May-25  | 1300                | 2%     |
+| Jun-25  | 1400                | -8%    |
+| Jul-25  | 1250                | 4%     |
+| Aug-25  | 1000                | 2%     |
+| Sep-25  | 1450                | 8%     |
+| Oct-25  | 1350                | 4%     |
+| Nov-25  | 1300                | 2%     |
+| Dec-25  | 1450                | 8%     |
+| Jan-26  | 1100                | -4%    |
+| Feb-26  | 1150                | 0%     |
+| Mar-26  | 1750                | 10%    |
+| Apr-26  | 1350                | 6%     |
+</details>
+
+Source : Marklines
+
+Figure 4: Total European market volume breakdown by OEM  
+![](images/48ac1b6d15279214c7465c046dad55f13f4f0841aa6cb30a49880242be799954.jpg)
+
+<details>
+<summary>pie chart</summary>
+
+| Category | Percentage (%) |
+| :--- | :--- |
+| Non-Chinese OEM | 88 |
+| Chinese OEM | 12 |
+</details>
+
+Source : Marklines
+
+Figure 5: Chinese OEMs' aggregate European market volume trend  
+![](images/b7f2a2e32d8bd0a83ca72102a69fcab69357a64390de0524eb02014b7611264d.jpg)
+
+<details>
+<summary>bar-line hybrid chart</summary>
+
+| Month   | CN OEMs Sales | YoY   |
+|---------|---------------|-------|
+| Jan-25  | 88            | 18%   |
+| Feb-25  | 84            | -5%   |
+| Mar-25  | 118           | -10%  |
+| Apr-25  | 114           | 6%    |
+| May-25  | 118           | 6%    |
+| Jun-25  | 123           | -5%   |
+| Jul-25  | 134           | 6%    |
+| Aug-25  | 120           | 5%    |
+| Sep-25  | 163           | 20%   |
+| Oct-25  | 163           | 10%   |
+| Nov-25  | 147           | 40%   |
+| Dec-25  | 177           | 45%   |
+| Jan-26  | 107           | 20%   |
+| Feb-26  | 113           | 35%   |
+| Mar-26  | 190           | 60%   |
+| Apr-26  | 163           | 40%   |
+</details>
+
+Source : Marklines
+
+Figure 6: Aggregate market share of Chinese OEMs in European market  
+![](images/594ebcb69b6771509414449ec98766b4514d61e22eb374b2e138dec00d270036.jpg)
+
+<details>
+<summary>line chart</summary>
+
+| Month   | Value  |
+| ------- | ------ |
+| Jan-25  | 7.8%   |
+| Feb-25  | 7.5%   |
+| Mar-25  | 7.3%   |
+| Apr-25  | 9.0%   |
+| May-25  | 9.0%   |
+| Jun-25  | 8.5%   |
+| Jul-25  | 10.5%  |
+| Aug-25  | 12.0%  |
+| Sep-25  | 11.0%  |
+| Oct-25  | 12.0%  |
+| Nov-25  | 11.0%  |
+| Dec-25  | 12.0%  |
+| Jan-26  | 9.8%   |
+| Feb-26  | 10.0%  |
+| Mar-26  | 10.8%  |
+| Apr-26  | 12.0%  |
+</details>
+
+Source : Marklines
+
+Figure 7: Germany market wide volume trend  
+![](images/eafcc68c685d2322b51fc67997db2eb9e08e72902b041b46da5fb1cedfa30802.jpg)
+
+<details>
+<summary>bar-line hybrid chart</summary>
+
+| Month | Germany total sales (000 Unit) | YoY (%) |
+| :--- | :--- | :--- |
+| Jan-25 | 208 | -1.3 |
+| Feb-25 | 204 | -5.7 |
+| Mar-25 | 253 | -4.9 |
+| Apr-25 | 242 | -1.1 |
+| May-25 | 238 | 0.9 |
+| Jun-25 | 256 | -16.4 |
+| Jul-25 | 264 | 11.6 |
+| Aug-25 | 208 | 4.7 |
+| Sep-25 | 236 | 13.0 |
+| Oct-25 | 249 | 6.8 |
+| Nov-25 | 251 | 1.7 |
+| Dec-25 | 246 | 6.0 |
+| Jan-26 | 193 | -7.3 |
+| Feb-26 | 211 | 7.9 |
+| Mar-26 | 258 | 16.4 |
+| Apr-26 | 249 | 1.8 |
+</details>
+
+Source : Marklines
+
+Figure 8: Germany market wide volume breakdown by automaker  
+![](images/28800e8747146cb972477a384d0f2b87812158b5e6b4f1eda75c4ad8dd6604d8.jpg)
+
+<details>
+<summary>pie chart</summary>
+
+| Category | Percentage (%) |
+| :--- | :--- |
+| Non-Chinese OEMs | 96.8 |
+| BYD | 1.5 |
+| SAIC | 0.9 |
+| Other CN OEMs | 0.7 |
+</details>
+
+Source : Marklines
+
+Figure 9: Chinese OEMs' aggregate volume trend in Germany  
+![](images/9b4da64a843257708f0bd67a7a9e25b1e86e4304e7aa1cbadd50c8947dc31e52.jpg)
+
+<details>
+<summary>bar-line hybrid chart</summary>
+
+| Month   | CN OEMs Sales in Germany (000 Unit) | YoY (%) |
+|---------|-------------------------------------|---------|
+| Jan-25  | 2.5                                 | 150     |
+| Feb-25  | 2.3                                 | 50      |
+| Mar-25  | 3.5                                 | 150     |
+| Apr-25  | 4.0                                 | 250     |
+| May-25  | 5.0                                 | 100     |
+| Jun-25  | 6.0                                 | 0       |
+| Jul-25  | 4.5                                 | 150     |
+| Aug-25  | 4.5                                 | 300     |
+| Sep-25  | 7.2                                 | 500     |
+| Oct-25  | 7.5                                 | 250     |
+| Nov-25  | 8.0                                 | 350     |
+| Dec-25  | 8.5                                 | 200     |
+| Jan-26  | 5.2                                 | 100     |
+| Feb-26  | 6.8                                 | 180     |
+| Mar-26  | 8.1                                 | 120     |
+| Apr-26  | 9.8                                 | 130     |
+</details>
+
+Source : Marklines
+
+Figure 10: Aggregate market share of Chinese OEMs in Germany  
+![](images/affe0628d0a73ad1667424a2abc392d0c91ed1e772e67bd6b217455eecaeb678.jpg)
+
+<details>
+<summary>line chart</summary>
+
+| Month   | Value |
+| ------- | ----- |
+| Jan-25  | 1.2%  |
+| Feb-25  | 1.2%  |
+| Mar-25  | 1.4%  |
+| Apr-25  | 1.7%  |
+| May-25  | 2.1%  |
+| Jun-25  | 2.3%  |
+| Jul-25  | 1.6%  |
+| Aug-25  | 2.1%  |
+| Sep-25  | 3.0%  |
+| Oct-25  | 3.0%  |
+| Nov-25  | 3.2%  |
+| Dec-25  | 3.4%  |
+| Jan-26  | 2.7%  |
+| Feb-26  | 3.2%  |
+| Mar-26  | 2.8%  |
+| Apr-26  | 4.0%  |
+</details>
+
+Source : Marklines
+
+Figure 11: France market wide volume trend  
+![](images/90567d87360ac5af0b8f697ccff362bdd583a6567ddc3374355ece0d28732ac2.jpg)
+
+<details>
+<summary>bar-line hybrid chart</summary>
+
+| Month | France total sales (000 Unit) | YoY (%) |
+| :--- | :--- | :--- |
+| Jan-25 | 114 | -7.5 |
+| Feb-25 | 141 | 1.3 |
+| Mar-25 | 154 | -14.8 |
+| Apr-25 | 139 | 8.0 |
+| May-25 | 124 | -13.0 |
+| Jun-25 | 170 | -7.5 |
+| Jul-25 | 116 | -7.8 |
+| Aug-25 | 88 | 2.8 |
+| Sep-25 | 141 | 1.6 |
+| Oct-25 | 140 | 3.3 |
+| Nov-25 | 133 | 1.0 |
+| Dec-25 | 173 | -8.0 |
+| Jan-26 | 107 | -7.8 |
+| Feb-26 | 120 | -14.8 |
+| Mar-26 | 176 | 14.0 |
+| Apr-26 | 137 | -0.8 |
+</details>
+
+Source : Marklines
+
+Figure 12: France market wide volume breakdown by automaker  
+![](images/ff81286a6994f2a6904b9da98684806bbd0666efd8571b6d1915fe77a9d2399f.jpg)
+
+<details>
+<summary>pie chart</summary>
+
+| Category | Percentage (%) |
+| :--- | :--- |
+| Non-Chinese OEMs | 96.3 |
+| SAIC | 1.7 |
+| BYD | 1.1 |
+| Other CN OEMs | 0.9 |
+</details>
+
+Source : Marklines
+
+Figure 13: Chinese OEMs' aggregate volume trend in France  
+![](images/c009210b37e7e045e24a3c7c583491d096d20523062c0eb61792e6421158ed13.jpg)
+
+<details>
+<summary>bar-line hybrid chart</summary>
+
+| Month   | CN OEMs Sales in France | YoY   |
+|---------|--------------------------|-------|
+| Jan-25  | 2                        | 0%    |
+| Feb-25  | 3                        | 0%    |
+| Mar-25  | 4                        | 100%  |
+| Apr-25  | 4.5                      | 300%  |
+| May-25  | 4                        | 250%  |
+| Jun-25  | 4.5                      | 100%  |
+| Jul-25  | 3.5                      | 150%  |
+| Aug-25  | 3                        | 175%  |
+| Sep-25  | 5                        | 150%  |
+| Oct-25  | 5                        | 125%  |
+| Nov-25  | 4.5                      | 100%  |
+| Dec-25  | 10.5                     | 0%    |
+| Jan-26  | 3                        | 0%    |
+| Feb-26  | 4                        | 0%    |
+| Mar-26  | 5.5                      | 0%    |
+| Apr-26  | 7.5                      | 75%   |
+</details>
+
+Source : Marklines
+
+Figure 14: Aggregate market share of Chinese OEMs in France  
+![](images/bc25537a10f1e03942e9b6ed70e41f0d7558f43ff394da1c68d2dd628a37522b.jpg)
+
+<details>
+<summary>line chart</summary>
+
+| Month   | Value |
+| ------- | ----- |
+| Jan-25  | 2.0%  |
+| Feb-25  | 2.1%  |
+| Mar-25  | 2.8%  |
+| Apr-25  | 3.3%  |
+| May-25  | 3.4%  |
+| Jun-25  | 2.6%  |
+| Jul-25  | 3.5%  |
+| Aug-25  | 3.9%  |
+| Sep-25  | 4.0%  |
+| Oct-25  | 3.8%  |
+| Nov-25  | 3.7%  |
+| Dec-25  | 6.2%  |
+| Jan-26  | 2.7%  |
+| Feb-26  | 3.3%  |
+| Mar-26  | 3.1%  |
+| Apr-26  | 5.7%  |
+</details>
+
+Source : Marklines
+
+Figure 15: UK market wide volume trend  
+![](images/241e0ba0a32378d2c61a6da8885af88155813a3a66d604cbc98c56e4abab7763.jpg)
+
+<details>
+<summary>bar-line hybrid chart</summary>
+
+| Month | UK total sales (000 Unit) | YoY (%) |
+|---|---|---|
+| Jan-25 | 140 | -1.5 |
+| Feb-25 | 85 | -1.0 |
+| Mar-25 | 360 | 12.5 |
+| Apr-25 | 120 | -10.0 |
+| May-25 | 150 | 1.5 |
+| Jun-25 | 195 | 7.5 |
+| Jul-25 | 140 | -3.0 |
+| Aug-25 | 85 | -1.0 |
+| Sep-25 | 315 | 14.5 |
+| Oct-25 | 145 | 1.0 |
+| Nov-25 | 150 | -1.5 |
+| Dec-25 | 145 | 3.5 |
+| Jan-26 | 145 | 3.5 |
+| Feb-26 | 90 | 7.5 |
+| Mar-26 | 380 | 7.0 |
+| Apr-26 | 150 | 25.0 |
+</details>
+
+Source : Marklines
+
+Figure 16: UK market wide volume breakdown by automaker  
+![](images/9cd4fbeb2cd09c85534851be79e8e562bad1efab8ef617971af63678a2443b88.jpg)
+
+<details>
+<summary>pie chart</summary>
+
+| Category | Percentage (%) |
+| :--- | :--- |
+| Non-Chinese OEMs | 85.4 |
+| Chery | 6.0 |
+| SAIC | 4.0 |
+| BYD | 3.5 |
+| Other CN OEMs | 1.1 |
+</details>
+
+Source : Marklines
+
+Figure 17: Chinese OEMs' aggregate volume trend in the UK  
+![](images/bc446e0dc6c6e72bdbb3ea17472362668133dfa25298901dbf93128093e0b7ab.jpg)
+
+<details>
+<summary>bar-line hybrid chart</summary>
+
+| Month | CN OEMs Sales in UK (000 Unit) | YoY (%) |
+| :--- | :--- | :--- |
+| Jan-25 | 8 | 30 |
+| Feb-25 | 5 | 70 |
+| Mar-25 | 26 | 100 |
+| Apr-25 | 8 | 40 |
+| May-25 | 13 | 60 |
+| Jun-25 | 16 | 70 |
+| Jul-25 | 13 | 80 |
+| Aug-25 | 7 | 100 |
+| Sep-25 | 39 | 250 |
+| Oct-25 | 15 | 100 |
+| Nov-25 | 18 | 70 |
+| Dec-25 | 26 | 180 |
+| Jan-26 | 19 | 100 |
+| Feb-26 | 11 | 60 |
+| Mar-26 | 58 | 120 |
+| Apr-26 | 24 | 180 |
+</details>
+
+Source : Marklines
+
+Figure 18: Aggregate market share of Chinese OEMs in UK  
+![](images/7452aae9d9aa2cb7e1be5531dafc231cf30afd521963419e9ebdcd92ab6e1c30.jpg)
+
+<details>
+<summary>line chart</summary>
+
+| Month   | Value  |
+| ------- | ------ |
+| Jan-25  | 6.0%   |
+| Feb-25  | 7.0%   |
+| Mar-25  | 7.5%   |
+| Apr-25  | 7.0%   |
+| May-25  | 8.5%   |
+| Jun-25  | 8.0%   |
+| Jul-25  | 9.0%   |
+| Aug-25  | 8.5%   |
+| Sep-25  | 12.0%  |
+| Oct-25  | 10.0%  |
+| Nov-25  | 11.5%  |
+| Dec-25  | 18.0%  |
+| Jan-26  | 13.0%  |
+| Feb-26  | 11.5%  |
+| Mar-26  | 15.0%  |
+| Apr-26  | 17.0%  |
+</details>
+
+Source : Marklines
+
+Figure 19: Italy market wide volume trend  
+![](images/a7e41e7d08fe6baf817fbd3c60fee3f9f83e1b578a67fa3d54a0e5313494c3ae.jpg)
+
+<details>
+<summary>bar-line hybrid chart</summary>
+
+| Month | Italy total sales (000 Unit) | YoY (%) |
+| :--- | :--- | :--- |
+| Jan-25 | 134 | -5 |
+| Feb-25 | 138 | -5 |
+| Mar-25 | 173 | 7 |
+| Apr-25 | 139 | 4 |
+| May-25 | 140 | 1 |
+| Jun-25 | 132 | -18 |
+| Jul-25 | 118 | -3 |
+| Aug-25 | 67 | -1 |
+| Sep-25 | 126 | 4 |
+| Oct-25 | 126 | -1 |
+| Nov-25 | 124 | -1 |
+| Dec-25 | 107 | 0 |
+| Jan-26 | 141 | 6 |
+| Feb-26 | 157 | 15 |
+| Mar-26 | 185 | 8 |
+| Apr-26 | 156 | 12 |
+</details>
+
+Source : Marklines
+
+Figure 20: Italy market wide volume breakdown by automaker  
+![](images/90279dc2e2d491b19bf5e5c61905f2b7e8255086acdfc3c9ccfe743a140ac864.jpg)
+
+<details>
+<summary>pie chart</summary>
+
+| Category | Percentage (%) |
+| :--- | :--- |
+| Non-Chinese OEMs | 88.8 |
+| SAIC | 3.4 |
+| BYD | 2.7 |
+| Leapmotor | 2.5 |
+| Other CN OEMs | 2.6 |
+</details>
+
+Source : Marklines
+
+Figure 21: Chinese OEMs' aggregate volume trend in Italy  
+![](images/e15aae3f38c3cf4b49d9ca555ab12277b4820f0d5241c547d3284a45d0c50365.jpg)
+
+<details>
+<summary>bar-line hybrid chart</summary>
+
+| Month | CN OEMs Sales in Italy (000 Unit) | YoY (%) |
+| :--- | :--- | :--- |
+| Jan-25 | 6 | 125 |
+| Feb-25 | 7 | 135 |
+| Mar-25 | 10 | 165 |
+| Apr-25 | 8.5 | 155 |
+| May-25 | 7.8 | 125 |
+| Jun-25 | 8 | 105 |
+| Jul-25 | 7.9 | 120 |
+| Aug-25 | 4.5 | 115 |
+| Sep-25 | 8.7 | 165 |
+| Oct-25 | 8.3 | 60 |
+| Nov-25 | 12.5 | 180 |
+| Dec-25 | 11.6 | 140 |
+| Jan-26 | 12.3 | 110 |
+| Feb-26 | 18.3 | 160 |
+| Mar-26 | 21.3 | 145 |
+| Apr-26 | 20 | 160 |
+</details>
+
+Source : Marklines
+
+Figure 22: Aggregate market share of Chinese OEMs in Italy  
+![](images/87063f5ea0fbb2db63ca6fdbbd56759881f2c0747e4cc1f71d6df9a195bf8311.jpg)
+
+<details>
+<summary>line chart</summary>
+
+| Month   | Value  |
+| ------- | ------ |
+| Jan-25  | 4.5%   |
+| Feb-25  | 5.0%   |
+| Mar-25  | 5.8%   |
+| Apr-25  | 6.2%   |
+| May-25  | 5.7%   |
+| Jun-25  | 6.0%   |
+| Jul-25  | 6.7%   |
+| Aug-25  | 6.6%   |
+| Sep-25  | 6.9%   |
+| Oct-25  | 6.7%   |
+| Nov-25  | 10.0%  |
+| Dec-25  | 10.8%  |
+| Jan-26  | 8.5%   |
+| Feb-26  | 11.8%  |
+| Mar-26  | 11.7%  |
+| Apr-26  | 13.0%  |
+</details>
+
+Source : Marklines
+
+Figure 23: Turkiye market wide volume trend  
+![](images/7c181f0865b8f1ee84df6cfe2202ed8b8f31e179daf4f17d6aae44ce6f72594e.jpg)
+
+<details>
+<summary>bar-line hybrid chart</summary>
+
+| Month | Turkiye total sales (000 Unit) | YoY (%) |
+|---|---|---|
+| Jan-25 | 56 | -14 |
+| Feb-25 | 76 | -8 |
+| Mar-25 | 91 | 13 |
+| Apr-25 | 85 | 40 |
+| May-25 | 84 | 6 |
+| Jun-25 | 93 | 7 |
+| Jul-25 | 83 | 14 |
+| Aug-25 | 81 | 17 |
+| Sep-25 | 88 | 26 |
+| Oct-25 | 89 | 17 |
+| Nov-25 | 104 | 10 |
+| Dec-25 | 146 | 7 |
+| Jan-26 | 61 | 7 |
+| Feb-26 | 70 | -10 |
+| Mar-26 | 80 | -14 |
+| Apr-26 | 80 | -4 |
+</details>
+
+Source : Marklines
+
+Figure 24: Turkiye market wide volume breakdown by automaker  
+![](images/a23e7fcc182a42bd982fbf5aec76f1a7230044156efc4146533f17e812b4c49c.jpg)
+
+<details>
+<summary>pie chart</summary>
+
+| Category | Percentage (%) |
+| :--- | :--- |
+| Non-Chinese OEMs | 93.3 |
+| Chery | 4.1 |
+| BYD | 2.3 |
+| SAIC | 0.3 |
+| Other CN OEMs | 0.0 |
+</details>
+
+Source : Marklines
+
+Figure 25: Chinese OEMs' aggregate volume trend in Turkiye  
+![](images/4f01b86fffe68c485ad3c19033b40b08ea1256dc45b63e6d767c968398c1e186.jpg)
+
+<details>
+<summary>bar-line hybrid chart</summary>
+
+| Month   | CN OEMs Sales in Türkiye (000 Unit) | YoY (%) |
+|---------|-------------------------------------|---------|
+| Jan-25  | 4                                   | -10%    |
+| Feb-25  | 6                                   | -5%     |
+| Mar-25  | 7                                   | -15%    |
+| Apr-25  | 9                                   | 30%     |
+| May-25  | 8                                   | 10%     |
+| Jun-25  | 11                                  | 20%     |
+| Jul-25  | 7                                   | -10%    |
+| Aug-25  | 6                                   | -5%     |
+| Sep-25  | 5                                   | 10%     |
+| Oct-25  | 4                                   | -15%    |
+| Nov-25  | 8                                   | 80%     |
+| Dec-25  | 8                                   | -10%    |
+| Jan-26  | 7                                   | 60%     |
+| Feb-26  | 4                                   | -30%    |
+| Mar-26  | 4                                   | -35%    |
+| Apr-26  | 4                                   | -60%    |
+</details>
+
+Source : Marklines
+
+Figure 26: Aggregate market share of Chinese OEMs in Turkiye  
+![](images/f4689c5d3ea4120d491a99a4cdf63296699ea864a8ccc1f0e3c49eab485009e7.jpg)
+
+<details>
+<summary>line chart</summary>
+
+| Month   | Value  |
+| ------- | ------ |
+| Jan-25  | 7.8%   |
+| Feb-25  | 7.8%   |
+| Mar-25  | 7.3%   |
+| Apr-25  | 11.1%  |
+| May-25  | 10.4%  |
+| Jun-25  | 11.6%  |
+| Jul-25  | 8.3%   |
+| Aug-25  | 7.1%   |
+| Sep-25  | 6.7%   |
+| Oct-25  | 4.4%   |
+| Nov-25  | 8.2%   |
+| Dec-25  | 5.6%   |
+| Jan-26  | 11.9%  |
+| Feb-26  | 5.4%   |
+| Mar-26  | 5.3%   |
+| Apr-26  | 5.3%   |
+</details>
+
+Source : Marklines
+
+Figure 27: Spain market wide volume trend  
+![](images/6f1951c82c4e4a7a8f5c6914eaca4053d101c7c613f1d5a6edab37609c992367.jpg)
+
+<details>
+<summary>bar-line hybrid chart</summary>
+
+| Month   | Spain total sales | YoY   |
+|---------|-------------------|-------|
+| Jan-25  | 73                | 4.5%  |
+| Feb-25  | 90                | 7.5%  |
+| Mar-25  | 118               | 23.5% |
+| Apr-25  | 98                | 5.5%  |
+| May-25  | 112               | 11.0% |
+| Jun-25  | 119               | 9.0%  |
+| Jul-25  | 98                | 16.0% |
+| Aug-25  | 61                | 16.0% |
+| Sep-25  | 85                | 16.0% |
+| Oct-25  | 98                | 16.0% |
+| Nov-25  | 93                | 8.0%  |
+| Dec-25  | 103               | -3.0% |
+| Jan-26  | 73                | 1.0%  |
+| Feb-26  | 97                | 6.0%  |
+| Mar-26  | 130               | 11.0% |
+| Apr-26  | 107               | 7.0%  |
+</details>
+
+Source : Marklines
+
+Figure 28: Spain market wide volume breakdown by automaker  
+![](images/4c86b259ef8ed7eac8cebb1745890439a82d6f43acebc5a915220f88ce95aeba.jpg)
+
+<details>
+<summary>pie chart</summary>
+
+| Category | Percentage (%) |
+| :--- | :--- |
+| Non-Chinese OEMs | 86.7 |
+| Other CN OEMs | 1.2 |
+| BYD | 3.3 |
+| SAIC | 3.8 |
+| Chery | 5.0 |
+</details>
+
+Source : Marklines
+
+Figure 29: Chinese OEMs' aggregate volume trend in Spain  
+![](images/ec2e4bdc82fb4eb1fbcd5448541d63b8c6a77afa7d1be380244fffb478686a3d.jpg)
+
+<details>
+<summary>bar-line hybrid chart</summary>
+
+| Month   | CN OEMs Sales in Spain | YoY   |
+|---------|------------------------|-------|
+| Jan-25  | 6                      | 100%  |
+| Feb-25  | 8                      | 150%  |
+| Mar-25  | 10                     | 225%  |
+| Apr-25  | 8                      | 100%  |
+| May-25  | 11                     | 225%  |
+| Jun-25  | 10                     | 150%  |
+| Jul-25  | 10                     | 60%   |
+| Aug-25  | 7                      | 100%  |
+| Sep-25  | 10                     | 175%  |
+| Oct-25  | 11                     | 125%  |
+| Nov-25  | 11                     | 100%  |
+| Dec-25  | 12                     | 75%   |
+| Jan-26  | 9                      | 50%   |
+| Feb-26  | 13                     | 60%   |
+| Mar-26  | 17                     | 75%   |
+| Apr-26  | 15                     | 90%   |
+</details>
+
+Source : Marklines
+
+Figure 30: Aggregate market share of Chinese OEMs in Spain  
+![](images/8d163c455609939cede036ac3961bb93ebc07b56a5ae80729d645b7feeaefc5a.jpg)
+
+<details>
+<summary>line chart</summary>
+
+| Month   | Value  |
+| ------- | ------ |
+| Jan-25  | 8.0%   |
+| Feb-25  | 8.5%   |
+| Mar-25  | 8.0%   |
+| Apr-25  | 7.5%   |
+| May-25  | 9.5%   |
+| Jun-25  | 8.0%   |
+| Jul-25  | 10.0%  |
+| Aug-25  | 12.0%  |
+| Sep-25  | 11.5%  |
+| Oct-25  | 11.0%  |
+| Nov-25  | 11.5%  |
+| Dec-25  | 11.5%  |
+| Jan-26  | 12.0%  |
+| Feb-26  | 13.0%  |
+| Mar-26  | 12.5%  |
+| Apr-26  | 14.0%  |
+</details>
+
+Source : Marklines
+
+Figure 31: Poland market wide volume trend  
+![](images/78754055b25d4705bf25db216343f06180462ac42ae89e2e1131747db8de7e7b.jpg)
+
+<details>
+<summary>bar-line hybrid chart</summary>
+
+| Month | Poland total sales (000 Unit) | YoY (%) |
+| :--- | :--- | :--- |
+| Jan-25 | 44 | 3.7 |
+| Feb-25 | 44.5 | -1.8 |
+| Mar-25 | 53 | 4.3 |
+| Apr-25 | 47 | 4.1 |
+| May-25 | 46.5 | 4.4 |
+| Jun-25 | 49.5 | -1.0 |
+| Jul-25 | 50.5 | 16.3 |
+| Aug-25 | 42.5 | 13.8 |
+| Sep-25 | 50 | 20.7 |
+| Oct-25 | 52.5 | 7.8 |
+| Nov-25 | 49 | -1.0 |
+| Dec-25 | 68 | 23.0 |
+| Jan-26 | 40.5 | -10.0 |
+| Feb-26 | 47.5 | 11.8 |
+| Mar-26 | 63.5 | 20.3 |
+| Apr-26 | 50.5 | 10.3 |
+</details>
+
+Source : Marklines
+
+Figure 32: Poland market wide volume breakdown by automaker  
+![](images/e916ae46875686492071dd4bd69e269d5b86075dd813071a51845c50a41e4285.jpg)
+
+<details>
+<summary>pie chart</summary>
+
+| Category | Percentage (%) |
+| :--- | :--- |
+| Non-Chinese OEMs | 88.4 |
+| Chery | 5.3 |
+| SAIC | 2.7 |
+| BYD | 1.4 |
+| Other CN OEMs | 2.2 |
+</details>
+
+Source : Marklines
+
+Figure 33: Chinese OEMs' aggregate volume trend in Poland  
+![](images/05a5f8335deaa8d9f220a53e6e99ab8873cf148e6343f2455f8ce24dd4a47635.jpg)
+
+<details>
+<summary>bar-line hybrid chart</summary>
+
+| Month | CN OEMs Sales in Poland (in 1,000 Units) | YoY (%) |
+|---|---|---|
+| Jan-25 | 2.0 | 1000 |
+| Feb-25 | 2.0 | 650 |
+| Mar-25 | 2.8 | 800 |
+| Apr-25 | 3.1 | 550 |
+| May-25 | 3.3 | 400 |
+| Jun-25 | 2.9 | 150 |
+| Jul-25 | 4.1 | 450 |
+| Aug-25 | 3.7 | 650 |
+| Sep-25 | 4.4 | 600 |
+| Oct-25 | 5.3 | 300 |
+| Nov-25 | 5.1 | 250 |
+| Dec-25 | 9.8 | 450 |
+| Jan-26 | 4.1 | 100 |
+| Feb-26 | 5.4 | 180 |
+| Mar-26 | 7.5 | 170 |
+| Apr-26 | 6.6 | 120 |
+</details>
+
+Source : Marklines
+
+Figure 34: Aggregate market share of Chinese OEMs in Poland  
+![](images/5da05e48081846d2e1bfefa83ddc4b441eacf83da8eef5447345a5376df8eb16.jpg)
+
+<details>
+<summary>line chart</summary>
+
+| Month   | Value  |
+| ------- | ------ |
+| Jan-25  | 4.8%   |
+| Feb-25  | 4.9%   |
+| Mar-25  | 5.5%   |
+| Apr-25  | 6.8%   |
+| May-25  | 7.2%   |
+| Jun-25  | 6.1%   |
+| Jul-25  | 8.3%   |
+| Aug-25  | 8.9%   |
+| Sep-25  | 8.9%   |
+| Oct-25  | 10.1%  |
+| Nov-25  | 10.4%  |
+| Dec-25  | 14.5%  |
+| Jan-26  | 10.1%  |
+| Feb-26  | 11.3%  |
+| Mar-26  | 11.7%  |
+| Apr-26  | 12.8%  |
+</details>
+
+Source : Marklines
+
+Figure 35: Netherlands market wide volume trend  
+![](images/5ddc71931df30ea740daf28064bf48fb6540856e42761fca5d88961492cdeffa.jpg)
+
+<details>
+<summary>bar-line hybrid chart</summary>
+
+| Month | Netherlands total sales (000 Unit) | YoY (%) |
+|---|---|---|
+| Jan-25 | 32.5 | -4.5 |
+| Feb-25 | 27.8 | -8.1 |
+| Mar-25 | 31.5 | -14.2 |
+| Apr-25 | 27.0 | -6.9 |
+| May-25 | 34.0 | 10.3 |
+| Jun-25 | 34.8 | -11.4 |
+| Jul-25 | 29.0 | 11.8 |
+| Aug-25 | 26.5 | -3.1 |
+| Sep-25 | 31.8 | 6.4 |
+| Oct-25 | 34.5 | 8.7 |
+| Nov-25 | 35.5 | 4.6 |
+| Dec-25 | 49.0 | 33.0 |
+| Jan-26 | 28.5 | -13.6 |
+| Feb-26 | 22.0 | -18.9 |
+| Mar-26 | 31.2 | -4.1 |
+| Apr-26 | 25.8 | -10.7 |
+</details>
+
+Source : Marklines
+
+Figure 36: Netherlands market wide volume breakdown by automaker  
+![](images/f0197112c3404b7d7dc527744faa9500ceaf6ccec3feab6f7af2971985937390.jpg)
+
+<details>
+<summary>pie chart</summary>
+
+| Category | Percentage (%) |
+| :--- | :--- |
+| Non-Chinese OEMs | 93.5 |
+| Other CN OEMs | 2.0 |
+| BYD | 1.8 |
+| Chery | 1.4 |
+| Geely | 1.2 |
+</details>
+
+Source : Marklines
+
+Figure 37: Chinese OEMs' aggregate volume trend in the Netherlands  
+![](images/3e4d345a91c91de6b0e44e0be11d903667e7b071ffc0f68f986632e5f5b843f7.jpg)
+
+<details>
+<summary>bar-line hybrid chart</summary>
+
+| Month   | CN OEMs Sales in Netherlands | YoY   |
+|---------|------------------------------|-------|
+| Jan-25  | 0.9                          | 30%   |
+| Feb-25  | 0.7                          | -10%  |
+| Mar-25  | 0.8                          | 10%   |
+| Apr-25  | 1.1                          | 30%   |
+| May-25  | 1.4                          | 100%  |
+| Jun-25  | 1.6                          | 110%  |
+| Jul-25  | 1.2                          | 30%   |
+| Aug-25  | 1.1                          | 40%   |
+| Sep-25  | 1.3                          | 70%   |
+| Oct-25  | 1.5                          | 110%  |
+| Nov-25  | 1.7                          | 80%   |
+| Dec-25  | 2.4                          | 100%  |
+| Jan-26  | 1.6                          | 70%   |
+| Feb-26  | 1.6                          | 110%  |
+| Mar-26  | 2.4                          | 170%  |
+| Apr-26  | 1.7                          | 60%   |
+</details>
+
+Source : Marklines
+
+Figure 38: Aggregate market share of Chinese OEMs in the Netherlands  
+![](images/5b990cb5e41bc2cfb7d2e94462bfed816286af1915e11daf5033180a383521a9.jpg)
+
+<details>
+<summary>line chart</summary>
+
+| Month   | Value |
+| ------- | ----- |
+| Jan-25  | 2.5%  |
+| Feb-25  | 2.3%  |
+| Mar-25  | 2.3%  |
+| Apr-25  | 3.5%  |
+| May-25  | 4.5%  |
+| Jun-25  | 4.0%  |
+| Jul-25  | 3.5%  |
+| Aug-25  | 3.7%  |
+| Sep-25  | 3.3%  |
+| Oct-25  | 4.0%  |
+| Nov-25  | 4.5%  |
+| Dec-25  | 4.7%  |
+| Jan-26  | 5.5%  |
+| Feb-26  | 7.0%  |
+| Mar-26  | 6.5%  |
+| Apr-26  | 6.0%  |
+</details>
+
+Source : Marklines
+
+Figure 39: Sweden market wide volume trend  
+![](images/19bf8c910d827c77304529b44a439cb25f9d201ba90e9e286c515654f2db5abf.jpg)
+
+<details>
+<summary>bar-line hybrid chart</summary>
+
+| Month | Sweden total sales (000 Unit) | YoY (%) |
+| :--- | :--- | :--- |
+| Jan-25 | 19.7 | 16.4 |
+| Feb-25 | 19.6 | 8.3 |
+| Mar-25 | 24.3 | 3.1 |
+| Apr-25 | 24.3 | 11.4 |
+| May-25 | 25.6 | 6.7 |
+| Jun-25 | 27.6 | 9.8 |
+| Jul-25 | 17.8 | 9.8 |
+| Aug-25 | 20.3 | 7.4 |
+| Sep-25 | 25.3 | -3.1 |
+| Oct-25 | 24.1 | -4.6 |
+| Nov-25 | 21.1 | -16.4 |
+| Dec-25 | 24.0 | -8.7 |
+| Jan-26 | 16.1 | -18.8 |
+| Feb-26 | 19.5 | -4.0 |
+| Mar-26 | 26.5 | 11.4 |
+| Apr-26 | 24.3 | -3.1 |
+</details>
+
+Source : Marklines
+
+Figure 40: Sweden market wide volume breakdown by automaker  
+![](images/a9e656a8829ebd4bb9195e44e4b2fe96a1f3fa855494964e3a32bc5a9f5af297.jpg)
+
+<details>
+<summary>pie chart</summary>
+
+| Category | Percentage (%) |
+| :--- | :--- |
+| Non-Chinese OEMs | 97.1 |
+| Geely | 1.4 |
+| BYD | 0.7 |
+| SAIC | 0.4 |
+| Other CN OEMs | 0.4 |
+</details>
+
+Source : Marklines
+
+Figure 41: Chinese OEMs' aggregate volume trend in Sweden  
+![](images/53eb162c3c4b89566b0ab93e2c7fb0be8cf1157446ce6b399c04da49a2d12f74.jpg)
+
+<details>
+<summary>bar-line hybrid chart</summary>
+
+| Month   | CN OEMs Sales in Sweden | YoY     |
+|---------|--------------------------|---------|
+| Jan-25  | 0.3                      | -       |
+| Feb-25  | 0.3                      | -       |
+| Mar-25  | 0.5                      | 40%     |
+| Apr-25  | 0.45                     | -30%    |
+| May-25  | 0.8                      | 40%     |
+| Jun-25  | 1.1                      | 70%     |
+| Jul-25  | 0.5                      | -30%    |
+| Aug-25  | 0.4                      | -50%    |
+| Sep-25  | 0.45                     | -20%    |
+| Oct-25  | 0.5                      | -10%    |
+| Nov-25  | 0.45                     | 10%     |
+| Dec-25  | 0.6                      | -10%    |
+| Jan-26  | 0.25                     | -30%    |
+| Feb-26  | 0.45                     | 50%     |
+| Mar-26  | 0.7                      | 40%     |
+| Apr-26  | 1.1                      | 150%    |
+</details>
+
+Source : Marklines
+
+Figure 42: Aggregate market share of Chinese OEMs in Sweden  
+![](images/fc566acd1bf6f8bab6a679b376de9639ca79eceaad20326dfa84f72d3fabacaa.jpg)
+
+<details>
+<summary>line chart</summary>
+
+| Month   | Value |
+| ------- | ----- |
+| Jan-25  | 1.6%  |
+| Feb-25  | 1.5%  |
+| Mar-25  | 2.0%  |
+| Apr-25  | 1.8%  |
+| May-25  | 3.2%  |
+| Jun-25  | 4.0%  |
+| Jul-25  | 3.0%  |
+| Aug-25  | 1.9%  |
+| Sep-25  | 1.8%  |
+| Oct-25  | 2.2%  |
+| Nov-25  | 2.3%  |
+| Dec-25  | 2.5%  |
+| Jan-26  | 1.6%  |
+| Feb-26  | 2.3%  |
+| Mar-26  | 2.6%  |
+| Apr-26  | 4.6%  |
+</details>
+
+Source : Marklines
+
+Figure 43: Norway market wide volume trend  
+![](images/ac1d2dc884c836a9cf6e16488ea8d43e9288251d772ca578fd7dc67ed3c6b8cc.jpg)
+
+<details>
+<summary>bar-line hybrid chart</summary>
+
+000 Unit
+| Month | Norway total sales (000 Unit) | YoY (%) |
+|---|---|---|
+| Jan-25 | 9.5 | 80 |
+| Feb-25 | 9.0 | 15 |
+| Mar-25 | 13.5 | 25 |
+| Apr-25 | 11.5 | 10 |
+| May-25 | 14.5 | 30 |
+| Jun-25 | 18.5 | 15 |
+| Jul-25 | 9.5 | 20 |
+| Aug-25 | 14.0 | 10 |
+| Sep-25 | 13.5 | 5 |
+| Oct-25 | 11.0 | -5 |
+| Nov-25 | 20.0 | 70 |
+| Dec-25 | 35.0 | 160 |
+| Jan-26 | 2.0 | -80 |
+| Feb-26 | 7.0 | -20 |
+| Mar-26 | 17.5 | 30 |
+| Apr-26 | 11.0 | -5 |
+</details>
+
+Source : Marklines
+
+Figure 44: Norway market wide volume breakdown by automaker  
+![](images/a6a9d73e530f44ce2c0145f9c065888c686b3dc9c0afd77bc037d3159bef4a19.jpg)
+
+<details>
+<summary>pie chart</summary>
+
+| Category | Percentage (%) |
+| :--- | :--- |
+| Non-Chinese OEMs | 86.7 |
+| BYD | 3.8 |
+| XPeng | 3.5 |
+| SAIC | 2.1 |
+| Other CN OEMs | 3.8 |
+</details>
+
+Source : Marklines
+
+Figure 45: Chinese OEMs' aggregate volume trend in Norway  
+![](images/eb0191045674febab0c24617ea481c3a291f3477f2db0104451087e53c59b937.jpg)
+
+<details>
+<summary>bar-line hybrid chart</summary>
+
+| Month | CN OEMs Sales in Norway (000 Unit) | YoY (%) |
+| :--- | :--- | :--- |
+| Jan-25 | 0.6 | 80 |
+| Feb-25 | 0.9 | 100 |
+| Mar-25 | 1.3 | 140 |
+| Apr-25 | 1.2 | 70 |
+| May-25 | 1.7 | 130 |
+| Jun-25 | 1.9 | 50 |
+| Jul-25 | 1.6 | 270 |
+| Aug-25 | 1.4 | 250 |
+| Sep-25 | 1.4 | 160 |
+| Oct-25 | 1.4 | 130 |
+| Nov-25 | 1.6 | 140 |
+| Dec-25 | 5.2 | 500 |
+| Jan-26 | 0.4 | -30 |
+| Feb-26 | 1.1 | 60 |
+| Mar-26 | 2.1 | 110 |
+| Apr-26 | 1.6 | 80 |
+</details>
+
+Source : Marklines
+
+Figure 46: Aggregate market share of Chinese OEMs in Norway  
+![](images/eba3603ca83b95487108c6beb783aa512c24c74635d4e029622cd27e491ece97.jpg)
+
+<details>
+<summary>line chart</summary>
+
+| Month | Value (%) |
+|---|---|
+| Jan-25 | 6.3 |
+| Feb-25 | 9.6 |
+| Mar-25 | 10.1 |
+| Apr-25 | 11.0 |
+| May-25 | 12.0 |
+| Jun-25 | 10.1 |
+| Jul-25 | 16.7 |
+| Aug-25 | 10.1 |
+| Sep-25 | 9.8 |
+| Oct-25 | 14.7 |
+| Nov-25 | 8.1 |
+| Dec-25 | 14.9 |
+| Jan-26 | 16.5 |
+| Feb-26 | 15.2 |
+| Mar-26 | 11.7 |
+| Apr-26 | 14.4 |
+</details>
+
+Source : Marklines
+
+## By Automaker
+
+Figure 47: SAIC European market volume by country
+
+<table><tr><td colspan="6">SAIC European market volume by country</td></tr><tr><td>(unit)</td><td>Apr-26</td><td>YoY</td><td>MoM</td><td>4M 2026</td><td>YoY</td></tr><tr><td>SAIC European sales</td><td>29,839</td><td>35.7%</td><td>-25.1%</td><td>110,875</td><td>9.8%</td></tr><tr><td>UK</td><td>7,005</td><td>84.8%</td><td>-55.4%</td><td>30,883</td><td>8.5%</td></tr><tr><td>Italy</td><td>5,853</td><td>6.6%</td><td>-0.9%</td><td>21,500</td><td>3.1%</td></tr><tr><td>Spain</td><td>4,424</td><td>21.9%</td><td>-12.0%</td><td>15,481</td><td>-6.5%</td></tr><tr><td>France</td><td>2,918</td><td>59.5%</td><td>1.9%</td><td>9,047</td><td>11.1%</td></tr><tr><td>Germany</td><td>2,828</td><td>60.3%</td><td>10.5%</td><td>9,000</td><td>23.9%</td></tr><tr><td>Poland</td><td>1,308</td><td>11.2%</td><td>-29.0%</td><td>5,445</td><td>28.9%</td></tr><tr><td>Belgium</td><td>857</td><td>144.2%</td><td>-0.8%</td><td>2,620</td><td>71.4%</td></tr><tr><td>Austria</td><td>614</td><td>64.6%</td><td>-25.9%</td><td>1,906</td><td>35.8%</td></tr><tr><td>Portugal</td><td>464</td><td>66.9%</td><td>-52.1%</td><td>2,971</td><td>154.6%</td></tr><tr><td>Czech Republic</td><td>433</td><td>-11.1%</td><td>22.7%</td><td>1,175</td><td>-34.9%</td></tr><tr><td>Denmark</td><td>405</td><td>52.3%</td><td>30.6%</td><td>1,287</td><td>68.5%</td></tr><tr><td>Switzerland</td><td>331</td><td>37.9%</td><td>-37.7%</td><td>1,414</td><td>73.7%</td></tr><tr><td>Greece</td><td>323</td><td>-39.2%</td><td>-22.4%</td><td>1,434</td><td>-14.3%</td></tr><tr><td>Romania</td><td>322</td><td>54.8%</td><td>24.8%</td><td>821</td><td>-3.2%</td></tr><tr><td>Netherlands</td><td>312</td><td>46.5%</td><td>95.0%</td><td>932</td><td>47.2%</td></tr></table>
+
+Source : Marklines
+
+Figure 48: SAIC European market volume breakdown by country  
+![](images/b5fece1d67c035f8551d6dc8aeffd80ca948fe318cb5b35b5c2345aa59da5c23.jpg)
+
+<details>
+<summary>pie chart</summary>
+
+| Country/Region | Percentage (%) |
+| :--- | :--- |
+| UK | 27.9 |
+| Italy | 19.4 |
+| Spain | 14.0 |
+| France | 8.2 |
+| Germany | 8.1 |
+| Poland | 4.9 |
+| Portugal | 2.7 |
+| Belgium | 2.4 |
+| Austria | 1.7 |
+| Greece | 1.3 |
+| Other markets | 9.5 |
+</details>
+
+Source : Marklines
+
+Figure 49: SAIC European market volume trend  
+![](images/70bddbd65df310c328d1ea939362878da228eff0008866e0c179a26fd7bee2af.jpg)
+
+<details>
+<summary>bar-line hybrid chart</summary>
+
+| Month   | SAIC European sales | YoY    |
+|---------|---------------------|--------|
+| Jan-25  | 20                  | 15%    |
+| Feb-25  | 20                  | 18%    |
+| Mar-25  | 39                  | 30%    |
+| Apr-25  | 22                  | 25%    |
+| May-25  | 27                  | 20%    |
+| Jun-25  | 26                  | -20%   |
+| Jul-25  | 23                  | 10%    |
+| Aug-25  | 16                  | 30%    |
+| Sep-25  | 34                  | 70%    |
+| Oct-25  | 24                  | 30%    |
+| Nov-25  | 24                  | 20%    |
+| Dec-25  | 35                  | 30%    |
+| Jan-26  | 19                  | -10%   |
+| Feb-26  | 22                  | 10%    |
+| Mar-26  | 40                  | 15%    |
+| Apr-26  | 30                  | 40%    |
+</details>
+
+Source : Marklines
+
+Figure 50: SAIC European market share trend  
+![](images/46e0844fc64845adb1a292babd8c8f7ade2b22684c830de10f3cc7ae689fef07.jpg)
+
+<details>
+<summary>line chart</summary>
+
+| Month   | Value  |
+| ------- | ------ |
+| Jan-25  | 1.7%   |
+| Feb-25  | 1.8%   |
+| Mar-25  | 2.4%   |
+| Apr-25  | 1.7%   |
+| May-25  | 2.1%   |
+| Jun-25  | 1.8%   |
+| Jul-25  | 1.8%   |
+| Aug-25  | 1.6%   |
+| Sep-25  | 2.3%   |
+| Oct-25  | 1.8%   |
+| Nov-25  | 1.8%   |
+| Dec-25  | 2.4%   |
+| Jan-26  | 1.7%   |
+| Feb-26  | 1.9%   |
+| Mar-26  | 2.3%   |
+| Apr-26  | 2.2%   |
+</details>
+
+Source : Marklines
+
+Figure 51: Chery European market volume by country
+
+<table><tr><td colspan="6">Chery European market volume by country</td></tr><tr><td>(unit)</td><td>Apr-26</td><td>YoY</td><td>MoM</td><td>4M 2026</td><td>YoY</td></tr><tr><td>Chery European sales</td><td>40,841</td><td>29.0%</td><td>-18.7%</td><td>146,687</td><td>40.6%</td></tr><tr><td>Russia</td><td>10,365</td><td>-51.8%</td><td>18.6%</td><td>32,816</td><td>-52.7%</td></tr><tr><td>UK</td><td>10,039</td><td>411.4%</td><td>-55.4%</td><td>46,077</td><td>449.1%</td></tr><tr><td>Spain</td><td>5,432</td><td>125.9%</td><td>-7.4%</td><td>20,217</td><td>151.4%</td></tr><tr><td>Italy</td><td>3,854</td><td>310.9%</td><td>9.1%</td><td>12,843</td><td>329.0%</td></tr><tr><td>Turkiye</td><td>3,571</td><td>-2.5%</td><td>15.2%</td><td>12,025</td><td>1.0%</td></tr><tr><td>Poland</td><td>3,260</td><td>217.7%</td><td>2.5%</td><td>10,708</td><td>213.0%</td></tr><tr><td>France</td><td>1,005</td><td></td><td>6181.3%</td><td>1,066</td><td></td></tr><tr><td>Czech Republic</td><td>569</td><td>898.2%</td><td>3.3%</td><td>1,867</td><td>2457.5%</td></tr><tr><td>Greece</td><td>522</td><td>1350.0%</td><td>-0.8%</td><td>1,574</td><td>3647.6%</td></tr><tr><td>Romania</td><td>484</td><td></td><td>28.4%</td><td>1,445</td><td></td></tr><tr><td>Belgium</td><td>317</td><td>306.4%</td><td>-14.6%</td><td>1,185</td><td>695.3%</td></tr></table>
+
+Source : Marklines
+
+Figure 52: Chery European market volume breakdown  
+![](images/3dbd8ee6ad4a73ea33fe3aae647eb73b4c35ee25a5a29ba75e189d9a185afbad.jpg)
+
+<details>
+<summary>pie chart</summary>
+
+| Category | Percentage (%) |
+| :--- | :--- |
+| UK | 31.4 |
+| Russia | 22.4 |
+| Spain | 13.8 |
+| Italy | 8.8 |
+| Türkiye | 8.2 |
+| Other markets | 15.5 |
+</details>
+
+Source : Marklines
+
+Figure 53: Chery European market volume trend  
+![](images/4414dcb0e6ef4e64595cb71029729e76176528a978f1272d1e4601251c010c8c.jpg)
+
+<details>
+<summary>bar-line hybrid chart</summary>
+
+| Month   | Chery European sales (000 Unit) | YoY (%) |
+|---------|----------------------------------|---------|
+| Jan-25  | 22                               | 20      |
+| Feb-25  | 23                               | 10      |
+| Mar-25  | 27                               | -15     |
+| Apr-25  | 31                               | 15      |
+| May-25  | 30                               | 5       |
+| Jun-25  | 29                               | -10     |
+| Jul-25  | 37                               | 15      |
+| Aug-25  | 32                               | -5      |
+| Sep-25  | 40                               | 10      |
+| Oct-25  | 36                               | -5      |
+| Nov-25  | 29                               | 5       |
+| Dec-25  | 34                               | 10      |
+| Jan-26  | 27                               | 30      |
+| Feb-26  | 26                               | -10     |
+| Mar-26  | 51                               | 80      |
+| Apr-26  | 41                               | 30      |
+</details>
+
+Source : Marklines
+
+Figure 54: Chery European market share trend  
+![](images/f93e106fd0a4c84d70c5bd8dbb0e0f2e9b4c2bed62b30dbd4f51d4483c5a95d7.jpg)
+
+<details>
+<summary>line chart</summary>
+
+| Month   | Value |
+| ------- | ----- |
+| Jan-25  | 1.9%  |
+| Feb-25  | 2.0%  |
+| Mar-25  | 1.7%  |
+| Apr-25  | 2.5%  |
+| May-25  | 2.4%  |
+| Jun-25  | 2.0%  |
+| Jul-25  | 2.9%  |
+| Aug-25  | 3.3%  |
+| Sep-25  | 2.7%  |
+| Oct-25  | 2.6%  |
+| Nov-25  | 2.2%  |
+| Dec-25  | 2.3%  |
+| Jan-26  | 2.6%  |
+| Feb-26  | 2.4%  |
+| Mar-26  | 2.8%  |
+| Apr-26  | 3.0%  |
+</details>
+
+Source : Marklines
+
+Figure 55: BYD European market volume by country
+
+<table><tr><td colspan="6">BYD European market volume by country</td></tr><tr><td>(unit)</td><td>Apr-26</td><td>YoY</td><td>MoM</td><td>4M 2026</td><td>YoY</td></tr><tr><td>BYD European sales</td><td>28,358</td><td>57.0%</td><td>-26.1%</td><td>107,637</td><td>94.3%</td></tr><tr><td>UK</td><td>5,059</td><td>101.5%</td><td>-66.6%</td><td>26,396</td><td>124.0%</td></tr><tr><td>Germany</td><td>4,705</td><td>200.4%</td><td>36.9%</td><td>13,824</td><td>397.1%</td></tr><tr><td>Italy</td><td>4,570</td><td>171.7%</td><td>-12.0%</td><td>17,422</td><td>208.2%</td></tr><tr><td>Spain</td><td>4,039</td><td>161.4%</td><td>-9.5%</td><td>13,467</td><td>151.5%</td></tr><tr><td>France</td><td>2,533</td><td>22.7%</td><td>65.6%</td><td>5,921</td><td>60.4%</td></tr><tr><td>Austria</td><td>1,243</td><td>116.2%</td><td>11.8%</td><td>3,727</td><td>69.0%</td></tr><tr><td>Poland</td><td>883</td><td>172.5%</td><td>-9.2%</td><td>2,924</td><td>242.0%</td></tr><tr><td>Portugal</td><td>603</td><td>41.9%</td><td>-19.1%</td><td>2,298</td><td>36.4%</td></tr><tr><td>Belgium</td><td>576</td><td>95.3%</td><td>-8.6%</td><td>2,171</td><td>96.5%</td></tr><tr><td>Switzerland</td><td>555</td><td>3864.3%</td><td>22.8%</td><td>1,349</td><td>1450.6%</td></tr><tr><td>Netherlands</td><td>517</td><td>92.9%</td><td>-33.5%</td><td>1,981</td><td>92.7%</td></tr><tr><td>Norway</td><td>507</td><td>27.1%</td><td>-35.2%</td><td>1,465</td><td>28.5%</td></tr><tr><td>Turkiye</td><td>447</td><td>-91.7%</td><td>-46.3%</td><td>6,574</td><td>-51.7%</td></tr><tr><td>Ireland</td><td>368</td><td>83.1%</td><td>-38.3%</td><td>2,399</td><td>94.4%</td></tr><tr><td>Romania</td><td>344</td><td></td><td>23.3%</td><td>1,187</td><td>39466.7%</td></tr></table>
+
+Source : Marklines
+
+Figure 56: BYD European market volume breakdown  
+![](images/b65ce9af0f484fb81effca1e6648f5a8c43cb19ac2c957bbcf56aeccaa2d1807.jpg)
+
+<details>
+<summary>pie chart</summary>
+
+| Country/Region | Percentage (%) |
+| :--- | :--- |
+| UK | 24.5 |
+| Italy | 16.2 |
+| Germany | 12.8 |
+| Spain | 12.5 |
+| Türkiye | 6.1 |
+| France | 5.5 |
+| Austria | 3.5 |
+| Poland | 2.7 |
+| Ireland | 2.2 |
+| Portugal | 2.1 |
+| Other markets | 11.8 |
+</details>
+
+Source : Marklines
+
+Figure 57: BYD European market volume trend  
+![](images/ade286a225696a08b44ce2ba950f0129c26c3fbc320abb062d99ca5fbcda2486.jpg)
+
+<details>
+<summary>bar-line hybrid chart</summary>
+
+| Month   | BYD European sales | YoY     |
+|---------|--------------------|---------|
+| Jan-25  | 10                 | 200%    |
+| Feb-25  | 9                  | 210%    |
+| Mar-25  | 18                 | 350%    |
+| Apr-25  | 18                 | 400%    |
+| May-25  | 19                 | 500%    |
+| Jun-25  | 23                 | 400%    |
+| Jul-25  | 17                 | 300%    |
+| Aug-25  | 14                 | 250%    |
+| Sep-25  | 27                 | 450%    |
+| Oct-25  | 17                 | 300%    |
+| Nov-25  | 27                 | 350%    |
+| Dec-25  | 34                 | 150%    |
+| Jan-26  | 22                 | 120%    |
+| Feb-26  | 19                 | 100%    |
+| Mar-26  | 38                 | 110%    |
+| Apr-26  | 28                 | 50%     |
+</details>
+
+Source : Marklines
+
+Figure 58: BYD European market share trend  
+![](images/346e015f6f62ee9393c08f341bc34da024815cf49d79f8fdf2515f9474124f5f.jpg)
+
+<details>
+<summary>line chart</summary>
+
+| Month   | Value  |
+| ------- | ------ |
+| Jan-25  | 0.8%   |
+| Feb-25  | 0.8%   |
+| Mar-25  | 1.4%   |
+| Apr-25  | 1.4%   |
+| May-25  | 1.5%   |
+| Jun-25  | 1.6%   |
+| Jul-25  | 1.3%   |
+| Aug-25  | 1.4%   |
+| Sep-25  | 1.9%   |
+| Oct-25  | 1.4%   |
+| Nov-25  | 2.0%   |
+| Dec-25  | 2.3%   |
+| Jan-26  | 2.0%   |
+| Feb-26  | 1.7%   |
+| Mar-26  | 2.2%   |
+| Apr-26  | 2.1%   |
+</details>
+
+Source : Marklines
+
+Figure 59: Leapmotor European market volume by country
+
+<table><tr><td colspan="6">Leapmotor European market volume by country</td></tr><tr><td>(unit)</td><td>Apr-26</td><td>YoY</td><td>MoM</td><td>4M 2026</td><td>YoY</td></tr><tr><td>Leapmotor European sales</td><td>8,758</td><td>415.8%</td><td>-22.0%</td><td>32,747</td><td>590.0%</td></tr><tr><td>Italy</td><td>4,497</td><td>1300.9%</td><td>-18.4%</td><td>16,134</td><td>1702.7%</td></tr><tr><td>Germany</td><td>1,355</td><td>331.5%</td><td>-2.4%</td><td>4,523</td><td>358.3%</td></tr><tr><td>UK</td><td>580</td><td>437.0%</td><td>-69.3%</td><td>3,676</td><td>1121.3%</td></tr><tr><td>France</td><td>527</td><td>83.6%</td><td>-11.1%</td><td>1,820</td><td>87.1%</td></tr><tr><td>Spain</td><td>462</td><td>176.6%</td><td>19.1%</td><td>1,355</td><td>228.1%</td></tr><tr><td>Netherlands</td><td>195</td><td>99.0%</td><td>-17.4%</td><td>852</td><td>317.6%</td></tr><tr><td>Austria</td><td>166</td><td>163.5%</td><td>-7.8%</td><td>565</td><td>433.0%</td></tr><tr><td>Belgium</td><td>159</td><td>93.9%</td><td>-36.7%</td><td>737</td><td>235.0%</td></tr><tr><td>Switzerland</td><td>142</td><td>178.4%</td><td>15.4%</td><td>509</td><td>197.7%</td></tr><tr><td>Poland</td><td>140</td><td>-16.2%</td><td>-23.1%</td><td>708</td><td>217.5%</td></tr><tr><td>Portugal</td><td>100</td><td>1150.0%</td><td>1.0%</td><td>339</td><td>3290.0%</td></tr><tr><td>Slovenia</td><td>88</td><td></td><td>3.5%</td><td>341</td><td></td></tr><tr><td>Denmark</td><td>80</td><td></td><td>-18.4%</td><td>390</td><td></td></tr></table>
+
+Source : Marklines
+
+Figure 60: Leapmotor European market volume breakdown  
+![](images/9b295135256b27ac6275d1fa7257f9288ed3c409d574e0faec7a95093881f9de.jpg)
+
+<details>
+<summary>pie chart</summary>
+
+| Country/Market | Percentage (%) |
+| :--- | :--- |
+| Italy | 49.3 |
+| Germany | 13.8 |
+| UK | 11.2 |
+| France | 5.6 |
+| Spain | 4.1 |
+| Netherlands | 2.6 |
+| Belgium | 2.3 |
+| Poland | 2.2 |
+| Austria | 1.7 |
+| Switzerland | 1.6 |
+| Other markets | 5.7 |
+</details>
+
+Source : Marklines
+
+Figure 61: Leapmotor European market volume trend  
+![](images/60976566006596363bc614f4fc6643c530381e482cfb09876cf3c8742a34cd7c.jpg)
+
+<details>
+<summary>bar-line hybrid chart</summary>
+
+| Month | Leapmotor European sales (in 1000 Units) | YoY (%) |
+|---|---|---|
+| Jan-25 | 0.8 | 2.4 |
+| Feb-25 | 0.9 | 6.7 |
+| Mar-25 | 1.3 | 4.8 |
+| Apr-25 | 1.7 | 12.0 |
+| May-25 | 1.7 | 1.6 |
+| Jun-25 | 1.9 | 1.6 |
+| Jul-25 | 2.4 | 1.6 |
+| Aug-25 | 2.2 | 1.6 |
+| Sep-25 | 3.5 | 1.6 |
+| Oct-25 | 4.0 | 1.6 |
+| Nov-25 | 6.0 | 1.6 |
+| Dec-25 | 7.2 | 1.6 |
+| Jan-26 | 4.2 | 1.6 |
+| Feb-26 | 8.5 | 3.0 |
+| Mar-26 | 11.3 | 2.8 |
+| Apr-26 | 8.8 | 2.0 |
+</details>
+
+Source : Marklines
+
+Figure 62: Leapmotor European market share trend  
+![](images/5944b6e8c478f09e370116d9c63f296812580cba9c0b65b55d9471e6ed636402.jpg)
+
+<details>
+<summary>line chart</summary>
+
+| Month   | Value  |
+| ------- | ------ |
+| Jan-25  | 0.07%  |
+| Feb-25  | 0.08%  |
+| Mar-25  | 0.08%  |
+| Apr-25  | 0.14%  |
+| May-25  | 0.14%  |
+| Jun-25  | 0.14%  |
+| Jul-25  | 0.20%  |
+| Aug-25  | 0.23%  |
+| Sep-25  | 0.24%  |
+| Oct-25  | 0.30%  |
+| Nov-25  | 0.46%  |
+| Dec-25  | 0.49%  |
+| Jan-26  | 0.38%  |
+| Feb-26  | 0.75%  |
+| Mar-26  | 0.64%  |
+| Apr-26  | 0.65%  |
+</details>
+
+Source : Marklines
+
+Figure 63: XPeng European market volume by country
+
+<table><tr><td colspan="6">Xpeng European market volume by country</td></tr><tr><td>(unit)</td><td>Apr-26</td><td>YoY</td><td>MoM</td><td>4M 2026</td><td>YoY</td></tr><tr><td>Xpeng European sales</td><td>3,344</td><td>102.7%</td><td>8.1%</td><td>10,433</td><td>107.3%</td></tr><tr><td>France</td><td>642</td><td>115.4%</td><td>60.5%</td><td>1,792</td><td>122.9%</td></tr><tr><td>Germany</td><td>595</td><td>187.4%</td><td>8.4%</td><td>1,802</td><td>182.0%</td></tr><tr><td>Denmark</td><td>474</td><td>37.4%</td><td>41.1%</td><td>1,406</td><td>47.1%</td></tr><tr><td>Norway</td><td>469</td><td>40.8%</td><td>2.0%</td><td>1,357</td><td>35.0%</td></tr><tr><td>Belgium</td><td>230</td><td>75.6%</td><td>2.7%</td><td>752</td><td>86.1%</td></tr><tr><td>Spain</td><td>185</td><td>460.6%</td><td>26.7%</td><td>557</td><td>295.0%</td></tr><tr><td>Portugal</td><td>179</td><td>265.3%</td><td>16.2%</td><td>552</td><td>146.4%</td></tr><tr><td>Sweden</td><td>109</td><td>11.2%</td><td>23.9%</td><td>296</td><td>-1.7%</td></tr><tr><td>UK</td><td>88</td><td>877.8%</td><td>-73.4%</td><td>441</td><td>880.0%</td></tr><tr><td>Netherlands</td><td>81</td><td>-22.9%</td><td>-21.4%</td><td>311</td><td>-11.4%</td></tr><tr><td>Austria</td><td>64</td><td></td><td>52.4%</td><td>181</td><td></td></tr><tr><td>Italy</td><td>49</td><td></td><td>32.4%</td><td>153</td><td></td></tr></table>
+
+Source : Marklines
+
+Figure 64: XPeng European market volume breakdown  
+![](images/bcd92b5c3e0d8378c6283984052108005bcaa767073dc37c1503681129211056.jpg)
+
+<details>
+<summary>pie chart</summary>
+
+| Category | Percentage (%) |
+| :--- | :--- |
+| Germany | 17.3 |
+| France | 17.2 |
+| Denmark | 13.5 |
+| Norway | 13.0 |
+| Spain – Belgium | 7.2 |
+| Portugal | 5.3 |
+| UK | 4.2 |
+| Netherlands | 3.0 |
+| Ireland | 2.9 |
+| Other markets | 11.1 |
+</details>
+
+Source : Marklines
+
+Figure 65: XPeng European market volume trend  
+![](images/51cdabd8d63831f1a640d1c914a5ced9be1213e6d7d144bca9094a9103d3461e.jpg)
+
+<details>
+<summary>bar-line hybrid chart</summary>
+
+| Month | Xpeng European sales (in 1000 Units) | YoY (%) |
+|---|---|---|
+| Jan-25 | 0.9 | 240 |
+| Feb-25 | 1.0 | 280 |
+| Mar-25 | 1.4 | 230 |
+| Apr-25 | 1.6 | 290 |
+| May-25 | 1.55 | 370 |
+| Jun-25 | 1.7 | 340 |
+| Jul-25 | 1.45 | 180 |
+| Aug-25 | 1.05 | 60 |
+| Sep-25 | 1.6 | 70 |
+| Oct-25 | 2.15 | 90 |
+| Nov-25 | 2.05 | 95 |
+| Dec-25 | 3.9 | 160 |
+| Jan-26 | 1.75 | 90 |
+| Feb-26 | 2.2 | 115 |
+| Mar-26 | 3.05 | 120 |
+| Apr-26 | 3.35 | 110 |
+</details>
+
+Source : Marklines
+
+Figure 66: XPeng European market share trend  
+![](images/5d345e29724863fdb7eaeccdee9c69c25403ecf711c19684dee8047850355cf3.jpg)
+
+<details>
+<summary>line chart</summary>
+
+| Month   | Value  |
+| ------- | ------ |
+| Jan-25  | 0.08%  |
+| Feb-25  | 0.09%  |
+| Mar-25  | 0.09%  |
+| Apr-25  | 0.13%  |
+| May-25  | 0.12%  |
+| Jun-25  | 0.12%  |
+| Jul-25  | 0.11%  |
+| Aug-25  | 0.11%  |
+| Sep-25  | 0.11%  |
+| Oct-25  | 0.16%  |
+| Nov-25  | 0.16%  |
+| Dec-25  | 0.27%  |
+| Jan-26  | 0.16%  |
+| Feb-26  | 0.20%  |
+| Mar-26  | 0.18%  |
+| Apr-26  | 0.25%  |
+</details>
+
+Source : Marklines
+
+Figure 67: Geely European market volume by country
+
+<table><tr><td colspan="6">Geely European market volume by country</td></tr><tr><td>(unit)</td><td>Apr-26</td><td>YoY</td><td>MoM</td><td>4M 2026</td><td>YoY</td></tr><tr><td>Geely European sales</td><td>18,234</td><td>46.8%</td><td>5.9%</td><td>59,345</td><td>49.3%</td></tr><tr><td>Russia</td><td>13,341</td><td>16.4%</td><td>5.9%</td><td>45,587</td><td>24.6%</td></tr><tr><td>UK</td><td>1,649</td><td></td><td>26.4%</td><td>3,244</td><td></td></tr><tr><td>Italy</td><td>722</td><td>1661.0%</td><td>4.5%</td><td>2,159</td><td>1329.8%</td></tr><tr><td>Sweden</td><td>575</td><td>322.8%</td><td>82.5%</td><td>1,218</td><td>142.6%</td></tr><tr><td>Spain</td><td>349</td><td>193.3%</td><td>-27.3%</td><td>1,517</td><td>303.5%</td></tr><tr><td>Netherlands</td><td>299</td><td>-15.5%</td><td>-17.6%</td><td>1,316</td><td>45.6%</td></tr><tr><td>Germany</td><td>181</td><td>905.6%</td><td>25.7%</td><td>475</td><td>779.6%</td></tr><tr><td>Denmark</td><td>151</td><td></td><td>-40.8%</td><td>726</td><td></td></tr><tr><td>Poland</td><td>127</td><td></td><td>-3.8%</td><td>390</td><td>38900.0%</td></tr><tr><td>Romania</td><td>125</td><td>166.0%</td><td>17.9%</td><td>379</td><td>131.1%</td></tr><tr><td>Norway</td><td>121</td><td>22.2%</td><td>-60.7%</td><td>569</td><td>146.3%</td></tr><tr><td>Slovenia</td><td>116</td><td>262.5%</td><td>107.1%</td><td>257</td><td>60.6%</td></tr><tr><td>Croatia</td><td>109</td><td>2625.0%</td><td>29.8%</td><td>281</td><td>21.1%</td></tr><tr><td>Switzerland</td><td>106</td><td></td><td>29.3%</td><td>273</td><td></td></tr></table>
+
+Source : Marklines
+
+Figure 68: Geely European market volume breakdown  
+![](images/6fb2b4945848219f487f6cfdedc1fd0e9dcf231a75f9f933405073a1d2864210.jpg)
+
+<details>
+<summary>pie chart</summary>
+
+| Category | Percentage (%) |
+| :--- | :--- |
+| Russia | 76.8 |
+| UK | 5.5 |
+| Italy | 3.6 |
+| Spain | 2.6 |
+| Netherlands | 2.2 |
+| Other markets | 9.3 |
+</details>
+
+Source : Marklines
+
+Figure 69: Geely European market volume trend  
+![](images/55e5b74779da15e9db8f0c8fb444cffd6882576fb429f7d01d9aa54426943020.jpg)
+
+<details>
+<summary>bar-line hybrid chart</summary>
+
+| Month   | Geely European sales | YoY    |
+|---------|----------------------|--------|
+| Jan-25  | 10.0                 | 12.0%  |
+| Feb-25  | 8.0                  | -30.0% |
+| Mar-25  | 9.0                  | -50.0% |
+| Apr-25  | 12.0                 | -10.0% |
+| May-25  | 13.0                 | -5.0%  |
+| Jun-25  | 14.0                 | 0.0%   |
+| Jul-25  | 17.0                 | 5.0%   |
+| Aug-25  | 19.0                 | 10.0%  |
+| Sep-25  | 21.0                 | 15.0%  |
+| Oct-25  | 29.0                 | 30.0%  |
+| Nov-25  | 22.0                 | 50.0%  |
+| Dec-25  | 21.0                 | 60.0%  |
+| Jan-26  | 11.0                 | 15.0%  |
+| Feb-26  | 13.0                 | 40.0%  |
+| Mar-26  | 17.0                 | 90.0%  |
+| Apr-26  | 18.0                 | 45.0%  |
+</details>
+
+Source : Marklines
+
+Figure 70: Geely European market share trend  
+![](images/09b638b159ca42e45fbedc644da9e9a06ba6fa5498727bb161e3c0d1845100f2.jpg)
+
+<details>
+<summary>line chart</summary>
+
+| Month   | Value  |
+| ------- | ------ |
+| Jan-25  | 0.85%  |
+| Feb-25  | 0.75%  |
+| Mar-25  | 0.55%  |
+| Apr-25  | 1.00%  |
+| May-25  | 1.00%  |
+| Jun-25  | 0.95%  |
+| Jul-25  | 1.35%  |
+| Aug-25  | 1.90%  |
+| Sep-25  | 1.45%  |
+| Oct-25  | 2.15%  |
+| Nov-25  | 1.70%  |
+| Dec-25  | 1.50%  |
+| Jan-26  | 1.00%  |
+| Feb-26  | 1.10%  |
+| Mar-26  | 0.95%  |
+| Apr-26  | 1.35%  |
+</details>
+
+Source : Marklines
+
+Figure 71: Great Wall European market volume by country
+
+<table><tr><td colspan="6">Great Wall Motor European market volume by country</td></tr><tr><td>(unit)</td><td>Apr-26</td><td>YoY</td><td>MoM</td><td>4M 2026</td><td>YoY</td></tr><tr><td>GWM European sales</td><td>18,148</td><td>21.9%</td><td>10.5%</td><td>58,007</td><td>11.9%</td></tr><tr><td>Russia</td><td>18,040</td><td>22.7%</td><td>11.1%</td><td>57,569</td><td>13.2%</td></tr><tr><td>Bulgaria</td><td>72</td><td>278.9%</td><td>38.5%</td><td>205</td><td>86.4%</td></tr><tr><td>Germany</td><td>20</td><td>-85.0%</td><td>-39.4%</td><td>107</td><td>-84.9%</td></tr><tr><td>UK</td><td>16</td><td>-57.9%</td><td>-83.0%</td><td>125</td><td>0.8%</td></tr><tr><td>Austria</td><td></td><td></td><td></td><td></td><td></td></tr></table>
+
+Source : Marklines
+
+Figure 73: Great Wall European market volume trend  
+![](images/79c471ae70bc7ae8d7ec6e71f4c5bec7595836e9bbd717dff60047a5aceb5aa7.jpg)
+
+<details>
+<summary>bar-line hybrid chart</summary>
+
+| Month | Great Wall Motor European sales (in 1000 Units) | YoY (%) |
+|---|---|---|
+| Jan-25 | 14.0 | 24.5 |
+| Feb-25 | 11.5 | -18.0 |
+| Mar-25 | 11.5 | -39.0 |
+| Apr-25 | 15.0 | 12.0 |
+| May-25 | 12.5 | -10.0 |
+| Jun-25 | 11.5 | -47.0 |
+| Jul-25 | 15.0 | -8.0 |
+| Aug-25 | 17.5 | -10.0 |
+| Sep-25 | 18.5 | -10.0 |
+| Oct-25 | 28.5 | 10.0 |
+| Nov-25 | 20.0 | 18.0 |
+| Dec-25 | 22.0 | 25.0 |
+| Jan-26 | 12.0 | -13.0 |
+| Feb-26 | 11.5 | 0.0 |
+| Mar-26 | 16.5 | 44.0 |
+| Apr-26 | 18.0 | 23.0 |
+</details>
+
+Source : Marklines
+
+Figure 72: Great Wall European market volume breakdown  
+![](images/943e277093994d36a992a4fc9cfe69110ce96ab1c76972a8df799166e0bae779.jpg)
+
+<details>
+<summary>pie chart</summary>
+
+| Category | Percentage (%) |
+| :--- | :--- |
+| Russia | 99.2 |
+| Bulgaria | 0.4 |
+| Other markets | 0.4 |
+</details>
+
+Source : Marklines
+
+Figure 74: Great Wall European market share trend  
+![](images/bdb4b8d017268b4e9de31f606eed2aec3d6dd8efca7ef4601bc5b9f853794f55.jpg)
+
+<details>
+<summary>line chart</summary>
+
+| Month   | Value  |
+| ------- | ------ |
+| Jan-25  | 1.25%  |
+| Feb-25  | 1.05%  |
+| Mar-25  | 0.70%  |
+| Apr-25  | 1.15%  |
+| May-25  | 1.00%  |
+| Jun-25  | 0.80%  |
+| Jul-25  | 1.15%  |
+| Aug-25  | 1.75%  |
+| Sep-25  | 1.30%  |
+| Oct-25  | 2.15%  |
+| Nov-25  | 1.50%  |
+| Dec-25  | 1.50%  |
+| Jan-26  | 1.10%  |
+| Feb-26  | 1.00%  |
+| Mar-26  | 0.95%  |
+| Apr-26  | 1.35%  |
+</details>
+
+Source : Marklines
+
+## Appendix 1
+
+## Important Disclosures
+
+\*Other information available upon request
+
+\*Prices are current as of the end of the previous trading session unless otherwise indicated and are sourced from local exchanges via Reuters, Bloomberg and other vendors. Other information is sourced from DB, subject companies, and other sources. For disclosures pertaining to recommendations or estimates made on securities other than the primary subject of this research, please see the most recently published company report or visit our global disclosure look-up page on our website at https://research.db.com/Research/Disclosures/EquityResearchDisclosures. Aside from within this report, important risk and conflict disclosures can also be found at https://research.db.com/Research/Disclosures/Disclaimer. Investors are strongly encouraged to review this information before investing.
+
+## Analyst Certification
+
+The views expressed in this report accurately reflect the personal views of the undersigned lead analyst about the subject issuers and the securities of those issuers. In addition, the undersigned lead analyst has not and will not receive any compensation for providing a specific recommendation or view in this report. Bin Wang.
+
+Equity rating dispersion and banking relationships  
+![](images/14d97f48742a2a2713cc6f331f9c2509f3755f20c0c1ecfc2c6422f92b364c83.jpg)
+
+<details>
+<summary>bar chart</summary>
+
+| Category | companies covered (%) | Cos. w/ Banking Relationship (%) | MIFID Investment & Ancillary Services (%) |
+| :--- | :--- | :--- | :--- |
+| BUY | 81 | 30 | 67 |
+| HOLD | 15 | 16 | 56 |
+| SELL | 4 | 0 | 50 |
+Asia Universe
+</details>
+
+## Equity Rating and Dispersion Key
+
+The Equity Rating Dispersion Chart depicts the following:
+
+The proportion of recommendations that are rated "buy", "sell" and "hold" over the previous 12 months. This is shown for securities issued in the stated region e.g. "Europe Universe". See rating definitions below. This is represented by the "Companies Covered" bars in the chart. The percentage value displayed above the bar is the proportion as a percentage. E.g. 50% above the "buy" / "Companies Covered" bar means that 50% of DB's equity research covered companies over the past 12 months have a "buy" rating.
+
+Next to each of the three respective bars showing the proportion of "buy", "sell" and "hold" recommendations we provide two additional bars to show:
+
+\- The proportion of "buy", "sell" or "hold recommendations where DB and or/Affiliates provided MIFID Investment or Ancillary Services in the past 12 months. This is represented in the "MIFID Investment and Ancillary Services" bar. The percentage value displayed above the bar shows the proportion of Companies Covered with the given rating where DB has also provided MIFID Investment and Ancillary Services in the past 12 months. E.g. 50% above the "Cos. w/ MIFID Investment and Ancillary Services" bar means 50% of the Companies Covered with the rating stated have also received MIFID Investment and Ancillary Services from DB.
+
+\- The proportion of "buy" (or "sell" or "hold") recommendations where DB and or/Affiliates has provided Investment Banking services in the past 12 months for which it has received compensation. The percentage value displayed above the bar shows the proportion of Companies Covered with the stated rating where DB has also provided Investment Banking services in the past 12 months. E.g. 50% above the "Cos. w/ Investment Banking relationship" bar means 50% of the Companies Covered with the rating stated also have an Investment Banking Relationship with DB.
+
+Buy: Based on a current 12-month view of TSR, we recommend that investors buy the stock.
+
+Sell: Based on a current 12-month view of TSR, we recommend that investors sell the stock.
+
+Hold: We take a neutral view on the stock 12-months out and, based on this time horizon, do not recommend either a Buy or Sell.
+
+TSR = Total Shareholder Return. Percentage change in share price from current price to projected target price plus projected dividend yield
+
+Newly issued research recommendations and target prices supersede previously published research.
+
+## Additional Information
+
+The information and opinions in this report were prepared by DB AG or one of its affiliates (collectively 'DB'). Though the information herein is believed to be reliable and has been obtained from public sources believed to be reliable, DB makes no representation as to its accuracy or completeness. Hyperlinks to third-party websites in this report are provided for reader convenience only. DB neither endorses the content nor is responsible for the accuracy or security controls of those websites.
+
+If you use the services of DB in connection with a purchase or sale of a security that is discussed in this report, or is included or discussed in another communication (oral or written) from a DB analyst, DB may act as principal for its own account or as agent for another person.
+
+DB may consider this report in deciding to trade as principal. It may also engage in transactions, for its own account or with customers, in a manner inconsistent with the views taken in this research report. Others within DB, including strategists, sales staff and other analysts, may take views that are inconsistent with those taken in this research report. DB issues a variety of research products, including fundamental analysis, equity-linked analysis, quantitative analysis and trade ideas. Recommendations contained in one type of communication may differ from recommendations contained in others, whether as a result of differing time horizons, methodologies, perspectives or otherwise. DB and/or its affiliates may also be holding debt or equity securities of the issuers it writes on. Analysts are paid in part based on the profitability of DB AG and its affiliates, which includes investment banking, trading and principal trading revenues.
+
+Opinions, estimates and projections constitute the current judgment of the author as of the date of this report. They do not necessarily reflect the opinions of DB and are subject to change without notice. DB provides liquidity for buyers and sellers of securities issued by the companies it covers. DB analysts sometimes have shorter-term trade ideas that may be inconsistent with DB's existing longer-term ratings. Some trade ideas for equities are listed as Catalyst Calls on the Research Website (https://research.db.com/Research/) , and can be found on the general coverage list and also on the covered company's page. A Catalyst Call represents a high-conviction belief by an analyst that a stock will outperform or underperform the market and/or a specified sector over a time frame of no less than two weeks and no more than three months. In addition to Catalyst Calls, analysts may occasionally discuss with our clients, and with DB salespersons and traders, trading strategies or ideas that reference catalysts or events that may have a near-term or medium-term impact on the market price of the securities discussed in this report, which impact may be directionally counter to the analysts' current 12-month view of total return or investment return as described herein. DB has no obligation to update, modify or amend this report or to otherwise notify a recipient thereof if an opinion, forecast or estimate changes or becomes inaccurate. Coverage and the frequency of changes in market conditions and in both general and company-specific economic prospects make it difficult to update research at defined intervals. Updates are at the sole discretion of the coverage analyst or of the Research Department Management, and the majority of reports are published at irregular intervals. This report is provided for informational purposes only and does not take into account the particular investment objectives, financial situations, or needs of individual clients. It is not an offer or a solicitation of an offer to buy or sell any financial instruments or to participate in any particular trading strategy. Target prices are inherently imprecise and a product of the analyst's judgment. The financial instruments discussed in this report may not be suitable for all investors, and investors must make their own informed investment decisions. Prices and availability of financial instruments are subject to change without notice, and investment transactions can lead to losses as a result of price fluctuations and other factors. If a financial instrument is denominated in a currency other than an investor's currency, a change in exchange rates may adversely affect the investment. Past performance is not necessarily indicative of future results. Performance calculations exclude transaction costs, unless otherwise indicated. Unless otherwise indicated, prices are current as of the end of the previous trading session and are sourced from local exchanges via Reuters, Bloomberg and other vendors. Data is also sourced from DB, subject companies, and other parties. Artificial intelligence tools may be used in the preparation of this material, including but not limited to assist in fact-finding, data analysis, pattern recognition, content drafting and editorial corrections pertaining to research material.
+
+The DB Department is independent of other business divisions of the Bank. Details regarding our organizational arrangements and information barriers we have to prevent and avoid conflicts of interest with respect to our research are available on our website (https://research.db.com/Research/) under Disclaimer.
+
+Macroeconomic fluctuations often account for most of the risks associated with exposures to instruments that promise to pay fixed or variable interest rates. For an investor who is long fixed-rate instruments (thus receiving these cash flows), increases in interest rates naturally lift the discount factors applied to the expected cash flows and thus cause a loss. The longer the maturity of a certain cash flow and the higher the move in the discount factor, the higher will be the loss. Upside surprises in inflation, fiscal funding needs, and FX depreciation rates are among the most common adverse macroeconomic shocks to receivers. But counterparty exposure, issuer creditworthiness, client segmentation, regulation (including changes in assets holding limits for different types of investors), changes in tax policies, currency convertibility (which may constrain currency conversion, repatriation of profits and/or liquidation of positions), and settlement issues related to local clearing houses are also important risk factors. The sensitivity of fixed-income instruments to macroeconomic shocks may be mitigated by indexing the contracted cash flows to inflation, to FX depreciation, or to specified interest rates - these are common in emerging markets. The index fixings may - by construction - lag or mis-measure the actual move in the underlying variables they are intended to track. The choice of the proper fixing (or metric) is particularly important in swaps markets, where floating coupon rates (i.e., coupons indexed to a typically short-dated interest rate reference index) are exchanged for fixed coupons. Funding in a currency that differs from the currency in which coupons are denominated carries FX risk. Options on swaps (swaptions) the risks typical to options in addition to the risks related to rates movements.
+
+Derivative transactions involve numerous risks including market, counterparty default and illiquidity risk. The appropriateness of these products for use by investors depends on the investors' own circumstances, including their tax position, their regulatory environment and the nature of their other assets and liabilities; as such, investors should take expert legal and financial advice before entering into any transaction similar to or inspired by the contents of this publication. The risk of loss in futures trading and options, foreign or domestic, can be substantial. As a result of the high degree of leverage obtainable in futures and options trading, losses may be incurred that are greater than the amount of funds initially deposited - up to theoretically unlimited losses. Trading in options involves risk and is not suitable for all investors. Prior to buying or selling an option, investors must review the 'Characteristics and Risks of Standardized Options", at https://www.theocc.com/company-information/documents-and-archives/options-disclosure-document. If you are unable to access the website, please contact your DB representative for a copy of this important document.
+
+Participants in foreign exchange transactions may incur risks arising from several factors, including the following: (i) exchange rates can be volatile and are subject to large fluctuations; (ii) the value of currencies may be affected by numerous market factors, including world and national economic, political and regulatory events, events in equity and debt markets and changes in interest rates; and (iii) currencies may be subject to devaluation or government-imposed exchange controls, which could affect the value of the currency. Investors in securities such as ADRs, whose values are affected by the currency of an underlying security, effectively assume currency risk.
+
+Unless governing law provides otherwise, all transactions should be executed through the DB entity in the investor's home jurisdiction. Aside from within this report, important conflict disclosures can also be found at https://research.db.com/Research/ on each company's research page or under the 'Disclosures' tab. Investors are strongly encouraged to review this information before investing.
+
+DB (which includes DB AG, its branches and affiliated companies) is not acting as a financial adviser, consultant or fiduciary to you or any of your agents (collectively, "You" or "Your") with respect to any information provided in this report. DB does not provide investment, legal, tax or accounting advice, DB is not acting as your impartial adviser, and does not express any opinion or recommendation whatsoever as to any strategies, products or any other information presented in the materials. Information contained herein is being provided solely on the basis that the recipient will make an independent assessment of the merits of any investment decision, and it does not constitute a recommendation of, or express an opinion on, any product or service or any trading strategy.
+
+The information presented is general in nature and is not directed to retirement accounts or any specific person or account type, and is therefore provided to You on the express basis that it is not advice, and You may not rely upon it in making Your decision. The information we provide is being directed only to persons we believe to be financially sophisticated, who are capable of evaluating investment risks independently, both in general and with regard to particular transactions and investment strategies, and who understand that DB has financial interests in the offering of its products and services. If this is not the case, or if You are an IRA or other retail investor receiving this directly from us, we ask that you inform us immediately.
+
+In July 2018, DB revised its rating system for short term ideas whereby the branding has been changed to Catalyst Calls ("CC") from SOLAR ideas; the rating categories for Catalyst Calls originated in the Americas region have been made consistent with the categories used by Analysts globally; and the effective time period for CCs has been reduced from a maximum of 180 days to 90 days.
+
+United States: Approved and/or distributed by DB Securities Incorporated, a member of FINRA and SIPC. Analysts located outside of the United States are employed by non-US affiliates and are not registered/qualified as research analysts with FINRA.
+
+European Economic Area (exc. United Kingdom): Approved and/or distributed by DB AG, a joint stock corporation with limited liability incorporated in the Federal Republic of Germany with its principal office in Frankfurt am Main. DB AG is authorized under German Banking Law and is subject to supervision by the European Central Bank and by BaFin, Germany's Federal Financial Supervisory Authority.
+
+United Kingdom: Approved and/or distributed by DB AG acting through its London Branch at 21 Moorfields, London EC2Y 9DB. DB AG in the United Kingdom is authorised by the Prudential Regulation Authority and is subject to limited regulation by the Prudential Regulation Authority and Financial Conduct Authority. Details about the extent of our authorisation and regulation are available on request.
+
+Hong Kong SAR: Distributed by DB AG, Hong Kong Branch except for any research content relating to futures contracts within the meaning of the Hong Kong Securities and Futures Ordinance Cap. 571. Research reports on such futures contracts are not intended for access by persons who are located, incorporated, constituted or resident in Hong Kong. The author(s) of a research report, and the entities for which they act and/or are affiliated with, may not be licensed to carry on regulated activities in Hong Kong and, if not licensed, do not hold themselves out as being able to do so. The provisions set out above in the 'Additional Information' section shall apply to the fullest extent permissible by local laws and regulations, including without limitation the Code of Conduct for Persons Licensed or Registered with the Securities and Futures Commission. This report is intended for distribution only to 'professional investors' as defined in Part 1 of Schedule of the SFO. This document must not be acted or relied on by persons who are not professional investors. Any investment or investment activity to which this document relates is only available to professional investors and will be engaged only with professional investors.
+
+India: Prepared by Deutsche Equities India Private Limited (DEIPL) having CIN: U65990MH2002PTC137431 and registered office at 14th Floor, The Capital, C-70, G Block, Bandra Kurla Complex, Mumbai (India) 400051. Tel: +91 22 7180 4444. It is registered by the Securities and Exchange Board of India (SEBI) as a Stock broker bearing registration no.: INZ000252437; Merchant Banker bearing SEBI Registration no.: INM000010833 and Research Analyst bearing SEBI Registration no.: INH000001741. DEIPL's Compliance / Grievance officer is Ms. Rashmi Poddar (Tel: +91 22 7180 4929 email ID: complaints.deipl@db.com). Registration granted by SEBI and certification from NISM in no way guarantee performance of DEIPL or provide any assurance of returns to investors. Investment in securities market are subject to market risks. Read all the related documents carefully before investing. DEIPL may have received administrative warnings from the SEBI for breaches of Indian regulations. DB and/or its affiliate(s) may have debt holdings or positions in the subject company. With regard to information on associates, please refer to the "Shareholdings" section in the Annual Report at: https://www.db.com/ir/en/annual-reports.htm. For latest India research audit report, refer https://country.db.com/india/deutsche-equities-india/index?language\_id=1.
+
+Japan: Approved and/or distributed by Deutsche Securities Inc.(DSI). Registration number - Registered as a financial instruments dealer by the Head of the Kanto Local Finance Bureau (Kinsho) No. 117. Member of associations: JSDA, Type II Financial Instruments Firms Association and The Financial Futures Association of Japan. Commissions and risks involved in stock transactions - for stock transactions, we charge stock commissions and consumption tax by multiplying the transaction amount by the commission rate agreed with each customer. Stock transactions can lead to losses as a result of share price fluctuations and other factors. Transactions in foreign stocks can lead to additional losses stemming from foreign exchange fluctuations. We may also charge commissions and fees for certain categories of investment advice, products and services. Recommended investment strategies, products and services carry the risk of losses to principal and other losses as a result of changes in market and/or economic trends, and/or fluctuations in market value. Before deciding on the purchase of financial products and/or services, customers should carefully read the relevant disclosures, prospectuses and other documentation. 'Moody's', 'Standard Poor's', and 'Fitch' mentioned in this report are not registered credit rating agencies in Japan unless Japan or 'Nippon' is specifically designated in the name of the entity. Reports on Japanese listed companies not written by analysts of DSI are written by DB Group's analysts with the coverage companies specified by DSI. Some of the foreign securities stated on this report are not disclosed according to the Financial Instruments and Exchange Law of Japan. Target prices set by DB's equity analysts are based on a 12-month forecast period.
+
+Korea: Distributed by Deutsche Securities Korea Co.
+
+South Africa: DB AG Johannesburg is incorporated in the Federal Republic of Germany (Branch Register Number in South Africa: 1998/003298/10).
+
+Singapore: This report is issued by DB AG, Singapore Branch (One Raffles Quay #18-00 South Tower Singapore 048583, 65 6423 8001), which may be contacted in respect of any matters arising from, or in connection with, this report. Where this report is issued or promulgated by DB in Singapore to a person who is not an accredited investor, expert investor or institutional investor (as defined in the applicable Singapore laws and regulations), they accept legal responsibility to such person for its contents.
+
+Taiwan: Information on securities/investments that trade in Taiwan is for your reference only. Readers should independently evaluate investment risks and are solely responsible for their investment decisions. DB may not be distributed to the Taiwan public media or quoted or used by the Taiwan public media without written consent. Information on securities/instruments that do not trade in Taiwan is for informational purposes only and is not to be construed as a recommendation to trade in such securities/instruments.
+
+Qatar: DB AG in the Qatar Financial Centre (registered no. 00032) is regulated by the Qatar Financial Centre Regulatory Authority. DB AG - QFC Branch may undertake only the financial services activities that fall within the scope of its existing QFCRA license. Its principal place of business in the QFC: Qatar Financial Centre, Tower, West Bay, Level 5, PO Box 14928, Doha, Qatar. This information has been distributed by DB AG. Related financial products or services are only available only to Business Customers, as defined by the Qatar Financial Centre Regulatory Authority.
+
+Russia: The information, interpretation and opinions submitted herein are not in the context of, and do not constitute, any appraisal or evaluation activity requiring a license in the Russian Federation.
+
+Kingdom of Saudi Arabia: Deutsche Securities Saudi Arabia (DSSA) is a closed joint stock company authorized by the Capital Market Authority of the Kingdom of Saudi Arabia with a license number (No. 37-07073) to conduct the following business activities: Dealing, Arranging, Advising, and Custody activities. DSSA registered office is Faisaliah Tower, 17th Floor, King Fahad Road - Al Olaya District Riyadh, Kingdom of Saudi Arabia P.O. Box 301806.
+
+United Arab Emirates: DB AG in the Dubai International Financial Centre (registered no. 00045) is regulated by the Dubai Financial Services Authority. DB AG - DIFC Branch may only undertake the financial services activities that fall within the scope of its existing DFSA license. Principal place of business in the DIFC: Dubai International Financial Centre, The Gate Village, Building 5, PO Box 504902, Dubai, U.A.E. This information has been distributed by DB AG. Related financial products or services are available only to Professional Clients, as defined by the Dubai Financial Services Authority.
+
+Australia and New Zealand: This research is intended only for 'wholesale clients' within the meaning of the Australian Corporations Act and New Zealand Financial Advisors Act, respectively. Please refer to Australia-specific research disclosures and related information at https://www.dbresearch.com/PROD/RPS\_EN-PROD/PROD0000000000521304.xhtml. Where research refers to any particular financial product recipients of the research should consider any product disclosure statement, prospectus or other applicable disclosure document before making any decision about whether to acquire the product. In preparing this report, the primary analyst or an individual who assisted in the preparation of this report has likely been in contact with the company that is the subject of this research for confirmation/clarification of data, facts, statements, permission to use company-sourced material in the report, and/or site-visit attendance. Without prior approval from Research Management, analysts may not accept from current or potential Banking clients the costs of travel, accommodations, or other expenses incurred by analysts attending site visits, conferences, social events, and the like. Similarly, without prior approval from Research Management and Anti-Bribery and Corruption ("ABC") team, analysts may not accept perks or other items of value for their personal use from issuers they cover.
+
+Additional information relative to securities, other financial products or issuers discussed in this report is available upon request. This report may not be reproduced, distributed or published without DB's prior written consent.
+
+Backtested, hypothetical or simulated performance results have inherent limitations. Unlike an actual performance record based on trading actual client portfolios, simulated results are achieved by means of the retroactive application of a backtested model itself designed with the benefit of hindsight. Taking into account historical events the backtesting of performance also differs from actual account performance because an actual investment strategy may be adjusted any time, for any reason, including a response to material, economic or market factors. The backtested performance includes hypothetical results that do not reflect the reinvestment of dividends and other earnings or the deduction of advisory fees, brokerage or other commissions, and any other expenses that a client would have paid or actually paid. No representation is made that any trading strategy or account will or is likely to achieve profits or losses similar to those shown. Alternative modeling techniques or assumptions might produce significantly different results and prove to be more appropriate. Past hypothetical backtest results are neither an indicator nor guarantee of future returns. Actual results will vary, perhaps materially, from the analysis.
+
+The method for computing individual E,S,G and composite ESG scores set forth herein is a novel method developed by the Research department within DB AG, computed using a systematic approach without human intervention. Different data providers, market sectors and geographies approach ESG analysis and incorporate the findings in a variety of ways. As such, the ESG scores referred to herein may differ from equivalent ratings developed and implemented by other ESG data providers in the market and may also differ from equivalent ratings developed and implemented by other divisions within the DB Group. Such ESG scores also differ from other ratings and rankings that have historically been applied in research reports published by DB AG. Further, such ESG scores do not represent a formal or official view of DB AG. It should be noted that the decision to incorporate ESG factors into any investment strategy may inhibit the ability to participate in certain investment opportunities that otherwise would be consistent with your investment objective and other principal investment strategies. The returns on a portfolio consisting primarily of sustainable investments may be lower or higher than portfolios where ESG factors, exclusions, or other sustainability issues are not considered, and the investment opportunities available to such portfolios may differ. Companies may not necessarily meet high performance standards on all aspects of ESG or sustainable investing issues; there is also no guarantee that any company will meet expectations in connection with corporate responsibility, sustainability, and/or impact performance.
+
+Copyright © 2026 DB AG
+
+## David Folkerts-Landau
+
+Group Chief Economist and Global Head of Research
+
+Pam Finelli
+Global Chief Operating Officer
+Research
+
+Steve Pollard
+Global Head of Company
+Research and Sales
+
+Jim Reid
+Global Head of
+Macro and Thematic Research
+
+Tim Rokossa
+Head of Germany
+Research
+
+Gerry Gallagher
+Head of European
+Company Research
+
+Matthew Barnard
+Head of Americas
+Company Research
+
+Peter Milliken
+Head of APAC
+Company Research
+
+Debbie Jones
+Global Head of Sustainability
+and Data Innovation, Research
+
+Sameer Goel
+Global Head of EM & APAC
+Research
+
+Francis Yared
+Global Head of Rates Research
+
+George Saravelos
+Global Head of FX Research
+
+Peter Hooper
+Vice-Chair of Research
+
+International Production Locations
+
+<table><tr><td>DB AG</td><td>DB AG</td><td>DB AG</td><td>Deutsche Securities Inc.</td></tr><tr><td>DB Place</td><td>Equity Research</td><td>Filiale Hongkong</td><td>1-3-1 Azabudai</td></tr><tr><td>Level 16</td><td>Mainzer Landstrasse 11-17</td><td>International Commerce</td><td>Azabudai Hills Mori JP Tower</td></tr><tr><td>Corner of Hunter &amp; Phillip</td><td>60329 Frankfurt am Main</td><td>Centre,</td><td>Minato-ku, Tokyo 106-0041</td></tr><tr><td>Streets</td><td>Germany</td><td>1 Austin Road West,Kowloon,</td><td>Japan</td></tr><tr><td>Sydney, NSW 2000</td><td>Tel: (49) 69 910 00</td><td>Hong Kong</td><td>Tel: (81) 3 6730 1000</td></tr><tr><td>Australia</td><td></td><td>Tel: (852) 2203 8888</td><td></td></tr><tr><td>Tel: (61) 2 8258 1234</td><td></td><td></td><td></td></tr><tr><td>DB AG</td><td>DB Securities Inc.</td><td>DB AG</td><td></td></tr><tr><td>21 Moorfields</td><td>The DB Center</td><td>Filiale Singapur</td><td></td></tr><tr><td>London EC2Y 9DB</td><td>1 Columbus Circle</td><td>One Raffles Quay, South</td><td></td></tr><tr><td>United Kingdom</td><td>New York, NY 10019</td><td>Tower,</td><td></td></tr><tr><td>Tel: (44) 20 7545 8000</td><td>Tel: (1) 212 250 2500</td><td>Singapore 048583</td><td></td></tr><tr><td></td><td></td><td>Tel: +65 6423 8001</td><td></td></tr></table>

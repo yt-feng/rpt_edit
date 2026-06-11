@@ -1,0 +1,45 @@
+ZH_A: 最近有个消息在市场上传得挺凶的，说英伟达的800V直流电源架构要推迟到2028年，这事是真的吗？
+ZH_B: 我们刚在Computex上做了供应链调研，得到的信息正好相反。英伟达在GTC台北明确表示800V直流电源机柜会在2026年第三季度量产。
+ZH_A: 所以那个传闻是假的？
+ZH_B: 对，英伟达也已经否认了。而且我们注意到一个关键变化，很多超大规模客户原本在开发正负400V的方案，现在都转向了800V。
+ZH_A: 转向800V？这意味着什么？
+ZH_B: 意味着整个行业的电源架构在加速升级。800V能大幅降低电流损耗，对超大规模AI集群来说，这是能省下巨大电费的关键技术。
+ZH_A: 那台达电子在这中间扮演什么角色？
+ZH_B: 台达很可能是第一个量产800V独立电源机柜的厂商，预计2026年第四季度就会出货给一家美国超大规模客户。
+ZH_A: 第一批出货量会很大吗？
+ZH_B: 初期量不会太大，因为800V的保护设备和工业安全标准还需要UL等机构来定义。这不是一蹴而就的事。
+ZH_A: 所以整个800V的部署节奏到底是怎样的？
+ZH_B: 报告里有一个清晰的路线图。从2026年第三季度的660千瓦电源机柜，到2027年的1.6兆瓦直流电源中心，再到2028年的4.8兆瓦以上电源模块。
+ZH_A: 听起来像是逐步扩大规模。那这中间最大的挑战是什么？
+ZH_B: 接地和保护架构还在和UL及OEM厂商协调认证。另外，断路器等集电设备也还在成熟过程中。这些都是必须解决的工程问题。
+ZH_A: 那英伟达自己的AI服务器会用800V吗？
+ZH_B: 报告提到，更高密度的整流器已经在开发中，未来会支持800V的计算产品。但具体时间点，报告里没有完全展开。
+ZH_A: 还有哪些问题是我们现在还不知道的？
+ZH_B: 比如800V的标准化接口到底什么时候能确定？还有，不同超大规模客户的部署时间表会不会出现分化？这些细节都需要继续跟踪。
+ZH_A: 听起来这份报告里的信息量很大。
+ZH_B: 对，我们只是聊了冰山一角。完整报告里还有更多关于供应链和竞争格局的分析，非常值得一读。
+ZH_A: 好的，那今天先聊到这里。感兴趣的朋友可以去读完整报告。
+ZH_B: 没错，我们下次再聊。
+
+EN_A: So there is a rumor going around that Nvidia is delaying its 800V DC power architecture to 2028. Is that true?
+EN_B: Actually, our supply chain checks at Computex tell a completely different story. Nvidia confirmed at GTC Taipei that the 800V DC power rack will be ready for mass production in the third quarter of 2026.
+EN_A: So the rumor is false?
+EN_B: Yes, and Nvidia has denied it. What is even more interesting is that many hyperscalers are shifting their focus from plus-minus 400V to 800V.
+EN_A: Shifting to 800V? What does that mean?
+EN_B: It means the whole industry is accelerating its power architecture upgrade. 800V significantly reduces current loss, which is a huge cost saver for large-scale AI clusters.
+EN_A: So what role does Delta Electronics play in this?
+EN_B: Delta is likely to be the first vendor to mass produce standalone 800V power racks. They are expected to ship to a major US hyperscaler in the fourth quarter of 2026.
+EN_A: Will the initial shipment volume be large?
+EN_B: Not huge initially. The development of protection devices and industrial safety standards by UL and other regulators still needs to be finalized. It is a gradual process.
+EN_A: So what is the overall deployment timeline?
+EN_B: The report outlines a clear roadmap. It starts with a 660-kilowatt power rack in Q3 2026, then a 1.6-megawatt DC power center in 2027, and finally a 4.8-megawatt plus power block in 2028.
+EN_A: Sounds like a phased scale-up. What are the biggest challenges?
+EN_B: Grounding and protection architecture is still being aligned with UL and OEMs. Also, collection devices like circuit breakers are still maturing. These are the engineering hurdles that need to be solved.
+EN_A: Will Nvidia's own AI servers use 800V?
+EN_B: The report mentions that higher-density rectifiers are being developed to support future 800V compute products. But the exact timeline is not fully detailed in the report.
+EN_A: What else is still unclear?
+EN_B: For example, when will the standardized 800V interface be finalized? And will different hyperscalers have different deployment schedules? These are details we need to keep tracking.
+EN_A: It sounds like there is a lot of depth in this report.
+EN_B: Absolutely. We have only scratched the surface. The full report has a lot more on the supply chain and competitive landscape. It is definitely worth a read.
+EN_A: Great, let us wrap up here. If you are interested, go check out the full report.
+EN_B: Yes, and we will catch you next time.

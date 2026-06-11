@@ -1,0 +1,39 @@
+[
+  {
+    "attempt": 1,
+    "round": 1,
+    "token_label": "MINER_U_2",
+    "submitted_pdf_count": 5,
+    "successful_pdf_count": 5,
+    "retry_pdf_count": 0,
+    "timed_out": false,
+    "error": "",
+    "states": [
+      {
+        "pdf": "/tmp/pdf_batch_001_sj4qgmj1/pdfs/0001-17-DB-China Autos - Auto Technology-Chinese Automakers Monthly European Market Volume Monitor- Apr.2026-260609.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_sj4qgmj1/pdfs/0002-18-GS-China Restaurants- Monthly Tracker- May update- Trends turn softer but divergence across brands- FMD high base effect kicking in-260611.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_sj4qgmj1/pdfs/0003-19-MS-Greater China Technology Hardware - Asia Pacific-Power Solutions - Our Thoughts on Rumored 800V DC Delay-260610.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_sj4qgmj1/pdfs/0004-20-Bofa-BofA Equity Client Flow Trends Record Tech outflows-260609.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_sj4qgmj1/pdfs/0005-21-NOM-Asia Insights China- Growth of both exports and imports quickened in May-260609.pdf",
+        "state": "done",
+        "error": ""
+      }
+    ]
+  }
+]
