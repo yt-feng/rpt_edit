@@ -1,0 +1,51 @@
+{
+  "input_dir": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs",
+  "total_pdf_count_before_shard": 50,
+  "pdf_count_before_skip": 5,
+  "pdf_count": 5,
+  "generated_report_count": 5,
+  "batch_size": 5,
+  "shard_index": 4,
+  "shard_count": 40,
+  "max_reports_per_shard": 5,
+  "max_total_reports": 0,
+  "skip_existing": true,
+  "skipped_existing_count": 0,
+  "skipped_existing": [],
+  "failures": 0,
+  "batches": [
+    {
+      "batch_index": 1,
+      "pdf_count": 5,
+      "files": [
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/22-Bernstein-US Industrials & Tech： The Data Center Project Pipeline~Capacity， Construction & Cancellations （May '26）-260610.pdf",
+          "batch_file": "/tmp/pdf_batch_001_noy6zxjk/pdfs/0001-22-Bernstein-US Industrials - Tech- The Data Center Project Pipeline-Capacity- Construction - Cancellations -May -26--260610.pdf",
+          "stable_index": "1"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/23-MS-China Financials： High~quality development more sustainable for the financial system in China-260609.pdf",
+          "batch_file": "/tmp/pdf_batch_001_noy6zxjk/pdfs/0002-23-MS-China Financials- High-quality development more sustainable for the financial system in China-260609.pdf",
+          "stable_index": "2"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/24-Bernstein-Airfreight & Surface Transportation：Transports： An empirical look at how much of the fulfillment market Supply Chain by Amazon could realistically eat-260610.pdf",
+          "batch_file": "/tmp/pdf_batch_001_noy6zxjk/pdfs/0003-24-Bernstein-Airfreight - Surface Transportation-Transports- An empirical look at how much of the fulfillment market Supply Chain by Amazon could realistically eat-260610.pdf",
+          "stable_index": "3"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/25-CITI-China Healthcare：Expert Call Takeaways — COINS & BINSA Act： confirms low possibility of US Outbound Investment Restrictions in China Biotech-260609.pdf",
+          "batch_file": "/tmp/pdf_batch_001_noy6zxjk/pdfs/0004-25-CITI-China Healthcare-Expert Call Takeaways - COINS - BINSA Act- confirms low possibility of US Outbound Investment Restrictions in China Biotech-260609.pdf",
+          "stable_index": "4"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/26-GS-Europe Technology：Hardware，Updating estimates and PTs to reflect recent positive datapoints-260610.pdf",
+          "batch_file": "/tmp/pdf_batch_001_noy6zxjk/pdfs/0005-26-GS-Europe Technology-Hardware-Updating estimates and PTs to reflect recent positive datapoints-260610.pdf",
+          "stable_index": "5"
+        }
+      ],
+      "returncode": 0,
+      "status": "ok"
+    }
+  ]
+}
