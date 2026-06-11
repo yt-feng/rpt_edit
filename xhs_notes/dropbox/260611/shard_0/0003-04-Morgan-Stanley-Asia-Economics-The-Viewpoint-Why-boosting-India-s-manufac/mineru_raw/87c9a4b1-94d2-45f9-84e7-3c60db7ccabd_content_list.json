@@ -1,0 +1,2425 @@
+[
+    {
+        "type": "text",
+        "text": "Asia Economics | Asia Pacific",
+        "text_level": 2,
+        "bbox": [
+            63,
+            97,
+            366,
+            117
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "The Viewpoint: Why boosting India's manufacturing is more important than ever",
+        "text_level": 1,
+        "bbox": [
+            63,
+            130,
+            552,
+            239
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "The policy measures that have been taken to address India's near-term funding challenges will be effective, in our view. But from a medium-term perspective, India needs to boost competitiveness in manufacturing to attract capital flows and lift goods exports market share.",
+        "bbox": [
+            63,
+            258,
+            594,
+            358
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Key Takeaways",
+        "text_level": 2,
+        "bbox": [
+            68,
+            376,
+            200,
+            395
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "list",
+        "sub_type": "text",
+        "list_items": [
+            "We believe the recent policy measures will be successful in augmenting capital flows in the near term.",
+            "But India still faces a medium-term funding challenge as it will need to lift savings sustainably to meet the rising need for investment.",
+            "- India should focus on lifting goods exports competitiveness and boosting manufacturing capabilities across the value chain.",
+            "Manufacturing can help narrow the current account deficit and attract capital inflows – effectively providing a double boost to BoP dynamics.",
+            "Policy must target high growth sectors, ensure an integrated supply chain, have the financial system aligned, supercharge R&D spend, and skill the workforce."
+        ],
+        "bbox": [
+            63,
+            400,
+            594,
+            597
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "In this report, we highlight why manufacturing will have to play a critical role in enhancing India's relative growth prospects and how it will help solve India's balance of payments problem over the medium term. We explain the key policy steps that are needed.",
+        "bbox": [
+            62,
+            612,
+            593,
+            681
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "MS ASIA LIMITED",
+        "bbox": [
+            624,
+            97,
+            756,
+            107
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Chetan Ahya",
+        "text_level": 2,
+        "bbox": [
+            625,
+            109,
+            704,
+            123
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Chief Asia Economist",
+        "bbox": [
+            625,
+            125,
+            709,
+            133
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Chetan.Ahya@morganstanley.com +852 2239-7812",
+        "bbox": [
+            625,
+            135,
+            931,
+            145
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "MS ASIA (SINGAPORE) PTE.",
+        "bbox": [
+            625,
+            157,
+            795,
+            167
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Derrick Y Kam",
+        "text_level": 2,
+        "bbox": [
+            625,
+            170,
+            710,
+            183
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Asia Economist",
+        "bbox": [
+            625,
+            185,
+            687,
+            194
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Derrick.Kam@morganstanley.com +65 6834-8272",
+        "bbox": [
+            625,
+            196,
+            931,
+            205
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "MS ASIA LIMITED",
+        "bbox": [
+            625,
+            218,
+            756,
+            228
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Jonathan Cheung",
+        "text_level": 2,
+        "bbox": [
+            625,
+            231,
+            728,
+            244
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Economist",
+        "bbox": [
+            625,
+            244,
+            669,
+            253
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Jonathan.Cheung@morganstanley.com +852 2848-5652",
+        "bbox": [
+            625,
+            256,
+            931,
+            266
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Kelly Wang",
+        "text_level": 2,
+        "bbox": [
+            625,
+            272,
+            694,
+            285
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Economist",
+        "bbox": [
+            625,
+            286,
+            669,
+            295
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Kelly.Wang@morganstanley.com +852 3963-0891",
+        "bbox": [
+            625,
+            297,
+            931,
+            308
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "MS INDIA COMPANY PRIVATE LIMITED",
+        "bbox": [
+            624,
+            316,
+            839,
+            325
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Sudhanshu Agarwal",
+        "text_level": 2,
+        "bbox": [
+            625,
+            329,
+            745,
+            343
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Economist",
+        "bbox": [
+            625,
+            344,
+            669,
+            353
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Sudhanshu.Agarwal@morganstanley.com +91 22 6995-4568",
+        "bbox": [
+            625,
+            354,
+            931,
+            364
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Asia Summer School 2026",
+        "text_level": 2,
+        "bbox": [
+            633,
+            402,
+            839,
+            417
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "image",
+        "img_path": "images/ebbb575701ff5a9cf1744d2012ec22cf58e16fab17fe42650014d4a4f60110bd.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            864,
+            378,
+            929,
+            440
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "header",
+        "text": "MS",
+        "bbox": [
+            63,
+            44,
+            263,
+            71
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "header",
+        "text": "RESEARCH",
+        "bbox": [
+            295,
+            51,
+            362,
+            63
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "header",
+        "text": "June 9, 2026 09:28 PM GMT",
+        "bbox": [
+            63,
+            75,
+            248,
+            90
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "header",
+        "text": "IDEA",
+        "bbox": [
+            885,
+            49,
+            931,
+            66
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "footer",
+        "text": "For important disclosures, refer to the Disclosure Section, located at the end of this report.",
+        "bbox": [
+            624,
+            925,
+            921,
+            950
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "How to solve India's medium-term funding challenge",
+        "text_level": 2,
+        "bbox": [
+            63,
+            111,
+            816,
+            142
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "India faces a funding challenge both in the near and medium term: For the near term, policy makers have taken steps to augment capital flows, but for the medium term the need of the hour is to boost savings. For savings to rise sustainably, the approach must be to lift employment and, as we have highlighted before, this has to be achieved via boosting the role of manufacturing in the economy. We explain the policy steps that are needed to boost manufacturing and exports in India.",
+        "bbox": [
+            361,
+            159,
+            933,
+            263
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "header",
+        "text": "MS | RESEARCH",
+        "bbox": [
+            63,
+            45,
+            250,
+            61
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "header",
+        "text": "IDEA",
+        "bbox": [
+            901,
+            47,
+            933,
+            60
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "page_number",
+        "text": "2",
+        "bbox": [
+            66,
+            968,
+            75,
+            977
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "Why is the balance of payments under pressure?",
+        "text_level": 2,
+        "bbox": [
+            63,
+            112,
+            764,
+            142
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "Capital outflows and rising oil prices have put BoP under pressure: In the past, India enjoyed strong capital inflows that more than offset the current account deficits. However, the capital account has come under increasing pressure over the past two years. Since 4Q24, net foreign investor flows have recorded outflows in five of six quarters, and the most recent data suggests that outflows have likely continued into June. Foreign portfolio investors (FPIs) have also been able to exit their investments at relatively high valuations given the domestic bid for equities remains strong. Foreign direct investment inflows have also been weighed down by outward FDI, given repatriation amid private equity and venture capital exits.",
+        "bbox": [
+            361,
+            159,
+            929,
+            316
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "At the same, the trade deficit has widened due to higher oil prices and a contraction in exports to the Middle East. Cumulatively, India's balance of payments registered a deficit of US\\$52bn between Dec-24 and Mar-26. This compares with the cumulative deficit of US \\$25bn registered between Dec-11 and Sep-13. The overall balance of payments deficit has been reflected in the FX trend, which on a REER basis is now 3.7 standard deviations below the trailing 10-year mean.",
+        "bbox": [
+            359,
+            327,
+            928,
+            431
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "chart",
+        "img_path": "images/416f9937885a4a30090b9b169dc021fb58a455fe14e84e48023118a6bdb7d190.jpg",
+        "content": "| Date   | Mean | Mean - SD | Mean + SD |\n|--------|------|-----------|-----------|\n| May-04 | 90   | 87        | 92        |\n| May-05 | 91   | 88        | 93        |\n| May-06 | 92   | 89        | 94        |\n| May-07 | 93   | 90        | 95        |\n| May-08 | 94   | 91        | 96        |\n| May-09 | 95   | 92        | 97        |\n| May-10 | 96   | 93        | 98        |\n| May-11 | 97   | 94        | 99        |\n| May-12 | 98   | 95        | 100       |\n| May-13 | 99   | 96        | 101       |\n| May-14 | 100  | 97        | 102       |\n| May-15 | 101  | 98        | 103       |\n| May-16 | 102  | 99        | 104       |\n| May-17 | 103  | 100       | 105       |\n| May-18 | 104  | 101       | 106       |\n| May-19 | 105  | 102       | 107       |\n| May-20 | 106  | 103       | 108       |\n| May-21 | 107  | 104       | 109       |\n| May-22 | 108  | 105       | 110       |\n| May-23 | 109  | 106       | 111       |\n| May-24 | 110  | 107       | 112       |\n| May-25 | 111  | 108       | 113       |\n| May-26 | 112  | 109       | 114       |",
+        "chart_caption": [
+            "Exhibit 1: INR on a REER basis has now fallen to more than 3.7 standard deviations away from the 10-year mean trend"
+        ],
+        "chart_footnote": [
+            "Source: BIS, Haver, MS"
+        ],
+        "sub_type": "line chart",
+        "bbox": [
+            66,
+            479,
+            480,
+            645
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "chart",
+        "img_path": "images/d0cd76901ef1dc6e31f19268f798e00ef914cbf1ce43b0e451164b75e1329d16.jpg",
+        "content": "| Date   | Overall Balance | Capital and Financial Account (FA) | Current Account (CA) |\n|--------|-----------------|------------------------------------|----------------------|\n| Mar-18 | 1.5%            | 3.5%                               | -2.0%                |\n| Mar-20 | 2.0%            | 2.5%                               | -1.0%                |\n| Mar-22 | 3.5%            | 3.0%                               | -3.0%                |\n| Mar-24 | 1.5%            | 2.0%                               | -1.0%                |\n| Mar-26 | -1.0%           | 0.0%                               | -1.0%                |",
+        "chart_caption": [
+            "Exhibit 2: The key driver has been weaker BOP dynamics"
+        ],
+        "chart_footnote": [
+            "Source: Haver, MS"
+        ],
+        "sub_type": "line chart",
+        "bbox": [
+            519,
+            462,
+            926,
+            633
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "chart",
+        "img_path": "images/e1a512641c4a0cd5de3d7eb3632c8c162447e384d280d50fb608b5ae7c6a9964.jpg",
+        "content": "| Month    | Debt, LS | Equity, LS | Total (12M trailing sum), RS |\n|----------|----------|------------|------------------------------|\n| May-22   | -1       | -7         | -30                          |\n| Sep-22   | -1       | 8          | -25                          |\n| Jan-23   | -1       | 5          | -15                          |\n| May-23   | -1       | 8          | 0                            |\n| Sep-23   | -1       | 5          | 25                           |\n| Jan-24   | 2        | 9          | 35                           |\n| May-24   | 2        | 6          | 20                           |\n| Sep-24   | 2        | 8          | 40                           |\n| Jan-25   | -1       | -8         | 0                            |\n| May-25   | -1       | 4          | -10                          |\n| Sep-25   | -1       | 3          | -20                          |\n| Jan-26   | -1       | 3          | -10                          |\n| May-26   | -1       | -10        | -30                          |",
+        "chart_caption": [
+            "Exhibit 3: FII has recorded persistent outflows"
+        ],
+        "chart_footnote": [
+            "Source: RBI, CEIC, Bloomberg, MS"
+        ],
+        "sub_type": "bar-line hybrid chart",
+        "bbox": [
+            66,
+            702,
+            485,
+            878
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "chart",
+        "img_path": "images/e6a3b5b8dd60757d441a5d19f2f2a35e5795a5754a265acb8f5876d3285c3fa1.jpg",
+        "content": "| Date   | Gross FDI | Gross FDI Less Repatriation | Net FDI Less Repatriation Less outward FDI |\n|--------|-----------|-----------------------------|---------------------------------------------|\n| Mar-17 | ~60       | ~45                         | ~35                                         |\n| Sep-17 | ~65       | ~50                         | ~30                                         |\n| Mar-18 | ~60       | ~45                         | ~25                                         |\n| Sep-18 | ~65       | ~50                         | ~30                                         |\n| Mar-19 | ~70       | ~55                         | ~35                                         |\n| Sep-19 | ~75       | ~60                         | ~40                                         |\n| Mar-20 | ~80       | ~65                         | ~45                                         |\n| Sep-20 | ~85       | ~70                         | ~50                                         |\n| Mar-21 | ~90       | ~75                         | ~55                                         |\n| Sep-21 | ~85       | ~70                         | ~50                                         |\n| Mar-22 | ~80       | ~65                         | ~45                                         |\n| Sep-22 | ~75       | ~60                         | ~40                                         |\n| Mar-23 | ~70       | ~55                         | ~35                                         |\n| Sep-23 | ~65       | ~50                         | ~30                                         |\n| Mar-24 | ~70       | ~45                         | ~25                                         |\n| Sep-24 | ~75       | ~40                         | ~20                                         |\n| Mar-25 | ~80       | ~35                         | ~15                                         |\n| Sep-25 | ~85       | ~30                         | ~10                                         |\n| Mar-26 | ~90       | ~25                         | ~5                                          |",
+        "chart_caption": [
+            "Exhibit 4: Net FDI has been depressed amid outward FDI and repatriations"
+        ],
+        "chart_footnote": [
+            "Source: RBI, CEIC, Bloomberg, MS"
+        ],
+        "sub_type": "line chart",
+        "bbox": [
+            514,
+            724,
+            923,
+            893
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "header",
+        "text": "MS | RESEARCH",
+        "bbox": [
+            65,
+            45,
+            250,
+            61
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "header",
+        "text": "IDEA",
+        "bbox": [
+            901,
+            47,
+            933,
+            59
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "footer",
+        "text": "MS",
+        "bbox": [
+            65,
+            967,
+            240,
+            978
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "page_number",
+        "text": "3",
+        "bbox": [
+            921,
+            968,
+            931,
+            977
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "chart",
+        "img_path": "images/99b550a528803faa71bebdddf3d37583a4d38915b0df4e8c866e3dfcf2f0bcef.jpg",
+        "content": "| Date   | FX Reserves | FX Reserves, Adjusted for Forward |\n|--------|-------------|-----------------------------------|\n| May-26 | 682         | 587                               |",
+        "chart_caption": [
+            "Exhibit 5: Reflecting the BoP pressures on FX, RBI has ramped up interventions"
+        ],
+        "chart_footnote": [
+            "Source: RBI, MS; Note: RBI's forward dollar book is estimated at US\\$95.3bn in April and we have rolled it over to May."
+        ],
+        "sub_type": "line chart",
+        "bbox": [
+            73,
+            152,
+            483,
+            325
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "chart",
+        "img_path": "images/2856be5c40097a35c4036fbf84b7cc63c072fe1298c0b8058c68ca152ac11fa4.jpg",
+        "content": "| Date   | FX reserves in months of imports | FX reserves in months of imports, adjusted for forward |\n|--------|----------------------------------|----------------------------------------------------------|\n| Aug-13 | 6.7                              | 6.5                                                      |\n| May-26 | 10.5                             | 9.0                                                      |",
+        "chart_caption": [
+            "Exhibit 6: Import cover ratio has decreased"
+        ],
+        "chart_footnote": [
+            "Source: RBI, MS; Note: RBI's forward dollar book is estimated at US\\$95.3bn in April and we have rolled it over to May."
+        ],
+        "sub_type": "line chart",
+        "bbox": [
+            516,
+            133,
+            929,
+            308
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "header",
+        "text": "MS | RESEARCH",
+        "bbox": [
+            65,
+            45,
+            250,
+            61
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "header",
+        "text": "IDEA",
+        "bbox": [
+            901,
+            47,
+            933,
+            59
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "page_number",
+        "text": "4",
+        "bbox": [
+            66,
+            968,
+            75,
+            977
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "What explains the capital outflows?",
+        "text_level": 2,
+        "bbox": [
+            62,
+            112,
+            581,
+            142
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "Earnings growth had slowed until the Sep-25 quarter but has since improved: In our view, part of the initial weakness can be explained by the slowdown in India's corporate earnings growth. Broad market corporate revenue, excluding energy and financials, had slowed to a 19-quarter low of $8.2\\%$ Y growth for Sep-25. Since then, the cumulative effects of concerted policy easing efforts – including GST and income tax cuts as well as the easing of regulatory measures and policy rate cuts by the RBI – have driven a broader domestic demand recovery. Reflecting this, broad market revenue ex energy and finance growth has also recovered to $16\\%$ Y in the Mar-26 quarter.",
+        "bbox": [
+            359,
+            159,
+            931,
+            299
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "But the relative story has turned less compelling due to AI and the energy shock: For foreign investors, India's relative growth story has become less compelling at the margin. Markets more directly levered to AI and industrial supply chains – notably North Asian economies – have a far more powerful earnings impulse. India's first-quarter earnings in 2026 grew at $13\\%$ Y (BSE500). That looks less compelling next to Korea at $171\\%$ , Taiwan at $49\\%$ , Japan at $33\\%$ , and the US at $29\\%$ . Within the region, India's relatively wider oil and gas trade deficit at the starting point has also posed headwinds as investors contemplate the drag to the trade balance and growth from the negative terms of trade shock.",
+        "bbox": [
+            359,
+            309,
+            931,
+            450
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "chart",
+        "img_path": "images/deabe42137986ae1f096ce0901ec506abb55e9ad474e3f2d007a997bfb6eb190.jpg",
+        "content": "Oil and gas trade balance (% of GDP, 12M trailing sum as of Mar-26)\n| Country | Oil and gas trade balance (% of GDP) |\n| :--- | :--- |\n| Malaysia | 1.2 |\n| Australia | 0.7 |\n| Singapore | -0.5 |\n| Indonesia | -1.4 |\n| China | -1.8 |\n| Asia | -2.1 |\n| Japan | -2.5 |\n| Hong Kong | -2.8 |\n| Philippines | -2.9 |\n| Taiwan | -2.8 |\n| India | -3.4 |\n| Korea | -3.9 |\n| Thailand | -5.2 |",
+        "chart_caption": [
+            "Exhibit 7: India among the more exposed to the energy shock within the region"
+        ],
+        "chart_footnote": [
+            "Source: Haver, MS"
+        ],
+        "sub_type": "bar chart",
+        "bbox": [
+            66,
+            496,
+            473,
+            681
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "chart",
+        "img_path": "images/289fb6cc7f6c09d1da07edee30142c5a855f9607edf81feb6f17181ea4ca9ef9.jpg",
+        "content": "EPS growth (%Y, 1Q26)\n| Company | EPS growth (%) |\n| :--- | :--- |\n| KOSPI | 171 |\n| TWSE | 49 |\n| TOPIX | 33 |\n| S&P500 | 29 |\n| BSE500 | 13 |\n| CSI300 | 6 |",
+        "chart_caption": [
+            "Exhibit 8: India's 1Q26 earnings growth lagged other major indices more levered to the AI thematic"
+        ],
+        "chart_footnote": [
+            "Source: Bloomberg, Factset, MS; Note: Actual 1Q data used for S&P500, BSE500 and KOSPI, and consensus estimates used for the rest."
+        ],
+        "sub_type": "bar chart",
+        "bbox": [
+            516,
+            500,
+            921,
+            680
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "header",
+        "text": "MS | RESEARCH",
+        "bbox": [
+            63,
+            45,
+            250,
+            61
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "header",
+        "text": "IDEA",
+        "bbox": [
+            901,
+            47,
+            933,
+            60
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "footer",
+        "text": "MS",
+        "bbox": [
+            65,
+            967,
+            241,
+            978
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "page_number",
+        "text": "5",
+        "bbox": [
+            921,
+            968,
+            931,
+            977
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "How to solve India's balance of payments deficit problem?",
+        "text_level": 1,
+        "bbox": [
+            63,
+            111,
+            898,
+            142
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "The near-term solution: Now in place",
+        "text_level": 2,
+        "bbox": [
+            361,
+            159,
+            709,
+            180
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "Policy measures to augment capital flows will be effective: In our recent note, we highlighted that policymakers could consider measures such as 1) encouraging banks and public-sector entities to raise external commercial borrowings, with RBI providing some form of foreign-exchange hedge support, and 2) removing the withholding tax on debt investments and capital gains tax on the equity investments. Since then, the government and RBI have taken up relevant measures including:",
+        "bbox": [
+            359,
+            198,
+            921,
+            303
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "list",
+        "sub_type": "text",
+        "list_items": [
+            "- Removing capital gains and dividend taxes on government securities for foreign institutional investors,",
+            "- Broadening the investible universe of FAR-eligible government securities, removing FPI restrictions under the General Route,",
+            "- Increasing investment limits for overseas individuals,",
+            "- And providing temporary incentives for ECBs and FCNR(B) deposits."
+        ],
+        "bbox": [
+            390,
+            313,
+            931,
+            417
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "Our Chief India Economist, Upasana Chachra, believes these measures should support financial conditions by reducing pressure on the rupee and mitigating currency volatility at the margin (see India Economics: RBI Policy Review: Steady Rates; Boosting Capital Inflows, Jun 5, 2026)",
+        "bbox": [
+            359,
+            436,
+            931,
+            506
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "table",
+        "img_path": "images/40f0a2d88399b61e902b73e606ea5cca75ec28c3d88d13e835d2ea623b60ee9f.jpg",
+        "table_caption": [
+            "Exhibit 9: Measures announced by RBI to attract capital flows"
+        ],
+        "table_footnote": [
+            "Source: RBI, MS"
+        ],
+        "table_body": "<table><tr><td>Capital Flow Augmentation Measures</td></tr><tr><td>Government securities under the Fully Accessible Route (FAR), we are expanding the universe of ‘specified securities’ by including all new issuances of 15-, 30- and 40-year tenor G-secs. In addition, limits pertaining to short-term investment, concentration and individual securities on FPI investment under the General Route are being removed. These measures along with the tax benefits provided by the government this morning should help attract foreign capital for government borrowing</td></tr><tr><td>The limits for investment by NRIs and OCIs in equity instruments traded on the stock market without SEBI registration are being increased. Further, the same facility is being extended to all individual Persons Resident Outside India (PROIs) at par with NRIs and OCIs.</td></tr><tr><td>A facility of concessional forex swap will be provided till 30th September 2026 to incentivize ECBs by PSUs.</td></tr><tr><td>A similar facility for bearing the full hedging cost shall be provided till 30th September 2026 to AD banks for raising fresh 3–5-year FCNR (B) deposits</td></tr><tr><td>It is proposed to restore the time for realisation of export proceeds to nine months from fifteen months earlier.</td></tr></table>",
+        "bbox": [
+            364,
+            535,
+            931,
+            671
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "If oil prices continue to decline, pressures on the current account will ease – but not enough to allay BoP concerns: Upasana expects the current account deficit to widen from a deficit of 0.6% in F26 to 1.8% of GDP in F27. As energy prices moderate, pressures on the current account should ease with the deficit expected to narrow to 1.2% of GDP in F28. But that on its own will not be sufficient to close the funding gap. To durably relieve pressure on the current account, we believe that India will need to redouble efforts to boost manufacturing and exports.",
+        "bbox": [
+            359,
+            698,
+            924,
+            819
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "header",
+        "text": "MS | RESEARCH",
+        "bbox": [
+            63,
+            45,
+            250,
+            61
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "header",
+        "text": "IDEA",
+        "bbox": [
+            901,
+            47,
+            933,
+            60
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "page_number",
+        "text": "6",
+        "bbox": [
+            66,
+            968,
+            76,
+            977
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "chart",
+        "img_path": "images/34adbd6314243121ab8906050183d89edb687dfde043bfaa25912e0cb4bf1309.jpg",
+        "content": "| Date   | Value  |\n|--------|--------|\n| Mar-16 | -1.0%  |\n| Mar-17 | -0.5%  |\n| Mar-18 | -1.5%  |\n| Mar-19 | -2.5%  |\n| Mar-20 | -1.0%  |\n| Mar-21 | 1.3%   |\n| Mar-22 | -1.0%  |\n| Mar-23 | -2.5%  |\n| Mar-24 | -0.5%  |\n| Mar-25 | -0.8%  |\n| Mar-26 | -0.6%  |\n| F27E   | -1.8%  |\n| F28E   | -1.2%  |",
+        "chart_caption": [
+            "Exhibit 10: Current account deficit expected to widen to 1.8% of GDP by F27",
+            "Current account balance (% of GDP, 4Q trailing sum)"
+        ],
+        "chart_footnote": [
+            "Source: Haver, MS forecasts"
+        ],
+        "sub_type": "line chart",
+        "bbox": [
+            68,
+            171,
+            480,
+            329
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "chart",
+        "img_path": "images/c48c9cb9151c4a56336ebc12541e5d3881d2222ccd14209b050b0eec8731931e.jpg",
+        "content": "| Month    | Total exports ex semiconductors ex fuels | Intermediate (35%) | Capital goods (23%) | Consumer goods (26%) | Passenger cars (RS, 2%) |\n|----------|-------------------------------------------|--------------------|---------------------|----------------------|-------------------------|\n| Dec-24   | 100                                       | 100                | 100                 | 100                  | 95                      |\n| Jan-25   | 101                                       | 103                | 101                 | 101                  | 97                      |\n| Feb-25   | 101                                       | 102                | 101                 | 101                  | 98                      |\n| Mar-25   | 101                                       | 102                | 101                 | 101                  | 99                      |\n| Apr-25   | 101                                       | 101                | 101                 | 101                  | 100                     |\n| May-25   | 102                                       | 101                | 102                 | 102                  | 105                     |\n| Jun-25   | 102                                       | 100                | 102                 | 102                  | 104                     |\n| Jul-25   | 103                                       | 101                | 103                 | 103                  | 105                     |\n| Aug-25   | 104                                       | 102                | 104                 | 104                  | 106                     |\n| Sep-25   | 105                                       | 103                | 105                 | 105                  | 108                     |\n| Oct-25   | 106                                       | 104                | 106                 | 106                  | 110                     |\n| Nov-25   | 108                                       | 106                | 108                 | 108                  | 113                     |\n| Dec-25   | 109                                       | 107                | 109                 | 109                  | 136                     |\n| Jan-26   | 109                                       | 108                | 109                 | 109                  | 137                     |\n| Feb-26   | 108                                       | 107                | 108                 | 108                  | 138                     |\n| Mar-26   | 107                                       | 106                | 107                 | 97                   | 139                     |\n| Apr-26   | 102                                       | 101                | 106                 | 97                   | 136                     |",
+        "chart_caption": [
+            "Exhibit 11: Nascent recovery in non-tech exports so far"
+        ],
+        "chart_footnote": [
+            "Source: Haver, MS"
+        ],
+        "sub_type": "line chart",
+        "bbox": [
+            516,
+            132,
+            933,
+            319
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "header",
+        "text": "MS | RESEARCH",
+        "bbox": [
+            65,
+            45,
+            250,
+            61
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "header",
+        "text": "IDEA",
+        "bbox": [
+            901,
+            47,
+            933,
+            59
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "footer",
+        "text": "MS",
+        "bbox": [
+            66,
+            967,
+            240,
+            978
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "page_number",
+        "text": "7",
+        "bbox": [
+            921,
+            968,
+            931,
+            977
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "The medium-term solution: Boosting manufacturing and exports",
+        "text_level": 2,
+        "bbox": [
+            63,
+            111,
+            866,
+            176
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "Boosting manufacturing and goods exports is the medium-term solution to India's balance of payments problem, in our view. Manufacturing can address the current account and capital account in one move – by narrowing the current account and attracting capital flows.",
+        "bbox": [
+            361,
+            194,
+            929,
+            267
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "We see three key reasons for this:",
+        "text_level": 2,
+        "bbox": [
+            362,
+            279,
+            589,
+            295
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "list",
+        "sub_type": "text",
+        "list_items": [
+            "1) Funding the capex super-cycle",
+            "2) AI is challenging the services export sector approach",
+            "3) Solving the growing jobs challenge"
+        ],
+        "bbox": [
+            364,
+            305,
+            714,
+            375
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "1) Funding the capex super-cycle",
+        "text_level": 2,
+        "bbox": [
+            362,
+            385,
+            666,
+            407
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "Asia including India's capex cycle will benefit from the four structural drivers: Asia is in the midst of an industrial and capex super-cycle. There are four structural drivers – AI and AI related infrastructure, energy security and transition, defense, and onshoring of industrial supply chains – which will lead to a sustained rise in Asia's capex over the medium term. For India, these drivers will also present opportunities as they can help catalyse a capex cycle. In particular, our India economist sees India's investment being led by key sectors such as railway, electronics and semiconductor manufacturing, and data centers. The broader strategy is to leverage public capex, incentive schemes and domestic market scale to attract global FDI (India Economics: Additional Levers to Support Capex Upcycle, May 13, 2026).",
+        "bbox": [
+            359,
+            425,
+            931,
+            599
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "chart",
+        "img_path": "images/5a9afa8e5e362c711dcb0ec9b6ecb26624cc2f3b55ff74790c96392252b6883e.jpg",
+        "content": "| Year | Investment (US$trn) |\n| ---- | ------------------- |\n| 2025E | 11 |\n| 2030E | 16 |",
+        "chart_caption": [
+            "Exhibit 12: Asia headed towards a multi-year capex super-cycle"
+        ],
+        "chart_footnote": [
+            "Source: CEIC, Haver, IEA, Lowy Institute, MS estimates; Note: \\*We exclude China real estate capex given the structural decline in property demand."
+        ],
+        "sub_type": "line chart",
+        "bbox": [
+            71,
+            632,
+            475,
+            811
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "image",
+        "img_path": "images/7c8cf0de4709f2f0b51f2c597baf4c6e5311bfd70faf196e1bad0da52d9be60c.jpg",
+        "image_caption": [
+            "Exhibit 13: Asia's industrial and capex cycle is backed by multiple new structural demand drivers"
+        ],
+        "image_footnote": [
+            "Source: MS"
+        ],
+        "content": "Asia's industrial and capex cycle is backed by multiple drivers\nAI and AI-related infrastructure\nEnergy and energy transition\nDefense\nSpillover to broader industrial capex",
+        "sub_type": "text_image",
+        "bbox": [
+            511,
+            647,
+            933,
+            931
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "header",
+        "text": "MS | RESEARCH",
+        "bbox": [
+            63,
+            44,
+            250,
+            61
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "header",
+        "text": "IDEA",
+        "bbox": [
+            901,
+            47,
+            933,
+            60
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "page_number",
+        "text": "8",
+        "bbox": [
+            66,
+            968,
+            76,
+            977
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "chart",
+        "img_path": "images/a3ff4eeb8c85cc0ca3058ec04b6c9b8a37a5db70937a41bc9dfe2915611b6eed.jpg",
+        "content": "| Date   | Value |\n|--------|-------|\n| Apr-26 | 29%   |",
+        "chart_caption": [
+            "Exhibit 14: Our equipment capex proxy – capital goods imports – is accelerating to beyond 2017-18 highs (excluding the pickup in 2021-22 driven by Covid base effects)"
+        ],
+        "chart_footnote": [
+            "Source: Haver, MS"
+        ],
+        "sub_type": "line chart",
+        "bbox": [
+            63,
+            161,
+            477,
+            345
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "chart",
+        "img_path": "images/e3db8a14aaad425c9cc13fa77ccfc1b0a9a0ecc2315c46af064c92f2d3f0a027.jpg",
+        "content": "| Year   | Bear  | Base  | Bull  |\n|--------|-------|-------|-------|\n| F2014  |       | 33.5% |       |\n| F2015  |       | 33.2% |       |\n| F2016  |       | 32.8% |       |\n| F2017  |       | 33.0% |       |\n| F2018  |       | 33.5% |       |\n| F2019  |       | 33.8% |       |\n| F2020  |       | 31.5% |       |\n| F2021  |       | 28.5% |       |\n| F2022  |       | 34.5% |       |\n| F2023  |       | 34.8% |       |\n| F2024  |       | 34.7% |       |\n| F2025  |       | 34.8% |       |\n| F2026  |       | 34.9% |       |\n| F2027  |       | 35.0% |       |\n| F2028  |       | 35.5% |       |\n| F2029  |       | 36.5% |       |\n| F2030  | 35.0% | 37.7% | 40.8% |\n| F2031  |       | 37.5% |       |",
+        "chart_caption": [
+            "Exhibit 15: In India, we also expect investment to GDP to rise"
+        ],
+        "chart_footnote": [
+            "Source: CEIC, MS, MS estimates"
+        ],
+        "sub_type": "line chart",
+        "bbox": [
+            511,
+            128,
+            923,
+            324
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "But India faces a funding challenge: India faces a critical constraint in that it will need to secure the funding to capitalise on this opportunity. For an extended period of time, India's domestic savings trend has not been enough to cover its investments, resulting in a persistent current account deficit. While savings to GDP has risen from 29% in F21 to an estimated 34% in F26, the rise in investment to GDP has been sharper at 28% to 35% over the same period. Typically, this funding is sourced from two channels: (1) a rise in domestic savings supported by export income, and/or (2) a rise in external financing or capital inflows. But on both fronts, India has to contend with existing and future challenges.",
+        "bbox": [
+            361,
+            369,
+            933,
+            511
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "chart",
+        "img_path": "images/50bd40da4afbb63ce077aa27d9157c086721678269b129616976df5d7766e593.jpg",
+        "content": "| Date   | Korea | US  | China | EA  | India | Japan |\n|--------|-------|-----|-------|-----|-------|-------|\n| Apr-24 | -     | 5%  | 10%   | -5% | 5%    | -5%   |\n| Jul-24 | -     | 10% | 10%   | -5% | 10%   | -5%   |\n| Oct-24 | 10%   | 15% | 5%    | 5%  | 10%   | 5%    |\n| Jan-25 | 10%   | 15% | 5%    | 5%  | 10%   | 5%    |\n| Apr-25 | 10%   | 20% | 5%    | 10% | 10%   | 10%   |\n| Jul-25 | 10%   | 15% | 5%    | 15% | 5%    | 10%   |\n| Oct-25 | 5%    | 10% | 5%    | 10% | 5%    | 5%    |\n| Jan-26 | 10%   | 25% | 20%   | 15% | 5%    | 5%    |\n| Apr-26 | 23%   | 34% | 34%   | 20% | 7%    | 14%   |",
+        "chart_caption": [
+            "Exhibit 16: We see a capex super-cycle playing out"
+        ],
+        "chart_footnote": [
+            "Source: CEIC, Haver, MS"
+        ],
+        "sub_type": "line chart",
+        "bbox": [
+            66,
+            545,
+            486,
+            733
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "chart",
+        "img_path": "images/9e1021ae6ec8a3c4b25d92019a460b2320865665fa7da9b002d86822341b1046.jpg",
+        "content": "| Date   | Real GFCF (%) | Capital goods imports (%Y, 3mma, RS) |\n|--------|---------------|--------------------------------------|\n| Apr-26 | 10.8          | 6.9                                  |",
+        "chart_caption": [
+            "Exhibit 17: India's capex cycle will benefit from the four structural drivers"
+        ],
+        "chart_footnote": [
+            "Source: CEIC, Haver, MS"
+        ],
+        "sub_type": "line chart",
+        "bbox": [
+            511,
+            561,
+            933,
+            751
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "2) AI is challenging the services export sector approach",
+        "text_level": 2,
+        "bbox": [
+            361,
+            777,
+            875,
+            799
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "AI posing headwinds to India's services exports: India has been utilizing the approach of deploying a large, skilled workforce into its services exports sector for some time now. The IT sector (including Global Capability Centres) now employs $8.3\\%$ of people in the formal, organised sector. More importantly, IT and GCC services exports are an important source of India's export dollar revenues, representing US\\$321bn or $7.9\\%$ of GDP. India's global share in services exports has now risen to $4.7\\%$ , vs. $3.7\\%$ in Dec-19. However, this approach is now coming under pressure from the rise of AI. Our India technology analyst, Gaurav",
+        "bbox": [
+            359,
+            816,
+            933,
+            940
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "header",
+        "text": "MS | RESEARCH",
+        "bbox": [
+            65,
+            45,
+            250,
+            61
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "header",
+        "text": "IDEA",
+        "bbox": [
+            901,
+            47,
+            933,
+            59
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "footer",
+        "text": "MS",
+        "bbox": [
+            65,
+            967,
+            241,
+            978
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "page_number",
+        "text": "9",
+        "bbox": [
+            921,
+            968,
+            931,
+            977
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "Rateria, expects AI disruption to lead to a period of slower growth in IT services exports (4.4% vs. the preceding five years' average of 9.8%) and a flat trend in the labour force (see India – Micro Meets Macro: Future of Work: AI and India's IT Sector: Structural Shift with Macro Consequences, 10 May 2026).",
+        "bbox": [
+            361,
+            106,
+            918,
+            174
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "chart",
+        "img_path": "images/9e527abcb522d342cb35304f8c60978afe6b64d74cb0790920d27a36f1bf70ea.jpg",
+        "content": "| Year   | India global services export share (%) |\n| ------ | --------------------------------------- |\n| Mar-26 | 4.7%                                    |",
+        "chart_caption": [
+            "Exhibit 18: India has significantly increased services exports share over the last decade"
+        ],
+        "chart_footnote": [
+            "Source: CEIC, Haver, MS"
+        ],
+        "sub_type": "line chart",
+        "bbox": [
+            66,
+            226,
+            486,
+            398
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "chart",
+        "img_path": "images/9f42323fbf888c47e6d945a1499a589eea957fa942d6a7e2c482531b6a08e8d8.jpg",
+        "content": "| Date   | India global goods export share (%) |\n|--------|-------------------------------------|\n| Mar-26 | 1.7                                 |",
+        "chart_caption": [
+            "Exhibit 19: India has not gained global goods export market share"
+        ],
+        "chart_footnote": [
+            "Source: CEIC, Haver, MS"
+        ],
+        "sub_type": "line chart",
+        "bbox": [
+            511,
+            226,
+            928,
+            398
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "table",
+        "img_path": "images/67b64824faba40dba3f4feb0d927cb296c48c12ddfc0db3686a08ddb16d46d70.jpg",
+        "table_caption": [
+            "Exhibit 20: Investors are concerned over AI weighing on India's services exports and current account: Our India IT team expects a period of adjustment for India's IT services sector..."
+        ],
+        "table_footnote": [],
+        "table_body": "<table><tr><td>IT services export revenue</td><td>%CAGR</td></tr><tr><td>Past 10Y CAGR</td><td>8.5%</td></tr><tr><td>Base case 5YCAGR</td><td>4.4%</td></tr><tr><td>Bull case 5YCAGR</td><td>7.4%</td></tr><tr><td>Bear case 5YCAGR</td><td>1.4%</td></tr></table>",
+        "bbox": [
+            66,
+            479,
+            483,
+            748
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "table",
+        "img_path": "images/84b0a5b56e42d1a652793dfa853466b6d70ad9aaf65f53c7b946d8cbb386bd27.jpg",
+        "table_caption": [
+            "Exhibit 21: ...but for IT services exports to continue to grow"
+        ],
+        "table_footnote": [
+            "Source: Haver, MS estimates",
+            "Source: Haver, MS estimates"
+        ],
+        "table_body": "<table><tr><td>IT services export revenue</td><td>US$bn</td></tr><tr><td>F2026</td><td>242</td></tr><tr><td>Base case</td><td>299</td></tr><tr><td>Bull case</td><td>345</td></tr><tr><td>Bear case</td><td>259</td></tr></table>",
+        "bbox": [
+            511,
+            444,
+            933,
+            712
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "3) Solving the growing jobs challenge",
+        "text_level": 2,
+        "bbox": [
+            361,
+            784,
+            712,
+            805
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "India's jobs challenge is growing: In an earlier report, we highlighted that one of India's key medium-term issues is whether its current growth rate can fully absorb its growing labour force (see The Viewpoint: How to Solve India's Jobs Problem, 12 Jan 2025). Over the next decade, the UN estimates that 85mn people are expected to join the workforce even if participation rates are assumed to be unchanged. Additionally, the high share of primary sector employment and still relatively high poverty rate (share of population living below the World Bank's lower middle income poverty line) suggests there is already significant underemployment at the starting point. As such, we estimate that India will at least require sustaining real GDP growth of 7.4% over the next decade just to generate enough jobs to fully absorb the new additions to the workforce (assuming participation rates remain unchanged). To also address the underemployment issue, India would need an even higher real GDP growth rate of 12-14% over the medium term. That in turn will require a higher investment to GDP ratio. This is especially the case given headwinds to services exports.",
+        "bbox": [
+            359,
+            823,
+            931,
+            946
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "header",
+        "text": "MS | RESEARCH",
+        "bbox": [
+            63,
+            45,
+            250,
+            61
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "header",
+        "text": "IDEA",
+        "bbox": [
+            901,
+            47,
+            933,
+            59
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "page_number",
+        "text": "10",
+        "bbox": [
+            66,
+            968,
+            83,
+            977
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            361,
+            106,
+            924,
+            227
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "chart",
+        "img_path": "images/8a95d328083ab22144ee843eaa594e79acb6d5ec1ad78c4193bdd1104c81b762.jpg",
+        "content": "| Region | Working age population as of 2026 (million) | Addition to working age population by 2036E (vs. 2026 level, mn) (%) |\n| :--- | :--- | :--- |\n| World | 5,421 | 396 (100%) |\n| Sub-Saharan Africa | 740 | 228 (58%) |\n| RoW | 867 | 87 (22%) |\n| India | 1,013 | 85 (22%) |\n| North Africa and Middle East | 389 | 64 (16%) |\n| Latin America | 455 | 21 (5%) |\n| Indonesia | 197 | 12 (3%) |\n| US | 224 | 3 (1%) |\n| Japan | 72 | (-2%) -7 |\n| Europe | 474 | (-6%) -22 |\n| China | 990 | (-19%) -75 |",
+        "chart_caption": [
+            "Exhibit 22: India's working age population addition over the next decade is large, implying the need for faster job creation"
+        ],
+        "chart_footnote": [
+            "Source: Haver, MS"
+        ],
+        "sub_type": "bar chart",
+        "bbox": [
+            70,
+            279,
+            470,
+            467
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "chart",
+        "img_path": "images/0415f5aa58db64facacfc0b70ab9613ad323a6e0be3158c64d17bb3704407b56.jpg",
+        "content": "| Date   | India global goods export share (%) |\n|--------|-------------------------------------|\n| Mar-26 | 1.7                                 |",
+        "chart_caption": [
+            "Exhibit 23: India has not gained global goods export market share"
+        ],
+        "chart_footnote": [],
+        "sub_type": "line chart",
+        "bbox": [
+            511,
+            279,
+            928,
+            465
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "chart",
+        "img_path": "images/ccaf0d73ea0b367f57cab14ae72b5b21c5684b66220769ad63d3ab518da088ac.jpg",
+        "content": "Global export share change since Dec-17\n| Region | Value (%) |\n| :--- | :--- |\n| Asia ex India | 2.8 |\n| Latam | 0.6 |\n| India | 0.0 |\n| US | -0.1 |\n| CEEMEA | -0.2 |\n| Canada | -0.3 |\n| UK | -0.6 |\n| RoW | -0.9 |\n| Euro Area | -1.5 |",
+        "chart_caption": [
+            "Exhibit 24: For India to maximise its benefit from this multi-year super-cycle, there is a need to boost its competitiveness in manufacturing..."
+        ],
+        "chart_footnote": [
+            "Source: CEIC, Haver, MS"
+        ],
+        "sub_type": "bar chart",
+        "bbox": [
+            70,
+            559,
+            473,
+            734
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "chart",
+        "img_path": "images/3562b774e3a51668b752e0477a47e0102b1da087f14af7529c57eae42ac4bccf.jpg",
+        "content": "Global export share change since Dec-17\n| Country/Region | Change (%) |\n| :--- | :--- |\n| China | 2.1 |\n| Taiwan | 0.9 |\n| Vietnam | 0.7 |\n| Malaysia | 0.3 |\n| Singapore | 0.2 |\n| Indonesia | 0.1 |\n| Australia | 0.0 |\n| Thailand | 0.0 |\n| India | 0.0 |\n| Philippines | -0.1 |\n| Hong Kong | -0.1 |\n| Korea | -0.3 |\n| Japan | -1.1 |",
+        "chart_caption": [
+            "Exhibit 25: ...and lift its market share in global exports"
+        ],
+        "chart_footnote": [
+            "Source: CEIC, Haver, MS"
+        ],
+        "sub_type": "bar chart",
+        "bbox": [
+            511,
+            523,
+            923,
+            700
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "Boosting manufacturing exports is the key to solving the jobs challenge: In our view, this makes the task of boosting manufacturing even more urgent than before. Indeed, considering the starting point of per capita incomes, India's industry to GDP ratio should have been rising rather than declining as it did over the past 17 years. Other Asian economies were able to target and achieve higher growth rates to reap the demographics dividend, by focusing on the manufacturing sector and goods exports to get higher employment, incomes and saving.",
+        "bbox": [
+            361,
+            767,
+            924,
+            888
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "The manufacturing sector also generates significant positive spillovers.",
+        "text_level": 2,
+        "bbox": [
+            362,
+            904,
+            828,
+            919
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "1. The secondary sector tends to have comparable or even higher employment elasticity vs. the services sector. Second, World Bank analysis covering 51 OECD and non-OECD countries from 1995-2018 show that employment growth linked to exports has tended to exceed employment growth linked to domestic demand. Within exporting sectors, it is the case that manufacturing goods exports has the highest employment elasticity.",
+        "bbox": [
+            390,
+            930,
+            890,
+            946
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "header",
+        "text": "MS | RESEARCH",
+        "bbox": [
+            63,
+            45,
+            250,
+            61
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "header",
+        "text": "IDEA",
+        "bbox": [
+            901,
+            47,
+            933,
+            59
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "footer",
+        "text": "MS",
+        "bbox": [
+            65,
+            967,
+            240,
+            978
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "page_number",
+        "text": "11",
+        "bbox": [
+            916,
+            968,
+            929,
+            977
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            408,
+            106,
+            929,
+            191
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "2. More importantly, there is also significant indirect job creation that emerges from a rise in manufacturing exports. Every job created in the manufacturing exports sector will create two other jobs in related business services sectors such as transport and logistics, marketing and design services, R&D.",
+        "bbox": [
+            390,
+            195,
+            926,
+            263
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "chart",
+        "img_path": "images/b9698d698e7efea9e602d41b926f809bd9fd43dde4177c2b9706ae11d9b55889.jpg",
+        "content": "Export-employment and export-income elasticities\n| Category | Employment | Total labor income |\n|---|---|---|\n| Commodities | 0.065 | 0.068 |\n| Limited manufacturing | 0.102 | 0.171 |\n| Advanced manufacturing and services | 0.142 | 0.219 |\n| Innovative activites | 0.023 | 0.081 |",
+        "chart_caption": [
+            "Exhibit 26: World Bank analysis shows global employment elasticities tend to be higher for the manufacturing exports sector..."
+        ],
+        "chart_footnote": [
+            "Source: World Bank"
+        ],
+        "sub_type": "bar chart",
+        "bbox": [
+            63,
+            338,
+            483,
+            566
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "chart",
+        "img_path": "images/173132e6c33bd1c2a812eb5e37f28eda9ca7b49bff924c7d9352447e29ad732c.jpg",
+        "content": "| Category | Exports | Intermediate imports | Final imports |\n|---|---|---|---|\n| Agriculture, fishing | -0.1 | -0.1 | -0.2 |\n| Mining | -0.3 | -0.4 | -0.1 |\n| Manufacturing | 0.5 | 0.7 | 0.5 |\n| Mfg - low tech | 0.35 | 0.3 | 1.05 |\n| Mfg - medium tech | 0.3 | -0.1 | -0.1 |\n| Mfg - high-med. tech | 0.65 | 0.6 | 0.2 |\n| Business services | -0.1 | -0.1 | 0.2 |\n| Other services | 0.1 | -0.1 | -0.1 |",
+        "chart_caption": [
+            "Exhibit 27: ...especially in high-to-medium technology intensity exports"
+        ],
+        "chart_footnote": [
+            "Source: World Bank"
+        ],
+        "sub_type": "bar chart",
+        "bbox": [
+            511,
+            319,
+            931,
+            425
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "header",
+        "text": "MS | RESEARCH",
+        "bbox": [
+            63,
+            45,
+            250,
+            61
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "header",
+        "text": "IDEA",
+        "bbox": [
+            901,
+            47,
+            933,
+            60
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "page_number",
+        "text": "12",
+        "bbox": [
+            66,
+            968,
+            83,
+            978
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "What India needs – A systematic policy approach",
+        "text_level": 2,
+        "bbox": [
+            63,
+            112,
+            767,
+            142
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "Drawing on the key success factors from China's experience: India will have to find ways to replicate the model which China has successfully employed over the years. We believe that policy makers will have to come up with a systematic approach that involves targeting high growth sectors, taking steps to deliver an integrated supply chain, align the financial system so that lending can be directed towards high growth sectors, supercharge R&D spend, and skill the workforce. We discuss these factors in detail below:",
+        "bbox": [
+            361,
+            159,
+            931,
+            263
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "1. Taking steps to target high growth sectors",
+        "text_level": 2,
+        "bbox": [
+            362,
+            275,
+            777,
+            294
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "China has been able to foresee shifting trends in global demand and build capacity ahead of time: Over 2019–2024, China captured an estimated 19% of the increase in global exports across the world's top 15 fastest-growing export segments including EVs, batteries and solar panels. More recently, China is following the same playbook with the robotics sector, with the State Council flagging intelligent robots as a focus area in its national development plans as early as 2021.",
+        "bbox": [
+            361,
+            313,
+            918,
+            417
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "India has had some initial success with this approach too: For instance, the PLI scheme has yielded initial success with the smartphone sector. We think the challenge now is to scale this up meaningfully and target high growth sectors across low, medium and high value-added sectors in an aggressive manner. For instance, India could target sectors which are sizeable from a domestic demand perspective and where India has significant import dependence. Another way is to identify sectors which are sizable globally but also where India does not have a significant export market share currently. Finally, India could also target the growth sectors which will become globally important over the next 5 to 10 years. Our industrial research team notes that there has been a recent rollout of government incentive schemes in key energy / infra sectors like nuclear, coal gasification and carbon capture.",
+        "bbox": [
+            361,
+            428,
+            929,
+            619
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "2. Executing with an integrated supply chain and ecosystem",
+        "text_level": 2,
+        "bbox": [
+            362,
+            632,
+            913,
+            652
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "China has a comprehensive and integrated supply chain: Chinese industries tend to localize production of components, materials, and equipment, which reduces reliance on imports, lowers costs through economies of scale and allows for flexibility and customisation. Production also tends to be clustered geographically, enabling synergies through proximity.",
+        "bbox": [
+            361,
+            671,
+            916,
+            756
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "India needs to replicate the success with the electronics sector: Using the electronics sector as the example again, while it initially started with assembly, there has been a move towards indigenous production of more components over time. Where India's approach will differ from China is that while China has relied on its domestic entrepreneurs to form part of the ecosystem, India will have to partner with the corporate sector from outside India to get them to produce domestically.",
+        "bbox": [
+            361,
+            768,
+            929,
+            872
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "3. Having a financial system that is aligned to strategic goals",
+        "text_level": 2,
+        "bbox": [
+            362,
+            883,
+            921,
+            902
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "In China, local governments, banks and SOEs together form a risk capital pool that allows Chinese startups to scale up, experiment, and pursue long-term market leadership, often with the implicit assumption of short-term losses.",
+        "bbox": [
+            361,
+            922,
+            903,
+            938
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "header",
+        "text": "MS | RESEARCH",
+        "bbox": [
+            63,
+            45,
+            250,
+            61
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "header",
+        "text": "IDEA",
+        "bbox": [
+            901,
+            47,
+            933,
+            60
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "footer",
+        "text": "MS",
+        "bbox": [
+            65,
+            965,
+            241,
+            978
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "page_number",
+        "text": "13",
+        "bbox": [
+            916,
+            968,
+            931,
+            978
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            361,
+            106,
+            926,
+            138
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "In India's context, we think that there will be a need to scale up priority sector lending. Policy-makers will have to identify the most important sectors which need funding support, particularly if they are emerging as strong growth engines.",
+        "bbox": [
+            361,
+            150,
+            931,
+            202
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "4. Focusing on R&D and innovation",
+        "text_level": 2,
+        "bbox": [
+            362,
+            213,
+            689,
+            232
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "China's R&D spending to GDP has risen from $2.2\\%$ in 2019 to $2.8\\%$ in 2025, above the OECD average of $2.7\\%$ .",
+        "bbox": [
+            361,
+            251,
+            906,
+            284
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "India's R&D spending to GDP has been stagnant at $0.6 - 0.7\\%$ of GDP. Policy-makers will likely have to roll out major tax incentives to supercharge R&D spending so that it can be uplifted significantly in a short span of time.",
+        "bbox": [
+            361,
+            295,
+            924,
+            347
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "5. Ensuring that its workforce is adequately skilled",
+        "text_level": 2,
+        "bbox": [
+            362,
+            358,
+            831,
+            378
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "In China, the number of university graduates has increased $42\\%$ , from 8.2mn in 2019 to 11.7mn in 2024. Around $42\\%$ of China's annual college graduates have STEM degrees, with this talent pipeline feeding directly into research labs, tech companies, and factories.",
+        "bbox": [
+            361,
+            397,
+            928,
+            448
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "Expanding the skilled labour pool in India remains key: At 34%, India already has a relatively high share of tertiary graduates with STEM degrees. That said, the gross tertiary education enrollment ratio remains relatively low at 34%, vs. 77% in China and the global average of 44%, while literacy rates and vocational training in the current labour force also remain relatively low compared to EM peers. Existing skilling programmes such as the Skill India Mission have yielded results and recent budgets have included additional funding for new schemes – such as central government funding for the training of 2 million workers over a five-year period and for upgrading 1,000 Industrial Training Institutes in the F2025 budget. That said, there were limited additional measures in the F2027 budget, and so there is scope to do more and to accelerate the pace on this front.",
+        "bbox": [
+            361,
+            458,
+            931,
+            633
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "The participation of states is of paramount importance",
+        "text_level": 2,
+        "bbox": [
+            362,
+            645,
+            870,
+            664
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "One key area in which India is different from China currently is the level of state government participation. While the central government has already been taking steps, we have emphasized before that there needs to be a systematic improvement in the ease of doing business across all levels of government. The central government will have to take the lead in coordinating these efforts to ensure active participation across states.",
+        "bbox": [
+            361,
+            684,
+            921,
+            770
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "One such area where coordination is needed is in infrastructure investment to ensure efficient last-mile linkages. Major infrastructure plans have already been drawn up, and while the size of the infrastructure spending has picked up in recent years, there remains scope to bring these projects to fruition in a speedier manner. There is also scope for better coordination amongst government agencies, central and state governments in order to bring about a seamless execution – especially in the areas of improving the last-mile connectivity of major infrastructure projects. For instance, the feeder routes to connect flagship infrastructure projects like sea bridges and airports are still taking time to be constructed, which limits the reaping of the full benefits of these flagship projects.",
+        "bbox": [
+            361,
+            781,
+            921,
+            936
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "header",
+        "text": "MS | RESEARCH",
+        "bbox": [
+            63,
+            45,
+            250,
+            61
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "header",
+        "text": "IDEA",
+        "bbox": [
+            901,
+            47,
+            933,
+            59
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "page_number",
+        "text": "14",
+        "bbox": [
+            66,
+            968,
+            83,
+            977
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "To this end, the Gati Shakti program will be an important initiative and steps have been taken to bring together the plans of the state, division and district levels, but implementation will be key to watch.",
+        "bbox": [
+            361,
+            106,
+            910,
+            157
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "In terms of actual implementation, one way is to have a 500-member taskforce to plan and a 10,000-member taskforce to guide, coordinate and execute in partnership with the state governments. At the same time, India should unleash competitive forces, lower barriers to entry, and create conditions conductive to the flourishing of small and medium-sized enterprises.",
+        "bbox": [
+            359,
+            167,
+            933,
+            255
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "chart",
+        "img_path": "images/47b5a0d94a57bd7bdb419369fecaf7080c53a2c5d522559fa637d8af62a0ff96.jpg",
+        "content": "| Year | Value |\n| ---- | ----- |\n| 2018 | 12%   |\n| 2019 | 13%   |\n| 2020 | 21%   |\n| 2021 | 20.5% |\n| 2022 | 20.3% |\n| 2023 | 17.5% |\n| 2024 | 19%   |",
+        "chart_caption": [
+            "Exhibit 28: China's global export market share gains have been propelled by gains in fast-growing segments"
+        ],
+        "chart_footnote": [
+            "Source: WITS, MS; Note: 2024 estimated by MS. We identified the top 15 fastest-growing export segments at the HS four-digit level, which recorded the largest increases in global export market between 2019 and 2024. These segments include semiconductors, motor vehicles & parts, computers, mobile phones, vaccines, packaged medicines, batteries, trucks, electrical transformers & power converters, electrical wires & cables, semiconductor manufacturing equipment, medical equipment, tractors, semiconductor components, and industrial robots."
+        ],
+        "sub_type": "line chart",
+        "bbox": [
+            66,
+            308,
+            473,
+            470
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "chart",
+        "img_path": "images/67f2de2c401969024c4bb8e85a399d824c58367b62d66b1b0e133b4e6e5b433f.jpg",
+        "content": "China's share in incremental global export value increases in 2019-2024 in each category\n| Category | Value (%) |\n|---|---|\n| Semiconductor components | 73 |\n| Mobile phones | 65 |\n| Batteries | 60 |\n| Industrial robots, construction machinery | 50 |\n| Motor vehicles & parts | 33 |\n| Electrical transformers & power converters | 33 |\n| Tractors | 23 |\n| Semiconductors | 17 |\n| Electrical wires & cables | 16 |\n| Trucks | 14 |",
+        "chart_caption": [
+            "Exhibit 29: This is helped by China's ability to anticipate shifting global demand trends in high-growth emerging sectors like EVs, batteries, and robotics and build capacity to meet demand, even if ahead of time"
+        ],
+        "chart_footnote": [
+            "Source: WITS, MS; Note: Only top 10 products are shown."
+        ],
+        "sub_type": "bar chart",
+        "bbox": [
+            524,
+            343,
+            921,
+            534
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "header",
+        "text": "MS | RESEARCH",
+        "bbox": [
+            63,
+            45,
+            250,
+            61
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "header",
+        "text": "IDEA",
+        "bbox": [
+            901,
+            47,
+            933,
+            59
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "footer",
+        "text": "MS",
+        "bbox": [
+            66,
+            967,
+            241,
+            978
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "page_number",
+        "text": "15",
+        "bbox": [
+            916,
+            968,
+            931,
+            977
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "Disclosure Section",
+        "text_level": 2,
+        "bbox": [
+            63,
+            97,
+            282,
+            116
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "Information and opinions in MS were prepared or are disseminated by one or more of the following, which accept responsibility for its contents: MS Asia Limited, and/or MS Asia (Singapore) Pte. (Registration number 199206298Z) and/or MS Asia (Singapore) Securities Pte Ltd (Registration number 200008434H), regulated by the Monetary Authority of Singapore (which accepts legal responsibility for its contents and should be contacted with respect to any matters arising from, or in connection with, MS), and/or MS Taiwan Limited and/or MS & Co International plc, Seoul Branch, and/or MS Australia Limited (A.B.N. 67 003 734 576, holder of Australian financial services license No. 233742), and/or MS Wealth Management Australia Pty Ltd (A.B.N. 19 009 145 555, holder of Australian financial services license No. 240813, and/or MS India Company Private Limited having Corporate Identification No (CIN) U22990MH1998PTC115305, regulated by the Securities and Exchange Board of India (\"SEBI\") and holder of licenses as a Research Analyst (SEBI Registration No. INH000001105), Stock Broker (SEBI Stock Broker Registration No. INZ000244438), Merchant Banker (SEBI Registration No. INM000011203), and depository participant with National Securities Depository Limited (SEBI Registration No. IN-DP-NSDL-567-2021) having registered office at Altimus, Level 39 & 40, Pandurang Budhkar Marg, Worli, Mumbai 400018, India; Telephone no. +91-22-61181000; Compliance Officer Details: Mr. Tejarshi Hardas, Tel. No.: +91-22-61181000 or Email: tejarshi.hardas@morganstanley.com; Grievance officer details: Mr. Tejarshi Hardas, Tel. No.: +91-22-61181000 or Email: msic-compliance@morganstanley.com which accepts the responsibility for its contents and should be contacted with respect to any matters arising from, or in connection with, MS and their affiliates (collectively, \"MS\"). MS India Company Private Limited (MSICPL) may use AI tools in providing research services. All recommendations contained herein are made by the duly qualified research analysts; For important disclosures, stock price charts and equity rating histories regarding companies that are the subject of this report, please see the MS Disclosure Website at www.morganstanley.com/eqr/disclosures/webapp/generalresearch, or contact your investment representative or MS at 1585 Broadway, (Attention: Research Management), New York, NY, 10036 USA.",
+        "bbox": [
+            62,
+            118,
+            933,
+            325
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "For valuation methodology and risks associated with any recommendation, rating or price target referenced in this research report, please contact the Client Support Team as follows: US/Canada +1 800 303-2495; Hong Kong +852 2848-5999; Latin America +1 718 754-5444 (U.S.); London +44 (0)20-7425-8169; Singapore +65 6834-6860; Sydney +61 (0)2-9770-1505; Tokyo +81 (0)3-6836-9000. Alternatively you may contact your investment representative or MS at 1585 Broadway, (Attention: Research Management), New York, NY 10036 USA.",
+        "bbox": [
+            63,
+            327,
+            933,
+            368
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "Global Research Conflict Management Policy",
+        "text_level": 2,
+        "bbox": [
+            63,
+            375,
+            385,
+            390
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "MS has been published in accordance with our conflict management policy, which is available at www.morganstanley.com/institutional/research/conflictpolicies. A Portuguese version of the policy can be found at www.morganstanley.com.br",
+        "bbox": [
+            63,
+            391,
+            933,
+            417
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "Important Disclosures",
+        "text_level": 2,
+        "bbox": [
+            63,
+            426,
+            227,
+            439
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "MS is not acting as a municipal advisor and the opinions or views contained herein are not intended to be, and do not constitute, advice within the meaning of Section 975 of the Dodd-Frank Wall Street Reform and Consumer Protection Act.",
+        "bbox": [
+            63,
+            441,
+            931,
+            467
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "MS does not provide individually tailored investment advice. MS has been prepared without regard to the circumstances and objectives of those who receive it. MS recommends that investors independently evaluate particular investments and strategies, and encourages investors to seek the advice of a financial adviser. The appropriateness of an investment or strategy will depend on an investor's circumstances and objectives. The securities, instruments, or strategies discussed in MS may not be suitable for all investors, and certain investors may not be eligible to purchase or participate in some or all of them. MS is not an offer to buy or sell or the solicitation of an offer to buy or sell any security/instrument or to participate in any particular trading strategy. The value of and income from your investments may vary because of changes in interest rates, foreign exchange rates, default rates, prepayment rates, securities/instruments prices, market indexes, operational or financial conditions of companies or other factors. There may be time limitations on the exercise of options or other rights in securities/instruments transactions. Past performance is not necessarily a guide to future performance. Estimates of future performance are based on assumptions that may not be realized. If provided, and unless otherwise stated, the closing price on the cover page is that of the primary exchange for the subject company's securities/instruments.",
+        "bbox": [
+            62,
+            469,
+            933,
+            592
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "The fixed income research analysts, strategists or economists principally responsible for the preparation of MS have received compensation based upon various factors, including quality, accuracy and value of research, firm profitability or revenues (which include fixed income trading and capital markets profitability or revenues), client feedback and competitive factors. Fixed Income Research analysts', strategists' or economists' compensation is not linked to investment banking or capital markets transactions performed by MS or the profitability or revenues of particular trading desks.",
+        "bbox": [
+            62,
+            595,
+            933,
+            648
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "With the exception of information regarding MS, MS is based on public information. MS makes every effort to use reliable, comprehensive information, but we make no representation that it is accurate or complete. We have no obligation to tell you when opinions or information in MS change apart from when we intend to discontinue equity research coverage of a subject company. Facts and views presented in MS have not been reviewed by, and may not reflect information known to, professionals in other MS business areas, including investment banking personnel.",
+        "bbox": [
+            62,
+            650,
+            933,
+            704
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "MS may make investment decisions that are inconsistent with the recommendations or views in this report.",
+        "bbox": [
+            63,
+            705,
+            624,
+            718
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "To our readers based in Taiwan or trading in Taiwan securities/instruments: Information on securities/instruments that trade in Taiwan is distributed by MS Taiwan Limited (\"MSTL\"). Such information is for your reference only. The reader should independently evaluate the investment risks and is solely responsible for their investment decisions. MS may not be distributed to the public media or quoted or used by the public media without the express written consent of MS. Any non-customer reader within the scope of Article 7-1 of the Taiwan Stock Exchange Recommendation Regulations accessing and/or receiving MS is not permitted to provide MS to any third party (including but not limited to related parties, affiliated companies and any other third parties) or engage in any activities regarding MS which may create or give the appearance of creating a conflict of interest. Information on securities/instruments that do not trade in Taiwan is for informational purposes only and is not to be construed as a recommendation or a solicitation to trade in such securities/instruments. MSTL may not execute transactions for clients in these securities/instruments.",
+        "bbox": [
+            62,
+            719,
+            933,
+            815
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "MS is not incorporated under PRC law and the research in relation to this report is conducted outside the PRC. MS does not constitute an offer to sell or the solicitation of an offer to buy any securities in the PRC. PRC investors shall have the relevant qualifications to invest in such securities and shall be responsible for obtaining all relevant approvals, licenses, verifications and/or registrations from the relevant governmental authorities themselves. Neither this report nor any part of it is intended as, or shall constitute, provision of any consultancy or advisory service of securities investment as defined under PRC law. Such information is provided for your reference only.",
+        "bbox": [
+            62,
+            816,
+            933,
+            871
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "MS is disseminated in Brazil by MS C.T.V.M. S.A. located at Av. Brigadeiro Faria Lima, 3600, 6th floor, São Paulo - SP, Brazil; and is regulated by the Comissão de Valores Mobiliários; in Mexico by MS México, Casa de Bolsa, S.A. de C.V which is regulated by Comision Nacional Bancaria y de Valores. Paseo de los Tamarindos 90, Torre 1, Col. Bosques de las Lomas Floor 29, 05120 Mexico City; in Japan by MS MUFG Securities Co., Ltd. and, for Commodities related research reports only, MS Capital Group Japan Co., Ltd; in Hong Kong by MS Asia Limited (which accepts responsibility for its contents) and by MS Bank Asia Limited; in Singapore by MS Asia (Singapore) Pte. (Registration number 199206298Z) and/or MS Asia (Singapore) Securities Pte Ltd (Registration number 200008434H), regulated by the Monetary Authority of",
+        "bbox": [
+            62,
+            872,
+            933,
+            941
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "header",
+        "text": "MS | RESEARCH",
+        "bbox": [
+            63,
+            45,
+            250,
+            61
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "header",
+        "text": "IDEA",
+        "bbox": [
+            901,
+            47,
+            933,
+            59
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "page_number",
+        "text": "16",
+        "bbox": [
+            66,
+            968,
+            83,
+            977
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "Singapore (which accepts legal responsibility for its contents and should be contacted with respect to any matters arising from, or in connection with, MS) and by MS Bank Asia Limited, Singapore Branch (Registration number T14FC0118); in Australia to \"wholesale clients\" within the meaning of the Australian Corporations Act by MS Australia Limited A.B.N. 67 003 734 576, holder of Australian financial services license No. 233742, which accepts responsibility for its contents; in Australia to \"wholesale clients\" and \"retail clients\" within the meaning of the Australian Corporations Act by MS Wealth Management Australia Pty Ltd (A.B.N. 19 009 145 555, holder of Australian financial services license No. 240813, which accepts responsibility for its contents; in Korea by MS & Co International plc, Seoul Branch; in India by MS India Company Private Limited having Corporate Identification No (CIN) U22990MH1998PTC115305, regulated by the Securities and Exchange Board of India (\"SEBI\") and holder of licenses as a Research Analyst (SEBI Registration No. INH000001105); Stock Broker (SEBI Stock Broker Registration No. INZ000244438), Merchant Banker (SEBI Registration No. INM000011203), and depository participant with National Securities Depository Limited (SEBI Registration No. IN-DP-NSDL-567-2021) having registered office at Altimus, Level 39 & 40, Pandurang Budhkar Marg, Worli, Mumbai 400018, India; Telephone no. +91-22-61181000; Compliance Officer Details: Mr. Tejarshi Hardas, Tel. No.: +91-22-61181000 or Email: tejarshi.hardas@morganstanley.com; Grievance officer details: Mr. Tejarshi Hardas, Tel. No.: +91-22-61181000 or Email: msic-compliance@morganstanley.com. MS India Company Private Limited (MSICPL) may use AI tools in providing research services. All recommendations contained herein are made by the duly qualified research analysts; in Canada by MS Canada Limited; in Germany and the European Economic Area where required by MS Europe S.E., regulated by Bundesanstalt fuer Finanzdienstleistungsaufsicht (BaFin) under the reference number 149169; in the United States by MS & Co. LLC, which accepts responsibility for its contents. MS & Co. International plc, authorized by the Prudential Regulation Authority and regulated by the Financial Conduct Authority and the Prudential Regulation Authority, disseminates in the UK research that it has prepared, and research which has been prepared by any of its affiliates, only to persons who (i) are investment professionals falling within Article 19(5) of the Financial Services and Markets Act 2000 (Financial Promotion) Order 2005 (as amended, the \"Order\"); (ii) are persons who are high net worth entities falling within Article 49(2)(a) to (d) of the Order; or (iii) are persons to whom an invitation or inducement to engage in investment activity (within the meaning of section 21 of the Financial Services and Markets Act 2000, as amended) may otherwise lawfully be communicated or caused to be communicated. RMB MS Proprietary Limited is a member of the JSE Limited and A2X (Pty) Ltd. RMB MS Proprietary Limited is a joint venture owned equally by MS International Holdings Inc. and RMB Investment Advisory (Proprietary) Limited, which is wholly owned by FirstRand Limited. The information in MS is being disseminated by MS Saudi Arabia, regulated by the Capital Market Authority in the Kingdom of Saudi Arabia, and is directed at Sophisticated investors only.",
+        "bbox": [
+            62,
+            104,
+            933,
+            381
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "The trademarks and service marks contained in MS are the property of their respective owners. Third-party data providers make no warranties or representations relating to the accuracy, completeness, or timeliness of the data they provide and shall not have liability for any damages relating to such data. The Global Industry Classification Standard (GICS) was developed by and is the exclusive property of MSCI and S&P.",
+        "bbox": [
+            62,
+            382,
+            933,
+            422
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "MS, or any portion thereof may not be reprinted, sold or redistributed without the written consent of MS.",
+        "bbox": [
+            63,
+            424,
+            718,
+            436
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "Indicators and trackers referenced in MS may not be used as, or treated as, a benchmark under Regulation EU 2016/1011, or any other similar framework.",
+        "bbox": [
+            63,
+            436,
+            874,
+            450
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "The information in MS is being communicated by MS & Co. International plc (DIFC Branch), regulated by the Dubai Financial Services Authority (the DFSA) or by MS & Co. International plc (ADGM Branch), regulated by the Financial Services Regulatory Authority Abu Dhabi (the FSRA), and is directed at Professional Clients only, as defined by the DFSA or the FSRA, respectively. The financial products or financial services to which this research relates will only be made available to a customer who we are satisfied meets the regulatory criteria of a Professional Client. A distribution of the different MS Research ratings or recommendations, in percentage terms for Investments in each sector covered, is available upon request from your sales representative.",
+        "bbox": [
+            62,
+            450,
+            933,
+            520
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "The information in MS is being communicated by MS & Co. International plc (QFC Branch), regulated by the Qatar Financial Centre Regulatory Authority (the QFCRA), and is directed at business customers and market counterparties only and is not intended for Retail Customers as defined by the QFCRA.",
+        "bbox": [
+            62,
+            521,
+            933,
+            547
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "As required by the Capital Markets Board of Turkey, investment information, comments and recommendations stated here, are not within the scope of investment advisory activity. Investment advisory service is provided exclusively to persons based on their risk and income preferences by the authorized firms. Comments and recommendations stated here are general in nature. These opinions may not fit to your financial status, risk and return preferences. For this reason, to make an investment decision by relying solely to this information stated here may not bring about outcomes that fit your expectations.",
+        "bbox": [
+            62,
+            549,
+            933,
+            603
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "Registration granted by SEBI and certification from the National Institute of Securities Markets (NISM) in no way guarantee performance of the intermediary or provide any assurance of returns to investors. Investment in securities market are subject to market risks. Read all the related documents carefully before investing.",
+        "bbox": [
+            62,
+            604,
+            933,
+            657
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "© 2026 MS",
+        "bbox": [
+            63,
+            688,
+            233,
+            704
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "header",
+        "text": "MS | RESEARCH",
+        "bbox": [
+            63,
+            45,
+            250,
+            61
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "header",
+        "text": "IDEA",
+        "bbox": [
+            901,
+            47,
+            933,
+            59
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "footer",
+        "text": "MS",
+        "bbox": [
+            65,
+            967,
+            238,
+            978
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "page_number",
+        "text": "17",
+        "bbox": [
+            916,
+            968,
+            931,
+            977
+        ],
+        "page_idx": 16
+    }
+]
