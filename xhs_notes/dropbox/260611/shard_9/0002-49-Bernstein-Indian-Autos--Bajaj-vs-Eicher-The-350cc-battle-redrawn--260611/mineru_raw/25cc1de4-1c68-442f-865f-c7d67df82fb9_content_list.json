@@ -1,0 +1,3369 @@
+[
+    {
+        "type": "text",
+        "text": "India Autos",
+        "text_level": 2,
+        "bbox": [
+            66,
+            130,
+            200,
+            148
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Indian Autos: Bajaj vs Eicher - The 350cc battle redrawn?",
+        "text_level": 1,
+        "bbox": [
+            66,
+            161,
+            807,
+            188
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "image",
+        "img_path": "images/7ab1d9ff3c51d3aa13c2c102f16bc41749b251e7e3b9144e972bc5e46cd1fb5e.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            66,
+            242,
+            124,
+            285
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Venugopal Garre",
+        "bbox": [
+            138,
+            248,
+            251,
+            260
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "+65 6326 7643",
+        "bbox": [
+            140,
+            261,
+            223,
+            270
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "venugopal.garre@bernsteinsg.com",
+        "bbox": [
+            140,
+            272,
+            310,
+            282
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "image",
+        "img_path": "images/979d329dfc0eb3dc87c30a4fe8fe148518bba68486fca6c0c269aa5b02896cd0.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            66,
+            292,
+            124,
+            335
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Param Shah",
+        "bbox": [
+            138,
+            297,
+            210,
+            309
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "+91 226 842 1417",
+        "bbox": [
+            140,
+            310,
+            238,
+            320
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "param.shah@bernsteinsg.com",
+        "bbox": [
+            140,
+            321,
+            289,
+            332
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Can Bajaj Triumph create as a large business as Royal Enfield now that both compete in the 350 cc segment? A critical question as Indian market is not deep enough to accommodate multiple players in that segment. Our thoughts in this report.",
+        "bbox": [
+            357,
+            239,
+            890,
+            285
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Bajaj Triumph was positioned in the 400cc segment trying to build a new sub category in the premium motorcycle segment but the GST cuts on sub-350cc motorcycles pushed Bajaj to migrate its Triumph lineup from 398cc to 349cc, placing it in the same engine segment as Royal Enfield.",
+        "bbox": [
+            357,
+            297,
+            901,
+            357
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Triumph's FY24-FY26 attempt didn't materialize not because the RE buyer considered the product and walked away. It failed because the price gap was wide enough that most buyers never seriously evaluated it in the first place. At INR50-80k above the Hunter and Classic 350, Triumph sat outside the comparison set entirely. The question of buyer preference - thump vs performance, community vs specification, Royal Enfield's cult vs Triumph's heritage - was never genuinely tested. And the 349cc migration has not answered it either, because prices have not moved dramatically enough to force a real decision. What it has done is place Triumph in the same category, same displacement as Royal Enfield and prices narrowing a bit. While being in the conversation is the necessary condition for winning, it is not the sufficient one.",
+        "bbox": [
+            356,
+            369,
+            906,
+            518
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Our dealer visits gave us a ground-level picture of where Triumph stands today. The showroom experience is genuinely premium - black interior, amber lighting, well-trained salespeople who speak fluently about specification and warranty. Royal Enfield's studios carry the same cult aesthetic. However, RE's demand is unambiguous - 3 month waiting periods on standard models, 45-60 days on make-to-order at a INR5-6k premium, a plant running near capacity. Triumph is delivering within forty-eight hours. The two showrooms are not yet playing the same game. One is managing demand. The other is building it.",
+        "bbox": [
+            356,
+            534,
+            911,
+            638
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "What Triumph does well is identifiable. The product is superior on measurable criteria - more power, a 5-year warranty against RE's 3 years standard, a 16k kms service interval that the salesperson cites as the most generous in the segment (vs 7-10k kms for others). Local manufacturing in Pune has addressed the spare parts anxiety that plagued the Triumph's CBU era. Cross-shopping is real and new - RE's Hunter salespeople are increasingly hearing the Triumph name in conversations. Among young, urban, self-funded, first-time premium buyers, Triumph's case is coherent and increasingly audible.",
+        "bbox": [
+            356,
+            651,
+            916,
+            755
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "What Triumph has not yet solved is equally clear. Beyond the top 8-10 cities, it is largely absent:\\~150 outlets versus Royal Enfield's \\~2,100 leaving Tier-2 India, which drives \\~40-45% of RE's volumes, mostly unaddressed. Service network anxiety has eased in metros but remains a barrier elsewhere. The resale market is thin and opaque. More importantly, Royal Enfield's grip on the Classic and Bullet buyer-rooted in community, habit, and cultural identity is not easily disrupted by better specifications. The path to winning, therefore, is explicit. Triumph needs distribution at scale, especially in Tier-2 markets, to translate participation into share. It needs the Bonneville 350 (to be launched probably this festive) to prove it can compete on emotion, not just engineering. And it needs Bajaj to commit for the long term.",
+        "bbox": [
+            356,
+            768,
+            921,
+            917
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "header",
+        "text": "BERNSTEIN",
+        "bbox": [
+            66,
+            34,
+            292,
+            63
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "header",
+        "text": "SG GROUP",
+        "bbox": [
+            66,
+            66,
+            292,
+            79
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "header",
+        "text": "11 June 2026",
+        "bbox": [
+            723,
+            54,
+            825,
+            71
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "footer",
+        "text": "See the Disclosure Appendix of this report for required disclosures, analyst certifications and other important information. Alternatively, visit our Global Research Disclosure Website.",
+        "bbox": [
+            65,
+            935,
+            699,
+            963
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "footer",
+        "text": "First Published: 10 Jun 2026 19:57 UTC Completion Date: 10 Jun 2026 19:57 UTC",
+        "bbox": [
+            66,
+            963,
+            584,
+            976
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "footer",
+        "text": "www.bernsteinresearch.com",
+        "bbox": [
+            777,
+            936,
+            918,
+            946
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "table",
+        "img_path": "images/ac9703eab31556b3cc104f6add43b4045be0d32d75d0a0eee947915401efe648.jpg",
+        "table_caption": [
+            "BERNSTEIN TICKER TABLE"
+        ],
+        "table_footnote": [
+            "O - Outperform, M - Market-Perform, U - Underperform, NR - Not Rated, CS - Coverage Suspended",
+            "Source: Bloomberg, Bernstein estimates and analysis."
+        ],
+        "table_body": "<table><tr><td rowspan=\"2\"></td><td colspan=\"4\">10 Jun 2026</td><td rowspan=\"2\">TTMRel.</td><td colspan=\"4\">Adjusted EPS</td><td colspan=\"3\">Adjusted P/E (x)</td></tr><tr><td>Rating</td><td>Cur</td><td>Closing Price</td><td>Price Target</td><td>Cur</td><td>2026A</td><td>2027E</td><td>2028E</td><td>2026A</td><td>2027E</td><td>2028E</td></tr><tr><td>BJAUT.IN (Bajaj Auto)</td><td>O</td><td>INR</td><td>10,144</td><td>11,500</td><td>(19.2)%</td><td>INR</td><td>385.97</td><td>409.45</td><td>471.05</td><td>26.3</td><td>24.8</td><td>21.5</td></tr><tr><td>EIM.IN (Eicher Motors)</td><td>M</td><td>INR</td><td>7,219.50</td><td>7,000.00</td><td>(0.6)%</td><td>INR</td><td>201.43</td><td>227.92</td><td>266.94</td><td>35.8</td><td>31.7</td><td>27.0</td></tr><tr><td>ASIAX</td><td></td><td></td><td>1,920.52</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr></table>",
+        "bbox": [
+            107,
+            97,
+            890,
+            191
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "INVESTMENT IMPLICATIONS",
+        "text_level": 2,
+        "bbox": [
+            104,
+            234,
+            328,
+            248
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "We rate Bajaj Auto as Outperform and have a Market-Perform on Eicher Motors. Bajaj's 2W premium franchise has more credibility today than at any point in the last decade. Triumph now competes in the same engine segment as that of Royal Enfield's, with a globally recognized brand, on a fully amortised platform. Eicher is a franchise that remains largely intact but is, for the first time, under competitive environment in a segment it has owned without contest. It's still early days for Triumph but it appears to have the ingredients for success and capture a large share of the market - and someone will then lose. The verdict is not yet out - as it needs scaling up products, distribution presence and deep management commitment.",
+        "bbox": [
+            102,
+            263,
+            887,
+            354
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "header",
+        "text": "Venugopal Garre +65 6326 7643 venugopal.garre@bernsteinsg.com",
+        "bbox": [
+            104,
+            39,
+            452,
+            51
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "header",
+        "text": "11 June 2026",
+        "bbox": [
+            821,
+            39,
+            890,
+            49
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "footer",
+        "text": "INDIA AUTOS",
+        "bbox": [
+            106,
+            940,
+            158,
+            949
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "footer",
+        "text": "BERNSTEIN | SG GROUP",
+        "bbox": [
+            679,
+            940,
+            861,
+            950
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "page_number",
+        "text": "2",
+        "bbox": [
+            882,
+            941,
+            890,
+            950
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "DETAILS",
+        "text_level": 2,
+        "bbox": [
+            104,
+            70,
+            174,
+            84
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "TRIUMPH IN INDIA - A DECADE OF TRYING",
+        "text_level": 2,
+        "bbox": [
+            104,
+            114,
+            405,
+            128
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "Triumph Motorcycles (Now in a partnership with Bajaj in India) arrived in India in 2013, initially as a completely built-up import CBU units assembled in the UK and Thailand, landed at Indian ports, sold to a wealthy niche buyer through a handful of premium dealerships. The positioning was unambiguously aspirational: Bonneville T100s, Tigers, Thunderbirds, priced in INR millions. It was largely a brand-establishment play - building awareness and credibility among the upper segment of Indian riders before the volume market became addressable. Triumph India in this phase had perhaps 20-30 dealerships and volumes that would have been rounding errors on any serious volume forecast.",
+        "bbox": [
+            102,
+            135,
+            890,
+            224
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "The strategic inflection came in 2020, when Bajaj Auto and Triumph Motorcycles UK announced a partnership that changed the nature of its India story. Bajaj would co-develop and manufacture a range of mid-sized Triumph motorcycles at its Chakan facility in Pune. The bikes would carry full Triumph branding and DNA - British styling, Triumph's engine character, genuine parent-company involvement in engineering but would be built in India at Indian costs and sold at Indian prices. The first product of this partnership, the Speed 400, launched in July 2023 at INR 230K. A scrambler variant followed. CBU imports of larger-displacement Triumphs - the Tiger 900, the Bonneville T120, the Rocket 3 - continued alongside the locally manufactured range, keeping the brand's aspirational ceiling intact.",
+        "bbox": [
+            102,
+            237,
+            890,
+            342
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "table",
+        "img_path": "images/4b5c81027c7c654fcb6d3bc92735040fa95a68d4f5f7df51b0527b3649c2519a.jpg",
+        "table_caption": [
+            "EXHIBIT 1: Triumph India - From CBU imports to local manufacture"
+        ],
+        "table_footnote": [
+            "Source: Company Data, News Articles, Bernstein analysis"
+        ],
+        "table_body": "<table><tr><td>Phase</td><td>Period</td><td>Model range</td><td>Manufacturing</td><td>Price range</td><td>Bajaj involvement</td></tr><tr><td>CBU import era</td><td>2013–2022</td><td>Tiger, Bonneville T100/T120, Thunderbird, Street Twin</td><td>UK / Thailand CBU</td><td>INR 700-1500K</td><td>None</td></tr><tr><td>Partnership transition</td><td>2020–2023</td><td>Announcement; product co-development</td><td>Chakan facility built out</td><td>-</td><td>Design and manufacturing JV signed</td></tr><tr><td>Local manufacture - Phase 1</td><td>2023–2025</td><td>Speed 400 (398cc), Scrambler 400 X (398cc)</td><td>Pune, Chakan - fully local</td><td>INR 230-270K</td><td>Full - engine, assembly, distribution</td></tr><tr><td>Local manufacture - Phase 2</td><td>April 2026 onwards</td><td>Speed T4, Speed 400, Scrambler 400 X, Bonneville 350 (TBD) - all at 349cc</td><td>Pune, Chakan - fully local</td><td>INR 199-265K</td><td>Full</td></tr><tr><td>CBU continues (large displacement)</td><td>Ongoing</td><td>Tiger 900, Speed Triple, Rocket 3</td><td>UK / Thailand CBU</td><td>INR 1200-2100K</td><td>Distribution only</td></tr></table>",
+        "bbox": [
+            106,
+            373,
+            857,
+            708
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "Three things about this history matter for the current analysis.",
+        "bbox": [
+            104,
+            746,
+            485,
+            760
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "list",
+        "sub_type": "text",
+        "list_items": [
+            "(1) The local manufacturing shift- the Chakan facility is running, the supply chain is established, and Triumph's new 349cc bikes are as domestic as Royal Enfield's. The spare parts anxiety that suppressed first-attempt conversions is being actively addressed; in our dealer visits we were explicitly told that parts manufactured in Pune are available across the network without the lead times that plagued the CBU era.",
+            "(2) The CBU halo - Tiger 900s and Rocket 3s in the same showroom as a Speed T4 is a genuine brand asset. The aspirational ceiling makes the entry-level price feel like a bargain rather than a compromise. Royal Enfield cannot replicate that architecture.",
+            "(3) The partnership gives Bajaj full commercial control over Triumph's India distribution, pricing, and expansion decisions. Whether Triumph's India dealer network grows from 150 to 400 outlets over the next three years is Bajaj's decision alone. That"
+        ],
+        "bbox": [
+            102,
+            773,
+            887,
+            917
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "header",
+        "text": "Venugopal Garre +65 6326 7643 venugopal.garre@bernsteinsg.com",
+        "bbox": [
+            104,
+            39,
+            452,
+            51
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "header",
+        "text": "11 June 2026",
+        "bbox": [
+            821,
+            39,
+            890,
+            50
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "footer",
+        "text": "INDIA AUTOS",
+        "bbox": [
+            104,
+            940,
+            158,
+            949
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "footer",
+        "text": "BERNSTEIN | SG GROUP",
+        "bbox": [
+            679,
+            941,
+            861,
+            950
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "page_number",
+        "text": "3",
+        "bbox": [
+            882,
+            941,
+            890,
+            950
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "fact concentrates our analytical attention precisely where it belongs.",
+        "bbox": [
+            102,
+            71,
+            527,
+            85
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "WHAT GST TAX CUTS ACTUALLY DID - FORCED REPOSITIONING, NOT STRATEGIC AGGRESSION",
+        "text_level": 2,
+        "bbox": [
+            102,
+            113,
+            763,
+            128
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "The tax change is widely understood as having created an opportunity for Bajaj. The more precise framing is that it created an obligation. Before September 2025, motorcycles across the 300-400cc range attracted broadly similar GST rates - there was no meaningful fiscal cliff between 349cc and 398cc. Bajaj's above-350cc positioning was a free commercial choice. New GST rates made it expensive to maintain.",
+        "bbox": [
+            102,
+            133,
+            883,
+            191
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "chart",
+        "img_path": "images/f3b84cbc290743c22bcf6ea68f1bba3a2789d8435b9d2f4c6ccc5b8f3fec292b.jpg",
+        "content": "| Engine Bracket | Pre tax cuts | Post tax cuts |\n| -------------- | ------------ | ------------- |\n| <=350cc        | 28%          | 18%           |\n| >350cc         | 28-31%       | 40%           |",
+        "chart_caption": [
+            "EXHIBIT 2: GST cuts announced in Aug'25"
+        ],
+        "chart_footnote": [
+            "Source: Government of India, News Articles, Bernstein analysis"
+        ],
+        "sub_type": "bar chart",
+        "bbox": [
+            109,
+            233,
+            879,
+            510
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "With the full 22 percentage point gap now operative, Bajaj's 398cc Triumph lineup was sitting at a structural price disadvantage that it had not budgeted for. The engineering response - boring the 398cc single to 349.13cc, retaining stroke and losing almost nothing in performance - was trivial in execution. The commercial unlock was also significant: 4-5 Triumph variants relaunched at 349cc in April 2026; the Pulsar NS400Z, Dominar 400, and KTM 390 Duke followed within weeks.",
+        "bbox": [
+            102,
+            553,
+            888,
+            613
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "header",
+        "text": "Venugopal Garre +65 6326 7643 venugopal.garre@bernsteinsg.com",
+        "bbox": [
+            104,
+            39,
+            452,
+            51
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "header",
+        "text": "11 June 2026",
+        "bbox": [
+            821,
+            39,
+            890,
+            49
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "footer",
+        "text": "INDIA AUTOS",
+        "bbox": [
+            106,
+            940,
+            158,
+            949
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "footer",
+        "text": "BERNSTEIN | SG GROUP",
+        "bbox": [
+            679,
+            940,
+            861,
+            950
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "page_number",
+        "text": "4",
+        "bbox": [
+            880,
+            941,
+            890,
+            950
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "chart",
+        "img_path": "images/be275c5733ad27af76e150b854e3a0817d1d6a6c68e58a2c0d0e8a7b3f27a9ff.jpg",
+        "content": "| Model | Price gap vs Royal Enfield equivalent (₹ thousands) | Category |\n| --- | --- | --- |\n| Speed 400 (vs Classic 350) | 34 | Old gap — 398cc |\n| Speed 400 (vs Classic 350) | 25 | New gap — 349cc (Triumph pricier) |\n| Speed T4 (vs Hunter 350) | 35 | Old gap — 398cc |\n| Speed T4 (vs Hunter 350) | 30 | New gap — 349cc (Triumph pricier) |\n| Scrambler 400X (vs Himalayan 450) | -50 | New gap — 349cc (Triumph cheaper) |\n| Bonneville 350 (vs Classic 350) | 35 | New gap — 349cc (yet to launch) |\nThe chart includes a vertical dashed line at zero and a horizontal line at zero, indicating a comparison between the two price gaps. The data points are colored by category: pink for Old gap, red for New gap, green for New gap relative to Triumph pricier, and orange for New gap relative to Triumph cheaper.",
+        "chart_caption": [
+            "EXHIBIT 3: Despite Triumph's drawdown from 398cc to 349cc, the price differential has not narrowed in materially",
+            "Triumph vs Royal Enfield: Price gap before and after GST 2.0 Triumph's relaunched vehicles narrow the premium by a little"
+        ],
+        "chart_footnote": [
+            "Source: Company data, Bernstein analysis"
+        ],
+        "sub_type": "scatterplot",
+        "bbox": [
+            112,
+            119,
+            888,
+            406
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "IN THE FIELD - WHAT WE FOUND: DEALER VISITS CONDUCTED ACROSS MUMBAI",
+        "text_level": 2,
+        "bbox": [
+            104,
+            460,
+            668,
+            474
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "THE ROYAL ENFIELD STUDIO",
+        "text_level": 2,
+        "bbox": [
+            104,
+            492,
+            308,
+            505
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "The first thing the salesperson mentions, before anything about the product, is the waiting period. Standard models: 3 months. The make-to-order programme - bespoke colour combinations, specific accessory configurations also carries a 45-60 day wait at an INR 5-6K premium over the standard list price. He mentions this not as an apology but as a credential. The waiting period is the demand signal, and an evidence that the brand is operating at full capacity.",
+        "bbox": [
+            102,
+            511,
+            888,
+            571
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "The store itself has been designed to feel like a destination rather than a showroom. Dark walls, amber lighting, the Classic 350 variants arranged with space between them. The feel is deliberate - CULT, not retail. Every surface reinforces the same message: this is not a transaction, it is an initiation. The salesperson himself has driven a Classic 350 for nine years. He tells us this unprompted. When asked about Triumph, he pauses - not out of concern, but out of the mild bemusement of someone being asked to compare their religion to another. \"Triumph is for someone who wants performance,\" he says. \"This is for someone who wants to feel something.\"",
+        "bbox": [
+            102,
+            584,
+            890,
+            674
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "Footfall is strong. The day's inquiry register points to approx 20-25 enquiries, with 10-12 for the Classic and Bullet and 5-6 for the Hunter.",
+        "bbox": [
+            102,
+            686,
+            883,
+            715
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "THE TRIUMPH SHOWROOM",
+        "text_level": 2,
+        "bbox": [
+            104,
+            744,
+            302,
+            758
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "The Triumph showrooms also have black interior and amber-lit. Like Royal Enfield, it leans into a visual language of cult, premium, and unhurried, which makes the aesthetic contest tighter than the product one. The salesperson is noticeably better trained, more fluent on specifications, quicker with comparison data, and more practiced at handling the Royal Enfield question. His pitch, delivered with evident conviction and some overstatement, is that Triumph's product is too strong on features and engineering to be compared directly with Royal Enfield's core 350cc bikes.",
+        "bbox": [
+            102,
+            763,
+            887,
+            838
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "In his mind, the real comparison for the Speed and Scrambler sits higher up against the Guerrilla 450 and other 450cc motorcycles given the materially higher horsepower on offer. Even so, he mentions Hunter inquirer also inquiring about Speed T4 and Speed 400 three times in our conversation, each time with quiet satisfaction. Delivery is within forty-eight hours, with no waiting period. Against Royal Enfield's three-month queue, that creates an opening with buyers unwilling to wait for a few",
+        "bbox": [
+            102,
+            851,
+            877,
+            912
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "header",
+        "text": "Venugopal Garre +65 6326 7643 venugopal.garre@bernsteinsg.com",
+        "bbox": [
+            104,
+            39,
+            452,
+            51
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "header",
+        "text": "11 June 2026",
+        "bbox": [
+            821,
+            39,
+            890,
+            49
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "footer",
+        "text": "INDIA AUTOS",
+        "bbox": [
+            104,
+            940,
+            158,
+            949
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "footer",
+        "text": "BERNSTEIN | SG GROUP",
+        "bbox": [
+            679,
+            941,
+            861,
+            950
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "page_number",
+        "text": "5",
+        "bbox": [
+            882,
+            941,
+            890,
+            950
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "months.",
+        "bbox": [
+            104,
+            71,
+            158,
+            84
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "On service, one of the main drags on Triumph's first attempt at conversion - the response is more credible than before: since the move to local manufacture in Pune, spare parts are available across the network without the six-to-eight-week delays of the CBU era, and service centres are gradually expanding into Mumbai's extended suburbs.",
+        "bbox": [
+            102,
+            98,
+            887,
+            143
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "The ten-year warranty against Royal Enfield's three years standard, with a five-year extension purchasable at INR 6K - is deployed as a closing argument. The service interval for Triumph bikes is 16K kms or one year, whichever is earlier; he claims this is more generous than any competitor in the segment. Whether this is enough to overcome the service network asymmetry-Triumph's roughly 150 outlets against Royal Enfield's 2000- is the question the showroom cannot answer, because the answer does not exist yet. In Mumbai, the anxiety is largely addressed. In many Tier 2+ cities, there is no Triumph showroom to walk into in the first place.",
+        "bbox": [
+            102,
+            156,
+            887,
+            247
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "WHAT THE VISITS TELL US",
+        "text_level": 2,
+        "bbox": [
+            104,
+            273,
+            295,
+            287
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "The cross-shopping is real and new. Royal Enfield's salespeople encounter the Triumph name in Hunter conversations regularly; twelve months ago they did not. Triumph's salespeople hear about Hunter enquiries with a frequency that confirms the overlap. But conversion from cross-shopping to purchase at Triumph is not yet visible in volume data. The demand at Royal Enfield is validated by a three-month queue and a plant at capacity. Triumph is delivering in forty-eight hours. The aspiration competition is closer than it has ever been. The transaction competition has not yet begun. Picture will be far more clearer in the coming months.",
+        "bbox": [
+            102,
+            292,
+            888,
+            381
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "THE BUYER QUESTION - WHO ACTUALLY SWITCHES?",
+        "text_level": 2,
+        "bbox": [
+            104,
+            410,
+            478,
+            425
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "Not every Royal Enfield buyer faces the same competitive exposure. The franchise is four distinct archetypes, and the risk is concentrated with surgical precision in one of them.",
+        "bbox": [
+            102,
+            430,
+            862,
+            459
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "table",
+        "img_path": "images/7f38c6cc42b82f39446ab0354b026cc943aeb4954a15f959cf4d46e3fcc334b1.jpg",
+        "table_caption": [
+            "EXHIBIT 4: Royal Enfield's buyer profile"
+        ],
+        "table_footnote": [
+            "Source: Company Data, Channel checks, Bernstein analysis"
+        ],
+        "table_body": "<table><tr><td>RE Model</td><td>Core buyer</td><td>Age</td><td>What drives purchase</td><td>Volume share of RE 350cc</td><td>Nearest Triumph rival</td><td>Price gap</td><td>Susceptibility</td><td>Verdict</td></tr><tr><td>Bullet 350</td><td>Loyalist, repeat, semi-rural</td><td>35–55</td><td>Heritage, the original, community status</td><td>25%</td><td>None</td><td>n/a</td><td>Negligible</td><td>Competition does not exist for this buyer</td></tr><tr><td>Classic 350</td><td>Icon buyer, heritage-led</td><td>28–45</td><td>Thump, resale certainty, brand community</td><td>40%</td><td>Bonneville 350 (to be launched, festive)</td><td>+₹25–45k</td><td>Low-Medium</td><td>Bonneville 350 is the first real test - but the price premium and thin distribution limit reach materially</td></tr><tr><td>Meteor 350</td><td>Weekend tourer, second bike</td><td>30–45</td><td>Distance ease, comfort, cruiser character</td><td>12%</td><td>None directly</td><td>n/a</td><td>Low</td><td>No Triumph model shares the Meteor&#x27;s ergonomic and use-case proposition</td></tr><tr><td>Hunter 350</td><td>First premium buyer, urban</td><td>18–28</td><td>Badge, lightness, modernity, price</td><td>23%</td><td>Speed T4</td><td>₹0–10k</td><td>HIGH</td><td>Equal price, global brand, higher spec - genuine lateral choice for the first time</td></tr></table>",
+        "bbox": [
+            107,
+            492,
+            890,
+            680
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "The Hunter's 20% volume share understates its strategic significance. It is Royal Enfield's youngest, among the fastest-growing models, designed to recruit the sub-25 buyer at the base of the premium ladder. \\~30% of Royal Enfield's total customer base is now below 25, up from an estimated 18-20% five years ago. That demographic progression is the brand's most important long-term asset and it is precisely the cohort the Speed T4 is targeting. Competitive exposure in the Hunter segment is, therefore, important for the stock relative to its current volume share.",
+        "bbox": [
+            102,
+            719,
+            888,
+            792
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "The instinctive read is that younger buyers prefer performance and therefore Triumph wins the young Hunter buyer by default. Our field work suggests this is true for a specific urban segment and meaningfully less true everywhere else",
+        "bbox": [
+            102,
+            806,
+            877,
+            837
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "header",
+        "text": "Venugopal Garre +65 6326 7643 venugopal.garre@bernsteinsg.com",
+        "bbox": [
+            104,
+            39,
+            452,
+            51
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "header",
+        "text": "11 June 2026",
+        "bbox": [
+            821,
+            39,
+            890,
+            49
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "footer",
+        "text": "INDIA AUTOS",
+        "bbox": [
+            104,
+            940,
+            158,
+            949
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "footer",
+        "text": "BERNSTEIN | SG GROUP",
+        "bbox": [
+            679,
+            940,
+            861,
+            950
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "page_number",
+        "text": "6",
+        "bbox": [
+            880,
+            941,
+            890,
+            950
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "table",
+        "img_path": "images/47e541ae0628729f7db48b661e9f1211d3c04a5137bb3e18bc206dc107b49105.jpg",
+        "table_caption": [
+            "EXHIBIT 5: The Young buyer- Testing the performance preference"
+        ],
+        "table_footnote": [
+            "Source: Secondary research, Bernstein analysis"
+        ],
+        "table_body": "<table><tr><td></td><td>Triumph brand recognition</td><td>Performance preference</td><td>Parental influence</td><td>Service anxiety</td><td>Likely outcome</td></tr><tr><td>Urban metro, 18-24, first bike</td><td>High - global bike culture, social media</td><td>Relevant - open to Triumph&#x27;s pitch</td><td>Low - self-funded or partial</td><td>Low - Triumph outlets accessible</td><td>Genuinely switchable</td></tr><tr><td>Semi-urban, 22-28, aspirational</td><td>Medium - name known, context thinner</td><td>Moderate</td><td>Medium - parents often involved</td><td>High - nearest Triumph may be 40km away</td><td>Switchable only with distribution</td></tr><tr><td>Any buyer, parents driving decision</td><td>Low at parental level</td><td>Not relevant to parents</td><td>Very high - RE brand legacy and service familiarity dominant</td><td>High</td><td>RE wins by default top-down purchase dynamic</td></tr><tr><td>Rural / Tier-3, any age</td><td>Very Low</td><td>Not relevant</td><td>High</td><td>Prohibitive - no Triumph presence</td><td>Not reachable by Triumph</td></tr><tr><td>Legend</td><td>Triumph advantage / low friction</td><td>Conditional / moderate friction</td><td>Royal Enfield advantage / high</td><td>Out of reach for Triumph</td><td></td></tr></table>",
+        "bbox": [
+            106,
+            89,
+            826,
+            422
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "The table above reframes where Triumph's genuine conversion opportunity sits. It is not \"the under-25 buyer\" in aggregate -it is the self-funded, metro-resident, Triumph-aware, service proximate under-25 buyer. In Mumbai, Pune, Bangalore, Delhi, and perhaps five other cities, it is large enough to matter. Outside those cities, the combination of lower brand awareness, parental influence, and absent service infrastructure means the Hunter buyer returns to Royal Enfield by default.",
+        "bbox": [
+            102,
+            463,
+            877,
+            522
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "TRIUMPH'S PRODUCT CASE -GENUINELY BETTER, DIFFERENTLY RELEVANT",
+        "text_level": 2,
+        "bbox": [
+            104,
+            550,
+            633,
+            565
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "The product comparison between Triumph's 349cc lineup and Royal Enfield's 350cc models is not subtle. On almost every measurable dimension, the Triumph wins.",
+        "bbox": [
+            102,
+            570,
+            857,
+            599
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "header",
+        "text": "Venugopal Garre +65 6326 7643 venugopal.garre@bernsteinsg.com",
+        "bbox": [
+            104,
+            39,
+            452,
+            51
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "header",
+        "text": "11 June 2026",
+        "bbox": [
+            821,
+            39,
+            890,
+            49
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "footer",
+        "text": "INDIA AUTOS",
+        "bbox": [
+            106,
+            940,
+            158,
+            949
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "footer",
+        "text": "BERNSTEIN | SG GROUP",
+        "bbox": [
+            679,
+            940,
+            861,
+            950
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "page_number",
+        "text": "7",
+        "bbox": [
+            882,
+            941,
+            890,
+            950
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "table",
+        "img_path": "images/4a5bfac6567741d712fbbc19af0a26ed0e90b96b99c8aa5578cb295b1386b413.jpg",
+        "table_caption": [
+            "EXHIBIT 6: Triumph Speed T4 vs. Royal Enfield Hunter 350 - Head to Head"
+        ],
+        "table_footnote": [
+            "Source: Company specifications, Channel checks, Bernstein analysis"
+        ],
+        "table_body": "<table><tr><td>Specification</td><td>Triumph Speed T4 (349cc)</td><td>Royal Enfield Hunter 350 (349cc)</td><td>Edge</td></tr><tr><td>Engine</td><td>349cc DOHC single, liquid-cooled</td><td>349cc SOHC single, air-oil cooled</td><td>Triumph - modern architecture</td></tr><tr><td>Power</td><td>~37hp</td><td>~20.2hp</td><td>Triumph - 83% more power</td></tr><tr><td>Torque</td><td>32Nm</td><td>27Nm</td><td>Triumph</td></tr><tr><td>Kerb weight</td><td>~177kg</td><td>~181kg</td><td>Broadly comparable</td></tr><tr><td>Price (ex-Mumbai)</td><td>INR 199K</td><td>INR 169K (top trim)</td><td>RE - edge</td></tr><tr><td>Warranty</td><td>10 years</td><td>3 years + 5yr extendable (₹6,000)</td><td>Triumph - materially better</td></tr><tr><td>Service interval</td><td>16,000km or 1 year</td><td>~5,000–6,000km</td><td>Triumph - significantly more generous</td></tr><tr><td>Spare parts (India)</td><td>Available - manufactured in Pune</td><td>Available - manufactured in Tamil Nadu</td><td>Royal Enfield - better</td></tr><tr><td>Dealership reach</td><td>~150 outlets</td><td>~2,100 outlets</td><td>Royal Enfield - overwhelming advantage</td></tr><tr><td>Service centres</td><td>~200, expanding</td><td>~4,000+</td><td>Royal Enfield - overwhelming advantage</td></tr><tr><td>Resale value (3yr)</td><td>Unestablished</td><td>~70% retention</td><td>Royal Enfield - known quantity</td></tr><tr><td>Character</td><td>High-revving, liquid-cooled, performance roadster</td><td>Low-revving, air-cooled, retro-urban</td><td>Fundamentally different</td></tr></table>",
+        "bbox": [
+            107,
+            90,
+            741,
+            542
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "The specifications table above is almost beside the point for the Classic and Bullet buyer for whom character, community, and resale certainty matter more than horsepower or warranty terms. It is entirely the point for the Hunter buyer, who is younger, more spec-aware, and making his first premium motorcycle decision without the formed preferences that define the Classic buyer's purchase.",
+        "bbox": [
+            102,
+            579,
+            875,
+            638
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "To that buyer, 37hp versus 20hp at the same price, with a ten-year warranty and a longer service interval, is a difficult case to argue against on paper. The argument against it in practice is the dealer visit experience itself. The Royal Enfield salesman who has driven his Classic for nine years is selling something the spec sheet cannot capture. The thump, the posture, the feeling - our own test rides confirmed this is not romantic exaggeration. The Royal Enfield 350cc engine's character is distinctive in a way that is either irrelevant to you or entirely the reason you are there. For the Hunter buyer discovering it for the first time, that character may or may not resonate. Whether it does determines everything.",
+        "bbox": [
+            102,
+            652,
+            883,
+            742
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "THE DISTRIBUTION IMPERATIVE - WHAT SEPARATES ATTEMPT TWO FROM ATTEMPT ONE",
+        "text_level": 2,
+        "bbox": [
+            104,
+            768,
+            741,
+            784
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "The first attempt failed for three reasons: price was high, product character was misaligned, and distribution was thin. GST tax cuts and the consequent Bajaj's drawdown addressed the first issue slightly. Our field work suggests the second was always overstated for the Hunter buyer. The third - distribution - remains exactly as thin as it was, and it is the variable that determines whether the second attempt ends differently.",
+        "bbox": [
+            102,
+            789,
+            879,
+            849
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "header",
+        "text": "Venugopal Garre +65 6326 7643 venugopal.garre@bernsteinsg.com",
+        "bbox": [
+            104,
+            39,
+            452,
+            51
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "header",
+        "text": "11 June 2026",
+        "bbox": [
+            821,
+            39,
+            890,
+            49
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "footer",
+        "text": "INDIA AUTOS",
+        "bbox": [
+            104,
+            940,
+            158,
+            949
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "footer",
+        "text": "BERNSTEIN | SG GROUP",
+        "bbox": [
+            679,
+            940,
+            861,
+            950
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "page_number",
+        "text": "8",
+        "bbox": [
+            880,
+            941,
+            890,
+            950
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "chart",
+        "img_path": "images/9b18f0dbcb58e8086de144353bb6a2f345f80da46cacc2f25defabb520ed2976.jpg",
+        "content": "| Tier | Royal Enfield Coverage | Triumph Outlets |\n| --- | --- | --- |\n| Tier 1 (Top 8 cities) | 100% | 120 outlets |\n| Tier 2 (Next 40 cities) | 85% | 25-30 outlets |\n| Tier 3 & below (400+ cities) | 60% | 0 outlets |",
+        "chart_caption": [
+            "EXHIBIT 7: Distribution Gap by City tier"
+        ],
+        "chart_footnote": [
+            "Source: Company Data, News articles, Bernstein analysis"
+        ],
+        "sub_type": "bar chart",
+        "bbox": [
+            114,
+            99,
+            480,
+            378
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "chart",
+        "img_path": "images/fb68cc0f07aa09d74e3a2b2c6ba1f618ca2c1aa16f83fdade9010296181c0f44.jpg",
+        "content": "| City Tier | Service Proximity |\n| --------- | ----------------- |\n| Tier 1 (Top 8 cities) | <10kms |\n| Tier 2 (Next 40 cities) | >40kms |\n| Tier 3 & below (400+ cities) | Not accessible |",
+        "chart_caption": [
+            "EXHIBIT 8: Triumph's service network density"
+        ],
+        "chart_footnote": [
+            "Tier 3 bar capped at 100 for scale / actual access is null\nSource: Company Data, News articles, Bernstein analysis"
+        ],
+        "sub_type": "bar chart",
+        "bbox": [
+            509,
+            99,
+            877,
+            377
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "The table above maps precisely where the competitive risk to Royal Enfield is confined. In Tier-1 India, Triumph's service anxiety is manageable and the brand is known. The competition is real. Tier-2 India, where Royal Enfield has been growing its Hunter and Classic volumes aggressively, now accounts for an estimated 40-45% of total Royal Enfield sales - Triumph is effectively absent.",
+        "bbox": [
+            102,
+            433,
+            885,
+            492
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "This geography is the single most important reason Royal Enfield's franchise has not been seriously tested in the FY24-26 phase. The competitive risk is, even today, almost entirely confined to the top eight to ten cities.",
+        "bbox": [
+            102,
+            506,
+            854,
+            536
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "table",
+        "img_path": "images/937c2d5f161015ddca2aa9069ed5b17b8bce5fa2428dabe34eb6bb5751eb6855.jpg",
+        "table_caption": [
+            "EXHIBIT 9: Triumph's Distribution Scenarios and what it means for Eicher and Bajaj"
+        ],
+        "table_footnote": [
+            "Source: Bernstein analysis and estimates"
+        ],
+        "table_body": "<table><tr><td>Scenario</td><td>Triumph outlets by Dec 2027</td><td>Tier-2 presence</td><td>Triumph monthly vol. (est.)</td><td>Implication for Eicher</td><td>Implication for Bajaj</td></tr><tr><td>Minimal commitment</td><td>150–200</td><td>Marginal</td><td>2K–3K units</td><td>Threat stays metro; Hunter risk limited to top-10 cities; franchise intact</td><td>Premium story underutilised; optionality not exercised</td></tr><tr><td>Moderate expansion</td><td>250–350</td><td>Partial: 15–20 Tier-2 cities</td><td>4K–6K units</td><td>Hunter risk spreads to 20+ cities; Bonneville 350 gets real metro traction</td><td>Two-wheeler premium story begins to re-rate</td></tr><tr><td>Aggressive rollout</td><td>400–500+</td><td>Meaningful: 30+ Tier-2 cities</td><td>7K–10K units</td><td>National threat to Hunter; Classic loyalty genuinely tested; rating moves</td><td>Full re-rating of two-wheeler premium franchise; material EPS optionality</td></tr></table>",
+        "bbox": [
+            106,
+            568,
+            838,
+            835
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "The critical signal is not Triumph's horsepower rating or warranty terms. It is the quarterly dealer count and specifically how many of those dealers are outside the top ten cities. Bajaj's management commentary on Triumph India expansion is the",
+        "bbox": [
+            102,
+            875,
+            857,
+            904
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "header",
+        "text": "Venugopal Garre +65 6326 7643 venugopal.garre@bernsteinsg.com",
+        "bbox": [
+            104,
+            39,
+            452,
+            51
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "header",
+        "text": "11 June 2026",
+        "bbox": [
+            821,
+            39,
+            890,
+            49
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "footer",
+        "text": "INDIA AUTOS",
+        "bbox": [
+            104,
+            940,
+            158,
+            949
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "footer",
+        "text": "BERNSTEIN | SG GROUP",
+        "bbox": [
+            679,
+            940,
+            861,
+            950
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "page_number",
+        "text": "9",
+        "bbox": [
+            882,
+            941,
+            890,
+            950
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "important thing to listen for on the next earnings call.",
+        "bbox": [
+            104,
+            71,
+            431,
+            85
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "header",
+        "text": "Venugopal Garre +65 6326 7643 venugopal.garre@bernsteinsg.com",
+        "bbox": [
+            104,
+            39,
+            452,
+            51
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "header",
+        "text": "11 June 2026",
+        "bbox": [
+            821,
+            39,
+            890,
+            49
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "footer",
+        "text": "INDIA AUTOS",
+        "bbox": [
+            106,
+            940,
+            158,
+            949
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "footer",
+        "text": "BERNSTEIN | SG GROUP",
+        "bbox": [
+            679,
+            940,
+            861,
+            950
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "page_number",
+        "text": "10",
+        "bbox": [
+            877,
+            941,
+            890,
+            950
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "APPENDIX - FINANCIAL FORECASTS",
+        "text_level": 2,
+        "bbox": [
+            104,
+            70,
+            383,
+            84
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "table",
+        "img_path": "images/8474f9a805c81869be958fe81fc418443bd4849871d4130e9017c4fe234427be.jpg",
+        "table_caption": [
+            "EXHIBIT 10: Bajaj Auto Financial Summary"
+        ],
+        "table_footnote": [
+            "Source: Company Data, Bernstein analysis and estimates"
+        ],
+        "table_body": "<table><tr><td>P&amp;L (Rs mn)</td><td>FY26</td><td>FY27E</td><td>FY28E</td><td>Balance Sheet</td><td>FY26</td><td>FY27E</td><td>FY28E</td></tr><tr><td>Revenue</td><td>629,050</td><td>690,187</td><td>768,226</td><td>Fixed assets</td><td>77,346</td><td>86,335</td><td>95,774</td></tr><tr><td>EBITDA</td><td>130,611</td><td>148,429</td><td>166,558</td><td>Cash and equivalents</td><td>328,033</td><td>398,628</td><td>468,412</td></tr><tr><td>EBIT</td><td>124,164</td><td>143,181</td><td>160,729</td><td>Net debt/(funds)</td><td>(235,668)</td><td>(306,263)</td><td>(376,047)</td></tr><tr><td>Other Income</td><td>21,822</td><td>18,983</td><td>22,520</td><td>Shareholders&#x27; equity</td><td>409,077</td><td>473,135</td><td>548,808</td></tr><tr><td>Pre-tax income</td><td>139,515</td><td>152,080</td><td>175,012</td><td>Current assets</td><td>269,224</td><td>339,648</td><td>424,612</td></tr><tr><td>Tax</td><td>33,770</td><td>37,770</td><td>43,503</td><td>Current liabilities</td><td>103,990</td><td>114,096</td><td>126,997</td></tr><tr><td>Net income</td><td>105,745</td><td>114,310</td><td>131,509</td><td>Change in WC</td><td>(7,775)</td><td>10,278</td><td>(2,279)</td></tr><tr><td>EPS (adj)</td><td>386</td><td>409</td><td>471</td><td>CFO</td><td>94,281</td><td>121,938</td><td>121,775</td></tr><tr><td>EPS (reported)</td><td>385</td><td>409</td><td>471</td><td>Capital expenditure</td><td>(8,561)</td><td>(8,989)</td><td>(9,439)</td></tr><tr><td>Diluted shares (mn)</td><td>279</td><td>279</td><td>279</td><td>Free cash flow</td><td>85,720</td><td>112,949</td><td>112,337</td></tr><tr><td>DPS (R)</td><td>180</td><td>180</td><td>200</td><td>BVPS</td><td>1,465</td><td>1,695</td><td>1,966</td></tr><tr><td>Key ratios/metrics</td><td>FY26</td><td>FY27E</td><td>FY28E</td><td>Volume (units - &#x27;000)</td><td>FY26</td><td>FY27E</td><td>FY28E</td></tr><tr><td>Revenue growth</td><td>23.4%</td><td>9.7%</td><td>11.3%</td><td>Domestic 2w</td><td>2,342</td><td>2,525</td><td>2,663</td></tr><tr><td>PAT growth</td><td>39.4%</td><td>56.1%</td><td>22.4%</td><td>Growth YoY (%)</td><td>2%</td><td>8%</td><td>5%</td></tr><tr><td>EBITDA margin</td><td>20.8%</td><td>21.5%</td><td>21.7%</td><td>Export 2w</td><td>1,962</td><td>2,159</td><td>2,286</td></tr><tr><td>EBIT margin</td><td>19.7%</td><td>20.7%</td><td>20.9%</td><td>Growth YoY (%)</td><td>18%</td><td>10%</td><td>6%</td></tr><tr><td>Pre-tax margin</td><td>22.2%</td><td>22.0%</td><td>22.8%</td><td>Domestic 3w</td><td>517</td><td>543</td><td>586</td></tr><tr><td>PAT margin</td><td>16.8%</td><td>16.6%</td><td>17.1%</td><td>Growth YoY (%)</td><td>8%</td><td>5%</td><td>8%</td></tr><tr><td>Tax</td><td>24.2%</td><td>24.8%</td><td>24.9%</td><td>Export 3w</td><td>461</td><td>553</td><td>591</td></tr><tr><td>ROE</td><td>25.8%</td><td>24.2%</td><td>24.0%</td><td>Growth YoY (%)</td><td>50%</td><td>20%</td><td>7%</td></tr></table>",
+        "bbox": [
+            107,
+            119,
+            890,
+            393
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "header",
+        "text": "Venugopal Garre +65 6326 7643 venugopal.garre@bernsteinsg.com",
+        "bbox": [
+            104,
+            39,
+            452,
+            51
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "header",
+        "text": "11 June 2026",
+        "bbox": [
+            821,
+            39,
+            890,
+            49
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "footer",
+        "text": "INDIA AUTOS",
+        "bbox": [
+            106,
+            940,
+            158,
+            949
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "footer",
+        "text": "BERNSTEIN | SG GROUP",
+        "bbox": [
+            681,
+            941,
+            861,
+            950
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "page_number",
+        "text": "11",
+        "bbox": [
+            879,
+            941,
+            890,
+            950
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "table",
+        "img_path": "images/bb00fff01bb29b691271877ca327bfdb183e20ea6ae8b9c4263d6510355886b6.jpg",
+        "table_caption": [
+            "EXHIBIT 11: Eicher Motors Financial Summary"
+        ],
+        "table_footnote": [
+            "Source: Company Data, Bernstein analysis and estimates"
+        ],
+        "table_body": "<table><tr><td>P&amp;L (Rs mn)</td><td>FY25A</td><td>FY26</td><td>FY27E</td><td>FY28E</td></tr><tr><td>Revenue</td><td>188,704</td><td>234,076</td><td>257,649</td><td>307,304</td></tr><tr><td>EBITDA</td><td>47,120</td><td>57,851</td><td>65,501</td><td>78,007</td></tr><tr><td>EBIT</td><td>39,827</td><td>49,447</td><td>56,222</td><td>67,998</td></tr><tr><td>Other Income</td><td>13,049</td><td>14,865</td><td>16,055</td><td>17,018</td></tr><tr><td>Pre-tax income</td><td>59,331</td><td>71,021</td><td>79,596</td><td>93,336</td></tr><tr><td>Tax</td><td>11,986</td><td>15,868</td><td>17,190</td><td>20,248</td></tr><tr><td>Net income</td><td>47,344</td><td>55,152</td><td>62,405</td><td>73,088</td></tr><tr><td>EPS (adj)</td><td>173</td><td>203</td><td>228</td><td>267</td></tr><tr><td>EPS (reported)</td><td>173</td><td>201</td><td>228</td><td>267</td></tr><tr><td>Diluted shares (mn)</td><td>274</td><td>274</td><td>274</td><td>274</td></tr><tr><td>DPS (R)</td><td>61</td><td>71</td><td>80</td><td>93</td></tr><tr><td>Key ratios/metrics</td><td>FY25A</td><td>FY26</td><td>FY27E</td><td>FY28E</td></tr><tr><td>Revenue growth</td><td>14.1%</td><td>24.0%</td><td>10.1%</td><td>19.3%</td></tr><tr><td>PAT growth</td><td>18.3%</td><td>17.7%</td><td>12.0%</td><td>17.1%</td></tr><tr><td>EBITDA margin</td><td>25.0%</td><td>24.7%</td><td>25.4%</td><td>25.4%</td></tr><tr><td>EBIT margin</td><td>21.1%</td><td>21.1%</td><td>21.8%</td><td>22.1%</td></tr><tr><td>Pre-tax margin</td><td>31.4%</td><td>30.3%</td><td>30.9%</td><td>30.4%</td></tr><tr><td>PAT margin</td><td>25.1%</td><td>23.6%</td><td>24.2%</td><td>23.8%</td></tr><tr><td>Tax</td><td>20.2%</td><td>22.3%</td><td>21.6%</td><td>21.7%</td></tr><tr><td>ROE</td><td>22.2%</td><td>22.1%</td><td>21.5%</td><td>21.7%</td></tr><tr><td>ROE(ex-cash)</td><td>39.4%</td><td>42.1%</td><td>47.7%</td><td>56.2%</td></tr><tr><td>NWC days ex-cash</td><td>31</td><td>35</td><td>30</td><td>25</td></tr><tr><td>Balance Sheet</td><td>FY25A</td><td>FY26</td><td>FY27E</td><td>FY28E</td></tr><tr><td>Fixed assets</td><td>68,928</td><td>79,841</td><td>91,299</td><td>103,331</td></tr><tr><td>Cash</td><td>119,131</td><td>145,586</td><td>185,300</td><td>230,991</td></tr><tr><td>Net debt/(funds)</td><td>(116,466)</td><td>(142,521)</td><td>(182,236)</td><td>(227,927)</td></tr><tr><td>Shareholders&#x27; equity</td><td>212,965</td><td>249,174</td><td>289,738</td><td>337,245</td></tr><tr><td>Current assets</td><td>69,542</td><td>111,071</td><td>154,576</td><td>210,856</td></tr><tr><td>Current liabilities</td><td>41,837</td><td>50,220</td><td>55,342</td><td>66,138</td></tr><tr><td>Change in WC</td><td>2,110</td><td>(6,691)</td><td>1,331</td><td>206</td></tr><tr><td>CFO</td><td>39,799</td><td>42,715</td><td>57,611</td><td>66,935</td></tr><tr><td>Capital expenditure</td><td>(10,393)</td><td>(10,913)</td><td>(11,459)</td><td>(12,032)</td></tr><tr><td>Free cash flow</td><td>29,406</td><td>31,802</td><td>46,152</td><td>54,904</td></tr><tr><td>BVPS</td><td>777.8</td><td>910.1</td><td>1,058.2</td><td>1,231.7</td></tr><tr><td>Volume (units - &#x27;000)</td><td>FY25A</td><td>FY26</td><td>FY27E</td><td>FY28E</td></tr><tr><td>Motorcycles Rev.</td><td>169,201</td><td>209,662</td><td>252,919</td><td>301,723</td></tr><tr><td>Growth YoY (%)</td><td>11%</td><td>24%</td><td>21%</td><td>19%</td></tr><tr><td>VECV Rev.</td><td>235,482</td><td>275,790</td><td>303,755</td><td>335,216</td></tr><tr><td>Growth YoY (%)</td><td>8%</td><td>17%</td><td>10%</td><td>10%</td></tr><tr><td>Motorcycles volume</td><td>991,867</td><td>1,226,601</td><td>1,428,480</td><td>1,620,052</td></tr><tr><td>Growth YoY (%)</td><td>10%</td><td>24%</td><td>16%</td><td>13%</td></tr><tr><td>VECV (CV) volumes</td><td>89,055</td><td>101,071</td><td>108,119</td><td>117,105</td></tr><tr><td>Growth YoY (%)</td><td>4%</td><td>13%</td><td>7%</td><td>8%</td></tr></table>",
+        "bbox": [
+            107,
+            90,
+            782,
+            869
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "header",
+        "text": "Venugopal Garre +65 6326 7643 venugopal.garre@bernsteinsg.com",
+        "bbox": [
+            104,
+            39,
+            452,
+            51
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "header",
+        "text": "11 June 2026",
+        "bbox": [
+            821,
+            39,
+            890,
+            49
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "footer",
+        "text": "INDIA AUTOS",
+        "bbox": [
+            104,
+            940,
+            158,
+            949
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "footer",
+        "text": "BERNSTEIN | SG GROUP",
+        "bbox": [
+            679,
+            940,
+            861,
+            950
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "page_number",
+        "text": "12",
+        "bbox": [
+            877,
+            941,
+            890,
+            950
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "I. REQUIRED DISCLOSURES",
+        "text_level": 2,
+        "bbox": [
+            104,
+            98,
+            297,
+            111
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "References to \"Bernstein\" or the \"Firm\" in these disclosures relate to the following entities: Bernstein Institutional Services LLC (April 1, 2024 onwards), Bernstein & Co., LLC (pre April 1, 2024), Bernstein Autonomous LLP, BSG France S.A. (April 1, 2024 onwards), Bernstein (Hong Kong) Limited 盛博香港有限公司, Bernstein (Canada) Limited, Bernstein (India) Private Limited (SEBI registration no. INH000006378), Bernstein (Singapore) Private Limited, Bernstein Japan KK (サンフォード・C・バーンスタイン株式会社) and analysts employed by SG Africa Technologies & Services to produce Bernstein under a Global Services Agreement in place between Bernstein and SG.",
+        "bbox": [
+            102,
+            125,
+            892,
+            219
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "Bernstein is part of a joint venture between SG (SG) and AllianceBernstein, L.P. (AB). Unless specifically noted otherwise, for purposes of these disclosures, references to Bernstein's “affiliates” relate to both SG and AB and their respective affiliates.",
+        "bbox": [
+            102,
+            232,
+            892,
+            272
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "VALUATION METHODOLOGY",
+        "text_level": 2,
+        "bbox": [
+            104,
+            286,
+            300,
+            299
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "Bajaj Auto Ltd",
+        "text_level": 2,
+        "bbox": [
+            104,
+            314,
+            202,
+            327
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "We value Bajaj Ltd at a PT of INR11,500 using DCF valuations (10% discount rate, 3% terminal growth and explicit forecasts until FY35). Revenue and EBITDA growth built in our DCF model from FY25-FY35E are 11%/10.4% CAGR. We believe the critical upside could emerge from higher-than-expected long-term EBITDA margins and a scale-up in EV segments. Implied PE multiple is 24x on FY28E earnings.",
+        "bbox": [
+            102,
+            340,
+            892,
+            401
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "Eicher Motors Ltd",
+        "text_level": 2,
+        "bbox": [
+            104,
+            414,
+            228,
+            426
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "We value Eicher Motors at a PT of INR 7,000 using SOTP method - based on DCF for 2W business with an implied PE multiple of 31x on FY27E earnings and using a 20x PE multiple on FY27E for its CV business. Our DCF valuations is based on 10.5% discount rate, 4% terminal growth and explicit forecasts until FY37. Revenue and EBITDA growth built in our DCF model from FY23-FY37E are 14.6%/15% CAGR.",
+        "bbox": [
+            102,
+            441,
+            892,
+            500
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "RISKS",
+        "text_level": 2,
+        "bbox": [
+            104,
+            513,
+            153,
+            527
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "Bajaj Auto Ltd",
+        "text_level": 2,
+        "bbox": [
+            104,
+            542,
+            202,
+            556
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "Downside risk emerges from weaker than expected margins performance and continued weakness in export market and/or 3W segment.",
+        "bbox": [
+            102,
+            569,
+            890,
+            598
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "Eicher Motors Ltd",
+        "text_level": 2,
+        "bbox": [
+            104,
+            612,
+            228,
+            625
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "Downside risk emerges from higher competition in the premium 2W segment (Harley Davidson etc) and weakness in exports. In addition, lack of EV products could trigger a risk to PE multiples. Upside risks for Eicher include better than expected domestic market for premium bikes as the top end of households remains resilient.",
+        "bbox": [
+            102,
+            640,
+            892,
+            684
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "RATINGS DEFINITIONS, BENCHMARKS AND DISTRIBUTION",
+        "text_level": 2,
+        "bbox": [
+            104,
+            696,
+            506,
+            710
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "EQUITY RATINGS DEFINITIONS",
+        "text_level": 2,
+        "bbox": [
+            104,
+            723,
+            318,
+            736
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "Bernstein brand",
+        "text_level": 2,
+        "bbox": [
+            104,
+            750,
+            217,
+            763
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "The Bernstein brand rates stocks based on forecasts of relative performance for the next 12 months versus the S&P 500 for stocks listed on the U.S. and Canadian exchanges, versus the Bloomberg Europe Developed Markets Large and Mid Cap Price Return Index EUR (EDME) for stocks listed on the European exchanges and emerging markets exchanges outside of the Asia Pacific region, versus the Bloomberg Japan Large and Mid Cap Price Return Index USD (JPL) for stocks listed on the Japanese exchanges, and versus the Bloomberg Asia ex-Japan Large and Mid Cap Price Return Index (ASIAX) for stocks listed on the Asian (ex-Japan) exchanges -unless otherwise specified.",
+        "bbox": [
+            102,
+            776,
+            892,
+            858
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "The Bernstein brand has three categories of ratings:",
+        "bbox": [
+            104,
+            869,
+            426,
+            883
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "header",
+        "text": "Venugopal Garre +65 6326 7643 venugopal.garre@bernsteinsg.com",
+        "bbox": [
+            104,
+            39,
+            452,
+            51
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "header",
+        "text": "11 June 2026",
+        "bbox": [
+            821,
+            39,
+            890,
+            49
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "header",
+        "text": "DISCLOSURE APPENDIX",
+        "bbox": [
+            727,
+            69,
+            890,
+            83
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "footer",
+        "text": "INDIA AUTOS",
+        "bbox": [
+            104,
+            940,
+            158,
+            949
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "footer",
+        "text": "BERNSTEIN | SG GROUP",
+        "bbox": [
+            679,
+            940,
+            861,
+            950
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "page_number",
+        "text": "13",
+        "bbox": [
+            877,
+            941,
+            890,
+            950
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "list",
+        "sub_type": "text",
+        "list_items": [
+            "- Outperform: Stock will outpace the market index by more than 15 pp",
+            "• Market-Perform: Stock will perform in line with the market index to within +/-15 pp",
+            "• Underperform: Stock will trail the performance of the market index by more than 15 pp"
+        ],
+        "bbox": [
+            104,
+            71,
+            635,
+            141
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "Coverage Suspended: Coverage of a company under the Bernstein brand has been suspended. Ratings and price targets are suspended temporarily, are no longer current, and should therefore not be relied upon.",
+        "bbox": [
+            102,
+            152,
+            892,
+            180
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "Not Rated: A rating assigned when the stock cannot be accurately valued, or the performance of the company accurately predicted, at the present time. The covering analyst may continue to publish research reports on the company to update investors on events and developments.",
+        "bbox": [
+            102,
+            193,
+            893,
+            234
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "Not Covered (NC) denotes companies that are not under coverage.",
+        "bbox": [
+            104,
+            247,
+            517,
+            261
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "Bernstein brand stock ratings are based on a 12-month time horizon.",
+        "bbox": [
+            104,
+            273,
+            531,
+            286
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "Autonomous brand – common stocks",
+        "text_level": 2,
+        "bbox": [
+            104,
+            299,
+            359,
+            311
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "The Autonomous brand rates common stocks as indicated below. As our benchmarks we use the Bloomberg Europe 500 Banks And Financial Services Index (BEBANKS) and Bloomberg Europe Dev Mkt Financials Large and Mid Cap Price Ret Index EUR (EDMFI) index for developed European banks and Payments, the Bloomberg Europe 500 Insurance Index (BEINSUR) for European insurers, the S&P 500 and S&P Financials for US banks and Payments coverage, S5LIFE for US Insurance, the S&P Insurance Select Industry (SPSIINS) for US Non-Life Insurers coverage, and the Bloomberg Emerging Markets Financials Large, Mid and Small Cap Price Return Index (EMLSF) for emerging market banks and insurers and Payments. Ratings are stated relative to the sector (not the market).",
+        "bbox": [
+            102,
+            325,
+            893,
+            421
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "The Autonomous brand has three categories of common stock ratings:",
+        "bbox": [
+            104,
+            433,
+            540,
+            448
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "list",
+        "sub_type": "text",
+        "list_items": [
+            "- Outperform (OP): Stock will outpace the relevant index by more than 10 pp",
+            "- Neutral (N): Stock will perform in line with the market index to within +/-10 pp",
+            "- Underperform (UP): Stock will trail the performance of the relevant index by more than 10 pp"
+        ],
+        "bbox": [
+            104,
+            460,
+            692,
+            530
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "Coverage Suspended: Coverage of a company under the Autonomous research brand has been suspended. Ratings and price targets are suspended temporarily, are no longer current, and should therefore not be relied upon.",
+        "bbox": [
+            102,
+            542,
+            892,
+            570
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "Not Rated: A rating assigned when the stock cannot be accurately valued, or the performance of the company accurately predicted, at the present time. The covering analyst may continue to publish research reports on the company to update investors on events and developments.",
+        "bbox": [
+            102,
+            582,
+            893,
+            625
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "Those denoted as ‘Feature’ (e.g., Feature Outperform FOP, Feature Under Outperform FUP) are our core ideas.",
+        "bbox": [
+            104,
+            636,
+            782,
+            650
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "Not Covered (NC) denotes companies that are not under coverage.",
+        "bbox": [
+            104,
+            662,
+            517,
+            676
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "Autonomous brand common stock ratings are based on a 12-month time horizon.",
+        "bbox": [
+            104,
+            688,
+            606,
+            702
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "Autonomous brand – preferred stocks",
+        "text_level": 2,
+        "bbox": [
+            104,
+            715,
+            366,
+            729
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "The Autonomous brand has three categories of preferred stock ratings:",
+        "bbox": [
+            104,
+            741,
+            545,
+            755
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "list",
+        "sub_type": "text",
+        "list_items": [
+            "- Outperform (OP): The total return of the preferred instrument is expected to outperform preferred securities of other issuers operating in similar sectors or rating categories over the next six months.",
+            "- Neutral (N): The total return of the preferred instrument is expected to perform in line with preferred securities of other issuers operating in similar sectors or rating categories over the next six months.",
+            "- Underperform (UP): The total return of the preferred instrument is expected to underperform preferred securities of other issuers operating in similar sectors or rating categories over the next six months."
+        ],
+        "bbox": [
+            104,
+            767,
+            893,
+            883
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "Autonomous preferred stock ratings are based on a 6-month time horizon.",
+        "bbox": [
+            104,
+            895,
+            563,
+            909
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "header",
+        "text": "Venugopal Garre +65 6326 7643 venugopal.garre@bernsteinsg.com",
+        "bbox": [
+            104,
+            39,
+            452,
+            51
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "header",
+        "text": "11 June 2026",
+        "bbox": [
+            821,
+            39,
+            890,
+            49
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "footer",
+        "text": "INDIA AUTOS",
+        "bbox": [
+            104,
+            940,
+            158,
+            949
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "footer",
+        "text": "BERNSTEIN | SG GROUP",
+        "bbox": [
+            679,
+            940,
+            861,
+            950
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "page_number",
+        "text": "14",
+        "bbox": [
+            877,
+            941,
+            890,
+            950
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "AUTONOMOUS CREDIT RESEARCH",
+        "text_level": 2,
+        "bbox": [
+            104,
+            70,
+            346,
+            83
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "Where this report contains investment recommendations for credit instruments, as defined in article 3(1)(35) of the Market Abuse Regulation, the information below is presented to comply with its disclosure requirements.",
+        "bbox": [
+            102,
+            97,
+            892,
+            125
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "The report may also include reference(s) to published opinions by other Autonomous or Bernstein analysts covering the equity securities of the issuer(s) referenced herein. Please note an investment recommendation for credit instruments published by the author(s) of this report may differ from the published view of the analyst covering equity securities for the issuer(s) contained in this report and vice versa.",
+        "bbox": [
+            102,
+            137,
+            893,
+            191
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "CREDIT RATINGS DEFINITIONS",
+        "text_level": 2,
+        "bbox": [
+            104,
+            203,
+            318,
+            215
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "The Autonomous brand has three categories of credit ratings:",
+        "bbox": [
+            104,
+            229,
+            485,
+            244
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "list",
+        "sub_type": "text",
+        "list_items": [
+            "- Credit Outperform (C-OP): The total return of the Reference Credit Instrument is expected to outperform the credit spread of bonds of other issuers operating in similar sectors or rating categories over the next six months.",
+            "- Credit Neutral (C-N): The total return of the Reference Credit Instrument is expected to perform in line with the credit spread of bonds of other issuers operating in similar sectors or rating categories over the next six months.",
+            "- Credit Underperform (C-UP): The total return of the Reference Credit Instrument is expected to underperform the credit spread of bonds of other issuers operating in similar sectors or rating categories over the next six months."
+        ],
+        "bbox": [
+            104,
+            256,
+            893,
+            371
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "Autonomous credit ratings are based on a 6-month time horizon.",
+        "bbox": [
+            104,
+            383,
+            504,
+            398
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "A list of all investment recommendations produced by the author(s) of this report alongside credit ratings history are available upon request.",
+        "bbox": [
+            102,
+            410,
+            892,
+            438
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "It is at the sole discretion of the Firm as to when to initiate, update and cease research coverage. The Firm has established, maintains and relies on information barriers to control the flow of information contained in one or more areas (i.e. the private side) within the Firm, and into other areas, units, groups or affiliates (i.e. public side) of the Firm",
+        "bbox": [
+            102,
+            450,
+            893,
+            492
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "table",
+        "img_path": "images/f6df82e79ca5146e7aced28d63ffb9e0bafccaf8823f1021380518c2665e03e3.jpg",
+        "table_caption": [
+            "DISTRIBUTION OF EQUITY RATINGS/INVESTMENT BANKING SERVICES"
+        ],
+        "table_footnote": [
+            "\\* These figures represent the percentage of companies within each equity rating category for which affiliates of Bernstein have provided investment banking services within the previous 12 months.",
+            "As of March 31, 2026. All figures are updated quarterly."
+        ],
+        "table_body": "<table><tr><td>Equity Rating</td><td>Market Abuse Regulation (MAR) and FINRA Rating Category</td><td>Global Rating Distribution</td><td>Investment Banking Relationships*</td></tr><tr><td>Outperform</td><td>BUY</td><td>51.1%</td><td>16.5%</td></tr><tr><td>Market-Perform (Bernstein Brand) Neutral (Autonomous Brand)</td><td>HOLD</td><td>36.3%</td><td>17.8%</td></tr><tr><td>Underperform</td><td>SELL</td><td>12.6%</td><td>14.9%</td></tr></table>",
+        "bbox": [
+            104,
+            553,
+            893,
+            680
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "header",
+        "text": "Venugopal Garre +65 6326 7643 venugopal.garre@bernsteinsg.com",
+        "bbox": [
+            104,
+            39,
+            452,
+            51
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "header",
+        "text": "11 June 2026",
+        "bbox": [
+            821,
+            39,
+            890,
+            50
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "footer",
+        "text": "INDIA AUTOS",
+        "bbox": [
+            104,
+            940,
+            158,
+            949
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "footer",
+        "text": "BERNSTEIN | SG GROUP",
+        "bbox": [
+            679,
+            940,
+            861,
+            950
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "page_number",
+        "text": "15",
+        "bbox": [
+            877,
+            941,
+            890,
+            950
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "PRICE CHARTS / RATINGS AND PRICE TARGET HISTORY",
+        "text_level": 2,
+        "bbox": [
+            104,
+            70,
+            488,
+            83
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "chart",
+        "img_path": "images/cda7a2198659fea7543da61205ce1890c3ba5df61d17d0e18668366b2e64701c.jpg",
+        "content": "| Date       | Closing Price | Price Target |\n| ---------- | ------------- | ------------ |\n| 10/10/2023 | INR5,750.00   | INR5,750.00  |\n| 01/11/2024 | INR8,100.00   | INR8,100.00  |\n| 03/19/2024 | INR9,400.00   | INR9,400.00  |\n| 04/19/2024 | INR10,300.00  | INR10,300.00 |\n| 09/20/2024 | INR13,600.00  | INR13,600.00 |\n| 01/10/2025 | INR11,000.00  | INR11,000.00 |\n| 02/02/2026 | INR11,500.00  | INR11,500.00 |",
+        "chart_caption": [
+            "Bajaj Auto Ltd (BJAUT.IN) Rating History for Bernstein as of 06/10/2026"
+        ],
+        "chart_footnote": [],
+        "sub_type": "line chart",
+        "bbox": [
+            127,
+            116,
+            870,
+            305
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "chart",
+        "img_path": "images/9cc7bfd7e4b50c48a5159f8c68c6e28b1c4d7a873a7ecd9e8e4540b404fc1107.jpg",
+        "content": "| Date       | Closing Price | Price Target |\n| ---------- | ------------- | ------------ |\n| 10/10/2023 | INR3,460.00   | INR3,460.00  |\n| 01/11/2024 | INR3,600.00   | INR3,600.00  |\n| 01/10/2025 | INR4,700.00   | INR4,700.00  |\n| 05/22/2026 | INR7,000.00   | INR7,000.00  |",
+        "chart_caption": [
+            "Eicher Motors Ltd (EIM.IN) Rating History for Bernstein as of 06/10/2026"
+        ],
+        "chart_footnote": [],
+        "sub_type": "line chart",
+        "bbox": [
+            127,
+            340,
+            870,
+            529
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "All price target and closing price data in the chart(s) above are denominated in the currency noted in the Ticker Table of this report.",
+        "bbox": [
+            102,
+            546,
+            890,
+            560
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "OTHER MATTERS",
+        "text_level": 2,
+        "bbox": [
+            104,
+            585,
+            225,
+            598
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "The legal entity(ies) employing the analyst(s) listed in this report, and their location, can be determined by the country code of their phone number, as follows:",
+        "bbox": [
+            102,
+            612,
+            892,
+            638
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "list",
+        "sub_type": "text",
+        "list_items": [
+            "+1 Bernstein Institutional Services LLC; New York, New York, USA",
+            "+44 Bernstein Autonomous LLP; London UK",
+            "+212 SG Africa Technologies & Services; Casablanca, Morocco",
+            "+33 BSG France S.A.; Paris, France",
+            "+34 BSG France S.A.; Madrid, Spain",
+            "+41 Bernstein Autonomous LLP; Geneva, Switzerland",
+            "+49 BSG France S.A.; Frankfurt, Germany",
+            "+91 Bernstein (India) Private Limited; Mumbai, India",
+            "+852 Bernstein (Hong Kong) Limited 盛博香港有限公司; Hong Kong, China",
+            "+65 Bernstein (Singapore) Private Limited; Singapore"
+        ],
+        "bbox": [
+            104,
+            651,
+            643,
+            902
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "header",
+        "text": "Venugopal Garre +65 6326 7643 venugopal.garre@bernsteinsg.com",
+        "bbox": [
+            104,
+            39,
+            452,
+            51
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "header",
+        "text": "11 June 2026",
+        "bbox": [
+            821,
+            39,
+            890,
+            49
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "footer",
+        "text": "INDIA AUTOS",
+        "bbox": [
+            104,
+            940,
+            158,
+            949
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "footer",
+        "text": "BERNSTEIN | SG GROUP",
+        "bbox": [
+            679,
+            941,
+            861,
+            950
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "page_number",
+        "text": "16",
+        "bbox": [
+            877,
+            941,
+            890,
+            950
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "+81 Bernstein Japan KK; Tokyo, Japan",
+        "bbox": [
+            104,
+            70,
+            410,
+            84
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "Where this report has been prepared by research analyst(s) employed by a non-US affiliate, such analyst(s), is/are (unless otherwise expressly noted below) not registered as associated persons of Bernstein Institutional Services LLC or any other SEC-registered broker-dealer and are not licensed or qualified as research analysts with FINRA. Accordingly, such analyst(s) may not be subject to FINRA's restrictions regarding (among other things) communications by research analysts with a subject company, interactions between research analysts and investment banking personnel, participation by research analysts in solicitation and marketing activities relating to investment banking transactions, public appearances by research analysts, and trading securities held by a research analyst account.",
+        "bbox": [
+            102,
+            97,
+            892,
+            191
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "Where this report has been prepared by research analyst(s) employed by SG Africa Technologies & Services (part of the SG group of companies), it has been prepared on behalf of a Bernstein company under a Global Services Agreement in place between Bernstein and SG.",
+        "bbox": [
+            102,
+            205,
+            892,
+            246
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "CERTIFICATION",
+        "text_level": 2,
+        "bbox": [
+            104,
+            258,
+            215,
+            270
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "Each research analyst listed in this report, who is primarily responsible for the preparation of the content of this report, certifies that all of the views expressed in this publication accurately reflect that analyst's personal views about any and all of the subject securities or issuers and that no part of that analyst's compensation was, is, or will be, directly or indirectly, related to the specific recommendations or views in this publication.",
+        "bbox": [
+            102,
+            284,
+            892,
+            339
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "II. ADDITIONAL GLOBAL CONFLICT DISCLOSURES",
+        "text_level": 2,
+        "bbox": [
+            104,
+            351,
+            444,
+            364
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "It is at the sole discretion of the Firm as to when to initiate, update and cease research coverage. The Firm has established, maintains and relies on information barriers to control the flow of information contained in one or more areas (i.e., the private side) within the Firm, and into other areas, units, groups or affiliates (i.e., public side) of the Firm.",
+        "bbox": [
+            102,
+            378,
+            892,
+            419
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "III. OTHER IMPORTANT INFORMATION AND DISCLOSURES",
+        "text_level": 2,
+        "bbox": [
+            104,
+            431,
+            501,
+            445
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "Separate branding is maintained for “Bernstein” and “Autonomous” research products.",
+        "bbox": [
+            102,
+            457,
+            635,
+            470
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "list",
+        "sub_type": "text",
+        "list_items": [
+            "- Bernstein produces a number of different types of research products including, among others, fundamental analysis and quantitative analysis under both the “Autonomous” and “Bernstein” brands. Recommendations contained within one type of research product may differ from recommendations contained within other types of research products, whether as a result of differing time horizons, methodologies or otherwise. Furthermore, views or recommendations within a research product issued under one brand may differ from views or recommendations under the same type of research product issued under the other brand. The Research Ratings System for the two brands and other information related to those Rating Systems are included in the previous section.",
+            "- Autonomous operates as a separate business unit within the following entities: Bernstein Institutional Services LLC, Bernstein Autonomous LLP, Bernstein (Hong Kong) Limited 盛博香港有限公司 and Bernstein (India) Private Limited. For information relating to “Autonomous” branded products (including certain Sales materials) please visit: www.autonomous.com. For information relating to Bernstein branded products please visit: www.bernsteinresearch.com."
+        ],
+        "bbox": [
+            104,
+            484,
+            892,
+            661
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "Analysts are compensated based on aggregate contributions to the research franchise as measured by account penetration, productivity and proactivity of investment ideas. No analysts are compensated based on performance in, or contributions to, generating investment banking revenues.",
+        "bbox": [
+            102,
+            674,
+            890,
+            715
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "This report has been produced by an independent analyst as defined in Article 3 (1)(34)(i) of EU 596/2014 Market Abuse Regulation (“MAR”) and the same article of MAR as it forms part of United Kingdom domestic law by virtue of the European Union (Withdrawal) Act 2018.",
+        "bbox": [
+            102,
+            727,
+            892,
+            768
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "To our readers in the United States: Bernstein Institutional Services LLC, a broker-dealer registered with the U.S. Securities and Exchange Commission (“SEC”) and a member of the U.S. Financial Industry Regulatory Authority, Inc. (“FINRA”) is distributing this publication in the United States and accepts responsibility for its contents. Where this material contains an analysis of debt product(s), such material is intended only for institutional investors and is not subject to the US independence and disclosure standards applicable to debt research prepared for retail investors.",
+        "bbox": [
+            102,
+            781,
+            892,
+            849
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "Bernstein Institutional Services LLC may act as principal for its own account or as agent for another person (including an affiliate) in sales or purchases of any security which is a subject of this report. This report does not purport to meet the objectives or needs of any specific individuals, entities or accounts.",
+        "bbox": [
+            102,
+            862,
+            892,
+            902
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "header",
+        "text": "Venugopal Garre +65 6326 7643 venugopal.garre@bernsteinsg.com",
+        "bbox": [
+            104,
+            39,
+            452,
+            51
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "header",
+        "text": "11 June 2026",
+        "bbox": [
+            821,
+            39,
+            890,
+            49
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "footer",
+        "text": "INDIA AUTOS",
+        "bbox": [
+            104,
+            940,
+            158,
+            949
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "footer",
+        "text": "BERNSTEIN | SG GROUP",
+        "bbox": [
+            679,
+            940,
+            861,
+            950
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "page_number",
+        "text": "17",
+        "bbox": [
+            877,
+            941,
+            890,
+            950
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "To our readers in Canada: If this publication pertains to a Canadian domiciled company, it is being distributed in Canada by Bernstein (Canada) Limited, which is licensed and regulated by the Canadian Investment Regulatory Organization. If the publication pertains to a non-Canadian domiciled company, it is being distributed by Bernstein Institutional Services LLC, which is licensed and regulated by both the SEC and FINRA, into Canada under the International Dealers Exemption.",
+        "bbox": [
+            102,
+            70,
+            892,
+            126
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "This document may not be passed onto any person in Canada unless that person qualifies as \"permitted client\" as defined in Section 1.1 of NI 31-103.",
+        "bbox": [
+            102,
+            137,
+            892,
+            165
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "To our readers in Brazil: This report has been prepared by Bernstein Institutional Services LLC, and Banco BTG Pactual S.A. (\"BTG\") is responsible for the distribution of this report in Brazil.",
+        "bbox": [
+            102,
+            176,
+            890,
+            205
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "To readers in the United Kingdom: This publication has been issued or approved for issue in the United Kingdom by Bernstein Autonomous LLP, authorised and regulated by the Financial Conduct Authority and located at 60 London Wall, London EC2M 5SH, +44 (0)20-7170-5000. Registered in England & Wales No OC343985.",
+        "bbox": [
+            102,
+            217,
+            892,
+            258
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "This document is for distribution only to persons who (i) have professional experience in matters relating to investments falling within Article 19(5) of the Financial Services and Markets Act 2000 (Financial Promotion) Order 2005 (as amended, the “Financial Promotion Order”), (ii) are persons falling within Article 49(2)(a) to (d) (“high net worth companies, unincorporated associations, etc.”) of the Financial Promotion Order, (iii) are outside the United Kingdom, or (iv) are persons to whom an invitation or inducement to engage in investment activity (within the meaning of section 21 of the FSMA) in connection with the issue or sale of any securities may otherwise lawfully be communicated or caused to be communicated (all such persons together being referred to as “relevant persons”). This document is directed only at relevant persons and must not be acted on or relied on by persons who are not relevant persons. Any investment or investment activity to which this document relates is available only to relevant persons and will be engaged in only with relevant persons.",
+        "bbox": [
+            102,
+            270,
+            893,
+            393
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "To our readers in the member states of the EEA: This publication is being distributed by BSG France SA, which is authorised and regulated by the Autorité de Contrôle Prudentiel et de Résolution (ACPR) and Autorité des Marchés Financiers (AMF).",
+        "bbox": [
+            102,
+            406,
+            892,
+            434
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "To our readers in Hong Kong: This publication is being distributed in Hong Kong by Bernstein (Hong Kong) Limited 盛博香港有限公司, which is licensed and regulated by the Hong Kong Securities and Futures Commission (Central Entity No. AXC846) to carry out Type 4 (Advising on Securities) regulated activities and subject to the licensing conditions mentioned in the SFC Public Register (https://www.sfc.hk/publicregWeb/corp/AXC846/details)). This publication is solely for professional investors, as defined in the Securities and Futures Ordinance (Cap. 571). The purpose of this report is solely to provide an analysis of the issuers referred to in this report and is not intended for any purpose contrary to the laws of Hong Kong.",
+        "bbox": [
+            102,
+            446,
+            893,
+            529
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "To our readers in Singapore: This publication is being distributed in Singapore by Bernstein (Singapore) Private Limited, only to accredited investors or institutional investors, as defined in the Securities and Futures Act 2001 of Singapore (\"SFA\"). Recipients in Singapore should contact Bernstein (Singapore) Private Limited in respect of matters arising from, or in connection with, this publication. Bernstein (Singapore) Private Limited is regulated by the Monetary Authority of Singapore and licensed under the SFA as a capital markets services licence holder for dealing in capital markets products that are securities and collective investment schemes and an exempt financial adviser for advising on, issuing and promulgating analyses and reports on securities. Bernstein (Singapore) Private Limited is registered in Singapore with Company Registration No. 20213710W and located at One Raffles Quay, #27-11 South Tower, Singapore 048583, +65-6230-4612.",
+        "bbox": [
+            102,
+            540,
+            893,
+            650
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "To our readers in the People's Republic of China: The securities referred to in this document are not being offered or sold and may not be offered or sold, directly or indirectly, in the People's Republic of China (for such purposes, not including the Hong Kong and Macau Special Administrative Regions or Taiwan, the \"PRC\") in contravention of any applicable laws of the PRC.",
+        "bbox": [
+            102,
+            662,
+            892,
+            704
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "This document does not constitute an offer to sell or the solicitation of an offer to buy any securities in the PRC to any person to whom it is unlawful to make the offer or solicitation in the PRC.",
+        "bbox": [
+            102,
+            715,
+            892,
+            743
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "We do not represent that this document may be lawfully distributed, or that any securities may be lawfully offered, in compliance with any applicable registration or other requirements in the PRC, or pursuant to an exemption available thereunder, or assume any responsibility for facilitating any such distribution or offering. In particular, no action has been taken by us which would permit a public offering of any securities or distribution of this document in the PRC. Accordingly, the securities are not being offered or sold within the PRC by means of this document or any other document. Neither this document nor any advertisement or other offering material may be distributed or published in the PRC, except under circumstances that will result in compliance with any applicable laws and regulations.",
+        "bbox": [
+            102,
+            755,
+            893,
+            852
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "To our readers in Japan: This publication is being distributed in Japan by Bernstein Japan KK (サンフォード・C・バーンスタイン株式会社), which is registered in Japan as a Financial Instruments Business Operator with the Kanto Local Finance Bureau (registration number: The Director-General of Kanto Local Finance Bureau (FIBO) No.3387) and regulated by the Financial Services Agency. It is also a member of Japan Investment Advisers Association. This publication is solely for qualified institutional investors in Japan only, as defined in Article 2, paragraph (3), items (i) of the Financial Instruments and Exchange Act.",
+        "bbox": [
+            102,
+            864,
+            892,
+            919
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "header",
+        "text": "Venugopal Garre +65 6326 7643 venugopal.garre@bernsteinsg.com",
+        "bbox": [
+            104,
+            39,
+            452,
+            51
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "header",
+        "text": "11 June 2026",
+        "bbox": [
+            821,
+            39,
+            890,
+            49
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "footer",
+        "text": "INDIA AUTOS",
+        "bbox": [
+            104,
+            940,
+            158,
+            949
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "footer",
+        "text": "BERNSTEIN | SG GROUP",
+        "bbox": [
+            679,
+            940,
+            861,
+            950
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "page_number",
+        "text": "18",
+        "bbox": [
+            877,
+            941,
+            890,
+            950
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            102,
+            70,
+            892,
+            84
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "For the institutional client readers in Japan who have been granted access to the Bernstein website by Daiwa Group Inc. (\"Daiwa\"), your access to this document should not be construed as meaning that Bernstein is providing you with investment advice for any purposes. Whilst Bernstein has prepared this document, your relationship is, and will remain with, Daiwa, and Bernstein has neither any contractual relationship with you nor any obligations towards you.",
+        "bbox": [
+            102,
+            97,
+            893,
+            152
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "To our readers in Australia: Bernstein (Hong Kong) Limited 盛博香港有限公司 is responsible for distributing research in Australia. It is regulated by the Securities and Exchange Commission under U.S. laws, by the Financial Conduct Authority under U.K. laws, which differs from Australian laws. Bernstein (Hong Kong) Limited 盛博香港有限公司 is exempt from the requirement to hold an Australian financial services license under the Corporations Act 2001 in respect of the provision of the following financial services to wholesale clients:",
+        "bbox": [
+            102,
+            164,
+            893,
+            232
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "list",
+        "sub_type": "text",
+        "list_items": [
+            "• providing financial product advice;",
+            "• dealing in a financial product;",
+            "• making a market for a financial product; and",
+            "• providing a custodial or depository service."
+        ],
+        "bbox": [
+            104,
+            244,
+            395,
+            342
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "To our readers in India: This publication is being distributed in India by Bernstein (India) Private Limited (SCB India) which is licensed and regulated by Securities and Exchange Board of India (\"SEBI\") as a research analyst entity under the SEBI (Research Analyst) Regulations, 2014, having registration no. INH000006378 and as a stock broker having registration no. INZ000213537. SCB India is currently engaged in the business of providing research and stock broking services. Please refer to www.bernsteinresearch.in for more information.",
+        "bbox": [
+            102,
+            354,
+            893,
+            422
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "list",
+        "sub_type": "text",
+        "list_items": [
+            "- SCB India is a Private limited company incorporated under the Companies Act, 2013, on April 12, 2017 bearing corporate identification number U65999MH2017FTC293762, and registered office at Level 3A, 4th Floor, First International Financial Centre, Plot Nos C-54 and C-55, G Block, Near CBI Office, Bandra Kurla Complex, Bandra (East), Mumbai 400098, Maharashtra, India (Phone No: +91-22-68421401).",
+            "- For details of Associates (i.e., affiliates/group companies) of SCB India, kindly email MUM-BERNSTEIN-InCompliance@bernsteinsg.com.",
+            "• SCB India does not have any disciplinary history as on the date of this report.",
+            "- Except as noted above, SCB India and/or its Associates (i.e., affiliates/group companies), the Research Analysts authoring this report, and their relatives"
+        ],
+        "bbox": [
+            104,
+            436,
+            893,
+            608
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "list",
+        "sub_type": "text",
+        "list_items": [
+            "• do not have any financial interest in the subject company",
+            "• do not have actual/beneficial ownership of one percent or more in securities of the subject company;",
+            "- is not engaged in any investment banking activities for Indian companies, as such;",
+            "• have not managed or co-managed a public offering in the past twelve months for any Indian companies;",
+            "- have not received any compensation for investment banking services or merchant banking services from the subject company in the past 12 months;",
+            "• have not received compensation for brokerage services from the subject company in the past twelve months;",
+            "- have not received any compensation or other benefits from the subject company or third party related to the specific recommendations or views in this report; and",
+            "- do not currently, but may in the future, act as a market maker in the financial instruments of the companies covered in the report.",
+            "- do not have any conflict of interest in the subject company as of the date of this report."
+        ],
+        "bbox": [
+            122,
+            622,
+            893,
+            902
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "header",
+        "text": "Venugopal Garre +65 6326 7643 venugopal.garre@bernsteinsg.com",
+        "bbox": [
+            104,
+            39,
+            452,
+            51
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "header",
+        "text": "11 June 2026",
+        "bbox": [
+            821,
+            39,
+            890,
+            49
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "footer",
+        "text": "INDIA AUTOS",
+        "bbox": [
+            104,
+            940,
+            158,
+            949
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "footer",
+        "text": "BERNSTEIN | SG GROUP",
+        "bbox": [
+            679,
+            940,
+            861,
+            950
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "page_number",
+        "text": "19",
+        "bbox": [
+            877,
+            941,
+            890,
+            950
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "list",
+        "sub_type": "text",
+        "list_items": [
+            "- Except as noted above, the subject company has not been a client of SCB India during twelve months preceding the date of distribution of this research report. Neither SCB India nor its Associates (i.e., affiliates/group companies) have received compensation for products or services other than investment banking, merchant banking or brokerage services from the subject company in the past twelve months.",
+            "- The principal research analyst(s) who prepared this report, members of the analysts' team, and members of their households are not an officer, director, employee or advisory board member of the companies covered in the report.",
+            "- Our Compliance officer / Grievance officer is Ms. Rupal Talati, who can be reached at +91-22-68421451, or MUM-BERNSTEIN-InCompliance@bernsteinsg.com / Scbin-investorgrievance@bernsteinsg.com",
+            "- The Research investor charter and Terms & Conditions of SCB India are available on its website and may be accessed at Bernstein (India) Private Limited (https://bernsteinresearch.in/) for your reference.",
+            "- Disclaimer: Registration granted by SEBI, and certification from NISM, is in no way a guarantee of performance of the intermediary or provide any assurance of returns to investors. Investments in securities market are subject to market risks. Read all the related documents carefully before investing."
+        ],
+        "bbox": [
+            104,
+            71,
+            893,
+            316
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "To our readers in Switzerland: This document is provided in Switzerland by or through Bernstein Autonomous LLP, and is provided only to qualified investors as defined in article 10 of the Swiss Collective Investment Scheme Act (“CISA”) and related provisions of the Collective Investment Scheme Ordinance and in strict compliance with applicable Swiss law and regulations. The products mentioned in this document may not be suitable for all types of investors. This document is based on the Directives on the Independence of Financial Research issued by the Swiss Bankers Association (SBA) in January 2008.",
+        "bbox": [
+            102,
+            328,
+            893,
+            398
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "To our readers in the Middle East: Bernstein Autonomous LLP, DIFC branch has its principal office at Gate Village 06, DIFC, Dubai, UAE. Bernstein Autonomous LLP, DIFC branch is regulated by the Dubai Financial Services Authority (DFSA) with the registration number CL10040 and is provisioned for Arranging Deals in Investments and Advising on Financial Products. All communications and services are directed at Professional Clients and Market Counterparties only (as defined in the DFSA rulebook). Persons other than Professional Clients and Market Counterparties, such as Retail Clients, are not the intended recipients of our communications or services.",
+        "bbox": [
+            102,
+            409,
+            893,
+            492
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "LEGAL",
+        "text_level": 2,
+        "bbox": [
+            104,
+            503,
+            153,
+            516
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "All research publications are disseminated to our clients through posting on the firm's password protected websites, bernsteinresearch.com and autonomous.com. Certain, but not all, research publications are also made available to clients through third-party vendors or redistributed to clients through alternate electronic means as a convenience.",
+        "bbox": [
+            102,
+            529,
+            892,
+            571
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "This publication has been published and distributed in accordance with the Firm's policy for management of conflicts of interest in investment research, a copy of which is available from Bernstein Institutional Services LLC, Director of Compliance, 245 Park Avenue, New York, NY 10167. Additional disclosures and information regarding Bernstein's business are available on our website www.bernsteinresearch.com.",
+        "bbox": [
+            102,
+            583,
+            893,
+            638
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "The securities described herein may not be eligible for sale in all jurisdictions or to certain categories of investors where that permission profile is not consistent with the licenses held by the entities noted herein. This document is for distribution only as may be permitted by law. This publication is not directed to, or intended for distribution to or use by, any person or entity who is a citizen or resident of, or located in any locality, state, country or other jurisdiction where such distribution, publication, availability or use would be contrary to law or regulation or which would subject any of the entities referenced herein or any of their subsidiaries or affiliates to any registration or licensing requirement within such jurisdiction. This publication is based upon public sources we believe to be reliable, but no representation is made by us that the publication is accurate or complete. We do not undertake to advise you of any change in the reported information or in the opinions herein. This publication was prepared and issued by entity referred to herein for distribution to eligible counterparties or professional clients. This publication is not an offer to buy or sell any security, and it does not constitute investment, legal or tax advice. The investments referred to herein may not be suitable for you. Investors must make their own investment decisions in consultation with their professional advisors in light of their specific circumstances. The value of investments may fluctuate, and investments that are denominated in foreign currencies may fluctuate in value as a result of exposure to exchange rate movements. Information about past performance of an investment is not necessarily a guide to, indicator of, or assurance of, future performance.",
+        "bbox": [
+            102,
+            650,
+            893,
+            843
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "This report is directed to and intended only for our clients who are “eligible counterparties”, “professional clients”, “institutional investors” and/or “professional investors” as defined by the aforementioned regulators, and must not be redistributed to retail clients as defined by the aforementioned regulators. Retail clients who receive this report should note that the services of the entities noted herein are not available to them and should not rely on the material herein to make an investment decision. The result of such act will not hold the entities noted herein liable for any loss thus incurred as the entities noted herein are not registered/ authorised/ licensed to deal with retail clients and will not enter into any contractual agreement/arrangement with retail clients. This report is provided subject to the terms and conditions of any agreement that the clients may have entered into with the entities noted herein. All research reports are disseminated on a simultaneous basis to eligible clients through electronic publication to our client portal.",
+        "bbox": [
+            102,
+            854,
+            893,
+            925
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "header",
+        "text": "Venugopal Garre +65 6326 7643 venugopal.garre@bernsteinsg.com",
+        "bbox": [
+            104,
+            39,
+            452,
+            51
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "header",
+        "text": "11 June 2026",
+        "bbox": [
+            821,
+            39,
+            890,
+            49
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "footer",
+        "text": "INDIA AUTOS",
+        "bbox": [
+            104,
+            940,
+            158,
+            949
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "footer",
+        "text": "BERNSTEIN | SG GROUP",
+        "bbox": [
+            679,
+            940,
+            861,
+            950
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "page_number",
+        "text": "20",
+        "bbox": [
+            875,
+            941,
+            890,
+            950
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            102,
+            70,
+            892,
+            126
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "The information in this report was prepared by Bernstein solely for the internal business use of our clients. Clients may store, display, analyze, reformat and print the information in this report for this limited use only. Clients may not copy, alter, create derivative works, resell, reverse engineer, commercially exploit, share or distribute any part of the information contained herein for any purpose without Bernstein's express written consent. These restrictions include extracting data or using the content to develop indices or other products. Further, you may not use this report, or any portion of this report, to train or finetune any third-party machine learning or artificial intelligence system, or as a prompt or input into any such system. You also may not, without Bernstein's express written consent, do any of the foregoing in connection with your own internal machine learning or artificial intelligence system.",
+        "bbox": [
+            102,
+            137,
+            893,
+            247
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "Bernstein may use artificial intelligence tools in the preparation of its materials. Any such materials are reviewed by Bernstein's research analysts prior to publication.",
+        "bbox": [
+            102,
+            258,
+            892,
+            287
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "This report has been prepared for information purposes only and is based on current public information that we consider reliable, but the entities noted herein do not warrant or represent (express or implied) as to the sources of information or data contained herein are accurate, complete, not misleading or as to its fitness for the purpose intended even though the entities noted herein rely on reputable or trustworthy data providers, it should not be relied upon as such. Opinions expressed are the author(s)' current opinions as of the date appearing on the material only and we do not undertake to advise you of any change in the reported information or in the opinions herein.",
+        "bbox": [
+            102,
+            299,
+            893,
+            381
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "Any references to SG herein are purely factual, based upon publicly available information, and included for comparative purposes only. They do not constitute an opinion or recommendation with respect to the securities of SG.",
+        "bbox": [
+            102,
+            393,
+            892,
+            434
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "This publication was prepared and issued by the entity referred to herein for distribution to eligible counterparties or professional clients. The information in this report is intended for general circulation and does not constitute an offer to buy or sell any security, investment, legal or tax advice nor a personal recommendation, as defined by any of the aforementioned regulators. It does not take into account the particular investment objectives, financial situations, or needs of individual investors. The report has not been reviewed by any of the aforementioned regulators and does not represent any official recommendation from the aforementioned regulators. The investments referred to herein may not be suitable for you. Investors must make their own investment decisions in consultation with advice sought from a financial adviser regarding the suitability of the investment product, taking into account the specific investment objectives, financial situation or particular needs of any recipient of the recommendation, before the recipient makes a commitment to purchase the investment product.",
+        "bbox": [
+            102,
+            446,
+            893,
+            570
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "The analysis contained herein is based on numerous assumptions. Different assumptions could result in materially different results. The information in this report does not constitute, or form part of, any offer to sell or issue, or any offer to purchase or subscribe for shares, or to induce engagement in any other investment activity. The value of any securities or financial instruments mentioned in this report may fluctuate subject to market conditions. Information about past performance of an investment is not necessarily a guide to, indicative of, or assurance of future performance. Estimates of future performance mentioned by the research analyst in this report are based on assumptions that may not be realized due to unforeseen factors like market volatility/fluctuation. In relation to securities or financial instruments denominated in a foreign currency other than the clients' home currency, movements in exchange rates will have an effect on the value, either favorable or unfavorable. Before acting on any recommendations in this report, recipients should consider the appropriateness of investing in the subject securities or financial instruments mentioned in this report and, if necessary, seek independent professional advice.",
+        "bbox": [
+            102,
+            582,
+            893,
+            720
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "The securities described herein may not be eligible for sale in all jurisdictions or to certain categories of investors where that permission profile is not consistent with the licenses held by the entities noted herein. This document is for distribution only as may be permitted by law. It is not directed to, or intended for distribution to or use by, any person or entity who is a citizen or resident of or located in any locality, state, country or other jurisdiction where such distribution, publication, availability or use would be contrary to law or regulation or would subject the entities noted herein to any regulation or licensing requirement within such jurisdiction.",
+        "bbox": [
+            102,
+            731,
+            892,
+            800
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "Source: Bloomberg Index Services Limited. BLOOMBERG® is a trademark and service mark of Bloomberg Finance L.P. and its affiliates (collectively “Bloomberg”). Bloomberg or Bloomberg’s licensors own all proprietary rights in the Bloomberg Indices. Neither Bloomberg nor Bloomberg’s licensors approves or endorses this material, or guarantees the accuracy or completeness of any information herein, or makes any warranty, express or implied, as to the results to be obtained therefrom and, to the maximum extent allowed by law, neither shall have any liability or responsibility for injury or damages arising in connection therewith.",
+        "bbox": [
+            102,
+            811,
+            892,
+            881
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "No part of this material may be reproduced, distributed or transmitted or otherwise made available without prior consent of the entities noted herein. Copyright Bernstein Institutional Services LLC Bernstein Autonomous LLP, BSG France S.A., Sanford C.",
+        "bbox": [
+            102,
+            893,
+            892,
+            921
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "header",
+        "text": "Venugopal Garre +65 6326 7643 venugopal.garre@bernsteinsg.com",
+        "bbox": [
+            104,
+            39,
+            452,
+            51
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "header",
+        "text": "11 June 2026",
+        "bbox": [
+            821,
+            39,
+            890,
+            49
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "footer",
+        "text": "INDIA AUTOS",
+        "bbox": [
+            104,
+            940,
+            158,
+            949
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "footer",
+        "text": "BERNSTEIN | SG GROUP",
+        "bbox": [
+            679,
+            940,
+            861,
+            950
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "page_number",
+        "text": "21",
+        "bbox": [
+            877,
+            941,
+            890,
+            950
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "Bernstein (Hong Kong) Limited 盛博香港有限公司, Bernstein (Canada) Limited, Bernstein (India) Private Limited (SEBI registration no. INH000006378), Bernstein (Singapore) Private Limited and Bernstein Japan KK (サンフォード・C・バーンスタイン株式会社). All rights reserved. The trademarks and service marks contained herein are the property of their respective owners. Any unauthorized use or disclosure is strictly prohibited. The entities noted herein may pursue legal action if the unauthorized use results in any defamation and/or reputational risk to the entities noted herein and research published under the Bernstein and Autonomous brands.",
+        "bbox": [
+            102,
+            70,
+            892,
+            152
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "header",
+        "text": "Venugopal Garre +65 6326 7643 venugopal.garre@bernsteinsg.com",
+        "bbox": [
+            104,
+            39,
+            452,
+            51
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "header",
+        "text": "11 June 2026",
+        "bbox": [
+            821,
+            39,
+            890,
+            49
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "footer",
+        "text": "INDIA AUTOS",
+        "bbox": [
+            106,
+            940,
+            158,
+            949
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "footer",
+        "text": "BERNSTEIN | SG GROUP",
+        "bbox": [
+            679,
+            940,
+            861,
+            950
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "page_number",
+        "text": "22",
+        "bbox": [
+            877,
+            941,
+            890,
+            950
+        ],
+        "page_idx": 21
+    }
+]

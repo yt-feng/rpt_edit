@@ -1,0 +1,39 @@
+[
+  {
+    "attempt": 1,
+    "round": 1,
+    "token_label": "MINER_U_2",
+    "submitted_pdf_count": 5,
+    "successful_pdf_count": 5,
+    "retry_pdf_count": 0,
+    "timed_out": false,
+    "error": "",
+    "states": [
+      {
+        "pdf": "/tmp/pdf_batch_001_ahxya6ml/pdfs/0001-48-JPM-Japan Equity Style Investing-Stay with AI Momentum- Hedge a Hawkish BOJ Hike with Value-Momentum-260609.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_ahxya6ml/pdfs/0002-49-Bernstein-Indian Autos- Bajaj vs Eicher-The 350cc battle redrawn--260611.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_ahxya6ml/pdfs/0003-50-Bernstein-Payments- Processors - IT Services-Visa-OpenAI Partnership- Mastercard Agent Pay for Machines- Cards firmly enter the agentic era-260610.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_ahxya6ml/pdfs/0004-51-GS-Japan Games and Internet-Our views following new title announcement events-Reiterate Buy ratings on Sony and Capcom-260611.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_ahxya6ml/pdfs/0005-52-JPM-MLCC Powder-Growth empowered by high-end MLCC demand- 10 key takeaways from fireside chat with Sinocera-260610.pdf",
+        "state": "done",
+        "error": ""
+      }
+    ]
+  }
+]
