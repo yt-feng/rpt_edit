@@ -1,0 +1,4155 @@
+[
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "IP Toys Monthly Tracker - May"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                77,
+                159,
+                438,
+                181
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Pop Mart's share price has been resilient since its 1Q26 earnings release on 13 May. While Mr. Duan Yongping's purchase of 81m shares (c.6% stake) in late May boosted market confidence, we do not see any material change in fundamentals. Key catalysts ahead include: (1) the launch of Labubu 4.0, and (2) World Cup-related promotions, which could further drive overseas momentum."
+                    }
+                ]
+            },
+            "bbox": [
+                75,
+                191,
+                626,
+                293
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "China"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                77,
+                311,
+                115,
+                323
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "text_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "- Second-hand prices: Labubu plush second-hand prices stabilized MoM. Of the top 30 most wanted products on the second-hand exchange platforms, we see more diversity: three of them are non-Pop Mart products, while the Pop Mart x aespa collaboration remains most wanted."
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "- Ecommerce sales: Meritco has not released May data yet; Apr data shows Pop Mart's GMV on ecommerce platforms was up 70% YoY and up 25% MoM. Meanwhile, Bloks' ecommerce sales were up 16% you, and Miniso's was up 11% YoY in Apr."
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                77,
+                335,
+                625,
+                435
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Overseas"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                77,
+                445,
+                137,
+                457
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "text_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "- Social media interactions: Amid the ongoing normalization trend, Pop Mart's engagement on TikTok picked up in May for its global and Thailand accounts, which were up 49% and 67% MoM, respectively."
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "- Social media followers: In May, Pop Mart added 13k new Instagram followers across its Global, Thailand, US, and UK accounts combined (vs. +19k in Apr; Figures 19-20)."
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "- Website traffic & app active users: Pop Mart app's active users declined in May, both globally and in the US. Global and regional Google Search Trends for Pop Mart continued to trend downward (Figures 21-24)."
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                77,
+                470,
+                625,
+                585
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "New Product Launches/events"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                77,
+                596,
+                265,
+                608
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "text_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "- Pop Mart: Pop Mart's 1Q26 results were broadly in line with market expectations, while the post-earnings call highlighted possible margin pressure in 2026 (refer to our report). Despite this, the share price was resilient, supported by Duan Yongping's purchase of 81m shares, representing c.6% of total shares outstanding, between 25–28 May, making him a substantial shareholder of the company (Figure 3)."
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "- On the product front, Pop Mart stepped up global marketing initiatives through World Cup-related promotions, including an appearance in the music video of the official FIFA World Cup 2026 song \"Goals\", and a collaboration with Coca-Cola to launch Labubu-branded cans in China."
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "- Bloks: Bloks launched 13 new series in May (vs. 12 in Apr and 21 in 1Q26). The new releases feature a more diversified IP portfolio, with a particular focus on Star Wars, while the company continued to emphasize assembly vehicle products. Looking ahead, Bloks is expected to launch collaborative products tied to Toy Story 5 ahead of the movie's release in late June."
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                77,
+                620,
+                625,
+                820
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "[Continued inside.]"
+                    }
+                ]
+            },
+            "bbox": [
+                77,
+                831,
+                184,
+                845
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/0ae382db8104da7f2bbbfb15885de31c8d8a275a05d53ad045dbeb5e99dbb4bc.jpg"
+                },
+                "content": "| Date | Toffee | Soymilk | Lychee Berry | Sea Salt | Green Grape | Sesame |\n| --- | --- | --- | --- | --- | --- | --- |\n| 11/8/2004 | 200 | 100 | 100 | 100 | 100 | 100 |\n| 12/7/2004 | 150 | 100 | 100 | 100 | 100 | 100 |\n| 2/6/2005 | 125 | 100 | 100 | 100 | 100 | 100 |\n| 3/5/2005 | 125 | 100 | 100 | 100 | 100 | 100 |\n| 4/4/2005 | 125 | 100 | 100 | 100 | 100 | 100 |\n| 5/3/2005 | 125 | 100 | 100 | 100 | 100 | 100 |\n| 6/2/2005 | 125 | 100 | 100 | 100 | 100 | 100 |\n| 7/9/2005 | 250 | 250 | 250 | 250 | 250 | 250 |\n| 8/6/2005 | 250 | 250 | 250 | 250 | 250 | 250 |\n| 9/4/2005 | 250 | 250 | 250 | 250 | 250 | 250 |\n| 10/3/2005 | 250 | 250 | 250 | 250 | 250 | 250 |\n| 11/2/2005 | 250 | 250 | 250 | 250 | 250 | 250 |\n| 12/9/2005 | 250 | 250 | 250 | 250 | 250 | 250 |\n| 1/7/2006 | 250 | 250 | 250 | 250 | 250 | 250 |\n| 2/6/2006 | 250 | 250 | 250 | 250 | 250 | 250 |\n| 3/4/2006 | 250 | 250 | 250 | 250 | 250 | 250 |\n| 4/3/2006 | 250 | 250 | 250 | 250 | 250 | 250 |\n| 5/2/2006 | 250 | 250 | 250 | 250 | 250 | 250 |\n| 6/1/2006 | 250 | 250 | 250 | 250 | 250 | 250 |\n| Jun-16-26 | 17.7 | 17.7 | 17.7 | 17.7 | 17.7 | 17.7 |\n| Jul-16-26 | 17.7 | 17.7 | 17.7 | 17.7 | 17.7 | 17.7 |\n| Aug-16-26 | 17.7 | 17.7 | 17.7 | 17.7 | 17.7 | 17.7 |\n| Sep-16-26 | 17.7 | 17.7 | 17.7 | 17.7 | 17.7 | 17.7 |\n| Oct-16-26 | 17.7 | 17.7 | 17.7 | 17.7 | 17.7 | 17.7 |\n| Nov-16-26 | 17.7 | 17.7 | 17.7 | 17.7 | 17.7 | 17.7 |\n| Dec-16-26 | 17.7 | 17.7 | 17.7 | 17.7 | 17.7 | 17.7 |\n| Jan-17-26 | 17.7 | 17.7 | 17.7 | 17.7 | 17.7 | 17.7 |\n| Feb-17-26 | 17.7 | 17.7 | 17.7 | 17.7 | 17.7 | 17.7 |\n| Mar-18-26 | 17.7 | 17.7 | 17.7 | 17.7 | 17.7 | 17.7 |\n| Apr-18-26 | 17.7 | 17.7 | 17.7 | 17.7 | 17.7 | 17.7 |\n| May-18-26 | 17.7 | 17.7 | 17.7 | 17.7 | 17.7 | 17.7 |\n| Jun-18-26 | 17.7 | 17.7 | 17.7 | 17.7 | 17.7 | 17.7 |\n| Jul-18-26 | nan | nan | nan | nan | nan | nan |\n| Aug-18-26 | nan | nan | nan | nan | nan | nan |\n| Sep-18-26 | nan | nan | nan | nan | nan | nan |\n| Oct-18-26 | nan | nan | nan | nan | nan | nan |\n| Nov-18-26 | nan | nan | nan | nan | nan | nan |\n| Dec-18-26 | nan | nan | nan | nan | nan | nan |\n| Jan-19-26 | nan | nan | nan | nan | nan | nan |\n| Feb-19-26 | nan | nan | nan | nan | nan | nan |\n| Mar-19-26 | nan | nan | nan | nan | nan | nan |\n| Apr-19-26 | nan | nan | nan | nan | nan | nan |\n| May-19-26 | nan | nan | nan | nan | nan | nan |\n| Jun-19-26 | nan | nan | nan | nan | nan | nan |\n| Jul-19-26 | nan | nan | nan | nan | nan | nan |\n| Aug-19-26 | nan | nan | nan | nan | nan | nan |\n| Sep-19-26 | nan | nan | nan | nan | nan | nan |\n| Oct-19-26 | nan | nan | nan | nan | nan | nan |\n| Nov-19-26 | nan | nan | nan | nan | nan | nan |\n| Dec-19-26 | nan | nan | nan | nan | nan | nan |",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Figure 1 - Pop Mart Labubu 1.0 second-hand price in mainland China"
+                    }
+                ],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: Chaowanzu, JEF. Note: official retail price is RMB99"
+                    }
+                ]
+            },
+            "sub_type": "line chart",
+            "bbox": [
+                663,
+                190,
+                899,
+                281
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/0f7fae7ced2885a4a634fb06413ba463396f222adb41d24b537528b45c2ea7e0.jpg"
+                },
+                "content": "| Month   | Global | Thailand | US   |\n|---------|--------|----------|------|\n| Jan-24  | 100    | 100      | 100  |\n| Feb-24  | 150    | 150      | 150  |\n| Mar-24  | 200    | 200      | 200  |\n| Apr-24  | 250    | 250      | 250  |\n| May-24  | 300    | 300      | 300  |\n| Jun-24  | 350    | 350      | 350  |\n| Jul-24  | 400    | 400      | 400  |\n| Aug-24  | 450    | 450      | 450  |\n| Sep-24  | 500    | 500      | 500  |\n| Oct-24  | 550    | 550      | 550  |\n| Nov-24  | 600    | 600      | 600  |\n| Dec-24  | 650    | 650      | 650  |\n| Jan-25  | 700    | 700      | 700  |\n| Feb-25  | 750    | 750      | 750  |\n| Mar-25  | 800    | 800      | 800  |\n| Apr-25  | 850    | 850      | 850  |\n| May-25  | 900    | 900      | 900  |\n| Jun-25  | 950    | 950      | 950  |\n| Jul-25  | 1000   | 1000     | 1000 |\n| Aug-25  | 1050   | 1050     | 1050 |\n| Sep-25  | 1100   | 1100     | 1100 |\n| Oct-25  | 1150   | 1150     | 1150 |\n| Nov-25  | 1200   | 1200     | 1200 |\n| Dec-25  | 1250   | 1250     | 1250 |\n| Jan-26  | 1300   | 1300     | 1300 |\n| Feb-26  | 1350   | 1350     | 1350 |\n| Mar-26  | 1400   | 1400     | 1400 |\n| Apr-26  | 1450   | 1450     | 1450 |\n| May-26  | 1500   | 1500     | 1500 |",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Figure 2 - Pop Mart Instagram Interaction Index"
+                    }
+                ],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: Listen First, JEF, Note: Jan-2024 = 100, interactions include likes, comments, and forwards."
+                    }
+                ]
+            },
+            "sub_type": "bar chart",
+            "bbox": [
+                663,
+                332,
+                900,
+                423
+            ]
+        },
+        {
+            "type": "table",
+            "content": {
+                "image_source": {
+                    "path": "images/336accded78d195afc9aa5523b38dadd0aa667603d42b7da9f97ed218e11516a.jpg"
+                },
+                "table_caption": [
+                    {
+                        "type": "text",
+                        "content": "Figure 3 - Pop Mart shareholdings breakdown: Duan Yong Ping is now a substantial shareholder"
+                    }
+                ],
+                "table_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: HKEX, JEF, Note: as of 8 June 2026"
+                    }
+                ],
+                "html": "<table><tr><td>Total no.of shares</td><td>1,341,043,150</td><td>100.0%</td></tr><tr><td>GWF</td><td>561,131,960</td><td>41.84%</td></tr><tr><td>Pop Mart Hehuo</td><td>62,053,027</td><td>4.63%</td></tr><tr><td>Tianjin Paqu</td><td>31,196,420</td><td>2.33%</td></tr><tr><td>Owned by Mr. Wang</td><td>654,381,407</td><td>48.80%</td></tr><tr><td>Sidsi</td><td>10,616,060</td><td>0.79%</td></tr><tr><td>Justin Moon</td><td>1,319,618</td><td>0.10%</td></tr><tr><td>Owned by mgmt</td><td>11,935,678</td><td>0.89%</td></tr><tr><td>Andrew Yue Wu</td><td>8,609</td><td>0.00%</td></tr><tr><td>Owned by Non-executive director</td><td>8,609</td><td>0.00%</td></tr><tr><td>Duan Yongping</td><td>81,031,600</td><td>6.04%</td></tr></table>",
+                "table_type": "simple_table",
+                "table_nest_level": 1
+            },
+            "bbox": [
+                660,
+                487,
+                907,
+                568
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Jingjue Pei * | Equity Analyst"
+                    }
+                ]
+            },
+            "bbox": [
+                658,
+                873,
+                816,
+                885
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "852 3767 1224 | jingjue.pei@JEF.com"
+                    }
+                ]
+            },
+            "bbox": [
+                658,
+                885,
+                845,
+                896
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Anne Ling * | Equity Analyst"
+                    }
+                ]
+            },
+            "bbox": [
+                657,
+                902,
+                810,
+                914
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "852 3743 8783 | aling@JEF.com"
+                    }
+                ]
+            },
+            "bbox": [
+                658,
+                914,
+                823,
+                925
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "JEF"
+                    }
+                ]
+            },
+            "bbox": [
+                77,
+                57,
+                282,
+                93
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "China (PRC) | China Consumer"
+                    }
+                ]
+            },
+            "bbox": [
+                77,
+                117,
+                438,
+                139
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Equity Research"
+                    }
+                ]
+            },
+            "bbox": [
+                818,
+                112,
+                919,
+                124
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "June 9, 2026"
+                    }
+                ]
+            },
+            "bbox": [
+                838,
+                126,
+                919,
+                137
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "Please see analyst certifications, important disclosure information, and information regarding the status of non-US analysts on pages 7 - 13 of this report."
+                    }
+                ]
+            },
+            "bbox": [
+                77,
+                941,
+                754,
+                952
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "* JEF Hong Kong Limited"
+                    }
+                ]
+            },
+            "bbox": [
+                78,
+                952,
+                216,
+                961
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Ecommerce sales trackers"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                77,
+                139,
+                361,
+                158
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "May data will be available after 15 June."
+                    }
+                ]
+            },
+            "bbox": [
+                75,
+                165,
+                315,
+                179
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/caaac41be5e4720982ab2ee322ddff7c733e643bf42662522c199360e9188846.jpg"
+                },
+                "content": "Pop Mart\n| Month | Taobao sales (RMBm) | Douyin sales (RMBm) | JD sales (RMBm) | Major E-Commerce YoY (%) |\n|---|---|---|---|---|\n| Feb-24 | 30.00 | 50.00 | 10.00 | 150 |\n| Mar-24 | 35.00 | 55.00 | 12.00 | 140 |\n| Apr-24 | 40.00 | 60.00 | 15.00 | 180 |\n| May-24 | 50.00 | 70.00 | 20.00 | 220 |\n| Jun-24 | 60.00 | 140.00 | 25.00 | 350 |\n| Jul-24 | 70.00 | 130.00 | 30.00 | 380 |\n| Aug-24 | 80.00 | 140.00 | 35.00 | 360 |\n| Sep-24 | 90.00 | 130.00 | 40.00 | 280 |\n| Oct-24 | 150.00 | 210.00 | 55.00 | 320 |\n| Nov-24 | 160.00 | 155.00 | 65.00 | 250 |\n| Dec-24 | 175.00 | 175.00 | 75.00 | 280 |\n| Jan-25 | 185.00 | 135.00 | 85.00 | 310 |\n| Feb-25 | 95.00 | 215.00 | 195.00 | 335 |\n| Mar-25 | 85.00 | 225.00 | 195.00 | 315 |\n| Apr-25 | 95.00 | 255.00 | 195.00 | 335 |\n| May-25 | 95.00 | 195.00 | 195.00 | 285 |\n| Jun-25 | 285.00 | 445.00 | 395.00 | 365 |\n| Jul-25 | 65.00 | 235.00 | 195.00 | 185 |\n| Aug-25 | 135.00 | 375.00 | 375.00 | 195 |\n| Sep-25 | 95.00 | 315.00 | 315.00 | 175 |\n| Oct-25 | 165.00 | 415.00 | 415.00 | 195 |\n| Nov-25 | 115.00 | 375.00 | 375.00 | 165 |\n| Dec-25 | 85.00 | -65.00 | -65.00 | -47 |\n| Jan-26 | 225.00 | 375.00 | 512.56 | 277 |\n| Feb-26 | 115.00 | 337.56 | 337.56 | -67 |\n| Mar-26 | 145.00 | 425.00 | 375.66 | -67 |\n| Apr-26 | 148.76 | 437.56 | 425.66 | -67 |\nThe chart displays a bar chart for Taobao sales and Douyin sales, alongside a line graph for JD sales, with the line representing the year-over-year growth rate of major e-commerce YoY (%). The data is already in English.",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Figure 4 - Pop Mart eCommerce sales"
+                    }
+                ],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: Meritco, JEF"
+                    }
+                ]
+            },
+            "sub_type": "bar-line hybrid",
+            "bbox": [
+                77,
+                202,
+                500,
+                357
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/44bab2979a381d52ce4ccd001a397a19951179f6dbda626b2530e87ae1deb00f.jpg"
+                },
+                "content": "Kayou\n| Month | Taobao sales (RMBm) | Douyin sales (RMBm) | JD sales (RMBm) | Major E-Commerce YoY (RHS) (%) |\n|---|---|---|---|---|\n| Jan-24 | 15 | 35 | 0 | 0 |\n| Feb-24 | 18 | 45 | 0 | 0 |\n| Mar-24 | 22 | 55 | 0 | 0 |\n| Apr-24 | 45 | 60 | 0 | 0 |\n| May-24 | 55 | 70 | 0 | 0 |\n| Jun-24 | 58 | 75 | 0 | 0 |\n| Jul-24 | 50 | 65 | 0 | 0 |\n| Aug-24 | 40 | 60 | 0 | 0 |\n| Sep-24 | 35 | 70 | 0 | 0 |\n| Oct-24 | 30 | 160 | 0 | 0 |\n| Nov-24 | 25 | 80 | 0 | 0 |\n| Dec-24 | 20 | 50 | 0 | 0 |\n| Jan-25 | 18 | 45 | 0 | -10 |\n| Feb-25 | 18 | 55 | 0 | -10 |\n| Mar-25 | 50 | 135 | 0 | -10 |\n| Apr-25 | 35 | 120 | 0 | -10 |\n| May-25 | 15 | 85 | 0 | -10 |\n| Jun-25 | 12 | 60 | 0 | -10 |\n| Jul-25 | 12 | 90 | 0 | -10 |\n| Aug-25 | 12 | 70 | 0 | -10 |\n| Sep-25 | 8 | 35 | 0 | -10 |\n| Oct-25 | 8 | 40 | 0 | -10 |\n| Nov-25 | 8 | 25 | 0 | -10 |\n| Dec-25 | 8 | 15 | 0 | -10 |\n| Jan-26 | 8 | 18 | 0 | -10 |\n| Feb-26 | 8 | 18 | 0 | -10 |\n| Mar-26 | 8 | 18 | 0 | -10 |\n| Apr-26 | 8 | 18 | 0 | -10 |",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Figure 6 - Kayou eCommerce sales"
+                    }
+                ],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: Meritco, JEF"
+                    }
+                ]
+            },
+            "sub_type": "bar-line hybrid",
+            "bbox": [
+                80,
+                382,
+                494,
+                538
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/54e746b4eee3d2bfe5c575a079e36e0fcf1f5e54d874c4970fc3d0a17c52fba6.jpg"
+                },
+                "content": "| Month    | T Mall | JD   | Douyin | Total yoy (RHS) |\n|----------|--------|------|--------|-----------------|\n| Aug-23   | 3      | 1    | 0      | 80%             |\n| Oct-23   | 2      | 1    | 0      | 60%             |\n| Dec-23   | 3      | 1    | 0      | 40%             |\n| Feb-24   | 3      | 1    | 0      | 100%            |\n| Apr-24   | 3      | 1    | 0      | 60%             |\n| Jun-24   | 3      | 1    | 0      | 80%             |\n| Aug-24   | 3      | 1    | 0      | 60%             |\n| Oct-24   | 3      | 1    | 0      | 80%             |\n| Dec-24   | 5      | 1    | 0      | 90%             |\n| Feb-25   | 3      | 1    | 0      | 60%             |\n| Apr-25   | 5      | 1    | 0      | 100%            |\n| Jun-25   | 8      | 3    | 1      | 150%            |\n| Aug-25   | 7      | 3    | 2      | 120%            |\n| Oct-25   | 7      | 3    | 3      | 180%            |\n| Dec-25   | 5      | 3    | 4      | 100%            |\n| Feb-26   | 3      | 1    | 0      | 60%             |\n| Apr-26   | 2      | 1    | 1      | -20%            |",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Figure 8 - Top Toy eCommerce sales"
+                    }
+                ],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: Meritco, JEF"
+                    }
+                ]
+            },
+            "sub_type": "bar chart",
+            "bbox": [
+                87,
+                563,
+                500,
+                715
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/588189003b9f0a54d28383d32dc858b6b29b9360a56445d5f02a132672d5579d.jpg"
+                },
+                "content": "Bloks\n| Month | Taobao sales (RMBm) | Douyin sales (RMBm) | JD sales (RMBm) | Major E-Commerce YoY (RHS) |\n|---|---|---|---|---|\n| Jan-24 | 7 | 3 | 10 | 5% |\n| Feb-24 | 7 | 5 | 8 | 100% |\n| Mar-24 | 4 | 1 | 3 | -20% |\n| Apr-24 | 7 | 3 | 9 | 50% |\n| May-24 | 15 | 3 | 12 | 130% |\n| Jun-24 | 10 | 1 | 10 | 50% |\n| Jul-24 | 5 | 1 | 6 | 30% |\n| Aug-24 | 5 | 1 | 6 | 20% |\n| Sep-24 | 5 | 1 | 6 | 20% |\n| Oct-24 | 8 | 3 | 6 | 50% |\n| Nov-24 | 9 | 3 | 6 | 50% |\n| Dec-24 | 11 | 3 | 10 | 30% |\n| Jan-25 | 11 | 1 | 10 | 30% |\n| Feb-25 | 7 | 1 | 5 | -20% |\n| Mar-25 | 8 | 3 | 10 | 70% |\n| Apr-25 | 7 | 1 | 6 | -10% |\n| May-25 | 13 | 3 | 8 | -10% |\n| Jun-25 | 9 | 1 | 10 | -20% |\n| Jul-25 | 7 | 1 | 8 | 50% |\n| Aug-25 | 7 | 1 | 8 | 50% |\n| Sep-25 | 7 | 1 | 8 | 50% |\n| Oct-25 | 9 | 3 | 8 | 60% |\n| Nov-25 | 7 | 1 | 10 | 60% |\n| Dec-25 | 11 | 8 | 10 | 110% |\n| Jan-26 | 7 | 3 | 10 | -20% |\n| Feb-26 | 8 | 3 | 10 | -20% |\n| Mar-26 | 4 | 1 | 8 | -10% |\n| Apr-26 | 4 | 1 | 6 | -10% |\nThe chart displays a stacked bar chart with the left axis showing total sales in RMBm and the right axis showing the percentage of major e-commerce year-over-year growth. The bars are segmented by sales channel: Taobao (dark blue), Douyin (light blue), JD (gray), and Major E-Commerce YoY (light yellow). The data is already in English.",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Figure 5 - Bloks eCommerce sales"
+                    }
+                ],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: Meritco, JEF"
+                    }
+                ]
+            },
+            "sub_type": "bar-line hybrid",
+            "bbox": [
+                519,
+                200,
+                929,
+                357
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/252350ceb20a0da7ced8915df3b8e0d35d70ed1ce452aeda71047506e70341f4.jpg"
+                },
+                "content": "52 Toys\n| Month | Taobao sales (RMBm) | Douyin sales (RMBm) | JD sales (RMBm) | Major E-Commerce YoY (%) |\n|---|---|---|---|---|\n| Jan-24 | 3.3 | 1.8 | 2.0 | 30 |\n| Feb-24 | 2.0 | 2.0 | 2.0 | 40 |\n| Mar-24 | 2.7 | 1.6 | 1.0 | -30 |\n| Apr-24 | 2.7 | 1.6 | 1.0 | 10 |\n| May-24 | 4.3 | 1.9 | 1.0 | 130 |\n| Jun-24 | 3.7 | 1.9 | 1.0 | -10 |\n| Jul-24 | 3.3 | 1.9 | 1.0 | -30 |\n| Aug-24 | 4.0 | 1.9 | 1.0 | 20 |\n| Sep-24 | 3.7 | 1.9 | 1.0 | -10 |\n| Oct-24 | 3.7 | 1.9 | 1.0 | -10 |\n| Nov-24 | 3.9 | 1.9 | 1.0 | -10 |\n| Dec-24 | 2.3 | 1.9 | 1.0 | -70 |\n| Jan-25 | 2.0 | 1.9 | 1.0 | -30 |\n| Feb-25 | 2.3 | 1.9 | 1.0 | -30 |\n| Mar-25 | 3.8 | 1.9 | 1.0 | 70 |\n| Apr-25 | 3.7 | 1.9 | 1.0 | -10 |\n| May-25 | 3.8 | 1.9 | 1.0 | -10 |\n| Jun-25 | 5.0 | 1.9 | 1.0 | -10 |\n| Jul-25 | 3.3 | 1.9 | 1.0 | -30 |\n| Aug-25 | 2.7 | 1.9 | 1.0 | -30 |\n| Sep-25 | 2.7 | 1.9 | 1.0 | -30 |\n| Oct-25 | 4.3 | 1.9 | 1.0 | -30 |\n| Nov-25 | 4.3 | 1.9 | 1.0 | -30 |\n| Dec-25 | 2.7 | 1.9 | 1.0 | -30 |\n| Jan-26 | 1.7 | 1.9 | 1.0 | -30 |\n| Feb-26 | 3.7 | 1.9 | 1.0 | -30 |\n| Mar-26 | 1.3 | 1.9 | 1.0 | -50 |\n| Apr-26 | 1.3 | 1.9 | 1.0 | -50 |\nThe chart displays a bar chart with two data series: 'Taobao sales' and 'Douyin sales'. The bars are grouped by month from Jan to Dec, with each bar labeled by its value in RMBm and percentage change from prior month's baseline (e.g., +5% YoY). The secondary axis on the right shows 'Major E-Commerce YoY' values as percentages.",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Figure 7 - 52 Toys eCommerce sales"
+                    }
+                ],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: Meritco, JEF"
+                    }
+                ]
+            },
+            "sub_type": "bar-line hybrid",
+            "bbox": [
+                522,
+                381,
+                929,
+                537
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/9535b1e97a69a07b817029313369ceee6583999080f8af10d2754cb7fd17f16d.jpg"
+                },
+                "content": "| Month | T Mall (RMBm) | JD (RMBm) | Douyin (RMBm) | Total yoy (RHS) (%) |\n| --- | --- | --- | --- | --- |\n| Aug-22 | 25 | 10 | 0 | 100 |\n| Sep-22 | 30 | 15 | 0 | 300 |\n| Oct-22 | 35 | 20 | 0 | 700 |\n| Nov-22 | 40 | 25 | 0 | 900 |\n| Dec-22 | 30 | 15 | 0 | 800 |\n| Jan-23 | 25 | 10 | 0 | 700 |\n| Feb-23 | 25 | 10 | 0 | 600 |\n| Mar-23 | 25 | 10 | 0 | 600 |\n| Apr-23 | 25 | 10 | 0 | 600 |\n| May-23 | 25 | 10 | 0 | 600 |\n| Jun-23 | 25 | 10 | 0 | 600 |\n| Jul-23 | 25 | 10 | 0 | 600 |\n| Aug-23 | 25 | 10 | 0 | 600 |\n| Sep-23 | 25 | 10 | 0 | 600 |\n| Oct-23 | 25 | 10 | 0 | 600 |\n| Nov-23 | 25 | 10 | 0 | 600 |\n| Dec-23 | 25 | 10 | 0 | 600 |\n| Jan-24 | 25 | 10 | 0 | 600 |\n| Feb-24 | 25 | 10 | 0 | 600 |\n| Mar-24 | 35 | 15 | 0 | 750 |\n| Apr-24 | 45 | 20 | 0 | 850 |\n| May-24 | 55 | 25 | 0 | 950 |\n| Jun-24 | 65 | 30 | 0 | 1050 |\n| Jul-24 | 75 | 35 | 0 | 1150 |\n| Aug-24 | 85 | 40 | 0 | 1250 |\n| Sep-24 | 95 | 45 | 0 | 1350 |\n| Oct-24 | 115 | 55 | 15 | 175 |\n| Nov-24 | 135 | 65 | 35 | 235 |\n| Dec-24 | 145 | 75 | 45 | 315 |\n| Jan-25e | 135 | 75 | 45 | 315 |\n| Feb-25e | 145 | 85 | 65 | 315 |\n| Mar-25e | 165 | 95 | 85 | 395 |\n| Apr-25e | 185 | 115 | 115 | 485 |\n| May-25e | 215 | 135 | 145 | 685 |\n| Jun-25e | 245 | 165 | 185 | 885 |\n| Jul-25e | 275 | 195 | 235 | 1185 |\n| Aug-25e | 315 | 235 | 285 | 1485 |\n| Sep-25e | 345 | 275 | 335 | 1785 |\n| Oct-25e | 385 | 315 | 385 | 2185 |\n| Nov-25e | 415 | 345 | 435 | 2485 |\n| Dec-25e | 445 | 375 | 485 | 2785 |\n| Jan-26e | 475 | 405 | 535 | 3185 |\n| Feb-26e | 495 | 415 | 575 | 338 |",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Figure 9 - Miniso eCommerce sales"
+                    }
+                ],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: Meritco, JEF"
+                    }
+                ]
+            },
+            "sub_type": "bar-line hybrid",
+            "bbox": [
+                534,
+                562,
+                929,
+                719
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "JEF"
+                    }
+                ]
+            },
+            "bbox": [
+                78,
+                38,
+                216,
+                64
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "China Consumer"
+                    }
+                ]
+            },
+            "bbox": [
+                816,
+                39,
+                919,
+                52
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Equity Research"
+                    }
+                ]
+            },
+            "bbox": [
+                818,
+                54,
+                919,
+                66
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "June 9, 2026"
+                    }
+                ]
+            },
+            "bbox": [
+                838,
+                68,
+                919,
+                80
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "Please see important disclosure information on pages 7 - 13 of this report."
+                    }
+                ]
+            },
+            "bbox": [
+                77,
+                947,
+                416,
+                958
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "2"
+                    }
+                ]
+            },
+            "bbox": [
+                910,
+                948,
+                919,
+                957
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Second-hand price trackers"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                77,
+                139,
+                371,
+                159
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/9dded64e70367f2d6b4612db9560ccfab28c288d7e18169afa53a77ce1a73c96.jpg"
+                },
+                "content": "| Date | Toffee | Soymilk | Lychee Berry | Sea Salt | Green Grape | Sesame | Retail px |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| 11/8/2024 | 200 | 180 | 170 | 160 | 150 | 140 | 100 |\n| 12/8/2024 | 150 | 130 | 120 | 110 | 100 | 90 | 100 |\n| 1/7/2025 | 120 | 100 | 90 | 80 | 70 | 60 | 100 |\n| 2/6/2025 | 130 | 110 | 100 | 90 | 80 | 70 | 100 |\n| 3/8/2025 | 140 | 120 | 110 | 100 | 90 | 80 | 100 |\n| 4/7/2025 | 150 | 130 | 120 | 110 | 100 | 90 | 100 |\n| 5/7/2025 | 160 | 140 | 130 | 120 | 110 | 100 | 100 |\n| 6/6/2025 | 250 | 230 | 220 | 210 | 200 | 190 | 100 |\n| 7/6/2025 | 280 | 260 | 250 | 240 | 230 | 220 | 100 |\n| 8/5/2025 | 270 | 250 | 240 | 230 | 220 | 210 | 100 |\n| 9/4/2025 | 240 | 220 | 210 | 200 | 190 | 180 | 100 |\n| 10/4/2025 | 230 | 210 | 200 | 190 | 180 | 170 | 100 |\n| 11/3/2025 | 220 | 200 | 190 | 180 | 170 | 160 | 100 |\n| 12/3/2025 | 230 | 210 | 200 | 190 | 180 | 170 | 100 |\n| 1/2/2026 | 240 | 220 | 210 | 200 | 190 | 180 | 100 |\n| 2/1/2026 | 250 | 230 | 220 | 210 | 200 | 190 | 100 |\n| 3/3/2026 | 260 | 240 | 230 | 220 | 210 | 200 | 100 |\n| 4/2/2026 | 270 | 250 | 240 | 230 | 220 | 210 | 100 |\n| 5/2/2026 | 280 | 260 | 250 | 240 | 230 | 220 | 100 |\n| 6/1/2026 | 290 | 270 | 260 | 250 | 240 | 230 | 100 |",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Figure 10 - Pop Mart Labubu 1.0 second-hand price in mainland China"
+                    }
+                ],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: Chaowanzu, JEF. Note: official retail price is RMB99"
+                    }
+                ]
+            },
+            "sub_type": "line chart",
+            "bbox": [
+                89,
+                197,
+                485,
+                353
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/c44135b1edd2c7998b9f58260025560938927eff849081cb0184c9e6eaee4386.jpg"
+                },
+                "content": "",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Figure 12 - Pop Mart Twinkle Twinkle plush series second-hand price"
+                    }
+                ],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: Chaowanzu, JEF. Note: official retail price is RMB89"
+                    }
+                ]
+            },
+            "sub_type": "line chart",
+            "bbox": [
+                82,
+                376,
+                489,
+                529
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/ffbaab2c8522a81321e7fdea089bdbd5f72f65651c100e05ca5b7265617ac10f.jpg"
+                },
+                "content": "",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Figure 11 - Pop Mart Labubu x Sanrio second-hand price in mainland China"
+                    }
+                ],
+                "chart_footnote": []
+            },
+            "sub_type": "line chart",
+            "bbox": [
+                521,
+                196,
+                924,
+                350
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/312f5f3cd68c28db7b460d91c697ba65a1780682486b72a1a71782f6fc81f2f6.jpg"
+                },
+                "content": "",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Figure 13 - Pop Mart Pucky plush series second-hand price"
+                    }
+                ],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: Chaowanzu, JEF. Note: official retail price is RMB99"
+                    }
+                ]
+            },
+            "sub_type": "line chart",
+            "bbox": [
+                519,
+                375,
+                924,
+                529
+            ]
+        },
+        {
+            "type": "table",
+            "content": {
+                "image_source": {
+                    "path": "images/e5c95df9be2492472d9c7be5589bdf82b499a7e28d2d0ad264782c859cb410b8.jpg"
+                },
+                "table_caption": [
+                    {
+                        "type": "text",
+                        "content": "Figure 14 - Most wanted IPs on second-hand exchange platform on 9 June"
+                    }
+                ],
+                "table_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: Chaowanzu, JEF. Note: this list is ranked by series; hence, one IP can appear multiple times for its different series. Yellow highlights are IPs not owned by Pop Mart and green are products from non-Pop Mart bvrand"
+                    }
+                ],
+                "html": "<table><tr><td>Rank</td><td>IP</td><td>Company</td><td>Rank</td><td>IP</td><td>Company</td></tr><tr><td>1</td><td>aespa</td><td>Pop Mart</td><td>16</td><td>Dimoo</td><td>Pop Mart</td></tr><tr><td>2</td><td>Zsiga</td><td>Pop Mart</td><td>17</td><td>Twinkle Twinkle</td><td>Pop Mart</td></tr><tr><td>3</td><td>Hirono</td><td>Pop Mart</td><td>18</td><td>Dimoo</td><td>Pop Mart</td></tr><tr><td>4</td><td>Twinkle Twinkle</td><td>Pop Mart</td><td>19</td><td>Spongebob</td><td>Pop Mart</td></tr><tr><td>5</td><td>Zsiga</td><td>Pop Mart</td><td>20</td><td>Twinkle Twinkle</td><td>Pop Mart</td></tr><tr><td>6</td><td>Twinkle Twinkle</td><td>Pop Mart</td><td>21</td><td>SKULLPANDA</td><td>Pop Mart</td></tr><tr><td>7</td><td>Crybaby</td><td>Pop Mart</td><td>22</td><td>Labubu</td><td>Pop Mart</td></tr><tr><td>8</td><td>Dimoo</td><td>Pop Mart</td><td>23</td><td>Dimoo</td><td>Pop Mart</td></tr><tr><td>9</td><td>Twinkle Twinkle</td><td>Pop Mart</td><td>24</td><td>Spongebob</td><td>Pop Mart</td></tr><tr><td>10</td><td>Buer</td><td>Mita</td><td>25</td><td>YOYO</td><td>Miniso</td></tr><tr><td>11</td><td>SIINONO</td><td>HERE</td><td>26</td><td>Labubu</td><td>Pop Mart</td></tr><tr><td>12</td><td>Twinkle Twinkle</td><td>Pop Mart</td><td>27</td><td>Haci Pupu</td><td>Pop Mart</td></tr><tr><td>13</td><td>Molly</td><td>Pop Mart</td><td>28</td><td>Hatti</td><td>Pop Mart</td></tr><tr><td>14</td><td>Mix-Dear Birds</td><td>Pop Mart</td><td>29</td><td>Nyota</td><td>Pop Mart</td></tr><tr><td>15</td><td>Crybaby</td><td>Pop Mart</td><td>30</td><td>Twinkle Twinkle</td><td>Pop Mart</td></tr></table>",
+                "table_type": "simple_table",
+                "table_nest_level": 1
+            },
+            "bbox": [
+                80,
+                554,
+                640,
+                777
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "JEF"
+                    }
+                ]
+            },
+            "bbox": [
+                78,
+                38,
+                216,
+                64
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "China Consumer"
+                    }
+                ]
+            },
+            "bbox": [
+                816,
+                39,
+                919,
+                51
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Equity Research"
+                    }
+                ]
+            },
+            "bbox": [
+                818,
+                54,
+                919,
+                66
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "June 9, 2026"
+                    }
+                ]
+            },
+            "bbox": [
+                838,
+                68,
+                919,
+                80
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "Please see important disclosure information on pages 7 - 13 of this report."
+                    }
+                ]
+            },
+            "bbox": [
+                77,
+                947,
+                416,
+                958
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "3"
+                    }
+                ]
+            },
+            "bbox": [
+                910,
+                948,
+                919,
+                957
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Interaction trackers"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                77,
+                139,
+                289,
+                156
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/5ff302136490a8692e71c557246d24ef10659544518cafffb4669cef1c23cdf9.jpg"
+                },
+                "content": "| Month    | Global | Thailand | US   | UK   |\n|----------|--------|----------|------|------|\n| Mar-24   | 100    | 300      | 100  | 100  |\n| Apr-24   | 200    | 900      | 300  | 1700 |\n| May-24   | 100    | 300      | 100  | 100  |\n| Jun-24   | 100    | 1700     | 300  | 1700 |\n| Jul-24   | 100    | 2800     | 600  | 1700 |\n| Aug-24   | 100    | 900      | 800  | 1700 |\n| Sep-24   | 100    | 400      | 300  | 1700 |\n| Oct-24   | 100    | 1700     | 300  | 700  |\n| Nov-24   | 100    | 3900     | 3900 | 700  |\n| Dec-24   | 100    | 2500     | 1500 | 4000 |\n| Jan-25   | 100    | 500      | 800  | 4000 |\n| Feb-25   | 100    | 800      | 1500 | 4000 |\n| Mar-25   | 100    | 2100     | 1500 | 4000 |\n| Apr-25   | 1300   | 1300     | 2300 | 4000 |\n| May-25   | 1100   | 3900     | 2300 | 4000 |\n| Jun-25   | 800    | 3900     | 3900 | 4000 |\n| Jul-25   | 400    | 2100     | 1100 | 4000 |\n| Aug-25   | 400    | 3700     | 1600 | 4000 |\n| Sep-25   | 700    | 1600     | 1500 | 4000 |\n| Oct-25   | 400    | 900      | 1900 | 4000 |\n| Nov-25   | 300    | 350      | 550  | 4000 |\n| Dec-25   | 350    | 1155     | 1155 | 4000 |\n| Jan-26   | 350    | 395      | 325          | 956  |\n| Feb-26   | 35      | 235      | 235          | 656  |\n| Mar-26   | 35      | 165      | 135          | 1356 |\n| Apr-26   | 35      | 165      | 135          | 1356 |\n| May-26   | 35      | 275      | 956          | 656  |",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Figure 15 - Pop Mart TikTok Interaction Index"
+                    }
+                ],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: Listen First, JEF, Note: Jan-2024 = 100, interactions include likes, comments, and forwards."
+                    }
+                ]
+            },
+            "sub_type": "bar chart",
+            "bbox": [
+                85,
+                196,
+                489,
+                350
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/74080caa161b753628cefe6caaf7913d001aa362480a2eab728aa9d0258ca5a2.jpg"
+                },
+                "content": "| Month    | Global | Thailand | US   | UK   |\n|----------|--------|----------|------|------|\n| Jan-24   | 100    | 50       | 50   | 50   |\n| Feb-24   | 150    | 100      | 100  | 100  |\n| Mar-24   | 200    | 150      | 150  | 150  |\n| Apr-24   | 300    | 400      | 200  | 200  |\n| May-24   | 400    | 600      | 300  | 300  |\n| Jun-24   | 500    | 800      | 400  | 400  |\n| Jul-24   | 600    | 1,000    | 500  | 500  |\n| Aug-24   | 700    | 1,200    | 600  | 600  |\n| Sep-24   | 800    | 1,400    | 700  | 700  |\n| Oct-24   | 900    | 1,600    | 800  | 800  |\n| Nov-24   | 1,300  | 1,800    | 900  | 900  |\n| Dec-24   | 1,500  | 2,000    | 1,000| 1,000|\n| Jan-25   | 1,700  | 2,200    | 1,100| 1,100|\n| Feb-25   | 1,900  | 2,400    | 1,200| 1,200|\n| Mar-25   | 2,100  | 2,600    | 1,300| 1,300|\n| Apr-25   | 2,300  | 2,800    | 1,400| 1,400|\n| May-25   | 2,500  | 3,000    | 1,500| 1,500|\n| Jun-25   | 2,700  | 3,200    | 1,600| 1,600|\n| Jul-25   | 2,900  | 3,400    | 1,700| 1,700|\n| Aug-25   | 3,100  | 3,600    | 1,800| 1,800|\n| Sep-25   | 3,300  | 3,800    | 1,900| 1,900|\n| Oct-25   | 3,500  | 4,000    | 2,000| 2,000|\n| Nov-25   | 3,700  | 4,200    | 2,100| 2,100|\n| Dec-25   | 3,900  | 4,400    | 2,200| 2,200|\n| Jan-26   | 4,100  | 4,600    | 2,300| 2,300|\n| Feb-26   | 4,300  | 4,800    | 2,400| 2,400|\n| Mar-26   | 4,500  | 5,000    | 2,500| 2,500|\n| Apr-26   | 4,700  | 5,200    | 2,600| 2,600|\n| May-26   | 4,900  | 5,400    | 2,700| 2,700|",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Figure 17 - Pop Mart Facebook Interaction Index"
+                    }
+                ],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: Listen First, JEF, Note: Jan-2024 = 100, interactions include likes, comments, and forwards."
+                    }
+                ]
+            },
+            "sub_type": "bar chart",
+            "bbox": [
+                80,
+                378,
+                489,
+                527
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/780cb0028202ecaadcbcca91e74ace42c94d5624bac48a6890e5451419c1b86e.jpg"
+                },
+                "content": "| Month    | Pop Mart Global | Pop Mart Thailand | Pop Mart US | Pop Mart UK |\n|----------|-----------------|-------------------|-------------|-------------|\n| Mar-24   | 0.1             | 0.0               | 0.0         | 0.0         |\n| Apr-24   | 0.9             | 0.0               | 0.0         | 0.0         |\n| May-24   | 1.0             | 0.0               | 0.0         | 0.0         |\n| Jun-24   | 1.1             | 0.0               | 0.0         | 0.0         |\n| Jul-24   | 1.3             | 0.0               | 0.0         | 0.0         |\n| Aug-24   | 1.4             | 0.0               | 0.1         | 0.0         |\n| Sep-24   | 1.5             | 0.0               | 0.1         | 0.0         |\n| Oct-24   | 1.6             | 0.0               | 0.1         | 0.0         |\n| Nov-24   | 1.7             | 0.0               | 0.1         | 0.0         |\n| Dec-24   | 1.8             | 0.0               | 0.1         | 0.0         |\n| Jan-25   | 1.9             | 0.0               | 0.1         | 0.0         |\n| Feb-25   | 2.0             | 0.0               | 0.1         | 0.0         |\n| Mar-25   | 2.1             | 0.0               | 0.1         | 0.0         |\n| Apr-25   | 2.2             | 0.0               | 0.1         | 0.0         |\n| May-25   | 2.3             | 0.0               | 0.1         | 0.0         |\n| Jun-25   | 2.4             | 0.0               | 0.1         | 0.1         |\n| Jul-25   | 2.5             | 0.0               | 0.1         | 0.1         |\n| Aug-25   | 2.5             | 0.0               | 0.1         | 0.1         |\n| Sep-25   | 2.5             | 0.0               | 0.1         | 0.1         |\n| Oct-25   | 2.6             | 0.0               | 0.1         | 0.1         |\n| Nov-25   | 2.7             | 0.0               | 0.1         | 0.1         |\n| Dec-25   | 2.7             | 0.0               | 0.1         | 0.1         |\n| Jan-26   | 2.7             | 0.0               | 0.1         | 0.1         |\n| Feb-26   | 2.7             | 0.0               | 0.1         | 0.1         |\n| Mar-26   | 2.7             | 0.0               | 0.1         | 0.1         |\n| Apr-26   | 2.7             | 0.0               | 0.1         | 0.1         |\n| May-26   | 2.7             | 0.0               | 0.1         | 0.1         |",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Figure 19 - Pop Mart official accounts' followers on TikTok"
+                    }
+                ],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: Listen First, JEF"
+                    }
+                ]
+            },
+            "sub_type": "stacked bar chart",
+            "bbox": [
+                87,
+                558,
+                489,
+                709
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/ebfed86e640bae2eeb8bfd27ee6e7463d242187240fb1088e07dd6e62283dc49.jpg"
+                },
+                "content": "| Month | POP MART - WW | POP MART - US |\n|---|---|---|\n| Jun-24 | 100000 | 50000 |\n| Jul-24 | 100000 | 50000 |\n| Aug-24 | 100000 | 50000 |\n| Sep-24 | 100000 | 50000 |\n| Oct-24 | 150000 | 50000 |\n| Nov-24 | 200000 | 50000 |\n| Dec-24 | 250000 | 50000 |\n| Jan-25 | 300000 | 50000 |\n| Feb-25 | 400000 | 150000 |\n| Mar-25 | 500000 | 350000 |\n| Apr-25 | 700000 | 550000 |\n| May-25 | 1100000 | 850000 |\n| Jun-25 | 2450000 | 1550000 |\n| Jul-25 | 3250000 | 2150000 |\n| Aug-25 | 3450000 | 2250000 |\n| Sep-25 | 3150000 | 1750000 |\n| Oct-25 | 2550000 | 1350000 |\n| Nov-25 | 2450000 | 1350000 |\n| Dec-25 | 2350000 | 1250000 |\n| Jan-26 | 2150000 | 955666 |\n| Feb-26 | 2155111 | 737777 |\n| Mar-26 | 2155111 | 787777 |\n| Apr-26 | 1955111 | 617777 |\n| May-26 | 1835111 | 537777 |",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Figure 21 - Pop Mart app's active users"
+                    }
+                ],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: Sensor Tower, JEF. Note: Dream Home is only available in China. WW refers to worldwide and US to the United States."
+                    }
+                ]
+            },
+            "sub_type": "bar chart",
+            "bbox": [
+                85,
+                738,
+                489,
+                889
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/a6e025d78392ed2d8c1a17ad97033d10030560200f0f76786a7d95d0d89d860b.jpg"
+                },
+                "content": "| Month    | Global | Thailand | US   | UK   |\n|----------|--------|----------|------|------|\n| Jan-24   | 100    | 150      | 100  | 100  |\n| Feb-24   | 150    | 250      | 150  | 100  |\n| Mar-24   | 200    | 300      | 200  | 150  |\n| Apr-24   | 250    | 400      | 250  | 200  |\n| May-24   | 300    | 350      | 300  | 250  |\n| Jun-24   | 350    | 400      | 350  | 300  |\n| Jul-24   | 400    | 450      | 400  | 350  |\n| Aug-24   | 450    | 500      | 450  | 400  |\n| Sep-24   | 500    | 550      | 500  | 450  |\n| Oct-24   | 550    | 600      | 550  | 500  |\n| Nov-24   | 600    | 650      | 600  | 550  |\n| Dec-24   | 650    | 700      | 650  | 600  |\n| Jan-25   | 700    | 750      | 700  | 650  |\n| Feb-25   | 750    | 800      | 750  | 700  |\n| Mar-25   | 800    | 850      | 800  | 750  |\n| Apr-25   | 850    | 900      | 850  | 800  |\n| May-25   | 900    | 950      | 900  | 850  |\n| Jun-25   | 950    | 1000     | 950  | 900  |\n| Jul-25   | 1000   | 1050     | 1000 | 950  |\n| Aug-25   | 1050   | 1100     | 1050 | 1000 |\n| Sep-25   | 1100   | 1150     | 1100 | 1050 |\n| Oct-25   | 1150   | 1200     | 1150 | 1100 |\n| Nov-25   | 1200   | 1250     | 1200 | 1150 |\n| Dec-25   | 1250   | 1300     | 1250 | 1200 |\n| Jan-26   | 1300   | 1350     | 1300 | 1250 |\n| Feb-26   | 1350   | 1400     | 1350 | 1300 |\n| Mar-26   | 1400   | 1450     | 1400 | 1350 |\n| Apr-26   | 1450   | 1500     | 1450 | 1400 |\n| May-26   | 1500   | 1550     | 1500 | 1450 |",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Figure 16 - Pop Mart Instagram Interaction Index"
+                    }
+                ],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: Listen First, JEF, Note: Jan-2024 = 100, interactions include likes, comments, and forwards."
+                    }
+                ]
+            },
+            "sub_type": "bar chart",
+            "bbox": [
+                522,
+                193,
+                926,
+                348
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/b82866fed88e17dba6e126360990e361c51c81eb0d4db06f2468654951025087.jpg"
+                },
+                "content": "| Month    | Share px indexed | TikTok Engagement Indexed - Global | Instagram Engagement Indexed - Global | Facebook Engagement Indexed - Global |\n|----------|------------------|------------------------------------|----------------------------------------|--------------------------------------|\n| Jan-24   | 100              | 100                                | 100                                    | 100                                  |\n| Feb-24   | 150              | 200                                | 150                                    | 150                                  |\n| Mar-24   | 200              | 300                                | 200                                    | 200                                  |\n| Apr-24   | 250              | 400                                | 250                                    | 250                                  |\n| May-24   | 300              | 500                                | 300                                    | 300                                  |\n| Jun-24   | 350              | 600                                | 350                                    | 350                                  |\n| Jul-24   | 400              | 700                                | 400                                    | 400                                  |\n| Aug-24   | 450              | 800                                | 450                                    | 450                                  |\n| Sep-24   | 500              | 900                                | 500                                    | 500                                  |\n| Oct-24   | 550              | 1000                               | 550                                    | 550                                  |\n| Nov-24   | 600              | 1100                               | 600                                    | 600                                  |\n| Dec-24   | 650              | 1200                               | 650                                    | 650                                  |\n| Jan-25   | 700              | 1300                               | 700                                    | 700                                  |\n| Feb-25   | 750              | 1400                               | 750                                    | 750                                  |\n| Mar-25   | 800              | 1500                               | 800                                    | 800                                  |\n| Apr-25   | 850              | 1600                               | 850                                    | 850                                  |\n| May-25   | 900              | 1700                               | 900                                    | 900                                  |\n| Jun-25   | 950              | 1800                               | 950                                    | 950                                  |\n| Jul-25   | 1000             | 1900                               | 1000                                   | 1000                                 |\n| Aug-25   | 1100             | 2000                               | 1100                                   | 1100                                 |\n| Sep-25   | 1200             | 2100                               | 1200                                   | 1200                                 |\n| Oct-25   | 1300             | 2200                               | 1300                                   | 1300                                 |\n| Nov-25   | 1400             | 2300                               | 1400                                   | 1400                                 |\n| Dec-25   | 1500             | 2400                               | 1500                                   | 1500                                 |\n| Jan-26   | 1600             | 2500                               | 1600                                   | 1600                                 |\n| Feb-26   | 1700             | 2600                               | 1700                                   | 1700                                 |\n| Mar-26   | 1800             | 2700                               | 1800                                   | 1800                                 |\n| Apr-26   | 1900             | 2800                               | 1900                                   | 1900                                 |\n| May-26   | 2000             | 2900                               | 2000                                   | 2000                                 |",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Figure 18 - Pop Mart share price vs social media engagement"
+                    }
+                ],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: Factset, Listen First, JEF. Note: Jan-2024 = 100."
+                    }
+                ]
+            },
+            "sub_type": "line chart",
+            "bbox": [
+                524,
+                376,
+                924,
+                527
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/5597a998a27c6a602f232d0d7f8397bee04846cbc6b18c33e78808082f0c18c9.jpg"
+                },
+                "content": "| Month    | Pop Mart Global | Pop Mart Thailand | Pop Mart US | Pop Mart UK |\n|----------|-----------------|-------------------|-------------|-------------|\n| Mar-24   | 0.1             | 0.0               | 0.0         | 0.0         |\n| Apr-24   | 0.3             | 0.0               | 0.1         | 0.0         |\n| May-24   | 0.4             | 0.0               | 0.1         | 0.0         |\n| Jun-24   | 0.5             | 0.0               | 0.1         | 0.0         |\n| Jul-24   | 0.6             | 0.0               | 0.1         | 0.0         |\n| Aug-24   | 0.7             | 0.0               | 0.1         | 0.0         |\n| Sep-24   | 0.8             | 0.0               | 0.1         | 0.0         |\n| Oct-24   | 0.9             | 0.0               | 0.1         | 0.0         |\n| Nov-24   | 0.3             | 0.0               | 0.1         | 0.0         |\n| Dec-24   | 0.8             | 0.0               | 0.1         | 0.0         |\n| Jan-25   | 0.9             | 0.0               | 0.1         | 0.0         |\n| Feb-25   | 1.0             | 0.0               | 0.1         | 0.0         |\n| Mar-25   | 1.1             | 0.0               | 0.1         | 0.0         |\n| Apr-25   | 1.2             | 0.0               | 0.1         | 0.0         |\n| May-25   | 1.3             | 0.0               | 0.1         | 0.1         |\n| Jun-25   | 1.4             | 0.0               | 0.1         | 0.1         |\n| Jul-25   | 1.5             | 0.0               | 0.1         | 0.1         |\n| Aug-25   | 1.6             | 0.0               | 0.1         | 0.1         |\n| Sep-25   | 1.7             | 0.0               | 0.1         | 0.1         |\n| Oct-25   | 1.8             | 0.0               | 0.1         | 0.1         |\n| Nov-25   | 1.9             | 0.0               | 0.1         | 0.1         |\n| Dec-25   | 2.0             | 0.0               | 0.1         | 0.1         |\n| Jan-26   | 2.1             | 0.0               | 0.1         | 0.1         |\n| Feb-26   | 2.2             | 0.0               | 0.1         | 0.1         |\n| Mar-26   | 2.3             | 0.0               | 0.1         | 0.1         |\n| Apr-26   | 2.4             | 0.0               | 0.1         | 0.1         |\n| May-26   | 2.5             | 0.0               | 0.1         | 0.1         |",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Figure 20 - Pop Mart official accounts' followers on Instagram"
+                    }
+                ],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: Listen First, JEF"
+                    }
+                ]
+            },
+            "sub_type": "stacked bar chart",
+            "bbox": [
+                524,
+                558,
+                924,
+                709
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/79cd08392dace666e50762473d93dbe9eb4ff46230312b337183c177f5a585a8.jpg"
+                },
+                "content": "| Month   | POP MART - SG | POP MART - FR | POP MART - KR |\n|---------|---------------|---------------|---------------|\n| Jun-25  | 10,000        | 17,000        | 14,000        |\n| Jul-25  | 28,000        | 23,000        | 57,000        |\n| Aug-25  | 37,000        | 22,000        | 57,000        |\n| Sep-25  | 42,000        | 20,000        | 61,000        |\n| Oct-25  | 44,000        | 19,000        | 52,000        |\n| Nov-25  | 47,000        | 18,000        | 46,000        |\n| Dec-25  | 50,000        | 18,000        | 44,000        |\n| Jan-26  | 51,000        | 18,000        | 47,000        |\n| Feb-26  | 51,000        | 18,000        | 47,000        |\n| Mar-26  | 51,000        | 18,000        | 48,000        |\n| Apr-26  | 51,000        | 18,000        | 48,000        |\n| May-26  | 51,000        | 18,000        | 48,000        |",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Figure 22 - Pop Mart app's active users - Asian countries more resilient"
+                    }
+                ],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: Sensor Tower, JEF. SG for Singapore, FR for France, KR for South Korea"
+                    }
+                ]
+            },
+            "sub_type": "bar chart",
+            "bbox": [
+                519,
+                737,
+                924,
+                889
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "JEF"
+                    }
+                ]
+            },
+            "bbox": [
+                78,
+                38,
+                216,
+                64
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "China Consumer"
+                    }
+                ]
+            },
+            "bbox": [
+                816,
+                39,
+                919,
+                52
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Equity Research"
+                    }
+                ]
+            },
+            "bbox": [
+                818,
+                54,
+                919,
+                66
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "June 9, 2026"
+                    }
+                ]
+            },
+            "bbox": [
+                838,
+                68,
+                919,
+                80
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "Please see important disclosure information on pages 7 - 13 of this report."
+                    }
+                ]
+            },
+            "bbox": [
+                77,
+                947,
+                416,
+                958
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "4"
+                    }
+                ]
+            },
+            "bbox": [
+                910,
+                948,
+                919,
+                957
+            ]
+        }
+    ],
+    [
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/f1ad7aae8ce575ecb710d3d35ca720aaae53f281f37fdf9c064be51d03d61bd6.jpg"
+                },
+                "content": "| Month    | World     | US        |\n| -------- | --------- | --------- |\n| Nov-21   | 0         | 0         |\n| Jan-22   | 0         | 0         |\n| Mar-22   | 0         | 0         |\n| May-22   | 0         | 0         |\n| Jul-22   | 0         | 0         |\n| Sep-22   | 0         | 0         |\n| Nov-22   | 0         | 0         |\n| Jan-23   | 0         | 0         |\n| Mar-23   | 0         | 0         |\n| May-23   | 0         | 0         |\n| Jul-23   | 0         | 0         |\n| Sep-23   | 0         | 0         |\n| Nov-23   | 0         | 0         |\n| Jan-24   | 0         | 0         |\n| Mar-24   | 1,000,000 | 5,000,000 |\n| May-24   | 3,000,000 | 1,000,000 |\n| Jul-24   | 5,000,000 | 1,500,000 |\n| Sep-24   | 7,000,000 | 2,500,000 |\n| Nov-24   | 8,000,000 | 3,500,000 |\n| Jan-25   | 9,000,000 | 4,500,000 |\n| Mar-25   | 15,000,000| 7,500,000 |\n| May-25   | 19,561,838| 12,561,838|\n| Jul-25   | 17,561,838| 9,561,838 |\n| Sep-25   | 14,561,838| 6,561,838 |\n| Nov-25   | 11,561,838| 4,561,838 |\n| Jan-26   | 8,561,838 | 3,561,838 |\n| Mar-26   | 6,561,838 | 2,561,838 |\n| May-26   | 4,561,838 | 1,561,838 |",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Figure 23 - Popmart website visits from worldwide and the US"
+                    }
+                ],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: SimilarWeb, JEF"
+                    }
+                ]
+            },
+            "sub_type": "line chart",
+            "bbox": [
+                82,
+                152,
+                502,
+                311
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/7153b92583e3ba1ca1ae086e8ef68782d8c57d218f34e44d9e2bda0f58850cac.jpg"
+                },
+                "content": "| Month    | Labubu | Pop Mart |\n| -------- | ------ | -------- |\n| Nov-23   | 0      | 0        |\n| Jan-24   | 0      | 0        |\n| Mar-24   | 0      | 0        |\n| May-24   | 0      | 0        |\n| Jul-24   | 0      | 0        |\n| Sep-24   | 5      | 0        |\n| Nov-24   | 15     | 0        |\n| Jan-25   | 10     | 0        |\n| Mar-25   | 15     | 0        |\n| May-25   | 20     | 0        |\n| Jul-25   | 95     | 5        |\n| Sep-25   | 80     | 5        |\n| Nov-25   | 30     | 0        |\n| Jan-26   | 20     | 0        |\n| Mar-26   | 10     | 0        |\n| May-26   | 5      | 0        |",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Figure 25 - Google search trends for Pop Mart and Labubu – Worldwide"
+                    }
+                ],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: Google trends, JEF"
+                    }
+                ]
+            },
+            "sub_type": "line chart",
+            "bbox": [
+                87,
+                335,
+                492,
+                486
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/6f877430e1cdcd84678936a1c0608843f2d82431a97ea0484a1e355eba895c29.jpg"
+                },
+                "content": "| Month    | Labubu | Pop Mart |\n| -------- | ------ | -------- |\n| Nov-23   | 0      | 0        |\n| Jan-24   | 0      | 0        |\n| Mar-24   | 0      | 0        |\n| May-24   | 0      | 0        |\n| Jul-24   | 0      | 0        |\n| Sep-24   | 0      | 0        |\n| Nov-24   | 40     | 20       |\n| Jan-25   | 20     | 15       |\n| Mar-25   | 20     | 15       |\n| May-25   | 30     | 30       |\n| Jul-25   | 100    | 40       |\n| Sep-25   | 90     | 60       |\n| Nov-25   | 70     | 50       |\n| Jan-26   | 40     | 30       |\n| Mar-26   | 20     | 25       |\n| May-26   | 10     | 15       |",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Figure 27 - Google search trends for Pop Mart and Labubu - Japan"
+                    }
+                ],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: Google trends, JEF"
+                    }
+                ]
+            },
+            "sub_type": "line chart",
+            "bbox": [
+                84,
+                514,
+                492,
+                670
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/c1c5ab5d715cc65d14b328f16fed1167d2493654da36e38d3fc238c054cd8fea.jpg"
+                },
+                "content": "| Month    | Labubu | Pop Mart |\n| -------- | ------ | -------- |\n| Nov-23   | 0      | 0        |\n| Jan-24   | 0      | 0        |\n| Mar-24   | 0      | 0        |\n| May-24   | 0      | 0        |\n| Jul-24   | 0      | 0        |\n| Sep-24   | 0      | 0        |\n| Nov-24   | 0      | 0        |\n| Jan-25   | 0      | 0        |\n| Mar-25   | 0      | 0        |\n| May-25   | 5      | 0        |\n| Jul-25   | 95     | 10       |\n| Sep-25   | 100    | 10       |\n| Nov-25   | 35     | 5        |\n| Jan-26   | 20     | 5        |\n| Mar-26   | 10     | 5        |\n| May-26   | 5      | 0        |",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Figure 29 - Google search trends for Pop Mart and Labubu - France"
+                    }
+                ],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: Google trends, JEF"
+                    }
+                ]
+            },
+            "sub_type": "line chart",
+            "bbox": [
+                82,
+                695,
+                489,
+                846
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/4f15bf0dce69df944336d2e894c1357c281b8fb15d5dd0de3a321d2a586f5e00.jpg"
+                },
+                "content": "| Month    | World   | US      |\n| -------- | ------- | ------- |\n| Nov-22   | 1,400,000 | 1,200,000 |\n| Jan-23   | 1,700,000 | 900,000  |\n| Mar-23   | 1,300,000 | 950,000  |\n| May-23   | 1,400,000 | 1,000,000 |\n| Jul-23   | 1,700,000 | 1,100,000 |\n| Sep-23   | 1,600,000 | 1,200,000 |\n| Nov-23   | 1,650,000 | 1,150,000 |\n| Jan-24   | 1,550,000 | 1,100,000 |\n| Mar-24   | 1,550,000 | 1,050,000 |\n| May-24   | 1,450,000 | 1,050,000 |\n| Jul-24   | 1,550,000 | 1,150,000 |\n| Sep-24   | 1,750,000 | 1,350,000 |\n| Nov-24   | 1,850,000 | 1,350,000 |\n| Jan-25   | 1,450,000 | 1,150,000 |\n| Mar-25   | 1,650,000 | 1,250,000 |\n| May-25   | 1,750,000 | 1,350,000 |\n| Jul-25   | 1,950,000 | 1,450,000 |\n| Sep-25   | 1,650,000 | 1,550,000 |\n| Nov-25   | 1,950,000 | 1,550,000 |\n| Jan-26   | 1,850,000 | 1,450,000 |\n| Mar-26   | 1,750,000 | 1,350,000 |\n| May-26   | 1,750,000 | 1,350,000 |",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Figure 24 - Sanrio website visits"
+                    }
+                ],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: SimilarWeb, JEF"
+                    }
+                ]
+            },
+            "sub_type": "line chart",
+            "bbox": [
+                519,
+                152,
+                924,
+                307
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/5b45d2b481c58d19239954fda94f99898dc04b1a3cfd47b98a184af237fda3f6.jpg"
+                },
+                "content": "| Month    | Labubu | Pop Mart |\n| -------- | ------ | -------- |\n| Nov-23   | 0      | 0        |\n| Jan-24   | 0      | 0        |\n| Mar-24   | 20     | 15       |\n| May-24   | 100    | 55       |\n| Jul-24   | 45     | 35       |\n| Sep-24   | 30     | 25       |\n| Nov-24   | 20     | 15       |\n| Jan-25   | 10     | 10       |\n| Mar-25   | 5      | 5        |\n| May-25   | 15     | 10       |\n| Jul-25   | 20     | 15       |\n| Sep-25   | 10     | 10       |\n| Nov-25   | 5      | 5        |\n| Jan-26   | 5      | 5        |\n| Mar-26   | 0      | 0        |\n| May-26   | 0      | 0        |",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Figure 26 - Google search trends for Pop Mart and Labubu - Thailand"
+                    }
+                ],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: Google trends, JEF"
+                    }
+                ]
+            },
+            "sub_type": "line chart",
+            "bbox": [
+                521,
+                332,
+                927,
+                486
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/4379a973dda4eda45ca8efa66e6a480ba130b34efde1ae881e1eb9ec7cfce03a.jpg"
+                },
+                "content": "| Month    | Labubu | Pop Mart |\n| -------- | ------ | -------- |\n| Nov-23   | 0      | 0        |\n| Jan-24   | 0      | 0        |\n| Mar-24   | 0      | 0        |\n| May-24   | 0      | 0        |\n| Jul-24   | 0      | 0        |\n| Sep-24   | 0      | 0        |\n| Nov-24   | 5      | 0        |\n| Jan-25   | 10     | 0        |\n| Mar-25   | 20     | 0        |\n| May-25   | 50     | 5        |\n| Jul-25   | 100    | 10       |\n| Sep-25   | 80     | 5        |\n| Nov-25   | 30     | 0        |\n| Jan-26   | 25     | 0        |\n| Mar-26   | 10     | 0        |\n| May-26   | 5      | 0        |",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Figure 28 - Google search trends for Pop Mart and Labubu - the US"
+                    }
+                ],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: Google trends, JEF"
+                    }
+                ]
+            },
+            "sub_type": "line chart",
+            "bbox": [
+                519,
+                514,
+                921,
+                665
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/8eff6cf383f23adfc00b45ba3532e466755476f4142a767d3eb134bb1bae7306.jpg"
+                },
+                "content": "| Month    | Labubu | Pop Mart |\n| -------- | ------ | -------- |\n| Nov-23   | 0      | 0        |\n| Jan-24   | 0      | 0        |\n| Mar-24   | 0      | 0        |\n| May-24   | 0      | 0        |\n| Jul-24   | 0      | 0        |\n| Sep-24   | 0      | 0        |\n| Nov-24   | 0      | 0        |\n| Jan-25   | 0      | 0        |\n| Mar-25   | 10     | 5        |\n| May-25   | 20     | 10       |\n| Jul-25   | 90     | 15       |\n| Sep-25   | 100    | 15       |\n| Nov-25   | 40     | 5        |\n| Jan-26   | 20     | 5        |\n| Mar-26   | 10     | 5        |\n| May-26   | 5      | 0        |",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Figure 30 - Google search trends for Pop Mart and Labubu - Italy"
+                    }
+                ],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: Google trends, JEF"
+                    }
+                ]
+            },
+            "sub_type": "line chart",
+            "bbox": [
+                521,
+                692,
+                927,
+                850
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "JEF"
+                    }
+                ]
+            },
+            "bbox": [
+                78,
+                38,
+                216,
+                64
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "China Consumer"
+                    }
+                ]
+            },
+            "bbox": [
+                816,
+                39,
+                919,
+                51
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Equity Research"
+                    }
+                ]
+            },
+            "bbox": [
+                818,
+                54,
+                919,
+                66
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "June 9, 2026"
+                    }
+                ]
+            },
+            "bbox": [
+                838,
+                68,
+                919,
+                80
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "Please see important disclosure information on pages 7 - 13 of this report."
+                    }
+                ]
+            },
+            "bbox": [
+                77,
+                947,
+                416,
+                958
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "5"
+                    }
+                ]
+            },
+            "bbox": [
+                910,
+                948,
+                919,
+                957
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Other trackers"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                77,
+                139,
+                233,
+                158
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/9307e57fe8951dc23049e1e721fa57ef617be796b05997a904d73912003f9f3f.jpg"
+                },
+                "content": "| Month | Propriety IPs | Exclusive licensed IPs | Non-exclusive licensed IPs |\n| :--- | :--- | :--- | :--- |\n| Nov-20 | 1 | 3 | 2 |\n| Jan-21 | 1 | 3 | 2 |\n| Mar-21 | 1 | 3 | 2 |\n| May-21 | 1 | 3 | 2 |\n| Jul-21 | 1 | 3 | 2 |\n| Sep-21 | 1 | 3 | 2 |\n| Nov-21 | 1 | 3 | 2 |\n| Jan-22 | 1 | 3 | 2 |\n| Mar-22 | 1 | 3 | 2 |\n| May-22 | 1 | 3 | 2 |\n| Jul-22 | 1 | 3 | 2 |\n| Sep-22 | 1 | 3 | 2 |\n| Nov-22 | 1 | 3 | 2 |\n| Jan-23 | 1 | 3 | 2 |\n| Mar-23 | 1 | 3 | 2 |\n| May-23 | 1 | 3 | 2 |\n| Jul-23 | 1 | 3 | 2 |\n| Sep-23 | 1 | 3 | 2 |\n| Nov-23 | 1 | 3 | 2 |\n| Jan-24 | 1 | 3 | 2 |\n| Mar-24 | 1 | 3 | 2 |\n| May-24 | 1 | 3 | 2 |\n| Jul-24 | 1 | 3 | 2 |\n| Sep-24 | 1 | 3 | 2 |\n| Nov-24 | 1 | 3 | 2 |\n| Jan-25 | 1 | 3 | 2 |\n| Mar-25 | 1 | 3 | 2 |\n| May-25 | 1 | 3 | 2 |\n| Jul-25 | 1 | 3 | 2 |\n| Sep-25 | 1 | 3 | 2 |\n| Nov-25 | 1 | 3 | 2 |\n| Jan-26 | 1 | 3 | 2 |\n| Mar-26 | 1 | 3 | 2 |\n| May-26 | 1 | 3 | 2 |\nThe chart displays a stacked bar chart with three categories: Propriety IPs (dark blue), Exclusive licensed IPs (light blue), and Non-exclusive licensed IPs (gray). The x-axis represents months from Nov-20 to May-26. Values for each category are labeled on top of each bar. The y-axis represents the count of occurrences. The data is already in English. There is no variation or trend over time — only the total stacked bars are shown. The labels appear to be 'Propriety IPs' or 'Non-exclusive licensed IPs'.",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Figure 31 - Pop Mart blind box launches"
+                    }
+                ],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: Company data, JEF"
+                    }
+                ]
+            },
+            "sub_type": "stacked bar chart",
+            "bbox": [
+                80,
+                193,
+                495,
+                329
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/1ae5678d29b672d295962445c7a810db5b467fd201e667f404c8bd266467d2be.jpg"
+                },
+                "content": "| Month | Ultraman | Transformers | Others |\n| :--- | :--- | :--- | :--- |\n| Dec-24 | 3 | 5 | 7 |\n| Jan-25 | 0 | 0 | 1 |\n| Feb-25 | 0 | 1 | 1 |\n| Mar-25 | 2 | 2 | 8 |\n| Apr-25 | 3 | 0 | 5 |\n| May-25 | 3 | 5 | 5 |\n| Jun-25 | 2 | 0 | 9 |\n| Jul-25 | 0 | 0 | 4 |\n| Aug-25 | 2 | 6 | 11 |\n| Sep-25 | 2 | 1 | 11 |\n| Oct-25 | 2 | 3 | 13 |\n| Nov-25 | 2 | 6 | 16 |\n| Dec-25 | 7 | 7 | 37 |\n| Jan-26 | 1 | 0 | 9 |\n| Feb-26 | 1 | 0 | 2 |\n| Mar-26 | 2 | 3 | 9 |\n| Apr-26 | 0 | 2 | 11 |\n| May-26 | 4 | 4 | 11 |",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Figure 32 - Bloks product launches by IP"
+                    }
+                ],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: Company data, JEF"
+                    }
+                ]
+            },
+            "sub_type": "stacked bar chart",
+            "bbox": [
+                515,
+                196,
+                927,
+                349
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Share performance"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                77,
+                362,
+                284,
+                382
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/2ca737baa985871154f6ba054b0cb005d7ce4a7365cf28bc068a728f5ecb64cc.jpg"
+                },
+                "content": "| Month   | Pop Mart | Bloks |\n|---------|----------|-------|\n| Jan-25  | 90       | 90    |\n| Feb-25  | 100      | 95    |\n| Mar-25  | 110      | 100   |\n| Apr-25  | 130      | 110   |\n| May-25  | 160      | 130   |\n| Jun-25  | 190      | 150   |\n| Jul-25  | 220      | 180   |\n| Aug-25  | 270      | 160   |\n| Sep-25  | 330      | 140   |\n| Oct-25  | 280      | 120   |\n| Nov-25  | 240      | 100   |\n| Dec-25  | 210      | 90    |\n| Jan-26  | 190      | 80    |\n| Feb-26  | 270      | 70    |\n| Mar-26  | 240      | 60    |\n| Apr-26  | 150      | 50    |\n| May-26  | 170      | 45    |\n| Jun-26  | 180      | 40    |",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Figure 33 - LTM performance"
+                    }
+                ],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: Factset, JEF. Note: As of 8 June 2026"
+                    }
+                ]
+            },
+            "sub_type": "line chart",
+            "bbox": [
+                80,
+                418,
+                492,
+                580
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/ce05c805a210881664f133f4562e4c7d0b600ffdef88d07b5f9f35d2ac28eb5a.jpg"
+                },
+                "content": "2026YTD\n| Company | Value (%) |\n| :--- | :--- |\n| Sanrio | -5 |\n| Pop Mart | -5 |\n| Bandai Namco | -10 |\n| Toei | -10 |\n| Alpha Group | -20 |\n| Bloks | -25 |\n| Miniso | -30 |\n| Damai Ent | -40 |\n| Here Group | -70 |",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Figure 34 - YTD share performance of IP toys related names"
+                    }
+                ],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Source: Factset, JEF. Note: As of 8 June 2026"
+                    }
+                ]
+            },
+            "sub_type": "bar chart",
+            "bbox": [
+                515,
+                420,
+                932,
+                579
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "JEF"
+                    }
+                ]
+            },
+            "bbox": [
+                78,
+                38,
+                216,
+                64
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "China Consumer"
+                    }
+                ]
+            },
+            "bbox": [
+                816,
+                39,
+                919,
+                52
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Equity Research"
+                    }
+                ]
+            },
+            "bbox": [
+                818,
+                54,
+                919,
+                66
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "June 9, 2026"
+                    }
+                ]
+            },
+            "bbox": [
+                838,
+                68,
+                919,
+                80
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "Please see important disclosure information on pages 7 - 13 of this report."
+                    }
+                ]
+            },
+            "bbox": [
+                77,
+                947,
+                416,
+                958
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "6"
+                    }
+                ]
+            },
+            "bbox": [
+                910,
+                948,
+                919,
+                957
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Company Valuation/Risks"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                75,
+                149,
+                309,
+                167
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Bandai Namco Holdings Inc."
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                75,
+                170,
+                240,
+                181
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "We forecast sales from main IP by analyzing the product cycle in each avenue (domestic toys, anime slates, and gaming). We project Toys & Hobby OP to be driven by anime slates of 1P/3P IP developed by internal and external studios. We expect Gaming OP to grow, driven by high-margin repeat title sales. Applying a 26.5x P/E to our revised FY3/27 EPS estimate of ¥241 yields PT of ¥6,390 (C. 10% premium to gaming Avg). Risks include (1) saturation and intensified competition in Japan mobile games; (2) slowdown in the growth of Gunpla fan base; (3) inability of the pipeline titles to drive top-line growth or to foster the repeat title sales in the following year; (4) material cost hike pressurizes margins; (5) impact of global recession on overseas demand; and (6) slow OP recovery of Real Entertainment (Amusement)."
+                    }
+                ]
+            },
+            "bbox": [
+                73,
+                181,
+                922,
+                267
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Bloks Group Ltd"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                75,
+                279,
+                171,
+                291
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Our primary valuation methodology is DCF, employing a WACC of 9.5%, including COE of 9.5%, beta of 1, and terminal growth rate of 1% (TGR is in line with our range of 0-3% set for China consumer stocks). Key risks include fashion risk and IP concentration, channel inventory, IP renewals, and competition from other brands."
+                    }
+                ]
+            },
+            "bbox": [
+                73,
+                292,
+                922,
+                334
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "MINISO Group Holding Limited"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                75,
+                346,
+                255,
+                357
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Our primary valuation methodology is DCF, employing a WACC of 15.1%, beta of 1.5, and terminal growth rate of 1.0% (TGR is in line with our range of 0-3% set for China consumer stocks)."
+                    }
+                ]
+            },
+            "bbox": [
+                73,
+                359,
+                919,
+                386
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Downside risks include lower-than-expected performance in overseas expansion, store opening vs cannibalization, inability to sustain popularity of products, YH's performance dragging Miniso's resources, and Miniso continuing to branch out to less favorable/premature investments."
+                    }
+                ]
+            },
+            "bbox": [
+                73,
+                397,
+                919,
+                424
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Pop Mart International Group Limited"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                75,
+                437,
+                292,
+                449
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Our primary valuation methodology is DCF, employing a WACC of 10.6%, including COE of 9.5%, beta of 1.0, and terminal growth rate of 1% (TGR is in line with our range of 0-3% set for China consumer stocks)."
+                    }
+                ]
+            },
+            "bbox": [
+                73,
+                449,
+                919,
+                476
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Industry risks include policy risk, especially for blind boxes, and changes in consumer preferences for pop toys or blind-box consumption. Company risks include inability to sustain the popularity of its existing IPs, failure to develop new IPs, product quality issues, and overexpansion resulting in cannibalization of store sales."
+                    }
+                ]
+            },
+            "bbox": [
+                73,
+                487,
+                921,
+                527
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Analyst Certification:"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                75,
+                560,
+                260,
+                576
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "I, Jingjue Pei, certify that all of the views expressed in this research report accurately reflect my personal views about the subject security(ies) and subject company(ies). I also certify that no part of my compensation was, is, or will be, directly or indirectly, related to the specific recommendations or views expressed in this research report."
+                    }
+                ]
+            },
+            "bbox": [
+                73,
+                576,
+                921,
+                613
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "I, Anne Ling, certify that all of the views expressed in this research report accurately reflect my personal views about the subject security(ies) and subject company(ies). I also certify that no part of my compensation was, is, or will be, directly or indirectly, related to the specific recommendations or views expressed in this research report."
+                    }
+                ]
+            },
+            "bbox": [
+                73,
+                613,
+                921,
+                651
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Registration of non-US analysts: Jingjue Pei is employed by JEF Hong Kong Limited, a non-US affiliate of JEF LLC and is not registered/qualified as a research analyst with FINRA. This analyst(s) may not be an associated person of JEF LLC, a FINRA member firm, and therefore may not be subject to the FINRA Rule 2241 and restrictions on communications with a subject company, public appearances and trading securities held by a research analyst."
+                    }
+                ]
+            },
+            "bbox": [
+                73,
+                651,
+                921,
+                688
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Registration of non-US analysts: Anne Ling is employed by JEF Hong Kong Limited, a non-US affiliate of JEF LLC and is not registered/qualified as a research analyst with FINRA. This analyst(s) may not be an associated person of JEF LLC, a FINRA member firm, and therefore may not be subject to the FINRA Rule 2241 and restrictions on communications with a subject company, public appearances and trading securities held by a research analyst. As is the case with all JEF employees, the analyst(s) responsible for the coverage of the financial instruments discussed in this report receives compensation based in part on the overall performance of the firm, including investment banking income. We seek to update our research as appropriate, but various regulations may prevent us from doing so. Aside from certain industry reports published on a periodic basis, the large majority of reports are published at irregular intervals as appropriate in the analyst's judgement."
+                    }
+                ]
+            },
+            "bbox": [
+                73,
+                688,
+                921,
+                776
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Investment Recommendation Record"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                75,
+                794,
+                410,
+                809
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "(Article 3(1)e and Article 7 of MAR)"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                75,
+                810,
+                278,
+                822
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Recommendation Published"
+                    }
+                ]
+            },
+            "bbox": [
+                75,
+                822,
+                236,
+                834
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Recommendation Distributed"
+                    }
+                ]
+            },
+            "bbox": [
+                77,
+                835,
+                242,
+                846
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "June 9, 2026 5:14 A.M."
+                    }
+                ]
+            },
+            "bbox": [
+                363,
+                822,
+                490,
+                834
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "June 9, 2026 5:14 A.M."
+                    }
+                ]
+            },
+            "bbox": [
+                363,
+                835,
+                490,
+                846
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Explanation of JEF Ratings"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                75,
+                872,
+                359,
+                888
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Buy - Describes securities that we expect to provide a total return (price appreciation plus yield) of 15% or more within a 12-month period."
+                    }
+                ]
+            },
+            "bbox": [
+                73,
+                888,
+                831,
+                900
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Hold - Describes securities that we expect to provide a total return (price appreciation plus yield) of plus 15% or minus 10% within a 12-month period."
+                    }
+                ]
+            },
+            "bbox": [
+                73,
+                900,
+                892,
+                913
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "JEF"
+                    }
+                ]
+            },
+            "bbox": [
+                78,
+                38,
+                215,
+                64
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "China Consumer"
+                    }
+                ]
+            },
+            "bbox": [
+                815,
+                39,
+                919,
+                52
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Equity Research"
+                    }
+                ]
+            },
+            "bbox": [
+                818,
+                54,
+                919,
+                66
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "June 9, 2026"
+                    }
+                ]
+            },
+            "bbox": [
+                838,
+                68,
+                919,
+                80
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "Please see important disclosure information on pages 7 - 13 of this report."
+                    }
+                ]
+            },
+            "bbox": [
+                75,
+                947,
+                415,
+                958
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "7"
+                    }
+                ]
+            },
+            "bbox": [
+                910,
+                947,
+                919,
+                956
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Underperform - Describes securities that we expect to provide a total return (price appreciation plus yield) of minus 10% or less within a 12-month period. The expected total return (price appreciation plus yield) for Buy rated securities with an average security price consistently below $10 is 20% or more within a 12-month period as these companies are typically more volatile than the overall stock market. For Hold rated securities with an average security price consistently below $10, the expected total return (price appreciation plus yield) is plus or minus 20% within a 12-month period. For Underperform rated securities with an average security price consistently below $10, the expected total return (price appreciation plus yield) is minus 20% or less within a 12-month period."
+                    }
+                ]
+            },
+            "bbox": [
+                73,
+                139,
+                922,
+                212
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "NR - The investment rating and price target have been temporarily suspended. Such suspensions are in compliance with applicable regulations and/or JEF policies."
+                    }
+                ]
+            },
+            "bbox": [
+                73,
+                214,
+                922,
+                237
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "CS - Coverage Suspended. JEF has suspended coverage of this company."
+                    }
+                ]
+            },
+            "bbox": [
+                75,
+                239,
+                514,
+                250
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "NC - Not covered. JEF does not cover this company."
+                    }
+                ]
+            },
+            "bbox": [
+                75,
+                252,
+                394,
+                263
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Restricted - Describes issuers where, in conjunction with JEF engagement in certain transactions, company policy or applicable securities regulations prohibit certain types of communications, including investment recommendations."
+                    }
+                ]
+            },
+            "bbox": [
+                73,
+                263,
+                919,
+                288
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Monitor - Describes securities whose company fundamentals and financials are being monitored, and for which no financial projections or opinions on the investment merits of the company are provided."
+                    }
+                ]
+            },
+            "bbox": [
+                73,
+                288,
+                922,
+                313
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Valuation Methodology"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                75,
+                325,
+                285,
+                341
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "JEF' methodology for assigning ratings may include the following: market capitalization, maturity, growth/value, volatility and expected total return over the next 12 months. The price targets are based on several methodologies, which may include, but are not restricted to, analyses of market risk, growth rate, revenue stream, discounted cash flow (DCF), EBITDA, EPS, cash flow (CF), free cash flow (FCF), EV/EBITDA, P/E, PE/growth, P/CF, P/FCF, premium (discount)/average group EV/EBITDA, premium (discount)/average group P/E, sum of the parts, net asset value, dividend returns, and return on equity (ROE) over the next 12 months."
+                    }
+                ]
+            },
+            "bbox": [
+                73,
+                341,
+                922,
+                403
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "JEF Franchise Picks"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                75,
+                404,
+                225,
+                414
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "JEF Franchise Picks include stock selections from among the best stock ideas from our equity analysts over a 12 month period. Stock selection is based on fundamental analysis and may take into account other factors such as analyst conviction, differentiated analysis, a favorable risk/reward ratio and investment themes that JEF analysts are recommending. JEF Franchise Picks will include only Buy rated stocks and the number can vary depending on analyst recommendations for inclusion. Stocks will be added as new opportunities arise and removed when the reason for inclusion changes, the stock has met its desired return, if it is no longer rated Buy and/or if it triggers a stop loss. Stocks having 120 day volatility in the bottom quartile of S&P stocks will continue to have a 15% stop loss, and the remainder will have a 20% stop. Franchise Picks are not intended to represent a recommended portfolio of stocks and is not sector based, but we may note where we believe a Pick falls within an investment style such as growth or value."
+                    }
+                ]
+            },
+            "bbox": [
+                73,
+                416,
+                922,
+                502
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Risks which may impede the achievement of our Price Target"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                75,
+                514,
+                618,
+                531
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "This report was prepared for general circulation and does not provide investment recommendations specific to individual investors. As such, the financial instruments discussed in this report may not be suitable for all investors and investors must make their own investment decisions based upon their specific investment objectives and financial situation utilizing their own financial advisors as they deem necessary. Past performance of the financial instruments recommended in this report should not be taken as an indication or guarantee of future results. The price, value of, and income from, any of the financial instruments mentioned in this report can rise as well as fall and may be affected by changes in economic, financial and political factors. If a financial instrument is denominated in a currency other than the investor's home currency, a change in exchange rates may adversely affect the price of, value of, or income derived from the financial instrument described in this report. To the extent prices are shown in non-US currency, please note that our local currency price targets are based on a currency conversion using an exchange rate as of the prior trading day (unless otherwise noted). Should there be fluctuations in the exchange rate after this date, that will affect the non-US target prices and should no longer be relied upon. In addition, investors in securities such as ADRs, whose values are affected by the currency of the underlying security, effectively assume currency risk."
+                    }
+                ]
+            },
+            "bbox": [
+                73,
+                531,
+                922,
+                656
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Other Companies Mentioned in This Report"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                75,
+                667,
+                460,
+                683
+            ]
+        },
+        {
+            "type": "list",
+            "content": {
+                "list_type": "text_list",
+                "list_items": [
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "• Bandai Namco Holdings Inc. (7832 JP: ¥3,694, BUY)"
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "• Bloks Group Ltd (325 HK: HK$51.55, BUY)"
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "• MINISO Group Holding Limited (9896 HK: HK$25.50, BUY)"
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "• MINISO Group Holding Limited (MNSO: $13.10, BUY)"
+                            }
+                        ]
+                    },
+                    {
+                        "item_type": "text",
+                        "item_content": [
+                            {
+                                "type": "text",
+                                "content": "• Pop Mart International Group Limited (9992 HK: HK$170.50, BUY)"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "bbox": [
+                115,
+                684,
+                487,
+                745
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "JEF"
+                    }
+                ]
+            },
+            "bbox": [
+                78,
+                38,
+                215,
+                63
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "China Consumer"
+                    }
+                ]
+            },
+            "bbox": [
+                815,
+                39,
+                919,
+                51
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Equity Research"
+                    }
+                ]
+            },
+            "bbox": [
+                818,
+                54,
+                919,
+                66
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "June 9, 2026"
+                    }
+                ]
+            },
+            "bbox": [
+                838,
+                68,
+                919,
+                79
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "Please see important disclosure information on pages 7 - 13 of this report."
+                    }
+                ]
+            },
+            "bbox": [
+                77,
+                947,
+                416,
+                958
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "8"
+                    }
+                ]
+            },
+            "bbox": [
+                910,
+                948,
+                919,
+                957
+            ]
+        }
+    ],
+    [
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/1a4ee755fe3f27e66e491b59824af46e8fafa0d59e320e6825347e705c57c19f.jpg"
+                },
+                "content": "| Date       | Action | Price   |\n| ---------- | ------ | ------- |\n| 04/22/2025 | BUY    | HK$140.00 |\n| 08/27/2025 | BUY    | HK$128.00 |\n| 01/20/2026 | BUY    | HK$97.00  |\n| 03/16/2026 | BUY    | HK$79.00  |",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Rating and Price Target History for: Bloks Group Ltd (325 HK) as of 06-05-2026"
+                    }
+                ],
+                "chart_footnote": []
+            },
+            "sub_type": "line chart",
+            "bbox": [
+                87,
+                164,
+                870,
+                300
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/a57c08371d9795c05037194d9c8294a917f018d146c4c239d02a499d40dd603b.jpg"
+                },
+                "content": "| Date       | Buy Price |\n| ---------- | --------- |\n| 08/21/2023 | $3,920.00 |\n| 05/09/2024 | $3,970.00 |\n| 02/05/2025 | $5,460.00 |\n| 03/24/2025 | $6,060.00 |\n| 05/29/2025 | $5,970.00 |\n| 05/29/2025 | $6,060.00 |\n| 07/16/2025 | $5,970.00 |\n| 08/13/2025 | $6,540.00 |\n| 11/06/2025 | $6,390.00 |",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Rating and Price Target History for: Bandai Namco Holdings Inc. (7832 JP) as of 06-05-2026"
+                    }
+                ],
+                "chart_footnote": []
+            },
+            "sub_type": "line chart",
+            "bbox": [
+                87,
+                351,
+                870,
+                502
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/d9702b3ab5920d651d0657f553de93d1be449000c10781954737764a1112b95e.jpg"
+                },
+                "content": "| Date       | Action | Price  |\n| ---------- | ------ | ------ |\n| 10/24/2023 | BUY    | HK$57.20 |\n| 11/21/2023 | BUY    | HK$61.90 |\n| 09/23/2024 | HOLD   | HK$29.10 |\n| 12/02/2024 | HOLD   | HK$39.10 |\n| 02/21/2025 | HOLD   | HK$47.00 |\n| 03/24/2025 | HOLD   | HK$40.00 |\n| 05/26/2025 | HOLD   | HK$36.00 |\n| 08/21/2025 | BUY    | HK$51.20 |\n| 11/24/2025 | BUY    | HK$49.10 |\n| 03/31/2026 | BUY    | HK$44.86 |\n| 05/26/2026 | BUY    | HK$44.00 |",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Rating and Price Target History for: MINISO Group Holding Limited (9896 HK) as of 06-05-2026"
+                    }
+                ],
+                "chart_footnote": []
+            },
+            "sub_type": "line chart",
+            "bbox": [
+                87,
+                555,
+                878,
+                705
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "JEF"
+                    }
+                ]
+            },
+            "bbox": [
+                78,
+                38,
+                216,
+                64
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "China Consumer"
+                    }
+                ]
+            },
+            "bbox": [
+                816,
+                39,
+                919,
+                51
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Equity Research"
+                    }
+                ]
+            },
+            "bbox": [
+                818,
+                54,
+                919,
+                66
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "June 9, 2026"
+                    }
+                ]
+            },
+            "bbox": [
+                838,
+                68,
+                919,
+                80
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "Please see important disclosure information on pages 7 - 13 of this report."
+                    }
+                ]
+            },
+            "bbox": [
+                77,
+                947,
+                416,
+                958
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "9"
+                    }
+                ]
+            },
+            "bbox": [
+                910,
+                948,
+                919,
+                957
+            ]
+        }
+    ],
+    [
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/6f15ae4c51ca65210ba10764ad43badbab85e8a5d039d9ea05296127ce2f11da.jpg"
+                },
+                "content": "| Date       | Action | Price   |\n| ---------- | ------ | ------- |\n| 08/23/2023 | HOLD   | HK$25.40 |\n| 01/11/2024 | HOLD   | HK$22.60 |\n| 03/21/2024 | BUY    | HK$30.10 |\n| 05/24/2024 | BUY    | HK$39.30 |\n| 07/18/2024 | BUY    | HK$47.40 |\n| 08/21/2024 | BUY    | HK$53.00 |\n| 10/22/2024 | BUY    | HK$80.50 |\n| 11/22/2024 | BUY    | HK$97.20 |\n| 01/09/2025 | BUY    | HK$103.00 |\n| 03/26/2025 | BUY    | HK$184.00 |\n| 04/23/2025 | BUY    | HK$203.00 |\n| 07/15/2025 | BUY    | HK$315.20 |\n| 08/20/2025 | BUY    | HK$358.20 |\n| 10/22/2025 | BUY    | HK$383.20 |\n| 03/25/2026 | BUY    | HK$227.60 |",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Rating and Price Target History for: Pop Mart International Group Limited (9992 HK) as of 06-05-2026"
+                    }
+                ],
+                "chart_footnote": []
+            },
+            "sub_type": "line chart",
+            "bbox": [
+                87,
+                164,
+                890,
+                328
+            ]
+        },
+        {
+            "type": "chart",
+            "content": {
+                "image_source": {
+                    "path": "images/b2feb2451ec919f35fdd65393a90bbea6f1f986269104eec006441b83ca8aa5d.jpg"
+                },
+                "content": "| Date       | Action | Price  |\n| ---------- | ------ | ------ |\n| 10/24/2023 | BUY    | $29.30 |\n| 11/21/2023 | BUY    | $31.86 |\n| 09/23/2024 | HOLD   | $14.91 |\n| 12/02/2024 | HOLD   | $20.12 |\n| 02/21/2025 | HOLD   | $24.20 |\n| 03/24/2025 | HOLD   | $20.57 |\n| 05/26/2025 | HOLD   | $18.50 |\n| 08/21/2025 | HOLD   | $26.20 |\n| 09/22/2025 | BUY    | $26.20 |\n| 09/22/2025 | HOLD   | $26.20 |\n| 10/14/2025 | BUY    | $26.20 |\n| 11/24/2025 | BUY    | $25.10 |\n| 03/31/2026 | BUY    | $23.08 |\n| 05/26/2026 | BUY    | $22.48 |",
+                "chart_caption": [
+                    {
+                        "type": "text",
+                        "content": "Rating and Price Target History for: MINISO Group Holding Limited (MNSO) as of 06-08-2026"
+                    }
+                ],
+                "chart_footnote": [
+                    {
+                        "type": "text",
+                        "content": "Notes: Each box in the Rating and Price Target History chart above represents actions over the past three years in which an analyst initiated on a company, made a change to a rating or price target of a company or discontinued coverage of a company.\nLegend:"
+                    }
+                ]
+            },
+            "sub_type": "line chart",
+            "bbox": [
+                87,
+                380,
+                870,
+                542
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "I: Initiating Coverage"
+                    }
+                ]
+            },
+            "bbox": [
+                75,
+                621,
+                194,
+                633
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "D: Dropped Coverage"
+                    }
+                ]
+            },
+            "bbox": [
+                77,
+                646,
+                198,
+                658
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "B: Buy"
+                    }
+                ]
+            },
+            "bbox": [
+                77,
+                671,
+                115,
+                683
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "H: Hold"
+                    }
+                ]
+            },
+            "bbox": [
+                77,
+                695,
+                122,
+                707
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "UP: Underperform"
+                    }
+                ]
+            },
+            "bbox": [
+                77,
+                720,
+                181,
+                733
+            ]
+        },
+        {
+            "type": "table",
+            "content": {
+                "image_source": {
+                    "path": "images/0533114470984a1d51cf34264b3db21a79c9879b17aa36dbcf7db7ba0775b8c9.jpg"
+                },
+                "table_caption": [
+                    {
+                        "type": "text",
+                        "content": "Distribution of Ratings"
+                    },
+                    {
+                        "type": "text",
+                        "content": "IB Serv./Past12 Mos."
+                    },
+                    {
+                        "type": "text",
+                        "content": "JIL Mkt Serv./Past12 Mos."
+                    }
+                ],
+                "table_footnote": [],
+                "html": "<table><tr><td></td><td>Count</td><td>Percent</td><td>Count</td><td>Percent</td><td>Count</td><td>Percent</td></tr><tr><td>BUY</td><td>2202</td><td>62.13%</td><td>383</td><td>17.39%</td><td>113</td><td>5.13%</td></tr><tr><td>HOLD</td><td>1179</td><td>33.27%</td><td>111</td><td>9.41%</td><td>20</td><td>1.70%</td></tr><tr><td>UNDERPERFORM</td><td>163</td><td>4.60%</td><td>1</td><td>0.61%</td><td>1</td><td>0.61%</td></tr></table>",
+                "table_type": "simple_table",
+                "table_nest_level": 1
+            },
+            "bbox": [
+                77,
+                772,
+                921,
+                863
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "JEF"
+                    }
+                ]
+            },
+            "bbox": [
+                78,
+                38,
+                216,
+                64
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "China Consumer"
+                    }
+                ]
+            },
+            "bbox": [
+                816,
+                39,
+                919,
+                51
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Equity Research"
+                    }
+                ]
+            },
+            "bbox": [
+                818,
+                54,
+                919,
+                66
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "June 9, 2026"
+                    }
+                ]
+            },
+            "bbox": [
+                838,
+                68,
+                919,
+                80
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "Please see important disclosure information on pages 7 - 13 of this report."
+                    }
+                ]
+            },
+            "bbox": [
+                77,
+                947,
+                416,
+                959
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "10"
+                    }
+                ]
+            },
+            "bbox": [
+                905,
+                948,
+                919,
+                957
+            ]
+        }
+    ],
+    [
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Other Important Disclosure"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                75,
+                159,
+                319,
+                175
+            ]
+        },
+        {
+            "type": "title",
+            "content": {
+                "title_content": [
+                    {
+                        "type": "text",
+                        "content": "Other Important Disclosures"
+                    }
+                ],
+                "level": 2
+            },
+            "bbox": [
+                75,
+                186,
+                240,
+                197
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "JEF does business and seeks to do business with companies covered in its research reports, and expects to receive or intends to seek compensation for investment banking services among other activities from such companies. As a result, investors should be aware that JEF may have a conflict of interest that could affect the objectivity of this report. Investors should consider this report as only a single factor in making their investment decision."
+                    }
+                ]
+            },
+            "bbox": [
+                73,
+                198,
+                919,
+                235
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "JEF Equity Research refers to research reports produced by analysts employed by one of the following JEF Financial Group Inc. (\"JEF\") companies:"
+                    }
+                ]
+            },
+            "bbox": [
+                73,
+                236,
+                919,
+                259
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "United States: JEF LLC which is an SEC registered broker-dealer and a member of FINRA (and distributed by JEF Services, LLC, an SEC registered Investment Adviser, to clients paying separately for such research)."
+                    }
+                ]
+            },
+            "bbox": [
+                73,
+                260,
+                919,
+                285
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Canada: JEF Securities Inc., which is an investment dealer registered in each of the thirteen Canadian jurisdictions and a dealer member of the Canadian Investment Regulatory Organization, including research reports produced jointly by JEF Securities Inc. and another JEF entity (and distributed by JEF Securities Inc.)."
+                    }
+                ]
+            },
+            "bbox": [
+                73,
+                286,
+                921,
+                322
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Where JEF Securities Inc. distributes research reports produced by JEF LLC, JEF International Limited, JEF Japan Company Limited, or JEF India Private Limited, you are advised that each of JEF LLC, JEF International Limited, JEF Japan Company Limited, and JEF India Private Limited operates as a dealer in your jurisdiction under an exemption from the dealer registration requirements contained in National Instrument 31-103 Registration Requirements, Exemptions and Ongoing Registrant Obligations and, as such, each of JEF LLC, JEF International Limited, JEF Japan Company Limited, and JEF India Private Limited is not required to be and is not a registered dealer or adviser in your jurisdiction. You are advised that where JEF LLC or JEF International Limited prepared this research report, it was not prepared in accordance with Canadian disclosure requirements relating to research reports in Canada."
+                    }
+                ]
+            },
+            "bbox": [
+                73,
+                323,
+                921,
+                411
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "United Kingdom: JEF International Limited, which is authorized and regulated by the Financial Conduct Authority; registered in England and Wales No. 1978621; registered office: 100 Bishopsgate, London EC2N 4JL; telephone +44 (0)20 7029 8000; facsimile +44 (0)20 7029 8010."
+                    }
+                ]
+            },
+            "bbox": [
+                73,
+                411,
+                919,
+                435
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Germany: JEF GmbH, which is authorized and regulated by the Bundesanstalt fuer Finanzdienstleistungsaufsicht, BaFin-ID: 10150151; registered office: Bockenheimer Landstr. 24, 60323 Frankfurt a.M., Germany; telephone: +49 (0) 69 719 1870"
+                    }
+                ]
+            },
+            "bbox": [
+                73,
+                436,
+                919,
+                460
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Hong Kong: JEF Hong Kong Limited, which is licensed by the Securities and Futures Commission of Hong Kong with CE number ATS546; located at Level 26, Two International Finance Center, 8 Finance Street, Central, Hong Kong; telephone: +852 3743 8000."
+                    }
+                ]
+            },
+            "bbox": [
+                73,
+                461,
+                919,
+                485
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Singapore: JEF Singapore Limited, which is licensed by the Monetary Authority of Singapore; located at 10 Collyer Quay #41-01, Ocean Financial Centre, Singapore 049315, telephone: +65 6551 3950."
+                    }
+                ]
+            },
+            "bbox": [
+                73,
+                486,
+                919,
+                510
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Japan: JEF Japan Company Limited, which is a securities company registered by the Financial Services Agency of Japan and is a member of the Japan Securities Dealers Association; located at Tokyo Midtown Hibiya 30F Hibiya Mitsui Tower, 1-1-2 Yuraku-cho, Chiyoda-ku, Tokyo 100-0006; telephone +813 5251 6100; facsimile +813 5251 6101."
+                    }
+                ]
+            },
+            "bbox": [
+                73,
+                511,
+                919,
+                546
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "India: JEF India Private Limited (CIN - U74140MH2007PTC200509), licensed by the Securities and Exchange Board of India for: Stock Broker (NSE & BSE) INZ000243033, Research Analyst INH000000701 and Merchant Banker INM000011443, located at Level 16, Express Towers, Nariman Point, Mumbai 400 021, India; Tel +91 22 4356 6000. Compliance Officer name: Sanjay Pai, Tel No: +91 22 42246150, Email: spai@JEF.com, Grievance officer name: Sanjay Pai, Tel no. +91 22 42246150, Email: compliance_india@JEF.com. Registration granted by SEBI and certification from NISM in no way guarantee performance of the intermediary or provide any assurance of returns to investors."
+                    }
+                ]
+            },
+            "bbox": [
+                73,
+                548,
+                921,
+                609
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Australia: JEF (Australia) Pty Limited (ACN 623 059 898), which holds an Australian financial services license (AFSL 504712) and is located at Level 20, 60 Martin Place, Sydney NSW 2000; telephone +61 2 9364 2800."
+                    }
+                ]
+            },
+            "bbox": [
+                73,
+                611,
+                919,
+                634
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "Dubai: JEF International Limited, Dubai branch, which is licensed by the Dubai Financial Services Authority (DFSA Reference Number F007325); registered office Unit L31-06, L31-07, Level 31, ICD Brookfield Pace, DIFC, PO Box 121208, Dubai, UAE."
+                    }
+                ]
+            },
+            "bbox": [
+                73,
+                636,
+                919,
+                659
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "This report was prepared by personnel who are associated with JEF (JEF Securities Inc., JEF International Limited, JEF GmbH, JEF Hong Kong Limited, JEF Singapore Limited, JEF Japan Company Limited, JEF India Private Limited), and JEF (Australia) Pty Ltd; or by personnel who are associated with both JEF LLC and JEF Services LLC (\"JRS\"). JEF LLC is a US registered broker-dealer and is affiliated with JRS, which is a US registered investment adviser. JRS does not create tailored or personalized research and all research provided by JRS is impersonal. If you are paying separately for this research, it is being provided to you by JRS. Otherwise, it is being provided by JEF LLC. JEF LLC, JRS, and their affiliates are collectively referred to below as \"JEF\". JEF may seek to do business with companies covered in this research report. As a result, investors should be aware that JEF may have a conflict of interest that could affect the objectivity of this report. Investors should consider this report as only one of many factors in making their investment decisions. Specific conflict of interest and other disclosures that are required by FINRA, the Canadian Investment Regulatory Organization and other rules are set forth in this disclosure section."
+                    }
+                ]
+            },
+            "bbox": [
+                73,
+                661,
+                921,
+                772
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "***"
+                    }
+                ]
+            },
+            "bbox": [
+                77,
+                772,
+                104,
+                781
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "If you are receiving this report from a non-US JEF entity, please note the following: Unless prohibited by the provisions of Regulation S of the U.S. Securities Act of 1933, as amended, this material is distributed in the United States by JEF LLC, which accepts responsibility for its contents in accordance with the provisions of Rule 15a-6 under the US Securities Exchange Act of 1934, as amended. Transactions by or on behalf of any US person may only be effected through JEF LLC. In the United Kingdom and European Economic Area this report is issued and/or approved for distribution by JEF International Limited (\"JIL\") and/or JEF GmbH and is intended for use only by persons who have, or have been assessed as having, suitable professional experience and expertise, or by persons to whom it can be otherwise lawfully distributed. JEF LLC, JIL, JEF GmbH and their affiliates, may make a market or provide liquidity in the financial instruments referred to in this report; and where they do make a market, such activity is disclosed specifically in this report under \"company specific disclosures\"."
+                    }
+                ]
+            },
+            "bbox": [
+                73,
+                785,
+                921,
+                885
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "For Canadian investors, this material is intended for use only by professional or institutional investors. None of the investments or investment services mentioned or described herein is available to other persons or to anyone in Canada who is not a \"permitted client\" as defined by National Instrument 31-103 Registration Requirements, Exemptions and Ongoing Registrant Obligations, as applicable. This research report is a general discussion of the merits and risks of a security or securities only, and is not in any way meant to be tailored to the needs and circumstances of any recipient. The information contained herein is not, and under no circumstances is to be construed as, an offer to sell securities described herein, or solicitation of an offer to buy securities described herein, in Canada or any province or territory thereof. Any offer or sale of the securities described herein in Canada will be made only under an exemption from the requirements to file a prospectus with the relevant Canadian securities regulators, if applicable, and only by a dealer properly registered under applicable securities laws or, alternatively, pursuant to an exemption from the dealer registration requirement in the relevant province or territory of Canada in which such offer or sale is made. The information contained herein is under no circumstances to be construed as investment advice in any province or territory of Canada and is not tailored to the needs of the recipient. To the extent that the information contained herein references securities of an issuer incorporated, formed or created under the laws of Canada or a province or territory of Canada, any trades in such securities must be conducted through a dealer registered in Canada. No securities commission or similar regulatory authority in Canada has reviewed or in any way passed judgment upon this research report, the information contained herein or the merits of the securities described herein, and any representation to the contrary is an offence. In Singapore, JEF Singapore Limited (\"JSL\") is regulated by the Monetary Authority of Singapore. For investors in the Republic of Singapore, where this material is prepared and issued by a JEF affiliate outside of Singapore, it is distributed by JSL pursuant to Regulation 32C of the Financial Advisers Regulations. The material contained in this document is intended solely for accredited, expert or institutional investors, as defined under the Securities and Futures Act 2001 (Singapore). If there are any matters arising from, or in connection with this material, please contact JSL, located at 80 Raffles Place #15-20, UOB Plaza 2, Singapore 048624, telephone: +65 6551 3950. In Dubai, this material is issued and distributed by JEF International Limited, Dubai branch, and is intended solely for Professional Clients and should not be distributed to, or relied upon by, Retail Clients (as defined by DFSA). A distribution of ratings in percentage terms in each sector covered is available upon request from your sales representative. In Japan, this material is issued and distributed by JEF Japan Company Limited to institutional investors only. In Hong Kong, this report is issued and approved by JEF Hong Kong Limited and is intended for use only by professional investors as defined in the Hong Kong Securities and Futures Ordinance and its subsidiary legislation. In the Republic of China (Taiwan), this report should not be distributed. The research in relation to this report is conducted outside the People's Republic of China (\"PRC\"). This report does not constitute an offer to sell or the solicitation of an offer to buy any securities in the PRC. PRC investors shall have the relevant qualifications to invest in such securities and shall be responsible for obtaining all relevant approvals, licenses, verifications and/or registrations from the relevant governmental authorities themselves. In India, this report is made available by JEF India Private Limited. In Australia, this report is issued and/or approved for distribution by, or on behalf of, JEF (Australia) Securities Pty Ltd (ACN 610 977 074), which holds an Australian financial services license (AFSL 487263). It is directed solely at wholesale clients within the meaning of the Corporations Act 2001 (Cth) of Australia (the \"Corporations Act\"), in connection with their consideration of any investment or investment service that is the subject of this report. This report may contain general financial product advice. Where this report refers to a particular financial product, you should obtain a copy of the relevant product disclosure statement or offer document before making any decision in relation to the product. Recipients of this document in any other jurisdictions should inform themselves about and observe any applicable legal requirements in relation to the receipt of this document."
+                    }
+                ]
+            },
+            "bbox": [
+                73,
+                885,
+                921,
+                936
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "JEF"
+                    }
+                ]
+            },
+            "bbox": [
+                78,
+                38,
+                215,
+                63
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "China Consumer"
+                    }
+                ]
+            },
+            "bbox": [
+                815,
+                39,
+                919,
+                51
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Equity Research"
+                    }
+                ]
+            },
+            "bbox": [
+                818,
+                54,
+                919,
+                66
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "June 9, 2026"
+                    }
+                ]
+            },
+            "bbox": [
+                838,
+                68,
+                919,
+                79
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "Please see important disclosure information on pages 7 - 13 of this report."
+                    }
+                ]
+            },
+            "bbox": [
+                75,
+                947,
+                415,
+                958
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "11"
+                    }
+                ]
+            },
+            "bbox": [
+                905,
+                948,
+                917,
+                956
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": []
+            },
+            "bbox": [
+                73,
+                139,
+                922,
+                488
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "This report is not an offer or solicitation of an offer to buy or sell any security or derivative instrument, or to make any investment. Any opinion or estimate constitutes the preparer's best judgment as of the date of preparation, and is subject to change without notice. JEF assumes no obligation to maintain or update this report based on subsequent information and events. JEF, and their respective officers, directors, and employees, may have long or short positions in, or may buy or sell any of the securities, derivative instruments or other investments mentioned or described herein, either as agent or as principal for their own account. This material is provided solely for informational purposes and is not tailored to any recipient, and is not based on, and does not take into account, the particular investment objectives, portfolio holdings, strategy, financial situation, or needs of any recipient. As such, any advice or recommendation in this report may not be suitable for a particular recipient. JEF assumes recipients of this report are capable of evaluating the information contained herein and of exercising independent judgment. A recipient of this report should not make any investment decision without first considering whether any advice or recommendation in this report is suitable for the recipient based on the recipient's particular circumstances and, if appropriate or otherwise needed, seeking professional advice, including tax advice. JEF does not perform any suitability or other analysis to check whether an investment decision made by the recipient based on this report is consistent with a recipient's investment objectives, portfolio holdings, strategy, financial situation, or needs."
+                    }
+                ]
+            },
+            "bbox": [
+                73,
+                488,
+                922,
+                637
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "By providing this report, neither JRS nor any other JEF entity accepts any authority, discretion, or control over the management of the recipient's assets. Any action taken by the recipient of this report, based on the information in the report, is at the recipient's sole judgment and risk. The recipient must perform his or her own independent review of any prospective investment. If the recipient uses the services of JEF LLC (or other affiliated broker-dealers), in connection with a purchase or sale of a security that is a subject of these materials, such broker-dealer may act as principal for its own accounts or as agent for another person. Only JRS is registered with the SEC as an investment adviser; and therefore neither JEF LLC nor any other JEF affiliate has any fiduciary duty in connection with distribution of these reports."
+                    }
+                ]
+            },
+            "bbox": [
+                73,
+                638,
+                922,
+                712
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "The price and value of the investments referred to herein and the income from them may fluctuate. Past performance is not a guide to future performance, future returns are not guaranteed, and a loss of original capital may occur. Fluctuations in exchange rates could have adverse effects on the value or price of, or income derived from, certain investments."
+                    }
+                ]
+            },
+            "bbox": [
+                73,
+                712,
+                922,
+                750
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "This report may contain forward looking statements that may be affected by inaccurate assumptions or by known or unknown risks, uncertainties, and other important factors. As a result, the actual results, events, performance or achievements of the financial product may be materially different from those expressed or implied in such statements."
+                    }
+                ]
+            },
+            "bbox": [
+                73,
+                750,
+                922,
+                787
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "This report has been prepared independently of any issuer of securities mentioned herein and not as agent of any issuer of securities. No Equity Research personnel have authority whatsoever to make any representations or warranty on behalf of the issuer(s). Any comments or statements made herein are those of the JEF entity producing this report and may differ from the views of other JEF entities."
+                    }
+                ]
+            },
+            "bbox": [
+                73,
+                787,
+                922,
+                825
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "This report may contain information obtained from third parties, including ratings from credit ratings agencies such as Standard & Poor's, and information derived from third-party or proprietary generative artificial intelligence (Gen AI) models. JEF does not guarantee the accuracy, completeness, timeliness or availability of this information, and is not responsible for any errors or omissions (negligent or otherwise), regardless of the cause, or for the results obtained from the use of such content. Neither JEF nor any third-party content providers, including providers of Gen AI models, give any express or implied warranties, including, but not limited to, any warranties of merchantability or fitness for a particular purpose or use. Neither JEF nor any third-party content provider shall be liable for any direct, indirect, incidental, exemplary, compensatory, punitive, special or consequential damages, costs, expenses, legal fees, or losses (including lost income or profits and opportunity costs) in connection with any use of their content, including ratings. Credit ratings are statements of opinions and are not statements of fact or recommendations to purchase, hold or sell securities. They do not address the suitability of securities or the suitability of securities for investment purposes, and should not be relied on as investment advice. Reproduction and distribution of third party content in any form is prohibited except with the prior written permission of the related third party."
+                    }
+                ]
+            },
+            "bbox": [
+                73,
+                825,
+                922,
+                913
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "JEF"
+                    }
+                ]
+            },
+            "bbox": [
+                78,
+                38,
+                215,
+                64
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "China Consumer"
+                    }
+                ]
+            },
+            "bbox": [
+                815,
+                39,
+                919,
+                52
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Equity Research"
+                    }
+                ]
+            },
+            "bbox": [
+                818,
+                54,
+                919,
+                66
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "June 9, 2026"
+                    }
+                ]
+            },
+            "bbox": [
+                838,
+                68,
+                919,
+                79
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "Please see important disclosure information on pages 7 - 13 of this report."
+                    }
+                ]
+            },
+            "bbox": [
+                75,
+                947,
+                416,
+                958
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "12"
+                    }
+                ]
+            },
+            "bbox": [
+                905,
+                948,
+                919,
+                957
+            ]
+        }
+    ],
+    [
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": []
+            },
+            "bbox": [
+                73,
+                139,
+                922,
+                175
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "JEF reports are disseminated and available electronically, and, in some cases, also in printed form. Electronic research is simultaneously made available to all clients. This report or any portion hereof may not be copied, reprinted, sold, or redistributed or disclosed by the recipient or any third party, by content scraping or extraction, automated processing, or any other form or means, without the prior written consent of JEF. Any unauthorized use is prohibited. Neither JEF nor any of its respective directors, officers or employees, is responsible for guaranteeing the financial success of any investment, or accepts any liability whatsoever for any direct, indirect or consequential damages or losses arising from any use of this report or its contents. Nothing herein shall be construed to waive any liability JEF has under applicable U.S. federal or state securities laws."
+                    }
+                ]
+            },
+            "bbox": [
+                73,
+                177,
+                922,
+                250
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "For Important Disclosure information relating to JRS, please see https://adviserinfo.sec.gov/IAPD/Content/Common/crd_iapd_Brochure.aspx?BRCHR_VRSN_ID=483878 and https://adviserinfo.sec.gov/Firm/292142 or visit our website at https://javatar.bluematrix.com/sellside/Disclosures.action, or www.JEF.com, or call 1.888.JEF."
+                    }
+                ]
+            },
+            "bbox": [
+                73,
+                252,
+                922,
+                288
+            ]
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "paragraph_content": [
+                    {
+                        "type": "text",
+                        "content": "© 2026 JEF"
+                    }
+                ]
+            },
+            "bbox": [
+                77,
+                290,
+                174,
+                300
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "JEF"
+                    }
+                ]
+            },
+            "bbox": [
+                78,
+                38,
+                215,
+                64
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "China Consumer"
+                    }
+                ]
+            },
+            "bbox": [
+                816,
+                39,
+                919,
+                52
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "Equity Research"
+                    }
+                ]
+            },
+            "bbox": [
+                818,
+                54,
+                919,
+                66
+            ]
+        },
+        {
+            "type": "page_header",
+            "content": {
+                "page_header_content": [
+                    {
+                        "type": "text",
+                        "content": "June 9, 2026"
+                    }
+                ]
+            },
+            "bbox": [
+                838,
+                68,
+                919,
+                80
+            ]
+        },
+        {
+            "type": "page_footer",
+            "content": {
+                "page_footer_content": [
+                    {
+                        "type": "text",
+                        "content": "Please see important disclosure information on pages 7 - 13 of this report."
+                    }
+                ]
+            },
+            "bbox": [
+                77,
+                947,
+                416,
+                958
+            ]
+        },
+        {
+            "type": "page_number",
+            "content": {
+                "page_number_content": [
+                    {
+                        "type": "text",
+                        "content": "13"
+                    }
+                ]
+            },
+            "bbox": [
+                905,
+                948,
+                919,
+                957
+            ]
+        }
+    ]
+]
