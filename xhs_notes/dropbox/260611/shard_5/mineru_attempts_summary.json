@@ -1,0 +1,39 @@
+[
+  {
+    "attempt": 1,
+    "round": 1,
+    "token_label": "MINER_U_2",
+    "submitted_pdf_count": 5,
+    "successful_pdf_count": 5,
+    "retry_pdf_count": 0,
+    "timed_out": false,
+    "error": "",
+    "states": [
+      {
+        "pdf": "/tmp/pdf_batch_001_p8zcs_i8/pdfs/0001-27-MS-Greater China Technology Semiconductors Thoughts on Investor Concerns Regarding CPO-260610.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_p8zcs_i8/pdfs/0002-28-MS-2026 Industry Observation-Driven by Leading Players-260609.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_p8zcs_i8/pdfs/0003-29-BARC-China-AI and green-tech keep exports strong-260609.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_p8zcs_i8/pdfs/0004-30-GS-US Equity Views_ More AI capex- more volatility-260610.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_p8zcs_i8/pdfs/0005-31-JPM-China- AI-related high-tech boosted May exports-260609.pdf",
+        "state": "done",
+        "error": ""
+      }
+    ]
+  }
+]
