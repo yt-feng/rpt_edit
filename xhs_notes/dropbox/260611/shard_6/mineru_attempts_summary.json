@@ -1,0 +1,39 @@
+[
+  {
+    "attempt": 1,
+    "round": 1,
+    "token_label": "MINER_U_2",
+    "submitted_pdf_count": 5,
+    "successful_pdf_count": 5,
+    "retry_pdf_count": 0,
+    "timed_out": false,
+    "error": "",
+    "states": [
+      {
+        "pdf": "/tmp/pdf_batch_001_r7_bip54/pdfs/0001-32-Bernstein-Japan and EU Semiconductors Japan EU Semi Taiwan Import Tracker -May 26-- SPE import -23- YoY-260610.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_r7_bip54/pdfs/0002-33-CITI-China Communication Infrastructure-China-s Rmb2trn AI Buildout- Major Tailwind for the Domestic AI Infrastructure Ecosystem-260609.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_r7_bip54/pdfs/0003-34-GS-Hong Kong Banks-Addressing FAQs on Hong Kong deposits and Mainland China cross-border investment-260610.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_r7_bip54/pdfs/0004-35-DB-Autos - Auto Technology-China passenger-vehicle monthly wholesale chartbook-May 2026-260609.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_r7_bip54/pdfs/0005-36-DB-Autos - AutoTechnology-China NEV demand leading indicator -weekly new orders--June 1st week-260609.pdf",
+        "state": "done",
+        "error": ""
+      }
+    ]
+  }
+]
