@@ -1,0 +1,89 @@
+[
+  {
+    "source_pdf": "/tmp/pdf_batch_001_g9466p0e/pdfs/0001-12-GS-Japan Economic Flash- BOJ June MPM Review- We Expect a Rate Hike in June- Followed by Roughly Semi-annual Hikes-260610.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "GS",
+    "cover_short_title": "日本央行6月加息概率",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png",
+      "assets/xhs_card_07.png",
+      "assets/xhs_card_08.png"
+    ],
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  },
+  {
+    "source_pdf": "/tmp/pdf_batch_001_g9466p0e/pdfs/0002-13-GS-Americas Healthcare- Pharmaceuticals- Notes from the CMS Panel- 47th Annual Global Healthcare Conference - Key Takeaways-260610.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "GS",
+    "cover_short_title": "CMS 最新政策风向",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png"
+    ],
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  },
+  {
+    "source_pdf": "/tmp/pdf_batch_001_g9466p0e/pdfs/0003-14-GS-Global Healthcare- 47th Annual Global Healthcare Conference - Notes from GS Investment Banker Panel-260610.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "GS",
+    "cover_short_title": "全球医疗投研的“中场",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png"
+    ],
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  },
+  {
+    "source_pdf": "/tmp/pdf_batch_001_g9466p0e/pdfs/0004-15-CITI-Greater China Semiconductors-China-s New Rmb2tn AI Investment Plan Positive for Domestic AI Supply Chain-260609.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "Citi",
+    "cover_short_title": "中国AI投资2万亿，",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png"
+    ],
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  },
+  {
+    "source_pdf": "/tmp/pdf_batch_001_g9466p0e/pdfs/0005-16-Bernstein-U.S. IT Hardware The Quantum Leap- Winners and Losers in the Quantum future-Industry Expert Webinar Transcript and Takeaways-260610.pdf",
+    "mineru_state": "done",
+    "mineru_error": "",
+    "institution_name": "Bernstein",
+    "cover_short_title": "量子计算谁在领跑？一",
+    "cover_subtitle": "研报重点一图看懂",
+    "images": [
+      "assets/xhs_card_01.png",
+      "assets/xhs_card_02.png",
+      "assets/xhs_card_03.png",
+      "assets/xhs_card_04.png",
+      "assets/xhs_card_05.png",
+      "assets/xhs_card_06.png"
+    ],
+    "cover": "assets/cover.png",
+    "wechat_article": "wechat_article.md"
+  }
+]

@@ -1,0 +1,51 @@
+{
+  "input_dir": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs",
+  "total_pdf_count_before_shard": 50,
+  "pdf_count_before_skip": 5,
+  "pdf_count": 5,
+  "generated_report_count": 5,
+  "batch_size": 5,
+  "shard_index": 2,
+  "shard_count": 40,
+  "max_reports_per_shard": 5,
+  "max_total_reports": 0,
+  "skip_existing": true,
+  "skipped_existing_count": 0,
+  "skipped_existing": [],
+  "failures": 0,
+  "batches": [
+    {
+      "batch_index": 1,
+      "pdf_count": 5,
+      "files": [
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/12-GS-Japan Economic Flash： BOJ June MPM Review： We Expect a Rate Hike in June， Followed by Roughly Semi~annual Hikes-260610.pdf",
+          "batch_file": "/tmp/pdf_batch_001_g9466p0e/pdfs/0001-12-GS-Japan Economic Flash- BOJ June MPM Review- We Expect a Rate Hike in June- Followed by Roughly Semi-annual Hikes-260610.pdf",
+          "stable_index": "1"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/13-GS-Americas Healthcare： Pharmaceuticals： Notes from the CMS Panel： 47th Annual Global Healthcare Conference — Key Takeaways-260610.pdf",
+          "batch_file": "/tmp/pdf_batch_001_g9466p0e/pdfs/0002-13-GS-Americas Healthcare- Pharmaceuticals- Notes from the CMS Panel- 47th Annual Global Healthcare Conference - Key Takeaways-260610.pdf",
+          "stable_index": "2"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/14-GS-Global Healthcare： 47th Annual Global Healthcare Conference — Notes from GS Investment Banker Panel-260610.pdf",
+          "batch_file": "/tmp/pdf_batch_001_g9466p0e/pdfs/0003-14-GS-Global Healthcare- 47th Annual Global Healthcare Conference - Notes from GS Investment Banker Panel-260610.pdf",
+          "stable_index": "3"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/15-CITI-Greater China Semiconductors：China’s New Rmb2tn AI Investment Plan Positive for Domestic AI Supply Chain-260609.pdf",
+          "batch_file": "/tmp/pdf_batch_001_g9466p0e/pdfs/0004-15-CITI-Greater China Semiconductors-China-s New Rmb2tn AI Investment Plan Positive for Domestic AI Supply Chain-260609.pdf",
+          "stable_index": "4"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/16-Bernstein-U.S. IT Hardware The Quantum Leap： Winners and Losers in the Quantum future~Industry Expert Webinar Transcript and Takeaways-260610.pdf",
+          "batch_file": "/tmp/pdf_batch_001_g9466p0e/pdfs/0005-16-Bernstein-U.S. IT Hardware The Quantum Leap- Winners and Losers in the Quantum future-Industry Expert Webinar Transcript and Takeaways-260610.pdf",
+          "stable_index": "5"
+        }
+      ],
+      "returncode": 0,
+      "status": "ok"
+    }
+  ]
+}

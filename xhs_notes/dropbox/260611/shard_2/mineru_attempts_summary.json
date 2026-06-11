@@ -1,0 +1,39 @@
+[
+  {
+    "attempt": 1,
+    "round": 1,
+    "token_label": "MINER_U_2",
+    "submitted_pdf_count": 5,
+    "successful_pdf_count": 5,
+    "retry_pdf_count": 0,
+    "timed_out": false,
+    "error": "",
+    "states": [
+      {
+        "pdf": "/tmp/pdf_batch_001_g9466p0e/pdfs/0001-12-GS-Japan Economic Flash- BOJ June MPM Review- We Expect a Rate Hike in June- Followed by Roughly Semi-annual Hikes-260610.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_g9466p0e/pdfs/0002-13-GS-Americas Healthcare- Pharmaceuticals- Notes from the CMS Panel- 47th Annual Global Healthcare Conference - Key Takeaways-260610.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_g9466p0e/pdfs/0003-14-GS-Global Healthcare- 47th Annual Global Healthcare Conference - Notes from GS Investment Banker Panel-260610.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_g9466p0e/pdfs/0004-15-CITI-Greater China Semiconductors-China-s New Rmb2tn AI Investment Plan Positive for Domestic AI Supply Chain-260609.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_g9466p0e/pdfs/0005-16-Bernstein-U.S. IT Hardware The Quantum Leap- Winners and Losers in the Quantum future-Industry Expert Webinar Transcript and Takeaways-260610.pdf",
+        "state": "done",
+        "error": ""
+      }
+    ]
+  }
+]
