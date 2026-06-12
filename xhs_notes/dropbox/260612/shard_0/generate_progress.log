@@ -1,0 +1,15 @@
+Found 46 total PDFs; shard 0/40 has 5 PDFs, skips 0 already converted, will process 5 PDFs with batch_size=5.
+Running batch 1: 5 PDFs
+Found 5 PDFs. MinerU token slots available=2.
+MinerU attempt 1/4 using MINER_U_2: submitting 5 PDF(s).
+Uploading PDF to MinerU: /tmp/pdf_batch_001_b08xel0y/pdfs/0001-01-Deutsche Bank-China Macro-Inflation monitor-PPI pass-through continues- CPI points to softer demand-260610.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_b08xel0y/pdfs/0002-02-Morgan Stanley-China Economics-Sequentially Slower Oil Push- Limited Reflation Elsewhere-260610.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_b08xel0y/pdfs/0003-03-CITI-China Economics-PPI Reflation Is More Than Just an Energy Shock-260610.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_b08xel0y/pdfs/0004-04-CITI-China Economics-The -Six Networks- Arrive - Driving AI Buildout to Stabilize Investment-260610.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_b08xel0y/pdfs/0005-05-CITI-Global Theme Machine-AI and Industrial Themes Extend Their Lead-260610.pdf
+MinerU attempt 1 using MINER_U_2 batch_id=7cb45fd2-8614-4ca5-9059-3d31e28f41e0
+MinerU states: running, running, pending, pending, waiting-file
+MinerU states: done, done, running, running, running
+MinerU states: done, done, done, done, done
+Done. Results written to /home/runner/work/rpt_edit/rpt_edit/xhs_notes/dropbox/260612/shard_0; successful_reports=5; mineru_timed_out=False; mineru_attempts=1
+All batches completed successfully. Generated 5 report directories.

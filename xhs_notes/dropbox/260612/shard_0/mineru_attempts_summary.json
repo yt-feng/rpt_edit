@@ -1,0 +1,39 @@
+[
+  {
+    "attempt": 1,
+    "round": 1,
+    "token_label": "MINER_U_2",
+    "submitted_pdf_count": 5,
+    "successful_pdf_count": 5,
+    "retry_pdf_count": 0,
+    "timed_out": false,
+    "error": "",
+    "states": [
+      {
+        "pdf": "/tmp/pdf_batch_001_b08xel0y/pdfs/0001-01-DB-China Macro-Inflation monitor-PPI pass-through continues- CPI points to softer demand-260610.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_b08xel0y/pdfs/0002-02-MS-China Economics-Sequentially Slower Oil Push- Limited Reflation Elsewhere-260610.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_b08xel0y/pdfs/0003-03-CITI-China Economics-PPI Reflation Is More Than Just an Energy Shock-260610.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_b08xel0y/pdfs/0004-04-CITI-China Economics-The -Six Networks- Arrive - Driving AI Buildout to Stabilize Investment-260610.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_b08xel0y/pdfs/0005-05-CITI-Global Theme Machine-AI and Industrial Themes Extend Their Lead-260610.pdf",
+        "state": "done",
+        "error": ""
+      }
+    ]
+  }
+]
