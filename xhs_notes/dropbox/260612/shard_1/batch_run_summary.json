@@ -1,0 +1,51 @@
+{
+  "input_dir": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs",
+  "total_pdf_count_before_shard": 46,
+  "pdf_count_before_skip": 5,
+  "pdf_count": 5,
+  "generated_report_count": 5,
+  "batch_size": 5,
+  "shard_index": 1,
+  "shard_count": 40,
+  "max_reports_per_shard": 5,
+  "max_total_reports": 0,
+  "skip_existing": true,
+  "skipped_existing_count": 0,
+  "skipped_existing": [],
+  "failures": 0,
+  "batches": [
+    {
+      "batch_index": 1,
+      "pdf_count": 5,
+      "files": [
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/06-JPM-Oil Markets Weekly：The first thousand miles-260610.pdf",
+          "batch_file": "/tmp/pdf_batch_001_cmmi9w9w/pdfs/0001-06-JPM-Oil Markets Weekly-The first thousand miles-260610.pdf",
+          "stable_index": "1"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/08-JPM-China Healthcare：Takeaways from US Pharma Biotech Analyst Call： Durable innovation， disciplined capital， limited policy disruption-260611.pdf",
+          "batch_file": "/tmp/pdf_batch_001_cmmi9w9w/pdfs/0002-08-JPM-China Healthcare-Takeaways from US Pharma Biotech Analyst Call- Durable innovation- disciplined capital- limited policy disruption-260611.pdf",
+          "stable_index": "2"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/09-JPM-Global EV & Battery Update May 2026： EV PHEV penetration solid in EU China vs US weak； ESS remains the clear bright spot-260611.pdf",
+          "batch_file": "/tmp/pdf_batch_001_cmmi9w9w/pdfs/0003-09-JPM-Global EV - Battery Update May 2026- EV PHEV penetration solid in EU China vs US weak- ESS remains the clear bright spot-260611.pdf",
+          "stable_index": "3"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/10-BofA-FX Watch：Keep EURUSD shorts this summer-260610.pdf",
+          "batch_file": "/tmp/pdf_batch_001_cmmi9w9w/pdfs/0004-10-BofA-FX Watch-Keep EURUSD shorts this summer-260610.pdf",
+          "stable_index": "4"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/11-JPM-China： May inflation roughly matched expectations-260610.pdf",
+          "batch_file": "/tmp/pdf_batch_001_cmmi9w9w/pdfs/0005-11-JPM-China- May inflation roughly matched expectations-260610.pdf",
+          "stable_index": "5"
+        }
+      ],
+      "returncode": 0,
+      "status": "ok"
+    }
+  ]
+}
