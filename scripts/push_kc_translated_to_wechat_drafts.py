@@ -49,6 +49,11 @@ WECHAT_UPLOADIMG_MAX_BYTES = 1024 * 1024
 WECHAT_UPLOADIMG_TARGET_BYTES = 930 * 1024
 DEFAULT_TRAILING_IMAGE = "prompts/zsxq_img.jpg"
 POLLINATIONS_BASE_URL = "https://image.pollinations.ai/prompt/"
+WECHAT_REQUEST_MAX_ATTEMPTS = 5
+WECHAT_REQUEST_RETRY_BASE_SECONDS = 1.5
+WECHAT_REQUEST_RETRY_MAX_SECONDS = 20.0
+WECHAT_RETRYABLE_STATUS_CODES = {408, 425, 429, 500, 502, 503, 504}
+WECHAT_RETRYABLE_ERRCODES = {-1}
 DATE_DIR_RE = re.compile(r"^\d{6,8}$")
 IMAGE_TOKEN_RE = re.compile(r"\[\[KC_IMAGE_(\d{3})\]\]")
 MD_IMAGE_RE = re.compile(r"!\[([^\]]*)\]\(([^\)]+)\)")
@@ -784,14 +789,32 @@ def post_wechat_json(
     url: str,
     payload: dict[str, Any],
     timeout: int,
+    max_attempts: int = 1,
 ) -> requests.Response:
     body = json.dumps(payload, ensure_ascii=False, separators=(",", ":")).encode("utf-8")
-    return session.post(
-        url,
-        data=body,
-        headers={"Content-Type": "application/json; charset=utf-8"},
-        timeout=timeout,
-    )
+    max_attempts = max(1, max_attempts)
+    label = "wechat/json"
+
+    for attempt in range(1, max_attempts + 1):
+        try:
+            response = session.post(
+                url,
+                data=body,
+                headers={"Content-Type": "application/json; charset=utf-8"},
+                timeout=timeout,
+            )
+        except requests.RequestException as exc:
+            if attempt >= max_attempts:
+                raise WeChatError(f"{label} request failed after {max_attempts} attempt(s): {exc}") from exc
+            sleep_before_wechat_retry(label, attempt, max_attempts, str(exc))
+            continue
+
+        if is_retryable_wechat_response(response) and attempt < max_attempts:
+            sleep_before_wechat_retry(label, attempt, max_attempts, f"HTTP {response.status_code}")
+            continue
+        return response
+
+    raise WeChatError(f"{label} request failed after {max_attempts} attempt(s)")
 
 
 def get_stable_access_token(session: requests.Session, appid: str, secret: str, timeout: int) -> str:
@@ -800,6 +823,7 @@ def get_stable_access_token(session: requests.Session, appid: str, secret: str, 
         "https://api.weixin.qq.com/cgi-bin/stable_token",
         {"grant_type": "client_credential", "appid": appid, "secret": secret, "force_refresh": False},
         timeout,
+        max_attempts=WECHAT_REQUEST_MAX_ATTEMPTS,
     )
     data = parse_wechat_json(response, "stable_token")
     token = data.get("access_token")
@@ -823,6 +847,21 @@ def parse_wechat_json(response: requests.Response, label: str) -> dict[str, Any]
     return data
 
 
+def is_retryable_wechat_response(response: requests.Response) -> bool:
+    return response.status_code in WECHAT_RETRYABLE_STATUS_CODES or 500 <= response.status_code < 600
+
+
+def retry_delay_seconds(attempt: int) -> float:
+    delay = WECHAT_REQUEST_RETRY_BASE_SECONDS * (2 ** max(0, attempt - 1))
+    return min(WECHAT_REQUEST_RETRY_MAX_SECONDS, delay)
+
+
+def sleep_before_wechat_retry(label: str, attempt: int, max_attempts: int, reason: str) -> None:
+    delay = retry_delay_seconds(attempt)
+    log(f"{label}: attempt {attempt}/{max_attempts} failed ({reason}); retrying in {delay:.1f}s")
+    time.sleep(delay)
+
+
 def upload_wechat_file(
     session: requests.Session,
     url: str,
@@ -831,9 +870,33 @@ def upload_wechat_file(
     timeout: int,
 ) -> dict[str, Any]:
     mime = mimetypes.guess_type(path.name)[0] or "application/octet-stream"
-    with path.open("rb") as handle:
-        response = session.post(url, files={"media": (path.name, handle, mime)}, timeout=timeout)
-    return parse_wechat_json(response, label)
+    max_attempts = WECHAT_REQUEST_MAX_ATTEMPTS
+
+    for attempt in range(1, max_attempts + 1):
+        try:
+            with path.open("rb") as handle:
+                response = session.post(url, files={"media": (path.name, handle, mime)}, timeout=timeout)
+        except requests.RequestException as exc:
+            if attempt >= max_attempts:
+                raise WeChatError(
+                    f"{label} upload failed after {max_attempts} attempt(s) for {path}: {exc}"
+                ) from exc
+            sleep_before_wechat_retry(label, attempt, max_attempts, str(exc))
+            continue
+
+        if is_retryable_wechat_response(response) and attempt < max_attempts:
+            sleep_before_wechat_retry(label, attempt, max_attempts, f"HTTP {response.status_code}")
+            continue
+
+        try:
+            return parse_wechat_json(response, label)
+        except WeChatError as exc:
+            if exc.errcode in WECHAT_RETRYABLE_ERRCODES and attempt < max_attempts:
+                sleep_before_wechat_retry(label, attempt, max_attempts, exc.errmsg or str(exc))
+                continue
+            raise
+
+    raise WeChatError(f"{label} upload failed after {max_attempts} attempt(s) for {path}")
 
 
 def upload_article_image(session: requests.Session, access_token: str, path: Path, timeout: int) -> str:
