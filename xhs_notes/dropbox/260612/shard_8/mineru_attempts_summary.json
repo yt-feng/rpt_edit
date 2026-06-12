@@ -1,0 +1,39 @@
+[
+  {
+    "attempt": 1,
+    "round": 1,
+    "token_label": "MINER_U_2",
+    "submitted_pdf_count": 5,
+    "successful_pdf_count": 5,
+    "retry_pdf_count": 0,
+    "timed_out": false,
+    "error": "",
+    "states": [
+      {
+        "pdf": "/tmp/pdf_batch_001_tk3j6wvn/pdfs/0001-43-MS-Chinese Airports-Still Waiting for the Turn-260610.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_tk3j6wvn/pdfs/0002-44-MS-EBAY and ETSY in the Agentic Era- Underappreciated Advantages--260611.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_tk3j6wvn/pdfs/0003-45-MS-Steel- Looking beyond seasonality-260610.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_tk3j6wvn/pdfs/0004-46-NOM-Wire - cable- Optical devices-InP substrate supply-demand tightens further on buoyant demand-260610.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_tk3j6wvn/pdfs/0005-47-Bofa-The Flow Show Give Ps a chance-260611.pdf",
+        "state": "done",
+        "error": ""
+      }
+    ]
+  }
+]
