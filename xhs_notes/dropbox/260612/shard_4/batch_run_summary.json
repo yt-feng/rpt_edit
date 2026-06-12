@@ -1,0 +1,51 @@
+{
+  "input_dir": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs",
+  "total_pdf_count_before_shard": 46,
+  "pdf_count_before_skip": 5,
+  "pdf_count": 5,
+  "generated_report_count": 5,
+  "batch_size": 5,
+  "shard_index": 4,
+  "shard_count": 40,
+  "max_reports_per_shard": 5,
+  "max_total_reports": 0,
+  "skip_existing": true,
+  "skipped_existing_count": 0,
+  "skipped_existing": [],
+  "failures": 0,
+  "batches": [
+    {
+      "batch_index": 1,
+      "pdf_count": 5,
+      "files": [
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/22-CITI-China Renewable Energy：Polysilicon， Solar Cell & Module Prices Drop This Week； Overseas Sales Looks Better Than Local Demand-260610.pdf",
+          "batch_file": "/tmp/pdf_batch_001_wz8jr0ms/pdfs/0001-22-CITI-China Renewable Energy-Polysilicon- Solar Cell - Module Prices Drop This Week- Overseas Sales Looks Better Than Local Demand-260610.pdf",
+          "stable_index": "1"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/23-CITI-Taiwan Electronics & Semiconductors：Taiwan monthly tracker and what’s new in AI – Supply chain tightness continues-260610.pdf",
+          "batch_file": "/tmp/pdf_batch_001_wz8jr0ms/pdfs/0002-23-CITI-Taiwan Electronics - Semiconductors-Taiwan monthly tracker and what-s new in AI - Supply chain tightness continues-260610.pdf",
+          "stable_index": "2"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/24-JPM-Autos Sector China auto sales （May）： Moment of truth for ICE autos this summer； NEV shift continues， despite reversal of price gap with ICE-260611.pdf",
+          "batch_file": "/tmp/pdf_batch_001_wz8jr0ms/pdfs/0003-24-JPM-Autos Sector China auto sales -May-- Moment of truth for ICE autos this summer- NEV shift continues- despite reversal of price gap with ICE-260611.pdf",
+          "stable_index": "3"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/25-MS-Asia Summer School： China Materials-260610.pdf",
+          "batch_file": "/tmp/pdf_batch_001_wz8jr0ms/pdfs/0004-25-MS-Asia Summer School- China Materials-260610.pdf",
+          "stable_index": "4"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/26-MS-Chemicals：China PE Net Imports Likely Critical for US Contract Prices-260611.pdf",
+          "batch_file": "/tmp/pdf_batch_001_wz8jr0ms/pdfs/0005-26-MS-Chemicals-China PE Net Imports Likely Critical for US Contract Prices-260611.pdf",
+          "stable_index": "5"
+        }
+      ],
+      "returncode": 0,
+      "status": "ok"
+    }
+  ]
+}
