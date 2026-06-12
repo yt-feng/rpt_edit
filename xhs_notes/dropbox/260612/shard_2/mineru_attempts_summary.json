@@ -1,0 +1,39 @@
+[
+  {
+    "attempt": 1,
+    "round": 1,
+    "token_label": "MINER_U_2",
+    "submitted_pdf_count": 5,
+    "successful_pdf_count": 5,
+    "retry_pdf_count": 0,
+    "timed_out": false,
+    "error": "",
+    "states": [
+      {
+        "pdf": "/tmp/pdf_batch_001_py_qfeh4/pdfs/0001-12-JPM-China- May inflation roughly matched expectations-260610 2.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_py_qfeh4/pdfs/0002-13-Bernstein-Global Internet- A framework for AI model commoditisation- and market segmentation-260612.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_py_qfeh4/pdfs/0003-14-GS-Global Metals- Mining-Takeaways from expert call-aluminum smelting capacity- acceleration prompted by strong profit-260612.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_py_qfeh4/pdfs/0004-15-MS-Oil Data Digest -Digging into the China Data-260610.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_py_qfeh4/pdfs/0005-16-GS-The Credit Line-A new measure of the CLO arbitrage spread-260611.pdf",
+        "state": "done",
+        "error": ""
+      }
+    ]
+  }
+]

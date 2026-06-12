@@ -1,0 +1,1670 @@
+[
+    {
+        "type": "text",
+        "text": "THE CREDIT LINE",
+        "bbox": [
+            109,
+            79,
+            241,
+            95
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "A new measure of the CLO arbitrage spread",
+        "text_level": 1,
+        "bbox": [
+            107,
+            106,
+            568,
+            132
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Deal-matched arbitrage spread shows a more structurally compressed USD opportunity set",
+        "text_level": 2,
+        "bbox": [
+            80,
+            212,
+            640,
+            247
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "For collateralized loan obligation (CLO) investors and managers, the arbitrage spread is a common proxy for the attractiveness of origination, performance, and valuation of CLO equity investments. Traditional CLO arbitrage metrics compare new-issue leveraged loan spreads with CLO weighted average cost of debt, but they miss the actual excess spread embedded in newly created CLOs. Using deal- and tranche-level data, we construct a deal-matched arbitrage measure for USD and EUR CLOs. While it broadly tracks traditional measures, it also shows a more pronounced secular tightening in USD broadly syndicated loan CLO arbitrage as the market has matured. In our view, the growing role of captive equity capital is an important driver, leaving EUR equity optically cheaper, though not necessarily more attractive once weaker regional fundamentals are considered.",
+        "bbox": [
+            80,
+            250,
+            694,
+            445
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Resets are printing tighter",
+        "text_level": 2,
+        "bbox": [
+            80,
+            471,
+            277,
+            487
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Matching original vintages to subsequent reset and refinancing activity shows that tighter liabilities do not automatically translate into better economics. Since 2023, USD asset spread tightening has generally kept pace with, and in many cases exceeded, liability spread improvement, limiting the benefit of resets. In EUR, reset economics have held up better, helped by less aggressive asset spread compression vs. the USD market.",
+        "bbox": [
+            80,
+            489,
+            686,
+            594
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Lower liability costs do not require sacrificing arbitrage spread",
+        "text_level": 2,
+        "bbox": [
+            80,
+            619,
+            545,
+            636
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Across manager tiers, tighter liabilities have not consistently come at the expense of lower excess spread. In USD, higher-tier managers have generally printed slightly wider arbitrage spreads, while in EUR lower-tier managers have tended to do so. In our view, this reflects greater liability dispersion in USD vs. greater asset spread dispersion in EUR.",
+        "bbox": [
+            80,
+            639,
+            691,
+            726
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Shamshad Ali",
+        "text_level": 2,
+        "bbox": [
+            720,
+            213,
+            815,
+            225
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "+1(212)902-6712",
+        "bbox": [
+            720,
+            225,
+            813,
+            234
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "shamshad.ali@gs.com",
+        "bbox": [
+            720,
+            234,
+            826,
+            243
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "GS & Co. LLC",
+        "bbox": [
+            720,
+            243,
+            841,
+            252
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Amanda Lynam, CPA",
+        "text_level": 2,
+        "bbox": [
+            720,
+            261,
+            862,
+            273
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "+1(212)934-1895",
+        "bbox": [
+            720,
+            273,
+            810,
+            282
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "amanda.lynam@gs.com",
+        "bbox": [
+            720,
+            282,
+            836,
+            291
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "GS & Co. LLC",
+        "bbox": [
+            720,
+            291,
+            841,
+            298
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Arun Manohar",
+        "text_level": 2,
+        "bbox": [
+            720,
+            309,
+            821,
+            319
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "+1(212)902-8763",
+        "bbox": [
+            720,
+            319,
+            810,
+            329
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "arun.manohar@gs.com",
+        "bbox": [
+            720,
+            329,
+            833,
+            338
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "GS & Co. LLC",
+        "bbox": [
+            720,
+            338,
+            841,
+            347
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Spencer Rogers, CFA",
+        "text_level": 2,
+        "bbox": [
+            720,
+            356,
+            859,
+            368
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "+1(801)884-1104",
+        "bbox": [
+            720,
+            368,
+            810,
+            377
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "spencer.rogers@gs.com",
+        "bbox": [
+            720,
+            377,
+            834,
+            386
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "GS & Co. LLC",
+        "bbox": [
+            720,
+            386,
+            841,
+            394
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Sara Grut",
+        "text_level": 2,
+        "bbox": [
+            720,
+            403,
+            787,
+            414
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "+44(20)7774-8622 | sara.grut@gs.com",
+        "bbox": [
+            720,
+            414,
+            906,
+            423
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "GS International",
+        "bbox": [
+            720,
+            423,
+            856,
+            432
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Ben Shumway",
+        "text_level": 2,
+        "bbox": [
+            720,
+            440,
+            816,
+            453
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "+1(801)578-2553",
+        "bbox": [
+            720,
+            453,
+            810,
+            461
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "ben.shumway@gs.com",
+        "bbox": [
+            720,
+            462,
+            830,
+            470
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "GS & Co. LLC",
+        "bbox": [
+            720,
+            470,
+            841,
+            479
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Neth Karunamuni",
+        "text_level": 2,
+        "bbox": [
+            720,
+            488,
+            841,
+            500
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "+1(212)934-0799",
+        "bbox": [
+            720,
+            500,
+            813,
+            509
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "neth.karunamuni@gs.com",
+        "bbox": [
+            720,
+            510,
+            846,
+            518
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "GS & Co. LLC",
+        "bbox": [
+            720,
+            519,
+            841,
+            527
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "header",
+        "text": "Goldman Research Sachs",
+        "bbox": [
+            78,
+            5,
+            297,
+            43
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "header",
+        "text": "Credit Strategy Research 11 June 2026 | 11:41AM EDT",
+        "bbox": [
+            702,
+            7,
+            918,
+            45
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "footer",
+        "text": "Investors should consider this report as only a single factor in making their investment decision. For Reg AC certification and other important disclosures, see the Disclosure Appendix, or go to www.gs.com/research/hedge.html.",
+        "bbox": [
+            80,
+            925,
+            854,
+            972
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "A new measure of the CLO arbitrage spread",
+        "text_level": 2,
+        "bbox": [
+            80,
+            41,
+            436,
+            61
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "For CLO investors and managers, the arbitrage spread is a common proxy for the attractiveness of origination, performance, and valuation of CLO equity investments. Traditionally, measures of the arbitrage spread take the difference between new issue loans and the weighted-average cost of CLO debt. While this captures the prevailing differential, it does not capture the actual excess spread at which managers are printing transactions, particularly once resets and refinancings are included. Using deal- and tranche-level data from Intex, we construct a deal-level measure of CLO arbitrage spreads for USD and EUR transactions at origination. Three conclusions stand out.",
+        "bbox": [
+            274,
+            88,
+            908,
+            230
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "First, arbitrage spreads have compressed in both USD and EUR broadly syndicated loan CLOs, but the compression has been more pronounced in USD over the past two years. In our view, this likely reflects the increasing presence of captive equity capital in the USD market. As a result, we think this makes EUR equity valuations structurally cheaper, but we are cautious about drawing too sanguine of a conclusion from the wider differential given a less supportive fundamental backdrop in the region.",
+        "bbox": [
+            274,
+            243,
+            906,
+            349
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "Second, when looking at resets and refinancings, the change in arbitrage is less straightforward than is often assumed. Liability spreads typically tighten when deals are reset, but asset spreads can tighten as well, particularly in periods of heavy repricing activity. This is because CLO issuers typically tend to reprice their structures during risk-on periods, or when investor sentiment is receptive because other ‘new money’ investment opportunities may be less plentiful (and are eager to stay invested). Over recent vintages, we find that asset spread tightening has generally kept pace with, and in many USD cases exceeded, liability spread improvement. The result is that reset economics have become less favorable in USD than the tightening in tranche liability spreads alone would imply. In EUR, by contrast, reset economics have generally held up better.",
+        "bbox": [
+            274,
+            362,
+            913,
+            557
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "Third, comparing arbitrage outcomes across manager tiers suggests that lower debt costs do not necessarily come at the expense of lower excess spread. In the USD market, higher-tier managers have generally printed deals with slightly wider arbitrage spreads than lower-tier peers. In EUR, the opposite pattern holds, with lower-tier managers tending to print a wider arbitrage. The underlying reason appears to be that USD manager differentiation is more visible on the liability side, while EUR dispersion is greater on the asset side (possibly due to the smaller size of the EUR market).",
+        "bbox": [
+            274,
+            570,
+            911,
+            695
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "Deal-level CLO arbitrage spread",
+        "text_level": 2,
+        "bbox": [
+            274,
+            721,
+            511,
+            737
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "Using deal level data from Intex, we construct the CLO arbitrage spread for USD and EUR CLOs. The deal-level spreads generally track the traditional measure of new issue arbitrage spreads, which is calculated by taking the difference between new issue loan and CLO debt spreads (Exhibit 1). However, especially in the USD market, we note a secular trend towards tighter arbitrage spreads as the space has matured and more CLO managers now participate in the USD and EUR markets (Exhibit 2). Deal-matched arbitrage spreads also allow us to look at the arbitrage for Middle Market, or private credit USD CLOs. In the absence of new direct lending market spreads, we can use deal-level liabilities and asset spreads to construct a series that generally matches direct lending spreads (Exhibit 3).",
+        "bbox": [
+            274,
+            739,
+            913,
+            917
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "header",
+        "text": "GS",
+        "bbox": [
+            81,
+            7,
+            184,
+            20
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "header",
+        "text": "The Credit Line",
+        "bbox": [
+            815,
+            9,
+            916,
+            21
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "footer",
+        "text": "11 June 2026",
+        "bbox": [
+            81,
+            954,
+            161,
+            965
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "page_number",
+        "text": "2",
+        "bbox": [
+            906,
+            954,
+            916,
+            963
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "Exhibit 1: The deal-level arbitrage spreads generally correlate with the new issue calculations",
+        "text_level": 2,
+        "bbox": [
+            80,
+            52,
+            723,
+            67
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "Deal-matched arbitrage spread is trailing 3-month deal-weighted figure; new Issue spread uses new issue loan spreads net monthly new issue weighted average cost of CLO debt (3-months smoothed)",
+        "bbox": [
+            80,
+            68,
+            888,
+            92
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "chart",
+        "img_path": "images/11f2ea34b48c93cc3331e5f87b67b34fee1688404418268c9462436316ad54a7.jpg",
+        "content": "USD CLO arbitrage spread\n| Year | New Issue Spread (bp) | Deal-matched (bp) |\n|---|---|---|\n| 13 | 180 | 310 |\n| 14 | 155 | 270 |\n| 15 | 225 | 290 |\n| 16 | 220 | 260 |\n| 17 | 160 | 240 |\n| 18 | 170 | 230 |\n| 19 | 190 | 145 |\n| 20 | 105 | 50 |\n| 21 | 255 | 185 |\n| 22 | 240 | 210 |\n| 23 | 150 | 105 |\n| 24 | 160 | 130 |\n| 25 | 185 | 145 |\n| 26 | 190 | 130 |",
+        "chart_caption": [],
+        "chart_footnote": [],
+        "sub_type": "line chart",
+        "bbox": [
+            107,
+            99,
+            488,
+            340
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "chart",
+        "img_path": "images/383f60291dbafe5fe473b97038abe1c4ce0717395628d6eea0abb1ef7af01049.jpg",
+        "content": "| Year | New Issue Spread | Deal-matched |\n|------|------------------|--------------|\n| 15   | 270              | 230          |\n| 16   | 250              | 300          |\n| 17   | 240              | 280          |\n| 18   | 220              | 230          |\n| 19   | 210              | 200          |\n| 20   | 150              | 180          |\n| 21   | 210              | 200          |\n| 22   | 230              | 210          |\n| 23   | 180              | 150          |\n| 24   | 200              | 80           |\n| 25   | 170              | 160          |\n| 26   | 160              | 150          |",
+        "chart_caption": [],
+        "chart_footnote": [
+            "Source: Intex, PitchBook LCD, GS Global Investment Research"
+        ],
+        "sub_type": "line chart",
+        "bbox": [
+            496,
+            99,
+            880,
+            340
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "chart",
+        "img_path": "images/48f03d336999712e7e992c1dfcf1fb73a878f1c3ea2a3cf736d7381b3ef45655.jpg",
+        "content": "| Year | US Managers | Euro Managers (RHS) |\n|------|-------------|---------------------|\n| 15   | 50          | 20                  |\n| 16   | 30          | 15                  |\n| 17   | 45          | 25                  |\n| 18   | 55          | 30                  |\n| 19   | 60          | 35                  |\n| 20   | 50          | 30                  |\n| 21   | 65          | 40                  |\n| 22   | 80          | 70                  |\n| 23   | 55          | 20                  |\n| 24   | 75          | 30                  |\n| 25   | 80          | 35                  |\n| 26   | 85          | 30                  |",
+        "chart_caption": [
+            "Exhibit 2: The trend towards tighter arbitrage spreads coincides with more managers in a more mature market"
+        ],
+        "chart_footnote": [
+            "Source: PitchBook LCD, GS Global Investment Research"
+        ],
+        "sub_type": "line chart",
+        "bbox": [
+            78,
+            457,
+            486,
+            645
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "Exhibit 3: USD Middle Market CLO arbitrage spreads have tightened towards 300bp",
+        "text_level": 2,
+        "bbox": [
+            506,
+            381,
+            906,
+            409
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "Direct Lending spread calculated as difference between CDLI yield-to-maturity and 3-month LIBOR (SOFR after December 2020)",
+        "bbox": [
+            506,
+            409,
+            888,
+            448
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "chart",
+        "img_path": "images/27a03667bc35b2da4b104ef6a9cd45ff53dee6c9e4244d5a3b475e2a21f0bbb2.jpg",
+        "content": "USD Middle Market CLO arbitrage spread vs. Direct Lending Spread\n| Year | Middle Market CLO arbitrage spread (%) | Direct Lending spread (RHS) (%) |\n|---|---|---|\n| 21 | 3.5 | 10.5 |\n| 22 | 4.4 | 7.8 |\n| 23 | 3.1 | 6.9 |\n| 24 | 2.8 | 7.1 |\n| 25 | 3.7 | 6.8 |\n| 26 | 3.4 | 6.5 |",
+        "chart_caption": [],
+        "chart_footnote": [
+            "Source: Intex, Cliffwater, GS Global Investment Research"
+        ],
+        "sub_type": "line chart",
+        "bbox": [
+            511,
+            458,
+            915,
+            645
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "That tightening in BSL arbitrage spreads has been especially visible in the USD market. Part of the explanation is cyclical, including a stronger technical demand and lower net loan supply. But we think an important structural driver has been the growth of captive equity funds. These vehicles, which typically commit capital across multiple vintages and cede manager selection and deployment discretion to the originating firm, have altered the behavior of the equity base in the USD market. Market participants have increasingly pointed to captive equity as a force that reduces the sensitivity of equity demand to spot arbitrage conditions. In effect, vintage diversification and continuity of deployment have become more important than maximizing entry spread on any single transaction.",
+        "bbox": [
+            269,
+            677,
+            916,
+            838
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "For equity investors, the presence of non-return seeking participants should depress equity returns, all else equal. To be clear, the relationship between spot arbitrage and realized CLO equity returns is far from mechanical. But less attractive starting spreads reduce the headroom for credit losses available to equity investors who opt to both",
+        "bbox": [
+            269,
+            850,
+            897,
+            921
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "header",
+        "text": "GS",
+        "bbox": [
+            81,
+            7,
+            184,
+            19
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "header",
+        "text": "The Credit Line",
+        "bbox": [
+            815,
+            9,
+            916,
+            21
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "footer",
+        "text": "11 June 2026",
+        "bbox": [
+            81,
+            953,
+            161,
+            965
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "page_number",
+        "text": "3",
+        "bbox": [
+            906,
+            954,
+            916,
+            963
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "trade and choose their equity investments on a deal-by-deal basis.",
+        "bbox": [
+            274,
+            41,
+            758,
+            57
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "Wider EUR arbitrage spreads are not a free lunch",
+        "text_level": 2,
+        "bbox": [
+            274,
+            82,
+            635,
+            99
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "This dynamic has not yet become as entrenched in the EUR market, which is one reason EUR equity can appear optically cheaper. While this structural reason should favor EUR equity, and has led to higher equity returns in the past, the key tension is the relatively worse fundamental picture in the EUR loan market, in our view. Default rates have generally risen over the past two years, whereas USD rates have come off their 2024 peak. Given our forecast for slightly higher EUR defaults from here (owing to a less favorable policy and macroeconomic mix), and loan prices which are rich relative to their USD peers, we think some of the excess spread will serve as compensation for credit losses. While software and other asset-light businesses feature more prominently in the USD loan market, there is still significant asset-light exposure in the EUR market, with maturity walls ramping in 2028.",
+        "bbox": [
+            274,
+            100,
+            916,
+            297
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "As wider EUR arb spreads come from both wider debt costs and asset spreads, we do not automatically see a wider arb spread as negative for EUR CLO liabilities. Across the stack, we think EUR IG tranches can offer positive carry relative to their USD peers (Exhibit 4).",
+        "bbox": [
+            274,
+            309,
+            901,
+            380
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "chart",
+        "img_path": "images/0564f43459926a263fb2a6a579ea8926b47b4c2c7627d43f6942664603d4099a.jpg",
+        "content": "EUR/USD primary tranche spread ratio\n| Rating | Current | Median |\n| :--- | :--- | :--- |\n| AAA | 1.06 | 1.07 |\n| AA | 1.16 | 1.19 |\n| A | 1.14 | 1.21 |\n| BBB | 0.96 | 1.09 |\n| BB | 0.95 | 1.04 |",
+        "chart_caption": [
+            "Exhibit 4: EUR IG tranches offer a spread pickup relative to USD",
+            "EUR/USD tranche spread ratios (adjusted with 5-year cross-currency basis); median since 2021"
+        ],
+        "chart_footnote": [],
+        "sub_type": "bar chart",
+        "bbox": [
+            106,
+            432,
+            488,
+            667
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "chart",
+        "img_path": "images/80d1005fcfcdbd155a95678309e735607062850258b66530ad707f7f2f877c60.jpg",
+        "content": "EUR/USD secondary tranche spread ratio\n| Rating | Current | Median |\n| :--- | :--- | :--- |\n| AAA | 0.97 | 0.85 |\n| AA | 1.13 | 0.99 |\n| A | 1.18 | 1.05 |\n| BBB | 1.05 | 1.04 |\n| BB | 0.78 | 0.89 |",
+        "chart_caption": [],
+        "chart_footnote": [
+            "Source: PitchBook LCD, Palmer Square, GS Global Investment Research"
+        ],
+        "sub_type": "bar chart",
+        "bbox": [
+            496,
+            432,
+            879,
+            667
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "Tighter resets",
+        "text_level": 2,
+        "bbox": [
+            274,
+            717,
+            377,
+            733
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "A key benefit of the deal-level framework is that it allows us to track how the economics of a transaction evolve when it is reset or refinanced. Here the contrast between the USD and EUR markets has been notable. In USD, the repricing wave in the loan market has been much more pronounced, and that has meant tighter asset spreads on reset portfolios. As a result, the improvement in liability costs has often been partly or fully offset by reduced asset income. For deals issued since 2023, reset economics in USD have improved only modestly (Exhibit 5).",
+        "bbox": [
+            274,
+            735,
+            910,
+            859
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "Conversely, the EUR market deal economics have improved by 50bp for new issues from 2023 onward (Exhibit 6). That likely reflects three factors, in our view. First, loan spread compression has been less aggressive because repricing activity has been slightly more muted vs. the USD market (Exhibit 7). Second, loan supply has generally been somewhat more supportive for redeployment. Third, we think captive funds are more likely to reset CLOs, extend reinvestment periods, and continue to attract management fees at tighter deal economics.",
+        "bbox": [
+            274,
+            872,
+            910,
+            923
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "header",
+        "text": "GS",
+        "bbox": [
+            81,
+            7,
+            184,
+            19
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "header",
+        "text": "The Credit Line",
+        "bbox": [
+            815,
+            9,
+            916,
+            21
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "footer",
+        "text": "11 June 2026",
+        "bbox": [
+            81,
+            954,
+            161,
+            965
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "page_number",
+        "text": "4",
+        "bbox": [
+            906,
+            954,
+            916,
+            963
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            269,
+            41,
+            911,
+            110
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "chart",
+        "img_path": "images/63e0b321f1ac97b41c656b4f03d542d73cc596a4724c5a72c72a1609daf713a8.jpg",
+        "content": "Change in USD CLO arbitrage spread for resets by new issue vintage\n| New issue vintage | Asset change (bp) | Liability change (inverted) (bp) | Net change (bp) |\n| :--- | :--- | :--- | :--- |\n| Q1 2019 | 50 | 10 | 60 |\n| Q2 2019 | 35 | 15 | 55 |\n| Q3 2019 | 30 | 15 | 50 |\n| Q4 2019 | 25 | 15 | 45 |\n| Q1 2020 | 15 | 70 | 80 |\n| Q2 2020 | -10 | 100 | 105 |\n| Q3 2020 | -20 | 55 | 45 |\n| Q4 2020 | -15 | 20 | 15 |\n| Q1 2021 | -60 | 5 | -70 |\n| Q2 2021 | -70 | 5 | -80 |\n| Q3 2021 | -75 | 5 | -85 |\n| Q4 2021 | -80 | 15 | -90 |\n| Q1 2022 | -90 | 15 | -95 |\n| Q2 2022 | -100 | 15 | -100 |\n| Q3 2022 | -85 | 55 | -35 |\n| Q4 2022 | -50 | 80 | 30 |\n| Q1 2023 | -30 | 85 | 45 |\n| Q2 2023 | -60 | 75 | 35 |\n| Q3 2023 | -65 | 75 | 35 |\n| Q4 2023 | -65 | 75 | 30 |\n| Q1 2024 | -60 | 55 | -5 |\n| Q2 2024 | -45 | 35 | -15 |",
+        "chart_caption": [
+            "Exhibit 5: USD deal economics have improved by less than 20bp on reset since 2023"
+        ],
+        "chart_footnote": [
+            "Source: Intex, GS Global Investment Research"
+        ],
+        "sub_type": "bar chart",
+        "bbox": [
+            83,
+            173,
+            478,
+            351
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "chart",
+        "img_path": "images/7edbde95f811f485b34bfd5b5439b55637f27b152149640cf9e9e8bcfa648aae.jpg",
+        "content": "Change in EUR CLO arbitrage spread for resets by new issue vintage\n| New issue vintage | Asset change (bp) | Liability change (inverted) (bp) | Net change (bp) |\n| :--- | :--- | :--- | :--- |\n| Q1 2019 | -10 | 15 | 20 |\n| Q2 2019 | -20 | 20 | -5 |\n| Q3 2019 | -30 | 35 | 5 |\n| Q4 2019 | -80 | 5 | -75 |\n| Q1 2020 | -50 | 40 | 65 |\n| Q2 2020 | -10 | 50 | -15 |\n| Q3 2020 | -60 | 60 | -15 |\n| Q4 2020 | -80 | 40 | -35 |\n| Q1 2021 | -60 | 20 | -35 |\n| Q2 2021 | -50 | 25 | -15 |\n| Q3 2021 | -60 | 55 | -5 |\n| Q4 2021 | -70 | 15 | -15 |\n| Q1 2022 | -80 | 45 | -45 |\n| Q2 2022 | -110 | 60 | -55 |\n| Q3 2022 | -30 | 105 | 70 |\n| Q4 2022 | -30 | 105 | 70 |\n| Q1 2023 | -30 | 70 | 45 |\n| Q2 2023 | -30 | 75 | 45 |\n| Q3 2023 | -30 | 65 | 45 |\n| Q4 2023 | -30 | 55 | 45 |\n| Q1 2024 | -30 | 45 | 25 |\n| Q2 2024 | -30 | 45 | 90 |\n| Q3 2024 | -30 | 45 | 35 |\n| Q4 2024 | -30 | 65 | 55 |",
+        "chart_caption": [
+            "Exhibit 6: Whereas EUR deals have improved by nearly 50bp over the same period"
+        ],
+        "chart_footnote": [
+            "Source: Intex, GS Global Investment Research",
+            "Trailing 6-month repricing volumes scaled by index notional for USD and EUR BSL market"
+        ],
+        "sub_type": "bar chart",
+        "bbox": [
+            511,
+            173,
+            910,
+            351
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "Exhibit 7: EUR new issue loan spreads have lagged the tightening impulse, in part because of lower repricing volumes",
+        "bbox": [
+            80,
+            398,
+            452,
+            439
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "chart",
+        "img_path": "images/097bd5c03179324f5c6591b8d2fe04704e0a6835721a8a662a15eb7620820ad2.jpg",
+        "content": "Repricing volumes scaled by market notional\n| Date | USD (%) | EUR (%) |\n|---|---|---|\n| 11 | 0.0 | 0.0 |\n| 12 | 0.0 | 0.0 |\n| 13 | 0.0 | 0.8 |\n| 14 | 0.0 | 0.9 |\n| 15 | 0.0 | 1.2 |\n| 16 | 1.4 | 1.2 |\n| 17 | 6.2 | 1.3 |\n| 18 | 4.7 | 0.2 |\n| 19 | 0.8 | 0.8 |\n| 20 | 2.5 | 1.3 |\n| 21 | 2.5 | 1.5 |\n| 22 | 0.8 | 0.8 |\n| 23 | 0.0 | 0.0 |\n| 24 | 2.8 | 2.5 |\n| 25 | 6.3 | 4.3 |\n| 26 | 2.0 | 2.7 |",
+        "chart_caption": [],
+        "chart_footnote": [
+            "Source: Pitchbook LCD, GS Global Investment Research"
+        ],
+        "sub_type": "line chart",
+        "bbox": [
+            84,
+            478,
+            488,
+            668
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "How are managers faring?",
+        "text_level": 2,
+        "bbox": [
+            269,
+            715,
+            468,
+            731
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "In prior work, we have used market pricing to develop CLO manager tiers. Given our tiers are based on liability pricing, the implicit assumption is that the arbitrage spread is roughly similar or proportional across these managers (i.e., managers with tighter liability spreads invest in lower spread assets and vice versa), translating to arbitrage spreads flat across tiers. However, the data supports a more nuanced view.",
+        "bbox": [
+            269,
+            733,
+            913,
+            820
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "Using deals from 2026, we find that higher-tiered (tier 1) managers actually have slightly wider arbitrage spreads in the USD market. Conversely, lower-tiered managers (tier 4) in the EUR market have wider arbitrage spreads (Exhibit 8). In the USD BSL market there is both less variation in asset spreads and larger variation in liability spreads across manger tiers, both of which have meant higher-tiered managers are able to capture lower debt costs without forgoing excess spread. Meanwhile, AAA spreads across manager tiers separated by less than 6bp in EUR BSL market, and asset spreads have been more dispersed; the median tier 4 manager asset spread is nearly 50bp wider than that for tier 1 managers.",
+        "bbox": [
+            269,
+            833,
+            915,
+            922
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "header",
+        "text": "GS",
+        "bbox": [
+            81,
+            7,
+            184,
+            20
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "header",
+        "text": "The Credit Line",
+        "bbox": [
+            815,
+            9,
+            916,
+            21
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "footer",
+        "text": "11 June 2026",
+        "bbox": [
+            81,
+            954,
+            161,
+            965
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "page_number",
+        "text": "5",
+        "bbox": [
+            906,
+            954,
+            915,
+            963
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            269,
+            41,
+            916,
+            112
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "chart",
+        "img_path": "images/8ccb8a93be1b3c689565219e15d9275ff51caf438171052c912497ee67e48e48.jpg",
+        "content": "BSL arbitrage spread by manager tier\n| Tier | USD (%) | EUR (%) |\n|---|---|---|\n| 1 | 1.37 | 1.54 |\n| 2 | 1.33 | 1.55 |\n| 3 | 1.34 | 1.56 |\n| 4 | 1.34 | 1.65 |",
+        "chart_caption": [
+            "Exhibit 8: Arbitrage spreads are slightly wider for most defensive managers, while EUR CLO spreads exhibit the opposite pattern"
+        ],
+        "chart_footnote": [
+            "Source: PitchBook LCD, Intex, GS Global Investment Research"
+        ],
+        "sub_type": "bar chart",
+        "bbox": [
+            272,
+            186,
+            687,
+            373
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "We thank Patricia Pacheco for her contribution to this report.",
+        "bbox": [
+            272,
+            408,
+            686,
+            423
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "header",
+        "text": "GS",
+        "bbox": [
+            81,
+            7,
+            184,
+            19
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "header",
+        "text": "The Credit Line",
+        "bbox": [
+            815,
+            9,
+            916,
+            21
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "footer",
+        "text": "11 June 2026",
+        "bbox": [
+            81,
+            954,
+            161,
+            965
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "page_number",
+        "text": "6",
+        "bbox": [
+            906,
+            954,
+            916,
+            963
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "Disclosure Appendix",
+        "text_level": 2,
+        "bbox": [
+            80,
+            41,
+            251,
+            61
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "Reg AC",
+        "text_level": 2,
+        "bbox": [
+            80,
+            83,
+            135,
+            97
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "We, Shamshad Ali, Amanda Lynam, CPA, Arun Manohar, Spencer Rogers, CFA, Sara Grut, Ben Shumway and Neth Karunamuni, hereby certify that all of the views expressed in this report accurately reflect our personal views, which have not been influenced by considerations of the firm's business or client relationships.",
+        "bbox": [
+            81,
+            105,
+            906,
+            140
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "Unless otherwise stated, the individuals listed on the cover page of this report are analysts in GS' Global Investment Research division.",
+        "bbox": [
+            81,
+            145,
+            883,
+            158
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "Contributing Authors: Shamshad Ali GS & Co. LLC, Amanda Lynam, CPA GS & Co. LLC, Arun Manohar GS & Co. LLC, Spencer Rogers, CFA GS & Co. LLC, Sara Grut GS International, Ben Shumway GS & Co. LLC, Neth Karunamuni GS & Co. LLC.",
+        "bbox": [
+            81,
+            164,
+            911,
+            198
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "Unless otherwise stated, the individuals listed in the Contributing Authors disclosure of this report are analysts in GS' Global Investment Research division.",
+        "bbox": [
+            81,
+            204,
+            893,
+            226
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "Disclosures",
+        "text_level": 2,
+        "bbox": [
+            81,
+            240,
+            166,
+            253
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "Regulatory disclosures",
+        "text_level": 2,
+        "bbox": [
+            81,
+            260,
+            250,
+            274
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "Disclosures required by United States laws and regulations",
+        "text_level": 2,
+        "bbox": [
+            81,
+            279,
+            514,
+            293
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "See company-specific regulatory disclosures above for any of the following disclosures required as to companies referred to in this report: manager or co-manager in a pending transaction; $1\\%$ or other ownership; compensation for certain services; types of client relationships; managed/co-managed public offerings in prior periods; directorships; for equity securities, market making and/or specialist role. GS trades or may trade as a principal in debt securities (or in related derivatives) of issuers discussed in this report.",
+        "bbox": [
+            81,
+            293,
+            906,
+            337
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "The following are additional required disclosures: Ownership and material conflicts of interest: GS policy prohibits its analysts, professionals reporting to analysts and members of their households from owning securities of any company in the analyst's area of coverage. Analyst compensation: Analysts are paid in part based on the profitability of GS, which includes investment banking revenues. Analyst as officer or director: GS policy generally prohibits its analysts, persons reporting to analysts or members of their households from serving as an officer, director or advisor of any company in the analyst's area of coverage. Non-U.S. Analysts: Non-U.S. analysts may not be associated persons of GS & Co. LLC and therefore may not be subject to FINRA Rule 2241 or FINRA Rule 2242 restrictions on communications with a subject company, public appearances and trading in securities covered by the analysts.",
+        "bbox": [
+            81,
+            342,
+            911,
+            423
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "Additional disclosures required under the laws and regulations of jurisdictions other than the United States",
+        "text_level": 2,
+        "bbox": [
+            81,
+            435,
+            872,
+            448
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "The following disclosures are those required by the jurisdiction indicated, except to the extent already made above pursuant to United States laws and regulations. Australia: GS Australia Pty Ltd and its affiliates are not authorised deposit-taking institutions (as that term is defined in the Banking Act 1959 (Cth)) in Australia and do not provide banking services, nor carry on a banking business, in Australia. This research, and any access to it, is intended only for “wholesale clients” within the meaning of the Australian Corporations Act, unless otherwise agreed by GS. In producing research reports, members of Global Investment Research of GS Australia may attend site visits and other meetings hosted by the companies and other entities which are the subject of its research reports. In some instances the costs of such site visits or meetings may be met in part or in whole by the issuers concerned if GS Australia considers it is appropriate and reasonable in the specific circumstances relating to the site visit or meeting. To the extent that the contents of this document contains any financial product advice, it is general advice only and has been prepared by GS without taking into account a client’s objectives, financial situation or needs. A client should, before acting on any such advice, consider the appropriateness of the advice having regard to the client’s own objectives, financial situation and needs. A copy of certain GS Australia and New Zealand disclosure of interests and a copy of GS’ Australian Sell-Side Research Independence Policy Statement are available at: https://www.goldmansachs.com/disclosures/australia-new-zealand/index.html. Brazil: Disclosure information in relation to CVM Resolution n. 20 is available at https://www.gs.com/worldwide/brazil/area/gir/index.html. Where applicable, the Brazil-registered analyst primarily responsible for the content of this research report, as defined in Article 20 of CVM Resolution n. 20, is the first author named at the beginning of this report, unless indicated otherwise at the end of the text. Canada: This information is being provided to you for information purposes only and is not, and under no circumstances should be construed as, an advertisement, offering or solicitation by GS & Co. LLC for purchasers of securities in Canada to trade in any Canadian security. GS & Co. LLC is not registered as a dealer in any jurisdiction in Canada under applicable Canadian securities laws and generally is not permitted to trade in Canadian securities and may be prohibited from selling certain securities and products in certain jurisdictions in Canada. If you wish to trade in any Canadian securities or other products in Canada please contact GS Canada Inc., an affiliate of The GS Group Inc., or another registered Canadian dealer. Hong Kong: Further information on the securities of covered companies referred to in this research may be obtained on request from GS (Asia) L.L.C. India: Further information on the subject company or companies referred to in this research may be obtained from GS (India) Securities Private Limited, Research Analyst – SEBI Registration Number INH000001493, 10th Floor, Ascent-Worli, Sudam Kalu Ahire Marg, Worli, Mumbai-400 025, India, Corporate Identity Number U74140MH2006FTC160634, Phone +91 22 6616 9000, Fax +91 22 6616 9001. GS may beneficially own 1% or more of the securities (as such term is defined in clause 2 (h) the Indian Securities Contracts (Regulation) Act, 1956) of the subject company or companies referred to in this research report. Investment in securities market are subject to market risks. Read all the related documents carefully before investing. Registration granted by SEBI and certification from NISM in no way guarantee performance of the intermediary or provide any assurance of returns to investors. GS (India) Securities Private Limited compliance officer and investor grievance contact details can be found at: https://www.goldmansachs.com/worldwide/india/documents/Grievance-Redressal-and-Escalation-Matrix.pdf, and a copy of the annual audit compliance report can be found at this link: https://publishing.gs.com/content/site/india-annual-compliance-report.html. Japan: See below. Korea: This research, and any access to it, is intended only for “professional investors” within the meaning of the Financial Services and Capital Markets Act, unless otherwise agreed by GS. Further information on the subject company or companies referred to in this research may be obtained from GS (Asia) L.L.C., Seoul Branch. New Zealand: GS New Zealand Limited and its affiliates are neither “registered banks” nor “deposit takers” (as defined in the Reserve Bank of New Zealand Act 1989) in New Zealand. This research, and any access to it, is intended for “wholesale clients” (as defined in the Financial Advisers Act 2008) unless otherwise agreed by GS. A copy of certain GS Australia and New Zealand disclosure of interests is available at: https://www.goldmansachs.com/disclosures/australia-new-zealand/index.html. Russia: Research reports distributed in the Russian Federation are not advertising as defined in the Russian legislation, but are information and analysis not having product promotion as their main purpose and do not provide appraisal within the meaning of the Russian legislation on appraisal activity. Research reports do not constitute a personalized investment recommendation as defined in Russian laws and regulations, are not addressed to a specific client, and are prepared without analyzing the financial circumstances, investment profiles or risk profiles of clients. GS assumes no responsibility for any investment decisions that may be taken by a client or any other person based on this research report. Singapore: GS (Singapore) Pte. (Company Number: 198602165W), which is regulated by the Monetary Authority of Singapore, accepts legal responsibility for this research, and should be contacted with respect to any matters arising from, or in connection with, this research. Taiwan: This material is for reference only and must not be reprinted without permission. Investors should carefully consider their own investment risk. Investment results are the responsibility of the individual investor. United Kingdom: Persons who would be categorized as retail clients in the United Kingdom, as such term is defined in the rules of the Financial Conduct Authority, should read this research in conjunction with prior GS on the covered companies referred to herein and should refer to the risk warnings that have been sent to them by GS International. A copy of these risks warnings, and a glossary of certain financial terms used in this report, are available from GS International on request.",
+        "bbox": [
+            81,
+            449,
+            916,
+            925
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "header",
+        "text": "GS",
+        "bbox": [
+            81,
+            7,
+            184,
+            19
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "header",
+        "text": "The Credit Line",
+        "bbox": [
+            815,
+            9,
+            916,
+            21
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "footer",
+        "text": "11 June 2026",
+        "bbox": [
+            81,
+            954,
+            161,
+            965
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "page_number",
+        "text": "7",
+        "bbox": [
+            906,
+            954,
+            915,
+            963
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            81,
+            42,
+            901,
+            99
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "European Union and United Kingdom: Disclosure information in relation to Article 6 (2) of the European Commission Delegated Regulation (EU) (2016/958) supplementing Regulation (EU) No 596/2014 of the European Parliament and of the Council (including as that Delegated Regulation is implemented into United Kingdom domestic law and regulation following the United Kingdom's departure from the European Union and the European Economic Area) with regard to regulatory technical standards for the technical arrangements for objective presentation of investment recommendations or other information recommending or suggesting an investment strategy and for disclosure of particular interests or indications of conflicts of interest is available at https://www.gs.com/disclosures/europeanpolicy.html which states the European Policy for Managing Conflicts of Interest in Connection with Investment Research.",
+        "bbox": [
+            81,
+            105,
+            906,
+            182
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "Japan: GS Japan Co., Ltd. is a Financial Instrument Dealer registered with the Kanto Financial Bureau under registration number Kinsho 69, and a member of Japan Securities Dealers Association, Financial Futures Association of Japan Type II Financial Instruments Firms Association, and Investment Management Association of Japan. Sales and purchase of equities are subject to commission pre-determined with clients plus consumption tax. See company-specific disclosures as to any applicable disclosures required by Japanese stock exchanges, the Japanese Securities Dealers Association or the Japanese Securities Finance Company.",
+        "bbox": [
+            81,
+            189,
+            913,
+            246
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "Global product; distributing entities",
+        "text_level": 2,
+        "bbox": [
+            81,
+            259,
+            349,
+            271
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "GS Global Investment Research produces and distributes research products for clients of GS on a global basis. Analysts based in GS offices around the world produce research on industries and companies, and research on macroeconomics, currencies, commodities and portfolio strategy. This research is disseminated in Australia by GS Australia Pty Ltd (ABN 21 006 797 897); in Brazil by GS do Brasil Corretora de Títulos e Valores Mobiliários S.A.; Public Communication Channel GS Brazil: 0800 727 5764 and / or contatogoldmanbrasil@gs.com. Available Weekdays (except holidays), from 9am to 6pm. Canal de Comunicação com o Público GS Brasil: 0800 727 5764 e/ou contatogoldmanbrasil@gs.com. Horário de funcionamento: segunda-feira à sexta-feira (exceto feriados), das 9h às 18h; in Canada by GS & Co. LLC; in Hong Kong by GS (Asia) L.L.C.; in India by GS (India) Securities Private Ltd.; in Japan by GS Japan Co., Ltd.; in the Republic of Korea by GS (Asia) L.L.C., Seoul Branch; in New Zealand by GS New Zealand Limited; in Russia by OOO GS; in Singapore by GS (Singapore) Pte. (Company Number: 198602165W); and in the United States of America by GS & Co. LLC. GS International has approved this research in connection with its distribution in the United Kingdom.",
+        "bbox": [
+            81,
+            271,
+            916,
+            394
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "GS International (“GSI”), authorised by the Prudential Regulation Authority (“PRA”) and regulated by the Financial Conduct Authority (“FCA”) and the PRA, has approved this research in connection with its distribution in the United Kingdom.",
+        "bbox": [
+            81,
+            400,
+            879,
+            423
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "European Economic Area: GS Bank Europe SE (“GSBE”) is a credit institution incorporated in Germany and, within the Single Supervisory Mechanism, subject to direct prudential supervision by the European Central Bank and in other respects supervised by German Federal Financial Supervisory Authority (Bundesanstalt für Finanzdienstleistungsaufsicht, BaFin) and Deutsche Bundesbank and disseminates research within the European Economic Area.",
+        "bbox": [
+            81,
+            430,
+            903,
+            475
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "General disclosures",
+        "text_level": 2,
+        "bbox": [
+            81,
+            488,
+            228,
+            501
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "This research is for our clients only. Other than disclosures relating to GS, this research is based on current public information that we consider reliable, but we do not represent it is accurate or complete, and it should not be relied on as such. The information, opinions, estimates and forecasts contained herein are as of the date hereof and are subject to change without prior notification. We seek to update our research as appropriate, but various regulations may prevent us from doing so. Other than certain industry reports published on a periodic basis, the large majority of reports are published at irregular intervals as appropriate in the analyst's judgment.",
+        "bbox": [
+            81,
+            501,
+            913,
+            557
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "GS conducts a global full-service, integrated investment banking, investment management, and brokerage business. We have investment banking and other business relationships with a substantial percentage of the companies covered by Global Investment Research. GS & Co. LLC, the United States broker dealer, is a member of SIPC (https://www.sipc.org).",
+        "bbox": [
+            81,
+            564,
+            913,
+            599
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "Our salespeople, traders, and other professionals may provide oral or written market commentary or trading strategies to our clients and principal trading desks that reflect opinions that are contrary to the opinions expressed in this research. Our asset management area, principal trading desks and investing businesses may make investment decisions that are inconsistent with the recommendations or views expressed in this research.",
+        "bbox": [
+            81,
+            604,
+            913,
+            639
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "We and our affiliates, officers, directors, and employees will from time to time have long or short positions in, act as principal in, and buy or sell, the securities or derivatives, if any, referred to in this research, unless otherwise prohibited by regulation or GS policy.",
+        "bbox": [
+            81,
+            644,
+            888,
+            668
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "The views attributed to third party presenters at GS arranged conferences, including individuals from other parts of GS, do not necessarily reflect those of Global Investment Research and are not an official view of GS.",
+        "bbox": [
+            81,
+            673,
+            913,
+            697
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "Any third party referenced herein, including any salespeople, traders and other professionals or members of their household, may have positions in the products mentioned that are inconsistent with the views expressed by analysts named in this report.",
+        "bbox": [
+            81,
+            703,
+            911,
+            726
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "This research is focused on investment themes across markets, industries and sectors. It does not attempt to distinguish between the prospects or performance of, or provide analysis of, individual companies within any industry or sector we describe.",
+        "bbox": [
+            81,
+            733,
+            883,
+            756
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "Any trading recommendation in this research relating to an equity or credit security or securities within an industry or sector is reflective of the investment theme being discussed and is not a recommendation of any such security in isolation.",
+        "bbox": [
+            81,
+            762,
+            866,
+            786
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "This research is not an offer to sell or the solicitation of an offer to buy any security in any jurisdiction where such an offer or solicitation would be illegal. It does not constitute a personal recommendation or take into account the particular investment objectives, financial situations, or needs of individual clients. Clients should consider whether any advice or recommendation in this research is suitable for their particular circumstances and, if appropriate, seek professional advice, including tax advice. The price and value of investments referred to in this research and the income from them may fluctuate. Past performance is not a guide to future performance, future returns are not guaranteed, and a loss of original capital may occur. Fluctuations in exchange rates could have adverse effects on the value or price of, or income derived from, certain investments.",
+        "bbox": [
+            81,
+            792,
+            916,
+            859
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "Certain transactions, including those involving futures, options, and other derivatives, give rise to substantial risk and are not suitable for all investors. Investors should review current options and futures disclosure documents which are available from GS sales representatives or at https://www.theocc.com/about/publications/character-risks.jsp and https://www.goldmansachs.com/disclosures/cftc\\_fcm\\_disclosures. Transaction costs may be significant in option strategies calling for multiple purchase and sales of options such as spreads. Supporting documentation will be supplied upon request.",
+        "bbox": [
+            81,
+            865,
+            903,
+            922
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "header",
+        "text": "GS",
+        "bbox": [
+            81,
+            7,
+            184,
+            20
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "header",
+        "text": "The Credit Line",
+        "bbox": [
+            815,
+            10,
+            916,
+            21
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "footer",
+        "text": "11 June 2026",
+        "bbox": [
+            81,
+            954,
+            161,
+            965
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "page_number",
+        "text": "8",
+        "bbox": [
+            906,
+            954,
+            916,
+            963
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "Differing Levels of Service provided by Global Investment Research: The level and types of services provided to you by GS Global Investment Research may vary as compared to that provided to internal and other external clients of GS, depending on various factors including your individual preferences as to the frequency and manner of receiving communication, your risk profile and investment focus and perspective (e.g., marketwide, sector specific, long term, short term), the size and scope of your overall client relationship with GS, and legal and regulatory constraints. As an example, certain clients may request to receive notifications when research on specific securities is published, and certain clients may request that specific data underlying analysts' fundamental analysis available on our internal client websites be delivered to them electronically through data feeds or otherwise. No change to an analyst's fundamental research views (e.g., ratings, price targets, or material changes to earnings estimates for equity securities), will be communicated to any client prior to inclusion of such information in a research report broadly disseminated through electronic publication to our internal client websites or through other means, as necessary, to all clients who are entitled to receive such reports.",
+        "bbox": [
+            80,
+            42,
+            903,
+            143
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "All research reports are disseminated and available to all clients simultaneously through electronic publication to our internal client websites. Not all research content is redistributed to our clients or available to third-party aggregators, nor is GS responsible for the redistribution of our research by third party aggregators. For research, models or other data related to one or more securities, markets or asset classes (including related services) that may be available to you, please contact your GS representative or go to https://research.gs.com.",
+        "bbox": [
+            81,
+            149,
+            897,
+            195
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "Disclosure information is also available at https://www.gs.com/research/hedge.html or from Research Compliance, 200 West Street, New York, NY 10282.",
+        "bbox": [
+            81,
+            199,
+            888,
+            222
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "© 2026 GS.",
+        "text_level": 2,
+        "bbox": [
+            81,
+            230,
+            220,
+            240
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "You are permitted to store, display, analyze, modify, reformat, and print the information made available to you via this service only for your own use. You may not resell or reverse engineer this information to calculate or develop any index for disclosure and/or marketing or create any other derivative works or commercial product(s), data or offering(s) without the express written consent of GS. You are not permitted to publish, transmit, or otherwise reproduce this information, in whole or in part, in any format to any third party without the express written consent of GS. This foregoing restriction includes, without limitation, using, extracting, downloading or retrieving this information, in whole or in part, to train or finetune a machine learning or artificial intelligence system, or to provide or reproduce this information, in whole or in part, as a prompt or input to any such system.",
+        "bbox": [
+            81,
+            248,
+            911,
+            327
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "header",
+        "text": "GS",
+        "bbox": [
+            81,
+            7,
+            184,
+            19
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "header",
+        "text": "The Credit Line",
+        "bbox": [
+            815,
+            10,
+            916,
+            21
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "footer",
+        "text": "11 June 2026",
+        "bbox": [
+            83,
+            954,
+            161,
+            965
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "page_number",
+        "text": "9",
+        "bbox": [
+            906,
+            954,
+            916,
+            963
+        ],
+        "page_idx": 8
+    }
+]
