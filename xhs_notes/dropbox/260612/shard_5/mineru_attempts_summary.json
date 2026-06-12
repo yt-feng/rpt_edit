@@ -1,0 +1,39 @@
+[
+  {
+    "attempt": 1,
+    "round": 1,
+    "token_label": "MINER_U_2",
+    "submitted_pdf_count": 5,
+    "successful_pdf_count": 5,
+    "retry_pdf_count": 0,
+    "timed_out": false,
+    "error": "",
+    "states": [
+      {
+        "pdf": "/tmp/pdf_batch_001_vmzw7wkg/pdfs/0001-27-BARC-China-Upstream-driven PPI- weak pass-through-260610.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_vmzw7wkg/pdfs/0002-28-NOM-USD CNY fix model-Projection- 6.7816-260611.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_vmzw7wkg/pdfs/0003-29-NOM-USD CNY fix model-Projection- 6.7607-260612.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_vmzw7wkg/pdfs/0004-30-GS-China- Media reported RMB 2 trillion data center investment not new news-260612.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_vmzw7wkg/pdfs/0005-31-MS-China Financials-Recent outbound investment policies- gauging the true impact-260610.pdf",
+        "state": "done",
+        "error": ""
+      }
+    ]
+  }
+]
