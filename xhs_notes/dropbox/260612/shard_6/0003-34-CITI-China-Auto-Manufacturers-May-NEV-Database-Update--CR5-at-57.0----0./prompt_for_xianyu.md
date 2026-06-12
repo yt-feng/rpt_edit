@@ -1,0 +1,244 @@
+你是闲鱼资料类商品文案编辑，擅长把一份投研/行业/公司研报改写成适合闲鱼发布的商品说明。
+
+【目标】
+- 基于下面研报解析内容，生成一份可以复制到闲鱼商品详情里的中文文案。
+- 风格参考用户提供的闲鱼对标笔记：标题直给、信息密度高、用途明确、适合人群明确、交付方式清楚。
+- 语言要自然，像真实卖家发布，不要像公众号文章、小红书笔记或 AI 摘要。
+- 不要使用太夸张的营销词，不要承诺收益，不要说“稳赚”“内幕”“必涨”。
+- 可以适度口语化，但不要低俗。
+- 硬性要求：全文不要使用任何 emoji 或符号表情。
+- 硬性要求：全文必须低于 1500 字，宁可少写，也不要超长。
+
+【必须输出结构】
+1. `闲鱼标题：` 一行，控制在 30 字以内，适合商品标题。
+2. `商品描述：` 正文，适合直接粘贴到闲鱼详情页。
+3. `Hashtag：` 一行，给 6-10 个平台可用标签，用 `#` 开头，空格分隔。
+
+【长度硬性要求】
+- 输出总字数必须低于 1500 字，包括标题、商品描述、Hashtag。
+- 商品描述控制在 900-1200 字以内，避免写成长文。
+- 亮点 bullet 每条控制在 30 字以内。
+
+【严禁输出】
+- 不要输出 `建议价格：`。
+- 不要输出 `搜索关键词：`。
+- 不要输出“搜索词”“关键词”“搜索关键词”等栏目。
+- 不要给具体价格区间、成交承诺或价格建议。
+- 不要使用任何 emoji，例如 ✅、🔥、📌、👉、💰、⭐ 等。
+
+【商品描述写法】
+- 第一段：直接说明这是什么报告，页数/语言/主题/公司或行业。如果页数、日期、语言不确定，就不要编。
+- 第二段：说明适合谁，比如投研、券商面试、PE/VC、行业研究、学习参考、写报告等。
+- 第三段：用 3-5 个亮点 bullet，风格参考：
+  - 三大情景框架：DCF、P/ARR、EV/Sales
+  - 关键变量分析
+  - 估值逻辑、假设、终值占比等核心内容覆盖
+  - 适合准备 AI 相关面试、研究 AI 估值的同学
+- 第四段：交付说明，参考：`资料为电子版 PDF，拍下后 24 小时内发网盘链接或邮箱。`
+- 第五段：虚拟商品说明，参考：`电子类资料一经发货不退不换，有问题可以提前咨询。`
+- 可以补一句：`需要其他报告也可以私聊，支持一站式咨询。`
+
+【Hashtag 写法】
+- 只输出平台相对安全、偏学习和资料属性的标签。
+- 推荐从这些里选择：`#学习资料` `#研究笔记` `#学习笔记` `#行业研究` `#研报资料` `#资料整理` `#报告学习` `#案例研究`。
+- 不要输出 `#财经` `#投资` `#股票` `#基金` `#理财` `#暴富` `#内幕` 等敏感标签。
+
+【平台发布合规要求】
+- 不要出现“投资建议”“买入”“卖出”“强烈推荐”“稳赚”“保本”“必涨”“抄底”“上车”“内幕”“翻倍”等金融操作或收益承诺表达。
+- “投资”相关词尽量改成“投研”“研究”“观察”“学习参考”；如果必须保留，也要保持中性。
+- 不要出现“独家”“原版”“内部”“无水印”“全网最低”“最全”“最强”“必看”等高风险或极限词。
+- 不要写“关注”“点赞”“求关注”“评论区留言”等直接互动诱导。
+- 不要承诺资料一定可用于获利、就业、通过面试或获得收益。
+
+【合规与避坑】
+- 默认避免出现具体投行品牌名，比如“GS”“GS”“MS”，统一写作“投行研报”或“投行研报”。
+- 不要承诺研究或交易结果。
+- 不要伪造页数、日期、作者、公司覆盖范围。研报未给出时就不写。
+- 不要输出解释说明，只输出闲鱼文案本身。
+
+【研报解析内容】
+"""
+10 Jun 2026 01:52:18 ET | 10 pages
+
+# China Auto Manufacturers
+
+May NEV Database Update; CR5 at 57.0% (+0.4ppt MoM)
+
+## CITI'S TAKE
+
+CPCA announced May-26 NEV PV wholesales at 1.35mn units, +11% YoY/+10% MoM. May NEV penetration rate reached 61.1% (+8.4ppt YoY/+3.0ppt MoM). During the month, BEV PV wholesale was +17% YoY/+14% MoM to 885.9k units, and PHEV PV +1% YoY/+4% MoM to 466.1k units. 5M26 NEV PV wholesale +1% YoY to 5.31mn units. During 5M26, BEV PV wholesale up +3% YoY to 3.31mn units, and PHEV PV -2% YoY to 2.0mn units. CR5 at 57.0% in May-26, +0.4ppt MoM/-2.0ppt YoY.
+
+BYD logged wholesale volume of 377.0k units of sales, with +0% YoY/ +20% MoM and May market share -3.0ppt YoY/ +2.2ppt MoM to 27.9%. Song DM and Tai 7 PHEV saw +15%/+0% MoM to 62.1k/17.0k units, Dolphin +2% MoM to 22.3k, Seagull +47% MoM to 39.9k.
+
+Geely May NEV wholesale -5% YoY/ -3% MoM to 131.0k units, with market share of 9.7% (-1.6ppt YoY/ -1.4ppt MoM). Zeekr001 -25% MoM to 1.8k units and Zeekr 7X -1% MoM to 7.8k units during May, Zeekr 9X/8X -16%/+68% MoM to 8.4k/5.8k units. Galaxy Starship 7/Starshine 8 PHEV -20%/-43% MoM to 14.2k/2.0k units.
+
+GWM May NEV sales -7% YoY/ +14% MoM to 30.4k units. Ora 5 sales +40% MoM to 2.0k units, High Mountain logged 6.0k units in May (-9% MoM), Tank 400/500 PHEV logged 2.1/2.9k units (-13%/+45% MoM).
+
+Tesla China May sales logged 86.0k units, with +39% YoY and +8% MoM. Model 3/Y logged 31.2k/54.8k units of sales, with +14%/+5% MoM, respectively.
+
+NIO wholesales +62% YoY/ +28% MoM to 37.7k units, and May mkt shr at 2.8% (+0.9ppt YoY/+0.4ppt MoM). ES8 was -12% MoM to 11.5k units. ES6/EC6 saw -14%/-7% MoM to 1.7k/0.6k. ET5/ET5T saw -13%/-7% MoM to 0.7k/2.3k units. Onvo L90 booked 4.1k units and L80 5.9k units in May.
+
+XPeng wholesales -4% YoY/ +4% MoM to 32.2k units with May mkt shr -0.4ppt YoY/ -0.2ppt MoM to 2.4%. P7/G6 sales logged +0%/ +15% MoM to 5.9k/ 6.5k units. MONA M03 booked 14.2k units (+3% MoM).
+
+Li Auto May sales -18% YoY/ -2% MoM to 33.4k units with May mkt shr -0.9ppt YoY/-0.3ppt MoM to 2.5%. L9/L8/L7/L6 logged +469%/-71%/-13%/-10% MoM to 2.6k/0.4k/2.5k/5.0k units in May. i6/i8 booked 20.9k/1.6k units in May (-1%/-25% MoM).
+
+Huawei AITO May sales -17% YoY/ +1% MoM to 30.3k with mkt share -0.7ppt YoY/ -0.2ppt MoM to 2.2%. M7/M8/M9 PHEV logged -15%/-57%/-25% MoM to 5.0k/2.1k/2.0k units.
+
+Leapmotor May wholesale +81% YoY/ +14% MoM to 81.6k units, with market share of 6.0% (+2.3ppt YoY/ +0.2ppt MoM).
+
+## Jeff Chung $^{AC}$
+
++852-2501-2787
+
+jeff.m.chung@citi.com
+
+## Kyle Wu
+
++852-2501-8483
+
+kyle.wu@citi.com
+
+Figure 1. NEV Wholesale Volume (units) by Major OEMs
+
+<table><tr><td rowspan="2"></td><td colspan="6">May-26</td><td colspan="4">5M26</td></tr><tr><td>Sales</td><td>YoY</td><td>MoM</td><td>Mkt Shr</td><td>YoY</td><td>MoM</td><td>Sales</td><td>YoY</td><td>Mkt Shr</td><td>YoY</td></tr><tr><td>BYD</td><td>376,990</td><td>0%</td><td>20%</td><td>27.9%</td><td>-3.0ppt</td><td>2.2ppt</td><td>1,380,083</td><td>-20%</td><td>26.0%</td><td>-7.1ppt</td></tr><tr><td>Geely</td><td>131,037</td><td>-5%</td><td>-3%</td><td>9.7%</td><td>-1.6ppt</td><td>-1.4ppt</td><td>635,687</td><td>5%</td><td>12.0%</td><td>0.5ppt</td></tr><tr><td>Chery</td><td>94,806</td><td>66%</td><td>2%</td><td>7.0%</td><td>2.3ppt</td><td>-0.6ppt</td><td>334,756</td><td>21%</td><td>6.3%</td><td>1.0ppt</td></tr><tr><td>Tesla China</td><td>85,982</td><td>39%</td><td>8%</td><td>6.4%</td><td>1.3ppt</td><td>-0.1ppt</td><td>378,858</td><td>29%</td><td>7.1%</td><td>1.5ppt</td></tr><tr><td>Leapmotor</td><td>81,569</td><td>81%</td><td>14%</td><td>6.0%</td><td>2.3ppt</td><td>0.2ppt</td><td>263,111</td><td>52%</td><td>5.0%</td><td>1.6ppt</td></tr><tr><td>SAIC GM Wuling</td><td>64,948</td><td>4%</td><td>47%</td><td>4.8%</td><td>-0.3ppt</td><td>1.2ppt</td><td>198,456</td><td>-34%</td><td>3.7%</td><td>-2.0ppt</td></tr><tr><td>Chang&#x27;an</td><td>63,263</td><td>-22%</td><td>35%</td><td>4.7%</td><td>-1.9ppt</td><td>0.9ppt</td><td>253,635</td><td>-17%</td><td>4.8%</td><td>-1.1ppt</td></tr><tr><td>SAIC Motor</td><td>46,390</td><td>123%</td><td>8%</td><td>3.4%</td><td>1.7ppt</td><td>-0.1ppt</td><td>173,508</td><td>197%</td><td>3.3%</td><td>2.2ppt</td></tr><tr><td>Nio</td><td>37,705</td><td>62%</td><td>28%</td><td>2.8%</td><td>0.9ppt</td><td>0.4ppt</td><td>150,526</td><td>69%</td><td>2.8%</td><td>1.1ppt</td></tr><tr><td>GAC NEV</td><td>34,682</td><td>57%</td><td>-16%</td><td>2.6%</td><td>0.8ppt</td><td>-0.8ppt</td><td>159,093</td><td>48%</td><td>3.0%</td><td>0.9ppt</td></tr><tr><td>Li Auto</td><td>33,350</td><td>-18%</td><td>-2%</td><td>2.5%</td><td>-0.9ppt</td><td>-0.3ppt</td><td>162,577</td><td>-3%</td><td>3.1%</td><td>-0.1ppt</td></tr><tr><td>Xiaomi Auto</td><td>32,759</td><td>17%</td><td>-11%</td><td>2.4%</td><td>0.1ppt</td><td>-0.6ppt</td><td>150,317</td><td>13%</td><td>2.8%</td><td>0.3ppt</td></tr><tr><td>XPeng Motor</td><td>32,158</td><td>-4%</td><td>4%</td><td>2.4%</td><td>-0.4ppt</td><td>-0.2ppt</td><td>125,851</td><td>-23%</td><td>2.4%</td><td>-0.7ppt</td></tr><tr><td>GWM</td><td>30,426</td><td>-7%</td><td>14%</td><td>2.3%</td><td>-0.4ppt</td><td>0.1ppt</td><td>109,820</td><td>-11%</td><td>2.1%</td><td>-0.3ppt</td></tr><tr><td>AITO</td><td>30,257</td><td>-17%</td><td>1%</td><td>2.2%</td><td>-0.7ppt</td><td>-0.2ppt</td><td>130,264</td><td>4%</td><td>2.5%</td><td>0.1ppt</td></tr><tr><td>BJEV</td><td>24,008</td><td>16%</td><td>10%</td><td>1.8%</td><td>0.1ppt</td><td>0.0ppt</td><td>88,340</td><td>44%</td><td>1.7%</td><td>0.5ppt</td></tr><tr><td>Brilliance BMW</td><td>2,657</td><td>-37%</td><td>8%</td><td>0.2%</td><td>-0.2ppt</td><td>0.0ppt</td><td>12,352</td><td>-53%</td><td>0.2%</td><td>-0.3ppt</td></tr><tr><td>Others</td><td>149,040</td><td>9%</td><td>3%</td><td>11.0%</td><td>-0.2ppt</td><td>-0.7ppt</td><td>599,132</td><td>21%</td><td>11.3%</td><td>1.8ppt</td></tr><tr><td>Total NEV PV</td><td>1,352,027</td><td>11%</td><td>10%</td><td></td><td></td><td></td><td>5,306,366</td><td>1%</td><td></td><td></td></tr></table>
+
+© 2026 Citi Inc. No redistribution without Citi's written permission.  
+Source: Citi, CPCA
+
+Figure 2. NEV-PV Monthly Sales Volume and YoY Change  
+![](images/3ead54be187eef8124abf3c0d77a827b0591d8001ab99d543cb1560c55bd6728.jpg)
+
+<details>
+<summary>bar-line hybrid chart</summary>
+
+| Date    | NEV-PV | YoY   |
+|---------|--------|-------|
+| Jan-16  | 0      | 700%  |
+| Sep-16  | 0      | 500%  |
+| May-17  | 0      | 300%  |
+| Jan-18  | 100    | 1400% |
+| Sep-18  | 150    | 600%  |
+| May-19  | 200    | 500%  |
+| Jan-20  | 100    | 300%  |
+| Sep-20  | 200    | 600%  |
+| May-21  | 300    | 1600% |
+| Jan-22  | 400    | 800%  |
+| Sep-22  | 500    | 700%  |
+| May-23  | 600    | 600%  |
+| Jan-24  | 800    | 400%  |
+| Sep-24  | 1000   | 300%  |
+| May-25  | 1200   | 200%  |
+| Jan-26  | 1400   | -100% |
+</details>
+
+© 2026 Citi Inc. No redistribution without Citi's written permission.  
+Source: Citi, CPCA
+
+Figure 3. BEV vs PHEV growth rate  
+![](images/da7e29999d2e26761197a5c65aab00b9dfb019bc087b5d1063130e1fc5438a19.jpg)
+
+<details>
+<summary>line chart</summary>
+
+| Date    | PHEV market share | BEV YoY (LHS) | PHEV YoY (LHS) |
+|---------|-------------------|---------------|----------------|
+| Jan-16  | ~700%             | ~200%         | ~10%           |
+| Sep-16  | ~400%             | ~150%         | ~5%            |
+| May-17  | ~300%             | ~100%         | ~0%            |
+| Jan-18  | ~500%             | ~200%         | ~15%           |
+| Sep-18  | ~400%             | ~150%         | ~10%           |
+| May-19  | ~300%             | ~100%         | ~5%            |
+| Jan-20  | ~200%             | ~50%          | ~0%            |
+| Sep-20  | ~100%             | ~0%           | ~5%            |
+| May-21  | ~750%             | ~15%          | ~45%           |
+| Jan-22  | ~350%             | ~10%          | ~15%           |
+| Sep-22  | ~300%             | ~5%           | ~10%           |
+| May-23  | ~400%             | ~10%          | ~15%           |
+| Jan-24  | ~600%             | ~15%          | ~20%           |
+| Sep-24  | ~700%             | ~20%          | ~25%           |
+| May-25  | ~650%             | ~15%          | ~20%           |
+| Jan-26  | ~600%             | ~10%          | ~15%           |
+</details>
+
+© 2026 Citi Inc. No redistribution without Citi's written permission.  
+Source: Citi, CPCA
+
+Figure 4. NEV Market share by vehicle type  
+![](images/f4ab330a8e2611fa40588684230cce9082d00d4dcc169a2835d520b3c290cdda.jpg)
+
+<details>
+<summary>stacked bar chart</summary>
+
+| Month | A00 (%) | A0 (%) | A (%) | B (%) | C (%) |
+|---|---|---|---|---|---|
+| Jan-18 | 50 | 20 | 30 | 40 | 10 |
+| Jun-18 | 25 | 15 | 35 | 45 | 10 |
+| Nov-18 | 20 | 10 | 40 | 50 | 10 |
+| Apr-19 | 25 | 15 | 35 | 45 | 10 |
+| Sep-19 | 20 | 10 | 30 | 40 | 10 |
+| Feb-20 | 15 | 15 | 35 | 45 | 10 |
+| Jul-20 | 20 | 20 | 30 | 40 | 10 |
+| Dec-20 | 25 | 25 | 35 | 45 | 10 |
+| May-21 | 20 | 20 | 30 | 40 | 10 |
+| Oct-21 | 25 | 25 | 35 | 45 | 10 |
+| Mar-22 | 20 | 20 | 30 | 40 | 10 |
+| Aug-22 | 15 | 15 | 35 | 45 | 10 |
+| Jan-23 | 10 | 10 | 40 | 50 | 10 |
+| Jun-23 | 5 | 15 | 45 | 55 | 10 |
+| Nov-23 | 5 | 15 | 45 | 60 | 10 |
+| Apr-24 | 5 | 15 | 45 | 65 | 10 |
+| Sep-24 | 5 | 15 | 45 | 70 | 10 |
+| Feb-25 | 5 | 15 | 45 | 75 | 10 |
+| Jul-25 | 5 | 15 | 45 | 80 | 10 |
+| Dec-25 | 5 | 15 | 45 | 85 | 10 |
+| May-26 | 5 | 15 | 45 | 90 | 10 |
+The chart displays a stacked area chart with five categories (A00, A0, A, B, C) representing their respective proportions over time. The x-axis is labeled by month and year, and the y-axis represents percentage values. There are no labels for the data series in this image. The chart is saved as a PNG file named 'chart_footnote.png'.
+</details>
+
+© 2026 Citi Inc. No redistribution without Citi's written permission.  
+Source: Citi, CPCA
+
+If you are visually impaired and would like to speak to a Citi representative regarding the details of the graphics in this document, please call USA 1-888-500-5008 (TTY: 711), from outside the US +1-210-677-3788
+
+## Appendix A-1
+
+## ANALYST CERTIFICATION
+
+The research analysts primarily responsible for the preparation and content of this research report are either (i) designated by “AC” in the author block or (ii) listed in bold alongside content which is attributable to that analyst. If multiple AC analysts are designated in the author block, each analyst is certifying with respect to the entire research report other than (a) content attributable to another AC certifying analyst listed in bold alongside the content and (b) views expressed solely with respect to a specific issuer which are attributable to another AC certifying analyst identified in the price charts or rating history tables for that issuer shown below. Each of these analysts certify, with respect to the sections of the report for which they are responsible: (1) that the views expressed therein accurately reflect their personal views about each issuer and security referenced and were prepared in an independent manner, including with respect to Citi Global Markets Inc. and its affiliates; and (2) no part of the research analyst's compensation was, is, or will be, directly or indirectly, related to the specific recommendations or views expressed by that research analyst in this report.
+
+## IMPORTANT DISCLOSURES
+
+Analysts' compensation is determined by Citi management and Citi's senior management and is based upon activities and services intended to benefit the investor clients of Citi Global Markets Inc. and its affiliates (the “Firm”). Compensation is not linked to specific transactions or recommendations. Like all Firm employees, analysts receive compensation that is impacted by overall Firm profitability which includes investment banking, sales and trading, and principal trading revenues. One factor in equity research analyst compensation is arranging corporate access events between institutional clients and the management teams of covered companies. Typically, company management is more likely to participate when the analyst has a positive view of the company.
+
+For financial instruments recommended in the Product in which the Firm is not a market maker, the Firm is a liquidity provider in such financial instruments (and any underlying instruments) and may act as principal in connection with transactions in such instruments. The Firm is a regular issuer of traded financial instruments linked to securities that may have been recommended in the Product. The Firm regularly trades in the securities of the issuer(s) discussed in the Product. The Firm may engage in securities transactions in a manner inconsistent with the Product and, with respect to securities covered by the Product, will buy or sell from customers on a principal basis.
+
+Unless stated otherwise neither the Research Analyst nor any member of their team has viewed the material operations of the Companies for which an investment view has been provided within the past 12 months.
+
+For important disclosures (including copies of historical disclosures) regarding the companies that are the subject of this Citi product ("the Product"), please contact Citi, 388 Greenwich Street, 6th Floor, New York, NY, 10013, Attention: Legal/Compliance [E6WYB6412478]. In addition, the same important disclosures, with the exception of the Valuation and Risk assessments and historical disclosures, are contained on the Firm's disclosure website at https://www.citivelocity.com/cvr/eppublic/citi\_research\_disclosures. Valuation and Risk assessments can be found in the text of the most recent research note/report regarding the subject company. Pursuant to the Market Abuse Regulation a history of all Citi recommendations published during the preceding 12-month period can be accessed via Citi Velocity (https://www.citivelocity.com/cv2) or your standard distribution portal. Historical disclosures (for up to the past three years) will be provided upon request.
+
+Citi Equity Ratings Distribution
+
+<table><tr><td></td><td colspan="3">12 Month Rating</td><td colspan="3">Catalyst Watch</td></tr><tr><td>Data current as of 01 Apr 2026</td><td>Buy</td><td>Hold</td><td>Sell</td><td>Buy</td><td>Hold</td><td>Sell</td></tr><tr><td>Citi Global Fundamental Coverage (Neutral=Hold)</td><td>61%</td><td>32%</td><td>8%</td><td>37%</td><td>47%</td><td>16%</td></tr><tr><td>% of companies in each rating category that are investment banking clients</td><td>38%</td><td>41%</td><td>28%</td><td>42%</td><td>37%</td><td>36%</td></tr></table>
+
+## Guide to Citi Fundamental Research Investment Ratings:
+
+Citi stock recommendations include an investment rating and an optional risk rating to highlight high risk stocks. Risk rating takes into account both price volatility and fundamental criteria. Stocks will either have no risk rating or a High risk rating assigned.
+
+Investment Ratings: Citi investment ratings are Buy, Neutral and Sell. Our ratings are a function of analyst expectations of expected total return ("ETR") and risk. ETR is the sum of the forecast price appreciation (or depreciation) plus the dividend yield for a stock within the next 12 months. The target price is based on a 12 month time horizon. The Investment rating definitions are: Buy (1) ETR of 15% or more or 25% or more for High risk stocks; and Sell (3) for negative ETR. Any covered stock not assigned a Buy or a Sell is a Neutral (2). For stocks rated Neutral (2), if an analyst believes that there are insufficient valuation drivers and/or investment catalysts to derive a positive or negative investment view, they may elect with the approval of Citi management not to assign a target price and, thus, not derive an ETR. Citi may suspend its rating and target price and assign “Rating Suspended” status for regulatory and/or internal policy reasons. Citi may also suspend its rating and target price and assign "Under Rev
+
+[中间内容因长度限制已省略]
+
+eipt by the report's author or distribution to external parties. This data should be considered in the context of other economic indicators and publicly available information. Further, the selected data represents only a
+
+subset of Citi's proprietary credit card transactions due to the selection methodology or other limitations and should not be considered as indicative or predictive of the past or future financial performance of Citi or its credit card business.
+
+Citi product may source data from dataCentral. dataCentral is a Citi proprietary database, which includes the Firm's estimates, data from company reports and feeds from LSEG Data & Analytics. The source for all referenced prices, unless otherwise stated, is DataCentral. Past performance is not a guarantee or reliable indicator of future results. Forecasts are not a guarantee or reliable indicator of future performance. The printed and printable version of the research report may not include all the information <(e.g. certain financial summary information and comparable company data) that is linked to the online version available on the Firm's proprietary electronic distribution platforms.
+
+Where included in this report, MSCI sourced information is the exclusive property of MS Capital International Inc. (MSCI). Without prior written permission of MSCI, this information and any other MSCI intellectual property may not be reproduced, redisseminated or used to create any financial products, including any indices. This information is provided on an "as is" basis. The user assumes the entire risk of any use made of this information. MSCI, its affiliates and any third party involved in, or related to, computing or compiling the information hereby expressly disclaim all warranties of originality, accuracy, completeness, merchantability or fitness for a particular purpose with respect to any of this information. Without limiting any of the foregoing, in no event shall MSCI, any of its affiliates or any third party involved in, or related to, computing or compiling the information have any liability for any damages of any kind. MSCI, MS Capital International and the MSCI indexes are services marks of MSCI and its affiliates. Where data is attributed to Morningstar that data is © 2026 Morningstar, Inc. All Rights Reserved. That information: (1) is proprietary to Morningstar and/or its content providers; (2) may not be copied or distributed; and (3) is not warranted to be accurate, complete or timely. Neither Morningstar nor its content providers are responsible for any damages or losses arising from any use of this information.
+
+The Firm accepts no liability whatsoever for the actions of third parties. The Product may provide the addresses of, or contain hyperlinks to, websites. Except to the extent to which the Product refers to website material of the Firm, the Firm has not reviewed the linked site. Equally, except to the extent to which the Product refers to website material of the Firm, the Firm takes no responsibility for, and makes no representations or warranties whatsoever as to, the data and information contained therein. Such address or hyperlink (including addresses or hyperlinks to website material of the Firm) is provided solely for your convenience and information and the content of the linked site does not in any way form part of this document. Accessing such website or following such link through the Product or the website of the Firm shall be at your own risk and the Firm shall have no liability arising out of, or in connection with, any such referenced website.
+
+© 2026 Citi Global Markets Inc. Citi is a division of Citi Global Markets Inc. Citi and Citi and Arc Design are trademarks and service marks of Citi Inc. and its affiliates and are used and registered throughout the world. All rights reserved. The research data in this report are not intended to be used for the purpose of (a) determining the price of or amounts due in respect of (or to value) one or more financial products or instruments and/or (b) measuring or comparing the performance of, or defining the asset allocation of a financial product, a portfolio of financial instruments, or a collective investment undertaking, and any such use is strictly prohibited without the prior written consent of Citi. Any unauthorized use, duplication, redistribution or disclosure of this report (the “Product”), including, but not limited to, redistribution of the Product by electronic mail, posting of the Product on a website or page, and/or providing to a third party a link to the Product, is prohibited by law and will result in prosecution. The information contained in the Product is intended solely for the recipient and may not be further distributed by the recipient to any third party.
+
+ADDITIONAL INFORMATION IS AVAILABLE UPON REQUEST
+"""
