@@ -1,0 +1,15 @@
+Found 34 total PDFs; shard 3/40 has 5 PDFs, skips 0 already converted, will process 5 PDFs with batch_size=5.
+Running batch 1: 5 PDFs
+Found 5 PDFs. MinerU token slots available=2.
+MinerU attempt 1/4 using MINER_U_2: submitting 5 PDF(s).
+Uploading PDF to MinerU: /tmp/pdf_batch_001_c5thtdop/pdfs/0001-18-Goldman Sachs-JAPAN WEEKLY KICKSTART-AGM update- yuutai correction protection-260612.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_c5thtdop/pdfs/0002-19-Bernstein-Global Hotels - Leisure Cruise- The Finer Tide of Life. Luxury Ocean Cruise Primer-260612.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_c5thtdop/pdfs/0003-20-Bernstein-Weekend Healthcare Pulse- Global medical imaging-AI Innovation from the land of Silicon Valley-260612.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_c5thtdop/pdfs/0004-21-Morgan Stanley-Investor Presentation-China Outlook Amid AI And Energy Super Cycle-260611.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_c5thtdop/pdfs/0005-22-J.P. Morgan-China Power Equipment-Notes from the road- takeaways from industry conferences in Shanghai-260611.pdf
+MinerU attempt 1 using MINER_U_2 batch_id=c3e0e056-fd98-4fbf-bbf8-53aa5a29bb4c
+MinerU states: running, running, running, running, waiting-file
+MinerU states: done, done, done, running, done
+MinerU states: done, done, done, done, done
+Done. Results written to /home/runner/work/rpt_edit/rpt_edit/xhs_notes/dropbox/260613/shard_3; successful_reports=5; mineru_timed_out=False; mineru_attempts=1
+All batches completed successfully. Generated 5 report directories.
