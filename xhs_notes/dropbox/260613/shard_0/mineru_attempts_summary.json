@@ -1,0 +1,39 @@
+[
+  {
+    "attempt": 1,
+    "round": 1,
+    "token_label": "MINER_U_2",
+    "submitted_pdf_count": 5,
+    "successful_pdf_count": 5,
+    "retry_pdf_count": 0,
+    "timed_out": false,
+    "error": "",
+    "states": [
+      {
+        "pdf": "/tmp/pdf_batch_001_eib1gsz6/pdfs/0001-01-GS-EM ASIA FX RATES VIEWS-Asian central banks stepping up response to stem FX weakness-260612.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_eib1gsz6/pdfs/0002-02-GS-GLOBAL FX TRADER-Dollar in a Collar-260612.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_eib1gsz6/pdfs/0003-03-GS-GLOBAL RATES TRADER-Leadership Transitions-260612.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_eib1gsz6/pdfs/0004-04-GS-China Economic Activity and Policy Tracker- June 12-260612.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_eib1gsz6/pdfs/0005-05-GS-KOREA WEEKLY KICKSTART-KOSPI ended the week down moderately amid continued volatility and the US core CPI below consensus-260612.pdf",
+        "state": "done",
+        "error": ""
+      }
+    ]
+  }
+]

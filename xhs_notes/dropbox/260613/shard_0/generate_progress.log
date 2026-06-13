@@ -1,0 +1,15 @@
+Found 34 total PDFs; shard 0/40 has 5 PDFs, skips 0 already converted, will process 5 PDFs with batch_size=5.
+Running batch 1: 5 PDFs
+Found 5 PDFs. MinerU token slots available=2.
+MinerU attempt 1/4 using MINER_U_2: submitting 5 PDF(s).
+Uploading PDF to MinerU: /tmp/pdf_batch_001_eib1gsz6/pdfs/0001-01-Goldman Sachs-EM ASIA FX RATES VIEWS-Asian central banks stepping up response to stem FX weakness-260612.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_eib1gsz6/pdfs/0002-02-Goldman Sachs-GLOBAL FX TRADER-Dollar in a Collar-260612.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_eib1gsz6/pdfs/0003-03-Goldman Sachs-GLOBAL RATES TRADER-Leadership Transitions-260612.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_eib1gsz6/pdfs/0004-04-Goldman Sachs-China Economic Activity and Policy Tracker- June 12-260612.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_eib1gsz6/pdfs/0005-05-Goldman Sachs-KOREA WEEKLY KICKSTART-KOSPI ended the week down moderately amid continued volatility and the US core CPI below consensus-260612.pdf
+MinerU attempt 1 using MINER_U_2 batch_id=d905a9bd-f73f-4a5f-a08a-580dc206c074
+MinerU states: running, running, running, running, pending
+MinerU states: done, done, running, done, done
+MinerU states: done, done, done, done, done
+Done. Results written to /home/runner/work/rpt_edit/rpt_edit/xhs_notes/dropbox/260613/shard_0; successful_reports=5; mineru_timed_out=False; mineru_attempts=1
+All batches completed successfully. Generated 5 report directories.
