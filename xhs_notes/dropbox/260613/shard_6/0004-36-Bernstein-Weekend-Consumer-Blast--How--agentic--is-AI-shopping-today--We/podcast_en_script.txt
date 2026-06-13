@@ -1,0 +1,35 @@
+EN_A: So there’s been a lot of buzz around something called “agentic shopping.” What exactly is this report trying to figure out?
+EN_B: It’s trying to answer a very direct question: how agentic is AI shopping today? Can these tools actually do the whole job for you, from finding a product to paying for it, without you having to lift a finger?
+EN_A: And you actually tested them?
+EN_B: We did. We tested five different tools. Three are foundational AI models: ChatGPT, Gemini, and Claude. The other two are retail-native assistants: Amazon’s Alexa and Walmart’s Sparky.
+EN_A: Why separate them into two groups?
+EN_B: Because they have completely different design philosophies. The foundational models can roam freely across the web, comparing products and finding deals. But they don’t have direct access to real-time inventory or pricing from retailers. The retail-native tools have the opposite problem: they have perfect access to their own data, but they’re locked inside their own ecosystem.
+EN_A: So which one is closer to being truly “agentic”?
+EN_B: The answer is: neither. No tool today can buy a product in an unsupervised way. Humans are needed at every step. But the biggest breakdown point is payment.
+EN_A: Payment? That sounds like a last-mile problem.
+EN_B: Exactly. Even in the simplest case—buying a single carton of milk—the handoff from “AI found it” to “I bought it” still requires the user to engage. As long as payment isn’t embedded directly into the conversation, AI remains a recommender, not a decision-maker.
+EN_A: Let’s talk about the actual test. What happened when you asked them to buy milk?
+EN_B: We gave them a very specific prompt: a user wants to make scrambled eggs but is out of milk. Find a 64 oz carton of organic whole milk and deliver it to a specific zip code in Arlington, Virginia. Then we evaluated them on six steps: identifying the category, identifying the SKU, pricing, estimating total cost, adding to cart, and payment.
+EN_A: And how did they do?
+EN_B: The foundational models did well on category and recommendation, but they often struggled with SKU identification and pricing accuracy. For example, ChatGPT gave a price range, but it was likely scraped from the web, not real-time. Gemini didn’t even identify a specific SKU at first—it just recommended delivery services.
+EN_A: So they’re basically just recommendation engines?
+EN_B: For now, yes. They’re research and discovery tools. They can’t handle fulfillment or payment because they lack a direct connection to retailers. But they’re trying to bridge that gap through partnerships. ChatGPT has its Agentic Commerce Protocol, and Claude is integrated with Uber Eats.
+EN_A: What about the retail-native tools? Did Alexa and Sparky do better?
+EN_B: They had a clear advantage in pricing accuracy and transaction execution. Because they have access to real-time inventory data. Alexa could accurately recommend the 365 brand organic milk and tell you it would arrive between 1 PM and 3 PM. Sparky could even add items to the cart directly within the interface.
+EN_A: But did they complete the payment?
+EN_B: No. Alexa couldn’t add Amazon Fresh or Whole Foods products to the cart—it redirected users to an external link. Sparky could build a basket, but the user still had to go through checkout themselves. So payment remains the unbroken barrier.
+EN_A: That sounds like a technical gap. But you also tested something more complex, right? Building a full grocery basket?
+EN_B: Yes. Buying a single item is one thing. But can an AI understand a family’s complex needs and generate a complete shopping list automatically?
+EN_A: What was the challenge?
+EN_B: We described a family of four living in New York City, with a household income of $100,000, and a nut allergy. Then we gave them a five-day meal plan and asked the AI to build a grocery basket for the week.
+EN_B: Foundational models were much better at understanding the context. They knew it was a family, they accounted for the budget and the allergy, and they estimated quantities based on the recipes. But the output was a list, not a basket you could buy directly.
+EN_A: And the retail-native tools?
+EN_B: They were more precise on SKUs and pricing, but weaker on context. Alexa worked well for shelf-stable items but couldn’t handle fresh groceries. Sparky took a completely different approach: it combined recommendations with recipes.
+EN_A: That sounds interesting.
+EN_B: It was. Instead of giving a flat list, Sparky generated recipes that loosely matched the meal plan. Each recipe could be opened, and from there, users could add all the ingredients to their cart with accurate pricing. It’s a much smoother path from idea to purchase. But again, it still requires human action.
+EN_A: So the big takeaway is a tension between breadth and depth?
+EN_B: Exactly. Foundational models have breadth but no depth. Retail tools have depth but no breadth. Bridging that gap is the real challenge going forward.
+EN_A: Are there questions the report doesn’t fully answer?
+EN_B: Yes. For example, what technology or business model is needed to finally embed payment into the experience? And when AI starts making purchase decisions for users, how does that change the relationship between brands and retailers? The report discusses these, but they’re far from resolved.
+EN_A: So if listeners want to dig deeper, they need to read the full report?
+EN_B: Exactly. We’ve only scratched the surface. The full report has more detailed test data and a look at what’s coming next. If you want to join the conversation or get the full report, check out our newsletter or join our community.

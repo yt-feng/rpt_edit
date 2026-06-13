@@ -1,0 +1,1651 @@
+## Wire & Cable | Japan
+
+# Share Price Correction, but Fundamentals Strong
+
+Uncertainty remains over the macro environment and slowing share price momentum, but investment in AI data centers (DCs) by hyperscalers has picked up in 2026. We raise PT for SEI, lower PT for Fujikura, stay OW on Furukawa.
+
+Fundamentals for DC-related products remain strong; maintain Attractive industry view: Despite lingering macro uncertainties and faltering share price momentum (incl. Middle East tensions, recent correction in AI/semis stocks), continued robust AI DC investment remains a tailwind. In 2026, we expect high 2-digit growth in hyperscaler capex (87% YoY). We also expect broader adoption of products for CPO ahead, and think increased mix of high-value-added products together with new product ramp-ups are likely earnings drivers for W&C names. Meanwhile, supply/demand in optical products remains tight. Although price hikes could drive margin expansion, no material margin improvement attributable to price increases has been confirmed at this stage. Accordingly, our forecasts are based on conservative assumptions of related margin improvement. That said, materialization of improvement would suggest earnings upside. Share prices are currently trending lower as a pull back from prior rapid gains and due to receding expectations for US rate cuts, but we expect bullish industry sentiment to grow again after the correction and heading into hyperscaler results in late July.
+
+Ranking intact: Furukawa (OW)>SEI (EW)>Fujikura (EW): While all 3 stand to benefit from Gen AI-driven growth in DC demand, our stock selection focuses on: 1) earnings growth, 2) production capacity (or related investment) supporting growth, and 3) gaps vs consensus. We believe Furukawa is set to start delivering record earnings with strong profit growth. We project OP CAGR for F3/27-29 at 42.1%, highest of the 3. For SEI, we raise our earnings growth outlook, reflecting greater confidence in the pace of expansion in optical-related products. Surplus capacity in preform production is a competitive edge too. However, consensus jumped after recent F3/26 results, limiting upside from here. For Fujikura, high profitability looks sustainable, but production capacity is a likely bottleneck, and we expect volume growth in products like optical cables to slow, so lower our forecasts somewhat. We expect a return to growth once growth investments begin contributing, but F3/29 consensus remains somewhat elevated.
+
+Where we could be wrong: If capex by hyperscalers were to decelerate due to power/infrastructure constraints or a macroeconomic slowdown, multiples could contract more than downward revisions to forecasts. For Furukawa, growth could slow if product certification by hyperscalers were delayed more than expected. Fujikura's share price could see upside if investments in capacity expansion are brought forward more than we have anticipated or if greater-than-expected margin improvement driven by price increases materializes.
+
+MS MUFG SECURITIES CO., LTD.+
+
+## Yu Shirakawa
+
+Equity Analyst
+
+Yu.Shirakawa@morganstanleymufg.com
+
++81 3 6836-5432
+
+![](images/b8d935600916231e7131eae968a1563b9215419c22f9eee9ef9e7c3c3bca5dca.jpg)
+
+<details>
+<summary>text_image</summary>
+
+Japan Summer School 2026
+</details>
+
+WIRE & CABLE
+
+<table><tr><td colspan="2">JapanIndustry View</td><td>Attractive</td></tr><tr><td colspan="3">WHAT&#x27;S CHANGED</td></tr><tr><td>Sumitomo Electric (5802.T)Price Target</td><td>From ¥11,000</td><td>To ¥14,500</td></tr><tr><td>Fujikura (5803.T)Price Target</td><td>From ¥5,200</td><td>To ¥4,700</td></tr></table>
+
+MS does and seeks to do business with companies covered in MS. As a result, investors should be aware that the firm may have a conflict of interest that could affect the objectivity of MS. Investors should consider MS as only a single factor in making their investment decision.
+
+## For analyst certification and other important disclosures, refer to the Disclosure Section, located at the end of this report.
+
++= Analysts employed by non-U.S. affiliates are not registered with FINRA, may not be associated persons of the member and may not be subject to FINRA restrictions on communications with a subject company, public appearances and trading securities held by a research analyst account.
+
+## Order of Preference
+
+Exhibit 1: Order of Preference
+
+<table><tr><td></td><td>Furukawa Electric5801.T</td><td>Sumitomo Electric5802.T</td><td>Fujikura5803.T</td></tr><tr><td>Rating</td><td>Overweight</td><td>Equal-weight</td><td>Equal-weight</td></tr><tr><td>Trading Currency</td><td>JPY</td><td>JPY</td><td>JPY</td></tr><tr><td>Price Target</td><td>66,000</td><td>14,500</td><td>4,700</td></tr><tr><td>Current Price</td><td>40,780</td><td>10,250</td><td>4,142</td></tr><tr><td>Upside/(Downside) (%)</td><td>62%</td><td>41%</td><td>13%</td></tr><tr><td>Market Cap (in USD mm)</td><td>15,874.7</td><td>46,829.9</td><td>51,418.0</td></tr><tr><td>Avg Daily Traded Vol (in USD mm)</td><td>772.5</td><td>269.9</td><td>1,943.9</td></tr><tr><td colspan="4">Street View: Ratings</td></tr><tr><td>Buy/Overweight</td><td>75%</td><td>77%</td><td>93%</td></tr><tr><td>Hold/Equal-weight</td><td>25%</td><td>23%</td><td>7%</td></tr><tr><td>Sell/Underweight</td><td>0%</td><td>0%</td><td>0%</td></tr><tr><td>Bull Case Value</td><td>81,000</td><td>18,500</td><td>6,400</td></tr><tr><td>Upside (%)</td><td>99%</td><td>80%</td><td>55%</td></tr><tr><td>Bear Case Value</td><td>29,000</td><td>9,000</td><td>2,600</td></tr><tr><td>Downside (%)</td><td>-29%</td><td>-12%</td><td>-37%</td></tr><tr><td>Risk/Reward Skew</td><td>3.4</td><td>6.6</td><td>1.5</td></tr><tr><td colspan="4">MS Estimates</td></tr><tr><td>FY26e</td><td>JPY</td><td>JPY</td><td>JPY</td></tr><tr><td>Sales</td><td>1,493,900</td><td>5,186,100</td><td>1,348,688</td></tr><tr><td>EBITDA</td><td>150,000</td><td>680,000</td><td>282,300</td></tr><tr><td>EBIT</td><td>100,000</td><td>445,000</td><td>260,000</td></tr><tr><td>EPS</td><td>1,189.4</td><td>424.8</td><td>113.3</td></tr><tr><td>FY27e</td><td></td><td></td><td></td></tr><tr><td>Sales</td><td>1,747,260</td><td>5,516,500</td><td>1,443,132</td></tr><tr><td>EBITDA</td><td>214,500</td><td>800,000</td><td>334,300</td></tr><tr><td>EBIT</td><td>158,000</td><td>555,000</td><td>310,000</td></tr><tr><td>EPS</td><td>1,909.1</td><td>526.3</td><td>136.3</td></tr><tr><td colspan="4">FY26 MSe vs. Consensus Mean</td></tr><tr><td>Sales</td><td>3.6%</td><td>-1.1%</td><td>0.5%</td></tr><tr><td>EBITDA</td><td>4.9%</td><td>0.4%</td><td>-3.8%</td></tr><tr><td>EBIT</td><td>24.5%</td><td>-7.3%</td><td>-11.9%</td></tr><tr><td>EPS</td><td>6.2%</td><td>-0.6%</td><td>-6.5%</td></tr><tr><td colspan="4">FY27 MSe vs. Consensus Mean</td></tr><tr><td>Sales</td><td>7.1%</td><td>-1.0%</td><td>-6.7%</td></tr><tr><td>EBITDA</td><td>10.7%</td><td>1.4%</td><td>-10.9%</td></tr><tr><td>EBIT</td><td>9.0%</td><td>-7.5%</td><td>NA</td></tr><tr><td>EPS</td><td>15.0%</td><td>1.9%</td><td>-12.0%</td></tr><tr><td colspan="4">Valuation Multiples at Last Close</td></tr><tr><td>FY26e</td><td></td><td></td><td></td></tr><tr><td>P/E</td><td>34.3x</td><td>24.1x</td><td>36.6x</td></tr><tr><td>EV/EBIT</td><td>32.2x</td><td>18.7x</td><td>26.4x</td></tr><tr><td>EV/EBITDA</td><td>21.4x</td><td>12.3x</td><td>24.3x</td></tr><tr><td>EV/Sales</td><td>2.2x</td><td>1.6x</td><td>5.1x</td></tr><tr><td>FCF Yield</td><td>-3.2%</td><td>2.4%</td><td>0.2%</td></tr><tr><td>FY27e</td><td></td><td></td><td></td></tr><tr><td>P/E</td><td>21.4x</td><td>19.5x</td><td>30.4x</td></tr><tr><td>EV/EBIT</td><td>20.7x</td><td>14.9x</td><td>22.2x</td></tr><tr><td>EV/EBITDA</td><td>15.3x</td><td>10.3x</td><td>20.6x</td></tr><tr><td>EV/Sales</td><td>1.9x</td><td>1.5x</td><td>4.8x</td></tr><tr><td>FCF Yield</td><td>-2.9%</td><td>2.7%</td><td>1.1%</td></tr><tr><td colspan="4">Implied Multiples on MS Price Target</td></tr><tr><td>FY26e</td><td></td><td></td><td></td></tr><tr><td>P/E</td><td>55.5x</td><td>34.1x</td><td>41.5x</td></tr><tr><td>EV/EBIT</td><td>49.9x</td><td>26.2x</td><td>30.0x</td></tr><tr><td>EV/EBITDA</td><td>33.3x</td><td>17.1x</td><td>27.6x</td></tr><tr><td>EV/Sales</td><td>3.3x</td><td>2.2x</td><td>5.8x</td></tr><tr><td>FY27e</td><td></td><td></td><td></td></tr><tr><td>P/E</td><td>34.6x</td><td>27.5x</td><td>34.5x</td></tr><tr><td>EV/EBIT</td><td>29.5x</td><td>20.5x</td><td>25.3x</td></tr><tr><td>EV/EBITDA</td><td>21.7x</td><td>14.2x</td><td>23.4x</td></tr><tr><td>EV/Sales</td><td>2.7x</td><td>2.1x</td><td>5.4x</td></tr><tr><td colspan="4">Stock Price Performance</td></tr><tr><td>1 Month</td><td>-6.1%</td><td>-8.6%</td><td>-39.4%</td></tr><tr><td>3 Month</td><td>37.1%</td><td>-4.3%</td><td>-3.1%</td></tr><tr><td>1 Year</td><td>500.3%</td><td>251.1%</td><td>272.0%</td></tr><tr><td>YTD</td><td>307.4%</td><td>62.1%</td><td>42.5%</td></tr></table>
+
+Source: MS, FactSet (consensus mean), $e =$ MS estimates, Stock prices as of Jun 11, 2026, Note: Past performance is no guarantee of future results. Results shown do not include transaction costs.
+
+## Investment summary
+
+## Earnings forecast revisions
+
+Furukawa Electric (5801): We revised our forecasts earlier in our June 3 IDEA report (see here for details). Our F3/27 OP forecast is ¥100bn (company plan ¥95bn), +56.6% YoY. We forecast optical solutions at ¥29.9bn (+¥19.2bn YoY) and digital infrastructure components at ¥39.5bn (+¥23.6bn YoY). Increased sales of ultra-high fiber count cables, MT ferrules, and liquid cooling modules are the main drivers of profit growth. Our OP forecast is ¥158bn (+58% YoY) for F3/28 and ¥202bn (+27.8% YoY; company medium-term plan ¥170bn) for F3/29. We forecast sales of liquid cooling modules at ¥50bn in F3/27, ¥190bn in F3/28, and ¥300bn in F3/29. Our projected OP CAGR for F3/27-29 is 42.1%.
+
+Sumitomo Electric (5802): We raise our F3/27 OP forecast from ¥435bn to ¥445bn (+13.9% YoY; company plan ¥425bn). Versus our previous forecast, we slightly revise up the infocommunications and automotive segments. In infocommunications, we factor in increased sales of products for data centers. While we revise up automotive segment, we expect downside versus the company plan in light of worsening Middle East conditions. We raise our F3/28 OP forecast from ¥505bn to ¥555bn (+24.7% YoY). Versus our previous forecast, we revise up both infocommunications and automotive. In infocommunications, we factor in further expansion of optical connectors, optical cables, and optical devices. We see the main drivers of profit growth, as in F3/27, as further infocommunications sales expansion and margin improvement from price increases. In the environment & energy segment, we factor in profit contributions from overseas power generation projects. In automotive, we factor in contributions from splitter harnesses, productivity improvements, and a higher mix of high value-added products, and continue to assume margin improvement, albeit modest, as in our previous forecast. We raise our F3/29 OP forecast from ¥565bn to ¥635bn (+11.9% YoY; company medium-term plan: ¥650bn). We see the main driver of YoY profit growth as expansion in optical connectors, optical cables, and optical devices. In particular, the company's CW-LD (continuous-wave laser diodes) have a high market share and benefit from vertically integrated production on an indium phosphide platform. Relative to the company's medium-term plan, we expect upside in infocommunications, while we expect downside in automotive as we do not believe the probability of further margin improvement has increased sufficiently.
+
+Fujikura (5803): We lower our F3/27 OP forecast from ¥280bn to ¥260bn (+37.8% YoY; company plan ¥211bn). While we do not believe the risk of optical fiber production constraints due to hydrogen shortages is severe, we newly factor in a risk of roughly a 10% reduction in SWR/WTC (Spider Web Ribbon/Wrapping Tube Cable) sales volumes versus our previous forecast. The company is procuring additional liquid and compressed hydrogen and expanding in-house hydrogen generation facilities, and we believe hydrogen shortage risks will be resolved from F3/28. We lower our F3/28 OP forecast from ¥335bn to ¥310bn (+19.2% YoY). Due to optical fiber production constraints, we expect SWR/WTC sales volume growth to slow to +10% YoY. Our view of slowing profit growth remains unchanged. We lower our F3/29 OP forecast from ¥390bn to ¥370bn (+19.4% YoY; company medium-term plan ¥315bn). From 2H, we expect part of the capacity
+
+expansion effects to materialize. We forecast SWR/WTC sales volumes at +16% YoY. The company has already announced capacity expansion for preforms and optical fiber/cables (¥45bn + ¥40bn domestically + up to ¥260bn in capex in the US). It aims to increase optical fiber/cable capacity to roughly 4 times current levels by F3/31. The ¥260bn investment is to be executed in the US, although details have yet to be disclosed. We will watch for faster investment execution and an earlier start of operations.
+
+Exhibit 2: Furukawa Electric (5801): OP MSe vs Consensus  
+![](images/906217b5bf3fde26a7fc91a2f74a2fb25341ef2f39caedf6f2f374befba60b97.jpg)
+
+<details>
+<summary>line chart</summary>
+
+| Fiscal Year | MS MUFG estimateOP (bn yen) | consensus OP (bn yen) |
+|-------------|----------------------------------------|------------------------|
+| F3/26       | 63.9                                   |                        |
+| F3/27e      | 99.25                                  | 114.82                 |
+| F3/28e      | 144                                    | 172.23                 |
+| F3/29e      | 200                                    | 252.62                 |
+</details>
+
+Source: e=MS estimates, FactSet, Consensus=FactSet consensus
+
+Exhibit 3: Sumitomo Electric (5802): OP MSe vs Consensus  
+![](images/8ebaf9c416de7034f9ad2b5e2de1771ebda57cdf2566fc8016a4176a8213208c.jpg)
+
+<details>
+<summary>line chart</summary>
+
+| Fiscal Year | MS MUFG estimateOP (bn yen) | consensus OP high/median/low (bn yen) |
+|-------------|----------------------------------------|--------------------------------------|
+| F3/26       | 418.2                                  | 418.2                                |
+| F3/27e      | 480                                    | 445                                  |
+| F3/28e      | 544                                    | 505                                  |
+| F3/29e      | 635                                    | 729.99                               |
+</details>
+
+Source: e=MS estimates, FactSet, Consensus=FactSet consensus
+
+Exhibit 4: Fujikura (5803): OP MSe vs Consensus  
+![](images/99a3a7fb137cdca16b727dbc3219faf50cc3162a7da8b991ff2701ff25dc56c2.jpg)
+
+<details>
+<summary>line chart</summary>
+
+| Fiscal Year | MS MUFG estimateOP (bn yen) | consensus OP high/median/low (bn yen) |
+|-------------|----------------------------------------|---------------------------------------|
+| F3/26       | 188.7                                  | 188.7                                 |
+| F3/27e      | 261.8                                  | 260                                   |
+| F3/28e      | 324.5                                  | 310                                   |
+| F3/29e      | 402.1                                  | 370                                   |
+</details>
+
+Source: e=MS estimates, FactSet, Consensus=FactSet consensus
+
+## Our outlook for the data center industry
+
+In the data center market, we expect continued strong investment in AI data centers: We used a 2026 cloud capex assumption for the 11 hyperscaler firms of +63% YoY for our previous forecasts. In their May report, our US IT team raised their 2026 forecast to +87%. We have therefore similarly raised our expectations.
+
+There are a wide range of reasons for this, including 1) the wider use of generative AI and large language models, 2) proactive investment by cloud service providers accompanying this (accelerated investment in AI-specific data centers and GPU clusters to enhance their own AI services), and 3) the spread of edge AI and hybrid AI. We expect approximately 75% of capex by hyperscalers to be directed towards AI infrastructure (data centers, GPU, power infrastructure, etc.), and this vigorous investment to drive performance at wire & cable companies. In the latest earnings results, we also observed a more proactive stance by hyperscalers toward AI DC investments.
+
+As generative AI advances, inference demand is expanding, increasing the importance of distributed AI infrastructure (such as regional data centers and edge locations) from the perspectives of low latency and data localization. As a result, demand for high-speed communication infrastructure, including optical connectors, is rising further, and is already manifesting in increased exports to Asia.
+
+In addition, we expect to see the spread of distributed AI servers due to generative AI and LLMs requiring low latency and needing to comply with regional data regulations, a trend that has been evident in recent monthly export data.
+
+Expect CPO (Co-Packaged Optics) to significantly increase unit usage of optical components: From F3/27, we think NVIDIA's next-generation Rubin GPU is likely to incorporate CPO, integrating optical components and semiconductor chips within the same package to achieve low power consumption, high bandwidth, and low latency. Under current InfiniBand switch specifications, the maximum configuration is 64 ports (400Gb/s x 64 for about 25.6Tb/s, or 800Gb/s x 64 for about 51.2Tb/s). With CPO, we look for the implementation of 128 ports of 800Gb/s (total bandwidth 102.4Tb/s), doubling port density compared to conventional designs (equivalent to 256 ports of 400Gb/s). Furthermore, in larger configurations, plans include using four CPO packages to implement 512 ports of 800Gb/s (409.6Tb/s) for ultra-large-scale switches. Therefore, we expect unit usage of optical components under CPO to increase dramatically from current levels. In simple terms, with CPO, pluggable modules that gathered optical lines together disappear, and optical fiber cores making up ports show up directly as external cabling. That results in a major increase in the number of optical fiber cores and the number of cable connection points per switch compared with earlier configurations. We think the biggest potential beneficiary in CPO is probably Sumitomo Electric, which develops optical devices (CW-LDs).
+
+FX impact: Yen depreciation is positive for wire & cable companies. We estimate OP sensitivity to a ¥1 change in value against the US dollar as being almost ¥0.5bn for Furukawa Electric, ¥1bn for Sumitomo Electric, and ¥1.7bn for Fujikura.
+
+Risk related to the Middle East: Helium gas is used in the preform manufacturing process for cooling, atmosphere control, and purging. However, we see limited risk as helium has a very high recovery rate (we estimate around 90%), and could possibly be replaced with nitrogen or argon, depending on the process. Helium production is largely concentrated in two countries, with about 45% (about 80mn m2) produced in the US and about 35% in Qatar.
+
+Exhibit 5: Hyperscaler CAPEX YoY  
+![](images/d3e26a87c75d89651d5b991e839a6ecf18525abe46e5c33023d34d04b58f8880.jpg)
+
+<details>
+<summary>line chart</summary>
+
+| Year | Current Cloud Capex Forecast | Prior Cloud Capex Forecast |
+|------|-------------------------------|----------------------------|
+| 2014 | 26%                           | -                          |
+| 2015 | 13%                           | -                          |
+| 2016 | 18%                           | -                          |
+| 2017 | 24%                           | -                          |
+| 2018 | 42%                           | -                          |
+| 2019 | -3%                           | -                          |
+| 2020 | 32%                           | -                          |
+| 2021 | 33%                           | -                          |
+| 2022 | 16%                           | -                          |
+| 2023 | -3%                           | -                          |
+| 2024 | 60%                           | -                          |
+| 2025 | 62%                           | -                          |
+| 2026 | 87%                           | 63%                        |
+</details>
+
+Source: Company data, FactSet, MS, irs.gov. Note: Cloud capex includes capex from Amazon, Alphabet, Microsoft, Meta Platforms, Tencent, Baidu, Alibaba, CoreWeave, Apple, IBM, and Oracle
+
+Exhibit 6: Hyperscaler capital intensity  
+![](images/12048d773eb5efe3b8edbd41c43caa2e7dfb81e7db8fafa541b0c350ec69ef29.jpg)
+
+<details>
+<summary>bar chart</summary>
+
+Top 14 Cloud Providers: Capital Intensity
+| Year | Capital Intensity (%) |
+| :--- | :--- |
+| 2014 | 6.5 |
+| 2015 | 6.6 |
+| 2016 | 7.3 |
+| 2017 | 7.6 |
+| 2018 | 9.1 |
+| 2019 | 7.8 |
+| 2020 | 8.6 |
+| 2021 | 9.0 |
+| 2022 | 9.8 |
+| 2023 | 8.8 |
+| 2024 | 12.9 |
+| 2025 | 18.6 |
+| 2026 E | 30.0 |
+| 2027 E | 29.5 |
+| MS '27E | 30.0 |
+</details>
+
+Source: Company data, FactSet, MS; E=FactSet Consensus estimates, MSE is MS estimates. Note: Cloud capex includes capex from Alphabet, Amazon, Microsoft, Meta Platforms, Tencent, Baidu, Alibaba, CoreWeave, Apple, IBM, Oracle
+
+Exhibit 7: Hyperscaler CAPEX  
+![](images/e4e089ce5cca3deef6758713757608c2bceba686d0748d9cb7d316d9d7e951bc.jpg)
+
+<details>
+<summary>bar chart</summary>
+
+| Year   | Cloud Capex Spending ($ Billions) |
+| ------ | ---------------------------------- |
+| 2013   | $32                                |
+| 2014   | $41                                |
+| 2015   | $46                                |
+| 2016   | $54                                |
+| 2017   | $67                                |
+| 2018   | $96                                |
+| 2019   | $93                                |
+| 2020   | $122                               |
+| 2021   | $163                               |
+| 2022   | $188                               |
+| 2023   | $183                               |
+| 2024   | $293                               |
+| 2025   | $476                               |
+| 2026E  | $893                               |
+| 2027E  | $1,014                             |
+| MS '27E | $1,225                             |
+</details>
+
+Source: Company data, FactSet, MS; E=FactSet Consensus estimates, MSE is MS estimates. Note: Cloud capex includes capex from Alphabet, Amazon, Microsoft, Meta Platforms, Tencent, Baidu, Alibaba, CoreWeave, Apple, IBM, Oracle
+
+Exhibit 8:  
+Port Count and Bandwidth Comparison Table (Conventional vs CPO)
+
+<table><tr><td>Switch Type</td><td>Implementation</td><td>Port Count (800Gb/s)</td><td>Total Bandwidth (Tb/s)</td><td>Notes</td></tr><tr><td>Conventional Switch</td><td>Pluqaable Optics</td><td>64</td><td>51.2</td><td>Equivalent to 128 ports at 400Gb/s</td></tr><tr><td>Quantum-X</td><td>Pluggable Optics+Co-Packaged Optics</td><td>144</td><td>115.2</td><td>36 ports per package × 4 packages</td></tr><tr><td>Spectrum-X (Small)</td><td>Pluggable Optics128102.4Equivalent to 256 ports at 400Gb/s</td><td>128</td><td>102.4</td><td>Equivalent to 256 ports at 400Gb/s</td></tr><tr><td>Spectrum-X (Large)</td><td>Co-Packaged Optics</td><td>512</td><td>409.6</td><td>Equivalent to 1024 ports at 400Gb/s</td></tr><tr><td>Sepio Switch (Representative CPO Architecture)</td><td>Co-Packaged Optics (Full CPO)</td><td>144–512 ports class</td><td>115–410 Tb/s class</td><td>No pluggable modules. Optical engines are co-packaged with the ASIC, and multi-fiber bundles are routed directly per port, resulting in a significant increase in fiber count and cabling complexity (often described as ~8× vs. conventional designs).</td></tr></table>
+
+Source: Company data, MS
+
+# Changing Price Targets, Staying OW on Furukawa
+
+## We maintain our Attractive industry view
+
+We maintain our Attractive Wire & Cable industry view. The main sources of demand for the wire & cable industry are 1) fiber optic cables and optical devices, 2) electronics, 3) automobiles (wire harnesses), and 4) power cables.
+
+Regarding 1) fiber optic cables and optical devices, booming hyperscaler investment in DC and AI server applications is a tailwind, and demand for optical devices such as multi-core optical connectors and transceivers and multi-core optical cables is increasing; we expect a favorable business environment to continue. Our US IT team expects total capex by hyperscalers in 2026 to increase by 87% YoY. We believe optical connectors, optical cabling, and related products will continue to grow faster than the overall market, driven by both scale-out and scale-up investment in AI servers. Risks include potential oversupply from capacity expansion at individual companies and intensifying cost competition from lower-priced GPUs or the emergence of new technologies, but we see no signs of such risks materializing at present.
+
+For 2) electronics, the main demand is for smartphone use, but Erik Woodring, our analyst covering Apple, is forecasting a iPhone sales CAGR of +1% in 2026–27. Rising memory prices and memory shortages are risks.
+
+For 3) automobile use (wire harnesses), price negotiations with different companies in recent years have been successful, and profitability has been rising as productivity improves. In F3/27, risks include production adjustments due to higher crude oil prices associated with the situation in the Middle East and shortages of raw materials such as naphtha, as well as weaker consumer demand stemming from higher interest rates and persistently elevated crude oil prices.
+
+On 4) power cables, we see solid demand for industrial & construction applications in Japan.
+
+## Our order of preference within the industry: Furukawa Electric (OW) > Sumitomo Electric (EW) > Fujikura (EW)
+
+Exhibit 9: Our Wire & Cable ROE and OP growth rate forecasts
+
+<table><tr><td rowspan="2"></td><td colspan="4">ROE(%)</td><td>OP</td></tr><tr><td>F25</td><td>F26e</td><td>F27e</td><td>F28e</td><td>CAGR from F26e to F28e</td></tr><tr><td>Furukawa</td><td>17.4</td><td>17.2</td><td>22.2</td><td>22.8</td><td>42.1%</td></tr><tr><td>SEI</td><td>14.7</td><td>11.7</td><td>13.4</td><td>14.1</td><td>19.5%</td></tr><tr><td>Fujikura</td><td>32.5</td><td>30.6</td><td>31.0</td><td>31.0</td><td>19.3%</td></tr><tr><td>Corning</td><td>19.6</td><td>22.5</td><td>26.2</td><td>28.7</td><td>27.5%</td></tr></table>
+
+Source: MS. e=MS estimates
+
+Furukawa Electric: From May 11 to June 9, the stock rose 7%. Following the earnings release, the share price surged as both F3/26 results and F3/27 guidance exceeded consensus expectations. However, more recently, the stock has traded somewhat weakly, reflecting a slowdown in momentum across AI and semiconductor-related names. That said, we believe the recent pullback has improved valuation attractiveness. The recent share price strength has been driven by growing expectations that DC-related businesses (namely optical solutions and information components) are transitioning from an earnings recovery phase to a more accelerated growth phase. In particular, for liquid cooling modules, the latest results and the medium-term plan have further increased confidence in an earlier-than-expected ramp-up, supporting expectations for a greater contribution as a key earnings driver going forward. For F3/27-29, we forecast OP CAGR of 42.1%, the highest among the three cable companies. We maintain our OW rating.
+
+Sumitomo Electric: From May 11 to June 9, the stock rose 7%. However, momentum stalled just after F3/26 results, as F3/27 guidance was broadly in line with expectations even though F3/26 results exceeded consensus. That said, the subsequent share price performance has been firm, supported by a mid-term plan that outlines a future in which profits from the IT segment surpass those of the automotive segment, as well as growing market expectations for upside potential to both F3/27 guidance and the new plan. In particular, we believe the growth potential of optical devices is not yet fully reflected in the current share price. We forecast OP CAGR of 19.5% for F3/27-29. In light of the relatively limited upside in the stock, we maintain our EW rating.
+
+Fujikura: From May 11 to June 9, the stock tumbled 34%, as both F3/26 results and F3/27 guidance came in below consensus, and medium-term plan targets also missed market expectations, reflecting negative sentiment after F3/26 results. While we believe F3/27 guidance and medium-term targets are conservative, the company's explanation regarding risk assumptions was not sufficiently clear, leaving market expectations somewhat unsettled. In addition, among the three cable companies, Fujikura has been the most visibly constrained by existing production capacity. While we had anticipated a moderation in medium-term growth as a result, consensus expectations still incorporated a degree of optimism, which likely contributed to the sharp correction in the share price. Over the longer term, we expect growth to reaccelerate once new production capacity comes onstream. In the near term, however, we would look to the 1Q results for clarification on the impact of risks such as potential hydrogen shortages. We forecast OP CAGR of 19.3% for F3/27-29. If margins widen as much as the market originally expected as a result of price hikes on optical cables and other products, we think this could lead to a re-rating. We maintain our EW rating given the relative upside potential in the share price.
+
+Exhibit 10: Performance of optical component stocks (May 1, 2026=1)  
+![](images/f95269aac9b7d7e4ff2ac9d9605dea6e91dcd92f793dfa51ec4bc287a65ad88b.jpg)
+
+<details>
+<summary>line chart</summary>
+
+| Date     | Furukwa | SEI   | Fujikura | Lumentum | Coherent | TRYUS10Y-FDS |
+|----------|---------|-------|----------|----------|----------|--------------|
+| 26/5/1   | 1.00    | 1.00  | 1.00     | 1.00     | 1.00     | 4.300        |
+| 26/5/4   | 1.05    | 1.08  | 1.05     | 0.98     | 0.98     | 4.350        |
+| 26/5/7   | 1.10    | 1.12  | 1.10     | 0.95     | 0.95     | 4.400        |
+| 26/5/10  | 1.15    | 1.15  | 1.15     | 1.05     | 1.05     | 4.450        |
+| 26/5/13  | 1.40    | 1.30  | 1.35     | 1.10     | 1.20     | 4.500        |
+| 26/5/16  | 1.35    | 1.25  | 1.20     | 1.05     | 1.15     | 4.450        |
+| 26/5/19  | 1.30    | 1.20  | 1.15     | 0.95     | 1.10     | 4.400        |
+| 26/5/22  | 1.25    | 1.15  | 1.10     | 0.90     | 1.05     | 4.350        |
+| 26/5/25  | 1.45    | 1.25  | 1.20     | 0.95     | 1.15     | 4.450        |
+| 26/5/28  | 1.30    | 1.20  | 1.15     | 0.90     | 1.10     | 4.400        |
+| 26/5/31  | 1.25    | 1.30  | 1.20     | 0.95     | 1.15     | 4.350        |
+| 26/6/3   | 1.30    | 1.45  | 1.25     | 1.05     | 1.20     | 4.300        |
+| 26/6/6   | 1.25    | 1.35  | 1.20     | 0.95     | 1.15     | 4.350        |
+| 26/6/9   | 1.20    | 1.25  | 1.15     | 0.85     | 1.10     | 4.300        |
+</details>
+
+Source: FactSet, MS
+
+## Catalysts and risk factors
+
+We now see earnings announcements and monthly export stats as stock price catalysts. Potential risk: A slowdown in growth (into single digits). Factors that could bring this about include shortages of materials (fiber, power, infrastructure constraints), slowdown in capex due to easing macroeconomic growth (capex by hyperscalers is generally proportional to sales), and GPU & chip supply constraints. The shortage of fiber, in particular, bears watching.
+
+## Price target revisions
+
+In the wire & cable industry, growth investments to transform the business structure (such as full-scale CPO operations and scale-up/scale-out investments) are underway. We expect the results of these efforts to become fully visible in earnings from F3/29. Additionally, we think the stock market is now trending toward factoring in medium/long-term profit potential and value creation two to three years ahead, rather than focusing on near-term results. In light of this, we use a residual income model, which we believe most appropriately captures longer-term corporate value.
+
+Furukawa (5801) PT ¥66,000: We use a residual income model, which we consider the most appropriate approach for capturing long-term corporate value, to derive our price target. Our assumptions for Furukawa are a cost of equity of 9.3% (risk-free rate 2.0%, equity risk premium 6.2%, beta 1.18), a dividend payout ratio of 45%, a medium-term growth rate of 17%, and a terminal growth rate of 3.5%. Our price target equates to 34.6x P/E and 7.7x P/B on our F3/28 forecasts.
+
+SEI (5802) PT ¥14,500 (previously ¥11,000): We use a residual income model, which we think most fairly captures long-term corporate value. Our assumptions for SEI are cost of equity of 8.7% (risk-free rate 2.0%, equity risk premium 6.2%, beta 1.07), dividend payout ratio of 50%, medium-term growth rate of 13.8%, and terminal growth rate of 3.0%. Our PT equates to 27.5x P/E and 3.5x P/B on our F3/28 forecasts. Changes vs. our prior forecast: Increases to F3/27-29, and 0.3ppt increase to our medium-term growth rate.
+
+Fujikura (5803) PT ¥4,700 (previously ¥5,200): We use an RIM here too, for the reason given above. Our assumptions for Fujikura are a cost of equity of 10.0% (risk-free rate 2.0%, equity risk premium 6.2%, beta 1.29), a dividend payout ratio of 55%, a medium-term growth rate of 17.5%, and terminal growth of 3.7%. Our PT equates to 34.5x P/E and 9.8x P/B on our F3/28 forecasts. Changes from our prior forecast: Downward revisions to F3/27-29, and 0.5ppt cut to our medium-term growth rate.
+
+Exhibit 11: PEG Map  
+![](images/543e2668706bb5a7cd76887e79a80c38137945528be0ddf0d51c38630915c588.jpg)
+
+<details>
+<summary>scatterplot</summary>
+
+| Company             | P/E (F27) |
+|---------------------|-----------|
+| Fujikura            | ~35       |
+| Amphenol            | ~25       |
+| Prysmian            | ~20       |
+| SEI                 | ~15       |
+| Corning             | ~40       |
+| Vertiv Holdings     | ~30       |
+| Asia Vital Components | ~20      |
+| Furukawa            | ~45       |
+| Coherent            | ~50       |
+| Delta Electronics   | ~35       |
+| Eoptolink Technology | ~25      |
+| Zhongji Innolight    | ~30       |
+| Suzhou TFC Optical Communication | ~65      |
+| Lumentum Holdings   | ~50       |
+| PEG 2.0             | ~70       |
+| PEG 1.0             | ~65       |
+</details>
+
+Source: FactSet, MS, Note: Share prices as of Jun 11, 2026. Furukawa, SEI and Fujikura are MS estimates and others are FactSet consensus.
+
+Exhibit 12: ROE vs P/B  
+![](images/7467b1c8477490c54b614599314389017f2a86d604f072517dbe0661deeac22b.jpg)
+
+<details>
+<summary>scatterplot</summary>
+
+| Company | P/B (F27) (%) | ROE (%) |
+| :--- | :--- | :--- |
+| SEI | 13.5 | 6.0 |
+| Coherent | 14.0 | 5.5 |
+| Prysmian | 18.5 | 4.0 |
+| Furukawa Electric | 20.0 | 6.5 |
+| Corning | 24.5 | 10.0 |
+| Lumentum Holdings | 30.5 | 14.5 |
+| Fujikura | 22.0 | 6.0 |
+| Amphenol | 30.5 | 8.0 |
+| Delta Electronics | 34.5 | 12.0 |
+| Vertiv Holdings | 34.5 | 12.0 |
+| Eoptolink Technology | 49.5 | 7.0 |
+| Zhongji Innolight | 49.5 | 7.0 |
+| Asia Vital Components | 46.0 | 7.0 |
+Suzhou TFC Optical Communication | 42.0 | 28.0 |
+</details>
+
+Source: FactSet, MS, Note: Share prices as of Jun 11, 2026. Furukawa, SEI and Fujikura are MS estimates and others are FactSet consensus.
+
+Exhibit 13: Furukawa Electric: Residual income model
+
+<table><tr><td>bn JPY, bn shares</td><td>F3/27e</td><td>F3/28e</td><td>F3/29e</td><td>F3/30e</td><td>F3/31e</td><td>F3/32e</td><td>F3/33e</td><td>F3/34e</td><td>F3/35e</td><td>F3/36e</td><td>F3/37e</td><td>F3/38e</td></tr><tr><td>Total Equity (Ending)</td><td>424</td><td>541</td><td>691</td><td>804</td><td>940</td><td>1,102</td><td>1,293</td><td>1,516</td><td>1,776</td><td>2,081</td><td>2,438</td><td>2,855</td></tr><tr><td>Net Profit</td><td>83</td><td>134</td><td>171</td><td>205</td><td>247</td><td>296</td><td>346</td><td>405</td><td>474</td><td>554</td><td>649</td><td>759</td></tr><tr><td>Beginning Equity</td><td>424</td><td>541</td><td>691</td><td>691</td><td>804</td><td>940</td><td>1,102</td><td>1,293</td><td>1,516</td><td>1,776</td><td>2,081</td><td>2,438</td></tr><tr><td>Average Equity</td><td>424</td><td>541</td><td>691</td><td>748</td><td>872</td><td>1,021</td><td>1,198</td><td>1,404</td><td>1,646</td><td>1,929</td><td>2,259</td><td>2,646</td></tr><tr><td>ROAE</td><td>19.6%</td><td>24.7%</td><td>24.8%</td><td>27.5%</td><td>28.3%</td><td>29.0%</td><td>28.9%</td><td>28.8%</td><td>28.8%</td><td>28.7%</td><td>28.7%</td><td>28.7%</td></tr><tr><td>Spread (ROAE - CoE)</td><td>10.3%</td><td>24.7%</td><td>24.8%</td><td>18.2%</td><td>19.0%</td><td>19.7%</td><td>19.6%</td><td>19.5%</td><td>19.5%</td><td>19.4%</td><td>19.4%</td><td>19.4%</td></tr><tr><td>Residual Income</td><td>44</td><td>134</td><td>171</td><td>126</td><td>152</td><td>185</td><td>216</td><td>252</td><td>295</td><td>345</td><td>404</td><td>472</td></tr><tr><td>Period (t)</td><td>1</td><td>1</td><td>1</td><td>4</td><td>5</td><td>6</td><td>7</td><td>8</td><td>9</td><td>10</td><td>11</td><td>12</td></tr><tr><td>Discount Factor (mid-year)</td><td>0.956</td><td>1.000</td><td>1.000</td><td>0.732</td><td>0.670</td><td>0.613</td><td>0.560</td><td>0.513</td><td>0.469</td><td>0.429</td><td>0.392</td><td>0.359</td></tr><tr><td>Discount Factor (end-year)</td><td>0.915</td><td>1.000</td><td>1.000</td><td>0.700</td><td>0.641</td><td>0.586</td><td>0.536</td><td>0.490</td><td>0.449</td><td>0.410</td><td>0.375</td><td>0.343</td></tr><tr><td>PV of Residual Income</td><td>42</td><td>134</td><td>171</td><td>92</td><td>102</td><td>113</td><td>121</td><td>129</td><td>138</td><td>148</td><td>158</td><td>169</td></tr><tr><td>Ending Equity Capital</td><td>424</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>PV of Forecast Period</td><td>1,519</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>PV of Continuing Value</td><td>2,884</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>Equity Value</td><td>4,827</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>No. of Shares</td><td>0.0735</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>Our Target Price</td><td>66,000</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr></table>
+
+Source: MS. e=MS estimates
+
+Exhibit 14: Sumitomo Electric: Residual income model
+
+<table><tr><td>bn JPY, bn shares</td><td>F3/27e</td><td>F3/28e</td><td>F3/29e</td><td>F3/30e</td><td>F3/31e</td><td>F3/32e</td><td>F3/33e</td><td>F3/34e</td><td>F3/35e</td><td>F3/36e</td><td>F3/37e</td><td>F3/38e</td></tr><tr><td>Total Equity (Ending)</td><td>2,323</td><td>2,569</td><td>2,850</td><td>3,122</td><td>3,434</td><td>3,789</td><td>4,193</td><td>4,654</td><td>5,177</td><td>5,773</td><td>6,451</td><td>7,223</td></tr><tr><td>Net Profit</td><td>331</td><td>411</td><td>468</td><td>543</td><td>624</td><td>711</td><td>809</td><td>920</td><td>1,047</td><td>1,192</td><td>1,356</td><td>1,543</td></tr><tr><td>Beginning Equity</td><td>2,323</td><td>2,323</td><td>2,569</td><td>2,850</td><td>3,122</td><td>3,434</td><td>3,789</td><td>4,193</td><td>4,654</td><td>5,177</td><td>5,773</td><td>6,451</td></tr><tr><td>Average Equity</td><td>2,323</td><td>2,446</td><td>2,710</td><td>2,986</td><td>3,278</td><td>3,611</td><td>3,991</td><td>4,424</td><td>4,915</td><td>5,475</td><td>6,112</td><td>6,837</td></tr><tr><td>ROAE</td><td>14.3%</td><td>16.8%</td><td>17.3%</td><td>18.2%</td><td>19.1%</td><td>19.7%</td><td>20.3%</td><td>20.8%</td><td>21.3%</td><td>21.8%</td><td>22.2%</td><td>22.6%</td></tr><tr><td>Spread (ROAE - CoE)</td><td>5.6%</td><td>8.1%</td><td>8.6%</td><td>9.5%</td><td>10.4%</td><td>11.0%</td><td>11.6%</td><td>12.1%</td><td>12.6%</td><td>13.1%</td><td>13.5%</td><td>13.9%</td></tr><tr><td>Residual Income</td><td>130</td><td>189</td><td>221</td><td>272</td><td>324</td><td>378</td><td>440</td><td>509</td><td>589</td><td>679</td><td>781</td><td>898</td></tr><tr><td>Period (t)</td><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td><td>8</td><td>9</td><td>10</td><td>11</td><td>12</td></tr><tr><td>Discount Factor (mid-year)</td><td>0.959</td><td>0.883</td><td>0.813</td><td>0.748</td><td>0.688</td><td>0.633</td><td>0.583</td><td>0.536</td><td>0.494</td><td>0.454</td><td>0.418</td><td>0.385</td></tr><tr><td>Discount Factor (end-year)</td><td>0.920</td><td>0.847</td><td>0.779</td><td>0.717</td><td>0.660</td><td>0.608</td><td>0.559</td><td>0.515</td><td>0.474</td><td>0.436</td><td>0.401</td><td>0.369</td></tr><tr><td>PV of Residual Income</td><td>125</td><td>167</td><td>180</td><td>203</td><td>223</td><td>240</td><td>256</td><td>273</td><td>291</td><td>308</td><td>327</td><td>345</td></tr><tr><td>Ending Equity Capital</td><td>2,323</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>PV of Forecast Period</td><td>2,938</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>PV of Continuing Value</td><td>6,032</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>Equity Value</td><td>11,293</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>No. of Shares</td><td>0.7799</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>Our Target Price</td><td>14,500</td><td></td><td></td><td></td><td>12540</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr></table>
+
+Source: MS. e=MS estimates
+
+Exhibit 15: Fujikura: Residual income model
+
+<table><tr><td>bn JPY bn shares</td><td>F3/27e</td><td>F3/28e</td><td>F3/29e</td><td>F3/30e</td><td>F3/31e</td><td>F3/32e</td><td>F3/33e</td><td>F3/34e</td><td>F3/35e</td><td>F3/36e</td><td>F3/37e</td><td>F3/38e</td></tr><tr><td>Total Equity (Ending)</td><td>557</td><td>684</td><td>839</td><td>985</td><td>1,168</td><td>1,397</td><td>1,666</td><td>1,981</td><td>2,353</td><td>2,789</td><td>3,301</td><td>3,903</td></tr><tr><td>Net Profit</td><td>188</td><td>226</td><td>271</td><td>325</td><td>407</td><td>508</td><td>597</td><td>702</td><td>825</td><td>969</td><td>1,138</td><td>1,338</td></tr><tr><td>Beginning Equity</td><td>557</td><td>557</td><td>684</td><td>839</td><td>985</td><td>1,168</td><td>1,397</td><td>1,666</td><td>1,981</td><td>2,353</td><td>2,789</td><td>3,301</td></tr><tr><td>Average Equity</td><td>557</td><td>620</td><td>761</td><td>912</td><td>1,077</td><td>1,283</td><td>1,531</td><td>1,824</td><td>2,167</td><td>2,571</td><td>3,045</td><td>3,602</td></tr><tr><td>ROAE</td><td>33.7%</td><td>36.4%</td><td>35.6%</td><td>35.7%</td><td>37.8%</td><td>39.6%</td><td>39.0%</td><td>38.5%</td><td>38.1%</td><td>37.7%</td><td>37.4%</td><td>37.1%</td></tr><tr><td>Spread (ROAE - CoE)</td><td>23.7%</td><td>26.4%</td><td>25.6%</td><td>25.7%</td><td>27.8%</td><td>29.6%</td><td>29.0%</td><td>28.5%</td><td>28.1%</td><td>27.7%</td><td>27.4%</td><td>27.1%</td></tr><tr><td>Residual Income</td><td>132</td><td>147</td><td>175</td><td>215</td><td>274</td><td>346</td><td>405</td><td>474</td><td>556</td><td>652</td><td>764</td><td>896</td></tr><tr><td>Period (t)</td><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td><td>8</td><td>9</td><td>10</td><td>11</td><td>12</td></tr><tr><td>Discount Factor (mid-year)</td><td>0.953</td><td>0.867</td><td>0.788</td><td>0.716</td><td>0.651</td><td>0.592</td><td>0.538</td><td>0.489</td><td>0.445</td><td>0.404</td><td>0.368</td><td>0.334</td></tr><tr><td>Discount Factor (end-year)</td><td>0.909</td><td>0.826</td><td>0.751</td><td>0.683</td><td>0.621</td><td>0.565</td><td>0.513</td><td>0.467</td><td>0.424</td><td>0.386</td><td>0.351</td><td>0.319</td></tr><tr><td>PV of Residual Income</td><td>126</td><td>127</td><td>138</td><td>154</td><td>178</td><td>205</td><td>218</td><td>232</td><td>247</td><td>263</td><td>281</td><td>299</td></tr><tr><td>Ending Equity Capital</td><td>557</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>PV of Forecast Period</td><td>2,470</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>PV of Continuing Value</td><td>4,725</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>Equity Value</td><td>7,752</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>No. of Shares</td><td>1.6556</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>Our Target Price</td><td>4,700</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr></table>
+
+Source: MS. e=MS estimates
+
+Exhibit 16: Valuation & EBIT CAGR
+
+<table><tr><td rowspan="2">Ticker</td><td rowspan="2">Company</td><td>Share Price</td><td>Mkt Cap</td><td colspan="3">P/E(x)</td><td colspan="3">P/B(x)</td><td colspan="3">ROE(%)</td><td colspan="2">EBIT CAGR (%)</td><td colspan="3">EV/EBITDA(x)</td><td>Div yield(%)</td></tr><tr><td>2026/6/11</td><td>(JPYbn)</td><td>F2026</td><td>F2027</td><td>F2028</td><td>F2026</td><td>F2027</td><td>F2028</td><td>F2026</td><td>F2027</td><td>F2028</td><td>FY23-25</td><td>FY25-28</td><td>F2026</td><td>F2027</td><td>F2028</td><td>F2026</td></tr><tr><td>GLW-US</td><td>Corning</td><td>US$168.17</td><td>23,229.0</td><td>52.9</td><td>40.9</td><td>31.0</td><td>11.1</td><td>10.0</td><td>8.3</td><td>21.1</td><td>24.5</td><td>26.7</td><td>-14.0</td><td>77.6</td><td>28.7</td><td>24.3</td><td>19.3</td><td>0.7</td></tr><tr><td>PRY-IT</td><td>Prysmian</td><td>ITL 141.50</td><td>7,918.9</td><td>29.8</td><td>25.0</td><td>22.2</td><td>5.4</td><td>4.6</td><td>3.9</td><td>18.3</td><td>18.5</td><td>17.6</td><td>10.6</td><td>30.8</td><td>16.2</td><td>14.5</td><td>13.0</td><td>0.7</td></tr><tr><td>300308-CN</td><td>Zhongji Innolight</td><td>CNY 1,124.0</td><td>29,683.3</td><td>42.9</td><td>24.2</td><td>17.3</td><td>21.8</td><td>12.0</td><td>7.2</td><td>50.8</td><td>49.4</td><td>41.7</td><td>46.5</td><td>143.5</td><td>33.2</td><td>19.8</td><td>14.3</td><td>0.3</td></tr><tr><td>APH-US</td><td>Amphenol</td><td>US$149.22</td><td>29,463.0</td><td>31.4</td><td>26.9</td><td>23.6</td><td>10.5</td><td>8.1</td><td>6.3</td><td>33.5</td><td>30.1</td><td>26.6</td><td>5.6</td><td>55.4</td><td>18.6</td><td>16.7</td><td>15.1</td><td>0.7</td></tr><tr><td>LITE-US</td><td>Lumentum Holdings</td><td>US$853.26</td><td>10,654.2</td><td>103.6</td><td>46.5</td><td>29.3</td><td>22.3</td><td>14.3</td><td>7.8</td><td>21.6</td><td>30.7</td><td>26.8</td><td>-</td><td>-</td><td>81.8</td><td>33.3</td><td>21.1</td><td>-</td></tr><tr><td>COHR-US</td><td>Coherent</td><td>US$354.77</td><td>11,139.5</td><td>64.9</td><td>43.8</td><td>31.2</td><td>6.4</td><td>5.9</td><td>4.8</td><td>9.8</td><td>13.4</td><td>15.5</td><td>-</td><td>105.5</td><td>42.5</td><td>27.2</td><td>18.2</td><td>0.0</td></tr><tr><td>300394-CN</td><td>Suzhou TFC Optical Communication</td><td>CNY 412.3</td><td>7,607.1</td><td>92.7</td><td>66.9</td><td>51.9</td><td>39.7</td><td>27.9</td><td>19.5</td><td>42.8</td><td>41.7</td><td>37.6</td><td>35.8</td><td>66.8</td><td>73.7</td><td>54.0</td><td>42.1</td><td>0.4</td></tr><tr><td>300502-CN</td><td>Eoptolink Technology</td><td>CNY 526.0</td><td>17,366.3</td><td>36.8</td><td>23.3</td><td>17.8</td><td>20.7</td><td>11.5</td><td>7.0</td><td>56.2</td><td>49.7</td><td>39.2</td><td>36.6</td><td>146.1</td><td>30.7</td><td>21.1</td><td>15.1</td><td>0.3</td></tr><tr><td></td><td>Optic &amp; Electronic materials</td><td></td><td></td><td>56.9</td><td>37.2</td><td>28.0</td><td>17.2</td><td>11.8</td><td>8.1</td><td>31.8</td><td>32.3</td><td>29.0</td><td>20.2</td><td>89.4</td><td>40.7</td><td>26.4</td><td>19.8</td><td>0.4</td></tr><tr><td>3017-TW</td><td>Asia Vital Components</td><td>TWD 2,335.00</td><td>4,638.6</td><td>24.6</td><td>17.2</td><td>14.9</td><td>12.4</td><td>8.0</td><td>5.7</td><td>50.4</td><td>46.8</td><td>38.3</td><td>17.2</td><td>93.2</td><td>15.5</td><td>10.9</td><td>9.2</td><td>1.4</td></tr><tr><td>2308-TW</td><td>Delta Electronics</td><td>TWD 2,160.00</td><td>28,420.5</td><td>52.0</td><td>33.2</td><td>22.7</td><td>15.4</td><td>11.5</td><td>8.6</td><td>29.6</td><td>34.5</td><td>38.0</td><td>3.2</td><td>85.4</td><td>31.0</td><td>20.7</td><td>14.6</td><td>0.8</td></tr><tr><td>VRT-US</td><td>Vertiv Holdings</td><td>US$280.98</td><td>17,321.7</td><td>43.9</td><td>32.3</td><td>25.4</td><td>18.4</td><td>12.6</td><td>8.3</td><td>41.9</td><td>38.9</td><td>32.8</td><td>30.7</td><td>80.9</td><td>32.7</td><td>24.1</td><td>18.9</td><td>0.1</td></tr><tr><td></td><td>Cooling</td><td></td><td></td><td>40.2</td><td>27.6</td><td>21.0</td><td>15.4</td><td>10.7</td><td>7.6</td><td>40.6</td><td>40.1</td><td>36.4</td><td>17.0</td><td>86.5</td><td>26.4</td><td>18.5</td><td>14.2</td><td>0.7</td></tr><tr><td>5803</td><td>Fujikura</td><td>¥4,142.0</td><td>7,352.8</td><td>34.1</td><td>27.8</td><td>22.9</td><td>10.1</td><td>8.4</td><td>6.8</td><td>29.6</td><td>30.1</td><td>29.5</td><td>23.4</td><td>45.1</td><td>23.7</td><td>19.2</td><td>16.4</td><td>1.1</td></tr><tr><td>5802</td><td>SEI</td><td>¥10,250.0</td><td>8,137.9</td><td>23.9</td><td>20.0</td><td>16.2</td><td>2.7</td><td>2.5</td><td>2.3</td><td>11.4</td><td>12.5</td><td>14.0</td><td>11.9</td><td>25.0</td><td>12.5</td><td>10.6</td><td>8.9</td><td>1.6</td></tr><tr><td>5801</td><td>Furukawa Electric</td><td>¥40,780.0</td><td>2,881.8</td><td>32.9</td><td>23.1</td><td>17.8</td><td>5.9</td><td>4.8</td><td>3.9</td><td>17.9</td><td>20.9</td><td>22.1</td><td>16.6</td><td>46.7</td><td>21.5</td><td>15.4</td><td>11.9</td><td>0.6</td></tr><tr><td></td><td>Domestic Wire&amp;Cable</td><td></td><td></td><td>30.3</td><td>23.6</td><td>19.0</td><td>6.2</td><td>5.2</td><td>4.3</td><td>19.6</td><td>21.2</td><td>21.9</td><td>17.3</td><td>38.9</td><td>19.2</td><td>15.1</td><td>12.4</td><td>1.1</td></tr></table>
+
+Source: FactSet, MS, Estimates are FactSet.
+
+## Stock Price Trends in Cable Industry
+
+Exhibit 17: Furukawa Electric: Stock Price & OP Consensus Estimate Trend  
+![](images/37ca3214ff5d00aac2debfbe853d29092eb55102ca5c16bb1539d0979da0153d.jpg)
+
+<details>
+<summary>bar-line hybrid chart</summary>
+
+| Quarter | OP Con(RHS) (¥bn) | Price (¥bn) |
+|---------|-------------------|-------------|
+| F23Q1   | ~5,000            | ~10         |
+| F23Q2   | ~5,000            | ~10         |
+| F23Q3   | ~5,000            | ~10         |
+| F23Q4   | ~5,000            | ~10         |
+| F24Q1   | ~5,000            | ~10         |
+| F24Q2   | ~10,000           | ~10         |
+| F24Q3   | ~10,000           | ~10         |
+| F24Q4   | ~15,000           | ~10         |
+| F25Q1   | ~20,000           | ~10         |
+| F25Q2   | ~25,000           | ~10         |
+| F25Q3   | ~35,000           | ~15         |
+| F25Q4   | ~65,000           | ~70         |
+</details>
+
+Note: Consensus = FactSet Consensus Mean, Source: FactSet, MS
+
+Exhibit 18: Sumitomo Electric: Stock Price & OP Consensus Estimate Trend  
+![](images/f84669152bc59d8fe6bc9a3df41fc57870c5ffb5e77f593261e958c79e4f1e7d.jpg)
+
+<details>
+<summary>bar-line hybrid chart</summary>
+
+| Quarter | OP Con(RHS) (¥bn) | Price (¥bn) |
+|---------|-------------------|-------------|
+| F23Q1   | ~1,000            | ~1,000      |
+| F23Q2   | ~1,000            | ~1,000      |
+| F23Q3   | ~1,000            | ~1,000      |
+| F23Q4   | ~1,000            | ~1,000      |
+| F24Q1   | ~1,000            | ~1,000      |
+| F24Q2   | ~1,000            | ~1,000      |
+| F24Q3   | ~1,000            | ~1,000      |
+| F25Q1   | ~1,000            | ~1,000      |
+| F25Q2   | ~1,000            | ~1,000      |
+| F25Q3   | ~1,000            | ~1,000      |
+| F25Q4   | ~1,000            | ~1,000      |
+</details>
+
+Note: Consensus = FactSet Consensus Mean, Source: FactSet, MS
+
+Exhibit 19: Fujikura: Stock Price & OP Consensus Estimate Trend  
+![](images/cc11badb4c2e85457ab2c100f0d7dfbb81540332841191f3ca0d9bd220dec408.jpg)
+
+<details>
+<summary>bar-line hybrid chart</summary>
+
+| Quarter | OP Con(RHS) (¥bn) | Price (¥bn) |
+|---------|-------------------|-------------|
+| F23Q1   | ~500              | ~50         |
+| F23Q2   | ~500              | ~50         |
+| F23Q3   | ~500              | ~50         |
+| F23Q4   | ~1,000            | ~1,00       |
+| F24Q1   | ~1,500            | ~1,50       |
+| F24Q2   | ~2,000            | ~2,00       |
+| F24Q3   | ~2,500            | ~2,50       |
+| F24Q4   | ~3,000            | ~3,00       |
+| F25Q1   | ~4,000            | ~4,00       |
+| F25Q2   | ~5,000            | ~5,00       |
+| F25Q3   | ~6,000            | ~6,00       |
+| F25Q4   | ~7,000            | ~7,00       |
+</details>
+
+Note: Consensus = FactSet Consensus Mean, Source: FactSet, MS
+
+## Valuation Trends
+
+Exhibit 20: Estimated P/E: Furukawa Electric vs TOPIX  
+![](images/6d538bfa6986b09b5be88615b452b7c2dee3bc108fbaeeb058cc863079f8f34d.jpg)
+
+<details>
+<summary>line chart</summary>
+
+| Year | TOPIX | Furukawa electric |
+|------|-------|-------------------|
+| 2006 | 20.0x | 40.0x             |
+| 2008 | 15.0x | 15.0x             |
+| 2010 | 15.0x | 30.0x             |
+| 2012 | 15.0x | 15.0x             |
+| 2014 | 15.0x | 15.0x             |
+| 2016 | 15.0x | 15.0x             |
+| 2018 | 15.0x | 15.0x             |
+| 2020 | 15.0x | 15.0x             |
+| 2022 | 15.0x | 15.0x             |
+| 2024 | 15.0x | 15.0x             |
+| 2026 | 15.0x | 40.0x             |
+</details>
+
+Source: Bloomberg, MS
+
+Exhibit 21: P/B: Furukawa Electric vs TOPIX  
+![](images/815912051d3bcdb8f55674c84cae0ff03822dc791de4c92a1db526d399ba96f3.jpg)
+
+<details>
+<summary>line chart</summary>
+
+| Year | TOPIX | Furukawa electric |
+|------|-------|-------------------|
+| 2004 | 1.8x  | 1.5x              |
+| 2006 | 2.0x  | 3.5x              |
+| 2008 | 1.5x  | 1.8x              |
+| 2010 | 1.2x  | 2.0x              |
+| 2012 | 1.0x  | 1.5x              |
+| 2014 | 1.3x  | 1.2x              |
+| 2016 | 1.5x  | 1.8x              |
+| 2018 | 1.7x  | 2.2x              |
+| 2020 | 1.4x  | 1.0x              |
+| 2022 | 1.6x  | 0.8x              |
+| 2024 | 1.8x  | 1.5x              |
+| 2026 | 2.0x  | 10.0x             |
+</details>
+
+Source: Bloomberg, MS
+
+Exhibit 22: Estimated P/E: Sumitomo Electric vs TOPIX  
+![](images/31eb6ee6eb6b6c1975e6df3edda301f3357a0e6e7f901465ecc1ee80d77b070f.jpg)
+
+<details>
+<summary>line chart</summary>
+
+| Year | TOPIX | Sumitomo electric |
+|------|-------|------------------|
+| 2006 | ~18.0x | ~22.0x |
+| 2008 | ~14.0x | ~10.0x |
+| 2010 | ~21.0x | ~25.0x |
+| 2012 | ~12.0x | ~8.0x |
+| 2014 | ~14.0x | ~10.0x |
+| 2016 | ~15.0x | ~11.0x |
+| 2018 | ~16.0x | ~10.0x |
+| 2020 | ~14.0x | ~8.0x |
+| 2022 | ~15.0x | ~10.0x |
+| 2024 | ~14.0x | ~11.0x |
+| 2026 | ~15.0x | ~27.0x |
+</details>
+
+Source: Bloomberg, MS
+
+Exhibit 23: P/B: Sumitomo Electric vs TOPIX  
+![](images/9cc408f5967f3a7895d3e05265c9ab87892e181902fd0536a59b3672be72f7a0.jpg)
+
+<details>
+<summary>line chart</summary>
+
+| Year | TOPIX | Sumitomo electric |
+|------|-------|-------------------|
+| 2004 | 1.8x  | 1.2x              |
+| 2006 | 2.2x  | 1.8x              |
+| 2008 | 1.5x  | 1.0x              |
+| 2010 | 1.2x  | 0.8x              |
+| 2012 | 1.3x  | 0.9x              |
+| 2014 | 1.4x  | 1.0x              |
+| 2016 | 1.5x  | 1.1x              |
+| 2018 | 1.6x  | 1.2x              |
+| 2020 | 1.7x  | 1.3x              |
+| 2022 | 1.8x  | 1.4x              |
+| 2024 | 1.9x  | 1.5x              |
+| 2026 | 1.8x  | 4.0x              |
+</details>
+
+Source: Bloomberg, MS
+
+Exhibit 24: Estimated P/E: Fujikura vs TOPIX  
+![](images/33ca0dc822215125a9da89fe104cc930e9a1ba49b37586c8bc6e7cca1e202a93.jpg)
+
+<details>
+<summary>line chart</summary>
+
+| Year | TOPIX | Fujikura |
+|------|-------|----------|
+| 2006 | 18.0x | 25.0x    |
+| 2008 | 15.0x | 10.0x    |
+| 2010 | 20.0x | 50.0x    |
+| 2012 | 15.0x | 15.0x    |
+| 2014 | 15.0x | 15.0x    |
+| 2016 | 15.0x | 15.0x    |
+| 2018 | 15.0x | 15.0x    |
+| 2020 | 15.0x | 20.0x    |
+| 2022 | 15.0x | 15.0x    |
+| 2024 | 15.0x | 15.0x    |
+| 2026 | 15.0x | 50.0x    |
+</details>
+
+Source: Bloomberg, MS
+
+Exhibit 25: P/B: Fujikura vs TOPIX  
+![](images/cdebadc8b5e8d6f32193001e2fa05fdfbc433601f3b61d02f31efc76d89af701.jpg)
+
+<details>
+<summary>line chart</summary>
+
+| Year | TOPIX | Fujikura |
+|------|-------|----------|
+| 2004 | 1.5x  | 1.2x     |
+| 2006 | 1.8x  | 2.0x     |
+| 2008 | 1.3x  | 0.8x     |
+| 2010 | 1.2x  | 0.7x     |
+| 2012 | 1.1x  | 0.6x     |
+| 2014 | 1.3x  | 0.9x     |
+| 2016 | 1.4x  | 1.0x     |
+| 2018 | 1.5x  | 1.1x     |
+| 2020 | 1.6x  | 1.2x     |
+| 2022 | 1.7x  | 1.3x     |
+| 2024 | 1.8x  | 3.0x     |
+| 2026 | 2.0x  | 16.0x    |
+</details>
+
+Source: Bloomberg, MS
+
+Exhibit 26: Corning, Lumentum, and Coherent P/E  
+![](images/db5e8d88f16ae9f1ebb5cc7b5e4aa339c129b282fdbd34770178f8a5edd3ed0b.jpg)
+
+<details>
+<summary>line chart</summary>
+
+| Year | Corning | Lumentum | Coherent |
+|------|---------|----------|----------|
+| 2018 | 15      | 15       | 15       |
+| 2019 | 15      | 15       | 15       |
+| 2020 | 15      | 15       | 15       |
+| 2021 | 15      | 15       | 15       |
+| 2022 | 15      | 15       | 15       |
+| 2023 | 15      | 15       | 15       |
+| 2024 | 15      | 15       | 15       |
+| 2025 | 15      | 15       | 15       |
+| 2026 | 60      | 60       | 60       |
+</details>
+
+Source: Bloomberg, MS
+
+Exhibit 27: 3 Cable Companies P/E  
+![](images/618e5f1dced623121700e39b490ed7073408fdeba40b47ecb06144d54bb0f8e6.jpg)
+
+<details>
+<summary>line chart</summary>
+
+| Date     | Furukawa Elec. | SEI  | Fujikura |
+| -------- | -------------- | ---- | -------- |
+| 2016/3   | ~10            | ~10  | ~10      |
+| 2018/3   | ~12            | ~10  | ~10      |
+| 2020/3   | ~10            | ~10  | ~40      |
+| 2022/3   | ~10            | ~10  | ~10      |
+| 2024/3   | ~15            | ~10  | ~15      |
+| 2026/3   | ~25            | ~25  | ~50      |
+</details>
+
+Source: FactSet, MS
+
+Exhibit 28: 3 Cable Companies Div Yield  
+![](images/84885f2a1b65d5817bb649a7a44df49e62740b36003a6627d52432d44e9392a0.jpg)
+
+<details>
+<summary>line chart</summary>
+
+| Date     | Furukawa | SEI  | Fujikura |
+| -------- | -------- | ---- | -------- |
+| 2016/6   | 1.8      | 2.8  | 2.5      |
+| 2018/6   | 2.5      | 3.0  | 2.8      |
+| 2020/6   | 3.0      | 4.5  | 0.0      |
+| 2022/6   | 2.8      | 3.5  | 2.5      |
+| 2024/6   | 1.5      | 3.0  | 4.5      |
+| 2026/6   | 0.5      | 1.5  | 1.0      |
+</details>
+
+Source: Bloomberg, MS
+
+Exhibit 29: 3 Cable Companies EV/EBITDA  
+![](images/e6c95436ae31042975955ef5d27083e361380cb29ce5d4b83d72dab9e9dd139d.jpg)
+
+<details>
+<summary>line chart</summary>
+
+| Date    | Furukawa | SEI  | Fujikura |
+|---------|----------|------|----------|
+| 2016/6  | 7        | 5    | 6        |
+| 2018/6  | 9        | 6    | 7        |
+| 2020/6  | 7        | 5    | 8        |
+| 2022/6  | 7        | 5    | 6        |
+| 2024/6  | 9        | 5    | 10       |
+| 2026/6  | 27       | 13   | 35       |
+</details>
+
+Source: Bloomberg, MS
+
+## Earnings Summary: Furukawa Electric (5801.T)
+
+Exhibit 30: Financial Summary (1)
+
+<table><tr><td>(Unit: JPYbn)P/L</td><td>J-GAAPF2016</td><td>J-GAAPF2017</td><td>J-GAAPF2018</td><td>J-GAAPF2019</td><td>J-GAAPF2020</td><td>J-GAAPF2021</td><td>J-GAAPF2022</td><td>J-GAAPF2023</td><td>J-GAAPF2024</td><td>J-GAAPF2025</td><td>J-GAAPF2026e</td><td>J-GAAPF2027e</td><td>J-GAAPF2028e</td><td>CAGR26e-28e</td></tr><tr><td>Old Revenue</td><td>843.3</td><td>967.3</td><td>991.6</td><td>914.4</td><td>811.6</td><td>930.5</td><td>1,066.3</td><td>1,056.5</td><td>1,201.8</td><td>1,307.6</td><td>1,493.9</td><td>1,747.3</td><td>1,967.4</td><td>14.8%</td></tr><tr><td>Communications Solutions</td><td>168.5</td><td>191.3</td><td>179.9</td><td>166.4</td><td>158.3</td><td>191.3</td><td>217.6</td><td>168.0</td><td>167.0</td><td>229.3</td><td></td><td></td><td></td><td></td></tr><tr><td>Energy Infrastructure</td><td>95.3</td><td>102.1</td><td>108.1</td><td>114.5</td><td>100.9</td><td>105.7</td><td>106.3</td><td>110.2</td><td>142.1</td><td>141.6</td><td></td><td></td><td></td><td></td></tr><tr><td>Automotive Products &amp; Batteries</td><td>223.4</td><td>248.1</td><td>267.3</td><td>257.6</td><td>235.1</td><td>249.9</td><td>337.4</td><td>379.8</td><td>409.5</td><td>397.8</td><td></td><td></td><td></td><td></td></tr><tr><td>Electronics Component Materials</td><td>232.1</td><td>285.6</td><td>294.4</td><td>251.7</td><td>198.0</td><td>250.8</td><td>273.0</td><td>273.9</td><td>327.0</td><td>367.3</td><td></td><td></td><td></td><td></td></tr><tr><td>Functional Products</td><td>131.5</td><td>153.1</td><td>149.3</td><td>115.9</td><td>114.7</td><td>130.0</td><td>126.5</td><td>115.4</td><td>147.0</td><td>161.1</td><td></td><td></td><td></td><td></td></tr><tr><td>Service and Developments, etc.</td><td>49.7</td><td>51.0</td><td>48.6</td><td>50.3</td><td>38.7</td><td>34.5</td><td>31.7</td><td>31.6</td><td>34.8</td><td>42.2</td><td></td><td></td><td></td><td></td></tr><tr><td>Adjustment</td><td>-57.0</td><td>-63.9</td><td>-55.9</td><td>-42.0</td><td>-34.0</td><td>-31.6</td><td>-26.1</td><td>-22.4</td><td>-25.6</td><td>-31.7</td><td></td><td></td><td></td><td></td></tr><tr><td>New Revenue</td><td>843.3</td><td>967.3</td><td>991.6</td><td>914.4</td><td>811.6</td><td>930.5</td><td>1,066.3</td><td>1,056.5</td><td>1,201.8</td><td>1,307.6</td><td>1,493.9</td><td>1,747.3</td><td>1,967.4</td><td rowspan="2">14.8% 22.0%</td></tr><tr><td>Optical Solutions</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>196.9</td><td>263.3</td><td>326.2</td><td>391.8</td></tr><tr><td>Digital Infrastructure Components</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>198.0</td><td>305.6</td><td>495.1</td><td>639.6</td><td>44.7%</td></tr><tr><td>Energy Infrastructure</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>138.8</td><td>142.0</td><td>143.0</td><td>143.0</td><td>0.4%</td></tr><tr><td>Automotive Systems</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>357.5</td><td>364.0</td><td>364.0</td><td>374.0</td><td>1.4%</td></tr><tr><td>Metal Solutions</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>372.9</td><td>443.0</td><td>443.0</td><td>443.0</td><td>0.0%</td></tr><tr><td>Service and Developments, etc.</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>105.8</td><td>52.0</td><td>52.0</td><td>52.0</td><td>0.0%</td></tr><tr><td>Elimination of intra-company transactions</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>-62.5</td><td>-76.0</td><td>-76.0</td><td>-76.0</td><td>0.0%</td></tr><tr><td>Revenue Growth (Y/Y, %)</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>14.3</td><td>17.0</td><td>12.6</td><td></td></tr><tr><td>Optical Solutions</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>33.7</td><td>23.9</td><td>20.1</td><td></td></tr><tr><td>Digital Infrastructure Components</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>54.3</td><td>62.0</td><td>29.2</td><td></td></tr><tr><td>Energy Infrastructure</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>2.3</td><td>0.7</td><td>0.0</td><td></td></tr><tr><td>Automotive Systems</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>1.8</td><td>0.0</td><td>2.7</td><td></td></tr><tr><td>Metal Solutions</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>18.8</td><td>0.0</td><td>0.0</td><td></td></tr><tr><td>Service and Developments, etc.</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>-50.9</td><td>0.0</td><td>0.0</td><td></td></tr><tr><td>Old Operating Profit</td><td>38.6</td><td>44.8</td><td>40.8</td><td>23.6</td><td>8.4</td><td>11.4</td><td>15.4</td><td>11.2</td><td>47.0</td><td>63.9</td><td>100.0</td><td>158.0</td><td>202.0</td><td>42.1%</td></tr><tr><td>Communications Solutions</td><td>14.2</td><td>14.0</td><td>9.8</td><td>1.6</td><td>-0.2</td><td>3.8</td><td>6.5</td><td>-13.0</td><td>-4.0</td><td>11.8</td><td></td><td></td><td></td><td></td></tr><tr><td>Energy Infrastructure</td><td>0.1</td><td>-1.6</td><td>-2.4</td><td>0.1</td><td>-1.9</td><td>1.4</td><td>2.1</td><td>1.7</td><td>9.8</td><td>9.6</td><td></td><td></td><td></td><td></td></tr><tr><td>Automotive Products &amp; Batteries</td><td>10.1</td><td>13.2</td><td>13.5</td><td>10.9</td><td>5.0</td><td>-4.6</td><td>1.5</td><td>15.6</td><td>27.6</td><td>28.0</td><td></td><td></td><td></td><td></td></tr><tr><td>Electronics Component Materials</td><td>2.7</td><td>5.1</td><td>6.0</td><td>3.9</td><td>0.9</td><td>4.8</td><td>3.2</td><td>3.1</td><td>5.0</td><td>5.9</td><td></td><td></td><td></td><td></td></tr><tr><td>Functional Products</td><td>11.7</td><td>14.0</td><td>13.5</td><td>7.5</td><td>6.3</td><td>7.6</td><td>4.2</td><td>5.5</td><td>14.1</td><td>15.4</td><td></td><td></td><td></td><td></td></tr><tr><td>Service and Developments, etc.</td><td>-0.1</td><td>-0.0</td><td>0.3</td><td>-0.3</td><td>-1.7</td><td>-1.4</td><td>-2.1</td><td>-1.9</td><td>-5.4</td><td>-6.7</td><td></td><td></td><td></td><td></td></tr><tr><td>Adjustment</td><td>-0.0</td><td>0.1</td><td>0.1</td><td>0.0</td><td>0.1</td><td>-0.1</td><td>0.1</td><td>0.1</td><td>-0.1</td><td>-0.1</td><td></td><td></td><td></td><td></td></tr><tr><td>Operating Profit</td><td>38.6</td><td>44.8</td><td>40.8</td><td>23.6</td><td>8.4</td><td>11.4</td><td>15.4</td><td>11.2</td><td>47.0</td><td>63.9</td><td>100.0</td><td>158.0</td><td>202.0</td><td>42.1%</td></tr><tr><td>Optical Solutions</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>19.4</td><td>29.9</td><td>46.2</td><td>55.8</td><td></td></tr><tr><td>Digital Infrastructure Components</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>24.2</td><td>39.5</td><td>81.2</td><td>115.4</td><td></td></tr><tr><td>Energy Infrastructure</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>5.2</td><td>8.6</td><td>8.6</td><td>8.6</td><td></td></tr><tr><td>Automotive Systems</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>14.8</td><td>22.0</td><td>22.0</td><td>22.6</td><td></td></tr><tr><td>Metal Solutions</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>3.8</td><td>5.0</td><td>5.5</td><td>5.5</td><td></td></tr><tr><td>Service and Developments, etc.</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>-4.0</td><td>-5.0</td><td>-5.0</td><td>-5.0</td><td></td></tr><tr><td>Elimination of intra-company transactions</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>0.0</td><td>0.0</td><td>-0.5</td><td>-0.9</td><td></td></tr><tr><td>Operating Profit Margin (%)</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>4.9</td><td>6.7</td><td>9.0</td><td>10.3</td><td></td></tr><tr><td>Optical Solutions</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>9.9</td><td>11.4</td><td>14.2</td><td>14.2</td><td></td></tr><tr><td>Digital Infrastructure Components</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>12.2</td><td>12.9</td><td>16.4</td><td>18.0</td><td></td></tr><tr><td>Energy Infrastructure</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>3.7</td><td>6.1</td><td>6.0</td><td>6.0</td><td></td></tr><tr><td>Automotive Systems</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>4.1</td><td>6.0</td><td>6.0</td><td>6.0</td><td></td></tr><tr><td>Metal Solutions</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>1.0</td><td>1.1</td><td>1.2</td><td>1.2</td><td></td></tr><tr><td>Service and Developments, etc.</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>-3.8</td><td>-9.6</td><td>-9.6</td><td>-9.6</td><td></td></tr><tr><td>Equity Method Income</td><td>0.1</td><td>4.3</td><td>1.7</td><td>2.5</td><td>-0.9</td><td>9.0</td><td>6.0</td><td>6.3</td><td>10.6</td><td>16.5</td><td>28.0</td><td>40.0</td><td>48.0</td><td></td></tr><tr><td>Other non-operating income</td><td>-2.7</td><td>-2.2</td><td>-3.4</td><td>-3.3</td><td>-2.3</td><td>-0.8</td><td>-1.8</td><td>-7.2</td><td>-9.1</td><td>-4.5</td><td>-8.4</td><td>-8.4</td><td>-8.4</td><td></td></tr><tr><td>Recurring Profit</td><td>36.0</td><td>46.9</td><td>39.1</td><td>22.8</td><td>5.2</td><td>19.7</td><td>19.6</td><td>10.3</td><td>48.5</td><td>75.9</td><td>119.6</td><td>189.6</td><td>241.6</td><td>42.1%</td></tr><tr><td>One-off Profit / Loss, net</td><td>-8.1</td><td>-6.4</td><td>-3.3</td><td>8.0</td><td>16.1</td><td>0.8</td><td>10.7</td><td>9.8</td><td>5.5</td><td>29.1</td><td>0.0</td><td>0.0</td><td>0.0</td><td></td></tr><tr><td>Pretax Profit</td><td>28.0</td><td>40.5</td><td>35.8</td><td>30.8</td><td>21.3</td><td>20.4</td><td>30.3</td><td>20.1</td><td>54.0</td><td>104.9</td><td>119.6</td><td>189.6</td><td>241.6</td><td>42.1%</td></tr><tr><td>Tax</td><td>5.5</td><td>8.2</td><td>3.3</td><td>11.8</td><td>9.2</td><td>7.2</td><td>10.7</td><td>11.6</td><td>16.7</td><td>29.0</td><td>33.5</td><td>53.1</td><td>67.6</td><td></td></tr><tr><td>Non-controlling Interest</td><td>4.9</td><td>3.8</td><td>3.3</td><td>1.4</td><td>2.1</td><td>3.1</td><td>1.7</td><td>2.0</td><td>3.9</td><td>3.4</td><td>2.8</td><td>2.8</td><td>2.8</td><td></td></tr><tr><td>Net Income for Shareholders</td><td>17.6</td><td>28.5</td><td>29.1</td><td>17.6</td><td>10.0</td><td>10.1</td><td>17.9</td><td>6.5</td><td>33.4</td><td>72.5</td><td>83.3</td><td>133.7</td><td>171.2</td><td>43.4%</td></tr></table>
+
+<table><tr><td colspan="15">Per Share Data</td></tr><tr><td>EPS</td><td>249.2</td><td>405.1</td><td>412.0</td><td>250.3</td><td>141.9</td><td>143.4</td><td>254.4</td><td>92.4</td><td>473.3</td><td>1,030.8</td><td>1,189.4</td><td>1,909.1</td><td>2,444.6</td><td>43.4%</td></tr><tr><td>BPS</td><td>2,933.2</td><td>3,355.8</td><td>3,505.5</td><td>3,408.9</td><td>3,686.8</td><td>3,967.1</td><td>4,312.1</td><td>4,656.9</td><td>4,844.9</td><td>5,928.2</td><td>6,924.5</td><td>8,593.6</td><td>10,738.2</td><td>24.5%</td></tr><tr><td>DPS</td><td>55.0</td><td>80.0</td><td>85.0</td><td>85.0</td><td>60.0</td><td>60.0</td><td>80.0</td><td>60.0</td><td>120.0</td><td>210.0</td><td>220.0</td><td>240.0</td><td>300.0</td><td>16.8%</td></tr><tr><td>ROE (%)</td><td>8.5</td><td>12.1</td><td>11.8</td><td>7.3</td><td>3.8</td><td>3.6</td><td>5.9</td><td>2.0</td><td>9.8</td><td>17.4</td><td>17.2</td><td>22.2</td><td>22.8</td><td></td></tr><tr><td>Dividend Payout Ratio (%)</td><td>22.1</td><td>19.8</td><td>20.6</td><td>34.0</td><td>42.3</td><td>41.8</td><td>31.4</td><td>65.0</td><td>25.4</td><td>20.4</td><td>18.5</td><td>12.6</td><td>12.3</td><td></td></tr><tr><td>Shares outstanding (million)</td><td>70.5</td><td>70.5</td><td>70.5</td><td>70.5</td><td>70.5</td><td>70.4</td><td>70.4</td><td>70.4</td><td>70.4</td><td>70.5</td><td>70.5</td><td>70.5</td><td>70.5</td><td></td></tr></table>
+
+Note: Segments changed from F3/26. Source: MS, e = MS estimates
+
+Exhibit 31: Financial Summary (2)
+
+<table><tr><td>(Unit: JPYbn)B/S</td><td>J-GAAPF2016</td><td>J-GAAPF2017</td><td>J-GAAPF2018</td><td>J-GAAPF2019</td><td>J-GAAPF2020</td><td>J-GAAPF2021</td><td>J-GAAPF2022</td><td>J-GAAPF2023</td><td>J-GAAPF2024</td><td>J-GAAPF2025</td><td>J-GAAPF2026e</td><td>J-GAAPF2027e</td><td>J-GAAPF2028e</td><td>CAGR26e-28e</td></tr><tr><td>Cash &amp; Equivalents</td><td>46.1</td><td>49.8</td><td>46.8</td><td>55.1</td><td>87.2</td><td>67.6</td><td>52.0</td><td>53.1</td><td>66.1</td><td>70.5</td><td>36.8</td><td>18.0</td><td>33.1</td><td></td></tr><tr><td>Marketable Securities</td><td>1.1</td><td>0.9</td><td>0.2</td><td>0.2</td><td>0.1</td><td>0.8</td><td>0.6</td><td>0.5</td><td>0.7</td><td>0.5</td><td>0.5</td><td>0.5</td><td>0.5</td><td></td></tr><tr><td>Acct Receivable</td><td>198.9</td><td>224.3</td><td>219.3</td><td>192.5</td><td>191.9</td><td>230.3</td><td>229.6</td><td>245.7</td><td>260.6</td><td>266.5</td><td>295.8</td><td>346.0</td><td>389.6</td><td></td></tr><tr><td>Inventories</td><td>104.4</td><td>113.8</td><td>122.9</td><td>115.9</td><td>120.8</td><td>164.1</td><td>172.3</td><td>183.6</td><td>195.0</td><td>210.9</td><td>236.4</td><td>264.7</td><td>289.2</td><td></td></tr><tr><td>Other Current Assets</td><td>32.0</td><td>37.4</td><td>31.3</td><td>22.5</td><td>29.8</td><td>40.1</td><td>32.4</td><td>34.8</td><td>34.1</td><td>47.2</td><td>47.2</td><td>47.2</td><td>47.2</td><td></td></tr><tr><td>Total Current Assets</td><td>382.4</td><td>426.1</td><td>420.5</td><td>386.2</td><td>429.8</td><td>503.0</td><td>486.8</td><td>517.8</td><td>556.4</td><td>595.5</td><td>616.7</td><td>676.3</td><td>759.6</td><td></td></tr><tr><td>PP&amp;E, net</td><td>205.5</td><td>216.7</td><td>229.4</td><td>254.2</td><td>246.7</td><td>260.2</td><td>269.3</td><td>278.6</td><td>277.0</td><td>276.9</td><td>376.9</td><td>460.4</td><td>538.4</td><td></td></tr><tr><td>Goodwill and Goodwill-like Intangibles</td><td>3.1</td><td>2.5</td><td>2.8</td><td>2.1</td><td>1.5</td><td>0.6</td><td>0.2</td><td>0.1</td><td>0.6</td><td>2.5</td><td>2.5</td><td>2.5</td><td>2.5</td><td></td></tr><tr><td>Amortizable Intangibles</td><td>6.6</td><td>8.8</td><td>9.5</td><td>14.0</td><td>18.8</td><td>19.9</td><td>20.0</td><td>20.2</td><td>23.4</td><td>23.0</td><td>23.0</td><td>23.0</td><td>23.0</td><td></td></tr><tr><td>Investments in securities</td><td>125.2</td><td>132.3</td><td>119.2</td><td>100.9</td><td>101.7</td><td>116.8</td><td>120.9</td><td>131.7</td><td>98.8</td><td>145.5</td><td>173.5</td><td>213.5</td><td>261.5</td><td></td></tr><tr><td>Deferred tax assets</td><td>4.0</td><td>3.6</td><td>13.6</td><td>14.7</td><td>6.9</td><td>7.9</td><td>9.4</td><td>8.6</td><td>6.6</td><td>3.8</td><td>3.8</td><td>3.8</td><td>3.8</td><td></td></tr><tr><td>Other assets, noncurrent</td><td>23.3</td><td>25.8</td><td>23.1</td><td>22.5</td><td>26.6</td><td>27.6</td><td>28.1</td><td>28.1</td><td>25.2</td><td>19.3</td><td>19.3</td><td>19.3</td><td>19.3</td><td></td></tr><tr><td>Total Non Current Assets</td><td>367.7</td><td>389.7</td><td>397.5</td><td>408.4</td><td>402.2</td><td>432.9</td><td>448.0</td><td>467.2</td><td>431.6</td><td>470.9</td><td>598.9</td><td>722.4</td><td>848.4</td><td>19.0%</td></tr><tr><td>Total Assets</td><td>750.1</td><td>815.8</td><td>818.0</td><td>794.6</td><td>832.0</td><td>935.9</td><td>934.8</td><td>985.0</td><td>988.1</td><td>1,066.4</td><td>1,215.6</td><td>1,398.7</td><td>1,607.9</td><td>15.0%</td></tr><tr><td>Accounts Payable</td><td>108.1</td><td>124.4</td><td>131.4</td><td>111.6</td><td>115.5</td><td>128.0</td><td>125.4</td><td>128.8</td><td>136.7</td><td>140.5</td><td>172.7</td><td>196.1</td><td>217.4</td><td></td></tr><tr><td>Short-term debt</td><td>100.3</td><td>116.3</td><td>106.7</td><td>110.5</td><td>103.5</td><td>169.0</td><td>169.3</td><td>172.9</td><td>154.8</td><td>174.4</td><td>152.9</td><td>152.9</td><td>157.9</td><td></td></tr><tr><td>Other liabilities, current</td><td>85.0</td><td>89.7</td><td>93.5</td><td>97.5</td><td>96.2</td><td>82.7</td><td>86.3</td><td>99.2</td><td>103.0</td><td>113.7</td><td>113.7</td><td>113.7</td><td>113.7</td><td></td></tr><tr><td>Total Current liabilities</td><td>293.4</td><td>330.3</td><td>331.6</td><td>319.6</td><td>315.2</td><td>379.7</td><td>381.0</td><td>400.9</td><td>394.5</td><td>428.7</td><td>439.3</td><td>462.7</td><td>489.0</td><td>5.5%</td></tr><tr><td>Long-term debt</td><td>152.2</td><td>142.2</td><td>139.3</td><td>125.6</td><td>157.1</td><td>173.1</td><td>154.5</td><td>160.2</td><td>151.4</td><td>142.3</td><td>210.2</td><td>250.2</td><td>280.2</td><td></td></tr><tr><td>Retirement pension obligations</td><td>45.2</td><td>43.2</td><td>47.7</td><td>53.5</td><td>44.5</td><td>43.8</td><td>38.2</td><td>29.2</td><td>31.6</td><td>13.6</td><td>13.6</td><td>13.6</td><td>13.6</td><td></td></tr><tr><td>Deferred tax liabilities</td><td>6.3</td><td>9.5</td><td>1.5</td><td>0.4</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td></td></tr><tr><td>Other liabilities, noncurrent</td><td>16.0</td><td>18.5</td><td>17.9</td><td>22.5</td><td>23.6</td><td>25.2</td><td>30.0</td><td>36.7</td><td>36.9</td><td>46.6</td><td>46.6</td><td>46.6</td><td>46.6</td><td></td></tr><tr><td>Total Non Current Liabilities</td><td>219.7</td><td>213.4</td><td>206.5</td><td>201.9</td><td>225.2</td><td>242.1</td><td>222.8</td><td>226.1</td><td>219.8</td><td>202.5</td><td>270.4</td><td>310.4</td><td>340.4</td><td>12.2%</td></tr><tr><td>Common stock</td><td>69.4</td><td>69.4</td><td>69.4</td><td>69.4</td><td>69.4</td><td>69.4</td><td>69.4</td><td>69.4</td><td>69.4</td><td>69.4</td><td>69.4</td><td>69.4</td><td>69.4</td><td></td></tr><tr><td>Additional paid-in capital</td><td>21.6</td><td>22.3</td><td>22.5</td><td>22.8</td><td>23.0</td><td>23.2</td><td>23.2</td><td>23.2</td><td>23.9</td><td>23.8</td><td>23.8</td><td>23.8</td><td>23.8</td><td></td></tr><tr><td>Retained earnings</td><td>103.9</td><td>128.1</td><td>151.7</td><td>165.1</td><td>168.5</td><td>174.3</td><td>188.8</td><td>192.9</td><td>198.8</td><td>264.7</td><td>332.6</td><td>449.5</td><td>599.7</td><td></td></tr><tr><td>Treasury stocks</td><td>-0.6</td><td>-0.6</td><td>-0.6</td><td>-0.6</td><td>-0.6</td><td>-0.9</td><td>-0.9</td><td>-0.7</td><td>-0.7</td><td>-1.7</td><td>-1.7</td><td>-1.7</td><td>-1.7</td><td></td></tr><tr><td>Shareholders&#x27; Equity</td><td>194.3</td><td>219.2</td><td>243.1</td><td>256.7</td><td>260.4</td><td>266.0</td><td>280.6</td><td>284.7</td><td>291.5</td><td>356.2</td><td>424.0</td><td>540.9</td><td>691.1</td><td>27.7%</td></tr><tr><td>Noncontrolling interests</td><td>30.3</td><td>35.6</td><td>32.3</td><td>32.8</td><td>31.7</td><td>34.8</td><td>27.4</td><td>29.9</td><td>32.3</td><td>18.2</td><td>21.0</td><td>23.8</td><td>26.6</td><td></td></tr><tr><td>Accumulated OCI</td><td>12.4</td><td>17.3</td><td>4.6</td><td>-16.4</td><td>-0.5</td><td>13.2</td><td>23.0</td><td>43.4</td><td>49.9</td><td>60.9</td><td>60.9</td><td>60.9</td><td>60.9</td><td></td></tr><tr><td>Liabs+Shareholders&#x27; Equity</td><td>750.1</td><td>815.8</td><td>818.0</td><td>794.6</td><td>832.0</td><td>935.9</td><td>934.8</td><td>985.0</td><td>988.1</td><td>1,066.4</td><td>1,215.6</td><td>1,398.7</td><td>1,607.9</td><td>15.0%</td></tr></table>
+
+<table><tr><td>(Unit: JPYbn)C/F</td><td>J-GAAPF2016</td><td>J-GAAPF2017</td><td>J-GAAPF2018</td><td>J-GAAPF2019</td><td>J-GAAPF2020</td><td>J-GAAPF2021</td><td>J-GAAPF2022</td><td>J-GAAPF2023</td><td>J-GAAPF2024</td><td>J-GAAPF2025</td><td>J-GAAPF2026e</td><td>J-GAAPF2027e</td><td>J-GAAPF2028e</td><td>CAGR26e-28e</td></tr><tr><td>Net Income</td><td>17.6</td><td>28.5</td><td>29.1</td><td>17.6</td><td>10.0</td><td>10.1</td><td>17.9</td><td>6.5</td><td>33.4</td><td>72.5</td><td>83.3</td><td>133.7</td><td>171.2</td><td></td></tr><tr><td>Depreciation</td><td>23.4</td><td>25.1</td><td>26.3</td><td>29.4</td><td>32.2</td><td>33.7</td><td>39.1</td><td>39.0</td><td>41.3</td><td>43.2</td><td>50.0</td><td>56.5</td><td>62.0</td><td></td></tr><tr><td>Goodwill amortization</td><td>0.6</td><td>0.6</td><td>0.6</td><td>0.7</td><td>0.7</td><td>0.7</td><td>0.7</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td></td></tr><tr><td>Change in accounts receivable</td><td>-10.9</td><td>-26.4</td><td>1.2</td><td>23.5</td><td>-13.8</td><td>-28.2</td><td>5.8</td><td>-5.9</td><td>-7.2</td><td>-23.8</td><td>-29.4</td><td>-50.2</td><td>-43.6</td><td></td></tr><tr><td>Change in inventories</td><td>-7.5</td><td>-9.4</td><td>-11.5</td><td>4.1</td><td>-13.8</td><td>-36.0</td><td>-3.4</td><td>-5.0</td><td>-7.6</td><td>-26.1</td><td>-25.5</td><td>-28.3</td><td>-24.5</td><td></td></tr><tr><td>Change in accounts payable</td><td>7.3</td><td>17.1</td><td>6.0</td><td>-17.3</td><td>12.2</td><td>11.9</td><td>-8.7</td><td>-3.9</td><td>2.5</td><td>5.9</td><td>32.2</td><td>23.4</td><td>21.3</td><td></td></tr><tr><td>Other operating cash flow</td><td>10.0</td><td>2.9</td><td>-5.2</td><td>-16.1</td><td>-27.9</td><td>-5.4</td><td>-14.8</td><td>1.3</td><td>-2.6</td><td>-43.7</td><td>-25.2</td><td>-37.2</td><td>-45.2</td><td></td></tr><tr><td>Cash flow from operating activities</td><td>40.4</td><td>38.4</td><td>46.5</td><td>41.9</td><td>-0.5</td><td>-13.3</td><td>36.5</td><td>31.9</td><td>59.8</td><td>28.1</td><td>85.4</td><td>97.9</td><td>141.1</td><td>28.6%</td></tr><tr><td>Capital Expenditure</td><td>-28.4</td><td>-34.3</td><td>-43.1</td><td>-47.3</td><td>-33.4</td><td>-36.5</td><td>-35.9</td><td>-36.4</td><td>-36.7</td><td>-46.1</td><td>-150.0</td><td>-140.0</td><td>-140.0</td><td></td></tr><tr><td>Purchase of intangible assets</td><td>2.5</td><td>3.5</td><td>4.0</td><td>6.6</td><td>7.3</td><td>3.5</td><td>3.4</td><td>3.8</td><td>4.8</td><td>6.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td></td></tr><tr><td>Change in investment securities</td><td>-1.2</td><td>-0.3</td><td>6.1</td><td>9.4</td><td>12.7</td><td>3.1</td><td>18.6</td><td>17.6</td><td>43.7</td><td>29.3</td><td>0.0</td><td>0.0</td><td>0.0</td><td></td></tr><tr><td>Net disposals (acquisitions)</td><td>0.0</td><td>0.1</td><td>1.8</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td></td></tr><tr><td>Other investment cash flow</td><td>-4.2</td><td>3.8</td><td>8.1</td><td>11.4</td><td>26.1</td><td>-3.1</td><td>-1.0</td><td>-2.1</td><td>-9.4</td><td>-24.3</td><td>0.0</td><td>0.0</td><td>0.0</td><td></td></tr><tr><td>Cash flow from investing activities</td><td>-36.4</td><td>-34.3</td><td>-31.0</td><td>-33.1</td><td>-1.9</td><td>-40.1</td><td>-21.7</td><td>-24.8</td><td>-7.2</td><td>-47.1</td><td>-150.0</td><td>-140.0</td><td>-140.0</td><td>-3.4%</td></tr><tr><td>Change in short-term debt</td><td>-3.1</td><td>0.9</td><td>4.1</td><td>16.7</td><td>17.0</td><td>41.1</td><td>-24.1</td><td>-4.5</td><td>-33.6</td><td>18.1</td><td>-21.5</td><td>0.0</td><td>5.0</td><td></td></tr><tr><td>Change in long-term debt</td><td>-2.5</td><td>1.9</td><td>-15.2</td><td>-8.5</td><td>25.9</td><td>1.3</td><td>-2.4</td><td>4.2</td><td>1.2</td><td>15.8</td><td>67.9</td><td>40.0</td><td>30.0</td><td></td></tr><tr><td>Net share issuance (repurchase)</td><td>-0.4</td><td>-0.0</td><td>-0.0</td><td>-0.0</td><td>-0.0</td><td>-0.4</td><td>0.0</td><td>0.2</td><td>0.8</td><td>-1.2</td><td>0.0</td><td>0.0</td><td>0.0</td><td></td></tr><tr><td>Dividends paid</td><td>-3.5</td><td>-5.1</td><td>-7.9</td><td>-7.4</td><td>-6.0</td><td>-4.2</td><td>-4.2</td><td>-5.6</td><td>-4.2</td><td>-8.5</td><td>-15.4</td><td>-16.8</td><td>-21.0</td><td></td></tr><tr><td>Other financial cash flow</td><td>-0.9</td><td>0.4</td><td>-0.4</td><td>-1.1</td><td>-1.7</td><td>-2.7</td><td>-3.7</td><td>-3.6</td><td>-8.3</td><td>-4.3</td><td>0.0</td><td>0.0</td><td>0.0</td><td></td></tr><tr><td>Cash flow from financing activities</td><td>-10.4</td><td>-1.9</td><td>-19.4</td><td>-0.2</td><td>35.1</td><td>35.0</td><td>-34.5</td><td>-9.3</td><td>-44.2</td><td>19.9</td><td>31.0</td><td>23.2</td><td>14.0</td><td>-32.8%</td></tr><tr><td>Net change in cash &amp; cash equivalents</td><td>-5.5</td><td>3.6</td><td>-2.9</td><td>8.2</td><td>32.1</td><td>-19.6</td><td>-15.7</td><td>1.1</td><td>13.0</td><td>4.4</td><td>-33.6</td><td>-18.9</td><td>15.1</td><td></td></tr><tr><td>FX effect</td><td>-0.3</td><td>1.0</td><td>0.9</td><td>-0.9</td><td>-0.6</td><td>-1.8</td><td>2.8</td><td>3.0</td><td>3.3</td><td>2.6</td><td>0.0</td><td>0.0</td><td>0.0</td><td></td></tr><tr><td>Other</td><td>1.1</td><td>0.4</td><td>0.2</td><td>0.5</td><td>-0.0</td><td>0.6</td><td>1.2</td><td>0.4</td><td>1.3</td><td>0.8</td><td>0.0</td><td>0.0</td><td>0.0</td><td></td></tr><tr><td>Cash at end of period</td><td>46.1</td><td>49.8</td><td>46.8</td><td>55.1</td><td>87.2</td><td>67.6</td><td>52.0</td><td>53.1</td><td>66.1</td><td>70.5</td><td>36.8</td><td>18.0</td><td>33.1</td><td>-5.2%</td></tr></table>
+
+Source: MS, e = MS estimates
+
+Exhibit 32: Financial summary (3)
+
+<table><tr><td rowspan="2">(Unit: JPYbn)P/L</td><td colspan="4">F2025</td><td colspan="4">F2026</td><td colspan="4">F2027</td><td colspan="4">F2028</td></tr><tr><td>1Q</td><td>2Q</td><td>3Q</td><td>4Q</td><td>1Qe</td><td>2Qe</td><td>3Qe</td><td>4Qe</td><td>1Qe</td><td>2Qe</td><td>3Qe</td><td>4Qe</td><td>1Qe</td><td>2Qe</td><td>3Qe</td><td>4Qe</td></tr><tr><td>Revenue</td><td>293.7</td><td>316.9</td><td>338.2</td><td>358.7</td><td>348.9</td><td>357.6</td><td>378.7</td><td>408.7</td><td>417.9</td><td>427.6</td><td>440.4</td><td>461.4</td><td>478.7</td><td>481.0</td><td>497.0</td><td>510.7</td></tr><tr><td>Communications Solutions</td><td>47.0</td><td>56.4</td><td>56.0</td><td>69.9</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>Energy Infrastructure</td><td>33.3</td><td>35.5</td><td>33.9</td><td>38.9</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>Automotive Products &amp; Batteries</td><td>96.2</td><td>98.5</td><td>110.8</td><td>92.3</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>Electronics Component Materials</td><td>77.4</td><td>79.9</td><td>96.9</td><td>113.0</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>Functional Products</td><td>37.3</td><td>43.4</td><td>38.5</td><td>41.9</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>Service and Developments, etc.</td><td>9.7</td><td>10.1</td><td>10.6</td><td>11.8</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>Adjustment</td><td>-7.3</td><td>-6.9</td><td>-8.5</td><td>-9.1</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>New Revenue</td><td></td><td></td><td></td><td></td><td>348.9</td><td>357.6</td><td>378.7</td><td>408.7</td><td>417.9</td><td>427.6</td><td>440.4</td><td>461.4</td><td>478.7</td><td>481.0</td><td>497.0</td><td>510.7</td></tr><tr><td>Optical Solutions</td><td></td><td></td><td></td><td></td><td>57.8</td><td>62.1</td><td>67.2</td><td>76.2</td><td>74.6</td><td>78.1</td><td>82.8</td><td>90.7</td><td>89.8</td><td>94.1</td><td>99.6</td><td>108.3</td></tr><tr><td>Digital Infrastructure Components</td><td></td><td></td><td></td><td></td><td>59.6</td><td>65.0</td><td>81.0</td><td>100.0</td><td>111.8</td><td>119.0</td><td>126.6</td><td>137.7</td><td>154.4</td><td>154.4</td><td>164.4</td><td>166.4</td></tr><tr><td>Energy Infrastructure</td><td></td><td></td><td></td><td></td><td>35.5</td><td>35.5</td><td>35.5</td><td>35.5</td><td>35.5</td><td>35.5</td><td>36.0</td><td>36.0</td><td>35.5</td><td>35.5</td><td>36.0</td><td>36.0</td></tr><tr><td>Automotive Systems</td><td></td><td></td><td></td><td></td><td>92.0</td><td>90.0</td><td>90.0</td><td>92.0</td><td>92.0</td><td>90.0</td><td>90.0</td><td>92.0</td><td>95.0</td><td>92.0</td><td>92.0</td><td>95.0</td></tr><tr><td>Metal Solutions</td><td></td><td></td><td></td><td></td><td>110.0</td><td>111.0</td><td>111.0</td><td>111.0</td><td>110.0</td><td>111.0</td><td>111.0</td><td>111.0</td><td>110.0</td><td>111.0</td><td>111.0</td><td>111.0</td></tr><tr><td>Service and Developments, etc.</td><td></td><td></td><td></td><td></td><td>13.0</td><td>13.0</td><td>13.0</td><td>13.0</td><td>13.0</td><td>13.0</td><td>13.0</td><td>13.0</td><td>13.0</td><td>13.0</td><td>13.0</td><td>13.0</td></tr><tr><td>Elimination of intra-company transactions</td><td></td><td></td><td></td><td></td><td>-19.0</td><td>-19.0</td><td>-19.0</td><td>-19.0</td><td>-19.0</td><td>-19.0</td><td>-19.0</td><td>-19.0</td><td>-19.0</td><td>-19.0</td><td>-19.0</td><td>-19.0</td></tr><tr><td>Revenue Growth (Y/Y, %)</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>19.8</td><td>19.6</td><td>16.3</td><td>12.9</td><td>14.6</td><td>12.5</td><td>12.9</td><td>10.7</td></tr><tr><td>Optical Solutions</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>29.0</td><td>25.8</td><td>23.2</td><td>19.0</td><td>20.4</td><td>20.5</td><td>20.3</td><td>19.4</td></tr><tr><td>Digital Infrastructure Components</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>87.6</td><td>83.1</td><td>56.3</td><td>37.7</td><td>38.1</td><td>29.7</td><td>29.9</td><td>20.8</td></tr><tr><td>Energy Infrastructure</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>0.0</td><td>0.0</td><td>1.4</td><td>1.4</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td></tr><tr><td>Automotive Systems</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>3.3</td><td>2.2</td><td>2.2</td><td>3.3</td></tr><tr><td>Metal Solutions</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td></tr><tr><td>Service and Developments, etc.</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td></tr><tr><td>Operating Profit</td><td>8.4</td><td>10.9</td><td>15.8</td><td>28.7</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>Communications Solutions</td><td>-0.7</td><td>0.9</td><td>2.7</td><td>9.0</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>Energy Infrastructure</td><td>0.8</td><td>1.8</td><td>3.0</td><td>4.1</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>Automotive Products &amp; Batteries</td><td>5.6</td><td>5.2</td><td>8.1</td><td>9.0</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>Electronics Component Materials</td><td>1.0</td><td>1.2</td><td>0.2</td><td>3.4</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>Functional Products</td><td>4.0</td><td>3.4</td><td>3.3</td><td>4.7</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>Service and Developments, etc.</td><td>-2.1</td><td>-1.7</td><td>-1.3</td><td>-1.7</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>Adjustment</td><td>-0.2</td><td>0.1</td><td>-0.0</td><td>-0.0</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>Operating Profit</td><td></td><td></td><td></td><td></td><td>15.4</td><td>19.9</td><td>28.1</td><td>36.6</td><td>31.2</td><td>36.4</td><td>42.4</td><td>48.0</td><td>43.7</td><td>47.1</td><td>53.7</td><td>57.5</td></tr><tr><td>Optical Solutions</td><td></td><td></td><td></td><td></td><td>4.7</td><td>5.7</td><td>9.0</td><td>10.5</td><td>9.1</td><td>10.3</td><td>12.6</td><td>14.2</td><td>11.1</td><td>12.5</td><td>15.1</td><td>17.1</td></tr><tr><td>Digital Infrastructure Components</td><td></td><td></td><td></td><td></td><td>6.1</td><td>7.5</td><td>10.7</td><td>15.3</td><td>17.4</td><td>19.3</td><td>21.2</td><td>23.3</td><td>27.7</td><td>27.7</td><td>29.9</td><td>30.1</td></tr><tr><td>Energy Infrastructure</td><td></td><td></td><td></td><td></td><td>0.8</td><td>2.1</td><td>2.3</td><td>3.4</td><td>0.8</td><td>2.1</td><td>2.3</td><td>3.4</td><td>0.8</td><td>2.1</td><td>2.3</td><td>3.4</td></tr><tr><td>Automotive Systems</td><td></td><td></td><td></td><td></td><td>4.1</td><td>4.9</td><td>5.8</td><td>7.2</td><td>4.1</td><td>4.9</td><td>5.8</td><td>7.2</td><td>4.3</td><td>5.0</td><td>5.9</td><td>7.4</td></tr><tr><td>Metal Solutions</td><td></td><td></td><td></td><td></td><td>1.3</td><td>1.3</td><td>1.3</td><td>1.2</td><td>1.3</td><td>1.3</td><td>1.5</td><td>1.4</td><td>1.3</td><td>1.3</td><td>1.5</td><td>1.4</td></tr><tr><td>Service and Developments, etc.</td><td></td><td></td><td></td><td></td><td>-1.5</td><td>-1.5</td><td>-1.0</td><td>-1.0</td><td>-1.5</td><td>-1.5</td><td>-1.0</td><td>-1.0</td><td>-1.5</td><td>-1.5</td><td>-1.0</td><td>-1.0</td></tr><tr><td>Elimination of intra-company transactions</td><td></td><td></td><td></td><td></td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>-0.5</td><td>0.0</td><td>0.0</td><td>0.0</td><td>-0.9</td></tr><tr><td>Operating Profit Margin (%)</td><td></td><td></td><td></td><td></td><td>4.4</td><td>5.6</td><td>7.4</td><td>9.0</td><td>7.5</td><td>8.5</td><td>9.6</td><td>10.4</td><td>9.1</td><td>9.8</td><td>10.8</td><td>11.3</td></tr><tr><td>Optical Solutions</td><td></td><td></td><td></td><td></td><td>8.1</td><td>9.2</td><td>13.4</td><td>13.8</td><td>12.2</td><td>13.2</td><td>15.2</td><td>15.7</td><td>12.4</td><td>13.3</td><td>15.2</td><td>15.8</td></tr><tr><td>Digital Infrastructure Components</td><td></td><td></td><td></td><td></td><td>10.2</td><td>11.5</td><td>13.1</td><td>15.3</td><td>15.6</td><td>16.2</td><td>16.7</td><td>16.9</td><td>18.0</td><td>17.9</td><td>18.2</td><td>18.1</td></tr><tr><td>Energy Infrastructure</td><td></td><td></td><td></td><td></td><td>2.3</td><td>5.9</td><td>6.5</td><td>9.6</td><td>2.3</td><td>5.9</td><td>6.4</td><td>9.4</td><td>2.3</td><td>5.9</td><td>6.4</td><td>9.4</td></tr><tr><td>Automotive Systems</td><td></td><td></td><td></td><td></td><td>4.5</td><td>5.4</td><td>6.4</td><td>7.8</td><td>4.5</td><td>5.4</td><td>6.4</td><td>7.8</td><td>4.5</td><td>5.4</td><td>6.4</td><td>7.8</td></tr><tr><td>Metal Solutions</td><td></td><td></td><td></td><td></td><td>1.1</td><td>1.1</td><td>1.2</td><td>1.1</td><td>1.2</td><td>1.2</td><td>1.4</td><td>1.3</td><td>1.2</td><td>1.2</td><td>1.4</td><td>1.3</td></tr><tr><td>Service and Developments, etc.</td><td></td><td></td><td></td><td></td><td>-11.5</td><td>-11.5</td><td>-7.7</td><td>-7.7</td><td>-11.5</td><td>-11.5</td><td>-7.7</td><td>-7.7</td><td>-11.5</td><td>-11.5</td><td>-7.7</td><td>-7.7</td></tr><tr><td>Equity Method Income</td><td>2.1</td><td>3.0</td><td>4.3</td><td>7.2</td><td>7.0</td><td>7.0</td><td>7.0</td><td>7.0</td><td>10.0</td><td>10.0</td><td>10.0</td><td>10.0</td><td>12.0</td><td>12.0</td><td>12.0</td><td>12.0</td></tr><tr><td>Other non-operating income</td><td>-2.8</td><td>-1.1</td><td>0.2</td><td>-1.5</td><td>13.3</td><td>17.8</td><td>26.0</td><td>34.5</td><td>29.1</td><td>34.3</td><td>40.3</td><td>45.9</td><td>41.6</td><td>45.0</td><td>51.6</td><td>55.4</td></tr><tr><td>Recurring Profit</td><td>7.8</td><td>12.7</td><td>20.3</td><td>34.4</td><td>20.3</td><td>24.8</td><td>33.0</td><td>41.5</td><td>39.1</td><td>44.3</td><td>50.3</td><td>55.9</td><td>53.6</td><td>57.0</td><td>63.6</td><td>67.4</td></tr><tr><td>One-off Profit / Loss, net</td><td>-0.1</td><td>0.5</td><td>10.2</td><td>19.2</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td></tr><tr><td>Pretax Profit</td><td>7.7</td><td>13.2</td><td>30.5</td><td>53.6</td><td>20.3</td><td>24.8</td><td>33.0</td><td>41.5</td><td>39.1</td><td>44.3</td><td>50.3</td><td>55.9</td><td>53.6</td><td>57.0</td><td>63.6</td><td>67.4</td></tr><tr><td>Tax</td><td>1.8</td><td>4.5</td><td>7.4</td><td>15.3</td><td>5.7</td><td>6.9</td><td>9.3</td><td>11.6</td><td>11.0</td><td>12.4</td><td>14.0</td><td>15.7</td><td>15.0</td><td>16.0</td><td>17.8</td><td>18.8</td></tr><tr><td>Non-controlling Interest</td><td>0.7</td><td>0.9</td><td>0.5</td><td>1.3</td><td>0.7</td><td>0.7</td><td>0.7</td><td>0.7</td><td>0.7</td><td>0.7</td><td>0.7</td><td>0.7</td><td>0.7</td><td>0.7</td><td>0.7</td><td>0.7</td></tr><tr><td>Net Income for Shareholders</td><td>5.2</td><td>7.8</td><td>22.6</td><td>37.0</td><td>13.9</td><td>17.2</td><td>23.0</td><td>29.2</td><td>27.4</td><td>31.2</td><td>35.6</td><td>39.5</td><td>37.9</td><td>40.3</td><td>45.1</td><td>47.9</td></tr></table>
+
+Note: Segments changed from F3/26. Source: MS, e = MS estimates
+
+## Risk Reward – Furukawa Electric (5801.T)
+
+DC-related products drive earnings growth
+
+## PRICE TARGET ¥66,000
+
+We use a residual income model, with assumptions of 9.3% for capital cost (2.0% risk-free rate, 6.2% equity risk premium, 1.18 beta), 45% payout ratio, mid-term growth rate of \~17%, and terminal growth rate of 3.5%. Our PT equates to P/E of 34.6x on our F3/28e EPS of ¥1,909.
+
+![](images/464dc9d57db2f952154d96945aab07edb69a1a9eb3c1c99dc89fc554bfe67ca0.jpg)
+
+<details>
+<summary>bar-line hybrid chart</summary>
+
+| Category | Value     |
+| -------- | --------- |
+| MS PT    | ¥58,701   |
+| MS Estimates | ¥76,000.00 |
+</details>
+
+RISK REWARD CHART  
+![](images/45ed9a339608e74bec09aa46744f05cdf5682a6ef83e0e4f1af5a88c6f099851.jpg)
+
+<details>
+<summary>line chart</summary>
+
+| Date    | Historical Stock Performance | Current Stock Price | Price Target |
+|---------|-------------------------------|---------------------|--------------|
+| JUN '25 | ~5,000                        | -                   | -            |
+| DEC '25 | ~10,000                       | -                   | -            |
+| JUN '26 | $140,780                      | $140,780            | -            |
+| JUN '27 | -                             | $66,000             | $66,000      |
+</details>
+
+Source: Refinitiv, MS
+
+## OVERWEIGHT THESIS
+
+■ We assign an OW rating from a relative perspective within the industry.  
+■ DC-focused communications solutions and functional products are the earnings drivers..  
+■ With major investments in liquid-cooled modules already in place, the company is moving into the recouping phase.
+
+Consensus Rating Distribution  
+![](images/e146083fb9f9dbd76e57bec4ec73b84e1a9a6b38ef47d1bec65ff03a74ee60bc.jpg)
+
+<details>
+<summary>bar chart</summary>
+
+| Category       | Value |
+| -------------- | ----- |
+| Overweight     | 70%   |
+| Equal-weight   | 30%   |
+| Underweight    | 0%    |
+</details>
+
+Source: Refinitiv, MS
+
+## Risk Reward Themes
+
+New Data Era: Positive
+
+View descriptions of Risk Rewards Themes here
+
+## BULL CASE
+
+## ¥81,000
+
+## Share price aligned to residual income model
+
+Further growth for fiberoptic cable business in N. America and optical components for data centers. Profit surpasses the base case by 20% from F3/27. Equates to P/E of 38.2x on estimated F3/28 EPS of ¥2,119.
+
+## BASE CASE
+
+## ¥66,000
+
+## Derived from a residual income model
+
+We forecast recovery in communications solutions, growth in functional products profit, and continuing high margins on automotive parts. Our OP forecasts are ¥100bn for F3/27, ¥158bn for F3/28, ¥202bn for F3/29, for a growth rate of +42.1% over that period. Equates to P/E of 34.6x on our F3/28e EPS of ¥1,909.
+
+## BEAR CASE
+
+## ¥29,000
+
+## Share price aligned to residual income model
+
+Recovery in communications solutions faces setbacks, and automotive parts margins shrink. Profit is 30% below the base case from F3/27. Equates to P/E of 25.1x on estimated F3/28 EPS of ¥1,594.
+
+## Risk Reward – Furukawa Electric (5801.T)
+
+KEY EARNINGS INPUTS
+
+<table><tr><td>Drivers</td><td>2026</td><td>2027e</td><td>2028e</td><td>2029e</td></tr><tr><td>Communications Solutions OP (¥, mn)</td><td>11,811</td><td>32,300</td><td>59,800</td><td>80,900</td></tr><tr><td>Energy Infrastructure OP (¥, mn)</td><td>9,627</td><td>8,600</td><td>8,600</td><td>8,600</td></tr><tr><td>Functional Products OP (¥, mn)</td><td>15,379</td><td>32,300</td><td>62,800</td><td>87,600</td></tr></table>
+
+CATALYST CALENDAR
+
+<table><tr><td>Date</td><td>Event</td><td>Source: Refinitiv, MS</td></tr><tr><td>25 Jun 2026 - 29 Jun 2026</td><td>Furukawa Electric Co Ltd Annual Shareholders Meeting</td><td></td></tr></table>
+
+## INVESTMENT DRIVERS
+
+- Increased fiberoptic cable sales volume  
+- Increased optical connector and DFB sales volumes  
+- Increased sales volumes for thermal products  
+• Management attention to capital efficiency
+
+## GLOBAL REVENUE EXPOSURE
+
+![](images/f6480cd29fff82381b7b5ad96622c2e30210ce3dc350f8f60e3199f66b3878e9.jpg)
+
+<details>
+<summary>pie chart</summary>
+
+| Region | Percentage (%) |
+| :--- | :--- |
+| Europe ex UK | 0-10 |
+| India | 0-10 |
+| Latin America | 0-10 |
+| Mainland China | 0-10 |
+| North America | 0-10 |
+| UK | 0-10 |
+| APAC, ex Japan, Mainland China and India | 20-30 |
+| Japan | 50-60 |
+</details>
+
+Source: MS Estimate View explanation of regional hierarchies here
+
+## MS ALPHA MODELS
+
+5/5 MOST
+
+3 Month Horizon
+
+Source: Refinitiv, FactSet, MS; 1 is the highest favored Quintile and 5 is the least favored Quintile
+
+## RISKS TO PT/RATING
+
+## RISKS TO UPSIDE
+
+- Higher sales volumes on healthier business sentiment than expected  
+- Faster improvement in product mix for communications solutions than expected  
+- Decline in sales volume on weaker business sentiment than expected  
+- Delayed price pass-through due to sharp rises in raw material costs and other material costs  
+• Sharper yen appreciation than anticipated
+
+## RISKS TO DOWNSIDE
+
+## OWNERSHIP POSITIONING
+
+Inst. Owners, % Active
+
+66.6%
+
+![](images/84e54b9203ba5a11931f73ea643e46938d76d9169a3740e584eca9af3f33df76.jpg)
+
+Source: Refinitiv, MS
+
+MS ESTIMATES VS. CONSENSUS
+
+<table><tr><td colspan="3">FY Mar 2028e</td></tr><tr><td rowspan="2">EBITDA (¥, bn)</td><td>138.5</td><td>214</td></tr><tr><td>193.7</td><td>225.1</td></tr><tr><td rowspan="2">Net income (¥, bn)</td><td>80.0</td><td>134</td></tr><tr><td>112.0</td><td></td></tr><tr><td rowspan="2">EPS (¥)</td><td>1,137.2</td><td>1,909.1</td></tr><tr><td>1,659.9</td><td>1,958.5</td></tr><tr><td rowspan="2">DPS (¥)</td><td>230.0</td><td>240.0</td></tr><tr><td>309.1</td><td>520.0</td></tr><tr><td rowspan="2">ROE (%)</td><td>19.4</td><td>27.6</td></tr><tr><td>22.4</td><td></td></tr></table>
+
+Source: Refinitiv, MS
+
+# Earnings Summary: Sumitomo Electric (5802.T)
+
+Exhibit 33: Financial Summary (1)
+
+<table><tr><td>(Unit: JPYbn)P/L</td><td>J-GAAPF2016</td><td>J-GAAPF2017</td><td>J-GAAPF2018</td><td>J-GAAPF2019</td><td>J-GAAPF2020</td><td>J-GAAPF2021</td><td>J-GAAPF2022</td><td>J-GAAPF2023</td><td>J-GAAPF2024</td><td>J-GAAPF2025</td><td>J-GAAPF2026e</td><td>J-GAAPF2027e</td><td>J-GAAPF2028e</td><td>CAGR26e-28e</td></tr><tr><td>Revenue</td><td>2,814.5</td><td>3,082.2</td><td>3,178.0</td><td>3,107.0</td><td>2,918.6</td><td>3,367.9</td><td>4,005.6</td><td>4,402.8</td><td>4,679.8</td><td>5,110.2</td><td>5,186.1</td><td>5,516.5</td><td>5,914.7</td><td>6.8%</td></tr><tr><td>Automotive</td><td>1,513.2</td><td>1,632.0</td><td>1,709.4</td><td>1,683.6</td><td>1,602.0</td><td>1,754.2</td><td>2,186.8</td><td>2,596.4</td><td>2,734.7</td><td>2,937.2</td><td>2,942.5</td><td>2,981.9</td><td>3,022.1</td><td>1.3%</td></tr><tr><td>Infocommunications</td><td>198.2</td><td>220.3</td><td>208.4</td><td>217.4</td><td>224.6</td><td>239.2</td><td>250.3</td><td>206.1</td><td>223.3</td><td>326.6</td><td>546.5</td><td>801.0</td><td>992.0</td><td>34.7%</td></tr><tr><td>Electronics</td><td>251.1</td><td>246.3</td><td>228.9</td><td>252.2</td><td>252.6</td><td>292.5</td><td>366.0</td><td>356.5</td><td>377.2</td><td>409.1</td><td>406.6</td><td>410.1</td><td>412.1</td><td>0.7%</td></tr><tr><td>Environment and Energy</td><td>621.4</td><td>718.0</td><td>759.8</td><td>712.5</td><td>634.2</td><td>833.4</td><td>928.2</td><td>980.0</td><td>1,081.3</td><td>1,178.8</td><td>1,021.0</td><td>1,051.0</td><td>1,216.0</td><td>9.1%</td></tr><tr><td>Industrial Materials and Others</td><td>303.9</td><td>343.1</td><td>357.8</td><td>331.4</td><td>302.5</td><td>327.9</td><td>363.3</td><td>364.2</td><td>372.7</td><td>388.4</td><td>409.5</td><td>412.5</td><td>412.5</td><td>0.4%</td></tr><tr><td>Eliminations and Corporate</td><td>-73.5</td><td>-77.4</td><td>-86.4</td><td>-90.1</td><td>-97.4</td><td>-79.3</td><td>-89.2</td><td>-100.3</td><td>-109.5</td><td>-129.9</td><td>-140.0</td><td>-140.0</td><td>-140.0</td><td></td></tr><tr><td>Revenue Growth (Y/Y, %)</td><td>-4.0</td><td>9.5</td><td>3.1</td><td>-2.2</td><td>-6.1</td><td>15.4</td><td>18.9</td><td>9.9</td><td>6.3</td><td>9.2</td><td>1.5</td><td>6.4</td><td>7.2</td><td></td></tr><tr><td>Automotive</td><td>-1.9</td><td>7.8</td><td>4.7</td><td>-1.5</td><td>-4.8</td><td>9.5</td><td>24.7</td><td>18.7</td><td>5.3</td><td>7.4</td><td>0.2</td><td>1.3</td><td>1.3</td><td></td></tr><tr><td>Infocommunications</td><td>7.3</td><td>11.1</td><td>-5.4</td><td>4.3</td><td>3.3</td><td>6.5</td><td>4.7</td><td>-17.7</td><td>8.3</td><td>46.3</td><td>67.3</td><td>46.6</td><td>23.8</td><td></td></tr><tr><td>Electronics</td><td>-19.5</td><td>-1.9</td><td>-7.1</td><td>10.2</td><td>0.2</td><td>15.8</td><td>25.1</td><td>-2.6</td><td>5.8</td><td>8.4</td><td>-0.6</td><td>0.9</td><td>0.5</td><td></td></tr><tr><td>Environment and Energy</td><td>-5.8</td><td>15.5</td><td>5.8</td><td>-6.2</td><td>-11.0</td><td>31.4</td><td>11.4</td><td>5.6</td><td>10.3</td><td>9.0</td><td>-13.4</td><td>2.9</td><td>15.7</td><td></td></tr><tr><td>Industrial Materials and Others</td><td>-2.6</td><td>12.9</td><td>4.3</td><td>-7.4</td><td>-8.7</td><td>8.4</td><td>10.8</td><td>0.2</td><td>2.3</td><td>4.2</td><td>5.4</td><td>0.7</td><td>0.0</td><td></td></tr><tr><td>Operating Profit</td><td>150.5</td><td>173.1</td><td>166.3</td><td>127.2</td><td>113.9</td><td>122.2</td><td>177.4</td><td>226.6</td><td>320.7</td><td>418.2</td><td>445.0</td><td>555.0</td><td>635.0</td><td>19.5%</td></tr><tr><td>Automotive</td><td>98.6</td><td>96.8</td><td>84.7</td><td>68.2</td><td>48.2</td><td>12.3</td><td>55.7</td><td>144.7</td><td>172.4</td><td>179.7</td><td>178.5</td><td>186.0</td><td>192.0</td><td>3.7%</td></tr><tr><td>Infocommunications</td><td>21.5</td><td>18.6</td><td>16.4</td><td>17.8</td><td>24.3</td><td>23.4</td><td>21.9</td><td>-11.6</td><td>19.9</td><td>77.4</td><td>150.0</td><td>232.0</td><td>296.0</td><td>40.5%</td></tr><tr><td>Electronics</td><td>-10.9</td><td>5.4</td><td>7.0</td><td>0.5</td><td>10.0</td><td>19.8</td><td>38.3</td><td>29.3</td><td>29.3</td><td>39.5</td><td>33.0</td><td>36.0</td><td>37.0</td><td>5.9%</td></tr><tr><td>Environment and Energy</td><td>20.8</td><td>24.1</td><td>30.1</td><td>27.1</td><td>25.0</td><td>44.0</td><td>37.9</td><td>42.9</td><td>78.7</td><td>90.6</td><td>50.0</td><td>64.0</td><td>73.0</td><td>20.8%</td></tr><tr><td>Industrial Materials and Others</td><td>20.5</td><td>28.2</td><td>28.2</td><td>13.4</td><td>6.7</td><td>23.0</td><td>24.0</td><td>21.1</td><td>20.6</td><td>31.4</td><td>33.5</td><td>37.0</td><td>37.0</td><td>5.1%</td></tr><tr><td>Eliminations and Corporate</td><td>-0.0</td><td>0.0</td><td>-0.1</td><td>0.1</td><td>-0.3</td><td>-0.3</td><td>-0.5</td><td>0.2</td><td>-0.3</td><td>-0.5</td><td>0.0</td><td>0.0</td><td>0.0</td><td></td></tr><tr><td>Operating Profit Margin (%)</td><td>5.3</td><td>5.6</td><td>5.2</td><td>4.1</td><td>3.9</td><td>3.6</td><td>4.4</td><td>5.1</td><td>6.9</td><td>8.2</td><td>8.6</td><td>10.1</td><td>10.7</td><td></td></tr><tr><td>Automotive</td><td>6.5</td><td>5.9</td><td>5.0</td><td>4.1</td><td>3.0</td><td>0.7</td><td>2.5</td><td>5.6</td><td>6.3</td><td>6.1</td><td>6.1</td><td>6.2</td><td>6.4</td><td></td></tr><tr><td>Infocommunications</td><td>10.8</td><td>8.4</td><td>7.9</td><td>8.2</td><td>10.8</td><td>9.8</td><td>8.8</td><td>-5.6</td><td>8.9</td><td>23.7</td><td>27.4</td><td>29.0</td><td>29.8</td><td></td></tr><tr><td>Electronics</td><td>-4.3</td><td>2.2</td><td>3.1</td><td>0.2</td><td>4.0</td><td>6.8</td><td>10.5</td><td>8.2</td><td>7.8</td><td>9.7</td><td>8.1</td><td>8.8</td><td>9.0</td><td></td></tr><tr><td>Environment and Energy</td><td>3.3</td><td>3.4</td><td>4.0</td><td>3.8</td><td>3.9</td><td>5.3</td><td>4.1</td><td>4.4</td><td>7.3</td><td>7.7</td><td>4.9</td><td>6.1</td><td>6.0</td><td></td></tr><tr><td>Industrial Materials and Others</td><td>6.7</td><td>8.2</td><td>7.9</td><td>4.1</td><td>2.2</td><td>7.0</td><td>6.6</td><td>5.8</td><td>5.5</td><td>8.1</td><td>8.2</td><td>9.0</td><td>9.0</td><td></td></tr><tr><td>Equity Method Income</td><td>28.2</td><td>27.8</td><td>25.1</td><td>11.8</td><td>12.5</td><td>20.6</td><td>11.5</td><td>20.2</td><td>14.8</td><td>31.4</td><td>32.0</td><td>32.0</td><td>32.0</td><td></td></tr><tr><td>Other non-operating income</td><td>-4.8</td><td>-5.9</td><td>-2.7</td><td>-8.5</td><td>-12.4</td><td>-4.6</td><td>-15.6</td><td>-31.5</td><td>-25.9</td><td>-18.3</td><td>-26.0</td><td>-26.0</td><td>-26.0</td><td></td></tr><tr><td>Recurring Profit</td><td>173.9</td><td>195.0</td><td>188.6</td><td>130.5</td><td>114.1</td><td>138.2</td><td>173.3</td><td>215.3</td><td>309.5</td><td>431.3</td><td>451.0</td><td>561.0</td><td>641.0</td><td>19.2%</td></tr><tr><td>One-off Profit / Loss, net</td><td>-6.1</td><td>-1.7</td><td>-7.3</td><td>2.7</td><td>-3.7</td><td>21.8</td><td>23.1</td><td>23.2</td><td>-5.4</td><td>73.9</td><td>5.0</td><td>5.0</td><td>5.0</td><td></td></tr><tr><td>Pretax Profit</td><td>167.8</td><td>193.3</td><td>181.4</td><td>133.2</td><td>110.3</td><td>159.9</td><td>196.5</td><td>238.5</td><td>304.1</td><td>505.2</td><td>456.0</td><td>566.0</td><td>646.0</td><td>19.0%</td></tr><tr><td>Tax</td><td>41.4</td><td>53.3</td><td>51.2</td><td>44.8</td><td>41.6</td><td>50.2</td><td>64.2</td><td>69.6</td><td>82.2</td><td>104.0</td><td>118.7</td><td>149.5</td><td>172.0</td><td></td></tr><tr><td>Non-controlling Interest</td><td>18.8</td><td>19.7</td><td>12.1</td><td>15.7</td><td>12.4</td><td>13.4</td><td>19.6</td><td>19.2</td><td>28.1</td><td>31.6</td><td>6.0</td><td>6.0</td><td>5.9</td><td></td></tr><tr><td>Net Income for Shareholders</td><td>107.6</td><td>120.3</td><td>118.1</td><td>72.7</td><td>56.3</td><td>96.3</td><td>112.7</td><td>149.7</td><td>193.8</td><td>369.5</td><td>331.3</td><td>410.5</td><td>468.1</td><td></td></tr></table>
+
+<table><tr><td>Capital Expenditure</td><td>183.7</td><td>171.1</td><td>190.3</td><td>208.8</td><td>172.2</td><td>189.7</td><td>208.3</td><td>193.8</td><td>243.3</td><td>243.2</td><td>277.4</td><td>297.4</td><td>317.4</td></tr><tr><td>Depreciation</td><td>130.7</td><td>141.4</td><td>148.9</td><td>163.6</td><td>168.0</td><td>180.5</td><td>196.0</td><td>206.3</td><td>206.2</td><td>209.8</td><td>235.0</td><td>245.0</td><td>255.0</td></tr><tr><td>Research &amp; Development</td><td>115.2</td><td>117.7</td><td>129.6</td><td>125.4</td><td>118.8</td><td>123.0</td><td>127.7</td><td>142.0</td><td>156.3</td><td>162.9</td><td>155.5</td><td>155.5</td><td>155.5</td></tr></table>
+
+<table><tr><td>OldF2026e</td><td>OldF2027e</td><td>OldF2028e</td></tr><tr><td>4,973.8</td><td>5,210.5</td><td>5,432.0</td></tr><tr><td>2,844.9</td><td>2,882.6</td><td>2,921.1</td></tr><tr><td>522.0</td><td>666.0</td><td>802.0</td></tr><tr><td>384.9</td><td>386.9</td><td>388.9</td></tr><tr><td>965.0</td><td>1,015.0</td><td>1,060.0</td></tr><tr><td>397.0</td><td>400.0</td><td>400.0</td></tr><tr><td>-140.0</td><td>-140.0</td><td>-140.0</td></tr><tr><td>0.8</td><td>4.8</td><td>4.3</td></tr><tr><td>0.1</td><td>1.3</td><td>1.3</td></tr><tr><td>61.6</td><td>27.6</td><td>20.4</td></tr><tr><td>-0.8</td><td>0.5</td><td>0.5</td></tr><tr><td>-16.5</td><td>5.2</td><td>4.4</td></tr><tr><td>1.8</td><td>0.8</td><td>0.0</td></tr><tr><td>435.0</td><td>505.0</td><td>565.0</td></tr><tr><td>171.0</td><td>177.0</td><td>183.0</td></tr><tr><td>143.0</td><td>193.0</td><td>238.0</td></tr><tr><td>35.0</td><td>36.0</td><td>36.0</td></tr><tr><td>54.0</td><td>64.0</td><td>73.0</td></tr><tr><td>32.0</td><td>34.5</td><td>34.5</td></tr><tr><td>0.0</td><td>0.0</td><td>0.0</td></tr><tr><td>8.7</td><td>9.7</td><td>10.4</td></tr><tr><td>6.0</td><td>6.2</td><td>6.3</td></tr><tr><td>27.4</td><td>29.0</td><td>29.7</td></tr><tr><td>9.1</td><td>9.3</td><td>9.3</td></tr><tr><td>5.6</td><td>6.3</td><td>6.9</td></tr><tr><td>8.1</td><td>8.6</td><td>8.6</td></tr><tr><td>32.0</td><td>32.0</td><td>32.0</td></tr><tr><td>-26.0</td><td>-26.0</td><td>-26.0</td></tr><tr><td>441.0</td><td>511.0</td><td>571.0</td></tr><tr><td>5.0</td><td>5.0</td><td>5.0</td></tr><tr><td>446.0</td><td>516.0</td><td>576.0</td></tr><tr><td>115.9</td><td>135.5</td><td>152.3</td></tr><tr><td>6.0</td><td>6.0</td><td>6.0</td></tr><tr><td>324.1</td><td>374.5</td><td>417.7</td></tr></table>
+
+<table><tr><td colspan="15">Per Share Data</td></tr><tr><td>EPS</td><td>137.6</td><td>154.3</td><td>151.4</td><td>93.2</td><td>72.2</td><td>123.5</td><td>144.5</td><td>192.0</td><td>248.5</td><td>473.8</td><td>424.8</td><td>526.3</td><td>600.2</td><td>18.9%</td></tr><tr><td>BPS</td><td>1,814.9</td><td>1,974.0</td><td>1,988.6</td><td>1,947.1</td><td>2,088.5</td><td>2,269.3</td><td>2,436.1</td><td>2,830.8</td><td>2,936.9</td><td>3,517.6</td><td>3,772.4</td><td>4,087.7</td><td>4,447.9</td><td>8.6%</td></tr><tr><td>DPS</td><td>38.0</td><td>46.0</td><td>48.0</td><td>40.0</td><td>32.0</td><td>50.0</td><td>50.0</td><td>77.0</td><td>97.0</td><td>154.0</td><td>170.0</td><td>211.0</td><td>240.0</td><td>18.8%</td></tr><tr><td>ROE (%)</td><td>7.7%</td><td>8.1%</td><td>7.6%</td><td>4.7%</td><td>3.6%</td><td>5.7%</td><td>6.1%</td><td>7.3%</td><td>8.6%</td><td>14.7%</td><td>11.7%</td><td>13.4%</td><td>14.1%</td><td></td></tr><tr><td>Dividend Payout Ration (%)</td><td>27.6</td><td>29.8</td><td>31.7</td><td>42.9</td><td>44.3</td><td>40.5</td><td>34.6</td><td>40.1</td><td>39.0</td><td>32.5</td><td>40.0</td><td>40.1</td><td>40.0</td><td></td></tr><tr><td>Shares outstanding</td><td>781.6</td><td>779.9</td><td>779.9</td><td>779.9</td><td>779.9</td><td>779.9</td><td>779.9</td><td>779.9</td><td>779.9</td><td>779.9</td><td>779.9</td><td>779.9</td><td>779.9</td><td></td></tr></table>
+
+<table><tr><td>283.3</td><td>303.3</td><td>323.3</td></tr><tr><td>235.0</td><td>245.0</td><td>255.0</td></tr><tr><td>155.5</td><td>155.5</td><td>155.5</td></tr></table>
+
+Source: MS, e = MS estimates
+
+Exhibit 34: Financial Summary (2)
+
+<table><tr><td>(Unit: JPYbn)B/S</td><td>J-GAAPF2016</td><td>J-GAAPF2017</td><td>J-GAAPF2018</td><td>J-GAAPF2019</td><td>J-GAAPF2020</td><td>J-GAAPF2021</td><td>J-GAAPF2022</td><td>J-GAAPF2023</td><td>J-GAAPF2024</td><td>J-GAAPF2025</td><td>J-GAAPF2026e</td><td>J-GAAPF2027e</td><td>J-GAAPF2028e</td><td>CAGR26e-28e</td></tr><tr><td>Cash &amp; Equivalents</td><td>180.0</td><td>180.1</td><td>168.9</td><td>249.0</td><td>251.4</td><td>255.5</td><td>279.4</td><td>268.3</td><td>294.5</td><td>235.9</td><td>438.8</td><td>521.5</td><td>606.9</td><td></td></tr><tr><td>Marketable Securities</td><td>0.8</td><td>0.9</td><td>0.4</td><td>2.0</td><td>3.0</td><td>4.0</td><td>4.0</td><td>1.5</td><td>1.4</td><td>1.4</td><td>1.4</td><td>1.4</td><td>1.4</td><td></td></tr><tr><td>Acct Receivable</td><td>648.4</td><td>668.6</td><td>708.6</td><td>670.3</td><td>755.3</td><td>784.6</td><td>842.8</td><td>912.4</td><td>911.9</td><td>948.2</td><td>1,010.6</td><td>1,075.0</td><td>1,152.6</td><td></td></tr><tr><td>Inventories</td><td>449.1</td><td>466.4</td><td>528.8</td><td>552.0</td><td>606.3</td><td>844.8</td><td>851.2</td><td>885.0</td><td>923.0</td><td>1,018.1</td><td>1,035.1</td><td>1,088.6</td><td>1,165.9</td><td></td></tr><tr><td>Other Current Assets</td><td>148.2</td><td>129.1</td><td>106.9</td><td>103.7</td><td>113.4</td><td>167.9</td><td>185.2</td><td>175.0</td><td>189.3</td><td>220.9</td><td>220.9</td><td>220.9</td><td>220.9</td><td></td></tr><tr><td>Total Current Assets</td><td>1,426.6</td><td>1,445.1</td><td>1,513.6</td><td>1,577.0</td><td>1,729.4</td><td>2,056.9</td><td>2,162.7</td><td>2,242.2</td><td>2,320.1</td><td>2,424.6</td><td>2,706.8</td><td>2,907.5</td><td>3,147.7</td><td></td></tr><tr><td>PP&amp;E, net</td><td>823.2</td><td>845.8</td><td>885.8</td><td>942.5</td><td>981.2</td><td>1,026.8</td><td>1,062.8</td><td>1,098.2</td><td>1,121.8</td><td>1,189.4</td><td>1,231.8</td><td>1,284.2</td><td>1,346.6</td><td></td></tr><tr><td>Goodwill and Goodwill-like Intangibles</td><td>11.0</td><td>9.1</td><td>2.5</td><td>2.8</td><td>1.6</td><td>1.6</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td></td></tr><tr><td>Amortizable Intangibles</td><td>43.4</td><td>40.0</td><td>38.2</td><td>35.1</td><td>34.6</td><td>34.4</td><td>36.7</td><td>39.8</td><td>61.4</td><td>62.1</td><td>62.1</td><td>62.1</td><td>62.1</td><td></td></tr><tr><td>Investments in securities</td><td>437.3</td><td>478.8</td><td>446.6</td><td>382.0</td><td>407.4</td><td>443.9</td><td>503.8</td><td>607.1</td><td>604.7</td><td>71.3</td><td>103.3</td><td>135.3</td><td>167.3</td><td></td></tr><tr><td>Deferred tax assets</td><td>19.7</td><td>17.0</td><td>33.4</td><td>38.2</td><td>29.5</td><td>32.3</td><td>30.9</td><td>32.0</td><td>39.0</td><td>41.7</td><td>41.7</td><td>41.7</td><td>41.7</td><td></td></tr><tr><td>Other assets, noncurrent</td><td>142.5</td><td>181.5</td><td>133.2</td><td>107.0</td><td>198.2</td><td>211.4</td><td>216.2</td><td>346.1</td><td>294.6</td><td>1,035.4</td><td>1,035.4</td><td>1,035.4</td><td>1,035.4</td><td></td></tr><tr><td>Total Non Current Assets</td><td>1,477.0</td><td>1,572.2</td><td>1,539.6</td><td>1,507.5</td><td>1,652.5</td><td>1,750.5</td><td>1,850.3</td><td>2,123.2</td><td>2,121.5</td><td>2,399.9</td><td>2,474.3</td><td>2,558.7</td><td>2,653.1</td><td>3.6%</td></tr><tr><td>Total Assets</td><td>2,903.6</td><td>3,017.3</td><td>3,053.3</td><td>3,084.5</td><td>3,381.9</td><td>3,807.4</td><td>4,013.0</td><td>4,365.4</td><td>4,441.6</td><td>4,824.5</td><td>5,181.1</td><td>5,466.2</td><td>5,800.9</td><td>5.8%</td></tr><tr><td>Accounts Payable</td><td>378.1</td><td>367.3</td><td>379.8</td><td>361.2</td><td>397.4</td><td>445.0</td><td>446.0</td><td>554.1</td><td>571.3</td><td>601.2</td><td>640.7</td><td>673.8</td><td>721.6</td><td></td></tr><tr><td>Short-term debt</td><td>194.6</td><td>186.9</td><td>248.6</td><td>307.6</td><td>334.7</td><td>500.2</td><td>608.2</td><td>395.6</td><td>346.7</td><td>274.0</td><td>346.7</td><td>346.7</td><td>346.7</td><td></td></tr><tr><td>Other liabilities, current</td><td>251.5</td><td>249.5</td><td>252.3</td><td>244.1</td><td>275.9</td><td>314.9</td><td>345.2</td><td>357.7</td><td>368.8</td><td>472.5</td><td>472.5</td><td>472.5</td><td>472.5</td><td></td></tr><tr><td>Total Current liabilities</td><td>824.2</td><td>803.7</td><td>880.8</td><td>912.8</td><td>1,008.1</td><td>1,260.1</td><td>1,399.4</td><td>1,307.4</td><td>1,286.8</td><td>1,347.8</td><td>1,459.9</td><td>1,493.0</td><td>1,540.9</td><td>2.7%</td></tr><tr><td>Long-term debt</td><td>313.9</td><td>301.4</td><td>288.2</td><td>278.4</td><td>337.1</td><td>307.1</td><td>290.4</td><td>339.5</td><td>341.3</td><td>301.5</td><td>341.3</td><td>341.3</td><td>341.3</td><td></td></tr><tr><td>Retirement pension obligations</td><td>54.6</td><td>54.7</td><td>55.9</td><td>58.0</td><td>49.6</td><td>46.0</td><td>45.8</td><td>52.9</td><td>51.8</td><td>53.9</td><td>53.9</td><td>53.9</td><td>53.9</td><td></td></tr><tr><td>Deferred tax liabilities</td><td>66.0</td><td>75.0</td><td>36.7</td><td>31.3</td><td>50.0</td><td>65.1</td><td>87.9</td><td>136.1</td><td>129.7</td><td>192.0</td><td>192.0</td><td>192.0</td><td>192.0</td><td></td></tr><tr><td>Other liabilities, noncurrent</td><td>18.5</td><td>18.4</td><td>15.5</td><td>37.2</td><td>44.7</td><td>76.2</td><td>78.7</td><td>97.6</td><td>101.6</td><td>94.3</td><td>94.3</td><td>94.3</td><td>94.3</td><td></td></tr><tr><td>Total Non Current Liabilities</td><td>452.9</td><td>449.5</td><td>396.2</td><td>404.9</td><td>481.3</td><td>494.4</td><td>502.8</td><td>626.1</td><td>624.3</td><td>641.8</td><td>681.5</td><td>681.5</td><td>681.5</td><td>0.0%</td></tr><tr><td>Common stock</td><td>99.7</td><td>99.7</td><td>99.7</td><td>99.7</td><td>99.7</td><td>99.7</td><td>99.7</td><td>99.7</td><td>99.7</td><td>99.7</td><td>99.7</td><td>99.7</td><td>99.7</td><td></td></tr><tr><td>Additional paid-in capital</td><td>170.8</td><td>170.8</td><td>170.9</td><td>170.9</td><td>170.9</td><td>170.5</td><td>166.8</td><td>165.4</td><td>165.3</td><td>141.9</td><td>141.9</td><td>141.9</td><td>141.9</td><td></td></tr><tr><td>Retained earnings</td><td>1,061.4</td><td>1,160.6</td><td>1,216.2</td><td>1,251.8</td><td>1,281.8</td><td>1,346.2</td><td>1,383.0</td><td>1,493.7</td><td>1,618.7</td><td>1,903.6</td><td>2,102.3</td><td>2,348.3</td><td>2,629.2</td><td></td></tr><tr><td>Treasury stocks</td><td>-20.7</td><td>-20.7</td><td>-20.7</td><td>-20.8</td><td>-20.8</td><td>-20.8</td><td>-20.8</td><td>-20.8</td><td>-20.8</td><td>-20.8</td><td>-20.8</td><td>-20.8</td><td>-20.8</td><td></td></tr><tr><td>Shareholders&#x27; Equity</td><td>1,311.2</td><td>1,410.4</td><td>1,466.1</td><td>1,501.6</td><td>1,531.6</td><td>1,595.7</td><td>1,628.8</td><td>1,738.1</td><td>1,862.9</td><td>2,124.5</td><td>2,323.2</td><td>2,569.2</td><td>2,850.1</td><td>10.8%</td></tr><tr><td>Noncontrolling interests</td><td>211.1</td><td>224.6</td><td>225.4</td><td>248.2</td><td>263.7</td><td>283.2</td><td>210.9</td><td>224.2</td><td>240.0</td><td>91.6</td><td>97.6</td><td>103.6</td><td>109.5</td><td>5.9%</td></tr><tr><td>Accumulated OCI</td><td>104.2</td><td>129.0</td><td>84.8</td><td>16.9</td><td>97.2</td><td>174.1</td><td>271.1</td><td>469.6</td><td>427.5</td><td>618.9</td><td>618.9</td><td>618.9</td><td>618.9</td><td></td></tr><tr><td>Liabs+Shareholders&#x27; Equity</td><td>2,903.6</td><td>3,017.3</td><td>3,053.3</td><td>3,084.5</td><td>3,381.9</td><td>3,807.4</td><td>4,013.0</td><td>4,365.4</td><td>4,441.6</td><td>4,824.5</td><td>5,181.1</td><td>5,466.2</td><td>5, 800.9</td><td>5.8%</td></tr></table>
+
+<table><tr><td>J-GAAPF2026e</td><td>J-GAAPF2027e</td><td>J-GAAPF2028e</td></tr><tr><td>511.2</td><td>590.1</td><td>688.5</td></tr><tr><td>1.4</td><td>1.4</td><td>1.4</td></tr><tr><td>969.2</td><td>1,015.3</td><td>1,058.5</td></tr><tr><td>985.9</td><td>1,026.4</td><td>1,065.7</td></tr><tr><td>189.3</td><td>189.3</td><td>189.3</td></tr><tr><td>2,657.0</td><td>2,822.6</td><td>3,003.3</td></tr><tr><td>1,220.4</td><td>1,278.7</td><td>1,347.0</td></tr><tr><td>0.0</td><td>0.0</td><td>0.0</td></tr><tr><td>61.4</td><td>61.4</td><td>61.4</td></tr><tr><td>663.7</td><td>695.7</td><td>727.7</td></tr><tr><td>39.0</td><td>39.0</td><td>39.0</td></tr><tr><td>294.6</td><td>294.6</td><td>294.6</td></tr><tr><td>2,279.1</td><td>2,369.4</td><td>2,469.7</td></tr><tr><td>4,936.2</td><td>5,192.0</td><td>5,473.1</td></tr><tr><td>610.3</td><td>635.3</td><td>659.6</td></tr><tr><td>346.7</td><td>346.7</td><td>346.7</td></tr><tr><td>368.8</td><td>368.8</td><td>368.8</td></tr><tr><td>1,325.8</td><td>1,350.9</td><td>1,375.2</td></tr><tr><td>341.3</td><td>341.3</td><td>341.3</td></tr><tr><td>51.8</td><td>51.8</td><td>51.8</td></tr><tr><td>129.7</td><td>129.7</td><td>129.7</td></tr><tr><td>101.6</td><td>101.6</td><td>101.6</td></tr><tr><td>624.3</td><td>624.3</td><td>624.3</td></tr><tr><td>99.7</td><td>99.7</td><td>99.7</td></tr><tr><td>165.3</td><td>165.3</td><td>165.3</td></tr><tr><td>2,044.1</td><td>2,268.8</td><td>2,519.6</td></tr><tr><td>-20.8</td><td>-20.8</td><td>-20.8</td></tr><tr><td>2,288.3</td><td>2,513.0</td><td>2,763.8</td></tr><tr><td>270.3</td><td>276.3</td><td>282.3</td></tr><tr><td>427.5</td><td>427.5</td><td>427.5</td></tr><tr><td>4,936.2</td><td>5,192.0</td><td>5,473.1</td></tr></table>
+
+<table><tr><td>(Unit: JPYbn)C/F</td><td>J-GAAPF2016</td><td>J-GAAPF2017</td><td>J-GAAPF2018</td><td>J-GAAPF2019</td><td>J-GAAPF2020</td><td>J-GAAPF2021</td><td>J-GAAPF2022</td><td>J-GAAPF2023</td><td>J-GAAPF2024</td><td>J-GAAPF2025</td><td>J-GAAPF2026e</td><td>J-GAAPF2027e</td><td>J-GAAPF2028e</td><td>CAGR26e-28e</td></tr><tr><td>Net Income</td><td>107.6</td><td>120.3</td><td>118.1</td><td>72.7</td><td>56.3</td><td>96.3</td><td>112.7</td><td>149.7</td><td>193.8</td><td>369.5</td><td>331.3</td><td>410.5</td><td>468.1</td><td></td></tr><tr><td>Depreciation</td><td>130.7</td><td>141.4</td><td>148.9</td><td>163.6</td><td>168.0</td><td>180.5</td><td>196.0</td><td>206.3</td><td>206.2</td><td>209.8</td><td>235.0</td><td>245.0</td><td>255.0</td><td></td></tr><tr><td>Goodwill amortization</td><td>1.8</td><td>2.2</td><td>2.1</td><td>-10.4</td><td>1.1</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td></td></tr><tr><td>Change in accounts receivable</td><td>-29.4</td><td>-18.8</td><td>-41.0</td><td>50.9</td><td>-66.3</td><td>-27.4</td><td>-41.2</td><td>4.9</td><td>-0.9</td><td>-70.4</td><td>-62.4</td><td>-64.4</td><td>-77.6</td><td></td></tr><tr><td>Change in inventories</td><td>-29.5</td><td>-17.6</td><td>-60.0</td><td>-27.6</td><td>-39.4</td><td>-195.1</td><td>26.5</td><td>21.3</td><td>-17.5</td><td>-47.9</td><td>-16.9</td><td>-53.5</td><td>-77.3</td><td></td></tr><tr><td>Change in accounts payable</td><td>29.8</td><td>-11.6</td><td>12.8</td><td>-24.8</td><td>28.3</td><td>33.3</td><td>-7.3</td><td>21.4</td><td>-7.1</td><td>26.9</td><td>39.4</td><td>33.1</td><td>47.8</td><td></td></tr><tr><td>Other operating cash flow</td><td>-1.8</td><td>23.5</td><td>-3.2</td><td>40.2</td><td>21.5</td><td>-11.6</td><td>-21.4</td><td>-10.2</td><td>27.9</td><td>-62.8</td><td>-26.0</td><td>-26.0</td><td>-26.1</td><td></td></tr><tr><td>Cash flow from operating activities</td><td>209.2</td><td>239.6</td><td>177.7</td><td>264.6</td><td>169.7</td><td>76.0</td><td>265.2</td><td>393.5</td><td>402.3</td><td>425.2</td><td>500.4</td><td>544.7</td><td>590.0</td><td>8.6%</td></tr><tr><td>Capital Expenditure</td><td>-175.2</td><td>-172.0</td><td>-178.0</td><td>-192.9</td><td>-166.8</td><td>-174.1</td><td>-184.5</td><td>-179.3</td><td>-199.8</td><td>-222.2</td><td>-277.4</td><td>-297.4</td><td>-317.4</td><td></td></tr><tr><td>Purchase of intangible assets</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td></td></tr><tr><td>Change in investment securities</td><td>6.5</td><td>15.0</td><td>5.0</td><td>8.6</td><td>19.7</td><td>15.2</td><td>43.8</td><td>70.1</td><td>13.0</td><td>11.3</td><td>0.0</td><td>0.0</td><td>0.0</td><td></td></tr><tr><td>Net disposals (acquisitions)</td><td>-6.2</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td></td></tr><tr><td>Other investment cash flow</td><td>-19.9</td><td>-17.3</td><td>-11.6</td><td>6.2</td><td>-16.3</td><td>-6.5</td><td>-7.2</td><td>-14.6</td><td>-37.1</td><td>36.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td></td></tr><tr><td>Cash flow from investing activities</td><td>-194.8</td><td>-174.3</td><td>-184.6</td><td>-178.0</td><td>-163.4</td><td>-165.4</td><td>-147.8</td><td>-123.8</td><td>-223.9</td><td>-174.9</td><td>-277.4</td><td>-297.4</td><td>-317.4</td><td>7.0%</td></tr><tr><td>Change in short-term debt</td><td>33.2</td><td>-5.1</td><td>49.0</td><td>75.1</td><td>0.9</td><td>128.1</td><td>85.3</td><td>-241.3</td><td>-43.5</td><td>-71.3</td><td>72.7</td><td>0.0</td><td>0.0</td><td></td></tr><tr><td>Change in long-term debt</td><td>20.0</td><td>-13.6</td><td>-2.8</td><td>-20.1</td><td>32.3</td><td>13.5</td><td>-36.2</td><td>28.0</td><td>-7.7</td><td>-20.5</td><td>39.7</td><td>0.0</td><td>0.0</td><td></td></tr><tr><td>Net share issuance (repurchase)</td><td>-20.0</td><td>-0.0</td><td>-0.0</td><td>-0.0</td><td>-0.0</td><td>-0.0</td><td>-0.0</td><td>-0.0</td><td>-0.0</td><td>-0.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td></td></tr><tr><td>Dividends paid</td><td>-37.4</td><td>-45.3</td><td>-38.2</td><td>-37.4</td><td>-25.0</td><td>-32.0</td><td>-39.0</td><td>-39.0</td><td>-68.6</td><td>-86.6</td><td>-132.6</td><td>-164.6</td><td>-187.2</td><td></td></tr><tr><td>Other financial cash flow</td><td>-0.6</td><td>-2.8</td><td>-12.4</td><td>-18.8</td><td>-21.4</td><td>-26.8</td><td>-108.4</td><td>-40.0</td><td>-31.0</td><td>-147.7</td><td>0.0</td><td>0.0</td><td>0.0</td><td></td></tr><tr><td>Cash flow from financing activities</td><td>-4.8</td><td>-66.8</td><td>-4.3</td><td>-1.3</td><td>-13.1</td><td>82.8</td><td>-98.3</td><td>-292.3</td><td>-150.8</td><td>-326.0</td><td>-20.1</td><td>-164.6</td><td>-187.2</td><td>204.9%</td></tr><tr><td>Net change in cash &amp; cash equivalents</td><td>5.9</td><td>0.1</td><td>-11.2</td><td>80.1</td><td>2.4</td><td>4.1</td><td>23.9</td><td>-11.2</td><td>26.2</td><td>-58.6</td><td>202.9</td><td>82.8</td><td>85.4</td><td></td></tr><tr><td>FX effect</td><td>-3.5</td><td>1.3</td><td>-0.6</td><td>-5.4</td><td>7.8</td><td>10.6</td><td>4.8</td><td>11.3</td><td>-1.5</td><td>17.1</td><td>0.0</td><td>0.0</td><td>0.0</td><td></td></tr><tr><td>Other</td><td>-0.2</td><td>0.3</td><td>0.7</td><td>0.2</td><td>1.5</td><td>0.2</td><td>0.0</td><td>0.2</td><td>0.2</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td></td></tr><tr><td>Cash at end of period</td><td>180.0</td><td>180.1</td><td>168.9</td><td>249.0</td><td>251.4</td><td>255.5</td><td>279.4</td><td>268.3</td><td>294.5</td><td>235.9</td><td>438.8</td><td>521.5</td><td>606.9</td><td>17.6%</td></tr></table>
+
+<table><tr><td>J-GAAPF2026e</td><td>J-GAAPF2027e</td><td>J-GAAPF2028e</td></tr><tr><td>324.1</td><td>374.5</td><td>417.7</td></tr><tr><td>235.0</td><td>245.0</td><td>255.0</td></tr><tr><td>0.0</td><td>0.0</td><td>0.0</td></tr><tr><td>-8.0</td><td>-46.1</td><td>-43.2</td></tr><tr><td>-10.9</td><td>-40.5</td><td>-39.2</td></tr><tr><td>6.7</td><td>25.1</td><td>24.3</td></tr><tr><td>-26.0</td><td>-26.0</td><td>-26.0</td></tr><tr><td>521.0</td><td>531.9</td><td>588.6</td></tr><tr><td>-283.3</td><td>-303.3</td><td>-323.3</td></tr><tr><td>0.0</td><td>0.0</td><td>0.0</td></tr><tr><td>0.0</td><td>0.0</td><td>0.0</td></tr><tr><td>0.0</td><td>0.0</td><td>0.0</td></tr><tr><td>0.0</td><td>0.0</td><td>0.0</td></tr><tr><td>-283.3</td><td>-303.3</td><td>-323.3</td></tr><tr><td>0.0</td><td>0.0</td><td>0.0</td></tr><tr><td>0.0</td><td>0.0</td><td>0.0</td></tr><tr><td>0.0</td><td>0.0</td><td>0.0</td></tr><tr><td>-129.5</td><td>-149.7</td><td>-166.9</td></tr><tr><td>0.0</td><td>0.0</td><td>0.0</td></tr><tr><td>-129.5</td><td>-149.7</td><td>-166.9</td></tr><tr><td>108.2</td><td>78.9</td><td>98.4</td></tr><tr><td>0.0</td><td>0.0</td><td>0.0</td></tr><tr><td>0.0</td><td>0.0</td><td>0.0</td></tr><tr><td>511.2</td><td>590.1</td><td>688.5</td></tr></table>
+
+Source: MS, e = MS estimates
+
+Exhibit 35: Financial Summary (3)
+
+<table><tr><td rowspan="2">(Unit: JPYbn)P&amp;L</td><td colspan="4">F2025</td><td colspan="4">F2026</td><td colspan="4">F2027</td><td colspan="4">F2028</td></tr><tr><td>1Q</td><td>2Q</td><td>3Q</td><td>4Q</td><td>1Qe</td><td>2Qe</td><td>3Qe</td><td>4Qe</td><td>1Qe</td><td>2Qe</td><td>3Qe</td><td>4Qe</td><td>1Qe</td><td>2Qe</td><td>3Qe</td><td>4Qe</td></tr><tr><td>Revenue</td><td>1,148.4</td><td>1,225.0</td><td>1,313.5</td><td>1,423.2</td><td>1,208.9</td><td>1,244.2</td><td>1,318.7</td><td>1,414.5</td><td>1,288.8</td><td>1,334.1</td><td>1,409.4</td><td>1,484.4</td><td>1,389.9</td><td>1,432.2</td><td>1,507.8</td><td>1,585.0</td></tr><tr><td>Automotive</td><td>670.6</td><td>707.6</td><td>756.9</td><td>802.0</td><td>675.4</td><td>704.9</td><td>761.0</td><td>801.2</td><td>684.3</td><td>714.3</td><td>771.2</td><td>812.1</td><td>693.4</td><td>723.9</td><td>781.6</td><td>823.2</td></tr><tr><td>Infocommunications</td><td>61.7</td><td>73.8</td><td>85.2</td><td>106.0</td><td>114.8</td><td>122.3</td><td>137.8</td><td>171.8</td><td>183.8</td><td>192.3</td><td>206.8</td><td>218.3</td><td>230.3</td><td>240.3</td><td>254.3</td><td>267.3</td></tr><tr><td>Electronics</td><td>90.0</td><td>107.2</td><td>107.4</td><td>104.4</td><td>104.7</td><td>107.0</td><td>103.9</td><td>91.0</td><td>106.7</td><td>107.5</td><td>104.4</td><td>91.5</td><td>107.2</td><td>108.0</td><td>104.9</td><td>92.0</td></tr><tr><td>Environment and Energy</td><td>262.9</td><td>273.1</td><td>298.1</td><td>344.6</td><td>251.0</td><td>246.0</td><td>247.0</td><td>277.0</td><td>251.0</td><td>256.0</td><td>257.0</td><td>287.0</td><td>296.0</td><td>296.0</td><td>297.0</td><td>327.0</td></tr><tr><td>Industrial Materials and Others</td><td>92.9</td><td>95.4</td><td>98.4</td><td>101.7</td><td>98.0</td><td>99.0</td><td>104.0</td><td>108.5</td><td>98.0</td><td>99.0</td><td>105.0</td><td>110.5</td><td>98.0</td><td>99.0</td><td>105.0</td><td>110.5</td></tr><tr><td>Eliminations and Corporate</td><td>-29.6</td><td>-32.1</td><td>-32.7</td><td>-35.6</td><td>-35.0</td><td>-35.0</td><td>-35.0</td><td>-35.0</td><td>-35.0</td><td>-35.0</td><td>-35.0</td><td>-35.0</td><td>-35.0</td><td>-35.0</td><td>-35.0</td><td>-35.0</td></tr><tr><td>Revenue Growth (Y/Y, %)</td><td>2.9</td><td>8.2</td><td>10.1</td><td>14.9</td><td>5.3</td><td>1.6</td><td>0.4</td><td>-0.6</td><td>6.6</td><td>7.2</td><td>6.9</td><td>4.9</td><td>7.8</td><td>7.4</td><td>7.0</td><td>6.8</td></tr><tr><td>Automotive</td><td>1.2</td><td>10.1</td><td>7.2</td><td>10.9</td><td>0.7</td><td>-0.4</td><td>0.5</td><td>-0.1</td><td>1.3</td><td>1.3</td><td>1.3</td><td>1.4</td><td>1.3</td><td>1.3</td><td>1.3</td><td>1.4</td></tr><tr><td>Infocommunications</td><td>16.4</td><td>45.7</td><td>51.6</td><td>67.0</td><td>86.1</td><td>65.7</td><td>61.7</td><td>62.0</td><td>60.1</td><td>57.3</td><td>50.1</td><td>27.1</td><td>25.3</td><td>25.0</td><td>23.0</td><td>22.5</td></tr><tr><td>Electronics</td><td>1.8</td><td>4.1</td><td>9.7</td><td>18.8</td><td>16.3</td><td>-0.2</td><td>-3.3</td><td>-12.9</td><td>1.9</td><td>0.5</td><td>0.5</td><td>0.5</td><td>0.5</td><td>0.5</td><td>0.5</td><td>0.5</td></tr><tr><td>Environment and Energy</td><td>5.9</td><td>1.8</td><td>11.4</td><td>15.9</td><td>-4.5</td><td>-9.9</td><td>-17.1</td><td>-19.6</td><td>0.0</td><td>4.1</td><td>4.0</td><td>3.6</td><td>17.9</td><td>15.6</td><td>15.6</td><td>13.9</td></tr><tr><td>Industrial Materials and Others</td><td>3.6</td><td>-0.7</td><td>5.1</td><td>9.0</td><td>5.5</td><td>3.8</td><td>5.6</td><td>6.7</td><td>0.0</td><td>0.0</td><td>1.0</td><td>1.8</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td></tr><tr><td>Operating Profit</td><td>60.3</td><td>92.7</td><td>118.0</td><td>147.1</td><td>83.9</td><td>99.5</td><td>124.7</td><td>136.9</td><td>115.4</td><td>129.4</td><td>152.0</td><td>158.2</td><td>137.4</td><td>149.1</td><td>171.0</td><td>177.5</td></tr><tr><td>Automotive</td><td>26.6</td><td>38.8</td><td>53.0</td><td>61.3</td><td>30.3</td><td>37.3</td><td>52.8</td><td>58.3</td><td>33.3</td><td>38.3</td><td>54.3</td><td>60.3</td><td>36.3</td><td>39.3</td><td>55.3</td><td>61.3</td></tr><tr><td>Infocommunications</td><td>8.1</td><td>13.9</td><td>24.0</td><td>31.3</td><td>29.5</td><td>33.1</td><td>38.2</td><td>49.2</td><td>50.9</td><td>55.4</td><td>60.4</td><td>65.3</td><td>66.9</td><td>71.6</td><td>76.4</td><td>81.1</td></tr><tr><td>Electronics</td><td>6.3</td><td>11.7</td><td>11.4</td><td>10.1</td><td>7.5</td><td>11.5</td><td>12.0</td><td>2.2</td><td>7.5</td><td>11.5</td><td>13.0</td><td>4.2</td><td>8.5</td><td>11.5</td><td>13.0</td><td>4.2</td></tr><tr><td>Environment and Energy</td><td>13.6</td><td>20.8</td><td>21.6</td><td>34.5</td><td>9.0</td><td>10.0</td><td>13.6</td><td>17.4</td><td>15.5</td><td>15.5</td><td>15.6</td><td>17.4</td><td>17.5</td><td>18.0</td><td>17.6</td><td>19.9</td></tr><tr><td>Industrial Materials and Others</td><td>5.6</td><td>7.3</td><td>8.3</td><td>10.2</td><td>7.7</td><td>7.7</td><td>8.2</td><td>9.9</td><td>8.3</td><td>8.8</td><td>8.8</td><td>11.1</td><td>8.3</td><td>8.8</td><td>8.8</td><td>11.1</td></tr><tr><td>Eliminations and Corporate</td><td>0.0</td><td>0.1</td><td>-0.4</td><td>-0.3</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td></tr><tr><td>Operating Profit Margin (%)</td><td>5.3</td><td>7.6</td><td>9.0</td><td>10.3</td><td>6.9</td><td>8.0</td><td>9.5</td><td>9.7</td><td>9.0</td><td>9.7</td><td>10.8</td><td>10.7</td><td>9.9</td><td>10.4</td><td>11.3</td><td>11.2</td></tr><tr><td>Automotive</td><td>4.0</td><td>5.5</td><td>7.0</td><td>7.6</td><td>4.5</td><td>5.3</td><td>6.9</td><td>7.3</td><td>4.9</td><td>5.4</td><td>7.0</td><td>7.4</td><td>5.2</td><td>5.4</td><td>7.1</td><td>7.4</td></tr><tr><td>Infocommunications</td><td>13.2</td><td>18.9</td><td>28.2</td><td>29.6</td><td>25.7</td><td>27.1</td><td>27.7</td><td>28.6</td><td>27.7</td><td>28.8</td><td>29.2</td><td>29.9</td><td>29.1</td><td>29.8</td><td>30.0</td><td>30.3</td></tr><tr><td>Electronics</td><td>7.0</td><td>10.9</td><td>10.6</td><td>9.7</td><td>7.1</td><td>10.7</td><td>11.5</td><td>2.4</td><td>7.0</td><td>10.7</td><td>12.4</td><td>4.5</td><td>7.9</td><td>10.6</td><td>12.3</td><td>4.5</td></tr><tr><td>Environment and Energy</td><td>5.2</td><td>7.6</td><td>7.3</td><td>10.0</td><td>3.6</td><td>4.1</td><td>5.5</td><td>6.3</td><td>6.2</td><td>6.1</td><td>6.1</td><td>6.1</td><td>5.9</td><td>6.1</td><td>5.9</td><td>6.1</td></tr><tr><td>Industrial Materials and Others</td><td>6.1</td><td>7.6</td><td>8.4</td><td>10.0</td><td>7.9</td><td>7.8</td><td>7.9</td><td>9.1</td><td>8.5</td><td>8.9</td><td>8.4</td><td>10.0</td><td>8.5</td><td>8.9</td><td>8.4</td><td>10.0</td></tr><tr><td>Equity Method Income</td><td>3.2</td><td>8.0</td><td>7.8</td><td>12.4</td><td>8.0</td><td>8.0</td><td>8.0</td><td>8.0</td><td>8.0</td><td>8.0</td><td>8.0</td><td>8.0</td><td>8.0</td><td>8.0</td><td>8.0</td><td>8.0</td></tr><tr><td>Other non-operating income</td><td>-1.6</td><td>-7.1</td><td>-4.9</td><td>-4.7</td><td>-6.5</td><td>-6.5</td><td>-6.5</td><td>-6.5</td><td>-6.5</td><td>-6.5</td><td>-6.5</td><td>-6.5</td><td>-6.5</td><td>-6.5</td><td>-6.5</td><td>-6.5</td></tr><tr><td>Recurring Profit</td><td>61.8</td><td>93.7</td><td>120.9</td><td>154.8</td><td>85.4</td><td>101.0</td><td>126.2</td><td>138.4</td><td>116.9</td><td>130.9</td><td>153.5</td><td>159.7</td><td>138.9</td><td>150.6</td><td>172.5</td><td>179.0</td></tr><tr><td>One-off Profit / Loss, net</td><td>-0.6</td><td>3.2</td><td>1.0</td><td>70.3</td><td>0.0</td><td>0.0</td><td>0.0</td><td>5.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>5.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>5.0</td></tr><tr><td>Pretax Profit</td><td>61.2</td><td>96.9</td><td>121.9</td><td>225.1</td><td>85.4</td><td>101.0</td><td>126.2</td><td>143.4</td><td>116.9</td><td>130.9</td><td>153.5</td><td>164.7</td><td>138.9</td><td>150.6</td><td>172.5</td><td>184.0</td></tr><tr><td>Tax</td><td>20.3</td><td>26.7</td><td>33.2</td><td>23.8</td><td>21.7</td><td>26.0</td><td>33.1</td><td>37.9</td><td>30.5</td><td>34.4</td><td>40.7</td><td>43.9</td><td>36.7</td><td>39.9</td><td>46.1</td><td>49.3</td></tr><tr><td>Non-controlling Interest</td><td>5.8</td><td>7.4</td><td>9.4</td><td>17.1</td><td>1.5</td><td>3.5</td><td>0.5</td><td>0.5</td><td>1.5</td><td>3.5</td><td>0.5</td><td>0.5</td><td>1.4</td><td>3.5</td><td>0.5</td><td>0.5</td></tr><tr><td>Net Income for Shareholders</td><td>35.1</td><td>62.8</td><td>79.3</td><td>192.3</td><td>62.2</td><td>71.5</td><td>92.6</td><td>105.0</td><td>84.9</td><td>93.0</td><td>112.3</td><td>120.3</td><td>100.8</td><td>107.2</td><td>125.9</td><td>134.2</td></tr></table>
+
+Source: MS, e = MS estimates
+
+## Risk Reward – Sumitomo Electric (5802.T)
+
+Earnings driven by CPO products
+
+## PRICE TARGET ¥14,500
+
+We use a residual income model, with assumptions including 8.7% capital cost (2.0% risk-free rate, 6.2% equity risk premium, 1.07 beta), 50% payout ratio, mid-term growth rate of \~13.8%, terminal growth rate of 3.0%. Our PT equates to P/E of 27.5x on F3/28e EPS of ¥526.
+
+![](images/140008d4f645eecdf42195a1c1a62d86f11b3d085863ae0f9270bf371352da4b.jpg)
+
+<details>
+<summary>bar-line hybrid chart</summary>
+
+| Consensus Price Target Distribution | Value     |
+| ----------------------------------- | --------- |
+| ¥4,000.00                           | 12,754    |
+| ¥16,500.00                          | 16,500.00 |
+</details>
+
+RISK REWARD CHART  
+![](images/c321101f19ffab3453b317b7a2baeff0ebfeba8066057b9b26b1325790b91a2d.jpg)
+
+<details>
+<summary>line chart</summary>
+
+| Date    | Historical Stock Performance | Current Stock Price | Price Target |
+|---------|-------------------------------|---------------------|--------------|
+| JUN '25 | ~3,000                        | -                   | -            |
+| DEC '25 | ~6,000                        | -                   | -            |
+| JUN '26 | 110,250                       | 110,250             | -            |
+| JUN '27 | -                             | 14,500              | 14,500       |
+</details>
+
+Source: Refinitiv, MS
+
+## EQUAL-WEIGHT THESIS
+
+■ We assign an EW rating from a relative perspective in the industry.  
+- The firm’s biggest earnings drivers are multicore fiberoptic cable, optical connectors and optical devices.  
+■ Wire harness business is firm but unlikely to see sizeable improvement in margins.  
+■ The market wants to see management paying attention to capital efficiency.
+
+Consensus Rating Distribution  
+![](images/ee6ce578d597daa321f798177e582aad9e8ec01966fcd0888ce3abf8eb3e33d4.jpg)
+
+<details>
+<summary>bar chart</summary>
+
+| Category      | Value |
+| ------------- | ----- |
+| Overweight    | 77%   |
+| Equal-weight  | 23%   |
+| Underweight   | 0%    |
+</details>
+
+Source: Refinitiv, MS
+
+## Risk Reward Themes
+
+Renewable Energy: Positive
+
+View descriptions of Risk Rewards Themes here
+
+## BULL CASE
+
+## ¥18,500
+
+## Share price aligned to residual income model
+
+Optical devices, optical connectors and multicore fiberoptic cables show further growth in the Infocommunications segment. Profit exceeds our base case by 20% from F3/27. Equates to P/E of 31.8x on estimated F3/28 EPS of ¥579.
+
+## BASE CASE
+
+## ¥14,500
+
+## Share price aligned to residual income model
+
+We forecast gradual recovery for Infocommunications. Our OP forecasts are ¥445bn for F3/27, ¥555bn for F3/28, ¥635n for F3/29, for a growth rate of +19.5% over that period. Our PT equates to P/E of 27.5x on F3/28e EPS of ¥526.
+
+## BEAR CASE
+
+## ¥9,000
+
+## Share price aligned to residual income model
+
+Earnings deteriorate in the Infocommunications and Automotive segments as business sentiment worsens further, and profit is 30% below the base case from F3/27. Equates to P/E of 19.7x on estimated F3/28 EPS of ¥447.
+
+## Risk Reward – Sumitomo Electric (5802.T)
+
+KEY EARNINGS INPUTS
+
+<table><tr><td>Drivers</td><td>2026</td><td>2027e</td><td>2028e</td><td>2029e</td></tr><tr><td>Automotive OP (¥, mn)</td><td>179,700</td><td>178,500</td><td>186,000</td><td>192,000</td></tr><tr><td>Infocommunications OP (¥, mn)</td><td>77,435</td><td>150,000</td><td>232,000</td><td>296,000</td></tr></table>
+
+## INVESTMENT DRIVERS
+
+- Increase in wiring harness volume per vehicle  
+- Expansion of fiberoptic cable and device sales  
+- Shift to a management approach mindful of capital efficiency
+
+## GLOBAL REVENUE EXPOSURE
+
+![](images/6b5581055ecae00da2b2e2453498113b2168ad1c647760ff76f164efd07391cd.jpg)  
+0-10% APAC, ex Japan, Mainland China and India  
+0-10% Europe ex UK  
+0-10% India  
+0-10% UK  
+10-20% Mainland China  
+● 10-20% North America  
+40-50% Japan  
+Source: MS Estimate View explanation of regional hierarchies here
+
+## MS ALPHA MODELS
+
+5/5
+
+MOST
+
+3 Month
+
+Horizon
+
+Source: Refinitiv, FactSet, MS; 1 is the highest favored Quintile and 5 is the least favored Quintile
+
+## RISKS TO PT/RATING
+
+## RISKS TO UPSIDE
+
+- Increase in sales volume on healthier business sentiment than expected  
+- More improvement in product mix than expected  
+• Stronger reinforcement of shareholder return than anticipated
+
+## RISKS TO DOWNSIDE
+
+- Decline in sales volume on weaker business sentiment than expected  
+- Delays in price passthrough due to sharp rises in raw material costs and other material costs  
+- Faster advance in yen appreciation than anticipated
+
+## OWNERSHIP POSITIONING
+
+Inst. Owners, % Active
+
+59.1%
+
+![](images/d7ad39c96bf3eeaa7b093f2960b09fc6a3641193d2e8d1e92165823989535a24.jpg)
+
+![](images/3aaf0f2ebc4f0d00f7107aae6008bbe78128a1d295034816f59190c7e92d54e5.jpg)
+
+Source: Refinitiv, MS
+
+## MS ESTIMATES VS. CONSENSUS
+
+![](images/9aab52150acafc7b89ec1be3265f52962f9b7637ec3b1a75656a4930e26324f8.jpg)  
+Source: Refinitiv, MS
+
+## Earnings Summary: Fujikura (5803.T)
+
+Exhibit 36: Financial Summary (1)
+
+<table><tr><td>(Unit: JPYbn)P/L</td><td>J-GAAPF2016</td><td>J-GAAPF2017</td><td>J-GAAPF2018</td><td>J-GAAPF2019</td><td>J-GAAPF2020</td><td>J-GAAPF2021</td><td>J-GAAPF2022</td><td>J-GAAPF2023</td><td>J-GAAPF2024</td><td>J-GAAPF2025</td><td>J-GAAPF2026e</td><td>J-GAAPF2027e</td><td>J-GAAPF2028e</td><td>CAGR26e-27e</td><td>OldF2026e</td><td>OldF2027e</td><td>OldF2028e</td></tr><tr><td>Revenue</td><td>653.8</td><td>740.1</td><td>710.8</td><td>672.3</td><td>643.7</td><td>670.4</td><td>806.5</td><td>799.8</td><td>979.4</td><td>1,182.4</td><td>1,348.7</td><td>1,443.1</td><td>1,597.9</td><td>8.8%</td><td>1,338.6</td><td>1,469.8</td><td>1,620.6</td></tr><tr><td>Power&amp; Telecommunication</td><td>349.7</td><td>371.8</td><td>354.9</td><td>327.8</td><td>305.9</td><td>353.6</td><td>434.4</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>Power</td><td>196.0</td><td>212.9</td><td>204.0</td><td>187.9</td><td>165.6</td><td>179.2</td><td>206.8</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>Telecommunication</td><td>153.6</td><td>158.9</td><td>150.9</td><td>140.0</td><td>140.3</td><td>174.5</td><td>227.6</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>Telecommunication Systems</td><td></td><td></td><td></td><td></td><td></td><td></td><td>291.4</td><td>297.7</td><td>451.3</td><td>653.0</td><td>822.4</td><td>912.3</td><td>1,063.7</td><td></td><td>816.6</td><td>943.2</td><td>1,089.4</td></tr><tr><td>Electronics Products</td><td>156.7</td><td>196.0</td><td>185.1</td><td>175.1</td><td>199.9</td><td>178.5</td><td>197.3</td><td>165.0</td><td>185.9</td><td>172.3</td><td>179.0</td><td>182.0</td><td>183.8</td><td></td><td>174.7</td><td>177.7</td><td>180.8</td></tr><tr><td>Automotive Products</td><td>133.1</td><td>157.1</td><td>154.1</td><td>152.5</td><td>121.9</td><td>121.3</td><td>155.9</td><td>179.5</td><td>177.1</td><td>179.4</td><td>172.0</td><td>172.0</td><td>172.0</td><td></td><td>172.0</td><td>172.0</td><td>172.0</td></tr><tr><td>Energy</td><td></td><td></td><td></td><td></td><td></td><td></td><td>142.9</td><td>140.2</td><td>145.2</td><td>157.0</td><td>154.5</td><td>156.0</td><td>157.6</td><td></td><td>154.5</td><td>156.0</td><td>157.6</td></tr><tr><td>Real Estate</td><td>10.2</td><td>11.0</td><td>10.9</td><td>11.3</td><td>10.9</td><td>10.9</td><td>10.8</td><td>10.5</td><td>10.8</td><td>11.0</td><td>11.2</td><td>11.2</td><td>11.2</td><td></td><td>11.2</td><td>11.2</td><td>11.2</td></tr><tr><td>Other</td><td>4.1</td><td>4.3</td><td>5.8</td><td>5.6</td><td>5.2</td><td>6.0</td><td>8.1</td><td>6.9</td><td>9.1</td><td>9.7</td><td>9.6</td><td>9.6</td><td>9.6</td><td></td><td>9.6</td><td>9.6</td><td>9.6</td></tr><tr><td>Revenue Growth (Y/Y, %)</td><td>-3.6</td><td>13.2</td><td>-4.0</td><td>-5.4</td><td>-4.3</td><td>4.1</td><td>20.3</td><td>-0.8</td><td>22.5</td><td>20.7</td><td>14.1</td><td>7.0</td><td>10.7</td><td></td><td>18.4</td><td>9.8</td><td>10.3</td></tr><tr><td>Power&amp; Telecommunication</td><td>-4.6</td><td>6.3</td><td>-4.6</td><td>-7.6</td><td>-6.7</td><td>15.6</td><td>22.8</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>Power</td><td>-7.9</td><td>8.6</td><td>-4.2</td><td>-7.9</td><td>-11.8</td><td>8.2</td><td>15.4</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>Telecommunication</td><td>-0.1</td><td>3.4</td><td>-5.1</td><td>-7.2</td><td>0.2</td><td>24.4</td><td>30.4</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>Telecommunication Systems</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>2.2</td><td>51.6</td><td>44.7</td><td>25.9</td><td>10.9</td><td>16.6</td><td></td><td>26.7</td><td>15.5</td><td>15.5</td></tr><tr><td>Electronics Products</td><td>-2.7</td><td>25.0</td><td>-5.6</td><td>-5.4</td><td>14.1</td><td>-10.7</td><td>10.5</td><td>-16.4</td><td>12.7</td><td>-7.3</td><td>3.9</td><td>1.7</td><td>1.0</td><td></td><td>3.3</td><td>1.7</td><td>1.7</td></tr><tr><td>Automotive Products</td><td>-2.0</td><td>18.0</td><td>-1.9</td><td>-1.1</td><td>-20.0</td><td>-0.5</td><td>28.5</td><td>15.2</td><td>-1.4</td><td>1.3</td><td>-4.1</td><td>0.0</td><td>0.0</td><td></td><td>-1.7</td><td>0.0</td><td>0.0</td></tr><tr><td>Energy</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>-1.9</td><td>3.6</td><td>8.1</td><td>-1.6</td><td>1.0</td><td>1.0</td><td></td><td>3.0</td><td>1.0</td><td>1.0</td></tr><tr><td>Real Estate</td><td>-4.9</td><td>7.7</td><td>-0.7</td><td>3.7</td><td>-3.6</td><td>-0.0</td><td>-1.0</td><td>-2.3</td><td>2.9</td><td>1.9</td><td>1.5</td><td>0.0</td><td>0.0</td><td></td><td>1.8</td><td>0.0</td><td>0.0</td></tr><tr><td>Other</td><td>-3.3</td><td>3.7</td><td>36.8</td><td>-4.4</td><td>-7.5</td><td>16.7</td><td>35.3</td><td>-15.5</td><td>32.8</td><td>6.1</td><td>-0.9</td><td>0.0</td><td>0.0</td><td></td><td>0.0</td><td>0.0</td><td>0.0</td></tr><tr><td>Operating Profit</td><td>34.2</td><td>34.3</td><td>27.7</td><td>3.3</td><td>24.4</td><td>38.3</td><td>70.2</td><td>69.5</td><td>135.5</td><td>188.7</td><td>260.0</td><td>310.0</td><td>370.0</td><td>19.3%</td><td>280.0</td><td>335.0</td><td>390.0</td></tr><tr><td>Power&amp; Telecommunication</td><td>20.4</td><td>22.4</td><td>17.8</td><td>4.6</td><td>18.1</td><td>25.2</td><td>43.1</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>Telecommunication Systems</td><td></td><td></td><td></td><td></td><td></td><td></td><td>39.9</td><td>39.2</td><td>92.2</td><td>152.7</td><td>230.8</td><td>277.0</td><td>336.8</td><td>20.8%</td><td>237.3</td><td>191.9</td><td>346.5</td></tr><tr><td>Electronics Products</td><td>7.6</td><td>10.4</td><td>8.3</td><td>-2.3</td><td>4.9</td><td>13.8</td><td>27.6</td><td>16.6</td><td>22.9</td><td>7.7</td><td>11.0</td><td>12.0</td><td>12.2</td><td>5.3%</td><td>19.8</td><td>20.3</td><td>20.7</td></tr><tr><td>Automotive Products</td><td>2.6</td><td>-3.2</td><td>-3.2</td><td>-3.8</td><td>-3.7</td><td>-5.6</td><td>-6.6</td><td>1.2</td><td>5.8</td><td>6.8</td><td>6.0</td><td>6.0</td><td>6.0</td><td>0.0%</td><td>6.3</td><td>6.3</td><td>6.3</td></tr><tr><td>Energy</td><td></td><td></td><td></td><td></td><td></td><td></td><td>4.3</td><td>8.7</td><td>11.9</td><td>18.9</td><td>11.8</td><td>14.0</td><td>14.0</td><td>8.9%</td><td>14.0</td><td>14.0</td><td>14.0</td></tr><tr><td>Real Estate</td><td>4.7</td><td>5.5</td><td>5.0</td><td>5.4</td><td>5.2</td><td>5.1</td><td>5.0</td><td>4.9</td><td>4.9</td><td>5.0</td><td>5.0</td><td>5.0</td><td>5.0</td><td>0.0%</td><td>4.9</td><td>4.9</td><td>4.9</td></tr><tr><td>Other</td><td>-0.9</td><td>-0.9</td><td>-0.2</td><td>-0.5</td><td>-0.0</td><td>-0.2</td><td>-1.0</td><td>-1.1</td><td>-2.2</td><td>-2.4</td><td>-4.6</td><td>-4.0</td><td>-4.0</td><td>-6.7%</td><td>-2.3</td><td>-2.4</td><td>-2.4</td></tr><tr><td>Operating Profit Margin (%)</td><td>5.2</td><td>4.6</td><td>3.9</td><td>0.5</td><td>3.8</td><td>5.7</td><td>8.7</td><td>8.7</td><td>13.8</td><td>16.0</td><td>19.3</td><td>21.5</td><td>23.2</td><td></td><td>20.9</td><td>22.9</td><td>24.1</td></tr><tr><td>Power&amp; Telecommunication</td><td>5.8</td><td>6.0</td><td>5.0</td><td>1.4</td><td>5.9</td><td>7.1</td><td>9.9</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>Telecommunication Systems</td><td></td><td></td><td></td><td></td><td></td><td></td><td>13.7</td><td>13.2</td><td>20.4</td><td>23.4</td><td>28.1</td><td>30.4</td><td>31.7</td><td></td><td>29.1</td><td>30.9</td><td>31.8</td></tr><tr><td>Electronics Products</td><td>4.8</td><td>5.3</td><td>4.5</td><td>-1.3</td><td>2.4</td><td>7.7</td><td>14.0</td><td>10.1</td><td>12.3</td><td>4.4</td><td>6.1</td><td>6.6</td><td>6.6</td><td></td><td>11.3</td><td>11.4</td><td>11.4</td></tr><tr><td>Automotive Products</td><td>1.9</td><td>-2.0</td><td>-2.1</td><td>-2.5</td><td>-3.0</td><td>-4.6</td><td>-4.2</td><td>0.7</td><td>3.3</td><td>3.8</td><td>3.5</td><td>3.5</td><td>3.5</td><td></td><td>3.7</td><td>3.7</td><td>3.7</td></tr><tr><td>Energy</td><td></td><td></td><td></td><td></td><td></td><td></td><td>3.0</td><td>6.2</td><td>8.2</td><td>12.1</td><td>7.6</td><td>9.0</td><td>8.9</td><td></td><td>9.1</td><td>9.0</td><td>8.9</td></tr><tr><td>Real Estate</td><td>45.8</td><td>50.2</td><td>46.1</td><td>47.7</td><td>47.7</td><td>47.2</td><td>46.3</td><td>46.2</td><td>44.9</td><td>44.9</td><td>44.6</td><td>44.6</td><td>44.6</td><td></td><td>43.8</td><td>43.8</td><td>43.8</td></tr><tr><td>Other</td><td>-22.4</td><td>-20.3</td><td>-3.9</td><td>-9.2</td><td>-0.9</td><td>-3.7</td><td>-12.3</td><td>-15.5</td><td>-23.7</td><td>-24.7</td><td>-47.9</td><td>-41.7</td><td>-41.7</td><td></td><td>-24.0</td><td>-25.0</td><td>-25.0</td></tr><tr><td>Equity Method Income</td><td>1.0</td><td>1.5</td><td>1.2</td><td>1.1</td><td>0.4</td><td>2.1</td><td>2.1</td><td>2.7</td><td>5.7</td><td>12.0</td><td>4.0</td><td>4.0</td><td>4.0</td><td></td><td>4.0</td><td>4.0</td><td>4.0</td></tr><tr><td>Other non-operating income</td><td>-2.7</td><td>-1.7</td><td>-7.9</td><td>-3.1</td><td>-6.5</td><td>-6.3</td><td>-5.1</td><td>-2.4</td><td>-4.0</td><td>-1.2</td><td>-5.0</td><td>-5.0</td><td>-5.0</td><td></td><td>-5.0</td><td>-5.0</td><td>-5.0</td></tr><tr><td>Recurring Profit</td><td>32.6</td><td>34.1</td><td>21.0</td><td>1.3</td><td>18.4</td><td>34.1</td><td>67.1</td><td>69.7</td><td>137.2</td><td>199.5</td><td>259.0</td><td>309.0</td><td>369.0</td><td>19.4%</td><td>279.0</td><td>334.0</td><td>389.0</td></tr><tr><td>One-off Profit / Loss, net</td><td>-4.2</td><td>-5.4</td><td>-10.5</td><td>-21.1</td><td>-17.2</td><td>17.6</td><td>-17.2</td><td>-5.5</td><td>-15.8</td><td>5.1</td><td>-8.0</td><td>-8.0</td><td>-8.0</td><td></td><td>-8.0</td><td>-8.0</td><td>-8.0</td></tr><tr><td>Pretax Profit</td><td>28.3</td><td>28.7</td><td>10.5</td><td>-19.8</td><td>1.2</td><td>51.7</td><td>50.0</td><td>64.2</td><td>121.4</td><td>204.6</td><td>251.0</td><td>301.0</td><td>361.0</td><td>19.9%</td><td>271.0</td><td>326.0</td><td>381.0</td></tr><tr><td>Tax</td><td>11.3</td><td>7.5</td><td>7.6</td><td>17.3</td><td>5.3</td><td>11.5</td><td>8.0</td><td>11.1</td><td>26.9</td><td>42.6</td><td>60.2</td><td>72.2</td><td>86.7</td><td></td><td>65.0</td><td>78.2</td><td>91.5</td></tr><tr><td>Non-controlling Interest</td><td>4.1</td><td>2.8</td><td>1.5</td><td>1.4</td><td>1.2</td><td>1.0</td><td>1.7</td><td>2.1</td><td>3.3</td><td>4.9</td><td>3.2</td><td>3.2</td><td>3.2</td><td></td><td>3.2</td><td>3.2</td><td>3.2</td></tr><tr><td>Net Income for Shareholders</td><td>12.9</td><td>18.4</td><td>1.5</td><td>-38.5</td><td>-5.4</td><td>39.1</td><td>40.3</td><td>51.0</td><td>91.1</td><td>157.2</td><td>187.6</td><td>225.6</td><td>271.1</td><td>20.2%</td><td>202.8</td><td>244.6</td><td>286.3</td></tr><tr><td colspan="18"></td></tr><tr><td>Capital Expenditure</td><td>45.6</td><td>42.6</td><td>55.8</td><td>30.1</td><td>17.7</td><td>16.2</td><td>15.7</td><td>20.8</td><td>30.7</td><td>40.3</td><td>176.6</td><td>176.6</td><td>176.6</td><td></td><td>87.0</td><td>87.0</td><td>87.0</td></tr><tr><td>Depreciation</td><td>27.6</td><td>26.9</td><td>31.6</td><td>35.7</td><td>33.6</td><td>30.5</td><td>29.1</td><td>22.9</td><td>21.4</td><td>24.1</td><td>22.3</td><td>24.3</td><td>26.3</td><td></td><td>22.3</td><td>24.3</td><td>26.3</td></tr><tr><td>Research &amp; Development</td><td>15.6</td><td>16.3</td><td>17.5</td><td>17.3</td><td>16.5</td><td>16.4</td><td>15.0</td><td>17.1</td><td>18.4</td><td>19.0</td><td>20.0</td><td>21.0</td><td>22.0</td><td></td><td>17.0</td><td>17.0</td><td>17.0</td></tr><tr><td colspan="18"></td></tr><tr><td colspan="18">Per Share Data</td></tr><tr><td>EPS</td><td>44.6</td><td>64.4</td><td>0.8</td><td>-22.8</td><td>-3.2</td><td>23.6</td><td>24.4</td><td>30.8</td><td>55.0</td><td>94.9</td><td>113.3</td><td>136.3</td><td>163.7</td><td>20.2%</td><td>122.5</td><td>147.7</td><td>172.9</td></tr><tr><td>BPS</td><td>118.9</td><td>128.1</td><td>126.6</td><td>89.3</td><td>98.5</td><td>133.3</td><td>163.1</td><td>206.1</td><td>246.2</td><td>338.5</td><td>401.8</td><td>478.1</td><td>571.8</td><td>19.3%</td><td>361.4</td><td>439.2</td><td>522.1</td></tr><tr><td>DPS</td><td>10.0</td><td>14.0</td><td>2.0</td><td>0.8</td><td>0.0</td><td>1.7</td><td>5.0</td><td>9.2</td><td>16.7</td><td>35.8</td><td>50.0</td><td>60.0</td><td>70.0</td><td>18.3%</td><td>60.0</td><td>70.0</td><td>90.0</td></tr><tr><td>ROE (%)</td><td>6.4</td><td>8.7</td><td>0.7</td><td>-20.9</td><td>-3.4</td><td>20.4</td><td>16.4</td><td>16.7</td><td>24.3</td><td>32.5</td><td>30.6</td><td>31.0</td><td>31.0</td><td></td><td>37.1</td><td>36.9</td><td>36.9</td></tr><tr><td>Dividend Payout Ratio (%)</td><td>22.4</td><td>21.8</td><td>235.6</td><td>-3.7</td><td>0.0</td><td>7.1</td><td>20.5</td><td>29.7</td><td>30.3</td><td>37.7</td><td>44.1</td><td>44.0</td><td>42.7</td><td></td><td>49.0</td><td>47.4</td><td>52.0</td></tr><tr><td>Net D/E</td><td></td><td>0.9</td><td>1.0</td><td>1.4</td><td>1.0</td><td>0.5</td><td>0.3</td><td>0.1</td><td>-0.1</td><td>-0.2</td><td>-0.0</td><td>-0.0</td><td>0.0</td><td></td><td>-0.1</td><td>-0.1</td><td>-0.1</td></tr><tr><td>Shares outstanding</td><td>1,735.2</td><td>1,711.5</td><td>1,711.7</td><td>1,691.7</td><td>1,652.2</td><td>1,653.9</td><td>1,654.7</td><td>1,654.8</td><td>1,655.2</td><td>1,655.5</td><td>1,655.5</td><td>1,655.5</td><td>1,655.5</td><td></td><td>1,655.5</td><td>1,655.5</td><td>1,655.5</td></tr></table>
+
+Source: MS, e = MS estimates
+
+Exhibit 37: Financial Summary (2)
+
+<table><tr><td>(Unit: JPYbn)B/S</td><td>J-GAAPF2016</td><td>J-GAAPF2017</td><td>J-GAAPF2018</td><td>J-GAAPF2019</td><td>J-GAAPF2020</td><td>J-GAAPF2021</td><td>J-GAAPF2022</td><td>J-GAAPF2023</td><td>J-GAAPF2024</td><td>J-GAAPF2025</td><td>J-GAAPF2026e</td><td>J-GAAPF2027e</td><td>J-GAAPF2028e</td><td>CAGR26e-27e</td></tr><tr><td>Cash &amp; Equivalents</td><td>30.7</td><td>33.6</td><td>36.2</td><td>44.0</td><td>74.2</td><td>90.4</td><td>106.6</td><td>147.0</td><td>184.2</td><td>178.9</td><td>169.2</td><td>141.0</td><td>102.3</td><td></td></tr><tr><td>Marketable Securities</td><td>1.1</td><td>0.7</td><td>0.6</td><td>0.7</td><td>0.6</td><td>0.6</td><td>0.7</td><td>0.8</td><td>0.7</td><td>2.3</td><td>2.3</td><td>2.3</td><td>2.3</td><td></td></tr><tr><td>Acct Receivable</td><td>149.0</td><td>151.2</td><td>141.6</td><td>128.9</td><td>123.3</td><td>144.9</td><td>155.4</td><td>164.2</td><td>203.5</td><td>252.6</td><td>249.2</td><td>237.0</td><td>262.5</td><td></td></tr><tr><td>Inventories</td><td>92.5</td><td>113.9</td><td>117.9</td><td>103.7</td><td>100.5</td><td>112.6</td><td>131.0</td><td>131.5</td><td>147.2</td><td>183.8</td><td>206.7</td><td>216.0</td><td>235.8</td><td></td></tr><tr><td>Other Current Assets</td><td>23.3</td><td>28.8</td><td>27.0</td><td>22.5</td><td>18.8</td><td>20.6</td><td>25.4</td><td>23.8</td><td>25.6</td><td>39.9</td><td>39.9</td><td>39.9</td><td>39.9</td><td></td></tr><tr><td>Total Current Assets</td><td>296.5</td><td>328.2</td><td>323.3</td><td>299.8</td><td>317.4</td><td>369.1</td><td>419.0</td><td>467.3</td><td>561.3</td><td>657.6</td><td>667.3</td><td>636.3</td><td>642.9</td><td></td></tr><tr><td>PP&amp;E, net</td><td>195.3</td><td>211.3</td><td>231.8</td><td>210.6</td><td>184.0</td><td>174.1</td><td>163.2</td><td>165.7</td><td>171.4</td><td>196.9</td><td>351.2</td><td>503.5</td><td>653.8</td><td></td></tr><tr><td>Goodwill and Goodwill-like Intangibles</td><td>7.1</td><td>4.2</td><td>2.7</td><td>7.1</td><td>6.3</td><td>6.9</td><td>6.3</td><td>10.1</td><td>8.5</td><td>7.5</td><td>7.5</td><td>7.5</td><td>7.5</td><td></td></tr><tr><td>Amortizable Intangibles</td><td>10.0</td><td>9.9</td><td>9.1</td><td>8.7</td><td>8.1</td><td>8.5</td><td>8.8</td><td>10.3</td><td>9.7</td><td>10.6</td><td>10.6</td><td>10.6</td><td>10.6</td><td></td></tr><tr><td>Investments in securities</td><td>41.3</td><td>38.4</td><td>32.5</td><td>28.2</td><td>27.7</td><td>29.1</td><td>30.4</td><td>35.2</td><td>34.3</td><td>48.3</td><td>52.3</td><td>56.3</td><td>60.3</td><td></td></tr><tr><td>Deferred tax assets</td><td>12.5</td><td>12.5</td><td>15.7</td><td>6.0</td><td>7.3</td><td>7.4</td><td>11.9</td><td>16.7</td><td>22.5</td><td>29.5</td><td>29.5</td><td>29.5</td><td>29.5</td><td></td></tr><tr><td>Other assets, noncurrent</td><td>26.0</td><td>33.5</td><td>23.3</td><td>15.8</td><td>18.5</td><td>16.4</td><td>17.0</td><td>18.5</td><td>22.5</td><td>19.2</td><td>19.2</td><td>19.2</td><td>19.2</td><td></td></tr><tr><td>Total Non Current Assets</td><td>292.1</td><td>309.8</td><td>315.1</td><td>276.3</td><td>251.8</td><td>242.4</td><td>237.6</td><td>256.6</td><td>269.0</td><td>311.9</td><td>470.2</td><td>626.5</td><td>780.8</td><td>28.9%</td></tr><tr><td>Total Assets</td><td>588.6</td><td>638.1</td><td>638.3</td><td>576.1</td><td>569.1</td><td>611.5</td><td>656.5</td><td>723.9</td><td>830.3</td><td>969.5</td><td>1,137.5</td><td>1,262.8</td><td>1,423.6</td><td>11.9%</td></tr><tr><td>Accounts Payable</td><td>77.2</td><td>77.2</td><td>65.0</td><td>65.8</td><td>68.5</td><td>71.8</td><td>74.7</td><td>82.4</td><td>104.9</td><td>126.8</td><td>129.6</td><td>135.4</td><td>147.8</td><td></td></tr><tr><td>Short-term debt</td><td>84.6</td><td>96.8</td><td>137.5</td><td>138.7</td><td>102.8</td><td>71.0</td><td>51.4</td><td>59.6</td><td>76.9</td><td>34.7</td><td>29.6</td><td>19.6</td><td>9.6</td><td></td></tr><tr><td>Other liabilities, current</td><td>41.4</td><td>59.3</td><td>56.6</td><td>48.5</td><td>45.0</td><td>55.6</td><td>56.3</td><td>58.3</td><td>99.4</td><td>116.4</td><td>116.4</td><td>116.4</td><td>116.4</td><td></td></tr><tr><td>Total Current liabilities</td><td>203.2</td><td>233.2</td><td>259.2</td><td>253.0</td><td>216.3</td><td>198.4</td><td>182.3</td><td>200.3</td><td>281.1</td><td>277.9</td><td>275.6</td><td>271.4</td><td>273.8</td><td>-0.3%</td></tr><tr><td>Long-term debt</td><td>141.3</td><td>140.6</td><td>116.0</td><td>122.0</td><td>139.1</td><td>140.5</td><td>141.5</td><td>132.6</td><td>70.3</td><td>50.3</td><td>112.6</td><td>112.6</td><td>112.6</td><td></td></tr><tr><td>Retirement pension obligations</td><td>8.2</td><td>8.5</td><td>9.4</td><td>11.2</td><td>11.0</td><td>10.5</td><td>11.9</td><td>10.7</td><td>10.6</td><td>9.9</td><td>9.9</td><td>9.9</td><td>9.9</td><td></td></tr><tr><td>Deferred tax liabilities</td><td>0.1</td><td>0.1</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td></td></tr><tr><td>Other liabilities, noncurrent</td><td>11.2</td><td>13.7</td><td>12.9</td><td>17.8</td><td>18.2</td><td>18.4</td><td>26.9</td><td>13.7</td><td>33.0</td><td>38.2</td><td>38.2</td><td>38.2</td><td>38.2</td><td></td></tr><tr><td>Total Non Current Liabilities</td><td>160.9</td><td>162.9</td><td>138.2</td><td>151.0</td><td>168.3</td><td>169.5</td><td>180.4</td><td>157.0</td><td>113.9</td><td>98.3</td><td>160.7</td><td>160.7</td><td>160.7</td><td>0.0%</td></tr><tr><td>Common stock</td><td>53.1</td><td>53.1</td><td>53.1</td><td>53.1</td><td>53.1</td><td>53.1</td><td>53.1</td><td>53.1</td><td>53.1</td><td>53.1</td><td>53.1</td><td>53.1</td><td>53.1</td><td></td></tr><tr><td>Additional paid-in capital</td><td>30.0</td><td>30.0</td><td>29.6</td><td>27.9</td><td>27.7</td><td>28.1</td><td>26.5</td><td>26.1</td><td>24.3</td><td>24.5</td><td>24.5</td><td>24.5</td><td>24.5</td><td></td></tr><tr><td>Retained earnings</td><td>118.9</td><td>133.8</td><td>131.3</td><td>89.9</td><td>87.5</td><td>126.5</td><td>161.1</td><td>201.8</td><td>272.8</td><td>385.3</td><td>490.1</td><td>616.4</td><td>771.6</td><td></td></tr><tr><td>Treasury stocks</td><td>-5.9</td><td>-6.4</td><td>-6.3</td><td>-10.9</td><td>-10.9</td><td>-10.6</td><td>-10.5</td><td>-10.5</td><td>-10.4</td><td>-10.4</td><td>-10.4</td><td>-10.4</td><td>-10.4</td><td></td></tr><tr><td>Shareholders&#x27; Equity</td><td>196.0</td><td>210.5</td><td>207.6</td><td>159.9</td><td>157.5</td><td>197.1</td><td>230.3</td><td>270.5</td><td>339.8</td><td>452.5</td><td>557.3</td><td>683.6</td><td>838.8</td><td>22.7%</td></tr><tr><td>Noncontrolling interests</td><td>21.8</td><td>22.7</td><td>24.2</td><td>20.0</td><td>21.7</td><td>23.2</td><td>23.8</td><td>25.5</td><td>27.8</td><td>32.8</td><td>36.0</td><td>39.2</td><td>42.4</td><td></td></tr><tr><td>Accumulated OCI</td><td>6.7</td><td>8.9</td><td>9.1</td><td>-7.9</td><td>5.4</td><td>23.4</td><td>39.7</td><td>70.6</td><td>67.7</td><td>107.9</td><td>107.9</td><td>107.9</td><td>107.9</td><td></td></tr><tr><td>Liabs+Shr&#x27;hlders Eq</td><td>588.6</td><td>638.1</td><td>638.3</td><td>576.1</td><td>569.1</td><td>611.5</td><td>656.5</td><td>723.9</td><td>830.3</td><td>969.5</td><td>1,137.5</td><td>1,262.8</td><td>1,423.6</td><td>11.9%</td></tr></table>
+
+<table><tr><td>J-GAAPF2026e</td><td>J-GAAPF2027e</td><td>J-GAAPF2028e</td></tr><tr><td>178.3</td><td>190.7</td><td>208.0</td></tr><tr><td>0.7</td><td>0.7</td><td>0.7</td></tr><tr><td>274.8</td><td>301.8</td><td>332.7</td></tr><tr><td>200.4</td><td>216.4</td><td>236.4</td></tr><tr><td>25.6</td><td>25.6</td><td>25.6</td></tr><tr><td>680.0</td><td>735.2</td><td>803.5</td></tr><tr><td>247.3</td><td>310.0</td><td>370.7</td></tr><tr><td>8.5</td><td>8.5</td><td>8.5</td></tr><tr><td>9.7</td><td>9.7</td><td>9.7</td></tr><tr><td>44.5</td><td>48.5</td><td>52.5</td></tr><tr><td>22.5</td><td>22.5</td><td>22.5</td></tr><tr><td>22.5</td><td>22.5</td><td>22.5</td></tr><tr><td>355.0</td><td>421.7</td><td>486.4</td></tr><tr><td>1,035.0</td><td>1,156.9</td><td>1,289.9</td></tr><tr><td>125.6</td><td>135.6</td><td>148.2</td></tr><tr><td>29.6</td><td>19.6</td><td>9.6</td></tr><tr><td>99.4</td><td>99.4</td><td>99.4</td></tr><tr><td>254.5</td><td>254.5</td><td>257.1</td></tr><tr><td>102.6</td><td>92.6</td><td>82.6</td></tr><tr><td>10.6</td><td>10.6</td><td>10.6</td></tr><tr><td>0.0</td><td>0.0</td><td>0.0</td></tr><tr><td>33.0</td><td>33.0</td><td>33.0</td></tr><tr><td>146.3</td><td>136.3</td><td>126.3</td></tr><tr><td>53.1</td><td>53.1</td><td>53.1</td></tr><tr><td>24.3</td><td>24.3</td><td>24.3</td></tr><tr><td>463.6</td><td>592.3</td><td>729.6</td></tr><tr><td>-10.4</td><td>-10.4</td><td>-10.4</td></tr><tr><td>530.6</td><td>659.3</td><td>796.6</td></tr><tr><td>35.9</td><td>39.1</td><td>42.3</td></tr><tr><td>67.7</td><td>67.7</td><td>67.7</td></tr><tr><td>1,035.0</td><td>1,156.9</td><td>1,289.9</td></tr></table>
+
+<table><tr><td>(Unit: JPYbn)C/F</td><td>J-GAAPF2016</td><td>J-GAAPF2017</td><td>J-GAAPF2018</td><td>J-GAAPF2019</td><td>J-GAAPF2020</td><td>J-GAAPF2021</td><td>J-GAAPF2022</td><td>J-GAAPF2023</td><td>J-GAAPF2024</td><td>J-GAAPF2025</td><td>J-GAAPF2026e</td><td>J-GAAPF2027e</td><td>J-GAAPF2028e</td><td>CAGR26e-27e</td></tr><tr><td>Net Income</td><td>12.9</td><td>18.4</td><td>1.5</td><td>-38.5</td><td>-5.4</td><td>39.1</td><td>40.3</td><td>51.0</td><td>91.1</td><td>157.2</td><td>187.6</td><td>225.6</td><td>271.1</td><td></td></tr><tr><td>Depreciation</td><td>27.6</td><td>26.9</td><td>31.6</td><td>35.7</td><td>33.6</td><td>30.5</td><td>29.1</td><td>22.9</td><td>21.4</td><td>24.1</td><td>22.3</td><td>24.3</td><td>26.3</td><td></td></tr><tr><td>Goodwill amortization</td><td>3.5</td><td>2.6</td><td>1.9</td><td>2.1</td><td>1.6</td><td>0.8</td><td>1.1</td><td>1.3</td><td>1.5</td><td>4.7</td><td>0.0</td><td>0.0</td><td>0.0</td><td></td></tr><tr><td>Change in accounts receivable</td><td>-7.5</td><td>-3.8</td><td>9.7</td><td>2.6</td><td>9.7</td><td>-14.4</td><td>-2.2</td><td>3.6</td><td>0.0</td><td>0.0</td><td>3.4</td><td>12.2</td><td>-25.4</td><td></td></tr><tr><td>Change in inventories</td><td>-11.4</td><td>-22.1</td><td>-4.7</td><td>9.9</td><td>6.6</td><td>-8.1</td><td>-13.3</td><td>9.4</td><td>0.0</td><td>0.0</td><td>-22.9</td><td>-9.3</td><td>-19.8</td><td></td></tr><tr><td>Change in accounts payable</td><td>6.4</td><td>2.1</td><td>-12.1</td><td>5.0</td><td>-0.4</td><td>-2.6</td><td>-3.4</td><td>-1.9</td><td>0.0</td><td>0.0</td><td>2.8</td><td>5.8</td><td>12.4</td><td></td></tr><tr><td>Other operating cash flow</td><td>12.1</td><td>3.8</td><td>14.2</td><td>29.6</td><td>16.9</td><td>-5.0</td><td>6.4</td><td>8.2</td><td>1.9</td><td>-53.0</td><td>-0.8</td><td>-0.8</td><td>-0.8</td><td></td></tr><tr><td>Cash flow from operating activities</td><td>43.6</td><td>27.8</td><td>42.0</td><td>46.4</td><td>62.6</td><td>40.4</td><td>58.1</td><td>94.4</td><td>115.9</td><td>132.9</td><td>192.4</td><td>257.8</td><td>263.8</td><td>17.1%</td></tr><tr><td>Capital Expenditure</td><td>-46.5</td><td>-41.0</td><td>-56.1</td><td>-32.6</td><td>-18.6</td><td>-15.8</td><td>-15.4</td><td>-20.8</td><td>-29.1</td><td>-39.1</td><td>-176.6</td><td>-176.6</td><td>-176.6</td><td></td></tr><tr><td>Purchase of intangible assets</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td></td></tr><tr><td>Change in investment securities</td><td>0.6</td><td>5.0</td><td>6.6</td><td>5.9</td><td>5.9</td><td>0.4</td><td>1.0</td><td>1.8</td><td>1.8</td><td>2.5</td><td>0.0</td><td>0.0</td><td>0.0</td><td></td></tr><tr><td>Net disposals (acquisitions)</td><td>-1.5</td><td>0.7</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td></td></tr><tr><td>Other investment cash flow</td><td>-13.2</td><td>0.9</td><td>1.3</td><td>-12.8</td><td>5.6</td><td>23.2</td><td>4.7</td><td>-2.4</td><td>6.4</td><td>0.3</td><td>0.0</td><td>0.0</td><td>0.0</td><td></td></tr><tr><td>Cash flow from investing activities</td><td>-60.6</td><td>-34.4</td><td>-48.2</td><td>-39.4</td><td>-7.1</td><td>7.8</td><td>-9.7</td><td>-21.5</td><td>-20.9</td><td>-36.2</td><td>-176.6</td><td>-176.6</td><td>-176.6</td><td>0.0%</td></tr><tr><td>Change in short-term debt</td><td>-4.7</td><td>13.9</td><td>19.4</td><td>-0.4</td><td>-8.6</td><td>-24.7</td><td>-17.1</td><td>-6.3</td><td>-17.8</td><td>-1.9</td><td>-5.2</td><td>-10.0</td><td>-10.0</td><td></td></tr><tr><td>Change in long-term debt</td><td>32.2</td><td>-0.2</td><td>-6.7</td><td>14.6</td><td>-17.4</td><td>-9.7</td><td>-4.4</td><td>-2.5</td><td>-12.8</td><td>-61.0</td><td>62.4</td><td>0.0</td><td>0.0</td><td></td></tr><tr><td>Net share issuance (repurchase)</td><td>-7.9</td><td>-0.0</td><td>0.0</td><td>-4.6</td><td>-0.0</td><td>-0.0</td><td>0.0</td><td>-0.4</td><td>-1.7</td><td>0.2</td><td>0.0</td><td>0.0</td><td>0.0</td><td></td></tr><tr><td>Dividends paid</td><td>-3.2</td><td>-3.6</td><td>-4.0</td><td>-2.9</td><td>0.0</td><td>0.0</td><td>-6.4</td><td>-10.9</td><td>-18.2</td><td>-44.6</td><td>-82.8</td><td>-99.3</td><td>-115.9</td><td></td></tr><tr><td>Other financial cash flow</td><td>-0.0</td><td>-0.5</td><td>-0.4</td><td>-4.9</td><td>-0.5</td><td>-2.5</td><td>-6.0</td><td>-15.9</td><td>-6.8</td><td>-4.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td></td></tr><tr><td>Cash flow from financing activities</td><td>16.4</td><td>9.6</td><td>8.4</td><td>1.7</td><td>-26.5</td><td>-36.9</td><td>-33.9</td><td>-36.0</td><td>-57.4</td><td>-111.3</td><td>-25.6</td><td>-109.3</td><td>-125.9</td><td>122.0%</td></tr><tr><td>Net change in cash &amp; cash equivalents</td><td>-1.4</td><td>2.9</td><td>2.7</td><td>7.7</td><td>30.2</td><td>16.3</td><td>16.1</td><td>40.4</td><td>37.2</td><td>-5.3</td><td>-9.7</td><td>-28.1</td><td>-38.7</td><td></td></tr><tr><td>FX effect</td><td>-0.8</td><td>-0.2</td><td>0.5</td><td>-1.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td></td></tr><tr><td>Other</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>1.3</td><td>5.0</td><td>1.6</td><td>3.5</td><td>-0.4</td><td>9.3</td><td>0.0</td><td>0.0</td><td>0.0</td><td></td></tr><tr><td>Cash at end of period</td><td>30.7</td><td>33.6</td><td>36.2</td><td>44.0</td><td>74.2</td><td>90.4</td><td>106.6</td><td>147.0</td><td>184.2</td><td>178.9</td><td>169.2</td><td>141.0</td><td>102.3</td><td>-22.2%</td></tr></table>
+
+<table><tr><td>J-GAAP F2026e</td><td>J-GAAP F2027e</td><td>J-GAAP F2028e</td></tr><tr><td>202.8</td><td>244.6</td><td>286.3</td></tr><tr><td>22.3</td><td>24.3</td><td>26.3</td></tr><tr><td>0.0</td><td>0.0</td><td>0.0</td></tr><tr><td>-36.8</td><td>-26.9</td><td>-31.0</td></tr><tr><td>-26.1</td><td>-15.9</td><td>-20.0</td></tr><tr><td>16.4</td><td>10.0</td><td>12.6</td></tr><tr><td>-0.8</td><td>-0.8</td><td>-0.8</td></tr><tr><td>177.7</td><td>235.2</td><td>273.4</td></tr><tr><td>-87.0</td><td>-87.0</td><td>-87.0</td></tr><tr><td>0.0</td><td>0.0</td><td>0.0</td></tr><tr><td>0.0</td><td>0.0</td><td>0.0</td></tr><tr><td>0.0</td><td>0.0</td><td>0.0</td></tr><tr><td>0.0</td><td>0.0</td><td>0.0</td></tr><tr><td>-87.0</td><td>-87.0</td><td>-87.0</td></tr><tr><td>-10.0</td><td>-10.0</td><td>-10.0</td></tr><tr><td>-10.0</td><td>-10.0</td><td>-10.0</td></tr><tr><td>0.0</td><td>0.0</td><td>0.0</td></tr><tr><td>-99.3</td><td>-115.9</td><td>-149.0</td></tr><tr><td>0.0</td><td>0.0</td><td>0.0</td></tr><tr><td>-119.3</td><td>-135.9</td><td>-169.0</td></tr><tr><td>-28.6</td><td>12.3</td><td>17.4</td></tr><tr><td>0.0</td><td>0.0</td><td>0.0</td></tr><tr><td>0.0</td><td>0.0</td><td>0.0</td></tr><tr><td>178.3</td><td>190.7</td><td>208.0</td></tr></table>
+
+Source: MS, e = MS estimates
+
+Exhibit 38: Financial Summary (3)
+
+<table><tr><td rowspan="2">(Unit: JPYbn)P&amp;L</td><td colspan="4">F2025</td><td colspan="4">F2026</td><td colspan="4">F2027</td><td colspan="4">F2028</td></tr><tr><td>1Q</td><td>2Q</td><td>3Q</td><td>4Qe</td><td>1Qe</td><td>2Qe</td><td>3Qe</td><td>4Qe</td><td>1Qe</td><td>2Qe</td><td>3Qe</td><td>4Qe</td><td>1Qe</td><td>2Qe</td><td>3Qe</td><td>4Qe</td></tr><tr><td>Revenue</td><td>267.9</td><td>291.1</td><td>295.9</td><td>327.4</td><td>322.8</td><td>337.7</td><td>349.2</td><td>338.9</td><td>350.9</td><td>362.9</td><td>370.6</td><td>358.8</td><td>373.9</td><td>383.6</td><td>406.4</td><td>434.0</td></tr><tr><td>Power&amp; Telecommunication</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>Power</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>Telecommunication</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>Telecommunication Systems</td><td>143.9</td><td>159.7</td><td>160.6</td><td>188.9</td><td>195.8</td><td>201.0</td><td>211.0</td><td>214.5</td><td>222.7</td><td>224.9</td><td>231.3</td><td>233.3</td><td>244.9</td><td>244.6</td><td>266.5</td><td>307.8</td></tr><tr><td>Electronics Products</td><td>39.5</td><td>46.7</td><td>45.5</td><td>40.6</td><td>41.2</td><td>48.7</td><td>47.8</td><td>41.3</td><td>42.0</td><td>49.6</td><td>48.4</td><td>42.0</td><td>42.5</td><td>50.2</td><td>48.7</td><td>42.4</td></tr><tr><td>Automotive Products</td><td>44.1</td><td>42.1</td><td>43.3</td><td>49.9</td><td>44.0</td><td>44.0</td><td>42.0</td><td>42.0</td><td>44.0</td><td>44.0</td><td>42.0</td><td>42.0</td><td>44.0</td><td>44.0</td><td>42.0</td><td>42.0</td></tr><tr><td>Energy</td><td>35.6</td><td>37.7</td><td>41.9</td><td>41.8</td><td>36.6</td><td>38.8</td><td>43.2</td><td>35.9</td><td>37.0</td><td>39.2</td><td>43.6</td><td>36.3</td><td>37.4</td><td>39.6</td><td>44.0</td><td>36.6</td></tr><tr><td>Real Estate</td><td>2.8</td><td>2.8</td><td>2.7</td><td>2.7</td><td>2.8</td><td>2.8</td><td>2.8</td><td>2.8</td><td>2.8</td><td>2.8</td><td>2.8</td><td>2.8</td><td>2.8</td><td>2.8</td><td>2.8</td><td>2.8</td></tr><tr><td>Other</td><td>2.1</td><td>2.2</td><td>2.0</td><td>3.5</td><td>2.4</td><td>2.4</td><td>2.4</td><td>2.4</td><td>2.4</td><td>2.4</td><td>2.4</td><td>2.4</td><td>2.4</td><td>2.4</td><td>2.4</td><td>2.4</td></tr><tr><td>Revenue Growth (Y/Y, %)</td><td>22.7</td><td>27.0</td><td>12.3</td><td>22.0</td><td>20.5</td><td>16.0</td><td>18.0</td><td>3.5</td><td>8.7</td><td>7.4</td><td>6.1</td><td>5.9</td><td>6.6</td><td>5.7</td><td>9.7</td><td>21.0</td></tr><tr><td>Power&amp; Telecommunication</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>Power</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>Telecommunication</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>Telecommunication Systems</td><td>58.1</td><td>68.0</td><td>31.1</td><td>32.2</td><td>36.1</td><td>25.9</td><td>31.4</td><td>13.6</td><td>13.7</td><td>11.9</td><td>9.6</td><td>8.8</td><td>10.0</td><td>8.7</td><td>15.2</td><td>31.9</td></tr><tr><td>Electronics Products</td><td>5.1</td><td>-8.5</td><td>-16.6</td><td>-5.0</td><td>4.2</td><td>4.3</td><td>5.1</td><td>1.7</td><td>1.9</td><td>1.8</td><td>1.3</td><td>1.7</td><td>1.2</td><td>1.2</td><td>0.6</td><td>1.0</td></tr><tr><td>Automotive Products</td><td>-8.7</td><td>-3.5</td><td>0.9</td><td>18.2</td><td>-0.3</td><td>4.6</td><td>-3.0</td><td>-15.8</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td></tr><tr><td>Energy</td><td>-4.5</td><td>7.8</td><td>7.5</td><td>22.9</td><td>3.0</td><td>3.0</td><td>3.0</td><td>-14.2</td><td>1.0</td><td>1.0</td><td>1.0</td><td>1.0</td><td>1.0</td><td>1.0</td><td>1.0</td><td>1.0</td></tr><tr><td>Real Estate</td><td>3.5</td><td>2.0</td><td>1.4</td><td>0.8</td><td>0.6</td><td>1.0</td><td>2.2</td><td>2.3</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td></tr><tr><td>Other</td><td>37.3</td><td>16.4</td><td>2.8</td><td>-9.5</td><td>16.7</td><td>9.2</td><td>22.6</td><td>-31.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td><td>0.0</td></tr><tr><td>Operating Profit</td><td>41.1</td><td>49.1</td><td>52.0</td><td>46.5</td><td>61.5</td><td>66.2</td><td>67.2</td><td>65.1</td><td>74.0</td><td>79.0</td><td>79.8</td><td>77.2</td><td>83.6</td><td>86.3</td><td>93.9</td><td>106.2</td></tr><tr><td>Power&amp; Telecommunication</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>Telecommunication Systems</td><td>3.3</td><td>4.2</td><td>7.3</td><td>4.1</td><td>3.0</td><td>3.7</td><td>2.7</td><td>2.4</td><td>3.5</td><td>4.2</td><td>3.2</td><td>3.1</td><td>3.5</td><td>4.2</td><td>3.2</td><td>3.1</td></tr><tr><td>Electronics Products</td><td>34.0</td><td>39.9</td><td>40.4</td><td>38.5</td><td>55.2</td><td>57.1</td><td>58.5</td><td>60.0</td><td>66.7</td><td>68.9</td><td>70.4</td><td>71.0</td><td>76.2</td><td>76.2</td><td>84.5</td><td>99.9</td></tr><tr><td>Automotive Products</td><td>1.7</td><td>3.3</td><td>1.9</td><td>0.8</td><td>1.9</td><td>3.9</td><td>4.4</td><td>0.8</td><td>2.0</td><td>4.2</td><td>4.6</td><td>1.2</td><td>2.1</td><td>4.2</td><td>4.6</td><td>1.3</td></tr><tr><td>Energy</td><td>1.4</td><td>0.9</td><td>1.6</td><td>3.0</td><td>1.6</td><td>1.5</td><td>1.4</td><td>1.5</td><td>1.6</td><td>1.5</td><td>1.4</td><td>1.5</td><td>1.6</td><td>1.5</td><td>1.4</td><td>1.5</td></tr><tr><td>Real Estate</td><td>1.4</td><td>1.1</td><td>1.2</td><td>1.2</td><td>1.2</td><td>1.3</td><td>1.2</td><td>1.3</td><td>1.2</td><td>1.3</td><td>1.2</td><td>1.3</td><td>1.2</td><td>1.3</td><td>1.2</td><td>1.3</td></tr><tr><td>Other</td><td>-0.6</td><td>-0.3</td><td>-0.4</td><td>-1.1</td><td>-1.4</td><td>-1.3</td><td>-1.0</td><td>-0.9</td><td>-1.0</td><td>-1.1</td><td>-1.0</td><td>-0.9</td><td>-1.0</td><td>-1.1</td><td>-1.0</td><td>-0.9</td></tr><tr><td>Operating Profit Margin (%)</td><td>15.3</td><td>16.9</td><td>17.6</td><td>14.2</td><td>19.1</td><td>19.6</td><td>19.2</td><td>19.2</td><td>21.1</td><td>21.8</td><td>21.5</td><td>21.5</td><td>22.4</td><td>22.5</td><td>23.1</td><td>24.5</td></tr><tr><td>Power&amp; Telecommunication</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>Telecommunication Systems</td><td>9.3</td><td>11.1</td><td>17.5</td><td>9.9</td><td>8.2</td><td>9.5</td><td>6.3</td><td>6.7</td><td>9.5</td><td>10.7</td><td>7.3</td><td>8.6</td><td>9.4</td><td>10.6</td><td>7.3</td><td>8.5</td></tr><tr><td>Electronics Products</td><td>23.6</td><td>25.0</td><td>25.2</td><td>20.4</td><td>28.2</td><td>28.4</td><td>27.7</td><td>28.0</td><td>30.0</td><td>30.6</td><td>30.4</td><td>30.4</td><td>31.1</td><td>31.2</td><td>31.7</td><td>32.5</td></tr><tr><td>Automotive Products</td><td>4.2</td><td>7.0</td><td>4.2</td><td>2.0</td><td>4.6</td><td>8.0</td><td>9.2</td><td>1.9</td><td>4.8</td><td>8.5</td><td>9.5</td><td>2.9</td><td>4.9</td><td>8.4</td><td>9.4</td><td>3.1</td></tr><tr><td>Energy</td><td>3.1</td><td>2.1</td><td>3.6</td><td>6.0</td><td>3.6</td><td>3.4</td><td>3.3</td><td>3.6</td><td>3.6</td><td>3.4</td><td>3.3</td><td>3.6</td><td>3.6</td><td>3.4</td><td>3.3</td><td>3.6</td></tr><tr><td>Real Estate</td><td>48.6</td><td>41.2</td><td>45.5</td><td>44.4</td><td>42.9</td><td>46.4</td><td>42.9</td><td>46.4</td><td>42.9</td><td>46.4</td><td>42.9</td><td>46.4</td><td>42.9</td><td>46.4</td><td>42.9</td><td>46.4</td></tr><tr><td>Other</td><td>-28.8</td><td>-12.2</td><td>-22.1</td><td>-31.7</td><td>-58.3</td><td>-54.2</td><td>-41.7</td><td>-37.5</td><td>-41.7</td><td>-45.8</td><td>-41.7</td><td>-37.5</td><td>-41.7</td><td>-45.8</td><td>-41.7</td><td>-37.5</td></tr><tr><td>Equity Method Income</td><td>2.0</td><td>2.2</td><td>1.0</td><td>2.9</td><td>1.0</td><td>1.0</td><td>1.0</td><td>1.0</td><td>1.0</td><td>1.0</td><td>1.0</td><td>1.0</td><td>1.0</td><td>1.0</td><td>1.0</td><td>1.0</td></tr><tr><td>Other non-operating income</td><td>-1.3</td><td>-1.4</td><td>5.3</td><td>-0.0</td><td>-1.0</td><td>-1.5</td><td>-1.5</td><td>-1.0</td><td>-1.0</td><td>-1.5</td><td>-1.5</td><td>-1.0</td><td>-1.0</td><td>-1.5</td><td>-1.5</td><td>-1.0</td></tr><tr><td>Recurring Profit</td><td>41.8</td><td>49.9</td><td>58.4</td><td>49.4</td><td>61.5</td><td>65.7</td><td>66.7</td><td>65.1</td><td>74.0</td><td>78.5</td><td>79.3</td><td>77.2</td><td>83.6</td><td>85.8</td><td>93.4</td><td>106.2</td></tr><tr><td>One-off Profit / Loss, net</td><td>1.9</td><td>-1.3</td><td>2.8</td><td>1.8</td><td>-3.0</td><td>-1.0</td><td>-1.0</td><td>-3.0</td><td>-3.0</td><td>-1.0</td><td>-1.0</td><td>-3.0</td><td>-3.0</td><td>-1.0</td><td>-1.0</td><td>-3.0</td></tr><tr><td>Pretax Profit</td><td>43.7</td><td>48.6</td><td>61.2</td><td>51.2</td><td>58.5</td><td>64.7</td><td>65.7</td><td>62.1</td><td>71.0</td><td>77.5</td><td>78.3</td><td>74.2</td><td>80.6</td><td>84.8</td><td>92.4</td><td>103.2</td></tr><tr><td>Tax</td><td>11.1</td><td>11.5</td><td>14.9</td><td>5.1</td><td>14.0</td><td>15.5</td><td>15.8</td><td>14.9</td><td>17.0</td><td>18.6</td><td>18.8</td><td>17.8</td><td>19.3</td><td>20.4</td><td>22.2</td><td>24.8</td></tr><tr><td>Non-controlling Interest</td><td>1.3</td><td>0.9</td><td>1.9</td><td>0.9</td><td>0.8</td><td>0.8</td><td>0.8</td><td>0.8</td><td>0.8</td><td>0.8</td><td>0.8</td><td>0.8</td><td>0.8</td><td>0.8</td><td>0.8</td><td>0.8</td></tr><tr><td>Net Income for Shareholders</td><td>31.3</td><td>35.8</td><td>44.8</td><td>45.2</td><td>43.7</td><td>48.4</td><td>49.1</td><td>46.4</td><td>53.2</td><td>58.1</td><td>58.7</td><td>55.6</td><td>60.5</td><td>63.6</td><td>69.4</td><td>77.6</td></tr></table>
+
+Source: MS, e = MS estimates
+
+## Risk Reward – Fujikura (5803.T)
+
+Strengths in multicore fiberoptic cables and optical connectors
+
+## PRICE TARGET ¥4,700
+
+We use a residual income model, with assumptions of 10.0% capital cost (2.0% risk-free rate, 6.2% equity risk premium, 1.29 beta), 55% payout ratio, a mid-term growth rate of \~17.5%, terminal growth rate of 3.7%. Our PT equates to P/E of 34.5x on F3/28e EPS of ¥136.
+
+![](images/726b4f660ec988bc6a96ca3c5c8fcfdfa8fd9794a1bd1a898210077cf63021e1.jpg)
+
+<details>
+<summary>bar-line hybrid chart</summary>
+
+| Category | Value     |
+| -------- | --------- |
+| Mean     | ¥3,583.30 |
+| MS Estimates | ¥5,704    |
+| Total    | ¥7,500.00 |
+</details>
+
+RISK REWARD CHART  
+![](images/1fcbd61ae3b6b99327166ef381ba3da3b008c5050c1370537f0beb14f4921673.jpg)
+
+<details>
+<summary>line chart</summary>
+
+| Date    | Value     |
+|---------|-----------|
+| JUN '26 | 4,142     |
+| JUN '27 | ¥6,400 (+54.51%) |
+| JUN '27 | ¥4,700 (+13.47%) |
+| JUN '27 | ¥2,600 (-37.23%) |
+</details>
+
+Source: Refinitiv, MS
+
+## EQUAL-WEIGHT THESIS
+
+■ We assign an EW rating from a relative perspective in the industry.  
+■ We expect increased sales of fiberoptic cables to drive growth.  
+■ The firm has announced spending to add capacity but production capacity could still impose constraints.  
+■ It holds top global share in MPO connectors.  
+■ It also holds top global share in fiberoptic fusion splicers.
+
+Consensus Rating Distribution  
+![](images/51475895ec645b397b4361f4ce8e5e2ed4e05e3b047c276b4b208de7b119a597.jpg)
+
+<details>
+<summary>bar chart</summary>
+
+| Category      | Value |
+| ------------- | ----- |
+| Overweight    | 79%   |
+| Equal-weight  | 21%   |
+| Underweight   | 0%    |
+</details>
+
+Source: Refinitiv, MS
+
+Risk Reward Themes
+
+<table><tr><td>Secular Growth:</td><td>Positive</td></tr><tr><td>Self-help:</td><td>Positive</td></tr><tr><td>New Data Era:</td><td>Positive</td></tr></table>
+
+View descriptions of Risk Rewards Themes here
+
+## BULL CASE
+
+## ¥6,400
+
+## Share price aligned to residual income model
+
+Profit in fiberoptic cable business grows beyond our expectation, and profit tops the base case by 20% from F3/27. Equates to P/E of 43.0x on estimated F3/28 EPS of ¥149.
+
+## BASE CASE
+
+## ¥4,700
+
+## Derived from a residual income model
+
+Expect big contributions to earnings growth from Telecommunication Systems stemming from both company-specific factors and a positive turn in market conditions. We forecast OP of ¥260bn in F3/27, ¥310bn in F3/28, and ¥370bn in F3/29, for a growth rate of +19.3% over that period. Our PT equates to P/E of 34.5x on F3/28e EPS of ¥136.
+
+## BEAR CASE
+
+## ¥2,600
+
+## Share price aligned to residual income model
+
+Data center investment slows sharply and profits in the fiberoptic cable business decline YoY. Profit is 30% below the base case from F3/27. Equates to P/E of 22.1x on estimated F3/28 EPS of ¥118.
+
+## Risk Reward – Fujikura (5803.T)
+
+KEY EARNINGS INPUTS
+
+<table><tr><td>Drivers</td><td>2026</td><td>2027e</td><td>2028e</td><td>2029e</td></tr><tr><td>Telecommunication Systems OP (¥, mn)</td><td>152,729</td><td>230,800</td><td>277,000</td><td>336,800</td></tr><tr><td>Electronics Products OP (¥, mn)</td><td>7,666</td><td>11,000</td><td>12,000</td><td>12,200</td></tr><tr><td>Automotive Products OP (¥, mn)</td><td>6,809</td><td>6,000</td><td>6,000</td><td>6,000</td></tr></table>
+
+## INVESTMENT DRIVERS
+
+- Shift to higher added value and higher sales volume (new customer acquisition, increase in existing customer sales, etc.) in fiberoptic cable business  
+• Capital cost-conscious management
+
+## GLOBAL REVENUE EXPOSURE
+
+![](images/9009947963f01c4163ed494de61766afcc68cedb8d274a2bd122679a523ad5ee.jpg)  
+0-10% India  
+0-10% UK  
+10-20% APAC, ex Japan, Mainland China and India  
+10-20% Europe ex UK  
+10-20% Mainland China  
+● 10-20% North America  
+30-40% Japan  
+Source: MS Estimate View explanation of regional hierarchies here
+
+## MS ALPHA MODELS
+
+5/5
+
+MOST
+
+3 Month
+
+Horizon
+
+Source: Refinitiv, FactSet, MS; 1 is the highest favored Quintile and 5 is the least favored Quintile
+
+## RISKS TO PT/RATING
+
+## RISKS TO UPSIDE
+
+- Increase in sales volume on healthier business sentiment than expected  
+- Faster expansion of fiberoptic cable sales than expected  
+- Greater yen depreciation than anticipated
+
+## RISKS TO DOWNSIDE
+
+- Decline in sales volume on weaker business sentiment than expected  
+- Delays in price passthrough due to sharp rises in raw material costs and other material costs  
+- Faster yen appreciation than anticipated
+
+## OWNERSHIP POSITIONING
+
+Inst. Owners, % Active
+
+66%
+
+![](images/6b3a97167138e8362b00b420c05f6fe6dcc29cb5e56e2e610bfad427390371a8.jpg)
+
+![](images/eddcbd6fe158c2542e02bf3eabc6b6fa97ac6abe1e248e5c8e7de850a3a9cab8.jpg)
+
+Source: Refinitiv, MS
+
+## MS ESTIMATES VS. CONSENSUS
+
+![](images/4ebab8dbffdb5fd57b47be25f3e250b746e05d6c792014ea46b07b773292c9b1.jpg)
+
+<details>
+<summary>bar-line hybrid chart</summary>
+
+FY Mar 2028e
+| Metric | Blue Diamond Value | Yellow Diamond Value |
+| :--- | :--- | :--- |
+| EBITDA (¥, bn) | 323.0 | 375.2 |
+| Net income (¥, bn) | 198.9 | 251.7 |
+| EPS (¥) | 120.1 | 154.8 |
+| DPS (¥) | 49.0 | 62.6 |
+| ROE (%) | 28.1 | 33.5 |
+| EBITDA (¥, bn) | 334 | 451.4 |
+| Net income (¥, bn) | 226 | 323.0 |
+| EPS (¥) | 136.3 | 197.9 |
+| DPS (¥) | 60.0 | 80.0 |
+| ROE (%) | 33.9 | 41.6 |
+</details>
+
+![](images/e4acb0d0f4cd337f49a3dab0b051f57f5c747a7ac852d4f29433f619fdd22653.jpg)
+
+![](images/61f199248fe69b434910fda7f8d06dc2620fb8fa26dbb647c37bf97147d98565.jpg)  
+organ Stanley Estimates  
+Source: Refinitiv, MS
+
+# Optical Fiber & Optical Fiber Connector Trade Stats
+
+Exhibit 39: Optical fiber & cable export value  
+![](images/d0c33d45b8c7c6d13eab70119d710de48ae9ce038050481c0c5deb82037a8635.jpg)
+
+<details>
+<summary>bar chart</summary>
+
+| Date     | Cable | Fiber |
+| -------- | ----- | ----- |
+| 2020.01  | 2.0   | 3.0   |
+| 2021.01  | 2.5   | 4.0   |
+| 2022.01  | 3.0   | 5.0   |
+| 2023.01  | 4.0   | 7.0   |
+| 2024.01  | 2.0   | 4.0   |
+| 2025.01  | 3.0   | 5.0   |
+| 2026.01  | 5.0   | 8.0   |
+</details>
+
+Source: MoF, MS
+
+Exhibit 41: Optical cable exports to N. America (from Yokohama/Tokyo Customs)  
+![](images/a4999980659052f813985f6bc6e1916adb7bcd0211bfd4e93c22584526c3b4b1.jpg)
+
+<details>
+<summary>bar chart</summary>
+
+| Date       | Tokyo | Yokohama |
+| ---------- | ----- | -------- |
+| 2018-01    | 0.5   | 0.3      |
+| 2019-01    | 0.7   | 0.4      |
+| 2020-01    | 0.6   | 0.5      |
+| 2021-01    | 0.8   | 0.6      |
+| 2022-01    | 1.0   | 0.7      |
+| 2023-01    | 1.2   | 0.8      |
+| 2024-01    | 1.5   | 0.9      |
+| 2025-01    | 1.8   | 1.0      |
+| 2026-01    | 2.2   | 1.1      |
+</details>
+
+Source: MoF, MS
+
+Exhibit 43: Power cable (over 1kV) exports by customs site  
+![](images/85de989ba506d00790649e913d7159f832f2993df5c35357364a7f1c3f687caf.jpg)
+
+<details>
+<summary>bar chart</summary>
+
+| Year | Other | Yokohama | Osaka | Hitachi | Kisarazu | Chiba |
+|------|-------|----------|-------|---------|----------|-------|
+| 2018 | 0.5   | 0.3      | 7.0   | 6.0     | 2.0      | 0.5   |
+| 2019 | 0.5   | 1.5      | 6.0   | 5.0     | 3.0      | 0.5   |
+| 2020 | 0.5   | 1.0      | 1.5   | 1.0     | 2.0      | 0.5   |
+| 2021 | 0.5   | 1.5      | 1.0   | 3.0     | 2.0      | 0.5   |
+| 2022 | 0.5   | 0.5      | 1.0   | 3.5     | 1.0      | 0.5   |
+| 2023 | 0.5   | 0.5      | 1.0   | 7.5     | 1.0      | 0.5   |
+| 2024 | 0.5   | 0.5      | 8.0   | 6.0     | 1.0      | 0.5   |
+| 2025 | 0.5   | 1.0      | 1.5   | 6.0     | 1.0      | 0.5   |
+| 2026 | 0.5   | 1.5      | 3.5   | 1.0     | 1.0      | 0.5   |
+</details>
+
+Source: MoF, MS
+
+Exhibit 40: Optical cable exports by customs site  
+![](images/3be5dedef48335d48303997b171768ccd91fea7745dc404514a10f6b123b1f35.jpg)
+
+<details>
+<summary>bar chart</summary>
+
+| Date       | Tokyo | Nagoya | Yokohama | Moji | Other |
+| ---------- | ----- | ------ | -------- | ---- | ----- |
+| 2018-01    | 0.5   | 0.8    | 0.7      | 1.8  | 0.3   |
+| 2019-01    | 0.6   | 0.9    | 0.8      | 1.9  | 0.4   |
+| 2020-01    | 0.7   | 1.0    | 0.9      | 2.8  | 0.5   |
+| 2021-01    | 0.8   | 1.1    | 1.0      | 2.9  | 0.6   |
+| 2022-01    | 0.9   | 1.2    | 1.1      | 3.5  | 0.7   |
+| 2023-01    | 1.0   | 1.3    | 1.2      | 5.5  | 0.8   |
+| 2024-01    | 1.1   | 1.4    | 1.3      | 3.8  | 0.9   |
+| 2025-01    | 1.2   | 1.5    | 1.4      | 4.0  | 1.0   |
+| 2026-01    | 1.3   | 1.6    | 1.5      | 4.5  | 1.1   |
+</details>
+
+Source: MoF, MS
+
+Exhibit 42: Optical cable exports to Western Europe (from Yokohama/Tokyo Customs)  
+![](images/ebc719c45735f90bbd475a1055ea8b497665408f1fd6e33639dc817407e2cf03.jpg)  
+Source: MoF, MS
+
+Exhibit 44: Power cable & optical cable exports from Chiba Customs  
+![](images/9192eb24a59e9eae26b51e3c6788f153f5dba0cda149d80532baa8e4175f80cf.jpg)
+
+<details>
+<summary>bar chart</summary>
+
+| Year | Optical Cable | Power Cable |
+|------|---------------|-------------|
+| 2018 | 0.0           | 0.35        |
+| 2019 | 0.0           | 0.7         |
+| 2020 | 0.3           | 0.65        |
+| 2021 | 0.0           | 0.45        |
+| 2022 | 0.0           | 0.1         |
+| 2023 | 0.0           | 0.0         |
+| 2024 | 0.0           | 0.45        |
+| 2025 | 0.0           | 0.3         |
+| 2026 | 0.0           | 0.65        |
+</details>
+
+Source: MoF, MS
+
+Exhibit 45: Optical Fiber Connector export value  
+![](images/86a2c814ebe2fd30f8d907c46356cfaf097953ba6bd43822c375a98104925c9b.jpg)
+
+<details>
+<summary>bar chart</summary>
+
+| Year | Tokyo | Nagoya | Osaka | Others |
+|------|-------|--------|-------|--------|
+| 2020 | 0.4   | 0.1    | 0.1   | 0.0    |
+| 2021 | 0.5   | 0.1    | 0.1   | 0.0    |
+| 2022 | 0.8   | 0.1    | 0.1   | 0.0    |
+| 2023 | 1.3   | 0.1    | 0.1   | 0.0    |
+| 2024 | 1.8   | 0.1    | 0.1   | 0.0    |
+| 2025 | 2.5   | 0.1    | 0.1   | 0.0    |
+| 2026 | 5.5   | 0.1    | 0.1   | 0.0    |
+</details>
+
+Source: MoF, MS
+
+Exhibit 46: Optical Fiber Connector by Location from Tokyo Customs  
+![](images/a75cb4af70fe76d4bd68f586c2896d7f352cb525f52142944fb7f90b219b52c6.jpg)
+
+<details>
+<summary>stacked bar chart</summary>
+
+Optical Fiber Connector from Tokyo (¥bn)
+| Year | North America (¥bn) | Asia (¥bn) | Europe (¥bn) | Others (¥bn) |
+| :--- | :--- | :--- | :--- | :--- |
+| 2020 | 0.3 | 0.1 | 0.05 | 0.0 |
+| 2021 | 0.4 | 0.2 | 0.08 | 0.0 |
+| 2022 | 0.5 | 0.3 | 0.12 | 0.0 |
+| 2023 | 0.6 | 0.4 | 0.15 | 0.0 |
+| 2024 | 0.8 | 0.5 | 0.25 | 0.0 |
+| 2025 | 1.2 | 0.7 | 0.45 | 0.1 |
+| 2026 | 2.8 | 1.9 | 1.95 | 0.15 |
+</details>
+
+Source: MoF, MS
+
+Exhibit 47: Optical Fusion Splicer export value (from Kumamoto and Yokohama)  
+![](images/3b65a073de95274b5680ff3ad6cc9821e548a0ac31b1e44f58d088b718f0182a.jpg)
+
+<details>
+<summary>bar chart</summary>
+
+| Year | Kumamoto | Yokohama |
+|------|----------|----------|
+| 2020 | 0.5      | 0.7      |
+| 2021 | 0.7      | 1.0      |
+| 2022 | 0.8      | 1.4      |
+| 2023 | 0.7      | 1.0      |
+| 2024 | 0.8      | 1.2      |
+| 2025 | 0.6      | 0.9      |
+| 2026 | 0.8      | 1.1      |
+</details>
+
+Source: MoF, MS
+
+Exhibit 48: Optical Fusion Splicer export value by Location from Kumamoto Customs  
+![](images/375faaa73a26a69358a022d4022d6da78901bfd151c2c72242a2260f3cd82462.jpg)
+
+<details>
+<summary>stacked bar chart</summary>
+
+| Year | Asia | NA | Europe | Others |
+|------|------|----|--------|--------|
+| 2020 | 0.1  | 0.1 | 0.1    | 0.4    |
+| 2021 | 0.2  | 0.3 | 0.3    | 0.7    |
+| 2022 | 0.3  | 0.5 | 0.8    | 1.1    |
+| 2023 | 0.2  | 0.2 | 0.4    | 0.6    |
+| 2024 | 0.3  | 0.3 | 0.4    | 0.7    |
+| 2025 | 0.2  | 0.2 | 0.3    | 0.6    |
+| 2026 | 0.3  | 0.3 | 0.4    | 0.8    |
+</details>
+
+Source: MoF, MS
+
+## Risk Reward Reference links
+
+1. View explanation of Options Probabilities methodology -  
+Options\_Probabilities\_Exhibit\_Link.pdf  
+2. View descriptions of Risk Rewards Themes - RR\_Themes\_Exhibit\_Link.pdf  
+3. View explanation of regional hierarchies - GEG\_Exhibit\_Link.pdf  
+4. View explanation of Theme/Exposure methodology -  
+ESG\_Sustainable\_Solutions\_External\_Link.pdf  
+5. View explanation of HERS methodology - ESG\_HERS\_External\_Link.pdf
+
+## Disclosure Section
+
+The information and opinions in MS were prepared by MS MUFG Securities Co., Ltd. and its affiliates (collectively, "MS").
+
+For important disclosures, stock price charts and equity rating histories regarding companies that are the subject of this report, please see the MS Disclosure Website at www.morganstanley.com/eqr/disclosures/webapp/generalresearch, or contact your investment representative or MS at 1585 Broadway, (Attention: Research Management), New York, NY, 10036 USA.
+
+For valuation methodology and risks associated with any recommendation, rating or price target referenced in this research report, please contact the Client Support Team as follows: US/Canada +1 800 303-2495; Hong Kong +852 2848-5999; Latin America +1 718 754-5444 (U.S.); London +44 (0)20-7425-8169; Singapore +65 6834-6860; Sydney +61 (0)2-9770-1505; Tokyo +81 (0)3-6836-9000. Alternatively you may contact your investment representative or MS at 1585 Broadway, (Attention: Research Management), New York, NY 10036 USA.
+
+## Analyst Certification
+
+The following analysts hereby certify that their views about the companies and their securities discussed in this report are accurately expressed and that they have not received and will not receive direct or indirect compensation in exchange for expressing specific recommendations or views in this report: Yu Shirakawa.
+
+## Global Research Conflict Management Policy
+
+MS has been published in accordance with our conflict management policy, which is available at www.morganstanley.com/institutional/research/conflictpolicies. A Portuguese version of the policy can be found at www.morganstanley.com.br
+
+## Important Regulatory Disclosures on Subject Companies
+
+As of May 29, 2026, MS beneficially owned 1% or more of a class of common equity securities of the following companies covered in MS: Sumitomo Electric. In the next 3 months, MS expects to receive or intends to seek compensation for investment banking services from Fujikura, Furukawa Electric, Sumitomo Electric.
+
+Within the last 12 months, MS has received compensation for products and services other than investment banking services from Sumitomo Electric.
+
+Within the last 12 months, MS has provided or is providing investment banking services to, or has an investment banking client relationship with, the following company: Fujikura, Furukawa Electric, Sumitomo Electric.
+
+Within the last 12 months, MS has either provided or is providing non-investment banking, securities-related services to and/or in the past has entered into an agreement to provide services or has a client relationship with the following company: Sumitomo Electric.
+
+The equity research analysts or strategists principally responsible for the preparation of MS have received compensation based upon various factors, including quality of research, investor client feedback, stock picking, competitive factors, firm revenues and overall investment banking revenues. Equity Research analysts' or strategists' compensation is not linked to investment banking or capital markets transactions performed by MS or the profitability or revenues of particular trading desks.
+
+MS and its affiliates do business that relates to companies/instruments covered in MS, including market making, providing liquidity, fund management, commercial banking, extension of credit, investment services and investment banking. MS sells to and buys from customers the securities/instruments of companies covered in MS on a principal basis. MS may have a position in the debt of the Company or instruments discussed in this report. MS trades or may trade as principal in the debt securities (or in related derivatives) that are the subject of the debt research report.
+
+Certain disclosures listed above are also for compliance with applicable regulations in non-US jurisdictions.
+
+## STOCK RATINGS
+
+MS uses a relative rating system using terms such as Overweight, Equal-weight, Not-Rated or Underweight (see definitions below). MS does not assign ratings of Buy, Hold or Sell to the stocks we cover. Overweight, Equal-weight, Not-Rated and Underweight are not the equivalent of buy, hold and sell. Investors should carefully read the definitions of all ratings used in MS. In addition, since MS contains more complete information concerning the analyst's views, investors should carefully read MS, in its entirety, and not infer the contents from the rating alone. In any case, ratings (or research) should not be used or relied upon as investment advice. An investor's decision to buy or sell a stock should depend on individual circumstances (such as the investor's existing holdings) and other considerations.
+
+## Global Stock Ratings Distribution
+
+(as of May 31, 2026)
+
+The Stock Ratings described below apply to MS's Fundamental Equity Research and do not apply to Debt Research produced by the Firm.
+
+For disclosure purposes only (in accordance with FINRA requirements), we include the category headings of Buy, Hold, and Sell alongside our ratings of Overweight, Equal-weight, Not-Rated and Underweight. MS does not assign ratings of Buy, Hold or Sell to the stocks we cover. Overweight, Equal-weight, Not-Rated and Underweight are not the equivalent of buy, hold, and sell but represent recommended relative weightings (see definitions below). To satisfy regulatory requirements, we correspond Overweight, our most positive stock rating, with a buy recommendation; we correspond Equal-weight and Not-Rated to hold and Underweight to sell recommendations, respectively.
+
+<table><tr><td></td><td colspan="2">Coverage Universe</td><td colspan="3">Investment Banking Clients (IBC)</td><td colspan="2">Other Material Investment ServicesClients (MISC)</td></tr><tr><td>Stock RatingCategory</td><td>Count</td><td>% of Total</td><td>Count</td><td>% of Total IBC</td><td>% of RatingCategory</td><td>Count</td><td>% of Total OtherMISC</td></tr><tr><td>Overweight/Buy</td><td>1542</td><td>42%</td><td>465</td><td>51%</td><td>30%</td><td>707</td><td>43%</td></tr><tr><td>Equal-weight/Hold</td><td>1571</td><td>43%</td><td>369</td><td>40%</td><td>23%</td><td>723</td><td>44%</td></tr><tr><td>Not-Rated/Hold</td><td>3</td><td>0%</td><td>0</td><td>0%</td><td>0%</td><td>1</td><td>0%</td></tr><tr><td>Underweight/Sell</td><td>551</td><td>15%</td><td>86</td><td>9%</td><td>16%</td><td>201</td><td>12%</td></tr><tr><td>Total</td><td>3,667</td><td></td><td>920</td><td></td><td></td><td>1632</td><td></td></tr></table>
+
+Data include common stock and ADRs currently assigned ratings. Investment Banking Clients are companies from whom MS received investment banking compensation in the
+
+last 12 months. Due to rounding off of decimals, the percentages provided in the "% of total" column may not add up to exactly 100 percent.
+
+## Analyst Stock Ratings
+
+Overweight (O). The stock's total return is expected to exceed the average total return of the analyst's industry (or industry team's) coverage universe, on a risk-adjusted basis, over the next 12-18 months.
+
+Equal-weight (E). The stock's total return is expected to be in line with the average total return of the analyst's industry (or industry team's) coverage universe, on a risk-adjusted basis, over the next 12-18 months.
+
+Not-Rated (NR). Currently the analyst does not have adequate conviction about the stock's total return relative to the average total return of the analyst's industry (or industry team's) coverage universe, on a risk-adjusted basis, over the next 12-18 months.
+
+Underweight (U). The stock's total return is expected to be below the average total return of the analyst's industry (or industry team's) coverage universe, on a risk-adjusted basis, over the next 12-18 months.
+
+Unless otherwise specified, the time frame for price targets included in MS is 12 to 18 months.
+
+## Analyst Industry Views
+
+Attractive (A): The analyst expects the performance of his or her industry coverage universe over the next 12-18 months to be attractive vs. the relevant broad market benchmark, as indicated below.
+
+In-Line (I): The analyst expects the performance of his or her industry coverage universe over the next 12-18 months to be in line with the relevant broad market benchmark, as indicated below. Cautious (C): The analyst views the performance of his or her industry coverage universe over the next 12-18 months with caution vs. the relevant broad market benchmark, as indicated below. Benchmarks for each region are as follows: North America - S&P 500; Latin America - relevant MSCI country index or MSCI Latin America Index; Europe - MSCI Europe; Japan - TOPIX; Asia - relevant MSCI country index or MSCI sub-regional index or MSCI AC Asia Pacific ex Japan Index.
+
+Stock Price, Price Target and Rating History (See Rating Definitions)  
+![](images/d40e8389ab22b053d2e2bfa3572e6a10ce3a6ca2d4fb5b89ccb1154d071c26f7.jpg)
+
+<details>
+<summary>line chart</summary>
+
+| Date       | Value   |
+| ---------- | ------- |
+| 06/01 2023 | 233.33  |
+|            | 225     |
+|            | 400     |
+|            | 500     |
+|            | 566.67  |
+|            | 783.33  |
+|            | 1208.34 |
+|            | 1333.34 |
+|            | 1350    |
+|            | 2333.34 |
+|            | 3583.34 |
+|            | 5200    |
+</details>
+
+Stock Rating History: 6/1/21 : 0/A; 4/8/26 : E/A  
+Price Target History: 2/25/21 : 100; 7/7/21 : 105; 9/13/21 : 166.67; 11/9/22 : 233.33; 10/31/23 : 225; 3/13/24 : 400; 4/19/24 : 500; 6/4/24 : 566.67; 8/9/24 : 783.33; 12/4/24 : 1208.34; 3/14/25 : 1333.34; 6/9/25 : 1350; 9/1/25 : 2333.34; 12/9/25 : 3583.34; 4/8/26 : 5200  
+Source: MS Date Format : MM/DD/YY Price Target = No Price Target Assigned (NA)  
+Stock Price (Not Covered by Current Analyst) — Stock Price (Covered by Current Analyst)  
+Stock and Industry Ratings (abbreviations below) appear as ♦ Stock Rating/Industry View  
+Stock Ratings: Overweight (O) Equal-weight (E) Underweight (U) Not-Rated (NR) No Rating Available (NA)  
+Industry View: Attractive (A) In-line (I) Cautious (C) No Rating (NR)  
+Effective January 13, 2014, the stocks covered by MS Asia Pacific will be rated relative to the analyst's industry (or industry team's) coverage.  
+Effective January 13, 2014, the industry view benchmarks for MS Asia Pacific are as follows: relevant MSCI country index or MSCI sub-regional index or MSCI AC Asia Pacific ex Japan Index.
+
+Furukawa Electric (5801.T) - As of 06/11/26 GMT in JPY Industry : Wire & Cable  
+![](images/a34e78850edbafd9430cd9a0d6474e9dca68ee5f95b4315d28fe13bd044aa95b.jpg)
+
+<details>
+<summary>line chart</summary>
+
+| Date       | Value  |
+| ---------- | ------ |
+| 06/01 2023 | 2500   |
+| 06/01 2024 | 2200   |
+| 06/01 2024 | 2400   |
+| 06/01 2024 | 2600   |
+| 06/01 2024 | 2800   |
+| 06/01 2024 | 3100   |
+| 06/01 2024 | 3300   |
+| 06/01 2024 | 6450   |
+| 06/01 2024 | 5700   |
+| 06/01 2024 | 7500   |
+| 06/01 2024 | 8250   |
+| 06/01 2024 | 9750   |
+| 06/01 2024 | 46000  |
+| 06/01 2024 | 68000  |
+</details>
+
+Stock Rating History: 6/1/21 : E/A; 4/8/26 : O/A  
+Price Target History: 2/25/21 : 3000; 7/7/21 : 2900; 9/8/21 : 2500; 12/6/21 : 2300; 11/6/22 : 2500; 2/1/23 : 2600; 4/28/23 : 2500; 10/31/23 : 2200; 1/30/24 : 2400; 3/7/24 : 2600; 4/12/24 : 2800; 6/19/24 : 3100; 9/3/24 : 3300; 12/4/24 : 6450; 3/14/25 : 5700; 6/9/25 : 7500; 9/1/25 : 8250; 12/9/25 : 9750; 4/6/26 : 46000; 6/3/26 : 66000  
+Source: MS Date Format : MM/DD/YY Price Target = No Price Target Assigned (NA)  
+Stock Price (Not Covered by Current Analyst) — Stock Price (Covered by Current Analyst)  
+Stock and Industry Ratings (abbreviations below) appear as ♦ Stock Rating/Industry View  
+Stock Ratings: Overweight (O) Equal-weight (E) Underweight (U) Not-Rated (NR) No Rating Available (NA)  
+Industry View: Attractive (A) In-line (I) Cautious (C) No Rating (NR)  
+Effective January 13, 2014, the stocks covered by MS Asia Pacific will be rated relative to the analyst's industry (or industry team's) coverage.  
+Effective January 13, 2014, the industry view benchmarks for MS Asia Pacific are as follows: relevant MSCI country index or MSCI sub-regional index or MSCI AC Asia Pacific ex Japan Index.
+
+Sumitomo Electric (5802.T) - As of 06/11/26 GMT in JPY Industry : Wire & Cable  
+![](images/d39cdb27c37e109a35ba35cb12ba283674b4bf8b7c126bde7aa9e726170f45f4.jpg)
+
+<details>
+<summary>line chart</summary>
+
+| Date       | Value  |
+| ---------- | ------ |
+| 06/01 2023 | 1800   |
+| 06/01 2024 | 1700   |
+| 06/01 2024 | 1900   |
+| 06/01 2024 | 2150   |
+| 06/01 2024 | 2400   |
+| 06/01 2024 | 2650   |
+| 06/01 2024 | 3000   |
+| 06/01 2024 | 3050   |
+| 06/01 2024 | 3100   |
+| 06/01 2024 | 4100   |
+| 06/01 2024 | NA     |
+| 06/01 2024 | 6900   |
+| 06/01 2024 | 11000  |
+</details>
+
+Stock Rating History: 6/1/21 : 0/A; 10/26/21 : E/A; 2/2/23 : NA/A; 5/9/23 : E/A; 10/30/25 : NA/A; 1/16/26 : E/A  
+Price Target History: 2/25/21 : 2000; 7/7/21 : 1900; 8/28/21 : 1800; 10/26/21 : 1500; 2/1/23 : 1600; 2/2/23 : NA; 5/9/23 : 1800;  
+10/31/23 : 1700; 12/14/23 : 1900; 3/6/24 : 2150; 6/6/24 : 2400; 8/26/24 : 2650; 12/4/24 : 3000; 3/14/25 : 3050; 6/9/25 : 3100;  
+9/1/25 : 4100; 10/30/25 : NA; 1/16/26 : 6900; 4/8/26 : 11000  
+Source: MS Date Format : MM/DD/YY Price Target = No Price Target Assigned (NA)  
+Stock Price (Not Covered by Current Analyst) — Stock Price (Covered by Current Analyst)  
+Stock and Industry Ratings (abbreviations below) appear as ♦ Stock Rating/Industry View  
+Stock Ratings: Overweight (O) Equal-weight (E) Underweight (U) Not-Rated (NR) No Rating Available (NA)  
+Industry View: Attractive (A) In-line (I) Cautious (C) No Rating (NR)  
+Effective January 13, 2014, the stocks covered by MS Asia Pacific will be rated relative to the analyst's industry (or industry team's) coverage.  
+Effective January 13, 2014, the industry view benchmarks for MS Asia Pacific are as follows: relevant MSCI country index or MSCI sub-regional index or MSCI AC Asia Pacific ex Japan Index.
+
+## Important Disclosures for MS Smith Barney LLC Customers
+
+Important disclosures regarding any material conflict of interest that can reasonably be expected to have influenced MS Smith Barney LLC's choice of a third-party research provider or the subject company of a third-party research report, are available on the MS Wealth Management disclosure website at www.morganstanley.com/online/researchdisclosures. For MS specific disclosures, you may refer to https://www.morganstanley.com/eqr/disclosures/webapp/generalresearch.
+
+Each MS report is reviewed and approved on behalf of MS Smith Barney LLC. This review and approval is conducted by the same person who reviews the research report on behalf of MS. This could create a conflict of interest.
+
+## Other Important Disclosures
+
+MS policy is to update research reports as and when the Research Analyst and Research Management deem appropriate, based on developments with the issuer, the sector, or the market that may have a material impact on the research views or opinions stated therein. In addition, certain Research publications are intended to be updated on a regular periodic basis (weekly/monthly/quarterly/annual) and will ordinarily be updated with that frequency, unless the Research Analyst and Research Management determine that a different publication schedule is appropriate based on current conditions.
+
+MS is not acting as a municipal advisor and the opinions or views contained herein are not intended to be, and do not constitute, advice within the meaning of Section 975 of the Dodd-Frank Wall Street Reform and Consumer Protection Act.
+
+MS produces an equity research product called a "Tactical Idea." Views contained in a "Tactical Idea" on a particular stock may be contrary to the recommendations or views expressed in research on the same stock. This may be the result of differing time horizons, methodologies, market events, or other factors. For all research available on a particular stock, please contact your sales representative or go to Matrix at http://www.morganstanley.com/matrix.
+
+MS is provided to our clients through our proprietary research portal on Matrix and also distributed electronically by MS to clients. Certain, but not all, MS products are also made available to clients through third-party vendors or redistributed to clients through alternate electronic means as a convenience. For access to all available MS, please contact your sales representative or go to Matrix at http://www.morganstanley.com/matrix.
+
+Any access and/or use of MS is subject to MS's Terms of Use (http://www.morganstanley.com/terms.html). By accessing and/or using MS, you are indicating that you have read and agree to be bound by our Terms of Use (http://www.morganstanley.com/terms.html). In addition you consent to MS processing your personal data and using cookies in accordance with our Privacy Policy and our Global Cookies Policy (http://www.morganstanley.com/privacy\_pledge.html), including for the purposes of setting your preferences and to collect readership data so that we can deliver better and more personalized service and products to you. To find out more information about how MS processes personal data, how we use cookies and how to reject cookies see our Privacy Policy and our Global Cookies Policy (http://www.morganstanley.com/privacy\_pledge.html). Please use the provided link to review the Terms and Conditions and Most Important Terms and Conditions for MS India Company Private Limited (https://www.morganstanley.com/assets/pdfs/about-us-global-offices/india/Terms\_and\_conditions.pdf) and the following link to review the audit report (https://ny.matrix.ms.com/eqr/research/webapp/researchdocs/MSICPL\_Morgan\_Stanley\_Research\_Audit\_Report.pdf).
+
+If you do not agree to our Terms of Use and/or if you do not wish to provide your consent to MS processing your personal data or using cookies please do not access our research. MS does not provide individually tailored investment advice. MS has been prepared without regard to the circumstances and objectives of those who receive it. MS recommends that investors independently evaluate particular investments and strategies, and encourages investors to seek the advice of a financial adviser. The appropriateness of an investment or strategy will depend on an investor's circumstances and objectives. The securities, instruments, or strategies discussed in MS may not be suitable for all investors, and certain investors may not be eligible to purchase or participate in some or all of them. MS is not an offer to buy or sell or the solicitation of an offer to buy or sell any security/instrument or to participate in any particular trading strategy. The value of and income from your investments may vary because of changes in interest rates, foreign exchange rates, default rates, prepayment rates, securities/instruments prices, market indexes, operational or financial conditions of companies or other factors. There may be time limitations on the exercise of options or other rights in securities/instruments transactions. Past performance is not necessarily a guide to future performance. Estimates of future performance are based on assumptions that may not be realized. If provided, and unless otherwise stated, the closing price on the cover page is that of the primary exchange for the subject company's securities/instruments.
+
+The fixed income research analysts, strategists or economists principally responsible for the preparation of MS have received compensation based upon various factors, including quality, accuracy and value of research, firm profitability or revenues (which include fixed income trading and capital markets profitability or revenues), client feedback and competitive factors. Fixed Income Research analysts', strategists' or economists' compensation is not linked to investment banking or capital markets transactions performed by MS or the profitability or revenues of particular trading desks.
+
+The "Important Regulatory Disclosures on Subject Companies" section in MS lists all companies mentioned where MS owns 1% or more of a class of common equity securities of the companies. For all other companies mentioned in MS, MS may have an investment of less than 1% in securities/instruments or derivatives of securities/instruments of companies and may trade them in ways different from those discussed in MS. Employees of MS not involved in the preparation of MS may have investments in securities/instruments or derivatives of securities/instruments of companies mentioned and may trade them in ways different from those discussed in MS. Derivatives may be issued by MS or associated persons.
+
+With the exception of information regarding MS, MS is based on public information. MS makes every effort to use reliable, comprehensive information, but we make no representation that it is accurate or complete. We have no obligation to tell you when opinions or information in MS change apart from when we intend to discontinue equity research coverage of a subject company. Facts and views presented in MS have not been reviewed by, and may not reflect information known to, professionals in other MS business areas, including investment banking personnel.
+
+MS personnel may participate in company events such as site visits and are generally prohibited from accepting payment by the company of associated expenses unless pre-approved by authorized members of Research management.
+
+MS may make investment decisions that are inconsistent with the recommendations or views in this report.
+
+To our readers based in Taiwan or trading in Taiwan securities/instruments: Information on securities/instruments that trade in Taiwan is distributed by MS Taiwan Limited ("MSTL"). Such information is for your reference only. The reader should independently evaluate the investment risks and is solely responsible for their investment decisions. MS may not be distributed to the public media or quoted or used by the public media without the express written consent of MS. Any non-customer reader within the scope of Article 7-1 of the Taiwan Stock Exchange Recommendation Regulations accessing and/or receiving MS is not permitted to provide MS to any third party (including but not limited to related parties, affiliated companies and any other third parties) or engage in any activities regarding MS which may create or give the appearance of creating a conflict of interest. Information on securities/instruments that do not trade in Taiwan is for informational purposes only and is not to be construed as a recommendation or a solicitation to trade in such securities/instruments. MSTL may not execute transactions for clients in these securities/instruments.
+
+MS is not incorporated under PRC law and the research in relation to this report is conducted outside the PRC. MS does not constitute an offer to sell or the solicitation of an offer to buy any securities in the PRC. PRC investors shall have the relevant qualifications to invest in such securities and shall be responsible for obtaining all relevant approvals, licenses, verifications and/or registrations from the relevant governmental authorities themselves. Neither this report nor any part of it is intended as, or shall constitute, provision of any consultancy or advisory service of securities investment as defined under PRC law. Such information is provided for your reference only.
+
+MS is disseminated in Brazil by MS C.T.V.M. S.A. located at Av. Brigadeiro Faria Lima, 3600, 6th floor, São Paulo - SP, Brazil; and is regulated by the Comissão de Valores Mobiliários; in Mexico by MS México, Casa de Bolsa, S.A. de C.V which is regulated by Comision Nacional Bancaria y de Valores. Paseo de los Tamarindos 90, Torre 1, Col. Bosques de las Lomas Floor 29, 05120 Mexico City; in Japan by MS MUFG Securities Co., Ltd. and, for Commodities related research reports only, MS Capital Group Japan Co., Ltd; in Hong Kong by MS Asia Limited (which accepts responsibility for its contents) and by MS Bank Asia Limited; in Singapore by MS Asia (Singapore) Pte. (Registration number 199206298Z) and/or MS Asia (Singapore) Securities Pte Ltd (Registration number 200008434H), regulated by the Monetary Authority of Singapore (which accepts legal responsibility for its contents and should be contacted with respect to any matters arising from, or in connection with, MS) and by MS Bank Asia Limited, Singapore Branch (Registration number T14FC0118); in Australia to "wholesale clients" within the meaning of the Australian Corporations Act by MS Australia Limited A.B.N. 67 003 734 576, holder of Australian financial services license No. 233742, which accepts responsibility for its contents; in Australia to "wholesale clients" and "retail clients" within the meaning of the Australian Corporations Act by MS Wealth Management Australia Pty Ltd (A.B.N. 19 009 145 555, holder of Australian financial services license No. 240813, which accepts responsibility for its contents; in Korea by MS & Co International plc, Seoul Branch; in India by MS India Company Private Limited having Corporate Identification No (CIN) U22990MH1998PTC115305, regulated by the Securities and Exchange Board of India ("SEBI") and holder of licenses as a Research Analyst (SEBI Registration No. INH000001105); Stock Broker (SEBI Stock Broker Registration No. INZ000244438), Merchant Banker (SEBI Registration No. INM000011203), and depository participant with National Securities Depository Limited (SEBI Registration No. IN-DP-NSDL-567-2021) having registered office at Altimus, Level 39 & 40, Pandurang Budhkar Marg, Worli, Mumbai 400018, India; Telephone no. +91-22-61181000; Compliance Officer Details: Mr. Tejarshi Hardas, Tel. No.: +91-22-61181000 or Email: tejarshi.hardas@morganstanley.com; Grievance officer details: Mr. Tejarshi Hardas, Tel. No.: +91-22-61181000 or Email: msic-compliance@morganstanley.com. MS India Company Private Limited (MSICPL) may use AI tools in providing research services. All recommendations contained herein are made by the duly qualified research analysts; in Canada by MS Canada Limited; in Germany and the European Economic Area where required by MS Europe S.E., authorised and regulated by Bundesanstalt fuer Finanzdienstleistungsaufsicht (BaFin) under the reference number 149169; in the US by MS & Co. LLC, which accepts responsibility for its contents. MS & Co. International plc, authorized by the Prudential Regulation Authority and regulated by the Financial Conduct Authority and the Prudential Regulation Authority, disseminates in the UK research that it has prepared, and research which has been prepared by any of its affiliates, only to persons who (i) are investment professionals falling within Article 19(5) of the Financial Services and Markets Act 2000 (Financial Promotion) Order 2005 (as amended, the "Order"); (ii) are persons who are high net worth entities falling within Article 49(2)(a) to (d) of the Order; or (iii) are persons to whom an invitation or inducement to engage in investment activity (within the meaning of section 21 of the Financial Services and Markets Act 2000, as amended) may otherwise lawfully be communicated or caused to be communicated. RMB MS Proprietary Limited is a member of the JSE Limited and A2X (Pty) Ltd. RMB MS Proprietary Limited is a joint venture owned equally by MS International Holdings Inc. and RMB Investment Advisory (Proprietary) Limited, which is wholly owned by FirstRand Limited. The information in MS is being disseminated by MS Saudi Arabia, regulated by the Capital Market Authority in the Kingdom of Saudi Arabia, and is directed at Sophisticated investors only.
+
+The information in MS is being communicated by MS & Co. International plc (DIFC Branch), regulated by the Dubai Financial Services Authority (the DFSA) or by MS & Co. International plc (ADGM Branch), regulated by the Financial Services Regulatory Authority Abu Dhabi (the FSRA), and is directed at Professional Clients only, as defined by the DFSA or the FSRA, respectively. The financial products or financial services to which this research relates will only be made available to a customer who we are satisfied meets the regulatory criteria of a Professional Client. A distribution of the different MS Research ratings or recommendations, in percentage terms for Investments in each sector covered, is available upon request from your sales representative.
+
+The information in MS is being communicated by MS & Co. International plc (QFC Branch), regulated by the Qatar Financial Centre Regulatory Authority (the QFCRA), and is directed at business customers and market counterparties only and is not intended for Retail Customers as defined by the QFCRA.
+
+As required by the Capital Markets Board of Turkey, investment information, comments and recommendations stated here, are not within the scope of investment advisory activity. Investment advisory service is provided exclusively to persons based on their risk and income preferences by the authorized firms. Comments and recommendations stated here are general in nature. These opinions may not fit to your financial status, risk and return preferences. For this reason, to make an investment decision by relying solely to this information stated here may not bring about outcomes that fit your expectations.
+
+The trademarks and service marks contained in MS are the property of their respective owners. Third-party data providers make no warranties or representations relating to the accuracy, completeness, or timeliness of the data they provide and shall not have liability for any damages relating to such data. The Global Industry Classification Standard (GICS) was developed by and is the exclusive property of MSCI and S&P.
+
+MS, or any portion thereof may not be reprinted, sold or redistributed without the written consent of MS.
+
+Indicators and trackers referenced in MS may not be used as, or treated as, a benchmark under Regulation EU 2016/1011, or any other similar framework.
+
+The issuers and/or fixed income products recommended or discussed in certain fixed income research reports may not be continuously followed. Accordingly, investors should regard those fixed income research reports as providing stand-alone analysis and should not expect continuing analysis or additional reports relating to such issuers and/or individual fixed income products. MS may hold, from time to time, material financial and commercial interests regarding the company subject to the Research report.
+
+Registration granted by SEBI and certification from the National Institute of Securities Markets (NISM) in no way guarantee performance of the intermediary or provide any assurance of returns to investors. Investment in securities market are subject to market risks. Read all the related documents carefully before investing.
+
+INDUSTRY COVERAGE: Wire & Cable
+
+<table><tr><td>COMPANY (TICKER)</td><td>RATING (AS OF)</td><td>PRICE* (06/11/2026)</td></tr><tr><td colspan="3">Yu Shirakawa</td></tr><tr><td>Fujikura (5803.T)</td><td>E (04/08/2026)</td><td>¥4,142</td></tr><tr><td>Furukawa Electric (5801.T)</td><td>O (04/08/2026)</td><td>¥40,780</td></tr><tr><td>Sumitomo Electric (5802.T)</td><td>E (01/16/2026)</td><td>¥10,250</td></tr></table>
+
+Stock Ratings are subject to change. Please see latest research for each company.
+
+\* Historical prices are not split adjusted.
+
+© 2026 MS MUFG

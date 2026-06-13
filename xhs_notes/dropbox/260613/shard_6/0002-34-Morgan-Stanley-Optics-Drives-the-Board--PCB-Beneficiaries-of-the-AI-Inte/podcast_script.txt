@@ -1,0 +1,79 @@
+ZH_A: 最近AI投资圈都在讨论GPU、光模块，但有一份研报却把目光投向了产业链上一个非常不起眼的环节——电路板。B，这份报告到底在说什么？
+
+ZH_B: 它核心的观点是，AI光学互联正在成为PCB行业的下一个结构性增长引擎。而且这个市场的增速，会远超光模块本身的出货量增长。
+
+ZH_A: 为什么PCB市场增速反而更快？这不应该是下游卖得越多，上游跟着受益吗？
+
+ZH_B: 不只是数量的增长，还有单价的提升。随着光模块从400G向800G、1.6T升级，每块PCB的复杂度在急剧增加。层数从10层涨到16层，材料从M6升级到M8，工艺也从HDI转向更先进的mSAP。
+
+ZH_A: 所以每块PCB的价值量也跟着水涨船高？
+
+ZH_B: 对。报告估算，PCB的单模块价值从大概10美元涨到25美元，翻了2.5倍。毛利率也从20-30%提升到40-50%以上，接近ABF载板的水平。
+
+ZH_A: 这意味着即使光模块出货量增速放缓，PCB供应商的营收增长依然可观？
+
+ZH_B: 没错。报告预测AI光模块PCB的市场规模，从2025年的6.2亿美元，到2028年将增长到37.7亿美元，年复合增长率高达83%，而同期光模块本身的出货量增速只有60%。
+
+ZH_A: 那这份报告最看好的公司是谁？
+
+ZH_B: 它认为最值得关注的是ZDT，也就是臻鼎。虽然像Unimicron和深南电路这些老牌供应商也会受益，但ZDT在抢占市场份额方面更有潜力。
+
+ZH_A: ZDT凭什么能抢到份额？
+
+ZH_B: 关键在于1.6T光模块需要用到mSAP工艺。ZDT从2017年就开始给苹果iPhone供应mSAP主板，积累了丰富的经验。当行业门槛提高，客户需要更多合格供应商时，ZDT的竞争力就凸显出来了。
+
+ZH_A: 所以ZDT的份额增长路径是什么？
+
+ZH_B: 报告估计，ZDT在800G光模块PCB的供应份额，从2025年的7.5%左右，到2028年可能达到20%。在1.6T领域，份额可能从5%扩张到25%。
+
+ZH_A: 这个增长听起来很诱人。但这份报告里有没有什么没有完全回答的问题？
+
+ZH_B: 一个关键问题是，CPO，也就是共封装光学技术，会不会在长期颠覆可插拔光模块？报告认为，CPO在2027-2028年之前不会大规模采用，但长期风险依然存在。
+
+ZH_A: 所以CPO对PCB供应商的影响，报告并没有给出定论？
+
+ZH_B: 对。另一个悬念是，除了臻鼎，像Compeq这样的公司也在积极扩产，它们会不会成为黑马？报告没有覆盖Compeq，这部分需要投资者自己去跟踪。
+
+ZH_A: 听完你的分析，我觉得这份报告最大的价值是帮我们发现了一个被忽视的AI受益环节。想了解更多细节，比如具体的估值和风险，还是得去读完整报告。
+
+ZH_B: 是的，完整的报告里有更详细的财务模型和风险提示，值得花时间细读。
+
+EN_A: So everyone is talking about GPUs and optical modules in the AI boom. But there is a report that looks at a much less obvious part of the supply chain: printed circuit boards. What is the big idea here?
+
+EN_B: The core argument is that AI optical connectivity is becoming the next major growth engine for the PCB industry. And the market for these PCBs is actually growing faster than the transceiver shipments themselves.
+
+EN_A: Why would the PCB market grow faster? Shouldn't it just follow the volume of transceivers?
+
+EN_B: It is not just about volume. The value per board is going up. As transceivers move from 400G to 800G and then 1.6T, the PCB becomes much more complex. More layers, better materials, and more advanced manufacturing processes.
+
+EN_A: So the price per board goes up significantly?
+
+EN_B: Exactly. The report estimates the average selling price per PCB goes from about 10 dollars to 25 dollars, a 2.5 times increase. And gross margins jump from 20-30% to over 40-50%, approaching levels seen in ABF substrates.
+
+EN_A: That means even if transceiver shipment growth slows down a bit, PCB suppliers could still see strong revenue growth?
+
+EN_B: That is the idea. The report forecasts the AI transceiver PCB market to grow from 620 million dollars in 2025 to nearly 3.8 billion by 2028. That is an 83% compound annual growth rate, compared to 60% for the transceiver units themselves.
+
+EN_A: So which company does the report like the most?
+
+EN_B: It highlights Zhen Ding, or ZDT, as the most compelling beneficiary. While incumbents like Unimicron and Shennan Circuits will also benefit, ZDT has the potential to capture significant market share as the industry shifts to higher speeds.
+
+EN_A: What gives ZDT that edge?
+
+EN_B: The key is the mSAP manufacturing process required for 1.6T transceivers. ZDT has been making mSAP motherboards for Apple iPhones since 2017. So when the technology bar rises and customers need more qualified suppliers, ZDT is perfectly positioned.
+
+EN_A: So what is the expected path for ZDT's market share?
+
+EN_B: The report estimates ZDT's share in 800G transceiver PCBs could go from about 7.5% in 2025 to 20% by 2028. And in the 1.6T segment, it could expand from 5% to 25% over the same period.
+
+EN_A: That sounds like a strong growth story. But what are the unanswered questions in this report?
+
+EN_B: One big one is co-packaged optics, or CPO. It is a long-term risk to pluggable transceivers. The report says CPO won't be a major factor until 2027 or 2028, but the long-term impact on PCB suppliers is not fully resolved.
+
+EN_A: So the report leaves that question hanging?
+
+EN_B: Yes. Another question is about other potential competitors. Companies like Compeq are also expanding capacity, but the report does not cover them. So there is more research to be done there.
+
+EN_A: It sounds like this report is really good at finding a hidden gem in the AI supply chain. To get into the details, like the valuation and risks, you would have to read the full report.
+
+EN_B: Absolutely. The full report has the detailed financial models and risk factors. It is worth a deep dive.
