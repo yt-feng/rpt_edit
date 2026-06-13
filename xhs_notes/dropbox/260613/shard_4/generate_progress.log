@@ -1,0 +1,16 @@
+Found 34 total PDFs; shard 4/40 has 5 PDFs, skips 0 already converted, will process 5 PDFs with batch_size=5.
+Running batch 1: 5 PDFs
+Found 5 PDFs. MinerU token slots available=2.
+MinerU attempt 1/4 using MINER_U_2: submitting 5 PDF(s).
+Uploading PDF to MinerU: /tmp/pdf_batch_001_0zu3eh42/pdfs/0001-23-UBS-China Auto Supply Chain C-suite tour takeaways- NEV business improving- humanoid robotics in focus-260611.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_0zu3eh42/pdfs/0002-24-Goldman Sachs-China Education May-26 Tracker-Learning tablet GMV growth pressured by high base- yet ASP upward trend sustained- Student visa decline narrowed-260612.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_0zu3eh42/pdfs/0003-25-Goldman Sachs-Multi-Industry Capex Tracker-Medium Term Capex Expectations Continue to Improve-260612.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_0zu3eh42/pdfs/0004-26-J.P. Morgan-China Property Site visit note- A K-shaped recovery-260612.pdf
+Uploading PDF to MinerU: /tmp/pdf_batch_001_0zu3eh42/pdfs/0005-27-Morgan Stanley-China Property-More Signs of Secondary Home Sales Weakening-260611.pdf
+MinerU attempt 1 using MINER_U_2 batch_id=30a91586-2a78-4c17-ac1d-5ad8a7c58e64
+MinerU states: pending, pending, pending, pending, pending
+MinerU states: done, done, running, done, running
+MinerU states: done, done, running, done, done
+MinerU states: done, done, done, done, done
+Done. Results written to /home/runner/work/rpt_edit/rpt_edit/xhs_notes/dropbox/260613/shard_4; successful_reports=5; mineru_timed_out=False; mineru_attempts=1
+All batches completed successfully. Generated 5 report directories.
