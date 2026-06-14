@@ -1,0 +1,51 @@
+{
+  "input_dir": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs",
+  "total_pdf_count_before_shard": 10,
+  "pdf_count_before_skip": 5,
+  "pdf_count": 5,
+  "generated_report_count": 5,
+  "batch_size": 5,
+  "shard_index": 0,
+  "shard_count": 40,
+  "max_reports_per_shard": 5,
+  "max_total_reports": 0,
+  "skip_existing": true,
+  "skipped_existing_count": 0,
+  "skipped_existing": [],
+  "failures": 0,
+  "batches": [
+    {
+      "batch_index": 1,
+      "pdf_count": 5,
+      "files": [
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/01-JPM-China Battery：Cherry picking amid supply~side reform and global trade tensions-260612.pdf",
+          "batch_file": "/tmp/pdf_batch_001_czri747r/pdfs/0001-01-JPM-China Battery-Cherry picking amid supply-side reform and global trade tensions-260612.pdf",
+          "stable_index": "1"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/02-NOM-Asia Insights China： Credit growth slowed in May and reached another historical low-260613.pdf",
+          "batch_file": "/tmp/pdf_batch_001_czri747r/pdfs/0002-02-NOM-Asia Insights China- Credit growth slowed in May and reached another historical low-260613.pdf",
+          "stable_index": "2"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/03-JPM-AIDC Power Supply Chain：Grid constraints and SOFC policy tailwinds drive new era for AIDC onsite power-260612.pdf",
+          "batch_file": "/tmp/pdf_batch_001_czri747r/pdfs/0003-03-JPM-AIDC Power Supply Chain-Grid constraints and SOFC policy tailwinds drive new era for AIDC onsite power-260612.pdf",
+          "stable_index": "3"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/04-MS-Reassessing risks to our Fed call after the latest data-260612.pdf",
+          "batch_file": "/tmp/pdf_batch_001_czri747r/pdfs/0004-04-MS-Reassessing risks to our Fed call after the latest data-260612.pdf",
+          "stable_index": "4"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/05-JPM-Asian MLCC Industry：Introducing our long~term S&D model with a multi~year bullish view； prefer JP TW names over KR-260612.pdf",
+          "batch_file": "/tmp/pdf_batch_001_czri747r/pdfs/0005-05-JPM-Asian MLCC Industry-Introducing our long-term S-D model with a multi-year bullish view- prefer JP TW names over KR-260612.pdf",
+          "stable_index": "5"
+        }
+      ],
+      "returncode": 0,
+      "status": "ok"
+    }
+  ]
+}
