@@ -1,0 +1,35 @@
+EN_A: The market has been obsessed with the debate between near-packaged optics and co-packaged optics. But this report says we might be focusing on the wrong thing. What is really going on?
+EN_B: Exactly. A global investment bank report makes a clear point. The debate about CPO versus NPO misses the real driver. Optical content growth is tied to bandwidth needs, not the specific architecture.
+EN_A: So regardless of which architecture wins, the demand for optical components goes up?
+EN_B: That is the core argument. The report shows how optical engines per GPU go from 2 today to 17 in a hybrid architecture, and potentially 35 in a full optical setup. The driver is bandwidth, not the packaging method.
+EN_A: But then why have stocks like LITE and COHR been so volatile recently?
+EN_B: Because the market got more conservative about CPO adoption in 2028. The report sees this as a timing issue, not a direction issue. The pullback in those stocks actually creates opportunities.
+EN_A: So the long-term thesis is intact, just the timeline is uncertain?
+EN_B: Yes. The report emphasizes that regardless of whether you go CPO or NPO, the amount of optical content per GPU is rising. The current market concern is likely overdone.
+EN_A: What exactly is the difference between NPO and CPO?
+EN_B: NPO keeps the optics near the chip but separate. This makes manufacturing easier and maintenance simpler. CPO packages the optics directly with the chip. It offers higher integration but comes with much bigger technical challenges.
+EN_A: What are those challenges?
+EN_B: First, yields are terrible. Silicon photonics yield is only 50 to 60 percent. Downstream assembly yield is even lower, 20 to 50 percent. Second, you cannot hot-swap a failed component. You have to power down the whole switch to fix it.
+EN_A: That sounds expensive.
+EN_B: It is. CPO costs 8 to 10 times more than traditional pluggable solutions. And the ecosystem is still immature. Right now, only Nvidia and Broadcom are pushing it hard, unlike the broad supply chain for traditional transceivers.
+EN_A: So why bother with CPO at all?
+EN_B: Because bandwidth needs are exploding. At very high data rates, copper cables consume too much power and suffer from signal loss. CPO dramatically shortens the electrical path, cutting power consumption significantly.
+EN_A: The report mentions specific numbers, from 2 optical engines per GPU to 35. How do they get there?
+EN_B: The report shows a detailed breakdown. From 2 in the current NVL72 setup, to 17 in the NVL576 hybrid, to 35 in a full CPO NVL576. And with the Feynman architecture and 200G SerDes, that could go to 70 per GPU.
+EN_A: 70 per GPU? That is a huge number.
+EN_B: It is. But the report also notes that their 2027 demand estimate is 6 to 7 million optical engines, while some investors expect 20 to 30 million. So there is a gap between realistic expectations and bullish hopes.
+EN_A: So the report thinks the market is too optimistic?
+EN_B: Not exactly. The point is that even with more conservative assumptions, the growth opportunity is still massive. CPO switch shipments are expected to grow at a 144 percent compound annual rate.
+EN_A: Which companies benefit the most?
+EN_B: The report specifically calls out LITE, COHR, and GLW. Nvidia has made equity investments in these companies to lock in capacity. That makes it hard for anyone to replace them, even if the architecture changes.
+EN_A: But could an architecture shift hurt their value?
+EN_B: The report argues no. Whether you go CPO or NPO, you need more optical engines and lasers. These three companies sit right at the center of that growth.
+EN_A: So the report is not worried about the recent stock pullback?
+EN_B: Correct. The view is that the market is too focused on the architecture debate and missing the bigger picture. That debate may cap stock prices in the near term, but the content growth trend is very clear.
+EN_A: But there are still questions the report does not fully answer.
+EN_B: Yes. For example, when exactly will CPO reach mass production? The report does not give a clear date. Also, whether the Feynman architecture will really double optical engine counts depends on whether SerDes goes to 200G or 400G.
+EN_A: So those uncertainties still matter for investment decisions.
+EN_B: They do. But the report's main message is that the direction is clear. The timing and exact numbers will become clearer as the ecosystem matures.
+EN_A: One last question. What is the single most important takeaway from this report?
+EN_B: One sentence. Do not get distracted by the architecture debate. Optical content is rising regardless of CPO or NPO. That is a trend driven by bandwidth demand, not a binary choice between technologies.
+EN_A: Very clear. If you want to dive into the specific calculations or the technical details of CPO versus NPO, the full report has all the numbers. Thanks for listening, and see you next time.

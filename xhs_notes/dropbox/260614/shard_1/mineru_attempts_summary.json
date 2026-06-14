@@ -1,0 +1,39 @@
+[
+  {
+    "attempt": 1,
+    "round": 1,
+    "token_label": "MINER_U_2",
+    "submitted_pdf_count": 5,
+    "successful_pdf_count": 5,
+    "retry_pdf_count": 0,
+    "timed_out": false,
+    "error": "",
+    "states": [
+      {
+        "pdf": "/tmp/pdf_batch_001_ksft2uan/pdfs/0001-06-NOM-Semiconductor packaging industry update-Packaging substrate shipments up 20- y-y-260613.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_ksft2uan/pdfs/0002-07-MS-Electronic Components-Apr Capacitor Output -METI-- Expect Continuing Expansion of Demand for Small- Largecapacity MLCCs-260612.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_ksft2uan/pdfs/0003-08-JPM-Aluminum-The invisible deficit is about to become visible-260612.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_ksft2uan/pdfs/0004-09-MS-Our thoughts on potential government data centre investment-260612.pdf",
+        "state": "done",
+        "error": ""
+      },
+      {
+        "pdf": "/tmp/pdf_batch_001_ksft2uan/pdfs/0005-10-MS-Optical-Optical Content Growing - Regardless of Architecture-260612.pdf",
+        "state": "done",
+        "error": ""
+      }
+    ]
+  }
+]
