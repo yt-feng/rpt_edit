@@ -1,0 +1,51 @@
+{
+  "input_dir": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs",
+  "total_pdf_count_before_shard": 21,
+  "pdf_count_before_skip": 5,
+  "pdf_count": 5,
+  "generated_report_count": 5,
+  "batch_size": 5,
+  "shard_index": 3,
+  "shard_count": 40,
+  "max_reports_per_shard": 5,
+  "max_total_reports": 0,
+  "skip_existing": true,
+  "skipped_existing_count": 0,
+  "skipped_existing": [],
+  "failures": 0,
+  "batches": [
+    {
+      "batch_index": 1,
+      "pdf_count": 5,
+      "files": [
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/18-GS-Japan Shipbuilding： Nikkei reports Imabari KHI Namura to resume LNG carrier construction； potential to capture stable medium to LT demand-260615.pdf",
+          "batch_file": "/tmp/pdf_batch_001_bsj33f3r/pdfs/0001-18-GS-Japan Shipbuilding- Nikkei reports Imabari KHI Namura to resume LNG carrier construction- potential to capture stable medium to LT demand-260615.pdf",
+          "stable_index": "1"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/19-GS-South Korea Aerospace & Defense： Potential inflection point in beaten down sentiment-260614.pdf",
+          "batch_file": "/tmp/pdf_batch_001_bsj33f3r/pdfs/0002-19-GS-South Korea Aerospace - Defense- Potential inflection point in beaten down sentiment-260614.pdf",
+          "stable_index": "2"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/20-Bernstein-JP EU Semi Equipment： Early signs of price hikes emerging-260615.pdf",
+          "batch_file": "/tmp/pdf_batch_001_bsj33f3r/pdfs/0003-20-Bernstein-JP EU Semi Equipment- Early signs of price hikes emerging-260615.pdf",
+          "stable_index": "3"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/21-JPM-Software Landscape Benchmarking-260615.pdf",
+          "batch_file": "/tmp/pdf_batch_001_bsj33f3r/pdfs/0004-21-JPM-Software Landscape Benchmarking-260615.pdf",
+          "stable_index": "4"
+        },
+        {
+          "source": "/home/runner/work/rpt_edit/rpt_edit/_selected_macro_pdfs/22-MS-Monthly Databook： May~26 shipments ~7% vs. MSe； 2Qe down 3%； introduce 3Qe at ~1% q q-260614.pdf",
+          "batch_file": "/tmp/pdf_batch_001_bsj33f3r/pdfs/0005-22-MS-Monthly Databook- May-26 shipments -7- vs. MSe- 2Qe down 3-- introduce 3Qe at -1- q q-260614.pdf",
+          "stable_index": "5"
+        }
+      ],
+      "returncode": 0,
+      "status": "ok"
+    }
+  ]
+}
